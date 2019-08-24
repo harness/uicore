@@ -1,0 +1,70 @@
+.button {
+  height: 32px;
+  border-radius: 4px;
+  display: inline-flex;
+
+  &,
+  &:focus,
+  &:active {
+    outline: none; /* Disable outline until we find a good styling for it*/
+  }
+
+  :global {
+    .bp3-icon {
+      color: currentColor;
+    }
+  }
+
+  .foo {
+    color: red;
+  }
+
+  /* Make inline icons have the same color as the button color */
+  > span svg {
+    width: 16px;
+    height: 16px;
+
+    path {
+      fill: currentColor !important;
+    }
+
+    :not(path) {
+      stroke: currentColor !important;
+    }
+  }
+
+  /* Disabled */
+  &[class*='bp3-disabled'] {
+    svg,
+    svg > * {
+      cursor: not-allowed;
+    }
+  }
+
+  /* Secondary button */
+  &[class*='bp3-button']:not([class*='bp3-intent-']) {
+    background: white;
+    box-shadow: none;
+    color: #22272d;
+
+    &:not([class*='bp3-minimal']) {
+      border: 1px solid #b8bfca;
+    }
+
+    &:hover {
+      border-color: #25a6f7;
+      color: #25a6f7;
+      background-color: #f7fcff;
+    }
+
+    &:active {
+      border-color: #93d2f9;
+      color: #93d2f9;
+      background-color: #edf8ff;
+    }
+  }
+}
+
+.bar {
+  color: green;
+}
