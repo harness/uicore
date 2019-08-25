@@ -15,10 +15,6 @@
     }
   }
 
-  .foo {
-    color: red;
-  }
-
   /* Make inline icons have the same color as the button color */
   > span svg {
     width: 16px;
@@ -63,8 +59,4 @@
       background-color: #edf8ff;
     }
   }
-}
-
-.bar {
-  color: green;
 }

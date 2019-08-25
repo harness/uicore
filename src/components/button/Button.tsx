@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, AnchorButton, IButtonProps, Classes } from '@blueprintjs/core'
-import css from './Button.scss'
+import css from './Button.css'
 
 //
 // This typing is elegant, except VSCode does not do auto-complete for it.
