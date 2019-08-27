@@ -2,22 +2,30 @@
   "name": "platform",
   "version": "1.0.0",
   "description": "UI Platform",
-  "main": "./dist/index.js",
-  "style": "./dist/index.css",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "style": "dist/index.css",
   "scripts": {
-    "dev": "cd ./samples; parcel index.html; cd ..",
-    "build": "rm -rf ./dist; parcel build src/index.ts"
+    "dev": "parcel docs/index.html",
+    "watch": "rm -rf ./dist; parcel watch src/index.ts --target node --global platform",
+    "clean": "rm -rf ./dist",
+    "build:icons": "parcel build src/icons/index.ts --target node --global platform/icons",
+    "build:index": "parcel build src/index.ts       --target node --no-minify",
+    "build": "yarn clean; yarn build:icons; yarn build:index"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "private": true,
+  "peerDependencies": {
+    "@blueprintjs/core": "^3.18.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
   "devDependencies": {
     "@blueprintjs/core": "^3.18.0",
     "@svgr/parcel-plugin-svgr": "^4.3.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "autoprefixer": "^9.6.1",
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.10.0",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.2",
     "postcss-modules": "^1.4.1",
@@ -25,7 +33,6 @@
     "postcss-simple-vars": "^5.0.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "sass": "^1.22.10",
     "typescript": "^3.5.3"
   }
 }

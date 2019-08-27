@@ -8,7 +8,7 @@ declare module '*.svg' {
   export default content
 }
 
-declare module '*.scss' {
+declare module '*.css' {
   const css: any
   export default css
 }

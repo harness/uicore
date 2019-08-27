@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Button, Icons } from '../src/index'
+// import '@blueprintjs/core/lib/css/blueprint.css'
+// import '../dist/index.css'
+import { Button, Icons } from '../dist/index'
 
 function Sample() {
   return (

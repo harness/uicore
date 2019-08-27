@@ -2,23 +2,23 @@
   "eslint.enable": true,
   "search.exclude": {
     "**/node_modules": true,
-    "dist/": true,
+    // "dist/": true,
     "static/": true,
     ".cache": true,
     ".docz": true,
-    "*/dist": true,
+    // "*/dist": true,
     "yarn-error.*": true
   },
   "files.exclude": {
     "**/node_modules": true,
     "npm-debug.log*": true,
-    "dist/": true,
+    // "dist/": true,
     "static/": true,
     ".cache": true,
     ".docz": true,
     "*/.cache": true,
     "*/.docz": true,
-    "*/dist": true,
+    // "*/dist": true,
     "yarn-error.*": true
   },
   "editor.formatOnSave": true,
