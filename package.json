@@ -1,5 +1,5 @@
 {
-  "name": "platform",
+  "name": "ui-platform",
   "version": "1.0.0",
   "description": "UI Platform",
   "source": "src/index.ts",
@@ -7,7 +7,7 @@
   "style": "dist/index.css",
   "scripts": {
     "dev": "parcel docs/index.html",
-    "watch": "rm -rf ./dist; parcel watch src/index.ts --target node --global platform",
+    "watch": "parcel watch src/index.ts --target node",
     "clean": "rm -rf ./dist",
     "build:icons": "parcel build src/icons/index.ts --target node --global platform/icons",
     "build:index": "parcel build src/index.ts       --target node --no-minify",
