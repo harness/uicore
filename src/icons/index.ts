@@ -1,3 +1,1 @@
-import Calendar from './Calendar.svg'
-
-export default { Calendar }
+export { default as Calendar } from './Calendar.svg'

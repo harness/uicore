@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "paths": {
-      "~*": ["./*"]
-    },
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es6",
     "jsx": "react",
+    "allowJs": false,
     "sourceMap": true,
     "esModuleInterop": true,
-    "target": "ES2016",
-    "module": "commonjs"
+    "declaration": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["./src/**/*"]
 }

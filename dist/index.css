@@ -123,67 +123,67 @@
   --magenta-500: #ed61b5;
 }
 
-._button_f283c {
+.Button---button--_T_VV {
   height: 32px;
   border-radius: 4px;
   display: inline-flex;
 }
 
-  ._button_f283c,
-  ._button_f283c:focus,
-  ._button_f283c:active {
+  .Button---button--_T_VV,
+  .Button---button--_T_VV:focus,
+  .Button---button--_T_VV:active {
     outline: none; /* Disable outline until we find a good styling for it*/
   }
 
-  ._button_f283c .bp3-icon {
+  .Button---button--_T_VV .bp3-icon {
       color: currentColor;
     }
 
   /* Make inline icons have the same color as the button color */
 
-  ._button_f283c > span svg {
+  .Button---button--_T_VV > span svg {
     width: 16px;
     height: 16px;
   }
 
-  ._button_f283c > span svg path {
+  .Button---button--_T_VV > span svg path {
       fill: currentColor !important;
     }
 
-  ._button_f283c > span svg :not(path) {
+  .Button---button--_T_VV > span svg :not(path) {
       stroke: currentColor !important;
     }
 
   /* Disabled */
 
-  ._button_f283c[class*='bp3-disabled'] svg,
-    ._button_f283c[class*='bp3-disabled'] svg > * {
+  .Button---button--_T_VV[class*='bp3-disabled'] svg,
+    .Button---button--_T_VV[class*='bp3-disabled'] svg > * {
       cursor: not-allowed;
     }
 
   /* Secondary button */
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']) {
+  .Button---button--_T_VV[class*='bp3-button']:not([class*='bp3-intent-']) {
     background: white;
     box-shadow: none;
     color: #22272d;
   }
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']):not([class*='bp3-minimal']) {
+  .Button---button--_T_VV[class*='bp3-button']:not([class*='bp3-intent-']):not([class*='bp3-minimal']) {
       border: 1px solid #b8bfca;
     }
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']):hover {
+  .Button---button--_T_VV[class*='bp3-button']:not([class*='bp3-intent-']):hover {
       border-color: #25a6f7;
       color: #25a6f7;
       background-color: #f7fcff;
     }
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']):active {
+  .Button---button--_T_VV[class*='bp3-button']:not([class*='bp3-intent-']):active {
       border-color: #93d2f9;
       color: #93d2f9;
       background-color: #edf8ff;
     }
 
 
-/*# sourceMappingURL=/index.css.map */
+/*# sourceMappingURL=index.css.map*/
