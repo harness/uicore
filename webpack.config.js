@@ -16,7 +16,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
-        options: { transpileOnly: false }
+        options: { transpileOnly: !isDev }
       },
       {
         test: /\.css$/,

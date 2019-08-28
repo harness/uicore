@@ -6,7 +6,7 @@
     "alwaysStrict": true,
     "module": "commonjs",
     "lib": ["es2017"],
-    "target": "es6",
+    "target": "ES6",
     "jsx": "react",
     "allowJs": false,
     "sourceMap": true,
@@ -14,7 +14,11 @@
     "declaration": true,
     "skipLibCheck": true,
     "noEmitHelpers": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "noEmitOnError": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true
   },
   "include": ["./src/**/*"]
 }
