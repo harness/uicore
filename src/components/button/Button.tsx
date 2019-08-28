@@ -41,5 +41,3 @@ export default function(props: Props) {
 
   return <Component {...props} icon={icon} className={css.button} />
 }
-
-function foo(a: any) {}
