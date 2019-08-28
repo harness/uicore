@@ -2,14 +2,19 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "./dist",
+    "declarationDir": "./types",
+    "alwaysStrict": true,
     "module": "commonjs",
+    "lib": ["es2017"],
     "target": "es6",
     "jsx": "react",
     "allowJs": false,
     "sourceMap": true,
     "esModuleInterop": true,
     "declaration": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noEmitHelpers": true,
+    "importHelpers": true
   },
   "include": ["./src/**/*"]
 }

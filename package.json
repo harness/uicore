@@ -5,7 +5,7 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",
-  "types": "dist/index.d.ts",
+  "types": "types/index.d.ts",
   "scripts": {
     "dev": "parcel docs/index.html",
     "watch": "parcel watch src/index.ts --target node",
