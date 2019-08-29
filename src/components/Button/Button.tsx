@@ -28,10 +28,10 @@ interface Props extends Omit<IButtonProps, 'active'> {
 
 export default function(props: Props) {
   let { icon, href } = props
-  const Component = (href ? AnchorButton : Button) as typeof React.Component
+  const Component = (href ? AnchorButton : Button) as React.ElementType
 
   if (typeof icon === 'function') {
-    const Icon = icon as typeof React.Component
+    const Icon = icon as React.ElementType
     icon = (
       <span className={Classes.ICON}>
         <Icon />

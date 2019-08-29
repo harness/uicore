@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 
+console.log('isDev', isDev)
+
 module.exports = {
   entry: {
     index: './src/index.ts'
@@ -16,7 +18,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
-        options: { transpileOnly: !isDev }
+        options: { transpileOnly: isDev }
       },
       {
         test: /\.css$/,
@@ -68,7 +70,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[name]-[id].css'
-    }),
-    new ForkTsCheckerWebpackPlugin()
-  ]
+    })
+  ].concat(isDev ? new ForkTsCheckerWebpackPlugin() : [])
 }
