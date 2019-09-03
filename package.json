@@ -5,13 +5,10 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",
+  "types": "types/index.d.ts",
   "scripts": {
-    "dev": "parcel docs/index.html",
-    "watch": "parcel watch src/index.ts --target node",
-    "clean": "rm -rf ./dist",
-    "build:icons": "parcel build src/icons/index.ts --target node --global platform/icons",
-    "build:index": "parcel build src/index.ts       --target node --no-minify",
-    "build": "yarn clean; yarn build:icons; yarn build:index"
+    "watch": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
   },
   "private": true,
   "peerDependencies": {
@@ -21,18 +18,22 @@
   },
   "devDependencies": {
     "@blueprintjs/core": "^3.18.0",
-    "@svgr/parcel-plugin-svgr": "^4.3.2",
+    "@svgr/webpack": "^4.3.2",
+    "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
-    "autoprefixer": "^9.6.1",
-    "parcel-bundler": "^1.10.0",
+    "css-loader": "^3.2.0",
+    "fork-ts-checker-webpack-plugin": "^1.5.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "postcss-import": "^12.0.1",
-    "postcss-mixins": "^6.2.2",
-    "postcss-modules": "^1.4.1",
+    "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.2",
-    "postcss-simple-vars": "^5.0.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "typescript": "^3.5.3"
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.6.2",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-node-externals": "^1.7.2"
   }
 }

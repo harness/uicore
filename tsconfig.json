@@ -1,14 +1,24 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "paths": {
-      "~*": ["./*"]
-    },
+    "outDir": "./dist",
+    "declarationDir": "./types",
+    "alwaysStrict": true,
+    "module": "commonjs",
+    "lib": ["es2017"],
+    "target": "ES6",
     "jsx": "react",
+    "allowJs": false,
     "sourceMap": true,
     "esModuleInterop": true,
-    "target": "ES2016",
-    "module": "commonjs"
+    "declaration": true,
+    "skipLibCheck": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "noEmitOnError": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true
   },
-  "include": ["src/**/*"]
+  "include": ["./src/**/*"]
 }

@@ -1,0 +1,12 @@
+.t {
+  all: unset;
+
+  p& {
+    color: blueviolet;
+    display: block;
+  }
+
+  span {
+    color: yellowgreen;
+  }
+}

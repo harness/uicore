@@ -123,67 +123,109 @@
   --magenta-500: #ed61b5;
 }
 
-._button_f283c {
+.Button---button--4ZD5v {
   height: 32px;
   border-radius: 4px;
   display: inline-flex;
 }
 
-  ._button_f283c,
-  ._button_f283c:focus,
-  ._button_f283c:active {
+  .Button---button--4ZD5v,
+  .Button---button--4ZD5v:focus,
+  .Button---button--4ZD5v:active {
     outline: none; /* Disable outline until we find a good styling for it*/
   }
 
-  ._button_f283c .bp3-icon {
+  .Button---button--4ZD5v .bp3-icon {
       color: currentColor;
     }
 
   /* Make inline icons have the same color as the button color */
 
-  ._button_f283c > span svg {
+  .Button---button--4ZD5v > span svg {
     width: 16px;
     height: 16px;
   }
 
-  ._button_f283c > span svg path {
+  .Button---button--4ZD5v > span svg path {
       fill: currentColor !important;
     }
 
-  ._button_f283c > span svg :not(path) {
+  .Button---button--4ZD5v > span svg :not(path) {
       stroke: currentColor !important;
     }
 
   /* Disabled */
 
-  ._button_f283c[class*='bp3-disabled'] svg,
-    ._button_f283c[class*='bp3-disabled'] svg > * {
+  .Button---button--4ZD5v[class*='bp3-disabled'] svg,
+    .Button---button--4ZD5v[class*='bp3-disabled'] svg > * {
       cursor: not-allowed;
     }
 
   /* Secondary button */
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']) {
+  .Button---button--4ZD5v[class*='bp3-button']:not([class*='bp3-intent-']) {
     background: white;
     box-shadow: none;
     color: #22272d;
   }
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']):not([class*='bp3-minimal']) {
+  .Button---button--4ZD5v[class*='bp3-button']:not([class*='bp3-intent-']):not([class*='bp3-minimal']) {
       border: 1px solid #b8bfca;
     }
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']):hover {
+  .Button---button--4ZD5v[class*='bp3-button']:not([class*='bp3-intent-']):hover {
       border-color: #25a6f7;
       color: #25a6f7;
       background-color: #f7fcff;
     }
 
-  ._button_f283c[class*='bp3-button']:not([class*='bp3-intent-']):active {
+  .Button---button--4ZD5v[class*='bp3-button']:not([class*='bp3-intent-']):active {
       border-color: #93d2f9;
       color: #93d2f9;
       background-color: #edf8ff;
     }
 
+.Heading---h--2pztZ {
+  all: unset;
+  color: blue;
+}
 
-/*# sourceMappingURL=/index.css.map */
+  h1.Heading---h--2pztZ {
+    color: red;
+  }
+
+  h2.Heading---h--2pztZ {
+    color: blue;
+  }
+
+  h3.Heading---h--2pztZ {
+    color: orange;
+  }
+
+  h4.Heading---h--2pztZ {
+    color: gray;
+  }
+
+  h5.Heading---h--2pztZ {
+    color: green;
+  }
+
+  h6.Heading---h--2pztZ {
+    color: yellow;
+  }
+
+.Text---t--3w3zm {
+  all: unset;
+}
+
+  p.Text---t--3w3zm {
+    color: blueviolet;
+    display: block;
+  }
+
+  .Text---t--3w3zm span {
+    color: yellowgreen;
+  }
+
+
+/*# sourceMappingURL=index.css.map*/

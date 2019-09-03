@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, AnchorButton, IButtonProps, Classes } from '@blueprintjs/core'
 import css from './Button.css'
 
-import Icons from '../../icons'
+// import Icons from '../../icons'
 //
 // This typing is elegant, except VSCode does not do auto-complete for it.
 //
@@ -20,8 +20,6 @@ import Icons from '../../icons'
 //   prop is passed (with optional `target` prop), <AnchorButton/> is used.
 //
 
-// console.log('Button:', { css, Icons })
-
 interface Props extends Omit<IButtonProps, 'active'> {
   id: string
   href?: string
@@ -30,10 +28,10 @@ interface Props extends Omit<IButtonProps, 'active'> {
 
 export default function(props: Props) {
   let { icon, href } = props
-  const Component = (href ? AnchorButton : Button) as typeof React.Component
+  const Component = (href ? AnchorButton : Button) as React.ElementType
 
   if (typeof icon === 'function') {
-    const Icon = icon as typeof React.Component
+    const Icon = icon as React.ElementType
     icon = (
       <span className={Classes.ICON}>
         <Icon />

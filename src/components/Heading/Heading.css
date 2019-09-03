@@ -1,0 +1,28 @@
+.h {
+  all: unset;
+  color: blue;
+
+  h1& {
+    color: red;
+  }
+
+  h2& {
+    color: blue;
+  }
+
+  h3& {
+    color: orange;
+  }
+
+  h4& {
+    color: gray;
+  }
+
+  h5& {
+    color: green;
+  }
+
+  h6& {
+    color: yellow;
+  }
+}

@@ -2,24 +2,19 @@
   "eslint.enable": true,
   "search.exclude": {
     "**/node_modules": true,
-    // "dist/": true,
+    "npm-debug.log*": true,
     "static/": true,
-    ".cache": true,
-    ".docz": true,
-    // "*/dist": true,
     "yarn-error.*": true
   },
   "files.exclude": {
     "**/node_modules": true,
     "npm-debug.log*": true,
-    // "dist/": true,
     "static/": true,
-    ".cache": true,
-    ".docz": true,
-    "*/.cache": true,
-    "*/.docz": true,
-    // "*/dist": true,
-    "yarn-error.*": true
+    "yarn-error.*": true,
+    ".vscode": true,
+    ".gitignore": true,
+    ".prettierrc.yml": true,
+    "yarn.lock": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
