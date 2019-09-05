@@ -4,14 +4,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 
-console.log('isDev', isDev)
-
 module.exports = {
+  stats: 'minimal',
+
   entry: {
     index: './src/index.ts'
   },
 
-  devtool: isDev ? 'cheap-eval-source-map' : 'source-map',
+  // devtool: isDev ? 'cheap-eval-source-map' : 'source-map',
+  // 'cheap-eval-source-map' does not generate good mapping to original
+  // TypeScript source at all. Use 'source-map' all the way instead
+  devtool: 'source-map',
 
   module: {
     rules: [

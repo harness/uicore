@@ -1,4 +1,4 @@
-import scope from '../../dist/index'
+import scope from '../static/index'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import theme from './theme'
 
