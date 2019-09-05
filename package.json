@@ -7,10 +7,13 @@
   "style": "dist/index.css",
   "types": "types/index.d.ts",
   "scripts": {
-    "start": "run-p -c watch docs:watch",
+    "start": "run-p -c ui:watch docs:watch",
     "build": "NODE_ENV=production webpack --mode=production",
-    "watch": "NODE_ENV=development webpack --mode=development --watch",
-    "docs:watch": "cd docs; yarn watch"
+    "clean": "rm -rf docs/static/index.* dist/*",
+    "ui:watch": "NODE_ENV=development webpack --mode=development --watch",
+    "docs:watch": "cd docs; yarn watch",
+    "docs:build": "cd docs; yarn build",
+    "docs:deploy": "cd docs; echo TBD"
   },
   "private": true,
   "peerDependencies": {

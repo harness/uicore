@@ -60,7 +60,7 @@ module.exports = {
 
   output: {
     filename: '[name].js',
-    path: isDev ? path.resolve(__dirname, 'dist') : path.resolve(__dirname, 'docs', 'static'),
+    path: isDev ? path.resolve(__dirname, 'docs', 'static') : path.resolve(__dirname, 'dist'),
     libraryTarget: 'commonjs'
   },
 
