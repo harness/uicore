@@ -1,3 +1,6 @@
+docs/static/index.*
+dist/*
+
 .DS_Store
 .cache
 .docz
