@@ -60,7 +60,7 @@ module.exports = {
 
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: isDev ? path.resolve(__dirname, 'dist') : path.resolve(__dirname, 'docs', 'static'),
     libraryTarget: 'commonjs'
   },
 
@@ -70,6 +70,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[name]-[id].css'
-    })
-  ].concat(isDev ? new ForkTsCheckerWebpackPlugin() : [])
+    }),
+    new ForkTsCheckerWebpackPlugin()
+  ]
 }

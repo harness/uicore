@@ -7,10 +7,10 @@
   "style": "dist/index.css",
   "types": "types/index.d.ts",
   "scripts": {
-    "watch": "webpack --mode=development --watch",
-    "build": "webpack --mode=production",
-    "docs:watch": "cd docs; yarn dev",
-    "docs:dev": "run-p -c watch docs:watch"
+    "start": "run-p -c watch docs:watch",
+    "build": "NODE_ENV=production webpack --mode=production",
+    "watch": "NODE_ENV=development webpack --mode=development --watch",
+    "docs:watch": "cd docs; yarn watch"
   },
   "private": true,
   "peerDependencies": {

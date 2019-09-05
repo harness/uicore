@@ -1,5 +1,4 @@
 import '@blueprintjs/core/lib/css/blueprint.css'
-import '../../dist/index.css'
 import '../shared/style.css'
 
 import React from 'react'
@@ -16,6 +15,10 @@ class DocsApp extends App {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
+          <link rel="stylesheet" href="/static/index.css" />
+          <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.1.2/dist/base.min.css" />
+          <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.1.2/dist/components.min.css" />
+          <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.1.2/dist/utilities.min.css" />
           <title>Some title</title>
         </Head>
 

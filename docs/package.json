@@ -4,7 +4,7 @@
   "description": "A NextJS sample setup with TypeScript, MDX and React-Live",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "watch": "next",
     "build": "next build",
     "start": "next start"
   },
