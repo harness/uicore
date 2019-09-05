@@ -4,14 +4,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 
-console.log('isDev', isDev)
-
 module.exports = {
+  stats: 'minimal',
+
   entry: {
     index: './src/index.ts'
   },
 
-  devtool: isDev ? 'cheap-eval-source-map' : 'source-map',
+  // devtool: isDev ? 'cheap-eval-source-map' : 'source-map',
+  // 'cheap-eval-source-map' does not generate good mapping to original
+  // TypeScript source at all. Use 'source-map' all the way instead
+  devtool: 'source-map',
 
   module: {
     rules: [
@@ -60,7 +63,7 @@ module.exports = {
 
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: isDev ? path.resolve(__dirname, 'docs', 'static') : path.resolve(__dirname, 'dist'),
     libraryTarget: 'commonjs'
   },
 
@@ -70,6 +73,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[name]-[id].css'
-    })
-  ].concat(isDev ? new ForkTsCheckerWebpackPlugin() : [])
+    }),
+    new ForkTsCheckerWebpackPlugin()
+  ]
 }
