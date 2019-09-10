@@ -3,16 +3,7 @@
   "search.exclude": {
     "**/node_modules": true,
     "npm-debug.log*": true,
-    "static/": true,
-    "dist/": true,
-    "**/.next/": true,
-    "yarn-error.*": true,
-    "**/.mdx-data": true
-  },
-  "files.exclude": {
-    "**/node_modules": true,
-    "npm-debug.log*": true,
-    "static/": true,
+    "**/static": true,
     "dist/": true,
     "yarn-error.*": true,
     ".vscode": true,
@@ -24,7 +15,32 @@
     "docs/package.json": true,
     "docs/tsconfig.json": true,
     "**/yarn.lock": true,
-    "**/.mdx-data": true
+    "**/.mdx-data": true,
+    "**/_app.js": true,
+    "webpack.config.js": true,
+    "tsconfig.json": true,
+    "types": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "npm-debug.log*": true,
+    "**/static": true,
+    "dist/": true,
+    "yarn-error.*": true,
+    ".vscode": true,
+    ".gitignore": true,
+    ".prettierrc.yml": true,
+    "**/.next/": true,
+    "**/next-env.d.ts": true,
+    "**/next.config.js": true,
+    "docs/package.json": true,
+    "docs/tsconfig.json": true,
+    "**/yarn.lock": true,
+    "**/.mdx-data": true,
+    "**/_app.js": true,
+    "webpack.config.js": true,
+    "tsconfig.json": true,
+    "types": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"

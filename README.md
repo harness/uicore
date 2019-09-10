@@ -17,3 +17,4 @@ import 'ui-platform/dist/index.css'
 ## TODO
 
 - Minimizing CSS in release build (`yarn build`)
+- Script to generate icons/index.ts from list of icons in icons folder instead of manually.
