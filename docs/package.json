@@ -1,7 +1,7 @@
 {
   "name": "nextjs-test",
   "version": "1.0.0",
-  "description": "A NextJS sample setup with TypeScript, MDX and React-Live",
+  "description": "UI Platform Docs with TypeScript, MDX and React-Live",
   "main": "index.js",
   "scripts": {
     "watch": "next",
@@ -14,8 +14,7 @@
     "@blueprintjs/core": "^3.18.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-live": "^2.2.0",
-    "tailwindcss": "^1.1.2"
+    "react-live": "^2.2.0"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.4.0",

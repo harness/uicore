@@ -13,3 +13,7 @@ import 'ui-platform/dist/index.css'
 @import '@blueprintjs/core/lib/css/blueprint.css';
 @import 'ui-platform';
 ```
+
+## TODO
+
+- Minimizing CSS in release build (`yarn build`)

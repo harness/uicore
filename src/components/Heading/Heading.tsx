@@ -8,6 +8,8 @@ export interface Props {
   /** Heading level ('1' -> h1, '2' -> h2, ..., '6' -> h6). Default is '1' */
   level?: '1' | '2' | '3' | '4' | '5' | '6'
 
+  intent: 'success' | 'error'
+
   children: React.ReactNode
 }
 
