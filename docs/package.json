@@ -12,6 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "@blueprintjs/core": "^3.18.0",
+    "@mdx-js/react": "^1.4.5",
+    "prism-react-renderer": "^0.1.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-live": "^2.2.0"

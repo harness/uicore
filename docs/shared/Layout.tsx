@@ -1,6 +1,8 @@
 import React from 'react'
-import { Icons, Link } from '../static'
+import { Icons } from '../static'
 import Nav from './Nav'
+import { MDXProvider } from '@mdx-js/react'
+import CodeBlock from './CodeBlock'
 
 export default class Layout extends React.Component {
   render() {
@@ -9,7 +11,7 @@ export default class Layout extends React.Component {
         <header>
           <h1>
             <a href="/">
-              <Icons.HarnessLogo2 height="32" />
+              <Icons.HarnessLogo2 height="24" />
               <span>&nbsp;// UI Docs</span>
             </a>
           </h1>
@@ -19,7 +21,9 @@ export default class Layout extends React.Component {
           <Nav />
         </nav>
 
-        <main>{this.props.children}</main>
+        <MDXProvider components={{ code: CodeBlock }}>
+          <main>{this.props.children}</main>
+        </MDXProvider>
 
         <style jsx>{`
           .page-container {
@@ -47,6 +51,7 @@ export default class Layout extends React.Component {
 
           header h1 a {
             display: flex;
+            align-items: center;
           }
 
           header h1 a:hover {
@@ -55,7 +60,8 @@ export default class Layout extends React.Component {
 
           header h1 a span {
             color: var(--grey-400);
-            font-weight: 300;
+            font-weight: 400;
+            font-size: 22px;
           }
 
           nav {
