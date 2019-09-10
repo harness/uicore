@@ -1,56 +1,37 @@
 import { Link } from '../static'
+import NavDataset from './NavDataset'
+
+function NavSection({ name, items }) {
+  return (
+    <li>
+      {name}
+      <ul className="entry bp3-list bp3-list-unstyled">
+        {items.map(({ label, url }) => (
+          <li key={url}>
+            <Link href={url}>{label}</Link>
+          </li>
+        ))}
+      </ul>
+      <style jsx>{`
+        .entry {
+          margin-bottom: 30px;
+          margin-top: 10px;
+          color: var(--grey-500);
+        }
+
+        .entry > li {
+          text-transform: none;
+        }
+      `}</style>
+    </li>
+  )
+}
 
 export default () => (
-  <>
-    <ul className="section bp3-list bp3-list-unstyled">
-      <li>
-        GETTING STARTED
-        <ul className="entry bp3-list bp3-list-unstyled">
-          <li>
-            <Link href="/installation">Installation</Link>
-          </li>
-          <li>
-            <Link href="/release-notes">Release Notes</Link>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        Core Concepts
-        <ul className="entry bp3-list bp3-list-unstyled">
-          <li>No or Less Styling</li>
-          <li>
-            <Link href="/colors">Colors</Link>
-          </li>
-          <li>Intents</li>
-          <li>Spacing</li>
-          <li>Component Layouts</li>
-          <li>Blueprint Based Styling</li>
-        </ul>
-      </li>
-
-      <li>
-        Layout
-        <ul className="entry bp3-list bp3-list-unstyled">
-          <li>Container</li>
-          <li>Flex</li>
-        </ul>
-      </li>
-
-      <li>
-        Components
-        <ul className="entry bp3-list bp3-list-unstyled">
-          <li>
-            <Link href="/heading">Heading</Link>
-          </li>
-          <li>
-            <Link href="/button">Button</Link>
-          </li>
-          <li>Button Group</li>
-          <li>Icons</li>
-        </ul>
-      </li>
-    </ul>
+  <ul className="section bp3-list bp3-list-unstyled">
+    {NavDataset.map(({ name, items }) => (
+      <NavSection key={name} name={name} items={items} />
+    ))}
     <style jsx>{`
       .section {
         margin: 30px 15px 15px 30px;
@@ -61,16 +42,6 @@ export default () => (
         font-weight: 500;
         color: var(--grey-450);
       }
-
-      .entry {
-        margin-bottom: 30px;
-        margin-top: 10px;
-        color: var(--grey-500);
-      }
-
-      .entry > li {
-        text-transform: none;
-      }
     `}</style>
-  </>
+  </ul>
 )
