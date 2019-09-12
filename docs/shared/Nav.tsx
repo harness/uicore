@@ -2,17 +2,17 @@ import { Link } from '../static'
 import NavDataset from './NavDataset'
 import { useRouter } from 'next/router'
 
-console.log({ useRouter })
-
 function NavSection({ name, items }) {
-  const active = url => ('window.location.pathname' === url ? { active: true } : {})
+  const { route } = useRouter()
+  const active = (url: string) => (route === url ? { active: 'true' } : {})
+
   return (
     <li>
       {name}
-      <ul className="bp3-list bp3-list-unstyled">
+      <ul className="bp3-list-unstyled">
         {items.map(({ label, url }) => (
           <li key={url}>
-            <Link href={url} {...active(url)}>
+            <Link {...active(url)} href={url}>
               {label}
             </Link>
           </li>
@@ -34,13 +34,33 @@ function NavSection({ name, items }) {
         li ul > li {
           text-transform: none;
         }
+
+        li ul > li :global(a) {
+          display: flex;
+          padding: 4px 8px;
+          border-radius: 5px;
+          color: var(--grey-500);
+        }
+
+        li ul > li :global(a:hover) {
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        li ul > li :global(a[active='true']) {
+          background: var(--green-200);
+          font-weight: 600;
+        }
+
+        li ul > li :global(a:not([active='true']):hover) {
+        }
       `}</style>
     </li>
   )
 }
 
 export default () => (
-  <ul className="section bp3-list bp3-list-unstyled">
+  <ul className="bp3-list-unstyled">
     {NavDataset.map(({ name, items }) => (
       <NavSection key={name} name={name} items={items} />
     ))}
