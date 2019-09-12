@@ -58,6 +58,10 @@ export default [
         url: '/icons'
       },
       {
+        label: 'Link',
+        url: '/link'
+      },
+      {
         label: 'Heading',
         url: '/heading'
       },

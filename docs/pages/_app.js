@@ -22,19 +22,24 @@ export default class UIDocsApp extends App {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
-          <title>UI Platform - {title || 'Documentation'}</title>
+          <title>Harness UI Docs - {title || 'Documentation'}</title>
+          <link
+            href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap"
+            rel="stylesheet"
+          />
           <link rel="stylesheet" href="/static/index.css" />
-          <style jsx global>{`
-            html,
-            body,
-            body > div {
-              width: 100%;
-              height: 100%;
-              margin: 0;
-              padding: 0;
-            }
-          `}</style>
         </Head>
+
+        <style jsx global>{`
+          html,
+          body,
+          body > div {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        `}</style>
 
         <Layout>
           <Component {...pageProps} />

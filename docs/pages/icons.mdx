@@ -1,0 +1,53 @@
+# Icons
+
+All icons in `ui-platform` are in svg. You can use the icons as a separate React component. [Button](/button) supports them as well.
+
+To use an icon, first import `Icons` from `ui-platform`.
+
+```js
+import { Icons } from 'ui-platform'
+```
+
+## Use icon separately
+
+```js live=true
+<Icons.AWS height="36px" />
+```
+
+## List of icons
+
+```js render=true
+<>
+  <div
+    style={{
+      padding: '20px',
+      display: 'grid',
+      background: 'var(--grey-100)',
+      gridGap: '20px',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))'
+    }}>
+    {Object.entries(Icons).map(([name, Icon]) => {
+      return name.includes('HarnessLogo') ? null : <Icon key={name} height="36px" />
+    })}
+  </div>
+</>
+```
+
+## Special icons
+
+```js render=true
+<>
+  <div
+    style={{
+      padding: '20px',
+      display: 'grid',
+      background: 'var(--grey-100)',
+      gridGap: '20px',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))'
+    }}>
+    {Object.entries(Icons).map(([name, Icon]) => {
+      return name.includes('HarnessLogo') ? <Icon key={name} height="36px" /> : null
+    })}
+  </div>
+</>
+```

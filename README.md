@@ -14,6 +14,8 @@ import 'ui-platform/dist/index.css'
 @import 'ui-platform';
 ```
 
+App must import [Nunito](https://fonts.google.com/specimen/Nunito?selection.family=Nunito) font by itself.
+
 ## TODO
 
 - Minimizing CSS in release build (`yarn build`)

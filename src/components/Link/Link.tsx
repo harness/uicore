@@ -1,23 +1,22 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import css from './Link.css'
+import Utils from '../../core/Utils'
 
-interface Props {
-  /** Each link must have a unique id to support E2E testing */
-  id: string
+export default function(props: React.HTMLProps<HTMLLinkElement>) {
+  let extra: { rel?: string; onClick?: (e: MouseEvent) => void } = {}
 
-  /** Link url */
-  href: string
+  // Make sure all _blank target has proper rel
+  // @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
+  if (/_blank/i.test(props.target || '')) {
+    extra.rel = 'noreferrer noopener'
+  }
 
-  /** Link target */
-  target?: string
+  if (props.disabled) {
+    extra.onClick = Utils.stopEvent
+  }
 
-  /** Link inner content */
-  children: React.ReactNode
-}
-
-export default function(props: Props) {
   return (
-    <a {...props} className={css.link}>
+    <a {...props} {...extra} className={css.link}>
       {props.children}
     </a>
   )

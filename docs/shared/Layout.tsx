@@ -1,8 +1,15 @@
 import React from 'react'
-import { Icons } from '../static'
+import { Icons, Link } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from './CodeBlock'
+
+const mdxComponents = {
+  code: CodeBlock,
+  a: props => <Link {...props} />,
+  h1: props => <h1 style={{ color: 'tomato' }} {...props} />,
+  h2: props => <h1 style={{ color: 'orange' }} {...props} />
+}
 
 export default class Layout extends React.Component {
   render() {
@@ -21,7 +28,7 @@ export default class Layout extends React.Component {
           <Nav />
         </nav>
 
-        <MDXProvider components={{ code: CodeBlock }}>
+        <MDXProvider components={mdxComponents}>
           <main>{this.props.children}</main>
         </MDXProvider>
 
