@@ -1,4 +1,5 @@
 docs/static/index.*
+docs/static/**/*.d.ts
 dist/*
 
 .DS_Store

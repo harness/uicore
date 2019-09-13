@@ -4,7 +4,7 @@ import App from 'next/app'
 import Head from 'next/head'
 import Layout from '../shared/Layout'
 
-export default class UIDocsApp extends App {
+export default class extends App {
   render() {
     const {
       Component,

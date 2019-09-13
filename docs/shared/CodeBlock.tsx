@@ -2,12 +2,12 @@ import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
-import scope from '../static/index'
+import * as scope from '../static/index'
 import CodeTheme from './CodeTheme'
 import { mdx } from '@mdx-js/react'
 
 export default ({ children, className, live, render }) => {
-  const language = className.replace(/language-/, '')
+  const language = (className || 'js').replace(/language-/, '')
   const liveProviderProps = {
     theme: CodeTheme,
     code: children.trim(),

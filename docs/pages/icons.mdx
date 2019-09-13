@@ -1,3 +1,6 @@
+// import { CopyToClipboard } from 'react-copy-to-clipboard'
+// import { Tooltip } from '@blueprintjs/core'
+
 # Icons
 
 All icons in `ui-platform` are in svg. You can use the icons as a separate React component. [Button](/button) supports them as well.
@@ -8,46 +11,70 @@ To use an icon, first import `Icons` from `ui-platform`.
 import { Icons } from 'ui-platform'
 ```
 
-## Use icon separately
+Then render the icons as a React component. For example:
 
 ```js live=true
-<Icons.AWS height="36px" />
+<Icons.AWS height="64px" />
 ```
 
-## List of icons
+## Props
+
+`Icons` supports standard [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes). To keep it simple, mostly you should use only `height`, or `width`.
+
+## List of UI Platform icons
 
 ```js render=true
-<>
-  <div
-    style={{
-      padding: '20px',
-      display: 'grid',
-      background: 'var(--grey-100)',
-      gridGap: '20px',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))'
-    }}>
-    {Object.entries(Icons).map(([name, Icon]) => {
-      return name.includes('HarnessLogo') ? null : <Icon key={name} height="36px" />
-    })}
-  </div>
-</>
+<div
+  style={{
+    padding: '20px',
+    display: 'grid',
+    background: 'var(--grey-100)',
+    gridGap: '20px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
+    borderRadius: '5px'
+  }}>
+  {Object.entries(Icons).map(([name, Icon]) => {
+    return name.includes('HarnessLogo') ? null : (
+      <Tooltip content="Click to copy">
+        <span
+          style={{
+            height: '48px',
+            width: '48px'
+          }}>
+          <Icon key={name} height="36px" />
+        </span>
+      </Tooltip>
+    )
+  })}
+</div>
 ```
 
-## Special icons
+### Harness Logos
+
+There are currently two Harness logo icons.
 
 ```js render=true
-<>
-  <div
-    style={{
-      padding: '20px',
-      display: 'grid',
-      background: 'var(--grey-100)',
-      gridGap: '20px',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))'
-    }}>
-    {Object.entries(Icons).map(([name, Icon]) => {
-      return name.includes('HarnessLogo') ? <Icon key={name} height="36px" /> : null
+<div
+  style={{
+    padding: '20px',
+    display: 'grid',
+    background: 'var(--grey-100)',
+    gridGap: '20px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    borderRadius: '5px'
+  }}>
+  {Object.entries(Icons)
+    .filter(([name]) => name.includes('HarnessLogo'))
+    .map(([name, Icon]) => {
+      return <Icon key={name} height="48px" />
     })}
-  </div>
-</>
+</div>
+```
+
+## How to add an icon?
+
+To add an icon into UI Platform, copy the icon into ui-platform's `./src/icons` folder then run
+
+```
+yarn ui:icons
 ```

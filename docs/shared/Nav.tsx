@@ -51,9 +51,6 @@ function NavSection({ name, items }) {
           background: var(--green-200);
           font-weight: 600;
         }
-
-        li ul > li :global(a:not([active='true']):hover) {
-        }
       `}</style>
     </li>
   )

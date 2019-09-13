@@ -6,9 +6,13 @@ import CodeBlock from './CodeBlock'
 
 const mdxComponents = {
   code: CodeBlock,
+
+  // TODO Map to ui-platform components
   a: props => <Link {...props} />,
   h1: props => <h1 style={{ color: 'tomato' }} {...props} />,
-  h2: props => <h1 style={{ color: 'orange' }} {...props} />
+  h2: props => <h2 style={{ color: 'orange' }} {...props} />,
+  h3: props => <h2 style={{ color: 'blue' }} {...props} />,
+  p: props => <p style={{ color: 'var(--gray-500)' }} {...props} />
 }
 
 export default class Layout extends React.Component {

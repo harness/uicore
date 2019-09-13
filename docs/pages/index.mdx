@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 # Overview
 
 ```js
@@ -14,3 +16,10 @@ export default () => <Example />
 ```js live=true
 <div style={{ backgroundColor: 'tomato', padding: '20px' }} />
 ```
+
+export const HelloWorld = () => {
+  const [count, setCount] = useState(0)
+  return <h1 onClick={() => setCount(count + 1)}>Hello World: {count}</h1>
+}
+
+<HelloWorld />
