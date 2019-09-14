@@ -1,11 +1,12 @@
-import { MouseEvent } from 'react'
+import { MouseEvent, KeyboardEvent } from 'react'
+import copy from 'clipboard-copy'
 
-function stopEvent(event: MouseEvent): void {
+function stopEvent(event: MouseEvent | KeyboardEvent): void {
   event.stopPropagation()
   event.preventDefault()
-  console.log('Doing nothign')
 }
 
 export default {
-  stopEvent
+  stopEvent,
+  copy
 }

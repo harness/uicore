@@ -37,7 +37,7 @@ Then render the icons as a React component. For example:
     return name.includes('HarnessLogo') ? null : (
       <Tooltip content={name} usePortal={false}>
         <button
-          onClick={() => copy(`<Icons.${name} height="64px" />`)}
+          onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
           style={{
             all: 'unset',
             cursor: 'pointer'
@@ -70,7 +70,7 @@ There are currently two Harness logo icons.
       return (
         <Tooltip content={name} usePortal={false}>
           <button
-            onClick={() => copy(`<Icons.${name} height="64px" />`)}
+            onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
             style={{
               all: 'unset',
               cursor: 'pointer'
