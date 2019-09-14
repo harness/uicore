@@ -8,9 +8,9 @@
   p& {
     display: block;
 
-    & + p.text {
-      margin-top: 20px;
-    }
+    /* & + p.text {
+      margin-top: 15px;
+    } */
   }
 
   span& {

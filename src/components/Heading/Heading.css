@@ -1,28 +1,37 @@
 .h {
   all: unset;
-  color: blue;
+  color: var(--black);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  display: block;
 
   h1& {
-    color: red;
+    --heading-font-size: 26px;
+    --heading-line-height: 34px;
   }
 
   h2& {
-    color: blue;
+    --heading-font-size: 24px;
+    --heading-line-height: 32px;
   }
 
   h3& {
-    color: orange;
+    --heading-font-size: 22px;
+    --heading-line-height: 30px;
   }
 
   h4& {
-    color: gray;
+    --heading-font-size: 20px;
+    --heading-line-height: 28px;
   }
 
   h5& {
-    color: green;
+    --heading-font-size: 18px;
+    --heading-line-height: 26px;
   }
 
   h6& {
-    color: yellow;
+    --heading-font-size: 16px;
+    --heading-line-height: 24px;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icons, Link, Text } from '../static'
+import { Icons, Link, Text, Heading } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from './CodeBlock'
@@ -7,11 +7,13 @@ import CodeBlock from './CodeBlock'
 const mdxComponents = {
   code: CodeBlock,
 
-  // TODO Map to ui-platform components
   a: props => <Link {...props} />,
-  h1: props => <h1 style={{ color: 'tomato' }} {...props} />,
-  h2: props => <h2 style={{ color: 'orange' }} {...props} />,
-  h3: props => <h2 style={{ color: 'blue' }} {...props} />,
+  h1: props => <Heading level="1" {...props} />,
+  h2: props => <Heading level="2" {...props} />,
+  h3: props => <Heading level="3" {...props} />,
+  h4: props => <Heading level="4" {...props} />,
+  h5: props => <Heading level="5" {...props} />,
+  h6: props => <Heading level="6" {...props} />,
   p: props => <Text {...props} inline={false} />,
   span: props => <Text {...props} />
 }
