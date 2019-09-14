@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icons, Link } from '../static'
+import { Icons, Link, Text } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from './CodeBlock'
@@ -12,7 +12,8 @@ const mdxComponents = {
   h1: props => <h1 style={{ color: 'tomato' }} {...props} />,
   h2: props => <h2 style={{ color: 'orange' }} {...props} />,
   h3: props => <h2 style={{ color: 'blue' }} {...props} />,
-  p: props => <p style={{ color: 'var(--gray-500)' }} {...props} />
+  p: props => <Text {...props} inline={false} />,
+  span: props => <Text {...props} />
 }
 
 export default class Layout extends React.Component {

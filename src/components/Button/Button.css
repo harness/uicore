@@ -1,6 +1,8 @@
 .button {
-  height: 64px;
-  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  height: 32px;
+  border-radius: 5px;
   display: inline-flex;
 
   &,

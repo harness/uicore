@@ -1,6 +1,8 @@
 .link {
   color: var(--blue-500);
   display: inline-flex;
+  font-size: 16px;
+  font-weight: 400;
 
   &:hover {
     color: var(--blue-500);

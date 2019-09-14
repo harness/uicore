@@ -8,9 +8,5 @@ interface Props {
 
 export default function Text({ inline = true, children }: Props) {
   const Tag = `${inline ? 'span' : 'p'}` as React.ElementType
-  return <Tag className={css.t}>{children}</Tag>
-}
-
-export function test() {
-  return <Text>Hello World</Text>
+  return <Tag className={css.text}>{children}</Tag>
 }
