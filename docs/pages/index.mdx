@@ -1,4 +1,10 @@
 import { useState } from 'react'
+import { copy } from '../static'
+import { Button, Popover, Position, Tooltip } from '@blueprintjs/core'
+
+<Popover content={<h1>Popover!</h1>} position={Position.RIGHT} usePortal={false}>
+  <Button onClick={() => copy('Hey you!!!!')}>Hover and click me</Button>
+</Popover>
 
 # Overview
 

@@ -21,6 +21,7 @@
   "peerDependencies": {
     "@blueprintjs/core": "^3.18.0",
     "react": "^16.9.0",
+    "clipboard-copy": "^3.1.0",
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
