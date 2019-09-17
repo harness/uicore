@@ -1,17 +1,15 @@
 import React from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 import * as scope from '../static/index'
 import CodeTheme from './CodeTheme'
 import { mdx } from '@mdx-js/react'
 
-export default ({ children, className, live, render }) => {
-  const language = (className || 'js').replace(/language-/, '')
+export default ({ children, live, render }) => {
   const liveProviderProps = {
     theme: CodeTheme,
     code: children.trim(),
-    transformCode: (code: string) => '/** @jsx mdx */' + code,
+    transformCode: (code: string) => '/** @jsx mdx */\n<>' + code + '\n</>',
     scope: { ...scope, mdx }
   }
 
@@ -27,7 +25,7 @@ export default ({ children, className, live, render }) => {
           style={{
             padding: '25px',
             border: '1px solid var(--grey-300)',
-            display: 'flex',
+            display: 'block',
             alignItems: 'center',
             justifyContent: 'center',
             borderRadius: '0 0 5px 5px'
@@ -41,24 +39,28 @@ export default ({ children, className, live, render }) => {
   if (render) {
     return (
       <LiveProvider {...liveProviderProps}>
-        <LivePreview />
+        <LivePreview
+          style={{
+            border: '1px solid var(--grey-300)',
+            display: 'block',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '5px'
+          }}
+        />
       </LiveProvider>
     )
   }
 
   return (
-    <Highlight {...defaultProps} code={children.trim()} language={language}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: '20px', borderRadius: '5px' }}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
+    <LiveProvider {...liveProviderProps}>
+      <LiveEditor
+        style={{
+          borderRadius: '5px',
+          margin: 0
+        }}
+        disabled={true}
+      />
+    </LiveProvider>
   )
 }

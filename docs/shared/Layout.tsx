@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icons, Link, Text, Heading } from '../static'
+import { Icons, Link, Text, Heading, Layout } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from './CodeBlock'
@@ -18,7 +18,7 @@ const mdxComponents = {
   span: props => <Text {...props} />
 }
 
-export default class Layout extends React.Component {
+export default class extends React.Component {
   render() {
     return (
       <div className="page-container">
@@ -26,7 +26,7 @@ export default class Layout extends React.Component {
           <h1>
             <a href="/">
               <Icons.HarnessLogo2 height="24" />
-              <span>&nbsp;// UI Docs</span>
+              <span>&nbsp;// UIKit</span>
             </a>
           </h1>
         </header>
@@ -36,7 +36,9 @@ export default class Layout extends React.Component {
         </nav>
 
         <MDXProvider components={mdxComponents}>
-          <main>{this.props.children}</main>
+          <main>
+            <Layout.Vertical spacing={15}>{this.props.children}</Layout.Vertical>
+          </main>
         </MDXProvider>
 
         <style jsx>{`
@@ -54,6 +56,7 @@ export default class Layout extends React.Component {
             border-bottom: 1px solid var(--secondary-200);
             display: flex;
             padding-left: 10px;
+            z-index: 1;
           }
 
           header h1 {
@@ -89,7 +92,20 @@ export default class Layout extends React.Component {
 
           main {
             margin-left: var(--nav-width);
-            padding: 20px;
+            padding: 20px 20px 100px 20px;
+          }
+
+          main :global(pre) {
+            margin-top: 0;
+          }
+
+          main :global(h1),
+          main :global(h2),
+          main :global(h3),
+          main :global(h4),
+          main :global(h5),
+          main :global(h6) {
+            margin: 30px 0 15px 0;
           }
         `}</style>
       </div>

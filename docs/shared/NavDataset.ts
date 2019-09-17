@@ -1,39 +1,26 @@
 export default [
   {
-    name: 'Getting Started',
+    name: 'Foundation',
     items: [
       {
-        label: 'Installation',
-        url: '/installation'
-      },
-      {
-        label: 'Release Notes',
-        url: '/release-notes'
-      }
-    ]
-  },
-  {
-    name: 'Core Concepts',
-    items: [
-      {
-        label: 'No or Less Styling',
-        url: '/no-or-less-styling'
+        label: 'Accessibility',
+        url: '/accessibility'
       },
       {
         label: 'Colors',
         url: '/colors'
       },
       {
-        label: 'Intents',
-        url: '/intents'
+        label: 'Intent',
+        url: '/intent'
       },
       {
         label: 'Spacing',
         url: '/spacing'
       },
       {
-        label: 'Component Layouts',
-        url: '/component-layouts'
+        label: 'Typography',
+        url: '/typography'
       }
     ]
   },
@@ -41,12 +28,12 @@ export default [
     name: 'Layout',
     items: [
       {
-        label: 'Container',
-        url: '/container-layout'
+        label: 'Vertical',
+        url: '/layout-vertical'
       },
       {
-        label: 'Flex',
-        url: '/container-flex-layout'
+        label: 'Horizontal',
+        url: '/layout-horizontal'
       }
     ]
   },
@@ -54,20 +41,16 @@ export default [
     name: 'Components',
     items: [
       {
-        label: 'Icons',
-        url: '/icons'
-      },
-      {
-        label: 'Link',
-        url: '/link'
+        label: 'Button',
+        url: '/button'
       },
       {
         label: 'Heading',
         url: '/heading'
       },
       {
-        label: 'Button',
-        url: '/button'
+        label: 'Icons',
+        url: '/icons'
       }
     ]
   }

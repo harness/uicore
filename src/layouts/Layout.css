@@ -1,0 +1,33 @@
+.vertical {
+  --spacing: 20px;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.vertical > * {
+  margin-bottom: var(--spacing);
+}
+
+.vertical > *:last-child {
+  margin-bottom: 0;
+}
+
+.horizontal {
+  --spacing: 20px;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.horizontal > * {
+  margin-right: var(--spacing);
+}
+
+.horizontal > *:last-child {
+  margin-right: 0;
+}

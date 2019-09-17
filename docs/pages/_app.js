@@ -22,7 +22,7 @@ export default class extends App {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
-          <title>Harness UI Docs - {title || 'Documentation'}</title>
+          <title>Harness UIKit - {title || 'Documentation'}</title>
           <link
             href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap"
             rel="stylesheet"
