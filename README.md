@@ -1,6 +1,6 @@
 ## TBD
 
-_Note_: Consumers of this lib needs to add Blueprint CSS themselves.
+_Note_: All third-parties are defined as Peer Dependencies. Consumers of this lib needs to add by themselves.
 
 ```js
 // Import in a .js(x)/.ts(x) file
