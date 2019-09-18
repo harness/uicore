@@ -1,9 +1,48 @@
-.h {
+.intent {
+  [intent='primary'] {
+    color: var(--blue-500);
+  }
+
+  [intent='success'] {
+    color: var(--green-500);
+  }
+
+  &[intent='warning'] {
+    color: var(--yellow-500);
+  }
+
+  &[intent='danger'] {
+    color: var(--red-500);
+  }
+}
+
+.main {
   all: unset;
   color: var(--black);
   font-size: var(--heading-font-size);
+  font-family: var(--font-family);
   line-height: var(--heading-line-height);
-  display: block;
+  display: flex;
+
+  &[inline] {
+    display: inline-flex;
+  }
+
+  &[intent='primary'] {
+    color: var(--blue-500);
+  }
+
+  &[intent='success'] {
+    color: var(--green-500);
+  }
+
+  &[intent='warning'] {
+    color: var(--yellow-500);
+  }
+
+  &[intent='danger'] {
+    color: var(--red-500);
+  }
 
   h1& {
     --heading-font-size: 26px;

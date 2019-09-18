@@ -1,12 +1,98 @@
+import { Tooltip, Utils } from '../static'
+
 # Colors
 
 All colors are defined as global CSS variables. That means you can use the colors anywhere in your CSS and React inline styles without having to import.
 
 As a matter of rule, no hex code should be used in any codebase. All colors must be defined in `colors.css` before they can be referred to.
 
-## Colors Table
+export const ColorRow = ({ name, value }) => (
+  <tr>
+    <td>{name}</td>
+    <td>
+      <Tooltip content={name + ' (click to copy)'} usePortal={false}>
+        <button
+          style={{
+            all: 'unset',
+            background: `var(${name})`,
+            width: '30px',
+            height: '30px',
+            borderRadius: '50%',
+            display: 'inline-block',
+            border: '1px solid #fff',
+            cursor: 'pointer'
+          }}
+          onClick={() => Utils.copy(name)}
+        />
+      </Tooltip>
+    </td>
+    <td>{value}</td>
+  </tr>
+)
 
-<table class="bp3-html-table bp3-html-table-bordered bp3-html-table-striped">
+export const names = {
+  '--black': '#000',
+  '--white': '#fff',
+  '--grey-900': '#1b2025',
+  '--grey-800': '#22272d',
+  '--grey-700': '#37414b',
+  '--grey-600': '#4d5969',
+  '--grey-500': '#627386',
+  '--grey-450': '#7c8d9f',
+  '--grey-400': '#9aa5b5',
+  '--grey-350': '#b8bfca',
+  '--grey-300': '#d5dae0',
+  '--grey-200': '#eff2f4',
+  '--grey-100': '#f8f9fa',
+  '--blue-800': '#1a57ad',
+  '--blue-700': '#1d6fc6',
+  '--blue-600': '#2188dd',
+  '--blue-500': '#25a6f7',
+  '--blue-450': '#5cbdf9',
+  '--blue-400': '#93d2f9',
+  '--blue-350': '#bfe5fc',
+  '--blue-300': '#d4ecfc',
+  '--blue-200': '#edf8ff',
+  '--blue-100': '#f7fcff',
+  '--red-800': '#aa3d53',
+  '--red-700': '#c44657',
+  '--red-600': '#db4e58',
+  '--red-500': '#f45858',
+  '--red-450': '#f78383',
+  '--red-400': '#f9acac',
+  '--red-350': '#fccfcf',
+  '--red-300': '#fcdede',
+  '--red-200': '#fff2f2',
+  '--red-100': '#fff9f9',
+  '--yellow-800': '#b26008',
+  '--yellow-700': '#cc7b0a',
+  '--yellow-600': '#e59c0b',
+  '--yellow-500': '#fdb813',
+  '--yellow-450': '#ffce49',
+  '--yellow-400': '#ffdf87',
+  '--yellow-350': '#ffebb7',
+  '--yellow-300': '#fff2d1',
+  '--yellow-200': '#fff8ea',
+  '--yellow-100': '#fffcf4',
+  '--green-800': '#27915e',
+  '--green-700': '#2ca565',
+  '--green-600': '#32ba66',
+  '--green-500': '#38d168',
+  '--green-450': '#68dc8e',
+  '--green-400': '#9de8b5',
+  '--green-350': '#c6f2d5',
+  '--green-300': '#d7f4e0',
+  '--green-200': '#edf9f1',
+  '--green-100': '#f7fcf8',
+  '--purple-900': '#7258f4',
+  '--purple-500': '#8c78ed',
+  '--purple-100': '#f0edff',
+  '--sea-green-500': '#35d6cb',
+  '--orange-500': '#ff8f3f',
+  '--magenta-500': '#ed61b5'
+}
+
+<table className="bp3-html-table bp3-html-table-bordered bp3-html-table-striped">
   <thead>
     <tr>
       <th>CSS Variable Name</th>
@@ -15,300 +101,8 @@ As a matter of rule, no hex code should be used in any codebase. All colors must
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>--black</td>
-      <td><div style={{ background: 'var(--black)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td> #000</td>
-    </tr>
-    <tr>
-      <td>--white</td>
-      <td><div style={{ background: 'var(--white)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td> #fff</td>
-    </tr>
-    <tr>
-      <td>--grey-900</td>
-      <td><div style={{ background: 'var(--grey-900)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#1b2025</td>
-    </tr>
-    <tr>
-      <td>--grey-800</td>
-      <td><div style={{ background: 'var(--grey-800)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#22272d</td>
-    </tr>
-    <tr>
-      <td>--grey-700</td>
-      <td><div style={{ background: 'var(--grey-700)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#37414b</td>
-    </tr>
-    <tr>
-      <td>--grey-600</td>
-      <td><div style={{ background: 'var(--grey-600)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#4d5969</td>
-    </tr>
-    <tr>
-      <td>--grey-500</td>
-      <td><div style={{ background: 'var(--grey-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#627386</td>
-    </tr>
-    <tr>
-      <td>--grey-450</td>
-      <td><div style={{ background: 'var(--grey-450)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#7c8d9f</td>
-    </tr>
-    <tr>
-      <td>--grey-400</td>
-      <td><div style={{ background: 'var(--grey-400)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#9aa5b5</td>
-    </tr>
-    <tr>
-      <td>--grey-350</td>
-      <td><div style={{ background: 'var(--grey-350)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#b8bfca</td>
-    </tr>
-    <tr>
-      <td>--grey-300</td>
-      <td><div style={{ background: 'var(--grey-300)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#d5dae0</td>
-    </tr>
-    <tr>
-      <td>--grey-200</td>
-      <td><div style={{ background: 'var(--grey-200)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#eff2f4</td>
-    </tr>
-    <tr>
-      <td>--grey-100</td>
-      <td><div style={{ background: 'var(--grey-100)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#f8f9fa</td>
-    </tr>
-    <tr>
-      <td>--blue-800</td>
-      <td><div style={{ background: 'var(--blue-800)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#1a57ad</td>
-    </tr>
-    <tr>
-      <td>--blue-700</td>
-      <td><div style={{ background: 'var(--blue-700)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#1d6fc6</td>
-    </tr>
-    <tr>
-      <td>--blue-600</td>
-      <td><div style={{ background: 'var(--blue-600)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#2188dd</td>
-    </tr>
-    <tr>
-      <td>--blue-500</td>
-      <td><div style={{ background: 'var(--blue-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#25a6f7</td>
-    </tr>
-    <tr>
-      <td>--blue-450</td>
-      <td><div style={{ background: 'var(--blue-450)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#5cbdf9</td>
-    </tr>
-    <tr>
-      <td>--blue-400</td>
-      <td><div style={{ background: 'var(--blue-400)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#93d2f9</td>
-    </tr>
-    <tr>
-      <td>--blue-350</td>
-      <td><div style={{ background: 'var(--blue-350)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#bfe5fc</td>
-    </tr>
-    <tr>
-      <td>--blue-300</td>
-      <td><div style={{ background: 'var(--blue-300)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#d4ecfc</td>
-    </tr>
-    <tr>
-      <td>--blue-200</td>
-      <td><div style={{ background: 'var(--blue-200)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#edf8ff</td>
-    </tr>
-    <tr>
-      <td>--blue-100</td>
-      <td><div style={{ background: 'var(--blue-100)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#f7fcff</td>
-    </tr>
-    <tr>
-      <td>--red-800</td>
-      <td><div style={{ background: 'var(--red-800)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#aa3d53</td>
-    </tr>
-    <tr>
-      <td>--red-700</td>
-      <td><div style={{ background: 'var(--red-700)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#c44657</td>
-    </tr>
-    <tr>
-      <td>--red-600</td>
-      <td><div style={{ background: 'var(--red-600)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#db4e58</td>
-    </tr>
-    <tr>
-      <td>--red-500</td>
-      <td><div style={{ background: 'var(--red-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#f45858</td>
-    </tr>
-    <tr>
-      <td>--red-450</td>
-      <td><div style={{ background: 'var(--red-450)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#f78383</td>
-    </tr>
-    <tr>
-      <td>--red-400</td>
-      <td><div style={{ background: 'var(--red-400)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#f9acac</td>
-    </tr>
-    <tr>
-      <td>--red-350</td>
-      <td><div style={{ background: 'var(--red-350)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fccfcf</td>
-    </tr>
-    <tr>
-      <td>--red-300</td>
-      <td><div style={{ background: 'var(--red-300)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fcdede</td>
-    </tr>
-    <tr>
-      <td>--red-200</td>
-      <td><div style={{ background: 'var(--red-200)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fff2f2</td>
-    </tr>
-    <tr>
-      <td>--red-100</td>
-      <td><div style={{ background: 'var(--red-100)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fff9f9</td>
-    </tr>
-    <tr>
-      <td>--yellow-800</td>
-      <td><div style={{ background: 'var(--yellow-800)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#b26008</td>
-    </tr>
-    <tr>
-      <td>--yellow-700</td>
-      <td><div style={{ background: 'var(--yellow-700)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#cc7b0a</td>
-    </tr>
-    <tr>
-      <td>--yellow-600</td>
-      <td><div style={{ background: 'var(--yellow-600)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#e59c0b</td>
-    </tr>
-    <tr>
-      <td>--yellow-500</td>
-      <td><div style={{ background: 'var(--yellow-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fdb813</td>
-    </tr>
-    <tr>
-      <td>--yellow-450</td>
-      <td><div style={{ background: 'var(--yellow-450)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#ffce49</td>
-    </tr>
-    <tr>
-      <td>--yellow-400</td>
-      <td><div style={{ background: 'var(--yellow-400)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#ffdf87</td>
-    </tr>
-    <tr>
-      <td>--yellow-350</td>
-      <td><div style={{ background: 'var(--yellow-350)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#ffebb7</td>
-    </tr>
-    <tr>
-      <td>--yellow-300</td>
-      <td><div style={{ background: 'var(--yellow-300)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fff2d1</td>
-    </tr>
-    <tr>
-      <td>--yellow-200</td>
-      <td><div style={{ background: 'var(--yellow-200)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fff8ea</td>
-    </tr>
-    <tr>
-      <td>--yellow-100</td>
-      <td><div style={{ background: 'var(--yellow-100)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#fffcf4</td>
-    </tr>
-    <tr>
-      <td>--green-800</td>
-      <td><div style={{ background: 'var(--green-800)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#27915e</td>
-    </tr>
-    <tr>
-      <td>--green-700</td>
-      <td><div style={{ background: 'var(--green-700)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#2ca565</td>
-    </tr>
-    <tr>
-      <td>--green-600</td>
-      <td><div style={{ background: 'var(--green-600)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#32ba66</td>
-    </tr>
-    <tr>
-      <td>--green-500</td>
-      <td><div style={{ background: 'var(--green-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#38d168</td>
-    </tr>
-    <tr>
-      <td>--green-450</td>
-      <td><div style={{ background: 'var(--green-450)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#68dc8e</td>
-    </tr>
-    <tr>
-      <td>--green-400</td>
-      <td><div style={{ background: 'var(--green-400)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#9de8b5</td>
-    </tr>
-    <tr>
-      <td>--green-350</td>
-      <td><div style={{ background: 'var(--green-350)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#c6f2d5</td>
-    </tr>
-    <tr>
-      <td>--green-300</td>
-      <td><div style={{ background: 'var(--green-300)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#d7f4e0</td>
-    </tr>
-    <tr>
-      <td>--green-200</td>
-      <td><div style={{ background: 'var(--green-200)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#edf9f1</td>
-    </tr>
-    <tr>
-      <td>--green-100</td>
-      <td><div style={{ background: 'var(--green-100)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#f7fcf8</td>
-    </tr>
-    <tr>
-      <td>--purple-900</td>
-      <td><div style={{ background: 'var(--purple-900)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#7258f4</td>
-    </tr>
-    <tr>
-      <td>--purple-500</td>
-      <td><div style={{ background: 'var(--purple-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#8c78ed</td>
-    </tr>
-    <tr>
-      <td>--purple-100</td>
-      <td><div style={{ background: 'var(--purple-100)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#f0edff</td>
-    </tr>
-    <tr>
-      <td>--sea-green-500</td>
-      <td><div style={{ background: 'var(--sea-green-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#35d6cb</td>
-    </tr>
-    <tr>
-      <td>--orange-500</td>
-      <td><div style={{ background: 'var(--orange-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#ff8f3f</td>
-    </tr>
-    <tr>
-      <td>--magenta-500</td>
-      <td><div style={{ background: 'var(--magenta-500)', width: '30px', height: '30px', borderRadius: '50%', display: 'inline-block', border: '1px solid #fff' }}></div></td>
-      <td>#ed61b5</td>
-    </tr>
+    {Object.entries(names).map(([name, value]) => (
+      <ColorRow name={name} value={value} key={value} />
+    ))}
   </tbody>
 </table>
