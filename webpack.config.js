@@ -1,3 +1,7 @@
+//
+// TODO: Minimizing CSS in release build (`yarn build`)
+//
+
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
