@@ -1,21 +1,3 @@
-.intent {
-  [intent='primary'] {
-    color: var(--blue-500);
-  }
-
-  [intent='success'] {
-    color: var(--green-500);
-  }
-
-  &[intent='warning'] {
-    color: var(--yellow-500);
-  }
-
-  &[intent='danger'] {
-    color: var(--red-500);
-  }
-}
-
 .main {
   all: unset;
   color: var(--black);
