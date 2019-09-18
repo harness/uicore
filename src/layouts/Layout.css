@@ -1,5 +1,6 @@
 .vertical {
   --spacing: 20px;
+
   display: flex;
   flex-basis: auto;
   flex-direction: column;

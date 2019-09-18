@@ -1,1 +1,2 @@
-export { Intent } from '@blueprintjs/core'
+import { Intent } from '@blueprintjs/core'
+export default Intent

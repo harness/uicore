@@ -99,12 +99,12 @@ export default class extends React.Component {
             margin-top: 0;
           }
 
-          main :global(h1),
-          main :global(h2),
-          main :global(h3),
-          main :global(h4),
-          main :global(h5),
-          main :global(h6) {
+          main > :global(h1),
+          main > :global(h2),
+          main > :global(h3),
+          main > :global(h4),
+          main > :global(h5),
+          main > :global(h6) {
             margin: 30px 0 15px 0;
           }
         `}</style>
