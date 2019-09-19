@@ -1,21 +1,21 @@
 {
   "name": "ui-platform",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "UI Platform",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",
-  "types": "types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "start": "run-p -c ui:tsd ui:watch docs:watch",
     "build": "NODE_ENV=production webpack --mode=production",
-    "clean": "rm -rf docs/static/index.* dist/* ./types",
+    "clean": "rm -rf docs/static/index.* dist/*",
     "ui:tsd": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
     "ui:icons": "node ./scripts/build-icons.js > ./src/icons/index.ts",
     "ui:watch": "NODE_ENV=development webpack --mode=development --watch",
     "docs:watch": "cd docs; yarn watch",
     "docs:build": "cd docs; yarn build",
-    "docs:deploy": "cd docs; echo To be define"
+    "docs:deploy": "cd docs; echo To be defined"
   },
   "private": true,
   "peerDependencies": {

@@ -21,6 +21,10 @@ export default [
       {
         label: 'Typography',
         url: '/typography'
+      },
+      {
+        label: 'Break Points',
+        url: '/break-points'
       }
     ]
   },
@@ -47,6 +51,10 @@ export default [
       {
         label: 'Heading',
         url: '/heading'
+      },
+      {
+        label: 'Text',
+        url: '/text'
       },
       {
         label: 'Icons',

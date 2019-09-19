@@ -6,29 +6,31 @@ All colors are defined as global CSS variables. That means you can use the color
 
 As a matter of rule, no hex code should be used in any codebase. All colors must be defined in `colors.css` before they can be referred to.
 
-export const ColorRow = ({ name, value }) => (
-  <tr>
-    <td>{name}</td>
-    <td>
-      <Tooltip content={name + ' (click to copy)'} usePortal={false}>
-        <button
-          style={{
-            all: 'unset',
-            background: `var(${name})`,
-            width: '30px',
-            height: '30px',
-            borderRadius: '50%',
-            display: 'inline-block',
-            border: '1px solid #fff',
-            cursor: 'pointer'
-          }}
-          onClick={() => Utils.copy(name)}
-        />
-      </Tooltip>
-    </td>
-    <td>{value}</td>
-  </tr>
-)
+export const ColorRow = ({ name, value }) => {
+  const style = { verticalAlign: 'middle' }
+  return (
+    <tr>
+      <td style={style}>{name}</td>
+      <td>
+        <Tooltip content={'var(' + name + ')' + ' (click to copy)'} usePortal={false}>
+          <button
+            style={{
+              all: 'unset',
+              background: `var(${name})`,
+              width: '30px',
+              height: '30px',
+              display: 'inline-block',
+              border: `1px solid ${name.includes('white') ? '#000' : '#fff'}`,
+              cursor: 'pointer'
+            }}
+            onClick={() => Utils.copy('var(' + name + ')')}
+          />
+        </Tooltip>
+      </td>
+      <td style={style}>{value}</td>
+    </tr>
+  )
+}
 
 export const names = {
   '--black': '#000',

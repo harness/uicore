@@ -8,12 +8,12 @@ const mdxComponents = {
   code: CodeBlock,
 
   a: props => <Link {...props} />,
-  h1: props => <Heading level="1" {...props} />,
-  h2: props => <Heading level="2" {...props} />,
-  h3: props => <Heading level="3" {...props} />,
-  h4: props => <Heading level="4" {...props} />,
-  h5: props => <Heading level="5" {...props} />,
-  h6: props => <Heading level="6" {...props} />,
+  h1: props => <Heading bold level="1" {...props} />,
+  h2: props => <Heading bold level="2" {...props} />,
+  h3: props => <Heading bold level="3" {...props} />,
+  h4: props => <Heading bold level="4" {...props} />,
+  h5: props => <Heading bold level="5" {...props} />,
+  h6: props => <Heading bold level="6" {...props} />,
   p: props => <Text {...props} inline={false} />,
   span: props => <Text {...props} />
 }
@@ -53,7 +53,7 @@ export default class extends React.Component {
             width: 100%;
             top: 0;
             background-color: var(--white);
-            border-bottom: 1px solid var(--secondary-200);
+            border-bottom: 1px solid var(--grey-200);
             display: flex;
             padding-left: 10px;
             z-index: 1;

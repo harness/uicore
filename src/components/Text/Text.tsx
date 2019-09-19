@@ -1,12 +1,12 @@
 import React from 'react'
 import css from './Text.css'
+import { StyledProps, classFromProps } from '../../core/StyledProps'
 
-interface Props {
-  inline?: boolean
+interface Props extends StyledProps {
   children: React.ReactNode
 }
 
-export default function Text({ inline = true, children }: Props) {
-  const Tag = `${inline ? 'span' : 'p'}` as React.ElementType
-  return <Tag className={css.text}>{children}</Tag>
+export default function Text(props: Props) {
+  const Tag = `${props.inline ? 'span' : 'p'}` as React.ElementType
+  return <Tag className={classFromProps(props, css.text)}>{props.children}</Tag>
 }

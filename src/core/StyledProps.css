@@ -1,0 +1,62 @@
+/* Styles based on Intent */
+
+.primary {
+  --color: var(--blue-500);
+}
+
+.success {
+  --color: var(--green-500);
+}
+
+.warning {
+  --color: var(--yellow-500);
+}
+
+.danger {
+  --color: var(--red-500);
+}
+
+/* Styles based on font */
+
+.bold {
+  font-weight: bold;
+}
+
+.fontSize {
+  font-size: var(--font-size, var(--font-size-normal));
+
+  &.small {
+    --font-size: var(--font-size-small);
+  }
+
+  &.medium {
+    --font-size: var(--font-size-medium);
+  }
+
+  &.large {
+    --font-size: var(--font-size-large);
+  }
+
+  &.xlarge {
+    --font-size: var(--font-size-xlarge);
+  }
+
+  &.xxlarge {
+    --font-size: var(--font-size-xxlarge);
+  }
+
+  &.xxxlarge {
+    --font-size: var(--font-size-xxxlarge);
+  }
+}
+
+/* Styles based on element display prop */
+
+.inline {
+  display: inline;
+}
+
+/* Muted state */
+.muted {
+  --color: var(--grey-300);
+}
