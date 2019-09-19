@@ -1,5 +1,4 @@
-import './styles/colors.css'
-import './styles/fonts.css'
+import './styles/styles.css'
 
 export { default as Icons } from './icons'
 export { default as Button } from './components/Button/Button'

@@ -40,7 +40,7 @@ module.exports = {
               sourceMap: true,
               modules: {
                 mode: 'local',
-                localIdentName: '[name]---[local]--[hash:base64:5]',
+                localIdentName: '[local]--[hash:base64:4]',
                 context: path.resolve(__dirname, 'src')
               }
             }

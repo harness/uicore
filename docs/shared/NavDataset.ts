@@ -49,6 +49,10 @@ export default [
         url: '/heading'
       },
       {
+        label: 'Text',
+        url: '/text'
+      },
+      {
         label: 'Icons',
         url: '/icons'
       }
