@@ -21,15 +21,11 @@
   "peerDependencies": {
     "@blueprintjs/core": "^3.18.0",
     "clipboard-copy": "^3.1.0",
-    "gls": "^1.2.3",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typestyle": "^2.0.4"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "clipboard-copy": "^3.1.0",
-    "gls": "^1.2.3",
-    "typestyle": "^2.0.4",
     "@blueprintjs/core": "^3.18.0",
     "@svgr/webpack": "^4.3.2",
     "@types/node": "^12.7.2",
