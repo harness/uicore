@@ -2,4 +2,6 @@
   font-family: var(--font-family);
   font-size: var(--font-size, var(--font-size-normal));
   color: var(--color, var(--black)); /* TODO: What is the default text color? */
+  margin: 0;
+  padding: 0;
 }

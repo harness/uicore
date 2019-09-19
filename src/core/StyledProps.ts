@@ -73,5 +73,9 @@ export function classFromProps(props: StyledProps, className?: string) {
     }
   }
 
+  if (props.muted) {
+    classNames.push(styles.muted)
+  }
+
   return classNames.join(' ')
 }
