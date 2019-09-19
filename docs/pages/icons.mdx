@@ -35,14 +35,14 @@ Then render the icons as a React component. For example:
       /* Blueprint does not work in NextJS with usePortal=true */
     }
     return name.includes('HarnessLogo') ? null : (
-      <Tooltip content={name + ' (click to copy)'} usePortal={false}>
+      <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
         <button
           onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
           style={{
             all: 'unset',
             cursor: 'pointer'
           }}>
-          <Icon key={name} height="36px" />
+          <Icon height="36px" />
         </button>
       </Tooltip>
     )
@@ -68,7 +68,7 @@ There are currently two Harness logo icons.
     .filter(([name]) => name.includes('HarnessLogo'))
     .map(([name, Icon]) => {
       return (
-        <Tooltip content={name + ' (click to copy)'} usePortal={false}>
+        <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
           <button
             onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
             style={{
