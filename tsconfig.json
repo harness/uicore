@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "./dist",
-    "declarationDir": "./types",
+    "declarationDir": "./dist/types",
     "alwaysStrict": true,
     "module": "commonjs",
     "lib": ["es2017"],
