@@ -82,7 +82,7 @@ export default [
       },
       {
         label: 'Collapse',
-        url: '/Breadcrumbs'
+        url: '/Collapse'
       },
       {
         label: 'Divider',
