@@ -1,7 +1,5 @@
 import css from './StyledProps.css'
-
-import Intent from './Intent'
-import Spacing from './Spacing'
+import { Intent, Spacing } from './'
 
 export interface StyledProps {
   /** Component intent */
@@ -31,16 +29,16 @@ export function classFromProps(props: StyledProps, className?: string) {
   }
 
   switch (props.intent) {
-    case 'primary':
+    case Intent.PRIMARY:
       classNames.push(css.primary)
       break
-    case 'success':
+    case Intent.SUCCESS:
       classNames.push(css.success)
       break
-    case 'warning':
+    case Intent.WARNING:
       classNames.push(css.warning)
       break
-    case 'danger':
+    case Intent.DANGER:
       classNames.push(css.danger)
       break
   }
@@ -57,28 +55,28 @@ export function classFromProps(props: StyledProps, className?: string) {
     classNames.push(css.fontSize)
 
     switch (props.fontSize) {
-      case 'xsmall':
+      case Spacing.XSMALL:
         classNames.push(css.xsmall)
         break
-      case 'small':
+      case Spacing.SMALL:
         classNames.push(css.small)
         break
-      case 'medium':
+      case Spacing.MEDIUM:
         classNames.push(css.medium)
         break
-      case 'large':
+      case Spacing.LARGE:
         classNames.push(css.large)
         break
-      case 'xlarge':
+      case Spacing.XLARGE:
         classNames.push(css.xlarge)
         break
-      case 'xxlarge':
+      case Spacing.XXLARGE:
         classNames.push(css.xxlarge)
         break
-      case 'xxxlarge':
+      case Spacing.XXXLARGE:
         classNames.push(css.xxxlarge)
         break
-      case 'huge':
+      case Spacing.HUGE:
         classNames.push(css.huge)
         break
     }
@@ -92,28 +90,28 @@ export function classFromProps(props: StyledProps, className?: string) {
     classNames.push(css.spacing)
 
     switch (props.spacing) {
-      case 'xsmall':
+      case Spacing.XSMALL:
         classNames.push(css.xsmall)
         break
-      case 'small':
+      case Spacing.SMALL:
         classNames.push(css.small)
         break
-      case 'medium':
+      case Spacing.MEDIUM:
         classNames.push(css.medium)
         break
-      case 'large':
+      case Spacing.LARGE:
         classNames.push(css.large)
         break
-      case 'xlarge':
+      case Spacing.XLARGE:
         classNames.push(css.xlarge)
         break
-      case 'xxlarge':
+      case Spacing.XXLARGE:
         classNames.push(css.xxlarge)
         break
-      case 'xxxlarge':
+      case Spacing.XXXLARGE:
         classNames.push(css.xxxlarge)
         break
-      case 'huge':
+      case Spacing.HUGE:
         classNames.push(css.huge)
         break
     }

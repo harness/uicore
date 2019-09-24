@@ -4,3 +4,17 @@ Spacing defines two things:
 
 1. Font size for [Heading](/heading) and [Text](/text) components.
 2. Margin among children in a layout like [Vertical Layout](/layout-vertical) or [Horizontal Layout](/layout-horizontal).
+3. Padding when you implement your components.
+
+Supported spacing constants:
+
+- xsmall
+- small
+- medium
+- large
+- xlarge
+- xxlarge
+- xxxlarge
+- huge
+
+The basic idea about spacing is that when you build or use a component, you should avoid thinking about pixel. When everybody uses pixel to set font size, padding, or margin by themselves, the whole app becomes inconsistent very quickly. The effort to refactor or fixing inconsistent UI is also huge due to the fact that you have to scan the whole codebase for pixel values, and try to replace them with the correct ones.
