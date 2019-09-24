@@ -16,11 +16,6 @@ export default ({ children, live, render }) => {
   if (live) {
     return (
       <LiveProvider {...liveProviderProps}>
-        <LiveEditor
-          style={{
-            borderRadius: '5px 5px 0 0'
-          }}
-        />
         <LivePreview
           style={{
             padding: '25px',
@@ -28,10 +23,15 @@ export default ({ children, live, render }) => {
             display: 'block',
             alignItems: 'center',
             justifyContent: 'center',
+            borderRadius: '5px 5px 0 0'
+          }}
+          />
+        <LiveError className="error" />
+        <LiveEditor
+          style={{
             borderRadius: '0 0 5px 5px'
           }}
         />
-        <LiveError className="error" />
       </LiveProvider>
     )
   }

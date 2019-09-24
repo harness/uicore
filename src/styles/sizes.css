@@ -1,4 +1,5 @@
 :root {
+  --font-size-xsmall: 10px;
   --font-size-small: 12px;
   --font-size-normal: 14px;
   --font-size-medium: 16px;
@@ -6,11 +7,14 @@
   --font-size-xlarge: 20px;
   --font-size-xxlarge: 22px;
   --font-size-xxxlarge: 24px;
+  --font-size-huge: 30px;
 
-  --font-size-h6: 12px;
-  --font-size-h5: 14px;
-  --font-size-h4: 16px;
-  --font-size-h3: 22px;
-  --font-size-h2: 24px;
-  --font-size-h1: 30px;
+  --spacing-xsmall: 5px;
+  --spacing-small: 10px;
+  --spacing-medium: 15px;
+  --spacing-large: 20px;
+  --spacing-xlarge: 25px;
+  --spacing-xxlarge: 30px;
+  --spacing-xxxlarge: 40px;
+  --spacing-huge: 50px;
 }

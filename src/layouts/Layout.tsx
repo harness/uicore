@@ -1,25 +1,17 @@
 import React from 'react'
+import { StyledProps, classFromProps } from '../core/StyledProps'
 import css from './Layout.css'
 
-interface Props {
-  spacing?: 5 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50
+interface Props extends Pick<StyledProps, 'spacing'> {
   children: React.ReactNode
 }
 
-function Vertical({ spacing = 20, children }: Props) {
-  return (
-    <div className={css.vertical} style={{ '--spacing': `${spacing}px` } as React.CSSProperties}>
-      {children}
-    </div>
-  )
+function Vertical(props: Props) {
+  return <div className={classFromProps(props, css.vertical)}>{props.children}</div>
 }
 
-function Horizontal({ spacing = 20, children }: Props) {
-  return (
-    <div className={css.horizontal} style={{ '--spacing': `${spacing}px` } as React.CSSProperties}>
-      {children}
-    </div>
-  )
+function Horizontal(props: Props) {
+  return <div className={classFromProps(props, css.horizontal)}>{props.children}</div>
 }
 
 export default {

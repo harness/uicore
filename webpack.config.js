@@ -40,7 +40,7 @@ module.exports = {
               sourceMap: true,
               modules: {
                 mode: 'local',
-                localIdentName: '[local]--[hash:base64:4]',
+                localIdentName: '[name]---[local]--[hash:base64:4]',
                 context: path.resolve(__dirname, 'src')
               }
             }
@@ -49,7 +49,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              plugins: [require('postcss-nested')(), require('postcss-import')()]
+              plugins: [require('postcss-import')(), require('postcss-mixins')(), require('postcss-nested')()]
             }
           }
         ]

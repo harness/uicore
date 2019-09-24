@@ -1,31 +1,35 @@
+@import '../../styles/mixins.css';
+
 .main {
-  all: unset;
-  color: var(--color, var(--black));
-  font-size: var(--heading-font-size);
+  @mixin reset-spacing;
+
+  color: var(--color, var(--grey-500));
+  font-size: var(--font-size);
   font-family: var(--font-family);
+  font-weight: var(--font-weight, normal);
   display: flex;
 
   h1& {
-    --heading-font-size: var(--font-size-h1);
+    --font-size: var(--font-size-huge);
   }
 
   h2& {
-    --heading-font-size: var(--font-size-h2);
+    --font-size: var(--font-size-xxxlarge);
   }
 
   h3& {
-    --heading-font-size: var(--font-size-h3);
+    --font-size: var(--font-size-xxlarge);
   }
 
   h4& {
-    --heading-font-size: var(--font-size-h4);
+    --font-size: var(--font-size-medium);
   }
 
   h5& {
-    --heading-font-size: var(--font-size-h5);
+    --font-size: var(--font-size-normal);
   }
 
   h6& {
-    --heading-font-size: var(--font-size-h6);
+    --font-size: var(--font-size-small);
   }
 }

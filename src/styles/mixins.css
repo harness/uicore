@@ -1,0 +1,4 @@
+@define-mixin reset-spacing {
+  margin: 0;
+  padding: 0;
+}

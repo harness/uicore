@@ -8,15 +8,17 @@ function NavSection({ name, items }) {
 
   return (
     <li>
-      {name}
+      <span className="name">{name}</span>
       <ul className="bp3-list-unstyled">
-        {items.map(({ label, url }) => (
-          <li key={url}>
-            <Link {...active(url)} href={url}>
-              {label}
-            </Link>
-          </li>
-        ))}
+        {items
+          .sort((a, b) => (a.label < b.label ? -1 : 1))
+          .map(({ label, url }) => (
+            <li key={url}>
+              <Link {...active(url)} href={url}>
+                {label}
+              </Link>
+            </li>
+          ))}
       </ul>
       <style jsx>{`
         li {
@@ -25,9 +27,16 @@ function NavSection({ name, items }) {
           color: var(--grey-450);
         }
 
+        .name {
+          position: sticky;
+          top: 0;
+          display: block;
+          padding: 10px 0;
+          background-color: var(--white);
+        }
+
         li ul {
           margin-bottom: 30px;
-          margin-top: 10px;
           color: var(--grey-500);
         }
 

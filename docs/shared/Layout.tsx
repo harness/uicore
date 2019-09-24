@@ -1,22 +1,8 @@
 import React from 'react'
-import { Icons, Link, Text, Heading, Layout } from '../static'
+import { Icons, Layout } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
-import CodeBlock from './CodeBlock'
-
-const mdxComponents = {
-  code: CodeBlock,
-
-  a: props => <Link {...props} />,
-  h1: props => <Heading bold level="1" {...props} />,
-  h2: props => <Heading bold level="2" {...props} />,
-  h3: props => <Heading bold level="3" {...props} />,
-  h4: props => <Heading bold level="4" {...props} />,
-  h5: props => <Heading bold level="5" {...props} />,
-  h6: props => <Heading bold level="6" {...props} />,
-  p: props => <Text {...props} inline={false} />,
-  span: props => <Text {...props} />
-}
+import MdxComponents from './MdxComponents'
 
 export default class extends React.Component {
   render() {
@@ -35,9 +21,9 @@ export default class extends React.Component {
           <Nav />
         </nav>
 
-        <MDXProvider components={mdxComponents}>
+        <MDXProvider components={MdxComponents}>
           <main>
-            <Layout.Vertical spacing={15}>{this.props.children}</Layout.Vertical>
+            <Layout.Vertical spacing="medium">{this.props.children}</Layout.Vertical>
           </main>
         </MDXProvider>
 

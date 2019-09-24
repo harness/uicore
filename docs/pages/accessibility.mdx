@@ -1,3 +1,8 @@
 # Accessibility
 
-TBD
+Blueprint already provides accessible components out of the box. Many of the JS components will apply accessible HTML attributes to support different modes of usage.
+
+UIKit enhances Blueprint accessibility in two fronts:
+
+- When a modal is opened, there is always focus on the first input element.
+- Focus is trapped into a modal when it's opened. Meaning when you hit `Tab` when focus is on its last element, the focus will go back to the fist element instead of jumping out of the modal itself.

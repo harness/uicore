@@ -1,0 +1,7 @@
+.item {
+  color: var(--color, var(--grey-500));
+
+  &:not(:last-child) {
+    margin-bottom: var(--spacing-xsmall, 5px);
+  }
+}

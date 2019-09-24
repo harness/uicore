@@ -19,11 +19,15 @@
 /* Styles based on font */
 
 .bold {
-  font-weight: bold;
+  --font-weight: bold;
 }
 
 .fontSize {
   font-size: var(--font-size, var(--font-size-normal));
+
+  &.xsmall {
+    --font-size: var(--font-size-xsmall);
+  }
 
   &.small {
     --font-size: var(--font-size-small);
@@ -48,6 +52,10 @@
   &.xxxlarge {
     --font-size: var(--font-size-xxxlarge);
   }
+
+  &.huge {
+    --font-size: var(--font-size-huge);
+  }
 }
 
 /* Styles based on element display prop */
@@ -57,6 +65,45 @@
 }
 
 /* Muted state */
+
 .muted {
   --color: var(--grey-300);
+}
+
+/* Styles based on spacing */
+
+.spacing {
+  --spacing: var(--spacing-large);
+
+  &.xsmall {
+    --spacing: var(--spacing-xsmall);
+  }
+
+  &.small {
+    --spacing: var(--spacing-small);
+  }
+
+  &.medium {
+    --spacing: var(--spacing-medium);
+  }
+
+  &.large {
+    --spacing: var(--spacing-large);
+  }
+
+  &.xlarge {
+    --spacing: var(--spacing-xlarge);
+  }
+
+  &.xxlarge {
+    --spacing: var(--spacing-xxlarge);
+  }
+
+  &.xxxlarge {
+    --spacing: var(--spacing-xxxlarge);
+  }
+
+  &.huge {
+    --spacing: var(--spacing-huge);
+  }
 }

@@ -45,10 +45,6 @@ export default [
     name: 'Components',
     items: [
       {
-        label: 'Button',
-        url: '/button'
-      },
-      {
         label: 'Heading',
         url: '/heading'
       },
@@ -59,6 +55,130 @@ export default [
       {
         label: 'Icons',
         url: '/icons'
+      },
+      {
+        label: 'Button',
+        url: '/button'
+      },
+      {
+        label: 'Link',
+        url: '/link'
+      },
+      {
+        label: 'Button Group',
+        url: '/button-group'
+      },
+      {
+        label: 'Breadcrumbs',
+        url: '/Breadcrumbs'
+      },
+      {
+        label: 'Callout',
+        url: '/Callout'
+      },
+      {
+        label: 'Card',
+        url: '/Card'
+      },
+      {
+        label: 'Collapse',
+        url: '/Breadcrumbs'
+      },
+      {
+        label: 'Divider',
+        url: '/Divider'
+      },
+      {
+        label: 'Editable Text',
+        url: '/editable-text'
+      },
+      {
+        label: 'Table',
+        url: '/table'
+      },
+      {
+        label: 'Menu',
+        url: '/Menu'
+      },
+      {
+        label: 'Navbar',
+        url: '/Navbar'
+      },
+      {
+        label: 'Non-ideal state',
+        url: '/non-ideal-state'
+      },
+      {
+        label: 'Overflow List',
+        url: '/overflow-list'
+      },
+      {
+        label: 'Panel Stack',
+        url: '/panel-stack'
+      },
+      {
+        label: 'Progress Bar',
+        url: '/progress-bar'
+      },
+      {
+        label: 'Skeleton',
+        url: '/skeleton'
+      },
+      {
+        label: 'Spinner',
+        url: '/spinner'
+      },
+      {
+        label: 'Tabs',
+        url: '/tabs'
+      },
+      {
+        label: 'Tag',
+        url: '/tag'
+      },
+      {
+        label: 'Tree',
+        url: '/tree'
+      },
+      {
+        label: 'Overlay',
+        url: '/overlay'
+      },
+      {
+        label: 'Portal',
+        url: '/portal'
+      },
+      {
+        label: 'Alert',
+        url: '/alert'
+      },
+      {
+        label: 'Context Menu',
+        url: '/context-menu'
+      },
+      {
+        label: 'Dialog',
+        url: '/dialog'
+      },
+      {
+        label: 'Drawer',
+        url: '/drawer'
+      },
+      {
+        label: 'Popover',
+        url: '/popover'
+      },
+      {
+        label: 'Toast',
+        url: '/toast'
+      },
+      {
+        label: 'Tooltip',
+        url: '/tooltip'
+      },
+      {
+        label: 'Date Time Picker',
+        url: '/date-time-picker'
       }
     ]
   }
