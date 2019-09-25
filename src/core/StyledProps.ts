@@ -1,7 +1,12 @@
 import css from './StyledProps.css'
-import { Intent, Spacing } from './'
+import { Intent } from './Intent'
+import { Spacing } from './Spacing'
 
-export interface StyledProps {
+/**
+ * Styled Props: Define reusable styles across components.
+ * Inspired by https://styled-system.com/theme-specification
+ */
+interface StyledProps {
   /** Component intent */
   intent?: Intent
 
@@ -119,3 +124,5 @@ export function classFromProps(props: StyledProps, className?: string) {
 
   return classNames.join(' ')
 }
+
+export { StyledProps }

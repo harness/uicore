@@ -65,7 +65,7 @@ import User from './User.svg'
 import View from './View.svg'
 import Yaml from './Yaml.svg'
 
-export default {
+const Icons = {
   AWS,
   AWSCodeDeploy,
   AWSLambda,
@@ -134,3 +134,4 @@ export default {
   Yaml
 }
 
+export { Icons }

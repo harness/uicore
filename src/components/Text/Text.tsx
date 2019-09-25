@@ -6,7 +6,9 @@ interface Props extends StyledProps {
   children: React.ReactNode
 }
 
-export default function Text(props: Props) {
+function Text(props: Props) {
   const Tag = `${props.inline ? 'span' : 'p'}` as React.ElementType
   return <Tag className={classFromProps(props, css.text)}>{props.children}</Tag>
 }
+
+export { Text }

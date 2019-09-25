@@ -11,4 +11,4 @@ const Spacing = {
 
 type Spacing = typeof Spacing[keyof typeof Spacing]
 
-export default Spacing
+export { Spacing }

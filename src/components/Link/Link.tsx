@@ -1,8 +1,8 @@
 import React, { MouseEvent } from 'react'
 import css from './Link.css'
-import Utils from '../../core/Utils'
+import { Utils } from '../../core/Utils'
 
-export default function(props: React.HTMLProps<HTMLLinkElement>) {
+function Link(props: React.HTMLProps<HTMLLinkElement>) {
   let extra: { rel?: string; onClick?: (e: MouseEvent) => void } = {}
 
   // Make sure all _blank target has proper rel
@@ -21,3 +21,5 @@ export default function(props: React.HTMLProps<HTMLLinkElement>) {
     </a>
   )
 }
+
+export { Link }

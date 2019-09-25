@@ -1,6 +1,8 @@
 import React from 'react'
-import { Tooltip, ITooltipProps } from '@blueprintjs/core'
+import { Tooltip as BTooltip, ITooltipProps } from '@blueprintjs/core'
 
-export default function(props: ITooltipProps) {
-  return <Tooltip {...props} />
+function Tooltip(props: ITooltipProps) {
+  return <BTooltip {...props} />
 }
+
+export { Tooltip }

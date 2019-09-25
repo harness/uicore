@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, AnchorButton, IButtonProps, Classes } from '@blueprintjs/core'
+import { Button as BButton, AnchorButton, IButtonProps, Classes } from '@blueprintjs/core'
 import css from './Button.css'
 
 // import Icons from '../../icons'
@@ -31,9 +31,9 @@ interface Props extends Omit<IButtonProps, 'active'> {
   target?: string
 }
 
-export default function(props: Props) {
+function Button(props: Props) {
   let { icon, href } = props
-  const Component = (href ? AnchorButton : Button) as React.ElementType
+  const Component = (href ? AnchorButton : BButton) as React.ElementType
 
   if (typeof icon === 'function') {
     const Icon = icon as React.ElementType
@@ -46,3 +46,5 @@ export default function(props: Props) {
 
   return <Component {...props} icon={icon} className={css.button} />
 }
+
+export { Button }

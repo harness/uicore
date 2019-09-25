@@ -6,7 +6,6 @@ function stopEvent(event: MouseEvent | KeyboardEvent): void {
   event.preventDefault()
 }
 
-export default {
-  stopEvent,
-  copy
-}
+const Utils = { stopEvent, copy }
+
+export { Utils }

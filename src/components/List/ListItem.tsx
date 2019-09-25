@@ -6,6 +6,8 @@ interface Props extends React.HTMLProps<HTMLElement> {
   children: React.ReactNode
 }
 
-export default function(props: Props) {
+function ListItem(props: Props) {
   return <li className={css.item}>{props.children}</li>
 }
+
+export { ListItem }

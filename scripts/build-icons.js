@@ -16,4 +16,4 @@ files
     _exports.push('  ' + ComponentName)
   })
 
-console.log(_imports.join('\n') + '\n\nexport default {\n' + _exports.join(',\n') + '\n}\n')
+console.log(_imports.join('\n') + '\n\nconst Icons = {\n' + _exports.join(',\n') + '\n}\n\nexport { Icons }')

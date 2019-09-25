@@ -70,23 +70,23 @@ export default [
       },
       {
         label: 'Breadcrumbs',
-        url: '/Breadcrumbs'
+        url: '/breadcrumbs'
       },
       {
         label: 'Callout',
-        url: '/Callout'
+        url: '/callout'
       },
       {
         label: 'Card',
-        url: '/Card'
+        url: '/card'
       },
       {
         label: 'Collapse',
-        url: '/Collapse'
+        url: '/collapse'
       },
       {
         label: 'Divider',
-        url: '/Divider'
+        url: '/divider'
       },
       {
         label: 'Editable Text',
@@ -98,11 +98,11 @@ export default [
       },
       {
         label: 'Menu',
-        url: '/Menu'
+        url: '/menu'
       },
       {
         label: 'Navbar',
-        url: '/Navbar'
+        url: '/navbar'
       },
       {
         label: 'Non-ideal state',
@@ -147,10 +147,6 @@ export default [
       {
         label: 'Portal',
         url: '/portal'
-      },
-      {
-        label: 'Alert',
-        url: '/alert'
       },
       {
         label: 'Context Menu',

@@ -14,7 +14,6 @@ function Horizontal(props: Props) {
   return <div className={classFromProps(props, css.horizontal)}>{props.children}</div>
 }
 
-export default {
-  Vertical,
-  Horizontal
-}
+const Layout = { Vertical, Horizontal }
+
+export { Layout }
