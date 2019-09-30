@@ -1,9 +1,5 @@
 @import '../../styles/mixins.css';
 
 .text {
-  @mixin reset-spacing;
-
-  font-family: var(--font-family);
-  font-size: var(--font-size, var(--font-size-normal));
-  color: var(--color, var(--grey-500));
+  @mixin styled-props;
 }

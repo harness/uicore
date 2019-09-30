@@ -1,13 +1,8 @@
 @import '../../styles/mixins.css';
 
 .main {
-  @mixin reset-spacing;
-
-  color: var(--color, var(--grey-500));
-  font-size: var(--font-size);
-  font-family: var(--font-family);
-  font-weight: var(--font-weight, normal);
-  display: flex;
+  @mixin styled-props;
+  display: var(--display, flex);
 
   h1& {
     --font-size: var(--font-size-huge);

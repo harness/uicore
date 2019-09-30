@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledProps, classFromProps } from '../core/StyledProps'
+import { StyledProps, classFromStyledProps } from '../core/StyledProps'
 import css from './Layout.css'
 
 interface Props extends Pick<StyledProps, 'spacing'> {
@@ -7,11 +7,11 @@ interface Props extends Pick<StyledProps, 'spacing'> {
 }
 
 function Vertical(props: Props) {
-  return <div className={classFromProps(props, css.vertical)}>{props.children}</div>
+  return <div className={classFromStyledProps(props, css.vertical)}>{props.children}</div>
 }
 
 function Horizontal(props: Props) {
-  return <div className={classFromProps(props, css.horizontal)}>{props.children}</div>
+  return <div className={classFromStyledProps(props, css.horizontal)}>{props.children}</div>
 }
 
 const Layout = { Vertical, Horizontal }

@@ -19,14 +19,17 @@ interface StyledProps {
   /** Mark component as being muted. Usually used for text */
   muted?: boolean
 
+  /** Set font family to mono. Ussually used in for code or snippet */
+  mono?: boolean
+
   /** Component font size */
   fontSize?: Spacing
 
-  /** Component spacing */
+  /** Component spacing. Usually used for layouts */
   spacing?: Spacing
 }
 
-export function classFromProps(props: StyledProps, className?: string) {
+export function classFromStyledProps(props: StyledProps, className?: string) {
   const classNames = []
 
   if (className) {
@@ -50,6 +53,10 @@ export function classFromProps(props: StyledProps, className?: string) {
 
   if (props.bold) {
     classNames.push(css.bold)
+  }
+
+  if (props.mono) {
+    classNames.push(css.mono)
   }
 
   if (props.inline) {

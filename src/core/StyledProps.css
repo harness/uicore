@@ -22,8 +22,12 @@
   --font-weight: bold;
 }
 
+.mono {
+  --font-family: var(--font-family-mono);
+}
+
 .fontSize {
-  font-size: var(--font-size, var(--font-size-normal));
+  --font-size: var(--font-size, var(--font-size-normal));
 
   &.xsmall {
     --font-size: var(--font-size-xsmall);
@@ -61,7 +65,7 @@
 /* Styles based on element display prop */
 
 .inline {
-  display: inline;
+  --display: inline;
 }
 
 /* Muted state */
@@ -73,8 +77,6 @@
 /* Styles based on spacing */
 
 .spacing {
-  --spacing: var(--spacing-large);
-
   &.xsmall {
     --spacing: var(--spacing-xsmall);
   }
