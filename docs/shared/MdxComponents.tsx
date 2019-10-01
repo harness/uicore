@@ -3,14 +3,44 @@
  */
 
 import React from 'react'
-import { Link, Text, Heading, List, ListItem } from '../static'
+import { Link, Text, Heading, List, ListItem, Icons } from '../static'
 import CodeBlock from './CodeBlock'
+
+const BASE_URL = 'https://github.com/wings-software/ui-platform/edit/master/'
+
+const Title = (props: React.ComponentProps<typeof Heading>) => {
+  const children = props.children as string
+  let _children: React.ReactNode[] | undefined
+  const [title, link] = children.split(/\s?---\s?/)
+
+  if (link) {
+    _children = [
+      <span key="title">{title}</span>,
+      <Link flex flexAlign="center-center" target="_blank" key="edit" href={`${BASE_URL}${link}`} font="small" muted>
+        <Icons.Edit width="16px" height="16px" />
+        <span>&nbsp;Edit this page</span>
+      </Link>
+    ]
+  }
+
+  return (
+    <Heading
+      flex
+      flexAlign="center-center"
+      flexDistribution="space-between"
+      bold
+      level="1"
+      {...props}
+      children={_children || children}
+    />
+  )
+}
 
 export default {
   code: CodeBlock,
 
   a: (props: React.ComponentProps<typeof Link>) => <Link {...props} />,
-  h1: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="1" {...props} />,
+  h1: Title,
   h2: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="2" {...props} />,
   h3: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="3" {...props} />,
   h4: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="4" {...props} />,

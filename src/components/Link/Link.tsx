@@ -1,8 +1,11 @@
 import React, { MouseEvent } from 'react'
 import css from './Link.css'
 import { Utils } from '../../core/Utils'
+import { StyledProps, omitStyledProps, classFromStyledProps } from '../../core/StyledProps'
 
-function Link(props: React.HTMLProps<HTMLLinkElement>) {
+type Props = React.HTMLProps<HTMLLinkElement> & Omit<StyledProps, 'spacing'>
+
+function Link(props: Props) {
   let extra: { rel?: string; onClick?: (e: MouseEvent) => void } = {}
 
   // Make sure all _blank target has proper rel
@@ -16,7 +19,7 @@ function Link(props: React.HTMLProps<HTMLLinkElement>) {
   }
 
   return (
-    <a {...props} {...extra} className={css.link}>
+    <a {...omitStyledProps(props)} {...extra} className={classFromStyledProps(props, css.link)}>
       {props.children}
     </a>
   )

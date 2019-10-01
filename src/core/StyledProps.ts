@@ -2,11 +2,28 @@ import css from './StyledProps.css'
 import { Intent } from './Intent'
 import { Spacing } from './Spacing'
 
+const StyledPropKeys = [
+  'intent',
+
+  'inline',
+
+  'fontSize',
+  'bold',
+  'muted',
+  'mono',
+
+  'spacing',
+
+  'flex',
+  'flexAlign',
+  'flexDistribution'
+]
+
 /**
  * Styled Props: Define reusable styles across components.
  * Inspired by https://styled-system.com/theme-specification
  */
-interface StyledProps {
+export interface StyledProps {
   /** Component intent */
   intent?: Intent
 
@@ -23,113 +40,69 @@ interface StyledProps {
   mono?: boolean
 
   /** Component font size */
-  fontSize?: Spacing
+  font?: Spacing
 
   /** Component spacing. Usually used for layouts */
   spacing?: Spacing
+
+  /** Component flex layout. Use in commbination with flexAlign and flexDistribution */
+  flex?: boolean
+
+  /** Component children flex layout content alignment */
+  flexAlign?:
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'center-left'
+    | 'center-center'
+    | 'center-right'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right'
+
+  /** Component children flex layout content distribution */
+  flexDistribution?: 'space-between'
 }
 
+/** Generate classes from styled props */
 export function classFromStyledProps(props: StyledProps, className?: string) {
   const classNames = []
 
-  if (className) {
-    classNames.push(className)
-  }
+  classNames.push(className)
+  classNames.push(props.intent && css.intent, props.intent && css[props.intent])
+  classNames.push(props.inline && css.inline)
 
-  switch (props.intent) {
-    case Intent.PRIMARY:
-      classNames.push(css.primary)
-      break
-    case Intent.SUCCESS:
-      classNames.push(css.success)
-      break
-    case Intent.WARNING:
-      classNames.push(css.warning)
-      break
-    case Intent.DANGER:
-      classNames.push(css.danger)
-      break
-  }
-
-  if (props.bold) {
-    classNames.push(css.bold)
-  }
-
-  if (props.mono) {
-    classNames.push(css.mono)
-  }
-
-  if (props.inline) {
-    classNames.push(css.inline)
-  }
-
-  if (props.fontSize) {
-    classNames.push(css.fontSize)
-
-    switch (props.fontSize) {
-      case Spacing.XSMALL:
-        classNames.push(css.xsmall)
-        break
-      case Spacing.SMALL:
-        classNames.push(css.small)
-        break
-      case Spacing.MEDIUM:
-        classNames.push(css.medium)
-        break
-      case Spacing.LARGE:
-        classNames.push(css.large)
-        break
-      case Spacing.XLARGE:
-        classNames.push(css.xlarge)
-        break
-      case Spacing.XXLARGE:
-        classNames.push(css.xxlarge)
-        break
-      case Spacing.XXXLARGE:
-        classNames.push(css.xxxlarge)
-        break
-      case Spacing.HUGE:
-        classNames.push(css.huge)
-        break
-    }
-  }
-
-  if (props.muted) {
-    classNames.push(css.muted)
+  if (props.font || props.bold || props.mono || props.muted) {
+    classNames.push(css.font)
+    classNames.push(props.mono && css.mono)
+    classNames.push(props.bold && css.bold)
+    classNames.push(props.muted && css.muted)
   }
 
   if (props.spacing) {
-    classNames.push(css.spacing)
-
-    switch (props.spacing) {
-      case Spacing.XSMALL:
-        classNames.push(css.xsmall)
-        break
-      case Spacing.SMALL:
-        classNames.push(css.small)
-        break
-      case Spacing.MEDIUM:
-        classNames.push(css.medium)
-        break
-      case Spacing.LARGE:
-        classNames.push(css.large)
-        break
-      case Spacing.XLARGE:
-        classNames.push(css.xlarge)
-        break
-      case Spacing.XXLARGE:
-        classNames.push(css.xxlarge)
-        break
-      case Spacing.XXXLARGE:
-        classNames.push(css.xxxlarge)
-        break
-      case Spacing.HUGE:
-        classNames.push(css.huge)
-        break
-    }
+    classNames.push(css.spacing, css[props.spacing])
   }
 
-  return classNames.join(' ')
+  if (props.flex) {
+    classNames.push(css.flex)
+    classNames.push(props.inline && css.inline)
+    classNames.push(props.flexAlign && css[props.flexAlign])
+    classNames.push(props.flexDistribution && css[props.flexDistribution])
+  }
+
+  return classNames.filter(e => !!e).join(' ')
 }
 
-export { StyledProps }
+export interface KVO<T = any> {
+  [key: string]: T
+}
+
+/** Return all props that are not styled props */
+export function omitStyledProps(props: KVO): KVO {
+  return Object.keys(props)
+    .filter(key => !StyledPropKeys.includes(key))
+    .reduce((obj: KVO, key) => {
+      obj[key] = props[key]
+      return obj
+    }, {})
+}

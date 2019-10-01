@@ -1,33 +1,42 @@
 /* Styles based on Intent */
 
-.primary {
-  --color: var(--blue-500);
-}
+.intent {
+  --color: var(--grey-500);
 
-.success {
-  --color: var(--green-500);
-}
+  &.primary {
+    --color: var(--blue-500);
+  }
 
-.warning {
-  --color: var(--yellow-500);
-}
+  &.success {
+    --color: var(--green-500);
+  }
 
-.danger {
-  --color: var(--red-500);
+  &.warning {
+    --color: var(--yellow-500);
+  }
+
+  &.danger {
+    --color: var(--red-500);
+  }
 }
 
 /* Styles based on font */
 
-.bold {
-  --font-weight: bold;
-}
+.font {
+  --font-weight: normal;
+  --font-size: var(--font-size-normal);
 
-.mono {
-  --font-family: var(--font-family-mono);
-}
+  &.bold {
+    --font-weight: bold;
+  }
 
-.fontSize {
-  --font-size: var(--font-size, var(--font-size-normal));
+  .muted {
+    --color: var(--grey-300);
+  }
+
+  &.mono {
+    --font-family: var(--font-family-mono);
+  }
 
   &.xsmall {
     --font-size: var(--font-size-xsmall);
@@ -68,15 +77,37 @@
   --display: inline;
 }
 
-/* Muted state */
+/* Layout alignments */
 
-.muted {
-  --color: var(--grey-300);
+.flex {
+  display: var(--display, flex);
+  justify-content: var(--justify-content, space-between);
+  align-items: var(--align-items, center);
+
+  &.inline {
+    --display: inline-flex;
+  }
+
+  &.top-left {
+    --justify-content: left;
+    --align-items: start;
+  }
+
+  &.center-center {
+    --justify-content: center;
+    --align-items: center;
+  }
+
+  &.space-between {
+    --justify-content: space-between;
+  }
 }
 
 /* Styles based on spacing */
 
 .spacing {
+  --spacing: 0;
+
   &.xsmall {
     --spacing: var(--spacing-xsmall);
   }
