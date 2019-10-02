@@ -5,12 +5,15 @@ import { Spacing } from './Spacing'
 const StyledPropKeys = [
   'intent',
 
-  'inline',
-
-  'fontSize',
+  'font',
   'bold',
   'muted',
   'mono',
+
+  'inline',
+
+  'width',
+  'height',
 
   'spacing',
 
@@ -68,12 +71,12 @@ export interface StyledProps {
 export function classFromStyledProps(props: StyledProps, className?: string) {
   const classNames = []
 
-  classNames.push(className)
+  classNames.push(css.default, className)
   classNames.push(props.intent && css.intent, props.intent && css[props.intent])
   classNames.push(props.inline && css.inline)
 
   if (props.font || props.bold || props.mono || props.muted) {
-    classNames.push(css.font)
+    classNames.push(css.font, props.font && css[props.font])
     classNames.push(props.mono && css.mono)
     classNames.push(props.bold && css.bold)
     classNames.push(props.muted && css.muted)

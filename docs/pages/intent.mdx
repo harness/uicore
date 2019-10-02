@@ -1,13 +1,24 @@
-# Intent
+# Intent --- docs/pages/intent.mdx
 
 Intent is used as a decoration on top of components. It adds universal styles (color, background color, etc...) into the components it decorates.
 
 Five intents are defined currently.
 
-- `Intent.NONE`, or `none`: No intent.
+- `Intent.NONE`, or `none`: No intent or neutral intent.
 - `Intent.PRIMARY`, or `primary`: Primary.
 - `Intent.SUCCESS` or `success`: Success.
 - `Intent.WARNING`, or `warning`: Warning.
 - `Intent.DANGER`, or `danger`: Danger.
 
-Intent can be referenced in components by strings, or by Intent object.
+When applying an intent to a text components like [Heading](/heading) or [Text](/text), its color changes to reflect the intent.
+
+```js live
+<Heading intent="primary">The quick brown fox jumps over the lazy dog</Heading>
+<Heading intent="success">The quick brown fox jumps over the lazy dog</Heading>
+<Heading intent="warning">The quick brown fox jumps over the lazy dog</Heading>
+<Heading intent="danger">The quick brown fox jumps over the lazy dog</Heading>
+<Text intent="primary">The quick brown fox jumps over the lazy dog</Text>
+<Text intent="success">The quick brown fox jumps over the lazy dog</Text>
+<Text intent="warning">The quick brown fox jumps over the lazy dog</Text>
+<Text intent="danger">The quick brown fox jumps over the lazy dog</Text>
+```

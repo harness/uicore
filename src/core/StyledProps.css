@@ -1,8 +1,21 @@
+/* Default (reset) variables for styled-props based components */
+
+.default {
+  /*
+  These default variables make sure each component has its own default
+  styles and won't be impacted by its parent's styles.
+  */
+  --color: var(--grey-500);
+  --font-weight: normal;
+  --font-size: var(--font-size-normal);
+  --color: var(--grey-500);
+  --display: block;
+  --spacing: 0;
+}
+
 /* Styles based on Intent */
 
 .intent {
-  --color: var(--grey-500);
-
   &.primary {
     --color: var(--blue-500);
   }
@@ -23,14 +36,11 @@
 /* Styles based on font */
 
 .font {
-  --font-weight: normal;
-  --font-size: var(--font-size-normal);
-
   &.bold {
     --font-weight: bold;
   }
 
-  .muted {
+  &.muted {
     --color: var(--grey-300);
   }
 
@@ -80,7 +90,7 @@
 /* Layout alignments */
 
 .flex {
-  display: var(--display, flex);
+  --display: flex;
   justify-content: var(--justify-content, space-between);
   align-items: var(--align-items, center);
 
@@ -106,8 +116,6 @@
 /* Styles based on spacing */
 
 .spacing {
-  --spacing: 0;
-
   &.xsmall {
     --spacing: var(--spacing-xsmall);
   }

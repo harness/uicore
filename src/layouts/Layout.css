@@ -1,6 +1,6 @@
 .vertical,
 .horizontal {
-  --spacing: 0;
+  --layout-spacing: var(--spacing);
 }
 
 .vertical {
@@ -12,7 +12,7 @@
 }
 
 .vertical > * {
-  margin-bottom: var(--spacing) !important;
+  margin-bottom: var(--layout-spacing) !important;
 }
 
 .vertical > *:last-child {
@@ -28,7 +28,7 @@
 }
 
 .horizontal > * {
-  margin-right: var(--spacing) !important;
+  margin-right: var(--layout-spacing) !important;
 }
 
 .horizontal > *:last-child {

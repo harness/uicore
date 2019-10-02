@@ -13,6 +13,8 @@ export default ({ children, live, render }) => {
     scope: { ...scope, mdx }
   }
 
+  console.log({ children, live, render })
+
   if (live) {
     return (
       <LiveProvider {...liveProviderProps}>
@@ -25,7 +27,7 @@ export default ({ children, live, render }) => {
             justifyContent: 'center',
             borderRadius: '5px 5px 0 0'
           }}
-          />
+        />
         <LiveError className="error" />
         <LiveEditor
           style={{

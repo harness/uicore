@@ -1,18 +1,23 @@
-@define-mixin reset-spacing {
+@define-mixin spacing {
   margin: 0;
   padding: 0;
 }
 
-@define-mixin reset-font {
+@define-mixin font {
   font-family: var(--font-family);
-  font-size: var(--font-size, var(--font-size-normal));
-  font-weight: var(--font-weight, normal);
-  color: var(--color, var(--grey-500));
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
   white-space: normal;
   line-height: 1.3;
 }
 
+@define-mixin display {
+  display: var(--display);
+}
+
 @define-mixin styled-props {
-  @mixin reset-spacing;
-  @mixin reset-font;
+  @mixin spacing;
+  @mixin font;
+  @mixin display;
 }
