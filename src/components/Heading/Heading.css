@@ -2,7 +2,6 @@
 
 .main {
   @mixin styled-props;
-  display: var(--display, flex);
 
   h1& {
     --font-size: var(--font-size-huge);

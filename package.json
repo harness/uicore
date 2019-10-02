@@ -1,7 +1,7 @@
 {
-  "name": "ui-platform",
+  "name": "ui-kit",
   "version": "0.0.1",
-  "description": "UI Platform",
+  "description": "Harness UI Toolkit",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",

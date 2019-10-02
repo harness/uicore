@@ -9,7 +9,6 @@
   --font-weight: normal;
   --font-size: var(--font-size-normal);
   --color: var(--grey-500);
-  --display: block;
   --spacing: 0;
 }
 
@@ -84,18 +83,18 @@
 /* Styles based on element display prop */
 
 .inline {
-  --display: inline;
+  display: inline;
 }
 
 /* Layout alignments */
 
 .flex {
-  --display: flex;
+  display: flex;
   justify-content: var(--justify-content, space-between);
   align-items: var(--align-items, center);
 
   &.inline {
-    --display: inline-flex;
+    display: inline-flex;
   }
 
   &.top-left {

@@ -12,12 +12,7 @@
   line-height: 1.3;
 }
 
-@define-mixin display {
-  display: var(--display);
-}
-
 @define-mixin styled-props {
   @mixin spacing;
   @mixin font;
-  @mixin display;
 }

@@ -2,6 +2,7 @@
 
 .link {
   @mixin styled-props;
+
   color: var(--blue-500);
 
   &:hover {

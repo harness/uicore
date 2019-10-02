@@ -13,8 +13,6 @@ export default ({ children, live, render }) => {
     scope: { ...scope, mdx }
   }
 
-  console.log({ children, live, render })
-
   if (live) {
     return (
       <LiveProvider {...liveProviderProps}>

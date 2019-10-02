@@ -1,7 +1,7 @@
 @import '../../styles/mixins.css';
 
 .list {
-  @mixin reset-spacing;
+  @mixin styled-props;
 
   padding-left: var(--spacing-xxxlarge, 30px);
 }
