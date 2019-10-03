@@ -8,11 +8,11 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "start": "run-p -c ui:tsd ui:watch docs:watch",
-    "build": "NODE_ENV=production webpack --mode=production",
+    "build": "NODE_ENV=production webpack",
     "clean": "rm -rf docs/static/index.* dist/*",
     "ui:tsd": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
     "ui:icons": "node ./scripts/build-icons.js > ./src/icons/index.ts",
-    "ui:watch": "NODE_ENV=development webpack --mode=development --watch",
+    "ui:watch": "NODE_ENV=development webpack --watch",
     "docs:watch": "cd docs; yarn watch",
     "docs:build": "cd docs; yarn build",
     "docs:deploy": "cd docs; echo To be defined"

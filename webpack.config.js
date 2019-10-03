@@ -9,6 +9,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
+  mode: isDev ? 'development' : 'production',
   stats: 'minimal',
 
   entry: {
