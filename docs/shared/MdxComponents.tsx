@@ -6,7 +6,7 @@ import React from 'react'
 import { Link, Text, Heading, List, ListItem, Icons } from '../static'
 import CodeBlock from './CodeBlock'
 
-const BASE_URL = 'https://github.com/wings-software/ui-platform/edit/master/'
+const BASE_URL = 'https://github.com/wings-software/uikit/edit/master/'
 
 const Title = (props: React.ComponentProps<typeof Heading>) => {
   const children = props.children as string

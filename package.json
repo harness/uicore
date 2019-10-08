@@ -1,6 +1,6 @@
 {
-  "name": "ui-kit",
-  "version": "0.0.1",
+  "name": "uikit",
+  "version": "1.0.0",
   "description": "Harness UI Toolkit",
   "source": "src/index.ts",
   "main": "dist/index.js",
