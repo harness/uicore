@@ -1,6 +1,6 @@
 .vertical,
 .horizontal {
-  --layout-spacing: var(--spacing);
+  --layout-spacing: var(--margin);
 }
 
 .vertical {

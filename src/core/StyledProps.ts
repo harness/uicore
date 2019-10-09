@@ -1,25 +1,22 @@
 import css from './StyledProps.css'
 import { Intent } from './Intent'
 import { Spacing } from './Spacing'
+import { KVO } from './Types'
 
 const StyledPropKeys = [
   'intent',
-
   'font',
   'bold',
   'muted',
   'mono',
-
   'inline',
-
-  'width',
-  'height',
-
-  'spacing',
-
   'flex',
   'flexAlign',
-  'flexDistribution'
+  'flexDistribution',
+  'border',
+  'margin',
+  'padding',
+  'textAlign'
 ]
 
 /**
@@ -45,13 +42,10 @@ export interface StyledProps {
   /** Component font size */
   font?: Spacing
 
-  /** Component spacing. Usually used for layouts */
-  spacing?: Spacing
-
   /** Component flex layout. Use in commbination with flexAlign and flexDistribution */
   flex?: boolean
 
-  /** Component children flex layout content alignment */
+  /** Component children flex layout content alignment (Note: Not everything below is implemented) */
   flexAlign?:
     | 'top-left'
     | 'top-center'
@@ -65,25 +59,34 @@ export interface StyledProps {
 
   /** Component children flex layout content distribution */
   flexDistribution?: 'space-between'
+
+  /** Component border */
+  border?: boolean
+
+  /** Component margin. Usually used for containers */
+  margin?: Spacing
+
+  /** Component padding. Usually used for containers */
+  padding?: Spacing
+
+  /** Component children */
+  children: React.ReactNode
 }
 
 /** Generate classes from styled props */
-export function classFromStyledProps(props: StyledProps, className?: string) {
+export function styledClasses(props: StyledProps, className?: string) {
   const classNames = []
 
   classNames.push(css.default, className)
   classNames.push(props.intent && css.intent, props.intent && css[props.intent])
   classNames.push(props.inline && css.inline)
+  classNames.push(props.border && css.border)
 
   if (props.font || props.bold || props.mono || props.muted) {
     classNames.push(css.font, props.font && css[props.font])
     classNames.push(props.mono && css.mono)
     classNames.push(props.bold && css.bold)
     classNames.push(props.muted && css.muted)
-  }
-
-  if (props.spacing) {
-    classNames.push(css.spacing, css[props.spacing])
   }
 
   if (props.flex) {
@@ -93,11 +96,15 @@ export function classFromStyledProps(props: StyledProps, className?: string) {
     classNames.push(props.flexDistribution && css[props.flexDistribution])
   }
 
-  return classNames.filter(e => !!e).join(' ')
-}
+  if (props.padding) {
+    classNames.push(css.padding, css['p-' + props.padding])
+  }
 
-export interface KVO<T = any> {
-  [key: string]: T
+  if (props.margin) {
+    classNames.push(css.margin, css['m-' + props.margin])
+  }
+
+  return classNames.filter(e => !!e).join(' ')
 }
 
 /** Return all props that are not styled props */

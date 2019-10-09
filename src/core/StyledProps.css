@@ -9,7 +9,7 @@
   --font-weight: normal;
   --font-size: var(--font-size-normal);
   --color: var(--grey-500);
-  --spacing: 0;
+  --margin: 0;
 }
 
 /* Styles based on Intent */
@@ -102,9 +102,37 @@
     --align-items: start;
   }
 
+  &.top-center {
+    /* TBD */
+  }
+
+  &.top-right {
+    /* TBD */
+  }
+
+  &.center-left {
+    /* TBD */
+  }
+
   &.center-center {
     --justify-content: center;
     --align-items: center;
+  }
+
+  &.center-right {
+    /* TBD */
+  }
+
+  &.bottom-left {
+    /* TBD */
+  }
+
+  &.bottom-center {
+    /* TBD */
+  }
+
+  &.bottom-right {
+    /* TBD */
   }
 
   &.space-between {
@@ -112,38 +140,86 @@
   }
 }
 
-/* Styles based on spacing */
+/** Padding */
 
-.spacing {
-  &.xsmall {
-    --spacing: var(--spacing-xsmall);
+.padding {
+  &.p-xsmall {
+    --padding: var(--spacing-xsmall);
   }
 
-  &.small {
-    --spacing: var(--spacing-small);
+  &.p-small {
+    --padding: var(--spacing-small);
   }
 
-  &.medium {
-    --spacing: var(--spacing-medium);
+  &.p-medium {
+    --padding: var(--spacing-medium);
   }
 
-  &.large {
-    --spacing: var(--spacing-large);
+  &.p-large {
+    --padding: var(--spacing-large);
   }
 
-  &.xlarge {
-    --spacing: var(--spacing-xlarge);
+  &.p-xlarge {
+    --padding: var(--spacing-xlarge);
   }
 
-  &.xxlarge {
-    --spacing: var(--spacing-xxlarge);
+  &.p-xxlarge {
+    --padding: var(--spacing-xxlarge);
   }
 
-  &.xxxlarge {
-    --spacing: var(--spacing-xxxlarge);
+  &.p-xxxlarge {
+    --padding: var(--spacing-xxxlarge);
   }
 
-  &.huge {
-    --spacing: var(--spacing-huge);
+  &.p-huge {
+    --padding: var(--spacing-huge);
   }
+}
+
+/** Margin */
+
+.margin {
+  &.m-xsmall {
+    --margin: var(--spacing-xsmall);
+  }
+
+  &.m-small {
+    --margin: var(--spacing-small);
+  }
+
+  &.m-medium {
+    --margin: var(--spacing-medium);
+  }
+
+  &.m-large {
+    --margin: var(--spacing-large);
+  }
+
+  &.m-xlarge {
+    --margin: var(--spacing-xlarge);
+  }
+
+  &.m-xxlarge {
+    --margin: var(--spacing-xxlarge);
+  }
+
+  &.m-xxxlarge {
+    --margin: var(--spacing-xxxlarge);
+  }
+
+  &.m-huge {
+    --margin: var(--spacing-huge);
+  }
+}
+
+/* Currently, border prop supports 1px thinkness and border-radius always set at 4px */
+/**/
+.border {
+  --border-thickness: 1px;
+  --border-color: var(--grey-200);
+  --border-radius: 4px;
+  --border-style: solid;
+
+  border: var(--border-thickness) var(--border-color) var(--border-style);
+  border-radius: var(--border-radius);
 }

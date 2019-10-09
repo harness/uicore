@@ -1,6 +1,6 @@
 @define-mixin spacing {
-  margin: 0;
-  padding: 0;
+  margin: var(--margin, 0);
+  padding: var(--padding, 0);
 }
 
 @define-mixin font {

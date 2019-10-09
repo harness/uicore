@@ -23,7 +23,7 @@ export default class extends React.Component {
 
         <MDXProvider components={MdxComponents}>
           <main>
-            <Layout.Vertical spacing="medium">{this.props.children}</Layout.Vertical>
+            <Layout.Vertical margin="medium">{this.props.children}</Layout.Vertical>
           </main>
         </MDXProvider>
 

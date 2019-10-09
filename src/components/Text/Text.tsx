@@ -1,14 +1,10 @@
 import React from 'react'
 import css from './Text.css'
-import { StyledProps, classFromStyledProps } from '../../core/StyledProps'
+import { StyledProps, styledClasses } from '../../core/StyledProps'
 
-interface Props extends Omit<StyledProps, 'spacing'> {
-  children: React.ReactNode
-}
-
-function Text(props: Props) {
+function Text(props: StyledProps) {
   const Tag = `${props.inline ? 'span' : 'p'}` as React.ElementType
-  return <Tag className={classFromStyledProps(props, css.text)}>{props.children}</Tag>
+  return <Tag className={styledClasses(props, css.text)}>{props.children}</Tag>
 }
 
 export { Text }

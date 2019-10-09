@@ -1,17 +1,15 @@
 import React from 'react'
-import { StyledProps, classFromStyledProps } from '../core/StyledProps'
+import { StyledProps, styledClasses } from '../core/StyledProps'
 import css from './Layout.css'
 
-interface Props extends Pick<StyledProps, 'spacing'> {
-  children: React.ReactNode
-}
+type Props = Pick<StyledProps, 'children' | 'margin'>
 
 function Vertical(props: Props) {
-  return <div className={classFromStyledProps(props, css.vertical)}>{props.children}</div>
+  return <div className={styledClasses(props, css.vertical)}>{props.children}</div>
 }
 
 function Horizontal(props: Props) {
-  return <div className={classFromStyledProps(props, css.horizontal)}>{props.children}</div>
+  return <div className={styledClasses(props, css.horizontal)}>{props.children}</div>
 }
 
 const Layout = { Vertical, Horizontal }

@@ -1,9 +1,9 @@
 import React, { MouseEvent } from 'react'
 import css from './Link.css'
 import { Utils } from '../../core/Utils'
-import { StyledProps, omitStyledProps, classFromStyledProps } from '../../core/StyledProps'
+import { StyledProps, omitStyledProps, styledClasses } from '../../core/StyledProps'
 
-type Props = React.HTMLProps<HTMLLinkElement> & Omit<StyledProps, 'spacing'>
+type Props = React.HTMLProps<HTMLLinkElement> & StyledProps
 
 function Link(props: Props) {
   let extra: { rel?: string; onClick?: (e: MouseEvent) => void } = {}
@@ -19,7 +19,7 @@ function Link(props: Props) {
   }
 
   return (
-    <a {...omitStyledProps(props)} {...extra} className={classFromStyledProps(props, css.link)}>
+    <a {...omitStyledProps(props)} {...extra} className={styledClasses(props, css.link)}>
       {props.children}
     </a>
   )
