@@ -1,7 +1,7 @@
 {
   "name": "uikit",
   "version": "1.0.0",
-  "description": "Harness UI Toolkit",
+  "description": "UIKit - Lego for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",
