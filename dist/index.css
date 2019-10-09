@@ -1,0 +1,508 @@
+:root {
+  --black: #000;
+  --white: #fff;
+
+  --grey-900: #1b2025;
+  --grey-800: #22272d;
+  --grey-700: #37414b;
+  --grey-600: #4d5969;
+  --grey-500: #627386;
+  --grey-450: #7c8d9f;
+  --grey-400: #9aa5b5;
+  --grey-350: #b8bfca;
+  --grey-300: #d5dae0;
+  --grey-200: #eff2f4;
+  --grey-100: #f8f9fa;
+
+  --blue-800: #1a57ad;
+  --blue-700: #1d6fc6;
+  --blue-600: #2188dd;
+  --blue-500: #25a6f7;
+  --blue-450: #5cbdf9;
+  --blue-400: #93d2f9;
+  --blue-350: #bfe5fc;
+  --blue-300: #d4ecfc;
+  --blue-200: #edf8ff;
+  --blue-100: #f7fcff;
+
+  --red-800: #aa3d53;
+  --red-700: #c44657;
+  --red-600: #db4e58;
+  --red-500: #f45858;
+  --red-450: #f78383;
+  --red-400: #f9acac;
+  --red-350: #fccfcf;
+  --red-300: #fcdede;
+  --red-200: #fff2f2;
+  --red-100: #fff9f9;
+
+  --yellow-800: #b26008;
+  --yellow-700: #cc7b0a;
+  --yellow-600: #e59c0b;
+  --yellow-500: #fdb813;
+  --yellow-450: #ffce49;
+  --yellow-400: #ffdf87;
+  --yellow-350: #ffebb7;
+  --yellow-300: #fff2d1;
+  --yellow-200: #fff8ea;
+  --yellow-100: #fffcf4;
+
+  --green-800: #27915e;
+  --green-700: #2ca565;
+  --green-600: #32ba66;
+  --green-500: #38d168;
+  --green-450: #68dc8e;
+  --green-400: #9de8b5;
+  --green-350: #c6f2d5;
+  --green-300: #d7f4e0;
+  --green-200: #edf9f1;
+  --green-100: #f7fcf8;
+
+  --purple-900: #7258f4;
+  --purple-500: #8c78ed;
+  --purple-100: #f0edff;
+
+  --sea-green-500: #35d6cb;
+  --orange-500: #ff8f3f;
+  --magenta-500: #ed61b5;
+}
+body {
+  --font-family: 'Nunito', sans-serif, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Open Sans', 'Helvetica Neue';
+  --font-family-mono: Menlo, Monaco, 'Courier New', monospace;
+
+  font-family: var(--font-family);
+}
+:root {
+  --font-size-xsmall: 10px;
+  --font-size-small: 12px;
+  --font-size-normal: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 18px;
+  --font-size-xlarge: 20px;
+  --font-size-xxlarge: 22px;
+  --font-size-xxxlarge: 24px;
+  --font-size-huge: 30px;
+
+  --spacing-xsmall: 5px;
+  --spacing-small: 10px;
+  --spacing-medium: 15px;
+  --spacing-large: 20px;
+  --spacing-xlarge: 25px;
+  --spacing-xxlarge: 30px;
+  --spacing-xxxlarge: 40px;
+  --spacing-huge: 50px;
+}
+
+/* Default (reset) variables for styled-props based components */
+
+.StyledProps---default--urwe {
+  /*
+  These default variables make sure each component has its own default
+  styles and won't be impacted by its parent's styles.
+  */
+  --color: var(--grey-500);
+  --font-weight: normal;
+  --font-size: var(--font-size-normal);
+  --color: var(--grey-500);
+  --margin: 0;
+}
+
+/* Styles based on Intent */
+
+.StyledProps---intent--CxqU.StyledProps---primary--nkc_ {
+    --color: var(--blue-500);
+  }
+
+.StyledProps---intent--CxqU.StyledProps---success--3eDZ {
+    --color: var(--green-500);
+  }
+
+.StyledProps---intent--CxqU.StyledProps---warning--1NeE {
+    --color: var(--yellow-500);
+  }
+
+.StyledProps---intent--CxqU.StyledProps---danger--2yD2 {
+    --color: var(--red-500);
+  }
+
+/* Styles based on font */
+
+.StyledProps---font--U9qZ.StyledProps---bold--mEiz {
+    --font-weight: bold;
+  }
+
+.StyledProps---font--U9qZ.StyledProps---muted--1WlY {
+    --color: var(--grey-300);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---mono--2mQn {
+    --font-family: var(--font-family-mono);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---xsmall--WqgG {
+    --font-size: var(--font-size-xsmall);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---small--1hkW {
+    --font-size: var(--font-size-small);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---medium--2Mqk {
+    --font-size: var(--font-size-medium);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---large--2dRT {
+    --font-size: var(--font-size-large);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---xlarge--3EpW {
+    --font-size: var(--font-size-xlarge);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---xxlarge--1nRU {
+    --font-size: var(--font-size-xxlarge);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---xxxlarge--2oWo {
+    --font-size: var(--font-size-xxxlarge);
+  }
+
+.StyledProps---font--U9qZ.StyledProps---huge--vo8V {
+    --font-size: var(--font-size-huge);
+  }
+
+/* Styles based on element display prop */
+
+.StyledProps---inline--1UjH {
+  display: inline;
+}
+
+/* Layout alignments */
+
+.StyledProps---flex--w06v {
+  display: flex;
+  justify-content: var(--justify-content, space-between);
+  align-items: var(--align-items, center);
+}
+
+.StyledProps---flex--w06v.StyledProps---inline--1UjH {
+    display: inline-flex;
+  }
+
+.StyledProps---flex--w06v.StyledProps---top-left--3VA5 {
+    --justify-content: left;
+    --align-items: start;
+  }
+
+.StyledProps---flex--w06v.StyledProps---top-center--3JDu {
+    /* TBD */
+  }
+
+.StyledProps---flex--w06v.StyledProps---top-right--lEVW {
+    /* TBD */
+  }
+
+.StyledProps---flex--w06v.StyledProps---center-left--omFZ {
+    /* TBD */
+  }
+
+.StyledProps---flex--w06v.StyledProps---center-center--3Fy- {
+    --justify-content: center;
+    --align-items: center;
+  }
+
+.StyledProps---flex--w06v.StyledProps---center-right--l09Y {
+    /* TBD */
+  }
+
+.StyledProps---flex--w06v.StyledProps---bottom-left--2ceE {
+    /* TBD */
+  }
+
+.StyledProps---flex--w06v.StyledProps---bottom-center--16GB {
+    /* TBD */
+  }
+
+.StyledProps---flex--w06v.StyledProps---bottom-right--tzzy {
+    /* TBD */
+  }
+
+.StyledProps---flex--w06v.StyledProps---space-between--24fE {
+    --justify-content: space-between;
+  }
+
+/** Padding */
+
+.StyledProps---padding--2Jey.StyledProps---p-xsmall--2u_L {
+    --padding: var(--spacing-xsmall);
+  }
+
+.StyledProps---padding--2Jey.StyledProps---p-small--2V4A {
+    --padding: var(--spacing-small);
+  }
+
+.StyledProps---padding--2Jey.StyledProps---p-medium--3vsu {
+    --padding: var(--spacing-medium);
+  }
+
+.StyledProps---padding--2Jey.StyledProps---p-large--V_kV {
+    --padding: var(--spacing-large);
+  }
+
+.StyledProps---padding--2Jey.StyledProps---p-xlarge--1l5F {
+    --padding: var(--spacing-xlarge);
+  }
+
+.StyledProps---padding--2Jey.StyledProps---p-xxlarge--2xUe {
+    --padding: var(--spacing-xxlarge);
+  }
+
+.StyledProps---padding--2Jey.StyledProps---p-xxxlarge--9Yqa {
+    --padding: var(--spacing-xxxlarge);
+  }
+
+.StyledProps---padding--2Jey.StyledProps---p-huge--30fD {
+    --padding: var(--spacing-huge);
+  }
+
+/** Margin */
+
+.StyledProps---margin--3rJI.StyledProps---m-xsmall--1G68 {
+    --margin: var(--spacing-xsmall);
+  }
+
+.StyledProps---margin--3rJI.StyledProps---m-small--2PIw {
+    --margin: var(--spacing-small);
+  }
+
+.StyledProps---margin--3rJI.StyledProps---m-medium--1Wt0 {
+    --margin: var(--spacing-medium);
+  }
+
+.StyledProps---margin--3rJI.StyledProps---m-large--3MLa {
+    --margin: var(--spacing-large);
+  }
+
+.StyledProps---margin--3rJI.StyledProps---m-xlarge--1dVP {
+    --margin: var(--spacing-xlarge);
+  }
+
+.StyledProps---margin--3rJI.StyledProps---m-xxlarge--3vKK {
+    --margin: var(--spacing-xxlarge);
+  }
+
+.StyledProps---margin--3rJI.StyledProps---m-xxxlarge--ZcNB {
+    --margin: var(--spacing-xxxlarge);
+  }
+
+.StyledProps---margin--3rJI.StyledProps---m-huge--3T_b {
+    --margin: var(--spacing-huge);
+  }
+
+/* Currently, border prop supports 1px thinkness and border-radius always set at 4px */
+
+/**/
+
+.StyledProps---border--3EXW {
+  --border-thickness: 1px;
+  --border-color: var(--grey-200);
+  --border-radius: 4px;
+  --border-style: solid;
+
+  border: var(--border-thickness) var(--border-color) var(--border-style);
+  border-radius: var(--border-radius);
+}
+
+.Layout---vertical--3Szv,
+.Layout---horizontal--3rmQ {
+  --layout-spacing: var(--margin);
+}
+
+.Layout---vertical--3Szv {
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.Layout---vertical--3Szv > * {
+  margin-bottom: var(--layout-spacing) !important;
+}
+
+.Layout---vertical--3Szv > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.Layout---horizontal--3rmQ {
+  display: flex;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.Layout---horizontal--3rmQ > * {
+  margin-right: var(--layout-spacing) !important;
+}
+
+.Layout---horizontal--3rmQ > *:last-child {
+  margin-right: 0 !important;
+}
+
+.Button---button--4ZD5 {
+  font-size: 16px;
+  font-weight: 400;
+  height: 32px;
+  border-radius: 5px;
+  display: inline-flex;
+}
+
+  .Button---button--4ZD5,
+  .Button---button--4ZD5:focus,
+  .Button---button--4ZD5:active {
+    outline: none; /* Disable outline until we find a good styling for it*/
+  }
+
+  .Button---button--4ZD5 .bp3-icon {
+      color: currentColor;
+    }
+
+  /* Make inline icons have the same color as the button color */
+
+  .Button---button--4ZD5 > span svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .Button---button--4ZD5 > span svg path {
+      fill: currentColor !important;
+    }
+
+  .Button---button--4ZD5 > span svg :not(path) {
+      stroke: currentColor !important;
+    }
+
+  /* Disabled */
+
+  .Button---button--4ZD5[class*='bp3-disabled'] svg,
+    .Button---button--4ZD5[class*='bp3-disabled'] svg > * {
+      cursor: not-allowed;
+    }
+
+  /* Secondary button */
+
+  .Button---button--4ZD5[class*='bp3-button']:not([class*='bp3-intent-']) {
+    background: white;
+    box-shadow: none;
+    color: #22272d;
+  }
+
+  .Button---button--4ZD5[class*='bp3-button']:not([class*='bp3-intent-']):not([class*='bp3-minimal']) {
+      border: 1px solid #b8bfca;
+    }
+
+  .Button---button--4ZD5[class*='bp3-button']:not([class*='bp3-intent-']):hover {
+      border-color: #25a6f7;
+      color: #25a6f7;
+      background-color: #f7fcff;
+    }
+
+  .Button---button--4ZD5[class*='bp3-button']:not([class*='bp3-intent-']):active {
+      border-color: #93d2f9;
+      color: #93d2f9;
+      background-color: #edf8ff;
+    }
+
+.Link---link--2iET {
+  margin: var(--margin, 0);
+  padding: var(--padding, 0);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
+  white-space: normal;
+  line-height: 1.3;
+
+  color: var(--blue-500);
+}
+
+  .Link---link--2iET:hover {
+    color: var(--blue-500);
+  }
+
+  .Link---link--2iET[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+.Heading---main--2Q0Q {
+  margin: var(--margin, 0);
+  padding: var(--padding, 0);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
+  white-space: normal;
+  line-height: 1.3;
+}
+
+  h1.Heading---main--2Q0Q {
+    --font-size: var(--font-size-huge);
+  }
+
+  h2.Heading---main--2Q0Q {
+    --font-size: var(--font-size-xxxlarge);
+  }
+
+  h3.Heading---main--2Q0Q {
+    --font-size: var(--font-size-xxlarge);
+  }
+
+  h4.Heading---main--2Q0Q {
+    --font-size: var(--font-size-medium);
+  }
+
+  h5.Heading---main--2Q0Q {
+    --font-size: var(--font-size-normal);
+  }
+
+  h6.Heading---main--2Q0Q {
+    --font-size: var(--font-size-small);
+  }
+
+.Text---text--3-bj {
+  margin: var(--margin, 0);
+  padding: var(--padding, 0);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.List---list--28EC {
+  margin: var(--margin, 0);
+  padding: var(--padding, 0);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
+  white-space: normal;
+  line-height: 1.3;
+
+  padding-left: var(--spacing-xxxlarge, 30px);
+}
+
+.ListItem---item--2mjP {
+  color: var(--color, var(--grey-500));
+}
+
+  .ListItem---item--2mjP:not(:last-child) {
+    margin-bottom: var(--spacing-xsmall, 5px);
+  }
+
+
+/*# sourceMappingURL=index.css.map*/
