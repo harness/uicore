@@ -10,6 +10,7 @@
   --font-size: var(--font-size-normal);
   --color: var(--grey-500);
   --margin: 0;
+  --padding: 0;
 }
 
 /* Styles based on Intent */
