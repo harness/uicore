@@ -1,6 +1,5 @@
-docs/static/index.*
-docs/static/**/*.d.ts
-dist/*
+docs/static/**/*
+dist/**/*
 types/*
 
 .DS_Store
