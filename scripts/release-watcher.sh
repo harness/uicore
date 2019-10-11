@@ -13,5 +13,5 @@ if [ "$RELEASE_EXISTS" ]; then
   echo "Release exists. Doing nothing."
   exit 1
 else
-  echo "Trigger new release build for version $VERSION..."
+  echo "Trigger new release build for v$VERSION..."
 fi
