@@ -18,4 +18,4 @@ git commit . -m"Release version: v$NEW_VERSION"
 # cp -R ./* /jenkins-storage/ui/uikit/$NEW_VERSION
 
 # This is for Jenkins to set environmen variables
-echo "VERSION=v$VERSION" > build.properties
+echo "VERSION=$VERSION" > build.properties
