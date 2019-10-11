@@ -1,5 +1,7 @@
 # Disable NextJS tracking
 export NEXT_TELEMETRY_DISABLED=1
+
+# Get version from package.json
 export VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json)
 
 # Create a new branch like v1.0.1
