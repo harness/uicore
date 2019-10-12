@@ -7,7 +7,7 @@
 # When this script exits with status 1, the downstream job is not triggered.
 
 VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json)
-RELEASE_EXISTS=$(git branch -r | grep "origin/release/$VERSION" | wc -l)
+RELEASE_EXISTS=$(git branch -r | grep "origin/v$VERSION" | wc -l)
 
 if [ $RELEASE_EXISTS -ne 0 ]; then
   echo "Release exists. Doing nothing."
