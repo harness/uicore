@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: uikit-
+  labels:
+    jenkins: uikit
+    uikit: uikit
+  namespace: jenkins
+spec:
+  nodeSelector:
+    purpose: ui
+  containers:
+    - name: uikit
+      image: node
+      resources:
+        requests:
+          memory: '1Gi'
+          cpu: 1
+      volumeMounts:
+        - mountPath: /jenkins-storage
+          name: volume-0
+      command: ['bash']
+      args: ['/jenkins-storage/ui/uikit/v$VERSION/scripts/run-docs.sh', '/jenkins-storage/ui/uikit/v$VERSION']
+  volumes:
+    - name: volume-0
+      persistentVolumeClaim:
+        claimName: nfs
+  restartPolicy: Never

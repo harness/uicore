@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: uikit-service
+spec:
+  selector:
+    jenkins: uikit
+    uikit: uikit
+  ports:
+    - name: uikit
+      protocol: TCP
+      port: 80
+      targetPort: 3000
