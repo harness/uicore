@@ -14,7 +14,7 @@ if [ $RELEASE_EXISTS -ne 0 ]; then
   echo "Release exists. Doing nothing."
   exit 1
 else
-  if [ $RELEASE_EXISTS -ne 0 ]; then
+  if [ $HAS_CHANGELOG -ne 0 ]; then
     echo "Trigger new release build for v$VERSION..."
   else
     echo "CHANGELOG is not provided with this release. Aborted."
