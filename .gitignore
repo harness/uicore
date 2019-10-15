@@ -1,4 +1,5 @@
 docs/static/**/*
+docs/node_modules
 dist/**/*
 types/*
 

@@ -1,0 +1,13 @@
+#
+# This file ensures `npm publish` only packages files in ./dist
+# and nothing else
+#
+.vscode
+docs
+scripts
+src
+CHANGELOG.md
+README.md
+tsconfig.json
+webpack.config.js
+yarn.lock

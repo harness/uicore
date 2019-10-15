@@ -17,6 +17,7 @@
     "ui:build": "NODE_ENV=production webpack",
     "docs:watch": "cd docs; yarn watch"
   },
+  "license": "UNLICENSED",
   "repository": "https://github.com/wings-software/uikit",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
