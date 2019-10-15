@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## [1.0.4](https://github.com/wings-software/uikit/compare/v1.0.2...v1.0.3) - 10/14/09
+
+- `Added` README section on publishing.
+
 ## [1.0.3](https://github.com/wings-software/uikit/compare/v1.0.2...v1.0.3) - 10/14/09
 
 - `Changed` package name to `@wings-software/uikit` to reflect GitHub Package Registry rule.
