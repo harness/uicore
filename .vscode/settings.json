@@ -20,7 +20,8 @@
     "webpack.config.js": true,
     "tsconfig.json": true,
     "types": true,
-    "scripts": true
+    "scripts": true,
+    ".npmignore": true
   },
   "files.exclude": {
     "**/node_modules": true,
@@ -43,7 +44,8 @@
     "webpack.config.js": true,
     "tsconfig.json": true,
     "types": true,
-    "scripts": true
+    "scripts": true,
+    ".npmignore": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
