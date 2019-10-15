@@ -1,15 +1,19 @@
-#### 1.0.3 - 10/14/09
+# UIKIT CHANGELOG
 
-- Rename package to @wings-software/uikit to reflect GitHub Package Registry rule.
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-#### 1.0.2 - 10/12/09
+## [1.0.3](https://github.com/wings-software/uikit/compare/v1.0.2...v1.0.3) - 10/14/09
 
-- Added scripts and K8s spec to run documentation site
+- `Changed` package name to `@wings-software/uikit` to reflect GitHub Package Registry rule.
 
-#### 1.0.1 - 10/12/09
+## [1.0.2](https://github.com/wings-software/uikit/compare/v1.0.1...v1.0.2) - 10/12/09
 
-- Updated release scripts
+- `Added` scripts and K8s spec to run documentation site
 
-#### 1.0.0 - 10/11/09
+## [1.0.1](https://github.com/wings-software/uikit/compare/v1.0.0...v1.0.1) - 10/12/09
 
-- First release
+- `Changed` release scripts
+
+## [1.0.0](https://github.com/wings-software/uikit/tree/v1.0.0) - 10/11/09
+
+- Initial release
