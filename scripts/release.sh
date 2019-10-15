@@ -19,3 +19,6 @@ git commit . -m"Release version: v$VERSION"
 
 # This is for Jenkins to set environmen variables
 echo "VERSION=$VERSION" > build.properties
+
+echo "Publishing"
+npm publish

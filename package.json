@@ -1,7 +1,7 @@
 {
-  "name": "uikit",
-  "version": "1.0.2",
-  "description": "UIKit - Lego for building Harness UI applications",
+  "name": "@wings-software/uikit",
+  "version": "1.0.3",
+  "description": "Harness UIKit - Lego for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",
@@ -17,7 +17,10 @@
     "ui:build": "NODE_ENV=production webpack",
     "docs:watch": "cd docs; yarn watch"
   },
-  "private": true,
+  "repository": "https://github.com/wings-software/uikit",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "peerDependencies": {
     "@blueprintjs/core": "^3.18.0",
     "clipboard-copy": "^3.1.0",
