@@ -24,6 +24,7 @@
   },
   "files.exclude": {
     "**/node_modules": true,
+    ".npmrc": true,
     "npm-debug.log*": true,
     "**/static": true,
     "dist/": true,
