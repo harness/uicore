@@ -20,5 +20,6 @@ git commit . -m"Release version: v$VERSION"
 # This is for Jenkins to set environmen variables
 echo "VERSION=$VERSION" > build.properties
 
-echo "Publishing"
+echo "Publishing... v$VERSION"
+echo $GITHUB_HARNESS_BOT_TOKEN > ~/.npmrc
 npm publish
