@@ -8,10 +8,16 @@
 
 VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json)
 RELEASE_EXISTS=$(git branch -r | grep "origin/v$VERSION" | wc -l)
+HAS_CHANGELOG=$(git show | grep CHANGELOG | wc -l)
 
 if [ $RELEASE_EXISTS -ne 0 ]; then
   echo "Release exists. Doing nothing."
   exit 1
 else
-  echo "Trigger new release build for v$VERSION..."
+  if [ $RELEASE_EXISTS -ne 0 ]; then
+    echo "Trigger new release build for v$VERSION..."
+  else
+    echo "CHANGELOG is not provided with this release. Aborted."
+    exit 1
+  fi
 fi
