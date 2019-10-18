@@ -1,34 +1,30 @@
 .vertical,
 .horizontal {
+  display: flex;
+  flex-basis: auto;
+  flex-shrink: 0;
+  width: auto;
   --layout-spacing: var(--margin);
 }
 
 .vertical {
-  display: flex;
-  flex-basis: auto;
   flex-direction: column;
-  flex-shrink: 0;
-  width: auto;
+}
+
+.horizontal {
+  flex-direction: row;
 }
 
 .vertical > * {
   margin-bottom: var(--layout-spacing) !important;
 }
 
-.vertical > *:last-child {
-  margin-bottom: 0 !important;
-}
-
-.horizontal {
-  display: flex;
-  flex-basis: auto;
-  flex-direction: row;
-  flex-shrink: 0;
-  width: auto;
-}
-
 .horizontal > * {
   margin-right: var(--layout-spacing) !important;
+}
+
+.vertical > *:last-child {
+  margin-bottom: 0 !important;
 }
 
 .horizontal > *:last-child {

@@ -6,7 +6,7 @@ import { StyledProps, omitStyledProps, styledClasses } from '../../core/StyledPr
 type Props = React.HTMLProps<HTMLLinkElement> & StyledProps
 
 function Link(props: Props) {
-  let extra: { rel?: string; onClick?: (e: MouseEvent) => void } = {}
+  const extra: { rel?: string; onClick?: (e: MouseEvent) => void } = {}
 
   // Make sure all _blank target has proper rel
   // @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
