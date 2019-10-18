@@ -214,7 +214,6 @@
 }
 
 /* Currently, border prop supports 1px thinkness and border-radius always set at 4px */
-/**/
 .border {
   --border-thickness: 1px;
   --border-color: var(--grey-200);
