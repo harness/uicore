@@ -1,7 +1,5 @@
 @import '../../styles/mixins.css';
 
 .list {
-  @mixin styled-props;
-
   padding-left: var(--spacing-xxxlarge, 30px);
 }

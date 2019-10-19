@@ -1,22 +1,30 @@
 import css from './StyledProps.css'
 import { Intent } from './Intent'
 import { Spacing } from './Spacing'
+import { Color } from './Color'
 import { KVO } from './Types'
 
-const StyledPropKeys = [
+/*
+  List of styled props to loop through as you won't be
+  able to do that with TypeScript type/inteface fields.
+*/
+const PropsList = [
   'intent',
+  'margin',
+  'padding',
   'font',
   'bold',
-  'muted',
-  'mono',
+  'italic',
   'inline',
+  'mono',
+  'color',
+  'background',
+  'textAlign',
   'flex',
   'flexAlign',
   'flexDistribution',
   'border',
-  'margin',
-  'padding',
-  'textAlign'
+  'borderColor'
 ]
 
 /**
@@ -27,20 +35,35 @@ export interface StyledProps {
   /** Component intent */
   intent?: Intent
 
+  /** Component margin. Usually used for containers */
+  margin?: Spacing
+
+  /** Component padding. Usually used for containers */
+  padding?: Spacing
+
+  /** Component font size */
+  font?: Spacing
+
   /** Make text bold */
   bold?: boolean
+
+  /** Make text italic */
+  italic?: boolean
 
   /** Render component as inline block */
   inline?: boolean
 
-  /** Mark component as being muted. Usually used for text */
-  muted?: boolean
-
   /** Set font family to mono. Ussually used in for code or snippet */
   mono?: boolean
 
-  /** Component font size */
-  font?: Spacing
+  /** Text color */
+  color?: Color
+
+  /** Background color */
+  background?: Color
+
+  /** Text align */
+  textAlign?: 'center' | 'right'
 
   /** Component flex layout. Use in commbination with flexAlign and flexDistribution */
   flex?: boolean
@@ -61,13 +84,10 @@ export interface StyledProps {
   flexDistribution?: 'space-between'
 
   /** Component border */
-  border?: boolean
+  border?: boolean | 'top' | 'right' | 'bottom' | 'left'
 
-  /** Component margin. Usually used for containers */
-  margin?: Spacing
-
-  /** Component padding. Usually used for containers */
-  padding?: Spacing
+  /** Border color */
+  borderColor?: Color
 
   /** Component children */
   children: React.ReactNode
@@ -77,32 +97,15 @@ export interface StyledProps {
 export function styledClasses(props: StyledProps, className?: string) {
   const classNames = []
 
-  classNames.push(css.default, className)
-  classNames.push(props.intent && css.intent, props.intent && css[props.intent])
-  classNames.push(props.inline && css.inline)
-  classNames.push(props.border && css.border)
+  classNames.push(css.reset, className)
 
-  if (props.font || props.bold || props.mono || props.muted) {
-    classNames.push(css.font, props.font && css[props.font])
-    classNames.push(props.mono && css.mono)
-    classNames.push(props.bold && css.bold)
-    classNames.push(props.muted && css.muted)
-  }
+  Object.keys(props).forEach(name => {
+    classNames.push(css[name], css[(props as KVO)[name]])
 
-  if (props.flex) {
-    classNames.push(css.flex)
-    classNames.push(props.inline && css.inline)
-    classNames.push(props.flexAlign && css[props.flexAlign])
-    classNames.push(props.flexDistribution && css[props.flexDistribution])
-  }
-
-  if (props.padding) {
-    classNames.push(css.padding, css['p-' + props.padding])
-  }
-
-  if (props.margin) {
-    classNames.push(css.margin, css['m-' + props.margin])
-  }
+    if ((props.bold || props.mono) && !props.font) {
+      classNames.push(css.font)
+    }
+  })
 
   return classNames.filter(e => !!e).join(' ')
 }
@@ -110,7 +113,7 @@ export function styledClasses(props: StyledProps, className?: string) {
 /** Return all props that are not styled props */
 export function omitStyledProps(props: KVO): KVO {
   return Object.keys(props)
-    .filter(key => !StyledPropKeys.includes(key))
+    .filter(key => !PropsList.includes(key))
     .reduce((obj: KVO, key) => {
       obj[key] = props[key]
       return obj

@@ -1,8 +1,6 @@
 @import '../../styles/mixins.css';
 
 .link {
-  @mixin styled-props;
-
   color: var(--blue-500);
 
   &:hover {
