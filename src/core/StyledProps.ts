@@ -94,10 +94,10 @@ export interface StyledProps {
 }
 
 /** Generate classes from styled props */
-export function styledClasses(props: StyledProps, className?: string) {
+export function styledClasses(props: StyledProps, ...classes: string[]) {
   const classNames = []
 
-  classNames.push(css.reset, className)
+  classNames.push(css.main, ...classes)
 
   Object.keys(props).forEach(name => {
     classNames.push(css[name], css[(props as KVO)[name]])
