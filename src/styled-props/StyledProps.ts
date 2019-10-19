@@ -20,11 +20,11 @@ const PropsList = [
   'color',
   'background',
   'textAlign',
+  'border',
+  'borderColor',
   'flex',
   'flexAlign',
-  'flexDistribution',
-  'border',
-  'borderColor'
+  'flexDistribution'
 ]
 
 /**
