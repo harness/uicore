@@ -1,81 +1,78 @@
 @define-mixin font {
   &.font {
-    --font-size: var(--font-size-normal);
-    --font-weight: normal;
-
-    font-size: var(--font-size);
-    font-weight: var(--font-weight);
+    font-size: var(font-size-normal);
+    font-weight: normal;
     font-family: var(--font-family);
 
     white-space: normal;
     line-height: 1.3;
+  }
 
-    &.h1 {
-      --font-size: var(--font-size-huge);
-    }
+  &.font-h1 {
+    font-size: var(font-size-huge);
+  }
 
-    &.h2 {
-      --font-size: var(--font-size-xxxlarge);
-    }
+  &.font-h2 {
+    font-size: var(font-size-xxxlarge);
+  }
 
-    &.h3 {
-      --font-size: var(--font-size-xxlarge);
-    }
+  &.font-h3 {
+    font-size: var(font-size-xxlarge);
+  }
 
-    &.h4 {
-      --font-size: var(--font-size-medium);
-    }
+  &.font-h4 {
+    font-size: var(font-size-medium);
+  }
 
-    &.h5 {
-      --font-size: var(--font-size-normal);
-    }
+  &.font-h5 {
+    font-size: var(font-size-normal);
+  }
 
-    &.h6 {
-      --font-size: var(--font-size-small);
-    }
+  &.font-h6 {
+    font-size: var(font-size-small);
+  }
 
-    &.bold {
-      --font-weight: bold;
-    }
+  &.font-bold {
+    font-weight: bold;
+  }
 
-    &.italic {
-      font-style: italic;
-    }
+  &.font-italic {
+    font-style: italic;
+  }
 
-    &.mono {
-      --font-family: var(--font-family-mono);
-    }
+  &.font-mono {
+    font-family: var(--font-family-mono);
+  }
 
-    &.font-xsmall {
-      --font-size: var(--font-size-xsmall);
-    }
+  &.font-xsmall {
+    font-size: var(font-size-xsmall);
+  }
 
-    &.font-small {
-      --font-size: var(--font-size-small);
-    }
+  &.font-small {
+    font-size: var(font-size-small);
+  }
 
-    &.font-medium {
-      --font-size: var(--font-size-medium);
-    }
+  &.font-medium {
+    font-size: var(font-size-medium);
+  }
 
-    &.font-large {
-      --font-size: var(--font-size-large);
-    }
+  &.font-large {
+    font-size: var(font-size-large);
+  }
 
-    &.font-xlarge {
-      --font-size: var(--font-size-xlarge);
-    }
+  &.font-xlarge {
+    font-size: var(font-size-xlarge);
+  }
 
-    &.font-xxlarge {
-      --font-size: var(--font-size-xxlarge);
-    }
+  &.font-xxlarge {
+    font-size: var(font-size-xxlarge);
+  }
 
-    &.font-xxxlarge {
-      --font-size: var(--font-size-xxxlarge);
-    }
+  &.font-xxxlarge {
+    font-size: var(font-size-xxxlarge);
+  }
 
-    &.font-huge {
-      --font-size: var(--font-size-huge);
-    }
+  &.font-huge {
+    font-size: var(font-size-huge);
   }
 }

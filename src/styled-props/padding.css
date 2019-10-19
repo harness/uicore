@@ -1,8 +1,4 @@
 @define-mixin padding {
-  &.padding {
-    padding: 0;
-  }
-
   &.padding-xsmall {
     padding: var(--spacing-xsmall);
   }

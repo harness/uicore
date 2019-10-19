@@ -3,51 +3,51 @@
     display: flex;
     justify-content: var(--justify-content, space-between);
     align-items: var(--align-items, center);
+  }
 
-    &.inline {
-      display: inline-flex;
-    }
+  &.flex-inline {
+    display: inline-flex;
+  }
 
-    &.top-left {
-      --justify-content: left;
-      --align-items: start;
-    }
+  &.flex-top-left {
+    --justify-content: left;
+    --align-items: start;
+  }
 
-    &.top-center {
-      /* TBD */
-    }
+  &.flex-top-center {
+    /* TBD */
+  }
 
-    &.top-right {
-      /* TBD */
-    }
+  &.flex-top-right {
+    /* TBD */
+  }
 
-    &.center-left {
-      /* TBD */
-    }
+  &.flex-center-left {
+    /* TBD */
+  }
 
-    &.center-center {
-      --justify-content: center;
-      --align-items: center;
-    }
+  &.flex-center-center {
+    --justify-content: center;
+    --align-items: center;
+  }
 
-    &.center-right {
-      /* TBD */
-    }
+  &.flex-center-right {
+    /* TBD */
+  }
 
-    &.bottom-left {
-      /* TBD */
-    }
+  &.flex-bottom-left {
+    /* TBD */
+  }
 
-    &.bottom-center {
-      /* TBD */
-    }
+  &.flex-bottom-center {
+    /* TBD */
+  }
 
-    &.bottom-right {
-      /* TBD */
-    }
+  &.flex-bottom-right {
+    /* TBD */
+  }
 
-    &.space-between {
-      --justify-content: space-between;
-    }
+  &.flex-space-between {
+    --justify-content: space-between;
   }
 }

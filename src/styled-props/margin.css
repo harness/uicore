@@ -1,8 +1,4 @@
 @define-mixin margin {
-  &.margin {
-    margin: 0;
-  }
-
   &.margin-xsmall {
     margin: var(--spacing-xsmall);
   }

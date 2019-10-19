@@ -4,54 +4,6 @@ import { Spacing } from '../core/Spacing'
 import { Color } from '../core/Color'
 import { KVO } from '../core/Types'
 
-/*
-  List of styled props to loop through as you won't be
-  able to do that with TypeScript type/inteface fields.
-*/
-const PropsList = [
-  'intent',
-  'margin',
-  'padding',
-  'font',
-  'bold',
-  'italic',
-  'inline',
-  'mono',
-  'color',
-  'background',
-  'textAlign',
-  'border',
-  'borderColor',
-  'flex',
-  'flexAlign',
-  'flexDistribution'
-]
-
-/*
-  When a prop's value is included in this PrefixList, its name
-  needs to be prefixed when generating the class name. This
-  technique ensures the same value name could be used for
-  different props without having styling conflict.
-
-  For example:
-    margin="large" => "margin-large"
-    border="top"   => "border-top"
-*/
-const PrefixList = [
-  Spacing.XSMALL,
-  Spacing.SMALL,
-  Spacing.MEDIUM,
-  Spacing.LARGE,
-  Spacing.XLARGE,
-  Spacing.XXLARGE,
-  Spacing.XXXLARGE,
-  Spacing.HUGE,
-  'top',
-  'right',
-  'bottom',
-  'left'
-]
-
 /**
  * Styled Props: Define reusable styles across components.
  * Inspired by https://styled-system.com/theme-specification
@@ -125,22 +77,40 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
   classNames.push(css.main, ...classes)
 
   Object.keys(props).forEach(name => {
-    let field = (props as KVO)[name]
+    const value = (props as KVO)[name]
 
-    if (PrefixList.includes(field)) {
-      field = `${name}-${field}`
-      console.log({ name, field, css, clz: css[field] })
-    }
-
-    classNames.push(css[name], css[field])
+    classNames.push(css[name], css[`${name}-${value}`])
 
     if ((props.bold || props.mono) && !props.font) {
       classNames.push(css.font)
     }
   })
 
-  return classNames.filter(e => !!e).join(' ')
+  return Array.from(new Set(classNames.filter(e => !!e))).join(' ')
 }
+
+/*
+  List of styled props to loop through as you won't be
+  able to do that with TypeScript type/inteface fields.
+*/
+const PropsList = [
+  'intent',
+  'margin',
+  'padding',
+  'font',
+  'bold',
+  'italic',
+  'inline',
+  'mono',
+  'color',
+  'background',
+  'textAlign',
+  'border',
+  'borderColor',
+  'flex',
+  'flexAlign',
+  'flexDistribution'
+]
 
 /** Return all props that are not styled props */
 export function omitStyledProps(props: KVO): KVO {

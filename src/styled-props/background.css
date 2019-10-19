@@ -1,8 +1,4 @@
 @define-mixin background {
-  &.background {
-    background: none;
-  }
-
   &.background-black {
     background: var(--black);
   }

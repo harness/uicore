@@ -1,13 +1,9 @@
 @define-mixin textAlign {
-  &.textAlign {
-    text-align: var(--text-align, left);
+  &.textAlign-center {
+    text-align: center;
+  }
 
-    &.center {
-      --text-align: center;
-    }
-
-    &.right {
-      --text-align: right;
-    }
+  &.textAlign-right {
+    text-align: right;
   }
 }
