@@ -241,35 +241,35 @@
 @define-mixin define-spacing $name, $defaultValue: 0 {
   $(name): $(defaultValue);
 
-  &.xsmall {
+  &.$(name)-xsmall {
     $(name): var(--spacing-xsmall);
   }
 
-  &.small {
+  &.$(name)-small {
     $(name): var(--spacing-small);
   }
 
-  &.medium {
+  &.$(name)-medium {
     $(name): var(--spacing-medium);
   }
 
-  &.large {
+  &.$(name)-large {
     $(name): var(--spacing-large);
   }
 
-  &.xlarge {
+  &.$(name)-xlarge {
     $(name): var(--spacing-xlarge);
   }
 
-  &.xxlarge {
+  &.$(name)-xxlarge {
     $(name): var(--spacing-xxlarge);
   }
 
-  &.xxxlarge {
+  &.$(name)-xxxlarge {
     $(name): var(--spacing-xxxlarge);
   }
 
-  &.huge {
+  &.$(name)-huge {
     $(name): var(--spacing-huge);
   }
 }

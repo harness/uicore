@@ -27,6 +27,17 @@ const PropsList = [
   'flexDistribution'
 ]
 
+const SpacingValues = [
+  Spacing.XSMALL,
+  Spacing.SMALL,
+  Spacing.MEDIUM,
+  Spacing.LARGE,
+  Spacing.XLARGE,
+  Spacing.XXLARGE,
+  Spacing.XXXLARGE,
+  Spacing.HUGE
+]
+
 /**
  * Styled Props: Define reusable styles across components.
  * Inspired by https://styled-system.com/theme-specification
@@ -100,7 +111,14 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
   classNames.push(css.main, ...classes)
 
   Object.keys(props).forEach(name => {
-    classNames.push(css[name], css[(props as KVO)[name]])
+    let field = (props as KVO)[name]
+
+    if (SpacingValues.includes(field)) {
+      field = `${name}-${field}`
+      console.log({ name, field, css, clz: css[field] })
+    }
+
+    classNames.push(css[name], css[field])
 
     if ((props.bold || props.mono) && !props.font) {
       classNames.push(css.font)

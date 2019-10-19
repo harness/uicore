@@ -48,35 +48,35 @@
       --font-family: var(--font-family-mono);
     }
 
-    &.xsmall {
+    &.font-xsmall {
       --font-size: var(--font-size-xsmall);
     }
 
-    &.small {
+    &.font-small {
       --font-size: var(--font-size-small);
     }
 
-    &.medium {
+    &.font-medium {
       --font-size: var(--font-size-medium);
     }
 
-    &.large {
+    &.font-large {
       --font-size: var(--font-size-large);
     }
 
-    &.xlarge {
+    &.font-xlarge {
       --font-size: var(--font-size-xlarge);
     }
 
-    &.xxlarge {
+    &.font-xxlarge {
       --font-size: var(--font-size-xxlarge);
     }
 
-    &.xxxlarge {
+    &.font-xxxlarge {
       --font-size: var(--font-size-xxxlarge);
     }
 
-    &.huge {
+    &.font-huge {
       --font-size: var(--font-size-huge);
     }
   }
