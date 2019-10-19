@@ -2,6 +2,9 @@
 @import './padding.css';
 @import './intent.css';
 @import './font.css';
+@import './bold.css';
+@import './italic.css';
+@import './mono.css';
 @import './inline.css';
 @import './color.css';
 @import './background.css';
@@ -19,6 +22,9 @@
   @mixin margin;
   @mixin padding;
   @mixin font;
+  @mixin bold;
+  @mixin italic;
+  @mixin mono;
   @mixin inline;
   @mixin color;
   @mixin background;

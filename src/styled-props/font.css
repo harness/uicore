@@ -8,40 +8,28 @@
     line-height: 1.3;
   }
 
-  &.font-h1 {
+  h1& {
     font-size: var(font-size-huge);
   }
 
-  &.font-h2 {
+  h2& {
     font-size: var(font-size-xxxlarge);
   }
 
-  &.font-h3 {
+  h3& {
     font-size: var(font-size-xxlarge);
   }
 
-  &.font-h4 {
+  h4& {
     font-size: var(font-size-medium);
   }
 
-  &.font-h5 {
+  h5& {
     font-size: var(font-size-normal);
   }
 
-  &.font-h6 {
+  h6& {
     font-size: var(font-size-small);
-  }
-
-  &.font-bold {
-    font-weight: bold;
-  }
-
-  &.font-italic {
-    font-style: italic;
-  }
-
-  &.font-mono {
-    font-family: var(--font-family-mono);
   }
 
   &.font-xsmall {
