@@ -1,8 +1,8 @@
 import css from './StyledProps.css'
-import { Intent } from './Intent'
-import { Spacing } from './Spacing'
-import { Color } from './Color'
-import { KVO } from './Types'
+import { Intent } from '../core/Intent'
+import { Spacing } from '../core/Spacing'
+import { Color } from '../core/Color'
+import { KVO } from '../core/Types'
 
 /*
   List of styled props to loop through as you won't be

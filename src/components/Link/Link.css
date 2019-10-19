@@ -1,5 +1,3 @@
-@import '../../styles/mixins.css';
-
 .link {
   color: var(--blue-500);
 

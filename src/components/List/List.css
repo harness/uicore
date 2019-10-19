@@ -1,5 +1,3 @@
-@import '../../styles/mixins.css';
-
 .list {
   padding-left: var(--spacing-xxxlarge, 30px);
 }

@@ -1,0 +1,7 @@
+@import './mixins.css';
+
+@define-mixin color {
+  &.color {
+    @mixin define-color color, var(--grey-500);
+  }
+}

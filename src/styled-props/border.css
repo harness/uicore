@@ -1,0 +1,42 @@
+@import './mixins.css';
+
+@define-mixin border {
+  &.border {
+    @mixin define-color border-color, var(--grey-200);
+
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+
+    &.top,
+    &.right,
+    &.bottom,
+    &.left {
+      border-radius: 0;
+    }
+
+    &.top {
+      border-right: none;
+      border-bottom: none;
+      border-left: none;
+    }
+
+    &.right {
+      border-top: none;
+      border-bottom: none;
+      border-left: none;
+    }
+
+    &.bottom {
+      border-right: none;
+      border-top: none;
+      border-left: none;
+    }
+
+    &.left {
+      border-right: none;
+      border-bottom: none;
+      border-top: none;
+    }
+  }
+}

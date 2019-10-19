@@ -1,0 +1,55 @@
+@import './mixins.css';
+
+@define-mixin flex {
+  &.flex {
+    display: flex;
+    justify-content: var(--justify-content, space-between);
+    align-items: var(--align-items, center);
+
+    &.inline {
+      display: inline-flex;
+    }
+
+    &.top-left {
+      --justify-content: left;
+      --align-items: start;
+    }
+
+    &.top-center {
+      /* TBD */
+    }
+
+    &.top-right {
+      /* TBD */
+    }
+
+    &.center-left {
+      /* TBD */
+    }
+
+    &.center-center {
+      --justify-content: center;
+      --align-items: center;
+    }
+
+    &.center-right {
+      /* TBD */
+    }
+
+    &.bottom-left {
+      /* TBD */
+    }
+
+    &.bottom-center {
+      /* TBD */
+    }
+
+    &.bottom-right {
+      /* TBD */
+    }
+
+    &.space-between {
+      --justify-content: space-between;
+    }
+  }
+}

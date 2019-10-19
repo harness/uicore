@@ -1,0 +1,8 @@
+@import './mixins.css';
+
+@define-mixin margin {
+  &.margin {
+    @mixin define-spacing --margin, 0;
+    margin: var(--margin);
+  }
+}

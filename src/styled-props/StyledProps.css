@@ -1,0 +1,29 @@
+@import './mixins.css';
+@import './margin.css';
+@import './padding.css';
+@import './intent.css';
+@import './font.css';
+@import './inline.css';
+@import './color.css';
+@import './background.css';
+@import './textAlign.css';
+@import './border.css';
+@import './flex.css';
+
+:not(.main) .main {
+  margin: 0;
+  padding: 0;
+  color: var(--grey-500);
+  background: none;
+
+  @mixin margin;
+  @mixin padding;
+  @mixin intent;
+  @mixin font;
+  @mixin inline;
+  @mixin color;
+  @mixin background;
+  @mixin textAlign;
+  @mixin border;
+  @mixin flex;
+}

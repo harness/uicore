@@ -1,0 +1,8 @@
+@import './mixins.css';
+
+@define-mixin padding {
+  &.padding {
+    @mixin define-spacing --padding, 0;
+    padding: var(--padding);
+  }
+}

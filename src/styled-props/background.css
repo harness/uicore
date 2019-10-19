@@ -1,0 +1,7 @@
+@import './mixins.css';
+
+@define-mixin background {
+  &.background {
+    @mixin define-color background, transparent;
+  }
+}

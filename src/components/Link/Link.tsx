@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react'
 import css from './Link.css'
 import { Utils } from '../../core/Utils'
-import { StyledProps, omitStyledProps, styledClasses } from '../../core/StyledProps'
+import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
 
 type Props = React.HTMLProps<HTMLLinkElement> & StyledProps
 

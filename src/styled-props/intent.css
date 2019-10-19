@@ -1,0 +1,23 @@
+@import './mixins.css';
+
+@define-mixin intent {
+  &.intent {
+    --intent-color: none;
+
+    &.primary {
+      --intent-color: var(--blue-500);
+    }
+
+    &.success {
+      --intent-color: var(--green-500);
+    }
+
+    &.warning {
+      --intent-color: var(--yellow-500);
+    }
+
+    &.danger {
+      --intent-color: var(--red-500);
+    }
+  }
+}

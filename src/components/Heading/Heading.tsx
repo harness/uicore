@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyledProps, styledClasses } from '../../core/StyledProps'
-import styledCSS from '../../core/StyledProps.css'
+import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
+import styledCSS from '../../styled-props/StyledProps.css'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6'
 
