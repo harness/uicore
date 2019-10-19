@@ -1,5 +1,3 @@
-@import './mixins.css';
-
 @define-mixin inline {
   &.inline {
     display: inline;

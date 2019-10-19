@@ -1,5 +1,3 @@
-@import './mixins.css';
-
 @define-mixin font {
   &.font {
     --font-size: var(--font-size-normal);

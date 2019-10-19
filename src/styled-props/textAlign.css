@@ -1,5 +1,3 @@
-@import './mixins.css';
-
 @define-mixin textAlign {
   &.textAlign {
     text-align: var(--text-align, left);

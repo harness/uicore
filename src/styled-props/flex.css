@@ -1,5 +1,3 @@
-@import './mixins.css';
-
 @define-mixin flex {
   &.flex {
     display: flex;

@@ -1,38 +1,37 @@
 @define-mixin margin {
   &.margin {
-    --margin: 0;
-    margin: var(--margin);
+    margin: 0;
   }
 
   &.margin-xsmall {
-    --margin: var(--spacing-xsmall);
+    margin: var(--spacing-xsmall);
   }
 
   &.margin-small {
-    --margin: var(--spacing-small);
+    margin: var(--spacing-small);
   }
 
   &.margin-medium {
-    --margin: var(--spacing-medium);
+    margin: var(--spacing-medium);
   }
 
   &.margin-large {
-    --margin: var(--spacing-large);
+    margin: var(--spacing-large);
   }
 
   &.margin-xlarge {
-    --margin: var(--spacing-xlarge);
+    margin: var(--spacing-xlarge);
   }
 
   &.margin-xxlarge {
-    --margin: var(--spacing-xxlarge);
+    margin: var(--spacing-xxlarge);
   }
 
   &.margin-xxxlarge {
-    --margin: var(--spacing-xxxlarge);
+    margin: var(--spacing-xxxlarge);
   }
 
   &.margin-huge {
-    --margin: var(--spacing-huge);
+    margin: var(--spacing-huge);
   }
 }

@@ -27,7 +27,17 @@ const PropsList = [
   'flexDistribution'
 ]
 
-const SpacingValues = [
+/*
+  When a prop's value is included in this PrefixList, its name
+  needs to be prefixed when generating the class name. This
+  technique ensures the same value name could be used for
+  different props without having styling conflict.
+
+  For example:
+    margin="large" => "margin-large"
+    border="top"   => "border-top"
+*/
+const PrefixList = [
   Spacing.XSMALL,
   Spacing.SMALL,
   Spacing.MEDIUM,
@@ -35,7 +45,11 @@ const SpacingValues = [
   Spacing.XLARGE,
   Spacing.XXLARGE,
   Spacing.XXXLARGE,
-  Spacing.HUGE
+  Spacing.HUGE,
+  'top',
+  'right',
+  'bottom',
+  'left'
 ]
 
 /**
@@ -113,7 +127,7 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
   Object.keys(props).forEach(name => {
     let field = (props as KVO)[name]
 
-    if (SpacingValues.includes(field)) {
+    if (PrefixList.includes(field)) {
       field = `${name}-${field}`
       console.log({ name, field, css, clz: css[field] })
     }

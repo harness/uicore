@@ -1,9 +1,5 @@
-@import './mixins.css';
-
 @define-mixin intent {
   &.intent {
-    --intent-color: none;
-
     &.primary {
       --intent-color: var(--blue-500);
     }
