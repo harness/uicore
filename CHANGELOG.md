@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.7 - 10/21/09
+
+- `Changed` Make each styled prop a separate module in `styled-props` folder.
+- `Changed` Layout's `margin` to `spacing`.
+- `Fixed` Styled props components are not against each other in terms of styling inheritance anymore.
+- `Changed` `color` prop now takes priority against `intent` prop.
+- `Added` lint, formatter.
+
 ## 1.0.5 - 10/14/09
 
 - `Changed` release-watcher script to reject building new release if CHANGELOG is not provided.
