@@ -1,0 +1,86 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint/eslint-plugin"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    // Common js rules
+    "camelcase": 2,
+    "no-extend-native": 2,
+    "no-proto": 2,
+    "no-caller": 2,
+    "no-unused-vars": [2, { "vars": "all", "args": "none" }],
+    "new-cap": 2,
+    "max-depth": [2, 5],
+    "max-statements": [2, 60],
+    "no-eq-null": 2,
+    "wrap-iife": 2,
+    "spaced-comment": 2,
+    "no-cond-assign": ["error", "always"],
+    "no-alert": 2,
+    "no-console": 2,
+
+    // NodeJs rules
+    "block-scoped-var": 2,
+    "global-require": 2,
+    "no-mixed-requires": 2,
+    "no-new-require": 2,
+
+    // ES6 rules
+    "no-var": 2,
+    "prefer-const": 2,
+
+    // React
+    "react/prop-types": 0,
+    "react/no-danger": 2,
+    "react/no-deprecated": 2,
+
+    // override typescript-eslint rules
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/no-require-imports": 2,
+    "@typescript-eslint/no-unnecessary-type-assertion": 2,
+    "@typescript-eslint/restrict-plus-operands": 2,
+    "@typescript-eslint/array-type": [2, { "default": "array-simple" }],
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/ban-types": [
+      2,
+      {
+        "types": {
+          "Function": "Use proper function definition with arguments and return type instead",
+          "String": "Use string instead",
+          "Number": "Use number instead",
+          "Boolean": "Use boolean instead"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "16.9.0"
+    }
+  }
+}
