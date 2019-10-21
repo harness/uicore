@@ -11,12 +11,12 @@
 @import './textAlign.css';
 @import './border.css';
 @import './borderColor.css';
-@import './flex.css';
+@import './flex/flex.css';
 
 :not(.main) .main {
   margin: 0;
   padding: 0;
-  color: var(--grey-500);
+  color: var(--intent-color, --grey-500);
   background: none;
 
   @mixin intent;
