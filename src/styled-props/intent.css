@@ -1,4 +1,8 @@
 @define-mixin intent {
+  &.intent {
+    color: var(--intent-color);
+  }
+
   &.intent-primary {
     --intent-color: var(--blue-500);
   }
