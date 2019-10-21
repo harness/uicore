@@ -11,29 +11,22 @@
   &.border-bottom,
   &.border-left {
     border-radius: 0;
+    border-width: 0;
   }
 
   &.border-top {
-    border-right: none;
-    border-bottom: none;
-    border-left: none;
+    border-top-width: 1px;
   }
 
   &.border-right {
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
+    border-right-width: 1px;
   }
 
   &.border-bottom {
-    border-right: none;
-    border-top: none;
-    border-left: none;
+    border-bottom-width: 1px;
   }
 
   &.border-left {
-    border-right: none;
-    border-bottom: none;
-    border-top: none;
+    border-left-width: 1px;
   }
 }

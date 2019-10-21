@@ -2,7 +2,7 @@ import css from './StyledProps.css'
 import { Intent } from '../core/Intent'
 import { Spacing } from '../core/Spacing'
 import { Color } from '../core/Color'
-import { KVO } from '../core/Types'
+import { KVO, Position } from '../core/Types'
 
 /**
  * Styled Props: Define reusable styles across components.
@@ -60,8 +60,13 @@ export interface StyledProps {
   /** Component children flex layout content distribution */
   flexDistribution?: 'space-between'
 
-  /** Component border */
-  border?: boolean | 'top' | 'right' | 'bottom' | 'left'
+  /**
+   * Component border. Support three variations
+   *  border={true}            => all borders
+   *  border="top"             => top border
+   *  border={['top', 'left']} => top and left borders
+   */
+  border?: boolean | Position | Position[]
 
   /** Border color */
   borderColor?: Color
@@ -72,21 +77,34 @@ export interface StyledProps {
 
 /** Generate classes from styled props */
 export function styledClasses(props: StyledProps, ...classes: string[]) {
-  const classNames = []
+  const classNames = new Set(classes)
 
-  classNames.push(css.main, ...classes)
+  classNames.add(css.main)
 
   Object.keys(props).forEach(name => {
+    // Add the main css class of the prop
+    // props.flex => css.flex
+    classNames.add(css[name])
+
+    // When bold/mono is specified and font is not, add font
+    if ((props.bold || props.mono) && !props.font) {
+      classNames.add(css.font)
+    }
+
+    // Add the actual value class of the props
+    // props.border="top" => css.['border-top']
     const value = (props as KVO)[name]
 
-    classNames.push(css[name], css[`${name}-${value}`])
-
-    if ((props.bold || props.mono) && !props.font) {
-      classNames.push(css.font)
+    if (Array.isArray(value)) {
+      value.forEach(val => classNames.add(css[`${name}-${val}`]))
+    } else {
+      classNames.add(css[`${name}-${value}`])
     }
   })
 
-  return Array.from(new Set(classNames.filter(e => !!e))).join(' ')
+  return Array.from(classNames)
+    .filter(e => !!e)
+    .join(' ')
 }
 
 /*

@@ -16,7 +16,7 @@ function Heading(props: Props) {
   const { level = 1, children } = props
   const Tag = `h${level}` as React.ElementType
 
-  return <Tag className={styledClasses(props, styledCSS.font, styledCSS[`h${level}`])}>{children}</Tag>
+  return <Tag className={styledClasses(props, styledCSS.font, styledCSS[`font-h${level}`])}>{children}</Tag>
 }
 
 export { Heading }
