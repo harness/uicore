@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledProps, styledClasses } from '../core/StyledProps'
+import { StyledProps, styledClasses } from '../styled-props/StyledProps'
 import css from './Layout.css'
 
 type Props = Pick<StyledProps, 'children' | 'margin'>

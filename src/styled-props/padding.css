@@ -1,0 +1,33 @@
+@define-mixin padding {
+  &.padding-xsmall {
+    padding: var(--spacing-xsmall);
+  }
+
+  &.padding-small {
+    padding: var(--spacing-small);
+  }
+
+  &.padding-medium {
+    padding: var(--spacing-medium);
+  }
+
+  &.padding-large {
+    padding: var(--spacing-large);
+  }
+
+  &.padding-xlarge {
+    padding: var(--spacing-xlarge);
+  }
+
+  &.padding-xxlarge {
+    padding: var(--spacing-xxlarge);
+  }
+
+  &.padding-xxxlarge {
+    padding: var(--spacing-xxxlarge);
+  }
+
+  &.padding-huge {
+    padding: var(--spacing-huge);
+  }
+}

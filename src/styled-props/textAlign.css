@@ -1,0 +1,9 @@
+@define-mixin textAlign {
+  &.textAlign-center {
+    text-align: center;
+  }
+
+  &.textAlign-right {
+    text-align: right;
+  }
+}

@@ -1,0 +1,32 @@
+@define-mixin border {
+  &.border {
+    border-color: var(--grey-200);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+  }
+
+  &.border-top,
+  &.border-right,
+  &.border-bottom,
+  &.border-left {
+    border-radius: 0;
+    border-width: 0;
+  }
+
+  &.border-top {
+    border-top-width: 1px;
+  }
+
+  &.border-right {
+    border-right-width: 1px;
+  }
+
+  &.border-bottom {
+    border-bottom-width: 1px;
+  }
+
+  &.border-left {
+    border-left-width: 1px;
+  }
+}

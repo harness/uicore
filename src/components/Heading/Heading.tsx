@@ -1,6 +1,6 @@
 import React from 'react'
-import css from './Heading.css'
-import { StyledProps, styledClasses } from '../../core/StyledProps'
+import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
+import styledCSS from '../../styled-props/StyledProps.css'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6'
 
@@ -16,7 +16,7 @@ function Heading(props: Props) {
   const { level = 1, children } = props
   const Tag = `h${level}` as React.ElementType
 
-  return <Tag className={styledClasses(props, css.main)}>{children}</Tag>
+  return <Tag className={styledClasses(props, styledCSS.font, styledCSS[`font-h${level}`])}>{children}</Tag>
 }
 
 export { Heading }
