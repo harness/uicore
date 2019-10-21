@@ -1,19 +1,21 @@
 @define-mixin intent {
   &.intent {
-    &.primary {
-      --intent-color: var(--blue-500);
-    }
+    color: var(--intent-color);
+  }
 
-    &.success {
-      --intent-color: var(--green-500);
-    }
+  &.intent-primary {
+    --intent-color: var(--blue-500);
+  }
 
-    &.warning {
-      --intent-color: var(--yellow-500);
-    }
+  &.intent-success {
+    --intent-color: var(--green-500);
+  }
 
-    &.danger {
-      --intent-color: var(--red-500);
-    }
+  &.intent-warning {
+    --intent-color: var(--yellow-500);
+  }
+
+  &.intent-danger {
+    --intent-color: var(--red-500);
   }
 }

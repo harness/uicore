@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 export interface KVO<T = any> {
   [key: string]: T
 }
