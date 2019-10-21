@@ -9,8 +9,7 @@
 @import './color.css';
 @import './background.css';
 @import './textAlign.css';
-@import './border.css';
-@import './borderColor.css';
+@import './border/border.css';
 @import './flex/flex.css';
 
 :not(.main) .main {
@@ -31,6 +30,5 @@
   @mixin background;
   @mixin textAlign;
   @mixin border;
-  @mixin borderColor;
   @mixin flex;
 }

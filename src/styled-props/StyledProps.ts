@@ -2,8 +2,9 @@ import css from './StyledProps.css'
 import { Intent } from '../core/Intent'
 import { Spacing } from '../core/Spacing'
 import { Color } from '../core/Color'
-import { KVO, Position } from '../core/Types'
+import { KVO } from '../core/Types'
 import { FlexProps } from './flex/FlexProps'
+import { BorderProps } from './border/BorderProps'
 
 /**
  * Styled Props: Define reusable styles across components.
@@ -47,15 +48,11 @@ export interface StyledProps {
   background?: Color
 
   /**
-   * Component border. Support three variations
-   *  border={true}            => all borders
-   *  border="top"             => top border
-   *  border={['top', 'left']} => top and left borders
+   * Component border. Support boolean (default 1px grey solid) or BorderProps
+   *  border={true}
+   *  border={{ top: true, color: 'red500' }}
    */
-  border?: boolean | Position | Position[]
-
-  /** Border color */
-  borderColor?: Color
+  border?: boolean | BorderProps
 
   /** Component flex layout */
   flex?: boolean | FlexProps
@@ -78,7 +75,6 @@ const PropsList = [
   'color',
   'background',
   'border',
-  'borderColor',
   'flex'
 ]
 
@@ -120,6 +116,9 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
       // Prop is passed as object, like `flex`
       // flex={{ inline: true, align: 'center-center', distribution: 'space-between' }}
       // Note: Complex types are not supported for 2nd level value (val below)
+      //    flex={{ inline: true, align: 'center-center '}}
+      // Not:
+      //    flex={{ inline: true, align: { another object level } }}
       Object.entries(value).forEach(([prop, val]) => {
         classNames.add(css[`${name}-${prop}`]) // 'flex-align'
         classNames.add(css[`${name}-${prop}-${val}`]) // 'flex-align-center-center'
