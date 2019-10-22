@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Service/cloudwatch</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service-icons" transform="translate(-119.000000, -594.000000)">
+            <g id="Cloudwatch" transform="translate(100.000000, 572.000000)">
+                <g id="HDL/Icon/Standard/Service/cloudwatch" transform="translate(19.000000, 22.000000)">
+                    <g id="Cloudwatch">
+                        <polygon id="Path" fill="#B7CA9D" fill-rule="nonzero" points="12 9.6 6 8.7 0 9.6 6 11.8"></polygon>
+                        <polygon id="Path" fill="#4B612C" fill-rule="nonzero" points="1.2 9.5 2.2 9.8 2.3 9.7 2.3 2.5 2.2 2.4 1.2 2.8"></polygon>
+                        <polygon id="Path" fill="#759C3E" fill-rule="nonzero" points="5.8 9.2 2.2 9.8 2.2 2.4 5.8 3.2"></polygon>
+                        <polygon id="Path" fill="#4B612C" fill-rule="nonzero" points="4.2 10.4 2.8 10 2.8 0.9 4.2 0.2 4.3 0.3 4.3 10.3"></polygon>
+                        <polygon id="Path" fill="#759C3E" fill-rule="nonzero" points="9 9.3 4.2 10.4 4.2 0.2 9 2"></polygon>
+                        <polygon id="Path" fill="#4B612C" fill-rule="nonzero" points="6 11.7 0 9.6 0 10.8 6 13.8"></polygon>
+                        <polygon id="Path" fill="#759C3E" fill-rule="nonzero" points="12 10.8 6 13.8 6 11.7 12 9.6"></polygon>
+                        <polygon id="Path" fill="#B7CA9D" fill-rule="nonzero" points="10.3 7.5 8.9 7.5 4.7 7.8 6 8"></polygon>
+                        <polygon id="Path" fill="#4B612C" fill-rule="nonzero" points="4.7 10.5 6 10.9 6 8 4.7 7.8"></polygon>
+                        <polygon id="Path" fill="#759C3E" fill-rule="nonzero" points="10.3 7.5 6 7.9 6 10.9 10.3 9.6"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

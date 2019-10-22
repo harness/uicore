@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Deployment/in-progress</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deployment-Icons" transform="translate(-121.000000, -312.000000)">
+            <g id="In-Progress" transform="translate(100.000000, 294.000000)">
+                <g id="HDL/Icon/Standard/Deployment/in_progress" transform="translate(21.000000, 18.000000)">
+                    <g id="In-Progress">
+                        <rect id="Rectangle" fill="#25A6F7" x="0" y="0" width="14" height="14" rx="4"></rect>
+                        <path d="M7,1.8 C9.872,1.8 12.2,4.128 12.2,7 C12.2,9.872 9.872,12.2 7,12.2 C4.128,12.2 1.8,9.872 1.8,7 C1.8,4.128 4.128,1.8 7,1.8" id="Fill-3" fill="#FFFFFF"></path>
+                        <polygon id="Fill-5" fill="#25A6F7" points="7.4 6.5 7.4 3 6.3 3 6.3 7.7 10.3 7.7 10.3 6.5"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

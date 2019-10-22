@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="11px" viewBox="0 0 14 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Service/newrelic</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service-icons" transform="translate(-121.000000, -1255.000000)">
+            <g id="New-Relic" transform="translate(101.000000, 1243.000000)">
+                <g id="HDL/Icon/Standard/Service/newrelic" transform="translate(20.000000, 12.000000)">
+                    <g id="NewRelic">
+                        <path d="M13.8862225,4.04771888 C13.1876202,1.14963165 9.59480846,-0.589220688 5.80239609,0.183602574 C2.00998373,0.956425835 -0.584824732,3.95111597 0.113777546,6.94580611 C0.812379824,9.94049625 4.40519154,11.5827457 8.19760391,10.8099224 C11.9900163,10.0370992 14.5848247,6.94580611 13.8862225,4.04771888 Z M7,8.20164391 C5.50299512,8.20164391 4.20559089,6.94580611 4.20559089,5.4967625 C4.20559089,4.04771888 5.50299512,2.79188108 7,2.79188108 C8.49700488,2.79188108 9.79440911,4.04771888 9.79440911,5.4967625 L9.79440911,5.4967625 C9.79440911,6.94580611 8.49700488,8.20164391 7,8.20164391 Z" id="Shape" fill="#008C99" fill-rule="nonzero"></path>
+                        <path d="M7.5,1 C5.025,1 3,2.8 3,5 C3,7.2 5.025,9 7.5,9 C9.975,9 12,7.2 12,5 C12,2.8 9.975,1 7.5,1 C7.5,1 7.5,1 7.5,1 Z M6.825,7.3 C5.3625,7.3 4.125,6.2 4.125,4.9 C4.125,3.6 5.3625,2.5 6.825,2.5 C8.2875,2.5 9.525,3.6 9.525,4.9 C9.525,6.2 8.2875,7.3 6.825,7.3 L6.825,7.3 Z" id="Shape" fill="#70CCD3" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Deployment/Legacy/success</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deployment-Icons" transform="translate(-101.000000, -732.000000)">
+            <g id="Legacy-icons---HDL-Colors" transform="translate(101.000000, 732.000000)">
+                <g id="HDL/Icon/Standard/Deployment/Legacy/success">
+                    <g id="Success">
+                        <g id="Ellipse_524" fill="#38D168" fill-rule="nonzero">
+                            <circle id="accent" cx="7" cy="7" r="7"></circle>
+                        </g>
+                        <g id="Ellipse_1551" transform="translate(1.000000, 1.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <circle id="Oval" cx="6" cy="6" r="5.2"></circle>
+                        </g>
+                        <g id="Rectangle_771" transform="translate(3.000000, 4.000000)" fill="#38D168" fill-rule="nonzero">
+                            <polygon id="accent" points="2.8 5.5 7.2 1.4 6.3 0.4 2.7 3.6 1.5 2.4 0.4 3.5 2.5 5.6 2.5 5.6 2.6 5.7"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

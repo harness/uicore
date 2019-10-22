@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/feedback</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-1125.000000, -1205.000000)">
+            <g id="Feedback" transform="translate(1102.000000, 1187.000000)">
+                <g id="HDL/Icon/Larger/feedback" transform="translate(23.000000, 18.000000)">
+                    <g>
+                        <path d="M11.7727273,0 L1.17727273,0 C0.529772727,0 0,0.525 0,1.16666667 L0,9.33333333 C0,9.975 0.529772727,10.5 1.17727273,10.5 L6.58095455,10.5 L9.77136364,13.6616667 C9.9715,13.8716667 10.2658182,14 10.5954545,14 C11.2429545,14 11.7727273,13.475 11.7727273,12.8333333 L11.7727273,10.5 C12.4202273,10.5 12.95,9.975 12.95,9.33333333 L12.95,1.16666667 C12.95,0.525 12.4202273,0 11.7727273,0 Z" id="Shape" fill="#4D5969"></path>
+                        <rect id="Rectangle" fill="#FFFFFF" x="1.75" y="1.75" width="8.75" height="1.16666667" rx="0.583333333"></rect>
+                        <rect id="Rectangle-Copy" fill="#FFFFFF" x="1.75" y="4.04444444" width="9.33333333" height="1.24444444" rx="0.622222222"></rect>
+                        <rect id="Rectangle-Copy-6" fill="#FFFFFF" x="1.75" y="6" width="7" height="1.24444444" rx="0.622222222"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

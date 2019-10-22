@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/add</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-122.000000, -1065.000000)" fill="#4D5969">
+            <g id="Add" transform="translate(101.000000, 1047.000000)">
+                <g id="HDL/Icon/Standard/add" transform="translate(21.000000, 18.000000)">
+                    <path d="M7,0 C3.136,0 0,3.136 0,7 C0,10.864 3.136,14 7,14 C10.864,14 14,10.864 14,7 C14,3.136 10.864,0 7,0 Z M7,12.6 C3.906,12.6 1.4,10.094 1.4,7 C1.4,3.906 3.906,1.4 7,1.4 C10.094,1.4 12.6,3.906 12.6,7 C12.6,10.094 10.094,12.6 7,12.6 Z M10.5,6.3 L7.7,6.3 L7.7,3.5 C7.7,3.115 7.385,2.8 7,2.8 C6.615,2.8 6.3,3.115 6.3,3.5 L6.3,6.3 L3.5,6.3 C3.115,6.3 2.8,6.615 2.8,7 C2.8,7.385 3.115,7.7 3.5,7.7 L6.3,7.7 L6.3,10.5 C6.3,10.885 6.615,11.2 7,11.2 C7.385,11.2 7.7,10.885 7.7,10.5 L7.7,7.7 L10.5,7.7 C10.885,7.7 11.2,7.385 11.2,7 C11.2,6.615 10.885,6.3 10.5,6.3 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Support/start</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Support-Icons" transform="translate(-100.000000, -194.000000)">
+            <g id="HDL/Icon/Standard/Support/start" transform="translate(100.000000, 194.000000)">
+                <g id="ICON">
+                    <circle id="Oval" fill="#D4ECFC" cx="30" cy="30" r="30"></circle>
+                    <g id="HDL/Icon/Large/start" transform="translate(23.000000, 21.000000)" fill="#25A6F7">
+                        <path d="M15,9 C15,8.53714286 14.75,8.13857143 14.3875,7.92 L14.4,7.90714286 L1.9,0.192857143 L1.8875,0.205714286 C1.7,0.09 1.4875,0 1.25,0 C0.5625,0 0,0.578571429 0,1.28571429 L0,16.7142857 C0,17.4214286 0.5625,18 1.25,18 C1.4875,18 1.7,17.91 1.8875,17.7942857 L1.9,17.8071429 L14.4,10.0928571 L14.3875,10.08 C14.75,9.86142857 15,9.46285714 15,9 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

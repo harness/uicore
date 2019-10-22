@@ -6,11 +6,17 @@ const files = glob.sync(pattern, { nodir: true, realpath: false })
 const _imports = []
 const _exports = []
 
+ function toPascalCase(str) {
+  return str.match(/[a-z]+/gi).map(function (word) {
+      return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
+  }).join('')
+}
+
 files
   .sort()
   .map(file => file.split('/icons/')[1])
   .forEach(fileName => {
-    const ComponentName = fileName.split('.svg')[0]
+    const ComponentName = toPascalCase(fileName.split('.svg')[0])
 
     _imports.push(`import ${ComponentName} from './${fileName}'`)
     _exports.push('  ' + ComponentName)

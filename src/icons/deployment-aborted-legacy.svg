@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Deployment/Legacy/aborted</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deployment-Icons" transform="translate(-101.000000, -873.000000)">
+            <g id="Legacy-icons---HDL-Colors" transform="translate(101.000000, 732.000000)">
+                <g id="HDL/Icon/Standard/Deployment/Legacy/aborted" transform="translate(0.000000, 141.000000)">
+                    <g id="Aborted">
+                        <g id="Ellipse_524" fill="#627386" fill-rule="nonzero">
+                            <circle id="accent" cx="7" cy="7" r="7"></circle>
+                        </g>
+                        <g id="Ellipse_1554" transform="translate(1.000000, 1.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <circle id="Oval" cx="6" cy="6" r="5.2"></circle>
+                        </g>
+                        <g id="Layer_2" transform="translate(5.000000, 5.000000)" fill="#627386" fill-rule="nonzero">
+                            <rect id="accent" x="0" y="0" width="4" height="4"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

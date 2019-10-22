@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/warning</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-621.000000, -456.000000)" fill="#4D5969">
+            <g id="Warning" transform="translate(600.000000, 437.000000)">
+                <g id="HDL/Icon/Standard/warning" transform="translate(21.000000, 19.000000)">
+                    <path d="M13.902,11.0133333 C13.902,11.0133333 13.909,11.0066667 13.909,11.0066667 L7.609,0.34 C7.609,0.34 7.602,0.346666667 7.602,0.346666667 C7.483,0.14 7.259,0 7,0 C6.741,0 6.517,0.14 6.398,0.346666667 L6.391,0.34 L0.091,11.0066667 L0.098,11.0133333 C0.042,11.1066667 0,11.2133333 0,11.3333333 C0,11.7 0.315,12 0.7,12 L13.3,12 C13.685,12 14,11.7 14,11.3333333 C14,11.2133333 13.958,11.1066667 13.902,11.0133333 Z M7.7,10.6666667 L6.3,10.6666667 L6.3,9.33333333 L7.7,9.33333333 L7.7,10.6666667 Z M7.7,8.66666667 L6.3,8.66666667 L6.3,3.33333333 L7.7,3.33333333 L7.7,8.66666667 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

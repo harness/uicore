@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/close</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-123.000000, -453.000000)" fill="#4D5969">
+            <g id="Close" transform="translate(101.000000, 435.000000)">
+                <g id="HDL/Icon/Standard/close" transform="translate(22.000000, 18.000000)">
+                    <path d="M8.645,7 L13.65,1.995 C13.8716667,1.785 14,1.49333333 14,1.16666667 C14,0.525 13.475,0 12.8333333,0 C12.5066667,0 12.215,0.128333333 12.005,0.338333333 L7,5.355 L1.995,0.338333333 C1.785,0.128333333 1.49333333,0 1.16666667,0 C0.525,0 0,0.525 0,1.16666667 C0,1.49333333 0.128333333,1.785 0.338333333,1.995 L5.355,7 L0.35,12.005 C0.128333333,12.215 0,12.5066667 0,12.8333333 C0,13.475 0.525,14 1.16666667,14 C1.49333333,14 1.785,13.8716667 1.995,13.6616667 L7,8.645 L12.005,13.65 C12.215,13.8716667 12.5066667,14 12.8333333,14 C13.475,14 14,13.475 14,12.8333333 C14,12.5066667 13.8716667,12.215 13.6616667,12.005 L8.645,7 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/clone</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-121.000000, -359.000000)" fill="#4D5969">
+            <g id="Clone" transform="translate(100.000000, 341.000000)">
+                <g id="HDL/Icon/Standard/clone" transform="translate(21.000000, 18.000000)">
+                    <path d="M9.75,2.8 L0.65,2.8 C0.2925,2.8 0,3.115 0,3.5 L0,13.3 C0,13.685 0.2925,14 0.65,14 L9.75,14 C10.1075,14 10.4,13.685 10.4,13.3 L10.4,3.5 C10.4,3.115 10.1075,2.8 9.75,2.8 Z M9.1,12.6 L1.3,12.6 L1.3,4.2 L9.1,4.2 L9.1,12.6 Z M12.35,0 L3.25,0 C2.8925,0 2.6,0.315 2.6,0.7 L2.6,2.1 L3.9,2.1 L3.9,1.4 L11.7,1.4 L11.7,9.8 L11.05,9.8 L11.05,11.2 L12.35,11.2 C12.7075,11.2 13,10.885 13,10.5 L13,0.7 C13,0.315 12.7075,0 12.35,0 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
