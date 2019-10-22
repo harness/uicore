@@ -8,156 +8,89 @@ Button component reuses Blueprint's Button and implement the look and feel of [H
 import { Button } from '@wings-software/uikit'
 ```
 
-## Examples
+## Primary Button
 
 ```js live=true
-<Layout.Vertical spacing="medium">
-  <Heading level="3">Primary</Heading>
-  <div>
-    <Button intent="primary" text="Text Button" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
-  </div>
+<Layout.Horizontal spacing="small">
+  <Button intent="primary" text="Text Button" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" minimal text="Text Button" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" minimal icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" minimal text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button
+    intent="primary"
+    minimal
+    text="Right Icon"
+    rightIcon="chevron-right"
+    onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" minimal text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
+  <Button
+    intent="primary"
+    minimal
+    text="Down Icon"
+    rightIcon="chevron-down"
+    onClick={() => alert('Hello World')}></Button>
+  <Button intent="primary" minimal text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
+</Layout.Horizontal>
+```
 
-  <Heading level="3">Primary & Borderless</Heading>
-  <div>
-    <Button intent="primary" minimal text="Text Button" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" minimal icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" minimal text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button
-      intent="primary"
-      minimal
-      text="Right Icon"
-      rightIcon="chevron-right"
-      onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" minimal text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button
-      intent="primary"
-      minimal
-      text="Down Icon"
-      rightIcon="chevron-down"
-      onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="primary" minimal text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
-  </div>
+## Secondary Button
 
-  <Heading level="3">Secondary</Heading>
-  <div>
-    <Button text="Text Button" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
-  </div>
+```js live=true
+<Layout.Horizontal spacing="small">
+  <Button text="Text Button" onClick={() => alert('Hello World')}></Button>
+  <Button icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
+  <Button text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
+  <Button text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
+  <Button text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
+</Layout.Horizontal>
+```
 
-  <Heading level="3">Success</Heading>
-  <div>
-    <Button intent="success" text="Text Button" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="success" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="success" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="success" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="success" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="success" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="success" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
-  </div>
+## Success Button
 
-  <Heading level="3">Warning</Heading>
-  <div>
-    <Button intent="warning" text="Text Button" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="warning" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="warning" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="warning" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="warning" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="warning" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="warning" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
-  </div>
+```js live=true
+<Layout.Horizontal spacing="small">
+  <Button intent="success" text="Text Button" onClick={() => alert('Hello World')}></Button>
+  <Button intent="success" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="success" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="success" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
+  <Button intent="success" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
+  <Button intent="success" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
+  <Button intent="success" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
+</Layout.Horizontal>
+```
 
-  <Heading level="3">Danger</Heading>
-  <div>
-    <Button intent="danger" text="Text Button" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="danger" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="danger" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="danger" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="danger" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="danger" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
-  </div>
-  <div>
-    <Button intent="danger" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
-  </div>
-</Layout.Vertical>
+## Warning Button
+
+```js live=true
+<Layout.Horizontal spacing="small">
+  <Button intent="warning" text="Text Button" onClick={() => alert('Hello World')}></Button>
+  <Button intent="warning" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="warning" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="warning" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
+  <Button intent="warning" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
+  <Button intent="warning" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
+  <Button intent="warning" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
+</Layout.Horizontal>
+```
+
+## Danger Button
+
+```js live=true
+<Layout.Horizontal spacing="small">
+  <Button intent="danger" text="Text Button" onClick={() => alert('Hello World')}></Button>
+  <Button intent="danger" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="danger" text="Text & Icon" icon="plus" onClick={() => alert('Hello World')}></Button>
+  <Button intent="danger" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')}></Button>
+  <Button intent="danger" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')}></Button>
+  <Button intent="danger" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')}></Button>
+  <Button intent="danger" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')}></Button>
+</Layout.Horizontal>
 ```
