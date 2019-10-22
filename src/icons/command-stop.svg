@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Command/stop</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Command-Icons" transform="translate(-118.000000, -786.000000)" fill="#4D5969">
+            <g id="Stop" transform="translate(101.000000, 764.000000)">
+                <g id="HDL/Icon/Standard/Command/stop" transform="translate(17.000000, 22.000000)">
+                    <path d="M9.28571429,0 L0.714285714,0 C0.321428571,0 0,0.321428571 0,0.714285714 L0,9.28571429 C0,9.67857143 0.321428571,10 0.714285714,10 L9.28571429,10 C9.67857143,10 10,9.67857143 10,9.28571429 L10,0.714285714 C10,0.321428571 9.67857143,0 9.28571429,0 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

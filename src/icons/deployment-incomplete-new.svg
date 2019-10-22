@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Deployment/incomplete</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deployment-Icons" transform="translate(-121.000000, -453.000000)">
+            <g id="Incomplete" transform="translate(100.000000, 435.000000)">
+                <g id="HDL/Icon/Standard/Deployment/incomplete" transform="translate(21.000000, 18.000000)">
+                    <g id="Incomplete">
+                        <path d="M7,0 C10.866,0 14,3.134 14,7 C14,10.866 10.866,14 7,14 C3.134,14 0,10.866 0,7 C0,3.134 3.134,0 7,0" id="Fill-1" fill="#FF8F3F"></path>
+                        <rect id="Rectangle" fill="#FF8F3F" x="0" y="0" width="14" height="14" rx="4"></rect>
+                        <path d="M6.4,5.1 L6.3,3.8 L7.8,3.8 L7.8,5.1 L7.5,8.1 L6.5,8.1 L6.4,5.1 Z M6.1,9.6 C6.1,9.1 6.4,8.6 7,8.6 C7.6,8.6 7.9,9 7.9,9.6 C7.9,10.2 7.6,10.6 7,10.6 C6.4,10.6 6.1,10.2 6.1,9.6 L6.1,9.6 Z" id="Fill-5" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

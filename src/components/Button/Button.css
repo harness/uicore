@@ -1,33 +1,172 @@
 .button {
-  font-size: 16px;
-  font-weight: 400;
-  height: 32px;
-  border-radius: 5px;
-  display: inline-flex;
+  /* Override Blueprint styles */
+  border-radius: 4px !important;
+  display: inline-flex !important;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-normal) !important;
+  height: 32px !important;
 
-  &,
-  &:focus,
+  border: var(--border) !important;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+  box-shadow: none !important;
+  background-image: none !important;
+
+  /* No intent/None intent */
+  --border: 1px solid var(--grey-350);
+  --text-color: var(--grey-600);
+  --background-color: var(--white);
+
+  &:hover {
+    --border: 1px solid var(--blue-400);
+    --text-color: var(--blue-500);
+    --background-color: var(--blue-100);
+  }
+
   &:active {
-    outline: none; /* Disable outline until we find a good styling for it*/
+    --border: 1px solid var(--blue-400);
+    --text-color: var(--blue-500);
+    --background-color: var(--blue-200);
+  }
+
+  &[disabled] {
+    --border: 1px solid var(--grey-350);
+    --text-color: var(--grey-600);
+    --background-color: var(--white);
+    opacity: 0.5;
+  }
+
+  /* Primary */
+  &[class*='intent-primary'] {
+    --border: 1px solid var(--blue-500);
+    --text-color: var(--white);
+    --background-color: var(--blue-500);
+
+    &:hover {
+      --border: 1px solid var(--blue-600);
+      --background-color: var(--blue-600);
+    }
+
+    &:active {
+      --border: 1px solid var(--blue-800);
+      --background-color: var(--blue-800);
+    }
+
+    &[disabled] {
+      --border: 1px solid var(--blue-500);
+      --background-color: var(--blue-500);
+    }
+
+    &[class*='minimal'] {
+      --border: none;
+      --background-color: none;
+      --text-color: var(--blue-500);
+
+      &:hover {
+        --background-color: var(--blue-100);
+      }
+
+      &:active {
+        --background-color: var(--blue-200);
+      }
+    }
+  }
+
+  /* Success */
+  &[class*='intent-success'] {
+    --text-color: var(--white);
+    --border: 1px solid var(--green-500);
+    --background-color: var(--green-500);
+
+    &:hover {
+      --border: 1px solid var(--green-600);
+      --background-color: var(--green-600);
+    }
+
+    &:active {
+      --border: 1px solid var(--green-800);
+      --background-color: var(--green-800);
+    }
+
+    &[disabled] {
+      --border: 1px solid var(--green-500);
+      --background-color: var(--green-500);
+    }
+  }
+
+  /* Warning */
+  &[class*='intent-danger'] {
+    --text-color: var(--white);
+    --border: 1px solid var(--yellow-500);
+    --background-color: var(--yellow-500);
+
+    &:hover {
+      --border: 1px solid var(--yellow-600);
+      --background-color: var(--yellow-600);
+    }
+
+    &:active {
+      --border: 1px solid var(--yellow-800);
+      --background-color: var(--yellow-800);
+    }
+
+    &[disabled] {
+      --border: 1px solid var(--yellow-500);
+      --background-color: var(--yellow-500);
+    }
+  }
+
+  /* Danger */
+  &[class*='intent-danger'] {
+    --text-color: var(--white);
+    --border: 1px solid var(--red-500);
+    --background-color: var(--red-500);
+
+    &:hover {
+      --border: 1px solid var(--red-600);
+      --background-color: var(--red-600);
+    }
+
+    &:active {
+      --border: 1px solid var(--red-800);
+      --background-color: var(--red-800);
+    }
+
+    &[disabled] {
+      --border: 1px solid var(--red-500);
+      --background-color: var(--red-500);
+    }
   }
 
   :global {
     .bp3-icon {
-      color: currentColor;
+      color: currentColor !important;
+      margin-right: 5px;
+    }
+
+    .bp3-button-text {
+      margin-right: 5px;
     }
   }
 
   /* Make inline icons have the same color as the button color */
-  > span svg {
-    width: 16px;
-    height: 16px;
+  > span {
+    svg {
+      width: 12px;
+      height: 12px;
 
-    path {
-      fill: currentColor !important;
+      path {
+        fill: currentColor !important;
+      }
+
+      :not(path) {
+        stroke: currentColor !important;
+      }
     }
 
-    :not(path) {
-      stroke: currentColor !important;
+    &:only-child svg {
+      width: 16px;
+      height: 16px;
     }
   }
 
@@ -36,29 +175,6 @@
     svg,
     svg > * {
       cursor: not-allowed;
-    }
-  }
-
-  /* Secondary button */
-  &[class*='bp3-button']:not([class*='bp3-intent-']) {
-    background: white;
-    box-shadow: none;
-    color: #22272d;
-
-    &:not([class*='bp3-minimal']) {
-      border: 1px solid #b8bfca;
-    }
-
-    &:hover {
-      border-color: #25a6f7;
-      color: #25a6f7;
-      background-color: #f7fcff;
-    }
-
-    &:active {
-      border-color: #93d2f9;
-      color: #93d2f9;
-      background-color: #edf8ff;
     }
   }
 }

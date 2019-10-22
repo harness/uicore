@@ -20,6 +20,9 @@ import css from './Button.css'
 interface Props extends Omit<IButtonProps, 'active'> {
   /** Each button must have a unique id to support E2E testing */
   id: string
+
+  /** Intent will determine button look */
+  intent?: Intent
 }
 
 function Button(props: Props) {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="14px" viewBox="0 0 10 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/template_library</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-118.000000, -736.000000)" fill="#4D5969">
+            <g id="Template-Library" transform="translate(100.000000, 718.000000)">
+                <g id="HDL/Icon/Standard/template_library" transform="translate(18.000000, 18.000000)">
+                    <path d="M6,0 L0.666666667,0 C0.3,0 0,0.315 0,0.7 L0,13.3 C0,13.685 0.3,14 0.666666667,14 L9.33333333,14 C9.7,14 10,13.685 10,13.3 L10,4.2 L6,0 Z M8.66666667,12.6 L1.33333333,12.6 L1.33333333,1.4 L5.33333333,1.4 L5.33333333,4.9 L8.66666667,4.9 L8.66666667,12.6 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

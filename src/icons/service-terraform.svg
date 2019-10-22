@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Service/terraform</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service-icons" transform="translate(-619.000000, -360.000000)">
+            <g id="Terraform" transform="translate(600.000000, 342.000000)">
+                <g id="HDL/Icon/Standard/Service/terraform" transform="translate(19.000000, 18.000000)">
+                    <g id="Terraform">
+                        <g id="Page-1" fill-rule="nonzero">
+                            <g id="logo-hashicorp-3f10732f">
+                                <polygon id="Shape" fill="#4040B2" points="8.3 4.8 8.3 9.1 12 7 12 2.6"></polygon>
+                                <polygon id="Shape_1_" fill="#5C4EE5" points="4.2 2.6 7.9 4.8 7.9 9.1 4.2 7"></polygon>
+                                <path d="M0,0.1 L0,4.4 L3.8,6.6 L3.8,2.3 L0,0.1 Z M4.1,11.7 L7.9,13.9 L7.9,9.6 L4.1,7.4 L4.1,11.7 Z" id="Shape_2_" fill="#5C4EE5"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

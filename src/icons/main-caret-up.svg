@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/caret_up</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-620.000000, -975.000000)" fill="#4D5969">
+            <g id="Caret-Up" transform="translate(602.000000, 963.000000)">
+                <g id="HDL/Icon/Standard/caret_up" transform="translate(18.000000, 12.000000)">
+                    <path d="M13.72,7.16625 L13.7316667,7.155 L7.89833333,0.405 L7.88666667,0.41625 C7.665,0.16875 7.36166667,0 7,0 C6.63833333,0 6.335,0.16875 6.11333333,0.41625 L6.10166667,0.405 L0.268333333,7.155 L0.28,7.16625 C0.116666667,7.3575 0,7.605 0,7.875 C0,8.49375 0.525,9 1.16666667,9 L12.8333333,9 C13.475,9 14,8.49375 14,7.875 C14,7.605 13.8833333,7.3575 13.72,7.16625 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

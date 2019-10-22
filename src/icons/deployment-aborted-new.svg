@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Deployment/aborted</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 14 14 14 14 0 0 0"></polygon>
+    </defs>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deployment-Icons" transform="translate(-121.000000, -359.000000)">
+            <g id="Aborted" transform="translate(100.000000, 341.000000)">
+                <g id="HDL/Icon/Standard/Deployment/aborted" transform="translate(21.000000, 18.000000)">
+                    <g id="Aborted">
+                        <rect id="Rectangle" fill="#627386" x="0" y="0" width="14" height="14" rx="4"></rect>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-6"></g>
+                        <polygon id="Fill-5" fill="#FFFFFF" mask="url(#mask-2)" points="5 9 9 9 9 5 5 5"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

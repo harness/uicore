@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/chevron_right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-616.000000, -736.000000)" fill="#4D5969">
+            <g id="Cevron-Right" transform="translate(600.000000, 718.000000)">
+                <g id="HDL/Icon/Standard/chevron_right" transform="translate(16.000000, 18.000000)">
+                    <path d="M7.71,6.29 L1.71,0.29 C1.53,0.11 1.28,0 1,0 C0.45,0 0,0.45 0,1 C0,1.28 0.11,1.53 0.29,1.71 L5.59,7 L0.3,12.29 C0.11,12.47 0,12.72 0,13 C0,13.55 0.45,14 1,14 C1.28,14 1.53,13.89 1.71,13.71 L7.71,7.71 C7.89,7.53 8,7.28 8,7 C8,6.72 7.89,6.47 7.71,6.29 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="13px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/caret_left</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-616.000000, -1065.000000)" fill="#4D5969">
+            <g id="Caret-Left" transform="translate(601.000000, 1046.000000)">
+                <g id="HDL/Icon/Standard/caret_left" transform="translate(15.000000, 19.000000)">
+                    <path d="M7.875,0 C7.605,0 7.3575,0.108333333 7.16625,0.26 L7.155,0.249166667 L0.405,5.66583333 L0.41625,5.67666667 C0.16875,5.8825 0,6.16416667 0,6.5 C0,6.83583333 0.16875,7.1175 0.41625,7.32333333 L0.405,7.33416667 L7.155,12.7508333 L7.16625,12.74 C7.3575,12.8916667 7.605,13 7.875,13 C8.49375,13 9,12.5125 9,11.9166667 L9,1.08333333 C9,0.4875 8.49375,0 7.875,0 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

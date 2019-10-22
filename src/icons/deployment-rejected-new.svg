@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Deployment/rejected</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Deployment-Icons" transform="translate(-121.000000, -594.000000)">
+            <g id="Rejected" transform="translate(100.000000, 576.000000)">
+                <g id="HDL/Icon/Standard/Deployment/rejected" transform="translate(21.000000, 18.000000)">
+                    <g id="rejected">
+                        <rect id="Rectangle" fill="#AA3D53" x="0" y="0" width="14" height="14" rx="4"></rect>
+                        <path d="M6.8,10.7 C6.6,10.7 6.4,10.6 6.3,10.4 L4.5,7.9 C4.3,7.7 4.2,7.4 4.2,7.1 L4.2,5.6 C4.2,4.8 4.8,4.2 5.6,4.2 L8.6,4.2 C9.1,4.2 9.4,4.6 9.4,4.9 C9.4,5 9.4,5.1 9.3,5.2 C9.5,5.3 9.7,5.5 9.7,5.8 C9.7,6 9.6,6.2 9.5,6.3 C9.6,6.4 9.7,6.6 9.7,6.8 C9.7,7.1 9.5,7.3 9.4,7.4 L9.4,7.7 C9.4,8 9.1,8.3 8.7,8.3 L6.7,8.3 C6.9,8.7 7.2,9.4 7.2,9.6 L7.2,9.7 C7.2,9.8 7.3,9.9 7.3,10 C7.4,10.5 7,10.7 6.8,10.7" id="Fill-5" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

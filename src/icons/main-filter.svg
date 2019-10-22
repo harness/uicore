@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/filter</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-621.000000, -266.000000)" fill="#4D5969">
+            <g id="Filter" transform="translate(600.000000, 247.000000)">
+                <g id="HDL/Icon/Standard/filter" transform="translate(21.000000, 19.000000)">
+                    <g id="Icon---Filter">
+                        <path d="M8.16666667,9.6 C8.81183333,9.6 9.33333333,10.1376 9.33333333,10.8 C9.33333333,11.4624 8.81183333,12 8.16666667,12 L5.83333333,12 C5.18816667,12 4.66666667,11.4624 4.66666667,10.8 C4.66666667,10.1376 5.18816667,9.6 5.83333333,9.6 L8.16666667,9.6 Z M10.5,4.8 C11.1451667,4.8 11.6666667,5.3376 11.6666667,6 C11.6666667,6.6624 11.1451667,7.2 10.5,7.2 L3.5,7.2 C2.85483333,7.2 2.33333333,6.6624 2.33333333,6 C2.33333333,5.3376 2.85483333,4.8 3.5,4.8 L10.5,4.8 Z M12.8333333,0 C13.4785,0 14,0.5376 14,1.2 C14,1.8624 13.4785,2.4 12.8333333,2.4 L1.16666667,2.4 C0.5215,2.4 0,1.8624 0,1.2 C0,0.5376 0.5215,0 1.16666667,0 L12.8333333,0 Z" id="path-1"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

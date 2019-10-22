@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Service/gotlab</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service-icons" transform="translate(-623.000000, -501.000000)">
+            <g id="GitLab" transform="translate(600.000000, 484.000000)">
+                <g id="HDL/Icon/Standard/Service/gotlab" transform="translate(23.000000, 17.000000)">
+                    <g id="GitLab_Logo" transform="translate(0.000000, -0.000000)">
+                        <polygon id="Fill-4" fill="#E24329" fill-rule="nonzero" points="7.00409333 12.9103333 7.00409333 12.9103333 9.58009333 4.98226667 4.42809333 4.98226667"></polygon>
+                        <polygon id="Fill-8" fill="#FC6D26" fill-rule="nonzero" points="7.00409333 12.91032 4.42809333 4.98225333 0.817893333 4.98225333"></polygon>
+                        <path d="M0.8179,4.98227333 L0.8179,4.98227333 L0.0351,7.39154 C-0.0363,7.61127333 0.0419,7.85200667 0.228833333,7.98780667 L7.0041,12.91034 L0.8179,4.98227333 Z" id="Fill-12" fill="#FCA326" fill-rule="nonzero"></path>
+                        <path d="M0.8179,4.98228 L4.4281,4.98228 L2.87656667,0.20728 C2.79676667,-0.0384533333 2.44916667,-0.0383866667 2.36936667,0.20728 L0.8179,4.98228 Z" id="Fill-16" fill="#E24329" fill-rule="nonzero"></path>
+                        <polygon id="Fill-18" fill="#FC6D26" fill-rule="nonzero" points="7.00409333 12.91032 9.58009333 4.98225333 13.1902933 4.98225333"></polygon>
+                        <path d="M13.1902933,4.98227333 L13.1902933,4.98227333 L13.9730933,7.39154 C14.0444933,7.61127333 13.9662933,7.85200667 13.77936,7.98780667 L7.00409333,12.91034 L13.1902933,4.98227333 Z" id="Fill-20" fill="#FCA326" fill-rule="nonzero"></path>
+                        <path d="M13.1902933,4.98228 L9.58009333,4.98228 L11.1316267,0.20728 C11.2114267,-0.0384533333 11.5590267,-0.0383866667 11.6388267,0.20728 L13.1902933,4.98228 Z" id="Fill-22" fill="#E24329" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

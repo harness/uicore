@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Cloud</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-1122.000000, -410.000000)" fill="#4D5969">
+            <g id="Cloud" transform="translate(1100.000000, 397.000000)">
+                <g id="HDL/Icon/Standard/Cloud" transform="translate(22.000000, 13.000000)">
+                    <path d="M10.5,2.8 C10.416,2.8 10.332,2.821 10.248,2.828 C9.681,1.183 8.134,-2.22044605e-14 6.3,-2.22044605e-14 C3.983,-2.22044605e-14 2.1,1.883 2.1,4.2 C2.1,4.235 2.107,4.263 2.107,4.298 C0.896,4.606 0,5.691 0,7 C0,8.547 1.253,9.8 2.8,9.8 L10.5,9.8 C12.432,9.8 14,8.232 14,6.3 C14,4.368 12.432,2.8 10.5,2.8 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

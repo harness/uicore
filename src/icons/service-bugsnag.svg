@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Service/bugsnag</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service-icons" transform="translate(-120.000000, -504.000000)" fill="#3676A1">
+            <g id="Bugsnag" transform="translate(100.000000, 493.000000)">
+                <g id="HDL/Icon/Standard/Service/bugsnag" transform="translate(20.000000, 11.000000)">
+                    <g id="Bugsnag">
+                        <path d="M3.3,9.1 L3.3,9.4 L6.3,9.4 C6.3,9.3 6.3,9.2 6.3,9.1 C6.3,7 5.5,5.1 4,3.6 C3.2,2.9 2.4,2.3 1.5,1.9 L0.2,4.7 C2,5.6 3.1,7 3.3,9.1 Z M6.9,9.1 L6.9,9.5 L10,9.5 C10,9.4 10,9.3 10,9.1 C10,7.6 9.7,6.1 9.1,4.7 C8.6,3.3 7.8,2.1 6.7,1.1 C6.4,0.8 6.2,0.5 5.9,0.3 L3.9,2.6 C5.9,4.4 6.8,6.1 6.9,9.1 Z M12.7,3.6 C12.2,2.4 11.6,1.2 10.8,0.2 L8.3,2 C9.8,3.9 10.7,6.2 10.7,8.8 L10.7,9.5 L13.8,9.5 C13.8,9.3 13.8,9 13.8,8.8 C13.7,6.9 13.3,5.3 12.7,3.6 Z" id="Shape" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

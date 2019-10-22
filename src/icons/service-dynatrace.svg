@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Service/dynatrace</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service-icons" transform="translate(-122.000000, -735.000000)">
+            <g id="Dynatrace" transform="translate(101.000000, 717.000000)">
+                <g id="HDL/Icon/Standard/Service/dynatrace" transform="translate(21.000000, 18.000000)">
+                    <g id="Dynatrace">
+                        <path d="M4.8,1.3 C4.7,2.2 4.4,3.6 4.3,5 C4.1,7.5 4.2,9.2 4.2,9.2 L0.7,12.5 C0.7,12.5 0.4,10.7 0.3,8.6 C0.3,7.3 0.2,6.2 0.2,5.5 L0.2,5.4 C0.2,5.3 0.3,4.9 0.7,4.4 C1.3,3.9 4.9,1 4.8,1.3 Z" id="Path" fill="#1496FF" fill-rule="nonzero"></path>
+                        <path d="M4.8,1.3 C4.7,2.2 4.4,3.6 4.3,5 C4.3,5 0.4,4.5 0.2,5.5 C0.2,5.4 0.3,4.9 0.7,4.4 C1.1,3.9 4.9,1 4.8,1.3 Z" id="Path" fill="#1284EA" fill-rule="nonzero"></path>
+                        <path d="M0.2,5.3 L0.2,5.5 C0.3,5.3 0.4,5.2 0.5,5 C0.8,4.7 1.2,4.6 1.4,4.6 C2.4,4.5 3.7,4.3 5.2,4.3 C7.6,4.2 9.3,4.4 9.3,4.4 L12.8,1 C12.8,1 11,0.7 8.9,0.4 C7.5,0.3 6.3,0.1 5.6,0.1 C5.5,0.1 5.1,-4.57966998e-16 4.6,0.5 C4.1,1 1.6,3.4 0.6,4.3 C0.2,4.8 0.2,5.3 0.2,5.3 Z" id="Path" fill="#B4DC00" fill-rule="nonzero"></path>
+                        <path d="M12.6,9.5 C11.6,9.6 10.3,9.8 8.8,9.8 C6.4,9.9 4.8,9.7 4.8,9.7 L1.3,13 C1.3,13 3.1,13.4 5.2,13.6 C6.5,13.8 7.6,13.8 8.3,13.9 C8.4,13.9 8.4,13.8 8.5,13.8 C8.6,13.8 9,13.7 9.5,13.3 C9.9,12.8 12.9,9.5 12.6,9.5 Z" id="Path" fill="#6F2DA8" fill-rule="nonzero"></path>
+                        <path d="M12.6,9.5 C11.6,9.6 10.3,9.8 8.8,9.8 C8.8,9.8 9.1,13.7 8.2,13.8 C8.3,13.8 8.9,13.7 9.3,13.3 C9.9,13 12.9,9.5 12.6,9.5 L12.6,9.5 Z" id="Path" fill="#591F91" fill-rule="nonzero"></path>
+                        <path d="M8.4,13.9 L8.2,13.9 C8.4,13.8 8.5,13.8 8.7,13.7 C9.1,13.4 9.2,12.9 9.2,12.8 C9.4,11.9 9.6,10.5 9.7,9.1 C9.9,6.6 9.8,5 9.8,5 L13.3,1.7 C13.3,1.7 13.6,3.5 13.7,5.6 C13.8,6.9 13.8,8.2 13.8,8.8 C13.8,8.9 13.9,9.3 13.4,9.8 C12.9,10.3 10.4,12.7 9.4,13.6 C9,14 8.5,13.9 8.4,13.9 Z" id="Path" fill="#73BE28" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/caret_down</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-618.000000, -928.000000)" fill="#4D5969">
+            <g id="Caret-Down" transform="translate(601.000000, 916.000000)">
+                <g id="HDL/Icon/Standard/caret_down" transform="translate(17.000000, 12.000000)">
+                    <path d="M14,1.125 C14,0.50625 13.475,0 12.8333333,0 L1.16666667,0 C0.525,0 0,0.50625 0,1.125 C0,1.395 0.116666667,1.6425 0.28,1.83375 L0.268333333,1.845 L6.10166667,8.595 L6.11333333,8.58375 C6.335,8.83125 6.63833333,9 7,9 C7.36166667,9 7.665,8.83125 7.88666667,8.58375 L7.89833333,8.595 L13.7316667,1.845 L13.72,1.83375 C13.8833333,1.6425 14,1.395 14,1.125 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

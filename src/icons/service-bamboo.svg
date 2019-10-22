@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/Service/bamboo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="49.8983051%" y1="-96.9766667%" x2="49.8983051%" y2="38.7566667%" id="linearGradient-1">
+            <stop stop-color="#0052CC" offset="0%"></stop>
+            <stop stop-color="#2684FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50.2633333%" y1="1.35666667%" x2="50.2633333%" y2="137.09%" id="linearGradient-2">
+            <stop stop-color="#0052CC" offset="0%"></stop>
+            <stop stop-color="#2684FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service-icons" transform="translate(-119.000000, -453.000000)">
+            <g id="Bamboo" transform="translate(100.000000, 435.000000)">
+                <g id="HDL/Icon/Standard/Service/bamboo" transform="translate(19.000000, 18.000000)">
+                    <g id="Bamboo">
+                        <path d="M11.6,7.9 L8.7,7.9 C8.5,7.9 8.4,8 8.3,8.2 C8.1,9.4 7.1,10.2 6,10.2 L6.8,13.8 C9.6,13.4 11.8,11.1 12,8.3 C12,8.1 11.8,8 11.6,7.9 Z" id="Path" fill="#2684FF" fill-rule="nonzero"></path>
+                        <path d="M6.6,7.9 L10.7,4.3 C10.9,4.2 10.9,3.9 10.7,3.8 L6.6,0.2 C6.5,3.60822483e-16 6.2,0.1 6.1,0.2 C6,0.3 6,0.4 6,0.5 L6,7.6 C6,7.8 6.2,8 6.4,8 C6.5,7.9 6.6,7.9 6.6,7.9 Z" id="Path" fill="#2684FF" fill-rule="nonzero"></path>
+                        <path d="M0.1,8.7 C0.5,11.7 3,13.9 6,13.9 L6,10.3 C4.7,10.3 3.6,9.2 3.6,7.9 L0.1,8.7 Z" id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                        <path d="M0,7.9 L3.6,8 C3.6,6.7 4.7,5.6 6,5.6 L5.2,2 C2.3,2.4 0.1,4.9 0,7.9" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

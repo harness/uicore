@@ -1,22 +1,22 @@
 # Icons --- docs/pages/icons.mdx
 
-All icons in `ui-platform` are in svg. You can use the icons as a separate React component. [Button](/button) supports them as well.
+All icons in UIKit are in svg. You can use the icons as a separate React component. [Button](/button) supports them as well.
 
-To use an icon, first import `Icons` from `ui-platform`.
+To use an icon, first import `Icons` from UIKit.
 
 ```js
-import { Icons } from 'ui-platform'
+import { Icons } from '@wings-software/uikit'
 ```
 
 Then render the icons as a React component. For example:
 
 ```js live=true
-<Icons.AWS height="64px" />
+<Icons.ServiceAws height="64px" width="64px" />
 ```
 
 `Icons` supports standard [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes). To keep it simple, mostly you should use only `height`, or `width`.
 
-## List of UI Platform icons
+## List of UIKit icons
 
 ```js render=true
 <div
@@ -40,7 +40,7 @@ Then render the icons as a React component. For example:
             all: 'unset',
             cursor: 'pointer'
           }}>
-          <Icon height="36px" />
+          <Icon height="36px" width="36px" />
         </button>
       </Tooltip>
     )
@@ -83,7 +83,7 @@ There are currently two Harness logo icons.
 
 ## How to add an icon?
 
-To add an icon into UI Platform, copy the icon into ui-platform's `./src/icons` folder then run
+To add an icon into UIKit, copy the icon into UIKit's `./src/icons` folder then run
 
 ```
 yarn ui:icons

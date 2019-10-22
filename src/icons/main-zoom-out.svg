@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>HDL/Icon/Standard/zoom_out</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Icons" transform="translate(-621.000000, -688.000000)" fill="#4D5969">
+            <g id="Zoom-Out" transform="translate(600.000000, 670.000000)">
+                <g id="HDL/Icon/Standard/zoom_out" transform="translate(21.000000, 18.000000)">
+                    <path d="M7.7,4.9 L3.5,4.9 C3.115,4.9 2.8,5.215 2.8,5.6 C2.8,5.985 3.115,6.3 3.5,6.3 L7.7,6.3 C8.085,6.3 8.4,5.985 8.4,5.6 C8.4,5.215 8.085,4.9 7.7,4.9 Z M13.692,12.208 L10.234,8.75 C10.843,7.847 11.2,6.769 11.2,5.6 C11.2,2.506 8.694,0 5.6,0 C2.506,0 0,2.506 0,5.6 C0,8.694 2.506,11.2 5.6,11.2 C6.769,11.2 7.847,10.843 8.75,10.234 L12.208,13.692 C12.397,13.881 12.663,14 12.95,14 C13.531,14 14,13.531 14,12.95 C14,12.663 13.881,12.397 13.692,12.208 Z M5.6,9.8 C3.283,9.8 1.4,7.917 1.4,5.6 C1.4,3.283 3.283,1.4 5.6,1.4 C7.917,1.4 9.8,3.283 9.8,5.6 C9.8,7.917 7.917,9.8 5.6,9.8 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
