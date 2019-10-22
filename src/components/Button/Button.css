@@ -95,7 +95,7 @@
   }
 
   /* Warning */
-  &[class*='intent-danger'] {
+  &[class*='intent-warning'] {
     --text-color: var(--white);
     --border: 1px solid var(--yellow-500);
     --background-color: var(--yellow-500);
