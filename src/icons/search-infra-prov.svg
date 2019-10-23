@@ -1,26 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Search/infra-prov</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M26.1,17 L26.1,21.5 L24.3,21.5 L24.3,17.9 L18.9,17.9 L18.9,21.5 L17.1,21.5 L17.1,17.9 L11.7,17.9 L11.7,21.5 L9.9,21.5 L9.9,17 C9.9,16.5029437 10.3029437,16.1 10.8,16.1 L17.1,16.1 L17.1,12.5 L18.9,12.5 L18.9,16.1 L25.2,16.1 C25.6970562,16.1 26.1,16.5029437 26.1,17 Z M9.9,22.4 L11.7,22.4 C12.1970563,22.4 12.6,22.8029438 12.6,23.3 L12.6,25.1 C12.6,25.5970562 12.1970563,26 11.7,26 L9.9,26 C9.40294373,26 9,25.5970562 9,25.1 L9,23.3 C9,22.8029438 9.40294373,22.4 9.9,22.4 Z M24.3,22.4 L26.1,22.4 C26.5970562,22.4 27,22.8029438 27,23.3 L27,25.1 C27,25.5970562 26.5970562,26 26.1,26 L24.3,26 C23.8029438,26 23.4,25.5970562 23.4,25.1 L23.4,23.3 C23.4,22.8029438 23.8029438,22.4 24.3,22.4 Z M17.1,22.4 L18.9,22.4 C19.3970562,22.4 19.8,22.8029438 19.8,23.3 L19.8,25.1 C19.8,25.5970562 19.3970562,26 18.9,26 L17.1,26 C16.6029437,26 16.2,25.5970562 16.2,25.1 L16.2,23.3 C16.2,22.8029438 16.6029437,22.4 17.1,22.4 Z M17.1,8 L18.9,8 C19.3970562,8 19.8,8.40294373 19.8,8.9 L19.8,10.7 C19.8,11.1970563 19.3970562,11.6 18.9,11.6 L17.1,11.6 C16.6029437,11.6 16.2,11.1970563 16.2,10.7 L16.2,8.9 C16.2,8.40294373 16.6029437,8 17.1,8 Z" id="path-1"></path>
-        <filter x="-2.8%" y="-2.8%" width="105.6%" height="111.1%" filterUnits="objectBoundingBox" id="filter-2">
-            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feColorMatrix values="0 0 0 0 0.949019608   0 0 0 0 0.956862745   0 0 0 0 0.964705882  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Search-Icons" transform="translate(-100.000000, -477.000000)">
-            <g id="HDL/Icon/Standard/Search/infra-prov" transform="translate(101.000000, 478.000000)">
-                <g id="Infra-Prov">
-                    <circle id="Oval" stroke="#D4ECFC" fill="#F7FCFF" cx="18" cy="18" r="18"></circle>
-                    <g id="Organization">
-                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                        <use fill="#25A6F7" fill-rule="evenodd" xlink:href="#path-1"></use>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F7FCFF;stroke:#D4ECFC;}
+	.st1{filter:url(#filter-2);}
+	.st2{fill:#25A6F7;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="111.1%" id="filter-2" width="105.6%" x="-2.8%" y="-2.8%">
+	<feOffset  dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	
+		<feColorMatrix  in="shadowOffsetOuter1" type="matrix" values="0 0 0 0 0.949019608   0 0 0 0 0.956862745   0 0 0 0 0.964705882  0 0 0 1 0">
+		</feColorMatrix>
+</filter>
+<title>HDL/Icon/Standard/Search/infra-prov</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Search-Icons" transform="translate(-100.000000, -477.000000)">
+		<g id="HDL_x2F_Icon_x2F_Standard_x2F_Search_x2F_infra-prov" transform="translate(101.000000, 478.000000)">
+			<g id="Infra-Prov">
+				<circle id="Oval" class="st0" cx="18" cy="18" r="18"/>
+				<g id="Organization">
+					<g class="st1">
+						<path d="M26.1,17v4.5h-1.8v-3.6h-5.4v3.6h-1.8v-3.6h-5.4v3.6H9.9V17c0-0.5,0.4-0.9,0.9-0.9h6.3v-3.6h1.8v3.6h6.3
+							C25.7,16.1,26.1,16.5,26.1,17z M9.9,22.4h1.8c0.5,0,0.9,0.4,0.9,0.9v1.8c0,0.5-0.4,0.9-0.9,0.9H9.9C9.4,26,9,25.6,9,25.1v-1.8
+							C9,22.8,9.4,22.4,9.9,22.4z M24.3,22.4h1.8c0.5,0,0.9,0.4,0.9,0.9v1.8c0,0.5-0.4,0.9-0.9,0.9h-1.8c-0.5,0-0.9-0.4-0.9-0.9
+							v-1.8C23.4,22.8,23.8,22.4,24.3,22.4z M17.1,22.4h1.8c0.5,0,0.9,0.4,0.9,0.9v1.8c0,0.5-0.4,0.9-0.9,0.9h-1.8
+							c-0.5,0-0.9-0.4-0.9-0.9v-1.8C16.2,22.8,16.6,22.4,17.1,22.4z M17.1,8h1.8c0.5,0,0.9,0.4,0.9,0.9v1.8c0,0.5-0.4,0.9-0.9,0.9
+							h-1.8c-0.5,0-0.9-0.4-0.9-0.9V8.9C16.2,8.4,16.6,8,17.1,8z"/>
+					</g>
+					<g>
+						<path id="path-1_1_" class="st2" d="M26.1,17v4.5h-1.8v-3.6h-5.4v3.6h-1.8v-3.6h-5.4v3.6H9.9V17c0-0.5,0.4-0.9,0.9-0.9h6.3
+							v-3.6h1.8v3.6h6.3C25.7,16.1,26.1,16.5,26.1,17z M9.9,22.4h1.8c0.5,0,0.9,0.4,0.9,0.9v1.8c0,0.5-0.4,0.9-0.9,0.9H9.9
+							C9.4,26,9,25.6,9,25.1v-1.8C9,22.8,9.4,22.4,9.9,22.4z M24.3,22.4h1.8c0.5,0,0.9,0.4,0.9,0.9v1.8c0,0.5-0.4,0.9-0.9,0.9h-1.8
+							c-0.5,0-0.9-0.4-0.9-0.9v-1.8C23.4,22.8,23.8,22.4,24.3,22.4z M17.1,22.4h1.8c0.5,0,0.9,0.4,0.9,0.9v1.8
+							c0,0.5-0.4,0.9-0.9,0.9h-1.8c-0.5,0-0.9-0.4-0.9-0.9v-1.8C16.2,22.8,16.6,22.4,17.1,22.4z M17.1,8h1.8c0.5,0,0.9,0.4,0.9,0.9
+							v1.8c0,0.5-0.4,0.9-0.9,0.9h-1.8c-0.5,0-0.9-0.4-0.9-0.9V8.9C16.2,8.4,16.6,8,17.1,8z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

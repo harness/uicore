@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Command/install</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Command-Icons" transform="translate(-122.000000, -547.000000)" fill="#4D5969">
-            <g id="Install" transform="translate(101.000000, 529.000000)">
-                <g id="HDL/Icon/Standard/Command/install" transform="translate(21.000000, 18.000000)">
-                    <path d="M6.37875,10.24625 C6.53625,10.40375 6.755,10.5 7,10.5 C7.245,10.5 7.46375,10.40375 7.62125,10.24625 L11.12125,6.74625 C11.27875,6.58875 11.375,6.37 11.375,6.125 C11.375,5.64375 10.98125,5.25 10.5,5.25 C10.255,5.25 10.03625,5.34625 9.87875,5.50375 L7.875,7.51625 L7.875,0.875 C7.875,0.39375 7.48125,0 7,0 C6.51875,0 6.125,0.39375 6.125,0.875 L6.125,7.51625 L4.12125,5.50375 C3.96375,5.34625 3.745,5.25 3.5,5.25 C3.01875,5.25 2.625,5.64375 2.625,6.125 C2.625,6.37 2.72125,6.58875 2.87875,6.74625 L6.37875,10.24625 Z M13.125,9.625 C12.64375,9.625 12.25,10.01875 12.25,10.5 L12.25,12.25 L1.75,12.25 L1.75,10.5 C1.75,10.01875 1.35625,9.625 0.875,9.625 C0.39375,9.625 0,10.01875 0,10.5 L0,13.125 C0,13.60625 0.39375,14 0.875,14 L13.125,14 C13.60625,14 14,13.60625 14,13.125 L14,10.5 C14,10.01875 13.60625,9.625 13.125,9.625 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/Command/install</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Command-Icons" transform="translate(-122.000000, -547.000000)">
+		<g id="Install" transform="translate(101.000000, 529.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Command_x2F_install" transform="translate(21.000000, 18.000000)">
+				<path id="Shape" class="st0" d="M6.4,10.2c0.2,0.2,0.4,0.3,0.6,0.3s0.5-0.1,0.6-0.3l3.5-3.5c0.2-0.2,0.3-0.4,0.3-0.6
+					c0-0.5-0.4-0.9-0.9-0.9c-0.2,0-0.5,0.1-0.6,0.3l-2,2V0.9C7.9,0.4,7.5,0,7,0S6.1,0.4,6.1,0.9v6.6l-2-2C4,5.3,3.7,5.2,3.5,5.2
+					C3,5.2,2.6,5.6,2.6,6.1c0,0.2,0.1,0.5,0.3,0.6L6.4,10.2z M13.1,9.6c-0.5,0-0.9,0.4-0.9,0.9v1.8H1.8v-1.8c0-0.5-0.4-0.9-0.9-0.9
+					S0,10,0,10.5v2.6C0,13.6,0.4,14,0.9,14h12.2c0.5,0,0.9-0.4,0.9-0.9v-2.6C14,10,13.6,9.6,13.1,9.6z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

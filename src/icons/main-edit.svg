@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/edit</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-121.000000, -641.000000)" fill="#4D5969">
-            <g id="Edit" transform="translate(100.000000, 623.000000)">
-                <g id="HDL/Icon/Standard/edit" transform="translate(21.000000, 18.000000)">
-                    <path d="M2.26625,9.26625 L4.7425,11.7425 L11.43625,5.04875 L8.96,2.5725 L2.26625,9.26625 Z M0,14 L3.85875,12.60875 L1.4,10.1675 L0,14 Z M12.25,0 C11.76875,0 11.33125,0.1925 11.01625,0.51625 L9.5725,1.96 L12.04875,4.43625 L13.4925,2.9925 C13.8075,2.66875 14,2.23125 14,1.75 C14,0.7875 13.2125,0 12.25,0 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/edit</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-121.000000, -641.000000)">
+		<g id="Edit" transform="translate(100.000000, 623.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_edit" transform="translate(21.000000, 18.000000)">
+				<path id="Shape" class="st0" d="M2.3,9.3l2.5,2.5L11.4,5L9,2.6L2.3,9.3z M0,14l3.9-1.4l-2.5-2.4L0,14z M12.2,0
+					c-0.5,0-0.9,0.2-1.2,0.5L9.6,2L12,4.4L13.5,3C13.8,2.7,14,2.2,14,1.8C14,0.8,13.2,0,12.2,0z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

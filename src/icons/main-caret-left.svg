@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="9px" height="13px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/caret_left</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-616.000000, -1065.000000)" fill="#4D5969">
-            <g id="Caret-Left" transform="translate(601.000000, 1046.000000)">
-                <g id="HDL/Icon/Standard/caret_left" transform="translate(15.000000, 19.000000)">
-                    <path d="M7.875,0 C7.605,0 7.3575,0.108333333 7.16625,0.26 L7.155,0.249166667 L0.405,5.66583333 L0.41625,5.67666667 C0.16875,5.8825 0,6.16416667 0,6.5 C0,6.83583333 0.16875,7.1175 0.41625,7.32333333 L0.405,7.33416667 L7.155,12.7508333 L7.16625,12.74 C7.3575,12.8916667 7.605,13 7.875,13 C8.49375,13 9,12.5125 9,11.9166667 L9,1.08333333 C9,0.4875 8.49375,0 7.875,0 Z" id="Path"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 9 13" style="enable-background:new 0 0 9 13;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/caret_left</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-616.000000, -1065.000000)">
+		<g id="Caret-Left" transform="translate(601.000000, 1046.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_caret_x5F_left" transform="translate(15.000000, 19.000000)">
+				<path id="Path" class="st0" d="M7.9,0C7.6,0,7.4,0.1,7.2,0.3l0,0L0.4,5.7l0,0C0.2,5.9,0,6.2,0,6.5s0.2,0.6,0.4,0.8l0,0l6.8,5.4
+					l0,0C7.4,12.9,7.6,13,7.9,13C8.5,13,9,12.5,9,11.9V1.1C9,0.5,8.5,0,7.9,0z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

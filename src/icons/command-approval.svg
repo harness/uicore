@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/command/approval</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Command-Icons" transform="translate(-121.000000, -218.000000)" fill="#4D5969">
-            <g id="Approval" transform="translate(100.000000, 201.000000)">
-                <g id="HDL/Icon/Standard/Command/approval" transform="translate(21.000000, 17.000000)">
-                    <path d="M7.52,3.82857143 C7.36,3.66571429 7.13777778,3.57142857 6.88888889,3.57142857 C6.4,3.57142857 6,3.95714286 6,4.42857143 C6,4.66857143 6.09777778,4.88285714 6.25777778,5.03714286 L8.03555556,6.75142857 C8.19555556,6.90571429 8.41777778,7 8.66666667,7 C8.91555556,7 9.13777778,6.90571429 9.29777778,6.75142857 L13.7422222,2.46571429 C13.9022222,2.31142857 14,2.09714286 14,1.85714286 C14,1.38571429 13.6,1 13.1111111,1 C12.8622222,1 12.64,1.09428571 12.48,1.24857143 L8.66666667,4.93428571 L7.52,3.82857143 Z M12.18875,6.39625 C12.215,6.5975 12.25,6.79 12.25,7 C12.25,9.89625 9.89625,12.25 7,12.25 C4.10375,12.25 1.75,9.89625 1.75,7 C1.75,4.10375 4.10375,1.75 7,1.75 C7.70875,1.75 8.39125,1.89875 9.0125,2.1525 L10.325,0.84 C9.33625,0.30625 8.2075,0 7,0 C3.1325,0 0,3.1325 0,7 C0,10.8675 3.1325,14 7,14 C10.8675,14 14,10.8675 14,7 C14,6.27375 13.88625,5.565 13.685,4.90875 L12.18875,6.39625 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/command/approval</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Command-Icons" transform="translate(-121.000000, -218.000000)">
+		<g id="Approval" transform="translate(100.000000, 201.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Command_x2F_approval" transform="translate(21.000000, 17.000000)">
+				<path id="Shape" class="st0" d="M7.5,3.8C7.4,3.7,7.1,3.6,6.9,3.6C6.4,3.6,6,4,6,4.4C6,4.7,6.1,4.9,6.3,5L8,6.8
+					C8.2,6.9,8.4,7,8.7,7s0.5-0.1,0.6-0.2l4.4-4.3C13.9,2.3,14,2.1,14,1.9C14,1.4,13.6,1,13.1,1c-0.2,0-0.5,0.1-0.6,0.2L8.7,4.9
+					L7.5,3.8z M12.2,6.4c0,0.2,0.1,0.4,0.1,0.6c0,2.9-2.4,5.2-5.2,5.2S1.8,9.9,1.8,7S4.1,1.8,7,1.8c0.7,0,1.4,0.1,2,0.4l1.3-1.3
+					C9.3,0.3,8.2,0,7,0C3.1,0,0,3.1,0,7s3.1,7,7,7s7-3.1,7-7c0-0.7-0.1-1.4-0.3-2.1L12.2,6.4z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

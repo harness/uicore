@@ -1,28 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Service/cloudformation</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Service-icons" transform="translate(-119.000000, -547.000000)">
-            <g id="Cloud-Formation" transform="translate(100.000000, 529.000000)">
-                <g id="HDL/Icon/Standard/Service/cloudformation" transform="translate(19.000000, 18.000000)">
-                    <g id="CloudFormation">
-                        <g id="Layer_1_1_" fill-rule="nonzero">
-                            <g id="Group">
-                                <polygon id="Path" fill="#B7CA9D" points="1 9.7 6 11.2 6 10.3 2.6 9.5"></polygon>
-                                <polygon id="Path" fill="#3C4929" points="6 3.8 2.6 4.6 1 4.3 6 2.8"></polygon>
-                                <polygon id="Path" fill="#B7CA9D" points="11 9.7 6 11.2 6 10.3 9.4 9.5"></polygon>
-                                <polygon id="Path" fill="#3C4929" points="6 3.8 9.4 4.6 11 4.3 6 2.8"></polygon>
-                                <polygon id="Path" fill="#759C3E" points="2.6 9.5 1 9.7 1 4.3 2.6 4.6"></polygon>
-                                <path d="M6,0 L0.3,2.9 L0.3,11.1 L6,14 L6,0 Z M4.3,10.7 L1,9.7 L1,4.3 L4.3,3.3 L4.3,10.7 Z" id="Shape" fill="#4B612C"></path>
-                                <polygon id="Path" fill="#4B612C" points="9.4 9.5 11 9.7 11 4.3 9.4 4.6"></polygon>
-                                <path d="M6,14 L11.7,11.1 L11.7,2.9 L6,0 L6,14 Z M7.7,3.4 L11,4.4 L11,9.7 L7.7,10.7 L7.7,3.4 Z" id="Shape" fill="#759C3E"></path>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 12 14" style="enable-background:new 0 0 12 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#B7CA9D;}
+	.st1{fill:#3C4929;}
+	.st2{fill:#759C3E;}
+	.st3{fill:#4B612C;}
+</style>
+<title>HDL/Icon/Standard/Service/cloudformation</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Service-icons" transform="translate(-119.000000, -547.000000)">
+		<g id="Cloud-Formation" transform="translate(100.000000, 529.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Service_x2F_cloudformation" transform="translate(19.000000, 18.000000)">
+				<g id="CloudFormation">
+					<g id="Layer_1_1_">
+						<g id="Group">
+							<polygon id="Path" class="st0" points="1,9.7 6,11.2 6,10.3 2.6,9.5 							"/>
+							<polygon id="Path_1_" class="st1" points="6,3.8 2.6,4.6 1,4.3 6,2.8 							"/>
+							<polygon id="Path_2_" class="st0" points="11,9.7 6,11.2 6,10.3 9.4,9.5 							"/>
+							<polygon id="Path_3_" class="st1" points="6,3.8 9.4,4.6 11,4.3 6,2.8 							"/>
+							<polygon id="Path_4_" class="st2" points="2.6,9.5 1,9.7 1,4.3 2.6,4.6 							"/>
+							<path id="Shape" class="st3" d="M6,0L0.3,2.9v8.2L6,14V0z M4.3,10.7L1,9.7V4.3l3.3-1V10.7z"/>
+							<polygon id="Path_5_" class="st3" points="9.4,9.5 11,9.7 11,4.3 9.4,4.6 							"/>
+							<path id="Shape_1_" class="st2" d="M6,14l5.7-2.9V2.9L6,0V14z M7.7,3.4l3.3,1v5.3l-3.3,1V3.4z"/>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

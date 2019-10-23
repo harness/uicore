@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/folder_open</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-1121.000000, -222.000000)" fill="#4D5969">
-            <g id="Folder-Open" transform="translate(1100.000000, 207.000000)">
-                <g id="HDL/Icon/Standard/folder_open" transform="translate(21.000000, 15.000000)">
-                    <path d="M14,4.375 C14,4.03125 13.685,3.75 13.3,3.75 L3.5,3.75 C3.199,3.75 2.947,3.91875 2.849,4.15625 L2.842,4.15625 L0.742,9.15625 L0.749,9.15625 C0.721,9.225 0.7,9.3 0.7,9.375 C0.7,9.71875 1.015,10 1.4,10 L11.2,10 C11.501,10 11.753,9.83125 11.851,9.59375 L11.858,9.59375 L13.958,4.59375 L13.951,4.59375 C13.979,4.525 14,4.45 14,4.375 Z M2.149,3.51875 C2.254,3.2875 2.506,3.125 2.8,3.125 L12.6,3.125 L12.6,1.875 C12.6,1.53125 12.285,1.25 11.9,1.25 L5.887,1.25 L4.697,0.18125 C4.571,0.06875 4.396,0 4.2,0 L0.7,0 C0.315,0 0,0.28125 0,0.625 L0,8.31875 L2.149,3.51875 L2.149,3.51875 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 10" style="enable-background:new 0 0 14 10;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/folder_open</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-1121.000000, -222.000000)">
+		<g id="Folder-Open" transform="translate(1100.000000, 207.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_folder_x5F_open" transform="translate(21.000000, 15.000000)">
+				<path id="Shape" class="st0" d="M14,4.4c0-0.3-0.3-0.6-0.7-0.6H3.5c-0.3,0-0.6,0.2-0.7,0.4h0l-2.1,5h0c0,0.1,0,0.1,0,0.2
+					C0.7,9.7,1,10,1.4,10h9.8c0.3,0,0.6-0.2,0.7-0.4h0l2.1-5h0C14,4.5,14,4.4,14,4.4z M2.1,3.5c0.1-0.2,0.4-0.4,0.7-0.4h9.8V1.9
+					c0-0.3-0.3-0.6-0.7-0.6h-6L4.7,0.2C4.6,0.1,4.4,0,4.2,0H0.7C0.3,0,0,0.3,0,0.6v7.7L2.1,3.5L2.1,3.5z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

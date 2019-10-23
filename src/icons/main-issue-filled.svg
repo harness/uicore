@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/issue_filled</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-121.000000, -1581.000000)" fill="#4D5969">
-            <g id="Issue-Filled" transform="translate(100.000000, 1563.000000)">
-                <g id="HDL/Icon/Standard/error" transform="translate(21.000000, 18.000000)">
-                    <path d="M7,0 C3.136,0 0,3.136 0,7 C0,10.864 3.136,14 7,14 C10.864,14 14,10.864 14,7 C14,3.136 10.864,0 7,0 Z M7.7,11.2 L6.3,11.2 L6.3,9.8 L7.7,9.8 L7.7,11.2 Z M7.7,9.1 L6.3,9.1 L6.3,2.8 L7.7,2.8 L7.7,9.1 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/issue_filled</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-121.000000, -1581.000000)">
+		<g id="Issue-Filled" transform="translate(100.000000, 1563.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_error" transform="translate(21.000000, 18.000000)">
+				<path id="Shape" class="st0" d="M7,0C3.1,0,0,3.1,0,7s3.1,7,7,7s7-3.1,7-7S10.9,0,7,0z M7.7,11.2H6.3V9.8h1.4V11.2z M7.7,9.1
+					H6.3V2.8h1.4V9.1z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

@@ -17,7 +17,7 @@ const Title = (props: React.ComponentProps<typeof Heading>) => {
     _children = [
       <span key="title">{title}</span>,
       <Link flex={{ align: 'center-center' }} target="_blank" key="edit" href={`${BASE_URL}${link}`} font="small">
-        <Icons.Edit width="12px" height="12px" />
+        <Icons.MainEdit width="12px" height="12px" />
         <span>&nbsp;Edit this page</span>
       </Link>
     ]

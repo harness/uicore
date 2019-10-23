@@ -1,15 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Command/resource-constraint</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Command-Icons" transform="translate(-121.000000, -595.000000)" fill="#4D5969">
-            <g id="Resource-Constraint" transform="translate(100.000000, 577.000000)">
-                <g id="HDL/Icon/Standard/Command/resource_constraint" transform="translate(21.000000, 18.000000)">
-                    <path d="M12.6425,10.92 L10.473125,8.750625 C11.041875,7.865 11.375,6.816875 11.375,5.6875 C11.375,2.543125 8.831875,0 5.6875,0 C2.543125,0 0,2.543125 0,5.6875 C0,8.831875 2.543125,11.375 5.6875,11.375 C6.816875,11.375 7.865,11.041875 8.750625,10.473125 L10.92,12.6425 C11.139375,12.861875 11.448125,13 11.78125,13 C12.455625,13 13,12.455625 13,11.78125 C13,11.448125 12.861875,11.139375 12.6425,10.92 Z M5.6875,9.75 C3.445,9.75 1.625,7.93 1.625,5.6875 C1.625,3.445 3.445,1.625 5.6875,1.625 C7.93,1.625 9.75,3.445 9.75,5.6875 C9.75,7.93 7.93,9.75 5.6875,9.75 Z M7.71875,4.875 L3.65625,4.875 C3.42875,4.875 3.25,5.05375 3.25,5.28125 C3.25,5.50875 3.42875,5.6875 3.65625,5.6875 L7.71875,5.6875 C7.94625,5.6875 8.125,5.50875 8.125,5.28125 C8.125,5.05375 7.94625,4.875 7.71875,4.875 Z M7.71875,3.25 L3.65625,3.25 C3.42875,3.25 3.25,3.42875 3.25,3.65625 C3.25,3.88375 3.42875,4.0625 3.65625,4.0625 L7.71875,4.0625 C7.94625,4.0625 8.125,3.88375 8.125,3.65625 C8.125,3.42875 7.94625,3.25 7.71875,3.25 Z M7.71875,6.5 L3.65625,6.5 C3.42875,6.5 3.25,6.67875 3.25,6.90625 C3.25,7.13375 3.42875,7.3125 3.65625,7.3125 L7.71875,7.3125 C7.94625,7.3125 8.125,7.13375 8.125,6.90625 C8.125,6.67875 7.94625,6.5 7.71875,6.5 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/Command/resource-constraint</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Command-Icons" transform="translate(-121.000000, -595.000000)">
+		<g id="Resource-Constraint" transform="translate(100.000000, 577.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Command_x2F_resource_x5F_constraint" transform="translate(21.000000, 18.000000)">
+				<path id="Shape" class="st0" d="M12.6,10.9l-2.2-2.2c0.6-0.9,0.9-1.9,0.9-3.1C11.4,2.5,8.8,0,5.7,0S0,2.5,0,5.7s2.5,5.7,5.7,5.7
+					c1.1,0,2.2-0.3,3.1-0.9l2.2,2.2c0.2,0.2,0.5,0.4,0.9,0.4c0.7,0,1.2-0.5,1.2-1.2C13,11.4,12.9,11.1,12.6,10.9z M5.7,9.8
+					c-2.2,0-4.1-1.8-4.1-4.1s1.8-4.1,4.1-4.1s4.1,1.8,4.1,4.1S7.9,9.8,5.7,9.8z M7.7,4.9H3.7c-0.2,0-0.4,0.2-0.4,0.4
+					s0.2,0.4,0.4,0.4h4.1c0.2,0,0.4-0.2,0.4-0.4S7.9,4.9,7.7,4.9z M7.7,3.2H3.7c-0.2,0-0.4,0.2-0.4,0.4s0.2,0.4,0.4,0.4h4.1
+					c0.2,0,0.4-0.2,0.4-0.4S7.9,3.2,7.7,3.2z M7.7,6.5H3.7c-0.2,0-0.4,0.2-0.4,0.4s0.2,0.4,0.4,0.4h4.1c0.2,0,0.4-0.2,0.4-0.4
+					S7.9,6.5,7.7,6.5z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

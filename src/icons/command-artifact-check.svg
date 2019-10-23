@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Command/artifact-check</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Command-Icons" transform="translate(-120.000000, -265.000000)" fill="#4D5969">
-            <g id="Artifact-Check" transform="translate(99.000000, 247.000000)">
-                <g id="HDL/Icon/Standard/Command/artifact_check" transform="translate(21.000000, 18.000000)">
-                    <path d="M7,14 C3.136,14 0,10.864 0,7 C0,3.136 3.136,0 7,0 C10.864,0 14,3.136 14,7 C14,10.864 10.864,14 7,14 Z M10.3333333,4 C10.1466667,4 9.98,4.07333333 9.86,4.19333333 L5.66666667,8.39333333 L4.14,6.86 C4.02,6.74 3.85333333,6.66666667 3.66666667,6.66666667 C3.3,6.66666667 3,6.96666667 3,7.33333333 C3,7.52 3.07333333,7.68666667 3.19333333,7.80666667 L5.19333333,9.80666667 C5.31333333,9.92666667 5.48,10 5.66666667,10 C5.85333333,10 6.02,9.92666667 6.14,9.80666667 L10.8066667,5.14 C10.9266667,5.02 11,4.85333333 11,4.66666667 C11,4.3 10.7,4 10.3333333,4 Z" id="Combined-Shape_5_"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/Command/artifact-check</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Command-Icons" transform="translate(-120.000000, -265.000000)">
+		<g id="Artifact-Check" transform="translate(99.000000, 247.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Command_x2F_artifact_x5F_check" transform="translate(21.000000, 18.000000)">
+				<path id="Combined-Shape_5_" class="st0" d="M7,14c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S10.9,14,7,14z M10.3,4
+					C10.1,4,10,4.1,9.9,4.2L5.7,8.4L4.1,6.9C4,6.7,3.9,6.7,3.7,6.7C3.3,6.7,3,7,3,7.3c0,0.2,0.1,0.4,0.2,0.5l2,2
+					C5.3,9.9,5.5,10,5.7,10C5.9,10,6,9.9,6.1,9.8l4.7-4.7C10.9,5,11,4.9,11,4.7C11,4.3,10.7,4,10.3,4z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

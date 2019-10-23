@@ -1,29 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Service/jira</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="67.2607143%" y1="40.51%" x2="40.7180612%" y2="81.7971429%" id="linearGradient-1">
-            <stop stop-color="#0052CC" offset="18%"></stop>
-            <stop stop-color="#2684FF" offset="100%"></stop>
-        </linearGradient>
-        <linearGradient x1="32.9688776%" y1="59.1342857%" x2="59.460102%" y2="17.9257143%" id="linearGradient-2">
-            <stop stop-color="#0052CC" offset="18%"></stop>
-            <stop stop-color="#2684FF" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Service-icons" transform="translate(-122.000000, -1065.000000)">
-            <g id="Jira" transform="translate(101.000000, 1047.000000)">
-                <g id="HDL/Icon/Standard/Service/jira" transform="translate(21.000000, 18.000000)">
-                    <g id="Jira">
-                        <path d="M13.6,6.6 L7.6,0.6 L7,0 L2.5,4.5 L0.4,6.6 C0.2,6.8 0.2,7.2 0.4,7.4 L4.5,11.5 L7,14 L11.5,9.5 L11.6,9.4 L13.6,7.4 C13.8,7.2 13.8,6.8 13.6,6.6 Z M7,9.1 L4.9,7 L7,4.9 L9.1,7 L7,9.1 Z" id="Shape" fill="#2684FF" fill-rule="nonzero"></path>
-                        <path d="M7,4.9 C5.6,3.6 5.6,1.4 7,0 L2.5,4.5 L4.9,7 L7,4.9 Z" id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
-                        <path d="M9.1,7 L7,9.1 C8.4,10.5 8.4,12.7 7,14 L11.5,9.5 L9.1,7 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#2684FF;}
+	.st1{fill:url(#Path_2_);}
+	.st2{fill:url(#Path_3_);}
+</style>
+<title>HDL/Icon/Standard/Service/jira</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Service-icons" transform="translate(-122.000000, -1065.000000)">
+		<g id="Jira_1_" transform="translate(101.000000, 1047.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Service_x2F_jira" transform="translate(21.000000, 18.000000)">
+				<g id="Jira">
+					<path id="Shape" class="st0" d="M13.6,6.6l-6-6L7,0L2.5,4.5L0.4,6.6c-0.2,0.2-0.2,0.6,0,0.8l4.1,4.1L7,14l4.5-4.5l0.1-0.1l2-2
+						C13.8,7.2,13.8,6.8,13.6,6.6z M7,9.1L4.9,7L7,4.9L9.1,7L7,9.1z"/>
+					
+						<linearGradient id="Path_2_" gradientUnits="userSpaceOnUse" x1="-231.1062" y1="348.167" x2="-231.3716" y2="347.7541" gradientTransform="matrix(4.5 0 0 -7 1045.5 2440)">
+						<stop  offset="0.18" style="stop-color:#0052CC"/>
+						<stop  offset="1" style="stop-color:#2684FF"/>
+					</linearGradient>
+					<path id="Path" class="st1" d="M7,4.9C5.6,3.6,5.6,1.4,7,0L2.5,4.5L4.9,7L7,4.9z"/>
+					
+						<linearGradient id="Path_3_" gradientUnits="userSpaceOnUse" x1="-231.4471" y1="347.9795" x2="-231.1822" y2="348.3915" gradientTransform="matrix(4.5 0 0 -7 1050 2447)">
+						<stop  offset="0.18" style="stop-color:#0052CC"/>
+						<stop  offset="1" style="stop-color:#2684FF"/>
+					</linearGradient>
+					<path id="Path_1_" class="st2" d="M9.1,7L7,9.1c1.4,1.4,1.4,3.6,0,4.9l4.5-4.5L9.1,7z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

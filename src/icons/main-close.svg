@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/close</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-123.000000, -453.000000)" fill="#4D5969">
-            <g id="Close" transform="translate(101.000000, 435.000000)">
-                <g id="HDL/Icon/Standard/close" transform="translate(22.000000, 18.000000)">
-                    <path d="M8.645,7 L13.65,1.995 C13.8716667,1.785 14,1.49333333 14,1.16666667 C14,0.525 13.475,0 12.8333333,0 C12.5066667,0 12.215,0.128333333 12.005,0.338333333 L7,5.355 L1.995,0.338333333 C1.785,0.128333333 1.49333333,0 1.16666667,0 C0.525,0 0,0.525 0,1.16666667 C0,1.49333333 0.128333333,1.785 0.338333333,1.995 L5.355,7 L0.35,12.005 C0.128333333,12.215 0,12.5066667 0,12.8333333 C0,13.475 0.525,14 1.16666667,14 C1.49333333,14 1.785,13.8716667 1.995,13.6616667 L7,8.645 L12.005,13.65 C12.215,13.8716667 12.5066667,14 12.8333333,14 C13.475,14 14,13.475 14,12.8333333 C14,12.5066667 13.8716667,12.215 13.6616667,12.005 L8.645,7 Z" id="Path"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/close</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-123.000000, -453.000000)">
+		<g id="Close" transform="translate(101.000000, 435.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_close" transform="translate(22.000000, 18.000000)">
+				<path id="Path" class="st0" d="M8.6,7l5-5C13.9,1.8,14,1.5,14,1.2C14,0.5,13.5,0,12.8,0c-0.3,0-0.6,0.1-0.8,0.3l-5,5l-5-5
+					C1.8,0.1,1.5,0,1.2,0C0.5,0,0,0.5,0,1.2C0,1.5,0.1,1.8,0.3,2l5,5l-5,5C0.1,12.2,0,12.5,0,12.8C0,13.5,0.5,14,1.2,14
+					c0.3,0,0.6-0.1,0.8-0.3l5-5l5,5c0.2,0.2,0.5,0.4,0.8,0.4c0.6,0,1.2-0.5,1.2-1.2c0-0.3-0.1-0.6-0.3-0.8L8.6,7z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

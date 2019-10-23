@@ -1,21 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Service/appdynamics</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Service-icons" transform="translate(-121.000000, -220.000000)">
-            <g id="AppDynamics" transform="translate(100.000000, 202.000000)">
-                <g id="HDL/Icon/Standard/Service/appdynamics" transform="translate(21.000000, 18.000000)">
-                    <g id="AppDynamics">
-                        <path d="M0.4,13.6 C0.4,9.2 0.4,4.8 0.4,0.5 L13.5,0.5 L13.5,13.6 C9.2,13.6 4.8,13.6 0.4,13.6 Z M8.9,11.5 C10.9,10.2 11.7,7.5 10.5,5.2 C9.3,2.8 6.7,2.2 5,2.7 C5.2,3.2 5.4,3.6 5.6,4.1 C5.7,4.3 5.7,4.3 5.9,4.3 C7.8,4.2 9.4,5.6 9.3,7.5 C9.3,8.4 8.9,9.2 8.3,9.8 C8.3,9.8 8.2,9.9 8.2,10 C8.5,10.5 8.7,11 8.9,11.5 L8.9,11.5 Z M6.6,10.6 C5.8,8.7 5,6.9 4.1,5 C3,5.8 2.7,7.5 3.2,8.8 C3.8,10.1 5.3,10.9 6.6,10.6 L6.6,10.6 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
-                        <g id="Group" transform="translate(2.000000, 2.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                            <path d="M6.9,9.5 C6.7,9 6.4,8.5 6.2,7.9 C6.2,7.9 6.2,7.8 6.3,7.7 C7,7.1 7.3,6.3 7.3,5.4 C7.3,3.5 5.8,2.1 3.9,2.2 C3.7,2.2 3.7,2.2 3.6,2 C3.4,1.6 3.2,1.2 3,0.7 C4.7,0.2 7.4,0.8 8.6,3.3 C9.7,5.6 8.9,8.3 6.9,9.5 L6.9,9.5 Z" id="Path"></path>
-                            <path d="M4.6,8.6 C3.3,8.9 1.8,8.1 1.2,6.8 C0.7,5.5 1,3.8 2.1,3 C3,4.9 3.8,6.7 4.6,8.6 L4.6,8.6 Z" id="Path"></path>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<title>HDL/Icon/Standard/Service/appdynamics</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Service-icons" transform="translate(-121.000000, -220.000000)">
+		<g id="AppDynamics_1_" transform="translate(100.000000, 202.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Service_x2F_appdynamics" transform="translate(21.000000, 18.000000)">
+				<g id="AppDynamics">
+					<path id="Shape" d="M0.4,13.6c0-4.4,0-8.8,0-13.1h13.1v13.1C9.2,13.6,4.8,13.6,0.4,13.6z M8.9,11.5c2-1.3,2.8-4,1.6-6.3
+						C9.3,2.8,6.7,2.2,5,2.7c0.2,0.5,0.4,0.9,0.6,1.4c0.1,0.2,0.1,0.2,0.3,0.2c1.9-0.1,3.5,1.3,3.4,3.2c0,0.9-0.4,1.7-1,2.3
+						c0,0-0.1,0.1-0.1,0.2C8.5,10.5,8.7,11,8.9,11.5L8.9,11.5z M6.6,10.6C5.8,8.7,5,6.9,4.1,5C3,5.8,2.7,7.5,3.2,8.8
+						C3.8,10.1,5.3,10.9,6.6,10.6L6.6,10.6z"/>
+					<g id="Group" transform="translate(2.000000, 2.000000)">
+						<path id="Path" class="st0" d="M6.9,9.5C6.7,9,6.4,8.5,6.2,7.9c0,0,0-0.1,0.1-0.2c0.7-0.6,1-1.4,1-2.3c0-1.9-1.5-3.3-3.4-3.2
+							c-0.2,0-0.2,0-0.3-0.2C3.4,1.6,3.2,1.2,3,0.7c1.7-0.5,4.4,0.1,5.6,2.6C9.7,5.6,8.9,8.3,6.9,9.5L6.9,9.5z"/>
+						<path id="Path_1_" class="st0" d="M4.6,8.6C3.3,8.9,1.8,8.1,1.2,6.8C0.7,5.5,1,3.8,2.1,3C3,4.9,3.8,6.7,4.6,8.6L4.6,8.6z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

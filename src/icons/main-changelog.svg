@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/changelog</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-122.000000, -1439.000000)" fill="#4D5969">
-            <g id="Alert" transform="translate(101.000000, 1422.000000)">
-                <g id="HDL/Icon/Standard/changelog" transform="translate(21.000000, 17.000000)">
-                    <path d="M11.4698808,0 C11.1496703,0 10.8571915,0.206572956 10.7135073,0.531684067 L10.2631579,1.55555556 L5.88795247,3.68684898 C5.636163,3.80973787 5.47368421,4.08971352 5.47368421,4.40082463 L5.47368421,9.59765644 C5.47368421,9.90876756 5.636163,10.1910402 5.88795247,10.3131513 L10.2631579,12.4444444 L10.7135073,13.4683158 C10.8571915,13.7934269 11.1496703,14 11.4698808,14 C11.9371966,14 12.3157895,13.5696338 12.3157895,13.0384116 L12.3157895,8.34440133 C12.738433,8.06701977 12.999137,7.55476399 13,7 C12.9996136,6.44469312 12.7388457,5.93173302 12.3157895,5.65407967 L12.3157895,0.961588522 C12.3157895,0.4303663 11.9371966,0 11.4698808,0 Z M1.36842105,3.88888889 C0.615789474,3.88888889 0,4.58888889 0,5.44444444 L0,8.55555556 C0,9.41111111 0.615789474,10.1111111 1.36842105,10.1111111 L2.73684211,10.1111111 L2.73684211,13.2222222 C2.73684211,13.6515556 3.04336842,14 3.42105263,14 C3.79873684,14 4.10526316,13.6515556 4.10526316,13.2222222 L4.10526316,8.55555556 L4.10526316,4.66666667 C4.10526316,4.23733333 3.79873684,3.88888889 3.42105263,3.88888889 L1.36842105,3.88888889 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 13 14" style="enable-background:new 0 0 13 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/changelog</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-122.000000, -1439.000000)">
+		<g id="Alert" transform="translate(101.000000, 1422.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_changelog" transform="translate(21.000000, 17.000000)">
+				<path id="Shape" class="st0" d="M11.5,0c-0.3,0-0.6,0.2-0.8,0.5l-0.5,1L5.9,3.7C5.6,3.8,5.5,4.1,5.5,4.4v5.2
+					c0,0.3,0.2,0.6,0.4,0.7l4.4,2.1l0.5,1c0.1,0.3,0.4,0.5,0.8,0.5c0.5,0,0.8-0.4,0.8-1V8.3C12.7,8.1,13,7.6,13,7
+					c0-0.6-0.3-1.1-0.7-1.3V1C12.3,0.4,11.9,0,11.5,0z M1.4,3.9C0.6,3.9,0,4.6,0,5.4v3.1c0,0.9,0.6,1.6,1.4,1.6h1.4v3.1
+					C2.7,13.7,3,14,3.4,14s0.7-0.3,0.7-0.8V8.6V4.7c0-0.4-0.3-0.8-0.7-0.8H1.4z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

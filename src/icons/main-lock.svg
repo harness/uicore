@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="11px" height="14px" viewBox="0 0 11 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/lock</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-119.000000, -923.000000)" fill="#4D5969">
-            <g id="Lock" transform="translate(101.000000, 905.000000)">
-                <g id="HDL/Icon/Standard/lock" transform="translate(18.000000, 18.000000)">
-                    <path d="M10.1592857,6.22654081 L8.64285714,6.22654081 L8.64285714,3.10938368 C8.64285714,1.39144919 7.23642857,0 5.5,0 C3.76357143,0 2.35714286,1.39144919 2.35714286,3.10938368 L2.35714286,6.22654081 L0.730714286,6.22654081 C0.298571429,6.22654081 0,6.56857301 0,6.99611327 L0,13.2148806 C0,13.6424209 0.298571429,14 0.730714286,14 L10.1592857,14 C10.5914286,14 11,13.6424209 11,13.2148806 L11,6.99611327 C11,6.56857301 10.5914286,6.22654081 10.1592857,6.22654081 Z M3.92857143,6.22654081 L3.92857143,3.10938368 C3.92857143,2.25430316 4.63571429,1.55469184 5.5,1.55469184 C6.36428571,1.55469184 7.07142857,2.25430316 7.07142857,3.10938368 L7.07142857,6.22654081 L3.92857143,6.22654081 Z" id="lock_1_"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 11 14" style="enable-background:new 0 0 11 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/lock</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-119.000000, -923.000000)">
+		<g id="Lock" transform="translate(101.000000, 905.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_lock" transform="translate(18.000000, 18.000000)">
+				<path id="lock_1_" class="st0" d="M10.2,6.2H8.6V3.1C8.6,1.4,7.2,0,5.5,0S2.4,1.4,2.4,3.1v3.1H0.7C0.3,6.2,0,6.6,0,7v6.2
+					C0,13.6,0.3,14,0.7,14h9.4c0.4,0,0.8-0.4,0.8-0.8V7C11,6.6,10.6,6.2,10.2,6.2z M3.9,6.2V3.1c0-0.9,0.7-1.6,1.6-1.6
+					s1.6,0.7,1.6,1.6v3.1H3.9z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

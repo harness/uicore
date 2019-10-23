@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/caret_up</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-Icons" transform="translate(-620.000000, -975.000000)" fill="#4D5969">
-            <g id="Caret-Up" transform="translate(602.000000, 963.000000)">
-                <g id="HDL/Icon/Standard/caret_up" transform="translate(18.000000, 12.000000)">
-                    <path d="M13.72,7.16625 L13.7316667,7.155 L7.89833333,0.405 L7.88666667,0.41625 C7.665,0.16875 7.36166667,0 7,0 C6.63833333,0 6.335,0.16875 6.11333333,0.41625 L6.10166667,0.405 L0.268333333,7.155 L0.28,7.16625 C0.116666667,7.3575 0,7.605 0,7.875 C0,8.49375 0.525,9 1.16666667,9 L12.8333333,9 C13.475,9 14,8.49375 14,7.875 C14,7.605 13.8833333,7.3575 13.72,7.16625 Z" id="Path"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 9" style="enable-background:new 0 0 14 9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/caret_up</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Main-Icons" transform="translate(-620.000000, -975.000000)">
+		<g id="Caret-Up" transform="translate(602.000000, 963.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_caret_x5F_up" transform="translate(18.000000, 12.000000)">
+				<path id="Path" class="st0" d="M13.7,7.2L13.7,7.2L7.9,0.4l0,0C7.7,0.2,7.4,0,7,0S6.3,0.2,6.1,0.4l0,0L0.3,7.2l0,0
+					C0.1,7.4,0,7.6,0,7.9C0,8.5,0.5,9,1.2,9h11.7C13.5,9,14,8.5,14,7.9C14,7.6,13.9,7.4,13.7,7.2z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

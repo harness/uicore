@@ -1,25 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Deployment/Legacy/incomplete</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Deployment-Icons" transform="translate(-101.000000, -967.000000)">
-            <g id="Legacy-icons---HDL-Colors" transform="translate(101.000000, 732.000000)">
-                <g id="HDL/Icon/Standard/Deployment/Legacy/incomplete" transform="translate(0.000000, 235.000000)">
-                    <g id="FailedOrange">
-                        <g id="Ellipse_524" fill="#FF8F3F" fill-rule="nonzero">
-                            <circle id="accent" cx="7" cy="7" r="7"></circle>
-                        </g>
-                        <g id="Ellipse_1550" transform="translate(1.000000, 1.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                            <circle id="Oval" cx="6" cy="6" r="5.2"></circle>
-                        </g>
-                        <g id="_x21_" transform="translate(6.000000, 3.000000)" fill="#FF8F3F" fill-rule="nonzero">
-                            <path d="M0.1,6.6 C0.1,6.1 0.4,5.6 1,5.6 C1.6,5.6 1.9,6 1.9,6.6 C1.9,7.2 1.6,7.6 1,7.6 C0.4,7.6 0.1,7.2 0.1,6.6 Z M0.4,2.1 L0.3,0.8 L1.8,0.8 L1.8,2.1 L1.5,5.1 L0.5,5.1 L0.4,2.1 Z" id="accent_1_"></path>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FF8F3F;}
+	.st1{fill:#FFFFFF;}
+</style>
+<title>HDL/Icon/Standard/Deployment/Legacy/incomplete</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Deployment-Icons" transform="translate(-101.000000, -967.000000)">
+		<g id="Legacy-icons---HDL-Colors" transform="translate(101.000000, 732.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Deployment_x2F_Legacy_x2F_incomplete" transform="translate(0.000000, 235.000000)">
+				<g id="FailedOrange">
+					<g id="Ellipse_524">
+						<circle id="accent" class="st0" cx="7" cy="7" r="7"/>
+					</g>
+					<g id="Ellipse_1550" transform="translate(1.000000, 1.000000)">
+						<circle id="Oval" class="st1" cx="6" cy="6" r="5.2"/>
+					</g>
+					<g id="_x21_" transform="translate(6.000000, 3.000000)">
+						<path id="accent_1_" class="st0" d="M0.1,6.6c0-0.5,0.3-1,0.9-1s0.9,0.4,0.9,1s-0.3,1-0.9,1S0.1,7.2,0.1,6.6z M0.4,2.1
+							L0.3,0.8h1.5v1.3l-0.3,3h-1L0.4,2.1z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

@@ -1,16 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Support/security</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Support-Icons" transform="translate(-100.000000, -955.000000)">
-            <g id="HDL/Icon/Standard/Support/security" transform="translate(100.000000, 955.000000)">
-                <g id="ICON">
-                    <circle id="Oval" fill="#D4ECFC" cx="30" cy="30" r="30"></circle>
-                    <path d="M39.44,28.5 L36.5,28.5 L36.5,23.925 C36.5,20.655 33.815,18 30.5,18 C27.185,18 24.5,20.655 24.5,23.925 L24.5,28.5 L21.44,28.5 C20.615,28.5 20,29.025 20,29.85 L20,40.215 C20,41.025 20.615,42 21.44,42 L39.44,42 C40.265,42 41,41.025 41,40.215 L41,29.85 C41,29.025 40.265,28.5 39.44,28.5 Z M27.5,28.5 L27.5,23.925 C27.5,22.29 28.85,20.97 30.5,20.97 C32.15,20.97 33.5,22.29 33.5,23.925 L33.5,28.5 L27.5,28.5 Z" id="lock_3_" fill="#25A6F7" fill-rule="nonzero"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D4ECFC;}
+	.st1{fill:#25A6F7;}
+</style>
+<title>HDL/Icon/Standard/Support/security</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Support-Icons" transform="translate(-100.000000, -955.000000)">
+		<g id="HDL_x2F_Icon_x2F_Standard_x2F_Support_x2F_security" transform="translate(100.000000, 955.000000)">
+			<g id="ICON">
+				<circle id="Oval" class="st0" cx="30" cy="30" r="30"/>
+				<path id="lock_3_" class="st1" d="M39.4,28.5h-2.9v-4.6c0-3.3-2.7-5.9-6-5.9s-6,2.7-6,5.9v4.6h-3.1c-0.8,0-1.4,0.5-1.4,1.4v10.4
+					c0,0.8,0.6,1.8,1.4,1.8h18c0.8,0,1.6-1,1.6-1.8V29.9C41,29,40.3,28.5,39.4,28.5z M27.5,28.5v-4.6c0-1.6,1.4-3,3-3
+					c1.7,0,3,1.3,3,3v4.6H27.5z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

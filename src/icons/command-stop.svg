@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Command/stop</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Command-Icons" transform="translate(-118.000000, -786.000000)" fill="#4D5969">
-            <g id="Stop" transform="translate(101.000000, 764.000000)">
-                <g id="HDL/Icon/Standard/Command/stop" transform="translate(17.000000, 22.000000)">
-                    <path d="M9.28571429,0 L0.714285714,0 C0.321428571,0 0,0.321428571 0,0.714285714 L0,9.28571429 C0,9.67857143 0.321428571,10 0.714285714,10 L9.28571429,10 C9.67857143,10 10,9.67857143 10,9.28571429 L10,0.714285714 C10,0.321428571 9.67857143,0 9.28571429,0 Z" id="Path"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D5969;}
+</style>
+<title>HDL/Icon/Standard/Command/stop</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Command-Icons" transform="translate(-118.000000, -786.000000)">
+		<g id="Stop" transform="translate(101.000000, 764.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Command_x2F_stop" transform="translate(17.000000, 22.000000)">
+				<path id="Path" class="st0" d="M9.3,0H0.7C0.3,0,0,0.3,0,0.7v8.6C0,9.7,0.3,10,0.7,10h8.6C9.7,10,10,9.7,10,9.3V0.7
+					C10,0.3,9.7,0,9.3,0z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

@@ -32,7 +32,6 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
-import Edit from './edit.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import MainAbort from './main-abort.svg'
@@ -224,7 +223,6 @@ const Icons = {
   DeploymentSuccessNew,
   DeploymentTimeoutLegacy,
   DeploymentTimeoutNew,
-  Edit,
   HarnessLogoBlack,
   HarnessLogoWhite,
   MainAbort,

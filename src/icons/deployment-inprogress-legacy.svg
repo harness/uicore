@@ -1,25 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Deployment/Legacy/inprogress</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Deployment-Icons" transform="translate(-101.000000, -826.000000)">
-            <g id="Legacy-icons---HDL-Colors" transform="translate(101.000000, 732.000000)">
-                <g id="HDL/Icon/Standard/Deployment/Legacy/inprogress" transform="translate(0.000000, 94.000000)">
-                    <g id="InProgress">
-                        <g id="Ellipse_524_copy" fill="#25A6F7" fill-rule="nonzero">
-                            <circle id="accent" cx="7" cy="7" r="7"></circle>
-                        </g>
-                        <g id="Ellipse_1552" transform="translate(1.000000, 1.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                            <circle id="Oval" cx="6" cy="6" r="5.2"></circle>
-                        </g>
-                        <g id="Rectangle_766" transform="translate(6.000000, 3.000000)" fill="#25A6F7" fill-rule="nonzero">
-                            <polygon id="accent" points="1.4 3.5 1.4 0 0.3 0 0.3 4.7 4.3 4.7 4.3 3.5"></polygon>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#25A6F7;}
+	.st1{fill:#FFFFFF;}
+</style>
+<title>HDL/Icon/Standard/Deployment/Legacy/inprogress</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Deployment-Icons" transform="translate(-101.000000, -826.000000)">
+		<g id="Legacy-icons---HDL-Colors" transform="translate(101.000000, 732.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Deployment_x2F_Legacy_x2F_inprogress" transform="translate(0.000000, 94.000000)">
+				<g id="InProgress">
+					<g id="Ellipse_524_copy">
+						<circle id="accent" class="st0" cx="7" cy="7" r="7"/>
+					</g>
+					<g id="Ellipse_1552" transform="translate(1.000000, 1.000000)">
+						<circle id="Oval" class="st1" cx="6" cy="6" r="5.2"/>
+					</g>
+					<g id="Rectangle_766" transform="translate(6.000000, 3.000000)">
+						<polygon id="accent_1_" class="st0" points="1.4,3.5 1.4,0 0.3,0 0.3,4.7 4.3,4.7 4.3,3.5 						"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

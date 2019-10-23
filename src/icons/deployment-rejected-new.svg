@@ -1,18 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>HDL/Icon/Standard/Deployment/rejected</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Deployment-Icons" transform="translate(-121.000000, -594.000000)">
-            <g id="Rejected" transform="translate(100.000000, 576.000000)">
-                <g id="HDL/Icon/Standard/Deployment/rejected" transform="translate(21.000000, 18.000000)">
-                    <g id="rejected">
-                        <rect id="Rectangle" fill="#AA3D53" x="0" y="0" width="14" height="14" rx="4"></rect>
-                        <path d="M6.8,10.7 C6.6,10.7 6.4,10.6 6.3,10.4 L4.5,7.9 C4.3,7.7 4.2,7.4 4.2,7.1 L4.2,5.6 C4.2,4.8 4.8,4.2 5.6,4.2 L8.6,4.2 C9.1,4.2 9.4,4.6 9.4,4.9 C9.4,5 9.4,5.1 9.3,5.2 C9.5,5.3 9.7,5.5 9.7,5.8 C9.7,6 9.6,6.2 9.5,6.3 C9.6,6.4 9.7,6.6 9.7,6.8 C9.7,7.1 9.5,7.3 9.4,7.4 L9.4,7.7 C9.4,8 9.1,8.3 8.7,8.3 L6.7,8.3 C6.9,8.7 7.2,9.4 7.2,9.6 L7.2,9.7 C7.2,9.8 7.3,9.9 7.3,10 C7.4,10.5 7,10.7 6.8,10.7" id="Fill-5" fill="#FFFFFF"></path>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#AA3D53;}
+	.st1{fill:#FFFFFF;}
+</style>
+<title>HDL/Icon/Standard/Deployment/rejected</title>
+<desc>Created with Sketch.</desc>
+<g id="Colors">
+	<g id="Deployment-Icons" transform="translate(-121.000000, -594.000000)">
+		<g id="Rejected" transform="translate(100.000000, 576.000000)">
+			<g id="HDL_x2F_Icon_x2F_Standard_x2F_Deployment_x2F_rejected" transform="translate(21.000000, 18.000000)">
+				<g id="rejected">
+					<path id="Rectangle" class="st0" d="M4,0h6c2.2,0,4,1.8,4,4v6c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V4C0,1.8,1.8,0,4,0z"/>
+					<path id="Fill-5" class="st1" d="M6.8,10.7c-0.2,0-0.4-0.1-0.5-0.3L4.5,7.9C4.3,7.7,4.2,7.4,4.2,7.1V5.6c0-0.8,0.6-1.4,1.4-1.4
+						h3c0.5,0,0.8,0.4,0.8,0.7c0,0.1,0,0.2-0.1,0.3c0.2,0.1,0.4,0.3,0.4,0.6c0,0.2-0.1,0.4-0.2,0.5c0.1,0.1,0.2,0.3,0.2,0.5
+						c0,0.3-0.2,0.5-0.3,0.6v0.3c0,0.3-0.3,0.6-0.7,0.6h-2c0.2,0.4,0.5,1.1,0.5,1.3v0.1c0,0.1,0.1,0.2,0.1,0.3
+						C7.4,10.5,7,10.7,6.8,10.7"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>
