@@ -6,10 +6,6 @@
     "**/static": true,
     "dist/": true,
     "yarn-error.*": true,
-    ".vscode": true,
-    ".github": true,
-    ".gitignore": true,
-    ".prettierrc.yml": true,
     "**/.next/": true,
     "**/next-env.d.ts": true,
     "**/next.config.js": true,
@@ -22,19 +18,15 @@
     "tsconfig.json": true,
     "types": true,
     "scripts": true,
-    ".npmignore": true
+    ".*": true
   },
   "files.exclude": {
     "**/node_modules": true,
-    ".npmrc": true,
+    ".*": true,
     "npm-debug.log*": true,
     "**/static": true,
     "dist/": true,
     "yarn-error.*": true,
-    ".vscode": true,
-    ".github": true,
-    ".gitignore": true,
-    ".prettierrc.yml": true,
     "**/.next/": true,
     "**/next-env.d.ts": true,
     "**/next.config.js": true,
@@ -46,8 +38,7 @@
     "webpack.config.js": true,
     "tsconfig.json": true,
     "types": true,
-    "scripts": true,
-    ".npmignore": true
+    "scripts": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
