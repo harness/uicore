@@ -12,6 +12,8 @@
     "clean": "rm -rf docs/static/index* dist/types dist/index*",
     "dep": "yarn; cd docs; yarn; cd ..",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" && stylelint ./src && prettier --check \"src/**/*.{ts,tsx,css}\"",
+    "test": "jest --no-cache ./src",
+    "test:ci": "jest --no-cache ./src --ci  --coverage --reporters=jest-junit --reporters=default --runInBand --silent",
     "fmt": "prettier --write \"./src/**/*.{ts,tsx,css}\"",
     "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
     "ui:icons": "node ./scripts/build-icons.js > ./src/icons/index.ts",
@@ -33,6 +35,9 @@
   "devDependencies": {
     "@blueprintjs/core": "^3.18.0",
     "@svgr/webpack": "^4.3.2",
+    "@testing-library/react": "^9.3.0",
+    "@testing-library/react-hooks": "^3.1.0",
+    "@types/jest": "^24.0.19",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
@@ -46,6 +51,9 @@
     "fork-ts-checker-webpack-plugin": "^1.5.0",
     "glob": "^7.1.4",
     "husky": "^3.0.9",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-junit": "^9.0.0",
     "lint-staged": "^9.4.2",
     "mini-css-extract-plugin": "^0.8.0",
     "npm-run-all": "^4.1.5",
@@ -56,13 +64,19 @@
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.11.0",
     "stylelint": "^11.1.1",
     "stylelint-config-recommended": "^3.0.0",
+    "ts-jest": "^24.1.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.6.4",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-node-externals": "^1.7.2"
+  },
+  "resolutions": {
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.9.2"
   },
   "husky": {
     "hooks": {

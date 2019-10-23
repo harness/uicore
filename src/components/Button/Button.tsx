@@ -2,7 +2,12 @@ import React from 'react'
 import { Button as BButton, IButtonProps, Classes } from '@blueprintjs/core'
 import css from './Button.css'
 
-function Button(props: IButtonProps) {
+export interface ButtonProps extends Omit<IButtonProps, 'icon'> {
+  icon?: IButtonProps['icon'] | React.FunctionComponent<any>
+  children?: React.ReactChild
+}
+
+function Button(props: ButtonProps) {
   let { icon } = props
 
   if (typeof icon === 'function') {
