@@ -18,7 +18,8 @@
     "tsconfig.json": true,
     "types": true,
     "scripts": true,
-    ".*": true
+    ".*": true,
+    "*.config.js": true
   },
   "files.exclude": {
     "**/node_modules": true,
@@ -35,7 +36,7 @@
     "**/yarn.lock": true,
     "**/.mdx-data": true,
     "**/_app.js": true,
-    "webpack.config.js": true,
+    "*.config.js": true,
     "tsconfig.json": true,
     "types": true,
     "scripts": true
