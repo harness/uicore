@@ -1,6 +1,6 @@
 # Button --- docs/pages/button.mdx
 
-Button component reuses Blueprint's Button and implement the look and feel of [HDL](https://projects.invisionapp.com/d/?origin=v7#/projects/prototypes/17628604).
+Button component reuses Blueprint's Button and implement the look and feel of [HDL](https://projects.invisionapp.com/d/?origin=v7#/projects/prototypes/17628604). Button API is exactly the same as [Blueprint's Button](https://blueprintjs.com/docs/#core/components/button).
 
 ## Import
 
@@ -18,6 +18,7 @@ import { Button } from '@wings-software/uikit'
   <Button intent="primary" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
   <Button intent="primary" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
   <Button intent="primary" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+  <Button loading intent="primary" text="Text Button" onClick={() => alert('Hello World')} />
 </Layout.Horizontal>
 ```
 
@@ -31,6 +32,7 @@ import { Button } from '@wings-software/uikit'
   <Button intent="primary" minimal text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
   <Button intent="primary" minimal text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
   <Button intent="primary" minimal text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+  <Button intent="primary" minimal loading text="Text Button" onClick={() => alert('Hello World')} />
 </Layout.Horizontal>
 ```
 
@@ -44,6 +46,7 @@ import { Button } from '@wings-software/uikit'
   <Button text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
   <Button text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
   <Button text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+  <Button loading icon="cog" onClick={() => alert('Hello World')} />
 </Layout.Horizontal>
 ```
 
@@ -57,6 +60,7 @@ import { Button } from '@wings-software/uikit'
   <Button intent="success" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
   <Button intent="success" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
   <Button intent="success" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+  <Button intent="success" loading text="Text Button" onClick={() => alert('Hello World')} />
 </Layout.Horizontal>
 ```
 
@@ -70,6 +74,7 @@ import { Button } from '@wings-software/uikit'
   <Button intent="warning" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
   <Button intent="warning" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
   <Button intent="warning" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+  <Button intent="warning" loading text="Text Button" onClick={() => alert('Hello World')} />
 </Layout.Horizontal>
 ```
 
@@ -83,5 +88,6 @@ import { Button } from '@wings-software/uikit'
   <Button intent="danger" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
   <Button intent="danger" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
   <Button intent="danger" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+  <Button intent="danger" loading text="Text Button" onClick={() => alert('Hello World')} />
 </Layout.Horizontal>
 ```
