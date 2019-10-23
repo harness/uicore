@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> tests renders icon as functional components 1`] = `
+<div>
+  <button
+    class="bp3-button button"
+    type="button"
+  >
+    <span
+      class="bp3-icon"
+    >
+      <div>
+        ICON!
+      </div>
+    </span>
+    <span
+      class="bp3-button-text"
+    >
+      Click Me!
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<Button /> tests snapshot test 1`] = `
+<div>
+  <button
+    class="bp3-button button"
+    type="button"
+  >
+    <span
+      class="bp3-button-text"
+    >
+      Click Me!
+    </span>
+  </button>
+</div>
+`;
