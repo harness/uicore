@@ -1,4 +1,4 @@
-import { Color } from 'core/Color';
+import { Color } from 'core/Color'
 
 export interface BorderProps {
   top?: boolean

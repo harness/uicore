@@ -171,6 +171,7 @@
   }
 
   /* Disabled */
+  /* stylelint-disable no-descending-specificity */
   &[class*='bp3-disabled'] {
     svg,
     svg > * {
