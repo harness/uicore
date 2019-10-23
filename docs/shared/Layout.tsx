@@ -3,6 +3,9 @@ import { Icons, Layout } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import MdxComponents from './MdxComponents'
+import { FocusStyleManager } from "@blueprintjs/core"
+
+FocusStyleManager.onlyShowFocusOnTabs()
 
 export default class extends React.Component {
   render() {
