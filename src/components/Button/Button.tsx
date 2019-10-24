@@ -3,7 +3,7 @@ import { Button as BButton, IButtonProps, Classes } from '@blueprintjs/core'
 import css from './Button.css'
 
 export interface ButtonProps extends Omit<IButtonProps, 'icon'> {
-  icon?: IButtonProps['icon'] | React.FunctionComponent<any>
+  icon?: IButtonProps['icon'] | React.FunctionComponent<React.ElementType>
   children?: React.ReactChild
 }
 
@@ -20,6 +20,7 @@ function Button(props: ButtonProps) {
 
       try {
         await props.onClick(event)
+        // eslint-disable-next-line
       } catch (e) {
         throw e
       } finally {
