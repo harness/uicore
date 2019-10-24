@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react'
-import css from './Link.css'
 import { Utils } from '../../core/Utils'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
+import styledCSS from '../../styled-props/StyledProps.css'
 
 type Props = React.HTMLProps<HTMLLinkElement> & StyledProps
 
@@ -19,7 +19,7 @@ function Link(props: Props) {
   }
 
   return (
-    <a {...omitStyledProps(props)} {...extra} className={styledClasses(props, css.link)}>
+    <a {...omitStyledProps(props)} {...extra} className={styledClasses(props, styledCSS.font, styledCSS[`font-link`])}>
       {props.children}
     </a>
   )

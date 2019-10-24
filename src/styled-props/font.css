@@ -32,6 +32,19 @@
     font-size: var(--font-size-small);
   }
 
+  &.font-link {
+    color: var(--blue-500);
+
+    &:hover {
+      color: var(--blue-500);
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
   &.font-xsmall {
     font-size: var(--font-size-xsmall);
   }
