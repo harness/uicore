@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.12 - 10/24/09
+
+- `Fixed` uikit.yaml K8s spec for running uikit.harness.io.
+
 ## 1.0.11 - 10/24/09
 
 - `Changed` Button loading state is always reset when onClick is rejected or resolved.

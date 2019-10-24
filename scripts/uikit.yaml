@@ -8,14 +8,14 @@ metadata:
   namespace: jenkins
 spec:
   nodeSelector:
-    purpose: ui
+    purpose: 'ui-medium'
   containers:
     - name: uikit
       image: node
       resources:
         requests:
-          memory: '1Gi'
-          cpu: 1
+          memory: 5Gi
+          cpu: 1500m
       volumeMounts:
         - mountPath: /jenkins-storage
           name: volume-0
