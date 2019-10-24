@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, MouseEvent } from 'react'
 import { Button as BButton, IButtonProps, Classes } from '@blueprintjs/core'
 import css from './Button.css'
 
@@ -9,6 +9,24 @@ export interface ButtonProps extends Omit<IButtonProps, 'icon'> {
 
 function Button(props: ButtonProps) {
   let { icon } = props
+  const [loading, setLoading] = useState(props.loading === true)
+
+  const onClick = async (event: MouseEvent) => {
+    if (loading) {
+      return
+    }
+    if (props.onClick) {
+      setLoading(true)
+
+      try {
+        await props.onClick(event)
+      } catch (e) {
+        throw e
+      } finally {
+        setLoading(false)
+      }
+    }
+  }
 
   if (typeof icon === 'function') {
     const Icon = icon as React.ElementType
@@ -19,7 +37,7 @@ function Button(props: ButtonProps) {
     )
   }
 
-  return <BButton {...props} icon={icon} className={css.button} />
+  return <BButton {...props} loading={loading} onClick={onClick} icon={icon} className={css.button} />
 }
 
 export { Button }

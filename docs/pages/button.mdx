@@ -91,3 +91,24 @@ import { Button } from '@wings-software/uikit'
   <Button intent="danger" loading text="Text Button" onClick={() => alert('Hello World')} />
 </Layout.Horizontal>
 ```
+
+## Loading Transition
+
+Button's `onClick` accepts an async function. When the button is clicked, loading state is triggered automatically. When the `onClick` function is resolved, loading state is removed.
+
+Note that `onClick` is not executed multiple times if user clicks it constantly. When an `onClick` event happens, the `onClick` function must be resolved (or rejected) before another click event is allowed.
+
+```js live=true
+<Layout.Horizontal spacing="small">
+  <Button
+    intent="primary"
+    text="Submit (resolved after 3s)"
+    onClick={async () => new Promise(resolve => setTimeout(resolve, 3000))}
+  />
+  <Button
+    intent="primary"
+    text="Submit (rejected after 3s)"
+    onClick={async () => new Promise((_, reject) => setTimeout(reject, 3000))}
+  />
+</Layout.Horizontal>
+```
