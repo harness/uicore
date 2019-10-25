@@ -2,7 +2,7 @@
 
 All icons in UIKit are in svg. You can use the icons as a separate React component. [Button](/button) supports them as well.
 
-To use an icon, first import `Icons` from UIKit.
+To use a Harness icon, first import `Icons` from UIKit.
 
 ```js
 import { Icons } from '@wings-software/uikit'
@@ -16,7 +16,7 @@ Then render the icons as a React component. For example:
 
 `Icons` supports standard [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes). To keep it simple, mostly you should use only `height`, or `width`.
 
-## List of UIKit icons
+## Harness Icons
 
 ```js render=true
 <div
@@ -35,7 +35,7 @@ Then render the icons as a React component. For example:
     return name.includes('HarnessLogo') ? null : (
       <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
         <button
-          onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
+          onClick={() => Utils.copy(`<Icons.${name} height="64px" width="64px" />`)}
           style={{
             all: 'unset',
             cursor: 'pointer'
@@ -48,9 +48,7 @@ Then render the icons as a React component. For example:
 </div>
 ```
 
-### Blueprint Icons
-
-There are currently two Harness logo icons.
+## Blueprint Icons
 
 ```js render=true
 <div
@@ -94,7 +92,7 @@ There are currently two Harness logo icons.
       return (
         <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
           <button
-            onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
+            onClick={() => Utils.copy(`<Icons.${name} height="64px" width="64px" />`)}
             style={{
               all: 'unset',
               cursor: 'pointer'

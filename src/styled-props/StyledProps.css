@@ -2,7 +2,7 @@
 @import './padding.css';
 @import './intent.css';
 @import './font.css';
-@import './bold.css';
+@import './weight.css';
 @import './italic.css';
 @import './mono.css';
 @import './inline.css';
@@ -22,7 +22,7 @@
   @mixin margin;
   @mixin padding;
   @mixin font;
-  @mixin bold;
+  @mixin weight;
   @mixin italic;
   @mixin mono;
   @mixin inline;

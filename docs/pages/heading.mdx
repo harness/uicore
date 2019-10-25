@@ -1,34 +1,49 @@
 # Heading---docs/pages/heading.mdx
 
-Heading renders H1 to H6 tag based on level.
+Heading renders H1 to H6 tag based on `level` prop. It supports all [Styled Props](/styled-props).
 
-Heading supports all [Styled Props](/styled-props).
+At this moment, HDL defines four levels of heading (H1 to H4), H5 and H6 are not used.
 
-## Samples
+## Weights
 
-### Render as block
+```js live
+<Heading level={1}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={1} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={1} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={1} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={2} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={2} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={2} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={3}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={3} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={3} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={3} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={4}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={4} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={4} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={4} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+```
+
+## Render as block
 
 ```js live
 <Heading level={1}>The quick brown fox jumps over the lazy dog</Heading>
 <Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>
 <Heading level={3}>The quick brown fox jumps over the lazy dog</Heading>
 <Heading level={4}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={5}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={6}>The quick brown fox jumps over the lazy dog</Heading>
 ```
 
-### Render as inline
+## Render as inline
 
 ```js live
 <Heading level={1} inline>Heading Level 1</Heading>
 <Heading level={2} inline>Heading Level 2</Heading>
 <Heading level={3} inline>Heading Level 3</Heading>
 <Heading level={4} inline>Heading Level 4</Heading>
-<Heading level={5} inline>Heading Level 5</Heading>
-<Heading level={6} inline>Heading Level 6</Heading>
 ```
 
-### Intent
+## Intent
 
 Heading supports [Intent](/intent) where an intent color is applied.
 
@@ -37,15 +52,4 @@ Heading supports [Intent](/intent) where an intent color is applied.
 <Heading intent="success">The quick brown fox jumps over the lazy dog</Heading>
 <Heading intent="warning">The quick brown fox jumps over the lazy dog</Heading>
 <Heading intent="danger">The quick brown fox jumps over the lazy dog</Heading>
-```
-
-### Bold
-
-```js live
-<Heading bold level={1}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading bold level={2}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading bold level={3}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading bold level={4}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading bold level={5}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading bold level={6}>The quick brown fox jumps over the lazy dog</Heading>
 ```

@@ -24,10 +24,10 @@ export interface StyledProps {
   padding?: Spacing
 
   /** Component font size */
-  font?: Spacing
+  font?: 'small' | 'normal' | 'medium' | 'large'
 
-  /** Make text bold */
-  bold?: boolean
+  /** Font weight */
+  weight?: 'light' | 'bold' | 'semi-bold'
 
   /** Make text italic */
   italic?: boolean
@@ -67,7 +67,7 @@ const PropsList = [
   'margin',
   'padding',
   'font',
-  'bold',
+  'weight',
   'italic',
   'inline',
   'mono',
@@ -100,7 +100,7 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
     classNames.add(css[name])
 
     // When bold/mono is specified and font is not, add font
-    if ((props.bold || props.mono) && !props.font) {
+    if ((props.weight || props.mono) && !props.font) {
       classNames.add(css.font)
     }
 

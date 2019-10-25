@@ -26,7 +26,7 @@ const Title = (props: React.ComponentProps<typeof Heading>) => {
   return (
     <Heading
       flex={{ align: 'center-center', distribution: 'space-between' }}
-      bold
+      weight="semi-bold"
       level="1"
       {...props}
       children={_children || children}
@@ -39,11 +39,11 @@ export default {
 
   a: (props: React.ComponentProps<typeof Link>) => <Link {...props} />,
   h1: Title,
-  h2: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="2" {...props} />,
-  h3: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="3" {...props} />,
-  h4: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="4" {...props} />,
-  h5: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="5" {...props} />,
-  h6: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="6" {...props} />,
+  h2: (props: React.ComponentProps<typeof Heading>) => <Heading weight="semi-bold" level="2" {...props} />,
+  h3: (props: React.ComponentProps<typeof Heading>) => <Heading weight="semi-bold" level="3" {...props} />,
+  h4: (props: React.ComponentProps<typeof Heading>) => <Heading weight="semi-bold" level="4" {...props} />,
+  h5: (props: React.ComponentProps<typeof Heading>) => <Heading weight="semi-bold" level="4" {...props} />,
+  h6: (props: React.ComponentProps<typeof Heading>) => <Heading weight="semi-bold" level="4" {...props} />,
   p: (props: React.ComponentProps<typeof Text>) => <Text {...props} inline={false} />,
   span: (props: React.ComponentProps<typeof Text>) => <Text {...props} />,
   ul: (props: React.ComponentProps<typeof Text>) => <List {...props} />,

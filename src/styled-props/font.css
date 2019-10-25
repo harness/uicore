@@ -9,26 +9,34 @@
   }
 
   &.font-h1 {
-    font-size: var(--font-size-huge);
+    font-size: var(--font-size-large);
   }
 
   &.font-h2 {
-    font-size: var(--font-size-xxxlarge);
-  }
-
-  &.font-h3 {
-    font-size: var(--font-size-xxlarge);
-  }
-
-  &.font-h4 {
     font-size: var(--font-size-medium);
   }
 
-  &.font-h5 {
+  &.font-h3 {
     font-size: var(--font-size-normal);
   }
 
-  &.font-h6 {
+  &.font-h4 {
+    font-size: var(--font-size-small);
+  }
+
+  &.font-large {
+    font-size: var(--font-size-large);
+  }
+
+  &.font-medium {
+    font-size: var(--font-size-medium);
+  }
+
+  &.font-normal {
+    font-size: var(--font-size-normal);
+  }
+
+  &.font-small {
     font-size: var(--font-size-small);
   }
 
@@ -43,37 +51,5 @@
       opacity: 0.5;
       cursor: not-allowed;
     }
-  }
-
-  &.font-xsmall {
-    font-size: var(--font-size-xsmall);
-  }
-
-  &.font-small {
-    font-size: var(--font-size-small);
-  }
-
-  &.font-medium {
-    font-size: var(--font-size-medium);
-  }
-
-  &.font-large {
-    font-size: var(--font-size-large);
-  }
-
-  &.font-xlarge {
-    font-size: var(--font-size-xlarge);
-  }
-
-  &.font-xxlarge {
-    font-size: var(--font-size-xxlarge);
-  }
-
-  &.font-xxxlarge {
-    font-size: var(--font-size-xxxlarge);
-  }
-
-  &.font-huge {
-    font-size: var(--font-size-huge);
   }
 }

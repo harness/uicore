@@ -1,5 +1,0 @@
-@define-mixin bold {
-  &.bold {
-    font-weight: bold;
-  }
-}

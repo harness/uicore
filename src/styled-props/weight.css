@@ -1,0 +1,13 @@
+@define-mixin weight {
+  &.weight-light {
+    font-weight: 300;
+  }
+
+  &.weight-bold {
+    font-weight: bold;
+  }
+
+  &.weight-semi-bold {
+    font-weight: 500;
+  }
+}
