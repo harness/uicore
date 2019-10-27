@@ -226,7 +226,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
-  'github': Github,
+  github: Github,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   'main-abort': MainAbort,

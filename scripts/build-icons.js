@@ -21,9 +21,10 @@ files
   .forEach(fileName => {
     const name = fileName.split('.svg')[0]
     const ComponentName = toPascalCase(name)
+    const key = /^[a-z][a-z0-9]+$/i.test(name) ? name : "'" + name + "'"
 
     _imports.push(`import ${ComponentName} from './${fileName}'`)
-    _exports.push("  '" + name + "': " + ComponentName)
+    _exports.push('  ' + key + ': ' + ComponentName)
   })
 
 console.log(
