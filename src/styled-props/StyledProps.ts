@@ -12,7 +12,7 @@ import { BorderProps } from './border/BorderProps'
  */
 export interface StyledProps {
   /** Component children */
-  children: React.ReactNode
+  children?: React.ReactNode
 
   /** Component intent */
   intent?: Intent

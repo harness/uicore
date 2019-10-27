@@ -1,9 +1,9 @@
 import React from 'react'
-import { Icons, Layout } from '../static'
+import { Icon, Layout } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import MdxComponents from './MdxComponents'
-import { FocusStyleManager } from "@blueprintjs/core"
+import { FocusStyleManager } from '@blueprintjs/core'
 
 FocusStyleManager.onlyShowFocusOnTabs()
 
@@ -14,7 +14,7 @@ export default class extends React.Component {
         <header>
           <h1>
             <a href="/">
-              <Icons.HarnessLogoBlack height="24" />
+              <Icon name="harness-logo-black" size={24} />
               <span>&nbsp;// UIKit</span>
             </a>
           </h1>

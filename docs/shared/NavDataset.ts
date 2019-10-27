@@ -25,10 +25,6 @@ export default [
       {
         label: 'Typography',
         url: '/typography'
-      },
-      {
-        label: 'Break Points',
-        url: '/break-points'
       }
     ]
   },

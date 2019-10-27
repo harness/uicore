@@ -4,13 +4,14 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import * as scope from '../static/index'
 import CodeTheme from './CodeTheme'
 import { mdx } from '@mdx-js/react'
+import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
 
 export default ({ children, live, render }) => {
   const liveProviderProps = {
     theme: CodeTheme,
     code: children.trim(),
     transformCode: (code: string) => '/** @jsx mdx */\n<>' + code + '\n</>',
-    scope: { ...scope, mdx }
+    scope: { ...scope, BlueprintIconNames, mdx }
   }
 
   if (live) {

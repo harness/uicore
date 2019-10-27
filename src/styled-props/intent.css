@@ -1,6 +1,6 @@
 @define-mixin intent {
   &.intent {
-    color: var(--intent-color);
+    --intent-color: none;
   }
 
   &.intent-primary {

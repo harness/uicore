@@ -3,7 +3,7 @@ import css from './ListItem.css'
 
 interface Props extends React.HTMLProps<HTMLElement> {
   /** List Item children */
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 function ListItem(props: Props) {

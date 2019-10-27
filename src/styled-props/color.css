@@ -1,4 +1,13 @@
 @define-mixin color {
+  &.color {
+    > svg {
+      path,
+      circle {
+        fill: currentColor;
+      }
+    }
+  }
+
   &.color-black {
     color: var(--black);
   }

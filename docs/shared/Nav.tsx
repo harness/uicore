@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 function NavSection({ name, items }) {
   const { route } = useRouter()
-  const active = (url: string) => (route === url ? { active: 'true' } : {})
+  const active = (url: string) => (route === url ? { active: true } : {})
 
   return (
     <li>
@@ -14,7 +14,7 @@ function NavSection({ name, items }) {
           .sort((a, b) => (a.label < b.label ? -1 : 1))
           .map(({ label, url }) => (
             <li key={url}>
-              <Link {...active(url)} href={url}>
+              <Link color="grey500" fill {...active(url)} href={url}>
                 {label}
               </Link>
             </li>
