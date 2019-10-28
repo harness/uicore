@@ -3,7 +3,7 @@
  */
 
 import React from 'react'
-import { Link, Text, Heading, List, ListItem, Icons } from '../static'
+import { Link, Text, Heading, List, ListItem } from '../static'
 import CodeBlock from './CodeBlock'
 
 const BASE_URL = 'https://github.com/wings-software/uikit/edit/master/'
@@ -16,9 +16,8 @@ const Title = (props: React.ComponentProps<typeof Heading>) => {
   if (link) {
     _children = [
       <span key="title">{title}</span>,
-      <Link flex={{ align: 'center-center' }} target="_blank" key="edit" href={`${BASE_URL}${link}`} font="small">
-        <Icons.MainEdit width="12px" height="12px" />
-        <span>&nbsp;Edit this page</span>
+      <Link icon="edit" target="_blank" key="edit" href={`${BASE_URL}${link}`} font="small">
+        Edit this page
       </Link>
     ]
   }
@@ -26,7 +25,7 @@ const Title = (props: React.ComponentProps<typeof Heading>) => {
   return (
     <Heading
       flex={{ align: 'center-center', distribution: 'space-between' }}
-      bold
+      font={{ weight: 'semi-bold' }}
       level="1"
       {...props}
       children={_children || children}
@@ -39,11 +38,11 @@ export default {
 
   a: (props: React.ComponentProps<typeof Link>) => <Link {...props} />,
   h1: Title,
-  h2: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="2" {...props} />,
-  h3: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="3" {...props} />,
-  h4: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="4" {...props} />,
-  h5: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="5" {...props} />,
-  h6: (props: React.ComponentProps<typeof Heading>) => <Heading bold level="6" {...props} />,
+  h2: (props: React.ComponentProps<typeof Heading>) => <Heading font={{ weight: 'semi-bold' }} level="2" {...props} />,
+  h3: (props: React.ComponentProps<typeof Heading>) => <Heading font={{ weight: 'semi-bold' }} level="3" {...props} />,
+  h4: (props: React.ComponentProps<typeof Heading>) => <Heading font={{ weight: 'semi-bold' }} level="4" {...props} />,
+  h5: (props: React.ComponentProps<typeof Heading>) => <Heading font={{ weight: 'semi-bold' }} level="4" {...props} />,
+  h6: (props: React.ComponentProps<typeof Heading>) => <Heading font={{ weight: 'semi-bold' }} level="4" {...props} />,
   p: (props: React.ComponentProps<typeof Text>) => <Text {...props} inline={false} />,
   span: (props: React.ComponentProps<typeof Text>) => <Text {...props} />,
   ul: (props: React.ComponentProps<typeof Text>) => <List {...props} />,

@@ -5,6 +5,7 @@ import { Color } from '../core/Color'
 import { KVO } from '../core/Types'
 import { FlexProps } from './flex/FlexProps'
 import { BorderProps } from './border/BorderProps'
+import { FontSize, FontProps } from './font/FontProps'
 
 /**
  * Styled Props: Define reusable styles across components.
@@ -12,7 +13,7 @@ import { BorderProps } from './border/BorderProps'
  */
 export interface StyledProps {
   /** Component children */
-  children: React.ReactNode
+  children?: React.ReactNode
 
   /** Component intent */
   intent?: Intent
@@ -24,22 +25,10 @@ export interface StyledProps {
   padding?: Spacing
 
   /** Component font size */
-  font?: Spacing
-
-  /** Make text bold */
-  bold?: boolean
-
-  /** Make text italic */
-  italic?: boolean
+  font?: FontSize | FontProps
 
   /** Render component as inline block */
   inline?: boolean
-
-  /** Set font family to mono. Ussually used in for code or snippet */
-  mono?: boolean
-
-  /** Text align */
-  textAlign?: 'center' | 'right'
 
   /** Text color */
   color?: Color
@@ -67,7 +56,7 @@ const PropsList = [
   'margin',
   'padding',
   'font',
-  'bold',
+  'weight',
   'italic',
   'inline',
   'mono',
@@ -98,11 +87,6 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
     // Add the main css class of the prop
     // props.flex => css.flex
     classNames.add(css[name])
-
-    // When bold/mono is specified and font is not, add font
-    if ((props.bold || props.mono) && !props.font) {
-      classNames.add(css.font)
-    }
 
     // Add the actual value class of the props
     // props.border="top" => css.['border-top']

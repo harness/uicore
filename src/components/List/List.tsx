@@ -6,7 +6,7 @@ interface Props extends React.HTMLProps<HTMLElement> {
   ordered?: boolean
 
   /** List children */
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 function List(props: Props) {

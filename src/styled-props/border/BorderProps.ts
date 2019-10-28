@@ -8,4 +8,7 @@ export interface BorderProps {
   color?: Color
 
   /* TODO: Support border-width, border-style, border-radius, etc... */
+  style?: string
+  width?: number
+  radius?: number
 }

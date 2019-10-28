@@ -16,7 +16,7 @@
     "test:ci": "jest --no-cache ./src --ci  --coverage --reporters=jest-junit --reporters=default --runInBand --silent",
     "fmt": "prettier --write \"./src/**/*.{ts,tsx,css}\"",
     "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
-    "ui:icons": "node ./scripts/build-icons.js > ./src/icons/index.ts",
+    "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts",
     "ui:watch": "yarn ui:icons; NODE_ENV=development webpack --watch",
     "ui:build": "NODE_ENV=production webpack",
     "docs:watch": "cd docs; yarn watch"
@@ -87,7 +87,7 @@
     "src/**/*.{js,jsx}": [
       "sh -c 'exit 1'"
     ],
-    "*.{ts,tsx}": [
+    "*.{ts,tsx},!docs/**/*": [
       "eslint",
       "prettier --check",
       "sh scripts/typecheck-staged.sh"

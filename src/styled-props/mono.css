@@ -1,5 +1,0 @@
-@define-mixin mono {
-  &.mono {
-    font-family: var(--font-family-mono);
-  }
-}

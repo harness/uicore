@@ -1,22 +1,37 @@
-# Icons --- docs/pages/icons.mdx
+# Icon --- docs/pages/icon.mdx
 
-All icons in UIKit are in svg. You can use the icons as a separate React component. [Button](/button) supports them as well.
+import { Button, HarnessIcons } from '../static'
 
-To use an icon, first import `Icons` from UIKit.
+All icons in UIKit are in svg format. You can use the icons as a separate React component or using them in [Button](/button).
+
+Note that `<Icon/>` component supports multiple colors in svg file, but when combining with `<Button/>` component, fill and stoke colors in svg files are reset to the text color of the button.
+
+To use a Harness icon, first import `Icon` from UIKit.
 
 ```js
-import { Icons } from '@wings-software/uikit'
+import { Icon } from '@wings-software/uikit'
 ```
 
-Then render the icons as a React component. For example:
+Then render icon as a React component.
 
 ```js live=true
-<Icons.ServiceAws height="64px" width="64px" />
+<Layout.Horizontal spacing="small">
+  <Icon name="service-gotlab" size={64} />
+  <Icon name="service-datadog" size={64} />
+  <Icon name="service-github" size={64} />
+  <Icon name="service-gcp" size={64} />
+  <Icon name="service-jenkins" size={64} />
+  <Icon name="service-slack" size={64} />
+</Layout.Horizontal>
 ```
 
-`Icons` supports standard [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes). To keep it simple, mostly you should use only `height`, or `width`.
+You can pass styled props to Icon as well.
 
-## List of UIKit icons
+```js live=true
+<Icon name="heart" size={64} color="blue500" padding="small" border={{ color: 'blue400' }} />
+```
+
+## Harness Icons
 
 ```js render=true
 <div
@@ -28,19 +43,19 @@ Then render the icons as a React component. For example:
     gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
     borderRadius: '5px'
   }}>
-  {Object.entries(Icons).map(([name, Icon]) => {
+  {Object.keys(HarnessIcons).map(name => {
     {
       /* Blueprint does not work in NextJS with usePortal=true */
     }
     return name.includes('HarnessLogo') ? null : (
       <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
         <button
-          onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
+          onClick={() => Utils.copy(name)}
           style={{
-            all: 'unset',
-            cursor: 'pointer'
+            background: 'none',
+            border: 'none'
           }}>
-          <Icon height="36px" width="36px" />
+          <Icon name={name} size={24} padding="small" />
         </button>
       </Tooltip>
     )
@@ -48,9 +63,7 @@ Then render the icons as a React component. For example:
 </div>
 ```
 
-### Blueprint Icons
-
-There are currently two Harness logo icons.
+## Blueprint Icons
 
 ```js render=true
 <div
@@ -62,48 +75,32 @@ There are currently two Harness logo icons.
     gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
     borderRadius: '5px'
   }}>
-  {'caret-down,moon,key-shift,search,key-shift,edit,link,calendar,calendar,caret-down,double-caret-vertical,code,search,add,add-to-artifact,automatic-updates,ban-circle,bookmark,build,changes,chat,circle,clean,clipboard,code,comment,comparison,confirm,credit-card,cross,cut,delete,derive-column,disable,download,drag-handle-horizontal,drag-handle-vertical,draw,duplicate,edit,endorsed,equals,exchange,export,filter,filter-keep,filter-list,filter-open,filter-remove,fork,geosearch,git-branch,git-commit,git-merge,git-new-branch,git-pull,git-push,git-repo,graph-remove,greater-than,greater-than-or-equal-to,group-objects,help,highlight,history,import,inheritance,inner-join,insert,intersection,left-join,less-than,less-than-or-equal-to,locate,lock,log-in,log-out,maximize,merge-links,minimize,minus,move,new-link,new-object,new-text-box,not-equal-to,numbered-list,numerical,one-column,paperclip,path-search,percentage,pin,pivot,plus,predictive-analysis,print,redo,refresh,remove,repeat,reset,resolve,right-join,search,search-around,search-template,search-text,select,selection,send-to,send-to-graph,send-to-map,share,slash,small-cross,small-minus,small-plus,small-tick,social-media,sort,sort-alphabetical,sort-alphabetical-desc,sort-asc,sort-desc,sort-numerical,sort-numerical-desc,tag,take-action,tick,tick-circle,translate,trash,two-columns,undo,ungroup-objects,unlock,unpin,unresolve,upload,zoom-in,zoom-out,zoom-to-fit,chart,curved-range-chart,database,diagram-tree,doughnut-chart,flow-branch,flow-end,flow-linear,flow-review,flow-review-branch,flows,form,full-stacked-chart,gantt-chart,graph,grid,grouped-bar-chart,heat-grid,heatmap,horizontal-bar-chart,horizontal-bar-chart-asc,horizontal-bar-chart-desc,layout,layout-auto,layout-balloon,layout-circle,layout-grid,layout-group-by,layout-hierarchy,layout-linear,layout-skew-grid,layout-sorted-clusters,pie-chart,polygon-filter,regression-chart,scatter-plot,series-add,series-configuration,series-derived,series-filtered,series-search,stacked-chart,step-chart,timeline-area-chart,timeline-bar-chart,timeline-line-chart,trending-down,trending-up,vertical-bar-chart-asc,vertical-bar-chart-desc,waterfall-chart,align-center,align-justify,align-left,align-right,alignment-bottom,alignment-horizontal-center,alignment-left,alignment-right,alignment-top,alignment-vertical-center,annotation,bold,citation,eraser,font,grid-view,header,header-one,header-two,horizontal-distribution,italic,manually-entered-data,new-grid-item,paragraph,rotate-document,rotate-page,strikethrough,style,text-highlight,underline,vertical-distribution,add-to-folder,box,cloud,cloud-download,cloud-upload,code-block,compressed,document,document-open,document-share,folder-close,folder-new,folder-open,folder-shared,folder-shared-open,inbox,inbox-filtered,inbox-geo,inbox-search,inbox-update,saved,airplane,application,applications,arrow-bottom-left,arrow-bottom-right,arrow-down,arrow-left,arrow-right,arrow-top-left,arrow-top-right,arrow-up,arrows-horizontal,arrows-vertical,blocked-person,calendar,caret-down,caret-left,caret-right,caret-up,chevron-backward,chevron-down,chevron-forward,chevron-left,chevron-right,chevron-up,circle-arrow-down,circle-arrow-left,circle-arrow-right,circle-arrow-up,cog,collapse-all,compass,console,control,dashboard,direction-left,direction-right,double-caret-horizontal,double-caret-vertical,double-chevron-down,double-chevron-left,double-chevron-right,double-chevron-up,drive-time,envelope,error,expand-all,eye-off,eye-on,eye-open,feed,feed-subscribed,flag,floppy-disk,follower,following,geolocation,hand,hand-down,hand-left,hand-right,hand-up,helper-management,info-sign,issue,issue-closed,issue-new,key,known-vehicle,label,layer,layers,link,manual,map,map-create,map-marker,menu,menu-closed,menu-open,more,mugshot,multi-select,new-person,notifications,notifications-updated,offline,oil-field,outdated,path,people,person,presentation,projects,properties,property,random,rig,segmented-control,star,star-empty,swap-horizontal,swap-vertical,symbol-circle,symbol-cross,symbol-diamond,symbol-square,symbol-triangle-down,symbol-triangle-up,taxi,thumbs-down,thumbs-up,time,timeline-events,train,unknown-vehicle,updated,user,walk,warning-sign,widget,widget-button,widget-footer,widget-header,camera,contrast,desktop,eject,fast-backward,fast-forward,film,flash,fullscreen,headset,image-rotate-left,image-rotate-right,key-backspace,key-command,key-control,key-delete,key-enter,key-escape,key-option,key-shift,key-tab,media,mobile-phone,mobile-video,music,pause,phone,play,power,record,settings,sim-card,step-backward,step-forward,stop,tint,video,volume-down,volume-off,volume-up,asterisk,badge,bank-account,barcode,blank,book,briefcase,calculator,cell-tower,crown,cube,cube-add,cube-remove,delta,dollar,dot,euro,flame,full-circle,glass,globe,globe-network,heart,heart-broken,home,id-number,ip-address,lifesaver,lightbulb,moon,mountain,new-prescription,ninja,office,prescription,pulse,ring,satellite,shield,shop,shopping-cart,snowflake,square,torch,tree,wrench,add-column-left,add-column-right,add-row-bottom,add-row-top,column-layout,exclude-row,function,join-table,list,list-columns,list-detail-view,merge-columns,page-layout,panel-stats,panel-table,pivot-table,publish-function,remove-column,remove-column-left,remove-column-right,remove-row-bottom,remove-row-top,split-columns,th,th-derived,th-disconnect,th-filtered,th-list,variable'
-    .split(',')
-    .map(name => {
-      return (
-        <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
-          <Button minimal onClick={() => Utils.copy(name)} icon={name} />
-        </Tooltip>
-      )
-    })}
+  {Object.values(BlueprintIconNames).map(name => (
+    <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
+      <button
+        onClick={() => Utils.copy(name)}
+        style={{
+          background: 'none',
+          border: 'none'
+        }}>
+        <Icon name={name} size={24} padding="small" />
+      </button>
+    </Tooltip>
+  ))}
 </div>
 ```
 
-### Harness Logos
+## Harness Logos
 
-There are currently two Harness logo icons.
+UIKit currently has two Harness logos which are not suitable to be rendered by `<Icon />` due to the fact that the logos are not square. To render these logos, you can use their SVG components directly from `HarnessIcons['harness-logo-black']` and `HarnessIcons['harness-logo-white']`.
 
 ```js render=true
-<div
-  style={{
-    padding: '20px',
-    display: 'grid',
-    background: 'var(--grey-100)',
-    gridGap: '20px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    borderRadius: '5px'
-  }}>
-  {Object.entries(Icons)
-    .filter(([name]) => name.includes('HarnessLogo'))
-    .map(([name, Icon]) => {
-      return (
-        <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
-          <button
-            onClick={() => Utils.copy(`<Icons.${name} height="64px" />`)}
-            style={{
-              all: 'unset',
-              cursor: 'pointer'
-            }}>
-            <Icon key={name} height="48px" />
-          </button>
-        </Tooltip>
-      )
-    })}
+<div style={{ background: 'var(--grey-100)', padding: '20px', borderRadius: '5px' }}>
+  <Layout.Horizontal spacing="small">
+    {[HarnessIcons['harness-logo-black'], HarnessIcons['harness-logo-white']].map((HarnessLogo, index) => (
+      <HarnessLogo height={48} key={index} />
+    ))}
+  </Layout.Horizontal>
 </div>
 ```
 

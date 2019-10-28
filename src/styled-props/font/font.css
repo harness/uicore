@@ -1,0 +1,91 @@
+@define-mixin font {
+  &.font {
+    font-size: var(--font-size-normal);
+    font-weight: normal;
+    font-family: var(--font-family);
+
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  &.font-h1 {
+    font-size: var(--font-size-large);
+  }
+
+  &.font-h2 {
+    font-size: var(--font-size-medium);
+  }
+
+  &.font-h3 {
+    font-size: var(--font-size-normal);
+  }
+
+  &.font-h4 {
+    font-size: var(--font-size-small);
+  }
+
+  &.font-size-large,
+  &.font-large {
+    font-size: var(--font-size-large);
+  }
+
+  &.font-size-medium,
+  &.font-medium {
+    font-size: var(--font-size-medium);
+  }
+
+  &.font-size-normal,
+  &.font-normal {
+    font-size: var(--font-size-normal);
+  }
+
+  &.font-size-small,
+  &.font-small {
+    font-size: var(--font-size-small);
+  }
+
+  &.font-weight-light {
+    font-weight: 300;
+  }
+
+  &.font-weight-bold {
+    font-weight: bold;
+  }
+
+  &.font-weight-semi-bold {
+    font-weight: 500;
+  }
+
+  &.font-align-left {
+    text-align: left;
+  }
+
+  &.font-align-center {
+    text-align: center;
+  }
+
+  &.font-align-right {
+    text-align: right;
+  }
+
+  &.font-italic {
+    font-style: italic;
+  }
+
+  &.font-mono {
+    font-family: var(--font-family-mono);
+  }
+
+  &.font-link {
+    color: var(--blue-500);
+
+    &:hover {
+      color: var(--blue-500);
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

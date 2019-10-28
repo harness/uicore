@@ -1,13 +1,8 @@
 :root {
-  --font-size-xsmall: 10px;
-  --font-size-small: 12px;
-  --font-size-normal: 14px;
-  --font-size-medium: 16px;
-  --font-size-large: 18px;
-  --font-size-xlarge: 20px;
-  --font-size-xxlarge: 22px;
-  --font-size-xxxlarge: 24px;
-  --font-size-huge: 30px;
+  --font-size-small: 12px; /* H4, small text */
+  --font-size-normal: 14px; /* H3, normal text */
+  --font-size-medium: 18px; /* H2 */
+  --font-size-large: 29px; /* H1 */
 
   --spacing-xsmall: 5px;
   --spacing-small: 10px;

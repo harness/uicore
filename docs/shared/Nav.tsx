@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 function NavSection({ name, items }) {
   const { route } = useRouter()
-  const active = (url: string) => (route === url ? { active: 'true' } : {})
+  const active = (url: string) => (route === url ? { active: true } : {})
 
   return (
     <li>
@@ -14,7 +14,7 @@ function NavSection({ name, items }) {
           .sort((a, b) => (a.label < b.label ? -1 : 1))
           .map(({ label, url }) => (
             <li key={url}>
-              <Link {...active(url)} href={url}>
+              <Link color="grey500" fill {...active(url)} href={url}>
                 {label}
               </Link>
             </li>
@@ -45,20 +45,21 @@ function NavSection({ name, items }) {
         }
 
         li ul > li :global(a) {
-          display: flex;
-          padding: 4px 8px;
-          border-radius: 5px;
-          color: var(--grey-500);
+          display: flex !important;
+          padding: 4px 8px !important;
+          border-radius: 5px !important;
+          color: var(--grey-500) !important;
+          justify-content: left !important;
         }
 
         li ul > li :global(a:hover) {
-          text-decoration: none;
-          font-weight: 600;
+          text-decoration: none !important;
+          font-weight: 600 !important;
         }
 
-        li ul > li :global(a[active='true']) {
-          background: var(--green-200);
-          font-weight: 600;
+        li ul > li :global(a[class*='active']) {
+          background: var(--green-200) !important;
+          font-weight: 600 !important;
         }
       `}</style>
     </li>
