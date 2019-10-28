@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.13 - 10/28/09
+
+- `Added` Tab, and Link component.
+- `Changed` Heading component now has only four levels (h1 to h4), aligned with HDL spec.
+- `Changed` font prop to contain `size`, `weight`, `mono`, `align`.
+- `Added` Icon component which consolidates both Harness and Blueprint icons.
+- `Fixed` and cleaned up docs.
+
 ## 1.0.12 - 10/24/09
 
 - `Fixed` uikit.yaml K8s spec for running uikit.harness.io.
