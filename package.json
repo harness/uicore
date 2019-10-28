@@ -87,7 +87,7 @@
     "src/**/*.{js,jsx}": [
       "sh -c 'exit 1'"
     ],
-    "*.{ts,tsx}": [
+    "*.{ts,tsx},!docs/**/*": [
       "eslint",
       "prettier --check",
       "sh scripts/typecheck-staged.sh"
