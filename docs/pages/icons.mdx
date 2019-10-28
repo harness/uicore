@@ -1,6 +1,6 @@
 # Icon --- docs/pages/icon.mdx
 
-import { Button } from '../static'
+import { Button, HarnessIcons } from '../static'
 
 All icons in UIKit are in svg format. You can use the icons as a separate React component or using them in [Button](/button).
 
@@ -21,6 +21,7 @@ Then render icon as a React component.
   <Icon name="service-github" size={64} />
   <Icon name="service-gcp" size={64} />
   <Icon name="service-jenkins" size={64} />
+  <Icon name="service-slack" size={64} />
 </Layout.Horizontal>
 ```
 
@@ -54,7 +55,7 @@ You can pass styled props to Icon as well.
             background: 'none',
             border: 'none'
           }}>
-          <Icon name={name} size={32} padding="small" />
+          <Icon name={name} size={24} padding="small" />
         </button>
       </Tooltip>
     )
@@ -82,10 +83,24 @@ You can pass styled props to Icon as well.
           background: 'none',
           border: 'none'
         }}>
-        <Icon name={name} size={32} padding="small" />
+        <Icon name={name} size={24} padding="small" />
       </button>
     </Tooltip>
   ))}
+</div>
+```
+
+## Harness Logos
+
+UIKit currently has two Harness logos which are not suitable to be rendered by `<Icon />` due to the fact that the logos are not square. To render these logos, you can use their SVG components directly from `HarnessIcons['harness-logo-black']` and `HarnessIcons['harness-logo-white']`.
+
+```js render=true
+<div style={{ background: 'var(--grey-100)', padding: '20px', borderRadius: '5px' }}>
+  <Layout.Horizontal spacing="small">
+    {[HarnessIcons['harness-logo-black'], HarnessIcons['harness-logo-white']].map((HarnessLogo, index) => (
+      <HarnessLogo height={48} key={index} />
+    ))}
+  </Layout.Horizontal>
 </div>
 ```
 

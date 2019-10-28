@@ -28,6 +28,7 @@ export const ColorRow = ({ name, value }) => {
         </Tooltip>
       </td>
       <td style={style}>{value}</td>
+      <td style={style}>{name.replace(/-/g, '')}</td>
     </tr>
   )
 }
@@ -100,6 +101,7 @@ export const names = {
       <th>CSS Variable Name</th>
       <th>Color</th>
       <th>Hex Value</th>
+      <th>Styled Prop Color Value</th>
     </tr>
   </thead>
   <tbody>

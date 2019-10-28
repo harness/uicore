@@ -2,20 +2,25 @@
 
 ```js live=true
 <Text>The quick brown fox jumps over the lazy dog</Text>
-<Text weight="bold">The quick brown fox jumps over the lazy dog</Text>
-<Text mono>The quick brown fox jumps over the lazy dog</Text>
 
-<Text font="xsmall">The quick brown fox jumps over the lazy dog</Text>
 <Text font="small">The quick brown fox jumps over the lazy dog</Text>
+<Text font="normal">The quick brown fox jumps over the lazy dog</Text>
 <Text font="medium">The quick brown fox jumps over the lazy dog</Text>
 <Text font="large">The quick brown fox jumps over the lazy dog</Text>
-<Text font="xlarge">The quick brown fox jumps over the lazy dog</Text>
-<Text font="xxlarge">The quick brown fox jumps over the lazy dog</Text>
-<Text font="xxxlarge">The quick brown fox jumps over the lazy dog</Text>
-<Text font="huge">The quick brown fox jumps over the lazy dog</Text>
+
+<Text font={{ weight: "bold" }}>The quick brown fox jumps over the lazy dog</Text>
+<Text font={{ mono: true }}>The quick brown fox jumps over the lazy dog</Text>
 
 <Text intent="primary">The quick brown fox jumps over the lazy dog</Text>
 <Text intent="success">The quick brown fox jumps over the lazy dog</Text>
 <Text intent="warning">The quick brown fox jumps over the lazy dog</Text>
 <Text intent="danger">The quick brown fox jumps over the lazy dog</Text>
+```
+
+## Combining with other styled props
+
+```js live=true
+<Text padding="small" font={{ size: 'large', align: 'center' }} border={{ color: 'green500' }} background="grey100">
+  The quick brown fox jumps over the lazy dog
+</Text>
 ```

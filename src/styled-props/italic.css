@@ -1,5 +1,0 @@
-@define-mixin italic {
-  &.italic {
-    font-style: italic;
-  }
-}

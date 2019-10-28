@@ -8,21 +8,24 @@ At this moment, HDL defines four levels of heading (H1 to H4), H5 and H6 are not
 
 ```js live
 <Heading level={1}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={1} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={1} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={1} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={1} font={{ weight: "bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={1} font={{ weight: "semi-bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={1} font={{ weight: "light" }}>The quick brown fox jumps over the lazy dog</Heading>
+
 <Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={2} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={2} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={2} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={2} font={{ weight: "bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={2} font={{ weight: "semi-bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={2} font={{ weight: "light" }}>The quick brown fox jumps over the lazy dog</Heading>
+
 <Heading level={3}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={3} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={3} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={3} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={3} font={{ weight: "bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={3} font={{ weight: "semi-bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={3} font={{ weight: "light" }}>The quick brown fox jumps over the lazy dog</Heading>
+
 <Heading level={4}>The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={4} weight="bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={4} weight="semi-bold">The quick brown fox jumps over the lazy dog</Heading>
-<Heading level={4} weight="light">The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={4} font={{ weight: "bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={4} font={{ weight: "semi-bold" }}>The quick brown fox jumps over the lazy dog</Heading>
+<Heading level={4} font={{ weight: "light" }}>The quick brown fox jumps over the lazy dog</Heading>
 ```
 
 ## Render as block
@@ -52,4 +55,12 @@ Heading supports [Intent](/intent) where an intent color is applied.
 <Heading intent="success">The quick brown fox jumps over the lazy dog</Heading>
 <Heading intent="warning">The quick brown fox jumps over the lazy dog</Heading>
 <Heading intent="danger">The quick brown fox jumps over the lazy dog</Heading>
+```
+
+## Combining with other styled props
+
+```js live=true
+<Heading padding="small" font={{ size: 'large', align: 'center' }} border={{ color: 'green500' }} background="grey100">
+  The quick brown fox jumps over the lazy dog
+</Heading>
 ```

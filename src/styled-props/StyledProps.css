@@ -1,34 +1,26 @@
 @import './margin.css';
 @import './padding.css';
 @import './intent.css';
-@import './font.css';
-@import './weight.css';
-@import './italic.css';
-@import './mono.css';
+@import './font/font.css';
 @import './inline.css';
 @import './color.css';
 @import './background.css';
-@import './textAlign.css';
 @import './border/border.css';
 @import './flex/flex.css';
 
 :not(.main) .main {
   margin: 0;
   padding: 0;
-  color: var(--grey-500);
+  color: var(--intent-color, var(--grey-500));
   background: none;
 
   @mixin intent;
   @mixin margin;
   @mixin padding;
   @mixin font;
-  @mixin weight;
-  @mixin italic;
-  @mixin mono;
   @mixin inline;
   @mixin color;
   @mixin background;
-  @mixin textAlign;
   @mixin border;
   @mixin flex;
 }

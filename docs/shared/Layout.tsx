@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, Layout } from '../static'
+import { HarnessIcons, Layout } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import MdxComponents from './MdxComponents'
@@ -9,12 +9,14 @@ FocusStyleManager.onlyShowFocusOnTabs()
 
 export default class extends React.Component {
   render() {
+    const HarnessLogo: React.ElementType = HarnessIcons['harness-logo-black']
+
     return (
       <div className="page-container">
         <header>
           <h1>
             <a href="/">
-              <Icon name="harness-logo-black" size={24} />
+              <HarnessLogo height={20} />
               <span>&nbsp;// UIKit</span>
             </a>
           </h1>
