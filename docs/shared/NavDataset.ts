@@ -59,6 +59,10 @@ export default [
       {
         label: 'Link',
         url: '/link'
+      },
+      {
+        label: 'Tabs',
+        url: '/tabs'
       }
     ]
   }

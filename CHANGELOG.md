@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.13 - 10/28/09
 
-- `Added` Tab, and Link component.
+- `Added` Tab component.
+- `Added` Link component.
 - `Changed` Heading component now has only four levels (h1 to h4), aligned with HDL spec.
 - `Changed` font prop to contain `size`, `weight`, `mono`, `align`.
 - `Added` Icon component which consolidates both Harness and Blueprint icons.
