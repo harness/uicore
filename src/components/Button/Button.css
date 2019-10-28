@@ -23,10 +23,15 @@
       height: auto;
       min-height: auto;
       color: var(--blue-500);
+      background-color: transparent;
+      vertical-align: unset;
 
       &:hover,
-      &:active {
+      &:active,
+      &[class*='active'] {
         background: none;
+        border: none;
+        box-shadow: none;
       }
 
       &:hover:not([disabled]) {
@@ -53,6 +58,11 @@
       color: var(--grey-600);
       background-color: var(--white);
       opacity: 0.5;
+
+      &.link {
+        background-color: none;
+        border: none;
+      }
     }
 
     /* Primary */

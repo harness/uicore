@@ -2,7 +2,7 @@ export type FontSize = 'small' | 'normal' | 'medium' | 'large'
 
 export type FontWeight = 'light' | 'bold' | 'semi-bold'
 
-export type TextAlignment = 'center' | 'right'
+export type TextAlignment = 'left' | 'center' | 'right'
 
 export interface FontProps {
   size?: FontSize

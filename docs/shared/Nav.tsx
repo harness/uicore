@@ -45,20 +45,21 @@ function NavSection({ name, items }) {
         }
 
         li ul > li :global(a) {
-          display: flex;
-          padding: 4px 8px;
-          border-radius: 5px;
-          color: var(--grey-500);
+          display: flex !important;
+          padding: 4px 8px !important;
+          border-radius: 5px !important;
+          color: var(--grey-500) !important;
+          justify-content: left !important;
         }
 
         li ul > li :global(a:hover) {
-          text-decoration: none;
-          font-weight: 600;
+          text-decoration: none !important;
+          font-weight: 600 !important;
         }
 
-        li ul > li :global(a[active='true']) {
-          background: var(--green-200);
-          font-weight: 600;
+        li ul > li :global(a[class*='active']) {
+          background: var(--green-200) !important;
+          font-weight: 600 !important;
         }
       `}</style>
     </li>
