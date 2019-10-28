@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. The format 
 - `Changed` Heading component now has only four levels (h1 to h4), aligned with HDL spec.
 - `Changed` font prop to contain `size`, `weight`, `mono`, `align`.
 - `Added` Icon component which consolidates both Harness and Blueprint icons.
+- `Fixed` and cleaned up docs.
 
 ## 1.0.12 - 10/24/09
 

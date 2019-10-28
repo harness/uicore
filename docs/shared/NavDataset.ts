@@ -59,10 +59,6 @@ export default [
       {
         label: 'Link',
         url: '/link'
-      },
-      {
-        label: 'Tooltip',
-        url: '/tooltip'
       }
     ]
   }

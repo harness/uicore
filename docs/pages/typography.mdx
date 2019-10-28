@@ -6,23 +6,24 @@
 
 ## Font Sizes
 
-- xsmall
-- small
-- default (no size is needed)
-- medium
-- large
-- xlarge
-- xxlarge
-- xxxlarge
-- huge
+UIKit defines four font sizing CSS variables.
 
-## Font Weight
+```css
+--font-size-small: 12px; /* H4, small text */
+--font-size-normal: 14px; /* H3, normal text */
+--font-size-medium: 18px; /* H2 */
+--font-size-large: 29px; /* H1 */
+```
 
-- bold
+These CSS variables are used internally inside UIKit. When you build a component, or use a UIKit component, you should always set these size by `font` prop. For example:
 
-## Text Components
+```js live=true
+<Text font={{ size: 'large', align: 'center' }}>The quick brown fox jumps over the lazy dog</Text>
+```
+
+## Textual Components
 
 - [Heading](/heading)
 - [Text](/text)
 - [Link](/link)
-- [Code](/code)
+- [Code](/code) - TBD
