@@ -18,7 +18,7 @@
     }
 
     .bp3-tab-list > *:not(:last-child) {
-      margin-right: 80px;
+      margin-right: 30px;
     }
 
     .bp3-tab[aria-selected='true'] {
@@ -26,7 +26,7 @@
     }
 
     .bp3-tab:not([aria-disabled='true']):hover {
-      color: var(--grey-600);
+      color: var(--blue-500);
     }
 
     .bp3-tab-indicator-wrapper {
@@ -34,7 +34,7 @@
     }
 
     .bp3-tab-indicator-wrapper .bp3-tab-indicator {
-      height: 2px;
+      height: 3px;
       background-color: var(--blue-500);
     }
   }
