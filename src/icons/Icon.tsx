@@ -18,16 +18,17 @@ interface Props extends Omit<StyledProps, 'children'> {
 
 function Icon(props: Props) {
   const name = props.name as string
+  const size = props.size || 16
   const HarnessIcon: ElementType = HarnessIcons[name]
 
   if (HarnessIcon) {
     return (
       <span className={styledClasses(props, Classes.ICON)}>
-        <HarnessIcon width={props.size} height={props.size} />
+        <HarnessIcon width={size} height={size} />
       </span>
     )
   } else {
-    return <BIcon className={styledClasses(props)} icon={name as BIconName} iconSize={props.size} />
+    return <BIcon className={styledClasses(props)} icon={name as BIconName} iconSize={size} />
   }
 }
 

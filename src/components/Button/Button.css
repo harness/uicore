@@ -65,6 +65,19 @@
       }
     }
 
+    &[class*='minimal'] {
+      border: none;
+      background: none;
+
+      /* &:hover {
+        background-color: var(--blue-100);
+      }
+
+      &:active {
+        background-color: var(--blue-200);
+      } */
+    }
+
     /* Primary */
     &[class*='intent-primary'] {
       border: 1px solid var(--blue-500);
