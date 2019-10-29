@@ -1,0 +1,17 @@
+name: Cypress
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - uses: kingscooty/actions-yarn-cy@master
+        with:
+          cmd: test:run
