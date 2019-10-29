@@ -12,15 +12,18 @@ When a link is disabled, all events are ignored.
 import { Link } from '@wings-software/uikit'
 ```
 
-## Show case
+## Usage
 
 ```js live=true
-<Link href="/">Relative Link</Link> |{' '}
-<Link href="//harness.io" target="_blank">
-  External Link
-</Link>{' '}
-|{' '}
-<Link disabled href="/link">
-  Disabled Link
-</Link>
+<Layout.Horizontal spacing="small">
+  <Link href="/">Relative Link</Link>
+  <Icon name="dot" color="grey300" />
+  <Link href="//harness.io" target="_blank">
+    External Link
+  </Link>
+  <Icon name="dot" color="grey300" />
+  <Link disabled href="/link">
+    Disabled Link
+  </Link>
+</Layout.Horizontal>
 ```
