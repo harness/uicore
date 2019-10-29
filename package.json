@@ -9,7 +9,7 @@
   "scripts": {
     "start": "yarn dep; run-p -c ui:types ui:watch docs:watch",
     "build": "yarn dep; yarn ui:build",
-    "clean": "rm -rf docs/static/index* dist/types dist/index*",
+    "clean": "rm -rf docs/static/* dist/types dist/*",
     "dep": "yarn; cd docs; yarn; cd ..",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" && stylelint ./src && prettier --check \"src/**/*.{ts,tsx,css}\"",
     "test": "jest --no-cache ./src",
