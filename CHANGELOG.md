@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.14 - 10/28/09
 
-- `Added` `<Container/>` component.
+- `Added` `<Container/>` component. Support `tag` name.
 - `Changed` `<Icon/>` defaults size to `16`.
 
 ## 1.0.13 - 10/28/09
