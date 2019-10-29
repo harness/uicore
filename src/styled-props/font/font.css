@@ -1,6 +1,12 @@
 @define-mixin font {
+  /*
+    Expose this variable to allow <Link/> component to
+    set custom font size
+  */
+  --font-size: var(--font-size-normal);
+
   &.font {
-    font-size: var(--font-size-normal);
+    font-size: var(--font-size);
     font-weight: normal;
     font-family: var(--font-family);
 
@@ -9,39 +15,39 @@
   }
 
   &.font-h1 {
-    font-size: var(--font-size-large);
+    --font-size: var(--font-size-large);
   }
 
   &.font-h2 {
-    font-size: var(--font-size-medium);
+    --font-size: var(--font-size-medium);
   }
 
   &.font-h3 {
-    font-size: var(--font-size-normal);
+    --font-size: var(--font-size-normal);
   }
 
   &.font-h4 {
-    font-size: var(--font-size-small);
+    --font-size: var(--font-size-small);
   }
 
   &.font-size-large,
   &.font-large {
-    font-size: var(--font-size-large);
+    --font-size: var(--font-size-large);
   }
 
   &.font-size-medium,
   &.font-medium {
-    font-size: var(--font-size-medium);
+    --font-size: var(--font-size-medium);
   }
 
   &.font-size-normal,
   &.font-normal {
-    font-size: var(--font-size-normal);
+    --font-size: var(--font-size-normal);
   }
 
   &.font-size-small,
   &.font-small {
-    font-size: var(--font-size-small);
+    --font-size: var(--font-size-small);
   }
 
   &.font-weight-light {
@@ -74,18 +80,5 @@
 
   &.font-mono {
     font-family: var(--font-family-mono);
-  }
-
-  &.font-link {
-    color: var(--blue-500);
-
-    &:hover {
-      color: var(--blue-500);
-    }
-
-    &[disabled] {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
   }
 }

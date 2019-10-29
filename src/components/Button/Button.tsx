@@ -2,6 +2,7 @@ import React, { useState, MouseEvent, ElementType } from 'react'
 import { Button as BButton, AnchorButton, IButtonProps } from '@blueprintjs/core'
 import css from './Button.css'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
+import styledClass from '../../styled-props/StyledProps.css'
 import { Utils } from '../../core/Utils'
 import { IconName, Icon } from '../../icons/Icon'
 
@@ -55,7 +56,7 @@ export function Button(props: ButtonProps) {
       icon={icon && <Icon name={icon} />}
       rightIcon={rightIcon && <Icon name={rightIcon} />}
       onClick={onClick}
-      className={styledClasses(props, css.button, props.href ? css.link : '')}
+      className={styledClasses(props, styledClass.font, css.button, props.href ? css.link : '')}
     />
   )
 }
