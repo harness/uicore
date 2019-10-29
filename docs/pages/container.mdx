@@ -1,0 +1,37 @@
+# Container --- docs/pages/container.mdx
+
+```js live=true
+<Container
+  intent="warning"
+  padding="medium"
+  font={{
+    align: 'center'
+  }}
+  background="yellow100"
+  flex
+  border={{
+    color: 'yellow500'
+  }}>
+  <span>The quick brown fox jumps over the lazy dog</span>
+  <Button icon="cross" minimal />
+</Container>
+```
+
+```js live=true
+<Container
+  padding="small"
+  border={{
+    color: 'grey300'
+  }}
+  flex>
+  <Link href="/workflow/123" font={{ size: 'medium' }}>
+    Demo Workflow
+  </Link>
+  <Layout.Horizontal>
+    <Button minimal icon="power" color="red500" disabled />
+    <Button minimal icon="star-empty" />
+    <Button minimal icon="share" />
+    <Button minimal icon="more" />
+  </Layout.Horizontal>
+</Container>
+```

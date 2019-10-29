@@ -50,6 +50,20 @@ import { Button } from '@wings-software/uikit'
 </Layout.Horizontal>
 ```
 
+## Secondary Borderless Button
+
+```js live=true
+<Layout.Horizontal spacing="small">
+  <Button minimal text="Text Button" onClick={() => alert('Hello World')} />
+  <Button minimal icon="plus" onClick={() => alert('Hello World')} />
+  <Button minimal text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+  <Button minimal text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+  <Button minimal text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+  <Button minimal text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+  <Button minimal loading icon="cog" onClick={() => alert('Hello World')} />
+</Layout.Horizontal>
+```
+
 ## Success Button
 
 ```js live=true

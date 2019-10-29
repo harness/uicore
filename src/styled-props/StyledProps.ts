@@ -51,21 +51,7 @@ export interface StyledProps {
   List of styled props to loop through as you won't be
   able to do that with TypeScript type/inteface fields.
 */
-const PropsList = [
-  'intent',
-  'margin',
-  'padding',
-  'font',
-  'weight',
-  'italic',
-  'inline',
-  'mono',
-  'textAlign',
-  'color',
-  'background',
-  'border',
-  'flex'
-]
+const PropsList = ['intent', 'margin', 'padding', 'font', 'inline', 'color', 'background', 'border', 'flex']
 
 // Returns if a value is an object
 // eslint-disable-next-line

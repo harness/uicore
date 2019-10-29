@@ -63,6 +63,10 @@ export default [
       {
         label: 'Tabs',
         url: '/tabs'
+      },
+      {
+        label: 'Container',
+        url: '/container'
       }
     ]
   }
