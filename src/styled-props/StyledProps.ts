@@ -12,6 +12,8 @@ import { FontSize, FontProps } from './font/FontProps'
  * Inspired by https://styled-system.com/theme-specification
  */
 export interface StyledProps {
+  id?: string
+
   /** Component children */
   children?: React.ReactNode
 

@@ -1,0 +1,839 @@
+exports[`<Button/> Component > snapshots for Button component #0`] = `
+<div
+  id="primary-buttons"
+  class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+>
+  <button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span class="bp3-button-text">Text Button</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span icon="plus" class="bp3-icon bp3-icon-plus StyledProps---main--1Wws"
+      ><svg data-icon="plus" width="16" height="16" viewBox="0 0 16 16">
+        <desc>plus</desc>
+        <path
+          d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span class="bp3-button-text">Right Icon</span
+    ><span
+      icon="chevron-right"
+      class="bp3-icon bp3-icon-chevron-right StyledProps---main--1Wws"
+      ><svg
+        data-icon="chevron-right"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+      >
+        <desc>chevron-right</desc>
+        <path
+          d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span
+      icon="chevron-left"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      ><svg data-icon="chevron-left" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-left</desc>
+        <path
+          d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Left Icon</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span class="bp3-button-text">Down Icon</span
+    ><span
+      icon="chevron-down"
+      class="bp3-icon bp3-icon-chevron-down StyledProps---main--1Wws"
+      ><svg data-icon="chevron-down" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-down</desc>
+        <path
+          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    disabled=""
+    class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+    tabindex="-1"
+  >
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Disabled</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-disabled bp3-loading StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+    disabled=""
+    tabindex="-1"
+  >
+    <div class="bp3-spinner bp3-button-spinner">
+      <div class="bp3-spinner-animation">
+        <svg
+          width="20"
+          height="20"
+          stroke-width="16.00"
+          viewBox="-3.00 -3.00 106.00 106.00"
+        >
+          <path
+            class="bp3-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          ></path>
+          <path
+            class="bp3-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <span class="bp3-button-text">Text Button</span>
+  </button>
+</div>
+`;
+
+exports[`<Button/> Component > snapshots for Button component #1`] = `
+<div
+  id="primary-borderless-buttons"
+  class="Layout---horizontal--3rmQ StyledProps---main--1Wws"
+>
+  <button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span class="bp3-button-text">Text Button</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span icon="plus" class="bp3-icon bp3-icon-plus StyledProps---main--1Wws"
+      ><svg data-icon="plus" width="16" height="16" viewBox="0 0 16 16">
+        <desc>plus</desc>
+        <path
+          d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span class="bp3-button-text">Right Icon</span
+    ><span
+      icon="chevron-right"
+      class="bp3-icon bp3-icon-chevron-right StyledProps---main--1Wws"
+      ><svg
+        data-icon="chevron-right"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+      >
+        <desc>chevron-right</desc>
+        <path
+          d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span
+      icon="chevron-left"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      ><svg data-icon="chevron-left" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-left</desc>
+        <path
+          d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Left Icon</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    <span class="bp3-button-text">Down Icon</span
+    ><span
+      icon="chevron-down"
+      class="bp3-icon bp3-icon-chevron-down StyledProps---main--1Wws"
+      ><svg data-icon="chevron-down" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-down</desc>
+        <path
+          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    disabled=""
+    class="bp3-button bp3-disabled bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+    tabindex="-1"
+  >
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Disabled</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-disabled bp3-loading bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+    disabled=""
+    tabindex="-1"
+  >
+    <div class="bp3-spinner bp3-button-spinner">
+      <div class="bp3-spinner-animation">
+        <svg
+          width="20"
+          height="20"
+          stroke-width="16.00"
+          viewBox="-3.00 -3.00 106.00 106.00"
+        >
+          <path
+            class="bp3-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          ></path>
+          <path
+            class="bp3-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <span class="bp3-button-text">Text Button</span>
+  </button>
+</div>
+`;
+
+exports[`<Button/> Component > snapshots for Button component #2`] = `
+<div
+  id="secondary-buttons"
+  class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+>
+  <button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span class="bp3-button-text">Text Button</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span icon="plus" class="bp3-icon bp3-icon-plus StyledProps---main--1Wws"
+      ><svg data-icon="plus" width="16" height="16" viewBox="0 0 16 16">
+        <desc>plus</desc>
+        <path
+          d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span class="bp3-button-text">Right Icon</span
+    ><span
+      icon="chevron-right"
+      class="bp3-icon bp3-icon-chevron-right StyledProps---main--1Wws"
+      ><svg
+        data-icon="chevron-right"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+      >
+        <desc>chevron-right</desc>
+        <path
+          d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span
+      icon="chevron-left"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      ><svg data-icon="chevron-left" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-left</desc>
+        <path
+          d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Left Icon</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span class="bp3-button-text">Down Icon</span
+    ><span
+      icon="chevron-down"
+      class="bp3-icon bp3-icon-chevron-down StyledProps---main--1Wws"
+      ><svg data-icon="chevron-down" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-down</desc>
+        <path
+          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    disabled=""
+    class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    tabindex="-1"
+  >
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Disabled</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-disabled bp3-loading StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    disabled=""
+    tabindex="-1"
+  >
+    <div class="bp3-spinner bp3-button-spinner">
+      <div class="bp3-spinner-animation">
+        <svg
+          width="20"
+          height="20"
+          stroke-width="16.00"
+          viewBox="-3.00 -3.00 106.00 106.00"
+        >
+          <path
+            class="bp3-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          ></path>
+          <path
+            class="bp3-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span>
+  </button>
+</div>
+`;
+
+exports[`<Button/> Component > snapshots for Button component #3`] = `
+<div
+  id="secondary-borderless-buttons"
+  class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+>
+  <button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span class="bp3-button-text">Text Button</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span icon="plus" class="bp3-icon bp3-icon-plus StyledProps---main--1Wws"
+      ><svg data-icon="plus" width="16" height="16" viewBox="0 0 16 16">
+        <desc>plus</desc>
+        <path
+          d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span class="bp3-button-text">Right Icon</span
+    ><span
+      icon="chevron-right"
+      class="bp3-icon bp3-icon-chevron-right StyledProps---main--1Wws"
+      ><svg
+        data-icon="chevron-right"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+      >
+        <desc>chevron-right</desc>
+        <path
+          d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span
+      icon="chevron-left"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      ><svg data-icon="chevron-left" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-left</desc>
+        <path
+          d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Left Icon</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span class="bp3-button-text">Down Icon</span
+    ><span
+      icon="chevron-down"
+      class="bp3-icon bp3-icon-chevron-down StyledProps---main--1Wws"
+      ><svg data-icon="chevron-down" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-down</desc>
+        <path
+          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    disabled=""
+    class="bp3-button bp3-disabled bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    tabindex="-1"
+  >
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Disabled</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-disabled bp3-loading bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    disabled=""
+    tabindex="-1"
+  >
+    <div class="bp3-spinner bp3-button-spinner">
+      <div class="bp3-spinner-animation">
+        <svg
+          width="20"
+          height="20"
+          stroke-width="16.00"
+          viewBox="-3.00 -3.00 106.00 106.00"
+        >
+          <path
+            class="bp3-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          ></path>
+          <path
+            class="bp3-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span>
+  </button>
+</div>
+`;
+
+exports[`<Button/> Component > snapshots for Button component #4`] = `
+<div
+  id="success-buttons"
+  class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+>
+  <button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
+  >
+    <span class="bp3-button-text">Text Button</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
+  >
+    <span icon="plus" class="bp3-icon bp3-icon-plus StyledProps---main--1Wws"
+      ><svg data-icon="plus" width="16" height="16" viewBox="0 0 16 16">
+        <desc>plus</desc>
+        <path
+          d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
+  >
+    <span class="bp3-button-text">Right Icon</span
+    ><span
+      icon="chevron-right"
+      class="bp3-icon bp3-icon-chevron-right StyledProps---main--1Wws"
+      ><svg
+        data-icon="chevron-right"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+      >
+        <desc>chevron-right</desc>
+        <path
+          d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
+  >
+    <span
+      icon="chevron-left"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      ><svg data-icon="chevron-left" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-left</desc>
+        <path
+          d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Left Icon</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
+  >
+    <span class="bp3-button-text">Down Icon</span
+    ><span
+      icon="chevron-down"
+      class="bp3-icon bp3-icon-chevron-down StyledProps---main--1Wws"
+      ><svg data-icon="chevron-down" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-down</desc>
+        <path
+          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    disabled=""
+    class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
+    tabindex="-1"
+  >
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Disabled</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-disabled bp3-loading StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
+    disabled=""
+    tabindex="-1"
+  >
+    <div class="bp3-spinner bp3-button-spinner">
+      <div class="bp3-spinner-animation">
+        <svg
+          width="20"
+          height="20"
+          stroke-width="16.00"
+          viewBox="-3.00 -3.00 106.00 106.00"
+        >
+          <path
+            class="bp3-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          ></path>
+          <path
+            class="bp3-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <span class="bp3-button-text">Text Button</span>
+  </button>
+</div>
+`;
+
+exports[`<Button/> Component > snapshots for Button component #5`] = `
+<div
+  id="warning-buttons"
+  class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+>
+  <button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+  >
+    <span class="bp3-button-text">Text Button</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+  >
+    <span icon="plus" class="bp3-icon bp3-icon-plus StyledProps---main--1Wws"
+      ><svg data-icon="plus" width="16" height="16" viewBox="0 0 16 16">
+        <desc>plus</desc>
+        <path
+          d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+  >
+    <span class="bp3-button-text">Right Icon</span
+    ><span
+      icon="chevron-right"
+      class="bp3-icon bp3-icon-chevron-right StyledProps---main--1Wws"
+      ><svg
+        data-icon="chevron-right"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+      >
+        <desc>chevron-right</desc>
+        <path
+          d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+  >
+    <span
+      icon="chevron-left"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      ><svg data-icon="chevron-left" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-left</desc>
+        <path
+          d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Left Icon</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+  >
+    <span class="bp3-button-text">Down Icon</span
+    ><span
+      icon="chevron-down"
+      class="bp3-icon bp3-icon-chevron-down StyledProps---main--1Wws"
+      ><svg data-icon="chevron-down" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-down</desc>
+        <path
+          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    disabled=""
+    class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+    tabindex="-1"
+  >
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Disabled</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-disabled bp3-loading StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+    disabled=""
+    tabindex="-1"
+  >
+    <div class="bp3-spinner bp3-button-spinner">
+      <div class="bp3-spinner-animation">
+        <svg
+          width="20"
+          height="20"
+          stroke-width="16.00"
+          viewBox="-3.00 -3.00 106.00 106.00"
+        >
+          <path
+            class="bp3-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          ></path>
+          <path
+            class="bp3-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <span class="bp3-button-text">Text Button</span>
+  </button>
+</div>
+`;
+
+exports[`<Button/> Component > snapshots for Button component #6`] = `
+<div
+  id="danger-buttons"
+  class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+>
+  <button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+  >
+    <span class="bp3-button-text">Text Button</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+  >
+    <span icon="plus" class="bp3-icon bp3-icon-plus StyledProps---main--1Wws"
+      ><svg data-icon="plus" width="16" height="16" viewBox="0 0 16 16">
+        <desc>plus</desc>
+        <path
+          d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+  >
+    <span class="bp3-button-text">Right Icon</span
+    ><span
+      icon="chevron-right"
+      class="bp3-icon bp3-icon-chevron-right StyledProps---main--1Wws"
+      ><svg
+        data-icon="chevron-right"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+      >
+        <desc>chevron-right</desc>
+        <path
+          d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+  >
+    <span
+      icon="chevron-left"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      ><svg data-icon="chevron-left" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-left</desc>
+        <path
+          d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Left Icon</span></button
+  ><button
+    type="button"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+  >
+    <span class="bp3-button-text">Down Icon</span
+    ><span
+      icon="chevron-down"
+      class="bp3-icon bp3-icon-chevron-down StyledProps---main--1Wws"
+      ><svg data-icon="chevron-down" width="16" height="16" viewBox="0 0 16 16">
+        <desc>chevron-down</desc>
+        <path
+          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span></button
+  ><button
+    type="button"
+    disabled=""
+    class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+    tabindex="-1"
+  >
+    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+      ><svg data-icon="cog" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cog</desc>
+        <path
+          d="M15.19 6.39h-1.85c-.11-.37-.27-.71-.45-1.04l1.36-1.36c.31-.31.31-.82 0-1.13l-1.13-1.13a.803.803 0 00-1.13 0l-1.36 1.36c-.33-.17-.67-.33-1.04-.44V.79c0-.44-.36-.8-.8-.8h-1.6c-.44 0-.8.36-.8.8v1.86c-.39.12-.75.28-1.1.47l-1.3-1.3c-.3-.3-.79-.3-1.09 0L1.82 2.91c-.3.3-.3.79 0 1.09l1.3 1.3c-.2.34-.36.7-.48 1.09H.79c-.44 0-.8.36-.8.8v1.6c0 .44.36.8.8.8h1.85c.11.37.27.71.45 1.04l-1.36 1.36c-.31.31-.31.82 0 1.13l1.13 1.13c.31.31.82.31 1.13 0l1.36-1.36c.33.18.67.33 1.04.44v1.86c0 .44.36.8.8.8h1.6c.44 0 .8-.36.8-.8v-1.86c.39-.12.75-.28 1.1-.47l1.3 1.3c.3.3.79.3 1.09 0l1.09-1.09c.3-.3.3-.79 0-1.09l-1.3-1.3c.19-.35.36-.71.48-1.1h1.85c.44 0 .8-.36.8-.8v-1.6a.816.816 0 00-.81-.79zm-7.2 4.6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+          fill-rule="evenodd"
+        ></path></svg></span
+    ><span class="bp3-button-text">Disabled</span></button
+  ><button
+    type="button"
+    class="bp3-button bp3-disabled bp3-loading StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+    disabled=""
+    tabindex="-1"
+  >
+    <div class="bp3-spinner bp3-button-spinner">
+      <div class="bp3-spinner-animation">
+        <svg
+          width="20"
+          height="20"
+          stroke-width="16.00"
+          viewBox="-3.00 -3.00 106.00 106.00"
+        >
+          <path
+            class="bp3-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          ></path>
+          <path
+            class="bp3-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <span class="bp3-button-text">Text Button</span>
+  </button>
+</div>
+`;

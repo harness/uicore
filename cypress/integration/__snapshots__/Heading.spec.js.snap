@@ -1,0 +1,184 @@
+exports[`<Heading/> Component > snapshots for Heading component #0`] = `
+<div
+  id="heading-weights"
+  class="Layout---vertical--3Szv StyledProps---main--1Wws"
+>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h2
+    class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h2>
+  <h2
+    class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h2>
+  <h2
+    class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h2>
+  <h2
+    class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h2>
+  <h3
+    class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h3>
+  <h3
+    class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h3>
+  <h3
+    class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h3>
+  <h3
+    class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h3>
+  <h4
+    class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h4>
+  <h4
+    class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h4>
+  <h4
+    class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h4>
+  <h4
+    class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h4>
+</div>
+`;
+
+exports[`<Heading/> Component > snapshots for Heading component #1`] = `
+<div
+  id="heading-block"
+  class="Layout---vertical--3Szv StyledProps---main--1Wws"
+>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h2
+    class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h2>
+  <h3
+    class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h3>
+  <h4
+    class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h4>
+</div>
+`;
+
+exports[`<Heading/> Component > snapshots for Heading component #2`] = `
+<div
+  id="heading-inline"
+  class="Layout---vertical--3Szv StyledProps---main--1Wws"
+>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---inline--1f52"
+  >
+    Heading Level 1
+  </h1>
+  <h2
+    class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---inline--1f52"
+  >
+    Heading Level 2
+  </h2>
+  <h3
+    class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---inline--1f52"
+  >
+    Heading Level 3
+  </h3>
+  <h4
+    class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---inline--1f52"
+  >
+    Heading Level 4
+  </h4>
+</div>
+`;
+
+exports[`<Heading/> Component > snapshots for Heading component #3`] = `
+<div
+  id="heading-intent"
+  class="Layout---vertical--3Szv StyledProps---main--1Wws"
+>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---intent-success--hn02"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+</div>
+`;
+
+exports[`<Heading/> Component > snapshots for Heading component #4`] = `
+<div
+  id="heading-styled-props"
+  class="Layout---vertical--3Szv StyledProps---main--1Wws"
+>
+  <h1
+    class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---font-size-large--3wvf StyledProps---font-align-center--22lb StyledProps---border--uz_- StyledProps---border-color-green500--1Ccx StyledProps---background-grey100--2FyT"
+  >
+    The quick brown fox jumps over the lazy dog
+  </h1>
+</div>
+`;

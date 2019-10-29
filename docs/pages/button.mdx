@@ -11,7 +11,7 @@ import { Button } from '@wings-software/uikit'
 ## Primary Button
 
 ```js live=true
-<Layout.Horizontal spacing="small">
+<Layout.Horizontal spacing="small" id="primary-buttons">
   <Button intent="primary" text="Text Button" onClick={() => alert('Hello World')} />
   <Button intent="primary" icon="plus" onClick={() => alert('Hello World')} />
   <Button intent="primary" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
@@ -25,7 +25,7 @@ import { Button } from '@wings-software/uikit'
 ## Primary Button (Borderless)
 
 ```js live=true
-<Layout.Horizontal>
+<Layout.Horizontal id="primary-borderless-buttons">
   <Button intent="primary" minimal text="Text Button" onClick={() => alert('Hello World')} />
   <Button intent="primary" minimal icon="plus" onClick={() => alert('Hello World')} />
   <Button intent="primary" minimal text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
@@ -39,7 +39,7 @@ import { Button } from '@wings-software/uikit'
 ## Secondary Button
 
 ```js live=true
-<Layout.Horizontal spacing="small">
+<Layout.Horizontal spacing="small" id="secondary-buttons">
   <Button text="Text Button" onClick={() => alert('Hello World')} />
   <Button icon="plus" onClick={() => alert('Hello World')} />
   <Button text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
@@ -53,7 +53,7 @@ import { Button } from '@wings-software/uikit'
 ## Secondary Borderless Button
 
 ```js live=true
-<Layout.Horizontal spacing="small">
+<Layout.Horizontal spacing="small" id="secondary-borderless-buttons">
   <Button minimal text="Text Button" onClick={() => alert('Hello World')} />
   <Button minimal icon="plus" onClick={() => alert('Hello World')} />
   <Button minimal text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
@@ -67,7 +67,7 @@ import { Button } from '@wings-software/uikit'
 ## Success Button
 
 ```js live=true
-<Layout.Horizontal spacing="small">
+<Layout.Horizontal spacing="small" id="success-buttons">
   <Button intent="success" text="Text Button" onClick={() => alert('Hello World')} />
   <Button intent="success" icon="plus" onClick={() => alert('Hello World')} />
   <Button intent="success" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
@@ -81,7 +81,7 @@ import { Button } from '@wings-software/uikit'
 ## Warning Button
 
 ```js live=true
-<Layout.Horizontal spacing="small">
+<Layout.Horizontal spacing="small" id="warning-buttons">
   <Button intent="warning" text="Text Button" onClick={() => alert('Hello World')} />
   <Button intent="warning" icon="plus" onClick={() => alert('Hello World')} />
   <Button intent="warning" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
@@ -95,7 +95,7 @@ import { Button } from '@wings-software/uikit'
 ## Danger Button
 
 ```js live=true
-<Layout.Horizontal spacing="small">
+<Layout.Horizontal spacing="small" id="danger-buttons">
   <Button intent="danger" text="Text Button" onClick={() => alert('Hello World')} />
   <Button intent="danger" icon="plus" onClick={() => alert('Hello World')} />
   <Button intent="danger" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
