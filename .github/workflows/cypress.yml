@@ -9,8 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: kingscooty/actions-yarn-cy@master
-        with:
-          cmd: install
       - name: Start Documentation Site
         run: |
           yarn dep
