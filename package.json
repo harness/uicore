@@ -7,7 +7,7 @@
   "style": "dist/index.css",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "start": "yarn dep; run-p -c ui:types ui:watch docs:watch",
+    "start": "yarn dep; yarn ui:icons; run-p -c ui:types ui:watch docs:watch",
     "build": "yarn dep; yarn ui:build",
     "clean": "rm -rf docs/static/* dist/types dist/*",
     "dep": "yarn; cd docs; yarn; cd ..",
@@ -19,7 +19,7 @@
     "fmt": "prettier --write \"./src/**/*.{ts,tsx,css}\"",
     "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
     "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts",
-    "ui:watch": "yarn ui:icons; NODE_ENV=development webpack --watch",
+    "ui:watch": "NODE_ENV=development webpack --watch",
     "ui:build": "NODE_ENV=production webpack",
     "docs:watch": "cd docs; yarn watch"
   },
@@ -74,6 +74,7 @@
     "ts-jest": "^24.1.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.6.4",
+    "utility-types": "^3.9.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-node-externals": "^1.7.2"

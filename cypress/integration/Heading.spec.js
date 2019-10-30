@@ -2,7 +2,7 @@
 
 context('<Heading/> Component', () => {
   before(() => {
-    cy.visit('http://localhost:3000/heading')
+    cy.visit('/heading')
     cy.hideStickyHeader()
   })
 

@@ -4,81 +4,97 @@ exports[`<Heading/> Component > snapshots for Heading component #0`] = `
   class="Layout---vertical--3Szv StyledProps---main--1Wws"
 >
   <h1
+    level="1"
     class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
   </h1>
   <h1
+    level="1"
     class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
   >
     The quick brown fox jumps over the lazy dog
   </h1>
   <h1
+    level="1"
     class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
   >
     The quick brown fox jumps over the lazy dog
   </h1>
   <h1
+    level="1"
     class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
   >
     The quick brown fox jumps over the lazy dog
   </h1>
   <h2
+    level="2"
     class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
   </h2>
   <h2
+    level="2"
     class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
   >
     The quick brown fox jumps over the lazy dog
   </h2>
   <h2
+    level="2"
     class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
   >
     The quick brown fox jumps over the lazy dog
   </h2>
   <h2
+    level="2"
     class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
   >
     The quick brown fox jumps over the lazy dog
   </h2>
   <h3
+    level="3"
     class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
   </h3>
   <h3
+    level="3"
     class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
   >
     The quick brown fox jumps over the lazy dog
   </h3>
   <h3
+    level="3"
     class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
   >
     The quick brown fox jumps over the lazy dog
   </h3>
   <h3
+    level="3"
     class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
   >
     The quick brown fox jumps over the lazy dog
   </h3>
   <h4
+    level="4"
     class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
   </h4>
   <h4
+    level="4"
     class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---font-weight-bold--22XZ"
   >
     The quick brown fox jumps over the lazy dog
   </h4>
   <h4
+    level="4"
     class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---font-weight-semi-bold--QRXr"
   >
     The quick brown fox jumps over the lazy dog
   </h4>
   <h4
+    level="4"
     class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---font-weight-light--2bfm"
   >
     The quick brown fox jumps over the lazy dog
@@ -92,21 +108,25 @@ exports[`<Heading/> Component > snapshots for Heading component #1`] = `
   class="Layout---vertical--3Szv StyledProps---main--1Wws"
 >
   <h1
+    level="1"
     class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
   </h1>
   <h2
+    level="2"
     class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
   </h2>
   <h3
+    level="3"
     class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
   </h3>
   <h4
+    level="4"
     class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws"
   >
     The quick brown fox jumps over the lazy dog
@@ -120,21 +140,25 @@ exports[`<Heading/> Component > snapshots for Heading component #2`] = `
   class="Layout---vertical--3Szv StyledProps---main--1Wws"
 >
   <h1
+    level="1"
     class="StyledProps---font--2ipy StyledProps---font-h1--1R-x StyledProps---main--1Wws StyledProps---inline--1f52"
   >
     Heading Level 1
   </h1>
   <h2
+    level="2"
     class="StyledProps---font--2ipy StyledProps---font-h2--3Vpc StyledProps---main--1Wws StyledProps---inline--1f52"
   >
     Heading Level 2
   </h2>
   <h3
+    level="3"
     class="StyledProps---font--2ipy StyledProps---font-h3--oaTS StyledProps---main--1Wws StyledProps---inline--1f52"
   >
     Heading Level 3
   </h3>
   <h4
+    level="4"
     class="StyledProps---font--2ipy StyledProps---font-h4--32xh StyledProps---main--1Wws StyledProps---inline--1f52"
   >
     Heading Level 4

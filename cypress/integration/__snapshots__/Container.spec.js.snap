@@ -1,0 +1,97 @@
+exports[`<Container/> Component > snapshots for Container component #0`] = `
+<div
+  id="sample-container-1"
+  class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---intent-warning--2N1t StyledProps---padding-medium--3Ish StyledProps---font-align-center--22lb StyledProps---background-yellow100--1WvT StyledProps---flex--2Jz8 StyledProps---border--uz_- StyledProps---border-color-yellow500--y3FU"
+>
+  <p class="StyledProps---font--2ipy StyledProps---main--1Wws">
+    The quick brown fox jumps over the lazy dog
+  </p>
+  <button
+    type="button"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+  >
+    <span icon="cross" class="bp3-icon bp3-icon-cross StyledProps---main--1Wws"
+      ><svg data-icon="cross" width="16" height="16" viewBox="0 0 16 16">
+        <desc>cross</desc>
+        <path
+          d="M9.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+          fill-rule="evenodd"
+        ></path></svg
+    ></span>
+  </button>
+</div>
+`;
+
+exports[`<Container/> Component > snapshots for Container component #1`] = `
+<div
+  id="sample-container-2"
+  class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf StyledProps---flex--2Jz8"
+>
+  <a
+    role="button"
+    href="/workflow/123"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 Button---link--3a0q StyledProps---main--1Wws StyledProps---font-size-medium--aOY7"
+    tabindex="0"
+    ><span class="bp3-button-text">Demo Workflow</span></a
+  >
+  <div class="Layout---horizontal--3rmQ StyledProps---main--1Wws">
+    <button
+      type="button"
+      disabled=""
+      class="bp3-button bp3-disabled bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---color--8PuS StyledProps---color-red500--uX9L"
+      tabindex="-1"
+    >
+      <span
+        icon="power"
+        class="bp3-icon bp3-icon-power StyledProps---main--1Wws"
+        ><svg data-icon="power" width="16" height="16" viewBox="0 0 16 16">
+          <desc>power</desc>
+          <path
+            d="M8 8c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1S7 .45 7 1v6c0 .55.45 1 1 1zm3-5.32v2.34c1.21.91 2 2.35 2 3.98 0 2.76-2.24 5-5 5s-5-2.24-5-5c0-1.63.79-3.06 2-3.98V2.68C2.64 3.81 1 6.21 1 9c0 3.87 3.13 7 7 7s7-3.13 7-7c0-2.79-1.64-5.19-4-6.32z"
+            fill-rule="evenodd"
+          ></path></svg
+      ></span></button
+    ><button
+      type="button"
+      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    >
+      <span
+        icon="star-empty"
+        class="bp3-icon bp3-icon-star-empty StyledProps---main--1Wws"
+        ><svg data-icon="star-empty" width="16" height="16" viewBox="0 0 16 16">
+          <desc>star-empty</desc>
+          <path
+            d="M16 6.11l-5.53-.84L8 0 5.53 5.27 0 6.11l4 4.1L3.06 16 8 13.27 12.94 16 12 10.21l4-4.1zM4.91 13.2l.59-3.62L3 7.02l3.45-.53L8 3.2l1.55 3.29 3.45.53-2.5 2.56.59 3.62L8 11.49 4.91 13.2z"
+            fill-rule="evenodd"
+          ></path></svg
+      ></span></button
+    ><button
+      type="button"
+      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    >
+      <span
+        icon="share"
+        class="bp3-icon bp3-icon-share StyledProps---main--1Wws"
+        ><svg data-icon="share" width="16" height="16" viewBox="0 0 16 16">
+          <desc>share</desc>
+          <path
+            d="M10.99 13.99h-9v-9h4.76l2-2H.99c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V7.24l-2 2v4.75zm4-14h-5c-.55 0-1 .45-1 1s.45 1 1 1h2.59L7.29 7.28a1 1 0 00-.3.71 1.003 1.003 0 001.71.71l5.29-5.29V6c0 .55.45 1 1 1s1-.45 1-1V1c0-.56-.45-1.01-1-1.01z"
+            fill-rule="evenodd"
+          ></path></svg
+      ></span></button
+    ><button
+      type="button"
+      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    >
+      <span icon="more" class="bp3-icon bp3-icon-more StyledProps---main--1Wws"
+        ><svg data-icon="more" width="16" height="16" viewBox="0 0 16 16">
+          <desc>more</desc>
+          <path
+            d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+            fill-rule="evenodd"
+          ></path></svg
+      ></span>
+    </button>
+  </div>
+</div>
+`;

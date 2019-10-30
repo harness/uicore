@@ -1,4 +1,5 @@
 import React, { useState, MouseEvent, ElementType } from 'react'
+import { Assign } from 'utility-types'
 import { Button as BButton, AnchorButton, IButtonProps } from '@blueprintjs/core'
 import css from './Button.css'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
@@ -6,14 +7,17 @@ import styledClass from '../../styled-props/StyledProps.css'
 import { Utils } from '../../core/Utils'
 import { IconName, Icon } from '../../icons/Icon'
 
-export interface ButtonProps extends Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>, StyledProps {
+export interface ButtonProps extends Assign<Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>, StyledProps> {
+  /** Left icon */
   icon?: IconName
+
+  /** Right icon */
   rightIcon?: IconName
 
   /** onClick event handler */
   onClick?: (event: MouseEvent) => Promise<void> | void
 
-  /** If provided, Button render as Link */
+  /** Link href. If provided, Button rendered as Link */
   href?: string
 
   /** Link target attribute, must go with href */
@@ -21,6 +25,9 @@ export interface ButtonProps extends Omit<IButtonProps, 'icon' | 'rightIcon' | '
 
   /** Link rel attribute, must go with href */
   rel?: string
+
+  /** Component children */
+  children?: React.ReactNode
 }
 
 export interface LinkProps extends ButtonProps {

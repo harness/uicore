@@ -15,7 +15,7 @@ import { Icon } from '@wings-software/uikit'
 Then render icon as a React component.
 
 ```js live=true
-<Layout.Horizontal spacing="small">
+<Layout.Horizontal spacing="small" id="color-icons">
   <Icon name="service-gotlab" size={64} />
   <Icon name="service-datadog" size={64} />
   <Icon name="service-github" size={64} />
@@ -28,7 +28,7 @@ Then render icon as a React component.
 You can pass styled props to Icon as well.
 
 ```js live=true
-<Icon name="heart" size={64} color="blue500" padding="small" border={{ color: 'blue400' }} />
+<Icon id="icon-styled-props" name="heart" size={64} color="blue500" padding="small" border={{ color: 'blue400' }} />
 ```
 
 ## Harness Icons

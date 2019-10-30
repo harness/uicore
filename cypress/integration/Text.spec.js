@@ -2,7 +2,7 @@
 
 context('<Text/> Component', () => {
   before(() => {
-    cy.visit('http://localhost:3000/text')
+    cy.visit('/text')
     cy.hideStickyHeader()
   })
 

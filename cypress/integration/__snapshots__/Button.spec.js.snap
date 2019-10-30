@@ -1,5 +1,6 @@
 exports[`<Button/> Component > snapshots for Button component #0`] = `
 <div
+  spacing="small"
   id="primary-buttons"
   class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
 >
@@ -236,6 +237,7 @@ exports[`<Button/> Component > snapshots for Button component #1`] = `
 
 exports[`<Button/> Component > snapshots for Button component #2`] = `
 <div
+  spacing="small"
   id="secondary-buttons"
   class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
 >
@@ -361,6 +363,7 @@ exports[`<Button/> Component > snapshots for Button component #2`] = `
 
 exports[`<Button/> Component > snapshots for Button component #3`] = `
 <div
+  spacing="small"
   id="secondary-borderless-buttons"
   class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
 >
@@ -486,6 +489,7 @@ exports[`<Button/> Component > snapshots for Button component #3`] = `
 
 exports[`<Button/> Component > snapshots for Button component #4`] = `
 <div
+  spacing="small"
   id="success-buttons"
   class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
 >
@@ -604,6 +608,7 @@ exports[`<Button/> Component > snapshots for Button component #4`] = `
 
 exports[`<Button/> Component > snapshots for Button component #5`] = `
 <div
+  spacing="small"
   id="warning-buttons"
   class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
 >
@@ -722,6 +727,7 @@ exports[`<Button/> Component > snapshots for Button component #5`] = `
 
 exports[`<Button/> Component > snapshots for Button component #6`] = `
 <div
+  spacing="small"
   id="danger-buttons"
   class="Layout---horizontal--3rmQ Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
 >
