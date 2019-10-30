@@ -8,20 +8,16 @@ interface Props extends Pick<StyledProps, 'id' | 'children'> {
 }
 
 function Vertical(props: Props) {
-  const id = props.id ? { id: props.id } : null
-
   return (
-    <div {...id} className={styledClasses(props, css.vertical, css[`layout-spacing-${props.spacing}`])}>
+    <div id={props.id} className={styledClasses(props, css.vertical, css[`layout-spacing-${props.spacing}`])}>
       {props.children}
     </div>
   )
 }
 
 function Horizontal(props: Props) {
-  const id = props.id ? { id: props.id } : null
-
   return (
-    <div {...id} className={styledClasses(props, css.horizontal, css[`layout-spacing-${props.spacing}`])}>
+    <div id={props.id} className={styledClasses(props, css.horizontal, css[`layout-spacing-${props.spacing}`])}>
       {props.children}
     </div>
   )
