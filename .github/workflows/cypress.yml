@@ -14,4 +14,5 @@ jobs:
           cmd: install
       - uses: kingscooty/actions-yarn-cy@master
         with:
-          cmd: test:run
+          cmd: run
+          args: test:run
