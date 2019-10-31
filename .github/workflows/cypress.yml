@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - uses: kingscooty/actions-yarn-cy@master
-      - name: Start Documentation Site
+      - name: Start Docs, and Run Tests
         run: |
           yarn dep
           ./node_modules/.bin/tsc --emitDeclarationOnly --declarationDir ./docs/static/
@@ -22,3 +22,4 @@ jobs:
           yarn test:run
         env:
           CI: true
+          NEXT_TELEMETRY_DISABLED: 1
