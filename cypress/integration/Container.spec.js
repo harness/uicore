@@ -16,5 +16,8 @@ context('<Container/> Component', () => {
 
     cy.get('#sample-container-2').toMatchSnapshot()
     cy.get('#sample-container-2').toMatchImageSnapshot()
+
+    cy.get('#sample-container-3').toMatchSnapshot()
+    cy.get('#sample-container-3').toMatchImageSnapshot()
   })
 })
