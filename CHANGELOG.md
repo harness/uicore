@@ -2,10 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.0.15 - TBD
+## 1.0.15 - 10/31/09
 
-- `Added` Cypress visual tests for Button, Link, Container, Heading, and Text.
-- `Added` optional `id` prop into StyledProps.
+- `Added` Cypress snapshot tests for Button, Link, Container, Heading, Container, and Text.
+- `Added` Button, Link, Container, Heading, Container, and Text now support their respective HTML standard attributes (id, data-\*, etc...).
 - `Added` CSS variable `--font-size` under StyledProps to allow component to override font size.
 
 ## 1.0.14 - 10/28/09
