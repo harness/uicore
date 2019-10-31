@@ -7,9 +7,10 @@ jobs:
     name: Build and Run Cypress
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: kingscooty/actions-yarn-cy@master
-      - name: Start Documentation Site
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build, Run Docs, and Test
+        uses: kingscooty/actions-yarn-cy@master
         run: |
           yarn dep
           ./node_modules/.bin/tsc --emitDeclarationOnly --declarationDir ./docs/static/
