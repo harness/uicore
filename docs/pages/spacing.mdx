@@ -1,7 +1,5 @@
 # Spacing --- docs/pages/spacing.mdx
 
-## Margin and Padding
-
 Spacing is pre-defined names to use in margin and padding props. They are created to solve the inconsistency in codebase where many pixel values are used by UI developers.
 
 Supported spacing constants:
@@ -16,6 +14,28 @@ Supported spacing constants:
 - huge = 50px
 
 The idea about spacing is that when you build or use a component, you should avoid thinking about pixel. When everybody uses pixel to set padding, or margin by themselves, the whole app becomes inconsistent very quickly. The effort to refactor or fixing inconsistent UI is also huge due to the fact that you have to scan the whole codebase for pixel values, and try to replace them with the correct ones.
+
+```js live=true
+<Container
+  id="spacing-margin-padding"
+  background="grey100"
+  padding="huge"
+  border={{
+    color: 'grey200'
+  }}>
+  <Container
+    background="yellow100"
+    margin={{ top: 'xsmall', right: 'small', bottom: 'medium', left: 'huge' }}
+    padding={{ top: 'small', right: 'small', bottom: 'small', left: 'large' }}
+    flex
+    border={{
+      color: 'yellow500'
+    }}>
+    <Text>The quick brown fox jumps over the lazy dog</Text>
+    <Button icon="cross" minimal />
+  </Container>
+</Container>
+```
 
 ```js live=true
 <Text margin="small" padding="medium" border font={{ align: 'center' }}>

@@ -6,6 +6,8 @@ import { KVO } from '../core/Types'
 import { FlexProps } from './flex/FlexProps'
 import { BorderProps } from './border/BorderProps'
 import { FontSize, FontProps } from './font/FontProps'
+import { PaddingProps } from './padding/PaddingProps'
+import { MarginProps } from './margin/MarginProps'
 
 /**
  * Styled Props: Define reusable styles across components using props.
@@ -21,10 +23,10 @@ export interface StyledProps {
   height?: string
 
   /** Component margin. Usually used for containers */
-  margin?: Spacing
+  margin?: Spacing | MarginProps
 
   /** Component padding. Usually used for containers */
-  padding?: Spacing
+  padding?: Spacing | PaddingProps
 
   /** Component font size */
   font?: FontSize | FontProps
