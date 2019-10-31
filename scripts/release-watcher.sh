@@ -8,7 +8,7 @@
 
 VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json)
 RELEASE_EXISTS=$(git branch -r | grep "origin/v$VERSION" | wc -l)
-HAS_CHANGELOG=$(cat CHANGELOG.md | grep $VERSION | wc -l | wc -l)
+HAS_CHANGELOG=$(cat CHANGELOG.md | grep "$VERSION" | wc -l)
 
 if [ $RELEASE_EXISTS -ne 0 ]; then
   echo "Release exists. Doing nothing."
