@@ -3,11 +3,11 @@ import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/
 import { Assign } from 'utility-types'
 import styledClass from '../../styled-props/StyledProps.css'
 
-interface Props extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
+export interface ContainerProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
   tag?: keyof JSX.IntrinsicElements
 }
 
-function Container(props: Props) {
+export function Container(props: ContainerProps) {
   const { tag = 'div', children } = props
   const Tag = tag as React.ElementType
 
@@ -17,5 +17,3 @@ function Container(props: Props) {
     </Tag>
   )
 }
-
-export { Container }
