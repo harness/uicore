@@ -137,7 +137,7 @@ exports[`<Heading/> Component > snapshots for Heading component #1`] = `
 exports[`<Heading/> Component > snapshots for Heading component #2`] = `
 <div
   id="heading-inline"
-  class="Layout---vertical--3Szv StyledProps---main--1Wws"
+  class="StyledProps---font--2ipy StyledProps---main--1Wws"
 >
   <h1
     level="1"
