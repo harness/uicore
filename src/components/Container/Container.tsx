@@ -1,9 +1,9 @@
 import React, { HTMLAttributes } from 'react'
 import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
-import { Overwrite } from 'utility-types'
+import { Assign } from 'utility-types'
 import styledClass from '../../styled-props/StyledProps.css'
 
-interface Props extends Overwrite<HTMLAttributes<HTMLDivElement>, StyledProps> {
+interface Props extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
   tag?: keyof JSX.IntrinsicElements
 }
 
