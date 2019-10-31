@@ -95,3 +95,23 @@ exports[`<Container/> Component > snapshots for Container component #1`] = `
   </div>
 </div>
 `;
+
+exports[`<Container/> Component > snapshots for Container component #2`] = `
+<div
+  id="sample-container-3"
+  class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---flex--2Jz8"
+>
+  <div
+    style="width:30%;height:100px"
+    class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---background-red500--3jQQ"
+  ></div>
+  <div
+    style="width:30%;height:150px"
+    class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---background-green500--33le"
+  ></div>
+  <div
+    style="width:30%;height:200px"
+    class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---background-blue500--1WIW"
+  ></div>
+</div>
+`;

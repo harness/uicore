@@ -16,6 +16,12 @@ export interface StyledProps {
   /** Component intent */
   intent?: Intent
 
+  /** Component width */
+  width?: string
+
+  /** Component height*/
+  height?: string
+
   /** Component margin. Usually used for containers */
   margin?: Spacing | MarginProps
 
@@ -49,7 +55,20 @@ export interface StyledProps {
   List of styled props to loop through as you won't be
   able to do that with TypeScript type/inteface fields.
 */
-const PropsList = ['intent', 'margin', 'padding', 'font', 'inline', 'color', 'background', 'border', 'flex']
+const PropsList = [
+  'intent',
+  'width',
+  'height',
+  'margin',
+  'padding',
+  'font',
+  'inline',
+  'color',
+  'background',
+  'border',
+  'flex',
+  'style'
+]
 
 // Returns if a value is an object
 // eslint-disable-next-line
@@ -101,12 +120,30 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
     .join(' ')
 }
 
+function assignStyleProp(props: KVO, style: KVO | null | undefined) {
+  const _style: KVO = {}
+
+  if (props.width) {
+    _style.width = props.width
+  }
+  if (props.height) {
+    _style.height = props.height
+  }
+
+  return _style.width || _style.height ? Object.assign(style || {}, _style) : style
+}
+
 /** Return all props that are not styled props */
 export function omitStyledProps(props: KVO): KVO {
   return Object.keys(props)
     .filter(key => !PropsList.includes(key))
-    .reduce((obj: KVO, key) => {
-      obj[key] = props[key]
-      return obj
-    }, {})
+    .reduce(
+      (obj: KVO, key) => {
+        obj[key] = props[key]
+        return obj
+      },
+      {
+        style: assignStyleProp(props, props.style)
+      }
+    )
 }
