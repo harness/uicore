@@ -1,10 +1,15 @@
-import React from 'react'
-import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
+import React, { HTMLAttributes } from 'react'
+import { Assign } from 'utility-types'
+import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
 import styledCSS from '../../styled-props/StyledProps.css'
 
-function Text(props: StyledProps) {
-  const Tag = `${props.inline ? 'span' : 'p'}` as React.ElementType
-  return <Tag className={styledClasses(props, styledCSS.font)}>{props.children}</Tag>
-}
+export type TextProps = Assign<HTMLAttributes<HTMLDivElement>, StyledProps>
 
-export { Text }
+export function Text(props: TextProps) {
+  const Tag = `${props.inline ? 'span' : 'p'}` as React.ElementType
+  return (
+    <Tag {...omitStyledProps(props)} className={styledClasses(props, styledCSS.font)}>
+      {props.children}
+    </Tag>
+  )
+}

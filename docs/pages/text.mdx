@@ -1,26 +1,53 @@
 # Text --- docs/pages/link.mdx
 
+## Font Size
+
 ```js live=true
-<Text>The quick brown fox jumps over the lazy dog</Text>
+<Layout.Vertical id="text-font-size">
+  <Text>The quick brown fox jumps over the lazy dog</Text>
 
-<Text font="small">The quick brown fox jumps over the lazy dog</Text>
-<Text font="normal">The quick brown fox jumps over the lazy dog</Text>
-<Text font="medium">The quick brown fox jumps over the lazy dog</Text>
-<Text font="large">The quick brown fox jumps over the lazy dog</Text>
+  <Text font="small">The quick brown fox jumps over the lazy dog</Text>
+  <Text font="normal">The quick brown fox jumps over the lazy dog</Text>
+  <Text font="medium">The quick brown fox jumps over the lazy dog</Text>
+  <Text font="large">The quick brown fox jumps over the lazy dog</Text>
+</Layout.Vertical>
+```
 
-<Text font={{ weight: "bold" }}>The quick brown fox jumps over the lazy dog</Text>
-<Text font={{ mono: true }}>The quick brown fox jumps over the lazy dog</Text>
+## Font weight
 
-<Text intent="primary">The quick brown fox jumps over the lazy dog</Text>
-<Text intent="success">The quick brown fox jumps over the lazy dog</Text>
-<Text intent="warning">The quick brown fox jumps over the lazy dog</Text>
-<Text intent="danger">The quick brown fox jumps over the lazy dog</Text>
+```js live=true
+<Layout.Vertical id="text-weight">
+  <Text font={{ weight: 'bold' }}>The quick brown fox jumps over the lazy dog</Text>
+  <Text font={{ weight: 'semi-bold' }}>The quick brown fox jumps over the lazy dog</Text>
+  <Text font={{ weight: 'light' }}>The quick brown fox jumps over the lazy dog</Text>
+</Layout.Vertical>
+```
+
+## Mono
+
+```js live=true
+<Layout.Vertical id="text-mono">
+  <Text font={{ mono: true }}>The quick brown fox jumps over the lazy dog</Text>
+</Layout.Vertical>
+```
+
+## Intent
+
+```js live=true
+<Layout.Vertical id="text-intent">
+  <Text intent="primary">The quick brown fox jumps over the lazy dog</Text>
+  <Text intent="success">The quick brown fox jumps over the lazy dog</Text>
+  <Text intent="warning">The quick brown fox jumps over the lazy dog</Text>
+  <Text intent="danger">The quick brown fox jumps over the lazy dog</Text>
+</Layout.Vertical>
 ```
 
 ## Combining with other styled props
 
 ```js live=true
-<Text padding="small" font={{ size: 'large', align: 'center' }} border={{ color: 'green500' }} background="grey100">
-  The quick brown fox jumps over the lazy dog
-</Text>
+<Layout.Vertical id="text-styled-props">
+  <Text padding="small" font={{ size: 'large', align: 'center' }} border={{ color: 'green500' }} background="grey100">
+    The quick brown fox jumps over the lazy dog
+  </Text>
+</Layout.Vertical>
 ```

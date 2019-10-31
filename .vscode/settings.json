@@ -16,6 +16,7 @@
     "**/_app.js": true,
     "webpack.config.js": true,
     "tsconfig.json": true,
+    "cypress.json": true,
     "types": true,
     "scripts": true,
     ".*": true,
@@ -38,6 +39,7 @@
     "**/_app.js": true,
     "*.config.js": true,
     "tsconfig.json": true,
+    "cypress.json": true,
     "types": true,
     "scripts": true
   },

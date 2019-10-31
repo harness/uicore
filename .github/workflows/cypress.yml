@@ -1,0 +1,23 @@
+name: Cypress
+
+on: [push]
+
+jobs:
+  build:
+    name: Build and Run Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: kingscooty/actions-yarn-cy@master
+      - name: Start Documentation Site
+        run: |
+          yarn dep
+          ./node_modules/.bin/tsc --emitDeclarationOnly --declarationDir ./docs/static/
+          NODE_ENV=development ./node_modules/.bin/webpack
+          cd docs
+          ./node_modules/.bin/next &
+          npx wait-on http://localhost:3000
+          cd ..
+          yarn test:run
+        env:
+          CI: true

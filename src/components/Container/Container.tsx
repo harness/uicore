@@ -1,16 +1,19 @@
-import React from 'react'
-import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
+import React, { HTMLAttributes } from 'react'
+import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
+import { Assign } from 'utility-types'
 import styledClass from '../../styled-props/StyledProps.css'
 
-interface Props extends StyledProps {
+export interface ContainerProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
   tag?: keyof JSX.IntrinsicElements
 }
 
-function Container(props: Props) {
+export function Container(props: ContainerProps) {
   const { tag = 'div', children } = props
   const Tag = tag as React.ElementType
 
-  return <Tag className={styledClasses(props, styledClass.font)}>{children}</Tag>
+  return (
+    <Tag {...omitStyledProps(props)} className={styledClasses(props, styledClass.font)}>
+      {children}
+    </Tag>
+  )
 }
-
-export { Container }

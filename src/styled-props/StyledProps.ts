@@ -8,13 +8,9 @@ import { BorderProps } from './border/BorderProps'
 import { FontSize, FontProps } from './font/FontProps'
 
 /**
- * Styled Props: Define reusable styles across components.
- * Inspired by https://styled-system.com/theme-specification
+ * Styled Props: Define reusable styles across components using props.
  */
 export interface StyledProps {
-  /** Component children */
-  children?: React.ReactNode
-
   /** Component intent */
   intent?: Intent
 

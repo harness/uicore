@@ -1,2 +1,1 @@
-import { Link } from '../Button/Button'
-export { Link }
+export { Link } from '../Button/Button'
