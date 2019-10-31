@@ -1,0 +1,41 @@
+@define-mixin makePadding $direction, $prefix {
+  &.padding$(prefix)$(direction)-xsmall {
+    padding$(prefix)$(direction): var(--spacing-xsmall);
+  }
+
+  &.padding$(prefix)$(direction)-small {
+    padding$(prefix)$(direction): var(--spacing-small);
+  }
+
+  &.padding$(prefix)$(direction)-medium {
+    padding$(prefix)$(direction): var(--spacing-medium);
+  }
+
+  &.padding$(prefix)$(direction)-large {
+    padding$(prefix)$(direction): var(--spacing-large);
+  }
+
+  &.padding$(prefix)$(direction)-xlarge {
+    padding$(prefix)$(direction): var(--spacing-xlarge);
+  }
+
+  &.padding$(prefix)$(direction)-xxlarge {
+    padding$(prefix)$(direction): var(--spacing-xxlarge);
+  }
+
+  &.padding$(prefix)$(direction)-xxxlarge {
+    padding$(prefix)$(direction): var(--spacing-xxxlarge);
+  }
+
+  &.padding$(prefix)$(direction)-huge {
+    padding$(prefix)$(direction): var(--spacing-huge);
+  }
+}
+
+@define-mixin padding {
+  @mixin makePadding;
+  @mixin makePadding top, -;
+  @mixin makePadding right, -;
+  @mixin makePadding bottom, -;
+  @mixin makePadding left, -;
+}
