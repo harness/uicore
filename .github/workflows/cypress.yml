@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Build, Run Docs, and Test
-        uses: kingscooty/actions-yarn-cy@master
+      - uses: kingscooty/actions-yarn-cy@master
+      - name: Start Documentation Site
         run: |
           yarn dep
           ./node_modules/.bin/tsc --emitDeclarationOnly --declarationDir ./docs/static/
