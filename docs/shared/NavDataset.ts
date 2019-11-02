@@ -67,6 +67,9 @@ export default [
       {
         label: 'Container',
         url: '/container'
+      }, {
+        label: 'Tooltip',
+        url: '/tooltip'
       }
     ]
   }

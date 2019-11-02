@@ -1,11 +1,13 @@
 import React, { useState, MouseEvent, ElementType } from 'react'
 import { Assign } from 'utility-types'
-import { Button as BButton, AnchorButton, IButtonProps } from '@blueprintjs/core'
+import { Button as BButton, AnchorButton, IButtonProps, Classes } from '@blueprintjs/core'
 import css from './Button.css'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
 import styledClass from '../../styled-props/StyledProps.css'
 import { Utils } from '../../core/Utils'
 import { IconName, Icon } from '../../icons/Icon'
+import { Popover, PopoverProps } from '../Popover/Popover'
+import { Text } from '../Text/Text'
 
 export interface ButtonProps extends Assign<Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>, StyledProps> {
   /** Left icon */
@@ -28,6 +30,12 @@ export interface ButtonProps extends Assign<Omit<IButtonProps, 'icon' | 'rightIc
 
   /** Component children */
   children?: React.ReactNode
+
+  /** Optional tooltip for Button and Link */
+  tooltip?: JSX.Element | string
+
+  /** Optional props for Popover component used to render tooltip - Usually used to pass dark theme */
+  tooltipProps?: PopoverProps
 }
 
 export interface LinkProps extends ButtonProps {
@@ -55,16 +63,46 @@ export function Button(props: ButtonProps) {
   }
 
   const Component: ElementType = props.href ? AnchorButton : BButton
-
-  return (
+  const button = (
     <Component
       {...omitStyledProps(props)}
       loading={loading}
       icon={icon && <Icon name={icon} />}
       rightIcon={rightIcon && <Icon name={rightIcon} />}
       onClick={onClick}
-      className={styledClasses(props, styledClass.font, css.button, props.href ? css.link : '')}
+      className={styledClasses(props, styledClass.font, props.className || '', css.button, props.href ? css.link : '')}
     />
+  )
+
+  // @ts-ignore: Special checking for NextJS, portal does not work well under it
+  const isNext = typeof next !== 'undefined' && typeof __NEXT_DATA__ !== 'undefined'
+  const { tooltip, tooltipProps } = props
+  const isDark = tooltipProps && tooltipProps.isDark
+  const content =
+    typeof tooltip === 'string' ? (
+      <Text
+        padding="medium"
+        style={{ maxWidth: '500px', maxHeight: '500px', overflow: 'auto' }}
+        color={(isDark && 'white') || undefined}>
+        {tooltip}
+      </Text>
+    ) : (
+      tooltip
+    )
+
+  return tooltip ? (
+    <Popover
+      usePortal={!isNext}
+      boundary="viewport"
+      position="top"
+      interactionKind="hover"
+      {...tooltipProps}
+      popoverClassName={isDark ? Classes.DARK : undefined}
+      content={content || ''}>
+      {button}
+    </Popover>
+  ) : (
+    button
   )
 }
 

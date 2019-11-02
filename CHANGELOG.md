@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.17 - 11/1/09
+
+- `Added` `tooltip` prop for `<Button/>` and `<Link/>` components, implemented using Popover.
+
 ## 1.0.16 - 10/31/09
 
 - `Added` StyledProps `width` and `height`.
