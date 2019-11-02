@@ -5,13 +5,14 @@
  * TODO: Implement accessible attributes for icons as explained in https://blueprintjs.com/docs/#core/components/icon.
  */
 import { HarnessIcons } from './HarnessIcons'
-import React, { ElementType } from 'react'
+import React, { ElementType, HTMLAttributes } from 'react'
+import { Assign } from 'utility-types'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
-import { StyledProps, styledClasses } from '../styled-props/StyledProps'
+import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
 
 type IconName = (typeof HarnessIcons)[keyof typeof HarnessIcons] | BIconName
 
-interface Props extends Omit<StyledProps, 'children'> {
+interface Props extends Assign<HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'>> {
   name: IconName
   size?: number
 }
@@ -23,12 +24,19 @@ function Icon(props: Props) {
 
   if (HarnessIcon) {
     return (
-      <span className={styledClasses(props, Classes.ICON)}>
+      <span {...omitStyledProps(props, 'name', 'size')} className={styledClasses(props, Classes.ICON)}>
         <HarnessIcon width={size} height={size} />
       </span>
     )
   } else {
-    return <BIcon className={styledClasses(props)} icon={name as BIconName} iconSize={size} />
+    return (
+      <BIcon
+        {...omitStyledProps(props, 'name', 'size')}
+        className={styledClasses(props)}
+        icon={name as BIconName}
+        iconSize={size}
+      />
+    )
   }
 }
 

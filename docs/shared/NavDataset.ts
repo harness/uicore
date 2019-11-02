@@ -11,8 +11,8 @@ export default [
         url: '/colors'
       },
       {
-        label: 'Icons',
-        url: '/icons'
+        label: 'Icon',
+        url: '/icon'
       },
       {
         label: 'Intent',
@@ -67,7 +67,8 @@ export default [
       {
         label: 'Container',
         url: '/container'
-      }, {
+      },
+      {
         label: 'Tooltip',
         url: '/tooltip'
       }
