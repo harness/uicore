@@ -74,8 +74,11 @@ export function Button(props: ButtonProps) {
     />
   )
 
+  /* tslint:disable */
   // @ts-ignore: Special checking for NextJS, portal does not work well under it
   const isNext = typeof next !== 'undefined' && typeof __NEXT_DATA__ !== 'undefined'
+  /* tslint:enable */
+
   const { tooltip, tooltipProps } = props
   const isDark = tooltipProps && tooltipProps.isDark
   const content =
