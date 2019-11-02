@@ -65,7 +65,7 @@ export function Button(props: ButtonProps) {
   const Component: ElementType = props.href ? AnchorButton : BButton
   const button = (
     <Component
-      {...omitStyledProps(props)}
+      {...omitStyledProps(props, 'tooltip', 'tooltipProps')}
       loading={loading}
       icon={icon && <Icon name={icon} />}
       rightIcon={rightIcon && <Icon name={rightIcon} />}
@@ -73,11 +73,6 @@ export function Button(props: ButtonProps) {
       className={styledClasses(props, styledClass.font, props.className || '', css.button, props.href ? css.link : '')}
     />
   )
-
-  /* tslint:disable */
-  // @ts-ignore: Special checking for NextJS, portal does not work well under it
-  const isNext = typeof next !== 'undefined' && typeof __NEXT_DATA__ !== 'undefined'
-  /* tslint:enable */
 
   const { tooltip, tooltipProps } = props
   const isDark = tooltipProps && tooltipProps.isDark
@@ -92,6 +87,10 @@ export function Button(props: ButtonProps) {
     ) : (
       tooltip
     )
+
+  // NextJS does not work well with usePortal={true}
+  const isNext =
+    typeof window !== 'undefined' && typeof window.next !== 'undefined' && typeof window.__NEXT_DATA__ !== 'undefined'
 
   return tooltip ? (
     <Popover
