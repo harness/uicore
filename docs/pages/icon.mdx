@@ -35,31 +35,42 @@ You can pass styled props to Icon as well.
 
 ```js render=true
 <div
+  id="harness-icons"
   style={{
     padding: '20px',
     display: 'grid',
     background: 'var(--grey-100)',
     gridGap: '20px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
     borderRadius: '5px'
   }}>
-  {Object.keys(HarnessIcons).map(name => {
-    {
-      /* Blueprint does not work in NextJS with usePortal=true */
-    }
-    return name.includes('HarnessLogo') ? null : (
-      <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
-        <button
-          onClick={() => Utils.copy(name)}
+  {Object.keys(HarnessIcons).map(name => (
+    <button
+      style={{
+        all: 'unset',
+        justifySelf: 'center',
+        alignSelf: 'center',
+        display: 'inline-block',
+        cursor: 'pointer'
+      }}
+      onClick={() => Utils.copy(name)}>
+      <Popover
+        key={name}
+        interactionKind="hover"
+        content={<Text padding="small">{name} (click to copy)</Text>}
+        usePortal={false}>
+        <Layout.Vertical
+          spacing="small"
           style={{
-            background: 'none',
-            border: 'none'
+            justifyContent: 'center',
+            alignItems: 'center'
           }}>
-          <Icon name={name} size={24} padding="small" />
-        </button>
-      </Tooltip>
-    )
-  })}
+          <Icon name={name} size={24} padding="small" border={{ color: 'grey300' }} />
+          <Text font="small">{name}</Text>
+        </Layout.Vertical>
+      </Popover>
+    </button>
+  ))}
 </div>
 ```
 
@@ -67,25 +78,41 @@ You can pass styled props to Icon as well.
 
 ```js render=true
 <div
+  id="blueprint-icons"
   style={{
     padding: '20px',
     display: 'grid',
     background: 'var(--grey-100)',
     gridGap: '20px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
     borderRadius: '5px'
   }}>
   {Object.values(BlueprintIconNames).map(name => (
-    <Tooltip key={name} content={name + ' (click to copy)'} usePortal={false}>
-      <button
-        onClick={() => Utils.copy(name)}
-        style={{
-          background: 'none',
-          border: 'none'
-        }}>
-        <Icon name={name} size={24} padding="small" />
-      </button>
-    </Tooltip>
+    <button
+      style={{
+        all: 'unset',
+        justifySelf: 'center',
+        alignSelf: 'center',
+        display: 'inline-block',
+        cursor: 'pointer'
+      }}
+      onClick={() => Utils.copy(name)}>
+      <Popover
+        key={name}
+        interactionKind="hover"
+        content={<Text padding="small">{name} (click to copy)</Text>}
+        usePortal={false}>
+        <Layout.Vertical
+          spacing="small"
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+          <Icon name={name} size={24} padding="small" border={{ color: 'grey300' }} />
+          <Text font="small">{name}</Text>
+        </Layout.Vertical>
+      </Popover>
+    </button>
   ))}
 </div>
 ```

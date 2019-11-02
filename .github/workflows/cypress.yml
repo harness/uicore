@@ -19,7 +19,7 @@ jobs:
           ./node_modules/.bin/next &
           npx wait-on http://localhost:3000
           cd ..
-          yarn test:run
+          yarn test
         env:
           CI: true
           NEXT_TELEMETRY_DISABLED: 1
