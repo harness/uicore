@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tag as BpTag, ITagProps } from '@blueprintjs/core'
+import { ITagProps } from '@blueprintjs/core'
 import css from './tags.css'
 import cx from 'classnames'
 
