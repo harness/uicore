@@ -71,6 +71,10 @@ export default [
       {
         label: 'Tooltip',
         url: '/tooltip'
+      },
+      {
+        label: 'Tags',
+        url: '/tags'
       }
     ]
   }

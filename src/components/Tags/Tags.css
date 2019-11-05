@@ -1,0 +1,63 @@
+.main {
+  font-family: var(--font-family) !important;
+
+  :global {
+    .bp3-tag {
+      background-color: var(--grey-400);
+      border-radius: 2px;
+    }
+
+    .bp3-intent-primary {
+      border: 1px solid var(--blue-500) !important;
+      background: var(--white) !important;
+      color: var(--blue-600) !important;
+    }
+
+    .bp3-intent-success {
+      border: 1px solid var(--green-500) !important;
+      background: var(--white) !important;
+      color: var(--green-600) !important;
+    }
+
+    .bp3-intent-warning {
+      border: 1px solid var(--yellow-500) !important;
+      background: var(--white) !important;
+      color: var(--yellow-600) !important;
+    }
+
+    .bp3-intent-danger {
+      border: 1px solid var(--red-500) !important;
+      background: var(--white) !important;
+      color: var(--red-600) !important;
+    }
+
+    .bp3-minimal {
+      background: var(--grey-300) !important;
+      color: var(--grey-500) !important;
+    }
+
+    .bp3-minimal.bp3-intent-primary {
+      border: 1px solid var(--blue-300) !important;
+      background: var(--blue-350) !important;
+      color: var(--blue-600) !important;
+    }
+
+    .bp3-minimal.bp3-intent-success {
+      border: 1px solid var(--green-350) !important;
+      background: var(--green-350) !important;
+      color: var(--green-600) !important;
+    }
+
+    .bp3-minimal.bp3-intent-warning {
+      border: 1px solid var(--yellow-350) !important;
+      background: var(--yellow-350) !important;
+      color: var(--yellow-600) !important;
+    }
+
+    .bp3-minimal.bp3-intent-danger {
+      border: 1px solid var(--red-350) !important;
+      background: var(--red-350) !important;
+      color: var(--red-600) !important;
+    }
+  }
+}
