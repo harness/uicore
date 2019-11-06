@@ -1,4 +1,4 @@
-import { Tooltip, Utils } from '../static'
+import { Popover, Utils, Text } from '../static'
 
 # Colors --- docs/pages/colors.mdx
 
@@ -12,7 +12,10 @@ export const ColorRow = ({ name, value }) => {
     <tr>
       <td style={style}>{name}</td>
       <td>
-        <Tooltip content={'var(' + name + ')' + ' (click to copy)'} usePortal={false}>
+        <Popover
+          content={<Text padding="small">var({name}) (click to copy)</Text>}
+          usePortal={false}
+          interactionKind="hover">
           <button
             style={{
               all: 'unset',
@@ -25,7 +28,7 @@ export const ColorRow = ({ name, value }) => {
             }}
             onClick={() => Utils.copy('var(' + name + ')')}
           />
-        </Tooltip>
+        </Popover>
       </td>
       <td style={style}>{value}</td>
       <td style={style}>{name.replace(/-/g, '')}</td>
