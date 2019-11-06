@@ -106,6 +106,50 @@ import { Button } from '@wings-software/uikit'
 </Layout.Horizontal>
 ```
 
+## Icon Only Button
+
+```js live=true
+<Layout.Horizontal spacing="xsmall" id="icon-only-buttons">
+  <Button icon="plus" />
+  <Button icon="plus" disabled />
+  <Button icon="plus" minimal />
+  <Button icon="plus" minimal disabled />
+
+  <Button intent="primary" icon="build" />
+  <Button intent="primary" icon="build" disabled />
+  <Button intent="primary" icon="build" minimal />
+  <Button intent="primary" icon="build" minimal disabled />
+
+  <Button intent="success" icon="chevron-left" />
+  <Button intent="success" icon="chevron-left" disabled />
+
+  <Button intent="warning" icon="chevron-right" />
+  <Button intent="warning" icon="chevron-right" disabled />
+
+  <Button intent="danger" icon="delete" />
+  <Button intent="danger" icon="delete" disabled />
+</Layout.Horizontal>
+```
+
+## Icon Only Borderless Button
+
+```js live=true
+<Container flex id="icon-only-borderless-buttons">
+  <Layout.Horizontal inline>
+    <Button icon="main-pause" minimal />
+    <Button icon="main-start" minimal />
+    <Button icon="main-abort" minimal />
+    <Button icon="main-more" minimal />
+  </Layout.Horizontal>
+  <Layout.Horizontal inline>
+    <Button icon="main-pause" minimal iconProps={{ size: 10 }} />
+    <Button icon="main-start" minimal iconProps={{ size: 10 }} />
+    <Button icon="main-abort" minimal iconProps={{ size: 10 }} />
+    <Button icon="main-more" minimal iconProps={{ size: 10 }} />
+  </Layout.Horizontal>
+</Container>
+```
+
 ## Loading Transition
 
 Button's `onClick` accepts an async function. When the button is clicked, loading state is triggered automatically. When the `onClick` function is resolved, loading state is removed.

@@ -5,7 +5,7 @@ import css from './Button.css'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
 import styledClass from '../../styled-props/StyledProps.css'
 import { Utils } from '../../core/Utils'
-import { IconName, Icon } from '../../icons/Icon'
+import { IconName, Icon, IconProps } from '../../icons/Icon'
 import { Popover, PopoverProps } from '../Popover/Popover'
 import { Text } from '../Text/Text'
 
@@ -15,6 +15,9 @@ export interface ButtonProps extends Assign<Omit<IButtonProps, 'icon' | 'rightIc
 
   /** Right icon */
   rightIcon?: IconName
+
+  /** Optional Icon props */
+  iconProps?: IconProps
 
   /** onClick event handler */
   onClick?: (event: MouseEvent) => Promise<void> | void
@@ -63,14 +66,23 @@ export function Button(props: ButtonProps) {
   }
 
   const Component: ElementType = props.href ? AnchorButton : BButton
+  // Set icon size to 12px when there's one with button text
+  const iconSize = (icon || rightIcon) && props.text ? 12 : undefined
   const button = (
     <Component
-      {...omitStyledProps(props, 'tooltip', 'tooltipProps')}
+      {...omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps')}
       loading={loading}
-      icon={icon && <Icon name={icon} />}
-      rightIcon={rightIcon && <Icon name={rightIcon} />}
+      icon={icon && <Icon name={icon} size={iconSize} {...props.iconProps} />}
+      rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
       onClick={onClick}
-      className={styledClasses(props, styledClass.font, props.className || '', css.button, props.href ? css.link : '')}
+      className={styledClasses(
+        props,
+        styledClass.font,
+        props.className || '',
+        css.button,
+        props.href ? css.link : '',
+        !props.text && !props.intent ? css.iconOnly : ''
+      )}
     />
   )
 

@@ -17,6 +17,10 @@
     color: var(--grey-600);
     background-color: var(--white);
 
+    &.iconOnly:not([disabled]) {
+      color: var(--grey-450);
+    }
+
     &.link {
       padding: 0;
       border: none;
@@ -45,6 +49,10 @@
       color: var(--blue-500);
       background-color: var(--blue-100);
       box-shadow: none;
+
+      &.iconOnly:not([disabled]) {
+        color: var(--blue-450);
+      }
     }
 
     &:active {
@@ -199,9 +207,6 @@
   /* Make inline icons have the same color as the button color */
   > span {
     svg {
-      width: 12px;
-      height: 12px;
-
       path,
       circle {
         fill: currentColor !important;
@@ -210,11 +215,6 @@
       :not(path) {
         stroke: currentColor !important;
       }
-    }
-
-    &:only-child svg {
-      width: 16px;
-      height: 16px;
     }
   }
 
