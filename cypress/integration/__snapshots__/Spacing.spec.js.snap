@@ -11,7 +11,7 @@ exports[`Spacing: Margin and Padding > snapshots for Spacing props #0`] = `
     </p>
     <button
       type="button"
-      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 Button---iconOnly--_pvt StyledProps---main--1Wws"
     >
       <span
         icon="cross"

@@ -8,7 +8,7 @@ exports[`<Container/> Component > snapshots for Container component #0`] = `
   </p>
   <button
     type="button"
-    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+    class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 Button---iconOnly--_pvt StyledProps---main--1Wws"
   >
     <span icon="cross" class="bp3-icon bp3-icon-cross StyledProps---main--1Wws"
       ><svg data-icon="cross" width="16" height="16" viewBox="0 0 16 16">
@@ -30,7 +30,7 @@ exports[`<Container/> Component > snapshots for Container component #1`] = `
   <a
     role="button"
     href="/workflow/123"
-    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 Button---link--3a0q StyledProps---main--1Wws StyledProps---font-size-medium--aOY7"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 Button---link--3a0q Button---iconOnly--_pvt StyledProps---main--1Wws StyledProps---font-size-medium--aOY7"
     tabindex="0"
     ><span class="bp3-button-text">Demo Workflow</span></a
   >
@@ -38,7 +38,7 @@ exports[`<Container/> Component > snapshots for Container component #1`] = `
     <button
       type="button"
       disabled=""
-      class="bp3-button bp3-disabled bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---color--8PuS StyledProps---color-red500--uX9L"
+      class="bp3-button bp3-disabled bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 Button---iconOnly--_pvt StyledProps---main--1Wws StyledProps---color--8PuS StyledProps---color-red500--uX9L"
       tabindex="-1"
     >
       <span
@@ -53,7 +53,7 @@ exports[`<Container/> Component > snapshots for Container component #1`] = `
       ></span></button
     ><button
       type="button"
-      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 Button---iconOnly--_pvt StyledProps---main--1Wws"
     >
       <span
         icon="star-empty"
@@ -67,7 +67,7 @@ exports[`<Container/> Component > snapshots for Container component #1`] = `
       ></span></button
     ><button
       type="button"
-      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 Button---iconOnly--_pvt StyledProps---main--1Wws"
     >
       <span
         icon="share"
@@ -81,7 +81,7 @@ exports[`<Container/> Component > snapshots for Container component #1`] = `
       ></span></button
     ><button
       type="button"
-      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
+      class="bp3-button bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 Button---iconOnly--_pvt StyledProps---main--1Wws"
     >
       <span icon="more" class="bp3-icon bp3-icon-more StyledProps---main--1Wws"
         ><svg data-icon="more" width="16" height="16" viewBox="0 0 16 16">

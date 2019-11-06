@@ -31,5 +31,11 @@ context('<Button/> Component', () => {
 
     cy.get('#danger-buttons').toMatchSnapshot()
     cy.get('#danger-buttons').toMatchImageSnapshot()
+
+    cy.get('#icon-only-buttons').toMatchSnapshot()
+    cy.get('#icon-only-buttons').toMatchImageSnapshot()
+
+    cy.get('#icon-only-borderless-buttons').toMatchSnapshot()
+    cy.get('#icon-only-borderless-buttons').toMatchImageSnapshot()
   })
 })

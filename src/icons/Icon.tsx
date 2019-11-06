@@ -12,12 +12,12 @@ import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/Sty
 
 type IconName = (typeof HarnessIcons)[keyof typeof HarnessIcons] | BIconName
 
-interface Props extends Assign<HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'>> {
+interface IconProps extends Assign<HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'>> {
   name: IconName
   size?: number
 }
 
-function Icon(props: Props) {
+function Icon(props: IconProps) {
   const name = props.name as string
   const size = props.size || 16
   const HarnessIcon: ElementType = HarnessIcons[name]
@@ -40,4 +40,4 @@ function Icon(props: Props) {
   }
 }
 
-export { IconName, HarnessIcons, Icon }
+export { IconName, HarnessIcons, Icon, IconProps }
