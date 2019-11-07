@@ -68,10 +68,10 @@ export default [
         label: 'Container',
         url: '/container'
       },
-      // {
-      //   label: 'Tooltip',
-      //   url: '/tooltip'
-      // },
+      {
+        label: 'Tooltip',
+        url: '/tooltip'
+      },
       {
         label: 'Radio',
         url: '/radio'
