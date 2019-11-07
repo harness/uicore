@@ -1,6 +1,6 @@
 import React from 'react'
 import { ITagProps, Intent, Tag as BpTag } from '@blueprintjs/core'
-import css from './tag.css'
+import css from './Tag.css'
 
 function Tag(props: ITagProps) {
   return (
