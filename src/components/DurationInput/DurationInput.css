@@ -1,0 +1,12 @@
+.main {
+  position: relative;
+  display: inline-flex;
+  padding-right: calc(14px + calc(2 * var(--spacing-small)));
+
+  .helpIcon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: var(--spacing-small);
+  }
+}

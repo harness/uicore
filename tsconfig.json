@@ -8,7 +8,7 @@
     "lib": ["es2017", "dom"],
     "target": "ES5",
     "jsx": "react",
-    "allowJs": false,
+    "allowJs": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "declaration": true,

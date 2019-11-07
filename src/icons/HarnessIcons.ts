@@ -120,6 +120,7 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import Question from './question.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -191,7 +192,7 @@ import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 
-type HarnessIconName =
+type HarnessIconName = 
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -312,6 +313,7 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'question'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -382,6 +384,7 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-approval': CommandApproval,
@@ -504,6 +507,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  question: Question,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,

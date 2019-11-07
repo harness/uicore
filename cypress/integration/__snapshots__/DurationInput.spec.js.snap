@@ -1,0 +1,73 @@
+exports[`<DurationInput /> Component > snapshots for DurationInput component #0`] = `
+<div id="duration-input-1">
+  <div class="DurationInput---main--33yi">
+    <div class="TextInput---main--1ytZ">
+      <label class="TextInput---label--1xRj"></label>
+      <div class="bp3-input-group">
+        <input
+          type="text"
+          placeholder="Enter w/d/h/m/s/ms"
+          value="1d 2h"
+          class="bp3-input"
+          style="padding-right:10px"
+        />
+      </div>
+    </div>
+    <div class="bp3-popover-wrapper DurationInput---helpIcon--1VgT">
+      <span class="bp3-popover-target"
+        ><span class="bp3-icon StyledProps---main--1Wws" tabindex="0"
+          ><svg viewBox="0 0 14 14" width="14" height="14">
+            <path
+              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+              fill="#9AA5B5"
+            ></path></svg></span
+      ></span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<DurationInput /> Component > snapshots for DurationInput component #1`] = `
+<div
+  spacing="medium"
+  id="duration-input-example"
+  class="Layout---horizontal--3rmQ Layout---layout-spacing-medium--3-Y8 StyledProps---main--1Wws"
+>
+  <div class="DurationInput---main--33yi">
+    <div class="TextInput---main--1ytZ">
+      <label class="TextInput---label--1xRj">Input duration</label>
+      <div class="bp3-input-group">
+        <input
+          type="text"
+          placeholder="Enter w/d/h/m/s/ms"
+          value="1d 2h"
+          class="bp3-input"
+          style="padding-right:10px"
+        />
+      </div>
+    </div>
+    <div class="bp3-popover-wrapper DurationInput---helpIcon--1VgT">
+      <span class="bp3-popover-target"
+        ><span class="bp3-icon StyledProps---main--1Wws" tabindex="0"
+          ><svg viewBox="0 0 14 14" width="14" height="14">
+            <path
+              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+              fill="#9AA5B5"
+            ></path></svg></span
+      ></span>
+    </div>
+  </div>
+  <div class="TextInput---main--1ytZ">
+    <label class="TextInput---label--1xRj">Parsed value</label>
+    <div class="bp3-input-group bp3-disabled">
+      <input
+        type="text"
+        value="93600000"
+        disabled=""
+        class="bp3-input"
+        style="padding-right:10px"
+      />
+    </div>
+  </div>
+</div>
+`;
