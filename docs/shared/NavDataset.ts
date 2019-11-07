@@ -75,6 +75,17 @@ export default [
       {
         label: 'Tag',
         url: '/tag'
+      }, {
+        label: 'Radio',
+        url: '/radio'
+      },
+      {
+        label: 'Switch',
+        url: '/switch'
+      },
+      {
+        label: 'Checkbox',
+        url: '/checkbox'
       }
     ]
   }
