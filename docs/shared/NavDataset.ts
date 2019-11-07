@@ -73,8 +73,8 @@ export default [
         url: '/tooltip'
       },
       {
-        label: 'Tags',
-        url: '/tags'
+        label: 'Tag',
+        url: '/tag'
       }
     ]
   }
