@@ -5,9 +5,7 @@ import css from './tag.css'
 function Tag(props: ITagProps) {
   return (
     <span className={css.main}>
-      <BpTag {...props}>
-        {props.children}
-      </BpTag>
+      <BpTag {...props}>{props.children}</BpTag>
     </span>
   )
 }
