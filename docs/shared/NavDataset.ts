@@ -71,6 +71,18 @@ export default [
       {
         label: 'Tooltip',
         url: '/tooltip'
+      },
+      {
+        label: 'Radio',
+        url: '/radio'
+      },
+      {
+        label: 'Switch',
+        url: '/switch'
+      },
+      {
+        label: 'Checkbox',
+        url: '/checkbox'
       }
     ]
   }

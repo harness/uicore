@@ -1,0 +1,87 @@
+.radio {
+  --radio-height: 12px;
+
+  /* create template for repeated css into which vars can be passed */
+  @define-mixin radio-styles {
+    background: var(--box-background) !important;
+    box-shadow: inset 0 0 0 1px var(--box-border), inset 0 -1px 0 var(--box-border) !important; /* border color */
+  }
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  color: var(--grey-800);
+
+  > span[class*='bp3-control-indicator'] {
+    height: var(--radio-height) !important;
+    width: var(--radio-height) !important;
+
+    /* white dot in center of blue circle when checked */
+    &::before {
+      width: var(--radio-height);
+      height: var(--radio-height);
+    }
+  }
+
+  /*
+  There are 3 boolean properties that can be selected (disabled, checked, active), which yields 8 unique combinations.
+  However, 2 of these combinations are not possible (disabled + active)
+  */
+
+  /* -----NOT DISABLED----- */
+
+  /* disabled: F, checked: F */
+  input:not(:disabled):not(:checked) ~ span[class*='bp3-control-indicator'] {
+    --box-background: var(--white);
+    --box-border: var(--grey-500);
+    @mixin radio-styles;
+  }
+
+  /* disabled: F, checked: T */
+  input:not(:disabled):checked ~ span[class*='bp3-control-indicator'] {
+    --box-background: var(--blue-500);
+    --box-border: var(--blue-500);
+    @mixin radio-styles;
+  }
+
+  /* disabled: F, checked: F, active: T */
+  input:not(:disabled):not(:checked):active ~ span[class*='bp3-control-indicator'] {
+    --box-background: var(--grey-100);
+    --box-border: var(--grey-500);
+    @mixin radio-styles;
+  }
+
+  /* disabled: F, checked: T, active: T */
+  input:not(:disabled):checked:active ~ span[class*='bp3-control-indicator'] {
+    --box-background: var(--blue-700);
+    --box-border: var(--blue-700);
+    @mixin radio-styles;
+  }
+
+  /* -----DISABLED----- */
+
+  /* disabled: T, checked: F */
+  input:disabled:not(:checked) ~ span[class*='bp3-control-indicator'] {
+    --box-background: var(--white);
+    --box-border: var(--grey-300);
+    @mixin radio-styles;
+  }
+
+  /* disabled: T, checked: T */
+  input:disabled:checked ~ span[class*='bp3-control-indicator'] {
+    opacity: 0.5;
+    --box-background: var(--blue-500);
+    --box-border: var(--blue-500);
+    @mixin radio-styles;
+
+    /* Style little white circle in the middle of blue circle */
+    &::before {
+      opacity: unset !important;
+    }
+  }
+}
+
+.radioGroup {
+  font-family: var(--font-family);
+  font-size: var(--font-size, var(--font-size-normal));
+  color: var(--grey-800);
+}
