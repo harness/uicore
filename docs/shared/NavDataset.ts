@@ -73,6 +73,9 @@ export default [
         url: '/tooltip'
       },
       {
+        label: 'Tag',
+        url: '/tag'
+      }, {
         label: 'Radio',
         url: '/radio'
       },
