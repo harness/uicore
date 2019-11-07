@@ -1,0 +1,95 @@
+.switch {
+  --switch-height: 12px;
+
+  /* create template for repeated css into which vars can be passed */
+  @define-mixin switch-styles {
+    background: var(--oval-background) !important;
+    box-shadow: inset 0 0 0 1px var(--oval-border), inset 0 -1px 0 var(--oval-border) !important; /* oval border */
+
+    &::before {
+      box-shadow: inset 0 0 0 1px var(--circle-border), inset 0 -1px 0 var(--circle-border) !important; /* circle border */
+    }
+  }
+
+  font-family: var(--font-family);
+  font-size: var(--font-size, var(--font-size-normal));
+  color: var(--grey-800);
+
+  /* oval */
+  > span[class*='bp3-control-indicator'] {
+    height: var(--switch-height) !important;
+    width: 22px !important;
+    min-width: 22px !important;
+
+    /* circle in center of button */
+    &::before {
+      width: var(--switch-height) !important;
+      height: var(--switch-height) !important;
+      margin: 0px !important;
+    }
+  }
+
+  /* horizontal alignment of circle in center of button */
+  > input:checked ~ span[class*='bp3-control-indicator']::before {
+    left: calc(100% - var(--switch-height)) !important;
+  }
+
+  /*
+  There are 3 boolean properties that can be selected (disabled, checked, active), which yields 8 unique combinations.
+  However, 2 of these combinations are not possible (disabled + active)
+  */
+
+  /* -----NOT DISABLED----- */
+
+  /* disabled: F, checked: F */
+  input:not(:disabled):not(:checked) ~ span[class*='bp3-control-indicator'] {
+    --oval-background: var(--grey-200);
+    --oval-border: var(--grey-400);
+    --circle-border: var(--grey-500);
+    @mixin switch-styles;
+  }
+
+  /* disabled: F, checked: T */
+  input:not(:disabled):checked ~ span[class*='bp3-control-indicator'] {
+    --oval-background: var(--blue-500);
+    --oval-border: var(--blue-500);
+    --circle-border: var(--blue-600);
+    @mixin switch-styles;
+  }
+
+  /* disabled: F, checked: F, active: T */
+  input:not(:disabled):not(:checked):active ~ span[class*='bp3-control-indicator'] {
+    --oval-background: var(--grey-300);
+    --oval-border: var(--grey-500);
+    --circle-border: var(--grey-500);
+    @mixin switch-styles;
+  }
+
+  /* disabled: F, checked: T, active: T */
+  input:not(:disabled):checked:active ~ span[class*='bp3-control-indicator'] {
+    --oval-background: var(--blue-500);
+    --oval-border: var(--blue-700);
+    --circle-border: var(--blue-700);
+    @mixin switch-styles;
+  }
+
+  /* -----DISABLED----- */
+
+  /* disabled: T, checked: F */
+  input:disabled:not(:checked) ~ span[class*='bp3-control-indicator'] {
+    opacity: 0.5;
+    --oval-background: var(--grey-200);
+    --oval-border: var(--grey-400);
+    --circle-border: var(--grey-400);
+    @mixin switch-styles;
+  }
+
+  /* disabled: T, checked: T */
+  input:disabled:checked ~ span[class*='bp3-control-indicator'] {
+    opacity: 0.5;
+    --oval-background: var(--blue-500);
+    --oval-border: var(--blue-500);
+    --circle-border: var(--blue-600);
+    @mixin switch-styles;
+  }
+}
