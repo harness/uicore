@@ -47,7 +47,7 @@ exports[`<Button/> Component > snapshots for Button component #0`] = `
   >
     <span
       icon="chevron-left"
-      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="chevron-left" width="12" height="12" viewBox="0 0 16 16">
         <desc>chevron-left</desc>
         <path
@@ -76,7 +76,9 @@ exports[`<Button/> Component > snapshots for Button component #0`] = `
     class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
     tabindex="-1"
   >
-    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+    <span
+      icon="cog"
+      class="bp3-icon bp3-icon-cog StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="cog" width="12" height="12" viewBox="0 0 16 16">
         <desc>cog</desc>
         <path
@@ -165,7 +167,7 @@ exports[`<Button/> Component > snapshots for Button component #1`] = `
   >
     <span
       icon="chevron-left"
-      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="chevron-left" width="12" height="12" viewBox="0 0 16 16">
         <desc>chevron-left</desc>
         <path
@@ -194,7 +196,9 @@ exports[`<Button/> Component > snapshots for Button component #1`] = `
     class="bp3-button bp3-disabled bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-primary--2Xgi"
     tabindex="-1"
   >
-    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+    <span
+      icon="cog"
+      class="bp3-icon bp3-icon-cog StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="cog" width="12" height="12" viewBox="0 0 16 16">
         <desc>cog</desc>
         <path
@@ -284,7 +288,7 @@ exports[`<Button/> Component > snapshots for Button component #2`] = `
   >
     <span
       icon="chevron-left"
-      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="chevron-left" width="12" height="12" viewBox="0 0 16 16">
         <desc>chevron-left</desc>
         <path
@@ -313,7 +317,9 @@ exports[`<Button/> Component > snapshots for Button component #2`] = `
     class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
     tabindex="-1"
   >
-    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+    <span
+      icon="cog"
+      class="bp3-icon bp3-icon-cog StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="cog" width="12" height="12" viewBox="0 0 16 16">
         <desc>cog</desc>
         <path
@@ -410,7 +416,7 @@ exports[`<Button/> Component > snapshots for Button component #3`] = `
   >
     <span
       icon="chevron-left"
-      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="chevron-left" width="12" height="12" viewBox="0 0 16 16">
         <desc>chevron-left</desc>
         <path
@@ -439,7 +445,9 @@ exports[`<Button/> Component > snapshots for Button component #3`] = `
     class="bp3-button bp3-disabled bp3-minimal StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws"
     tabindex="-1"
   >
-    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+    <span
+      icon="cog"
+      class="bp3-icon bp3-icon-cog StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="cog" width="12" height="12" viewBox="0 0 16 16">
         <desc>cog</desc>
         <path
@@ -536,7 +544,7 @@ exports[`<Button/> Component > snapshots for Button component #4`] = `
   >
     <span
       icon="chevron-left"
-      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="chevron-left" width="12" height="12" viewBox="0 0 16 16">
         <desc>chevron-left</desc>
         <path
@@ -565,7 +573,9 @@ exports[`<Button/> Component > snapshots for Button component #4`] = `
     class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-success--hn02"
     tabindex="-1"
   >
-    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+    <span
+      icon="cog"
+      class="bp3-icon bp3-icon-cog StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="cog" width="12" height="12" viewBox="0 0 16 16">
         <desc>cog</desc>
         <path
@@ -655,7 +665,7 @@ exports[`<Button/> Component > snapshots for Button component #5`] = `
   >
     <span
       icon="chevron-left"
-      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="chevron-left" width="12" height="12" viewBox="0 0 16 16">
         <desc>chevron-left</desc>
         <path
@@ -684,7 +694,9 @@ exports[`<Button/> Component > snapshots for Button component #5`] = `
     class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-warning--2N1t"
     tabindex="-1"
   >
-    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+    <span
+      icon="cog"
+      class="bp3-icon bp3-icon-cog StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="cog" width="12" height="12" viewBox="0 0 16 16">
         <desc>cog</desc>
         <path
@@ -774,7 +786,7 @@ exports[`<Button/> Component > snapshots for Button component #6`] = `
   >
     <span
       icon="chevron-left"
-      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws"
+      class="bp3-icon bp3-icon-chevron-left StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="chevron-left" width="12" height="12" viewBox="0 0 16 16">
         <desc>chevron-left</desc>
         <path
@@ -803,7 +815,9 @@ exports[`<Button/> Component > snapshots for Button component #6`] = `
     class="bp3-button bp3-disabled StyledProps---font--2ipy Button---button--4ZD5 StyledProps---main--1Wws StyledProps---intent-danger--1PFK"
     tabindex="-1"
   >
-    <span icon="cog" class="bp3-icon bp3-icon-cog StyledProps---main--1Wws"
+    <span
+      icon="cog"
+      class="bp3-icon bp3-icon-cog StyledProps---main--1Wws StyledProps---padding-right-xsmall--3D04"
       ><svg data-icon="cog" width="12" height="12" viewBox="0 0 16 16">
         <desc>cog</desc>
         <path
