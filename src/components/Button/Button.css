@@ -55,7 +55,8 @@
       }
     }
 
-    &:active {
+    &:active,
+    &[class*='active'] {
       border: 1px solid var(--blue-400);
       color: var(--blue-500);
       background-color: var(--blue-200);
@@ -76,6 +77,16 @@
     &[class*='minimal'] {
       border: none;
       background: none;
+
+      &:hover {
+        background-color: var(--blue-100);
+      }
+
+      &:active,
+      &[class*='active'] {
+        background-color: var(--blue-200);
+        color: var(--blue-500);
+      }
     }
 
     /* Primary */
@@ -89,7 +100,8 @@
         background-color: var(--blue-600);
       }
 
-      &:active {
+      &:active,
+      &[class*='active'] {
         border: 1px solid var(--blue-800);
         background-color: var(--blue-800);
       }
@@ -108,7 +120,8 @@
           background-color: var(--blue-100);
         }
 
-        &:active {
+        &:active,
+        &[class*='active'] {
           background-color: var(--blue-200);
         }
       }
@@ -125,7 +138,8 @@
         background-color: var(--green-600);
       }
 
-      &:active {
+      &:active,
+      &[class*='active'] {
         border: 1px solid var(--green-800);
         background-color: var(--green-800);
       }
@@ -147,7 +161,8 @@
         background-color: var(--yellow-600);
       }
 
-      &:active {
+      &:active,
+      &[class*='active'] {
         border: 1px solid var(--yellow-800);
         background-color: var(--yellow-800);
       }
@@ -169,7 +184,8 @@
         background-color: var(--red-600);
       }
 
-      &:active {
+      &:active,
+      &[class*='active'] {
         border: 1px solid var(--red-800);
         background-color: var(--red-800);
       }
@@ -184,15 +200,10 @@
   :global {
     .bp3-icon {
       color: currentColor !important;
-      margin-right: 5px;
     }
 
     .bp3-spinner .bp3-spinner-head {
       stroke: currentColor;
-    }
-
-    .bp3-button-text {
-      margin-right: 5px;
     }
   }
 

@@ -4,6 +4,7 @@ import { Button as BButton, AnchorButton, IButtonProps, Classes } from '@bluepri
 import css from './Button.css'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
 import styledClass from '../../styled-props/StyledProps.css'
+import { PaddingProps } from '../../styled-props/padding/PaddingProps'
 import { Utils } from '../../core/Utils'
 import { IconName, Icon, IconProps } from '../../icons/Icon'
 import { Popover, PopoverProps } from '../Popover/Popover'
@@ -68,11 +69,13 @@ export function Button(props: ButtonProps) {
   const Component: ElementType = props.href ? AnchorButton : BButton
   // Set icon size to 12px when there's one with button text
   const iconSize = (icon || rightIcon) && props.text ? 12 : undefined
+  // Extra left padding for left icon, for right icon, Blueprint already has proper margin
+  const leftIconPadding: PaddingProps | undefined = props.text ? { right: 'xsmall' } : undefined
   const button = (
     <Component
       {...omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps')}
       loading={loading}
-      icon={icon && <Icon name={icon} size={iconSize} {...props.iconProps} />}
+      icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}
       rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
       onClick={onClick}
       className={styledClasses(
