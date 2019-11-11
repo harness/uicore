@@ -16,7 +16,7 @@ const Title = (props: React.ComponentProps<typeof Heading>) => {
   if (link) {
     _children = [
       <span key="title">{title}</span>,
-      <Link icon="edit" target="_blank" key="edit" href={`${BASE_URL}${link}`} font="small">
+      <Link icon="edit" minimal target="_blank" key="edit" href={`${BASE_URL}${link}`} font="small">
         Edit this page
       </Link>
     ]

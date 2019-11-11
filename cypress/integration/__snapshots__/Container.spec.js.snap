@@ -30,7 +30,7 @@ exports[`<Container/> Component > snapshots for Container component #1`] = `
   <a
     role="button"
     href="/workflow/123"
-    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 Button---link--3a0q Button---iconOnly--_pvt StyledProps---main--1Wws StyledProps---font-size-medium--aOY7"
+    class="bp3-button StyledProps---font--2ipy Button---button--4ZD5 Button---link--3a0q StyledProps---main--1Wws StyledProps---font-size-medium--aOY7"
     tabindex="0"
     ><span class="bp3-button-text">Demo Workflow</span></a
   >
