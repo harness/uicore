@@ -68,9 +68,9 @@ export function Button(props: ButtonProps) {
 
   const Component: ElementType = props.href ? AnchorButton : BButton
   // Set icon size to 12px when there's one with button text
-  const iconSize = (icon || rightIcon) && props.text ? 12 : undefined
+  const iconSize = (icon || rightIcon) && (props.text || props.href) ? 12 : undefined
   // Extra left padding for left icon, for right icon, Blueprint already has proper margin
-  const leftIconPadding: PaddingProps | undefined = props.text ? { right: 'xsmall' } : undefined
+  const leftIconPadding: PaddingProps | undefined = props.text || props.href ? { right: 'xsmall' } : undefined
   const button = (
     <Component
       {...omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps')}
@@ -83,8 +83,8 @@ export function Button(props: ButtonProps) {
         styledClass.font,
         props.className || '',
         css.button,
-        props.href ? css.link : '',
-        !props.text && !props.intent ? css.iconOnly : ''
+        props.href && !(props.icon || props.rightIcon) && !props.intent ? css.link : '',
+        !props.text && !props.intent && !props.href ? css.iconOnly : ''
       )}
     />
   )

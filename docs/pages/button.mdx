@@ -150,6 +150,40 @@ import { Button } from '@wings-software/uikit'
 </Container>
 ```
 
+## Link Button
+
+```js live=true
+<Layout.Horizontal spacing="small" id="link-button">
+  <Link href="/" icon="edit">
+    Edit This Page
+  </Link>
+  <Link href="//harness.io" target="_blank" icon="link">
+    Go to Harness
+  </Link>
+  <Link href="/" icon="edit" intent="primary">
+    Edit This Page
+  </Link>
+  <Link href="/" icon="edit" minimal>
+    Edit This Page
+  </Link>
+  <Link href="//harness.io" target="_blank" icon="link" minimal>
+    Go to Harness
+  </Link>
+  <Link href="/" icon="edit" intent="primary">
+    Edit This Page
+  </Link>
+  <Link href="//harness.io" target="_blank" icon="link" intent="primary">
+    Go to Harness
+  </Link>
+  <Link href="/" icon="edit" intent="primary" minimal>
+    Edit This Page
+  </Link>
+  <Link href="//harness.io" target="_blank" icon="link" intent="primary" minimal>
+    Go to Harness
+  </Link>
+</Layout.Horizontal>
+```
+
 ## Loading Transition
 
 Button's `onClick` accepts an async function. When the button is clicked, loading state is triggered automatically. When the `onClick` function is resolved, loading state is removed.

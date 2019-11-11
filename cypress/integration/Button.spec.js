@@ -37,5 +37,8 @@ context('<Button/> Component', () => {
 
     cy.get('#icon-only-borderless-buttons').toMatchSnapshot()
     cy.get('#icon-only-borderless-buttons').toMatchImageSnapshot()
+
+    cy.get('#link-button').toMatchSnapshot()
+    cy.get('#link-button').toMatchImageSnapshot()
   })
 })
