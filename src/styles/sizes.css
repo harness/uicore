@@ -4,6 +4,7 @@
   --font-size-medium: 18px; /* H2 */
   --font-size-large: 29px; /* H1 */
 
+  --spacing-none: 0px;
   --spacing-xsmall: 5px;
   --spacing-small: 10px;
   --spacing-medium: 15px;

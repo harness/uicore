@@ -88,5 +88,14 @@ export default [
         url: '/checkbox'
       }
     ]
+  },
+  {
+    name: 'Form Components',
+    items: [
+      {
+        label: 'TextInput',
+        url: '/textinput'
+      }
+    ]
   }
 ]

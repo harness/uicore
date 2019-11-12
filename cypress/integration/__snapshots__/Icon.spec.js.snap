@@ -16191,7 +16191,7 @@ exports[`<Icon/> Component > snapshots for Harness <Icon/> #0`] = `
         >
           <span
             class="bp3-icon StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
-            ><svg height="24" width="24">
+            ><svg viewBox="0 0 14 14" width="24" height="24">
               <mask id="deployment-aborted-new_svg__a" fill="#fff">
                 <path d="M0 14h14V0H0z" fill-rule="evenodd"></path>
               </mask>
@@ -16254,7 +16254,7 @@ exports[`<Icon/> Component > snapshots for Harness <Icon/> #0`] = `
         >
           <span
             class="bp3-icon StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
-            ><svg height="24" width="24">
+            ><svg viewBox="0 0 14 14" width="24" height="24">
               <g fill="none" fill-rule="evenodd">
                 <rect fill="#f45858" height="14" rx="4" width="14"></rect>
                 <path
@@ -16313,7 +16313,7 @@ exports[`<Icon/> Component > snapshots for Harness <Icon/> #0`] = `
         >
           <span
             class="bp3-icon StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
-            ><svg height="24" width="24">
+            ><svg viewBox="0 0 14 14" width="24" height="24">
               <g fill="none" fill-rule="evenodd">
                 <path d="M7 0a7 7 0 110 14A7 7 0 017 0" fill="#ff8f3f"></path>
                 <rect fill="#ff8f3f" height="14" rx="4" width="14"></rect>
@@ -16370,7 +16370,7 @@ exports[`<Icon/> Component > snapshots for Harness <Icon/> #0`] = `
         >
           <span
             class="bp3-icon StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
-            ><svg height="24" width="24">
+            ><svg viewBox="0 0 14 14" width="24" height="24">
               <g fill="none" fill-rule="evenodd">
                 <rect fill="#25a6f7" height="14" rx="4" width="14"></rect>
                 <path
@@ -16429,7 +16429,7 @@ exports[`<Icon/> Component > snapshots for Harness <Icon/> #0`] = `
         >
           <span
             class="bp3-icon StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
-            ><svg height="24" width="24">
+            ><svg viewBox="0 0 14 14" width="24" height="24">
               <mask id="deployment-paused-new_svg__a" fill="#fff">
                 <path d="M0 14h14V0H0z" fill-rule="evenodd"></path>
               </mask>

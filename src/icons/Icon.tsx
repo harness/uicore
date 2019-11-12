@@ -4,13 +4,13 @@
  *
  * TODO: Implement accessible attributes for icons as explained in https://blueprintjs.com/docs/#core/components/icon.
  */
-import { HarnessIcons } from './HarnessIcons'
+import { HarnessIcons, HarnessIconName } from './HarnessIcons'
 import React, { ElementType, HTMLAttributes } from 'react'
 import { Assign } from 'utility-types'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
 import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
 
-type IconName = (typeof HarnessIcons)[keyof typeof HarnessIcons] | BIconName
+type IconName = HarnessIconName | BIconName
 
 interface IconProps extends Assign<HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'>> {
   name: IconName

@@ -1,4 +1,8 @@
 @define-mixin makeMargin $direction, $prefix {
+  &.margin$(prefix)$(direction)-none {
+    margin$(prefix)$(direction): var(--spacing-none);
+  }
+
   &.margin$(prefix)$(direction)-xsmall {
     margin$(prefix)$(direction): var(--spacing-xsmall);
   }

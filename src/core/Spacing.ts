@@ -1,4 +1,5 @@
 const Spacing = {
+  NONE: 'none' as 'none',
   XSMALL: 'xsmall' as 'xsmall',
   SMALL: 'small' as 'small',
   MEDIUM: 'medium' as 'medium',

@@ -24,6 +24,7 @@ export default ({ children, live, render }) => {
             display: 'block',
             alignItems: 'center',
             justifyContent: 'center',
+            fontFamily: 'var(--font-family)',
             borderRadius: '5px 5px 0 0'
           }}
         />

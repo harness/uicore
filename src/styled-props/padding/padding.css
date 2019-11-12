@@ -1,4 +1,8 @@
 @define-mixin makePadding $direction, $prefix {
+  &.padding$(prefix)$(direction)-none {
+    padding$(prefix)$(direction): var(--spacing-none);
+  }
+
   &.padding$(prefix)$(direction)-xsmall {
     padding$(prefix)$(direction): var(--spacing-xsmall);
   }

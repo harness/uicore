@@ -5,6 +5,7 @@ const pattern = path.resolve('src/icons/*.svg')
 const files = glob.sync(pattern, { nodir: true, realpath: false })
 const _imports = ["import { FunctionComponent, ElementType } from 'react'", "import { KVO } from 'core/Types'"]
 const _exports = []
+let iconNames = 'type HarnessIconName = \n'
 
 function toPascalCase(str) {
   return str
@@ -23,13 +24,17 @@ files
     const ComponentName = toPascalCase(name)
     const key = /^[a-z][a-z0-9]+$/i.test(name) ? name : "'" + name + "'"
 
+    iconNames += "  | '" + name + "'\n"
+
     _imports.push(`import ${ComponentName} from './${fileName}'`)
     _exports.push('  ' + key + ': ' + ComponentName)
   })
 
 console.log(
   _imports.join('\n') +
+    '\n\n' +
+    iconNames +
     '\n\nconst HarnessIcons: KVO<FunctionComponent<ElementType>> = {\n' +
     _exports.join(',\n') +
-    '\n}\n\nexport { HarnessIcons }'
+    '\n}\n\nexport { HarnessIcons, HarnessIconName }'
 )
