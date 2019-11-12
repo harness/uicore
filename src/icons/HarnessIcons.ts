@@ -192,7 +192,7 @@ import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 
-type HarnessIconName = 
+type HarnessIconName =
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -384,7 +384,6 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
-
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-approval': CommandApproval,
