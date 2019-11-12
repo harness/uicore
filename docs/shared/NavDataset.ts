@@ -75,7 +75,8 @@ export default [
       {
         label: 'Tag',
         url: '/tag'
-      }, {
+      },
+      {
         label: 'Radio',
         url: '/radio'
       },
@@ -95,6 +96,10 @@ export default [
       {
         label: 'TextInput',
         url: '/textinput'
+      },
+      {
+        label: 'DurationInput',
+        url: '/durationinput'
       }
     ]
   }

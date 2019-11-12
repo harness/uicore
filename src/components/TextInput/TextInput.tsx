@@ -12,9 +12,9 @@ export interface TextInputProps extends Omit<IInputGroupProps, 'className' | 'le
   leftIconProps?: IconProps
   rightElement?: IconName
   rightElementProps?: IconName
-  label: string
+  label?: string
   errorText?: string
-  intent: Intent
+  intent?: Intent
   errorInPopover?: boolean
   popoverProps?: PopoverProps
 }
