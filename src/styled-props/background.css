@@ -43,6 +43,10 @@
     background: var(--grey-300);
   }
 
+  &.background-grey250 {
+    background: var(--grey-250);
+  }
+
   &.background-grey200 {
     background: var(--grey-200);
   }
@@ -233,5 +237,9 @@
 
   &.background-magenta500 {
     background: var(--magenta-500);
+  }
+
+  &.background-aqua500 {
+    background: var(--aqua-500);
   }
 }

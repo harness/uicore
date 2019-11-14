@@ -10,6 +10,7 @@ export type Color =
   | 'grey400'
   | 'grey350'
   | 'grey300'
+  | 'grey250'
   | 'grey200'
   | 'grey100'
   | 'blue800'
@@ -58,3 +59,4 @@ export type Color =
   | 'seaGreen500'
   | 'orange500'
   | 'magenta500'
+  | 'aqua500'
