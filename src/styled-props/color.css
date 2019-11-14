@@ -52,6 +52,10 @@
     color: var(--grey-300);
   }
 
+  &.color-grey250 {
+    color: var(--grey-250);
+  }
+
   &.color-grey200 {
     color: var(--grey-200);
   }
@@ -242,5 +246,9 @@
 
   &.color-magenta500 {
     color: var(--magenta-500);
+  }
+
+  &.color-aqua500 {
+    color: var(--aqua-500);
   }
 }
