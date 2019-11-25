@@ -42,7 +42,7 @@ export function useService<T extends XhrServiceFunc>(
   const [shouldInvokeServiceCall, setInvokeServiceCall] = useState(!deps.length) // when there's no predicate, process right away
   const [predicateMap] = useState(new WeakSet())
   let xhrGroup: string
-  let unmounted: boolean = false
+  let unmounted = false
 
   if (!shouldInvokeServiceCall && deps.length && deps.every(entry => entry && typeof entry === 'object')) {
     let changed = false
