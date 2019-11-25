@@ -7,9 +7,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: 'Setup Node'
+        uses: actions/setup-node@v1
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_HARNESS_BOT_TOKEN}}
       - name: Lint
         run: |
           yarn install
           yarn lint
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_HARNESS_BOT_TOKEN}}
