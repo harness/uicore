@@ -31,3 +31,4 @@ jobs:
         env:
           CI: true
           NEXT_TELEMETRY_DISABLED: 1
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
