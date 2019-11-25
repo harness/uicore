@@ -17,7 +17,10 @@ jobs:
       - uses: kingscooty/actions-yarn-cy@master
       - name: Start Docs, and Run Tests
         run: |
-          npm run dep
+          npm install
+          cd docs
+          npm install
+          cd ..
           ./node_modules/.bin/tsc --emitDeclarationOnly --declarationDir ./docs/static/
           NODE_ENV=development ./node_modules/.bin/webpack
           cd docs
