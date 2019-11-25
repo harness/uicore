@@ -7,11 +7,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: 'Setup GPR Token'
-        run: |
-          echo //npm.pkg.github.com/:_authToken=${{secrets.GITHUB_HARNESS_BOT_TOKEN}} >> .npmrc
-          echo always-auth=true >> .npmrc
+      - name: Set up token
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+          registry-url: https://npm.pkg.github.com
+          scope: '@wings-software'
       - name: Lint
         run: |
-          yarn
-          yarn lint
+          npm install
+          npm run lint
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
