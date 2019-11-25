@@ -1,3 +1,9 @@
+/*
+  Make sure all color changes also reflect in `src/core/Color.ts`, `src/styled-props/color.css` and `src/styled-props/background.css` as well. 
+  A StyledProps based component can define color/background color by using React/TypeScript props directly like 
+  <Component color="red250"/>, <Component background="grey250"/>
+*/
+
 :root {
   --black: #000;
   --white: #fff;
@@ -11,6 +17,7 @@
   --grey-400: #9aa5b5;
   --grey-350: #b8bfca;
   --grey-300: #d5dae0;
+  --grey-250: #e4e7eb;
   --grey-200: #eff2f4;
   --grey-100: #f8f9fa;
 
@@ -65,4 +72,5 @@
   --sea-green-500: #35d6cb;
   --orange-500: #ff8f3f;
   --magenta-500: #ed61b5;
+  --aqua-500: #61c1dd;
 }
