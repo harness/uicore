@@ -13,5 +13,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_HARNESS_BOT_TOKEN}}
       - name: Lint
         run: |
-          yarn install
+          yarn dep
           yarn lint
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_HARNESS_BOT_TOKEN}}
