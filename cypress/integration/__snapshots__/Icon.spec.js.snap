@@ -967,6 +967,40 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
           tabindex="0"
         >
           <span
+            icon="archive"
+            class="bp3-icon bp3-icon-archive StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="archive"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>archive</desc>
+              <path
+                d="M16.434 0a1 1 0 01.857.486L20 5v14a1 1 0 01-1 1H1a1 1 0 01-1-1V5L2.709.486A1 1 0 013.566 0h12.868zM10 8c-.55 0-1 .45-1 1v4.58l-1.29-1.29-.081-.073A.996.996 0 007 11.99a1.003 1.003 0 00-.71 1.71l3 3 .096.084c.168.13.38.206.614.206.28 0 .53-.11.71-.29l3-3 .084-.096a1.003 1.003 0 00-1.504-1.324L11 13.58V9l-.007-.116A1.004 1.004 0 0010 8zm6-6H4L2 5.002h16L16 2z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            archive
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
             icon="arrow-bottom-left"
             class="bp3-icon bp3-icon-arrow-bottom-left StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
             ><svg
@@ -3386,6 +3420,40 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
             class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
           >
             dashboard
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
+            icon="data-lineage"
+            class="bp3-icon bp3-icon-data-lineage StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="data-lineage"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>data-lineage</desc>
+              <path
+                d="M1.053 0C.47 0 0 .471 0 1.053V4.21c0 .58.471 1.052 1.053 1.052h3.275a6.332 6.332 0 003.728 4.738 6.33 6.33 0 00-3.728 4.737l-3.275-.001C.47 14.737 0 15.208 0 15.789v3.158C0 19.53.471 20 1.053 20h7.435c.581 0 1.053-.471 1.053-1.053V15.79c0-.58-.472-1.052-1.053-1.052H5.406a5.293 5.293 0 015.195-4.21v2.105c0 .58.471 1.052 1.052 1.052h7.294c.582 0 1.053-.471 1.053-1.052V7.368c0-.58-.471-1.052-1.053-1.052h-7.294c-.581 0-1.052.471-1.052 1.052v2.106a5.293 5.293 0 01-5.194-4.21h3.081c.581 0 1.053-.472 1.053-1.053V1.053C9.54.47 9.069 0 8.488 0H1.053z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            data-lineage
           </p>
         </div></span
       ></span
@@ -8754,6 +8822,44 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
           tabindex="0"
         >
           <span
+            icon="learning"
+            class="bp3-icon bp3-icon-learning StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="learning"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>learning</desc>
+              <path
+                d="M10.551 1.127a1.256 1.256 0 00-1.102 0L.456 5.89c-.608.309-.608.913 0 1.222l8.993 4.762c.334.17.767.17 1.102 0l8.992-4.762c.61-.309.61-.913 0-1.222l-8.992-4.762z"
+                fill-rule="evenodd"
+              ></path>
+              <path
+                d="M18 6.5l.016 4.514c.002.548.447.99.994.99a.99.99 0 00.99-.99V6.5h-2zM3.366 10.033l6.401 3.358a.5.5 0 00.465 0l6.406-3.358a.25.25 0 01.366.221v5.109a.25.25 0 01-.139.224l-6.64 3.302a.5.5 0 01-.446 0l-6.64-3.302A.25.25 0 013 15.363v-5.108a.25.25 0 01.366-.222z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            learning
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
             icon="left-join"
             class="bp3-icon bp3-icon-left-join StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
             ><svg
@@ -9908,6 +10014,40 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
           tabindex="0"
         >
           <span
+            icon="new-drawing"
+            class="bp3-icon bp3-icon-new-drawing StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="new-drawing"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>new-drawing</desc>
+              <path
+                d="M18.7 13.7c.5 0 1 .4 1 1 0 .257-.073.44-.22.614l-.08.086-4 4c-.2.2-.4.3-.7.3-.6 0-1-.5-1-1 0-.257.073-.44.22-.614L14 18l4-4c.2-.2.4-.3.7-.3zM1.8 0l8.378 2.982A3.003 3.003 0 0013 7a3.003 3.003 0 003.877 2.87l.723 2.53.049.06a.41.41 0 01.051.24c0 .167-.07.403-.208.593l-.092.107-4 4c-.2.2-.4.3-.7.3-.075 0-.15-.056-.225-.084L12.4 17.6l-7-2-.112-.042c-.223-.094-.431-.244-.542-.45L4.7 15 0 1.8l.5-.6L7 7.7c-.2.3-.3.6-.3 1 0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2a1.68 1.68 0 00-.871.22L7.7 7 1.2.5l.6-.5zM16 0c.55 0 1 .45 1 1v2h2c.55 0 1 .45 1 1s-.45 1-1 1h-2v2c0 .432-.278.803-.664.941l-.01.004A.989.989 0 0116 8c-.55 0-1-.45-1-1V5h-2c-.55 0-1-.45-1-1l.007-.116C12.065 3.388 12.489 3 13 3h2V1c0-.55.45-1 1-1z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            new-drawing
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
             icon="new-grid-item"
             class="bp3-icon bp3-icon-new-grid-item StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
             ><svg
@@ -9926,6 +10066,74 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
             class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
           >
             new-grid-item
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
+            icon="new-layer"
+            class="bp3-icon bp3-icon-new-layer StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="new-layer"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>new-layer</desc>
+              <path
+                d="M11.513 2.663A2 2 0 0013 6h1v1a2 2 0 104 0v-.733l1.5.833c.3.2.5.5.5.9s-.2.7-.5.9l-9 5c-.2.1-.3.1-.5.1s-.3 0-.5-.1l-9-5C.2 8.7 0 8.4 0 8s.2-.7.5-.9l9-5c.2-.1.3-.1.5-.1s.3 0 .5.1l1.013.563zM17 3h2a1 1 0 010 2h-2v2a1 1 0 01-2 0V5h-2a1 1 0 010-2h2V1a1 1 0 012 0v2z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            new-layer
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
+            icon="new-layers"
+            class="bp3-icon bp3-icon-new-layers StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="new-layers"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>new-layers</desc>
+              <path
+                d="M17 3h2a1 1 0 010 2h-2v2a1 1 0 01-2 0V5h-2a1 1 0 010-2h2V1a1 1 0 012 0v2zm-1.252 5.984L10.5 11.9c-.2.1-.3.1-.5.1s-.3 0-.5-.1l-9-5C.2 6.7 0 6.4 0 6s.2-.7.5-.9l9-5c.2-.1.3-.1.5-.1s.3 0 .5.1L13.92 2H13a2 2 0 100 4h1v1a2 2 0 001.748 1.984zm2.07-1.15C17.935 7.58 18 7.298 18 7V6h1c.353 0 .684-.091.972-.251.018.078.028.162.028.251 0 .4-.2.7-.5.9l-1.682.934zM19 9c.6 0 1 .4 1 1 0 .4-.2.7-.5.9l-9 5c-.2.1-.3.1-.5.1s-.3 0-.5-.1l-9-5c-.3-.2-.5-.5-.5-.9 0-.6.4-1 1-1 .2 0 .3 0 .5.1l8.5 4.8 8.5-4.8c.2-.1.3-.1.5-.1zm0 4c.6 0 1 .4 1 1 0 .4-.2.7-.5.9l-9 5c-.2.1-.3.1-.5.1s-.3 0-.5-.1l-9-5c-.3-.2-.5-.5-.5-.9 0-.6.4-1 1-1 .2 0 .3 0 .5.2l8.5 4.7 8.5-4.8c.2-.1.3-.1.5-.1z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            new-layers
           </p>
         </div></span
       ></span
@@ -12784,6 +12992,48 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
           tabindex="0"
         >
           <span
+            icon="signal-search"
+            class="bp3-icon bp3-icon-signal-search StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="signal-search"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>signal-search</desc>
+              <path
+                d="M7.15 10.33c.888.8 1.999 1.36 3.228 1.574l2.326 6.98a.846.846 0 01-.535 1.07.844.844 0 01-1.072-.535l-1.225-3.671H7.125L5.9 19.419a.85.85 0 01-1.072.536.85.85 0 01-.536-1.071l2.857-8.555zm1.353 1.305l-.808 2.413h1.607l-.8-2.413zM5 5.5c0 .76.13 1.49.37 2.17-.496 1.056-.313 2.356.704 3.29.385.353.404.94.038 1.311a.982.982 0 01-1.356.038c-2.183-2.01-2-5.125.01-6.94a.95.95 0 01.24-.156A6.421 6.421 0 005 5.5z"
+                fill-rule="evenodd"
+              ></path>
+              <path
+                d="M3.874 13.185c-1.346-.918-2.187-2.67-2.187-4.34 0-1.752.757-3.254 2.187-4.339.42-.25.42-.834.168-1.168-.252-.418-.84-.418-1.177-.167C1.014 4.59-.08 6.509.005 8.846c.084 2.253 1.177 4.423 2.86 5.675.168.083.336.166.504.166.253 0 .505-.083.673-.333.337-.418.253-.918-.168-1.169zM12.246 12.309a.98.98 0 01-1.354-.037.917.917 0 01-.206-.324 6.54 6.54 0 001.959-.049 5.125 5.125 0 01-.399.41zM14.631 11.476l1.228 1.229a6.6 6.6 0 01-1.723 1.816c-.169.083-.337.166-.505.166-.253 0-.505-.083-.673-.333-.337-.418-.253-.918.168-1.169.62-.422 1.133-1.022 1.505-1.709z"
+                fill-rule="evenodd"
+              ></path>
+              <path
+                d="M11.5 0C14.54 0 17 2.46 17 5.5c0 .26-.02.51-.06.75l-.03.17c-.04.25-.1.49-.17.73v.01c-.08.24-.17.47-.28.69-.01.04-.03.07-.05.11-.11.23-.24.44-.38.65l3.68 3.68A1.003 1.003 0 0119 14c-.28 0-.53-.11-.7-.29l-3.68-3.68c-.21.14-.42.27-.65.38-.04.01-.07.03-.11.05-.22.11-.45.2-.69.28h-.01c-.24.07-.48.13-.73.17l-.17.03c-.25.04-.5.06-.76.06C8.46 11 6 8.54 6 5.5S8.46 0 11.5 0zm0 1.5c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            signal-search
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
             icon="sim-card"
             class="bp3-icon bp3-icon-sim-card StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
             ><svg
@@ -13559,6 +13809,40 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
             class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
           >
             stop
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
+            icon="stopwatch"
+            class="bp3-icon bp3-icon-stopwatch StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="stopwatch"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>stopwatch</desc>
+              <path
+                d="M10 6a6 6 0 106 6h-6V6zm-.998-1.938A1.015 1.015 0 019 4V2H7a1 1 0 110-2h6a1 1 0 010 2h-2v2c0 .02 0 .041-.002.062A8.001 8.001 0 0110 20a8 8 0 01-.998-15.938z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            stopwatch
           </p>
         </div></span
       ></span
@@ -14766,6 +15050,40 @@ exports[`<Icon/> Component > snapshots for <Icon/> alias to Blueprint icons #0`]
             class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
           >
             two-columns
+          </p>
+        </div></span
+      ></span
+    ></button
+  ><button
+    style="all:unset;justify-self:center;align-self:center;display:inline-block;cursor:pointer"
+  >
+    <span class="bp3-popover-wrapper"
+      ><span class="bp3-popover-target"
+        ><div
+          style="justify-content:center;align-items:center"
+          spacing="small"
+          class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
+          tabindex="0"
+        >
+          <span
+            icon="unarchive"
+            class="bp3-icon bp3-icon-unarchive StyledProps---main--1Wws StyledProps---padding-small--3f0A StyledProps---border--uz_- StyledProps---border-color-grey300--3jwf"
+            ><svg
+              data-icon="unarchive"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+            >
+              <desc>unarchive</desc>
+              <path
+                d="M16.434 0a1 1 0 01.857.486L20 5v14a1 1 0 01-1 1H1a1 1 0 01-1-1V5L2.709.486A1 1 0 013.566 0h12.868zM10 8c-.28 0-.53.11-.71.29l-3 3-.084.096A1.003 1.003 0 007.71 12.71L9 11.41v4.58l.007.116c.058.496.482.884.993.884.55 0 1-.45 1-1v-4.58l1.29 1.29.081.073c.171.139.389.227.629.227a1.003 1.003 0 00.71-1.71l-3-3-.096-.084A1.002 1.002 0 0010 8zm6-6H4L2 5.002h16L16 2z"
+                fill-rule="evenodd"
+              ></path></svg
+          ></span>
+          <p
+            class="StyledProps---font--2ipy StyledProps---main--1Wws StyledProps---font-small--1qQz"
+          >
+            unarchive
           </p>
         </div></span
       ></span

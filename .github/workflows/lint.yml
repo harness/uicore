@@ -7,7 +7,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Set up token
+        uses: actions/setup-node@v1
+        with:
+          registry-url: https://npm.pkg.github.com
+          scope: '@wings-software'
       - name: Lint
         run: |
-          yarn install
-          yarn lint
+          npm install
+          npm run lint
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

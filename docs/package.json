@@ -16,7 +16,8 @@
     "prism-react-renderer": "^0.1.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-live": "^2.2.0"
+    "react-live": "^2.2.0",
+    "@wings-software/xhr-async": "^2.0.3"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.4.0",

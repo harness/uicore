@@ -9,17 +9,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Set up token
+        uses: actions/setup-node@v1
+        with:
+          registry-url: https://npm.pkg.github.com
+          scope: '@wings-software'
       - uses: kingscooty/actions-yarn-cy@master
       - name: Start Docs, and Run Tests
         run: |
-          yarn dep
+          npm install
+          cd docs
+          npm install
+          cd ..
           ./node_modules/.bin/tsc --emitDeclarationOnly --declarationDir ./docs/static/
           NODE_ENV=development ./node_modules/.bin/webpack
           cd docs
           ./node_modules/.bin/next &
           npx wait-on http://localhost:3000
           cd ..
-          yarn test
+          npm run test
         env:
           CI: true
           NEXT_TELEMETRY_DISABLED: 1
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
