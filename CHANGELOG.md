@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.24 - 11/25/09
+
+- `Added` useService hook.
+- `Added` [@wings-software/xhr-async](https://github.com/wings-software/xhr-async) as a peer dependency.
+
 ## 1.0.23 - 11/11/09
 
 - `Changed` TypeScript from 3.6 to 3.7.

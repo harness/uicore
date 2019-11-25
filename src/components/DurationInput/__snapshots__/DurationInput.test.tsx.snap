@@ -88,7 +88,7 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
       >
         <div
           class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-          style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0);"
         >
           <div
             class="bp3-popover"
