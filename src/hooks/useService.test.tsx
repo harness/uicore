@@ -14,12 +14,15 @@ test('userService must return proper states', async () => {
     start = 12,
     pageSize = 1000
 
+  const data = { accountId: 1, name: 'foo' }
+
   const exampleServiceCall = async () => ({
     status,
     total,
     limit,
     offset,
     start,
+    data,
     pageSize,
     statusText: '',
     request: {}
@@ -35,7 +38,8 @@ test('userService must return proper states', async () => {
 
     const {
       loading,
-      status
+      status,
+      data: resultData
       // total: _total,
       // limit: _limit,
       // offset: _offset,
@@ -45,6 +49,7 @@ test('userService must return proper states', async () => {
 
     expect(loading).toEqual(false)
     expect(status).toEqual(200)
+    expect(resultData).toEqual(data)
 
     //
     // Currently useService does not keep track of these params (next iteration)
