@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.27 - 11/25/09
+
+- `Fixed` build issue in Jenkins.
+
+## 1.0.26 - 11/25/09
+
+- `Fixed` empty build 1.0.25.
+
 ## 1.0.25 - 11/25/09
 
 - `Added` useService hook.
