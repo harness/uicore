@@ -4,6 +4,12 @@ export NEXT_TELEMETRY_DISABLED=1
 # Get version from package.json
 export VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json)
 
+# Exit when any command fails
+set -e
+
+# GITHUB_HARNESS_BOT_TOKEN is secret from Jenkins
+echo $GITHUB_HARNESS_BOT_TOKEN > ~/.npmrc
+
 # Create a new branch like v1.0.1
 git checkout -b v$VERSION
 
@@ -21,5 +27,4 @@ git commit . -m"Release version: v$VERSION"
 echo "VERSION=$VERSION" > build.properties
 
 echo "Publishing... v$VERSION"
-echo $GITHUB_HARNESS_BOT_TOKEN > ~/.npmrc
 npm publish
