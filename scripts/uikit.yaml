@@ -20,7 +20,12 @@ spec:
         - mountPath: /jenkins-storage
           name: volume-0
       command: ['bash']
-      args: ['/jenkins-storage/ui/uikit/v$VERSION/scripts/docs-runner.sh', '/jenkins-storage/ui/uikit/v$VERSION']
+      args:
+        [
+          '/jenkins-storage/ui/uikit/v$VERSION/scripts/docs-runner.sh',
+          '/jenkins-storage/ui/uikit/v$VERSION',
+          '$GITHUB_HARNESS_BOT_TOKEN',
+        ]
   volumes:
     - name: volume-0
       persistentVolumeClaim:
