@@ -2,7 +2,8 @@ This repository contains implementation of [Next Generation UI Architecture](htt
 
 ## Local development
 
-`yarn start`
+- `yarn setup` - to set up authentication to access Github Package Registry
+- `yarn start` - to start local build
 
 Then navigate to [http://localhost:3000](http://localhost:3000) to see the integrated documentation system.
 

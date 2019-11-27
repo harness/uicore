@@ -22,7 +22,8 @@
     "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts",
     "ui:watch": "NODE_ENV=development webpack --watch",
     "ui:build": "NODE_ENV=production webpack",
-    "docs:watch": "cd docs; yarn watch"
+    "docs:watch": "cd docs; yarn watch",
+    "setup": "bash scripts/github-package-registry.sh"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/wings-software/uikit",
