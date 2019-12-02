@@ -9,26 +9,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set up token
-        uses: actions/setup-node@v1
-        with:
-          registry-url: https://npm.pkg.github.com
-          scope: '@wings-software'
       - uses: kingscooty/actions-yarn-cy@master
+      - name: Set up Github Package Registry token
+        run: |
+          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GITHUB_HARNESS_BOT_TOKEN >> .npmrc
+          echo always-auth=true >> .npmrc
+        env:
+          GITHUB_HARNESS_BOT_TOKEN: ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }}
       - name: Start Docs, and Run Tests
         run: |
-          npm install
-          cd docs
-          npm install
-          cd ..
+          yarn dep
           ./node_modules/.bin/tsc --emitDeclarationOnly --declarationDir ./docs/static/
           NODE_ENV=development ./node_modules/.bin/webpack
           cd docs
           ./node_modules/.bin/next &
           npx wait-on http://localhost:3000
           cd ..
-          npm run test
+          yarn test
         env:
           CI: true
           NEXT_TELEMETRY_DISABLED: 1
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

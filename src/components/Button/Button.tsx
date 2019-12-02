@@ -81,7 +81,6 @@ export function Button(props: ButtonProps) {
       className={styledClasses(
         props,
         styledClass.font,
-        props.className || '',
         css.button,
         props.href && !(props.icon || props.rightIcon) && !props.intent ? css.link : '',
         !props.text && !props.intent && !props.href ? css.iconOnly : ''
