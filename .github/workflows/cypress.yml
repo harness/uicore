@@ -9,19 +9,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set up Github Package Registry scope
-        uses: actions/setup-node@v1
-        with:
-          registry-url: https://npm.pkg.github.com
-          scope: '@wings-software'
+      - uses: kingscooty/actions-yarn-cy@master
       - name: Set up Github Package Registry token
         run: |
-          echo @wings-software:registry=https://npm.pkg.github.com > ~/.npmrc
-          echo $GITHUB_HARNESS_BOT_TOKEN >> ~/.npmrc
-          echo always-auth=true >> ~/.npmrc
+          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GITHUB_HARNESS_BOT_TOKEN >> .npmrc
+          echo always-auth=true >> .npmrc
         env:
           GITHUB_HARNESS_BOT_TOKEN: ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }}
-      - uses: kingscooty/actions-yarn-cy@master
       - name: Start Docs, and Run Tests
         run: |
           yarn dep
