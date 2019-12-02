@@ -7,14 +7,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set up token
+      - name: Set up Github Package Registry scope
         uses: actions/setup-node@v1
         with:
           registry-url: https://npm.pkg.github.com
           scope: '@wings-software'
+      - name: Set up Github Package Registry token
+        run: |
+          echo @wings-software:registry=https://npm.pkg.github.com > ~/.npmrc
+          echo $GITHUB_HARNESS_BOT_TOKEN >> ~/.npmrc
+          echo always-auth=true >> ~/.npmrc
       - name: Lint
         run: |
-          npm install
-          npm run lint
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          yarn install
+          yarn lint
