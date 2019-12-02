@@ -20,7 +20,7 @@ jobs:
           echo always-auth=true >> .npmrc
 
           echo "Checking out the token file"
-          cat ~/.npmrc
+          cat .npmrc
 
           yarn install
           yarn lint
