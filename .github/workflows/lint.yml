@@ -21,5 +21,7 @@ jobs:
           GITHUB_HARNESS_BOT_TOKEN: ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }}
       - name: Lint
         run: |
+          echo "Checking out the token file"
+          cat ~/.npmrc
           yarn install
           yarn lint
