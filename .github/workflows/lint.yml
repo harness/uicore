@@ -15,7 +15,7 @@ jobs:
       - name: Set up Github Package Registry token
         run: |
           echo @wings-software:registry=https://npm.pkg.github.com > ~/.npmrc
-          echo $GITHUB_HARNESS_BOT_TOKEN >> ~/.npmrc
+          echo ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }} >> ~/.npmrc
           echo always-auth=true >> ~/.npmrc
       - name: Lint
         run: |
