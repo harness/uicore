@@ -17,8 +17,10 @@ jobs:
       - name: Set up Github Package Registry token
         run: |
           echo @wings-software:registry=https://npm.pkg.github.com > ~/.npmrc
-          echo ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }} >> ~/.npmrc
+          echo $GITHUB_HARNESS_BOT_TOKEN >> ~/.npmrc
           echo always-auth=true >> ~/.npmrc
+        env:
+          GITHUB_HARNESS_BOT_TOKEN: ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }}
       - uses: kingscooty/actions-yarn-cy@master
       - name: Start Docs, and Run Tests
         run: |
