@@ -49,6 +49,9 @@ export interface StyledProps {
 
   /** Component flex layout */
   flex?: boolean | FlexProps
+
+  /** Optional class name */
+  className?: string
 }
 
 /*
@@ -81,6 +84,7 @@ export function styledClasses(props: StyledProps, ...classes: string[]) {
   const classNames = new Set(classes)
 
   classNames.add(css.main)
+  classNames.add(props.className || '')
 
   Object.keys(props).forEach(name => {
     if (!PropsList.includes(name)) {
