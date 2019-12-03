@@ -11,6 +11,7 @@
     box-shadow: none;
     background-image: none;
     transition: all 0.25s cubic-bezier(0.39, 0.58, 0.57, 1);
+    transition-property: background-color, color, border-color;
 
     /* No intent/None intent */
     border: 1px solid var(--grey-350);
