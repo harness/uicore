@@ -2,6 +2,10 @@ import { useCallback, useState } from 'react'
 
 type UseToggleResult = [boolean, () => void]
 
+const TRUE = 'true'
+const FALSE = 'false'
+const VALUES = ['true', 'false']
+
 export function useToggle(initialState = false): UseToggleResult {
   const [state, setState] = useState(initialState)
   const toggle = useCallback(() => {
@@ -12,9 +16,6 @@ export function useToggle(initialState = false): UseToggleResult {
 }
 
 export function useToggleWithLocalStorage(localStorageKey: string, initialState = false): UseToggleResult {
-  const TRUE = 'true',
-    FALSE = 'false',
-    VALUES = ['true', 'false']
   const valueInLS = localStorage[localStorageKey]
   const existInLS = VALUES.includes(valueInLS)
   const value = existInLS ? valueInLS === TRUE : !!initialState
