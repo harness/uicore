@@ -88,7 +88,8 @@
   },
   "resolutions": {
     "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.2"
+    "@types/react-dom": "16.9.2",
+    "serialize-javascript": "2.1.1"
   },
   "husky": {
     "hooks": {
