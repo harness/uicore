@@ -137,6 +137,7 @@ import ServiceArtifactory from './service-artifactory.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
 import ServiceAwsLamda from './service-aws-lamda.svg'
 import ServiceAws from './service-aws.svg'
+import ServiceAzdevops from './service-azdevops.svg'
 import ServiceAzure from './service-azure.svg'
 import ServiceBamboo from './service-bamboo.svg'
 import ServiceBugsnag from './service-bugsnag.svg'
@@ -330,6 +331,7 @@ type HarnessIconName =
   | 'service-aws-code-deploy'
   | 'service-aws-lamda'
   | 'service-aws'
+  | 'service-azdevops'
   | 'service-azure'
   | 'service-bamboo'
   | 'service-bugsnag'
@@ -523,6 +525,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
   'service-aws-lamda': ServiceAwsLamda,
   'service-aws': ServiceAws,
+  'service-azdevops': ServiceAzdevops,
   'service-azure': ServiceAzure,
   'service-bamboo': ServiceBamboo,
   'service-bugsnag': ServiceBugsnag,
