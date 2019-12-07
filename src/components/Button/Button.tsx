@@ -13,7 +13,7 @@ import { Text } from '../Text/Text'
 export interface ButtonProps
   extends Assign<
     Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
-    Assign<HTMLAttributes<HTMLDivElement>, StyledProps>
+    Assign<HTMLAttributes<HTMLButtonElement>, StyledProps>
   > {
   /** Left icon */
   icon?: IconName
