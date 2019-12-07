@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent, ElementType } from 'react'
+import React, { HTMLAttributes, useState, MouseEvent, ElementType } from 'react'
 import { Assign } from 'utility-types'
 import { Button as BButton, AnchorButton, IButtonProps, Classes } from '@blueprintjs/core'
 import css from './Button.css'
@@ -10,7 +10,11 @@ import { IconName, Icon, IconProps } from '../../icons/Icon'
 import { Popover, PopoverProps } from '../Popover/Popover'
 import { Text } from '../Text/Text'
 
-export interface ButtonProps extends Assign<Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>, StyledProps> {
+export interface ButtonProps
+  extends Assign<
+    Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
+    Assign<HTMLAttributes<HTMLDivElement>, StyledProps>
+  > {
   /** Left icon */
   icon?: IconName
 

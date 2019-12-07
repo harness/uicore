@@ -18,4 +18,8 @@ README.md
 tsconfig.json
 webpack.config.js
 yarn.lock
-jest.config.js
+jest*
+.yarnrc
+build.properties
+README*
+CHANGELOG
