@@ -2,9 +2,13 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.31 - 12/06/09
+
+- `Added` HTML attributes support to `<Button/>` component.
+
 ## 1.0.30 - 12/05/09
 
-- `Added` useToggle hook.
+- `Added` useToggle, useToggleWithLocalStorage hooks.
 - `Added` ServiceAzdevops icon.
 
 ## 1.0.29 - 12/03/09
