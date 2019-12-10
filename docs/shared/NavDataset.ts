@@ -100,6 +100,14 @@ export default [
       {
         label: 'DurationInput',
         url: '/durationinput'
+      },
+      {
+        label: 'Select',
+        url: '/select'
+      },
+      {
+        label: 'MultiSelect',
+        url: '/multiselect'
       }
     ]
   }

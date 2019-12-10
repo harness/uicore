@@ -664,6 +664,15 @@
     classnames "^2.2"
     tslib "~1.9.0"
 
+"@blueprintjs/select@^3.11.2":
+  version "3.11.2"
+  resolved "https://registry.npmjs.org/@blueprintjs/select/-/select-3.11.2.tgz#3324db0de44a9f386b957aac1ba3ec774b3eb1e7"
+  integrity sha512-fU0Km6QI/ayWhzYeu9N1gTj0+L0XUO4KB3u2LfJXgj648UGY8F4HX2ETdJ+XPdtsu6TesrIL7ghMQhtLcvafBg==
+  dependencies:
+    "@blueprintjs/core" "^3.20.0"
+    classnames "^2.2"
+    tslib "~1.9.0"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"

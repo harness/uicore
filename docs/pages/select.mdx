@@ -1,0 +1,25 @@
+# Select --- docs/pages/select.mdx
+
+import { SimpleSelect, AsyncSelect } from '../shared/Select'
+
+## Import
+
+```js
+import { Select } from '@wings-software/uikit'
+```
+
+## Simple Select
+
+<SimpleSelect />
+
+```js
+<Select items={[]} />
+```
+
+## Async Select
+
+<AsyncSelect />
+
+```js
+<Select items={() => Promise.resolve([])} />
+```

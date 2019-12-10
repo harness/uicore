@@ -32,6 +32,7 @@
   },
   "peerDependencies": {
     "@blueprintjs/core": "^3.20.0",
+    "@blueprintjs/select": "^3.11.2",
     "@wings-software/xhr-async": "^2.0.3",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "@blueprintjs/core": "^3.20.0",
+    "@blueprintjs/select": "^3.11.2",
     "@svgr/webpack": "^4.3.2",
     "@testing-library/react": "^9.3.0",
     "@testing-library/react-hooks": "^3.2.1",

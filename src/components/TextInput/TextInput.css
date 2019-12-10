@@ -16,7 +16,7 @@
     font-size: var(--font-size-normal);
     padding: var(--spacing-small);
     height: 32px;
-    color: var(--grey-400);
+    color: var(--grey-800);
     box-shadow: none;
 
     &:focus {
