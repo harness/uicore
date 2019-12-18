@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from '../Button/Button'
+import { Layout } from '../../../src/layouts/Layout'
 
 import css from './FieldArray.css'
 
@@ -12,9 +13,11 @@ export interface Column {
 
 interface Props {
   fields: Array<Column>
+  title: string
+  noDataText?: string
 }
 
-export function FieldArray({ fields }: Props) {
+export function FieldArray({ fields, title, noDataText }: Props) {
   const [rows, setRows] = useState<Array<Record<string, any>>>([])
 
   function addRow() {
@@ -33,16 +36,18 @@ export function FieldArray({ fields }: Props) {
 
   return (
     <div className={css.container}>
-      {rows.length > 0 ? <Button minimal text="Add" intent="primary" icon="plus" onClick={addRow} /> : null}
+      <Layout.Horizontal className={css.title}>
+        <span className={css.text}>{title}</span>
+        {rows.length > 0 ? <Button minimal text="Add" intent="primary" icon="plus" onClick={addRow} /> : null}
+      </Layout.Horizontal>
 
       {rows.length == 0 ? (
-        <div>
-          No Data
-          <br />
+        <div className={css.noData}>
+          {noDataText ? <div className={css.text}>{noDataText}</div> : null}
           <Button text="Add" intent="primary" icon="plus" onClick={addRow} />
         </div>
       ) : (
-        <table>
+        <table cellSpacing={0}>
           <thead>
             <tr>
               {fields.map((column, index) => (

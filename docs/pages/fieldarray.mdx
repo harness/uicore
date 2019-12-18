@@ -11,7 +11,26 @@ import { FieldArray } from '@wings-software/uikit'
 ## Usage
 
 ```jsx
-<FieldArray columns={['Header 1', 'Header 2', 'Header 3']} rowRenderer={null} />
+const fields = [
+    {
+      name: 'col1',
+      label: 'Column Header 1',
+      defaultValue: 'Item 1'
+    },
+    {
+      name: 'col2',
+      label: 'Column Header 2',
+      defaultValue: 'Item 2',
+      renderer: value => <TextInput defaultValue={value} placeholder="Column 2 value" />
+    },
+    {
+      name: 'col3',
+      label: 'Column Header 3',
+      defaultValue: 'Item 3'
+    }
+  ]
+
+<FieldArray fields={...} title="Field List" noDataText="Help Text" />
 ```
 
 ## Example
