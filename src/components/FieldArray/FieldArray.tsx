@@ -19,17 +19,26 @@ interface Props {
   noDataText?: string
 }
 
+type RowData = Record<string, FieldValue>
+
 export function FieldArray({ fields, title, noDataText }: Props) {
-  const [rows, setRows] = useState<Array<Record<string, FieldValue>>>([])
+  /*
+    Storing rows data in format:
+      {
+        <fieldname1>: <fieldvalue1>,
+        <fieldname2>: <fieldvalue2>
+      }
+  */
+  const [rows, setRows] = useState<RowData[]>([])
+
+  // generate default row data from column/field data
+  const defaultNewRowValue = fields.reduce(function xyz(acc, { name, defaultValue }) {
+    return Object.assign(acc, { [name]: defaultValue })
+  }, {})
 
   function addRow() {
-    setRows(rows =>
-      [
-        fields.reduce(function xyz(acc, { name, defaultValue }) {
-          return Object.assign(acc, { [name]: defaultValue })
-        }, {})
-      ].concat(rows)
-    )
+    // insert new row at begining of rows array
+    setRows(rows => [defaultNewRowValue].concat(rows))
   }
 
   function deleteRow(index: number) {
@@ -59,13 +68,13 @@ export function FieldArray({ fields, title, noDataText }: Props) {
             </tr>
           </thead>
           <tbody>
-            {rows.map((row, index) => (
-              <tr key={index}>
-                {fields.map(({ name, renderer = value => value }, index) => (
-                  <td key={index}>{renderer(row[name])}</td>
+            {rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {fields.map(({ name, renderer = value => value }, fieldIndex) => (
+                  <td key={fieldIndex}>{renderer(row[name])}</td>
                 ))}
                 <td>
-                  <Button minimal icon="main-trash" onClick={deleteRow.bind(null, index)} />
+                  <Button minimal icon="main-trash" onClick={deleteRow.bind(null, rowIndex)} />
                 </td>
               </tr>
             ))}
