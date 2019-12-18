@@ -14,7 +14,7 @@ export interface Field {
 }
 
 interface Props {
-  fields: Array<Field>
+  fields: Field[]
   title: string
   noDataText?: string
 }
