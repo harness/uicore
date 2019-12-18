@@ -4,11 +4,13 @@ import { Layout } from '../../../src/layouts/Layout'
 
 import css from './FieldArray.css'
 
+type FieldValue = string | number
+
 export interface Field {
   name: string
   label: string
-  defaultValue: any
-  renderer?: (arg0: any) => React.ReactElement
+  defaultValue: FieldValue
+  renderer?: (arg0: FieldValue) => React.ReactElement
 }
 
 interface Props {
@@ -18,7 +20,7 @@ interface Props {
 }
 
 export function FieldArray({ fields, title, noDataText }: Props) {
-  const [rows, setRows] = useState<Array<Record<string, any>>>([])
+  const [rows, setRows] = useState<Array<Record<string, FieldValue>>>([])
 
   function addRow() {
     setRows(rows =>
