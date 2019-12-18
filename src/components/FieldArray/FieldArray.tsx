@@ -6,25 +6,29 @@ import css from './FieldArray.css'
 export interface Column {
   name: string
   label: string
+  defaultValue: any
+  renderer?: (arg0: any) => React.ReactElement
 }
 
 interface Props {
-  columns: Array<Column>
-  rowRenderer: (any) => React.ReactFragment
-  newRowDefaultValues: object
+  fields: Array<Column>
 }
 
-export function FieldArray({ columns, rowRenderer, newRowDefaultValues }: Props) {
-  const [rows, setRows] = useState<Array<object>>([])
+export function FieldArray({ fields }: Props) {
+  const [rows, setRows] = useState<Array<Record<string, any>>>([])
 
   function addRow() {
-    setRows([newRowDefaultValues].concat(rows))
+    setRows(rows =>
+      [
+        fields.reduce(function xyz(acc, { name, defaultValue }) {
+          return Object.assign(acc, { [name]: defaultValue })
+        }, {})
+      ].concat(rows)
+    )
   }
 
   function deleteRow(index: number) {
-    let rowsCopy = rows.slice()
-    rowsCopy.splice(index, 1)
-    setRows(rowsCopy)
+    setRows(rows => rows.filter((_, i) => i != index))
   }
 
   return (
@@ -41,7 +45,7 @@ export function FieldArray({ columns, rowRenderer, newRowDefaultValues }: Props)
         <table>
           <thead>
             <tr>
-              {columns.map((column, index) => (
+              {fields.map((column, index) => (
                 <th key={index}>{column.label}</th>
               ))}
               <th></th>
@@ -50,7 +54,9 @@ export function FieldArray({ columns, rowRenderer, newRowDefaultValues }: Props)
           <tbody>
             {rows.map((row, index) => (
               <tr key={index}>
-                {rowRenderer(row)}
+                {fields.map(({ name, renderer = value => value }, index) => (
+                  <td key={index}>{renderer(row[name])}</td>
+                ))}
                 <td>
                   <Button minimal icon="main-trash" onClick={deleteRow.bind(null, index)} />
                 </td>

@@ -1,40 +1,26 @@
 import React from 'react'
 
-import { FieldArray } from '../static/index'
+import { FieldArray, TextInput } from '../static/index'
 
 export default function FieldArrayExample() {
-  function rowRenderer(row) {
-    return (
-      <React.Fragment>
-        <td>{row.col1}</td>
-        <td>
-          <input type="text" value={row.col2} />
-        </td>
-        <td>{row.col3}</td>
-      </React.Fragment>
-    )
-  }
-
-  const columns = [
+  const fields = [
     {
       name: 'col1',
-      label: 'Column Header 1'
+      label: 'Column Header 1',
+      defaultValue: 'a'
     },
     {
       name: 'col2',
-      label: 'Column Header 2'
+      label: 'Column Header 2',
+      defaultValue: 'b',
+      renderer: value => <TextInput defaultValue={value} placeholder="Column 2 value" />
     },
     {
       name: 'col3',
-      label: 'Column Header 3'
+      label: 'Column Header 3',
+      defaultValue: 'c'
     }
   ]
 
-  const newRowDefaultValues = {
-    col1: 'a',
-    col2: 'b',
-    col3: 'c'
-  }
-
-  return <FieldArray columns={columns} rowRenderer={rowRenderer} newRowDefaultValues={newRowDefaultValues} />
+  return <FieldArray fields={fields} />
 }
