@@ -4,7 +4,7 @@ import { Layout } from '../../../src/layouts/Layout'
 
 import css from './FieldArray.css'
 
-export interface Column {
+export interface Field {
   name: string
   label: string
   defaultValue: any
@@ -12,7 +12,7 @@ export interface Column {
 }
 
 interface Props {
-  fields: Array<Column>
+  fields: Array<Field>
   title: string
   noDataText?: string
 }
@@ -50,8 +50,8 @@ export function FieldArray({ fields, title, noDataText }: Props) {
         <table cellSpacing={0}>
           <thead>
             <tr>
-              {fields.map((column, index) => (
-                <th key={index}>{column.label}</th>
+              {fields.map((field, index) => (
+                <th key={index}>{field.label}</th>
               ))}
               <th></th>
             </tr>
