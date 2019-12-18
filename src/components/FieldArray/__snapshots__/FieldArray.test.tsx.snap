@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldArray /> tests render no data card on init 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="horizontal layout-spacing-undefined main title"
+    >
+      <span
+        class="text"
+      >
+        Field List
+      </span>
+    </div>
+    <div
+      class="noData"
+    >
+      <div
+        class="text"
+      >
+        This is a no data/add data message.
+      </div>
+      <button
+        class="bp3-button font button main intent intent-primary"
+        data-id="btn-add-no-data"
+        type="button"
+      >
+        <span
+          class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+          icon="plus"
+        >
+          <svg
+            data-icon="plus"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              plus
+            </desc>
+            <path
+              d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+          Add
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="horizontal layout-spacing-undefined main title"
+    >
+      <span
+        class="text"
+      >
+        Field List
+      </span>
+      <button
+        class="bp3-button bp3-minimal font button main intent intent-primary"
+        data-id="btn-add"
+        type="button"
+      >
+        <span
+          class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+          icon="plus"
+        >
+          <svg
+            data-icon="plus"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              plus
+            </desc>
+            <path
+              d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+          Add
+        </span>
+      </button>
+    </div>
+    <table
+      cellspacing="0"
+    >
+      <thead>
+        <tr>
+          <th>
+            Column Header 1
+          </th>
+          <th>
+            Column Header 2
+          </th>
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Item 1
+          </td>
+          <td>
+            Item 2
+          </td>
+          <td>
+            <button
+              class="bp3-button bp3-minimal font button iconOnly main"
+              data-id="btn-delete"
+              type="button"
+            >
+              <span
+                class="bp3-icon main padding padding-undefined"
+              >
+                <svg
+                  height="16"
+                  width="16"
+                />
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="horizontal layout-spacing-undefined main title"
+    >
+      <span
+        class="text"
+      >
+        Field List
+      </span>
+      <button
+        class="bp3-button bp3-minimal font button main intent intent-primary"
+        data-id="btn-add"
+        type="button"
+      >
+        <span
+          class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+          icon="plus"
+        >
+          <svg
+            data-icon="plus"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              plus
+            </desc>
+            <path
+              d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+          Add
+        </span>
+      </button>
+    </div>
+    <table
+      cellspacing="0"
+    >
+      <thead>
+        <tr>
+          <th>
+            Column Header 1
+          </th>
+          <th>
+            Column Header 2
+          </th>
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Item 1
+          </td>
+          <td>
+            Item 2
+          </td>
+          <td>
+            <button
+              class="bp3-button bp3-minimal font button iconOnly main"
+              data-id="btn-delete"
+              type="button"
+            >
+              <span
+                class="bp3-icon main padding padding-undefined"
+              >
+                <svg
+                  height="16"
+                  width="16"
+                />
+              </span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Item 1
+          </td>
+          <td>
+            Item 2
+          </td>
+          <td>
+            <button
+              class="bp3-button bp3-minimal font button iconOnly main"
+              data-id="btn-delete"
+              type="button"
+            >
+              <span
+                class="bp3-icon main padding padding-undefined"
+              >
+                <svg
+                  height="16"
+                  width="16"
+                />
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`<FieldArray /> tests should be able to delete row 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="horizontal layout-spacing-undefined main title"
+    >
+      <span
+        class="text"
+      >
+        Field List
+      </span>
+    </div>
+    <div
+      class="noData"
+    >
+      <div
+        class="text"
+      >
+        This is a no data/add data message.
+      </div>
+      <button
+        class="bp3-button font button main intent intent-primary"
+        data-id="btn-add-no-data"
+        type="button"
+      >
+        <span
+          class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+          icon="plus"
+        >
+          <svg
+            data-icon="plus"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              plus
+            </desc>
+            <path
+              d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+          Add
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

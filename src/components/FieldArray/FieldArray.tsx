@@ -49,13 +49,15 @@ export function FieldArray({ fields, title, noDataText }: Props) {
     <div className={css.container}>
       <Layout.Horizontal className={css.title}>
         <span className={css.text}>{title}</span>
-        {rows.length > 0 ? <Button minimal text="Add" intent="primary" icon="plus" onClick={addRow} /> : null}
+        {rows.length > 0 ? (
+          <Button minimal text="Add" intent="primary" icon="plus" onClick={addRow} data-id={'btn-add'} />
+        ) : null}
       </Layout.Horizontal>
 
       {rows.length == 0 ? (
         <div className={css.noData}>
           {noDataText ? <div className={css.text}>{noDataText}</div> : null}
-          <Button text="Add" intent="primary" icon="plus" onClick={addRow} />
+          <Button text="Add" intent="primary" icon="plus" onClick={addRow} data-id={'btn-add-no-data'} />
         </div>
       ) : (
         <table cellSpacing={0}>
@@ -74,7 +76,7 @@ export function FieldArray({ fields, title, noDataText }: Props) {
                   <td key={fieldIndex}>{renderer(row[name])}</td>
                 ))}
                 <td>
-                  <Button minimal icon="main-trash" onClick={deleteRow.bind(null, rowIndex)} />
+                  <Button minimal icon="main-trash" onClick={deleteRow.bind(null, rowIndex)} data-id={'btn-delete'} />
                 </td>
               </tr>
             ))}
