@@ -108,6 +108,10 @@ export default [
       {
         label: 'MultiSelect',
         url: '/multiselect'
+      },
+      {
+        label: 'FieldArray',
+        url: '/fieldarray'
       }
     ]
   }
