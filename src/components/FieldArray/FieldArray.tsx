@@ -1,54 +1,80 @@
 import React, { useState } from 'react'
 import { Button } from '../Button/Button'
 import { Layout } from '../../../src/layouts/Layout'
+import { connect, FormikProps } from 'formik'
 
 import css from './FieldArray.css'
 
-type FieldValue = string | number
+export type FieldValue = any
 
 export interface Field {
   name: string
   label: string
-  defaultValue: FieldValue
-  renderer?: (arg0: FieldValue) => React.ReactElement
+  defaultValue?: FieldValue
+  renderer?: (arg0: FieldValue, onChange: (event: any) => void) => React.ReactElement
 }
+
+export type RowData = Record<string, FieldValue>
 
 interface Props {
   fields: Field[]
-  title: string
-  noDataText?: string
+  label: string
+  placeholder?: string
+  name: string
+  formik?: FormikProps<RowData[]>
 }
 
-type RowData = Record<string, FieldValue>
+function pretty(val) {
+  return JSON.stringify(val, null, 4)
+}
 
-export function FieldArray({ fields, title, noDataText }: Props) {
+function FieldArray(props: Props) {
+  const { name, fields, label, placeholder, formik } = props
   /*
     Storing rows data in format:
-      {
-        <fieldname1>: <fieldvalue1>,
-        <fieldname2>: <fieldvalue2>
-      }
+      [
+        {
+          <fieldname1>: <fieldvalue1>,
+          <fieldname2>: <fieldvalue2>
+        }
+      ]
   */
-  const [rows, setRows] = useState<RowData[]>([])
+  const [rows, setRows] = useState<RowData[]>(formik?.values[name])
 
   // generate default row data from column/field data
-  const defaultNewRowValue = fields.reduce(function xyz(acc, { name, defaultValue }) {
-    return Object.assign(acc, { [name]: defaultValue })
+  const defaultNewRowValue = fields.reduce((acc, { name, defaultValue = '' }) => {
+    return Object.assign({}, acc, { [name]: defaultValue })
   }, {})
 
   function addRow() {
-    // insert new row at begining of rows array
-    setRows(rows => [defaultNewRowValue].concat(rows))
+    setRows(rows => {
+      // insert new row at begining of rows array
+      const modifiedRows = [defaultNewRowValue].concat(rows)
+      formik?.setFieldValue(name, modifiedRows)
+      return modifiedRows
+    })
   }
 
   function deleteRow(index: number) {
-    setRows(rows => rows.filter((_, i) => i != index))
+    setRows(rows => {
+      const modifiedRows = rows.filter((_, i) => i != index)
+      formik?.setFieldValue(name, modifiedRows)
+      return modifiedRows
+    })
+  }
+
+  function handleChange(rowIndex: number, fieldName: string, event) {
+    setRows(rows => {
+      rows[rowIndex] = { ...rows[rowIndex], [fieldName]: event.target.value }
+      return rows
+    })
+    formik?.setFieldValue(name, rows)
   }
 
   return (
     <div className={css.container}>
       <Layout.Horizontal className={css.title}>
-        <span className={css.text}>{title}</span>
+        <span className={css.text}>{label}</span>
         {rows.length > 0 ? (
           <Button minimal text="Add" intent="primary" icon="plus" onClick={addRow} data-id={'btn-add'} />
         ) : null}
@@ -56,7 +82,7 @@ export function FieldArray({ fields, title, noDataText }: Props) {
 
       {rows.length == 0 ? (
         <div className={css.noData}>
-          {noDataText ? <div className={css.text}>{noDataText}</div> : null}
+          {placeholder ? <div className={css.text}>{placeholder}</div> : null}
           <Button text="Add" intent="primary" icon="plus" onClick={addRow} data-id={'btn-add-no-data'} />
         </div>
       ) : (
@@ -72,9 +98,14 @@ export function FieldArray({ fields, title, noDataText }: Props) {
           <tbody>
             {rows.map((row, rowIndex) => (
               <tr key={rowIndex}>
-                {fields.map(({ name, renderer = value => value }, fieldIndex) => (
-                  <td key={fieldIndex}>{renderer(row[name])}</td>
-                ))}
+                {fields.map((field, fieldIndex) => {
+                  const { name, renderer } = field
+                  return (
+                    <td key={`${rowIndex}-${fieldIndex}-${row[name]}`}>
+                      {renderer ? renderer(row[name], handleChange.bind(null, rowIndex, name)) : row[name]}
+                    </td>
+                  )
+                })}
                 <td>
                   <Button minimal icon="main-trash" onClick={deleteRow.bind(null, rowIndex)} data-id={'btn-delete'} />
                 </td>
@@ -86,3 +117,5 @@ export function FieldArray({ fields, title, noDataText }: Props) {
     </div>
   )
 }
+
+export default connect(FieldArray)

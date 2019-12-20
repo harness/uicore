@@ -6,7 +6,28 @@ import FieldArrayExample from '../shared/FieldArrayExample.tsx'
 
 ```js
 import { FieldArray } from '@wings-software/uikit'
-import Field from '@wings-software/uikit/src/components/FieldArray/FieldArray'
+```
+
+## Types
+
+```js
+interface Props {
+  fields: Field[]
+  title: string
+  noDataText?: string
+  data?: Array<RowData>
+}
+
+interface Field {
+  name: string
+  label: string
+  defaultValue?: FieldValue
+  renderer?: (arg0: FieldValue) => React.ReactElement
+}
+
+type FieldValue = string | number
+
+type RowData = Record<string, FieldValue>
 ```
 
 ## Usage
@@ -31,9 +52,17 @@ const fields: Array<Field> = [
     }
   ]
 
-<FieldArray fields={...} title="Field List" noDataText="Help Text" />
+const data: Array<RowData> = [
+  {
+      col1: 'row 1 col 1',
+      col2: 'row 1 col 2',
+      col3: 'row 1 col 3'
+  }
+]
+
+<FieldArray fields={fields} title="Field List" noDataText="Help Text" data={data} />
 ```
 
-## Example
+## Examples
 
 <FieldArrayExample />
