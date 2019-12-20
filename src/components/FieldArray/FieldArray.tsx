@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, SyntheticEvent } from 'react'
 import { Button } from '../Button/Button'
 import { Layout } from '../../../src/layouts/Layout'
 import { connect, FormikProps } from 'formik'
@@ -11,7 +11,7 @@ export interface Field {
   name: string
   label: string
   defaultValue?: FieldValue
-  renderer?: (arg0: FieldValue, onChange: (event: any) => void) => React.ReactElement
+  renderer?: (arg0: FieldValue, onChange: (event: SyntheticEvent) => void) => React.ReactElement
 }
 
 export type RowData = Record<string, FieldValue>
@@ -22,10 +22,6 @@ interface Props {
   placeholder?: string
   name: string
   formik?: FormikProps<RowData[]>
-}
-
-function pretty(val) {
-  return JSON.stringify(val, null, 4)
 }
 
 function FieldArray(props: Props) {
@@ -39,7 +35,7 @@ function FieldArray(props: Props) {
         }
       ]
   */
-  const [rows, setRows] = useState<RowData[]>(formik?.values[name])
+  const [value, setValue] = useState<RowData[]>(formik?.values[name] || [])
 
   // generate default row data from column/field data
   const defaultNewRowValue = fields.reduce((acc, { name, defaultValue = '' }) => {
@@ -47,7 +43,7 @@ function FieldArray(props: Props) {
   }, {})
 
   function addRow() {
-    setRows(rows => {
+    setValue(rows => {
       // insert new row at begining of rows array
       const modifiedRows = [defaultNewRowValue].concat(rows)
       formik?.setFieldValue(name, modifiedRows)
@@ -56,31 +52,31 @@ function FieldArray(props: Props) {
   }
 
   function deleteRow(index: number) {
-    setRows(rows => {
+    setValue(rows => {
       const modifiedRows = rows.filter((_, i) => i != index)
       formik?.setFieldValue(name, modifiedRows)
       return modifiedRows
     })
   }
 
-  function handleChange(rowIndex: number, fieldName: string, event) {
-    setRows(rows => {
+  function handleChange(rowIndex: number, fieldName: string, event: SyntheticEvent) {
+    setValue(rows => {
       rows[rowIndex] = { ...rows[rowIndex], [fieldName]: event.target.value }
       return rows
     })
-    formik?.setFieldValue(name, rows)
+    formik?.setFieldValue(name, value)
   }
 
   return (
     <div className={css.container}>
       <Layout.Horizontal className={css.title}>
         <span className={css.text}>{label}</span>
-        {rows.length > 0 ? (
+        {value.length > 0 ? (
           <Button minimal text="Add" intent="primary" icon="plus" onClick={addRow} data-id={'btn-add'} />
         ) : null}
       </Layout.Horizontal>
 
-      {rows.length == 0 ? (
+      {value.length == 0 ? (
         <div className={css.noData}>
           {placeholder ? <div className={css.text}>{placeholder}</div> : null}
           <Button text="Add" intent="primary" icon="plus" onClick={addRow} data-id={'btn-add-no-data'} />
@@ -96,17 +92,17 @@ function FieldArray(props: Props) {
             </tr>
           </thead>
           <tbody>
-            {rows.map((row, rowIndex) => (
+            {value.map((row, rowIndex) => (
               <tr key={rowIndex}>
                 {fields.map((field, fieldIndex) => {
                   const { name, renderer } = field
                   return (
-                    <td key={`${rowIndex}-${fieldIndex}-${row[name]}`}>
+                    <td key={`${rowIndex}-${fieldIndex}-${value.length}`}>
                       {renderer ? renderer(row[name], handleChange.bind(null, rowIndex, name)) : row[name]}
                     </td>
                   )
                 })}
-                <td>
+                <td className={css.deleteColumn}>
                   <Button minimal icon="main-trash" onClick={deleteRow.bind(null, rowIndex)} data-id={'btn-delete'} />
                 </td>
               </tr>

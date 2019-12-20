@@ -46,6 +46,10 @@
           padding: 10px 15px;
         }
 
+        td.deleteColumn {
+          text-align: right;
+        }
+
         input[type='text'] {
           border: 1px solid transparent;
         }

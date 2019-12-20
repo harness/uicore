@@ -60,7 +60,13 @@ const data: Array<RowData> = [
   }
 ]
 
-<FieldArray fields={fields} title="Field List" noDataText="Help Text" data={data} />
+<Formik initialValues={{ fieldArray: data }}>
+  {props => (
+    <form onSubmit={props.handleSubmit}>
+      <FieldArray name='fieldArray' fields={fields} title="Field List" placeholder="Help Text" />
+    </form>
+  )}
+</Formik>
 ```
 
 ## Examples

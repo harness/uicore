@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FieldArray, TextInput, Heading } from '../static/index'
+import { FieldArray, TextInput, Heading, Button } from '../static/index'
 import { FieldValue } from '../../src/components/FieldArray/FieldArray'
 import { Formik } from 'formik'
 
@@ -17,11 +17,11 @@ export default function FieldArrayExample() {
       renderer: (value: FieldValue, handleChange) => (
         <TextInput defaultValue={value} placeholder="Column 2 value" onChange={handleChange} />
       )
+    },
+    {
+      name: 'col3',
+      label: 'Column 3 Header'
     }
-    // {
-    //   name: 'col3',
-    //   label: 'Column 3 Header'
-    // }
   ]
 
   const noDataText =
@@ -30,32 +30,37 @@ export default function FieldArrayExample() {
   const data = [
     {
       col1: 'col 1',
-      col2: 'col 2'
-      // col3: 'col 3'
+      col2: 'col 2',
+      col3: 'col 3'
     },
     {
       col1: 'col 1',
-      col2: 'col 2'
-      // col3: 'col 3'
+      col2: 'col 2',
+      col3: 'col 3'
     }
   ]
 
   return (
     <Formik
-      initialValues={{ myFieldArray2: data }}
+      initialValues={{ fieldArrayWithInitValue: data }}
       onSubmit={x => {
-        console.log(x)
+        console.log(JSON.stringify(x, null, 4))
+        alert('Field value has been printed in the console for demo.')
       }}>
       {props => (
         <form onSubmit={props.handleSubmit}>
           <div style={{ width: '620px' }}>
-            {/* <Heading level={2}>Without data</Heading>
-            <FieldArray name="myFieldArray" fields={fields} title="Field List" placeholder={noDataText} />
+            <Heading level={2}>Without data</Heading>
+            <FieldArray name="fieldArrayWithoutInitValue" fields={fields} label="Field List" placeholder={noDataText} />
 
-            <br /> */}
+            <br />
+
             <Heading level={2}>With pre-filled data</Heading>
-            <FieldArray name="myFieldArray2" fields={fields} label="Field List" placeholder={noDataText} />
-            <input type="submit" />
+            <FieldArray name="fieldArrayWithInitValue" fields={fields} label="Field List" placeholder={noDataText} />
+            <br />
+            <Button type="submit" intent="primary">
+              Submit
+            </Button>
           </div>
         </form>
       )}
