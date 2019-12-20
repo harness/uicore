@@ -9,6 +9,7 @@ import { Utils } from '../../core/Utils'
 import { IconName, Icon, IconProps } from '../../icons/Icon'
 import { Popover, PopoverProps } from '../Popover/Popover'
 import { Text } from '../Text/Text'
+import { useIsMounted } from '../../hooks/useIsMounted'
 
 export interface ButtonProps
   extends Assign<
@@ -53,8 +54,12 @@ export interface LinkProps extends ButtonProps {
 export function Button(props: ButtonProps) {
   const { icon, rightIcon } = props
   const [loading, setLoading] = useState(props.loading === true)
+  const isMounted = useIsMounted()
 
   const onClick = async (event: MouseEvent) => {
+    // TODO: Improve loading state when props.onClick() is resolved fast
+    // that showing loading state causes flickering
+
     if (loading) {
       return
     }
@@ -65,7 +70,9 @@ export function Button(props: ButtonProps) {
       try {
         await props.onClick(event)
       } finally {
-        setLoading(false)
+        if (isMounted) {
+          setLoading(false)
+        }
       }
     }
   }
