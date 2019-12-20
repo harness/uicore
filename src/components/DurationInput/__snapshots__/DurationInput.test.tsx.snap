@@ -8,9 +8,6 @@ exports[`<DurationInput/> tests component tests renders with given value 1`] = `
     <div
       class="main"
     >
-      <label
-        class="label"
-      />
       <div
         class="bp3-input-group"
       >
@@ -52,9 +49,6 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
     <div
       class="main"
     >
-      <label
-        class="label"
-      />
       <div
         class="bp3-input-group"
       >
