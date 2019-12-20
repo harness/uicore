@@ -2,9 +2,9 @@ import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
 import { Formik } from 'formik'
 
-import FieldArray from './FieldArray'
+import FieldArray, { Field } from './FieldArray'
 
-const fields = [
+const fields: Field[] = [
   {
     name: 'col1',
     label: 'Column Header 1',
@@ -103,11 +103,12 @@ describe('<FieldArray /> tests', () => {
   })
 
   test('should be able to render custom fields', async () => {
-    const customField = {
+    const customField: Field = {
       name: 'col3',
       label: 'Column Header 3',
       defaultValue: 'Item 3',
-      renderer: (value, handleChange) => <div id="#customField">{value}</div>
+      // eslint-disable-next-line react/display-name
+      renderer: value => <div id="#customField">{value}</div>
     }
     const { container } = render(
       <Formik onSubmit={_ => {}} initialValues={{ fieldArray: data }}>

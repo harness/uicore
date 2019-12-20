@@ -11,7 +11,7 @@ export interface Field {
   name: string
   label: string
   defaultValue?: FieldValue
-  renderer?: (arg0: FieldValue, onChange: (event: SyntheticEvent) => void) => React.ReactElement
+  renderer?: (arg0: FieldValue, onChange?: (event: SyntheticEvent) => void) => React.ReactElement
 }
 
 export type RowData = Record<string, FieldValue>
@@ -98,7 +98,7 @@ function FieldArray(props: Props) {
                   const { name, renderer } = field
                   return (
                     <td key={`${rowIndex}-${fieldIndex}-${value.length}`}>
-                      {renderer ? renderer(row[name], handleChange.bind(null, rowIndex, name)) : row[name]}
+                      {renderer ? renderer(row[name], handleChange?.bind(null, rowIndex, name)) : row[name]}
                     </td>
                   )
                 })}
