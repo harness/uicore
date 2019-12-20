@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.32 - 12/20/09
+
+- `Added` useIsMounted hook.
+- `Fixed` React warning when `setLoading` is called while its `Button` instance is already unmounted.
+
 ## 1.0.31 - 12/06/09
 
 - `Added` HTML attributes support to `<Button/>` component.
