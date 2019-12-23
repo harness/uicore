@@ -70,7 +70,7 @@ export function TextInput(props: TextInputProps) {
         { [css.hasError]: intent === Intent.DANGER },
         { [css.success]: intent === Intent.SUCCESS }
       )}>
-      <label className={css.label}>{label}</label>
+      {label ? <label className={css.label}>{label}</label> : null}
       <InputGroup
         {...rest}
         type={props.type || 'text'}

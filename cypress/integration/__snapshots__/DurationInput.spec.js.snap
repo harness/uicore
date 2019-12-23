@@ -2,7 +2,6 @@ exports[`<DurationInput /> Component > snapshots for DurationInput component #0`
 <div id="duration-input-1">
   <div class="DurationInput---main--33yi">
     <div class="TextInput---main--1ytZ">
-      <label class="TextInput---label--1xRj"></label>
       <div class="bp3-input-group">
         <input
           type="text"
