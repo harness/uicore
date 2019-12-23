@@ -1,7 +1,7 @@
-import React, { useState, SyntheticEvent } from 'react'
+import React, { useState, ChangeEvent } from 'react'
 import { Button } from '../Button/Button'
 import { Layout } from '../../../src/layouts/Layout'
-import { connect, FormikProps } from 'formik'
+import { connect, FormikContext } from 'formik'
 
 import css from './FieldArray.css'
 
@@ -11,7 +11,7 @@ export interface Field {
   name: string
   label: string
   defaultValue?: FieldValue
-  renderer?: (arg0: FieldValue, onChange?: (event: SyntheticEvent) => void) => React.ReactElement
+  renderer?: (arg0: FieldValue, onChange?: (event: ChangeEvent<HTMLInputElement>) => void) => React.ReactElement
 }
 
 export type RowData = Record<string, FieldValue>
@@ -21,10 +21,13 @@ interface Props {
   label: string
   placeholder?: string
   name: string
-  formik?: FormikProps<RowData[]>
 }
 
-function FieldArray(props: Props) {
+interface ConnectedProps extends Props {
+  formik: FormikContext<any>
+}
+
+function FieldArray(props: ConnectedProps) {
   const { name, fields, label, placeholder, formik } = props
   /*
     Storing rows data in format:
@@ -35,7 +38,9 @@ function FieldArray(props: Props) {
         }
       ]
   */
-  const [value, setValue] = useState<RowData[]>(formik?.values[name] || [])
+  // console.log({ formik })
+  // debugger
+  const [value, setValue] = useState<RowData[]>(formik.values[name] || [])
 
   // generate default row data from column/field data
   const defaultNewRowValue = fields.reduce((acc, { name, defaultValue = '' }) => {
@@ -46,7 +51,7 @@ function FieldArray(props: Props) {
     setValue(rows => {
       // insert new row at begining of rows array
       const modifiedRows = [defaultNewRowValue].concat(rows)
-      formik?.setFieldValue(name, modifiedRows)
+      formik.setFieldValue(name, modifiedRows)
       return modifiedRows
     })
   }
@@ -54,17 +59,17 @@ function FieldArray(props: Props) {
   function deleteRow(index: number) {
     setValue(rows => {
       const modifiedRows = rows.filter((_, i) => i != index)
-      formik?.setFieldValue(name, modifiedRows)
+      formik.setFieldValue(name, modifiedRows)
       return modifiedRows
     })
   }
 
-  function handleChange(rowIndex: number, fieldName: string, event: SyntheticEvent) {
+  function handleChange(rowIndex: number, fieldName: string, event: ChangeEvent<HTMLInputElement>) {
     setValue(rows => {
       rows[rowIndex] = { ...rows[rowIndex], [fieldName]: event.target.value }
       return rows
     })
-    formik?.setFieldValue(name, value)
+    formik.setFieldValue(name, value)
   }
 
   return (
@@ -114,4 +119,4 @@ function FieldArray(props: Props) {
   )
 }
 
-export default connect(FieldArray)
+export default connect<Props, RowData[]>(FieldArray)
