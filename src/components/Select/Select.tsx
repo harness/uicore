@@ -17,7 +17,14 @@ const Loading = Symbol('loading')
 export interface SelectProps
   extends Omit<
     Props,
-    'popoverProps' | 'inputValueRenderer' | 'itemRenderer' | 'onItemSelect' | 'query' | 'selectedItem' | 'items'
+    | 'popoverProps'
+    | 'inputValueRenderer'
+    | 'itemRenderer'
+    | 'onItemSelect'
+    | 'query'
+    | 'selectedItem'
+    | 'items'
+    | 'inputProps'
   > {
   inputValueRender?: Props['inputValueRenderer']
   itemRender?: Props['itemRenderer']
@@ -32,11 +39,16 @@ function itemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Elemen
   }
 
   if (item.value === Loading) {
-    return <li className={cx(css.menuItem, css.loading)}>Loading results...</li>
+    return (
+      <li key="loading" className={cx(css.menuItem, css.loading)}>
+        Loading results...
+      </li>
+    )
   }
 
   return (
     <li
+      key={item.value.toString()}
       className={cx(css.menuItem, {
         [css.active]: props.modifiers.active,
         [css.disabled]: props.modifiers.disabled
@@ -90,23 +102,23 @@ export function Select(props: SelectProps) {
   return (
     <Suggest
       inputValueRenderer={opt => opt.label}
-      inputProps={{
-        onChange(e: React.ChangeEvent<HTMLInputElement>) {
-          setQuery(e.target.value)
-        },
-        value: query
-      }}
       itemRenderer={itemRenderer}
       itemListPredicate={(query, items) =>
         items.filter(item =>
           item.label
             .toString()
             .toLowerCase()
-            .startsWith(query.toLowerCase())
+            .includes(query.toLowerCase())
         )
       }
       noResults={<NoMatch />}
       {...rest}
+      inputProps={{
+        onChange(e: React.ChangeEvent<HTMLInputElement>) {
+          setQuery(e.target.value)
+        },
+        value: query
+      }}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       selectedItem={value}
       onItemSelect={handleItemSelect}

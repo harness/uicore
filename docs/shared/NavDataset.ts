@@ -94,6 +94,10 @@ export default [
     name: 'Form Components',
     items: [
       {
+        label: 'Label',
+        url: '/label'
+      },
+      {
         label: 'TextInput',
         url: '/textinput'
       },

@@ -2,13 +2,6 @@
   display: flex;
   flex-flow: column;
 
-  .label {
-    display: block;
-    color: var(--grey-500);
-    font-size: var(--font-size-small);
-    margin-bottom: var(--spacing-small);
-  }
-
   :global(.bp3-input) {
     display: block;
     border: 1px solid var(--grey-400);

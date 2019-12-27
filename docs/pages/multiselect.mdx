@@ -1,0 +1,25 @@
+# MultiSelect --- docs/pages/multiselect.mdx
+
+import { SimpleSelect, AsyncSelect } from '../shared/MultiSelect'
+
+## Import
+
+```js
+import { MultiSelect } from '@wings-software/uikit'
+```
+
+## Simple Select
+
+<SimpleSelect />
+
+```js
+<MultiSelect items={[]} />
+```
+
+## Async Select
+
+<AsyncSelect />
+
+```js
+<MultiSelect items={() => Promise.resolve([])} />
+```

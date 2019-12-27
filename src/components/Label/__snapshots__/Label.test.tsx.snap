@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Label /> tests snapshot test 1`] = `
+<div>
+  <label
+    class="main"
+  >
+    Test label
+  </label>
+</div>
+`;

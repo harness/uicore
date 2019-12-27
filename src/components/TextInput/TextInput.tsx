@@ -12,7 +12,6 @@ export interface TextInputProps extends Omit<IInputGroupProps, 'className' | 'le
   leftIconProps?: IconProps
   rightElement?: IconName
   rightElementProps?: IconName
-  label?: string
   errorText?: string
   intent?: Intent
   errorInPopover?: boolean
@@ -21,7 +20,6 @@ export interface TextInputProps extends Omit<IInputGroupProps, 'className' | 'le
 
 export function TextInput(props: TextInputProps) {
   const {
-    label,
     errorText,
     intent,
     errorInPopover,
@@ -70,7 +68,6 @@ export function TextInput(props: TextInputProps) {
         { [css.hasError]: intent === Intent.DANGER },
         { [css.success]: intent === Intent.SUCCESS }
       )}>
-      {label ? <label className={css.label}>{label}</label> : null}
       <InputGroup
         {...rest}
         type={props.type || 'text'}

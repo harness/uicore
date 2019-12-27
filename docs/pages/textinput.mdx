@@ -9,25 +9,19 @@ import { TextInput } from '@wings-software/uikit'
 ## Idle state
 
 ```js live=true
-<TextInput label="Label" defaultValue="" placeholder="Placeholder text" />
+<TextInput defaultValue="" placeholder="Placeholder text" />
 ```
 
 ## Error state
 
 ```js live=true
-<TextInput
-  label="Label"
-  defaultValue="Now in error state"
-  intent="danger"
-  errorText="Not a valid data. Please try again."
-/>
+<TextInput defaultValue="Now in error state" intent="danger" errorText="Not a valid data. Please try again." />
 ```
 
 ## Error state (in popover)
 
 ```js live=true
 <TextInput
-  label="Label"
   defaultValue="Show Error icon"
   errorText="Not a valid data. Please try again."
   intent="danger"
@@ -38,20 +32,19 @@ import { TextInput } from '@wings-software/uikit'
 ## Success state
 
 ```js live=true
-<TextInput label="Label" placeholder="Placeholder text" intent="success" />
+<TextInput placeholder="Placeholder text" intent="success" />
 ```
 
 ## Disabled state
 
 ```js live=true
-<TextInput label="Label" placeholder="Placeholder text" disabled />
+<TextInput placeholder="Placeholder text" disabled />
 ```
 
 ## Icons
 
 ```js live=true
 <TextInput
-  label="Label"
   placeholder="Search"
   leftIcon="search"
   rightElement={<Button minimal icon="arrow-right" intent="primary" margin="none" />}
