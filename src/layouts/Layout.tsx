@@ -1,15 +1,15 @@
 import React, { HTMLAttributes } from 'react'
-import { Overwrite } from 'utility-types'
+import { Assign } from 'utility-types'
 import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
 import css from './Layout.css'
 import { Spacing } from 'core/Spacing'
 
-interface Props extends Overwrite<HTMLAttributes<HTMLDivElement>, StyledProps> {
+interface LayoutProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
   /** Spacing among children */
   spacing?: Spacing
 }
 
-function Vertical(props: Props) {
+function Vertical(props: LayoutProps) {
   return (
     <div
       {...omitStyledProps(props)}
@@ -19,7 +19,7 @@ function Vertical(props: Props) {
   )
 }
 
-function Horizontal(props: Props) {
+function Horizontal(props: LayoutProps) {
   return (
     <div
       {...omitStyledProps(props)}

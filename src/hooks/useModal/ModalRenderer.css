@@ -1,0 +1,16 @@
+.modal {
+  top: 0;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, 30px);
+
+  .innerContainer {
+    width: 100%;
+    padding: 0;
+    background: var(--white);
+  }
+
+  .title {
+    cursor: move;
+  }
+}

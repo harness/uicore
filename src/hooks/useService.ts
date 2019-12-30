@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 import xhr, { XhrResponse } from '@wings-software/xhr-async'
+import { Utils } from '../core/Utils'
 
 export interface UseServiceInfo<T> {
   status: number
@@ -17,11 +19,6 @@ export interface UseServiceInfo<T> {
 export type ServiceCall<T> = (params: any) => Promise<Omit<UseServiceInfo<T>, 'ref' | 'loading'>>
 
 export type ServiceCallPredicate = () => boolean
-
-const randomId = () =>
-  Math.random()
-    .toString(36)
-    .substring(2)
 
 type DependencyList = ReadonlyArray<object | undefined>
 
@@ -61,7 +58,7 @@ export function useService<T extends XhrServiceFunc>(
 
   useEffect(() => {
     if (shouldInvokeServiceCall) {
-      xhrGroup = randomId()
+      xhrGroup = Utils.randomId()
       setLoading(true)
 
       // Make the service call
