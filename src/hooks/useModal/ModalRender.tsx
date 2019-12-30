@@ -23,7 +23,7 @@ export function ModalRenderer({ modalInfo }: { modalInfo: ModalInfo }) {
 
   return (
     <Overlay isOpen={true} hasBackdrop={false} className={Classes.OVERLAY_SCROLL_CONTAINER} usePortal={true}>
-      <Container className={css.modal} id={`modal-${entityType}`}>
+      <Container className={cx(css.modal, modalInfo?.options?.className)} id={`modal-${entityType}`}>
         <Draggable handle={`.${css.title}`}>
           <Container className={cx(Classes.CARD, Classes.ELEVATION_4, css.innerContainer)}>
             <Container background={backgroundColor} flex padding="xsmall" className={css.title}>
