@@ -57,7 +57,7 @@ export function Button(props: ButtonProps) {
   const isMounted = useIsMounted()
 
   const onClick = async (event: MouseEvent) => {
-    // TODO: Improve loading state when props.onClick() is resolved fast
+    // TODO (tan): Improve loading state when props.onClick() is resolved way too fast
     // that showing loading state causes flickering
 
     if (loading) {

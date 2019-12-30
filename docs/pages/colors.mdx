@@ -6,6 +6,12 @@ All colors are defined as global CSS variables. That means you can use the color
 
 As a matter of rule, no hex code should be used in any codebase. All colors must be defined in `colors.css` before they can be referred to.
 
+To use a Color Reference, you'll need to import `Color`.
+
+```js
+import { Color } from '@wings-software/uikit'
+```
+
 export const ColorRow = ({ name, value }) => {
   const style = { verticalAlign: 'middle' }
   return (
@@ -32,6 +38,13 @@ export const ColorRow = ({ name, value }) => {
       </td>
       <td style={style}>{value}</td>
       <td style={style}>{name.replace(/-/g, '')}</td>
+      <td style={style}>
+        Color.
+        {name
+          .replace(/--/g, '')
+          .replace(/-/g, '_')
+          .toUpperCase()}
+      </td>
     </tr>
   )
 }
@@ -104,7 +117,8 @@ export const names = {
       <th>CSS Variable Name</th>
       <th>Color</th>
       <th>Hex Value</th>
-      <th>Styled Prop Color Value</th>
+      <th>String Value</th>
+      <th>Color Reference</th>
     </tr>
   </thead>
   <tbody>

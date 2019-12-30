@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.34 - 12/30/19
+
+- `Added` new modal system (useModal).
+- `Changed` Color type definition to support reference like Intent.
+- `Added` `Utils.randomId`, `Utils.getIntentColors`.
+- `Changed` Layout props to have proper StyledProps typing.
+- `Added` proper export for `Intent` and `Color`.
+- `Added` export for `useIsMounted`.
+
 ## 1.0.33 - 12/23/19
 
 - `Added` FieldArray component

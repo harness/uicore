@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uikit",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "Harness UIKit - Lego for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -36,8 +36,10 @@
     "@wings-software/xhr-async": "^2.0.3",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
+    "constate": "^1.3.2",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-draggable": "^4.2.0"
   },
   "devDependencies": {
     "@blueprintjs/core": "^3.20.0",
@@ -55,6 +57,7 @@
     "@wings-software/xhr-async": "^2.0.3",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
+    "constate": "^1.3.2",
     "css-loader": "^3.2.0",
     "cypress": "^3.5.0",
     "cypress-plugin-snapshots": "^1.2.9",
@@ -78,6 +81,7 @@
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-draggable": "^4.2.0",
     "react-test-renderer": "^16.11.0",
     "stylelint": "^11.1.1",
     "stylelint-config-recommended": "^3.0.0",
