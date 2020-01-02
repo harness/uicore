@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.35 - 01/02/20
 
+- `Added` a couple of small improments.
+- `Fixed` `isMounted` hook usage in `Button` component.
+
+## 1.0.35 - 01/02/20
+
 - `Changed` spread operator to concat to be compatible with wingsui.
 
 ## 1.0.34 - 12/30/19

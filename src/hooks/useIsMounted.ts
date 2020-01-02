@@ -10,5 +10,5 @@ export const useIsMounted = () => {
     }
   }, [])
 
-  return isMounted.current
+  return isMounted
 }
