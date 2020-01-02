@@ -8,3 +8,7 @@ gcloud container clusters get-credentials jenkins-private --zone us-west1-b --pr
 bash $DOCROOT/scripts/docs-cleanup.sh
 
 cat $DOCROOT/scripts/uikit.yaml | envsubst | kubectl create --namespace=jenkins -f -
+
+# Hit documentation site once after a couple of minutes to force NextJS cache so we can browse faster
+sleep 3m
+curl https://uikit.harness.io/
