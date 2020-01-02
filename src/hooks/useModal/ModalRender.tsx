@@ -30,21 +30,24 @@ export function ModalRenderer({ modalInfo }: { modalInfo: ModalInfo }) {
     ) : (
       title
     )
+  const modalBody = (
+    <Container className={cx(Classes.CARD, Classes.ELEVATION_4, css.innerContainer)}>
+      <Container background={backgroundColor} flex padding="xsmall" className={css.title}>
+        <Layout.Horizontal spacing="xsmall" margin={{ left: 'xsmall' }}>
+          {title}
+        </Layout.Horizontal>
+        <Button intent={intent} icon="cross" onClick={() => close()} />
+      </Container>
+      <Container padding="medium" className={css.content}>
+        {modalInfo.Component}
+      </Container>
+    </Container>
+  )
 
   return (
     <Overlay isOpen={true} hasBackdrop={false} className={Classes.OVERLAY_SCROLL_CONTAINER} usePortal={true}>
       <Container className={cx(css.modal, modalInfo?.options?.className)} id={`modal-${entityType}`}>
-        <Draggable handle={`.${css.title}`}>
-          <Container className={cx(Classes.CARD, Classes.ELEVATION_4, css.innerContainer)}>
-            <Container background={backgroundColor} flex padding="xsmall" className={css.title}>
-              <Layout.Horizontal spacing="xsmall" margin={{ left: 'xsmall' }}>
-                {title}
-              </Layout.Horizontal>
-              <Button intent={intent} icon="cross" onClick={() => close()} />
-            </Container>
-            <Container padding="medium">{modalInfo.Component}</Container>
-          </Container>
-        </Draggable>
+        {modalInfo?.options?.draggable ? <Draggable handle={`.${css.title}`}>{modalBody}</Draggable> : modalBody}
       </Container>
     </Overlay>
   )
