@@ -7,7 +7,7 @@ const initialDataset: ModalInfo[] = []
 function useModalState() {
   const [dataset, setDataset] = useState(initialDataset)
   const mountModal = useCallback((modal: ModalInfo) => {
-    setDataset(ds => [...ds, modal])
+    setDataset(ds => ds.concat(modal))
   }, [])
   const unmountModal = useCallback(
     (modal: ModalInfo) => {
@@ -28,7 +28,7 @@ function useModalInfoState() {
 const [UseModalContextProvider, useModalContext] = constate(useModalState)
 const [ModalInfoContextProvider, useModalInfoContext] = constate(useModalInfoState)
 
-const ModalInfoContextSetter: React.FC<{ modalInfo: ModalInfo }> = props => {
+const ModalInfoContextSetter = (props: { modalInfo: ModalInfo }) => {
   const { setModalInfo } = useModalInfoContext()
   useEffect(() => {
     setModalInfo(props.modalInfo)
