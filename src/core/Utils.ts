@@ -14,21 +14,21 @@ const randomId = () =>
     .substring(2)
 
 function getIntentColors(intent: Intent) {
-  const color: Color = 'grey500'
-  let backgroundColor: Color = 'white'
+  const color: Color = Color.GREY_500
+  let backgroundColor: Color = Color.WHITE
 
   switch (intent) {
     case Intent.PRIMARY:
-      backgroundColor = 'blue500'
+      backgroundColor = Color.BLUE_500
       break
     case Intent.SUCCESS:
-      backgroundColor = 'green500'
+      backgroundColor = Color.GREEN_500
       break
     case Intent.WARNING:
-      backgroundColor = 'yellow500'
+      backgroundColor = Color.YELLOW_500
       break
     case Intent.DANGER:
-      backgroundColor = 'red500'
+      backgroundColor = Color.RED_500
       break
   }
 

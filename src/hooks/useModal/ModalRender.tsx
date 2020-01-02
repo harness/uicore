@@ -21,6 +21,16 @@ export function ModalRenderer({ modalInfo }: { modalInfo: ModalInfo }) {
     throw 'entityType option must be provided to make modal unique for tooltip and testing purposes'
   }
 
+  let title = modalInfo.options?.title
+  title =
+    typeof title === 'string' ? (
+      <Text color={color} font="medium">
+        {title}
+      </Text>
+    ) : (
+      title
+    )
+
   return (
     <Overlay isOpen={true} hasBackdrop={false} className={Classes.OVERLAY_SCROLL_CONTAINER} usePortal={true}>
       <Container className={cx(css.modal, modalInfo?.options?.className)} id={`modal-${entityType}`}>
@@ -28,9 +38,7 @@ export function ModalRenderer({ modalInfo }: { modalInfo: ModalInfo }) {
           <Container className={cx(Classes.CARD, Classes.ELEVATION_4, css.innerContainer)}>
             <Container background={backgroundColor} flex padding="xsmall" className={css.title}>
               <Layout.Horizontal spacing="xsmall" margin={{ left: 'xsmall' }}>
-                <Text color={color} font="medium">
-                  {modalInfo.options?.title}
-                </Text>
+                {title}
               </Layout.Horizontal>
               <Button intent={intent} icon="cross" onClick={() => close()} />
             </Container>

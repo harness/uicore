@@ -70,7 +70,7 @@ export function Button(props: ButtonProps) {
       try {
         await props.onClick(event)
       } finally {
-        if (isMounted) {
+        if (isMounted.current) {
           setLoading(false)
         }
       }
