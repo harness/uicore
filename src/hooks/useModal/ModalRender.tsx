@@ -18,7 +18,7 @@ export function ModalRenderer({ modalInfo }: { modalInfo: ModalInfo }) {
   const { color, backgroundColor } = Utils.getIntentColors(intent)
 
   if (!entityType) {
-    throw 'entityType option must be provided to make modal unique for tooltip and testing purposes'
+    throw '[Modal]: entityType option must be provided to make modal unique for tooltip and testing purposes'
   }
 
   let title = modalInfo.options?.title
@@ -30,13 +30,17 @@ export function ModalRenderer({ modalInfo }: { modalInfo: ModalInfo }) {
     ) : (
       title
     )
+  const draggable = modalInfo?.options?.draggable
   const modalBody = (
     <Container className={cx(Classes.CARD, Classes.ELEVATION_4, css.innerContainer)}>
-      <Container background={backgroundColor} flex padding="xsmall" className={css.title}>
-        <Layout.Horizontal spacing="xsmall" margin={{ left: 'xsmall' }}>
+      <Container background={backgroundColor} flex padding="xsmall">
+        <Layout.Horizontal
+          spacing="xsmall"
+          margin={{ left: 'xsmall' }}
+          className={cx(css.title, draggable && css.draggable)}>
           {title}
         </Layout.Horizontal>
-        <Button intent={intent} icon="cross" onClick={() => close()} />
+        <Button intent={intent} icon="cross" onClick={close} />
       </Container>
       <Container padding="medium" className={css.content}>
         {modalInfo.Component}
@@ -47,7 +51,7 @@ export function ModalRenderer({ modalInfo }: { modalInfo: ModalInfo }) {
   return (
     <Overlay isOpen={true} hasBackdrop={false} className={Classes.OVERLAY_SCROLL_CONTAINER} usePortal={true}>
       <Container className={cx(css.modal, modalInfo?.options?.className)} id={`modal-${entityType}`}>
-        {modalInfo?.options?.draggable ? <Draggable handle={`.${css.title}`}>{modalBody}</Draggable> : modalBody}
+        {draggable ? <Draggable handle={`.${css.title}`}>{modalBody}</Draggable> : modalBody}
       </Container>
     </Overlay>
   )

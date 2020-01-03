@@ -9,6 +9,5 @@ bash $DOCROOT/scripts/docs-cleanup.sh
 
 cat $DOCROOT/scripts/uikit.yaml | envsubst | kubectl create --namespace=jenkins -f -
 
-# Hit documentation site once after a couple of minutes to force NextJS cache so we can browse faster
-sleep 3m
-curl https://uikit.harness.io/
+# Hit documentation site once to force NextJS cache so we can browse faster later on
+curl --retry 30 --retry-connrefuse --retry-max-time 500 --retry-delay 15 https://uikit.harness.io/ && true
