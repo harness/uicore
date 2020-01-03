@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.38 - 01/02/20
+
+- `Added` Modal `draggable` option.
+- `Fixed` Modal title dragging icon when draggable if off.
+- `Changed` script to hit UIKit documentation site to force NextJS cache.
+
 ## 1.0.37 - 01/02/20
 
 - `Added` interface documentation for ModalOptions.

@@ -11,7 +11,9 @@
   }
 
   .title {
-    cursor: move;
+    &.draggable {
+      cursor: move;
+    }
   }
 
   .content > *:last-child {
