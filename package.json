@@ -1,7 +1,7 @@
 {
   "name": "@wings-software/uikit",
-  "version": "1.0.39",
-  "description": "Harness UIKit - Lego for building Harness UI applications",
+  "version": "1.0.40",
+  "description": "Harness UIKit - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",
