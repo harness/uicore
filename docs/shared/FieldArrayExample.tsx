@@ -14,7 +14,7 @@ export default function FieldArrayExample() {
     {
       name: 'col2',
       label: 'Column 2 Header',
-      renderer: (value: FieldValue, handleChange) => (
+      renderer: (value: FieldValue, _rowIndex: number, handleChange) => (
         <TextInput defaultValue={value} placeholder="Column 2 value" onChange={handleChange} />
       )
     },

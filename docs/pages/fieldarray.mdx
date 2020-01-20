@@ -22,7 +22,11 @@ interface Field {
   name: string
   label: string
   defaultValue?: FieldValue
-  renderer?: (arg0: FieldValue) => React.ReactElement
+  renderer?: (
+    value: FieldValue,
+    rowIndex: number,
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void
+  ) => React.ReactElement
 }
 
 type FieldValue = string | number
@@ -43,7 +47,7 @@ const fields: Array<Field> = [
       name: 'col2',
       label: 'Column Header 2',
       defaultValue: 'Item 2',
-      renderer: value => <TextInput defaultValue={value} placeholder="Column 2 value" />
+      renderer: (value, _index, handleChange) => <TextInput defaultValue={value} placeholder="Column 2 value" onChange={handleChange} />
     },
     {
       name: 'col3',
