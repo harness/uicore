@@ -118,5 +118,14 @@ export default [
         url: '/fieldarray'
       }
     ]
+  },
+  {
+    name: 'Charts',
+    items: [
+      {
+        label: 'Circular Percentage',
+        url: 'circular-percentage'
+      }
+    ]
   }
 ]
