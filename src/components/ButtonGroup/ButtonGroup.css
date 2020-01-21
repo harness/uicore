@@ -1,0 +1,16 @@
+.btnGroup {
+  button[class*='Button---button'] {
+    &:not(:last-of-type) {
+      margin-right: -1px;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+
+    &:not(:first-of-type) {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+
+    /* Note: ButtonGroup does not work if a button has tooltip in it */
+  }
+}

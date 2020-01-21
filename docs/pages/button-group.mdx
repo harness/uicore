@@ -1,0 +1,27 @@
+# Button Group --- docs/pages/button-group.mdx
+
+## Import
+
+```js
+import { ButtonGroup } from '@wings-software/uikit'
+```
+
+Note that Button Group does not work yet if a button inside the group has tooltip.
+
+## Usage
+
+```js live=true
+<Layout.Horizontal spacing="medium" id="button-group">
+  <ButtonGroup>
+    <Button intent="primary" text="Applications" />
+    <Button text="Clusters" />
+  </ButtonGroup>
+  <ButtonGroup>
+    <Button icon="box" />
+    <Button intent="primary" icon="build" />
+    <Button icon="alignment-bottom" />
+    <Button icon="duplicate" />
+    <Button icon="edit" />
+  </ButtonGroup>
+</Layout.Horizontal>
+```
