@@ -1,0 +1,16 @@
+.btnGroup {
+  > * {
+    &:not(:last-child),
+    &:not(:last-child) button[class*='Button---button'] {
+      margin-right: -1px;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+
+    &:not(:first-child),
+    &:not(:first-child) button[class*='Button---button'] {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+}
