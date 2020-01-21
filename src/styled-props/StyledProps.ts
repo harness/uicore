@@ -17,10 +17,10 @@ export interface StyledProps {
   intent?: Intent
 
   /** Component width */
-  width?: string
+  width?: string | number
 
   /** Component height*/
-  height?: string
+  height?: string | number
 
   /** Component margin. Usually used for containers */
   margin?: Spacing | MarginProps
@@ -70,7 +70,8 @@ const PropsList = [
   'background',
   'border',
   'flex',
-  'style'
+  'style',
+  'spacing'
 ]
 
 // Returns if a value is an object
