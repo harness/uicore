@@ -28,12 +28,10 @@ exports[`<DurationInput /> Component > snapshots for DurationInput component #0`
 
 exports[`<DurationInput /> Component > snapshots for DurationInput component #1`] = `
 <div
-  spacing="medium"
   id="duration-input-example"
   class="Layout---horizontal--3rmQ Layout---layout-spacing-medium--3-Y8 StyledProps---main--1Wws"
 >
   <div
-    spacing="small"
     class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
   >
     <label class="Label---main--bHPE">Input duration</label>
@@ -62,7 +60,6 @@ exports[`<DurationInput /> Component > snapshots for DurationInput component #1`
     </div>
   </div>
   <div
-    spacing="small"
     class="Layout---vertical--3Szv Layout---layout-spacing-small--2ZKb StyledProps---main--1Wws"
   >
     <label class="Label---main--bHPE">Parsed value</label>
