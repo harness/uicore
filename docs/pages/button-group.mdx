@@ -6,8 +6,6 @@
 import { ButtonGroup } from '@wings-software/uikit'
 ```
 
-Note that Button Group does not work yet if a button inside the group has tooltip.
-
 ## Usage
 
 ```js live=true
@@ -17,11 +15,11 @@ Note that Button Group does not work yet if a button inside the group has toolti
     <Button text="Clusters" />
   </ButtonGroup>
   <ButtonGroup>
-    <Button icon="box" />
+    <Button icon="box" tooltip="This is a box" />
     <Button intent="primary" icon="build" />
-    <Button icon="alignment-bottom" />
+    <Button icon="alignment-bottom" tooltip="Align bottom" />
     <Button icon="duplicate" />
-    <Button icon="edit" />
+    <Button icon="edit" tooltip="Click here to edit" />
   </ButtonGroup>
 </Layout.Horizontal>
 ```
