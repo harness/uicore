@@ -1,14 +1,14 @@
 {
   "name": "@wings-software/uikit",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "description": "Harness UIKit - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "style": "dist/index.css",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "yarn dep; yarn ui:icons; run-p -c ui:types ui:watch docs:watch",
-    "build": "yarn dep; yarn ui:build",
+    "build": "yarn dep; yarn ui:build; yarn types:copy",
     "clean": "rm -rf docs/static/* dist/types dist/*",
     "dep": "yarn; cd docs; yarn; cd ..",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" && stylelint ./src && prettier --check \"src/**/*.{ts,tsx,css}\"",
@@ -23,7 +23,8 @@
     "ui:watch": "NODE_ENV=development webpack --watch",
     "ui:build": "NODE_ENV=production webpack",
     "docs:watch": "cd docs; yarn watch",
-    "setup": "bash scripts/github-package-registry.sh"
+    "setup": "bash scripts/github-package-registry.sh",
+    "types:copy": "echo 'Adhoc type copy...'; mv dist/types/src/* dist/; rm -rf dist/types"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/wings-software/uikit",

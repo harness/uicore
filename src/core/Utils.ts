@@ -39,6 +39,13 @@ function getIntentColors(intent: Intent) {
   return { color, backgroundColor }
 }
 
-const Utils = { stopEvent, copy, randomId, getIntentColors }
+// Convert UIKit named color into real CSS color
+const getRealCSSColor = (color: Color) =>
+  `var(--${color // eslint-disable-line
+    .match(/[A-Z][a-z]+|[0-9]+|[a-z]+/g)!
+    .join('-')
+    .toLowerCase()})`
+
+const Utils = { stopEvent, copy, randomId, getIntentColors, getRealCSSColor }
 
 export { Utils }
