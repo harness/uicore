@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. The format 
 
 - `Added` `OptionsButtonGroup` component.
 
-## 1.0.46 - 01/20/20
+## 1.0.46 - 01/21/20
 
 - `Changed` interface for FieldArray custom renderer to support passing rowIndex
 
