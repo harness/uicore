@@ -15,11 +15,11 @@ export interface OptionButtonProps extends ButtonProps {
 
 export interface OptionsButtonGroupProps {
   intent?: Intent
-  onSelect?: (value: string | number) => void
+  onChange?: (value: string | number) => void
   options: OptionButtonProps[]
 }
 
-export const OptionsButtonGroup: React.FC<OptionsButtonGroupProps> = ({ intent, options, onSelect }) => {
+export const OptionsButtonGroup: React.FC<OptionsButtonGroupProps> = ({ intent, options, onChange }) => {
   const [index, setIndex] = useState(-1)
   const buttons = useMemo(
     () =>
@@ -34,13 +34,15 @@ export const OptionsButtonGroup: React.FC<OptionsButtonGroupProps> = ({ intent, 
             {...props}
             {..._intent}
             onClick={() => {
-              setIndex(_index)
-              if (onSelect) onSelect(props.value)
+              if (_index !== index) {
+                setIndex(_index)
+                if (onChange) onChange(props.value)
+              }
             }}
           />
         )
       }),
-    [index, intent, options, onSelect]
+    [index, intent, options, onChange]
   )
 
   return <ButtonGroup>{buttons}</ButtonGroup>
