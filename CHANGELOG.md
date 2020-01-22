@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+
+## 1.0.46 - 01/20/20
+
+- `Changed` interface for FieldArray custom renderer to support passing rowIndex
+
 ## 1.0.45 - 01/21/20
 
 - `Changed` StyledProps `width` and `height` can be passed by number (defaulted to pixel).

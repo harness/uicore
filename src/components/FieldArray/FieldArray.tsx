@@ -11,7 +11,11 @@ export interface Field {
   name: string
   label: string
   defaultValue?: FieldValue
-  renderer?: (arg0: FieldValue, onChange?: (event: ChangeEvent<HTMLInputElement>) => void) => React.ReactElement
+  renderer?: (
+    value: FieldValue,
+    rowIndex: number,
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  ) => React.ReactElement
 }
 
 export type RowData = Record<string, FieldValue>
@@ -103,7 +107,7 @@ function FieldArray(props: ConnectedProps) {
                   const { name, renderer } = field
                   return (
                     <td key={`${rowIndex}-${fieldIndex}-${value.length}`}>
-                      {renderer ? renderer(row[name], handleChange?.bind(null, rowIndex, name)) : row[name]}
+                      {renderer ? renderer(row[name], rowIndex, handleChange?.bind(null, rowIndex, name)) : row[name]}
                     </td>
                   )
                 })}
