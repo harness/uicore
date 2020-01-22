@@ -3,23 +3,95 @@
 ## Import
 
 ```js
-import { ButtonGroup } from '@wings-software/uikit'
+import { ButtonGroup, OptionsButtonGroup } from '@wings-software/uikit'
 ```
 
-## Usage
+## ButtonGroup
 
 ```js live=true
 <Layout.Horizontal spacing="medium" id="button-group">
   <ButtonGroup>
-    <Button intent="primary" text="Applications" />
+    <Button text="Applications" />
     <Button text="Clusters" />
   </ButtonGroup>
   <ButtonGroup>
     <Button icon="box" tooltip="This is a box" />
-    <Button intent="primary" icon="build" />
+    <Button icon="build" />
     <Button icon="alignment-bottom" tooltip="Align bottom" />
     <Button icon="duplicate" />
     <Button icon="edit" tooltip="Click here to edit" />
   </ButtonGroup>
 </Layout.Horizontal>
+```
+
+## OptionsButtonGroup
+
+This component makes it easy to control buttons in a button group. It takes an array of ButtonProps where each item has two more extra optional field `value` and `selected`, render ButtonGroup properly, and invoke `onSelect` with the value of the selected item in the collection when the item is clicked.
+
+```js live=true
+<Layout.Horizontal spacing="large">
+  <OptionsButtonGroup
+    options={[
+      {
+        text: 'Applications',
+        tooltip: 'Select Applications',
+        value: 'applications'
+      },
+      {
+        text: 'Clusters',
+        tooltip: 'Select Clusters',
+        value: 'clusters',
+        selected: true
+      }
+    ]}
+    onSelect={value => alert('Select ' + value)}
+  />
+  <OptionsButtonGroup
+    options={[
+      {
+        icon: 'box',
+        tooltip: 'a box',
+        value: 'box'
+      },
+      {
+        tooltip: 'build',
+        value: 'build',
+        icon: 'build',
+        selected: true
+      },
+      {
+        icon: 'alignment-bottom',
+        tooltip: 'Align bottom',
+        value: 'bottom'
+      },
+      {
+        icon: 'edit',
+        value: 'edit',
+        tooltip: 'Edit'
+      }
+    ]}
+    onSelect={value => alert('Select ' + value)}
+  />
+</Layout.Horizontal>
+```
+
+### OptionsButtonGroup with no default selected button
+
+```js live=true
+<OptionsButtonGroup
+  intent="success"
+  options={[
+    {
+      text: 'Applications',
+      tooltip: 'Select Applications',
+      value: 'applications'
+    },
+    {
+      text: 'Clusters',
+      tooltip: 'Select Clusters',
+      value: 'clusters'
+    }
+  ]}
+  onSelect={value => alert('Select ' + value)}
+/>
 ```
