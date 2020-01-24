@@ -1,0 +1,21 @@
+.dateInput {
+  position: relative;
+}
+
+.calendarIcon {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  button {
+    height: 30px !important;
+    width: 30px !important;
+  }
+}
+
+.helpText {
+  font-size: var(--font-size-small);
+  margin-top: var(--spacing-small);
+}
+.helpIcon {
+  margin-left: var(--spacing-small);
+}

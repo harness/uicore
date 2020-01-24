@@ -85,11 +85,10 @@ export function timeToDisplayText(time: number): string {
       str.push(`${n}${key}`)
     }
   })
-
   return str.join(' ')
 }
 
-const popoverContent = (
+export const HelpPopoverContent = (
   <Text padding="xlarge" style={{ minWidth: '192px' }}>
     You can use:
     <br />
@@ -156,7 +155,7 @@ export function DurationInput(props: DurationInputProps) {
       <Popover
         wrapperTagName="div"
         className={css.helpIcon}
-        content={popoverContent}
+        content={HelpPopoverContent}
         lazy={true}
         interactionKind="hover"
         position="top"
