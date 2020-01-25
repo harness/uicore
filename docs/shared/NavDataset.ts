@@ -106,6 +106,10 @@ export default [
         url: '/textinput'
       },
       {
+        label: 'DateInput',
+        url: '/dateinput'
+      },
+      {
         label: 'DurationInput',
         url: '/durationinput'
       },

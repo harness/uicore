@@ -1,4 +1,5 @@
 import '@blueprintjs/core/lib/css/blueprint.css'
+import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
 import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
