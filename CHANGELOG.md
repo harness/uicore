@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.48 - 01/25/20
+
+- `Added` `DateInput` component.
+
 ## 1.0.47 - 01/22/20
 
 - `Added` `OptionsButtonGroup` component.
