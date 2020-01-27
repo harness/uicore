@@ -16,11 +16,15 @@ interface DateInputProps extends Omit<TextInputProps, 'onChange'> {
   onChange?: (value: string | undefined, error?: string) => void
   allowVariables?: boolean
 }
-
+enum Errors {
+  NOT_VALID_DATE = 'Not a valid date',
+  NOT_VALID_EXPRESSION = 'Not a valid Date Expression'
+}
 interface DateInputState {
   isDate: boolean
   value?: string
   intent?: Intent
+  error?: Errors | undefined
 }
 
 const REGEX_VALID_TEXT = /^(current\(\)|\${[a-z._]+})(\s*[+-]\s*)*([0-9]+[wdhms]+\s*)*$/gi
@@ -59,6 +63,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
         setState(prevState => ({
           ...prevState,
           value: displayValue,
+          error: undefined,
           isDate: true
         }))
       } else if (allowVariables) {
@@ -79,6 +84,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
             ...prevState,
             value: displayValue,
             isDate: false,
+            error: undefined,
             intent: Intent.SUCCESS
           }))
         } else {
@@ -86,6 +92,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
           setState(prevState => ({
             ...prevState,
             value,
+            error: Errors.NOT_VALID_EXPRESSION,
             isDate: false,
             intent: Intent.DANGER
           }))
@@ -97,6 +104,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
           ...prevState,
           value,
           isDate: isValidDate,
+          error: Errors.NOT_VALID_DATE,
           intent: isValidDate ? undefined : Intent.DANGER
         }))
       }
@@ -104,40 +112,74 @@ export const DateInput: React.FC<DateInputProps> = props => {
 
   // OnChange of Input Box
   const onChangeText = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value
+    const originalValue = event.target.value
+    const value = event.target.value.trim()
     const isValidDate = isValidDateInput(value, minDate, maxDate, formatDateTime)
     const isValidText = REGEX_VALID_TEXT.test(value)
     REGEX_VALID_TEXT.lastIndex = 0
+    const isCustomValue = REGEX_VALID_VARIABLE.test(value)
+    REGEX_VALID_VARIABLE.lastIndex = 0
 
     // Check if OnChange is passes as props
-    if (onChange && (isValidDate || isValidText)) {
+    if (onChange) {
       // Valid Input
-      if (isValidText) {
+      if (isValidText && isCustomValue) {
         // Extract time from string
         const time = parseStringToTime(value.replace(REGEX_VALID_VARIABLE, '').trim())
         const timeString = time !== 0 ? time.toString() : ''
         onChange(value.replace(REGEX_VALID_VALUE, '') + timeString)
         REGEX_VALID_VARIABLE.lastIndex = 0
         REGEX_VALID_VALUE.lastIndex = 0
-      } else {
+      } else if (isValidDate && !isCustomValue) {
         onChange(
           moment(value, formatDateTime)
             .valueOf()
             .toString()
         )
+      } else if (isCustomValue) {
+        // Not a Valid Date expression
+        onChange(undefined, Errors.NOT_VALID_EXPRESSION)
+      } else {
+        // Not a Valid Date
+        onChange(undefined, Errors.NOT_VALID_DATE)
       }
-    } else if (onChange) {
-      // Not a Valid Date
-      onChange(undefined, 'Not a valid date')
     }
 
     // Update State
-    if (isValidDate) {
-      setState(prevState => ({ ...prevState, value, isDate: isValidDate, intent: undefined }))
-    } else if (isValidText) {
-      setState(prevState => ({ ...prevState, value, isDate: false, intent: Intent.SUCCESS }))
+    if (isValidText) {
+      setState(prevState => ({
+        ...prevState,
+        value: originalValue,
+        isDate: false,
+        intent: Intent.SUCCESS,
+        error: undefined
+      }))
+    } else if (isValidDate && !isCustomValue) {
+      setState(prevState => ({
+        ...prevState,
+        value: originalValue,
+        isDate: isValidDate,
+        intent: undefined,
+        error: undefined
+      }))
     } else {
-      setState(prevState => ({ ...prevState, value, isDate: isValidDate, intent: Intent.DANGER }))
+      if (isCustomValue) {
+        setState(prevState => ({
+          ...prevState,
+          value: originalValue,
+          isDate: false,
+          error: Errors.NOT_VALID_EXPRESSION,
+          intent: Intent.DANGER
+        }))
+      } else {
+        setState(prevState => ({
+          ...prevState,
+          value: originalValue,
+          isDate: isValidDate,
+          error: Errors.NOT_VALID_DATE,
+          intent: Intent.DANGER
+        }))
+      }
     }
   }
 
@@ -176,7 +218,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
         value={state.value}
         intent={state.intent}
         placeholder={formatDateTime}
-        errorText={state.intent === Intent.DANGER ? 'Not a valid date' : undefined}
+        errorText={state.error}
         onChange={onChangeText}
       />
       {state.isDate ? (
@@ -191,7 +233,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
       ) : null}
       {allowVariables ? (
         <div className={css.helpText}>
-          Support custom variables: &#x22;current() + 2d&#x22;
+          Support custom variables: &#x22;current() + 2d 2h&#x22;
           <Popover
             wrapperTagName="span"
             className={css.helpIcon}
