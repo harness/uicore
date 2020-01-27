@@ -14,7 +14,7 @@ export interface Field {
   renderer?: (
     value: FieldValue,
     rowIndex: number,
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+    onChange?: (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => void
   ) => React.ReactElement
 }
 
