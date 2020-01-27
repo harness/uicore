@@ -25,7 +25,7 @@ interface Field {
   renderer?: (
     value: FieldValue,
     rowIndex: number,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void
+    onChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
   ) => React.ReactElement
 }
 

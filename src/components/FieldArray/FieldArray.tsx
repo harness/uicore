@@ -14,7 +14,7 @@ export interface Field {
   renderer?: (
     value: FieldValue,
     rowIndex: number,
-    onChange?: (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => void
+    onChange?: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
   ) => React.ReactElement
 }
 
@@ -68,7 +68,7 @@ function FieldArray(props: ConnectedProps) {
     })
   }
 
-  function handleChange(rowIndex: number, fieldName: string, event: ChangeEvent<HTMLInputElement>) {
+  function handleChange(rowIndex: number, fieldName: string, event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     setValue(rows => {
       rows[rowIndex] = { ...rows[rowIndex], [fieldName]: event.target.value }
       return rows
