@@ -1,3 +1,3 @@
 import React from 'react'
 
-export const FlexExpander = () => <span style={{ flexGrow: 1 }} />
+export const FlexExpander: React.FC<{ flexGrow: number }> = ({ flexGrow = 1 }) => <span style={{ flexGrow }} />
