@@ -91,6 +91,10 @@ export default [
       {
         label: 'Checkbox',
         url: '/checkbox'
+      },
+      {
+        label: 'FlexExpander',
+        url: '/flex-expander'
       }
     ]
   },
