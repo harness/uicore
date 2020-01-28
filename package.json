@@ -12,7 +12,7 @@
     "clean": "rm -rf docs/static/* dist/types dist/*",
     "dep": "yarn; cd docs; yarn; cd ..",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" && stylelint ./src && prettier --check \"src/**/*.{ts,tsx,css}\"",
-    "test": "cypress run --config video=false -s cypress/integration/**/*.spec.js",
+    "test": "cypress cache clear; cypress run --config video=false -s cypress/integration/**/*.spec.js",
     "test:jest": "jest --no-cache ./src",
     "jest": "jest --no-cache --watch",
     "test:cypress": "cypress open",
