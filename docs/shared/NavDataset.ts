@@ -139,7 +139,7 @@ export default [
     name: 'Charts',
     items: [
       {
-        label: 'Circular Percentage',
+        label: 'CircularPercentage',
         url: 'circular-percentage'
       }
     ]

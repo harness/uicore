@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Color, Text, Utils } from '../..'
+import { Easing, useTween } from '../../hooks/useTween'
 
 export interface CircularPercentageChartProps {
   size: number
@@ -18,23 +19,26 @@ export const CircularPercentageChart: React.FC<CircularPercentageChartProps> = (
 }) => {
   const cssTrackColor = Utils.getRealCSSColor(trackColor)
   const cssPercentageColor = Utils.getRealCSSColor(color)
+  const [_value, setValue] = useTween(0, { easing: Easing.easeInOutQuart, duration: 1500 })
+
+  useEffect(() => {
+    setValue(value)
+  }, [value])
 
   return (
     <div style={{ width: `${size}px`, height: `${size}px`, position: 'relative' }}>
-      <style>{`@keyframes CircularPercentageChartKeyFrames { 0% { stroke-dasharray: 0 100; }}`}</style>
       <svg viewBox="0 0 36 36">
         <path
           style={{ fill: 'none', stroke: cssTrackColor, strokeWidth: 1 }}
           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
         />
         <path
-          strokeDasharray={`${value}, 100`}
+          strokeDasharray={`${_value > 97 && _value < 100 ? 97 : _value}, 100`}
           strokeLinecap="round"
           style={{
             fill: 'none',
             stroke: cssPercentageColor,
-            strokeWidth: 2,
-            animation: 'CircularPercentageChartKeyFrames 1.5s ease-out forwards'
+            strokeWidth: value ? 2 : 0
           }}
           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
         />

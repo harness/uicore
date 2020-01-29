@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.53 - 01/29/20
+
+- `Changed` flexGrow prop of `FlexExpander' to be optional.
+- `Changed` CircularPercentageChart annimation from CSS to `useTween`.
+- `Added` `useTween` hook.
+
 ## 1.0.52 - 01/28/20
 
 - `Added` `DateRangePickerButton' component.
