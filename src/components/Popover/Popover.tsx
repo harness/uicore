@@ -6,7 +6,7 @@ export interface PopoverProps extends React.ComponentProps<typeof BPopover> {
   isDark?: boolean
 
   /** Popover target element */
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 export function Popover(props: PopoverProps) {
