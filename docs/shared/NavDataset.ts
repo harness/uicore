@@ -95,6 +95,10 @@ export default [
       {
         label: 'FlexExpander',
         url: '/flex-expander'
+      },
+      {
+        label: 'DateRangePickerButton',
+        url: '/date-range-picker-button'
       }
     ]
   },

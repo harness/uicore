@@ -1,0 +1,33 @@
+# DateRangePickerButton --- docs/pages/date-range-picker-button.mdx
+
+## Import
+
+```js
+import { DateRangePickerButton } from '@wings-software/uikit'
+```
+
+```js live=true
+<Layout.Horizontal spacing="large">
+  <DateRangePickerButton
+    initialButtonText="Last 30 days"
+    renderButtonText={selectedDates => {
+      return `${selectedDates[0].toLocaleDateString()} - ${selectedDates[1].toLocaleDateString()}`
+    }}
+    onChange={selectedDates => {
+      alert(`${selectedDates[0].toLocaleDateString()} - ${selectedDates[1].toLocaleDateString()}`)
+    }}
+  />
+
+  <DateRangePickerButton
+    intent="primary"
+    minimal={undefined}
+    initialButtonText="Select Dates"
+    renderButtonText={selectedDates => {
+      return `${selectedDates[0].toLocaleDateString()} - ${selectedDates[1].toLocaleDateString()}`
+    }}
+    onChange={selectedDates => {
+      alert(`${selectedDates[0].toLocaleDateString()} - ${selectedDates[1].toLocaleDateString()}`)
+    }}
+  />
+</Layout.Horizontal>
+```

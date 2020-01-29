@@ -36,3 +36,7 @@ export { UseModalBinding } from './hooks/useModal/UseModalBinding'
 export { CircularPercentageChart } from './components/CircularPercentageChart/CircularPercentageChart'
 export { DateInput } from './components/DateInput/DateInput'
 export { FlexExpander } from './components/FlexExpander/FlexExpander'
+export {
+  DateRangePickerButtonProps,
+  DateRangePickerButton
+} from './components/DateRangePickerButton/DateRangePickerButton'
