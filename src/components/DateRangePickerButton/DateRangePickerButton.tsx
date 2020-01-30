@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, ButtonProps } from '../Button/Button'
 import { DateRangePicker, IDateRangePickerProps } from '@blueprintjs/datetime'
-import { Classes, PopoverInteractionKind } from '@blueprintjs/core'
+import { PopoverInteractionKind } from '@blueprintjs/core'
 
 export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'> {
   initialButtonText: string
@@ -23,13 +23,14 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
       onClick={() => setIsOpen(open => !open)}
       tooltip={
         <DateRangePicker
-          className={range?.length === 2 ? Classes.POPOVER_DISMISS : ''}
+          value={range}
           allowSingleDayRange={true}
           maxDate={new Date()}
           {...props.dateRangePickerProps}
           onChange={selectedDates => {
+            setRange(selectedDates)
+
             if (selectedDates[0] && selectedDates[1]) {
-              setRange(selectedDates)
               setIsOpen(false)
               props.onChange?.([selectedDates[0], selectedDates[1]])
               setText(props.renderButtonText([selectedDates[0], selectedDates[1]]))
@@ -39,10 +40,7 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
       }
       tooltipProps={{
         interactionKind: PopoverInteractionKind.CLICK,
-        isOpen: isOpen,
-        onClose: () => {
-          setRange([])
-        }
+        isOpen: isOpen
       }}
       {...{
         ...props,
