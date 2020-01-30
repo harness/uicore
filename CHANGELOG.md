@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.55 - 01/30/20
+
+- Fixed the NaN case and date date check for `DateInput` component for fixes.
+
 ## 1.0.54 - 01/29/20
 
 - `Changed` Added links to the Blueprint component extended in `DateRangePickerButton`, in the README.
