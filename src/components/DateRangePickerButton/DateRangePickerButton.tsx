@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, ButtonProps } from '../Button/Button'
 import { DateRangePicker, IDateRangePickerProps } from '@blueprintjs/datetime'
-import { Classes, PopoverInteractionKind } from '@blueprintjs/core'
+import { PopoverInteractionKind } from '@blueprintjs/core'
 
 export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'> {
   initialButtonText: string
@@ -12,6 +12,7 @@ export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'
 
 export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props => {
   const [range, setRange] = useState()
+  const [isOpen, setIsOpen] = useState(false)
   const [text, setText] = useState(props.initialButtonText)
 
   return (
@@ -19,27 +20,30 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
       minimal
       rightIcon="calendar"
       text={text}
+      onClick={() => setIsOpen(open => !open)}
       tooltip={
         <DateRangePicker
-          className={range?.length === 2 && !range[1] ? Classes.POPOVER_DISMISS : undefined}
+          value={range}
           allowSingleDayRange={true}
           maxDate={new Date()}
+          {...props.dateRangePickerProps}
           onChange={selectedDates => {
             setRange(selectedDates)
 
-            if (selectedDates?.length === 2 && selectedDates[0] && selectedDates[1]) {
+            if (selectedDates[0] && selectedDates[1]) {
+              setIsOpen(false)
               props.onChange?.([selectedDates[0], selectedDates[1]])
               setText(props.renderButtonText([selectedDates[0], selectedDates[1]]))
             }
           }}
-          {...props.dateRangePickerProps}
         />
       }
       tooltipProps={{
         interactionKind: PopoverInteractionKind.CLICK,
-        onClose: () => {
-          setRange([])
-        }
+        onInteraction: isOpen => {
+          setIsOpen(isOpen)
+        },
+        isOpen: isOpen
       }}
       {...{
         ...props,
