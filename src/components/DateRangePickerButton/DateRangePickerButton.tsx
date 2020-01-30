@@ -40,6 +40,9 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
       }
       tooltipProps={{
         interactionKind: PopoverInteractionKind.CLICK,
+        onInteraction: isOpen => {
+          setIsOpen(isOpen)
+        },
         isOpen: isOpen
       }}
       {...{
