@@ -14,6 +14,7 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
   const [range, setRange] = useState()
   const [isOpen, setIsOpen] = useState(false)
   const [text, setText] = useState(props.initialButtonText)
+  const [selectedShortcutIndex, setSelectedShortcutIndex] = useState(-1)
 
   return (
     <Button
@@ -27,7 +28,12 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
           allowSingleDayRange={true}
           maxDate={new Date()}
           {...props.dateRangePickerProps}
+          selectedShortcutIndex={selectedShortcutIndex}
+          onShortcutChange={(_, index) => {
+            setSelectedShortcutIndex(index)
+          }}
           onChange={selectedDates => {
+            setSelectedShortcutIndex(-1)
             setRange(selectedDates)
 
             if (selectedDates[0] && selectedDates[1]) {
