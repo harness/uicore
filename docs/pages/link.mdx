@@ -16,7 +16,7 @@ import { Link } from '@wings-software/uikit'
 
 ```js live=true
 <Layout.Horizontal spacing="small">
-  <Link href="/">Relative Link</Link>
+  <Link href="/dashboard">Dashboard</Link>
   <Icon name="dot" color="grey300" />
   <Link href="//harness.io" target="_blank">
     External Link
@@ -24,6 +24,9 @@ import { Link } from '@wings-software/uikit'
   <Icon name="dot" color="grey300" />
   <Link disabled href="/link">
     Disabled Link
+  </Link>
+  <Link href="javascript:void()" onClick={() => alert('Click')}>
+    Link acts as button
   </Link>
 </Layout.Horizontal>
 ```

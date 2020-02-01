@@ -10,6 +10,7 @@ import { IconName, Icon, IconProps } from '../../icons/Icon'
 import { Popover, PopoverProps } from '../Popover/Popover'
 import { Text } from '../Text/Text'
 import { useIsMounted } from '../../hooks/useIsMounted'
+import { Config } from '../../core/Config'
 
 export interface ButtonProps
   extends Assign<
@@ -140,6 +141,11 @@ export function Link(props: LinkProps) {
   // @see https://github.com/yannickcr/eslint-plugin,-react/blob/master/docs/rules/jsx-no-target-blank.md
   if (/_blank/i.test(props.target || '')) {
     extra.rel = 'noreferrer noopener'
+  }
+
+  // This change is made to make Link compatible with routing pattern at Harness
+  if (!Config.DISABLE_LINK_REWRITE && props.href?.startsWith('/') && !props.href?.startsWith('/#/')) {
+    extra.href = `/#${props.href}`
   }
 
   if (props.disabled) {
