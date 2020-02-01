@@ -57,7 +57,7 @@ export default [
         url: '/button'
       },
       {
-        label: 'Button Group',
+        label: 'ButtonGroup',
         url: '/button-group'
       },
       {

@@ -141,7 +141,7 @@ function assignStyleProp(props: KVO, style: KVO | null | undefined) {
 /** Return all props that are not styled props */
 export function omitStyledProps(props: KVO, ...ignoredProps: string[]): KVO {
   return Object.keys(props)
-    .filter(key => !PropsList.includes(key) && !ignoredProps.includes(key))
+    .filter(key => props[key] !== undefined && !PropsList.includes(key) && !ignoredProps.includes(key))
     .reduce(
       (obj: KVO, key) => {
         obj[key] = props[key]
