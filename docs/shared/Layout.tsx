@@ -1,11 +1,12 @@
 import React from 'react'
-import { HarnessIcons, Layout } from '../static'
+import { HarnessIcons, Layout, Config } from '../static'
 import Nav from './Nav'
 import { MDXProvider } from '@mdx-js/react'
 import MdxComponents from './MdxComponents'
 import { FocusStyleManager } from '@blueprintjs/core'
 
 FocusStyleManager.onlyShowFocusOnTabs()
+Config.DISABLE_LINK_REWRITE = true
 
 export default class extends React.Component {
   render() {
