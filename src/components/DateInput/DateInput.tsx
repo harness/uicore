@@ -27,18 +27,21 @@ interface DateInputState {
   error?: Errors | undefined
 }
 
-const REGEX_VALID_TEXT = /^(current\(\)|\${[a-z._]+})(\s*[+-]\s*)*([0-9]+[wdhms]+\s*)*$/gi
-const REGEX_VALID_MS_TEXT = /^(current\(\)|\${[a-z._]+})(\s*[+-]\s*)*([0-9]+)*$/gi
-const REGEX_VALID_VARIABLE = /^(current\(\)|\${[a-z._]+})(\s*[+-]\s*)*/gi
+const REGEX_VALID_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+[wdhms]+\s*)*$/gi
+const REGEX_VALID_MS_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+)*$/gi
+const REGEX_VALID_VARIABLE = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*/gi
 const REGEX_VALID_VALUE = /([0-9]+[wdhms]+\s*)*$/gi
 const REGEX_VALID_MS_VALUE = /([0-9])*$/gi
+const REGEX_VALID_DATE = /^\d{2,4}.\d{2,4}.\d{2,4}/gi
 
 const isValidDateInput = (value: number | string | undefined, minDate: Date, maxDate: Date, formatDateTime: string) => {
   if (value === '') {
     return true
   }
+  REGEX_VALID_DATE.lastIndex = 0
+  const isRegExValid = typeof value === 'number' || (typeof value === 'string' && REGEX_VALID_DATE.test(value))
   const date = moment(value, formatDateTime)
-  return date.isValid() && date.isBetween(minDate, maxDate)
+  return isRegExValid && date.isValid() && date.isBetween(minDate, maxDate)
 }
 
 export const DateInput: React.FC<DateInputProps> = props => {
@@ -131,11 +134,15 @@ export const DateInput: React.FC<DateInputProps> = props => {
         REGEX_VALID_VARIABLE.lastIndex = 0
         REGEX_VALID_VALUE.lastIndex = 0
       } else if (isValidDate && !isCustomValue) {
-        onChange(
-          moment(value, formatDateTime)
-            .valueOf()
-            .toString()
-        )
+        if (value !== '') {
+          onChange(
+            moment(value, formatDateTime)
+              .valueOf()
+              .toString()
+          )
+        } else {
+          onChange(value)
+        }
       } else if (isCustomValue) {
         // Not a Valid Date expression
         onChange(undefined, Errors.NOT_VALID_EXPRESSION)
