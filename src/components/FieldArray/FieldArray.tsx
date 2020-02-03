@@ -9,7 +9,7 @@ export type FieldValue = any
 
 export interface Field {
   name: string
-  label: string
+  label: string | React.ReactElement
   defaultValue?: FieldValue
   renderer?: (
     value: FieldValue,

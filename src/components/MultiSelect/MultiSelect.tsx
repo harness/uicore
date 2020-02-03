@@ -128,7 +128,7 @@ export function MultiSelect(props: MultiSelectProps) {
 
   return (
     <BPMultiSelect
-      itemRenderer={itemRenderer}
+      itemRenderer={props.itemRender || itemRenderer}
       tagRenderer={item => item.label}
       itemsEqual={(a, b) => a.value === b.value}
       {...rest}

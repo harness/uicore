@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { FieldArray, TextInput, Heading, Button } from '../static/index'
+import { FieldArray, TextInput, Heading, Button, MultiSelect } from '../static/index'
 import { FieldValue } from '../../src/components/FieldArray/FieldArray'
 import { Formik } from 'formik'
+import './FieldArrayExample.css'
 
 export default function FieldArrayExample() {
   const fields = [
@@ -13,14 +14,31 @@ export default function FieldArrayExample() {
     },
     {
       name: 'col2',
-      label: 'Column 2 Header',
+      label: <div style={{ color: 'red' }}>Column Header 2</div>,
       renderer: (value: FieldValue, _rowIndex: number, handleChange) => (
         <TextInput defaultValue={value} placeholder="Column 2 value" onChange={handleChange} />
       )
     },
     {
       name: 'col3',
-      label: 'Column 3 Header'
+      label: 'Column 3 Header',
+      renderer: (value: FieldValue, _rowIndex: number, handleChange) => {
+        const onChange = opts => {
+          handleChange({ target: { value: opts } })
+        }
+        return (
+          <MultiSelect
+            className="multiSelect"
+            items={[
+              { label: 'One', value: '1' },
+              { label: 'Two', value: '2' }
+            ]}
+            placeholder="Column 3 value"
+            onChange={onChange}
+            value={value || []}
+          />
+        )
+      }
     }
   ]
 
@@ -31,12 +49,12 @@ export default function FieldArrayExample() {
     {
       col1: 'col 1',
       col2: 'col 2',
-      col3: 'col 3'
+      col3: [{ label: 'Two', value: '2' }]
     },
     {
       col1: 'col 1',
       col2: 'col 2',
-      col3: 'col 3'
+      col3: [{ label: 'One', value: '1' }]
     }
   ]
 

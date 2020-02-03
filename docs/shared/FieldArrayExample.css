@@ -1,0 +1,12 @@
+.bp3-popover-wrapper.multiSelect {
+  width: 250px;
+}
+.bp3-popover-wrapper.multiSelect .bp3-input {
+  border: none;
+}
+
+tr:hover .bp3-popover-wrapper.multiSelect .bp3-input,
+.bp3-popover-wrapper.multiSelect .bp3-input:hover,
+.bp3-popover-wrapper.multiSelect .bp3-popover-open .bp3-input {
+  border: 1px solid var(--grey-400);
+}

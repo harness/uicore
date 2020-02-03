@@ -45,7 +45,7 @@ const fields: Array<Field> = [
     },
     {
       name: 'col2',
-      label: 'Column Header 2',
+      label: <div style={{color: 'red'}}>Column Header 2</div>,
       defaultValue: 'Item 2',
       renderer: (value, _index, handleChange) => <TextInput defaultValue={value} placeholder="Column 2 value" onChange={handleChange} />
     },
