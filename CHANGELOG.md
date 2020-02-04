@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.0.59 - 03/01/20
+## 1.0.60 - 02/04/20
+
+- `Changed` FieldArray now expects value in change handler to support custom elements.
+- `Added` More FieldArray examples
+
+## 1.0.59 - 02/01/20
 
 - Multiselect to include custom renderer, Field Array to have custom label for header and updated Field Array example.
 
