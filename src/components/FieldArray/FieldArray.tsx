@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react'
+import React, { useState } from 'react'
 import { Button } from '../Button/Button'
 import { Layout } from '../../../src/layouts/Layout'
 import { connect, FormikContext } from 'formik'
@@ -11,11 +11,7 @@ export interface Field {
   name: string
   label: string | React.ReactElement
   defaultValue?: FieldValue
-  renderer?: (
-    value: FieldValue,
-    rowIndex: number,
-    onChange?: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
-  ) => React.ReactElement
+  renderer?: (value: FieldValue, rowIndex: number, onChange?: (value: FieldValue) => void) => React.ReactElement
 }
 
 export type RowData = Record<string, FieldValue>
@@ -68,9 +64,9 @@ function FieldArray(props: ConnectedProps) {
     })
   }
 
-  function handleChange(rowIndex: number, fieldName: string, event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  function handleChange(rowIndex: number, fieldName: string, fieldValue: FieldValue) {
     setValue(rows => {
-      rows[rowIndex] = { ...rows[rowIndex], [fieldName]: event.target.value }
+      rows[rowIndex] = { ...rows[rowIndex], [fieldName]: fieldValue }
       return rows
     })
     formik.setFieldValue(name, value)

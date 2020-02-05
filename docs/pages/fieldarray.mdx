@@ -25,7 +25,7 @@ interface Field {
   renderer?: (
     value: FieldValue,
     rowIndex: number,
-    onChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
+    onChange: (value: FieldValue>) => void
   ) => React.ReactElement
 }
 
@@ -45,7 +45,7 @@ const fields: Array<Field> = [
     },
     {
       name: 'col2',
-      label: <div style={{color: 'red'}}>Column Header 2</div>,
+      label: <div style={{fontWeight: 'bold'}}>Column Header 2</div>,
       defaultValue: 'Item 2',
       renderer: (value, _index, handleChange) => <TextInput defaultValue={value} placeholder="Column 2 value" onChange={handleChange} />
     },
