@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.60 - 02/04/20
 
+- `Added` Skip steps Icons.
+
+## 1.0.60 - 02/04/20
+
 - `Changed` FieldArray now expects value in change handler to support custom elements.
 - `Added` More FieldArray examples
 

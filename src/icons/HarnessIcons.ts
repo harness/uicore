@@ -16,6 +16,8 @@ import CommandStop from './command-stop.svg'
 import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
+import ConditionalSkipFilled from './conditional-skip-filled.svg'
+import ConditionalSkip from './conditional-skip.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
 import DeploymentFailedLegacy from './deployment-failed-legacy.svg'
@@ -211,6 +213,8 @@ type HarnessIconName =
   | 'command-swap'
   | 'command-switch'
   | 'command-winrm'
+  | 'conditional-skip-filled'
+  | 'conditional-skip'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
   | 'deployment-failed-legacy'
@@ -406,6 +410,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-swap': CommandSwap,
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
+  'conditional-skip-filled': ConditionalSkipFilled,
+  'conditional-skip': ConditionalSkip,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
   'deployment-failed-legacy': DeploymentFailedLegacy,
