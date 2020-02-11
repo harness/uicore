@@ -1,22 +1,22 @@
-import React, { HTMLAttributes, useState, MouseEvent, ElementType } from 'react'
+import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
+import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
 import { Assign } from 'utility-types'
-import { Button as BButton, AnchorButton, IButtonProps, Classes } from '@blueprintjs/core'
-import css from './Button.css'
-import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
-import styledClass from '../../styled-props/StyledProps.css'
-import { PaddingProps } from '../../styled-props/padding/PaddingProps'
-import { Utils } from '../../core/Utils'
-import { IconName, Icon, IconProps } from '../../icons/Icon'
-import { Popover, PopoverProps } from '../Popover/Popover'
-import { Text } from '../Text/Text'
-import { useIsMounted } from '../../hooks/useIsMounted'
 import { Config } from '../../core/Config'
+import { OptionalTooltip } from '../../core/Types'
+import { Utils } from '../../core/Utils'
+import { useIsMounted } from '../../hooks/useIsMounted'
+import { Icon, IconName, IconProps } from '../../icons/Icon'
+import { PaddingProps } from '../../styled-props/padding/PaddingProps'
+import { omitStyledProps, styledClasses, StyledProps } from '../../styled-props/StyledProps'
+import styledClass from '../../styled-props/StyledProps.css'
+import css from './Button.css'
 
 export interface ButtonProps
   extends Assign<
-    Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
-    Assign<HTMLAttributes<HTMLButtonElement>, StyledProps>
-  > {
+      Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
+      Assign<HTMLAttributes<HTMLButtonElement>, StyledProps>
+    >,
+    OptionalTooltip {
   /** Left icon */
   icon?: IconName
 
@@ -40,12 +40,6 @@ export interface ButtonProps
 
   /** Component children */
   children?: React.ReactNode
-
-  /** Optional tooltip for Button and Link */
-  tooltip?: JSX.Element | string
-
-  /** Optional props for Popover component used to render tooltip - Usually used to pass dark theme */
-  tooltipProps?: PopoverProps
 }
 
 export interface LinkProps extends ButtonProps {
@@ -100,37 +94,10 @@ export function Button(props: ButtonProps) {
     />
   )
 
-  const { tooltip, tooltipProps } = props
-  const isDark = tooltipProps && tooltipProps.isDark
-  const content =
-    typeof tooltip === 'string' ? (
-      <Text
-        padding="medium"
-        style={{ maxWidth: '500px', maxHeight: '500px', overflow: 'auto' }}
-        color={(isDark && 'white') || undefined}>
-        {tooltip}
-      </Text>
-    ) : (
-      tooltip
-    )
-
-  // NextJS does not work well with usePortal={true}
-  const isNext =
-    typeof window !== 'undefined' && typeof window.next !== 'undefined' && typeof window.__NEXT_DATA__ !== 'undefined'
-
-  return tooltip ? (
-    <Popover
-      usePortal={!isNext}
-      boundary="viewport"
-      position="top"
-      interactionKind="hover"
-      {...tooltipProps}
-      popoverClassName={isDark ? Classes.DARK : undefined}
-      content={content || ''}>
+  return (
+    <Utils.WrapOptionalTooltip tooltip={props.tooltip} tooltipProps={props.tooltipProps}>
       {button}
-    </Popover>
-  ) : (
-    button
+    </Utils.WrapOptionalTooltip>
   )
 }
 
