@@ -1,3 +1,13 @@
+import { PopoverProps } from '../components/Popover/Popover'
+
+export interface OptionalTooltip {
+  /** Optional tooltip */
+  tooltip?: JSX.Element | string
+
+  /** Optional props for Popover component used to render tooltip - Usually used to pass dark theme */
+  tooltipProps?: PopoverProps
+}
+
 // eslint-disable-next-line
 export interface KVO<T = any> {
   [key: string]: T

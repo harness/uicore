@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.62 - 02/11/20
+
+- `Added` `Utils.WrapOptionalTooltip` to wrap optional tooltip to any components.
+
 ## 1.0.61 - 02/04/20
 
 - `Added` Skip steps Icons.
