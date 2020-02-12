@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uikit",
-  "version": "1.0.63",
+  "version": "1.0.64",
   "description": "Harness UIKit - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -120,5 +120,8 @@
       "prettier --check",
       "stylelint"
     ]
-  }
+  },
+  "files": [
+    "dist/*"
+  ]
 }
