@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uikit",
-  "version": "1.0.62",
+  "version": "1.0.63",
   "description": "Harness UIKit - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "yarn dep; yarn ui:icons; run-p -c ui:types ui:watch docs:watch",
-    "build": "yarn dep; yarn ui:build; yarn types:copy",
+    "build": "yarn dep; yarn ui:build; yarn ui:build:types; yarn types:copy",
     "clean": "rm -rf docs/static/* dist/types dist/*",
     "dep": "yarn; cd docs; yarn; cd ..",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" && stylelint ./src && prettier --check \"src/**/*.{ts,tsx,css}\"",
@@ -19,6 +19,7 @@
     "test:ci": "jest --no-cache ./src --ci  --coverage --reporters=jest-junit --reporters=default --runInBand --silent",
     "fmt": "prettier --write \"./src/**/*.{ts,tsx,css}\"",
     "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
+    "ui:build:types": "tsc --emitDeclarationOnly --declarationDir ./dist/",
     "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts",
     "ui:watch": "NODE_ENV=development webpack --watch",
     "ui:build": "NODE_ENV=production webpack",
