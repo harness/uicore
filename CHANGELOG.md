@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.64 - 02/11/20
 
-- `Changed` npm package include files to whitelist instead of blacklist.
+- `Changed` npm package files to whitelist instead of blacklist.
 
 ## 1.0.63 - 02/11/20
 
