@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.65 - 02/12/20
+
+- `Added` text truncation support for Text component.
+
 ## 1.0.64 - 02/11/20
 
 - `Changed` npm package files to whitelist instead of blacklist.

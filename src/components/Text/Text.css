@@ -1,0 +1,12 @@
+.single {
+  white-space: nowrap !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.multiple {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--text-line-clamp);
+  overflow: hidden;
+}

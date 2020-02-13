@@ -42,6 +42,37 @@
 </Layout.Vertical>
 ```
 
+## Ellipsis / Text Truncation
+
+When `lineClamp` prop is provided, `Text` will handle string truncation automatically. Note that the truncation
+only happens when there is not enough space to render the text content.
+
+### Single line
+
+```js live=true
+<Text font="normal" border padding="small" width={100} lineClamp={1}>
+  The quick brown fox jumps over the lazy dog
+</Text>
+```
+
+### Multiple lines
+
+```js live=true
+<Text font="normal" width={200} lineClamp={3}>
+  The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+  over the lazy dog.
+</Text>
+```
+
+### No tooltip when there is enough space to render the whole text
+
+```js live=true
+<Text font="normal" width={300} lineClamp={3}>
+  The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+  over the lazy dog.
+</Text>
+```
+
 ## Combining with other styled props
 
 ```js live=true
