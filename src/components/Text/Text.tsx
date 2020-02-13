@@ -37,7 +37,9 @@ export function Text(props: TextProps) {
   }, [props.children, props.tooltip, props.tooltipProps])
 
   useEffect(() => {
-    setTooltip(props.tooltip)
+    if (props.tooltip) {
+      setTooltip(props.tooltip)
+    }
   }, [props.tooltip])
 
   return (
