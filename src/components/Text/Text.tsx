@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useRef, useLayoutEffect, useState } from 'react'
+import React, { HTMLAttributes, useRef, useLayoutEffect, useState, useEffect } from 'react'
 import { Assign } from 'utility-types'
 import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
 import styledCSS from '../../styled-props/StyledProps.css'
@@ -35,6 +35,10 @@ export function Text(props: TextProps) {
       setTooltip(props.children as JSX.Element)
     }
   }, [props.children, props.tooltip, props.tooltipProps])
+
+  useEffect(() => {
+    setTooltip(props.tooltip)
+  }, [props.tooltip])
 
   return (
     <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
