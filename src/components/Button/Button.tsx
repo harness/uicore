@@ -32,6 +32,9 @@ export interface ButtonProps
   /** Link href. If provided, Button rendered as Link */
   href?: string
 
+  /** When true, ignore all styling (useful for special button and link which need custom styling)  */
+  noStyling?: boolean
+
   /** Link target attribute, must go with href */
   target?: '_blank'
 
@@ -77,9 +80,13 @@ export function Button(props: ButtonProps) {
   const iconSize = (icon || rightIcon) && (props.text || props.href) ? 16 : undefined
   // Extra left padding for left icon, for right icon, Blueprint already has proper margin
   const leftIconPadding: PaddingProps | undefined = props.text || props.href ? { right: 'xsmall' } : undefined
-  const button = (
+  const Tag = (props.href ? 'a' : 'button') as React.ElementType
+  const normalizedProps = omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps', 'noStyling')
+  const button = props.noStyling ? (
+    <Tag {...normalizedProps} />
+  ) : (
     <Component
-      {...omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps')}
+      {...normalizedProps}
       loading={loading}
       icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}
       rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
