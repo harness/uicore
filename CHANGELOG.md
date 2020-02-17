@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.69 - 02/17/20
+
+- `Added` Allow creation of new items in multiselect component.
+
 ## 1.0.68 - 02/14/20
 
 - `Added` `noStyling` to `Button` and `Link` component to skip applying UIKit styling on them.
