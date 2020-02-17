@@ -4,6 +4,8 @@ import { Position } from '@blueprintjs/core'
 import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './MultiSelect.css'
+import { Button } from '../../components/Button/Button'
+import { Icon } from '../../icons/Icon'
 
 export interface MultiSelectOption {
   label: string
@@ -33,6 +35,8 @@ export interface MultiSelectProps
   value?: MultiSelectOption[]
   items: Props['items'] | (() => Promise<Props['items']>)
   tagRenderer?: Props['tagRenderer']
+  createNewItemFromQuery?: Props['createNewItemFromQuery']
+  allowCreatingNewItems?: boolean
 }
 
 export function NoMatch() {
@@ -126,9 +130,31 @@ export function MultiSelect(props: MultiSelectProps) {
     )
   }
 
+  function createNewItemFromQuery(query: string) {
+    return { label: query, value: query }
+  }
+
+  function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
+    if (
+      !loading &&
+      props.allowCreatingNewItems &&
+      items.filter(item => item.label.toString().toLowerCase() === query.toLowerCase()).length === 0
+    )
+      return (
+        <React.Fragment>
+          <Button intent="primary" minimal text={query} icon="plus" onClick={handleClick} />
+          <span className="icon-container">
+            <Icon id="icon-styled-props" name="info-sign" size={16} color="grey400" padding="small" />
+          </span>
+        </React.Fragment>
+      )
+  }
+
   return (
     <BPMultiSelect
       itemRenderer={props.itemRender || itemRenderer}
+      createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
+      createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       tagRenderer={item => item.label}
       itemsEqual={(a, b) => a.value === b.value}
       {...rest}

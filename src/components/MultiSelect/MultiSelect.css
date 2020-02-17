@@ -86,4 +86,9 @@
       cursor: not-allowed;
     }
   }
+
+  :global(.icon-container) {
+    position: absolute;
+    right: 0;
+  }
 }
