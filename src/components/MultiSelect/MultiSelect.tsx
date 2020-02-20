@@ -37,6 +37,7 @@ export interface MultiSelectProps
   tagRenderer?: Props['tagRenderer']
   createNewItemFromQuery?: Props['createNewItemFromQuery']
   allowCreatingNewItems?: boolean
+  handleQueryChange?: Function
 }
 
 export function NoMatch() {
@@ -68,8 +69,8 @@ export function MultiSelect(props: MultiSelectProps) {
   }
 
   function handleQueryChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if (props.handleQueryChange) props.handleQueryChange()
     const { value } = e.target
-
     setQuery(value)
   }
 
