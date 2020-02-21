@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.71 - 02/20/20
 
-- `Added` Allow handleQueryChange in multiselect component.
+- `Added` Allow handleQueryChange and loading state fixed in multiselect component.
 
 ## 1.0.70 - 02/21/20
 
