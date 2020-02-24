@@ -37,6 +37,7 @@ export interface MultiSelectProps
   tagRenderer?: Props['tagRenderer']
   createNewItemFromQuery?: Props['createNewItemFromQuery']
   allowCreatingNewItems?: boolean
+  onQueryChange?: () => void
 }
 
 export function NoMatch() {
@@ -49,7 +50,6 @@ export function MultiSelect(props: MultiSelectProps) {
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? _items : [])
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>(Array.isArray(value) ? value : [])
-
   function handleItemSelect(item: MultiSelectOption) {
     if (item.value === Loading) {
       return
@@ -69,7 +69,6 @@ export function MultiSelect(props: MultiSelectProps) {
 
   function handleQueryChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { value } = e.target
-
     setQuery(value)
   }
 
@@ -135,6 +134,14 @@ export function MultiSelect(props: MultiSelectProps) {
   }
 
   function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
+    if (loading) {
+      return (
+        <li key="loading" className={cx(css.menuItem, css.loading)}>
+          Loading results...
+        </li>
+      )
+    }
+
     if (
       !loading &&
       props.allowCreatingNewItems &&
