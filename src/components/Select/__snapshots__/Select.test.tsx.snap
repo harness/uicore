@@ -12,7 +12,6 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 10px;"
@@ -75,7 +74,6 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 10px;"
@@ -223,7 +221,6 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 10px;"
@@ -245,17 +242,7 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
           <div
             class="bp3-popover-content"
           >
-            <div>
-              <ul
-                class="bp3-menu"
-              >
-                <li
-                  class="menuItem disabled"
-                >
-                  No matching results found
-                </li>
-              </ul>
-            </div>
+            <div />
           </div>
         </div>
       </div>
@@ -276,7 +263,6 @@ exports[`<Select/> tests works with async data 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 10px;"
@@ -301,7 +287,6 @@ exports[`<Select/> tests works with async data: Final state 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 10px;"
@@ -315,7 +300,7 @@ exports[`<Select/> tests works with async data: Final state 1`] = `
     >
       <div
         class="bp3-transition-container bp3-popover-exit bp3-popover-exit-active"
-        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0);"
+        style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
       >
         <div
           class="bp3-popover bp3-minimal bp3-select-popover popover"
@@ -450,7 +435,6 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 10px;"
@@ -503,7 +487,6 @@ exports[`<Select/> tests works with static data 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 10px;"
