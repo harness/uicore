@@ -4,6 +4,8 @@ import { Position } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
+import { Button } from '../../components/Button/Button'
+import { Icon } from '../../icons/Icon'
 
 export interface SelectOption {
   label: string
@@ -31,6 +33,7 @@ export interface SelectProps
   onChange?: Props['onItemSelect']
   value?: Props['selectedItem']
   items: Props['items'] | (() => Promise<Props['items']>)
+  allowCreatingNewItems?: boolean
 }
 
 function itemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -99,6 +102,34 @@ export function Select(props: SelectProps) {
     }
   }, [props.items])
 
+  function createNewItemFromQuery(query: string) {
+    return { label: query, value: query }
+  }
+
+  function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
+    if (loading) {
+      return (
+        <li key="loading" className={cx(css.menuItem, css.loading)}>
+          Loading results...
+        </li>
+      )
+    }
+
+    if (
+      !loading &&
+      props.allowCreatingNewItems &&
+      items.filter(item => item.label.toString().toLowerCase() === query.toLowerCase()).length === 0
+    )
+      return (
+        <React.Fragment>
+          <Button intent="primary" minimal text={query} icon="plus" onClick={handleClick} />
+          <span className="icon-container">
+            <Icon id="icon-styled-props" name="info-sign" size={16} color="grey400" padding="small" />
+          </span>
+        </React.Fragment>
+      )
+  }
+
   return (
     <Suggest
       inputValueRenderer={opt => opt.label}
@@ -111,6 +142,8 @@ export function Select(props: SelectProps) {
             .includes(query.toLowerCase())
         )
       }
+      createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
+      createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       noResults={<NoMatch />}
       {...rest}
       inputProps={{
