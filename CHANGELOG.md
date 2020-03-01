@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.73 - 03/01/20
+
+- `Removed` onQueryChange props and use the blue print multiselect.
+
 ## 1.0.72 - 02/26/20
 
 - `Added` Allow creation of new items in select component.

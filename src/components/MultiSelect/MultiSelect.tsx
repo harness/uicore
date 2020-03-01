@@ -37,7 +37,6 @@ export interface MultiSelectProps
   tagRenderer?: Props['tagRenderer']
   createNewItemFromQuery?: Props['createNewItemFromQuery']
   allowCreatingNewItems?: boolean
-  onQueryChange?: () => void
 }
 
 export function NoMatch() {
