@@ -60,7 +60,14 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
     typeof tooltip === 'string' ? (
       <Text
         padding="medium"
-        style={{ maxWidth: '500px', maxHeight: '500px', overflow: 'auto' }}
+        style={{
+          maxWidth: '500px',
+          maxHeight: '500px',
+          overflow: 'auto',
+          overflowWrap: 'break-word',
+          wordWrap: 'break-word',
+          hyphens: 'auto'
+        }}
         color={(isDark && 'white') || undefined}>
         {tooltip}
       </Text>
