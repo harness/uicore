@@ -11,7 +11,7 @@ export interface TextInputProps extends Omit<IInputGroupProps, 'className' | 'le
   leftIcon?: IconName
   leftIconProps?: IconProps
   rightElement?: IconName
-  rightElementProps?: IconName
+  rightElementProps?: Omit<IconProps, 'name'>
   errorText?: string
   intent?: Intent
   errorInPopover?: boolean

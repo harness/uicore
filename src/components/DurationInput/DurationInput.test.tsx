@@ -24,6 +24,58 @@ describe('<DurationInput/> tests', () => {
       expect(onChange).toHaveBeenCalledWith(123456789)
     })
 
+    test('onChange does not triggers with invalid value', () => {
+      const onChange = jest.fn()
+      const { getByTestId } = render(<DurationInput onChange={onChange} data-testid="input" />)
+
+      const events = [
+        { value: '1', triggers: false },
+        { value: '1d', triggers: true },
+        { value: '1d ', triggers: true },
+        { value: '1d 1', triggers: false },
+        { value: '1d 10', triggers: false },
+        { value: '1d 10h', triggers: true },
+        { value: '1d 10h ', triggers: true },
+        { value: '1d 10h 1', triggers: false },
+        { value: '1d 10h 17', triggers: false },
+        { value: '1d 10h 17m ', triggers: true },
+        { value: '1d 10h 17m 3', triggers: false },
+        { value: '1d 10h 17m 36', triggers: false },
+        { value: '1d 10h 17m 36s', triggers: true },
+        { value: '1d 10h 17m 36s ', triggers: true },
+        { value: '1d 10h 17m 36s 7', triggers: false },
+        { value: '1d 10h 17m 36s 78', triggers: false },
+        { value: '1d 10h 17m 36s 789', triggers: false },
+        { value: '1d 10h 17m 36s 789m', triggers: true },
+        { value: '1d 10h 17m 36s 789ms', triggers: true }
+      ]
+
+      const input = getByTestId('input')
+      let i = 0
+
+      events.forEach(({ value, triggers }) => {
+        fireEvent.change(input, { target: { value } })
+
+        if (triggers) {
+          i++
+        }
+
+        expect(onChange).toBeCalledTimes(i)
+      })
+    })
+
+    test('shows warning when invalid value is present', () => {
+      const onChange = jest.fn()
+
+      const { getByTestId, container } = render(<DurationInput onChange={onChange} data-testid="input" />)
+      const input = getByTestId('input')
+
+      fireEvent.change(input, { target: { value: '1' } })
+
+      expect(container.querySelector('.warnIcon')).toBeDefined()
+      expect(container).toMatchSnapshot()
+    })
+
     test('shows help popover', async () => {
       const { container } = render(<DurationInput value={123456789} />)
 

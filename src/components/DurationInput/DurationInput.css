@@ -9,4 +9,18 @@
     bottom: 0;
     margin: var(--spacing-small);
   }
+
+  :global(.bp3-input-action) {
+    margin: var(--spacing-small);
+    display: flex;
+    width: 12px;
+    height: 12px;
+
+    :global(.bp3-icon).warnIcon {
+      display: flex;
+      & path {
+        fill: var(--yellow-500);
+      }
+    }
+  }
 }

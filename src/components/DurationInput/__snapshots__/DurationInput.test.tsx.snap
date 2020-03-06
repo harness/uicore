@@ -165,3 +165,68 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
   </div>
 </div>
 `;
+
+exports[`<DurationInput/> tests component tests shows warning when invalid value is present 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div
+      class="main"
+    >
+      <div
+        class="bp3-input-group"
+      >
+        <input
+          class="bp3-input"
+          data-testid="input"
+          placeholder="Enter w/d/h/m/s/ms"
+          style="padding-right: 10px;"
+          type="text"
+          value="1"
+        />
+        <span
+          class="bp3-input-action"
+        >
+          <span
+            class="bp3-icon bp3-icon-warning-sign main warnIcon"
+            icon="warning-sign"
+          >
+            <svg
+              data-icon="warning-sign"
+              height="12"
+              viewBox="0 0 16 16"
+              width="12"
+            >
+              <desc>
+                warning-sign
+              </desc>
+              <path
+                d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="bp3-popover-wrapper helpIcon"
+    >
+      <span
+        class="bp3-popover-target"
+      >
+        <span
+          class="bp3-icon main"
+          tabindex="0"
+        >
+          <svg
+            height="14"
+            width="14"
+          />
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;

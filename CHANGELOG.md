@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.75 - 03/02/20
 
+- `Changed` prevent onChange from being triggered for unit less values `DurationInput`
+- `Changed` show warning for unit less values `DurationInput`
+
+## 1.0.75 - 03/02/20
+
 - `Added` word-wrapping rule for `Text` tooltip.
 
 ## 1.0.74 - 03/02/20

@@ -10,6 +10,7 @@ import css from './DurationInput.css'
 export type Units = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
 const TEXT_EXTRACT_REGEX = /(\d+)\s*([a-z]{1,2})/gi
 const TEXT_LIMIT_REGEX = /[^0-9wdhms\s]/g
+const UNIT_LESS_REGEX = /\d+(?!(ms|s|m|h|d|w|\d))/gi
 
 export const UNIT_MULTIPLIIERS: Record<Units, number> = {
   ms: 1,
@@ -134,6 +135,7 @@ export function DurationInput(props: DurationInputProps) {
   const { value, onChange, ...rest } = props
 
   const [text, setText] = React.useState(timeToDisplayText(value || 0).trim())
+  const [showWarning, setShowWarning] = React.useState(false)
 
   React.useEffect(() => {
     setText(timeToDisplayText(value || 0).trim())
@@ -141,9 +143,13 @@ export function DurationInput(props: DurationInputProps) {
 
   function handleTextChange(e: React.ChangeEvent<HTMLInputElement>) {
     const val = e.target.value.replace(TEXT_LIMIT_REGEX, '')
-    setText(val)
+    const hasWarning = UNIT_LESS_REGEX.test(val)
 
-    if (typeof onChange === 'function') {
+    setText(val)
+    setShowWarning(hasWarning)
+
+    // call onChange only when numbers are followed by allowed units
+    if (typeof onChange === 'function' && !hasWarning) {
       const time = parseStringToTime(val)
       onChange(time)
     }
@@ -151,7 +157,14 @@ export function DurationInput(props: DurationInputProps) {
 
   return (
     <div className={css.main}>
-      <TextInput placeholder="Enter w/d/h/m/s/ms" {...rest} value={text} onChange={handleTextChange} />
+      <TextInput
+        placeholder="Enter w/d/h/m/s/ms"
+        {...rest}
+        value={text}
+        onChange={handleTextChange}
+        rightElement={showWarning ? 'warning-sign' : undefined}
+        rightElementProps={{ className: css.warnIcon }}
+      />
       <Popover
         wrapperTagName="div"
         className={css.helpIcon}
