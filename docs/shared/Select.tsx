@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Select, SelectOption } from '../static/index'
 import data from '../shared/pokedex.json'
@@ -16,15 +16,13 @@ function dummyPromise(): Promise<SelectOption[]> {
   })
 }
 
-export function SimpleSelect(props: { useRandomValue: boolean }) {
-  return <Select items={items} value={props.useRandomValue ? items[Math.floor(Math.random() * items.length)] : null} />
+export function SimpleSelect() {
+  const [val, setVal] = useState()
+
+  return <Select items={items} value={val} onChange={setVal} />
 }
 
-export function AsyncSelect(props: { useRandomValue: boolean }) {
-  return (
-    <Select
-      items={dummyPromise}
-      value={props.useRandomValue ? items[Math.floor(Math.random() * items.length)] : null}
-    />
-  )
+export function AsyncSelect() {
+  const [val, setVal] = useState()
+  return <Select items={dummyPromise} value={val} onChange={setVal} />
 }
