@@ -72,17 +72,10 @@ export function Select(props: SelectProps) {
     if (item.value === Loading) {
       return
     }
-
-    setQuery(item.label)
-
     if (typeof onChange === 'function') {
       onChange(item)
     }
   }
-
-  React.useEffect(() => {
-    setQuery(value?.label ?? '')
-  }, [value])
 
   React.useEffect(() => {
     if (Array.isArray(props.items)) {
@@ -152,6 +145,8 @@ export function Select(props: SelectProps) {
         },
         value: query
       }}
+      resetOnSelect={true}
+      resetOnClose={true}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       selectedItem={value}
       onItemSelect={handleItemSelect}

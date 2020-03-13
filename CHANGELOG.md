@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.78 - 03/12/20
+
+- `Added` support for resetting select value
+
 ## 1.0.76 - 03/02/20
 
 - `Changed` prevent onChange from being triggered for unit less values `DurationInput`
