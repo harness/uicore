@@ -7,7 +7,7 @@
     border-radius: 4px;
     font-size: var(--font-size-normal);
     padding: 0 var(--spacing-small);
-    height: 32px;
+    min-height: 32px;
     color: var(--grey-800);
     box-shadow: none;
 
@@ -58,6 +58,10 @@
   & .tag {
     background: var(--grey-200);
     color: var(--grey-800);
+
+    &.tagDisabled > :global(.bp3-tag-remove) {
+      display: none;
+    }
   }
 
   & .menuItem {
@@ -79,6 +83,10 @@
     &.disabled {
       color: var(--grey-400);
       cursor: not-allowed;
+
+      &.active {
+        color: var(--grey-300);
+      }
     }
 
     &.loading {

@@ -7,7 +7,9 @@ import { Text } from '../Text/Text'
 
 import css from './TextInput.css'
 
-export interface TextInputProps extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement'> {
+export interface TextInputProps
+  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement'>,
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   leftIcon?: IconName
   leftIconProps?: IconProps
   rightElement?: IconName

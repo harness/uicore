@@ -3,9 +3,10 @@ import React from 'react'
 import { MultiSelect, MultiSelectOption } from '../static/index'
 import data from './pokedex.json'
 
-const items: MultiSelectOption[] = data.map(row => ({
+const items: MultiSelectOption[] = data.map((row, i) => ({
   label: row.name,
-  value: row.id
+  value: row.id,
+  disabled: i < 3
 }))
 
 function dummyPromise(): Promise<MultiSelectOption[]> {
@@ -17,7 +18,7 @@ function dummyPromise(): Promise<MultiSelectOption[]> {
 }
 
 export function SimpleSelect(_props: { useRandomValue: boolean }) {
-  const [value, setValue] = React.useState<MultiSelectOption[]>([])
+  const [value, setValue] = React.useState<MultiSelectOption[]>(items.slice(0, 3))
 
   return (
     <MultiSelect

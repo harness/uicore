@@ -10,6 +10,7 @@ import { Icon } from '../../icons/Icon'
 export interface MultiSelectOption {
   label: string
   value: string | number | symbol
+  disabled?: boolean
 }
 
 type Props = IMultiSelectProps<MultiSelectOption>
@@ -49,8 +50,13 @@ export function MultiSelect(props: MultiSelectProps) {
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? _items : [])
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>(Array.isArray(value) ? value : [])
+  const valuesMap: Record<string, boolean> = React.useMemo(
+    () => (value || []).reduce((acc, current) => ({ ...acc, [current.label]: !!current.disabled }), {}),
+    [value]
+  )
+
   function handleItemSelect(item: MultiSelectOption) {
-    if (item.value === Loading) {
+    if (item.value === Loading || item.disabled) {
       return
     }
 
@@ -113,7 +119,7 @@ export function MultiSelect(props: MultiSelectProps) {
         key={item.value.toString()}
         className={cx(css.menuItem, {
           [css.active]: rendererProps.modifiers.active,
-          [css.disabled]: rendererProps.modifiers.disabled
+          [css.disabled]: rendererProps.modifiers.disabled || item.disabled
         })}
         onClick={rendererProps.handleClick}>
         <input
@@ -121,6 +127,7 @@ export function MultiSelect(props: MultiSelectProps) {
           type="checkbox"
           value={item.value.toString()}
           checked={value && value.findIndex(val => val.value === item.value) > -1}
+          disabled={item.disabled}
           readOnly
         />
         {item.label}
@@ -168,8 +175,12 @@ export function MultiSelect(props: MultiSelectProps) {
         inputProps: {
           onChange: handleQueryChange
         },
-        tagProps: {
-          className: css.tag
+        tagProps: value => {
+          return {
+            className: cx(css.tag, {
+              [css.tagDisabled]: typeof value === 'string' && valuesMap[value]
+            })
+          }
         },
         onRemove(value) {
           const option = selectedItems.find(opt => opt.label === value)
