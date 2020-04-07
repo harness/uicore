@@ -8,7 +8,7 @@ export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './comp
 export { Checkbox } from './components/Checkbox/Checkbox'
 export { Container } from './components/Container/Container'
 export { Heading } from './components/Heading/Heading'
-export { Icon, HarnessIcons } from './icons/Icon'
+export { Icon, HarnessIcons, IconName } from './icons/Icon'
 export { Layout } from './layouts/Layout'
 export { Link } from './components/Link/Link'
 export { List } from './components/List/List'
