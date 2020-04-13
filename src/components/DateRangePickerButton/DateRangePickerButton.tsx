@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, ButtonProps } from '../Button/Button'
 import { DateRangePicker, IDateRangePickerProps } from '@blueprintjs/datetime'
 import { PopoverInteractionKind } from '@blueprintjs/core'
@@ -15,6 +15,10 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
   const [isOpen, setIsOpen] = useState(false)
   const [text, setText] = useState(props.initialButtonText)
   const [selectedShortcutIndex, setSelectedShortcutIndex] = useState(-1)
+
+  useEffect(() => {
+    setText(props.initialButtonText)
+  }, [props.initialButtonText])
 
   return (
     <Button
