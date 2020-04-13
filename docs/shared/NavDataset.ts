@@ -99,6 +99,10 @@ export default [
       {
         label: 'DateRangePickerButton',
         url: '/date-range-picker-button'
+      },
+      {
+        label: 'ExpandingSearchInput',
+        url: '/expanding-search-input'
       }
     ]
   },

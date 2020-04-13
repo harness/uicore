@@ -42,3 +42,4 @@ export {
   DateRangePickerButtonProps,
   DateRangePickerButton
 } from './components/DateRangePickerButton/DateRangePickerButton'
+export { ExpandingSearchInput } from './components/ExpandingSearchInput/ExpandingSearchInput'
