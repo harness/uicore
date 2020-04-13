@@ -28,7 +28,7 @@ interface PropsInterface {
   showPrevNextButtons?: boolean
 }
 
-export default function ExpandingSearchInput(props: PropsInterface) {
+export function ExpandingSearchInput(props: PropsInterface) {
   const {
     name = '',
     defaultValue,
