@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.84 - 04/14/20
+
+- `Fixed` Flickering issue in `ExpandingSearchInput' component is now fixed.
+
 ## 1.0.83 - 04/13/20
 
 - `Fixed` DateRangePicker button now reacts to changes in the `initialButtonText` property.
