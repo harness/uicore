@@ -11,7 +11,6 @@ export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'
 }
 
 export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props => {
-  const [range, setRange] = useState()
   const [isOpen, setIsOpen] = useState(false)
   const [text, setText] = useState(props.initialButtonText)
   const [selectedShortcutIndex, setSelectedShortcutIndex] = useState(-1)
@@ -28,7 +27,6 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
       onClick={() => setIsOpen(open => !open)}
       tooltip={
         <DateRangePicker
-          value={range}
           allowSingleDayRange={true}
           maxDate={new Date()}
           {...props.dateRangePickerProps}
@@ -38,7 +36,6 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
           }}
           onChange={selectedDates => {
             setSelectedShortcutIndex(-1)
-            setRange(selectedDates)
 
             if (selectedDates[0] && selectedDates[1]) {
               setIsOpen(false)
