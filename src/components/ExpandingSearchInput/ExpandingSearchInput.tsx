@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState, useEffect, useCallback, useRef, useLayoutEffect } from 'react'
 
 import { Icon } from '../../icons/Icon'
 import { Button } from '../Button/Button'
@@ -133,7 +133,7 @@ export function ExpandingSearchInput(props: PropsInterface) {
     propsOnChange?.('')
     setInputNoTransition(false)
   }, [propsOnChange, setInputNoTransition])
-  useEffect(afterClear, [onClearFlag])
+  useLayoutEffect(afterClear, [onClearFlag])
 
   const cssMain = `bp3-input-group ui-search-box ${css.main} ${className}`
 
