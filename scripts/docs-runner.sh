@@ -1,6 +1,8 @@
 # Disable NextJS tracking
 export NEXT_TELEMETRY_DISABLED=1
 
+service nginx start
+
 npm install -g yarn
 
 echo "Starting documentation service..."
