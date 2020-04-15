@@ -13,9 +13,10 @@ import { FieldArray } from '@wings-software/uikit'
 ```js
 interface Props {
   fields: Field[]
-  title: string
-  noDataText?: string
-  data?: Array<RowData>
+  label: string
+  name: string
+  placeholder?: string
+  isDeleteOfRowAllowed?: (row: React<string, FieldValue>, rowIndex: number) => boolean
 }
 
 interface Field {

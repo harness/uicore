@@ -75,12 +75,12 @@ export default function FieldArrayExample() {
 
   const data = [
     {
-      col1: 'col 1',
+      col1: 'col 1 - 1',
       col2: 'col 2',
       col3: [{ label: 'Two', value: '2' }]
     },
     {
-      col1: 'col 1',
+      col1: 'col 1 - 2',
       col2: 'col 2',
       col3: [{ label: 'One', value: '1' }]
     }
@@ -130,6 +130,7 @@ export default function FieldArrayExample() {
                 fields={fields}
                 label="Field List with MultiSelect"
                 placeholder={noDataText}
+                isDeleteOfRowAllowed={row => row.col1 !== 'col 1 - 1'}
               />
               <br />
               <Button type="submit" intent="primary">

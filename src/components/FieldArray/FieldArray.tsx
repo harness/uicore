@@ -21,6 +21,7 @@ interface Props {
   label: string
   placeholder?: string
   name: string
+  isDeleteOfRowAllowed?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
 }
 
 interface ConnectedProps extends Props {
@@ -28,7 +29,7 @@ interface ConnectedProps extends Props {
 }
 
 function FieldArray(props: ConnectedProps) {
-  const { name, fields, label, placeholder, formik } = props
+  const { name, fields, label, placeholder, formik, isDeleteOfRowAllowed = () => true } = props
   /*
     Storing rows data in format:
       [
@@ -108,7 +109,9 @@ function FieldArray(props: ConnectedProps) {
                   )
                 })}
                 <td className={css.deleteColumn}>
-                  <Button minimal icon="main-trash" onClick={deleteRow.bind(null, rowIndex)} data-id={'btn-delete'} />
+                  {isDeleteOfRowAllowed(row, rowIndex) && (
+                    <Button minimal icon="main-trash" onClick={deleteRow.bind(null, rowIndex)} data-id={'btn-delete'} />
+                  )}
                 </td>
               </tr>
             ))}
