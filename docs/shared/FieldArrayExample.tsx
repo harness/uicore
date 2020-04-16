@@ -3,7 +3,18 @@ import React from 'react'
 import { FieldArray, TextInput, Heading, Button, Select, MultiSelect } from '../static/index'
 import { Field } from '../../src/components/FieldArray/FieldArray'
 import { Formik } from 'formik'
+import * as Yup from 'yup'
 import './FieldArrayExample.css'
+
+const rowSchema = Yup.object().shape({
+  col2: Yup.string().required('col2 is required')
+})
+
+const validationSchema = Yup.object().shape({
+  fieldArrayWithInitValue: Yup.array()
+    .of(rowSchema)
+    .ensure()
+})
 
 export default function FieldArrayExample() {
   const fields: Field[] = [
@@ -15,14 +26,17 @@ export default function FieldArrayExample() {
     {
       name: 'col2',
       label: <div style={{ fontWeight: 'bold' }}>Custom Bold Header</div>,
-      renderer: (value, _rowIndex, handleChange) => (
-        <TextInput
-          defaultValue={value}
-          placeholder="Column 2 value"
-          onChange={e => {
-            handleChange(e.target.value)
-          }}
-        />
+      renderer: (value, _rowIndex, handleChange, error) => (
+        <React.Fragment>
+          <TextInput
+            defaultValue={value}
+            placeholder="Column 2 value"
+            onChange={e => {
+              handleChange(e.target.value)
+            }}
+          />
+          <span style={{ color: 'red', fontSize: '12px' }}>{error}</span>
+        </React.Fragment>
       )
     },
     {
@@ -83,6 +97,11 @@ export default function FieldArrayExample() {
       col1: 'col 1 - 2',
       col2: 'col 2',
       col3: [{ label: 'One', value: '1' }]
+    },
+    {
+      col1: 'col 1 - 3',
+      col2: undefined,
+      col3: [{ label: 'One', value: '1' }]
     }
   ]
 
@@ -121,12 +140,18 @@ export default function FieldArrayExample() {
       </Formik>
       <hr />
       <Heading level={2}>With pre-filled data</Heading>
-      <Formik initialValues={{ fieldArrayWithInitValue: data }} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={{ fieldArrayWithInitValue: data }}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+        validateOnChange={false}>
         {props => (
           <form onSubmit={props.handleSubmit}>
             <div style={{ width: '820px' }}>
               <FieldArray
+                addLabel="Add Row"
                 name="fieldArrayWithInitValue"
+                insertRowAtBeginning={false}
                 fields={fields}
                 label="Field List with MultiSelect"
                 placeholder={noDataText}

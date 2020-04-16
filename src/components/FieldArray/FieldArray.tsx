@@ -11,7 +11,12 @@ export interface Field {
   name: string
   label: string | React.ReactElement
   defaultValue?: FieldValue
-  renderer?: (value: FieldValue, rowIndex: number, onChange: (value: FieldValue) => void) => React.ReactElement
+  renderer?: (
+    value: FieldValue,
+    rowIndex: number,
+    onChange: (value: FieldValue) => void,
+    error: string
+  ) => React.ReactElement
 }
 
 export type RowData = Record<string, FieldValue>
@@ -20,6 +25,8 @@ interface Props {
   fields: Field[]
   label: string
   placeholder?: string
+  addLabel?: string
+  insertRowAtBeginning?: boolean
   name: string
   isDeleteOfRowAllowed?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
 }
@@ -29,7 +36,16 @@ interface ConnectedProps extends Props {
 }
 
 function FieldArray(props: ConnectedProps) {
-  const { name, fields, label, placeholder, formik, isDeleteOfRowAllowed = () => true } = props
+  const {
+    name,
+    fields,
+    label,
+    placeholder,
+    formik,
+    isDeleteOfRowAllowed = () => true,
+    addLabel = 'Add',
+    insertRowAtBeginning = true
+  } = props
   /*
     Storing rows data in format:
       [
@@ -51,7 +67,7 @@ function FieldArray(props: ConnectedProps) {
   function addRow() {
     setValue(rows => {
       // insert new row at begining of rows array
-      const modifiedRows = [defaultNewRowValue].concat(rows)
+      const modifiedRows = insertRowAtBeginning ? [defaultNewRowValue].concat(rows) : rows.concat([defaultNewRowValue])
       formik.setFieldValue(name, modifiedRows)
       return modifiedRows
     })
@@ -61,6 +77,11 @@ function FieldArray(props: ConnectedProps) {
     setValue(rows => {
       const modifiedRows = rows.filter((_, i) => i != index)
       formik.setFieldValue(name, modifiedRows)
+      const errors = (formik.errors[name] as unknown) as string[]
+      if (errors?.[index]) {
+        errors.splice(index, 1)
+        formik.setFieldError(name, (errors as unknown) as string)
+      }
       return modifiedRows
     })
   }
@@ -78,7 +99,7 @@ function FieldArray(props: ConnectedProps) {
       <Layout.Horizontal className={css.title}>
         <span className={css.text}>{label}</span>
         {value.length > 0 ? (
-          <Button minimal text="Add" intent="primary" icon="plus" onClick={addRow} data-id={'btn-add'} />
+          <Button minimal text={addLabel} intent="primary" icon="plus" onClick={addRow} data-id={'btn-add'} />
         ) : null}
       </Layout.Horizontal>
 
@@ -101,10 +122,17 @@ function FieldArray(props: ConnectedProps) {
             {value.map((row, rowIndex) => (
               <tr key={rowIndex}>
                 {fields.map((field, fieldIndex) => {
-                  const { name, renderer } = field
+                  const { name: fieldName, renderer } = field
                   return (
                     <td key={`${rowIndex}-${fieldIndex}-${value.length}`}>
-                      {renderer ? renderer(row[name], rowIndex, handleChange.bind(null, rowIndex, name)) : row[name]}
+                      {renderer
+                        ? renderer(
+                            row[fieldName],
+                            rowIndex,
+                            handleChange.bind(null, rowIndex, fieldName),
+                            ((formik.errors[name] as unknown) as RowData[])?.[rowIndex]?.[fieldName]
+                          )
+                        : row[fieldName]}
                     </td>
                   )
                 })}

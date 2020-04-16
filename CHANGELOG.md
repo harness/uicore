@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.88 - 04/16/20
+
+- `Updated` Updated FieldArray component to configure Add Label, direction of Add row and clear error on delete.
+
 ## 1.0.87 - 04/15/20
 
 - `Updated` Enable conditional row delete in FieldArray.
