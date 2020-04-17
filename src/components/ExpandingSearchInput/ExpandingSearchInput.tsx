@@ -26,6 +26,7 @@ interface PropsInterface {
   className?: string
   throttle?: number
   showPrevNextButtons?: boolean
+  fixedText?: string
 }
 
 export function ExpandingSearchInput(props: PropsInterface) {
@@ -40,7 +41,8 @@ export function ExpandingSearchInput(props: PropsInterface) {
     autoFocus,
     className = '',
     throttle = DEFAULT_THROTTLE,
-    showPrevNextButtons
+    showPrevNextButtons,
+    fixedText
   } = props
 
   const [key, setKey] = useState(Math.random())
@@ -153,15 +155,18 @@ export function ExpandingSearchInput(props: PropsInterface) {
         onKeyPress={onKeyPress}
       />
       {value.length > 0 ? (
-        <span className={css.btnWrapper}>
-          {showPrevNextButtons ? (
-            <>
-              <Button icon={'arrow-up'} minimal onClick={onPrev} />
-              <Button icon={'arrow-down'} minimal onClick={onNext} />
-            </>
-          ) : null}
-          <Button icon={'small-cross'} minimal onClick={onClear} />
-        </span>
+        <>
+          {fixedText ? <span className={css.fixedText}>{fixedText}</span> : null}
+          <span className={css.btnWrapper}>
+            {showPrevNextButtons ? (
+              <>
+                <Button icon={'arrow-up'} minimal onClick={onPrev} />
+                <Button icon={'arrow-down'} minimal onClick={onNext} />
+              </>
+            ) : null}
+            <Button icon={'small-cross'} minimal onClick={onClear} />
+          </span>
+        </>
       ) : null}
     </div>
   )

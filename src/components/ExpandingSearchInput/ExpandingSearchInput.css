@@ -52,6 +52,12 @@
   margin: 0 !important;
 }
 
+.fixedText {
+  position: absolute;
+  right: 75px;
+  top: 9px;
+}
+
 .btnWrapper {
   position: absolute;
   right: 2px;
