@@ -27,19 +27,27 @@ interface DateInputState {
   error?: Errors | undefined
 }
 
-const REGEX_VALID_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+[wdhms]+\s*)*$/gi
-const REGEX_VALID_MS_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+)*$/gi
-const REGEX_VALID_VARIABLE = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*/gi
-const REGEX_VALID_VALUE = /([0-9]+[wdhms]+\s*)*$/gi
-const REGEX_VALID_MS_VALUE = /([0-9])*$/gi
-const REGEX_VALID_DATE = /^\d{2,4}.\d{2,4}.\d{2,4}/gi
+const REGEX_VALID_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+[wdhms]+\s*)*$/i
+const REGEX_VALID_MS_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+)*$/i
+const REGEX_VALID_VARIABLE = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*/i
+const REGEX_VALID_VALUE = /([0-9]+[wdhms]+\s*)*$/i
+const REGEX_VALID_MS_VALUE = /([0-9])*$/i
+const REGEX_VALID_DATE = /^\d{2,4}.\d{2,4}.\d{2,4}$/i
+const REGEX_VALID_DATE_TIME = /^\d{2,4}.\d{2,4}.\d{2,4}\s\d{1,2}:\d{2}$/i
 
-const isValidDateInput = (value: number | string | undefined, minDate: Date, maxDate: Date, formatDateTime: string) => {
+const isValidDateInput = (
+  value: number | string | undefined,
+  minDate: Date,
+  maxDate: Date,
+  formatDateTime: string,
+  isTime: boolean
+) => {
   if (value === '') {
     return true
   }
-  REGEX_VALID_DATE.lastIndex = 0
-  const isRegExValid = typeof value === 'number' || (typeof value === 'string' && REGEX_VALID_DATE.test(value))
+  const isRegExValid =
+    typeof value === 'number' ||
+    (typeof value === 'string' && (isTime ? REGEX_VALID_DATE_TIME.test(value) : REGEX_VALID_DATE.test(value)))
   const date = moment(value, formatDateTime)
   return isRegExValid && date.isValid() && date.isBetween(minDate, maxDate)
 }
@@ -72,17 +80,14 @@ export const DateInput: React.FC<DateInputProps> = props => {
       } else if (allowVariables) {
         // If allowVariables set to True
         const isValid = REGEX_VALID_MS_TEXT.test(value)
-        REGEX_VALID_MS_TEXT.lastIndex = 0
         if (isValid) {
           // Valid value
           const timeValueString = value.replace(REGEX_VALID_VARIABLE, '').trim()
-          REGEX_VALID_VARIABLE.lastIndex = 0
           const timeDisplay =
             timeValueString && timeValueString !== '' && !isNaN(timeValueString as any)
               ? timeToDisplayText(parseInt(timeValueString))
               : ''
           displayValue = value.replace(REGEX_VALID_MS_VALUE, '') + timeDisplay
-          REGEX_VALID_MS_VALUE.lastIndex = 0
           setState(prevState => ({
             ...prevState,
             value: displayValue,
@@ -102,7 +107,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
         }
       } else {
         // Fallback to see if moment can convert this to date/datetime
-        const isValidDate = isValidDateInput(value, minDate, maxDate, formatDateTime)
+        const isValidDate = isValidDateInput(value, minDate, maxDate, formatDateTime, !!timePrecision)
         setState(prevState => ({
           ...prevState,
           value,
@@ -117,11 +122,9 @@ export const DateInput: React.FC<DateInputProps> = props => {
   const onChangeText = (event: React.ChangeEvent<HTMLInputElement>) => {
     const originalValue = event.target.value
     const value = event.target.value.trim()
-    const isValidDate = isValidDateInput(value, minDate, maxDate, formatDateTime)
+    const isValidDate = isValidDateInput(value, minDate, maxDate, formatDateTime, !!timePrecision)
     const isValidText = REGEX_VALID_TEXT.test(value)
-    REGEX_VALID_TEXT.lastIndex = 0
     const isCustomValue = REGEX_VALID_VARIABLE.test(value)
-    REGEX_VALID_VARIABLE.lastIndex = 0
 
     // Check if OnChange is passes as props
     if (onChange) {
@@ -131,8 +134,6 @@ export const DateInput: React.FC<DateInputProps> = props => {
         const time = parseStringToTime(value.replace(REGEX_VALID_VARIABLE, '').trim())
         const timeString = time !== 0 ? time.toString() : ''
         onChange(value.replace(REGEX_VALID_VALUE, '') + timeString)
-        REGEX_VALID_VARIABLE.lastIndex = 0
-        REGEX_VALID_VALUE.lastIndex = 0
       } else if (isValidDate && !isCustomValue) {
         if (value !== '') {
           onChange(
