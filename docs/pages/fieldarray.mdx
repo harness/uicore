@@ -19,6 +19,7 @@ interface Props {
   isDeleteOfRowAllowed?: (row: React<string, FieldValue>, rowIndex: number) => boolean
   addLabel?: string
   insertRowAtBeginning?: boolean
+  onChange?: (params) => void
 }
 
 interface Field {
