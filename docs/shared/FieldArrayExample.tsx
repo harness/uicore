@@ -156,6 +156,7 @@ export default function FieldArrayExample() {
                 label="Field List with MultiSelect"
                 placeholder={noDataText}
                 isDeleteOfRowAllowed={row => row.col1 !== 'col 1 - 1'}
+                onChange={params => console.log('onChange: ', params)}
               />
               <br />
               <Button type="submit" intent="primary">

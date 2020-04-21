@@ -29,6 +29,7 @@ interface Props {
   insertRowAtBeginning?: boolean
   name: string
   isDeleteOfRowAllowed?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
+  onChange?: (params: object) => void
 }
 
 interface ConnectedProps extends Props {
@@ -44,7 +45,8 @@ function FieldArray(props: ConnectedProps) {
     formik,
     isDeleteOfRowAllowed = () => true,
     addLabel = 'Add',
-    insertRowAtBeginning = true
+    insertRowAtBeginning = true,
+    onChange = () => {}
   } = props
   /*
     Storing rows data in format:
@@ -69,6 +71,7 @@ function FieldArray(props: ConnectedProps) {
       // insert new row at begining of rows array
       const modifiedRows = insertRowAtBeginning ? [defaultNewRowValue].concat(rows) : rows.concat([defaultNewRowValue])
       formik.setFieldValue(name, modifiedRows)
+      onChange({ modifiedRows })
       return modifiedRows
     })
   }
@@ -82,6 +85,7 @@ function FieldArray(props: ConnectedProps) {
         errors.splice(index, 1)
         formik.setFieldError(name, (errors as unknown) as string)
       }
+      onChange({ modifiedRows })
       return modifiedRows
     })
   }
@@ -89,6 +93,7 @@ function FieldArray(props: ConnectedProps) {
   function handleChange(rowIndex: number, fieldName: string, fieldValue: FieldValue) {
     setValue(rows => {
       rows[rowIndex] = { ...rows[rowIndex], [fieldName]: fieldValue }
+      onChange({ rowIndex, fieldName, fieldValue, modifiedRows: rows })
       return rows
     })
     formik.setFieldValue(name, value)
