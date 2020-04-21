@@ -73,6 +73,40 @@ only happens when there is not enough space to render the text content.
 </Text>
 ```
 
+### Left icon
+
+```js live=true
+<Text inline icon="service-datadog" iconProps={{ size: 20 }}>
+  Datadog
+</Text>
+```
+
+```js live=true
+<Text inline icon="full-circle" iconProps={{ size: 10, color: Color.BLUE_500 }}>
+  qa-cluster
+</Text>
+```
+
+```js live=true
+<Text inline icon="cross" iconProps={{ size: 16, color: Color.RED_500 }}>
+  Disconnected
+</Text>
+```
+
+### Right icon
+
+```js live=true
+<Text inline rightIcon="stop" rightIconProps={{ size: 16, color: Color.BLUE_500 }}>
+  2 Instances
+</Text>
+```
+
+```js live=true
+<Text inline rightIcon="tick" rightIconProps={{ size: 16, color: Color.GREEN_500 }}>
+  Password must have at least 1 uppercase.
+</Text>
+```
+
 ## Combining with other styled props
 
 ```js live=true
