@@ -24,7 +24,7 @@ export interface ButtonProps
   rightIcon?: IconName
 
   /** Optional Icon props */
-  iconProps?: IconProps
+  iconProps?: Partial<IconProps>
 
   /** onClick event handler */
   onClick?: (event: MouseEvent) => Promise<void> | void
