@@ -1,5 +1,6 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
+import CheckAlt from './check-alt.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -7,6 +8,7 @@ import CommandCalendar from './command-calendar.svg'
 import CommandEcho from './command-echo.svg'
 import CommandEmail from './command-email.svg'
 import CommandHttp from './command-http.svg'
+import CommandIcon from './command-icon.svg'
 import CommandInstall from './command-install.svg'
 import CommandResourceConstraint from './command-resource-constraint.svg'
 import CommandRollback from './command-rollback.svg'
@@ -100,6 +102,7 @@ import MainPopularity from './main-popularity.svg'
 import MainRefresh from './main-refresh.svg'
 import MainReorder from './main-reorder.svg'
 import MainRerun from './main-rerun.svg'
+import MainResume from './main-resume.svg'
 import MainRollback from './main-rollback.svg'
 import MainSaved from './main-saved.svg'
 import MainScope from './main-scope.svg'
@@ -197,6 +200,7 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 
 type HarnessIconName =
+  | 'check-alt'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -204,6 +208,7 @@ type HarnessIconName =
   | 'command-echo'
   | 'command-email'
   | 'command-http'
+  | 'command-icon'
   | 'command-install'
   | 'command-resource-constraint'
   | 'command-rollback'
@@ -297,6 +302,7 @@ type HarnessIconName =
   | 'main-refresh'
   | 'main-reorder'
   | 'main-rerun'
+  | 'main-resume'
   | 'main-rollback'
   | 'main-saved'
   | 'main-scope'
@@ -394,6 +400,7 @@ type HarnessIconName =
   | 'trigger-schedule'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
+  'check-alt': CheckAlt,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
@@ -401,6 +408,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-echo': CommandEcho,
   'command-email': CommandEmail,
   'command-http': CommandHttp,
+  'command-icon': CommandIcon,
   'command-install': CommandInstall,
   'command-resource-constraint': CommandResourceConstraint,
   'command-rollback': CommandRollback,
@@ -494,6 +502,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-refresh': MainRefresh,
   'main-reorder': MainReorder,
   'main-rerun': MainRerun,
+  'main-resume': MainResume,
   'main-rollback': MainRollback,
   'main-saved': MainSaved,
   'main-scope': MainScope,
