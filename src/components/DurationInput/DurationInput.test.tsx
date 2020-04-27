@@ -24,44 +24,39 @@ describe('<DurationInput/> tests', () => {
       expect(onChange).toHaveBeenCalledWith(123456789)
     })
 
-    test('onChange does not triggers with invalid value', () => {
+    test.each`
+      value                     | trigger
+      ${'1'}                    | ${false}
+      ${'1d'}                   | ${true}
+      ${'1d '}                  | ${true}
+      ${'1d 1'}                 | ${false}
+      ${'1d 10'}                | ${false}
+      ${'1d 10h'}               | ${true}
+      ${'1d 10h '}              | ${true}
+      ${'1d 10h 1'}             | ${false}
+      ${'1d 10h 17'}            | ${false}
+      ${'1d 10h 17m '}          | ${true}
+      ${'1d 10h 17m 3'}         | ${false}
+      ${'1d 10h 17m 36'}        | ${false}
+      ${'1d 10h 17m 36s'}       | ${true}
+      ${'1d 10h 17m 36s '}      | ${true}
+      ${'1d 10h 17m 36s 7'}     | ${false}
+      ${'1d 10h 17m 36s 78'}    | ${false}
+      ${'1d 10h 17m 36s 789'}   | ${false}
+      ${'1d 10h 17m 36s 789m'}  | ${false}
+      ${'1d 10h 17m 36s 789ms'} | ${true}
+      ${'1wwwwwwwwww'}          | ${false}
+      ${'1wdmdmdmdmd34masdas'}  | ${false}
+    `('onChange triggers: $trigger with invalid value ($value)', async ({ value, trigger }) => {
       const onChange = jest.fn()
-      const { getByTestId } = render(<DurationInput onChange={onChange} data-testid="input" />)
 
-      const events = [
-        { value: '1', triggers: false },
-        { value: '1d', triggers: true },
-        { value: '1d ', triggers: true },
-        { value: '1d 1', triggers: false },
-        { value: '1d 10', triggers: false },
-        { value: '1d 10h', triggers: true },
-        { value: '1d 10h ', triggers: true },
-        { value: '1d 10h 1', triggers: false },
-        { value: '1d 10h 17', triggers: false },
-        { value: '1d 10h 17m ', triggers: true },
-        { value: '1d 10h 17m 3', triggers: false },
-        { value: '1d 10h 17m 36', triggers: false },
-        { value: '1d 10h 17m 36s', triggers: true },
-        { value: '1d 10h 17m 36s ', triggers: true },
-        { value: '1d 10h 17m 36s 7', triggers: false },
-        { value: '1d 10h 17m 36s 78', triggers: false },
-        { value: '1d 10h 17m 36s 789', triggers: false },
-        { value: '1d 10h 17m 36s 789m', triggers: true },
-        { value: '1d 10h 17m 36s 789ms', triggers: true }
-      ]
+      const { findByTestId } = render(<DurationInput onChange={onChange} data-testid="input" />)
 
-      const input = getByTestId('input')
-      let i = 0
+      const input = await findByTestId('input')
 
-      events.forEach(({ value, triggers }) => {
-        fireEvent.change(input, { target: { value } })
+      fireEvent.change(input, { target: { value } })
 
-        if (triggers) {
-          i++
-        }
-
-        expect(onChange).toBeCalledTimes(i)
-      })
+      expect(onChange).toHaveBeenCalledTimes(trigger ? 1 : 0)
     })
 
     test('shows warning when invalid value is present', () => {

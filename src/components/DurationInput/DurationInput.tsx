@@ -10,7 +10,8 @@ import css from './DurationInput.css'
 export type Units = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
 const TEXT_EXTRACT_REGEX = /(\d+)\s*([a-z]{1,2})/gi
 const TEXT_LIMIT_REGEX = /[^0-9wdhms\s]/g
-const UNIT_LESS_REGEX = /\d+(?!(ms|s|m|h|d|w|\d))/gi
+const UNIT_LESS_REGEX = /\d+(?!(ms|s|m|h|d|w|\d))/i
+const VALID_SYNTAX_REGEX = /^(\d+w\s*)?(\d+d\s*)?(\d+h\s*)?(\d+m\s*)?(\d+s\s*)?(\d+ms\s*)?$/i
 
 export const UNIT_MULTIPLIIERS: Record<Units, number> = {
   ms: 1,
@@ -128,7 +129,7 @@ export const HelpPopoverContent = (
 
 export interface DurationInputProps extends Omit<TextInputProps, 'value' | 'onChange'> {
   value?: number
-  onChange?(time: number): void
+  onChange?(time: number, hasWarning?: boolean): void
 }
 
 export function DurationInput(props: DurationInputProps) {
@@ -142,15 +143,15 @@ export function DurationInput(props: DurationInputProps) {
   }, [value])
 
   function handleTextChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const val = e.target.value.replace(TEXT_LIMIT_REGEX, '')
-    const hasWarning = UNIT_LESS_REGEX.test(val)
+    const fieldValue = e.target.value.replace(TEXT_LIMIT_REGEX, '')
+    const hasWarning = UNIT_LESS_REGEX.test(fieldValue) || !VALID_SYNTAX_REGEX.test(fieldValue)
 
-    setText(val)
+    setText(fieldValue)
     setShowWarning(hasWarning)
 
     // call onChange only when numbers are followed by allowed units
     if (typeof onChange === 'function' && !hasWarning) {
-      const time = parseStringToTime(val)
+      const time = parseStringToTime(fieldValue)
       onChange(time)
     }
   }

@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.94 - 04/27/20
+
+- `Fixed`: DurationInput - don't allow invalid syntax
+
 ## 1.0.93 - 04/23/20
 
 - `Added` command-icon, main-resume and check-alt icon.
