@@ -48,10 +48,12 @@ export function Text(props: TextProps) {
   }
 
   useLayoutEffect(() => {
-    if (
-      extraClass &&
-      (ref.current?.offsetHeight! < ref.current?.scrollHeight! || ref.current?.offsetWidth! < ref.current?.scrollWidth!) // eslint-disable-line
-    ) {
+    const heightDifference = (ref.current?.scrollHeight || 0) - (ref.current?.offsetHeight || 0)
+    const widthDifference = (ref.current?.scrollWidth || 0) - (ref.current?.offsetWidth || 0)
+    // Reason to consider difference more than 1 px is
+    // If height is 18.2 Px, chrome taking scrollHeight as 18px and firefox take this as 19px
+    // where as offsetHeight both take it as 18px
+    if (extraClass && (heightDifference > 1 || widthDifference > 1)) {
       setTooltip(props.children as JSX.Element)
     }
   }, [props.children, props.tooltip, props.tooltipProps])
