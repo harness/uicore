@@ -163,6 +163,7 @@ import ServiceInstana from './service-instana.svg'
 import ServiceJenkins from './service-jenkins.svg'
 import ServiceJira from './service-jira.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
+import MicrosoftTeams from './service-microsoft-teams.svg'
 import ServiceMydatacenter from './service-mydatacenter.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
@@ -363,6 +364,7 @@ type HarnessIconName =
   | 'service-jenkins'
   | 'service-jira'
   | 'service-kubernetes'
+  | 'service-microsoft-teams'
   | 'service-mydatacenter'
   | 'service-newrelic'
   | 'service-nexus'
@@ -563,6 +565,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-jenkins': ServiceJenkins,
   'service-jira': ServiceJira,
   'service-kubernetes': ServiceKubernetes,
+  'service-microsoft-teams': MicrosoftTeams,
   'service-mydatacenter': ServiceMydatacenter,
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
