@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.98 - 04/30/20
 
-- `Added`: Added new icons for CE Overview pag
+- `Added`: Added new icons for CE Overview page
 
 ## 1.0.97 - 04/29/20
 
