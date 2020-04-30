@@ -1,6 +1,12 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
+import Application from './application.svg'
+import Beta from './beta.svg'
+import BudgetColored from './budget_colored.svg'
+import BudgetGrey from './budget_grey.svg'
 import CheckAlt from './check-alt.svg'
+import Cloud from './cloud.svg'
+import Cluster from './cluster.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -201,7 +207,13 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 
 type HarnessIconName =
+  | 'ce-application'
+  | 'ce-beta'
+  | 'ce-budget-colored'
+  | 'ce-budget-grey'
   | 'check-alt'
+  | 'ce-cloud'
+  | 'ce-cluster'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -402,7 +414,13 @@ type HarnessIconName =
   | 'trigger-schedule'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
+  'ce-application': Application,
+  'ce-beta': Beta,
+  'ce-budget-colored': BudgetColored,
+  'ce-budget-grey': BudgetGrey,
   'check-alt': CheckAlt,
+  'ce-cloud': Cloud,
+  'ce-cluster': Cluster,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,

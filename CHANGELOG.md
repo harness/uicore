@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.98 - 04/30/20
+
+- `Added`: Added new icons for CE Overview page
+
 ## 1.0.97 - 04/29/20
 
 - `Fixed`: service-microsoft-teams icon
