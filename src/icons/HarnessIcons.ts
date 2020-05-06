@@ -47,6 +47,7 @@ import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Github from './github.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
+import Harness from './harness.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -255,6 +256,7 @@ type HarnessIconName =
   | 'github'
   | 'harness-logo-black'
   | 'harness-logo-white'
+  | 'harness'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -463,6 +465,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   github: Github,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
+  harness: Harness,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
