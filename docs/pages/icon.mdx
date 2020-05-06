@@ -31,6 +31,28 @@ You can pass styled props to Icon as well.
 <Icon id="icon-styled-props" name="heart" size={64} color="blue500" padding="small" border={{ color: 'blue400' }} />
 ```
 
+## Harness Logos
+
+UIKit currently has two Harness logos which are not suitable to be rendered by `<Icon />` due to the fact that the logos are not square. To render these logos, you can use their SVG components directly from `HarnessIcons['harness-logo-black']` and `HarnessIcons['harness-logo-white']`.
+
+```js render=true
+<div style={{ background: 'var(--grey-100)', padding: '20px', borderRadius: '5px' }}>
+  <Layout.Horizontal spacing="small">
+    {[HarnessIcons['harness-logo-black'], HarnessIcons['harness-logo-white']].map((HarnessLogo, index) => (
+      <HarnessLogo height={48} key={index} />
+    ))}
+  </Layout.Horizontal>
+</div>
+```
+
+## How to add an icon?
+
+To add an icon into UIKit, copy the icon into UIKit's `./src/icons` folder then run
+
+```
+yarn ui:icons
+```
+
 ## Harness Icons
 
 ```js render=true
@@ -117,24 +139,3 @@ You can pass styled props to Icon as well.
 </div>
 ```
 
-## Harness Logos
-
-UIKit currently has two Harness logos which are not suitable to be rendered by `<Icon />` due to the fact that the logos are not square. To render these logos, you can use their SVG components directly from `HarnessIcons['harness-logo-black']` and `HarnessIcons['harness-logo-white']`.
-
-```js render=true
-<div style={{ background: 'var(--grey-100)', padding: '20px', borderRadius: '5px' }}>
-  <Layout.Horizontal spacing="small">
-    {[HarnessIcons['harness-logo-black'], HarnessIcons['harness-logo-white']].map((HarnessLogo, index) => (
-      <HarnessLogo height={48} key={index} />
-    ))}
-  </Layout.Horizontal>
-</div>
-```
-
-## How to add an icon?
-
-To add an icon into UIKit, copy the icon into UIKit's `./src/icons` folder then run
-
-```
-yarn ui:icons
-```

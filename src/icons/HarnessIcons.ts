@@ -1,12 +1,12 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
-import Application from './application.svg'
-import Beta from './beta.svg'
-import BudgetColored from './budget_colored.svg'
-import BudgetGrey from './budget_grey.svg'
+import CeApplication from './ce-application.svg'
+import CeBeta from './ce-beta.svg'
+import CeBudgetColored from './ce-budget_colored.svg'
+import CeBudgetGrey from './ce-budget_grey.svg'
+import CeCloud from './ce-cloud.svg'
+import CeCluster from './ce-cluster.svg'
 import CheckAlt from './check-alt.svg'
-import Cloud from './cloud.svg'
-import Cluster from './cluster.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -161,8 +161,8 @@ import ServiceDynatrace from './service-dynatrace.svg'
 import ServiceEcs from './service-ecs.svg'
 import ServiceElastigroup from './service-elastigroup.svg'
 import ServiceElk from './service-elk.svg'
-import ServiceGcp from './service-gcp.svg'
 import ServiceGcpWithText from './service-gcp-with-text.svg'
+import ServiceGcp from './service-gcp.svg'
 import ServiceGithub from './service-github.svg'
 import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
@@ -210,11 +210,11 @@ import TriggerSchedule from './trigger-schedule.svg'
 type HarnessIconName =
   | 'ce-application'
   | 'ce-beta'
-  | 'ce-budget-colored'
-  | 'ce-budget-grey'
-  | 'check-alt'
+  | 'ce-budget_colored'
+  | 'ce-budget_grey'
   | 'ce-cloud'
   | 'ce-cluster'
+  | 'check-alt'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -369,8 +369,8 @@ type HarnessIconName =
   | 'service-ecs'
   | 'service-elastigroup'
   | 'service-elk'
-  | 'service-gcp'
   | 'service-gcp-with-text'
+  | 'service-gcp'
   | 'service-github'
   | 'service-gotlab'
   | 'service-helm'
@@ -416,13 +416,13 @@ type HarnessIconName =
   | 'trigger-schedule'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
-  'ce-application': Application,
-  'ce-beta': Beta,
-  'ce-budget-colored': BudgetColored,
-  'ce-budget-grey': BudgetGrey,
+  'ce-application': CeApplication,
+  'ce-beta': CeBeta,
+  'ce-budget_colored': CeBudgetColored,
+  'ce-budget_grey': CeBudgetGrey,
+  'ce-cloud': CeCloud,
+  'ce-cluster': CeCluster,
   'check-alt': CheckAlt,
-  'ce-cloud': Cloud,
-  'ce-cluster': Cluster,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
@@ -577,8 +577,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-ecs': ServiceEcs,
   'service-elastigroup': ServiceElastigroup,
   'service-elk': ServiceElk,
-  'service-gcp': ServiceGcp,
   'service-gcp-with-text': ServiceGcpWithText,
+  'service-gcp': ServiceGcp,
   'service-github': ServiceGithub,
   'service-gotlab': ServiceGotlab,
   'service-helm': ServiceHelm,
