@@ -67,8 +67,9 @@ export function ExpandingSearchInput(props: PropsInterface) {
 
   // componentDidMount
   useEffect(() => {
-    if (autoFocus) {
-      inputRef.current?.focus()
+    // cannot stop autofocus, hence inverted logic is being used
+    if (!autoFocus) {
+      inputRef.current?.blur()
     }
   }, [])
 
