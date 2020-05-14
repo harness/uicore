@@ -1,0 +1,101 @@
+# Radio Select --- docs/pages/radio-select.mdx
+
+import {RadioSelectExample} from '../shared/RadioSelectExample.tsx'
+
+Design is a like card select component [CD Next Gen](https://harness.atlassian.net/wiki/spaces/UI/pages/668205796/Radio+Button+Select)
+
+Should support
+- Dynamic Cards of any design
+- Keyboard Events - left arrow, right arrow and Enter
+
+Internally it uses [Card](/card) component and define renderItem method to define the cody of the card and you use class to customize the card
+
+## Import
+```js
+import { RadioSelect, RadioSelectProps } from '@wings-software/uikit'
+```
+
+## Usage/Props
+```js
+export interface RadioSelectProps<ObjectType> extends HTMLDivElement {
+  selected: ObjectType
+  data: ObjectType[]
+  renderItem: (item: ObjectType, selected: boolean) => JSX.Element
+  onChange: (selected: ObjectType, e: React.MouseEvent<HTMLDivElement>) => void
+}
+```
+
+## Example
+
+<RadioSelectExample />
+
+### Example Code
+```js
+
+
+interface Data {
+  text: string
+  value: string
+  icon: string
+}
+
+const data: Data[] = [
+  {
+    text: 'Kubernetes',
+    value: 'service-kubernetes',
+    icon: 'service-kubernetes'
+  },
+  {
+    text: 'Github',
+    value: 'service-github',
+    icon: 'service-github'
+  },
+  {
+    text: 'GCP',
+    value: 'service-gcp',
+    icon: 'service-gcp'
+  },
+  {
+    text: 'ELK Service',
+    value: 'service-elk',
+    icon: 'service-elk'
+  },
+  {
+    text: 'Git Labs',
+    value: 'service-gotlab',
+    icon: 'service-gotlab'
+  },
+  {
+    text: 'Datadog',
+    value: 'service-datadog',
+    icon: 'service-datadog'
+  },
+  {
+    text: 'Slack',
+    value: 'service-slack',
+    icon: 'service-slack'
+  },
+  {
+    text: 'Jenkins',
+    value: 'service-jenkins',
+    icon: 'service-jenkins'
+  }
+]
+
+
+export const RadioSelectExample = () => {
+  const [selected, setSelected] = useState(null)
+  const props = {
+    data,
+    className: 'grid',
+    renderItem: (item, selected) => (
+      <CardBody.Icon icon={item.icon} iconSize={25}>
+        <Text font={{ size: 'small', align: 'center', color: selected ? 'var(--grey-900)' : 'var(--grey-350)' }}>
+          {item.text}
+        </Text>
+      </CardBody.Icon>
+    ),
+    onChange: value => setSelected(value)
+  }
+  return <RadioSelect {...props} selected={selected} />
+```

@@ -44,3 +44,4 @@ export {
 } from './components/DateRangePickerButton/DateRangePickerButton'
 export { ExpandingSearchInput } from './components/ExpandingSearchInput/ExpandingSearchInput'
 export { Card, CardProps, CardBody } from './components/Card/Card'
+export { RadioSelect, RadioSelectProps } from './components/RadioSelect/RadioSelect'

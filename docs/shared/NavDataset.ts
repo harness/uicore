@@ -85,6 +85,10 @@ export default [
         url: '/radio'
       },
       {
+        label: 'Radio Select',
+        url: '/radio-select'
+      },
+      {
         label: 'Switch',
         url: '/switch'
       },

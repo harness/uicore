@@ -82,6 +82,9 @@ function NavSection({ name, items }) {
           background: var(--green-200) !important;
           font-weight: 600 !important;
         }
+        details ul {
+          margin-bottom: 0;
+        }
         summary {
           text-transform: initial;
         }
