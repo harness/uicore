@@ -1,0 +1,93 @@
+# SimpleTagInput --- docs/pages/simple-tag-input.mdx
+
+This component handles tags as an array of strings.
+
+## Import
+
+```js
+import { SimpleTagInput } from '@wings-software/uikit'
+```
+
+## Static dataset
+
+```js live=true
+<Container width={300}>
+  <SimpleTagInput
+    fill
+    allowNewTag={true}
+    onNewItemCreated={(newItem, selectedItems, createdItems, items) =>
+      console.log({ newItem, selectedItems, createdItems, items })
+    }
+    getTagProps={(value, index, selectedItems, createdItems, items) => {
+      return createdItems.includes(value) ? { intent: 'danger', minimal: true, large: true } : undefined
+    }}
+    items={[
+      'The Shawshank Redemption',
+      'The Godfather',
+      'The Godfather: Part II',
+      'The Dark Knight',
+      '12 Angry Men',
+      "Schindler's List",
+      'Special'
+    ]}
+    onChange={(selectedItems, createdItems, items) => {
+      console.log('onChange', { selectedItems, createdItems, items })
+    }}
+  />
+</Container>
+```
+
+## Dynamic dataset
+
+`SimpleTagInput` accepts `items` prop as a `TagInputItemsFutureResult` (a promise) which will resolve as a typical `xhr-async` result.
+
+```ts
+interface TagInputItemsFutureResult {
+  items: string[]
+  error: string
+  success: boolean
+}
+```
+
+Meaning you can use xhr-async to fetch for tag dataset. `SimpleTagInput` handles error internally.
+
+```js live=true
+<Container width={300}>
+  <SimpleTagInput
+    fill
+    items={async () => {
+      return new Promise(r => {
+        setTimeout(() => {
+          r({
+            items: [
+              'The Shawshank Redemption',
+              'The Godfather',
+              'The Godfather: Part II',
+              'The Dark Knight',
+              '12 Angry Men',
+              "Schindler's List"
+            ]
+          })
+        }, 5000)
+      })
+    }}
+  />
+</Container>
+```
+
+## Dynamic dataset with error handling and retrying
+
+```js live=true
+<Container width={300}>
+  <SimpleTagInput
+    fill
+    items={async () => {
+      return new Promise(r => {
+        setTimeout(() => {
+          r({ error: 'Failed to fetch tags...' })
+        }, 10000)
+      })
+    }}
+  />
+</Container>
+```
