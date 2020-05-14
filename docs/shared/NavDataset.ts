@@ -103,6 +103,23 @@ export default [
       {
         label: 'ExpandingSearchInput',
         url: '/expanding-search-input'
+      },
+      {
+        label: 'Cards',
+        items: [
+          {
+            label: 'Card',
+            url: '/card'
+          },
+          {
+            label: 'Card Icon',
+            url: '/card-icon'
+          },
+          {
+            label: 'Card Menu',
+            url: '/card-menu'
+          }
+        ]
       }
     ]
   },
