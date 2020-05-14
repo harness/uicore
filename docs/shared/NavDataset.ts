@@ -103,6 +103,10 @@ export default [
       {
         label: 'ExpandingSearchInput',
         url: '/expanding-search-input'
+      },
+      {
+        label: 'SimpleTagInput',
+        url: '/simple-tag-input'
       }
     ]
   },
