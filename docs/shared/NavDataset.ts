@@ -73,6 +73,10 @@ export default [
         url: '/container'
       },
       {
+        label: 'Code Block',
+        url: '/code-block'
+      },
+      {
         label: 'Tooltip',
         url: '/tooltip'
       },
