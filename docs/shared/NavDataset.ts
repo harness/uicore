@@ -85,6 +85,10 @@ export default [
         url: '/radio'
       },
       {
+        label: 'Radio Select',
+        url: '/radio-select'
+      },
+      {
         label: 'Switch',
         url: '/switch'
       },
@@ -107,6 +111,23 @@ export default [
       {
         label: 'SimpleTagInput',
         url: '/simple-tag-input'
+      },
+      {
+        label: 'Cards',
+        items: [
+          {
+            label: 'Card',
+            url: '/card'
+          },
+          {
+            label: 'Card Icon',
+            url: '/card-icon'
+          },
+          {
+            label: 'Card Menu',
+            url: '/card-menu'
+          }
+        ]
       }
     ]
   },

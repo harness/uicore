@@ -12,13 +12,34 @@ function NavSection({ name, items }) {
       <ul className="bp3-list-unstyled">
         {items
           .sort((a, b) => (a.label < b.label ? -1 : 1))
-          .map(({ label, url }) => (
-            <li key={url}>
-              <Link color="grey500" fill {...active(url)} href={url}>
-                {label}
-              </Link>
-            </li>
-          ))}
+          .map(({ label, url, items }) => {
+            if (items) {
+              return (
+                <details open>
+                  <summary>{label}</summary>
+                  <ul>
+                    {items
+                      .sort((a, b) => (a.label < b.label ? -1 : 1))
+                      .map(({ label, url }) => (
+                        <li key={url}>
+                          <Link color="grey500" fill {...active(url)} href={url}>
+                            {label}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                </details>
+              )
+            } else {
+              return (
+                <li key={url}>
+                  <Link color="grey500" fill {...active(url)} href={url}>
+                    {label}
+                  </Link>
+                </li>
+              )
+            }
+          })}
       </ul>
       <style jsx>{`
         li {
@@ -60,6 +81,12 @@ function NavSection({ name, items }) {
         li ul > li :global(a[class*='active']) {
           background: var(--green-200) !important;
           font-weight: 600 !important;
+        }
+        details ul {
+          margin-bottom: 0;
+        }
+        summary {
+          text-transform: initial;
         }
       `}</style>
     </li>

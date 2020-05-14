@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.103 - 05/14/20
+
+- `Added` Added Card and Radio Select Event.
+
 ## 1.0.102 - 05/11/20
 
 - `Fixed` Fixed autofocus behaviour in ExpandingSearchInput.

@@ -1,0 +1,387 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test render Radio Select should render default values 1`] = `
+<div>
+  <div
+    class="grid"
+  >
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="0"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Kubernetes
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="1"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Github
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="2"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          GCP
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="3"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          ELK Service
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="4"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Git Labs
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="5"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Datadog
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="6"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Slack
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="7"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Jenkins
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test render Radio Select should render with selected values 1`] = `
+<div>
+  <div
+    class="grid"
+  >
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="0"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Kubernetes
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="1"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Github
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card selected"
+      data-index="2"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-900)"
+        >
+          GCP
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="3"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          ELK Service
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="4"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Git Labs
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="5"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Datadog
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="6"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Slack
+        </p>
+      </div>
+    </div>
+    <div
+      class="bp3-card bp3-interactive bp3-elevation-0 card"
+      data-index="7"
+      tabindex="0"
+    >
+      <div
+        class="cardIcon"
+      >
+        <span
+          class="bp3-icon main"
+        >
+          <svg
+            height="25"
+            width="25"
+          />
+        </span>
+        <p
+          class="font main color color-var(--grey-350)"
+        >
+          Jenkins
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

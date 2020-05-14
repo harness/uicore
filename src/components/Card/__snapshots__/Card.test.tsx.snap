@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card icon test should render cards with props selected and interactive 1`] = `
+<div>
+  <div
+    class="bp3-card bp3-interactive bp3-elevation-0 card selected"
+    tabindex="0"
+  >
+    <div
+      class="cardIcon"
+    >
+      <span
+        class="bp3-icon main"
+      >
+        <svg
+          height="25"
+          width="25"
+        />
+      </span>
+      <p
+        class="font main style style-marginTop style-marginTop-5px font-medium"
+        style="margin-top: 5px;"
+      >
+        Jenkin Artifact
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card icon test should render icon card with no props 1`] = `
+<div>
+  <div
+    class="bp3-card bp3-elevation-0 card"
+  >
+    <div
+      class="cardIcon"
+    >
+      <span
+        class="bp3-icon main"
+      >
+        <svg
+          height="25"
+          width="25"
+        />
+      </span>
+      <p
+        class="font main style style-marginTop style-marginTop-5px font-medium"
+        style="margin-top: 5px;"
+      >
+        Jenkin Artifact
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card menu test should render cards with props selected and interactive 1`] = `
+<div>
+  <div
+    class="bp3-card bp3-interactive bp3-elevation-0 card selected"
+    tabindex="0"
+  >
+    <div
+      class="cardMenu colorIdentifier"
+      style="color: red;"
+    >
+      <div
+        class="dots"
+      >
+        <span
+          class="bp3-popover-wrapper"
+        >
+          <span
+            class="bp3-popover-target"
+          >
+            <span
+              class="bp3-icon bp3-icon-more main menu padding padding-small"
+              icon="more"
+            >
+              <svg
+                data-icon="more"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <desc>
+                  more
+                </desc>
+                <path
+                  d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </span>
+      </div>
+      <p
+        class="font main title font-medium"
+      >
+        Jenkins Artifact
+      </p>
+      <p
+        class="font main style style-marginTop style-marginTop-5px font-medium"
+        style="margin-top: 5px;"
+      >
+        Jenkin Artifact
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card menu test should render icon card with no props 1`] = `
+<div>
+  <div
+    class="bp3-card bp3-elevation-0 card"
+  >
+    <div
+      class="cardMenu colorIdentifier"
+      style="color: red;"
+    >
+      <div
+        class="dots"
+      >
+        <span
+          class="bp3-popover-wrapper"
+        >
+          <span
+            class="bp3-popover-target"
+          >
+            <span
+              class="bp3-icon bp3-icon-more main menu padding padding-small"
+              icon="more"
+            >
+              <svg
+                data-icon="more"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <desc>
+                  more
+                </desc>
+                <path
+                  d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </span>
+      </div>
+      <p
+        class="font main title font-medium"
+      >
+        Jenkins Artifact
+      </p>
+      <p
+        class="font main style style-marginTop style-marginTop-5px font-medium"
+        style="margin-top: 5px;"
+      >
+        Jenkin Artifact
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card test should render cards with no props 1`] = `
+<div>
+  <div
+    class="bp3-card bp3-elevation-0 card"
+  >
+    <p
+      class="font main style style-marginTop style-marginTop-5px font-medium"
+      style="margin-top: 5px;"
+    >
+      Jenkin Artifact
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card test should render cards with props selected and interactive 1`] = `
+<div>
+  <div
+    class="bp3-card bp3-interactive bp3-elevation-0 card selected"
+    tabindex="0"
+  >
+    <p
+      class="font main style style-marginTop style-marginTop-5px font-medium"
+      style="margin-top: 5px;"
+    >
+      Jenkin Artifact
+    </p>
+  </div>
+</div>
+`;

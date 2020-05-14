@@ -1,0 +1,62 @@
+div.card {
+  border-radius: 5px;
+  display: inline-block;
+
+  &:focus {
+    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2), 0 8px 24px rgba(16, 22, 26, 0.2);
+    outline: none;
+  }
+}
+
+.cardIcon {
+  :global {
+    .bp3-icon {
+      display: block;
+      svg {
+        margin: 0 auto var(--spacing-small);
+      }
+    }
+  }
+}
+
+.selected {
+  border: 2px solid var(--blue-500) !important;
+}
+
+.cardMenu {
+  position: relative;
+  &.colorIdentifier {
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: -21px;
+      left: -21px;
+      border-color: transparent;
+      border-style: solid;
+    }
+    &::after {
+      border-top-left-radius: 5px;
+      border-width: 15px;
+      border-left-color: currentColor;
+      border-top-color: currentColor;
+    }
+  }
+
+  .title {
+    margin-left: 5px;
+    position: relative;
+    top: -10px;
+    left: 7px;
+  }
+
+  .dots {
+    position: absolute;
+    top: -20px;
+    right: -26px;
+    .menu {
+      cursor: pointer;
+      transform: rotate(90deg);
+    }
+  }
+}
