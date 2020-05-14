@@ -43,7 +43,7 @@ export {
   DateRangePickerButton
 } from './components/DateRangePickerButton/DateRangePickerButton'
 export { ExpandingSearchInput } from './components/ExpandingSearchInput/ExpandingSearchInput'
-export { TagInput } from './components/TagInput/TagInput'
+export { TagInput, TagInputItemsFutureResult, TagInputProps } from './components/TagInput/TagInput'
 export { SimpleTagInput } from './components/TagInput/SimpleTagInput'
 export { I18nResourceFunction, I18nResource } from './core/Types'
 export { Card, CardProps, CardBody } from './components/Card/Card'
