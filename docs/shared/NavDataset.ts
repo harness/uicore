@@ -109,6 +109,10 @@ export default [
         url: '/expanding-search-input'
       },
       {
+        label: 'SimpleTagInput',
+        url: '/simple-tag-input'
+      },
+      {
         label: 'Cards',
         items: [
           {
