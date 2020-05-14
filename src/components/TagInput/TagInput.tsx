@@ -12,9 +12,9 @@ const isNext =
   typeof window !== 'undefined' && typeof window.next !== 'undefined' && typeof window.__NEXT_DATA__ !== 'undefined'
 
 export interface TagInputItemsFutureResult<T> {
-  items: T[]
-  error: string
-  success: boolean
+  items?: T[]
+  error?: string
+  success?: boolean
 }
 
 export type TagInputItemsFuture<T> = () => Promise<TagInputItemsFutureResult<T>>
