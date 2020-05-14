@@ -14,3 +14,10 @@ export interface KVO<T = any> {
 }
 
 export type Position = 'top' | 'right' | 'bottom' | 'left'
+
+// eslint-disable-next-line
+export type I18nResourceFunction = (...args: any) => string
+
+export interface I18nResource {
+  [key: string]: string | I18nResourceFunction
+}

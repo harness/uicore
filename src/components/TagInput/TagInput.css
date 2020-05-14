@@ -1,0 +1,14 @@
+.popover {
+  :global {
+    ul.bp3-menu {
+      max-height: 300px;
+      max-width: 400px;
+      overflow: auto;
+    }
+  }
+}
+
+.spinner {
+  align-self: center;
+  transform: translateX(-5px);
+}
