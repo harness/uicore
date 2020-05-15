@@ -1,0 +1,28 @@
+# HealthBar --- docs/pages/health-bar.mdx
+
+HealthBar is the rendering of a container as a single row or column. Optional label can be added to describe the
+bar
+
+## Import
+
+```js
+import { HealthBar, Color, Container } from '@wings-software/uikit'
+```
+
+## Horizontal Bars
+
+```js live=true
+<HealthBar label="In Progress" height={15} width={150} background={Color.BLUE_500} />
+<HealthBar height={15} width={100} background={Color.GREEN_500}/>
+<HealthBar height={15} width={100} gradient="linear-gradient(to right, var(--yellow-500), var(--red-500))"/>
+```
+
+
+## Vertical Bars
+```js live=true
+<Container flex style={{justifyContent: 'flex-start', alignItems: 'baseline'}}>
+<HealthBar height={100} width={15} background={Color.RED_500} />
+<HealthBar height={50} width={15} background={Color.GREEN_500} />
+<HealthBar height={150} width={15} gradient="linear-gradient(var(--blue-500), var(--green-500))"/>
+</Container>
+```
