@@ -174,6 +174,10 @@ export default [
       {
         label: 'CircularPercentage',
         url: 'circular-percentage'
+      },
+      {
+        label: 'StatusBar',
+        url: '/status-bar'
       }
     ]
   }
