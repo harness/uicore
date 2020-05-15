@@ -176,8 +176,8 @@ export default [
         url: 'circular-percentage'
       },
       {
-        label: 'HealthBar',
-        url: '/health-bar'
+        label: 'StatusBar',
+        url: '/status-bar'
       }
     ]
   }
