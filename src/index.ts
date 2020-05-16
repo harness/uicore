@@ -51,3 +51,9 @@ export { RadioSelect, RadioSelectProps } from './components/RadioSelect/RadioSel
 export { CodeBlock } from './components/CodeBlock/CodeBlock'
 export { StatusBar, StatusBarProps } from './components/StatusBar/StatusBar'
 export { MultiLevelSelect } from './components/MultiLevelSelect/MultiLevelSelect'
+export {
+  StackTraceList,
+  StackTraceListProps,
+  StackTracePanel,
+  StackTracePanelProps
+} from './components/StackTraceList/StackTraceList'
