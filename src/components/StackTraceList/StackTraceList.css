@@ -1,0 +1,28 @@
+.main {
+  .heading {
+    margin-bottom: 5px;
+  }
+  .listContainer {
+    overflow-y: scroll;
+  }
+  .panel {
+    border: 1px solid var(--grey-200);
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  .textContainer {
+    padding: 15px;
+  }
+  .textContent {
+    font-size: 12px;
+    word-break: break-word;
+    white-space: pre-wrap;
+    margin-bottom: 0;
+    &[data-is-collapsed='true'] {
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      display: -webkit-box;
+    }
+  }
+}
