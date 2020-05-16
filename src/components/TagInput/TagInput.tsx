@@ -111,12 +111,13 @@ export function TagInput<T>(props: TagInputProps<T>) {
     setCreatedItems([])
     onChange?.([], [], items)
   }, [items])
-  const clearButton = showClearAllButton
-    ? useMemo(() => (selectedItems.length > 0 ? <Button icon="cross" minimal onClick={clear} /> : undefined), [
-        _items,
-        selectedItems?.length
-      ])
-    : undefined
+  const clearButton =
+    showClearAllButton && !readonly
+      ? useMemo(() => (selectedItems.length > 0 ? <Button icon="cross" minimal onClick={clear} /> : undefined), [
+          _items,
+          selectedItems?.length
+        ])
+      : undefined
   const onItemSelect = useCallback(
     (item: T) => {
       const index = selectedItems.findIndex(_item => keyOf(_item) === keyOf(item))
