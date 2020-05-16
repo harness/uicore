@@ -132,6 +132,10 @@ export default [
             url: '/card-menu'
           }
         ]
+      },
+      {
+        label: 'StackTraceList',
+        url: '/stack-trace-list'
       }
     ]
   },

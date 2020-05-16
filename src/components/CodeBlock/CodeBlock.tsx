@@ -11,10 +11,12 @@ export interface CodeBlockProps {
   snippet?: string
   allowCopy?: boolean
   format?: string
+  lineClamp?: number
+  height?: number
 }
 
 export function CodeBlock(props: CodeBlockProps) {
-  const { snippet = '', allowCopy, format = 'Text' } = props
+  const { snippet = '', allowCopy, format = 'Text', lineClamp, height } = props
 
   return (
     <Container
@@ -22,10 +24,12 @@ export function CodeBlock(props: CodeBlockProps) {
       background={Color.GREY_100}
       margin={Spacing.NONE}
       flex
+      height={height}
       className={css.codeBlock}>
       {format !== 'pre' && (
         <Text
           color={Color.GREY_350}
+          lineClamp={lineClamp}
           font={{
             size: 'normal',
             italic: true
