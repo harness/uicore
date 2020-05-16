@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.108- 05/15/20
 
+- `Added` StackTraceList and StackTracePanel Components.
+
+## 1.0.108- 05/15/20
+
 - `Fixed` duplicated issue on TagInput when fetching data dynamically.
 
 ## 1.0.107 - 05/14/20
