@@ -117,6 +117,10 @@ export default [
         url: '/simple-tag-input'
       },
       {
+        label: 'MultiLevelSelect',
+        url: '/multi-level-select'
+      },
+      {
         label: 'Cards',
         items: [
           {

@@ -1,111 +1,106 @@
-import React from 'react'
+import React, { useState } from 'react'
 import suffixedClassName from './suffixedClassName'
 import './MultiLevelSelect.css'
 
-class MultiLevelSelect extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      selectedOption: {},
-      isMenuOpen: false
-    }
+interface Option {
+  value: string
+  label: string
+}
+
+interface InputOptionsInterface {
+  value: string
+  label: string
+  options: InputOptionsInterface[]
+}
+
+interface MultiLevelSelectProps {
+  options: InputOptionsInterface[]
+  placeholder: string
+  onChange: (selectedOption: SelectedOption) => void
+  className?: string
+}
+
+interface SelectedOption {
+  child: Option
+  parent: Option
+}
+
+export function MultiLevelSelect(props: MultiLevelSelectProps) {
+  const [selectedOption, setSelectedOption] = useState<SelectedOption>({
+    child: { label: '', value: '' },
+    parent: { label: '', value: '' }
+  })
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const getClassName = (suffix: string) => {
+    const { className } = props
+    return suffixedClassName(suffix, className)
   }
 
-  getClassName = suffix => {
-    const { className } = this.props
-    return suffixedClassName(className, suffix)
-  }
-
-  onOptionsChange = () => {
-    const { onChange } = this.props
-    const { selectedOption } = this.state
+  const onOptionsChange = () => {
+    const { onChange } = props
     onChange(selectedOption)
   }
 
-  handleClickOutside = () => {
-    const { isMenuOpen } = this.state
-    return isMenuOpen && this.setState({ isMenuOpen: false })
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
 
-  toggleMenu = () => {
-    const { isMenuOpen } = this.state
-    this.setState({ isMenuOpen: !isMenuOpen })
+  const selectOption = (data: Option, parent: Option, event: React.MouseEvent) => {
+    event.preventDefault()
+    setSelectedOption({ parent, child: data })
+    onOptionsChange()
   }
 
-  selectOption = (data, parent, event) => {
-    return this.setState({ selectedOption: { parent, child: data } })
-  }
-
-  renderOptionsSelected = option => {
-    return (
-      <div
-        className={`options-selected-container ${this.getClassName('options-selected-container')}`}
-        onClick={event => event.stopPropagation()}>
-        {this.renderSubOptionsSelected(option)}
-      </div>
-    )
-  }
-
-  renderSubOptionsSelected = option => {
-    const { child: { label } = {}, parent } = option
+  const renderSubOptionsSelected = (option: SelectedOption) => {
+    const { child: { label = '' } = {}, parent } = option
 
     return parent && label ? (
-      <div className={`options-value ${this.getClassName('options-value')}`}>
-        <span className={`options-group ${this.getClassName('options-group')}`}>
-          {parent.charAt(0).toUpperCase() + parent.slice(1)} : {label}
+      <div className={`options-value ${getClassName('options-value')}`}>
+        <span className={`options-group ${getClassName('options-group')}`}>
+          {parent?.label.charAt(0).toUpperCase() + parent?.label.slice(1)} : {label}
         </span>
       </div>
     ) : null
   }
 
-  renderCaretButton = () => {
-    const { isMenuOpen } = this.state
+  const renderOptionsSelected = (option: SelectedOption) => {
     return (
-      <div className="multi-selector-button" onClick={this.toggleMenu}>
+      <div
+        className={`options-selected-container ${getClassName('options-selected-container')}`}
+        onClick={event => event.stopPropagation()}>
+        {renderSubOptionsSelected(option)}
+      </div>
+    )
+  }
+
+  const renderCaretButton = () => {
+    return (
+      <div className="multi-selector-button" onClick={toggleMenu}>
         <div
-          className={
-            isMenuOpen ? `arrow-up ${this.getClassName('arrow-up')}` : `arrow-down ${this.getClassName('arrow-down')}`
-          }
+          className={isMenuOpen ? `arrow-up ${getClassName('arrow-up')}` : `arrow-down ${getClassName('arrow-down')}`}
         />
       </div>
     )
   }
 
-  renderPlaceholder = () => {
-    const { placeholder } = this.props
+  const renderPlaceholder = () => {
+    const { placeholder } = props
     return (
-      <div className={`multi-selector-placeholder ${this.getClassName('multi-selector-placeholder')}`}>
+      <div className={`multi-selector-placeholder ${getClassName('multi-selector-placeholder')}`}>
         {placeholder || 'Select'}
       </div>
     )
   }
 
-  renderOptionsMenu = (options, parent = {}) => {
-    return options.map((item, i) => {
-      if (item.options) {
-        return (
-          <div key={`${item.value}-${i}`} className="options-container">
-            <div className={`options-label ${this.getClassName('options-label')}`}>
-              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
-            </div>
-            {this.renderSubMenu(item, parent)}
-          </div>
-        )
-      }
-      return <React.Fragment key={`${item.value}-${i}`}>{this.renderSubMenu(item, parent)}</React.Fragment>
-    })
-  }
-
-  renderSubMenu = (item, parent = {}) => {
+  const renderSubMenu = (item: InputOptionsInterface, parent: Option) => {
     if (item.options) {
       return (
         <>
-          <div className={`arrow-right ${this.getClassName('arrow-right')}`} />
-          <div className={`options-sub-menu-container ${this.getClassName('options-sub-menu-container')}`}>
-            <div className={`options-sub-menu-header ${this.getClassName('options-sub-menu-header')}`}>
-              {item.value}
-            </div>
-            {this.renderOptionsMenu(item.options, item)}
+          <div className={`arrow-right ${getClassName('arrow-right')}`} />
+          <div className={`options-sub-menu-container ${getClassName('options-sub-menu-container')}`}>
+            <div className={`options-sub-menu-header ${getClassName('options-sub-menu-header')}`}>{item.value}</div>
+            {renderOptionsMenu(item.options, item)}
           </div>
         </>
       )
@@ -114,49 +109,67 @@ class MultiLevelSelect extends React.Component {
     return (
       <label>
         <div
-          className={`options-sub-menu ${this.getClassName('options-sub-menu')}`}
+          className={`options-sub-menu ${getClassName('options-sub-menu')}`}
           onClick={event => {
-            this.selectOption(item, parent.value, event)
+            selectOption(item, parent, event)
           }}>
-          <div className={`options-label ${this.getClassName('options-label')}`}>{item.label}</div>
+          <div className={`options-label ${getClassName('options-label')}`}>{item.label}</div>
         </div>
       </label>
     )
   }
 
-  renderCloseButton = () => {
+  const renderOptionsMenu = (options: InputOptionsInterface[], parent: Option) => {
+    return options.map((item, i) => {
+      if (item.options) {
+        return (
+          <div key={`${item.value}-${i}`} className="options-container">
+            <div className={`options-label ${getClassName('options-label')}`}>
+              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
+            </div>
+            {renderSubMenu(item, parent)}
+          </div>
+        )
+      }
+      return <React.Fragment key={`${item.value}-${i}`}>{renderSubMenu(item, parent)}</React.Fragment>
+    })
+  }
+
+  const renderCloseButton = () => {
     return (
-      <span className={'close'} onClick={() => this.setState({ selectedOption: {} })}>
+      <span
+        className={'close'}
+        onClick={() => setSelectedOption({ child: { label: '', value: '' }, parent: { label: '', value: '' } })}>
         x
       </span>
     )
   }
 
-  render() {
-    const { selectedOption, isMenuOpen } = this.state
-    const { options } = this.props
-    return (
-      <div className="multi-level-selector-container">
-        <div
-          className={`multi-selector-container ${this.getClassName('multi-selector-container')} ${
-            isMenuOpen ? `active ${this.getClassName('active')}` : 'inactive'
-          }`}>
-          <div className="multi-selector" onClick={this.toggleMenu}>
-            {selectedOption && Object.keys(selectedOption).length > 0 ? null : this.renderPlaceholder()}
-            {this.renderOptionsSelected(selectedOption)}
-          </div>
-          {selectedOption && Object.keys(selectedOption).length > 0 ? this.renderCloseButton() : null}
-          {this.renderCaretButton()}
-        </div>
-        <div
-          className={`multi-level-options-container ${this.getClassName('multi-level-options-container')} ${
-            isMenuOpen ? `menu-open ${this.getClassName('menu-open')}` : `menu-close ${this.getClassName('menu-close')}`
-          }`}>
-          <div className="options-main-menu">{this.renderOptionsMenu(options)}</div>
-        </div>
-      </div>
-    )
+  const isOptionSelected = (selectedOption: SelectedOption) => {
+    const { child, parent } = selectedOption || {}
+    return child && child.label && child.value && parent && parent.label && parent.value
   }
-}
 
-export default MultiLevelSelect
+  const { options } = props
+  return (
+    <div className="multi-level-selector-container">
+      <div
+        className={`multi-selector-container ${getClassName('multi-selector-container')} ${
+          isMenuOpen ? `active ${getClassName('active')}` : 'inactive'
+        }`}>
+        <div className="multi-selector" onClick={toggleMenu}>
+          {isOptionSelected(selectedOption) ? null : renderPlaceholder()}
+          {renderOptionsSelected(selectedOption)}
+        </div>
+        {isOptionSelected(selectedOption) ? renderCloseButton() : null}
+        {renderCaretButton()}
+      </div>
+      <div
+        className={`multi-level-options-container ${getClassName('multi-level-options-container')} ${
+          isMenuOpen ? `menu-open ${getClassName('menu-open')}` : `menu-close ${getClassName('menu-close')}`
+        }`}>
+        <div className="options-main-menu">{renderOptionsMenu(options, { label: '', value: '' })}</div>
+      </div>
+    </div>
+  )
+}
