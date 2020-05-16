@@ -8,6 +8,50 @@ This component handles tags as an array of strings.
 import { SimpleTagInput } from '@wings-software/uikit'
 ```
 
+## Basic usages
+
+```js live=true
+<Container width={500}>
+  <SimpleTagInput
+    fill
+    noInputBorder
+    openOnKeyDown={false}
+    showAddTagButton
+    showClearAllButton
+    allowNewTag
+    placeholder="Enter tags..."
+    getTagProps={(value, index, selectedItems, createdItems, items) => {
+      return createdItems.includes(value) ? { intent: 'danger', minimal: true } : { intent: 'primary', minimal: true }
+    }}
+    selectedItems={['The Shawshank Redemption']}
+    items={[
+      'The Godfather',
+      'The Godfather: Part II',
+      'The Dark Knight',
+      '12 Angry Men',
+      "Schindler's List",
+      'Special'
+    ]}
+    onChange={(selectedItems, createdItems, items) => {
+      console.log('onChange', { selectedItems, createdItems, items })
+    }}
+  />
+</Container>
+```
+
+## Read-only
+
+```js live=true
+<Container width={500}>
+  <SimpleTagInput
+    readonly
+    fill
+    noInputBorder
+    selectedItems={['The Shawshank Redemption', 'The Godfather', 'The Godfather: Part II', 'The Dark Knight']}
+  />
+</Container>
+```
+
 ## Static dataset
 
 ```js live=true
@@ -15,6 +59,7 @@ import { SimpleTagInput } from '@wings-software/uikit'
   <SimpleTagInput
     fill
     allowNewTag={true}
+    showClearAllButton={true}
     onNewItemCreated={(newItem, selectedItems, createdItems, items) =>
       console.log({ newItem, selectedItems, createdItems, items })
     }

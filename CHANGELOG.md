@@ -2,11 +2,16 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.0.109- 05/15/20
+## 1.0.110 - 05/16/20
+
+- `Changed` styling of TagInput to match NextGen UI.
+- `Added` new TagInput's props: noInputBorder, showAddTagButton, readonly.
+
+## 1.0.109 - 05/15/20
 
 - `Added` StackTraceList and StackTracePanel Components.
 
-## 1.0.108- 05/15/20
+## 1.0.108 - 05/15/20
 
 - `Fixed` duplicated issue on TagInput when fetching data dynamically.
 
