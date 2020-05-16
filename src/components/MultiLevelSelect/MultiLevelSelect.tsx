@@ -24,7 +24,7 @@ interface SelectedOption {
   parent: Option
 }
 
-function MultiLevelSelect(props: MultiLevelSelectProps) {
+export function MultiLevelSelect(props: MultiLevelSelectProps) {
   const [selectedOption, setSelectedOption] = useState<SelectedOption>({
     child: { label: '', value: '' },
     parent: { label: '', value: '' }
@@ -151,5 +151,3 @@ function MultiLevelSelect(props: MultiLevelSelectProps) {
     </div>
   )
 }
-
-export default MultiLevelSelect
