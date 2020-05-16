@@ -6,6 +6,7 @@ import { useIsMounted } from '../../hooks/useIsMounted'
 import css from './TagInput.css'
 import { Container } from '../Container/Container'
 import { I18nResource } from 'core/Types'
+import cx from 'classnames'
 import i18nBase from './TagInput.i18n'
 
 const isNext =
@@ -20,21 +21,49 @@ export interface TagInputItemsFutureResult<T> {
 export type TagInputItemsFuture<T> = () => Promise<TagInputItemsFutureResult<T>>
 
 export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'items'>> {
+  /** Array of items possible to be added as tags, could be a future to be resolved as well */
   items: T[] | TagInputItemsFuture<T>
+
+  /** Label for item */
   labelFor: (item: T) => string
+
+  /** Key of item */
   keyOf: (item: T) => string | number | undefined
 
+  /** When passed as true, new tag is allowed to be created */
   allowNewTag?: boolean
-  addOnBlur?: boolean
-  itemFromNewTag?: (newTag: string) => T
+
+  /** Item builder from newly created string tag (must be provided when `allowNewTag` is true) */
+  itemFromNewTag: (newTag: string) => T
+
+  /** Callback when a new item is created (`allowNewTag` must be true) */
   onNewItemCreated?: (newItem: T, selectedItems: T[], createdItems: T[], items: T[]) => void
 
+  /** Whenever there is an interaction (add/remove event), onChange will be called */
   onChange?: (selectedItems: T[], createdItems: T[], items: T[]) => void
 
-  getTagProps?: (value: React.ReactNode, index: number, selectedItems: T[], createdItems: T[], items: T[]) => ITagProps
+  /** Custom generator for tag props */
+  getTagProps?: (
+    value: React.ReactNode,
+    index: number,
+    selectedItems: T[],
+    createdItems: T[],
+    items: T[]
+  ) => ITagProps | undefined
 
+  /** Show clear all button to clear all current selected tags */
   showClearAllButton?: boolean
 
+  /** No input border (NextGen styling) */
+  noInputBorder?: boolean
+
+  /** Show `+ tag` button at the end of the tags list, if true */
+  showAddTagButton?: boolean
+
+  /** True if editing is disallowed */
+  readonly?: boolean
+
+  /** i18n object */
   i18n?: I18nResource
 }
 
@@ -63,6 +92,9 @@ export function TagInput<T>(props: TagInputProps<T>) {
     getTagProps,
     onChange,
     showClearAllButton,
+    noInputBorder,
+    showAddTagButton,
+    readonly,
     i18n: _i18n = {},
     ...options
   } = props
@@ -78,7 +110,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     setSelectedItems([])
     setCreatedItems([])
     onChange?.([], [], items)
-  }, [_items])
+  }, [items])
   const clearButton = showClearAllButton
     ? useMemo(() => (selectedItems.length > 0 ? <Button icon="cross" minimal onClick={clear} /> : undefined), [
         _items,
@@ -98,8 +130,12 @@ export function TagInput<T>(props: TagInputProps<T>) {
         setSelectedItems(_selectedItems)
         onChange?.(_selectedItems, createdItems, items)
       } else {
-        const _createdItems = createdItems.concat(item)
-        const _selectedItems = selectedItems.concat(item)
+        const _createdItems = createdItems.find((_item: T) => keyOf(_item) === keyOf(item))
+          ? createdItems
+          : createdItems.concat(item)
+        const _selectedItems = selectedItems.find((_item: T) => keyOf(_item) === keyOf(item))
+          ? selectedItems
+          : selectedItems.concat(item)
 
         setCreatedItems(_createdItems)
         setSelectedItems(_selectedItems)
@@ -153,23 +189,31 @@ export function TagInput<T>(props: TagInputProps<T>) {
   }, [])
   const _getTagProps = useCallback(
     (value: React.ReactNode, index: number): ITagProps => {
-      return (
-        getTagProps?.(value, index, selectedItems, createdItems, items) || {
-          minimal: true
+      if (showAddTagButton && !readonly && index === selectedItems.length) {
+        return {
+          intent: 'none',
+          minimal: true,
+          className: cx(css.tag, css.addTagButton)
         }
-      )
+      }
+
+      return Object.assign({}, getTagProps?.(value, index, selectedItems, createdItems, items), {
+        minimal: true,
+        className: css.tag
+      })
     },
-    [selectedItems, createdItems, items]
+    [selectedItems, createdItems, items, readonly, showAddTagButton]
   )
 
   useEffect(fetchData, [_items])
 
   return (
     <LocalMultiSelect
+      className={css.tagInput}
       items={items
         .concat(createdItems)
         .sort((a, b) => (labelFor(a).toLocaleLowerCase() < labelFor(b).toLocaleLowerCase() ? -1 : 1))}
-      selectedItems={selectedItems}
+      selectedItems={selectedItems.concat(showAddTagButton && !readonly ? itemFromNewTag(i18n.addTag) : [])}
       itemRenderer={(item: T, itemProps: IItemRendererProps) => {
         return (
           <MenuItem
@@ -186,11 +230,13 @@ export function TagInput<T>(props: TagInputProps<T>) {
       onItemSelect={onItemSelect}
       tagRenderer={(item: T) => labelFor(item)}
       tagInputProps={{
+        disabled: readonly,
         onRemove: (_value: string, index: number) => {
           setSelectedItems(selectedItems.filter((_item, _index) => _index !== index))
         },
         rightElement: loading ? SPINNER : clearButton,
-        tagProps: _getTagProps
+        tagProps: _getTagProps,
+        className: cx(noInputBorder && css.input, readonly && css.readonly)
       }}
       noResults={
         loading ? null : (
