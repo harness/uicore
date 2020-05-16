@@ -33,12 +33,9 @@ export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'it
 
   getTagProps?: (value: React.ReactNode, index: number, selectedItems: T[], createdItems: T[], items: T[]) => ITagProps
 
-  i18n?: I18nResource
-}
+  showClearAllButton?: boolean
 
-const defaultProps = {
-  allowNewTag: true,
-  itemFromNewTag: undefined
+  i18n?: I18nResource
 }
 
 const SPINNER = <Spinner className={css.spinner} size={Icon.SIZE_STANDARD} />
@@ -65,6 +62,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     onNewItemCreated,
     getTagProps,
     onChange,
+    showClearAllButton,
     i18n: _i18n = {},
     ...options
   } = props
@@ -81,10 +79,12 @@ export function TagInput<T>(props: TagInputProps<T>) {
     setCreatedItems([])
     onChange?.([], [], items)
   }, [_items])
-  const clearButton = useMemo(
-    () => (selectedItems.length > 0 ? <Button icon="cross" minimal onClick={clear} /> : undefined),
-    [_items, selectedItems?.length]
-  )
+  const clearButton = showClearAllButton
+    ? useMemo(() => (selectedItems.length > 0 ? <Button icon="cross" minimal onClick={clear} /> : undefined), [
+        _items,
+        selectedItems?.length
+      ])
+    : undefined
   const onItemSelect = useCallback(
     (item: T) => {
       const index = selectedItems.findIndex(_item => keyOf(_item) === keyOf(item))
@@ -93,7 +93,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
         selectedItems.splice(index, 1)
         setSelectedItems(selectedItems)
         onChange?.(selectedItems, createdItems, items)
-      } else if (items.concat(createdItems).find(_item => keyOf(_item) === keyOf(item))) {
+      } else if (items.find(_item => keyOf(_item) === keyOf(item))) {
         const _selectedItems = selectedItems.concat(item)
         setSelectedItems(_selectedItems)
         onChange?.(_selectedItems, createdItems, items)
@@ -107,7 +107,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
         onChange?.(_selectedItems, _createdItems, items)
       }
     },
-    [selectedItems]
+    [items, selectedItems, createdItems]
   )
   const renderCreateNewTag = useCallback(
     (query: string, active: boolean, handleClick: React.MouseEventHandler<HTMLElement>) => (
@@ -155,7 +155,6 @@ export function TagInput<T>(props: TagInputProps<T>) {
     (value: React.ReactNode, index: number): ITagProps => {
       return (
         getTagProps?.(value, index, selectedItems, createdItems, items) || {
-          large: true,
           minimal: true
         }
       )
@@ -167,7 +166,6 @@ export function TagInput<T>(props: TagInputProps<T>) {
 
   return (
     <LocalMultiSelect
-      {...defaultProps}
       items={items
         .concat(createdItems)
         .sort((a, b) => (labelFor(a).toLocaleLowerCase() < labelFor(b).toLocaleLowerCase() ? -1 : 1))}

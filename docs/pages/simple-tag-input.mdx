@@ -19,7 +19,7 @@ import { SimpleTagInput } from '@wings-software/uikit'
       console.log({ newItem, selectedItems, createdItems, items })
     }
     getTagProps={(value, index, selectedItems, createdItems, items) => {
-      return createdItems.includes(value) ? { intent: 'danger', minimal: true, large: true } : undefined
+      return createdItems.includes(value) ? { intent: 'danger', minimal: true } : undefined
     }}
     items={[
       'The Shawshank Redemption',
@@ -59,14 +59,7 @@ Meaning you can use xhr-async to fetch for tag dataset. `SimpleTagInput` handles
       return new Promise(r => {
         setTimeout(() => {
           r({
-            items: [
-              'The Shawshank Redemption',
-              'The Godfather',
-              'The Godfather: Part II',
-              'The Dark Knight',
-              '12 Angry Men',
-              "Schindler's List"
-            ]
+            items: ['aws', 'ecs', 'k8s', 'gcp']
           })
         }, 5000)
       })

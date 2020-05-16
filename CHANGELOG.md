@@ -2,13 +2,17 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.108- 05/15/20
+
+- `Fixed` duplicated issue on TagInput when fetching data dynamically.
+
 ## 1.0.107 - 05/14/20
 
-- `Added` Added StatusBar Component.
+- `Added` StatusBar Component.
 
 ## 1.0.106 - 05/14/20
 
-- `Added` Added Code Block Component.
+- `Added` Code Block Component.
 
 ## 1.0.105 - 05/14/20
 
@@ -20,7 +24,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.103 - 05/14/20
 
-- `Added` Added Card and Radio Select Event.
+- `Added` Card and Radio Select Event.
 
 ## 1.0.102 - 05/11/20
 
