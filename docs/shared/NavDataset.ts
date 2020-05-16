@@ -117,10 +117,6 @@ export default [
         url: '/simple-tag-input'
       },
       {
-        label: 'MultiLevelSelect',
-        url: '/multi-level-select'
-      },
-      {
         label: 'Cards',
         items: [
           {
@@ -165,6 +161,10 @@ export default [
       {
         label: 'MultiSelect',
         url: '/multiselect'
+      },
+      {
+        label: 'MultiLevelSelect',
+        url: '/multi-level-select'
       },
       {
         label: 'FieldArray',
