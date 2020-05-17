@@ -1,137 +1,145 @@
-.multi-level-selector-container {
+.multiLevelSelectorContainer {
   box-sizing: border-box;
   width: 100%;
   width: 250px;
+  padding: 40px 0;
 }
-.multi-level-selector-container .menu-close {
+
+.label {
+  display: contents;
+  font-weight: normal;
+}
+
+.menuClose {
   display: none;
 }
-.multi-level-selector-container .menu-open {
+.menuOpen {
   display: block;
 }
-.multi-level-selector-container .active {
-  box-shadow: 0px 0px 0px 1px #2196f3;
+.active {
+  box-shadow: 0px 0px 0px 1px var(--blue-500);
 }
-.multi-level-selector-container .inactive {
+.inactive {
   box-shadow: none;
 }
-.multi-level-selector-container .multi-selector-container {
+.multiSelectorContainer {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ccc;
+  border: 1px solid var(--grey-300);
   max-width: 100%;
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 5px;
+  align-items: center;
 }
-.multi-level-selector-container .multi-selector-container .multi-selector {
+.multiSelector {
   width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   overflow-x: auto;
 }
-.multi-level-selector-container .multi-selector-container .multi-selector .multi-selector-placeholder {
-  font-size: 16px;
-  color: #818181;
-  margin-left: 10px;
+.multiSelectorPlaceholder {
+  font-size: 14px;
+  color: var(--grey-400);
+  margin-left: 15px;
 }
-.multi-level-selector-container .multi-selector-container .multi-selector .options-selected-container {
+.optionsSelectedContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
   padding: 5px 10px;
   font-size: 14px;
   min-width: max-content;
   flex-wrap: nowrap;
 }
-.multi-level-selector-container .multi-selector-container .multi-selector .options-selected-container .options-value {
+.optionsValue {
   display: inline-block;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 5px;
 }
-.multi-level-selector-container .multi-selector-container .multi-selector .options-selected-container .options-group {
-  color: #000;
-  font-size: 16px;
+.optionsGroup {
+  color: var(--black);
+  font-size: 14px;
   font-weight: 600;
 }
-.multi-level-selector-container .multi-selector-container .multi-selector-button {
+.multiSelectorButton {
   display: flex;
   align-items: center;
   margin: 8px;
   height: 25px;
 }
-.multi-level-selector-container .multi-selector-container .multi-selector-button:hover .arrow-down {
-  border-top: 7px solid #555;
+.multiSelectorButton:hover .arrowDown {
+  border-top: 7px solid var(--black);
 }
-.multi-level-selector-container .multi-selector-container .multi-selector-button:hover .arrow-up {
-  border-bottom: 7px solid #555;
+.multiSelectorButton:hover .arrowUp {
+  border-bottom: 7px solid var(--black);
 }
-.multi-level-selector-container .multi-selector-container .multi-selector-button .arrow-down {
+.multiSelectorButton .arrowDown {
   width: 0;
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 7px solid #ccc;
+  border-top: 7px solid var(--grey-300);
 }
-.multi-level-selector-container .multi-selector-container .multi-selector-button .arrow-down:hover {
-  border-top: 7px solid #555;
+.multiSelectorButton .arrowDown:hover {
+  border-top: 7px solid var(--black);
 }
-.multi-level-selector-container .multi-selector-container .multi-selector-button .arrow-up {
+.multiSelectorButton .arrowUp {
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 7px solid #555;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 7px solid var(--black);
 }
-.multi-level-selector-container .multi-level-options-container {
+.multiLevelOptionsContainer {
   position: absolute;
-  background-color: #fff;
+  background-color: var(--white);
   margin-top: 5px;
   border-radius: 5px;
   z-index: 1;
-  box-shadow: 0px 0px 5px #ccc;
+  box-shadow: 0px 0px 5px var(--grey-300);
   min-width: 250px;
 }
-.multi-level-selector-container .multi-level-options-container .options-main-menu {
+.optionsMainMenu {
   position: relative;
   margin: 0;
   padding: 0;
+  color: var(--grey-500);
 }
-.multi-level-selector-container .multi-level-options-container .options-main-menu .options-sub-menu {
+.optionsSubMenu {
   display: flex;
   align-items: center;
   padding: 10px 25px 10px 15px;
   cursor: pointer;
 }
-.multi-level-selector-container .multi-level-options-container .options-main-menu .options-sub-menu:hover {
-  background-color: #f0f0f0;
+.optionsSubMenu:hover {
+  background-color: var(--grey-200);
 }
-.multi-level-selector-container .multi-level-options-container .options-main-menu .options-sub-menu input {
+.optionsSubMenu input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
-
-.multi-level-selector-container .multi-level-options-container .options-main-menu .options-container {
+.optionsContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 8px 10px 18px;
+  padding: 10px 8px 10px 15px;
   position: relative;
 }
-.multi-level-selector-container .multi-level-options-container .options-main-menu .options-container .options-label {
+.optionsLabel {
   max-width: 180px;
   word-break: break-all;
   padding-right: 10px;
 }
-.multi-level-selector-container
-  .multi-level-options-container
-  .options-main-menu
-  .options-container
-  .options-sub-menu-container {
-  background-color: #fff;
-  box-shadow: 0px 0px 3px #ccc;
+.optionsSubMenuContainer {
+  background-color: var(--white);
+  box-shadow: 0px 0px 3px var(--grey-300);
   border-radius: 5px;
   position: absolute;
   width: max-content;
@@ -141,52 +149,30 @@
   transform: translate(100%, 0);
   display: none;
 }
-.multi-level-selector-container
-  .multi-level-options-container
-  .options-main-menu
-  .options-container
-  .options-sub-menu-container
-  .options-sub-menu-header {
+.optionsSubMenuHeader {
   font-size: 14px;
   padding: 10px 15px;
-  color: #818181;
-  text-transform: uppercase;
+  color: var(--grey-900);
+  text-transform: capitalize;
+  text-align: center;
 }
-.multi-level-selector-container .multi-level-options-container .options-main-menu .options-container:hover {
-  background-color: #f0f0f0;
+.optionsContainer:hover {
+  background-color: var(--grey-200);
   cursor: pointer;
 }
-.multi-level-selector-container
-  .multi-level-options-container
-  .options-main-menu
-  .options-container:hover
-  > .options-sub-menu-container {
-  display: block;
+.optionsContainer:hover > .optionsSubMenuContainer {
+  display: grid;
 }
-.multi-level-selector-container
-  .multi-level-options-container
-  .options-main-menu
-  .options-container:hover
-  .arrow-right {
-  border-left: 7px solid #555;
+.optionsContainer:hover .arrowRight {
+  border-left: 7px solid var(--black);
 }
-.multi-level-selector-container .multi-level-options-container .options-main-menu .options-container .arrow-right {
+.optionsContainer .arrowRight {
   width: 0;
   height: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 7px solid #ccc;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 7px solid var(--grey-300);
 }
-.multi-level-selector-container
-  .multi-level-options-container
-  .options-main-menu
-  .options-container
-  .arrow-right:hover {
-  border-left: 7px solid #555;
-}
-
-.close {
-  cursor: pointer;
-  font-weight: 600;
-  margin: 10px 0;
+.optionsContainer .arrowRight:hover {
+  border-left: 7px solid var(--black);
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './MultiLevelSelect.css'
+import css from './MultiLevelSelect.css'
 
 interface Option {
   value: string
@@ -24,7 +24,7 @@ interface SelectedOption {
   parent: Option
 }
 
-export function MultiLevelSelect(props: MultiLevelSelectProps) {
+export default function MultiLevelSelect(props: MultiLevelSelectProps) {
   const [selectedOption, setSelectedOption] = useState<SelectedOption>({
     child: { label: '', value: '' },
     parent: { label: '', value: '' }
@@ -49,9 +49,9 @@ export function MultiLevelSelect(props: MultiLevelSelectProps) {
   const renderSubOptionsSelected = (option: SelectedOption) => {
     const { child, parent } = option
     const parentLabel = parent?.label ?? ''
-    return child.label ? (
-      <div className={`options-value`}>
-        <span className={`options-group`}>
+    return child?.label ? (
+      <div className={css.optionsValue}>
+        <span className={css.optionsGroup}>
           {parentLabel.charAt(0).toUpperCase() + parentLabel.slice(1)} {parentLabel ? ':' : null} {child?.label}
         </span>
       </div>
@@ -60,7 +60,7 @@ export function MultiLevelSelect(props: MultiLevelSelectProps) {
 
   const renderOptionsSelected = (option: SelectedOption) => {
     return (
-      <div className={`options-selected-container`} onClick={event => event.stopPropagation()}>
+      <div className={css.optionsSelectedContainer} onClick={event => event.stopPropagation()}>
         {renderSubOptionsSelected(option)}
       </div>
     )
@@ -68,38 +68,41 @@ export function MultiLevelSelect(props: MultiLevelSelectProps) {
 
   const renderCaretButton = () => {
     return (
-      <div className="multi-selector-button" onClick={toggleMenu}>
-        <div className={isMenuOpen ? `arrow-up` : `arrow-down`} />
+      <div className={css.multiSelectorButton} onClick={toggleMenu}>
+        <div className={isMenuOpen ? css.arrowUp : css.arrowDown} />
       </div>
     )
   }
 
   const renderPlaceholder = () => {
     const { placeholder } = props
-    return <div className={`multi-selector-placeholder`}>{placeholder || 'Select'}</div>
+    return <div className={css.multiSelectorPlaceholder}>{placeholder || 'Select'}</div>
   }
 
-  const renderOptionsMenu = (options: InputOptionsInterface[], parent: Option) => {
+  const renderOptionsMenu = (options: InputOptionsInterface[] = [], parent: Option) => {
     return options.map((item, i) => {
       if (item.options) {
+        const label = item.label.charAt(0).toUpperCase() + item.label.slice(1)
         return (
-          <div key={`${item.value}-${i}`} className="options-container">
-            <div className={`options-label`}>{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</div>
+          <div key={item.value} className={css.optionsContainer}>
+            <div className={css.optionsLabel} title={label}>
+              {label}
+            </div>
             {renderSubMenu(item, parent)}
           </div>
         )
       }
-      return <React.Fragment key={`${item.value}-${i}`}>{renderSubMenu(item, parent)}</React.Fragment>
+      return <React.Fragment key={item.value}>{renderSubMenu(item, parent)}</React.Fragment>
     })
   }
 
   const renderSubMenu = (item: InputOptionsInterface, parent: Option) => {
-    if (item.options) {
+    if (item.options && item.options.length > 0) {
       return (
         <>
-          <div className={`arrow-right`} />
-          <div className={`options-sub-menu-container`}>
-            <div className={`options-sub-menu-header`}>{item.value}</div>
+          <div className={css.arrowRight} />
+          <div className={css.optionsSubMenuContainer}>
+            <div className={css.optionsSubMenuHeader}>{item.value}</div>
             {renderOptionsMenu(item.options, item)}
           </div>
         </>
@@ -107,13 +110,13 @@ export function MultiLevelSelect(props: MultiLevelSelectProps) {
     }
 
     return (
-      <label>
+      <label className={css.label}>
         <div
-          className={`options-sub-menu`}
+          className={css.optionsSubMenu}
           onClick={event => {
             selectOption(item, parent, event)
           }}>
-          <div className={`options-label`}>{item.label}</div>
+          <div className={css.optionsLabel}>{item.label}</div>
         </div>
       </label>
     )
@@ -134,20 +137,22 @@ export function MultiLevelSelect(props: MultiLevelSelectProps) {
     return child && child.label && child.value
   }
 
-  const { options } = props
-  return (
-    <div className="multi-level-selector-container">
-      <div className={`multi-selector-container ${isMenuOpen ? `active` : 'inactive'}`}>
-        <div className="multi-selector" onClick={toggleMenu}>
+  const { options = [] } = props
+  return options && Array.isArray(options) && options.length > 0 ? (
+    <div className={css.multiLevelSelectorContainer}>
+      <div className={`${css.multiSelectorContainer} ${isMenuOpen ? css.active : css.inactive}`}>
+        <div className={css.multiSelector} onClick={toggleMenu}>
           {isOptionSelected(selectedOption) ? null : renderPlaceholder()}
           {renderOptionsSelected(selectedOption)}
         </div>
         {isOptionSelected(selectedOption) ? renderCloseButton() : null}
         {renderCaretButton()}
       </div>
-      <div className={`multi-level-options-container ${isMenuOpen ? `menu-open` : `menu-close`}`}>
-        <div className="options-main-menu">{renderOptionsMenu(options, { label: '', value: '' })}</div>
+      <div className={`${css.multiLevelOptionsContainer} ${isMenuOpen ? css.menuOpen : css.menuClose}`}>
+        <div className={css.optionsMainMenu}>{renderOptionsMenu(options, { label: '', value: '' })}</div>
       </div>
     </div>
+  ) : (
+    <span>No options provided in the props</span>
   )
 }
