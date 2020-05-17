@@ -79,23 +79,6 @@ export default function MultiLevelSelect(props: MultiLevelSelectProps) {
     return <div className={css.multiSelectorPlaceholder}>{placeholder || 'Select'}</div>
   }
 
-  const renderOptionsMenu = (options: InputOptionsInterface[] = [], parent: Option) => {
-    return options.map((item, i) => {
-      if (item.options) {
-        const label = item.label.charAt(0).toUpperCase() + item.label.slice(1)
-        return (
-          <div key={item.value} className={css.optionsContainer}>
-            <div className={css.optionsLabel} title={label}>
-              {label}
-            </div>
-            {renderSubMenu(item, parent)}
-          </div>
-        )
-      }
-      return <React.Fragment key={item.value}>{renderSubMenu(item, parent)}</React.Fragment>
-    })
-  }
-
   const renderSubMenu = (item: InputOptionsInterface, parent: Option) => {
     if (item.options && item.options.length > 0) {
       return (
@@ -103,6 +86,7 @@ export default function MultiLevelSelect(props: MultiLevelSelectProps) {
           <div className={css.arrowRight} />
           <div className={css.optionsSubMenuContainer}>
             <div className={css.optionsSubMenuHeader}>{item.value}</div>
+            {/* eslint-disable @typescript-eslint/no-use-before-define */}
             {renderOptionsMenu(item.options, item)}
           </div>
         </>
@@ -120,6 +104,23 @@ export default function MultiLevelSelect(props: MultiLevelSelectProps) {
         </div>
       </label>
     )
+  }
+
+  const renderOptionsMenu = (options: InputOptionsInterface[] = [], parent: Option) => {
+    return options.map(item => {
+      if (item.options) {
+        const label = item.label.charAt(0).toUpperCase() + item.label.slice(1)
+        return (
+          <div key={item.value} className={css.optionsContainer}>
+            <div className={css.optionsLabel} title={label}>
+              {label}
+            </div>
+            {renderSubMenu(item, parent)}
+          </div>
+        )
+      }
+      return <React.Fragment key={item.value}>{renderSubMenu(item, parent)}</React.Fragment>
+    })
   }
 
   const renderCloseButton = () => {
