@@ -208,6 +208,10 @@ export function TagInput<T>(props: TagInputProps<T>) {
 
   useEffect(fetchData, [_items])
 
+  useEffect(() => {
+    setSelectedItems(_selectedItems || [])
+  }, [_selectedItems])
+
   return (
     <LocalMultiSelect
       className={css.tagInput}

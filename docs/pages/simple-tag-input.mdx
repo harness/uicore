@@ -20,7 +20,7 @@ import { SimpleTagInput } from '@wings-software/uikit'
     showClearAllButton
     allowNewTag
     placeholder="Enter tags..."
-    getTagProps={(value, index, selectedItems, createdItems, items) => {
+    getTagProps={(value, _index, _selectedItems, createdItems) => {
       return createdItems.includes(value) ? { intent: 'danger', minimal: true } : { intent: 'primary', minimal: true }
     }}
     selectedItems={['The Shawshank Redemption']}
