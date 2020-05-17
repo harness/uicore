@@ -123,9 +123,9 @@ export function TagInput<T>(props: TagInputProps<T>) {
       const index = selectedItems.findIndex(_item => keyOf(_item) === keyOf(item))
 
       if (index >= 0) {
-        selectedItems.splice(index, 1)
-        setSelectedItems(selectedItems)
-        onChange?.(selectedItems, createdItems, items)
+        const newSelectedItems = selectedItems.filter((_v, _index) => _index !== index)
+        setSelectedItems(newSelectedItems)
+        onChange?.(newSelectedItems, createdItems, items)
       } else if (items.find(_item => keyOf(_item) === keyOf(item))) {
         const _selectedItems = selectedItems.concat(item)
         setSelectedItems(_selectedItems)
@@ -190,7 +190,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
   }, [])
   const _getTagProps = useCallback(
     (value: React.ReactNode, index: number): ITagProps => {
-      if (showAddTagButton && !readonly && index === selectedItems.length) {
+      if (showAddTagButton && !readonly && !selectedItems[index]) {
         return {
           intent: 'none',
           minimal: true,
@@ -205,6 +205,10 @@ export function TagInput<T>(props: TagInputProps<T>) {
     },
     [selectedItems, createdItems, items, readonly, showAddTagButton]
   )
+  const renderedSelectedItems = useMemo(
+    () => selectedItems.concat(showAddTagButton && !readonly ? itemFromNewTag(i18n.addTag) : []),
+    [selectedItems, showAddTagButton, readonly]
+  )
 
   useEffect(fetchData, [_items])
 
@@ -218,7 +222,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
       items={items
         .concat(createdItems)
         .sort((a, b) => (labelFor(a).toLocaleLowerCase() < labelFor(b).toLocaleLowerCase() ? -1 : 1))}
-      selectedItems={selectedItems.concat(showAddTagButton && !readonly ? itemFromNewTag(i18n.addTag) : [])}
+      selectedItems={renderedSelectedItems}
       itemRenderer={(item: T, itemProps: IItemRendererProps) => {
         return (
           <MenuItem
