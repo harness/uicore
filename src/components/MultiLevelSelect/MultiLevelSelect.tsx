@@ -24,7 +24,7 @@ interface SelectedOption {
   parent: Option
 }
 
-export default function MultiLevelSelect(props: MultiLevelSelectProps) {
+export function MultiLevelSelect(props: MultiLevelSelectProps) {
   const [selectedOption, setSelectedOption] = useState<SelectedOption>({
     child: { label: '', value: '' },
     parent: { label: '', value: '' }
