@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. The format 
 ## 1.0.114 - 05/18/20
 
 - `Fixed` SimpleTagInput's itemFromNewTag is required by default - should be optional.
+- Remove Cypress.
 
 ## 1.0.114- 05/18/20
 
