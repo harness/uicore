@@ -50,6 +50,7 @@ export { Card, CardProps, CardBody } from './components/Card/Card'
 export { RadioSelect, RadioSelectProps } from './components/RadioSelect/RadioSelect'
 export { CodeBlock } from './components/CodeBlock/CodeBlock'
 export { StatusBar, StatusBarProps } from './components/StatusBar/StatusBar'
+export { MultiLevelSelect } from './components/MultiLevelSelect/MultiLevelSelect'
 export {
   StackTraceList,
   StackTraceListProps,

@@ -166,6 +166,11 @@ export default [
         label: 'MultiSelect',
         url: '/multiselect'
       },
+      //Will enable later after refactor with BP components
+      // {
+      //   label: 'MultiLevelSelect',
+      //   url: '/multi-level-select'
+      // },
       {
         label: 'FieldArray',
         url: '/fieldarray'
