@@ -61,3 +61,5 @@ export {
 } from './components/StackTraceList/StackTraceList'
 export { Collapse } from './components/Collapse/Collapse'
 export { GraphError } from './components/GraphError/GraphError'
+export { SelectWithSubForm } from './components/SelectWithSubForm/SelectWithSubForm'
+export { EnvironmentTypeSubForm } from './components/SelectWithSubForm/EnvironmentSubForm'

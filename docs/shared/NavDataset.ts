@@ -190,6 +190,10 @@ export default [
       {
         label: 'FieldArray',
         url: '/fieldarray'
+      },
+      {
+        label: 'SelectWithSubForm',
+        url: '/select-with-subform'
       }
     ]
   },
