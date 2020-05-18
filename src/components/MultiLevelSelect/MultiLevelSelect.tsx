@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import cx from 'classnames'
+
 import css from './MultiLevelSelect.css'
 
 interface Option {
@@ -138,9 +140,9 @@ export function MultiLevelSelect(props: MultiLevelSelectProps) {
     return child && child.label && child.value
   }
 
-  const { options = [] } = props
+  const { options = [], className } = props
   return options && Array.isArray(options) && options.length > 0 ? (
-    <div className={css.multiLevelSelectorContainer}>
+    <div className={cx(className, css.multiLevelSelectorContainer)}>
       <div className={`${css.multiSelectorContainer} ${isMenuOpen ? css.active : css.inactive}`}>
         <div className={css.multiSelector} onClick={toggleMenu}>
           {isOptionSelected(selectedOption) ? null : renderPlaceholder()}
