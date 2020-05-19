@@ -30,7 +30,6 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
   const onSubmitCallBack = useCallback(
     () => (values: EnvironmentTypeFormData) => {
       const errorMsg = toggleSubForm({ label: values.environment, value: JSON.stringify(values) })
-      console.log(errorMsg)
       if (errorMsg) {
         setError(errorMsg)
       } else {
