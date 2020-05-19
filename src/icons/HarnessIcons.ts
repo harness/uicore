@@ -6,6 +6,8 @@ import CeBudgetColored from './ce-budget_colored.svg'
 import CeBudgetGrey from './ce-budget_grey.svg'
 import CeCloud from './ce-cloud.svg'
 import CeCluster from './ce-cluster.svg'
+import CeMainColored from './ce-main-colored.svg'
+import CeMainGrey from './ce-main-grey.svg'
 import CheckAlt from './check-alt.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
@@ -132,6 +134,7 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import NewDecoration from './new-decoration.svg'
 import Question from './question.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -215,6 +218,8 @@ type HarnessIconName =
   | 'ce-budget_grey'
   | 'ce-cloud'
   | 'ce-cluster'
+  | 'ce-main-colored'
+  | 'ce-main-grey'
   | 'check-alt'
   | 'command-approval'
   | 'command-artifact-check'
@@ -341,6 +346,7 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'new-decoration'
   | 'question'
   | 'search-applications'
   | 'search-connectors'
@@ -424,6 +430,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-budget_grey': CeBudgetGrey,
   'ce-cloud': CeCloud,
   'ce-cluster': CeCluster,
+  'ce-main-colored': CeMainColored,
+  'ce-main-grey': CeMainGrey,
   'check-alt': CheckAlt,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
@@ -550,6 +558,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  'new-decoration': NewDecoration,
   question: Question,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
