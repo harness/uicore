@@ -136,6 +136,10 @@ export default [
       {
         label: 'StackTraceList',
         url: '/stack-trace-list'
+      },
+      {
+        label: 'Collapse',
+        url: '/collapse'
       }
     ]
   },

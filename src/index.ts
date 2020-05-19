@@ -58,3 +58,4 @@ export {
   StackTracePanel,
   StackTracePanelProps
 } from './components/StackTraceList/StackTraceList'
+export { Collapse } from './components/Collapse/Collapse'
