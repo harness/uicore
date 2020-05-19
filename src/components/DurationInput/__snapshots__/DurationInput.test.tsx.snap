@@ -14,7 +14,6 @@ exports[`<DurationInput/> tests component tests renders with given value 1`] = `
         <input
           class="bp3-input"
           placeholder="Enter w/d/h/m/s/ms"
-          style="padding-right: 10px;"
           type="text"
           value="1d 10h 17m 36s 789ms"
         />
@@ -55,7 +54,6 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
         <input
           class="bp3-input"
           placeholder="Enter w/d/h/m/s/ms"
-          style="padding-right: 10px;"
           type="text"
           value="1d 10h 17m 36s 789ms"
         />
@@ -82,7 +80,7 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
       >
         <div
           class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0);"
+          style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
         >
           <div
             class="bp3-popover"
@@ -181,7 +179,7 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
           class="bp3-input"
           data-testid="input"
           placeholder="Enter w/d/h/m/s/ms"
-          style="padding-right: 10px;"
+          style="padding-right: 0px;"
           type="text"
           value="1"
         />

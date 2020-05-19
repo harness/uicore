@@ -18,7 +18,7 @@ exports[`<MultiSelect/> tests should work when no matching results found: Filter
             class="bp3-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp3-input-ghost bp3-multi-select-tag-input-input"
               placeholder="Search..."
               value="junk"
             />
@@ -66,7 +66,7 @@ exports[`<MultiSelect/> tests works with async data 1`] = `
             class="bp3-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp3-input-ghost bp3-multi-select-tag-input-input"
               placeholder="Search..."
               value=""
             />
@@ -96,7 +96,7 @@ exports[`<MultiSelect/> tests works with async data: Final state 1`] = `
             class="bp3-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp3-input-ghost bp3-multi-select-tag-input-input"
               placeholder="Search..."
               value=""
             />
@@ -126,7 +126,7 @@ exports[`<MultiSelect/> tests works with async data: Loading state 1`] = `
             class="bp3-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp3-input-ghost bp3-multi-select-tag-input-input"
               placeholder="Search..."
               value=""
             />
@@ -156,7 +156,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
             class="bp3-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp3-input-ghost bp3-multi-select-tag-input-input"
               placeholder="Search..."
               value="cha"
             />
@@ -295,7 +295,7 @@ exports[`<MultiSelect/> tests works with static data 1`] = `
             class="bp3-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp3-input-ghost bp3-multi-select-tag-input-input"
               placeholder="Search..."
               value=""
             />
