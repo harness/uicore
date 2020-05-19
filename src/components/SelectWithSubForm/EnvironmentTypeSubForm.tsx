@@ -1,11 +1,12 @@
-import React, { FormEvent, useCallback } from 'react'
+import React, { FormEvent, useCallback, useContext, useState } from 'react'
 import { Heading } from '../Heading/Heading'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { TextInput } from '../TextInput/TextInput'
 import { Button } from '../Button/Button'
 import { Layout } from '../../layouts/Layout'
+import { Text } from '../Text/Text'
 import { Formik, Form } from 'formik'
-import { useSelectWithSubFormContext } from './SelectWithSubForm'
+import { SelectWithSubFormContext } from './SelectWithSubForm'
 
 export interface EnvironmentTypeSubFormProps {
   onSubmit: (data: EnvironmentTypeFormData) => void
@@ -23,12 +24,18 @@ const initialValues: EnvironmentTypeFormData = {
   preProd: false
 }
 export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
-  const { toggleSubForm } = useSelectWithSubFormContext()
+  const { toggleSubForm } = useContext(SelectWithSubFormContext)
+  const [error, setError] = useState('')
   const { onSubmit, onHide } = props
   const onSubmitCallBack = useCallback(
     () => (values: EnvironmentTypeFormData) => {
-      toggleSubForm()
-      onSubmit(values)
+      const errorMsg = toggleSubForm({ label: values.environment, value: JSON.stringify(values) })
+      console.log(errorMsg)
+      if (errorMsg) {
+        setError(errorMsg)
+      } else {
+        onSubmit(values)
+      }
     },
     [toggleSubForm, onSubmit]
   )
@@ -70,6 +77,7 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
                 Submit
               </Button>
             </Layout.Horizontal>
+            {error && <Text intent="danger">{error}</Text>}
           </Form>
         )
       }}

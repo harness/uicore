@@ -62,4 +62,4 @@ export {
 export { Collapse } from './components/Collapse/Collapse'
 export { GraphError } from './components/GraphError/GraphError'
 export { SelectWithSubForm } from './components/SelectWithSubForm/SelectWithSubForm'
-export { EnvironmentTypeSubForm } from './components/SelectWithSubForm/EnvironmentSubForm'
+export { EnvironmentTypeSubForm } from './components/SelectWithSubForm/EnvironmentTypeSubForm'

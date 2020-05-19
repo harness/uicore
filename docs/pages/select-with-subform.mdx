@@ -1,7 +1,7 @@
 # Select With SubForm --- docs/pages/select-with-subform.mdx
 
 
-Select with SubForm renders a subform when user selects a specific option in the dropdown.
+Select with SubForm renders a subform (or any alternate view) when user selects a specific option in the dropdown. The alternate view is rendered within the drop down menu.
 
 ## Import
 
@@ -12,5 +12,5 @@ import { SelectWithSubForm, EnvironmentTypeSubForm } from '@wings-software/uikit
 ## Stack Trace Examples
 
 ```js live=true
-<SelectWithSubForm items={[{value: "solo", label: "nefarios"},{value: "dolo", label: "todler"}]} changeViewButtonLabel="+ Environment" subForm={<div/>} />
+<SelectWithSubForm items={[{value: "1234_envId", label: "Env1"},{value: "5678_envId", label: "Env2"}]} changeViewButtonLabel="+ Environment" subForm={<EnvironmentTypeSubForm onSubmit={(values)=>console.log(values)}/>} />
 ```

@@ -1,27 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useMemo, useEffect, useState, createContext, useCallback } from 'react'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { IItemListRendererProps } from '@blueprintjs/select'
 import cx from 'classnames'
 import selectCss from '../Select/Select.css'
 import { Text } from '../Text/Text'
-import constate from 'constate'
-
-type ToggleSubForm = {
-  shouldDisplaySubForm: boolean
-  customOption?: SelectOption
-}
-
-// Custom hook for toggling subform and adding a new option
-function useSubForm() {
-  const [{ shouldDisplaySubForm, customOption }, setDisplayForm] = useState<ToggleSubForm>({
-    shouldDisplaySubForm: false,
-    customOption: undefined
-  })
-  const toggleSubForm = (optionToAddToDropdown?: SelectOption) => {
-    setDisplayForm({ shouldDisplaySubForm: !shouldDisplaySubForm, customOption: optionToAddToDropdown })
-  }
-  return { shouldDisplaySubForm, customOption, toggleSubForm }
-}
+import { Classes } from '@blueprintjs/core'
+import { Container } from '../Container/Container'
 
 // interface for component props
 interface SelectWithSubFormProps extends SelectProps {
@@ -29,55 +13,99 @@ interface SelectWithSubFormProps extends SelectProps {
   changeViewButtonLabel: string
 }
 
-// create the context objects
-const [SelectWithSubFormContextProvider, useSelectWithSubFormContext] = constate(useSubForm)
+const SelectWithSubFormContext = createContext<{
+  toggleSubForm: (option?: SelectOption) => string | void
+  shouldDisplaySubForm: boolean
+}>({ toggleSubForm: () => {}, shouldDisplaySubForm: false })
 
-function SubFormRenderer(props: SelectWithSubFormProps) {
-  const { subForm, changeViewButtonLabel, items, ...selectProps } = props
-  const { shouldDisplaySubForm, customOption, toggleSubForm } = useSelectWithSubFormContext()
-  const [itemList, setItems] = useState<SelectOption[]>(
-    typeof items === 'function' ? [{ value: '', label: 'Loading...' }] : items
+function initializeSelectOptions(items: SelectProps['items'], customOption: SelectOption): SelectOption[] {
+  if (typeof items === 'function') {
+    return [{ value: '', label: 'Loading...' }]
+  }
+
+  const ojItems = items.map((thing: SelectOption) => thing)
+  ojItems.unshift(customOption)
+  return ojItems
+}
+
+const SelectWithSubForm: React.FC<SelectWithSubFormProps> = props => {
+  const [shouldDisplaySubForm, setDisplayForm] = useState(false)
+  const { items, changeViewButtonLabel, subForm, ...selectProps } = props
+  const selectCustomOption = useMemo(() => ({ label: changeViewButtonLabel, value: changeViewButtonLabel }), [
+    changeViewButtonLabel
+  ])
+  const [options, setOptions] = useState<SelectOption[]>(initializeSelectOptions(items, selectCustomOption))
+  const toggleSubForm = useCallback(
+    () => (optionToAddToDropdown?: SelectOption) => {
+      // when no options are provided hiden subform and return to normal view
+      if (!optionToAddToDropdown || !optionToAddToDropdown.label || !optionToAddToDropdown.value) {
+        setDisplayForm(!shouldDisplaySubForm)
+        return
+      }
+
+      // ensure uniqness of added option
+      const { label, value } = optionToAddToDropdown
+      if (!options.every(o => o.label !== label && o.value !== value)) {
+        return `${optionToAddToDropdown.label} is already in the drop down list. Please provide a unique option.`
+      }
+      const ojOptions = options.filter(thing => thing?.label && thing?.value)
+      ojOptions.splice(1, 0, optionToAddToDropdown)
+      setDisplayForm(!shouldDisplaySubForm)
+      setOptions(ojOptions)
+    },
+    [shouldDisplaySubForm, options]
   )
-  const updatedItems = useMemo(() => (customOption ? [customOption, ...itemList] : itemList), [itemList, customOption])
+
+  // function to customize each option rendered in the drop down
+  const itemRenderer = useCallback(
+    () => (item: SelectOption, props: IItemListRendererProps) => {
+      const isAddSubFormOption = item.label === changeViewButtonLabel
+      return (
+        <li
+          key={item.value.toString()}
+          className={cx(selectCss.menuItem)}
+          onClick={isAddSubFormOption ? toggleSubForm() : props.handleClick}>
+          {!isAddSubFormOption ? item.label : <Text intent="primary">{item.label}</Text>}
+        </li>
+      )
+    },
+    [changeViewButtonLabel, toggleSubForm]
+  )
+
+  // input from context to all context observers
+  const contextProviderInput = useMemo(
+    () => ({
+      shouldDisplaySubForm,
+      toggleSubForm: toggleSubForm()
+    }),
+    [shouldDisplaySubForm, toggleSubForm]
+  )
+
+  // function to render drop down menu, toggle between default implementation and subform depending on flag
+  const subFormRenderer = useMemo(
+    () => (shouldDisplaySubForm ? () => <Container className={Classes.MENU}>{subForm}</Container> : undefined),
+    [shouldDisplaySubForm, subForm]
+  )
 
   useEffect(() => {
     if (typeof items === 'function') {
-      items().then?.(items => {
-        setItems(items ? [{ value: '', label: changeViewButtonLabel }, ...items] : [])
+      items().then?.((asyncItems: SelectOption[]) => {
+        setOptions(asyncItems?.length ? [selectCustomOption, ...asyncItems] : [])
       })
     }
-  }, [items])
-
-  const itemRenderer = (item: SelectOption, props: IItemListRendererProps) => {
-    if (shouldDisplaySubForm) {
-      return subForm
-    }
-    const isAddSubFormOption = item.label === changeViewButtonLabel
-    return (
-      <li
-        key={item.value.toString()}
-        className={cx(selectCss.menuItem)}
-        onClick={isAddSubFormOption ? toggleSubForm : props.handleClick}>
-        {isAddSubFormOption ? item.label : <Text>{item.label}</Text>}
-      </li>
-    )
-  }
+  }, [])
 
   return (
-    <Select
-      {...selectProps}
-      itemRender={itemRenderer}
-      items={shouldDisplaySubForm ? [{ value: '', label: 'displayForm' }] : updatedItems}
-    />
+    <SelectWithSubFormContext.Provider value={contextProviderInput}>
+      <Select
+        {...selectProps}
+        allowCreatingNewItems={false}
+        items={options}
+        itemRender={itemRenderer()}
+        itemListRenderer={subFormRenderer}
+      />
+    </SelectWithSubFormContext.Provider>
   )
 }
 
-function SelectWithSubForm(props: SelectWithSubFormProps) {
-  return (
-    <SelectWithSubFormContextProvider>
-      <SubFormRenderer {...props} />
-    </SelectWithSubFormContextProvider>
-  )
-}
-
-export { SelectWithSubForm, useSelectWithSubFormContext, SelectWithSubFormProps }
+export { SelectWithSubForm, SelectWithSubFormProps, SelectWithSubFormContext }
