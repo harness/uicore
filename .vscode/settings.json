@@ -24,24 +24,10 @@
   },
   "files.exclude": {
     "**/node_modules": true,
-    ".*": true,
     "npm-debug.log*": true,
-    "**/static": true,
     "dist/": true,
     "yarn-error.*": true,
-    "**/.next/": true,
-    "**/next-env.d.ts": true,
-    "**/next.config.js": true,
-    "docs/package.json": true,
-    "docs/tsconfig.json": true,
-    "**/yarn.lock": true,
-    "**/.mdx-data": true,
-    "**/_app.js": true,
-    "*.config.js": true,
-    "tsconfig.json": true,
-    "cypress.json": true,
-    "types": true,
-    "scripts": true
+    "**/yarn.lock": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"

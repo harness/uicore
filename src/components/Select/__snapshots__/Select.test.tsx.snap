@@ -420,7 +420,7 @@ exports[`<Select/> tests works with async data: Final state 1`] = `
     >
       <div
         class="bp3-transition-container bp3-popover-exit bp3-popover-exit-active"
-        style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0);"
       >
         <div
           class="bp3-popover bp3-minimal bp3-select-popover popover"
