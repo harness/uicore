@@ -3,7 +3,7 @@ import { ICollapseProps, Collapse as BpCollapse } from '@blueprintjs/core'
 import { Icon } from '../../icons/Icon'
 import css from './Collapse.css'
 
-interface props extends ICollapseProps {
+interface Props extends ICollapseProps {
   isOpen: boolean
   collapsedIcon?: string
   expandedIcon?: string
@@ -13,7 +13,7 @@ interface props extends ICollapseProps {
   onRemove?: () => {}
 }
 
-function Collapse(props: props) {
+function Collapse(props: Props) {
   const [isOpen, setIsOpen] = useState(props.isOpen)
   const handleClick = () => {
     setIsOpen(!isOpen)
