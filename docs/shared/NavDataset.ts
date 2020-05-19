@@ -163,6 +163,10 @@ export default [
         url: '/select'
       },
       {
+        label: 'SelectNG',
+        url: '/select-v2'
+      },
+      {
         label: 'MultiSelect',
         url: '/multiselect'
       },

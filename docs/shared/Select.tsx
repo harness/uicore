@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
 
-import { Select, SelectOption } from '../static/index'
+import { Select } from '../static/index'
 import data from '../shared/pokedex.json'
+
+interface SelectOption {
+  label: string
+  value: string | number | symbol
+  icon?: any
+}
 
 const items: SelectOption[] = data.map(row => ({
   label: row.name,
-  value: row.id
+  value: row.id,
+  icon: row.icon
 }))
 
 function dummyPromise(): Promise<SelectOption[]> {
@@ -15,13 +22,6 @@ function dummyPromise(): Promise<SelectOption[]> {
     }, 5000)
   })
 }
-
-export function SimpleSelect() {
-  const [val, setVal] = useState()
-
-  return <Select items={items} value={val} onChange={setVal} />
-}
-
 export function AsyncSelect() {
   const [val, setVal] = useState()
   return <Select items={dummyPromise} value={val} onChange={setVal} />

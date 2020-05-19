@@ -11,7 +11,7 @@
   "author": "Tan Nhu",
   "license": "MIT",
   "dependencies": {
-    "@blueprintjs/core": "^3.18.0",
+    "@blueprintjs/core": "^3.26.1",
     "@mdx-js/react": "^1.4.5",
     "@wings-software/xhr-async": "^2.0.3",
     "prism-react-renderer": "^0.1.7",

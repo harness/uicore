@@ -6,7 +6,7 @@ import CodeTheme from './CodeTheme'
 import { mdx } from '@mdx-js/react'
 import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
 
-export default ({ children, live, render }) => {
+export default ({ children, live, FCLive, render }) => {
   const liveProviderProps = {
     theme: CodeTheme,
     code: children.trim(),
@@ -17,6 +17,28 @@ export default ({ children, live, render }) => {
   if (live) {
     return (
       <LiveProvider {...liveProviderProps}>
+        <LivePreview
+          style={{
+            padding: '25px',
+            border: '1px solid var(--grey-300)',
+            display: 'block',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontFamily: 'var(--font-family)',
+            borderRadius: '5px 5px 0 0'
+          }}
+        />
+        <LiveError className="error" />
+        <LiveEditor
+          style={{
+            borderRadius: '0 0 5px 5px'
+          }}
+        />
+      </LiveProvider>
+    )
+  } else if (FCLive) {
+    return (
+      <LiveProvider {...liveProviderProps} noInline={true} transformCode={code => '/** @jsx mdx */' + code}>
         <LivePreview
           style={{
             padding: '25px',

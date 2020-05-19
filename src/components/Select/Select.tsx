@@ -5,11 +5,18 @@ import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
 import { Button } from '../../components/Button/Button'
-import { Icon } from '../../icons/Icon'
+import { Icon, IconProps } from '../../icons/Icon'
 
 export interface SelectOption {
   label: string
   value: string | number | symbol
+  icon?: IconProps
+}
+
+export enum SelectSize {
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large'
 }
 
 type Props = ISuggestProps<SelectOption>
@@ -19,24 +26,32 @@ const Loading = Symbol('loading')
 export interface SelectProps
   extends Omit<
     Props,
-    | 'popoverProps'
-    | 'inputValueRenderer'
-    | 'itemRenderer'
-    | 'onItemSelect'
-    | 'query'
-    | 'selectedItem'
-    | 'items'
-    | 'inputProps'
+    'popoverProps' | 'inputValueRenderer' | 'itemRenderer' | 'onItemSelect' | 'query' | 'selectedItem' | 'items'
   > {
   inputValueRender?: Props['inputValueRenderer']
-  itemRender?: Props['itemRenderer']
+  itemRenderer?: Props['itemRenderer']
   onChange?: Props['onItemSelect']
   value?: Props['selectedItem']
+  size?: SelectSize
   items: Props['items'] | (() => Promise<Props['items']>)
   allowCreatingNewItems?: boolean
 }
 
-function itemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
+function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
+  let iconSize = 16
+  if (size === SelectSize.Small) {
+    iconSize = 12
+  } else if (size === SelectSize.Large) {
+    iconSize = 18
+  }
+  return iconSize
+}
+
+export function defaultItemRenderer(
+  item: SelectOption,
+  props: IItemRendererProps,
+  size: SelectSize = SelectSize.Medium
+): JSX.Element | null {
   if (!props.modifiers.matchesPredicate) {
     return null
   }
@@ -52,21 +67,36 @@ function itemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Elemen
   return (
     <li
       key={item.value.toString()}
-      className={cx(css.menuItem, {
-        [css.active]: props.modifiers.active,
-        [css.disabled]: props.modifiers.disabled
-      })}
+      className={cx(
+        css.menuItem,
+        {
+          [css.active]: props.modifiers.active,
+          [css.disabled]: props.modifiers.disabled
+        },
+        { [css.menuItemSizeSmall]: size === SelectSize.Small },
+        { [css.menuItemSizeLarge]: size === SelectSize.Large }
+      )}
       onClick={props.handleClick}>
+      {item.icon ? <Icon size={getIconSizeFromSelect(size)} {...item.icon} /> : null}
       {item.label}
     </li>
   )
+}
+
+export function createNewItemFromQuery(query: string) {
+  return { label: query, value: query }
 }
 
 export function Select(props: SelectProps) {
   const [query, setQuery] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
-  const { onChange, value, ...rest } = props
+  const { onChange, value, size, itemRenderer, ...rest } = props
+  const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
+
+  React.useEffect(() => {
+    setItem(value)
+  }, [value])
 
   function handleItemSelect(item: SelectOption) {
     if (item.value === Loading) {
@@ -74,6 +104,8 @@ export function Select(props: SelectProps) {
     }
     if (typeof onChange === 'function') {
       onChange(item)
+    } else {
+      setItem(item)
     }
   }
 
@@ -94,10 +126,6 @@ export function Select(props: SelectProps) {
       }
     }
   }, [props.items])
-
-  function createNewItemFromQuery(query: string) {
-    return { label: query, value: query }
-  }
 
   function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
     if (loading) {
@@ -126,7 +154,9 @@ export function Select(props: SelectProps) {
   return (
     <Suggest
       inputValueRenderer={opt => opt.label}
-      itemRenderer={itemRenderer}
+      itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
+        itemRenderer?.(item, props) || defaultItemRenderer(item, props, size)
+      }
       itemListPredicate={(query, items) =>
         items.filter(item =>
           item.label
@@ -143,12 +173,17 @@ export function Select(props: SelectProps) {
         onChange(e: React.ChangeEvent<HTMLInputElement>) {
           setQuery(e.target.value)
         },
-        value: query
+        value: query,
+        leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
+        rightElement: <Icon name="caret-down" size={14} padding={size === SelectSize.Small ? 'xsmall' : 'small'} />,
+        small: size === SelectSize.Small,
+        large: size === SelectSize.Large,
+        ...props.inputProps
       }}
       resetOnSelect={true}
       resetOnClose={true}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
-      selectedItem={value}
+      selectedItem={item}
       onItemSelect={handleItemSelect}
       query={query}
       popoverProps={{
