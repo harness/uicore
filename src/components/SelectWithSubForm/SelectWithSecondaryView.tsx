@@ -8,12 +8,12 @@ import { Classes } from '@blueprintjs/core'
 import { Container } from '../Container/Container'
 
 // interface for component props
-interface SelectWithSubFormProps extends SelectProps {
+interface SelectWithSecondaryViewProps extends SelectProps {
   subForm: JSX.Element
   changeViewButtonLabel: string
 }
 
-const SelectWithSubFormContext = createContext<{
+const SelectWithSecondaryViewContext = createContext<{
   toggleSubForm: (option?: SelectOption) => string | void
   shouldDisplaySubForm: boolean
 }>({ toggleSubForm: () => {}, shouldDisplaySubForm: false })
@@ -28,7 +28,7 @@ function initializeSelectOptions(items: SelectProps['items'], customOption: Sele
   return ojItems
 }
 
-const SelectWithSubForm: React.FC<SelectWithSubFormProps> = props => {
+const SelectWithSecondaryView: React.FC<SelectWithSecondaryViewProps> = props => {
   const [shouldDisplaySubForm, setDisplayForm] = useState(false)
   const { items, changeViewButtonLabel, subForm, ...selectProps } = props
   const selectCustomOption = useMemo(() => ({ label: changeViewButtonLabel, value: changeViewButtonLabel }), [
@@ -96,16 +96,16 @@ const SelectWithSubForm: React.FC<SelectWithSubFormProps> = props => {
   }, [])
 
   return (
-    <SelectWithSubFormContext.Provider value={contextProviderInput}>
+    <SelectWithSecondaryViewContext.Provider value={contextProviderInput}>
       <Select
         {...selectProps}
         allowCreatingNewItems={false}
         items={options}
-        itemRender={itemRenderer()}
+        itemRenderer={itemRenderer()}
         itemListRenderer={subFormRenderer}
       />
-    </SelectWithSubFormContext.Provider>
+    </SelectWithSecondaryViewContext.Provider>
   )
 }
 
-export { SelectWithSubForm, SelectWithSubFormProps, SelectWithSubFormContext }
+export { SelectWithSecondaryView, SelectWithSecondaryViewProps, SelectWithSecondaryViewContext }

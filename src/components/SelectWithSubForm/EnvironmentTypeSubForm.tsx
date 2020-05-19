@@ -6,7 +6,7 @@ import { Button } from '../Button/Button'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { Formik, Form } from 'formik'
-import { SelectWithSubFormContext } from './SelectWithSubForm'
+import { SelectWithSecondaryViewContext } from './SelectWithSecondaryView'
 
 export interface EnvironmentTypeSubFormProps {
   onSubmit: (data: EnvironmentTypeFormData) => void
@@ -24,7 +24,7 @@ const initialValues: EnvironmentTypeFormData = {
   preProd: false
 }
 export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
-  const { toggleSubForm } = useContext(SelectWithSubFormContext)
+  const { toggleSubForm } = useContext(SelectWithSecondaryViewContext)
   const [error, setError] = useState('')
   const { onSubmit, onHide } = props
   const onSubmitCallBack = useCallback(
@@ -71,7 +71,9 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
               Pre-Production
             </Checkbox>
             <Layout.Horizontal spacing="medium" style={{ justifyContent: 'flex-end' }}>
-              <Button onClick={onHideCallBack()}>Cancel</Button>
+              <Button data-name="Cancel" onClick={onHideCallBack()}>
+                Cancel
+              </Button>
               <Button type="submit" intent="primary">
                 Submit
               </Button>
