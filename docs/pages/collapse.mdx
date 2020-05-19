@@ -1,0 +1,25 @@
+# Collapse --- docs/pages/collapse.mdx
+
+## Import
+
+```js
+import { Collapse } from '@wings-software/uikit'
+```
+
+## Collapse
+
+```js live=true
+<Layout.Horizontal spacing="small">
+  <Collapse isOpen={true} heading={'Click here to collapse or expand'} isRemovable={true}  
+  onRemove={ () => { alert('This component will get removed') } } >
+    Hello world The quick brown fox jumps over the lazy dog
+    The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
+     The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
+     The quick brown fox jumps over the lazy dogThe quick brown fox jumps over the lazy dog
+     The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
+     The quick brown fox jumps over the lazy dog
+     The quick brown fox jumps over the lazy dog
+     The quick brown fox jumps over the lazy dog
+     The quick brown fox jumps over the lazy dog
+  </Collapse>
+</Layout.Horizontal>
