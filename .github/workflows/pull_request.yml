@@ -68,4 +68,4 @@ jobs:
         run: yarn
 
       - name: Jest
-        run: npx jest --ci
+        run: npx jest src --ci
