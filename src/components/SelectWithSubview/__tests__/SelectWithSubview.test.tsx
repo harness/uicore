@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, wait, fireEvent, waitForDomChange } from '@testing-library/react'
-import { SelectWithSecondaryView } from '../SelectWithSecondaryView'
+import { SelectWithSecondaryView } from '../SelectWithSubview'
 import { SelectOption } from 'components/Select/Select'
 import { EnvironmentTypeSubForm } from '../EnvironmentTypeSubForm'
 

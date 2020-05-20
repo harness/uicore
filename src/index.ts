@@ -61,8 +61,4 @@ export {
 } from './components/StackTraceList/StackTraceList'
 export { Collapse } from './components/Collapse/Collapse'
 export { GraphError } from './components/GraphError/GraphError'
-export {
-  SelectWithSecondaryView,
-  SelectWithSecondaryViewProps
-} from './components/SelectWithSubForm/SelectWithSecondaryView'
-export { EnvironmentTypeSubForm } from './components/SelectWithSubForm/EnvironmentTypeSubForm'
+export { SelectWithSubview, SelectWithSubviewProps } from './components/SelectWithSubview/SelectWithSubview'

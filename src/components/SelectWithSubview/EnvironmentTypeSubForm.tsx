@@ -5,7 +5,7 @@ import { Button } from '../Button/Button'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { Formik, Form, FormikErrors } from 'formik'
-import { SelectWithSecondaryViewContext } from './SelectWithSecondaryView'
+import { SelectWithSubviewContext } from './SelectWithSubview'
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import radioCss from '../Radio/Radio.css'
 import css from '../Radio/Radio.css'
@@ -30,7 +30,7 @@ const initialValues: EnvironmentTypeFormData = {
 }
 
 function validateForm(values: EnvironmentTypeFormData): FormikErrors<EnvironmentTypeFormData> {
-  const errors: { environment?: stirng } = {}
+  const errors: { environment?: string } = {}
   if (!values.environment) {
     errors.environment = 'Environment is required.'
   }
@@ -39,26 +39,26 @@ function validateForm(values: EnvironmentTypeFormData): FormikErrors<Environment
 }
 
 export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
-  const { toggleSecondaryView } = useContext(SelectWithSecondaryViewContext)
+  const { toggleSubview } = useContext(SelectWithSubviewContext)
   const [error, setError] = useState('')
   const { onSubmit, onHide } = props
   const onSubmitCallBack = useCallback(
     () => (values: EnvironmentTypeFormData) => {
-      const errorMsg = toggleSecondaryView({ label: values.environment, value: JSON.stringify(values) })
+      const errorMsg = toggleSubview({ label: values.environment, value: JSON.stringify(values) })
       if (errorMsg) {
         setError(errorMsg)
       } else {
         onSubmit(values)
       }
     },
-    [toggleSecondaryView, onSubmit]
+    [toggleSubview, onSubmit]
   )
   const onHideCallBack = useCallback(
     () => () => {
-      toggleSecondaryView()
+      toggleSubview()
       onHide?.()
     },
-    [toggleSecondaryView, onHide]
+    [toggleSubview, onHide]
   )
   return (
     <Formik
@@ -67,7 +67,7 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
       validate={validateForm}
       validateOnChange={false}
       validateOnBlur={false}>
-      {(props: Formik) => {
+      {props => {
         const { setFieldValue, errors, values } = props
         return (
           <Form style={{ padding: '10px' }}>

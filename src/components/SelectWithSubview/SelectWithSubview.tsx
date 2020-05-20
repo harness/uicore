@@ -8,38 +8,39 @@ import { Classes } from '@blueprintjs/core'
 import { Container } from '../Container/Container'
 
 // interface for component props
-interface SelectWithSecondaryViewProps extends SelectProps {
-  subForm: JSX.Element
+interface SelectWithSubviewProps extends SelectProps {
+  subview: JSX.Element
   changeViewButtonLabel: string
 }
 
-const SelectWithSecondaryViewContext = createContext<{
-  toggleSecondaryView: (option?: SelectOption) => string | void
-  shouldDisplaySubForm: boolean
-}>({ toggleSecondaryView: () => {}, shouldDisplaySubForm: false })
+const SelectWithSubviewContext = createContext<{
+  toggleSubview: (option?: SelectOption) => string | void
+  shouldDisplaySubview: boolean
+}>({ toggleSubview: () => {}, shouldDisplaySubview: false })
 
 function initializeSelectOptions(items: SelectProps['items'], customOption: SelectOption): SelectOption[] {
   if (typeof items === 'function') {
     return [{ value: '', label: 'Loading...' }]
   }
 
-  const ojItems = items.map((thing: SelectOption) => thing)
-  ojItems.unshift(customOption)
-  return ojItems
+  // const ojItems = items.map((thing: SelectOption) => thing)
+  // ojItems.unshift(customOption)
+  // return ojItems
+  return [customOption, ...items]
 }
 
-const SelectWithSecondaryView: React.FC<SelectWithSecondaryViewProps> = props => {
-  const [shouldDisplaySubForm, setDisplayForm] = useState(false)
-  const { items, changeViewButtonLabel, subForm, ...selectProps } = props
+const SelectWithSubview: React.FC<SelectWithSubviewProps> = props => {
+  const [shouldDisplaySubview, setDisplayForm] = useState(false)
+  const { items, changeViewButtonLabel, subview, ...selectProps } = props
   const selectCustomOption = useMemo(() => ({ label: changeViewButtonLabel, value: changeViewButtonLabel }), [
     changeViewButtonLabel
   ])
   const [options, setOptions] = useState<SelectOption[]>(initializeSelectOptions(items, selectCustomOption))
-  const toggleSecondaryView = useCallback(
+  const toggleSubview = useCallback(
     () => (optionToAddToDropdown?: SelectOption) => {
-      // when no options are provided hiden subform and return to normal view
+      // when no options are provided hiden subview and return to normal view
       if (!optionToAddToDropdown || !optionToAddToDropdown.label || !optionToAddToDropdown.value) {
-        setDisplayForm(!shouldDisplaySubForm)
+        setDisplayForm(!shouldDisplaySubview)
         return
       }
 
@@ -50,41 +51,41 @@ const SelectWithSecondaryView: React.FC<SelectWithSecondaryViewProps> = props =>
       }
       const ojOptions = options.filter(thing => thing?.label && thing?.value)
       ojOptions.splice(1, 0, optionToAddToDropdown)
-      setDisplayForm(!shouldDisplaySubForm)
+      setDisplayForm(!shouldDisplaySubview)
       setOptions(ojOptions)
     },
-    [shouldDisplaySubForm, options]
+    [shouldDisplaySubview, options]
   )
 
   // function to customize each option rendered in the drop down
   const itemRenderer = useCallback(
     () => (item: SelectOption, props: IItemListRendererProps) => {
-      const isAddSubFormOption = item.label === changeViewButtonLabel
+      const isAddSubviewOption = item.label === changeViewButtonLabel
       return (
         <li
           key={item.value.toString()}
           className={cx(selectCss.menuItem)}
-          onClick={isAddSubFormOption ? toggleSecondaryView() : props.handleClick}>
-          {!isAddSubFormOption ? item.label : <Text intent="primary">{item.label}</Text>}
+          onClick={isAddSubviewOption ? toggleSubview() : props.handleClick}>
+          {!isAddSubviewOption ? item.label : <Text intent="primary">{item.label}</Text>}
         </li>
       )
     },
-    [changeViewButtonLabel, toggleSecondaryView]
+    [changeViewButtonLabel, toggleSubview]
   )
 
   // input from context to all context observers
   const contextProviderInput = useMemo(
     () => ({
-      shouldDisplaySubForm,
-      toggleSecondaryView: toggleSecondaryView()
+      shouldDisplaySubview,
+      toggleSubview: toggleSubview()
     }),
-    [shouldDisplaySubForm, toggleSecondaryView]
+    [shouldDisplaySubview, toggleSubview]
   )
 
-  // function to render drop down menu, toggle between default implementation and subform depending on flag
-  const subFormRenderer = useMemo(
-    () => (shouldDisplaySubForm ? () => <Container className={Classes.MENU}>{subForm}</Container> : undefined),
-    [shouldDisplaySubForm, subForm]
+  // function to render drop down menu, toggle between default implementation and subview depending on flag
+  const subviewRenderer = useMemo(
+    () => (shouldDisplaySubview ? () => <Container className={Classes.MENU}>{subview}</Container> : undefined),
+    [shouldDisplaySubview, subview]
   )
 
   useEffect(() => {
@@ -96,16 +97,16 @@ const SelectWithSecondaryView: React.FC<SelectWithSecondaryViewProps> = props =>
   }, [])
 
   return (
-    <SelectWithSecondaryViewContext.Provider value={contextProviderInput}>
+    <SelectWithSubviewContext.Provider value={contextProviderInput}>
       <Select
         {...selectProps}
         allowCreatingNewItems={false}
         items={options}
         itemRenderer={itemRenderer()}
-        itemListRenderer={subFormRenderer}
+        itemListRenderer={subviewRenderer}
       />
-    </SelectWithSecondaryViewContext.Provider>
+    </SelectWithSubviewContext.Provider>
   )
 }
 
-export { SelectWithSecondaryView, SelectWithSecondaryViewProps, SelectWithSecondaryViewContext }
+export { SelectWithSubview, SelectWithSubviewProps, SelectWithSubviewContext }
