@@ -38,7 +38,9 @@ function Collapse(props: Props) {
                 name={'main-close'}
                 size={12}
                 onClick={() => {
-                  props.onRemove()
+                  if (props.onRemove) {
+                    props.onRemove()
+                  }
                 }}
               />
             ) : null}
