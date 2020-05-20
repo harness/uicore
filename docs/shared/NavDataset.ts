@@ -192,8 +192,8 @@ export default [
         url: '/fieldarray'
       },
       {
-        label: 'SelectWithSubForm',
-        url: '/select-with-subform'
+        label: 'SelectWithSecondaryView',
+        url: '/select-with-secondary-view'
       }
     ]
   },

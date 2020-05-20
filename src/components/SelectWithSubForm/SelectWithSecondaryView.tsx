@@ -14,9 +14,9 @@ interface SelectWithSecondaryViewProps extends SelectProps {
 }
 
 const SelectWithSecondaryViewContext = createContext<{
-  toggleSubForm: (option?: SelectOption) => string | void
+  toggleSecondaryView: (option?: SelectOption) => string | void
   shouldDisplaySubForm: boolean
-}>({ toggleSubForm: () => {}, shouldDisplaySubForm: false })
+}>({ toggleSecondaryView: () => {}, shouldDisplaySubForm: false })
 
 function initializeSelectOptions(items: SelectProps['items'], customOption: SelectOption): SelectOption[] {
   if (typeof items === 'function') {
@@ -35,7 +35,7 @@ const SelectWithSecondaryView: React.FC<SelectWithSecondaryViewProps> = props =>
     changeViewButtonLabel
   ])
   const [options, setOptions] = useState<SelectOption[]>(initializeSelectOptions(items, selectCustomOption))
-  const toggleSubForm = useCallback(
+  const toggleSecondaryView = useCallback(
     () => (optionToAddToDropdown?: SelectOption) => {
       // when no options are provided hiden subform and return to normal view
       if (!optionToAddToDropdown || !optionToAddToDropdown.label || !optionToAddToDropdown.value) {
@@ -64,21 +64,21 @@ const SelectWithSecondaryView: React.FC<SelectWithSecondaryViewProps> = props =>
         <li
           key={item.value.toString()}
           className={cx(selectCss.menuItem)}
-          onClick={isAddSubFormOption ? toggleSubForm() : props.handleClick}>
+          onClick={isAddSubFormOption ? toggleSecondaryView() : props.handleClick}>
           {!isAddSubFormOption ? item.label : <Text intent="primary">{item.label}</Text>}
         </li>
       )
     },
-    [changeViewButtonLabel, toggleSubForm]
+    [changeViewButtonLabel, toggleSecondaryView]
   )
 
   // input from context to all context observers
   const contextProviderInput = useMemo(
     () => ({
       shouldDisplaySubForm,
-      toggleSubForm: toggleSubForm()
+      toggleSecondaryView: toggleSecondaryView()
     }),
-    [shouldDisplaySubForm, toggleSubForm]
+    [shouldDisplaySubForm, toggleSecondaryView]
   )
 
   // function to render drop down menu, toggle between default implementation and subform depending on flag

@@ -12,6 +12,9 @@ const onSubmitFunc = jest.fn()
 const SECONDARY_OPTION_LABEL = 'Open Sub Panel'
 
 describe('Tests for Select with secondary view', () => {
+  afterEach(() => {
+    jest.resetAllMocks()
+  })
   test('Ensure you can toggle betwen secondary view and dropdown', async () => {
     const { container, getByText } = render(
       <SelectWithSecondaryView
@@ -103,12 +106,60 @@ describe('Tests for Select with secondary view', () => {
     fireEvent.change(environmentInputBox, { target: { value: 'Custom Env Label' } })
     await wait()
 
-    // select checkbox option
-    const checkbox = secondaryView?.querySelector('input[name="liveMonitoring"]')
-    if (!checkbox) {
-      throw Error('Checkbox was not rendered.')
+    // submit changes
+    const submitButton = secondaryView?.querySelector('button[type="submit"]')
+    if (!submitButton) {
+      throw Error('Submit button was not rendered.')
     }
-    fireEvent.mouseDown(checkbox)
+
+    fireEvent.click(submitButton)
+    await waitForDomChange()
+    expect(onSubmitFunc).toHaveBeenCalled()
+    expect(onSubmitFunc.mock.calls[0][0]).toEqual({
+      envType: 'liveMonitoring',
+      environment: 'Custom Env Label'
+    })
+    getByText('Custom Env Label')
+  })
+
+  test('Ensure only unique values are added to drop down', async () => {
+    const { container, getByText } = render(
+      <SelectWithSecondaryView
+        items={items}
+        changeViewButtonLabel={SECONDARY_OPTION_LABEL}
+        subForm={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
+      />
+    )
+
+    const inputBox = container.querySelector('.bp3-input')
+    if (!inputBox) {
+      throw Error('Input box for drop down was not rendered.')
+    }
+
+    // focus on input box for drop down menu to show
+    fireEvent.focus(inputBox)
+    await waitForDomChange()
+
+    const dropdownMenu = container.querySelector('[class~="bp3-popover-wrapper"] .bp3-menu')
+    expect(dropdownMenu).not.toBeNull()
+    if (!dropdownMenu) {
+      throw Error('Drop down menu was not rendered.')
+    }
+
+    // within the drop down click on option to view secondary view
+    fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
+    await wait()
+
+    const secondaryView = container.querySelector('.bp3-popover-content form')
+    expect(secondaryView).not.toBeNull()
+
+    // Get environment input box and type in new option label
+    const environmentInputBox = secondaryView?.querySelector('input')
+    if (!environmentInputBox) {
+      throw Error('Environment name input box was not rendered.')
+    }
+
+    fireEvent.change(environmentInputBox, { target: { value: items[0].label } })
     await wait()
 
     // submit changes
@@ -119,6 +170,8 @@ describe('Tests for Select with secondary view', () => {
 
     fireEvent.click(submitButton)
     await waitForDomChange()
-    getByText('Custom Env Label')
+
+    expect(onSubmitFunc).not.toHaveBeenCalled()
+    getByText('secondaryOption_1 is already in the drop down list. Please provide a unique option.')
   })
 })

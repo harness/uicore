@@ -27,7 +27,6 @@ export interface RadioProps extends Assign<Omit<IRadioProps, 'onChange'>, Styled
 
 function RadioGroup(props: RadioGroupProps) {
   const { children, className = '', onChange = () => {} } = props
-
   return (
     <BpRadioGroup
       {...omitStyledProps(props)}
