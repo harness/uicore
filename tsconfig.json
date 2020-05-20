@@ -4,7 +4,7 @@
     "outDir": "./dist",
     "declarationDir": "./dist/types",
     "alwaysStrict": true,
-    "module": "esnext",
+    "module": "commonjs",
     "lib": ["es2017", "dom"],
     "target": "ES5",
     "jsx": "react",
