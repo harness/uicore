@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext, useState, useCallback, FormEvent } from 'react'
 import { render, wait, fireEvent, waitForDomChange } from '@testing-library/react'
-import { SelectWithSubview } from '../SelectWithSubview'
+import { SelectWithSubview, SelectWithSubviewContext } from '../SelectWithSubview'
 import { SelectOption } from 'components/Select/Select'
-import { EnvironmentTypeSubForm } from '../../../../docs/shared/ExampleFormSubviewForSelect'
+import { Heading } from 'components/Heading/Heading'
+import { Layout } from 'layouts/Layout'
+import { TextInput } from 'components/TextInput/TextInput'
+import { Button } from 'components/Button/Button'
+import { Text } from 'components/Text/Text'
+import { Formik, Form } from 'formik'
 
 const items: SelectOption[] = [
   { label: 'secondaryOption_1', value: '1234_secondaryOption' },
@@ -10,6 +15,68 @@ const items: SelectOption[] = [
 ]
 const onSubmitFunc = jest.fn()
 const SECONDARY_OPTION_LABEL = 'Open Sub Panel'
+type EnvFormData = {
+  environment: string
+}
+
+const EnvForm = (props: { onSubmit: (values: EnvFormData) => void; onHide?: () => void }) => {
+  const { toggleSubview } = useContext(SelectWithSubviewContext)
+  const [error, setError] = useState('')
+  const { onSubmit, onHide } = props
+  const onSubmitCallBack = useCallback(
+    () => (values: EnvFormData) => {
+      const errorMsg = toggleSubview({ label: values.environment, value: JSON.stringify(values) })
+      if (errorMsg) {
+        setError(errorMsg)
+      } else {
+        onSubmit(values)
+      }
+    },
+    [toggleSubview, onSubmit]
+  )
+  const onHideCallBack = useCallback(
+    () => () => {
+      toggleSubview()
+      if (onHide) {
+        onHide()
+      }
+    },
+    [toggleSubview, onHide]
+  )
+  return (
+    <Formik
+      initialValues={{ environment: '' }}
+      onSubmit={onSubmitCallBack()}
+      validateOnChange={false}
+      validateOnBlur={false}>
+      {props => {
+        const { setFieldValue } = props
+        return (
+          <Form style={{ padding: '10px' }}>
+            <TextInput
+              placeholder="Enter Environment Name"
+              name="environment"
+              style={{ marginBottom: '10px' }}
+              onChange={(e: FormEvent<HTMLInputElement>) => setFieldValue('environment', e.currentTarget.value)}
+            />
+            <Heading level={3} margin={{ bottom: 'small' }} style={{ color: 'var(--black)' }}>
+              Select Environment Type
+            </Heading>
+            <Layout.Horizontal spacing="medium" style={{ justifyContent: 'flex-end' }}>
+              <Button data-name="Cancel" onClick={onHideCallBack()}>
+                Cancel
+              </Button>
+              <Button type="submit" intent="primary">
+                Submit
+              </Button>
+            </Layout.Horizontal>
+            {error && <Text intent="danger">{error}</Text>}
+          </Form>
+        )
+      }}
+    </Formik>
+  )
+}
 
 describe('Tests for Select with secondary view', () => {
   afterEach(() => {
@@ -20,7 +87,7 @@ describe('Tests for Select with secondary view', () => {
       <SelectWithSubview
         items={items}
         changeViewButtonLabel={SECONDARY_OPTION_LABEL}
-        subview={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
+        subview={<EnvForm onSubmit={onSubmitFunc} />}
       />
     )
 
@@ -71,7 +138,7 @@ describe('Tests for Select with secondary view', () => {
       <SelectWithSubview
         items={items}
         changeViewButtonLabel={SECONDARY_OPTION_LABEL}
-        subview={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
+        subview={<EnvForm onSubmit={onSubmitFunc} />}
       />
     )
 
@@ -116,7 +183,6 @@ describe('Tests for Select with secondary view', () => {
     await waitForDomChange()
     expect(onSubmitFunc).toHaveBeenCalled()
     expect(onSubmitFunc.mock.calls[0][0]).toEqual({
-      envType: 'liveMonitoring',
       environment: 'Custom Env Label'
     })
     getByText('Custom Env Label')
@@ -127,7 +193,7 @@ describe('Tests for Select with secondary view', () => {
       <SelectWithSubview
         items={items}
         changeViewButtonLabel={SECONDARY_OPTION_LABEL}
-        subview={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
+        subview={<EnvForm onSubmit={onSubmitFunc} />}
       />
     )
 
