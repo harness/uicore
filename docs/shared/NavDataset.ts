@@ -117,6 +117,10 @@ export default [
         url: '/simple-tag-input'
       },
       {
+        label: 'StepWizard',
+        url: '/step-wizard'
+      },
+      {
         label: 'Cards',
         items: [
           {

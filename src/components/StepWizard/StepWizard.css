@@ -1,0 +1,54 @@
+.main {
+  &.navBar {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+
+    .navBarList {
+      background-color: #267cc9;
+      padding: 60px var(--spacing-small) 60px 30px;
+      display: grid;
+      grid-gap: 30px;
+      border-right: 1px solid #979797;
+
+      .navStep {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        grid-gap: 10px;
+        align-items: center;
+        cursor: not-allowed;
+
+        &.activeStep {
+          cursor: unset;
+
+          .stepName {
+            color: white;
+          }
+          .number {
+            background-color: white;
+          }
+        }
+
+        &.completedStep {
+          cursor: pointer;
+        }
+        .stepName {
+          display: inline-block;
+          color: #79a5cc;
+        }
+        .number {
+          padding: 1px var(--spacing-xsmall);
+          margin-right: var(--spacing-small);
+          background-color: #79a5cc;
+          border-radius: 50%;
+          color: #267cc9;
+          width: 19px;
+          height: 19px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .stepDetails {
+    padding: var(--spacing-large);
+  }
+}

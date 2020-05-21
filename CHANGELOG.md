@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.120- 05/21/20
+
+- `Added` The StepWizard Component
+
 ## 1.0.119- 05/19/20
 
 - Fixed the master build

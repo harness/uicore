@@ -1,0 +1,103 @@
+# StepWizard --- docs/pages/step-wizard.mdx
+import { ExampleWizard, ExampleStep} from '../shared/StepWizardExample'
+
+
+Step Wizard as per the [next gen](https://harness.atlassian.net/wiki/spaces/UI/pages/683737840/Step+Wizard)
+
+Idea here to render any component between the StepWizard and all will be considered as steps and each step when you switch the step you pass the information between
+
+## Import
+
+```js
+import { StepWizard } from '@wings-software/uikit'
+```
+
+## Interface
+
+```js
+
+export interface StepProps<SharedObject> {
+  name?: string
+  // These props will be passed by wizard
+  prevStepData?: SharedObject
+  currentStep?: () => number
+  totalSteps?: () => number
+  nextStep?: (prevStepData?: SharedObject) => void
+  previousStep?: (prevStepData?: SharedObject) => void
+  gotoStep?: (stepNumber: number, prevStepData?: SharedObject) => void
+  firstStep?: (prevStepData?: SharedObject) => void
+  lastStep?: (prevStepData?: SharedObject) => void
+}
+
+interface StepState<SharedObject> {
+  activeStep: number
+  prevStep: number
+  prevStepData?: SharedObject
+  stepNames?: string[]
+  totalSteps: number
+}
+```
+
+## Simple Example
+
+```js live=true
+<StepWizard initialStep={2}>
+    <div name="Create a New Project">Step 1</div>
+    <div name="New Project">Step 2</div>
+    <div name="Collaborator">Step 3</div>
+</StepWizard>
+```
+
+
+## Full Example
+
+<ExampleWizard />
+
+```js
+
+const ExampleStep: React.FC<StepProps> = props => {
+  const totalSteps = props.totalSteps()
+  const currentStep = props.currentStep()
+  return (
+    <React.Fragment>
+      <Layout.Vertical>
+        <div style={{ height: '180px' }}>
+          {props.name}: {currentStep}
+          <div>Previous Step: {props.prevStepData && props.prevStepData.name}</div>
+        </div>
+        <div style={{ height: '40px' }}>
+          <Button
+            disabled={currentStep === 1}
+            onClick={() => props.previousStep({ name: props.name })}
+            text="Previous"
+          />
+          <Button
+            disabled={currentStep === totalSteps}
+            intent="primary"
+            style={{ float: 'right' }}
+            onClick={() => props.nextStep({ name: props.name })}
+            text="Next"
+          />
+        </div>
+      </Layout.Vertical>
+    </React.Fragment>
+  )
+}
+
+export const ExampleWizard = () => {
+  const [counter, setCounter] = React.useState(1)
+  return (
+    <div>
+      Steps Changed: {counter}
+      <StepWizard onStepChange={() => setCounter(prevState => ++prevState)}>
+        <ExampleStep name="Create a New Project">Step 1</ExampleStep>
+        <ExampleStep name="New Project">Step 2</ExampleStep>
+        <ExampleStep name="Collaborator">Step 3</ExampleStep>
+      </StepWizard>
+    </div>
+  )
+}
+
+
+
+```

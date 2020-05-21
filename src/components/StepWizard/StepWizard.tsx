@@ -1,0 +1,148 @@
+import React from 'react'
+import cx from 'classnames'
+import css from './StepWizard.css'
+import { Icon } from '../../icons/Icon'
+import { Text } from '../../components/Text/Text'
+
+export interface StepWizardProps<SharedObject> {
+  children: Array<React.ReactElement<StepProps<SharedObject>>>
+  isNavMode?: boolean
+  className?: string
+  onStepChange?: (prevStep: number, nextStep: number, prevStepData: SharedObject) => void
+  initialStep?: number
+}
+
+export interface StepProps<SharedObject> {
+  name?: string
+  // These props will be passed by wizard
+  prevStepData?: SharedObject
+  currentStep?: () => number
+  totalSteps?: () => number
+  nextStep?: (prevStepData?: SharedObject) => void
+  previousStep?: (prevStepData?: SharedObject) => void
+  gotoStep?: (stepNumber: number, prevStepData?: SharedObject) => void
+  firstStep?: (prevStepData?: SharedObject) => void
+  lastStep?: (prevStepData?: SharedObject) => void
+}
+
+interface StepState<SharedObject> {
+  activeStep: number
+  prevStep: number
+  prevStepData?: SharedObject
+  stepNames?: string[]
+  totalSteps: number
+}
+
+export const StepWizard = <SharedObject extends object>(props: StepWizardProps<SharedObject>) => {
+  const { className = '', isNavMode = true, initialStep = 1, children } = props
+  const [state, setState] = React.useState<StepState<SharedObject>>({
+    activeStep: initialStep < 1 || initialStep > children.length ? 1 : initialStep,
+    totalSteps: 0,
+    prevStep: -1
+  })
+  const gotoStep = React.useCallback(
+    (stepNumber: number, prevStepData?: SharedObject) => {
+      if (state.activeStep === stepNumber) {
+        return
+      }
+      if (stepNumber > state.totalSteps || stepNumber < 1) {
+        // Not a valid step stepNumber
+        return
+      }
+      setState(prevState => ({ ...prevState, prevStep: prevState.activeStep, activeStep: stepNumber, prevStepData }))
+    },
+    [state.activeStep, state.totalSteps]
+  )
+
+  React.useEffect(() => {
+    if (props.onStepChange && state.prevStep !== -1) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      props.onStepChange(state.prevStep, state.activeStep, state.prevStepData!)
+    }
+  }, [state.prevStep, state.activeStep, state.prevStepData])
+
+  const currentStep = React.useCallback(() => {
+    return state.activeStep
+  }, [state.activeStep])
+  const totalSteps = React.useCallback(() => {
+    return state.totalSteps
+  }, [state.activeStep])
+  const nextStep = React.useCallback(
+    (prevStepData?: SharedObject) => {
+      gotoStep(state.activeStep + 1, prevStepData)
+    },
+    [gotoStep]
+  )
+  const previousStep = React.useCallback(
+    (prevStepData?: SharedObject) => {
+      gotoStep(state.activeStep - 1, prevStepData)
+    },
+    [gotoStep]
+  )
+  const firstStep = React.useCallback(
+    (prevStepData?: SharedObject) => {
+      gotoStep(1, prevStepData)
+    },
+    [gotoStep]
+  )
+  const lastStep = React.useCallback(
+    (prevStepData?: SharedObject) => {
+      gotoStep(state.totalSteps, prevStepData)
+    },
+    [gotoStep]
+  )
+
+  React.useLayoutEffect(() => {
+    const steps = React.Children.toArray(props.children)
+    const stepNames: string[] = []
+    steps.forEach((child, i: number) => {
+      stepNames.push((child && child.props && (child as React.ReactElement).props.name) || `Step ${i + 1}`)
+    })
+    setState(prevState => ({ ...prevState, stepNames, totalSteps: stepNames.length }))
+  }, [children])
+
+  const renderStep = () => (
+    <React.Fragment>
+      {state.stepNames &&
+        state.stepNames.map((stepName, index) => {
+          const activeStep = index + 1 === state.activeStep
+          const completedSteps = state.activeStep > index + 1
+          return (
+            <div
+              key={index}
+              onClick={() => completedSteps && gotoStep(index + 1)}
+              className={cx(css.navStep, { [css.activeStep]: activeStep }, { [css.completedStep]: completedSteps })}>
+              {completedSteps ? (
+                <Icon name="small-tick" size={22} color="green500" style={{ marginRight: 'var(--spacing-xsmall)' }} />
+              ) : (
+                <span className={css.number}>{index + 1}</span>
+              )}
+              <Text className={css.stepName} lineClamp={1} width={240}>
+                {stepName}
+              </Text>
+            </div>
+          )
+        })}
+    </React.Fragment>
+  )
+
+  const activeChild = React.Children.toArray(props.children)[state.activeStep - 1]
+
+  const childProps: StepProps<SharedObject> = {
+    currentStep,
+    totalSteps,
+    prevStepData: state.prevStepData,
+    nextStep: nextStep,
+    previousStep,
+    gotoStep,
+    firstStep,
+    lastStep
+  }
+
+  return (
+    <div className={cx(css.main, className, { [css.navBar]: isNavMode })}>
+      {isNavMode && <div className={css.navBarList}>{renderStep()}</div>}
+      {state.activeStep && <div className={cx(css.stepDetails)}>{React.cloneElement(activeChild, childProps)}</div>}
+    </div>
+  )
+}

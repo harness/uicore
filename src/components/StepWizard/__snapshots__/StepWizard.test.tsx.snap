@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
+<div>
+  <div>
+    Steps Changed: 
+    1
+    <div
+      class="main navBar"
+    >
+      <div
+        class="navBarList"
+      >
+        <div
+          class="navStep activeStep"
+        >
+          <span
+            class="number"
+          >
+            1
+          </span>
+          <p
+            class="font single main stepName width width-240"
+            style="width: 240px;"
+          >
+            Create a New Project
+          </p>
+        </div>
+        <div
+          class="navStep"
+        >
+          <span
+            class="number"
+          >
+            2
+          </span>
+          <p
+            class="font single main stepName width width-240"
+            style="width: 240px;"
+          >
+            New Project 1
+          </p>
+        </div>
+        <div
+          class="navStep"
+        >
+          <span
+            class="number"
+          >
+            3
+          </span>
+          <p
+            class="font single main stepName width width-240"
+            style="width: 240px;"
+          >
+            Collaborator
+          </p>
+        </div>
+      </div>
+      <div
+        class="stepDetails"
+      >
+        <div
+          class="vertical layout-spacing-undefined main"
+        >
+          <div
+            style="height: 180px;"
+          >
+            Create a New Project
+            : 
+            1
+            <div>
+              Last Step: 
+            </div>
+          </div>
+          <div
+            style="height: 40px;"
+          >
+            <button
+              class="bp3-button bp3-disabled font button main"
+              disabled=""
+              tabindex="-1"
+              type="button"
+            >
+              <span
+                class="bp3-button-text"
+              >
+                Previous
+              </span>
+            </button>
+            <button
+              class="bp3-button font button main intent intent-primary style style-float style-float-right"
+              style="float: right;"
+              type="button"
+            >
+              <span
+                class="bp3-button-text"
+              >
+                Next
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
