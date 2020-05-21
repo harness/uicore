@@ -34,7 +34,7 @@ function GraphError(props: Props) {
           {props.onLinkClick ? (
             <a
               onClick={() => {
-                props.onLinkClick()
+                props.onLinkClick!()
               }}>
               {props.linkText}
             </a>
