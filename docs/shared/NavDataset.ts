@@ -190,6 +190,10 @@ export default [
       {
         label: 'FieldArray',
         url: '/fieldarray'
+      },
+      {
+        label: 'SelectWithSubview',
+        url: '/select-with-subview'
       }
     ]
   },
