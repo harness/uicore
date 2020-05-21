@@ -144,6 +144,10 @@ export default [
       {
         label: 'Collapse',
         url: '/collapse'
+      },
+      {
+        label: 'GraphError',
+        url: '/graph-error'
       }
     ]
   },
