@@ -1,5 +1,6 @@
 # Select With Subview--- docs/pages/select-with-subview.mdx
 
+import ExampleSubviewForSelect from '../shared/ExampleSubviewForSelect.tsx'
 
 Select with Subview renders an alternate view when the user selects a specific option in the dropdown. The alternate view is rendered within the drop down menu.
 The component is built on top of uikit's standard select component.
@@ -7,11 +8,40 @@ The component is built on top of uikit's standard select component.
 ## Import
 
 ```js
-import { SelectWithSubview, EnvironmentTypeSubForm } from '@wings-software/uikit'
+import { SelectWithSubview, EnvironmentTypeSubForm, Layout } from '@wings-software/uikit'
 ```
 
-## Stack Trace Examples
+## SelectWithSubview Examples
 
 ```js live=true
-<SelectWithSubview items={[{value: "1234_envId", label: "Env1"},{value: "5678_envId", label: "Env2"}]} changeViewButtonLabel="+ Environment" subview={<EnvironmentTypeSubForm onSubmit={(values)=>console.log(values)}/>} />
+<Layout.Vertical>
+<Container style={{marginBottom: '15px'}}>
+  <SelectWithSubview
+     items={[{value: "1234_envId", label: "Env1"},{value: "5678_envId", label: "Env2"}]}
+     changeViewButtonLabel="+ Environment"
+     subview={<EnvironmentTypeSubForm onSubmit={(values)=>console.log(values)}/>}
+  />
+</Container>
+</Layout.Vertical>
+```
+
+## Examples
+<ExampleSubviewForSelect />
+
+```jsx
+ <Formik initialValues={{ selectedDate: { label: '', value: '' } }} onSubmit={() => {}}>
+      {props => (
+        <Form>
+          <SelectWithSubview
+            value={props.values.selectedDate}
+            items={ExampleItems}
+            renderSubviewWithoutMenuStyling={true}
+            changeViewButtonLabel="Custom Date"
+            subview={
+              <DatePickerSubview onSelectRange={(range: SelectOption) => props.setFieldValue('selectedDate', range)} />
+            }
+          />
+        </Form>
+      )}
+    </Formik>
 ```

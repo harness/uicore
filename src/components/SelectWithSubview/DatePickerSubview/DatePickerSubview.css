@@ -1,0 +1,9 @@
+.main {
+  border: 1px solid var(--grey-400);
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  .cancelButton {
+    margin-right: 10px;
+  }
+}

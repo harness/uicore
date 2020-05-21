@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, wait, fireEvent, waitForDomChange } from '@testing-library/react'
-import { SelectWithSecondaryView } from '../SelectWithSubview'
+import { SelectWithSubview } from '../SelectWithSubview'
 import { SelectOption } from 'components/Select/Select'
-import { EnvironmentTypeSubForm } from '../EnvironmentTypeSubForm'
+import { EnvironmentTypeSubForm } from '../EnvironmentTypeSubForm/EnvironmentTypeSubForm'
 
 const items: SelectOption[] = [
   { label: 'secondaryOption_1', value: '1234_secondaryOption' },
@@ -17,10 +17,10 @@ describe('Tests for Select with secondary view', () => {
   })
   test('Ensure you can toggle betwen secondary view and dropdown', async () => {
     const { container, getByText } = render(
-      <SelectWithSecondaryView
+      <SelectWithSubview
         items={items}
         changeViewButtonLabel={SECONDARY_OPTION_LABEL}
-        subForm={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
+        subview={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
       />
     )
 
@@ -68,10 +68,10 @@ describe('Tests for Select with secondary view', () => {
 
   test('Ensure that when user saves from secondary view, the option is rendered in the drop down menu', async () => {
     const { container, getByText } = render(
-      <SelectWithSecondaryView
+      <SelectWithSubview
         items={items}
         changeViewButtonLabel={SECONDARY_OPTION_LABEL}
-        subForm={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
+        subview={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
       />
     )
 
@@ -124,10 +124,10 @@ describe('Tests for Select with secondary view', () => {
 
   test('Ensure only unique values are added to drop down', async () => {
     const { container, getByText } = render(
-      <SelectWithSecondaryView
+      <SelectWithSubview
         items={items}
         changeViewButtonLabel={SECONDARY_OPTION_LABEL}
-        subForm={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
+        subview={<EnvironmentTypeSubForm onSubmit={onSubmitFunc} />}
       />
     )
 

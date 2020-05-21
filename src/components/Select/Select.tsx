@@ -35,6 +35,7 @@ export interface SelectProps
   size?: SelectSize
   items: Props['items'] | (() => Promise<Props['items']>)
   allowCreatingNewItems?: boolean
+  whenPopoverClosed?: (node: HTMLElement) => void
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -91,7 +92,7 @@ export function Select(props: SelectProps) {
   const [query, setQuery] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
-  const { onChange, value, size, itemRenderer, ...rest } = props
+  const { onChange, value, size, itemRenderer, whenPopoverClosed, ...rest } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
 
   React.useEffect(() => {
@@ -194,7 +195,8 @@ export function Select(props: SelectProps) {
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: css.main,
-        popoverClassName: css.popover
+        popoverClassName: css.popover,
+        onClosed: whenPopoverClosed
       }}
     />
   )

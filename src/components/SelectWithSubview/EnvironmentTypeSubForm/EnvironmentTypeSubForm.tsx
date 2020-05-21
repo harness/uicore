@@ -1,14 +1,13 @@
 import React, { FormEvent, useCallback, useContext, useState } from 'react'
-import { Heading } from '../Heading/Heading'
-import { TextInput } from '../TextInput/TextInput'
-import { Button } from '../Button/Button'
-import { Layout } from '../../layouts/Layout'
-import { Text } from '../Text/Text'
+import { Heading } from '../../Heading/Heading'
+import { TextInput } from '../../TextInput/TextInput'
+import { Button } from '../../Button/Button'
+import { Layout } from '../../../layouts/Layout'
+import { Text } from '../../Text/Text'
 import { Formik, Form, FormikErrors } from 'formik'
-import { SelectWithSubviewContext } from './SelectWithSubview'
+import { SelectWithSubviewContext } from '../SelectWithSubview'
 import { RadioGroup, Radio } from '@blueprintjs/core'
-import radioCss from '../Radio/Radio.css'
-import css from '../Radio/Radio.css'
+import radioCss from '../../Radio/Radio.css'
 
 export interface EnvironmentTypeSubFormProps {
   onSubmit: (data: EnvironmentTypeFormData) => void
@@ -92,8 +91,8 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
               onChange={(e: FormEvent<HTMLInputElement>) => {
                 setFieldValue('envType', e.currentTarget?.value)
               }}>
-              <Radio label="Live Monitoring (Production Types)" value={EnvTypes.PROD} className={css.radio} />
-              <Radio label="Pre-Production" value={EnvTypes.NON_PROD} className={css.radio} />
+              <Radio label="Live Monitoring (Production Types)" value={EnvTypes.PROD} className={radioCss.radio} />
+              <Radio label="Pre-Production" value={EnvTypes.NON_PROD} className={radioCss.radio} />
             </RadioGroup>
             <Layout.Horizontal spacing="medium" style={{ justifyContent: 'flex-end' }}>
               <Button data-name="Cancel" onClick={onHideCallBack()}>
