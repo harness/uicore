@@ -61,4 +61,8 @@ export {
 } from './components/StackTraceList/StackTraceList'
 export { Collapse } from './components/Collapse/Collapse'
 export { GraphError } from './components/GraphError/GraphError'
-export { SelectWithSubview, SelectWithSubviewProps } from './components/SelectWithSubview/SelectWithSubview'
+export {
+  SelectWithSubview,
+  SelectWithSubviewProps,
+  SelectWithSubviewContext
+} from './components/SelectWithSubview/SelectWithSubview'

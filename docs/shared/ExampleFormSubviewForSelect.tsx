@@ -1,15 +1,11 @@
 import React, { FormEvent, useCallback, useContext, useState } from 'react'
-import { Heading } from '../../Heading/Heading'
-import { TextInput } from '../../TextInput/TextInput'
-import { Button } from '../../Button/Button'
-import { Layout } from '../../../layouts/Layout'
-import { Text } from '../../Text/Text'
+import { Layout, Heading, TextInput, Button, Text, SelectWithSubviewContext, SelectWithSubview } from '../static/index'
 import { Formik, Form, FormikErrors } from 'formik'
-import { SelectWithSubviewContext } from '../SelectWithSubview'
 import { RadioGroup, Radio } from '@blueprintjs/core'
-import radioCss from '../../Radio/Radio.css'
+import { SelectOption } from '../../src/components/Select/Select'
+import '../../src/components/Radio/Radio.css'
 
-export interface EnvironmentTypeSubFormProps {
+interface EnvironmentTypeSubFormProps {
   onSubmit: (data: EnvironmentTypeFormData) => void
   onHide?: () => void
 }
@@ -27,6 +23,11 @@ const initialValues: EnvironmentTypeFormData = {
   environment: '',
   envType: EnvTypes.PROD
 }
+
+const ExampleItems: SelectOption[] = [
+  { value: 'env_id1', label: 'Env1' },
+  { value: 'env_id2', label: 'Env2' }
+]
 
 function validateForm(values: EnvironmentTypeFormData): FormikErrors<EnvironmentTypeFormData> {
   const errors: { environment?: string } = {}
@@ -55,7 +56,9 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
   const onHideCallBack = useCallback(
     () => () => {
       toggleSubview()
-      onHide?.()
+      if (onHide) {
+        onHide()
+      }
     },
     [toggleSubview, onHide]
   )
@@ -74,9 +77,9 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
               placeholder="Enter Environment Name"
               name="environment"
               style={{ marginBottom: '10px' }}
-              onChange={(e: FormEvent<HTMLInputElement>) => setFieldValue('environment', e.currentTarget?.value)}
+              onChange={(e: FormEvent<HTMLInputElement>) => setFieldValue('environment', e.currentTarget.value)}
             />
-            {errors?.environment && (
+            {errors && errors.environment && (
               <Text margin={{ bottom: 'small' }} intent="danger">
                 {errors.environment}
               </Text>
@@ -87,12 +90,11 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
             <RadioGroup
               name="envType"
               selectedValue={values.envType}
-              className={radioCss.radioGroup}
               onChange={(e: FormEvent<HTMLInputElement>) => {
-                setFieldValue('envType', e.currentTarget?.value)
+                setFieldValue('envType', e.currentTarget.value)
               }}>
-              <Radio label="Live Monitoring (Production Types)" value={EnvTypes.PROD} className={radioCss.radio} />
-              <Radio label="Pre-Production" value={EnvTypes.NON_PROD} className={radioCss.radio} />
+              <Radio label="Live Monitoring (Production Types)" value={EnvTypes.PROD} />
+              <Radio label="Pre-Production" value={EnvTypes.NON_PROD} />
             </RadioGroup>
             <Layout.Horizontal spacing="medium" style={{ justifyContent: 'flex-end' }}>
               <Button data-name="Cancel" onClick={onHideCallBack()}>
@@ -106,6 +108,22 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
           </Form>
         )
       }}
+    </Formik>
+  )
+}
+
+export function ExampleFormSubviewForSelect() {
+  return (
+    <Formik initialValues={{}} onSubmit={() => {}}>
+      {() => (
+        <Form>
+          <SelectWithSubview
+            items={ExampleItems}
+            changeViewButtonLabel="Custom Date"
+            subview={<EnvironmentTypeSubForm onSubmit={values => console.log(values)} />}
+          />
+        </Form>
+      )}
     </Formik>
   )
 }

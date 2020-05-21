@@ -2,7 +2,7 @@ import React from 'react'
 import { render, wait, fireEvent, waitForDomChange } from '@testing-library/react'
 import { SelectWithSubview } from '../SelectWithSubview'
 import { SelectOption } from 'components/Select/Select'
-import { EnvironmentTypeSubForm } from '../EnvironmentTypeSubForm/EnvironmentTypeSubForm'
+import { EnvironmentTypeSubForm } from '../../../../docs/shared/ExampleFormSubviewForSelect'
 
 const items: SelectOption[] = [
   { label: 'secondaryOption_1', value: '1234_secondaryOption' },
