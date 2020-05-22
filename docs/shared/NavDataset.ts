@@ -156,6 +156,10 @@ export default [
       {
         label: 'ColumnChart',
         url: '/column-chart'
+      },
+      {
+        label: 'TimeSeriesChart',
+        url: '/time-series-chart'
       }
     ]
   },

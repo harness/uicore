@@ -68,3 +68,4 @@ export {
 } from './components/SelectWithSubview/SelectWithSubview'
 export { ModalExample } from './components/ModalExample/ModalExample'
 export { ColumnChart } from './components/ColumnChart/ColumnChart'
+export { TimeSeriesChart } from './components/TimeSeriesChart/TimeSeriesChart'
