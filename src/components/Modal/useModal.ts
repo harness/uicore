@@ -27,7 +27,7 @@ const generateModalKey = (() => {
  * as the second argument to useModal without unmounting the previous version of
  * the modal component.
  */
-const isFunctionalComponent = (Component: Function) => {
+const isFunctionalComponent = (Component: React.FunctionComponent) => {
   const prototype = Component.prototype
 
   return !prototype || !prototype.isReactComponent
