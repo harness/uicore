@@ -66,3 +66,4 @@ export {
   SelectWithSubviewProps,
   SelectWithSubviewContext
 } from './components/SelectWithSubview/SelectWithSubview'
+export { ModalExample } from './components/ModalExample/ModalExample'

@@ -77,6 +77,10 @@ export default [
         url: '/code-block'
       },
       {
+        label: 'Modal Example',
+        url: '/modal-example'
+      },
+      {
         label: 'Tooltip',
         url: '/tooltip'
       },
