@@ -44,7 +44,9 @@ interface ModalRendererProps {
  * `useModal`. If we simply rendered `<Component />` then the modal would be
  * susceptible to rerenders whenever one of the inputs change.
  */
-const ModalRenderer = memo(({ component, ...rest }: ModalRendererProps) => component(rest))
+const ModalRenderer = memo(function({ component, ...rest }: ModalRendererProps) {
+  return component(rest)
+})
 
 /**
  * Modal Root
