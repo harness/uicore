@@ -1,0 +1,52 @@
+:global {
+  .bp3-portal {
+    .bp3-dialog {
+      border-left: 20px solid var(--blue-500);
+      box-shadow: none;
+      background: var(--white);
+      .bp3-dialog-header {
+        box-shadow: none;
+        margin-top: var(--spacing-small);
+        .bp3-heading {
+          font-weight: normal;
+        }
+      }
+      .bp3-dialog-close-button {
+        svg {
+          fill: var(--grey-600);
+          height: var(--spacing-xlarge);
+          width: var(--spacing-xlarge);
+        }
+        &:hover {
+          background: none;
+          svg {
+            fill: var(--grey-800);
+          }
+        }
+        margin-right: var(--spacing-xsmall);
+      }
+    }
+    .bp3-dialog.bp3-dark {
+      border-left: none;
+      background-color: var(--blue-800) !important;
+      .bp3-dialog-header {
+        margin-top: var(--spacing-small);
+        background-color: var(--blue-800) !important;
+      }
+      .bp3-dialog-close-button {
+        svg {
+          height: var(--spacing-xlarge);
+          width: var(--spacing-xlarge);
+          fill: var(--grey-400);
+        }
+        &:hover {
+          background: none;
+          svg {
+            fill: var(--white);
+          }
+        }
+        margin-right: var(--spacing-xsmall);
+      }
+    }
+  }
+}
