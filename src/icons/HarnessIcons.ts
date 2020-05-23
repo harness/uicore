@@ -1,6 +1,6 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
-import BudgetAlertLight from './budget_alert_light.svg'
+import BudgetAlertLight from './budget-alert-light.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
 import CeBudgetColored from './ce-budget_colored.svg'
@@ -213,7 +213,7 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 
 type HarnessIconName =
-  | 'budget_alert_light'
+  | 'budget-alert-light'
   | 'ce-application'
   | 'ce-beta'
   | 'ce-budget_colored'
@@ -426,7 +426,7 @@ type HarnessIconName =
   | 'trigger-schedule'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
-  budget_alert_light: BudgetAlertLight,
+  'budget-alert-light': BudgetAlertLight,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
   'ce-budget_colored': CeBudgetColored,
