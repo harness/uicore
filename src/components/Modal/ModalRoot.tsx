@@ -1,4 +1,4 @@
-import { memo, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { ModalType } from './ModalContext'
@@ -44,16 +44,14 @@ interface ModalRendererProps {
  * `useModal`. If we simply rendered `<Component />` then the modal would be
  * susceptible to rerenders whenever one of the inputs change.
  */
-const ModalRenderer = memo(function({ component, ...rest }: ModalRendererProps) {
-  return component(rest)
-})
+const ModalRenderer = React.memo(({ component, ...rest }: ModalRendererProps) => component(rest))
 
 /**
  * Modal Root
  *
  * Renders modals using react portal.
  */
-export const ModalRoot: any = memo(
+export const ModalRoot: any = React.memo(
   ({ modals, container, component: RootComponent = React.Fragment }: ModalRootProps) => {
     const [mountNode, setMountNode] = useState<Element | undefined>(undefined)
 
