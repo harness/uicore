@@ -152,6 +152,14 @@ export default [
       {
         label: 'GraphError',
         url: '/graph-error'
+      },
+      {
+        label: 'ColumnChart',
+        url: '/column-chart'
+      },
+      {
+        label: 'TimeSeriesChart',
+        url: '/time-series-chart'
       }
     ]
   },
