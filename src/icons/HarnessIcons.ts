@@ -426,7 +426,7 @@ type HarnessIconName =
   | 'trigger-schedule'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
-  'budget_alert_light': BudgetAlertLight,
+  budget_alert_light: BudgetAlertLight,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
   'ce-budget_colored': CeBudgetColored,
