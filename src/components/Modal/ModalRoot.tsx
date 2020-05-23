@@ -70,3 +70,4 @@ export const ModalRoot: any = memo(
       : null
   }
 )
+ModalRoot.displayName = 'ModalRoot'
