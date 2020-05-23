@@ -51,6 +51,7 @@ ModalRenderer.displayName = 'ModalRenderer'
  *
  * Renders modals using react portal.
  */
+/* eslint-disable react/display-name */
 export const ModalRoot: any = memo(
   ({ modals, container, component: RootComponent = React.Fragment }: ModalRootProps) => {
     const [mountNode, setMountNode] = useState<Element | undefined>(undefined)
@@ -70,4 +71,3 @@ export const ModalRoot: any = memo(
       : null
   }
 )
-ModalRoot.displayName = 'ModalRoot'
