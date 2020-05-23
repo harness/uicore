@@ -1,8 +1,12 @@
 import React from 'react'
 
-import { MultiSelect, MultiSelectOption } from '../static/index'
+import { MultiSelect } from '../static/index'
 import data from './pokedex.json'
-
+export interface MultiSelectOption {
+  label: string
+  value: string | number | symbol
+  disabled?: boolean
+}
 const items: MultiSelectOption[] = data.map((row, i) => ({
   label: row.name,
   value: row.id,
