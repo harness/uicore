@@ -12,7 +12,6 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 0px;"
@@ -98,7 +97,6 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 0px;"
@@ -269,7 +267,6 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 0px;"
@@ -335,7 +332,6 @@ exports[`<Select/> tests works with async data 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 0px;"
@@ -383,7 +379,6 @@ exports[`<Select/> tests works with async data: Final state 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 0px;"
@@ -555,7 +550,6 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 0px;"
@@ -631,7 +625,6 @@ exports[`<Select/> tests works with static data 1`] = `
         class="bp3-input-group"
       >
         <input
-          autocomplete="off"
           class="bp3-input"
           placeholder="Search..."
           style="padding-right: 0px;"

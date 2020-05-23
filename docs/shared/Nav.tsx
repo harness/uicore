@@ -15,7 +15,7 @@ function NavSection({ name, items }) {
           .map(({ label, url, items }) => {
             if (items) {
               return (
-                <details open>
+                <details key={`${name}-details`} open>
                   <summary>{label}</summary>
                   <ul>
                     {items
