@@ -219,6 +219,10 @@ export default [
       {
         label: 'StatusBar',
         url: '/status-bar'
+      },
+      {
+        label: 'SparkChart',
+        url: '/spark-chart'
       }
     ]
   }
