@@ -1,0 +1,41 @@
+.main {
+  :global {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 10px auto;
+      padding: 0px;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .vertical {
+      cursor: pointer;
+
+      .progress-bar {
+        display: flex;
+        flex: 1;
+        height: 60px;
+        min-width: 4px;
+        margin-right: 3px;
+
+        .progress-track {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          background: transparent;
+
+          .progress-fill {
+            position: absolute;
+            height: 50%;
+            width: 100%;
+            color: yellow;
+            background: var(--blue-450);
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

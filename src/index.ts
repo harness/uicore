@@ -66,3 +66,4 @@ export {
   SelectWithSubviewProps,
   SelectWithSubviewContext
 } from './components/SelectWithSubview/SelectWithSubview'
+export { SparkChart } from './components/SparkChart/SparkChart'
