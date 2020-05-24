@@ -77,6 +77,10 @@ export default [
         url: '/code-block'
       },
       {
+        label: 'Modal Example',
+        url: '/modal-example'
+      },
+      {
         label: 'Tooltip',
         url: '/tooltip'
       },
@@ -148,6 +152,14 @@ export default [
       {
         label: 'GraphError',
         url: '/graph-error'
+      },
+      {
+        label: 'ColumnChart',
+        url: '/column-chart'
+      },
+      {
+        label: 'TimeSeriesChart',
+        url: '/time-series-chart'
       }
     ]
   },

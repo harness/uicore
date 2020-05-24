@@ -1,5 +1,6 @@
 # StepWizard --- docs/pages/step-wizard.mdx
-import { ExampleWizard, ExampleStep} from '../shared/StepWizardExample'
+import { ExampleWizard } from '../shared/StepWizardExample'
+import { FormExampleStepWizard} from '../shared/StepWizardFormExample'
 
 
 Step Wizard as per the [next gen](https://harness.atlassian.net/wiki/spaces/UI/pages/683737840/Step+Wizard)
@@ -29,13 +30,21 @@ export interface StepProps<SharedObject> {
   lastStep?: (prevStepData?: SharedObject) => void
 }
 
-interface StepState<SharedObject> {
-  activeStep: number
+interface StepChangeData<SharedObject> {
   prevStep: number
-  prevStepData?: SharedObject
-  stepNames?: string[]
-  totalSteps: number
+  nextStep: number
+  prevStepData: SharedObject
 }
+
+export interface StepWizardProps<SharedObject> {
+  children: Array<React.ReactElement<StepProps<SharedObject>>>
+  isNavMode?: boolean
+  className?: string
+  onStepChange?: (data: StepChangeData<SharedObject | undefined>) => void
+  onCompleteWizard?: (data: SharedObject | undefined) => void // This will be called when all step completed
+  initialStep?: number
+}
+
 ```
 
 ## Simple Example
@@ -101,3 +110,10 @@ export const ExampleWizard = () => {
 
 
 ```
+
+## Form Example
+
+Code of this Example is at [Github](https://github.com/wings-software/uikit/blob/master/docs/shared/StepWizardFormExample.tsx)
+
+
+<FormExampleStepWizard />

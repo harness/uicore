@@ -1,26 +1,26 @@
 import React from 'react'
 import { Button, StepWizard, Layout } from '../static/index'
-
+import './StepWizardExample.css'
 //For Example only defining this props, reason is the module loader over here has some type issue
 
 interface StepData {
   name: string
 }
 
-interface StepProps {
+interface StepProps<PrevStepData> {
   name?: string
   // These props will be passed by wizard
-  prevStepData?: StepData
+  prevStepData?: PrevStepData
   currentStep?: () => number
   totalSteps?: () => number
-  nextStep?: (data: StepData) => void
-  previousStep?: (data: StepData) => void
-  gotoStep?: (stepNumber: number, data: StepData) => void
-  firstStep?: (data: StepData) => void
-  lastStep?: (data: StepData) => void
+  nextStep?: (data?: PrevStepData) => void
+  previousStep?: (data?: PrevStepData) => void
+  gotoStep?: (stepNumber: number, data?: PrevStepData) => void
+  firstStep?: (data?: PrevStepData) => void
+  lastStep?: (data?: PrevStepData) => void
 }
 
-const ExampleStep: React.FC<StepProps> = props => {
+const ExampleStep: React.FC<StepProps<StepData>> = props => {
   const totalSteps = props.totalSteps()
   const currentStep = props.currentStep()
   return (
@@ -37,11 +37,10 @@ const ExampleStep: React.FC<StepProps> = props => {
             text="Previous"
           />
           <Button
-            disabled={currentStep === totalSteps}
             intent="primary"
             style={{ float: 'right' }}
             onClick={() => props.nextStep({ name: props.name })}
-            text="Next"
+            text={currentStep === totalSteps ? 'Submit' : 'Next'}
           />
         </div>
       </Layout.Vertical>
@@ -54,10 +53,14 @@ export const ExampleWizard = () => {
   return (
     <div>
       Steps Changed: {counter}
-      <StepWizard onStepChange={() => setCounter(prevState => ++prevState)}>
-        <ExampleStep name="Create a New Project">Step 1</ExampleStep>
-        <ExampleStep name={`New Project - ${counter}`}>Step 2</ExampleStep>
-        <ExampleStep name="Collaborator">Step 3</ExampleStep>
+      <StepWizard
+        onStepChange={() => {
+          setCounter(prevState => ++prevState)
+        }}
+        onCompleteWizard={({ name }) => alert(`Wizard Complete with ${name}`)}>
+        <ExampleStep name="Create a New Project" />
+        <ExampleStep name={`New Project - ${counter}`} />
+        <ExampleStep name="Collaborator" />
       </StepWizard>
     </div>
   )

@@ -4,11 +4,17 @@ import css from './StepWizard.css'
 import { Icon } from '../../icons/Icon'
 import { Text } from '../../components/Text/Text'
 
+interface StepChangeData<SharedObject> {
+  prevStep: number
+  nextStep: number
+  prevStepData: SharedObject
+}
 export interface StepWizardProps<SharedObject> {
   children: Array<React.ReactElement<StepProps<SharedObject>>>
   isNavMode?: boolean
   className?: string
-  onStepChange?: (prevStep: number, nextStep: number, prevStepData: SharedObject) => void
+  onStepChange?: (data: StepChangeData<SharedObject | undefined>) => void
+  onCompleteWizard?: (data: SharedObject | undefined) => void
   initialStep?: number
 }
 
@@ -45,7 +51,10 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
       if (state.activeStep === stepNumber) {
         return
       }
-      if (stepNumber > state.totalSteps || stepNumber < 1) {
+      if (props.onCompleteWizard && state.totalSteps > 0 && stepNumber > 1 && stepNumber === state.totalSteps + 1) {
+        props.onCompleteWizard(prevStepData)
+        return
+      } else if (stepNumber > state.totalSteps || stepNumber < 1) {
         // Not a valid step stepNumber
         return
       }
@@ -56,8 +65,7 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
 
   React.useEffect(() => {
     if (props.onStepChange && state.prevStep !== -1) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      props.onStepChange(state.prevStep, state.activeStep, state.prevStepData!)
+      props.onStepChange({ prevStep: state.prevStep, nextStep: state.activeStep, prevStepData: state.prevStepData })
     }
   }, [state.prevStep, state.activeStep, state.prevStepData])
 
@@ -110,14 +118,14 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
           return (
             <div
               key={index}
-              onClick={() => completedSteps && gotoStep(index + 1)}
+              onClick={() => completedSteps && gotoStep(index + 1, state.prevStepData)}
               className={cx(css.navStep, { [css.activeStep]: activeStep }, { [css.completedStep]: completedSteps })}>
               {completedSteps ? (
                 <Icon name="small-tick" size={22} color="green500" style={{ marginRight: 'var(--spacing-xsmall)' }} />
               ) : (
                 <span className={css.number}>{index + 1}</span>
               )}
-              <Text className={css.stepName} lineClamp={1} width={240}>
+              <Text className={css.stepName} lineClamp={2} width={240}>
                 {stepName}
               </Text>
             </div>

@@ -9,6 +9,7 @@
       display: grid;
       grid-gap: 30px;
       border-right: 1px solid #979797;
+      grid-template-rows: repeat(auto-fill, 30px);
 
       .navStep {
         display: grid;
@@ -34,6 +35,7 @@
         .stepName {
           display: inline-block;
           color: #79a5cc;
+          text-transform: uppercase;
         }
         .number {
           padding: 1px var(--spacing-xsmall);

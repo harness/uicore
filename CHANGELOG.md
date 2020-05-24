@@ -2,9 +2,29 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.0.123- 05/24/20
+## 1.0.128- 05/24/20
 
 - `Added` SparkChart Component.
+
+## 1.0.127- 05/23/20
+
+- Package json upgrade
+
+## 1.0.126- 05/23/20
+
+- `Added` Icons for CE Budget.
+
+## 1.0.125- 05/23/20
+
+- `Added` Column and Time Series Chart Component.
+
+## 1.0.124- 05/23/20
+
+- `Added` Modal/Dialog Component
+
+## 1.0.123- 05/22/20
+
+- `Added` The StepWizard Component Example for form
 
 ## 1.0.122- 05/21/20
 

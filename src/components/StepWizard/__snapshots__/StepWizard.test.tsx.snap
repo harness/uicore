@@ -20,8 +20,8 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
             1
           </span>
           <p
-            class="font single main stepName width width-240"
-            style="width: 240px;"
+            class="font multiple main stepName width width-240"
+            style="--text-line-clamp: 2; width: 240px;"
           >
             Create a New Project
           </p>
@@ -35,8 +35,8 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
             2
           </span>
           <p
-            class="font single main stepName width width-240"
-            style="width: 240px;"
+            class="font multiple main stepName width width-240"
+            style="--text-line-clamp: 2; width: 240px;"
           >
             New Project 1
           </p>
@@ -50,8 +50,8 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
             3
           </span>
           <p
-            class="font single main stepName width width-240"
-            style="width: 240px;"
+            class="font multiple main stepName width width-240"
+            style="--text-line-clamp: 2; width: 240px;"
           >
             Collaborator
           </p>
