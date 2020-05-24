@@ -30,8 +30,6 @@
             position: absolute;
             height: 50%;
             width: 100%;
-            color: yellow;
-            background: var(--blue-450);
             bottom: 0;
           }
         }

@@ -5,7 +5,7 @@
 ## Import
 
 ```js
-import { Layout, Card, SparkChart } from '@wings-software/uikit'
+import { Layout, Card, Color, SparkChart } from '@wings-software/uikit'
 ```
 
 ## SparkChart
@@ -22,6 +22,27 @@ import { Layout, Card, SparkChart } from '@wings-software/uikit'
             <Layout.Horizontal>
               <span style={{margin: 'auto', width: '15%'}}> <Icon name="deployment-success-new" size={15} /> </span>
               <span style={{width: '35%'}}><SparkChart data={[2,3,4,1,5,2,5]} /> </span>
+              <span style={{margin: 'auto', width: '15%'}}><h2 style={{marginLeft: '20px'}}>4</h2> </span>
+            </Layout.Horizontal>
+            </Layout.Vertical>
+        </div>
+    </Card>
+```
+
+## SparkChart with custom properties
+
+```js live=true
+
+    <Card interactive="true">
+        <div style={{ height: '200px', width: '150px' }}>
+            <Layout.Vertical spacing="large">
+            <div>
+            <Icon name="service-jenkins" size={30} />
+            <Text style={{marginTop: '5px'}} font="medium">Spark Chart</Text>
+            </div>
+            <Layout.Horizontal>
+              <span style={{margin: 'auto', width: '15%'}}> <Icon name="deployment-success-new" size={15} /> </span>
+              <span style={{width: '35%'}}><SparkChart data={[2,3,4,1,5,2,5]} color={Color.GREEN_500} onClick={() => alert('Hello World')} /> </span>
               <span style={{margin: 'auto', width: '15%'}}><h2 style={{marginLeft: '20px'}}>4</h2> </span>
             </Layout.Horizontal>
             </Layout.Vertical>
