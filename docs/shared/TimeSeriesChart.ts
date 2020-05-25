@@ -67,4 +67,4 @@ const defaultConfig = {
 const getTimeSeriesChartDefaultConfig = () => {
   return defaultConfig
 }
-export default getTimeSeriesChartDefaultConfig
+export { getTimeSeriesChartDefaultConfig }
