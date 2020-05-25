@@ -69,3 +69,4 @@ export {
 export { SparkChart } from './components/SparkChart/SparkChart'
 export { ModalExample } from './components/ModalExample/ModalExample'
 export { getTimeSeriesChartDefaultConfig } from '../docs/shared/TimeSeriesChart'
+export { getColumnChartDefaultConfig } from '../docs/shared/ColumnChart'

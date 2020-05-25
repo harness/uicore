@@ -28,4 +28,4 @@ const getColumnChartDefaultConfig = () => {
   return defaultConfig
 }
 
-export default getColumnChartDefaultConfig
+export { getColumnChartDefaultConfig }
