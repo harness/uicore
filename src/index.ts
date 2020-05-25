@@ -68,5 +68,5 @@ export {
 } from './components/SelectWithSubview/SelectWithSubview'
 export { SparkChart } from './components/SparkChart/SparkChart'
 export { ModalExample } from './components/ModalExample/ModalExample'
-export { getTimeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeSeriesChart'
-export { getColumnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
+export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeSeriesChart'
+export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
