@@ -18,7 +18,7 @@ import { SimpleTagInput } from '@wings-software/uikit'
     openOnKeyDown={false}
     showAddTagButton
     showClearAllButton
-    showNewlyCreatedItemsInList
+    showNewlyCreatedItemsInList={false}
     allowNewTag
     placeholder="Enter tags..."
     getTagProps={(value, _index, _selectedItems, createdItems, items) => {
@@ -31,6 +31,14 @@ import { SimpleTagInput } from '@wings-software/uikit'
         : { intent: 'primary', minimal: true }
     }}
     selectedItems={['The Shawshank Redemption', '${service.name}']}
+    validateNewTag={tag => {
+      // Allow Harness expression and alpha numeric
+      const validTag = (tag.startsWith('${') && tag.endsWith('}')) || new RegExp('^[a-z0-9-]+$').test(tag)
+      if (!validTag) {
+        alert('Tag is not allowed')
+      }
+      return validTag
+    }}
     items={[
       'The Godfather',
       'The Godfather: Part II',

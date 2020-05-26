@@ -1,12 +1,12 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react'
-import { MultiSelect, IItemRendererProps, IMultiSelectProps } from '@blueprintjs/select'
-import { MenuItem, Button, Spinner, Icon, ITagProps } from '@blueprintjs/core'
-import { Text } from '../Text/Text'
-import { useIsMounted } from '../../hooks/useIsMounted'
-import css from './TagInput.css'
-import { Container } from '../Container/Container'
-import { I18nResource } from 'core/Types'
+import { Button, Icon, ITagProps, MenuItem, Spinner } from '@blueprintjs/core'
+import { IItemRendererProps, IMultiSelectProps, MultiSelect } from '@blueprintjs/select'
 import cx from 'classnames'
+import { I18nResource } from 'core/Types'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { useIsMounted } from '../../hooks/useIsMounted'
+import { Container } from '../Container/Container'
+import { Text } from '../Text/Text'
+import css from './TagInput.css'
 import i18nBase from './TagInput.i18n'
 
 const isNext =
@@ -19,6 +19,7 @@ export interface TagInputItemsFutureResult<T> {
 }
 
 export type TagInputItemsFuture<T> = () => Promise<TagInputItemsFutureResult<T>>
+export type TagValidator = (tag: string) => boolean | Promise<boolean>
 
 export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'items'>> {
   /** Array of items possible to be added as tags, could be a future to be resolved as well */
@@ -32,6 +33,9 @@ export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'it
 
   /** When passed as true, new tag is allowed to be created */
   allowNewTag?: boolean
+
+  /** Optional validator for new tag. If it's resolved true then new tag is added */
+  validateNewTag?: TagValidator
 
   /** Item builder from newly created string tag (must be provided when `allowNewTag` is true) */
   itemFromNewTag: (newTag: string) => T
@@ -90,6 +94,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     labelFor,
     keyOf,
     allowNewTag,
+    validateNewTag,
     itemFromNewTag,
     onNewItemCreated,
     showNewlyCreatedItemsInList,
@@ -135,17 +140,26 @@ export function TagInput<T>(props: TagInputProps<T>) {
         setSelectedItems(_selectedItems)
         onChange?.(_selectedItems, createdItems, items)
       } else {
-        const _createdItems = createdItems.find((_item: T) => keyOf(_item) === keyOf(item))
-          ? createdItems
-          : createdItems.concat(item)
-        const _selectedItems = selectedItems.find((_item: T) => keyOf(_item) === keyOf(item))
-          ? selectedItems
-          : selectedItems.concat(item)
+        ;(async () => {
+          if (validateNewTag) {
+            const isValidated = await validateNewTag(labelFor(item))
 
-        setCreatedItems(_createdItems)
-        setSelectedItems(_selectedItems)
-        onNewItemCreated?.(item, _selectedItems, _createdItems, items)
-        onChange?.(_selectedItems, _createdItems, items)
+            if (!isValidated) {
+              return
+            }
+          }
+          const _createdItems = createdItems.find((_item: T) => keyOf(_item) === keyOf(item))
+            ? createdItems
+            : createdItems.concat(item)
+          const _selectedItems = selectedItems.find((_item: T) => keyOf(_item) === keyOf(item))
+            ? selectedItems
+            : selectedItems.concat(item)
+
+          setCreatedItems(_createdItems)
+          setSelectedItems(_selectedItems)
+          onNewItemCreated?.(item, _selectedItems, _createdItems, items)
+          onChange?.(_selectedItems, _createdItems, items)
+        })()
       }
     },
     [items, selectedItems, createdItems]
@@ -245,7 +259,9 @@ export function TagInput<T>(props: TagInputProps<T>) {
       tagInputProps={{
         disabled: readonly,
         onRemove: (_value: string, index: number) => {
-          setSelectedItems(selectedItems.filter((_item, _index) => _index !== index))
+          const _selectedItems = selectedItems.filter((_item, _index) => _index !== index)
+          setSelectedItems(_selectedItems)
+          onChange?.(_selectedItems, createdItems, items)
         },
         rightElement: loading ? SPINNER : clearButton,
         tagProps: _getTagProps,
