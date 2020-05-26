@@ -18,12 +18,19 @@ import { SimpleTagInput } from '@wings-software/uikit'
     openOnKeyDown={false}
     showAddTagButton
     showClearAllButton
+    showNewlyCreatedItemsInList
     allowNewTag
     placeholder="Enter tags..."
-    getTagProps={(value, _index, _selectedItems, createdItems) => {
-      return createdItems.includes(value) ? { intent: 'danger', minimal: true } : { intent: 'primary', minimal: true }
+    getTagProps={(value, _index, _selectedItems, createdItems, items) => {
+      const isItemNewlyCreated = createdItems.includes(value) || !items.includes(value)
+      const isExpression = isItemNewlyCreated && value.startsWith('${') && value.endsWith('}')
+      return isExpression
+        ? { intent: 'none', minimal: true }
+        : isItemNewlyCreated
+        ? { intent: 'danger', minimal: true }
+        : { intent: 'primary', minimal: true }
     }}
-    selectedItems={['The Shawshank Redemption']}
+    selectedItems={['The Shawshank Redemption', '${service.name}']}
     items={[
       'The Godfather',
       'The Godfather: Part II',
@@ -64,7 +71,14 @@ import { SimpleTagInput } from '@wings-software/uikit'
       console.log({ newItem, selectedItems, createdItems, items })
     }
     getTagProps={(value, index, selectedItems, createdItems, items) => {
-      return createdItems.includes(value) ? { intent: 'danger', minimal: true } : undefined
+      const isItemNewlyCreated = createdItems.includes(value) || !items.includes(value)
+      const isExpression = isItemNewlyCreated && value.startsWith('${') && value.endsWith('}')
+
+      return isExpression
+        ? { intent: 'none', minimal: true }
+        : isItemNewlyCreated
+        ? { intent: 'danger', minimal: true }
+        : { intent: 'primary', minimal: true }
     }}
     items={[
       'The Shawshank Redemption',

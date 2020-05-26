@@ -39,6 +39,9 @@ export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'it
   /** Callback when a new item is created (`allowNewTag` must be true) */
   onNewItemCreated?: (newItem: T, selectedItems: T[], createdItems: T[], items: T[]) => void
 
+  /** If true, newly created items will be shown in items list. Default to false. */
+  showNewlyCreatedItemsInList?: boolean
+
   /** Whenever there is an interaction (add/remove event), onChange will be called */
   onChange?: (selectedItems: T[], createdItems: T[], items: T[]) => void
 
@@ -89,6 +92,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     allowNewTag,
     itemFromNewTag,
     onNewItemCreated,
+    showNewlyCreatedItemsInList,
     getTagProps,
     onChange,
     showClearAllButton,
@@ -220,7 +224,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     <LocalMultiSelect
       className={css.tagInput}
       items={items
-        .concat(createdItems)
+        .concat(showNewlyCreatedItemsInList ? createdItems : [])
         .sort((a, b) => (labelFor(a).toLocaleLowerCase() < labelFor(b).toLocaleLowerCase() ? -1 : 1))}
       selectedItems={renderedSelectedItems}
       itemRenderer={(item: T, itemProps: IItemRendererProps) => {
