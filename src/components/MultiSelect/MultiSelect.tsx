@@ -27,7 +27,6 @@ export interface MultiSelectProps
     | 'query'
     | 'items'
     | 'tagRenderer'
-    | 'tagInputProps'
     | 'activeItem'
     | 'onActiveItemChange'
   > {
@@ -172,7 +171,9 @@ export function MultiSelect(props: MultiSelectProps) {
       itemsEqual={(a, b) => a.value === b.value}
       {...rest}
       tagInputProps={{
+        ...props.tagInputProps,
         inputProps: {
+          ...props.tagInputProps?.inputProps,
           onChange: handleQueryChange
         },
         tagProps: value => {

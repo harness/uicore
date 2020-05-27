@@ -1,0 +1,80 @@
+@define-mixin intent {
+  &.bp3-intent-primary {
+    --bp3-intent-color: var(--blue-500);
+  }
+
+  &.bp3-intent-success {
+    --bp3-intent-color: var(--green-500);
+  }
+
+  &.bp3-intent-warning {
+    --bp3-intent-color: var(--yellow-500);
+  }
+
+  &.bp3-intent-danger {
+    --bp3-intent-color: var(--red-500);
+  }
+}
+
+.main {
+  :global {
+    .bp3-form-group {
+      @mixin intent;
+
+      .bp3-form-helper-text {
+        color: var(--bp3-intent-color, var(--grey-500)) !important;
+      }
+      .bp3-input,
+      .bp3-file-upload-input {
+        box-shadow: none !important;
+        border: 1px solid var(--bp3-intent-color, #dddddd) !important;
+      }
+    }
+
+    .bp3-label {
+      color: var(--grey-500);
+      font-size: 13px;
+    }
+
+    .bp3-input {
+      height: 38px;
+      border-radius: 5px;
+    }
+
+    .bp3-file-input {
+      height: 38px;
+    }
+
+    textarea.bp3-input {
+      height: 56px;
+    }
+
+    .bp3-file-upload-input {
+      height: 38px;
+      border-radius: 5px;
+      box-shadow: none;
+      border: 1px solid #dddddd;
+      line-height: 36px;
+      &:after {
+        line-height: 28px;
+        border: 1px solid var(--grey-350);
+        box-shadow: none;
+        background-image: none;
+        color: var(--grey-600);
+        background-color: var(--white);
+      }
+    }
+    .bp3-input-ghost {
+      font-size: 14px;
+      line-height: 22px;
+      padding-top: 2px;
+    }
+
+    .bp3-tag-input .bp3-tag {
+      height: 22px;
+      line-height: 22px;
+      font-size: 14px;
+      margin-top: 3px;
+    }
+  }
+}

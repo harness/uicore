@@ -163,6 +163,10 @@ export default [
     name: 'Form Components',
     items: [
       {
+        label: 'FormikForm',
+        url: '/formik-form'
+      },
+      {
         label: 'Label',
         url: '/label'
       },

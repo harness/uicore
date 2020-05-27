@@ -1,0 +1,181 @@
+# FormikForm --- docs/pages/formik-form.mdx
+
+
+```js
+import { Formik, FormikForm, FormInput } from '@wings-software/uikit'
+```
+
+
+## Supported Form Elements
+
+* Text Box
+* TextArea
+* CheckBox
+* RadioGroup
+* Select
+* MultiSelect
+* File Input
+* TagInput
+* Custom
+
+
+## Example with form validation
+
+Try submitting the form
+
+```js live=true
+<Formik 
+    initialValues={{firstName:'', lastName: '', description: ''}}
+    onSubmit={(values) => alert(JSON.stringify(values))}
+    validationSchema={
+        Yup.object().shape({
+            firstName: Yup.string()
+                .trim()
+                .required('First Name is required field'),
+            
+            color: Yup.string()
+                .trim()
+                .required('Color is required field'),
+
+            specialPerson: Yup.boolean()
+                .required('VVIP is required field'),
+
+            colorMulti: Yup.array()
+                .ensure()
+                .compact()
+                .min(1, 'Color Multi is required field'),
+                
+            picture: Yup.string()
+                .trim()
+                .required('Picture is required field'),
+                
+            description: Yup.string()
+                .trim()
+                .required('Description is required field')
+})} >
+    <FormikForm>
+        <FormInput.Text name="firstName" label="First Name" />
+        <FormInput.Text name="lastName" label="Last Name" />
+        <FormInput.CheckBox name="specialPerson" label="VVIP" defaultIndeterminate={true}/>
+        <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select"/>
+        <FormInput.RadioGroup name="eventType" label="Event Type" items={[{label: 'Public', value: 'public'}, {label: 'Private', value: 'private'}]} />
+        <FormInput.Select name="color" label="Color" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
+        <FormInput.MultiSelect name="colorMulti" label="Color Multi" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
+        <FormInput.TextArea name="description" label="Description" />
+        <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>
+</Formik>
+```
+
+
+## Tag Input
+
+This is uses [TagInput](/simple-tag-input)
+
+
+```js
+interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+  name: string
+  items: T[]
+  labelFor: UiKitTagInputProps<T>['labelFor']
+  itemFromNewTag: UiKitTagInputProps<T>['itemFromNewTag']
+  tagInputProps: Omit<
+    UiKitTagInputProps<T>,
+    'labelFor' | 'keyOf' | 'itemFromNewTag' | 'items' | 'onChange' | 'selectedItems'
+  >
+  onChange?: UiKitTagInputProps<T>['onChange']
+}
+```
+
+
+
+```js live=true
+<Formik
+    initialValues={{tags: ['12 Angry Men']}}
+    onSubmit={(values) => alert(JSON.stringify(values))}
+    render={(formik) => 
+    <FormikForm>
+        <FormInput.TagInput
+          name="tags"
+          label="Add Tag"
+          items={[
+            'The Godfather',
+            'The Godfather: Part II',
+            'The Dark Knight',
+            '12 Angry Men',
+            "Schindler's List",
+            'Special'
+          ]}
+          labelFor={(name) => name}
+          itemFromNewTag={newTag => newTag}
+          tagInputProps={{
+            noInputBorder: true,
+            openOnKeyDown: false,
+            showAddTagButton: true,
+            showClearAllButton: true,
+            allowNewTag: true,
+            placeholder: 'Enter tags...',
+            getTagProps: (value, _index, _selectedItems, createdItems) => {
+              return createdItems.includes(value)
+                ? { intent: 'danger', minimal: true }
+                : { intent: 'primary', minimal: true }
+            }
+          }}
+        />
+        <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>}
+/>
+
+```
+
+
+## Custom Render
+
+This is used to make custom formik component, you need to pass custom element in the render method.
+
+
+```js
+interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  value: any
+  render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
+  formik: FormikExtended<any>
+}
+```
+
+
+
+```js live=true
+<Formik
+    initialValues={{counter: 0}}
+    onSubmit={(values) => alert(JSON.stringify(values))}
+    render={(formik) => 
+    <FormikForm>
+        <div>
+            <b>Counter: </b> {formik.values.counter}
+        </div>
+        <FormInput.CustomRender name="counter" label="Increment" render={(formik) => <Button text="Click Me" onClick={() => formik.setFieldValue('counter' , formik.values.counter + 1)}/>}/>
+        <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>}
+/>
+
+```
+
+
+## Disable/Inline All Fields
+
+Pass Props to FormikForm for that and that will pass to all input components
+
+
+```js live=true
+<Formik
+    initialValues={{name: 'Mks'}}
+    onSubmit={(values) => alert(JSON.stringify(values))}
+    render={(formik) => 
+    <FormikForm disabled>
+        <FormInput.Text name="name" label="Name" />
+        <Button disabled intent="primary" type="Submit" text="Submit" />
+    </FormikForm>}
+/>
+
+```

@@ -2,6 +2,7 @@ import React from 'react'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 import * as scope from '../static/index'
+import * as Yup from 'yup'
 import CodeTheme from './CodeTheme'
 import { mdx } from '@mdx-js/react'
 import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
@@ -11,7 +12,7 @@ export default ({ children, live, FCLive, render }) => {
     theme: CodeTheme,
     code: children.trim(),
     transformCode: (code: string) => '/** @jsx mdx */\n<>' + code + '\n</>',
-    scope: { ...scope, BlueprintIconNames, mdx }
+    scope: { ...scope, BlueprintIconNames, mdx, Yup }
   }
 
   if (live) {
