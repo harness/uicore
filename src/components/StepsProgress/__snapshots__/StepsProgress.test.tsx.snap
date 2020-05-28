@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Steps Progress Component should render with default steps 1`] = `
+<div>
+  <div
+    class="vertical layout-spacing-large main stepsProgress spacing spacing-large"
+    id="steps-progress"
+  >
+    <div
+      class="progressBar"
+    >
+      <div
+        class="bp3-progress-bar bp3-intent-danger bp3-no-stripes progressHeight"
+      >
+        <div
+          class="bp3-progress-meter"
+          style="width: 75%;"
+        />
+      </div>
+    </div>
+    <div
+      class="vertical layout-spacing-large main spacing spacing-large"
+    >
+      <div>
+        <span
+          class="font main inline inline-true style style-fontWeight style-fontWeight-bold"
+          style="font-weight: bold; display: inline-flex; justify-content: center; align-items: center;"
+        >
+          <span
+            class="bp3-icon bp3-icon-tick main padding padding-right padding-right-xsmall color color-green500"
+            icon="tick"
+          >
+            <svg
+              data-icon="tick"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <desc>
+                tick
+              </desc>
+              <path
+                d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          Checking Delegate
+        </span>
+      </div>
+      <div>
+        <span
+          class="font main inline inline-true style style-fontWeight style-fontWeight-bold"
+          style="font-weight: bold; display: inline-flex; justify-content: center; align-items: center;"
+        >
+          <span
+            class="bp3-icon bp3-icon-tick main padding padding-right padding-right-xsmall color color-green500"
+            icon="tick"
+          >
+            <svg
+              data-icon="tick"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <desc>
+                tick
+              </desc>
+              <path
+                d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          Establising Connection with the Delegate and Kubernetes
+        </span>
+      </div>
+      <div>
+        <span
+          class="font main inline inline-true style style-fontWeight style-fontWeight-"
+          style="display: inline-flex; justify-content: center; align-items: center;"
+        >
+          <span
+            class="bp3-icon bp3-icon-cross main padding padding-right padding-right-xsmall color color-red500"
+            icon="cross"
+          >
+            <svg
+              data-icon="cross"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <desc>
+                cross
+              </desc>
+              <path
+                d="M9.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          Checking for heartbeat
+        </span>
+      </div>
+      <div>
+        <span
+          class="font main inline inline-true style style-fontWeight style-fontWeight-normal"
+          style="font-weight: normal; display: inline-flex; justify-content: center; align-items: center;"
+        >
+          <span
+            class="bp3-icon bp3-icon-blank main padding padding-right padding-right-xsmall color color-yellow500"
+            icon="blank"
+          >
+            <svg
+              data-icon="blank"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <desc>
+                blank
+              </desc>
+            </svg>
+          </span>
+          Verifying Connection
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

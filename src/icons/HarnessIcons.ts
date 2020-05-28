@@ -193,6 +193,7 @@ import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
+import StepsSpinner from './steps-spinner.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
 import SupportCode from './support-code.svg'
@@ -406,6 +407,7 @@ type HarnessIconName =
   | 'service-terraform'
   | 'setup-api'
   | 'setup-tags'
+  | 'steps-spinner'
   | 'support-account'
   | 'support-api'
   | 'support-code'
@@ -619,6 +621,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-terraform': ServiceTerraform,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
+  'steps-spinner': StepsSpinner,
   'support-account': SupportAccount,
   'support-api': SupportApi,
   'support-code': SupportCode,

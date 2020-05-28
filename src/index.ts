@@ -72,3 +72,4 @@ export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeS
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
 export { Table, TableProps } from './components/Table/Table'
 export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikForm'
+export { StepsProgress } from './components/StepsProgress/StepsProgress'
