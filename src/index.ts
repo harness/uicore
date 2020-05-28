@@ -67,6 +67,7 @@ export {
   SelectWithSubviewContext
 } from './components/SelectWithSubview/SelectWithSubview'
 export { SparkChart } from './components/SparkChart/SparkChart'
+export { useModalHook, ModalProvider, ModalContext } from './components/Modal'
 export { ModalExample } from './components/ModalExample/ModalExample'
 export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeSeriesChart'
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'

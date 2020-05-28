@@ -36,7 +36,7 @@ const isFunctionalComponent = (Component: React.FunctionComponent) => {
 /**
  * React hook for showing modal windows
  */
-export const useModal = (component: ModalType, inputs: any[] = []): [ShowModal, HideModal] => {
+export const useModalHook = (component: ModalType, inputs: any[] = []): [ShowModal, HideModal] => {
   if (!isFunctionalComponent(component)) {
     throw new Error(
       'Only stateless components can be used as an argument to useModal. You have probably passed a class component where a function was expected.'

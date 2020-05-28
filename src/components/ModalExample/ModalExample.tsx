@@ -1,6 +1,6 @@
 import React from 'react'
 import { ModalProvider } from '../Modal'
-import { useModal } from '../Modal'
+import { useModalHook } from '../Modal'
 import { Button } from '../Button/Button'
 import { Dialog, Classes, IDialogProps } from '@blueprintjs/core'
 
@@ -29,10 +29,12 @@ const ExampleModal = () => {
     style: { width: 600, height: 400 }
   }
 
-  const [openLightModal, hideLightModal] = useModal(() => (
+  const [openLightModal, hideLightModal] = useModalHook(() => (
     <Dialog onClose={hideLightModal} {...modalPropsLight}></Dialog>
   ))
-  const [openDarkModal, hideDarkModal] = useModal(() => <Dialog onClose={hideDarkModal} {...modalPropsDark}></Dialog>)
+  const [openDarkModal, hideDarkModal] = useModalHook(() => (
+    <Dialog onClose={hideDarkModal} {...modalPropsDark}></Dialog>
+  ))
 
   return (
     <React.Fragment>
