@@ -129,17 +129,16 @@ export function Link(props: LinkProps) {
 
   if (props.withoutHref) {
     extra.href = '#'
+    extra.onClick = event => {
+      Utils.stopEvent(event)
+      props.onClick?.(event)
+    }
+    extra.elementRef = element => {
+      if (props.withoutHref && element) {
+        element.href = 'javascript:void()'
+      }
+    }
   }
 
-  return (
-    <Button
-      {...props}
-      {...extra}
-      elementRef={element => {
-        if (props.withoutHref && element) {
-          element.href = 'javascript:void()'
-        }
-      }}
-    />
-  )
+  return <Button {...props} {...extra} />
 }
