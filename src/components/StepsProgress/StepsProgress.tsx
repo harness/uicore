@@ -76,7 +76,7 @@ export function StepsProgress(props: StepsProgressProps) {
       <Layout.Vertical spacing={Spacing.LARGE}>
         {stepsWithStatus && stepsWithStatus.length ? (
           stepsWithStatus.map(step => (
-            <div>
+            <div key={step.label}>
               <Text
                 inline
                 icon={step.stepStatus}
