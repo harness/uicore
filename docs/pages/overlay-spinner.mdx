@@ -1,0 +1,31 @@
+# OverlaySpinner --- docs/pages/overlay-spinner.mdx
+
+Adds [Blueprint spinner](https://blueprintjs.com/docs/#core/components/spinner) to the overlay and blocks the user interaction
+
+## Import
+```js
+import { OverlaySpinner } from '@wings-software/uikit'
+```
+
+## Interface
+```js
+export interface OverlaySpinnerProps extends ISpinnerProps {
+  show: boolean
+  children: React.ReactNode
+}
+```
+
+## Example
+
+```js live=true
+<OverlaySpinner show={true}>
+    <Layout.Vertical id="text-font-size">
+        <Text>The quick brown fox jumps over the lazy dog</Text>
+
+        <Text font="small">The quick brown fox jumps over the lazy dog</Text>
+        <Text font="normal">The quick brown fox jumps over the lazy dog</Text>
+        <Text font="medium">The quick brown fox jumps over the lazy dog</Text>
+        <Text font="large">The quick brown fox jumps over the lazy dog</Text>
+    </Layout.Vertical>
+</OverlaySpinner>
+```

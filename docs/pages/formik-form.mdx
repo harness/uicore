@@ -8,16 +8,181 @@ import { Formik, FormikForm, FormInput } from '@wings-software/uikit'
 
 ## Supported Form Elements
 
-* Text Box
-* TextArea
-* CheckBox
-* RadioGroup
-* Select
-* MultiSelect
-* File Input
-* TagInput
-* Custom
+### Text Box
+Shared Blueprint Props:
+* [IFormGroupProps](https://blueprintjs.com/docs/#core/components/form-group)
+* [IInputGroupProps](https://blueprintjs.com/docs/#core/components/text-inputs.input-group)
 
+```js
+interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  inputGroup?: Omit<IInputGroupProps, 'name' | 'value' | 'onChange' | 'placeholder'>
+  placeholder?: string
+  onChange?: IInputGroupProps['onChange']
+}
+```
+
+### TextArea
+Shared Blueprint Props:
+* [ITextAreaProps](https://blueprintjs.com/docs/#core/components/text-inputs.text-area)
+
+```js
+interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  placeholder?: string
+  textArea?: Omit<ITextAreaProps, 'name' | 'value' | 'onChange'>
+  onChange?: ITextAreaProps['onChange']
+}
+```
+### CheckBox
+[CheckboxProps](/checkbox)
+```js
+interface CheckboxProps extends CheckboxProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+  name: string
+  label: string
+}
+```
+### RadioGroup
+Shared Blueprint Props:
+* [IRadioGroupProps || IOptionProps](https://blueprintjs.com/docs/#core/components/radio.radiogroup)
+
+```js
+interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  items: IOptionProps[]
+  radioGroup?: Omit<IRadioGroupProps, 'name' | 'value' | 'onChange' | 'options'>
+  onChange?: IRadioGroupProps['onChange']
+}
+```
+### Select
+[SelectProps](/select)
+```js
+interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  items: SelectOption[]
+  placeholder?: string
+  inputGroup?: Omit<IInputGroupProps, 'name' | 'value'>
+  selectProps?: Omit<SelectProps, 'items' | 'onChange' | 'value'>
+  onChange?: SelectProps['onChange']
+}
+```
+### MultiSelect
+[MultiSelectProps || MultiSelectOption](/multiselect)
+```js
+interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  items: MultiSelectOption[]
+  tagInputProps?: ITagInputProps
+  placeholder?: string
+  multiSelectProps?: Omit<MultiSelectProps, 'items' | 'onChange' | 'value' | 'tagInputProps'>
+  onChange?: MultiSelectProps['onChange']
+}
+```
+### File Input
+[FileInputProps](https://blueprintjs.com/docs/#core/components/file-input)
+```js
+interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  fileInput?: Omit<IFileInputProps, 'inputProps' | 'text' | 'buttonText'>
+  placeholder?: string
+  buttonText?: string
+  onChange?: React.FormEventHandler<HTMLInputElement>
+}
+```
+### TagInput
+[TagInputProps](/simple-tag-input)
+```js
+interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+  name: string
+  items: T[]
+  labelFor: TagInputProps<T>['labelFor']
+  itemFromNewTag: TagInputProps<T>['itemFromNewTag']
+  tagInputProps: Omit<
+    TagInputProps<T>,
+    'labelFor' | 'keyOf' | 'itemFromNewTag' | 'items' | 'onChange' | 'selectedItems'
+  >
+  onChange?: TagInputProps<T>['onChange']
+}
+```
+### Custom
+```js
+interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
+}
+```
+
+
+## Formik Props
+
+```js
+interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit'> {
+    formLoading?: true
+    onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<any>
+    render?: ((props: FormikProps<Values>) => React.ReactNode);
+    children?: ((props: FormikProps<Values>) => React.ReactNode) | React.ReactNode;
+    initialValues: Values;
+    initialStatus?: any;
+    onReset?: (values: Values, formikActions: FormikActions<Values>) => void;
+    validationSchema?: any | (() => any);
+    validate?: ((values: Values) => void | object | Promise<FormikErrors<Values>>);
+}
+```
+
+```js live=true
+<Formik 
+    initialValues={{firstName:'', lastName: '', description: ''}}
+    onSubmit={(values) => new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(JSON.stringify(values));
+            resolve(values);
+        }, 5000)
+    })}
+    validationSchema={
+        Yup.object().shape({
+            firstName: Yup.string()
+                .trim()
+                .required('First Name is required field'),
+            
+            description: Yup.string()
+                .trim()
+                .required('Description is required field')
+})} >
+    <FormikForm>
+        <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
+        <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name"  />
+        <FormInput.TextArea name="description" label="Description" />
+        <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>
+</Formik>
+```
+
+
+## FormikForm Props
+
+```js
+interface FormikFormProps extends Omit<HTMLFormElement, 'className'> {
+  className?: string
+  disabled?: boolean
+  children: React.ReactNode
+  formik?: FormikExtended<any>
+}
+```
+
+Pass Props to FormikForm for that and that will pass to all input components
+
+```js live=true
+<Formik
+    initialValues={{name: 'Mks'}}
+    onSubmit={(values) => alert(JSON.stringify(values))}
+    render={(formik) => 
+    <FormikForm disabled>
+        <FormInput.Text name="name" label="Name" />
+        <Button disabled intent="primary" type="Submit" text="Submit" />
+    </FormikForm>}
+/>
+
+```
 
 ## Example with form validation
 
@@ -54,13 +219,13 @@ Try submitting the form
                 .required('Description is required field')
 })} >
     <FormikForm>
-        <FormInput.Text name="firstName" label="First Name" />
-        <FormInput.Text name="lastName" label="Last Name" />
+        <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
+        <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name"  />
         <FormInput.CheckBox name="specialPerson" label="VVIP" defaultIndeterminate={true}/>
         <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select"/>
         <FormInput.RadioGroup name="eventType" label="Event Type" items={[{label: 'Public', value: 'public'}, {label: 'Private', value: 'private'}]} />
-        <FormInput.Select name="color" label="Color" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
-        <FormInput.MultiSelect name="colorMulti" label="Color Multi" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
+        <FormInput.Select name="color" label="Color" placeholder="Select Color" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
+        <FormInput.MultiSelect name="colorMulti" label="Color Multi" placeholder="Select Multiple Colors" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
         <FormInput.TextArea name="description" label="Description" />
         <Button intent="primary" type="Submit" text="Submit" />
     </FormikForm>
@@ -161,21 +326,3 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
 
 ```
 
-
-## Disable/Inline All Fields
-
-Pass Props to FormikForm for that and that will pass to all input components
-
-
-```js live=true
-<Formik
-    initialValues={{name: 'Mks'}}
-    onSubmit={(values) => alert(JSON.stringify(values))}
-    render={(formik) => 
-    <FormikForm disabled>
-        <FormInput.Text name="name" label="Name" />
-        <Button disabled intent="primary" type="Submit" text="Submit" />
-    </FormikForm>}
-/>
-
-```

@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik } from 'formik'
+import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
   MultiSelect as UiKitMultiSelect,
@@ -28,6 +28,7 @@ import {
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
+import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 
@@ -41,7 +42,7 @@ interface FormikExtended<T> extends FormikContext<T> {
   inline?: boolean
 }
 
-interface FormikProps<T> {
+interface FormikContenxtProps<T> {
   formik?: FormikExtended<T>
 }
 
@@ -57,7 +58,7 @@ interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   onChange?: UiKitTagInputProps<T>['onChange']
 }
 
-function TagInput<T>(props: TagInputProps<T> & FormikProps<any>) {
+function TagInput<T>(props: TagInputProps<T> & FormikContenxtProps<any>) {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -98,7 +99,7 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
   render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
 }
 
-const CustomRender = (props: CustomRenderProps & FormikProps<any>) => {
+const CustomRender = (props: CustomRenderProps & FormikContenxtProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -126,7 +127,7 @@ interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: React.FormEventHandler<HTMLInputElement>
 }
 
-const FileInput = (props: FileInputProps & FormikProps<any>) => {
+const FileInput = (props: FileInputProps & FormikContenxtProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -169,7 +170,7 @@ interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: IRadioGroupProps['onChange']
 }
 
-const RadioGroup = (props: RadioGroupProps & FormikProps<any>) => {
+const RadioGroup = (props: RadioGroupProps & FormikContenxtProps<any>) => {
   const { formik, name } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -203,10 +204,11 @@ const RadioGroup = (props: RadioGroupProps & FormikProps<any>) => {
 
 interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
   name: string
+  label: string
 }
 
-const CheckBox = (props: CheckboxProps & FormikProps<any>) => {
-  const { formik, name, ...restProps } = props
+const CheckBox = (props: CheckboxProps & FormikContenxtProps<any>) => {
+  const { formik, name, label, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -223,6 +225,7 @@ const CheckBox = (props: CheckboxProps & FormikProps<any>) => {
         {...rest}
         className={cx(checkBoxCss.checkbox, className)}
         name={name}
+        label={label}
         inline={inline}
         disabled={disabled}
         value={formik?.values?.[props.name as any]}
@@ -239,11 +242,12 @@ interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   items: MultiSelectOption[]
   tagInputProps?: ITagInputProps
+  placeholder?: string
   multiSelectProps?: Omit<UiKitMultiSelectProps, 'items' | 'onChange' | 'value' | 'tagInputProps'>
   onChange?: UiKitMultiSelectProps['onChange']
 }
 
-const MultiSelect = (props: MultiSelectProps & FormikProps<any>) => {
+const MultiSelect = (props: MultiSelectProps & FormikContenxtProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -253,6 +257,7 @@ const MultiSelect = (props: MultiSelectProps & FormikProps<any>) => {
     items,
     inline = formik?.inline,
     tagInputProps,
+    placeholder,
     multiSelectProps,
     onChange,
     ...rest
@@ -265,6 +270,7 @@ const MultiSelect = (props: MultiSelectProps & FormikProps<any>) => {
           ...tagInputProps,
           inputProps: {
             name,
+            placeholder,
             onBlur: () => formik?.setFieldTouched(name)
           },
           intent,
@@ -285,12 +291,13 @@ const MultiSelect = (props: MultiSelectProps & FormikProps<any>) => {
 interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   items: SelectOption[]
+  placeholder?: string
   inputGroup?: Omit<IInputGroupProps, 'name' | 'value'>
   selectProps?: Omit<UiKitSelectProps, 'items' | 'onChange' | 'value'>
   onChange?: UiKitSelectProps['onChange']
 }
 
-const Select = (props: SelectProps & FormikProps<any>) => {
+const Select = (props: SelectProps & FormikContenxtProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -298,6 +305,7 @@ const Select = (props: SelectProps & FormikProps<any>) => {
     helperText = hasError ? formik?.errors?.[name] : null,
     disabled = formik?.disabled,
     items,
+    placeholder,
     inline = formik?.inline,
     inputGroup,
     selectProps,
@@ -312,6 +320,7 @@ const Select = (props: SelectProps & FormikProps<any>) => {
           ...inputGroup,
           name,
           intent,
+          placeholder,
           disabled: disabled,
           onBlur: () => formik?.setFieldTouched(name)
         }}
@@ -330,11 +339,12 @@ const Select = (props: SelectProps & FormikProps<any>) => {
 
 interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
-  inputGroup?: Omit<IInputGroupProps, 'name' | 'value' | 'onChange'>
+  inputGroup?: Omit<IInputGroupProps, 'name' | 'value' | 'onChange' | 'placeholder'>
+  placeholder?: string
   onChange?: IInputGroupProps['onChange']
 }
 
-const Text = (props: TextProps & FormikProps<any>) => {
+const Text = (props: TextProps & FormikContenxtProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -343,6 +353,7 @@ const Text = (props: TextProps & FormikProps<any>) => {
     disabled = formik?.disabled,
     inline = formik?.inline,
     inputGroup,
+    placeholder,
     onChange,
     ...rest
   } = restProps
@@ -351,6 +362,7 @@ const Text = (props: TextProps & FormikProps<any>) => {
       <InputGroup
         {...inputGroup}
         name={name}
+        placeholder={placeholder}
         intent={intent}
         disabled={disabled}
         value={formik?.values?.[props.name as any]}
@@ -366,11 +378,12 @@ const Text = (props: TextProps & FormikProps<any>) => {
 
 interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
+  placeholder?: string
   textArea?: Omit<ITextAreaProps, 'name' | 'value' | 'onChange'>
   onChange?: ITextAreaProps['onChange']
 }
 
-const TextArea = (props: TextAreaProps & FormikProps<any>) => {
+const TextArea = (props: TextAreaProps & FormikContenxtProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -378,6 +391,7 @@ const TextArea = (props: TextAreaProps & FormikProps<any>) => {
     helperText = hasError ? formik?.errors[name] : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
+    placeholder,
     textArea,
     onChange,
     ...rest
@@ -391,6 +405,7 @@ const TextArea = (props: TextAreaProps & FormikProps<any>) => {
         name={name}
         intent={intent}
         disabled={disabled}
+        placeholder={placeholder}
         onBlur={() => formik?.setFieldTouched(name)}
         value={formik?.values[props.name]}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -406,11 +421,22 @@ interface FormikFormProps extends Omit<HTMLFormElement, 'className'> {
   className?: string
   disabled?: boolean
   children: React.ReactNode
-  formLoading?: true
   formik?: FormikExtended<any>
 }
 
 const Form = (props: FormikFormProps) => {
+  const formElementRef = React.useRef<HTMLDivElement>(null)
+  React.useLayoutEffect(() => {
+    if (formElementRef?.current?.childElementCount) {
+      const formGroupElements = formElementRef?.current?.querySelectorAll('.bp3-form-group')
+      formGroupElements?.forEach((element, index) => {
+        const name =
+          element.querySelector('[name]')?.getAttribute('name') ||
+          element.querySelector('.bp3-label')?.getAttribute('for')
+        element.setAttribute('data-id', `${name}-${index}`)
+      })
+    }
+  }, [formElementRef])
   const { className = '', disabled = false, inline = false, children, formik, ...rest } = props
   if (formik) {
     formik.disabled = disabled
@@ -418,8 +444,53 @@ const Form = (props: FormikFormProps) => {
   }
   return (
     <FrmForm {...rest} className={cx(css.main, className)}>
-      {children}
+      <div ref={formElementRef}>{children}</div>
     </FrmForm>
+  )
+}
+
+interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
+  formLoading?: true
+  render?: (props: FormikExtended<Values>) => React.ReactNode
+  onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
+}
+
+export const Formik = <Values extends object>(props: FormikProps<Values>) => {
+  const { formLoading = false, onSubmit, render, ...rest } = props
+  const [isFormLoading, setFormLoading] = React.useState(false)
+  React.useEffect(() => {
+    setFormLoading(formLoading)
+  }, [formLoading])
+
+  const onSubmitLocal = React.useCallback(
+    (values: Values, formikActions: FormikActions<Values>) => {
+      const response = onSubmit(values, formikActions)
+      if (response instanceof Promise) {
+        setFormLoading(true)
+        response.finally(() => {
+          setFormLoading(false)
+        })
+      }
+    },
+    [onSubmit]
+  )
+
+  const renderLocal = React.useCallback(
+    (formik: FormikExtended<any>) => {
+      return <OverlaySpinner show={isFormLoading}>{render?.(formik)}</OverlaySpinner>
+    },
+    [render, isFormLoading]
+  )
+  let renderProps: { render?: any } = {}
+  if (render) {
+    renderProps = {
+      render: renderLocal
+    }
+  }
+  return (
+    <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
+      {!render && <OverlaySpinner show={isFormLoading}>{props.children}</OverlaySpinner>}
+    </FrmFormik>
   )
 }
 
@@ -436,4 +507,3 @@ export const FormInput = {
 }
 
 export const FormikForm = connect(Form)
-export const Formik = FrmFormik

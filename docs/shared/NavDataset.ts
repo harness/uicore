@@ -49,6 +49,10 @@ export default [
         url: '/heading'
       },
       {
+        label: 'OverlaySpinner',
+        url: '/overlay-spinner'
+      },
+      {
         label: 'Text',
         url: '/text'
       },
