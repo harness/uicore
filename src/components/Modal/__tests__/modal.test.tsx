@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { render, fireEvent, RenderOptions } from '@testing-library/react'
 
 import { ModalProvider } from '../ModalProvider'
-import { useModal } from '../useModal'
+import { useModalHook } from '../useModalHook'
 
 // Helper to render components in modal context
 const renderWithProvider = (ui: React.ReactElement, options?: Omit<RenderOptions, 'queries'>) => {
@@ -20,7 +20,7 @@ const renderWithProvider = (ui: React.ReactElement, options?: Omit<RenderOptions
 
 describe('simple usage', () => {
   const App = () => {
-    const [showModal, hideModal] = useModal(() => (
+    const [showModal, hideModal] = useModalHook(() => (
       <div>
         <p>Modal content</p>
         <button onClick={hideModal}>Hide modal</button>
@@ -66,7 +66,7 @@ describe('simple usage', () => {
 describe('updating modal', () => {
   test('should work with internal state', () => {
     const App = () => {
-      const [showModal] = useModal(() => {
+      const [showModal] = useModalHook(() => {
         const [count, setCount] = useState(0)
 
         return (
@@ -94,7 +94,7 @@ describe('updating modal', () => {
   test('should work with external state', () => {
     const App = () => {
       const [count, setCount] = useState(0)
-      const [showModal] = useModal(
+      const [showModal] = useModalHook(
         () => (
           <div>
             <span>The count is {count}</span>
@@ -133,7 +133,7 @@ describe('updating modal', () => {
 
     const App = () => {
       const [count, setCount] = useState(0)
-      const [showModal] = useModal(
+      const [showModal] = useModalHook(
         () => (
           <div>
             <MountSpy />
@@ -160,8 +160,8 @@ describe('updating modal', () => {
 describe('multiple modals', () => {
   test('should show multiple modals at the same time', () => {
     const App = () => {
-      const [showFirstModal] = useModal(() => <div>First modal content</div>)
-      const [showSecondModal] = useModal(() => <div>Second modal content</div>)
+      const [showFirstModal] = useModalHook(() => <div>First modal content</div>)
+      const [showSecondModal] = useModalHook(() => <div>Second modal content</div>)
 
       return (
         <div>
@@ -183,7 +183,7 @@ describe('multiple modals', () => {
 
 describe('calling useModal without ModalProvider', () => {
   const App = () => {
-    useModal(() => <div>Modal content</div>)
+    useModalHook(() => <div>Modal content</div>)
 
     return null
   }
@@ -210,7 +210,7 @@ describe('calling useModal with class component', () => {
   }
 
   const App = () => {
-    useModal(Modal as any)
+    useModalHook(Modal as any)
 
     return null
   }
