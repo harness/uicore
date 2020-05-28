@@ -5,7 +5,7 @@ import { useTable, Column, Row } from 'react-table'
 export interface TableProps<T extends object> {
   columns: Array<Column<T>>
   data: T[]
-  renderCustomRow?: (row: Row<T>) => HTMLTableRowElement
+  renderCustomRow?: (row: Row<T>) => JSX.Element
   className?: string
   bpTableProps: IHTMLTableProps
 }
