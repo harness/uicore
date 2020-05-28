@@ -1,16 +1,17 @@
 import React from 'react'
 import { HTMLTable, IHTMLTableProps } from '@blueprintjs/core'
-import { useTable, Column } from 'react-table'
+import { useTable, Column, Row } from 'react-table'
 
 export interface TableProps<T extends object> {
   columns: Array<Column<T>>
   data: T[]
+  renderCustomRow?: (row: Row<T>) => HTMLTableRowElement
   className?: string
   bpTableProps: IHTMLTableProps
 }
 
 export function Table<T extends object>(props: TableProps<T>): React.ReactElement {
-  const { bpTableProps, className } = props
+  const { bpTableProps, className, renderCustomRow } = props
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable<T>({
     columns: props.columns || [],
     data: props.data || []
@@ -38,6 +39,9 @@ export function Table<T extends object>(props: TableProps<T>): React.ReactElemen
       <tbody {...getTableBodyProps()}>
         {rows.map(row => {
           prepareRow(row)
+          if (renderCustomRow) {
+            return renderCustomRow(row)
+          }
           const { key, ...otherProps } = row.getRowProps()
           return (
             <tr key={key} {...otherProps}>
