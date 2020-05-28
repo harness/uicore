@@ -25,8 +25,8 @@ import { Link } from '@wings-software/uikit'
   <Link disabled href="/link">
     Disabled Link
   </Link>
-  <Link href="javascript:void()" onClick={() => alert('Click')}>
-    Link acts as button
+  <Link withoutHref onClick={() => alert('Click')}>
+    Link (without Href - Act like a Button)
   </Link>
 </Layout.Horizontal>
 ```

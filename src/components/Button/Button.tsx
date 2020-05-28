@@ -47,6 +47,7 @@ export interface ButtonProps
 
 export interface LinkProps extends ButtonProps {
   active?: boolean
+  withoutHref?: boolean
 }
 
 export function Button(props: ButtonProps) {
@@ -81,7 +82,7 @@ export function Button(props: ButtonProps) {
   // Extra left padding for left icon, for right icon, Blueprint already has proper margin
   const leftIconPadding: PaddingProps | undefined = props.text || props.href ? { right: 'xsmall' } : undefined
   const Tag = (props.href ? 'a' : 'button') as React.ElementType
-  const normalizedProps = omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps', 'noStyling')
+  const normalizedProps = omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps', 'noStyling', 'withoutHref')
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
   ) : (
@@ -126,5 +127,19 @@ export function Link(props: LinkProps) {
     extra.onClick = Utils.stopEvent
   }
 
-  return <Button {...props} {...extra} />
+  if (props.withoutHref) {
+    extra.href = '#'
+  }
+
+  return (
+    <Button
+      {...props}
+      {...extra}
+      elementRef={element => {
+        if (props.withoutHref && element) {
+          element.href = 'javascript:void()'
+        }
+      }}
+    />
+  )
 }
