@@ -6,7 +6,7 @@ The Modal implementation is done using Blueprint JS core dialog along with React
 ## Import 
 
 ```js
-import { useModal, ModalProvider } from '@wings-software/uikit'
+import { useModalHook, ModalProvider } from '@wings-software/uikit'
 import { Dialog, Classes } from '@blueprintjs/core
 ```
 
@@ -21,7 +21,7 @@ Use `ModalProvider` to provide modal context for your application:
 </ModalProvider>
 ```
 
-Call `useModal` with the dialog component of your choice:
+Call `useModalHook` with the dialog component of your choice:
 
 
 ## The current implementation used Default Props `IDialogProps` from Blueprint JS which can be found at 
@@ -56,7 +56,7 @@ export const ExampleModal = () => {
   }
 
 
-  const [openModal, hideModal] = useModal(() => <Dialog onClose={hideModal} {...modalProps}></Dialog>)
+  const [openModal, hideModal] = useModalHook(() => <Dialog onClose={hideModal} {...modalProps}></Dialog>)
 
   return (
     <React.Fragment>
