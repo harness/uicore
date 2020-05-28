@@ -81,6 +81,10 @@ export default [
         url: '/modal-example'
       },
       {
+        label: 'Steps Progress',
+        url: '/steps-progress'
+      },
+      {
         label: 'Tooltip',
         url: '/tooltip'
       },
