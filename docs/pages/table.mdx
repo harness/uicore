@@ -1,5 +1,5 @@
 # Table --- docs/pages/table.mdx
-import {TableExample} from '../shared/TableExample'
+import {TableExample,TableExample2} from '../shared/TableExample'
 
 Table uses react-table underneath to render a table.<br/>
 Link to react-table documentation - https://github.com/tannerlinsley/react-table/<br/>
@@ -55,4 +55,88 @@ const columns = useMemo(
       data={data}
     />
   )
+```
+
+
+## Simple Table Example with custom row renderer
+<TableExample2 />
+
+
+```jsx
+function renderCell(cell, index, setChecked) {
+  if (index === 0) {
+    return <input type="checkbox" onClick={() => setChecked()} />
+  }
+  if (index == 1) {
+    return cell.value
+  }
+
+  return (
+    <Select
+      items={[
+        { value: 'service1_uuid', label: 'service1' },
+        { value: 'service1_uuid', label: 'service2' }
+      ]}
+    />
+  )
+}
+
+function CustomRow(props: Row<{ tier: string, service: string }>) {
+  const { cells, ...otherProps } = props
+  const [isChecked, setChecked] = useState(false)
+
+  return (
+    <tr {...otherProps} style={{ backgroundColor: isChecked ? 'var(--blue-700)' : '' }}>
+      {cells.map((cell, index) => {
+        const { key: cellKey, ...otherCellProps } = cell.getCellProps()
+        return (
+          <td key={cellKey} {...otherCellProps}>
+            {renderCell(cell, index, () => setChecked(!isChecked))}
+          </td>
+        )
+      })}
+    </tr>
+  )
+}
+
+export function TableExample2() {
+  const tableColumns = useMemo(
+    () => [
+      {
+        Header: _ => {
+          return <input type="checkbox" />
+        },
+        accessor: 'tierSelected'
+      },
+      {
+        Header: 'Tier',
+        accessor: 'tier'
+      },
+      {
+        Header: 'Service',
+        accessor: 'service'
+      }
+    ],
+    []
+  )
+  const data = useMemo(
+    () => [
+      { tier: 'Tier1', service: '' },
+      { tier: 'Tier2', service: '' },
+      { tier: 'Tier3', service: '' },
+      { tier: 'Tier4', service: '' },
+      { tier: 'Tier5', service: '' },
+      { tier: 'Tier6', service: '' }
+    ],
+    []
+  )
+  return (
+    <Table
+      columns={tableColumns}
+      bpTableProps={{ bordered: true, condensed: true, striped: true }}
+      data={data}
+      renderCustomRow={row => <CustomRow {...row} />}
+    />
+  )
+}
 ```

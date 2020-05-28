@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.136 - 05/27/20
 
+- `Added` Custom row rendering function for table component.
+
+## 1.0.136 - 05/27/20
+
 - `Changed` Link onClick event to preventDefault() by default.
 
 ## 1.0.135 - 05/27/20
