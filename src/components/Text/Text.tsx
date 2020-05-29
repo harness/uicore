@@ -44,7 +44,6 @@ export function Text(props: TextProps) {
   if (icon || rightIcon) {
     ;(style as any)['display'] = props.inline ? 'inline-flex' : 'flex' // eslint-disable-line
     ;(style as any)['justifyContent'] = 'center' // eslint-disable-line
-    ;(style as any)['alignItems'] = 'center' // eslint-disable-line
   }
 
   useLayoutEffect(() => {
