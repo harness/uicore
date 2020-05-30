@@ -51,10 +51,7 @@ interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   items: T[]
   labelFor: UiKitTagInputProps<T>['labelFor']
   itemFromNewTag: UiKitTagInputProps<T>['itemFromNewTag']
-  tagInputProps: Omit<
-    UiKitTagInputProps<T>,
-    'labelFor' | 'keyOf' | 'itemFromNewTag' | 'items' | 'onChange' | 'selectedItems'
-  >
+  tagInputProps: Omit<UiKitTagInputProps<T>, 'labelFor' | 'keyOf' | 'itemFromNewTag' | 'items' | 'onChange'>
   onChange?: UiKitTagInputProps<T>['onChange']
 }
 
@@ -84,7 +81,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContenxtProps<any>) {
         labelFor={labelFor}
         readonly={disabled}
         items={items}
-        selectedItems={formik?.values?.[props.name] || []}
+        selectedItems={tagInputProps?.selectedItems || formik?.values?.[props.name] || []}
         onChange={(selectedItems: T[], createdItems: T[], items: T[]) => {
           formik?.setFieldValue(name, selectedItems)
           onChange?.(selectedItems, createdItems, items)

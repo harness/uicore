@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.143 - 05/29/20
+
+- `Fixed` formik tag input height issue
+- `Removed` omission of selectedItems prop for tag input
+
 ## 1.0.142 - 05/28/20
 
 - `Removed` useless prop `align-items: center` in Text flex styling with icon decoration.
