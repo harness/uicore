@@ -326,3 +326,21 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
 
 ```
 
+## Not Supported WIP
+
+
+```js live=true
+<Formik
+    initialValues={{counter: 0}}
+    onSubmit={(values) => alert(JSON.stringify(values))} >
+    {(formik) => 
+    <FormikForm>
+        <div>
+            <b>Counter: </b> {formik.values.counter}
+        </div>
+        <FormInput.CustomRender name="counter" label="Increment" render={(formik) => <Button text="Click Me" onClick={() => formik.setFieldValue('counter' , formik.values.counter + 1)}/>}/>
+        <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>}
+</Formik>
+
+```

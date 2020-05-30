@@ -25,17 +25,19 @@ import {
   RadioGroup as BpRadioGroup,
   FileInput as BpFileInput
 } from '@blueprintjs/core'
+import get from 'lodash.get'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
+const isFunction = (obj: any): boolean => typeof obj === 'function'
 
 const errorCheck = (name: string, formik?: FormikContext<any>) =>
-  (formik?.touched?.[name] || (formik?.submitCount && formik?.submitCount > 0)) &&
-  formik?.errors[name] &&
-  !isObject(formik?.errors[name])
+  (get(formik?.touched, name) || (formik?.submitCount && formik?.submitCount > 0)) &&
+  get(formik?.errors, name) &&
+  !isObject(get(formik?.errors, name))
 
 interface FormikExtended<T> extends FormikContext<T> {
   disabled?: boolean
@@ -60,7 +62,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContenxtProps<any>) {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     items,
     labelFor,
@@ -81,7 +83,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContenxtProps<any>) {
         labelFor={labelFor}
         readonly={disabled}
         items={items}
-        selectedItems={tagInputProps?.selectedItems || formik?.values?.[props.name] || []}
+        selectedItems={tagInputProps?.selectedItems || get(formik?.values, name) || []}
         onChange={(selectedItems: T[], createdItems: T[], items: T[]) => {
           formik?.setFieldValue(name, selectedItems)
           onChange?.(selectedItems, createdItems, items)
@@ -101,7 +103,7 @@ const CustomRender = (props: CustomRenderProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     render,
@@ -129,7 +131,7 @@ const FileInput = (props: FileInputProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     placeholder = i18n.chooseFile,
@@ -147,14 +149,14 @@ const FileInput = (props: FileInputProps & FormikContenxtProps<any>) => {
         inputProps={{
           name,
           disabled,
-          value: formik?.values?.[props.name as any] || ''
+          value: get(formik?.values, name, '')
         }}
         disabled={disabled}
         onInputChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
         }}
-        text={formik?.values?.[props.name as any] || placeholder}
+        text={get(formik?.values, name, placeholder)}
       />
     </FormGroup>
   )
@@ -172,7 +174,7 @@ const RadioGroup = (props: RadioGroupProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     items = [],
@@ -186,7 +188,7 @@ const RadioGroup = (props: RadioGroupProps & FormikContenxtProps<any>) => {
         {...radioGroup}
         name={name}
         disabled={disabled}
-        selectedValue={formik?.values?.[props.name as any]}
+        selectedValue={get(formik?.values, name)}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
@@ -209,7 +211,7 @@ const CheckBox = (props: CheckboxProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     onChange,
@@ -225,7 +227,7 @@ const CheckBox = (props: CheckboxProps & FormikContenxtProps<any>) => {
         label={label}
         inline={inline}
         disabled={disabled}
-        value={formik?.values?.[props.name as any]}
+        value={get(formik?.values, name)}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.checked)
           onChange?.(e)
@@ -249,7 +251,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     items,
     inline = formik?.inline,
@@ -275,7 +277,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContenxtProps<any>) => {
         }}
         {...multiSelectProps}
         items={items}
-        value={formik?.values?.[props.name] || []}
+        value={get(formik?.values, name, [])}
         onChange={(items: MultiSelectOption[]) => {
           formik?.setFieldValue(name, items)
           onChange?.(items)
@@ -299,7 +301,7 @@ const Select = (props: SelectProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     items,
     placeholder,
@@ -324,7 +326,7 @@ const Select = (props: SelectProps & FormikContenxtProps<any>) => {
         {...selectProps}
         items={items}
         disabled={disabled}
-        value={items.filter(item => item.value === formik?.values?.[props.name])[0]}
+        value={items.filter(item => item.value === get(formik?.values, name))[0]}
         onChange={(item: SelectOption) => {
           formik?.setFieldValue(name, item.value)
           onChange?.(item)
@@ -346,7 +348,7 @@ const Text = (props: TextProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors?.[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     inputGroup,
@@ -362,7 +364,7 @@ const Text = (props: TextProps & FormikContenxtProps<any>) => {
         placeholder={placeholder}
         intent={intent}
         disabled={disabled}
-        value={formik?.values?.[props.name as any]}
+        value={get(formik?.values, name)}
         onBlur={() => formik?.setFieldTouched(name)}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
@@ -404,7 +406,7 @@ const TextArea = (props: TextAreaProps & FormikContenxtProps<any>) => {
         disabled={disabled}
         placeholder={placeholder}
         onBlur={() => formik?.setFieldTouched(name)}
-        value={formik?.values[props.name]}
+        value={get(formik?.values, name)}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
@@ -486,7 +488,7 @@ export const Formik = <Values extends object>(props: FormikProps<Values>) => {
   }
   return (
     <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
-      {!render && <OverlaySpinner show={isFormLoading}>{props.children}</OverlaySpinner>}
+      {!render && <OverlaySpinner show={isFormLoading}>{!isFunction(props.children) && props.children}</OverlaySpinner>}
     </FrmFormik>
   )
 }
