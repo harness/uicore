@@ -81,7 +81,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContenxtProps<any>) {
         labelFor={labelFor}
         readonly={disabled}
         items={items}
-        selectedItems={tagInputProps.selectedItems || formik?.values?.[props.name] || []}
+        selectedItems={tagInputProps?.selectedItems || formik?.values?.[props.name] || []}
         onChange={(selectedItems: T[], createdItems: T[], items: T[]) => {
           formik?.setFieldValue(name, selectedItems)
           onChange?.(selectedItems, createdItems, items)
