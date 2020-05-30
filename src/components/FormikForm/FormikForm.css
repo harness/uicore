@@ -40,6 +40,9 @@
       height: 38px;
       border-radius: 5px;
     }
+    .bp3-input.bp3-tag-input {
+      height: unset;
+    }
 
     .bp3-file-input {
       height: 38px;
