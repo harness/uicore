@@ -387,7 +387,7 @@ const TextArea = (props: TextAreaProps & FormikContenxtProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? formik?.errors[name] : null,
+    helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     placeholder,
@@ -455,7 +455,7 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'r
 }
 
 export const Formik = <Values extends object>(props: FormikProps<Values>) => {
-  const { formLoading = false, onSubmit, render, ...rest } = props
+  const { formLoading = false, onSubmit, render, children, ...rest } = props
   const [isFormLoading, setFormLoading] = React.useState(false)
   React.useEffect(() => {
     setFormLoading(formLoading)
@@ -480,15 +480,31 @@ export const Formik = <Values extends object>(props: FormikProps<Values>) => {
     },
     [render, isFormLoading]
   )
+
+  const functionRenderLocal = React.useCallback(
+    (formik: FormikExtended<any>) => {
+      return (
+        <OverlaySpinner show={isFormLoading}>
+          {(children as (props: FormikExtended<any>) => React.ReactNode)(formik)}
+        </OverlaySpinner>
+      )
+    },
+    [children, isFormLoading]
+  )
+
   let renderProps: { render?: any } = {}
   if (render) {
     renderProps = {
       render: renderLocal
     }
+  } else if (isFunction(children)) {
+    renderProps = {
+      render: functionRenderLocal
+    }
   }
   return (
     <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
-      {!render && <OverlaySpinner show={isFormLoading}>{!isFunction(props.children) && props.children}</OverlaySpinner>}
+      {!render && !isFunction(children) && <OverlaySpinner show={isFormLoading}>{children}</OverlaySpinner>}
     </FrmFormik>
   )
 }

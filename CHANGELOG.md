@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.144 - 05/30/20
 
+- `Fixed` formik render form as children
+
+## 1.0.144 - 05/30/20
+
 - `Fixed` formik get field value and errors
 
 ## 1.0.143 - 05/29/20

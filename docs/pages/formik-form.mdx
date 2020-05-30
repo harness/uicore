@@ -326,13 +326,17 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
 
 ```
 
-## Not Supported WIP
-
+## Render as Children Function
 
 ```js live=true
 <Formik
     initialValues={{counter: 0}}
-    onSubmit={(values) => alert(JSON.stringify(values))} >
+    onSubmit={(values) => new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(JSON.stringify(values));
+            resolve(values);
+        }, 5000)
+    })} >
     {(formik) => 
     <FormikForm>
         <div>
@@ -342,5 +346,28 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
         <Button intent="primary" type="Submit" text="Submit" />
     </FormikForm>}
 </Formik>
+
+```
+
+
+## Render as using Prop
+
+```js live=true
+<Formik
+    initialValues={{counter: 0}}
+    render={(formik) => 
+    <FormikForm>
+        <div>
+            <b>Counter: </b> {formik.values.counter}
+        </div>
+        <FormInput.CustomRender name="counter" label="Increment" render={(formik) => <Button text="Click Me" onClick={() => formik.setFieldValue('counter' , formik.values.counter + 1)}/>}/>
+        <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>}
+    onSubmit={(values) => new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(JSON.stringify(values));
+            resolve(values);
+        }, 5000)
+    })} />
 
 ```
