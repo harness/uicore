@@ -10,7 +10,8 @@ interface Props extends ICollapseProps {
   iconProps?: any
   heading?: string
   isRemovable?: boolean
-  onRemove?: () => {}
+  onRemove?: () => void
+  children?: React.ReactNode
 }
 
 function Collapse(props: Props) {
@@ -48,7 +49,10 @@ function Collapse(props: Props) {
         </span>
       </div>
       <div className={css.collapse}>
-        <BpCollapse {...props} isOpen={isOpen}></BpCollapse>
+        <BpCollapse {...props} isOpen={isOpen}>
+          {' '}
+          {props.children}{' '}
+        </BpCollapse>
       </div>
     </div>
   )
