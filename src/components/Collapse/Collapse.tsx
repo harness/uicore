@@ -8,7 +8,7 @@ interface Props extends ICollapseProps {
   collapsedIcon?: string
   expandedIcon?: string
   iconProps?: any
-  heading?: string
+  heading?: string | JSX.Element
   isRemovable?: boolean
   onRemove?: () => void
   children?: React.ReactNode

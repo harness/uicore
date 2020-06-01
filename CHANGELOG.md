@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.147 - 06/01/20
+
+- `Changed` Collapse component heading prop to take a string or an element
+
 ## 1.0.146 - 05/30/20
 
 - `Fixed` Collapse component children issue
