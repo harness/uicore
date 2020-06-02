@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="50px" height="31px" viewBox="0 0 50 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-    <title>Cloud</title>
-    <desc>Created with Sketch.</desc>
-    <g id="GA-Use-cases" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Overview---Full-Data-(GA)" transform="translate(-1178.000000, -763.000000)" fill="#E4E7EB">
-            <g id="Cloud" transform="translate(981.000000, 620.000000)">
-                <g id="Group-17" transform="translate(122.000000, 143.000000)">
-                    <g id="Group-7">
-                        <path d="M114.92,9.94 L114.7,9.94 C113.77,4.29 108.8,7.28306304e-14 102.99,7.28306304e-14 C98.44,7.28306304e-14 94.37,2.54 92.37,6.55 C91.55,6.31 90.7,6.18 89.84,6.18 C84.99,6.18 81.05,10.12 81.05,14.97 C81.05,15.15 81.06,15.35 81.07,15.54 C77.63,16.14 75,19.18 75,22.75 C75,26.8 78.29,30.09 82.33,30.09 L114.92,30.09 C120.481,30.09 125,25.57 125,20.01 C125,14.46 120.481,9.94 114.92,9.94" id="Cloud"></path>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg height="31" viewBox="0 0 50 31" width="50" xmlns="http://www.w3.org/2000/svg"><path d="m114.92 9.94h-.22c-.93-5.65-5.9-9.94-11.71-9.94-4.55 0-8.62 2.54-10.62 6.55-.82-.24-1.67-.37-2.53-.37-4.85 0-8.79 3.94-8.79 8.79 0 .18.01.38.02.57-3.44.6-6.07 3.64-6.07 7.21 0 4.05 3.29 7.34 7.33 7.34h32.59c5.561 0 10.08-4.52 10.08-10.08 0-5.55-4.519-10.07-10.08-10.07" fill="#e4e7eb" fill-rule="evenodd" transform="translate(-75)"/></svg>
