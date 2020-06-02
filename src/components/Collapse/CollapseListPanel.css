@@ -1,0 +1,10 @@
+.main {
+  .collapse {
+    margin-top: var(--spacing-xsmall);
+    margin-left: var(--spacing-large);
+  }
+
+  .footerContent {
+    margin-top: var(--spacing-small);
+  }
+}

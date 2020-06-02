@@ -155,7 +155,16 @@ export default [
       },
       {
         label: 'Collapse',
-        url: '/collapse'
+        items: [
+          {
+            label: 'Collapse',
+            url: '/collapse'
+          },
+          {
+            label: 'CollapseList',
+            url: '/collapse-list'
+          }
+        ]
       },
       {
         label: 'GraphError',

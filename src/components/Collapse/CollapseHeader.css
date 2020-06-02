@@ -1,0 +1,13 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .leftSection {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    .title {
+      margin-left: var(--spacing-small);
+    }
+  }
+}

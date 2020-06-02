@@ -1,53 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { ICollapseProps, Collapse as BpCollapse } from '@blueprintjs/core'
-import { Icon } from '../../icons/Icon'
 import css from './Collapse.css'
+import { CollapseHeader, CollapseHeaderProps } from './CollapseHeader'
 
-interface CollapseProps extends ICollapseProps {
+interface CollapseProps extends ICollapseProps, Omit<CollapseHeaderProps, 'onToggleOpen'> {
   isOpen: boolean
-  collapsedIcon?: string
-  expandedIcon?: string
-  iconProps?: any
-  heading?: string | JSX.Element
-  isRemovable?: boolean
-  onRemove?: () => void
   children?: React.ReactNode
 }
 
 function Collapse(props: CollapseProps) {
-  const [isOpen, setIsOpen] = useState(props.isOpen)
-  const handleClick = () => {
-    setIsOpen(!isOpen)
-  }
+  const { onRemove, isOpen: propsIsOpen, isRemovable, heading, iconProps, expandedIcon, collapsedIcon } = props
+  const [isOpen, setIsOpen] = useState(propsIsOpen)
+  const handleClick = useCallback(() => setIsOpen(!isOpen), [isOpen])
 
   return (
     <div className={css.main}>
-      <div className={css.header}>
-        <span className={css.leftSection} onClick={handleClick}>
-          {isOpen ? (
-            <Icon name={props.expandedIcon || 'main-caret-down'} color={'grey400'} size={15} {...props.iconProps} />
-          ) : (
-            <Icon name={props.collapsedIcon || 'main-caret-right'} color={'grey400'} size={15} {...props.iconProps} />
-          )}
-          <span className={css.title}> {props.heading} </span>
-        </span>
-
-        <span className={css.rightSection}>
-          <a>
-            {props.isRemovable ? (
-              <Icon
-                name={'main-close'}
-                size={12}
-                onClick={() => {
-                  if (props.onRemove) {
-                    props.onRemove()
-                  }
-                }}
-              />
-            ) : null}
-          </a>
-        </span>
-      </div>
+      <CollapseHeader
+        onToggleOpen={handleClick}
+        onRemove={onRemove}
+        isOpen={isOpen}
+        isRemovable={isRemovable}
+        heading={heading}
+        iconProps={iconProps}
+        expandedIcon={expandedIcon}
+        className={css.header}
+        collapsedIcon={collapsedIcon}
+      />
       <div className={css.collapse}>
         <BpCollapse {...props} isOpen={isOpen}>
           {props.children}
