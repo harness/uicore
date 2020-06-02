@@ -7,7 +7,7 @@
     align-items: center;
     cursor: pointer;
     .title {
-      margin-left: 10px;
+      margin-left: var(--spacing-small);
     }
   }
 }
