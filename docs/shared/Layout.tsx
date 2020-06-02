@@ -63,6 +63,7 @@ export default class extends React.Component {
           header h1 a {
             display: flex;
             align-items: center;
+            white-space: nowrap;
           }
 
           header h1 a:hover {

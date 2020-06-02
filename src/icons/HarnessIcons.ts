@@ -29,6 +29,7 @@ import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkip from './conditional-skip.svg'
+import Dashboard from './dashboard.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
 import DeploymentFailedLegacy from './deployment-failed-legacy.svg'
@@ -135,7 +136,50 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import NavAccountadminHover from './nav-accountadmin-hover.svg'
+import NavAccountadminSelected from './nav-accountadmin-selected.svg'
+import NavAccountadmin from './nav-accountadmin.svg'
+import NavCdHover from './nav-cd-hover.svg'
+import NavCdSelected from './nav-cd-selected.svg'
+import NavCd from './nav-cd.svg'
+import NavCvHover from './nav-cv-hover.svg'
+import NavCvSelected from './nav-cv-selected.svg'
+import NavCv from './nav-cv.svg'
+import NavDashboardHover from './nav-dashboard-hover.svg'
+import NavDashboardSelected from './nav-dashboard-selected.svg'
+import NavDashboard from './nav-dashboard.svg'
+import NavDeploymentsHover from './nav-deployments-hover.svg'
+import NavDeploymentsSelected from './nav-deployments-selected.svg'
+import NavDeployments from './nav-deployments.svg'
+import NavGovernanceHover from './nav-governance-hover.svg'
+import NavGovernanceSelected from './nav-governance-selected.svg'
+import NavGovernance from './nav-governance.svg'
+import NavHarnessHover from './nav-harness-hover.svg'
+import NavHarnessSelected from './nav-harness-selected.svg'
+import NavHarness from './nav-harness.svg'
+import NavInfrastructureHover from './nav-infrastructure-hover.svg'
+import NavInfrastructureSelected from './nav-infrastructure-selected.svg'
+import NavOrganizationHover from './nav-organization-hover.svg'
+import NavOrganizationSelected from './nav-organization-selected.svg'
+import NavPipelinesHover from './nav-pipelines-hover.svg'
+import NavPipelinesNormal from './nav-pipelines-normal.svg'
+import NavPipelinesSelected from './nav-pipelines-selected.svg'
+import NavProjectHover from './nav-project-hover.svg'
+import NavProjectSelected from './nav-project-selected.svg'
+import NavProject from './nav-project.svg'
+import NavResourcesHover from './nav-resources-hover.svg'
+import NavResourcesSelected from './nav-resources-selected.svg'
+import NavResources from './nav-resources.svg'
+import NavSettingsHover from './nav-settings-hover.svg'
+import NavSettingsSelected from './nav-settings-selected.svg'
+import NavSettings from './nav-settings.svg'
+import NavUserProfileHover from './nav-user-profile-hover.svg'
+import NavUserProfileSelected from './nav-user-profile-selected.svg'
+import NavUserProfile from './nav-user-profile.svg.svg'
 import NewDecoration from './new-decoration.svg'
+import PlaceholderHover from './placeholder-hover.svg'
+import PlaceholderSelected from './placeholder-selected.svg'
+import Placeholder from './placeholder.svg'
 import Question from './question.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -243,6 +287,7 @@ type HarnessIconName =
   | 'command-winrm'
   | 'conditional-skip-filled'
   | 'conditional-skip'
+  | 'dashboard'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
   | 'deployment-failed-legacy'
@@ -349,7 +394,50 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'nav-accountadmin-hover'
+  | 'nav-accountadmin-selected'
+  | 'nav-accountadmin'
+  | 'nav-cd-hover'
+  | 'nav-cd-selected'
+  | 'nav-cd'
+  | 'nav-cv-hover'
+  | 'nav-cv-selected'
+  | 'nav-cv'
+  | 'nav-dashboard-hover'
+  | 'nav-dashboard-selected'
+  | 'nav-dashboard'
+  | 'nav-deployments-hover'
+  | 'nav-deployments-selected'
+  | 'nav-deployments'
+  | 'nav-governance-hover'
+  | 'nav-governance-selected'
+  | 'nav-governance'
+  | 'nav-harness-hover'
+  | 'nav-harness-selected'
+  | 'nav-harness'
+  | 'nav-infrastructure-hover'
+  | 'nav-infrastructure-selected'
+  | 'nav-organization-hover'
+  | 'nav-organization-selected'
+  | 'nav-pipelines-hover'
+  | 'nav-pipelines-normal'
+  | 'nav-pipelines-selected'
+  | 'nav-project-hover'
+  | 'nav-project-selected'
+  | 'nav-project'
+  | 'nav-resources-hover'
+  | 'nav-resources-selected'
+  | 'nav-resources'
+  | 'nav-settings-hover'
+  | 'nav-settings-selected'
+  | 'nav-settings'
+  | 'nav-user-profile-hover'
+  | 'nav-user-profile-selected'
+  | 'nav-user-profile'
   | 'new-decoration'
+  | 'placeholder-hover'
+  | 'placeholder-selected'
+  | 'placeholder'
   | 'question'
   | 'search-applications'
   | 'search-connectors'
@@ -457,6 +545,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-winrm': CommandWinrm,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip': ConditionalSkip,
+  dashboard: Dashboard,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
   'deployment-failed-legacy': DeploymentFailedLegacy,
@@ -563,7 +652,50 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  'nav-accountadmin-hover': NavAccountadminHover,
+  'nav-accountadmin-selected': NavAccountadminSelected,
+  'nav-accountadmin': NavAccountadmin,
+  'nav-cd-hover': NavCdHover,
+  'nav-cd-selected': NavCdSelected,
+  'nav-cd': NavCd,
+  'nav-cv-hover': NavCvHover,
+  'nav-cv-selected': NavCvSelected,
+  'nav-cv': NavCv,
+  'nav-dashboard-hover': NavDashboardHover,
+  'nav-dashboard-selected': NavDashboardSelected,
+  'nav-dashboard': NavDashboard,
+  'nav-deployments-hover': NavDeploymentsHover,
+  'nav-deployments-selected': NavDeploymentsSelected,
+  'nav-deployments': NavDeployments,
+  'nav-governance-hover': NavGovernanceHover,
+  'nav-governance-selected': NavGovernanceSelected,
+  'nav-governance': NavGovernance,
+  'nav-harness-hover': NavHarnessHover,
+  'nav-harness-selected': NavHarnessSelected,
+  'nav-harness': NavHarness,
+  'nav-infrastructure-hover': NavInfrastructureHover,
+  'nav-infrastructure-selected': NavInfrastructureSelected,
+  'nav-organization-hover': NavOrganizationHover,
+  'nav-organization-selected': NavOrganizationSelected,
+  'nav-pipelines-hover': NavPipelinesHover,
+  'nav-pipelines-normal': NavPipelinesNormal,
+  'nav-pipelines-selected': NavPipelinesSelected,
+  'nav-project-hover': NavProjectHover,
+  'nav-project-selected': NavProjectSelected,
+  'nav-project': NavProject,
+  'nav-resources-hover': NavResourcesHover,
+  'nav-resources-selected': NavResourcesSelected,
+  'nav-resources': NavResources,
+  'nav-settings-hover': NavSettingsHover,
+  'nav-settings-selected': NavSettingsSelected,
+  'nav-settings': NavSettings,
+  'nav-user-profile-hover': NavUserProfileHover,
+  'nav-user-profile-selected': NavUserProfileSelected,
+  'nav-user-profile': NavUserProfile,
   'new-decoration': NewDecoration,
+  'placeholder-hover': PlaceholderHover,
+  'placeholder-selected': PlaceholderSelected,
+  placeholder: Placeholder,
   question: Question,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
