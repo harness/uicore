@@ -42,7 +42,7 @@ export function CollapseHeader(props: CollapseHeaderProps) {
         <Text className={css.title}>{heading}</Text>
       </Container>
 
-      <Container className={css.rightSection} inline>
+      <Container>
         {isRemovable && <Button icon="main-close" minimal onClick={onRemove} iconProps={{ size: 10 }} />}
       </Container>
     </Container>
