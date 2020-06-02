@@ -3,7 +3,7 @@ import { ICollapseProps, Collapse as BpCollapse } from '@blueprintjs/core'
 import { Icon } from '../../icons/Icon'
 import css from './Collapse.css'
 
-interface Props extends ICollapseProps {
+interface CollapseProps extends ICollapseProps {
   isOpen: boolean
   collapsedIcon?: string
   expandedIcon?: string
@@ -14,7 +14,7 @@ interface Props extends ICollapseProps {
   children?: React.ReactNode
 }
 
-function Collapse(props: Props) {
+function Collapse(props: CollapseProps) {
   const [isOpen, setIsOpen] = useState(props.isOpen)
   const handleClick = () => {
     setIsOpen(!isOpen)
@@ -50,12 +50,11 @@ function Collapse(props: Props) {
       </div>
       <div className={css.collapse}>
         <BpCollapse {...props} isOpen={isOpen}>
-          {' '}
-          {props.children}{' '}
+          {props.children}
         </BpCollapse>
       </div>
     </div>
   )
 }
 
-export { Collapse }
+export { Collapse, CollapseProps }
