@@ -59,7 +59,7 @@ export {
   StackTracePanel,
   StackTracePanelProps
 } from './components/StackTraceList/StackTraceList'
-export { Collapse } from './components/Collapse/Collapse'
+export { Collapse, CollapseProps } from './components/Collapse/Collapse'
 export { GraphError } from './components/GraphError/GraphError'
 export {
   SelectWithSubview,
