@@ -14,7 +14,7 @@ interface CollapseProps extends ICollapseProps {
   children?: React.ReactNode
 }
 
-function Collapse(props: Props) {
+function Collapse(props: CollapseProps) {
   const [isOpen, setIsOpen] = useState(props.isOpen)
   const handleClick = () => {
     setIsOpen(!isOpen)
