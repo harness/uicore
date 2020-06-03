@@ -6,10 +6,10 @@ import { Container } from '../Container/Container'
 import cx from 'classnames'
 import css from './CollapseListPanel.css'
 
-interface CollapseListPanelProps extends CollapseHeaderProps, ICollapseProps {
+interface CollapseListPanelProps extends Omit<CollapseHeaderProps, 'isOpen'>, ICollapseProps {
   openNext?: () => Promise<void> | void
   nextButtonText?: string
-  isOpen: boolean
+  isOpen?: boolean
   footerContent?: JSX.Element
   className?: string
 }
@@ -30,7 +30,7 @@ const CollapseListPanel: React.FC<CollapseListPanelProps> = props => {
   return (
     <Container className={cx(css.main, className)}>
       <CollapseHeader
-        isOpen={isOpen}
+        isOpen={isOpen || false}
         collapsedIcon={collapsedIcon}
         expandedIcon={expandedIcon}
         iconProps={iconProps}
