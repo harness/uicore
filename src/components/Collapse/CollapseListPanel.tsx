@@ -30,7 +30,7 @@ const CollapseListPanel: React.FC<CollapseListPanelProps> = props => {
   return (
     <Container className={cx(css.main, className)}>
       <CollapseHeader
-        isOpen={isOpen}
+        isOpen={isOpen || false}
         collapsedIcon={collapsedIcon}
         expandedIcon={expandedIcon}
         iconProps={iconProps}
