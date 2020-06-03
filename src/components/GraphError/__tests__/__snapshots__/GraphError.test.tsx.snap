@@ -35,13 +35,13 @@ exports[`GraphError unit tests Render GraphError with title and link should matc
         Error occured
       </strong>
     </div>
-    <div
-      class="font main link"
+    <span
+      class="link"
     >
       <a>
         View in Splunk
       </a>
-    </div>
+    </span>
   </div>
 </div>
 `;

@@ -12,6 +12,9 @@ interface Props {
   linkText?: string
   link?: string
   onLinkClick?: () => void
+  secondLinkText?: string
+  secondLink?: string
+  onSecondLinkClick?: () => void
 }
 
 function GraphError(props: Props) {
@@ -30,7 +33,7 @@ function GraphError(props: Props) {
         <strong>{props.title ? props.title : 'Error, This Provider is not showing any data '}</strong>
       </Container>
       {props.linkText && (props.onLinkClick || props.link) ? (
-        <Container className={css.link}>
+        <span className={css.link}>
           {props.onLinkClick ? (
             <a
               onClick={() => {
@@ -43,7 +46,24 @@ function GraphError(props: Props) {
               {props.linkText}
             </Link>
           )}
-        </Container>
+        </span>
+      ) : null}
+
+      {props.secondLinkText && (props.onSecondLinkClick || props.secondLink) ? (
+        <span className={css.secondLink}>
+          {props.onSecondLinkClick ? (
+            <a
+              onClick={() => {
+                props.onSecondLinkClick!()
+              }}>
+              {props.secondLinkText}
+            </a>
+          ) : (
+            <Link target="_blank" href={props.link}>
+              {props.secondLinkText}
+            </Link>
+          )}
+        </span>
       ) : null}
     </Container>
   )
