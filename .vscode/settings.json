@@ -23,11 +23,11 @@
     "*.config.js": true
   },
   "files.exclude": {
-    "**/node_modules": true,
-    "npm-debug.log*": true,
-    "dist/": true,
-    "yarn-error.*": true,
-    "**/yarn.lock": true
+    "**/node_modules": false,
+    "npm-debug.log*": false,
+    "dist/": false,
+    "yarn-error.*": false,
+    "**/yarn.lock": false
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
