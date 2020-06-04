@@ -29,6 +29,7 @@ import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkip from './conditional-skip.svg'
+import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
@@ -136,9 +137,9 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
-import NavAccountadminHover from './nav-accountadmin-hover.svg'
-import NavAccountadminSelected from './nav-accountadmin-selected.svg'
-import NavAccountadmin from './nav-accountadmin.svg'
+import NavAccountAdminHover from './nav-account-admin-hover.svg'
+import NavAccountAdminSelected from './nav-account-admin-selected.svg'
+import NavAccountAdmin from './nav-account-admin.svg'
 import NavCdHover from './nav-cd-hover.svg'
 import NavCdSelected from './nav-cd-selected.svg'
 import NavCd from './nav-cd.svg'
@@ -164,6 +165,7 @@ import NavOrganizationSelected from './nav-organization-selected.svg'
 import NavPipelinesHover from './nav-pipelines-hover.svg'
 import NavPipelinesNormal from './nav-pipelines-normal.svg'
 import NavPipelinesSelected from './nav-pipelines-selected.svg'
+import NavPipelines from './nav-pipelines.svg'
 import NavProjectHover from './nav-project-hover.svg'
 import NavProjectSelected from './nav-project-selected.svg'
 import NavProject from './nav-project.svg'
@@ -175,7 +177,7 @@ import NavSettingsSelected from './nav-settings-selected.svg'
 import NavSettings from './nav-settings.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
-import NavUserProfile from './nav-user-profile.svg.svg'
+import NavUserProfile from './nav-user-profile.svg'
 import NewDecoration from './new-decoration.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
@@ -287,6 +289,7 @@ type HarnessIconName =
   | 'command-winrm'
   | 'conditional-skip-filled'
   | 'conditional-skip'
+  | 'dashboard-selected'
   | 'dashboard'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
@@ -394,9 +397,9 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
-  | 'nav-accountadmin-hover'
-  | 'nav-accountadmin-selected'
-  | 'nav-accountadmin'
+  | 'nav-account-admin-hover'
+  | 'nav-account-admin-selected'
+  | 'nav-account-admin'
   | 'nav-cd-hover'
   | 'nav-cd-selected'
   | 'nav-cd'
@@ -422,6 +425,7 @@ type HarnessIconName =
   | 'nav-pipelines-hover'
   | 'nav-pipelines-normal'
   | 'nav-pipelines-selected'
+  | 'nav-pipelines'
   | 'nav-project-hover'
   | 'nav-project-selected'
   | 'nav-project'
@@ -545,6 +549,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-winrm': CommandWinrm,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip': ConditionalSkip,
+  'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
@@ -652,9 +657,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
-  'nav-accountadmin-hover': NavAccountadminHover,
-  'nav-accountadmin-selected': NavAccountadminSelected,
-  'nav-accountadmin': NavAccountadmin,
+  'nav-account-admin-hover': NavAccountAdminHover,
+  'nav-account-admin-selected': NavAccountAdminSelected,
+  'nav-account-admin': NavAccountAdmin,
   'nav-cd-hover': NavCdHover,
   'nav-cd-selected': NavCdSelected,
   'nav-cd': NavCd,
@@ -680,6 +685,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-pipelines-hover': NavPipelinesHover,
   'nav-pipelines-normal': NavPipelinesNormal,
   'nav-pipelines-selected': NavPipelinesSelected,
+  'nav-pipelines': NavPipelines,
   'nav-project-hover': NavProjectHover,
   'nav-project-selected': NavProjectSelected,
   'nav-project': NavProject,

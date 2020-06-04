@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.153 - 06/03/20
+
+- `Changed` NextGen UI nav icons (latest).
+
 ## 1.0.152 - 06/03/20
 
 - `Added` Second Link in Graph error component
