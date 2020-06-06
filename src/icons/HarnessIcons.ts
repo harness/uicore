@@ -163,7 +163,6 @@ import NavInfrastructureSelected from './nav-infrastructure-selected.svg'
 import NavOrganizationHover from './nav-organization-hover.svg'
 import NavOrganizationSelected from './nav-organization-selected.svg'
 import NavPipelinesHover from './nav-pipelines-hover.svg'
-import NavPipelinesNormal from './nav-pipelines-normal.svg'
 import NavPipelinesSelected from './nav-pipelines-selected.svg'
 import NavPipelines from './nav-pipelines.svg'
 import NavProjectHover from './nav-project-hover.svg'
@@ -423,7 +422,6 @@ type HarnessIconName =
   | 'nav-organization-hover'
   | 'nav-organization-selected'
   | 'nav-pipelines-hover'
-  | 'nav-pipelines-normal'
   | 'nav-pipelines-selected'
   | 'nav-pipelines'
   | 'nav-project-hover'
@@ -683,7 +681,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-organization-hover': NavOrganizationHover,
   'nav-organization-selected': NavOrganizationSelected,
   'nav-pipelines-hover': NavPipelinesHover,
-  'nav-pipelines-normal': NavPipelinesNormal,
   'nav-pipelines-selected': NavPipelinesSelected,
   'nav-pipelines': NavPipelines,
   'nav-project-hover': NavProjectHover,
