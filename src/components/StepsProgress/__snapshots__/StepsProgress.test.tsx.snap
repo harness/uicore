@@ -24,7 +24,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
       <div>
         <span
           class="font main inline inline-true style style-fontWeight style-fontWeight-bold"
-          style="font-weight: bold; display: inline-flex; justify-content: center;"
+          style="font-weight: bold; display: inline-flex; align-items: center;"
         >
           <span
             class="bp3-icon bp3-icon-tick main padding padding-right padding-right-xsmall color color-green500"
@@ -51,7 +51,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
       <div>
         <span
           class="font main inline inline-true style style-fontWeight style-fontWeight-bold"
-          style="font-weight: bold; display: inline-flex; justify-content: center;"
+          style="font-weight: bold; display: inline-flex; align-items: center;"
         >
           <span
             class="bp3-icon bp3-icon-tick main padding padding-right padding-right-xsmall color color-green500"
@@ -78,7 +78,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
       <div>
         <span
           class="font main inline inline-true style style-fontWeight style-fontWeight-"
-          style="display: inline-flex; justify-content: center;"
+          style="display: inline-flex; align-items: center;"
         >
           <span
             class="bp3-icon bp3-icon-cross main padding padding-right padding-right-xsmall color color-red500"
@@ -105,7 +105,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
       <div>
         <span
           class="font main inline inline-true style style-fontWeight style-fontWeight-normal"
-          style="font-weight: normal; display: inline-flex; justify-content: center;"
+          style="font-weight: normal; display: inline-flex; align-items: center;"
         >
           <span
             class="bp3-icon bp3-icon-blank main padding padding-right padding-right-xsmall color color-yellow500"
