@@ -23,7 +23,8 @@ import {
   IFileInputProps,
   TextArea as BpTextArea,
   RadioGroup as BpRadioGroup,
-  FileInput as BpFileInput
+  FileInput as BpFileInput,
+  HTMLInputProps
 } from '@blueprintjs/core'
 import get from 'lodash.get'
 import cx from 'classnames'
@@ -338,7 +339,7 @@ const Select = (props: SelectProps & FormikContenxtProps<any>) => {
 
 interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
-  inputGroup?: Omit<IInputGroupProps, 'name' | 'value' | 'onChange' | 'placeholder'>
+  inputGroup?: Omit<IInputGroupProps & HTMLInputProps, 'name' | 'value' | 'onChange' | 'placeholder'>
   placeholder?: string
   onChange?: IInputGroupProps['onChange']
 }
@@ -359,6 +360,7 @@ const Text = (props: TextProps & FormikContenxtProps<any>) => {
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <InputGroup
+        autoComplete="off"
         {...inputGroup}
         name={name}
         placeholder={placeholder}
@@ -400,6 +402,7 @@ const TextArea = (props: TextAreaProps & FormikContenxtProps<any>) => {
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <BpTextArea
         fill={true}
+        autoComplete="off"
         {...textArea}
         name={name}
         intent={intent}

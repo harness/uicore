@@ -518,6 +518,7 @@ exports[`Test basic Components should render Text component 1`] = `
               class="bp3-input-group"
             >
               <input
+                autocomplete="off"
                 class="bp3-input"
                 name="name"
                 type="text"
@@ -569,6 +570,7 @@ exports[`Test basic Components should render TextArea component 1`] = `
             class="bp3-form-content"
           >
             <textarea
+              autocomplete="off"
               class="bp3-input bp3-fill"
               name="name"
             />
