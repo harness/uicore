@@ -1,14 +1,15 @@
 import React, { useState, useCallback } from 'react'
 import { Container } from '../Container/Container'
-import { CollapseListPanel } from './CollapseListPanel'
+import { ListPanelInterface } from './CollapseListPanel'
 
 interface CollapseListProps {
-  defaultOpenIndex: number
+  defaultOpenIndex?: number
+  children: ListPanelInterface | ListPanelInterface[]
 }
 
 const CollapseList: React.FC<CollapseListProps> = props => {
   const { defaultOpenIndex, children } = props
-  const [openedIndices, setOpenPanelIndex] = useState<Set<number>>(new Set([defaultOpenIndex ?? undefined]))
+  const [openedIndices, setOpenPanelIndex] = useState<Set<number>>(new Set(defaultOpenIndex ? [defaultOpenIndex] : []))
   const openNextCallback = useCallback(
     (index: number) => {
       openedIndices.delete(index)
@@ -22,7 +23,7 @@ const CollapseList: React.FC<CollapseListProps> = props => {
   )
 
   const onToggleOpenCallback = useCallback(
-    index => (isOpen: boolean) => {
+    index => (isOpen?: boolean) => {
       const containsIndex = openedIndices.has(index)
       if (containsIndex && !isOpen) {
         openedIndices.delete(index)
@@ -43,20 +44,18 @@ const CollapseList: React.FC<CollapseListProps> = props => {
         if (!React.isValidElement(child)) {
           return child
         }
-        if (child?.type !== CollapseListPanel) {
-          return child
-        }
-        return React.cloneElement(child, {
-          // key: ,
+        const newProps: ListPanelInterface = {
           isOpen: openedIndices.has(index),
           onToggleOpen: onToggleOpenCallback(index),
           openNext: async () => {
-            if (child.props.openNext) {
-              await child.props.openNext()
+            const childProps = child.props as ListPanelInterface
+            if (childProps.openNext) {
+              await childProps.openNext()
             }
             openNextCallback(index)
           }
-        })
+        }
+        return React.cloneElement(child, newProps)
       })}
     </Container>
   )
