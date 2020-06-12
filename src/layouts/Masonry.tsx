@@ -1,13 +1,16 @@
 import { Container, Utils } from '../'
 import cx from 'classnames'
 import MasonryLayout from 'masonry-layout'
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+export type MasonryRef = InstanceType<typeof MasonryLayout>
 
 export interface MasonryProps<T = {}> extends React.ComponentProps<typeof Container> {
   items: T[]
   renderItem: (item: T) => React.ReactElement
   keyOf: (item: T) => string | undefined
   gutter?: number
+  masonryRef?: (masonry: MasonryRef) => void
 }
 
 export const Masonry: React.FC<MasonryProps> = ({
@@ -15,29 +18,36 @@ export const Masonry: React.FC<MasonryProps> = ({
   renderItem,
   keyOf,
   gutter = 20,
+  masonryRef,
   width = '100%',
   height = '100%',
   padding = 'xxxlarge',
   className,
   ...others
 }) => {
-  const [containerClass] = useState(`mansonry-container-${Utils.randomId()}`)
-  const [itemClass] = useState(`mansonry-item-${Utils.randomId()}`)
-  const [mansonry, setMansonry] = useState<InstanceType<typeof MasonryLayout>>()
+  const [containerClass] = useState(`masonry-container-${Utils.randomId()}`)
+  const [itemClass] = useState(`masonry-item-${Utils.randomId()}`)
+  const [masonry, setMasonry] = useState<MasonryRef>()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const container = document.querySelector('.' + containerClass)
 
-    if (container && !mansonry) {
-      setMansonry(
-        new MasonryLayout(container, {
+    if (container) {
+      if (!masonry) {
+        const _masonry = new MasonryLayout(container, {
           itemSelector: '.' + itemClass,
           gutter,
           transitionDuration: 0
         })
-      )
-    } else {
-      mansonry?.layout?.()
+
+        setMasonry(_masonry)
+        masonryRef?.(_masonry)
+      } else {
+        masonry.addItems?.(
+          Array.from(container.children).filter(child => !child?.getAttribute?.('style')?.includes('absolute'))
+        )
+        masonry.layout?.()
+      }
     }
   }, [items])
 

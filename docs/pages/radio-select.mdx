@@ -1,21 +1,24 @@
 # Radio Select --- docs/pages/radio-select.mdx
 
-import {RadioSelectExample} from '../shared/RadioSelectExample.tsx'
+import { RadioSelectExample } from '../shared/RadioSelectExampleLoader.tsx'
 
 Design is a like card select component [CD Next Gen](https://harness.atlassian.net/wiki/spaces/UI/pages/668205796/Radio+Button+Select)
 
 Should support
+
 - Dynamic Cards of any design
 - Keyboard Events - left arrow, right arrow and Enter
 
 Internally it uses [Card](/card) component and define renderItem method to define the cody of the card and you use class to customize the card
 
 ## Import
+
 ```js
 import { RadioSelect, RadioSelectProps } from '@wings-software/uikit'
 ```
 
 ## Usage/Props
+
 ```js
 export interface RadioSelectProps<ObjectType> extends HTMLDivElement {
   selected: ObjectType
@@ -30,6 +33,7 @@ export interface RadioSelectProps<ObjectType> extends HTMLDivElement {
 <RadioSelectExample />
 
 ### Example Code
+
 ```js
 
 

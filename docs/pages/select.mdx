@@ -1,6 +1,6 @@
 # Select --- docs/pages/select.mdx
 
-import { AsyncSelect } from '../shared/Select'
+import { AsyncSelect } from '../shared/SelectLoader'
 
 ## Import
 
@@ -23,73 +23,96 @@ interface SelectOption {
 
 ```
 
-
 ## Simple Select
-
 
 ### Large
 
 ```js live=true
-<Select size="large" items={[{ label: "Kubernetes", value: "service-kubernetes"},
-  { label: "GitHub", value: "service-github"},
-  { label: "ELK", value: "service-elk"},
-  { label: "Jenkins", value: "service-jenkins"},
-  { label: "GCP", value: "service-gcp"}]} />
+<Select
+  size="large"
+  items={[
+    { label: 'Kubernetes', value: 'service-kubernetes' },
+    { label: 'GitHub', value: 'service-github' },
+    { label: 'ELK', value: 'service-elk' },
+    { label: 'Jenkins', value: 'service-jenkins' },
+    { label: 'GCP', value: 'service-gcp' }
+  ]}
+/>
 ```
-
 
 ### Normal
 
 ```js live=true
-<Select items={[{ label: "Kubernetes", value: "service-kubernetes"},
-  { label: "GitHub", value: "service-github"},
-  { label: "ELK", value: "service-elk"},
-  { label: "Jenkins", value: "service-jenkins"},
-  { label: "GCP", value: "service-gcp"}]}/>
+<Select
+  items={[
+    { label: 'Kubernetes', value: 'service-kubernetes' },
+    { label: 'GitHub', value: 'service-github' },
+    { label: 'ELK', value: 'service-elk' },
+    { label: 'Jenkins', value: 'service-jenkins' },
+    { label: 'GCP', value: 'service-gcp' }
+  ]}
+/>
 ```
 
 ### Small
 
 ```js live=true
-<Select size="small" items={[{ label: "Kubernetes", value: "service-kubernetes"},
-  { label: "GitHub", value: "service-github"},
-  { label: "ELK", value: "service-elk"},
-  { label: "Jenkins", value: "service-jenkins"},
-  { label: "GCP", value: "service-gcp"}]} />
+<Select
+  size="small"
+  items={[
+    { label: 'Kubernetes', value: 'service-kubernetes' },
+    { label: 'GitHub', value: 'service-github' },
+    { label: 'ELK', value: 'service-elk' },
+    { label: 'Jenkins', value: 'service-jenkins' },
+    { label: 'GCP', value: 'service-gcp' }
+  ]}
+/>
 ```
-
 
 ## Simple Select Icons
 
 ### Large
 
 ```js live=true
-<Select size="large" items={[{ label: "Kubernetes", value: "service-kubernetes", icon: { name: "service-kubernetes" }},
-  { label: "GitHub", value: "service-github", icon: { name: "service-github" }},
-  { label: "ELK", value: "service-elk", icon: { name: "service-elk" }},
-  { label: "Jenkins", value: "service-jenkins", icon: { name: "service-jenkins" }},
-  { label: "GCP", value: "service-gcp", icon: { name: "service-gcp" }}]} />
+<Select
+  size="large"
+  items={[
+    { label: 'Kubernetes', value: 'service-kubernetes', icon: { name: 'service-kubernetes' } },
+    { label: 'GitHub', value: 'service-github', icon: { name: 'service-github' } },
+    { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
+    { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
+    { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
+  ]}
+/>
 ```
-
 
 ### Normal
 
 ```js live=true
-<Select items={[{ label: "Kubernetes", value: "service-kubernetes", icon: { name: "service-kubernetes" }},
-  { label: "GitHub", value: "service-github", icon: { name: "service-github" }},
-  { label: "ELK", value: "service-elk", icon: { name: "service-elk" }},
-  { label: "Jenkins", value: "service-jenkins", icon: { name: "service-jenkins" }},
-  { label: "GCP", value: "service-gcp", icon: { name: "service-gcp" }}]} />
+<Select
+  items={[
+    { label: 'Kubernetes', value: 'service-kubernetes', icon: { name: 'service-kubernetes' } },
+    { label: 'GitHub', value: 'service-github', icon: { name: 'service-github' } },
+    { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
+    { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
+    { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
+  ]}
+/>
 ```
 
 ### Small
 
 ```js live=true
-<Select size="small" items={[{ label: "Kubernetes", value: "service-kubernetes", icon: { name: "service-kubernetes" }},
-  { label: "GitHub", value: "service-github", icon: { name: "service-github" }},
-  { label: "ELK", value: "service-elk", icon: { name: "service-elk" }},
-  { label: "Jenkins", value: "service-jenkins", icon: { name: "service-jenkins" }},
-  { label: "GCP", value: "service-gcp", icon: { name: "service-gcp" }}]} />
+<Select
+  size="small"
+  items={[
+    { label: 'Kubernetes', value: 'service-kubernetes', icon: { name: 'service-kubernetes' } },
+    { label: 'GitHub', value: 'service-github', icon: { name: 'service-github' } },
+    { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
+    { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
+    { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
+  ]}
+/>
 ```
 
 ## Async Select

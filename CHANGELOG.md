@@ -2,13 +2,20 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.160 - 06/12/20
+
+- `Fixed` undefined window when integrating third party libs.
+- `Changed` Masonry props to expose ref.
+
 ## 1.0.159 - 06/12/20
 
 - `Fixed` Set Auto Complete default to OFF for formik text and text area field.
+- `Added` `<LogViewer />` component to view logs.
 
 ## 1.0.158 - 06/12/20
 
-- `Added` `<LogViewer />` component to view logs.
+- `Added` Masonry's prop and type to UIKit exports.
+- `Fixed` `<Layout.Masonry/>` not updating layout when data got changed.
 
 ## 1.0.157 - 06/12/20
 

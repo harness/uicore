@@ -1,6 +1,6 @@
 # Select V2 --- docs/pages/select-v2.mdx
 
-import { SimpleSelect, AsyncSelect} from '../shared/SelectV2'
+import SelectV2 from '../shared/SelectV2Loader'
 
 ## Import
 
@@ -17,59 +17,56 @@ interface SelectOption {
 
 ```
 
-
 ## Simple Select
 
-
-<SimpleSelect />
+<SelectV2.SimpleSelect />
 
 ```js
 <Layout.Horizontal id="primary-borderless-buttons">
-    <SelectNG
+  <SelectNG
     items={[]}
     value={val}
     onChange={setVal}
     itemRenderer={(item, props) => (
-        <Button style={{ width: '100%', display: 'block' }} minimal onClick={props.handleClick}>
+      <Button style={{ width: '100%', display: 'block' }} minimal onClick={props.handleClick}>
         {item.label}
-        </Button>
+      </Button>
     )}>
     <Button
-        intent="primary"
-        minimal
-        style={{ border: '1px solid var(--grey-400)', width: '100%', display: 'block' }}
-        icon={val && val.icon && val.icon.name}
-        rightIcon="chevron-down"
-        text={val ? val.label : 'Search...'}
+      intent="primary"
+      minimal
+      style={{ border: '1px solid var(--grey-400)', width: '100%', display: 'block' }}
+      icon={val && val.icon && val.icon.name}
+      rightIcon="chevron-down"
+      text={val ? val.label : 'Search...'}
     />
-    </SelectNG>
+  </SelectNG>
 </Layout.Horizontal>
 ```
 
-
 ## Async Select
 
-<AsyncSelect />
+<SelectV2.AsyncSelect />
 
 ```js
 <Layout.Horizontal id="primary-borderless-buttons">
-    <SelectNG
+  <SelectNG
     items={dummyPromise}
     value={val}
     onChange={setVal}
     itemRenderer={(item, props) => (
-        <Button style={{ width: '100%', display: 'block' }} minimal onClick={props.handleClick}>
+      <Button style={{ width: '100%', display: 'block' }} minimal onClick={props.handleClick}>
         {item.label}
-        </Button>
+      </Button>
     )}>
     <Button
-        intent="primary"
-        minimal
-        style={{ border: '1px solid var(--grey-400)', width: '100%', display: 'block' }}
-        icon={val && val.icon && val.icon.name}
-        rightIcon="chevron-down"
-        text={val ? val.label : 'Search...'}
+      intent="primary"
+      minimal
+      style={{ border: '1px solid var(--grey-400)', width: '100%', display: 'block' }}
+      icon={val && val.icon && val.icon.name}
+      rightIcon="chevron-down"
+      text={val ? val.label : 'Search...'}
     />
-    </SelectNG>
+  </SelectNG>
 </Layout.Horizontal>
 ```

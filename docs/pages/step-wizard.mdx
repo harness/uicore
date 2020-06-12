@@ -1,7 +1,7 @@
 # StepWizard --- docs/pages/step-wizard.mdx
-import { ExampleWizard } from '../shared/StepWizardExample'
-import { FormExampleStepWizard} from '../shared/StepWizardFormExample'
 
+import { ExampleWizard } from '../shared/StepWizardExampleLoader'
+import { FormExampleStepWizard } from '../shared/StepWizardFormExampleLoader'
 
 Step Wizard as per the [next gen](https://harness.atlassian.net/wiki/spaces/UI/pages/683737840/Step+Wizard)
 
@@ -51,19 +51,17 @@ export interface StepWizardProps<SharedObject> {
 
 ```js live=true
 <StepWizard initialStep={2}>
-    <div name="Create a New Project">Step 1</div>
-    <div name="New Project">Step 2</div>
-    <div name="Collaborator">Step 3</div>
+  <div name="Create a New Project">Step 1</div>
+  <div name="New Project">Step 2</div>
+  <div name="Collaborator">Step 3</div>
 </StepWizard>
 ```
-
 
 ## Full Example
 
 <ExampleWizard />
 
 ```js
-
 const ExampleStep: React.FC<StepProps> = props => {
   const totalSteps = props.totalSteps()
   const currentStep = props.currentStep()
@@ -106,14 +104,10 @@ export const ExampleWizard = () => {
     </div>
   )
 }
-
-
-
 ```
 
 ## Form Example
 
 Code of this Example is at [Github](https://github.com/wings-software/uikit/blob/master/docs/shared/StepWizardFormExample.tsx)
-
 
 <FormExampleStepWizard />

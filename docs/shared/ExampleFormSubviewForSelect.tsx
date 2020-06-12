@@ -112,7 +112,7 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
   )
 }
 
-export function ExampleFormSubviewForSelect() {
+export default function ExampleFormSubviewForSelect() {
   return (
     <Formik initialValues={{}} onSubmit={() => {}}>
       {() => (
