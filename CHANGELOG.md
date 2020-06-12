@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.161 - 06/12/20
+
+- `Changed` Collapse header props are sent to collapse list panel.
+- `Changed` Children for collapse list header now has a type.
+
 ## 1.0.160 - 06/12/20
 
 - `Fixed` undefined window when integrating third party libs.
