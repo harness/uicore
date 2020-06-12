@@ -53,6 +53,10 @@ export default [
         url: '/heading'
       },
       {
+        label: 'LogViewer',
+        url: '/log-viewer'
+      },
+      {
         label: 'OverlaySpinner',
         url: '/overlay-spinner'
       },

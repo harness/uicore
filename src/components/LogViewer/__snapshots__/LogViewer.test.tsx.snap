@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LogViewer /> tests snapshot test default 1`] = `
+<div>
+  <div
+    class="logViewer"
+  >
+    <div>
+      <div>
+        <code>
+          <span>
+            Initializing..
+          </span>
+        </code>
+      </div>
+      <div>
+        <code />
+      </div>
+      <div>
+        <code>
+          <span>
+            No values.yaml file found. Skipping template rendering.
+          </span>
+        </code>
+      </div>
+    </div>
+    <div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            Exception while processing templates/service.yaml
+          </span>
+        </code>
+      </div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            ClassCastException: java.lang.String cannot be cast to java.util.Map
+          </span>
+        </code>
+      </div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            ClassCastException: java.lang.String cannot be cast to java.util.Map
+          </span>
+        </code>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<LogViewer /> tests snapshot test default loading 1`] = `
+<div>
+  <div
+    class="logViewer"
+  >
+    <div>
+      <div>
+        <code>
+          <span>
+            Initializing..
+          </span>
+        </code>
+      </div>
+      <div>
+        <code />
+      </div>
+      <div>
+        <code>
+          <span>
+            No values.yaml file found. Skipping template rendering.
+          </span>
+        </code>
+      </div>
+    </div>
+    <div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            Exception while processing templates/service.yaml
+          </span>
+        </code>
+      </div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            ClassCastException: java.lang.String cannot be cast to java.util.Map
+          </span>
+        </code>
+      </div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            ClassCastException: java.lang.String cannot be cast to java.util.Map
+          </span>
+        </code>
+      </div>
+    </div>
+    <div>
+      Loading...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<LogViewer /> tests snapshot test partial file 1`] = `
+<div>
+  <div
+    class="logViewer"
+  >
+    <div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            Exception while processing templates/service.yaml
+          </span>
+        </code>
+      </div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            ClassCastException: java.lang.String cannot be cast to java.util.Map
+          </span>
+        </code>
+      </div>
+      <div>
+        <code>
+          <span
+            style="background-color: rgb(0, 0, 0); color: rgb(255, 85, 85);"
+          >
+            ClassCastException: java.lang.String cannot be cast to java.util.Map
+          </span>
+        </code>
+      </div>
+    </div>
+    <span>
+      <hr />
+      Logs are truncated... Please
+      <button
+        class="bp3-button bp3-minimal font button main downloadBtn"
+        type="button"
+      >
+        <span
+          class="bp3-icon main padding padding-right padding-right-xsmall"
+        >
+          <svg
+            height="16"
+            width="16"
+          />
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+           Download Logs 
+        </span>
+      </button>
+      to view Complete Details...
+    </span>
+  </div>
+</div>
+`;

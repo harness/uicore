@@ -1,0 +1,33 @@
+.logViewer {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: monospace, 'Courier';
+  font-size: 11px;
+  padding: 0.4%;
+  word-wrap: break-word;
+  word-break: break-all;
+  border: none;
+  white-space: pre-wrap;
+
+  .logLevel {
+    width: 100px;
+    display: inline-block;
+  }
+
+  .logDate {
+    width: 200px;
+    display: inline-block;
+  }
+
+  .downloadBtn {
+    &[class*='bp3-button'] {
+      color: var(--white);
+      font-size: inherit;
+      font-family: inherit;
+
+      &:hover {
+        background: none !important;
+      }
+    }
+  }
+}

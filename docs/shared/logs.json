@@ -1,0 +1,136 @@
+{
+  "metaData": {},
+  "resource": {
+    "offset": "0",
+    "start": 0,
+    "limit": null,
+    "filters": [
+      {
+        "fieldName": "activityId",
+        "fieldValues": ["KyElusTJSoecb0dtacDP9g"],
+        "op": "EQ"
+      },
+      {
+        "fieldName": "commandUnitName",
+        "fieldValues": ["Initialize"],
+        "op": "EQ"
+      }
+    ],
+    "orders": [],
+    "fieldsIncluded": [],
+    "fieldsExcluded": [],
+    "response": [
+      {
+        "uuid": "AhijPpFaQUCgRhHO9jwnvQ",
+        "appId": "RpRt5TEMQHymlhfg7uR3Uw",
+        "createdBy": null,
+        "createdAt": 1591632189201,
+        "lastUpdatedBy": null,
+        "lastUpdatedAt": 0,
+        "activityId": "KyElusTJSoecb0dtacDP9g",
+        "hostName": null,
+        "commandUnitName": "Initialize",
+        "logLine": "Initializing..\n\nNo values.yaml file found. Skipping template rendering.",
+        "linesCount": 0,
+        "logLevel": "INFO",
+        "commandExecutionStatus": null
+      },
+      {
+        "uuid": "X5TtMxo6TseDCsrrFhkfjA",
+        "appId": "RpRt5TEMQHymlhfg7uR3Uw",
+        "createdBy": null,
+        "createdAt": 1591632189347,
+        "lastUpdatedBy": null,
+        "lastUpdatedAt": 0,
+        "activityId": "KyElusTJSoecb0dtacDP9g",
+        "hostName": null,
+        "commandUnitName": "Initialize",
+        "logLine": "\u001b[1;91m\u001b[40mException while processing templates/service.yaml\u001b[0m\n\u001b[1;91m\u001b[40mClassCastException: java.lang.String cannot be cast to java.util.Map\u001b[0m\n\u001b[1;91m\u001b[40mClassCastException: java.lang.String cannot be cast to java.util.Map\u001b[0m",
+        "linesCount": 0,
+        "logLevel": "ERROR",
+        "commandExecutionStatus": null
+      },
+      {
+        "uuid": "nyQ4VpI_TOSus5WuBLH9xA",
+        "appId": "RpRt5TEMQHymlhfg7uR3Uw",
+        "createdBy": null,
+        "createdAt": 1591632189501,
+        "lastUpdatedBy": null,
+        "lastUpdatedAt": 0,
+        "activityId": "KyElusTJSoecb0dtacDP9g",
+        "hostName": null,
+        "commandUnitName": "Initialize",
+        "logLine": "\nFailed.",
+        "linesCount": 0,
+        "logLevel": "INFO",
+        "commandExecutionStatus": null
+      },
+      {
+        "uuid": "AO8hMjRYQta_msRKA14yrQ",
+        "appId": "0UK8mFDiSjeFl6KdUbmZdw",
+        "createdBy": null,
+        "createdAt": 1591750027676,
+        "lastUpdatedBy": null,
+        "lastUpdatedAt": 0,
+        "activityId": "4Jzjg4IHQlahpVBzHm_MTw",
+        "hostName": null,
+        "commandUnitName": "Fetch Files",
+        "logLine": "\u001b[1;97m\u001b[40m\n\u001b[1;97m\u001b[40mFetching Values files from git for EnvironmentGlobal\u001b[0m\nGit connector Url: https://github.com/wings-software/kapil-git-sync-test.git\nBranch: masterasdasd\n\nFetching asdasdatodolist",
+        "linesCount": 0,
+        "logLevel": "INFO",
+        "commandExecutionStatus": null
+      },
+      {
+        "uuid": "JO1qumVRQRiAtRldOJDhsg",
+        "appId": "0UK8mFDiSjeFl6KdUbmZdw",
+        "createdBy": null,
+        "createdAt": 1591750027539,
+        "lastUpdatedBy": null,
+        "lastUpdatedAt": 0,
+        "activityId": "4Jzjg4IHQlahpVBzHm_MTw",
+        "hostName": null,
+        "commandUnitName": "Fetch Files",
+        "logLine": "\u001b[1;93m\u001b[40mUnable to checkout files for filePath [functionalTest/values.yaml] for Branch: master\u001b[0m",
+        "linesCount": 0,
+        "logLevel": "WARN",
+        "commandExecutionStatus": null
+      },
+      {
+        "uuid": "mvLD2WMgS8G4hwItIYksuw",
+        "appId": "0UK8mFDiSjeFl6KdUbmZdw",
+        "createdBy": null,
+        "createdAt": 1591750009761,
+        "lastUpdatedBy": null,
+        "lastUpdatedAt": 0,
+        "activityId": "4Jzjg4IHQlahpVBzHm_MTw",
+        "hostName": null,
+        "commandUnitName": "Fetch Files",
+        "logLine": "\u001b[1;97m\u001b[40m\n\u001b[1;97m\u001b[40mFetching Values files from git for Service\u001b[0m\nGit connector Url: https://github.com/wings-software/terraform.git\nBranch: master\n\nFetching functionalTest/values.yaml",
+        "linesCount": 0,
+        "logLevel": "INFO",
+        "commandExecutionStatus": null
+      },
+      {
+        "uuid": "paDF5jlGQauBwCi9hBbgyw",
+        "appId": "0UK8mFDiSjeFl6KdUbmZdw",
+        "createdBy": null,
+        "createdAt": 1591750027775,
+        "lastUpdatedBy": null,
+        "lastUpdatedAt": 0,
+        "activityId": "4Jzjg4IHQlahpVBzHm_MTw",
+        "hostName": null,
+        "commandUnitName": "Fetch Files",
+        "logLine": "\u001b[1;91m\u001b[40mException in processing GitFetchFilesTask. Error in checking out Branch masterasdasd\u001b[0m",
+        "linesCount": 0,
+        "logLevel": "ERROR",
+        "commandExecutionStatus": null
+      }
+    ],
+    "total": 0,
+    "empty": false,
+    "currentPage": 1,
+    "or": false,
+    "pageSize": 1000
+  },
+  "responseMessages": []
+}
