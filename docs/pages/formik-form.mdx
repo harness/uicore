@@ -190,7 +190,7 @@ Try submitting the form
 
 ```js live=true
 <Formik 
-    initialValues={{firstName:'', lastName: '', description: ''}}
+    initialValues={{firstName:'', lastName: '', description: '', specialPerson: true}}
     onSubmit={(values) => alert(JSON.stringify(values))}
     validationSchema={
         Yup.object().shape({
@@ -221,7 +221,7 @@ Try submitting the form
     <FormikForm>
         <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
         <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name"  />
-        <FormInput.CheckBox name="specialPerson" label="VVIP" defaultIndeterminate={true}/>
+        <FormInput.CheckBox name="specialPerson" label="VVIP" />
         <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select"/>
         <FormInput.RadioGroup name="eventType" label="Event Type" items={[{label: 'Public', value: 'public'}, {label: 'Private', value: 'private'}]} />
         <FormInput.Select name="color" label="Color" placeholder="Select Color" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>

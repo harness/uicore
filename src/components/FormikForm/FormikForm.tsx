@@ -227,7 +227,7 @@ const CheckBox = (props: CheckboxProps & FormikContenxtProps<any>) => {
         label={label}
         inline={inline}
         disabled={disabled}
-        value={get(formik?.values, name)}
+        checked={get(formik?.values, name)}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.checked)
           onChange?.(e)
