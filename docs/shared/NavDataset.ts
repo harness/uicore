@@ -38,6 +38,10 @@ export default [
       {
         label: 'Horizontal',
         url: '/layout-horizontal'
+      },
+      {
+        label: 'Masonry',
+        url: '/layout-masonry'
       }
     ]
   },

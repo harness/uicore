@@ -4,7 +4,9 @@
 
 import React from 'react'
 import { Link, Text, Heading, List, ListItem } from '../static'
-import CodeBlock from './CodeBlock'
+import dynamic from 'next/dynamic'
+
+const CodeBlock = dynamic(() => import('./CodeBlock'), { ssr: false })
 
 const BASE_URL = 'https://github.com/wings-software/uikit/edit/master/'
 
