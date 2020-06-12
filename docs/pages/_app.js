@@ -3,7 +3,9 @@ import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
 import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
-import Layout from '../shared/Layout'
+import dynamic from 'next/dynamic'
+
+const Layout = dynamic(() => import('../shared/Layout'), { ssr: false })
 
 export default class extends App {
   render() {

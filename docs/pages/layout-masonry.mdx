@@ -1,0 +1,17 @@
+# Masonry --- docs/pages/layout-masonry.mdx
+
+`<Layout.Masonry/>` masonry layout.
+
+```js live=true
+<Layout.Masonry
+  gutter={25}
+  items={[100, 200, 130, 400, 150, 100, 300, 220, 90, 250]}
+  renderItem={number => (
+    <Container width={190} height={number} flex={{ align: 'center-center' }} border={{ color: Color.GREY_500 }}>
+      {number}
+    </Container>
+  )}
+  keyOf={number => number}
+  padding="xsmall"
+/>
+```

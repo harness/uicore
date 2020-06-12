@@ -3,6 +3,7 @@ import { Assign } from 'utility-types'
 import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
 import css from './Layout.css'
 import { Spacing } from 'core/Spacing'
+import { Masonry } from './Masonry'
 
 interface LayoutProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
   /** Spacing among children */
@@ -29,6 +30,6 @@ function Horizontal(props: LayoutProps) {
   )
 }
 
-const Layout = { Vertical, Horizontal }
+const Layout = { Vertical, Horizontal, Masonry }
 
 export { Layout }
