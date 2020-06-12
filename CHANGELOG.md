@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.157 - 06/12/20
 
-- `Added` `<Layout.Masonary/>` component to handle masonary layout.
+- `Added` `<Layout.Masonry/>` component to handle masonry layout.
 
 ## 1.0.156 - 06/12/20
 
