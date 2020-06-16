@@ -1,17 +1,17 @@
 # FormikForm --- docs/pages/formik-form.mdx
 
-
 ```js
 import { Formik, FormikForm, FormInput } from '@wings-software/uikit'
 ```
 
-
 ## Supported Form Elements
 
 ### Text Box
+
 Shared Blueprint Props:
-* [IFormGroupProps](https://blueprintjs.com/docs/#core/components/form-group)
-* [IInputGroupProps](https://blueprintjs.com/docs/#core/components/text-inputs.input-group)
+
+- [IFormGroupProps](https://blueprintjs.com/docs/#core/components/form-group)
+- [IInputGroupProps](https://blueprintjs.com/docs/#core/components/text-inputs.input-group)
 
 ```js
 interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
@@ -23,8 +23,10 @@ interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
 ```
 
 ### TextArea
+
 Shared Blueprint Props:
-* [ITextAreaProps](https://blueprintjs.com/docs/#core/components/text-inputs.text-area)
+
+- [ITextAreaProps](https://blueprintjs.com/docs/#core/components/text-inputs.text-area)
 
 ```js
 interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
@@ -34,17 +36,23 @@ interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: ITextAreaProps['onChange']
 }
 ```
+
 ### CheckBox
+
 [CheckboxProps](/checkbox)
+
 ```js
 interface CheckboxProps extends CheckboxProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
   name: string
   label: string
 }
 ```
+
 ### RadioGroup
+
 Shared Blueprint Props:
-* [IRadioGroupProps || IOptionProps](https://blueprintjs.com/docs/#core/components/radio.radiogroup)
+
+- [IRadioGroupProps || IOptionProps](https://blueprintjs.com/docs/#core/components/radio.radiogroup)
 
 ```js
 interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
@@ -54,8 +62,11 @@ interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: IRadioGroupProps['onChange']
 }
 ```
+
 ### Select
+
 [SelectProps](/select)
+
 ```js
 interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
@@ -66,8 +77,11 @@ interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: SelectProps['onChange']
 }
 ```
+
 ### MultiSelect
+
 [MultiSelectProps || MultiSelectOption](/multiselect)
+
 ```js
 interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
@@ -78,8 +92,11 @@ interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: MultiSelectProps['onChange']
 }
 ```
+
 ### File Input
+
 [FileInputProps](https://blueprintjs.com/docs/#core/components/file-input)
+
 ```js
 interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
@@ -89,8 +106,11 @@ interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: React.FormEventHandler<HTMLInputElement>
 }
 ```
+
 ### TagInput
+
 [TagInputProps](/simple-tag-input)
+
 ```js
 interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
@@ -104,14 +124,15 @@ interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   onChange?: TagInputProps<T>['onChange']
 }
 ```
+
 ### Custom
+
 ```js
 interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
 }
 ```
-
 
 ## Formik Props
 
@@ -130,33 +151,34 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit'> {
 ```
 
 ```js live=true
-<Formik 
-    initialValues={{firstName:'', lastName: '', description: ''}}
-    onSubmit={(values) => new Promise((resolve) => {
-        setTimeout(() => {
-            console.log(JSON.stringify(values));
-            resolve(values);
-        }, 5000)
-    })}
-    validationSchema={
-        Yup.object().shape({
-            firstName: Yup.string()
-                .trim()
-                .required('First Name is required field'),
-            
-            description: Yup.string()
-                .trim()
-                .required('Description is required field')
-})} >
-    <FormikForm>
-        <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
-        <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name"  />
-        <FormInput.TextArea name="description" label="Description" />
-        <Button intent="primary" type="Submit" text="Submit" />
-    </FormikForm>
+<Formik
+  initialValues={{ firstName: '', lastName: '', description: '' }}
+  onSubmit={values =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        console.log(JSON.stringify(values))
+        resolve(values)
+      }, 5000)
+    })
+  }
+  validationSchema={Yup.object().shape({
+    firstName: Yup.string()
+      .trim()
+      .required('First Name is required field'),
+
+    description: Yup.string()
+      .trim()
+      .required('Description is required field')
+  })}>
+  <FormikForm>
+    <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
+    <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name" />
+    <FormInput.ColorPicker name="color" label="Color" color="#ff0000" />
+    <FormInput.TextArea name="description" label="Description" />
+    <Button intent="primary" type="Submit" text="Submit" />
+  </FormikForm>
 </Formik>
 ```
-
 
 ## FormikForm Props
 
@@ -173,15 +195,15 @@ Pass Props to FormikForm for that and that will pass to all input components
 
 ```js live=true
 <Formik
-    initialValues={{name: 'Mks'}}
-    onSubmit={(values) => alert(JSON.stringify(values))}
-    render={(formik) => 
+  initialValues={{ name: 'Mks' }}
+  onSubmit={values => alert(JSON.stringify(values))}
+  render={formik => (
     <FormikForm disabled>
-        <FormInput.Text name="name" label="Name" />
-        <Button disabled intent="primary" type="Submit" text="Submit" />
-    </FormikForm>}
+      <FormInput.Text name="name" label="Name" />
+      <Button disabled intent="primary" type="Submit" text="Submit" />
+    </FormikForm>
+  )}
 />
-
 ```
 
 ## Example with form validation
@@ -189,54 +211,73 @@ Pass Props to FormikForm for that and that will pass to all input components
 Try submitting the form
 
 ```js live=true
-<Formik 
-    initialValues={{firstName:'', lastName: '', description: '', specialPerson: true}}
-    onSubmit={(values) => alert(JSON.stringify(values))}
-    validationSchema={
-        Yup.object().shape({
-            firstName: Yup.string()
-                .trim()
-                .required('First Name is required field'),
-            
-            color: Yup.string()
-                .trim()
-                .required('Color is required field'),
+<Formik
+  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true }}
+  onSubmit={values => alert(JSON.stringify(values))}
+  validationSchema={Yup.object().shape({
+    firstName: Yup.string()
+      .trim()
+      .required('First Name is required field'),
 
-            specialPerson: Yup.boolean()
-                .required('VVIP is required field'),
+    color: Yup.string()
+      .trim()
+      .required('Color is required field'),
 
-            colorMulti: Yup.array()
-                .ensure()
-                .compact()
-                .min(1, 'Color Multi is required field'),
-                
-            picture: Yup.string()
-                .trim()
-                .required('Picture is required field'),
-                
-            description: Yup.string()
-                .trim()
-                .required('Description is required field')
-})} >
-    <FormikForm>
-        <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
-        <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name"  />
-        <FormInput.CheckBox name="specialPerson" label="VVIP" />
-        <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select"/>
-        <FormInput.RadioGroup name="eventType" label="Event Type" items={[{label: 'Public', value: 'public'}, {label: 'Private', value: 'private'}]} />
-        <FormInput.Select name="color" label="Color" placeholder="Select Color" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
-        <FormInput.MultiSelect name="colorMulti" label="Color Multi" placeholder="Select Multiple Colors" items={[{label: 'Red', value: 'red'}, {label: 'Blue', value: 'blue'}]}/>
-        <FormInput.TextArea name="description" label="Description" />
-        <Button intent="primary" type="Submit" text="Submit" />
-    </FormikForm>
+    specialPerson: Yup.boolean().required('VVIP is required field'),
+
+    colorMulti: Yup.array()
+      .ensure()
+      .compact()
+      .min(1, 'Color Multi is required field'),
+
+    picture: Yup.string()
+      .trim()
+      .required('Picture is required field'),
+
+    description: Yup.string()
+      .trim()
+      .required('Description is required field')
+  })}>
+  <FormikForm>
+    <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
+    <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name" />
+    <FormInput.CheckBox name="specialPerson" label="VVIP" />
+    <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select" />
+    <FormInput.RadioGroup
+      name="eventType"
+      label="Event Type"
+      items={[
+        { label: 'Public', value: 'public' },
+        { label: 'Private', value: 'private' }
+      ]}
+    />
+    <FormInput.Select
+      name="color"
+      label="Color"
+      placeholder="Select Color"
+      items={[
+        { label: 'Red', value: 'red' },
+        { label: 'Blue', value: 'blue' }
+      ]}
+    />
+    <FormInput.MultiSelect
+      name="colorMulti"
+      label="Color Multi"
+      placeholder="Select Multiple Colors"
+      items={[
+        { label: 'Red', value: 'red' },
+        { label: 'Blue', value: 'blue' }
+      ]}
+    />
+    <FormInput.TextArea name="description" label="Description" />
+    <Button intent="primary" type="Submit" text="Submit" />
+  </FormikForm>
 </Formik>
 ```
-
 
 ## Tag Input
 
 This is uses [TagInput](/simple-tag-input)
-
 
 ```js
 interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
@@ -252,52 +293,48 @@ interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
 }
 ```
 
-
-
 ```js live=true
 <Formik
-    initialValues={{tags: ['12 Angry Men']}}
-    onSubmit={(values) => alert(JSON.stringify(values))}
-    render={(formik) => 
+  initialValues={{ tags: ['12 Angry Men'] }}
+  onSubmit={values => alert(JSON.stringify(values))}
+  render={formik => (
     <FormikForm>
-        <FormInput.TagInput
-          name="tags"
-          label="Add Tag"
-          items={[
-            'The Godfather',
-            'The Godfather: Part II',
-            'The Dark Knight',
-            '12 Angry Men',
-            "Schindler's List",
-            'Special'
-          ]}
-          labelFor={(name) => name}
-          itemFromNewTag={newTag => newTag}
-          tagInputProps={{
-            noInputBorder: true,
-            openOnKeyDown: false,
-            showAddTagButton: true,
-            showClearAllButton: true,
-            allowNewTag: true,
-            placeholder: 'Enter tags...',
-            getTagProps: (value, _index, _selectedItems, createdItems) => {
-              return createdItems.includes(value)
-                ? { intent: 'danger', minimal: true }
-                : { intent: 'primary', minimal: true }
-            }
-          }}
-        />
-        <Button intent="primary" type="Submit" text="Submit" />
-    </FormikForm>}
+      <FormInput.TagInput
+        name="tags"
+        label="Add Tag"
+        items={[
+          'The Godfather',
+          'The Godfather: Part II',
+          'The Dark Knight',
+          '12 Angry Men',
+          "Schindler's List",
+          'Special'
+        ]}
+        labelFor={name => name}
+        itemFromNewTag={newTag => newTag}
+        tagInputProps={{
+          noInputBorder: true,
+          openOnKeyDown: false,
+          showAddTagButton: true,
+          showClearAllButton: true,
+          allowNewTag: true,
+          placeholder: 'Enter tags...',
+          getTagProps: (value, _index, _selectedItems, createdItems) => {
+            return createdItems.includes(value)
+              ? { intent: 'danger', minimal: true }
+              : { intent: 'primary', minimal: true }
+          }
+        }}
+      />
+      <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>
+  )}
 />
-
 ```
-
 
 ## Custom Render
 
 This is used to make custom formik component, you need to pass custom element in the render method.
-
 
 ```js
 interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
@@ -308,66 +345,86 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 ```
 
-
-
 ```js live=true
 <Formik
-    initialValues={{counter: 0}}
-    onSubmit={(values) => alert(JSON.stringify(values))}
-    render={(formik) => 
+  initialValues={{ counter: 0 }}
+  onSubmit={values => alert(JSON.stringify(values))}
+  render={formik => (
     <FormikForm>
-        <div>
-            <b>Counter: </b> {formik.values.counter}
-        </div>
-        <FormInput.CustomRender name="counter" label="Increment" render={(formik) => <Button text="Click Me" onClick={() => formik.setFieldValue('counter' , formik.values.counter + 1)}/>}/>
-        <Button intent="primary" type="Submit" text="Submit" />
-    </FormikForm>}
+      <div>
+        <b>Counter: </b> {formik.values.counter}
+      </div>
+      <FormInput.CustomRender
+        name="counter"
+        label="Increment"
+        render={formik => (
+          <Button text="Click Me" onClick={() => formik.setFieldValue('counter', formik.values.counter + 1)} />
+        )}
+      />
+      <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>
+  )}
 />
-
 ```
 
 ## Render as Children Function
 
 ```js live=true
 <Formik
-    initialValues={{counter: 0}}
-    onSubmit={(values) => new Promise((resolve) => {
-        setTimeout(() => {
-            console.log(JSON.stringify(values));
-            resolve(values);
-        }, 5000)
-    })} >
-    {(formik) => 
+  initialValues={{ counter: 0 }}
+  onSubmit={values =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        console.log(JSON.stringify(values))
+        resolve(values)
+      }, 5000)
+    })
+  }>
+  {formik => (
     <FormikForm>
-        <div>
-            <b>Counter: </b> {formik.values.counter}
-        </div>
-        <FormInput.CustomRender name="counter" label="Increment" render={(formik) => <Button text="Click Me" onClick={() => formik.setFieldValue('counter' , formik.values.counter + 1)}/>}/>
-        <Button intent="primary" type="Submit" text="Submit" />
-    </FormikForm>}
+      <div>
+        <b>Counter: </b> {formik.values.counter}
+      </div>
+      <FormInput.CustomRender
+        name="counter"
+        label="Increment"
+        render={formik => (
+          <Button text="Click Me" onClick={() => formik.setFieldValue('counter', formik.values.counter + 1)} />
+        )}
+      />
+      <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>
+  )}
 </Formik>
-
 ```
-
 
 ## Render as using Prop
 
 ```js live=true
 <Formik
-    initialValues={{counter: 0}}
-    render={(formik) => 
+  initialValues={{ counter: 0 }}
+  render={formik => (
     <FormikForm>
-        <div>
-            <b>Counter: </b> {formik.values.counter}
-        </div>
-        <FormInput.CustomRender name="counter" label="Increment" render={(formik) => <Button text="Click Me" onClick={() => formik.setFieldValue('counter' , formik.values.counter + 1)}/>}/>
-        <Button intent="primary" type="Submit" text="Submit" />
-    </FormikForm>}
-    onSubmit={(values) => new Promise((resolve) => {
-        setTimeout(() => {
-            console.log(JSON.stringify(values));
-            resolve(values);
-        }, 5000)
-    })} />
-
+      <div>
+        <b>Counter: </b> {formik.values.counter}
+      </div>
+      <FormInput.CustomRender
+        name="counter"
+        label="Increment"
+        render={formik => (
+          <Button text="Click Me" onClick={() => formik.setFieldValue('counter', formik.values.counter + 1)} />
+        )}
+      />
+      <Button intent="primary" type="Submit" text="Submit" />
+    </FormikForm>
+  )}
+  onSubmit={values =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        console.log(JSON.stringify(values))
+        resolve(values)
+      }, 5000)
+    })
+  }
+/>
 ```

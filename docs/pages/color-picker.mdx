@@ -1,0 +1,32 @@
+# ColorPicker --- docs/pages/color-picker.mdx
+
+`ColorPicker` allows to pick a color as being defined [here](https://www.sketch.com/s/0f81cf53-d980-4da3-bdbf-2dd49a875922/a/ndyo00#Inspector).
+
+## Props
+
+```js
+interface ColorPickerProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'onChange'> {
+  color?: string
+  width?: ButtonProps['width']
+  height?: ButtonProps['height']
+  onChange?: (color: string) => void
+}
+```
+
+## No pre-selected color (transparent)
+
+```js live
+<ColorPicker onChange={color => console.log(color)} />
+```
+
+## With pre-selected color
+
+```js live
+<ColorPicker color="#004fc4" onChange={color => console.log(color)} />
+```
+
+## Custom height and width
+
+```js live
+<ColorPicker color="#004fc4" height={38} width={120} onChange={color => console.log(color)} />
+```

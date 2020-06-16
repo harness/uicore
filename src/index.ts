@@ -78,3 +78,4 @@ export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikFor
 export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
 export { LogViewer, LogViewerProps } from './components/LogViewer/LogViewer'
+export { ColorPicker } from './components/ColorPicker/ColorPicker'
