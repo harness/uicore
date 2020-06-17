@@ -25,7 +25,9 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
     const propMaxDate = props.dateRangePickerProps && props.dateRangePickerProps.maxDate
     setPropMaxDate(propMaxDate || new Date())
     props.dateRangePickerProps && delete props.dateRangePickerProps.maxDate
-    props.isMaxDateEditable ? setMaxDate(props.initialMaxDate || new Date()) : setMaxDate(propMaxDate || new Date())
+    props.isMaxDateEditable
+      ? setMaxDate(props.initialMaxDate || propMaxDate || new Date())
+      : setMaxDate(propMaxDate || new Date())
   }, [])
 
   useEffect(() => {

@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.166 - 06/17/20
+
+- `Added` ability to control maxDate in DateRangePickerButton
+
 ## 1.0.165 - 06/17/20
 
 - `Added` tab support (keyboard accessible) for ColorPicker component.
