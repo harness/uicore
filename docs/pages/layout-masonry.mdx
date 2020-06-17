@@ -10,17 +10,37 @@ interface MasonryProps<T = {}> extends React.ComponentProps<typeof Container> {
   renderItem: (item: T) => React.ReactElement
   keyOf: (item: T) => string | undefined
   gutter?: number
+  center?: boolean
 }
 ```
 
-## Example
+## Left alignment
 
 ```js live=true
 <Layout.Masonry
   gutter={25}
   items={[100, 200, 130, 400, 150, 100, 300, 220, 90, 250]}
   renderItem={number => (
-    <Container width={190} border={{ color: Color.GREY_500 }}>
+    <Container width={150} border={{ color: Color.GREY_500 }}>
+      <Text flex={{ align: 'center-center' }} height={number}>
+        {number}
+      </Text>
+    </Container>
+  )}
+  keyOf={number => number}
+  padding="xsmall"
+/>
+```
+
+## Center alignment
+
+```js live=true
+<Layout.Masonry
+  gutter={25}
+  items={[100, 200, 130, 400, 150, 100, 300, 220, 90, 250]}
+  center
+  renderItem={number => (
+    <Container width={150} border={{ color: Color.GREY_500 }}>
       <Text flex={{ align: 'center-center' }} height={number}>
         {number}
       </Text>
