@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Button, ButtonProps } from '../Button/Button'
 import { DateRangePicker, IDateRangePickerProps } from '@blueprintjs/datetime'
 import { PopoverInteractionKind } from '@blueprintjs/core'
-import moment from 'moment'
 
 export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'> {
   initialButtonText: string
@@ -17,15 +16,25 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
   const [isOpen, setIsOpen] = useState(false)
   const [text, setText] = useState(props.initialButtonText)
   const [selectedShortcutIndex, setSelectedShortcutIndex] = useState(-1)
-  const [maxDate, setMaxDate] = useState(props.initialMaxDate || new Date())
+
+  const [selected, setSelected] = useState(false)
+  const [maxDate, setMaxDate] = useState(new Date())
+  const [propMaxDate, setPropMaxDate] = useState(new Date())
+
+  useEffect(() => {
+    const propMaxDate = props.dateRangePickerProps && props.dateRangePickerProps.maxDate
+    setPropMaxDate(propMaxDate || new Date())
+    props.dateRangePickerProps && delete props.dateRangePickerProps.maxDate
+    props.isMaxDateEditable ? setMaxDate(props.initialMaxDate || new Date()) : setMaxDate(propMaxDate || new Date())
+  }, [])
 
   useEffect(() => {
     setText(props.initialButtonText)
   }, [props.initialButtonText])
 
   useEffect(() => {
-    setMaxDate(props.initialMaxDate || new Date())
-  }, [isOpen])
+    props.isMaxDateEditable && selected && setMaxDate(propMaxDate)
+  }, [isOpen, selected])
 
   return (
     <Button
@@ -36,7 +45,7 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
       tooltip={
         <DateRangePicker
           allowSingleDayRange={true}
-          maxDate={props.isMaxDateEditable ? maxDate : new Date()}
+          maxDate={maxDate}
           {...props.dateRangePickerProps}
           selectedShortcutIndex={selectedShortcutIndex}
           onShortcutChange={(_, index) => {
@@ -44,14 +53,9 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
           }}
           onChange={selectedDates => {
             setSelectedShortcutIndex(-1)
+
             if (selectedDates[0] && !selectedDates[1]) {
-              setMaxDate(
-                new Date(
-                  moment()
-                    .add(30, 'day')
-                    .valueOf()
-                )
-              )
+              setSelected(true)
             }
             if (selectedDates[0] && selectedDates[1]) {
               setIsOpen(false)
