@@ -74,25 +74,30 @@ exports[`Card menu test should render cards with props selected and interactive 
           <span
             class="bp3-popover-target"
           >
-            <span
-              class="bp3-icon bp3-icon-more main menu padding padding-small"
-              icon="more"
+            <button
+              class="bp3-button bp3-minimal font button iconOnly main menu style style-color style-color-var(--grey-500)"
+              type="button"
             >
-              <svg
-                data-icon="more"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
+              <span
+                class="bp3-icon bp3-icon-more main padding padding-undefined"
+                icon="more"
               >
-                <desc>
-                  more
-                </desc>
-                <path
-                  d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
+                <svg
+                  data-icon="more"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <desc>
+                    more
+                  </desc>
+                  <path
+                    d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
           </span>
         </span>
       </div>
@@ -130,25 +135,30 @@ exports[`Card menu test should render icon card with no props 1`] = `
           <span
             class="bp3-popover-target"
           >
-            <span
-              class="bp3-icon bp3-icon-more main menu padding padding-small"
-              icon="more"
+            <button
+              class="bp3-button bp3-minimal font button iconOnly main menu style style-color style-color-var(--grey-500)"
+              type="button"
             >
-              <svg
-                data-icon="more"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
+              <span
+                class="bp3-icon bp3-icon-more main padding padding-undefined"
+                icon="more"
               >
-                <desc>
-                  more
-                </desc>
-                <path
-                  d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
+                <svg
+                  data-icon="more"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <desc>
+                    more
+                  </desc>
+                  <path
+                    d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
           </span>
         </span>
       </div>
