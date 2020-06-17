@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.164 - 06/17/20
+
+- `Fixed` LogViewer example .
+
 ## 1.0.163 - 06/16/20
 
 - `Fixed` Clicking on Card.Menu also triggers click event on Card itself.
