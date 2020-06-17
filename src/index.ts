@@ -9,7 +9,7 @@ export { Checkbox } from './components/Checkbox/Checkbox'
 export { Container } from './components/Container/Container'
 export { Heading } from './components/Heading/Heading'
 export { Icon, HarnessIcons, IconName } from './icons/Icon'
-export { Layout } from './layouts/Layout'
+export { Layout, MasonryRef, MasonryProps } from './layouts/Layout'
 export { Link } from './components/Link/Link'
 export { List } from './components/List/List'
 export { ListItem } from './components/List/ListItem'
@@ -61,7 +61,7 @@ export {
 } from './components/StackTraceList/StackTraceList'
 export { Collapse, CollapseProps } from './components/Collapse/Collapse'
 export { CollapseList, CollapseListProps } from './components/Collapse/CollapseList'
-export { CollapseListPanel, CollapseListPanelProps } from './components/Collapse/CollapseListPanel'
+export { CollapseListPanel, CollapseListPanelProps, ListPanelInterface } from './components/Collapse/CollapseListPanel'
 export { GraphError } from './components/GraphError/GraphError'
 export {
   SelectWithSubview,
@@ -78,3 +78,4 @@ export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikFor
 export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
 export { LogViewer, LogViewerProps } from './components/LogViewer/LogViewer'
+export { ColorPicker } from './components/ColorPicker/ColorPicker'

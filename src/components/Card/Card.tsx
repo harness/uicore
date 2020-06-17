@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Card as BpCard, ICardProps, HTMLDivProps, Position } from '@blueprintjs/core'
 import css from './Card.css'
 import cx from 'classnames'
 import { Icon as UiIcon, IconName, IconProps } from '../../icons/Icon'
 import { Color } from '../../core/Color'
-import { Popover } from '../../components/Popover/Popover'
+import { Popover, PopoverProps } from '../../components/Popover/Popover'
 import { Text } from '../../components/Text/Text'
+import { Button } from '../../components/Button/Button'
 
 export interface CardProps extends ICardProps {
   selected?: boolean
@@ -14,12 +15,22 @@ export interface CardProps extends ICardProps {
 export const Card: React.FC<CardProps> = props => {
   const { selected = false, className = '', style, tabIndex = 0, ...bpProps } = props
   const tabIndexProps = bpProps.interactive ? { tabIndex } : {}
+  const onClick = useCallback(
+    event => {
+      if (!event.target.closest(`.${css.dots}`)) {
+        props.onClick?.(event)
+      }
+    },
+    [props.onClick]
+  )
+
   return (
     <BpCard
       {...bpProps}
       {...tabIndexProps}
       className={cx(css.card, className, { [css.selected]: selected })}
-      style={style}>
+      style={style}
+      onClick={onClick}>
       {props.children}
     </BpCard>
   )
@@ -47,18 +58,22 @@ interface CardMenuProps extends HTMLDivProps {
   menuContent: JSX.Element
   title?: string
   colorIdentifier?: Color
+  menuPopoverProps?: PopoverProps
 }
 
 const Menu: React.FC<CardMenuProps> = props => {
-  const { menuContent, title, colorIdentifier = false, className, style = {} } = props
+  const { menuContent, title, colorIdentifier = false, className, style = {}, menuPopoverProps } = props
+  // NextJS does not work well with usePortal={true}
+  const isNext =
+    typeof window !== 'undefined' && typeof window.next !== 'undefined' && typeof window.__NEXT_DATA__ !== 'undefined'
 
   return (
     <div
       className={cx(css.cardMenu, className, { [css.colorIdentifier]: colorIdentifier })}
       style={{ color: colorIdentifier ? colorIdentifier : '', ...style }}>
       <div className={css.dots}>
-        <Popover content={menuContent} position={Position.RIGHT_TOP}>
-          <UiIcon className={css.menu} name="more" size={16} padding="small" />
+        <Popover content={menuContent} position={Position.RIGHT_TOP} usePortal={!isNext} {...menuPopoverProps}>
+          <Button className={css.menu} minimal icon="more" style={{ color: 'var(--grey-500)' }} />
         </Popover>
       </div>
       {title && (

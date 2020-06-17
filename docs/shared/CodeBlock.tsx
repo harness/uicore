@@ -6,13 +6,14 @@ import * as Yup from 'yup'
 import CodeTheme from './CodeTheme'
 import { mdx } from '@mdx-js/react'
 import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
+import * as BP from '@blueprintjs/core'
 
 export default ({ children, live, FCLive, render }) => {
   const liveProviderProps = {
     theme: CodeTheme,
     code: children.trim(),
     transformCode: (code: string) => '/** @jsx mdx */\n<>' + code + '\n</>',
-    scope: { ...scope, BlueprintIconNames, mdx, Yup }
+    scope: { ...scope, BlueprintIconNames, mdx, Yup, BP }
   }
 
   if (live) {

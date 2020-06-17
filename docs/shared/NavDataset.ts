@@ -181,6 +181,10 @@ export default [
       {
         label: 'Table',
         url: '/table'
+      },
+      {
+        label: 'ColorPicker',
+        url: '/color-picker'
       }
     ]
   },

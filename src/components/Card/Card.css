@@ -48,12 +48,13 @@ div.card {
     position: relative;
     top: -10px;
     left: 7px;
+    width: calc(100% - 20px);
   }
 
   .dots {
     position: absolute;
-    top: -20px;
-    right: -26px;
+    top: -15px;
+    right: -19px;
     .menu {
       cursor: pointer;
       transform: rotate(90deg);

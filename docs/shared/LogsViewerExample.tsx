@@ -8,7 +8,7 @@ const logs = logsJson.resource.response.map(log => ({
   createdAt: log.createdAt
 }))
 
-export const LogsViewerExample = ({ limit = 20, isLoading = false }) => {
+const LogsViewerExample = ({ limit = 20, isLoading = false }) => {
   return (
     <LogViewer
       logs={logs}
@@ -18,3 +18,5 @@ export const LogsViewerExample = ({ limit = 20, isLoading = false }) => {
     />
   )
 }
+
+export default LogsViewerExample

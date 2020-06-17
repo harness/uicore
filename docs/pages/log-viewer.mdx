@@ -3,7 +3,7 @@
 
 `<LogViewer/>` component aims render ansi logs to dom without dangerouslysetinnerhtml
 
-import {LogsViewerExample} from '../shared/LogsViewerExample.tsx'
+import {LogsViewerExampleLoader} from '../shared/LogsViewerExampleLoader.tsx'
 
 ## Import
 
@@ -42,7 +42,7 @@ const defaultOptions = {
 
 ## Example
 
-<LogsViewerExample />
+<LogsViewerExampleLoader />
 
 ```js
 export const LogsViewerExample = () => {
@@ -52,7 +52,7 @@ export const LogsViewerExample = () => {
 
 ## Example Partial with download Logs
 
-<LogsViewerExample limit={5} />
+<LogsViewerExampleLoader limit={5} />
 
 ```js
 export const LogsViewerExample = () => {
@@ -62,7 +62,7 @@ export const LogsViewerExample = () => {
 
 ## Example Partial with Loading
 
-<LogsViewerExample isLoading />
+<LogsViewerExampleLoader isLoading />
 
 ```js
 export const LogsViewerExample = () => {

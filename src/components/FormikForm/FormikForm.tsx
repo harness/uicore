@@ -31,6 +31,7 @@ import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
+import { ColorPickerProps, ColorPicker } from '../ColorPicker/ColorPicker'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -512,6 +513,35 @@ export const Formik = <Values extends object>(props: FormikProps<Values>) => {
   )
 }
 
+interface FormColorPickerProps extends ColorPickerProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+  name: string
+  label: string
+}
+
+const FormColorPicker = (props: FormColorPickerProps & FormikContenxtProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    onChange,
+    ...rest
+  } = restProps
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <ColorPicker
+        height={38}
+        {...rest}
+        onChange={(color: string) => {
+          formik?.setFieldValue(name, color)
+          onChange?.(color)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 export const FormInput = {
   TagInput: connect(TagInput),
   CustomRender: connect(CustomRender),
@@ -521,7 +551,8 @@ export const FormInput = {
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
   Text: connect(Text),
-  TextArea: connect(TextArea)
+  TextArea: connect(TextArea),
+  ColorPicker: connect(FormColorPicker)
 }
 
 export const FormikForm = connect(Form)

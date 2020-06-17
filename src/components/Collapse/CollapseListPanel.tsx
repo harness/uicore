@@ -1,49 +1,50 @@
 import React from 'react'
-import { Button } from '../Button/Button'
+import { Button, ButtonProps } from '../Button/Button'
 import { Collapse as BpCollapse, ICollapseProps } from '@blueprintjs/core'
 import { CollapseHeader, CollapseHeaderProps } from './CollapseHeader'
 import { Container } from '../Container/Container'
 import cx from 'classnames'
 import css from './CollapseListPanel.css'
 
-interface CollapseListPanelProps extends Omit<CollapseHeaderProps, 'isOpen'>, ICollapseProps {
-  openNext?: () => Promise<void> | void
-  nextButtonText?: string
+interface ListPanelInterface {
   isOpen?: boolean
+  onToggleOpen?: (isOpen?: boolean) => void
+  openNext?: () => Promise<void> | void
+}
+
+type CollapseListPanelHeaderProps = Omit<CollapseHeaderProps, 'isOpen' | 'onToggleOpen'>
+
+interface CollapseListPanelProps extends ListPanelInterface {
+  nextButtonProps?: ButtonProps
   footerContent?: JSX.Element
+  nextButtonText?: string
   className?: string
+  bpCollapseProps?: ICollapseProps
+  collapseHeaderProps?: CollapseListPanelHeaderProps
 }
 
 const CollapseListPanel: React.FC<CollapseListPanelProps> = props => {
-  const { openNext, nextButtonText, footerContent, className, ...rest } = props
   const {
-    isOpen,
-    collapsedIcon,
-    expandedIcon,
-    iconProps,
-    heading,
-    isRemovable,
-    onRemove,
+    openNext,
     onToggleOpen,
-    ...bpProps
-  } = rest
+    nextButtonText,
+    footerContent,
+    className,
+    collapseHeaderProps,
+    bpCollapseProps,
+    nextButtonProps,
+    isOpen
+  } = props
   return (
     <Container className={cx(css.main, className)}>
-      <CollapseHeader
-        isOpen={isOpen || false}
-        collapsedIcon={collapsedIcon}
-        expandedIcon={expandedIcon}
-        iconProps={iconProps}
-        heading={heading}
-        isRemovable={isRemovable}
-        onRemove={onRemove}
-        onToggleOpen={onToggleOpen}
-      />
+      <CollapseHeader {...collapseHeaderProps} isOpen={isOpen || false} onToggleOpen={onToggleOpen || (() => null)} />
       <Container className={css.collapse}>
-        <BpCollapse {...bpProps} isOpen={isOpen}>
+        <BpCollapse {...bpCollapseProps} isOpen={isOpen}>
           {props.children}
           <Container className={css.footerContent}>
-            <Button onClick={openNext}>{nextButtonText || 'Next'}</Button>
+            <Button {...nextButtonProps} onClick={openNext}>
+              {nextButtonText || 'Next'}
+            </Button>
             {footerContent}
           </Container>
         </BpCollapse>
@@ -52,4 +53,4 @@ const CollapseListPanel: React.FC<CollapseListPanelProps> = props => {
   )
 }
 
-export { CollapseListPanel, CollapseListPanelProps }
+export { CollapseListPanel, CollapseListPanelProps, ListPanelInterface }

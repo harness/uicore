@@ -10,8 +10,13 @@ import { CollapseList, CollapseListPanel } from '@wings-software/uikit'
 
 ```js live=true
 <CollapseList>
-<CollapseListPanel isOpen={true} heading={'Click here to collapse or expand'} isRemovable={true}  
-  onRemove={() => { alert('This component will get removed') } } >
+<CollapseListPanel collapseHeaderProps={
+  { 
+    heading: 'Click here to collapse or expand',
+    isRemovable: true,  
+    onRemove: () => { alert('This component will get removed') }
+  }
+  }>
     Hello world The quick brown fox jumps over the lazy dog
     The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
      The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
@@ -22,8 +27,13 @@ import { CollapseList, CollapseListPanel } from '@wings-software/uikit'
      The quick brown fox jumps over the lazy dog
      The quick brown fox jumps over the lazy dog
   </CollapseListPanel>
-  <CollapseListPanel isOpen={true} heading={'Click here to collapse or expand'} isRemovable={true}  
-  onRemove={() => { alert('This component will get removed') } } >
+  <CollapseListPanel collapseHeaderProps={
+  { 
+    heading: 'Click here to collapse or expand',
+    isRemovable: true,  
+    onRemove: () => { alert('This component will get removed') }
+  }
+  }>
     Hello world The quick brown fox jumps over the lazy dog
     The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
      The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
@@ -34,8 +44,13 @@ import { CollapseList, CollapseListPanel } from '@wings-software/uikit'
      The quick brown fox jumps over the lazy dog
      The quick brown fox jumps over the lazy dog
   </CollapseListPanel>
-  <CollapseListPanel isOpen={true} heading={'Click here to collapse or expand'} isRemovable={true}  
-  onRemove={() => { alert('This component will get removed') } } >
+  <CollapseListPanel collapseHeaderProps={
+  { 
+    heading: 'Click here to collapse or expand',
+    isRemovable: true,  
+    onRemove: () => { alert('This component will get removed') }
+  }
+  }>
     Hello world The quick brown fox jumps over the lazy dog
     The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
      The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
@@ -46,8 +61,13 @@ import { CollapseList, CollapseListPanel } from '@wings-software/uikit'
      The quick brown fox jumps over the lazy dog
      The quick brown fox jumps over the lazy dog
   </CollapseListPanel>
-  <CollapseListPanel isOpen={true} heading={'Click here to collapse or expand'} isRemovable={true}  
-  onRemove={() => { alert('This component will get removed') } } >
+  <CollapseListPanel collapseHeaderProps={
+  { 
+    heading: 'Click here to collapse or expand',
+    isRemovable: true,  
+    onRemove: () => { alert('This component will get removed') }
+  }
+  }>
     Hello world The quick brown fox jumps over the lazy dog
     The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
      The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
@@ -58,8 +78,13 @@ import { CollapseList, CollapseListPanel } from '@wings-software/uikit'
      The quick brown fox jumps over the lazy dog
      The quick brown fox jumps over the lazy dog
   </CollapseListPanel>
-  <CollapseListPanel isOpen={true} heading={'Click here to collapse or expand'} isRemovable={true}  
-  onRemove={() => { alert('This component will get removed') } } openNext={() => alert('Custom next function')} >
+  <CollapseListPanel collapseHeaderProps={
+  { 
+    heading: 'Click here to collapse or expand',
+    isRemovable: true,  
+    onRemove: () => { alert('This component will get removed') }
+  }
+  }  openNext={() => alert('Custom next function')}>
     Hello world The quick brown fox jumps over the lazy dog
     The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
      The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br/>
