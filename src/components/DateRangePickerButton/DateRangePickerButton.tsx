@@ -7,6 +7,8 @@ export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'
   initialButtonText: string
   renderButtonText: (selectedDates: [Date, Date]) => string
   onChange: (selectedDates: [Date, Date]) => void
+  isMaxDateEditable?: boolean
+  initialMaxDate?: Date
   dateRangePickerProps?: IDateRangePickerProps
 }
 
@@ -15,9 +17,26 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
   const [text, setText] = useState(props.initialButtonText)
   const [selectedShortcutIndex, setSelectedShortcutIndex] = useState(-1)
 
+  const [selected, setSelected] = useState(false)
+  const [maxDate, setMaxDate] = useState(new Date())
+  const [propMaxDate, setPropMaxDate] = useState(new Date())
+
+  useEffect(() => {
+    const propMaxDate = props.dateRangePickerProps && props.dateRangePickerProps.maxDate
+    setPropMaxDate(propMaxDate || new Date())
+    props.dateRangePickerProps && delete props.dateRangePickerProps.maxDate
+    props.isMaxDateEditable
+      ? setMaxDate(props.initialMaxDate || propMaxDate || new Date())
+      : setMaxDate(propMaxDate || new Date())
+  }, [])
+
   useEffect(() => {
     setText(props.initialButtonText)
   }, [props.initialButtonText])
+
+  useEffect(() => {
+    props.isMaxDateEditable && selected && setMaxDate(propMaxDate)
+  }, [isOpen, selected])
 
   return (
     <Button
@@ -28,7 +47,7 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
       tooltip={
         <DateRangePicker
           allowSingleDayRange={true}
-          maxDate={new Date()}
+          maxDate={maxDate}
           {...props.dateRangePickerProps}
           selectedShortcutIndex={selectedShortcutIndex}
           onShortcutChange={(_, index) => {
@@ -37,6 +56,9 @@ export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props
           onChange={selectedDates => {
             setSelectedShortcutIndex(-1)
 
+            if (selectedDates[0] && !selectedDates[1]) {
+              setSelected(true)
+            }
             if (selectedDates[0] && selectedDates[1]) {
               setIsOpen(false)
               props.onChange?.([selectedDates[0], selectedDates[1]])
