@@ -1,12 +1,12 @@
 # Card Menu --- docs/pages/card-menu.mdx
 
 Card Icon component reuses Card Component and lets you to write body for menu [CD Next Gen](https://harness.atlassian.net/wiki/spaces/UI/pages/668271019/Card)
+
 ## Import
 
 ```js
 import { Card, CardBody } from '@wings-software/uikit'
 ```
-
 
 ## Types
 
@@ -35,30 +35,45 @@ interface CardMenuProps extends HTMLDivProps {
 
 ## Menu Cards
 
-
 ## CardsMenu
+
 ```js live=true
 <Layout.Horizontal spacing="large">
-    <Card>
-        <CardBody.Menu colorIdentifier={'red'} title="Jenkins Artifact" menuContent={<div><div>Menu</div><div>Option1</div><div>Option2</div><div>Option3</div></div>}>
-            <div style={{ height: '200px', width: '150px' }}>
-                <Layout.Vertical spacing="large">
-                <div>
-                <Icon name="service-jenkins" size={30} />
-                <Text style={{marginTop: '5px'}} font="small">ToDolist.war</Text>
-                </div>
-                <div>
-                    <Text font="small" style={{marginBottom: '5px', color: 'var(--grey-350)'}}>GETTING THE ARTEFACT</Text>
-                    <Text font="small">Referencing the configuration file</Text>
-                </div>
-                <div>
-                    <hr style={{margin: '0px 0px 10px', border: '1px dashed var(--grey-350)'}} />
-                    <Text font="small" style={{marginBottom: '5px', color: 'var(--grey-350)'}}>ARTEFACT SOURCE</Text>
-                    <Text font="small">Fixed</Text>
-                </div>
-                </Layout.Vertical>
-            </div>
-        </CardBody.Menu>
-    </Card>
+  <Card onClick={() => alert('Clicked')}>
+    <CardBody.Menu
+      colorIdentifier={'red'}
+      title="Jenkins Artifact"
+      menuContent={
+        <BP.Menu>
+          <BP.Menu.Item icon="edit" text="Edit" />
+          <BP.Menu.Item icon="duplicate" text="Clone" />
+          <BP.Menu.Item icon="cross" text="Delee" />
+        </BP.Menu>
+      }>
+      <div style={{ height: '200px', width: '150px' }}>
+        <Layout.Vertical spacing="large">
+          <div>
+            <Icon name="service-jenkins" size={30} />
+            <Text style={{ marginTop: '5px' }} font="small">
+              ToDolist.war
+            </Text>
+          </div>
+          <div>
+            <Text font="small" style={{ marginBottom: '5px', color: 'var(--grey-350)' }}>
+              GETTING THE ARTEFACT
+            </Text>
+            <Text font="small">Referencing the configuration file</Text>
+          </div>
+          <div>
+            <hr style={{ margin: '0px 0px 10px', border: '1px dashed var(--grey-350)' }} />
+            <Text font="small" style={{ marginBottom: '5px', color: 'var(--grey-350)' }}>
+              ARTEFACT SOURCE
+            </Text>
+            <Text font="small">Fixed</Text>
+          </div>
+        </Layout.Vertical>
+      </div>
+    </CardBody.Menu>
+  </Card>
 </Layout.Horizontal>
 ```
