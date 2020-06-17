@@ -85,6 +85,7 @@ export function ColorPicker(props: ColorPickerProps) {
           {colors.map(color => (
             <button
               type="button"
+              tabIndex={0}
               key={color}
               style={{ background: color }}
               className={cx(selected === color && css.selected, Classes.POPOVER_DISMISS)}
@@ -100,7 +101,8 @@ export function ColorPicker(props: ColorPickerProps) {
       tooltipProps={{
         interactionKind: 'click',
         minimal: true,
-        position: Position.BOTTOM_LEFT
+        position: Position.BOTTOM_LEFT,
+        hasBackdrop: true
       }}
     />
   )

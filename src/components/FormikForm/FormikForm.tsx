@@ -531,6 +531,7 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContenxtProps<any>)
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <ColorPicker
+        height={38}
         {...rest}
         onChange={(color: string) => {
           formik?.setFieldValue(name, color)
