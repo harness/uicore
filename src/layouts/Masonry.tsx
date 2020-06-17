@@ -11,6 +11,7 @@ export interface MasonryProps<T = {}> extends React.ComponentProps<typeof Contai
   keyOf: (item: T) => string | undefined
   gutter?: number
   masonryRef?: (masonry: MasonryRef) => void
+  center?: boolean
 }
 
 export const Masonry: React.FC<MasonryProps> = ({
@@ -23,11 +24,14 @@ export const Masonry: React.FC<MasonryProps> = ({
   height = '100%',
   padding = 'xxxlarge',
   className,
+  style,
+  center,
   ...others
 }) => {
   const [containerClass] = useState(`masonry-container-${Utils.randomId()}`)
   const [itemClass] = useState(`masonry-item-${Utils.randomId()}`)
   const [masonry, setMasonry] = useState<MasonryRef>()
+  const _style = Object.assign({}, style, center && { margin: '0 auto' })
 
   useEffect(() => {
     const container = document.querySelector('.' + containerClass)
@@ -37,6 +41,7 @@ export const Masonry: React.FC<MasonryProps> = ({
         const _masonry = new MasonryLayout(container, {
           itemSelector: '.' + itemClass,
           gutter,
+          fitWidth: !!center,
           transitionDuration: 0
         })
 
@@ -52,7 +57,13 @@ export const Masonry: React.FC<MasonryProps> = ({
   }, [items])
 
   return (
-    <Container width={width} height={height} padding={padding} className={cx(containerClass, className)} {...others}>
+    <Container
+      width={width}
+      height={height}
+      padding={padding}
+      className={cx(containerClass, className)}
+      {...others}
+      style={_style}>
       {items?.map(item => (
         <Container className={itemClass} key={keyOf(item)} style={{ marginBottom: gutter }}>
           {renderItem(item)}
