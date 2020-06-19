@@ -1,5 +1,4 @@
 import './styles/styles.css'
-
 export { Config } from './core/Config'
 export { Color } from './core/Color'
 export { Intent } from './core/Intent'
@@ -79,3 +78,4 @@ export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
 export { LogViewer, LogViewerProps } from './components/LogViewer/LogViewer'
 export { ColorPicker } from './components/ColorPicker/ColorPicker'
+export { MultiTypeInput } from './components/MultiTypeInput/MultiTypeInput'

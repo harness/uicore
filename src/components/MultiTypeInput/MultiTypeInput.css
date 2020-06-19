@@ -1,0 +1,35 @@
+.select {
+  z-index: 2;
+}
+
+.btn {
+  all: unset;
+  background: var(--blue-500);
+  transform: translateX(-3px);
+  padding-left: 3px;
+  width: 24px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid var(--grey-400);
+  border-left: none;
+  cursor: pointer;
+
+  &.fixed {
+    background: var(--blue-500);
+  }
+
+  &.runtime {
+    background: var(--purple-500);
+  }
+
+  &.expression {
+    background: var(--yellow-500);
+  }
+}
+
+.menu {
+  text-align: right !important;
+}

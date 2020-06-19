@@ -82,7 +82,15 @@ export function Button(props: ButtonProps) {
   // Extra left padding for left icon, for right icon, Blueprint already has proper margin
   const leftIconPadding: PaddingProps | undefined = props.text || props.href ? { right: 'xsmall' } : undefined
   const Tag = (props.href ? 'a' : 'button') as React.ElementType
-  const normalizedProps = omitStyledProps(props, 'tooltip', 'tooltipProps', 'iconProps', 'noStyling', 'withoutHref')
+  const normalizedProps = omitStyledProps(
+    props,
+    'icon',
+    'tooltip',
+    'tooltipProps',
+    'iconProps',
+    'noStyling',
+    'withoutHref'
+  )
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
   ) : (
