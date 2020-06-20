@@ -11,49 +11,52 @@ import { Position, Menu, PopoverInteractionKind } from '@blueprintjs/core'
 import cx from 'classnames'
 
 export enum MultiTypeInputType {
-  FIXED = 'fixed',
-  RUNTIME = 'runtime',
-  EXPRESSION = 'expression'
+  FIXED = 'FIXED',
+  RUNTIME = 'RUNTIME',
+  EXPRESSION = 'EXPRESSION'
 }
 
 const TypeIcon: Record<string, IconName> = {
-  fixed: 'pin',
-  runtime: 'derive-column',
-  expression: 'code'
+  FIXED: 'pin',
+  RUNTIME: 'derive-column',
+  EXPRESSION: 'code'
 }
 
 interface MultiTypeInputProps extends React.ComponentProps<typeof Container> {
   type?: MultiTypeInputType
   width?: number
   selectProps?: SelectProps
+  onTypeChanged?: (type: MultiTypeInputType) => void
 }
 
 export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
   selectProps,
   width,
-  type = MultiTypeInputType.FIXED
+  type = MultiTypeInputType.FIXED,
+  onTypeChanged
 }) => {
   const [activeType, setActiveType] = useState<MultiTypeInputType>(type)
   const switchType = useCallback(
-    (toType: MultiTypeInputType) => {
-      setActiveType(toType)
+    (newType: MultiTypeInputType) => {
+      setActiveType(newType)
+      onTypeChanged?.(newType)
     },
     [type]
   )
   const menu = (
     <Menu className={css.menu}>
       <Menu.Item
-        labelElement={<Icon name={TypeIcon.fixed} color={Color.BLUE_500} />}
+        labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
         text="Fixed value"
         onClick={() => switchType(MultiTypeInputType.FIXED)}
       />
       <Menu.Item
-        labelElement={<Icon name={TypeIcon.runtime} color={Color.PURPLE_500} />}
+        labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
         text="Runtime input"
         onClick={() => switchType(MultiTypeInputType.RUNTIME)}
       />
       <Menu.Item
-        labelElement={<Icon name={TypeIcon.expression} color={Color.YELLOW_500} />}
+        labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
         text="Expression"
         onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
       />
@@ -82,10 +85,10 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
         />
       )}
       {activeType === MultiTypeInputType.RUNTIME && (
-        <TextInput style={{ width: inputWidth }} placeholder="{{ value }}" disabled />
+        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="{input}" disabled />
       )}
       {activeType === MultiTypeInputType.EXPRESSION && (
-        <TextInput style={{ width: inputWidth }} placeholder="${expression}" />
+        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="${expression}" />
       )}
       <Button
         noStyling
