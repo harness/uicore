@@ -17,28 +17,32 @@ export enum MultiTypeInputType {
 }
 
 const TypeIcon: Record<string, IconName> = {
-  FIXED: 'pin',
-  RUNTIME: 'derive-column',
-  EXPRESSION: 'code'
+  FIXED: 'fixed-input',
+  RUNTIME: 'runtime-input',
+  EXPRESSION: 'expression-input'
 }
 
 interface MultiTypeInputProps extends React.ComponentProps<typeof Container> {
-  type?: MultiTypeInputType
+  value?: string
   width?: number
   selectProps?: SelectProps
   onTypeChanged?: (type: MultiTypeInputType) => void
 }
 
-export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
-  selectProps,
-  width,
-  type = MultiTypeInputType.FIXED,
-  onTypeChanged
-}) => {
-  const [activeType, setActiveType] = useState<MultiTypeInputType>(type)
+const valueToType = (value = ''): MultiTypeInputType => {
+  value = value.toLocaleLowerCase()
+
+  if (value === '{input}') return MultiTypeInputType.RUNTIME
+  if (value.startsWith('${') && value.endsWith('}')) return MultiTypeInputType.EXPRESSION
+
+  return MultiTypeInputType.FIXED
+}
+
+export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ value, selectProps, width, onTypeChanged }) => {
+  const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
   const switchType = useCallback(
     (newType: MultiTypeInputType) => {
-      setActiveType(newType)
+      setType(newType)
       onTypeChanged?.(newType)
     },
     [type]
@@ -64,14 +68,14 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
   )
 
   useEffect(() => {
-    setActiveType(type)
-  }, [type])
+    valueToType(value)
+  }, [value])
 
   const inputWidth = width && width - 28
 
   return (
     <Layout.Horizontal width={width}>
-      {activeType === MultiTypeInputType.FIXED && (
+      {type === MultiTypeInputType.FIXED && (
         <Select
           className={css.select}
           items={[
@@ -82,24 +86,25 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
             { label: 'GCP', value: 'service-gcp' }
           ]}
           {...selectProps}
+          value={{ label: 'Kubernetes', value: 'service-kubernetes' }}
         />
       )}
-      {activeType === MultiTypeInputType.RUNTIME && (
-        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="{input}" disabled />
+      {type === MultiTypeInputType.RUNTIME && (
+        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="{input}" disabled value={value} />
       )}
-      {activeType === MultiTypeInputType.EXPRESSION && (
-        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="${expression}" />
+      {type === MultiTypeInputType.EXPRESSION && (
+        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="${expression}" value={value} />
       )}
       <Button
         noStyling
-        className={cx(css.btn, css[activeType])}
+        className={cx(css.btn, css[type])}
         tooltip={menu}
         tooltipProps={{
           minimal: true,
           position: Position.BOTTOM_RIGHT,
           interactionKind: PopoverInteractionKind.CLICK
         }}>
-        <Icon name={TypeIcon[activeType]} size={14} color={Color.WHITE} />
+        <Icon name={TypeIcon[type]} size={14} color={Color.WHITE} />
       </Button>
     </Layout.Horizontal>
   )
