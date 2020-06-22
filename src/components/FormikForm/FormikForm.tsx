@@ -7,7 +7,7 @@ import {
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
-import { Radio } from '../Radio/Radio'
+import cssRadio from '../Radio/Radio.css'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
 import checkBoxCss from '../Checkbox/Checkbox.css'
 import {
@@ -184,6 +184,14 @@ const RadioGroup = (props: RadioGroupProps & FormikContenxtProps<any>) => {
     onChange,
     ...rest
   } = props
+
+  const itemTemp = items.map(item => {
+    const { className = '' } = item
+    return {
+      ...item,
+      className: cx(cssRadio.radio, className)
+    }
+  })
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <BpRadioGroup
@@ -191,14 +199,12 @@ const RadioGroup = (props: RadioGroupProps & FormikContenxtProps<any>) => {
         name={name}
         disabled={disabled}
         selectedValue={get(formik?.values, name)}
+        options={itemTemp}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
-        }}>
-        {items.map(radio => (
-          <Radio key={radio.value} {...radio} disabled={disabled} />
-        ))}
-      </BpRadioGroup>
+        }}
+      />
     </FormGroup>
   )
 }
