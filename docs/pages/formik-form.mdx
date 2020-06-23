@@ -93,6 +93,18 @@ interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 ```
 
+### Name with auto-generated Identifier
+
+```js
+interface InputWithIdentifierProps {
+  inputGroupProps?: IInputGroupProps
+  inputName?: string
+  idName?: string
+  inputLabel?: string
+  idLabel?: string
+}
+```
+
 ### File Input
 
 [FileInputProps](https://blueprintjs.com/docs/#core/components/file-input)
@@ -170,16 +182,21 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit'> {
       .trim()
       .required('Description is required field')
   })}>
-  <FormikForm>
-    <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
-    <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name" />
-    <Layout.Horizontal spacing="medium">
-      <FormInput.Text name="orgName" label="Organization Name" placeholder="Organization Name" />
-      <FormInput.ColorPicker name="color" label="Color" color="#ff0000" />
-    </Layout.Horizontal>
-    <FormInput.TextArea name="description" label="Description" />
-    <Button intent="primary" type="Submit" text="Submit" />
-  </FormikForm>
+  {formikProps => {
+    return (
+      <FormikForm>
+        <FormInput.InputWithIdentifier inputGroupProps={{ placeholder: 'Type here to generate Identifier' }} />
+        <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
+        <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name" />
+        <Layout.Horizontal spacing="medium">
+          <FormInput.Text name="orgName" label="Organization Name" placeholder="Organization Name" />
+          <FormInput.ColorPicker name="color" label="Color" color="#ff0000" />
+        </Layout.Horizontal>
+        <FormInput.TextArea name="description" label="Description" />
+        <Button intent="primary" type="Submit" text="Submit" />
+      </FormikForm>
+    )
+  }}
 </Formik>
 ```
 

@@ -1,0 +1,25 @@
+.txtNameContainer {
+  position: relative;
+
+  .txtIdContainer {
+    position: absolute;
+    right: 0;
+    color: var(--blue-600);
+  }
+
+  .txtId {
+    border: none;
+    margin-left: var(--spacing-xsmall);
+    width: 70px;
+    color: var(--blue-600);
+  }
+
+  .idInput {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 2px 4px;
+  }
+  .editable {
+    border: 1px solid var(--grey-300);
+  }
+}
