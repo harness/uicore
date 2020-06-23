@@ -32,7 +32,7 @@ import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { ColorPickerProps, ColorPicker } from '../ColorPicker/ColorPicker'
-import { InputWithIdentifier } from '../InputWithIdentifier/InputWithIdentifier'
+import { InputWithIdentifier, InputWithIdentifierProps } from '../InputWithIdentifier/InputWithIdentifier'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -560,7 +560,7 @@ export const FormInput = {
   Text: connect(Text),
   TextArea: connect(TextArea),
   ColorPicker: connect(FormColorPicker),
-  InputWithIdentifier: connect(InputWithIdentifier)
+  InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier)
 }
 
 export const FormikForm = connect(Form)
