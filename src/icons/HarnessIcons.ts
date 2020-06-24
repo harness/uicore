@@ -49,6 +49,8 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import ExpressionInput from './expression-input.svg'
+import FixedInput from './fixed-input.svg'
 import Github from './github.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -182,6 +184,7 @@ import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import Question from './question.svg'
+import RuntimeInput from './runtime-input.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -308,6 +311,8 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'expression-input'
+  | 'fixed-input'
   | 'github'
   | 'harness-logo-black'
   | 'harness-logo-white'
@@ -441,6 +446,7 @@ type HarnessIconName =
   | 'placeholder-selected'
   | 'placeholder'
   | 'question'
+  | 'runtime-input'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -567,6 +573,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  'expression-input': ExpressionInput,
+  'fixed-input': FixedInput,
   github: Github,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
@@ -700,6 +708,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
   question: Question,
+  'runtime-input': RuntimeInput,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,

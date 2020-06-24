@@ -141,21 +141,16 @@ export default [
         url: '/step-wizard'
       },
       {
-        label: 'Cards',
-        items: [
-          {
-            label: 'Card',
-            url: '/card'
-          },
-          {
-            label: 'Card Icon',
-            url: '/card-icon'
-          },
-          {
-            label: 'Card Menu',
-            url: '/card-menu'
-          }
-        ]
+        label: 'Card',
+        url: '/card'
+      },
+      {
+        label: 'Card Icon',
+        url: '/card-icon'
+      },
+      {
+        label: 'Card Menu',
+        url: '/card-menu'
       },
       {
         label: 'StackTraceList',
@@ -163,16 +158,11 @@ export default [
       },
       {
         label: 'Collapse',
-        items: [
-          {
-            label: 'Collapse',
-            url: '/collapse'
-          },
-          {
-            label: 'CollapseList',
-            url: '/collapse-list'
-          }
-        ]
+        url: '/collapse'
+      },
+      {
+        label: 'CollapseList',
+        url: '/collapse-list'
       },
       {
         label: 'GraphError',
@@ -185,6 +175,11 @@ export default [
       {
         label: 'ColorPicker',
         url: '/color-picker'
+      },
+      ,
+      {
+        label: 'MultiTypeInput',
+        url: '/multi-type-input'
       }
     ]
   },
