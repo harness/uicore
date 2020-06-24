@@ -3,17 +3,102 @@
 ## Props
 
 ```js
-TBD
+interface MultiTypeInputProps extends Omit<React.ComponentProps<typeof Container>, 'onChange'> {
+  value?: string
+  width?: number
+  selectProps?: SelectProps
+  mentionsData?: MentionsInfo['data']
+  onTypeChange?: (type: MultiTypeInputType) => void
+  onChange?: (value: string) => void
+  i18n?: I18nResource
+}
 ```
 
 ```js live=true
-<MultiTypeInput width={300} />
+<MultiTypeInput
+  width={300}
+  selectProps={{
+    items: [
+      { label: 'Kubernetes', value: 'service-kubernetes' },
+      { label: 'GitHub', value: 'service-github' },
+      { label: 'ELK', value: 'service-elk' },
+      { label: 'Jenkins', value: 'service-jenkins' },
+      { label: 'GCP', value: 'service-gcp' }
+    ]
+  }}
+  mentionsInfo={{
+    data: done =>
+      done([
+        'app.name',
+        'app.description',
+        'pipeline.name',
+        'pipeline.description',
+        'pipeline.identifier',
+        'pipeline.stage.qa.displayName'
+      ])
+  }}
+  onChange={value => {
+    console.log('onChange value:', value)
+  }}
+/>
 ```
 
 ```js live=true
-<MultiTypeInput width={300} value="{input}" />
+<MultiTypeInput
+  width={300}
+  value="{input}"
+  selectProps={{
+    items: [
+      { label: 'Kubernetes', value: 'service-kubernetes' },
+      { label: 'GitHub', value: 'service-github' },
+      { label: 'ELK', value: 'service-elk' },
+      { label: 'Jenkins', value: 'service-jenkins' },
+      { label: 'GCP', value: 'service-gcp' }
+    ]
+  }}
+  mentionsInfo={{
+    data: done =>
+      done([
+        'app.name',
+        'app.description',
+        'pipeline.name',
+        'pipeline.description',
+        'pipeline.identifier',
+        'pipeline.stage.qa.displayName'
+      ])
+  }}
+  onChange={value => {
+    console.log('onChange value:', value)
+  }}
+/>
 ```
 
 ```js live=true
-<MultiTypeInput width={300} value="${stage1.foo.bar}" />
+<MultiTypeInput
+  width={300}
+  value="${pipeline.name}"
+  selectProps={{
+    items: [
+      { label: 'Kubernetes', value: 'service-kubernetes' },
+      { label: 'GitHub', value: 'service-github' },
+      { label: 'ELK', value: 'service-elk' },
+      { label: 'Jenkins', value: 'service-jenkins' },
+      { label: 'GCP', value: 'service-gcp' }
+    ]
+  }}
+  mentionsInfo={{
+    data: done =>
+      done([
+        'app.name',
+        'app.description',
+        'pipeline.name',
+        'pipeline.description',
+        'pipeline.identifier',
+        'pipeline.stage.qa.displayName'
+      ])
+  }}
+  onChange={value => {
+    console.log('onChange value:', value)
+  }}
+/>
 ```

@@ -1935,6 +1935,13 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
+"@wings-software/mentions@^1.2.9":
+  version "1.2.9"
+  resolved "https://npm.pkg.github.com/download/@wings-software/mentions/1.2.9/66b154fedb00ce429a5760d649f66e48ddb602a1b53bb6ee99704a49437468cb#33a66befe5025eab0cb3d6248dd5eb5cb1bd4688"
+  integrity sha512-+/HAt3jsi0nnGpvSGUHcKrk8JygbdUyl6rBF+RpGBoPk7qQTWAAMP6g6ZjbNybWXwsdg2CUpDXt730mDAQhHRg==
+  dependencies:
+    caret-xy "^2.0.3"
+
 "@wings-software/xhr-async@^2.0.3":
   version "2.0.4"
   resolved "https://npm.pkg.github.com/download/@wings-software/xhr-async/2.0.4/b0b83d3d8654d57cb73145fbd4eecbc50ab6d775da4d5870c477ff3788d882b3#"
@@ -2668,6 +2675,11 @@ capture-exit@^2.0.0:
   integrity sha512-PiT/hQmTonHhl/HFGN+Lx3JJUznrVYJ3+AQsnthneZbvW7x+f08Tk7yLJTLEOUvBTbduLeeBkxEaYXUOUrRq6g==
   dependencies:
     rsvp "^4.8.4"
+
+caret-xy@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/caret-xy/-/caret-xy-2.0.3.tgz#8c0c5906a3966550b0af6698b5f3e6786a874271"
+  integrity sha512-iZySCshCBnQcwdYCFbfCvAorpMe/ghXqEOyDdCpOcYR6OtJu6bdnm3OTyCxlWtA7IAss4TQqcc0XO6EksKKJUw==
 
 caseless@~0.12.0:
   version "0.12.0"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { Select, SelectProps } from '../Select/Select'
@@ -9,6 +9,10 @@ import { Icon, IconName } from '../../icons/Icon'
 import { Color } from '../../core/Color'
 import { Position, Menu, PopoverInteractionKind } from '@blueprintjs/core'
 import cx from 'classnames'
+import { register, unregister, MentionsInfo } from '@wings-software/mentions'
+import i18nBase from './MultiTypeInput.i18n'
+import { I18nResource } from '../../core/Types'
+import { Utils } from '../../core/Utils'
 
 export enum MultiTypeInputType {
   FIXED = 'FIXED',
@@ -22,78 +26,134 @@ const TypeIcon: Record<string, IconName> = {
   EXPRESSION: 'expression-input'
 }
 
-interface MultiTypeInputProps extends React.ComponentProps<typeof Container> {
+const RUNTIME_INPUT_VALUE = '{input}'
+const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
+const MENTIONS_DEFAULT: MentionsInfo = {
+  identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
+  trigger: ['$', '${'],
+  rule: '${__match__}',
+  cached: true,
+  data: done => done([])
+}
+
+interface MultiTypeInputProps extends Omit<React.ComponentProps<typeof Container>, 'onChange'> {
   value?: string
   width?: number
   selectProps?: SelectProps
-  onTypeChanged?: (type: MultiTypeInputType) => void
+  mentionsInfo?: MentionsInfo
+  onTypeChange?: (type: MultiTypeInputType) => void
+  onChange?: (value: string) => void
+  i18n?: I18nResource
 }
 
-const valueToType = (value = ''): MultiTypeInputType => {
-  value = value.toLocaleLowerCase()
+const isValueAnExpression = (value: string) => value.startsWith('${') && value.endsWith('}')
 
-  if (value === '{input}') return MultiTypeInputType.RUNTIME
-  if (value.startsWith('${') && value.endsWith('}')) return MultiTypeInputType.EXPRESSION
+const valueToType = (value = ''): MultiTypeInputType => {
+  value = value.toLocaleLowerCase().trim()
+
+  if (value === RUNTIME_INPUT_VALUE) return MultiTypeInputType.RUNTIME
+  if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
 
   return MultiTypeInputType.FIXED
 }
 
-export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ value, selectProps, width, onTypeChanged }) => {
+export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
+  value,
+  selectProps = {},
+  width,
+  onTypeChange: onTypeChanged,
+  onChange,
+  mentionsInfo,
+  i18n: _i18n = {}
+}) => {
+  const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
+  const [inputValue, setInputValue] = useState(value)
+  const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = useCallback(
     (newType: MultiTypeInputType) => {
       setType(newType)
       onTypeChanged?.(newType)
+      const _inputValue = newType === MultiTypeInputType.RUNTIME ? RUNTIME_INPUT_VALUE : ''
+      setInputValue(_inputValue)
+      onChange?.(_inputValue)
     },
     [type]
   )
-  const menu = (
-    <Menu className={css.menu}>
-      <Menu.Item
-        labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
-        text="Fixed value"
-        onClick={() => switchType(MultiTypeInputType.FIXED)}
-      />
-      <Menu.Item
-        labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
-        text="Runtime input"
-        onClick={() => switchType(MultiTypeInputType.RUNTIME)}
-      />
-      <Menu.Item
-        labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
-        text="Expression"
-        onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
-      />
-    </Menu>
+  const inputWidth = width && width - 28
+  const { items = [] } = selectProps
+  const menu = useMemo(
+    () => (
+      <Menu className={css.menu}>
+        <Menu.Item
+          labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
+          text={i18n.fixedValue}
+          onClick={() => switchType(MultiTypeInputType.FIXED)}
+        />
+        <Menu.Item
+          labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
+          text={i18n.runtimeInput}
+          onClick={() => switchType(MultiTypeInputType.RUNTIME)}
+        />
+        <Menu.Item
+          labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
+          text={i18n.expression}
+          onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
+        />
+      </Menu>
+    ),
+    []
   )
 
   useEffect(() => {
     valueToType(value)
+    setInputValue(value)
   }, [value])
 
-  const inputWidth = width && width - 28
+  useEffect(() => {
+    if (type === MultiTypeInputType.EXPRESSION) {
+      unregister(mentionsType)
+      register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
+    }
+    return () => unregister(mentionsType)
+  }, [type])
 
   return (
     <Layout.Horizontal width={width}>
       {type === MultiTypeInputType.FIXED && (
         <Select
           className={css.select}
-          items={[
-            { label: 'Kubernetes', value: 'service-kubernetes' },
-            { label: 'GitHub', value: 'service-github' },
-            { label: 'ELK', value: 'service-elk' },
-            { label: 'Jenkins', value: 'service-jenkins' },
-            { label: 'GCP', value: 'service-gcp' }
-          ]}
+          items={items}
           {...selectProps}
-          value={{ label: 'Kubernetes', value: 'service-kubernetes' }}
+          onChange={item => {
+            const val = String(item.value)
+            setInputValue(val)
+            onChange?.(val)
+          }}
         />
       )}
       {type === MultiTypeInputType.RUNTIME && (
-        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="{input}" disabled value={value} />
+        <TextInput
+          className={css.input}
+          style={{ width: inputWidth }}
+          placeholder={RUNTIME_INPUT_VALUE}
+          disabled
+          value={inputValue}
+        />
       )}
       {type === MultiTypeInputType.EXPRESSION && (
-        <TextInput className={css.input} style={{ width: inputWidth }} placeholder="${expression}" value={value} />
+        <TextInput
+          className={css.input}
+          style={{ width: inputWidth }}
+          placeholder={EXPRESSION_INPUT_PLACEHOLDER}
+          value={inputValue}
+          onInput={input => {
+            const val = (input.target as HTMLInputElement).value
+            setInputValue(val)
+            onChange?.(val)
+          }}
+          data-mentions={mentionsType}
+        />
       )}
       <Button
         noStyling
