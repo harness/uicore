@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.171 - 06/23/22
+
+- `Fixed` InputWithIdentifier types for props
+
+## 1.0.170 - 06/23/22
+
+- `Added` InputWithIdentifier Form component
+
+## 1.0.169 - 06/19/22
+
+- `Fixed` formik radio group.
+
+## 1.0.168 - 06/19/20
+
+- `Fixed` Select to open on select caret icon.
+
 ## 1.0.167 - 06/17/20
 
 - `Added` center alignment prop for `<Layout.Masonry/>` component.

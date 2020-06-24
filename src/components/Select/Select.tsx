@@ -176,7 +176,17 @@ export function Select(props: SelectProps) {
         },
         value: query,
         leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
-        rightElement: <Icon name="caret-down" size={14} padding={size === SelectSize.Small ? 'xsmall' : 'small'} />,
+        rightElement: (
+          <Icon
+            name="caret-down"
+            onClick={e => {
+              const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
+              input?.focus()
+            }}
+            size={14}
+            padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+          />
+        ),
         small: size === SelectSize.Small,
         large: size === SelectSize.Large,
         ...props.inputProps

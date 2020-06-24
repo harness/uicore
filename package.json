@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uikit",
-  "version": "1.0.167",
+  "version": "1.0.171",
   "description": "Harness UIKit - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -135,6 +135,7 @@
   ],
   "dependencies": {
     "@types/lodash.get": "^4.4.6",
-    "lodash.get": "^4.4.2"
+    "lodash.get": "^4.4.2",
+    "react-contenteditable": "^3.3.5"
   }
 }

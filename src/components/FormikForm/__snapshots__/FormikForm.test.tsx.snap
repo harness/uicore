@@ -359,9 +359,10 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
           >
             <div>
               <label
-                class="bp3-control bp3-radio font radio main"
+                class="bp3-control bp3-radio radio"
               >
                 <input
+                  name="color"
                   type="radio"
                   value="Red"
                 />
@@ -371,9 +372,10 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
                 red
               </label>
               <label
-                class="bp3-control bp3-radio font radio main"
+                class="bp3-control bp3-radio radio"
               >
                 <input
+                  name="color"
                   type="radio"
                   value="Blue"
                 />
