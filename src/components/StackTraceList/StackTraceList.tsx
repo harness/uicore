@@ -1,12 +1,14 @@
-import React, { useState, useLayoutEffect, useRef, useCallback } from 'react'
+import React, { useState, useLayoutEffect, useRef, useCallback, RefObject } from 'react'
 import { Container } from '../Container/Container'
 import { Heading } from '../Heading/Heading'
 import { Button } from '../Button/Button'
 import css from './StackTraceList.css'
+import cx from 'classnames'
 import { Color } from '../../core/Color'
 
 export interface StackTracePanelProps {
   stackTrace: string
+  className?: string
 }
 
 export interface StackTraceListProps {
@@ -15,21 +17,26 @@ export interface StackTraceListProps {
   listContainerHeight?: number
 }
 
-export function StackTracePanel(props: StackTracePanelProps) {
-  const { stackTrace = '' } = props
-  const [isCollapsed, setCollapsed] = useState(true)
+export function useExpandibleHook(htmlElementRef: RefObject<HTMLElement>) {
   const [isExpandible, setIsExpandible] = useState(false)
-  const onCollapseHandler = useCallback(() => () => setCollapsed(!isCollapsed), [isCollapsed])
-  const textContentRef = useRef<HTMLPreElement>(null)
-
   useLayoutEffect(() => {
-    if ((textContentRef.current?.scrollHeight || 0) - (textContentRef.current?.offsetHeight || 0) > 0) {
+    if ((htmlElementRef.current?.scrollHeight || 0) - (htmlElementRef.current?.offsetHeight || 0) > 0) {
       setIsExpandible(true)
-      setCollapsed(true)
     }
   })
+
+  return isExpandible
+}
+
+export function StackTracePanel(props: StackTracePanelProps) {
+  const { stackTrace = '', className } = props
+  const [isCollapsed, setCollapsed] = useState(true)
+  const onCollapseHandler = useCallback(() => () => setCollapsed(!isCollapsed), [isCollapsed])
+  const textContentRef = useRef<HTMLPreElement>(null)
+  const isExpandible = useExpandibleHook(textContentRef)
+
   return (
-    <Container className={css.panel}>
+    <Container className={cx(css.panel, className)}>
       <Container className={css.textContainer}>
         <pre className={css.textContent} data-is-collapsed={isCollapsed} ref={textContentRef}>
           {stackTrace}
@@ -54,7 +61,7 @@ export function StackTraceList(props: StackTraceListProps) {
   return (
     <Container className={css.main}>
       {heading && (
-        <Heading level={3} padding="small" background={Color.GREY_100} className={css.heading}>
+        <Heading level={3} padding="small" background={Color.GREY_100}>
           {heading}
         </Heading>
       )}

@@ -56,7 +56,8 @@ export {
   StackTraceList,
   StackTraceListProps,
   StackTracePanel,
-  StackTracePanelProps
+  StackTracePanelProps,
+  useExpandibleHook
 } from './components/StackTraceList/StackTraceList'
 export { Collapse, CollapseProps } from './components/Collapse/Collapse'
 export { CollapseList, CollapseListProps } from './components/Collapse/CollapseList'
