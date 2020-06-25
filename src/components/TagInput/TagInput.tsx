@@ -1,4 +1,4 @@
-import { Button, Icon, ITagProps, MenuItem, Spinner } from '@blueprintjs/core'
+import { Button, Icon, ITagProps, MenuItem, Spinner, HTMLInputProps } from '@blueprintjs/core'
 import { IItemRendererProps, IMultiSelectProps, MultiSelect } from '@blueprintjs/select'
 import cx from 'classnames'
 import { I18nResource } from 'core/Types'
@@ -72,6 +72,9 @@ export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'it
 
   /** i18n object */
   i18n?: I18nResource
+
+  /** pass props to input, e.g. "data-name" */
+  inputProps?: HTMLInputProps
 }
 
 const SPINNER = <Spinner className={css.spinner} size={Icon.SIZE_STANDARD} />
@@ -105,6 +108,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     showAddTagButton,
     readonly,
     i18n: _i18n = {},
+    inputProps,
     ...options
   } = props
   const [items, setItems] = useState<T[]>(Array.isArray(_items) ? _items : [])
@@ -265,7 +269,8 @@ export function TagInput<T>(props: TagInputProps<T>) {
         },
         rightElement: loading ? SPINNER : clearButton,
         tagProps: _getTagProps,
-        className: cx(noInputBorder && css.input, readonly && css.readonly)
+        className: cx(noInputBorder && css.input, readonly && css.readonly),
+        inputProps
       }}
       noResults={
         loading ? null : (
