@@ -24,7 +24,6 @@ describe('StatusBar unit tests', () => {
     )
     await wait()
 
-    expect(container.querySelector('[class*="heading"]')).not.toBeNull()
     getByText('Java Stack Trace')
 
     rerender(<StackTraceList stackTraceList={[LARGE_STACK_TRACE, 'small stack trace']} />)
