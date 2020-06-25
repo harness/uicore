@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
-import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { Select, SelectProps } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
-import { Layout } from '../../layouts/Layout'
+import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
 import { Icon, IconName } from '../../icons/Icon'
 import { Color } from '../../core/Color'
@@ -36,7 +35,7 @@ const MENTIONS_DEFAULT: MentionsInfo = {
   data: done => done([])
 }
 
-interface MultiTypeInputProps extends Omit<React.ComponentProps<typeof Container>, 'onChange'> {
+interface MultiTypeInputProps extends Omit<LayoutProps, 'onChange'> {
   value?: string
   width?: number
   selectProps?: SelectProps
@@ -59,12 +58,13 @@ const valueToType = (value = ''): MultiTypeInputType => {
 
 export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
   value,
-  selectProps = {},
   width,
+  selectProps = {},
+  mentionsInfo,
   onTypeChange: onTypeChanged,
   onChange,
-  mentionsInfo,
-  i18n: _i18n = {}
+  i18n: _i18n = {},
+  ...layoutProps
 }) => {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
@@ -119,7 +119,7 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
   }, [type])
 
   return (
-    <Layout.Horizontal width={width}>
+    <Layout.Horizontal width={width} {...layoutProps}>
       {type === MultiTypeInputType.FIXED && (
         <Select
           className={css.select}
