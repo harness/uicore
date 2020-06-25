@@ -2,28 +2,32 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.0.174 - 06/24/22
+## 1.0.175 - 06/25/20
+
+- `Changed` ExpandingSearchInput component does not trigger onChange handler on mount.
+
+## 1.0.174 - 06/24/20
 
 - `Fixed` small type correction for MultiTypeInput component.
 
-## 1.0.173 - 06/24/22
+## 1.0.173 - 06/24/20
 
 - `Added` Expandible hook.
 - `Changed` Scoping for stack trace panel styles.
 
-## 1.0.172 - 06/24/22
+## 1.0.172 - 06/24/20
 
 - `Added` MultiTypeInput component.
 
-## 1.0.171 - 06/23/22
+## 1.0.171 - 06/23/20
 
 - `Fixed` InputWithIdentifier types for props
 
-## 1.0.170 - 06/23/22
+## 1.0.170 - 06/23/20
 
 - `Added` InputWithIdentifier Form component
 
-## 1.0.169 - 06/19/22
+## 1.0.169 - 06/19/20
 
 - `Fixed` formik radio group.
 

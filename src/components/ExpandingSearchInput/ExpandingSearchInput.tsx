@@ -55,6 +55,8 @@ export function ExpandingSearchInput(props: PropsInterface) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
 
+  const mounted = useRef(false)
+
   // getDerivedStateFromProps
   if (!isDefaultSet && typeof defaultValue === 'string' && defaultValue.length > 0) {
     // only set defaultValue (once) if it has a real string value. (at parent, defaultValue can be set asynchronously)
@@ -66,10 +68,9 @@ export function ExpandingSearchInput(props: PropsInterface) {
   }
 
   // componentDidMount
-  useEffect(() => {
-    // cannot stop autofocus, hence inverted logic is being used
-    if (!autoFocus) {
-      inputRef.current?.blur()
+  useLayoutEffect(() => {
+    if (autoFocus) {
+      inputRef.current?.focus()
     }
   }, [])
 
@@ -132,15 +133,25 @@ export function ExpandingSearchInput(props: PropsInterface) {
     setOnClearFlag(prevOnClearFlag => !prevOnClearFlag)
   }, [setInputNoTransition, setKey, setValue, setOnClearFlag])
   const afterClear = useCallback(() => {
-    inputRef.current?.focus()
-    propsOnChange?.('')
-    setInputNoTransition(false)
+    if (mounted.current) {
+      inputRef.current?.focus()
+      propsOnChange?.('')
+      setInputNoTransition(false)
+    }
   }, [propsOnChange, setInputNoTransition])
   useLayoutEffect(afterClear, [onClearFlag])
 
   const cssMain = `bp3-input-group ui-search-box ${css.main} ${className}`
 
   const cssInput = `bp3-input ${inputNoTransition ? css.notransition : ''}`
+
+  // needs to be the last useEffect
+  // using ref instead of state variable to avoid triggering a rerender
+  useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true
+    }
+  })
 
   return (
     <div key={key} className={cssMain} data-name={name}>
