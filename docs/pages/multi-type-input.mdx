@@ -3,11 +3,11 @@
 ## Props
 
 ```js
-interface MultiTypeInputProps extends Omit<React.ComponentProps<typeof Container>, 'onChange'> {
+interface MultiTypeInputProps extends Omit<LayoutProps, 'onChange'> {
   value?: string
   width?: number
   selectProps?: SelectProps
-  mentionsData?: MentionsInfo['data']
+  mentionsInfo?: MentionsInfo
   onTypeChange?: (type: MultiTypeInputType) => void
   onChange?: (value: string) => void
   i18n?: I18nResource

@@ -5,7 +5,7 @@ import css from './Layout.css'
 import { Spacing } from 'core/Spacing'
 import { Masonry, MasonryRef, MasonryProps } from './Masonry'
 
-interface LayoutProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
+export interface LayoutProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
   /** Spacing among children */
   spacing?: Spacing
 }
