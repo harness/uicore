@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.173 - 06/24/22
+
+- `Added` Expandible hook.
+- `Changed` Scoping for stack trace panel styles.
+
 ## 1.0.172 - 06/24/22
 
 - `Added` MultiTypeInput component.
