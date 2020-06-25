@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uikit",
-  "version": "1.0.171",
+  "version": "1.0.172",
   "description": "Harness UIKit - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -33,6 +33,7 @@
   "peerDependencies": {
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
+    "@wings-software/mentions": "^1.2.9",
     "@blueprintjs/select": "3.10.0",
     "@wings-software/xhr-async": "^2.0.5",
     "ansi-to-react": "^6.0.7",
@@ -62,6 +63,7 @@
     "@types/react-table": "7.0.13",
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
+    "@wings-software/mentions": "^1.2.9",
     "@wings-software/xhr-async": "^2.0.3",
     "ansi-to-react": "^6.0.7",
     "classnames": "^2.2.6",
