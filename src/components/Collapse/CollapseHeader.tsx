@@ -39,7 +39,7 @@ export function CollapseHeader(props: CollapseHeaderProps) {
         ) : (
           <Icon name={collapsedIcon || 'main-caret-right'} color={Color.GREY_400} size={10} {...iconProps} />
         )}
-        <Text className={css.title}>{heading}</Text>
+        {typeof heading === 'string' ? <Text className={css.title}>{heading}</Text> : heading}
       </Container>
 
       <Container>

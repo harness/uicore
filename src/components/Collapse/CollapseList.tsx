@@ -9,7 +9,9 @@ interface CollapseListProps {
 
 const CollapseList: React.FC<CollapseListProps> = props => {
   const { defaultOpenIndex, children } = props
-  const [openedIndices, setOpenPanelIndex] = useState<Set<number>>(new Set(defaultOpenIndex ? [defaultOpenIndex] : []))
+  const [openedIndices, setOpenPanelIndex] = useState<Set<number>>(
+    new Set(defaultOpenIndex || defaultOpenIndex === 0 ? [defaultOpenIndex] : [])
+  )
   const openNextCallback = useCallback(
     (index: number) => {
       openedIndices.delete(index)
