@@ -74,7 +74,7 @@ export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'it
   i18n?: I18nResource
 
   /** pass props to input, e.g. "data-name" */
-  inputProps?: HTMLInputProps
+  inputProps?: HTMLInputProps & Record<string, string>
 }
 
 const SPINNER = <Spinner className={css.spinner} size={Icon.SIZE_STANDARD} />
