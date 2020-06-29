@@ -29,6 +29,7 @@ import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkip from './conditional-skip.svg'
+import Copy from './copy.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -297,6 +298,7 @@ type HarnessIconName =
   | 'command-winrm'
   | 'conditional-skip-filled'
   | 'conditional-skip'
+  | 'copy'
   | 'dashboard-selected'
   | 'dashboard'
   | 'deployment-aborted-legacy'
@@ -565,6 +567,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-winrm': CommandWinrm,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip': ConditionalSkip,
+  copy: Copy,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,

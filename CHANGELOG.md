@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.179 - 06/29/20
 
+- `Added` Copy icon
+
+## 1.0.179 - 06/29/20
+
 - `Added` few icons to be used in YAML Builder > Snippet Section
 
 ## 1.0.178 - 06/25/20
