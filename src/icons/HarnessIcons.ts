@@ -260,6 +260,12 @@ import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
+import YamlBuilderEnv from './yaml-builder-env.svg'
+import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
+import YamlBuilderNotifications from './yaml-builder-notifications.svg'
+import YamlBuilderStages from './yaml-builder-stages.svg'
+import YamlBuilderSteps from './yaml-builder-steps.svg'
+import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 
 type HarnessIconName =
   | 'budget-alert-light'
@@ -522,6 +528,12 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+  | 'yaml-builder-env'
+  | 'yaml-builder-input-sets'
+  | 'yaml-builder-notifications'
+  | 'yaml-builder-stages'
+  | 'yaml-builder-steps'
+  | 'yaml-builder-trigger'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'budget-alert-light': BudgetAlertLight,
@@ -783,7 +795,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
-  'trigger-schedule': TriggerSchedule
+  'trigger-schedule': TriggerSchedule,
+  'yaml-builder-env': YamlBuilderEnv,
+  'yaml-builder-input-sets': YamlBuilderInputSets,
+  'yaml-builder-notifications': YamlBuilderNotifications,
+  'yaml-builder-stages': YamlBuilderStages,
+  'yaml-builder-steps': YamlBuilderSteps,
+  'yaml-builder-trigger': YamlBuilderTrigger
 }
 
 export { HarnessIcons, HarnessIconName }
