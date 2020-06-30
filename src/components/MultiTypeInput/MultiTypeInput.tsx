@@ -39,7 +39,7 @@ interface MultiTypeInputProps extends Omit<LayoutProps, 'onChange'> {
   value?: string
   width?: number
   selectProps?: SelectProps
-  mentionsInfo?: MentionsInfo
+  mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
   onChange?: (value: string) => void
   i18n?: I18nResource
