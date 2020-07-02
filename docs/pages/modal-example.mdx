@@ -2,14 +2,12 @@
 
 The Modal implementation is done using Blueprint JS core dialog along with React Hooks
 
-
-## Import 
+## Import
 
 ```js
-import { useModalHook, ModalProvider } from '@wings-software/uikit'
+import { useModalHook, ModalProvider, ModalErrorHandler, ModalErrorHandlerBinding } from '@wings-software/uikit'
 import { Dialog, Classes } from '@blueprintjs/core
 ```
-
 
 ## Usage
 
@@ -17,24 +15,23 @@ Use `ModalProvider` to provide modal context for your application:
 
 ```js
 <ModalProvider>
-    <ExampleModal />
+  <ExampleModal />
 </ModalProvider>
 ```
 
 Call `useModalHook` with the dialog component of your choice:
 
+## The current implementation used Default Props `IDialogProps` from Blueprint JS which can be found at
 
-## The current implementation used Default Props `IDialogProps` from Blueprint JS which can be found at 
-   https://blueprintjs.com/docs/#core/components/dialog
+https://blueprintjs.com/docs/#core/components/dialog
 
-
-## Theme Light, which can be applied by giving 
+## Theme Light, which can be applied by giving
 
 ```js
 className: Classes.DIALOG,
 ```
 
-## Theme Dark, which can be applied by giving 
+## Theme Dark, which can be applied by giving
 
 ```js
 className: Classes.DARK,
@@ -42,7 +39,6 @@ className: Classes.DARK,
 
 ```js
 export const ExampleModal = () => {
-
   const modalPropsLight: IDialogProps = {
     isOpen: true,
     usePortal: true,
@@ -54,9 +50,17 @@ export const ExampleModal = () => {
     className: Classes.DIALOG,
     style: { width: 600, height: 400 }
   }
+  let modalErrorHander: ModalErrorHandlerBinding
 
-
-  const [openModal, hideModal] = useModalHook(() => <Dialog onClose={hideModal} {...modalProps}></Dialog>)
+  const [openModal, hideModal] = useModalHook(() => (
+    <Dialog onClose={hideModal} {...modalProps}>
+      <ModalErrorHandler
+        bind={_handler => {
+          modalErrorHander = _handler
+        }}
+      />
+    </Dialog>
+  ))
 
   return (
     <React.Fragment>
@@ -67,5 +71,9 @@ export const ExampleModal = () => {
 ```
 
 ```js live=true
-<ModalExample/>
+<ModalExample />
 ```
+
+## ModalErrorHandler
+
+`<ModalErrorHandler/>` must be the first child in `<Dialog/>` component. Using `modalErrorHander` variable, you call call ModalErrorHandler APIs as being documented [here](https://harness.atlassian.net/wiki/spaces/CDNG/pages/736298085/Next+Gen+APIs+specification)

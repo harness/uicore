@@ -1,6 +1,5 @@
 import React from 'react'
-import { ModalProvider } from '../Modal'
-import { useModalHook } from '../Modal'
+import { ModalProvider, useModalHook, ModalErrorHandler, ModalErrorHandlerBinding } from '../Modal'
 import { Button } from '../Button/Button'
 import { Dialog, Classes, IDialogProps } from '@blueprintjs/core'
 
@@ -28,12 +27,55 @@ const ExampleModal = () => {
     className: Classes.DARK,
     style: { width: 600, height: 400 }
   }
+  let modalErrorHander: ModalErrorHandlerBinding
 
   const [openLightModal, hideLightModal] = useModalHook(() => (
-    <Dialog onClose={hideLightModal} {...modalPropsLight}></Dialog>
+    <Dialog onClose={hideLightModal} {...modalPropsLight}>
+      <ModalErrorHandler
+        bind={_handler => {
+          modalErrorHander = _handler
+        }}
+      />
+      <Button
+        text="Show Sample Error"
+        onClick={() => {
+          modalErrorHander.show({
+            status: 'FAILURE',
+            code: 'INVALID_REQUEST',
+            message: 'There is some issue with the request sent',
+            validationErrors: [
+              {
+                field: 'accountId',
+                message: 'accountId may not be null'
+              }
+            ],
+            correlationId: 'de78435b-f904-428c-984a-52673241e3a8'
+          })
+        }}
+      />
+    </Dialog>
   ))
   const [openDarkModal, hideDarkModal] = useModalHook(() => (
-    <Dialog onClose={hideDarkModal} {...modalPropsDark}></Dialog>
+    <Dialog onClose={hideDarkModal} {...modalPropsDark}>
+      <ModalErrorHandler
+        bind={_handler => {
+          modalErrorHander = _handler
+        }}
+      />
+      <Button
+        text="Show Sample Error"
+        onClick={() => {
+          modalErrorHander.show({
+            status: 'ERROR',
+            code: 'DUPLICATE_FIELD',
+            message: 'Oops, something went wrong on our end, please contact Harness Support.',
+            detailedMessage:
+              'Organization [org12da3454fdffabfsbfdahihddffssdsdfdfd24] under account [abcde] already exists',
+            correlationId: '7e36b0b8-f64f-42a7-bc8c-82d571c2aee9'
+          })
+        }}
+      />
+    </Dialog>
   ))
 
   return (
