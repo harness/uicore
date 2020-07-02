@@ -156,4 +156,33 @@ describe('ModalErrorHandler Tests', () => {
     rerender(<ModalErrorHandler bind={_modalErrorHandler => (modalErrorHandler = _modalErrorHandler)} />)
     expect(container.innerHTML).toEqual('')
   })
+
+  test.only('ModalErrorHandler should render NextGen error object properly', () => {
+    const message = 'There is some issue with the request sent'
+    let modalErrorHandler: ModalErrorHandlerBinding
+    const { container, rerender } = render(
+      <ModalErrorHandler bind={_modalErrorHandler => (modalErrorHandler = _modalErrorHandler)} />
+    )
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    modalErrorHandler!.show({
+      status: 'FAILURE',
+      code: 'INVALID_REQUEST',
+      message,
+      validationErrors: [
+        {
+          field: 'accountId',
+          message: 'accountId may not be null'
+        }
+      ],
+      correlationId: 'de78435b-f904-428c-984a-52673241e3a8'
+    })
+
+    rerender(<ModalErrorHandler bind={_modalErrorHandler => (modalErrorHandler = _modalErrorHandler)} />)
+
+    // icon should be rendered
+    expect(container.querySelector('span[icon] svg')).toBeTruthy()
+
+    // success message should be rendered
+    expect(container.querySelector('[class*=red][data-type="single-message"]')?.textContent).toEqual(message)
+  })
 })
