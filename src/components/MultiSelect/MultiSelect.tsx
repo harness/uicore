@@ -24,7 +24,6 @@ export interface MultiSelectProps
     | 'selectedItems'
     | 'itemRenderer'
     | 'onItemSelect'
-    | 'query'
     | 'items'
     | 'tagRenderer'
     | 'activeItem'
@@ -45,7 +44,7 @@ export function NoMatch() {
 
 export function MultiSelect(props: MultiSelectProps) {
   const { onChange, value, items: _items, ...rest } = props
-  const [query, setQuery] = React.useState('')
+  const [query, setQuery] = React.useState(props.query || '')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? _items : [])
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>(Array.isArray(value) ? value : [])
