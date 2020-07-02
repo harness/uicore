@@ -51,6 +51,7 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import ExpressionInput from './expression-input.svg'
+import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Github from './github.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -181,6 +182,7 @@ import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
 import NewDecoration from './new-decoration.svg'
+import NoFeedbackGiven from './no-feedback-given.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
@@ -320,6 +322,7 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'expression-input'
+  | 'feedback-given'
   | 'fixed-input'
   | 'github'
   | 'harness-logo-black'
@@ -450,6 +453,7 @@ type HarnessIconName =
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
   | 'new-decoration'
+  | 'no-feedback-given'
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
@@ -589,6 +593,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   'expression-input': ExpressionInput,
+  'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   github: Github,
   'harness-logo-black': HarnessLogoBlack,
@@ -719,6 +724,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
   'new-decoration': NewDecoration,
+  'no-feedback-given': NoFeedbackGiven,
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
