@@ -10,7 +10,7 @@ interface StepChangeData<SharedObject> {
   prevStepData: SharedObject
 }
 export interface StepWizardProps<SharedObject> {
-  children: Array<React.ReactElement<StepProps<SharedObject>>>
+  children: Array<React.ReactElement<StepProps<SharedObject>>|null>
   isNavMode?: boolean
   className?: string
   onStepChange?: (data: StepChangeData<SharedObject | undefined>) => void

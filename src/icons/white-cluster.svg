@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 34 28" xmlns="http://www.w3.org/2000/svg">
+<title>Group 9</title>
+<defs>
+<radialGradient id="a" r="100%" gradientTransform="translate(.5 .5) scale(.91882 1) rotate(-90) translate(-.5 -.5)">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-color="#289FEA" offset="1"/>
+</radialGradient>
+</defs>
+<g fill="none" fill-rule="evenodd">
+<g transform="translate(-860 -288)">
+<g transform="translate(360 150)">
+<g transform="translate(347 77)">
+<g transform="translate(16 61)">
+<g transform="translate(.49545 .33202)">
+<g transform="translate(137.5 .66798)">
+<path id="Polygon-Copy-20" d="m15.732 8.3776-3.9867 2.1149v4.1515l3.9867 2.1149 3.9867-2.1149v-4.1515l-3.9867-2.1149z" stroke="#fff" stroke-width="1.1016"/>
+<path id="Polygon-Copy-20" d="m20.496 16.132-3.9867 2.1149v4.1515l3.9867 2.1149 3.9867-2.1149v-4.1515l-3.9867-2.1149z" stroke="#fff" stroke-width="1.1016"/>
+<path id="Polygon-Copy-20" d="m10.479 16.029-3.9867 2.1149v4.1515l3.9867 2.1149 3.9867-2.1149v-4.1515l-3.9867-2.1149z" stroke="#fff" stroke-width="1.1016"/>
+<path id="Polygon-Copy-20" d="m25.856 8.3776-3.9867 2.1149v4.1515l3.9867 2.1149 3.9867-2.1149v-4.1515l-3.9867-2.1149z" stroke="#fff" stroke-width="1.1016"/>
+<polygon id="Polygon-Copy-20" points="5.6087 7.7541 10.146 10.161 10.146 14.975 5.6087 17.382 1.0712 14.975 1.0712 10.161" fill="url(#a)"/>
+<path id="b" d="m21.092 0.6235-3.9867 2.1149v4.1515l3.9867 2.1149 3.9867-2.1149v-4.1515l-3.9867-2.1149z" stroke="#fff" stroke-width="1.1016"/>
+<path d="m10.968 0.6235-3.9867 2.1149v4.1515l3.9867 2.1149 3.9867-2.1149v-4.1515l-3.9867-2.1149z" stroke="#fff" stroke-width="1.1016"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
