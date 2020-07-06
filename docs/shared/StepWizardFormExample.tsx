@@ -6,7 +6,7 @@ import {
   Button,
   StepWizard,
   Layout,
-  RadioSelect,
+  CardSelect,
   Text,
   Icon,
   TextInput,
@@ -204,7 +204,7 @@ const FirstStep = (props: StepProps<FormData>) => {
       <Text padding="small" style={{ textTransform: 'uppercase', color: 'var(--grey-400)' }}>
         Recommended
       </Text>
-      <RadioSelect {...radioProps} selected={selected && firstStepData.filter(data => data.value === selected)[0]} />
+      <CardSelect {...radioProps} selected={selected && firstStepData.filter(data => data.value === selected)[0]} />
     </Layout.Vertical>
   )
 }

@@ -21,7 +21,7 @@ function dummyPromise(): Promise<MultiSelectOption[]> {
   })
 }
 
-export function SimpleSelect(_props: { useRandomValue: boolean }) {
+export function SimpleSelect() {
   const [value, setValue] = React.useState<MultiSelectOption[]>(items.slice(0, 3))
 
   return (
@@ -35,7 +35,7 @@ export function SimpleSelect(_props: { useRandomValue: boolean }) {
   )
 }
 
-export function AsyncSelect(_props: { useRandomValue: boolean }) {
+export function AsyncSelect() {
   const [value, setValue] = React.useState<MultiSelectOption[]>([])
 
   return (

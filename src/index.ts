@@ -48,7 +48,7 @@ export { TagInput, TagInputItemsFutureResult, TagInputProps } from './components
 export { SimpleTagInput } from './components/TagInput/SimpleTagInput'
 export { I18nResourceFunction, I18nResource } from './core/Types'
 export { Card, CardProps, CardBody } from './components/Card/Card'
-export { RadioSelect, RadioSelectProps } from './components/RadioSelect/RadioSelect'
+export { CardSelect, CardSelectProps } from './components/CardSelect/CardSelect'
 export { CodeBlock } from './components/CodeBlock/CodeBlock'
 export { StatusBar, StatusBarProps } from './components/StatusBar/StatusBar'
 export { MultiLevelSelect } from './components/MultiLevelSelect/MultiLevelSelect'

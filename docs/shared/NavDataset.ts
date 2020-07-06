@@ -109,8 +109,8 @@ export default [
         url: '/radio'
       },
       {
-        label: 'Radio Select',
-        url: '/radio-select'
+        label: 'Card Select',
+        url: '/card-select'
       },
       {
         label: 'Switch',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
-import { RadioSelect } from './RadioSelect'
+import { CardSelect } from './CardSelect'
 import { CardBody } from '../Card/Card'
 import { Text } from '../Text/Text'
 import { IconName } from 'icons/Icon'
@@ -69,17 +69,17 @@ const getDefaultProps = (item?: Data) => ({
 
 describe('Test render Radio Select', () => {
   test('should render default values', () => {
-    const { container } = render(<RadioSelect {...getDefaultProps()} />)
+    const { container } = render(<CardSelect {...getDefaultProps()} />)
     expect(container).toMatchSnapshot()
   })
   test('should render with selected values', () => {
-    const { container } = render(<RadioSelect {...getDefaultProps(data[2])} />)
+    const { container } = render(<CardSelect {...getDefaultProps(data[2])} />)
     expect(container).toMatchSnapshot()
   })
   test('should handle on change Event', async () => {
     const props = getDefaultProps(data[2])
     const selectedIndex = 5
-    const { container } = render(<RadioSelect {...props} />)
+    const { container } = render(<CardSelect {...props} />)
     fireEvent.click(container.querySelectorAll('.bp3-card')[selectedIndex])
     await wait()
     expect(props.onChange).toHaveBeenCalledWith(data[selectedIndex], expect.any(Object))
@@ -87,7 +87,7 @@ describe('Test render Radio Select', () => {
   test('should handle on arrow key Event', async () => {
     const defaultIndex = 2
     const props = getDefaultProps(data[defaultIndex])
-    const { container } = render(<RadioSelect {...props} />)
+    const { container } = render(<CardSelect {...props} />)
 
     // Left Arrow
     fireEvent.keyDown(container.querySelectorAll('.bp3-card')[defaultIndex], {
@@ -112,7 +112,7 @@ describe('Test render Radio Select', () => {
     const defaultIndex = 2
     const selectedIndex = 5
     const props = getDefaultProps(data[defaultIndex])
-    const { container } = render(<RadioSelect {...props} />)
+    const { container } = render(<CardSelect {...props} />)
 
     // Enter Key
     fireEvent.keyDown(container.querySelectorAll('.bp3-card')[selectedIndex], {

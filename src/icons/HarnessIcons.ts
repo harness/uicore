@@ -53,6 +53,7 @@ import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
+import Functions from './functions.svg'
 import Github from './github.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -142,6 +143,7 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
 import NavAccountAdmin from './nav-account-admin.svg'
@@ -184,6 +186,7 @@ import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
 import NewDecoration from './new-decoration.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
+import OtherWorkload from './other-workload.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
@@ -243,6 +246,7 @@ import ServiceSpotinst from './service-spotinst.svg'
 import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
+import Service from './service.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import StepsSpinner from './steps-spinner.svg'
@@ -326,6 +330,7 @@ type HarnessIconName =
   | 'expression-input'
   | 'feedback-given'
   | 'fixed-input'
+  | 'functions'
   | 'github'
   | 'grey-cluster'
   | 'harness-logo-black'
@@ -415,6 +420,7 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'multi-service'
   | 'nav-account-admin-hover'
   | 'nav-account-admin-selected'
   | 'nav-account-admin'
@@ -457,6 +463,7 @@ type HarnessIconName =
   | 'nav-user-profile'
   | 'new-decoration'
   | 'no-feedback-given'
+  | 'other-workload'
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
@@ -516,6 +523,7 @@ type HarnessIconName =
   | 'service-stackdriver'
   | 'service-sumologic'
   | 'service-terraform'
+  | 'service'
   | 'setup-api'
   | 'setup-tags'
   | 'steps-spinner'
@@ -599,6 +607,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'expression-input': ExpressionInput,
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
+  functions: Functions,
   github: Github,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
@@ -688,6 +697,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
   'nav-account-admin-selected': NavAccountAdminSelected,
   'nav-account-admin': NavAccountAdmin,
@@ -730,6 +740,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-user-profile': NavUserProfile,
   'new-decoration': NewDecoration,
   'no-feedback-given': NoFeedbackGiven,
+  'other-workload': OtherWorkload,
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
@@ -789,6 +800,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-stackdriver': ServiceStackdriver,
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
+  service: Service,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
   'steps-spinner': StepsSpinner,

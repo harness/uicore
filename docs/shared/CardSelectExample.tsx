@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { RadioSelect, Text, CardBody } from '../static/index'
-import './RadioSelectExample.css'
+import { CardSelect, Text, CardBody } from '../static/index'
+import './CardSelectExample.css'
 
 interface Data {
   text: string
@@ -51,7 +51,7 @@ const data: Data[] = [
   }
 ]
 
-export const RadioSelectExample = () => {
+export const CardSelectExample = () => {
   const [selected, setSelected] = useState(data[2])
   const props = {
     data,
@@ -65,5 +65,37 @@ export const RadioSelectExample = () => {
     ),
     onChange: value => setSelected(value)
   }
-  return <RadioSelect {...props} selected={selected} />
+  return <CardSelect {...props} selected={selected} />
+}
+
+export const CardMultiSelectExample = () => {
+  const [selected, setSelected] = useState([data[2], data[4]])
+
+  const onChange = React.useCallback(
+    value => {
+      const selectedAr = [...selected]
+      const index = selectedAr.indexOf(value)
+      if (index > -1) {
+        selectedAr.splice(index, 1)
+      } else {
+        selectedAr.push(value)
+      }
+      setSelected(selectedAr)
+    },
+    [selected]
+  )
+  const props = {
+    data,
+    multi: true,
+    className: 'grid',
+    renderItem: (item, selected) => (
+      <CardBody.Icon icon={item.icon} iconSize={25}>
+        <Text font={{ size: 'small', align: 'center', color: selected ? 'var(--grey-900)' : 'var(--grey-350)' }}>
+          {item.text}
+        </Text>
+      </CardBody.Icon>
+    ),
+    onChange
+  }
+  return <CardSelect {...props} selected={selected} />
 }

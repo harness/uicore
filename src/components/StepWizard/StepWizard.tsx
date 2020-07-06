@@ -134,7 +134,7 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
     </React.Fragment>
   )
 
-  const activeChild = React.Children.toArray(props.children)[state.activeStep - 1]
+  const activeChild = React.Children.toArray(props.children)[state.activeStep - 1] || <div />
 
   const childProps: StepProps<SharedObject> = {
     currentStep,
