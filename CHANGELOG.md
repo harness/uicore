@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.0.181 - 07/03/20
+## 1.0.186 - 07/06/20
+
+- `Fixed` Version in changelog.
+
+## 1.0.185 - 07/03/20
 
 - `Added` white-cluster and grey-cluster icon.
 - `Added` null type to StepWizard to support optional steps
