@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.186 - 07/06/20
 
-- `Added` Fixed version in changelog.
+- `Fixed` Version in changelog.
 
 ## 1.0.185 - 07/03/20
 
