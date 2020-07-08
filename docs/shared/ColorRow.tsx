@@ -14,7 +14,7 @@ const ColorRow = ({ name, value }) => {
           <button
             style={{
               all: 'unset',
-              background: `var(${name})`,
+              background: value,
               width: '30px',
               height: '30px',
               display: 'inline-block',

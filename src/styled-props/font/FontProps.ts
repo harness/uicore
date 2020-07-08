@@ -1,4 +1,4 @@
-export type FontSize = 'small' | 'normal' | 'medium' | 'large'
+export type FontSize = 'xsmall' | 'small' | 'normal' | 'medium' | 'large'
 
 export type FontWeight = 'light' | 'bold' | 'semi-bold'
 

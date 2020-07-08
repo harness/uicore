@@ -8,6 +8,10 @@ import dynamic from 'next/dynamic'
 const Layout = dynamic(() => import('../shared/Layout'), { ssr: false })
 
 export default class extends App {
+  componentDidMount() {
+    document.querySelector('body').classList.add('ng')
+  }
+
   render() {
     const {
       Component,

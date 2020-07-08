@@ -85,3 +85,9 @@ export function Text(props: TextProps) {
     </Utils.WrapOptionalTooltip>
   )
 }
+
+export const SupText: React.FC<TextProps> = props => (
+  <sup>
+    <Text inline font="xsmall" style={{ padding: '0 2px', marginLeft: 2 }} color="red500" {...props} />
+  </sup>
+)

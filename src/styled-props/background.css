@@ -219,8 +219,24 @@
     background: var(--purple-900);
   }
 
+  &.background-purple600 {
+    background: var(--purple-600);
+  }
+
   &.background-purple500 {
     background: var(--purple-500);
+  }
+
+  &.background-purple400 {
+    background: var(--purple-400);
+  }
+
+  &.background-purple300 {
+    background: var(--purple-300);
+  }
+
+  &.background-purple200 {
+    background: var(--purple-200);
   }
 
   &.background-purple100 {
@@ -231,8 +247,24 @@
     background: var(--sea-green-500);
   }
 
+  &.background-orange600 {
+    background: var(--orange-600);
+  }
+
   &.background-orange500 {
     background: var(--orange-500);
+  }
+
+  &.background-orange400 {
+    background: var(--orange-400);
+  }
+
+  &.background-orange300 {
+    background: var(--orange-300);
+  }
+
+  &.background-orange200 {
+    background: var(--orange-200);
   }
 
   &.background-magenta500 {
@@ -241,5 +273,61 @@
 
   &.background-aqua500 {
     background: var(--aqua-500);
+  }
+
+  &.background-dark600 {
+    background: var(--dark-600);
+  }
+
+  &.background-dark500 {
+    background: var(--dark-500);
+  }
+
+  &.background-dark400 {
+    background: var(--dark-400);
+  }
+
+  &.background-dark300 {
+    background: var(--dark-300);
+  }
+
+  &.background-dark200 {
+    background: var(--dark-200);
+  }
+
+  &.background-light600 {
+    background: var(--light-600);
+  }
+
+  &.background-light500 {
+    background: var(--light-500);
+  }
+
+  &.background-light400 {
+    background: var(--light-400);
+  }
+
+  &.background-light300 {
+    background: var(--light-300);
+  }
+
+  &.background-light200 {
+    background: var(--light-200);
+  }
+
+  &.background-teal500 {
+    background: var(--teal-500);
+  }
+
+  &.background-teal400 {
+    background: var(--teal-400);
+  }
+
+  &.background-teal300 {
+    background: var(--teal-300);
+  }
+
+  &.background-teal200 {
+    background: var(--teal-200);
   }
 }

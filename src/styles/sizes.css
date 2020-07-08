@@ -1,4 +1,5 @@
 :root {
+  --font-size-xsmall: 10px; /* very small text */
   --font-size-small: 12px; /* H4, small text */
   --font-size-normal: 14px; /* H3, normal text */
   --font-size-medium: 18px; /* H2 */

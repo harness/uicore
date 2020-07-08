@@ -93,7 +93,7 @@ export function ColorPicker(props: ColorPickerProps) {
                 setSelected(color)
                 props?.onChange?.(color)
               }}>
-              {selected === color && <Icon size={16} name="dot" color="black" />}
+              {selected === color && <Icon size={16} name="dot" color="white" />}
             </button>
           ))}
         </Container>

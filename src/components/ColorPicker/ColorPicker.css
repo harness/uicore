@@ -30,8 +30,7 @@
       &:hover,
       &:focus {
         cursor: pointer;
-        transform: scale(1.4);
-        border: 1px solid var(--grey-200);
+        border: 2px solid var(--white);
       }
     }
 
@@ -39,7 +38,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 1px solid var(--black);
+      border: 2px solid var(--white);
     }
   }
 }
