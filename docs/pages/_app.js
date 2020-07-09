@@ -9,7 +9,7 @@ const Layout = dynamic(() => import('../shared/Layout'), { ssr: false })
 
 export default class extends App {
   componentDidMount() {
-    document.querySelector('body').classList.add('ng')
+    document.querySelector('body').dataset.ng = true
   }
 
   render() {
