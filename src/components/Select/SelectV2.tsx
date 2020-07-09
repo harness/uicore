@@ -14,7 +14,7 @@ type Props = ISelectProps<SelectOption>
 const Loading = Symbol('loading')
 
 export interface SelectV2Props
-  extends Omit<Props, 'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'query' | 'items' | 'filterable'> {
+  extends Omit<Props, 'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'query' | 'items'> {
   itemRenderer?: Props['itemRenderer']
   onChange?: Props['onItemSelect']
   value?: SelectOption
@@ -93,10 +93,10 @@ export function SelectV2(props: SelectV2Props) {
       createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       noResults={<NoMatch />}
-      {...rest}
       filterable={true}
       resetOnSelect={true}
       resetOnClose={true}
+      {...rest}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       onItemSelect={handleItemSelect}
       popoverProps={{
