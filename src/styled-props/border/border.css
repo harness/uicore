@@ -269,4 +269,41 @@
   &.border-color-magenta500 {
     border-color: var(--magenta-500);
   }
+
+  /* NextGen UI outline border colors */
+  &.border-color-dark {
+    border-color: var(--dark-outline);
+  }
+
+  &.border-color-light {
+    border-color: var(--light-outline);
+  }
+
+  &.border-color-red {
+    border-color: var(--red-outline);
+  }
+
+  &.border-color-green {
+    border-color: var(--green-outline);
+  }
+
+  &.border-color-blue {
+    border-color: var(--blue-outline);
+  }
+
+  &.border-color-yellow {
+    border-color: var(--yellow-outline);
+  }
+
+  &.border-color-orange {
+    border-color: var(--orange-outline);
+  }
+
+  &.border-color-teal {
+    border-color: var(--teal-outline);
+  }
+
+  &.border-color-purple {
+    border-color: var(--purple-outline);
+  }
 }
