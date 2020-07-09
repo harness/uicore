@@ -1,6 +1,15 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
+import Edit from './Edit.svg'
+import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
+import AppAwsLambda from './app-aws-lambda.svg'
+import AppKubernetes from './app-kubernetes.svg'
+import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
+import Canary from './canary.svg'
+import CanvasPosition from './canvas-position.svg'
+import CanvasReset from './canvas-reset.svg'
+import CanvasSelector from './canvas-selector.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
 import CeBudgetColored from './ce-budget_colored.svg'
@@ -50,6 +59,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import Down from './down.svg'
 import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
@@ -186,11 +196,17 @@ import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
 import NewDecoration from './new-decoration.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
+import Notification from './notification.svg'
 import OtherWorkload from './other-workload.svg'
+import PipelineApproval from './pipeline-approval.svg'
+import PipelineCustom from './pipeline-custom.svg'
+import PipelineDeploy from './pipeline-deploy.svg'
+import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import Question from './question.svg'
+import Rolling from './rolling.svg'
 import RuntimeInput from './runtime-input.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -268,6 +284,7 @@ import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
+import Up from './up.svg'
 import WhiteCluster from './white-cluster.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
@@ -275,9 +292,20 @@ import YamlBuilderNotifications from './yaml-builder-notifications.svg'
 import YamlBuilderStages from './yaml-builder-stages.svg'
 import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
+import ZoomIn from './zoom-in.svg'
+import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
+  | 'Edit'
+  | 'app-aws-code-deploy'
+  | 'app-aws-lambda'
+  | 'app-kubernetes'
+  | 'bluegreen'
   | 'budget-alert-light'
+  | 'canary'
+  | 'canvas-position'
+  | 'canvas-reset'
+  | 'canvas-selector'
   | 'ce-application'
   | 'ce-beta'
   | 'ce-budget_colored'
@@ -327,6 +355,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'down'
   | 'expression-input'
   | 'feedback-given'
   | 'fixed-input'
@@ -463,11 +492,17 @@ type HarnessIconName =
   | 'nav-user-profile'
   | 'new-decoration'
   | 'no-feedback-given'
+  | 'notification'
   | 'other-workload'
+  | 'pipeline-approval'
+  | 'pipeline-custom'
+  | 'pipeline-deploy'
+  | 'pipeline'
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
   | 'question'
+  | 'rolling'
   | 'runtime-input'
   | 'search-applications'
   | 'search-connectors'
@@ -545,6 +580,7 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+  | 'up'
   | 'white-cluster'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
@@ -552,9 +588,20 @@ type HarnessIconName =
   | 'yaml-builder-stages'
   | 'yaml-builder-steps'
   | 'yaml-builder-trigger'
+  | 'zoom-in'
+  | 'zoom-out'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
+  Edit: Edit,
+  'app-aws-code-deploy': AppAwsCodeDeploy,
+  'app-aws-lambda': AppAwsLambda,
+  'app-kubernetes': AppKubernetes,
+  bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
+  canary: Canary,
+  'canvas-position': CanvasPosition,
+  'canvas-reset': CanvasReset,
+  'canvas-selector': CanvasSelector,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
   'ce-budget_colored': CeBudgetColored,
@@ -604,6 +651,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  down: Down,
   'expression-input': ExpressionInput,
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
@@ -740,11 +788,17 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-user-profile': NavUserProfile,
   'new-decoration': NewDecoration,
   'no-feedback-given': NoFeedbackGiven,
+  notification: Notification,
   'other-workload': OtherWorkload,
+  'pipeline-approval': PipelineApproval,
+  'pipeline-custom': PipelineCustom,
+  'pipeline-deploy': PipelineDeploy,
+  pipeline: Pipeline,
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
   question: Question,
+  rolling: Rolling,
   'runtime-input': RuntimeInput,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
@@ -822,13 +876,16 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
+  up: Up,
   'white-cluster': WhiteCluster,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
   'yaml-builder-stages': YamlBuilderStages,
   'yaml-builder-steps': YamlBuilderSteps,
-  'yaml-builder-trigger': YamlBuilderTrigger
+  'yaml-builder-trigger': YamlBuilderTrigger,
+  'zoom-in': ZoomIn,
+  'zoom-out': ZoomOut
 }
 
 export { HarnessIcons, HarnessIconName }
