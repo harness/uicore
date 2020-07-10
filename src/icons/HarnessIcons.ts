@@ -201,12 +201,14 @@ import OtherWorkload from './other-workload.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
+import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import Question from './question.svg'
 import Rolling from './rolling.svg'
+import RunPipeline from './run-pipeline.svg'
 import RuntimeInput from './runtime-input.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -280,6 +282,7 @@ import SupportTour from './support-tour.svg'
 import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
+import TemplateLibrary from './template-library.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
@@ -497,12 +500,14 @@ type HarnessIconName =
   | 'pipeline-approval'
   | 'pipeline-custom'
   | 'pipeline-deploy'
+  | 'pipeline-variables'
   | 'pipeline'
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
   | 'question'
   | 'rolling'
+  | 'run-pipeline'
   | 'runtime-input'
   | 'search-applications'
   | 'search-connectors'
@@ -576,6 +581,7 @@ type HarnessIconName =
   | 'support-troubleshoot'
   | 'support-verification'
   | 'support-videos'
+  | 'template-library'
   | 'trigger-artifact'
   | 'trigger-github'
   | 'trigger-pipeline'
@@ -793,12 +799,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'pipeline-approval': PipelineApproval,
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
+  'pipeline-variables': PipelineVariables,
   pipeline: Pipeline,
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
   question: Question,
   rolling: Rolling,
+  'run-pipeline': RunPipeline,
   'runtime-input': RuntimeInput,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
@@ -872,6 +880,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-troubleshoot': SupportTroubleshoot,
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
+  'template-library': TemplateLibrary,
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
