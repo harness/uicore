@@ -33,6 +33,7 @@ import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { ColorPickerProps, ColorPicker } from '../ColorPicker/ColorPicker'
 import { InputWithIdentifier, InputWithIdentifierProps } from '../InputWithIdentifier/InputWithIdentifier'
+import { MultiTypeInput, MultiTypeInputProps } from '../MultiTypeInput/MultiTypeInput'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -549,6 +550,44 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContenxtProps<any>)
   )
 }
 
+interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  items: SelectOption[]
+  multiTypeInputProps?: MultiTypeInputProps
+}
+
+const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContenxtProps<any>) => {
+  const { formik, name, items, multiTypeInputProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    ...rest
+  } = restProps
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <MultiTypeInput
+        {...multiTypeInputProps}
+        selectProps={{
+          items,
+          ...multiTypeInputProps?.selectProps,
+          inputProps: {
+            ...multiTypeInputProps?.selectProps?.inputProps,
+            onBlur: () => formik?.setFieldTouched(name)
+          }
+        }}
+        onChange={(value: string) => {
+          formik?.setFieldValue(name, value)
+          multiTypeInputProps?.onChange?.(value)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 export const FormInput = {
   TagInput: connect(TagInput),
   CustomRender: connect(CustomRender),
@@ -560,7 +599,8 @@ export const FormInput = {
   Text: connect(Text),
   TextArea: connect(TextArea),
   ColorPicker: connect(FormColorPicker),
-  InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier)
+  InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
+  MultiTypeInput: connect(FormMultiTypeInput)
 }
 
 export const FormikForm = connect(Form)

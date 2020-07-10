@@ -256,7 +256,9 @@ Try submitting the form
 
     description: Yup.string()
       .trim()
-      .required('Description is required field')
+      .required('Description is required field'),
+
+    duration: Yup.string().trim().required('Duration is required.')
   })}>
   <FormikForm>
     <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
@@ -290,6 +292,7 @@ Try submitting the form
       ]}
     />
     <FormInput.TextArea name="description" label="Description" />
+    <FormInput.MultiTypeInput name="duration" label="Duration" items={[{label: '5 min', value: 5}, { label: '10 min', value: 10 }]}/>
     <Button intent="primary" type="Submit" text="Submit" />
   </FormikForm>
 </Formik>

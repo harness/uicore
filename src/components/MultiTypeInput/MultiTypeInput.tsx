@@ -35,14 +35,20 @@ const MENTIONS_DEFAULT: MentionsInfo = {
   data: done => done([])
 }
 
-interface MultiTypeInputProps extends Omit<LayoutProps, 'onChange'> {
+type FixedTypeComponentProps = { onChange: (val: string) => void }
+
+interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
   value?: string
   width?: number
-  selectProps?: SelectProps
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
   onChange?: (value: string) => void
   i18n?: I18nResource
+  fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
+}
+
+export interface MultiTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
+  selectProps?: SelectProps
 }
 
 const isValueAnExpression = (value: string) => value.startsWith('${') && value.endsWith('}')
@@ -56,16 +62,16 @@ const valueToType = (value = ''): MultiTypeInputType => {
   return MultiTypeInputType.FIXED
 }
 
-export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
+function ExpressionAndRuntimeType({
   value,
   width,
-  selectProps = {},
   mentionsInfo,
   onTypeChange: onTypeChanged,
   onChange,
   i18n: _i18n = {},
+  fixedTypeComponent,
   ...layoutProps
-}) => {
+}: ExpressionAndRuntimeTypeProps) {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
   const [inputValue, setInputValue] = useState(value)
@@ -81,7 +87,7 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
     [type]
   )
   const inputWidth = width && width - 28
-  const { items = [] } = selectProps
+  const FixedTypeComponent = fixedTypeComponent
   const menu = useMemo(
     () => (
       <Menu className={css.menu}>
@@ -119,14 +125,10 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
   }, [type])
 
   return (
-    <Layout.Horizontal width={width} {...layoutProps}>
+    <Layout.Horizontal className={css.main} width={width} {...layoutProps}>
       {type === MultiTypeInputType.FIXED && (
-        <Select
-          className={css.select}
-          items={items}
-          {...selectProps}
-          onChange={item => {
-            const val = String(item.value)
+        <FixedTypeComponent
+          onChange={val => {
             setInputValue(val)
             onChange?.(val)
           }}
@@ -159,6 +161,7 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
         noStyling
         className={cx(css.btn, css[type])}
         tooltip={menu}
+        onClick={e => e.preventDefault()}
         tooltipProps={{
           minimal: true,
           position: Position.BOTTOM_RIGHT,
@@ -168,4 +171,23 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({
       </Button>
     </Layout.Horizontal>
   )
+}
+
+export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ selectProps, ...rest }) => {
+  const fixedTypeComponent = useCallback((props: FixedTypeComponentProps) => {
+    const { onChange } = props
+    const { items = [] } = selectProps || {}
+    return (
+      <Select
+        className={css.select}
+        items={items}
+        {...selectProps}
+        onChange={item => {
+          const val = String(item.value)
+          onChange(val)
+        }}
+      />
+    )
+  }, [])
+  return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
 }
