@@ -4,6 +4,7 @@ import Edit from './Edit.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import Canary from './canary.svg'
@@ -289,6 +290,7 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Up from './up.svg'
 import WhiteCluster from './white-cluster.svg'
+import WhiteFullCluster from './white-full-cluster.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
 import YamlBuilderNotifications from './yaml-builder-notifications.svg'
@@ -303,6 +305,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
   | 'canary'
@@ -587,6 +590,7 @@ type HarnessIconName =
   | 'trigger-pipeline'
   | 'trigger-schedule'
   | 'up'
+  | 'white-full-cluster'
   | 'white-cluster'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
@@ -602,6 +606,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
   canary: Canary,
@@ -886,6 +891,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
   up: Up,
+  'white-full-cluster': WhiteFullCluster,
   'white-cluster': WhiteCluster,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,

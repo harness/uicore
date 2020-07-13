@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.0.192 - 07/13/20
+
+- `Added` white-full-cluster, blue-black-cluster icon
+
 ## 1.0.191 - 07/10/20
 
 - `Added` Pipeline Icons
