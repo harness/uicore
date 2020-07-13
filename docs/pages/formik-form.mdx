@@ -232,7 +232,7 @@ Try submitting the form
 
 ```js live=true
 <Formik
-  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true }}
+  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true}}
   onSubmit={values => alert(JSON.stringify(values))}
   validationSchema={Yup.object().shape({
     firstName: Yup.string()
@@ -256,9 +256,7 @@ Try submitting the form
 
     description: Yup.string()
       .trim()
-      .required('Description is required field'),
-
-    duration: Yup.string().trim().required('Duration is required.')
+      .required('Description is required field')
   })}>
   <FormikForm>
     <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />

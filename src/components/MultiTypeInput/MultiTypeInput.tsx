@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import { Button } from '../Button/Button'
-import { Select, SelectProps } from '../Select/Select'
+import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
@@ -12,11 +12,18 @@ import { register, unregister, MentionsInfo } from '@wings-software/mentions'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '../../core/Types'
 import { Utils } from '../../core/Utils'
+import { MultiSelectOption } from 'components/MultiSelect/MultiSelect'
 
 export enum MultiTypeInputType {
   FIXED = 'FIXED',
   RUNTIME = 'RUNTIME',
   EXPRESSION = 'EXPRESSION'
+}
+
+export enum MultiTypeInputValue {
+  STRING = 'STRING',
+  SELECTOPTION = 'SELECT_OPTION',
+  MULTISELECTOPTION = 'MULTI_SELECT_OPTION'
 }
 
 const TypeIcon: Record<string, IconName> = {
@@ -35,29 +42,32 @@ const MENTIONS_DEFAULT: MentionsInfo = {
   data: done => done([])
 }
 
-type FixedTypeComponentProps = { onChange: (val: string) => void }
-
 interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
-  value?: string
+  value?: string | SelectOption | MultiSelectOption
   width?: number
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
-  onChange?: (value: string) => void
+  onChange?: (value: string | SelectOption | MultiSelectOption, type: MultiTypeInputValue) => void
   i18n?: I18nResource
   fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
+  fixedComponentValueType: MultiTypeInputValue
 }
 
-export interface MultiTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
+type FixedTypeComponentProps = { onChange: ExpressionAndRuntimeTypeProps['onChange'] }
+
+export interface MultiTypeInputProps
+  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedComponentValueType'> {
   selectProps?: SelectProps
 }
 
 const isValueAnExpression = (value: string) => value.startsWith('${') && value.endsWith('}')
 
-const valueToType = (value = ''): MultiTypeInputType => {
-  value = value.toLocaleLowerCase().trim()
-
-  if (value === RUNTIME_INPUT_VALUE) return MultiTypeInputType.RUNTIME
-  if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
+const valueToType = (value: string | SelectOption | MultiSelectOption = ''): MultiTypeInputType => {
+  if (typeof value === 'string') {
+    value = value.toLocaleLowerCase().trim()
+    if (value === RUNTIME_INPUT_VALUE) return MultiTypeInputType.RUNTIME
+    if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
+  }
 
   return MultiTypeInputType.FIXED
 }
@@ -74,7 +84,7 @@ function ExpressionAndRuntimeType({
 }: ExpressionAndRuntimeTypeProps) {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
-  const [inputValue, setInputValue] = useState(value)
+  const [inputValue, setInputValue] = useState<ExpressionAndRuntimeTypeProps['value']>(value)
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = useCallback(
     (newType: MultiTypeInputType) => {
@@ -82,12 +92,16 @@ function ExpressionAndRuntimeType({
       onTypeChanged?.(newType)
       const _inputValue = newType === MultiTypeInputType.RUNTIME ? RUNTIME_INPUT_VALUE : ''
       setInputValue(_inputValue)
-      onChange?.(_inputValue)
+      onChange?.(_inputValue, MultiTypeInputValue.STRING)
     },
     [type]
   )
   const inputWidth = width && width - 28
   const FixedTypeComponent = fixedTypeComponent
+  const fixedComponentOnChangeCallback = useCallback((val, multiTypeInputValue: MultiTypeInputValue) => {
+    setInputValue(val)
+    onChange?.(val, multiTypeInputValue)
+  }, [])
   const menu = useMemo(
     () => (
       <Menu className={css.menu}>
@@ -112,7 +126,7 @@ function ExpressionAndRuntimeType({
   )
 
   useEffect(() => {
-    valueToType(value)
+    // valueToType(value)
     setInputValue(value)
   }, [value])
 
@@ -126,21 +140,14 @@ function ExpressionAndRuntimeType({
 
   return (
     <Layout.Horizontal className={css.main} width={width} {...layoutProps}>
-      {type === MultiTypeInputType.FIXED && (
-        <FixedTypeComponent
-          onChange={val => {
-            setInputValue(val)
-            onChange?.(val)
-          }}
-        />
-      )}
+      {type === MultiTypeInputType.FIXED && <FixedTypeComponent onChange={fixedComponentOnChangeCallback} />}
       {type === MultiTypeInputType.RUNTIME && (
         <TextInput
           className={css.input}
           style={{ width: inputWidth }}
           placeholder={RUNTIME_INPUT_VALUE}
           disabled
-          value={inputValue}
+          value={inputValue as string}
         />
       )}
       {type === MultiTypeInputType.EXPRESSION && (
@@ -148,11 +155,11 @@ function ExpressionAndRuntimeType({
           className={css.input}
           style={{ width: inputWidth }}
           placeholder={EXPRESSION_INPUT_PLACEHOLDER}
-          value={inputValue}
+          value={inputValue as string}
           onInput={input => {
             const val = (input.target as HTMLInputElement).value
             setInputValue(val)
-            onChange?.(val)
+            onChange?.(val, MultiTypeInputValue.STRING)
           }}
           data-mentions={mentionsType}
         />
@@ -174,20 +181,23 @@ function ExpressionAndRuntimeType({
 }
 
 export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ selectProps, ...rest }) => {
-  const fixedTypeComponent = useCallback((props: FixedTypeComponentProps) => {
-    const { onChange } = props
-    const { items = [] } = selectProps || {}
-    return (
-      <Select
-        className={css.select}
-        items={items}
-        {...selectProps}
-        onChange={item => {
-          const val = String(item.value)
-          onChange(val)
-        }}
-      />
-    )
-  }, [])
-  return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
+  const fixedTypeComponent = useCallback(
+    (props: FixedTypeComponentProps) => {
+      const { onChange } = props
+      const { items = [] } = selectProps || {}
+      const onChangeCallback = useCallback(
+        (item: SelectOption) => onChange?.(item, MultiTypeInputValue.SELECTOPTION),
+        []
+      )
+      return <Select className={css.select} items={items} {...selectProps} onChange={onChangeCallback} />
+    },
+    [selectProps]
+  )
+  return (
+    <ExpressionAndRuntimeType
+      {...rest}
+      fixedTypeComponent={fixedTypeComponent}
+      fixedComponentValueType={MultiTypeInputValue.SELECTOPTION}
+    />
+  )
 }

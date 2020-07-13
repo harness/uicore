@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo, useCallback } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -553,12 +553,13 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContenxtProps<any>)
 interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
+  placeholder?: string
   items: SelectOption[]
   multiTypeInputProps?: MultiTypeInputProps
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContenxtProps<any>) => {
-  const { formik, name, items, multiTypeInputProps, ...restProps } = props
+  const { formik, name, items, placeholder, multiTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -566,23 +567,35 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContenxtProps
     disabled = formik?.disabled,
     ...rest
   } = restProps
-
+  const memoizedSelectProps = useMemo(
+    () => ({
+      items,
+      value: get(formik?.values, name),
+      ...multiTypeInputProps?.selectProps,
+      inputProps: {
+        name,
+        intent,
+        placeholder,
+        disabled
+      }
+    }),
+    [items, formik, name, multiTypeInputProps, intent, placeholder, disabled]
+  )
+  const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
+    (value, valueType) => {
+      formik?.setFieldValue(name, value)
+      formik?.setFieldTouched(name)
+      multiTypeInputProps?.onChange?.(value, valueType)
+    },
+    [formik, multiTypeInputProps]
+  )
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <MultiTypeInput
         {...multiTypeInputProps}
-        selectProps={{
-          items,
-          ...multiTypeInputProps?.selectProps,
-          inputProps: {
-            ...multiTypeInputProps?.selectProps?.inputProps,
-            onBlur: () => formik?.setFieldTouched(name)
-          }
-        }}
-        onChange={(value: string) => {
-          formik?.setFieldValue(name, value)
-          multiTypeInputProps?.onChange?.(value)
-        }}
+        value={get(formik?.values, name)}
+        selectProps={memoizedSelectProps}
+        onChange={onChangeCallback}
       />
     </FormGroup>
   )
