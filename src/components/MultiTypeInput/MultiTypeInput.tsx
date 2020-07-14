@@ -12,7 +12,7 @@ import { register, unregister, MentionsInfo } from '@wings-software/mentions'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '../../core/Types'
 import { Utils } from '../../core/Utils'
-import { MultiSelectOption } from 'components/MultiSelect/MultiSelect'
+import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
 
 export enum MultiTypeInputType {
   FIXED = 'FIXED',
@@ -43,14 +43,13 @@ const MENTIONS_DEFAULT: MentionsInfo = {
 }
 
 interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
-  value?: string | SelectOption | MultiSelectOption
+  value?: string | SelectOption | MultiSelectOption[]
   width?: number
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
-  onChange?: (value: string | SelectOption | MultiSelectOption, type: MultiTypeInputValue) => void
+  onChange?: (value: string | SelectOption | MultiSelectOption[] | undefined, type: MultiTypeInputValue) => void
   i18n?: I18nResource
   fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
-  fixedComponentValueType: MultiTypeInputValue
 }
 
 type FixedTypeComponentProps = { onChange: ExpressionAndRuntimeTypeProps['onChange'] }
@@ -60,9 +59,14 @@ export interface MultiTypeInputProps
   selectProps?: SelectProps
 }
 
+export interface MultiSelectTypeInputProps
+  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedComponentValueType'> {
+  multiSelectProps: MultiSelectProps
+}
+
 const isValueAnExpression = (value: string) => value.startsWith('${') && value.endsWith('}')
 
-const valueToType = (value: string | SelectOption | MultiSelectOption = ''): MultiTypeInputType => {
+const valueToType = (value: string | SelectOption | MultiSelectOption[] | undefined = ''): MultiTypeInputType => {
   if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
     if (value === RUNTIME_INPUT_VALUE) return MultiTypeInputType.RUNTIME
@@ -90,7 +94,7 @@ function ExpressionAndRuntimeType({
     (newType: MultiTypeInputType) => {
       setType(newType)
       onTypeChanged?.(newType)
-      const _inputValue = newType === MultiTypeInputType.RUNTIME ? RUNTIME_INPUT_VALUE : ''
+      const _inputValue = newType === MultiTypeInputType.RUNTIME ? RUNTIME_INPUT_VALUE : undefined
       setInputValue(_inputValue)
       onChange?.(_inputValue, MultiTypeInputValue.STRING)
     },
@@ -193,11 +197,22 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ selectProps, ...
     },
     [selectProps]
   )
-  return (
-    <ExpressionAndRuntimeType
-      {...rest}
-      fixedTypeComponent={fixedTypeComponent}
-      fixedComponentValueType={MultiTypeInputValue.SELECTOPTION}
-    />
+  return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
+}
+
+export const MultiSelectTypeInput: React.FC<MultiSelectTypeInputProps> = ({ multiSelectProps, ...rest }) => {
+  const fixedTypeComponent = useCallback(
+    (props: FixedTypeComponentProps) => {
+      const { onChange } = props
+      const { items = [] } = multiSelectProps || {}
+      const onChangeCallback = useCallback(
+        (item: MultiSelectOption[]) => onChange?.(item, MultiTypeInputValue.MULTISELECTOPTION),
+        []
+      )
+      return <MultiSelect {...multiSelectProps} items={items} onChange={onChangeCallback} />
+    },
+    [multiSelectProps]
   )
+
+  return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
 }

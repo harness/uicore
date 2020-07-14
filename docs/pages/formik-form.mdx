@@ -290,7 +290,8 @@ Try submitting the form
       ]}
     />
     <FormInput.TextArea name="description" label="Description" />
-    <FormInput.MultiTypeInput name="duration" label="Duration" items={[{label: '5 min', value: 5}, { label: '10 min', value: 10 }]}/>
+    <FormInput.MultiTypeInput name="job" label="Job" items={[{label: 'Software Engineer', value: 'SE'}, { label: 'Quality Engineer', value: 'QE' }]}/>
+    <FormInput.MultiSelectTypeInput name="hobbies" label="Hobbies" items={[{label: 'Basket Ball', value: 'BBall'}, { label: 'Drawing', value: 'Drawing' }]}/>
     <Button intent="primary" type="Submit" text="Submit" />
   </FormikForm>
 </Formik>

@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -33,7 +33,12 @@ import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { ColorPickerProps, ColorPicker } from '../ColorPicker/ColorPicker'
 import { InputWithIdentifier, InputWithIdentifierProps } from '../InputWithIdentifier/InputWithIdentifier'
-import { MultiTypeInput, MultiTypeInputProps } from '../MultiTypeInput/MultiTypeInput'
+import {
+  MultiTypeInput,
+  MultiTypeInputProps,
+  MultiSelectTypeInputProps,
+  MultiSelectTypeInput
+} from '../MultiTypeInput/MultiTypeInput'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -567,20 +572,6 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContenxtProps
     disabled = formik?.disabled,
     ...rest
   } = restProps
-  const memoizedSelectProps = useMemo(
-    () => ({
-      items,
-      value: get(formik?.values, name),
-      ...multiTypeInputProps?.selectProps,
-      inputProps: {
-        name,
-        intent,
-        placeholder,
-        disabled
-      }
-    }),
-    [items, formik, name, multiTypeInputProps, intent, placeholder, disabled]
-  )
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
     (value, valueType) => {
       formik?.setFieldValue(name, value)
@@ -594,7 +585,67 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContenxtProps
       <MultiTypeInput
         {...multiTypeInputProps}
         value={get(formik?.values, name)}
-        selectProps={memoizedSelectProps}
+        selectProps={{
+          items,
+          value: get(formik?.values, name),
+          ...multiTypeInputProps?.selectProps,
+          inputProps: {
+            name,
+            intent,
+            placeholder,
+            disabled
+          }
+        }}
+        onChange={onChangeCallback}
+      />
+    </FormGroup>
+  )
+}
+
+interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  items: MultiSelectOption[]
+  multiSelectTypeInputProps?: MultiSelectTypeInputProps
+}
+
+const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContenxtProps<any>) => {
+  const { formik, name, items, placeholder, multiSelectTypeInputProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    ...rest
+  } = restProps
+  const onChangeCallback: MultiSelectTypeInputProps['onChange'] = useCallback(
+    (value, valueType) => {
+      formik?.setFieldValue(name, value)
+      formik?.setFieldTouched(name)
+      multiSelectTypeInputProps?.onChange?.(value, valueType)
+    },
+    [formik, multiSelectTypeInputProps]
+  )
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <MultiSelectTypeInput
+        {...multiSelectTypeInputProps}
+        value={get(formik?.values, name)}
+        multiSelectProps={{
+          ...multiSelectTypeInputProps?.multiSelectProps,
+          tagInputProps: {
+            ...multiSelectTypeInputProps?.multiSelectProps?.tagInputProps,
+            inputProps: {
+              name,
+              placeholder
+            },
+            intent,
+            disabled: disabled
+          },
+          items,
+          value: get(formik?.values, name)
+        }}
         onChange={onChangeCallback}
       />
     </FormGroup>
@@ -613,7 +664,8 @@ export const FormInput = {
   TextArea: connect(TextArea),
   ColorPicker: connect(FormColorPicker),
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
-  MultiTypeInput: connect(FormMultiTypeInput)
+  MultiTypeInput: connect(FormMultiTypeInput),
+  MultiSelectTypeInput: connect(FormMultiSelectTypeInput)
 }
 
 export const FormikForm = connect(Form)
