@@ -232,7 +232,7 @@ Try submitting the form
 
 ```js live=true
 <Formik
-  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true, hobbies: [{label: ''}]}}
+  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true}}
   onSubmit={values => alert(JSON.stringify(values))}
   validationSchema={Yup.object().shape({
     firstName: Yup.string()

@@ -619,14 +619,6 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
     disabled = formik?.disabled,
     ...rest
   } = restProps
-  const onChangeCallback: MultiSelectTypeInputProps['onChange'] = useCallback(
-    (value, valueType) => {
-      formik?.setFieldValue(name, value)
-      formik?.setFieldTouched(name)
-      multiSelectTypeInputProps?.onChange?.(value, valueType)
-    },
-    [formik, multiSelectTypeInputProps]
-  )
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <MultiSelectTypeInput
@@ -646,7 +638,11 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
           items: selectItems,
           value: get(formik?.values, name)
         }}
-        onChange={onChangeCallback}
+        onChange={(value, valueType) => {
+          formik?.setFieldValue(name, value)
+          formik?.setFieldTouched(name)
+          multiSelectTypeInputProps?.onChange?.(value, valueType)
+        }}
       />
     </FormGroup>
   )
