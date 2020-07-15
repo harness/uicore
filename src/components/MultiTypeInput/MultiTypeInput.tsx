@@ -42,13 +42,16 @@ const MENTIONS_DEFAULT: MentionsInfo = {
   data: done => done([])
 }
 
+type AcceptableValue = string | SelectOption | MultiSelectOption[]
+
 interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
-  value?: string | SelectOption | MultiSelectOption[]
+  value?: AcceptableValue
   width?: number
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
   onChange?: (value: string | SelectOption | MultiSelectOption[] | undefined, type: MultiTypeInputValue) => void
   i18n?: I18nResource
+  allowableTypes?: MultiTypeInputType[]
   fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
 }
 
@@ -66,13 +69,18 @@ export interface MultiSelectTypeInputProps
 
 const isValueAnExpression = (value: string) => value.startsWith('${') && value.endsWith('}')
 
-const valueToType = (value: string | SelectOption | MultiSelectOption[] | undefined = ''): MultiTypeInputType => {
+const valueToType = (
+  value: AcceptableValue | undefined = '',
+  allowableTypes?: MultiTypeInputType[]
+): MultiTypeInputType => {
   if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
     if (value === RUNTIME_INPUT_VALUE) return MultiTypeInputType.RUNTIME
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
   }
-
+  if (!value && allowableTypes?.length) {
+    return allowableTypes[0]
+  }
   return MultiTypeInputType.FIXED
 }
 
@@ -84,12 +92,18 @@ function ExpressionAndRuntimeType({
   onChange,
   i18n: _i18n = {},
   fixedTypeComponent,
+  allowableTypes,
   ...layoutProps
 }: ExpressionAndRuntimeTypeProps) {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
   const [inputValue, setInputValue] = useState<ExpressionAndRuntimeTypeProps['value']>(value)
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
+  const allowedTypes = useMemo(() => {
+    return allowableTypes?.length
+      ? allowableTypes
+      : [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION]
+  }, [allowableTypes])
   const switchType = useCallback(
     (newType: MultiTypeInputType) => {
       setType(newType)
@@ -109,21 +123,27 @@ function ExpressionAndRuntimeType({
   const menu = useMemo(
     () => (
       <Menu className={css.menu}>
-        <Menu.Item
-          labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
-          text={i18n.fixedValue}
-          onClick={() => switchType(MultiTypeInputType.FIXED)}
-        />
-        <Menu.Item
-          labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
-          text={i18n.runtimeInput}
-          onClick={() => switchType(MultiTypeInputType.RUNTIME)}
-        />
-        <Menu.Item
-          labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
-          text={i18n.expression}
-          onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
-        />
+        {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.FIXED) && (
+          <Menu.Item
+            labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
+            text={i18n.fixedValue}
+            onClick={() => switchType(MultiTypeInputType.FIXED)}
+          />
+        )}
+        {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.RUNTIME) && (
+          <Menu.Item
+            labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
+            text={i18n.runtimeInput}
+            onClick={() => switchType(MultiTypeInputType.RUNTIME)}
+          />
+        )}
+        {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.EXPRESSION) && (
+          <Menu.Item
+            labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
+            text={i18n.expression}
+            onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
+          />
+        )}
       </Menu>
     ),
     []

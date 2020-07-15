@@ -83,5 +83,6 @@ export {
   MultiTypeInput,
   MultiTypeInputProps,
   MultiTypeInputValue,
-  MultiSelectTypeInput as MUltiSelectTypeInput
+  MultiSelectTypeInput,
+  MultiTypeInputType
 } from './components/MultiTypeInput/MultiTypeInput'
