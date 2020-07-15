@@ -151,8 +151,6 @@ export function Select(props: SelectProps) {
         </React.Fragment>
       )
   }
-  const isNext =
-    typeof window !== 'undefined' && typeof window.next !== 'undefined' && typeof window.__NEXT_DATA__ !== 'undefined'
   return (
     <Suggest
       inputValueRenderer={opt => opt.label}
@@ -202,7 +200,7 @@ export function Select(props: SelectProps) {
         targetTagName: 'div',
         wrapperTagName: 'div',
         fill: true,
-        usePortal: !isNext,
+        usePortal: false,
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: css.main,
