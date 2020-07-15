@@ -559,12 +559,12 @@ interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
-  items: SelectOption[]
+  selectItems: SelectOption[]
   multiTypeInputProps?: MultiTypeInputProps
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContenxtProps<any>) => {
-  const { formik, name, items, placeholder, multiTypeInputProps, ...restProps } = props
+  const { formik, name, selectItems, placeholder, multiTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -586,7 +586,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContenxtProps
         {...multiTypeInputProps}
         value={get(formik?.values, name)}
         selectProps={{
-          items,
+          items: selectItems,
           value: get(formik?.values, name),
           ...multiTypeInputProps?.selectProps,
           inputProps: {
@@ -606,12 +606,12 @@ interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'
   name: string
   label: string
   placeholder?: string
-  items: MultiSelectOption[]
+  selectItems: MultiSelectOption[]
   multiSelectTypeInputProps?: MultiSelectTypeInputProps
 }
 
 const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContenxtProps<any>) => {
-  const { formik, name, items, placeholder, multiSelectTypeInputProps, ...restProps } = props
+  const { formik, name, selectItems, placeholder, multiSelectTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -643,7 +643,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
             intent,
             disabled: disabled
           },
-          items,
+          items: selectItems,
           value: get(formik?.values, name)
         }}
         onChange={onChangeCallback}

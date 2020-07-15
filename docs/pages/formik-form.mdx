@@ -232,7 +232,7 @@ Try submitting the form
 
 ```js live=true
 <Formik
-  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true}}
+  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true, hobbies: [{label: ''}]}}
   onSubmit={values => alert(JSON.stringify(values))}
   validationSchema={Yup.object().shape({
     firstName: Yup.string()
@@ -290,8 +290,8 @@ Try submitting the form
       ]}
     />
     <FormInput.TextArea name="description" label="Description" />
-    <FormInput.MultiTypeInput name="job" label="Job" items={[{label: 'Software Engineer', value: 'SE'}, { label: 'Quality Engineer', value: 'QE' }]}/>
-    <FormInput.MultiSelectTypeInput name="hobbies" label="Hobbies" items={[{label: 'Basket Ball', value: 'BBall'}, { label: 'Drawing', value: 'Drawing' }]}/>
+    <FormInput.MultiTypeInput name="job" label="Job" selectItems={[{label: 'Software Engineer', value: 'SE'}, { label: 'Quality Engineer', value: 'QE' }]}/>
+    <FormInput.MultiSelectTypeInput name="hobbies" label="Hobbies" selectItems={[{label: 'Basket Ball', value: 'BBall'}, { label: 'Drawing', value: 'Drawing' }]}/>
     <Button intent="primary" type="Submit" text="Submit" />
   </FormikForm>
 </Formik>

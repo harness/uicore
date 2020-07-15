@@ -1,4 +1,5 @@
 .select,
+.multiSelect,
 .input {
   z-index: 2;
 }

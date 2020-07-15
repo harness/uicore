@@ -22,8 +22,8 @@ export enum MultiTypeInputType {
 
 export enum MultiTypeInputValue {
   STRING = 'STRING',
-  SELECTOPTION = 'SELECT_OPTION',
-  MULTISELECTOPTION = 'MULTI_SELECT_OPTION'
+  SELECT_OPTION = 'SELECT_OPTION',
+  MULTI_SELECT_OPTION = 'MULTI_SELECT_OPTION'
 }
 
 const TypeIcon: Record<string, IconName> = {
@@ -67,7 +67,7 @@ export interface MultiSelectTypeInputProps
   multiSelectProps: MultiSelectProps
 }
 
-const isValueAnExpression = (value: string) => value.startsWith('${') && value.endsWith('}')
+const isValueAnExpression = (value: string) => /^\${.*}$/.test(value)
 
 const valueToType = (
   value: AcceptableValue | undefined = '',
@@ -198,7 +198,7 @@ function ExpressionAndRuntimeType({
           position: Position.BOTTOM_RIGHT,
           interactionKind: PopoverInteractionKind.CLICK
         }}>
-        <Icon name={TypeIcon[type]} size={14} color={Color.WHITE} />
+        <Icon name={TypeIcon[type]} size={12} color={Color.WHITE} />
       </Button>
     </Layout.Horizontal>
   )
@@ -209,11 +209,14 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ selectProps, ...
     (props: FixedTypeComponentProps) => {
       const { onChange } = props
       const { items = [] } = selectProps || {}
-      const onChangeCallback = useCallback(
-        (item: SelectOption) => onChange?.(item, MultiTypeInputValue.SELECTOPTION),
-        []
+      return (
+        <Select
+          className={css.select}
+          items={items}
+          {...selectProps}
+          onChange={(item: SelectOption) => onChange?.(item, MultiTypeInputValue.SELECT_OPTION)}
+        />
       )
-      return <Select className={css.select} items={items} {...selectProps} onChange={onChangeCallback} />
     },
     [selectProps]
   )
@@ -225,11 +228,14 @@ export const MultiSelectTypeInput: React.FC<MultiSelectTypeInputProps> = ({ mult
     (props: FixedTypeComponentProps) => {
       const { onChange } = props
       const { items = [] } = multiSelectProps || {}
-      const onChangeCallback = useCallback(
-        (item: MultiSelectOption[]) => onChange?.(item, MultiTypeInputValue.MULTISELECTOPTION),
-        []
+      return (
+        <MultiSelect
+          {...multiSelectProps}
+          items={items}
+          className={css.multiSelect}
+          onChange={(item: MultiSelectOption[]) => onChange?.(item, MultiTypeInputValue.MULTI_SELECT_OPTION)}
+        />
       )
-      return <MultiSelect {...multiSelectProps} items={items} onChange={onChangeCallback} />
     },
     [multiSelectProps]
   )
