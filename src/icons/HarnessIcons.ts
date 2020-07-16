@@ -1,13 +1,14 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
+import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
-import Activity from './activity.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
+import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
@@ -71,6 +72,7 @@ import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
+import Health from './health.svg'
 import Key from './key.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -287,6 +289,7 @@ import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
 import TemplateLibrary from './template-library.svg'
+import TestVerification from './test-verification.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
@@ -312,6 +315,7 @@ type HarnessIconName =
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
+  | 'canary-outline'
   | 'canary'
   | 'canvas-position'
   | 'canvas-reset'
@@ -375,6 +379,7 @@ type HarnessIconName =
   | 'harness-logo-black'
   | 'harness-logo-white'
   | 'harness'
+  | 'health'
   | 'key'
   | 'main-abort'
   | 'main-account-notifications'
@@ -476,6 +481,7 @@ type HarnessIconName =
   | 'nav-deployments-hover'
   | 'nav-deployments-selected'
   | 'nav-deployments'
+  | 'nav-git-sync'
   | 'nav-governance-hover'
   | 'nav-governance-selected'
   | 'nav-governance'
@@ -590,13 +596,14 @@ type HarnessIconName =
   | 'support-verification'
   | 'support-videos'
   | 'template-library'
+  | 'test-verification'
   | 'trigger-artifact'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
   | 'up'
-  | 'white-full-cluster'
   | 'white-cluster'
+  | 'white-full-cluster'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
   | 'yaml-builder-notifications'
@@ -615,6 +622,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
+  'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
@@ -678,6 +686,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   harness: Harness,
+  health: Health,
   key: Key,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
@@ -894,13 +903,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
   'template-library': TemplateLibrary,
+  'test-verification': TestVerification,
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
   up: Up,
-  'white-full-cluster': WhiteFullCluster,
   'white-cluster': WhiteCluster,
+  'white-full-cluster': WhiteFullCluster,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
