@@ -1,6 +1,19 @@
 .select,
+.multiSelect,
 .input {
   z-index: 2;
+}
+
+.main {
+  :global {
+    .bp3-popover-target {
+      height: 100%;
+    }
+  }
+
+  [class*='TextInput---main'] {
+    width: 100%;
+  }
 }
 
 .btn {
@@ -9,7 +22,7 @@
   transform: translateX(-3px);
   padding-left: 3px;
   width: 24px;
-  height: 30px;
+  height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,6 +42,10 @@
   &.EXPRESSION {
     background: var(--yellow-500);
   }
+}
+
+.inputTypeButtonPopoverClass {
+  height: 100%;
 }
 
 .menu {

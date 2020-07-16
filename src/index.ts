@@ -79,4 +79,10 @@ export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
 export { LogViewer, LogViewerProps } from './components/LogViewer/LogViewer'
 export { ColorPicker } from './components/ColorPicker/ColorPicker'
-export { MultiTypeInput } from './components/MultiTypeInput/MultiTypeInput'
+export {
+  MultiTypeInput,
+  MultiTypeInputProps,
+  MultiTypeInputValue,
+  MultiSelectTypeInput,
+  MultiTypeInputType
+} from './components/MultiTypeInput/MultiTypeInput'

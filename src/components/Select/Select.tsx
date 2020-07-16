@@ -151,7 +151,6 @@ export function Select(props: SelectProps) {
         </React.Fragment>
       )
   }
-
   return (
     <Suggest
       inputValueRenderer={opt => opt.label}

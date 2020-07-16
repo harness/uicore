@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -33,6 +33,12 @@ import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { ColorPickerProps, ColorPicker } from '../ColorPicker/ColorPicker'
 import { InputWithIdentifier, InputWithIdentifierProps } from '../InputWithIdentifier/InputWithIdentifier'
+import {
+  MultiTypeInput,
+  MultiTypeInputProps,
+  MultiSelectTypeInputProps,
+  MultiSelectTypeInput
+} from '../MultiTypeInput/MultiTypeInput'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -47,7 +53,7 @@ interface FormikExtended<T> extends FormikContext<T> {
   inline?: boolean
 }
 
-interface FormikContenxtProps<T> {
+interface FormikContextProps<T> {
   formik?: FormikExtended<T>
 }
 
@@ -60,7 +66,7 @@ interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   onChange?: UiKitTagInputProps<T>['onChange']
 }
 
-function TagInput<T>(props: TagInputProps<T> & FormikContenxtProps<any>) {
+function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -101,7 +107,7 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
   render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
 }
 
-const CustomRender = (props: CustomRenderProps & FormikContenxtProps<any>) => {
+const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -129,7 +135,7 @@ interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: React.FormEventHandler<HTMLInputElement>
 }
 
-const FileInput = (props: FileInputProps & FormikContenxtProps<any>) => {
+const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -172,7 +178,7 @@ interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: IRadioGroupProps['onChange']
 }
 
-const RadioGroup = (props: RadioGroupProps & FormikContenxtProps<any>) => {
+const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
   const { formik, name } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -215,7 +221,7 @@ interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps, 'label
   label: string
 }
 
-const CheckBox = (props: CheckboxProps & FormikContenxtProps<any>) => {
+const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
   const { formik, name, label, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -255,7 +261,7 @@ interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: UiKitMultiSelectProps['onChange']
 }
 
-const MultiSelect = (props: MultiSelectProps & FormikContenxtProps<any>) => {
+const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -305,7 +311,7 @@ interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: UiKitSelectProps['onChange']
 }
 
-const Select = (props: SelectProps & FormikContenxtProps<any>) => {
+const Select = (props: SelectProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -352,7 +358,7 @@ interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: IInputGroupProps['onChange']
 }
 
-const Text = (props: TextProps & FormikContenxtProps<any>) => {
+const Text = (props: TextProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -392,7 +398,7 @@ interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   onChange?: ITextAreaProps['onChange']
 }
 
-const TextArea = (props: TextAreaProps & FormikContenxtProps<any>) => {
+const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -525,7 +531,7 @@ interface FormColorPickerProps extends ColorPickerProps, Omit<IFormGroupProps, '
   label: string
 }
 
-const FormColorPicker = (props: FormColorPickerProps & FormikContenxtProps<any>) => {
+const FormColorPicker = (props: FormColorPickerProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -549,6 +555,99 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContenxtProps<any>)
   )
 }
 
+interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  selectItems: SelectOption[]
+  multiTypeInputProps?: MultiTypeInputProps
+}
+
+const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
+  const { formik, name, selectItems, placeholder, multiTypeInputProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    ...rest
+  } = restProps
+  const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
+    (value, valueType) => {
+      formik?.setFieldValue(name, value)
+      formik?.setFieldTouched(name)
+      multiTypeInputProps?.onChange?.(value, valueType)
+    },
+    [formik, multiTypeInputProps]
+  )
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <MultiTypeInput
+        {...multiTypeInputProps}
+        value={get(formik?.values, name)}
+        selectProps={{
+          items: selectItems,
+          value: get(formik?.values, name),
+          ...multiTypeInputProps?.selectProps,
+          inputProps: {
+            name,
+            intent,
+            placeholder,
+            disabled
+          }
+        }}
+        onChange={onChangeCallback}
+      />
+    </FormGroup>
+  )
+}
+
+interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  selectItems: MultiSelectOption[]
+  multiSelectTypeInputProps?: MultiSelectTypeInputProps
+}
+
+const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContextProps<any>) => {
+  const { formik, name, selectItems, placeholder, multiSelectTypeInputProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    ...rest
+  } = restProps
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <MultiSelectTypeInput
+        {...multiSelectTypeInputProps}
+        value={get(formik?.values, name)}
+        multiSelectProps={{
+          ...multiSelectTypeInputProps?.multiSelectProps,
+          tagInputProps: {
+            ...multiSelectTypeInputProps?.multiSelectProps?.tagInputProps,
+            inputProps: {
+              name,
+              placeholder
+            },
+            intent,
+            disabled: disabled
+          },
+          items: selectItems,
+          value: get(formik?.values, name)
+        }}
+        onChange={(value, valueType) => {
+          formik?.setFieldValue(name, value)
+          formik?.setFieldTouched(name)
+          multiSelectTypeInputProps?.onChange?.(value, valueType)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 export const FormInput = {
   TagInput: connect(TagInput),
   CustomRender: connect(CustomRender),
@@ -560,7 +659,9 @@ export const FormInput = {
   Text: connect(Text),
   TextArea: connect(TextArea),
   ColorPicker: connect(FormColorPicker),
-  InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier)
+  InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
+  MultiTypeInput: connect(FormMultiTypeInput),
+  MultiSelectTypeInput: connect(FormMultiSelectTypeInput)
 }
 
 export const FormikForm = connect(Form)
