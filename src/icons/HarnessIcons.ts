@@ -3,6 +3,7 @@ import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
+import Activity from './activity.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
@@ -70,6 +71,7 @@ import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
+import Key from './key.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -303,6 +305,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
+  | 'activity'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
@@ -372,6 +375,7 @@ type HarnessIconName =
   | 'harness-logo-black'
   | 'harness-logo-white'
   | 'harness'
+  | 'key'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -604,6 +608,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
+  activity: Activity,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
@@ -673,6 +678,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   harness: Harness,
+  key: Key,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
