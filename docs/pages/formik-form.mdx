@@ -164,7 +164,7 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit'> {
 
 ```js live=true
 <Formik
-  initialValues={{ firstName: '', lastName: '', description: '' }}
+  initialValues={{ firstName: '', lastName: '', name: 'Test Name', identifier: 'test', description: '' }}
   onSubmit={values =>
     new Promise(resolve => {
       setTimeout(() => {
@@ -185,7 +185,7 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit'> {
   {formikProps => {
     return (
       <FormikForm>
-        <FormInput.InputWithIdentifier inputGroupProps={{ placeholder: 'Type here to generate Identifier' }} />
+        <FormInput.InputWithIdentifier isIdentifierEditable={false} inputGroupProps={{ placeholder: 'Type here to generate Identifier' }} />
         <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
         <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name" />
         <Layout.Horizontal spacing="medium">

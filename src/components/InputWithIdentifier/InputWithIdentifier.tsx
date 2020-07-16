@@ -16,6 +16,7 @@ export interface InputWithIdentifierProps {
   idName?: string
   inputLabel?: string
   idLabel?: string
+  isIdentifierEditable?: boolean
 }
 
 export function getIdentifierFromName(str: string): string {
@@ -32,7 +33,8 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     idLabel = 'ID',
     inputName = 'name',
     idName = 'identifier',
-    inputGroupProps
+    inputGroupProps,
+    isIdentifierEditable = true
   } = props
   const [editable, setEditable] = useState(false)
 
@@ -43,17 +45,17 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
           {idLabel}:
           <ContentEditable
             html={get(formik.values, idName)}
-            disabled={!editable}
+            disabled={!isIdentifierEditable && !editable}
             className={cx(css.idInput, { [css.editable]: editable })}
             tagName="span"
             onChange={ev => {
               formik.setFieldValue(idName, ev.target.value)
             }}
-            onBlur={_ => {
+            onBlur={() => {
               setEditable(false)
             }}
           />
-          {!editable ? (
+          {isIdentifierEditable && !editable ? (
             <Icon
               name="edit"
               size={12}
@@ -71,7 +73,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         {...inputGroupProps}
         onChange={e => {
           const name = (e.target as HTMLInputElement).value
-          formik.setFieldValue(idName, getIdentifierFromName(name))
+          isIdentifierEditable && formik.setFieldValue(idName, getIdentifierFromName(name))
         }}
       />
       {formik.errors[idName] ? (
