@@ -26,10 +26,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.0.191 - 07/10/20
 
-- `Added` MultiTypeInput component to formik
-
-## 1.0.191 - 07/10/20
-
 - `Added` Pipeline Icons
 
 ## 1.0.190 - 07/09/20
