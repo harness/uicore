@@ -170,6 +170,7 @@ import NavDashboard from './nav-dashboard.svg'
 import NavDeploymentsHover from './nav-deployments-hover.svg'
 import NavDeploymentsSelected from './nav-deployments-selected.svg'
 import NavDeployments from './nav-deployments.svg'
+import NavGitSync from './nav-git-sync.svg'
 import NavGovernanceHover from './nav-governance-hover.svg'
 import NavGovernanceSelected from './nav-governance-selected.svg'
 import NavGovernance from './nav-governance.svg'
@@ -772,6 +773,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-deployments-hover': NavDeploymentsHover,
   'nav-deployments-selected': NavDeploymentsSelected,
   'nav-deployments': NavDeployments,
+  'nav-git-sync': NavGitSync,
   'nav-governance-hover': NavGovernanceHover,
   'nav-governance-selected': NavGovernanceSelected,
   'nav-governance': NavGovernance,
