@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.1 - 07/16/20
+
+- `Added` Health, Canary Outline, and Test Verification icons
+
 ## 1.1.0 - 07/16/20
 
 - `Added` MultiTypeInput to formik, and added allowable types prop
