@@ -57,14 +57,12 @@ interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
 
 type FixedTypeComponentProps = { onChange: ExpressionAndRuntimeTypeProps['onChange'] }
 
-export interface MultiTypeInputProps
-  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedComponentValueType'> {
+export interface MultiTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
   selectProps?: SelectProps
 }
 
-export interface MultiSelectTypeInputProps
-  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedComponentValueType'> {
-  multiSelectProps: MultiSelectProps
+export interface MultiSelectTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
+  multiSelectProps?: MultiSelectProps
 }
 
 const isValueAnExpression = (value: string) => /^\${.*}$/.test(value)
