@@ -74,6 +74,7 @@ import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
 import Health from './health.svg'
 import Key from './key.svg'
+import ListEntityInfographic from './list-entity-infographic.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -265,6 +266,7 @@ import ServicePrometheus from './service-prometheus.svg'
 import ServiceServiceS from './service-service-s3.svg'
 import ServiceServicenow from './service-servicenow.svg'
 import ServiceSlack from './service-slack.svg'
+import ServiceSplunkWithName from './service-splunk-with-name.svg'
 import ServiceSplunk from './service-splunk.svg'
 import ServiceSpotinst from './service-spotinst.svg'
 import ServiceStackdriver from './service-stackdriver.svg'
@@ -382,6 +384,7 @@ type HarnessIconName =
   | 'harness'
   | 'health'
   | 'key'
+  | 'list-entity-infographic'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -573,6 +576,7 @@ type HarnessIconName =
   | 'service-service-s3'
   | 'service-servicenow'
   | 'service-slack'
+  | 'service-splunk-with-name'
   | 'service-splunk'
   | 'service-spotinst'
   | 'service-stackdriver'
@@ -690,6 +694,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   harness: Harness,
   health: Health,
   key: Key,
+  'list-entity-infographic': ListEntityInfographic,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
@@ -881,6 +886,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-service-s3': ServiceServiceS,
   'service-servicenow': ServiceServicenow,
   'service-slack': ServiceSlack,
+  'service-splunk-with-name': ServiceSplunkWithName,
   'service-splunk': ServiceSplunk,
   'service-spotinst': ServiceSpotinst,
   'service-stackdriver': ServiceStackdriver,
