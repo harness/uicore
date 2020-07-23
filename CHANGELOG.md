@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.5 - 07/22/20
+
+- `Added` Switch Toggle Icon.
+
 ## 1.1.4 - 07/21/20
 
 - `Added` Infographic and updated plunk logo.

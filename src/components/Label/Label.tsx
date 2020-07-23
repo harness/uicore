@@ -1,5 +1,5 @@
 import React from 'react'
-
+import cx from 'classnames'
 import css from './Label.css'
 
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
@@ -7,10 +7,10 @@ export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> 
 }
 
 export function Label(props: LabelProps) {
-  const { children, ...rest } = props
+  const { children, className = '', ...rest } = props
 
   return (
-    <label {...rest} className={css.main}>
+    <label {...rest} className={cx(css.main, className)}>
       {children}
     </label>
   )
