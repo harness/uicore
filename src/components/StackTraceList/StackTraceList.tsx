@@ -15,6 +15,8 @@ export interface StackTraceListProps {
   stackTraceList: string[]
   heading?: string
   listContainerHeight?: number
+  className?: string
+  stackTracePanelClassName?: string
 }
 
 export function useExpandibleHook(htmlElementRef: RefObject<HTMLElement>) {
@@ -57,9 +59,9 @@ export function StackTracePanel(props: StackTracePanelProps) {
 }
 
 export function StackTraceList(props: StackTraceListProps) {
-  const { stackTraceList = [], heading, listContainerHeight } = props
+  const { stackTraceList = [], heading, listContainerHeight, className, stackTracePanelClassName } = props
   return (
-    <Container className={css.main}>
+    <Container className={cx(css.main, className)}>
       {heading && (
         <Heading level={3} padding="small" background={Color.GREY_100}>
           {heading}
@@ -67,7 +69,11 @@ export function StackTraceList(props: StackTraceListProps) {
       )}
       <Container className={css.listContainer} height={listContainerHeight}>
         {stackTraceList.map(stackTrace =>
-          stackTrace?.length ? <StackTracePanel key={stackTrace} stackTrace={stackTrace} /> : undefined
+          stackTrace?.length ? (
+            <StackTracePanel key={stackTrace} stackTrace={stackTrace} className={stackTracePanelClassName} />
+          ) : (
+            undefined
+          )
         )}
       </Container>
     </Container>
