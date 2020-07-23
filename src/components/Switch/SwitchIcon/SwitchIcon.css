@@ -19,7 +19,7 @@
     .toggleContent {
       width: 60px;
       height: 27px;
-      background: var(--grey-250);
+      background: var(--grey-350);
       position: relative;
       border-radius: 8px;
       display: grid;

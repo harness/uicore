@@ -380,7 +380,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
         placeholder={placeholder}
         intent={intent}
         disabled={disabled}
-        value={get(formik?.values, name)}
+        value={get(formik?.values, name) || ''}
         onBlur={() => formik?.setFieldTouched(name)}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)

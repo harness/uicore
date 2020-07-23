@@ -176,10 +176,13 @@ export default [
         label: 'ColorPicker',
         url: '/color-picker'
       },
-      ,
       {
         label: 'MultiTypeInput',
         url: '/multi-type-input'
+      },
+      {
+        label: 'Carousel',
+        url: '/carousel'
       }
     ]
   },
