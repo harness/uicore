@@ -17,6 +17,7 @@
       word-break: break-word;
       white-space: pre-wrap;
       margin-bottom: 0;
+      font-family: var(--font-family-mono);
       &[data-is-collapsed='true'] {
         overflow: hidden;
         -webkit-box-orient: vertical;
