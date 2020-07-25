@@ -13,15 +13,19 @@ import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
+import CdHover from './cd-hover.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
 import CeBudgetColored from './ce-budget_colored.svg'
 import CeBudgetGrey from './ce-budget_grey.svg'
 import CeCloud from './ce-cloud.svg'
 import CeCluster from './ce-cluster.svg'
+import CeHover from './ce-hover.svg'
 import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
+import CfHover from './cf-hover.svg'
 import CheckAlt from './check-alt.svg'
+import CiHover from './ci-hover.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -42,6 +46,8 @@ import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkip from './conditional-skip.svg'
 import Copy from './copy.svg'
+import CsHover from './cs-hover.svg'
+import CvHover from './cv-hover.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -323,15 +329,19 @@ type HarnessIconName =
   | 'canvas-position'
   | 'canvas-reset'
   | 'canvas-selector'
+  | 'cd-hover'
   | 'ce-application'
   | 'ce-beta'
   | 'ce-budget_colored'
   | 'ce-budget_grey'
   | 'ce-cloud'
   | 'ce-cluster'
+  | 'ce-hover'
   | 'ce-main-colored'
   | 'ce-main-grey'
+  | 'cf-hover'
   | 'check-alt'
+  | 'ci-hover'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -352,6 +362,8 @@ type HarnessIconName =
   | 'conditional-skip-filled'
   | 'conditional-skip'
   | 'copy'
+  | 'cs-hover'
+  | 'cv-hover'
   | 'dashboard-selected'
   | 'dashboard'
   | 'deployment-aborted-legacy'
@@ -633,15 +645,19 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
+  'cd-hover': CdHover,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
   'ce-budget_colored': CeBudgetColored,
   'ce-budget_grey': CeBudgetGrey,
   'ce-cloud': CeCloud,
   'ce-cluster': CeCluster,
+  'ce-hover': CeHover,
   'ce-main-colored': CeMainColored,
   'ce-main-grey': CeMainGrey,
+  'cf-hover': CfHover,
   'check-alt': CheckAlt,
+  'ci-hover': CiHover,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
@@ -662,6 +678,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip': ConditionalSkip,
   copy: Copy,
+  'cs-hover': CsHover,
+  'cv-hover': CvHover,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,

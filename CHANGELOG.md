@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.8 - 07/25/20
+
+- `Added` cd-hover icon for nextGen.
+- `Added` ce-hover icon for nextGen.
+- `Added` cf-hover icon for nextGen.
+- `Added` ci-hover icon for nextGen.
+- `Added` cs-hover icon for nextGen.
+- `Added` cv-hover icon for nextGen.
+
 ## 1.1.7 - 07/23/20
 
 - `Added` Classname prop for stack trace list.
