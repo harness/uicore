@@ -7,7 +7,7 @@ exports[`Render basic component should check snapshot with email 1`] = `
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; background-color: rgb(164, 176, 190);"
+      style="line-height: 36px; text-align: center; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; background-color: red;"
     >
       JD
     </div>
@@ -41,7 +41,7 @@ exports[`Render basic component should check snapshot with name 1`] = `
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; background-color: rgb(235, 47, 6);"
+      style="line-height: 36px; text-align: center; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; background-color: red;"
     >
       JD
     </div>
