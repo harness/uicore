@@ -9,7 +9,8 @@ const Layout = dynamic(() => import('../shared/Layout'), { ssr: false })
 
 export default class extends App {
   componentDidMount() {
-    document.querySelector('body').dataset.ng = true
+    // Disable new color scheme until it's reviewed and finalized
+    // document.body.classList.add('ng')
   }
 
   render() {

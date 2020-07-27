@@ -136,10 +136,12 @@ export function TagInput<T>(props: TagInputProps<T>) {
       const index = selectedItems.findIndex(_item => keyOf(_item) === keyOf(item))
 
       if (index >= 0) {
+        // item was already selected before
         const newSelectedItems = selectedItems.filter((_v, _index) => _index !== index)
         setSelectedItems(newSelectedItems)
         onChange?.(newSelectedItems, createdItems, items)
       } else if (items.find(_item => keyOf(_item) === keyOf(item))) {
+        // item is contained inside items
         const _selectedItems = selectedItems.concat(item)
         setSelectedItems(_selectedItems)
         onChange?.(_selectedItems, createdItems, items)
@@ -283,6 +285,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
         minimal: true,
         usePortal: !isNext
       }}
+      resetOnSelect={true}
       {...options}
     />
   )
