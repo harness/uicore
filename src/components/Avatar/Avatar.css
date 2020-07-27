@@ -1,0 +1,12 @@
+.Avatar {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.AvatarInner {
+  font-weight: bolder;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: white;
+}
