@@ -219,6 +219,7 @@ import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
+import Polygon from './polygon.svg'
 import Question from './question.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -535,6 +536,7 @@ type HarnessIconName =
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
+  | 'polygon'
   | 'question'
   | 'rolling'
   | 'run-pipeline'
@@ -851,6 +853,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
+  polygon: Polygon,
   question: Question,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
