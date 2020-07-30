@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.12 - 07/30/20
+
+- `Fixed` color variables referenced in wingsui not reachable under `:root`.
+
 ## 1.1.11 - 07/29/20
 
 - `Added` report-icon

@@ -4,7 +4,7 @@
   <Component color="red250"/>, <Component background="grey250"/>
 */
 
-body {
+:root {
   --black: #000;
   --white: #fff;
 
@@ -74,68 +74,70 @@ body {
   --magenta-500: #ed61b5;
   --aqua-500: #61c1dd;
 
-  &[data-ng='true'] {
-    --dark-600: #1c1c28;
-    --dark-500: #28293d; /* main background color for dark theme */
-    --dark-400: #555770;
-    --dark-300: #8f90a6;
-    --dark-200: #c7c9d9;
-    --dark-outline: #606170;
+  :global {
+    body.ng {
+      --dark-600: #1c1c28;
+      --dark-500: #28293d; /* main background color for dark theme */
+      --dark-400: #555770;
+      --dark-300: #8f90a6;
+      --dark-200: #c7c9d9;
+      --dark-outline: #606170;
 
-    --light-600: #e4e4eb;
-    --light-500: #ebebf0;
-    --light-400: #f2f2f5;
-    --light-300: #fafafc;
-    --light-200: #fff;
-    --light-outline: #e4e4eb;
+      --light-600: #e4e4eb;
+      --light-500: #ebebf0;
+      --light-400: #f2f2f5;
+      --light-300: #fafafc;
+      --light-200: #fff;
+      --light-outline: #e4e4eb;
 
-    --red-600: #e63535;
-    --red-500: #ff3b3b;
-    --red-400: #ff5c5c;
-    --red-300: #ff8080;
-    --red-200: #ffe6e6;
-    --red-outline: #ff3b3b;
+      --red-600: #e63535;
+      --red-500: #ff3b3b;
+      --red-400: #ff5c5c;
+      --red-300: #ff8080;
+      --red-200: #ffe6e6;
+      --red-outline: #ff3b3b;
 
-    --green-600: #05a660;
-    --green-500: #06c270;
-    --green-400: #39d98a;
-    --green-300: #57eba1;
-    --green-200: #e3fff1;
-    --green-outline: #07dd80;
+      --green-600: #05a660;
+      --green-500: #06c270;
+      --green-400: #39d98a;
+      --green-300: #57eba1;
+      --green-200: #e3fff1;
+      --green-outline: #07dd80;
 
-    --blue-600: #004fc4;
-    --blue-500: #0063f7;
-    --blue-400: #5b8def;
-    --blue-300: #9dbff9;
-    --blue-200: #e5f0ff;
-    --blue-outline: #0059de;
+      --blue-600: #004fc4;
+      --blue-500: #0063f7;
+      --blue-400: #5b8def;
+      --blue-300: #9dbff9;
+      --blue-200: #e5f0ff;
+      --blue-outline: #0059de;
 
-    --yellow-600: #e6b800;
-    --yellow-500: #ffcc00;
-    --yellow-400: #fddd48;
-    --yellow-300: #fded72;
-    --yellow-200: #fffee6;
-    --yellow-outline: #ffcc00;
+      --yellow-600: #e6b800;
+      --yellow-500: #ffcc00;
+      --yellow-400: #fddd48;
+      --yellow-300: #fded72;
+      --yellow-200: #fffee6;
+      --yellow-outline: #ffcc00;
 
-    --orange-600: #e67a00;
-    --orange-500: #ff8800;
-    --orange-400: #fdac42;
-    --orange-300: #fccc75;
-    --orange-200: #fff8e6;
-    --orange-outline: #de6800;
+      --orange-600: #e67a00;
+      --orange-500: #ff8800;
+      --orange-400: #fdac42;
+      --orange-300: #fccc75;
+      --orange-200: #fff8e6;
+      --orange-outline: #de6800;
 
-    --teal-600: #00b7c4;
-    --teal-500: #00cfde;
-    --teal-400: #73dfe7;
-    --teal-300: #a9eff2;
-    --teal-200: #e6ffff;
-    --teal-outline: #00cfde;
+      --teal-600: #00b7c4;
+      --teal-500: #00cfde;
+      --teal-400: #73dfe7;
+      --teal-300: #a9eff2;
+      --teal-200: #e6ffff;
+      --teal-outline: #00cfde;
 
-    --purple-600: #4d0099;
-    --purple-500: #6600cc;
-    --purple-400: #ac5dd9;
-    --purple-300: #dda5e9;
-    --purple-200: #ffe6ff;
-    --purple-outline: #6600cc;
+      --purple-600: #4d0099;
+      --purple-500: #6600cc;
+      --purple-400: #ac5dd9;
+      --purple-300: #dda5e9;
+      --purple-200: #ffe6ff;
+      --purple-outline: #6600cc;
+    }
   }
 }
