@@ -132,7 +132,6 @@ exports[`Test basic Components should render FileInput component 1`] = `
               <input
                 name="file"
                 type="file"
-                value=""
               />
               <span
                 bp3-button-text="Select"

@@ -133,6 +133,7 @@ interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   placeholder?: string
   buttonText?: string
   onChange?: React.FormEventHandler<HTMLInputElement>
+  multiple?: boolean
 }
 
 const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
@@ -147,6 +148,7 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
     fileInput,
     buttonText = i18n.browse,
     onChange,
+    multiple = false,
     ...rest
   } = restProps
   return (
@@ -158,14 +160,16 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
         inputProps={{
           name,
           disabled,
-          value: get(formik?.values, name, '')
+          multiple
         }}
         disabled={disabled}
         onInputChange={(e: React.FormEvent<HTMLInputElement>) => {
-          formik?.setFieldValue(name, e.currentTarget.value)
+          formik?.setFieldValue(name, multiple ? Array.from(e.currentTarget.files || []) : e.currentTarget.files?.[0])
           onChange?.(e)
         }}
-        text={get(formik?.values, name, placeholder)}
+        text={get(formik?.values, name, [{ name: placeholder }])
+          .map((file: File) => file.name)
+          .join(', ')}
       />
     </FormGroup>
   )
