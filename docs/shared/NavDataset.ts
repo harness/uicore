@@ -233,6 +233,10 @@ export default [
       {
         label: 'SelectWithSubview',
         url: '/select-with-subview'
+      },
+      {
+        label: 'CategorizedSelect',
+        url: '/categorized-select'
       }
     ]
   },

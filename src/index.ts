@@ -88,3 +88,8 @@ export {
   MultiSelectTypeInput,
   MultiTypeInputType
 } from './components/MultiTypeInput/MultiTypeInput'
+export {
+  CategorizedSelect,
+  SelectWithCategoriesProps,
+  CategorizedSelectOption
+} from './components/CategorizedSelected/CategorizedSelect'

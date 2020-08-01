@@ -1,0 +1,19 @@
+.categoryItem {
+  font-weight: 600;
+  height: 40px !important;
+  box-shadow: 0px 2px 4px -2px var(--grey-400);
+  background-color: var(--grey-100);
+
+  .collapseIcon {
+    margin-right: var(--spacing-xsmall) !important;
+    transition: all 200ms ease;
+    transform: rotate(0deg);
+  }
+
+  &[data-is-collapsed='true'] {
+    border-bottom: 0.5px solid var(--grey-300);
+    .collapseIcon {
+      transform: rotate(-90deg);
+    }
+  }
+}

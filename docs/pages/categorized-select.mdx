@@ -1,0 +1,116 @@
+# Select --- docs/pages/select.mdx
+
+import { AsyncSelect } from '../shared/SelectLoader'
+
+## Import
+
+```js
+import { CategorizedSelect } from '@wings-software/uikit'
+
+const items=[
+  { label: "Squirtle", value: 'squirtle', category: "water"},
+  { label: "Charizard", value: 'charizard', category: "fire"},
+  { label: "Venosaur", value: 'venosaur' , category: "grass"},
+  { label: "Typhlosian", value: 'typhlosian', category: "fire"},
+  { label: "Feraligatr", value: 'feraligator' ,category: "water"}
+  ]
+
+```
+
+```js
+interface SelectOption {
+  label: string
+  value: string | number | symbol
+  icon?: IconProps
+}
+
+```
+
+## Categorized Select
+```js live=true
+<CategorizedSelect
+  items={[
+        { label: "1", value: "1", category: "Water"},
+        { label: "2", value: "2", category: "Water"},
+        { label: "3", value: "3", category: "Water"},
+        { label: "4", value: "4", category: "Water"},
+        { label: "5", value: "5", category: "Water"},
+        { label: "6", value: "6", category: "Water"},
+        { label: "7", value: "7", category: "Water"},
+        { label: "8", value: "8", category: "Water"},
+        { label: "9", value: "9", category: "Water"},
+        { label: "10", value: "10", category: "Water"},
+        { label: "11", value: "11", category: "Water"},
+        { label: "12", value: "12", category: "Water"},
+        { label: "13", value: "13", category: "Water"},
+        { label: "14", value: "14", category: "Water"},
+        { label: "15", value: "15", category: "Water"},
+        { label: "16", value: "16", category: "Water"},
+        { label: "17", value: "17", category: "Water"},
+        { label: "18", value: "18", category: "Water"},
+        { label: "19", value: "19", category: "Water"},
+        { label: "20", value: "20", category: "Water"},
+        { label: "21", value: "21", category: "Water"},
+        { label: "22", value: "22", category: "Water"},
+        { label: "23", value: "23", category: "Water"},
+        { label: "24", value: "24", category: "Water"},
+        { label: "25", value: "25", category: "Water"},
+        { label: "26", value: "26", category: "Water"},
+        { label: "27", value: "27", category: "Water"},
+        { label: "28", value: "28", category: "Water"},
+        { label: "29", value: "29", category: "Water"},
+        { label: "30", value: "30", category: "Water"},
+        { label: "31", value: "31", category: "Water"},
+        { label: "32", value: "32", category: "Water"},
+        { label: "33", value: "33", category: "Water"},
+        { label: "34", value: "34", category: "Water"},
+        { label: "35", value: "35", category: "Water"},
+        { label: "36", value: "36", category: "Water"},
+        { label: "37", value: "37", category: "Water"},
+        { label: "38", value: "38", category: "Water"},
+        { label: "39", value: "39", category: "Water"},
+        { label: "40", value: "40", category: "Water"},
+        { label: "41", value: "41", category: "Water"},
+        { label: "42", value: "42", category: "Water"},
+        { label: "43", value: "43", category: "Water"},
+        { label: "44", value: "44", category: "Water"},
+        { label: "45", value: "45", category: "Water"},
+        { label: "46", value: "46", category: "Water"},
+        { label: "47", value: "47", category: "Water"},
+        { label: "48", value: "48", category: "Water"},
+        { label: "49", value: "49", category: "Water"},
+        { label: "50", value: "50", category: "Water"},
+        { label: "51", value: "51", category: "Water"},
+        { label: "52", value: "52", category: "Water"},
+        { label: "53", value: "53", category: "Water"},
+        { label: "54", value: "54", category: "Water"},
+        { label: "55", value: "55", category: "Water"},
+        { label: "56", value: "56", category: "Water"},
+        { label: "57", value: "57", category: "Water"},
+        { label: "58", value: "58", category: "Water"},
+        { label: "59", value: "59", category: "Water"},
+        { label: "60", value: "60", category: "Water"},
+        { label: "61", value: "61", category: "Water"},
+        { label: "62", value: "62", category: "Water"},
+        { label: "63", value: "63", category: "Water"},
+        { label: "64", value: "64", category: "Water"},
+        { label: "65", value: "65", category: "Water"},
+        { label: "66", value: "66", category: "Water"},
+        { label: "67", value: "67", category: "Water"},
+        { label: "68", value: "68", category: "Water"},
+        { label: "69", value: "69", category: "Water"},
+        { label: "70", value: "70", category: "Water"},
+        { label: "71", value: "71", category: "Water"},
+        { label: "72", value: "72", category: "Water"},
+        { label: "73", value: "73", category: "Water"},
+        { label: "74", value: "74", category: "Water"},
+        { label: "75", value: "75", category: "Water"},
+        { label: "76", value: "76", category: "Water"},
+        { label: "77", value: "77", category: "Water"},
+       
+        { label: "Typhlosian", value: "typhlosian", category: "Fire"},
+        { label: "Feraligatr", value: "feraligator", category: "Water"}
+  ]}
+  />
+```
+
