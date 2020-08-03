@@ -13,6 +13,8 @@ export interface StepWizardProps<SharedObject> {
   children: Array<React.ReactElement<StepProps<SharedObject>> | null>
   isNavMode?: boolean
   className?: string
+  stepClassName?: string
+  navClassName?: string
   onStepChange?: (data: StepChangeData<SharedObject | undefined>) => void
   onCompleteWizard?: (data: SharedObject | undefined) => void
   initialStep?: number
@@ -40,7 +42,7 @@ interface StepState<SharedObject> {
 }
 
 export const StepWizard = <SharedObject extends object>(props: StepWizardProps<SharedObject>) => {
-  const { className = '', isNavMode = true, initialStep = 1, children } = props
+  const { className = '', isNavMode = true, initialStep = 1, children, stepClassName = '', navClassName = '' } = props
   const [state, setState] = React.useState<StepState<SharedObject>>({
     activeStep: initialStep < 1 || initialStep > children.length ? 1 : initialStep,
     totalSteps: 0,
@@ -119,7 +121,12 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
             <div
               key={index}
               onClick={() => completedSteps && gotoStep(index + 1, state.prevStepData)}
-              className={cx(css.navStep, { [css.activeStep]: activeStep }, { [css.completedStep]: completedSteps })}>
+              className={cx(
+                css.navStep,
+                navClassName,
+                { [css.activeStep]: activeStep },
+                { [css.completedStep]: completedSteps }
+              )}>
               {completedSteps ? (
                 <Icon name="small-tick" size={22} color="green500" style={{ marginRight: 'var(--spacing-xsmall)' }} />
               ) : (
@@ -150,7 +157,9 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
   return (
     <div className={cx(css.main, className, { [css.navBar]: isNavMode })}>
       {isNavMode && <div className={css.navBarList}>{renderStep()}</div>}
-      {state.activeStep && <div className={cx(css.stepDetails)}>{React.cloneElement(activeChild, childProps)}</div>}
+      {state.activeStep && (
+        <div className={cx(css.stepDetails, stepClassName)}>{React.cloneElement(activeChild, childProps)}</div>
+      )}
     </div>
   )
 }

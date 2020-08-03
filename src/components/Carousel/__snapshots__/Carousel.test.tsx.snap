@@ -8,9 +8,6 @@ exports[`Render basic component should check snapshot 1`] = `
     <div
       class="carouselView"
     >
-      <span>
-         
-      </span>
       <div
         class="carouselItem active"
       >

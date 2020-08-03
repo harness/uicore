@@ -67,22 +67,26 @@ export const Carousel: React.FC<CarouselProps> = ({
   return (
     <Layout.Vertical spacing="xsmall" padding="small" className={cx(css.carousel, className)}>
       <div className={css.carouselView}>
-        {activeSlide > 1 && !previousElement ? (
-          <div className={css.carouselLeft} onClick={() => setActiveSlide(activeSlide - 1)}>
-            <div>
-              <Icon name="circle-arrow-left" size={30} color="white" />
+        {!previousElement ? (
+          activeSlide > 1 && (
+            <div className={css.carouselLeft} onClick={() => setActiveSlide(activeSlide - 1)}>
+              <div>
+                <Icon name="circle-arrow-left" size={30} color="white" />
+              </div>
             </div>
-          </div>
+          )
         ) : (
           <span onClick={() => setActiveSlide(activeSlide - 1)}>{previousElement} </span>
         )}
         {items}
-        {activeSlide < totalSlides && !nextElement ? (
-          <div className={css.carouselRight} onClick={() => setActiveSlide(activeSlide + 1)}>
-            <div>
-              <Icon name="circle-arrow-right" size={30} color="white" />
+        {!nextElement ? (
+          activeSlide < totalSlides && (
+            <div className={css.carouselRight} onClick={() => setActiveSlide(activeSlide + 1)}>
+              <div>
+                <Icon name="circle-arrow-right" size={30} color="white" />
+              </div>
             </div>
-          </div>
+          )
         ) : (
           <span onClick={() => setActiveSlide(activeSlide - 1)}>{nextElement} </span>
         )}
