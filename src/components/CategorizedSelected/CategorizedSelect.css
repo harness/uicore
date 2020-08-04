@@ -17,3 +17,18 @@
     }
   }
 }
+
+.item {
+  margin-left: var(--spacing-xsmall);
+}
+
+.creatableOption {
+  margin-left: var(--spacing-xsmall);
+  > p span {
+    margin-right: 0 !important;
+  }
+}
+
+.addNewOptionForm {
+  padding: var(--spacing-medium);
+}

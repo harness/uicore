@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.1.15 - 08/03/20
 
-- `Added` Categorized select doprdown
+- `Added` Categorized select dropdown
 
 ## 1.1.14 - 08/03/20
 
