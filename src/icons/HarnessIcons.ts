@@ -80,6 +80,7 @@ import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
 import Health from './health.svg'
 import Key from './key.svg'
+import KeyMain from './key-main.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -398,6 +399,7 @@ type HarnessIconName =
   | 'harness'
   | 'health'
   | 'key'
+  | 'key-main'
   | 'list-entity-infographic'
   | 'main-abort'
   | 'main-account-notifications'
@@ -716,6 +718,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   harness: Harness,
   health: Health,
   key: Key,
+  'key-main': KeyMain,
   'list-entity-infographic': ListEntityInfographic,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
