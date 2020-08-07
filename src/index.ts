@@ -89,7 +89,7 @@ export {
   MultiTypeInputType
 } from './components/MultiTypeInput/MultiTypeInput'
 export {
+  CategorizedSelectProps,
   CategorizedSelect,
-  SelectWithCategoriesProps,
   CategorizedSelectOption
 } from './components/CategorizedSelected/CategorizedSelect'

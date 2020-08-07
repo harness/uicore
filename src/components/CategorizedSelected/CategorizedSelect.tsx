@@ -23,7 +23,7 @@ type AddNewOptionFormValues = {
   category?: string
 }
 
-export interface SelectWithCategoriesProps {
+export interface CategorizedSelectProps {
   selectProps?: Omit<SelectProps, 'items' | 'itemRenderer'>
   items: CategorizedSelectOption[]
   creatableOption?: {
@@ -31,6 +31,7 @@ export interface SelectWithCategoriesProps {
     validateNewOption?: (formValue: AddNewOptionFormValues) => { [fieldName: string]: string }
     creatableOptionLabel?: string
   }
+  onChange?: (selectedItem: CategorizedSelectOption) => void
 }
 
 interface AddNewOptionFormProps {
@@ -92,7 +93,7 @@ function createCategoryMaps(
 
 function createSelectOptionList(
   items: CategorizedSelectOption[],
-  creatableOption?: SelectWithCategoriesProps['creatableOption']
+  creatableOption?: CategorizedSelectProps['creatableOption']
 ): SelectOption[] {
   const itemsGroupedByCategory = new Map<string, SelectOption[]>()
   items.forEach(({ label, value, category }) => {
@@ -160,8 +161,8 @@ function getFilteredItems(
   return itemsToReturn
 }
 
-export function CategorizedSelect(props: SelectWithCategoriesProps): JSX.Element {
-  const { items: propItems, selectProps, creatableOption } = props
+export function CategorizedSelect(props: CategorizedSelectProps): JSX.Element {
+  const { items: propItems, selectProps, creatableOption, onChange } = props
   const [items, setItems] = useState<CategorizedSelectOption[]>(propItems || [])
   const [collapsedCategories, setCollapsed] = useState<string[]>([])
   const { itemToCategory, categoryList } = useMemo(() => createCategoryMaps(items), [items])
@@ -267,6 +268,10 @@ export function CategorizedSelect(props: SelectWithCategoriesProps): JSX.Element
       {...selectProps}
       allowCreatingNewItems={false}
       items={selectOptions}
+      onChange={(item: SelectOption) => {
+        const category = itemToCategory.get(item?.label || '') || ''
+        onChange?.({ ...item, category })
+      }}
       itemRenderer={itemRenderer}
       itemListRenderer={itemListRenderer}
       itemListPredicate={itemListPredicate}
