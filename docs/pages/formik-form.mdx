@@ -300,7 +300,14 @@ Try submitting the form
               {label: 'Football', value: 'football', category: 'Sports'},
               { label: 'Pikachu', value: 'pikachu', category: 'Pokemon' },
               { label: 'Garchomp', value: 'garchomp', category: 'Pokemon' }
-    ]} />
+    ]} 
+    categorizedSelectProps={{
+            creatableOption: {
+              creatableOptionLabel: 'Custom Option',
+              allowableCategoriesForNewOption: () => ['Sports', 'Pokemon']
+            }
+          }}
+    />
     <Button intent="primary" type="Submit" text="Submit" />
   </FormikForm>
 </Formik>
