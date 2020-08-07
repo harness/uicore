@@ -190,7 +190,6 @@ export function CategorizedSelect(props: CategorizedSelectProps): JSX.Element {
       const collapsedCategoryIndex = collapsedCategories.findIndex(category => category === categoryName)
       const isCategoryCollapsed = collapsedCategoryIndex > -1
 
-      console.log(item)
       // render creatable option in drop down
       if (isCreatableOption) {
         return (
