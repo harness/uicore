@@ -12,6 +12,12 @@
   .textContainer {
     padding: var(--spacing-medium);
 
+    .timestamp {
+      font-size: var(--font-size-small);
+      margin-bottom: var(--spacing-xsmall);
+      font-weight: bold;
+    }
+
     .textContent {
       font-size: var(--font-size-small);
       word-break: break-word;
@@ -25,5 +31,13 @@
         display: -webkit-box;
       }
     }
+  }
+
+  .isExpandible {
+    padding-bottom: var(--spacing-xsmall);
+  }
+
+  .collapseButtonText {
+    font-size: var(--font-size-small) !important;
   }
 }

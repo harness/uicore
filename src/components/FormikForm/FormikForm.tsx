@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -39,6 +39,11 @@ import {
   MultiSelectTypeInputProps,
   MultiSelectTypeInput
 } from '../MultiTypeInput/MultiTypeInput'
+import {
+  CategorizedSelectProps,
+  CategorizedSelect,
+  CategorizedSelectOption
+} from '../CategorizedSelected/CategorizedSelect'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -652,6 +657,59 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
   )
 }
 
+interface FormCategorizedSelect extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  items: CategorizedSelectOption[]
+  onChange?: UiKitSelectProps['onChange']
+  categorizedSelectProps?: CategorizedSelectProps
+}
+
+const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    items,
+    placeholder,
+    inline = formik?.inline,
+    categorizedSelectProps,
+    onChange,
+    ...rest
+  } = restProps
+
+  const value = get(formik?.values, name)
+  const selectOptionValue = useMemo(() => {
+    const selectedItem = items.filter(item => item.value === value)[0] || {}
+    return { label: selectedItem.label, value: selectedItem.value }
+  }, [items, value])
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <CategorizedSelect
+        {...categorizedSelectProps}
+        selectProps={{
+          ...categorizedSelectProps?.selectProps,
+          value: selectOptionValue,
+          disabled,
+          inputProps: {
+            ...categorizedSelectProps?.selectProps?.inputProps,
+            placeholder
+          }
+        }}
+        items={items}
+        onChange={(item: CategorizedSelectOption) => {
+          formik?.setFieldValue(name, item.value)
+          onChange?.(item)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 export const FormInput = {
   TagInput: connect(TagInput),
   CustomRender: connect(CustomRender),
@@ -665,7 +723,8 @@ export const FormInput = {
   ColorPicker: connect(FormColorPicker),
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
-  MultiSelectTypeInput: connect(FormMultiSelectTypeInput)
+  MultiSelectTypeInput: connect(FormMultiSelectTypeInput),
+  CategorizedSelect: connect(FormCategorizedSelect)
 }
 
 export const FormikForm = connect(Form)
