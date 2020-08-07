@@ -24,13 +24,14 @@ type AddNewOptionFormValues = {
 }
 
 export interface CategorizedSelectProps {
-  selectProps?: Omit<SelectProps, 'items' | 'itemRenderer'>
+  selectProps?: Omit<SelectProps, 'items' | 'itemRenderer' | 'value'>
   items: CategorizedSelectOption[]
   creatableOption?: {
-    allowableCategoriesForNewOption?: (labels: string[]) => SelectOption[]
+    allowableCategoriesForNewOption?: (labels: string[]) => string[]
     validateNewOption?: (formValue: AddNewOptionFormValues) => { [fieldName: string]: string }
     creatableOptionLabel?: string
   }
+  value?: string
   onChange?: (selectedItem: CategorizedSelectOption) => void
 }
 
@@ -58,21 +59,27 @@ function AddNewOptionForm(props: AddNewOptionFormProps): JSX.Element {
   }
   return (
     <Formik initialValues={{}} validate={validate ?? defaultValidateFunction} onSubmit={onComplete}>
-      <FormikForm className={css.addNewOptionForm}>
-        <FormInput.Text label="Name" name="name" />
-        <FormInput.Select
-          label="Category"
-          name="category"
-          items={categoryOptions}
-          placeholder="Select category the new option is a part of"
-        />
-        <Button onClick={() => onComplete()} margin={{ right: 'small' }}>
-          Cancel
-        </Button>
-        <Button type="submit" intent="primary">
-          Submit
-        </Button>
-      </FormikForm>
+      {formikProps => (
+        <FormikForm className={css.addNewOptionForm}>
+          <FormInput.Text label="Name" name="name" />
+          <FormInput.Select
+            label="Category"
+            name="category"
+            items={categoryOptions}
+            placeholder="Select category the new option is a part of"
+          />
+          <Button onClick={() => onComplete()} margin={{ right: 'small' }}>
+            Cancel
+          </Button>
+          <Button
+            intent="primary"
+            onClick={() => {
+              formikProps.submitForm()
+            }}>
+            Submit
+          </Button>
+        </FormikForm>
+      )}
     </Formik>
   )
 }
@@ -162,12 +169,13 @@ function getFilteredItems(
 }
 
 export function CategorizedSelect(props: CategorizedSelectProps): JSX.Element {
-  const { items: propItems, selectProps, creatableOption, onChange } = props
+  const { items: propItems, selectProps, creatableOption, onChange, value } = props
   const [items, setItems] = useState<CategorizedSelectOption[]>(propItems || [])
   const [collapsedCategories, setCollapsed] = useState<string[]>([])
   const { itemToCategory, categoryList } = useMemo(() => createCategoryMaps(items), [items])
   const [renderCreatableOptionForm, setDisplayCreatableOptionForm] = useState<boolean>(false)
   const selectOptions = useMemo(() => createSelectOptionList(items, creatableOption), [items])
+  const selectOptionValue = value ? selectOptions?.find(option => option.value === value) : undefined
   const itemListPredicate = useCallback(
     (query: string, unfilteredItems: SelectOption[]) => getFilteredItems(query, unfilteredItems, itemToCategory),
     [itemToCategory, renderCreatableOptionForm]
@@ -182,6 +190,7 @@ export function CategorizedSelect(props: CategorizedSelectProps): JSX.Element {
       const collapsedCategoryIndex = collapsedCategories.findIndex(category => category === categoryName)
       const isCategoryCollapsed = collapsedCategoryIndex > -1
 
+      console.log(item)
       // render creatable option in drop down
       if (isCreatableOption) {
         return (
@@ -238,7 +247,9 @@ export function CategorizedSelect(props: CategorizedSelectProps): JSX.Element {
       renderCreatableOptionForm
         ? () => {
             const categoryOptions =
-              creatableOption?.allowableCategoriesForNewOption?.(categoryList) ||
+              creatableOption
+                ?.allowableCategoriesForNewOption?.(categoryList)
+                ?.map(newCat => ({ label: newCat, value: newCat })) ||
               categoryList.map(category => ({ label: category, value: category }))
             return (
               <Container className={Classes.MENU}>
@@ -266,6 +277,7 @@ export function CategorizedSelect(props: CategorizedSelectProps): JSX.Element {
   return (
     <Select
       {...selectProps}
+      value={selectOptionValue}
       allowCreatingNewItems={false}
       items={selectOptions}
       onChange={(item: SelectOption) => {

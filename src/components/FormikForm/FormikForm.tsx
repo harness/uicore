@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -673,7 +673,7 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
     intent = hasError ? Intent.DANGER : Intent.NONE,
     helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
-    items,
+    items = [],
     placeholder,
     inline = formik?.inline,
     categorizedSelectProps,
@@ -682,10 +682,6 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
   } = restProps
 
   const value = get(formik?.values, name)
-  const selectOptionValue = useMemo(() => {
-    const selectedItem = items.filter(item => item.value === value)[0] || {}
-    return { label: selectedItem.label, value: selectedItem.value }
-  }, [items, value])
 
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
@@ -693,7 +689,6 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
         {...categorizedSelectProps}
         selectProps={{
           ...categorizedSelectProps?.selectProps,
-          value: selectOptionValue,
           disabled,
           inputProps: {
             ...categorizedSelectProps?.selectProps?.inputProps,
@@ -701,6 +696,7 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
           }
         }}
         items={items}
+        value={value}
         onChange={(item: CategorizedSelectOption) => {
           formik?.setFieldValue(name, item.value)
           onChange?.(item)
