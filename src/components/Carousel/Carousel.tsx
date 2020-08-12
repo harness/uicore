@@ -71,7 +71,7 @@ export const Carousel: React.FC<CarouselProps> = ({
           activeSlide > 1 && (
             <div className={css.carouselLeft} onClick={() => setActiveSlide(activeSlide - 1)}>
               <div>
-                <Icon name="circle-arrow-left" size={30} color="white" />
+                <Icon name="main-chevron-left" size={20} color="white" />
               </div>
             </div>
           )
@@ -83,7 +83,7 @@ export const Carousel: React.FC<CarouselProps> = ({
           activeSlide < totalSlides && (
             <div className={css.carouselRight} onClick={() => setActiveSlide(activeSlide + 1)}>
               <div>
-                <Icon name="circle-arrow-right" size={30} color="white" />
+                <Icon name="main-chevron-right" size={20} color="white" />
               </div>
             </div>
           )
