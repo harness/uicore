@@ -99,6 +99,10 @@ export function MultiSelect(props: MultiSelectProps) {
     }
   }, [value])
 
+  React.useEffect(() => {
+    setQuery(props.query || '')
+  }, [props.query])
+
   function itemRenderer(item: MultiSelectOption, rendererProps: IItemRendererProps): JSX.Element | null {
     if (!rendererProps.modifiers.matchesPredicate) {
       return null
