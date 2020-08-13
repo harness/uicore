@@ -183,6 +183,10 @@ export default [
       {
         label: 'Carousel',
         url: '/carousel'
+      },
+      {
+        label: 'Pagination',
+        url: '/pagination'
       }
     ]
   },
