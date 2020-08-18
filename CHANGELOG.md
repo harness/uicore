@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.1.24 - 08/14/20
 
+- `Changed` `Pagination` no longer throws for invalid props
+
+## 1.1.24 - 08/14/20
+
 - `Fixed` `StepsProgress` progess bar status.
 
 ## 1.1.23 - 08/13/20

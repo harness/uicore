@@ -18,7 +18,11 @@ export interface PaginationProps {
 
 const Pagination: React.FC<PaginationProps> = props => {
   const { pageSize, pageIndex = 0, nextPage, pageCount, itemCount, gotoPage, pageCountClamp = 5 } = props
-  if (pageIndex > pageCount - 1) throw "pageIndex can't be more than pageCount"
+  if (pageIndex >= pageCount) {
+    // eslint-disable-next-line no-console
+    console.warn(`Pagination: pageIndex (${pageIndex}) can't be more than/equal to pageCount (${pageCount})`)
+    return null
+  }
 
   return (
     <Layout.Horizontal
