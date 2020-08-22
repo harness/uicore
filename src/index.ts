@@ -99,3 +99,7 @@ export {
   ModalErrorHandlerBinding,
   ModalErrorHandlerProps
 } from './components/Modal/ModalErrorHandler'
+export {
+  MultiSelectWithSubview,
+  MultiSelectWithSubviewProps
+} from './components/MultiSelectWithSubView/MultiSelectWithSubView'

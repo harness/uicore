@@ -4,11 +4,22 @@ export const ExampleWidgetSubviewForSelect = dynamic(() => import('./ExampleWidg
   ssr: false
 })
 
-export const ExampleFormSubviewForSelect = dynamic(() => import('./ExampleFormSubviewForSelect'), {
-  ssr: false
-})
+export const ExampleFormSubviewForSelect = dynamic(
+  () => import('./ExampleFormSubviewForSelect').then(mod => mod.ExampleFormSubviewForSelect),
+  {
+    ssr: false
+  }
+)
+
+export const ExampleFormSubviewForMultiSelect = dynamic(
+  () => import('./ExampleFormSubviewForSelect').then(mod => mod.ExampleFormSubviewForMultiSelect),
+  {
+    ssr: false
+  }
+)
 
 export default {
   ExampleWidgetSubviewForSelect,
-  ExampleFormSubviewForSelect
+  ExampleFormSubviewForSelect,
+  ExampleFormSubviewForMultiSelect
 }

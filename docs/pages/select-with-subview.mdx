@@ -5,10 +5,31 @@ import SelectWithSubViewLoader from '../shared/SelectWithSubViewLoader.tsx'
 Select with Subview renders an alternate view when the user selects a specific option in the dropdown. The alternate view is rendered within the drop down menu.
 The component is built on top of uikit's standard select component.
 
+## Props (extends Select props)
+- `subview`: JSX.Element - The component that should be rendered when clicking on a custom option
+- `changeViewButtonLabel`: string - Label colored blue that when clicked will display the subview
+- `renderSubviewWithoutMenuStyling` (optional): boolean - If true will remove blueprint styling that adds white background and border to the drop down menu
+
+## Subview Component
+ After user has completed their interaction, the subview component needs to invoke a function to re-render the original drop down menu.
+ To do that first import
+
+ ```js
+ import { SelectWithSubviewContext } from '@wings-software/uikit'
+ ```
+
+ and use the context api
+
+ ```js
+const { toggleSubview } = useContext(SelectWithSubviewContext)
+```
+
+and invoke the toggleSubview() function on button click or after the user signals interaction completion.
+
 ## Import
 
 ```js
-import { SelectWithSubview, Layout } from '@wings-software/uikit'
+import { SelectWithSubview } from '@wings-software/uikit'
 ```
 
 ## Subform Example
@@ -22,14 +43,17 @@ import { SelectWithSubview, Layout } from '@wings-software/uikit'
       <SelectWithSubview
         items={ExampleItems}
         changeViewButtonLabel="Custom Date"
-        subview={<EnvironmentTypeSubForm onSubmit={values => console.log(values)} />}
+        subview={<EnvironmentTypeSubForm onSubmit={values => {
+          handleSubmit(values)
+          toggleSubview()
+        }} />}
       />
     </Form>
   )}
 </Formik>
 ```
 
-## Calendar Widget Examples
+## Calendar Widget Example
 
 <SelectWithSubViewLoader.ExampleWidgetSubviewForSelect />
 
@@ -43,7 +67,11 @@ import { SelectWithSubview, Layout } from '@wings-software/uikit'
         renderSubviewWithoutMenuStyling={true}
         changeViewButtonLabel="Custom Date"
         subview={
-          <DatePickerSubview onSelectRange={(range: SelectOption) => props.setFieldValue('selectedDate', range)} />
+          <DatePickerSubview onSelectRange={(range: SelectOption) => {
+            props.setFieldValue('selectedDate', range)}
+            toggleSubview()
+          }}
+          />
         }
       />
     </Form>
