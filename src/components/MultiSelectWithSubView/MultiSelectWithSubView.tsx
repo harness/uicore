@@ -20,7 +20,7 @@ export interface MultiSelectWithSubviewProps {
 export function MultiSelectWithSubview(props: MultiSelectWithSubviewProps): JSX.Element {
   const { items, changeViewButtonLabel, value, subview, multiSelectProps, renderSubviewWithoutMenuStyling } = props
 
-  const itemRend = (renderSubview: () => void) => {
+  const multiSelectItemRenderer = (renderSubview: () => void) => {
     // eslint-disable-next-line react/display-name
     return (item: MultiSelectOption, rendererProps: IItemRendererProps): JSX.Element | null => {
       if (!rendererProps.modifiers.matchesPredicate) {
@@ -41,7 +41,7 @@ export function MultiSelectWithSubview(props: MultiSelectWithSubviewProps): JSX.
 
       return (
         <li
-          key={item.value.toString()}
+          key={item.value?.toString()}
           className={cx(multiselectCSS.menuItem, {
             [multiselectCSS.active]: rendererProps.modifiers.active,
             [multiselectCSS.disabled]: rendererProps.modifiers.disabled || item.disabled
@@ -50,7 +50,7 @@ export function MultiSelectWithSubview(props: MultiSelectWithSubviewProps): JSX.
           <input
             className={multiselectCSS.checkbox}
             type="checkbox"
-            value={item.value.toString()}
+            value={item.value?.toString()}
             checked={value && value.findIndex(val => val.value === item.value) > -1}
             disabled={item.disabled}
             readOnly
@@ -72,7 +72,7 @@ export function MultiSelectWithSubview(props: MultiSelectWithSubviewProps): JSX.
     changeViewButtonLabel,
     items,
     subview,
-    itemRenderer: itemRend,
+    itemRenderer: multiSelectItemRenderer,
     renderSubviewWithoutMenuStyling
   })
 

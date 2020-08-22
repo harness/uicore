@@ -61,14 +61,14 @@ export function useToggleDropDownSubviewHook({
       // ensure uniqness of added option
       const { label, value } = optionToAddToDropdown
       if (!options.every((o: SelectOption | MultiSelectOption) => o.label !== label && o.value !== value)) {
-        return `${optionToAddToDropdown.label} is already in the drop down list. Please provide a unique option.`
+        return `${optionToAddToDropdown.label} already exists. Please provide a unique option.`
       }
-      const ojOptions: SelectOption[] | MultiSelectOption[] = (options as []).filter(
+      const definedOptions: SelectOption[] | MultiSelectOption[] = (options as []).filter(
         (option: SelectOption | MultiSelectOption) => option !== undefined && option !== null
       )
-      ojOptions.splice(1, 0, optionToAddToDropdown)
+      definedOptions.splice(1, 0, optionToAddToDropdown)
       setDisplayForm(!shouldDisplaySubview)
-      setOptions(ojOptions)
+      setOptions(definedOptions)
     },
     [shouldDisplaySubview, options, setDisplayForm, setOptions]
   )

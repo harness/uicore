@@ -128,7 +128,7 @@ export function ExampleFormSubviewForSelect() {
         <Form>
           <SelectWithSubview
             items={ExampleItems}
-            changeViewButtonLabel="Custom Date"
+            changeViewButtonLabel="+ Add an environment"
             subview={<EnvironmentTypeSubForm onSubmit={values => console.log(values)} />}
           />
         </Form>
