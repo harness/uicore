@@ -1,5 +1,14 @@
 import React, { FormEvent, useCallback, useContext, useState } from 'react'
-import { Layout, Heading, TextInput, Button, Text, SelectWithSubviewContext, SelectWithSubview } from '../static/index'
+import {
+  Layout,
+  Heading,
+  TextInput,
+  Button,
+  Text,
+  SelectWithSubviewContext,
+  SelectWithSubview,
+  MultiSelectWithSubview
+} from '../static/index'
 import { Formik, Form, FormikErrors } from 'formik'
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import { SelectOption } from '../../src/components/Select/Select'
@@ -112,7 +121,7 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
   )
 }
 
-export default function ExampleFormSubviewForSelect() {
+export function ExampleFormSubviewForSelect() {
   return (
     <Formik initialValues={{}} onSubmit={() => {}}>
       {() => (
@@ -125,5 +134,23 @@ export default function ExampleFormSubviewForSelect() {
         </Form>
       )}
     </Formik>
+  )
+}
+
+export function ExampleFormSubviewForMultiSelect() {
+  const [selectedItems, setSelectedItems] = useState([])
+  return (
+    <MultiSelectWithSubview
+      items={ExampleItems}
+      value={selectedItems}
+      changeViewButtonLabel="+ Add an environment"
+      subview={<EnvironmentTypeSubForm onSubmit={values => console.log(values)} />}
+      multiSelectProps={{
+        value: selectedItems,
+        onChange: selectedOptions => {
+          setSelectedItems(selectedOptions)
+        }
+      }}
+    />
   )
 }

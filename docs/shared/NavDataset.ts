@@ -241,6 +241,10 @@ export default [
       {
         label: 'CategorizedSelect',
         url: '/categorized-select'
+      },
+      {
+        label: 'MultiSelectWithSubview',
+        url: '/multiselect-with-subview'
       }
     ]
   },
