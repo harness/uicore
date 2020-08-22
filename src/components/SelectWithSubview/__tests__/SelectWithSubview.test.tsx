@@ -238,6 +238,6 @@ describe('Tests for Select with secondary view', () => {
     await waitForDomChange()
 
     expect(onSubmitFunc).not.toHaveBeenCalled()
-    getByText('secondaryOption_1 is already in the drop down list. Please provide a unique option.')
+    getByText('secondaryOption_1 already exists. Please provide a unique option.')
   })
 })

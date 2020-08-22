@@ -81,7 +81,7 @@ export function useToggleDropDownSubviewHook({
           const isAddSubviewOption = item.label === changeViewButtonLabel
           return (
             <li
-              key={item.value.toString()}
+              key={item.value?.toString()}
               className={selectCss.menuItem}
               onClick={isAddSubviewOption ? () => toggleSubview() : handleClick}>
               {!isAddSubviewOption ? item.label : <Text intent="primary">{item.label}</Text>}
