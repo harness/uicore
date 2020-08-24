@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.28 - 08/24/20
+
+- `Added` secret-ssh and secret-manager icons
+
 ## 1.1.27 - 08/20/20
 
 - `Added` MultiSelectWithSubView component

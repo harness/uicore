@@ -238,6 +238,8 @@ import SearchTriggers from './search-triggers.svg'
 import SearchUserGroups from './search-user-groups.svg'
 import SearchUsers from './search-users.svg'
 import SearchWorkflow from './search-workflow.svg'
+import SecretSsh from './secret-ssh.svg'
+import SecretManager from './secret-manager.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactory from './service-artifactory.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
@@ -558,6 +560,8 @@ type HarnessIconName =
   | 'search-user-groups'
   | 'search-users'
   | 'search-workflow'
+  | 'secret-ssh'
+  | 'secret-manager'
   | 'service-appdynamics'
   | 'service-artifactory'
   | 'service-aws-code-deploy'
@@ -878,6 +882,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'search-user-groups': SearchUserGroups,
   'search-users': SearchUsers,
   'search-workflow': SearchWorkflow,
+  'secret-ssh': SecretSsh,
+  'secret-manager': SecretManager,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory': ServiceArtifactory,
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
