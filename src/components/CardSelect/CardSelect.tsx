@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useCallback } from 'react'
-import { Card } from '../Card/Card'
+import { Card, CardProps } from '../Card/Card'
 import { HTMLDivProps } from '@blueprintjs/core'
 
 export enum CardSelectType {
@@ -78,6 +78,7 @@ export const CardSelect = <ObjectType extends object>(props: CardSelectProps<Obj
                   interactive={true}
                   data-index={index}
                   selected={isSelected}
+                  disabled={(item as CardProps).disabled || false}
                   onClick={event => onChange(item, event)}>
                   {renderItem(item, isSelected)}
                 </Card>

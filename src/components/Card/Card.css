@@ -23,6 +23,12 @@ div.card {
   border: 2px solid var(--blue-500) !important;
 }
 
+.disabled {
+  cursor: not-allowed !important;
+  background-color: var(--grey-200) !important;
+  color: var(--disabled-color) !important;
+}
+
 .cardMenu {
   position: relative;
   &.colorIdentifier {

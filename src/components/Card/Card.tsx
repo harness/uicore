@@ -10,10 +10,15 @@ import { Button } from '../../components/Button/Button'
 
 export interface CardProps extends ICardProps {
   selected?: boolean
+  disabled?: boolean
 }
 
 export const Card: React.FC<CardProps> = props => {
-  const { selected = false, className = '', style, tabIndex = 0, ...bpProps } = props
+  const { selected = false, disabled = false, className = '', style, tabIndex = 0, ...bpProps } = props
+  // if card is disabled then interactivity should be false
+  if (disabled) {
+    bpProps.interactive = false
+  }
   const tabIndexProps = bpProps.interactive ? { tabIndex } : {}
   const onClick = useCallback(
     event => {
@@ -28,7 +33,7 @@ export const Card: React.FC<CardProps> = props => {
     <BpCard
       {...bpProps}
       {...tabIndexProps}
-      className={cx(css.card, className, { [css.selected]: selected })}
+      className={cx(css.card, className, { [css.selected]: selected }, { [css.disabled]: disabled })}
       style={style}
       onClick={onClick}>
       {props.children}
