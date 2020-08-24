@@ -44,6 +44,8 @@ import {
   CategorizedSelect,
   CategorizedSelectOption
 } from '../CategorizedSelected/CategorizedSelect'
+import { SelectWithSubviewProps, SelectWithSubview } from '../SelectWithSubview/SelectWithSubview'
+import { MultiSelectWithSubviewProps, MultiSelectWithSubview } from '../MultiSelectWithSubView/MultiSelectWithSubView'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -706,6 +708,121 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
   )
 }
 
+interface FormSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  items: SelectOption[]
+  changeViewButtonLabel: string
+  subview: SelectWithSubviewProps['subview']
+  onChange?: UiKitSelectProps['onChange']
+  selectWithSubviewProps?: Omit<SelectWithSubviewProps, 'items' | 'subview' | 'onChange' | 'changeViewButtonLabel'>
+}
+
+const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    items = [],
+    placeholder,
+    inline = formik?.inline,
+    selectWithSubviewProps,
+    changeViewButtonLabel,
+    subview,
+    onChange,
+    ...rest
+  } = restProps
+
+  const value = get(formik?.values, name)
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <SelectWithSubview
+        {...selectWithSubviewProps}
+        subview={subview}
+        changeViewButtonLabel={changeViewButtonLabel}
+        disabled={disabled}
+        inputProps={{
+          placeholder,
+          onBlur: () => formik?.setFieldTouched(name)
+        }}
+        items={items}
+        value={items.find(item => item?.value === value)}
+        onChange={(item: SelectOption, e) => {
+          formik?.setFieldValue(name, item.value)
+          onChange?.(item, e)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
+interface FormMultiSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  items: MultiSelectOption[]
+  changeViewButtonLabel: string
+  subview: MultiSelectWithSubviewProps['subview']
+  onChange?: MultiSelectProps['onChange']
+  multiSelectWithSubviewProps?: Omit<
+    MultiSelectWithSubviewProps,
+    'items' | 'subview' | 'onChange' | 'changeViewButtonLabel'
+  >
+}
+
+const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    items = [],
+    placeholder,
+    inline = formik?.inline,
+    multiSelectWithSubviewProps,
+    changeViewButtonLabel,
+    subview,
+    onChange,
+    ...rest
+  } = restProps
+
+  const value: MultiSelectOption[] = get(formik?.values, name)
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <MultiSelectWithSubview
+        {...multiSelectWithSubviewProps}
+        subview={<div /> || subview}
+        changeViewButtonLabel={changeViewButtonLabel}
+        items={items}
+        value={value}
+        multiSelectProps={{
+          ...multiSelectWithSubviewProps?.multiSelectProps,
+          tagInputProps: {
+            ...multiSelectWithSubviewProps?.multiSelectProps?.tagInputProps,
+            inputProps: {
+              ...multiSelectWithSubviewProps?.multiSelectProps?.tagInputProps?.inputProps,
+              onBlur: () => formik?.setFieldTouched(name)
+            },
+            intent,
+            disabled
+          },
+          onChange: (selectedItems: MultiSelectOption[]) => {
+            formik?.setFieldValue(name, selectedItems)
+            onChange?.(selectedItems)
+          },
+          placeholder
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 export const FormInput = {
   TagInput: connect(TagInput),
   CustomRender: connect(CustomRender),
@@ -720,7 +837,9 @@ export const FormInput = {
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
   MultiSelectTypeInput: connect(FormMultiSelectTypeInput),
-  CategorizedSelect: connect(FormCategorizedSelect)
+  CategorizedSelect: connect(FormCategorizedSelect),
+  SelectWithSubview: connect(FormSelectWithSubview),
+  MultiSelectWithSubview: connect(FormMultiSelectWithSubview)
 }
 
 export const FormikForm = connect(Form)
