@@ -745,6 +745,7 @@ const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContext
         subview={subview}
         changeViewButtonLabel={changeViewButtonLabel}
         disabled={disabled}
+        key={items?.[0]?.label}
         inputProps={{
           placeholder,
           onBlur: () => formik?.setFieldTouched(name)
@@ -797,9 +798,10 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <MultiSelectWithSubview
         {...multiSelectWithSubviewProps}
-        subview={<div /> || subview}
+        subview={subview}
         changeViewButtonLabel={changeViewButtonLabel}
         items={items}
+        key={items?.[0]?.label}
         value={value}
         multiSelectProps={{
           ...multiSelectWithSubviewProps?.multiSelectProps,
