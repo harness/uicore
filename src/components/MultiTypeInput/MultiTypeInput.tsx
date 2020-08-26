@@ -77,7 +77,7 @@ const valueToType = (
 ): MultiTypeInputType => {
   if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
-    if (value === RUNTIME_INPUT_VALUE) return MultiTypeInputType.RUNTIME
+    if (value.startsWith(RUNTIME_INPUT_VALUE)) return MultiTypeInputType.RUNTIME
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
   }
   if (!value && allowableTypes?.length) {

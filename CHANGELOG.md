@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.34 - 08/26/20
+
+- `Fixed` MutiTextInput to support {input}.allowedValues(20, 24)
+
 ## 1.1.33 - 08/26/20
 
 - `Added` MutiTextInput Component and Formik version as well

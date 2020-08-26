@@ -678,11 +678,12 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     disabled = formik?.disabled,
     ...rest
   } = restProps
+  const value = get(formik?.values, name, '')
   const customMultiTextInputProps: MultiTextInputProps = useMemo(
     () =>
       Object.assign({}, multiTextInputProps, {
         textProps: {
-          value: get(formik?.values, name),
+          value,
           placeholder,
           onBlur: () => formik?.setFieldTouched(name)
         }
@@ -693,6 +694,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <MultiTextInput
+        value={value}
         {...customMultiTextInputProps}
         onChange={(value, valueType) => {
           formik?.setFieldValue(name, value)
