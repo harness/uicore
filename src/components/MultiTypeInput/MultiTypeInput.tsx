@@ -6,7 +6,7 @@ import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
 import { Icon, IconName } from '../../icons/Icon'
 import { Color } from '../../core/Color'
-import { Position, Menu, PopoverInteractionKind } from '@blueprintjs/core'
+import { Position, Menu, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { register, unregister, MentionsInfo } from '@wings-software/mentions'
 import i18nBase from './MultiTypeInput.i18n'
@@ -59,6 +59,10 @@ type FixedTypeComponentProps = { onChange: ExpressionAndRuntimeTypeProps['onChan
 
 export interface MultiTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
   selectProps?: SelectProps
+}
+
+export interface MultiTextInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
+  textProps?: IInputGroupProps & HTMLInputProps
 }
 
 export interface MultiSelectTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
@@ -161,7 +165,10 @@ function ExpressionAndRuntimeType({
   }, [type])
 
   return (
-    <Layout.Horizontal className={css.main} width={width} {...layoutProps}>
+    <Layout.Horizontal
+      className={cx(css.main, type === MultiTypeInputType.RUNTIME && css.disabled)}
+      width={width}
+      {...layoutProps}>
       {type === MultiTypeInputType.FIXED && <FixedTypeComponent onChange={fixedComponentOnChangeCallback} />}
       {type === MultiTypeInputType.RUNTIME && (
         <TextInput
@@ -217,6 +224,27 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ selectProps, ...
       )
     },
     [selectProps]
+  )
+  return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
+}
+
+export const MultiTextInput: React.FC<MultiTextInputProps> = ({ textProps, ...rest }) => {
+  const { value = '', ...restProps } = textProps || {}
+  const fixedTypeComponent = useCallback(
+    (props: FixedTypeComponentProps) => {
+      const { onChange } = props
+      return (
+        <InputGroup
+          className={css.input}
+          {...restProps}
+          defaultValue={value}
+          onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
+            onChange?.(event.target.value, MultiTypeInputValue.STRING)
+          }}
+        />
+      )
+    },
+    [textProps?.value]
   )
   return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
 }

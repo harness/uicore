@@ -84,6 +84,8 @@ export { LogViewer, LogViewerProps } from './components/LogViewer/LogViewer'
 export { ColorPicker } from './components/ColorPicker/ColorPicker'
 export {
   MultiTypeInput,
+  MultiTextInput,
+  MultiTextInputProps,
   MultiTypeInputProps,
   MultiTypeInputValue,
   MultiSelectTypeInput,

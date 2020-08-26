@@ -185,7 +185,10 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit'> {
   {formikProps => {
     return (
       <FormikForm>
-        <FormInput.InputWithIdentifier isIdentifierEditable={false} inputGroupProps={{ placeholder: 'Type here to generate Identifier' }} />
+        <FormInput.InputWithIdentifier
+          isIdentifierEditable={false}
+          inputGroupProps={{ placeholder: 'Type here to generate Identifier' }}
+        />
         <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
         <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name" />
         <Layout.Horizontal spacing="medium">
@@ -232,7 +235,7 @@ Try submitting the form
 
 ```js live=true
 <Formik
-  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true}}
+  initialValues={{ firstName: '', lastName: '', description: '', specialPerson: true, job_desc2: 'Engineer' }}
   onSubmit={values => alert(JSON.stringify(values))}
   validationSchema={Yup.object().shape({
     firstName: Yup.string()
@@ -258,7 +261,7 @@ Try submitting the form
       .trim()
       .required('Description is required field'),
 
-    'sportsAndPokemon': Yup.string().required('Sports and Pokemon is required')
+    sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
   })}>
   <FormikForm>
     <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
@@ -292,21 +295,40 @@ Try submitting the form
       ]}
     />
     <FormInput.TextArea name="description" label="Description" />
-    <FormInput.MultiTypeInput name="job" label="Job" selectItems={[{label: 'Software Engineer', value: 'SE'}, { label: 'Quality Engineer', value: 'QE' }]}/>
-    <FormInput.MultiSelectTypeInput name="hobbies" label="Hobbies" selectItems={[{label: 'Basket Ball', value: 'BBall'}, { label: 'Drawing', value: 'Drawing' }]}/>
-    <FormInput.CategorizedSelect name="sportsAndPokemon" label="Sports and Pokemon" items={[
-              {label: 'BBall', value: 'bball', category: 'Sports'},
-              {label: 'Soccer', value: 'soccer', category: 'Sports'},
-              {label: 'Football', value: 'football', category: 'Sports'},
-              { label: 'Pikachu', value: 'pikachu', category: 'Pokemon' },
-              { label: 'Garchomp', value: 'garchomp', category: 'Pokemon' }
-    ]} 
-    categorizedSelectProps={{
-            creatableOption: {
-              creatableOptionLabel: 'Custom Option',
-              allowableCategoriesForNewOption: () => ['Sports', 'Pokemon']
-            }
-          }}
+    <FormInput.MultiTypeInput
+      name="job"
+      label="Job"
+      selectItems={[
+        { label: 'Software Engineer', value: 'SE' },
+        { label: 'Quality Engineer', value: 'QE' }
+      ]}
+    />
+    <FormInput.MultiTextInput name="job_desc1" label="Job Desc 1" />
+    <FormInput.MultiTextInput name="job_desc2" placeholder="Job Desc" label="Job Desc 2" />
+    <FormInput.MultiSelectTypeInput
+      name="hobbies"
+      label="Hobbies"
+      selectItems={[
+        { label: 'Basket Ball', value: 'BBall' },
+        { label: 'Drawing', value: 'Drawing' }
+      ]}
+    />
+    <FormInput.CategorizedSelect
+      name="sportsAndPokemon"
+      label="Sports and Pokemon"
+      items={[
+        { label: 'BBall', value: 'bball', category: 'Sports' },
+        { label: 'Soccer', value: 'soccer', category: 'Sports' },
+        { label: 'Football', value: 'football', category: 'Sports' },
+        { label: 'Pikachu', value: 'pikachu', category: 'Pokemon' },
+        { label: 'Garchomp', value: 'garchomp', category: 'Pokemon' }
+      ]}
+      categorizedSelectProps={{
+        creatableOption: {
+          creatableOptionLabel: 'Custom Option',
+          allowableCategoriesForNewOption: () => ['Sports', 'Pokemon']
+        }
+      }}
     />
     <Button intent="primary" type="Submit" text="Submit" />
   </FormikForm>
@@ -465,4 +487,42 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
     })
   }
 />
+```
+
+# MultiTypeInput Integration
+
+```js live=true
+<Formik
+  initialValues={{ job_desc2: 'Engineer' }}
+  onSubmit={values => console.log(values)}
+  validationSchema={Yup.object().shape({
+    job_desc2: Yup.string()
+      .trim()
+      .required('Job Desc is required field'),
+    job_desc1: Yup.string()
+      .trim()
+      .required('Job Desc is required field'),
+    hobbies: Yup.string()
+      .trim()
+      .required('Hobbies is required field')
+  })}>
+  <FormikForm>
+    <FormInput.MultiSelectTypeInput
+      name="hobbies"
+      label="Hobbies"
+      selectItems={[
+        { label: 'Basket Ball', value: 'BBall' },
+        { label: 'Football', value: 'FBall' },
+        { label: 'Volley Ball', value: 'VBall' },
+        { label: 'Karate', value: 'Katate' },
+        { label: 'Judo', value: 'Judo' },
+        { label: 'Sumo', value: 'Sumo' },
+        { label: 'Drawing', value: 'Drawing' }
+      ]}
+    />
+    <FormInput.MultiTextInput name="job_desc1" label="Job Desc 1" />
+    <FormInput.MultiTextInput name="job_desc2" placeholder="Job Desc" label="Job Desc 2" />
+    <Button intent="primary" type="Submit" text="Submit" />
+  </FormikForm>
+</Formik>
 ```

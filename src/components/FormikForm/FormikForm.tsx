@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -37,7 +37,9 @@ import {
   MultiTypeInput,
   MultiTypeInputProps,
   MultiSelectTypeInputProps,
-  MultiSelectTypeInput
+  MultiSelectTypeInput,
+  MultiTextInputProps,
+  MultiTextInput
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -659,6 +661,48 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
   )
 }
 
+interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  onChange?: MultiTextInputProps['onChange']
+  multiTextInputProps?: MultiTextInputProps /* In case you really want to customize the text input */
+}
+
+const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
+  const { formik, name, placeholder, multiTextInputProps, onChange, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    ...rest
+  } = restProps
+  const customMultiTextInputProps: MultiTextInputProps = useMemo(
+    () =>
+      Object.assign({}, multiTextInputProps, {
+        textProps: {
+          value: get(formik?.values, name),
+          placeholder,
+          onBlur: () => formik?.setFieldTouched(name)
+        }
+      }),
+    []
+  )
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <MultiTextInput
+        {...customMultiTextInputProps}
+        onChange={(value, valueType) => {
+          formik?.setFieldValue(name, value)
+          onChange?.(value, valueType)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 interface FormCategorizedSelect extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
@@ -838,6 +882,7 @@ export const FormInput = {
   ColorPicker: connect(FormColorPicker),
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
+  MultiTextInput: connect(FormMultiTextTypeInput),
   MultiSelectTypeInput: connect(FormMultiSelectTypeInput),
   CategorizedSelect: connect(FormCategorizedSelect),
   SelectWithSubview: connect(FormSelectWithSubview),
