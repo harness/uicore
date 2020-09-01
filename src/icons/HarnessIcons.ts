@@ -323,7 +323,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
-  | 'Options'
+  | 'options'
   | 'activity'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -645,7 +645,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
-  Options: Options,
+  options: Options,
   activity: Activity,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
