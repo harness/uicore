@@ -26,6 +26,7 @@ import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
 import CfHover from './cf-hover.svg'
 import CheckAlt from './check-alt.svg'
+import Check from './check.svg'
 import CiHover from './ci-hover.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
@@ -222,7 +223,9 @@ import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import Polygon from './polygon.svg'
+import Profile from './profile.svg'
 import Question from './question.svg'
+import Remove from './remove.svg'
 import ReportIcon from './report-icon.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -323,7 +326,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
-  | 'options'
+  | 'Options'
   | 'activity'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -348,6 +351,7 @@ type HarnessIconName =
   | 'ce-main-grey'
   | 'cf-hover'
   | 'check-alt'
+  | 'check'
   | 'ci-hover'
   | 'command-approval'
   | 'command-artifact-check'
@@ -544,7 +548,9 @@ type HarnessIconName =
   | 'placeholder-selected'
   | 'placeholder'
   | 'polygon'
+  | 'profile'
   | 'question'
+  | 'remove'
   | 'report-icon'
   | 'rolling'
   | 'run-pipeline'
@@ -645,7 +651,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
-  options: Options,
+  Options: Options,
   activity: Activity,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
@@ -670,6 +676,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-main-grey': CeMainGrey,
   'cf-hover': CfHover,
   'check-alt': CheckAlt,
+  check: Check,
   'ci-hover': CiHover,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
@@ -866,7 +873,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
   polygon: Polygon,
+  profile: Profile,
   question: Question,
+  remove: Remove,
   'report-icon': ReportIcon,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
