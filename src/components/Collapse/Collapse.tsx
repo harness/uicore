@@ -9,6 +9,7 @@ interface CollapseProps extends ICollapseProps, Omit<CollapseHeaderProps, 'onTog
   children?: React.ReactNode
   onToggleOpen?: (isOpen: boolean) => void
   collapseClassName?: string
+  collapseHeaderClassName?: string
 }
 
 function Collapse(props: CollapseProps) {
@@ -21,6 +22,7 @@ function Collapse(props: CollapseProps) {
     expandedIcon,
     collapsedIcon,
     collapseClassName,
+    collapseHeaderClassName,
     onToggleOpen,
     ...rest
   } = props
@@ -40,7 +42,7 @@ function Collapse(props: CollapseProps) {
         heading={heading}
         iconProps={iconProps}
         expandedIcon={expandedIcon}
-        className={css.header}
+        className={cx(css.header, collapseHeaderClassName)}
         collapsedIcon={collapsedIcon}
       />
       <div className={css.collapse}>
