@@ -42,7 +42,6 @@ function Collapse(props: CollapseProps) {
         heading={heading}
         iconProps={iconProps}
         expandedIcon={expandedIcon}
-        className={css.header}
         className={cx(css.header, collapseHeaderClassName)}
         collapsedIcon={collapsedIcon}
       />
