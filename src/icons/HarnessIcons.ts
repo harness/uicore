@@ -6,6 +6,7 @@ import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -217,6 +218,7 @@ import OtherWorkload from './other-workload.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
+import PipelineNg from './pipeline-ng.svg'
 import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
@@ -227,6 +229,7 @@ import Profile from './profile.svg'
 import Question from './question.svg'
 import Remove from './remove.svg'
 import ReportIcon from './report-icon.svg'
+import ResourcesIcon from './resources-icon.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
 import RuntimeInput from './runtime-input.svg'
@@ -331,6 +334,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
@@ -542,6 +546,7 @@ type HarnessIconName =
   | 'pipeline-approval'
   | 'pipeline-custom'
   | 'pipeline-deploy'
+  | 'pipeline-ng'
   | 'pipeline-variables'
   | 'pipeline'
   | 'placeholder-hover'
@@ -552,6 +557,7 @@ type HarnessIconName =
   | 'question'
   | 'remove'
   | 'report-icon'
+  | 'resources-icon'
   | 'rolling'
   | 'run-pipeline'
   | 'runtime-input'
@@ -656,6 +662,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
@@ -867,6 +874,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'pipeline-approval': PipelineApproval,
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
+  'pipeline-ng': PipelineNg,
   'pipeline-variables': PipelineVariables,
   pipeline: Pipeline,
   'placeholder-hover': PlaceholderHover,
@@ -877,6 +885,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   question: Question,
   remove: Remove,
   'report-icon': ReportIcon,
+  'resources-icon': ResourcesIcon,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
   'runtime-input': RuntimeInput,
