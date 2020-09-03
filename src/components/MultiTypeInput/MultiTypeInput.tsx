@@ -44,13 +44,14 @@ const MENTIONS_DEFAULT: MentionsInfo = {
 
 type AcceptableValue = string | SelectOption | MultiSelectOption[]
 
-interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
+export interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
   width?: number
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
-  onChange?: (value: string | SelectOption | MultiSelectOption[] | undefined, type: MultiTypeInputValue) => void
+  onChange?: (value: AcceptableValue | undefined, type: MultiTypeInputValue) => void
   i18n?: I18nResource
+  btnClassName?: string
   allowableTypes?: MultiTypeInputType[]
   fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
 }
@@ -86,7 +87,7 @@ const valueToType = (
   return MultiTypeInputType.FIXED
 }
 
-function ExpressionAndRuntimeType({
+export function ExpressionAndRuntimeType({
   value,
   width,
   mentionsInfo,
@@ -94,6 +95,7 @@ function ExpressionAndRuntimeType({
   onChange,
   i18n: _i18n = {},
   fixedTypeComponent,
+  btnClassName = '',
   allowableTypes,
   ...layoutProps
 }: ExpressionAndRuntimeTypeProps) {
@@ -195,7 +197,7 @@ function ExpressionAndRuntimeType({
       )}
       <Button
         noStyling
-        className={cx(css.btn, css[type])}
+        className={cx(css.btn, css[type], btnClassName)}
         tooltip={menu}
         onClick={e => e.preventDefault()}
         tooltipProps={{

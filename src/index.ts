@@ -87,6 +87,8 @@ export {
   MultiTextInput,
   MultiTextInputProps,
   MultiTypeInputProps,
+  ExpressionAndRuntimeTypeProps,
+  ExpressionAndRuntimeType,
   MultiTypeInputValue,
   MultiSelectTypeInput,
   MultiTypeInputType
