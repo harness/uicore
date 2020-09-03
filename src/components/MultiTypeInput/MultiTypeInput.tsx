@@ -32,7 +32,7 @@ const TypeIcon: Record<string, IconName> = {
   EXPRESSION: 'expression-input'
 }
 
-const RUNTIME_INPUT_VALUE = '{input}'
+const RUNTIME_INPUT_VALUE = '${input}'
 const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
@@ -72,7 +72,7 @@ export interface MultiSelectTypeInputProps extends Omit<ExpressionAndRuntimeType
 
 const isValueAnExpression = (value: string) => /^\${.*}$/.test(value)
 
-const valueToType = (
+export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
   allowableTypes?: MultiTypeInputType[]
 ): MultiTypeInputType => {
@@ -100,7 +100,7 @@ export function ExpressionAndRuntimeType({
   ...layoutProps
 }: ExpressionAndRuntimeTypeProps) {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
-  const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
+  const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [inputValue, setInputValue] = useState<ExpressionAndRuntimeTypeProps['value']>(value)
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const allowedTypes = useMemo(() => {
