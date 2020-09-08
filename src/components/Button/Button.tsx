@@ -43,6 +43,9 @@ export interface ButtonProps
 
   /** Component children */
   children?: React.ReactNode
+
+  /** Make button round */
+  round?: boolean
 }
 
 export interface LinkProps extends ButtonProps {
@@ -51,7 +54,7 @@ export interface LinkProps extends ButtonProps {
 }
 
 export function Button(props: ButtonProps) {
-  const { icon, rightIcon } = props
+  const { icon, rightIcon, round } = props
   const [loading, setLoading] = useState(props.loading === true)
   const isMounted = useIsMounted()
 
@@ -105,7 +108,8 @@ export function Button(props: ButtonProps) {
         styledClass.font,
         css.button,
         props.href && !(props.icon || props.rightIcon) && !props.intent ? css.link : '',
-        !props.text && !props.intent && !props.href ? css.iconOnly : ''
+        !props.text && !props.intent && !props.href ? css.iconOnly : '',
+        round ? css.round : ''
       )}
     />
   )
