@@ -94,7 +94,7 @@ const getId = (item: string | { value: string } | any) => (typeof item === 'obje
 
 const getLabelFromItems = (
   item: string | { value: string; label: string } | any,
-  items: Array<string> | Array<{ value: string; label: string }> | Array<any> = []
+  items: string[] | Array<{ value: string; label: string }> | any[] = []
 ) => items.find(i => (typeof i === 'object' ? i?.value === item : i === item))?.label || item
 
 const getLabel = (item: string | { label: string } | any) => (typeof item === 'object' ? item.label : item)
