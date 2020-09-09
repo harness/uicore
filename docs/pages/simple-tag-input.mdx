@@ -33,11 +33,11 @@ import { SimpleTagInput } from '@wings-software/uikit'
     selectedItems={['The Shawshank Redemption', '${service.name}']}
     validateNewTag={tag => {
       // Allow Harness expression and alpha numeric
-      const validTag = (tag.startsWith('${') && tag.endsWith('}')) || new RegExp('^[a-z0-9-]+$').test(tag)
-      if (!validTag) {
+      const isValidTag = (tag.startsWith('${') && tag.endsWith('}')) || new RegExp('^[a-z0-9-]+$').test(tag)
+      if (!isValidTag) {
         alert('Tag is not allowed')
       }
-      return validTag
+      return isValidTag
     }}
     items={[
       'The Godfather',
@@ -79,12 +79,12 @@ import { SimpleTagInput } from '@wings-software/uikit'
     }}
     selectedItems={['10488', '10489', '${service.name}']}
     validateNewTag={tag => {
-      // Allow Harness expression and alpha numeric
-      const validTag = tag.startsWith('${') && tag.endsWith('}')
-      if (!validTag) {
+      // Allow valid Harness expression
+      const isValidTag = tag.startsWith('${') && tag.endsWith('}')
+      if (!isValidTag) {
         alert('Tag is not allowed')
       }
-      return validTag
+      return isValidTag
     }}
     items={[
       {
