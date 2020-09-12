@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.43 - 09/11/20
+
+- `Added` Add hourglass and gear icons.
+
 ## 1.1.42 - 09/07/20
 
 - `Added` - Add 'round' prop to Button component

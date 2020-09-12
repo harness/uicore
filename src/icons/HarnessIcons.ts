@@ -76,12 +76,14 @@ import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
+import Gear from './gear.svg'
 import Github from './github.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
 import Health from './health.svg'
+import Hourglass from './hourglass.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
@@ -404,12 +406,14 @@ type HarnessIconName =
   | 'feedback-given'
   | 'fixed-input'
   | 'functions'
+  | 'gear'
   | 'github'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white'
   | 'harness'
   | 'health'
+  | 'hourglass'
   | 'key-main'
   | 'key'
   | 'list-entity-infographic'
@@ -732,12 +736,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   functions: Functions,
+  gear: Gear,
   github: Github,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   harness: Harness,
   health: Health,
+  hourglass: Hourglass,
   'key-main': KeyMain,
   key: Key,
   'list-entity-infographic': ListEntityInfographic,
