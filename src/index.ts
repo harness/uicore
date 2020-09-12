@@ -87,9 +87,12 @@ export {
   MultiTextInput,
   MultiTextInputProps,
   MultiTypeInputProps,
+  ExpressionAndRuntimeTypeProps,
+  ExpressionAndRuntimeType,
   MultiTypeInputValue,
   MultiSelectTypeInput,
-  MultiTypeInputType
+  MultiTypeInputType,
+  getMultiTypeFromValue
 } from './components/MultiTypeInput/MultiTypeInput'
 export {
   CategorizedSelectProps,

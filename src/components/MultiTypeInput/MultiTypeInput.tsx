@@ -32,7 +32,7 @@ const TypeIcon: Record<string, IconName> = {
   EXPRESSION: 'expression-input'
 }
 
-const RUNTIME_INPUT_VALUE = '{input}'
+const RUNTIME_INPUT_VALUE = '${input}'
 const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
@@ -44,13 +44,14 @@ const MENTIONS_DEFAULT: MentionsInfo = {
 
 type AcceptableValue = string | SelectOption | MultiSelectOption[]
 
-interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
+export interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
   width?: number
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
-  onChange?: (value: string | SelectOption | MultiSelectOption[] | undefined, type: MultiTypeInputValue) => void
+  onChange?: (value: AcceptableValue | undefined, type: MultiTypeInputValue) => void
   i18n?: I18nResource
+  btnClassName?: string
   allowableTypes?: MultiTypeInputType[]
   fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
 }
@@ -71,7 +72,7 @@ export interface MultiSelectTypeInputProps extends Omit<ExpressionAndRuntimeType
 
 const isValueAnExpression = (value: string) => /^\${.*}$/.test(value)
 
-const valueToType = (
+export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
   allowableTypes?: MultiTypeInputType[]
 ): MultiTypeInputType => {
@@ -86,7 +87,7 @@ const valueToType = (
   return MultiTypeInputType.FIXED
 }
 
-function ExpressionAndRuntimeType({
+export function ExpressionAndRuntimeType({
   value,
   width,
   mentionsInfo,
@@ -94,11 +95,12 @@ function ExpressionAndRuntimeType({
   onChange,
   i18n: _i18n = {},
   fixedTypeComponent,
+  btnClassName = '',
   allowableTypes,
   ...layoutProps
 }: ExpressionAndRuntimeTypeProps) {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
-  const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
+  const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [inputValue, setInputValue] = useState<ExpressionAndRuntimeTypeProps['value']>(value)
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const allowedTypes = useMemo(() => {
@@ -195,7 +197,7 @@ function ExpressionAndRuntimeType({
       )}
       <Button
         noStyling
-        className={cx(css.btn, css[type])}
+        className={cx(css.btn, css[type], btnClassName)}
         tooltip={menu}
         onClick={e => e.preventDefault()}
         tooltipProps={{

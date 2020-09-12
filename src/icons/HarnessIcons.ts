@@ -6,6 +6,7 @@ import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -26,6 +27,7 @@ import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
 import CfHover from './cf-hover.svg'
 import CheckAlt from './check-alt.svg'
+import Check from './check.svg'
 import CiHover from './ci-hover.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
@@ -218,14 +220,18 @@ import OtherWorkload from './other-workload.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
+import PipelineNg from './pipeline-ng.svg'
 import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import Polygon from './polygon.svg'
+import Profile from './profile.svg'
 import Question from './question.svg'
+import Remove from './remove.svg'
 import ReportIcon from './report-icon.svg'
+import ResourcesIcon from './resources-icon.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
 import RuntimeInput from './runtime-input.svg'
@@ -325,11 +331,12 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
-  | 'Options'
+  | 'options'
   | 'activity'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
@@ -350,6 +357,7 @@ type HarnessIconName =
   | 'ce-main-grey'
   | 'cf-hover'
   | 'check-alt'
+  | 'check'
   | 'ci-hover'
   | 'command-approval'
   | 'command-artifact-check'
@@ -542,14 +550,18 @@ type HarnessIconName =
   | 'pipeline-approval'
   | 'pipeline-custom'
   | 'pipeline-deploy'
+  | 'pipeline-ng'
   | 'pipeline-variables'
   | 'pipeline'
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
   | 'polygon'
+  | 'profile'
   | 'question'
+  | 'remove'
   | 'report-icon'
+  | 'resources-icon'
   | 'rolling'
   | 'run-pipeline'
   | 'runtime-input'
@@ -649,11 +661,12 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
-  Options: Options,
+  options: Options,
   activity: Activity,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
@@ -674,6 +687,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-main-grey': CeMainGrey,
   'cf-hover': CfHover,
   'check-alt': CheckAlt,
+  check: Check,
   'ci-hover': CiHover,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
@@ -866,14 +880,18 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'pipeline-approval': PipelineApproval,
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
+  'pipeline-ng': PipelineNg,
   'pipeline-variables': PipelineVariables,
   pipeline: Pipeline,
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
   polygon: Polygon,
+  profile: Profile,
   question: Question,
+  remove: Remove,
   'report-icon': ReportIcon,
+  'resources-icon': ResourcesIcon,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
   'runtime-input': RuntimeInput,

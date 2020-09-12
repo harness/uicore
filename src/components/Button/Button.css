@@ -18,6 +18,12 @@
     color: var(--grey-600);
     background-color: var(--white);
 
+    &.round {
+      border-radius: 100px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
     &.iconOnly:not([disabled]) {
       color: var(--grey-450);
     }

@@ -2,9 +2,37 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.1.36 - 09/11/20
+## 1.1.43 - 09/11/20
 
 - `Added` Add hourglass and gear icons.
+
+## 1.1.42 - 09/07/20
+
+- `Added` - Add 'round' prop to Button component
+
+## 1.1.41 - 09/04/20
+
+- `Updated` Runtime Input ExpressionAndRuntimeType value
+
+## 1.1.40 - 09/04/20
+
+- `Updated` and exported ExpressionAndRuntimeType to be used for any input type
+
+## 1.1.39 - 09/01/20
+
+- `Added` fix to use props classname
+
+# 1.1.38 - 09/02/20
+
+- `Added` bitbucket, resources, pipelines icons
+
+## 1.1.37 - 09/01/20
+
+- `Added` check, profile, remove icons
+
+## 1.1.36 - 09/01/20
+
+- `Fixed` options icon alignment and size fix
 
 ## 1.1.35 - 08/27/20
 
