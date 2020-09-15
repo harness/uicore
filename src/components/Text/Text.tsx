@@ -30,15 +30,12 @@ export function Text(props: TextProps) {
   const Tag = (props.inline ? 'span' : 'p') as React.ElementType
   const [tooltip, setTooltip] = useState(props.tooltip)
   const lineClamp = !props.tooltip ? props.lineClamp : null
-  const extraClass = lineClamp === 1 ? css.single : lineClamp ? css.multiple : undefined
   const style = { ...props.style }
   const ref = useRef<HTMLElement>()
   const { icon, iconProps, rightIcon, rightIconProps } = props
 
-  if (lineClamp && extraClass) {
-    if (lineClamp > 1) {
-      ;(style as any)['--text-line-clamp'] = lineClamp // eslint-disable-line
-    }
+  if (lineClamp) {
+    ;(style as any)['--text-line-clamp'] = lineClamp // eslint-disable-line
   }
 
   if (icon || rightIcon) {
@@ -52,7 +49,7 @@ export function Text(props: TextProps) {
     // Reason to consider difference more than 1 px is
     // If height is 18.2 Px, chrome taking scrollHeight as 18px and firefox take this as 19px
     // where as offsetHeight both take it as 18px
-    if (extraClass && (heightDifference > 1 || widthDifference > 1)) {
+    if (lineClamp && lineClamp > 0 && (heightDifference > 1 || widthDifference > 1)) {
       setTooltip(props.children as JSX.Element)
     }
   }, [props.children, props.tooltip, props.tooltipProps])
@@ -76,7 +73,7 @@ export function Text(props: TextProps) {
           'rightIcon',
           'rightIconProps'
         )}
-        className={styledClasses(props, styledCSS.font, extraClass)}
+        className={styledClasses(props, styledCSS.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
         ref={ref}>
         {icon && <Icon name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}

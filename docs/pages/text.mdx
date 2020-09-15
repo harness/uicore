@@ -49,8 +49,48 @@ only happens when there is not enough space to render the text content.
 
 ### Single line
 
+Single line with fluid width from parent.
+
 ```js live=true
-<Text font="normal" border padding="small" width={100} lineClamp={1}>
+<Layout.Horizontal spacing="medium">
+  <Text font="normal" color="red500" lineClamp={1}>
+    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The
+    quick brown fox jumps over the lazy dog
+  </Text>
+  <Text font="normal" color="green500" lineClamp={1}>
+    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The
+    quick brown fox jumps over the lazy dog
+  </Text>
+  <Text font="normal" color="blue500" lineClamp={1}>
+    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The
+    quick brown fox jumps over the lazy dog
+  </Text>
+</Layout.Horizontal>
+```
+
+Single line with fixed width set from parent.
+
+```js live=true
+<Container width={300} flex>
+  <Text font="normal" color="red500" lineClamp={1}>
+    The quick brown fox jumps over the lazy dog
+  </Text>
+  <Text font="normal" color="green500" lineClamp={1}>
+    The quick brown fox jumps over the lazy dog
+  </Text>
+  <Text font="normal" color="blue500" lineClamp={1}>
+    The quick brown fox jumps over the lazy dog
+  </Text>
+</Container>
+```
+
+Single line with width set from Text itself.
+
+```js live=true
+<Text font="normal" lineClamp={1} width={100}>
   The quick brown fox jumps over the lazy dog
 </Text>
 ```
@@ -58,10 +98,37 @@ only happens when there is not enough space to render the text content.
 ### Multiple lines
 
 ```js live=true
-<Text font="normal" width={200} lineClamp={3}>
+<Text font="normal" lineClamp={2}>
   The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
-  over the lazy dog.
+  over the lazy dog.The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick
+  brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy
+  dog. The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog. The quick brown fox
+  jumps over the lazy dog. The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog. The
+  quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.The quick brown fox jumps over
+  the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
 </Text>
+```
+
+Multiple line with fluid width from parent.
+
+```js live=true
+<Layout.Horizontal spacing="medium">
+  <Text font="normal" color="red500" lineClamp={2}>
+    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The
+    quick brown fox jumps over the lazy dog
+  </Text>
+  <Text font="normal" color="green500" lineClamp={2}>
+    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The
+    quick brown fox jumps over the lazy dog
+  </Text>
+  <Text font="normal" color="blue500" lineClamp={2}>
+    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
+    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The
+    quick brown fox jumps over the lazy dog
+  </Text>
+</Layout.Horizontal>
 ```
 
 ### No tooltip when there is enough space to render the whole text

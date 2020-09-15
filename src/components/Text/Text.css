@@ -1,11 +1,5 @@
-.single {
-  white-space: nowrap !important;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.multiple {
-  display: -webkit-box;
+.lineclamp {
+  display: -webkit-box !important;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--text-line-clamp);
   overflow: hidden;
