@@ -1,4 +1,4 @@
-import { AnchorButton, Button as BButton, IButtonProps, Classes } from '@blueprintjs/core'
+import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
 import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
 import { Assign } from 'utility-types'
 import { Config } from '../../core/Config'
@@ -10,10 +10,6 @@ import { PaddingProps } from '../../styled-props/padding/PaddingProps'
 import { omitStyledProps, styledClasses, StyledProps } from '../../styled-props/StyledProps'
 import styledClass from '../../styled-props/StyledProps.css'
 import css from './Button.css'
-import { Container } from '../Container/Container'
-import { Heading } from '../Heading/Heading'
-import { Text } from '../Text/Text'
-import { Layout } from '../../layouts/Layout'
 
 export interface ButtonProps
   extends Assign<
@@ -157,46 +153,4 @@ export function Link(props: LinkProps) {
   }
 
   return <Button {...props} {...extra} />
-}
-
-export interface ConfirmActionButtonProps extends ButtonProps {
-  title: string
-  message: string
-  cancelText: string
-  confirmText: string
-  width?: number
-}
-
-export const ConfirmActionButton: React.FC<ConfirmActionButtonProps> = ({
-  title,
-  message,
-  cancelText,
-  confirmText,
-  width,
-  onClick,
-  ...props
-}) => {
-  return (
-    <Button
-      tooltip={
-        <Container width={width || '350px'} padding="medium">
-          <Heading level={2} font={{ weight: 'semi-bold' }} margin={{ bottom: 'small' }}>
-            {title}
-          </Heading>
-          <Text margin={{ bottom: 'medium' }}>{message}</Text>
-          <Container flex>
-            <span />
-            <Layout.Horizontal spacing="small">
-              <Button text={cancelText} className={Classes.POPOVER_DISMISS} />
-              <Button intent="danger" text={confirmText} className={Classes.POPOVER_DISMISS} onClick={onClick} />
-            </Layout.Horizontal>
-          </Container>
-        </Container>
-      }
-      tooltipProps={{
-        interactionKind: 'click'
-      }}
-      {...props}
-    />
-  )
 }
