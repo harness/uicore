@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. The format 
 ## 1.1.46 - 09/16/20
 
 - `Added` - Add support for items of label value to SimpleTagInput TagInput
+- `Added` ConfirmActionButton component.
 
 ## 1.1.45 - 09/15/20
 
