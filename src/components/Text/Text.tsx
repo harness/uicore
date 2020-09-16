@@ -72,7 +72,7 @@ export function Text(props: TextProps) {
     if ((!lineClamp || alwaysShowTooltip) && props.tooltip) {
       setTooltip(props.tooltip)
     }
-  }, [lineClamp, props.tooltip])
+  }, [lineClamp, props.tooltip, alwaysShowTooltip])
 
   return (
     <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
