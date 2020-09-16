@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.45 - 09/15/20
+
+- `Changed` Text component to render custom tooltip when lineclamp is passed.
+
 ## 1.1.44 - 09/14/20
 
 - `Changed` Text lineclamp to support fluid width.
