@@ -217,6 +217,7 @@ import NewDecoration from './new-decoration.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import Notification from './notification.svg'
 import OtherWorkload from './other-workload.svg'
+import Pending from './pending.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
@@ -548,6 +549,7 @@ type HarnessIconName =
   | 'no-feedback-given'
   | 'notification'
   | 'other-workload'
+  | 'pending'
   | 'pipeline-approval'
   | 'pipeline-custom'
   | 'pipeline-deploy'
@@ -879,6 +881,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'no-feedback-given': NoFeedbackGiven,
   notification: Notification,
   'other-workload': OtherWorkload,
+  pending: Pending,
   'pipeline-approval': PipelineApproval,
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
