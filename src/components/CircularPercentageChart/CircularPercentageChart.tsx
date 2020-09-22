@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Color, Text, Utils } from '../..'
 import { Easing, useTween } from '../../hooks/useTween'
+import { FontSize, FontProps } from '../../styled-props/font/FontProps'
 
 export interface CircularPercentageChartProps {
   size: number
@@ -8,6 +9,7 @@ export interface CircularPercentageChartProps {
   label?: string | number
   trackColor?: Color
   color: Color
+  font: FontSize | FontProps
 }
 
 export const CircularPercentageChart: React.FC<CircularPercentageChartProps> = ({
@@ -15,7 +17,8 @@ export const CircularPercentageChart: React.FC<CircularPercentageChartProps> = (
   value,
   label = value,
   trackColor = Color.GREY_300,
-  color
+  color,
+  font
 }) => {
   const cssTrackColor = Utils.getRealCSSColor(trackColor)
   const cssPercentageColor = Utils.getRealCSSColor(color)
@@ -45,7 +48,7 @@ export const CircularPercentageChart: React.FC<CircularPercentageChartProps> = (
       </svg>
       <Text
         color={color}
-        font="large"
+        font={font ? font : 'large'}
         style={{
           position: 'absolute',
           width: '100%',
