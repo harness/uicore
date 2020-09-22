@@ -5,7 +5,7 @@ import { DatePicker, TimePrecision, IDatePickerProps } from '@blueprintjs/dateti
 import { Intent } from '@blueprintjs/core'
 import { Button } from '../Button/Button'
 import { Popover } from '../Popover/Popover'
-import { HelpPopoverContent, parseStringToTime, timeToDisplayText } from '../DurationInput/DurationInput'
+import { getHelpPopoverContent, ALL_UNITS, parseStringToTime, timeToDisplayText } from '../DurationInput/DurationInput'
 import moment from 'moment'
 import { Icon } from '../../icons/Icon'
 
@@ -245,7 +245,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
           <Popover
             wrapperTagName="span"
             className={css.helpIcon}
-            content={HelpPopoverContent}
+            content={getHelpPopoverContent(ALL_UNITS)}
             lazy={true}
             interactionKind="hover"
             position="top"

@@ -10,7 +10,7 @@ import css from './DurationInput.css'
 export type Units = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
 const TEXT_EXTRACT_REGEX = /(\d+)\s*([a-z]{1,2})/gi
 const TEXT_LIMIT_REGEX = /[^0-9wdhms\s]/g
-const UNIT_LESS_REGEX = /\d+(?!(ms|s|m|h|d|w|\d))/i
+const UNIT_LESS_REGEX = /\d+(?!(m|h|d|w|\d))/i
 const VALID_SYNTAX_REGEX = /^(\d+w\s*)?(\d+d\s*)?(\d+h\s*)?(\d+m\s*)?(\d+s\s*)?(\d+ms\s*)?$/i
 
 export const UNIT_MULTIPLIIERS: Record<Units, number> = {
@@ -24,6 +24,16 @@ export const UNIT_MULTIPLIIERS: Record<Units, number> = {
 
 const UNITS_ORDER: Units[] = ['w', 'd', 'h', 'm', 's', 'ms']
 
+export const ALL_UNITS: Units[] = ['w', 'd', 'h', 'm', 's', 'ms']
+
+const UNITS_MAP = new Map([
+  ['w', 'weeks'],
+  ['d', 'days'],
+  ['h', 'hours'],
+  ['m', 'minutes'],
+  ['s', 'seconds'],
+  ['ms', 'milliseconds']
+])
 /**
  * Converts time string like '1d 2h' to time (in ms)
  */
@@ -90,52 +100,39 @@ export function timeToDisplayText(time: number): string {
   return str.join(' ')
 }
 
-export const HelpPopoverContent = (
+export const getHelpPopoverContent = (allowedUnits: string[]) => (
   <Text padding="xlarge" style={{ minWidth: '192px' }}>
     You can use:
     <br />
-    <br />
-    <code>
-      <b>w</b>
-    </code>
-    &nbsp;&nbsp;for weeks
-    <br />
-    <code>
-      <b>d</b>
-    </code>
-    &nbsp;&nbsp;for days
-    <br />
-    <code>
-      <b>h</b>
-    </code>
-    &nbsp;&nbsp;for hours
-    <br />
-    <code>
-      <b>m</b>
-    </code>
-    &nbsp;&nbsp;for minutes
-    <br />
-    <code>
-      <b>s</b>
-    </code>
-    &nbsp;&nbsp;for seconds
-    <br />
-    <code>
-      <b>ms</b>
-    </code>
-    &nbsp;for milliseconds
+    {allowedUnits.map((unit: string) => {
+      return (
+        <>
+          <br />
+          <code>
+            <b>{unit}</b>
+          </code>
+          <span>&nbsp;&nbsp;for {UNITS_MAP.get(unit)}</span>
+        </>
+      )
+    })}
   </Text>
 )
 
-export interface DurationInputProps extends Omit<TextInputProps, 'value' | 'onChange'> {
+export interface DurationInputProps
+  extends Omit<TextInputProps, 'value' | 'onChange' | 'valueInTimeFormat' | 'allowedUnits' | 'allowVariables'> {
   value?: number
-  onChange?(time: number, hasWarning?: boolean): void
+  // will be string if valueInTimeFormat is passed
+  valueInTimeFormat?: string
+  onChange?(time: number | string, hasWarning?: boolean): void
+  allowedUnits?: string[]
+  allowVariables?: boolean
 }
-
 export function DurationInput(props: DurationInputProps) {
-  const { value, onChange, ...rest } = props
+  const { value, valueInTimeFormat, allowVariables, allowedUnits, onChange, ...rest } = props
 
-  const [text, setText] = React.useState(timeToDisplayText(value || 0).trim())
+  const [text, setText] = React.useState(
+    !valueInTimeFormat ? timeToDisplayText(value || 0).trim() : valueInTimeFormat.trim()
+  )
   const [showWarning, setShowWarning] = React.useState(false)
 
   React.useEffect(() => {
@@ -143,15 +140,28 @@ export function DurationInput(props: DurationInputProps) {
   }, [value])
 
   function handleTextChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const fieldValue = e.target.value.replace(TEXT_LIMIT_REGEX, '')
-    const hasWarning = UNIT_LESS_REGEX.test(fieldValue) || !VALID_SYNTAX_REGEX.test(fieldValue)
+    const fieldValue =
+      (allowVariables && e.target.value.startsWith('$') && e.target.value) ||
+      e.target.value.replace(TEXT_LIMIT_REGEX, '')
+    let hasWarning = UNIT_LESS_REGEX.test(fieldValue) || !VALID_SYNTAX_REGEX.test(fieldValue)
 
+    if (allowVariables && e.target.value.startsWith('${') && e.target.value.endsWith('}')) {
+      hasWarning = false
+    }
+
+    if (allowedUnits) {
+      // if limited allowed units, show warning when non-expression value breaks the rule
+      const diff = ALL_UNITS.filter(unit => !allowedUnits.includes(unit))
+      if (!e.target.value.startsWith('$') && diff.some(unit => e.target.value.includes(unit))) {
+        hasWarning = true
+      }
+    }
     setText(fieldValue)
     setShowWarning(hasWarning)
 
     // call onChange only when numbers are followed by allowed units
     if (typeof onChange === 'function' && !hasWarning) {
-      const time = parseStringToTime(fieldValue)
+      const time = !valueInTimeFormat ? parseStringToTime(fieldValue) : fieldValue
       onChange(time)
     }
   }
@@ -169,7 +179,7 @@ export function DurationInput(props: DurationInputProps) {
       <Popover
         wrapperTagName="div"
         className={css.helpIcon}
-        content={HelpPopoverContent}
+        content={getHelpPopoverContent(allowedUnits || ALL_UNITS)}
         lazy={true}
         interactionKind="hover"
         position="top"

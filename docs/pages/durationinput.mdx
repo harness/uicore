@@ -8,7 +8,7 @@ import { DurationInputExample } from '../shared/DurationInputExampleLoader.tsx'
 import { DurationInput } from '@wings-software/uikit'
 ```
 
-## Usage
+## Basic Usage
 
 ```jsx live=true
 <div id="duration-input-1">
@@ -18,4 +18,21 @@ import { DurationInput } from '@wings-software/uikit'
 
 ## Example
 
-<DurationInputExample />
+## <DurationInputExample />
+
+---
+
+## Usage Retaining String Input Duration and Supports Expression Value
+
+```jsx live=true
+<div id="duration-input-1">
+  <DurationInput
+    value={93600000}
+    valueInTimeFormat="2d 2h"
+    allowVariables={true}
+    allowedUnits={['w', 'd', 'h', 'm']}
+    placeholder="Enter w/d/h/m or an expression (${...})"
+    onChange={time => console.log(time)}
+  />
+</div>
+```
