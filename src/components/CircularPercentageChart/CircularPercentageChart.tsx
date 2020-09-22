@@ -9,7 +9,7 @@ export interface CircularPercentageChartProps {
   label?: string | number
   trackColor?: Color
   color: Color
-  font: FontSize | FontProps
+  font?: FontSize | FontProps
 }
 
 export const CircularPercentageChart: React.FC<CircularPercentageChartProps> = ({
