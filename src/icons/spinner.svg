@@ -1,11 +1,8 @@
-<svg viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-<style type="text/css">
-  .svg-spinner-rotation {
-    animation: spinner-rotation 1s linear infinite;
-    transform-origin: 50% 50%;
-    transform-box: fill-box;
-  }
-  </style>
-<path class="svg-spinner-rotation" d="M0.681345 7.88187C1.47643 9.15387 2.8894 10 4.5 10C6.98528 10 9 7.98528 9 5.5C9 3.01472 6.98528 1 4.5 1" stroke="#3E7BFA" stroke-linecap="round" stroke-linejoin="round">
-</path>
-</svg>
+<svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <path
+    d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+      style="animation: 1s linear infinite spinner-rotation; transform-origin: 50% 50%; transform-box: fill-box; stroke: currentColor; stroke-dasharray: 75, 100; stroke-width: 2.8; stroke-linecap: round;"
+  />
+ </svg>
