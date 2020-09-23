@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.52 - 09/22/20
+
+- `Removed` some unused properties from svg icons.
+
 ## 1.1.51 - 09/22/20
 
 - `Changed` Spinner icon to have better animation.
