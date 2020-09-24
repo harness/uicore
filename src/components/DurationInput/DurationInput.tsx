@@ -131,12 +131,14 @@ export function DurationInput(props: DurationInputProps) {
   const { value, valueInTimeFormat, allowVariables, allowedUnits, onChange, ...rest } = props
 
   const [text, setText] = React.useState(
-    !valueInTimeFormat ? timeToDisplayText(value || 0).trim() : valueInTimeFormat.trim()
+    !valueInTimeFormat && valueInTimeFormat !== '' ? timeToDisplayText(value || 0).trim() : valueInTimeFormat.trim()
   )
   const [showWarning, setShowWarning] = React.useState(false)
 
   React.useEffect(() => {
-    setText(timeToDisplayText(value || 0).trim())
+    setText(
+      !valueInTimeFormat && valueInTimeFormat !== '' ? timeToDisplayText(value || 0).trim() : valueInTimeFormat.trim()
+    )
   }, [value])
 
   function handleTextChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -161,7 +163,7 @@ export function DurationInput(props: DurationInputProps) {
 
     // call onChange only when numbers are followed by allowed units
     if (typeof onChange === 'function' && !hasWarning) {
-      const time = !valueInTimeFormat ? parseStringToTime(fieldValue) : fieldValue
+      const time = !valueInTimeFormat && valueInTimeFormat !== '' ? parseStringToTime(fieldValue) : fieldValue
       onChange(time)
     }
   }
