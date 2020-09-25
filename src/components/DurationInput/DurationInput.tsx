@@ -100,7 +100,7 @@ export function timeToDisplayText(time: number): string {
   return str.join(' ')
 }
 
-export const getHelpPopoverContent = (allowedUnits: string[]) => (
+export const getHelpPopoverContent = (allowedUnits: Units[]) => (
   <Text padding="xlarge" style={{ minWidth: '192px' }}>
     You can use:
     <br />
@@ -118,13 +118,12 @@ export const getHelpPopoverContent = (allowedUnits: string[]) => (
   </Text>
 )
 
-export interface DurationInputProps
-  extends Omit<TextInputProps, 'value' | 'onChange' | 'valueInTimeFormat' | 'allowedUnits' | 'allowVariables'> {
+export interface DurationInputProps extends Omit<TextInputProps, 'value' | 'onChange'> {
   value?: number
   // will be string if valueInTimeFormat is passed
   valueInTimeFormat?: string
   onChange?(time: number | string, hasWarning?: boolean): void
-  allowedUnits?: string[]
+  allowedUnits?: Units[]
   allowVariables?: boolean
 }
 export function DurationInput(props: DurationInputProps) {
@@ -141,12 +140,11 @@ export function DurationInput(props: DurationInputProps) {
   }, [value])
 
   function handleTextChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const fieldValue =
-      (allowVariables && e.target.value.startsWith('$') && e.target.value) ||
-      e.target.value.replace(TEXT_LIMIT_REGEX, '')
+    const isFieldValueAVariable = allowVariables && e.target.value?.startsWith('$')
+    const fieldValue = isFieldValueAVariable ? e.target.value : e.target.value.replace(TEXT_LIMIT_REGEX, '')
     let hasWarning = UNIT_LESS_REGEX.test(fieldValue) || !VALID_SYNTAX_REGEX.test(fieldValue)
 
-    if (allowVariables && e.target.value.startsWith('${') && e.target.value.endsWith('}')) {
+    if (isFieldValueAVariable && e.target.value.endsWith('}')) {
       hasWarning = false
     }
 
@@ -161,7 +159,8 @@ export function DurationInput(props: DurationInputProps) {
     setShowWarning(hasWarning)
 
     // call onChange only when numbers are followed by allowed units
-    if (typeof onChange === 'function' && !hasWarning) {
+    // or when value is an expression
+    if (typeof onChange === 'function' && (!hasWarning || isFieldValueAVariable)) {
       // should not trim fieldValue for valueInTime
       const time = !valueInTimeFormat && valueInTimeFormat !== '' ? parseStringToTime(fieldValue) : fieldValue
       onChange(time)
