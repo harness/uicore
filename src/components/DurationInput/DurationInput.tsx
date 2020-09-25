@@ -10,7 +10,7 @@ import css from './DurationInput.css'
 export type Units = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
 const TEXT_EXTRACT_REGEX = /(\d+)\s*([a-z]{1,2})/gi
 const TEXT_LIMIT_REGEX = /[^0-9wdhms\s]/g
-const UNIT_LESS_REGEX = /\d+(?!(m|h|d|w|\d))/i
+const UNIT_LESS_REGEX = /\d+(?!(ms|s|m|h|d|w|\d))/i
 const VALID_SYNTAX_REGEX = /^(\d+w\s*)?(\d+d\s*)?(\d+h\s*)?(\d+m\s*)?(\d+s\s*)?(\d+ms\s*)?$/i
 
 export const UNIT_MULTIPLIIERS: Record<Units, number> = {
@@ -131,14 +131,13 @@ export function DurationInput(props: DurationInputProps) {
   const { value, valueInTimeFormat, allowVariables, allowedUnits, onChange, ...rest } = props
 
   const [text, setText] = React.useState(
-    !valueInTimeFormat && valueInTimeFormat !== '' ? timeToDisplayText(value || 0).trim() : valueInTimeFormat.trim()
+    // do not trim any valueInTimeFormat
+    !valueInTimeFormat && valueInTimeFormat !== '' ? timeToDisplayText(value || 0).trim() : valueInTimeFormat
   )
   const [showWarning, setShowWarning] = React.useState(false)
 
   React.useEffect(() => {
-    setText(
-      !valueInTimeFormat && valueInTimeFormat !== '' ? timeToDisplayText(value || 0).trim() : valueInTimeFormat.trim()
-    )
+    setText(!valueInTimeFormat && valueInTimeFormat !== '' ? timeToDisplayText(value || 0).trim() : valueInTimeFormat)
   }, [value])
 
   function handleTextChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -163,6 +162,7 @@ export function DurationInput(props: DurationInputProps) {
 
     // call onChange only when numbers are followed by allowed units
     if (typeof onChange === 'function' && !hasWarning) {
+      // should not trim fieldValue for valueInTime
       const time = !valueInTimeFormat && valueInTimeFormat !== '' ? parseStringToTime(fieldValue) : fieldValue
       onChange(time)
     }
