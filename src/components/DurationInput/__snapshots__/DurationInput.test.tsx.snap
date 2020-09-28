@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<DurationInput/> tests component tests renders with given value (in time format) 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div
+      class="main"
+    >
+      <div
+        class="bp3-input-group"
+      >
+        <input
+          class="bp3-input"
+          placeholder="Enter w/d/h/m/s/ms"
+          type="text"
+          value="2d 2h"
+        />
+      </div>
+    </div>
+    <div
+      class="bp3-popover-wrapper helpIcon"
+    >
+      <span
+        class="bp3-popover-target"
+      >
+        <span
+          class="bp3-icon main"
+          tabindex="0"
+        >
+          <svg
+            height="14"
+            width="14"
+          />
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<DurationInput/> tests component tests renders with given value 1`] = `
 <div>
   <div
@@ -118,47 +158,317 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
                     w
                   </b>
                 </code>
-                  for weeks
+                <span>
+                    for 
+                  weeks
+                </span>
                 <br />
                 <code>
                   <b>
                     d
                   </b>
                 </code>
-                  for days
+                <span>
+                    for 
+                  days
+                </span>
                 <br />
                 <code>
                   <b>
                     h
                   </b>
                 </code>
-                  for hours
+                <span>
+                    for 
+                  hours
+                </span>
                 <br />
                 <code>
                   <b>
                     m
                   </b>
                 </code>
-                  for minutes
+                <span>
+                    for 
+                  minutes
+                </span>
                 <br />
                 <code>
                   <b>
                     s
                   </b>
                 </code>
-                  for seconds
+                <span>
+                    for 
+                  seconds
+                </span>
                 <br />
                 <code>
                   <b>
                     ms
                   </b>
                 </code>
-                 for milliseconds
+                <span>
+                    for 
+                  milliseconds
+                </span>
               </p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<DurationInput/> tests component tests shows subset of allowed values in help popover 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div
+      class="main"
+    >
+      <div
+        class="bp3-input-group"
+      >
+        <input
+          class="bp3-input"
+          placeholder="Enter w/d/h/m/s/ms"
+          type="text"
+          value="1d 10h 17m 36s 789ms"
+        />
+      </div>
+    </div>
+    <div
+      class="bp3-popover-wrapper helpIcon"
+    >
+      <span
+        class="bp3-popover-target bp3-popover-open"
+      >
+        <span
+          class="bp3-icon main"
+          tabindex="0"
+        >
+          <svg
+            height="14"
+            width="14"
+          />
+        </span>
+      </span>
+      <div
+        class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
+      >
+        <div
+          class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
+          style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+        >
+          <div
+            class="bp3-popover"
+            style="transform-origin: NaNpx bottom;"
+          >
+            <div
+              class="bp3-popover-arrow"
+            >
+              <svg
+                style="transform: rotate(-90deg);"
+                viewBox="0 0 30 30"
+              >
+                <path
+                  class="bp3-popover-arrow-border"
+                  d="M8.11 6.302c1.015-.936 1.887-2.922 1.887-4.297v26c0-1.378-.868-3.357-1.888-4.297L.925 17.09c-1.237-1.14-1.233-3.034 0-4.17L8.11 6.302z"
+                />
+                <path
+                  class="bp3-popover-arrow-fill"
+                  d="M8.787 7.036c1.22-1.125 2.21-3.376 2.21-5.03V0v30-2.005c0-1.654-.983-3.9-2.21-5.03l-7.183-6.616c-.81-.746-.802-1.96 0-2.7l7.183-6.614z"
+                />
+              </svg>
+            </div>
+            <div
+              class="bp3-popover-content"
+            >
+              <p
+                class="font main padding padding-xlarge style style-minWidth style-minWidth-192px"
+                style="min-width: 192px;"
+              >
+                You can use:
+                <br />
+                <br />
+                <code>
+                  <b>
+                    w
+                  </b>
+                </code>
+                <span>
+                    for 
+                  weeks
+                </span>
+                <br />
+                <code>
+                  <b>
+                    d
+                  </b>
+                </code>
+                <span>
+                    for 
+                  days
+                </span>
+                <br />
+                <code>
+                  <b>
+                    h
+                  </b>
+                </code>
+                <span>
+                    for 
+                  hours
+                </span>
+                <br />
+                <code>
+                  <b>
+                    m
+                  </b>
+                </code>
+                <span>
+                    for 
+                  minutes
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<DurationInput/> tests component tests shows warning when intended variable value is invalid due to no closing brace 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div
+      class="main"
+    >
+      <div
+        class="bp3-input-group"
+      >
+        <input
+          class="bp3-input"
+          data-testid="input"
+          placeholder="Enter w/d/h/m/s/ms"
+          style="padding-right: 0px;"
+          type="text"
+          value="\${abc"
+        />
+        <span
+          class="bp3-input-action"
+        >
+          <span
+            class="bp3-icon bp3-icon-warning-sign main warnIcon"
+            icon="warning-sign"
+          >
+            <svg
+              data-icon="warning-sign"
+              height="12"
+              viewBox="0 0 16 16"
+              width="12"
+            >
+              <desc>
+                warning-sign
+              </desc>
+              <path
+                d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="bp3-popover-wrapper helpIcon"
+    >
+      <span
+        class="bp3-popover-target"
+      >
+        <span
+          class="bp3-icon main"
+          tabindex="0"
+        >
+          <svg
+            height="14"
+            width="14"
+          />
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<DurationInput/> tests component tests shows warning when invalid value is not inside allowedUnits 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div
+      class="main"
+    >
+      <div
+        class="bp3-input-group"
+      >
+        <input
+          class="bp3-input"
+          data-testid="input"
+          placeholder="Enter w/d/h/m/s/ms"
+          style="padding-right: 0px;"
+          type="text"
+          value="1s"
+        />
+        <span
+          class="bp3-input-action"
+        >
+          <span
+            class="bp3-icon bp3-icon-warning-sign main warnIcon"
+            icon="warning-sign"
+          >
+            <svg
+              data-icon="warning-sign"
+              height="12"
+              viewBox="0 0 16 16"
+              width="12"
+            >
+              <desc>
+                warning-sign
+              </desc>
+              <path
+                d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="bp3-popover-wrapper helpIcon"
+    >
+      <span
+        class="bp3-popover-target"
+      >
+        <span
+          class="bp3-icon main"
+          tabindex="0"
+        >
+          <svg
+            height="14"
+            width="14"
+          />
+        </span>
+      </span>
     </div>
   </div>
 </div>

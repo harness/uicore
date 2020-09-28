@@ -11,6 +11,12 @@ describe('<DurationInput/> tests', () => {
       expect(container).toMatchSnapshot()
     })
 
+    test('renders with given value (in time format)', () => {
+      const { container } = render(<DurationInput valueInTimeFormat="2d 2h" />)
+
+      expect(container).toMatchSnapshot()
+    })
+
     test('onChange triggers with value (in ms)', () => {
       const onChange = jest.fn()
       const { getByTestId } = render(<DurationInput onChange={onChange} data-testid="input" />)
@@ -22,6 +28,43 @@ describe('<DurationInput/> tests', () => {
       })
 
       expect(onChange).toHaveBeenCalledWith(123456789)
+    })
+
+    test('onChange triggers with value (in time format)', () => {
+      const onChange = jest.fn()
+      const { getByTestId } = render(<DurationInput valueInTimeFormat="" onChange={onChange} data-testid="input" />)
+
+      fireEvent.change(getByTestId('input'), {
+        target: {
+          value: '1d 10h 17m 36s 789ms'
+        }
+      })
+
+      expect(onChange).toHaveBeenCalledWith('1d 10h 17m 36s 789ms')
+
+      // values should not be trimmed when working with time format
+      fireEvent.change(getByTestId('input'), {
+        target: {
+          value: '2w '
+        }
+      })
+
+      expect(onChange).toHaveBeenCalledWith('2w ')
+    })
+
+    test('onChange triggers with value (in variable format)', () => {
+      const onChange = jest.fn()
+      const { getByTestId } = render(
+        <DurationInput valueInTimeFormat="" allowVariables={true} onChange={onChange} data-testid="input" />
+      )
+
+      fireEvent.change(getByTestId('input'), {
+        target: {
+          value: '${workflow.variables.duration}'
+        }
+      })
+
+      expect(onChange).toHaveBeenCalledWith('${workflow.variables.duration}')
     })
 
     test.each`
@@ -71,8 +114,69 @@ describe('<DurationInput/> tests', () => {
       expect(container).toMatchSnapshot()
     })
 
+    test('shows warning when invalid value is not inside allowedUnits', () => {
+      const onChange = jest.fn()
+
+      const { getByTestId, container } = render(
+        <DurationInput onChange={onChange} allowedUnits={['w', 'd', 'h', 'm']} data-testid="input" />
+      )
+      const input = getByTestId('input')
+
+      fireEvent.change(input, { target: { value: '1s' } })
+
+      expect(container.querySelector('.warnIcon')).toBeDefined()
+      expect(container).toMatchSnapshot()
+    })
+
+    test('does not show warning when value is not inside allowedUnits, but is a variable', () => {
+      const onChange = jest.fn()
+
+      const { getByTestId, container } = render(
+        <DurationInput
+          onChange={onChange}
+          allowVariables={true}
+          allowedUnits={['w', 'd', 'h', 'm']}
+          data-testid="input"
+        />
+      )
+      const input = getByTestId('input')
+
+      fireEvent.change(input, { target: { value: '${s}' } })
+
+      expect(container.querySelector('.warnIcon')).toBeNull()
+    })
+
+    test('shows warning when intended variable value is invalid due to no closing brace', async () => {
+      const onChange = jest.fn()
+
+      const { getByTestId, container } = render(
+        <DurationInput onChange={onChange} allowVariables={true} data-testid="input" />
+      )
+      const input = getByTestId('input')
+
+      fireEvent.change(input, { target: { value: '${abc' } })
+
+      expect(container.querySelector('.warnIcon')).toBeDefined()
+      expect(container).toMatchSnapshot()
+
+      fireEvent.change(input, { target: { value: '${abc}' } })
+      expect(container.querySelector('.warnIcon')).toBeNull()
+    })
+
     test('shows help popover', async () => {
       const { container } = render(<DurationInput value={123456789} />)
+
+      const icon = container.querySelector('.bp3-popover-target')
+
+      fireEvent.mouseOver(icon!)
+
+      await waitForDomChange({ container: document.body })
+
+      expect(container).toMatchSnapshot()
+    })
+
+    test('shows subset of allowed values in help popover', async () => {
+      const { container } = render(<DurationInput value={123456789} allowedUnits={['w', 'd', 'h', 'm']} />)
 
       const icon = container.querySelector('.bp3-popover-target')
 
