@@ -5,12 +5,18 @@
 ## Props
 
 ```js
-interface MasonryProps<T = {}> extends React.ComponentProps<typeof Container> {
+interface MasonryProps<T extends object> {
   items: T[]
   renderItem: (item: T) => React.ReactElement
   keyOf: (item: T) => string | undefined
   gutter?: number
+  masonryRef?: (masonry: MasonryRef) => void
   center?: boolean
+  width?: string | number
+  height?: string | number
+  padding?: Spacing | PaddingProps
+  className?: string
+  style?: React.CSSProperties
 }
 ```
 

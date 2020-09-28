@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.53 - 09/28/20
+
+- `Changed` Added types for masonry layout.
+
 ## 1.1.52 - 09/22/20
 
 - `Removed` some unused properties from svg icons.
