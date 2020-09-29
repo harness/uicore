@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.55 - 09/29/20
+
+- `Added` Icons added
+
 ## 1.1.54 - 09/28/20
 
 - `Updated` DurationInput to support time in format and variables
