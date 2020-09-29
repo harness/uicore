@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.1.53 - 09/28/20
 
+- `Updated` DurationInput to support time in format and variables
+
+## 1.1.53 - 09/28/20
+
 - `Changed` Added types for masonry layout.
 
 ## 1.1.52 - 09/22/20
