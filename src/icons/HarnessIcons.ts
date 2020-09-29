@@ -77,6 +77,7 @@ import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
 import Gear from './gear.svg'
+import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -84,8 +85,12 @@ import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
 import Health from './health.svg'
 import Hourglass from './hourglass.svg'
+import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import LayoutBottom from './layout-bottom.svg'
+import LayoutFloat from './layout-float.svg'
+import LayoutRight from './layout-right.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -229,13 +234,17 @@ import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
+import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Remove from './remove.svg'
 import ReportIcon from './report-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
+import RestoreCacheStep from './restore-cache-step.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
+import RunStep from './run-step.svg'
 import RuntimeInput from './runtime-input.svg'
+import SaveCacheStep from './save-cache-step.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -409,6 +418,7 @@ type HarnessIconName =
   | 'fixed-input'
   | 'functions'
   | 'gear'
+  | 'git-clone-step'
   | 'github'
   | 'grey-cluster'
   | 'harness-logo-black'
@@ -416,8 +426,12 @@ type HarnessIconName =
   | 'harness'
   | 'health'
   | 'hourglass'
+  | 'integration'
   | 'key-main'
   | 'key'
+  | 'layout-bottom'
+  | 'layout-float'
+  | 'layout-right'
   | 'list-entity-infographic'
   | 'main-abort'
   | 'main-account-notifications'
@@ -561,13 +575,17 @@ type HarnessIconName =
   | 'placeholder'
   | 'polygon'
   | 'profile'
+  | 'publish-step'
   | 'question'
   | 'remove'
   | 'report-icon'
   | 'resources-icon'
+  | 'restore-cache-step'
   | 'rolling'
   | 'run-pipeline'
+  | 'run-step'
   | 'runtime-input'
+  | 'save-cache-step'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -741,6 +759,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'fixed-input': FixedInput,
   functions: Functions,
   gear: Gear,
+  'git-clone-step': GitCloneStep,
   github: Github,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
@@ -748,8 +767,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   harness: Harness,
   health: Health,
   hourglass: Hourglass,
+  integration: Integration,
   'key-main': KeyMain,
   key: Key,
+  'layout-bottom': LayoutBottom,
+  'layout-float': LayoutFloat,
+  'layout-right': LayoutRight,
   'list-entity-infographic': ListEntityInfographic,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
@@ -893,13 +916,17 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   placeholder: Placeholder,
   polygon: Polygon,
   profile: Profile,
+  'publish-step': PublishStep,
   question: Question,
   remove: Remove,
   'report-icon': ReportIcon,
   'resources-icon': ResourcesIcon,
+  'restore-cache-step': RestoreCacheStep,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
+  'run-step': RunStep,
   'runtime-input': RuntimeInput,
+  'save-cache-step': SaveCacheStep,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,
