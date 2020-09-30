@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+
+## 1.1.57 - 09/30/20
+
+- `Updated` DurationInput to add space between units for valueInTimeFormat
+
 ## 1.1.56 - 09/29/20
 
 - `Added` Icons added
