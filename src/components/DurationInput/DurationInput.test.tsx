@@ -52,6 +52,39 @@ describe('<DurationInput/> tests', () => {
       expect(onChange).toHaveBeenCalledWith('2w ')
     })
 
+    test('onChange triggers with value (in time format and spaced out correctly)', () => {
+      const onChange = jest.fn()
+      const { getByTestId } = render(<DurationInput valueInTimeFormat="" onChange={onChange} data-testid="input" />)
+
+      fireEvent.change(getByTestId('input'), {
+        target: {
+          value: '1d10h17m36s789ms'
+        }
+      })
+
+      expect(onChange).toHaveBeenCalledWith('1d 10h 17m 36s 789ms')
+    })
+
+    test('onChange doesnt triggers with value (in time format) due to invalid pasted units', () => {
+      const onChange = jest.fn()
+      const { getByTestId } = render(
+        <DurationInput
+          valueInTimeFormat=""
+          allowedUnits={['w', 'd', 'h', 'm']}
+          onChange={onChange}
+          data-testid="input"
+        />
+      )
+
+      fireEvent.change(getByTestId('input'), {
+        target: {
+          value: '1d10h17m36s789ms'
+        }
+      })
+
+      expect(onChange).not.toHaveBeenCalled()
+    })
+
     test('onChange triggers with value (in variable format)', () => {
       const onChange = jest.fn()
       const { getByTestId } = render(

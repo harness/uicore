@@ -100,6 +100,21 @@ export function timeToDisplayText(time: number): string {
   return str.join(' ')
 }
 
+/**
+ * Converts given time without spaces '1w2d3m' to text like '1w 2d 3m'
+ */
+export function spaceOutFormatTime(characters: string[], allowedValues: Units[]): string {
+  return characters
+    .map((char, index) => {
+      const isPreviousCharUnit =
+        index > 1 &&
+        characters[index - 1]?.trim() &&
+        allowedValues.includes((characters[index - 1] as unknown) as Units)
+      return isPreviousCharUnit && char?.trim() && !isNaN(parseInt(char)) ? ` ${char}` : char
+    })
+    .join('')
+}
+
 export const getHelpPopoverContent = (allowedUnits: Units[]) => (
   <Text padding="xlarge" style={{ minWidth: '192px' }}>
     You can use:
@@ -128,6 +143,7 @@ export interface DurationInputProps extends Omit<TextInputProps, 'value' | 'onCh
 }
 export function DurationInput(props: DurationInputProps) {
   const { value, valueInTimeFormat, allowVariables, allowedUnits, onChange, ...rest } = props
+  let fieldValueCorrected: string
 
   const [text, setText] = React.useState(
     // do not trim any valueInTimeFormat
@@ -157,13 +173,35 @@ export function DurationInput(props: DurationInputProps) {
         hasWarning = true
       }
     }
-    setText(fieldValue)
+
+    if (typeof valueInTimeFormat === 'string') {
+      const characters = fieldValue.split('')
+      const requiresSpacing =
+        VALID_SYNTAX_REGEX.test(fieldValue) &&
+        characters.some(
+          (char, index) =>
+            ALL_UNITS.includes((char as unknown) as Units) &&
+            index + 1 !== characters.length &&
+            characters[index + 1] !== ' '
+        )
+      if (requiresSpacing) {
+        fieldValueCorrected = spaceOutFormatTime(characters, ALL_UNITS)
+        setText(fieldValueCorrected)
+      } else {
+        setText(fieldValue)
+      }
+    } else {
+      setText(fieldValue)
+    }
     setShowWarning(hasWarning)
 
     // call onChange only when numbers are followed by allowed units
     // or when value is an expression
     if (typeof onChange === 'function' && (!hasWarning || isFieldValueAVariable)) {
-      const time = !valueInTimeFormat && valueInTimeFormat?.trim() !== '' ? parseStringToTime(fieldValue) : fieldValue
+      const time =
+        !valueInTimeFormat && valueInTimeFormat?.trim() !== ''
+          ? parseStringToTime(fieldValue)
+          : fieldValueCorrected || fieldValue
       onChange(time)
     }
   }
