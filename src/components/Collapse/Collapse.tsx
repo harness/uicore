@@ -32,6 +32,10 @@ function Collapse(props: CollapseProps) {
     onToggleOpen?.(!isOpen)
   }, [isOpen, onToggleOpen])
 
+  React.useEffect(() => {
+    setIsOpen(propsIsOpen ?? false)
+  }, [propsIsOpen])
+
   return (
     <div className={cx(css.main, collapseClassName)}>
       <CollapseHeader
