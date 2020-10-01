@@ -8,6 +8,7 @@ import { Icon } from '../../icons/Icon'
 
 import css from './InputWithIdentifier.css'
 import { IInputGroupProps } from '@blueprintjs/core'
+import { Layout } from '../../layouts/Layout'
 
 export interface InputWithIdentifierProps {
   formik: any
@@ -17,6 +18,7 @@ export interface InputWithIdentifierProps {
   inputLabel?: string
   idLabel?: string
   isIdentifierEditable?: boolean
+  maxInput?: number
 }
 
 export function getIdentifierFromName(str: string): string {
@@ -34,45 +36,49 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     inputName = 'name',
     idName = 'identifier',
     inputGroupProps,
-    isIdentifierEditable = true
+    isIdentifierEditable = true,
+    maxInput = 63
   } = props
   const [editable, setEditable] = useState(false)
-
   return (
     <div className={css.txtNameContainer}>
-      {get(formik.values, idName) ? (
-        <div className={css.txtIdContainer}>
-          {idLabel}:
-          <ContentEditable
-            html={get(formik.values, idName)}
-            disabled={!isIdentifierEditable && !editable}
-            className={cx(css.idInput, { [css.editable]: editable })}
-            tagName="span"
-            onChange={ev => {
-              formik.setFieldValue(idName, ev.target.value)
-            }}
-            onBlur={() => {
-              setEditable(false)
+      <Layout.Horizontal className={css.txtIdContainer}>
+        <Text>{idLabel}:</Text>
+        <ContentEditable
+          html={get(formik.values, idName)}
+          disabled={!isIdentifierEditable && !editable}
+          className={cx(css.idInput, { [css.editable]: editable })}
+          tagName="span"
+          onChange={ev => {
+            formik.setFieldValue(idName, ev.target.value.substring(0, maxInput))
+          }}
+          onBlur={() => {
+            setEditable(false)
+          }}
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              event.preventDefault()
+            }
+          }}
+        />
+        {isIdentifierEditable && !editable ? (
+          <Icon
+            name="edit"
+            size={12}
+            style={{ verticalAlign: 'middle' }}
+            onClick={() => {
+              setEditable(true)
             }}
           />
-          {isIdentifierEditable && !editable ? (
-            <Icon
-              name="edit"
-              size={12}
-              style={{ verticalAlign: 'middle' }}
-              onClick={() => {
-                setEditable(true)
-              }}
-            />
-          ) : null}
-        </div>
-      ) : null}
+        ) : null}
+      </Layout.Horizontal>
       <FormInput.Text
         label={inputLabel}
         name={inputName}
         {...inputGroupProps}
         onChange={e => {
-          const name = (e.target as HTMLInputElement).value
+          const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
+          formik.setFieldValue(inputName, name)
           isIdentifierEditable && formik.setFieldValue(idName, getIdentifierFromName(name))
         }}
       />

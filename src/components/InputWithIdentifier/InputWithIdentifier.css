@@ -3,6 +3,7 @@
 
   .txtIdContainer {
     position: absolute;
+    align-items: center;
     right: 0;
     color: var(--blue-600);
   }
@@ -17,7 +18,10 @@
   .idInput {
     border: 1px solid transparent;
     border-radius: 3px;
-    padding: 2px 4px;
+    padding: 0px 4px 2px;
+    display: inline-block;
+    max-width: 150px !important ;
+    overflow: scroll;
   }
   .editable {
     border: 1px solid var(--grey-300);
