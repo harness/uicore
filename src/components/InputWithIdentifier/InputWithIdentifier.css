@@ -21,8 +21,16 @@
     padding: 0px 4px 2px;
     display: inline-block;
     max-width: 100px;
-    overflow: scroll;
     white-space: nowrap;
+    overflow-x: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    &::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0;
+    }
   }
   .editable {
     border: 1px solid var(--grey-300);
