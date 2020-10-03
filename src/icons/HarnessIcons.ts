@@ -72,6 +72,11 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Down from './down.svg'
+import ExecutionAbort from './execution-abort.svg'
+import ExecutionInput from './execution-input.svg'
+import ExecutionRollback from './execution-rollback.svg'
+import ExecutionSuccess from './execution-success.svg'
+import ExecutionWarning from './execution-warning.svg'
 import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
@@ -342,7 +347,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
-  | 'options'
+  | 'Options'
   | 'activity'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -413,6 +418,11 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'down'
+  | 'execution-abort'
+  | 'execution-input'
+  | 'execution-rollback'
+  | 'execution-success'
+  | 'execution-warning'
   | 'expression-input'
   | 'feedback-given'
   | 'fixed-input'
@@ -683,7 +693,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
-  options: Options,
+  Options: Options,
   activity: Activity,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
@@ -754,6 +764,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   down: Down,
+  'execution-abort': ExecutionAbort,
+  'execution-input': ExecutionInput,
+  'execution-rollback': ExecutionRollback,
+  'execution-success': ExecutionSuccess,
+  'execution-warning': ExecutionWarning,
   'expression-input': ExpressionInput,
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
