@@ -1,3 +1,4 @@
+import { Icon, IconProps } from '../../icons/Icon'
 import React, { useEffect } from 'react'
 import { Color, Text, Utils } from '../..'
 import { Easing, useTween } from '../../hooks/useTween'
@@ -6,7 +7,7 @@ import { FontSize, FontProps } from '../../styled-props/font/FontProps'
 export interface CircularPercentageChartProps {
   size: number
   value: number
-  label?: string | number
+  label?: string | number | IconProps
   trackColor?: Color
   color: Color
   font?: FontSize | FontProps
@@ -46,21 +47,33 @@ export const CircularPercentageChart: React.FC<CircularPercentageChartProps> = (
           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
         />
       </svg>
-      <Text
-        color={color}
-        font={font ? font : 'large'}
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          top: 0,
-          left: 0,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-        {label}
-      </Text>
+      {typeof label === 'object' ? (
+        <Icon
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+          }}
+          {...label}
+        />
+      ) : (
+        <Text
+          color={color}
+          font={font ? font : 'large'}
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            top: 0,
+            left: 0,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+          {label}
+        </Text>
+      )}
     </div>
   )
 }
