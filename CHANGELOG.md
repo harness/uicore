@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.1.64 - 10/09/20
 
+- `Added` Add pipeline-build icon
+
+## 1.1.64 - 10/09/20
+
 - `Fixed` icons fill color
 
 ## 1.1.63 - 10/06/20
