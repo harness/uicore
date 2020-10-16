@@ -2,9 +2,13 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.66 - 10/16/20
+
+- `Added` custom-service icon
+
 ## 1.1.65 - 10/14/20
 
-- `Added` Add pipeline-build icon
+- `Added` pipeline-build icon
 
 ## 1.1.64 - 10/09/20
 
