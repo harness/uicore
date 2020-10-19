@@ -50,6 +50,7 @@ import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkip from './conditional-skip.svg'
 import Copy from './copy.svg'
 import CsHover from './cs-hover.svg'
+import CustomService from './custom-service.svg'
 import CvHover from './cv-hover.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
@@ -397,6 +398,7 @@ type HarnessIconName =
   | 'conditional-skip'
   | 'copy'
   | 'cs-hover'
+  | 'custom-service'
   | 'cv-hover'
   | 'dashboard-selected'
   | 'dashboard'
@@ -744,6 +746,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-skip': ConditionalSkip,
   copy: Copy,
   'cs-hover': CsHover,
+  'custom-service': CustomService,
   'cv-hover': CvHover,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
