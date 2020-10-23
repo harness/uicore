@@ -294,6 +294,7 @@ import ServiceJenkins from './service-jenkins.svg'
 import ServiceJira from './service-jira.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
+import ServiceMongodb from './service-mongodb.svg'
 import ServiceMydatacenter from './service-mydatacenter.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
@@ -301,6 +302,7 @@ import ServiceOgz from './service-ogz.svg'
 import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
+import ServiceRedis from './service-redis.svg'
 import ServiceServiceS from './service-service-s3.svg'
 import ServiceServicenow from './service-servicenow.svg'
 import ServiceSlack from './service-slack.svg'
@@ -643,6 +645,7 @@ type HarnessIconName =
   | 'service-jira'
   | 'service-kubernetes'
   | 'service-microsoft-teams'
+  | 'service-mongodb'
   | 'service-mydatacenter'
   | 'service-newrelic'
   | 'service-nexus'
@@ -650,6 +653,7 @@ type HarnessIconName =
   | 'service-pagerduty'
   | 'service-pivotal'
   | 'service-prometheus'
+  | 'service-redis'
   | 'service-service-s3'
   | 'service-servicenow'
   | 'service-slack'
@@ -992,6 +996,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-jira': ServiceJira,
   'service-kubernetes': ServiceKubernetes,
   'service-microsoft-teams': ServiceMicrosoftTeams,
+  'service-mongodb': ServiceMongodb,
   'service-mydatacenter': ServiceMydatacenter,
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
@@ -999,6 +1004,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-pagerduty': ServicePagerduty,
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
+  'service-redis': ServiceRedis,
   'service-service-s3': ServiceServiceS,
   'service-servicenow': ServiceServicenow,
   'service-slack': ServiceSlack,
