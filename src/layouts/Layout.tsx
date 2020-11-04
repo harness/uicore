@@ -10,9 +10,10 @@ export interface LayoutProps extends Assign<HTMLAttributes<HTMLDivElement>, Styl
   spacing?: Spacing
 }
 
-function Vertical(props: LayoutProps) {
+function Vertical(props: LayoutProps, ref: React.Ref<HTMLDivElement>) {
   return (
     <div
+      ref={ref}
       {...omitStyledProps(props)}
       className={styledClasses(props, css.vertical, css[`layout-spacing-${props.spacing}`])}>
       {props.children}
@@ -20,9 +21,10 @@ function Vertical(props: LayoutProps) {
   )
 }
 
-function Horizontal(props: LayoutProps) {
+function Horizontal(props: LayoutProps, ref: React.Ref<HTMLDivElement>) {
   return (
     <div
+      ref={ref}
       {...omitStyledProps(props)}
       className={styledClasses(props, css.horizontal, css[`layout-spacing-${props.spacing}`])}>
       {props.children}
@@ -30,6 +32,6 @@ function Horizontal(props: LayoutProps) {
   )
 }
 
-const Layout = { Vertical, Horizontal, Masonry }
+const Layout = { Vertical: React.forwardRef(Vertical), Horizontal: React.forwardRef(Horizontal), Masonry }
 
 export { Layout, MasonryRef, MasonryProps }

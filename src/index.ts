@@ -76,6 +76,7 @@ export { SparkChart } from './components/SparkChart/SparkChart'
 export { useModalHook, ModalProvider, ModalContext } from './components/Modal'
 export { ModalExample } from './components/ModalExample/ModalExample'
 export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeSeriesChart'
+export { MultiLogsExample } from './components/MultiLogsExample/MultiLogsExample'
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
 export { Table, TableProps } from './components/Table/Table'
 export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikForm'
@@ -109,3 +110,4 @@ export {
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
+export { MultiLogsViewer, MultiLogsViewerProps } from './components/MultiLogsViewer/MultiLogsViewer'

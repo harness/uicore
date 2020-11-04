@@ -93,6 +93,10 @@ export default [
         url: '/modal-example'
       },
       {
+        label: 'Multi Logs Example',
+        url: '/multi-logs-example'
+      },
+      {
         label: 'Steps Progress',
         url: '/steps-progress'
       },
@@ -187,6 +191,10 @@ export default [
       {
         label: 'Pagination',
         url: '/pagination'
+      },
+      {
+        label: 'MultiLogsViewer',
+        url: '/multi-log-viewer'
       }
     ]
   },

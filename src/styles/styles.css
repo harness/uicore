@@ -3,3 +3,4 @@
 @import './sizes.css';
 @import './animations.css';
 @import '@wings-software/mentions';
+@import 'xterm/css/xterm.css';
