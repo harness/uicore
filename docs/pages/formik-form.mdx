@@ -238,6 +238,7 @@ Try submitting the form
   initialValues={{
     firstName: '',
     lastName: '',
+    tags: {},
     description: '',
     specialPerson: true,
     job_desc2: '${input}.allowedValues(10, 20, 30)'
@@ -272,6 +273,22 @@ Try submitting the form
   <FormikForm>
     <FormInput.Text name="firstName" label="First Name" placeholder="First Name" />
     <FormInput.Text name="lastName" label="Last Name" placeholder="Last Name" />
+    <FormInput.KVTagInput
+      name="tags"
+      label="Tags"
+      placeholder="Enter Tags"
+      mentionsInfo={{
+        data: done =>
+          done([
+            'app.name',
+            'app.description',
+            'pipeline.name',
+            'pipeline.description',
+            'pipeline.identifier',
+            'pipeline.stage.qa.displayName'
+          ])
+      }}
+    />
     <FormInput.CheckBox name="specialPerson" label="VVIP" />
     <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select" />
     <FormInput.RadioGroup

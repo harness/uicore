@@ -6,6 +6,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
+import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import cssRadio from '../Radio/Radio.css'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
@@ -48,6 +49,7 @@ import {
 } from '../CategorizedSelected/CategorizedSelect'
 import { SelectWithSubviewProps, SelectWithSubview } from '../SelectWithSubview/SelectWithSubview'
 import { MultiSelectWithSubviewProps, MultiSelectWithSubview } from '../MultiSelectWithSubView/MultiSelectWithSubView'
+import { MentionsInfo, register, unregister } from '@wings-software/mentions'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -106,6 +108,72 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
           formik?.setFieldValue(name, selectedItems)
           onChange?.(selectedItems, createdItems, items)
         }}
+      />
+    </FormGroup>
+  )
+}
+
+interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+  name: string
+  mentionsInfo?: Partial<MentionsInfo>
+  tagsProps?: Partial<ITagInputProps>
+}
+
+type KVAccumulator = { [key: string]: string }
+
+const MENTIONS_DEFAULT: MentionsInfo = {
+  identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
+  trigger: ['$', '${'],
+  rule: '${__match__}',
+  cached: true,
+  data: done => done([])
+}
+
+function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
+  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    inline = formik?.inline,
+    ...rest
+  } = restProps
+  const [mentionsType] = React.useState(`kv-tag-input-${name}}`)
+
+  React.useEffect(() => {
+    register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
+    return () => unregister(mentionsType)
+  }, [])
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <BPTagInput
+        values={Object.keys(formik?.values[name] || {}).map(key => {
+          const value = formik?.values[name][key]
+          return value ? `${key}:${value}` : key
+        })}
+        onChange={(changed: unknown) => {
+          const values: string[] = changed as string[]
+          formik?.setFieldValue(
+            name,
+            values?.reduce((acc, tag) => {
+              const parts = tag.split(':')
+              acc[parts[0]] = parts[1]?.trim() || ''
+              return acc
+            }, {} as KVAccumulator) || {}
+          )
+        }}
+        inputRef={input => {
+          input?.setAttribute('data-mentions', mentionsType)
+        }}
+        onKeyDown={(event: React.KeyboardEvent) => {
+          if (event.keyCode === 13) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+        }}
+        {...tagsProps}
       />
     </FormGroup>
   )
@@ -873,6 +941,7 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
 
 export const FormInput = {
   TagInput: connect(TagInput),
+  KVTagInput: connect(KVTagInput),
   CustomRender: connect(CustomRender),
   FileInput: connect(FileInput),
   RadioGroup: connect(RadioGroup),

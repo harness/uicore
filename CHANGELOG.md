@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.71 - 11/04/20
+
+- `Added` KVTagInput Component
+
 ## 1.1.70 - 11/02/20
 
 - `Added` MultiLogsViewer component.
