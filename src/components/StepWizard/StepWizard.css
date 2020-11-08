@@ -5,7 +5,7 @@
 
     .navBarList {
       background-color: #267cc9;
-      padding: 60px var(--spacing-small) 60px 30px;
+      padding: 35px var(--spacing-small) 60px 30px;
       display: grid;
       grid-gap: 30px;
       border-right: 1px solid #979797;
@@ -53,4 +53,17 @@
   .stepDetails {
     padding: var(--spacing-large);
   }
+}
+
+.header {
+  display: grid;
+  grid-gap: var(--spacing-xlarge);
+  justify-content: center;
+}
+
+.title {
+  color: var(--white);
+  font-size: large;
+  margin-bottom: var(--spacing-xxxlarge);
+  font-weight: 600;
 }
