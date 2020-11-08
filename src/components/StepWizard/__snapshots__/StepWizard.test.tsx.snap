@@ -60,6 +60,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
       <div
         class="stepDetails"
       >
+         
         <div
           class="vertical layout-spacing-undefined main"
         >

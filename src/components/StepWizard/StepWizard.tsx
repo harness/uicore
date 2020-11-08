@@ -172,7 +172,7 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
           {icon && title ? (
             <React.Fragment>
               <span className={css.header}>
-                <Icon name={icon as IconName} size={37} />
+                <Icon name={icon} size={37} />
               </span>
               <span className={cx(css.title, css.header)}>{title}</span>
             </React.Fragment>
