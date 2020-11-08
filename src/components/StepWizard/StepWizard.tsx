@@ -51,8 +51,8 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
     children,
     stepClassName = '',
     navClassName = '',
-    icon,
-    title
+    icon = '',
+    title = ''
   } = props
   const [state, setState] = React.useState<StepState<SharedObject>>({
     activeStep: initialStep < 1 || initialStep > children.length ? 1 : initialStep,
