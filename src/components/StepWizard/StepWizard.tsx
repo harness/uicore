@@ -169,10 +169,14 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
     <div className={cx(css.main, className, { [css.navBar]: isNavMode })}>
       {isNavMode && (
         <div className={css.navBarList}>
-          <span className={css.header}>
-            <Icon name={icon as IconName} size={37} />
-          </span>
-          <span className={cx(css.title, css.header)}>{title}</span>
+          {icon && title ? (
+            <React.Fragment>
+              <span className={css.header}>
+                <Icon name={icon as IconName} size={37} />
+              </span>
+              <span className={cx(css.title, css.header)}>{title}</span>
+            </React.Fragment>
+          ) : null}
           {renderStep()}
         </div>
       )}
