@@ -12,7 +12,7 @@ interface StepChangeData<SharedObject> {
 export interface StepWizardProps<SharedObject> {
   icon?: IconName
   iconProps?: IconProps
-  title?: JSX.Element
+  title?: string | JSX.Element
   children: Array<React.ReactElement<StepProps<SharedObject>> | null>
   isNavMode?: boolean
   className?: string
