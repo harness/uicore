@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import css from './StepWizard.css'
-import { Icon, IconName } from '../../icons/Icon'
+import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { Text } from '../../components/Text/Text'
 
 interface StepChangeData<SharedObject> {
@@ -11,7 +11,8 @@ interface StepChangeData<SharedObject> {
 }
 export interface StepWizardProps<SharedObject> {
   icon?: IconName
-  title?: string
+  iconProps?: IconProps
+  title?: JSX.Element
   children: Array<React.ReactElement<StepProps<SharedObject>> | null>
   isNavMode?: boolean
   className?: string
@@ -52,6 +53,7 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
     stepClassName = '',
     navClassName = '',
     icon = '',
+    iconProps = {},
     title = ''
   } = props
   const [state, setState] = React.useState<StepState<SharedObject>>({
@@ -172,7 +174,7 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
           {icon && title ? (
             <React.Fragment>
               <span className={css.header}>
-                <Icon name={icon} size={37} />
+                <Icon name={icon} {...iconProps} />
               </span>
               <span className={cx(css.title, css.header)}>{title}</span>
             </React.Fragment>
