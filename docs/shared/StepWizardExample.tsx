@@ -54,6 +54,9 @@ export const ExampleWizard = () => {
     <div>
       Steps Changed: {counter}
       <StepWizard
+        icon="app-kubernetes"
+        iconProps={{ size: 37 }}
+        title="Kubernetes Cluster"
         onStepChange={() => {
           setCounter(prevState => ++prevState)
         }}
