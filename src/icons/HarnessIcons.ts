@@ -87,6 +87,7 @@ import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
+import Gcr from './gcr.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
@@ -236,6 +237,7 @@ import Notification from './notification.svg'
 import OtherWorkload from './other-workload.svg'
 import Pending from './pending.svg'
 import PipelineApproval from './pipeline-approval.svg'
+import PipelineBuildSelect from './pipeline-build-select.svg'
 import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
@@ -444,6 +446,7 @@ type HarnessIconName =
   | 'feedback-given'
   | 'fixed-input'
   | 'functions'
+  | 'gcr'
   | 'gear'
   | 'git-clone-step'
   | 'github'
@@ -593,6 +596,7 @@ type HarnessIconName =
   | 'other-workload'
   | 'pending'
   | 'pipeline-approval'
+  | 'pipeline-build-select'
   | 'pipeline-build'
   | 'pipeline-custom'
   | 'pipeline-deploy'
@@ -801,6 +805,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   functions: Functions,
+  gcr: Gcr,
   gear: Gear,
   'git-clone-step': GitCloneStep,
   github: Github,
@@ -950,6 +955,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'other-workload': OtherWorkload,
   pending: Pending,
   'pipeline-approval': PipelineApproval,
+  'pipeline-build-select': PipelineBuildSelect,
   'pipeline-build': PipelineBuild,
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
