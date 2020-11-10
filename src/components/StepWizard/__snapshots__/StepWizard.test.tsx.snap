@@ -11,6 +11,23 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
       <div
         class="navBarList"
       >
+        <span
+          class="header"
+        >
+          <span
+            class="bp3-icon main"
+          >
+            <svg
+              height="37"
+              width="37"
+            />
+          </span>
+        </span>
+        <span
+          class="title header"
+        >
+          Kubernetes Cluster
+        </span>
         <div
           class="navStep activeStep"
         >
@@ -60,6 +77,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
       <div
         class="stepDetails"
       >
+         
         <div
           class="vertical layout-spacing-undefined main"
         >
