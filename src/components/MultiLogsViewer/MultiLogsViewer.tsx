@@ -233,7 +233,7 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
   highlightedIndex,
   searchDir,
   updateSection,
-  sectionArr,
+  sectionArr = [false],
   activePanel,
   ...containerProps
 }) => {

@@ -24,6 +24,7 @@
   logContentForSection={sectionIndex => {
     return 'gyp ERR! stack Error: `gyp` failed with exit code: 1\ngyp ERR! System Darwin 19.6.0\ngyp ERR! node -v v14.5.0\nnode-pre-gyp ERR! not ok\nFailed to execute node-gyp'
   }}
+  sectionArr={[false,true,false,false]}
 />
 ```
 
@@ -51,6 +52,7 @@
   logContentForSection={sectionIndex => {
     return `<script>alert(1);</script>\n\n\n\nHello from \x1B[1;3;31mxterm.js\x1B[0m Hello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0m$ \n\n\nHi,\r\nMy\r\nName\r\nis\r\nMike\n\nThis line should have one blank line before it\n\nThis one too.\n\n\n\nCheckout https://harness.io\n\nhello\n\nworld\n\nRunning....\n\nnpm install foobar\n\n\nProgress: 50%... Please wait...`
   }}
+    sectionArr={[true,false,false,false]}
 />
 ```
 
@@ -83,5 +85,6 @@
   logContentForSection={sectionIndex => {
     return Array.from({ length: 250000 }, (_v, k) => 'line ' + (k + 1)).join('\n')
   }}
+    sectionArr={[true,false,false,false]}
 />
 ```
