@@ -21,8 +21,8 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({ onAdd, avatars, overla
 
   return (
     <div className={classnames(overlap ? css.stack : css.noStack)}>
-      {avatars.map(avatarProps => (
-        <Avatar className={classnames(overlap && css.stackAvatar)} {...avatarProps} />
+      {avatars.map((avatarProps, index) => (
+        <Avatar key={index} className={classnames(overlap && css.stackAvatar)} {...avatarProps} />
       ))}
     </div>
   )

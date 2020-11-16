@@ -5,6 +5,7 @@ export { Intent } from './core/Intent'
 export { Avatar, AvatarProps } from './components/Avatar/Avatar'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
 export { Button, ButtonProps } from './components/Button/Button'
+export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export { Checkbox } from './components/Checkbox/Checkbox'
 export { Container } from './components/Container/Container'
@@ -22,7 +23,7 @@ export { Switch } from './components/Switch/Switch'
 export { SwitchIcon } from './components/Switch/SwitchIcon/SwitchIcon'
 export { Carousel } from './components/Carousel/Carousel'
 export { Tabs, Tab } from './components/Tabs/Tabs'
-export { Text, SupText } from './components/Text/Text'
+export { Text, SupText, TextProps } from './components/Text/Text'
 export { Utils } from './core/Utils'
 export { TextInput } from './components/TextInput/TextInput'
 export { default as FieldArray } from './components/FieldArray/FieldArray'
@@ -43,6 +44,7 @@ export { UseModalBinding } from './hooks/useModal/UseModalBinding'
 export { CircularPercentageChart } from './components/CircularPercentageChart/CircularPercentageChart'
 export { DateInput } from './components/DateInput/DateInput'
 export { FlexExpander } from './components/FlexExpander/FlexExpander'
+export { default as Pagination, PaginationProps } from './components/Pagination/Pagination'
 export {
   DateRangePickerButtonProps,
   DateRangePickerButton
@@ -76,6 +78,7 @@ export { SparkChart } from './components/SparkChart/SparkChart'
 export { useModalHook, ModalProvider, ModalContext } from './components/Modal'
 export { ModalExample } from './components/ModalExample/ModalExample'
 export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeSeriesChart'
+export { MultiLogsExample } from './components/MultiLogsExample/MultiLogsExample'
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
 export { Table, TableProps } from './components/Table/Table'
 export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikForm'
@@ -85,8 +88,28 @@ export { LogViewer, LogViewerProps } from './components/LogViewer/LogViewer'
 export { ColorPicker } from './components/ColorPicker/ColorPicker'
 export {
   MultiTypeInput,
+  MultiTextInput,
+  MultiTextInputProps,
   MultiTypeInputProps,
+  ExpressionAndRuntimeTypeProps,
+  ExpressionAndRuntimeType,
   MultiTypeInputValue,
   MultiSelectTypeInput,
-  MultiTypeInputType
+  MultiTypeInputType,
+  getMultiTypeFromValue
 } from './components/MultiTypeInput/MultiTypeInput'
+export {
+  CategorizedSelectProps,
+  CategorizedSelect,
+  CategorizedSelectOption
+} from './components/CategorizedSelected/CategorizedSelect'
+export {
+  ModalErrorHandler,
+  ModalErrorHandlerBinding,
+  ModalErrorHandlerProps
+} from './components/Modal/ModalErrorHandler'
+export {
+  MultiSelectWithSubview,
+  MultiSelectWithSubviewProps
+} from './components/MultiSelectWithSubView/MultiSelectWithSubView'
+export { MultiLogsViewer, MultiLogsViewerProps } from './components/MultiLogsViewer/MultiLogsViewer'

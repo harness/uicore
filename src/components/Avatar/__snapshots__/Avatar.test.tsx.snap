@@ -3,11 +3,11 @@
 exports[`Render basic component should check snapshot with email 1`] = `
 <div>
   <div
-    class=" Avatar"
+    class="Avatar"
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; background-color: red;"
+      style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
     >
       JD
     </div>
@@ -18,11 +18,11 @@ exports[`Render basic component should check snapshot with email 1`] = `
 exports[`Render basic component should check snapshot with image 1`] = `
 <div>
   <div
-    class=" Avatar"
+    class="Avatar"
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px;"
+      style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px;"
     >
       <img
         alt=""
@@ -37,11 +37,11 @@ exports[`Render basic component should check snapshot with image 1`] = `
 exports[`Render basic component should check snapshot with name 1`] = `
 <div>
   <div
-    class=" Avatar"
+    class="Avatar"
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; background-color: red;"
+      style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
     >
       JD
     </div>

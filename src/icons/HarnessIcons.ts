@@ -1,10 +1,12 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
+import Options from './Options.svg'
 import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -14,6 +16,7 @@ import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import CdHover from './cd-hover.svg'
+import CdMain from './cd-main.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
 import CeBudgetColored from './ce-budget_colored.svg'
@@ -23,9 +26,13 @@ import CeCluster from './ce-cluster.svg'
 import CeHover from './ce-hover.svg'
 import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
+import CeMain from './ce-main.svg'
 import CfHover from './cf-hover.svg'
+import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
+import Check from './check.svg'
 import CiHover from './ci-hover.svg'
+import CiMain from './ci-main.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -47,7 +54,9 @@ import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkip from './conditional-skip.svg'
 import Copy from './copy.svg'
 import CsHover from './cs-hover.svg'
+import CustomService from './custom-service.svg'
 import CvHover from './cv-hover.svg'
+import CvMain from './cv-main.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -69,17 +78,32 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Down from './down.svg'
+import ExecutionAbort from './execution-abort.svg'
+import ExecutionInput from './execution-input.svg'
+import ExecutionRollback from './execution-rollback.svg'
+import ExecutionSuccess from './execution-success.svg'
+import ExecutionWarning from './execution-warning.svg'
 import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
+import Gcr from './gcr.svg'
+import Gear from './gear.svg'
+import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
 import Health from './health.svg'
+import Hourglass from './hourglass.svg'
+import Info from './info.svg'
+import Integration from './integration.svg'
+import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import LayoutBottom from './layout-bottom.svg'
+import LayoutFloat from './layout-float.svg'
+import LayoutRight from './layout-right.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -211,19 +235,32 @@ import NewDecoration from './new-decoration.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import Notification from './notification.svg'
 import OtherWorkload from './other-workload.svg'
+import Pending from './pending.svg'
 import PipelineApproval from './pipeline-approval.svg'
+import PipelineBuildSelect from './pipeline-build-select.svg'
+import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
+import PipelineNg from './pipeline-ng.svg'
 import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
+import Plugin from './plugin.svg'
+import Polygon from './polygon.svg'
+import Profile from './profile.svg'
+import PublishStep from './publish-step.svg'
 import Question from './question.svg'
+import Remove from './remove.svg'
 import ReportIcon from './report-icon.svg'
+import ResourcesIcon from './resources-icon.svg'
+import RestoreCacheStep from './restore-cache-step.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
+import RunStep from './run-step.svg'
 import RuntimeInput from './runtime-input.svg'
+import SaveCacheStep from './save-cache-step.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -235,6 +272,8 @@ import SearchTriggers from './search-triggers.svg'
 import SearchUserGroups from './search-user-groups.svg'
 import SearchUsers from './search-users.svg'
 import SearchWorkflow from './search-workflow.svg'
+import SecretManager from './secret-manager.svg'
+import SecretSsh from './secret-ssh.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactory from './service-artifactory.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
@@ -263,6 +302,7 @@ import ServiceJenkins from './service-jenkins.svg'
 import ServiceJira from './service-jira.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
+import ServiceMongodb from './service-mongodb.svg'
 import ServiceMydatacenter from './service-mydatacenter.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
@@ -270,6 +310,7 @@ import ServiceOgz from './service-ogz.svg'
 import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
+import ServiceRedis from './service-redis.svg'
 import ServiceServiceS from './service-service-s3.svg'
 import ServiceServicenow from './service-servicenow.svg'
 import ServiceSlack from './service-slack.svg'
@@ -282,6 +323,7 @@ import ServiceTerraform from './service-terraform.svg'
 import Service from './service.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
+import Spinner from './spinner.svg'
 import StepGroup from './step-group.svg'
 import StepsSpinner from './steps-spinner.svg'
 import SupportAccount from './support-account.svg'
@@ -318,10 +360,12 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
+  | 'Options'
   | 'activity'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
@@ -331,6 +375,7 @@ type HarnessIconName =
   | 'canvas-reset'
   | 'canvas-selector'
   | 'cd-hover'
+  | 'cd-main'
   | 'ce-application'
   | 'ce-beta'
   | 'ce-budget_colored'
@@ -340,9 +385,13 @@ type HarnessIconName =
   | 'ce-hover'
   | 'ce-main-colored'
   | 'ce-main-grey'
+  | 'ce-main'
   | 'cf-hover'
+  | 'cf-main'
   | 'check-alt'
+  | 'check'
   | 'ci-hover'
+  | 'ci-main'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -364,7 +413,9 @@ type HarnessIconName =
   | 'conditional-skip'
   | 'copy'
   | 'cs-hover'
+  | 'custom-service'
   | 'cv-hover'
+  | 'cv-main'
   | 'dashboard-selected'
   | 'dashboard'
   | 'deployment-aborted-legacy'
@@ -386,17 +437,32 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'down'
+  | 'execution-abort'
+  | 'execution-input'
+  | 'execution-rollback'
+  | 'execution-success'
+  | 'execution-warning'
   | 'expression-input'
   | 'feedback-given'
   | 'fixed-input'
   | 'functions'
+  | 'gcr'
+  | 'gear'
+  | 'git-clone-step'
   | 'github'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white'
   | 'harness'
   | 'health'
+  | 'hourglass'
+  | 'info'
+  | 'integration'
+  | 'key-main'
   | 'key'
+  | 'layout-bottom'
+  | 'layout-float'
+  | 'layout-right'
   | 'list-entity-infographic'
   | 'main-abort'
   | 'main-account-notifications'
@@ -528,19 +594,32 @@ type HarnessIconName =
   | 'no-feedback-given'
   | 'notification'
   | 'other-workload'
+  | 'pending'
   | 'pipeline-approval'
+  | 'pipeline-build-select'
+  | 'pipeline-build'
   | 'pipeline-custom'
   | 'pipeline-deploy'
+  | 'pipeline-ng'
   | 'pipeline-variables'
   | 'pipeline'
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
+  | 'plugin'
+  | 'polygon'
+  | 'profile'
+  | 'publish-step'
   | 'question'
+  | 'remove'
   | 'report-icon'
+  | 'resources-icon'
+  | 'restore-cache-step'
   | 'rolling'
   | 'run-pipeline'
+  | 'run-step'
   | 'runtime-input'
+  | 'save-cache-step'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -552,6 +631,8 @@ type HarnessIconName =
   | 'search-user-groups'
   | 'search-users'
   | 'search-workflow'
+  | 'secret-manager'
+  | 'secret-ssh'
   | 'service-appdynamics'
   | 'service-artifactory'
   | 'service-aws-code-deploy'
@@ -580,6 +661,7 @@ type HarnessIconName =
   | 'service-jira'
   | 'service-kubernetes'
   | 'service-microsoft-teams'
+  | 'service-mongodb'
   | 'service-mydatacenter'
   | 'service-newrelic'
   | 'service-nexus'
@@ -587,6 +669,7 @@ type HarnessIconName =
   | 'service-pagerduty'
   | 'service-pivotal'
   | 'service-prometheus'
+  | 'service-redis'
   | 'service-service-s3'
   | 'service-servicenow'
   | 'service-slack'
@@ -599,6 +682,7 @@ type HarnessIconName =
   | 'service'
   | 'setup-api'
   | 'setup-tags'
+  | 'spinner'
   | 'step-group'
   | 'steps-spinner'
   | 'support-account'
@@ -635,10 +719,12 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
+  Options: Options,
   activity: Activity,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
@@ -648,6 +734,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
   'cd-hover': CdHover,
+  'cd-main': CdMain,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
   'ce-budget_colored': CeBudgetColored,
@@ -657,9 +744,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-hover': CeHover,
   'ce-main-colored': CeMainColored,
   'ce-main-grey': CeMainGrey,
+  'ce-main': CeMain,
   'cf-hover': CfHover,
+  'cf-main': CfMain,
   'check-alt': CheckAlt,
+  check: Check,
   'ci-hover': CiHover,
+  'ci-main': CiMain,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
@@ -681,7 +772,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-skip': ConditionalSkip,
   copy: Copy,
   'cs-hover': CsHover,
+  'custom-service': CustomService,
   'cv-hover': CvHover,
+  'cv-main': CvMain,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
@@ -703,17 +796,32 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   down: Down,
+  'execution-abort': ExecutionAbort,
+  'execution-input': ExecutionInput,
+  'execution-rollback': ExecutionRollback,
+  'execution-success': ExecutionSuccess,
+  'execution-warning': ExecutionWarning,
   'expression-input': ExpressionInput,
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   functions: Functions,
+  gcr: Gcr,
+  gear: Gear,
+  'git-clone-step': GitCloneStep,
   github: Github,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   harness: Harness,
   health: Health,
+  hourglass: Hourglass,
+  info: Info,
+  integration: Integration,
+  'key-main': KeyMain,
   key: Key,
+  'layout-bottom': LayoutBottom,
+  'layout-float': LayoutFloat,
+  'layout-right': LayoutRight,
   'list-entity-infographic': ListEntityInfographic,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
@@ -845,19 +953,32 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'no-feedback-given': NoFeedbackGiven,
   notification: Notification,
   'other-workload': OtherWorkload,
+  pending: Pending,
   'pipeline-approval': PipelineApproval,
+  'pipeline-build-select': PipelineBuildSelect,
+  'pipeline-build': PipelineBuild,
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
+  'pipeline-ng': PipelineNg,
   'pipeline-variables': PipelineVariables,
   pipeline: Pipeline,
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
+  plugin: Plugin,
+  polygon: Polygon,
+  profile: Profile,
+  'publish-step': PublishStep,
   question: Question,
+  remove: Remove,
   'report-icon': ReportIcon,
+  'resources-icon': ResourcesIcon,
+  'restore-cache-step': RestoreCacheStep,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
+  'run-step': RunStep,
   'runtime-input': RuntimeInput,
+  'save-cache-step': SaveCacheStep,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,
@@ -869,6 +990,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'search-user-groups': SearchUserGroups,
   'search-users': SearchUsers,
   'search-workflow': SearchWorkflow,
+  'secret-manager': SecretManager,
+  'secret-ssh': SecretSsh,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory': ServiceArtifactory,
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
@@ -897,6 +1020,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-jira': ServiceJira,
   'service-kubernetes': ServiceKubernetes,
   'service-microsoft-teams': ServiceMicrosoftTeams,
+  'service-mongodb': ServiceMongodb,
   'service-mydatacenter': ServiceMydatacenter,
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
@@ -904,6 +1028,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-pagerduty': ServicePagerduty,
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
+  'service-redis': ServiceRedis,
   'service-service-s3': ServiceServiceS,
   'service-servicenow': ServiceServicenow,
   'service-slack': ServiceSlack,
@@ -916,6 +1041,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   service: Service,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
+  spinner: Spinner,
   'step-group': StepGroup,
   'steps-spinner': StepsSpinner,
   'support-account': SupportAccount,

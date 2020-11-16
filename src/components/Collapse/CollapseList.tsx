@@ -4,7 +4,7 @@ import { ListPanelInterface } from './CollapseListPanel'
 
 interface CollapseListProps {
   defaultOpenIndex?: number
-  children: ListPanelInterface | ListPanelInterface[]
+  children: JSX.Element | JSX.Element[]
 }
 
 const CollapseList: React.FC<CollapseListProps> = props => {

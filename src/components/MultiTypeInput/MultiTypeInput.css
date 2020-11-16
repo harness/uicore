@@ -1,7 +1,5 @@
-.select,
-.multiSelect,
 .input {
-  z-index: 2;
+  width: 100%;
 }
 
 .main {
@@ -13,6 +11,12 @@
 
   [class*='TextInput---main'] {
     width: 100%;
+  }
+
+  &.disabled {
+    .btn::before {
+      background: var(--grey-200);
+    }
   }
 }
 
@@ -27,9 +31,22 @@
   justify-content: center;
   align-items: center;
   border-radius: 0 4px 4px 0;
-  border: 1px solid var(--grey-400);
+  border: 1px solid var(--bp3-intent-color, #dddddd);
   border-left: none;
   cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: '';
+    top: 0;
+    height: calc(100% + 0px);
+    width: 10px;
+    transform: translateX(-18px);
+    border-right: 1px solid var(--bp3-intent-color, #dddddd);
+    background: var(--white);
+    border-radius: 4px;
+    position: absolute;
+  }
 
   &.FIXED {
     background: var(--blue-500);

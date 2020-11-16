@@ -101,6 +101,10 @@ export default [
         url: '/modal-example'
       },
       {
+        label: 'Multi Logs Example',
+        url: '/multi-logs-example'
+      },
+      {
         label: 'Steps Progress',
         url: '/steps-progress'
       },
@@ -191,6 +195,14 @@ export default [
       {
         label: 'Carousel',
         url: '/carousel'
+      },
+      {
+        label: 'Pagination',
+        url: '/pagination'
+      },
+      {
+        label: 'MultiLogsViewer',
+        url: '/multi-log-viewer'
       }
     ]
   },
@@ -241,6 +253,14 @@ export default [
       {
         label: 'SelectWithSubview',
         url: '/select-with-subview'
+      },
+      {
+        label: 'CategorizedSelect',
+        url: '/categorized-select'
+      },
+      {
+        label: 'MultiSelectWithSubview',
+        url: '/multiselect-with-subview'
       }
     ]
   },

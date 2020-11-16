@@ -35,13 +35,19 @@ const iconEnums: any = {
   WAIT: 'blank',
   PROCESS: 'steps-spinner',
   DONE: 'tick',
-  ERROR: 'cross'
+  ERROR: 'error'
 }
 
 export function StepsProgress(props: StepsProgressProps) {
   const { steps, current, currentStatus, intent } = props
   const stepSize = 1 / steps.length
-  const calculatedStepSize = current * stepSize
+  let calculatedStepSize = 0
+  if (currentStatus === 'PROCESS') {
+    calculatedStepSize = (current - 1) * stepSize
+  } else {
+    calculatedStepSize = current * stepSize
+  }
+
   const progressBarProps: IProgressBarProps = {
     value: calculatedStepSize,
     stripes: false,

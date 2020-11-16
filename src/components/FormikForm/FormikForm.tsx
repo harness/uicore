@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -6,6 +6,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
+import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import cssRadio from '../Radio/Radio.css'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
@@ -37,8 +38,18 @@ import {
   MultiTypeInput,
   MultiTypeInputProps,
   MultiSelectTypeInputProps,
-  MultiSelectTypeInput
+  MultiSelectTypeInput,
+  MultiTextInputProps,
+  MultiTextInput
 } from '../MultiTypeInput/MultiTypeInput'
+import {
+  CategorizedSelectProps,
+  CategorizedSelect,
+  CategorizedSelectOption
+} from '../CategorizedSelected/CategorizedSelect'
+import { SelectWithSubviewProps, SelectWithSubview } from '../SelectWithSubview/SelectWithSubview'
+import { MultiSelectWithSubviewProps, MultiSelectWithSubview } from '../MultiSelectWithSubView/MultiSelectWithSubView'
+import { MentionsInfo, register, unregister } from '@wings-software/mentions'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -102,6 +113,72 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
   )
 }
 
+interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+  name: string
+  mentionsInfo?: Partial<MentionsInfo>
+  tagsProps?: Partial<ITagInputProps>
+}
+
+type KVAccumulator = { [key: string]: string }
+
+const MENTIONS_DEFAULT: MentionsInfo = {
+  identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
+  trigger: ['$', '${'],
+  rule: '${__match__}',
+  cached: true,
+  data: done => done([])
+}
+
+function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
+  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    inline = formik?.inline,
+    ...rest
+  } = restProps
+  const [mentionsType] = React.useState(`kv-tag-input-${name}}`)
+
+  React.useEffect(() => {
+    register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
+    return () => unregister(mentionsType)
+  }, [])
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <BPTagInput
+        values={Object.keys(formik?.values[name] || {}).map(key => {
+          const value = formik?.values[name][key]
+          return value ? `${key}:${value}` : key
+        })}
+        onChange={(changed: unknown) => {
+          const values: string[] = changed as string[]
+          formik?.setFieldValue(
+            name,
+            values?.reduce((acc, tag) => {
+              const parts = tag.split(':')
+              acc[parts[0]] = parts[1]?.trim() || ''
+              return acc
+            }, {} as KVAccumulator) || {}
+          )
+        }}
+        inputRef={input => {
+          input?.setAttribute('data-mentions', mentionsType)
+        }}
+        onKeyDown={(event: React.KeyboardEvent) => {
+          if (event.keyCode === 13) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+        }}
+        {...tagsProps}
+      />
+    </FormGroup>
+  )
+}
+
 interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
@@ -133,6 +210,7 @@ interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   placeholder?: string
   buttonText?: string
   onChange?: React.FormEventHandler<HTMLInputElement>
+  multiple?: boolean
 }
 
 const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
@@ -147,6 +225,7 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
     fileInput,
     buttonText = i18n.browse,
     onChange,
+    multiple = false,
     ...rest
   } = restProps
   return (
@@ -158,14 +237,16 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
         inputProps={{
           name,
           disabled,
-          value: get(formik?.values, name, '')
+          multiple
         }}
         disabled={disabled}
         onInputChange={(e: React.FormEvent<HTMLInputElement>) => {
-          formik?.setFieldValue(name, e.currentTarget.value)
+          formik?.setFieldValue(name, multiple ? Array.from(e.currentTarget.files || []) : e.currentTarget.files?.[0])
           onChange?.(e)
         }}
-        text={get(formik?.values, name, placeholder)}
+        text={get(formik?.values, name, [{ name: placeholder }])
+          .map((file: File) => file.name)
+          .join(', ')}
       />
     </FormGroup>
   )
@@ -648,8 +729,219 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
   )
 }
 
+interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  onChange?: MultiTextInputProps['onChange']
+  multiTextInputProps?: MultiTextInputProps /* In case you really want to customize the text input */
+}
+
+const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
+  const { formik, name, placeholder, multiTextInputProps, onChange, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    ...rest
+  } = restProps
+  const value = get(formik?.values, name, '')
+  const customMultiTextInputProps: MultiTextInputProps = useMemo(
+    () =>
+      Object.assign({}, multiTextInputProps, {
+        textProps: {
+          value,
+          placeholder,
+          onBlur: () => formik?.setFieldTouched(name)
+        }
+      }),
+    []
+  )
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <MultiTextInput
+        value={value}
+        {...customMultiTextInputProps}
+        onChange={(value, valueType) => {
+          formik?.setFieldValue(name, value)
+          onChange?.(value, valueType)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
+interface FormCategorizedSelect extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  items: CategorizedSelectOption[]
+  onChange?: UiKitSelectProps['onChange']
+  categorizedSelectProps?: CategorizedSelectProps
+}
+
+const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    items = [],
+    placeholder,
+    inline = formik?.inline,
+    categorizedSelectProps,
+    onChange,
+    ...rest
+  } = restProps
+
+  const value = get(formik?.values, name)
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <CategorizedSelect
+        {...categorizedSelectProps}
+        selectProps={{
+          ...categorizedSelectProps?.selectProps,
+          disabled,
+          inputProps: {
+            ...categorizedSelectProps?.selectProps?.inputProps,
+            placeholder
+          }
+        }}
+        items={items}
+        value={value}
+        onChange={(item: CategorizedSelectOption) => {
+          formik?.setFieldValue(name, item.value)
+          onChange?.(item)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
+interface FormSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  items: SelectOption[]
+  changeViewButtonLabel: string
+  subview: SelectWithSubviewProps['subview']
+  onChange?: UiKitSelectProps['onChange']
+  selectWithSubviewProps?: Omit<SelectWithSubviewProps, 'items' | 'subview' | 'onChange' | 'changeViewButtonLabel'>
+}
+
+const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    items = [],
+    placeholder,
+    inline = formik?.inline,
+    selectWithSubviewProps,
+    changeViewButtonLabel,
+    subview,
+    onChange,
+    ...rest
+  } = restProps
+
+  const value = get(formik?.values, name)
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <SelectWithSubview
+        {...selectWithSubviewProps}
+        subview={subview}
+        changeViewButtonLabel={changeViewButtonLabel}
+        disabled={disabled}
+        key={items?.[0]?.label}
+        inputProps={{
+          placeholder,
+          onBlur: () => formik?.setFieldTouched(name)
+        }}
+        items={items}
+        value={items.find(item => item?.value === value)}
+        onChange={(item: SelectOption, e) => {
+          formik?.setFieldValue(name, item.value)
+          onChange?.(item, e)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
+interface FormMultiSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  items: MultiSelectOption[]
+  changeViewButtonLabel: string
+  subview: MultiSelectWithSubviewProps['subview']
+  onChange?: MultiSelectProps['onChange']
+  multiSelectWithSubviewProps?: Omit<
+    MultiSelectWithSubviewProps,
+    'items' | 'subview' | 'onChange' | 'changeViewButtonLabel'
+  >
+}
+
+const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    items = [],
+    placeholder,
+    inline = formik?.inline,
+    multiSelectWithSubviewProps,
+    changeViewButtonLabel,
+    subview,
+    onChange,
+    ...rest
+  } = restProps
+
+  const value: MultiSelectOption[] = get(formik?.values, name)
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <MultiSelectWithSubview
+        {...multiSelectWithSubviewProps}
+        subview={subview}
+        changeViewButtonLabel={changeViewButtonLabel}
+        items={items}
+        key={items?.[0]?.label}
+        value={value}
+        multiSelectProps={{
+          ...multiSelectWithSubviewProps?.multiSelectProps,
+          tagInputProps: {
+            ...multiSelectWithSubviewProps?.multiSelectProps?.tagInputProps,
+            inputProps: {
+              ...multiSelectWithSubviewProps?.multiSelectProps?.tagInputProps?.inputProps,
+              onBlur: () => formik?.setFieldTouched(name)
+            },
+            intent,
+            disabled
+          },
+          onChange: (selectedItems: MultiSelectOption[]) => {
+            formik?.setFieldValue(name, selectedItems)
+            onChange?.(selectedItems)
+          },
+          placeholder
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 export const FormInput = {
   TagInput: connect(TagInput),
+  KVTagInput: connect(KVTagInput),
   CustomRender: connect(CustomRender),
   FileInput: connect(FileInput),
   RadioGroup: connect(RadioGroup),
@@ -661,7 +953,11 @@ export const FormInput = {
   ColorPicker: connect(FormColorPicker),
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
-  MultiSelectTypeInput: connect(FormMultiSelectTypeInput)
+  MultiTextInput: connect(FormMultiTextTypeInput),
+  MultiSelectTypeInput: connect(FormMultiSelectTypeInput),
+  CategorizedSelect: connect(FormCategorizedSelect),
+  SelectWithSubview: connect(FormSelectWithSubview),
+  MultiSelectWithSubview: connect(FormMultiSelectWithSubview)
 }
 
 export const FormikForm = connect(Form)

@@ -1,0 +1,10 @@
+.container {
+  border-top: 1px solid var(--grey-200);
+}
+.text {
+  color: var(--grey-400);
+
+  strong {
+    color: var(--black);
+  }
+}

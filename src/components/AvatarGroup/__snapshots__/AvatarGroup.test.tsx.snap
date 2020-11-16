@@ -34,7 +34,7 @@ exports[`Render basic component should check snapshot with Avatar props with add
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(30, 55, 153);"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(235, 47, 6);"
       >
         GH
       </div>
@@ -54,7 +54,7 @@ exports[`Render basic component should check snapshot with Avatar props with add
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(164, 176, 190);"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(229, 142, 38);"
       >
         CH
       </div>
@@ -64,7 +64,7 @@ exports[`Render basic component should check snapshot with Avatar props with add
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(255, 107, 129);"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(30, 55, 153);"
       >
         AS
       </div>
@@ -97,7 +97,7 @@ exports[`Render basic component should check snapshot with Avatar props without 
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(229, 142, 38);"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(30, 55, 153);"
       >
         GH
       </div>
@@ -127,7 +127,7 @@ exports[`Render basic component should check snapshot with Avatar props without 
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(235, 47, 6);"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(229, 142, 38);"
       >
         AS
       </div>

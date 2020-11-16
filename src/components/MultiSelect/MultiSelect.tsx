@@ -36,6 +36,7 @@ export interface MultiSelectProps
   tagRenderer?: Props['tagRenderer']
   createNewItemFromQuery?: Props['createNewItemFromQuery']
   allowCreatingNewItems?: boolean
+  onPopoverClose?: (node: HTMLElement) => void
 }
 
 export function NoMatch() {
@@ -43,7 +44,7 @@ export function NoMatch() {
 }
 
 export function MultiSelect(props: MultiSelectProps) {
-  const { onChange, value, items: _items, ...rest } = props
+  const { onChange, value, items: _items, onPopoverClose, ...rest } = props
   const [query, setQuery] = React.useState(props.query || '')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? _items : [])
@@ -98,6 +99,10 @@ export function MultiSelect(props: MultiSelectProps) {
       setSelectedItems(value)
     }
   }, [value])
+
+  React.useEffect(() => {
+    setQuery(props.query || '')
+  }, [props.query])
 
   function itemRenderer(item: MultiSelectOption, rendererProps: IItemRendererProps): JSX.Element | null {
     if (!rendererProps.modifiers.matchesPredicate) {
@@ -211,7 +216,8 @@ export function MultiSelect(props: MultiSelectProps) {
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: css.main,
-        popoverClassName: css.popover
+        popoverClassName: css.popover,
+        onClosed: onPopoverClose
       }}
     />
   )

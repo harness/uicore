@@ -1,0 +1,36 @@
+# Pagination --- docs/pages/pagination.mdx
+
+## Import
+
+```js
+import { Pagination } from '@wings-software/uikit'
+```
+
+```js
+interface PaginationProps {
+  pageSize: number
+  pageIndex: number
+  pageCount: number
+  itemCount: number
+  gotoPage: (index: number) => void
+  nextPage: () => void
+  pageCountClamp?: number
+}
+```
+
+```js live=true
+<Pagination
+  pageSize={10}
+  pageIndex={0}
+  pageCount={5}
+  itemCount={50}
+  gotoPage={pageNumber => {
+    // fetch data for pageNumber
+    console.log(pageNumber)
+  }}
+  nextPage={pageNumber => {
+    // fetch data for pageNumber
+    console.log(pageNumber)
+  }}
+/>
+```

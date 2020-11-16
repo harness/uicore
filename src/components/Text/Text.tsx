@@ -13,6 +13,9 @@ export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, Styled
   // See more: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp
   lineClamp?: number
 
+  /** When true, tooltip will always be shown (even in case lineClamp event is not triggered: no `...` is rendered)  */
+  alwaysShowTooltip?: boolean
+
   /** Left icon */
   icon?: IconName
 
@@ -29,16 +32,13 @@ export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, Styled
 export function Text(props: TextProps) {
   const Tag = (props.inline ? 'span' : 'p') as React.ElementType
   const [tooltip, setTooltip] = useState(props.tooltip)
-  const lineClamp = !props.tooltip ? props.lineClamp : null
-  const extraClass = lineClamp === 1 ? css.single : lineClamp ? css.multiple : undefined
+  const lineClamp = props.lineClamp
   const style = { ...props.style }
   const ref = useRef<HTMLElement>()
-  const { icon, iconProps, rightIcon, rightIconProps } = props
+  const { icon, iconProps, rightIcon, rightIconProps, alwaysShowTooltip } = props
 
-  if (lineClamp && extraClass) {
-    if (lineClamp > 1) {
-      ;(style as any)['--text-line-clamp'] = lineClamp // eslint-disable-line
-    }
+  if (lineClamp) {
+    ;(style as any)['--text-line-clamp'] = lineClamp // eslint-disable-line
   }
 
   if (icon || rightIcon) {
@@ -47,21 +47,32 @@ export function Text(props: TextProps) {
   }
 
   useLayoutEffect(() => {
-    const heightDifference = (ref.current?.scrollHeight || 0) - (ref.current?.offsetHeight || 0)
-    const widthDifference = (ref.current?.scrollWidth || 0) - (ref.current?.offsetWidth || 0)
-    // Reason to consider difference more than 1 px is
-    // If height is 18.2 Px, chrome taking scrollHeight as 18px and firefox take this as 19px
-    // where as offsetHeight both take it as 18px
-    if (extraClass && (heightDifference > 1 || widthDifference > 1)) {
-      setTooltip(props.children as JSX.Element)
+    const renderTooltip = () => {
+      const heightDifference = (ref.current?.scrollHeight || 0) - (ref.current?.offsetHeight || 0)
+      const widthDifference = (ref.current?.scrollWidth || 0) - (ref.current?.offsetWidth || 0)
+      // Reason to consider difference more than 1 px is
+      // If height is 18.2 Px, chrome taking scrollHeight as 18px and firefox take this as 19px
+      // where as offsetHeight both take it as 18px
+      if (lineClamp && lineClamp > 0 && (heightDifference > 1 || widthDifference > 1)) {
+        setTooltip(props.tooltip || (props.children as JSX.Element))
+      } else {
+        setTooltip(undefined)
+      }
+    }
+
+    renderTooltip()
+    addEventListener('resize', renderTooltip)
+
+    return () => {
+      removeEventListener('resize', renderTooltip)
     }
   }, [props.children, props.tooltip, props.tooltipProps])
 
   useEffect(() => {
-    if (props.tooltip) {
+    if ((!lineClamp || alwaysShowTooltip) && props.tooltip) {
       setTooltip(props.tooltip)
     }
-  }, [props.tooltip])
+  }, [lineClamp, props.tooltip, alwaysShowTooltip])
 
   return (
     <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
@@ -76,7 +87,7 @@ export function Text(props: TextProps) {
           'rightIcon',
           'rightIconProps'
         )}
-        className={styledClasses(props, styledCSS.font, extraClass)}
+        className={styledClasses(props, styledCSS.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
         ref={ref}>
         {icon && <Icon name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}

@@ -6,7 +6,7 @@ import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
 import { Icon, IconName } from '../../icons/Icon'
 import { Color } from '../../core/Color'
-import { Position, Menu, PopoverInteractionKind } from '@blueprintjs/core'
+import { Position, Menu, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { register, unregister, MentionsInfo } from '@wings-software/mentions'
 import i18nBase from './MultiTypeInput.i18n'
@@ -32,7 +32,7 @@ const TypeIcon: Record<string, IconName> = {
   EXPRESSION: 'expression-input'
 }
 
-const RUNTIME_INPUT_VALUE = '{input}'
+const RUNTIME_INPUT_VALUE = '${input}'
 const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
@@ -44,13 +44,14 @@ const MENTIONS_DEFAULT: MentionsInfo = {
 
 type AcceptableValue = string | SelectOption | MultiSelectOption[]
 
-interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
+export interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
   width?: number
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
-  onChange?: (value: string | SelectOption | MultiSelectOption[] | undefined, type: MultiTypeInputValue) => void
+  onChange?: (value: AcceptableValue | undefined, type: MultiTypeInputValue) => void
   i18n?: I18nResource
+  btnClassName?: string
   allowableTypes?: MultiTypeInputType[]
   fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
 }
@@ -61,19 +62,23 @@ export interface MultiTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps,
   selectProps?: SelectProps
 }
 
+export interface MultiTextInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
+  textProps?: IInputGroupProps & HTMLInputProps
+}
+
 export interface MultiSelectTypeInputProps extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent'> {
   multiSelectProps?: MultiSelectProps
 }
 
 const isValueAnExpression = (value: string) => /^\${.*}$/.test(value)
 
-const valueToType = (
+export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
   allowableTypes?: MultiTypeInputType[]
 ): MultiTypeInputType => {
   if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
-    if (value === RUNTIME_INPUT_VALUE) return MultiTypeInputType.RUNTIME
+    if (value.startsWith(RUNTIME_INPUT_VALUE)) return MultiTypeInputType.RUNTIME
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
   }
   if (!value && allowableTypes?.length) {
@@ -82,7 +87,7 @@ const valueToType = (
   return MultiTypeInputType.FIXED
 }
 
-function ExpressionAndRuntimeType({
+export function ExpressionAndRuntimeType({
   value,
   width,
   mentionsInfo,
@@ -90,11 +95,12 @@ function ExpressionAndRuntimeType({
   onChange,
   i18n: _i18n = {},
   fixedTypeComponent,
+  btnClassName = '',
   allowableTypes,
   ...layoutProps
 }: ExpressionAndRuntimeTypeProps) {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
-  const [type, setType] = useState<MultiTypeInputType>(valueToType(value))
+  const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [inputValue, setInputValue] = useState<ExpressionAndRuntimeTypeProps['value']>(value)
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const allowedTypes = useMemo(() => {
@@ -161,7 +167,10 @@ function ExpressionAndRuntimeType({
   }, [type])
 
   return (
-    <Layout.Horizontal className={css.main} width={width} {...layoutProps}>
+    <Layout.Horizontal
+      className={cx(css.main, type === MultiTypeInputType.RUNTIME && css.disabled)}
+      width={width}
+      {...layoutProps}>
       {type === MultiTypeInputType.FIXED && <FixedTypeComponent onChange={fixedComponentOnChangeCallback} />}
       {type === MultiTypeInputType.RUNTIME && (
         <TextInput
@@ -188,7 +197,7 @@ function ExpressionAndRuntimeType({
       )}
       <Button
         noStyling
-        className={cx(css.btn, css[type])}
+        className={cx(css.btn, css[type], btnClassName)}
         tooltip={menu}
         onClick={e => e.preventDefault()}
         tooltipProps={{
@@ -217,6 +226,27 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ selectProps, ...
       )
     },
     [selectProps]
+  )
+  return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
+}
+
+export const MultiTextInput: React.FC<MultiTextInputProps> = ({ textProps, ...rest }) => {
+  const { value = '', ...restProps } = textProps || {}
+  const fixedTypeComponent = useCallback(
+    (props: FixedTypeComponentProps) => {
+      const { onChange } = props
+      return (
+        <InputGroup
+          className={css.input}
+          {...restProps}
+          defaultValue={value}
+          onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
+            onChange?.(event.target.value, MultiTypeInputValue.STRING)
+          }}
+        />
+      )
+    },
+    [textProps?.value]
   )
   return <ExpressionAndRuntimeType {...rest} fixedTypeComponent={fixedTypeComponent} />
 }

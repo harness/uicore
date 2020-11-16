@@ -5,6 +5,13 @@
       circle {
         fill: currentColor;
       }
+
+      &[fill='none'] {
+        path,
+        circle {
+          fill: none;
+        }
+      }
     }
   }
 

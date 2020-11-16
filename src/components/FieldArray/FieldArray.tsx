@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import cx from 'classnames'
 import { Button } from '../Button/Button'
 import { Layout } from '../../../src/layouts/Layout'
 import { connect, FormikContext } from 'formik'
@@ -30,6 +31,8 @@ interface Props {
   name: string
   isDeleteOfRowAllowed?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
   onChange?: (params: object) => void
+  labelProps?: React.HTMLAttributes<HTMLElement>
+  containerProps?: React.HTMLAttributes<HTMLElement>
 }
 
 interface ConnectedProps extends Props {
@@ -100,9 +103,11 @@ function FieldArray(props: ConnectedProps) {
   }
 
   return (
-    <div className={css.container}>
+    <div {...props.containerProps} className={cx(css.container, props.containerProps?.className)}>
       <Layout.Horizontal className={css.title}>
-        <span className={css.text}>{label}</span>
+        <span {...props.labelProps} className={cx(css.text, props.labelProps?.className)}>
+          {label}
+        </span>
         {value.length > 0 ? (
           <Button minimal text={addLabel} intent="primary" icon="plus" onClick={addRow} data-id={'btn-add'} />
         ) : null}

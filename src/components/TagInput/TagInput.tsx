@@ -90,6 +90,15 @@ function FailToFetch({ error, retry }: { error: string; retry: () => void }) {
   )
 }
 
+const getId = (item: string | { value: string } | any) => (typeof item === 'object' ? item.value : item)
+
+const getLabelFromItems = (
+  item: string | { value: string; label: string } | any,
+  items: string[] | Array<{ value: string; label: string }> | any[] = []
+) => items.find(i => (typeof i === 'object' ? i?.value === item : i === item))?.label || item
+
+const getLabel = (item: string | { label: string } | any) => (typeof item === 'object' ? item.label : item)
+
 export function TagInput<T>(props: TagInputProps<T>) {
   const {
     selectedItems: _selectedItems,
@@ -134,12 +143,14 @@ export function TagInput<T>(props: TagInputProps<T>) {
   const onItemSelect = useCallback(
     (item: T) => {
       const index = selectedItems.findIndex(_item => keyOf(_item) === keyOf(item))
-
+      item = getId(item)
       if (index >= 0) {
+        // item was already selected before
         const newSelectedItems = selectedItems.filter((_v, _index) => _index !== index)
         setSelectedItems(newSelectedItems)
         onChange?.(newSelectedItems, createdItems, items)
       } else if (items.find(_item => keyOf(_item) === keyOf(item))) {
+        // item is contained inside items
         const _selectedItems = selectedItems.concat(item)
         setSelectedItems(_selectedItems)
         onChange?.(_selectedItems, createdItems, items)
@@ -249,7 +260,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
         return (
           <MenuItem
             key={keyOf(item)}
-            text={labelFor(item)}
+            text={labelFor(getLabel(item))}
             icon={isItemSelected(item) ? 'tick' : 'blank'}
             onClick={itemProps.handleClick}
             active={itemProps.modifiers.active}
@@ -259,7 +270,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
       createNewItemFromQuery={(allowNewTag && itemFromNewTag) || undefined}
       createNewItemRenderer={renderCreateNewTag}
       onItemSelect={onItemSelect}
-      tagRenderer={(item: T) => labelFor(item)}
+      tagRenderer={(item: T) => labelFor(getLabelFromItems(item, items))}
       tagInputProps={{
         disabled: readonly,
         onRemove: (_value: string, index: number) => {
@@ -283,6 +294,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
         minimal: true,
         usePortal: !isNext
       }}
+      resetOnSelect={true}
       {...options}
     />
   )

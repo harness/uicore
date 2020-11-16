@@ -1,18 +1,21 @@
 import React, { useState, useLayoutEffect, useRef, useCallback, RefObject } from 'react'
 import { Container } from '../Container/Container'
 import { Heading } from '../Heading/Heading'
-import { Button } from '../Button/Button'
+import { Link } from '../Link/Link'
 import css from './StackTraceList.css'
 import cx from 'classnames'
 import { Color } from '../../core/Color'
+import { Text } from '../Text/Text'
+
+type StackTrace = string | { timestamp?: string; stackTrace?: string }
 
 export interface StackTracePanelProps {
-  stackTrace: string
+  stackTrace: string | { timestamp?: string; stackTrace?: string }
   className?: string
 }
 
 export interface StackTraceListProps {
-  stackTraceList: string[]
+  stackTraceList: StackTrace[]
   heading?: string
   listContainerHeight?: number
   className?: string
@@ -37,22 +40,34 @@ export function StackTracePanel(props: StackTracePanelProps) {
   const textContentRef = useRef<HTMLPreElement>(null)
   const isExpandible = useExpandibleHook(textContentRef)
 
+  let stackTraceString = stackTrace
+  let timestamp: string | undefined = undefined
+  if (typeof stackTrace === 'object') {
+    stackTraceString = stackTrace.stackTrace || ''
+    timestamp = stackTrace.timestamp
+  }
+
   return (
     <Container className={cx(css.panel, className)}>
-      <Container className={css.textContainer}>
+      <Container className={cx(css.textContainer, isExpandible ? css.isExpandible : undefined)}>
+        {timestamp && <Text className={css.timestamp}>{timestamp}</Text>}
         <pre className={css.textContent} data-is-collapsed={isCollapsed} ref={textContentRef}>
-          {stackTrace}
+          {stackTraceString}
         </pre>
       </Container>
       {isExpandible && (
-        <Button
+        <Link
+          withoutHref={true}
           minimal
-          width={100}
           intent="primary"
+          className={css.collapseButtonText}
           icon={isCollapsed ? 'double-chevron-down' : 'double-chevron-up'}
+          iconProps={{
+            size: 12
+          }}
           onClick={onCollapseHandler()}>
           {isCollapsed ? 'Show All' : 'Collapse'}
-        </Button>
+        </Link>
       )}
     </Container>
   )
@@ -68,9 +83,13 @@ export function StackTraceList(props: StackTraceListProps) {
         </Heading>
       )}
       <Container className={css.listContainer} height={listContainerHeight}>
-        {stackTraceList.map(stackTrace =>
-          stackTrace?.length ? (
-            <StackTracePanel key={stackTrace} stackTrace={stackTrace} className={stackTracePanelClassName} />
+        {stackTraceList.map(stackTraceObj =>
+          stackTraceObj ? (
+            <StackTracePanel
+              key={typeof stackTraceObj === 'string' ? stackTraceObj : stackTraceObj.stackTrace}
+              stackTrace={stackTraceObj}
+              className={stackTracePanelClassName}
+            />
           ) : (
             undefined
           )

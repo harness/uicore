@@ -2,10 +2,277 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.1.9 07/27/20
+## 1.1.76 11/16/20
 
-- `Added` Avatar, AvatarGroup components and report icon.
-- `Added` Report icon.
+- `Added` Avatar, AvatarGroup components
+
+## 1.1.74 - 11/09/20
+
+- `Updated` StepWizard component
+
+## 1.1.73 - 11/09/20
+
+- `Added` gcr and pipeline-build-select icons
+
+## 1.1.72 - 11/06/20
+
+- `Added` plugin icon
+
+## 1.1.71 - 11/04/20
+
+- `Added` KVTagInput Component
+
+## 1.1.70 - 11/02/20
+
+- `Added` MultiLogsViewer component.
+
+## 1.1.69 - 10/29/20
+
+- `Added` cd, cv, cf, ci and ce icons
+
+## 1.1.68 - 10/23/20
+
+- `Added` service-redis and service-mongodb icons
+
+## 1.1.67 - 10/21/20
+
+- `Added` info icon
+
+## 1.1.66 - 10/16/20
+
+- `Added` custom-service icon
+
+## 1.1.65 - 10/14/20
+
+- `Added` pipeline-build icon
+
+## 1.1.64 - 10/09/20
+
+- `Fixed` icons fill color
+
+## 1.1.63 - 10/06/20
+
+- `Added` icon capability to circular percentage
+
+## 1.1.62 - 10/03/20
+
+- `Added` execution icons
+
+## 1.1.61 - 10/02/20
+
+- `Fixed` Scroll in Input With Identifier
+
+## 1.1.60 - 10/01/20
+
+- `Fixed` Pipeline Deploy Icon
+
+## 1.1.59 - 10/01/20
+
+- `Modified` Styling changes to Input With Identifier
+
+## 1.1.58 - 10/01/20
+
+- `Added` Modified InputWithIdentifier
+
+## 1.1.57 - 09/30/20
+
+- `Updated` DurationInput to add space between units for valueInTimeFormat
+
+## 1.1.56 - 09/29/20
+
+- `Added` Icons added
+
+## 1.1.55 - 09/30/20
+
+- `Fixed` Collapse component to take latest isOpen Prop
+
+## 1.1.54 - 09/28/20
+
+- `Updated` DurationInput to support time in format and variables
+
+## 1.1.53 - 09/28/20
+
+- `Changed` Added types for masonry layout.
+
+## 1.1.52 - 09/22/20
+
+- `Removed` some unused properties from svg icons.
+
+## 1.1.51 - 09/22/20
+
+- `Changed` Spinner icon to have better animation.
+
+## 1.1.50 - 09/22/20
+
+- `Added` Pending icon.
+
+## 1.1.49 - 09/22/20
+
+- `Added` Spinner icon.
+
+## 1.1.48 - 09/22/20
+
+- `Added` Font support for CircularPercentageChart
+
+## 1.1.47 - 09/16/20
+
+- `Added` ConfirmActionButton component.
+
+## 1.1.46 - 09/16/20
+
+- `Added` - Add support for items of label value to SimpleTagInput TagInput
+
+## 1.1.45 - 09/15/20
+
+- `Changed` Text component to render custom tooltip when lineclamp is passed.
+
+## 1.1.44 - 09/14/20
+
+- `Changed` Text lineclamp to support fluid width.
+
+## 1.1.43 - 09/11/20
+
+- `Added` Add hourglass and gear icons.
+
+## 1.1.42 - 09/07/20
+
+- `Added` - Add 'round' prop to Button component
+
+## 1.1.41 - 09/04/20
+
+- `Updated` Runtime Input ExpressionAndRuntimeType value
+
+## 1.1.40 - 09/04/20
+
+- `Updated` and exported ExpressionAndRuntimeType to be used for any input type
+
+## 1.1.39 - 09/01/20
+
+- `Added` fix to use props classname
+
+# 1.1.38 - 09/02/20
+
+- `Added` bitbucket, resources, pipelines icons
+
+## 1.1.37 - 09/01/20
+
+- `Added` check, profile, remove icons
+
+## 1.1.36 - 09/01/20
+
+- `Fixed` options icon alignment and size fix
+
+## 1.1.35 - 08/27/20
+
+- `Fixed` Layout.Masonry renders cards in 1 column when new collection is passed.
+
+## 1.1.34 - 08/26/20
+
+- `Fixed` MutiTextInput to support {input}.allowedValues(20, 24)
+
+## 1.1.33 - 08/26/20
+
+- `Added` MutiTextInput Component and Formik version as well
+
+## 1.1.32 - 08/25/20
+
+- `Fixed` lack re-render items issue for MultiSelectWithSubview and SelectWithSubview in Formik
+
+## 1.1.31 - 08/24/20
+
+- `Added` MultiSelectWithSubview and SelectWithSubview in Formik
+
+## 1.1.30 - 08/24/20
+
+- `Updated` Card and Card Select to have disabled props
+
+## 1.1.29 - 08/24/20
+
+- `Fixed` secret-ssh and secret-manager icon sizes
+
+## 1.1.28 - 08/24/20
+
+- `Added` secret-ssh and secret-manager icons
+
+## 1.1.27 - 08/20/20
+
+- `Added` MultiSelectWithSubView component
+
+## 1.1.26 - 08/20/20
+
+- `Changed` `FieldArray` add `containerProps` and `labelProps`
+
+## 1.1.25 - 08/18/20
+
+- `Changed` `Pagination` no longer throws for invalid props
+
+## 1.1.24 - 08/14/20
+
+- `Fixed` `StepsProgress` progess bar status.
+
+## 1.1.23 - 08/13/20
+
+- `Added` `ModalErrorHandler` in UIKit exports.
+
+## 1.1.22 - 08/13/20
+
+- `Added` useEffect to update query from props in Multiselect
+
+## 1.1.21 - 08/12/20
+
+- `Added` Pagination component
+
+## 1.1.20 - 08/06/20
+
+- `Fixed` creation option for formik cateforized select
+- `Fixed` submit button click propagation
+
+## 1.1.19 - 08/06/20
+
+- `Added` Categorized Select to formik
+- `Changed` css for stack trace list and added time stamp property
+
+## 1.1.18 - 08/06/20
+
+- `Added` options icon
+
+## 1.1.17 - 08/04/20
+
+- `Changed` prop type for
+
+## 1.1.16 - 08/04/20
+
+- `Added` key-main icon
+
+## 1.1.15 - 08/03/20
+
+- `Added` Categorized select dropdown
+
+## 1.1.14 - 08/03/20
+
+- `Modified` StepWizard to pass classes to Steps and Nav
+- `Fixed` Carousels Margin issue on first image
+
+## 1.1.13 - 07/30/20
+
+- `Fixed` FormikForm.FileInput now actually works
+
+## 1.1.12 - 07/30/20
+
+- `Fixed` color variables referenced in wingsui not reachable under `:root`.
+
+## 1.1.11 - 07/29/20
+
+- `Added` report-icon
+
+## 1.1.10 - 07/29/20
+
+- `Added` polygon icon
+
+## 1.1.9 - 07/27/20
+
+- `Changed` `TagInput`'s `resetOnSelect` to `true` by default.
+- `Removed` NextGen color scheme in UIKit docs.
 
 ## 1.1.8 - 07/25/20
 

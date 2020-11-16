@@ -1,5 +1,6 @@
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
+import 'xterm/css/xterm.css'
 import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
@@ -9,7 +10,8 @@ const Layout = dynamic(() => import('../shared/Layout'), { ssr: false })
 
 export default class extends App {
   componentDidMount() {
-    document.querySelector('body').dataset.ng = true
+    // Disable new color scheme until it's reviewed and finalized
+    // document.body.classList.add('ng')
   }
 
   render() {

@@ -1,0 +1,28 @@
+.container {
+  --background: #24292e;
+  --header-selected: #2f363d;
+
+  background: var(--background) !important;
+  padding: var(--spacing-small) !important;
+
+  .section {
+    .sectionHeader {
+      padding: var(--spacing-small) !important;
+      padding-left: 18px !important;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &.isOpen {
+        background: var(--header-selected) !important;
+      }
+
+      .chevron {
+        transform: translateX(-4px);
+      }
+    }
+
+    .term {
+      padding: var(--spacing-xsmall) 0 !important;
+    }
+  }
+}

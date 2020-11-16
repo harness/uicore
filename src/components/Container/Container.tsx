@@ -7,13 +7,13 @@ export interface ContainerProps extends Assign<HTMLAttributes<HTMLDivElement>, S
   tag?: keyof JSX.IntrinsicElements
 }
 
-export function Container(props: ContainerProps) {
+export const Container = React.forwardRef(function Container(props: ContainerProps, ref) {
   const { tag = 'div', children } = props
   const Tag = tag as React.ElementType
 
   return (
-    <Tag {...omitStyledProps(props)} className={styledClasses(props, styledClass.font)}>
+    <Tag {...omitStyledProps(props, 'ref')} className={styledClasses(props, styledClass.font)} ref={ref}>
       {children}
     </Tag>
   )
-}
+})

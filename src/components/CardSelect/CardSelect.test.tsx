@@ -9,6 +9,7 @@ interface Data {
   text: string
   value: string
   icon: IconName
+  disabled?: boolean
 }
 
 const data: Data[] = [
@@ -74,6 +75,12 @@ describe('Test render Radio Select', () => {
   })
   test('should render with selected values', () => {
     const { container } = render(<CardSelect {...getDefaultProps(data[2])} />)
+    expect(container).toMatchSnapshot()
+  })
+  test('should render with disabled value', () => {
+    const props = getDefaultProps()
+    props.data[2] = { ...props.data[2], disabled: true }
+    const { container } = render(<CardSelect {...props} />)
     expect(container).toMatchSnapshot()
   })
   test('should handle on change Event', async () => {
