@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render basic component should check snapshot with Avatar props with add button 1`] = `
+<div>
+  <div
+    class="stack"
+  >
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: rgb(37, 166, 247); background-color: rgb(228, 231, 235);"
+      >
+        +
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px;"
+      >
+        <img
+          alt=""
+          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+          style="display: block; border-radius: 100%; width: 36px; height: 36px;"
+        />
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(30, 55, 153);"
+      >
+        GH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(120, 224, 143);"
+      >
+        EF
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(164, 176, 190);"
+      >
+        CH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(255, 107, 129);"
+      >
+        AS
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render basic component should check snapshot with Avatar props without add button 1`] = `
+<div>
+  <div
+    class="stack"
+  >
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px;"
+      >
+        <img
+          alt=""
+          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+          style="display: block; border-radius: 100%; width: 36px; height: 36px;"
+        />
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(229, 142, 38);"
+      >
+        GH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(7, 153, 146);"
+      >
+        E
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(229, 142, 38);"
+      >
+        CH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar"
+    >
+      <div
+        class="AvatarInner"
+        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: rgb(235, 47, 6);"
+      >
+        AS
+      </div>
+    </div>
+  </div>
+</div>
+`;

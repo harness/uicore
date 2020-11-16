@@ -1,0 +1,10 @@
+.stack {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+.noStack {
+  display: inline-flex;
+}
+.stackAvatar:not(:last-child) {
+  margin-left: -13px;
+}

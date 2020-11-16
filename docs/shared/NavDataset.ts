@@ -53,6 +53,10 @@ export default [
         url: '/avatar'
       },
       {
+        label: 'AvatarGroup',
+        url: '/avatar-group'
+      },
+      {
         label: 'Heading',
         url: '/heading'
       },

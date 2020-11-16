@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.1.9 07/27/20
 
-- `Added` Avatar component and report icon.
+- `Added` Avatar, AvatarGroup components and report icon.
 - `Added` Report icon.
 
 ## 1.1.8 - 07/25/20
