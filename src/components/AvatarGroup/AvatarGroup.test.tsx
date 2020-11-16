@@ -7,12 +7,14 @@ describe('Render basic component', () => {
       <AvatarGroup
         onAdd={() => {}}
         avatars={[
-          { name: 'Aahn Boe SS' },
-          { email: 'CohnDoe.com.HD@harnes.io' },
-          { name: 'Eahn Foe' },
-          { name: 'Gahn Hoe' },
+          { name: 'Aahn Boe SS', color: 'red' },
+          { email: 'CohnDoe.com.HD@harnes.io', color: 'red' },
+          { name: 'Eahn Foe', color: 'red' },
+          { name: 'Gahn Hoe', color: 'red' },
           {
-            src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg'
+            src:
+              'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg',
+            color: 'red'
           }
         ]}
       />
@@ -23,12 +25,14 @@ describe('Render basic component', () => {
     const { container } = render(
       <AvatarGroup
         avatars={[
-          { name: 'Aahn Boe SS' },
-          { email: 'CohnDoe.com.HD@harnes.io' },
-          { name: 'EahnFoe' },
-          { name: 'Gahn Hoe' },
+          { name: 'Aahn Boe SS', color: 'red' },
+          { email: 'CohnDoe.com.HD@harnes.io', color: 'red' },
+          { name: 'EahnFoe', color: 'red' },
+          { name: 'Gahn Hoe', color: 'red' },
           {
-            src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg'
+            src:
+              'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg',
+            color: 'red'
           }
         ]}
       />
