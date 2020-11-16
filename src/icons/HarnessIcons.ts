@@ -6,6 +6,7 @@ import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
@@ -78,6 +79,7 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Down from './down.svg'
+import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -91,6 +93,7 @@ import Gcr from './gcr.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
+import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -365,6 +368,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'azure-kubernetes-service'
   | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
@@ -437,6 +441,7 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'down'
+  | 'elastic-kubernetes-service'
   | 'execution-abort'
   | 'execution-input'
   | 'execution-rollback'
@@ -450,6 +455,7 @@ type HarnessIconName =
   | 'gear'
   | 'git-clone-step'
   | 'github'
+  | 'google-kubernetes-engine'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white'
@@ -724,6 +730,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'azure-kubernetes-service': AzureKubernetesService,
   bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
@@ -796,6 +803,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   down: Down,
+  'elastic-kubernetes-service': ElasticKubernetesService,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
@@ -809,6 +817,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gear: Gear,
   'git-clone-step': GitCloneStep,
   github: Github,
+  'google-kubernetes-engine': GoogleKubernetesEngine,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
