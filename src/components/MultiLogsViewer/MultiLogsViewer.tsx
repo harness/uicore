@@ -10,7 +10,7 @@ import { FlexExpander } from '../FlexExpander/FlexExpander'
 import css from './MultiLogsViewer.css'
 import cx from 'classnames'
 import { Color } from '../../core/Color'
-
+import 'xterm/css/xterm.css'
 const DEFAULT_SCROLLBACK_LINES = 1000
 
 export interface LogSectionProps {
