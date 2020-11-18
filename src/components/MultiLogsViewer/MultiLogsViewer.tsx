@@ -38,9 +38,9 @@ export interface LogSectionProps {
   highlightedIndex?: number
 
   /* update panel to either collapse/expand  */
-  updateSection: (currentIndex: number, prevIndex: number) => void
+  updateSection?: (currentIndex: number, prevIndex: number) => void
   /* active panel - panel which is expanded */
-  activePanel: number
+  activePanel?: number
 }
 
 export interface MultiLogsViewerProps extends ContainerProps {
@@ -72,9 +72,9 @@ export interface MultiLogsViewerProps extends ContainerProps {
   /** Current highlighted index of search result */
   highlightedIndex?: number
   /* update panel to either collapse/expand  */
-  updateSection: (currentIndex: number, prevIndex: number) => void
+  updateSection?: (currentIndex: number, prevIndex: number) => void
   /* active panel - panel which is expanded */
-  activePanel: number
+  activePanel?: number
   /* Section Arr - this indicates if the section is expanded or collapsed  */
   sectionArr: boolean[]
 }
@@ -89,7 +89,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
   isOpen: isSectionOpen,
   searchDir = '',
   highlightedIndex = -1,
-  activePanel,
+  activePanel = -1,
   updateSection = () => {}
 }) => {
   const [isOpen, setIsOpen] = useState(isSectionOpen)
@@ -144,16 +144,18 @@ export const LogSection: React.FC<LogSectionProps> = ({
       the next selection is at 0 and the current Selection is at the last row 
       then expand the next section
     */
-    if (currentSelection === 0 && prevSelection === totalRows - 1) {
-      updateSection(activePanel, activePanel + 1)
-      setIsOpen(false)
-    } else if (currentSelection === totalRows - 1 && prevSelection === 0) {
-      /* If the search dir is prev  
+    if (activePanel > -1) {
+      if (currentSelection === 0 && prevSelection === totalRows - 1) {
+        updateSection(activePanel, activePanel + 1)
+        setIsOpen(false)
+      } else if (currentSelection === totalRows - 1 && prevSelection === 0) {
+        /* If the search dir is prev  
      the nextRow is 4 and prevSelection is 0
     then expand the prev section
   */
-      updateSection(activePanel, activePanel - 1)
-      setIsOpen(false)
+        updateSection(activePanel, activePanel - 1)
+        setIsOpen(false)
+      }
     }
   }, [currentSelection])
 
@@ -259,7 +261,9 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
               searchDir={searchDir}
               highlightedIndex={highlightedIndex}
               updateSection={(currentIndex, nextIndex) => {
-                updateSection(currentIndex, nextIndex)
+                if (updateSection) {
+                  updateSection(currentIndex, nextIndex)
+                }
                 setPanelArr([...sectionArr])
               }}
               activePanel={activePanel}
