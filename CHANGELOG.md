@@ -2,9 +2,24 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
-## 1.1.76 11/16/20
+## 1.1.82 11/168/20
 
 - `Added` Avatar, AvatarGroup components
+## 1.1.81 - 18/11/20
+
+- `Added` gcs and docker-hub icons
+
+## 1.1.79 - 16/11/20
+
+- `Added` fix for k8s service icons
+
+## 1.1.77 - 16/11/20
+
+- `Added` pipeline-stage-selection-caret icons
+
+## 1.1.76 - 16/11/20
+
+- `Updated` Added kubernetes service icons
 
 ## 1.1.74 - 11/09/20
 

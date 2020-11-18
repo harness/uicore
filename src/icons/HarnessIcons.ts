@@ -6,6 +6,7 @@ import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
@@ -77,7 +78,9 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import DockerHub from './docker-hub.svg'
 import Down from './down.svg'
+import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -88,9 +91,11 @@ import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
 import Gcr from './gcr.svg'
+import Gcs from './gcs.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
+import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -242,6 +247,7 @@ import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
 import PipelineNg from './pipeline-ng.svg'
+import PipelineStageSelectionCaret from './pipeline-stage-selection-caret.svg'
 import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
@@ -365,6 +371,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'azure-kubernetes-service'
   | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
@@ -436,7 +443,9 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'docker-hub'
   | 'down'
+  | 'elastic-kubernetes-service'
   | 'execution-abort'
   | 'execution-input'
   | 'execution-rollback'
@@ -447,9 +456,11 @@ type HarnessIconName =
   | 'fixed-input'
   | 'functions'
   | 'gcr'
+  | 'gcs'
   | 'gear'
   | 'git-clone-step'
   | 'github'
+  | 'google-kubernetes-engine'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white'
@@ -601,6 +612,7 @@ type HarnessIconName =
   | 'pipeline-custom'
   | 'pipeline-deploy'
   | 'pipeline-ng'
+  | 'pipeline-stage-selection-caret'
   | 'pipeline-variables'
   | 'pipeline'
   | 'placeholder-hover'
@@ -724,6 +736,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'azure-kubernetes-service': AzureKubernetesService,
   bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
@@ -795,7 +808,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  'docker-hub': DockerHub,
   down: Down,
+  'elastic-kubernetes-service': ElasticKubernetesService,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
@@ -806,9 +821,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'fixed-input': FixedInput,
   functions: Functions,
   gcr: Gcr,
+  gcs: Gcs,
   gear: Gear,
   'git-clone-step': GitCloneStep,
   github: Github,
+  'google-kubernetes-engine': GoogleKubernetesEngine,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
@@ -960,6 +977,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
   'pipeline-ng': PipelineNg,
+  'pipeline-stage-selection-caret': PipelineStageSelectionCaret,
   'pipeline-variables': PipelineVariables,
   pipeline: Pipeline,
   'placeholder-hover': PlaceholderHover,
