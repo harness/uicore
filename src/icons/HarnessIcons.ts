@@ -78,6 +78,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import DockerHub from './docker-hub.svg'
 import Down from './down.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import ExecutionAbort from './execution-abort.svg'
@@ -90,6 +91,7 @@ import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
 import Gcr from './gcr.svg'
+import Gcs from './gcs.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
@@ -441,6 +443,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'docker-hub'
   | 'down'
   | 'elastic-kubernetes-service'
   | 'execution-abort'
@@ -453,6 +456,7 @@ type HarnessIconName =
   | 'fixed-input'
   | 'functions'
   | 'gcr'
+  | 'gcs'
   | 'gear'
   | 'git-clone-step'
   | 'github'
@@ -804,6 +808,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  'docker-hub': DockerHub,
   down: Down,
   'elastic-kubernetes-service': ElasticKubernetesService,
   'execution-abort': ExecutionAbort,
@@ -816,6 +821,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'fixed-input': FixedInput,
   functions: Functions,
   gcr: Gcr,
+  gcs: Gcs,
   gear: Gear,
   'git-clone-step': GitCloneStep,
   github: Github,
