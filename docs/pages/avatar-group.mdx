@@ -1,0 +1,34 @@
+# Avatar Group--- docs/pages/avatar-group.mdx
+
+## Import
+
+```js
+import { Avatar } from '@wings-software/uikit'
+import { AvatarGroup } from '@wings-software/uikit'
+```
+
+```js live=true
+<Layout.Horizontal spacing="small" id="primary-buttons">
+  <AvatarGroup
+    onAdd={() => {}}
+    avatars={[
+      { name: 'Aahn Boe SS' },
+      { email: 'CohnDoe.com.HD@harnes.io' },
+      { name: 'EahnFoe' },
+      { name: 'Gahn Hoe' },
+      { name: '' },
+      { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
+    ]}
+  />
+  <AvatarGroup
+    overlap={false}
+    avatars={[
+      { name: 'Aahn Boe SS' },
+      { email: 'CohnDoe.com.HD@harnes.io' },
+      { name: 'EahnFoe' },
+      { name: 'Gahn Hoe' },
+      { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
+    ]}
+  />
+</Layout.Horizontal>
+```

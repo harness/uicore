@@ -49,6 +49,14 @@ export default [
     name: 'Components',
     items: [
       {
+        label: 'Avatar',
+        url: '/avatar'
+      },
+      {
+        label: 'AvatarGroup',
+        url: '/avatar-group'
+      },
+      {
         label: 'Heading',
         url: '/heading'
       },

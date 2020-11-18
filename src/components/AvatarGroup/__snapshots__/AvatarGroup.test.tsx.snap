@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render basic component should check snapshot with Avatar props with add button 1`] = `
+<div>
+  <div
+    class="stack"
+  >
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+      >
+        +
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+      >
+        <img
+          alt=""
+          class="imageStyle"
+          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+          style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+        />
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        GH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        EF
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        CH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        AS
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render basic component should check snapshot with Avatar props without add button 1`] = `
+<div>
+  <div
+    class="stack"
+  >
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+      >
+        <img
+          alt=""
+          class="imageStyle"
+          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+          style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+        />
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        GH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        E
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        CH
+      </div>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        AS
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render basic component should check snapshot with Avatar props without overlap 1`] = `
+<div>
+  <div
+    class="noStack"
+  >
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        AS
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        CH
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        E
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        GH
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+      >
+        <img
+          alt=""
+          class="imageStyle"
+          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+          style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

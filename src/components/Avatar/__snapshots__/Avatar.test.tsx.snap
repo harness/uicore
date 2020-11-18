@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render basic component should check snapshot with email 1`] = `
+<div>
+  <div
+    class="Avatar contentStyle"
+  >
+    <div
+      class="AvatarInner"
+      style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+    >
+      JD
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render basic component should check snapshot with image 1`] = `
+<div>
+  <div
+    class="Avatar contentStyle"
+  >
+    <div
+      class="AvatarInner"
+      style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+    >
+      <img
+        alt=""
+        class="imageStyle"
+        src="https://www.mangaship.com/Content/img/human-avatar.png"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render basic component should check snapshot with name 1`] = `
+<div>
+  <div
+    class="Avatar contentStyle"
+  >
+    <div
+      class="AvatarInner"
+      style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+    >
+      JD
+    </div>
+  </div>
+</div>
+`;
