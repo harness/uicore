@@ -1,4 +1,4 @@
-export const getInitialsFromNameOrEmail = (name: string = '', email: string = '') => {
+export const getInitialsFromNameOrEmail = (name = '', email = '') => {
   let initialsFromName = name
     .split(/-| /)
     .map((n: string) => n[0])
