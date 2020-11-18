@@ -50,7 +50,7 @@ export const Avatar = (props: AvatarProps) => {
   } else {
     const initials = getInitialsFromNameOrEmail(name, email)
     if (!initials) {
-      return <></>
+      return null
     }
     inner = initials
     inner = inner.toUpperCase()
