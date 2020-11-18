@@ -6,65 +6,66 @@ exports[`Render basic component should check snapshot with Avatar props with add
     class="stack"
   >
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: rgb(37, 166, 247); background-color: rgb(228, 231, 235);"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
       >
         +
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
       >
         <img
           alt=""
+          class="imageStyle"
           src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-          style="display: block; border-radius: 100%; width: 36px; height: 36px;"
+          style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
         />
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         GH
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         EF
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         CH
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         AS
       </div>
@@ -79,57 +80,122 @@ exports[`Render basic component should check snapshot with Avatar props without 
     class="stack"
   >
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
       >
         <img
           alt=""
+          class="imageStyle"
           src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-          style="display: block; border-radius: 100%; width: 36px; height: 36px;"
+          style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
         />
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         GH
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         E
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         CH
       </div>
     </div>
     <div
-      class="stackAvatar Avatar"
+      class="stackAvatar Avatar contentStyle"
     >
       <div
         class="AvatarInner"
-        style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
       >
         AS
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render basic component should check snapshot with Avatar props without overlap 1`] = `
+<div>
+  <div
+    class="noStack"
+  >
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        AS
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        CH
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        E
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
+      >
+        GH
+      </div>
+    </div>
+    <div
+      class="Avatar contentStyle"
+    >
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+      >
+        <img
+          alt=""
+          class="imageStyle"
+          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+          style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
+        />
       </div>
     </div>
   </div>

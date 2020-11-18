@@ -3,11 +3,11 @@
 exports[`Render basic component should check snapshot with email 1`] = `
 <div>
   <div
-    class="Avatar"
+    class="Avatar contentStyle"
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+      style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
     >
       JD
     </div>
@@ -18,16 +18,17 @@ exports[`Render basic component should check snapshot with email 1`] = `
 exports[`Render basic component should check snapshot with image 1`] = `
 <div>
   <div
-    class="Avatar"
+    class="Avatar contentStyle"
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px;"
+      style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
     >
       <img
         alt=""
+        class="imageStyle"
         src="https://www.mangaship.com/Content/img/human-avatar.png"
-        style="display: block; border-radius: 100%; width: 36px; height: 36px;"
+        style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px;"
       />
     </div>
   </div>
@@ -37,11 +38,11 @@ exports[`Render basic component should check snapshot with image 1`] = `
 exports[`Render basic component should check snapshot with name 1`] = `
 <div>
   <div
-    class="Avatar"
+    class="Avatar contentStyle"
   >
     <div
       class="AvatarInner"
-      style="line-height: 36px; text-align: center; cursor: pointer; border-radius: 100%; max-width: 36px; width: 36px; max-height: 36px; height: 36px; color: white; background-color: red;"
+      style="border-radius: 100%; line-height: 36px; width: 36px; height: 36px; background-color: red;"
     >
       JD
     </div>

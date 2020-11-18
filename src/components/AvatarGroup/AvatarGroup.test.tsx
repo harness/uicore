@@ -7,14 +7,14 @@ describe('Render basic component', () => {
       <AvatarGroup
         onAdd={() => {}}
         avatars={[
-          { name: 'Aahn Boe SS', color: 'red' },
-          { email: 'CohnDoe.com.HD@harnes.io', color: 'red' },
-          { name: 'Eahn Foe', color: 'red' },
-          { name: 'Gahn Hoe', color: 'red' },
+          { name: 'Aahn Boe SS', backgroundColor: 'red' },
+          { email: 'CohnDoe.com.HD@harnes.io', backgroundColor: 'red' },
+          { name: 'Eahn Foe', backgroundColor: 'red' },
+          { name: 'Gahn Hoe', backgroundColor: 'red' },
           {
             src:
               'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg',
-            color: 'red'
+            backgroundColor: 'red'
           }
         ]}
       />
@@ -25,14 +25,35 @@ describe('Render basic component', () => {
     const { container } = render(
       <AvatarGroup
         avatars={[
-          { name: 'Aahn Boe SS', color: 'red' },
-          { email: 'CohnDoe.com.HD@harnes.io', color: 'red' },
-          { name: 'EahnFoe', color: 'red' },
-          { name: 'Gahn Hoe', color: 'red' },
+          { name: 'Aahn Boe SS', backgroundColor: 'red' },
+          { email: 'CohnDoe.com.HD@harnes.io', backgroundColor: 'red' },
+          { name: 'EahnFoe', backgroundColor: 'red' },
+          { name: 'Gahn Hoe', backgroundColor: 'red' },
+          { name: '' },
           {
             src:
               'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg',
-            color: 'red'
+            backgroundColor: 'red'
+          }
+        ]}
+      />
+    )
+    expect(container).toMatchSnapshot()
+  })
+  test('should check snapshot with Avatar props without overlap', () => {
+    const { container } = render(
+      <AvatarGroup
+        overlap={false}
+        avatars={[
+          { name: 'Aahn Boe SS', backgroundColor: 'red' },
+          { email: 'CohnDoe.com.HD@harnes.io', backgroundColor: 'red' },
+          { name: 'EahnFoe', backgroundColor: 'red' },
+          { name: 'Gahn Hoe', backgroundColor: 'red' },
+          { name: '' },
+          {
+            src:
+              'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg',
+            backgroundColor: 'red'
           }
         ]}
       />

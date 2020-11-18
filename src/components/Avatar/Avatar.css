@@ -9,3 +9,10 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.contentStyle {
+  text-align: center;
+  cursor: pointer;
+}
+.imageStyle {
+  display: block;
+}
