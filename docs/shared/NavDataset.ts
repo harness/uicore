@@ -50,7 +50,7 @@ export default [
     items: [
       {
         label: 'Avatar',
-        url: '/avatar'
+        url: '/avatar-single'
       },
       {
         label: 'AvatarGroup',
