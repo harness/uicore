@@ -1,13 +1,15 @@
 # CHANGELOG
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
-## 1.1.84 11/168/20
+
+## 1.1.84 19/168/20
 
 - `Updated` Avatar component url
 
-## 1.1.82 11/168/20
+## 1.1.82 18/11/20
 
 - `Added` Avatar, AvatarGroup components
+
 ## 1.1.81 - 18/11/20
 
 - `Added` gcs and docker-hub icons
