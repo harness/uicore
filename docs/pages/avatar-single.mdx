@@ -1,4 +1,4 @@
-# Avatar --- docs/pages/avatar.mdx
+# Avatar --- docs/pages/avatar-single.mdx
 
 ## Import
 
@@ -8,7 +8,12 @@ import { Avatar } from '@wings-software/uikit'
 
 ```js live=true
 <Layout.Horizontal spacing="small" id="primary-buttons">
-  <Avatar name="John Doe" />
+  <Avatar
+    name="John Doe"
+    onClick={() => {
+      alert(' Avatar clicked')
+    }}
+  />
   <Avatar email="john.doe@harnes.io" />
   <Avatar email="john.doe@harnes.io" textColor="red" size={20} borderRadius={25} />
   <Avatar src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg" />
