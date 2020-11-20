@@ -6,6 +6,7 @@ import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import ApprovalStep from './approval-step.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
@@ -60,6 +61,7 @@ import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DependencyStep from './dependency-step.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
 import DeploymentFailedLegacy from './deployment-failed-legacy.svg'
@@ -78,9 +80,11 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
-import DockerHub from './docker-hub.svg'
+import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
+import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import EmailStep from './email-step.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -90,8 +94,8 @@ import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
-import Gcr from './gcr.svg'
-import Gcs from './gcs.svg'
+import GcrStep from './gcr-step.svg'
+import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
@@ -102,7 +106,9 @@ import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
 import Health from './health.svg'
 import Hourglass from './hourglass.svg'
+import HttpStep from './http-step.svg'
 import Info from './info.svg'
+import InitializeStep from './initialize-step.svg'
 import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
@@ -253,7 +259,7 @@ import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
-import Plugin from './plugin.svg'
+import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
 import PublishStep from './publish-step.svg'
@@ -371,6 +377,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'approval-step'
   | 'azure-kubernetes-service'
   | 'bitbucket'
   | 'blue-black-cluster'
@@ -425,6 +432,7 @@ type HarnessIconName =
   | 'cv-main'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'dependency-step'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
   | 'deployment-failed-legacy'
@@ -443,9 +451,11 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
-  | 'docker-hub'
+  | 'docker-hub-step'
   | 'down'
+  | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'email-step'
   | 'execution-abort'
   | 'execution-input'
   | 'execution-rollback'
@@ -455,8 +465,8 @@ type HarnessIconName =
   | 'feedback-given'
   | 'fixed-input'
   | 'functions'
-  | 'gcr'
-  | 'gcs'
+  | 'gcr-step'
+  | 'gcs-step'
   | 'gear'
   | 'git-clone-step'
   | 'github'
@@ -467,7 +477,9 @@ type HarnessIconName =
   | 'harness'
   | 'health'
   | 'hourglass'
+  | 'http-step'
   | 'info'
+  | 'initialize-step'
   | 'integration'
   | 'key-main'
   | 'key'
@@ -618,7 +630,7 @@ type HarnessIconName =
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
-  | 'plugin'
+  | 'plugin-step'
   | 'polygon'
   | 'profile'
   | 'publish-step'
@@ -736,6 +748,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'approval-step': ApprovalStep,
   'azure-kubernetes-service': AzureKubernetesService,
   bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
@@ -790,6 +803,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cv-main': CvMain,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'dependency-step': DependencyStep,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
   'deployment-failed-legacy': DeploymentFailedLegacy,
@@ -808,9 +822,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
-  'docker-hub': DockerHub,
+  'docker-hub-step': DockerHubStep,
   down: Down,
+  'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  'email-step': EmailStep,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
@@ -820,8 +836,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   functions: Functions,
-  gcr: Gcr,
-  gcs: Gcs,
+  'gcr-step': GcrStep,
+  'gcs-step': GcsStep,
   gear: Gear,
   'git-clone-step': GitCloneStep,
   github: Github,
@@ -832,7 +848,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   harness: Harness,
   health: Health,
   hourglass: Hourglass,
+  'http-step': HttpStep,
   info: Info,
+  'initialize-step': InitializeStep,
   integration: Integration,
   'key-main': KeyMain,
   key: Key,
@@ -983,7 +1001,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
-  plugin: Plugin,
+  'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
   'publish-step': PublishStep,
