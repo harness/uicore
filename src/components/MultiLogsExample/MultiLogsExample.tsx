@@ -69,9 +69,10 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
   arr[0] = true
 
   const [panelArr, setPanelArr] = useState(arr)
+
   return (
     <>
-      <ExpandingSearchInput onChange={() => {}} />
+      <ExpandingSearchInput />
       <button
         onClick={() => {
           setDir(`next`)
@@ -111,7 +112,7 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
         }}
         searchDir={searchDir}
         highlightedIndex={highlightInd}
-        searchText="gyp"
+        searchText="ERR"
         updateSection={(currentIndex: number, nextIndex = -1) => {
           if (nextIndex > -1) {
             panelArr[currentIndex] = false

@@ -137,18 +137,16 @@ export const LogSection: React.FC<LogSectionProps> = ({
     }
   }, [ref, isOpen])
 
-  const totalRows = term.rows
-
   useEffect(() => {
     /* If the search dir is next  
       the next selection is at 0 and the current Selection is at the last row 
       then expand the next section
     */
     if (activePanel > -1) {
-      if (currentSelection === 0 && prevSelection === totalRows - 1) {
+      if (currentSelection === 0 && prevSelection > currentSelection && searchDir === 'next') {
         updateSection(activePanel, activePanel + 1)
         setIsOpen(false)
-      } else if (currentSelection === totalRows - 1 && prevSelection === 0) {
+      } else if (currentSelection > prevSelection && prevSelection === 0 && searchDir === 'prev') {
         /* If the search dir is prev  
      the nextRow is 4 and prevSelection is 0
     then expand the prev section
