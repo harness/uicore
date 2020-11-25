@@ -42,7 +42,7 @@ const MENTIONS_DEFAULT: MentionsInfo = {
   data: done => done([])
 }
 
-type AcceptableValue = string | SelectOption | MultiSelectOption[]
+type AcceptableValue = boolean | string | SelectOption | MultiSelectOption[]
 
 export interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
@@ -76,7 +76,9 @@ export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
   allowableTypes?: MultiTypeInputType[]
 ): MultiTypeInputType => {
-  if (typeof value === 'string') {
+  if (typeof value === 'boolean') {
+    return MultiTypeInputType.FIXED
+  } else if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
     if (value.startsWith(RUNTIME_INPUT_VALUE)) return MultiTypeInputType.RUNTIME
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
