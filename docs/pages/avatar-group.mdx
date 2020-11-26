@@ -4,9 +4,10 @@
 
 ```js
  interface AvatarGroupProps {
-  onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
+ onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
   avatars: AvatarProps[]
   overlap?: boolean
+  avatarGroupProps?: AvatarProps
 }
 ```
 
@@ -22,6 +23,23 @@ import { AvatarGroup } from '@wings-software/uikit'
   <AvatarGroup
     onAdd={() => {
       alert('add button clicked')
+    }}
+    avatars={[
+      { name: 'Aahn Boe SS' },
+      { email: 'CohnDoe.com.HD@harnes.io', fontSize: 'large' },
+      { name: 'EahnFoe' },
+      { name: 'Gahn Hoe', backgroundColor: Color.RED_800 },
+      { name: '' },
+      { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
+    ]}
+  />
+  <AvatarGroup
+    onAdd={() => {
+      alert('add button clicked')
+    }}
+    avatarGroupProps={{
+      fontSize: 'large',
+      color: Color.BLACK
     }}
     avatars={[
       { name: 'Aahn Boe SS' },

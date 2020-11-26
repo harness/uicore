@@ -3,18 +3,21 @@ import React from 'react'
 import css from './Avatar.css'
 import classnames from 'classnames'
 import { getInitialsFromNameOrEmail, getSumOfAllCharacters } from './utils'
-const defaultColors = ['#eb2f06', '#e58e26', '#1e3799', '#78e08f', '#079992', '#ff6b81', '#a4b0be']
+import { FontSize } from 'styled-props/font/FontProps'
+import { Color } from '../../core/Color'
+import { Utils } from '../../core/Utils'
+const defaultColors = Object.values(Color)
 
 export interface AvatarProps extends HTMLDivProps {
   name?: string
   src?: string
-  backgroundColor?: string | string[]
+  backgroundColor?: Color | Color[]
   email?: string
   size?: number
   borderRadius?: number
-  color?: string
+  color?: Color
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  fontSize?: number
+  fontSize?: FontSize
 }
 
 export const Avatar = (props: AvatarProps) => {
@@ -27,7 +30,7 @@ export const Avatar = (props: AvatarProps) => {
     style,
     className,
     email = '',
-    color = 'var(--white)',
+    color = Color.WHITE,
     onClick,
     fontSize,
     ...rest
@@ -45,17 +48,17 @@ export const Avatar = (props: AvatarProps) => {
   const calucatedBackgroundColor = Array.isArray(backgroundColor)
     ? backgroundColor[sumOfCharacters % backgroundColor.length]
     : backgroundColor
-
+  console.log({ calucatedBackgroundColor }, Utils.getRealCSSColor(calucatedBackgroundColor))
   const contentStyle = {
     borderRadius: `${borderRadius}%`,
     lineHeight: formatedSize,
     width: formatedSize,
     height: formatedSize,
     ...(!src && {
-      backgroundColor: calucatedBackgroundColor,
-      color
+      backgroundColor: Utils.getRealCSSColor(calucatedBackgroundColor),
+      color: Utils.getRealCSSColor(color)
     }),
-    ...(fontSize && { fontSize: `${fontSize}px` })
+    ...(fontSize && { fontSize })
   }
   if (src) {
     inner = <img src={src} style={contentStyle} className={css.imageStyle} alt={name} />
