@@ -48,7 +48,6 @@ export const Avatar = (props: AvatarProps) => {
   const calucatedBackgroundColor = Array.isArray(backgroundColor)
     ? backgroundColor[sumOfCharacters % backgroundColor.length]
     : backgroundColor
-  console.log({ calucatedBackgroundColor }, Utils.getRealCSSColor(calucatedBackgroundColor))
   const contentStyle = {
     borderRadius: `${borderRadius}%`,
     lineHeight: formatedSize,
