@@ -1,5 +1,21 @@
 # Avatar --- docs/pages/avatar-single.mdx
 
+##Types
+
+```js
+ interface AvatarProps extends HTMLDivProps {
+  name?: string
+  src?: string
+  backgroundColor?: string | string[] // if array it will pick a random colour from the group
+  email?: string
+  size?: number
+  borderRadius?: number
+  color?: string
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
+  fontSize?: number
+}
+```
+
 ## Import
 
 ```js
@@ -14,7 +30,7 @@ import { Avatar } from '@wings-software/uikit'
       alert(' Avatar clicked')
     }}
   />
-  <Avatar email="john.doe@harnes.io" />
+  <Avatar email="john.doe@harnes.io" fontSize={20} />
   <Avatar email="john.doe@harnes.io" textColor="red" size={20} borderRadius={25} />
   <Avatar src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg" />
 </Layout.Horizontal>

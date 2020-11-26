@@ -2,7 +2,7 @@ import { HTMLDivProps } from '@blueprintjs/core'
 import React from 'react'
 import css from './Avatar.css'
 import classnames from 'classnames'
-import { getInitialsFromNameOrEmail } from './utils'
+import { getInitialsFromNameOrEmail, getSumOfAllCharacters } from './utils'
 const defaultColors = ['#eb2f06', '#e58e26', '#1e3799', '#78e08f', '#079992', '#ff6b81', '#a4b0be']
 
 export interface AvatarProps extends HTMLDivProps {
@@ -14,6 +14,7 @@ export interface AvatarProps extends HTMLDivProps {
   borderRadius?: number
   color?: string
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
+  fontSize?: number
 }
 
 export const Avatar = (props: AvatarProps) => {
@@ -27,28 +28,37 @@ export const Avatar = (props: AvatarProps) => {
     className,
     email = '',
     color = 'var(--white)',
-    onClick
+    onClick,
+    fontSize,
+    ...rest
   } = props
 
   const formatedSize = `${size}px`
 
   let inner
+  let initials = ''
+  if (!src) {
+    initials = getInitialsFromNameOrEmail(name, email)
+  }
+  let sumOfCharacters = Math.abs(getSumOfAllCharacters(initials))
+  let calucatedBackgroundColor = Array.isArray(backgroundColor)
+    ? backgroundColor[sumOfCharacters % backgroundColor.length]
+    : backgroundColor
+
   const contentStyle = {
     borderRadius: `${borderRadius}%`,
     lineHeight: formatedSize,
     width: formatedSize,
     height: formatedSize,
     ...(!src && {
-      backgroundColor: Array.isArray(backgroundColor)
-        ? backgroundColor[Math.floor(Math.random() * 10) % backgroundColor.length]
-        : backgroundColor,
+      backgroundColor: calucatedBackgroundColor,
       color
-    })
+    }),
+    ...(fontSize && { fontSize: `${fontSize}px` })
   }
   if (src) {
     inner = <img src={src} style={contentStyle} className={css.imageStyle} alt={name} />
   } else {
-    const initials = getInitialsFromNameOrEmail(name, email)
     if (!initials) {
       return null
     }
@@ -57,7 +67,7 @@ export const Avatar = (props: AvatarProps) => {
   }
 
   return (
-    <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick}>
+    <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
       <div className={css.AvatarInner} style={contentStyle}>
         {inner}
       </div>

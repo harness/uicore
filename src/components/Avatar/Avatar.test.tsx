@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Avatar } from './Avatar'
-import { getInitialsFromNameOrEmail } from './utils'
+import { getInitialsFromNameOrEmail, getSumOfAllCharacters } from './utils'
 
 describe('Render basic component', () => {
   test('should check snapshot with name', () => {
@@ -26,5 +26,10 @@ describe('Render basic component', () => {
   test('getInitials with email', () => {
     expect(getInitialsFromNameOrEmail('', 'AllNameHere@com')).toEqual('A')
     expect(getInitialsFromNameOrEmail('', 'AllName.here@com')).toEqual('Ah')
+  })
+  test('getSumofCharacters', () => {
+    expect(getSumOfAllCharacters('abcd')).toEqual(10)
+    expect(getSumOfAllCharacters('Abcd')).toEqual(10)
+    expect(getSumOfAllCharacters('')).toEqual(0)
   })
 })

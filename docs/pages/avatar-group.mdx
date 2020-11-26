@@ -1,5 +1,15 @@
 # Avatar Group--- docs/pages/avatar-group.mdx
 
+##Types
+
+```js
+ interface AvatarGroupProps {
+  onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
+  avatars: AvatarProps[]
+  overlap?: boolean
+}
+```
+
 ## Import
 
 ```js
@@ -10,10 +20,12 @@ import { AvatarGroup } from '@wings-software/uikit'
 ```js live=true
 <Layout.Horizontal spacing="small" id="primary-buttons">
   <AvatarGroup
-    onAdd={() => {alert('add button clicked')}}
+    onAdd={() => {
+      alert('add button clicked')
+    }}
     avatars={[
       { name: 'Aahn Boe SS' },
-      { email: 'CohnDoe.com.HD@harnes.io' },
+      { email: 'CohnDoe.com.HD@harnes.io', fontSize: 20 },
       { name: 'EahnFoe' },
       { name: 'Gahn Hoe' },
       { name: '' },
