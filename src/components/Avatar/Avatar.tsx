@@ -41,8 +41,8 @@ export const Avatar = (props: AvatarProps) => {
     initials = getInitialsFromNameOrEmail(name, email)
   }
   // sum of characters will be used to decide the background color for that avatar
-  let sumOfCharacters = Math.abs(getSumOfAllCharacters(initials))
-  let calucatedBackgroundColor = Array.isArray(backgroundColor)
+  const sumOfCharacters = Math.abs(getSumOfAllCharacters(initials))
+  const calucatedBackgroundColor = Array.isArray(backgroundColor)
     ? backgroundColor[sumOfCharacters % backgroundColor.length]
     : backgroundColor
 
