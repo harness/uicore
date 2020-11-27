@@ -6,7 +6,7 @@ import classnames from 'classnames'
 
 export interface AvatarGroupProps {
   onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
-  avatars: Omit<AvatarProps, 'size'>[]
+  avatars: Array<Omit<AvatarProps, 'size'>>
   overlap?: boolean
   avatarGroupProps?: Omit<AvatarProps, 'size'>
   size?: AvatarSizes

@@ -34,7 +34,6 @@ const sizes: SizesProps = {
 }
 
 export const Avatar = (props: AvatarProps) => {
-  debugger
   const {
     borderRadius = 100,
     src,
