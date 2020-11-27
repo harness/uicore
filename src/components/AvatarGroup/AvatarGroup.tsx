@@ -1,17 +1,24 @@
 import React from 'react'
-import { AvatarProps, Avatar } from '../Avatar/Avatar'
+import { AvatarProps, Avatar, AvatarSizes } from '../Avatar/Avatar'
 import css from './AvatarGroup.css'
 import { Color } from '../../core/Color'
 import classnames from 'classnames'
 
 export interface AvatarGroupProps {
   onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
-  avatars: AvatarProps[]
+  avatars: Omit<AvatarProps, 'size'>[]
   overlap?: boolean
-  avatarGroupProps?: AvatarProps
+  avatarGroupProps?: Omit<AvatarProps, 'size'>
+  size?: AvatarSizes
 }
 
-export const AvatarGroup: React.FC<AvatarGroupProps> = ({ onAdd, avatars, overlap = true, avatarGroupProps }) => {
+export const AvatarGroup: React.FC<AvatarGroupProps> = ({
+  onAdd,
+  avatars,
+  overlap = true,
+  avatarGroupProps,
+  size = 'normal'
+}) => {
   if (onAdd) {
     avatars.push({ name: '+', color: Color.BLUE_500, backgroundColor: Color.GREY_200, onClick: onAdd })
   }
@@ -31,6 +38,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({ onAdd, avatars, overla
           className={classnames(overlap && css.stackAvatar)}
           {...avatarGroupProps}
           {...avatarProps}
+          {...{ size }}
         />
       ))}
     </div>

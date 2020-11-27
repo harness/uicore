@@ -7,37 +7,49 @@ import { FontSize } from 'styled-props/font/FontProps'
 import { Color } from '../../core/Color'
 import { Utils } from '../../core/Utils'
 const defaultColors = Object.values(Color)
-
+export type AvatarSizes = FontSize
 export interface AvatarProps extends HTMLDivProps {
   name?: string
   src?: string
   backgroundColor?: Color | Color[]
   email?: string
-  size?: number
+  size?: AvatarSizes
   borderRadius?: number
   color?: Color
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  fontSize?: FontSize
+}
+interface SizeValueProps {
+  size: string
+  fontSize: string
+}
+type SizesProps = {
+  [key in AvatarSizes]: SizeValueProps
+}
+const sizes: SizesProps = {
+  xsmall: { size: '16px', fontSize: '7px' },
+  small: { size: '24px', fontSize: '10px' },
+  normal: { size: '28px', fontSize: '10px' },
+  medium: { size: '48px', fontSize: '18px' },
+  large: { size: '96px', fontSize: '36px' }
 }
 
 export const Avatar = (props: AvatarProps) => {
+  debugger
   const {
     borderRadius = 100,
     src,
     name = '',
     backgroundColor = defaultColors,
-    size = `36`,
+    size = 'normal',
     style,
     className,
     email = '',
     color = Color.WHITE,
     onClick,
-    fontSize,
     ...rest
   } = props
-
-  const formatedSize = `${size}px`
-
+  const formatedSize = sizes[size].size
+  const fontSize = sizes[size].fontSize
   let inner
   let initials = ''
   if (!src) {
@@ -70,10 +82,12 @@ export const Avatar = (props: AvatarProps) => {
   }
 
   return (
-    <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
-      <div className={css.AvatarInner} style={contentStyle}>
-        {inner}
+    <>
+      <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
+        <div className={css.AvatarInner} style={contentStyle}>
+          {inner}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
