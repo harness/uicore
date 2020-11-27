@@ -1,9 +1,24 @@
 # Avatar --- docs/pages/avatar-single.mdx
 
+##Types
+
+```js
+ interface AvatarProps extends HTMLDivProps {
+  name?: string
+  src?: string
+  backgroundColor?: string | string[] // if array it will pick a random colour from the group
+  email?: string
+  size?: AvatarSizes //default is 'normal'
+  borderRadius?: number
+  color?: string
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
+}
+```
+
 ## Import
 
 ```js
-import { Avatar } from '@wings-software/uikit'
+import { Avatar, AvatarSizes } from '@wings-software/uikit'
 ```
 
 ```js live=true
@@ -13,9 +28,17 @@ import { Avatar } from '@wings-software/uikit'
     onClick={() => {
       alert(' Avatar clicked')
     }}
+    size={'normal'}
   />
+  <Avatar email="john.doe@harnes.io" size={'small'} />
+  <Avatar email="john.doe@harnes.io" size={'xsmall'} />
+  <Avatar email="john.doe@harnes.io" size={'medium'} />
+  <Avatar email="john.doe@harnes.io" size={'large'} />
   <Avatar email="john.doe@harnes.io" />
-  <Avatar email="john.doe@harnes.io" textColor="red" size={20} borderRadius={25} />
-  <Avatar src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg" />
+  <Avatar email="john.doe@harnes.io" textColor="red" borderRadius={25} />
+  <Avatar
+    src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+    size={'large'}
+  />
 </Layout.Horizontal>
 ```

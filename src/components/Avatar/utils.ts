@@ -16,3 +16,14 @@ export const getInitialsFromNameOrEmail = (name = '', email = '') => {
       : initialsFromEmail[0]
   return initialsFromName || initialsFromEmail
 }
+
+export const getSumOfAllCharacters = (str: string) => {
+  return str
+    ? str
+        .toLowerCase()
+        .split('')
+        .reduce((initialValue, charc: string) => {
+          return initialValue + (charc.charCodeAt(0) - 'a'.charCodeAt(0)) + 1
+        }, 0)
+    : 0
+}

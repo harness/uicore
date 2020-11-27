@@ -1,18 +1,26 @@
 import React from 'react'
-import { AvatarProps, Avatar } from '../Avatar/Avatar'
+import { AvatarProps, Avatar, AvatarSizes } from '../Avatar/Avatar'
 import css from './AvatarGroup.css'
-
+import { Color } from '../../core/Color'
 import classnames from 'classnames'
 
 export interface AvatarGroupProps {
   onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
-  avatars: AvatarProps[]
+  avatars: Array<Omit<AvatarProps, 'size'>>
   overlap?: boolean
+  avatarGroupProps?: Omit<AvatarProps, 'size'>
+  size?: AvatarSizes
 }
 
-export const AvatarGroup: React.FC<AvatarGroupProps> = ({ onAdd, avatars, overlap = true }) => {
+export const AvatarGroup: React.FC<AvatarGroupProps> = ({
+  onAdd,
+  avatars,
+  overlap = true,
+  avatarGroupProps,
+  size = 'normal'
+}) => {
   if (onAdd) {
-    avatars.push({ name: '+', color: 'var(--blue-500)', backgroundColor: 'var(--grey-200)', onClick: onAdd })
+    avatars.push({ name: '+', color: Color.BLUE_500, backgroundColor: Color.GREY_200, onClick: onAdd })
   }
   if (overlap) {
     /* in order to create a stack like effect where first avatar overlaps second and second the third one and so on,
@@ -28,7 +36,9 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({ onAdd, avatars, overla
         <Avatar
           key={Object.values(avatarProps).join('')}
           className={classnames(overlap && css.stackAvatar)}
+          {...avatarGroupProps}
           {...avatarProps}
+          {...{ size }}
         />
       ))}
     </div>
