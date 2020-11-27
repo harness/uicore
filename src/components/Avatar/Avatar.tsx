@@ -6,6 +6,7 @@ import { getInitialsFromNameOrEmail, getSumOfAllCharacters } from './utils'
 import { FontSize } from 'styled-props/font/FontProps'
 import { Color } from '../../core/Color'
 import { Utils } from '../../core/Utils'
+
 const defaultColors = Object.values(Color)
 export type AvatarSizes = FontSize
 export interface AvatarProps extends HTMLDivProps {
