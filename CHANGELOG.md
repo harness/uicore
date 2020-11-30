@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.91 - 30/11/20
+
+- `Added` codebase-invalid icon
+
 ## 1.1.90 27/11/20
 
 - `Added` size option Avatar component

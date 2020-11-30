@@ -35,6 +35,7 @@ import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
+import CodebaseInvalid from './codebase-invalid.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -405,6 +406,7 @@ type HarnessIconName =
   | 'check'
   | 'ci-hover'
   | 'ci-main'
+  | 'codebase-invalid'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -775,6 +777,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   check: Check,
   'ci-hover': CiHover,
   'ci-main': CiMain,
+  'codebase-invalid': CodebaseInvalid,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
