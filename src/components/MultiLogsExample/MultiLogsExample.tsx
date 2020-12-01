@@ -120,6 +120,11 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
             setOpenedIndex(nextIndex)
           } else {
             panelArr[currentIndex] = !panelArr[currentIndex]
+            if (!panelArr[currentIndex] && currentIndex === 0) {
+              setOpenedIndex(-1)
+            } else {
+              setOpenedIndex(currentIndex)
+            }
           }
 
           setPanelArr([...panelArr])
