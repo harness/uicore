@@ -158,7 +158,6 @@ export const LogSection: React.FC<LogSectionProps> = ({
   }, [currentSelection])
 
   useEffect(() => {
-    console.log(searchDir, activePanel, 'on useEffect')
     if (searchDir && activePanel === -1) {
       setIsOpen(!isOpen)
       updateSection(activePanel, activePanel + 1)
