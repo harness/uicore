@@ -142,6 +142,10 @@ export function MultiSelect(props: MultiSelectProps) {
     return { label: query, value: query }
   }
 
+  function tagRenderer(item: MultiSelectOption) {
+    return item.label
+  }
+
   function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
     if (loading) {
       return (
@@ -171,7 +175,7 @@ export function MultiSelect(props: MultiSelectProps) {
       itemRenderer={props.itemRender || itemRenderer}
       createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
-      tagRenderer={item => item.label}
+      tagRenderer={props.tagRenderer || tagRenderer}
       itemsEqual={(a, b) => a.value === b.value}
       {...rest}
       tagInputProps={{
