@@ -1,5 +1,5 @@
 .container {
-  --background: #24292e;
+  --background: #0b0b0d;
   --header-selected: #2f363d;
 
   background: var(--background) !important;
