@@ -29,9 +29,9 @@ type SizesProps = {
 const sizes: SizesProps = {
   xsmall: { size: '16px', fontSize: '7px' },
   small: { size: '24px', fontSize: '10px' },
-  normal: { size: '28px', fontSize: '10px' },
+  normal: { size: '32px', fontSize: '10px' },
   medium: { size: '48px', fontSize: '18px' },
-  large: { size: '96px', fontSize: '36px' }
+  large: { size: '72px', fontSize: '28px' }
 }
 
 export const Avatar = (props: AvatarProps) => {

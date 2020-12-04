@@ -19,10 +19,13 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   avatarGroupProps,
   size = 'normal'
 }) => {
+  if (!avatars || !avatars.length) {
+    return null
+  }
   if (onAdd) {
     avatars.push({ name: '+', color: Color.BLUE_500, backgroundColor: Color.GREY_200, onClick: onAdd })
   }
-  if (overlap) {
+  if (overlap && avatars.length) {
     /* in order to create a stack like effect where first avatar overlaps second and second the third one and so on,
     we used flex-direction: row-reverse; but this makes the avatars order from right to left and first avatar will
     be the last one to display from left to right, to correct this we are reversing the array elements
