@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
 import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } from '@blueprintjs/select'
@@ -142,6 +142,10 @@ export function MultiSelect(props: MultiSelectProps) {
     return { label: query, value: query }
   }
 
+  function tagRenderer(item: MultiSelectOption) {
+    return item.label
+  }
+
   function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
     if (loading) {
       return (
@@ -171,11 +175,10 @@ export function MultiSelect(props: MultiSelectProps) {
       itemRenderer={props.itemRender || itemRenderer}
       createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
-      tagRenderer={item => item.label}
+      tagRenderer={props.tagRenderer || tagRenderer}
       itemsEqual={(a, b) => a.value === b.value}
       {...rest}
       tagInputProps={{
-        ...props.tagInputProps,
         inputProps: {
           ...props.tagInputProps?.inputProps,
           onChange: handleQueryChange
@@ -187,13 +190,16 @@ export function MultiSelect(props: MultiSelectProps) {
             })
           }
         },
-        onRemove(value) {
-          const option = selectedItems.find(opt => opt.label === value)
-
+        onRemove(value: React.ReactNode) {
+          const option = selectedItems.find(opt => {
+            if (typeof value === 'string') return opt.label === value
+            else return opt.label === (value as ReactElement).key
+          })
           if (option) {
             handleItemSelect(option)
           }
-        }
+        },
+        ...props.tagInputProps
       }}
       itemListPredicate={(query, items) =>
         items.filter(item =>

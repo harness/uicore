@@ -38,7 +38,7 @@ export interface LogSectionProps {
   highlightedIndex?: number
 
   /* update panel to either collapse/expand  */
-  updateSection?: (currentIndex: number, prevIndex: number) => void
+  updateSection?: (currentIndex: number, prevIndex?: number) => void
   /* active panel - panel which is expanded */
   activePanel?: number
 }
@@ -72,7 +72,7 @@ export interface MultiLogsViewerProps extends ContainerProps {
   /** Current highlighted index of search result */
   highlightedIndex?: number
   /* update panel to either collapse/expand  */
-  updateSection?: (currentIndex: number, prevIndex: number) => void
+  updateSection?: (currentIndex: number, prevIndex?: number) => void
   /* active panel - panel which is expanded */
   activePanel?: number
   /* Section Arr - this indicates if the section is expanded or collapsed  */
@@ -157,6 +157,13 @@ export const LogSection: React.FC<LogSectionProps> = ({
     }
   }, [currentSelection])
 
+  useEffect(() => {
+    if (searchDir && activePanel === -1) {
+      setIsOpen(!isOpen)
+      updateSection(activePanel, activePanel + 1)
+    }
+  }, [searchDir])
+
   const setCurrentPosition = () => {
     const pos: any = term.getSelectionPosition()
     // setPrevSelection
@@ -238,6 +245,7 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
   ...containerProps
 }) => {
   const [arr, setPanelArr] = useState(sectionArr)
+
   return (
     <Container className={cx(className, css.container)} {...containerProps} key={activePanel}>
       <Layout.Vertical>
@@ -258,10 +266,11 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
               searchText={searchText}
               searchDir={searchDir}
               highlightedIndex={highlightedIndex}
-              updateSection={(currentIndex, nextIndex) => {
+              updateSection={(currentIndex, nextIndex = -1) => {
                 if (updateSection) {
                   updateSection(currentIndex, nextIndex)
                 }
+
                 setPanelArr([...sectionArr])
               }}
               activePanel={activePanel}
