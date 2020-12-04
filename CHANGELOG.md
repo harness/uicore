@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.95 - 4/12/20
+
+- `Fixed` Avtar size and empty props fix
+
 ## 1.1.94 - 4/12/20
 
 - `Fixed` broken build
