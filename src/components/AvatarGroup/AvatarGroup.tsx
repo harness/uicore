@@ -21,6 +21,9 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
 }) => {
   if (!avatars || !avatars.length) {
     return null
+  } else {
+    // to avoid mutation of props
+    avatars = [...avatars]
   }
   if (onAdd) {
     avatars.push({ name: '+', color: Color.BLUE_500, backgroundColor: Color.GREY_200, onClick: onAdd })

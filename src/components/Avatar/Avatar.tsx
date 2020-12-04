@@ -46,8 +46,10 @@ export const Avatar = (props: AvatarProps) => {
     email = '',
     color = Color.WHITE,
     onClick,
+
     ...rest
   } = props
+  let textColor = color
   const formatedSize = sizes[size].size
   const fontSize = sizes[size].fontSize
   let inner
@@ -57,9 +59,13 @@ export const Avatar = (props: AvatarProps) => {
   }
   // sum of characters will be used to decide the background color for that avatar
   const sumOfCharacters = Math.abs(getSumOfAllCharacters(initials))
-  const calucatedBackgroundColor = Array.isArray(backgroundColor)
+  let calucatedBackgroundColor = Array.isArray(backgroundColor)
     ? backgroundColor[sumOfCharacters % backgroundColor.length]
     : backgroundColor
+  if (textColor === calucatedBackgroundColor) {
+    textColor = Color.WHITE
+    calucatedBackgroundColor = Color.BLACK
+  }
   const contentStyle = {
     borderRadius: `${borderRadius}%`,
     lineHeight: formatedSize,
@@ -67,7 +73,7 @@ export const Avatar = (props: AvatarProps) => {
     height: formatedSize,
     ...(!src && {
       backgroundColor: Utils.getRealCSSColor(calucatedBackgroundColor),
-      color: Utils.getRealCSSColor(color)
+      color: Utils.getRealCSSColor(textColor)
     }),
     ...(fontSize && { fontSize })
   }
