@@ -199,7 +199,6 @@ export const LogSection: React.FC<LogSectionProps> = ({
   }
 
   useEffect(() => {
-    console.log(highlightedIndex, 'hi')
     // If hightlightedIndex is greater than -1
     if (highlightedIndex > -1) {
       if (searchDir.includes('next')) {
