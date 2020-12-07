@@ -95,8 +95,8 @@ export const LogSection: React.FC<LogSectionProps> = ({
   const [isOpen, setIsOpen] = useState(isSectionOpen)
   const ref = useRef<HTMLDivElement | null>(null)
   const lines = content.split(/\r?\n/)
-  const [currentSelection, setCurrentSelection] = useState(-1)
-  const [prevSelection, setPrevSelection] = useState(-1)
+  const [currentSelection, setCurrentSelection] = useState(null)
+  const [prevSelection, setPrevSelection] = useState(null)
 
   const term = useMemo(
     () =>
@@ -143,14 +143,22 @@ export const LogSection: React.FC<LogSectionProps> = ({
       then expand the next section
     */
     if (activePanel > -1) {
-      if (currentSelection === 0 && prevSelection > currentSelection && searchDir === 'next') {
+      if (
+        currentSelection?.startRow <= prevSelection?.startRow &&
+        currentSelection?.startColumn <= prevSelection?.startColumn &&
+        searchDir === 'next'
+      ) {
         updateSection(activePanel, activePanel + 1)
         setIsOpen(false)
-      } else if (currentSelection > prevSelection && prevSelection === 0 && searchDir === 'prev') {
-        /* If the search dir is prev  
-     the nextRow is 4 and prevSelection is 0
-    then expand the prev section
-  */
+      } else if (
+        currentSelection?.startRow >= prevSelection?.startRow &&
+        currentSelection?.startColumn >= prevSelection?.startColumn &&
+        searchDir === 'prev'
+      ) {
+        /* If the search dir is prev
+         the nextRow is 4 and prevSelection is 0
+        then expand the prev section
+      */
         updateSection(activePanel, activePanel - 1)
         setIsOpen(false)
       }
@@ -169,7 +177,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
     // setPrevSelection
     setPrevSelection(currentSelection)
     // Set current selection
-    setCurrentSelection(pos?.startRow)
+    setCurrentSelection(pos)
   }
 
   const onNext = () => {
@@ -191,6 +199,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
   }
 
   useEffect(() => {
+    console.log(highlightedIndex, 'hi')
     // If hightlightedIndex is greater than -1
     if (highlightedIndex > -1) {
       if (searchDir.includes('next')) {

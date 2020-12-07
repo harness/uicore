@@ -62,6 +62,7 @@ export interface MultiLogsViewerProps extends ContainerProps {
 }
 
 export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
+  const [searchTerm, setSearchTerm] = useState('')
   const [searchDir, setDir] = useState('')
   const [highlightInd, sethighlightInd] = useState(0)
   const [openedIndex, setOpenedIndex] = useState(0)
@@ -72,7 +73,11 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
 
   return (
     <>
-      <ExpandingSearchInput />
+      <ExpandingSearchInput
+        onChange={ev => {
+          setSearchTerm(ev)
+        }}
+      />
       <button
         onClick={() => {
           setDir(`next`)
@@ -112,7 +117,7 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
         }}
         searchDir={searchDir}
         highlightedIndex={highlightInd}
-        searchText="ERR"
+        searchText={searchTerm}
         updateSection={(currentIndex: number, nextIndex = -1) => {
           if (nextIndex > -1) {
             panelArr[currentIndex] = false
