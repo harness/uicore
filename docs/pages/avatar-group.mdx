@@ -3,12 +3,13 @@
 ##Types
 
 ```js
- interface AvatarGroupProps {
+ interface AvatarGroupProps extends HTMLDivProps {
   onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
   avatars: Array<Omit<AvatarProps, 'size'>>
   overlap?: boolean
   avatarGroupProps?: Omit<AvatarProps, 'size'>
   size?: AvatarSizes //default is 'normal'
+  className?: string
 }
 ```
 
