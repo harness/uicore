@@ -79,6 +79,13 @@ export interface MultiLogsViewerProps extends ContainerProps {
   sectionArr: boolean[]
 }
 
+interface Selection {
+  startRow: number
+  endRow: number
+  startColumn: number
+  endColumn: number
+}
+
 export const LogSection: React.FC<LogSectionProps> = ({
   title,
   scrollbackLines,
@@ -95,8 +102,8 @@ export const LogSection: React.FC<LogSectionProps> = ({
   const [isOpen, setIsOpen] = useState(isSectionOpen)
   const ref = useRef<HTMLDivElement | null>(null)
   const lines = content.split(/\r?\n/)
-  const [currentSelection, setCurrentSelection] = useState(null)
-  const [prevSelection, setPrevSelection] = useState(null)
+  const [currentSelection, setCurrentSelection] = useState<Selection | null>(null)
+  const [prevSelection, setPrevSelection] = useState<Selection | null>(null)
 
   const term = useMemo(
     () =>
@@ -138,6 +145,9 @@ export const LogSection: React.FC<LogSectionProps> = ({
   }, [ref, isOpen])
 
   useEffect(() => {
+    if (!currentSelection || !prevSelection) {
+      return
+    }
     /* If the search dir is next  
       the next selection is at 0 and the current Selection is at the last row 
       then expand the next section
