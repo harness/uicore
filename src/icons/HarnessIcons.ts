@@ -54,6 +54,7 @@ import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
+import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
 import Copy from './copy.svg'
 import CsHover from './cs-hover.svg'
@@ -425,6 +426,7 @@ type HarnessIconName =
   | 'command-switch'
   | 'command-winrm'
   | 'conditional-skip-filled'
+  | 'conditional-skip-new'
   | 'conditional-skip'
   | 'copy'
   | 'cs-hover'
@@ -796,6 +798,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
   'conditional-skip-filled': ConditionalSkipFilled,
+  'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
   copy: Copy,
   'cs-hover': CsHover,
