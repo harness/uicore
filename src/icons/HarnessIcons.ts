@@ -370,6 +370,7 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
+import GCP from './gcp.svg'
 
 type HarnessIconName =
   | 'Edit'
@@ -468,6 +469,7 @@ type HarnessIconName =
   | 'feedback-given'
   | 'fixed-input'
   | 'functions'
+  | 'gcp'
   | 'gcr-step'
   | 'gcs-step'
   | 'gear'
@@ -840,6 +842,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   functions: Functions,
+  gcp: GCP,
   'gcr-step': GcrStep,
   'gcs-step': GcsStep,
   gear: Gear,
