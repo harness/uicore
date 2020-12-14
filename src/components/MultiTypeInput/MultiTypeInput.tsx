@@ -248,7 +248,7 @@ export const MultiTextInput: React.FC<MultiTextInputProps> = ({ textProps, ...re
           {...restProps}
           name={rest.name}
           defaultValue={value}
-          onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             onChange?.(event.target.value, MultiTypeInputValue.STRING)
           }}
         />

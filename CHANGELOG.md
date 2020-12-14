@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## 1.1.101 - 14/12/20
 
+- `Fixed`: onChange on MultiTypeInput
+
+## 1.1.101 - 14/12/20
+
 - `Fixed`: Type definitions
 
 ## 1.1.100 - 14/12/20
