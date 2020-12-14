@@ -643,7 +643,7 @@ interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   label: string
   placeholder?: string
   selectItems: SelectOption[]
-  multiTypeInputProps?: MultiTypeInputProps
+  multiTypeInputProps?: Omit<MultiTypeInputProps, 'name'>
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
@@ -692,7 +692,7 @@ interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'
   label: string
   placeholder?: string
   selectItems: MultiSelectOption[]
-  multiSelectTypeInputProps?: MultiSelectTypeInputProps
+  multiSelectTypeInputProps?: Omit<MultiSelectTypeInputProps, 'name'>
 }
 
 const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContextProps<any>) => {
@@ -740,7 +740,7 @@ interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> 
   label: string
   placeholder?: string
   onChange?: MultiTextInputProps['onChange']
-  multiTextInputProps?: MultiTextInputProps /* In case you really want to customize the text input */
+  multiTextInputProps?: Omit<MultiTextInputProps, 'name'> /* In case you really want to customize the text input */
 }
 
 const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
