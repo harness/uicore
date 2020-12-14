@@ -35,7 +35,6 @@
         .stepName {
           display: inline-block;
           color: #79a5cc;
-          text-transform: uppercase;
         }
         .number {
           padding: 1px var(--spacing-xsmall);

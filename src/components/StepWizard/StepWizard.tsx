@@ -141,7 +141,11 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
                 { [css.completedStep]: completedSteps }
               )}>
               {completedSteps ? (
-                <Icon name="small-tick" size={22} color="green500" style={{ marginRight: 'var(--spacing-xsmall)' }} />
+                <Icon
+                  name="small-tick"
+                  size={22}
+                  style={{ marginRight: 'var(--spacing-xsmall)', color: 'green500', borderRadius: '50%' }}
+                />
               ) : (
                 <span className={css.number}>{index + 1}</span>
               )}
