@@ -35,6 +35,7 @@ export interface SelectProps
   size?: SelectSize
   items: Props['items'] | (() => Promise<Props['items']>)
   allowCreatingNewItems?: boolean
+  name?: string
   whenPopoverClosed?: (node: HTMLElement) => void
 }
 
@@ -188,6 +189,7 @@ export function Select(props: SelectProps) {
         ),
         small: size === SelectSize.Small,
         large: size === SelectSize.Large,
+        name: props.name,
         ...props.inputProps
       }}
       resetOnSelect={true}

@@ -54,6 +54,7 @@ export interface ExpressionAndRuntimeTypeProps extends Omit<LayoutProps, 'onChan
   btnClassName?: string
   allowableTypes?: MultiTypeInputType[]
   fixedTypeComponent: (props: FixedTypeComponentProps) => JSX.Element
+  name: string
 }
 
 type FixedTypeComponentProps = { onChange: ExpressionAndRuntimeTypeProps['onChange'] }
@@ -99,6 +100,7 @@ export function ExpressionAndRuntimeType({
   fixedTypeComponent,
   btnClassName = '',
   allowableTypes,
+  name,
   ...layoutProps
 }: ExpressionAndRuntimeTypeProps) {
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -177,6 +179,7 @@ export function ExpressionAndRuntimeType({
       {type === MultiTypeInputType.RUNTIME && (
         <TextInput
           className={css.input}
+          name={name}
           style={{ width: inputWidth }}
           placeholder={RUNTIME_INPUT_VALUE}
           disabled
@@ -186,6 +189,7 @@ export function ExpressionAndRuntimeType({
       {type === MultiTypeInputType.EXPRESSION && (
         <TextInput
           className={css.input}
+          name={name}
           style={{ width: inputWidth }}
           placeholder={EXPRESSION_INPUT_PLACEHOLDER}
           value={inputValue as string}
@@ -220,6 +224,7 @@ export const MultiTypeInput: React.FC<MultiTypeInputProps> = ({ selectProps, ...
       const { items = [] } = selectProps || {}
       return (
         <Select
+          name={rest.name}
           className={css.select}
           items={items}
           {...selectProps}
@@ -241,6 +246,7 @@ export const MultiTextInput: React.FC<MultiTextInputProps> = ({ textProps, ...re
         <InputGroup
           className={css.input}
           {...restProps}
+          name={rest.name}
           defaultValue={value}
           onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
             onChange?.(event.target.value, MultiTypeInputValue.STRING)
@@ -262,6 +268,7 @@ export const MultiSelectTypeInput: React.FC<MultiSelectTypeInputProps> = ({ mult
         <MultiSelect
           {...multiSelectProps}
           items={items}
+          name={rest.name}
           className={css.multiSelect}
           onChange={(item: MultiSelectOption[]) => onChange?.(item, MultiTypeInputValue.MULTI_SELECT_OPTION)}
         />

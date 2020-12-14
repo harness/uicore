@@ -36,6 +36,7 @@ export interface MultiSelectProps
   tagRenderer?: Props['tagRenderer']
   createNewItemFromQuery?: Props['createNewItemFromQuery']
   allowCreatingNewItems?: boolean
+  name?: string
   onPopoverClose?: (node: HTMLElement) => void
 }
 
@@ -181,7 +182,8 @@ export function MultiSelect(props: MultiSelectProps) {
       tagInputProps={{
         inputProps: {
           ...props.tagInputProps?.inputProps,
-          onChange: handleQueryChange
+          onChange: handleQueryChange,
+          name: props.name
         },
         tagProps: value => {
           return {
