@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.1.99 - 10/12/20
+
+- `Added` new gcp icon
+
+## 1.1.97 - 9/12/20
+
+- `Added` conditional-skip-new icon
+
+## 1.1.96 - 7/12/20
+
+- `Added` Avtar classname props
+
+## 1.1.95 - 4/12/20
+
+- `Fixed` Avtar size and empty props fix
+
+## 1.1.94 - 4/12/20
+
+- `Fixed` broken build
+
+## 1.1.93 - 4/12/20
+
+- `Fixed` MultiSelect component onRemove fix
+
 ## 1.1.92 - 2/12/20
 
 - `Added` tagRenderer as a prop to MultiSelect

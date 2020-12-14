@@ -54,6 +54,7 @@ import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
+import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
 import Copy from './copy.svg'
 import CsHover from './cs-hover.svg'
@@ -369,6 +370,7 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
+import GCP from './gcp.svg'
 
 type HarnessIconName =
   | 'Edit'
@@ -425,6 +427,7 @@ type HarnessIconName =
   | 'command-switch'
   | 'command-winrm'
   | 'conditional-skip-filled'
+  | 'conditional-skip-new'
   | 'conditional-skip'
   | 'copy'
   | 'cs-hover'
@@ -466,6 +469,7 @@ type HarnessIconName =
   | 'feedback-given'
   | 'fixed-input'
   | 'functions'
+  | 'gcp'
   | 'gcr-step'
   | 'gcs-step'
   | 'gear'
@@ -796,6 +800,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
   'conditional-skip-filled': ConditionalSkipFilled,
+  'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
   copy: Copy,
   'cs-hover': CsHover,
@@ -837,6 +842,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   functions: Functions,
+  gcp: GCP,
   'gcr-step': GcrStep,
   'gcs-step': GcsStep,
   gear: Gear,

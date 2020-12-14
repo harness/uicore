@@ -3,12 +3,13 @@
 ##Types
 
 ```js
- interface AvatarGroupProps {
+ interface AvatarGroupProps extends HTMLDivProps {
   onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
   avatars: Array<Omit<AvatarProps, 'size'>>
   overlap?: boolean
   avatarGroupProps?: Omit<AvatarProps, 'size'>
   size?: AvatarSizes //default is 'normal'
+  className?: string
 }
 ```
 
@@ -62,6 +63,28 @@ import { AvatarGroup } from '@wings-software/uikit'
       { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
     ]}
     size="medium"
+  />
+  <AvatarGroup
+    overlap={false}
+    avatars={[
+      { name: 'Aahn Boe SS' },
+      { email: 'CohnDoe.com.HD@harnes.io' },
+      { name: 'EahnFoe' },
+      { name: 'Gahn Hoe' },
+      { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
+    ]}
+    size="xsmall"
+  />
+  <AvatarGroup
+    overlap={false}
+    avatars={[
+      { name: 'Aahn Boe SS' },
+      { email: 'CohnDoe.com.HD@harnes.io' },
+      { name: 'EahnFoe' },
+      { name: 'Gahn Hoe' },
+      { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
+    ]}
+    size="large"
   />
 </Layout.Horizontal>
 ```
