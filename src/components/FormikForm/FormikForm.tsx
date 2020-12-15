@@ -361,6 +361,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <UiKitMultiSelect
+        name={name}
         tagInputProps={{
           ...tagInputProps,
           inputProps: {
@@ -411,6 +412,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <UiKitSelect
+        name={name}
         inputProps={{
           ...inputGroup,
           name,
@@ -641,7 +643,7 @@ interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   label: string
   placeholder?: string
   selectItems: SelectOption[]
-  multiTypeInputProps?: MultiTypeInputProps
+  multiTypeInputProps?: Omit<MultiTypeInputProps, 'name'>
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
@@ -666,10 +668,12 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
       <MultiTypeInput
         {...multiTypeInputProps}
         value={get(formik?.values, name)}
+        name={name}
         selectProps={{
           items: selectItems,
           value: get(formik?.values, name),
           ...multiTypeInputProps?.selectProps,
+          name,
           inputProps: {
             name,
             intent,
@@ -688,7 +692,7 @@ interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'
   label: string
   placeholder?: string
   selectItems: MultiSelectOption[]
-  multiSelectTypeInputProps?: MultiSelectTypeInputProps
+  multiSelectTypeInputProps?: Omit<MultiSelectTypeInputProps, 'name'>
 }
 
 const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContextProps<any>) => {
@@ -705,8 +709,10 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
       <MultiSelectTypeInput
         {...multiSelectTypeInputProps}
         value={get(formik?.values, name)}
+        name={name}
         multiSelectProps={{
           ...multiSelectTypeInputProps?.multiSelectProps,
+          name,
           tagInputProps: {
             ...multiSelectTypeInputProps?.multiSelectProps?.tagInputProps,
             inputProps: {
@@ -734,7 +740,7 @@ interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> 
   label: string
   placeholder?: string
   onChange?: MultiTextInputProps['onChange']
-  multiTextInputProps?: MultiTextInputProps /* In case you really want to customize the text input */
+  multiTextInputProps?: Omit<MultiTextInputProps, 'name'> /* In case you really want to customize the text input */
 }
 
 const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
@@ -748,14 +754,16 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
   } = restProps
   const value = get(formik?.values, name, '')
   const customMultiTextInputProps: MultiTextInputProps = useMemo(
-    () =>
-      Object.assign({}, multiTextInputProps, {
-        textProps: {
-          value,
-          placeholder,
-          onBlur: () => formik?.setFieldTouched(name)
-        }
-      }),
+    () => ({
+      ...multiTextInputProps,
+      name,
+      textProps: {
+        ...multiTextInputProps?.textProps,
+        value,
+        placeholder,
+        onBlur: () => formik?.setFieldTouched(name)
+      }
+    }),
     []
   )
 
@@ -763,6 +771,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <MultiTextInput
         value={value}
+        name={name}
         {...customMultiTextInputProps}
         onChange={(value, valueType) => {
           formik?.setFieldValue(name, value)
@@ -806,6 +815,7 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
         selectProps={{
           ...categorizedSelectProps?.selectProps,
           disabled,
+          name,
           inputProps: {
             ...categorizedSelectProps?.selectProps?.inputProps,
             placeholder
@@ -857,6 +867,7 @@ const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContext
       <SelectWithSubview
         {...selectWithSubviewProps}
         subview={subview}
+        name={name}
         changeViewButtonLabel={changeViewButtonLabel}
         disabled={disabled}
         key={items?.[0]?.label}
@@ -932,7 +943,8 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
             formik?.setFieldValue(name, selectedItems)
             onChange?.(selectedItems)
           },
-          placeholder
+          placeholder,
+          name
         }}
       />
     </FormGroup>
