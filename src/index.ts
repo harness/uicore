@@ -96,7 +96,8 @@ export {
   MultiTypeInputValue,
   MultiSelectTypeInput,
   MultiTypeInputType,
-  getMultiTypeFromValue
+  getMultiTypeFromValue,
+  FixedTypeComponentProps
 } from './components/MultiTypeInput/MultiTypeInput'
 export {
   CategorizedSelectProps,

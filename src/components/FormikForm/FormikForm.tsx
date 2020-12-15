@@ -671,7 +671,6 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
         name={name}
         selectProps={{
           items: selectItems,
-          value: get(formik?.values, name),
           ...multiTypeInputProps?.selectProps,
           name,
           inputProps: {
@@ -712,7 +711,6 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
         name={name}
         multiSelectProps={{
           ...multiSelectTypeInputProps?.multiSelectProps,
-          name,
           tagInputProps: {
             ...multiSelectTypeInputProps?.multiSelectProps?.tagInputProps,
             inputProps: {
@@ -722,8 +720,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
             intent,
             disabled: disabled
           },
-          items: selectItems,
-          value: get(formik?.values, name)
+          items: selectItems
         }}
         onChange={(value, valueType) => {
           formik?.setFieldValue(name, value)
