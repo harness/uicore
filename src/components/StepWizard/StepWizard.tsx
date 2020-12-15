@@ -53,7 +53,7 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
     stepClassName = '',
     navClassName = '',
     icon = '',
-    iconProps = { size: 36 },
+    iconProps,
     title = ''
   } = props
   const [state, setState] = React.useState<StepState<SharedObject>>({
@@ -141,7 +141,9 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
                 { [css.completedStep]: completedSteps }
               )}>
               {completedSteps ? (
-                <Icon name="small-tick" size={22} color="green500" style={{ marginRight: 'var(--spacing-xsmall)' }} />
+                <span className={css.completedIcon}>
+                  <Icon name="small-tick" size={20} color="grey200" />
+                </span>
               ) : (
                 <span className={css.number}>{index + 1}</span>
               )}
