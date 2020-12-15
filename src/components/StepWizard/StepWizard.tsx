@@ -53,7 +53,7 @@ export const StepWizard = <SharedObject extends object>(props: StepWizardProps<S
     stepClassName = '',
     navClassName = '',
     icon = '',
-    iconProps = { size: 36 },
+    iconProps,
     title = ''
   } = props
   const [state, setState] = React.useState<StepState<SharedObject>>({
