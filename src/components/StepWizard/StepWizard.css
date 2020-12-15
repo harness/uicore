@@ -13,7 +13,7 @@
 
       .navStep {
         display: grid;
-        grid-template-columns: 20px 1fr;
+        grid-template-columns: 20px 100px;
         grid-gap: 10px;
         align-items: center;
         cursor: not-allowed;
@@ -62,7 +62,7 @@
 .title {
   color: var(--white);
   font-size: large;
-  margin-bottom: var(--spacing-xxxlarge);
+  margin-bottom: var(--spacing-xxlarge);
   font-weight: 600;
 }
 
