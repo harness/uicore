@@ -5,7 +5,12 @@ import { DatePicker, TimePrecision, IDatePickerProps } from '@blueprintjs/dateti
 import { Intent } from '@blueprintjs/core'
 import { Button } from '../Button/Button'
 import { Popover } from '../Popover/Popover'
-import { getHelpPopoverContent, ALL_UNITS, parseStringToTime, timeToDisplayText } from '../DurationInput/DurationInput'
+import {
+  getHelpPopoverContent,
+  DurationInputHelpers,
+  parseStringToTime,
+  timeToDisplayText
+} from '../DurationInput/DurationInput'
 import moment from 'moment'
 import { Icon } from '../../icons/Icon'
 
@@ -26,6 +31,8 @@ interface DateInputState {
   intent?: Intent
   error?: Errors | undefined
 }
+
+const { UNITS_ORDER: ALL_UNITS } = DurationInputHelpers
 
 const REGEX_VALID_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+[wdhms]+\s*)*$/i
 const REGEX_VALID_MS_TEXT = /^(current\(\)|\${[a-z\d._]+})(\s*[+-]\s*)*([0-9]+)*$/i

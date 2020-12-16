@@ -7,13 +7,13 @@ import { Text } from '../Text/Text'
 
 import css from './DurationInput.css'
 
-export type Units = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
+export type DurationUnits = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
 const TEXT_EXTRACT_REGEX = /(\d+)\s*([a-z]{1,2})/gi
 const TEXT_LIMIT_REGEX = /[^0-9wdhms\s]/g
 const UNIT_LESS_REGEX = /\d+(?!(ms|s|m|h|d|w|\d))/i
 const VALID_SYNTAX_REGEX = /^(\d+w\s*)?(\d+d\s*)?(\d+h\s*)?(\d+m\s*)?(\d+s\s*)?(\d+ms\s*)?$/i
 
-export const UNIT_MULTIPLIIERS: Record<Units, number> = {
+export const UNIT_MULTIPLIERS: Record<DurationUnits, number> = {
   ms: 1,
   s: 1e3,
   m: 1e3 * 60,
@@ -22,9 +22,7 @@ export const UNIT_MULTIPLIIERS: Record<Units, number> = {
   w: 1e3 * 60 * 60 * 24 * 7
 }
 
-const UNITS_ORDER: Units[] = ['w', 'd', 'h', 'm', 's', 'ms']
-
-export const ALL_UNITS: Units[] = ['w', 'd', 'h', 'm', 's', 'ms']
+const UNITS_ORDER: DurationUnits[] = ['w', 'd', 'h', 'm', 's', 'ms']
 
 const UNITS_MAP = new Map([
   ['w', 'weeks'],
@@ -46,7 +44,7 @@ export function parseStringToTime(str: string): number {
       For example if a user enters '1w 2d 2w',
       only '1w' will be considred and '2w' will be ignored
     */
-  const done: Record<Units, boolean> = {
+  const done: Record<DurationUnits, boolean> = {
     w: false,
     d: false,
     h: false,
@@ -64,12 +62,12 @@ export function parseStringToTime(str: string): number {
    * @param {String} units Second capture group, the unit in this case
    */
   str.replace(TEXT_EXTRACT_REGEX, (_: string, n: string, units: string) => {
-    const unit = units.toLowerCase() as Units
+    const unit = units.toLowerCase() as DurationUnits
 
     // check in unit is valid and not already captured
-    if (unit in UNIT_MULTIPLIIERS && !done[unit]) {
+    if (unit in UNIT_MULTIPLIERS && !done[unit]) {
       // add to the time
-      time += parseInt(n, 10) * UNIT_MULTIPLIIERS[unit]
+      time += parseInt(n, 10) * UNIT_MULTIPLIERS[unit]
       // set the unit as already captured
       done[unit] = true
     }
@@ -90,8 +88,8 @@ export function timeToDisplayText(time: number): string {
   let t = time
 
   UNITS_ORDER.forEach(key => {
-    const n = Math.floor(t / UNIT_MULTIPLIIERS[key])
-    t = t % UNIT_MULTIPLIIERS[key]
+    const n = Math.floor(t / UNIT_MULTIPLIERS[key])
+    t = t % UNIT_MULTIPLIERS[key]
 
     if (n > 0) {
       str.push(`${n}${key}`)
@@ -103,19 +101,19 @@ export function timeToDisplayText(time: number): string {
 /**
  * Converts given time without spaces '1w2d3m' to text like '1w 2d 3m'
  */
-export function spaceOutFormatTime(characters: string[], allowedValues: Units[]): string {
+export function spaceOutFormatTime(characters: string[], allowedValues: DurationUnits[]): string {
   return characters
     .map((char, index) => {
       const isPreviousCharUnit =
         index > 1 &&
         characters[index - 1]?.trim() &&
-        allowedValues.includes((characters[index - 1] as unknown) as Units)
+        allowedValues.includes((characters[index - 1] as unknown) as DurationUnits)
       return isPreviousCharUnit && char?.trim() && !isNaN(parseInt(char)) ? ` ${char}` : char
     })
     .join('')
 }
 
-export const getHelpPopoverContent = (allowedUnits: Units[]) => (
+export const getHelpPopoverContent = (allowedUnits: DurationUnits[]) => (
   <Text padding="xlarge" style={{ minWidth: '192px' }}>
     You can use:
     <br />
@@ -138,7 +136,7 @@ export interface DurationInputProps extends Omit<TextInputProps, 'value' | 'onCh
   // will be string if valueInTimeFormat is passed
   valueInTimeFormat?: string
   onChange?(time: number | string, hasWarning?: boolean): void
-  allowedUnits?: Units[]
+  allowedUnits?: DurationUnits[]
   allowVariables?: boolean
 }
 export function DurationInput(props: DurationInputProps) {
@@ -168,7 +166,7 @@ export function DurationInput(props: DurationInputProps) {
 
     if (allowedUnits) {
       // if limited allowed units, show warning when non-expression value breaks the rule
-      const diff = ALL_UNITS.filter(unit => !allowedUnits.includes(unit))
+      const diff = UNITS_ORDER.filter(unit => !allowedUnits.includes(unit))
       if (!e.target.value.startsWith('$') && diff.some(unit => e.target.value.includes(unit))) {
         hasWarning = true
       }
@@ -180,12 +178,12 @@ export function DurationInput(props: DurationInputProps) {
         VALID_SYNTAX_REGEX.test(fieldValue) &&
         characters.some(
           (char, index) =>
-            ALL_UNITS.includes((char as unknown) as Units) &&
+            UNITS_ORDER.includes((char as unknown) as DurationUnits) &&
             index + 1 !== characters.length &&
             characters[index + 1] !== ' '
         )
       if (requiresSpacing) {
-        fieldValueCorrected = spaceOutFormatTime(characters, ALL_UNITS)
+        fieldValueCorrected = spaceOutFormatTime(characters, UNITS_ORDER)
         setText(fieldValueCorrected)
       } else {
         setText(fieldValue)
@@ -219,7 +217,7 @@ export function DurationInput(props: DurationInputProps) {
       <Popover
         wrapperTagName="div"
         className={css.helpIcon}
-        content={getHelpPopoverContent(allowedUnits || ALL_UNITS)}
+        content={getHelpPopoverContent(allowedUnits || UNITS_ORDER)}
         lazy={true}
         interactionKind="hover"
         position="top"
@@ -228,4 +226,13 @@ export function DurationInput(props: DurationInputProps) {
       </Popover>
     </div>
   )
+}
+
+export const DurationInputHelpers = {
+  TEXT_EXTRACT_REGEX,
+  TEXT_LIMIT_REGEX,
+  UNIT_LESS_REGEX,
+  VALID_SYNTAX_REGEX,
+  UNIT_MULTIPLIERS,
+  UNITS_ORDER
 }

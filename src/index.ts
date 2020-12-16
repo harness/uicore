@@ -28,7 +28,13 @@ export { Utils } from './core/Utils'
 export { TextInput } from './components/TextInput/TextInput'
 export { default as FieldArray } from './components/FieldArray/FieldArray'
 export { Label } from './components/Label/Label'
-export { DurationInput } from './components/DurationInput/DurationInput'
+export {
+  DurationInput,
+  parseStringToTime,
+  timeToDisplayText,
+  DurationUnits,
+  DurationInputHelpers
+} from './components/DurationInput/DurationInput'
 export { Select, SelectProps, SelectOption } from './components/Select/Select'
 export { SelectV2, SelectV2Props } from './components/Select/SelectV2'
 export { StepWizard, StepProps, StepWizardProps } from './components/StepWizard/StepWizard'
