@@ -55,7 +55,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   btnClassName?: string
   allowableTypes?: MultiTypeInputType[]
   fixedTypeComponent: (props: FixedTypeComponentProps & T) => JSX.Element
-  fixedTypeComponentProps: T
+  fixedTypeComponentProps?: T
   name: string
 }
 
@@ -83,21 +83,22 @@ export const getMultiTypeFromValue = (
   return MultiTypeInputType.FIXED
 }
 
-export function ExpressionAndRuntimeType({
-  value,
-  defaultValueToReset,
-  width,
-  mentionsInfo,
-  onTypeChange,
-  onChange,
-  i18n: _i18n = {},
-  fixedTypeComponent,
-  fixedTypeComponentProps,
-  btnClassName = '',
-  allowableTypes,
-  name,
-  ...layoutProps
-}: ExpressionAndRuntimeTypeProps) {
+export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntimeTypeProps<T>): React.ReactElement {
+  const {
+    value,
+    defaultValueToReset,
+    width,
+    mentionsInfo,
+    onTypeChange,
+    onChange,
+    i18n: _i18n = {},
+    fixedTypeComponent,
+    fixedTypeComponentProps,
+    btnClassName = '',
+    allowableTypes,
+    name,
+    ...layoutProps
+  } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
@@ -166,7 +167,11 @@ export function ExpressionAndRuntimeType({
       width={width}
       {...layoutProps}>
       {type === MultiTypeInputType.FIXED && (
-        <FixedTypeComponent {...fixedTypeComponentProps} value={value} onChange={fixedComponentOnChangeCallback} />
+        <FixedTypeComponent
+          {...(fixedTypeComponentProps as T)}
+          value={value}
+          onChange={fixedComponentOnChangeCallback}
+        />
       )}
       {type === MultiTypeInputType.RUNTIME && (
         <TextInput
