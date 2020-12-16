@@ -756,6 +756,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
       name,
       textProps: {
         ...multiTextInputProps?.textProps,
+        name,
         value,
         placeholder,
         onBlur: () => formik?.setFieldTouched(name)
