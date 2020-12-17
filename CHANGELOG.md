@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to Semantic Versioning. Use prefixes (Added, Changed, Deprecated, Removed, Fixed, Security) for each change.
 
+## 1.2.5 - 17/12/20
+
+- `Fixed`: Disabled input accessibility
+
 ## 1.2.4 - 16/12/20
 
 - `Fixed`: Fixed FormInput.ColorPicker to take formik value.
