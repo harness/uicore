@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { HTMLAttributes, useEffect } from 'react'
 import { Button, ButtonProps } from '../Button/Button'
 import React, { useState } from 'react'
 import { Container } from '../Container/Container'
@@ -68,6 +68,10 @@ const colors = [
 export function ColorPicker(props: ColorPickerProps) {
   const [selected, setSelected] = useState((props.color || 'transparent').toLowerCase())
   const width = Math.max(props.width ? parseInt(props.width as string) : 60, 60)
+
+  useEffect(() => {
+    props.color ? setSelected(props.color.toLowerCase()) : null
+  }, [props])
 
   return (
     <Button
