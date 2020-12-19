@@ -37,6 +37,7 @@ export interface SelectProps
   allowCreatingNewItems?: boolean
   name?: string
   whenPopoverClosed?: (node: HTMLElement) => void
+  addClearBtn?: boolean
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -177,15 +178,28 @@ export function Select(props: SelectProps) {
         value: query,
         leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
         rightElement: (
-          <Icon
-            name="caret-down"
-            onClick={e => {
-              const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
-              input?.focus()
-            }}
-            size={14}
-            padding={size === SelectSize.Small ? 'xsmall' : 'small'}
-          />
+          <>
+            {item && props.addClearBtn ? (
+              <Icon
+                name="main-delete"
+                onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
+                  e.preventDefault()
+                  handleItemSelect({ value: '', label: '' })
+                }}
+                size={14}
+                padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+              />
+            ) : null}
+            <Icon
+              name="caret-down"
+              onClick={e => {
+                const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
+                input?.focus()
+              }}
+              size={14}
+              padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+            />
+          </>
         ),
         small: size === SelectSize.Small,
         large: size === SelectSize.Large,
