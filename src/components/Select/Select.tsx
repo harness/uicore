@@ -179,7 +179,7 @@ export function Select(props: SelectProps) {
         leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
         rightElement: (
           <>
-            {true ? (
+            {item && props.addClearBtn ? (
               <Icon
                 name="main-delete"
                 onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
