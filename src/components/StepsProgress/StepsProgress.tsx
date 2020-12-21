@@ -8,7 +8,7 @@ import { Spacing } from '../../core/Spacing'
 import { Icon } from '../../icons/Icon'
 
 export interface StepsProgressProps {
-  steps: (JSX.Element | string)[]
+  steps: Array<JSX.Element | string>
   current: number
   currentStatus: string
   intent?: Intent
