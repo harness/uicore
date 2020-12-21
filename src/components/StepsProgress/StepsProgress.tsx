@@ -5,9 +5,10 @@ import css from './StepsProgress.css'
 import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
 import { Layout } from '../../layouts/Layout'
 import { Spacing } from '../../core/Spacing'
+import { Icon } from '../../icons/Icon'
 
 export interface StepsProgressProps {
-  steps: string[]
+  steps: Array<JSX.Element | string>
   current: number
   currentStatus: string
   intent?: Intent
@@ -82,15 +83,9 @@ export function StepsProgress(props: StepsProgressProps) {
       <Layout.Vertical spacing={Spacing.LARGE}>
         {stepsWithStatus && stepsWithStatus.length ? (
           stepsWithStatus.map(step => (
-            <div key={step.label}>
-              <Text
-                inline
-                icon={step.stepStatus}
-                key={step.label}
-                iconProps={{ size: 16, color: step.stepIconColor }}
-                style={{ fontWeight: step.fonts } as React.CSSProperties}>
-                {step.label}
-              </Text>
+            <div key={`${step}`} className={css.stepWrap}>
+              <Icon name={step.stepStatus} size={16} color={step.stepIconColor} margin={{ right: 'small' }} />
+              <Text style={{ fontWeight: step.fonts } as React.CSSProperties}>{step.label}</Text>
             </div>
           ))
         ) : (
