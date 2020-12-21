@@ -103,7 +103,7 @@ export function Select(props: SelectProps) {
   }, [value])
 
   React.useEffect(() => {
-    if (props.addClearBtn && item && item.value) {
+    if (props.addClearBtn && item?.value) {
       setShowClearBtn(true)
     } else {
       setShowClearBtn(false)
