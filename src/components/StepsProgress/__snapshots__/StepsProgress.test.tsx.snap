@@ -21,109 +21,116 @@ exports[`Steps Progress Component should render with default steps 1`] = `
     <div
       class="vertical layout-spacing-large main spacing spacing-large"
     >
-      <div>
+      <div
+        class="stepWrap"
+      >
         <span
-          class="font main inline inline-true style style-fontWeight style-fontWeight-bold"
-          style="font-weight: bold; display: inline-flex; align-items: center;"
+          class="bp3-icon bp3-icon-tick main color color-green500 margin margin-right margin-right-small"
+          icon="tick"
         >
-          <span
-            class="bp3-icon bp3-icon-tick main padding padding-right padding-right-xsmall color color-green500"
-            icon="tick"
+          <svg
+            data-icon="tick"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
           >
-            <svg
-              data-icon="tick"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-            >
-              <desc>
-                tick
-              </desc>
-              <path
-                d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+            <desc>
+              tick
+            </desc>
+            <path
+              d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <p
+          class="font main style style-fontWeight style-fontWeight-bold"
+          style="font-weight: bold;"
+        >
           Checking Delegate
-        </span>
+        </p>
       </div>
-      <div>
+      <div
+        class="stepWrap"
+      >
         <span
-          class="font main inline inline-true style style-fontWeight style-fontWeight-bold"
-          style="font-weight: bold; display: inline-flex; align-items: center;"
+          class="bp3-icon bp3-icon-tick main color color-green500 margin margin-right margin-right-small"
+          icon="tick"
         >
-          <span
-            class="bp3-icon bp3-icon-tick main padding padding-right padding-right-xsmall color color-green500"
-            icon="tick"
+          <svg
+            data-icon="tick"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
           >
-            <svg
-              data-icon="tick"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-            >
-              <desc>
-                tick
-              </desc>
-              <path
-                d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+            <desc>
+              tick
+            </desc>
+            <path
+              d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <p
+          class="font main style style-fontWeight style-fontWeight-bold"
+          style="font-weight: bold;"
+        >
           Establising Connection with the Delegate and Kubernetes
-        </span>
+        </p>
       </div>
-      <div>
+      <div
+        class="stepWrap"
+      >
         <span
-          class="font main inline inline-true style style-fontWeight style-fontWeight-"
-          style="display: inline-flex; align-items: center;"
+          class="bp3-icon bp3-icon-error main color color-red500 margin margin-right margin-right-small"
+          icon="error"
         >
-          <span
-            class="bp3-icon bp3-icon-error main padding padding-right padding-right-xsmall color color-red500"
-            icon="error"
+          <svg
+            data-icon="error"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
           >
-            <svg
-              data-icon="error"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-            >
-              <desc>
-                error
-              </desc>
-              <path
-                d="M7.99-.01c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm1 13h-2v-2h2v2zm0-3h-2v-7h2v7z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+            <desc>
+              error
+            </desc>
+            <path
+              d="M7.99-.01c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm1 13h-2v-2h2v2zm0-3h-2v-7h2v7z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <p
+          class="font main style style-fontWeight style-fontWeight-"
+        >
           Checking for heartbeat
-        </span>
+        </p>
       </div>
-      <div>
+      <div
+        class="stepWrap"
+      >
         <span
-          class="font main inline inline-true style style-fontWeight style-fontWeight-normal"
-          style="font-weight: normal; display: inline-flex; align-items: center;"
+          class="bp3-icon bp3-icon-blank main color color-yellow500 margin margin-right margin-right-small"
+          icon="blank"
         >
-          <span
-            class="bp3-icon bp3-icon-blank main padding padding-right padding-right-xsmall color color-yellow500"
-            icon="blank"
+          <svg
+            data-icon="blank"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
           >
-            <svg
-              data-icon="blank"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-            >
-              <desc>
-                blank
-              </desc>
-            </svg>
-          </span>
-          Verifying Connection
+            <desc>
+              blank
+            </desc>
+          </svg>
         </span>
+        <p
+          class="font main style style-fontWeight style-fontWeight-normal"
+          style="font-weight: normal;"
+        >
+          Verifying Connection
+        </p>
       </div>
     </div>
   </div>
