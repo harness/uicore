@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
@@ -96,9 +96,15 @@ export function Select(props: SelectProps) {
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
   const { onChange, value, size, itemRenderer, whenPopoverClosed, ...rest } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
+  const [showClearBtn, setShowClearBtn] = useState<boolean>()
 
   React.useEffect(() => {
     setItem(value)
+    if (props.addClearBtn && value?.value) {
+      setShowClearBtn(true)
+    } else {
+      setShowClearBtn(false)
+    }
   }, [value])
 
   function handleItemSelect(item: SelectOption) {
@@ -109,6 +115,11 @@ export function Select(props: SelectProps) {
       onChange(item)
     } else {
       setItem(item)
+      if (props.addClearBtn && item?.value) {
+        setShowClearBtn(true)
+      } else {
+        setShowClearBtn(false)
+      }
     }
   }
 
@@ -179,7 +190,7 @@ export function Select(props: SelectProps) {
         leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
         rightElement: (
           <>
-            {item?.value && props.addClearBtn ? (
+            {showClearBtn ? (
               <Icon
                 name="main-delete"
                 onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
@@ -187,7 +198,7 @@ export function Select(props: SelectProps) {
                   handleItemSelect({ value: '', label: '' })
                 }}
                 size={14}
-                padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+                padding={{ top: 'small', left: 'xsmall', right: 'xsmall', bottom: 'small' }}
               />
             ) : null}
             <Icon
@@ -197,7 +208,13 @@ export function Select(props: SelectProps) {
                 input?.focus()
               }}
               size={14}
-              padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+              padding={
+                showClearBtn
+                  ? { top: 'small', right: 'xsmall', bottom: 'small' }
+                  : size === SelectSize.Small
+                  ? 'xsmall'
+                  : 'small'
+              }
             />
           </>
         ),
