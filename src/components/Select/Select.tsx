@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
@@ -96,10 +96,19 @@ export function Select(props: SelectProps) {
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
   const { onChange, value, size, itemRenderer, whenPopoverClosed, ...rest } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
+  const [showClearBtn, setShowClearBtn] = useState<boolean>()
 
   React.useEffect(() => {
     setItem(value)
   }, [value])
+
+  React.useEffect(() => {
+    if (props.addClearBtn && item && item.value) {
+      setShowClearBtn(true)
+    } else {
+      setShowClearBtn(false)
+    }
+  }, [props.addClearBtn, item])
 
   function handleItemSelect(item: SelectOption) {
     if (item.value === Loading) {
@@ -107,9 +116,8 @@ export function Select(props: SelectProps) {
     }
     if (typeof onChange === 'function') {
       onChange(item)
-    } else {
-      setItem(item)
     }
+    setItem(item)
   }
 
   React.useEffect(() => {
@@ -179,7 +187,7 @@ export function Select(props: SelectProps) {
         leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
         rightElement: (
           <>
-            {item?.value && props.addClearBtn ? (
+            {showClearBtn ? (
               <Icon
                 name="main-delete"
                 onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
@@ -198,7 +206,7 @@ export function Select(props: SelectProps) {
               }}
               size={14}
               padding={
-                props.addClearBtn
+                showClearBtn
                   ? { top: 'small', right: 'xsmall', bottom: 'small' }
                   : size === SelectSize.Small
                   ? 'xsmall'
