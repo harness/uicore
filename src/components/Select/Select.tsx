@@ -187,7 +187,7 @@ export function Select(props: SelectProps) {
                   handleItemSelect({ value: '', label: '' })
                 }}
                 size={14}
-                padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+                padding={{ top: 'small', left: 'xsmall', right: 'xsmall', bottom: 'small' }}
               />
             ) : null}
             <Icon
@@ -197,7 +197,13 @@ export function Select(props: SelectProps) {
                 input?.focus()
               }}
               size={14}
-              padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+              padding={
+                props.addClearBtn
+                  ? { top: 'small', right: 'xsmall', bottom: 'small' }
+                  : size === SelectSize.Small
+                  ? 'xsmall'
+                  : 'small'
+              }
             />
           </>
         ),
