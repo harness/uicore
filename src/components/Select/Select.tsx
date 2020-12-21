@@ -100,15 +100,12 @@ export function Select(props: SelectProps) {
 
   React.useEffect(() => {
     setItem(value)
-  }, [value])
-
-  React.useEffect(() => {
-    if (props.addClearBtn && item?.value) {
+    if (props.addClearBtn && value?.value) {
       setShowClearBtn(true)
     } else {
       setShowClearBtn(false)
     }
-  }, [props.addClearBtn, item])
+  }, [value])
 
   function handleItemSelect(item: SelectOption) {
     if (item.value === Loading) {
@@ -116,8 +113,14 @@ export function Select(props: SelectProps) {
     }
     if (typeof onChange === 'function') {
       onChange(item)
+    } else {
+      setItem(item)
+      if (props.addClearBtn && item?.value) {
+        setShowClearBtn(true)
+      } else {
+        setShowClearBtn(false)
+      }
     }
-    setItem(item)
   }
 
   React.useEffect(() => {
