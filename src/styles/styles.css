@@ -2,5 +2,5 @@
 @import './fonts.css';
 @import './sizes.css';
 @import './animations.css';
-@import '@wings-software/mentions';
+@import '@wings-software/mentions/styles.css';
 @import 'xterm/css/xterm.css';

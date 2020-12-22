@@ -27,7 +27,7 @@ spec:
         [
           '/jenkins-storage/ui/uikit/v$VERSION/scripts/docs-runner.sh',
           '/jenkins-storage/ui/uikit/v$VERSION',
-          '$GITHUB_HARNESS_BOT_TOKEN',
+          '$GITHUB_HARNESS_BOT_TOKEN'
         ]
   volumes:
     - name: volume-0
