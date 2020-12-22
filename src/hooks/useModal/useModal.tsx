@@ -25,8 +25,10 @@ export function useModal() {
 
   const close = useCallback(
     (result = undefined) => {
-      unmountModal(modalInfo)
-      modalInfo?.resolve(result)
+      if (modalInfo) {
+        unmountModal(modalInfo)
+        modalInfo.resolve?.(result)
+      }
     },
     [modalInfo]
   )

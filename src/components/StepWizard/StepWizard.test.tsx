@@ -75,25 +75,25 @@ describe('REnder basic Step Wizard', () => {
   test('should render with initial step -1, render step 1', async () => {
     const { container } = render(<ExampleWizard {...getDefaultProps(-1)} />)
     await wait()
-    expect(queryByText(container, /Create a New Project: 1/)).toBeDefined()
+    expect(queryByText(container as HTMLElement, /Create a New Project: 1/)).toBeDefined()
   })
   test('should render with initial step 200, render step 1', async () => {
     const { container } = render(<ExampleWizard {...getDefaultProps(200)} />)
     await wait()
-    expect(queryByText(container, /Create a New Project: 1/)).toBeDefined()
+    expect(queryByText(container as HTMLElement, /Create a New Project: 1/)).toBeDefined()
   })
 
   test('should render with initial step 2, render Step 2', async () => {
     const { container } = render(<ExampleWizard {...getDefaultProps(2)} />)
     await wait()
-    expect(queryByText(container, /New Project: 2/)).toBeDefined()
+    expect(queryByText(container as HTMLElement, /New Project: 2/)).toBeDefined()
   })
 
   test('should test Prev and Next Step', async () => {
     const props = getDefaultProps(1)
     const { container } = render(<ExampleWizard {...props} />)
     await wait()
-    fireEvent.click(queryByText(container, /Next/) as HTMLDivElement)
+    fireEvent.click(queryByText(container as HTMLElement, /Next/) as HTMLDivElement)
     await wait()
     expect(props.stepChange).toHaveBeenLastCalledWith({
       nextStep: 2,
@@ -102,10 +102,10 @@ describe('REnder basic Step Wizard', () => {
         prevStepName: 'Create a New Project'
       }
     })
-    fireEvent.click(queryByText(container, /Next/) as HTMLDivElement)
-    await waitForElement(() => queryByText(container, /New Project 3/) as HTMLDivElement)
-    expect(queryByText(container, /Collaborator: 3/)).not.toBeNull()
-    expect(queryByText(container, /Last Step: New Project 2/)).not.toBeNull()
+    fireEvent.click(queryByText(container as HTMLElement, /Next/) as HTMLDivElement)
+    await waitForElement(() => queryByText(container as HTMLElement, /New Project 3/) as HTMLDivElement)
+    expect(queryByText(container as HTMLElement, /Collaborator: 3/)).not.toBeNull()
+    expect(queryByText(container as HTMLElement, /Last Step: New Project 2/)).not.toBeNull()
 
     expect(props.stepChange).toHaveBeenLastCalledWith({
       nextStep: 3,
@@ -115,7 +115,7 @@ describe('REnder basic Step Wizard', () => {
       }
     })
 
-    fireEvent.click(queryByText(container, /Next/) as HTMLDivElement)
+    fireEvent.click(queryByText(container as HTMLElement, /Next/) as HTMLDivElement)
 
     await wait()
 
@@ -124,7 +124,7 @@ describe('REnder basic Step Wizard', () => {
     })
     await wait()
 
-    fireEvent.click(queryByText(container, /Previous/) as HTMLDivElement)
+    fireEvent.click(queryByText(container as HTMLElement, /Previous/) as HTMLDivElement)
     await wait()
 
     expect(props.stepChange).toHaveBeenLastCalledWith({
@@ -134,7 +134,7 @@ describe('REnder basic Step Wizard', () => {
         prevStepName: 'Collaborator'
       }
     })
-    fireEvent.click(queryByText(container, /Previous/) as HTMLDivElement)
+    fireEvent.click(queryByText(container as HTMLElement, /Previous/) as HTMLDivElement)
     await wait()
 
     expect(props.stepChange).toHaveBeenLastCalledWith({
@@ -144,7 +144,7 @@ describe('REnder basic Step Wizard', () => {
         prevStepName: 'New Project 4'
       }
     })
-    expect(queryByText(container, /Create a New Project: 1/)).not.toBeNull()
-    expect(queryByText(container, /Last Step: New Project 4/)).not.toBeNull()
+    expect(queryByText(container as HTMLElement, /Create a New Project: 1/)).not.toBeNull()
+    expect(queryByText(container as HTMLElement, /Last Step: New Project 4/)).not.toBeNull()
   })
 })

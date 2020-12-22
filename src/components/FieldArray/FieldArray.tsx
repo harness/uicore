@@ -160,4 +160,4 @@ function FieldArray(props: ConnectedProps) {
   )
 }
 
-export default connect<Props, RowData[]>(FieldArray)
+export default connect<Props>(FieldArray)

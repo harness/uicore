@@ -21,7 +21,7 @@ function useModalState() {
 }
 
 function useModalInfoState() {
-  const [modalInfo, setModalInfo] = useState()
+  const [modalInfo, setModalInfo] = useState<ModalInfo>()
   return { modalInfo, setModalInfo }
 }
 

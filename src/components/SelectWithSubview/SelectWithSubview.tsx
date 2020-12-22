@@ -45,7 +45,7 @@ export function useToggleDropDownSubviewHook({
   const selectCustomOption = useMemo(() => ({ label: changeViewButtonLabel, value: changeViewButtonLabel }), [
     changeViewButtonLabel
   ])
-  const [options, setOptions] = useState<SelectOption[] | MultiSelectOption[]>(
+  const [options, setOptions] = useState<Array<SelectOption | MultiSelectOption>>(
     initializeSelectOptions(items, selectCustomOption)
   )
 

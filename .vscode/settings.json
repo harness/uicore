@@ -1,5 +1,4 @@
 {
-  "eslint.enable": true,
   "search.exclude": {
     "**/node_modules": true,
     "npm-debug.log*": true,
@@ -16,18 +15,10 @@
     "**/_app.js": true,
     "webpack.config.js": true,
     "tsconfig.json": true,
-    "cypress.json": true,
     "types": true,
     "scripts": true,
     ".*": true,
     "*.config.js": true
-  },
-  "files.exclude": {
-    "**/node_modules": true,
-    "npm-debug.log*": true,
-    "dist/": true,
-    "yarn-error.*": true,
-    "**/yarn.lock": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
