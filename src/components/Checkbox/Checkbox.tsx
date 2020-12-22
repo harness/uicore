@@ -15,7 +15,7 @@ export interface CheckboxProps extends Assign<Omit<ICheckboxProps, 'onChange'>, 
 }
 
 export function Checkbox(props: CheckboxProps) {
-  const { className = '', onChange = () => {} } = props
+  const { className = '', onChange } = props
 
   return (
     <BpCheckbox

@@ -23,9 +23,8 @@ interface SizeValueProps {
   size: string
   fontSize: string
 }
-type SizesProps = {
-  [key in AvatarSizes]: SizeValueProps
-}
+type SizesProps = Record<AvatarSizes, SizeValueProps>
+
 const sizes: SizesProps = {
   xsmall: { size: '16px', fontSize: '7px' },
   small: { size: '24px', fontSize: '10px' },

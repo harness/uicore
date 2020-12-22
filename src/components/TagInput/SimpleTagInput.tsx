@@ -11,6 +11,6 @@ export function SimpleTagInput(
   const itemFromNewTag = useCallback((newTag: string) => newTag, [])
 
   return (
-    <TagInput items={props.items} {...props} keyOf={labelFor} labelFor={labelFor} itemFromNewTag={itemFromNewTag} />
+    <TagInput {...props} items={props.items} keyOf={labelFor} labelFor={labelFor} itemFromNewTag={itemFromNewTag} />
   )
 }

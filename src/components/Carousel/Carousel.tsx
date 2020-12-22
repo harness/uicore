@@ -1,5 +1,4 @@
 import React from 'react'
-import { isArray } from 'util'
 import css from './Carousel.css'
 import cx from 'classnames'
 import { Layout } from '../../layouts/Layout'
@@ -29,7 +28,7 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   React.useEffect(() => {
     let slides = 1
-    if (isArray(children)) {
+    if (Array.isArray(children)) {
       slides = children.length
     }
     setTotalSlides(slides)
@@ -60,7 +59,7 @@ export const Carousel: React.FC<CarouselProps> = ({
         { [css.active]: activeSlide === index + 1 },
         { [css.carouselItemNext]: activeSlide === index }
       )}>
-      {isArray(children) ? children[index] : children}
+      {Array.isArray(children) ? children[index] : children}
     </div>
   ))
 

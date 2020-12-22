@@ -27,7 +27,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import get from 'lodash.get'
+import { get } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -554,7 +554,7 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'r
   onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
 }
 
-export const Formik = <Values extends object>(props: FormikProps<Values>) => {
+export const Formik = <Values extends Record<string, unknown>>(props: FormikProps<Values>) => {
   const { formLoading = false, onSubmit, render, children, ...rest } = props
   const [isFormLoading, setFormLoading] = React.useState(false)
   React.useEffect(() => {
@@ -770,8 +770,8 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <MultiTextInput
         value={value}
-        name={name}
         {...customMultiTextInputProps}
+        name={name}
         onChange={(value, valueType) => {
           formik?.setFieldValue(name, value)
           onChange?.(value, valueType)

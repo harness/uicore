@@ -17,5 +17,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/jest/svg-mock.js'
-  }
+  },
+  transformIgnorePatterns: ['node_modules/(?!(date-fns|lodash-es)/)']
 }

@@ -204,12 +204,7 @@ export function MultiSelect(props: MultiSelectProps) {
         ...props.tagInputProps
       }}
       itemListPredicate={(query, items) =>
-        items.filter(item =>
-          item.label
-            .toString()
-            .toLowerCase()
-            .includes(query.toLowerCase())
-        )
+        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
       }
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       selectedItems={value}

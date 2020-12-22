@@ -22,7 +22,7 @@ export interface SparkChartProps {
 export const SparkChart: React.FC<SparkChartProps> = ({
   data,
   className = '',
-  onClick = () => {},
+  onClick = () => void 0,
   color = Color.BLUE_450
 }) => {
   const max = Math.max(...data)

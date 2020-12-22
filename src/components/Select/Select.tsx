@@ -171,12 +171,7 @@ export function Select(props: SelectProps) {
         itemRenderer?.(item, props) || defaultItemRenderer(item, props, size)
       }
       itemListPredicate={(query, items) =>
-        items.filter(item =>
-          item.label
-            .toString()
-            .toLowerCase()
-            .includes(query.toLowerCase())
-        )
+        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
       }
       createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}

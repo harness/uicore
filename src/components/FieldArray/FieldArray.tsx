@@ -30,7 +30,7 @@ interface Props {
   insertRowAtBeginning?: boolean
   name: string
   isDeleteOfRowAllowed?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
-  onChange?: (params: object) => void
+  onChange?: (params: Record<string, unknown>) => void
   labelProps?: React.HTMLAttributes<HTMLElement>
   containerProps?: React.HTMLAttributes<HTMLElement>
 }
@@ -49,7 +49,7 @@ function FieldArray(props: ConnectedProps) {
     isDeleteOfRowAllowed = () => true,
     addLabel = 'Add',
     insertRowAtBeginning = true,
-    onChange = () => {}
+    onChange = () => void 0
   } = props
   /*
     Storing rows data in format:
@@ -160,4 +160,4 @@ function FieldArray(props: ConnectedProps) {
   )
 }
 
-export default connect<Props, RowData[]>(FieldArray)
+export default connect<Props>(FieldArray)

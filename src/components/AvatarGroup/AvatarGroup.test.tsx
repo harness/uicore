@@ -7,7 +7,7 @@ describe('Render basic component', () => {
   test('should check snapshot with Avatar props with add button', () => {
     const { container } = render(
       <AvatarGroup
-        onAdd={() => {}}
+        onAdd={() => void 0}
         avatars={[
           { name: 'Aahn Boe SS', backgroundColor: Color.RED_100 },
           { email: 'CohnDoe.com.HD@harnes.io', backgroundColor: Color.RED_100 },

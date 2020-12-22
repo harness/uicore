@@ -4,7 +4,7 @@ import { Intent } from '../../core/Intent'
 import css from './ButtonGroup.css'
 import { Button, ButtonProps } from '../Button/Button'
 
-export const ButtonGroup: React.FC<{}> = ({ children }) => {
+export const ButtonGroup: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   return <Container className={css.btnGroup}>{children}</Container>
 }
 

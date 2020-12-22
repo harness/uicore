@@ -217,7 +217,7 @@ describe('calling useModal with class component', () => {
 
   beforeEach(() => {
     jest.spyOn(console, 'error')
-    ;(global.console.error as any).mockImplementation(() => {})
+    ;(global.console.error as any).mockImplementation(() => void 0)
   })
 
   afterEach(() => {

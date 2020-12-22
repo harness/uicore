@@ -11,7 +11,7 @@ describe('SparkChrt unit tests', () => {
   })
 
   test('render spark chart with custom props', () => {
-    const mockOnClick = jest.fn(() => {})
+    const mockOnClick = jest.fn(() => void 0)
     const { container, getByRole } = render(
       <SparkChart data={[2, 3, 4, 1, 5, 2, 5]} onClick={mockOnClick} color={Color.BLACK} className={'custom'} />
     )

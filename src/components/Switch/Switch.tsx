@@ -15,7 +15,7 @@ export interface SwitchProps extends Assign<Omit<ISwitchProps, 'onChange'>, Styl
 }
 
 export function Switch(props: SwitchProps) {
-  const { className = '', onChange = () => {} } = props
+  const { className = '', onChange } = props
 
   return (
     <BpSwitch

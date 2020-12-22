@@ -1,15 +1,13 @@
-const Spacing = {
-  NONE: 'none' as 'none',
-  XSMALL: 'xsmall' as 'xsmall',
-  SMALL: 'small' as 'small',
-  MEDIUM: 'medium' as 'medium',
-  LARGE: 'large' as 'large',
-  XLARGE: 'xlarge' as 'xlarge',
-  XXLARGE: 'xxlarge' as 'xxlarge',
-  XXXLARGE: 'xxxlarge' as 'xxxlarge',
-  HUGE: 'huge' as 'huge'
-}
+// enum Spacing {
+//   NONE = 'none',
+//   XSMALL = 'xsmall',
+//   SMALL = 'small',
+//   MEDIUM= 'medium',
+//   LARGE= 'large' ,
+//   XLARGE= 'xlarge' ,
+//   XXLARGE= 'xxlarge' ,
+//   XXXLARGE= 'xxxlarge' ,
+//   HUGE= 'huge'
+// }
 
-type Spacing = typeof Spacing[keyof typeof Spacing]
-
-export { Spacing }
+export type Spacing = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge' | 'huge'

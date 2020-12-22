@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 type TimingFunction = (time: number) => number
 
 function makeEaseInOut(timing: TimingFunction): TimingFunction {
-  return function(time: number) {
+  return function (time: number) {
     if (time < 0.5) return timing(2 * time) / 2
     else return (2 - timing(2 * (1 - time))) / 2
   }
@@ -18,7 +18,7 @@ export const Easing = {
 
 export function useTween(
   initial: number,
-  { easing: timing = Easing.easeInOutQuad, duration = 250, onEnd = () => {} } = {}
+  { easing: timing = Easing.easeInOutQuad, duration = 250, onEnd = () => void 0 } = {}
 ): [number, (to: number) => void] {
   const raf = useRef<number | null>(null)
   const [state, setState] = useState(initial)

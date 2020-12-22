@@ -33,7 +33,7 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { hmr: isDev }
+            options: { }
           },
           {
             loader: 'css-loader',
@@ -41,16 +41,21 @@ module.exports = {
               sourceMap: true,
               modules: {
                 mode: 'local',
-                localIdentName: '[name]---[local]--[hash:base64:4]',
-                context: path.resolve(__dirname, 'src')
+                localIdentName: '[name]--[local]'
               }
             }
           },
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
-              plugins: [require('postcss-import')(), require('postcss-mixins')(), require('postcss-nested')()]
+              sourceMap: isDev,
+              postcssOptions: {
+                plugins: [
+                  require('postcss-import')(),
+                  require('postcss-mixins')(),
+                  require('postcss-nested')()
+              ]
+              }
             }
           }
         ]
@@ -69,7 +74,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: isDev ? path.resolve(__dirname, 'docs', 'static') : path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs'
+    libraryTarget: 'umd'
   },
 
   externals: [nodeExternals()],

@@ -143,11 +143,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
         onChange(value.replace(REGEX_VALID_VALUE, '') + timeString)
       } else if (isValidDate && !isCustomValue) {
         if (value !== '') {
-          onChange(
-            moment(value, formatDateTime)
-              .valueOf()
-              .toString()
-          )
+          onChange(moment(value, formatDateTime).valueOf().toString())
         } else {
           onChange(value)
         }

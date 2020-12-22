@@ -18,7 +18,7 @@ export interface SelectWithSubviewProps extends SelectProps {
 export const SelectWithSubviewContext = createContext<{
   toggleSubview: (option?: SelectOption) => string | void
   shouldDisplaySubview: boolean
-}>({ toggleSubview: () => {}, shouldDisplaySubview: false })
+}>({ toggleSubview: () => void 0, shouldDisplaySubview: false })
 
 type ToggleDropDownArgs = {
   changeViewButtonLabel: string
@@ -45,7 +45,7 @@ export function useToggleDropDownSubviewHook({
   const selectCustomOption = useMemo(() => ({ label: changeViewButtonLabel, value: changeViewButtonLabel }), [
     changeViewButtonLabel
   ])
-  const [options, setOptions] = useState<SelectOption[] | MultiSelectOption[]>(
+  const [options, setOptions] = useState<Array<SelectOption | MultiSelectOption>>(
     initializeSelectOptions(items, selectCustomOption)
   )
 

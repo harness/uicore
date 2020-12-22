@@ -5,7 +5,7 @@ import { GraphError } from '../GraphError'
 describe('GraphError unit tests', () => {
   test('Render GraphError with title and link should match snapshot', async () => {
     const { container } = render(
-      <GraphError linkText={'View in Splunk'} onLinkClick={() => {}} title={'Error occured'} />
+      <GraphError linkText={'View in Splunk'} onLinkClick={() => void 0} title={'Error occured'} />
     )
     await wait()
     expect(container).toMatchSnapshot()
@@ -13,7 +13,7 @@ describe('GraphError unit tests', () => {
 
   test('Render GraphError with title and link should render title and link', async () => {
     const { container } = render(
-      <GraphError linkText={'View in Splunk'} onLinkClick={() => {}} title={'Error occured'} />
+      <GraphError linkText={'View in Splunk'} onLinkClick={() => void 0} title={'Error occured'} />
     )
     await wait()
     expect(container.querySelector('[class*="title"]')).not.toBeNull()
