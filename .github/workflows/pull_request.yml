@@ -1,7 +1,7 @@
 name: PR
 on:
   pull_request:
-    branches: [master]
+    branches: [main]
     types: [opened, reopened, ready_for_review, synchronize, edited]
 jobs:
   lint:
@@ -19,10 +19,10 @@ jobs:
       - name: Set up GitHub Package Registry token
         run: |
           echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GITHUB_HARNESS_BOT_TOKEN >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
           echo always-auth=true >> .npmrc
         env:
-          GITHUB_HARNESS_BOT_TOKEN: ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }}
+          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
       - name: Cache node_modules
         uses: actions/cache@v1
@@ -52,10 +52,10 @@ jobs:
       - name: Set up GitHub Package Registry token
         run: |
           echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GITHUB_HARNESS_BOT_TOKEN >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
           echo always-auth=true >> .npmrc
         env:
-          GITHUB_HARNESS_BOT_TOKEN: ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }}
+          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
       - name: Cache node_modules
         uses: actions/cache@v1
@@ -85,10 +85,10 @@ jobs:
       - name: Set up GitHub Package Registry token
         run: |
           echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GITHUB_HARNESS_BOT_TOKEN >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
           echo always-auth=true >> .npmrc
         env:
-          GITHUB_HARNESS_BOT_TOKEN: ${{ secrets.GITHUB_HARNESS_BOT_TOKEN }}
+          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
       - name: Cache node_modules
         uses: actions/cache@v1
@@ -102,3 +102,36 @@ jobs:
 
       - name: Jest
         run: npx tsc --noEmit
+
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set Up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.8'
+
+      - name: Set up GitHub Package Registry token
+        run: |
+          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+          echo always-auth=true >> .npmrc
+        env:
+          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install Packages
+        run: yarn
+
+      - name: Jest
+        run: npx prettier src/**/*.{ts,tsx} --check
