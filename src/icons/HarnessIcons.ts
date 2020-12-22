@@ -267,6 +267,8 @@ import Profile from './profile.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Remove from './remove.svg'
+import ReportGearGrey from './report-gear-grey.svg'
+import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
@@ -640,6 +642,8 @@ type HarnessIconName =
   | 'publish-step'
   | 'question'
   | 'remove'
+  | 'report-gear-grey'
+  | 'report-gear'
   | 'report-icon'
   | 'resources-icon'
   | 'restore-cache-step'
@@ -1013,6 +1017,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'publish-step': PublishStep,
   question: Question,
   remove: Remove,
+  'report-gear-grey': ReportGearGrey,
+  'report-gear': ReportGear,
   'report-icon': ReportIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-step': RestoreCacheStep,
