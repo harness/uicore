@@ -6,6 +6,7 @@
     "alwaysStrict": true,
     "module": "esnext",
     "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
     "target": "ES5",
     "jsx": "react",
     "allowJs": true,
