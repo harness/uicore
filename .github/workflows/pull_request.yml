@@ -134,4 +134,4 @@ jobs:
         run: yarn
 
       - name: Jest
-        run: npx prettier src --check
+        run: npx prettier src/**/*.{ts,tsx} --check
