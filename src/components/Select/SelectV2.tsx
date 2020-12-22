@@ -83,12 +83,7 @@ export function SelectV2(props: SelectV2Props) {
     <SelectBp
       itemRenderer={props.itemRenderer || defaultItemRenderer}
       itemListPredicate={(query, items) =>
-        items.filter(item =>
-          item.label
-            .toString()
-            .toLowerCase()
-            .includes(query.toLowerCase())
-        )
+        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
       }
       createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}

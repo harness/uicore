@@ -10,4 +10,4 @@
 //   HUGE= 'huge'
 // }
 
-export type Spacing = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge'  | 'huge'
+export type Spacing = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge' | 'huge'

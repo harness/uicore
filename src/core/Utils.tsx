@@ -12,10 +12,7 @@ function stopEvent(event: MouseEvent | KeyboardEvent): void {
   event.preventDefault()
 }
 
-const randomId = () =>
-  Math.random()
-    .toString(36)
-    .substring(2)
+const randomId = () => Math.random().toString(36).substring(2)
 
 function getIntentColors(intent: Intent) {
   let color: Color = Color.WHITE

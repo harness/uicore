@@ -35,8 +35,40 @@ jobs:
         run: yarn
 
       - name: Lint Check
-        run: yarn lint
+        run: npx eslint "src/**/*.{ts,tsx}"
 
+  stylelint:
+    name: StyleLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set Up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Set up GitHub Package Registry token
+        run: |
+          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+          echo always-auth=true >> .npmrc
+        env:
+          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install Packages
+        run: yarn
+
+      - name: Lint Check
+        run: npx stylelint src
   jest:
     name: Jest
     runs-on: ubuntu-latest

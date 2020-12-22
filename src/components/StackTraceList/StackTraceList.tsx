@@ -90,9 +90,7 @@ export function StackTraceList(props: StackTraceListProps) {
               stackTrace={stackTraceObj}
               className={stackTracePanelClassName}
             />
-          ) : (
-            undefined
-          )
+          ) : undefined
         )}
       </Container>
     </Container>

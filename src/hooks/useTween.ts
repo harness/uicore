@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 type TimingFunction = (time: number) => number
 
 function makeEaseInOut(timing: TimingFunction): TimingFunction {
-  return function(time: number) {
+  return function (time: number) {
     if (time < 0.5) return timing(2 * time) / 2
     else return (2 - timing(2 * (1 - time))) / 2
   }

@@ -143,13 +143,7 @@ function getFilteredItems(
     ]
     if (isCategory && !categorizedItems) {
       filteredItems.set(categoryName, [item])
-    } else if (
-      !isCategory &&
-      item.label
-        .toString()
-        .toLowerCase()
-        .includes(query.toLowerCase())
-    ) {
+    } else if (!isCategory && item.label.toString().toLowerCase().includes(query.toLowerCase())) {
       if (item.value !== CREATABLE_OPTION_VALUE) {
         categorizedItems.push(item)
       }
