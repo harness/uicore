@@ -1,0 +1,71 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set Up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: Set up GitHub Package Registry token
+        run: |
+          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+          echo always-auth=true >> .npmrc
+        env:
+          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install Packages
+        run: yarn
+
+      - name: Build and Publish
+        run: |
+          GIT_USER=$(curl -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
+          GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
+          GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
+
+          git config user.name $GIT_USER_NAME
+          git config user.email $GIT_USER_EMAIL
+
+          yarn build
+          yarn release
+
+          git push origin main --follow-tags
+
+          yarn publish
+
+
+      # - name: Create a release
+      #   if: ${{ success() }}
+      #   run: |
+      #     VERSION=$(cat package.json | jq -r .version)
+      #     PREV_VERSION=$(git tag -l | grep -B 1 $VERSION | head -n 1)
+
+      #     git tag $VERSION
+      #     git push origin $VERSION
+
+      #     COMMENT="https://github.com/${{ github.repository }}/compare/$PREV_VERSION...$VERSION"
+      #     BODY=$(jq -r --arg name $VERSION --arg target 'master' --arg body $COMMENT '. | .tag_name=$name | .name=$name | .target_commitish=$target | .body=$body' <<< '{}')
+      #     curl \
+      #       -H "Content-Type: application/json" \
+      #       -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" \
+      #       -d "$BODY" \
+      #       -X POST "https://api.github.com/repos/${{ github.repository }}/releases"
+
