@@ -18,7 +18,7 @@ export const Easing = {
 
 export function useTween(
   initial: number,
-  { easing: timing = Easing.easeInOutQuad, duration = 250, onEnd = () => {} } = {}
+  { easing: timing = Easing.easeInOutQuad, duration = 250, onEnd = () => void 0 } = {}
 ): [number, (to: number) => void] {
   const raf = useRef<number | null>(null)
   const [state, setState] = useState(initial)

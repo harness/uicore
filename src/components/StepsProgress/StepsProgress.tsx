@@ -4,7 +4,6 @@ import { Color } from '../../core/Color'
 import css from './StepsProgress.css'
 import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
 import { Layout } from '../../layouts/Layout'
-import { Spacing } from '../../core/Spacing'
 import { Icon } from '../../icons/Icon'
 
 export interface StepsProgressProps {
@@ -80,7 +79,7 @@ export function StepsProgress(props: StepsProgressProps) {
       <div className={css.progressBar}>
         <ProgressBar {...progressBarProps} className={css.progressHeight} />
       </div>
-      <Layout.Vertical spacing={Spacing.LARGE}>
+      <Layout.Vertical spacing="large">
         {stepsWithStatus && stepsWithStatus.length ? (
           stepsWithStatus.map(step => (
             <div key={`${step}`} className={css.stepWrap}>

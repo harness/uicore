@@ -36,7 +36,7 @@ const ModalInfoContextSetter = (props: { modalInfo: ModalInfo }) => {
   return null
 }
 
-const ModalContextProvider: React.FC<{}> = props => {
+const ModalContextProvider: React.FC<React.PropsWithChildren<unknown>> = props => {
   return (
     <UseModalContextProvider>
       <ModalInfoContextProvider>{props.children}</ModalInfoContextProvider>

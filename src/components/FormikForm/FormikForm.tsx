@@ -554,7 +554,7 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'r
   onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
 }
 
-export const Formik = <Values extends object>(props: FormikProps<Values>) => {
+export const Formik = <Values extends Record<string, unknown>>(props: FormikProps<Values>) => {
   const { formLoading = false, onSubmit, render, children, ...rest } = props
   const [isFormLoading, setFormLoading] = React.useState(false)
   React.useEffect(() => {

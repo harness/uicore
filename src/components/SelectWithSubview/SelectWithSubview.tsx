@@ -18,7 +18,7 @@ export interface SelectWithSubviewProps extends SelectProps {
 export const SelectWithSubviewContext = createContext<{
   toggleSubview: (option?: SelectOption) => string | void
   shouldDisplaySubview: boolean
-}>({ toggleSubview: () => {}, shouldDisplaySubview: false })
+}>({ toggleSubview: () => void 0, shouldDisplaySubview: false })
 
 type ToggleDropDownArgs = {
   changeViewButtonLabel: string

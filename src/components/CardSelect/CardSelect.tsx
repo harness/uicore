@@ -25,7 +25,7 @@ enum Keys {
 
 const ValidKeys = [Keys.Enter, Keys.MoveLeft, Keys.MoveRight]
 
-export const CardSelect = <ObjectType extends object>(props: CardSelectProps<ObjectType>) => {
+export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
   const {
     className = '',
     cardClassName = '',

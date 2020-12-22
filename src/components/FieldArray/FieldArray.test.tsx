@@ -32,7 +32,7 @@ const noDataText = 'This is a no data/add data message.'
 describe('<FieldArray /> tests', () => {
   test('render placeholder when no initial value given', () => {
     const { container } = render(
-      <Formik onSubmit={_ => {}} initialValues={{}}>
+      <Formik onSubmit={jest.fn()} initialValues={{}}>
         {props => (
           <form onSubmit={props.handleSubmit}>
             <FieldArray name="fieldArray" fields={fields} label="Field List" placeholder={noDataText} />
@@ -49,7 +49,7 @@ describe('<FieldArray /> tests', () => {
 
   test('render initial value when given', () => {
     const { container } = render(
-      <Formik onSubmit={_ => {}} initialValues={{ fieldArray: data }}>
+      <Formik onSubmit={jest.fn()} initialValues={{ fieldArray: data }}>
         {props => (
           <form onSubmit={props.handleSubmit}>
             <FieldArray name="fieldArray" fields={fields} label="Field List" placeholder={noDataText} />
@@ -63,7 +63,7 @@ describe('<FieldArray /> tests', () => {
 
   test('should be able to add rows from both buttons', async () => {
     const { container } = render(
-      <Formik onSubmit={_ => {}} initialValues={{}}>
+      <Formik onSubmit={jest.fn()} initialValues={{}}>
         {props => (
           <form onSubmit={props.handleSubmit}>
             <FieldArray name="fieldArray" fields={fields} label="Field List" placeholder={noDataText} />
@@ -85,7 +85,7 @@ describe('<FieldArray /> tests', () => {
 
   test('should be able to delete row', async () => {
     const { container } = render(
-      <Formik onSubmit={_ => {}} initialValues={{ fieldArray: data }}>
+      <Formik onSubmit={jest.fn()} initialValues={{ fieldArray: data }}>
         {props => (
           <form onSubmit={props.handleSubmit}>
             <FieldArray name="fieldArray" fields={fields} label="Field List" placeholder={noDataText} />
@@ -111,7 +111,7 @@ describe('<FieldArray /> tests', () => {
       renderer: value => <div id="#customField">{value}</div>
     }
     const { container } = render(
-      <Formik onSubmit={_ => {}} initialValues={{ fieldArray: data }}>
+      <Formik onSubmit={jest.fn()} initialValues={{ fieldArray: data }}>
         {props => (
           <form onSubmit={props.handleSubmit}>
             <FieldArray

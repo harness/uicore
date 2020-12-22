@@ -4,7 +4,6 @@ import { Button } from '../Button/Button'
 import { Text } from '../Text/Text'
 import { Utils } from '../../core/Utils'
 import { Color } from '../../core/Color'
-import { Spacing } from '../../core/Spacing'
 import css from './CodeBlock.css'
 
 export interface CodeBlockProps {
@@ -22,7 +21,7 @@ export function CodeBlock(props: CodeBlockProps) {
     <Container
       padding={format === 'pre' ? 'xsmall' : 'small'}
       background={Color.GREY_100}
-      margin={Spacing.NONE}
+      margin="none"
       flex
       height={height}
       className={css.codeBlock}>

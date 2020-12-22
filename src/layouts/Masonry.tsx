@@ -8,7 +8,7 @@ const MASONRY_UNIQUE_CLASS_PREFIX = 'uikit-masonry-layout-'
 
 export type MasonryRef = InstanceType<typeof MasonryLayout>
 
-export interface MasonryProps<T extends object> {
+export interface MasonryProps<T extends Record<string, unknown>> {
   items: T[]
   renderItem: (item: T) => React.ReactElement
   keyOf: (item: T) => string | undefined
@@ -21,7 +21,7 @@ export interface MasonryProps<T extends object> {
   className?: string
   style?: React.CSSProperties
 }
-export const Masonry = <T extends object>(props: MasonryProps<T>): React.ReactElement => {
+export const Masonry = <T extends Record<string, unknown>>(props: MasonryProps<T>): React.ReactElement => {
   const {
     items,
     renderItem,
