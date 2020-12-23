@@ -11,10 +11,28 @@ import { Button } from '../../components/Button/Button'
 export interface CardProps extends ICardProps {
   selected?: boolean
   disabled?: boolean
+  cornerSelected?: boolean
+}
+
+const renderCornerTick = () => {
+  return (
+    <span className={css.corner}>
+      <span className={css.badge}></span>
+      <UiIcon name="tick" size={9} color={'white'} />
+    </span>
+  )
 }
 
 export const Card: React.FC<CardProps> = props => {
-  const { selected = false, disabled = false, className = '', style, tabIndex = 0, ...bpProps } = props
+  const {
+    selected = false,
+    disabled = false,
+    className = '',
+    style,
+    cornerSelected = false,
+    tabIndex = 0,
+    ...bpProps
+  } = props
   // if card is disabled then interactivity should be false
   if (disabled) {
     bpProps.interactive = false
@@ -36,6 +54,7 @@ export const Card: React.FC<CardProps> = props => {
       className={cx(css.card, className, { [css.selected]: selected }, { [css.disabled]: disabled })}
       style={style}
       onClick={onClick}>
+      {selected && cornerSelected && renderCornerTick()}
       {props.children}
     </BpCard>
   )

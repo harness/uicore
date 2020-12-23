@@ -63,6 +63,7 @@ export const CardSelectExample = () => {
         </Text>
       </CardBody.Icon>
     ),
+    cornerSelected: true,
     onChange: value => setSelected(value)
   }
   return <CardSelect {...props} selected={selected} />

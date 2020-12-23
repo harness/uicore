@@ -1,7 +1,7 @@
 div.card {
   border-radius: 5px;
   display: inline-block;
-
+  position: relative;
   &:focus {
     box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2), 0 8px 24px rgba(16, 22, 26, 0.2);
     outline: none;
@@ -64,6 +64,29 @@ div.card {
     .menu {
       cursor: pointer;
       transform: rotate(90deg);
+    }
+  }
+}
+
+.corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  .badge {
+    width: 0;
+    position: absolute;
+    height: 0;
+    border-top: 20px solid var(--blue-500);
+    border-left: 20px solid transparent;
+    right: 0;
+    z-index: 1;
+  }
+  :global {
+    .bp3-icon {
+      position: absolute;
+      right: 1px;
+      top: 1px;
+      z-index: 10;
     }
   }
 }

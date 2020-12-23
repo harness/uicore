@@ -15,6 +15,7 @@ export interface CardSelectProps<ObjectType> extends Omit<HTMLDivProps, 'onChang
   cardClassName?: string
   renderItem: (item: ObjectType, selected: boolean) => JSX.Element
   onChange: (selected: ObjectType, e: React.MouseEvent<HTMLDivElement>) => void
+  cornerSelected?: boolean
 }
 
 enum Keys {
@@ -35,7 +36,8 @@ export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
     onChange,
     style = {},
     type = CardSelectType.CardView,
-    multi = false
+    multi = false,
+    cornerSelected = false
   } = props
   const rootRef = useRef<HTMLDivElement>(null)
 
@@ -79,6 +81,7 @@ export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
                   data-index={index}
                   selected={isSelected}
                   disabled={(item as CardProps).disabled || false}
+                  cornerSelected={cornerSelected}
                   onClick={event => onChange(item, event)}>
                   {renderItem(item, isSelected)}
                 </Card>

@@ -27,6 +27,7 @@ export interface CardSelectProps<ObjectType> extends HTMLDivElement {
   cardClassName?: string
   renderItem: (item: ObjectType, selected: boolean) => JSX.Element
   onChange: (selected: ObjectType, e: React.MouseEvent<HTMLDivElement>) => void
+  cornerSelected?: boolean 
 }
 ```
 
