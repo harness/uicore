@@ -115,6 +115,7 @@
     "react-table": "^7.0.4",
     "react-test-renderer": "^16.11.0",
     "standard-version": "^9.0.0",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.8.0",
     "stylelint-config-recommended": "^3.0.0",
     "ts-jest": "^26.4.4",
