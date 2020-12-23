@@ -177,6 +177,7 @@ export function Select(props: SelectProps) {
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       noResults={<NoMatch />}
       {...rest}
+      activeItem={item}
       inputProps={{
         onChange(e: React.ChangeEvent<HTMLInputElement>) {
           setQuery(e.target.value)

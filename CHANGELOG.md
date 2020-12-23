@@ -4,17 +4,15 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 0.1.4 (2021-01-04)
 
-
 ### Others
 
-* commit for build trigger ([443fd1e](https://github.com/wings-software/uicore/commit/443fd1eac135833717e6942a942d7a3adc01230f))
+- commit for build trigger ([443fd1e](https://github.com/wings-software/uicore/commit/443fd1eac135833717e6942a942d7a3adc01230f))
 
 ### 0.1.3 (2021-01-04)
 
-
 ### Bug Fixes
 
-* publish config ([#14](https://github.com/wings-software/ui-core/issues/14)) ([118dda8](https://github.com/wings-software/ui-core/commit/118dda8dc0c92092cac874b2191fe0af2c8cec88))
+- publish config ([#14](https://github.com/wings-software/ui-core/issues/14)) ([118dda8](https://github.com/wings-software/ui-core/commit/118dda8dc0c92092cac874b2191fe0af2c8cec88))
 
 ### 0.1.2 (2021-01-04)
 
