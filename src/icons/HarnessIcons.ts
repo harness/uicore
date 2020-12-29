@@ -272,11 +272,15 @@ import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
+import RestoreCacheGcs from './restore-cache-gcs.svg'
+import RestoreCacheS from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
 import RunStep from './run-step.svg'
 import RuntimeInput from './runtime-input.svg'
+import SaveCacheGcs from './save-cache-gcs.svg'
+import SaveCacheS from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -648,11 +652,15 @@ type HarnessIconName =
   | 'report-gear'
   | 'report-icon'
   | 'resources-icon'
+  | 'restore-cache-gcs'
+  | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'rolling'
   | 'run-pipeline'
   | 'run-step'
   | 'runtime-input'
+  | 'save-cache-gcs'
+  | 'save-cache-s3'
   | 'save-cache-step'
   | 'search-applications'
   | 'search-connectors'
@@ -1024,11 +1032,15 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
   'resources-icon': ResourcesIcon,
+  'restore-cache-gcs': RestoreCacheGcs,
+  'restore-cache-s3': RestoreCacheS,
   'restore-cache-step': RestoreCacheStep,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
   'run-step': RunStep,
   'runtime-input': RuntimeInput,
+  'save-cache-gcs': SaveCacheGcs,
+  'save-cache-s3': SaveCacheS,
   'save-cache-step': SaveCacheStep,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
