@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GIT_BOT_TOKEN }}
 
       - name: Set Up Node
         uses: actions/setup-node@v1
@@ -37,7 +35,7 @@ jobs:
       - name: Install Packages
         run: yarn
 
-      - name: Build and Publish
+      - name: Build
         run: |
           GIT_USER=$(curl -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
           GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
@@ -50,10 +48,13 @@ jobs:
 
           yarn build
           yarn release
-
-          git push origin main --follow-tags --force
-
-          yarn publish
+      - name: Push to Github
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GIT_BOT_TOKEN }}
+          branch: main
+      - name: Publish
+        run: yarn publish
 
       # - name: Create a release
       #   if: ${{ success() }}
