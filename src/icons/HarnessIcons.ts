@@ -9,6 +9,7 @@ import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Bitbucket from './bitbucket.svg'
+import BitbucketNew from './bitbucket-logo-black-and-white.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -389,6 +390,7 @@ type HarnessIconName =
   | 'approval-step'
   | 'azure-kubernetes-service'
   | 'bitbucket'
+  | 'bitbucket-new'
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
@@ -769,6 +771,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'approval-step': ApprovalStep,
   'azure-kubernetes-service': AzureKubernetesService,
   bitbucket: Bitbucket,
+  'bitbucket-new': BitbucketNew,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
