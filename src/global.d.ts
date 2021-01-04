@@ -9,7 +9,9 @@ declare module '*.css' {
   export default css
 }
 
-/* Extend Window to support NextJS properties (@see Button.tsx) */
+/**
+ * Extend Window to support NextJS properties (@see Button.tsx)
+ **/
 interface Window {
   next: any
   __NEXT_DATA__: any
