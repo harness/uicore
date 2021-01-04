@@ -33,7 +33,7 @@ const TypeIcon: Record<string, IconName> = {
 }
 
 export const RUNTIME_INPUT_VALUE = '<+input>'
-const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
+export const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
   trigger: ['$', '${'],

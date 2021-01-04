@@ -103,6 +103,7 @@ export {
   MultiSelectTypeInput,
   MultiTypeInputType,
   RUNTIME_INPUT_VALUE,
+  EXPRESSION_INPUT_PLACEHOLDER,
   getMultiTypeFromValue,
   FixedTypeComponentProps
 } from './components/MultiTypeInput/MultiTypeInput'
