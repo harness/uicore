@@ -33,7 +33,8 @@ export {
   parseStringToTime,
   timeToDisplayText,
   DurationUnits,
-  DurationInputHelpers
+  DurationInputHelpers,
+  DurationInputProps
 } from './components/DurationInput/DurationInput'
 export { Select, SelectProps, SelectOption } from './components/Select/Select'
 export { SelectV2, SelectV2Props } from './components/Select/SelectV2'
