@@ -379,6 +379,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
           formik?.setFieldValue(name, items)
           onChange?.(items)
         }}
+        resetOnSelect={true}
       />
     </FormGroup>
   )
