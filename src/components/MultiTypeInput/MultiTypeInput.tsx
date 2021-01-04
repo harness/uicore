@@ -64,7 +64,7 @@ export interface FixedTypeComponentProps {
   value?: AcceptableValue
 }
 
-export const isValueAnExpression = (value: string) => /^\${.*}$/.test(value)
+export const isValueAnExpression = (value: string): boolean => /^\${.*}$/.test(value)
 
 export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
@@ -215,7 +215,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
 
 export function MultiTypeInputFixedTypeComponent(
   props: FixedTypeComponentProps & Partial<MultiTypeInputProps['selectProps']>
-) {
+): React.ReactElement {
   const { onChange, value, ...selectProps } = props
   const { items = [] } = selectProps || {}
   return (
@@ -234,7 +234,7 @@ export interface MultiTypeInputProps
   selectProps?: Omit<SelectProps, 'onChange' | 'value'>
 }
 
-export function MultiTypeInput({ selectProps, ...rest }: MultiTypeInputProps) {
+export function MultiTypeInput({ selectProps, ...rest }: MultiTypeInputProps): React.ReactElement {
   return (
     <ExpressionAndRuntimeType
       {...rest}
@@ -264,7 +264,7 @@ export interface MultiTextInputProps
   textProps?: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'>
 }
 
-export function MultiTextInput(props: MultiTextInputProps) {
+export function MultiTextInput(props: MultiTextInputProps): React.ReactElement {
   const { textProps, ...rest } = props
   return (
     <ExpressionAndRuntimeType
@@ -277,7 +277,7 @@ export function MultiTextInput(props: MultiTextInputProps) {
 
 export function MultiSelectTypeInputTypeComponent(
   props: FixedTypeComponentProps & Partial<MultiSelectTypeInputProps['multiSelectProps']>
-) {
+): React.ReactElement {
   const { onChange, value, ...multiSelectProps } = props
   const { items = [] } = multiSelectProps || {}
   return (

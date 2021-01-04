@@ -39,12 +39,8 @@ jobs:
 
       - name: Build and Publish
         run: |
-          GIT_USER=$(curl -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
-          GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
-          GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
-
-          git config user.name $GIT_USER_NAME
-          git config user.email $GIT_USER_EMAIL
+          git config user.name bot-harness
+          git config user.email bot@harness.io
 
           git pull origin main
 
