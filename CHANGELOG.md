@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.4 (2021-01-04)
+
+
+### Others
+
+* commit for build trigger ([443fd1e](https://github.com/wings-software/uicore/commit/443fd1eac135833717e6942a942d7a3adc01230f))
+
 ### 0.1.3 (2021-01-04)
 
 
