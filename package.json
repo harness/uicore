@@ -10,7 +10,7 @@
     "release": "standard-version",
     "start": "yarn dep; yarn ui:icons; run-p -c ui:types ui:watch docs:watch",
     "prebuild": "yarn clean",
-    "build": "yarn dep; yarn ui:build; yarn types:copy",
+    "build": "yarn ui:build; yarn types:copy",
     "clean": "rm -rf docs/static dist",
     "dep": "yarn; cd docs; yarn; cd ..",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" && stylelint ./src && prettier --check \"src/**/*.{ts,tsx,css}\"",
@@ -27,7 +27,7 @@
     "types:copy": "echo 'Adhoc type copy...'; mv dist/src/* dist/; rm -rf dist/src"
   },
   "license": "UNLICENSED",
-  "repository": "https://github.com/wings-software/uikit",
+  "repository": "https://github.com/wings-software/ui-core",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

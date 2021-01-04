@@ -113,8 +113,8 @@ export {
   CategorizedSelectOption
 } from './components/CategorizedSelected/CategorizedSelect'
 export {
-  ModalErrorHandler,
   ModalErrorHandlerBinding,
+  ModalErrorHandler,
   ModalErrorHandlerProps
 } from './components/Modal/ModalErrorHandler'
 export {
