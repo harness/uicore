@@ -29,9 +29,9 @@ export { TextInput } from './components/TextInput/TextInput'
 export { default as FieldArray } from './components/FieldArray/FieldArray'
 export { Label } from './components/Label/Label'
 export {
-  DurationInput,
   parseStringToTime,
   timeToDisplayText,
+  DurationInput,
   DurationUnits,
   DurationInputHelpers,
   DurationInputProps
