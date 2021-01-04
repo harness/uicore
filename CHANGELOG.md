@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.3 (2021-01-04)
+
+
+### Bug Fixes
+
+* publish config ([#14](https://github.com/wings-software/ui-core/issues/14)) ([118dda8](https://github.com/wings-software/ui-core/commit/118dda8dc0c92092cac874b2191fe0af2c8cec88))
+
 ### 0.1.2 (2021-01-04)
 
 ### Bug Fixes
