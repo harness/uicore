@@ -241,7 +241,7 @@ Try submitting the form
     tags: {},
     description: '',
     specialPerson: true,
-    job_desc2: '${input}.allowedValues(10, 20, 30)'
+    job_desc2: '<+input>.allowedValues(10, 20, 30)'
   }}
   onSubmit={values => alert(JSON.stringify(values))}
   validationSchema={Yup.object().shape({
