@@ -2,7 +2,7 @@ import React from 'react'
 import { HTMLTable, IHTMLTableProps } from '@blueprintjs/core'
 import { useTable, Column, Row } from 'react-table'
 
-export interface TableProps<T extends Record<string, unknown>> {
+export interface TableProps<T = Record<string, unknown>> {
   columns: Array<Column<T>>
   data: T[]
   renderCustomRow?: (row: Row<T>) => JSX.Element
@@ -10,7 +10,7 @@ export interface TableProps<T extends Record<string, unknown>> {
   bpTableProps: IHTMLTableProps
 }
 
-export function Table<T extends Record<string, unknown>>(props: TableProps<T>): React.ReactElement {
+export function Table<T = Record<string, unknown>>(props: TableProps<T>): React.ReactElement {
   const { bpTableProps, className, renderCustomRow } = props
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable<T>({
     columns: props.columns || [],
