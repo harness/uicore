@@ -44,7 +44,9 @@ interface StepState<SharedObject> {
   totalSteps: number
 }
 
-export const StepWizard = <SharedObject extends Record<string, unknown>>(props: StepWizardProps<SharedObject>) => {
+export function StepWizard<SharedObject = Record<string, unknown>>(
+  props: StepWizardProps<SharedObject>
+): React.ReactElement {
   const {
     className = '',
     isNavMode = true,
