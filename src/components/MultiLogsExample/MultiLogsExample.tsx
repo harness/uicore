@@ -1,67 +1,11 @@
 import React, { useState } from 'react'
-import { ContainerProps } from '../Container/Container'
 
 import { MultiLogsViewer } from '../MultiLogsViewer/MultiLogsViewer'
 import { Text } from '../Text/Text'
 import { Color } from '../../core/Color'
 import { ExpandingSearchInput } from '../ExpandingSearchInput/ExpandingSearchInput'
 
-export interface LogSectionProps {
-  /** Number of visible rows */
-  rows?: number
-  /** Search text */
-  searchText?: string
-  /** Direction of search - Next/Prev */
-  searchDir?: string
-  /** Number of scrollback lines */
-  scrollbackLines?: number
-
-  /** True to open log content */
-  isOpen?: boolean
-
-  /** Section title */
-  title: React.ReactElement
-
-  /** Right element (mostly will be duration) */
-  rightElement: React.ReactElement
-
-  /** Log content as string. Note that we can support streaming easily if backend has it */
-  content: string
-  /** Current highlighted index of search result */
-  highlightedIndex?: number
-}
-
-export interface MultiLogsViewerProps extends ContainerProps {
-  /** Number of visible rows */
-  rows?: LogSectionProps['rows']
-
-  /** Search text */
-  searchText?: string
-  /** Direction of search - Next/Prev */
-  searchDir?: string
-
-  /** Number of scrollback lines */
-  scrollbackLines?: LogSectionProps['scrollbackLines']
-
-  /** Number of log sections */
-  numberOfLogSections: number
-
-  /** Determine if a section's log is open */
-  isSectionOpen: (sectionIndex: number) => boolean
-
-  /** Title for a log section */
-  titleForSection: (sectionIndex: number) => React.ReactElement
-
-  /** Right element for a log section */
-  rightElementForSection: (sectionIndex: number) => React.ReactElement
-
-  /** Log content for a log section */
-  logContentForSection: (sectionIndex: number) => string
-  /** Current highlighted index of search result */
-  highlightedIndex?: number
-}
-
-export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
+export const MultiLogsExample: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchDir, setDir] = useState('')
   const [highlightInd, sethighlightInd] = useState(0)
@@ -70,6 +14,14 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
   arr[0] = true
 
   const [panelArr, setPanelArr] = useState(arr)
+
+  const [logsArr, setLogsArr] = useState<string[]>([
+    'I log line one\nI log line two',
+    'II log',
+    'III log',
+    'IV log\nIV log line two'
+  ])
+  const [loadingIndex, setLoadingIndex] = useState<number>(-1)
 
   const toggleSection = (sectionNo: number) => {
     panelArr[sectionNo] = !panelArr[sectionNo]
@@ -84,15 +36,68 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
     setPanelArr(panelArr.map(() => false))
   }
 
+  const logContentForSection = (sectionIdx: number) => {
+    return logsArr[sectionIdx]
+  }
+
+  const addLogsToSection = (sectionIdx: number) => {
+    const line = Math.random().toString()
+    logsArr[sectionIdx] += `\n${line}`
+    setLogsArr([...logsArr])
+  }
+
+  const clearSection = (sectionIdx: number) => {
+    logsArr[sectionIdx] = 'First line'
+    setLogsArr([...logsArr])
+  }
+
+  const cloneLogsArr = () => {
+    setLogsArr([...logsArr])
+  }
+
+  // test if nes logs with same number of logs are updateing in terminal
+  const replaceText = (sectionIdx: number) => {
+    logsArr[sectionIdx] = logsArr[sectionIdx].replace('log', 'LOG')
+    setLogsArr([...logsArr])
+  }
   return (
     <>
-      <button onClick={() => toggleSection(0)}>Toggle section 0</button>
-      <button onClick={() => toggleSection(1)}>Toggle section 1</button>
-      <button onClick={() => toggleSection(2)}>Toggle section 2</button>
-      <button onClick={() => toggleSection(3)}>Toggle section 3</button>
-
-      <button onClick={() => openAll()}>Open all</button>
-      <button onClick={() => closeAll()}>Close all</button>
+      <div>
+        Set loading:
+        <button onClick={() => setLoadingIndex(0)}> 0 </button>
+        <button onClick={() => setLoadingIndex(1)}> 1 </button>
+        <button onClick={() => setLoadingIndex(2)}> 2 </button>
+        <button onClick={() => setLoadingIndex(3)}> 3 </button>
+      </div>
+      <div>
+        Clear section:
+        <button onClick={() => clearSection(0)}> 0 </button>
+        <button onClick={() => clearSection(1)}> 1 </button>
+        <button onClick={() => clearSection(2)}> 2 </button>
+        <button onClick={() => clearSection(3)}> 3 </button>
+      </div>
+      <div>
+        Add to sectio:
+        <button onClick={() => addLogsToSection(0)}> 0 </button>
+        <button onClick={() => addLogsToSection(1)}> 1 </button>
+        <button onClick={() => addLogsToSection(2)}> 2 </button>
+        <button onClick={() => addLogsToSection(3)}> 3 </button>
+      </div>
+      <div>
+        Toggle section:
+        <button onClick={() => toggleSection(0)}> 0 </button>
+        <button onClick={() => toggleSection(1)}> 1 </button>
+        <button onClick={() => toggleSection(2)}> 2 </button>
+        <button onClick={() => toggleSection(3)}> 3 </button>
+      </div>
+      <div>
+        <button onClick={() => openAll()}>Open all</button>
+        <button onClick={() => closeAll()}>Close all</button>
+      </div>
+      <div>
+        <button onClick={() => cloneLogsArr()}>Clone content</button>
+        <button onClick={() => replaceText(0)}>Replace content section 0</button>
+      </div>
 
       <ExpandingSearchInput
         onChange={ev => {
@@ -114,6 +119,8 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
         Prev
       </button>
       <MultiLogsViewer
+        rows={10}
+        loadingIndex={loadingIndex}
         numberOfLogSections={4}
         titleForSection={sectionIndex => {
           switch (sectionIndex) {
@@ -133,9 +140,7 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
         rightElementForSection={() => {
           return <Text color={Color.GREY_100}>2m 38s</Text>
         }}
-        logContentForSection={() => {
-          return 'gyp ERR! stack Error: `gyp` failed with exit code: 1\ngyp ERR! System Darwin 19.6.0\ngyp ERR! node -v v14.5.0\nnode-pre-gyp ERR! not ok\nFailed to execute node-gyp'
-        }}
+        logContentForSection={logContentForSection}
         searchDir={searchDir}
         highlightedIndex={highlightInd}
         searchText={searchTerm}
