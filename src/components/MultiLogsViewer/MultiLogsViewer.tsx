@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { isEqual } from 'lodash'
 import { Container, ContainerProps } from '../Container/Container'
 import { Terminal } from 'xterm'
 import { SearchAddon } from 'xterm-addon-search'
@@ -39,6 +40,10 @@ export interface LogSectionProps {
 
   /* update panel to either collapse/expand  */
   updateSection?: (currentIndex: number, prevIndex?: number) => void
+
+  /* toggle pane */
+  toggle?: () => void
+
   /* active panel - panel which is expanded */
   activePanel?: number
 }
@@ -73,6 +78,10 @@ export interface MultiLogsViewerProps extends ContainerProps {
   highlightedIndex?: number
   /* update panel to either collapse/expand  */
   updateSection?: (currentIndex: number, prevIndex?: number) => void
+
+  /* toggle pane */
+  toggleSection?: (index: number) => void
+
   /* active panel - panel which is expanded */
   activePanel?: number
   /* Section Arr - this indicates if the section is expanded or collapsed  */
@@ -97,13 +106,18 @@ export const LogSection: React.FC<LogSectionProps> = ({
   searchDir = '',
   highlightedIndex = -1,
   activePanel = -1,
-  updateSection = () => void 0
+  updateSection = () => {},
+  toggle = () => {}
 }) => {
   const [isOpen, setIsOpen] = useState(isSectionOpen)
   const ref = useRef<HTMLDivElement | null>(null)
   const lines = content.split(/\r?\n/)
   const [currentSelection, setCurrentSelection] = useState<Selection | null>(null)
   const [prevSelection, setPrevSelection] = useState<Selection | null>(null)
+
+  useEffect(() => {
+    setIsOpen(isSectionOpen)
+  }, [isSectionOpen])
 
   const term = useMemo(
     () =>
@@ -148,8 +162,8 @@ export const LogSection: React.FC<LogSectionProps> = ({
     if (!currentSelection || !prevSelection) {
       return
     }
-    /* If the search dir is next
-      the next selection is at 0 and the current Selection is at the last row
+    /* If the search dir is next  
+      the next selection is at 0 and the current Selection is at the last row 
       then expand the next section
     */
     if (activePanel > -1) {
@@ -225,7 +239,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
         spacing="small"
         onClick={() => {
           setIsOpen(!isOpen)
-          updateSection(activePanel, -1)
+          toggle()
         }}
         tabIndex={-1}
         className={cx(css.sectionHeader, isOpen && css.isOpen)}>
@@ -258,11 +272,18 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
   highlightedIndex,
   searchDir,
   updateSection,
+  toggleSection,
   sectionArr = [false],
   activePanel,
   ...containerProps
 }) => {
-  const [arr, setPanelArr] = useState(sectionArr)
+  const [isOpenArr, setIsOpenArr] = useState(sectionArr)
+
+  useEffect(() => {
+    if (!isEqual(isOpenArr, sectionArr)) {
+      setIsOpenArr(sectionArr)
+    }
+  }, [sectionArr])
 
   return (
     <Container className={cx(className, css.container)} {...containerProps} key={activePanel}>
@@ -271,7 +292,7 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
           const title = titleForSection(index)
           const rightElement = rightElementForSection(index)
           const logContent = logContentForSection(index)
-          const isOpen = arr[index]
+          const isOpen = isOpenArr[index]
           return (
             <LogSection
               key={index}
@@ -284,12 +305,12 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
               searchText={searchText}
               searchDir={searchDir}
               highlightedIndex={highlightedIndex}
+              toggle={() => {
+                toggleSection?.(index)
+              }}
               updateSection={(currentIndex, nextIndex = -1) => {
-                if (updateSection) {
-                  updateSection(currentIndex, nextIndex)
-                }
-
-                setPanelArr([...sectionArr])
+                updateSection?.(currentIndex, nextIndex)
+                setIsOpenArr([...sectionArr])
               }}
               activePanel={activePanel}
             />
