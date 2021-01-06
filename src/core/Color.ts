@@ -1,5 +1,6 @@
 export const Color = {
   BLACK: 'black',
+  BLACK_100: 'black100',
   WHITE: 'white',
   GREY_900: 'grey900',
   GREY_800: 'grey800',
@@ -13,6 +14,7 @@ export const Color = {
   GREY_250: 'grey250',
   GREY_200: 'grey200',
   GREY_100: 'grey100',
+  BLUE_900: 'blue900',
   BLUE_800: 'blue800',
   BLUE_700: 'blue700',
   BLUE_600: 'blue600',
