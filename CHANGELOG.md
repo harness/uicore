@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/wings-software/uicore/compare/v0.1.9...v0.1.10) (2021-01-06)
+
+
+### Bug Fixes
+
+* [CDNG-3116]: Added new colors for new hover/background theme ([#18](https://github.com/wings-software/uicore/issues/18)) ([e4d9d8f](https://github.com/wings-software/uicore/commit/e4d9d8fa8649153de5c666cc4a8b40522cb58c23))
+
 ### [0.1.9](https://github.com/wings-software/uicore/compare/v0.1.8...v0.1.9) (2021-01-06)
 
 
