@@ -78,6 +78,7 @@
 
   :global {
     body.ng {
+      --black-100: #1a1a1a;
       --dark-600: #1c1c28;
       --dark-500: #28293d; /* main background color for dark theme */
       --dark-400: #555770;
@@ -106,6 +107,7 @@
       --green-200: #e3fff1;
       --green-outline: #07dd80;
 
+      --blue-900: #0a3364;
       --blue-600: #004fc4;
       --blue-500: #0063f7;
       --blue-400: #5b8def;
