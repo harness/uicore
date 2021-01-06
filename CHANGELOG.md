@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/wings-software/uicore/compare/v0.1.6...v0.1.7) (2021-01-06)
+
+
+### Features
+
+* MultiLogViewer add toggle; make controlled ([#16](https://github.com/wings-software/uicore/issues/16)) ([3d1fb42](https://github.com/wings-software/uicore/commit/3d1fb4251a08428d96c682c6e38a049094b09651))
+
+
+### Others
+
+* fix publish config ([dafa2e7](https://github.com/wings-software/uicore/commit/dafa2e777602a3fc04ee3c59a21208580f6dc444))
+* update readme ([46478c9](https://github.com/wings-software/uicore/commit/46478c9cf6b1fafb4f073df85ddf13bb869c6a00))
+
 ### 0.1.6 (2021-01-05)
 
 
