@@ -330,4 +330,12 @@
   &.background-teal200 {
     background: var(--teal-200);
   }
+
+  &.background-black100 {
+    background: var(--black-100);
+  }
+
+  &.background-blue900 {
+    background: var(--blue-900);
+  }
 }

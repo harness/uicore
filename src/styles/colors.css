@@ -6,6 +6,7 @@
 
 :root {
   --black: #000;
+  --black-100: #1a1a1a;
   --white: #fff;
 
   --grey-900: #1b2025;
@@ -21,6 +22,7 @@
   --grey-200: #eff2f4;
   --grey-100: #f8f9fa;
 
+  --blue-900: #0a3364;
   --blue-800: #1a57ad;
   --blue-700: #1d6fc6;
   --blue-600: #2188dd;
@@ -76,6 +78,7 @@
 
   :global {
     body.ng {
+      --black-100: #1a1a1a;
       --dark-600: #1c1c28;
       --dark-500: #28293d; /* main background color for dark theme */
       --dark-400: #555770;
@@ -104,6 +107,7 @@
       --green-200: #e3fff1;
       --green-outline: #07dd80;
 
+      --blue-900: #0a3364;
       --blue-600: #004fc4;
       --blue-500: #0063f7;
       --blue-400: #5b8def;
