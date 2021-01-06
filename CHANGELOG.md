@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/wings-software/uicore/compare/v0.1.10...v0.1.11) (2021-01-06)
+
+
+### Bug Fixes
+
+* [CDNG-3116]: Follow up PR to PR[#18](https://github.com/wings-software/uicore/issues/18) ([#19](https://github.com/wings-software/uicore/issues/19)) ([6923378](https://github.com/wings-software/uicore/commit/6923378c4537e7544116e2c110bef496dd02aad8))
+
 ### [0.1.10](https://github.com/wings-software/uicore/compare/v0.1.9...v0.1.10) (2021-01-06)
 
 
