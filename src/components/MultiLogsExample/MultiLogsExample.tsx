@@ -71,8 +71,29 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
 
   const [panelArr, setPanelArr] = useState(arr)
 
+  const toggleSection = (sectionNo: number) => {
+    panelArr[sectionNo] = !panelArr[sectionNo]
+    setPanelArr([...panelArr])
+  }
+
+  const openAll = () => {
+    setPanelArr(panelArr.map(() => true))
+  }
+
+  const closeAll = () => {
+    setPanelArr(panelArr.map(() => false))
+  }
+
   return (
     <>
+      <button onClick={() => toggleSection(0)}>Toggle section 0</button>
+      <button onClick={() => toggleSection(1)}>Toggle section 1</button>
+      <button onClick={() => toggleSection(2)}>Toggle section 2</button>
+      <button onClick={() => toggleSection(3)}>Toggle section 3</button>
+
+      <button onClick={() => openAll()}>Open all</button>
+      <button onClick={() => closeAll()}>Close all</button>
+
       <ExpandingSearchInput
         onChange={ev => {
           setSearchTerm(ev)
@@ -118,6 +139,10 @@ export const MultiLogsExample: React.FC<MultiLogsViewerProps> = () => {
         searchDir={searchDir}
         highlightedIndex={highlightInd}
         searchText={searchTerm}
+        toggleSection={(index: number) => {
+          panelArr[index] = !panelArr[index]
+          setPanelArr([...panelArr])
+        }}
         updateSection={(currentIndex: number, nextIndex = -1) => {
           if (nextIndex > -1) {
             panelArr[currentIndex] = false
