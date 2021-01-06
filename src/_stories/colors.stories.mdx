@@ -1,6 +1,9 @@
-import { ColorRow } from '../shared/ColorRowLoader'
+import { Meta } from '@storybook/addon-docs/blocks'
+import Colors from './components/Colors.tsx'
 
-# Colors --- docs/pages/colors.mdx
+<Meta title="Foundation/Colors" />
+
+# Colors
 
 All colors are defined as global CSS variables. That means you can use the colors anywhere in your CSS and React inline styles without having to import.
 
@@ -72,19 +75,4 @@ export const names = {
 
 ## Color Palette
 
-<table className="bp3-html-table bp3-html-table-bordered bp3-html-table-striped">
-  <thead>
-    <tr>
-      <th>CSS Variable Name</th>
-      <th>Color</th>
-      <th>Hex Value</th>
-      <th>String Value</th>
-      <th>Color Reference</th>
-    </tr>
-  </thead>
-  <tbody>
-    {Object.entries(names).map(([name, value]) => (
-      <ColorRow name={name} value={value} key={name + value} />
-    ))}
-  </tbody>
-</table>
+<Colors />

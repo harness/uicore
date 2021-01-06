@@ -3,9 +3,10 @@
 import SelectWithSubViewLoader from '../shared/SelectWithSubViewLoader.tsx'
 
 MultiSelect with Subview renders an alternate view when the user selects a specific option in the dropdown. The alternate view is rendered within the drop down menu.
-The component is built on top of uikit's standard multiselect component.
+The component is built on top of uicore's standard multiselect component.
 
 ## Props
+
 - `subview`: JSX.Element - The component that should be rendered when clicking on a custom option
 - `changeViewButtonLabel`: string - Label colored blue that when clicked will display the subview
 - `value`: MultiSelectOption[] - Values for the multiselect component
@@ -13,30 +14,28 @@ The component is built on top of uikit's standard multiselect component.
 - `renderSubviewWithoutMenuStyling`: boolean (optional) - If true will remove blueprint styling that adds white background and border to the drop down menu
 
 ## Subview Component
- After user has completed their interaction, the subview component needs to invoke a function to re-render the original drop down menu.
- To do that first import
 
- ```js
- import { SelectWithSubviewContext } from '@wings-software/uikit'
- ```
+After user has completed their interaction, the subview component needs to invoke a function to re-render the original drop down menu.
+To do that first import
 
- and use the context api
+```js
+import { SelectWithSubviewContext } from '@wings-software/uicore'
+```
 
- ```js
+and use the context api
+
+```js
 const { toggleSubview } = useContext(SelectWithSubviewContext)
 ```
 
 and invoke the toggleSubview() function on button click or after the user signals interaction completion.
 
-
-
 ## Import
 
 ```js
-import { MultiSelectWithSubview } from '@wings-software/uikit'
+import { MultiSelectWithSubview } from '@wings-software/uicore'
 ```
 
 ## MultiSelectWithSubview Example
-
 
 <SelectWithSubViewLoader.ExampleFormSubviewForMultiSelect />

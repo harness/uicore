@@ -1,4 +1,8 @@
-# Typography --- docs/pages/typography.mdx
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Foundation/Typography" />
+
+# Typography
 
 ## Font Family
 
@@ -6,7 +10,7 @@
 
 ## Font Sizes
 
-UIKit defines four font sizing CSS variables.
+UICore defines four font sizing CSS variables.
 
 ```css
 --font-size-xsmall: 10px; /* very small text */
@@ -16,9 +20,9 @@ UIKit defines four font sizing CSS variables.
 --font-size-large: 29px; /* H1 */
 ```
 
-These CSS variables are used internally inside UIKit. When you build a component, or use a UIKit component, you should always set these sizes with the `font` prop. For example:
+These CSS variables are used internally inside UICore. When you build a component, or use a UICore component, you should always set these sizes with the `font` prop. For example:
 
-```js live=true
+```js
 <Text font={{ size: 'large', align: 'center' }}>The quick brown fox jumps over the lazy dog</Text>
 ```
 

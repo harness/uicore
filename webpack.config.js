@@ -26,10 +26,12 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
+        exclude: /node_modules/,
         options: { transpileOnly: isDev }
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -62,18 +64,18 @@ module.exports = {
       },
       {
         test: /\.svg$/,
+        exclude: /node_modules/,
         use: ['@svgr/webpack']
       }
     ]
   },
-
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
   },
 
   output: {
     filename: '[name].js',
-    path: isDev ? path.resolve(__dirname, 'docs', 'static') : path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'umd'
   },
 

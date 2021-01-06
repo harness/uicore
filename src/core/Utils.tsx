@@ -40,7 +40,7 @@ function getIntentColors(intent: Intent) {
   return { color, backgroundColor }
 }
 
-// Convert UIKit named color into real CSS color
+// Convert UICore named color into real CSS color
 const getRealCSSColor = (color: Color) =>
   `var(--${color // eslint-disable-line
     .match(/[A-Z][a-z]+|[0-9]+|[a-z]+/g)!

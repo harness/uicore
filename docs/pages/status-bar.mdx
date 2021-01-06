@@ -6,7 +6,7 @@ bar
 ## Import
 
 ```js
-import { StatusBar, Color, Container } from '@wings-software/uikit'
+import { StatusBar, Color, Container } from '@wings-software/uicore'
 ```
 
 ## Horizontal Bars
@@ -17,12 +17,12 @@ import { StatusBar, Color, Container } from '@wings-software/uikit'
 <StatusBar height={15} width={100} gradient="linear-gradient(to right, var(--yellow-500), var(--red-500))"/>
 ```
 
-
 ## Vertical Bars
+
 ```js live=true
-<Container flex style={{justifyContent: 'flex-start', alignItems: 'baseline'}}>
-<StatusBar height={100} width={15} background={Color.RED_500} />
-<StatusBar height={50} width={15} background={Color.GREEN_500} />
-<StatusBar height={150} width={15} gradient="linear-gradient(var(--blue-500), var(--green-500))"/>
+<Container flex style={{ justifyContent: 'flex-start', alignItems: 'baseline' }}>
+  <StatusBar height={100} width={15} background={Color.RED_500} />
+  <StatusBar height={50} width={15} background={Color.GREEN_500} />
+  <StatusBar height={150} width={15} gradient="linear-gradient(var(--blue-500), var(--green-500))" />
 </Container>
 ```

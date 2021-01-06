@@ -1,7 +1,7 @@
 # FormikForm --- docs/pages/formik-form.mdx
 
 ```js
-import { Formik, FormikForm, FormInput } from '@wings-software/uikit'
+import { Formik, FormikForm, FormInput } from '@wings-software/uicore'
 ```
 
 ## Supported Form Elements
@@ -174,13 +174,9 @@ interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit'> {
     })
   }
   validationSchema={Yup.object().shape({
-    firstName: Yup.string()
-      .trim()
-      .required('First Name is required field'),
+    firstName: Yup.string().trim().required('First Name is required field'),
 
-    description: Yup.string()
-      .trim()
-      .required('Description is required field')
+    description: Yup.string().trim().required('Description is required field')
   })}>
   {formikProps => {
     return (
@@ -245,28 +241,17 @@ Try submitting the form
   }}
   onSubmit={values => alert(JSON.stringify(values))}
   validationSchema={Yup.object().shape({
-    firstName: Yup.string()
-      .trim()
-      .required('First Name is required field'),
+    firstName: Yup.string().trim().required('First Name is required field'),
 
-    color: Yup.string()
-      .trim()
-      .required('Color is required field'),
+    color: Yup.string().trim().required('Color is required field'),
 
     specialPerson: Yup.boolean().required('VVIP is required field'),
 
-    colorMulti: Yup.array()
-      .ensure()
-      .compact()
-      .min(1, 'Color Multi is required field'),
+    colorMulti: Yup.array().ensure().compact().min(1, 'Color Multi is required field'),
 
-    picture: Yup.string()
-      .trim()
-      .required('Picture is required field'),
+    picture: Yup.string().trim().required('Picture is required field'),
 
-    description: Yup.string()
-      .trim()
-      .required('Description is required field'),
+    description: Yup.string().trim().required('Description is required field'),
 
     sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
   })}>
@@ -519,15 +504,9 @@ interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
   initialValues={{ job_desc2: 'Engineer' }}
   onSubmit={values => console.log(values)}
   validationSchema={Yup.object().shape({
-    job_desc2: Yup.string()
-      .trim()
-      .required('Job Desc is required field'),
-    job_desc1: Yup.string()
-      .trim()
-      .required('Job Desc is required field'),
-    hobbies: Yup.string()
-      .trim()
-      .required('Hobbies is required field')
+    job_desc2: Yup.string().trim().required('Job Desc is required field'),
+    job_desc1: Yup.string().trim().required('Job Desc is required field'),
+    hobbies: Yup.string().trim().required('Hobbies is required field')
   })}>
   <FormikForm>
     <FormInput.MultiSelectTypeInput

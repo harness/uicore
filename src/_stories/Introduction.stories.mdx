@@ -1,6 +1,10 @@
-# Introduction --- docs/pages/index.mdx
+import { Meta } from '@storybook/addon-docs/blocks'
 
-This project is the implementation of [Next Generation UI Architecture](https://docs.google.com/document/d/1oe_cHcDyYhwjJ6QZqyOIlpUWGgYyeCIBfUOdElg2rBg/edit#heading=h.41cp29fl3vvn). It has an integrated playable documentation system.
+<Meta title="Introduction" />
+
+# Introduction
+
+This project is the implementation of [Next Generation UI Architecture](https://docs.google.com/document/d/1oe_cHcDyYhwjJ6QZqyOIlpUWGgYyeCIBfUOdElg2rBg/edit#heading=h.41cp29fl3vvn).
 
 # Setup
 
@@ -20,7 +24,8 @@ import '@wings-software/uicore/dist/index.css'
 ```css
 /* Import from a .css file  */
 @import '@blueprintjs/core/lib/css/blueprint.css';
-@import '@blueprintjs/datetime/lib/css/blueprint-datetime.css' @import '@wings-software/uicore';
+@import '@blueprintjs/datetime/lib/css/blueprint-datetime.css';
+@import '@wings-software/uicore/styles';
 ```
 
-You also need to import [Nunito](https://fonts.google.com/specimen/Nunito?selection.family=Nunito) font. This font is currently used as Harness standard font.
+You also need to import [Inter](https://fonts.google.com/specimen/Inter?selection.family=Inter) font. This font is currently used as Harness standard font.

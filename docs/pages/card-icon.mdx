@@ -1,12 +1,12 @@
 # Card Icon --- docs/pages/card-icon.mdx
 
 Card Icon component reuses Card Component and lets you to write body for icon [CD Next Gen](https://harness.atlassian.net/wiki/spaces/UI/pages/668271019/Card)
+
 ## Import
 
 ```js
-import { Card, CardBody } from '@wings-software/uikit'
+import { Card, CardBody } from '@wings-software/uicore'
 ```
-
 
 ## Types
 
@@ -36,117 +36,122 @@ interface CardIconProps extends HTMLDivProps {
 ## Icon Cards
 
 ```js live=true
-<div style={{display: 'grid', gridAutoRows: 'auto',
-    gridGap: '10px 10px', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))'}}>
-    <Card interactive="true" selected style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-kubernetes" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Kubernetes</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-github" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Github</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-gcp" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>GCP</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-elk" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>ELK Service</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-github" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Github</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-gcp" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>GCP</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-elk" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>ELK Service</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-github" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Github</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-gcp" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>GCP</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-elk" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>ELK Service</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-github" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Github</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-gcp" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>GCP</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-elk" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>ELK Service</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-github" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Github</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-gcp" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>GCP</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-elk" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>ELK Service</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-github" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Github</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-gcp" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>GCP</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-elk" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>ELK Service</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-github" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>Github</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-gcp" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>GCP</Text>
-        </CardBody.Icon>
-    </Card>
-    <Card interactive="true" style={{padding: '5px', width: '80px', height:'80px'}}>
-        <CardBody.Icon icon="service-elk" iconSize={25}>
-            <Text font={{size: 'small', align: 'center', color: 'var(--grey-900)'}}>ELK Service</Text>
-        </CardBody.Icon>
-    </Card>
+<div
+  style={{
+    display: 'grid',
+    gridAutoRows: 'auto',
+    gridGap: '10px 10px',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))'
+  }}>
+  <Card interactive="true" selected style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-kubernetes" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Kubernetes</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-github" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Github</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-gcp" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>GCP</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-elk" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>ELK Service</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-github" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Github</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-gcp" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>GCP</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-elk" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>ELK Service</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-github" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Github</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-gcp" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>GCP</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-elk" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>ELK Service</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-github" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Github</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-gcp" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>GCP</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-elk" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>ELK Service</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-github" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Github</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-gcp" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>GCP</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-elk" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>ELK Service</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-github" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Github</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-gcp" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>GCP</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-elk" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>ELK Service</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-github" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>Github</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-gcp" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>GCP</Text>
+    </CardBody.Icon>
+  </Card>
+  <Card interactive="true" style={{ padding: '5px', width: '80px', height: '80px' }}>
+    <CardBody.Icon icon="service-elk" iconSize={25}>
+      <Text font={{ size: 'small', align: 'center', color: 'var(--grey-900)' }}>ELK Service</Text>
+    </CardBody.Icon>
+  </Card>
 </div>
 ```

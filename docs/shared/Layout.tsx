@@ -18,7 +18,7 @@ export default class extends React.Component {
           <h1>
             <a href="/">
               <HarnessLogo height={20} />
-              <span>&nbsp;// UIKit</span>
+              <span>&nbsp;// UICore</span>
             </a>
           </h1>
         </header>
