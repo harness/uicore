@@ -4,6 +4,7 @@ import { Popover, Utils, Text } from '../../'
 
 export const names = {
   '--black': '#000',
+  '--black-100': '#1a1a1a',
   '--white': '#fff',
   '--grey-900': '#1b2025',
   '--grey-800': '#22272d',
@@ -16,6 +17,7 @@ export const names = {
   '--grey-300': '#d5dae0',
   '--grey-200': '#eff2f4',
   '--grey-100': '#f8f9fa',
+  '--blue-900': '#0a3364',
   '--blue-800': '#1a57ad',
   '--blue-700': '#1d6fc6',
   '--blue-600': '#2188dd',
