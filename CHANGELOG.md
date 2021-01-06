@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/wings-software/uicore/compare/v0.1.7...v0.1.8) (2021-01-06)
+
+
+### Others
+
+* Add Storybook ([#4](https://github.com/wings-software/uicore/issues/4)) ([6a5269c](https://github.com/wings-software/uicore/commit/6a5269ce747eb8a59038ecad41cdadb4ee0e50ba))
+
 ### [0.1.7](https://github.com/wings-software/uicore/compare/v0.1.6...v0.1.7) (2021-01-06)
 
 
