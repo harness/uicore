@@ -4,24 +4,23 @@ This project is the implementation of [Next Generation UI Architecture](https://
 
 # Setup
 
-All third-parties are defined as peer dependencies and not bundled into UIKit build output. Consumers of UIKit need to add by themselves.
+All third-parties are defined as peer dependencies and not bundled into UICore build output. Consumers of UICore need to add by themselves.
 
-UIKit is published as a private package under [Harness GitHub Package Registry](https://github.com/orgs/wings-software/packages). You'll need to [follow instructions](https://help.github.com/en/github/managing-packages-with-github-package-registry/about-github-package-registry) on Github to install it as a dependency.
+UICore is published as a private package under [Harness GitHub Package Registry](https://github.com/orgs/wings-software/packages). You'll need to [follow instructions](https://help.github.com/en/github/managing-packages-with-github-package-registry/about-github-package-registry) on Github to install it as a dependency.
 
-UIKit relies heavily on Blueprint. When using it as a dependency in your project, you'll need to add Blueprint as a dependency and import two CSS files.
+UICore relies heavily on Blueprint. When using it as a dependency in your project, you'll need to add Blueprint as a dependency and import two CSS files.
 
 ```js
 // Import in a .js(x)/.ts(x) file
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
-import '@wings-software/uikit/dist/index.css'
+import '@wings-software/uicore/dist/index.css'
 ```
 
 ```css
 /* Import from a .css file  */
 @import '@blueprintjs/core/lib/css/blueprint.css';
-@import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
-@import '@wings-software/uikit';
+@import '@blueprintjs/datetime/lib/css/blueprint-datetime.css' @import '@wings-software/uicore';
 ```
 
 You also need to import [Nunito](https://fonts.google.com/specimen/Nunito?selection.family=Nunito) font. This font is currently used as Harness standard font.

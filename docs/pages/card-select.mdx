@@ -14,7 +14,7 @@ Internally it uses [Card](/card) component and define renderItem method to defin
 ## Import
 
 ```js
-import { CardSelect, CardSelectProps } from '@wings-software/uikit'
+import { CardSelect, CardSelectProps } from '@wings-software/uicore'
 ```
 
 ## Usage/Props
@@ -27,7 +27,7 @@ export interface CardSelectProps<ObjectType> extends HTMLDivElement {
   cardClassName?: string
   renderItem: (item: ObjectType, selected: boolean) => JSX.Element
   onChange: (selected: ObjectType, e: React.MouseEvent<HTMLDivElement>) => void
-  cornerSelected?: boolean 
+  cornerSelected?: boolean
 }
 ```
 

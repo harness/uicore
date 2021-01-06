@@ -1,14 +1,13 @@
 # LogViewer --- docs/pages/log-viewer.mdx
 
-
 `<LogViewer/>` component aims render ansi logs to dom without dangerouslysetinnerhtml
 
-import {LogsViewerExampleLoader} from '../shared/LogsViewerExampleLoader.tsx'
+import { LogsViewerExampleLoader } from '../shared/LogsViewerExampleLoader.tsx'
 
 ## Import
 
 ```
-import { Link } from '@wings-software/uikit'
+import { Link } from '@wings-software/uicore'
 ```
 
 ## Props
@@ -36,8 +35,15 @@ const defaultOptions = {
 ## Usage
 
 ```js live=true
-<LogViewer logs={[{logLine: 'Initializing..\n\nNo values.yaml file found. Skipping template rendering.'},
-{logLine: '\u001b[1;91m\u001b[40mException while processing templates/service.yaml\u001b[0m\n\u001b[1;91m\u001b[40mClassCastException: java.lang.String cannot be cast to java.util.Map\u001b[0m\n\u001b[1;91m\u001b[40mClassCastException: java.lang.String cannot be cast to java.util.Map\u001b[0m'}]} />
+<LogViewer
+  logs={[
+    { logLine: 'Initializing..\n\nNo values.yaml file found. Skipping template rendering.' },
+    {
+      logLine:
+        '\u001b[1;91m\u001b[40mException while processing templates/service.yaml\u001b[0m\n\u001b[1;91m\u001b[40mClassCastException: java.lang.String cannot be cast to java.util.Map\u001b[0m\n\u001b[1;91m\u001b[40mClassCastException: java.lang.String cannot be cast to java.util.Map\u001b[0m'
+    }
+  ]}
+/>
 ```
 
 ## Example
@@ -46,7 +52,7 @@ const defaultOptions = {
 
 ```js
 export const LogsViewerExample = () => {
-  return <LogViewer logs={logs}/>
+  return <LogViewer logs={logs} />
 }
 ```
 

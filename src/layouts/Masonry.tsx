@@ -4,7 +4,7 @@ import MasonryLayout from 'masonry-layout'
 import React, { useEffect, useState } from 'react'
 import { PaddingProps } from 'styled-props/padding/PaddingProps'
 
-const MASONRY_UNIQUE_CLASS_PREFIX = 'uikit-masonry-layout-'
+const MASONRY_UNIQUE_CLASS_PREFIX = 'uicore-masonry-layout-'
 
 export type MasonryRef = InstanceType<typeof MasonryLayout>
 

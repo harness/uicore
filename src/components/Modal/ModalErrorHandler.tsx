@@ -29,7 +29,7 @@ export interface ModalErrorHandlerBinding {
   /**
    * Show errors object returned from Backend API.
    * @param _errors ErrorInfo: Error info.
-   * @param iconName string: optional UIKit icon name.
+   * @param iconName string: optional UICore icon name.
    */
   show: (_errors: ErrorInfo, iconName?: IconName) => void
 
@@ -37,7 +37,7 @@ export interface ModalErrorHandlerBinding {
    * Show a success message.
    * @param message string: message to show.
    * @param helpLink: optional help link url.
-   * @param iconName string: optional UIKit icon name.
+   * @param iconName string: optional UICore icon name.
    */
   showSuccess: (message: string, helpLink?: string, iconName?: IconName) => void
 
@@ -45,7 +45,7 @@ export interface ModalErrorHandlerBinding {
    * Show a warning message.
    * @param message string: message to show.
    * @param helpLink: optional help link url.
-   * @param iconName string: optional UIKit icon name.
+   * @param iconName string: optional UICore icon name.
    */
   showWarning: (message: string, helpLink?: string, iconName?: IconName) => void
 
@@ -53,7 +53,7 @@ export interface ModalErrorHandlerBinding {
    * Show a danger message.
    * @param message string: message to show.
    * @param helpLink: optional help link url.
-   * @param iconName string: optional UIKit icon name.
+   * @param iconName string: optional UICore icon name.
    */
   showDanger: (message: string, helpLink?: string, iconName?: IconName) => void
 

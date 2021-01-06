@@ -3,7 +3,7 @@
 ## Import
 
 ```js
-import { GraphError } from '@wings-software/uikit'
+import { GraphError } from '@wings-software/uicore'
 ```
 
 ## Collapse
@@ -11,6 +11,13 @@ import { GraphError } from '@wings-software/uikit'
 ```js live=true
 <Layout.Horizontal spacing="small">
   <GraphError
-    linkText={'View in Splunk'} onLinkClick={()=> { alert('clicked') }} secondLinkText={'View call Logs'} onSecondLinkClick={()=> { alert('clicked') }}>
-  </GraphError>
+    linkText={'View in Splunk'}
+    onLinkClick={() => {
+      alert('clicked')
+    }}
+    secondLinkText={'View call Logs'}
+    onSecondLinkClick={() => {
+      alert('clicked')
+    }}></GraphError>
 </Layout.Horizontal>
+```

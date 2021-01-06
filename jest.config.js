@@ -5,7 +5,13 @@ module.exports = {
       isolatedModules: true
     }
   },
-  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/_stories/**',
+    '!src/**/*.test.{ts,tsx}',
+    '!src/**/*.stories.{ts,tsx}',
+    '!src/**/__tests__/**'
+  ],
   coverageReporters: ['lcov'],
   setupFiles: ['<rootDir>/jest/setup-file.js'],
   transform: {
