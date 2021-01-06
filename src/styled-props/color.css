@@ -346,4 +346,12 @@
   &.color-teal200 {
     color: var(--teal-200);
   }
+
+  &.color-black100 {
+    color: var(--black-100);
+  }
+
+  &.color-blue900 {
+    color: var(--blue-900);
+  }
 }
