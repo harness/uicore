@@ -106,8 +106,8 @@ export const LogSection: React.FC<LogSectionProps> = ({
   searchDir = '',
   highlightedIndex = -1,
   activePanel = -1,
-  updateSection = () => {},
-  toggle = () => {}
+  updateSection = () => undefined,
+  toggle = () => undefined
 }) => {
   const [isOpen, setIsOpen] = useState(isSectionOpen)
   const ref = useRef<HTMLDivElement | null>(null)
