@@ -27,6 +27,9 @@ export interface LogSectionProps {
   /** True to open log content */
   isOpen?: boolean
 
+  /** loading/progress indicator */
+  loading?: boolean
+
   /** Section title */
   title: React.ReactElement
 
@@ -51,6 +54,9 @@ export interface LogSectionProps {
 export interface MultiLogsViewerProps extends ContainerProps {
   /** Number of visible rows */
   rows?: LogSectionProps['rows']
+
+  /** loading/progress indicator */
+  loadingIndex?: number
 
   /** Search text */
   searchText?: string
@@ -106,14 +112,17 @@ export const LogSection: React.FC<LogSectionProps> = ({
   searchDir = '',
   highlightedIndex = -1,
   activePanel = -1,
+  loading = false,
   updateSection = () => undefined,
   toggle = () => undefined
 }) => {
   const [isOpen, setIsOpen] = useState(isSectionOpen)
   const ref = useRef<HTMLDivElement | null>(null)
-  const lines = content.split(/\r?\n/)
   const [currentSelection, setCurrentSelection] = useState<Selection | null>(null)
   const [prevSelection, setPrevSelection] = useState<Selection | null>(null)
+  const [currentLines, setCurrentLines] = useState<string[]>([])
+
+  const lines = useMemo(() => content.split(/\r?\n/), [content])
 
   useEffect(() => {
     setIsOpen(isSectionOpen)
@@ -123,7 +132,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
     () =>
       new Terminal({
         allowTransparency: true,
-        rows: Math.min(rows, lines.length),
+        rows: rows,
         theme: {
           background: 'transparent'
         }
@@ -139,24 +148,56 @@ export const LogSection: React.FC<LogSectionProps> = ({
 
   useEffect(() => {
     if (isOpen) {
-      let lineNumber = 1
-
       term.clear()
       term.open(ref?.current as HTMLDivElement)
 
       term.write('\x1b[?25l') // disable cursor
       term.setOption('disableStdin', true)
       term.setOption('scrollback', scrollbackLines || DEFAULT_SCROLLBACK_LINES)
+    }
 
-      lines.forEach((line, index, array) => {
-        if (index !== array.length - 1) {
-          term.writeln(`\x1B[1;30m${String(lineNumber++).padStart(4)}\x1B[0m ${line}`)
-        } else {
-          term.write(`\x1B[1;30m${String(lineNumber++).padStart(4)}\x1B[0m ${line}`)
-        }
-      })
+    if (!isOpen) {
+      setCurrentLines([])
     }
   }, [ref, isOpen])
+
+  const isSubsetFromBegining = (subsetArr: string[], arr: string[]): boolean => {
+    if (subsetArr.length > arr.length) return false
+
+    let isSubset = true
+    subsetArr.forEach((subsetItem, index) => {
+      if (arr[index] !== subsetItem) {
+        isSubset = false
+        return
+      }
+    })
+
+    return isSubset
+  }
+
+  // NOTE: logic for append log rows (or recreate if lines are not subset of existing lines)
+  useEffect(() => {
+    if (isOpen) {
+      if (isSubsetFromBegining(currentLines, lines)) {
+        // ADD NEW LINES
+        // console.log('append rows')
+        for (let i = currentLines.length; i < lines.length; i++) {
+          term.writeln(`\x1B[1;30m${String(i + 1).padStart(4)}\x1B[0m ${lines[i]}`)
+        }
+        setCurrentLines([...lines])
+      } else {
+        // RECREATE
+        // console.log('recreate')
+        term.clear()
+        for (let i = 0; i < lines.length; i++) {
+          term.writeln(`\x1B[1;30m${String(i + 1).padStart(4)}\x1B[0m ${lines[i]}`)
+        }
+        setCurrentLines([...lines])
+      }
+    } else {
+      setCurrentLines([])
+    }
+  }, [lines, isOpen])
 
   useEffect(() => {
     if (!currentSelection || !prevSelection) {
@@ -250,6 +291,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
           size={16}
         />
         {typeof title === 'string' ? <Text color={Color.GREY_100}>{title}</Text> : title}
+        {loading ? <Icon color={Color.GREY_100} name={'spinner'} size={16} /> : null}
         <FlexExpander />
         {rightElement}
       </Layout.Horizontal>
@@ -275,6 +317,7 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
   toggleSection,
   sectionArr = [false],
   activePanel,
+  loadingIndex = -1,
   ...containerProps
 }) => {
   const [isOpenArr, setIsOpenArr] = useState(sectionArr)
@@ -313,6 +356,7 @@ export const MultiLogsViewer: React.FC<MultiLogsViewerProps> = ({
                 setIsOpenArr([...sectionArr])
               }}
               activePanel={activePanel}
+              loading={loadingIndex === index}
             />
           )
         })}
