@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/wings-software/uicore/compare/v0.1.15...v0.1.16) (2021-01-07)
+
+
+### Bug Fixes
+
+* multi logs viewer - added fit addon ([#24](https://github.com/wings-software/uicore/issues/24)) ([faafd4b](https://github.com/wings-software/uicore/commit/faafd4bd7799157fd0eccd1b483c4d0eb260ed80))
+
 ### [0.1.15](https://github.com/wings-software/uicore/compare/v0.1.14...v0.1.15) (2021-01-07)
 
 
