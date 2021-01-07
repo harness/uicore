@@ -16,7 +16,7 @@ export const MultiLogsExample: React.FC = () => {
   const [panelArr, setPanelArr] = useState(arr)
 
   const [logsArr, setLogsArr] = useState<string[]>([
-    'I log line one\nI log line two',
+    'I log line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one line one\nI log line two',
     'II log',
     'III log',
     'IV log\nIV log line two'

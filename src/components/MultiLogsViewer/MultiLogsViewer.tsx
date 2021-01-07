@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { isEqual } from 'lodash'
 import { Container, ContainerProps } from '../Container/Container'
 import { Terminal } from 'xterm'
+import { FitAddon } from 'xterm-addon-fit'
 import { SearchAddon } from 'xterm-addon-search'
 import { WebLinksAddon } from 'xterm-addon-web-links'
 import { Layout } from '../../layouts/Layout'
@@ -140,9 +141,10 @@ export const LogSection: React.FC<LogSectionProps> = ({
     [isOpen]
   )
   const searchAddon = useMemo(() => new SearchAddon(), [])
-  // const fitAddon = useMemo(() => new FitAddon(), [isOpen])
+  const fitAddon = useMemo(() => new FitAddon(), [isOpen])
   const webLinksAddon = useMemo(() => new WebLinksAddon(), [isOpen])
   term.loadAddon(searchAddon)
+  term.loadAddon(fitAddon)
   searchAddon.activate(term)
   term.loadAddon(webLinksAddon)
 
@@ -150,6 +152,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
     if (isOpen) {
       term.clear()
       term.open(ref?.current as HTMLDivElement)
+      fitAddon.fit()
 
       term.write('\x1b[?25l') // disable cursor
       term.setOption('disableStdin', true)
