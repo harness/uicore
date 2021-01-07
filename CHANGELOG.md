@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/wings-software/uicore/compare/v0.1.14...v0.1.15) (2021-01-07)
+
+
+### Bug Fixes
+
+* [CDNG-3308]: click on same type must not call onChange ([#23](https://github.com/wings-software/uicore/issues/23)) ([61f177f](https://github.com/wings-software/uicore/commit/61f177f399cdad7ad90384fd26a5257d09e4334a))
+
 ### [0.1.14](https://github.com/wings-software/uicore/compare/v0.1.13...v0.1.14) (2021-01-07)
 
 
