@@ -107,15 +107,15 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       ? allowableTypes
       : [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION]
   }, [allowableTypes])
-  const switchType = useCallback(
-    (newType: MultiTypeInputType) => {
+  const switchType = (newType: MultiTypeInputType) => {
+    if (type !== newType) {
       setType(newType)
       onTypeChange?.(newType)
       const _inputValue = newType === MultiTypeInputType.RUNTIME ? RUNTIME_INPUT_VALUE : defaultValueToReset
       onChange?.(_inputValue, MultiTypeInputValue.STRING)
-    },
-    [type, defaultValueToReset, onChange, onTypeChange]
-  )
+    }
+  }
+
   const inputWidth = width && width - 28
   const FixedTypeComponent = fixedTypeComponent
   const fixedComponentOnChangeCallback = useCallback(
@@ -124,33 +124,30 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     },
     [onChange]
   )
-  const menu = useMemo(
-    () => (
-      <Menu className={css.menu}>
-        {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.FIXED) && (
-          <Menu.Item
-            labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
-            text={i18n.fixedValue}
-            onClick={() => switchType(MultiTypeInputType.FIXED)}
-          />
-        )}
-        {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.RUNTIME) && (
-          <Menu.Item
-            labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
-            text={i18n.runtimeInput}
-            onClick={() => switchType(MultiTypeInputType.RUNTIME)}
-          />
-        )}
-        {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.EXPRESSION) && (
-          <Menu.Item
-            labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
-            text={i18n.expression}
-            onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
-          />
-        )}
-      </Menu>
-    ),
-    []
+  const menu = (
+    <Menu className={css.menu}>
+      {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.FIXED) && (
+        <Menu.Item
+          labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
+          text={i18n.fixedValue}
+          onClick={() => switchType(MultiTypeInputType.FIXED)}
+        />
+      )}
+      {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.RUNTIME) && (
+        <Menu.Item
+          labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
+          text={i18n.runtimeInput}
+          onClick={() => switchType(MultiTypeInputType.RUNTIME)}
+        />
+      )}
+      {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.EXPRESSION) && (
+        <Menu.Item
+          labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
+          text={i18n.expression}
+          onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
+        />
+      )}
+    </Menu>
   )
 
   useEffect(() => {
