@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/wings-software/uicore/compare/v0.1.13...v0.1.14) (2021-01-07)
+
+
+### Features
+
+* Add Accordion component ([#22](https://github.com/wings-software/uicore/issues/22)) ([0ab6114](https://github.com/wings-software/uicore/commit/0ab6114f78d19556daf7177a9f6933c5c74cf9b1))
+
 ### [0.1.13](https://github.com/wings-software/uicore/compare/v0.1.12...v0.1.13) (2021-01-07)
 
 
