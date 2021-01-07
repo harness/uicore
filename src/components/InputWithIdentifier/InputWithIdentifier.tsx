@@ -1,23 +1,43 @@
 import React, { useState } from 'react'
 import ContentEditable from 'react-contenteditable'
+import { IInputGroupProps } from '@blueprintjs/core'
 import cx from 'classnames'
-import { get } from 'lodash'
+import { get } from 'lodash-es'
+
 import { FormInput } from '../FormikForm/FormikForm'
 import { Text } from '../Text/Text'
 import { Icon } from '../../icons/Icon'
+import { Layout } from '../../layouts/Layout'
 
 import css from './InputWithIdentifier.css'
-import { IInputGroupProps } from '@blueprintjs/core'
-import { Layout } from '../../layouts/Layout'
 
 export interface InputWithIdentifierProps {
   formik: any
   inputGroupProps?: IInputGroupProps
+  /**
+   * @default name
+   */
   inputName?: string
+  /**
+   * @default identifier
+   */
   idName?: string
+  /**
+   * @default Name
+   */
   inputLabel?: string
+  /**
+   * @default ID
+   */
   idLabel?: string
+  /**
+   * Should the user be allowed to edit the identifier?
+   * @default true
+   */
   isIdentifierEditable?: boolean
+  /**
+   * @default 63
+   */
   maxInput?: number
 }
 
@@ -40,6 +60,8 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     maxInput = 63
   } = props
   const [editable, setEditable] = useState(false)
+  const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
+
   return (
     <div className={css.txtNameContainer}>
       <Layout.Horizontal className={css.txtIdContainer}>
@@ -51,9 +73,11 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
           tagName="span"
           onChange={ev => {
             formik.setFieldValue(idName, ev.target.value.substring(0, maxInput))
+            setUserModifiedIdentifier(true)
           }}
           onBlur={() => {
             setEditable(false)
+            setUserModifiedIdentifier(true)
           }}
           onKeyPress={event => {
             if (event.key === 'Enter') {
@@ -79,7 +103,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         onChange={e => {
           const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
           formik.setFieldValue(inputName, name)
-          isIdentifierEditable && formik.setFieldValue(idName, getIdentifierFromName(name))
+          isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
         }}
       />
       {formik.errors[idName] ? (
