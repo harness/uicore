@@ -37,7 +37,6 @@
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
-    "@types/lodash.get": "^4.4.6",
     "@wings-software/mentions": "^1.2.9",
     "ansi-to-react": "^6.0.7",
     "classnames": "^2.2.6",
