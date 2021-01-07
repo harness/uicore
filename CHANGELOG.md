@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/wings-software/uicore/compare/v0.1.12...v0.1.13) (2021-01-07)
+
+
+### Features
+
+* [CDNG-3301]: id should not update if manually changed ([#21](https://github.com/wings-software/uicore/issues/21)) ([4604965](https://github.com/wings-software/uicore/commit/4604965dd8cf903e769766de80c908b1b99fd302))
+
 ### [0.1.12](https://github.com/wings-software/uicore/compare/v0.1.11...v0.1.12) (2021-01-06)
 
 
