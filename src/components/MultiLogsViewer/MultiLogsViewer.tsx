@@ -134,6 +134,9 @@ export const LogSection: React.FC<LogSectionProps> = ({
       new Terminal({
         allowTransparency: true,
         rows: rows,
+        // Note: "cols:20" does not have effect as we are using fit addon,
+        // but it's required to fit when parent <~700px;
+        cols: 20,
         theme: {
           background: 'transparent'
         }
