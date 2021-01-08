@@ -14,7 +14,7 @@ const DEFAULT_THROTTLE = 500 // ms
  *   - autoFocus initially
  */
 
-interface PropsInterface {
+export interface PropsInterface {
   name?: string
   defaultValue?: string
   placeholder?: string
