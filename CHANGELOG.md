@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.18](https://github.com/wings-software/uicore/compare/v0.1.17...v0.1.18) (2021-01-08)
+
+
+### Bug Fixes
+
+* MultiLogsViewer - fix for small width ([#26](https://github.com/wings-software/uicore/issues/26)) ([65de455](https://github.com/wings-software/uicore/commit/65de455a643b0cb57f04daba001ff67864f52a72))
+
 ### [0.1.17](https://github.com/wings-software/uicore/compare/v0.1.16...v0.1.17) (2021-01-08)
 
 
