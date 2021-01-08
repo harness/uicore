@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/wings-software/uicore/compare/v0.1.16...v0.1.17) (2021-01-08)
+
+
+### Features
+
+* [CDNG-3436]: Expanding Search Styling Changes to Match NG ([#25](https://github.com/wings-software/uicore/issues/25)) ([273ddb2](https://github.com/wings-software/uicore/commit/273ddb26482c59ea5eafdb84729a4504cd942864))
+
 ### [0.1.16](https://github.com/wings-software/uicore/compare/v0.1.15...v0.1.16) (2021-01-07)
 
 
