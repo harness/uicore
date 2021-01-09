@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.20](https://github.com/wings-software/uicore/compare/v0.1.19...v0.1.20) (2021-01-09)
+
+
+### Features
+
+* [CDNG-3471]: Hashi Corp Vault Icon ([#28](https://github.com/wings-software/uicore/issues/28)) ([de8d3ad](https://github.com/wings-software/uicore/commit/de8d3ad1629a6aa16b46f0cff5634180c7ba0dd4))
+
 ### [0.1.19](https://github.com/wings-software/uicore/compare/v0.1.18...v0.1.19) (2021-01-09)
 
 
