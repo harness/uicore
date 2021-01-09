@@ -15,11 +15,16 @@ export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'child
   togglePanel(): void
 }
 
-function AccordionPanel(props: AccordionPanelProps & AccordionPanelInternalProps): React.ReactElement {
+export const AccordionPanelWithRef = React.forwardRef(AccordionPanel)
+
+function AccordionPanel(
+  props: AccordionPanelProps & AccordionPanelInternalProps,
+  ref: React.Ref<HTMLDivElement>
+): React.ReactElement {
   const { summary, details, togglePanel, isOpen, id, collapseProps } = props
 
   return (
-    <div data-testid={`${id}-panel`} className={cx(css.panel, props.panelClassName)} data-open={isOpen}>
+    <div ref={ref} data-testid={`${id}-panel`} className={cx(css.panel, props.panelClassName)} data-open={isOpen}>
       <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, props.summaryClassName)}>
         <div className={cx({ [css.label]: typeof summary === 'string' })}>{summary}</div>
         <div className={css.chevron} />
@@ -52,13 +57,7 @@ export function Accordion(props: AccordionProps): React.ReactElement {
 
   function togglePanels(id: string) {
     return () => {
-      setActivePanels(prev => {
-        if (prev[id]) {
-          return { ...(allowMultiOpen ? prev : {}), [id]: false }
-        } else {
-          return { ...(allowMultiOpen ? prev : {}), [id]: true }
-        }
-      })
+      setActivePanels(prev => ({ ...(allowMultiOpen ? prev : {}), [id]: !prev[id] }))
     }
   }
 
@@ -71,7 +70,7 @@ export function Accordion(props: AccordionProps): React.ReactElement {
           const { props: childProps } = child as React.ReactElement<AccordionPanelProps>
 
           return (
-            <AccordionPanel
+            <AccordionPanelWithRef
               key={childProps.id}
               {...childProps}
               isOpen={!!activePanels[childProps.id]}

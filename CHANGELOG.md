@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.19](https://github.com/wings-software/uicore/compare/v0.1.18...v0.1.19) (2021-01-09)
+
+
+### Features
+
+* add nested accordion component ([#27](https://github.com/wings-software/uicore/issues/27)) ([8dcddec](https://github.com/wings-software/uicore/commit/8dcddec21ab499a11c96bb266e3e5391d0a50945))
+
+### [0.1.18](https://github.com/wings-software/uicore/compare/v0.1.17...v0.1.18) (2021-01-08)
+
+
+### Bug Fixes
+
+* MultiLogsViewer - fix for small width ([#26](https://github.com/wings-software/uicore/issues/26)) ([65de455](https://github.com/wings-software/uicore/commit/65de455a643b0cb57f04daba001ff67864f52a72))
+
+### [0.1.17](https://github.com/wings-software/uicore/compare/v0.1.16...v0.1.17) (2021-01-08)
+
+
+### Features
+
+* [CDNG-3436]: Expanding Search Styling Changes to Match NG ([#25](https://github.com/wings-software/uicore/issues/25)) ([273ddb2](https://github.com/wings-software/uicore/commit/273ddb26482c59ea5eafdb84729a4504cd942864))
+
 ### [0.1.16](https://github.com/wings-software/uicore/compare/v0.1.15...v0.1.16) (2021-01-07)
 
 
