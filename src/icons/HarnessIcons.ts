@@ -109,6 +109,7 @@ import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
+import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
@@ -490,6 +491,7 @@ type HarnessIconName =
   | 'harness-logo-black'
   | 'harness-logo-white'
   | 'harness'
+  | 'hashiCorpVault'
   | 'health'
   | 'hourglass'
   | 'http-step'
@@ -871,6 +873,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   harness: Harness,
+  hashiCorpVault: HashiCorpVault,
   health: Health,
   hourglass: Hourglass,
   'http-step': HttpStep,
