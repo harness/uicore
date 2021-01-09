@@ -1,7 +1,7 @@
 import React from 'react'
 import { toPath } from 'lodash-es'
 
-import type { AccordionPanelProps } from './Accordion'
+import type { AccordionProps, AccordionPanelProps } from './Accordion'
 import { AccordionPanelWithRef as AccordionPanel } from './Accordion'
 
 export interface NestedAccordionContextData<T extends string = string> {
@@ -28,9 +28,19 @@ export function NestedAccordionProvider(props: React.PropsWithChildren<unknown>)
   }, [])
 
   const openNestedPath = React.useCallback((id: string) => {
-    const paths = toPath(id).reduce<Record<string, boolean>>((acc, curr) => ({ ...acc, [curr]: true }), {})
+    const pathsArr = toPath(id)
 
-    setPanelStatus(prev => ({ ...prev, ...paths }))
+    const allPaths: string[] = []
+
+    while (pathsArr.length > 0) {
+      allPaths.push(pathsArr.join('.'))
+      pathsArr.pop()
+    }
+
+    setPanelStatus(prev => ({
+      ...prev,
+      ...Object.fromEntries(allPaths.map(key => [key, true]))
+    }))
   }, [])
 
   return (
@@ -40,7 +50,11 @@ export function NestedAccordionProvider(props: React.PropsWithChildren<unknown>)
   )
 }
 
-export function NestedAccordionPanel(props: AccordionPanelProps): React.ReactElement {
+export interface NestedAccordionPanelProps
+  extends AccordionPanelProps,
+    Omit<AccordionProps, 'children' | 'activeId' | 'className'> {}
+
+export function NestedAccordionPanel(props: NestedAccordionPanelProps): React.ReactElement {
   const { panelStatus, togglePanel } = useNestedAccordion()
   const isOpen = !!panelStatus[props.id]
   const elem = React.useRef<HTMLDivElement | null>(null)
