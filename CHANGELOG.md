@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.21](https://github.com/wings-software/uicore/compare/v0.1.20...v0.1.21) (2021-01-09)
+
+
+### Features
+
+* improve DX for nested accordion ([#29](https://github.com/wings-software/uicore/issues/29)) ([9c1ac9f](https://github.com/wings-software/uicore/commit/9c1ac9f789ad87de7f2db85e7b9f77b38f787821))
+
 ### [0.1.20](https://github.com/wings-software/uicore/compare/v0.1.19...v0.1.20) (2021-01-09)
 
 
