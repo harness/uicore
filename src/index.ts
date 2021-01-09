@@ -3,6 +3,12 @@ export { Config } from './core/Config'
 export { Color } from './core/Color'
 export { Intent } from './core/Intent'
 export { Accordion, AccordionProps } from './components/Accordion/Accordion'
+export {
+  NestedAccordionProvider,
+  NestedAccordionPanel,
+  useNestedAccordion,
+  NestedAccordionContextData
+} from './components/Accordion/NestedAccordion'
 export { Avatar, AvatarProps, AvatarSizes } from './components/Avatar/Avatar'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
 export { Button, ButtonProps } from './components/Button/Button'
