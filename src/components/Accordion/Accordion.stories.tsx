@@ -34,29 +34,29 @@ export const Nested: Story<unknown> = _ => (
   <NestedAccordionProvider>
     <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr' }}>
       <div>
-        <ToggleButton id="panel-1" text="Open Panel 1" />
-        <ToggleButton id="panel-1.panel-1-1" text="Open Panel 1.1 (Netsed)" />
-        <ToggleButton id="panel-2" text="Open Panel 2" />
-        <ToggleButton id="panel-3" text="Open Panel 3" />
-        <ToggleButton id="panel-4" text="Open Panel 4" />
-        <ToggleButton id="panel-5" text="Open Panel 5" />
+        <ToggleButton id="panel_1" text="Open Panel 1" />
+        <ToggleButton id="panel_1.panel_1_1" text="Open Panel 1.1 (Netsed)" />
+        <ToggleButton id="panel_2" text="Open Panel 2" />
+        <ToggleButton id="panel_3" text="Open Panel 3" />
+        <ToggleButton id="panel_4" text="Open Panel 4" />
+        <ToggleButton id="panel_5" text="Open Panel 5" />
       </div>
       <div>
         <NestedAccordionPanel
-          id="panel-1"
+          id="panel_1"
           details={
             <div>
               <div>{text}</div>
               <br />
-              <NestedAccordionPanel id="panel-1-1" details={text} summary="Panel 1.1" />
+              <NestedAccordionPanel id="panel_1.panel_1_1" details={text} summary="Panel 1.1" />
             </div>
           }
           summary="Panel 1"
         />
-        <NestedAccordionPanel id="panel-2" details={text} summary="Panel 2" />
-        <NestedAccordionPanel id="panel-3" details={text} summary="Panel 3" />
-        <NestedAccordionPanel id="panel-4" details={text} summary="Panel 4" />
-        <NestedAccordionPanel id="panel-5" details={text} summary="Panel 5" />
+        <NestedAccordionPanel id="panel_2" details={text} summary="Panel 2" />
+        <NestedAccordionPanel id="panel_3" details={text} summary="Panel 3" />
+        <NestedAccordionPanel id="panel_4" details={text} summary="Panel 4" />
+        <NestedAccordionPanel id="panel_5" details={text} summary="Panel 5" />
       </div>
     </div>
   </NestedAccordionProvider>

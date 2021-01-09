@@ -8,6 +8,7 @@ export interface AccordionPanelProps {
   id: string
   details: React.ReactNode
   summary: React.ReactNode
+  addDomId?: boolean
 }
 
 export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
@@ -21,10 +22,15 @@ function AccordionPanel(
   props: AccordionPanelProps & AccordionPanelInternalProps,
   ref: React.Ref<HTMLDivElement>
 ): React.ReactElement {
-  const { summary, details, togglePanel, isOpen, id, collapseProps } = props
+  const { summary, details, togglePanel, isOpen, id, collapseProps, addDomId } = props
 
   return (
-    <div ref={ref} data-testid={`${id}-panel`} className={cx(css.panel, props.panelClassName)} data-open={isOpen}>
+    <div
+      ref={ref}
+      data-testid={`${id}-panel`}
+      className={cx(css.panel, props.panelClassName)}
+      data-open={isOpen}
+      id={addDomId ? `${id}-panel` : undefined}>
       <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, props.summaryClassName)}>
         <div className={cx({ [css.label]: typeof summary === 'string' })}>{summary}</div>
         <div className={css.chevron} />
