@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.22](https://github.com/wings-software/uicore/compare/v0.1.21...v0.1.22) (2021-01-09)
+
+
+### Bug Fixes
+
+* CSS styling for nested accordion ([#30](https://github.com/wings-software/uicore/issues/30)) ([ada9709](https://github.com/wings-software/uicore/commit/ada970982bd8840983624fe5046f02c69efda34d))
+
 ### [0.1.21](https://github.com/wings-software/uicore/compare/v0.1.20...v0.1.21) (2021-01-09)
 
 
