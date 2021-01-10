@@ -1,4 +1,5 @@
 import React from 'react'
+import { Text } from '../Text/Text'
 import { Container } from '../Container/Container'
 import { Color } from '../../core/Color'
 import css from './StepsProgress.css'
