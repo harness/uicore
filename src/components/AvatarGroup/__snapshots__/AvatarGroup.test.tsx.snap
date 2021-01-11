@@ -18,57 +18,102 @@ exports[`Render basic component should check snapshot with Avatar props with add
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        <img
-          alt=""
-          class="imageStyle"
-          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-          style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
-        />
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            <img
+              alt=""
+              class="imageStyle"
+              src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+              style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            />
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        GH
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            GH
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        EF
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            EF
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        CH
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            CH
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        AS
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            AS
+          </div>
+        </span>
+      </span>
     </div>
   </div>
 </div>
@@ -82,57 +127,102 @@ exports[`Render basic component should check snapshot with Avatar props without 
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        <img
-          alt=""
-          class="imageStyle"
-          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-          style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
-        />
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            <img
+              alt=""
+              class="imageStyle"
+              src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+              style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            />
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        GH
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            GH
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        E
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            E
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        CH
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            CH
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        AS
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            AS
+          </div>
+        </span>
+      </span>
     </div>
   </div>
 </div>
@@ -146,57 +236,102 @@ exports[`Render basic component should check snapshot with Avatar props without 
     <div
       class="Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        AS
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            AS
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        CH
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            CH
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        E
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            E
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        GH
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            GH
+          </div>
+        </span>
+      </span>
     </div>
     <div
       class="Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+      <span
+        class="bp3-popover-wrapper"
       >
-        <img
-          alt=""
-          class="imageStyle"
-          src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-          style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
-        />
-      </div>
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            <img
+              alt=""
+              class="imageStyle"
+              src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+              style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+            />
+          </div>
+        </span>
+      </span>
     </div>
   </div>
 </div>

@@ -1,3 +1,5 @@
+import { pick } from 'lodash'
+import { Color } from '../../core/Color'
 export const getInitialsFromNameOrEmail = (name = '', email = '') => {
   let initialsFromName = name
     .split(/-| /)
@@ -27,3 +29,23 @@ export const getSumOfAllCharacters = (str: string) => {
         }, 0)
     : 0
 }
+export const defaultAvatarColor = Object.values(
+  pick(Color, [
+    'GREY_600',
+    'GREY_700',
+    'GREY_850',
+    'GREY_900',
+    'BLUE_700',
+    'BLUE_800',
+    'RED_700',
+    'RED_600',
+    'YELLOW_800',
+    'YELLOW_700',
+    'YELLOW_600',
+    'PURPLE_900',
+    'ORANGE_500',
+    'GREEN_500',
+    'GREEN_600',
+    'GREEN_700'
+  ])
+)

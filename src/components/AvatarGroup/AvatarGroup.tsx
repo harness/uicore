@@ -30,7 +30,13 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
     avatars = [...avatars]
   }
   if (onAdd) {
-    avatars.push({ name: '+', color: Color.BLUE_500, backgroundColor: Color.GREY_200, onClick: onAdd })
+    avatars.push({
+      name: '+',
+      color: Color.BLUE_500,
+      backgroundColor: Color.GREY_200,
+      onClick: onAdd,
+      hoverCard: false
+    })
   }
   if (overlap && avatars.length) {
     /* in order to create a stack like effect where first avatar overlaps second and second the third one and so on,

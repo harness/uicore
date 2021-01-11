@@ -16,8 +16,8 @@
 ## Import
 
 ```js
-import { Avatar } from '@wings-software/uicore'
-import { AvatarGroup } from '@wings-software/uicore'
+import { Avatar } from '@wings-software/uikit'
+import { AvatarGroup } from '@wings-software/uikit'
 ```
 
 ```js live=true
@@ -41,7 +41,8 @@ import { AvatarGroup } from '@wings-software/uicore'
       alert('add button clicked')
     }}
     avatarGroupProps={{
-      color: Color.BLACK
+      color: Color.BLACK,
+      hoverCard: false
     }}
     avatars={[
       { name: 'Aahn Boe SS' },
