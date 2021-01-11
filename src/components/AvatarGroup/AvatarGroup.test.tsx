@@ -7,6 +7,7 @@ describe('Render basic component', () => {
   test('should check snapshot with Avatar props with add button', () => {
     const { container } = render(
       <AvatarGroup
+        // eslint-disable-next-line
         onAdd={() => {}}
         avatars={[
           { name: 'Aahn Boe SS', backgroundColor: Color.RED_100 },

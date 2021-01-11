@@ -13,6 +13,7 @@ export const Basic: Story<AvatarGroupProps> = args => (
     <AvatarGroup {...args} />
     <AvatarGroup
       onAdd={() => {
+        // eslint-disable-next-line
         alert('add button clicked')
       }}
       avatars={[
@@ -27,6 +28,7 @@ export const Basic: Story<AvatarGroupProps> = args => (
     />
     <AvatarGroup
       onAdd={() => {
+        // eslint-disable-next-line
         alert('add button clicked')
       }}
       avatarGroupProps={{
