@@ -26,7 +26,7 @@
       }
       .bp3-input,
       .bp3-file-upload-input,
-      [class*='ColorPicker---picker'] {
+      .ColorPicker--picker {
         box-shadow: none !important;
         border: 1px solid var(--bp3-intent-color, #dddddd) !important;
       }

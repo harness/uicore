@@ -9,8 +9,8 @@
     }
   }
 
-  [class*='TextInput---main'] {
-    width: 100%;
+  .TextInput--main {
+    flex: 1 1 auto;
   }
 
   &.disabled {
