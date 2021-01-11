@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.24](https://github.com/wings-software/uicore/compare/v0.1.23...v0.1.24) (2021-01-11)
+
+
+### Bug Fixes
+
+* CSS classes ([#32](https://github.com/wings-software/uicore/issues/32)) ([ee72967](https://github.com/wings-software/uicore/commit/ee72967d679190a689ee68459d93c40011fbde44))
+
 ### [0.1.23](https://github.com/wings-software/uicore/compare/v0.1.22...v0.1.23) (2021-01-11)
 
 
