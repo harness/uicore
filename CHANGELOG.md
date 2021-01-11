@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.23](https://github.com/wings-software/uicore/compare/v0.1.22...v0.1.23) (2021-01-11)
+
+
+### Bug Fixes
+
+* Fixed step progress by replacing text with container ([#31](https://github.com/wings-software/uicore/issues/31)) ([fcfb581](https://github.com/wings-software/uicore/commit/fcfb5814c96d51bd8b962a959a9c9b9d1ef6fb71))
+
 ### [0.1.22](https://github.com/wings-software/uicore/compare/v0.1.21...v0.1.22) (2021-01-09)
 
 
