@@ -43,12 +43,12 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             />
           </svg>
         </span>
-        <p
+        <div
           class="font main style style-fontWeight style-fontWeight-bold"
           style="font-weight: bold;"
         >
           Checking Delegate
-        </p>
+        </div>
       </div>
       <div
         class="stepWrap"
@@ -72,12 +72,12 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             />
           </svg>
         </span>
-        <p
+        <div
           class="font main style style-fontWeight style-fontWeight-bold"
           style="font-weight: bold;"
         >
           Establising Connection with the Delegate and Kubernetes
-        </p>
+        </div>
       </div>
       <div
         class="stepWrap"
@@ -101,11 +101,11 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             />
           </svg>
         </span>
-        <p
+        <div
           class="font main style style-fontWeight style-fontWeight-"
         >
           Checking for heartbeat
-        </p>
+        </div>
       </div>
       <div
         class="stepWrap"
@@ -125,12 +125,12 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             </desc>
           </svg>
         </span>
-        <p
+        <div
           class="font main style style-fontWeight style-fontWeight-normal"
           style="font-weight: normal;"
         >
           Verifying Connection
-        </p>
+        </div>
       </div>
     </div>
   </div>
