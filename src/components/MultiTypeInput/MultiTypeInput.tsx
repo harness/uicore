@@ -33,11 +33,11 @@ const TypeIcon: Record<string, IconName> = {
 }
 
 export const RUNTIME_INPUT_VALUE = '<+input>'
-export const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
+export const EXPRESSION_INPUT_PLACEHOLDER = '<+expression>'
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
-  trigger: ['$', '${'],
-  rule: '${__match__}',
+  trigger: ['<', '<+'],
+  rule: '<+__match__>',
   cached: true,
   data: done => done([])
 }
@@ -64,7 +64,7 @@ export interface FixedTypeComponentProps {
   value?: AcceptableValue
 }
 
-export const isValueAnExpression = (value: string): boolean => /^\${.*}$/.test(value)
+export const isValueAnExpression = (value: string): boolean => /^<\+.*>$/.test(value)
 
 export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',

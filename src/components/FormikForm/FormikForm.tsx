@@ -123,8 +123,8 @@ type KVAccumulator = { [key: string]: string }
 
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
-  trigger: ['$', '${'],
-  rule: '${__match__}',
+  trigger: ['<', '<+'],
+  rule: '<+__match__>',
   cached: true,
   data: done => done([])
 }
