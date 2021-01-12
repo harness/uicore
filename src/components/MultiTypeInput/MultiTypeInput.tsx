@@ -172,7 +172,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       )}
       {type === MultiTypeInputType.RUNTIME && (
         <TextInput
-          className={css.input}
+          wrapperClassName={css.input}
           name={name}
           style={{ width: inputWidth }}
           placeholder={RUNTIME_INPUT_VALUE}
@@ -182,7 +182,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       )}
       {type === MultiTypeInputType.EXPRESSION && (
         <TextInput
-          className={css.input}
+          wrapperClassName={css.input}
           name={name}
           style={{ width: inputWidth }}
           placeholder={EXPRESSION_INPUT_PLACEHOLDER}
