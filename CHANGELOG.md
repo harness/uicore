@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.26](https://github.com/wings-software/uicore/compare/v0.1.25...v0.1.26) (2021-01-12)
+
+
+### Bug Fixes
+
+* text field input width ([#34](https://github.com/wings-software/uicore/issues/34)) ([bd63261](https://github.com/wings-software/uicore/commit/bd6326155b8092490399522e5a338962809e0662))
+
 ### [0.1.25](https://github.com/wings-software/uicore/compare/v0.1.24...v0.1.25) (2021-01-12)
 
 
