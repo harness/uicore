@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.25](https://github.com/wings-software/uicore/compare/v0.1.24...v0.1.25) (2021-01-12)
+
+
+### Features
+
+* Added new expression support <+expression> to muti type component ([#35](https://github.com/wings-software/uicore/issues/35)) ([6a211c6](https://github.com/wings-software/uicore/commit/6a211c611255aececd1184045290f03dd8d3f74f))
+
 ### [0.1.24](https://github.com/wings-software/uicore/compare/v0.1.23...v0.1.24) (2021-01-11)
 
 
