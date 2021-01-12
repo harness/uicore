@@ -7,10 +7,10 @@
     .bp3-popover-target {
       height: 100%;
     }
-  }
 
-  .TextInput--main {
-    flex: 1 1 auto;
+    .TextInput--main {
+      flex: 1 1 auto;
+    }
   }
 
   &.disabled {
