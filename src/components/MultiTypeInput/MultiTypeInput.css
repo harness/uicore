@@ -1,15 +1,11 @@
 .input {
-  width: 100%;
+  flex: 1 1 auto;
 }
 
 .main {
   :global {
     .bp3-popover-target {
       height: 100%;
-    }
-
-    .TextInput--main {
-      flex: 1 1 auto;
     }
   }
 

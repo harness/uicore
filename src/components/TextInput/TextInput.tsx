@@ -18,9 +18,10 @@ export interface TextInputProps
   intent?: Intent
   errorInPopover?: boolean
   popoverProps?: PopoverProps
+  wrapperClassName?: string
 }
 
-export function TextInput(props: TextInputProps) {
+export function TextInput(props: TextInputProps): React.ReactElement {
   const {
     errorText,
     intent,
@@ -30,6 +31,7 @@ export function TextInput(props: TextInputProps) {
     leftIconProps,
     rightElementProps,
     popoverProps,
+    wrapperClassName,
     ...rest
   } = props
   const hasError = Intent.DANGER === intent
@@ -68,7 +70,8 @@ export function TextInput(props: TextInputProps) {
       className={cx(
         css.main,
         { [css.hasError]: intent === Intent.DANGER },
-        { [css.success]: intent === Intent.SUCCESS }
+        { [css.success]: intent === Intent.SUCCESS },
+        wrapperClassName
       )}>
       <InputGroup
         {...rest}
