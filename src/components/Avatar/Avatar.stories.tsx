@@ -13,9 +13,14 @@ export const Normal: Story<AvatarProps> = args => (
     <Avatar
       name="John Doe"
       onClick={() => {
+        // eslint-disable-next-line
         alert(' Avatar clicked')
       }}
       size={'normal'}
+      hoverCardDetailsCallBack={() => {
+        // eslint-disable-next-line
+        alert(' Details clicked')
+      }}
       {...args}
     />
   </Layout.Horizontal>

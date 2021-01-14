@@ -51,7 +51,7 @@ export const Avatar = (props: AvatarProps) => {
     color = Color.WHITE,
     onClick,
     hoverCard = true,
-    hoverCardDetailsCallBack = () => {},
+    hoverCardDetailsCallBack,
     ...rest
   } = props
   let textColor = color
@@ -125,9 +125,11 @@ export const Avatar = (props: AvatarProps) => {
         )}
       </Container>
       <Container padding="small">
-        <Text color="blue500" lineClamp={1} onClick={hoverCardDetailsCallBack}>
-          Details
-        </Text>
+        {hoverCardDetailsCallBack && (
+          <Text color="blue500" lineClamp={1} onClick={hoverCardDetailsCallBack}>
+            Details
+          </Text>
+        )}
       </Container>
     </Layout.Vertical>
   )
