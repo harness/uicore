@@ -41,6 +41,7 @@ export interface InputWithIdentifierProps {
   maxInput?: number
 }
 
+// https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
 export function getIdentifierFromName(str: string): string {
   return str
     .trim()
@@ -72,7 +73,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
           className={cx(css.idInput, { [css.editable]: editable })}
           tagName="span"
           onChange={ev => {
-            formik.setFieldValue(idName, ev.target.value.substring(0, maxInput))
+            formik.setFieldValue(idName, getIdentifierFromName(ev.target.value.substring(0, maxInput)))
             setUserModifiedIdentifier(true)
           }}
           onBlur={() => {
