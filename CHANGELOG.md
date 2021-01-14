@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.27](https://github.com/wings-software/uicore/compare/v0.1.26...v0.1.27) (2021-01-14)
+
+
+### Bug Fixes
+
+* [CDNG-2990]: remove special characters from identifier ([#36](https://github.com/wings-software/uicore/issues/36)) ([b88c5d6](https://github.com/wings-software/uicore/commit/b88c5d6da87b32e4027eda0a24c1d060af02abe3))
+
 ### [0.1.26](https://github.com/wings-software/uicore/compare/v0.1.25...v0.1.26) (2021-01-12)
 
 
