@@ -16,50 +16,13 @@
 .imageStyle {
   display: block;
 }
-@media only screen and (min-width: 1280px) {
-  .hoverContainer {
-    width: 11.5vw;
-    border-radius: 4px;
-    height: 13.18vh;
-  }
+.hoverToolTipLayout {
+  word-break: break-all !important;
+  text-align: start !important;
+  width: 200px !important;
 }
-@media only screen and (max-width: 1279px) {
-  .hoverContainer {
-    width: 206px;
-    border-radius: 4px;
-    height: 130px;
-  }
-}
-.hoverNameContainer {
-  background-color: var(--grey-250) !important;
-  height: 38%;
-  position: relative;
-  word-break: break-all;
-}
-.hoverEmailContainer {
-  height: 62%;
-  position: relative;
-  word-break: break-all;
-}
-.hoverNameDiv {
-  bottom: 1.25%;
-  position: absolute;
-  left: 40%;
-  font-size: var(--font-size-small);
-}
-.hoverEmailDiv {
-  position: absolute;
-  top: 20.7%;
-  left: 16%;
-  display: flex;
-  column-gap: 3%;
-  align-items: center;
-  font-size: var(--font-size-small);
-}
-.hoverAvatarIcon {
-  top: 23.3%;
-  left: 7.7%;
-  position: absolute;
-  border-radius: 100% !important ;
-  text-align: center !important;
+.hoverAvatarLayout {
+  justify-content: flex-start !important;
+  column-gap: 5px;
+  background: linear-gradient(var(--grey-250) 70%, var(--white) 30%) !important;
 }

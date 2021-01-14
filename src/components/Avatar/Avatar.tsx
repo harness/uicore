@@ -1,14 +1,14 @@
-import { HTMLDivProps } from '@blueprintjs/core'
+import { HTMLDivProps, Popover } from '@blueprintjs/core'
 import React from 'react'
 import css from './Avatar.css'
 import classnames from 'classnames'
 import { getInitialsFromNameOrEmail, getSumOfAllCharacters, defaultAvatarColor } from './utils'
 import { FontSize } from 'styled-props/font/FontProps'
 import { Utils } from '../../core/Utils'
-import { Icon } from '../../icons/Icon'
 import { Color } from '../../core/Color'
 import { Container } from '../../components/Container/Container'
-
+import { Layout } from '../../layouts/Layout'
+import { Text } from '../Text/Text'
 export type AvatarSizes = FontSize
 export interface AvatarProps extends HTMLDivProps {
   name?: string
@@ -20,20 +20,22 @@ export interface AvatarProps extends HTMLDivProps {
   color?: Color
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
   hoverCard?: boolean
+  hoverCardDetailsCallBack?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 interface SizeValueProps {
   size: string
   fontSize: string
+  lineHeight: string
 }
 type SizesProps = {
   [key in AvatarSizes]: SizeValueProps
 }
 const sizes: SizesProps = {
-  xsmall: { size: '16px', fontSize: '7px' },
-  small: { size: '24px', fontSize: '10px' },
-  normal: { size: '32px', fontSize: '10px' },
-  medium: { size: '48px', fontSize: '18px' },
-  large: { size: '72px', fontSize: '28px' }
+  xsmall: { size: '16px', fontSize: '7px', lineHeight: '12px' },
+  small: { size: '24px', fontSize: '10px', lineHeight: '20px' },
+  normal: { size: '32px', fontSize: '10px', lineHeight: '28px' },
+  medium: { size: '48px', fontSize: '18px', lineHeight: '44px' },
+  large: { size: '72px', fontSize: '28px', lineHeight: '68px' }
 }
 
 export const Avatar = (props: AvatarProps) => {
@@ -49,12 +51,13 @@ export const Avatar = (props: AvatarProps) => {
     color = Color.WHITE,
     onClick,
     hoverCard = true,
-
+    hoverCardDetailsCallBack = () => {},
     ...rest
   } = props
   let textColor = color
   const formatedSize = sizes[size].size
   const fontSize = sizes[size].fontSize
+  const lineHeight = sizes[size].lineHeight
   let inner
   let initials = ''
   if (!src) {
@@ -71,13 +74,14 @@ export const Avatar = (props: AvatarProps) => {
   }
   const contentStyle = {
     borderRadius: `${borderRadius}%`,
-    lineHeight: formatedSize,
+    lineHeight,
     width: formatedSize,
     height: formatedSize,
     ...(!src && {
       backgroundColor: Utils.getRealCSSColor(calucatedBackgroundColor || 'BLUE_800'),
       color: Utils.getRealCSSColor(textColor)
     }),
+    border: '2px solid var(--white)',
     ...(fontSize && { fontSize })
   }
   if (src) {
@@ -94,35 +98,48 @@ export const Avatar = (props: AvatarProps) => {
     width: sizes.medium.size,
     height: sizes.medium.size,
     fontSize: sizes.medium.fontSize,
-    lineHeight: sizes.medium.size
+    lineHeight: sizes.medium.lineHeight,
+    borderRadius: '100%'
   }
-  const tooltip = (
-    <Container className={css.hoverContainer}>
-      <Container className={css.hoverNameContainer}>
-        <Container className={classnames(css.AvatarInner, css.hoverAvatarIcon)} style={toolTipStyle}>
-          {src ? <img src={src} style={toolTipStyle} className={css.imageStyle} alt={name} /> : inner}
-        </Container>
 
-        {name && <span className={css.hoverNameDiv}>{name}</span>}
-      </Container>
-      <Container className={css.hoverEmailContainer}>
+  const tooltip = (
+    <Layout.Vertical className={css.hoverToolTipLayout}>
+      <Layout.Horizontal flex padding="small" className={css.hoverAvatarLayout}>
+        {src ? (
+          <img src={src} style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }} alt={name} />
+        ) : (
+          <div style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}>{inner}</div>
+        )}
+
+        <Text lineClamp={1}>{name}</Text>
+      </Layout.Horizontal>
+      <Container padding="small">
         {email && (
-          <Container className={css.hoverEmailDiv}>
-            <Icon color="grey300" size={12} name="command-email"></Icon>
-            <span>{email}</span>
-          </Container>
+          <Text
+            icon="command-email"
+            iconProps={{ color: 'grey300', size: 18 }}
+            lineClamp={1}
+            className={css.emailHover}>
+            {email}
+          </Text>
         )}
       </Container>
-    </Container>
+      <Container padding="small">
+        <Text color="blue500" lineClamp={1} onClick={hoverCardDetailsCallBack}>
+          Details
+        </Text>
+      </Container>
+    </Layout.Vertical>
   )
+
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
       {hoverCard ? (
-        <Utils.WrapOptionalTooltip tooltip={tooltip}>
+        <Popover content={tooltip} interactionKind="hover" usePortal={false}>
           <div className={css.AvatarInner} style={contentStyle}>
             {inner}
           </div>
-        </Utils.WrapOptionalTooltip>
+        </Popover>
       ) : (
         <div className={css.AvatarInner} style={contentStyle}>
           {inner}

@@ -13,6 +13,7 @@
   color?: string
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
   hoverCard?: boolean
+  hoverCardDetailsCallBack?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 ```
 
@@ -31,16 +32,20 @@ import { Avatar, AvatarSizes } from '@wings-software/uikit'
     }}
     size={'normal'}
   />
-  <Avatar email="ajohn.doe@harnes.io" name="aJoh Doe" size={'small'} />
-  <Avatar email="bjohn.doe@harnes.io" name="bJoh Doe" size={'xsmall'} />
-  <Avatar email="cjohn.doe@harnes.io" name="cJoh Doe" size={'medium'} />
-  <Avatar email="djohn.doe@harnes.io" name="dJoh Doe" size={'large'} />
-  <Avatar email="ejohn.doe@harnes.io" name="eJoh Doe" />
-  <Avatar email="fjohn.doe@harnes.io" textColor="red" borderRadius={25} />
   <Avatar
+    email="ajohn.doe@hfdfdfdfdfdfdfdfdfdsfdfdfdarnes.io"
+    name="aJoh Doddfdfdfdsfdfdfdfdfdsfdsfdsfe"
+    size={'small'}
+  />
+  <Avatar email="Bjohn.doe@harnes.io" name="bJoh Doe" size={'xsmall'} />
+  <Avatar email="Cjohn.doe@harnes.io" name="cJoh Doe" size={'medium'} />
+  <Avatar email="Djohn.doe@harnes.io" name="dJoh Doe" size={'large'} />
+  <Avatar email="Ejohn.doe@harnes.io" name="eJoh Doe" />
+  <Avatar email="Fjohn.doe@harnes.io" textColor="red" borderRadius={25} />
+  <Avatar
+    name="Something else "
     src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
     size={'large'}
-    hoverCard={false}
   />
 </Layout.Horizontal>
 ```
