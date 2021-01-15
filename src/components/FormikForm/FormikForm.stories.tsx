@@ -13,7 +13,7 @@ export default {
   component: FormikForm
 } as Meta
 
-export const Basic: Story<FormikFormProps> = args => (
+export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
     <Formik
       initialValues={{
@@ -33,7 +33,7 @@ export const Basic: Story<FormikFormProps> = args => (
         description: Yup.string().trim().required('Description is required field'),
         sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
       })}>
-      {formikProps => (
+      {() => (
         <FormikForm>
           <FormInput.Text name="name" label="Name" placeholder="First Name" />
           <FormInput.KVTagInput
@@ -109,6 +109,7 @@ export const Basic: Story<FormikFormProps> = args => (
               { label: 'Garchomp', value: 'garchomp', category: 'Pokemon' }
             ]}
             categorizedSelectProps={{
+              items: [],
               creatableOption: {
                 creatableOptionLabel: 'Custom Option',
                 allowableCategoriesForNewOption: () => ['Sports', 'Pokemon']
