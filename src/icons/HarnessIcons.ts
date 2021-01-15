@@ -9,7 +9,7 @@ import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
-import BitbucketLogoBlackAndWhite from './bitbucket-logo-black-and-white.svg'
+import BitbucketNew from './bitbucket-new.svg'
 import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
@@ -396,7 +396,7 @@ type HarnessIconName =
   | 'approval-step'
   | 'azure-kubernetes-service'
   | 'banned'
-  | 'bitbucket-logo-black-and-white'
+  | 'bitbucket-new'
   | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
@@ -783,7 +783,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'approval-step': ApprovalStep,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
-  'bitbucket-logo-black-and-white': BitbucketLogoBlackAndWhite,
+  'bitbucket-new': BitbucketNew,
   bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
