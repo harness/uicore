@@ -659,10 +659,10 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     ...rest
   } = restProps
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
-    (value, valueType) => {
+    (value, valueType, type) => {
       formik?.setFieldValue(name, value)
       formik?.setFieldTouched(name)
-      multiTypeInputProps?.onChange?.(value, valueType)
+      multiTypeInputProps?.onChange?.(value, valueType, type)
     },
     [formik, multiTypeInputProps]
   )
@@ -725,10 +725,10 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
           },
           items: selectItems
         }}
-        onChange={(value, valueType) => {
+        onChange={(value, valueType, type) => {
           formik?.setFieldValue(name, value)
           formik?.setFieldTouched(name)
-          multiSelectTypeInputProps?.onChange?.(value, valueType)
+          multiSelectTypeInputProps?.onChange?.(value, valueType, type)
         }}
       />
     </FormGroup>
@@ -774,9 +774,9 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
         value={value}
         {...customMultiTextInputProps}
         name={name}
-        onChange={(value, valueType) => {
+        onChange={(value, valueType, type) => {
           formik?.setFieldValue(name, value)
-          onChange?.(value, valueType)
+          onChange?.(value, valueType, type)
         }}
       />
     </FormGroup>
