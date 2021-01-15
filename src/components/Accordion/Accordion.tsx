@@ -56,9 +56,9 @@ export interface AccordionProps {
 }
 
 export function Accordion(props: AccordionProps): React.ReactElement {
-  const { children, allowMultiOpen, className } = props
+  const { children, allowMultiOpen, className, activeId, ...rest } = props
   const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(
-    typeof props.activeId === 'string' ? { [props.activeId]: true } : {}
+    typeof activeId === 'string' ? { [activeId]: true } : {}
   )
 
   function togglePanels(id: string) {
@@ -78,6 +78,7 @@ export function Accordion(props: AccordionProps): React.ReactElement {
           return (
             <AccordionPanelWithRef
               key={childProps.id}
+              {...rest}
               {...childProps}
               isOpen={!!activePanels[childProps.id]}
               togglePanel={togglePanels(childProps.id)}
