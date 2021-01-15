@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.31](https://github.com/wings-software/uicore/compare/v0.1.30...v0.1.31) (2021-01-15)
+
+
+### Features
+
+* add multitype param  to onchange ([#40](https://github.com/wings-software/uicore/issues/40)) ([0469fa2](https://github.com/wings-software/uicore/commit/0469fa26f90118bee640990c12ffb411de90fbdd))
+
 ### [0.1.30](https://github.com/wings-software/uicore/compare/v0.1.29...v0.1.30) (2021-01-15)
 
 
