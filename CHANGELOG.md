@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.32](https://github.com/wings-software/uicore/compare/v0.1.31...v0.1.32) (2021-01-15)
+
+
+### Bug Fixes
+
+* bitbucket icon ([#41](https://github.com/wings-software/uicore/issues/41)) ([580b476](https://github.com/wings-software/uicore/commit/580b4762cba12d32067cba8e06f90d4146924290))
+
 ### [0.1.31](https://github.com/wings-software/uicore/compare/v0.1.30...v0.1.31) (2021-01-15)
 
 
