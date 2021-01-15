@@ -8,8 +8,9 @@ import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
+import Banned from './banned.svg'
+import BitbucketLogoBlackAndWhite from './bitbucket-logo-black-and-white.svg'
 import Bitbucket from './bitbucket.svg'
-import BitbucketNew from './bitbucket-logo-black-and-white.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -36,7 +37,7 @@ import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
-import CodebaseInvalid from './codebase-invalid.svg'
+import CircleCross from './circle-cross.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -94,6 +95,7 @@ import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionSuccess from './execution-success.svg'
 import ExecutionWarning from './execution-warning.svg'
+import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
@@ -109,7 +111,7 @@ import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
-import HashiCorpVault from './hashiCorpVault.svg'
+import Hashicorpvault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
@@ -269,6 +271,7 @@ import Polygon from './polygon.svg'
 import Profile from './profile.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
+import Queued from './queued.svg'
 import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
@@ -346,6 +349,7 @@ import ServiceTerraform from './service-terraform.svg'
 import Service from './service.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
+import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
 import StepGroup from './step-group.svg'
 import StepsSpinner from './steps-spinner.svg'
@@ -370,6 +374,7 @@ import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Up from './up.svg'
+import Waiting from './waiting.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
@@ -390,8 +395,9 @@ type HarnessIconName =
   | 'app-kubernetes'
   | 'approval-step'
   | 'azure-kubernetes-service'
+  | 'banned'
+  | 'bitbucket-logo-black-and-white'
   | 'bitbucket'
-  | 'bitbucket-new'
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
@@ -418,7 +424,7 @@ type HarnessIconName =
   | 'check'
   | 'ci-hover'
   | 'ci-main'
-  | 'codebase-invalid'
+  | 'circle-cross'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -476,6 +482,7 @@ type HarnessIconName =
   | 'execution-rollback'
   | 'execution-success'
   | 'execution-warning'
+  | 'expired'
   | 'expression-input'
   | 'feedback-given'
   | 'fixed-input'
@@ -651,6 +658,7 @@ type HarnessIconName =
   | 'profile'
   | 'publish-step'
   | 'question'
+  | 'queued'
   | 'remove'
   | 'report-gear-grey'
   | 'report-gear'
@@ -728,6 +736,7 @@ type HarnessIconName =
   | 'service'
   | 'setup-api'
   | 'setup-tags'
+  | 'skipped'
   | 'spinner'
   | 'step-group'
   | 'steps-spinner'
@@ -752,6 +761,7 @@ type HarnessIconName =
   | 'trigger-pipeline'
   | 'trigger-schedule'
   | 'up'
+  | 'waiting'
   | 'white-cluster'
   | 'white-full-cluster'
   | 'yaml-builder-env'
@@ -772,8 +782,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
   'azure-kubernetes-service': AzureKubernetesService,
+  banned: Banned,
+  'bitbucket-logo-black-and-white': BitbucketLogoBlackAndWhite,
   bitbucket: Bitbucket,
-  'bitbucket-new': BitbucketNew,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
@@ -800,7 +811,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   check: Check,
   'ci-hover': CiHover,
   'ci-main': CiMain,
-  'codebase-invalid': CodebaseInvalid,
+  'circle-cross': CircleCross,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
@@ -858,6 +869,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'execution-rollback': ExecutionRollback,
   'execution-success': ExecutionSuccess,
   'execution-warning': ExecutionWarning,
+  expired: Expired,
   'expression-input': ExpressionInput,
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
@@ -873,7 +885,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   harness: Harness,
-  hashiCorpVault: HashiCorpVault,
+  hashiCorpVault: Hashicorpvault,
   health: Health,
   hourglass: Hourglass,
   'http-step': HttpStep,
@@ -1033,6 +1045,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   profile: Profile,
   'publish-step': PublishStep,
   question: Question,
+  queued: Queued,
   remove: Remove,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
@@ -1110,6 +1123,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   service: Service,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
+  skipped: Skipped,
   spinner: Spinner,
   'step-group': StepGroup,
   'steps-spinner': StepsSpinner,
@@ -1134,6 +1148,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
   up: Up,
+  waiting: Waiting,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
   'yaml-builder-env': YamlBuilderEnv,
