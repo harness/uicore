@@ -43,6 +43,10 @@
     }
     .bp3-input.bp3-tag-input {
       height: unset;
+
+      .bp3-tag-input-values {
+        margin: 4px 7px 2px 1px !important;
+      }
     }
 
     .bp3-file-input {

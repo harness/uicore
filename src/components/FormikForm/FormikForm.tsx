@@ -173,6 +173,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
             event.stopPropagation()
           }
         }}
+        placeholder="Type and press enter to create a tag"
         {...tagsProps}
       />
     </FormGroup>
