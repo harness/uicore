@@ -52,12 +52,20 @@ export function NestedAccordionProvider(props: React.PropsWithChildren<unknown>)
 
 export interface NestedAccordionPanelProps
   extends AccordionPanelProps,
-    Omit<AccordionProps, 'children' | 'activeId' | 'className'> {}
+    Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
+  isDefaultOpen?: boolean
+}
 
 export function NestedAccordionPanel(props: NestedAccordionPanelProps): React.ReactElement {
-  const { panelStatus, togglePanel } = useNestedAccordion()
+  const { panelStatus, togglePanel, openNestedPath } = useNestedAccordion()
   const isOpen = !!panelStatus[props.id]
   const elem = React.useRef<HTMLDivElement | null>(null)
+
+  React.useEffect(() => {
+    if (props.isDefaultOpen) {
+      openNestedPath(props.id)
+    }
+  }, [])
 
   React.useLayoutEffect(() => {
     if (isOpen && elem.current) {
