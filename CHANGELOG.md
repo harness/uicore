@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.28](https://github.com/wings-software/uicore/compare/v0.1.27...v0.1.28) (2021-01-15)
+
+
+### Bug Fixes
+
+* Accordion: classname support and isDefaultOpen prop ([#37](https://github.com/wings-software/uicore/issues/37)) ([b6e92e2](https://github.com/wings-software/uicore/commit/b6e92e2d3704a6771e0f823065d92d412a2ce0d5))
+
 ### [0.1.27](https://github.com/wings-software/uicore/compare/v0.1.26...v0.1.27) (2021-01-14)
 
 
