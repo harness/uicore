@@ -1,0 +1,20 @@
+.multiLogsViewer {
+  :global {
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: var(--grey-600);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      opacity: 0.6;
+    }
+  }
+}
