@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.33](https://github.com/wings-software/uicore/compare/v0.1.32...v0.1.33) (2021-01-16)
+
+
+### Features
+
+* Auto fit logs to parent; fix low performance; ([#42](https://github.com/wings-software/uicore/issues/42)) ([20e7536](https://github.com/wings-software/uicore/commit/20e7536c468cad129c5060ccc322363e485e8224))
+
 ### [0.1.32](https://github.com/wings-software/uicore/compare/v0.1.31...v0.1.32) (2021-01-15)
 
 
