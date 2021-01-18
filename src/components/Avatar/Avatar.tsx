@@ -38,7 +38,7 @@ const sizes: SizesProps = {
   large: { size: '72px', fontSize: '28px', lineHeight: '68px' }
 }
 
-export const Avatar = (props: AvatarProps) => {
+export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   const {
     borderRadius = 100,
     src,
@@ -113,8 +113,9 @@ export const Avatar = (props: AvatarProps) => {
 
         <Text lineClamp={1}>{name}</Text>
       </Layout.Horizontal>
-      <Container padding="small">
-        {email && (
+
+      {email && (
+        <Container padding="small">
           <Text
             icon="command-email"
             iconProps={{ color: 'grey300', size: 18 }}
@@ -122,15 +123,16 @@ export const Avatar = (props: AvatarProps) => {
             className={css.emailHover}>
             {email}
           </Text>
-        )}
-      </Container>
-      <Container padding="small">
-        {hoverCardDetailsCallBack && (
+        </Container>
+      )}
+
+      {hoverCardDetailsCallBack && (
+        <Container padding="small">
           <Text color="blue500" lineClamp={1} onClick={hoverCardDetailsCallBack}>
             Details
           </Text>
-        )}
-      </Container>
+        </Container>
+      )}
     </Layout.Vertical>
   )
 

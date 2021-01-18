@@ -1,6 +1,6 @@
-import { pick } from 'lodash'
+import { pick } from 'lodash-es'
 import { Color } from '../../core/Color'
-export const getInitialsFromNameOrEmail = (name = '', email = '') => {
+export const getInitialsFromNameOrEmail = (name = '', email = ''): string => {
   let initialsFromName = name
     .split(/-| /)
     .map((n: string) => n[0])
@@ -19,7 +19,7 @@ export const getInitialsFromNameOrEmail = (name = '', email = '') => {
   return initialsFromName || initialsFromEmail
 }
 
-export const getSumOfAllCharacters = (str: string) => {
+export const getSumOfAllCharacters = (str: string): number => {
   return str
     ? str
         .toLowerCase()

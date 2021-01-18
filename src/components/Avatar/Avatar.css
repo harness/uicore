@@ -20,6 +20,7 @@
   word-break: break-all !important;
   text-align: start !important;
   width: 200px !important;
+  min-height: 100px;
 }
 .hoverAvatarLayout {
   justify-content: flex-start !important;
