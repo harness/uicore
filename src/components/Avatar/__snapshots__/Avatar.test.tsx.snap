@@ -5,12 +5,21 @@ exports[`Render basic component should check snapshot with email 1`] = `
   <div
     class="Avatar contentStyle"
   >
-    <div
-      class="AvatarInner"
-      style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+    <span
+      class="bp3-popover-wrapper"
     >
-      JD
-    </div>
+      <span
+        class="bp3-popover-target"
+      >
+        <div
+          class="AvatarInner"
+          style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+          tabindex="0"
+        >
+          JD
+        </div>
+      </span>
+    </span>
   </div>
 </div>
 `;
@@ -20,17 +29,26 @@ exports[`Render basic component should check snapshot with image 1`] = `
   <div
     class="Avatar contentStyle"
   >
-    <div
-      class="AvatarInner"
-      style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+    <span
+      class="bp3-popover-wrapper"
     >
-      <img
-        alt=""
-        class="imageStyle"
-        src="https://www.mangaship.com/Content/img/human-avatar.png"
-        style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
-      />
-    </div>
+      <span
+        class="bp3-popover-target"
+      >
+        <div
+          class="AvatarInner"
+          style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+          tabindex="0"
+        >
+          <img
+            alt=""
+            class="imageStyle"
+            src="https://www.mangaship.com/Content/img/human-avatar.png"
+            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+          />
+        </div>
+      </span>
+    </span>
   </div>
 </div>
 `;
@@ -40,12 +58,21 @@ exports[`Render basic component should check snapshot with name 1`] = `
   <div
     class="Avatar contentStyle"
   >
-    <div
-      class="AvatarInner"
-      style="border-radius: 100%; line-height: 32px; width: 32px; height: 32px; font-size: 10px;"
+    <span
+      class="bp3-popover-wrapper"
     >
-      JD
-    </div>
+      <span
+        class="bp3-popover-target"
+      >
+        <div
+          class="AvatarInner"
+          style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+          tabindex="0"
+        >
+          JD
+        </div>
+      </span>
+    </span>
   </div>
 </div>
 `;

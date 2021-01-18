@@ -16,3 +16,14 @@
 .imageStyle {
   display: block;
 }
+.hoverToolTipLayout {
+  word-break: break-all !important;
+  text-align: start !important;
+  width: 200px !important;
+  min-height: 100px;
+}
+.hoverAvatarLayout {
+  justify-content: flex-start !important;
+  column-gap: 5px;
+  background: linear-gradient(var(--grey-250) 70%, var(--white) 30%) !important;
+}
