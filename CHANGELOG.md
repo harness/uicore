@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.34](https://github.com/wings-software/uicore/compare/v0.1.33...v0.1.34) (2021-01-18)
+
+
+### Features
+
+* [CDNG-3175]: hover on avatars ([#33](https://github.com/wings-software/uicore/issues/33)) ([15d2fe5](https://github.com/wings-software/uicore/commit/15d2fe58efc64d9bac69599949b0ff31c483b413))
+
 ### [0.1.33](https://github.com/wings-software/uicore/compare/v0.1.32...v0.1.33) (2021-01-16)
 
 
