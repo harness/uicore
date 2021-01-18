@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uicore",
-  "version": "0.1.17",
+  "version": "0.1.33",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -51,9 +51,9 @@
     "react-draggable": "^4.2.0",
     "react-table": "^7.0.4",
     "xterm": "^4.9.0",
+    "xterm-addon-fit": "^0.4.0",
     "xterm-addon-search": "^0.7.0",
-    "xterm-addon-web-links": "^0.4.0",
-    "xterm-addon-fit": "^0.4.0"
+    "xterm-addon-web-links": "^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -126,9 +126,10 @@
     "webpack-cli": "^4.2.0",
     "webpack-node-externals": "^2.5.2",
     "xterm": "^4.9.0",
+    "xterm-addon-fit": "^0.4.0",
     "xterm-addon-search": "^0.7.0",
     "xterm-addon-web-links": "^0.4.0",
-    "xterm-addon-fit": "^0.4.0"
+    "yup": "^0.32.8"
   },
   "resolutions": {
     "@types/react": "16.9.2",

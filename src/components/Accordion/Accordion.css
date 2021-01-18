@@ -1,4 +1,8 @@
 .accordion {
+  position: relative;
+}
+
+.panel {
   .summary {
     display: flex;
     justify-content: space-between;
@@ -40,23 +44,23 @@
     }
   }
 
-  .panel[data-open='true'] {
+  &[data-open='true'] {
     box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
 
-    .summary {
+    & > .summary {
       :global(.bp3-icon[icon='chevron-down']) {
         transform: rotate(180deg);
         color: var(--blue-500);
       }
 
-      .label {
+      & > .label {
         color: var(--grey-800) !important;
       }
-    }
 
-    .chevron {
-      transform: rotate(180deg);
-      color: var(--blue-500);
+      & > .chevron {
+        transform: rotate(180deg);
+        color: var(--blue-500);
+      }
     }
   }
 

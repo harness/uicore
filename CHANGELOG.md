@@ -2,6 +2,118 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.33](https://github.com/wings-software/uicore/compare/v0.1.32...v0.1.33) (2021-01-16)
+
+
+### Features
+
+* Auto fit logs to parent; fix low performance; ([#42](https://github.com/wings-software/uicore/issues/42)) ([20e7536](https://github.com/wings-software/uicore/commit/20e7536c468cad129c5060ccc322363e485e8224))
+
+### [0.1.32](https://github.com/wings-software/uicore/compare/v0.1.31...v0.1.32) (2021-01-15)
+
+
+### Bug Fixes
+
+* bitbucket icon ([#41](https://github.com/wings-software/uicore/issues/41)) ([580b476](https://github.com/wings-software/uicore/commit/580b4762cba12d32067cba8e06f90d4146924290))
+
+### [0.1.31](https://github.com/wings-software/uicore/compare/v0.1.30...v0.1.31) (2021-01-15)
+
+
+### Features
+
+* add multitype param  to onchange ([#40](https://github.com/wings-software/uicore/issues/40)) ([0469fa2](https://github.com/wings-software/uicore/commit/0469fa26f90118bee640990c12ffb411de90fbdd))
+
+### [0.1.30](https://github.com/wings-software/uicore/compare/v0.1.29...v0.1.30) (2021-01-15)
+
+
+### Features
+
+* [CDNG-3659]: TagInput should have a placeholder ([#39](https://github.com/wings-software/uicore/issues/39)) ([a3601d7](https://github.com/wings-software/uicore/commit/a3601d714f88991ceda9cc8832c35ca7fa371d2e))
+
+### [0.1.29](https://github.com/wings-software/uicore/compare/v0.1.28...v0.1.29) (2021-01-15)
+
+
+### Features
+
+* add new icons ([#38](https://github.com/wings-software/uicore/issues/38)) ([0f44786](https://github.com/wings-software/uicore/commit/0f44786a35b515706c897945fc7d3d4539bd8e4b))
+
+### [0.1.28](https://github.com/wings-software/uicore/compare/v0.1.27...v0.1.28) (2021-01-15)
+
+
+### Bug Fixes
+
+* Accordion: classname support and isDefaultOpen prop ([#37](https://github.com/wings-software/uicore/issues/37)) ([b6e92e2](https://github.com/wings-software/uicore/commit/b6e92e2d3704a6771e0f823065d92d412a2ce0d5))
+
+### [0.1.27](https://github.com/wings-software/uicore/compare/v0.1.26...v0.1.27) (2021-01-14)
+
+
+### Bug Fixes
+
+* [CDNG-2990]: remove special characters from identifier ([#36](https://github.com/wings-software/uicore/issues/36)) ([b88c5d6](https://github.com/wings-software/uicore/commit/b88c5d6da87b32e4027eda0a24c1d060af02abe3))
+
+### [0.1.26](https://github.com/wings-software/uicore/compare/v0.1.25...v0.1.26) (2021-01-12)
+
+
+### Bug Fixes
+
+* text field input width ([#34](https://github.com/wings-software/uicore/issues/34)) ([bd63261](https://github.com/wings-software/uicore/commit/bd6326155b8092490399522e5a338962809e0662))
+
+### [0.1.25](https://github.com/wings-software/uicore/compare/v0.1.24...v0.1.25) (2021-01-12)
+
+
+### Features
+
+* Added new expression support <+expression> to muti type component ([#35](https://github.com/wings-software/uicore/issues/35)) ([6a211c6](https://github.com/wings-software/uicore/commit/6a211c611255aececd1184045290f03dd8d3f74f))
+
+### [0.1.24](https://github.com/wings-software/uicore/compare/v0.1.23...v0.1.24) (2021-01-11)
+
+
+### Bug Fixes
+
+* CSS classes ([#32](https://github.com/wings-software/uicore/issues/32)) ([ee72967](https://github.com/wings-software/uicore/commit/ee72967d679190a689ee68459d93c40011fbde44))
+
+### [0.1.23](https://github.com/wings-software/uicore/compare/v0.1.22...v0.1.23) (2021-01-11)
+
+
+### Bug Fixes
+
+* Fixed step progress by replacing text with container ([#31](https://github.com/wings-software/uicore/issues/31)) ([fcfb581](https://github.com/wings-software/uicore/commit/fcfb5814c96d51bd8b962a959a9c9b9d1ef6fb71))
+
+### [0.1.22](https://github.com/wings-software/uicore/compare/v0.1.21...v0.1.22) (2021-01-09)
+
+
+### Bug Fixes
+
+* CSS styling for nested accordion ([#30](https://github.com/wings-software/uicore/issues/30)) ([ada9709](https://github.com/wings-software/uicore/commit/ada970982bd8840983624fe5046f02c69efda34d))
+
+### [0.1.21](https://github.com/wings-software/uicore/compare/v0.1.20...v0.1.21) (2021-01-09)
+
+
+### Features
+
+* improve DX for nested accordion ([#29](https://github.com/wings-software/uicore/issues/29)) ([9c1ac9f](https://github.com/wings-software/uicore/commit/9c1ac9f789ad87de7f2db85e7b9f77b38f787821))
+
+### [0.1.20](https://github.com/wings-software/uicore/compare/v0.1.19...v0.1.20) (2021-01-09)
+
+
+### Features
+
+* [CDNG-3471]: Hashi Corp Vault Icon ([#28](https://github.com/wings-software/uicore/issues/28)) ([de8d3ad](https://github.com/wings-software/uicore/commit/de8d3ad1629a6aa16b46f0cff5634180c7ba0dd4))
+
+### [0.1.19](https://github.com/wings-software/uicore/compare/v0.1.18...v0.1.19) (2021-01-09)
+
+
+### Features
+
+* add nested accordion component ([#27](https://github.com/wings-software/uicore/issues/27)) ([8dcddec](https://github.com/wings-software/uicore/commit/8dcddec21ab499a11c96bb266e3e5391d0a50945))
+
+### [0.1.18](https://github.com/wings-software/uicore/compare/v0.1.17...v0.1.18) (2021-01-08)
+
+
+### Bug Fixes
+
+* MultiLogsViewer - fix for small width ([#26](https://github.com/wings-software/uicore/issues/26)) ([65de455](https://github.com/wings-software/uicore/commit/65de455a643b0cb57f04daba001ff67864f52a72))
+
 ### [0.1.17](https://github.com/wings-software/uicore/compare/v0.1.16...v0.1.17) (2021-01-08)
 
 

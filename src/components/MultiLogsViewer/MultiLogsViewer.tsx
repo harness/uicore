@@ -13,82 +13,69 @@ import css from './MultiLogsViewer.css'
 import cx from 'classnames'
 import { Color } from '../../core/Color'
 import 'xterm/css/xterm.css'
+
 const DEFAULT_SCROLLBACK_LINES = 1000
 
 export interface LogSectionProps {
-  /** Number of visible rows */
+  /** Number of visible rows. Auto fit if not set. */
   rows?: number
+  /** Minimal number of rows. Used when Auto fit. */
+  minRows?: number
   /** Search text */
   searchText?: string
   /** Direction of search - Next/Prev */
   searchDir?: string
   /** Number of scrollback lines */
   scrollbackLines?: number
-
   /** True to open log content */
   isOpen?: boolean
-
   /** loading/progress indicator */
   loading?: boolean
-
   /** Section title */
   title: React.ReactElement
-
   /** Right element (mostly will be duration) */
   rightElement: React.ReactElement
-
   /** Log content as string. Note that we can support streaming easily if backend has it */
   content: string
   /** Current highlighted index of search result */
   highlightedIndex?: number
-
   /* update panel to either collapse/expand  */
   updateSection?: (currentIndex: number, prevIndex?: number) => void
-
   /* toggle pane */
   toggle?: () => void
-
   /* active panel - panel which is expanded */
   activePanel?: number
 }
 
 export interface MultiLogsViewerProps extends ContainerProps {
-  /** Number of visible rows */
+  /** Number of visible rows. Auto fit if not set. */
   rows?: LogSectionProps['rows']
-
+  /** Minimal number of visible rows */
+  minRows?: number
   /** loading/progress indicator */
   loadingIndex?: number
-
   /** Search text */
   searchText?: string
   /** Direction of search - Next/Prev */
   searchDir?: string
-
   /** Number of scrollback lines */
   scrollbackLines?: LogSectionProps['scrollbackLines']
-
   /** Number of log sections */
   numberOfLogSections: number
-
   /** Determine if a section's log is open */
   isSectionOpen: (sectionIndex: number) => boolean
-
   /** Title for a log section */
   titleForSection: (sectionIndex: number) => any
-
   /** Right element for a log section */
   rightElementForSection: (sectionIndex: number) => React.ReactElement
-
   /** Log content for a log section */
   logContentForSection: (sectionIndex: number) => string
   /** Current highlighted index of search result */
   highlightedIndex?: number
   /* update panel to either collapse/expand  */
   updateSection?: (currentIndex: number, prevIndex?: number) => void
-
   /* toggle pane */
   toggleSection?: (index: number) => void
-
   /* active panel - panel which is expanded */
   activePanel?: number
   /* Section Arr - this indicates if the section is expanded or collapsed  */
@@ -105,7 +92,8 @@ interface Selection {
 export const LogSection: React.FC<LogSectionProps> = ({
   title,
   scrollbackLines,
-  rows = 25,
+  rows,
+  minRows,
   rightElement,
   searchText,
   content,
@@ -133,7 +121,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
     () =>
       new Terminal({
         allowTransparency: true,
-        rows: rows,
+        rows: rows || 5,
         theme: {
           background: 'transparent'
         }
@@ -178,25 +166,41 @@ export const LogSection: React.FC<LogSectionProps> = ({
     return isSubset
   }
 
+  const fitTerm = () => {
+    if (!rows) {
+      const proposedDim = fitAddon.proposeDimensions()
+      if (term.rows !== proposedDim.rows || term.cols !== proposedDim.cols) {
+        term.resize(proposedDim.cols, minRows ? Math.min(proposedDim.rows, minRows) : proposedDim.rows)
+      }
+    }
+  }
+
   // NOTE: logic for append log rows (or recreate if lines are not subset of existing lines)
   useEffect(() => {
     if (isOpen) {
       if (isSubsetFromBegining(currentLines, lines)) {
         // ADD NEW LINES
         // console.log('append rows')
+        let s = ''
         for (let i = currentLines.length; i < lines.length; i++) {
-          term.writeln(`\x1B[1;30m${String(i + 1).padStart(4)}\x1B[0m ${lines[i]}`)
+          s += `\x1B[1;30m${String(i + 1).padStart(4)}\x1B[0m ${lines[i]}\r\n`
         }
+        term.write(s)
         setCurrentLines([...lines])
       } else {
         // RECREATE
         // console.log('recreate')
         term.clear()
+        let s = ''
         for (let i = 0; i < lines.length; i++) {
-          term.writeln(`\x1B[1;30m${String(i + 1).padStart(4)}\x1B[0m ${lines[i]}`)
+          s += `\x1B[1;30m${String(i + 1).padStart(4)}\x1B[0m ${lines[i]}\r\n`
         }
+        term.write(s)
         setCurrentLines([...lines])
       }
+
+      fitTerm()
+      // fit if rows not set explicitly
     } else {
       setCurrentLines([])
     }
@@ -278,7 +282,7 @@ export const LogSection: React.FC<LogSectionProps> = ({
   }, [searchDir, highlightedIndex])
 
   return (
-    <Container className={css.section}>
+    <Container className={cx(css.section, { [css.isSectionOpen]: isOpen })}>
       <Layout.Horizontal
         spacing="small"
         onClick={() => {

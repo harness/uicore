@@ -33,11 +33,11 @@ const TypeIcon: Record<string, IconName> = {
 }
 
 export const RUNTIME_INPUT_VALUE = '<+input>'
-export const EXPRESSION_INPUT_PLACEHOLDER = '${expression}'
+export const EXPRESSION_INPUT_PLACEHOLDER = '<+expression>'
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
-  trigger: ['$', '${'],
-  rule: '${__match__}',
+  trigger: ['<', '<+'],
+  rule: '<+__match__>',
   cached: true,
   data: done => done([])
 }
@@ -50,7 +50,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   width?: number
   mentionsInfo?: Partial<MentionsInfo>
   onTypeChange?: (type: MultiTypeInputType) => void
-  onChange?: (value: AcceptableValue | undefined, type: MultiTypeInputValue) => void
+  onChange?: (value: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => void
   i18n?: I18nResource
   btnClassName?: string
   allowableTypes?: MultiTypeInputType[]
@@ -64,7 +64,7 @@ export interface FixedTypeComponentProps {
   value?: AcceptableValue
 }
 
-export const isValueAnExpression = (value: string): boolean => /^\${.*}$/.test(value)
+export const isValueAnExpression = (value: string): boolean => /^<\+.*>$/.test(value)
 
 export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
@@ -112,7 +112,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       setType(newType)
       onTypeChange?.(newType)
       const _inputValue = newType === MultiTypeInputType.RUNTIME ? RUNTIME_INPUT_VALUE : defaultValueToReset
-      onChange?.(_inputValue, MultiTypeInputValue.STRING)
+      onChange?.(_inputValue, MultiTypeInputValue.STRING, newType)
     }
   }
 
@@ -120,7 +120,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
   const FixedTypeComponent = fixedTypeComponent
   const fixedComponentOnChangeCallback = useCallback(
     (val, multiTypeInputValue: MultiTypeInputValue) => {
-      onChange?.(val, multiTypeInputValue)
+      onChange?.(val, multiTypeInputValue, MultiTypeInputType.FIXED)
     },
     [onChange]
   )
@@ -172,7 +172,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       )}
       {type === MultiTypeInputType.RUNTIME && (
         <TextInput
-          className={css.input}
+          wrapperClassName={css.input}
           name={name}
           style={{ width: inputWidth }}
           placeholder={RUNTIME_INPUT_VALUE}
@@ -182,14 +182,14 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       )}
       {type === MultiTypeInputType.EXPRESSION && (
         <TextInput
-          className={css.input}
+          wrapperClassName={css.input}
           name={name}
           style={{ width: inputWidth }}
           placeholder={EXPRESSION_INPUT_PLACEHOLDER}
           value={value as string}
           onInput={input => {
             const val = (input.target as HTMLInputElement).value
-            onChange?.(val, MultiTypeInputValue.STRING)
+            onChange?.(val, MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
           }}
           data-mentions={mentionsType}
         />
@@ -221,7 +221,7 @@ export function MultiTypeInputFixedTypeComponent(
       className={css.select}
       items={items}
       value={value as SelectOption}
-      onChange={(item: SelectOption) => onChange?.(item, MultiTypeInputValue.SELECT_OPTION)}
+      onChange={(item: SelectOption) => onChange?.(item, MultiTypeInputValue.SELECT_OPTION, MultiTypeInputType.FIXED)}
     />
   )
 }
@@ -250,7 +250,7 @@ function MultiTextInputFixedTypeComponent(props: FixedTypeComponentProps & Multi
       {...rest}
       value={value as string}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-        onChange?.(event.target.value, MultiTypeInputValue.STRING)
+        onChange?.(event.target.value, MultiTypeInputValue.STRING, MultiTypeInputType.FIXED)
       }}
     />
   )
@@ -283,7 +283,9 @@ export function MultiSelectTypeInputTypeComponent(
       items={items}
       value={value as MultiSelectOption[]}
       className={css.multiSelect}
-      onChange={(item: MultiSelectOption[]) => onChange?.(item, MultiTypeInputValue.MULTI_SELECT_OPTION)}
+      onChange={(item: MultiSelectOption[]) =>
+        onChange?.(item, MultiTypeInputValue.MULTI_SELECT_OPTION, MultiTypeInputType.FIXED)
+      }
     />
   )
 }

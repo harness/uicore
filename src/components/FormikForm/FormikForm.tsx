@@ -123,8 +123,8 @@ type KVAccumulator = { [key: string]: string }
 
 const MENTIONS_DEFAULT: MentionsInfo = {
   identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
-  trigger: ['$', '${'],
-  rule: '${__match__}',
+  trigger: ['<', '<+'],
+  rule: '<+__match__>',
   cached: true,
   data: done => done([])
 }
@@ -173,6 +173,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
             event.stopPropagation()
           }
         }}
+        placeholder="Type and press enter to create a tag"
         {...tagsProps}
       />
     </FormGroup>
@@ -658,10 +659,10 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     ...rest
   } = restProps
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
-    (value, valueType) => {
+    (value, valueType, type) => {
       formik?.setFieldValue(name, value)
       formik?.setFieldTouched(name)
-      multiTypeInputProps?.onChange?.(value, valueType)
+      multiTypeInputProps?.onChange?.(value, valueType, type)
     },
     [formik, multiTypeInputProps]
   )
@@ -724,10 +725,10 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
           },
           items: selectItems
         }}
-        onChange={(value, valueType) => {
+        onChange={(value, valueType, type) => {
           formik?.setFieldValue(name, value)
           formik?.setFieldTouched(name)
-          multiSelectTypeInputProps?.onChange?.(value, valueType)
+          multiSelectTypeInputProps?.onChange?.(value, valueType, type)
         }}
       />
     </FormGroup>
@@ -773,9 +774,9 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
         value={value}
         {...customMultiTextInputProps}
         name={name}
-        onChange={(value, valueType) => {
+        onChange={(value, valueType, type) => {
           formik?.setFieldValue(name, value)
-          onChange?.(value, valueType)
+          onChange?.(value, valueType, type)
         }}
       />
     </FormGroup>

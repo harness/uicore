@@ -1,5 +1,5 @@
 .input {
-  width: 100%;
+  flex: 1 1 auto;
 }
 
 .main {
@@ -7,10 +7,6 @@
     .bp3-popover-target {
       height: 100%;
     }
-  }
-
-  [class*='TextInput---main'] {
-    width: 100%;
   }
 
   &.disabled {

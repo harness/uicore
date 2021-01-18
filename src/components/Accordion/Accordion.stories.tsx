@@ -1,7 +1,9 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
+import { Button, IButtonProps } from '@blueprintjs/core'
 
 import { Accordion, AccordionProps } from './Accordion'
+import { NestedAccordionProvider, NestedAccordionPanel, useNestedAccordion } from './NestedAccordion'
 
 const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi temporibus error, id recusandae doloribus earum inventore, soluta fugit quidem nulla labore optio incidunt quis facilis. Rem illum unde tempore tempora.`
 
@@ -21,3 +23,41 @@ export const Basic: Story<AccordionProps> = args => (
 Basic.args = {
   activeId: '1'
 }
+
+function ToggleButton(props: { id: string } & Omit<IButtonProps, 'onClick'>): React.ReactElement {
+  const { openNestedPath } = useNestedAccordion()
+
+  return <Button {...props} onClick={() => openNestedPath(props.id)} />
+}
+
+export const Nested: Story<unknown> = _ => (
+  <NestedAccordionProvider>
+    <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr' }}>
+      <div>
+        <ToggleButton id="panel_1" text="Open Panel 1" />
+        <ToggleButton id="panel_1.panel_1_1" text="Open Panel 1.1 (Netsed)" />
+        <ToggleButton id="panel_2" text="Open Panel 2" />
+        <ToggleButton id="panel_3" text="Open Panel 3" />
+        <ToggleButton id="panel_4" text="Open Panel 4" />
+        <ToggleButton id="panel_5" text="Open Panel 5" />
+      </div>
+      <div>
+        <NestedAccordionPanel
+          id="panel_1"
+          details={
+            <div>
+              <div>{text}</div>
+              <br />
+              <NestedAccordionPanel id="panel_1.panel_1_1" details={text} summary="Panel 1.1" />
+            </div>
+          }
+          summary="Panel 1"
+        />
+        <NestedAccordionPanel id="panel_2" details={text} summary="Panel 2" />
+        <NestedAccordionPanel id="panel_3" details={text} summary="Panel 3" />
+        <NestedAccordionPanel id="panel_4" details={text} summary="Panel 4" />
+        <NestedAccordionPanel id="panel_5" details={text} summary="Panel 5" />
+      </div>
+    </div>
+  </NestedAccordionProvider>
+)

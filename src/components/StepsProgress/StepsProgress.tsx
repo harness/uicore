@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text } from '../Text/Text'
+import { Container } from '../Container/Container'
 import { Color } from '../../core/Color'
 import css from './StepsProgress.css'
 import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
@@ -84,7 +85,7 @@ export function StepsProgress(props: StepsProgressProps) {
           stepsWithStatus.map(step => (
             <div key={`${step}`} className={css.stepWrap}>
               <Icon name={step.stepStatus} size={16} color={step.stepIconColor} margin={{ right: 'small' }} />
-              <Text style={{ fontWeight: step.fonts } as React.CSSProperties}>{step.label}</Text>
+              <Container style={{ fontWeight: step.fonts } as React.CSSProperties}>{step.label}</Container>
             </div>
           ))
         ) : (
