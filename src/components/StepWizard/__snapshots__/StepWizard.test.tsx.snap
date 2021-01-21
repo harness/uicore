@@ -16,6 +16,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
         >
           <span
             class="bp3-icon main"
+            data-icon="app-kubernetes"
           >
             <svg
               height="37"

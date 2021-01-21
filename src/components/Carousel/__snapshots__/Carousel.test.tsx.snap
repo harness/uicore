@@ -68,6 +68,7 @@ exports[`Render basic component should check snapshot 1`] = `
         <div>
           <span
             class="bp3-icon main color color-white"
+            data-icon="main-chevron-right"
           >
             <svg
               height="20"

@@ -160,6 +160,7 @@ exports[`<LogViewer /> tests snapshot test partial file 1`] = `
       >
         <span
           class="bp3-icon main padding padding-right padding-right-xsmall"
+          data-icon="main-download"
         >
           <svg
             height="16"
