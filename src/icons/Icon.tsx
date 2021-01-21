@@ -24,7 +24,7 @@ function Icon(props: IconProps) {
 
   if (HarnessIcon) {
     return (
-      <span {...omitStyledProps(props, 'name', 'size')} className={styledClasses(props, Classes.ICON)}>
+      <span {...omitStyledProps(props, 'name', 'size')} data-icon={name} className={styledClasses(props, Classes.ICON)}>
         <HarnessIcon width={size} height={size} />
       </span>
     )

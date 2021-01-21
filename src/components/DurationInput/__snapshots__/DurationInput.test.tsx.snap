@@ -27,6 +27,7 @@ exports[`<DurationInput/> tests component tests renders with given value (in tim
       >
         <span
           class="bp3-icon main"
+          data-icon="question"
           tabindex="0"
         >
           <svg
@@ -67,6 +68,7 @@ exports[`<DurationInput/> tests component tests renders with given value 1`] = `
       >
         <span
           class="bp3-icon main"
+          data-icon="question"
           tabindex="0"
         >
           <svg
@@ -107,6 +109,7 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
       >
         <span
           class="bp3-icon main"
+          data-icon="question"
           tabindex="0"
         >
           <svg
@@ -249,6 +252,7 @@ exports[`<DurationInput/> tests component tests shows subset of allowed values i
       >
         <span
           class="bp3-icon main"
+          data-icon="question"
           tabindex="0"
         >
           <svg
@@ -396,6 +400,7 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
       >
         <span
           class="bp3-icon main"
+          data-icon="question"
           tabindex="0"
         >
           <svg
@@ -461,6 +466,7 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       >
         <span
           class="bp3-icon main"
+          data-icon="question"
           tabindex="0"
         >
           <svg
@@ -526,6 +532,7 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       >
         <span
           class="bp3-icon main"
+          data-icon="question"
           tabindex="0"
         >
           <svg
