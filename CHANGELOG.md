@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.35](https://github.com/wings-software/uicore/compare/v0.1.34...v0.1.35) (2021-01-21)
+
+
+### Features
+
+* [CDNG-3906]: Adding data iconn attribute for Harness Icons ([#43](https://github.com/wings-software/uicore/issues/43)) ([1364828](https://github.com/wings-software/uicore/commit/1364828e650e817bb1489c79b216c48e0405499c))
+
 ### [0.1.34](https://github.com/wings-software/uicore/compare/v0.1.33...v0.1.34) (2021-01-18)
 
 
