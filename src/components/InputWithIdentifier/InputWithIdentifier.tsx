@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-import ContentEditable from 'react-contenteditable'
-import { IInputGroupProps } from '@blueprintjs/core'
-import cx from 'classnames'
+import React, { useEffect, useRef, useState } from 'react'
+import { IInputGroupProps, Popover } from '@blueprintjs/core'
 import { get } from 'lodash-es'
 
 import { FormInput } from '../FormikForm/FormikForm'
@@ -62,30 +60,43 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
+  const idInputEl = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (editable) {
+      idInputEl.current?.focus()
+    }
+  }, [editable])
 
   return (
     <div className={css.txtNameContainer}>
-      <Layout.Horizontal className={css.txtIdContainer}>
+      <Layout.Horizontal className={css.txtIdContainer} spacing="xsmall">
         <Text>{idLabel}:</Text>
-        <ContentEditable
-          html={get(formik.values, idName)}
-          disabled={!isIdentifierEditable && !editable}
-          className={cx(css.idInput, { [css.editable]: editable })}
-          tagName="span"
-          onChange={ev => {
-            formik.setFieldValue(idName, getIdentifierFromName(ev.target.value.substring(0, maxInput)))
-            setUserModifiedIdentifier(true)
-          }}
-          onBlur={() => {
-            setEditable(false)
-            setUserModifiedIdentifier(true)
-          }}
-          onKeyPress={event => {
-            if (event.key === 'Enter') {
-              event.preventDefault()
-            }
-          }}
-        />
+        {editable ? (
+          <input
+            name={idName}
+            value={get(formik.values, idName)}
+            className={css.idInput}
+            ref={idInputEl}
+            autoComplete="off"
+            onChange={ev => {
+              formik.setFieldValue(idName, getIdentifierFromName(ev.target.value.substring(0, maxInput)))
+              setUserModifiedIdentifier(true)
+            }}
+            onBlur={() => {
+              setEditable(false)
+            }}
+            onKeyPress={event => {
+              if (event.key === 'Enter') {
+                event.preventDefault()
+              }
+            }}
+          />
+        ) : (
+          <span className={css.idValue} title={get(formik.values, idName)}>
+            {get(formik.values, idName)}
+          </span>
+        )}
         {isIdentifierEditable && !editable ? (
           <Icon
             name="edit"

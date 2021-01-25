@@ -5,34 +5,23 @@
     position: absolute;
     align-items: center;
     right: 0;
-    color: var(--blue-600);
-  }
-
-  .txtId {
-    border: none;
-    margin-left: var(--spacing-xsmall);
-    width: 70px;
-    color: var(--blue-600);
   }
 
   .idInput {
-    border: 1px solid transparent;
-    border-radius: 3px;
-    padding: 0px 4px 2px;
-    display: inline-block;
+    border: 1px solid var(--bp3-intent-color, #dddddd);
+    outline: none;
+    border-radius: 5px;
+    padding: 0 var(--spacing-xsmall);
+    display: inline;
+    max-width: 100px;
+    color: var(--blue-600);
+  }
+
+  .idValue {
     max-width: 100px;
     white-space: nowrap;
-    overflow-x: hidden;
-    overflow-x: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    &::-webkit-scrollbar {
-      /* WebKit */
-      width: 0;
-      height: 0;
-    }
-  }
-  .editable {
-    border: 1px solid var(--grey-300);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--blue-600);
   }
 }
