@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.36](https://github.com/wings-software/uicore/compare/v0.1.35...v0.1.36) (2021-01-25)
+
+
+### Features
+
+* Fixed Spark chart to have two values ([#44](https://github.com/wings-software/uicore/issues/44)) ([b7b15f8](https://github.com/wings-software/uicore/commit/b7b15f8d74589e4de71d389c3e90166b567c811e))
+
 ### [0.1.35](https://github.com/wings-software/uicore/compare/v0.1.34...v0.1.35) (2021-01-21)
 
 
