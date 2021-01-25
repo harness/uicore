@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { IInputGroupProps, Popover } from '@blueprintjs/core'
+import { IInputGroupProps } from '@blueprintjs/core'
 import { get } from 'lodash-es'
 
 import { FormInput } from '../FormikForm/FormikForm'
