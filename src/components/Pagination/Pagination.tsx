@@ -23,6 +23,12 @@ const Pagination: React.FC<PaginationProps> = props => {
     console.warn(`Pagination: pageIndex (${pageIndex}) can't be more than/equal to pageCount (${pageCount})`)
     return null
   }
+  if (pageSize * pageCount < itemCount) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Pagination: pageSize (${pageSize}) * pageCount (${pageCount}) can't be less than itemCount (${itemCount})`
+    )
+  }
 
   return (
     <Layout.Horizontal
@@ -37,8 +43,8 @@ const Pagination: React.FC<PaginationProps> = props => {
       ) : (
         // eg. Showing 1 - 10 of 50
         <Text inline className={css.text}>
-          Showing <strong>{pageSize * pageIndex + 1}</strong> - <strong>{pageSize * (pageIndex + 1)}</strong> of{' '}
-          <strong>{itemCount}</strong>
+          Showing <strong>{pageSize * pageIndex + 1}</strong> -{' '}
+          <strong>{Math.min(pageSize * (pageIndex + 1), itemCount)}</strong> of <strong>{itemCount}</strong>
         </Text>
       )}
       {itemCount > pageSize ? (
