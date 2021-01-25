@@ -7,16 +7,6 @@
     right: 0;
   }
 
-  .idInput {
-    border: 1px solid var(--bp3-intent-color, #dddddd);
-    outline: none;
-    border-radius: 5px;
-    padding: 0 var(--spacing-xsmall);
-    display: inline;
-    max-width: 100px;
-    color: var(--blue-600);
-  }
-
   .idValue {
     max-width: 100px;
     white-space: nowrap;
