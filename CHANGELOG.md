@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.37](https://github.com/wings-software/uicore/compare/v0.1.36...v0.1.37) (2021-01-25)
+
+
+### Others
+
+* [CDNG-3657]: ellipsis and hover for id input ([#45](https://github.com/wings-software/uicore/issues/45)) ([e60cd70](https://github.com/wings-software/uicore/commit/e60cd707cdab0d67dc0becd307de1134698d7cf9))
+
 ### [0.1.36](https://github.com/wings-software/uicore/compare/v0.1.35...v0.1.36) (2021-01-25)
 
 
