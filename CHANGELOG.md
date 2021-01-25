@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.38](https://github.com/wings-software/uicore/compare/v0.1.37...v0.1.38) (2021-01-25)
+
+
+### Bug Fixes
+
+* [CDNG-3691]: fix Pagination count on last page ([#46](https://github.com/wings-software/uicore/issues/46)) ([f88188f](https://github.com/wings-software/uicore/commit/f88188f061346043d700ebaeb07f13991ef568d2))
+
 ### [0.1.37](https://github.com/wings-software/uicore/compare/v0.1.36...v0.1.37) (2021-01-25)
 
 
