@@ -33,12 +33,12 @@ exports[`Pagination pageCount < 8 1`] = `
       <strong>
         1
       </strong>
-       - 
+       -
+       
       <strong>
         10
       </strong>
-       of
-       
+       of 
       <strong>
         30
       </strong>
@@ -95,12 +95,12 @@ exports[`Pagination pageCount >= 8 1`] = `
       <strong>
         1
       </strong>
-       - 
+       -
+       
       <strong>
         10
       </strong>
-       of
-       
+       of 
       <strong>
         100
       </strong>
