@@ -10,6 +10,12 @@ describe('SparkChrt unit tests', () => {
     expect(container.querySelectorAll('.progress-bar').length).toBe(7)
   })
 
+  test('render spark chart with data', () => {
+    const { container } = render(<SparkChart data={[2, 3, 4, 1, 5, 2, 5]} data2={[0, 1, 2, 0, 0, 2, 1]} />)
+
+    expect(container.querySelectorAll('.progress-bar').length).toBe(7)
+  })
+
   test('render spark chart with custom props', () => {
     const mockOnClick = jest.fn(() => void 0)
     const { container, getByRole } = render(
