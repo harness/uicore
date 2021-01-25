@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import ContentEditable from 'react-contenteditable'
-import { IInputGroupProps } from '@blueprintjs/core'
-import cx from 'classnames'
+import { IInputGroupProps, EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
 import { get } from 'lodash-es'
 
 import { FormInput } from '../FormikForm/FormikForm'
 import { Text } from '../Text/Text'
 import { Icon } from '../../icons/Icon'
 import { Layout } from '../../layouts/Layout'
+import { Container } from '../Container/Container'
 
 import css from './InputWithIdentifier.css'
 
@@ -62,30 +61,34 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
+  const identifier = get(formik.values, idName)
 
   return (
     <div className={css.txtNameContainer}>
-      <Layout.Horizontal className={css.txtIdContainer}>
+      <Layout.Horizontal className={css.txtIdContainer} spacing="xsmall">
         <Text>{idLabel}:</Text>
-        <ContentEditable
-          html={get(formik.values, idName)}
-          disabled={!isIdentifierEditable && !editable}
-          className={cx(css.idInput, { [css.editable]: editable })}
-          tagName="span"
-          onChange={ev => {
-            formik.setFieldValue(idName, getIdentifierFromName(ev.target.value.substring(0, maxInput)))
-            setUserModifiedIdentifier(true)
-          }}
-          onBlur={() => {
-            setEditable(false)
-            setUserModifiedIdentifier(true)
-          }}
-          onKeyPress={event => {
-            if (event.key === 'Enter') {
-              event.preventDefault()
-            }
-          }}
-        />
+        <Popover
+          content={<Container padding="small">{identifier}</Container>}
+          interactionKind={PopoverInteractionKind.HOVER}
+          hoverOpenDelay={500}
+          disabled={!identifier || identifier.length < 10}>
+          <EditableText
+            maxLength={maxInput}
+            disabled={!isIdentifierEditable}
+            placeholder=""
+            minWidth={0}
+            value={identifier}
+            isEditing={editable}
+            onConfirm={() => setEditable(false)}
+            onCancel={() => setEditable(false)}
+            onEdit={() => setEditable(true)}
+            onChange={value => {
+              formik.setFieldValue(idName, getIdentifierFromName(value))
+              setUserModifiedIdentifier(true)
+            }}
+            className={css.idValue}
+          />
+        </Popover>
         {isIdentifierEditable && !editable ? (
           <Icon
             name="edit"
