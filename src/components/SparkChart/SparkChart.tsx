@@ -26,13 +26,13 @@ export interface SparkChartProps extends ContainerProps {
   color2?: Color
 
   /** empty record height */
-  emptyHeight: React.CSSProperties['height']
+  emptyHeight?: React.CSSProperties['height']
 }
 
 export const SparkChart: React.FC<SparkChartProps> = ({
   data,
   data2 = [],
-  emptyHeight = `1%`,
+  emptyHeight = `2px`,
   className = '',
   onClick = () => void 0,
   color = Color.BLUE_450,
@@ -76,7 +76,7 @@ export const SparkChart: React.FC<SparkChartProps> = ({
                     style={{
                       backgroundColor: bgColor2,
                       height: `${percent2}%`,
-                      bottom: `${percent ? percent : emptyHeight}%`
+                      bottom: `${percent ? `${percent}%` : emptyHeight}`
                     }}></div>
                 </div>
               </div>
