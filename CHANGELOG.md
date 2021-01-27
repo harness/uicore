@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.39](https://github.com/wings-software/uicore/compare/v0.1.38...v0.1.39) (2021-01-27)
+
+
+### Features
+
+* NestedAccordionPanel: add noAutoScroll prop ([#47](https://github.com/wings-software/uicore/issues/47)) ([715897a](https://github.com/wings-software/uicore/commit/715897a1d5de3eb575020717efc43cc043af7a6f))
+
 ### [0.1.38](https://github.com/wings-software/uicore/compare/v0.1.37...v0.1.38) (2021-01-25)
 
 
