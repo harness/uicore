@@ -54,6 +54,7 @@ export interface NestedAccordionPanelProps
   extends AccordionPanelProps,
     Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
   isDefaultOpen?: boolean
+  noAutoScroll?: boolean
 }
 
 export function NestedAccordionPanel(props: NestedAccordionPanelProps): React.ReactElement {
@@ -68,10 +69,10 @@ export function NestedAccordionPanel(props: NestedAccordionPanelProps): React.Re
   }, [])
 
   React.useLayoutEffect(() => {
-    if (isOpen && elem.current) {
+    if (!props.noAutoScroll && isOpen && elem.current) {
       elem.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
-  }, [isOpen])
+  }, [isOpen, props.noAutoScroll])
 
   return <AccordionPanel {...props} ref={elem} isOpen={isOpen} togglePanel={() => togglePanel(props.id)} />
 }
