@@ -180,6 +180,52 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
   )
 }
 
+interface MultiInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+  name: string
+  mentionsInfo?: Partial<MentionsInfo>
+  tagsProps?: Partial<ITagInputProps>
+}
+
+function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
+  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    inline = formik?.inline,
+    ...rest
+  } = restProps
+  const [mentionsType] = React.useState(`multi-input-${name}}`)
+
+  React.useEffect(() => {
+    register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
+    return () => unregister(mentionsType)
+  }, [])
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <BPTagInput
+        values={formik?.values[name] || []}
+        onChange={values => {
+          formik?.setFieldValue(name, values as string[])
+        }}
+        inputRef={input => {
+          input?.setAttribute('data-mentions', mentionsType)
+        }}
+        onKeyDown={(event: React.KeyboardEvent) => {
+          if (event.keyCode === 13) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+        }}
+        placeholder="Type and press enter to create a tag"
+        {...tagsProps}
+      />
+    </FormGroup>
+  )
+}
+
 interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
@@ -955,6 +1001,7 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
 export const FormInput = {
   TagInput: connect(TagInput),
   KVTagInput: connect(KVTagInput),
+  MultiInput: connect(MultiInput),
   CustomRender: connect(CustomRender),
   FileInput: connect(FileInput),
   RadioGroup: connect(RadioGroup),
