@@ -38,6 +38,7 @@ export interface SelectProps
   name?: string
   whenPopoverClosed?: (node: HTMLElement) => void
   addClearBtn?: boolean
+  usePortal?: boolean
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -86,11 +87,11 @@ export function defaultItemRenderer(
   )
 }
 
-export function createNewItemFromQuery(query: string) {
+export function createNewItemFromQuery(query: string): SelectOption {
   return { label: query, value: query }
 }
 
-export function Select(props: SelectProps) {
+export function Select(props: SelectProps): React.ReactElement {
   const [query, setQuery] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
@@ -141,7 +142,11 @@ export function Select(props: SelectProps) {
     }
   }, [props.items])
 
-  function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
+  function createNewItemRenderer(
+    query: string,
+    _active: boolean,
+    handleClick: React.MouseEventHandler<HTMLElement>
+  ): JSX.Element | undefined {
     if (loading) {
       return (
         <li key="loading" className={cx(css.menuItem, css.loading)}>
@@ -157,7 +162,13 @@ export function Select(props: SelectProps) {
     )
       return (
         <React.Fragment>
-          <Button intent="primary" minimal text={query} icon="plus" onClick={handleClick} />
+          <Button
+            intent="primary"
+            minimal
+            text={query}
+            icon="plus"
+            onClick={handleClick as React.MouseEventHandler<Element>}
+          />
           <span className="icon-container">
             <Icon id="icon-styled-props" name="info-sign" size={16} color="grey400" padding="small" />
           </span>
@@ -229,7 +240,7 @@ export function Select(props: SelectProps) {
         targetTagName: 'div',
         wrapperTagName: 'div',
         fill: true,
-        usePortal: false,
+        usePortal: !!props.usePortal,
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: css.main,
@@ -240,6 +251,6 @@ export function Select(props: SelectProps) {
   )
 }
 
-export function NoMatch() {
+export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
 }
