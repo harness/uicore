@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.41](https://github.com/wings-software/uicore/compare/v0.1.40...v0.1.41) (2021-02-03)
+
+
+### Features
+
+* add usePortal Prop to select and fix eslint warnings ([#49](https://github.com/wings-software/uicore/issues/49)) ([4dfa114](https://github.com/wings-software/uicore/commit/4dfa114c5539990d47eda5edcf0353c700683510))
+
 ### [0.1.40](https://github.com/wings-software/uicore/compare/v0.1.39...v0.1.40) (2021-01-30)
 
 
