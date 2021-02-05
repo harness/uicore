@@ -46,7 +46,6 @@ export const Basic: Story<AvatarGroupProps> = args => (
       size="small"
     />
     <AvatarGroup
-      overlap={false}
       avatars={[
         { name: 'Aahn Boe SS' },
         { email: 'CohnDoe.com.HD@harnes.io' },
@@ -55,20 +54,33 @@ export const Basic: Story<AvatarGroupProps> = args => (
         { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
       ]}
       size="medium"
+      onAdd={() => {
+        // eslint-disable-next-line
+        alert('add button clicked')
+      }}
     />
     <AvatarGroup
-      overlap={false}
       avatars={[
         { name: 'Aahn Boe SS' },
+        {
+          src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg'
+        },
         { email: 'CohnDoe.com.HD@harnes.io' },
         { name: 'EahnFoe' },
+        {
+          src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg',
+          hoverCard: false
+        },
         { name: 'Gahn Hoe' },
-        { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
+        { name: 'Gahn fdHoe' }
       ]}
       size="xsmall"
+      onAdd={() => {
+        // eslint-disable-next-line
+        alert('add button clicked')
+      }}
     />
     <AvatarGroup
-      overlap={false}
       avatars={[
         { name: 'Aahn Boe SS' },
         { email: 'CohnDoe.com.HD@harnes.io' },
@@ -77,6 +89,10 @@ export const Basic: Story<AvatarGroupProps> = args => (
         { src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg' }
       ]}
       size="large"
+      onAdd={() => {
+        // eslint-disable-next-line
+        alert('add button clicked')
+      }}
     />
   </Layout.Horizontal>
 )

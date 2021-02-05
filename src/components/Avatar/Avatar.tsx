@@ -26,16 +26,17 @@ interface SizeValueProps {
   size: string
   fontSize: string
   lineHeight: string
+  imageHeight: string
 }
 type SizesProps = {
   [key in AvatarSizes]: SizeValueProps
 }
 const sizes: SizesProps = {
-  xsmall: { size: '16px', fontSize: '7px', lineHeight: '12px' },
-  small: { size: '24px', fontSize: '10px', lineHeight: '20px' },
-  normal: { size: '32px', fontSize: '10px', lineHeight: '28px' },
-  medium: { size: '48px', fontSize: '18px', lineHeight: '44px' },
-  large: { size: '72px', fontSize: '28px', lineHeight: '68px' }
+  xsmall: { size: '16px', fontSize: '7px', lineHeight: '12px', imageHeight: '12px' },
+  small: { size: '24px', fontSize: '10px', lineHeight: '20px', imageHeight: '20px' },
+  normal: { size: '32px', fontSize: '10px', lineHeight: '28px', imageHeight: '28px' },
+  medium: { size: '48px', fontSize: '18px', lineHeight: '44px', imageHeight: '44px' },
+  large: { size: '72px', fontSize: '28px', lineHeight: '68px', imageHeight: '68px' }
 }
 
 export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
@@ -58,6 +59,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   const formatedSize = sizes[size].size
   const fontSize = sizes[size].fontSize
   const lineHeight = sizes[size].lineHeight
+  const imageHeightWidth = sizes[size].imageHeight
   let inner
   let initials = ''
   if (!src) {
@@ -85,7 +87,8 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     ...(fontSize && { fontSize })
   }
   if (src) {
-    inner = <img src={src} style={contentStyle} className={css.imageStyle} alt={name} />
+    const imageStyleNew = { ...contentStyle, width: imageHeightWidth, height: imageHeightWidth, border: '' }
+    inner = <img src={src} style={imageStyleNew} className={css.imageStyle} alt={name} />
   } else {
     if (!initials) {
       return null
@@ -135,20 +138,17 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
       )}
     </Layout.Vertical>
   )
-
+  let hoverCardContent = {}
+  if (hoverCard) {
+    hoverCardContent = { content: tooltip }
+  }
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
-      {hoverCard ? (
-        <Popover content={tooltip} interactionKind="hover" usePortal={false}>
-          <div className={css.AvatarInner} style={contentStyle}>
-            {inner}
-          </div>
-        </Popover>
-      ) : (
+      <Popover {...hoverCardContent} interactionKind="hover" usePortal={false}>
         <div className={css.AvatarInner} style={contentStyle}>
           {inner}
         </div>
-      )}
+      </Popover>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import { HTMLDivProps } from '@blueprintjs/core'
 import { AvatarProps, Avatar, AvatarSizes } from '../Avatar/Avatar'
 import css from './AvatarGroup.css'
@@ -13,7 +13,10 @@ export interface AvatarGroupProps extends HTMLDivProps {
   size?: AvatarSizes
   className?: string
 }
-
+type overLap = {
+  [key in AvatarSizes]: string
+}
+const avatarOverLap: overLap = { xsmall: '-8px', small: '-10px', large: '-20px', medium: '-13px', normal: '-13px' }
 export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   onAdd,
   avatars,
@@ -46,8 +49,12 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
     avatars = avatars.reverse()
   }
 
+  const cssProperties = { '--avatar-over-lap': avatarOverLap[size] }
   return (
-    <div className={classnames(overlap ? css.stack : css.noStack, className)} {...rest}>
+    <div
+      className={classnames(overlap ? css.stack : css.noStack, className)}
+      {...rest}
+      style={cssProperties as CSSProperties}>
       {avatars.map(avatarProps => (
         <Avatar
           key={Object.values(avatarProps).join('')}
