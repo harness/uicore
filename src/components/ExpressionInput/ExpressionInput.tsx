@@ -89,7 +89,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           if (inputRef.current) {
             // maintain cursor position
             inputRef.current.focus()
-            inputRef.current.setSelectionRange(position, position)
+            inputRef.current.setSelectionRange(position + item.length, position + item.length)
           }
         })
       }
@@ -108,6 +108,8 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       // if it matches the regex, update state
       if (match) {
         setQueryValue(value.slice(0, (match.index || 0) + match[0].length))
+      } else {
+        setQueryValue('')
       }
     }
   }
@@ -161,13 +163,14 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
   }
 
   function itemRenderer(item: string, itemProps: IItemRendererProps): JSX.Element | null {
-    const { query, handleClick, modifiers } = itemProps
+    const { query, handleClick, modifiers, index } = itemProps
     const match = query.match(EXPRESSION_START_REGEX)
 
     if (!match) return null
 
     return (
       <Menu.Item
+        key={`${item}${index}`}
         text={
           <span>
             <mark>{item.slice(0, match[1].length)}</mark>
