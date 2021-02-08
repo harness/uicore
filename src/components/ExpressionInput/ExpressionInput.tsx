@@ -6,7 +6,10 @@ export interface ExpressionInputProps {
   items: string[]
   value?: string
   inputProps?: Omit<IInputGroupProps, 'value' | 'onChange'>
-  popoverProps?: Omit<IPopoverProps, 'isOpen' | 'interactionKind'>
+  popoverProps?: Omit<
+    IPopoverProps,
+    'isOpen' | 'interactionKind' | 'hasBackdrop' | 'backdropProps' | 'autoFocus' | 'enforceFocus'
+  >
   onChange(str: string): void
 }
 
@@ -50,11 +53,13 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     onChange(inputValue)
   }, [inputValue])
 
+  function resetQuery(): void {
+    setQueryValue('')
+  }
+
   function handleItemSelect(item: string): void {
     // when we have valid cursor position
     if (typeof cursorRef.current === 'number') {
-      const position = cursorRef.current
-
       // find if the value "<+" styled var at its end
       // example: "<+app.na", "<+pipe"
       const match = queryValue.match(EXPRESSION_START_REGEX)
@@ -83,13 +88,16 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         setInputValue(newValue)
 
         // reset query to close
-        setQueryValue('')
+        resetQuery()
 
+        // maintain cursor position
         window.requestAnimationFrame(() => {
           if (inputRef.current) {
-            // maintain cursor position
+            // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
+            const position = firstHalf.length + 2 + item.length + 1
+
             inputRef.current.focus()
-            inputRef.current.setSelectionRange(position + item.length, position + item.length)
+            inputRef.current.setSelectionRange(position, position)
           }
         })
       }
@@ -109,7 +117,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       if (match) {
         setQueryValue(value.slice(0, (match.index || 0) + match[0].length))
       } else {
-        setQueryValue('')
+        resetQuery()
       }
     }
   }
@@ -147,6 +155,10 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         position="bottom-left"
         minimal
         {...popoverProps}
+        hasBackdrop
+        backdropProps={{ onClick: resetQuery }}
+        autoFocus={false}
+        enforceFocus={false}
         isOpen={items.length > 0 && !!queryValue}>
         <InputGroup
           {...inputProps}
