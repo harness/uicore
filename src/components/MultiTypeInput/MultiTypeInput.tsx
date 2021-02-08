@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import { Button } from '../Button/Button'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
@@ -8,11 +8,11 @@ import { Icon, IconName } from '../../icons/Icon'
 import { Color } from '../../core/Color'
 import { Position, Menu, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
-import { register, unregister, MentionsInfo } from '@wings-software/mentions'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '../../core/Types'
 import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
+import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
 
 export enum MultiTypeInputType {
   FIXED = 'FIXED',
@@ -34,13 +34,6 @@ const TypeIcon: Record<string, IconName> = {
 
 export const RUNTIME_INPUT_VALUE = '<+input>'
 export const EXPRESSION_INPUT_PLACEHOLDER = '<+expression>'
-const MENTIONS_DEFAULT: MentionsInfo = {
-  identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
-  trigger: ['<', '<+'],
-  rule: '<+__match__>',
-  cached: true,
-  data: done => done([])
-}
 
 type AcceptableValue = boolean | string | SelectOption | MultiSelectOption[]
 
@@ -48,7 +41,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   value?: AcceptableValue
   defaultValueToReset?: AcceptableValue
   width?: number
-  mentionsInfo?: Partial<MentionsInfo>
+  expressions?: string[]
   onTypeChange?: (type: MultiTypeInputType) => void
   onChange?: (value: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => void
   i18n?: I18nResource
@@ -88,7 +81,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     value,
     defaultValueToReset,
     width,
-    mentionsInfo,
+    expressions = [],
     onTypeChange,
     onChange,
     i18n: _i18n = {},
@@ -150,14 +143,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     </Menu>
   )
 
-  useEffect(() => {
-    if (type === MultiTypeInputType.EXPRESSION) {
-      unregister(mentionsType)
-      register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
-    }
-    return () => unregister(mentionsType)
-  }, [type])
-
   return (
     <Layout.Horizontal
       className={cx(css.main, type === MultiTypeInputType.RUNTIME && css.disabled)}
@@ -181,14 +166,15 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
         />
       )}
       {type === MultiTypeInputType.EXPRESSION && (
-        <TextInput
-          wrapperClassName={css.input}
+        <ExpressionInput
+          popoverProps={{
+            className: css.input
+          }}
           name={name}
-          style={{ width: inputWidth }}
-          placeholder={EXPRESSION_INPUT_PLACEHOLDER}
+          items={expressions}
+          inputProps={{ placeholder: EXPRESSION_INPUT_PLACEHOLDER }}
           value={value as string}
-          onInput={input => {
-            const val = (input.target as HTMLInputElement).value
+          onChange={val => {
             onChange?.(val, MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
           }}
           data-mentions={mentionsType}
