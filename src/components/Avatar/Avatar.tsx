@@ -33,10 +33,10 @@ type SizesProps = {
 }
 const sizes: SizesProps = {
   xsmall: { size: '16px', fontSize: '7px', lineHeight: '12px', imageHeight: '12px' },
-  small: { size: '24px', fontSize: '10px', lineHeight: '20px', imageHeight: '20px' },
-  normal: { size: '32px', fontSize: '10px', lineHeight: '28px', imageHeight: '28px' },
-  medium: { size: '48px', fontSize: '18px', lineHeight: '44px', imageHeight: '44px' },
-  large: { size: '72px', fontSize: '28px', lineHeight: '68px', imageHeight: '68px' }
+  small: { size: '24px', fontSize: '10px', lineHeight: '18px', imageHeight: '20px' },
+  normal: { size: '32px', fontSize: '10px', lineHeight: '26px', imageHeight: '28px' },
+  medium: { size: '48px', fontSize: '18px', lineHeight: '42px', imageHeight: '44px' },
+  large: { size: '72px', fontSize: '28px', lineHeight: '66px', imageHeight: '68px' }
 }
 
 export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
@@ -144,7 +144,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   }
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
-      <Popover {...hoverCardContent} interactionKind="hover" usePortal={false}>
+      <Popover {...hoverCardContent} interactionKind="hover" usePortal={false} className={css.avatarPopOver}>
         <div className={css.AvatarInner} style={contentStyle}>
           {inner}
         </div>

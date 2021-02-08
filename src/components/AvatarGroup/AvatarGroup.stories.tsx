@@ -68,8 +68,7 @@ export const Basic: Story<AvatarGroupProps> = args => (
         { email: 'CohnDoe.com.HD@harnes.io' },
         { name: 'EahnFoe' },
         {
-          src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg',
-          hoverCard: false
+          src: 'https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg'
         },
         { name: 'Gahn Hoe' },
         { name: 'Gahn fdHoe' }
