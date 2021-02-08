@@ -24,43 +24,34 @@ export const SelectInput: Story<MultiTypeInputProps> = args => <MultiTypeInput {
 export const MultiSelectInput: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
 
 TextInput.args = {
-  mentionsInfo: {
-    data: (done: (arg0: string[]) => void) =>
-      done([
-        'app.name',
-        'app.description',
-        'pipeline.name',
-        'pipeline.description',
-        'pipeline.identifier',
-        'pipeline.stage.qa.displayName'
-      ])
-  }
+  expressions: [
+    'app.name',
+    'app.description',
+    'pipeline.name',
+    'pipeline.description',
+    'pipeline.identifier',
+    'pipeline.stage.qa.displayName'
+  ]
 }
 
 SelectInput.args = {
-  mentionsInfo: {
-    data: (done: (arg0: string[]) => void) =>
-      done([
-        'app.name',
-        'app.description',
-        'pipeline.name',
-        'pipeline.description',
-        'pipeline.identifier',
-        'pipeline.stage.qa.displayName'
-      ])
-  }
+  expressions: [
+    'app.name',
+    'app.description',
+    'pipeline.name',
+    'pipeline.description',
+    'pipeline.identifier',
+    'pipeline.stage.qa.displayName'
+  ]
 }
 
 MultiSelectInput.args = {
-  mentionsInfo: {
-    data: (done: (arg0: string[]) => void) =>
-      done([
-        'app.name',
-        'app.description',
-        'pipeline.name',
-        'pipeline.description',
-        'pipeline.identifier',
-        'pipeline.stage.qa.displayName'
-      ])
-  }
+  expressions: [
+    'app.name',
+    'app.description',
+    'pipeline.name',
+    'pipeline.description',
+    'pipeline.identifier',
+    'pipeline.stage.qa.displayName'
+  ]
 }

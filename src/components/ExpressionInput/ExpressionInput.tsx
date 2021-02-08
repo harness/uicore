@@ -3,8 +3,9 @@ import { InputGroup, IInputGroupProps, Popover, Menu, IPopoverProps } from '@blu
 import { QueryList, IQueryListRendererProps, IItemRendererProps } from '@blueprintjs/select'
 
 export interface ExpressionInputProps {
-  items: string[]
+  items?: string[]
   value?: string
+  name: string
   inputProps?: Omit<IInputGroupProps, 'value' | 'onChange'>
   popoverProps?: Omit<
     IPopoverProps,
@@ -20,7 +21,7 @@ export interface ExpressionInputProps {
 const EXPRESSION_START_REGEX = /<\+([A-Za-z0-9_.'"()]*?)$/
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
-  const { items, value, inputProps, popoverProps, onChange } = props
+  const { items = [], value, inputProps, popoverProps, onChange, name } = props
   /**
    * This holds the complete value of the input
    */
@@ -162,6 +163,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         isOpen={items.length > 0 && !!queryValue}>
         <InputGroup
           {...inputProps}
+          name={name}
           inputRef={inputRef}
           value={inputValue}
           onChange={handleChange}
