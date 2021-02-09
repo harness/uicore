@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.43](https://github.com/wings-software/uicore/compare/v0.1.42...v0.1.43) (2021-02-09)
+
+
+### Features
+
+* [CDNG-3175]: overlap pixel for group ([#51](https://github.com/wings-software/uicore/issues/51)) ([e87910c](https://github.com/wings-software/uicore/commit/e87910c04be97e6a73ed2c33be69c835c81afff3))
+
 ### [0.1.42](https://github.com/wings-software/uicore/compare/v0.1.41...v0.1.42) (2021-02-08)
 
 
