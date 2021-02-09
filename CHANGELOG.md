@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.44](https://github.com/wings-software/uicore/compare/v0.1.43...v0.1.44) (2021-02-09)
+
+
+### Features
+
+* [FFM-300]: Add audit log created icon ([#52](https://github.com/wings-software/uicore/issues/52)) ([78bf1cc](https://github.com/wings-software/uicore/commit/78bf1cc67c12b67b63d5e3bdd2d9e852eaf4fd15))
+
 ### [0.1.43](https://github.com/wings-software/uicore/compare/v0.1.42...v0.1.43) (2021-02-09)
 
 
