@@ -7,6 +7,7 @@ import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
+import AuditLogCreated from './audit-log-created.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
 import BitbucketNew from './bitbucket-new.svg'
@@ -394,6 +395,7 @@ type HarnessIconName =
   | 'app-aws-lambda'
   | 'app-kubernetes'
   | 'approval-step'
+  | 'audit-log-created'
   | 'azure-kubernetes-service'
   | 'banned'
   | 'bitbucket-new'
@@ -781,6 +783,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
+  'audit-log-created': AuditLogCreated,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
   'bitbucket-new': BitbucketNew,
