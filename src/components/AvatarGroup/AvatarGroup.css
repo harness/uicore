@@ -6,5 +6,5 @@
   display: inline-flex;
 }
 .stackAvatar:not(:last-child) {
-  margin-left: -13px;
+  margin-left: var(--avatar-over-lap);
 }

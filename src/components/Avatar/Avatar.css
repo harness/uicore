@@ -27,3 +27,7 @@
   column-gap: 5px;
   background: linear-gradient(var(--grey-250) 70%, var(--white) 30%) !important;
 }
+.avatarPopOver {
+  display: flex;
+  align-items: center;
+}

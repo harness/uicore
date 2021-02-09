@@ -4,36 +4,46 @@ exports[`Render basic component should check snapshot with Avatar props with add
 <div>
   <div
     class="stack"
+    style="--avatar-over-lap: -13px;"
   >
     <div
       class="stackAvatar Avatar contentStyle"
     >
-      <div
-        class="AvatarInner"
-        style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
-      >
-        +
-      </div>
-    </div>
-    <div
-      class="stackAvatar Avatar contentStyle"
-    >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
+          >
+            +
+          </div>
+        </span>
+      </span>
+    </div>
+    <div
+      class="stackAvatar Avatar contentStyle"
+    >
+      <span
+        class="bp3-popover-wrapper avatarPopOver"
+      >
+        <span
+          class="bp3-popover-target"
+        >
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             <img
               alt=""
               class="imageStyle"
               src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-              style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+              style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
             />
           </div>
         </span>
@@ -43,14 +53,14 @@ exports[`Render basic component should check snapshot with Avatar props with add
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             GH
@@ -62,14 +72,14 @@ exports[`Render basic component should check snapshot with Avatar props with add
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             EF
@@ -81,14 +91,14 @@ exports[`Render basic component should check snapshot with Avatar props with add
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             CH
@@ -100,14 +110,14 @@ exports[`Render basic component should check snapshot with Avatar props with add
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             AS
@@ -123,26 +133,27 @@ exports[`Render basic component should check snapshot with Avatar props without 
 <div>
   <div
     class="stack"
+    style="--avatar-over-lap: -13px;"
   >
     <div
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             <img
               alt=""
               class="imageStyle"
               src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-              style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+              style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
             />
           </div>
         </span>
@@ -152,14 +163,14 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             GH
@@ -171,14 +182,14 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             E
@@ -190,14 +201,14 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             CH
@@ -209,14 +220,14 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="stackAvatar Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             AS
@@ -232,19 +243,20 @@ exports[`Render basic component should check snapshot with Avatar props without 
 <div>
   <div
     class="noStack"
+    style="--avatar-over-lap: -13px;"
   >
     <div
       class="Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             AS
@@ -256,14 +268,14 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             CH
@@ -275,14 +287,14 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             E
@@ -294,14 +306,14 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             GH
@@ -313,21 +325,21 @@ exports[`Render basic component should check snapshot with Avatar props without 
       class="Avatar contentStyle"
     >
       <span
-        class="bp3-popover-wrapper"
+        class="bp3-popover-wrapper avatarPopOver"
       >
         <span
           class="bp3-popover-target"
         >
           <div
             class="AvatarInner"
-            style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
             tabindex="0"
           >
             <img
               alt=""
               class="imageStyle"
               src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-              style="border-radius: 100%; line-height: 28px; width: 32px; height: 32px; font-size: 10px;"
+              style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
             />
           </div>
         </span>
