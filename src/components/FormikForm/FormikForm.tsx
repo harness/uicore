@@ -799,29 +799,26 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     ...rest
   } = restProps
   const value = get(formik?.values, name, '')
-  const customMultiTextInputProps: MultiTextInputProps = useMemo(
+  const customTextInputProps: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'> = useMemo(
     () => ({
-      ...multiTextInputProps,
+      ...multiTextInputProps?.textProps,
       name,
-      textProps: {
-        ...multiTextInputProps?.textProps,
-        name,
-        value,
-        placeholder,
-        onBlur: () => formik?.setFieldTouched(name)
-      }
+      value,
+      placeholder,
+      onBlur: () => formik?.setFieldTouched(name)
     }),
-    []
+    [multiTextInputProps?.textProps]
   )
 
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <MultiTextInput
         value={value}
-        {...customMultiTextInputProps}
+        {...multiTextInputProps}
+        textProps={{ ...customTextInputProps }}
         name={name}
-        onChange={(value, valueType, type) => {
-          formik?.setFieldValue(name, value)
+        onChange={(valueChange, valueType, type) => {
+          formik?.setFieldValue(name, valueChange)
           onChange?.(value, valueType, type)
         }}
       />
