@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.45](https://github.com/wings-software/uicore/compare/v0.1.44...v0.1.45) (2021-02-10)
+
+
+### Bug Fixes
+
+* Expression for Text Input ([#53](https://github.com/wings-software/uicore/issues/53)) ([55e2fac](https://github.com/wings-software/uicore/commit/55e2fac438768326c8a2a3281408e763f21fdeeb))
+
 ### [0.1.44](https://github.com/wings-software/uicore/compare/v0.1.43...v0.1.44) (2021-02-09)
 
 
