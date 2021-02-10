@@ -39,6 +39,7 @@ export interface SelectProps
   whenPopoverClosed?: (node: HTMLElement) => void
   addClearBtn?: boolean
   usePortal?: boolean
+  popoverClassName?: string
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -95,7 +96,7 @@ export function Select(props: SelectProps): React.ReactElement {
   const [query, setQuery] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
-  const { onChange, value, size, itemRenderer, whenPopoverClosed, ...rest } = props
+  const { onChange, value, size, itemRenderer, whenPopoverClosed, popoverClassName = '', ...rest } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
   const [showClearBtn, setShowClearBtn] = useState<boolean>()
 
@@ -244,7 +245,7 @@ export function Select(props: SelectProps): React.ReactElement {
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: css.main,
-        popoverClassName: css.popover,
+        popoverClassName: cx(css.popover, popoverClassName),
         onClosed: whenPopoverClosed
       }}
     />
