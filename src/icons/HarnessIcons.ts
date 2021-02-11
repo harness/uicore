@@ -15,6 +15,7 @@ import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
+import CanaryDeployment from './canary-deployment.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
@@ -368,7 +369,9 @@ import SupportTour from './support-tour.svg'
 import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
+import SwapServices from './swap-services.svg'
 import TemplateLibrary from './template-library.svg'
+import TerraformApply from './terraform-apply.svg'
 import TestVerification from './test-verification.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
@@ -403,6 +406,7 @@ type HarnessIconName =
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
+  | 'canary-deployment'
   | 'canary-outline'
   | 'canary'
   | 'canvas-position'
@@ -756,7 +760,9 @@ type HarnessIconName =
   | 'support-troubleshoot'
   | 'support-verification'
   | 'support-videos'
+  | 'swap-services'
   | 'template-library'
+  | 'terraform-apply'
   | 'test-verification'
   | 'trigger-artifact'
   | 'trigger-github'
@@ -791,6 +797,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
+  'canary-deployment': CanaryDeployment,
   'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
@@ -1144,7 +1151,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-troubleshoot': SupportTroubleshoot,
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
+  'swap-services': SwapServices,
   'template-library': TemplateLibrary,
+  'terraform-apply': TerraformApply,
   'test-verification': TestVerification,
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
