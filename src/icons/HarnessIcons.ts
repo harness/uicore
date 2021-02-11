@@ -378,6 +378,7 @@ import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Up from './up.svg'
+import Utility from './utility.svg'
 import Waiting from './waiting.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -769,6 +770,7 @@ type HarnessIconName =
   | 'trigger-pipeline'
   | 'trigger-schedule'
   | 'up'
+  | 'utility'
   | 'waiting'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -1160,6 +1162,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
   up: Up,
+  utility: Utility,
   waiting: Waiting,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
