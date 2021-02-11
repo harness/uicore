@@ -6,6 +6,7 @@ export interface ExpressionInputProps {
   items?: string[]
   value?: string
   name: string
+  maxHeight?: React.CSSProperties['maxHeight']
   inputProps?: Omit<IInputGroupProps, 'value' | 'onChange'>
   popoverProps?: Omit<
     IPopoverProps,
@@ -21,7 +22,7 @@ export interface ExpressionInputProps {
 const EXPRESSION_START_REGEX = /<\+([A-Za-z0-9_.'"()]*?)$/
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
-  const { items = [], value, inputProps, popoverProps, onChange, name } = props
+  const { items = [], value, inputProps, popoverProps, onChange, name, maxHeight = 400 } = props
   /**
    * This holds the complete value of the input
    */
@@ -171,7 +172,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           onKeyUp={handleKeyUp}
           onMouseUp={handleMouseUp}
         />
-        <Menu>{listProps.itemList}</Menu>
+        <Menu style={{ maxHeight, overflow: 'auto' }}>{listProps.itemList}</Menu>
       </Popover>
     )
   }

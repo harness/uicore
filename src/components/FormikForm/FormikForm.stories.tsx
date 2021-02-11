@@ -22,6 +22,7 @@ export const Basic: Story<FormikFormProps> = () => (
         multiInput: [],
         description: '',
         specialPerson: true,
+        exp: '<+app.name>',
         jobDesc2: '<+input>.allowedValues(10, 20, 30)'
       }}
       onSubmit={noop}
@@ -31,6 +32,7 @@ export const Basic: Story<FormikFormProps> = () => (
         specialPerson: Yup.boolean().required('VVIP is required field'),
         colorMulti: Yup.array().ensure().compact().min(1, 'Color Multi is required field'),
         picture: Yup.string().trim().required('Picture is required field'),
+        exp: Yup.string().trim().required('Expression is required field'),
         description: Yup.string().trim().required('Description is required field'),
         sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
       })}>
@@ -52,6 +54,18 @@ export const Basic: Story<FormikFormProps> = () => (
                     'pipeline.stage.qa.displayName'
                   ])
               }}
+            />
+            <FormInput.ExpressionInput
+              items={[
+                'app.name',
+                'app.description',
+                'pipeline.name',
+                'pipeline.description',
+                'pipeline.identifier',
+                'pipeline.stage.qa.displayName'
+              ]}
+              name="exp"
+              label="Expressions"
             />
             <FormInput.CheckBox name="specialPerson" label="VVIP" />
             <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select" />
