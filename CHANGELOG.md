@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.47](https://github.com/wings-software/uicore/compare/v0.1.46...v0.1.47) (2021-02-11)
+
+
+### Bug Fixes
+
+* Add min hight to expression input and added formik version for ExpressionInout ([#56](https://github.com/wings-software/uicore/issues/56)) ([a154e29](https://github.com/wings-software/uicore/commit/a154e29ff3351cc54b03738a49ee05a59881550f))
+
 ### [0.1.46](https://github.com/wings-software/uicore/compare/v0.1.45...v0.1.46) (2021-02-11)
 
 
