@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.46](https://github.com/wings-software/uicore/compare/v0.1.45...v0.1.46) (2021-02-11)
+
+
+### Bug Fixes
+
+* added popover classname support ([#54](https://github.com/wings-software/uicore/issues/54)) ([152d5ee](https://github.com/wings-software/uicore/commit/152d5eed0f7a319700c30d9181334bd2eb52aa4c))
+
 ### [0.1.45](https://github.com/wings-software/uicore/compare/v0.1.44...v0.1.45) (2021-02-10)
 
 
