@@ -50,6 +50,10 @@ import {
 import { SelectWithSubviewProps, SelectWithSubview } from '../SelectWithSubview/SelectWithSubview'
 import { MultiSelectWithSubviewProps, MultiSelectWithSubview } from '../MultiSelectWithSubView/MultiSelectWithSubView'
 import { MentionsInfo, register, unregister } from '@wings-software/mentions'
+import {
+  ExpressionInputProps as ExpressionInputLocalProps,
+  ExpressionInput as ExpressionInputLocal
+} from '../ExpressionInput/ExpressionInput'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
@@ -522,6 +526,41 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
   )
 }
 
+interface ExpressionInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  placeholder?: string
+  expressionInputProps?: Omit<ExpressionInputLocalProps, 'name' | 'value' | 'onChange' | 'items'>
+  onChange?: ExpressionInputLocalProps['onChange']
+  items?: ExpressionInputLocalProps['items']
+}
+
+const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) => {
+  const { formik, name, items = [], placeholder, expressionInputProps, onChange, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? get(formik?.errors, name) : null,
+    disabled = formik?.disabled,
+    inline = formik?.inline,
+    ...rest
+  } = restProps
+
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
+      <ExpressionInputLocal
+        name={name}
+        {...expressionInputProps}
+        items={items}
+        inputProps={{ ...(expressionInputProps?.inputProps || {}), placeholder }}
+        value={get(formik?.values, name)}
+        onChange={(str: string) => {
+          formik?.setFieldValue(name, str)
+          onChange?.(str)
+        }}
+      />
+    </FormGroup>
+  )
+}
 interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   placeholder?: string
@@ -1006,6 +1045,7 @@ export const FormInput = {
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
   Text: connect(Text),
+  ExpressionInput: connect(ExpressionInput),
   TextArea: connect(TextArea),
   ColorPicker: connect(FormColorPicker),
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
