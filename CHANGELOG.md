@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.48](https://github.com/wings-software/uicore/compare/v0.1.47...v0.1.48) (2021-02-15)
+
+
+### Features
+
+* Modified Step Wizard to have Nested Wizard ([#58](https://github.com/wings-software/uicore/issues/58)) ([cf03cd1](https://github.com/wings-software/uicore/commit/cf03cd1043c2270fa91eac53db614d1204162456))
+
 ### [0.1.47](https://github.com/wings-software/uicore/compare/v0.1.46...v0.1.47) (2021-02-11)
 
 
