@@ -443,6 +443,7 @@ interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   inputGroup?: Omit<IInputGroupProps, 'name' | 'value'>
   selectProps?: Omit<UiKitSelectProps, 'items' | 'onChange' | 'value'>
   onChange?: UiKitSelectProps['onChange']
+  value?: UiKitSelectProps['value']
 }
 
 const Select = (props: SelectProps & FormikContextProps<any>) => {
@@ -458,6 +459,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
     inputGroup,
     selectProps,
     onChange,
+    value,
     ...rest
   } = restProps
 
@@ -476,7 +478,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
         {...selectProps}
         items={items}
         disabled={disabled}
-        value={items.filter(item => item.value === get(formik?.values, name))[0]}
+        value={value ?? items.filter(item => item.value === get(formik?.values, name))[0]}
         onChange={(item: SelectOption) => {
           formik?.setFieldValue(name, item.value)
           onChange?.(item)
