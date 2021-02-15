@@ -2,10 +2,10 @@ import React from 'react'
 import { StepWizard, StepProps } from './StepWizard'
 import { Layout } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
-import { render, fireEvent, wait, queryByText, waitForElement } from '@testing-library/react'
+import { render, fireEvent, wait, queryByText, waitFor } from '@testing-library/react'
 
 interface SharedObject {
-  prevStepName: string
+  prevStepName: string | JSX.Element
 }
 
 const ExampleStep: React.FC<StepProps<SharedObject>> = props => {
@@ -52,7 +52,7 @@ const ExampleWizard = ({ initialStep, stepChange, onSubmit }: ExampleProps) => {
         title="Kubernetes Cluster"
         initialStep={initialStep}
         onStepChange={values => {
-          setCounter(prevState => ++prevState)
+          setCounter(counter + 1)
           stepChange(values)
         }}
         onCompleteWizard={onSubmit}>
@@ -69,32 +69,32 @@ const getDefaultProps = (initialStep: number) => ({ initialStep, stepChange: jes
 describe('REnder basic Step Wizard', () => {
   test('should render with initial step 1', async () => {
     const { container } = render(<ExampleWizard {...getDefaultProps(0)} />)
-    await wait()
+    await waitFor(() => queryByText(container as HTMLElement, /Create a New Project: 1/))
     expect(container).toMatchSnapshot()
   })
   test('should render with initial step -1, render step 1', async () => {
     const { container } = render(<ExampleWizard {...getDefaultProps(-1)} />)
-    await wait()
+    await waitFor(() => queryByText(container as HTMLElement, /Create a New Project: 1/))
     expect(queryByText(container as HTMLElement, /Create a New Project: 1/)).toBeDefined()
   })
   test('should render with initial step 200, render step 1', async () => {
     const { container } = render(<ExampleWizard {...getDefaultProps(200)} />)
-    await wait()
+    await waitFor(() => queryByText(container as HTMLElement, /Create a New Project: 1/))
     expect(queryByText(container as HTMLElement, /Create a New Project: 1/)).toBeDefined()
   })
 
   test('should render with initial step 2, render Step 2', async () => {
     const { container } = render(<ExampleWizard {...getDefaultProps(2)} />)
-    await wait()
+    await waitFor(() => queryByText(container as HTMLElement, /New Project: 2/))
     expect(queryByText(container as HTMLElement, /New Project: 2/)).toBeDefined()
   })
 
   test('should test Prev and Next Step', async () => {
     const props = getDefaultProps(1)
     const { container } = render(<ExampleWizard {...props} />)
-    await wait()
+    await waitFor(() => queryByText(container as HTMLElement, /Next/))
     fireEvent.click(queryByText(container as HTMLElement, /Next/) as HTMLDivElement)
-    await wait()
+    await waitFor(() => queryByText(container as HTMLElement, /New Project: 2/))
     expect(props.stepChange).toHaveBeenLastCalledWith({
       nextStep: 2,
       prevStep: 1,
@@ -103,7 +103,7 @@ describe('REnder basic Step Wizard', () => {
       }
     })
     fireEvent.click(queryByText(container as HTMLElement, /Next/) as HTMLDivElement)
-    await waitForElement(() => queryByText(container as HTMLElement, /New Project 3/) as HTMLDivElement)
+    await waitFor(() => queryByText(container as HTMLElement, /New Project 3/) as HTMLDivElement)
     expect(queryByText(container as HTMLElement, /Collaborator: 3/)).not.toBeNull()
     expect(queryByText(container as HTMLElement, /Last Step: New Project 2/)).not.toBeNull()
 
@@ -122,10 +122,8 @@ describe('REnder basic Step Wizard', () => {
     expect(props.onSubmit).toHaveBeenLastCalledWith({
       prevStepName: 'Collaborator'
     })
-    await wait()
 
     fireEvent.click(queryByText(container as HTMLElement, /Previous/) as HTMLDivElement)
-    await wait()
 
     expect(props.stepChange).toHaveBeenLastCalledWith({
       nextStep: 2,
@@ -135,7 +133,6 @@ describe('REnder basic Step Wizard', () => {
       }
     })
     fireEvent.click(queryByText(container as HTMLElement, /Previous/) as HTMLDivElement)
-    await wait()
 
     expect(props.stepChange).toHaveBeenLastCalledWith({
       nextStep: 1,
