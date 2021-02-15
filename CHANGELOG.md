@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.52](https://github.com/wings-software/uicore/compare/v0.1.51...v0.1.52) (2021-02-15)
+
+
+### Others
+
+* remove old LogViewer Component ([#61](https://github.com/wings-software/uicore/issues/61)) ([4e8dd0a](https://github.com/wings-software/uicore/commit/4e8dd0a1b32974f7a8c841fa4e2df9d961b9668b))
+
 ### [0.1.51](https://github.com/wings-software/uicore/compare/v0.1.50...v0.1.51) (2021-02-15)
 
 
