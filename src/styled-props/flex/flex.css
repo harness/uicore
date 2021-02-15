@@ -17,4 +17,80 @@
   &.flex-distribution-space-between {
     justify-content: space-between;
   }
+
+  &.flex-alignItems-stretch {
+    align-items: stretch;
+  }
+
+  &.flex-alignItems-center {
+    align-items: center;
+  }
+
+  &.flex-alignItems-end {
+    align-items: end;
+  }
+
+  &.flex-alignItems-start {
+    align-items: start;
+  }
+
+  &.flex-alignItems-flex-start {
+    align-items: flex-start;
+  }
+
+  &.flex-alignItems-flex-end {
+    align-items: flex-end;
+  }
+
+  &.flex-alignItems-baseline {
+    align-items: baseline;
+  }
+
+  &.flex-alignItems-self-start {
+    align-items: self-start;
+  }
+
+  &.flex-alignItems-self-end {
+    align-items: self-end;
+  }
+
+  &.flex-justifyContent-flex-start {
+    justify-content: flex-start;
+  }
+
+  &.flex-justifyContent-flex-end {
+    justify-content: flex-end;
+  }
+
+  &.flex-justifyContent-center {
+    justify-content: center;
+  }
+
+  &.flex-justifyContent-space-between {
+    justify-content: space-between;
+  }
+
+  &.flex-justifyContent-space-around {
+    justify-content: space-around;
+  }
+
+  &.flex-justifyContent-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &.flex-justifyContent-start {
+    justify-content: start;
+  }
+
+  &.flex-justifyContent-end {
+    justify-content: end;
+  }
+
+  &.flex-justifyContent-left {
+    justify-content: left;
+  }
+
+  &.flex-justifyContent-right {
+    justify-content: right;
+  }
 }
