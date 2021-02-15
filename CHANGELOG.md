@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.51](https://github.com/wings-software/uicore/compare/v0.1.50...v0.1.51) (2021-02-15)
+
+
+### Others
+
+* Adding more props to Flex ([#60](https://github.com/wings-software/uicore/issues/60)) ([c78a31e](https://github.com/wings-software/uicore/commit/c78a31eff1f1a2774ff2075656ce8f3e60f0c69d))
+
 ### [0.1.50](https://github.com/wings-software/uicore/compare/v0.1.48...v0.1.50) (2021-02-15)
 
 
