@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.50](https://github.com/wings-software/uicore/compare/v0.1.48...v0.1.50) (2021-02-15)
+
+
+### Features
+
+* [CDNG-4261]: Addd value prop to clear selection ([#59](https://github.com/wings-software/uicore/issues/59)) ([2cda82e](https://github.com/wings-software/uicore/commit/2cda82ef1b071d03070561bd2b10f287867ea851))
+
 ### [0.1.48](https://github.com/wings-software/uicore/compare/v0.1.47...v0.1.48) (2021-02-15)
 
 
