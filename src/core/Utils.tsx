@@ -92,6 +92,49 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
   )
 }
 
-const Utils = { stopEvent, copy, randomId, getIntentColors, getRealCSSColor, WrapOptionalTooltip }
+export function romanize(num: number, isLowerCase = false): string | number {
+  if (isNaN(num)) return NaN
+  const digits = String(+num).split('')
+  const key = [
+    '',
+    'C',
+    'CC',
+    'CCC',
+    'CD',
+    'D',
+    'DC',
+    'DCC',
+    'DCCC',
+    'CM',
+    '',
+    'X',
+    'XX',
+    'XXX',
+    'XL',
+    'L',
+    'LX',
+    'LXX',
+    'LXXX',
+    'XC',
+    '',
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX'
+  ]
+
+  let roman = ''
+  let i = 3
+  while (i--) roman = (key[parseInt(digits.pop() || '') + i * 10] || '') + roman
+  const returnStr = Array(+digits.join('') + 1).join('M') + roman
+  return isLowerCase ? returnStr.toLowerCase() : returnStr
+}
+
+const Utils = { stopEvent, copy, randomId, getIntentColors, getRealCSSColor, WrapOptionalTooltip, romanize }
 
 export { Utils }

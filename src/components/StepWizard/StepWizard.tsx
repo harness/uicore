@@ -3,6 +3,8 @@ import cx from 'classnames'
 import css from './StepWizard.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { Text } from '../../components/Text/Text'
+import { romanize } from '../../core/Utils'
+import { isNil } from 'lodash-es'
 
 interface StepChangeData<SharedObject> {
   prevStep: number
@@ -13,7 +15,9 @@ export interface StepWizardProps<SharedObject> {
   icon?: IconName
   iconProps?: Omit<IconProps, 'name'>
   title?: string | JSX.Element
-  children: Array<React.ReactElement<StepProps<SharedObject>> | null>
+  children:
+    | Array<React.ReactElement<StepProps<SharedObject>> | null>
+    | React.ReactElement<StepWizardProps<SharedObject>>
   isNavMode?: boolean
   className?: string
   stepClassName?: string
@@ -24,7 +28,7 @@ export interface StepWizardProps<SharedObject> {
 }
 
 export interface StepProps<SharedObject> {
-  name?: string
+  name?: string | JSX.Element
   // These props will be passed by wizard
   prevStepData?: SharedObject
   currentStep?: () => number
@@ -39,7 +43,12 @@ export interface StepProps<SharedObject> {
 interface StepState<SharedObject> {
   activeStep: number
   prevStep: number
+  nestedStepWizard?: Array<{
+    wizard?: React.ReactElement<StepWizardProps<SharedObject> | null>
+    stepIndex: number
+  }>
   prevStepData?: SharedObject
+  children?: Array<React.ReactElement<StepProps<SharedObject>>>
   stepNames?: string[]
   totalSteps: number
 }
@@ -59,7 +68,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     title = ''
   } = props
   const [state, setState] = React.useState<StepState<SharedObject>>({
-    activeStep: initialStep < 1 || initialStep > children.length ? 1 : initialStep,
+    activeStep: Array.isArray(children) && (initialStep < 1 || initialStep > children.length) ? 1 : initialStep,
     totalSteps: 0,
     prevStep: -1
   })
@@ -68,7 +77,21 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       if (state.activeStep === stepNumber) {
         return
       }
-      if (props.onCompleteWizard && state.totalSteps > 0 && stepNumber > 1 && stepNumber === state.totalSteps + 1) {
+      const stepData = state.nestedStepWizard?.[state.prevStep]
+      const nestedWizard = stepData?.wizard
+      if (
+        !isNil(nestedWizard) &&
+        nestedWizard &&
+        nestedWizard.props?.onCompleteWizard &&
+        stepData?.stepIndex === React.Children.toArray(nestedWizard.props.children as any).length
+      ) {
+        nestedWizard.props.onCompleteWizard(prevStepData)
+      } else if (
+        props.onCompleteWizard &&
+        state.totalSteps > 0 &&
+        stepNumber > 1 &&
+        stepNumber === state.totalSteps + 1
+      ) {
         props.onCompleteWizard(prevStepData)
         return
       } else if (stepNumber > state.totalSteps || stepNumber < 1) {
@@ -77,11 +100,21 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       }
       setState(prevState => ({ ...prevState, prevStep: prevState.activeStep, activeStep: stepNumber, prevStepData }))
     },
-    [state.activeStep, state.totalSteps]
+    [state.activeStep, state.totalSteps, state.prevStep, state.nestedStepWizard]
   )
 
   React.useEffect(() => {
-    if (props.onStepChange && state.prevStep !== -1) {
+    const stepData = state.nestedStepWizard?.[state.prevStep - 1]
+    const nestedWizard = stepData?.wizard
+    if (!isNil(nestedWizard) && nestedWizard && nestedWizard.props?.onStepChange) {
+      const stepIndex = stepData?.stepIndex ?? 1
+      const stepDif = state.activeStep - state.prevStep
+      nestedWizard.props.onStepChange({
+        prevStep: stepIndex,
+        nextStep: stepIndex + stepDif,
+        prevStepData: state.prevStepData
+      })
+    } else if (props.onStepChange && state.prevStep !== -1) {
       props.onStepChange({ prevStep: state.prevStep, nextStep: state.activeStep, prevStepData: state.prevStepData })
     }
   }, [state.prevStep, state.activeStep, state.prevStepData])
@@ -118,12 +151,39 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   )
 
   React.useLayoutEffect(() => {
-    const steps = React.Children.toArray(props.children)
-    const stepNames: string[] = []
-    steps.forEach((child, i: number) => {
-      stepNames.push((child && child.props && (child as React.ReactElement).props.name) || `Step ${i + 1}`)
-    })
-    setState(prevState => ({ ...prevState, stepNames, totalSteps: stepNames.length }))
+    if (Array.isArray(props.children)) {
+      const propsChild = React.Children.toArray(props.children)
+      const steps: Array<React.ReactElement<StepProps<SharedObject>>> = []
+      const stepNames: string[] = []
+      let stepIndex = 0
+      const nestedStepWizard: StepState<SharedObject>['nestedStepWizard'] = []
+      propsChild.forEach((child, i: number) => {
+        if (child?.type === StepWizard) {
+          const nestedStepWizardChild = child as React.ReactElement<StepWizardProps<SharedObject>>
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const nestedChild = React.Children.toArray(nestedStepWizardChild.props.children as any)
+          nestedChild.forEach((nested, j: number) => {
+            steps.push(nested as React.ReactElement<StepProps<SharedObject>>)
+            nestedStepWizard.push({ wizard: nestedStepWizardChild, stepIndex: j + 1 })
+            stepNames.push(
+              (nested && nested.props && (nested as React.ReactElement).props.name) || `Step ${i + 1}-${j + 1}`
+            )
+          })
+        } else {
+          stepIndex++
+          nestedStepWizard.push({ stepIndex })
+          steps.push(child as React.ReactElement<StepProps<SharedObject>>)
+          stepNames.push((child && child.props && (child as React.ReactElement).props.name) || `Step ${i + 1}`)
+        }
+      })
+      setState(prevState => ({
+        ...prevState,
+        stepNames,
+        totalSteps: stepNames.length,
+        children: steps,
+        nestedStepWizard
+      }))
+    }
   }, [children])
 
   const renderStep = () => (
@@ -132,6 +192,11 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         state.stepNames.map((stepName, index) => {
           const activeStep = index + 1 === state.activeStep
           const completedSteps = state.activeStep > index + 1
+          const isNestedStep = isNil(state.nestedStepWizard?.[index]?.wizard) ? false : true
+          const stepIndex = isNestedStep
+            ? romanize(state.nestedStepWizard?.[index]?.stepIndex || 0, true)
+            : state.nestedStepWizard?.[index]?.stepIndex
+          const isNestedFirstStep = isNestedStep ? state.nestedStepWizard?.[index]?.stepIndex === 1 : false
           return (
             <div
               key={index}
@@ -140,14 +205,22 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
                 css.navStep,
                 navClassName,
                 { [css.activeStep]: activeStep },
-                { [css.completedStep]: completedSteps }
+                { [css.completedStep]: completedSteps },
+                { [css.nestedStep]: isNestedStep }
               )}>
+              {isNestedFirstStep && state.nestedStepWizard?.[index]?.wizard?.props?.title && (
+                <>
+                  <div style={{ gridColumn: '1/ span 2', color: 'var(--white)' }}>
+                    {state.nestedStepWizard?.[index]?.wizard?.props?.title}
+                  </div>
+                </>
+              )}
               {completedSteps ? (
                 <span className={css.completedIcon}>
                   <Icon name="small-tick" size={20} color="grey200" />
                 </span>
               ) : (
-                <span className={css.number}>{index + 1}</span>
+                <>{typeof stepName === 'string' && <span className={css.number}>{stepIndex}</span>}</>
               )}
               <Text className={css.stepName} lineClamp={2} width={240}>
                 {stepName}
@@ -158,7 +231,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     </React.Fragment>
   )
 
-  const activeChild = React.Children.toArray(props.children)[state.activeStep - 1] || <div />
+  const activeChild = state.children?.[state.activeStep - 1] || <div />
 
   const childProps: StepProps<SharedObject> = {
     currentStep,

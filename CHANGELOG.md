@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.52](https://github.com/wings-software/uicore/compare/v0.1.51...v0.1.52) (2021-02-15)
+
+
+### Others
+
+* remove old LogViewer Component ([#61](https://github.com/wings-software/uicore/issues/61)) ([4e8dd0a](https://github.com/wings-software/uicore/commit/4e8dd0a1b32974f7a8c841fa4e2df9d961b9668b))
+
+### [0.1.51](https://github.com/wings-software/uicore/compare/v0.1.50...v0.1.51) (2021-02-15)
+
+
+### Others
+
+* Adding more props to Flex ([#60](https://github.com/wings-software/uicore/issues/60)) ([c78a31e](https://github.com/wings-software/uicore/commit/c78a31eff1f1a2774ff2075656ce8f3e60f0c69d))
+
+### [0.1.50](https://github.com/wings-software/uicore/compare/v0.1.48...v0.1.50) (2021-02-15)
+
+
+### Features
+
+* [CDNG-4261]: Addd value prop to clear selection ([#59](https://github.com/wings-software/uicore/issues/59)) ([2cda82e](https://github.com/wings-software/uicore/commit/2cda82ef1b071d03070561bd2b10f287867ea851))
+
+### [0.1.48](https://github.com/wings-software/uicore/compare/v0.1.47...v0.1.48) (2021-02-15)
+
+
+### Features
+
+* Modified Step Wizard to have Nested Wizard ([#58](https://github.com/wings-software/uicore/issues/58)) ([cf03cd1](https://github.com/wings-software/uicore/commit/cf03cd1043c2270fa91eac53db614d1204162456))
+
 ### [0.1.47](https://github.com/wings-software/uicore/compare/v0.1.46...v0.1.47) (2021-02-11)
 
 
