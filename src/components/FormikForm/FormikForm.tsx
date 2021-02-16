@@ -564,12 +564,13 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
 interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   placeholder?: string
+  autoFocus?: boolean
   textArea?: Omit<ITextAreaProps, 'name' | 'value' | 'onChange'>
   onChange?: ITextAreaProps['onChange']
 }
 
 const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
-  const { formik, name, ...restProps } = props
+  const { formik, name, autoFocus, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -586,6 +587,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <BpTextArea
         fill={true}
+        autoFocus={autoFocus}
         autoComplete="off"
         {...textArea}
         name={name}
