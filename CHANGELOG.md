@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.53](https://github.com/wings-software/uicore/compare/v0.1.52...v0.1.53) (2021-02-16)
+
+
+### Features
+
+* [CDNG-4491]: autoFocus on textarea ([#57](https://github.com/wings-software/uicore/issues/57)) ([b034c0e](https://github.com/wings-software/uicore/commit/b034c0e3031bbe8dda106b53bf28f8bed33f1adf))
+
 ### [0.1.52](https://github.com/wings-software/uicore/compare/v0.1.51...v0.1.52) (2021-02-15)
 
 
