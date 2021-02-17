@@ -443,6 +443,7 @@ interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   inputGroup?: Omit<IInputGroupProps, 'name' | 'value'>
   selectProps?: Omit<UiKitSelectProps, 'items' | 'onChange' | 'value'>
   onChange?: UiKitSelectProps['onChange']
+  value?: UiKitSelectProps['value']
 }
 
 const Select = (props: SelectProps & FormikContextProps<any>) => {
@@ -458,6 +459,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
     inputGroup,
     selectProps,
     onChange,
+    value,
     ...rest
   } = restProps
 
@@ -476,7 +478,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
         {...selectProps}
         items={items}
         disabled={disabled}
-        value={items.filter(item => item.value === get(formik?.values, name))[0]}
+        value={value ?? items.filter(item => item.value === get(formik?.values, name))[0]}
         onChange={(item: SelectOption) => {
           formik?.setFieldValue(name, item.value)
           onChange?.(item)
@@ -564,12 +566,13 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
 interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   placeholder?: string
+  autoFocus?: boolean
   textArea?: Omit<ITextAreaProps, 'name' | 'value' | 'onChange'>
   onChange?: ITextAreaProps['onChange']
 }
 
 const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
-  const { formik, name, ...restProps } = props
+  const { formik, name, autoFocus, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -586,6 +589,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} inline={inline} {...rest}>
       <BpTextArea
         fill={true}
+        autoFocus={autoFocus}
         autoComplete="off"
         {...textArea}
         name={name}

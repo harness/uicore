@@ -97,7 +97,6 @@ export { Table, TableProps } from './components/Table/Table'
 export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikForm'
 export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
-export { LogViewer, LogViewerProps } from './components/LogViewer/LogViewer'
 export { ColorPicker } from './components/ColorPicker/ColorPicker'
 export { ExpressionInput, ExpressionInputProps } from './components/ExpressionInput/ExpressionInput'
 export {
