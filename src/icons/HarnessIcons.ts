@@ -285,6 +285,7 @@ import RestoreCacheStep from './restore-cache-step.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
 import RunStep from './run-step.svg'
+import RunTestsStep from './run-tests-step.svg'
 import RuntimeInput from './runtime-input.svg'
 import SaveCacheGcs from './save-cache-gcs.svg'
 import SaveCacheS from './save-cache-s3.svg'
@@ -677,6 +678,7 @@ type HarnessIconName =
   | 'rolling'
   | 'run-pipeline'
   | 'run-step'
+  | 'run-tests-step'
   | 'runtime-input'
   | 'save-cache-gcs'
   | 'save-cache-s3'
@@ -1069,6 +1071,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   rolling: Rolling,
   'run-pipeline': RunPipeline,
   'run-step': RunStep,
+  'run-tests-step': RunTestsStep,
   'runtime-input': RuntimeInput,
   'save-cache-gcs': SaveCacheGcs,
   'save-cache-s3': SaveCacheS,
