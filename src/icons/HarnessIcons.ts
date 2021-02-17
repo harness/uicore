@@ -15,7 +15,6 @@ import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
-import CanaryDeployment from './canary-deployment.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
@@ -125,6 +124,7 @@ import Key from './key.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
+import Library from './library.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -407,7 +407,6 @@ type HarnessIconName =
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
-  | 'canary-deployment'
   | 'canary-outline'
   | 'canary'
   | 'canvas-position'
@@ -517,6 +516,7 @@ type HarnessIconName =
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
+  | 'library'
   | 'list-entity-infographic'
   | 'main-abort'
   | 'main-account-notifications'
@@ -799,7 +799,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
-  'canary-deployment': CanaryDeployment,
   'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
@@ -909,6 +908,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
+  library: Library,
   'list-entity-infographic': ListEntityInfographic,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
