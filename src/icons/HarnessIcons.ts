@@ -124,6 +124,7 @@ import Key from './key.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
+import Library from './library.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -368,13 +369,16 @@ import SupportTour from './support-tour.svg'
 import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
+import SwapServices from './swap-services.svg'
 import TemplateLibrary from './template-library.svg'
+import TerraformApply from './terraform-apply.svg'
 import TestVerification from './test-verification.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Up from './up.svg'
+import Utility from './utility.svg'
 import Waiting from './waiting.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -512,6 +516,7 @@ type HarnessIconName =
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
+  | 'library'
   | 'list-entity-infographic'
   | 'main-abort'
   | 'main-account-notifications'
@@ -756,13 +761,16 @@ type HarnessIconName =
   | 'support-troubleshoot'
   | 'support-verification'
   | 'support-videos'
+  | 'swap-services'
   | 'template-library'
+  | 'terraform-apply'
   | 'test-verification'
   | 'trigger-artifact'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
   | 'up'
+  | 'utility'
   | 'waiting'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -900,6 +908,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
+  library: Library,
   'list-entity-infographic': ListEntityInfographic,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
@@ -1144,13 +1153,16 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-troubleshoot': SupportTroubleshoot,
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
+  'swap-services': SwapServices,
   'template-library': TemplateLibrary,
+  'terraform-apply': TerraformApply,
   'test-verification': TestVerification,
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
   up: Up,
+  utility: Utility,
   waiting: Waiting,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
