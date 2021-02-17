@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.55](https://github.com/wings-software/uicore/compare/v0.1.54...v0.1.55) (2021-02-17)
+
+
+### Features
+
+* add an icon for RunTests step ([#62](https://github.com/wings-software/uicore/issues/62)) ([38cea63](https://github.com/wings-software/uicore/commit/38cea63d4663c134c8954bd052f70194417ee567))
+
 ### [0.1.54](https://github.com/wings-software/uicore/compare/v0.1.53...v0.1.54) (2021-02-17)
 
 
