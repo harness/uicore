@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.56](https://github.com/wings-software/uicore/compare/v0.1.55...v0.1.56) (2021-02-18)
+
+
+### Features
+
+* [CVNG-1994]: view json logo ([#63](https://github.com/wings-software/uicore/issues/63)) ([ed86047](https://github.com/wings-software/uicore/commit/ed86047d0eb23fb171f15a0e25220b9ac6b26b23))
+
 ### [0.1.55](https://github.com/wings-software/uicore/compare/v0.1.54...v0.1.55) (2021-02-17)
 
 
