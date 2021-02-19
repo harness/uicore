@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.57](https://github.com/wings-software/uicore/compare/v0.1.56...v0.1.57) (2021-02-19)
+
+
+### Features
+
+* [CDNG-4597]: Failure Strategy new icon ([#64](https://github.com/wings-software/uicore/issues/64)) ([d61a36f](https://github.com/wings-software/uicore/commit/d61a36f07ae77fd5d5fdf9391bbe92cf13d1f249))
+
 ### [0.1.56](https://github.com/wings-software/uicore/compare/v0.1.55...v0.1.56) (2021-02-18)
 
 
