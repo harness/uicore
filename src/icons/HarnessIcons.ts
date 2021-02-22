@@ -98,6 +98,7 @@ import ExecutionSuccess from './execution-success.svg'
 import ExecutionWarning from './execution-warning.svg'
 import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
+import FailureStrategy from './failure-strategy.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
@@ -492,6 +493,7 @@ type HarnessIconName =
   | 'execution-warning'
   | 'expired'
   | 'expression-input'
+  | 'failure-strategy'
   | 'feedback-given'
   | 'fixed-input'
   | 'functions'
@@ -886,6 +888,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'execution-warning': ExecutionWarning,
   expired: Expired,
   'expression-input': ExpressionInput,
+  'failure-strategy': FailureStrategy,
   'feedback-given': FeedbackGiven,
   'fixed-input': FixedInput,
   functions: Functions,
