@@ -15,6 +15,7 @@ export interface StepWizardProps<SharedObject> {
   icon?: IconName
   iconProps?: Omit<IconProps, 'name'>
   title?: string | JSX.Element
+  subtitle?: string | JSX.Element
   children:
     | Array<React.ReactElement<StepProps<SharedObject>> | null>
     | React.ReactElement<StepWizardProps<SharedObject>>
@@ -66,7 +67,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     navClassName = '',
     icon = '',
     iconProps,
-    title = ''
+    title = '',
+    subtitle = ''
   } = props
   const [state, setState] = React.useState<StepState<SharedObject>>({
     activeStep: Array.isArray(children) && (initialStep < 1 || initialStep > children.length) ? 1 : initialStep,
@@ -161,12 +163,12 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       propsChild.forEach((child, i: number) => {
         if (child?.type === StepWizard || child?.props?.children?.type === StepWizard) {
           let nestedStepWizardChild = child as React.ReactElement<StepWizardProps<SharedObject>>
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
           if (child?.props?.children?.type === StepWizard) {
-            nestedStepWizardChild = child?.props?.children as React.ReactElement<StepWizardProps<SharedObject>>
+            nestedStepWizardChild = child?.props?.children
           }
 
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const nestedChild = React.Children.toArray(nestedStepWizardChild.props.children as any)
           nestedChild.forEach((nested, j: number) => {
             steps.push(nested as React.ReactElement<StepProps<SharedObject>>)
@@ -231,6 +233,11 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
               <Text className={css.stepName} lineClamp={2} width={240}>
                 {stepName}
               </Text>
+              {!isNestedFirstStep && state.nestedStepWizard?.[index]?.stepIndex === 1 ? (
+                <Text className={css.stepName} lineClamp={2} width={240}>
+                  {subtitle}
+                </Text>
+              ) : null}
             </div>
           )
         })}

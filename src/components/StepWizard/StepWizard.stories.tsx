@@ -23,6 +23,45 @@ export const FullExample: Story<void> = _args => <ExampleWizard />
 
 export const ModalStepExample: Story<void> = _args => <ModalExample />
 
+export const Nested: Story<void> = _args => (
+  <StepWizard
+    title="Kubernetes Cluster"
+    subtitle={
+      <Text
+        style={{ marginLeft: 16 }}
+        icon="service-dockerhub"
+        iconProps={{ color: Color.WHITE, size: 26 }}
+        color={Color.WHITE}>
+        Docker subtitle
+      </Text>
+    }>
+    <ExampleStep name="Artifact Repository Type" />
+
+    <ExampleStep name={`New Project`} />
+    <StepWizard
+      title="Create new Connector"
+      onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
+      onStepChange={arg => console.log('Step Change', arg)}>
+      <ExampleStep name="Overview" />
+      <ExampleStep name="Details" />
+      <ExampleStep name="Test Connection" />
+    </StepWizard>
+    <ExampleStep name="Collaborator" />
+    <StepWizard
+      onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
+      onStepChange={arg => console.log('Step Change', arg)}>
+      <ExampleStep
+        name={
+          <Text icon="service-dockerhub" iconProps={{ color: Color.WHITE, size: 26 }} color={Color.WHITE}>
+            Docker Registry
+          </Text>
+        }
+      />
+    </StepWizard>
+    <ExampleStep name="Final Step" />
+  </StepWizard>
+)
+
 export const NestedChildSteps: Story<void> = _args => (
   <StepWizard title="Kubernetes Cluster">
     <ExampleStep name="Artifact Repository Type" />
@@ -30,13 +69,7 @@ export const NestedChildSteps: Story<void> = _args => (
       <StepWizard
         onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
         onStepChange={arg => console.log('Step Change', arg)}>
-        <ExampleStep
-          name={
-            <Text icon="service-dockerhub" iconProps={{ color: Color.WHITE, size: 26 }} color={Color.WHITE}>
-              Docker Registry
-            </Text>
-          }
-        />
+        <ExampleStep name={'Docker Registry'} />
       </StepWizard>
     </div>
     <ExampleStep name={`New Project`} />

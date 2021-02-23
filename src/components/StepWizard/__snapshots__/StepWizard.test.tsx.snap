@@ -43,6 +43,12 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
           >
             Create a New Project
           </p>
+          <p
+            class="font lineclamp main stepName width width-240"
+            style="--text-line-clamp: 2; width: 240px;"
+          >
+            
+          </p>
         </div>
         <div
           class="navStep"
