@@ -53,7 +53,7 @@ export interface LinkProps extends ButtonProps {
   withoutHref?: boolean
 }
 
-export function Button(props: ButtonProps) {
+export function Button(props: ButtonProps): React.ReactElement {
   const { icon, rightIcon, round } = props
   const [loading, setLoading] = useState(props.loading === true)
   const isMounted = useIsMounted()
@@ -121,7 +121,10 @@ export function Button(props: ButtonProps) {
   )
 }
 
-export function Link(props: LinkProps) {
+/**
+ * @deprecated use Link from react-router-dom
+ */
+export function Link(props: LinkProps): React.ReactElement {
   const extra: LinkProps = {}
 
   // Make sure all _blank target has proper rel

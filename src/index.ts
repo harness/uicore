@@ -106,14 +106,19 @@ export {
   MultiTypeInputProps,
   ExpressionAndRuntimeTypeProps,
   ExpressionAndRuntimeType,
-  MultiTypeInputValue,
   MultiSelectTypeInput,
-  MultiTypeInputType,
-  RUNTIME_INPUT_VALUE,
-  EXPRESSION_INPUT_PLACEHOLDER,
   getMultiTypeFromValue,
   FixedTypeComponentProps
 } from './components/MultiTypeInput/MultiTypeInput'
+export {
+  MultiTypeInputValue,
+  MultiTypeInputType,
+  RUNTIME_INPUT_VALUE,
+  EXPRESSION_INPUT_PLACEHOLDER,
+  MultiTypeIcon,
+  MultiTypeIconSize
+} from './components/MultiTypeInput/MultiTypeInputUtils'
+export { MultiTypeInputMenu, MultiTypeInputMenuProps } from './components/MultiTypeInput/MultiTypeInputMenu'
 export {
   CategorizedSelectProps,
   CategorizedSelect,

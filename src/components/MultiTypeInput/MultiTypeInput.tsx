@@ -4,36 +4,23 @@ import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
-import { Icon, IconName } from '../../icons/Icon'
-import { Color } from '../../core/Color'
-import { Position, Menu, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
+import { Icon } from '../../icons/Icon'
+import { Position, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '../../core/Types'
 import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
 import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
-
-export enum MultiTypeInputType {
-  FIXED = 'FIXED',
-  RUNTIME = 'RUNTIME',
-  EXPRESSION = 'EXPRESSION'
-}
-
-export enum MultiTypeInputValue {
-  STRING = 'STRING',
-  SELECT_OPTION = 'SELECT_OPTION',
-  MULTI_SELECT_OPTION = 'MULTI_SELECT_OPTION'
-}
-
-const TypeIcon: Record<string, IconName> = {
-  FIXED: 'fixed-input',
-  RUNTIME: 'runtime-input',
-  EXPRESSION: 'expression-input'
-}
-
-export const RUNTIME_INPUT_VALUE = '<+input>'
-export const EXPRESSION_INPUT_PLACEHOLDER = '<+expression>'
+import {
+  MultiTypeInputType,
+  MultiTypeInputValue,
+  MultiTypeIcon,
+  MultiTypeIconSize,
+  RUNTIME_INPUT_VALUE,
+  EXPRESSION_INPUT_PLACEHOLDER
+} from './MultiTypeInputUtils'
+import { MultiTypeInputMenu } from './MultiTypeInputMenu'
 
 type AcceptableValue = boolean | string | SelectOption | MultiSelectOption[]
 
@@ -88,18 +75,13 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     fixedTypeComponent,
     fixedTypeComponentProps,
     btnClassName = '',
-    allowableTypes,
+    allowableTypes = [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION],
     name,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
-  const allowedTypes = useMemo(() => {
-    return allowableTypes?.length
-      ? allowableTypes
-      : [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION]
-  }, [allowableTypes])
   const switchType = (newType: MultiTypeInputType) => {
     if (type !== newType) {
       setType(newType)
@@ -116,31 +98,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       onChange?.(val, multiTypeInputValue, MultiTypeInputType.FIXED)
     },
     [onChange]
-  )
-  const menu = (
-    <Menu className={css.menu}>
-      {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.FIXED) && (
-        <Menu.Item
-          labelElement={<Icon name={TypeIcon.FIXED} color={Color.BLUE_500} />}
-          text={i18n.fixedValue}
-          onClick={() => switchType(MultiTypeInputType.FIXED)}
-        />
-      )}
-      {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.RUNTIME) && (
-        <Menu.Item
-          labelElement={<Icon name={TypeIcon.RUNTIME} color={Color.PURPLE_500} />}
-          text={i18n.runtimeInput}
-          onClick={() => switchType(MultiTypeInputType.RUNTIME)}
-        />
-      )}
-      {allowedTypes.find(allowedType => allowedType === MultiTypeInputType.EXPRESSION) && (
-        <Menu.Item
-          labelElement={<Icon name={TypeIcon.EXPRESSION} color={Color.YELLOW_500} />}
-          text={i18n.expression}
-          onClick={() => switchType(MultiTypeInputType.EXPRESSION)}
-        />
-      )}
-    </Menu>
   )
 
   return (
@@ -183,14 +140,16 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       <Button
         noStyling
         className={cx(css.btn, css[type], btnClassName)}
-        tooltip={menu}
+        tooltip={<MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />}
         onClick={e => e.preventDefault()}
         tooltipProps={{
           minimal: true,
           position: Position.BOTTOM_RIGHT,
-          interactionKind: PopoverInteractionKind.CLICK
+          interactionKind: PopoverInteractionKind.CLICK,
+          popoverClassName: css.popover,
+          className: css.wrapper
         }}>
-        <Icon name={TypeIcon[type]} size={12} color={Color.WHITE} />
+        <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
       </Button>
     </Layout.Horizontal>
   )
