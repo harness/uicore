@@ -30,7 +30,7 @@ export interface StepWizardProps<SharedObject> {
 
 export interface StepProps<SharedObject> {
   name?: string | JSX.Element
-  children?: React.ReactElement<StepWizardProps<SharedObject>>
+  children?: React.ReactElement<StepWizardProps<SharedObject>> | React.ReactNode
   // These props will be passed by wizard
   prevStepData?: SharedObject
   currentStep?: () => number
