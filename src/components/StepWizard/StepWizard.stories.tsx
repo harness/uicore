@@ -23,20 +23,22 @@ export const FullExample: Story<void> = _args => <ExampleWizard />
 
 export const ModalStepExample: Story<void> = _args => <ModalExample />
 
-export const Nested: Story<void> = _args => (
+export const NestedChildSteps: Story<void> = _args => (
   <StepWizard title="Kubernetes Cluster">
     <ExampleStep name="Artifact Repository Type" />
-    <StepWizard
-      onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
-      onStepChange={arg => console.log('Step Change', arg)}>
-      <ExampleStep
-        name={
-          <Text icon="service-dockerhub" iconProps={{ color: Color.WHITE, size: 26 }} color={Color.WHITE}>
-            Docker Registry
-          </Text>
-        }
-      />
-    </StepWizard>
+    <div>
+      <StepWizard
+        onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
+        onStepChange={arg => console.log('Step Change', arg)}>
+        <ExampleStep
+          name={
+            <Text icon="service-dockerhub" iconProps={{ color: Color.WHITE, size: 26 }} color={Color.WHITE}>
+              Docker Registry
+            </Text>
+          }
+        />
+      </StepWizard>
+    </div>
     <ExampleStep name={`New Project`} />
     <StepWizard
       title="Create new Connector"
