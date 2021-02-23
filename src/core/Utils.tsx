@@ -1,5 +1,6 @@
 import { Classes } from '@blueprintjs/core'
 import copy from 'clipboard-copy'
+import cx from 'classnames'
 import React, { KeyboardEvent, MouseEvent } from 'react'
 import { Popover } from '../components/Popover/Popover'
 import { Text } from '../components/Text/Text'
@@ -12,9 +13,9 @@ function stopEvent(event: MouseEvent | KeyboardEvent): void {
   event.preventDefault()
 }
 
-const randomId = () => Math.random().toString(36).substring(2)
+const randomId = (): string => Math.random().toString(36).substring(2)
 
-function getIntentColors(intent: Intent) {
+function getIntentColors(intent: Intent): { color: string; backgroundColor: string } {
   let color: Color = Color.WHITE
   let backgroundColor
 
@@ -41,7 +42,7 @@ function getIntentColors(intent: Intent) {
 }
 
 // Convert UICore named color into real CSS color
-const getRealCSSColor = (color: Color) =>
+const getRealCSSColor = (color: Color): string =>
   `var(--${color // eslint-disable-line
     .match(/[A-Z][a-z]+|[0-9]+|[a-z]+/g)!
     .join('-')
@@ -51,7 +52,7 @@ interface WrapOptionalTooltipProps extends OptionalTooltip {
   children: JSX.Element
 }
 
-export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOptionalTooltipProps) {
+export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOptionalTooltipProps): React.ReactElement {
   const isDark = tooltipProps?.isDark
   const content =
     typeof tooltip === 'string' ? (
@@ -72,18 +73,13 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
       tooltip
     )
 
-  // NextJS does not work well with usePortal={true}
-  const isNext =
-    typeof window !== 'undefined' && typeof window.next !== 'undefined' && typeof window.__NEXT_DATA__ !== 'undefined'
-
   return tooltip ? (
     <Popover
-      usePortal={!isNext}
       boundary="viewport"
       position="top"
       interactionKind="hover"
       {...tooltipProps}
-      popoverClassName={isDark ? Classes.DARK : undefined}
+      popoverClassName={cx(isDark ? Classes.DARK : undefined, tooltipProps?.popoverClassName)}
       content={content || ''}>
       {children}
     </Popover>
