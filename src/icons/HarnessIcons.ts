@@ -60,6 +60,7 @@ import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
 import ConfigChange from './config-change.svg'
+import ConfigFile from './config-file.svg'
 import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
 import CsHover from './cs-hover.svg'
@@ -101,6 +102,7 @@ import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
 import FeedbackGiven from './feedback-given.svg'
+import File from './file.svg'
 import FixedInput from './fixed-input.svg'
 import Functions from './functions.svg'
 import Gcp from './gcp.svg'
@@ -457,6 +459,7 @@ type HarnessIconName =
   | 'conditional-skip-new'
   | 'conditional-skip'
   | 'config-change'
+  | 'config-file'
   | 'copy-alt'
   | 'copy'
   | 'cs-hover'
@@ -498,6 +501,7 @@ type HarnessIconName =
   | 'expression-input'
   | 'failure-strategy'
   | 'feedback-given'
+  | 'file'
   | 'fixed-input'
   | 'functions'
   | 'gcp'
@@ -854,6 +858,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
   'config-change': ConfigChange,
+  'config-file': ConfigFile,
   'copy-alt': CopyAlt,
   copy: Copy,
   'cs-hover': CsHover,
@@ -895,6 +900,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'expression-input': ExpressionInput,
   'failure-strategy': FailureStrategy,
   'feedback-given': FeedbackGiven,
+  file: File,
   'fixed-input': FixedInput,
   functions: Functions,
   gcp: Gcp,
