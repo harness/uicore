@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.64](https://github.com/wings-software/uicore/compare/v0.1.63...v0.1.64) (2021-02-23)
+
+
+### Features
+
+* new design for multitype inputs ([#71](https://github.com/wings-software/uicore/issues/71)) ([fec0d9d](https://github.com/wings-software/uicore/commit/fec0d9d328813fa30c630165781ddbd4a913630a))
+
 ### [0.1.63](https://github.com/wings-software/uicore/compare/v0.1.62...v0.1.63) (2021-02-23)
 
 
