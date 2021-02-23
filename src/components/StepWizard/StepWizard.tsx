@@ -161,11 +161,14 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       let stepIndex = 0
       const nestedStepWizard: StepState<SharedObject>['nestedStepWizard'] = []
       propsChild.forEach((child, i: number) => {
-        if (child?.type === StepWizard || child?.props?.children?.type === StepWizard) {
+        if (
+          child?.type === StepWizard ||
+          (child?.props?.children as React.ReactElement<StepWizardProps<SharedObject>>)?.type === StepWizard
+        ) {
           let nestedStepWizardChild = child as React.ReactElement<StepWizardProps<SharedObject>>
 
-          if (child?.props?.children?.type === StepWizard) {
-            nestedStepWizardChild = child?.props?.children
+          if ((child?.props?.children as React.ReactElement<StepWizardProps<SharedObject>>)?.type === StepWizard) {
+            nestedStepWizardChild = child?.props?.children as React.ReactElement<StepWizardProps<SharedObject>>
           }
 
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
