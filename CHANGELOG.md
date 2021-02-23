@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.60](https://github.com/wings-software/uicore/compare/v0.1.59...v0.1.60) (2021-02-23)
+
+
+### Features
+
+* step wizard condition added for nested child ([#67](https://github.com/wings-software/uicore/issues/67)) ([174a523](https://github.com/wings-software/uicore/commit/174a523b27bfed801a1231a6bbe1e789391560ab))
+
 ### [0.1.59](https://github.com/wings-software/uicore/compare/v0.1.58...v0.1.59) (2021-02-23)
 
 
