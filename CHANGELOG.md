@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.63](https://github.com/wings-software/uicore/compare/v0.1.62...v0.1.63) (2021-02-23)
+
+
+### Features
+
+* added icons for manifest list ([#70](https://github.com/wings-software/uicore/issues/70)) ([6cbbf39](https://github.com/wings-software/uicore/commit/6cbbf397ec3d10785e762653a4176d12f03b8642))
+
 ### [0.1.62](https://github.com/wings-software/uicore/compare/v0.1.61...v0.1.62) (2021-02-23)
 
 
