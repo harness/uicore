@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.61](https://github.com/wings-software/uicore/compare/v0.1.60...v0.1.61) (2021-02-23)
+
+
+### Features
+
+* add new copy icon ([#68](https://github.com/wings-software/uicore/issues/68)) ([1a8c660](https://github.com/wings-software/uicore/commit/1a8c6606ab710469315bb83f329ae4177899b3c3))
+
 ### [0.1.60](https://github.com/wings-software/uicore/compare/v0.1.59...v0.1.60) (2021-02-23)
 
 
