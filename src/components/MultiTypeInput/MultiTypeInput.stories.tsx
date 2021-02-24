@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
+import data from '../../_stories/components/pokedex.json'
 
 import {
   MultiTextInput,
@@ -35,6 +36,11 @@ TextInput.args = {
 }
 
 SelectInput.args = {
+  selectProps: {
+    items: data.slice(0, 10).map(row => ({ label: row.name, value: row.id })),
+    addClearBtn: true
+  },
+  value: { label: data[0].name, value: data[0].id },
   expressions: [
     'app.name',
     'app.description',
@@ -46,6 +52,10 @@ SelectInput.args = {
 }
 
 MultiSelectInput.args = {
+  multiSelectProps: {
+    items: data.slice(0, 10).map(row => ({ label: row.name, value: row.id }))
+  },
+  value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
   expressions: [
     'app.name',
     'app.description',
