@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.66](https://github.com/wings-software/uicore/compare/v0.1.65...v0.1.66) (2021-02-24)
+
+
+### Features
+
+* added bin icon ([#73](https://github.com/wings-software/uicore/issues/73)) ([9ac48c9](https://github.com/wings-software/uicore/commit/9ac48c9c12622dac1f10a415bab972f358518e56))
+
 ### [0.1.65](https://github.com/wings-software/uicore/compare/v0.1.64...v0.1.65) (2021-02-24)
 
 
