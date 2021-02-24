@@ -3,7 +3,7 @@ import { render, fireEvent, act, wait } from '@testing-library/react'
 
 import { Select, SelectOption } from './Select'
 
-import data from '../../../docs/shared/pokedex.json'
+import data from '../../_stories/components/pokedex.json'
 
 const items: SelectOption[] = data
   .map(row => ({

@@ -130,3 +130,9 @@
 .popover {
   box-shadow: none;
 }
+
+.select {
+  :global(.bp3-input-action) {
+    right: 32px !important;
+  }
+}

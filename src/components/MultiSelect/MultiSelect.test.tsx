@@ -3,7 +3,7 @@ import { render, fireEvent, act, wait } from '@testing-library/react'
 
 import { MultiSelect, MultiSelectOption } from './MultiSelect'
 
-import data from '../../../docs/shared/pokedex.json'
+import data from '../../_stories/components/pokedex.json'
 
 const items: MultiSelectOption[] = data
   .map(row => ({
