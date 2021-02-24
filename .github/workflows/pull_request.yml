@@ -80,7 +80,7 @@ jobs:
         run: yarn
 
       - name: Lint Check
-        run: npx stylelint src
+        run: npx stylelint "src/**/*.css"
   jest:
     name: Jest
     runs-on: ubuntu-latest
