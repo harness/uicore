@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.65](https://github.com/wings-software/uicore/compare/v0.1.64...v0.1.65) (2021-02-24)
+
+
+### Bug Fixes
+
+* CSS for multi type select component ([#72](https://github.com/wings-software/uicore/issues/72)) ([389e90b](https://github.com/wings-software/uicore/commit/389e90be66ee3cb46c122d050b6d65d991913e5c))
+
 ### [0.1.64](https://github.com/wings-software/uicore/compare/v0.1.63...v0.1.64) (2021-02-23)
 
 
