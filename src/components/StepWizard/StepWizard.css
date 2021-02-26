@@ -9,7 +9,7 @@
       display: grid;
       grid-gap: var(--spacing-xxlarge);
       border-right: 1px solid #979797;
-      grid-template-rows: repeat(auto-fill, var(--spacing-large));
+      grid-template-rows: repeat(auto-fill, var(--spacing-xxlarge));
 
       .navStep {
         display: grid;
