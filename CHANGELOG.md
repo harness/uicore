@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.67](https://github.com/wings-software/uicore/compare/v0.1.66...v0.1.67) (2021-02-26)
+
+
+### Bug Fixes
+
+* spacing increased between steps ([#74](https://github.com/wings-software/uicore/issues/74)) ([baaa101](https://github.com/wings-software/uicore/commit/baaa101b4be857c50abfffaba694615136eb1df5))
+
 ### [0.1.66](https://github.com/wings-software/uicore/compare/v0.1.65...v0.1.66) (2021-02-24)
 
 
