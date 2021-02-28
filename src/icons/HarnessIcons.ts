@@ -99,6 +99,7 @@ import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionSuccess from './execution-success.svg'
 import ExecutionWarning from './execution-warning.svg'
+import Execution from './execution.svg'
 import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
@@ -287,6 +288,7 @@ import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
+import RollbackExecution from './rollback-execution.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
 import RunStep from './run-step.svg'
@@ -499,6 +501,7 @@ type HarnessIconName =
   | 'execution-rollback'
   | 'execution-success'
   | 'execution-warning'
+  | 'execution'
   | 'expired'
   | 'expression-input'
   | 'failure-strategy'
@@ -687,6 +690,7 @@ type HarnessIconName =
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
   | 'restore-cache-step'
+  | 'rollback-execution'
   | 'rolling'
   | 'run-pipeline'
   | 'run-step'
@@ -899,6 +903,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'execution-rollback': ExecutionRollback,
   'execution-success': ExecutionSuccess,
   'execution-warning': ExecutionWarning,
+  execution: Execution,
   expired: Expired,
   'expression-input': ExpressionInput,
   'failure-strategy': FailureStrategy,
@@ -1087,6 +1092,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS,
   'restore-cache-step': RestoreCacheStep,
+  'rollback-execution': RollbackExecution,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
   'run-step': RunStep,
