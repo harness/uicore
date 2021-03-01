@@ -3,7 +3,7 @@
 exports[`Card icon test should render cards with props selected and interactive 1`] = `
 <div>
   <div
-    class="bp3-card bp3-interactive bp3-elevation-0 card selected"
+    class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
     tabindex="0"
   >
     <div
@@ -60,7 +60,7 @@ exports[`Card icon test should render icon card with no props 1`] = `
 exports[`Card menu test should render cards with props selected and interactive 1`] = `
 <div>
   <div
-    class="bp3-card bp3-interactive bp3-elevation-0 card selected"
+    class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
     tabindex="0"
   >
     <div
@@ -198,7 +198,7 @@ exports[`Card test should render cards with no props 1`] = `
 exports[`Card test should render cards with props selected and interactive 1`] = `
 <div>
   <div
-    class="bp3-card bp3-interactive bp3-elevation-0 card selected"
+    class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
     tabindex="0"
   >
     <p
