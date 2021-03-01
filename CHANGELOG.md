@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.69](https://github.com/wings-software/uicore/compare/v0.1.68...v0.1.69) (2021-03-01)
+
+
+### Bug Fixes
+
+* Card Hover to Match Next Gen ([#77](https://github.com/wings-software/uicore/issues/77)) ([3ab0a8d](https://github.com/wings-software/uicore/commit/3ab0a8da9cdc3ccfff9692f854a1a51bdc916ab7))
+
 ### [0.1.68](https://github.com/wings-software/uicore/compare/v0.1.67...v0.1.68) (2021-03-01)
 
 
