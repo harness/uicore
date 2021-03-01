@@ -51,7 +51,13 @@ export const Card: React.FC<CardProps> = props => {
     <BpCard
       {...bpProps}
       {...tabIndexProps}
-      className={cx(css.card, className, { [css.selected]: selected }, { [css.disabled]: disabled })}
+      className={cx(
+        css.card,
+        className,
+        { [css.selected]: selected },
+        { [css.disabled]: disabled },
+        { [css.interactive]: bpProps.interactive }
+      )}
       style={style}
       onClick={onClick}>
       {selected && cornerSelected && renderCornerTick()}
