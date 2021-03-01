@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.68](https://github.com/wings-software/uicore/compare/v0.1.67...v0.1.68) (2021-03-01)
+
+
+### Features
+
+* Added Rollback and Execution Icons ([#76](https://github.com/wings-software/uicore/issues/76)) ([af4dc54](https://github.com/wings-software/uicore/commit/af4dc541764aa258e688c80325922abc500b6238))
+
 ### [0.1.67](https://github.com/wings-software/uicore/compare/v0.1.66...v0.1.67) (2021-02-26)
 
 
