@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.70](https://github.com/wings-software/uicore/compare/v0.1.69...v0.1.70) (2021-03-02)
+
+
+### Bug Fixes
+
+* types for components and pass onBlur ([#78](https://github.com/wings-software/uicore/issues/78)) ([defe546](https://github.com/wings-software/uicore/commit/defe5465334bc124073504079bf096402b437019))
+
 ### [0.1.69](https://github.com/wings-software/uicore/compare/v0.1.68...v0.1.69) (2021-03-01)
 
 
