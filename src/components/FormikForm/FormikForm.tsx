@@ -63,16 +63,16 @@ const errorCheck = (name: string, formik?: FormikContext<any>) =>
   get(formik?.errors, name) &&
   !isObject(get(formik?.errors, name))
 
-interface FormikExtended<T> extends FormikContext<T> {
+export interface FormikExtended<T> extends FormikContext<T> {
   disabled?: boolean
   inline?: boolean
 }
 
-interface FormikContextProps<T> {
+export interface FormikContextProps<T> {
   formik?: FormikExtended<T>
 }
 
-interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+export interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
   items: T[]
   labelFor: UiKitTagInputProps<T>['labelFor']
@@ -117,7 +117,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
   )
 }
 
-interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
   mentionsInfo?: Partial<MentionsInfo>
   tagsProps?: Partial<ITagInputProps>
@@ -184,7 +184,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
   )
 }
 
-interface MultiInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+export interface MultiInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
   mentionsInfo?: Partial<MentionsInfo>
   tagsProps?: Partial<ITagInputProps>
@@ -230,7 +230,7 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
   )
 }
 
-interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
 }
@@ -255,7 +255,7 @@ const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
   )
 }
 
-interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   fileInput?: Omit<IFileInputProps, 'inputProps' | 'text' | 'buttonText'>
   placeholder?: string
@@ -303,7 +303,7 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
   )
 }
 
-interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   items: IOptionProps[]
   radioGroup?: Omit<IRadioGroupProps, 'name' | 'value' | 'onChange' | 'options'>
@@ -348,7 +348,7 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
   )
 }
 
-interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+export interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
   name: string
   label: string
 }
@@ -384,7 +384,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
   )
 }
 
-interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   items: MultiSelectOption[]
   tagInputProps?: ITagInputProps
@@ -436,7 +436,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
   )
 }
 
-interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   items: SelectOption[]
   placeholder?: string
@@ -488,7 +488,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
   )
 }
 
-interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   inputGroup?: Omit<IInputGroupProps & HTMLInputProps, 'name' | 'value' | 'onChange' | 'placeholder'>
   placeholder?: string
@@ -518,7 +518,10 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
         intent={intent}
         disabled={disabled}
         value={get(formik?.values, name) || ''}
-        onBlur={() => formik?.setFieldTouched(name)}
+        onBlur={e => {
+          formik?.setFieldTouched(name)
+          inputGroup?.onBlur?.(e)
+        }}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
@@ -528,7 +531,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
   )
 }
 
-interface ExpressionInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface ExpressionInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   placeholder?: string
   expressionInputProps?: Omit<ExpressionInputLocalProps, 'name' | 'value' | 'onChange' | 'items'>
@@ -563,7 +566,7 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
     </FormGroup>
   )
 }
-interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   placeholder?: string
   autoFocus?: boolean
@@ -607,7 +610,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
   )
 }
 
-interface FormikFormProps extends Omit<HTMLFormElement, 'className'> {
+export interface FormikFormProps extends Omit<HTMLFormElement, 'className'> {
   className?: string
   disabled?: boolean
   children: React.ReactNode
@@ -639,7 +642,7 @@ const Form = (props: FormikFormProps) => {
   )
 }
 
-interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
+export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
   formLoading?: true
   render?: (props: FormikExtended<Values>) => React.ReactNode
   onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
@@ -700,7 +703,7 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
   )
 }
 
-interface FormColorPickerProps extends ColorPickerProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+export interface FormColorPickerProps extends ColorPickerProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
   name: string
   label: string
 }
@@ -730,7 +733,7 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContextProps<any>) 
   )
 }
 
-interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -778,7 +781,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
   )
 }
 
-interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -824,7 +827,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
   )
 }
 
-interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -869,7 +872,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
   )
 }
 
-interface FormCategorizedSelect extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormCategorizedSelect extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -919,7 +922,7 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
   )
 }
 
-interface FormSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -973,7 +976,7 @@ const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContext
   )
 }
 
-interface FormMultiSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string

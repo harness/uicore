@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { IInputGroupProps, EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
+import { EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
 import { get } from 'lodash-es'
 
-import { FormInput } from '../FormikForm/FormikForm'
+import { FormInput, TextProps } from '../FormikForm/FormikForm'
 import { Text } from '../Text/Text'
 import { Icon } from '../../icons/Icon'
 import { Layout } from '../../layouts/Layout'
@@ -12,7 +12,7 @@ import css from './InputWithIdentifier.css'
 
 export interface InputWithIdentifierProps {
   formik: any
-  inputGroupProps?: IInputGroupProps
+  inputGroupProps?: TextProps
   /**
    * @default name
    */
@@ -61,7 +61,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
-  const identifier = get(formik.values, idName)
+  const identifier = get(formik.values, idName) as string
 
   return (
     <div className={css.txtNameContainer}>
