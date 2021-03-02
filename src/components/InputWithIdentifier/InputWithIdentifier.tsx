@@ -12,7 +12,7 @@ import css from './InputWithIdentifier.css'
 
 export interface InputWithIdentifierProps {
   formik: any
-  inputGroupProps?: TextProps
+  inputGroupProps?: Omit<TextProps, 'name' | 'label' | 'onChange'>
   /**
    * @default name
    */
@@ -101,9 +101,9 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         ) : null}
       </Layout.Horizontal>
       <FormInput.Text
+        {...inputGroupProps}
         label={inputLabel}
         name={inputName}
-        {...inputGroupProps}
         onChange={e => {
           const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
           formik.setFieldValue(inputName, name)
