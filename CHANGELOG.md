@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.72](https://github.com/wings-software/uicore/compare/v0.1.71...v0.1.72) (2021-03-02)
+
+
+### Bug Fixes
+
+* update failure strategy icon ([#80](https://github.com/wings-software/uicore/issues/80)) ([4ac7e96](https://github.com/wings-software/uicore/commit/4ac7e96e8599b8ce96b147e53918bd97e354ad83))
+
 ### [0.1.71](https://github.com/wings-software/uicore/compare/v0.1.70...v0.1.71) (2021-03-02)
 
 
