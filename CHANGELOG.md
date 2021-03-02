@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.71](https://github.com/wings-software/uicore/compare/v0.1.70...v0.1.71) (2021-03-02)
+
+
+### Others
+
+* update types to exclude name in InputWithIndentifier ([#79](https://github.com/wings-software/uicore/issues/79)) ([cc865f0](https://github.com/wings-software/uicore/commit/cc865f0c7dbf6530c93a508f336efd0969c2469c))
+
 ### [0.1.70](https://github.com/wings-software/uicore/compare/v0.1.69...v0.1.70) (2021-03-02)
 
 
