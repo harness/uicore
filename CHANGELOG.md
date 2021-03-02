@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.73](https://github.com/wings-software/uicore/compare/v0.1.72...v0.1.73) (2021-03-02)
+
+
+### Features
+
+* added bitbucket-blue, google, linkedin, and gitlab icons ([#81](https://github.com/wings-software/uicore/issues/81)) ([dd20c90](https://github.com/wings-software/uicore/commit/dd20c90d493df291b51371edac390715d2a6c0a7))
+
 ### [0.1.72](https://github.com/wings-software/uicore/compare/v0.1.71...v0.1.72) (2021-03-02)
 
 
