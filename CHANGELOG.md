@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.74](https://github.com/wings-software/uicore/compare/v0.1.73...v0.1.74) (2021-03-02)
+
+
+### Bug Fixes
+
+* run yarn ui:icons ([#82](https://github.com/wings-software/uicore/issues/82)) ([6b18c74](https://github.com/wings-software/uicore/commit/6b18c748a3782fa7fd3a096c168b58a11f7d3b17))
+
 ### [0.1.73](https://github.com/wings-software/uicore/compare/v0.1.72...v0.1.73) (2021-03-02)
 
 
