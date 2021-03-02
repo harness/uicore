@@ -11,6 +11,7 @@ import AuditLogCreated from './audit-log-created.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
 import BinMain from './bin-main.svg'
+import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
 import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
@@ -113,7 +114,9 @@ import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
+import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
+import Google from './google.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -131,6 +134,7 @@ import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
+import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -413,6 +417,7 @@ type HarnessIconName =
   | 'azure-kubernetes-service'
   | 'banned'
   | 'bin-main'
+  | 'bitbucket-blue'
   | 'bitbucket-new'
   | 'bitbucket'
   | 'blue-black-cluster'
@@ -515,7 +520,9 @@ type HarnessIconName =
   | 'gear'
   | 'git-clone-step'
   | 'github'
+  | 'gitlab'
   | 'google-kubernetes-engine'
+  | 'google'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white'
@@ -533,6 +540,7 @@ type HarnessIconName =
   | 'layout-float'
   | 'layout-right'
   | 'library'
+  | 'linkedin'
   | 'list-entity-infographic'
   | 'main-abort'
   | 'main-account-notifications'
@@ -815,6 +823,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
   'bin-main': BinMain,
+  'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
   bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
@@ -917,7 +926,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gear: Gear,
   'git-clone-step': GitCloneStep,
   github: Github,
+  gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
+  google: Google,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
@@ -935,6 +946,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
   library: Library,
+  linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
