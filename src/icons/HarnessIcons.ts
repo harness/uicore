@@ -10,6 +10,8 @@ import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
+import BarrierClose from './barrier-close.svg'
+import BarrierOpen from './barrier-open.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
@@ -417,6 +419,8 @@ type HarnessIconName =
   | 'audit-log-created'
   | 'azure-kubernetes-service'
   | 'banned'
+  | 'barrier-close'
+  | 'barrier-open'
   | 'bin-main'
   | 'bitbucket-blue'
   | 'bitbucket-new'
@@ -824,6 +828,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'audit-log-created': AuditLogCreated,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
+  'barrier-close': BarrierClose,
+  'barrier-open': BarrierOpen,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
