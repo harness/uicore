@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.75](https://github.com/wings-software/uicore/compare/v0.1.74...v0.1.75) (2021-03-09)
+
+
+### Features
+
+* Add CloudSSO icon ([#84](https://github.com/wings-software/uicore/issues/84)) ([43e4f4e](https://github.com/wings-software/uicore/commit/43e4f4e263cbbc2a2e0436f6fa61407e93226532))
+
 ### [0.1.74](https://github.com/wings-software/uicore/compare/v0.1.73...v0.1.74) (2021-03-02)
 
 
