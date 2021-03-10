@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.76](https://github.com/wings-software/uicore/compare/v0.1.75...v0.1.76) (2021-03-10)
+
+
+### Features
+
+* Added Openshift and Kustamize icons ([#87](https://github.com/wings-software/uicore/issues/87)) ([b083c8b](https://github.com/wings-software/uicore/commit/b083c8b8007d91b411bacfb8a1d68eccda496326))
+
 ### [0.1.75](https://github.com/wings-software/uicore/compare/v0.1.74...v0.1.75) (2021-03-09)
 
 
