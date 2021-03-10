@@ -131,6 +131,7 @@ import InitializeStep from './initialize-step.svg'
 import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import Kustamize from './kustamize.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
@@ -265,6 +266,8 @@ import NewDecoration from './new-decoration.svg'
 import NgFilter from './ng-filter.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import Notification from './notification.svg'
+import OpenshiftParams from './openshift-params.svg'
+import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
 import Pending from './pending.svg'
 import PipelineApproval from './pipeline-approval.svg'
@@ -538,6 +541,7 @@ type HarnessIconName =
   | 'integration'
   | 'key-main'
   | 'key'
+  | 'kustamize'
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
@@ -672,6 +676,8 @@ type HarnessIconName =
   | 'ng-filter'
   | 'no-feedback-given'
   | 'notification'
+  | 'openshift-params'
+  | 'openshift'
   | 'other-workload'
   | 'pending'
   | 'pipeline-approval'
@@ -945,6 +951,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   integration: Integration,
   'key-main': KeyMain,
   key: Key,
+  kustamize: Kustamize,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
@@ -1079,6 +1086,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ng-filter': NgFilter,
   'no-feedback-given': NoFeedbackGiven,
   notification: Notification,
+  'openshift-params': OpenshiftParams,
+  openshift: Openshift,
   'other-workload': OtherWorkload,
   pending: Pending,
   'pipeline-approval': PipelineApproval,
