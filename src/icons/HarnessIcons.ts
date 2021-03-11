@@ -66,6 +66,8 @@ import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
 import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
+import CoverageStatusError from './coverage-status-error.svg'
+import CoverageStatusSuccess from './coverage-status-success.svg'
 import CsHover from './cs-hover.svg'
 import CustomService from './custom-service.svg'
 import CvHover from './cv-hover.svg'
@@ -476,6 +478,8 @@ type HarnessIconName =
   | 'config-file'
   | 'copy-alt'
   | 'copy'
+  | 'coverage-status-error'
+  | 'coverage-status-success'
   | 'cs-hover'
   | 'custom-service'
   | 'cv-hover'
@@ -886,6 +890,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'config-file': ConfigFile,
   'copy-alt': CopyAlt,
   copy: Copy,
+  'coverage-status-error': CoverageStatusError,
+  'coverage-status-success': CoverageStatusSuccess,
   'cs-hover': CsHover,
   'custom-service': CustomService,
   'cv-hover': CvHover,

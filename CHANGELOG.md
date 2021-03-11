@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.77](https://github.com/wings-software/uicore/compare/v0.1.76...v0.1.77) (2021-03-11)
+
+
+### Features
+
+* add coverage-status-success and coverage-status-error icons ([#89](https://github.com/wings-software/uicore/issues/89)) ([b1b2c25](https://github.com/wings-software/uicore/commit/b1b2c25d7c4b92b79f9f1ea4070099871acd98a5))
+
 ### [0.1.76](https://github.com/wings-software/uicore/compare/v0.1.75...v0.1.76) (2021-03-10)
 
 
