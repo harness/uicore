@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.78](https://github.com/wings-software/uicore/compare/v0.1.77...v0.1.78) (2021-03-12)
+
+
+### Bug Fixes
+
+* change input height from 38 to 32 in FormikForm ([#88](https://github.com/wings-software/uicore/issues/88)) ([6056e65](https://github.com/wings-software/uicore/commit/6056e6528960f3f8cb77ef051ae9df06b01e98ea))
+
 ### [0.1.77](https://github.com/wings-software/uicore/compare/v0.1.76...v0.1.77) (2021-03-11)
 
 
