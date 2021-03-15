@@ -204,26 +204,28 @@
     }
   }
 
-  :global {
-    .bp3-icon {
-      color: currentColor !important;
-    }
-
-    .bp3-spinner .bp3-spinner-head {
-      stroke: currentColor;
-    }
-  }
-
-  /* Make inline icons have the same color as the button color */
-  > span {
-    svg {
-      path,
-      circle {
-        fill: currentColor !important;
+  &.with-current-color {
+    :global {
+      .bp3-icon {
+        color: currentColor !important;
       }
 
-      :not(path) {
-        stroke: currentColor !important;
+      .bp3-spinner .bp3-spinner-head {
+        stroke: currentColor;
+      }
+    }
+
+    /* Make inline icons have the same color as the button color */
+    > span {
+      svg {
+        path,
+        circle {
+          fill: currentColor !important;
+        }
+
+        :not(path) {
+          stroke: currentColor !important;
+        }
       }
     }
   }

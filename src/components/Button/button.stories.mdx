@@ -1,0 +1,275 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+import { Layout } from '../../layouts/Layout.tsx'
+import { Container } from '../Container/Container.tsx'
+import { Button, Link } from './Button.tsx'
+
+<Meta title="Components/Button" />
+
+# Button
+
+Button component reuses Blueprint's Button and implements the look and feel of [HDL](https://projects.invisionapp.com/d/?origin=v7#/projects/prototypes/17628604). Button API is exactly the same as [Blueprint's Button](https://blueprintjs.com/docs/#core/components/button).
+
+## Import
+
+```js
+import { Button } from '@wings-software/uicore'
+```
+
+## Primary Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small" id="primary-buttons">
+    <Button intent="primary" text="Text Button" onClick={() => alert('Hello World')} />
+    <Button intent="primary" icon="plus" onClick={() => alert('Hello World')} />
+    <Button intent="primary" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+    <Button intent="primary" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+    <Button intent="primary" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+    <Button intent="primary" round text="Round Button" onClick={() => alert('Hello World')} />
+    <Button intent="primary" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+    <Button loading intent="primary" text="Text Button" onClick={() => alert('Hello World')} />
+  </Layout.Horizontal>
+</Canvas>
+
+## Primary Button (Borderless)
+
+<Canvas>
+  <Layout.Horizontal id="primary-borderless-buttons">
+    <Button intent="primary" minimal text="Text Button" onClick={() => alert('Hello World')} />
+    <Button intent="primary" minimal icon="plus" onClick={() => alert('Hello World')} />
+    <Button intent="primary" minimal text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+    <Button intent="primary" minimal text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+    <Button intent="primary" minimal text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+    <Button intent="primary" minimal round text="Round Button" onClick={() => alert('Hello World')} />
+    <Button intent="primary" minimal text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+    <Button intent="primary" minimal loading text="Text Button" onClick={() => alert('Hello World')} />
+  </Layout.Horizontal>
+</Canvas>
+
+## Secondary Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small" id="secondary-buttons">
+    <Button text="Text Button" onClick={() => alert('Hello World')} />
+    <Button icon="plus" onClick={() => alert('Hello World')} />
+    <Button text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+    <Button text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+    <Button text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+    <Button round text="Round Button" onClick={() => alert('Hello World')} />
+    <Button text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+    <Button loading icon="cog" onClick={() => alert('Hello World')} />
+  </Layout.Horizontal>
+</Canvas>
+
+## Secondary Borderless Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small" id="secondary-borderless-buttons">
+    <Button minimal text="Text Button" onClick={() => alert('Hello World')} />
+    <Button minimal icon="plus" onClick={() => alert('Hello World')} />
+    <Button minimal text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+    <Button minimal text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+    <Button minimal text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+    <Button minimal round text="Round Button" onClick={() => alert('Hello World')} />
+    <Button minimal text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+    <Button minimal loading icon="cog" onClick={() => alert('Hello World')} />
+  </Layout.Horizontal>
+</Canvas>
+
+## Success Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small" id="success-buttons">
+    <Button intent="success" text="Text Button" onClick={() => alert('Hello World')} />
+    <Button intent="success" icon="plus" onClick={() => alert('Hello World')} />
+    <Button intent="success" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+    <Button intent="success" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+    <Button intent="success" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+    <Button intent="success" round text="Round Button" onClick={() => alert('Hello World')} />
+    <Button intent="success" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+    <Button intent="success" loading text="Text Button" onClick={() => alert('Hello World')} />
+  </Layout.Horizontal>
+</Canvas>
+
+## Warning Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small" id="warning-buttons">
+    <Button intent="warning" text="Text Button" onClick={() => alert('Hello World')} />
+    <Button intent="warning" icon="plus" onClick={() => alert('Hello World')} />
+    <Button intent="warning" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+    <Button intent="warning" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+    <Button intent="warning" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+    <Button intent="warning" round text="Round Button" onClick={() => alert('Hello World')} />
+    <Button intent="warning" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+    <Button intent="warning" loading text="Text Button" onClick={() => alert('Hello World')} />
+  </Layout.Horizontal>
+</Canvas>
+
+## Danger Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small" id="danger-buttons">
+    <Button intent="danger" text="Text Button" onClick={() => alert('Hello World')} />
+    <Button intent="danger" icon="plus" onClick={() => alert('Hello World')} />
+    <Button intent="danger" text="Right Icon" rightIcon="chevron-right" onClick={() => alert('Hello World')} />
+    <Button intent="danger" text="Left Icon" icon="chevron-left" onClick={() => alert('Hello World')} />
+    <Button intent="danger" text="Down Icon" rightIcon="chevron-down" onClick={() => alert('Hello World')} />
+    <Button intent="danger" round text="Round Button" onClick={() => alert('Hello World')} />
+    <Button intent="danger" text="Disabled" disabled icon="cog" onClick={() => alert('Hello World')} />
+    <Button intent="danger" loading text="Text Button" onClick={() => alert('Hello World')} />
+  </Layout.Horizontal>
+</Canvas>
+
+## Icon Only Button
+
+<Canvas>
+  <Layout.Horizontal spacing="xsmall" id="icon-only-buttons">
+    <Button icon="plus" />
+    <Button icon="plus" disabled />
+    <Button icon="plus" minimal withoutCurrentColor />
+    <Button icon="plus" minimal disabled />
+    <Button intent="primary" icon="build" />
+    <Button intent="primary" icon="build" disabled />
+    <Button intent="primary" icon="build" minimal />
+    <Button intent="primary" icon="build" minimal disabled />
+    <Button intent="primary" round icon="build" />
+    <Button intent="success" icon="chevron-left" />
+    <Button intent="success" icon="chevron-left" disabled />
+    <Button intent="warning" icon="chevron-right" />
+    <Button intent="warning" icon="chevron-right" disabled />
+    <Button intent="danger" icon="delete" />
+    <Button intent="danger" icon="delete" disabled />
+  </Layout.Horizontal>
+</Canvas>
+
+## Icon Button With and Without Current Color
+
+<Canvas>
+  Breaks icon colors:
+  <Button icon="codebase-invalid" onClick={() => alert('Hello World')} />
+  <Button intent="primary" text="Left Icon" icon="codebase-invalid" onClick={() => alert('Hello World')} />
+  <Button intent="primary" text="Right Icon" rightIcon="codebase-invalid" onClick={() => alert('Hello World')} />
+  Works fine:
+  <Button icon="codebase-invalid" withoutCurrentColor onClick={() => alert('Hello World')} />
+  <Button
+    intent="primary"
+    text="Left Icon"
+    icon="codebase-invalid"
+    onClick={() => alert('Hello World')}
+    withoutCurrentColor
+  />
+  <Button intent="primary" text="Right Icon" rightIcon="codebase-invalid" onClick={() => alert('Hello World')} withoutCurrentColor />
+</Canvas>
+
+## Icon Only Borderless Button
+
+<Canvas>
+  <Container flex id="icon-only-borderless-buttons">
+    <Layout.Horizontal inline>
+      <Button icon="main-pause" minimal />
+      <Button icon="main-start" minimal />
+      <Button icon="main-abort" minimal />
+      <Button icon="main-more" minimal />
+    </Layout.Horizontal>
+    <Layout.Horizontal inline>
+      <Button icon="main-pause" minimal iconProps={{ size: 10 }} />
+      <Button icon="main-start" minimal iconProps={{ size: 10 }} />
+      <Button icon="main-abort" minimal iconProps={{ size: 10 }} />
+      <Button icon="main-more" minimal iconProps={{ size: 10 }} />
+    </Layout.Horizontal>
+  </Container>
+</Canvas>
+
+## Large Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small">
+    <Button intent="primary" large text="Go to Application/Workflow Setup" />
+    <Button intent="primary" minimal large text="A Large Button" />
+    <Button icon="main-more" intent="success" minimal large />
+    <Button text="Text Button" large />
+    <Button text="Round Button" round large />
+    <Button intent="primary" icon="build" large />
+    <Button icon="plus" large />
+  </Layout.Horizontal>
+</Canvas>
+
+## Confirmation Button
+
+<Canvas>
+  <Layout.Horizontal>
+    <Button
+      minimal
+      icon="pause"
+      title="Confirm Action"
+      message="Are you sure you want to a pause this execution? This action cannot be undone."
+      cancelText="Cancel"
+      confirmText="Confirm"
+      onClick={() => alert('Action is confirmed')}
+    />
+    <Button
+      minimal
+      icon="stop"
+      title="Confirm Action"
+      message="Are you sure you want to a abort this execution? This action cannot be undone."
+      cancelText="Cancel"
+      confirmText="Confirm"
+      onClick={() => alert('Action is confirmed')}
+    />
+  </Layout.Horizontal>
+</Canvas>
+
+## Link Button
+
+<Canvas>
+  <Layout.Horizontal spacing="small" id="link-button">
+    <Link href="/" icon="edit">
+      Edit This Page
+    </Link>
+    <Link href="//harness.io" target="_blank" icon="link">
+      Go to Harness
+    </Link>
+    <Link href="/" icon="edit" intent="primary">
+      Edit This Page
+    </Link>
+    <Link href="/" icon="edit" minimal>
+      Edit This Page
+    </Link>
+    <Link href="//harness.io" target="_blank" icon="link" minimal>
+      Go to Harness
+    </Link>
+    <Link href="/" icon="edit" intent="primary">
+      Edit This Page
+    </Link>
+    <Link href="//harness.io" target="_blank" icon="link" intent="primary">
+      Go to Harness
+    </Link>
+    <Link href="/" icon="edit" intent="primary" minimal>
+      Edit This Page
+    </Link>
+    <Link href="//harness.io" target="_blank" icon="link" intent="primary" minimal>
+      Go to Harness
+    </Link>
+  </Layout.Horizontal>
+</Canvas>
+
+## Loading Transition
+
+Button's `onClick` accepts an async function. When the button is clicked, loading state is triggered automatically. When the `onClick` function is resolved, loading state is removed.
+
+Note that `onClick` is not executed multiple times if user clicks it constantly. When an `onClick` event happens, the `onClick` function must be resolved (or rejected) before another click event is allowed.
+
+<Canvas>
+  <Layout.Horizontal spacing="small">
+    <Button
+      intent="primary"
+      text="Submit (resolved after 3s)"
+      onClick={async () => new Promise(resolve => setTimeout(resolve, 3000))}
+    />
+    <Button
+      intent="primary"
+      text="Submit (rejected after 3s)"
+      onClick={async () => new Promise((_, reject) => setTimeout(reject, 3000))}
+    />
+  </Layout.Horizontal>
+</Canvas>

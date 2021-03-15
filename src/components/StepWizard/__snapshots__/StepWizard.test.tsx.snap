@@ -102,7 +102,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
             style="height: 40px;"
           >
             <button
-              class="bp3-button bp3-disabled font button main"
+              class="bp3-button bp3-disabled font button with-current-color main"
               disabled=""
               tabindex="-1"
               type="button"
@@ -114,7 +114,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
               </span>
             </button>
             <button
-              class="bp3-button font button main intent intent-primary style style-float style-float-right"
+              class="bp3-button font button with-current-color main intent intent-primary style style-float style-float-right"
               style="float: right;"
               type="button"
             >
