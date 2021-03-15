@@ -42,6 +42,11 @@ import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CircleCross from './circle-cross.svg'
 import CloudSso from './cloud-sso.svg'
+import CodebaseInvalid from './codebase-invalid.svg'
+import CodebaseNotConfigured from './codebase-not-configured.svg'
+import CodebaseValid from './codebase-valid.svg'
+import CodebaseValidating from './codebase-validating.svg'
+import CodebaseZeroState from './codebase-zero-state.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -454,6 +459,11 @@ type HarnessIconName =
   | 'ci-main'
   | 'circle-cross'
   | 'cloud-sso'
+  | 'codebase-invalid'
+  | 'codebase-not-configured'
+  | 'codebase-valid'
+  | 'codebase-validating'
+  | 'codebase-zero-state'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -866,6 +876,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-main': CiMain,
   'circle-cross': CircleCross,
   'cloud-sso': CloudSso,
+  'codebase-invalid': CodebaseInvalid,
+  'codebase-not-configured': CodebaseNotConfigured,
+  'codebase-valid': CodebaseValid,
+  'codebase-validating': CodebaseValidating,
+  'codebase-zero-state': CodebaseZeroState,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
