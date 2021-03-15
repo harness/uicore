@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.81](https://github.com/wings-software/uicore/compare/v0.1.80...v0.1.81) (2021-03-15)
+
+
+### Features
+
+* add prop withoutCurrentColor to Button ([#91](https://github.com/wings-software/uicore/issues/91)) ([ae001de](https://github.com/wings-software/uicore/commit/ae001de00860a07b8a81322fc76d625116151ed9))
+
 ### [0.1.80](https://github.com/wings-software/uicore/compare/v0.1.79...v0.1.80) (2021-03-15)
 
 
