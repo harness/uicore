@@ -26,7 +26,7 @@ export interface ButtonProps
   /** Optional Icon props */
   iconProps?: Partial<IconProps>
 
-  withoutCurrentColor?: Boolean
+  withoutCurrentColor?: boolean
 
   /** onClick event handler */
   onClick?: (event: MouseEvent) => Promise<void> | void
