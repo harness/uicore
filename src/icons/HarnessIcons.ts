@@ -401,6 +401,7 @@ import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
+import Text from './text.svg'
 import Up from './up.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
@@ -818,6 +819,7 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+  | 'text'
   | 'up'
   | 'utility'
   | 'view-json'
@@ -1235,6 +1237,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
+  text: Text,
   up: Up,
   utility: Utility,
   'view-json': ViewJson,
