@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.79](https://github.com/wings-software/uicore/compare/v0.1.78...v0.1.79) (2021-03-15)
+
+
+### Features
+
+* Added prop for flipping direction of expanding search ([#86](https://github.com/wings-software/uicore/issues/86)) ([c1dd940](https://github.com/wings-software/uicore/commit/c1dd9409bff7948f2ebbb00fc94c5b598493e4b3))
+
 ### [0.1.78](https://github.com/wings-software/uicore/compare/v0.1.77...v0.1.78) (2021-03-12)
 
 
