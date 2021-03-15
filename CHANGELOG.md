@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.80](https://github.com/wings-software/uicore/compare/v0.1.79...v0.1.80) (2021-03-15)
+
+
+### Features
+
+* add new codebase icons ([#90](https://github.com/wings-software/uicore/issues/90)) ([d1c65ca](https://github.com/wings-software/uicore/commit/d1c65ca47e7a517308c508a96218af8dcbea92ce))
+
 ### [0.1.79](https://github.com/wings-software/uicore/compare/v0.1.78...v0.1.79) (2021-03-15)
 
 
