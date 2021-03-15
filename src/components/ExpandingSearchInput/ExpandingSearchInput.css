@@ -41,6 +41,17 @@
   }
 }
 
+.flip {
+  flex-direction: row-reverse;
+  &:focus {
+    padding-right: 94px;
+  }
+}
+
+.flipicon {
+  left: auto !important;
+}
+
 .icon {
   position: absolute;
   width: 35px;
@@ -67,4 +78,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.flipBtnWrapper {
+  right: 32px;
 }

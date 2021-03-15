@@ -27,6 +27,7 @@ export interface PropsInterface {
   throttle?: number
   showPrevNextButtons?: boolean
   fixedText?: string
+  flip?: boolean
 }
 
 export function ExpandingSearchInput(props: PropsInterface) {
@@ -42,7 +43,8 @@ export function ExpandingSearchInput(props: PropsInterface) {
     className = '',
     throttle = DEFAULT_THROTTLE,
     showPrevNextButtons,
-    fixedText
+    fixedText,
+    flip
   } = props
 
   const [key, setKey] = useState(Math.random())
@@ -141,9 +143,13 @@ export function ExpandingSearchInput(props: PropsInterface) {
   }, [propsOnChange, setInputNoTransition])
   useLayoutEffect(afterClear, [onClearFlag])
 
-  const cssMain = `bp3-input-group ui-search-box ${css.main} ${className}`
+  const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip ? css.flip : ''}`
 
   const cssInput = `bp3-input ${inputNoTransition ? css.notransition : ''}`
+
+  const cssIcon = `${css.icon} ${flip ? css.flipicon : ''}`
+
+  const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
   // needs to be the last useEffect
   // using ref instead of state variable to avoid triggering a rerender
@@ -155,7 +161,7 @@ export function ExpandingSearchInput(props: PropsInterface) {
 
   return (
     <div key={key} className={cssMain} data-name={name}>
-      <Icon name="search" className={css.icon} size={14} />
+      <Icon name="search" className={cssIcon} size={14} />
       <input
         ref={inputRef}
         className={cssInput}
@@ -169,7 +175,7 @@ export function ExpandingSearchInput(props: PropsInterface) {
       {value.length > 0 ? (
         <>
           {fixedText ? <span className={css.fixedText}>{fixedText}</span> : null}
-          <span className={css.btnWrapper}>
+          <span className={cssBtnWrapper}>
             {showPrevNextButtons ? (
               <>
                 <Button icon={'arrow-up'} minimal onClick={onPrev} />
