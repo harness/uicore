@@ -26,6 +26,8 @@ export interface ButtonProps
   /** Optional Icon props */
   iconProps?: Partial<IconProps>
 
+  withoutCurrentColor?: Boolean
+
   /** onClick event handler */
   onClick?: (event: MouseEvent) => Promise<void> | void
 
@@ -107,6 +109,7 @@ export function Button(props: ButtonProps): React.ReactElement {
         props,
         styledClass.font,
         css.button,
+        !props.withoutCurrentColor ? css['with-current-color'] : '',
         props.href && !(props.icon || props.rightIcon) && !props.intent ? css.link : '',
         !props.text && !props.intent && !props.href ? css.iconOnly : '',
         round ? css.round : ''
