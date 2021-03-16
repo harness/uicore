@@ -68,3 +68,19 @@
   align-items: center;
   justify-content: flex-end;
 }
+
+.flip {
+  flex-direction: row-reverse !important;
+}
+
+.flipicon {
+  left: auto !important;
+}
+
+.flipBtnWrapper {
+  right: 32px !important;
+}
+
+.flipFixedText {
+  right: 105px !important;
+}
