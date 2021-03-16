@@ -151,6 +151,7 @@ export function ExpandingSearchInput(props: PropsInterface) {
 
     const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
+<<<<<<< HEAD
     const cssFixedText = `${css.fixedText} ${flip ? css.flipFixedText : ''}`
 
     // needs to be the last useEffect
@@ -187,6 +188,41 @@ export function ExpandingSearchInput(props: PropsInterface) {
                         <Button icon={'small-cross'} minimal onClick={onClear} />
                     </span>
                 </>
+=======
+  const cssFixedText = `${css.fixedText} ${flip ? css.flipFixedText : ''}`
+
+  // needs to be the last useEffect
+  // using ref instead of state variable to avoid triggering a rerender
+  useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true
+    }
+  })
+
+  return (
+    <div key={key} className={cssMain} data-name={name}>
+      <Icon name="search" className={cssIcon} size={14} />
+      <input
+        ref={inputRef}
+        className={cssInput}
+        type="search"
+        placeholder={placeholder}
+        dir="auto"
+        value={value}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
+      />
+      {value.length > 0 ? (
+        <>
+          {fixedText ? <span className={cssFixedText}>{fixedText}</span> : null}
+
+          <span className={cssBtnWrapper}>
+            {showPrevNextButtons ? (
+              <>
+                <Button icon={'arrow-up'} minimal onClick={onPrev} />
+                <Button icon={'arrow-down'} minimal onClick={onNext} />
+              </>
+>>>>>>> f7b4d71147b136f09325c1b2c8d875e6f70f4d61
             ) : null}
         </div>
     )
