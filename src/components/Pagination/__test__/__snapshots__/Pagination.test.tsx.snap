@@ -47,7 +47,7 @@ exports[`Pagination pageCount < 8 1`] = `
       class="horizontal layout-spacing-small main spacing spacing-small"
     >
       <button
-        class="bp3-button bp3-disabled font button main intent intent-primary"
+        class="bp3-button bp3-disabled font button with-current-color main intent intent-primary"
         disabled=""
         tabindex="-1"
         type="button"
@@ -59,7 +59,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal font button main intent intent-none"
+        class="bp3-button bp3-minimal font button with-current-color main intent intent-none"
         type="button"
       >
         <span
@@ -69,7 +69,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal font button main intent intent-none"
+        class="bp3-button bp3-minimal font button with-current-color main intent intent-none"
         type="button"
       >
         <span
@@ -109,7 +109,7 @@ exports[`Pagination pageCount >= 8 1`] = `
       class="horizontal layout-spacing-small main spacing spacing-small"
     >
       <button
-        class="bp3-button bp3-disabled font button main intent intent-primary"
+        class="bp3-button bp3-disabled font button with-current-color main intent intent-primary"
         disabled=""
         tabindex="-1"
         type="button"
@@ -121,7 +121,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal font button main intent intent-none"
+        class="bp3-button bp3-minimal font button with-current-color main intent intent-none"
         type="button"
       >
         <span
@@ -131,7 +131,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal font button main intent intent-none"
+        class="bp3-button bp3-minimal font button with-current-color main intent intent-none"
         type="button"
       >
         <span
@@ -141,7 +141,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal font button main intent intent-none"
+        class="bp3-button bp3-minimal font button with-current-color main intent intent-none"
         type="button"
       >
         <span
@@ -151,7 +151,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal font button main intent intent-none"
+        class="bp3-button bp3-minimal font button with-current-color main intent intent-none"
         type="button"
       >
         <span
@@ -170,7 +170,7 @@ exports[`Pagination pageCount >= 8 1`] = `
             class=""
           >
             <button
-              class="bp3-button bp3-minimal font button iconOnly main"
+              class="bp3-button bp3-minimal font button with-current-color iconOnly main"
               type="button"
             >
               <span
@@ -197,7 +197,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </div>
       </div>
       <button
-        class="bp3-button bp3-minimal font button main intent intent-none"
+        class="bp3-button bp3-minimal font button with-current-color main intent intent-none"
         type="button"
       >
         <span
@@ -207,7 +207,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal font button iconOnly main style style-marginRight style-marginRight-var(--spacing-medium)"
+        class="bp3-button bp3-minimal font button with-current-color iconOnly main style style-marginRight style-marginRight-var(--spacing-medium)"
         type="button"
       >
         <span

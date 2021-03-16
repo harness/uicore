@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.81](https://github.com/wings-software/uicore/compare/v0.1.80...v0.1.81) (2021-03-15)
+
+
+### Features
+
+* add prop withoutCurrentColor to Button ([#91](https://github.com/wings-software/uicore/issues/91)) ([ae001de](https://github.com/wings-software/uicore/commit/ae001de00860a07b8a81322fc76d625116151ed9))
+
+### [0.1.80](https://github.com/wings-software/uicore/compare/v0.1.79...v0.1.80) (2021-03-15)
+
+
+### Features
+
+* add new codebase icons ([#90](https://github.com/wings-software/uicore/issues/90)) ([d1c65ca](https://github.com/wings-software/uicore/commit/d1c65ca47e7a517308c508a96218af8dcbea92ce))
+
+### [0.1.79](https://github.com/wings-software/uicore/compare/v0.1.78...v0.1.79) (2021-03-15)
+
+
+### Features
+
+* Added prop for flipping direction of expanding search ([#86](https://github.com/wings-software/uicore/issues/86)) ([c1dd940](https://github.com/wings-software/uicore/commit/c1dd9409bff7948f2ebbb00fc94c5b598493e4b3))
+
+### [0.1.78](https://github.com/wings-software/uicore/compare/v0.1.77...v0.1.78) (2021-03-12)
+
+
+### Bug Fixes
+
+* change input height from 38 to 32 in FormikForm ([#88](https://github.com/wings-software/uicore/issues/88)) ([6056e65](https://github.com/wings-software/uicore/commit/6056e6528960f3f8cb77ef051ae9df06b01e98ea))
+
+### [0.1.77](https://github.com/wings-software/uicore/compare/v0.1.76...v0.1.77) (2021-03-11)
+
+
+### Features
+
+* add coverage-status-success and coverage-status-error icons ([#89](https://github.com/wings-software/uicore/issues/89)) ([b1b2c25](https://github.com/wings-software/uicore/commit/b1b2c25d7c4b92b79f9f1ea4070099871acd98a5))
+
+### [0.1.76](https://github.com/wings-software/uicore/compare/v0.1.75...v0.1.76) (2021-03-10)
+
+
+### Features
+
+* Added Openshift and Kustamize icons ([#87](https://github.com/wings-software/uicore/issues/87)) ([b083c8b](https://github.com/wings-software/uicore/commit/b083c8b8007d91b411bacfb8a1d68eccda496326))
+
 ### [0.1.75](https://github.com/wings-software/uicore/compare/v0.1.74...v0.1.75) (2021-03-09)
 
 

@@ -9,7 +9,7 @@ exports[`Code Block should render codeblock with code copy option 1`] = `
       kubectl apply -f harness-delegate.yaml
     </pre>
     <button
-      class="bp3-button bp3-minimal font button iconOnly main"
+      class="bp3-button bp3-minimal font button with-current-color iconOnly main"
       type="button"
     >
       <span

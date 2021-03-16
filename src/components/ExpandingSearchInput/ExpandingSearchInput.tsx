@@ -152,6 +152,7 @@ export function ExpandingSearchInput(props: PropsInterface) {
   const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
   const cssFixedText = `${css.fixedText} ${flip ? css.flipFixedText : ''}`
+
   // needs to be the last useEffect
   // using ref instead of state variable to avoid triggering a rerender
   useEffect(() => {
@@ -176,6 +177,7 @@ export function ExpandingSearchInput(props: PropsInterface) {
       {value.length > 0 ? (
         <>
           {fixedText ? <span className={cssFixedText}>{fixedText}</span> : null}
+
           <span className={cssBtnWrapper}>
             {showPrevNextButtons ? (
               <>
