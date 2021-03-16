@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.82](https://github.com/wings-software/uicore/compare/v0.1.81...v0.1.82) (2021-03-16)
+
+
+### Bug Fixes
+
+* added in important on the flip css classes ([#95](https://github.com/wings-software/uicore/issues/95)) ([66a3ff3](https://github.com/wings-software/uicore/commit/66a3ff31a53473001f161bf3aad39dbebd19a54e))
+
 ### [0.1.81](https://github.com/wings-software/uicore/compare/v0.1.80...v0.1.81) (2021-03-15)
 
 
