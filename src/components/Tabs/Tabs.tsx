@@ -1,20 +1,25 @@
 import React from 'react'
 import { Tabs as BpTabs, Tab, ITabsProps } from '@blueprintjs/core'
 import css from './Tabs.css'
+import cx from 'classnames'
 
-export interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
+interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
   renderAllTabPanels?: boolean
   children?: React.ReactNode
 }
 
 function Tabs(props: TabsProps) {
-  const { renderAllTabPanels, children, ...rest } = props
+  const { renderAllTabPanels, children, vertical, ...rest } = props
 
   return (
-    <BpTabs {...rest} renderActiveTabPanelOnly={!renderAllTabPanels} className={css.main}>
+    <BpTabs
+      {...rest}
+      vertical={vertical}
+      renderActiveTabPanelOnly={!renderAllTabPanels}
+      className={cx(css.main, { [css.vertical]: vertical, [css.horizontal]: !vertical })}>
       {children}
     </BpTabs>
   )
 }
 
-export { Tabs, Tab }
+export { Tabs, Tab, TabsProps }
