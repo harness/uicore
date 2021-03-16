@@ -31,7 +31,7 @@ exports[`Test basic Components should render Checkbox component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -73,7 +73,7 @@ exports[`Test basic Components should render Custom Input component 1`] = `
             class="bp3-form-content"
           >
             <button
-              class="bp3-button font button main"
+              class="bp3-button font button with-current-color main"
               type="button"
             >
               <span
@@ -85,7 +85,7 @@ exports[`Test basic Components should render Custom Input component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -143,7 +143,7 @@ exports[`Test basic Components should render FileInput component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -245,7 +245,7 @@ exports[`Test basic Components should render FileInput component 2`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -315,7 +315,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -387,7 +387,7 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -474,7 +474,7 @@ exports[`Test basic Components should render Select component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -529,7 +529,7 @@ exports[`Test basic Components should render Text component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span
@@ -578,7 +578,7 @@ exports[`Test basic Components should render TextArea component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button font button main intent intent-primary"
+          class="bp3-button font button with-current-color main intent intent-primary"
           type="submit"
         >
           <span

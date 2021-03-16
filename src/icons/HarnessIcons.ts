@@ -42,6 +42,11 @@ import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CircleCross from './circle-cross.svg'
 import CloudSso from './cloud-sso.svg'
+import CodebaseInvalid from './codebase-invalid.svg'
+import CodebaseNotConfigured from './codebase-not-configured.svg'
+import CodebaseValid from './codebase-valid.svg'
+import CodebaseValidating from './codebase-validating.svg'
+import CodebaseZeroState from './codebase-zero-state.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -66,6 +71,8 @@ import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
 import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
+import CoverageStatusError from './coverage-status-error.svg'
+import CoverageStatusSuccess from './coverage-status-success.svg'
 import CsHover from './cs-hover.svg'
 import CustomService from './custom-service.svg'
 import CvHover from './cv-hover.svg'
@@ -131,6 +138,7 @@ import InitializeStep from './initialize-step.svg'
 import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import Kustamize from './kustamize.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
@@ -265,6 +273,8 @@ import NewDecoration from './new-decoration.svg'
 import NgFilter from './ng-filter.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import Notification from './notification.svg'
+import OpenshiftParams from './openshift-params.svg'
+import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
 import Pending from './pending.svg'
 import PipelineApproval from './pipeline-approval.svg'
@@ -449,6 +459,11 @@ type HarnessIconName =
   | 'ci-main'
   | 'circle-cross'
   | 'cloud-sso'
+  | 'codebase-invalid'
+  | 'codebase-not-configured'
+  | 'codebase-valid'
+  | 'codebase-validating'
+  | 'codebase-zero-state'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -473,6 +488,8 @@ type HarnessIconName =
   | 'config-file'
   | 'copy-alt'
   | 'copy'
+  | 'coverage-status-error'
+  | 'coverage-status-success'
   | 'cs-hover'
   | 'custom-service'
   | 'cv-hover'
@@ -538,6 +555,7 @@ type HarnessIconName =
   | 'integration'
   | 'key-main'
   | 'key'
+  | 'kustamize'
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
@@ -672,6 +690,8 @@ type HarnessIconName =
   | 'ng-filter'
   | 'no-feedback-given'
   | 'notification'
+  | 'openshift-params'
+  | 'openshift'
   | 'other-workload'
   | 'pending'
   | 'pipeline-approval'
@@ -856,6 +876,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-main': CiMain,
   'circle-cross': CircleCross,
   'cloud-sso': CloudSso,
+  'codebase-invalid': CodebaseInvalid,
+  'codebase-not-configured': CodebaseNotConfigured,
+  'codebase-valid': CodebaseValid,
+  'codebase-validating': CodebaseValidating,
+  'codebase-zero-state': CodebaseZeroState,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
@@ -880,6 +905,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'config-file': ConfigFile,
   'copy-alt': CopyAlt,
   copy: Copy,
+  'coverage-status-error': CoverageStatusError,
+  'coverage-status-success': CoverageStatusSuccess,
   'cs-hover': CsHover,
   'custom-service': CustomService,
   'cv-hover': CvHover,
@@ -945,6 +972,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   integration: Integration,
   'key-main': KeyMain,
   key: Key,
+  kustamize: Kustamize,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
@@ -1079,6 +1107,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ng-filter': NgFilter,
   'no-feedback-given': NoFeedbackGiven,
   notification: Notification,
+  'openshift-params': OpenshiftParams,
+  openshift: Openshift,
   'other-workload': OtherWorkload,
   pending: Pending,
   'pipeline-approval': PipelineApproval,
