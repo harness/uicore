@@ -9,7 +9,7 @@
   :global(.bp3-input) {
     box-shadow: none;
     border: 1px solid var(--bp3-intent-color, var(--grey-250));
-    padding-right: 40px;
+    padding-right: 35px;
     height: 32px;
 
     &:focus {
