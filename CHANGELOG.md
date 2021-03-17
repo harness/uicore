@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.83](https://github.com/wings-software/uicore/compare/v0.1.82...v0.1.83) (2021-03-17)
+
+
+### Bug Fixes
+
+* [CDNG-5248]: fixed the css so that end charecter is vissible ([#94](https://github.com/wings-software/uicore/issues/94)) ([d20baec](https://github.com/wings-software/uicore/commit/d20baec92a9151879cb65d32ed799723ea9a6578))
+
 ### [0.1.82](https://github.com/wings-software/uicore/compare/v0.1.81...v0.1.82) (2021-03-16)
 
 
