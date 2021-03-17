@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.84](https://github.com/wings-software/uicore/compare/v0.1.83...v0.1.84) (2021-03-17)
+
+
+### Features
+
+* added css for vertical tabs ([#93](https://github.com/wings-software/uicore/issues/93)) ([6bc3002](https://github.com/wings-software/uicore/commit/6bc3002ca189607c9e94eb3cd7d82a516e12fd4a))
+
 ### [0.1.83](https://github.com/wings-software/uicore/compare/v0.1.82...v0.1.83) (2021-03-17)
 
 
