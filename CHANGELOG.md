@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.86](https://github.com/wings-software/uicore/compare/v0.1.85...v0.1.86) (2021-03-18)
+
+
+### Bug Fixes
+
+* make wrapper static instead of absolute in MultiTypeInput ([#96](https://github.com/wings-software/uicore/issues/96)) ([624f78a](https://github.com/wings-software/uicore/commit/624f78a087220fbeb878c49387e388f811e77457))
+
 ### [0.1.85](https://github.com/wings-software/uicore/compare/v0.1.84...v0.1.85) (2021-03-17)
 
 
