@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.87](https://github.com/wings-software/uicore/compare/v0.1.86...v0.1.87) (2021-03-19)
+
+
+### Features
+
+* Added Money Icon ([#97](https://github.com/wings-software/uicore/issues/97)) ([c51a476](https://github.com/wings-software/uicore/commit/c51a4763d054bd47ae608f7b1f6752c6aa8f1ff4))
+
 ### [0.1.86](https://github.com/wings-software/uicore/compare/v0.1.85...v0.1.86) (2021-03-18)
 
 
