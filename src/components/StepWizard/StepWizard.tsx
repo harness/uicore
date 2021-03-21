@@ -68,7 +68,7 @@ interface StepState<SharedObject> {
   totalSteps: number
 }
 
-// buils step identifier to step number map
+// builds step identifier to step number map
 // recursive in nature to support nested wizards
 const createStepIdentifierToStepNumberMap = <SharedObject,>(
   steps: StepWizardProps<SharedObject>['children'],
