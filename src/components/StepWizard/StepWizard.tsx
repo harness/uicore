@@ -68,8 +68,10 @@ interface StepState<SharedObject> {
   totalSteps: number
 }
 
-const createStepIdentifierToStepNumberMap = (
-  steps: any,
+// buils step identifier to step number map
+// recursive in nature to support nested wizards
+const createStepIdentifierToStepNumberMap = <SharedObject,>(
+  steps: StepWizardProps<SharedObject>['children'],
   include: boolean,
   stepIdentifierToStepNumberMap: MutableRefObject<Record<string, number>>,
   currentStepNumber: MutableRefObject<number>
@@ -80,14 +82,14 @@ const createStepIdentifierToStepNumberMap = (
   React.Children.map(steps, step => {
     if (include) {
       const stepIdentifier = step?.props?.identifier || step?.props?.name
-      if (stepIdentifier) {
+      if (stepIdentifier && typeof stepIdentifier === 'string') {
         currentStepNumber.current++
         stepIdentifierToStepNumberMap.current[stepIdentifier] = currentStepNumber.current
       }
     }
     createStepIdentifierToStepNumberMap(
-      step.props.children,
-      step.type === StepWizard,
+      step?.props.children as StepWizardProps<SharedObject>['children'],
+      step?.type === StepWizard,
       stepIdentifierToStepNumberMap,
       currentStepNumber
     )
@@ -112,7 +114,13 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   const stepIdentifierToStepNumberMap = React.useRef<Record<string, number>>({})
   const currentStepNumber = React.useRef<number>(0)
   React.useEffect(
-    () => createStepIdentifierToStepNumberMap(props.children, true, stepIdentifierToStepNumberMap, currentStepNumber),
+    () =>
+      createStepIdentifierToStepNumberMap<SharedObject>(
+        props.children,
+        true,
+        stepIdentifierToStepNumberMap,
+        currentStepNumber
+      ),
     []
   )
   const [state, setState] = React.useState<StepState<SharedObject>>({
