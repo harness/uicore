@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.88](https://github.com/wings-software/uicore/compare/v0.1.87...v0.1.88) (2021-03-21)
+
+
+### Features
+
+* [CDNG-5365]: Add identifier to StepWizard's gotoStep method ([#98](https://github.com/wings-software/uicore/issues/98)) ([37948ea](https://github.com/wings-software/uicore/commit/37948eacc5f8228e68e1a77c7f7517dd3d551a1b))
+
 ### [0.1.87](https://github.com/wings-software/uicore/compare/v0.1.86...v0.1.87) (2021-03-19)
 
 
