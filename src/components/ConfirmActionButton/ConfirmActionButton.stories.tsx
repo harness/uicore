@@ -27,26 +27,8 @@ export default {
 export const ConfirmButton: Story<ConfirmActionButtonProps> = args => {
   return (
     <>
-      <ConfirmActionButton
-        minimal
-        icon="pause"
-        title="Confirm Action"
-        message="Are you sure you want to a pause this execution? This action cannot be undone."
-        cancelText="Cancel"
-        confirmText="Confirm"
-        onClick={() => alert('Action is confirmed')}
-        {...args}
-      />
-      <ConfirmActionButton
-        minimal
-        icon="stop"
-        title="Confirm Action"
-        message="Are you sure you want to a abort this execution? This action cannot be undone."
-        cancelText="Cancel"
-        confirmText="Confirm"
-        onClick={() => alert('Action is confirmed')}
-        {...args}
-      />
+      <ConfirmActionButton minimal icon="pause" onClick={() => alert('Action is confirmed')} {...args} />
+      <ConfirmActionButton minimal icon="stop" onClick={() => alert('Action is confirmed')} {...args} />
     </>
   )
 }
