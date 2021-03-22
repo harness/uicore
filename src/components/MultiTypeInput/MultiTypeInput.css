@@ -33,13 +33,10 @@
       background: var(--grey-100);
     }
   }
-}
 
-.wrapper {
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  bottom: 1px;
+  .wrapper {
+    margin-left: -4px !important;
+  }
 }
 
 .btn {

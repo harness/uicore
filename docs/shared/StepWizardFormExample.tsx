@@ -15,6 +15,7 @@ import {
   MultiSelect
 } from '../static/index'
 import './StepWizardExample.css'
+import { GotoStepArgs } from '../../src/components/StepWizard/StepWizard'
 
 //For Example only defining this props, reason is the module loader over here has some type issue
 /*----- Interface definition Starts here ---*/
@@ -26,7 +27,7 @@ interface StepProps<PrevStepData> {
   totalSteps?: () => number
   nextStep?: (data?: PrevStepData) => void
   previousStep?: (data?: PrevStepData) => void
-  gotoStep?: (stepNumber: number, data?: PrevStepData) => void
+  gotoStep?: (args: GotoStepArgs<PrevStepData>) => boolean
   firstStep?: (data?: PrevStepData) => void
   lastStep?: (data?: PrevStepData) => void
 }
@@ -95,9 +96,7 @@ interface ConnectedProps {
 /*----- Define schema for forms ---*/
 
 const secondFormSchema = Yup.object().shape({
-  projectName: Yup.string()
-    .trim()
-    .required('Project Name is required field')
+  projectName: Yup.string().trim().required('Project Name is required field')
 })
 
 const thirdFormSchema = Yup.object().shape({

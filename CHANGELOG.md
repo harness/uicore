@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.89](https://github.com/wings-software/uicore/compare/v0.1.88...v0.1.89) (2021-03-22)
+
+
+### Features
+
+* [CDNG-5365]: re-render of step wizard should recompute step identifier to step number map ([#99](https://github.com/wings-software/uicore/issues/99)) ([2619592](https://github.com/wings-software/uicore/commit/26195922f4fa70945d84b9fe3168805c55e2f60d))
+
+### [0.1.88](https://github.com/wings-software/uicore/compare/v0.1.87...v0.1.88) (2021-03-21)
+
+
+### Features
+
+* [CDNG-5365]: Add identifier to StepWizard's gotoStep method ([#98](https://github.com/wings-software/uicore/issues/98)) ([37948ea](https://github.com/wings-software/uicore/commit/37948eacc5f8228e68e1a77c7f7517dd3d551a1b))
+
+### [0.1.87](https://github.com/wings-software/uicore/compare/v0.1.86...v0.1.87) (2021-03-19)
+
+
+### Features
+
+* Added Money Icon ([#97](https://github.com/wings-software/uicore/issues/97)) ([c51a476](https://github.com/wings-software/uicore/commit/c51a4763d054bd47ae608f7b1f6752c6aa8f1ff4))
+
+### [0.1.86](https://github.com/wings-software/uicore/compare/v0.1.85...v0.1.86) (2021-03-18)
+
+
+### Bug Fixes
+
+* make wrapper static instead of absolute in MultiTypeInput ([#96](https://github.com/wings-software/uicore/issues/96)) ([624f78a](https://github.com/wings-software/uicore/commit/624f78a087220fbeb878c49387e388f811e77457))
+
 ### [0.1.85](https://github.com/wings-software/uicore/compare/v0.1.84...v0.1.85) (2021-03-17)
 
 
