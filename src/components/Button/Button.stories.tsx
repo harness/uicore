@@ -19,7 +19,7 @@ export default {
           <>
             <Title>Button</Title>
             <Subtitle>
-              <code>{`import {Link} from '@wings-software/uikit'`}</code>
+              <code>{`import {Button} from '@wings-software/uicore'`}</code>
             </Subtitle>
             <Description>
               {
