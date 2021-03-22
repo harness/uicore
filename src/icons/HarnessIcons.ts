@@ -35,6 +35,7 @@ import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
 import CeMain from './ce-main.svg'
 import CfHover from './cf-hover.svg'
+import CiActiveBuild from './ci-active-build.svg'
 import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
@@ -284,6 +285,7 @@ import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
 import PipelineNg from './pipeline-ng.svg'
+import FatArrowUp from './fat-arrow-up.svg'
 import PipelineStageSelectionCaret from './pipeline-stage-selection-caret.svg'
 import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
@@ -457,6 +459,7 @@ type HarnessIconName =
   | 'cf-main'
   | 'check-alt'
   | 'check'
+  | 'ci-active-build'
   | 'ci-hover'
   | 'ci-main'
   | 'circle-cross'
@@ -531,6 +534,7 @@ type HarnessIconName =
   | 'expired'
   | 'expression-input'
   | 'failure-strategy'
+  | 'fat-arrow-up'
   | 'feedback-given'
   | 'file'
   | 'fixed-input'
@@ -876,6 +880,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cf-main': CfMain,
   'check-alt': CheckAlt,
   check: Check,
+  'ci-active-build': CiActiveBuild,
   'ci-hover': CiHover,
   'ci-main': CiMain,
   'circle-cross': CircleCross,
@@ -949,6 +954,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   execution: Execution,
   expired: Expired,
   'expression-input': ExpressionInput,
+  'fat-arrow-up': FatArrowUp,
   'failure-strategy': FailureStrategy,
   'feedback-given': FeedbackGiven,
   file: File,
