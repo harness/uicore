@@ -1,7 +1,0 @@
-.removeDropdownStyling {
-  :global {
-    .bp3-transition-container {
-      width: unset;
-    }
-  }
-}

@@ -1,8 +1,0 @@
-<svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none">
-  <path
-    d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-      style="animation: 1s linear infinite spinner-rotation; transform-origin: 50% 50%; transform-box: fill-box; stroke: currentColor; stroke-dasharray: 75, 100; stroke-width: 2.8; stroke-linecap: round;"
-  />
- </svg>
