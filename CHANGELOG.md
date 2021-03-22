@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.90](https://github.com/wings-software/uicore/compare/v0.1.89...v0.1.90) (2021-03-22)
+
+### [0.1.89](https://github.com/wings-software/uicore/compare/v0.1.88...v0.1.89) (2021-03-22)
+
+
+### Features
+
+* [CDNG-5365]: re-render of step wizard should recompute step identifier to step number map ([#99](https://github.com/wings-software/uicore/issues/99)) ([2619592](https://github.com/wings-software/uicore/commit/26195922f4fa70945d84b9fe3168805c55e2f60d))
+
 ### [0.1.88](https://github.com/wings-software/uicore/compare/v0.1.87...v0.1.88) (2021-03-21)
 
 

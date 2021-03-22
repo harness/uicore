@@ -113,16 +113,16 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   } = props
   const stepIdentifierToStepNumberMap = React.useRef<Record<string, number>>({})
   const currentStepNumber = React.useRef<number>(0)
-  React.useEffect(
-    () =>
-      createStepIdentifierToStepNumberMap<SharedObject>(
-        props.children,
-        true,
-        stepIdentifierToStepNumberMap,
-        currentStepNumber
-      ),
-    []
-  )
+  React.useEffect(() => {
+    stepIdentifierToStepNumberMap.current = {}
+    currentStepNumber.current = 0
+    createStepIdentifierToStepNumberMap<SharedObject>(
+      props.children,
+      true,
+      stepIdentifierToStepNumberMap,
+      currentStepNumber
+    )
+  }, [props.children])
   const [state, setState] = React.useState<StepState<SharedObject>>({
     activeStep: Array.isArray(children) && (initialStep < 1 || initialStep > children.length) ? 1 : initialStep,
     totalSteps: 0,
