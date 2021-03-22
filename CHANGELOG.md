@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.91](https://github.com/wings-software/uicore/compare/v0.1.90...v0.1.91) (2021-03-22)
+
+
+### Features
+
+* [CI-1279]: adding fatArrow and ciActiveBuild icons ([#103](https://github.com/wings-software/uicore/issues/103)) ([c9d44ab](https://github.com/wings-software/uicore/commit/c9d44abf620300e314500e9eae1a3bd712cd709a))
+
 ### [0.1.90](https://github.com/wings-software/uicore/compare/v0.1.89...v0.1.90) (2021-03-22)
 
 ### [0.1.89](https://github.com/wings-software/uicore/compare/v0.1.88...v0.1.89) (2021-03-22)
