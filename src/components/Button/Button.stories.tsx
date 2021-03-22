@@ -27,7 +27,8 @@ export default {
               }
             </Description>
             <ArgsTable />
-            <Stories />
+
+            <Stories includePrimary />
           </>
         )
       }
