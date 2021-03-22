@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { Title, Subtitle, Description, ArgsTable, Stories } from '@storybook/addon-docs/blocks'
+import { Title, Subtitle, Description, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { Layout, Button, ButtonProps, Text } from '../..'
 
 export default {
@@ -14,6 +14,7 @@ export default {
       source: {
         type: 'code'
       },
+
       page: function PageDescription() {
         return (
           <>
@@ -26,9 +27,10 @@ export default {
                 'Button component reuses Blueprints Button and implements the look and feel of [HDL](https://projects.invisionapp.com/d/?origin=v7#/projects/prototypes/17628604). Button API is exactly the same as [Blueprints Button](https://blueprintjs.com/docs/#core/components/button).'
               }
             </Description>
-            <ArgsTable />
+            <Primary />
+            <ArgsTable story={PRIMARY_STORY} />
 
-            <Stories includePrimary />
+            <Stories />
           </>
         )
       }
