@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.93](https://github.com/wings-software/uicore/compare/v0.1.92...v0.1.93) (2021-03-23)
+
+
+### Features
+
+* icons added for barrier ([#106](https://github.com/wings-software/uicore/issues/106)) ([857416e](https://github.com/wings-software/uicore/commit/857416e47864dabaf20ecab472c07f0e105162f4))
+
 ### [0.1.92](https://github.com/wings-software/uicore/compare/v0.1.91...v0.1.92) (2021-03-23)
 
 
