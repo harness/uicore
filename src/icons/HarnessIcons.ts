@@ -14,6 +14,8 @@ import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
 import Bitbucket from './bitbucket.svg'
+import BitbucketSelected from './bitbucket-selected.svg'
+import BitbucketUnselected from './bitbucket-unselected.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -104,6 +106,7 @@ import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import EmailStep from './email-step.svg'
+import EnityIcon from './entity.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -123,7 +126,12 @@ import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
 import Github from './github.svg'
+import GithubSelected from './github-selected.svg'
+import GithubUnselected from './github-unselected.svg'
 import Gitlab from './gitlab.svg'
+import GitlabSelected from './gitlab-selected.svg'
+import GitlabUnselected from './gitlab-unselected.svg'
+import GitLandingPage from './git-landing-page.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GreyCluster from './grey-cluster.svg'
@@ -302,6 +310,7 @@ import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
+import RepositoryIcon from './repository.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS from './restore-cache-s3.svg'
@@ -434,6 +443,8 @@ type HarnessIconName =
   | 'bin-main'
   | 'bitbucket-blue'
   | 'bitbucket-new'
+  | 'bitbucket-selected'
+  | 'bitbucket-unselected'
   | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
@@ -525,6 +536,7 @@ type HarnessIconName =
   | 'ecr-step'
   | 'elastic-kubernetes-service'
   | 'email-step'
+  | 'entity'
   | 'execution-abort'
   | 'execution-input'
   | 'execution-rollback'
@@ -545,7 +557,12 @@ type HarnessIconName =
   | 'gear'
   | 'git-clone-step'
   | 'github'
+  | 'github-selected'
+  | 'github-unselected'
   | 'gitlab'
+  | 'gitlab-selected'
+  | 'gitlab-unselected'
+  | 'git-sync'
   | 'google-kubernetes-engine'
   | 'google'
   | 'grey-cluster'
@@ -723,6 +740,7 @@ type HarnessIconName =
   | 'report-gear-grey'
   | 'report-gear'
   | 'report-icon'
+  | 'repository-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
@@ -855,6 +873,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
+  'bitbucket-selected': BitbucketSelected,
+  'bitbucket-unselected': BitbucketUnselected,
   bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
@@ -946,6 +966,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
   'email-step': EmailStep,
+  entity: EnityIcon,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
@@ -966,7 +987,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gear: Gear,
   'git-clone-step': GitCloneStep,
   github: Github,
+  'github-selected': GithubSelected,
+  'github-unselected': GithubUnselected,
   gitlab: Gitlab,
+  'gitlab-selected': GitlabSelected,
+  'gitlab-unselected': GitlabUnselected,
+  'git-sync': GitLandingPage,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   'grey-cluster': GreyCluster,
@@ -1144,6 +1170,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
+  'repository-icon': RepositoryIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS,
