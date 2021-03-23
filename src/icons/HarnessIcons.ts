@@ -10,6 +10,9 @@ import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
+import BarrierClose from './barrier-close.svg'
+import BarrierOpenWihLinks from './barrier-open-wih-links.svg'
+import BarrierOpen from './barrier-open.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
@@ -37,10 +40,10 @@ import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
 import CeMain from './ce-main.svg'
 import CfHover from './cf-hover.svg'
-import CiActiveBuild from './ci-active-build.svg'
 import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
+import CiActiveBuild from './ci-active-build.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CircleCross from './circle-cross.svg'
@@ -116,6 +119,7 @@ import Execution from './execution.svg'
 import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
+import FatArrowUp from './fat-arrow-up.svg'
 import FeedbackGiven from './feedback-given.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
@@ -293,7 +297,6 @@ import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
 import PipelineNg from './pipeline-ng.svg'
-import FatArrowUp from './fat-arrow-up.svg'
 import PipelineStageSelectionCaret from './pipeline-stage-selection-caret.svg'
 import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
@@ -409,11 +412,12 @@ import SwapServices from './swap-services.svg'
 import TemplateLibrary from './template-library.svg'
 import TerraformApply from './terraform-apply.svg'
 import TestVerification from './test-verification.svg'
+import Text from './text.svg'
+import Timeout from './timeout.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
-import Text from './text.svg'
 import Up from './up.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
@@ -440,6 +444,9 @@ type HarnessIconName =
   | 'audit-log-created'
   | 'azure-kubernetes-service'
   | 'banned'
+  | 'barrier-close'
+  | 'barrier-open-wih-links'
+  | 'barrier-open'
   | 'bin-main'
   | 'bitbucket-blue'
   | 'bitbucket-new'
@@ -839,11 +846,12 @@ type HarnessIconName =
   | 'template-library'
   | 'terraform-apply'
   | 'test-verification'
+  | 'text'
+  | 'timeout'
   | 'trigger-artifact'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
-  | 'text'
   | 'up'
   | 'utility'
   | 'view-json'
@@ -870,6 +878,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'audit-log-created': AuditLogCreated,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
+  'barrier-close': BarrierClose,
+  'barrier-open-wih-links': BarrierOpenWihLinks,
+  'barrier-open': BarrierOpen,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
@@ -975,8 +986,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   execution: Execution,
   expired: Expired,
   'expression-input': ExpressionInput,
-  'fat-arrow-up': FatArrowUp,
   'failure-strategy': FailureStrategy,
+  'fat-arrow-up': FatArrowUp,
   'feedback-given': FeedbackGiven,
   file: File,
   'fixed-input': FixedInput,
@@ -1269,11 +1280,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'template-library': TemplateLibrary,
   'terraform-apply': TerraformApply,
   'test-verification': TestVerification,
+  text: Text,
+  timeout: Timeout,
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
-  text: Text,
   up: Up,
   utility: Utility,
   'view-json': ViewJson,
