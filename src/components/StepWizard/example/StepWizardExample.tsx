@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '../../Button/Button'
 import { Layout } from '../../../layouts/Layout'
-import { StepWizard } from '../StepWizard'
+import { GotoStepArgs, StepWizard } from '../StepWizard'
 import { ModalProvider } from '../../Modal/ModalProvider'
 
 import './StepWizardExample.css'
@@ -21,7 +21,7 @@ interface StepProps<PrevStepData> {
   totalSteps?: () => number
   nextStep?: (data?: PrevStepData) => void
   previousStep?: (data?: PrevStepData) => void
-  gotoStep?: (stepNumber: number, data?: PrevStepData) => void
+  gotoStep?: (args: GotoStepArgs<PrevStepData>) => boolean
   firstStep?: (data?: PrevStepData) => void
   lastStep?: (data?: PrevStepData) => void
 }

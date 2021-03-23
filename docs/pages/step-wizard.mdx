@@ -17,6 +17,16 @@ import { StepWizard } from '@wings-software/uicore'
 
 ```js
 
+type GotoStepArgs<SharedObject> = {
+  stepNumber: number
+  stepIdentifier?: never
+  prevStepData?: SharedObject
+} | {
+  stepNumber?: never
+  stepIdentifier: string
+  prevStepData?: SharedObject
+}
+
 export interface StepProps<SharedObject> {
   name?: string
   // These props will be passed by wizard
@@ -25,7 +35,7 @@ export interface StepProps<SharedObject> {
   totalSteps?: () => number
   nextStep?: (prevStepData?: SharedObject) => void
   previousStep?: (prevStepData?: SharedObject) => void
-  gotoStep?: (stepNumber: number, prevStepData?: SharedObject) => void
+  gotoStep?: (args: GotoStepArgs<SharedObject>) => boolean
   firstStep?: (prevStepData?: SharedObject) => void
   lastStep?: (prevStepData?: SharedObject) => void
 }

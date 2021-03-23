@@ -37,6 +37,7 @@ import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
 import CeMain from './ce-main.svg'
 import CfHover from './cf-hover.svg'
+import CiActiveBuild from './ci-active-build.svg'
 import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
@@ -237,6 +238,7 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
@@ -291,6 +293,7 @@ import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
 import PipelineNg from './pipeline-ng.svg'
+import FatArrowUp from './fat-arrow-up.svg'
 import PipelineStageSelectionCaret from './pipeline-stage-selection-caret.svg'
 import PipelineVariables from './pipeline-variables.svg'
 import Pipeline from './pipeline.svg'
@@ -467,6 +470,7 @@ type HarnessIconName =
   | 'cf-main'
   | 'check-alt'
   | 'check'
+  | 'ci-active-build'
   | 'ci-hover'
   | 'ci-main'
   | 'circle-cross'
@@ -542,6 +546,7 @@ type HarnessIconName =
   | 'expired'
   | 'expression-input'
   | 'failure-strategy'
+  | 'fat-arrow-up'
   | 'feedback-given'
   | 'file'
   | 'fixed-input'
@@ -666,6 +671,7 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'money-icon'
   | 'multi-service'
   | 'nav-account-admin-hover'
   | 'nav-account-admin-selected'
@@ -896,6 +902,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cf-main': CfMain,
   'check-alt': CheckAlt,
   check: Check,
+  'ci-active-build': CiActiveBuild,
   'ci-hover': CiHover,
   'ci-main': CiMain,
   'circle-cross': CircleCross,
@@ -970,6 +977,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   execution: Execution,
   expired: Expired,
   'expression-input': ExpressionInput,
+  'fat-arrow-up': FatArrowUp,
   'failure-strategy': FailureStrategy,
   'feedback-given': FeedbackGiven,
   file: File,
@@ -1093,6 +1101,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  'money-icon': MoneyIcon,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
   'nav-account-admin-selected': NavAccountAdminSelected,

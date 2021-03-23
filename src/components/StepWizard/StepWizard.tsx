@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MutableRefObject } from 'react'
 import cx from 'classnames'
 import css from './StepWizard.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'
@@ -11,6 +11,18 @@ interface StepChangeData<SharedObject> {
   nextStep: number
   prevStepData: SharedObject
 }
+
+export type GotoStepArgs<SharedObject> =
+  | {
+      stepNumber: number
+      stepIdentifier?: never
+      prevStepData?: SharedObject
+    }
+  | {
+      stepNumber?: never
+      stepIdentifier: string
+      prevStepData?: SharedObject
+    }
 export interface StepWizardProps<SharedObject> {
   icon?: IconName
   iconProps?: Omit<IconProps, 'name'>
@@ -30,6 +42,7 @@ export interface StepWizardProps<SharedObject> {
 
 export interface StepProps<SharedObject> {
   name?: string | JSX.Element
+  identifier?: string
   children?: React.ReactElement<StepWizardProps<SharedObject>> | React.ReactNode
   // These props will be passed by wizard
   prevStepData?: SharedObject
@@ -37,7 +50,7 @@ export interface StepProps<SharedObject> {
   totalSteps?: () => number
   nextStep?: (prevStepData?: SharedObject) => void
   previousStep?: (prevStepData?: SharedObject) => void
-  gotoStep?: (stepNumber: number, prevStepData?: SharedObject) => void
+  gotoStep?: (args: GotoStepArgs<SharedObject>) => boolean
   firstStep?: (prevStepData?: SharedObject) => void
   lastStep?: (prevStepData?: SharedObject) => void
 }
@@ -55,6 +68,34 @@ interface StepState<SharedObject> {
   totalSteps: number
 }
 
+// builds step identifier to step number map
+// recursive in nature to support nested wizards
+const createStepIdentifierToStepNumberMap = <SharedObject,>(
+  steps: StepWizardProps<SharedObject>['children'],
+  include: boolean,
+  stepIdentifierToStepNumberMap: MutableRefObject<Record<string, number>>,
+  currentStepNumber: MutableRefObject<number>
+) => {
+  if (!steps) {
+    return
+  }
+  React.Children.map(steps, step => {
+    if (include) {
+      const stepIdentifier = step?.props?.identifier || step?.props?.name
+      if (stepIdentifier && typeof stepIdentifier === 'string') {
+        currentStepNumber.current++
+        stepIdentifierToStepNumberMap.current[stepIdentifier] = currentStepNumber.current
+      }
+    }
+    createStepIdentifierToStepNumberMap(
+      step?.props.children as StepWizardProps<SharedObject>['children'],
+      step?.type === StepWizard,
+      stepIdentifierToStepNumberMap,
+      currentStepNumber
+    )
+  })
+}
+
 export function StepWizard<SharedObject = Record<string, unknown>>(
   props: StepWizardProps<SharedObject>
 ): React.ReactElement {
@@ -70,15 +111,31 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     title = '',
     subtitle = ''
   } = props
+  const stepIdentifierToStepNumberMap = React.useRef<Record<string, number>>({})
+  const currentStepNumber = React.useRef<number>(0)
+  React.useEffect(() => {
+    stepIdentifierToStepNumberMap.current = {}
+    currentStepNumber.current = 0
+    createStepIdentifierToStepNumberMap<SharedObject>(
+      props.children,
+      true,
+      stepIdentifierToStepNumberMap,
+      currentStepNumber
+    )
+  }, [props.children])
   const [state, setState] = React.useState<StepState<SharedObject>>({
     activeStep: Array.isArray(children) && (initialStep < 1 || initialStep > children.length) ? 1 : initialStep,
     totalSteps: 0,
     prevStep: -1
   })
   const gotoStep = React.useCallback(
-    (stepNumber: number, prevStepData?: SharedObject) => {
+    (args: GotoStepArgs<SharedObject>) => {
+      const { stepNumber: stepNumberArg, stepIdentifier, prevStepData } = args
+      const stepNumber = stepIdentifier
+        ? stepIdentifierToStepNumberMap.current[stepIdentifier]
+        : (stepNumberArg as number)
       if (state.activeStep === stepNumber) {
-        return
+        return true
       }
       const stepData = state.nestedStepWizard?.[state.prevStep]
       const nestedWizard = stepData?.wizard
@@ -96,12 +153,13 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         stepNumber === state.totalSteps + 1
       ) {
         props.onCompleteWizard(prevStepData)
-        return
-      } else if (stepNumber > state.totalSteps || stepNumber < 1) {
+        return true
+      } else if (!stepNumber || stepNumber > state.totalSteps || stepNumber < 1) {
         // Not a valid step stepNumber
-        return
+        return false
       }
       setState(prevState => ({ ...prevState, prevStep: prevState.activeStep, activeStep: stepNumber, prevStepData }))
+      return true
     },
     [state.activeStep, state.totalSteps, state.prevStep, state.nestedStepWizard]
   )
@@ -130,25 +188,25 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   }, [state.activeStep])
   const nextStep = React.useCallback(
     (prevStepData?: SharedObject) => {
-      gotoStep(state.activeStep + 1, prevStepData)
+      gotoStep({ stepNumber: state.activeStep + 1, prevStepData })
     },
     [gotoStep]
   )
   const previousStep = React.useCallback(
     (prevStepData?: SharedObject) => {
-      gotoStep(state.activeStep - 1, prevStepData)
+      gotoStep({ stepNumber: state.activeStep - 1, prevStepData })
     },
     [gotoStep]
   )
   const firstStep = React.useCallback(
     (prevStepData?: SharedObject) => {
-      gotoStep(1, prevStepData)
+      gotoStep({ stepNumber: 1, prevStepData })
     },
     [gotoStep]
   )
   const lastStep = React.useCallback(
     (prevStepData?: SharedObject) => {
-      gotoStep(state.totalSteps, prevStepData)
+      gotoStep({ stepNumber: state.totalSteps, prevStepData })
     },
     [gotoStep]
   )
@@ -211,7 +269,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
           return (
             <div
               key={index}
-              onClick={() => completedSteps && gotoStep(index + 1, state.prevStepData)}
+              onClick={() => completedSteps && gotoStep({ stepNumber: index + 1, prevStepData: state.prevStepData })}
               className={cx(
                 css.navStep,
                 navClassName,
