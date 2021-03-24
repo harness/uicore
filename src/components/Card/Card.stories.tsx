@@ -18,12 +18,13 @@ export default {
         return (
           <>
             <Title>Card</Title>
-            <Description>{`Card Icon component reuses Card Component and lets you to write body for icon [CD Next Gen](https://harness.atlassian.net/wiki/spaces/UI/pages/668271019/Card)
-`}</Description>
+            <Description>{`Card component reuses Blueprint's card and implements the look and feel of [CD Next Gen](https://harness.atlassian.net/wiki/spaces/UI/pages/668271019/Card)`}</Description>
             <Subtitle>
               <>
                 <h4>Import</h4>
-                <code>{`import { Card, CardBody }  from '@wings-software/uicore'`}</code>
+                <pre>
+                  <code>{`import { Card, CardBody }  from '@wings-software/uicore'`}</code>
+                </pre>
                 <h4>Types</h4>
                 <pre>
                   <code>
