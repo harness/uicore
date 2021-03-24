@@ -16,9 +16,9 @@ import BarrierOpen from './barrier-open.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
-import Bitbucket from './bitbucket.svg'
 import BitbucketSelected from './bitbucket-selected.svg'
 import BitbucketUnselected from './bitbucket-unselected.svg'
+import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -109,7 +109,7 @@ import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import EmailStep from './email-step.svg'
-import EnityIcon from './entity.svg'
+import Entity from './entity.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -129,13 +129,13 @@ import GcrStep from './gcr-step.svg'
 import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
-import Github from './github.svg'
+import GitLandingPage from './git-landing-page.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
-import Gitlab from './gitlab.svg'
+import Github from './github.svg'
 import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
-import GitLandingPage from './git-landing-page.svg'
+import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GreyCluster from './grey-cluster.svg'
@@ -313,7 +313,7 @@ import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
-import RepositoryIcon from './repository.svg'
+import Repository from './repository.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS from './restore-cache-s3.svg'
@@ -410,7 +410,11 @@ import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
 import SwapServices from './swap-services.svg'
 import TemplateLibrary from './template-library.svg'
+import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
+import TerraformDestroy from './terraform-destroy.svg'
+import TerraformPlan from './terraform-plan.svg'
+import TerraformRollback from './terraform-rollback.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
 import Timeout from './timeout.svg'
@@ -563,13 +567,13 @@ type HarnessIconName =
   | 'gcs-step'
   | 'gear'
   | 'git-clone-step'
-  | 'github'
+  | 'git-landing-page'
   | 'github-selected'
   | 'github-unselected'
-  | 'gitlab'
+  | 'github'
   | 'gitlab-selected'
   | 'gitlab-unselected'
-  | 'git-sync'
+  | 'gitlab'
   | 'google-kubernetes-engine'
   | 'google'
   | 'grey-cluster'
@@ -747,7 +751,7 @@ type HarnessIconName =
   | 'report-gear-grey'
   | 'report-gear'
   | 'report-icon'
-  | 'repository-icon'
+  | 'repository'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
@@ -844,7 +848,11 @@ type HarnessIconName =
   | 'support-videos'
   | 'swap-services'
   | 'template-library'
+  | 'terraform-apply-new'
   | 'terraform-apply'
+  | 'terraform-destroy'
+  | 'terraform-plan'
+  | 'terraform-rollback'
   | 'test-verification'
   | 'text'
   | 'timeout'
@@ -977,7 +985,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
   'email-step': EmailStep,
-  entity: EnityIcon,
+  entity: Entity,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
@@ -997,13 +1005,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'gcs-step': GcsStep,
   gear: Gear,
   'git-clone-step': GitCloneStep,
-  github: Github,
+  'git-landing-page': GitLandingPage,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
-  gitlab: Gitlab,
+  github: Github,
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
-  'git-sync': GitLandingPage,
+  gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   'grey-cluster': GreyCluster,
@@ -1181,7 +1189,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
-  'repository-icon': RepositoryIcon,
+  repository: Repository,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS,
@@ -1278,7 +1286,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-videos': SupportVideos,
   'swap-services': SwapServices,
   'template-library': TemplateLibrary,
+  'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
+  'terraform-destroy': TerraformDestroy,
+  'terraform-plan': TerraformPlan,
+  'terraform-rollback': TerraformRollback,
   'test-verification': TestVerification,
   text: Text,
   timeout: Timeout,
