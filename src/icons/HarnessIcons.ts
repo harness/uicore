@@ -410,8 +410,8 @@ import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
 import SwapServices from './swap-services.svg'
 import TemplateLibrary from './template-library.svg'
+import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
-import TerraformApply from './terraform-apply2.svg'
 import TerraformDestroy from './terraform-destroy.svg'
 import TerraformPlan from './terraform-plan.svg'
 import TerraformRollback from './terraform-rollback.svg'
@@ -848,8 +848,8 @@ type HarnessIconName =
   | 'support-videos'
   | 'swap-services'
   | 'template-library'
+  | 'terraform-apply-new'
   | 'terraform-apply'
-  | 'terraform-apply2'
   | 'terraform-destroy'
   | 'terraform-plan'
   | 'terraform-rollback'
@@ -1286,8 +1286,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-videos': SupportVideos,
   'swap-services': SwapServices,
   'template-library': TemplateLibrary,
+  'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
-  'terraform-apply2': TerraformApply,
   'terraform-destroy': TerraformDestroy,
   'terraform-plan': TerraformPlan,
   'terraform-rollback': TerraformRollback,
