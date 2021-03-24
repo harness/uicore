@@ -28,6 +28,12 @@ export default {
                 </pre>
                 <h3>ButtonGroup</h3>
                 <Text>This component takes Button components as its children</Text>
+                <pre>
+                  <code>{` <ButtonGroup>
+    <Button text="Applications" />
+    <Button text="Clusters" />
+  </ButtonGroup>`}</code>
+                </pre>
                 <h3>OptionsButtonGroup</h3>
                 <Text>
                   This component makes it easy to control buttons in a button group. It takes an array of ButtonProps
