@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.94](https://github.com/wings-software/uicore/compare/v0.1.93...v0.1.94) (2021-03-24)
+
+
+### Features
+
+* Added terraform step icons ([#108](https://github.com/wings-software/uicore/issues/108)) ([ecf083c](https://github.com/wings-software/uicore/commit/ecf083cf5ace1396b844de936aef1294eeeee807))
+
 ### [0.1.93](https://github.com/wings-software/uicore/compare/v0.1.92...v0.1.93) (2021-03-23)
 
 
