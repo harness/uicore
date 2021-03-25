@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.95](https://github.com/wings-software/uicore/compare/v0.1.94...v0.1.95) (2021-03-25)
+
+
+### Features
+
+* [CDNG-5315]: added terraform icons ([#109](https://github.com/wings-software/uicore/issues/109)) ([2c55ec6](https://github.com/wings-software/uicore/commit/2c55ec611c1c0da9301134255cb49aa1b8e3697d))
+
 ### [0.1.94](https://github.com/wings-software/uicore/compare/v0.1.93...v0.1.94) (2021-03-24)
 
 
