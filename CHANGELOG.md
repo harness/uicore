@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.97](https://github.com/wings-software/uicore/compare/v0.1.96...v0.1.97) (2021-03-26)
+
+
+### Features
+
+* [CDNG-5014]: Git sync help icon ([#113](https://github.com/wings-software/uicore/issues/113)) ([e66375b](https://github.com/wings-software/uicore/commit/e66375b133f0a7dc797547ee28fa1ad934ba84f8))
+
 ### [0.1.96](https://github.com/wings-software/uicore/compare/v0.1.95...v0.1.96) (2021-03-26)
 
 
