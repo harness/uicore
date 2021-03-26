@@ -5,7 +5,6 @@ import { Container } from '../Container/Container'
 import { Color } from '../../core/Color'
 import { Utils } from '../../core/Utils'
 import { Text } from '../Text/Text'
-import { Layout } from '../../layouts/Layout'
 
 import css from './WeightedStack.css'
 
@@ -24,7 +23,7 @@ export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], classNa
   return (
     <Container className={css.main}>
       {data.length ? (
-        <div className="container rounded">
+        <div className={css.container}>
           {data.map((item, index) => {
             const { label, value, color = Color.BLUE_450 } = item
             const percent = (value / max) * 100
