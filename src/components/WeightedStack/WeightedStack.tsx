@@ -5,6 +5,7 @@ import { Container } from '../Container/Container'
 import { Color } from '../../core/Color'
 import { Utils } from '../../core/Utils'
 import { Text } from '../Text/Text'
+import { Layout } from '../../layouts/Layout'
 
 import css from './WeightedStack.css'
 
@@ -29,11 +30,11 @@ export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], classNa
             const percent = (value / max) * 100
             const realColor = Utils.getRealCSSColor(color)
             return (
-              <>
+              <div className={css.stack}>
                 <Text>
                   {label}&nbsp;({value})
                 </Text>
-                <div role="spark" className={cx(`progress-bar`, className)} key={index}>
+                <div className={cx(`progress-bar`, className)} key={index}>
                   <div className={`progress-track`}>
                     <div
                       className={`progress-fill`}
@@ -43,7 +44,7 @@ export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], classNa
                       }}></div>
                   </div>
                 </div>
-              </>
+              </div>
             )
           })}
         </div>

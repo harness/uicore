@@ -14,9 +14,7 @@
     .progress-bar {
       display: flex;
       flex: 1;
-      height: 60px;
-      min-width: 4px;
-      margin-right: 3px;
+      height: 20px;
 
       .progress-track {
         position: relative;
@@ -25,6 +23,7 @@
         background: transparent;
 
         .progress-fill {
+          border-radius: 0 2px 2px 0;
           position: absolute;
           height: 50%;
           width: 100%;
@@ -33,4 +32,8 @@
       }
     }
   }
+}
+
+.stack {
+  padding-bottom: var(--spacing-medium);
 }
