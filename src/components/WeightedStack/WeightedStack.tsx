@@ -32,11 +32,11 @@ export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], classNa
             const percent = (value / max) * 100
             const realColor = Utils.getRealCSSColor(color)
             return (
-              <div className={css.stack}>
+              <div className={css.stack} key={index}>
                 <Text className={css.stackLabel}>
                   {label}&nbsp;({value})
                 </Text>
-                <div className={cx('progress-bar', className)} key={index}>
+                <div className={cx('progress-bar', className)}>
                   <div className={'progress-track'}>
                     <div
                       className={'progress-fill'}
