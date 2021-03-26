@@ -17,8 +17,8 @@ export interface WeightedStackProps {
   className?: string
 }
 
-export const WeightedStack: React.FC<WeightedStackProps> = ({ data, className }) => {
-  const max = Math.max(...data?.map((data: WeightedStackData) => data.value))
+export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], className }) => {
+  const max = Math.max(...data.map((data: WeightedStackData) => data.value))
   return (
     <Container className={css.main}>
       {data.length ? (
