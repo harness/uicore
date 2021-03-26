@@ -4,6 +4,7 @@ import cx from 'classnames'
 import { Container } from '../Container/Container'
 import { Color } from '../../core/Color'
 import { Utils } from '../../core/Utils'
+import { Text } from '../Text/Text'
 
 import css from './WeightedStack.css'
 
@@ -22,21 +23,27 @@ export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], classNa
   return (
     <Container className={css.main}>
       {data.length ? (
-        <div className="container horizontal rounded">
+        <div className="container rounded">
           {data.map((item, index) => {
-            const percent = (item.value / max) * 100
-            const realColor = Utils.getRealCSSColor(item?.color ?? Color.BLUE_450)
+            const { label, value, color = Color.BLUE_450 } = item
+            const percent = (value / max) * 100
+            const realColor = Utils.getRealCSSColor(color)
             return (
-              <div role="spark" className={cx(`progress-bar`, className)} key={index}>
-                <div className={`progress-track`}>
-                  <div
-                    className={`progress-fill`}
-                    style={{
-                      backgroundColor: realColor,
-                      width: `${percent ? `${percent}%` : 0}`
-                    }}></div>
+              <>
+                <Text>
+                  {label}&nbsp;({value})
+                </Text>
+                <div role="spark" className={cx(`progress-bar`, className)} key={index}>
+                  <div className={`progress-track`}>
+                    <div
+                      className={`progress-fill`}
+                      style={{
+                        backgroundColor: realColor,
+                        width: `${percent ? `${percent}%` : 0}`
+                      }}></div>
+                  </div>
                 </div>
-              </div>
+              </>
             )
           })}
         </div>
