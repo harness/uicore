@@ -9,4 +9,6 @@ export default {
 
 export const WeightedStackComp: Story<WeightedStackProps> = args => <WeightedStack {...args} />
 
-WeightedStackComp.args = {}
+WeightedStackComp.args = {
+  data: [12, 2]
+}
