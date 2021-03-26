@@ -19,12 +19,15 @@ export interface WeightedStackProps {
 }
 
 export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], className }) => {
-  const max = Math.max(...data.map((data: WeightedStackData) => data.value))
+  const sortedData = data.sort((point1: WeightedStackData, point2: WeightedStackData) =>
+    point1.value > point2.value ? -1 : point2.value > point1.value ? 1 : 0
+  )
+  const max = Math.max(...sortedData.map((data: WeightedStackData) => data.value))
   return (
     <Container className={css.main}>
       {data.length ? (
         <div className={css.container}>
-          {data.map((item, index) => {
+          {sortedData.map((item, index) => {
             const { label, value, color = Color.BLUE_450 } = item
             const percent = (value / max) * 100
             const realColor = Utils.getRealCSSColor(color)

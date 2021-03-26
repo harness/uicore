@@ -13,7 +13,9 @@ export const WeightedStackComp: Story<WeightedStackProps> = args => <WeightedSta
 
 WeightedStackComp.args = {
   data: [
-    { label: 'Non Prod', value: 12, color: Color.BLUE_450 },
-    { label: 'Prod', value: 2, color: Color.BLUE_700 }
+    { label: 'SSH', value: 8, color: Color.BLUE_450 },
+    { label: 'Kubernetes', value: 10, color: Color.BLUE_500 },
+    { label: 'Helm', value: 6, color: Color.BLUE_700 },
+    { label: 'PCF', value: 3, color: Color.BLUE_900 }
   ]
 }
