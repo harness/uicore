@@ -10,5 +10,8 @@ export default {
 export const WeightedStackComp: Story<WeightedStackProps> = args => <WeightedStack {...args} />
 
 WeightedStackComp.args = {
-  data: [12, 2]
+  data: [
+    { label: 'Non Prod', value: 12 },
+    { label: 'Prod', value: 2 }
+  ]
 }
