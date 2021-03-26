@@ -31,7 +31,7 @@ export const WeightedStack: React.FC<WeightedStackProps> = ({ data = [], classNa
             const realColor = Utils.getRealCSSColor(color)
             return (
               <div className={css.stack}>
-                <Text>
+                <Text className={css.stackLabel}>
                   {label}&nbsp;({value})
                 </Text>
                 <div className={cx(`progress-bar`, className)} key={index}>
