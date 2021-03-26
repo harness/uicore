@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.98](https://github.com/wings-software/uicore/compare/v0.1.97...v0.1.98) (2021-03-26)
+
+
+### Features
+
+* [CDNG-5425]: Added WeightedStack component ([#112](https://github.com/wings-software/uicore/issues/112)) ([562b491](https://github.com/wings-software/uicore/commit/562b491e9465ef088a1fcd303d05c7b266e55e21))
+
 ### [0.1.97](https://github.com/wings-software/uicore/compare/v0.1.96...v0.1.97) (2021-03-26)
 
 
