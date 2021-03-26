@@ -134,3 +134,4 @@ export {
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
 export { MultiLogsViewer, MultiLogsViewerProps } from './components/MultiLogsViewer/MultiLogsViewer'
+export { WeightedStack, WeightedStackProps, WeightedStackData } from './components/WeightedStack/WeightedStack'
