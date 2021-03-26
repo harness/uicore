@@ -14,25 +14,27 @@ export interface WeightedStackData {
 }
 export interface WeightedStackProps {
   data: WeightedStackData[]
-  color?: Color
   className?: string
 }
 
-export const WeightedStack: React.FC<WeightedStackProps> = ({ data, color = Color.BLUE_450, className }) => {
+export const WeightedStack: React.FC<WeightedStackProps> = ({ data, className }) => {
   const max = Math.max(...data?.map((data: WeightedStackData) => data.value))
-  const bgColor = Utils.getRealCSSColor(color)
   return (
-    <Container role="spark-chart" className={css.main}>
+    <Container className={css.main}>
       {data.length ? (
         <div className="container horizontal rounded">
           {data.map((item, index) => {
             const percent = (item.value / max) * 100
+            const realColor = Utils.getRealCSSColor(item?.color ?? Color.BLUE_450)
             return (
               <div role="spark" className={cx(`progress-bar`, className)} key={index}>
                 <div className={`progress-track`}>
                   <div
                     className={`progress-fill`}
-                    style={{ backgroundColor: bgColor, width: `${percent ? `${percent}%` : 0}` }}></div>
+                    style={{
+                      backgroundColor: realColor,
+                      width: `${percent ? `${percent}%` : 0}`
+                    }}></div>
                 </div>
               </div>
             )

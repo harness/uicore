@@ -1,6 +1,8 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
+import { Color } from '../../core/Color'
+
 import { WeightedStack, WeightedStackProps } from './WeightedStack'
 
 export default {
@@ -11,7 +13,7 @@ export const WeightedStackComp: Story<WeightedStackProps> = args => <WeightedSta
 
 WeightedStackComp.args = {
   data: [
-    { label: 'Non Prod', value: 12 },
-    { label: 'Prod', value: 2 }
+    { label: 'Non Prod', value: 12, color: Color.BLUE_450 },
+    { label: 'Prod', value: 2, color: Color.BLUE_700 }
   ]
 }
