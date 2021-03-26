@@ -1,6 +1,7 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
+import Inline from './Inline.svg'
 import Options from './Options.svg'
 import Activity from './activity.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
@@ -147,7 +148,6 @@ import Health from './health.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import Info from './info.svg'
-import Inline from './Inline.svg'
 import InitializeStep from './initialize-step.svg'
 import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
@@ -310,6 +310,7 @@ import Profile from './profile.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Queued from './queued.svg'
+import Remote from './remote.svg'
 import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
@@ -323,8 +324,6 @@ import RollbackExecution from './rollback-execution.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
 import RunStep from './run-step.svg'
-import Remote from './remote.svg'
-import RoundMinus from './roundminus.svg'
 import RunTestsStep from './run-tests-step.svg'
 import RuntimeInput from './runtime-input.svg'
 import SaveCacheGcs from './save-cache-gcs.svg'
@@ -442,6 +441,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
+  | 'Inline'
   | 'Options'
   | 'activity'
   | 'app-aws-code-deploy'
@@ -750,6 +750,7 @@ type HarnessIconName =
   | 'publish-step'
   | 'question'
   | 'queued'
+  | 'remote'
   | 'remove'
   | 'report-gear-grey'
   | 'report-gear'
@@ -880,6 +881,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
+  Inline: Inline,
   Options: Options,
   activity: Activity,
   'app-aws-code-deploy': AppAwsCodeDeploy,
@@ -1188,6 +1190,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'publish-step': PublishStep,
   question: Question,
   queued: Queued,
+  remote: Remote,
   remove: Remove,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
@@ -1314,10 +1317,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut,
-  inline: Inline,
-  remote: Remote,
-  roundminus: RoundMinus
+  'zoom-out': ZoomOut
 }
 
 export { HarnessIcons, HarnessIconName }
