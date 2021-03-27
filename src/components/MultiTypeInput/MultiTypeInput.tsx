@@ -163,10 +163,7 @@ export function MultiTypeInputFixedTypeComponent(
   return (
     <Select
       {...selectProps}
-      className={cx({
-        [css.select]: true,
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        [selectProps.className!]: true,
+      className={cx(css.select, selectProps.className, {
         [css.fixedValueInput]: MultiTypeInputType.FIXED ? true : false
       })}
       items={items}
