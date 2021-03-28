@@ -16,11 +16,11 @@ AreaChartComp.args = {
   seriesData: [
     {
       name: 'USA',
-      data: [null, null, null, 6, 11, 32]
+      data: [16, 11, 62, 25, 85]
     },
     {
       name: 'USSR/Russia',
-      data: [null, null, null, 5, 25, 50]
+      data: [5, 25, 27, 37, 46]
     }
   ]
 }
