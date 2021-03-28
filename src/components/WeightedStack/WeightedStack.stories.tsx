@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 
 import { Color } from '../../core/Color'
-import { Text } from '../..'
+import { Text } from '../../components/Text/Text'
 
 import { WeightedStack, WeightedStackProps } from './WeightedStack'
 

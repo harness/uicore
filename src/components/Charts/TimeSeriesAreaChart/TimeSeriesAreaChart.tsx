@@ -3,7 +3,7 @@ import React from 'react'
 import HighchartsReact from 'highcharts-react-official'
 import Highcharts, { SeriesAreaOptions } from 'highcharts'
 
-import css from './AreaChart.css'
+import css from './TimeSeriesAreaChart.css'
 
 export interface AreaChartProps {
   seriesData?: SeriesAreaOptions['data']
