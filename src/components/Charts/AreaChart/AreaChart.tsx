@@ -25,7 +25,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
       itemStyle: {
         color: 'var(--grey-500)',
         cursor: 'pointer',
-        fontSize: '12px',
+        fontSize: 'var(--font-size-small)',
         fontWeight: 'normal',
         textOverflow: 'ellipsis'
       }
@@ -37,7 +37,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
       title: false,
       labels: {
         style: {
-          fontSize: '12',
+          fontSize: 'var(--font-size-small)',
           color: 'var(--grey-400)'
         }
       },
