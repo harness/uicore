@@ -1,12 +1,12 @@
 import React from 'react'
 
 import HighchartsReact from 'highcharts-react-official'
-import Highcharts from 'highcharts'
+import Highcharts, { SeriesAreaOptions } from 'highcharts'
 
 import css from './AreaChart.css'
 
 export interface AreaChartProps {
-  seriesData?: any
+  seriesData?: SeriesAreaOptions['data']
 }
 
 export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {

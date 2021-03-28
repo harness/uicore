@@ -18,12 +18,7 @@
       [1616630400000, 120],
       [1616716500000, 60],
       [1616803200000, 46]
-    ],
-    "objectData": {
-      "id": "deploymentStatus",
-      "name": "Failed Service Deployments",
-      "type": "SERVICE_STATUS"
-    }
+    ]
   },
   {
     "name": "Failed",
@@ -44,11 +39,6 @@
       [1616630400000, 72],
       [1616716500000, 72],
       [1616803200000, 72]
-    ],
-    "objectData": {
-      "id": "deploymentStatus",
-      "name": "Success Service Deployments",
-      "type": "SERVICE_STATUS"
-    }
+    ]
   }
 ]
