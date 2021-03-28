@@ -36,7 +36,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
     yAxis: {
       min: 0,
       gridLineWidth: 1,
-      gridLineColor: 'var(--color-chart-line-color)',
+      gridLineColor: 'var(--grey-200)',
       title: false,
       labels: {
         style: {
