@@ -10,4 +10,17 @@ export default {
 
 export const AreaChartComp: Story<AreaChartProps> = args => <AreaChart {...args} />
 
-AreaChartComp.args = {}
+AreaChartComp.args = {
+  title: 'US and USSR nuclear stockpiles',
+  yAxisTitle: 'Nuclear weapon states',
+  seriesData: [
+    {
+      name: 'USA',
+      data: [null, null, null, 6, 11, 32]
+    },
+    {
+      name: 'USSR/Russia',
+      data: [null, null, null, 5, 25, 50]
+    }
+  ]
+}
