@@ -21,9 +21,6 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
     },
     credits: false,
     legend: {
-      labelFormatter: function () {
-        return this.name
-      },
       maxHeight: 80,
       itemStyle: {
         color: 'var(--grey-500)',
@@ -42,18 +39,12 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
         style: {
           fontSize: '12',
           color: 'var(--grey-400)'
-        },
-        formatter: function () {
-          return this.value
         }
       },
       stackLabels: {
         enabled: false,
         style: {
           fontWeight: 'bold'
-        },
-        formatter: function () {
-          return this.value
         }
       }
     },
