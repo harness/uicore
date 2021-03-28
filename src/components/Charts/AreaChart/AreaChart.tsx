@@ -49,9 +49,12 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
       }
     },
     tooltip: {
+      // @ts-ignore
       formatter: function () {
+        // @ts-ignore
         let pointVal = Highcharts.dateFormat('%e %b, %H:%M', this.x)
         pointVal = pointVal ? pointVal.replace(', 00:00', '') : ''
+        // @ts-ignore
         return '<b>' + this.series.name + ' : ' + this.y + '</b><br/>' + pointVal
       }
     },
