@@ -22,10 +22,17 @@ export default {
             <Title>Time Series Area Chart</Title>
             <Subtitle>
               <pre>
-                <code>{`import {TimeSeriesAreaChart} from '@wings-software/uicore'`}</code>
+                <code>{`import { TimeSeriesAreaChart } from '@wings-software/uicore'`}</code>
               </pre>
             </Subtitle>
-            This component in a wrapper around https://www.highcharts.com/demo/area-basic.
+            This component in a wrapper around <a>https://www.highcharts.com/demo/area-basic</a>, with the following two
+            defaults:
+            <ol>
+              <li>
+                x-axis fixed to last <i>N</i> days of duration
+              </li>
+              <li>y-axis fixed to count of entity under consideration, e.g. deployments, verifications etc.</li>
+            </ol>
             <Primary />
             <ArgsTable story={PRIMARY_STORY} />
             <Stories />
