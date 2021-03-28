@@ -135,3 +135,7 @@ export {
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
 export { MultiLogsViewer, MultiLogsViewerProps } from './components/MultiLogsViewer/MultiLogsViewer'
 export { WeightedStack, WeightedStackProps, WeightedStackData } from './components/WeightedStack/WeightedStack'
+export {
+  TimeSeriesAreaChart,
+  TimeSeriesAreaChartProps
+} from './components/Charts/TimeSeriesAreaChart/TimeSeriesAreaChart'

@@ -5,11 +5,11 @@ import Highcharts, { SeriesAreaOptions } from 'highcharts'
 
 import css from './TimeSeriesAreaChart.css'
 
-export interface AreaChartProps {
+export interface TimeSeriesAreaChartProps {
   seriesData?: SeriesAreaOptions['data']
 }
 
-export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
+export const TimeSeriesAreaChart: React.FC<TimeSeriesAreaChartProps> = ({ seriesData = [] }) => {
   const options = {
     chart: {
       type: 'area',
