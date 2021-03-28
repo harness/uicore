@@ -4,7 +4,6 @@ import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts'
 
 import css from './AreaChart.css'
-import { tranformCommonKeyToString } from './Utils'
 
 export interface AreaChartProps {
   seriesData?: any
@@ -23,8 +22,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
     credits: false,
     legend: {
       labelFormatter: function () {
-        console.log(this.name)
-        return tranformCommonKeyToString({ key: this.name })
+        return this.name
       },
       maxHeight: 80,
       itemStyle: {
@@ -63,7 +61,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
       formatter: function () {
         let pointVal = Highcharts.dateFormat('%e %b, %H:%M', this.x)
         pointVal = pointVal ? pointVal.replace(', 00:00', '') : ''
-        const name = tranformCommonKeyToString({ key: this.series.name })
+        const name = this.series.name
 
         return '<b>' + name + ' : ' + this.y + '</b><br/>' + pointVal
       }
