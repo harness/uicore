@@ -2,31 +2,19 @@
   {
     "name": "mtran",
     "lineWidth": 1,
-    "color": "var(--color-chart-color-2)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-2)",
-      "lineColor": "var(--color-chart-color-2)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-2)"
-    },
     "data": [
       [1616284800000, 1],
       [1616889600000, 1]
     ],
-    "objectData": { "id": "9iglbiVjRhuQ2R_lieroxA", "name": "mtran", "type": "APPID" }
+    "objectData": {
+      "id": "9iglbiVjRhuQ2R_lieroxA",
+      "name": "mtran",
+      "type": "APPID"
+    }
   },
   {
     "name": "Srinivas App",
     "lineWidth": 1,
-    "color": "var(--color-chart-color-5)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-5)",
-      "lineColor": "var(--color-chart-color-5)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-5)"
-    },
     "data": [
       [1616284800000, 1],
       [1616371200000, 2],
@@ -37,19 +25,15 @@
       [1616803200000, 1],
       [1616889600000, 1]
     ],
-    "objectData": { "id": "PcT1nxNeThyxuzRDTh9P4w", "name": "Srinivas App", "type": "APPID" }
+    "objectData": {
+      "id": "PcT1nxNeThyxuzRDTh9P4w",
+      "name": "Srinivas App",
+      "type": "APPID"
+    }
   },
   {
     "name": "Harness Verification",
     "lineWidth": 1,
-    "color": "var(--color-chart-success-color)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-success-color)",
-      "lineColor": "var(--color-chart-success-color)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-success-color)"
-    },
     "data": [
       [1616284800000, 4],
       [1616371200000, 51],
@@ -60,19 +44,15 @@
       [1616803200000, 46],
       [1616889600000, 40]
     ],
-    "objectData": { "id": "Wk6TjV-FTruiZMRfhyxSDQ", "name": "Harness Verification", "type": "APPID" }
+    "objectData": {
+      "id": "Wk6TjV-FTruiZMRfhyxSDQ",
+      "name": "Harness Verification",
+      "type": "APPID"
+    }
   },
   {
     "name": "Infra Refactor Demo",
     "lineWidth": 1,
-    "color": "var(--color-chart-color-4)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-4)",
-      "lineColor": "var(--color-chart-color-4)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-4)"
-    },
     "data": [
       [1616284800000, 2],
       [1616457600000, 4],
@@ -82,19 +62,15 @@
       [1616803200000, 2],
       [1616889600000, 2]
     ],
-    "objectData": { "id": "ww6ki3GUTkueE5yDMaRZbA", "name": "Infra Refactor Demo", "type": "APPID" }
+    "objectData": {
+      "id": "ww6ki3GUTkueE5yDMaRZbA",
+      "name": "Infra Refactor Demo",
+      "type": "APPID"
+    }
   },
   {
     "name": "sonyApp",
     "lineWidth": 1,
-    "color": "var(--color-chart-color-7)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-7)",
-      "lineColor": "var(--color-chart-color-7)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-7)"
-    },
     "data": [
       [1616284800000, 9],
       [1616371200000, 57],
@@ -105,19 +81,15 @@
       [1616803200000, 72],
       [1616889600000, 60]
     ],
-    "objectData": { "id": "x1LOnMhdRUO0l2kD4yenDA", "name": "sonyApp", "type": "APPID" }
+    "objectData": {
+      "id": "x1LOnMhdRUO0l2kD4yenDA",
+      "name": "sonyApp",
+      "type": "APPID"
+    }
   },
   {
     "name": "Harnes_Proxy_Auth-DO_NOT_DELETE",
     "lineWidth": 1,
-    "color": "var(--color-chart-color-6)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-6)",
-      "lineColor": "var(--color-chart-color-6)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-6)"
-    },
     "data": [
       [1616371200000, 1],
       [1616457600000, 17],
@@ -125,304 +97,10 @@
       [1616630400000, 4],
       [1616716800000, 2]
     ],
-    "objectData": { "id": "37PSXbTsTcadB6Rr0neztA", "name": "Harnes_Proxy_Auth-DO_NOT_DELETE", "type": "APPID" }
-  },
-  {
-    "name": "VenkatFFOffApp",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-1)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-1)",
-      "lineColor": "var(--color-chart-color-1)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-1)"
-    },
-    "data": [
-      [1616371200000, 1],
-      [1616544000000, 1],
-      [1616716800000, 1]
-    ],
-    "objectData": { "id": "FuOZJ3rwQTmN9fBOlsxmEQ", "name": "VenkatFFOffApp", "type": "APPID" }
-  },
-  {
-    "name": "CDC Artifacts Verification",
-    "lineWidth": 1,
-    "color": "var(--color-chart-failed-color)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-failed-color)",
-      "lineColor": "var(--color-chart-failed-color)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-failed-color)"
-    },
-    "data": [
-      [1616371200000, 1],
-      [1616457600000, 2],
-      [1616544000000, 9],
-      [1616630400000, 4],
-      [1616716800000, 3]
-    ],
-    "objectData": { "id": "GkolFKlvSDSZmkQNS6SCZA", "name": "CDC Artifacts Verification", "type": "APPID" }
-  },
-  {
-    "name": "PCFQA",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-2)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-2)",
-      "lineColor": "var(--color-chart-color-2)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-2)"
-    },
-    "data": [
-      [1616371200000, 1],
-      [1616457600000, 2],
-      [1616544000000, 6],
-      [1616630400000, 4],
-      [1616716800000, 1]
-    ],
-    "objectData": { "id": "IrpT8CWLTNGXmTmOrZE4wQ", "name": "PCFQA", "type": "APPID" }
-  },
-  {
-    "name": "Ken_App_post_RBAC",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-5)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-5)",
-      "lineColor": "var(--color-chart-color-5)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-5)"
-    },
-    "data": [
-      [1616371200000, 1],
-      [1616544000000, 1]
-    ],
-    "objectData": { "id": "_fU7c4PVTvSHtMUv4SvKDw", "name": "Ken_App_post_RBAC", "type": "APPID" }
-  },
-  {
-    "name": "Chirag-App",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-2)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-2)",
-      "lineColor": "var(--color-chart-color-2)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-2)"
-    },
-    "data": [
-      [1616371200000, 1],
-      [1616716800000, 1]
-    ],
-    "objectData": { "id": "fN4W2IUPTQWyKoPIVp_OcA", "name": "Chirag-App", "type": "APPID" }
-  },
-  {
-    "name": "Prabu-TestApp1",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-5)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-5)",
-      "lineColor": "var(--color-chart-color-5)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-5)"
-    },
-    "data": [
-      [1616457600000, 1],
-      [1616630400000, 1]
-    ],
-    "objectData": { "id": "4Gwa98kVStK3B00aNR9mjg", "name": "Prabu-TestApp1", "type": "APPID" }
-  },
-  {
-    "name": "PCF ApplicationXYtQIx",
-    "lineWidth": 1,
-    "color": "var(--color-chart-success-color)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-success-color)",
-      "lineColor": "var(--color-chart-success-color)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-success-color)"
-    },
-    "data": [[1616457600000, 1]],
-    "objectData": { "id": "4L4H5BIxQbCeQI-cKPjvgg", "name": "PCF ApplicationXYtQIx", "type": "APPID" }
-  },
-  {
-    "name": "AMI Tutorial",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-4)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-4)",
-      "lineColor": "var(--color-chart-color-4)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-4)"
-    },
-    "data": [[1616457600000, 1]],
-    "objectData": { "id": "4eYcK7CaTsmYD5kUQJ8pRg", "name": "AMI Tutorial", "type": "APPID" }
-  },
-  {
-    "name": "Shivam deployment app",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-7)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-7)",
-      "lineColor": "var(--color-chart-color-7)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-7)"
-    },
-    "data": [
-      [1616457600000, 20],
-      [1616544000000, 5]
-    ],
-    "objectData": { "id": "6t4yukhOQLuIXnVPBUPgJQ", "name": "Shivam deployment app", "type": "APPID" }
-  },
-  {
-    "name": "CDC_Service_Commands",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-6)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-6)",
-      "lineColor": "var(--color-chart-color-6)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-6)"
-    },
-    "data": [
-      [1616457600000, 1],
-      [1616544000000, 1],
-      [1616630400000, 2],
-      [1616716800000, 2]
-    ],
-    "objectData": { "id": "85OHH1QAS0W4EieIASTtsw", "name": "CDC_Service_Commands", "type": "APPID" }
-  },
-  {
-    "name": "AManual Intervention",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-1)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-1)",
-      "lineColor": "var(--color-chart-color-1)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-1)"
-    },
-    "data": [[1616457600000, 1]],
-    "objectData": { "id": "PBq5vN5jQi-hG0fQHJmYKg", "name": "AManual Intervention", "type": "APPID" }
-  },
-  {
-    "name": "Manju test",
-    "lineWidth": 1,
-    "color": "var(--color-chart-failed-color)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-failed-color)",
-      "lineColor": "var(--color-chart-failed-color)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-failed-color)"
-    },
-    "data": [[1616544000000, 3]],
-    "objectData": { "id": "H2OU4D6aQqOeEjQVTv2GXQ", "name": "Manju test", "type": "APPID" }
-  },
-  {
-    "name": "CDC DELEGATE PROXY",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-2)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-2)",
-      "lineColor": "var(--color-chart-color-2)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-2)"
-    },
-    "data": [
-      [1616544000000, 2],
-      [1616716800000, 1]
-    ],
-    "objectData": { "id": "JjZd-8tYQBiLp74GHw87hQ", "name": "CDC DELEGATE PROXY", "type": "APPID" }
-  },
-  {
-    "name": "Customer Scenarios CDC App",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-5)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-5)",
-      "lineColor": "var(--color-chart-color-5)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-5)"
-    },
-    "data": [
-      [1616544000000, 3],
-      [1616630400000, 6],
-      [1616716800000, 2]
-    ],
-    "objectData": { "id": "i_WoX2vCT3Sv0wSRO1xCXA", "name": "Customer Scenarios CDC App", "type": "APPID" }
-  },
-  {
-    "name": "Akhilesh Testing App",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-2)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-2)",
-      "lineColor": "var(--color-chart-color-2)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-2)"
-    },
-    "data": [
-      [1616630400000, 2],
-      [1616889600000, 4]
-    ],
-    "objectData": { "id": "BHiHV48-R0mlcd2bp70LEQ", "name": "Akhilesh Testing App", "type": "APPID" }
-  },
-  {
-    "name": "Akhilesh Test App - Not Scoped",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-5)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-5)",
-      "lineColor": "var(--color-chart-color-5)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-5)"
-    },
-    "data": [[1616630400000, 14]],
-    "objectData": { "id": "BLnYajALQ9KA4ehnZZTHfA", "name": "Akhilesh Test App - Not Scoped", "type": "APPID" }
-  },
-  {
-    "name": "suhas-test-app",
-    "lineWidth": 1,
-    "color": "var(--color-chart-success-color)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-success-color)",
-      "lineColor": "var(--color-chart-success-color)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-success-color)"
-    },
-    "data": [[1616630400000, 2]],
-    "objectData": { "id": "FbCLjMmlTGitheOl016tpg", "name": "suhas-test-app", "type": "APPID" }
-  },
-  {
-    "name": "VenkatAutomationApp12",
-    "lineWidth": 1,
-    "color": "var(--color-chart-color-4)",
-    "marker": {
-      "radius": 1.5,
-      "color": "var(--color-chart-color-4)",
-      "lineColor": "var(--color-chart-color-4)",
-      "lineWidth": 1,
-      "fillColor": "var(--color-chart-color-4)"
-    },
-    "data": [
-      [1616630400000, 1],
-      [1616716800000, 3]
-    ],
-    "objectData": { "id": "djmJOYs9RairrcCNmw5JPg", "name": "VenkatAutomationApp12", "type": "APPID" }
+    "objectData": {
+      "id": "37PSXbTsTcadB6Rr0neztA",
+      "name": "Harnes_Proxy_Auth-DO_NOT_DELETE",
+      "type": "APPID"
+    }
   }
 ]
