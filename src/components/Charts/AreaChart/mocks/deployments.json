@@ -1,38 +1,6 @@
 [
   {
-    "name": "mtran",
-    "lineWidth": 1,
-    "data": [
-      [1616284800000, 1],
-      [1616889600000, 1]
-    ],
-    "objectData": {
-      "id": "9iglbiVjRhuQ2R_lieroxA",
-      "name": "mtran",
-      "type": "APPID"
-    }
-  },
-  {
-    "name": "Srinivas App",
-    "lineWidth": 1,
-    "data": [
-      [1616284800000, 1],
-      [1616371200000, 2],
-      [1616457600000, 1],
-      [1616544000000, 3],
-      [1616630400000, 1],
-      [1616716800000, 1],
-      [1616803200000, 1],
-      [1616889600000, 1]
-    ],
-    "objectData": {
-      "id": "PcT1nxNeThyxuzRDTh9P4w",
-      "name": "Srinivas App",
-      "type": "APPID"
-    }
-  },
-  {
-    "name": "Harness Verification",
+    "name": "Success",
     "lineWidth": 1,
     "data": [
       [1616284800000, 4],
@@ -45,31 +13,13 @@
       [1616889600000, 40]
     ],
     "objectData": {
-      "id": "Wk6TjV-FTruiZMRfhyxSDQ",
-      "name": "Harness Verification",
-      "type": "APPID"
+      "id": "deploymentStatus",
+      "name": "Failed Service Deployments",
+      "type": "SERVICE_STATUS"
     }
   },
   {
-    "name": "Infra Refactor Demo",
-    "lineWidth": 1,
-    "data": [
-      [1616284800000, 2],
-      [1616457600000, 4],
-      [1616544000000, 2],
-      [1616630400000, 2],
-      [1616716800000, 2],
-      [1616803200000, 2],
-      [1616889600000, 2]
-    ],
-    "objectData": {
-      "id": "ww6ki3GUTkueE5yDMaRZbA",
-      "name": "Infra Refactor Demo",
-      "type": "APPID"
-    }
-  },
-  {
-    "name": "sonyApp",
+    "name": "Failed",
     "lineWidth": 1,
     "data": [
       [1616284800000, 9],
@@ -82,25 +32,9 @@
       [1616889600000, 60]
     ],
     "objectData": {
-      "id": "x1LOnMhdRUO0l2kD4yenDA",
-      "name": "sonyApp",
-      "type": "APPID"
-    }
-  },
-  {
-    "name": "Harnes_Proxy_Auth-DO_NOT_DELETE",
-    "lineWidth": 1,
-    "data": [
-      [1616371200000, 1],
-      [1616457600000, 17],
-      [1616544000000, 6],
-      [1616630400000, 4],
-      [1616716800000, 2]
-    ],
-    "objectData": {
-      "id": "37PSXbTsTcadB6Rr0neztA",
-      "name": "Harnes_Proxy_Auth-DO_NOT_DELETE",
-      "type": "APPID"
+      "id": "deploymentStatus",
+      "name": "Success Service Deployments",
+      "type": "SERVICE_STATUS"
     }
   }
 ]

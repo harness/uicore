@@ -4,10 +4,9 @@ import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts'
 
 import css from './AreaChart.css'
-import { formatDurationForHighCharts, tranformCommonKeyToString } from './Utils'
+import { tranformCommonKeyToString } from './Utils'
 
 export interface AreaChartProps {
-  isTimeMetric?: boolean
   seriesData?: any
 }
 
@@ -24,6 +23,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
     credits: false,
     legend: {
       labelFormatter: function () {
+        console.log(this.name)
         return tranformCommonKeyToString({ key: this.name })
       },
       maxHeight: 80,
@@ -61,7 +61,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
     },
     tooltip: {
       formatter: function () {
-        let pointVal = Highcharts.dateFormat('%e %b, %H:%M', new Date(this.x))
+        let pointVal = Highcharts.dateFormat('%e %b, %H:%M', this.x)
         pointVal = pointVal ? pointVal.replace(', 00:00', '') : ''
         const name = tranformCommonKeyToString({ key: this.series.name })
 
