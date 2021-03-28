@@ -52,10 +52,10 @@ export const AreaChart: React.FC<AreaChartProps> = ({ seriesData = [] }) => {
       // @ts-ignore
       formatter: function () {
         // @ts-ignore
-        let pointVal = Highcharts.dateFormat('%e %b, %H:%M', this.x)
+        const { x, y, series } = this
+        let pointVal = Highcharts.dateFormat('%e %b, %H:%M', x)
         pointVal = pointVal ? pointVal.replace(', 00:00', '') : ''
-        // @ts-ignore
-        return '<b>' + this.series.name + ' : ' + this.y + '</b><br/>' + pointVal
+        return '<b>' + series.name + ' : ' + y + '</b><br/>' + pointVal
       }
     },
     plotOptions: {
