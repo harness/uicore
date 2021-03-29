@@ -1,0 +1,72 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Container, Text, Button } from '../'
+
+<Meta title="Foundation/Spacing" />
+
+Spacing is pre-defined names to use in margin and padding props. They are created to solve the inconsistency in codebase
+where many pixel values are used by UI developers.
+
+Supported spacing constants:
+
+- xsmall = 5px
+- small = 10px
+- medium = 15px
+- large = 20px
+- xlarge = 25px
+- xxlarge = 30px
+- xxxlarge = 40px
+- huge = 50px
+
+The idea about spacing is that when you build or use a component, you should avoid thinking about pixel. When everybody uses pixel to set padding, or margin by themselves, the whole app becomes inconsistent very quickly. The effort to refactor or fixing inconsistent UI is also huge due to the fact that you have to scan the whole codebase for pixel values, and try to replace them with the correct ones.
+
+<Container
+  id="spacing-margin-padding"
+  background="grey100"
+  padding="huge"
+  border={{
+    color: 'grey200'
+  }}>
+  <Container
+    background="yellow100"
+    margin={{ top: 'xsmall', right: 'small', bottom: 'medium', left: 'huge' }}
+    padding={{ top: 'small', right: 'small', bottom: 'small', left: 'large' }}
+    flex
+    border={{
+      color: 'yellow500'
+    }}>
+    <Text>The quick brown fox jumps over the lazy dog</Text>
+    <Button icon="cross" minimal />
+  </Container>
+</Container>
+
+```js
+<Container
+  id="spacing-margin-padding"
+  background="grey100"
+  padding="huge"
+  border={{
+    color: 'grey200'
+  }}>
+  <Container
+    background="yellow100"
+    margin={{ top: 'xsmall', right: 'small', bottom: 'medium', left: 'huge' }}
+    padding={{ top: 'small', right: 'small', bottom: 'small', left: 'large' }}
+    flex
+    border={{
+      color: 'yellow500'
+    }}>
+    <Text>The quick brown fox jumps over the lazy dog</Text>
+    <Button icon="cross" minimal />
+  </Container>
+</Container>
+```
+
+<Text margin="small" padding="medium" border font={{ align: 'center' }}>
+  The quick brown fox jumps over the lazy dog
+</Text>
+
+```js
+<Text margin="small" padding="medium" border font={{ align: 'center' }}>
+  The quick brown fox jumps over the lazy dog
+</Text>
+```
