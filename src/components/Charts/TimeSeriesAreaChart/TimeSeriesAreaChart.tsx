@@ -49,14 +49,7 @@ export const TimeSeriesAreaChart: React.FC<TimeSeriesAreaChartProps> = ({ series
       }
     },
     tooltip: {
-      // @ts-ignore
-      formatter: function () {
-        // @ts-ignore
-        const { x, y, series } = this
-        let pointVal = Highcharts.dateFormat('%e %b, %H:%M', x)
-        pointVal = pointVal ? pointVal.replace(', 00:00', '') : ''
-        return '<b>' + series.name + ' : ' + y + '</b><br/>' + pointVal
-      }
+      pointFormat: '<b>{series.name}&nbsp;:&nbsp;{point.y}</b><br/>{Highcharts.dateFormat("%e %b, %H:%M", point.x)}'
     },
     plotOptions: {
       area: {
