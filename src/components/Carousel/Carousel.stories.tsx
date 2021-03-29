@@ -1,7 +1,8 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { Carousel, CarouselProps } from '../..'
+import { Carousel } from '../..'
+import { CarouselProps } from '../Carousel/Carousel'
 
 export default {
   title: 'Components / Carousel',
