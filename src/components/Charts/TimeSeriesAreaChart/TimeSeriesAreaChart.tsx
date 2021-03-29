@@ -60,7 +60,7 @@ export const TimeSeriesAreaChart: React.FC<TimeSeriesAreaChartProps> = ({ series
         point: {
           events: {
             // TODO integrate this later if on-click behaviour is needed
-            click: function () {}
+            click: () => {}
           }
         }
       }
