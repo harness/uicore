@@ -1,16 +1,13 @@
 import React from 'react'
+import { merge } from 'lodash-es'
 
 import HighchartsReact from 'highcharts-react-official'
 import Highcharts, { SeriesAreaOptions } from 'highcharts'
 
 import css from './TimeSeriesAreaChart.css'
 
-export interface TimeSeriesAreaChartProps {
-  seriesData?: SeriesAreaOptions['data']
-}
-
-export const TimeSeriesAreaChart: React.FC<TimeSeriesAreaChartProps> = ({ seriesData = [] }) => {
-  const options = {
+const getDefaultChartOptions = (seriesData: SeriesAreaOptions['data']) => {
+  return {
     chart: {
       type: 'area',
       spacing: [25, 25, 25, 25]
@@ -67,9 +64,22 @@ export const TimeSeriesAreaChart: React.FC<TimeSeriesAreaChartProps> = ({ series
     },
     series: seriesData
   }
+}
+
+export interface TimeSeriesAreaChartProps {
+  customChartOptions?: Omit<SeriesAreaOptions, 'data'>
+  seriesData?: SeriesAreaOptions['data']
+}
+
+export const TimeSeriesAreaChart: React.FC<TimeSeriesAreaChartProps> = ({
+  customChartOptions = {},
+  seriesData = []
+}) => {
+  const defaultChartOptions = React.useMemo(() => getDefaultChartOptions(seriesData), [seriesData])
+  const finalChartOptions = React.useMemo(() => merge(customChartOptions, defaultChartOptions), [customChartOptions])
   return (
     <div className={css.main}>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <HighchartsReact highcharts={Highcharts} options={finalChartOptions} />
     </div>
   )
 }
