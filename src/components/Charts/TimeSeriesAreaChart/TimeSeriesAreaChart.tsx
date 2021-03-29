@@ -58,10 +58,10 @@ export const TimeSeriesAreaChart: React.FC<TimeSeriesAreaChartProps> = ({ series
         fillOpacity: 0.85,
         lineWidth: 1,
         point: {
-          events: {
-            // TODO integrate this later if on-click behaviour is needed
-            click: () => {}
-          }
+          // events: {
+          //   // TODO integrate this later if on-click behaviour is needed
+          //   click: () => {}
+          // }
         }
       }
     },
