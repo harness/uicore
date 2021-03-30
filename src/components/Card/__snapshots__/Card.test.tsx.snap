@@ -77,27 +77,17 @@ exports[`Card menu test should render cards with props selected and interactive 
             class="bp3-popover-target"
           >
             <button
-              class="bp3-button bp3-minimal font button with-current-color iconOnly main menu style style-color style-color-var(--grey-500)"
+              class="bp3-button bp3-minimal font button with-current-color iconOnly round main menu"
               type="button"
             >
               <span
-                class="bp3-icon bp3-icon-more main padding padding-undefined"
-                icon="more"
+                class="bp3-icon main padding padding-undefined"
+                data-icon="Options"
               >
                 <svg
-                  data-icon="more"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <desc>
-                    more
-                  </desc>
-                  <path
-                    d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
+                  height="24"
+                  width="24"
+                />
               </span>
             </button>
           </span>
@@ -138,27 +128,17 @@ exports[`Card menu test should render icon card with no props 1`] = `
             class="bp3-popover-target"
           >
             <button
-              class="bp3-button bp3-minimal font button with-current-color iconOnly main menu style style-color style-color-var(--grey-500)"
+              class="bp3-button bp3-minimal font button with-current-color iconOnly round main menu"
               type="button"
             >
               <span
-                class="bp3-icon bp3-icon-more main padding padding-undefined"
-                icon="more"
+                class="bp3-icon main padding padding-undefined"
+                data-icon="Options"
               >
                 <svg
-                  data-icon="more"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <desc>
-                    more
-                  </desc>
-                  <path
-                    d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
+                  height="24"
+                  width="24"
+                />
               </span>
             </button>
           </span>
