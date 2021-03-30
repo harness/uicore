@@ -103,7 +103,7 @@ const Menu: React.FC<CardMenuProps> = props => {
       style={{ color: colorIdentifier ? colorIdentifier : '', ...style }}>
       <div className={css.dots}>
         <Popover content={menuContent} position={Position.RIGHT_TOP} usePortal={!isNext} {...menuPopoverProps}>
-          <Button className={css.menu} minimal icon="more" style={{ color: 'var(--grey-500)' }} />
+          <Button className={css.menu} minimal round icon="Options" iconProps={{ size: 24 }} />
         </Popover>
       </div>
       {title && (
