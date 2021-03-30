@@ -193,7 +193,7 @@ export const StaticDataset: Story<
         onNewItemCreated={(newItem, selectedItems, createdItems, items) =>
           console.log({ newItem, selectedItems, createdItems, items })
         }
-        getTagProps={(value: any, index, selectedItems, createdItems, items) => {
+        getTagProps={(value: any, _index, _selectedItems, createdItems, items) => {
           const isItemNewlyCreated = createdItems.includes(value) || !items.includes(value)
           const isExpression = isItemNewlyCreated && value.startsWith('${') && value.endsWith('}')
 

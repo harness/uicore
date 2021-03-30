@@ -51,10 +51,10 @@ export const ShortLogs: Story<MultiLogsViewerProps> = args => {
       }
     },
     isSectionOpen = (sectionIndex: any) => sectionIndex === 1,
-    rightElementForSection = (sectionIndex: any) => {
+    rightElementForSection = (_sectionIndex: any) => {
       return <Text color={Color.GREY_100}>2m 38s</Text>
     },
-    logContentForSection = (sectionIndex: any) => {
+    logContentForSection = (_sectionIndex: any) => {
       return 'gyp ERR! stack Error: `gyp` failed with exit code: 1\ngyp ERR! System Darwin 19.6.0\ngyp ERR! node -v v14.5.0\nnode-pre-gyp ERR! not ok\nFailed to execute node-gyp'
     },
     sectionArr = [false, true, false, false]
@@ -94,7 +94,7 @@ ShortLogs.args = {
     }
   },
   isSectionOpen: (sectionIndex: any) => sectionIndex === 1,
-  logContentForSection: (sectionIndex: any) => {
+  logContentForSection: (_sectionIndex: any) => {
     return 'gyp ERR! stack Error: `gyp` failed with exit code: 1\ngyp ERR! System Darwin 19.6.0\ngyp ERR! node -v v14.5.0\nnode-pre-gyp ERR! not ok\nFailed to execute node-gyp'
   },
   sectionArr: [false, true, false, false]
@@ -115,10 +115,10 @@ export const LoglogsWithASCIIEscapes: Story<MultiLogsViewerProps> = args => {
       }
     },
     isSectionOpen = (sectionIndex: any) => sectionIndex === 0,
-    rightElementForSection = (sectionIndex: any) => {
+    rightElementForSection = (_sectionIndex: any) => {
       return <Text color={Color.GREY_100}>2m 38s</Text>
     },
-    logContentForSection = (sectionIndex: any) => {
+    logContentForSection = (_sectionIndex: any) => {
       return `<script>alert(1);</script>\n\n\n\nHello from \x1B[1;3;31mxterm.js\x1B[0m Hello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from
         \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello from \x1B[1;3;31mxterm.js\x1B[0mHello 
             too.\n\n\n\nCheckout https://harness.io\n\nhello\n\nworld\n\nRunning....\n\nnpm install foobar\n\n\nProgress: 50%... Please wait...         `
@@ -167,10 +167,10 @@ export const ScrollbacklinesPerformanceCustomIconEtc: Story<MultiLogsViewerProps
       }
     },
     isSectionOpen = (sectionIndex: any) => sectionIndex === 0,
-    rightElementForSection = (sectionIndex: any) => {
+    rightElementForSection = (_sectionIndex: any) => {
       return <Text color={Color.GREY_100}>2m 38s</Text>
     },
-    logContentForSection = (sectionIndex: any) => {
+    logContentForSection = (_sectionIndex: any) => {
       // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       return Array.from({ length: 250000 }, (_v, k) => 'line ' + (k + 1)).join('\n')
     },

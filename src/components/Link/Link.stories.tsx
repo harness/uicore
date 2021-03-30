@@ -48,16 +48,18 @@ When a link is disabled, all events are ignored.`}</Description>
 export const Basic: Story<LinkProps> = args => {
   return (
     <Layout.Horizontal spacing="small">
-      <Link href="/dashboard">Dashboard</Link>
+      <Link href="/dashboard" {...args}>
+        Dashboard
+      </Link>
       <Icon name="dot" color="grey300" />
-      <Link href="//harness.io" target="_blank">
+      <Link href="//harness.io" target="_blank" {...args}>
         External Link
       </Link>
       <Icon name="dot" color="grey300" />
-      <Link disabled href="/link">
+      <Link disabled href="/link" {...args}>
         Disabled Link
       </Link>
-      <Link withoutHref onClick={() => alert('Click')}>
+      <Link withoutHref onClick={() => alert('Click')} {...args}>
         Link (without Href - Act like a Button)
       </Link>
     </Layout.Horizontal>
