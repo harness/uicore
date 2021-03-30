@@ -3,7 +3,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
 import { DateRangePickerButton, DateRangePickerButtonProps, Layout } from '../..'
-import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
+import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { omit } from 'lodash-es'
 
 export default {
@@ -31,6 +31,10 @@ export default {
             <ArgsTable story={PRIMARY_STORY} />
 
             <Stories />
+            <Description>{`## Reference
+
+This component is an extension of [Date range picker](https://blueprintjs.com/docs/#datetime/daterangepicker) from Blueprint. Feel free to look into the [docs](https://blueprintjs.com/docs/#datetime/daterangepicker.props) for more examples.
+`}</Description>
           </>
         )
       }
