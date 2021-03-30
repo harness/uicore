@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.102](https://github.com/wings-software/uicore/compare/v0.1.101...v0.1.102) (2021-03-30)
+
+
+### Bug Fixes
+
+* update duration regex to handle exponential syntax validation ([#122](https://github.com/wings-software/uicore/issues/122)) ([a0fdc8a](https://github.com/wings-software/uicore/commit/a0fdc8ab90f748ed2edffb6c8f8f5d322a48dec5))
+
 ### [0.1.101](https://github.com/wings-software/uicore/compare/v0.1.100...v0.1.101) (2021-03-30)
 
 
