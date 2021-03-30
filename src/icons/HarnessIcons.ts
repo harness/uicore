@@ -10,6 +10,7 @@ import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
+import AwsKms from './aws-kms.svg'
 import Banned from './banned.svg'
 import BarrierClose from './barrier-close.svg'
 import BarrierOpenWihLinks from './barrier-open-wih-links.svg'
@@ -451,6 +452,7 @@ type HarnessIconName =
   | 'approval-step'
   | 'audit-log-created'
   | 'azure-kubernetes-service'
+  | 'aws-kms'
   | 'banned'
   | 'barrier-close'
   | 'barrier-open-wih-links'
@@ -892,6 +894,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'approval-step': ApprovalStep,
   'audit-log-created': AuditLogCreated,
   'azure-kubernetes-service': AzureKubernetesService,
+  'aws-kms': AwsKms,
   banned: Banned,
   'barrier-close': BarrierClose,
   'barrier-open-wih-links': BarrierOpenWihLinks,
