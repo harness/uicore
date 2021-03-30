@@ -75,9 +75,11 @@ div.card {
     .menu {
       cursor: pointer;
       outline: none !important;
+      color: var(--grey-500);
 
       &:hover {
-        background-color: var(--grey-250) !important;
+        background-color: var(--grey-200) !important;
+        color: var(--blue-500);
       }
     }
   }

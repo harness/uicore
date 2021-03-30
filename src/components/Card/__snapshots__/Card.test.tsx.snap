@@ -85,8 +85,8 @@ exports[`Card menu test should render cards with props selected and interactive 
                 data-icon="Options"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="16"
+                  width="16"
                 />
               </span>
             </button>
@@ -136,8 +136,8 @@ exports[`Card menu test should render icon card with no props 1`] = `
                 data-icon="Options"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="16"
+                  width="16"
                 />
               </span>
             </button>
