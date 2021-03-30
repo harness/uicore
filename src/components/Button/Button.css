@@ -7,7 +7,7 @@
     font-family: var(--font-family);
     font-size: var(--font-size, var(--font-size-normal));
     height: 32px;
-    padding: 5px 10px;
+    padding: 5px 20px;
     box-shadow: none;
     background-image: none;
     transition: all 0.25s cubic-bezier(0.39, 0.58, 0.57, 1);

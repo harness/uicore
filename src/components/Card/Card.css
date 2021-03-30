@@ -2,6 +2,8 @@ div.card {
   border-radius: 5px;
   display: inline-block;
   position: relative;
+  border: 1px solid transparent;
+
   &:focus {
     box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2), 0 8px 24px rgba(16, 22, 26, 0.2);
     outline: none;
@@ -69,9 +71,16 @@ div.card {
     position: absolute;
     top: -15px;
     right: -19px;
+
     .menu {
       cursor: pointer;
-      transform: rotate(90deg);
+      outline: none !important;
+      color: var(--grey-500);
+
+      &:hover {
+        background-color: var(--grey-200) !important;
+        color: var(--blue-500);
+      }
     }
   }
 }
