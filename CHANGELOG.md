@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.103](https://github.com/wings-software/uicore/compare/v0.1.102...v0.1.103) (2021-03-30)
+
+
+### Features
+
+* icon added for when condition ([#123](https://github.com/wings-software/uicore/issues/123)) ([f32ec01](https://github.com/wings-software/uicore/commit/f32ec01a643835f70338f14dbf70bf2b7d8d2cbc))
+
 ### [0.1.102](https://github.com/wings-software/uicore/compare/v0.1.101...v0.1.102) (2021-03-30)
 
 
