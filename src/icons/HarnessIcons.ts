@@ -9,11 +9,11 @@ import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
-import AzureKubernetesService from './azure-kubernetes-service.svg'
 import AwsKms from './aws-kms.svg'
+import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
 import BarrierClose from './barrier-close.svg'
-import BarrierOpenWihLinks from './barrier-open-wih-links.svg'
+import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
@@ -75,6 +75,7 @@ import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
+import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
 import CopyAlt from './copy-alt.svg'
@@ -451,11 +452,11 @@ type HarnessIconName =
   | 'app-kubernetes'
   | 'approval-step'
   | 'audit-log-created'
-  | 'azure-kubernetes-service'
   | 'aws-kms'
+  | 'azure-kubernetes-service'
   | 'banned'
   | 'barrier-close'
-  | 'barrier-open-wih-links'
+  | 'barrier-open-with-links'
   | 'barrier-open'
   | 'bin-main'
   | 'bitbucket-blue'
@@ -517,6 +518,7 @@ type HarnessIconName =
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
   | 'conditional-skip'
+  | 'conditional-when'
   | 'config-change'
   | 'config-file'
   | 'copy-alt'
@@ -893,11 +895,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
   'audit-log-created': AuditLogCreated,
-  'azure-kubernetes-service': AzureKubernetesService,
   'aws-kms': AwsKms,
+  'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
   'barrier-close': BarrierClose,
-  'barrier-open-wih-links': BarrierOpenWihLinks,
+  'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
@@ -959,6 +961,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
+  'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
   'copy-alt': CopyAlt,
