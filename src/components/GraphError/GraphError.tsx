@@ -4,7 +4,7 @@ import { Icon } from '../../icons/Icon'
 import { Container } from '../Container/Container'
 import { Link } from '../Link/Link'
 
-interface Props {
+export interface Props {
   image?: any
   width?: string
   height?: string
