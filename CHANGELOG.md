@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.101](https://github.com/wings-software/uicore/compare/v0.1.100...v0.1.101) (2021-03-30)
+
+
+### Features
+
+* [CDNG-5588]: added aws-kms icon ([#120](https://github.com/wings-software/uicore/issues/120)) ([557c325](https://github.com/wings-software/uicore/commit/557c325dc28ea889d95453a653b64de66813b1c6))
+
 ### [0.1.100](https://github.com/wings-software/uicore/compare/v0.1.99...v0.1.100) (2021-03-30)
 
 
