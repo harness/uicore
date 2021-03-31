@@ -1,0 +1,75 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+
+`<Layout.Masonry/>` renders a masonry layout.
+
+import { Layout, Container, Text, Color } from '../'
+
+<Meta title="Layout/Masonry" />
+
+<ArgsTable of={Layout.Masonry} />
+
+## Left alignment
+
+```js live=true
+<Layout.Masonry
+  gutter={25}
+  items={[100, 200, 130, 400, 150, 100, 300, 220, 90, 250]}
+  renderItem={number => (
+    <Container width={150} border={{ color: Color.GREY_500 }}>
+      <Text flex={{ align: 'center-center' }} height={number}>
+        {number}
+      </Text>
+    </Container>
+  )}
+  keyOf={number => number}
+  padding="xsmall"
+/>
+```
+
+<Layout.Masonry
+  gutter={25}
+  items={[100, 200, 130, 400, 150, 100, 300, 220, 90, 250]}
+  renderItem={number => (
+    <Container width={150} border={{ color: Color.GREY_500 }}>
+      <Text flex={{ align: 'center-center' }} height={number}>
+        {number}
+      </Text>
+    </Container>
+  )}
+  keyOf={number => number}
+  padding="xsmall"
+/>
+
+## Center alignment
+
+```js live=true
+<Layout.Masonry
+  gutter={25}
+  items={[100, 200, 130, 400, 150, 100, 300, 220, 90, 250]}
+  center
+  renderItem={number => (
+    <Container width={150} border={{ color: Color.GREY_500 }}>
+      <Text flex={{ align: 'center-center' }} height={number}>
+        {number}
+      </Text>
+    </Container>
+  )}
+  keyOf={number => number}
+  padding="xsmall"
+/>
+```
+
+<Layout.Masonry
+  gutter={25}
+  items={[100, 200, 130, 400, 150, 100, 300, 220, 90, 250]}
+  center
+  renderItem={number => (
+    <Container width={150} border={{ color: Color.GREY_500 }}>
+      <Text flex={{ align: 'center-center' }} height={number}>
+        {number}
+      </Text>
+    </Container>
+  )}
+  keyOf={number => number}
+  padding="xsmall"
+/>
