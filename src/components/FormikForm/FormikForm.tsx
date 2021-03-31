@@ -258,7 +258,7 @@ const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
 export interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   fileInput?: Omit<IFileInputProps, 'inputProps' | 'text' | 'buttonText'>
-  inputProps: IFileInputProps['inputProps']
+  inputProps?: Omit<IFileInputProps['inputProps'], 'name' | 'disabled' | 'multiple'>
   placeholder?: string
   buttonText?: string
   onChange?: React.FormEventHandler<HTMLInputElement>
