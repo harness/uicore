@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.107](https://github.com/wings-software/uicore/compare/v0.1.106...v0.1.107) (2021-03-31)
+
+
+### Others
+
+* Add onDeleteRow event to FieldArray ([#128](https://github.com/wings-software/uicore/issues/128)) ([9d164df](https://github.com/wings-software/uicore/commit/9d164dfd5eeb1d16ad4a73ae5795e5c27da29607))
+
 ### [0.1.106](https://github.com/wings-software/uicore/compare/v0.1.105...v0.1.106) (2021-03-31)
 
 
