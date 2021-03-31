@@ -24,7 +24,7 @@ exports[`<Accordion /> tests snapshot test 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
       >
         <div
           aria-hidden="false"
@@ -52,7 +52,7 @@ exports[`<Accordion /> tests snapshot test 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
       >
         <div
           aria-hidden="false"
@@ -89,7 +89,7 @@ exports[`<Accordion /> tests toggle works between panels: Panel 1 open 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
         style="height: auto; overflow-y: visible; transition: none;"
       >
         <div
@@ -125,7 +125,7 @@ exports[`<Accordion /> tests toggle works between panels: Panel 1 open 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
       >
         <div
           aria-hidden="false"
@@ -162,7 +162,7 @@ exports[`<Accordion /> tests toggle works between panels: Panel 2 open 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
         style="height: auto;"
       >
         <div
@@ -198,7 +198,7 @@ exports[`<Accordion /> tests toggle works between panels: Panel 2 open 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
         style="height: 0px;"
       >
         <div
@@ -243,7 +243,7 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 closed 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
         style="height: auto;"
       >
         <div
@@ -279,7 +279,7 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 closed 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
       >
         <div
           aria-hidden="false"
@@ -316,7 +316,7 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 open 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
         style="height: auto; overflow-y: visible; transition: none;"
       >
         <div
@@ -352,7 +352,7 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 open 1`] = `
         />
       </div>
       <div
-        class="bp3-collapse"
+        class="bp3-collapse collapse"
       >
         <div
           aria-hidden="false"
