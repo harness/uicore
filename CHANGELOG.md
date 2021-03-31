@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.106](https://github.com/wings-software/uicore/compare/v0.1.105...v0.1.106) (2021-03-31)
+
+
+### Others
+
+* Role Icons ([#127](https://github.com/wings-software/uicore/issues/127)) ([dba0ce8](https://github.com/wings-software/uicore/commit/dba0ce802a02b86c309bd8e27d32fc85e665bb7d))
+
 ### [0.1.105](https://github.com/wings-software/uicore/compare/v0.1.104...v0.1.105) (2021-03-31)
 
 
