@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.105](https://github.com/wings-software/uicore/compare/v0.1.104...v0.1.105) (2021-03-31)
+
+
+### Features
+
+* [CDNG-5519]: Adding InputProps to FileInput ([#125](https://github.com/wings-software/uicore/issues/125)) ([c790d1d](https://github.com/wings-software/uicore/commit/c790d1d683697e0561d03fc4d91a630d9175bd42))
+
 ### [0.1.104](https://github.com/wings-software/uicore/compare/v0.1.103...v0.1.104) (2021-03-31)
 
 
