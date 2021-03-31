@@ -2,6 +2,50 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.105](https://github.com/wings-software/uicore/compare/v0.1.104...v0.1.105) (2021-03-31)
+
+
+### Features
+
+* [CDNG-5519]: Adding InputProps to FileInput ([#125](https://github.com/wings-software/uicore/issues/125)) ([c790d1d](https://github.com/wings-software/uicore/commit/c790d1d683697e0561d03fc4d91a630d9175bd42))
+
+### [0.1.104](https://github.com/wings-software/uicore/compare/v0.1.103...v0.1.104) (2021-03-31)
+
+
+### Features
+
+* [PL-13925]: card,carousel,checkbox,codeblock,collapse,collapselist, colorpicker,container,DateRange Docs ([#118](https://github.com/wings-software/uicore/issues/118)) ([f8a0fa3](https://github.com/wings-software/uicore/commit/f8a0fa35b1e9a101b9f51804545d29a6eb6e680d))
+* [PL-13925]: docs for FlexExpander,GraphError,Heading,Link,ModalMutlilogsviewer,OverlaySpinner,Radio,RadioGroup,StackTraceList,SimpleTagInput ([#121](https://github.com/wings-software/uicore/issues/121)) ([2df4418](https://github.com/wings-software/uicore/commit/2df44182c650d279c46099ed21743f4044748843))
+* [PL-13925]: Docs for the buttons and confirm action button ([#100](https://github.com/wings-software/uicore/issues/100)) ([318c9e9](https://github.com/wings-software/uicore/commit/318c9e90898d8d686c401b33b53a10b443e3a4e0))
+* [PL-13925]: layout, spaces, intent docs ([#117](https://github.com/wings-software/uicore/issues/117)) ([09fd1c1](https://github.com/wings-software/uicore/commit/09fd1c1fc2b4f43a4edc2209d0170dc4d75e1124))
+
+
+### Bug Fixes
+
+* added conditional padding to the input of a multi type select to prevent overlap on text ([#115](https://github.com/wings-software/uicore/issues/115)) ([5757269](https://github.com/wings-software/uicore/commit/57572698cc8b6fbb12e006dc16f4956345744dac))
+* select inside accordion gets clipped ([#124](https://github.com/wings-software/uicore/issues/124)) ([6677dba](https://github.com/wings-software/uicore/commit/6677dbaaf563e99471e01f89858bd8aa3e9e5b3d))
+
+### [0.1.103](https://github.com/wings-software/uicore/compare/v0.1.102...v0.1.103) (2021-03-30)
+
+
+### Features
+
+* icon added for when condition ([#123](https://github.com/wings-software/uicore/issues/123)) ([f32ec01](https://github.com/wings-software/uicore/commit/f32ec01a643835f70338f14dbf70bf2b7d8d2cbc))
+
+### [0.1.102](https://github.com/wings-software/uicore/compare/v0.1.101...v0.1.102) (2021-03-30)
+
+
+### Bug Fixes
+
+* update duration regex to handle exponential syntax validation ([#122](https://github.com/wings-software/uicore/issues/122)) ([a0fdc8a](https://github.com/wings-software/uicore/commit/a0fdc8ab90f748ed2edffb6c8f8f5d322a48dec5))
+
+### [0.1.101](https://github.com/wings-software/uicore/compare/v0.1.100...v0.1.101) (2021-03-30)
+
+
+### Features
+
+* [CDNG-5588]: added aws-kms icon ([#120](https://github.com/wings-software/uicore/issues/120)) ([557c325](https://github.com/wings-software/uicore/commit/557c325dc28ea889d95453a653b64de66813b1c6))
+
 ### [0.1.100](https://github.com/wings-software/uicore/compare/v0.1.99...v0.1.100) (2021-03-30)
 
 

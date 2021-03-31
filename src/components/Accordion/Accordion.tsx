@@ -35,7 +35,7 @@ function AccordionPanel(
         <div className={cx({ [css.label]: typeof summary === 'string' })}>{summary}</div>
         <div className={css.chevron} />
       </div>
-      <Collapse {...collapseProps} isOpen={isOpen}>
+      <Collapse {...collapseProps} className={cx(css.collapse, collapseProps?.className)} isOpen={isOpen}>
         <div data-testid={`${id}-details`} className={cx(css.details, props.detailsClassName)}>
           {details}
         </div>
