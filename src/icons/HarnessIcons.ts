@@ -1,18 +1,26 @@
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
+import Inline from './Inline.svg'
 import Options from './Options.svg'
 import Activity from './activity.svg'
+import Adminrole from './adminRole.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
+import AwsKms from './aws-kms.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
+import BarrierClose from './barrier-close.svg'
+import BarrierOpenWithLinks from './barrier-open-with-links.svg'
+import BarrierOpen from './barrier-open.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
+import BitbucketSelected from './bitbucket-selected.svg'
+import BitbucketUnselected from './bitbucket-unselected.svg'
 import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
@@ -38,6 +46,7 @@ import CfHover from './cf-hover.svg'
 import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
+import CiActiveBuild from './ci-active-build.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CircleCross from './circle-cross.svg'
@@ -67,6 +76,7 @@ import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
+import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
 import CopyAlt from './copy-alt.svg'
@@ -75,6 +85,7 @@ import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CsHover from './cs-hover.svg'
 import CustomService from './custom-service.svg'
+import Customrole from './customRole.svg'
 import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
 import DashboardSelected from './dashboard-selected.svg'
@@ -103,6 +114,7 @@ import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import EmailStep from './email-step.svg'
+import Entity from './entity.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -112,6 +124,7 @@ import Execution from './execution.svg'
 import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
+import FatArrowUp from './fat-arrow-up.svg'
 import FeedbackGiven from './feedback-given.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
@@ -121,7 +134,12 @@ import GcrStep from './gcr-step.svg'
 import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitCloneStep from './git-clone-step.svg'
+import GitLandingPage from './git-landing-page.svg'
+import GithubSelected from './github-selected.svg'
+import GithubUnselected from './github-unselected.svg'
 import Github from './github.svg'
+import GitlabSelected from './gitlab-selected.svg'
+import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
@@ -131,6 +149,7 @@ import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
 import Hashicorpvault from './hashiCorpVault.svg'
 import Health from './health.svg'
+import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import Info from './info.svg'
@@ -229,6 +248,7 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import Memberrole from './memberRole.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
@@ -296,10 +316,12 @@ import Profile from './profile.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Queued from './queued.svg'
+import Remote from './remote.svg'
 import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
+import Repository from './repository.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS from './restore-cache-s3.svg'
@@ -396,16 +418,22 @@ import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
 import SwapServices from './swap-services.svg'
 import TemplateLibrary from './template-library.svg'
+import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
+import TerraformDestroy from './terraform-destroy.svg'
+import TerraformPlan from './terraform-plan.svg'
+import TerraformRollback from './terraform-rollback.svg'
 import TestVerification from './test-verification.svg'
+import Text from './text.svg'
+import Timeout from './timeout.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
-import Text from './text.svg'
 import Up from './up.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
+import Viewerrole from './viewerRole.svg'
 import Waiting from './waiting.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -420,18 +448,26 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
+  | 'Inline'
   | 'Options'
   | 'activity'
+  | 'adminRole'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
   | 'approval-step'
   | 'audit-log-created'
+  | 'aws-kms'
   | 'azure-kubernetes-service'
   | 'banned'
+  | 'barrier-close'
+  | 'barrier-open-with-links'
+  | 'barrier-open'
   | 'bin-main'
   | 'bitbucket-blue'
   | 'bitbucket-new'
+  | 'bitbucket-selected'
+  | 'bitbucket-unselected'
   | 'bitbucket'
   | 'blue-black-cluster'
   | 'bluegreen'
@@ -457,6 +493,7 @@ type HarnessIconName =
   | 'cf-main'
   | 'check-alt'
   | 'check'
+  | 'ci-active-build'
   | 'ci-hover'
   | 'ci-main'
   | 'circle-cross'
@@ -486,6 +523,7 @@ type HarnessIconName =
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
   | 'conditional-skip'
+  | 'conditional-when'
   | 'config-change'
   | 'config-file'
   | 'copy-alt'
@@ -494,6 +532,7 @@ type HarnessIconName =
   | 'coverage-status-success'
   | 'cs-hover'
   | 'custom-service'
+  | 'customRole'
   | 'cv-hover'
   | 'cv-main'
   | 'dashboard-selected'
@@ -522,6 +561,7 @@ type HarnessIconName =
   | 'ecr-step'
   | 'elastic-kubernetes-service'
   | 'email-step'
+  | 'entity'
   | 'execution-abort'
   | 'execution-input'
   | 'execution-rollback'
@@ -531,6 +571,7 @@ type HarnessIconName =
   | 'expired'
   | 'expression-input'
   | 'failure-strategy'
+  | 'fat-arrow-up'
   | 'feedback-given'
   | 'file'
   | 'fixed-input'
@@ -540,7 +581,12 @@ type HarnessIconName =
   | 'gcs-step'
   | 'gear'
   | 'git-clone-step'
+  | 'git-landing-page'
+  | 'github-selected'
+  | 'github-unselected'
   | 'github'
+  | 'gitlab-selected'
+  | 'gitlab-unselected'
   | 'gitlab'
   | 'google-kubernetes-engine'
   | 'google'
@@ -550,6 +596,7 @@ type HarnessIconName =
   | 'harness'
   | 'hashiCorpVault'
   | 'health'
+  | 'help'
   | 'hourglass'
   | 'http-step'
   | 'info'
@@ -648,6 +695,7 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'memberRole'
   | 'money-icon'
   | 'multi-service'
   | 'nav-account-admin-hover'
@@ -715,10 +763,12 @@ type HarnessIconName =
   | 'publish-step'
   | 'question'
   | 'queued'
+  | 'remote'
   | 'remove'
   | 'report-gear-grey'
   | 'report-gear'
   | 'report-icon'
+  | 'repository'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
@@ -815,16 +865,22 @@ type HarnessIconName =
   | 'support-videos'
   | 'swap-services'
   | 'template-library'
+  | 'terraform-apply-new'
   | 'terraform-apply'
+  | 'terraform-destroy'
+  | 'terraform-plan'
+  | 'terraform-rollback'
   | 'test-verification'
+  | 'text'
+  | 'timeout'
   | 'trigger-artifact'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
-  | 'text'
   | 'up'
   | 'utility'
   | 'view-json'
+  | 'viewerRole'
   | 'waiting'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -839,18 +895,26 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
+  Inline: Inline,
   Options: Options,
   activity: Activity,
+  adminRole: Adminrole,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
   'audit-log-created': AuditLogCreated,
+  'aws-kms': AwsKms,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
+  'barrier-close': BarrierClose,
+  'barrier-open-with-links': BarrierOpenWithLinks,
+  'barrier-open': BarrierOpen,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
+  'bitbucket-selected': BitbucketSelected,
+  'bitbucket-unselected': BitbucketUnselected,
   bitbucket: Bitbucket,
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
@@ -876,6 +940,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cf-main': CfMain,
   'check-alt': CheckAlt,
   check: Check,
+  'ci-active-build': CiActiveBuild,
   'ci-hover': CiHover,
   'ci-main': CiMain,
   'circle-cross': CircleCross,
@@ -905,6 +970,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
+  'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
   'copy-alt': CopyAlt,
@@ -913,6 +979,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'coverage-status-success': CoverageStatusSuccess,
   'cs-hover': CsHover,
   'custom-service': CustomService,
+  customRole: Customrole,
   'cv-hover': CvHover,
   'cv-main': CvMain,
   'dashboard-selected': DashboardSelected,
@@ -941,6 +1008,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
   'email-step': EmailStep,
+  entity: Entity,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
@@ -950,6 +1018,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   expired: Expired,
   'expression-input': ExpressionInput,
   'failure-strategy': FailureStrategy,
+  'fat-arrow-up': FatArrowUp,
   'feedback-given': FeedbackGiven,
   file: File,
   'fixed-input': FixedInput,
@@ -959,7 +1028,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'gcs-step': GcsStep,
   gear: Gear,
   'git-clone-step': GitCloneStep,
+  'git-landing-page': GitLandingPage,
+  'github-selected': GithubSelected,
+  'github-unselected': GithubUnselected,
   github: Github,
+  'gitlab-selected': GitlabSelected,
+  'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
@@ -969,6 +1043,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   harness: Harness,
   hashiCorpVault: Hashicorpvault,
   health: Health,
+  help: Help,
   hourglass: Hourglass,
   'http-step': HttpStep,
   info: Info,
@@ -1067,6 +1142,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  memberRole: Memberrole,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
@@ -1134,10 +1210,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'publish-step': PublishStep,
   question: Question,
   queued: Queued,
+  remote: Remote,
   remove: Remove,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
+  repository: Repository,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS,
@@ -1234,16 +1312,22 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-videos': SupportVideos,
   'swap-services': SwapServices,
   'template-library': TemplateLibrary,
+  'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
+  'terraform-destroy': TerraformDestroy,
+  'terraform-plan': TerraformPlan,
+  'terraform-rollback': TerraformRollback,
   'test-verification': TestVerification,
+  text: Text,
+  timeout: Timeout,
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
-  text: Text,
   up: Up,
   utility: Utility,
   'view-json': ViewJson,
+  viewerRole: Viewerrole,
   waiting: Waiting,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,

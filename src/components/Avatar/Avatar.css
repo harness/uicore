@@ -19,8 +19,8 @@
 .hoverToolTipLayout {
   word-break: break-all !important;
   text-align: start !important;
-  width: 200px !important;
-  min-height: 100px;
+  max-width: 400px;
+  min-width: 200px;
 }
 .hoverAvatarLayout {
   justify-content: flex-start !important;

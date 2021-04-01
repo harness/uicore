@@ -258,6 +258,7 @@ const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
 export interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   fileInput?: Omit<IFileInputProps, 'inputProps' | 'text' | 'buttonText'>
+  inputProps?: Omit<IFileInputProps['inputProps'], 'name' | 'disabled' | 'multiple'>
   placeholder?: string
   buttonText?: string
   onChange?: React.FormEventHandler<HTMLInputElement>
@@ -276,6 +277,7 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
     fileInput,
     buttonText = i18n.browse,
     onChange,
+    inputProps,
     multiple = false,
     ...rest
   } = restProps
@@ -288,7 +290,8 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
         inputProps={{
           name,
           disabled,
-          multiple
+          multiple,
+          ...inputProps
         }}
         disabled={disabled}
         onInputChange={(e: React.FormEvent<HTMLInputElement>) => {

@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+import { Layout, Container, Text, Color } from '../'
+
+<Meta title="Layout/Horizontal" />
+
+`<Layout.Horizontal />` lays out children in a horiztonally spaced layout.
+
+<ArgsTable of={Layout.Horizontal} />
+<Layout.Horizontal id="layout-horizontal-sample" spacing="large">
+  <div style={{ height: '100px', width: '200px', background: 'var(--grey-300)' }}></div>
+  <div style={{ height: '100px', width: '300px', background: 'var(--green-500)' }}></div>
+  <div style={{ height: '100px', background: 'var(--blue-500)', flexGrow: 1 }}></div>
+</Layout.Horizontal>
+
+```js live=true
+<Layout.Horizontal id="layout-horizontal-sample" spacing="large">
+  <div style={{ height: '100px', width: '200px', background: 'var(--grey-300)' }}></div>
+  <div style={{ height: '100px', width: '300px', background: 'var(--green-500)' }}></div>
+  <div style={{ height: '100px', background: 'var(--blue-500)', flexGrow: 1 }}></div>
+</Layout.Horizontal>
+```

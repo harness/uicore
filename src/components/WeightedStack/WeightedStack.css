@@ -1,0 +1,43 @@
+.main {
+  :global {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: var(--spacing-small) auto;
+      padding: 0px;
+      background: transparent;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .progress-bar {
+      display: flex;
+      flex: 1;
+      height: 10px;
+
+      .progress-track {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+
+        .progress-fill {
+          border-radius: 0 4px 4px 0;
+          position: absolute;
+          height: 100%;
+          width: 50%;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.stack {
+  padding-bottom: var(--spacing-medium);
+}
+
+.stackLabel {
+  margin-bottom: var(--spacing-xsmall) !important;
+}

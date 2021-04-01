@@ -1,12 +1,14 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Layout, Card, Text, Icon, CardProps } from '../..'
+import { Layout, Card, Text, Icon, CardProps, Container } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
+import { CardBody, Menu, Icon as CardBodyIcon } from './Card'
 
 export default {
   title: 'Components / Card',
   component: Card,
+  subcomponents: { ['CardBody.Menu']: Menu, ['CardBody.Icon']: CardBodyIcon },
   parameters: {
     layout: 'centered',
     docs: {
@@ -56,6 +58,7 @@ interface ICardProps extends IProps, HTMLDivProps {
 export const Basic: Story<CardProps> = args => (
   <Layout.Horizontal spacing="large">
     <Card interactive {...args}>
+      <CardBody.Menu menuContent={<Container padding="medium">hello</Container>} />
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>
@@ -80,7 +83,7 @@ export const Basic: Story<CardProps> = args => (
         </Layout.Vertical>
       </div>
     </Card>
-    <Card interactive>
+    <Card interactive {...args}>
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>

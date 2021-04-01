@@ -2,6 +2,136 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.107](https://github.com/wings-software/uicore/compare/v0.1.106...v0.1.107) (2021-03-31)
+
+
+### Others
+
+* Add onDeleteRow event to FieldArray ([#128](https://github.com/wings-software/uicore/issues/128)) ([9d164df](https://github.com/wings-software/uicore/commit/9d164dfd5eeb1d16ad4a73ae5795e5c27da29607))
+
+### [0.1.106](https://github.com/wings-software/uicore/compare/v0.1.105...v0.1.106) (2021-03-31)
+
+
+### Others
+
+* Role Icons ([#127](https://github.com/wings-software/uicore/issues/127)) ([dba0ce8](https://github.com/wings-software/uicore/commit/dba0ce802a02b86c309bd8e27d32fc85e665bb7d))
+
+### [0.1.105](https://github.com/wings-software/uicore/compare/v0.1.104...v0.1.105) (2021-03-31)
+
+
+### Features
+
+* [CDNG-5519]: Adding InputProps to FileInput ([#125](https://github.com/wings-software/uicore/issues/125)) ([c790d1d](https://github.com/wings-software/uicore/commit/c790d1d683697e0561d03fc4d91a630d9175bd42))
+
+### [0.1.104](https://github.com/wings-software/uicore/compare/v0.1.103...v0.1.104) (2021-03-31)
+
+
+### Features
+
+* [PL-13925]: card,carousel,checkbox,codeblock,collapse,collapselist, colorpicker,container,DateRange Docs ([#118](https://github.com/wings-software/uicore/issues/118)) ([f8a0fa3](https://github.com/wings-software/uicore/commit/f8a0fa35b1e9a101b9f51804545d29a6eb6e680d))
+* [PL-13925]: docs for FlexExpander,GraphError,Heading,Link,ModalMutlilogsviewer,OverlaySpinner,Radio,RadioGroup,StackTraceList,SimpleTagInput ([#121](https://github.com/wings-software/uicore/issues/121)) ([2df4418](https://github.com/wings-software/uicore/commit/2df44182c650d279c46099ed21743f4044748843))
+* [PL-13925]: Docs for the buttons and confirm action button ([#100](https://github.com/wings-software/uicore/issues/100)) ([318c9e9](https://github.com/wings-software/uicore/commit/318c9e90898d8d686c401b33b53a10b443e3a4e0))
+* [PL-13925]: layout, spaces, intent docs ([#117](https://github.com/wings-software/uicore/issues/117)) ([09fd1c1](https://github.com/wings-software/uicore/commit/09fd1c1fc2b4f43a4edc2209d0170dc4d75e1124))
+
+
+### Bug Fixes
+
+* added conditional padding to the input of a multi type select to prevent overlap on text ([#115](https://github.com/wings-software/uicore/issues/115)) ([5757269](https://github.com/wings-software/uicore/commit/57572698cc8b6fbb12e006dc16f4956345744dac))
+* select inside accordion gets clipped ([#124](https://github.com/wings-software/uicore/issues/124)) ([6677dba](https://github.com/wings-software/uicore/commit/6677dbaaf563e99471e01f89858bd8aa3e9e5b3d))
+
+### [0.1.103](https://github.com/wings-software/uicore/compare/v0.1.102...v0.1.103) (2021-03-30)
+
+
+### Features
+
+* icon added for when condition ([#123](https://github.com/wings-software/uicore/issues/123)) ([f32ec01](https://github.com/wings-software/uicore/commit/f32ec01a643835f70338f14dbf70bf2b7d8d2cbc))
+
+### [0.1.102](https://github.com/wings-software/uicore/compare/v0.1.101...v0.1.102) (2021-03-30)
+
+
+### Bug Fixes
+
+* update duration regex to handle exponential syntax validation ([#122](https://github.com/wings-software/uicore/issues/122)) ([a0fdc8a](https://github.com/wings-software/uicore/commit/a0fdc8ab90f748ed2edffb6c8f8f5d322a48dec5))
+
+### [0.1.101](https://github.com/wings-software/uicore/compare/v0.1.100...v0.1.101) (2021-03-30)
+
+
+### Features
+
+* [CDNG-5588]: added aws-kms icon ([#120](https://github.com/wings-software/uicore/issues/120)) ([557c325](https://github.com/wings-software/uicore/commit/557c325dc28ea889d95453a653b64de66813b1c6))
+
+### [0.1.100](https://github.com/wings-software/uicore/compare/v0.1.99...v0.1.100) (2021-03-30)
+
+
+### Bug Fixes
+
+* [CDNG-4194]: Update design for Buttons and CardMenu ([#119](https://github.com/wings-software/uicore/issues/119)) ([4f927af](https://github.com/wings-software/uicore/commit/4f927af70673a87dda6b73b5f998fce556e9cacc))
+
+### [0.1.99](https://github.com/wings-software/uicore/compare/v0.1.98...v0.1.99) (2021-03-26)
+
+
+### Features
+
+* [CDNG-5425]: Adding documentation for WeightedStack component ([#114](https://github.com/wings-software/uicore/issues/114)) ([546eb93](https://github.com/wings-software/uicore/commit/546eb93eeffe9155044ff2d28fbd94537cfa7dd8))
+
+### [0.1.98](https://github.com/wings-software/uicore/compare/v0.1.97...v0.1.98) (2021-03-26)
+
+
+### Features
+
+* [CDNG-5425]: Added WeightedStack component ([#112](https://github.com/wings-software/uicore/issues/112)) ([562b491](https://github.com/wings-software/uicore/commit/562b491e9465ef088a1fcd303d05c7b266e55e21))
+
+### [0.1.97](https://github.com/wings-software/uicore/compare/v0.1.96...v0.1.97) (2021-03-26)
+
+
+### Features
+
+* [CDNG-5014]: Git sync help icon ([#113](https://github.com/wings-software/uicore/issues/113)) ([e66375b](https://github.com/wings-software/uicore/commit/e66375b133f0a7dc797547ee28fa1ad934ba84f8))
+
+### [0.1.96](https://github.com/wings-software/uicore/compare/v0.1.95...v0.1.96) (2021-03-26)
+
+
+### Bug Fixes
+
+* [CDNG-5315]: removed width & height on icons ([#110](https://github.com/wings-software/uicore/issues/110)) ([1aea73c](https://github.com/wings-software/uicore/commit/1aea73c36092fa70334229c6aa7b1c56f86aa810))
+
+### [0.1.95](https://github.com/wings-software/uicore/compare/v0.1.94...v0.1.95) (2021-03-25)
+
+
+### Features
+
+* [CDNG-5315]: added terraform icons ([#109](https://github.com/wings-software/uicore/issues/109)) ([2c55ec6](https://github.com/wings-software/uicore/commit/2c55ec611c1c0da9301134255cb49aa1b8e3697d))
+
+### [0.1.94](https://github.com/wings-software/uicore/compare/v0.1.93...v0.1.94) (2021-03-24)
+
+
+### Features
+
+* Added terraform step icons ([#108](https://github.com/wings-software/uicore/issues/108)) ([ecf083c](https://github.com/wings-software/uicore/commit/ecf083cf5ace1396b844de936aef1294eeeee807))
+
+### [0.1.93](https://github.com/wings-software/uicore/compare/v0.1.92...v0.1.93) (2021-03-23)
+
+
+### Features
+
+* icons added for barrier ([#106](https://github.com/wings-software/uicore/issues/106)) ([857416e](https://github.com/wings-software/uicore/commit/857416e47864dabaf20ecab472c07f0e105162f4))
+
+### [0.1.92](https://github.com/wings-software/uicore/compare/v0.1.91...v0.1.92) (2021-03-23)
+
+
+### Features
+
+* [CDNG-4996]: Icons for git experience ([#105](https://github.com/wings-software/uicore/issues/105)) ([78d9c6f](https://github.com/wings-software/uicore/commit/78d9c6fb9189fc96e842babf4e66f659398dc3d0))
+
+### [0.1.91](https://github.com/wings-software/uicore/compare/v0.1.90...v0.1.91) (2021-03-22)
+
+
+### Features
+
+* [CI-1279]: adding fatArrow and ciActiveBuild icons ([#103](https://github.com/wings-software/uicore/issues/103)) ([c9d44ab](https://github.com/wings-software/uicore/commit/c9d44abf620300e314500e9eae1a3bd712cd709a))
+
+### [0.1.90](https://github.com/wings-software/uicore/compare/v0.1.89...v0.1.90) (2021-03-22)
+
 ### [0.1.89](https://github.com/wings-software/uicore/compare/v0.1.88...v0.1.89) (2021-03-22)
 
 
