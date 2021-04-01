@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.108](https://github.com/wings-software/uicore/compare/v0.1.107...v0.1.108) (2021-04-01)
+
+
+### Bug Fixes
+
+* form input text value going blank on 0 as value ([#130](https://github.com/wings-software/uicore/issues/130)) ([5484f7a](https://github.com/wings-software/uicore/commit/5484f7a42d96ae1a2d3fa2ce0a5948720ea6dabc))
+
 ### [0.1.107](https://github.com/wings-software/uicore/compare/v0.1.106...v0.1.107) (2021-03-31)
 
 
