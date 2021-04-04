@@ -122,6 +122,6 @@ const data: Array<RowData> = [
   },
   decorators: [Story => <Story />]
 } as Meta
-export const Basic: Story<Props> = args => {
+export const Basic: Story<any> = () => {
   return <FieldArrayExample />
 }

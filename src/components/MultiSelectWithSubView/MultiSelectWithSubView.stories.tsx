@@ -11,7 +11,6 @@ import {
   Button,
   Text,
   SelectWithSubviewContext,
-  SelectWithSubview,
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from '../..'
@@ -21,21 +20,6 @@ import { SelectOption } from '../Select/Select'
 import '../Radio/Radio.css'
 import { omit } from 'lodash-es'
 
-function ExampleFormSubviewForSelect() {
-  return (
-    <Formik initialValues={{}} onSubmit={() => {}}>
-      {() => (
-        <Form>
-          <SelectWithSubview
-            items={ExampleItems}
-            changeViewButtonLabel="+ Add an environment"
-            subview={<EnvironmentTypeSubForm onSubmit={values => console.log(values)} />}
-          />
-        </Form>
-      )}
-    </Formik>
-  )
-}
 export default {
   title: 'Form / MultiSelectWithSubview',
 

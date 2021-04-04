@@ -148,7 +148,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
         validateOnChange={false}
         validateOnBlur={false}>
         {props => {
-          const { setFieldValue, errors, values } = props
+          const { setFieldValue, errors } = props
           return (
             <Form style={{ padding: '10px' }}>
               <TextInput
@@ -212,7 +212,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
   )
 }
 
-export const CalendarWidgetExample: Story<SelectWithSubviewProps> = args => {
+export const CalendarWidgetExample: Story<SelectWithSubviewProps> = () => {
   const ExampleItems: SelectOption[] = [
     { value: new Date().getTime() - 30000, label: 'Past 30 minutes' },
     { value: new Date().getTime() - 60000, label: 'Past 1 hour' }
