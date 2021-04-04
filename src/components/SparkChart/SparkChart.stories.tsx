@@ -1,11 +1,41 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { SparkChart, SparkChartProps } from './SparkChart'
-import { Color } from '../../core/Color'
+import { SparkChart, Color } from '../..'
+import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
+import { SparkChartProps } from './SparkChart'
 
 export default {
-  title: 'Components / SparkChart'
+  title: 'Charts /  SparkChart',
+
+  component: SparkChart,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      source: {
+        type: 'code'
+      },
+
+      page: function PageDescription() {
+        return (
+          <>
+            <Title> SparkChart</Title>
+
+            <Subtitle>
+              <pre>
+                <code>{`import {  SparkChart }  from '@wings-software/uicore'`}</code>
+              </pre>
+            </Subtitle>
+            <Primary />
+            <ArgsTable story={PRIMARY_STORY} />
+
+            <Stories />
+          </>
+        )
+      }
+    }
+  },
+  decorators: [Story => <Story />]
 } as Meta
 
 export const SparkChartComp: Story<SparkChartProps> = args => <SparkChart {...args} />
