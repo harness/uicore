@@ -520,7 +520,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
         placeholder={placeholder}
         intent={intent}
         disabled={disabled}
-        value={get(formik?.values, name) || ''}
+        value={get(formik?.values, name, '')}
         onBlur={e => {
           formik?.setFieldTouched(name)
           inputGroup?.onBlur?.(e)
