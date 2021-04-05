@@ -614,6 +614,7 @@ type HarnessIconName =
   | 'library'
   | 'linkedin'
   | 'list-entity-infographic'
+  | 'list-view'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
