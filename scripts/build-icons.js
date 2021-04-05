@@ -32,9 +32,9 @@ files
 
 const warningLines = [
   '/**',
-  '* This file is auto-generated. Please do not modify this file manually.',
-  '* Use the command `yarn ui:icons` to regenerate this file.',
-  '*/'
+  ' * This file is auto-generated. Please do not modify this file manually.',
+  ' * Use the command `yarn ui:icons` to regenerate this file.',
+  ' */'
 ]
 
 console.log(
