@@ -73,7 +73,7 @@ interface CardIconProps extends HTMLDivProps {
   iconProps?: Partial<IconProps>
 }
 
-const Icon: React.FC<CardIconProps> = props => {
+export const Icon: React.FC<CardIconProps> = props => {
   const { icon, iconSize = 16, iconProps = {}, className, style } = props
 
   return (
@@ -91,7 +91,7 @@ interface CardMenuProps extends HTMLDivProps {
   menuPopoverProps?: PopoverProps
 }
 
-const Menu: React.FC<CardMenuProps> = props => {
+export const Menu: React.FC<CardMenuProps> = props => {
   const { menuContent, title, colorIdentifier = false, className, style = {}, menuPopoverProps } = props
   // NextJS does not work well with usePortal={true}
   const isNext =

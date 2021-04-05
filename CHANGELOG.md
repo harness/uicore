@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.110](https://github.com/wings-software/uicore/compare/v0.1.109...v0.1.110) (2021-04-05)
+
+
+### Features
+
+* Added Option field props to all fields and also updated Text fe… ([#131](https://github.com/wings-software/uicore/issues/131)) ([78b7d3b](https://github.com/wings-software/uicore/commit/78b7d3b9c216a5eb791e384ef9df9cbf49a8a7ed))
+
+### [0.1.109](https://github.com/wings-software/uicore/compare/v0.1.108...v0.1.109) (2021-04-03)
+
+
+### Features
+
+* [PL-13925]: button group and card docs ([#107](https://github.com/wings-software/uicore/issues/107)) ([f3330c2](https://github.com/wings-software/uicore/commit/f3330c28537b31d767de0c4f5c546baf94903079))
+
+### [0.1.108](https://github.com/wings-software/uicore/compare/v0.1.107...v0.1.108) (2021-04-01)
+
+
+### Bug Fixes
+
+* form input text value going blank on 0 as value ([#130](https://github.com/wings-software/uicore/issues/130)) ([5484f7a](https://github.com/wings-software/uicore/commit/5484f7a42d96ae1a2d3fa2ce0a5948720ea6dabc))
+
+### [0.1.107](https://github.com/wings-software/uicore/compare/v0.1.106...v0.1.107) (2021-03-31)
+
+
+### Others
+
+* Add onDeleteRow event to FieldArray ([#128](https://github.com/wings-software/uicore/issues/128)) ([9d164df](https://github.com/wings-software/uicore/commit/9d164dfd5eeb1d16ad4a73ae5795e5c27da29607))
+
+### [0.1.106](https://github.com/wings-software/uicore/compare/v0.1.105...v0.1.106) (2021-03-31)
+
+
+### Others
+
+* Role Icons ([#127](https://github.com/wings-software/uicore/issues/127)) ([dba0ce8](https://github.com/wings-software/uicore/commit/dba0ce802a02b86c309bd8e27d32fc85e665bb7d))
+
 ### [0.1.105](https://github.com/wings-software/uicore/compare/v0.1.104...v0.1.105) (2021-03-31)
 
 

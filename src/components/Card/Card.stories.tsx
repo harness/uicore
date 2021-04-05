@@ -2,11 +2,57 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
 import { Layout, Card, Text, Icon, CardProps, Container } from '../..'
-import { CardBody } from './Card'
+import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
+import { CardBody, Menu, Icon as CardBodyIcon } from './Card'
 
 export default {
   title: 'Components / Card',
-  component: Card
+  component: Card,
+  subcomponents: { ['CardBody.Menu']: Menu, ['CardBody.Icon']: CardBodyIcon },
+  parameters: {
+    layout: 'centered',
+    docs: {
+      source: {
+        type: 'code'
+      },
+
+      page: function PageDescription() {
+        return (
+          <>
+            <Title>Card</Title>
+            <Description>{`Card component reuses Blueprint's card and implements the look and feel of [CD Next Gen](https://harness.atlassian.net/wiki/spaces/UI/pages/668271019/Card)`}</Description>
+            <Subtitle>
+              <>
+                <h4>Import</h4>
+                <pre>
+                  <code>{`import { Card, CardBody }  from '@wings-software/uicore'`}</code>
+                </pre>
+                <h4>Types</h4>
+                <pre>
+                  <code>
+                    {`interface CardProps extends ICardProps {
+  selected?: boolean
+  disabled?: boolean
+  cornerSelected?: boolean
+}
+interface ICardProps extends IProps, HTMLDivProps {
+    elevation?: Elevation;
+    interactive?: boolean;
+    onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+}`}
+                  </code>
+                </pre>
+              </>
+            </Subtitle>
+            <Primary />
+            <ArgsTable story={PRIMARY_STORY} />
+
+            <Stories />
+          </>
+        )
+      }
+    }
+  }
 } as Meta
 
 export const Basic: Story<CardProps> = args => (
@@ -37,7 +83,7 @@ export const Basic: Story<CardProps> = args => (
         </Layout.Vertical>
       </div>
     </Card>
-    <Card interactive>
+    <Card interactive {...args}>
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>
