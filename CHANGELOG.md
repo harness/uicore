@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.110](https://github.com/wings-software/uicore/compare/v0.1.109...v0.1.110) (2021-04-05)
+
+
+### Features
+
+* Added Option field props to all fields and also updated Text fe… ([#131](https://github.com/wings-software/uicore/issues/131)) ([78b7d3b](https://github.com/wings-software/uicore/commit/78b7d3b9c216a5eb791e384ef9df9cbf49a8a7ed))
+
 ### [0.1.109](https://github.com/wings-software/uicore/compare/v0.1.108...v0.1.109) (2021-04-03)
 
 
