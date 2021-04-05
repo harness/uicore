@@ -150,6 +150,7 @@ import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import Info from './info.svg'
 import InitializeStep from './initialize-step.svg'
+import InsightView from './insight-view.svg'
 import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
@@ -160,6 +161,7 @@ import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
+import ListView from './list-view.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -591,6 +593,7 @@ type HarnessIconName =
   | 'http-step'
   | 'info'
   | 'initialize-step'
+  | 'insight-view'
   | 'integration'
   | 'key-main'
   | 'key'
@@ -1032,6 +1035,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'http-step': HttpStep,
   info: Info,
   'initialize-step': InitializeStep,
+  'insight-view': InsightView,
   integration: Integration,
   'key-main': KeyMain,
   key: Key,
@@ -1042,6 +1046,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   library: Library,
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
+  'list-view': ListView,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
