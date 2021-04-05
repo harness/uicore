@@ -151,7 +151,7 @@ export const CardMultiSelectExample = () => {
   decorators: [Story => <Story />]
 } as Meta
 
-export const Select: Story<CardSelectProps<any>> = args => {
+export const Select: Story<CardSelectProps<any>> = _args => {
   return (
     <Layout.Vertical spacing="large">
       <Text>Control are not connected to example</Text>
@@ -159,7 +159,7 @@ export const Select: Story<CardSelectProps<any>> = args => {
     </Layout.Vertical>
   )
 }
-export const MultiSelect: Story<CardSelectProps<any>> = args => {
+export const MultiSelect: Story<CardSelectProps<any>> = _args => {
   return (
     <Layout.Vertical spacing="large">
       <Text>Control are not connected to example</Text>

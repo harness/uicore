@@ -89,9 +89,9 @@ export const CardMultiSelectExample = () => {
     data,
     multi: true,
     className: 'grid',
-    renderItem: (item, selected) => (
+    renderItem: (item: any, selected: any) => (
       <CardBody.Icon icon={item.icon} iconSize={25}>
-        <Text font={{ size: 'small', align: 'center', color: selected ? 'var(--grey-900)' : 'var(--grey-350)' }}>
+        <Text font={{ size: 'small', align: 'center' }} color={selected ? 'var(--grey-900)' : 'var(--grey-350)'}>
           {item.text}
         </Text>
       </CardBody.Icon>
