@@ -40,6 +40,7 @@ export const Basic: Story<FormikFormProps> = () => (
         return (
           <FormikForm>
             <FormInput.Text name="name" label="Name" placeholder="First Name" />
+            <FormInput.Text name="age" type="number" label="Age" isOptional placeholder="Age in years" />
             <FormInput.KVTagInput
               name="tags"
               label="Tags"
