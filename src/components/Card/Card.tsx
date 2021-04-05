@@ -67,7 +67,7 @@ export const Card: React.FC<CardProps> = props => {
 }
 
 // Card Body
-interface CardIconProps extends HTMLDivProps {
+export interface CardIconProps extends HTMLDivProps {
   icon: IconName
   iconSize?: number
   iconProps?: Partial<IconProps>
@@ -84,7 +84,7 @@ export const Icon: React.FC<CardIconProps> = props => {
   )
 }
 
-interface CardMenuProps extends HTMLDivProps {
+export interface CardMenuProps extends HTMLDivProps {
   menuContent: JSX.Element
   title?: string
   colorIdentifier?: Color
