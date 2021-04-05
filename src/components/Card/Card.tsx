@@ -67,13 +67,13 @@ export const Card: React.FC<CardProps> = props => {
 }
 
 // Card Body
-interface CardIconProps extends HTMLDivProps {
+export interface CardIconProps extends HTMLDivProps {
   icon: IconName
   iconSize?: number
   iconProps?: Partial<IconProps>
 }
 
-const Icon: React.FC<CardIconProps> = props => {
+export const Icon: React.FC<CardIconProps> = props => {
   const { icon, iconSize = 16, iconProps = {}, className, style } = props
 
   return (
@@ -84,14 +84,14 @@ const Icon: React.FC<CardIconProps> = props => {
   )
 }
 
-interface CardMenuProps extends HTMLDivProps {
+export interface CardMenuProps extends HTMLDivProps {
   menuContent: JSX.Element
   title?: string
   colorIdentifier?: Color
   menuPopoverProps?: PopoverProps
 }
 
-const Menu: React.FC<CardMenuProps> = props => {
+export const Menu: React.FC<CardMenuProps> = props => {
   const { menuContent, title, colorIdentifier = false, className, style = {}, menuPopoverProps } = props
   // NextJS does not work well with usePortal={true}
   const isNext =
@@ -103,7 +103,7 @@ const Menu: React.FC<CardMenuProps> = props => {
       style={{ color: colorIdentifier ? colorIdentifier : '', ...style }}>
       <div className={css.dots}>
         <Popover content={menuContent} position={Position.RIGHT_TOP} usePortal={!isNext} {...menuPopoverProps}>
-          <Button className={css.menu} minimal icon="more" style={{ color: 'var(--grey-500)' }} />
+          <Button className={css.menu} minimal round icon="Options" />
         </Popover>
       </div>
       {title && (

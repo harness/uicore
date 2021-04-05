@@ -14,7 +14,7 @@ import {
 import moment from 'moment'
 import { Icon } from '../../icons/Icon'
 
-interface DateInputProps extends Omit<TextInputProps, 'onChange'> {
+export interface DateInputProps extends Omit<TextInputProps, 'onChange'> {
   dateTimeFormat?: string
   dateProps?: IDatePickerProps
   timePrecision?: TimePrecision

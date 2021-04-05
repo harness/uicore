@@ -135,4 +135,10 @@
   :global(.bp3-input-action) {
     right: 32px !important;
   }
+
+  input[type='text'],
+  .fixedValueInput,
+  :global(.bp3-input) {
+    padding-right: 75px !important;
+  }
 }

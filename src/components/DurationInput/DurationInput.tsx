@@ -10,8 +10,8 @@ import css from './DurationInput.css'
 export type DurationUnits = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
 const TEXT_EXTRACT_REGEX = /(\d+)\s*([a-z]{1,2})/gi
 const TEXT_LIMIT_REGEX = /[^0-9wdhms\s]/g
-const UNIT_LESS_REGEX = /\d+(?!(ms|s|m|h|d|w|\d))/i
-const VALID_SYNTAX_REGEX = /^(\d+w\s*)?(\d+d\s*)?(\d+h\s*)?(\d+m\s*)?(\d+s\s*)?(\d+ms\s*)?$/i
+const UNIT_LESS_REGEX = /\d+(?:\.\d+)?(?:e\+\d+)?(?!(ms|s|m|h|d|w|\d))/i
+const VALID_SYNTAX_REGEX = /^(\d+(?:\.\d+)?(?:e\+\d+)?w\s*)?(\d+(?:\.\d+)?(?:e\+\d+)?d\s*)?(\d+(?:\.\d+)?(?:e\+\d+)?h\s*)?(\d+(?:\.\d+)?(?:e\+\d+)?m\s*)?(\d+(?:\.\d+)?(?:e\+\d+)?s\s*)?(\d+(?:\.\d+)?(?:e\+\d+)?ms\s*)?$/i
 
 export const UNIT_MULTIPLIERS: Record<DurationUnits, number> = {
   ms: 1,
@@ -113,7 +113,7 @@ export function spaceOutFormatTime(characters: string[], allowedValues: Duration
     .join('')
 }
 
-export const getHelpPopoverContent = (allowedUnits: DurationUnits[]) => (
+export const getHelpPopoverContent = (allowedUnits: DurationUnits[]): React.ReactElement => (
   <Text padding="xlarge" style={{ minWidth: '192px' }}>
     You can use:
     <br />
@@ -139,7 +139,7 @@ export interface DurationInputProps extends Omit<TextInputProps, 'value' | 'onCh
   allowedUnits?: DurationUnits[]
   allowVariables?: boolean
 }
-export function DurationInput(props: DurationInputProps) {
+export function DurationInput(props: DurationInputProps): React.ReactElement {
   const { value, valueInTimeFormat, allowVariables, allowedUnits, onChange, ...rest } = props
   let fieldValueCorrected: string
 

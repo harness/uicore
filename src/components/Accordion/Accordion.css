@@ -3,6 +3,10 @@
 }
 
 .panel {
+  .collapse {
+    overflow: auto !important;
+  }
+
   .summary {
     display: flex;
     justify-content: space-between;

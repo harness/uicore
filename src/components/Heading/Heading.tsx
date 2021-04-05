@@ -5,7 +5,7 @@ import styledClass from '../../styled-props/StyledProps.css'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | '1' | '2' | '3' | '4'
 
-interface HeadingProps extends Assign<HTMLAttributes<HTMLHeadingElement>, StyledProps> {
+export interface HeadingProps extends Assign<HTMLAttributes<HTMLHeadingElement>, StyledProps> {
   /** Heading level ('1' -> h1, '2' -> h2, ..., '6' -> h6). Default is '1' */
   level?: HeadingLevel
 }

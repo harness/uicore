@@ -4,15 +4,17 @@ import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
 import Activity from './activity.svg'
+import Adminrole from './adminRole.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
+import AwsKms from './aws-kms.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
 import BarrierClose from './barrier-close.svg'
-import BarrierOpenWihLinks from './barrier-open-wih-links.svg'
+import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
@@ -74,6 +76,7 @@ import CommandWinrm from './command-winrm.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
+import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
 import CopyAlt from './copy-alt.svg'
@@ -82,6 +85,7 @@ import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CsHover from './cs-hover.svg'
 import CustomService from './custom-service.svg'
+import Customrole from './customRole.svg'
 import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
 import DashboardSelected from './dashboard-selected.svg'
@@ -246,6 +250,7 @@ import MainView from './main-view.svg'
 import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import Memberrole from './memberRole.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
@@ -430,6 +435,7 @@ import TriggerSchedule from './trigger-schedule.svg'
 import Up from './up.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
+import Viewerrole from './viewerRole.svg'
 import Waiting from './waiting.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -447,15 +453,17 @@ type HarnessIconName =
   | 'Inline'
   | 'Options'
   | 'activity'
+  | 'adminRole'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
   | 'approval-step'
   | 'audit-log-created'
+  | 'aws-kms'
   | 'azure-kubernetes-service'
   | 'banned'
   | 'barrier-close'
-  | 'barrier-open-wih-links'
+  | 'barrier-open-with-links'
   | 'barrier-open'
   | 'bin-main'
   | 'bitbucket-blue'
@@ -517,6 +525,7 @@ type HarnessIconName =
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
   | 'conditional-skip'
+  | 'conditional-when'
   | 'config-change'
   | 'config-file'
   | 'copy-alt'
@@ -525,6 +534,7 @@ type HarnessIconName =
   | 'coverage-status-success'
   | 'cs-hover'
   | 'custom-service'
+  | 'customRole'
   | 'cv-hover'
   | 'cv-main'
   | 'dashboard-selected'
@@ -688,6 +698,7 @@ type HarnessIconName =
   | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'memberRole'
   | 'money-icon'
   | 'multi-service'
   | 'nav-account-admin-hover'
@@ -872,6 +883,7 @@ type HarnessIconName =
   | 'up'
   | 'utility'
   | 'view-json'
+  | 'viewerRole'
   | 'waiting'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -889,15 +901,17 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Inline: Inline,
   Options: Options,
   activity: Activity,
+  adminRole: Adminrole,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
   'audit-log-created': AuditLogCreated,
+  'aws-kms': AwsKms,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
   'barrier-close': BarrierClose,
-  'barrier-open-wih-links': BarrierOpenWihLinks,
+  'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
@@ -959,6 +973,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
+  'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
   'copy-alt': CopyAlt,
@@ -967,6 +982,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'coverage-status-success': CoverageStatusSuccess,
   'cs-hover': CsHover,
   'custom-service': CustomService,
+  customRole: Customrole,
   'cv-hover': CvHover,
   'cv-main': CvMain,
   'dashboard-selected': DashboardSelected,
@@ -1131,6 +1147,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  memberRole: Memberrole,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
@@ -1315,6 +1332,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   up: Up,
   utility: Utility,
   'view-json': ViewJson,
+  viewerRole: Viewerrole,
   waiting: Waiting,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
