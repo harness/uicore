@@ -30,8 +30,17 @@ files
     _exports.push('  ' + key + ': ' + ComponentName)
   })
 
+const warningLines = [
+  '/**',
+  '* This file is auto-generated. Please do not modify this file manually.',
+  '* Use the command `yarn ui:icons` to regenerate this file.',
+  '*/'
+]
+
 console.log(
-  _imports.join('\n') +
+  warningLines.join('\n') +
+    '\n' +
+    _imports.join('\n') +
     '\n\n' +
     iconNames +
     '\nconst HarnessIcons: KVO<FunctionComponent<ElementType>> = {\n' +
