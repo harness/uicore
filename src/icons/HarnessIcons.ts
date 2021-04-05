@@ -1,3 +1,7 @@
+/**
+ * This file is auto-generated. Please do not modify this file manually.
+ * Use the command `yarn ui:icons` to regenerate this file.
+ */
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
@@ -614,6 +618,7 @@ type HarnessIconName =
   | 'library'
   | 'linkedin'
   | 'list-entity-infographic'
+  | 'list-view'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
