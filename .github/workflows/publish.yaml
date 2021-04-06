@@ -53,14 +53,14 @@ jobs:
           yarn publish
       - name: Publish static site
         run: |
-        yarn build-storybook -o ./public
-        cd public
-        git init
-        GIT_USER=$(curl --silent -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
-        GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
-        GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
-        git config user.name $GIT_USER_NAME
-        git config user.email $GIT_USER_EMAIL 
-        git add .
-        git commit -m 'public static site'
-        git push --force --quiet "https://${{ secrets.GIT_BOT_TOKEN }}@github.com/${{ github.repository }}.git" main:static-site > /dev/null 2>&1
+          yarn build-storybook -o ./public
+          cd public
+          git init
+          GIT_USER=$(curl --silent -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
+          GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
+          GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
+          git config user.name $GIT_USER_NAME
+          git config user.email $GIT_USER_EMAIL 
+          git add .
+          git commit -m 'public static site'
+          git push --force --quiet "https://${{ secrets.GIT_BOT_TOKEN }}@github.com/${{ github.repository }}.git" main:static-site > /dev/null 2>&1
