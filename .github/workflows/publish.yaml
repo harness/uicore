@@ -51,20 +51,16 @@ jobs:
           git push origin main --follow-tags --force
 
           yarn publish
-
-      # - name: Create a release
-      #   if: ${{ success() }}
-      #   run: |
-      #     VERSION=$(cat package.json | jq -r .version)
-      #     PREV_VERSION=$(git tag -l | grep -B 1 $VERSION | head -n 1)
-
-      #     git tag $VERSION
-      #     git push origin $VERSION
-
-      #     COMMENT="https://github.com/${{ github.repository }}/compare/$PREV_VERSION...$VERSION"
-      #     BODY=$(jq -r --arg name $VERSION --arg target 'master' --arg body $COMMENT '. | .tag_name=$name | .name=$name | .target_commitish=$target | .body=$body' <<< '{}')
-      #     curl \
-      #       -H "Content-Type: application/json" \
-      #       -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" \
-      #       -d "$BODY" \
-      #       -X POST "https://api.github.com/repos/${{ github.repository }}/releases"
+      - name: Publish static site
+        run: |
+        yarn build-storybook -o ./public
+        cd public
+        git init
+        GIT_USER=$(curl --silent -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
+        GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
+        GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
+        git config user.name $GIT_USER_NAME
+        git config user.email $GIT_USER_EMAIL 
+        git add .
+        git commit -m 'public static site'
+        git push --force --quiet "https://${{ secrets.GIT_BOT_TOKEN }}@github.com/${{ github.repository }}.git" main:static-site > /dev/null 2>&1
