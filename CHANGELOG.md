@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.117](https://github.com/wings-software/uicore/compare/v0.1.116...v0.1.117) (2021-04-06)
+
+
+### Features
+
+* [PL-13925]: with github action to publish site ([#137](https://github.com/wings-software/uicore/issues/137)) ([5eb68ac](https://github.com/wings-software/uicore/commit/5eb68aceaea27541f7742dd56bff205a38f794b8))
+* [PL-13925]: with github action to publish site ([#138](https://github.com/wings-software/uicore/issues/138)) ([3fdbd3c](https://github.com/wings-software/uicore/commit/3fdbd3c8679c6bb82ff8ac34996c7ae7747de2d9))
+* [PL-13925]: with import correction ([#139](https://github.com/wings-software/uicore/issues/139)) ([cd45dbb](https://github.com/wings-software/uicore/commit/cd45dbb08c1bc5ed322d72c6e43f8695cd926d5b))
+
 ### [0.1.116](https://github.com/wings-software/uicore/compare/v0.1.115...v0.1.116) (2021-04-06)
 
 
