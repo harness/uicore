@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.115](https://github.com/wings-software/uicore/compare/v0.1.114...v0.1.115) (2021-04-06)
+
+
+### Bug Fixes
+
+* [CDNG-5792]: fix by default selection of deploy types ([#135](https://github.com/wings-software/uicore/issues/135)) ([20fc589](https://github.com/wings-software/uicore/commit/20fc58946bed362fcc1c728f1025af195b6ab5f1))
+
 ### [0.1.114](https://github.com/wings-software/uicore/compare/v0.1.113...v0.1.114) (2021-04-05)
 
 
