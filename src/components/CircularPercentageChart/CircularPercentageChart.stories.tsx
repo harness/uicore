@@ -20,11 +20,11 @@ export default {
       page: function PageDescription() {
         return (
           <>
-            <Title>CodeBlock</Title>
+            <Title>CircularPercentageChart</Title>
 
             <Subtitle>
               <pre>
-                <code>{`import { CodeBlock }  from '@wings-software/uicore'`}</code>
+                <code>{`import { CircularPercentageChart }  from '@wings-software/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />
