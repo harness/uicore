@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.116](https://github.com/wings-software/uicore/compare/v0.1.115...v0.1.116) (2021-04-06)
+
+
+### Features
+
+* icon resource constraint ([#136](https://github.com/wings-software/uicore/issues/136)) ([a33024a](https://github.com/wings-software/uicore/commit/a33024a38ea1d3e106df5ed148e880910a1eea4d))
+
 ### [0.1.115](https://github.com/wings-software/uicore/compare/v0.1.114...v0.1.115) (2021-04-06)
 
 
