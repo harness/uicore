@@ -1,12 +1,13 @@
-name: Publish
+name: Static Site
 
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
-    name: Build
+    name: Static Site Publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,7 +46,7 @@ jobs:
           GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
           GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
           git config user.name $GIT_USER_NAME
-          git config user.email $GIT_USER_EMAIL 
+          git config user.email $GIT_USER_EMAIL
           git add .
           git commit -m 'public static site'
-          git push --force --quiet "https://${{ secrets.GIT_BOT_TOKEN }}@github.com/${{ github.repository }}.git" main:static-site > /dev/null 2>&1
+          git push --force --quiet "https://${{ secrets.GIT_BOT_TOKEN }}@github.com/${{ github.repository }}.git" main:static-site
