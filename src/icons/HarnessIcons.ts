@@ -432,6 +432,7 @@ import TerraformRollback from './terraform-rollback.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
 import Timeout from './timeout.svg'
+import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
@@ -881,6 +882,7 @@ type HarnessIconName =
   | 'test-verification'
   | 'text'
   | 'timeout'
+  | 'traffic-lights'
   | 'trigger-artifact'
   | 'trigger-github'
   | 'trigger-pipeline'
@@ -1330,6 +1332,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'test-verification': TestVerification,
   text: Text,
   timeout: Timeout,
+  'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
