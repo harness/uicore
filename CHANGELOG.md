@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.114](https://github.com/wings-software/uicore/compare/v0.1.113...v0.1.114) (2021-04-05)
+
+
+### Features
+
+* [CDNG-5818]: add list-view to types ([#133](https://github.com/wings-software/uicore/issues/133)) ([3c6f43c](https://github.com/wings-software/uicore/commit/3c6f43c429952d21764ce3eb16cc9f8541f5de3c))
+
+### [0.1.113](https://github.com/wings-software/uicore/compare/v0.1.112...v0.1.113) (2021-04-05)
+
+
+### Features
+
+* [CDNG-5818]: add list-view and insight-view icons ([#132](https://github.com/wings-software/uicore/issues/132)) ([a36d199](https://github.com/wings-software/uicore/commit/a36d1990ecc7f99487076db0ddc47c5eae97393f))
+
 ### [0.1.112](https://github.com/wings-software/uicore/compare/v0.1.111...v0.1.112) (2021-04-05)
 
 
