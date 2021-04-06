@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useCallback } from 'react'
 import { Card, CardProps } from '../Card/Card'
 import { HTMLDivProps } from '@blueprintjs/core'
+import { isEqual } from 'lodash-es'
 
 export enum CardSelectType {
   CardView = 'CardView',
@@ -70,7 +71,10 @@ export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
     <div className={className} style={style} ref={rootRef}>
       {data.length > 0 &&
         data.map((item, index) => {
-          const isSelected = multi && Array.isArray(selected) ? selected.indexOf(item) > -1 : item === selected
+          const isSelected =
+            multi && Array.isArray(selected)
+              ? selected.findIndex(selectedType => isEqual(selectedType, item)) > -1
+              : isEqual(item, selected)
 
           return (
             <React.Fragment key={index}>
