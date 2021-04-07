@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.119](https://github.com/wings-software/uicore/compare/v0.1.118...v0.1.119) (2021-04-07)
+
+
+### Features
+
+* [CDNG-5866]: handle orientation cases in WeightedStack ([#141](https://github.com/wings-software/uicore/issues/141)) ([11dfef2](https://github.com/wings-software/uicore/commit/11dfef2a682b05ea19d68b6098f4321e59934ba1))
+
 ### [0.1.118](https://github.com/wings-software/uicore/compare/v0.1.117...v0.1.118) (2021-04-07)
 
 
