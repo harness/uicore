@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.121](https://github.com/wings-software/uicore/compare/v0.1.120...v0.1.121) (2021-04-07)
+
+
+### Features
+
+* [CDNG-5866]: add inside label orientation ([#144](https://github.com/wings-software/uicore/issues/144)) ([fe47aca](https://github.com/wings-software/uicore/commit/fe47aca42456340faf831e2de5a7174edae37820))
+
 ### [0.1.120](https://github.com/wings-software/uicore/compare/v0.1.119...v0.1.120) (2021-04-07)
 
 
