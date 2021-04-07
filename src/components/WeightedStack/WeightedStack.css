@@ -43,14 +43,14 @@
 .stackColumn {
   flex-direction: column;
   .stackLabel {
-    margin-bottom: var(--spacing-xsmall) !important;
+    margin-bottom: var(--spacing-xsmall);
   }
 }
 
 .stackColumnReverse {
   flex-direction: column-reverse;
   .stackLabel {
-    margin-top: var(--spacing-xsmall) !important;
+    margin-top: var(--spacing-xsmall);
   }
 }
 
@@ -60,7 +60,7 @@
   .stackLabel {
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-right: var(--spacing-xsmall) !important;
+    margin-right: var(--spacing-xsmall);
   }
 }
 
@@ -70,6 +70,6 @@
   .stackLabel {
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-left: var(--spacing-xsmall) !important;
+    margin-left: var(--spacing-xsmall);
   }
 }
