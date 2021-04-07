@@ -15,7 +15,7 @@
     .progress-bar {
       display: flex;
       flex: 1;
-      height: 10px;
+      height: 20px;
 
       .progress-track {
         position: relative;
@@ -24,6 +24,9 @@
         background: transparent;
 
         .progress-fill {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
           border-radius: 0 4px 4px 0;
           position: absolute;
           height: 100%;
@@ -38,6 +41,12 @@
 .stack {
   display: flex;
   padding-bottom: var(--spacing-medium);
+}
+
+.stackLabelCommon {
+  white-space: nowrap !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .stackColumn {
@@ -58,8 +67,6 @@
   flex-direction: row;
   align-items: center;
   .stackLabel {
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-right: var(--spacing-xsmall);
   }
 }
@@ -68,8 +75,6 @@
   flex-direction: row-reverse;
   align-items: center;
   .stackLabel {
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-left: var(--spacing-xsmall);
   }
 }

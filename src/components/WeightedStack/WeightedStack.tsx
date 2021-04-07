@@ -12,7 +12,8 @@ export enum LabelPosition {
   LEFT = 'LabelPosition.LEFT',
   RIGHT = 'LabelPosition.RIGHT',
   TOP = 'LabelPosition.TOP',
-  BOTTOM = 'LabelPosition.BOTTOM'
+  BOTTOM = 'LabelPosition.BOTTOM',
+  INSIDE = 'LabelPosition.INSIDE'
 }
 export interface WeightedStackData {
   label: string
@@ -21,7 +22,8 @@ export interface WeightedStackData {
 }
 export interface WeightedStackPropsCommon {
   data: WeightedStackData[]
-  className?: string
+  progressBarStyles?: string
+  labelStyles?: string
 }
 
 interface InlineLabelPosition extends WeightedStackPropsCommon {
@@ -30,13 +32,13 @@ interface InlineLabelPosition extends WeightedStackPropsCommon {
 }
 
 interface NonInlineLabelPosition extends WeightedStackPropsCommon {
-  labelPosition?: LabelPosition.TOP | LabelPosition.BOTTOM
+  labelPosition?: LabelPosition.TOP | LabelPosition.BOTTOM | LabelPosition.INSIDE
 }
 
 export type WeightedStackProps = InlineLabelPosition | NonInlineLabelPosition
 
 export const WeightedStack: React.FC<WeightedStackProps> = props => {
-  const { data = [], className, labelPosition = LabelPosition.TOP } = props
+  const { data = [], progressBarStyles = '', labelStyles = '', labelPosition = LabelPosition.TOP } = props
   const labelWidth = (props as InlineLabelPosition).labelWidth
   const sortedData = useMemo(
     () =>
@@ -54,6 +56,7 @@ export const WeightedStack: React.FC<WeightedStackProps> = props => {
           }
         }
       : {}
+  const isLabelInside = labelPosition === LabelPosition.INSIDE
 
   return (
     <Container className={css.main}>
@@ -63,6 +66,14 @@ export const WeightedStack: React.FC<WeightedStackProps> = props => {
             const { label, value, color = Color.BLUE_450 } = item
             const percent = (value / maxValue) * 100
             const realColor = Utils.getRealCSSColor(color)
+            const TextComponent = (
+              <Text
+                padding={isLabelInside ? { left: 'small', right: 'small' } : {}}
+                className={cx(css.stackLabelCommon, css.stackLabel, labelStyles)}
+                {...stackLabelWidthStyle}>
+                {label}&nbsp;({value})
+              </Text>
+            )
             return (
               <div
                 className={cx(css.stack, {
@@ -72,17 +83,17 @@ export const WeightedStack: React.FC<WeightedStackProps> = props => {
                   [css.stackColumnReverse]: labelPosition === LabelPosition.BOTTOM
                 })}
                 key={index}>
-                <Text className={css.stackLabel} {...stackLabelWidthStyle}>
-                  {label}&nbsp;({value})
-                </Text>
-                <div className={cx('progress-bar', className)}>
+                {!isLabelInside && TextComponent}
+                <div className={cx('progress-bar', progressBarStyles)}>
                   <div className={'progress-track'}>
                     <div
                       className={'progress-fill'}
                       style={{
                         backgroundColor: realColor,
                         width: `${percent ? `${percent}%` : 0}`
-                      }}></div>
+                      }}>
+                      {isLabelInside && TextComponent}
+                    </div>
                   </div>
                 </div>
               </div>
