@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.120](https://github.com/wings-software/uicore/compare/v0.1.119...v0.1.120) (2021-04-07)
+
+
+### Features
+
+* [CDNG-5866]: export enum ([#143](https://github.com/wings-software/uicore/issues/143)) ([2e4f8a3](https://github.com/wings-software/uicore/commit/2e4f8a341fc43e579b847d5fcf8480572dd9adf1))
+
 ### [0.1.119](https://github.com/wings-software/uicore/compare/v0.1.118...v0.1.119) (2021-04-07)
 
 
