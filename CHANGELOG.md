@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.118](https://github.com/wings-software/uicore/compare/v0.1.117...v0.1.118) (2021-04-07)
+
+
+### Features
+
+* [CDNG-5818]: update svgs ([#142](https://github.com/wings-software/uicore/issues/142)) ([6a88bb7](https://github.com/wings-software/uicore/commit/6a88bb7f9a66aafc87989aa5597fc33d57eec647))
+* [PL-13925]: with new job ([#140](https://github.com/wings-software/uicore/issues/140)) ([e8b1959](https://github.com/wings-software/uicore/commit/e8b1959090b052a1e39fd55ae04c54bef1d10842))
+
+
+### Others
+
+* update publish settings ([1322e3d](https://github.com/wings-software/uicore/commit/1322e3debaf5537e310aedd3e5f9f9d42c21b527))
+* update publish settings ([73da586](https://github.com/wings-software/uicore/commit/73da58688c750bfde188bcab7edb23c67d38dc38))
+
 ### [0.1.117](https://github.com/wings-software/uicore/compare/v0.1.116...v0.1.117) (2021-04-06)
 
 
