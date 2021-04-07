@@ -1,4 +1,5 @@
 .main {
+  width: 100%;
   :global {
     .container {
       display: flex;
@@ -35,9 +36,40 @@
 }
 
 .stack {
+  display: flex;
   padding-bottom: var(--spacing-medium);
 }
 
-.stackLabel {
-  margin-bottom: var(--spacing-xsmall) !important;
+.stackColumn {
+  flex-direction: column;
+  .stackLabel {
+    margin-bottom: var(--spacing-xsmall);
+  }
+}
+
+.stackColumnReverse {
+  flex-direction: column-reverse;
+  .stackLabel {
+    margin-top: var(--spacing-xsmall);
+  }
+}
+
+.stackRow {
+  flex-direction: row;
+  align-items: center;
+  .stackLabel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: var(--spacing-xsmall);
+  }
+}
+
+.stackRowReverse {
+  flex-direction: row-reverse;
+  align-items: center;
+  .stackLabel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: var(--spacing-xsmall);
+  }
 }
