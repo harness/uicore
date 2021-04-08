@@ -44,6 +44,9 @@ jobs:
 
       - name: Publish static site
         run: |
+          cd public 
+          git pull
+          cd ..
           yarn build-storybook -o ./public --quiet --loglevel error
           cd public
           echo 'uicore.harness.io' > CNAME
