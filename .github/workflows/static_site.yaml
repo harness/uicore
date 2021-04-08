@@ -45,9 +45,10 @@ jobs:
 
       - name: Publish static site
         run: |
-          yarn build-storybook -o ./public --quiet --loglevel error
           cd public
+          git branch --show-current
           echo 'uicore.harness.io' > CNAME
+          echo 'uicore.harness.io' > test.ts
           GIT_USER=$(curl --silent -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
           GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
           GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
