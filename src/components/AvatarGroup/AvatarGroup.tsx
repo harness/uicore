@@ -1,9 +1,11 @@
 import React, { CSSProperties } from 'react'
 import { HTMLDivProps } from '@blueprintjs/core'
 import { AvatarProps, Avatar, AvatarSizes } from '../Avatar/Avatar'
+import { Text } from '../Text/Text'
 import css from './AvatarGroup.css'
 import { Color } from '../../core/Color'
 import classnames from 'classnames'
+import { Layout } from '../../layouts/Layout'
 
 export interface AvatarGroupProps extends HTMLDivProps {
   onAdd?: (e: React.MouseEvent<HTMLDivElement>) => void
@@ -11,6 +13,7 @@ export interface AvatarGroupProps extends HTMLDivProps {
   overlap?: boolean
   avatarGroupProps?: Omit<AvatarProps, 'size'>
   size?: AvatarSizes
+  restrictLengthTo?: number
   className?: string
 }
 type overLap = {
@@ -23,9 +26,18 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   overlap = true,
   avatarGroupProps,
   size = 'normal',
+  restrictLengthTo,
   className = '',
   ...rest
 }) => {
+  let remainingLength
+
+  if (restrictLengthTo) {
+    console.log(avatars.length, restrictLengthTo)
+    remainingLength = avatars.length - restrictLengthTo
+    avatars = avatars.slice(0, restrictLengthTo)
+  }
+
   if (!avatars || !avatars.length) {
     return null
   } else {
@@ -51,19 +63,22 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
 
   const cssProperties = { '--avatar-over-lap': avatarOverLap[size] }
   return (
-    <div
-      className={classnames(overlap ? css.stack : css.noStack, className)}
-      {...rest}
-      style={cssProperties as CSSProperties}>
-      {avatars.map(avatarProps => (
-        <Avatar
-          key={Object.values(avatarProps).join('')}
-          className={classnames(overlap && css.stackAvatar)}
-          {...avatarGroupProps}
-          {...avatarProps}
-          {...{ size }}
-        />
-      ))}
-    </div>
+    <Layout.Horizontal flex={{ alignItems: 'center', justifyContent: 'flex-start' }}>
+      <div
+        className={classnames(overlap ? css.stack : css.noStack, className)}
+        {...rest}
+        style={cssProperties as CSSProperties}>
+        {avatars.map(avatarProps => (
+          <Avatar
+            key={Object.values(avatarProps).join('')}
+            className={classnames(overlap && css.stackAvatar)}
+            {...avatarGroupProps}
+            {...avatarProps}
+            {...{ size }}
+          />
+        ))}
+      </div>
+      {remainingLength && remainingLength > 0 ? <Text>{`+ ${remainingLength}`}</Text> : null}
+    </Layout.Horizontal>
   )
 }
