@@ -1,9 +1,9 @@
 name: Static Site
 
 on:
-  pull_request:
-    branches: [main]
-    types: [opened, reopened, ready_for_review, synchronize, edited]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
