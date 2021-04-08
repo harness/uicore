@@ -51,5 +51,3 @@ jobs:
           git add .
           git commit -m 'public static site'
           git push --force --quiet "https://${{ secrets.GIT_BOT_TOKEN }}@github.com/${{ github.repository }}.git" main:test-static-site
-          echo GIT_USER_NAME
-          echo GIT_USER_EMAIL
