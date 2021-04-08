@@ -45,6 +45,9 @@ jobs:
 
       - name: Publish static site
         run: |
+          cd branchFolder
+          git rm -r *
+          cd ..
           yarn build-storybook -o ./public --quiet --loglevel error
           cp -a public/. branchFolder/
           cd branchFolder
