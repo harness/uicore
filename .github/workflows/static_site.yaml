@@ -46,7 +46,7 @@ jobs:
       - name: Publish static site
         run: |
           yarn build-storybook -o ./public --quiet --loglevel error
-          cp -a /public/. /branchFolder/
+          cp -a public/. branchFolder/
           cd branchFolder
           git branch --show-current
           echo 'uicore.harness.io' > CNAME
