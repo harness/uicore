@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.122](https://github.com/wings-software/uicore/compare/v0.1.121...v0.1.122) (2021-04-08)
+
+
+### Others
+
+* Adding restrictLength to Avatar Group ([#145](https://github.com/wings-software/uicore/issues/145)) ([a3fd3c3](https://github.com/wings-software/uicore/commit/a3fd3c3b3d2cb9940746a9d57c3db2c376b80ebd))
+
 ### [0.1.121](https://github.com/wings-software/uicore/compare/v0.1.120...v0.1.121) (2021-04-07)
 
 
