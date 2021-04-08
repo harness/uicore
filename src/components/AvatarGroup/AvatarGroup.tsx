@@ -33,7 +33,6 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   let remainingLength
 
   if (restrictLengthTo) {
-    console.log(avatars.length, restrictLengthTo)
     remainingLength = avatars.length - restrictLengthTo
     avatars = avatars.slice(0, restrictLengthTo)
   }
