@@ -39,7 +39,7 @@ jobs:
       - name: Checkout static site code
         uses: actions/checkout@v2
         with:
-          ref: test-static-site
+          ref: static-site
           path: branchFolder
           token: ${{ secrets.GIT_BOT_TOKEN }}
 
@@ -50,14 +50,9 @@ jobs:
           cd ..
           yarn build-storybook -o ./public --quiet --loglevel error
           cp -a public/. branchFolder/
-          cd public
-          echo 'public folder files'
-          ls
-          cd ..
           cd branchFolder
           git branch --show-current
           echo 'uicore.harness.io' > CNAME
-          echo 'new code q' > test.ts
           GIT_USER=$(curl --silent -H "Authorization: token ${{ secrets.GIT_BOT_TOKEN }}" -X GET https://api.github.com/user)
           GIT_USER_NAME=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .name)
           GIT_USER_EMAIL=$(echo $GIT_USER | tr '\r\n' ' ' | jq -r .email)
@@ -65,4 +60,4 @@ jobs:
           git config user.email bot@harness.io
           git add .
           git commit -m 'public static site'
-          git push origin HEAD:test-static-site
+          git push origin HEAD:static-site
