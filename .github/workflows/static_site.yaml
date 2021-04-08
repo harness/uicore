@@ -54,4 +54,4 @@ jobs:
           git config user.email bot@harness.io
           git add .
           git commit -m 'public static site'
-          git push
+          git push origin HEAD:test-static-site
