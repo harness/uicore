@@ -50,6 +50,10 @@ jobs:
           cd ..
           yarn build-storybook -o ./public --quiet --loglevel error
           cp -a public/. branchFolder/
+          cd public
+          echo 'public folder files'
+          ls
+          cd ..
           cd branchFolder
           git branch --show-current
           echo 'uicore.harness.io' > CNAME
