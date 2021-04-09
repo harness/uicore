@@ -22,6 +22,7 @@ export interface WeightedStackData {
 }
 export interface WeightedStackPropsCommon {
   data: WeightedStackData[]
+  stackStyles?: string
   progressBarStyles?: string
   labelStyles?: string
 }
@@ -38,7 +39,13 @@ interface NonInlineLabelPosition extends WeightedStackPropsCommon {
 export type WeightedStackProps = InlineLabelPosition | NonInlineLabelPosition
 
 export const WeightedStack: React.FC<WeightedStackProps> = props => {
-  const { data = [], progressBarStyles = '', labelStyles = '', labelPosition = LabelPosition.TOP } = props
+  const {
+    data = [],
+    stackStyles = '',
+    progressBarStyles = '',
+    labelStyles = '',
+    labelPosition = LabelPosition.TOP
+  } = props
   const labelWidth = (props as InlineLabelPosition).labelWidth
   const sortedData = useMemo(
     () =>
@@ -76,12 +83,16 @@ export const WeightedStack: React.FC<WeightedStackProps> = props => {
             )
             return (
               <div
-                className={cx(css.stack, {
-                  [css.stackRow]: labelPosition === LabelPosition.LEFT,
-                  [css.stackRowReverse]: labelPosition === LabelPosition.RIGHT,
-                  [css.stackColumn]: labelPosition === LabelPosition.TOP,
-                  [css.stackColumnReverse]: labelPosition === LabelPosition.BOTTOM
-                })}
+                className={cx(
+                  css.stack,
+                  {
+                    [css.stackRow]: labelPosition === LabelPosition.LEFT,
+                    [css.stackRowReverse]: labelPosition === LabelPosition.RIGHT,
+                    [css.stackColumn]: labelPosition === LabelPosition.TOP,
+                    [css.stackColumnReverse]: labelPosition === LabelPosition.BOTTOM
+                  },
+                  stackStyles
+                )}
                 key={index}>
                 {!isLabelInside && TextComponent}
                 <div className={cx('progress-bar', progressBarStyles)}>
