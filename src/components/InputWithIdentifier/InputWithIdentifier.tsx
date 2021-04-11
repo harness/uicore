@@ -83,7 +83,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
             onCancel={() => setEditable(false)}
             onEdit={() => setEditable(true)}
             onChange={value => {
-              setCurrentEditField(idName);
+              setCurrentEditField(idName)
               formik.setFieldValue(idName, getIdentifierFromName(value))
               setUserModifiedIdentifier(true)
             }}
@@ -106,7 +106,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         label={inputLabel}
         name={inputName}
         onChange={e => {
-          setCurrentEditField(inputName);
+          setCurrentEditField(inputName)
           const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
           formik.setFieldValue(inputName, name)
           isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
@@ -117,7 +117,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
           {get(formik.errors, idName)}
         </Text>
       ) : null}
-       {formik.values[currentEditField]?.length >= maxInput ? (
+      {formik.values[currentEditField]?.length >= maxInput ? (
         <Text font="small" intent="danger" padding={{ bottom: 'medium' }}>
           {`Limit of ${maxInput} characters is reached for ${currentEditField === idName ? idLabel : idName}`}
         </Text>
