@@ -119,7 +119,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
       ) : null}
       {formik.values[currentEditField]?.length >= maxInput ? (
         <Text font="small" intent="danger" padding={{ bottom: 'medium' }}>
-          {`Limit of ${maxInput} characters is reached for ${currentEditField === idName ? idLabel : idName}`}
+          {`Limit of ${maxInput} characters is reached for ${currentEditField === idName ? idLabel : inputLabel}`}
         </Text>
       ) : null}
     </div>
