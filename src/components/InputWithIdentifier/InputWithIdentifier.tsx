@@ -62,7 +62,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
   const identifier = get(formik.values, idName) as string
-
+  const [currentEditField, setCurrentEditField] = useState(inputLabel)
   return (
     <div className={css.txtNameContainer}>
       <Layout.Horizontal className={css.txtIdContainer} spacing="xsmall">
@@ -83,6 +83,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
             onCancel={() => setEditable(false)}
             onEdit={() => setEditable(true)}
             onChange={value => {
+              setCurrentEditField(idName);
               formik.setFieldValue(idName, getIdentifierFromName(value))
               setUserModifiedIdentifier(true)
             }}
@@ -105,6 +106,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         label={inputLabel}
         name={inputName}
         onChange={e => {
+          setCurrentEditField(inputName);
           const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
           formik.setFieldValue(inputName, name)
           isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
@@ -113,6 +115,11 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
       {formik.errors[idName] ? (
         <Text font="small" intent="danger" padding={{ bottom: 'medium' }}>
           {get(formik.errors, idName)}
+        </Text>
+      ) : null}
+       {formik.values[currentEditField]?.length >= maxInput ? (
+        <Text font="small" intent="danger" padding={{ bottom: 'medium' }}>
+          {`Limit of ${maxInput} characters is reached for ${currentEditField === idName ? idLabel : idName}`}
         </Text>
       ) : null}
     </div>
