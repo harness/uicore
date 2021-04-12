@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.124](https://github.com/wings-software/uicore/compare/v0.1.123...v0.1.124) (2021-04-12)
+
+
+### Features
+
+* [CDNG-5476]: display message inside InputWithIdentifier component when chars limit is reached for id / name field ([#149](https://github.com/wings-software/uicore/issues/149)) ([bd192f3](https://github.com/wings-software/uicore/commit/bd192f3c9c5823d176d5e579298a51da8510b160))
+
 ### [0.1.123](https://github.com/wings-software/uicore/compare/v0.1.122...v0.1.123) (2021-04-09)
 
 
