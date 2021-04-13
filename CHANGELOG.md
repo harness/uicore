@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.126](https://github.com/wings-software/uicore/compare/v0.1.125...v0.1.126) (2021-04-13)
+
+
+### Features
+
+* [CDNG-5014]: Adding git branches icons ([#152](https://github.com/wings-software/uicore/issues/152)) ([078ffab](https://github.com/wings-software/uicore/commit/078ffab72ce09a10254c6551996a40a2543cc765))
+
 ### [0.1.125](https://github.com/wings-software/uicore/compare/v0.1.124...v0.1.125) (2021-04-13)
 
 
