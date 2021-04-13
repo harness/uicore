@@ -19,7 +19,8 @@ export const Basic: Story<FormikFormProps> = () => (
       initialValues={{
         name: '',
         tags: {},
-        multiInput: [],
+        multiInput: '',
+        colorMulti: '',
         description: '',
         specialPerson: true,
         exp: '<+app.name>',
