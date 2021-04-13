@@ -119,6 +119,7 @@ import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
+import Environment from './environment.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -309,6 +310,7 @@ import PipelineBuildSelect from './pipeline-build-select.svg'
 import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
+import PipelineDeployment from './pipeline-deployment.svg'
 import PipelineNg from './pipeline-ng.svg'
 import PipelineStageSelectionCaret from './pipeline-stage-selection-caret.svg'
 import PipelineVariables from './pipeline-variables.svg'
@@ -368,6 +370,7 @@ import ServiceCircleci from './service-circleci.svg'
 import ServiceCloudformation from './service-cloudformation.svg'
 import ServiceCloudwatch from './service-cloudwatch.svg'
 import ServiceDatadog from './service-datadog.svg'
+import ServiceDeployment from './service-deployment.svg'
 import ServiceDockerhub from './service-dockerhub.svg'
 import ServiceDynatrace from './service-dynatrace.svg'
 import ServiceEcs from './service-ecs.svg'
@@ -569,6 +572,7 @@ type HarnessIconName =
   | 'elastic-kubernetes-service'
   | 'email-step'
   | 'entity'
+  | 'environment'
   | 'execution-abort'
   | 'execution-input'
   | 'execution-rollback'
@@ -759,6 +763,7 @@ type HarnessIconName =
   | 'pipeline-build'
   | 'pipeline-custom'
   | 'pipeline-deploy'
+  | 'pipeline-deployment'
   | 'pipeline-ng'
   | 'pipeline-stage-selection-caret'
   | 'pipeline-variables'
@@ -818,6 +823,7 @@ type HarnessIconName =
   | 'service-cloudformation'
   | 'service-cloudwatch'
   | 'service-datadog'
+  | 'service-deployment'
   | 'service-dockerhub'
   | 'service-dynatrace'
   | 'service-ecs'
@@ -1019,6 +1025,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'elastic-kubernetes-service': ElasticKubernetesService,
   'email-step': EmailStep,
   entity: Entity,
+  environment: Environment,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
@@ -1209,6 +1216,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'pipeline-build': PipelineBuild,
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
+  'pipeline-deployment': PipelineDeployment,
   'pipeline-ng': PipelineNg,
   'pipeline-stage-selection-caret': PipelineStageSelectionCaret,
   'pipeline-variables': PipelineVariables,
@@ -1268,6 +1276,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-cloudformation': ServiceCloudformation,
   'service-cloudwatch': ServiceCloudwatch,
   'service-datadog': ServiceDatadog,
+  'service-deployment': ServiceDeployment,
   'service-dockerhub': ServiceDockerhub,
   'service-dynatrace': ServiceDynatrace,
   'service-ecs': ServiceEcs,
