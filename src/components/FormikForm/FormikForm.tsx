@@ -109,6 +109,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
       helperText={helperText}
       intent={intent}
       disabled={disabled}
+      autoComplete=""
       inline={inline}
       {...rest}>
       <UiKitTagInput
