@@ -368,6 +368,7 @@ import ServiceCircleci from './service-circleci.svg'
 import ServiceCloudformation from './service-cloudformation.svg'
 import ServiceCloudwatch from './service-cloudwatch.svg'
 import ServiceDatadog from './service-datadog.svg'
+import ServiceDeployment from './service-deployment.svg'
 import ServiceDockerhub from './service-dockerhub.svg'
 import ServiceDynatrace from './service-dynatrace.svg'
 import ServiceEcs from './service-ecs.svg'
@@ -818,6 +819,7 @@ type HarnessIconName =
   | 'service-cloudformation'
   | 'service-cloudwatch'
   | 'service-datadog'
+  | 'service-deployment'
   | 'service-dockerhub'
   | 'service-dynatrace'
   | 'service-ecs'
@@ -1268,6 +1270,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-cloudformation': ServiceCloudformation,
   'service-cloudwatch': ServiceCloudwatch,
   'service-datadog': ServiceDatadog,
+  'service-deployment': ServiceDeployment,
   'service-dockerhub': ServiceDockerhub,
   'service-dynatrace': ServiceDynatrace,
   'service-ecs': ServiceEcs,
