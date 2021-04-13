@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.125](https://github.com/wings-software/uicore/compare/v0.1.124...v0.1.125) (2021-04-13)
+
+
+### Features
+
+* [pl-13925]: with github action  with cname file ([#147](https://github.com/wings-software/uicore/issues/147)) ([490f74a](https://github.com/wings-software/uicore/commit/490f74aac9436f80cd0cbc3a0ad2296f7baf7872))
+
+
+### Bug Fixes
+
+* service, Pipeline and environment icons added for rbac ([#150](https://github.com/wings-software/uicore/issues/150)) ([1cdf26f](https://github.com/wings-software/uicore/commit/1cdf26f5a923a6f86800eb39b3b493c7e2f7185c))
+
 ### [0.1.124](https://github.com/wings-software/uicore/compare/v0.1.123...v0.1.124) (2021-04-12)
 
 
