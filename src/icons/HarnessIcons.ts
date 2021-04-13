@@ -138,8 +138,10 @@ import Gcp from './gcp.svg'
 import GcrStep from './gcr-step.svg'
 import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
+import GitBranch from './git-branch.svg'
 import GitCloneStep from './git-clone-step.svg'
 import GitLandingPage from './git-landing-page.svg'
+import GitNewBranch from './git-new-branch.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
 import Github from './github.svg'
@@ -591,8 +593,10 @@ type HarnessIconName =
   | 'gcr-step'
   | 'gcs-step'
   | 'gear'
+  | 'git-branch'
   | 'git-clone-step'
   | 'git-landing-page'
+  | 'git-new-branch'
   | 'github-selected'
   | 'github-unselected'
   | 'github'
@@ -1044,8 +1048,10 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'gcr-step': GcrStep,
   'gcs-step': GcsStep,
   gear: Gear,
+  'git-branch': GitBranch,
   'git-clone-step': GitCloneStep,
   'git-landing-page': GitLandingPage,
+  'git-new-branch': GitNewBranch,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
   github: Github,
