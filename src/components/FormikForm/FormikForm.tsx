@@ -483,6 +483,8 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
     ...rest
   } = restProps
 
+  const formikValue = get(formik?.values, name, [])
+
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -506,7 +508,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
         }}
         {...multiSelectProps}
         items={items}
-        value={get(formik?.values, name, [])}
+        value={Array.isArray(formikValue) ? formikValue : []}
         onChange={(items: MultiSelectOption[]) => {
           formik?.setFieldValue(name, items)
           onChange?.(items)
