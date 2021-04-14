@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.127](https://github.com/wings-software/uicore/compare/v0.1.126...v0.1.127) (2021-04-14)
+
+
+### Bug Fixes
+
+* [CDNG-6890]: Initialise multiselect component to [] as formik values can be empty string ([#151](https://github.com/wings-software/uicore/issues/151)) ([22cbffc](https://github.com/wings-software/uicore/commit/22cbffc296e3381a360376420d110829d90b0d20))
+
 ### [0.1.126](https://github.com/wings-software/uicore/compare/v0.1.125...v0.1.126) (2021-04-13)
 
 
