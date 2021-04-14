@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.129](https://github.com/wings-software/uicore/compare/v0.1.128...v0.1.129) (2021-04-14)
+
+
+### Others
+
+* [CDNG-5014]: Renaming icon ([#155](https://github.com/wings-software/uicore/issues/155)) ([88cd88f](https://github.com/wings-software/uicore/commit/88cd88f3d718f058ecb1ae90bebda345e921af61))
+
 ### [0.1.128](https://github.com/wings-software/uicore/compare/v0.1.127...v0.1.128) (2021-04-14)
 
 
