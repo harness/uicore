@@ -64,6 +64,8 @@ const errorCheck = (name: string, formik?: FormikContext<any>) =>
   get(formik?.errors, name) &&
   !isObject(get(formik?.errors, name))
 
+export const getDefaultAutoCompleteValue = (): string => 'off'
+
 export interface FormikExtended<T> extends FormikContext<T> {
   disabled?: boolean
   inline?: boolean
@@ -73,6 +75,7 @@ export interface FormikContextProps<T> {
   formik?: FormikExtended<T>
   optionalLabel?: string
   isOptional?: boolean // default to false
+  autoComplete?: string
 }
 
 export interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
@@ -484,7 +487,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
   } = restProps
 
   const formikValue = get(formik?.values, name, [])
-
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -499,8 +502,10 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
         tagInputProps={{
           ...tagInputProps,
           inputProps: {
+            autoComplete,
             name,
             placeholder,
+
             onBlur: () => formik?.setFieldTouched(name)
           },
           intent,
@@ -547,6 +552,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
     ...rest
   } = restProps
 
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -560,6 +566,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
         name={name}
         inputProps={{
           ...inputGroup,
+          autoComplete,
           name,
           intent,
           placeholder,
@@ -600,6 +607,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
     onChange,
     ...rest
   } = restProps
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -610,7 +618,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
       inline={inline}
       {...rest}>
       <InputGroup
-        autoComplete="off"
+        autoComplete={autoComplete}
         {...inputGroup}
         name={name}
         placeholder={placeholder}
@@ -664,6 +672,8 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
     ...rest
   } = restProps
 
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+
   return (
     <FormGroup
       labelFor={name}
@@ -677,6 +687,7 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
         name={name}
         {...expressionInputProps}
         items={items}
+        autoComplete={autoComplete}
         inputProps={{ ...(expressionInputProps?.inputProps || {}), placeholder }}
         value={get(formik?.values, name)}
         onChange={(str: string) => {
@@ -710,6 +721,8 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
     ...rest
   } = restProps
 
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -722,7 +735,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
       <BpTextArea
         fill={true}
         autoFocus={autoFocus}
-        autoComplete="off"
+        autoComplete={autoComplete}
         {...textArea}
         name={name}
         intent={intent}
@@ -904,6 +917,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     },
     [formik, multiTypeInputProps]
   )
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -922,6 +936,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
           name,
           inputProps: {
             name,
+            autoComplete,
             intent,
             placeholder,
             disabled
@@ -960,6 +975,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
     label,
     ...rest
   } = restProps
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -978,7 +994,8 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
             ...multiSelectTypeInputProps?.multiSelectProps?.tagInputProps,
             inputProps: {
               name,
-              placeholder
+              placeholder,
+              autoComplete
             },
             intent,
             disabled: disabled
@@ -1034,6 +1051,8 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     [multiTextInputProps?.textProps]
   )
 
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+
   return (
     <FormGroup
       label={!isOptional ? label : `${label} ${optionalLabel}`}
@@ -1045,7 +1064,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
       <MultiTextInput
         value={value}
         {...multiTextInputProps}
-        textProps={{ ...customTextInputProps }}
+        textProps={{ ...customTextInputProps, autoComplete }}
         name={name}
         onChange={(valueChange, valueType, type) => {
           formik?.setFieldValue(name, valueChange)

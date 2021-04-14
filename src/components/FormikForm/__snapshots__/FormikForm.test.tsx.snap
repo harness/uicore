@@ -302,6 +302,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
                       class="bp3-tag-input-values"
                     >
                       <input
+                        autocomplete="off"
                         class="bp3-input-ghost"
                         name="color"
                         placeholder="Search..."
@@ -438,6 +439,7 @@ exports[`Test basic Components should render Select component 1`] = `
                   class="bp3-input-group"
                 >
                   <input
+                    autocomplete="off"
                     class="bp3-input"
                     name="color"
                     placeholder="Search..."
