@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.130](https://github.com/wings-software/uicore/compare/v0.1.129...v0.1.130) (2021-04-14)
+
+
+### Features
+
+* add support for disabled multitype fields ([#154](https://github.com/wings-software/uicore/issues/154)) ([c62ab9e](https://github.com/wings-software/uicore/commit/c62ab9e79015901b150eaae1d3b8c1cd51363666))
+
 ### [0.1.129](https://github.com/wings-software/uicore/compare/v0.1.128...v0.1.129) (2021-04-14)
 
 
