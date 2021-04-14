@@ -38,14 +38,15 @@ export interface MultiSelectProps
   allowCreatingNewItems?: boolean
   name?: string
   onPopoverClose?: (node: HTMLElement) => void
+  disabled?: boolean
 }
 
-export function NoMatch() {
+export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
 }
 
-export function MultiSelect(props: MultiSelectProps) {
-  const { onChange, value, items: _items, onPopoverClose, ...rest } = props
+export function MultiSelect(props: MultiSelectProps): React.ReactElement {
+  const { onChange, value, items: _items, onPopoverClose, disabled, ...rest } = props
   const [query, setQuery] = React.useState(props.query || '')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? _items : [])
@@ -180,10 +181,12 @@ export function MultiSelect(props: MultiSelectProps) {
       itemsEqual={(a, b) => a.value === b.value}
       {...rest}
       tagInputProps={{
+        disabled,
         inputProps: {
           ...props.tagInputProps?.inputProps,
           onChange: handleQueryChange,
-          name: props.name
+          name: props.name,
+          disabled
         },
         tagProps: value => {
           return {

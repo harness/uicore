@@ -14,6 +14,7 @@ export interface ExpressionInputProps {
   >
   onChange(str: string): void
   autoComplete?: string
+  disabled?: boolean
 }
 
 /**
@@ -23,7 +24,7 @@ export interface ExpressionInputProps {
 const EXPRESSION_START_REGEX = /<\+([A-Za-z0-9_.'"()]*?)$/
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
-  const { items = [], value, inputProps, popoverProps, onChange, name, maxHeight = 400 } = props
+  const { items = [], value, inputProps, popoverProps, onChange, name, maxHeight = 400, disabled } = props
   /**
    * This holds the complete value of the input
    */
@@ -173,6 +174,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           onKeyDown={listProps.handleKeyDown}
           onKeyUp={handleKeyUp}
           onMouseUp={handleMouseUp}
+          disabled={disabled}
         />
         <Menu style={{ maxHeight, overflow: 'auto' }}>{listProps.itemList}</Menu>
       </Popover>

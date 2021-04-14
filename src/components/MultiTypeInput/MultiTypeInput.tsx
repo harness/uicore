@@ -37,11 +37,13 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   fixedTypeComponent: (props: FixedTypeComponentProps & T) => JSX.Element
   fixedTypeComponentProps?: T
   name: string
+  disabled?: boolean
 }
 
 export interface FixedTypeComponentProps {
   onChange: ExpressionAndRuntimeTypeProps['onChange']
   value?: AcceptableValue
+  disabled?: boolean
 }
 
 export const isValueAnExpression = (value: string): boolean => /^<\+.*>$/.test(value)
@@ -77,6 +79,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     btnClassName = '',
     allowableTypes = [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION],
     name,
+    disabled,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -102,13 +105,14 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
 
   return (
     <Layout.Horizontal
-      className={cx(css.main, type === MultiTypeInputType.RUNTIME && css.disabled)}
+      className={cx(css.main, { [css.disabled]: type === MultiTypeInputType.RUNTIME || disabled })}
       width={width}
       {...layoutProps}>
       {type === MultiTypeInputType.FIXED && (
         <FixedTypeComponent
           {...(fixedTypeComponentProps as T)}
           value={value}
+          disabled={disabled}
           onChange={fixedComponentOnChangeCallback}
         />
       )}
@@ -131,6 +135,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           items={expressions}
           inputProps={{ placeholder: EXPRESSION_INPUT_PLACEHOLDER }}
           value={value as string}
+          disabled={disabled}
           onChange={val => {
             onChange?.(val, MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
           }}
@@ -140,8 +145,13 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       <Button
         noStyling
         className={cx(css.btn, css[type], btnClassName)}
-        tooltip={<MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />}
+        tooltip={
+          disabled ? undefined : (
+            <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
+          )
+        }
         onClick={e => e.preventDefault()}
+        disabled={disabled}
         tooltipProps={{
           minimal: true,
           position: Position.BOTTOM_RIGHT,
@@ -158,7 +168,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
 export function MultiTypeInputFixedTypeComponent(
   props: FixedTypeComponentProps & Partial<MultiTypeInputProps['selectProps']>
 ): React.ReactElement {
-  const { onChange, value, ...selectProps } = props
+  const { onChange, value, disabled, ...selectProps } = props
   const { items = [] } = selectProps || {}
   return (
     <Select
@@ -168,6 +178,7 @@ export function MultiTypeInputFixedTypeComponent(
       })}
       items={items}
       value={value as SelectOption}
+      disabled={disabled}
       onChange={(item: SelectOption) => onChange?.(item, MultiTypeInputValue.SELECT_OPTION, MultiTypeInputType.FIXED)}
     />
   )
@@ -189,13 +200,14 @@ export function MultiTypeInput({ selectProps, ...rest }: MultiTypeInputProps): R
 }
 
 function MultiTextInputFixedTypeComponent(props: FixedTypeComponentProps & MultiTextInputProps['textProps']) {
-  const { onChange, value, ...rest } = props
+  const { onChange, value, disabled, ...rest } = props
 
   return (
     <InputGroup
       className={css.input}
       {...rest}
       value={value as string}
+      disabled={disabled}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(event.target.value, MultiTypeInputValue.STRING, MultiTypeInputType.FIXED)
       }}
@@ -222,7 +234,7 @@ export function MultiTextInput(props: MultiTextInputProps): React.ReactElement {
 export function MultiSelectTypeInputTypeComponent(
   props: FixedTypeComponentProps & Partial<MultiSelectTypeInputProps['multiSelectProps']>
 ): React.ReactElement {
-  const { onChange, value, ...multiSelectProps } = props
+  const { onChange, value, disabled, ...multiSelectProps } = props
   const { items = [] } = multiSelectProps || {}
   return (
     <MultiSelect
@@ -230,6 +242,7 @@ export function MultiSelectTypeInputTypeComponent(
       items={items}
       value={value as MultiSelectOption[]}
       className={cx(css.multiSelect, multiSelectProps.className)}
+      disabled={disabled}
       onChange={(item: MultiSelectOption[]) =>
         onChange?.(item, MultiTypeInputValue.MULTI_SELECT_OPTION, MultiTypeInputType.FIXED)
       }

@@ -16,7 +16,8 @@
       border-color: var(--blue-500);
     }
 
-    &[disabled] {
+    &[disabled],
+    &:global(.bp3-disabled) {
       border-color: var(--grey-300);
       background-color: var(--grey-100);
     }
@@ -36,10 +37,7 @@
 }
 
 .wrapper {
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  bottom: 1px;
+  display: block;
 }
 
 .btn {
@@ -47,7 +45,6 @@
   background: var(--grey-250);
   padding-left: 3px;
   width: 24px;
-  height: calc(100% - 2px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +52,10 @@
   border: 1px solid var(--bp3-intent-color, var(--grey-250));
   border-left: none;
   cursor: pointer;
-  position: relative;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
 
   &::before {
     content: '';
@@ -83,6 +83,12 @@
 
   &.EXPRESSION {
     color: var(--yellow-500);
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 }
 
