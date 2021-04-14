@@ -13,6 +13,7 @@ export interface ExpressionInputProps {
     'isOpen' | 'interactionKind' | 'hasBackdrop' | 'backdropProps' | 'autoFocus' | 'enforceFocus'
   >
   onChange(str: string): void
+  autoComplete?: string
 }
 
 /**
@@ -164,6 +165,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         isOpen={items.length > 0 && !!queryValue}>
         <InputGroup
           {...inputProps}
+          autoComplete={props.autoComplete}
           name={name}
           inputRef={inputRef}
           value={inputValue}
