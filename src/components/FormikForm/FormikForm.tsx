@@ -888,6 +888,7 @@ export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor
   placeholder?: string
   selectItems: SelectOption[]
   multiTypeInputProps?: Omit<MultiTypeInputProps, 'name'>
+  disabled?: boolean
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
@@ -930,6 +931,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
         {...multiTypeInputProps}
         value={get(formik?.values, name)}
         name={name}
+        disabled={disabled}
         selectProps={{
           items: selectItems,
           ...multiTypeInputProps?.selectProps,
@@ -954,6 +956,7 @@ export interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'la
   placeholder?: string
   selectItems: MultiSelectOption[]
   multiSelectTypeInputProps?: Omit<MultiSelectTypeInputProps, 'name'>
+  disabled?: boolean
 }
 
 const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContextProps<any>) => {
@@ -986,6 +989,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
       {...rest}>
       <MultiSelectTypeInput
         {...multiSelectTypeInputProps}
+        disabled={disabled}
         value={get(formik?.values, name)}
         name={name}
         multiSelectProps={{
@@ -1018,6 +1022,7 @@ export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labe
   placeholder?: string
   onChange?: MultiTextInputProps['onChange']
   multiTextInputProps?: Omit<MultiTextInputProps, 'name'> /* In case you really want to customize the text input */
+  disabled?: boolean
 }
 
 const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
@@ -1064,6 +1069,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
       <MultiTextInput
         value={value}
         {...multiTextInputProps}
+        disabled={disabled}
         textProps={{ ...customTextInputProps, autoComplete }}
         name={name}
         onChange={(valueChange, valueType, type) => {
@@ -1207,6 +1213,7 @@ export interface FormMultiSelectWithSubviewProps extends Omit<IFormGroupProps, '
     MultiSelectWithSubviewProps,
     'items' | 'subview' | 'onChange' | 'changeViewButtonLabel'
   >
+  disabled?: boolean
 }
 
 const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & FormikContextProps<any>) => {
@@ -1247,6 +1254,7 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
         value={value}
         multiSelectProps={{
           ...multiSelectWithSubviewProps?.multiSelectProps,
+          disabled,
           tagInputProps: {
             ...multiSelectWithSubviewProps?.multiSelectProps?.tagInputProps,
             inputProps: {

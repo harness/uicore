@@ -14,7 +14,8 @@ import {
 export default {
   title: 'Form / MultiTypeInput',
   argTypes: {
-    name: { control: { type: 'text' } }
+    name: { control: { type: 'text' } },
+    disabled: { control: { type: 'boolean' } }
   }
 } as Meta
 
@@ -25,6 +26,7 @@ export const SelectInput: Story<MultiTypeInputProps> = args => <MultiTypeInput {
 export const MultiSelectInput: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
 
 TextInput.args = {
+  disabled: false,
   expressions: [
     'app.name',
     'app.description',
@@ -40,6 +42,7 @@ SelectInput.args = {
     items: data.slice(0, 10).map(row => ({ label: row.name, value: row.id })),
     addClearBtn: true
   },
+  disabled: false,
   value: { label: data[0].name, value: data[0].id },
   expressions: [
     'app.name',
@@ -56,6 +59,7 @@ MultiSelectInput.args = {
     items: data.slice(0, 10).map(row => ({ label: row.name, value: row.id }))
   },
   value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
+  disabled: false,
   expressions: [
     'app.name',
     'app.description',
