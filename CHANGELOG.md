@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.128](https://github.com/wings-software/uicore/compare/v0.1.127...v0.1.128) (2021-04-14)
+
+
+### Bug Fixes
+
+* [CDNG-4899]: Setting autocomplete off by default in FormInput components ([#153](https://github.com/wings-software/uicore/issues/153)) ([ed5c4e8](https://github.com/wings-software/uicore/commit/ed5c4e8da4b554ba7dda7f8e010dd28410f7c0b0))
+
 ### [0.1.127](https://github.com/wings-software/uicore/compare/v0.1.126...v0.1.127) (2021-04-14)
 
 
