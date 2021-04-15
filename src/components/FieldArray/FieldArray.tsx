@@ -26,6 +26,7 @@ interface Props {
   fields: Field[]
   label: string
   placeholder?: string
+  displayNoDataState?: boolean
   addLabel?: string
   insertRowAtBeginning?: boolean
   name: string
@@ -47,6 +48,7 @@ function FieldArray(props: ConnectedProps) {
     label,
     placeholder,
     formik,
+    displayNoDataState = true,
     onDeleteOfRow,
     isDeleteOfRowAllowed = () => true,
     addLabel = 'Add',
@@ -104,6 +106,8 @@ function FieldArray(props: ConnectedProps) {
     })
     formik.setFieldValue(name, value)
   }
+
+  if (!displayNoDataState && value.length == 0) addRow()
 
   return (
     <div {...props.containerProps} className={cx(css.container, props.containerProps?.className)}>
