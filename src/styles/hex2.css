@@ -1,0 +1,1234 @@
+/***************************************
+ * Hex 2.0 style variables and classes *
+ ***************************************/
+
+/* ===== xLarge: Screen Width at 1280px+ ===== */
+@media screen and (max-width: 1680px) {
+  html {
+    font-size: 16px; /* Define root font size -> 1rem / 16px */
+  }
+  :root {
+    /* general spacing */
+    --full-width: var(--full-width-xl);
+    --unit: var(--unit-xl); /* 8px = 0.5rem; min unit = 8 x 8 px */
+    --padding: var(--padding-xl); /* 16px; */
+    --margin: var(--margin-xl); /* 16px; */
+    /* Grid column */
+    --col-content: var(--col-content-xl); /* 48px; /* content area */
+    --col: var(--col-xl);
+    /* Global nav panel */
+    --panel-padding: var(--panel-padding-xl);
+    --panel-margin: var(--panel-margin-xl);
+    --panel-col-content: var(--panel-col-content-xl);
+    --panel-col: calc(var(--panel-margin) * 2 + var(--panel-col-content)); /* 88px; /* Collapsed Panel */
+    /* Sencondary expanded panel */
+    --exp-padding: var(--exp-padding-xl); /* 16px; */
+    --exp-margin: var(--exp-margin-xl); /* 16px; */
+    --exp-col-content: var(--exp-col-content-xl); /* 48px; /* content area */
+    --exp-col: calc(var(--exp-padding-xl) * 2 + var(--exp-col-content-xl));
+    --panel-exp-padding: var(--panel-exp-padding-xl);
+    --panel-exp-margin: var(--panel-exp-margin-xl);
+    --panel-exp-col-content: var(--panel-exp-col-content-xl);
+    --panel-exp-col: calc(var(--panel-exp-padding) * 2 + var(--panel-exp-col-content)); /* Collapsed Panel */
+    --panel-exp-full: calc(var(--panel-exp-col) * 4);
+    /* Grid demo background */
+    --grid-bg-collapsed: var(--grid-bg-collapsed-xl);
+    --grid-bg-expanded: var(--grid-bg-expanded-xl);
+  }
+}
+/* ===== Max: Screen Width at 1680px+ ===== */
+@media screen and (min-width: 1680px) {
+  html {
+    font-size: 16px; /* Define root font size -> 1rem / 16px */
+  }
+  :root {
+    /* general spacing */
+    --full-width: var(--full-width-max);
+    --unit: var(--unit-max); /* 8px = 0.5rem; min unit = 8 x 8 px */
+    --padding: var(--padding-max); /* 16px; */
+    --margin: var(--margin-max); /* 24px; */
+    /* Grid column */
+    --col-content: var(--col-content-max); /* 64px; /* content area */
+    --col: var(--col-xl);
+    /* Global nav panel */
+    --panel-padding: var(--panel-padding-max);
+    --panel-margin: var(--panel-margin-max);
+    --panel-col-content: var(--panel-col-content-max);
+    --panel-col: calc(var(--panel-margin) * 2 + var(--panel-col-content)); /* 96px; /* Collapsed Panel */
+    /* Sencondary expanded panel */
+    --exp-padding: var(--exp-padding-max); /* 16px; */
+    --exp-margin: var(--exp-margin-max); /* 24px; */
+    --exp-col-content: var(--exp-col-content-max); /* 64px; /* content area */
+    --exp-col: calc(var(--exp-padding) * 2 + var(--exp-col-content));
+    --panel-exp-padding: var(--panel-exp-padding-max);
+    --panel-exp-margin: var(--panel-exp-margin-max);
+    --panel-exp-col-content: var(--panel-exp-col-content-max);
+    --panel-exp-col: calc(var(--panel-exp-padding) * 2 + var(--panel-exp-col-content)); /* Collapsed Panel */
+    --panel-exp-full: calc(var(--panel-exp-col) * 4);
+    /* Grid demo background */
+    --grid-bg-collapsed: var(--grid-bg-collapsed-max);
+    --grid-bg-expanded: var(--grid-bg-expanded-max);
+  }
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--gray-900);
+}
+
+/* ------------------------------------------------ *
+ * overwriting UICore and BluePrint style variables *
+ * ------------------------------------------------ */
+:root {
+  /* ***** CSS variables for Harness Experience 2.0 Design System ***** */
+  /* ============ Fonts ============ */
+  --font-family: Inter, 'Nunito', sans-serif, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue';
+  --font-family-mono: Menlo, Monaco, 'Courier New', monospace;
+
+  /* ============ Colors ============ */
+  /* Primary colors - for links, buttons, etc. */
+  --primary-10: #1a1a1a;
+  --primary-9: #0a3364; /* Darker Primary */
+  --primary-8: #004ba4;
+  --primary-7: #0278d5; /* Main Primary */
+  --primary-6: #0092e4;
+  --primary-5: #00ade4; /* Brand Primary */
+  --primary-4: #3dc7f6;
+  --primary-3: #a3e9ff; /* Lighter Primary */
+  --primary-2: #cdf4fe;
+  --primary-1: #effbff;
+  /* Text & Background - Gray Scale */
+  --gray-1000: #000000;
+  --gray-900: #0b0b0d;
+  --gray-800: #22222a;
+  --gray-700: #383946;
+  --gray-600: #4f5162;
+  --gray-500: #6b6d85; /* Main */
+  --gray-400: #9293ab;
+  --gray-300: #b0b1c4;
+  --gray-200: #d9dae5;
+  --gray-100: #f3f3fa;
+  --gray-50: #fafbfc; /* Background */
+  --gray-0: #ffffff;
+  /* Alerts & Statues - Green */
+  --green-900: #1e5c1f;
+  --green-800: #1b841d;
+  --green-700: #299b2c;
+  --green-600: #42ab45;
+  --green-500: #4dc952; /* Main */
+  --green-400: #86d981;
+  --green-300: #a2e29b;
+  --green-200: #bdeab7;
+  --green-100: #d8f3d4;
+  --green-50: #e4f7e1; /* Background */
+  /* Alerts & Statues - Cornflower Blue */
+  --blue-900: #2d376d;
+  --blue-800: #39478f;
+  --blue-700: #4c5cb0;
+  --blue-600: #6374d0;
+  --blue-500: #798bec; /* Main */
+  --blue-400: #8598ff;
+  --blue-300: #97a7ff;
+  --blue-200: #b1beff;
+  --blue-100: #dae0ff;
+  --blue-50: #f4f6ff; /* Background */
+  /* Alerts & Statues - Yellow */
+  --yellow-900: #fcb519;
+  --yellow-800: #fcc026;
+  --yellow-700: #fcc62d;
+  --yellow-600: #fdcc35;
+  --yellow-500: #fdd13b; /* Main */
+  --yellow-400: #fedf76;
+  --yellow-300: #fee89d;
+  --yellow-200: #fef1c4;
+  --yellow-100: #fff9e7;
+  --yellow-50: #fffbee; /* Background */
+  /* Alerts & Statues - Orange */
+  --orange-900: #ff5310;
+  --orange-800: #ff661a;
+  --orange-700: #ff7020;
+  --orange-600: #ff7b26;
+  --orange-500: #ff832b; /* Main */
+  --orange-400: #ffa86b;
+  --orange-300: #ffc195;
+  --orange-200: #ffdabf;
+  --orange-100: #fff0e6;
+  --orange-50: #fff5ed; /* Background */
+  /* Alerts & Statues - Red */
+  --red-900: #b41710;
+  --red-800: #c41f17;
+  --red-700: #cf2318;
+  --red-600: #da291d;
+  --red-500: #e43326; /* Main */
+  --red-400: #ee5f54;
+  --red-300: #ef9790;
+  --red-200: #f5c0bc;
+  --red-100: #fbe6e4;
+  --red-50: #fcedec; /* Background */
+  /* Secondary & Charts - Teal */
+  --teal-900: #07a0ab;
+  --teal-800: #05aab6;
+  --teal-700: #06b7c4;
+  --teal-600: #03c0cd;
+  --teal-500: #0bc8d6; /* Main */
+  --teal-400: #47d5df;
+  --teal-300: #73dfe7;
+  --teal-200: #a9eff2;
+  --teal-100: #c0fbfe;
+  --teal-50: #d3fcfe; /* Background */
+  /* Secondary & Charts - Lime Green */
+  --lime-900: #487a34;
+  --lime-800: #558b2f;
+  --lime-700: #689f38;
+  --lime-600: #76af34;
+  --lime-500: #7fb800; /* Main */
+  --lime-400: #9ccc65;
+  --lime-300: #aadc72;
+  --lime-200: #c5e1a5;
+  --lime-100: #eaf8db;
+  --lime-50: #f1fae6; /* Background */
+  /* Secondary & Charts - Purple */
+  --purple-900: #4d0b8f;
+  --purple-800: #4d278f;
+  --purple-700: #592baa;
+  --purple-600: #6938c0;
+  --purple-500: #6938c0; /* Main */
+  --purple-400: #ae82fc;
+  --purple-300: #c19eff;
+  --purple-200: #cfb4ff;
+  --purple-100: #e1d0ff;
+  --purple-50: #eadeff; /* Background */
+  /* Secondary & Charts - Magenta */
+  --magenta-900: #ca136c;
+  --magenta-800: #d91f79;
+  --magenta-700: #ee2a89;
+  --magenta-600: #f53693;
+  --magenta-500: #ff479f; /* Main */
+  --magenta-400: #ff8ac1;
+  --magenta-300: #ffabd3;
+  --magenta-200: #ffcde4;
+  --magenta-100: #ffeef7;
+  --magenta-50: #fff3f9; /* Background */
+
+  /* ===== Theme colors ===== */
+  --theme-light-bg: var(--gray-0);
+  --theme-light-nav-panel-bg: #07182b;
+  --theme-dark-bg: var(--gray-800); /* #28293d; */
+  --theme-dark-canvas-bg: #090909;
+  --theme-dark-canvas-dot: #585b81;
+  --theme-dark-nav-panel-bg: #030d19;
+
+  /* ============ Spacing (Padding, Margin, Gutter) ============ */
+  --spacing-0: 0; /* 0px */
+  --spacing-1: 0.125rem; /* 2px */
+  --spacing-2: 0.25rem; /* 4px */
+  --spacing-3: 0.5rem; /* 8px */
+  --spacing-4: 0.75rem; /* 12px */
+  --spacing-5: 1rem; /* 16px */
+  --spacing-6: 1.25rem; /* 20px */
+  --spacing-7: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-9: 2.5rem; /* 40px */
+  --spacing-10: 3rem; /* 48px */
+  --spacing-11: 4rem; /* 64px */
+  --spacing-12: 4.5rem; /* 72px */
+  --spacing-13: 6rem; /* 96px */
+  --spacing-14: 10rem; /* 160px */
+
+  /* ====== Elevation (shadow) ====== */
+  --elevation-2: 0 2px 4px 0 var(--dark-shadow-color); /* not in use yet */
+  --elevation-2: 0 2px 4px 0 rgba(60, 60, 70, 0.16);
+  --elevation-3: 0 0 4px 2px rgba(40, 40, 60, 0.05);
+  --elevation-4: 0 0 4px 4px rgba(40, 40, 60, 0.1);
+  --card-shadow: var(--elevation-3);
+  --card-hover-shadow: var(--elevation-4);
+  --panel-shadow: 3px 0 3px 0 var(--dark-shadow-color); /* property for nav panel box-shadow */
+  /* Button Shadows */
+  --button-shadow: 0px 0px 3px 1px var(--gray-100);
+  --button-hover-shadow: 0px 3px 8px 4px var(--gray-200);
+  --button-shadow-dark: 0px 0px 3px 1px rgb(0 0 0 / 30%);
+  --button-hover-shadow-dark: 0px 3px 8px 4px rgb(0 0 0 / 30%);
+  --nav-button-hover-shadow: var(--elevation-2);
+
+  /* ================================== *
+   * ===== Style Variable Aliases ===== *
+   * ================================== */
+
+  /* ----- Colors ----- */
+  --white: var(--gray-0);
+  --black: var(--gray-1000);
+  --gray: var(--gray-500);
+  --gray-bg: var(--gray-50);
+
+  --primary-darker: var(--primary-9);
+  --primary-main: var(--primary-7);
+  --primary: var(--primary-main);
+  --primary-brand: var(--primary-5);
+  --primary-lighter: var(--primary-3);
+  --green: var(--green-500);
+  --green-bg: var(--green-50);
+  --blue: var(--blue-500);
+  --blue-bg: var(--blue-50);
+  --yellow: var(--yellow-500);
+  --yellow-bg: var(--yellow-50);
+  --yellow: var(--yellow-500);
+  --yellow-bg: var(--yellow-50);
+  --red: var(--red-500);
+  --red-bg: var(--red-50);
+  --teal: var(--teal-500);
+  --teal-bg: var(--teal-50);
+  --lime: var(--lime-500);
+  --lime-bg: var(--lime-50);
+  --purple: var(--purple-500);
+  --purple-bg: var(--purple-50);
+  --magenta: var(--magenta-500);
+  --magenta-bg: var(--magenta-50);
+
+  --dark-shadow-color: rgb(0 0 0 / 16%);
+  --light-shadow-color: rgb(255 255 255 / 16%);
+
+  /* ----- Spacing and width/height ----- */
+  --spacing: var(--spacing-5);
+  --spacing-main: var(--spacing-5);
+
+  /* make it compatible with former UICore definition */
+  --spacing-none: var(--spacing-0);
+  --spacing-tiny: var(--spacing-1); /* 2px */
+  --spacing-xsmall: var(--spacing-2); /* formerly 5px; */
+  --spacing-small: var(--spacing-3); /* formerly 10px; */
+  --spacing-medium: var(--spacing-5); /* formerly 15px; */
+  --spacing-large: var(--spacing-6); /* formerly 20px; */
+  --spacing-xlarge: var(--spacing-7); /* formerly 25px; */
+  --spacing-xxlarge: var(--spacing-8); /* formerly 30px; */
+  --spacing-xxxlarge: var(--spacing-9); /* formerly 40px; */
+  --spacing-huge: var(--spacing-10); /* formerly 50px; */
+
+  /* padding: defined in @media screen */
+  /* margin: defined in @media screen */
+  --padding-container: var(--spacing-10); /* 48px; padding of outer containers, such as page, model dialog, etc. */
+  --padding-panel: var(--spacing-8); /* 36px; */
+  --padding-section: var(--spacing-7); /* 24px; */
+  --padding-button: var(--spacing-4); /* 12px; padding left/right of button */
+  --margin-container: var(--spacing-10); /* 48px; */
+  --margin-section: var(--spacing-7); /* 24px; */
+  --margin-form-field: var(--spacing-4);
+
+  --button-width: var(--spacing-13);
+  --min-button-width: var(--spacing-12);
+  --card-width: 250px;
+
+  /* --- same as defined in UICore ---
+  --font-size-xsmall: 10px;
+  --font-size-small: 12px;
+  --font-size-normal: 14px;
+  --font-size-medium: 18px;
+  */
+  --font-size-large: 28px; /* formerly 29px; need to be an even number */
+  --font-size-xlarge: 32px;
+
+  /* =========== Style Variable Aliases end =========== */
+
+  /* ==============================
+   * Style definition for xLarge
+   * Screen Width at 1280px+
+   * Columns: 16 
+   * ============================== */
+  --full-width-xl: 1280px;
+  --unit-xl: 8px; /* 8 x 8 px */
+  --padding-xl: 16px;
+  --margin-xl: 16px;
+  --col-content-xl: 40px; /* content area */
+  --col-xl: calc(var(--padding-xl) * 2 + var(--col-content-xl));
+  --panel-padding-xl: 16px;
+  --panel-margin-xl: 16px;
+  --panel-col-content-xl: 64px;
+  /* --- for expanded (secondary nav) panel --- */
+  --exp-padding-xl: 16px;
+  --exp-margin-xl: 16px;
+  --exp-col-content-xl: 28px; /* content area */
+  --panel-exp-padding-xl: 16px;
+  --panel-exp-margin-xl: 16px;
+  --panel-exp-col-content-xl: 40px;
+  --panel-exp-full-xl: 288px;
+  --grid-bg-collapsed-xl: none; /* url(/grid_bg_collapsed_xl.svg); */
+  --grid-bg-expanded-xl: none; /* url(/grid_bg_expanded_xl.svg); */
+
+  /* ====================
+   * Style definition Max 
+   * Columns: 16 
+   * ==================== */
+  --full-width-max: 1680px;
+  --unit-max: 8px; /* 8 x 8 px */
+  --padding-max: 16px;
+  --margin-max: 24px;
+  --col-content-max: 64px; /* content area */
+  --col-max: calc(var(--padding-max) * 2 + var(--col-content-max));
+  --panel-padding-max: 16px;
+  --panel-margin-max: 20px;
+  --panel-col-content-max: 56px;
+  /* --- for expanded (secondary nav) panel --- */
+  --exp-padding-max: 16px;
+  --exp-margin-max: 24px;
+  --exp-col-content-max: 52px; /* content area */
+  --panel-exp-padding-max: 16px;
+  --panel-exp-margin-max: 16px;
+  --panel-exp-col-content-max: 40px;
+  --panel-exp-full-max: 288px;
+  --grid-bg-collapsed-max: none; /* url(/grid_bg_collapsed_max.svg); */
+  --grid-bg-expanded-max: none; /* url(/grid_bg_expanded_max.svg); */
+  --col-1: var(--col);
+  --col-2: calc(var(--col) * 2);
+  --col-3: calc(var(--col) * 3);
+  --col-4: calc(var(--col) * 4);
+  --col-5: calc(var(--col) * 5);
+  --col-6: calc(var(--col) * 6);
+  --col-7: calc(var(--col) * 7);
+  --col-8: calc(var(--col) * 8);
+  --col-9: calc(var(--col) * 9);
+  --col-10: calc(var(--col) * 10);
+  --col-11: calc(var(--col) * 11);
+  --col-12: calc(var(--col) * 12);
+  --col-13: calc(var(--col) * 13);
+  --col-14: calc(var(--col) * 14);
+  --col-15: calc(var(--col) * 15);
+  --col-16: calc(var(--col) * 16);
+  --col-full: var(--col-16); /* dialog */
+  --dialog-width-xsmall: calc(var(--col-max) * 3);
+  --dialog-width-small: calc(var(--col-max) * 4);
+  --dialog-width-medium: calc(var(--col-max) * 8);
+  --dialog-width-large: calc(var(--col-max) * 10);
+
+  /* ========== Style definition for expanded panel ========== */
+  --exp-col-1: var(--exp-col);
+  --exp-col-2: calc(var(--exp-col) * 2);
+  --exp-col-3: calc(var(--exp-col) * 3);
+  --exp-col-4: calc(var(--exp-col) * 4);
+  --exp-col-5: calc(var(--exp-col) * 5);
+  --exp-col-6: calc(var(--exp-col) * 6);
+  --exp-col-7: calc(var(--exp-col) * 7);
+  --exp-col-8: calc(var(--exp-col) * 8);
+  --cexp-ol-9: calc(var(--exp-col) * 9);
+  --exp-col-10: calc(var(--exp-col) * 10);
+  --exp-col-11: calc(var(--exp-col) * 11);
+  --exp-col-12: calc(var(--exp-col) * 12);
+  --exp-col-13: calc(var(--exp-col) * 13);
+  --exp-col-14: calc(var(--exp-col) * 14);
+  --exp-col-15: calc(var(--exp-col) * 15);
+  --exp-col-16: calc(var(--exp-col) * 16);
+  --exp-col-full: var(--exp-col-16);
+  --panel-exp-col-1: var(--panel-exp-col);
+  --panel-exp-col-2: calc(var(--panel-exp-col) * 2);
+  --panel-exp-col-3: calc(var(--panel-exp-col) * 3);
+  --panel-exp-col-4: calc(var(--panel-exp-col) * 4); /* 288px */
+  --sidebar-exp: calc(var(--panel-exp-full) - var(--panel-col)); /* the width of the 2ndary sidebar: 288 - 96 = 192px */
+}
+
+/* -------------------------------------------- *
+ * overwriting UICore and BluePrint CSS Classes *
+ * -------------------------------------------- */
+
+/* ****** Typography (Font Style) ****** */
+.display1 {
+  font-size: 64px;
+  font-weight: bold;
+}
+.display2 {
+  font-size: 56px;
+  font-weight: normal;
+}
+.lead {
+  font-size: 14px;
+  font-weight: bold;
+}
+.body2 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.body {
+  font-size: 13px;
+  line-height: 20px;
+}
+.blockquote {
+  font-size: 20px;
+  line-height: 28px;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  text-transform: capitalize;
+}
+.h1 {
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 600;
+}
+.h2 {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 600;
+}
+.h3 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+.h4 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.h5 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+}
+.h6 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.capitalized {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.small {
+  font-size: 12px;
+  line-height: 18px;
+}
+.tiny {
+  font-size: 10px;
+}
+.small-label {
+  letter-spacing: 0.2px;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--primary-7);
+  font-weight: 600;
+}
+.medium-label {
+  letter-spacing: 0.4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--primary-7);
+  font-weight: 600;
+}
+.large-label {
+  letter-spacing: 0.4px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--primary-7);
+  font-weight: 600;
+}
+.yaml {
+  font-family: 'Roboto Mono', sans-serif, -apple-system;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 24px;
+}
+.table-header {
+  font-size: 10px; /* 12px; */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card-title {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+/* ***** Typography end ***** */
+
+/* **** Heading **** */
+:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h1,
+:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h2,
+:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h3,
+:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h4,
+:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h5,
+:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h6 {
+  color: var(--intent-color, var(--gray-900));
+}
+
+/* ****** overwriting styles for Cards ***** */
+div.Card--card.project {
+  padding: 0;
+  width: 250px;
+}
+
+.bp3-card,
+.bp3-elevation-0 {
+  /* box-shadow: 0 0 2px 2px rgba(16, 22, 26, 0.15); */
+  box-shadow: var(--elevation-3);
+}
+.bp3-card:hover,
+.bp3-card:active,
+.bp3-card:focus {
+  border: 1px solid var(--primary-4);
+}
+.details-content .bp3-card {
+  padding: 0;
+  width: 250px;
+}
+
+.Card--selected {
+  border: 2px solid var(--primary-5) !important;
+}
+
+/* *** Overwriting Dialog styles -- TBD: creates a component for new Dialog *** */
+/* --- small sized Dialog --- */
+.bp3-dialog,
+.bp3-portal .bp3-dialog {
+  border-left: none;
+  padding: var(--spacing-7);
+}
+.bp3-dialog .StyledProps--main {
+  color: var(--intent-color, var(--grey-900));
+}
+.bp3-portal .bp3-dialog .bp3-dialog-header {
+  margin-top: var(--spacing-7);
+  padding-left: var(--spacing-7);
+}
+.bp3-portal .bp3-dialog .bp3-dialog-close-button {
+  margin-right: calc(-2 * var(--spacing-3));
+  margin-top: calc(-2 * (var(--spacing-3) + var(--spacing-7)));
+}
+.bp3-dialog-body {
+  margin: 0;
+  padding: var(--spacing-7);
+}
+.bp3-dialog-body .body {
+  margin-bottom: var(--spacing-5);
+}
+.bp3-dialog-footer {
+  margin: 0 0 var(--spacing-7) var(--spacing-7);
+}
+.bp3-form-group {
+  margin: 0 0 var(--spacing-5); /* 24px / 32px; */
+}
+.bp3-form-group label.bp3-label {
+  font-size: 0.75rem;
+}
+.bp3-dialog-footer .bp3-button,
+.bp3-dialog-footer .Button--button[class*='bp3-button'],
+.bp3-dialog-footer .Button--button[class*='bp3-button']:not([class*='bp3-intent-']) {
+  margin-right: var(--spacing-5);
+  padding: var(--spacing-2) var(--spacing-3);
+  min-width: var(--min-button-width);
+}
+.bp3-form-group .bp3-input,
+.bp3-form-group .bp3-file-upload-input,
+.bp3-form-group [class*='ColorPicker---picker'] {
+  font-size: 0.8125em;
+}
+
+/* --- medium sized Dialog --- */
+.bp3-dialog {
+  width: min-content;
+}
+.dialog-medium,
+.bp3-portal .dialog-medium {
+  border-left: none;
+  padding: var(--spacing-7);
+}
+.bp3-portal .dialog-medium .bp3-dialog-header {
+  padding: 0;
+  margin: 0;
+  height: 24px;
+  min-height: 24px;
+}
+.bp3-portal .dialog-medium .bp3-dialog-close-button {
+  margin-top: calc(-1 * var(--spacing-2));
+  margin-right: calc(-1 * var(--spacing-3));
+}
+.dialog-medium .bp3-dialog-body {
+  flex-basis: 50%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
+}
+.dialog-medium .bp3-dialog-body .h3 {
+  margin-bottom: var(--spacing-3);
+}
+.dialog-medium .dialog-right-body {
+  flex-basis: 50%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: 0;
+  padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
+  background-color: var(--gray-100);
+}
+.dialog-medium .bp3-dialog-footer {
+  margin: var(--spacing-7) 0 0 0;
+}
+
+/* --- large sized Dialog --- */
+.dialog-large,
+.bp3-portal .dialog-large {
+  border-left: none;
+  padding: 0;
+}
+.bp3-portal .dialog-large .bp3-dialog-header {
+  padding: 0;
+  margin: 0;
+  height: 0px;
+  min-height: 0px;
+  position: relative;
+}
+.bp3-portal .dialog-large .bp3-dialog-close-button {
+  margin-top: calc(-1 * var(--spacing-2));
+  margin-right: calc(-1 * var(--spacing-3));
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+.dialog-large .bp3-dialog-body {
+  flex-basis: 50%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
+}
+.dialog-large .bp3-dialog-body .h3 {
+  margin-bottom: var(--spacing-3);
+}
+.dialog-large .dialog-right-body {
+  flex-basis: 50%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: 0;
+  padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
+}
+.dialog-large .bp3-dialog-footer {
+  margin: var(--spacing-7) 0 0 0;
+}
+.dialog-large .StepWizard--main.StepWizard--navBar .StepWizard--navBarList .StepWizard--navStep .StepWizard--number {
+  font-size: 0.75rem;
+  height: var(--spacing-5);
+  width: var(--spacing-5);
+  text-align: center;
+  padding: 1px 0;
+}
+.dialog-large .StepWizard--completedIcon {
+  height: var(--spacing-5);
+  width: var(--spacing-5);
+}
+.dialog-large .StepWizard--main.StepWizard--navBar {
+  grid-template-columns: calc(var(--dialog-width-xsmall) - var(--spacing-5)) var(--dialog-width-small) 1fr;
+}
+.dialog-large :not(.StyledProps--main) .StyledProps--main.StyledProps--color-grey200 {
+  transform: scale(0.8);
+  margin: -1px 0 0 -1px;
+}
+.dialog-large .StepWizard--main.StepWizard--navBar .StepWizard--navBarList {
+  background-color: var(--primary-9);
+  /* background: var(--primary-9) url(/dialog_bg.svg) left bottom no-repeat; */
+  padding: var(--spacing-9);
+  grid-gap: var(--spacing-8);
+}
+.dialog-large .StepWizard--main .StepWizard--stepDetails {
+  padding: var(--spacing-10) var(--spacing-8);
+}
+
+/* ****** overwriting styles for Tabs ***** */
+.Tabs--main .bp3-tab {
+  margin-top: var(--spacing-5);
+  margin-bottom: var(--spacing-4);
+  color: var(--gray-500);
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  letter-spacing: 0.4px;
+}
+.Tabs--main .bp3-tab[aria-selected='true'] {
+  color: var(--gray-800);
+}
+.Tabs--main .bp3-tab-indicator-wrapper .bp3-tab-indicator {
+  height: 3px;
+  bottom: 3px;
+  background-color: var(--primary-7);
+  border-radius: 3px 3px 0 0;
+}
+.inner-tabs .bp3-tab-indicator-wrapper .bp3-tab-indicator {
+  height: 3px;
+  background-color: var(--primary-5);
+}
+.Tabs--main .bp3-tab-list {
+  border-bottom: none; /* 2px solid var(--grey-200); */
+}
+.Tabs--main .bp3-tab .bp3-icon {
+  margin-right: var(--spacing-3); /* 8px */
+}
+
+/* ****** overwriting styles for Tags ***** */
+.Tag--main .bp3-minimal.bp3-intent-primary {
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--primary-6) !important;
+  border-radius: var(--spacing-2);
+}
+.Tag--main .bp3-minimal.bp3-intent-primary span.bp3-icon {
+  margin-right: 4px;
+  margin-bottom: 2px;
+  color: var(--primary-6);
+}
+
+/* ****** overwriting styles for Buttons ***** */
+
+.button-full-size {
+  width: 100%;
+}
+
+/* Secondary Buttons */
+.Button--button[class*='bp3-button'],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']),
+.Button--button[class*='bp3-button']:hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
+.Button--button[class*='bp3-button']:active,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):active,
+.Button--button[class*='bp3-button']:disabled,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):disabled {
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  line-height: 20px;
+  height: 32px;
+  max-height: 32px;
+  background-color: var(--gray-50);
+  color: var(--primary-7) !important;
+  box-shadow: var(--button-shadow);
+}
+.Button--button[class*='bp3-button']:hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
+.Button--button[class*='bp3-button'].Button--iconOnly:not([disabled]):hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly:not([disabled]):hover {
+  background-color: var(--gray-50);
+  color: var(--primary-8) !important;
+  box-shadow: var(--button-hover-shadow);
+  text-decoration: none;
+}
+
+.Button--button[class*='bp3-button'].Button--iconOnly:not([disabled]):hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly:not([disabled]):hover {
+  background-color: transparent;
+  box-shadow: var(--button-hover-shadow); /* none; */
+}
+
+/* Primary Buttons */
+.Button--button[class*='bp3-button'][class*='intent-primary'],
+.Button--button[class*='bp3-button'][class*='intent-primary']:hover,
+.Button--button[class*='bp3-button'][class*='intent-primary']:active,
+.Button--button[class*='bp3-button'][class*='intent-primary']:disabled,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:active,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:disabled {
+  color: var(--gray-0) !important;
+  background-color: var(--primary-7);
+  box-shadow: var(--button-shadow);
+}
+.Button--button[class*='bp3-button'][class*='intent-primary']:hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover {
+  background-color: var(--primary-7);
+  box-shadow: var(--button-hover-shadow);
+}
+.Button--button[class*='bp3-button'][class*='intent-primary']:active,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:active {
+  background-color: var(--primary-8);
+}
+
+/* Success/Warning/Danger Buttons */
+.Button--button[class*='bp3-button'][class*='intent-success'],
+.Button--button[class*='bp3-button'][class*='intent-success']:disabled,
+.Button--button[class*='bp3-button'][class*='intent-warning'],
+.Button--button[class*='bp3-button'][class*='intent-warning']:disabled,
+.Button--button[class*='bp3-button'][class*='intent-danger'],
+.Button--button[class*='bp3-button'][class*='intent-danger']:disabled {
+  color: var(--white) !important;
+}
+
+/* Icon only Buttons */
+.Button--button[class*='bp3-button'].Button--iconOnly, /* :not([disabled]) */
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly {
+  box-shadow: none;
+  padding: 5px 10px;
+}
+
+/* Minimal Buttons (borderless primary buttons) */
+.Button--button[class*='bp3-button'][class*='minimal'],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal'],
+.Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal'],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal'] {
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--primary-7) !important;
+}
+.Button--button[class*='bp3-button'][class*='minimal']:hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal']:hover,
+.Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal']:hover,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal']:hover {
+  background-color: transparent;
+  box-shadow: var(--button-hover-shadow);
+}
+
+/* ------ */
+
+/* .Button--button[class*='bp3-button'][class*='intent-primary'][disabled],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][disabled], */
+.Button--button[class*='bp3-button'][class*='intent-primary'][disabled],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][disabled] {
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px;
+}
+.Button--button[class*='bp3-button'],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-']) {
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px;
+}
+
+/* --- Small Buttons: 24px in height --- */
+
+.Button--button[class*='bp3-button'][class*='hex-small'],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='hex-small'] {
+  height: 24px;
+  line-height: 24px;
+  max-height: 24px;
+  min-height: 24px;
+  font-size: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.Button--button[class*='bp3-button'][class*='hex-small'] .bp3-icon > svg,
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='hex-small'] .bp3-icon > svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* --- Nav Buttons--- */
+
+.Button--button[class*='bp3-button'][class*='nav-button'],
+.Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']),
+/* .Button--button[class*='bp3-button'][class*='nav-button']:active, */
+.Button--button[class*='bp3-button'][class*='nav-button-active'],
+/* .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):active, */
+.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
+  height: 22px;
+  max-height: 22px;
+  min-height: 22px;
+  min-width: 22px;
+  line-height: 22px;
+  background-color: transparent;
+  color: var(--primary-7) !important;
+  border-radius: 11px;
+  font-weight: 400;
+  font-size: 12px; /* 13px; */
+  padding: 0 var(--spacing-5);
+  border: none;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+/* .Button--button[class*='bp3-button'][class*='nav-button']:active, */
+.Button--button[class*='bp3-button'][class*='nav-button-active'],
+/* .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):active, */
+.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
+  /* .Button--button[class*='bp3-button'][class*='minimal'][class*='nav-button-active'],
+.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal'][class*='nav-button-active'] { */
+  background-color: var(--primary-9); /* var(--gray-900); /* var(--primary-7); */
+  color: var(--white) !important;
+  font-weight: 500;
+}
+
+.Button--button[class*='bp3-button'][class*='nav-button']:hover,
+.Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):hover,
+.Button--button[class*='bp3-button'][class*='nav-button-active']:hover,
+.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']):hover {
+  box-shadow: none; /* var(--nav-button-hover-shadow); */
+  background-color: var(--gray-100);
+  color: var(--primary-6) !important;
+}
+
+.Button--button[class*='bp3-button'][class*='nav-button-active']:hover,
+.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']):hover {
+  box-shadow: none;
+  background-color: var(--primary-9); /* var(--gray-900); /* var(--primary-7); */
+  color: var(--white) !important;
+}
+
+/* ****** overwriting styles for Forms ***** */
+.bp3-input-group .bp3-input-action {
+  margin: var(--spacing-2) var(--spacing-3);
+}
+.Label--main {
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.2px;
+  color: var(--gray-300);
+}
+.TextInput--main.TextInput--hasError .TextInput--error {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: var(--gray-300);
+  margin-top: 0;
+}
+.bp3-control input:checked ~ .bp3-control-indicator {
+  background-color: var(--primary-7);
+}
+.bp3-control.bp3-switch input ~ .bp3-control-indicator {
+  background: var(--gray-0);
+  border: 1px solid var(--gray-100);
+}
+.bp3-control input:disabled:checked ~ .bp3-control-indicator,
+.bp3-control.bp3-checkbox input:disabled:indeterminate ~ .bp3-control-indicator,
+.bp3-control.bp3-switch input:checked:disabled ~ .bp3-control-indicator {
+  background: var(--gray-400); /* rgba(19, 124, 189, 0.5); */
+}
+.InputWithIdentifier--txtNameContainer .InputWithIdentifier--txtIdContainer .StyledProps--main.StyledProps--font,
+.InputWithIdentifier--txtNameContainer .InputWithIdentifier--txtIdContainer .StyledProps--main {
+  font-size: 0.75rem;
+}
+
+.bp3-form-group .bp3-input {
+  height: 32px;
+}
+.bp3-button {
+  height: 32px;
+}
+.bp3-button[class*='intent-primary'],
+.bp3-button:not([class*='bp3-intent-'])[class*='intent-primary'] {
+  border: 1px solid var(--primary-7);
+  background-color: var(--primary-7);
+}
+
+.bp3-editable-text {
+  min-width: 100px;
+}
+.bp3-editable-text-content,
+.bp3-editable-text-input {
+  font-size: 0.75rem;
+}
+.bp3-editable-text-input {
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  padding: 0 var(--spacing-2);
+}
+
+.bp3-input-group :not(.StyledProps--main) .StyledProps--main.StyledProps--padding-small {
+  padding: inherit;
+}
+
+.Select--main .bp3-input {
+  border: 1px solid var(--grey-200);
+}
+
+/* Combo dropdown box */
+.MultiTypeInput--main .bp3-icon {
+  color: var(--gray-400) !important;
+}
+.MultiTypeInput--main:hover .bp3-icon {
+  color: var(--gray-600) !important;
+}
+.MultiTypeInput--main .Select--main .bp3-input {
+  color: var(--gray-400);
+}
+.MultiTypeInput--main:hover .Select--main .bp3-input {
+  color: var(--gray-600);
+}
+
+.MultiTypeInput--main .bp3-menu .Select--menuItem {
+  color: var(--gray-700);
+}
+.MultiTypeInput--main .bp3-menu .Select--menuItem:hover {
+  color: var(--gray-700);
+  background-color: var(--primary-2);
+}
+.MultiTypeInput--main .bp3-menu .Select--menuItem.Select--active {
+  color: var(--gray-900);
+  background-color: var(--primary-3);
+}
+
+.MultiTypeInput--btn.MultiTypeInput--FIXED,
+.MultiTypeInput--btn.MultiTypeInput--RUNTIME,
+.MultiTypeInput--btn.MultiTypeInput--EXPRESSION {
+  background: var(--gray-200);
+}
+.MultiTypeInput--btn.MultiTypeInput--FIXED svg,
+.MultiTypeInput--btn.MultiTypeInput--RUNTIME svg,
+.MultiTypeInput--btn.MultiTypeInput--EXPRESSION svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+.MultiTypeInput--btn.MultiTypeInput--FIXED path {
+  fill: var(--primary-6) !important;
+}
+.MultiTypeInput--btn.MultiTypeInput--RUNTIME path {
+  fill: var(--purple-500) !important;
+}
+.MultiTypeInput--btn.MultiTypeInput--EXPRESSION path {
+  fill: var(--yellow-500) !important;
+}
+.FormikForm--main .bp3-label {
+  color: var(--gray-900);
+}
+
+/* ===== Misc. ===== */
+
+/* *** Avatar *** */
+.Avatar--contentStyle:first-child .Avatar--AvatarInner {
+  font-size: 14px !important; /* Avatar--AvatarInner making the "+" icon larger */
+  border: 1px solid var(--primary-1) !important;
+  margin-top: 2px !important;
+  margin-left: 2px !important;
+  font-weight: normal !important;
+  color: var(--primary-7) !important;
+  background: transparent !important;
+}
+.Avatar--contentStyle:first-child .Avatar--AvatarInner:hover {
+  border: 1px solid var(--primary-6) !important;
+  color: var(--primary-6) !important;
+  background: var(--primary-2) !important;
+}
+.Avatar--hoverAvatarLayout {
+  background: linear-gradient(var(--gray-200) 60%, var(--white) 40%) !important;
+}
+.Avatar--hoverAvatarLayout .Text--lineclamp {
+  margin-top: -20px;
+}
+
+/* ====================== *
+ * ----- DARK THEME ----- *
+ * ====================== */
+
+.theme-dark :not(.StyledProps--main) .StyledProps--main {
+  color: var(--intent-color, var(--gray-100));
+}
+
+/* ----- Forms ----- */
+.theme-dark .FormikForm--main .bp3-label {
+  color: var(--gray-300);
+}
+.theme-dark .FormikForm--main .bp3-form-group .bp3-input,
+.theme-dark .FormikForm--main .bp3-form-group .bp3-file-upload-input,
+.theme-dark .FormikForm--main .bp3-form-group .ColorPicker--picker,
+.theme-dark .Select--main .bp3-input {
+  border: 1px solid var(--bp3-intent-color, var(--gray-500)) !important;
+  background-color: transparent;
+  color: var(--gray-500);
+}
+.theme-dark .InputWithIdentifier--txtNameContainer .InputWithIdentifier--idValue {
+  color: var(--primary-6);
+}
+.theme-dark .MultiTypeInput--btn {
+  border: 1px solid var(--bp3-intent-color, var(--gray-500));
+}
+.theme-dark .MultiTypeInput--btn::before {
+  border-right: 1px solid var(--bp3-intent-color, var(--gray-500));
+  background: var(--theme-dark-bg);
+}
+
+/* ----- SwitchIcon --- */
+.theme-dark .SwitchIcon--switchIcon .SwitchIcon--toggleSwitch .SwitchIcon--toggleContent:before {
+  background: var(--grey-500);
+}
+
+/* ----- Buttons ----- */
+
+/* Secondary Buttons */
+.theme-dark .Button--button[class*='bp3-button'],
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']),
+.theme-dark .Button--button[class*='bp3-button']:hover,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
+.theme-dark .Button--button[class*='bp3-button']:active,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):active,
+.theme-dark .Button--button[class*='bp3-button']:disabled,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):disabled {
+  background-color: var(--theme-dark-bg);
+  color: var(--primary-6) !important;
+  box-shadow: var(--button-shadow-dark);
+}
+.theme-dark .Button--button[class*='bp3-button']:hover,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
+.theme-dark .Button--button[class*='bp3-button'].Button--iconOnly:not([disabled]):hover,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly:not([disabled]):hover {
+  box-shadow: var(--button-hover-shadow-dark);
+  background-color: var(--gray-600);
+  color: var(--primary-3) !important;
+}
+
+/* Primary Buttons */
+.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary'],
+.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:hover,
+.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:active,
+.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:disabled,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'],
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:active,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:disabled {
+  color: var(--black) !important;
+  background-color: var(--primary-6);
+  box-shadow: var(--button-shadow-dark);
+}
+.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:hover,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover {
+  box-shadow: var(--button-hover-shadow-dark);
+}
+
+/* Minimal Buttons (borderless primary buttons) */
+.theme-dark .Button--button[class*='bp3-button'][class*='minimal'],
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal'],
+.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal'],
+.theme-dark
+  .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal'] {
+  box-shadow: none;
+}
+.theme-dark .Button--button[class*='bp3-button'][class*='minimal']:hover,
+.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal']:hover,
+.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal']:hover,
+.theme-dark
+  .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal']:hover {
+  box-shadow: var(--button-hover-shadow-dark);
+  background-color: var(--theme-dark-bg);
+}
+
+/*  Slim Nav Button  */
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button'],
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']),
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active'],
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
+  color: var(--gray-300) !important;
+  box-shadow: none;
+}
+
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active'],
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
+  background-color: var(--primary-6);
+  color: var(--black) !important;
+}
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button']:hover,
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):hover,
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:hover,
+.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']):hover {
+  box-shadow: var(--button-hover-shadow-dark);
+  color: var(--gray-100) !important;
+}
+
+/* ----- Cards ----- */
+.theme-dark .bp3-card {
+  background-color: var(--gray-900);
+}
+.theme-dark .bp3-card:hover {
+  border: 1px solid var(--primary-6);
+}
+
+/* ----- Drawer ----- */
+.theme-dark .bp3-drawer {
+  background-color: var(--theme-dark-bg);
+  box-shadow: -1px 0 3px 2px var(--light-shadow-color);
+}
