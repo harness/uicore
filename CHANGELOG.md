@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.131](https://github.com/wings-software/uicore/compare/v0.1.130...v0.1.131) (2021-04-15)
+
+
+### Others
+
+* fix react waring in button about unknown prop ([#157](https://github.com/wings-software/uicore/issues/157)) ([4bb3184](https://github.com/wings-software/uicore/commit/4bb3184b0489174f5fcfdcd14153cfa51f4c3fdf))
+
 ### [0.1.130](https://github.com/wings-software/uicore/compare/v0.1.129...v0.1.130) (2021-04-14)
 
 
