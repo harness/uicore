@@ -94,7 +94,8 @@ export function Button(props: ButtonProps): React.ReactElement {
     'tooltipProps',
     'iconProps',
     'noStyling',
-    'withoutHref'
+    'withoutHref',
+    'withoutCurrentColor'
   )
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
