@@ -2,6 +2,6 @@
 @import './fonts.css';
 @import './sizes.css';
 @import './animations.css';
-@import './common.css';
+@import './grid.css';
 @import '@wings-software/mentions/styles.css';
 @import 'xterm/css/xterm.css';
