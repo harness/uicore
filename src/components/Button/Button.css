@@ -53,7 +53,7 @@
 
     &:hover {
       background-color: var(--grey-50);
-      color: var(--primary-8) !important;
+      color: var(--primary-8);
       box-shadow: var(--button-hover-shadow);
       text-decoration: none;
 
@@ -78,7 +78,7 @@
     &[class*='minimal'] {
       background-color: transparent;
       box-shadow: none;
-      color: var(--primary-7) !important;
+      color: var(--primary-7);
       &:hover {
         background-color: transparent;
         box-shadow: var(--button-hover-shadow);
@@ -92,6 +92,7 @@
       box-shadow: var(--button-shadow);
 
       &:hover {
+        color: var(--grey-0);
         background-color: var(--primary-7);
         box-shadow: var(--button-hover-shadow);
       }
@@ -103,6 +104,7 @@
 
       &[class*='minimal'] {
         border: none;
+        color: var(--primary-7);
         background: none;
       }
     }

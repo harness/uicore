@@ -2,88 +2,9 @@
  * Hex 2.0 style variables and classes *
  ***************************************/
 
-/* ===== xLarge: Screen Width at 1280px+ ===== */
-@media screen and (max-width: 1680px) {
-  html {
-    font-size: 16px; /* Define root font size -> 1rem / 16px */
-  }
-  :root {
-    /* general spacing */
-    --full-width: var(--full-width-xl);
-    --unit: var(--unit-xl); /* 8px = 0.5rem; min unit = 8 x 8 px */
-    --padding: var(--padding-xl); /* 16px; */
-    --margin: var(--margin-xl); /* 16px; */
-    /* Grid column */
-    --col-content: var(--col-content-xl); /* 48px; /* content area */
-    --col: var(--col-xl);
-    /* Global nav panel */
-    --panel-padding: var(--panel-padding-xl);
-    --panel-margin: var(--panel-margin-xl);
-    --panel-col-content: var(--panel-col-content-xl);
-    --panel-col: calc(var(--panel-margin) * 2 + var(--panel-col-content)); /* 88px; /* Collapsed Panel */
-    /* Sencondary expanded panel */
-    --exp-padding: var(--exp-padding-xl); /* 16px; */
-    --exp-margin: var(--exp-margin-xl); /* 16px; */
-    --exp-col-content: var(--exp-col-content-xl); /* 48px; /* content area */
-    --exp-col: calc(var(--exp-padding-xl) * 2 + var(--exp-col-content-xl));
-    --panel-exp-padding: var(--panel-exp-padding-xl);
-    --panel-exp-margin: var(--panel-exp-margin-xl);
-    --panel-exp-col-content: var(--panel-exp-col-content-xl);
-    --panel-exp-col: calc(var(--panel-exp-padding) * 2 + var(--panel-exp-col-content)); /* Collapsed Panel */
-    --panel-exp-full: calc(var(--panel-exp-col) * 4);
-    /* Grid demo background */
-    --grid-bg-collapsed: var(--grid-bg-collapsed-xl);
-    --grid-bg-expanded: var(--grid-bg-expanded-xl);
-  }
-}
-/* ===== Max: Screen Width at 1680px+ ===== */
-@media screen and (min-width: 1680px) {
-  html {
-    font-size: 16px; /* Define root font size -> 1rem / 16px */
-  }
-  :root {
-    /* general spacing */
-    --full-width: var(--full-width-max);
-    --unit: var(--unit-max); /* 8px = 0.5rem; min unit = 8 x 8 px */
-    --padding: var(--padding-max); /* 16px; */
-    --margin: var(--margin-max); /* 24px; */
-    /* Grid column */
-    --col-content: var(--col-content-max); /* 64px; /* content area */
-    --col: var(--col-xl);
-    /* Global nav panel */
-    --panel-padding: var(--panel-padding-max);
-    --panel-margin: var(--panel-margin-max);
-    --panel-col-content: var(--panel-col-content-max);
-    --panel-col: calc(var(--panel-margin) * 2 + var(--panel-col-content)); /* 96px; /* Collapsed Panel */
-    /* Sencondary expanded panel */
-    --exp-padding: var(--exp-padding-max); /* 16px; */
-    --exp-margin: var(--exp-margin-max); /* 24px; */
-    --exp-col-content: var(--exp-col-content-max); /* 64px; /* content area */
-    --exp-col: calc(var(--exp-padding) * 2 + var(--exp-col-content));
-    --panel-exp-padding: var(--panel-exp-padding-max);
-    --panel-exp-margin: var(--panel-exp-margin-max);
-    --panel-exp-col-content: var(--panel-exp-col-content-max);
-    --panel-exp-col: calc(var(--panel-exp-padding) * 2 + var(--panel-exp-col-content)); /* Collapsed Panel */
-    --panel-exp-full: calc(var(--panel-exp-col) * 4);
-    /* Grid demo background */
-    --grid-bg-collapsed: var(--grid-bg-collapsed-max);
-    --grid-bg-expanded: var(--grid-bg-expanded-max);
-  }
-}
-
 /* -------------------------------------------- *
  * overwriting UICore and BluePrint CSS Classes *
  * -------------------------------------------- */
-
-/* **** Heading **** */
-:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h1,
-:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h2,
-:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h3,
-:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h4,
-:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h5,
-:not(.StyledProps--main) .StyledProps--main.StyledProps--font-h6 {
-  color: var(--intent-color, var(--grey-900));
-}
 
 /* ****** overwriting styles for Cards ***** */
 div.Card--card.project {
