@@ -21,7 +21,7 @@ function getIntentColors(intent: Intent): { color: string; backgroundColor: stri
 
   switch (intent) {
     case Intent.PRIMARY:
-      backgroundColor = Color.BLUE_500
+      backgroundColor = Color.PRIMARY_7
       break
     case Intent.SUCCESS:
       backgroundColor = Color.GREEN_500
