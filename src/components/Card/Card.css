@@ -76,10 +76,12 @@ div.card {
     .menu {
       cursor: pointer;
       outline: none !important;
-      color: var(--blue-100);
+      color: var(--primary-1);
+      box-shadow: none;
 
       &:hover {
-        background-color: var(--blue-100) !important;
+        box-shadow: none !important;
+        background-color: var(--primary-1) !important;
         color: var(--primary-5);
       }
     }
