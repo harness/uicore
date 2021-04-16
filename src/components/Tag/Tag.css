@@ -37,7 +37,7 @@
     }
 
     .bp3-minimal.bp3-intent-primary {
-      border: 1px solid var(--blue-300) !important;
+      border: 1px solid var(--primary-6) !important;
       background: var(--blue-350) !important;
       color: var(--blue-600) !important;
     }
