@@ -39,7 +39,8 @@
 
     .bp3-tab-indicator-wrapper .bp3-tab-indicator {
       height: 3px;
-      background-color: var(--blue-500);
+      background-color: var(--blue-600);
+      border-radius: 5px 5px 0px 0px !important;
     }
   }
 }

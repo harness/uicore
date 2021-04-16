@@ -87,5 +87,7 @@
 
   .details {
     padding: var(--spacing-xlarge) var(--spacing-medium);
+    padding-left: 0;
+    padding-right: 0;
   }
 }
