@@ -1,6 +1,7 @@
 div.card {
   border-radius: 5px;
   display: inline-block;
+  padding: var(--spacing-large);
   position: relative;
   border: 1px solid transparent;
 
