@@ -29,6 +29,7 @@
   --grey-400: #9293ab;
   --grey-350: #9293ab;
   --grey-300: #b0b1c4;
+  --grey-250: #b0b1c4;
   --grey-200: #d9dae5;
   --grey-100: #f3f3fa;
   --grey-50: #fafbfc; /* Background */
@@ -39,7 +40,9 @@
   --green-700: #299b2c;
   --green-600: #42ab45;
   --green-500: #4dc952; /* Main */
+  --green-450: #4dc952;
   --green-400: #86d981;
+  --green-350: #86d981;
   --green-300: #a2e29b;
   --green-200: #bdeab7;
   --green-100: #d8f3d4;
@@ -50,7 +53,9 @@
   --blue-700: #4c5cb0;
   --blue-600: #6374d0;
   --blue-500: #798bec; /* Main */
+  --blue-450: #798bec;
   --blue-400: #8598ff;
+  --blue-350: #8598ff;
   --blue-300: #97a7ff;
   --blue-200: #b1beff;
   --blue-100: #dae0ff;
@@ -61,7 +66,9 @@
   --yellow-700: #fcc62d;
   --yellow-600: #fdcc35;
   --yellow-500: #fdd13b; /* Main */
+  --yellow-450: #fdd13b;
   --yellow-400: #fedf76;
+  --yellow-350: #fedf76;
   --yellow-300: #fee89d;
   --yellow-200: #fef1c4;
   --yellow-100: #fff9e7;
@@ -83,7 +90,9 @@
   --red-700: #cf2318;
   --red-600: #da291d;
   --red-500: #e43326; /* Main */
+  --red-450: #e43326;
   --red-400: #ee5f54;
+  --red-350: #ee5f54;
   --red-300: #ef9790;
   --red-200: #f5c0bc;
   --red-100: #fbe6e4;
