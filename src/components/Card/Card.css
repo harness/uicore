@@ -5,7 +5,7 @@ div.card {
   border: 1px solid transparent;
 
   &:focus {
-    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2), 0 8px 24px rgba(16, 22, 26, 0.2);
+    box-shadow: var(--elevation-3);
     outline: none;
   }
 }
@@ -13,8 +13,8 @@ div.card {
 .interactive {
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16) !important;
-    border: 1px solid var(--blue-400);
+    box-shadow: var(--elevation-3);
+    border: 1px solid var(--primary-5);
   }
 }
 
@@ -30,7 +30,7 @@ div.card {
 }
 
 .selected {
-  border: 2px solid var(--blue-500) !important;
+  border: 2px solid var(--primary-5) !important;
 }
 
 .disabled {
@@ -75,11 +75,11 @@ div.card {
     .menu {
       cursor: pointer;
       outline: none !important;
-      color: var(--grey-500);
+      color: var(--blue-100);
 
       &:hover {
-        background-color: var(--grey-200) !important;
-        color: var(--blue-500);
+        background-color: var(--blue-100) !important;
+        color: var(--primary-5);
       }
     }
   }
@@ -93,7 +93,7 @@ div.card {
     width: 0;
     position: absolute;
     height: 0;
-    border-top: 20px solid var(--blue-500);
+    border-top: 20px solid var(--primary-5);
     border-left: 20px solid transparent;
     right: 0;
     z-index: 1;
