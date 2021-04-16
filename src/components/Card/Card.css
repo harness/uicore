@@ -81,8 +81,8 @@ div.card {
 
       &:hover {
         box-shadow: none !important;
-        background-color: var(--primary-1) !important;
-        color: var(--primary-5);
+        color: var(--primary-6);
+        background-color: var(--gray-50);
       }
     }
   }
