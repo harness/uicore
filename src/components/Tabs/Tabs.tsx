@@ -8,7 +8,7 @@ interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
   children?: React.ReactNode
 }
 
-function Tabs(props: TabsProps) {
+function Tabs(props: TabsProps): JSX.Element {
   const { renderAllTabPanels, children, vertical, ...rest } = props
 
   return (
