@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.132](https://github.com/wings-software/uicore/compare/v0.1.131...v0.1.132) (2021-04-19)
+
+
+### Features
+
+* Add icon conditional execution ([#161](https://github.com/wings-software/uicore/issues/161)) ([2f9cdef](https://github.com/wings-software/uicore/commit/2f9cdefda89970b3c3e5c63eb3a9ce87c0a668a0))
+
 ### [0.1.131](https://github.com/wings-software/uicore/compare/v0.1.130...v0.1.131) (2021-04-15)
 
 
