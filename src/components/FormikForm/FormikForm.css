@@ -1,6 +1,6 @@
 @define-mixin intent {
   &.bp3-intent-primary {
-    --bp3-intent-color: var(--blue-500);
+    --bp3-intent-color: var(--primary-7);
   }
 
   &.bp3-intent-success {
