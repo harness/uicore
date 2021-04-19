@@ -6,7 +6,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { TagInput as BPTagInput } from '@blueprintjs/core'
+import { TagInput as BPTagInput, Tooltip, Icon } from '@blueprintjs/core'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import cssRadio from '../Radio/Radio.css'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
@@ -54,6 +54,8 @@ import {
   ExpressionInputProps as ExpressionInputLocalProps,
   ExpressionInput as ExpressionInputLocal
 } from '../ExpressionInput/ExpressionInput'
+import { DataTooltipInterface } from '../../frameworks/Tooltip/types'
+import { useTooltips } from '../../frameworks/Tooltip/Tooltip'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -76,6 +78,7 @@ export interface FormikContextProps<T> {
   optionalLabel?: string
   isOptional?: boolean // default to false
   autoComplete?: string
+  tooltipProps?: DataTooltipInterface
 }
 
 export interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
@@ -105,10 +108,11 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
     ...rest
   } = restProps
 
+  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
       labelFor={name}
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={labelText}
       helperText={helperText}
       intent={intent}
       disabled={disabled}
@@ -156,6 +160,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     tagsProps,
     isOptional = false,
     optionalLabel = IsOptionLabel,
+    tooltipProps,
     ...restProps
   } = props
   const hasError = errorCheck(name, formik)
@@ -174,10 +179,26 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     return () => unregister(mentionsType)
   }, [])
 
+  const { getTooltip } = useTooltips()
+
+  let labelText = !isOptional ? label : `${label} ${optionalLabel}`
+  if (tooltipProps?.dataTooltipId) {
+    labelText = (
+      <span className={css.acenter} data-tooltip-id={tooltipProps?.dataTooltipId}>
+        {labelText}
+        <Tooltip content={getTooltip?.(tooltipProps?.dataTooltipId)}>
+          <span data-tooltip-id={tooltipProps?.dataTooltipId} className={css.tooltipIcon}>
+            <Icon iconSize={12} icon="help" />
+          </span>
+        </Tooltip>
+      </span>
+    )
+  }
+
   return (
     <FormGroup
       labelFor={name}
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={labelText}
       helperText={helperText}
       intent={intent}
       disabled={disabled}

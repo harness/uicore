@@ -51,6 +51,9 @@ export const Basic: Story<FormikFormProps> = () => (
             <FormInput.KVTagInput
               name="tags"
               label="Tags"
+              tooltipProps={{
+                dataTooltipId: 'tagInputId'
+              }}
               mentionsInfo={{
                 data: done =>
                   done([
