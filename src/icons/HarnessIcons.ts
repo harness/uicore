@@ -77,6 +77,7 @@ import CommandStop from './command-stop.svg'
 import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
+import ConditionalExecution from './conditional-execution.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
@@ -532,6 +533,7 @@ type HarnessIconName =
   | 'command-swap'
   | 'command-switch'
   | 'command-winrm'
+  | 'conditional-execution'
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
   | 'conditional-skip'
@@ -987,6 +989,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-swap': CommandSwap,
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
+  'conditional-execution': ConditionalExecution,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
