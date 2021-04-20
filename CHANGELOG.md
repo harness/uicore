@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.134](https://github.com/wings-software/uicore/compare/v0.1.133...v0.1.134) (2021-04-20)
+
+
+### Bug Fixes
+
+* setting fill as currentColor for CSS override ([#164](https://github.com/wings-software/uicore/issues/164)) ([0a55da5](https://github.com/wings-software/uicore/commit/0a55da585619e029f9cb40ee921de3d3095161b1))
+
 ### [0.1.133](https://github.com/wings-software/uicore/compare/v0.1.132...v0.1.133) (2021-04-20)
 
 
