@@ -35,6 +35,11 @@ export interface InputWithIdentifierProps {
    */
   isIdentifierEditable?: boolean
   /**
+   * Should the user be allowed to edit the name
+   * @default false
+   */
+  disabled?: boolean
+  /**
    * @default 63
    */
   maxInput?: number
@@ -57,6 +62,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     idName = 'identifier',
     inputGroupProps,
     isIdentifierEditable = true,
+    disabled = false,
     maxInput = 63
   } = props
   const [editable, setEditable] = useState(false)
@@ -105,6 +111,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         {...inputGroupProps}
         label={inputLabel}
         name={inputName}
+        disabled={disabled}
         onChange={e => {
           setCurrentEditField(inputName)
           const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
