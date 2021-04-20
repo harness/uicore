@@ -108,10 +108,10 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         ) : null}
       </Layout.Horizontal>
       <FormInput.Text
+        disabled={disabled}
         {...inputGroupProps}
         label={inputLabel}
         name={inputName}
-        disabled={disabled}
         onChange={e => {
           setCurrentEditField(inputName)
           const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
