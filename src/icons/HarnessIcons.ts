@@ -9,6 +9,7 @@ import Inline from './Inline.svg'
 import Options from './Options.svg'
 import Activity from './activity.svg'
 import Adminrole from './adminRole.svg'
+import Advanced from './advanced.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
@@ -36,6 +37,7 @@ import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import CdHover from './cd-hover.svg'
 import CdMain from './cd-main.svg'
+import Cd from './cd.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
 import CeBudgetColored from './ce-budget_colored.svg'
@@ -161,6 +163,7 @@ import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import Info from './info.svg'
+import Infrastructure from './infrastructure.svg'
 import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Integration from './integration.svg'
@@ -408,6 +411,7 @@ import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
 import Service from './service.svg'
+import Services from './services.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
@@ -465,6 +469,7 @@ type HarnessIconName =
   | 'Options'
   | 'activity'
   | 'adminRole'
+  | 'advanced'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
@@ -492,6 +497,7 @@ type HarnessIconName =
   | 'canvas-selector'
   | 'cd-hover'
   | 'cd-main'
+  | 'cd'
   | 'ce-application'
   | 'ce-beta'
   | 'ce-budget_colored'
@@ -617,6 +623,7 @@ type HarnessIconName =
   | 'hourglass'
   | 'http-step'
   | 'info'
+  | 'infrastructure'
   | 'initialize-step'
   | 'insight-view'
   | 'integration'
@@ -864,6 +871,7 @@ type HarnessIconName =
   | 'service-sumologic'
   | 'service-terraform'
   | 'service'
+  | 'services'
   | 'setup-api'
   | 'setup-tags'
   | 'skipped'
@@ -921,6 +929,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Options: Options,
   activity: Activity,
   adminRole: Adminrole,
+  advanced: Advanced,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
@@ -948,6 +957,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'canvas-selector': CanvasSelector,
   'cd-hover': CdHover,
   'cd-main': CdMain,
+  cd: Cd,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
   'ce-budget_colored': CeBudgetColored,
@@ -1073,6 +1083,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   hourglass: Hourglass,
   'http-step': HttpStep,
   info: Info,
+  infrastructure: Infrastructure,
   'initialize-step': InitializeStep,
   'insight-view': InsightView,
   integration: Integration,
@@ -1320,6 +1331,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
   service: Service,
+  services: Services,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
   skipped: Skipped,
