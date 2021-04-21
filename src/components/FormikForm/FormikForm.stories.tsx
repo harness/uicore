@@ -77,6 +77,9 @@ export const Basic: Story<FormikFormProps> = () => (
               ]}
               name="exp"
               label="Expressions"
+              tooltipProps={{
+                dataTooltipId: 'idforexpressioninput'
+              }}
             />
             <FormInput.CheckBox name="specialPerson" label="VVIP" />
             <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select" />

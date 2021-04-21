@@ -1,0 +1,15 @@
+.acenter {
+  display: flex;
+  align-items: center;
+
+  :global {
+    .bp3-popover-wrapper {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.tooltipIcon {
+  margin-left: var(--spacing-xsmall);
+  display: flex;
+}
