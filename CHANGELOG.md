@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.135](https://github.com/wings-software/uicore/compare/v0.1.134...v0.1.135) (2021-04-21)
+
+
+### Others
+
+* fix approval icon fill ([#166](https://github.com/wings-software/uicore/issues/166)) ([d2f408d](https://github.com/wings-software/uicore/commit/d2f408d14923bfbd939a4353931fa70109caffa5))
+
 ### [0.1.134](https://github.com/wings-software/uicore/compare/v0.1.133...v0.1.134) (2021-04-20)
 
 
