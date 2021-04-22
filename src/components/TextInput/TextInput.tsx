@@ -27,6 +27,7 @@ export function TextInput(props: TextInputProps): React.ReactElement {
     intent,
     errorInPopover,
     leftIcon,
+
     rightElement,
     leftIconProps,
     rightElementProps,
@@ -79,7 +80,12 @@ export function TextInput(props: TextInputProps): React.ReactElement {
         leftIcon={leftIcon && <Icon name={leftIcon} size={12} {...leftIconProps} />}
         rightElement={rightElem}
       />
-      {hasError && !errorInPopover ? <div className={css.error}>{errorText}</div> : null}
+      {hasError && !errorInPopover ? (
+        <div className={css.error}>
+          <Icon name="info" className={css.errorTextIcon} size={10} />
+          <span className={css.error}>{errorText}</span>
+        </div>
+      ) : null}
     </div>
   )
 }
