@@ -4,14 +4,9 @@
  */
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
-import Advanced from './Advanced.svg'
-import Cd from './CD.svg'
 import Edit from './Edit.svg'
-import Execution from './Execution.svg'
-import Infrastructure from './Infrastructure.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
-import Services from './Services.svg'
 import Activity from './activity.svg'
 import Adminrole from './adminRole.svg'
 import Advanced from './advanced.svg'
@@ -133,6 +128,7 @@ import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionSuccess from './execution-success.svg'
 import ExecutionWarning from './execution-warning.svg'
+import Execution from './execution.svg'
 import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
@@ -468,14 +464,9 @@ import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
-  | 'Advanced'
-  | 'CD'
   | 'Edit'
-  | 'Execution'
-  | 'Infrastructure'
   | 'Inline'
   | 'Options'
-  | 'Services'
   | 'activity'
   | 'adminRole'
   | 'advanced'
@@ -597,6 +588,7 @@ type HarnessIconName =
   | 'execution-rollback'
   | 'execution-success'
   | 'execution-warning'
+  | 'execution'
   | 'expired'
   | 'expression-input'
   | 'failure-strategy'
@@ -932,14 +924,9 @@ type HarnessIconName =
   | 'zoom-out'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
-  Advanced: Advanced,
-  CD: Cd,
   Edit: Edit,
-  Execution: Execution,
-  Infrastructure: Infrastructure,
   Inline: Inline,
   Options: Options,
-  Services: Services,
   activity: Activity,
   adminRole: Adminrole,
   advanced: Advanced,
@@ -1061,6 +1048,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'execution-rollback': ExecutionRollback,
   'execution-success': ExecutionSuccess,
   'execution-warning': ExecutionWarning,
+  execution: Execution,
   expired: Expired,
   'expression-input': ExpressionInput,
   'failure-strategy': FailureStrategy,
