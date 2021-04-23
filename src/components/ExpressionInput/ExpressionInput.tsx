@@ -113,7 +113,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     cursorRef.current = indexAt
 
     if (typeof indexAt === 'number') {
-      // get everthing before cursor
+      // get everything before cursor
       const query = value.slice(0, indexAt)
       const match = query.match(EXPRESSION_START_REGEX)
 
@@ -187,13 +187,16 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
 
     if (!match) return null
 
+    const matchIndex = item.indexOf(match[1])
+
     return (
       <Menu.Item
         key={`${item}${index}`}
         text={
           <span>
-            <mark>{item.slice(0, match[1].length)}</mark>
-            {item.slice(match[1].length)}
+            {item.slice(0, matchIndex)}
+            <mark>{item.slice(matchIndex, matchIndex + match[1].length)}</mark>
+            {item.slice(matchIndex + match[1].length)}
           </span>
         }
         onClick={handleClick}
@@ -209,7 +212,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       itemPredicate={(query: string, item: string) => {
         const match = query.match(EXPRESSION_START_REGEX)
 
-        return !!match && item.toLowerCase().startsWith(match[1].toLowerCase())
+        return !!match && item.toLowerCase().includes(match[1].toLowerCase())
       }}
       items={items}
       renderer={renderer}
