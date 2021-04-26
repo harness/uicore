@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.138](https://github.com/wings-software/uicore/compare/v0.1.137...v0.1.138) (2021-04-26)
+
+
+### Features
+
+* [CVNG-2491]: fixing the panel CSS ([#170](https://github.com/wings-software/uicore/issues/170)) ([3f73e39](https://github.com/wings-software/uicore/commit/3f73e391f0debc5ab70a21490abcfa43d960fa2e))
+
 ### [0.1.137](https://github.com/wings-software/uicore/compare/v0.1.136...v0.1.137) (2021-04-23)
 
 
