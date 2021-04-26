@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.139](https://github.com/wings-software/uicore/compare/v0.1.138...v0.1.139) (2021-04-26)
+
+
+### Features
+
+* [CVNG-2494]: fixing panel toggle effect. ([#171](https://github.com/wings-software/uicore/issues/171)) ([b1f4c7c](https://github.com/wings-software/uicore/commit/b1f4c7c557d82417a63e9fda983b64377cf46f08))
+
 ### [0.1.138](https://github.com/wings-software/uicore/compare/v0.1.137...v0.1.138) (2021-04-26)
 
 
