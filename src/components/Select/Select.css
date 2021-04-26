@@ -78,7 +78,7 @@
     }
 
     &.active {
-      background: var(--blue-500);
+      background: var(--primary-7);
       color: var(--white);
     }
 
