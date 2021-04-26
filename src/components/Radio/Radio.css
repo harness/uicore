@@ -38,8 +38,8 @@
 
   /* disabled: F, checked: T */
   input:not(:disabled):checked ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--blue-500);
-    --box-border: var(--blue-500);
+    --box-background: var(--primary-7);
+    --box-border: var(--primary-8);
     @mixin radio-styles;
   }
 
@@ -52,8 +52,8 @@
 
   /* disabled: F, checked: T, active: T */
   input:not(:disabled):checked:active ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--blue-700);
-    --box-border: var(--blue-700);
+    --box-background: var(--grey-400);
+    --box-border: var(--grey-400);
     @mixin radio-styles;
   }
 
@@ -68,9 +68,8 @@
 
   /* disabled: T, checked: T */
   input:disabled:checked ~ span[class*='bp3-control-indicator'] {
-    opacity: 0.5;
-    --box-background: var(--blue-500);
-    --box-border: var(--blue-500);
+    --box-background: var(--grey-400);
+    --box-border: var(--grey-400);
     @mixin radio-styles;
 
     /* Style little white circle in the middle of blue circle */
