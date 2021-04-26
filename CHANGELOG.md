@@ -2,6 +2,62 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.139](https://github.com/wings-software/uicore/compare/v0.1.138...v0.1.139) (2021-04-26)
+
+
+### Features
+
+* [CVNG-2494]: fixing panel toggle effect. ([#171](https://github.com/wings-software/uicore/issues/171)) ([b1f4c7c](https://github.com/wings-software/uicore/commit/b1f4c7c557d82417a63e9fda983b64377cf46f08))
+
+### [0.1.138](https://github.com/wings-software/uicore/compare/v0.1.137...v0.1.138) (2021-04-26)
+
+
+### Features
+
+* [CVNG-2491]: fixing the panel CSS ([#170](https://github.com/wings-software/uicore/issues/170)) ([3f73e39](https://github.com/wings-software/uicore/commit/3f73e391f0debc5ab70a21490abcfa43d960fa2e))
+
+### [0.1.137](https://github.com/wings-software/uicore/compare/v0.1.136...v0.1.137) (2021-04-23)
+
+
+### Bug Fixes
+
+* accordion css overflow issue ([#168](https://github.com/wings-software/uicore/issues/168)) ([a9b469e](https://github.com/wings-software/uicore/commit/a9b469e4ad0da021102ff8e810c70c71c7f4d338))
+
+### [0.1.136](https://github.com/wings-software/uicore/compare/v0.1.135...v0.1.136) (2021-04-23)
+
+
+### Features
+
+* better matching for expressions ([#167](https://github.com/wings-software/uicore/issues/167)) ([14d9a19](https://github.com/wings-software/uicore/commit/14d9a19412fb2598619f1811acfd27bb33acf279))
+
+### [0.1.135](https://github.com/wings-software/uicore/compare/v0.1.134...v0.1.135) (2021-04-21)
+
+
+### Others
+
+* fix approval icon fill ([#166](https://github.com/wings-software/uicore/issues/166)) ([d2f408d](https://github.com/wings-software/uicore/commit/d2f408d14923bfbd939a4353931fa70109caffa5))
+
+### [0.1.134](https://github.com/wings-software/uicore/compare/v0.1.133...v0.1.134) (2021-04-20)
+
+
+### Bug Fixes
+
+* setting fill as currentColor for CSS override ([#164](https://github.com/wings-software/uicore/issues/164)) ([0a55da5](https://github.com/wings-software/uicore/commit/0a55da585619e029f9cb40ee921de3d3095161b1))
+
+### [0.1.133](https://github.com/wings-software/uicore/compare/v0.1.132...v0.1.133) (2021-04-20)
+
+
+### Features
+
+* new icons needed for the new design changes ([#163](https://github.com/wings-software/uicore/issues/163)) ([7b0b224](https://github.com/wings-software/uicore/commit/7b0b224752604666ab28a058e6c692b6bc4ca7a0))
+
+### [0.1.132](https://github.com/wings-software/uicore/compare/v0.1.131...v0.1.132) (2021-04-19)
+
+
+### Features
+
+* Add icon conditional execution ([#161](https://github.com/wings-software/uicore/issues/161)) ([2f9cdef](https://github.com/wings-software/uicore/commit/2f9cdefda89970b3c3e5c63eb3a9ce87c0a668a0))
+
 ### [0.1.131](https://github.com/wings-software/uicore/compare/v0.1.130...v0.1.131) (2021-04-15)
 
 

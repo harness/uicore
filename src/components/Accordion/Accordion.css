@@ -4,7 +4,8 @@
 
 .panel {
   .collapse {
-    overflow: auto !important;
+    position: relative;
+    z-index: 1;
   }
 
   .summary {
@@ -19,7 +20,6 @@
       content: '';
       display: block;
       width: 3px;
-      height: 100%;
       height: 24px;
       background-color: var(--grey-300);
       position: absolute;
