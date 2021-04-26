@@ -4,6 +4,8 @@
 
 .panel {
   .collapse {
+    position: relative;
+    z-index: 1;
     overflow: visible !important;
   }
 
