@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import type { Meta, Story } from '@storybook/react'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
@@ -7,11 +8,21 @@ import { Formik, FormikForm, FormInput } from '../FormikForm/FormikForm'
 import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { FormikFormProps } from 'formik'
+import { TooltipEditor } from '../../frameworks/Tooltip/TooltipEditor'
+import css from '../../frameworks/Tooltip/TooltipEditor.css'
 
 export default {
   title: 'Form / FormikForm',
   component: FormikForm
 } as Meta
+
+const openNgTooltipEditor = () => {
+  const container = document.createElement('div')
+  container.className = css.editor
+  container.id = 'ngTooltipEditor'
+  document.body.appendChild(container)
+  ReactDOM.render(<TooltipEditor />, container)
+}
 
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
@@ -40,13 +51,24 @@ export const Basic: Story<FormikFormProps> = () => (
       {() => {
         return (
           <FormikForm>
-            <FormInput.Text name="name" label="Name" placeholder="First Name" />
+            <button onClick={() => openNgTooltipEditor()}>Tooltip Editor</button>
+            <FormInput.Text
+              name="name"
+              label="Name"
+              placeholder="First Name"
+              tooltipProps={{
+                dataTooltipId: 'nameTextField'
+              }}
+            />
             <FormInput.Text
               name="age"
               inputGroup={{ type: 'number' }}
               label="Age"
               isOptional
               placeholder="Age in years"
+              tooltipProps={{
+                dataTooltipId: 'ageNumberField'
+              }}
             />
             <FormInput.KVTagInput
               name="tags"
@@ -81,8 +103,21 @@ export const Basic: Story<FormikFormProps> = () => (
                 dataTooltipId: 'idforexpressioninput'
               }}
             />
-            <FormInput.CheckBox name="specialPerson" label="VVIP" />
-            <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select" />
+            <FormInput.CheckBox
+              name="specialPerson"
+              label="VVIP"
+              tooltipProps={{
+                dataTooltipId: 'checkboxField'
+              }}
+            />
+            <FormInput.FileInput
+              name="picture"
+              label="Upload Picture"
+              buttonText="Select"
+              tooltipProps={{
+                dataTooltipId: 'uploadPictureField'
+              }}
+            />
             <FormInput.RadioGroup
               name="eventType"
               label="Event Type"

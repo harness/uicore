@@ -1,8 +1,7 @@
-import { ReactElement, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 export interface DataTooltipInterface {
   dataTooltipId: string
-  dataTooltipFor?: string
 }
 
 export interface UseTooltipsReturn {

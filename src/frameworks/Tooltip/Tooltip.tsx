@@ -1,9 +1,11 @@
 import React from 'react'
-import { Icon, Tooltip } from '@blueprintjs/core'
+import snarkdown from 'snarkdown'
+import { Icon, PopoverInteractionKind, Position } from '@blueprintjs/core'
 import { useTooltipContext } from './TooltipContext'
 import { TooltipRenderProps, UseTooltipsReturn } from './types'
 
 import css from './Tooltip.css'
+import { Popover } from '../../components/Popover/Popover'
 
 export function useTooltips(): UseTooltipsReturn {
   const { getTooltip, tooltipDictionary } = useTooltipContext()
@@ -11,12 +13,19 @@ export function useTooltips(): UseTooltipsReturn {
   return {
     getTooltip(key: string, vars: Record<string, any> = {}): string {
       if (typeof getTooltip === 'function') {
-        return getTooltip(key, vars)
+        return snarkdown(getTooltip(key, vars))
       }
-      return tooltipDictionary[key]
+      return tooltipDictionary[key] ? snarkdown(tooltipDictionary[key]) : ''
     },
     tooltipDictionary
   }
+}
+
+const _asHtml = (content: string) => {
+  return `${content
+    .split('\n\n')
+    .map(line => `<p>${snarkdown(line).replace(new RegExp('href=', 'g'), 'target="_blank" href=')}</p>`)
+    .join('')}`
 }
 
 export const HarnessDocTooltip = ({
@@ -27,20 +36,27 @@ export const HarnessDocTooltip = ({
 }: TooltipRenderProps) => {
   const { getTooltip } = useTooltips()
   const tooltipContent = getTooltip(tooltipId || '', getTooltipAdditionalVars)
+
+  const tooltipContentHtml = _asHtml(tooltipContent)
+
   const tooltipJsxComponent = (
-    <Tooltip content={tooltipContent}>
-      <span data-tooltip-id={tooltipId} className={css.tooltipIcon}>
+    <Popover
+      popoverClassName={css.tooltipWrapper}
+      position={Position.RIGHT}
+      interactionKind={PopoverInteractionKind.HOVER}
+      content={<div className={css.tooltipContentWrapper} dangerouslySetInnerHTML={{ __html: tooltipContentHtml }} />}>
+      <span className={css.tooltipIcon}>
         <Icon iconSize={12} icon="help" />
       </span>
-    </Tooltip>
+    </Popover>
   )
-  if (tooltipContent && useStandAlone) {
+  if (tooltipId && useStandAlone) {
     return tooltipJsxComponent
-  } else if (tooltipContent && !useStandAlone) {
+  } else if (tooltipId && !useStandAlone) {
     return (
       <span className={css.acenter} data-tooltip-id={tooltipId}>
         {labelText}
-        {tooltipJsxComponent}
+        {tooltipContent ? tooltipJsxComponent : null}
       </span>
     )
   }

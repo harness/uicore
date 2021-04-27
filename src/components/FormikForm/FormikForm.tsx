@@ -105,6 +105,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
     inline = formik?.inline,
     tagInputProps,
     onChange,
+    tooltipProps,
     ...rest
   } = restProps
 
@@ -112,7 +113,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
   return (
     <FormGroup
       labelFor={name}
-      label={labelText}
+      label={<HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} />}
       helperText={helperText}
       intent={intent}
       disabled={disabled}
@@ -302,12 +303,14 @@ const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
     inline = formik?.inline,
     label,
     render,
+    tooltipProps,
     ...rest
   } = restProps
 
+  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={<HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} />}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -345,11 +348,14 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
     onChange,
     inputProps,
     multiple = false,
+    tooltipProps,
     ...rest
   } = restProps
+
+  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={<HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} />}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -400,6 +406,7 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
     label,
     radioGroup,
     onChange,
+    tooltipProps,
     ...rest
   } = props
 
@@ -410,9 +417,10 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
       className: cx(cssRadio.radio, className)
     }
   })
+  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={<HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} />}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -493,14 +501,16 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
     placeholder,
     multiSelectProps,
     onChange,
+    tooltipProps,
     ...rest
   } = restProps
 
   const formikValue = get(formik?.values, name, [])
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={<HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} />}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -615,12 +625,14 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
     label,
     placeholder,
     onChange,
+    tooltipProps,
     ...rest
   } = restProps
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={<HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} />}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -730,14 +742,15 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
     label,
     textArea,
     onChange,
+    tooltipProps,
     ...rest
   } = restProps
 
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-
+  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={<HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} />}
       labelFor={name}
       helperText={helperText}
       intent={intent}

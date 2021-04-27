@@ -13,3 +13,25 @@
   margin-left: var(--spacing-xsmall);
   display: flex;
 }
+
+.tooltipWrapper {
+  margin: 0;
+
+  :global {
+    .bp3-popover-content {
+      padding: 0;
+      background: white;
+      color: black;
+    }
+  }
+}
+
+.tooltipContentWrapper {
+  margin: 0;
+  padding: 10px;
+  height: 100%;
+
+  p {
+    margin: 0 !important;
+  }
+}

@@ -1,0 +1,86 @@
+.editor {
+  position: absolute;
+  width: 800px;
+  top: 100px;
+  right: 20px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 4px 8px rgba(16, 22, 26, 0.2), 0 18px 46px 6px rgba(16, 22, 26, 0.2);
+  background: white;
+  padding: 20px;
+  z-index: 2147483647;
+}
+
+.tooltipContentWrapper {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.draggable {
+  cursor: move;
+  width: 490px;
+  font-weight: 600;
+}
+
+.labelRow {
+  align-items: center;
+  display: flex;
+}
+
+.searchInput {
+  width: 250px;
+  height: 32px;
+  padding-left: 8px;
+}
+
+.editorHeadingRow {
+  display: flex;
+  align-items: center;
+}
+
+.tooltipEditRow {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.tooltipIdLabelHeading {
+  font-weight: 500;
+  min-width: 200px;
+}
+
+.tooltipIdLabel {
+  font-weight: 500;
+  min-width: 200px;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold !important;
+  }
+}
+
+.emptyTooltipContent {
+  color: red;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold !important;
+  }
+}
+
+.editIcon {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.secondButton {
+  margin-left: 10px;
+}
