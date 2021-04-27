@@ -42,13 +42,21 @@
     }
 
     .error {
-      color: var(--red-500);
-      font-size: var(--font-size-small);
-      margin-top: var(--spacing-small);
+      font-weight: 400;
+      font-size: var(--font-size-xsmall);
+      line-height: 1.125rem;
+      color: var(--grey-300);
+      margin-top: 0;
     }
 
     & .errorIcon :global(.bp3-icon:first-child) {
       margin: 10px;
+      color: var(--primary-7);
+    }
+
+    & .errorTextIcon {
+      color: var(--primary-7);
+      margin: 0px 2px 2px;
     }
   }
 
