@@ -399,6 +399,8 @@ import ServiceMydatacenter from './service-mydatacenter.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
 import ServiceOgz from './service-ogz.svg'
+import ServiceOkta from './service-okta.svg'
+import ServiceOnelogin from './service-onelogin.svg'
 import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
@@ -864,6 +866,8 @@ type HarnessIconName =
   | 'service-newrelic'
   | 'service-nexus'
   | 'service-ogz'
+  | 'service-okta'
+  | 'service-onelogin'
   | 'service-pagerduty'
   | 'service-pivotal'
   | 'service-prometheus'
@@ -1329,6 +1333,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
   'service-ogz': ServiceOgz,
+  'service-okta': ServiceOkta,
+  'service-onelogin': ServiceOnelogin,
   'service-pagerduty': ServicePagerduty,
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
