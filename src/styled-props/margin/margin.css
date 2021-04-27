@@ -34,6 +34,22 @@
   &.margin$(prefix)$(direction)-huge {
     margin$(prefix)$(direction): var(--spacing-huge);
   }
+  /* form styles @2021-04-27 */
+  &.margin-form-section {
+    margin: var(--form-section-margin);
+  }
+  &.margin-form-panel {
+    margin: var(--form-panel-margin);
+  }
+  &.margin-form-subsection {
+    margin: var(--form-subsection-margin);
+  }
+  &.margin-form-panel-subsection {
+    margin: var(--form-panel-subsection-margin);
+  }
+  &.margin-form-action-buttons {
+    margin: var(--form-action-buttons-margin);
+  }
 }
 
 @define-mixin margin {

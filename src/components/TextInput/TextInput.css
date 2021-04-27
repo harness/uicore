@@ -1,20 +1,25 @@
 .main {
   display: flex;
   flex-flow: column;
+  margin-bottom: 12px;
 
   :global(.bp3-input) {
     display: block;
-    border: 1px solid var(--grey-400);
+    border: 1px solid var(--form-field-border);
     border-radius: 4px;
-    font-size: var(--font-size-normal);
+    font-size: var(--form-input-font-size);
     padding: var(--spacing-small);
     height: 32px;
-    color: var(--grey-800);
+    color: var(--black);
     box-shadow: none;
 
     &:focus {
+      /*
       color: var(--grey-800);
       border-color: var(--primary-7);
+      */
+      color: var(--black);
+      border-color: var(--primary-5);
       box-shadow: none;
     }
 
@@ -23,8 +28,8 @@
     &:-ms-input-placeholder,
     &:-moz-placeholder,
     &::placeholder {
-      color: var(--grey-100) !important;
-      opacity: 0.5;
+      color: var(--form-placeholder-text) !important;
+      /* opacity: 0.5; */
     }
 
     &:disabled {

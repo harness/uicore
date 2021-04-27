@@ -562,4 +562,15 @@
   &.color-lime50 {
     color: var(--lime-50);
   }
+
+  /* form style  @2021-04-27 */
+  &.color-error {
+    color: var(--error);
+  }
+  &.color-warning {
+    color: var(--warning);
+  }
+  &.color-success {
+    color: var(--success);
+  }
 }

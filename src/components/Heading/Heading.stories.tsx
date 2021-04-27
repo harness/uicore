@@ -114,6 +114,12 @@ export const Block: Story<HeadingProps> = args => {
       <Heading level={4} {...args}>
         The quick brown fox jumps over the lazy dog
       </Heading>
+      <Heading level={5} color="black" {...args}>
+        The quick brown fox jumps over the lazy dog
+      </Heading>
+      <Heading level={6} color="black" {...args}>
+        The quick brown fox jumps over the lazy dog
+      </Heading>
     </>
   )
 }

@@ -4,14 +4,14 @@
   }
 
   &.intent-success {
-    --intent-color: var(--green-500);
+    --intent-color: var(--green-600);
   }
 
   &.intent-warning {
-    --intent-color: var(--yellow-500);
+    --intent-color: var(--orange-600);
   }
 
   &.intent-danger {
-    --intent-color: var(--red-500);
+    --intent-color: var(--red-600);
   }
 }

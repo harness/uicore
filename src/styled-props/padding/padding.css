@@ -34,6 +34,22 @@
   &.padding$(prefix)$(direction)-huge {
     padding$(prefix)$(direction): var(--spacing-huge);
   }
+  /* form styles @2021-04-27 */
+  &.padding-dialog {
+    padding: var(--dialog-padding);
+  }
+  &.padding-form {
+    padding: var(--form-padding);
+  }
+  &.padding-form-section {
+    padding: var(--form-section-padding);
+  }
+  &.padding-form-panel {
+    padding: var(--form-panel-padding);
+  }
+  &.padding-form-subsection {
+    padding: var(--form-subsection-padding);
+  }
 }
 
 @define-mixin padding {
