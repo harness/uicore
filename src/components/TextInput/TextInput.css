@@ -14,7 +14,7 @@
 
     &:focus {
       color: var(--grey-800);
-      border-color: var(--blue-500);
+      border-color: var(--primary-7);
       box-shadow: none;
     }
 
