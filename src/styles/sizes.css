@@ -68,6 +68,26 @@
   --button-hover-shadow-dark: 0px 3px 8px 4px rgb(0 0 0 / 30%);
   --nav-button-hover-shadow: var(--elevation-2);
 
+  /* ====== form spacing @2021-04-27 ====== */
+  /* page > section > subsection 
+  or page > panel > subsection */
+  --dialog-padding: 36px 48px 48px 48px;
+  --form-padding: 32px 48px 96px 32px;
+  --form-section-padding: 0; /* 20px 24px; */
+  --form-panel-padding: 0; /* 20px 24px; */
+  --form-subsection-padding: 20px 24px; /* 16px 0 0 0; padding-top for both page section and panel section */
+  --form-section-margin: 8px 0 24px 0;
+  --form-panel-margin: 8px 0 24px 0;
+  --form-subsection-margin: 8px 0 0 0;
+  --form-panel-subsection-margin: 20px 0 0 0;
+  --form-field-margin: 0 12px 12px 0;
+  --form-action-buttons-margin: 8px 0 0 0; /* 24 + 8 = 32px */
+  --form-label-margin: 0 0 4px 0;
+  --form-message-margin: 8px 0 0 0;
+  --form-input-padding: 8px;
+  --form-icon-spacing: 4px;
+  --form-input-font-size: 13px;
+
   /* =========== Style Variable Aliases end =========== */
 
   /* ==============================

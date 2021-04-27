@@ -114,6 +114,14 @@ export const Color = {
   BLACK: 'black',
   BLACK_100: 'black100',
   WHITE: 'white',
+  // Form styles
+  FORM_BG: 'form',
+  FORM_SECTION_BG: 'formSection',
+  FORM_PANEL_BG: 'formPanel',
+  FORM_SUBSECTION_BG: 'formSubSection',
+  ERROR: 'error',
+  WARNING: 'warning',
+  SUCCESS: 'success',
   // Extra
   GREY_450: 'grey450',
   GREY_350: 'grey350',
