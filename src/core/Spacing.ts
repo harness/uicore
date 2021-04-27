@@ -10,4 +10,24 @@
 //   HUGE= 'huge'
 // }
 
-export type Spacing = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge' | 'huge'
+export type Spacing =
+  | 'none'
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge'
+  | 'xxxlarge'
+  | 'huge'
+  // form styles @2021-04-27
+  // for paddings only
+  | 'dialog'
+  | 'form'
+  // for paddings & margins
+  | 'form-section'
+  | 'form-panel'
+  | 'form-subsection'
+  // for margins only
+  | 'form-panel-subsection'
+  | 'form-action-buttons'
