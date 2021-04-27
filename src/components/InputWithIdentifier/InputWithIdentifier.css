@@ -12,6 +12,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--blue-600);
+    color: var(--primary-7);
   }
 }
