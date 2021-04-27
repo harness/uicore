@@ -51,9 +51,9 @@
 
   /* disabled: F, checked: T */
   input:not(:disabled):checked ~ span[class*='bp3-control-indicator'] {
-    --oval-background: var(--blue-500);
-    --oval-border: var(--blue-500);
-    --circle-border: var(--blue-600);
+    --oval-background: var(--primary-7);
+    --oval-border: var(--primary-7);
+    --circle-border: var(--primary-8);
     @mixin switch-styles;
   }
 
@@ -67,9 +67,9 @@
 
   /* disabled: F, checked: T, active: T */
   input:not(:disabled):checked:active ~ span[class*='bp3-control-indicator'] {
-    --oval-background: var(--blue-500);
-    --oval-border: var(--blue-700);
-    --circle-border: var(--blue-700);
+    --oval-background: var(--primary-8);
+    --oval-border: var(--primary-8);
+    --circle-border: var(--primary-9);
     @mixin switch-styles;
   }
 
@@ -77,7 +77,6 @@
 
   /* disabled: T, checked: F */
   input:disabled:not(:checked) ~ span[class*='bp3-control-indicator'] {
-    opacity: 0.5;
     --oval-background: var(--grey-200);
     --oval-border: var(--grey-400);
     --circle-border: var(--grey-400);
@@ -86,10 +85,9 @@
 
   /* disabled: T, checked: T */
   input:disabled:checked ~ span[class*='bp3-control-indicator'] {
-    opacity: 0.5;
-    --oval-background: var(--blue-500);
-    --oval-border: var(--blue-500);
-    --circle-border: var(--blue-600);
+    --oval-background: var(--grey-400);
+    --oval-border: var(--grey-400);
+    --circle-border: var(--grey-400);
     @mixin switch-styles;
   }
 }

@@ -1,5 +1,8 @@
 .main {
   display: block;
-  color: var(--grey-500);
-  font-size: var(--font-size-small);
+  font-weight: 400;
+  font-size: var(--font-size-xsmall);
+  line-height: 1rem;
+  letter-spacing: 0.2px;
+  color: var(--gray-300);
 }
