@@ -74,7 +74,7 @@
   }
 
   &.FIXED {
-    color: var(--blue-500);
+    color: var(--primary-7);
   }
 
   &.RUNTIME {
@@ -111,7 +111,7 @@
     }
 
     &.FIXED {
-      color: var(--blue-500);
+      color: var(--primary-7);
     }
 
     &.RUNTIME {
@@ -124,7 +124,7 @@
   }
 
   &:hover {
-    background-color: var(--blue-500);
+    background-color: var(--primary-7);
     color: var(--white);
 
     & .menuItemLabel {
