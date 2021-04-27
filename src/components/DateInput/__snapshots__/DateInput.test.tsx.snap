@@ -213,7 +213,20 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
       <div
         class="error"
       >
-        Not a valid Date Expression
+        <span
+          class="bp3-icon main errorTextIcon"
+          data-icon="info"
+        >
+          <svg
+            height="10"
+            width="10"
+          />
+        </span>
+        <span
+          class="error"
+        >
+          Not a valid Date Expression
+        </span>
       </div>
     </div>
     <div

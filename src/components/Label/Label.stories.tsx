@@ -37,7 +37,7 @@ export default {
 } as Meta
 export const Basic: Story<LabelProps> = args => {
   return (
-    <Layout.Vertical spacing="small">
+    <Layout.Vertical>
       <Label {...args}>My Label</Label>
       <TextInput defaultValue="" placeholder="Placeholder text" />
     </Layout.Vertical>
