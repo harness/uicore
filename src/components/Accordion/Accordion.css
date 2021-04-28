@@ -67,12 +67,12 @@
   &[data-open='true'] {
     & > .summary {
       &::before {
-        background-color: var(--blue-500);
+        background-color: var(--primary-7);
       }
 
       :global(.bp3-icon[icon='chevron-down']) {
         transform: rotate(180deg);
-        color: var(--blue-500);
+        color: var(--primary-7);
       }
 
       & > .chevron {
