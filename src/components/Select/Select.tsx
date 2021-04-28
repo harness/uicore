@@ -113,10 +113,10 @@ export function Select(props: SelectProps): React.ReactElement {
     if (item.value === Loading) {
       return
     }
+    setItem(item?.value ? item : null)
     if (typeof onChange === 'function') {
       onChange(item)
     } else {
-      setItem(item)
       if (props.addClearBtn && item?.value) {
         setShowClearBtn(true)
       } else {
