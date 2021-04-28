@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.142](https://github.com/wings-software/uicore/compare/v0.1.141...v0.1.142) (2021-04-28)
+
+
+### Features
+
+* [CDNG-7341]: added harness icon with changable color ([#178](https://github.com/wings-software/uicore/issues/178)) ([b14abb0](https://github.com/wings-software/uicore/commit/b14abb0239b597b57efb89a6f5d1725bfebb47de))
+
 ### [0.1.141](https://github.com/wings-software/uicore/compare/v0.1.140...v0.1.141) (2021-04-28)
 
 
