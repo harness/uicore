@@ -306,6 +306,7 @@ import NavUserProfile from './nav-user-profile.svg'
 import NewDecoration from './new-decoration.svg'
 import NgFilter from './ng-filter.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
+import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
@@ -433,6 +434,9 @@ import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
 import SwapServices from './swap-services.svg'
+import SyncFailed from './sync-failed.svg'
+import Synced from './synced.svg'
+import Syncing from './syncing.svg'
 import TemplateLibrary from './template-library.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
@@ -766,6 +770,7 @@ type HarnessIconName =
   | 'new-decoration'
   | 'ng-filter'
   | 'no-feedback-given'
+  | 'not-synced'
   | 'notification'
   | 'openshift-params'
   | 'openshift'
@@ -893,6 +898,9 @@ type HarnessIconName =
   | 'support-verification'
   | 'support-videos'
   | 'swap-services'
+  | 'sync-failed'
+  | 'synced'
+  | 'syncing'
   | 'template-library'
   | 'terraform-apply-new'
   | 'terraform-apply'
@@ -1226,6 +1234,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'new-decoration': NewDecoration,
   'ng-filter': NgFilter,
   'no-feedback-given': NoFeedbackGiven,
+  'not-synced': NotSynced,
   notification: Notification,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
@@ -1353,6 +1362,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
   'swap-services': SwapServices,
+  'sync-failed': SyncFailed,
+  synced: Synced,
+  syncing: Syncing,
   'template-library': TemplateLibrary,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
