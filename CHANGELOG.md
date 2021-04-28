@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.141](https://github.com/wings-software/uicore/compare/v0.1.140...v0.1.141) (2021-04-28)
+
+
+### Others
+
+* [CDNG-7257]: Adding animation to syncing icon ([#184](https://github.com/wings-software/uicore/issues/184)) ([6b40514](https://github.com/wings-software/uicore/commit/6b40514a708fca7d73a2826977e59580fbeedcbd))
+
 ### [0.1.140](https://github.com/wings-software/uicore/compare/v0.1.139...v0.1.140) (2021-04-28)
 
 
