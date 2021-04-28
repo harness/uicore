@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.140](https://github.com/wings-software/uicore/compare/v0.1.139...v0.1.140) (2021-04-28)
+
+
+### Features
+
+* [CDNG-7257]: Sync status icons ([#179](https://github.com/wings-software/uicore/issues/179)) ([357a3bb](https://github.com/wings-software/uicore/commit/357a3bbc43671db05430a6213662a196d5ada82b))
+
 ### [0.1.139](https://github.com/wings-software/uicore/compare/v0.1.138...v0.1.139) (2021-04-26)
 
 
