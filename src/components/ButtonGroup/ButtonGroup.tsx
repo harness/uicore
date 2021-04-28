@@ -2,10 +2,16 @@ import React, { useMemo, useState } from 'react'
 import { Container } from '../Container/Container'
 import { Intent } from '../../core/Intent'
 import css from './ButtonGroup.css'
+import cx from 'classnames'
 import { Button, ButtonProps } from '../Button/Button'
 
-export const ButtonGroup: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
-  return <Container className={css.btnGroup}>{children}</Container>
+export interface ButtonGroupProps {
+  children: React.ReactNode
+  className?: string
+}
+
+export const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, className }) => {
+  return <Container className={cx(css.btnGroup, className)}>{children}</Container>
 }
 
 export interface OptionButtonProps extends ButtonProps {
