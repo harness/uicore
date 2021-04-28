@@ -75,6 +75,6 @@
   }
 
   .details {
-    padding: var(--spacing-xlarge) var(--spacing-medium);
+    padding: var(--spacing-xlarge) 0;
   }
 }
