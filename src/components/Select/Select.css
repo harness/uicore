@@ -35,7 +35,7 @@
 
   :global(.bp3-popover-open .bp3-input) {
     color: var(--grey-800);
-    border-color: var(--blue-500);
+    border-color: var(--primary-7);
     box-shadow: none;
     border-radius: 4px 4px 0 0;
   }
