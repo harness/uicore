@@ -28,7 +28,7 @@
       .bp3-file-upload-input,
       .ColorPicker--picker {
         box-shadow: none !important;
-        border: 1px solid var(--bp3-intent-color, #dddddd) !important;
+        border: 1px solid var(--bp3-intent-color, var(--form-field-border)) !important;
       }
     }
 
@@ -40,12 +40,20 @@
     .bp3-input {
       height: 32px;
       border-radius: 5px;
+
+      &:focus {
+        --bp3-intent-color: var(--primary-5);
+      }
     }
     .bp3-input.bp3-tag-input {
-      height: unset;
+      height: 32px;
+
+      &.bp3-active {
+        --bp3-intent-color: var(--primary-5);
+      }
 
       .bp3-tag-input-values {
-        margin: 4px 7px 2px 1px !important;
+        margin: 1px 7px 2px 1px !important;
       }
     }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
 import { get } from 'lodash-es'
+import cx from 'classnames'
 
 import { FormInput, TextProps } from '../FormikForm/FormikForm'
 import { Text } from '../Text/Text'
@@ -8,6 +9,7 @@ import { Icon } from '../../icons/Icon'
 import { Layout } from '../../layouts/Layout'
 import { Container } from '../Container/Container'
 
+import textCss from '../TextInput/TextInput.css'
 import css from './InputWithIdentifier.css'
 
 export interface InputWithIdentifierProps {
@@ -64,7 +66,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
   const identifier = get(formik.values, idName) as string
   const [currentEditField, setCurrentEditField] = useState(inputLabel)
   return (
-    <div className={css.txtNameContainer}>
+    <div className={cx(css.txtNameContainer, textCss.main)}>
       <Layout.Horizontal className={css.txtIdContainer} spacing="xsmall">
         <Text>{idLabel}:</Text>
         <Popover
