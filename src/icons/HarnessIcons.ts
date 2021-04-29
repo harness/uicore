@@ -157,6 +157,7 @@ import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import Harness from './harness.svg'
+import HarnessWithColor from './harness-with-color.svg'
 import Hashicorpvault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import Help from './help.svg'
@@ -307,6 +308,7 @@ import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
+import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
@@ -434,6 +436,9 @@ import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
 import SwapServices from './swap-services.svg'
+import SyncFailed from './sync-failed.svg'
+import Synced from './synced.svg'
+import Syncing from './syncing.svg'
 import TemplateLibrary from './template-library.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
@@ -618,6 +623,7 @@ type HarnessIconName =
   | 'harness-logo-black'
   | 'harness-logo-white'
   | 'harness'
+  | 'harness-with-color'
   | 'hashiCorpVault'
   | 'health'
   | 'help'
@@ -768,6 +774,7 @@ type HarnessIconName =
   | 'new-notification'
   | 'ng-filter'
   | 'no-feedback-given'
+  | 'not-synced'
   | 'notification'
   | 'openshift-params'
   | 'openshift'
@@ -895,6 +902,9 @@ type HarnessIconName =
   | 'support-verification'
   | 'support-videos'
   | 'swap-services'
+  | 'sync-failed'
+  | 'synced'
+  | 'syncing'
   | 'template-library'
   | 'terraform-apply-new'
   | 'terraform-apply'
@@ -1079,6 +1089,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
   harness: Harness,
+  'harness-with-color': HarnessWithColor,
   hashiCorpVault: Hashicorpvault,
   health: Health,
   help: Help,
@@ -1229,6 +1240,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
   'no-feedback-given': NoFeedbackGiven,
+  'not-synced': NotSynced,
   notification: Notification,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
@@ -1356,6 +1368,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
   'swap-services': SwapServices,
+  'sync-failed': SyncFailed,
+  synced: Synced,
+  syncing: Syncing,
   'template-library': TemplateLibrary,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
