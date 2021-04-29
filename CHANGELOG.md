@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.143](https://github.com/wings-software/uicore/compare/v0.1.142...v0.1.143) (2021-04-29)
+
+
+### Features
+
+* okta-and-onelogin-icons-added ([#175](https://github.com/wings-software/uicore/issues/175)) ([a8c3688](https://github.com/wings-software/uicore/commit/a8c36886e962dc50633d429f59b9aac235e12aa2))
+
 ### [0.1.142](https://github.com/wings-software/uicore/compare/v0.1.141...v0.1.142) (2021-04-28)
 
 
