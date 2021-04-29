@@ -156,8 +156,8 @@ import Google from './google.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
-import Harness from './harness.svg'
 import HarnessWithColor from './harness-with-color.svg'
+import Harness from './harness.svg'
 import Hashicorpvault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import Help from './help.svg'
@@ -623,8 +623,8 @@ type HarnessIconName =
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white'
-  | 'harness'
   | 'harness-with-color'
+  | 'harness'
   | 'hashiCorpVault'
   | 'health'
   | 'help'
@@ -1090,8 +1090,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
-  harness: Harness,
   'harness-with-color': HarnessWithColor,
+  harness: Harness,
   hashiCorpVault: Hashicorpvault,
   health: Health,
   help: Help,
