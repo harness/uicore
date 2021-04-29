@@ -44,6 +44,7 @@ export const names = {
   '--blue-300': '#97a7ff',
   '--blue-200': '#b1beff',
   '--blue-100': '#dae0ff',
+  '--blue-50': '#f4f6ff',
   '--yellow-900': '#fcb519',
   '--yellow-800': '#fcc026',
   '--yellow-700': '#fcc62d',

@@ -127,6 +127,10 @@
     color: var(--blue-100);
   }
 
+  &.color-blue50 {
+    color: var(--blue-50);
+  }
+
   &.color-red900 {
     color: var(--red-900);
   }
