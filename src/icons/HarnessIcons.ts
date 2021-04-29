@@ -156,8 +156,8 @@ import Google from './google.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
-import Harness from './harness.svg'
 import HarnessWithColor from './harness-with-color.svg'
+import Harness from './harness.svg'
 import Hashicorpvault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import Help from './help.svg'
@@ -399,6 +399,8 @@ import ServiceMydatacenter from './service-mydatacenter.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
 import ServiceOgz from './service-ogz.svg'
+import ServiceOkta from './service-okta.svg'
+import ServiceOnelogin from './service-onelogin.svg'
 import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
@@ -621,8 +623,8 @@ type HarnessIconName =
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white'
-  | 'harness'
   | 'harness-with-color'
+  | 'harness'
   | 'hashiCorpVault'
   | 'health'
   | 'help'
@@ -864,6 +866,8 @@ type HarnessIconName =
   | 'service-newrelic'
   | 'service-nexus'
   | 'service-ogz'
+  | 'service-okta'
+  | 'service-onelogin'
   | 'service-pagerduty'
   | 'service-pivotal'
   | 'service-prometheus'
@@ -1086,8 +1090,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white': HarnessLogoWhite,
-  harness: Harness,
   'harness-with-color': HarnessWithColor,
+  harness: Harness,
   hashiCorpVault: Hashicorpvault,
   health: Health,
   help: Help,
@@ -1329,6 +1333,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
   'service-ogz': ServiceOgz,
+  'service-okta': ServiceOkta,
+  'service-onelogin': ServiceOnelogin,
   'service-pagerduty': ServicePagerduty,
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
