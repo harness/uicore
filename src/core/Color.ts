@@ -40,6 +40,7 @@ export const Color = {
   BLUE_300: 'blue300',
   BLUE_200: 'blue200',
   BLUE_100: 'blue100',
+  BLUE_50: 'blue50',
   YELLOW_900: 'yellow900',
   YELLOW_800: 'yellow800',
   YELLOW_700: 'yellow700',

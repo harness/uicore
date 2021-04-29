@@ -95,6 +95,10 @@
     background: var(--blue-100);
   }
 
+  &.background-blue50 {
+    background: var(--blue-50);
+  }
+
   &.background-red800 {
     background: var(--red-800);
   }

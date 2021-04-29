@@ -126,6 +126,10 @@
     border-color: var(--blue-100);
   }
 
+  &.border-color-blue50 {
+    border-color: var(--blue-50);
+  }
+
   &.border-color-red800 {
     border-color: var(--red-800);
   }
