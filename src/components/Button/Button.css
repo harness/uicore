@@ -88,10 +88,12 @@
 
     &[class*='minimal'] {
       background-color: transparent;
+      border: none;
       box-shadow: none;
       color: var(--primary-7);
       &:hover {
         background-color: transparent;
+        box-shadow: var(--button-shadow);
       }
 
       &:not(.without-shadow) {
@@ -126,6 +128,7 @@
 
       &[class*='minimal'] {
         border: none;
+        box-shadow: none;
         color: var(--primary-7);
         background: none;
       }
