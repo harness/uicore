@@ -44,6 +44,7 @@ export const HarnessDocTooltip = ({
       popoverClassName={css.tooltipWrapper}
       position={Position.RIGHT}
       interactionKind={PopoverInteractionKind.HOVER}
+      // eslint-disable-next-line
       content={<div className={css.tooltipContentWrapper} dangerouslySetInnerHTML={{ __html: tooltipContentHtml }} />}>
       <span className={css.tooltipIcon}>
         <Icon iconSize={12} icon="help" />
