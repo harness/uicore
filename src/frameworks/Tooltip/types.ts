@@ -15,3 +15,13 @@ export interface TooltipRenderProps {
   labelText?: ReactNode | null
   useStandAlone?: boolean
 }
+
+export interface TooltipContextValue {
+  tooltipDictionary: Record<string, string>
+  getTooltip?(key: string, vars?: Record<string, any>): string
+}
+
+export interface TooltipContextProviderProps extends Pick<TooltipContextValue, 'getTooltip'> {
+  children: React.ReactNode
+  initialTooltipDictionary?: Record<string, string>
+}

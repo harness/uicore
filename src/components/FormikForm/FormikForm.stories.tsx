@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import type { Meta, Story } from '@storybook/react'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
@@ -8,21 +7,19 @@ import { Formik, FormikForm, FormInput } from '../FormikForm/FormikForm'
 import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { FormikFormProps } from 'formik'
-import { TooltipEditor } from '../../frameworks/Tooltip/TooltipEditor'
-import css from '../../frameworks/Tooltip/TooltipEditor.css'
 
 export default {
   title: 'Form / FormikForm',
   component: FormikForm
 } as Meta
 
-const openNgTooltipEditor = () => {
-  const container = document.createElement('div')
-  container.className = css.editor
-  container.id = 'ngTooltipEditor'
-  document.body.appendChild(container)
-  ReactDOM.render(<TooltipEditor />, container)
-}
+// const openNgTooltipEditor = () => {
+//   const container = document.createElement('div')
+//   container.className = css.editor
+//   container.id = 'ngTooltipEditor'
+//   document.body.appendChild(container)
+//   ReactDOM.render(<TooltipEditor />, container)
+// }
 
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
@@ -51,7 +48,6 @@ export const Basic: Story<FormikFormProps> = () => (
       {() => {
         return (
           <FormikForm>
-            <button onClick={() => openNgTooltipEditor()}>Tooltip Editor</button>
             <FormInput.Text
               name="name"
               label="Name"

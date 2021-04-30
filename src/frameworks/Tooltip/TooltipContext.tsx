@@ -1,16 +1,19 @@
 import React from 'react'
+import { TooltipContextProviderProps, TooltipContextValue } from './types'
 
-export const tooltipDictionary: Record<string, string> = {
-  tagInputId: '**Sample tag input tooltip**',
-  idforexpressioninput: "Here's an [**important** anchor link](#example)"
+export const TooltipContext = React.createContext<TooltipContextValue>({ tooltipDictionary: {} })
+
+export function TooltipContextProvider(props: TooltipContextProviderProps): React.ReactElement {
+  return (
+    <TooltipContext.Provider
+      value={{
+        tooltipDictionary: props.initialTooltipDictionary || {},
+        getTooltip: props.getTooltip
+      }}>
+      {props.children}
+    </TooltipContext.Provider>
+  )
 }
-
-export interface TooltipContextValue {
-  tooltipDictionary: Record<string, string>
-  getTooltip?(key: string, vars?: Record<string, any>): string
-}
-
-export const TooltipContext = React.createContext<TooltipContextValue>({ tooltipDictionary })
 
 export function useTooltipContext(): TooltipContextValue {
   return React.useContext(TooltipContext)
