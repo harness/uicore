@@ -1,4 +1,4 @@
-import { AnchorButton, Button as BButton, IButtonProps, Intent } from '@blueprintjs/core'
+import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
 import { Assign } from 'utility-types'
