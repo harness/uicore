@@ -1,4 +1,4 @@
-import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
+import { AnchorButton, Button as BButton, IButtonProps, Intent } from '@blueprintjs/core'
 import cx from 'classnames'
 import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
 import { Assign } from 'utility-types'
@@ -115,7 +115,7 @@ export function Button(props: ButtonProps): React.ReactElement {
         [css.round]: round,
         [css.iconOnly]: !props.text && !props.intent && !props.href,
         [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,
-        [css['without-shadow']]: props.withoutBoxShadow
+        [css['without-shadow']]: props.withoutBoxShadow || props.minimal
       })}
     />
   )
