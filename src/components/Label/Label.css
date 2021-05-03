@@ -1,5 +1,16 @@
 .main {
   display: block;
-  color: var(--grey-500);
-  font-size: var(--font-size-small);
+  /*
+  font-weight: 400;
+  font-size: var(--font-size-xsmall);
+  line-height: 1rem;
+  letter-spacing: 0.2px;
+  color: var(--gray-300);
+  */
+  color: var(--form-label);
+  margin: var(--form-label-margin);
+  letter-spacing: 0.2px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
 }

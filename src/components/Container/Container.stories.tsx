@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Container, Text, Button, Link, Layout } from '../..'
+import { Container, Heading, Text, Button, Link, Layout, Label, TextInput } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { ContainerProps } from '../Container/Container'
 
@@ -112,6 +112,97 @@ export const OutlineColors: Story<ContainerProps> = args => {
         <Container border={{ color: 'purple' }} {...args}></Container>
       </Layout.Horizontal>
     </Layout.Vertical>
+  )
+}
+
+export const FormContainers: Story<ContainerProps> = args => {
+  return (
+    <>
+      <Container
+        id="sample-container-form"
+        padding="form"
+        background="form"
+        // flex
+        border={{
+          color: 'grey500'
+        }}
+        {...args}>
+        <Heading level={5} color="black">
+          Section Header
+        </Heading>
+        <Container
+          id="sample-container-form"
+          padding="form-section"
+          margin="form-section"
+          background="form-section"
+          // flex
+          {...args}>
+          <Container
+            id="sample-container-form"
+            padding="form-subsection"
+            margin="form-subsection"
+            background="form-subsection"
+            // flex
+            {...args}>
+            <Heading level={6} color="black">
+              Sub-Section Header
+            </Heading>
+            <Label>My Label</Label>
+            <TextInput placeholder="Placeholder text" />
+          </Container>
+
+          <Container
+            id="sample-container-form"
+            padding="form-subsection"
+            margin="form-subsection"
+            background="form-subsection"
+            // flex
+            {...args}>
+            <Heading level={6} color="black">
+              Sub-Section Header
+            </Heading>
+            <Label>My Label</Label>
+            <TextInput placeholder="Placeholder text" />
+          </Container>
+        </Container>
+        <Heading level={5} color="black">
+          Section Header
+        </Heading>
+        <Container
+          id="sample-container-form"
+          padding="form-section"
+          margin="form-section"
+          background="form-section"
+          // flex
+          {...args}>
+          <Container
+            id="sample-container-form"
+            padding="form-subsection"
+            margin="form-subsection"
+            background="form-subsection"
+            // flex
+            {...args}>
+            <Heading level={6} color="black">
+              Sub-Section Header
+            </Heading>
+
+            <Label>My Label</Label>
+            <TextInput placeholder="Placeholder text" />
+            <Label>My Label</Label>
+            <TextInput placeholder="Placeholder text" />
+          </Container>
+        </Container>
+        <Container
+          id="sample-container-form"
+          // padding="form-subsection"
+          margin="form-action-buttons"
+          // background="form-subsection"
+          // flex
+          {...args}>
+          <Button intent="primary">Submit</Button>
+        </Container>
+      </Container>
+    </>
   )
 }
 OutlineColors.args = { width: 100, height: 100 }

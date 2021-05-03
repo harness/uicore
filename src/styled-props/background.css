@@ -95,6 +95,10 @@
     background: var(--blue-100);
   }
 
+  &.background-blue50 {
+    background: var(--blue-50);
+  }
+
   &.background-red800 {
     background: var(--red-800);
   }
@@ -337,5 +341,19 @@
 
   &.background-blue900 {
     background: var(--blue-900);
+  }
+
+  /* form style  @2021-04-27 */
+  &.background-form {
+    background: var(--form-bg);
+  }
+  &.background-form-section {
+    background: var(--form-section-bg);
+  }
+  &.background-form-panel {
+    background: var(--form-panel-bg);
+  }
+  &.background-form-subsection {
+    background: var(--form-subsection-bg);
   }
 }

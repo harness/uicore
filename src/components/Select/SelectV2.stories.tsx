@@ -81,10 +81,16 @@ export const SimpleSelect: Story<SelectV2Props> = args => {
         <Button
           intent="primary"
           minimal
-          style={{ border: '1px solid var(--grey-400)', width: '100%', display: 'block' }}
+          style={{
+            border: '1px solid var(--form-field-border)',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between'
+          }}
           icon={val && val.icon && val.icon.name}
           rightIcon="chevron-down"
           text={val ? val.label : 'Search...'}
+          withoutBoxShadow
         />
       </SelectV2>
     </Layout.Horizontal>

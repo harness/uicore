@@ -1,5 +1,6 @@
 .input {
   flex: 1 1 auto;
+  position: relative;
 }
 
 .main {
@@ -8,17 +9,16 @@
   input[type='text'],
   :global(.bp3-input) {
     box-shadow: none;
-    border: 1px solid var(--bp3-intent-color, var(--grey-250));
+    border: 1px solid var(--bp3-intent-color, var(--form-field-border));
     padding-right: 35px;
     height: 32px;
 
     &:focus {
-      border-color: var(--blue-500);
+      border-color: var(--primary-7);
     }
 
     &[disabled],
     &:global(.bp3-disabled) {
-      border-color: var(--grey-300);
       background-color: var(--grey-100);
     }
   }
@@ -42,20 +42,21 @@
 
 .btn {
   all: unset;
-  background: var(--grey-250);
+  background: var(--form-field-border);
   padding-left: 3px;
   width: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0 2px 2px 0;
-  border: 1px solid var(--bp3-intent-color, var(--grey-250));
+  border: 1px solid var(--bp3-intent-color, var(--form-field-border));
   border-left: none;
   cursor: pointer;
   position: absolute;
   top: 1px;
   right: 1px;
   bottom: 1px;
+  height: 28px;
 
   &::before {
     content: '';
@@ -63,7 +64,7 @@
     height: calc(100% + 0px);
     width: 10px;
     transform: translateX(-18px);
-    border-right: 1px solid var(--bp3-intent-color, var(--grey-250));
+    border-right: 1px solid var(--bp3-intent-color, var(--form-field-border));
     background: var(--white);
     border-radius: 4px;
     position: absolute;
@@ -74,7 +75,7 @@
   }
 
   &.FIXED {
-    color: var(--blue-500);
+    color: var(--primary-7);
   }
 
   &.RUNTIME {
@@ -111,7 +112,7 @@
     }
 
     &.FIXED {
-      color: var(--blue-500);
+      color: var(--primary-7);
     }
 
     &.RUNTIME {
@@ -119,12 +120,12 @@
     }
 
     &.EXPRESSION {
-      color: var(--yellow-500);
+      color: var(--orange-500);
     }
   }
 
   &:hover {
-    background-color: var(--blue-500);
+    background-color: var(--primary-7);
     color: var(--white);
 
     & .menuItemLabel {

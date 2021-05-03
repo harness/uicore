@@ -24,7 +24,7 @@ export interface SelectV2Props
   allowCreatingNewItems?: boolean
 }
 
-export function SelectV2(props: SelectV2Props) {
+export function SelectV2(props: SelectV2Props): React.ReactElement {
   const { onChange, ...rest } = props
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])

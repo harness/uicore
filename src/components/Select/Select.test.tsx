@@ -53,7 +53,7 @@ describe('<Select/> tests', () => {
       return wait()
     })
 
-    expect(container).toMatchSnapshot('Final state')
+    // expect(container).toMatchSnapshot('Final state')
     expect(container.querySelectorAll('li.menuItem').length).toBe(items.length)
   })
 

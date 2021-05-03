@@ -3,7 +3,7 @@
 
   :global(.bp3-input) {
     display: block;
-    border: 1px solid var(--grey-400);
+    border: 1px solid var(--form-field-border);
     border-radius: 4px;
     font-size: var(--font-size-normal);
     padding: var(--spacing-small);
@@ -35,7 +35,7 @@
 
   :global(.bp3-popover-open .bp3-input) {
     color: var(--grey-800);
-    border-color: var(--blue-500);
+    border-color: var(--primary-7);
     box-shadow: none;
     border-radius: 4px 4px 0 0;
   }
@@ -78,7 +78,7 @@
     }
 
     &.active {
-      background: var(--blue-500);
+      background: var(--primary-7);
       color: var(--white);
     }
 

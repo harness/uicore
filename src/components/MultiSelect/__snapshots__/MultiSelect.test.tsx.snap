@@ -215,7 +215,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                   Charizard
                 </li>
                 <button
-                  class="bp3-button bp3-minimal font button with-current-color main intent intent-primary"
+                  class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
                   type="button"
                 >
                   <span

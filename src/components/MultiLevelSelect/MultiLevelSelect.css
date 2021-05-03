@@ -16,7 +16,7 @@
   display: block;
 }
 .active {
-  box-shadow: 0px 0px 0px 1px var(--blue-500);
+  box-shadow: 0px 0px 0px 1px var(--primary-7);
 }
 .inactive {
   box-shadow: none;

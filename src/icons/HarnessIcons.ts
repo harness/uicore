@@ -305,6 +305,7 @@ import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
 import NewDecoration from './new-decoration.svg'
+import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NotSynced from './not-synced.svg'
@@ -342,6 +343,7 @@ import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
+import RightBarNotification from './right-bar-notification.svg'
 import RollbackExecution from './rollback-execution.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -772,6 +774,7 @@ type HarnessIconName =
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
   | 'new-decoration'
+  | 'new-notification'
   | 'ng-filter'
   | 'no-feedback-given'
   | 'not-synced'
@@ -809,6 +812,7 @@ type HarnessIconName =
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
   | 'restore-cache-step'
+  | 'right-bar-notification'
   | 'rollback-execution'
   | 'rolling'
   | 'run-pipeline'
@@ -1239,6 +1243,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
   'new-decoration': NewDecoration,
+  'new-notification': NewNotification,
   'ng-filter': NgFilter,
   'no-feedback-given': NoFeedbackGiven,
   'not-synced': NotSynced,
@@ -1276,6 +1281,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS,
   'restore-cache-step': RestoreCacheStep,
+  'right-bar-notification': RightBarNotification,
   'rollback-execution': RollbackExecution,
   rolling: Rolling,
   'run-pipeline': RunPipeline,

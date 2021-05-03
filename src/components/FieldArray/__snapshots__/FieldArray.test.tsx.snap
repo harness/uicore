@@ -15,7 +15,7 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal font button with-current-color main intent intent-primary"
+          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
           data-id="btn-add"
           type="button"
         >
@@ -71,7 +71,7 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >
@@ -98,7 +98,7 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >
@@ -145,7 +145,7 @@ exports[`<FieldArray /> tests render placeholder when no initial value given 1`]
           This is a no data/add data message.
         </div>
         <button
-          class="bp3-button font button with-current-color main intent intent-primary"
+          class="bp3-button button font main intent intent-primary with-current-color"
           data-id="btn-add-no-data"
           type="button"
         >
@@ -195,7 +195,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] =
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal font button with-current-color main intent intent-primary"
+          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
           data-id="btn-add"
           type="button"
         >
@@ -251,7 +251,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] =
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >
@@ -289,7 +289,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal font button with-current-color main intent intent-primary"
+          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
           data-id="btn-add"
           type="button"
         >
@@ -345,7 +345,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >
@@ -372,7 +372,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >
@@ -410,7 +410,7 @@ exports[`<FieldArray /> tests should be able to delete row 1`] = `
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal font button with-current-color main intent intent-primary"
+          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
           data-id="btn-add"
           type="button"
         >
@@ -466,7 +466,7 @@ exports[`<FieldArray /> tests should be able to delete row 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >
@@ -504,7 +504,7 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal font button with-current-color main intent intent-primary"
+          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
           data-id="btn-add"
           type="button"
         >
@@ -568,7 +568,7 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >
@@ -600,7 +600,7 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal font button with-current-color iconOnly main"
+                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
                 data-id="btn-delete"
                 type="button"
               >

@@ -1,4 +1,5 @@
 import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
+import cx from 'classnames'
 import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
 import { Assign } from 'utility-types'
 import { Config } from '../../core/Config'
@@ -27,6 +28,8 @@ export interface ButtonProps
   iconProps?: Partial<IconProps>
 
   withoutCurrentColor?: boolean
+
+  withoutBoxShadow?: boolean
 
   /** onClick event handler */
   onClick?: (event: MouseEvent) => Promise<void> | void
@@ -95,7 +98,8 @@ export function Button(props: ButtonProps): React.ReactElement {
     'iconProps',
     'noStyling',
     'withoutHref',
-    'withoutCurrentColor'
+    'withoutCurrentColor',
+    'withoutBoxShadow'
   )
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
@@ -106,15 +110,13 @@ export function Button(props: ButtonProps): React.ReactElement {
       icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}
       rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
       onClick={onClick}
-      className={styledClasses(
-        props,
-        styledClass.font,
-        css.button,
-        !props.withoutCurrentColor ? css['with-current-color'] : '',
-        props.href && !(props.icon || props.rightIcon) && !props.intent ? css.link : '',
-        !props.text && !props.intent && !props.href ? css.iconOnly : '',
-        round ? css.round : ''
-      )}
+      className={cx(css.button, styledClass.font, styledClasses(props), {
+        [css['with-current-color']]: !props.withoutCurrentColor,
+        [css.round]: round,
+        [css.iconOnly]: !props.text && !props.intent && !props.href,
+        [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,
+        [css['without-shadow']]: props.withoutBoxShadow || props.minimal
+      })}
     />
   )
 

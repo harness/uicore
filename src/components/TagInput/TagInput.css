@@ -38,7 +38,7 @@
       }
 
       &[class*='intent-primary'] {
-        background-color: var(--blue-500);
+        background-color: var(--primary-7);
         color: var(--white);
       }
     }

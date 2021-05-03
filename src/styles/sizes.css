@@ -1,17 +1,150 @@
 :root {
+  /* ============ Spacing (Padding, Margin, Gutter) ============ */
+  --spacing-0: 0; /* 0px */
+  --spacing-1: 0.125rem; /* 2px */
+  --spacing-2: 0.25rem; /* 4px */
+  --spacing-3: 0.5rem; /* 8px */
+  --spacing-4: 0.75rem; /* 12px */
+  --spacing-5: 1rem; /* 16px */
+  --spacing-6: 1.25rem; /* 20px */
+  --spacing-7: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-9: 2.5rem; /* 40px */
+  --spacing-10: 3rem; /* 48px */
+  --spacing-11: 4rem; /* 64px */
+  --spacing-12: 4.5rem; /* 72px */
+  --spacing-13: 6rem; /* 96px */
+  --spacing-14: 10rem; /* 160px */
+
+  /* ----- Spacing and width/height ----- */
+  --spacing: var(--spacing-5);
+  --spacing-main: var(--spacing-5);
+
+  /* make it compatible with former UICore definition */
+  --spacing-none: var(--spacing-0);
+  --spacing-tiny: var(--spacing-1); /* 2px */
+  --spacing-xsmall: var(--spacing-2); /* formerly 5px; */
+  --spacing-small: var(--spacing-3); /* formerly 10px; */
+  --spacing-medium: var(--spacing-5); /* formerly 15px; */
+  --spacing-large: var(--spacing-6); /* formerly 20px; */
+  --spacing-xlarge: var(--spacing-7); /* formerly 25px; */
+  --spacing-xxlarge: var(--spacing-8); /* formerly 30px; */
+  --spacing-xxxlarge: var(--spacing-9); /* formerly 40px; */
+  --spacing-huge: var(--spacing-10); /* formerly 50px; */
+
+  /* padding: defined in @media screen */
+  /* margin: defined in @media screen */
+  --padding-container: var(--spacing-10); /* 48px; padding of outer containers, such as page, model dialog, etc. */
+  --padding-panel: var(--spacing-8); /* 36px; */
+  --padding-section: var(--spacing-7); /* 24px; */
+  --padding-button: var(--spacing-4); /* 12px; padding left/right of button */
+  --margin-container: var(--spacing-10); /* 48px; */
+  --margin-section: var(--spacing-7); /* 24px; */
+  --margin-form-field: var(--spacing-4);
+
+  --button-width: var(--spacing-13);
+  --min-button-width: var(--spacing-12);
+  --card-width: 250px;
+
   --font-size-xsmall: 10px; /* very small text */
   --font-size-small: 12px; /* H4, small text */
   --font-size-normal: 14px; /* H3, normal text */
   --font-size-medium: 18px; /* H2 */
-  --font-size-large: 29px; /* H1 */
+  --font-size-large: 28px; /* formerly 29px; need to be an even number */
+  --font-size-xlarge: 32px;
 
-  --spacing-none: 0px;
-  --spacing-xsmall: 5px;
-  --spacing-small: 10px;
-  --spacing-medium: 15px;
-  --spacing-large: 20px;
-  --spacing-xlarge: 25px;
-  --spacing-xxlarge: 30px;
-  --spacing-xxxlarge: 40px;
-  --spacing-huge: 50px;
+  /* ====== Elevation (shadow) ====== */
+  --elevation-2: 0 2px 4px 0 var(--dark-shadow-color); /* not in use yet */
+  --elevation-2: 0 2px 4px 0 rgba(60, 60, 70, 0.16);
+  --elevation-3: 0 0 4px 2px rgba(40, 40, 60, 0.05);
+  --elevation-4: 0 0 4px 4px rgba(40, 40, 60, 0.1);
+  --card-shadow: var(--elevation-3);
+  --card-hover-shadow: var(--elevation-4);
+  --panel-shadow: 3px 0 3px 0 var(--dark-shadow-color); /* property for nav panel box-shadow */
+  /* Button Shadows */
+  --button-shadow: 0px 0px 3px 1px var(--grey-100);
+  --button-hover-shadow: 0px 3px 8px 4px var(--grey-200);
+  --button-shadow-dark: 0px 0px 3px 1px rgb(0 0 0 / 30%);
+  --button-hover-shadow-dark: 0px 3px 8px 4px rgb(0 0 0 / 30%);
+  --nav-button-hover-shadow: var(--elevation-2);
+
+  /* ====== form spacing @2021-04-27 ====== */
+  /* page > section > subsection 
+  or page > panel > subsection */
+  --dialog-padding: 36px 48px 48px 48px;
+  --form-padding: 32px 48px 96px 32px;
+  --form-section-padding: 0; /* 20px 24px; */
+  --form-panel-padding: 0; /* 20px 24px; */
+  --form-subsection-padding: 20px 24px; /* 16px 0 0 0; padding-top for both page section and panel section */
+  --form-section-margin: 8px 0 24px 0;
+  --form-panel-margin: 8px 0 24px 0;
+  --form-subsection-margin: 8px 0 0 0;
+  --form-panel-subsection-margin: 20px 0 0 0;
+  --form-field-margin: 0 12px 12px 0;
+  --form-action-buttons-margin: 8px 0 0 0; /* 24 + 8 = 32px */
+  --form-label-margin: 0 0 4px 0;
+  --form-message-margin: 8px 0 0 0;
+  --form-input-padding: 8px;
+  --form-icon-spacing: 4px;
+  --form-input-font-size: 13px;
+
+  /* =========== Style Variable Aliases end =========== */
+
+  /* ==============================
+   * Style definition for xLarge
+   * Screen Width at 1280px+
+   * Columns: 16 
+   * ============================== */
+  --full-width-xl: 1280px;
+  --unit-xl: 8px; /* 8 x 8 px */
+  --padding-xl: 16px;
+  --margin-xl: 16px;
+  --col-content-xl: 40px; /* content area */
+  --col-xl: calc(var(--padding-xl) * 2 + var(--col-content-xl));
+  --panel-padding-xl: 16px;
+  --panel-margin-xl: 16px;
+  --panel-col-content-xl: 64px;
+  /* --- for expanded (secondary nav) panel --- */
+  --exp-padding-xl: 16px;
+  --exp-margin-xl: 16px;
+  --exp-col-content-xl: 28px; /* content area */
+  --panel-exp-padding-xl: 16px;
+  --panel-exp-margin-xl: 16px;
+  --panel-exp-col-content-xl: 40px;
+  --panel-exp-full-xl: 288px;
+  --grid-bg-collapsed-xl: none; /* url(/grid_bg_collapsed_xl.svg); */
+  --grid-bg-expanded-xl: none; /* url(/grid_bg_expanded_xl.svg); */
+
+  /* ====================
+    * Style definition Max 
+    * Columns: 16 
+    * ==================== */
+  --full-width-max: 1680px;
+  --unit-max: 8px; /* 8 x 8 px */
+  --padding-max: 16px;
+  --margin-max: 24px;
+  --col-content-max: 64px; /* content area */
+  --col-max: calc(var(--padding-max) * 2 + var(--col-content-max));
+  --panel-padding-max: 16px;
+  --panel-margin-max: 20px;
+  --panel-col-content-max: 56px;
+  /* --- for expanded (secondary nav) panel --- */
+  --exp-padding-max: 16px;
+  --exp-margin-max: 24px;
+  --exp-col-content-max: 52px; /* content area */
+  --panel-exp-padding-max: 16px;
+  --panel-exp-margin-max: 16px;
+  --panel-exp-col-content-max: 40px;
+  --panel-exp-full-max: 288px;
+  --dialog-width-xsmall: calc(var(--col-max) * 3);
+  --dialog-width-small: calc(var(--col-max) * 4);
+  --dialog-width-medium: calc(var(--col-max) * 8);
+  --dialog-width-large: calc(var(--col-max) * 10);
+
+  /* ========== Style definition for expanded panel ========== */
+  --panel-exp-col-1: var(--panel-exp-col);
+  --panel-exp-col-2: calc(var(--panel-exp-col) * 2);
+  --panel-exp-col-3: calc(var(--panel-exp-col) * 3);
+  --panel-exp-col-4: calc(var(--panel-exp-col) * 4); /* 288px */
+  --sidebar-exp: calc(var(--panel-exp-full) - var(--panel-col)); /* the width of the 2ndary sidebar: 288 - 96 = 192px */
 }
