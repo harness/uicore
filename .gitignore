@@ -3,7 +3,7 @@ docs/node_modules
 dist/**/*
 types/*
 package-lock.json
-
+.idea/**/*
 .DS_Store
 .cache
 .docz
