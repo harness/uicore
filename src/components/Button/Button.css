@@ -19,6 +19,13 @@
 
     &:not(.without-shadow) {
       box-shadow: var(--button-shadow);
+      &:hover {
+        box-shadow: var(--button-hover-shadow);
+      }
+
+      &.iconOnly:not([disabled]) {
+        box-shadow: var(--button-hover-shadow); /* none; */
+      }
     }
 
     &.round {
@@ -61,16 +68,6 @@
 
       &.iconOnly:not([disabled]) {
         background-color: transparent;
-      }
-    }
-
-    &:not(.without-shadow) {
-      &:hover {
-        box-shadow: var(--button-hover-shadow);
-      }
-
-      &.iconOnly:not([disabled]) {
-        box-shadow: var(--button-hover-shadow); /* none; */
       }
     }
 
