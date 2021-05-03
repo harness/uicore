@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.144](https://github.com/wings-software/uicore/compare/v0.1.143...v0.1.144) (2021-05-03)
+
+
+### Features
+
+* Adapt new design system ([#158](https://github.com/wings-software/uicore/issues/158)) ([5ecca4a](https://github.com/wings-software/uicore/commit/5ecca4ac6ea17cd3bf83a558601f5bdc4ecfffa6)), closes [#173](https://github.com/wings-software/uicore/issues/173) [#172](https://github.com/wings-software/uicore/issues/172) [#176](https://github.com/wings-software/uicore/issues/176) [#177](https://github.com/wings-software/uicore/issues/177) [#183](https://github.com/wings-software/uicore/issues/183) [#186](https://github.com/wings-software/uicore/issues/186) [#188](https://github.com/wings-software/uicore/issues/188) [#189](https://github.com/wings-software/uicore/issues/189) [#190](https://github.com/wings-software/uicore/issues/190) [#191](https://github.com/wings-software/uicore/issues/191) [#192](https://github.com/wings-software/uicore/issues/192) [#193](https://github.com/wings-software/uicore/issues/193)
+
 ### [0.1.143](https://github.com/wings-software/uicore/compare/v0.1.142...v0.1.143) (2021-04-29)
 
 
