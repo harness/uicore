@@ -13,14 +13,6 @@ export default {
   component: FormikForm
 } as Meta
 
-// const openNgTooltipEditor = () => {
-//   const container = document.createElement('div')
-//   container.className = css.editor
-//   container.id = 'ngTooltipEditor'
-//   document.body.appendChild(container)
-//   ReactDOM.render(<TooltipEditor />, container)
-// }
-
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
     <Formik
