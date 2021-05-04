@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.145](https://github.com/wings-software/uicore/compare/v0.1.144...v0.1.145) (2021-05-04)
+
+
+### Features
+
+* ColorPicker: Export colors from picker ([#194](https://github.com/wings-software/uicore/issues/194)) ([5015789](https://github.com/wings-software/uicore/commit/50157895a4efd2d70d5c241c7f32347734f9afc4))
+
 ### [0.1.144](https://github.com/wings-software/uicore/compare/v0.1.143...v0.1.144) (2021-05-03)
 
 
