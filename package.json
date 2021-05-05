@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uicore",
-  "version": "0.1.149",
+  "version": "0.1.150",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -48,6 +48,7 @@
     "react-dom": "^16.9.0",
     "react-draggable": "^4.2.0",
     "react-table": "^7.0.4",
+    "snarkdown": "^2.0.0",
     "xterm": "^4.9.0",
     "xterm-addon-fit": "^0.4.0",
     "xterm-addon-search": "^0.7.0",
