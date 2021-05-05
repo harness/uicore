@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.146](https://github.com/wings-software/uicore/compare/v0.1.145...v0.1.146) (2021-05-05)
+
+
+### Others
+
+* Add Tooltip for AvatarGroup ([#195](https://github.com/wings-software/uicore/issues/195)) ([92346ea](https://github.com/wings-software/uicore/commit/92346ea010db7716e78442974f311d0e8881a8a2))
+
 ### [0.1.145](https://github.com/wings-software/uicore/compare/v0.1.144...v0.1.145) (2021-05-04)
 
 
