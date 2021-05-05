@@ -15,6 +15,7 @@ export interface AvatarGroupProps extends HTMLDivProps {
   size?: AvatarSizes
   restrictLengthTo?: number
   className?: string
+  onAddTooltip?: JSX.Element
 }
 type overLap = {
   [key in AvatarSizes]: string
@@ -27,6 +28,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   avatarGroupProps,
   size = 'normal',
   restrictLengthTo,
+  onAddTooltip,
   className = '',
   ...rest
 }) => {
@@ -49,7 +51,8 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
       color: Color.BLUE_500,
       backgroundColor: Color.GREY_200,
       onClick: onAdd,
-      hoverCard: false
+      hoverCard: onAddTooltip ? true : false,
+      tooltip: onAddTooltip
     })
   }
   if (overlap && avatars.length) {
