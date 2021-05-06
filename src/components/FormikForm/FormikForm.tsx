@@ -1,5 +1,12 @@
 import React, { useCallback, useMemo } from 'react'
-import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
+import {
+  connect,
+  FormikContextType,
+  Form as FrmForm,
+  Formik as FrmFormik,
+  FormikConfig,
+  FormikHelpers as FormikActions
+} from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
   MultiSelect as UiKitMultiSelect,
@@ -61,14 +68,14 @@ const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
 
-const errorCheck = (name: string, formik?: FormikContext<any>) =>
+const errorCheck = (name: string, formik?: FormikContextType<any>) =>
   (get(formik?.touched, name) || (formik?.submitCount && formik?.submitCount > 0)) &&
   get(formik?.errors, name) &&
   !isObject(get(formik?.errors, name))
 
 export const getDefaultAutoCompleteValue = (): string => 'off'
 
-export interface FormikExtended<T> extends FormikContext<T> {
+export interface FormikExtended<T> extends FormikContextType<T> {
   disabled?: boolean
   inline?: boolean
 }

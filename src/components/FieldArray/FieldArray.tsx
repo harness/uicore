@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cx from 'classnames'
 import { Button } from '../Button/Button'
 import { Layout } from '../../../src/layouts/Layout'
-import { connect, FormikContext } from 'formik'
+import { connect, FormikContextType } from 'formik'
 
 import css from './FieldArray.css'
 
@@ -37,7 +37,7 @@ interface Props {
 }
 
 interface ConnectedProps extends Props {
-  formik: FormikContext<any>
+  formik: FormikContextType<any>
 }
 
 function FieldArray(props: ConnectedProps) {
