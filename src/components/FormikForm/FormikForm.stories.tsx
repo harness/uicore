@@ -40,17 +40,30 @@ export const Basic: Story<FormikFormProps> = () => (
       {() => {
         return (
           <FormikForm>
-            <FormInput.Text name="name" label="Name" placeholder="First Name" />
+            <FormInput.Text
+              name="name"
+              label="Name"
+              placeholder="First Name"
+              tooltipProps={{
+                dataTooltipId: 'nameTextField'
+              }}
+            />
             <FormInput.Text
               name="age"
               inputGroup={{ type: 'number' }}
               label="Age"
               isOptional
               placeholder="Age in years"
+              tooltipProps={{
+                dataTooltipId: 'ageNumberField'
+              }}
             />
             <FormInput.KVTagInput
               name="tags"
               label="Tags"
+              tooltipProps={{
+                dataTooltipId: 'tagInputId'
+              }}
               mentionsInfo={{
                 data: done =>
                   done([
@@ -74,9 +87,25 @@ export const Basic: Story<FormikFormProps> = () => (
               ]}
               name="exp"
               label="Expressions"
+              tooltipProps={{
+                dataTooltipId: 'idforexpressioninput'
+              }}
             />
-            <FormInput.CheckBox name="specialPerson" label="VVIP" />
-            <FormInput.FileInput name="picture" label="Upload Picture" buttonText="Select" />
+            <FormInput.CheckBox
+              name="specialPerson"
+              label="VVIP"
+              tooltipProps={{
+                dataTooltipId: 'checkboxField'
+              }}
+            />
+            <FormInput.FileInput
+              name="picture"
+              label="Upload Picture"
+              buttonText="Select"
+              tooltipProps={{
+                dataTooltipId: 'uploadPictureField'
+              }}
+            />
             <FormInput.RadioGroup
               name="eventType"
               label="Event Type"
