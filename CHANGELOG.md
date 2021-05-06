@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.147](https://github.com/wings-software/uicore/compare/v0.1.146...v0.1.147) (2021-05-06)
+
+
+### Features
+
+* [Tooltips]: Tooltip component and corresponding context ([#162](https://github.com/wings-software/uicore/issues/162)) ([b62cd72](https://github.com/wings-software/uicore/commit/b62cd72fb28edae33a996b13a14c88ec780ae9ef))
+
 ### [0.1.146](https://github.com/wings-software/uicore/compare/v0.1.145...v0.1.146) (2021-05-05)
 
 
