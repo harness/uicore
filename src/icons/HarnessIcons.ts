@@ -48,6 +48,8 @@ import CeHover from './ce-hover.svg'
 import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
 import CeMain from './ce-main.svg'
+import CeOptimization from './ce-optimization.svg'
+import CeVisibility from './ce-visibility.svg'
 import CfHover from './cf-hover.svg'
 import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
@@ -517,6 +519,8 @@ type HarnessIconName =
   | 'ce-main-colored'
   | 'ce-main-grey'
   | 'ce-main'
+  | 'ce-optimization'
+  | 'ce-visibility'
   | 'cf-hover'
   | 'cf-main'
   | 'check-alt'
@@ -986,6 +990,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-main-colored': CeMainColored,
   'ce-main-grey': CeMainGrey,
   'ce-main': CeMain,
+  'ce-optimization': CeOptimization,
+  'ce-visibility': CeVisibility,
   'cf-hover': CfHover,
   'cf-main': CfMain,
   'check-alt': CheckAlt,
