@@ -54,8 +54,6 @@ import {
   ExpressionInputProps as ExpressionInputLocalProps,
   ExpressionInput as ExpressionInputLocal
 } from '../ExpressionInput/ExpressionInput'
-import { DataTooltipInterface } from '../../frameworks/Tooltip/types'
-import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -78,7 +76,6 @@ export interface FormikContextProps<T> {
   optionalLabel?: string
   isOptional?: boolean // default to false
   autoComplete?: string
-  tooltipProps?: DataTooltipInterface
 }
 
 export interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
@@ -105,17 +102,13 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
     inline = formik?.inline,
     tagInputProps,
     onChange,
-    tooltipProps,
     ...rest
   } = restProps
 
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
       labelFor={name}
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       helperText={helperText}
       intent={intent}
       disabled={disabled}
@@ -163,7 +156,6 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     tagsProps,
     isOptional = false,
     optionalLabel = IsOptionLabel,
-    tooltipProps,
     ...restProps
   } = props
   const hasError = errorCheck(name, formik)
@@ -182,14 +174,10 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     return () => unregister(mentionsType)
   }, [])
 
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
-
   return (
     <FormGroup
       labelFor={name}
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       helperText={helperText}
       intent={intent}
       disabled={disabled}
@@ -241,7 +229,6 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
     tagsProps,
     optionalLabel = IsOptionLabel,
     isOptional = false,
-    tooltipProps,
     ...restProps
   } = props
   const hasError = errorCheck(name, formik)
@@ -260,13 +247,9 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
     return () => unregister(mentionsType)
   }, [])
 
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
-
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -309,16 +292,12 @@ const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
     inline = formik?.inline,
     label,
     render,
-    tooltipProps,
     ...rest
   } = restProps
 
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -356,16 +335,11 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
     onChange,
     inputProps,
     multiple = false,
-    tooltipProps,
     ...rest
   } = restProps
-
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -416,7 +390,6 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
     label,
     radioGroup,
     onChange,
-    tooltipProps,
     ...rest
   } = props
 
@@ -427,12 +400,9 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
       className: cx(cssRadio.radio, className)
     }
   })
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -460,7 +430,7 @@ export interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps,
 }
 
 const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
-  const { formik, name, label, isOptional, optionalLabel, ...restProps } = props
+  const { formik, name, label, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -469,21 +439,15 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
     inline = formik?.inline,
     onChange,
     className = '',
-    tooltipProps,
     ...rest
   } = restProps
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <UiKitCheckbox
         {...rest}
         className={cx(checkBoxCss.checkbox, className)}
         name={name}
-        // eslint-disable-next-line
-        // @ts-ignore
-        label={
-          labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-        }
+        label={label}
         inline={inline}
         disabled={disabled}
         checked={get(formik?.values, name)}
@@ -519,18 +483,14 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
     placeholder,
     multiSelectProps,
     onChange,
-    tooltipProps,
     ...rest
   } = restProps
 
   const formikValue = get(formik?.values, name, [])
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -589,17 +549,13 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
     selectProps,
     onChange,
     value,
-    tooltipProps,
     ...rest
   } = restProps
 
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -649,16 +605,12 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
     label,
     placeholder,
     onChange,
-    tooltipProps,
     ...rest
   } = restProps
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -708,7 +660,6 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
     onChange,
     isOptional,
     optionalLabel = IsOptionLabel,
-    tooltipProps,
     ...restProps
   } = props
   const hasError = errorCheck(name, formik)
@@ -722,14 +673,11 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
   } = restProps
 
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
 
   return (
     <FormGroup
       labelFor={name}
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       helperText={helperText}
       intent={intent}
       disabled={disabled}
@@ -770,17 +718,14 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
     label,
     textArea,
     onChange,
-    tooltipProps,
     ...rest
   } = restProps
 
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
+
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -963,7 +908,6 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     label,
-    tooltipProps,
     ...rest
   } = restProps
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
@@ -975,12 +919,9 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     [formik, multiTypeInputProps]
   )
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -1027,7 +968,6 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
     multiSelectTypeInputProps,
     isOptional = false,
     optionalLabel = IsOptionLabel,
-    tooltipProps,
     ...restProps
   } = props
   const hasError = errorCheck(name, formik)
@@ -1039,12 +979,9 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
     ...rest
   } = restProps
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -1105,7 +1042,6 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     helperText = hasError ? get(formik?.errors, name) : null,
     disabled = formik?.disabled,
     label,
-    tooltipProps,
     ...rest
   } = restProps
   const value = get(formik?.values, name, '')
@@ -1121,12 +1057,10 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
   )
 
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
+
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -1169,17 +1103,14 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
     inline = formik?.inline,
     categorizedSelectProps,
     onChange,
-    tooltipProps,
     ...rest
   } = restProps
 
   const value = get(formik?.values, name)
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
+
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -1234,17 +1165,14 @@ const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContext
     changeViewButtonLabel,
     subview,
     onChange,
-    tooltipProps,
     ...rest
   } = restProps
 
   const value = get(formik?.values, name)
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
+
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -1303,17 +1231,14 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
     changeViewButtonLabel,
     subview,
     onChange,
-    tooltipProps,
     ...rest
   } = restProps
 
   const value: MultiSelectOption[] = get(formik?.values, name)
-  const labelText = !isOptional ? label : `${label} ${optionalLabel}`
+
   return (
     <FormGroup
-      label={
-        labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
-      }
+      label={!isOptional ? label : `${label} ${optionalLabel}`}
       labelFor={name}
       helperText={helperText}
       intent={intent}

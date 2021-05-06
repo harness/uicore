@@ -140,12 +140,3 @@ export {
   WeightedStackData,
   LabelPosition
 } from './components/WeightedStack/WeightedStack'
-export { HarnessDocTooltip, useTooltips } from './frameworks/Tooltip/Tooltip'
-export { TooltipContext, TooltipContextProvider, useTooltipContext } from './frameworks/Tooltip/TooltipContext'
-export {
-  TooltipContextProviderProps,
-  TooltipContextValue,
-  TooltipRenderProps,
-  UseTooltipsReturn,
-  DataTooltipInterface
-} from './frameworks/Tooltip/types'
