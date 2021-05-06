@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.148](https://github.com/wings-software/uicore/compare/v0.1.147...v0.1.148) (2021-05-06)
+
+
+### Features
+
+* added ce optimization and visibility icons ([#196](https://github.com/wings-software/uicore/issues/196)) ([63392ab](https://github.com/wings-software/uicore/commit/63392ab2dffb2588379675b8f409b71c1e1becc5))
+
 ### [0.1.147](https://github.com/wings-software/uicore/compare/v0.1.146...v0.1.147) (2021-05-06)
 
 
