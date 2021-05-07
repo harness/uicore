@@ -343,6 +343,46 @@
     background: var(--blue-900);
   }
 
+  &.background-primary1 {
+    background: var(--primary-1);
+  }
+
+  &.background-primary2 {
+    background: var(--primary-2);
+  }
+
+  &.background-primary3 {
+    background: var(--primary-3);
+  }
+
+  &.background-primary4 {
+    background: var(--primary-4);
+  }
+
+  &.background-primary5 {
+    background: var(--primary-5);
+  }
+
+  &.background-primary6 {
+    background: var(--primary-6);
+  }
+
+  &.background-primary7 {
+    background: var(--primary-7);
+  }
+
+  &.background-primary8 {
+    background: var(--primary-8);
+  }
+
+  &.background-primary9 {
+    background: var(--primary-9);
+  }
+
+  &.background-primary10 {
+    background: var(--primary-10);
+  }
+
   /* form style  @2021-04-27 */
   &.background-form {
     background: var(--form-bg);
