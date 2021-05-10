@@ -976,7 +976,9 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
     (value, valueType, type) => {
       formik?.setFieldValue(name, value)
-      formik?.setFieldTouched(name)
+      formik?.setFieldTouched(name, true, false); 
+      formik?.validateField(name);
+
       multiTypeInputProps?.onChange?.(value, valueType, type)
     },
     [formik, multiTypeInputProps]
