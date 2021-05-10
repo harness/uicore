@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.152](https://github.com/wings-software/uicore/compare/v0.1.151...v0.1.152) (2021-05-10)
+
+
+### Features
+
+* Update React version to 17 ([#169](https://github.com/wings-software/uicore/issues/169)) ([2039ee9](https://github.com/wings-software/uicore/commit/2039ee928d3fedaf5e29f632fefd548244d067a5))
+
 ### [0.1.151](https://github.com/wings-software/uicore/compare/v0.1.150...v0.1.151) (2021-05-10)
 
 
