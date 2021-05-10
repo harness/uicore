@@ -6,6 +6,7 @@ import { OptionalTooltip } from '../../core/Types'
 import { Utils } from '../../core/Utils'
 import css from './Text.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
 export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps>, OptionalTooltip {
   // When lineClamp is specified, show ... (ellipsis) when text is overflown and show the full text
@@ -74,7 +75,7 @@ export function Text(props: TextProps) {
     }
   }, [lineClamp, props.tooltip, alwaysShowTooltip])
 
-  return (
+  const wrappedInTooltip = (
     <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
       <Tag
         {...omitStyledProps(
@@ -94,6 +95,15 @@ export function Text(props: TextProps) {
         {rightIcon && <Icon name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />}
       </Tag>
     </Utils.WrapOptionalTooltip>
+  )
+
+  return props.tooltipProps?.dataTooltipId ? (
+    <div className={css.withDocsTooltip} data-tooltip-id={props.tooltipProps?.dataTooltipId}>
+      {wrappedInTooltip}
+      <HarnessDocTooltip tooltipId={props.tooltipProps?.dataTooltipId} useStandAlone={true} />
+    </div>
+  ) : (
+    wrappedInTooltip
   )
 }
 

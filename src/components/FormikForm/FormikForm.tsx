@@ -482,7 +482,15 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
         // eslint-disable-next-line
         // @ts-ignore
         label={
-          labelText ? <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} labelText={labelText} /> : labelText
+          labelText ? (
+            <HarnessDocTooltip
+              className={css.checkBoxDocTooltipLabel}
+              tooltipId={tooltipProps?.dataTooltipId}
+              labelText={labelText}
+            />
+          ) : (
+            labelText
+          )
         }
         inline={inline}
         disabled={disabled}

@@ -4,3 +4,8 @@
   -webkit-line-clamp: var(--text-line-clamp);
   overflow: hidden;
 }
+
+.withDocsTooltip {
+  display: flex;
+  align-items: center;
+}
