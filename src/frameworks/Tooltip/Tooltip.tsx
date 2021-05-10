@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 import snarkdown from 'snarkdown'
 import { Icon, PopoverInteractionKind, Position } from '@blueprintjs/core'
 import { useTooltipContext } from './TooltipContext'
@@ -32,7 +33,8 @@ export const HarnessDocTooltip = ({
   tooltipId,
   useStandAlone = false,
   getTooltipAdditionalVars,
-  labelText
+  labelText,
+  className: propsClassName
 }: TooltipRenderProps) => {
   const { getTooltip } = useTooltips()
   const tooltipContent = getTooltip(tooltipId || '', getTooltipAdditionalVars)
@@ -55,7 +57,7 @@ export const HarnessDocTooltip = ({
     return tooltipJsxComponent
   } else if (tooltipId && !useStandAlone) {
     return (
-      <span className={css.acenter} data-tooltip-id={tooltipId}>
+      <span className={cx(css.acenter, propsClassName)} data-tooltip-id={tooltipId}>
         {labelText}
         {tooltipContent ? tooltipJsxComponent : null}
       </span>

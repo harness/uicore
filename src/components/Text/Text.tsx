@@ -6,6 +6,7 @@ import { OptionalTooltip } from '../../core/Types'
 import { Utils } from '../../core/Utils'
 import css from './Text.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
 export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps>, OptionalTooltip {
   // When lineClamp is specified, show ... (ellipsis) when text is overflown and show the full text
@@ -92,6 +93,7 @@ export function Text(props: TextProps) {
         {icon && <Icon name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}
         {rightIcon && <Icon name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />}
+        {props.tooltipProps?.dataTooltipId && <HarnessDocTooltip tooltipId={props.tooltipProps?.dataTooltipId} />}
       </Tag>
     </Utils.WrapOptionalTooltip>
   )

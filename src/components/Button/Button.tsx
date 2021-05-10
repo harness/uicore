@@ -1,5 +1,6 @@
 import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
 import cx from 'classnames'
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
 import { Assign } from 'utility-types'
 import { Config } from '../../core/Config'
@@ -122,7 +123,14 @@ export function Button(props: ButtonProps): React.ReactElement {
 
   return (
     <Utils.WrapOptionalTooltip tooltip={props.tooltip} tooltipProps={props.tooltipProps}>
-      {button}
+      {props.tooltipProps?.dataTooltipId ? (
+        <div className={css.withDocsTooltip}>
+          {button}
+          <HarnessDocTooltip tooltipId={props.tooltipProps.dataTooltipId} />
+        </div>
+      ) : (
+        button
+      )}
     </Utils.WrapOptionalTooltip>
   )
 }

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 export interface DataTooltipInterface {
   dataTooltipId: string
@@ -14,6 +14,7 @@ export interface TooltipRenderProps {
   getTooltipAdditionalVars?: Record<string, string>
   labelText?: ReactNode | null
   useStandAlone?: boolean
+  className?: string
 }
 
 export interface TooltipContextValue {
