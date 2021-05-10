@@ -6,6 +6,7 @@ exports[`Test basic Components should render Checkbox component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -52,6 +53,7 @@ exports[`Test basic Components should render Custom Input component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -106,6 +108,7 @@ exports[`Test basic Components should render FileInput component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -164,6 +167,7 @@ exports[`Test basic Components should render FileInput component 2`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -266,6 +270,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -337,6 +342,7 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -409,6 +415,7 @@ exports[`Test basic Components should render Select component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -497,6 +504,7 @@ exports[`Test basic Components should render Text component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
@@ -552,6 +560,7 @@ exports[`Test basic Components should render TextArea component 1`] = `
     class="overlaySpinner"
   >
     <form
+      action="#"
       class="main"
     >
       <div>
