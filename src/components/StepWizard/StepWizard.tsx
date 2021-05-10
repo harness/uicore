@@ -213,7 +213,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
 
   React.useLayoutEffect(() => {
     if (Array.isArray(props.children)) {
-      const propsChild = React.Children.toArray(props.children)
+      const propsChild = React.Children.toArray(props.children) as React.ReactElement[]
       const steps: Array<React.ReactElement<StepProps<SharedObject>>> = []
       const stepNames: string[] = []
       let stepIndex = 0
@@ -230,19 +230,19 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
           }
 
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const nestedChild = React.Children.toArray(nestedStepWizardChild.props.children as any)
+          const nestedChild = React.Children.toArray(nestedStepWizardChild.props.children as any) as React.ReactElement[]
           nestedChild.forEach((nested, j: number) => {
             steps.push(nested as React.ReactElement<StepProps<SharedObject>>)
             nestedStepWizard.push({ wizard: nestedStepWizardChild, stepIndex: j + 1 })
             stepNames.push(
-              (nested && nested.props && (nested as React.ReactElement).props.name) || `Step ${i + 1}-${j + 1}`
+              (nested && nested.props && nested.props.name) || `Step ${i + 1}-${j + 1}`
             )
           })
         } else {
           stepIndex++
           nestedStepWizard.push({ stepIndex })
           steps.push(child as React.ReactElement<StepProps<SharedObject>>)
-          stepNames.push((child && child.props && (child as React.ReactElement).props.name) || `Step ${i + 1}`)
+          stepNames.push((child && child.props && child.props.name) || `Step ${i + 1}`)
         }
       })
       setState(prevState => ({
