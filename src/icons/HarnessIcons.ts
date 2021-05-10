@@ -88,6 +88,8 @@ import ConditionalSkip from './conditional-skip.svg'
 import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
+import Connectthroughdelegate from './connectthroughdelegate.svg'
+import Connectthroughmanager from './connectthroughmanager.svg'
 import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
 import CoverageStatusError from './coverage-status-error.svg'
@@ -559,6 +561,8 @@ type HarnessIconName =
   | 'conditional-when'
   | 'config-change'
   | 'config-file'
+  | 'connectthroughdelegate'
+  | 'connectthroughmanager'
   | 'copy-alt'
   | 'copy'
   | 'coverage-status-error'
@@ -1030,6 +1034,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
+  connectthroughdelegate: Connectthroughdelegate,
+  connectthroughmanager: Connectthroughmanager,
   'copy-alt': CopyAlt,
   copy: Copy,
   'coverage-status-error': CoverageStatusError,
