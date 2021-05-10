@@ -75,7 +75,7 @@ export function Text(props: TextProps) {
     }
   }, [lineClamp, props.tooltip, alwaysShowTooltip])
 
-  return (
+  const wrappedInTooltip = (
     <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
       <Tag
         {...omitStyledProps(
@@ -93,9 +93,17 @@ export function Text(props: TextProps) {
         {icon && <Icon name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}
         {rightIcon && <Icon name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />}
-        {props.tooltipProps?.dataTooltipId && <HarnessDocTooltip tooltipId={props.tooltipProps?.dataTooltipId} />}
       </Tag>
     </Utils.WrapOptionalTooltip>
+  )
+
+  return props.tooltipProps?.dataTooltipId ? (
+    <div className={css.withDocsTooltip} data-tooltip-id={props.tooltipProps?.dataTooltipId}>
+      {wrappedInTooltip}
+      <HarnessDocTooltip tooltipId={props.tooltipProps?.dataTooltipId} useStandAlone={true} />
+    </div>
+  ) : (
+    wrappedInTooltip
   )
 }
 

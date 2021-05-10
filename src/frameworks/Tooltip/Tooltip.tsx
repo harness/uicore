@@ -53,7 +53,7 @@ export const HarnessDocTooltip = ({
       </span>
     </Popover>
   )
-  if (tooltipId && useStandAlone) {
+  if (tooltipId && useStandAlone && tooltipContent) {
     return tooltipJsxComponent
   } else if (tooltipId && !useStandAlone) {
     return (

@@ -121,17 +121,19 @@ export function Button(props: ButtonProps): React.ReactElement {
     />
   )
 
-  return (
+  const wrappeInTooltip = (
     <Utils.WrapOptionalTooltip tooltip={props.tooltip} tooltipProps={props.tooltipProps}>
-      {props.tooltipProps?.dataTooltipId ? (
-        <div className={css.withDocsTooltip}>
-          {button}
-          <HarnessDocTooltip tooltipId={props.tooltipProps.dataTooltipId} />
-        </div>
-      ) : (
-        button
-      )}
+      {button}
     </Utils.WrapOptionalTooltip>
+  )
+
+  return props.tooltipProps?.dataTooltipId ? (
+    <div className={css.withDocsTooltip} data-tooltip-id={props.tooltipProps.dataTooltipId}>
+      {wrappeInTooltip}
+      <HarnessDocTooltip tooltipId={props.tooltipProps.dataTooltipId} useStandAlone={true} />
+    </div>
+  ) : (
+    wrappeInTooltip
   )
 }
 
