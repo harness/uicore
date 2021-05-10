@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.154](https://github.com/wings-software/uicore/compare/v0.1.153...v0.1.154) (2021-05-10)
+
+
+### Features
+
+* [Tooltips]: Enabling tooltips for text and button components, and adding className prop ([#201](https://github.com/wings-software/uicore/issues/201)) ([193ac5f](https://github.com/wings-software/uicore/commit/193ac5f241ae85fe2a72085f24ff20be97a5de4a))
+
 ### [0.1.153](https://github.com/wings-software/uicore/compare/v0.1.152...v0.1.153) (2021-05-10)
 
 
