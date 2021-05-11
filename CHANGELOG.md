@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.156](https://github.com/wings-software/uicore/compare/v0.1.155...v0.1.156) (2021-05-11)
+
+
+### Features
+
+* [CE-4411]: Added Reset icon ([#204](https://github.com/wings-software/uicore/issues/204)) ([dfaf2fb](https://github.com/wings-software/uicore/commit/dfaf2fb6a52e978793c9ea116fc65d26e8f8c998))
+
 ### [0.1.155](https://github.com/wings-software/uicore/compare/v0.1.154...v0.1.155) (2021-05-11)
 
 
