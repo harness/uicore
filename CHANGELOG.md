@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.155](https://github.com/wings-software/uicore/compare/v0.1.154...v0.1.155) (2021-05-11)
+
+
+### Others
+
+* [CE-4411]: Added background color for primary colors ([#199](https://github.com/wings-software/uicore/issues/199)) ([73d8b1b](https://github.com/wings-software/uicore/commit/73d8b1b3a48c1c31fbfbcd084104f654f78d810d))
+
 ### [0.1.154](https://github.com/wings-software/uicore/compare/v0.1.153...v0.1.154) (2021-05-10)
 
 
