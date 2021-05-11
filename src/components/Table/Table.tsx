@@ -53,7 +53,10 @@ export function Table<T extends object>(props: TableProps<T>): React.ReactElemen
               {row.cells.map((cell, index) => {
                 const { key: cellKey, ...otherCellProps } = cell.getCellProps()
                 return (
-                  <td key={cellKey} {...otherCellProps} style={{ width: headerGroups[0].headers[index].width }}>
+                  <td
+                    key={cellKey}
+                    {...otherCellProps}
+                    style={hideHeaders ? { width: headerGroups[0]?.headers[index]?.width } : undefined}>
                     {cell.render('Cell')}
                   </td>
                 )
