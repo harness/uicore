@@ -343,6 +343,7 @@ import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
 import Repository from './repository.svg'
+import ResetIcon from './reset-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS from './restore-cache-s3.svg'
@@ -816,6 +817,7 @@ type HarnessIconName =
   | 'report-gear'
   | 'report-icon'
   | 'repository'
+  | 'reset-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
@@ -1289,6 +1291,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
   repository: Repository,
+  'reset-icon': ResetIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS,
