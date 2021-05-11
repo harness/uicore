@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.157](https://github.com/wings-software/uicore/compare/v0.1.156...v0.1.157) (2021-05-11)
+
+
+### Others
+
+* Add hideHeaders and width to Table ([#205](https://github.com/wings-software/uicore/issues/205)) ([42adfb6](https://github.com/wings-software/uicore/commit/42adfb6658ce97e099e776a058e9c2eba88a4737))
+
 ### [0.1.156](https://github.com/wings-software/uicore/compare/v0.1.155...v0.1.156) (2021-05-11)
 
 
