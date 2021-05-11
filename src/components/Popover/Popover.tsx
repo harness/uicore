@@ -7,6 +7,9 @@ export interface PopoverProps extends React.ComponentProps<typeof BPopover> {
 
   /** Popover target element */
   children?: React.ReactNode
+
+  /** data-tooltip-id to be attached and used by docs team */
+  dataTooltipId?: string
 }
 
 export function Popover(props: PopoverProps) {

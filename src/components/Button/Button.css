@@ -236,3 +236,8 @@
     }
   }
 }
+
+.withDocsTooltip {
+  display: flex;
+  align-items: center;
+}
