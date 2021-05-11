@@ -9,11 +9,12 @@ export interface TableProps<T extends object> {
   renderCustomRow?: (row: Row<T>) => JSX.Element
   className?: string
   bpTableProps: IHTMLTableProps
+  hideHeaders?: boolean
 }
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export function Table<T extends object>(props: TableProps<T>): React.ReactElement {
-  const { bpTableProps, className, renderCustomRow } = props
+  const { bpTableProps, className, renderCustomRow, hideHeaders } = props
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable<T>({
     columns: props.columns || [],
     data: props.data || []
@@ -21,23 +22,25 @@ export function Table<T extends object>(props: TableProps<T>): React.ReactElemen
 
   return (
     <HTMLTable {...getTableProps()} interactive={true} {...bpTableProps} className={className}>
-      <thead>
-        {headerGroups.map(headerGroup => {
-          const { key: rowKey, ...otherHeaderProps } = headerGroup.getHeaderGroupProps()
-          return (
-            <tr key={rowKey} {...otherHeaderProps}>
-              {headerGroup.headers.map(column => {
-                const { key: colHeaderKey, ...otherColHeaderProps } = column.getHeaderProps()
-                return (
-                  <th key={colHeaderKey} {...otherColHeaderProps}>
-                    {column.render('Header')}
-                  </th>
-                )
-              })}
-            </tr>
-          )
-        })}
-      </thead>
+      {hideHeaders ? null : (
+        <thead>
+          {headerGroups.map(headerGroup => {
+            const { key: rowKey, ...otherHeaderProps } = headerGroup.getHeaderGroupProps()
+            return (
+              <tr key={rowKey} {...otherHeaderProps}>
+                {headerGroup.headers.map(column => {
+                  const { key: colHeaderKey, ...otherColHeaderProps } = column.getHeaderProps()
+                  return (
+                    <th key={colHeaderKey} {...otherColHeaderProps} style={{ width: column.width }}>
+                      {column.render('Header')}
+                    </th>
+                  )
+                })}
+              </tr>
+            )
+          })}
+        </thead>
+      )}
       <tbody {...getTableBodyProps()}>
         {rows.map(row => {
           prepareRow(row)
@@ -47,10 +50,10 @@ export function Table<T extends object>(props: TableProps<T>): React.ReactElemen
           const { key, ...otherProps } = row.getRowProps()
           return (
             <tr key={key} {...otherProps}>
-              {row.cells.map(cell => {
+              {row.cells.map((cell, index) => {
                 const { key: cellKey, ...otherCellProps } = cell.getCellProps()
                 return (
-                  <td key={cellKey} {...otherCellProps}>
+                  <td key={cellKey} {...otherCellProps} style={{ width: headerGroups[0].headers[index].width }}>
                     {cell.render('Cell')}
                   </td>
                 )
