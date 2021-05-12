@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.159](https://github.com/wings-software/uicore/compare/v0.1.158...v0.1.159) (2021-05-12)
+
+
+### Bug Fixes
+
+* removing fill none from svg and setting fill current color on path ([#207](https://github.com/wings-software/uicore/issues/207)) ([657b6b6](https://github.com/wings-software/uicore/commit/657b6b67db6d274155bbcf2d43d7870c90dbb344))
+
 ### [0.1.158](https://github.com/wings-software/uicore/compare/v0.1.157...v0.1.158) (2021-05-12)
 
 
