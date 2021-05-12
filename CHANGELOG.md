@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.158](https://github.com/wings-software/uicore/compare/v0.1.157...v0.1.158) (2021-05-12)
+
+
+### Bug Fixes
+
+* Updated reg to check is expression as it was wrong ([#206](https://github.com/wings-software/uicore/issues/206)) ([e3aa5a4](https://github.com/wings-software/uicore/commit/e3aa5a417c5f073b93bb3742053c6f5d67722404))
+
 ### [0.1.157](https://github.com/wings-software/uicore/compare/v0.1.156...v0.1.157) (2021-05-11)
 
 
