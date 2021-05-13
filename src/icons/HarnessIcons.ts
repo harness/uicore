@@ -120,6 +120,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
@@ -594,6 +595,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
   | 'ecr-step'
@@ -1068,6 +1070,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
   'ecr-step': EcrStep,
