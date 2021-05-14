@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.161](https://github.com/wings-software/uicore/compare/v0.1.160...v0.1.161) (2021-05-14)
+
+
+### Features
+
+* [CDNG-7579]: Added two new icons ([#209](https://github.com/wings-software/uicore/issues/209)) ([c846211](https://github.com/wings-software/uicore/commit/c846211f43f81ede555d8143bf38a864d752a728))
+
 ### [0.1.160](https://github.com/wings-software/uicore/compare/v0.1.159...v0.1.160) (2021-05-13)
 
 
