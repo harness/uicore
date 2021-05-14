@@ -141,6 +141,7 @@ import FatArrowUp from './fat-arrow-up.svg'
 import FeedbackGiven from './feedback-given.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
+import FolderUpload from './folder-upload.svg'
 import Functions from './functions.svg'
 import Gcp from './gcp.svg'
 import GcrStep from './gcr-step.svg'
@@ -148,6 +149,7 @@ import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitBranchExisting from './git-branch-existing.svg'
 import GitCloneStep from './git-clone-step.svg'
+import GitConfigure from './git-configure.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
 import GithubSelected from './github-selected.svg'
@@ -616,6 +618,7 @@ type HarnessIconName =
   | 'feedback-given'
   | 'file'
   | 'fixed-input'
+  | 'folder-upload'
   | 'functions'
   | 'gcp'
   | 'gcr-step'
@@ -623,6 +626,7 @@ type HarnessIconName =
   | 'gear'
   | 'git-branch-existing'
   | 'git-clone-step'
+  | 'git-configure'
   | 'git-landing-page'
   | 'git-new-branch'
   | 'github-selected'
@@ -1091,6 +1095,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   file: File,
   'fixed-input': FixedInput,
+  'folder-upload': FolderUpload,
   functions: Functions,
   gcp: Gcp,
   'gcr-step': GcrStep,
@@ -1098,6 +1103,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gear: Gear,
   'git-branch-existing': GitBranchExisting,
   'git-clone-step': GitCloneStep,
+  'git-configure': GitConfigure,
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
   'github-selected': GithubSelected,
