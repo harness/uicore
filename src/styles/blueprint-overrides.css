@@ -1,0 +1,7 @@
+.bp3-menu-item:hover {
+  background: var(--primary-6);
+}
+
+.bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-menu-item {
+  background: var(--primary-7);
+}
