@@ -147,3 +147,5 @@ export {
   UseTooltipsReturn,
   DataTooltipInterface
 } from './frameworks/Tooltip/types'
+
+console.log("should not be allowed")
