@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.161](https://github.com/wings-software/uicore/compare/v0.1.160...v0.1.161) (2021-05-14)
+
+
+### Features
+
+* [CDNG-7579]: Added two new icons ([#209](https://github.com/wings-software/uicore/issues/209)) ([c846211](https://github.com/wings-software/uicore/commit/c846211f43f81ede555d8143bf38a864d752a728))
+
+### [0.1.160](https://github.com/wings-software/uicore/compare/v0.1.159...v0.1.160) (2021-05-13)
+
+
+### Features
+
+* [GTM-147]: added a digital ocean icon ([#208](https://github.com/wings-software/uicore/issues/208)) ([3a4b07c](https://github.com/wings-software/uicore/commit/3a4b07cd0e837d0ed1939c5a4ce8f4d66fc641ca))
+
+### [0.1.159](https://github.com/wings-software/uicore/compare/v0.1.158...v0.1.159) (2021-05-12)
+
+
+### Bug Fixes
+
+* removing fill none from svg and setting fill current color on path ([#207](https://github.com/wings-software/uicore/issues/207)) ([657b6b6](https://github.com/wings-software/uicore/commit/657b6b67db6d274155bbcf2d43d7870c90dbb344))
+
 ### [0.1.158](https://github.com/wings-software/uicore/compare/v0.1.157...v0.1.158) (2021-05-12)
 
 
