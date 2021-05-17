@@ -331,6 +331,77 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
 </div>
 `;
 
+exports[`Test basic Components should render MultiSelect component with select all 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            Color
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="bp3-popover-wrapper main bp3-fill"
+            >
+              <div
+                class="bp3-popover-target"
+              >
+                <div
+                  class=""
+                >
+                  <div
+                    class="bp3-input bp3-tag-input bp3-multi-select"
+                  >
+                    <div
+                      class="bp3-tag-input-values"
+                    >
+                      <input
+                        autocomplete="off"
+                        class="bp3-input-ghost"
+                        name="color"
+                        placeholder="Search..."
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`Test basic Components should render RadioGroup component 1`] = `
 <div>
   <div

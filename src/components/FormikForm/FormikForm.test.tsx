@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import { Formik, FormikForm, FormInput } from './FormikForm'
 import { Button } from '../Button/Button'
 
@@ -21,6 +21,9 @@ const renderFormikForm = (
 }
 
 describe('Test basic Components', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
   test('should render Text component', () => {
     const { container } = render(renderFormikForm(<FormInput.Text name="name" label="Name" />))
     expect(container).toMatchSnapshot()
@@ -75,6 +78,24 @@ describe('Test basic Components', () => {
       )
     )
     expect(container).toMatchSnapshot()
+    const input = screen.getByRole('textbox')
+    // Type 'all' in the textbox
+    fireEvent.change(input, { target: { value: 'all' } })
+    // listItem will only have 'All' in the list
+    const all = screen.getByRole('listitem')
+    expect(all.textContent).toMatch('All')
+    // click on all
+    fireEvent.click(all)
+    // clear the textbox
+    fireEvent.change(input, { target: { value: '' } })
+    // Iterate and see apart from 'All' other items are disabled
+    screen.getAllByRole('listitem').forEach(listItem => {
+      if (listItem.textContent !== 'All') {
+        expect(listItem.className).toContain('disabled')
+      } else {
+        expect(listItem.className).toContain('active')
+      }
+    })
   })
   test('should render Checkbox component', () => {
     const { container } = render(renderFormikForm(<FormInput.CheckBox name="color" label="Color" />))
