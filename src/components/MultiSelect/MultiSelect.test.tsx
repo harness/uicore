@@ -108,4 +108,14 @@ describe('<MultiSelect/> tests', () => {
       expect(onChange).toHaveBeenCalledWith(pokemon)
     }
   })
+
+  test('works with select all + static data', () => {
+    const { container } = render(<MultiSelect items={items} allowCreatingNewItems={true} enableSelectAll />)
+    expect(container).toMatchSnapshot()
+    const input = container.querySelector('.bp3-input-ghost')!
+    expect(input).toBeDefined()
+    fireEvent.keyDown(input, { key: 'Enter', code: 13 })
+    expect(container.querySelectorAll('li.menuItem')[0].textContent).toMatch('All')
+    expect(container.querySelectorAll('li.menuItem').length).toBe(items.length + 1)
+  })
 })

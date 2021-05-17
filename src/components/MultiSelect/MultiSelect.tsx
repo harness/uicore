@@ -6,12 +6,20 @@ import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } f
 import css from './MultiSelect.css'
 import { Button } from '../../components/Button/Button'
 import { Icon } from '../../icons/Icon'
+import i18nBase from './MultiSelect.i18n'
 
 export interface MultiSelectOption {
   label: string
   value: string | number | symbol
   disabled?: boolean
 }
+
+export interface selectAllValue {
+  hasSelectAll: boolean
+  items: MultiSelectOption[]
+}
+
+export const selectAllKey = 'all'
 
 type Props = IMultiSelectProps<MultiSelectOption>
 
@@ -31,7 +39,7 @@ export interface MultiSelectProps
   > {
   itemRender?: Props['itemRenderer']
   onChange?(opts: MultiSelectOption[]): void
-  value?: MultiSelectOption[]
+  value?: MultiSelectOption[] | selectAllValue
   items: Props['items'] | (() => Promise<Props['items']>)
   tagRenderer?: Props['tagRenderer']
   createNewItemFromQuery?: Props['createNewItemFromQuery']
@@ -39,17 +47,33 @@ export interface MultiSelectProps
   name?: string
   onPopoverClose?: (node: HTMLElement) => void
   disabled?: boolean
+  enableSelectAll?: boolean
 }
 
 export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
 }
 
+export function addSelectAllOptions(items: Props['items'] | (() => Promise<Props['items']>)) {
+  // items is an array
+  const selectAllOptins = [{ label: i18nBase.all, value: selectAllKey, disabled: false }]
+  let updatedOptions: MultiSelectOption[] = []
+  if (Array.isArray(items)) {
+    updatedOptions = [...selectAllOptins, ...items]
+  }
+  return updatedOptions
+}
+
 export function MultiSelect(props: MultiSelectProps): React.ReactElement {
-  const { onChange, value, items: _items, onPopoverClose, disabled, ...rest } = props
+  const { onChange, value: _value, items: _items, onPopoverClose, disabled, enableSelectAll, ...rest } = props
+  const value = Array.isArray(_value) ? _value : _value?.items
   const [query, setQuery] = React.useState(props.query || '')
   const [loading, setLoading] = React.useState(false)
-  const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? _items : [])
+  let itemArray: MultiSelectOption[] | (() => MultiSelectOption[]) = []
+  if (enableSelectAll) {
+    itemArray = addSelectAllOptions(_items)
+  }
+  const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? itemArray : [])
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>(Array.isArray(value) ? value : [])
   const valuesMap: Record<string, boolean> = React.useMemo(
     () => (value || []).reduce((acc, current) => ({ ...acc, [current.label]: !!current.disabled }), {}),
@@ -58,6 +82,27 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
 
   function handleItemSelect(item: MultiSelectOption) {
     if (item.value === Loading || item.disabled) {
+      return
+    }
+
+    if (item?.value === 'all') {
+      if (selectedItems.find(i => i.value === 'all')) {
+        const selectAllItems = items.map(i => {
+          i.disabled = false
+          return i
+        })
+        setItems(selectAllItems)
+        setSelectedItems([])
+        onChange && onChange([])
+      } else {
+        selectedItems.length = 0
+        const disableItemsExceptAll = items.map(ix => {
+          ix.disabled = ix.value !== 'all'
+          return ix
+        })
+        setItems(disableItemsExceptAll)
+        onChange && onChange([item])
+      }
       return
     }
 
@@ -79,7 +124,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
   }
 
   React.useEffect(() => {
-    if (Array.isArray(_items)) {
+    if (Array.isArray(_items) && !enableSelectAll) {
       setItems(_items)
     } else if (typeof _items === 'function') {
       setLoading(true)
@@ -87,7 +132,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
 
       if (typeof promise.then === 'function') {
         promise.then(results => {
-          setItems(results)
+          enableSelectAll ? setItems(addSelectAllOptions(results)) : setItems(results)
           setLoading(false)
         })
       } else {

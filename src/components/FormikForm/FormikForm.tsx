@@ -4,7 +4,9 @@ import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } 
 import {
   MultiSelect as UiKitMultiSelect,
   MultiSelectOption,
-  MultiSelectProps as UiKitMultiSelectProps
+  MultiSelectProps as UiKitMultiSelectProps,
+  selectAllKey,
+  addSelectAllOptions
 } from '../MultiSelect/MultiSelect'
 import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
@@ -511,10 +513,18 @@ export interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   placeholder?: string
   multiSelectProps?: Omit<UiKitMultiSelectProps, 'items' | 'onChange' | 'value' | 'tagInputProps'>
   onChange?: UiKitMultiSelectProps['onChange']
+  enableSelectAll?: boolean
 }
 
 const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const {
+    formik,
+    name,
+    isOptional = false,
+    optionalLabel = IsOptionLabel,
+    enableSelectAll = false,
+    ...restProps
+  } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -561,12 +571,35 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
         }}
         {...multiSelectProps}
         items={items}
-        value={Array.isArray(formikValue) ? formikValue : []}
+        value={
+          Array.isArray(formikValue)
+            ? formikValue // eslint-disable-next-line no-prototype-builtins
+            : formikValue?.hasOwnProperty('hasSelectAll')
+            ? {
+                ...formikValue,
+                items: addSelectAllOptions([])
+              }
+            : []
+        }
         onChange={(items: MultiSelectOption[]) => {
-          formik?.setFieldValue(name, items)
+          /**
+           * If enableSelectAll is true and user has selected all
+           *  value is { items: [empty array], hasSelectAll: boolean -true }
+           * Else
+           *  value is [...items]
+           */
+          const hasSelectAll = !!items.find(item => item.value === selectAllKey)
+          const fieldValue = hasSelectAll
+            ? {
+                items: [],
+                hasSelectAll
+              }
+            : items
+          formik?.setFieldValue(name, fieldValue)
           onChange?.(items)
         }}
         resetOnSelect={true}
+        enableSelectAll={enableSelectAll}
       />
     </FormGroup>
   )

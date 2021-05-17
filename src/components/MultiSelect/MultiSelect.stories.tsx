@@ -57,6 +57,7 @@ export const Basic: Story<MultiSelectProps> = args => {
         setValue(items)
       }}
       {...argsCopy}
+      enableSelectAll
     />
   )
 }
@@ -81,6 +82,7 @@ export const AsyncSelect: Story<MultiSelectProps> = args => {
         setValue(items)
       }}
       {...argsCopy}
+      enableSelectAll
     />
   )
 }

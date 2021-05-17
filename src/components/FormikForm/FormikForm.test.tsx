@@ -59,6 +59,23 @@ describe('Test basic Components', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
+  test('should render MultiSelect component with select all', () => {
+    const { container } = render(
+      renderFormikForm(
+        <FormInput.MultiSelect
+          items={[
+            { label: 'red', value: 'Red' },
+            { label: 'blue', value: 'Blue' }
+          ]}
+          name="color"
+          label="Color"
+          enableSelectAll
+        />
+      )
+    )
+    expect(container).toMatchSnapshot()
+  })
   test('should render Checkbox component', () => {
     const { container } = render(renderFormikForm(<FormInput.CheckBox name="color" label="Color" />))
     expect(container).toMatchSnapshot()

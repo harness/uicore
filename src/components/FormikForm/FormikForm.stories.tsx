@@ -132,6 +132,16 @@ export const Basic: Story<FormikFormProps> = () => (
                 { label: 'Blue', value: 'blue' }
               ]}
             />
+            <FormInput.MultiSelect
+              name="colorMultiSelectAll"
+              label="Color Multi with select all"
+              placeholder="Select Multiple Colors or Select all"
+              items={[
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' }
+              ]}
+              enableSelectAll
+            />
             <FormInput.TextArea name="description" label="Description" />
             <FormInput.MultiTypeInput
               name="job"

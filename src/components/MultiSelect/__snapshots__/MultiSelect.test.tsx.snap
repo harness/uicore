@@ -277,6 +277,36 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
 </div>
 `;
 
+exports[`<MultiSelect/> tests works with select all + static data 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main bp3-fill"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="bp3-input bp3-tag-input bp3-multi-select"
+        >
+          <div
+            class="bp3-tag-input-values"
+          >
+            <input
+              class="bp3-input-ghost"
+              placeholder="Search..."
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<MultiSelect/> tests works with static data 1`] = `
 <div>
   <div
