@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.162](https://github.com/wings-software/uicore/compare/v0.1.161...v0.1.162) (2021-05-17)
+
+
+### Others
+
+* update menu hover colors ([#212](https://github.com/wings-software/uicore/issues/212)) ([86d283b](https://github.com/wings-software/uicore/commit/86d283b79000064c0575d14f552e8c429923c163))
+
 ### [0.1.161](https://github.com/wings-software/uicore/compare/v0.1.160...v0.1.161) (2021-05-14)
 
 
