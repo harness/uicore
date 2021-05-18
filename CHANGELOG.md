@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.163](https://github.com/wings-software/uicore/compare/v0.1.162...v0.1.163) (2021-05-18)
+
+
+### Features
+
+* [CDNG-7579]: Added test connection icon ([#213](https://github.com/wings-software/uicore/issues/213)) ([e5bf7dd](https://github.com/wings-software/uicore/commit/e5bf7dd971330c0dc70b6b8c13207cf13e7c00c7))
+
 ### [0.1.162](https://github.com/wings-software/uicore/compare/v0.1.161...v0.1.162) (2021-05-17)
 
 
