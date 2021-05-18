@@ -456,6 +456,7 @@ import TerraformApply from './terraform-apply.svg'
 import TerraformDestroy from './terraform-destroy.svg'
 import TerraformPlan from './terraform-plan.svg'
 import TerraformRollback from './terraform-rollback.svg'
+import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
 import Timeout from './timeout.svg'
@@ -933,6 +934,7 @@ type HarnessIconName =
   | 'terraform-destroy'
   | 'terraform-plan'
   | 'terraform-rollback'
+  | 'test-connection'
   | 'test-verification'
   | 'text'
   | 'timeout'
@@ -1410,6 +1412,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'terraform-destroy': TerraformDestroy,
   'terraform-plan': TerraformPlan,
   'terraform-rollback': TerraformRollback,
+  'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
   timeout: Timeout,
