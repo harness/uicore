@@ -26,7 +26,12 @@ exports[`Test basic Components should render Checkbox component 1`] = `
               <span
                 class="bp3-control-indicator"
               />
-              Color
+              <span
+                class="acenter checkBoxDocTooltipLabel"
+                data-tooltip-id="_color"
+              >
+                Color
+              </span>
             </label>
           </div>
         </div>
@@ -63,7 +68,12 @@ exports[`Test basic Components should render Custom Input component 1`] = `
             class="bp3-label"
             for="counter"
           >
-            Increment
+            <span
+              class="acenter"
+              data-tooltip-id="cr_counter"
+            >
+              Increment
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -117,7 +127,12 @@ exports[`Test basic Components should render FileInput component 1`] = `
             class="bp3-label"
             for="file"
           >
-            Attach File
+            <span
+              class="acenter"
+              data-tooltip-id="_file"
+            >
+              Attach File
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -175,7 +190,12 @@ exports[`Test basic Components should render FileInput component 2`] = `
             class="bp3-label"
             for="tags"
           >
-            Add Tag
+            <span
+              class="acenter"
+              data-tooltip-id="_tags"
+            >
+              Add Tag
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -277,7 +297,12 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
             class="bp3-label"
             for="color"
           >
-            Color
+            <span
+              class="acenter"
+              data-tooltip-id="_color"
+            >
+              Color
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -348,7 +373,12 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
             class="bp3-label"
             for="color"
           >
-            Color
+            <span
+              class="acenter"
+              data-tooltip-id="_color"
+            >
+              Color
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -420,7 +450,12 @@ exports[`Test basic Components should render Select component 1`] = `
             class="bp3-label"
             for="color"
           >
-            Color
+            <span
+              class="acenter"
+              data-tooltip-id="_color"
+            >
+              Color
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -508,7 +543,12 @@ exports[`Test basic Components should render Text component 1`] = `
             class="bp3-label"
             for="name"
           >
-            Name
+            <span
+              class="acenter"
+              data-tooltip-id="_name"
+            >
+              Name
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -563,7 +603,12 @@ exports[`Test basic Components should render TextArea component 1`] = `
             class="bp3-label"
             for="name"
           >
-            Name
+            <span
+              class="acenter"
+              data-tooltip-id="_name"
+            >
+              Name
+            </span>
              
             <span
               class="bp3-text-muted"

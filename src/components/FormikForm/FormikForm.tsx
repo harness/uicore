@@ -124,7 +124,7 @@ export interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'it
 }
 
 function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
-  const { formik, name, isOptional = false, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -185,15 +185,7 @@ const MENTIONS_DEFAULT: MentionsInfo = {
 }
 
 function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
-  const {
-    formik,
-    name,
-    mentionsInfo,
-    tagsProps,
-    isOptional = false,
-    optionalLabel = IsOptionLabel,
-    ...restProps
-  } = props
+  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -258,15 +250,7 @@ export interface MultiInputProps extends Omit<IFormGroupProps, 'labelFor' | 'ite
 }
 
 function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
-  const {
-    formik,
-    name,
-    mentionsInfo,
-    tagsProps,
-    optionalLabel = IsOptionLabel,
-    isOptional = false,
-    ...restProps
-  } = props
+  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -319,7 +303,7 @@ export interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 
 const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -357,7 +341,7 @@ export interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 
 const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -422,8 +406,6 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
     disabled = formik?.disabled,
     inline = formik?.inline,
     items = [],
-    isOptional = false,
-    optionalLabel = IsOptionLabel,
     label,
     radioGroup,
     onChange,
@@ -467,7 +449,7 @@ export interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps,
 }
 
 const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
-  const { formik, name, label, isOptional, optionalLabel, ...restProps } = props
+  const { formik, name, label, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -509,7 +491,7 @@ export interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 
 const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -574,7 +556,7 @@ export interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 
 const Select = (props: SelectProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -633,7 +615,7 @@ export interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 
 const Text = (props: TextProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -690,17 +672,7 @@ export interface ExpressionInputProps extends Omit<IFormGroupProps, 'labelFor'> 
 }
 
 const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) => {
-  const {
-    formik,
-    name,
-    items = [],
-    placeholder,
-    expressionInputProps,
-    onChange,
-    isOptional,
-    optionalLabel = IsOptionLabel,
-    ...restProps
-  } = props
+  const { formik, name, items = [], placeholder, expressionInputProps, onChange, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -745,7 +717,7 @@ export interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
 }
 
 const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
-  const { formik, name, autoFocus, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, autoFocus, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -888,7 +860,7 @@ export interface FormColorPickerProps extends ColorPickerProps, Omit<IFormGroupP
 }
 
 const FormColorPicker = (props: FormColorPickerProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -900,7 +872,7 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContextProps<any>) 
   } = restProps
   return (
     <FormGroup
-      label={!isOptional ? label : `${label} ${optionalLabel}`}
+      label={getFormFieldLabel(label, name, props)}
       labelFor={name}
       helperText={helperText}
       intent={intent}
@@ -929,16 +901,7 @@ export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
-  const {
-    formik,
-    name,
-    selectItems,
-    placeholder,
-    multiTypeInputProps,
-    isOptional = false,
-    optionalLabel = IsOptionLabel,
-    ...restProps
-  } = props
+  const { formik, name, selectItems, placeholder, multiTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -997,16 +960,7 @@ export interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'la
 }
 
 const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContextProps<any>) => {
-  const {
-    formik,
-    name,
-    selectItems,
-    placeholder,
-    multiSelectTypeInputProps,
-    isOptional = false,
-    optionalLabel = IsOptionLabel,
-    ...restProps
-  } = props
+  const { formik, name, selectItems, placeholder, multiSelectTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1063,16 +1017,7 @@ export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labe
 }
 
 const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
-  const {
-    formik,
-    name,
-    placeholder,
-    multiTextInputProps,
-    onChange,
-    isOptional = false,
-    optionalLabel = IsOptionLabel,
-    ...restProps
-  } = props
+  const { formik, name, placeholder, multiTextInputProps, onChange, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1127,7 +1072,7 @@ export interface FormCategorizedSelect extends Omit<IFormGroupProps, 'labelFor'>
 }
 
 const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1186,7 +1131,7 @@ export interface FormSelectWithSubviewProps extends Omit<IFormGroupProps, 'label
 }
 
 const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1251,7 +1196,7 @@ export interface FormMultiSelectWithSubviewProps extends Omit<IFormGroupProps, '
 }
 
 const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & FormikContextProps<any>) => {
-  const { formik, name, isOptional = false, optionalLabel = IsOptionLabel, ...restProps } = props
+  const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
