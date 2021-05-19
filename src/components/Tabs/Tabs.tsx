@@ -10,7 +10,6 @@ interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
 
 function Tabs(props: TabsProps) {
   const { renderAllTabPanels, children, vertical, ...rest } = props
-
   return (
     <BpTabs
       {...rest}
