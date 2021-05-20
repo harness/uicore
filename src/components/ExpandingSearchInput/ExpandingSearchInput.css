@@ -24,7 +24,6 @@
     }
     &:not(:placeholder-shown),
     &:focus {
-      padding-right: 30px;
       border-radius: 2px;
       min-height: 32px;
     }
@@ -53,12 +52,6 @@
   margin: 0 !important;
 }
 
-.fixedText {
-  position: absolute;
-  right: 75px;
-  top: 9px;
-}
-
 .btnWrapper {
   position: absolute;
   right: 2px;
@@ -71,6 +64,9 @@
 
 .flip {
   flex-direction: row-reverse !important;
+  input[type='search'] {
+    padding-left: 10px !important;
+  }
 }
 
 .flipicon {
@@ -79,8 +75,4 @@
 
 .flipBtnWrapper {
   right: 32px !important;
-}
-
-.flipFixedText {
-  right: 105px !important;
 }

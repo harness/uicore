@@ -151,7 +151,8 @@ export function ExpandingSearchInput(props: PropsInterface) {
 
   const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
-  const cssFixedText = `${css.fixedText} ${flip ? css.flipFixedText : ''}`
+  const padRightAmount =
+    42 + (flip ? 35 : 0) + (showPrevNextButtons ? 84 : 0) + (fixedText ? (fixedText.length || 0) * 9 : 0)
 
   // needs to be the last useEffect
   // using ref instead of state variable to avoid triggering a rerender
@@ -173,11 +174,12 @@ export function ExpandingSearchInput(props: PropsInterface) {
         value={value}
         onChange={onChange}
         onKeyPress={onKeyPress}
+        style={{ paddingRight: `${padRightAmount}px` }}
       />
       {value.length > 0 ? (
         <>
-          {fixedText ? <span className={cssFixedText}>{fixedText}</span> : null}
           <span className={cssBtnWrapper}>
+            {fixedText ? <span>{fixedText}</span> : null}
             {showPrevNextButtons ? (
               <>
                 <Button icon={'arrow-up'} minimal onClick={onPrev} />
