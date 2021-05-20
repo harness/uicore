@@ -10,11 +10,13 @@ import Options from './Options.svg'
 import Activity from './activity.svg'
 import Adminrole from './adminRole.svg'
 import Advanced from './advanced.svg'
+import AmazonEcs from './amazon-ecs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
+import AwsAmi from './aws-ami.svg'
 import AwsKms from './aws-kms.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
@@ -177,6 +179,7 @@ import InsightView from './insight-view.svg'
 import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import KubernetesDeployments from './kubernetes-deployments.svg'
 import Kustamize from './kustamize.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
@@ -488,11 +491,13 @@ type HarnessIconName =
   | 'activity'
   | 'adminRole'
   | 'advanced'
+  | 'amazon-ecs'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
   | 'approval-step'
   | 'audit-log-created'
+  | 'aws-ami'
   | 'aws-kms'
   | 'azure-kubernetes-service'
   | 'banned'
@@ -655,6 +660,7 @@ type HarnessIconName =
   | 'integration'
   | 'key-main'
   | 'key'
+  | 'kubernetes-deployments'
   | 'kustamize'
   | 'layout-bottom'
   | 'layout-float'
@@ -966,11 +972,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   activity: Activity,
   adminRole: Adminrole,
   advanced: Advanced,
+  'amazon-ecs': AmazonEcs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
   'audit-log-created': AuditLogCreated,
+  'aws-ami': AwsAmi,
   'aws-kms': AwsKms,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
@@ -1133,6 +1141,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   integration: Integration,
   'key-main': KeyMain,
   key: Key,
+  'kubernetes-deployments': KubernetesDeployments,
   kustamize: Kustamize,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
