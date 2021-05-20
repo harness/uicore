@@ -1,13 +1,5 @@
 import React, { ReactNode, useCallback, useMemo } from 'react'
-import {
-  connect,
-  FormikContext,
-  Form as FrmForm,
-  Formik as FrmFormik,
-  FormikConfig,
-  FormikActions,
-  FormikValues
-} from 'formik'
+import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
   MultiSelect as UiKitMultiSelect,
