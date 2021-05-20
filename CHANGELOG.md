@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.164](https://github.com/wings-software/uicore/compare/v0.1.163...v0.1.164) (2021-05-20)
+
+
+### Bug Fixes
+
+* created dockerfile ([#214](https://github.com/wings-software/uicore/issues/214)) ([2265733](https://github.com/wings-software/uicore/commit/2265733790f9c98dab6686c88eccc9dec6f59d74))
+* reworked expanding search component to calclate how much padding is needed depending on what options are selected ([#220](https://github.com/wings-software/uicore/issues/220)) ([0e14424](https://github.com/wings-software/uicore/commit/0e14424bfd4fa8f3d7cd62ca0e1a2956f7076b2a))
+
 ### [0.1.163](https://github.com/wings-software/uicore/compare/v0.1.162...v0.1.163) (2021-05-18)
 
 
