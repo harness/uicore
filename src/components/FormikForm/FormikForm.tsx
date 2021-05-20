@@ -79,6 +79,7 @@ export const getDefaultAutoCompleteValue = (): string => 'off'
 export interface FormikExtended<T> extends FormikContext<T> {
   disabled?: boolean
   inline?: boolean
+  formName?: string
 }
 
 export interface FormikContextProps<T> {
@@ -87,15 +88,6 @@ export interface FormikContextProps<T> {
   isOptional?: boolean // default to false
   autoComplete?: string
   tooltipProps?: DataTooltipInterface // todo mark it as mandatory
-}
-
-const getUniqueFormId = (formikInitialValues: FormikValues): string => {
-  const allKeys = Object.keys(formikInitialValues)
-  let toReturn = ''
-  allKeys.forEach(keyy => {
-    toReturn += `${keyy[0]}${keyy[keyy.length - 1]}`
-  })
-  return toReturn
 }
 
 export const getFormFieldLabel = (
@@ -110,7 +102,7 @@ export const getFormFieldLabel = (
     return labelText
   }
   const dataTooltipId =
-    props.tooltipProps?.dataTooltipId || `${getUniqueFormId(props.formik?.initialValues)}_${fieldName}`
+    props.tooltipProps?.dataTooltipId || props.formik?.formName ? `${props.formik?.formName}_${fieldName}` : ''
   return <HarnessDocTooltip tooltipId={dataTooltipId} labelText={labelText} className={css || ''} />
 }
 
@@ -132,7 +124,6 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
     disabled = formik?.disabled,
     items,
     label,
-    optionalLabel = IsOptionLabel,
     labelFor,
     itemFromNewTag,
     inline = formik?.inline,
