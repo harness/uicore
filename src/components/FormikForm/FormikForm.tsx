@@ -94,7 +94,7 @@ export const getFormFieldLabel = (
     return labelText
   }
   const dataTooltipId =
-    props.tooltipProps?.dataTooltipId || props.formik?.formName ? `${props.formik?.formName}_${fieldName}` : ''
+    props.tooltipProps?.dataTooltipId || (props.formik?.formName ? `${props.formik?.formName}_${fieldName}` : '')
   return <HarnessDocTooltip tooltipId={dataTooltipId} labelText={labelText} className={css || ''} />
 }
 
