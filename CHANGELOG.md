@@ -2,6 +2,177 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.169](https://github.com/wings-software/uicore/compare/v0.1.168...v0.1.169) (2021-05-24)
+
+
+### Bug Fixes
+
+* Revert "feat: [GTM-148] add cd trial flow icons ([#221](https://github.com/wings-software/uicore/issues/221))" ([#223](https://github.com/wings-software/uicore/issues/223)) ([9484efc](https://github.com/wings-software/uicore/commit/9484efc4e987e1786373b25706f5d63231df44e8))
+
+### [0.1.168](https://github.com/wings-software/uicore/compare/v0.1.167...v0.1.168) (2021-05-24)
+
+
+### Others
+
+* Formik tooltip context for data tooltip IDs ([#224](https://github.com/wings-software/uicore/issues/224)) ([8bc062b](https://github.com/wings-software/uicore/commit/8bc062bce67ac571d08ed279f6661eb7e16ecceb))
+
+### [0.1.167](https://github.com/wings-software/uicore/compare/v0.1.166...v0.1.167) (2021-05-24)
+
+
+### Bug Fixes
+
+* CDNG-7407 pagination-page-number-not-showing ([#217](https://github.com/wings-software/uicore/issues/217)) ([d04244d](https://github.com/wings-software/uicore/commit/d04244dc6a19c0f291142f98dc614f51b1b204da))
+
+### [0.1.166](https://github.com/wings-software/uicore/compare/v0.1.165...v0.1.166) (2021-05-24)
+
+
+### Features
+
+* [Tooltips]: Doc feedback & auto generation of form field IDs ([#216](https://github.com/wings-software/uicore/issues/216)) ([5726d28](https://github.com/wings-software/uicore/commit/5726d28803e2b80614e7df57b84372f7d473e9ad))
+
+### [0.1.165](https://github.com/wings-software/uicore/compare/v0.1.164...v0.1.165) (2021-05-20)
+
+
+### Features
+
+* [GTM-148] add cd trial flow icons ([#221](https://github.com/wings-software/uicore/issues/221)) ([44eaa63](https://github.com/wings-software/uicore/commit/44eaa63ae1f09e8bf32ff67299c2c01440228a74))
+
+### [0.1.164](https://github.com/wings-software/uicore/compare/v0.1.163...v0.1.164) (2021-05-20)
+
+
+### Bug Fixes
+
+* created dockerfile ([#214](https://github.com/wings-software/uicore/issues/214)) ([2265733](https://github.com/wings-software/uicore/commit/2265733790f9c98dab6686c88eccc9dec6f59d74))
+* reworked expanding search component to calclate how much padding is needed depending on what options are selected ([#220](https://github.com/wings-software/uicore/issues/220)) ([0e14424](https://github.com/wings-software/uicore/commit/0e14424bfd4fa8f3d7cd62ca0e1a2956f7076b2a))
+
+### [0.1.163](https://github.com/wings-software/uicore/compare/v0.1.162...v0.1.163) (2021-05-18)
+
+
+### Features
+
+* [CDNG-7579]: Added test connection icon ([#213](https://github.com/wings-software/uicore/issues/213)) ([e5bf7dd](https://github.com/wings-software/uicore/commit/e5bf7dd971330c0dc70b6b8c13207cf13e7c00c7))
+
+### [0.1.162](https://github.com/wings-software/uicore/compare/v0.1.161...v0.1.162) (2021-05-17)
+
+
+### Others
+
+* update menu hover colors ([#212](https://github.com/wings-software/uicore/issues/212)) ([86d283b](https://github.com/wings-software/uicore/commit/86d283b79000064c0575d14f552e8c429923c163))
+
+### [0.1.161](https://github.com/wings-software/uicore/compare/v0.1.160...v0.1.161) (2021-05-14)
+
+
+### Features
+
+* [CDNG-7579]: Added two new icons ([#209](https://github.com/wings-software/uicore/issues/209)) ([c846211](https://github.com/wings-software/uicore/commit/c846211f43f81ede555d8143bf38a864d752a728))
+
+### [0.1.160](https://github.com/wings-software/uicore/compare/v0.1.159...v0.1.160) (2021-05-13)
+
+
+### Features
+
+* [GTM-147]: added a digital ocean icon ([#208](https://github.com/wings-software/uicore/issues/208)) ([3a4b07c](https://github.com/wings-software/uicore/commit/3a4b07cd0e837d0ed1939c5a4ce8f4d66fc641ca))
+
+### [0.1.159](https://github.com/wings-software/uicore/compare/v0.1.158...v0.1.159) (2021-05-12)
+
+
+### Bug Fixes
+
+* removing fill none from svg and setting fill current color on path ([#207](https://github.com/wings-software/uicore/issues/207)) ([657b6b6](https://github.com/wings-software/uicore/commit/657b6b67db6d274155bbcf2d43d7870c90dbb344))
+
+### [0.1.158](https://github.com/wings-software/uicore/compare/v0.1.157...v0.1.158) (2021-05-12)
+
+
+### Bug Fixes
+
+* Updated reg to check is expression as it was wrong ([#206](https://github.com/wings-software/uicore/issues/206)) ([e3aa5a4](https://github.com/wings-software/uicore/commit/e3aa5a417c5f073b93bb3742053c6f5d67722404))
+
+### [0.1.157](https://github.com/wings-software/uicore/compare/v0.1.156...v0.1.157) (2021-05-11)
+
+
+### Others
+
+* Add hideHeaders and width to Table ([#205](https://github.com/wings-software/uicore/issues/205)) ([42adfb6](https://github.com/wings-software/uicore/commit/42adfb6658ce97e099e776a058e9c2eba88a4737))
+
+### [0.1.156](https://github.com/wings-software/uicore/compare/v0.1.155...v0.1.156) (2021-05-11)
+
+
+### Features
+
+* [CE-4411]: Added Reset icon ([#204](https://github.com/wings-software/uicore/issues/204)) ([dfaf2fb](https://github.com/wings-software/uicore/commit/dfaf2fb6a52e978793c9ea116fc65d26e8f8c998))
+
+### [0.1.155](https://github.com/wings-software/uicore/compare/v0.1.154...v0.1.155) (2021-05-11)
+
+
+### Others
+
+* [CE-4411]: Added background color for primary colors ([#199](https://github.com/wings-software/uicore/issues/199)) ([73d8b1b](https://github.com/wings-software/uicore/commit/73d8b1b3a48c1c31fbfbcd084104f654f78d810d))
+
+### [0.1.154](https://github.com/wings-software/uicore/compare/v0.1.153...v0.1.154) (2021-05-10)
+
+
+### Features
+
+* [Tooltips]: Enabling tooltips for text and button components, and adding className prop ([#201](https://github.com/wings-software/uicore/issues/201)) ([193ac5f](https://github.com/wings-software/uicore/commit/193ac5f241ae85fe2a72085f24ff20be97a5de4a))
+
+### [0.1.153](https://github.com/wings-software/uicore/compare/v0.1.152...v0.1.153) (2021-05-10)
+
+
+### Features
+
+* [CDNG-7579]: Added new icons ([#203](https://github.com/wings-software/uicore/issues/203)) ([0ba5947](https://github.com/wings-software/uicore/commit/0ba594715ae54ae2bcc488b6af78b4ef098533b6))
+
+### [0.1.152](https://github.com/wings-software/uicore/compare/v0.1.151...v0.1.152) (2021-05-10)
+
+
+### Features
+
+* Update React version to 17 ([#169](https://github.com/wings-software/uicore/issues/169)) ([2039ee9](https://github.com/wings-software/uicore/commit/2039ee928d3fedaf5e29f632fefd548244d067a5))
+
+### [0.1.151](https://github.com/wings-software/uicore/compare/v0.1.150...v0.1.151) (2021-05-10)
+
+
+### Others
+
+* remove old logs code ([#200](https://github.com/wings-software/uicore/issues/200)) ([d5c3ffc](https://github.com/wings-software/uicore/commit/d5c3ffc5cc8fc508791090b1176a86c9b85cf15b))
+
+### [0.1.150](https://github.com/wings-software/uicore/compare/v0.1.149...v0.1.150) (2021-05-08)
+
+
+### Features
+
+* [Tooltips]: Tooltip component and corresponding context ([#162](https://github.com/wings-software/uicore/issues/162)) ([#198](https://github.com/wings-software/uicore/issues/198)) ([e1803a2](https://github.com/wings-software/uicore/commit/e1803a286034253ae0d380ed735de812ce238a33))
+
+### [0.1.149](https://github.com/wings-software/uicore/compare/v0.1.148...v0.1.149) (2021-05-06)
+
+### [0.1.148](https://github.com/wings-software/uicore/compare/v0.1.147...v0.1.148) (2021-05-06)
+
+
+### Features
+
+* added ce optimization and visibility icons ([#196](https://github.com/wings-software/uicore/issues/196)) ([63392ab](https://github.com/wings-software/uicore/commit/63392ab2dffb2588379675b8f409b71c1e1becc5))
+
+### [0.1.147](https://github.com/wings-software/uicore/compare/v0.1.146...v0.1.147) (2021-05-06)
+
+
+### Features
+
+* [Tooltips]: Tooltip component and corresponding context ([#162](https://github.com/wings-software/uicore/issues/162)) ([b62cd72](https://github.com/wings-software/uicore/commit/b62cd72fb28edae33a996b13a14c88ec780ae9ef))
+
+### [0.1.146](https://github.com/wings-software/uicore/compare/v0.1.145...v0.1.146) (2021-05-05)
+
+
+### Others
+
+* Add Tooltip for AvatarGroup ([#195](https://github.com/wings-software/uicore/issues/195)) ([92346ea](https://github.com/wings-software/uicore/commit/92346ea010db7716e78442974f311d0e8881a8a2))
+
+### [0.1.145](https://github.com/wings-software/uicore/compare/v0.1.144...v0.1.145) (2021-05-04)
+
+
+### Features
+
+* ColorPicker: Export colors from picker ([#194](https://github.com/wings-software/uicore/issues/194)) ([5015789](https://github.com/wings-software/uicore/commit/50157895a4efd2d70d5c241c7f32347734f9afc4))
+
 ### [0.1.144](https://github.com/wings-software/uicore/compare/v0.1.143...v0.1.144) (2021-05-03)
 
 

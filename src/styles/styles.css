@@ -3,5 +3,5 @@
 @import './sizes.css';
 @import './animations.css';
 @import './grid.css';
+@import './blueprint-overrides.css';
 @import '@wings-software/mentions/styles.css';
-@import 'xterm/css/xterm.css';

@@ -1,0 +1,36 @@
+.acenter {
+  display: flex;
+  align-items: center;
+
+  :global {
+    .bp3-popover-wrapper {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.tooltipIcon {
+  margin-left: var(--spacing-xsmall);
+  display: flex;
+}
+
+.tooltipWrapper {
+  margin: 0;
+
+  :global {
+    .bp3-popover-content {
+      padding: 0;
+    }
+  }
+}
+
+.tooltipContentWrapper {
+  margin: 0;
+  padding: 10px;
+  height: 100%;
+  max-width: 400px;
+
+  p {
+    margin: 0 !important;
+  }
+}

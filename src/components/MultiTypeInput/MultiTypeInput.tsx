@@ -46,7 +46,7 @@ export interface FixedTypeComponentProps {
   disabled?: boolean
 }
 
-export const isValueAnExpression = (value: string): boolean => /^<\+.*>$/.test(value)
+export const isValueAnExpression = (value: string): boolean => /<\+.*>/.test(value)
 
 export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',

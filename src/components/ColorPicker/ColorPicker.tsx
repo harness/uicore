@@ -65,6 +65,8 @@ const colors = [
   '#c7c9d9' // black
 ]
 
+export const ColorPickerColors = colors
+
 export function ColorPicker(props: ColorPickerProps) {
   const [selected, setSelected] = useState((props.color || 'transparent').toLowerCase())
   const width = Math.max(props.width ? parseInt(props.width as string) : 60, 60)

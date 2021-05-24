@@ -20,6 +20,7 @@ export interface AvatarProps extends HTMLDivProps {
   color?: Color
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
   hoverCard?: boolean
+  tooltip?: JSX.Element
   hoverCardDetailsCallBack?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 interface SizeValueProps {
@@ -49,6 +50,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     style,
     className,
     email = '',
+    tooltip,
     color = Color.WHITE,
     onClick,
     hoverCard = true,
@@ -105,7 +107,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     borderRadius: '100%'
   }
 
-  const tooltip = (
+  const defaultTooltip = (
     <Layout.Vertical className={css.hoverToolTipLayout}>
       <Layout.Horizontal flex padding="small" className={css.hoverAvatarLayout}>
         {src ? (
@@ -140,7 +142,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   )
   let hoverCardContent = {}
   if (hoverCard) {
-    hoverCardContent = { content: tooltip }
+    hoverCardContent = { content: tooltip || defaultTooltip }
   }
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>

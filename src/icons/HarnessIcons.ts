@@ -48,6 +48,8 @@ import CeHover from './ce-hover.svg'
 import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
 import CeMain from './ce-main.svg'
+import CeOptimization from './ce-optimization.svg'
+import CeVisibility from './ce-visibility.svg'
 import CfHover from './cf-hover.svg'
 import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
@@ -86,6 +88,8 @@ import ConditionalSkip from './conditional-skip.svg'
 import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
+import Connectthroughdelegate from './connectthroughdelegate.svg'
+import Connectthroughmanager from './connectthroughmanager.svg'
 import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
 import CoverageStatusError from './coverage-status-error.svg'
@@ -116,6 +120,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
@@ -136,6 +141,7 @@ import FatArrowUp from './fat-arrow-up.svg'
 import FeedbackGiven from './feedback-given.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
+import FolderUpload from './folder-upload.svg'
 import Functions from './functions.svg'
 import Gcp from './gcp.svg'
 import GcrStep from './gcr-step.svg'
@@ -143,6 +149,7 @@ import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitBranchExisting from './git-branch-existing.svg'
 import GitCloneStep from './git-clone-step.svg'
+import GitConfigure from './git-configure.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
 import GithubSelected from './github-selected.svg'
@@ -339,6 +346,7 @@ import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
 import Repository from './repository.svg'
+import ResetIcon from './reset-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS from './restore-cache-s3.svg'
@@ -448,6 +456,7 @@ import TerraformApply from './terraform-apply.svg'
 import TerraformDestroy from './terraform-destroy.svg'
 import TerraformPlan from './terraform-plan.svg'
 import TerraformRollback from './terraform-rollback.svg'
+import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
 import Timeout from './timeout.svg'
@@ -517,6 +526,8 @@ type HarnessIconName =
   | 'ce-main-colored'
   | 'ce-main-grey'
   | 'ce-main'
+  | 'ce-optimization'
+  | 'ce-visibility'
   | 'cf-hover'
   | 'cf-main'
   | 'check-alt'
@@ -555,6 +566,8 @@ type HarnessIconName =
   | 'conditional-when'
   | 'config-change'
   | 'config-file'
+  | 'connectthroughdelegate'
+  | 'connectthroughmanager'
   | 'copy-alt'
   | 'copy'
   | 'coverage-status-error'
@@ -585,6 +598,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
   | 'ecr-step'
@@ -605,6 +619,7 @@ type HarnessIconName =
   | 'feedback-given'
   | 'file'
   | 'fixed-input'
+  | 'folder-upload'
   | 'functions'
   | 'gcp'
   | 'gcr-step'
@@ -612,6 +627,7 @@ type HarnessIconName =
   | 'gear'
   | 'git-branch-existing'
   | 'git-clone-step'
+  | 'git-configure'
   | 'git-landing-page'
   | 'git-new-branch'
   | 'github-selected'
@@ -808,6 +824,7 @@ type HarnessIconName =
   | 'report-gear'
   | 'report-icon'
   | 'repository'
+  | 'reset-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
@@ -917,6 +934,7 @@ type HarnessIconName =
   | 'terraform-destroy'
   | 'terraform-plan'
   | 'terraform-rollback'
+  | 'test-connection'
   | 'test-verification'
   | 'text'
   | 'timeout'
@@ -986,6 +1004,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-main-colored': CeMainColored,
   'ce-main-grey': CeMainGrey,
   'ce-main': CeMain,
+  'ce-optimization': CeOptimization,
+  'ce-visibility': CeVisibility,
   'cf-hover': CfHover,
   'cf-main': CfMain,
   'check-alt': CheckAlt,
@@ -1024,6 +1044,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
+  connectthroughdelegate: Connectthroughdelegate,
+  connectthroughmanager: Connectthroughmanager,
   'copy-alt': CopyAlt,
   copy: Copy,
   'coverage-status-error': CoverageStatusError,
@@ -1054,6 +1076,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
   'ecr-step': EcrStep,
@@ -1074,6 +1097,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   file: File,
   'fixed-input': FixedInput,
+  'folder-upload': FolderUpload,
   functions: Functions,
   gcp: Gcp,
   'gcr-step': GcrStep,
@@ -1081,6 +1105,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gear: Gear,
   'git-branch-existing': GitBranchExisting,
   'git-clone-step': GitCloneStep,
+  'git-configure': GitConfigure,
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
   'github-selected': GithubSelected,
@@ -1277,6 +1302,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
   repository: Repository,
+  'reset-icon': ResetIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS,
@@ -1386,6 +1412,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'terraform-destroy': TerraformDestroy,
   'terraform-plan': TerraformPlan,
   'terraform-rollback': TerraformRollback,
+  'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
   timeout: Timeout,
