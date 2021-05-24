@@ -101,7 +101,7 @@ const Pagination: React.FC<PaginationProps> = props => {
                   )}
                   onChange={item => gotoPage(item.value as number)}
                   filterable={false}>
-                  <Button icon="more" minimal />
+                  <Button icon="more" minimal width="100%" />
                 </SelectV2>
               )}
               {moreLeft && moreRight && Array.from({ length: 3 }, (_, i) => renderPage(pageIndex + i))}
@@ -117,7 +117,7 @@ const Pagination: React.FC<PaginationProps> = props => {
                   })}
                   onChange={item => gotoPage(item.value as number)}
                   filterable={false}>
-                  <Button icon="more" minimal />
+                  <Button icon="more" minimal width="100%" />
                 </SelectV2>
               )}
               {moreRight
