@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useMemo } from 'react'
+import React, { ReactNode, useCallback, useContext, useMemo } from 'react'
 import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -56,6 +56,7 @@ import {
 } from '../ExpressionInput/ExpressionInput'
 import { DataTooltipInterface } from '../../frameworks/Tooltip/types'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
+import { FormikTooltipContext } from './FormikTooltipContext'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -93,8 +94,9 @@ export const getFormFieldLabel = (
   if (!labelText) {
     return labelText
   }
+  const tooltipContext = useContext(FormikTooltipContext)
   const dataTooltipId =
-    props.tooltipProps?.dataTooltipId || (props.formik?.formName ? `${props.formik?.formName}_${fieldName}` : '')
+    props.tooltipProps?.dataTooltipId || (tooltipContext?.formName ? `${tooltipContext?.formName}_${fieldName}` : '')
   return <HarnessDocTooltip tooltipId={dataTooltipId} labelText={labelText} className={css || ''} />
 }
 
@@ -780,6 +782,7 @@ export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmi
   formLoading?: true
   render?: (props: FormikExtended<Values>) => React.ReactNode
   onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
+  formName?: string
 }
 
 export function Formik<Values = Record<string, unknown>>(props: FormikProps<Values>): React.ReactElement {
@@ -830,9 +833,12 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
       render: functionRenderLocal
     }
   }
+
   return (
     <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
-      {!render && !isFunction(children) && <OverlaySpinner show={isFormLoading}>{children}</OverlaySpinner>}
+      <FormikTooltipContext.Provider value={{ formName: props.formName }}>
+        {!render && !isFunction(children) && <OverlaySpinner show={isFormLoading}>{children}</OverlaySpinner>}
+      </FormikTooltipContext.Provider>
     </FrmFormik>
   )
 }
