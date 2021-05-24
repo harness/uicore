@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.170](https://github.com/wings-software/uicore/compare/v0.1.169...v0.1.170) (2021-05-24)
+
+
+### Features
+
+* Improve fetching for TagInput items props ([#225](https://github.com/wings-software/uicore/issues/225)) ([faced1a](https://github.com/wings-software/uicore/commit/faced1ad3802535531e3a459d556a6893958c4d7))
+
 ### [0.1.169](https://github.com/wings-software/uicore/compare/v0.1.168...v0.1.169) (2021-05-24)
 
 
