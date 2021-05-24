@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.169](https://github.com/wings-software/uicore/compare/v0.1.168...v0.1.169) (2021-05-24)
+
+
+### Bug Fixes
+
+* Revert "feat: [GTM-148] add cd trial flow icons ([#221](https://github.com/wings-software/uicore/issues/221))" ([#223](https://github.com/wings-software/uicore/issues/223)) ([9484efc](https://github.com/wings-software/uicore/commit/9484efc4e987e1786373b25706f5d63231df44e8))
+
 ### [0.1.168](https://github.com/wings-software/uicore/compare/v0.1.167...v0.1.168) (2021-05-24)
 
 
