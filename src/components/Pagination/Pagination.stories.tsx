@@ -11,11 +11,11 @@ export default {
 export const Basic: Story<PaginationProps> = args => {
   const [pageIndex, setPageIndex] = useState(args.pageIndex || 0)
 
-  return <Pagination {...args} pageIndex={pageIndex} gotoPage={setPageIndex} />
+  return <Pagination {...args} pageIndex={pageIndex} gotoPage={setPageIndex} nextPage={setPageIndex} />
 }
 
 Basic.args = {
-  itemCount: 97,
-  pageCount: 10,
+  itemCount: 147,
+  pageCount: 15,
   pageSize: 10
 }
