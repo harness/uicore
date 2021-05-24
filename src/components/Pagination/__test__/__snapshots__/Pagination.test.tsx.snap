@@ -160,42 +160,46 @@ exports[`Pagination pageCount >= 8 1`] = `
           5
         </span>
       </button>
-      <div
-        class="bp3-popover-wrapper main bp3-fill"
+      <button
+        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        type="button"
       >
-        <div
-          class="bp3-popover-target"
+        <span
+          class="bp3-button-text"
         >
-          <div
-            class=""
-          >
-            <button
-              class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
-              type="button"
-            >
-              <span
-                class="bp3-icon bp3-icon-more main padding padding-undefined"
-                icon="more"
-              >
-                <svg
-                  data-icon="more"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <desc>
-                    more
-                  </desc>
-                  <path
-                    d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
+          6
+        </span>
+      </button>
+      <button
+        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        type="button"
+      >
+        <span
+          class="bp3-button-text"
+        >
+          7
+        </span>
+      </button>
+      <button
+        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        type="button"
+      >
+        <span
+          class="bp3-button-text"
+        >
+          8
+        </span>
+      </button>
+      <button
+        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        type="button"
+      >
+        <span
+          class="bp3-button-text"
+        >
+          9
+        </span>
+      </button>
       <button
         class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
         type="button"

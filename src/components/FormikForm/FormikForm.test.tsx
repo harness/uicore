@@ -11,6 +11,23 @@ const renderFormikForm = (
   inline = false
 ) => {
   return (
+    <Formik initialValues={initialValues} onSubmit={submitMethod} formName="testform">
+      <FormikForm disabled={disabled} inline={inline}>
+        {fields}
+        <Button intent="primary" type="submit" text="Submit" />
+      </FormikForm>
+    </Formik>
+  )
+}
+
+const renderFormikFormWithoutFormName = (
+  fields: React.ReactNode,
+  submitMethod = jest.fn(),
+  initialValues = {},
+  disabled = false,
+  inline = false
+) => {
+  return (
     <Formik initialValues={initialValues} onSubmit={submitMethod}>
       <FormikForm disabled={disabled} inline={inline}>
         {fields}
@@ -22,11 +39,11 @@ const renderFormikForm = (
 
 describe('Test basic Components', () => {
   test('should render Text component', () => {
-    const { container } = render(renderFormikForm(<FormInput.Text name="name" label="Name" />))
+    const { container } = render(renderFormikFormWithoutFormName(<FormInput.Text name="name" label="Name" />))
     expect(container).toMatchSnapshot()
   })
   test('should render TextArea component', () => {
-    const { container } = render(renderFormikForm(<FormInput.TextArea name="name" label="Name" />))
+    const { container } = render(renderFormikFormWithoutFormName(<FormInput.TextArea name="name" label="Name" />))
     expect(container).toMatchSnapshot()
   })
   test('should render Select component', () => {

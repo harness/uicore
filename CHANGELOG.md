@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.168](https://github.com/wings-software/uicore/compare/v0.1.167...v0.1.168) (2021-05-24)
+
+
+### Others
+
+* Formik tooltip context for data tooltip IDs ([#224](https://github.com/wings-software/uicore/issues/224)) ([8bc062b](https://github.com/wings-software/uicore/commit/8bc062bce67ac571d08ed279f6661eb7e16ecceb))
+
+### [0.1.167](https://github.com/wings-software/uicore/compare/v0.1.166...v0.1.167) (2021-05-24)
+
+
+### Bug Fixes
+
+* CDNG-7407 pagination-page-number-not-showing ([#217](https://github.com/wings-software/uicore/issues/217)) ([d04244d](https://github.com/wings-software/uicore/commit/d04244dc6a19c0f291142f98dc614f51b1b204da))
+
+### [0.1.166](https://github.com/wings-software/uicore/compare/v0.1.165...v0.1.166) (2021-05-24)
+
+
+### Features
+
+* [Tooltips]: Doc feedback & auto generation of form field IDs ([#216](https://github.com/wings-software/uicore/issues/216)) ([5726d28](https://github.com/wings-software/uicore/commit/5726d28803e2b80614e7df57b84372f7d473e9ad))
+
 ### [0.1.165](https://github.com/wings-software/uicore/compare/v0.1.164...v0.1.165) (2021-05-20)
 
 
