@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.167](https://github.com/wings-software/uicore/compare/v0.1.166...v0.1.167) (2021-05-24)
+
+
+### Bug Fixes
+
+* CDNG-7407 pagination-page-number-not-showing ([#217](https://github.com/wings-software/uicore/issues/217)) ([d04244d](https://github.com/wings-software/uicore/commit/d04244dc6a19c0f291142f98dc614f51b1b204da))
+
 ### [0.1.166](https://github.com/wings-software/uicore/compare/v0.1.165...v0.1.166) (2021-05-24)
 
 
