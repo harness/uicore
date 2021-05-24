@@ -207,7 +207,8 @@ export function TagInput<T>(props: TagInputProps<T>) {
         }
       })()
     }
-  }, [])
+  }, [_items, isMounted])
+
   const itemPredicate = useCallback((query, item: T, _index, exactMatch) => {
     const itemLabel = labelFor(item)
     const normalizedTitle = itemLabel.toLowerCase()
