@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.166](https://github.com/wings-software/uicore/compare/v0.1.165...v0.1.166) (2021-05-24)
+
+
+### Features
+
+* [Tooltips]: Doc feedback & auto generation of form field IDs ([#216](https://github.com/wings-software/uicore/issues/216)) ([5726d28](https://github.com/wings-software/uicore/commit/5726d28803e2b80614e7df57b84372f7d473e9ad))
+
 ### [0.1.165](https://github.com/wings-software/uicore/compare/v0.1.164...v0.1.165) (2021-05-20)
 
 
