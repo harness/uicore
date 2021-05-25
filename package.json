@@ -73,6 +73,7 @@
     "@types/react-table": "7.0.13",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
+    "@wings-software/core-css": "^0.6.5",
     "@wings-software/mentions": "^1.2.9",
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
@@ -150,8 +151,5 @@
   },
   "files": [
     "dist/*"
-  ],
-  "dependencies": {
-    "@wings-software/core-css": "^0.6.5"
-  }
+  ]
 }
