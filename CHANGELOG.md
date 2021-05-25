@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.171](https://github.com/wings-software/uicore/compare/v0.1.170...v0.1.171) (2021-05-25)
+
+
+### Bug Fixes
+
+* [PL-14296]: remove custom letter-spacing ([#226](https://github.com/wings-software/uicore/issues/226)) ([012e55b](https://github.com/wings-software/uicore/commit/012e55b0e7dbf5aab318e49c7a15ee4124850466))
+
 ### [0.1.170](https://github.com/wings-software/uicore/compare/v0.1.169...v0.1.170) (2021-05-24)
 
 
