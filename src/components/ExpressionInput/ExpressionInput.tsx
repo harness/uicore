@@ -1,6 +1,9 @@
 import React from 'react'
 import { InputGroup, IInputGroupProps, Popover, Menu, IPopoverProps } from '@blueprintjs/core'
 import { QueryList, IQueryListRendererProps, IItemRendererProps } from '@blueprintjs/select'
+import { debounce } from 'lodash-es'
+
+import css from './ExpressionInput.css'
 
 export interface ExpressionInputProps {
   items?: string[]
@@ -108,23 +111,26 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     }
   }
 
-  function updateQueryBasedOnCursor(indexAt: number | null, value: string) {
-    // update cursor position
-    cursorRef.current = indexAt
+  const updateQueryBasedOnCursor = React.useCallback(
+    debounce((indexAt: number | null, value: string) => {
+      // update cursor position
+      cursorRef.current = indexAt
 
-    if (typeof indexAt === 'number') {
-      // get everything before cursor
-      const query = value.slice(0, indexAt)
-      const match = query.match(EXPRESSION_START_REGEX)
+      if (typeof indexAt === 'number') {
+        // get everything before cursor
+        const query = value.slice(0, indexAt)
+        const match = query.match(EXPRESSION_START_REGEX)
 
-      // if it matches the regex, update state
-      if (match) {
-        setQueryValue(value.slice(0, (match.index || 0) + match[0].length))
-      } else {
-        resetQuery()
+        // if it matches the regex, update state
+        if (match) {
+          setQueryValue(value.slice(0, (match.index || 0) + match[0].length))
+        } else {
+          resetQuery()
+        }
       }
-    }
-  }
+    }, 300),
+    []
+  )
 
   function renderer(listProps: IQueryListRendererProps<string>): JSX.Element {
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -163,6 +169,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         backdropProps={{ onClick: resetQuery }}
         autoFocus={false}
         enforceFocus={false}
+        popoverClassName={css.popover}
         isOpen={items.length > 0 && !!queryValue}>
         <InputGroup
           {...inputProps}
@@ -176,7 +183,14 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           onMouseUp={handleMouseUp}
           disabled={disabled}
         />
-        <Menu style={{ maxHeight, overflow: 'auto' }}>{listProps.itemList}</Menu>
+        <React.Fragment>
+          {listProps.itemList
+            ? React.cloneElement(listProps.itemList as any, {
+                className: css.menu,
+                style: { maxHeight }
+              })
+            : null}
+        </React.Fragment>
       </Popover>
     )
   }
