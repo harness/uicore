@@ -1,0 +1,11 @@
+.menu {
+  max-width: 400px;
+  overflow: hidden auto;
+  padding: var(--spacing-4) 0;
+  border-radius: var(--spacing-3);
+  box-shadow: var(--elevation-2), var(--elevation-3);
+}
+
+.popover {
+  box-shadow: none;
+}
