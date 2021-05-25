@@ -3978,6 +3978,11 @@
   resolved "https://registry.npmjs.org/@webpack-cli/serve/-/serve-1.1.0.tgz#13ad38f89b6e53d1133bac0006a128217a6ebf92"
   integrity sha512-7RfnMXCpJ/NThrhq4gYQYILB18xWyoQcBey81oIyVbmgbc6m5ZHHyFK+DyH7pLHJf0p14MxL4mTsoPAgBSTpIg==
 
+"@wings-software/core-css@^0.6.5":
+  version "0.6.5"
+  resolved "https://npm.pkg.github.com/download/@wings-software/core-css/0.6.5/bbd820be74f3d32c1805bfe350467889421c0be9b7a1d5ef4d3275d7c0ad74ae#affbc1a96ae3decb56507494d6483ad6ec5722c3"
+  integrity sha512-drv3a2FVl36xCGt4KSdLDKposmkiHr3f3i7G8c0hG5zevEAqSrmXUCfUCriU/HbLx+myrbSnaOd6Rp1ka2X5sA==
+
 "@wings-software/mentions@^1.2.9":
   version "1.2.9"
   resolved "https://npm.pkg.github.com/download/@wings-software/mentions/1.2.9/66b154fedb00ce429a5760d649f66e48ddb602a1b53bb6ee99704a49437468cb#33a66befe5025eab0cb3d6248dd5eb5cb1bd4688"

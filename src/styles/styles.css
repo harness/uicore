@@ -1,7 +1,2 @@
-@import './colors.css';
-@import './fonts.css';
-@import './sizes.css';
-@import './animations.css';
-@import './grid.css';
-@import './blueprint-overrides.css';
+@import '@wings-software/core-css';
 @import '@wings-software/mentions/styles.css';
