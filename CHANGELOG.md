@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.174](https://github.com/wings-software/uicore/compare/v0.1.173...v0.1.174) (2021-05-26)
+
+
+### Bug Fixes
+
+* scroll issue inside expression input ([#230](https://github.com/wings-software/uicore/issues/230)) ([c854895](https://github.com/wings-software/uicore/commit/c854895bef36327648b59fef366a032d334ffd17))
+
 ### [0.1.173](https://github.com/wings-software/uicore/compare/v0.1.172...v0.1.173) (2021-05-26)
 
 
