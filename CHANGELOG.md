@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.173](https://github.com/wings-software/uicore/compare/v0.1.172...v0.1.173) (2021-05-26)
+
+
+### Features
+
+* [Tooltips]: Added tooltip context provider before the form render ([#229](https://github.com/wings-software/uicore/issues/229)) ([1544429](https://github.com/wings-software/uicore/commit/154442992e6a56b951493d3c043fc2622c594d08))
+
 ### [0.1.172](https://github.com/wings-software/uicore/compare/v0.1.171...v0.1.172) (2021-05-25)
 
 
