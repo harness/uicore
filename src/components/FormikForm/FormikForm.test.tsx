@@ -123,6 +123,23 @@ describe('Test basic Components', () => {
     expect(container).toMatchSnapshot()
   })
 
+  test('render formik form custom render', () => {
+    const { container } = render(
+      <Formik initialValues={{ field1: 'val1' }} onSubmit={jest.fn()} formName="sampleForm">
+        {() => {
+          return (
+            <>
+              <FormInput.Text name="field1" label="field1label" />
+              <FormInput.CheckBox name="field2" label="field2label" tooltipProps={{ dataTooltipId: 'field2tipId' }} />
+            </>
+          )
+        }}
+      </Formik>
+    )
+
+    expect(container).toMatchSnapshot('custom render formik')
+  })
+
   test('should render FileInput component', () => {
     const { container } = render(
       renderFormikForm(
