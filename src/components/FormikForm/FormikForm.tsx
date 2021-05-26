@@ -835,11 +835,11 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
   }
 
   return (
-    <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
-      <FormikTooltipContext.Provider value={{ formName: props.formName }}>
+    <FormikTooltipContext.Provider value={{ formName: props.formName }}>
+      <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
         {!render && !isFunction(children) && <OverlaySpinner show={isFormLoading}>{children}</OverlaySpinner>}
-      </FormikTooltipContext.Provider>
-    </FrmFormik>
+      </FrmFormik>
+    </FormikTooltipContext.Provider>
   )
 }
 

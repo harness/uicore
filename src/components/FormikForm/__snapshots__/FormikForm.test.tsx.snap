@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test basic Components render formik form custom render: custom render formik 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <div
+      class="bp3-form-group"
+    >
+      <label
+        class="bp3-label"
+        for="field1"
+      >
+        <span
+          class="acenter"
+          data-tooltip-id="sampleForm_field1"
+        >
+          field1label
+        </span>
+         
+        <span
+          class="bp3-text-muted"
+        />
+      </label>
+      <div
+        class="bp3-form-content"
+      >
+        <div
+          class="bp3-input-group"
+        >
+          <input
+            autocomplete="off"
+            class="bp3-input"
+            name="field1"
+            type="text"
+            value="val1"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Test basic Components should render Checkbox component 1`] = `
 <div>
   <div
