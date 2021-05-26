@@ -27,7 +27,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { get } from 'lodash-es'
+import { get, omit } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -443,13 +443,12 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
     inline = formik?.inline,
     onChange,
     className = '',
-    tooltipProps,
     ...rest
   } = restProps
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <UiKitCheckbox
-        {...rest}
+        {...omit(rest, 'tooltipProps')}
         className={cx(checkBoxCss.checkbox, className)}
         name={name}
         // eslint-disable-next-line

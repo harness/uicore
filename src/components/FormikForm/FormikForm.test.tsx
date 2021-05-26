@@ -125,7 +125,7 @@ describe('Test basic Components', () => {
 
   test('render formik form custom render', () => {
     const { container } = render(
-      <Formik initialValues={{ field1: 'val1' }} onSubmit={() => {}} formName="sampleForm">
+      <Formik initialValues={{ field1: 'val1' }} onSubmit={jest.fn()} formName="sampleForm">
         {() => {
           return (
             <>
