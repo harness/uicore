@@ -47,6 +47,7 @@
     }
     .bp3-input.bp3-tag-input {
       height: 32px;
+      overflow: auto;
 
       &.bp3-active {
         --bp3-intent-color: var(--primary-5);
