@@ -27,7 +27,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { get } from 'lodash-es'
+import { get, omit } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -448,7 +448,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <UiKitCheckbox
-        {...rest}
+        {...omit(rest, 'tooltipProps')}
         className={cx(checkBoxCss.checkbox, className)}
         name={name}
         // eslint-disable-next-line
@@ -835,11 +835,11 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
   }
 
   return (
-    <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
-      <FormikTooltipContext.Provider value={{ formName: props.formName }}>
+    <FormikTooltipContext.Provider value={{ formName: props.formName }}>
+      <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
         {!render && !isFunction(children) && <OverlaySpinner show={isFormLoading}>{children}</OverlaySpinner>}
-      </FormikTooltipContext.Provider>
-    </FrmFormik>
+      </FrmFormik>
+    </FormikTooltipContext.Provider>
   )
 }
 
