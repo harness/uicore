@@ -105,6 +105,10 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
 
             inputRef.current.focus()
             inputRef.current.setSelectionRange(position, position)
+
+            // this is required to bring cursor into view for text which is longer than the field
+            inputRef.current.blur()
+            inputRef.current.focus()
           }
         })
       }
@@ -185,7 +189,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         />
         <React.Fragment>
           {listProps.itemList
-            ? React.cloneElement(listProps.itemList as any, {
+            ? React.cloneElement(listProps.itemList as React.ReactElement, {
                 className: css.menu,
                 style: { maxHeight }
               })
