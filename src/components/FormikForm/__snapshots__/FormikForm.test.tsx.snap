@@ -39,6 +39,31 @@ exports[`Test basic Components render formik form custom render: custom render f
         </div>
       </div>
     </div>
+    <div
+      class="bp3-form-group"
+    >
+      <div
+        class="bp3-form-content"
+      >
+        <label
+          class="bp3-control bp3-checkbox font checkbox main inline inline-undefined"
+        >
+          <input
+            name="field2"
+            type="checkbox"
+          />
+          <span
+            class="bp3-control-indicator"
+          />
+          <span
+            class="acenter checkBoxDocTooltipLabel"
+            data-tooltip-id="field2tipId"
+          >
+            field2label
+          </span>
+        </label>
+      </div>
+    </div>
   </div>
 </div>
 `;

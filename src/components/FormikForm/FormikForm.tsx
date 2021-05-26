@@ -443,6 +443,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
     inline = formik?.inline,
     onChange,
     className = '',
+    tooltipProps,
     ...rest
   } = restProps
   return (

@@ -127,7 +127,12 @@ describe('Test basic Components', () => {
     const { container } = render(
       <Formik initialValues={{ field1: 'val1' }} onSubmit={() => {}} formName="sampleForm">
         {() => {
-          return <FormInput.Text name="field1" label="field1label"></FormInput.Text>
+          return (
+            <>
+              <FormInput.Text name="field1" label="field1label" />
+              <FormInput.CheckBox name="field2" label="field2label" tooltipProps={{ dataTooltipId: 'field2tipId' }} />
+            </>
+          )
         }}
       </Formik>
     )
