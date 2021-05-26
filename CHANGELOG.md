@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.175](https://github.com/wings-software/uicore/compare/v0.1.174...v0.1.175) (2021-05-26)
+
+
+### Bug Fixes
+
+* [PL-14255]: with tags height fix ([#231](https://github.com/wings-software/uicore/issues/231)) ([0d40618](https://github.com/wings-software/uicore/commit/0d40618d639b87c2c7cc70cb5fe63cdabe7bac71))
+
 ### [0.1.174](https://github.com/wings-software/uicore/compare/v0.1.173...v0.1.174) (2021-05-26)
 
 
