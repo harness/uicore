@@ -4,211 +4,211 @@ on:
     branches: [main]
     types: [opened, reopened, ready_for_review, synchronize, edited]
 jobs:
-  titlecheck:
-    name: Title Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Title Check
-        env:
-          PR_TITLE: ${{ github.event.pull_request.title }}
-        run: |
-          echo $PR_TITLE
-          node ./scripts/lint-commit-message.js "$PR_TITLE"
-  lint:
-    name: ESLint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # titlecheck:
+  #   name: Title Check
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Title Check
+  #       env:
+  #         PR_TITLE: ${{ github.event.pull_request.title }}
+  #       run: |
+  #         echo $PR_TITLE
+  #         node ./scripts/lint-commit-message.js "$PR_TITLE"
+  # lint:
+  #   name: ESLint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set Up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+  #     - name: Set Up Node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14'
 
-      - name: Set up GitHub Package Registry token
-        run: |
-          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
-          echo always-auth=true >> .npmrc
-        env:
-          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+  #     - name: Set up GitHub Package Registry token
+  #       run: |
+  #         echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+  #         echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+  #         echo always-auth=true >> .npmrc
+  #       env:
+  #         GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node_modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Install Packages
-        run: yarn
+  #     - name: Install Packages
+  #       run: yarn
 
-      - name: Lint Check
-        run: npx eslint "src/**/*.{ts,tsx}"
+  #     - name: Lint Check
+  #       run: npx eslint "src/**/*.{ts,tsx}"
 
-  stylelint:
-    name: StyleLint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # stylelint:
+  #   name: StyleLint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set Up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+  #     - name: Set Up Node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14'
 
-      - name: Set up GitHub Package Registry token
-        run: |
-          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
-          echo always-auth=true >> .npmrc
-        env:
-          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+  #     - name: Set up GitHub Package Registry token
+  #       run: |
+  #         echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+  #         echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+  #         echo always-auth=true >> .npmrc
+  #       env:
+  #         GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node_modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Install Packages
-        run: yarn
+  #     - name: Install Packages
+  #       run: yarn
 
-      - name: Lint Check
-        run: npx stylelint "src/**/*.css"
-  jest:
-    name: Jest
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  #     - name: Lint Check
+  #       run: npx stylelint "src/**/*.css"
+  # jest:
+  #   name: Jest
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set Up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+  #     - name: Set Up Node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14'
 
-      - name: Set up GitHub Package Registry token
-        run: |
-          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
-          echo always-auth=true >> .npmrc
-        env:
-          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+  #     - name: Set up GitHub Package Registry token
+  #       run: |
+  #         echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+  #         echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+  #         echo always-auth=true >> .npmrc
+  #       env:
+  #         GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node_modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Install Packages
-        run: yarn
+  #     - name: Install Packages
+  #       run: yarn
 
-      - name: Jest
-        run: npx jest src --ci --silent
+  #     - name: Jest
+  #       run: npx jest src --ci --silent
 
-  typecheck:
-    name: Typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # typecheck:
+  #   name: Typecheck
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set Up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+  #     - name: Set Up Node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14'
 
-      - name: Set up GitHub Package Registry token
-        run: |
-          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
-          echo always-auth=true >> .npmrc
-        env:
-          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+  #     - name: Set up GitHub Package Registry token
+  #       run: |
+  #         echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+  #         echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+  #         echo always-auth=true >> .npmrc
+  #       env:
+  #         GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node_modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Install Packages
-        run: yarn
+  #     - name: Install Packages
+  #       run: yarn
 
-      - name: TypeCheck
-        run: npx tsc --noEmit
+  #     - name: TypeCheck
+  #       run: npx tsc --noEmit
 
-  prettier:
-    name: Prettier
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # prettier:
+  #   name: Prettier
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set Up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+  #     - name: Set Up Node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14'
 
-      - name: Set up GitHub Package Registry token
-        run: |
-          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
-          echo always-auth=true >> .npmrc
-        env:
-          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+  #     - name: Set up GitHub Package Registry token
+  #       run: |
+  #         echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+  #         echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+  #         echo always-auth=true >> .npmrc
+  #       env:
+  #         GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node_modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Install Packages
-        run: yarn
+  #     - name: Install Packages
+  #       run: yarn
 
-      - name: Prettier
-        run: npx prettier src/**/*.{ts,tsx} --check
+  #     - name: Prettier
+  #       run: npx prettier src/**/*.{ts,tsx} --check
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # build:
+  #   name: Build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set Up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+  #     - name: Set Up Node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14'
 
-      - name: Set up GitHub Package Registry token
-        run: |
-          echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
-          echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
-          echo always-auth=true >> .npmrc
-        env:
-          GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+  #     - name: Set up GitHub Package Registry token
+  #       run: |
+  #         echo @wings-software:registry=https://npm.pkg.github.com > .npmrc
+  #         echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
+  #         echo always-auth=true >> .npmrc
+  #       env:
+  #         GIT_BOT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
 
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node_modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Install Packages
-        run: yarn
+  #     - name: Install Packages
+  #       run: yarn
 
-      - name: Build
-        run: NODE_ENV=production npx webpack
+  #     - name: Build
+  #       run: NODE_ENV=production npx webpack
