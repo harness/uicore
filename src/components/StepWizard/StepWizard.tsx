@@ -230,13 +230,13 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
           }
 
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const nestedChild = React.Children.toArray(nestedStepWizardChild.props.children as any) as React.ReactElement[]
+          const nestedChild = React.Children.toArray(
+            nestedStepWizardChild.props.children as any
+          ) as React.ReactElement[]
           nestedChild.forEach((nested, j: number) => {
             steps.push(nested as React.ReactElement<StepProps<SharedObject>>)
             nestedStepWizard.push({ wizard: nestedStepWizardChild, stepIndex: j + 1 })
-            stepNames.push(
-              (nested && nested.props && nested.props.name) || `Step ${i + 1}-${j + 1}`
-            )
+            stepNames.push((nested && nested.props && nested.props.name) || `Step ${i + 1}-${j + 1}`)
           })
         } else {
           stepIndex++
