@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.176](https://github.com/wings-software/uicore/compare/v0.1.175...v0.1.176) (2021-05-31)
+
+
+### Bug Fixes
+
+* menu from opening when using expression input ([#233](https://github.com/wings-software/uicore/issues/233)) ([8032fb5](https://github.com/wings-software/uicore/commit/8032fb52ee76345bab0a9405d32bb7c1f4d17f8f))
+
 ### [0.1.175](https://github.com/wings-software/uicore/compare/v0.1.174...v0.1.175) (2021-05-26)
 
 
