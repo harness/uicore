@@ -12,7 +12,7 @@ export const Normal: Story<AvatarProps> = args => (
   <Layout.Horizontal spacing="small" id="primary-buttons">
     <Avatar
       name="John Doe"
-      email='John.Doe@abc.com'
+      email="John.Doe@abc.com"
       onClick={() => {
         // eslint-disable-next-line
         alert(' Avatar clicked')
