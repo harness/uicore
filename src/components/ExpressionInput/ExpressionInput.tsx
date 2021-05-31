@@ -162,6 +162,16 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       updateQueryBasedOnCursor(selectionStart, value)
     }
 
+    function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void {
+      const { key } = e
+
+      if (key === 'Enter') {
+        e.preventDefault()
+      }
+
+      listProps.handleKeyDown(e)
+    }
+
     return (
       <Popover
         targetTagName="div"
@@ -182,7 +192,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           inputRef={inputRef}
           value={inputValue}
           onChange={handleChange}
-          onKeyDown={listProps.handleKeyDown}
+          onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           onMouseUp={handleMouseUp}
           disabled={disabled}
