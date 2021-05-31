@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.177](https://github.com/wings-software/uicore/compare/v0.1.176...v0.1.177) (2021-05-31)
+
+
+### Bug Fixes
+
+* [CDNG-8862]: Fixed existing prettier issues ([#235](https://github.com/wings-software/uicore/issues/235)) ([b5f0228](https://github.com/wings-software/uicore/commit/b5f0228fc6a1bbf2e89314c0ba832122bbd4f902))
+
+
+### Others
+
+* [CDNG-8862]: Disable Github actions ([#234](https://github.com/wings-software/uicore/issues/234)) ([280163b](https://github.com/wings-software/uicore/commit/280163b2fac2bb75e485e11b1d384d07f9689bd8))
+
 ### [0.1.176](https://github.com/wings-software/uicore/compare/v0.1.175...v0.1.176) (2021-05-31)
 
 
