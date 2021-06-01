@@ -27,7 +27,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { get, omit } from 'lodash-es'
+import { compact, get, omit } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -40,7 +40,8 @@ import {
   MultiSelectTypeInputProps,
   MultiSelectTypeInput,
   MultiTextInputProps,
-  MultiTextInput
+  MultiTextInput,
+  getMultiTypeFromValue
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -57,6 +58,7 @@ import {
 import { DataTooltipInterface } from '../../frameworks/Tooltip/types'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { FormikTooltipContext } from './FormikTooltipContext'
+import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -884,13 +886,14 @@ export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor
   name: string
   label: string
   placeholder?: string
+  useValue?: boolean
   selectItems: SelectOption[]
   multiTypeInputProps?: Omit<MultiTypeInputProps, 'name'>
   disabled?: boolean
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
-  const { formik, name, selectItems, placeholder, multiTypeInputProps, ...restProps } = props
+  const { formik, name, useValue = false, selectItems, placeholder, multiTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -900,13 +903,21 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     ...rest
   } = restProps
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
-    (value, valueType, type) => {
-      formik?.setFieldValue(name, value)
+    (val, valueType, type) => {
+      if (useValue && type === MultiTypeInputType.FIXED) {
+        formik?.setFieldValue(name, val.value)
+      } else {
+        formik?.setFieldValue(name, val)
+      }
       formik?.setFieldTouched(name)
-      multiTypeInputProps?.onChange?.(value, valueType, type)
+      multiTypeInputProps?.onChange?.(val, valueType, type)
     },
     [formik, multiTypeInputProps]
   )
+  let value = get(formik?.values, name)
+  if (useValue && getMultiTypeFromValue(value) === MultiTypeInputType.FIXED) {
+    value = selectItems.filter(item => item.value === value)[0]
+  }
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
@@ -918,7 +929,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
       {...rest}>
       <MultiTypeInput
         {...multiTypeInputProps}
-        value={get(formik?.values, name)}
+        value={value}
         name={name}
         disabled={disabled}
         selectProps={{
@@ -943,13 +954,14 @@ export interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'la
   name: string
   label: string
   placeholder?: string
+  useValue?: boolean
   selectItems: MultiSelectOption[]
   multiSelectTypeInputProps?: Omit<MultiSelectTypeInputProps, 'name'>
   disabled?: boolean
 }
 
 const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikContextProps<any>) => {
-  const { formik, name, selectItems, placeholder, multiSelectTypeInputProps, ...restProps } = props
+  const { formik, name, selectItems, useValue = false, placeholder, multiSelectTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -959,6 +971,14 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
     ...rest
   } = restProps
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+  let value = get(formik?.values, name)
+  if (useValue && getMultiTypeFromValue(value) === MultiTypeInputType.FIXED) {
+    value = compact(
+      value.map((val: string) => {
+        return selectItems.filter(item => item.value === val)
+      })
+    )
+  }
   return (
     <FormGroup
       label={getFormFieldLabel(label, name, props)}
@@ -970,7 +990,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
       <MultiSelectTypeInput
         {...multiSelectTypeInputProps}
         disabled={disabled}
-        value={get(formik?.values, name)}
+        value={value}
         name={name}
         multiSelectProps={{
           ...multiSelectTypeInputProps?.multiSelectProps,
@@ -987,7 +1007,14 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
           items: selectItems
         }}
         onChange={(value, valueType, type) => {
-          formik?.setFieldValue(name, value)
+          if (useValue && type === MultiTypeInputType.FIXED) {
+            formik?.setFieldValue(
+              name,
+              ((value as unknown) as SelectOption[]).map(item => item.value)
+            )
+          } else {
+            formik?.setFieldValue(name, value)
+          }
           formik?.setFieldTouched(name)
           multiSelectTypeInputProps?.onChange?.(value, valueType, type)
         }}
