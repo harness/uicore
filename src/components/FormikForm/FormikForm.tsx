@@ -27,7 +27,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { compact, get, omit } from 'lodash-es'
+import { compact, get, isNil, omit } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -920,6 +920,14 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
   let value = get(formik?.values, name)
   if (useValue && getMultiTypeFromValue(value) === MultiTypeInputType.FIXED) {
     value = selectItems.filter(item => item.value === value)[0]
+    if (isNil(value) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
+      // If allow creating custom value is true
+      const formikValue = get(formik?.values, name)
+      value = {
+        label: formikValue,
+        value: formikValue
+      }
+    }
   }
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
