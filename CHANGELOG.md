@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.179](https://github.com/wings-software/uicore/compare/v0.1.178...v0.1.179) (2021-06-01)
+
+
+### Features
+
+* while use values enabled and allow add is true, then create custom item ([#238](https://github.com/wings-software/uicore/issues/238)) ([44bdca4](https://github.com/wings-software/uicore/commit/44bdca4b5dde3e33f6f97e92c10d56d1f8bc6dc1))
+
+### [0.1.178](https://github.com/wings-software/uicore/compare/v0.1.177...v0.1.178) (2021-06-01)
+
+
+### Features
+
+* Added support for Multitype Select and MultiSelect to have value ([#237](https://github.com/wings-software/uicore/issues/237)) ([a17e6ba](https://github.com/wings-software/uicore/commit/a17e6ba06f7953a455f7d6bb27ab8be7e03c2b7d))
+
 ### [0.1.177](https://github.com/wings-software/uicore/compare/v0.1.176...v0.1.177) (2021-05-31)
 
 
