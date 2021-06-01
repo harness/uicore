@@ -886,6 +886,9 @@ export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor
   name: string
   label: string
   placeholder?: string
+  /**
+   *Enable this when we want to use value, instead of label/value
+   */
   useValue?: boolean
   selectItems: SelectOption[]
   multiTypeInputProps?: Omit<MultiTypeInputProps, 'name'>
@@ -954,6 +957,9 @@ export interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'la
   name: string
   label: string
   placeholder?: string
+  /**
+   *Enable this when we want to use value, instead of label/value
+   */
   useValue?: boolean
   selectItems: MultiSelectOption[]
   multiSelectTypeInputProps?: Omit<MultiSelectTypeInputProps, 'name'>
