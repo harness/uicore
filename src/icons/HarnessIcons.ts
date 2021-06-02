@@ -10,6 +10,7 @@ import Options from './Options.svg'
 import Activity from './activity.svg'
 import Adminrole from './adminRole.svg'
 import Advanced from './advanced.svg'
+import AzureKeyVault from './azure-key-vault.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
@@ -495,6 +496,7 @@ type HarnessIconName =
   | 'audit-log-created'
   | 'aws-kms'
   | 'azure-kubernetes-service'
+  | 'azure-key-vault'
   | 'banned'
   | 'barrier-close'
   | 'barrier-open-with-links'
@@ -966,6 +968,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   activity: Activity,
   adminRole: Adminrole,
   advanced: Advanced,
+  'azure-key-vault': AzureKeyVault,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
