@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.181](https://github.com/wings-software/uicore/compare/v0.1.180...v0.1.181) (2021-06-02)
+
+
+### Features
+
+* [CDNG-8530]: add flex shrink to flex props ([#240](https://github.com/wings-software/uicore/issues/240)) ([7eebb19](https://github.com/wings-software/uicore/commit/7eebb19190309530c949b722cf1c1efb3e9a0204))
+
 ### [0.1.180](https://github.com/wings-software/uicore/compare/v0.1.179...v0.1.180) (2021-06-02)
 
 
