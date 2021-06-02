@@ -31,4 +31,5 @@ export interface FlexProps {
 
   /** Component children flex layout content distribution */
   distribution?: 'space-between'
+  flexShrink?: 'inherit' | 'initial' | 'unset' | number
 }
