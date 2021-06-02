@@ -38,7 +38,6 @@ export interface StepWizardProps<SharedObject> {
   onStepChange?: (data: StepChangeData<SharedObject | undefined>) => void
   onCompleteWizard?: (data: SharedObject | undefined) => void
   initialStep?: number
-  isLastStepCompleted?: boolean
 }
 
 export interface StepProps<SharedObject> {
