@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.180](https://github.com/wings-software/uicore/compare/v0.1.179...v0.1.180) (2021-06-02)
+
+
+### Features
+
+* [CDNG-8968]: Added support for usePortal in FormikForm.Select ([#239](https://github.com/wings-software/uicore/issues/239)) ([bd417d2](https://github.com/wings-software/uicore/commit/bd417d22f58450cb729ad245bb89e3930d7bebdf))
+
 ### [0.1.179](https://github.com/wings-software/uicore/compare/v0.1.178...v0.1.179) (2021-06-01)
 
 
