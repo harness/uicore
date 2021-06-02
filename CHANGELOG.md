@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.183](https://github.com/wings-software/uicore/compare/v0.1.182...v0.1.183) (2021-06-02)
+
+
+### Features
+
+* [PL-14314]: with azure key vault icon ([#242](https://github.com/wings-software/uicore/issues/242)) ([244f6bc](https://github.com/wings-software/uicore/commit/244f6bc2400af14a05e0dae237d8aed769c36789))
+
+### [0.1.182](https://github.com/wings-software/uicore/compare/v0.1.181...v0.1.182) (2021-06-02)
+
 ### [0.1.181](https://github.com/wings-software/uicore/compare/v0.1.180...v0.1.181) (2021-06-02)
 
 
