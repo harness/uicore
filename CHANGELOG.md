@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.184](https://github.com/wings-software/uicore/compare/v0.1.183...v0.1.184) (2021-06-02)
+
+
+### Bug Fixes
+
+* added css to apply hover styles on icon children in tabs, only when hover class is provided - this will stop warnings receiving wrong colors. ([#243](https://github.com/wings-software/uicore/issues/243)) ([abd4835](https://github.com/wings-software/uicore/commit/abd4835259ea973e6968ca264bbc69cc5ec66aff))
+
 ### [0.1.183](https://github.com/wings-software/uicore/compare/v0.1.182...v0.1.183) (2021-06-02)
 
 
