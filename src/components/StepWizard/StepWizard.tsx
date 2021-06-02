@@ -38,6 +38,7 @@ export interface StepWizardProps<SharedObject> {
   onStepChange?: (data: StepChangeData<SharedObject | undefined>) => void
   onCompleteWizard?: (data: SharedObject | undefined) => void
   initialStep?: number
+  isLastStepCompleted?: boolean
 }
 
 export interface StepProps<SharedObject> {
@@ -53,6 +54,7 @@ export interface StepProps<SharedObject> {
   gotoStep?: (args: GotoStepArgs<SharedObject>) => boolean
   firstStep?: (prevStepData?: SharedObject) => void
   lastStep?: (prevStepData?: SharedObject) => void
+  completedStep?: (step: number) => void
 }
 
 interface StepState<SharedObject> {
@@ -66,6 +68,7 @@ interface StepState<SharedObject> {
   children?: Array<React.ReactElement<StepProps<SharedObject>>>
   stepNames?: string[]
   totalSteps: number
+  completedStep?: number
 }
 
 // builds step identifier to step number map
@@ -126,7 +129,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   const [state, setState] = React.useState<StepState<SharedObject>>({
     activeStep: Array.isArray(children) && (initialStep < 1 || initialStep > children.length) ? 1 : initialStep,
     totalSteps: 0,
-    prevStep: -1
+    prevStep: -1,
+    completedStep: undefined
   })
   const gotoStep = React.useCallback(
     (args: GotoStepArgs<SharedObject>) => {
@@ -158,7 +162,13 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         // Not a valid step stepNumber
         return false
       }
-      setState(prevState => ({ ...prevState, prevStep: prevState.activeStep, activeStep: stepNumber, prevStepData }))
+      setState(prevState => ({
+        ...prevState,
+        prevStep: prevState.activeStep,
+        activeStep: stepNumber,
+        prevStepData,
+        completedStep: undefined
+      }))
       return true
     },
     [state.activeStep, state.totalSteps, state.prevStep, state.nestedStepWizard]
@@ -210,6 +220,9 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     },
     [gotoStep]
   )
+  const completedStep = React.useCallback((step: number) => {
+    setState(prevState => ({ ...prevState, completedStep: step }))
+  }, [])
 
   React.useLayoutEffect(() => {
     if (Array.isArray(props.children)) {
@@ -250,7 +263,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         stepNames,
         totalSteps: stepNames.length,
         children: steps,
-        nestedStepWizard
+        nestedStepWizard,
+        completedStep: undefined
       }))
     }
   }, [children])
@@ -260,7 +274,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       {state.stepNames &&
         state.stepNames.map((stepName, index) => {
           const activeStep = index + 1 === state.activeStep
-          const completedSteps = state.activeStep > index + 1
+          const completedSteps = state.activeStep > index + 1 || state.completedStep == index
           const isNestedStep = isNil(state.nestedStepWizard?.[index]?.wizard) ? false : true
           const stepIndex = isNestedStep
             ? romanize(state.nestedStepWizard?.[index]?.stepIndex || 0, true)
@@ -315,7 +329,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     previousStep,
     gotoStep,
     firstStep,
-    lastStep
+    lastStep,
+    completedStep
   }
 
   return (
