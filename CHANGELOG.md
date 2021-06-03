@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.185](https://github.com/wings-software/uicore/compare/v0.1.184...v0.1.185) (2021-06-03)
+
+
+### Features
+
+* [CDNG-7690]: Added completedStep callback in StepWizard ([#244](https://github.com/wings-software/uicore/issues/244)) ([f0baa12](https://github.com/wings-software/uicore/commit/f0baa12689c888b0aea3f89befebf85d4d0b28f7))
+
 ### [0.1.184](https://github.com/wings-software/uicore/compare/v0.1.183...v0.1.184) (2021-06-02)
 
 
