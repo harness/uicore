@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { TabNavigationSize } from './TabNavigationSize'
 import cx from 'classnames'
 
-export interface NavigationLink {
+interface NavigationLink {
   label: string
   to: string
   disabled?: boolean
