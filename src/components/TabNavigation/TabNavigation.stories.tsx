@@ -50,9 +50,9 @@ export const Basic: Story<TabNavigationProps> = args => {
 Basic.args = {
   size: 'normal',
   links: [
-    { name: 'Tab 1', to: '/tab_1_url' },
-    { name: 'Tab 2', to: '/tab_2_url' },
-    { name: 'Tab 3', to: '/tab_3_url' },
-    { name: 'Tab 4', to: '/tab_4_url' }
+    { label: 'Tab 1', to: '/tab_1_url' },
+    { label: 'Tab 2', to: '/tab_2_url' },
+    { label: 'Tab 3', to: '/tab_3_url' },
+    { label: 'Tab 4', to: '/tab_4_url' }
   ]
 }

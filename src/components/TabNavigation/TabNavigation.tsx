@@ -6,7 +6,7 @@ import { TabNavigationSize } from './TabNavigationSize'
 import cx from 'classnames'
 
 export interface NavigationLink {
-  name: string
+  label: string
   to: string
   disabled?: boolean
 }
@@ -30,7 +30,7 @@ export const TabNavigation: React.FC<TabNavigationProps> = props => {
           activeClassName={css.active}
           to={link.to}
           onClick={e => link.disabled && e.preventDefault()}>
-          {link.name}
+          {link.label}
         </NavLink>
       ))}
     </Layout.Horizontal>
