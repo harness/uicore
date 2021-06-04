@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.187](https://github.com/wings-software/uicore/compare/v0.1.186...v0.1.187) (2021-06-04)
+
+
+### Bug Fixes
+
+* fix height of Fixed input type in MultiTypeInput ([#246](https://github.com/wings-software/uicore/issues/246)) ([2061c4c](https://github.com/wings-software/uicore/commit/2061c4cfc7a49cd86e6ac3666c5707e6449189e9))
+
 ### [0.1.186](https://github.com/wings-software/uicore/compare/v0.1.185...v0.1.186) (2021-06-04)
 
 
