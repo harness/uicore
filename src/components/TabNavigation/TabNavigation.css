@@ -1,0 +1,46 @@
+.container {
+  .tags {
+    padding: 3px var(--spacing-5);
+    font-weight: 700;
+    border-radius: 25px;
+    font-size: var(--font-size-normal);
+    color: var(--primary-7);
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+    background: none;
+
+    &.small {
+      padding: 0 var(--spacing-4);
+      font-weight: 600;
+      border-radius: 90px;
+      font-size: 13px;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &:not(.active, .disabled) {
+        background: var(--grey-100);
+      }
+
+      &:not(.small, .disabled) {
+        box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.08), 0px 0.5px 2px rgba(96, 97, 112, 0.16);
+      }
+    }
+
+    &.active {
+      background: var(--primary-9);
+      color: var(--white);
+
+      &:not(.small) {
+        box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.08), 0px 0.5px 2px rgba(96, 97, 112, 0.16);
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: var(--grey-400);
+    }
+  }
+}
