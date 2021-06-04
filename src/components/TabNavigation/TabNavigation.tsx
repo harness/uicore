@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from '../../layouts/Layout'
-import css from './SeconaryNavigation.css'
+import css from './TabNavigation.css'
 import { NavLink } from 'react-router-dom'
 import { TabNavigationSize } from './TabNavigationSize'
 import cx from 'classnames'
