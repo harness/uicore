@@ -1,18 +1,16 @@
 .container {
   .tags {
     padding: 3px var(--spacing-5);
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 25px;
     font-size: var(--font-size-normal);
     color: var(--primary-7);
     cursor: pointer;
-    letter-spacing: 0.2px;
     line-height: 24px;
     background: none;
 
     &.small {
       padding: 0 var(--spacing-4);
-      font-weight: 600;
       border-radius: 90px;
       font-size: 13px;
     }
