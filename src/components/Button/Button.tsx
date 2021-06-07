@@ -85,7 +85,7 @@ export function Button(props: ButtonProps): React.ReactElement {
     }
   }
 
-  const Component: ElementType = props.href ? AnchorButton : BButton
+  const Component: ElementType = props.href || (props.disabled && props.tooltip) ? AnchorButton : BButton
   // Set icon size to 12px when there's one with button text
   const iconSize = (icon || rightIcon) && (props.text || props.href) ? 16 : undefined
   // Extra left padding for left icon, for right icon, Blueprint already has proper margin
