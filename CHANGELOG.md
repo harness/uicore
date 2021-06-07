@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.188](https://github.com/wings-software/uicore/compare/v0.1.187...v0.1.188) (2021-06-07)
+
+
+### Bug Fixes
+
+* [PL-14708]: fixed for tooltip for disabled button ([#248](https://github.com/wings-software/uicore/issues/248)) ([0f0fe36](https://github.com/wings-software/uicore/commit/0f0fe36bb5ef27cfc69c0e9bc801fdf126b9bbea))
+
 ### [0.1.187](https://github.com/wings-software/uicore/compare/v0.1.186...v0.1.187) (2021-06-04)
 
 
