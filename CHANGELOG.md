@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.189](https://github.com/wings-software/uicore/compare/v0.1.188...v0.1.189) (2021-06-08)
+
+
+### Bug Fixes
+
+* change bg color of disabled tags input of KVTagInput component ([#249](https://github.com/wings-software/uicore/issues/249)) ([8d42804](https://github.com/wings-software/uicore/commit/8d4280418d46c83180c3fc3222e29a564d4c0d46))
+
 ### [0.1.188](https://github.com/wings-software/uicore/compare/v0.1.187...v0.1.188) (2021-06-07)
 
 
