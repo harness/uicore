@@ -49,7 +49,9 @@
       overflow: auto;
       height: fit-content;
       max-height: 70px;
-
+      &.bp3-disabled {
+        background: var(--grey-100) !important;
+      }
       &.bp3-active {
         --bp3-intent-color: var(--primary-5);
       }
