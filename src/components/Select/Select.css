@@ -21,7 +21,7 @@
     }
 
     &:disabled {
-      background-color: var(--grey-200);
+      background-color: var(--grey-100);
       color: var(--grey-400);
     }
   }
