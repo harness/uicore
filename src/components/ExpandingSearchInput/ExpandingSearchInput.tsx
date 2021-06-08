@@ -151,8 +151,13 @@ export function ExpandingSearchInput(props: PropsInterface) {
 
   const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
+  const focused = document.activeElement === inputRef.current ? true : false
+
   const padRightAmount =
-    42 + (flip ? 35 : 0) + (showPrevNextButtons ? 84 : 0) + (fixedText ? (fixedText.length || 0) * 9 : 0)
+    (focused ? 42 : 0) +
+    (flip ? 35 : 0) +
+    (showPrevNextButtons ? 84 : 0) +
+    (fixedText ? (fixedText.length || 0) * 9 : 0)
 
   // needs to be the last useEffect
   // using ref instead of state variable to avoid triggering a rerender
