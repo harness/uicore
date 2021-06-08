@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.190](https://github.com/wings-software/uicore/compare/v0.1.189...v0.1.190) (2021-06-08)
+
+
+### Bug Fixes
+
+* change disabled select input color to grey-100 ([#250](https://github.com/wings-software/uicore/issues/250)) ([d4e1bcc](https://github.com/wings-software/uicore/commit/d4e1bccff4e3fe7f5f66223030f55716cbb7bf1e))
+
 ### [0.1.189](https://github.com/wings-software/uicore/compare/v0.1.188...v0.1.189) (2021-06-08)
 
 
