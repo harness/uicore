@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.193](https://github.com/wings-software/uicore/compare/v0.1.192...v0.1.193) (2021-06-09)
+
+
+### Features
+
+* (FFM-806) add FF icon ([#255](https://github.com/wings-software/uicore/issues/255)) ([f566cf4](https://github.com/wings-software/uicore/commit/f566cf4d35e0f0536a8e4d95709180329d7bdf8e))
+
 ### [0.1.192](https://github.com/wings-software/uicore/compare/v0.1.191...v0.1.192) (2021-06-09)
 
 
