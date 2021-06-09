@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.192](https://github.com/wings-software/uicore/compare/v0.1.191...v0.1.192) (2021-06-09)
+
+
+### Bug Fixes
+
+* conditional padding only added when focused to fix spacing issue ([#251](https://github.com/wings-software/uicore/issues/251)) ([0c24a4d](https://github.com/wings-software/uicore/commit/0c24a4d7ccdfdf05bb957cbc48dc6e8ba0e2a935))
+
 ### [0.1.191](https://github.com/wings-software/uicore/compare/v0.1.190...v0.1.191) (2021-06-09)
 
 
