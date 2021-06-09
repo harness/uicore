@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.191](https://github.com/wings-software/uicore/compare/v0.1.190...v0.1.191) (2021-06-09)
+
+
+### Features
+
+* new deployments illustration icon ([#252](https://github.com/wings-software/uicore/issues/252)) ([8b01f0b](https://github.com/wings-software/uicore/commit/8b01f0bf63028cce883f4ad25801fdbb5f860043))
+
 ### [0.1.190](https://github.com/wings-software/uicore/compare/v0.1.189...v0.1.190) (2021-06-08)
 
 
