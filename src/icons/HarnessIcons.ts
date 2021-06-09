@@ -10,13 +10,13 @@ import Options from './Options.svg'
 import Activity from './activity.svg'
 import Adminrole from './adminRole.svg'
 import Advanced from './advanced.svg'
-import AzureKeyVault from './azure-key-vault.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AwsKms from './aws-kms.svg'
+import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
 import BarrierClose from './barrier-close.svg'
@@ -121,6 +121,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import DeploymentsIllustration from './deployments-illustration.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
@@ -495,8 +496,8 @@ type HarnessIconName =
   | 'approval-step'
   | 'audit-log-created'
   | 'aws-kms'
-  | 'azure-kubernetes-service'
   | 'azure-key-vault'
+  | 'azure-kubernetes-service'
   | 'banned'
   | 'barrier-close'
   | 'barrier-open-with-links'
@@ -600,6 +601,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'deployments-illustration'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
@@ -968,13 +970,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   activity: Activity,
   adminRole: Adminrole,
   advanced: Advanced,
-  'azure-key-vault': AzureKeyVault,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
   'audit-log-created': AuditLogCreated,
   'aws-kms': AwsKms,
+  'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
   'barrier-close': BarrierClose,
@@ -1079,6 +1081,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  'deployments-illustration': DeploymentsIllustration,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
