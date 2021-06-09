@@ -280,6 +280,7 @@ import NavAccountAdmin from './nav-account-admin.svg'
 import NavCdHover from './nav-cd-hover.svg'
 import NavCdSelected from './nav-cd-selected.svg'
 import NavCd from './nav-cd.svg'
+import NavCf from './nav-cf.svg'
 import NavCvHover from './nav-cv-hover.svg'
 import NavCvSelected from './nav-cv-selected.svg'
 import NavCv from './nav-cv.svg'
@@ -760,6 +761,7 @@ type HarnessIconName =
   | 'nav-cd-hover'
   | 'nav-cd-selected'
   | 'nav-cd'
+  | 'nav-cf'
   | 'nav-cv-hover'
   | 'nav-cv-selected'
   | 'nav-cv'
@@ -1240,6 +1242,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-cd-hover': NavCdHover,
   'nav-cd-selected': NavCdSelected,
   'nav-cd': NavCd,
+  'nav-cf': NavCf,
   'nav-cv-hover': NavCvHover,
   'nav-cv-selected': NavCvSelected,
   'nav-cv': NavCv,
