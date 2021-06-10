@@ -103,7 +103,8 @@ export function SelectV2(props: SelectV2Props): React.ReactElement {
         position: Position.BOTTOM_LEFT,
         className: css.main,
         popoverClassName: css.popover
-      }}>
+      }}
+      activeItem={null}>
       {props.children}
     </SelectBp>
   )

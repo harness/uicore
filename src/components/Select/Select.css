@@ -101,6 +101,10 @@
       color: var(--grey-400);
       cursor: not-allowed;
     }
+
+    &:hover {
+      background-color: var(--grey-100);
+    }
   }
 
   :global(.icon-container) {
