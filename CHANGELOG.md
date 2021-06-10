@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.194](https://github.com/wings-software/uicore/compare/v0.1.193...v0.1.194) (2021-06-10)
+
+
+### Bug Fixes
+
+* PL-14724 pagination-item-hover-to-grey-100 ([#253](https://github.com/wings-software/uicore/issues/253)) ([0d6943b](https://github.com/wings-software/uicore/commit/0d6943be93bf0c9f71b7fb3025f41a89418ad41b))
+
 ### [0.1.193](https://github.com/wings-software/uicore/compare/v0.1.192...v0.1.193) (2021-06-09)
 
 
