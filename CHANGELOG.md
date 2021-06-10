@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.196](https://github.com/wings-software/uicore/compare/v0.1.195...v0.1.196) (2021-06-10)
+
+
+### Others
+
+* Union Icon ([#257](https://github.com/wings-software/uicore/issues/257)) ([d302639](https://github.com/wings-software/uicore/commit/d302639ac5be0c03fc9630f5522a36d1b74c92f4))
+
 ### [0.1.195](https://github.com/wings-software/uicore/compare/v0.1.194...v0.1.195) (2021-06-10)
 
 
