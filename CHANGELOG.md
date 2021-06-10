@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.195](https://github.com/wings-software/uicore/compare/v0.1.194...v0.1.195) (2021-06-10)
+
+
+### Bug Fixes
+
+* ecr icon updated ([#256](https://github.com/wings-software/uicore/issues/256)) ([85adc69](https://github.com/wings-software/uicore/commit/85adc692b95600ebdb950df3ece724be4538c984))
+
 ### [0.1.194](https://github.com/wings-software/uicore/compare/v0.1.193...v0.1.194) (2021-06-10)
 
 
