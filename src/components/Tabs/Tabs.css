@@ -12,10 +12,12 @@
     }
 
     .bp3-tab:not([aria-disabled='true']):hover {
-      color: var(--primary-6);
-      :global {
-        .bp3-icon.hover {
-          color: var(--primary-6);
+      color: var(--primary-6) !important;
+      :global(.bp3-icon) {
+        svg {
+          path {
+            fill: var(--primary-6) !important;
+          }
         }
       }
     }
@@ -35,7 +37,7 @@
     }
 
     .bp3-tab-list > *:not(:last-child) {
-      margin-right: 30px;
+      margin-right: 12px;
     }
 
     .bp3-tab-indicator-wrapper {
@@ -43,7 +45,7 @@
     }
 
     .bp3-tab-indicator-wrapper .bp3-tab-indicator {
-      height: 3px;
+      height: 2px;
       background-color: var(--primary-7);
       border-radius: var(--spacing-2) var(--spacing-2) var(--spacing-0) var(--spacing-0) !important;
     }
@@ -61,7 +63,7 @@
     }
 
     .bp3-tab-indicator-wrapper .bp3-tab-indicator {
-      width: 3px;
+      width: 2px;
       background-color: var(--primary-7) !important;
       left: 100% !important;
     }
