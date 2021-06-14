@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uicore",
-  "version": "0.1.223",
+  "version": "0.1.224",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
