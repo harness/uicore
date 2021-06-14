@@ -109,7 +109,10 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         name={inputName}
         onChange={e => {
           setCurrentEditField(inputName)
-          const name = (e.target as HTMLInputElement).value.substring(0, maxInput)
+          const name =
+            (e.target as HTMLInputElement).value.length > maxInput
+              ? formik.values[currentEditField]
+              : (e.target as HTMLInputElement).value
           formik.setFieldValue(inputName, name)
           isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
         }}
