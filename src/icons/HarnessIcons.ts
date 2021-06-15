@@ -268,7 +268,6 @@ import MainUpload from './main-upload.svg'
 import MainUserGroups from './main-user-groups.svg'
 import MainUser from './main-user.svg'
 import MainView from './main-view.svg'
-import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import Memberrole from './memberRole.svg'
@@ -474,6 +473,7 @@ import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
 import Viewerrole from './viewerRole.svg'
 import Waiting from './waiting.svg'
+import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
@@ -750,7 +750,6 @@ type HarnessIconName =
   | 'main-user-groups'
   | 'main-user'
   | 'main-view'
-  | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
@@ -956,6 +955,7 @@ type HarnessIconName =
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
+  | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
   | 'yaml-builder-env'
@@ -1232,7 +1232,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-user-groups': MainUserGroups,
   'main-user': MainUser,
   'main-view': MainView,
-  'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: Memberrole,
@@ -1438,6 +1437,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'view-json': ViewJson,
   viewerRole: Viewerrole,
   waiting: Waiting,
+  'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
   'yaml-builder-env': YamlBuilderEnv,
