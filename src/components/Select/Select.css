@@ -21,7 +21,7 @@
     }
 
     &:disabled {
-      background-color: var(--grey-200);
+      background-color: var(--grey-100);
       color: var(--grey-400);
     }
   }
@@ -100,6 +100,11 @@
     &.loading {
       color: var(--grey-400);
       cursor: not-allowed;
+    }
+
+    &:hover {
+      background-color: var(--grey-100);
+      color: var(--grey-800);
     }
   }
 

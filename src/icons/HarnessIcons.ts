@@ -16,6 +16,7 @@ import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AwsKms from './aws-kms.svg'
+import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
 import BarrierClose from './barrier-close.svg'
@@ -120,6 +121,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import DeploymentsIllustration from './deployments-illustration.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
@@ -266,7 +268,6 @@ import MainUpload from './main-upload.svg'
 import MainUserGroups from './main-user-groups.svg'
 import MainUser from './main-user.svg'
 import MainView from './main-view.svg'
-import MainWarning from './main-warning.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import Memberrole from './memberRole.svg'
@@ -278,6 +279,7 @@ import NavAccountAdmin from './nav-account-admin.svg'
 import NavCdHover from './nav-cd-hover.svg'
 import NavCdSelected from './nav-cd-selected.svg'
 import NavCd from './nav-cd.svg'
+import NavCf from './nav-cf.svg'
 import NavCvHover from './nav-cv-hover.svg'
 import NavCvSelected from './nav-cv-selected.svg'
 import NavCv from './nav-cv.svg'
@@ -465,11 +467,13 @@ import TriggerArtifact from './trigger-artifact.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
+import Union from './union.svg'
 import Up from './up.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
 import Viewerrole from './viewerRole.svg'
 import Waiting from './waiting.svg'
+import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
@@ -494,6 +498,7 @@ type HarnessIconName =
   | 'approval-step'
   | 'audit-log-created'
   | 'aws-kms'
+  | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'banned'
   | 'barrier-close'
@@ -598,6 +603,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'deployments-illustration'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
@@ -744,7 +750,6 @@ type HarnessIconName =
   | 'main-user-groups'
   | 'main-user'
   | 'main-view'
-  | 'main-warning'
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
@@ -756,6 +761,7 @@ type HarnessIconName =
   | 'nav-cd-hover'
   | 'nav-cd-selected'
   | 'nav-cd'
+  | 'nav-cf'
   | 'nav-cv-hover'
   | 'nav-cv-selected'
   | 'nav-cv'
@@ -943,11 +949,13 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+  | 'union'
   | 'up'
   | 'utility'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
+  | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
   | 'yaml-builder-env'
@@ -972,6 +980,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'approval-step': ApprovalStep,
   'audit-log-created': AuditLogCreated,
   'aws-kms': AwsKms,
+  'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
   'barrier-close': BarrierClose,
@@ -1076,6 +1085,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  'deployments-illustration': DeploymentsIllustration,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
@@ -1222,7 +1232,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-user-groups': MainUserGroups,
   'main-user': MainUser,
   'main-view': MainView,
-  'main-warning': MainWarning,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: Memberrole,
@@ -1234,6 +1243,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-cd-hover': NavCdHover,
   'nav-cd-selected': NavCdSelected,
   'nav-cd': NavCd,
+  'nav-cf': NavCf,
   'nav-cv-hover': NavCvHover,
   'nav-cv-selected': NavCvSelected,
   'nav-cv': NavCv,
@@ -1421,11 +1431,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
+  union: Union,
   up: Up,
   utility: Utility,
   'view-json': ViewJson,
   viewerRole: Viewerrole,
   waiting: Waiting,
+  'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
   'yaml-builder-env': YamlBuilderEnv,

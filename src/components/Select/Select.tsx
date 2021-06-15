@@ -40,6 +40,7 @@ export interface SelectProps
   addClearBtn?: boolean
   usePortal?: boolean
   popoverClassName?: string
+  onQueryChange?: Props['onQueryChange']
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {

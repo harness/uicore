@@ -76,6 +76,7 @@
 
   &.FIXED {
     color: var(--primary-7);
+    height: auto;
   }
 
   &.RUNTIME {

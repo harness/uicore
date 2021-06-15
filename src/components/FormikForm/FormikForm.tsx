@@ -539,7 +539,9 @@ export interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   inputGroup?: Omit<IInputGroupProps, 'name' | 'value'>
   selectProps?: Omit<UiKitSelectProps, 'items' | 'onChange' | 'value'>
   onChange?: UiKitSelectProps['onChange']
+  usePortal?: UiKitSelectProps['usePortal']
   value?: UiKitSelectProps['value']
+  onQueryChange?: UiKitSelectProps['onQueryChange']
 }
 
 const Select = (props: SelectProps & FormikContextProps<any>) => {
@@ -557,6 +559,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
     selectProps,
     onChange,
     value,
+    onQueryChange,
     ...rest
   } = restProps
 
@@ -569,6 +572,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
       intent={intent}
       disabled={disabled}
       inline={inline}
+      usePortal={!!props.usePortal}
       {...rest}>
       <UiKitSelect
         name={name}
@@ -589,6 +593,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
           formik?.setFieldValue(name, item.value)
           onChange?.(item)
         }}
+        onQueryChange={(query: string) => onQueryChange?.(query)}
       />
     </FormGroup>
   )
