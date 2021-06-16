@@ -339,6 +339,7 @@ import Placeholder from './placeholder.svg'
 import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
+import ProjectIllustration from './project_illustration.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Queued from './queued.svg'
@@ -821,6 +822,7 @@ type HarnessIconName =
   | 'plugin-step'
   | 'polygon'
   | 'profile'
+  | 'project_illustration'
   | 'publish-step'
   | 'question'
   | 'queued'
@@ -1303,6 +1305,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
+  project_illustration: ProjectIllustration,
   'publish-step': PublishStep,
   question: Question,
   queued: Queued,
