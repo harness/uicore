@@ -6,6 +6,31 @@
   box-shadow: var(--elevation-2), var(--elevation-3);
 }
 
+.menuItem {
+  display: flex;
+
+  .group1 {
+    flex: 0 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    direction: ltr;
+  }
+
+  .group2 {
+    flex: 0 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    direction: rtl;
+  }
+
+  mark {
+    flex: 1 1 auto;
+    white-space: nowrap;
+  }
+}
+
 .popover {
   box-shadow: none;
 }
