@@ -14,6 +14,7 @@ import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStep from './approval-step.svg'
+import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AwsKms from './aws-kms.svg'
 import AzureKeyVault from './azure-key-vault.svg'
@@ -60,6 +61,7 @@ import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CircleCross from './circle-cross.svg'
 import CloudSso from './cloud-sso.svg'
+import Cloudformation from './cloudformation.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
 import CodebaseNotConfigured from './codebase-not-configured.svg'
 import CodebaseValid from './codebase-valid.svg'
@@ -496,6 +498,7 @@ type HarnessIconName =
   | 'app-aws-lambda'
   | 'app-kubernetes'
   | 'approval-step'
+  | 'arm'
   | 'audit-log-created'
   | 'aws-kms'
   | 'azure-key-vault'
@@ -542,6 +545,7 @@ type HarnessIconName =
   | 'ci-main'
   | 'circle-cross'
   | 'cloud-sso'
+  | 'cloudformation'
   | 'codebase-invalid'
   | 'codebase-not-configured'
   | 'codebase-valid'
@@ -978,6 +982,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
   'approval-step': ApprovalStep,
+  arm: Arm,
   'audit-log-created': AuditLogCreated,
   'aws-kms': AwsKms,
   'azure-key-vault': AzureKeyVault,
@@ -1024,6 +1029,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-main': CiMain,
   'circle-cross': CircleCross,
   'cloud-sso': CloudSso,
+  cloudformation: Cloudformation,
   'codebase-invalid': CodebaseInvalid,
   'codebase-not-configured': CodebaseNotConfigured,
   'codebase-valid': CodebaseValid,
