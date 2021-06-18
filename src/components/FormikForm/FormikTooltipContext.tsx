@@ -1,7 +1,7 @@
 import { createContext } from 'react'
 
 interface FormikTooltipContextInterface {
-  formName?: string
+  formName: string
 }
 
 export const FormikTooltipContext = createContext<FormikTooltipContextInterface>({})

@@ -74,7 +74,7 @@ export const getDefaultAutoCompleteValue = (): string => 'off'
 export interface FormikExtended<T> extends FormikContext<T> {
   disabled?: boolean
   inline?: boolean
-  formName?: string
+  formName: string
 }
 
 export interface FormikContextProps<T> {
@@ -789,7 +789,7 @@ export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmi
   formLoading?: true
   render?: (props: FormikExtended<Values>) => React.ReactNode
   onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
-  formName?: string
+  formName: string
 }
 
 export function Formik<Values = Record<string, unknown>>(props: FormikProps<Values>): React.ReactElement {

@@ -12,7 +12,7 @@ export default {
 } as Meta
 
 export const Basic: Story<InputWithIdentifierProps> = args => (
-  <Formik initialValues={{}} onSubmit={noop}>
+  <Formik initialValues={{}} onSubmit={noop} formName="inputWithIdentifierForm">
     {formikProps => (
       <Container width={400}>
         <FormikForm>
