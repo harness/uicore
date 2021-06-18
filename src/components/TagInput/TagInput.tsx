@@ -188,8 +188,10 @@ export function TagInput<T>(props: TagInputProps<T>) {
   const isItemSelected = useCallback((item: T) => !!selectedItems.find(_item => keyOf(_item) === keyOf(item)), [
     selectedItems
   ])
-  const fetchData = useCallback(() => {
-    if (_items instanceof Function) {
+  const updateData = useCallback(() => {
+    if (Array.isArray(_items)) {
+      setItems(_items)
+    } else if (_items instanceof Function) {
       ;(async () => {
         setLoading(true)
         setError(undefined)
@@ -244,7 +246,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     [selectedItems, showAddTagButton, readonly]
   )
 
-  useEffect(fetchData, [_items])
+  useEffect(updateData, [_items])
 
   useEffect(() => {
     setSelectedItems(_selectedItems || [])
@@ -286,7 +288,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
       }}
       noResults={
         loading ? null : (
-          <MenuItem disabled={true} text={error ? <FailToFetch error={error} retry={fetchData} /> : i18n.noResult} />
+          <MenuItem disabled={true} text={error ? <FailToFetch error={error} retry={updateData} /> : i18n.noResult} />
         )
       }
       itemPredicate={itemPredicate}
