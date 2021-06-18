@@ -33,17 +33,17 @@ Basic.args = {
     'pipeline.var8',
     'pipeline.var9',
     'pipeline.var10',
-    'pipeline.var11',
-    'pipeline.var12',
-    'pipeline.var13',
-    'pipeline.var14',
-    'pipeline.var15',
-    'pipeline.var16',
-    'pipeline.var17',
-    'pipeline.var18',
-    'pipeline.var19',
-    'pipeline.var20',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var11',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var12',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var13',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var14',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var15',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var16',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var17',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var18',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var19',
+    'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var20',
     'pipeline.stage.qa.displayNameeqrfddsfweyudfrtyhsdfqsqwdxwdcwtrcfqwtdwcrwqhjdwvcqwhyjevcjwhtevcwqthercjhwvqerhwqtevrcwqhtevqwhtcevqwjhtrv qdwhjhydfuqjywfdrjhasyqfd'
   ],
-  value: 'asdasdf <+app.name> asfas <+pipeline.stage.qa.displayName>'
+  value: '<+se'
 }
