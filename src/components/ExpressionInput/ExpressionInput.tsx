@@ -27,7 +27,17 @@ export interface ExpressionInputProps {
 const EXPRESSION_START_REGEX = /<\+([A-Za-z0-9_.'"()]*?)$/
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
-  const { items = [], value, inputProps, popoverProps, onChange, name, maxHeight = 400, disabled } = props
+  const {
+    items = [],
+    value,
+    inputProps,
+    popoverProps,
+    onChange,
+    name,
+    maxHeight = 400,
+    disabled,
+    autoComplete = 'off'
+  } = props
   /**
    * This holds the complete value of the input
    */
@@ -187,7 +197,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         isOpen={items.length > 0 && !!queryValue}>
         <InputGroup
           {...inputProps}
-          autoComplete={props.autoComplete}
+          autoComplete={autoComplete}
           name={name}
           inputRef={inputRef}
           value={inputValue}
