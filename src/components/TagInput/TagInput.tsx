@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useIsMounted } from '../../hooks/useIsMounted'
 import { Container } from '../Container/Container'
 import { Text } from '../Text/Text'
+import { Utils } from '../../core/Utils'
 import css from './TagInput.css'
 import i18nBase from './TagInput.i18n'
 
@@ -280,6 +281,11 @@ export function TagInput<T>(props: TagInputProps<T>) {
           const _selectedItems = selectedItems.filter((_item, _index) => _index !== index)
           setSelectedItems(_selectedItems)
           onChange?.(_selectedItems, createdItems, items)
+        },
+        onKeyDown: (event: React.KeyboardEvent) => {
+          if (event.keyCode === 13) {
+            Utils.stopEvent(event)
+          }
         },
         rightElement: loading ? SPINNER : clearButton,
         tagProps: _getTagProps,
