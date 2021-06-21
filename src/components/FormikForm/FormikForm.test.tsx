@@ -1,7 +1,8 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { act, findByText, fireEvent, render } from '@testing-library/react'
 import { Formik, FormikForm, FormInput } from './FormikForm'
 import { Button } from '../Button/Button'
+import { MultiTypeInputType } from 'components/MultiTypeInput/MultiTypeInputUtils'
 
 const renderFormikForm = (
   fields: React.ReactNode,
@@ -173,4 +174,109 @@ describe('Test basic Components', () => {
     )
     expect(container).toMatchSnapshot()
   })
+  test('should render MultiTypeInput component with Select (with useValue and selectItems)', async () => {
+    const selectItems = [
+      { label: 'LabelA', value: 'valuea' },
+      { label: 'LabelB', value: 'valueb' },
+      { label: 'LabelC', value: 'valuec' },
+      { label: 'LabelD', value: 'valued' }
+    ]
+    const { container } = render(
+      renderFormikForm(
+        <FormInput.MultiTypeInput
+          selectItems={selectItems}
+          useValue
+          multiTypeInputProps={{
+            selectProps: {
+              items: selectItems,
+              usePortal: true,
+              addClearBtn: true,
+
+              allowCreatingNewItems: true
+            },
+
+            allowableTypes: [MultiTypeInputType.FIXED, MultiTypeInputType.EXPRESSION]
+          }}
+          label={'select'}
+          name={'label-multitypeinput'}
+        />,
+        undefined,
+        { label: '' }
+      )
+    )
+    const dropDownButton = container
+      .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
+      ?.querySelector('[data-icon="caret-down"]')
+    fireEvent.click(dropDownButton!)
+    const selectListMenu = document.body.querySelector('.bp3-menu')
+    const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')
+
+    act(() => {
+      fireEvent.click(selectItem)
+    })
+    const inputSelect = container.querySelector(`[name="label-multitypeinput"]`)
+    expect((inputSelect as any).value).toBe('valuea') // selected value A
+
+    // add manual value
+    act(() => {
+      fireEvent.change(inputSelect!, { target: { value: 'customvalue' } })
+    })
+    const addButton = document.body.querySelector('.bp3-menu')?.querySelector('[icon="plus"]')
+    act(() => {
+      fireEvent.click(addButton!)
+    })
+    expect((inputSelect as any).value).toBe('customvalue') // selected value A
+    expect(container).toMatchSnapshot()
+  }),
+    test('should render MultiTypeInput component with Select', async () => {
+      const selectItems = [
+        { label: 'LabelA', value: 'valuea' },
+        { label: 'LabelB', value: 'valueb' },
+        { label: 'LabelC', value: 'valuec' },
+        { label: 'LabelD', value: 'valued' }
+      ]
+      const { container } = render(
+        renderFormikForm(
+          <FormInput.MultiTypeInput
+            selectItems={selectItems}
+            multiTypeInputProps={{
+              selectProps: {
+                items: selectItems,
+                usePortal: true,
+                addClearBtn: true,
+                allowCreatingNewItems: true
+              },
+
+              allowableTypes: [MultiTypeInputType.FIXED, MultiTypeInputType.EXPRESSION]
+            }}
+            label={'select'}
+            name={'label-multitypeinput'}
+          />,
+          undefined,
+          { label: '' }
+        )
+      )
+      const dropDownButton = container
+        .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
+        ?.querySelector('[data-icon="caret-down"]')
+      fireEvent.click(dropDownButton!)
+      const selectListMenu = document.body.querySelector('.bp3-menu')
+      const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')
+
+      act(() => {
+        fireEvent.click(selectItem)
+      })
+      const inputSelect = container.querySelector(`[name="label-multitypeinput"]`)
+      expect((inputSelect as any).value).toBe('LabelA') // selected value A
+      // add manual value
+      act(() => {
+        fireEvent.change(inputSelect!, { target: { value: 'customvalue' } })
+      })
+      const addButton = document.body.querySelector('.bp3-menu')?.querySelector('[icon="plus"]')
+      act(() => {
+        fireEvent.click(addButton!)
+      })
+      expect((inputSelect as any).value).toBe('customvalue') // selected value A
+      expect(container).toMatchSnapshot()
+    })
 })

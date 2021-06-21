@@ -424,6 +424,768 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
 </div>
 `;
 
+exports[`Test basic Components should render MultiTypeInput component with Select (with useValue and selectItems) 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="customvalue"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="caret-down"
+                      >
+                        <svg
+                          data-icon="caret-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            caret-down
+                          </desc>
+                          <path
+                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiTypeInput component with Select (with useValue and selectItems): customvalue 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="customvalue"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="caret-down"
+                      >
+                        <svg
+                          data-icon="caret-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            caret-down
+                          </desc>
+                          <path
+                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiTypeInput component with Select (with useValue and selectItems): valuea 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="valuea"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="caret-down"
+                      >
+                        <svg
+                          data-icon="caret-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            caret-down
+                          </desc>
+                          <path
+                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiTypeInput component with Select 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="customvalue"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="caret-down"
+                      >
+                        <svg
+                          data-icon="caret-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            caret-down
+                          </desc>
+                          <path
+                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiTypeInput component with Select: LabelA 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="LabelA"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="caret-down"
+                      >
+                        <svg
+                          data-icon="caret-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            caret-down
+                          </desc>
+                          <path
+                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiTypeInput component with Select: customvalue 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="customvalue"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="caret-down"
+                      >
+                        <svg
+                          data-icon="caret-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            caret-down
+                          </desc>
+                          <path
+                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`Test basic Components should render RadioGroup component 1`] = `
 <div>
   <div
