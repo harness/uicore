@@ -611,7 +611,12 @@ exports[`Test basic Components should render Text component 1`] = `
             class="bp3-label"
             for="name"
           >
-            Name
+            <span
+              class="acenter"
+              data-tooltip-id="renderFormikFormWithoutFormName_name"
+            >
+              Name
+            </span>
              
             <span
               class="bp3-text-muted"
@@ -666,7 +671,12 @@ exports[`Test basic Components should render TextArea component 1`] = `
             class="bp3-label"
             for="name"
           >
-            Name
+            <span
+              class="acenter"
+              data-tooltip-id="renderFormikFormWithoutFormName_name"
+            >
+              Name
+            </span>
              
             <span
               class="bp3-text-muted"
