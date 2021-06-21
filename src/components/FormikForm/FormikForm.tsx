@@ -932,6 +932,8 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
         label: formikValue,
         value: formikValue
       }
+    } else if (isNil(value)) {
+      value = ''
     }
   }
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
