@@ -737,6 +737,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
         fill={true}
         autoFocus={autoFocus}
         autoComplete={autoComplete}
+        maxLength={1024}
         {...textArea}
         name={name}
         intent={intent}

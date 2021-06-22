@@ -932,6 +932,7 @@ exports[`Test basic Components should render TextArea component 1`] = `
             <textarea
               autocomplete="off"
               class="bp3-input bp3-fill"
+              maxlength="1024"
               name="name"
             />
           </div>
