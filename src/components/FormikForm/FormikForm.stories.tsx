@@ -16,6 +16,7 @@ export default {
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
     <Formik
+      formName="formikFormBasic"
       initialValues={{
         name: '',
         tags: {},

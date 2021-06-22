@@ -29,7 +29,7 @@ const renderFormikFormWithoutFormName = (
   inline = false
 ) => {
   return (
-    <Formik initialValues={initialValues} onSubmit={submitMethod}>
+    <Formik initialValues={initialValues} onSubmit={submitMethod} formName="renderFormikFormWithoutFormName">
       <FormikForm disabled={disabled} inline={inline}>
         {fields}
         <Button intent="primary" type="submit" text="Submit" />
