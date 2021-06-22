@@ -215,7 +215,7 @@ describe('Test basic Components', () => {
       fireEvent.click(selectItem)
     })
     const inputSelect = container.querySelector(`[name="label-multitypeinput"]`)
-    expect((inputSelect as any).value).toBe('valuea') // selected value A
+    expect((inputSelect as any).value).toBe('LabelA') // selected value A
 
     // add manual value
     act(() => {
