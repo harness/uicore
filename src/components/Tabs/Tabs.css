@@ -30,6 +30,10 @@
       margin-top: var(--spacing-5);
       margin-bottom: var(--spacing-4);
       color: var(--grey-500);
+      padding: 0 var(--spacing-medium);
+      min-width: 140px;
+      display: flex;
+      justify-content: center;
     }
 
     .bp3-tab-list {

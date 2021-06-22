@@ -31,7 +31,7 @@ div.card {
 }
 
 .selected {
-  border: 2px solid var(--primary-5) !important;
+  border: 1px solid var(--primary-5) !important;
 }
 
 .disabled {

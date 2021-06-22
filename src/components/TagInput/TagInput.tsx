@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useIsMounted } from '../../hooks/useIsMounted'
 import { Container } from '../Container/Container'
 import { Text } from '../Text/Text'
+import { Utils } from '../../core/Utils'
 import css from './TagInput.css'
 import i18nBase from './TagInput.i18n'
 
@@ -188,8 +189,10 @@ export function TagInput<T>(props: TagInputProps<T>) {
   const isItemSelected = useCallback((item: T) => !!selectedItems.find(_item => keyOf(_item) === keyOf(item)), [
     selectedItems
   ])
-  const fetchData = useCallback(() => {
-    if (_items instanceof Function) {
+  const updateData = useCallback(() => {
+    if (Array.isArray(_items)) {
+      setItems(_items)
+    } else if (_items instanceof Function) {
       ;(async () => {
         setLoading(true)
         setError(undefined)
@@ -244,7 +247,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     [selectedItems, showAddTagButton, readonly]
   )
 
-  useEffect(fetchData, [_items])
+  useEffect(updateData, [_items])
 
   useEffect(() => {
     setSelectedItems(_selectedItems || [])
@@ -279,6 +282,11 @@ export function TagInput<T>(props: TagInputProps<T>) {
           setSelectedItems(_selectedItems)
           onChange?.(_selectedItems, createdItems, items)
         },
+        onKeyDown: (event: React.KeyboardEvent) => {
+          if (event.keyCode === 13) {
+            Utils.stopEvent(event)
+          }
+        },
         rightElement: loading ? SPINNER : clearButton,
         tagProps: _getTagProps,
         className: cx(noInputBorder && css.input, readonly && css.readonly),
@@ -286,7 +294,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
       }}
       noResults={
         loading ? null : (
-          <MenuItem disabled={true} text={error ? <FailToFetch error={error} retry={fetchData} /> : i18n.noResult} />
+          <MenuItem disabled={true} text={error ? <FailToFetch error={error} retry={updateData} /> : i18n.noResult} />
         )
       }
       itemPredicate={itemPredicate}
