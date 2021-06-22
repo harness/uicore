@@ -922,18 +922,23 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     },
     [formik, multiTypeInputProps]
   )
-  let value = get(formik?.values, name)
+
+  let value = get(formik?.values, name) // formik form value
   if (useValue && getMultiTypeFromValue(value) === MultiTypeInputType.FIXED) {
-    value = selectItems.filter(item => item.value === value)[0]
-    if (!isNil(value) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
+    const selectedItem = selectItems.find(item => item.value === value)
+    if (isNil(selectedItem) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
       // If allow creating custom value is true
-      const formikValue = get(formik?.values, name)
       value = {
-        label: formikValue,
-        value: formikValue
+        label: value,
+        value: value
       }
     } else if (isNil(value)) {
       value = ''
+    } else {
+      value = {
+        label: selectedItem?.label,
+        value: selectedItem?.value
+      }
     }
   }
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
