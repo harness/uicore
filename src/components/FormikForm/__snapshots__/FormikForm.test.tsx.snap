@@ -1,5 +1,170 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test basic Components Tag Input component type duplicate values CDNG-8531 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="allowedValues-0"
+        >
+          <label
+            class="bp3-label"
+            for="allowedValues"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_allowedValues"
+            >
+              checking my tag input
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="bp3-popover-wrapper tagInput bp3-fill"
+            >
+              <div
+                class="bp3-popover-target bp3-popover-open"
+              >
+                <div
+                  class=""
+                >
+                  <div
+                    class="bp3-input bp3-tag-input bp3-active bp3-fill bp3-multi-select"
+                  >
+                    <div
+                      class="bp3-tag-input-values"
+                    >
+                      <span
+                        class="bp3-tag bp3-intent-primary bp3-minimal tag"
+                        data-tag-index="0"
+                      >
+                        <span
+                          class="bp3-text-overflow-ellipsis bp3-fill"
+                        >
+                          tag1
+                        </span>
+                        <button
+                          class="bp3-tag-remove"
+                          type="button"
+                        >
+                          <span
+                            class="bp3-icon bp3-icon-small-cross"
+                            icon="small-cross"
+                          >
+                            <svg
+                              data-icon="small-cross"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                            >
+                              <desc>
+                                small-cross
+                              </desc>
+                              <path
+                                d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </span>
+                      <span
+                        class="bp3-tag bp3-intent-primary bp3-minimal tag"
+                        data-tag-index="1"
+                      >
+                        <span
+                          class="bp3-text-overflow-ellipsis bp3-fill"
+                        >
+                          tag2
+                        </span>
+                        <button
+                          class="bp3-tag-remove"
+                          type="button"
+                        >
+                          <span
+                            class="bp3-icon bp3-icon-small-cross"
+                            icon="small-cross"
+                          >
+                            <svg
+                              data-icon="small-cross"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                            >
+                              <desc>
+                                small-cross
+                              </desc>
+                              <path
+                                d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </span>
+                      <input
+                        class="bp3-input-ghost"
+                        value=""
+                      />
+                    </div>
+                    <button
+                      class="bp3-button bp3-minimal"
+                      type="button"
+                    >
+                      <span
+                        class="bp3-icon bp3-icon-cross"
+                        icon="cross"
+                      >
+                        <svg
+                          data-icon="cross"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <desc>
+                            cross
+                          </desc>
+                          <path
+                            d="M9.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`Test basic Components render formik form custom render: custom render formik 1`] = `
 <div>
   <div
