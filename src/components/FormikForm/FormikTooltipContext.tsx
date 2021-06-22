@@ -4,4 +4,4 @@ interface FormikTooltipContextInterface {
   formName: string
 }
 
-export const FormikTooltipContext = createContext<FormikTooltipContextInterface>({ formName: 'FormikTooltipContext' })
+export const FormikTooltipContext = createContext<FormikTooltipContextInterface>({ formName: '' })
