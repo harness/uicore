@@ -19,7 +19,7 @@ yarn global add yalc
 Build and publish locally
 
 ```
-yalc publish
+yarn build && yalc publish
 ```
 
 You'll see the published version like `@wings-software/uicore@0.1.256 published in store.`
@@ -31,6 +31,8 @@ yalc add @wings-software/uicore@0.1.256
 ```
 
 Note: The version number must match to whatever was printed on the screen during publish.
+
+Please do not commit any changes made by `yalc` in nextgenui.
 
 ## Build
 
