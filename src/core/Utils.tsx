@@ -7,8 +7,8 @@ import { Text } from '../components/Text/Text'
 import { Color } from './Color'
 import { Intent } from './Intent'
 import { OptionalTooltip } from './Types'
-import {FormikContext} from "formik";
-import {get, isPlainObject} from "lodash-es";
+import { FormikContext } from 'formik'
+import { get, isPlainObject } from 'lodash-es'
 
 function stopEvent(event: MouseEvent | KeyboardEvent): void {
   event.stopPropagation()
@@ -91,9 +91,9 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
 }
 
 export const errorCheck = (name: string, formik?: FormikContext<any>): boolean | '' | 0 | undefined =>
-    ((get(formik?.touched, name) || (formik?.submitCount && formik?.submitCount > 0)) &&
-        get(formik?.errors, name) &&
-        !isPlainObject(get(formik?.errors, name))) as boolean
+  ((get(formik?.touched, name) || (formik?.submitCount && formik?.submitCount > 0)) &&
+    get(formik?.errors, name) &&
+    !isPlainObject(get(formik?.errors, name))) as boolean
 
 export function romanize(num: number, isLowerCase = false): string | number {
   if (isNaN(num)) return NaN
