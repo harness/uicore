@@ -942,6 +942,10 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
       }
     }
   }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
