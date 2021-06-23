@@ -1052,7 +1052,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
 
 export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
-  label: string
+  label: ReactNode | string
   placeholder?: string
   onChange?: MultiTextInputProps['onChange']
   multiTextInputProps?: Omit<MultiTextInputProps, 'name'> /* In case you really want to customize the text input */
