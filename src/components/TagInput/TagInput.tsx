@@ -145,8 +145,13 @@ export function TagInput<T>(props: TagInputProps<T>) {
     (item: T) => {
       const index = selectedItems.findIndex(_item => keyOf(_item) === keyOf(item))
       item = getId(item)
-      if (index >= 0) {
+      const isSelectedItemAlreadyCreated = createdItems.find((_item: T) => keyOf(_item) === keyOf(item))
+      if (index >= 0 && !isSelectedItemAlreadyCreated) {
         // item was already selected before
+        // If the current selected item is already in created items, do not clear the already selected item.
+        // CDNG-8531. If we enter 'tag1' twice, the values were being cleared because of below logic. But they should not.
+        // The else block from line 163 will make sure tag1 is visible even after entering the value multiple times
+        // So entering this if block only if current selecteditem is not part of the created item list
         const newSelectedItems = selectedItems.filter((_v, _index) => _index !== index)
         setSelectedItems(newSelectedItems)
         onChange?.(newSelectedItems, createdItems, items)
@@ -164,9 +169,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
               return
             }
           }
-          const _createdItems = createdItems.find((_item: T) => keyOf(_item) === keyOf(item))
-            ? createdItems
-            : createdItems.concat(item)
+          const _createdItems = isSelectedItemAlreadyCreated ? createdItems : createdItems.concat(item)
           const _selectedItems = selectedItems.find((_item: T) => keyOf(_item) === keyOf(item))
             ? selectedItems
             : selectedItems.concat(item)
