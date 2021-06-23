@@ -16,6 +16,7 @@ export default {
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
     <Formik
+      formName="formikFormBasic"
       initialValues={{
         name: '',
         tags: {},
@@ -140,6 +141,16 @@ export const Basic: Story<FormikFormProps> = () => (
                 { label: 'Software Engineer', value: 'SE' },
                 { label: 'Quality Engineer', value: 'QE' }
               ]}
+              useValue
+              multiTypeInputProps={{
+                selectProps: {
+                  addClearBtn: true,
+                  items: [
+                    { label: 'Software Engineer', value: 'SE' },
+                    { label: 'Quality Engineer', value: 'QE' }
+                  ]
+                }
+              }}
             />
             <FormInput.MultiTextInput name="jobDesc1" label="Job Desc 1" />
             <FormInput.MultiTextInput name="jobDec2" placeholder="Job Desc" label="Job Desc 2" />

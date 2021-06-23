@@ -74,7 +74,7 @@ export const getDefaultAutoCompleteValue = (): string => 'off'
 export interface FormikExtended<T> extends FormikContext<T> {
   disabled?: boolean
   inline?: boolean
-  formName?: string
+  formName: string
 }
 
 export interface FormikContextProps<T> {
@@ -737,6 +737,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
         fill={true}
         autoFocus={autoFocus}
         autoComplete={autoComplete}
+        maxLength={1024}
         {...textArea}
         name={name}
         intent={intent}
@@ -789,7 +790,7 @@ export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmi
   formLoading?: true
   render?: (props: FormikExtended<Values>) => React.ReactNode
   onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
-  formName?: string
+  formName: string
 }
 
 export function Formik<Values = Record<string, unknown>>(props: FormikProps<Values>): React.ReactElement {
@@ -922,15 +923,22 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     },
     [formik, multiTypeInputProps]
   )
-  let value = get(formik?.values, name)
+
+  let value = get(formik?.values, name) // formik form value
   if (useValue && getMultiTypeFromValue(value) === MultiTypeInputType.FIXED) {
-    value = selectItems.filter(item => item.value === value)[0]
-    if (!isNil(value) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
+    const selectedItem = selectItems.find(item => item.value === value)
+    if (isNil(selectedItem) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
       // If allow creating custom value is true
-      const formikValue = get(formik?.values, name)
       value = {
-        label: formikValue,
-        value: formikValue
+        label: value,
+        value: value
+      }
+    } else if (isNil(value)) {
+      value = ''
+    } else {
+      value = {
+        label: selectedItem?.label,
+        value: selectedItem?.value
       }
     }
   }
@@ -1044,7 +1052,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
 
 export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
-  label: string
+  label: ReactNode | string
   placeholder?: string
   onChange?: MultiTextInputProps['onChange']
   multiTextInputProps?: Omit<MultiTextInputProps, 'name'> /* In case you really want to customize the text input */

@@ -1,0 +1,26 @@
+.squareCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+
+  .squareCard {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--spacing-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--elevation-2);
+  }
+
+  & input[type='checkbox'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+}

@@ -1,7 +1,8 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { act, findByText, fireEvent, render, waitFor } from '@testing-library/react'
 import { Formik, FormikForm, FormInput } from './FormikForm'
 import { Button } from '../Button/Button'
+import { MultiTypeInputType } from 'components/MultiTypeInput/MultiTypeInputUtils'
 
 const renderFormikForm = (
   fields: React.ReactNode,
@@ -28,7 +29,7 @@ const renderFormikFormWithoutFormName = (
   inline = false
 ) => {
   return (
-    <Formik initialValues={initialValues} onSubmit={submitMethod}>
+    <Formik initialValues={initialValues} onSubmit={submitMethod} formName="renderFormikFormWithoutFormName">
       <FormikForm disabled={disabled} inline={inline}>
         {fields}
         <Button intent="primary" type="submit" text="Submit" />
@@ -171,6 +172,154 @@ describe('Test basic Components', () => {
         />
       )
     )
+    expect(container).toMatchSnapshot()
+  })
+  test('should render MultiTypeInput component with Select (with useValue and selectItems)', async () => {
+    const selectItems = [
+      { label: 'LabelA', value: 'valuea' },
+      { label: 'LabelB', value: 'valueb' },
+      { label: 'LabelC', value: 'valuec' },
+      { label: 'LabelD', value: 'valued' }
+    ]
+    const { container } = render(
+      renderFormikForm(
+        <FormInput.MultiTypeInput
+          selectItems={selectItems}
+          useValue
+          multiTypeInputProps={{
+            selectProps: {
+              items: selectItems,
+              usePortal: true,
+              addClearBtn: true,
+
+              allowCreatingNewItems: true
+            },
+
+            allowableTypes: [MultiTypeInputType.FIXED, MultiTypeInputType.EXPRESSION]
+          }}
+          label={'select'}
+          name={'label-multitypeinput'}
+        />,
+        undefined,
+        { label: '' }
+      )
+    )
+    const dropDownButton = container
+      .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
+      ?.querySelector('[data-icon="caret-down"]')
+    fireEvent.click(dropDownButton!)
+    const selectListMenu = document.body.querySelector('.bp3-menu')
+    const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')
+
+    act(() => {
+      fireEvent.click(selectItem)
+    })
+    const inputSelect = container.querySelector(`[name="label-multitypeinput"]`)
+    expect((inputSelect as any).value).toBe('LabelA') // selected value A
+
+    // add manual value
+    act(() => {
+      fireEvent.change(inputSelect!, { target: { value: 'customvalue' } })
+    })
+    const addButton = document.body.querySelector('.bp3-menu')?.querySelector('[icon="plus"]')
+    act(() => {
+      fireEvent.click(addButton!)
+    })
+    expect((inputSelect as any).value).toBe('customvalue') // selected value A
+    expect(container).toMatchSnapshot()
+  })
+  test('should render MultiTypeInput component with Select', async () => {
+    const selectItems = [
+      { label: 'LabelA', value: 'valuea' },
+      { label: 'LabelB', value: 'valueb' },
+      { label: 'LabelC', value: 'valuec' },
+      { label: 'LabelD', value: 'valued' }
+    ]
+    const { container } = render(
+      renderFormikForm(
+        <FormInput.MultiTypeInput
+          selectItems={selectItems}
+          multiTypeInputProps={{
+            selectProps: {
+              items: selectItems,
+              usePortal: true,
+              addClearBtn: true,
+              allowCreatingNewItems: true
+            },
+
+            allowableTypes: [MultiTypeInputType.FIXED, MultiTypeInputType.EXPRESSION]
+          }}
+          label={'select'}
+          name={'label-multitypeinput'}
+        />,
+        undefined,
+        { label: '' }
+      )
+    )
+    const dropDownButton = container
+      .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
+      ?.querySelector('[data-icon="caret-down"]')
+    fireEvent.click(dropDownButton!)
+    const selectListMenu = document.body.querySelector('.bp3-menu')
+    const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')
+
+    act(() => {
+      fireEvent.click(selectItem)
+    })
+    const inputSelect = container.querySelector(`[name="label-multitypeinput"]`)
+    expect((inputSelect as any).value).toBe('LabelA') // selected value A
+    // add manual value
+    act(() => {
+      fireEvent.change(inputSelect!, { target: { value: 'customvalue' } })
+    })
+    const addButton = document.body.querySelector('.bp3-menu')?.querySelector('[icon="plus"]')
+    act(() => {
+      fireEvent.click(addButton!)
+    })
+    expect((inputSelect as any).value).toBe('customvalue') // selected value A
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Tag Input component type duplicate values CDNG-8531', async () => {
+    const { container, getByPlaceholderText, getByText } = render(
+      renderFormikForm(
+        <FormInput.TagInput
+          label={'checking my tag input'}
+          name="allowedValues"
+          items={[]}
+          labelFor={name => (typeof name === 'string' ? name : '')}
+          itemFromNewTag={newTag => newTag}
+          tagInputProps={{
+            noInputBorder: false,
+            openOnKeyDown: false,
+            showAddTagButton: false,
+            showClearAllButton: true,
+            allowNewTag: true,
+            placeholder: 'placeholder',
+            getTagProps: () => ({ intent: 'primary', minimal: true })
+          }}
+        />
+      )
+    )
+
+    const input = getByPlaceholderText('placeholder')
+    fireEvent.change(input, { target: { value: 'tag1' } })
+    fireEvent.click(getByText('Create "tag1"'))
+    await waitFor(() => expect(getByText('tag1')).toBeTruthy())
+
+    fireEvent.change(input, { target: { value: 'tag2' } })
+    fireEvent.click(getByText('Create "tag2"'))
+    await waitFor(() => expect(getByText('tag2')).toBeTruthy())
+
+    // enter tag2 again
+    fireEvent.change(input, { target: { value: 'tag2' } })
+    fireEvent.click(getByText('Create "tag2"'))
+
+    // entering tag2 for the third time
+    fireEvent.change(input, { target: { value: 'tag2' } })
+    fireEvent.click(getByText('Create "tag2"'))
+
+    // tag2 should only be seen once as saved in the snapshot
     expect(container).toMatchSnapshot()
   })
 })

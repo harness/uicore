@@ -58,7 +58,11 @@ function AddNewOptionForm(props: AddNewOptionFormProps): JSX.Element {
     return error
   }
   return (
-    <Formik initialValues={{}} validate={validate ?? defaultValidateFunction} onSubmit={onComplete}>
+    <Formik
+      initialValues={{}}
+      validate={validate ?? defaultValidateFunction}
+      onSubmit={onComplete}
+      formName="formikCategorizedSelect">
       {formikProps => (
         <FormikForm className={css.addNewOptionForm}>
           <FormInput.Text label="Name" name="name" />

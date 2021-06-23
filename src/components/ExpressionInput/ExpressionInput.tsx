@@ -27,7 +27,17 @@ export interface ExpressionInputProps {
 const EXPRESSION_START_REGEX = /<\+([A-Za-z0-9_.'"()]*?)$/
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
-  const { items = [], value, inputProps, popoverProps, onChange, name, maxHeight = 400, disabled } = props
+  const {
+    items = [],
+    value,
+    inputProps,
+    popoverProps,
+    onChange,
+    name,
+    maxHeight = 400,
+    disabled,
+    autoComplete = 'off'
+  } = props
   /**
    * This holds the complete value of the input
    */
@@ -187,7 +197,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         isOpen={items.length > 0 && !!queryValue}>
         <InputGroup
           {...inputProps}
-          autoComplete={props.autoComplete}
+          autoComplete={autoComplete}
           name={name}
           inputRef={inputRef}
           value={inputValue}
@@ -216,17 +226,21 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     if (!match) return null
 
     const matchIndex = item.indexOf(match[1])
+    const startText = item.slice(0, matchIndex)
+    const matchedText = item.slice(matchIndex, matchIndex + match[1].length)
+    const endText = item.slice(matchIndex + match[1].length)
 
     return (
       <Menu.Item
         key={`${item}${index}`}
         text={
-          <span>
-            {item.slice(0, matchIndex)}
-            <mark>{item.slice(matchIndex, matchIndex + match[1].length)}</mark>
-            {item.slice(matchIndex + match[1].length)}
+          <span className={css.menuItem}>
+            {startText ? <span className={css.group1}>{startText}</span> : null}
+            {matchedText ? <mark>{matchedText}</mark> : null}
+            {endText ? <span className={css.group2}>{endText}</span> : null}
           </span>
         }
+        title={item}
         onClick={handleClick}
         active={modifiers.active}
         disabled={modifiers.disabled}

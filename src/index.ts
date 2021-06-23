@@ -2,7 +2,7 @@ import './styles/styles.css'
 export { Config } from './core/Config'
 export { Color } from './core/Color'
 export { Intent } from './core/Intent'
-export { Accordion, AccordionProps } from './components/Accordion/Accordion'
+export { Accordion, AccordionProps, AccordionHandle } from './components/Accordion/Accordion'
 export {
   NestedAccordionProvider,
   NestedAccordionPanel,
@@ -56,6 +56,8 @@ export { useModal } from './hooks/useModal/useModal'
 export { UseModalBinding } from './hooks/useModal/UseModalBinding'
 export { CircularPercentageChart } from './components/CircularPercentageChart/CircularPercentageChart'
 export { TabNavigation, TabNavigationProps } from './components/TabNavigation/TabNavigation'
+export { Thumbnail, ThumbnailProps } from './components/Thumbnail/Thumbnail'
+export { default as ThumbnailSelect, ThumbnailSelectProps } from './components/ThumbnailSelect/ThumbnailSelect'
 export { DateInput } from './components/DateInput/DateInput'
 export { FlexExpander } from './components/FlexExpander/FlexExpander'
 export { default as Pagination, PaginationProps } from './components/Pagination/Pagination'
