@@ -73,8 +73,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
               label={item.label}
               value={item.value}
               icon={item.icon}
-              isDisabled={item.disabled || isReadonly}
-              isSelected={item.value === value}
+              disabled={item.disabled || isReadonly}
+              selected={item.value === value}
               onClick={handleChange}
             />
           )

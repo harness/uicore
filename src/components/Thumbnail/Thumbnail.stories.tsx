@@ -46,5 +46,9 @@ export const Basic: Story<ThumbnailProps> = args => {
 Basic.args = {
   label: 'Kubernetes',
   icon: 'service-kubernetes',
-  value: 'kubernetes'
+  value: 'kubernetes',
+  onClick: (value: string) => {
+    // eslint-disable-next-line no-alert
+    alert(`Value: ${value}`)
+  }
 }

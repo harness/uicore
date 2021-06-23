@@ -9,20 +9,20 @@ export interface ThumbnailProps {
   label?: string
   value?: string
   icon: IconName
-  isDisabled?: boolean
-  isSelected?: boolean
+  disabled?: boolean
+  selected?: boolean
   onClick?: (val: string) => void
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
-  const { label, value, icon, isDisabled, isSelected, onClick } = props
+  const { label, value, icon, disabled, selected, onClick } = props
   return (
     <label key={value} className={css.squareCardContainer}>
       <Card
-        disabled={isDisabled}
-        interactive={!isDisabled && !isSelected}
-        selected={isSelected}
-        cornerSelected={isSelected}
+        disabled={disabled}
+        interactive={!disabled && !selected}
+        selected={selected}
+        cornerSelected={selected}
         className={css.squareCard}>
         <Icon name={icon} size={26} />
       </Card>
@@ -31,7 +31,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
           textAlign: 'center'
         }}
         font={{ size: 'small' }}
-        color={isDisabled ? Color.GREY_350 : Color.GREY_600}>
+        color={disabled ? Color.GREY_350 : Color.GREY_600}>
         {label}
       </Text>
       <input
@@ -40,8 +40,8 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         onChange={e => {
           !!onClick && onClick(e.target.value)
         }}
-        checked={isSelected}
-        disabled={isDisabled}
+        checked={selected}
+        disabled={disabled}
       />
     </label>
   )
