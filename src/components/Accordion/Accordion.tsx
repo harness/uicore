@@ -55,7 +55,16 @@ export interface AccordionProps {
   allowMultiOpen?: boolean
 }
 
-export function Accordion(props: AccordionProps): React.ReactElement {
+export interface AccordionHandle {
+  open(tab: string | string[]): void
+  close(tab: string | string[]): void
+  toggle(tab: string | string[]): void
+}
+
+export function AccordionWithoutRef(
+  props: AccordionProps,
+  ref: React.ForwardedRef<AccordionHandle>
+): React.ReactElement {
   const { children, allowMultiOpen, className, activeId, ...rest } = props
   const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(
     typeof activeId === 'string' ? { [activeId]: true } : {}
@@ -66,6 +75,45 @@ export function Accordion(props: AccordionProps): React.ReactElement {
       setActivePanels(prev => ({ ...(allowMultiOpen ? prev : {}), [id]: !prev[id] }))
     }
   }
+
+  function resolveTabs(tab: string | string[]): string[] {
+    let tabs = Array.isArray(tab) ? tab : [tab]
+
+    if (!allowMultiOpen) {
+      tabs = tabs.slice(0, 1)
+    }
+
+    return tabs
+  }
+
+  React.useImperativeHandle(ref, () => ({
+    open(tab: string | string[]): void {
+      const tabs = resolveTabs(tab)
+
+      setActivePanels(prev => {
+        const newData = tabs.reduce((p, c) => ({ ...p, [c]: true }), {})
+
+        return { ...(allowMultiOpen ? prev : {}), ...newData }
+      })
+    },
+    close(tab: string | string[]): void {
+      const tabs = resolveTabs(tab)
+      setActivePanels(prev => {
+        const newData = tabs.reduce((p, c) => ({ ...p, [c]: false }), {})
+
+        return { ...(allowMultiOpen ? prev : {}), ...newData }
+      })
+    },
+    toggle(tab: string | string[]): void {
+      const tabs = resolveTabs(tab)
+
+      setActivePanels(prev => {
+        const newData = tabs.reduce((p, c) => ({ ...p, [c]: !prev[c] }), {})
+
+        return { ...(allowMultiOpen ? prev : {}), ...newData }
+      })
+    }
+  }))
 
   return (
     <div className={cx(css.accordion, className)}>
@@ -89,11 +137,19 @@ export function Accordion(props: AccordionProps): React.ReactElement {
   )
 }
 
-const Panel: React.FC<AccordionPanelProps> = (): React.ReactElement => {
-  return <div />
+export type AccordionType = React.ForwardRefExoticComponent<AccordionProps & React.RefAttributes<AccordionHandle>> & {
+  Panel: React.FC<AccordionPanelProps>
 }
-Accordion.Panel = Panel
+
+const Accordion: AccordionType = Object.assign(React.forwardRef(AccordionWithoutRef), {
+  Panel(): React.ReactElement {
+    return <div />
+  }
+})
+
 Accordion.Panel.displayName = 'AccordionPanel'
+
+export { Accordion }
 
 /**
  <Accordion activeId="">
