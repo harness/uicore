@@ -345,7 +345,7 @@ import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Queued from './queued.svg'
 import Remote from './remote.svg'
-import RemoteFile from './remote_file.svg'
+import Remotefile from './remotefile.svg'
 import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
@@ -830,7 +830,7 @@ type HarnessIconName =
   | 'question'
   | 'queued'
   | 'remote'
-  | 'remote_file'
+  | 'remotefile'
   | 'remove'
   | 'report-gear-grey'
   | 'report-gear'
@@ -1315,7 +1315,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   question: Question,
   queued: Queued,
   remote: Remote,
-  remote_file: RemoteFile,
+  remotefile: Remotefile,
   remove: Remove,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
