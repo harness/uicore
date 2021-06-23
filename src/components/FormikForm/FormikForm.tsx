@@ -911,10 +911,12 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     label,
     ...rest
   } = restProps
+  const [currentType, setCurrentType] = React.useState()
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
     (val, valueType, type) => {
+      type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val.value)
+        formik?.setFieldValue(name, val?.value || '')
       } else {
         formik?.setFieldValue(name, val)
       }
@@ -925,7 +927,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
   )
 
   let value = get(formik?.values, name) // formik form value
-  if (useValue && getMultiTypeFromValue(value) === MultiTypeInputType.FIXED) {
+  if (useValue && currentType === MultiTypeInputType.FIXED) {
     const selectedItem = selectItems.find(item => item.value === value)
     if (isNil(selectedItem) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
       // If allow creating custom value is true
@@ -942,6 +944,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
       }
     }
   }
+
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
