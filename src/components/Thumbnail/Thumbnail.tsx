@@ -17,7 +17,7 @@ export interface ThumbnailProps {
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
   const { label, value, icon, disabled, selected, onClick } = props
   return (
-    <label key={value} className={css.squareCardContainer}>
+    <label className={css.squareCardContainer}>
       <Card
         disabled={disabled}
         interactive={!disabled && !selected}

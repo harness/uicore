@@ -14,7 +14,7 @@ div.card {
 .interactive {
   &:hover {
     cursor: pointer;
-    box-shadow: var(--elevation-4) !important;
+    box-shadow: var(--thumbnail-hover-shadow) !important;
     background-color: var(--primary-1);
   }
 }

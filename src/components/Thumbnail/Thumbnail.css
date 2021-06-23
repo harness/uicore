@@ -8,11 +8,10 @@
     width: 64px;
     height: 64px;
     margin-bottom: var(--spacing-small);
-    display: flex !important;
+    display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: var(--elevation-2);
-    border: none;
   }
 
   & input[type='checkbox'] {
