@@ -1,10 +1,34 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import constate from 'constate'
 import { ModalInfo } from './ModalTypes'
 
 const initialDataset: ModalInfo[] = []
 
-function useModalState() {
+export interface ModalContextData {
+  dataset: ModalInfo[]
+  mountModal(modal: ModalInfo): void
+  unmountModal(modal: ModalInfo): void
+}
+
+const ModalContext = React.createContext<ModalContextData>({
+  dataset: [],
+  mountModal: () => void 0,
+  unmountModal: () => void 0
+})
+
+export interface ModalInfoContextData {
+  modalInfo?: ModalInfo
+  setModalInfo(modal: ModalInfo): void
+}
+
+const ModalInfoContext = React.createContext<ModalInfoContextData>({
+  setModalInfo: () => void 0
+})
+
+export function useModalInfoContext(): ModalInfoContextData {
+  return React.useContext(ModalInfoContext)
+}
+
+export function ModalContextProvider(props: React.PropsWithChildren<unknown>): React.ReactElement {
   const [dataset, setDataset] = useState(initialDataset)
   const mountModal = useCallback((modal: ModalInfo) => {
     setDataset(ds => ds.concat(modal))
@@ -17,18 +41,19 @@ function useModalState() {
     },
     [dataset]
   )
-  return { dataset, mountModal, unmountModal }
+  return (
+    <ModalContext.Provider value={{ dataset, mountModal, unmountModal }}>
+      <ModalInfoContextProvider>{props.children}</ModalInfoContextProvider>
+    </ModalContext.Provider>
+  )
 }
 
-function useModalInfoState() {
+export function ModalInfoContextProvider(props: React.PropsWithChildren<unknown>): React.ReactElement {
   const [modalInfo, setModalInfo] = useState<ModalInfo>()
-  return { modalInfo, setModalInfo }
+  return <ModalInfoContext.Provider value={{ modalInfo, setModalInfo }}>{props.children}</ModalInfoContext.Provider>
 }
 
-const [UseModalContextProvider, useModalContext] = constate(useModalState)
-const [ModalInfoContextProvider, useModalInfoContext] = constate(useModalInfoState)
-
-const ModalInfoContextSetter = (props: { modalInfo: ModalInfo }) => {
+export const ModalInfoContextSetter = (props: { modalInfo: ModalInfo }): null => {
   const { setModalInfo } = useModalInfoContext()
   useEffect(() => {
     setModalInfo(props.modalInfo)
@@ -36,12 +61,6 @@ const ModalInfoContextSetter = (props: { modalInfo: ModalInfo }) => {
   return null
 }
 
-const ModalContextProvider: React.FC<React.PropsWithChildren<unknown>> = props => {
-  return (
-    <UseModalContextProvider>
-      <ModalInfoContextProvider>{props.children}</ModalInfoContextProvider>
-    </UseModalContextProvider>
-  )
+export function useModalContext(): ModalContextData {
+  return React.useContext(ModalContext)
 }
-
-export { ModalContextProvider, ModalInfoContextProvider, ModalInfoContextSetter, useModalContext, useModalInfoContext }
