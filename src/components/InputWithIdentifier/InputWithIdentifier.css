@@ -1,5 +1,6 @@
 .txtNameContainer {
   position: relative;
+  margin-bottom: var(--spacing-none);
 
   .txtIdContainer {
     position: absolute;
