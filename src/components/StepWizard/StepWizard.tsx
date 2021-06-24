@@ -54,6 +54,7 @@ export interface StepProps<SharedObject> {
   firstStep?: (prevStepData?: SharedObject) => void
   lastStep?: (prevStepData?: SharedObject) => void
   completedStep?: (step: number) => void
+  getCurrentStepData?: MutableRefObject<undefined | (() => SharedObject)>
 }
 
 interface StepState<SharedObject> {
@@ -115,6 +116,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   } = props
   const stepIdentifierToStepNumberMap = React.useRef<Record<string, number>>({})
   const currentStepNumber = React.useRef<number>(0)
+  const getCurrentStepData = React.useRef<() => SharedObject>()
   React.useEffect(() => {
     stepIdentifierToStepNumberMap.current = {}
     currentStepNumber.current = 0
@@ -141,6 +143,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         return true
       }
       const stepData = state.nestedStepWizard?.[state.prevStep]
+      const currentStepData = getCurrentStepData.current?.() || ({} as SharedObject)
       const nestedWizard = stepData?.wizard
       if (
         !isNil(nestedWizard) &&
@@ -165,7 +168,10 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         ...prevState,
         prevStep: prevState.activeStep,
         activeStep: stepNumber,
-        prevStepData,
+        prevStepData: {
+          ...prevStepData,
+          ...currentStepData
+        },
         completedStep: undefined
       }))
       return true
@@ -329,7 +335,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     gotoStep,
     firstStep,
     lastStep,
-    completedStep
+    completedStep,
+    getCurrentStepData
   }
 
   return (
