@@ -911,7 +911,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     label,
     ...rest
   } = restProps
-  const [currentType, setCurrentType] = React.useState()
+  const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
     (val, valueType, type) => {
       type !== currentType && setCurrentType(type)
