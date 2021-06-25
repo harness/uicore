@@ -31,6 +31,7 @@ export interface ThumbnailSelectProps {
   cancelText?: string
   className?: string
   thumbnailClassName?: string
+  onChange?(val: string): void
 }
 
 const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
@@ -43,7 +44,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     changeText = 'Change',
     cancelText = 'Cancel',
     className,
-    thumbnailClassName
+    thumbnailClassName,
+    onChange
   } = props
   const value = get(formik.values, name)
 
@@ -80,6 +82,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
 
     formik.setFieldValue(name, value)
     formik.setFieldTouched(name, true)
+
+    onChange?.(value)
   }
 
   return (
