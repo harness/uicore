@@ -75,7 +75,9 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     setShowAllOptions(false)
   }
 
-  function handleChange(value: string): void {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
+    const { value } = e.target
+
     formik.setFieldValue(name, value)
     formik.setFieldTouched(name, true)
   }
@@ -86,6 +88,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
         {visibleItems.map(item => {
           return (
             <Thumbnail
+              name={name}
               key={item.value}
               label={item.label}
               value={item.value}
@@ -105,6 +108,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             icon="Edit"
             iconProps={{ size: 10, color: Color.GREY_450 }}
             intent="primary"
+            data-testid="thumbnail-select-change"
             onClick={handleChangeClick}
             text={changeText}
           />
@@ -117,6 +121,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             icon="cross"
             iconProps={{ size: 12, color: Color.GREY_450 }}
             intent="primary"
+            data-testid="thumbnail-select-cancel"
             onClick={handleCancelClick}
             text={cancelText}
           />
