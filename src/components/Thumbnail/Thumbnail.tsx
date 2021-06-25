@@ -19,7 +19,7 @@ export interface ThumbnailProps {
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
-  const { label, value, icon, disabled, selected, onClick, className,  name } = props
+  const { label, value, icon, disabled, selected, onClick, className, name } = props
 
   return (
     <label className={cx(css.squareCardContainer, className)}>
@@ -39,14 +39,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         color={disabled ? Color.GREY_350 : Color.GREY_600}>
         {label}
       </Text>
-      <input
-        type="checkbox"
-        name={name}
-        value={value}
-        onChange={onClick}
-        checked={selected}
-        disabled={disabled}
-      />
+      <input type="checkbox" name={name} value={value} onChange={onClick} checked={selected} disabled={disabled} />
     </label>
   )
 }
