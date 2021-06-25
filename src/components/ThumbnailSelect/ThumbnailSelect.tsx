@@ -31,8 +31,7 @@ export interface ThumbnailSelectProps {
 
 const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   const { name, formik, items, isReadonly = false, layoutProps } = props
-  const [visibleItems, setVisibleItems] = React.useState<Item[]>(items)
-  const [lastSelectedValue, setLastSelectedValue] = React.useState<string>('')
+  const [showAllOptions, setShowAllOptions] = React.useState(false)
 
   const value = get(formik.values, name)
   const hasError = errorCheck(name, formik)
@@ -40,23 +39,22 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   const helperText = hasError ? get(formik?.errors, name) : null
 
   React.useEffect(() => {
-    if (!isEmpty(value)) {
-      const filteredItems = items.filter(item => item.value === value)
-      setVisibleItems(filteredItems)
-      setLastSelectedValue(value)
-    } else {
-      const lastSelectedIndex = items.findIndex(item => item.value === lastSelectedValue)
-      if (lastSelectedIndex > -1) {
-        const newItems = [...items]
-        const itemToReplace = newItems[lastSelectedIndex]
-        newItems.splice(lastSelectedIndex, 1)
-        newItems.unshift(itemToReplace)
-        setVisibleItems(newItems)
-      } else {
-        setVisibleItems(items)
-      }
-    }
-  }, [value, items])
+    setShowAllOptions(isEmpty(value))
+  }, [value])
+
+  const selectedItemIndex = value ? items.findIndex(item => item.value === value) : -1
+  let visibleItems: Item[] =
+    selectedItemIndex > -1
+      ? [items[selectedItemIndex], ...items.slice(0, selectedItemIndex), ...items.slice(selectedItemIndex + 1)]
+      : items
+
+  if (!showAllOptions) {
+    visibleItems = visibleItems.slice(0, 1)
+  }
+
+  function handleChangeClick(): void {
+    setShowAllOptions(true)
+  }
 
   function handleChange(value: string): void {
     formik.setFieldValue(name, value)
@@ -79,7 +77,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             />
           )
         })}
-        {value && (
+        {showAllOptions ? null : (
           <Button
             className={css.changeButton}
             disabled={isReadonly}
@@ -87,9 +85,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             icon={'Edit'}
             iconProps={{ size: 10, color: Color.GREY_450 }}
             intent="primary"
-            onClick={_e => {
-              handleChange('')
-            }}
+            onClick={handleChangeClick}
             text={'Change'}
           />
         )}
