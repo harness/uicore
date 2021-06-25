@@ -1,4 +1,6 @@
 import React from 'react'
+import cx from 'classnames'
+
 import css from '../Thumbnail/Thumbnail.css'
 import { Card } from '../Card/Card'
 import { Icon, IconName } from '../../icons/Icon'
@@ -11,13 +13,14 @@ export interface ThumbnailProps {
   icon: IconName
   disabled?: boolean
   selected?: boolean
+  className?: string
   onClick?: (val: string) => void
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
-  const { label, value, icon, disabled, selected, onClick } = props
+  const { label, value, icon, disabled, selected, onClick, className } = props
   return (
-    <label className={css.squareCardContainer}>
+    <label className={cx(css.squareCardContainer, className)}>
       <Card
         disabled={disabled}
         interactive={!disabled && !selected}

@@ -27,36 +27,53 @@ export interface ThumbnailSelectProps {
   items: Item[]
   isReadonly?: boolean
   layoutProps?: Partial<LayoutProps>
+  changeText?: string
+  cancelText?: string
+  className?: string
+  thumbnailClassName?: string
 }
 
 const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
-  const { name, formik, items, isReadonly = false, layoutProps } = props
-  const [visibleItems, setVisibleItems] = React.useState<Item[]>(items)
-  const [lastSelectedValue, setLastSelectedValue] = React.useState<string>('')
-
+  const {
+    name,
+    formik,
+    items,
+    isReadonly = false,
+    layoutProps,
+    changeText = 'Change',
+    cancelText = 'Cancel',
+    className,
+    thumbnailClassName
+  } = props
   const value = get(formik.values, name)
+
+  const [showAllOptions, setShowAllOptions] = React.useState(!isEmpty(value))
+
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
   const helperText = hasError ? get(formik?.errors, name) : null
 
   React.useEffect(() => {
-    if (!isEmpty(value)) {
-      const filteredItems = items.filter(item => item.value === value)
-      setVisibleItems(filteredItems)
-      setLastSelectedValue(value)
-    } else {
-      const lastSelectedIndex = items.findIndex(item => item.value === lastSelectedValue)
-      if (lastSelectedIndex > -1) {
-        const newItems = [...items]
-        const itemToReplace = newItems[lastSelectedIndex]
-        newItems.splice(lastSelectedIndex, 1)
-        newItems.unshift(itemToReplace)
-        setVisibleItems(newItems)
-      } else {
-        setVisibleItems(items)
-      }
-    }
-  }, [value, items])
+    setShowAllOptions(isEmpty(value))
+  }, [value])
+
+  const selectedItemIndex = value ? items.findIndex(item => item.value === value) : -1
+  let visibleItems: Item[] =
+    selectedItemIndex > -1
+      ? [items[selectedItemIndex], ...items.slice(0, selectedItemIndex), ...items.slice(selectedItemIndex + 1)]
+      : items
+
+  if (!showAllOptions) {
+    visibleItems = visibleItems.slice(0, 1)
+  }
+
+  function handleChangeClick(): void {
+    setShowAllOptions(true)
+  }
+
+  function handleCancelClick(): void {
+    setShowAllOptions(false)
+  }
 
   function handleChange(value: string): void {
     formik.setFieldValue(name, value)
@@ -64,7 +81,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   }
 
   return (
-    <FormGroup helperText={helperText} intent={intent}>
+    <FormGroup className={className} helperText={helperText} intent={intent}>
       <Layout.Horizontal spacing={'medium'} {...layoutProps}>
         {visibleItems.map(item => {
           return (
@@ -76,23 +93,34 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
               disabled={item.disabled || isReadonly}
               selected={item.value === value}
               onClick={handleChange}
+              className={thumbnailClassName}
             />
           )
         })}
-        {value && (
+        {showAllOptions ? null : (
           <Button
             className={css.changeButton}
             disabled={isReadonly}
             minimal
-            icon={'Edit'}
+            icon="Edit"
             iconProps={{ size: 10, color: Color.GREY_450 }}
             intent="primary"
-            onClick={_e => {
-              handleChange('')
-            }}
-            text={'Change'}
+            onClick={handleChangeClick}
+            text={changeText}
           />
         )}
+        {showAllOptions && value ? (
+          <Button
+            className={css.changeButton}
+            disabled={isReadonly}
+            minimal
+            icon="cross"
+            iconProps={{ size: 12, color: Color.GREY_450 }}
+            intent="primary"
+            onClick={handleCancelClick}
+            text={cancelText}
+          />
+        ) : null}
       </Layout.Horizontal>
     </FormGroup>
   )
