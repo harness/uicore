@@ -82,7 +82,7 @@ describe('Tests for Select with secondary view', () => {
   afterEach(() => {
     jest.resetAllMocks()
   })
-  test('Ensure you can toggle betwen secondary view and dropdown', async () => {
+  test.skip('Ensure you can toggle betwen secondary view and dropdown', async () => {
     const { container, getByText } = render(
       <SelectWithSubview
         items={items}
@@ -133,7 +133,7 @@ describe('Tests for Select with secondary view', () => {
     getByText(items[1].label)
   })
 
-  test('Ensure that when user saves from secondary view, the option is rendered in the drop down menu', async () => {
+  test.skip('Ensure that when user saves from secondary view, the option is rendered in the drop down menu', async () => {
     const { container, getByText } = render(
       <SelectWithSubview
         items={items}
