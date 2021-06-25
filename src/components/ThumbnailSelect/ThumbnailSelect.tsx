@@ -108,6 +108,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             icon="Edit"
             iconProps={{ size: 10, color: Color.GREY_450 }}
             intent="primary"
+            data-testid="thumbnail-select-change"
             onClick={handleChangeClick}
             text={changeText}
           />
@@ -120,6 +121,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             icon="cross"
             iconProps={{ size: 12, color: Color.GREY_450 }}
             intent="primary"
+            data-testid="thumbnail-select-cancel"
             onClick={handleCancelClick}
             text={cancelText}
           />
