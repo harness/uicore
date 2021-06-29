@@ -146,7 +146,12 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   }
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
-      <Popover {...hoverCardContent} interactionKind="hover" usePortal={false} className={css.avatarPopOver}>
+      <Popover
+        {...hoverCardContent}
+        interactionKind="hover"
+        usePortal={false}
+        className={css.avatarPopOver}
+        disabled={!hoverCard}>
         <div className={css.AvatarInner} style={contentStyle}>
           {inner}
         </div>
