@@ -58,9 +58,9 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
   const isDark = tooltipProps?.isDark
   const content =
     typeof tooltip === 'string' ? (
-      <Text
-        padding="medium"
+      <div
         style={{
+          padding: '15px',
           maxWidth: '500px',
           maxHeight: '500px',
           overflow: 'auto',
@@ -70,7 +70,7 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
         }}
         color={(isDark && 'white') || undefined}>
         {tooltip}
-      </Text>
+      </div>
     ) : (
       tooltip
     )

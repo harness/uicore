@@ -1,17 +1,19 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { fireEvent, render, waitFor } from '@testing-library/react'
 import { Text } from '../Text'
 import { Layout } from 'layouts/Layout'
 
 describe('Text component fixes', () => {
-  test('basic rendering with nested', () => {
-    const { container } = render(
+  test('basic rendering with nested', async () => {
+    const { container, getByText, queryByText } = render(
       <Text tooltip="ABC tooltip">
         <Layout.Horizontal>
           <Text>Nested</Text>
         </Layout.Horizontal>
       </Text>
     )
-    expect(container).toMatchSnapshot('nested text with div instead of p')
+    fireEvent.mouseOver(getByText('Nested'))
+    await waitFor(() => expect(queryByText('ABC tooltip')).toBeTruthy())
+    expect(container).toMatchSnapshot('nested text')
   })
 })

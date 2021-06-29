@@ -47,7 +47,7 @@ export const Basic: Story<TextProps> = args => {
   return (
     <>
       <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
-      <Text font="xsmall" {...args}>
+      <Text font="xsmall" {...args} tooltip={'Sample'} tooltipProps={{ isDark: true }}>
         The quick brown fox jumps over the lazy dog
       </Text>
       <Text font="small" {...args}>
