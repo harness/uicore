@@ -31,7 +31,7 @@ export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, Styled
 }
 
 export function Text(props: TextProps) {
-  const Tag = (props.inline ? 'span' : 'p') as React.ElementType
+  const Tag = (props.inline ? 'span' : 'div') as React.ElementType
   const [tooltip, setTooltip] = useState(props.tooltip)
   const lineClamp = props.lineClamp
   const style = { ...props.style }
