@@ -916,7 +916,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     (val, valueType, type) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value || '')
+        formik?.setFieldValue(name, val?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
