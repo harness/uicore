@@ -4,6 +4,9 @@ const webpackConfig = require('../webpack.config')
 const srcFolder = path.resolve(__dirname, '../src')
 
 module.exports = {
+  core: {
+    builder: 'webpack5'
+  },
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   webpackFinal: config => {
