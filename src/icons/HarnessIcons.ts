@@ -366,6 +366,7 @@ import RuntimeInput from './runtime-input.svg'
 import SaveCacheGcs from './save-cache-gcs.svg'
 import SaveCacheS from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
+import Script from './script.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -851,6 +852,7 @@ type HarnessIconName =
   | 'save-cache-gcs'
   | 'save-cache-s3'
   | 'save-cache-step'
+  | 'script'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -1336,6 +1338,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'save-cache-gcs': SaveCacheGcs,
   'save-cache-s3': SaveCacheS,
   'save-cache-step': SaveCacheStep,
+  script: Script,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,
