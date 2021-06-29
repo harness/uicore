@@ -14,7 +14,7 @@ const DEFAULT_THROTTLE = 500 // ms
  *   - autoFocus initially
  */
 
-export interface PropsInterface {
+export interface ExpandingSearchInputProps {
   name?: string
   defaultValue?: string
   placeholder?: string
@@ -22,6 +22,7 @@ export interface PropsInterface {
   onEnter?: (text: string, reverse?: boolean) => void
   onPrev?: (text: string) => void
   onNext?: (text: string) => void
+  onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
   autoFocus?: boolean // auto focus (caret) initially
   className?: string
   throttle?: number
@@ -30,7 +31,15 @@ export interface PropsInterface {
   flip?: boolean
 }
 
-export function ExpandingSearchInput(props: PropsInterface) {
+export interface ExpandingSearchInputHandle {
+  focus(): void
+  clear(): void
+}
+
+export function ExpandingSearchInput(
+  props: ExpandingSearchInputProps,
+  ref?: React.ForwardedRef<ExpandingSearchInputHandle | undefined>
+): React.ReactElement {
   const {
     name = '',
     defaultValue,
@@ -97,12 +106,10 @@ export function ExpandingSearchInput(props: PropsInterface) {
 
   const onKeyPress = useCallback(
     (event: React.KeyboardEvent<HTMLInputElement>) => {
+      props.onKeyPress?.(event)
+
       if (event.key === 'Enter') {
-        if (!event.shiftKey) {
-          onEnter?.(event.currentTarget.value, false)
-        } else {
-          onEnter?.(event.currentTarget.value, true)
-        }
+        onEnter?.(event.currentTarget.value, !!event.shiftKey)
       }
     },
     [onEnter]
@@ -142,6 +149,15 @@ export function ExpandingSearchInput(props: PropsInterface) {
     }
   }, [propsOnChange, setInputNoTransition])
   useLayoutEffect(afterClear, [onClearFlag])
+
+  React.useImperativeHandle(ref, () => ({
+    focus() {
+      inputRef.current?.focus()
+    },
+    clear() {
+      onClear()
+    }
+  }))
 
   const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip ? css.flip : ''}`
 
@@ -198,3 +214,5 @@ export function ExpandingSearchInput(props: PropsInterface) {
     </div>
   )
 }
+
+export const ExpandingSearchInputWithRef = React.forwardRef(ExpandingSearchInput)
