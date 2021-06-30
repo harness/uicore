@@ -174,6 +174,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         },
         completedStep: undefined
       }))
+      // clear the ref so that current ref is not maintained for next step
+      getCurrentStepData.current = undefined
       return true
     },
     [state.activeStep, state.totalSteps, state.prevStep, state.nestedStepWizard]
