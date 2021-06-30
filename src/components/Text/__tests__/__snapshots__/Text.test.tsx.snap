@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component fixes basic rendering with nested: nested text 1`] = `
+<div>
+  <span
+    class="bp3-popover-wrapper"
+  >
+    <span
+      class="bp3-popover-target bp3-popover-open"
+    >
+      <p
+        class="font main"
+        tabindex="0"
+      >
+        <div
+          class="horizontal layout-spacing-undefined main"
+        >
+          <p
+            class="font main"
+          >
+            Nested
+          </p>
+        </div>
+      </p>
+    </span>
+  </span>
+</div>
+`;
