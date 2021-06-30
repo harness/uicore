@@ -60,6 +60,7 @@ import CiActiveBuild from './ci-active-build.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CircleCross from './circle-cross.svg'
+import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
@@ -546,6 +547,7 @@ type HarnessIconName =
   | 'ci-hover'
   | 'ci-main'
   | 'circle-cross'
+  | 'clipboard-alt'
   | 'cloud-sso'
   | 'cloudformation'
   | 'codebase-invalid'
@@ -1032,6 +1034,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-hover': CiHover,
   'ci-main': CiMain,
   'circle-cross': CircleCross,
+  'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
   'codebase-invalid': CodebaseInvalid,
