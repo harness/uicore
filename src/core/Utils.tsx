@@ -3,12 +3,12 @@ import copy from 'clipboard-copy'
 import cx from 'classnames'
 import React, { KeyboardEvent, MouseEvent } from 'react'
 import { Popover } from '../components/Popover/Popover'
-import { Text } from '../components/Text/Text'
 import { Color } from './Color'
 import { Intent } from './Intent'
 import { OptionalTooltip } from './Types'
 import { FormikContext } from 'formik'
 import { get, isPlainObject } from 'lodash-es'
+import css from './Utils.css'
 
 function stopEvent(event: MouseEvent | KeyboardEvent): void {
   event.stopPropagation()
@@ -58,17 +58,7 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
   const isDark = tooltipProps?.isDark
   const content =
     typeof tooltip === 'string' ? (
-      <div
-        style={{
-          padding: '15px',
-          maxWidth: '500px',
-          maxHeight: '500px',
-          overflow: 'auto',
-          overflowWrap: 'break-word',
-          wordWrap: 'break-word',
-          hyphens: 'auto'
-        }}
-        color={(isDark && 'white') || undefined}>
+      <div className={css.tooltipContainer} color={(isDark && 'white') || undefined}>
         {tooltip}
       </div>
     ) : (
