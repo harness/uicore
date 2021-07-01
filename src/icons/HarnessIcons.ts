@@ -469,6 +469,7 @@ import Text from './text.svg'
 import Timeout from './timeout.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
+import TriggerExecution from './trigger-execution.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
@@ -956,6 +957,7 @@ type HarnessIconName =
   | 'timeout'
   | 'traffic-lights'
   | 'trigger-artifact'
+  | 'trigger-execution'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
@@ -1443,6 +1445,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   timeout: Timeout,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
+  'trigger-execution': TriggerExecution,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
