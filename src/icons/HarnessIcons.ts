@@ -57,6 +57,7 @@ import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
+import CiPendingBuild from './ci-pending-build.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CircleCross from './circle-cross.svg'
@@ -546,6 +547,7 @@ type HarnessIconName =
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
+  | 'ci-pending-build'
   | 'ci-hover'
   | 'ci-main'
   | 'circle-cross'
@@ -1035,6 +1037,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
+  'ci-pending-build': CiPendingBuild,
   'ci-hover': CiHover,
   'ci-main': CiMain,
   'circle-cross': CircleCross,
