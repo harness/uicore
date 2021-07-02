@@ -133,6 +133,7 @@ import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
 import Environment from './environment.svg'
+import Environments from './environments.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
@@ -621,6 +622,7 @@ type HarnessIconName =
   | 'email-step'
   | 'entity'
   | 'environment'
+  | 'environments'
   | 'execution-abort'
   | 'execution-input'
   | 'execution-rollback'
@@ -1109,6 +1111,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'email-step': EmailStep,
   entity: Entity,
   environment: Environment,
+  environments: Environments,
   'execution-abort': ExecutionAbort,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
