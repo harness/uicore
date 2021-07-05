@@ -96,7 +96,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
           <Icon
             name="edit"
             size={12}
-            style={{ verticalAlign: 'middle' }}
+            style={{ verticalAlign: 'middle', cursor: 'pointer' }}
             onClick={() => {
               setEditable(true)
             }}
