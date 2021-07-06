@@ -88,7 +88,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
   return (
     <FormGroup className={className} helperText={helperText} intent={intent}>
       <Layout.Horizontal className={css.mainContainer} spacing={'medium'}>
-        {visibleGroups.map(visibleGroup => {
+        {visibleGroups.map((visibleGroup, index) => {
           return (
             <Container key={visibleGroup.groupLabel}>
               <Text font={{ size: 'small', weight: 'semi-bold' }} color={'black'}>
@@ -110,36 +110,40 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
                     />
                   )
                 })}
+                {index === visibleGroups.length - 1 && (
+                  <>
+                    {showAllOptions ? null : (
+                      <Button
+                        className={css.changeButton}
+                        disabled={isReadonly}
+                        minimal
+                        icon="Edit"
+                        iconProps={{ size: 10, color: Color.GREY_450 }}
+                        intent="primary"
+                        data-testid="thumbnail-select-change"
+                        onClick={handleChangeClick}
+                        text={changeText}
+                      />
+                    )}
+                    {showAllOptions && value ? (
+                      <Button
+                        className={css.changeButton}
+                        disabled={isReadonly}
+                        minimal
+                        icon="cross"
+                        iconProps={{ size: 12, color: Color.GREY_450 }}
+                        intent="primary"
+                        data-testid="thumbnail-select-cancel"
+                        onClick={handleCancelClick}
+                        text={cancelText}
+                      />
+                    ) : null}
+                  </>
+                )}
               </Layout.Horizontal>
             </Container>
           )
         })}
-        {showAllOptions ? null : (
-          <Button
-            className={css.changeButton}
-            disabled={isReadonly}
-            minimal
-            icon="Edit"
-            iconProps={{ size: 10, color: Color.GREY_450 }}
-            intent="primary"
-            data-testid="thumbnail-select-change"
-            onClick={handleChangeClick}
-            text={changeText}
-          />
-        )}
-        {showAllOptions && value ? (
-          <Button
-            className={css.changeButton}
-            disabled={isReadonly}
-            minimal
-            icon="cross"
-            iconProps={{ size: 12, color: Color.GREY_450 }}
-            intent="primary"
-            data-testid="thumbnail-select-cancel"
-            onClick={handleCancelClick}
-            text={cancelText}
-          />
-        ) : null}
       </Layout.Horizontal>
     </FormGroup>
   )

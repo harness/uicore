@@ -79,9 +79,5 @@ Basic.args = {
       ]
     }
   ],
-  isReadonly: false,
-  onChange: (value: string) => {
-    // eslint-disable-next-line no-alert
-    alert(`Value: ${value}`)
-  }
+  isReadonly: false
 }
