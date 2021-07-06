@@ -1,0 +1,15 @@
+.mainContainer {
+  & > div:not(:first-child) {
+    border-left: 1px solid var(--grey-100);
+    padding-left: var(--spacing-xxlarge) !important;
+  }
+  .thumbnailsRow {
+    margin-top: var(--spacing-4) !important;
+  }
+  .changeButton {
+    font-size: 10px !important;
+    margin-top: var(--spacing-medium) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
