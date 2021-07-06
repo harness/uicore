@@ -58,6 +58,10 @@ export { CircularPercentageChart } from './components/CircularPercentageChart/Ci
 export { TabNavigation, TabNavigationProps } from './components/TabNavigation/TabNavigation'
 export { Thumbnail, ThumbnailProps } from './components/Thumbnail/Thumbnail'
 export { default as ThumbnailSelect, ThumbnailSelectProps } from './components/ThumbnailSelect/ThumbnailSelect'
+export {
+  default as GroupedThumbnailSelect,
+  GroupedThumbnailSelectProps
+} from './components/GroupedThumbnailSelect/GroupedThumbnailSelect'
 export { DateInput } from './components/DateInput/DateInput'
 export { FlexExpander } from './components/FlexExpander/FlexExpander'
 export { default as Pagination, PaginationProps } from './components/Pagination/Pagination'
