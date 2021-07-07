@@ -29,7 +29,7 @@ interface Props {
   addLabel?: string
   insertRowAtBeginning?: boolean
   name: string
-  onDeleteOfRow?: (row: Record<string, FieldValue>, rowIndex: number) => void
+  onDeleteOfRow?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
   isDeleteOfRowAllowed?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
   onChange?: (params: Record<string, unknown>) => void
   labelProps?: React.HTMLAttributes<HTMLElement>
@@ -47,7 +47,7 @@ function FieldArray(props: ConnectedProps) {
     label,
     placeholder,
     formik,
-    onDeleteOfRow,
+    onDeleteOfRow = () => true,
     isDeleteOfRowAllowed = () => true,
     addLabel = 'Add',
     insertRowAtBeginning = true,
@@ -82,18 +82,19 @@ function FieldArray(props: ConnectedProps) {
   }
 
   function deleteRow(index: number) {
-    onDeleteOfRow?.(value[index], index)
-    setValue(rows => {
-      const modifiedRows = rows.filter((_, i) => i != index)
-      formik.setFieldValue(name, modifiedRows)
-      const errors = (formik.errors[name] as unknown) as string[]
-      if (errors?.[index]) {
-        errors.splice(index, 1)
-        formik.setFieldError(name, (errors as unknown) as string)
-      }
-      onChange({ modifiedRows })
-      return modifiedRows
-    })
+    if (onDeleteOfRow(value[index], index))
+      setValue(rows => {
+        const modifiedRows = rows.filter((_, i) => i != index)
+        formik.setFieldValue(name, modifiedRows)
+        const errors = (formik.errors[name] as unknown) as string[]
+        if (errors?.[index]) {
+          errors.splice(index, 1)
+          formik.setFieldError(name, (errors as unknown) as string)
+        }
+        onChange({ modifiedRows })
+        return modifiedRows
+      })
+    else return
   }
 
   function handleChange(rowIndex: number, fieldName: string, fieldValue: FieldValue) {
