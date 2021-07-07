@@ -59,11 +59,23 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
    */
   const inputRef = React.useRef<HTMLInputElement | null>(null)
 
+  const [activeItem, setActiveItem] = React.useState<string | null>(null)
+
+  const [filteredItems, setFilteredItems] = React.useState<string[]>([])
+
   React.useEffect(() => {
     // reset cursor position when query value is empty
     if (!queryValue) {
       cursorRef.current = null
     }
+
+    setFilteredItems(
+      items.filter((item: string) => {
+        const match = queryValue.match(EXPRESSION_START_REGEX)
+
+        return !!match && item.toLowerCase().includes(match[1].toLowerCase())
+      })
+    )
   }, [queryValue])
 
   React.useEffect(() => {
@@ -146,6 +158,10 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     []
   )
 
+  function handleActiveItemChange(item: string | null) {
+    setActiveItem(item)
+  }
+
   function renderer(listProps: IQueryListRendererProps<string>): JSX.Element {
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
       const { value, selectionStart } = e.target as HTMLInputElement
@@ -177,9 +193,18 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
 
       if (key === 'Enter') {
         e.preventDefault()
-      }
+      } else if ((key === 'ArrowUp' || key === 'ArrowDown') && activeItem) {
+        let index = filteredItems.indexOf(activeItem)
+        const total = filteredItems.length
 
-      listProps.handleKeyDown(e)
+        if (key === 'ArrowUp') {
+          index = (total + index - 1) % total
+        } else if (key === 'ArrowDown') {
+          index = (index + 1) % total
+        }
+
+        setActiveItem(filteredItems[index])
+      }
     }
 
     return (
@@ -244,6 +269,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         onClick={handleClick}
         active={modifiers.active}
         disabled={modifiers.disabled}
+        onMouseEnter={() => setActiveItem(item)}
       />
     )
   }
@@ -251,15 +277,12 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
   return (
     <QueryList
       query={queryValue}
-      itemPredicate={(query: string, item: string) => {
-        const match = query.match(EXPRESSION_START_REGEX)
-
-        return !!match && item.toLowerCase().includes(match[1].toLowerCase())
-      }}
-      items={items}
+      items={filteredItems}
       renderer={renderer}
       itemRenderer={itemRenderer}
       onItemSelect={handleItemSelect}
+      activeItem={activeItem}
+      onActiveItemChange={handleActiveItemChange}
     />
   )
 }
