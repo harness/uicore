@@ -582,8 +582,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
           name,
           intent,
           placeholder,
-          disabled: disabled,
-          onBlur: () => formik?.setFieldTouched(name)
+          disabled: disabled
         }}
         {...selectProps}
         items={items}
