@@ -29,7 +29,7 @@ interface Props {
   addLabel?: string
   insertRowAtBeginning?: boolean
   name: string
-  onDeleteOfRow?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
+  onDeleteOfRow?: (row: Record<string, FieldValue>, rowIndex: number) => Promise<boolean>
   isDeleteOfRowAllowed?: (row: Record<string, FieldValue>, rowIndex: number) => boolean
   onChange?: (params: Record<string, unknown>) => void
   labelProps?: React.HTMLAttributes<HTMLElement>
@@ -47,7 +47,7 @@ function FieldArray(props: ConnectedProps) {
     label,
     placeholder,
     formik,
-    onDeleteOfRow = () => true,
+    onDeleteOfRow,
     isDeleteOfRowAllowed = () => true,
     addLabel = 'Add',
     insertRowAtBeginning = true,
@@ -81,8 +81,12 @@ function FieldArray(props: ConnectedProps) {
     })
   }
 
-  function deleteRow(index: number) {
-    if (onDeleteOfRow(value[index], index))
+  async function deleteRow(index: number) {
+    let canbeRemoved = true
+    if (onDeleteOfRow) {
+      canbeRemoved = await onDeleteOfRow(value[index], index)
+    }
+    if (canbeRemoved)
       setValue(rows => {
         const modifiedRows = rows.filter((_, i) => i != index)
         formik.setFieldValue(name, modifiedRows)
@@ -94,7 +98,6 @@ function FieldArray(props: ConnectedProps) {
         onChange({ modifiedRows })
         return modifiedRows
       })
-    else return
   }
 
   function handleChange(rowIndex: number, fieldName: string, fieldValue: FieldValue) {
