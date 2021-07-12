@@ -9,14 +9,18 @@ export enum Views {
   GRID = 'GRID'
 }
 
-interface GridListToggleInterface {
+export interface GridListToggleProps {
   initialSelectedView?: Views
   onViewToggle?: (selectedView: Views) => void
 }
 
-export default function GridListToggle(props: GridListToggleInterface): JSX.Element {
+export function GridListToggle(props: GridListToggleProps): JSX.Element {
   const { initialSelectedView, onViewToggle } = props
   const [selectedView, setSelectedView] = React.useState<Views>(initialSelectedView || Views.GRID)
+
+  React.useEffect(() => {
+    setSelectedView(initialSelectedView || Views.GRID)
+  }, [initialSelectedView])
 
   return (
     <Layout.Horizontal flex>

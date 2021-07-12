@@ -158,3 +158,4 @@ export {
   UseTooltipsReturn,
   DataTooltipInterface
 } from './frameworks/Tooltip/types'
+export { GridListToggle, GridListToggleProps, Views } from './components/GridListToggle/GridListToggle'
