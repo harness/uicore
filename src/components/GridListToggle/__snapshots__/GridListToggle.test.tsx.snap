@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridListToggle test When no props are passed By default Grid view should be selected 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined main flex flex-true"
+  >
+    <button
+      class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
+      data-testid="grid-view"
+      data-tooltip-id="grid-view"
+      type="button"
+    >
+      <span
+        class="bp3-icon bp3-icon-grid-view main padding padding-undefined"
+        icon="grid-view"
+      >
+        <svg
+          data-icon="grid-view"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            grid-view
+          </desc>
+          <path
+            d="M0 1v6h7V0H1C.45 0 0 .45 0 1zm0 14c0 .55.45 1 1 1h6V9H0v6zM15 0H9v7h7V1c0-.55-.45-1-1-1zM9 16h6c.55 0 1-.45 1-1V9H9v7z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      class="bp3-button bp3-minimal button font main listUnselected intent intent-undefined with-current-color iconOnly without-shadow"
+      data-testid="list-view"
+      data-tooltip-id="list-view"
+      type="button"
+    >
+      <span
+        class="bp3-icon bp3-icon-list main padding padding-undefined"
+        icon="list"
+      >
+        <svg
+          data-icon="list"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            list
+          </desc>
+          <path
+            d="M1 3h14c.55 0 1-.45 1-1s-.45-1-1-1H1c-.55 0-1 .45-1 1s.45 1 1 1zm14 10H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`GridListToggle test When props are passed - initialSelectedView: GRID By default Grid view should be selected 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined main flex flex-true"
+  >
+    <button
+      class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
+      data-testid="grid-view"
+      data-tooltip-id="grid-view"
+      type="button"
+    >
+      <span
+        class="bp3-icon bp3-icon-grid-view main padding padding-undefined"
+        icon="grid-view"
+      >
+        <svg
+          data-icon="grid-view"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            grid-view
+          </desc>
+          <path
+            d="M0 1v6h7V0H1C.45 0 0 .45 0 1zm0 14c0 .55.45 1 1 1h6V9H0v6zM15 0H9v7h7V1c0-.55-.45-1-1-1zM9 16h6c.55 0 1-.45 1-1V9H9v7z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      class="bp3-button bp3-minimal button font main listUnselected intent intent-undefined with-current-color iconOnly without-shadow"
+      data-testid="list-view"
+      data-tooltip-id="list-view"
+      type="button"
+    >
+      <span
+        class="bp3-icon bp3-icon-list main padding padding-undefined"
+        icon="list"
+      >
+        <svg
+          data-icon="list"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            list
+          </desc>
+          <path
+            d="M1 3h14c.55 0 1-.45 1-1s-.45-1-1-1H1c-.55 0-1 .45-1 1s.45 1 1 1zm14 10H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`GridListToggle test When props are passed - initialSelectedView: LIST By default List view should be selected 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined main flex flex-true"
+  >
+    <button
+      class="bp3-button bp3-minimal button font main gridUnselected intent intent-undefined with-current-color iconOnly without-shadow"
+      data-testid="grid-view"
+      data-tooltip-id="grid-view"
+      type="button"
+    >
+      <span
+        class="bp3-icon bp3-icon-grid-view main padding padding-undefined"
+        icon="grid-view"
+      >
+        <svg
+          data-icon="grid-view"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            grid-view
+          </desc>
+          <path
+            d="M0 1v6h7V0H1C.45 0 0 .45 0 1zm0 14c0 .55.45 1 1 1h6V9H0v6zM15 0H9v7h7V1c0-.55-.45-1-1-1zM9 16h6c.55 0 1-.45 1-1V9H9v7z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
+      data-testid="list-view"
+      data-tooltip-id="list-view"
+      type="button"
+    >
+      <span
+        class="bp3-icon bp3-icon-list main padding padding-undefined"
+        icon="list"
+      >
+        <svg
+          data-icon="list"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            list
+          </desc>
+          <path
+            d="M1 3h14c.55 0 1-.45 1-1s-.45-1-1-1H1c-.55 0-1 .45-1 1s.45 1 1 1zm14 10H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
