@@ -1,8 +1,17 @@
+/* Latest styles as per https://www.figma.com/file/bYQtU9kWVuVEsLksbVgGM4/hex2o?node-id=9033%3A0 */
 .accordion {
   position: relative;
 }
 
+.panel:first-child {
+  padding-top: 24px;
+}
+.panel:last-child {
+  padding-bottom: 24px;
+}
+
 .panel {
+  padding: var(--spacing-small) 0;
   .collapse {
     position: relative;
     z-index: 1;
@@ -13,12 +22,11 @@
     align-items: center;
     cursor: pointer;
     position: relative;
-    padding: var(--spacing-small);
 
     .label {
-      font-weight: bold;
-      font-size: 16px;
-      color: var(--grey-800);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--black);
       padding-left: var(--spacing-medium) !important;
     }
   }
@@ -75,6 +83,6 @@
   }
 
   .details {
-    padding: var(--spacing-xlarge) 0;
+    padding: 12px 0 var(--spacing-large) 0;
   }
 }
