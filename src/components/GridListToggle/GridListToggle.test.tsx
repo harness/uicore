@@ -1,7 +1,7 @@
 import React from 'react'
 import { act, fireEvent, render, waitFor } from '@testing-library/react'
 
-import GridListToggle, { Views } from './GridListToggle'
+import { GridListToggle, Views } from './GridListToggle'
 
 const onViewToggle = jest.fn()
 
