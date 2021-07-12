@@ -4,10 +4,10 @@
 }
 
 .panel:first-child {
-  padding-top: 24px;
+  padding-top: var(--spacing-xlarge);
 }
 .panel:last-child {
-  padding-bottom: 24px;
+  padding-bottom: var(--spacing-xlarge);
 }
 
 .panel {
@@ -25,14 +25,14 @@
 
     .label {
       font-weight: 600;
-      font-size: 14px;
+      font-size: var(--font-size-normal);
       color: var(--black);
       padding-left: var(--spacing-medium) !important;
     }
   }
 
   .chevron {
-    width: 12px;
+    width: var(--spacing-4);
     height: 6px;
     position: relative;
     color: var(--primary-7);
@@ -83,6 +83,6 @@
   }
 
   .details {
-    padding: 12px 0 var(--spacing-large) 0;
+    padding: var(--spacing-4) 0 var(--spacing-large) 0;
   }
 }
