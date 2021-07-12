@@ -2,7 +2,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, Description, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { Layout, ButtonProps } from '../..'
-import GridListToggle, { Views } from './GridListToggle'
+import { GridListToggle, Views } from './GridListToggle'
 
 export default {
   title: 'Components / GridListToggle',
