@@ -9,7 +9,7 @@ import { Icon } from '../../icons/Icon'
 
 export default {
   title: 'Components / Breadcrumbs',
-  subcomponents: { Icon },
+  subcomponents: { IconProps: Icon },
   component: Breadcrumbs,
 
   parameters: {
@@ -31,7 +31,7 @@ import { Breadcrumbs }  from '@wings-software/uicore'
 export interface Breadcrumb {
   url: string
   label: string
-  icon?: IconName
+  iconProps?: IconProps
 }`}</code>
               </pre>
             </Subtitle>
@@ -59,12 +59,12 @@ Basic.args = {
     {
       url: '#',
       label: 'Google',
-      icon: 'add'
+      iconProps: { name: 'add', color: 'green500' }
     },
     {
       url: '#',
       label: 'Gmail',
-      icon: 'airplane'
+      iconProps: { name: 'pipeline-approval', color: 'green500' }
     },
     {
       url: '#',
