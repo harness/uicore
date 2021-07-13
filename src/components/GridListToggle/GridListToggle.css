@@ -1,0 +1,13 @@
+.gridUnselected {
+  box-shadow: none !important;
+  &:hover {
+    color: var(--primary-6) !important;
+  }
+}
+
+.listUnselected {
+  box-shadow: none !important;
+  &:hover {
+    color: var(--primary-6) !important;
+  }
+}

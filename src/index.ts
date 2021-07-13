@@ -159,3 +159,4 @@ export {
   DataTooltipInterface
 } from './frameworks/Tooltip/types'
 export { Breadcrumbs, BreadcrumbsProps, Breadcrumb } from './components/Breadcrumbs/Breadcrumbs'
+export { GridListToggle, GridListToggleProps, Views } from './components/GridListToggle/GridListToggle'
