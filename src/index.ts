@@ -158,3 +158,4 @@ export {
   UseTooltipsReturn,
   DataTooltipInterface
 } from './frameworks/Tooltip/types'
+export { Breadcrumbs, BreadcrumbsProps, Breadcrumb } from './components/Breadcrumbs/Breadcrumbs'
