@@ -1,0 +1,9 @@
+.breadcrumbs {
+  line-height: 16px;
+  .breadcrumb {
+    font-size: var(--font-size-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

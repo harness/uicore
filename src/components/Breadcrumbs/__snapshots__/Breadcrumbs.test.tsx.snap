@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render basic component should check snapshot with name 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined main breadcrumbs flex flex-align flex-align-center-center"
+  >
+    <div
+      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center"
+    >
+      <a
+        class="breadcrumb"
+        href="/"
+      >
+        <span
+          class="bp3-icon bp3-icon-add main padding padding-right padding-right-xsmall"
+          icon="add"
+        >
+          <svg
+            data-icon="add"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              add
+            </desc>
+            <path
+              d="M10.99 6.99h-2v-2c0-.55-.45-1-1-1s-1 .45-1 1v2h-2c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1v-2h2c.55 0 1-.45 1-1s-.45-1-1-1zm-3-7c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.68 6-6 6z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <p
+          class="font main intent intent-primary"
+        >
+          Google
+        </p>
+      </a>
+      <span
+        class="bp3-icon main padding padding-right padding-right-small padding-left padding-left-small"
+        data-icon="main-chevron-right"
+      >
+        <svg
+          height="8"
+          width="8"
+        />
+      </span>
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center"
+    >
+      <a
+        class="breadcrumb"
+        href="/"
+      >
+        <span
+          class="bp3-icon bp3-icon-airplane main padding padding-right padding-right-xsmall"
+          icon="airplane"
+        >
+          <svg
+            data-icon="airplane"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              airplane
+            </desc>
+            <path
+              d="M16 1.5A1.498 1.498 0 0013.44.44L9.91 3.97 2 1 1 3l5.93 3.95L3.88 10H1l-1 1 3 2 2 3 1-1v-2.88l3.05-3.05L13 15l2-1-2.97-7.91 3.53-3.53c.27-.27.44-.65.44-1.06z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <p
+          class="font main intent intent-primary"
+        >
+          Gmail
+        </p>
+      </a>
+      <span
+        class="bp3-icon main padding padding-right padding-right-small padding-left padding-left-small"
+        data-icon="main-chevron-right"
+      >
+        <svg
+          height="8"
+          width="8"
+        />
+      </span>
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center"
+    >
+      <a
+        class="breadcrumb"
+        href="/"
+      >
+        <p
+          class="font main intent intent-primary"
+        >
+          Gmail2
+        </p>
+      </a>
+      <span
+        class="bp3-icon main padding padding-right padding-right-small padding-left padding-left-small"
+        data-icon="main-chevron-right"
+      >
+        <svg
+          height="8"
+          width="8"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
