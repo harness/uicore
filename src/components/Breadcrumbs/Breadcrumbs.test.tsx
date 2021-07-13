@@ -11,12 +11,12 @@ describe('Render basic component', () => {
       {
         url: '#',
         label: 'Google',
-        icon: 'add'
+        iconProps: { name: 'add' }
       },
       {
         url: '#',
         label: 'Gmail',
-        icon: 'airplane'
+        iconProps: { name: 'pipeline-approval' }
       },
       {
         url: '#',

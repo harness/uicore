@@ -59,12 +59,12 @@ Basic.args = {
     {
       url: '#',
       label: 'Google',
-      icon: 'add'
+      iconProps: { name: 'add', color: 'green500' }
     },
     {
       url: '#',
       label: 'Gmail',
-      icon: 'airplane'
+      iconProps: { name: 'pipeline-approval', color: 'green500' }
     },
     {
       url: '#',
