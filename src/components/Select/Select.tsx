@@ -26,7 +26,15 @@ const Loading = Symbol('loading')
 export interface SelectProps
   extends Omit<
     Props,
-    'popoverProps' | 'inputValueRenderer' | 'itemRenderer' | 'onItemSelect' | 'query' | 'selectedItem' | 'items'
+    | 'popoverProps'
+    | 'inputValueRenderer'
+    | 'itemRenderer'
+    | 'onItemSelect'
+    | 'query'
+    | 'selectedItem'
+    | 'items'
+    | 'activeItem'
+    | 'onActiveItemChange'
   > {
   inputValueRender?: Props['inputValueRenderer']
   itemRenderer?: Props['itemRenderer']
@@ -97,7 +105,17 @@ export function Select(props: SelectProps): React.ReactElement {
   const [query, setQuery] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
-  const { onChange, value, size, itemRenderer, whenPopoverClosed, popoverClassName = '', ...rest } = props
+  const {
+    onChange,
+    value,
+    size,
+    itemRenderer,
+    whenPopoverClosed,
+    popoverClassName = '',
+    resetOnSelect = true,
+    resetOnClose = true,
+    ...rest
+  } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
   const [showClearBtn, setShowClearBtn] = useState<boolean>()
 
@@ -190,7 +208,6 @@ export function Select(props: SelectProps): React.ReactElement {
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       noResults={<NoMatch />}
       {...rest}
-      activeItem={item}
       inputProps={{
         onChange(e: React.ChangeEvent<HTMLInputElement>) {
           setQuery(e.target.value)
@@ -232,8 +249,8 @@ export function Select(props: SelectProps): React.ReactElement {
         name: props.name,
         ...props.inputProps
       }}
-      resetOnSelect={true}
-      resetOnClose={true}
+      resetOnSelect={resetOnSelect}
+      resetOnClose={resetOnClose}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       selectedItem={item}
       onItemSelect={handleItemSelect}
