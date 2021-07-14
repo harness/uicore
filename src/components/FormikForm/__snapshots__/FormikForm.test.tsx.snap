@@ -654,20 +654,20 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                         />
                       </span>
                       <span
-                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
-                        icon="caret-down"
+                        class="bp3-icon bp3-icon-chevron-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="chevron-down"
                       >
                         <svg
-                          data-icon="caret-down"
+                          data-icon="chevron-down"
                           height="14"
                           viewBox="0 0 16 16"
                           width="14"
                         >
                           <desc>
-                            caret-down
+                            chevron-down
                           </desc>
                           <path
-                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                             fill-rule="evenodd"
                           />
                         </svg>
@@ -781,20 +781,20 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                         />
                       </span>
                       <span
-                        class="bp3-icon bp3-icon-caret-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
-                        icon="caret-down"
+                        class="bp3-icon bp3-icon-chevron-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        icon="chevron-down"
                       >
                         <svg
-                          data-icon="caret-down"
+                          data-icon="chevron-down"
                           height="14"
                           viewBox="0 0 16 16"
                           width="14"
                         >
                           <desc>
-                            caret-down
+                            chevron-down
                           </desc>
                           <path
-                            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                             fill-rule="evenodd"
                           />
                         </svg>
