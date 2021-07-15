@@ -214,7 +214,7 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
         class="errorDiv"
       >
         <span
-          class="bp3-icon main errorTextIcon"
+          class="bp3-icon main errorTextIcon intent intent-danger"
           data-icon="circle-cross"
         >
           <svg
