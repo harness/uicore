@@ -49,7 +49,6 @@ export interface SelectProps
   usePortal?: boolean
   popoverClassName?: string
   onQueryChange?: Props['onQueryChange']
-  multiTypeInput?: boolean
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -229,7 +228,7 @@ export function Select(props: SelectProps): React.ReactElement {
               />
             ) : null}
             <Icon
-              name={props.multiTypeInput ? 'chevron-down' : 'caret-down'}
+              name={'chevron-down'}
               onClick={e => {
                 const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
                 input?.focus()

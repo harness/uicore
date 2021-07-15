@@ -179,7 +179,6 @@ export function MultiTypeInputFixedTypeComponent(
       className={cx(css.select, selectProps.className, {
         [css.fixedValueInput]: MultiTypeInputType.FIXED ? true : false
       })}
-      multiTypeInput={true}
       items={items}
       value={value as SelectOption}
       disabled={disabled}

@@ -6,6 +6,7 @@ import { IconName, Icon, IconProps } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 
 import css from './TextInput.css'
+import { FormError } from '../FormError/FormError'
 
 export interface TextInputProps
   extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement'>,
@@ -79,12 +80,7 @@ export function TextInput(props: TextInputProps): React.ReactElement {
         leftIcon={leftIcon && <Icon name={leftIcon} size={12} {...leftIconProps} />}
         rightElement={rightElem}
       />
-      {hasError && !errorInPopover ? (
-        <div className={css.error}>
-          <Icon name="info" className={css.errorTextIcon} size={10} />
-          <span className={css.error}>{errorText}</span>
-        </div>
-      ) : null}
+      {hasError && !errorInPopover && errorText ? <FormError errorMessage={errorText} /> : null}
     </div>
   )
 }

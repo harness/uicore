@@ -24,33 +24,42 @@
       .bp3-form-helper-text {
         color: var(--bp3-intent-color, var(--grey-500)) !important;
       }
-      .bp3-input,
       .bp3-file-upload-input,
       .ColorPicker--picker {
         box-shadow: none !important;
-        border: 1px solid var(--bp3-intent-color, var(--form-field-border)) !important;
+        border: 1px solid var(--grey-200) !important;
+      }
+
+      .bp3-input {
+        height: var(--spacing-8);
+        border-radius: var(--spacing-2);
+        border: 1px solid var(--bp3-intent-color, var(--grey-200));
+        outline: none;
+        box-shadow: none;
+
+        &:hover {
+          border-color: var(--primary-6);
+          box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
+        }
+
+        &:focus {
+          border-color: var(--primary-7);
+        }
       }
     }
 
     .bp3-label {
-      color: var(--grey-500);
-      font-size: 13px;
+      color: var(--grey-600);
+      font-size: var(--form-input-font-size);
+      font-weight: 500;
     }
 
-    .bp3-input {
-      height: 32px;
-      border-radius: 5px;
-
-      &:focus {
-        --bp3-intent-color: var(--primary-5);
-      }
-    }
     .bp3-input.bp3-tag-input {
       overflow: auto;
       height: fit-content;
       max-height: 70px;
       &.bp3-disabled {
-        background: var(--grey-100) !important;
+        background: var(--grey-50) !important;
       }
       &.bp3-active {
         --bp3-intent-color: var(--primary-5);
@@ -66,7 +75,7 @@
     }
 
     textarea.bp3-input {
-      height: 56px;
+      min-height: var(--spacing-10);
     }
 
     .bp3-file-upload-input {
