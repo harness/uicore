@@ -13,6 +13,7 @@ export const names = {
   '--primary-3': '#a3e9ff',
   '--primary-2': '#cdf4fe',
   '--primary-1': '#effbff',
+  '--primary-bg': '#fafcff',
   '--grey-1000': '#000000',
   '--grey-900': '#0b0b0d',
   '--grey-800': '#22222a',
