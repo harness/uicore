@@ -38,6 +38,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     disabled,
     autoComplete = 'off'
   } = props
+  const mountRef = React.useRef(false)
   /**
    * This holds the complete value of the input
    */
@@ -79,7 +80,11 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
   }, [queryValue])
 
   React.useEffect(() => {
-    onChange(inputValue)
+    if (mountRef.current) {
+      onChange(inputValue)
+    } else {
+      mountRef.current = true
+    }
   }, [inputValue])
 
   function resetQuery(): void {
