@@ -38,8 +38,14 @@ import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
+import CcmSketch from './ccm-sketch.svg'
+import CcmSolid from './ccm-solid.svg'
+import CcmWithText from './ccm-with-text.svg'
 import CdHover from './cd-hover.svg'
 import CdMain from './cd-main.svg'
+import CdSketch from './cd-sketch.svg'
+import CdSolid from './cd-solid.svg'
+import CdWithText from './cd-with-text.svg'
 import Cd from './cd.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
@@ -61,6 +67,9 @@ import CiActiveBuild from './ci-active-build.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CiPendingBuild from './ci-pending-build.svg'
+import CiSketch from './ci-sketch.svg'
+import CiSolid from './ci-solid.svg'
+import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
@@ -105,6 +114,9 @@ import CustomService from './custom-service.svg'
 import Customrole from './customRole.svg'
 import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
+import CvSketch from './cv-sketch.svg'
+import CvSolid from './cv-solid.svg'
+import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -148,6 +160,9 @@ import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
 import FatArrowUp from './fat-arrow-up.svg'
 import FeedbackGiven from './feedback-given.svg'
+import FfSketch from './ff-sketch.svg'
+import FfSolid from './ff-solid.svg'
+import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
 import FolderUpload from './folder-upload.svg'
@@ -532,8 +547,14 @@ type HarnessIconName =
   | 'canvas-position'
   | 'canvas-reset'
   | 'canvas-selector'
+  | 'ccm-sketch'
+  | 'ccm-solid'
+  | 'ccm-with-text'
   | 'cd-hover'
   | 'cd-main'
+  | 'cd-sketch'
+  | 'cd-solid'
+  | 'cd-with-text'
   | 'cd'
   | 'ce-application'
   | 'ce-beta'
@@ -555,6 +576,9 @@ type HarnessIconName =
   | 'ci-hover'
   | 'ci-main'
   | 'ci-pending-build'
+  | 'ci-sketch'
+  | 'ci-solid'
+  | 'ci-with-text'
   | 'circle-cross'
   | 'clipboard-alt'
   | 'cloud-sso'
@@ -599,6 +623,9 @@ type HarnessIconName =
   | 'customRole'
   | 'cv-hover'
   | 'cv-main'
+  | 'cv-sketch'
+  | 'cv-solid'
+  | 'cv-with-text'
   | 'dashboard-selected'
   | 'dashboard'
   | 'delegates-icon'
@@ -642,6 +669,9 @@ type HarnessIconName =
   | 'failure-strategy'
   | 'fat-arrow-up'
   | 'feedback-given'
+  | 'ff-sketch'
+  | 'ff-solid'
+  | 'ff-with-text'
   | 'file'
   | 'fixed-input'
   | 'folder-upload'
@@ -1026,8 +1056,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
+  'ccm-sketch': CcmSketch,
+  'ccm-solid': CcmSolid,
+  'ccm-with-text': CcmWithText,
   'cd-hover': CdHover,
   'cd-main': CdMain,
+  'cd-sketch': CdSketch,
+  'cd-solid': CdSolid,
+  'cd-with-text': CdWithText,
   cd: Cd,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
@@ -1049,6 +1085,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-hover': CiHover,
   'ci-main': CiMain,
   'ci-pending-build': CiPendingBuild,
+  'ci-sketch': CiSketch,
+  'ci-solid': CiSolid,
+  'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
   'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
@@ -1093,6 +1132,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   customRole: Customrole,
   'cv-hover': CvHover,
   'cv-main': CvMain,
+  'cv-sketch': CvSketch,
+  'cv-solid': CvSolid,
+  'cv-with-text': CvWithText,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'delegates-icon': DelegatesIcon,
@@ -1136,6 +1178,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'failure-strategy': FailureStrategy,
   'fat-arrow-up': FatArrowUp,
   'feedback-given': FeedbackGiven,
+  'ff-sketch': FfSketch,
+  'ff-solid': FfSolid,
+  'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
   'folder-upload': FolderUpload,
