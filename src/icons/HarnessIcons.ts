@@ -7,6 +7,7 @@ import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
+import AccessControl from './access-control.svg'
 import Activity from './activity.svg'
 import Adminrole from './adminRole.svg'
 import Advanced from './advanced.svg'
@@ -57,9 +58,9 @@ import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
-import CiPendingBuild from './ci-pending-build.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
+import CiPendingBuild from './ci-pending-build.svg'
 import CircleCross from './circle-cross.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
@@ -106,6 +107,7 @@ import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DelegatesIcon from './delegates-icon.svg'
 import DependencyStep from './dependency-step.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
@@ -383,6 +385,7 @@ import SearchUsers from './search-users.svg'
 import SearchWorkflow from './search-workflow.svg'
 import SecretManager from './secret-manager.svg'
 import SecretSsh from './secret-ssh.svg'
+import SecretsIcon from './secrets-icon.svg'
 import SendData from './send-data.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactory from './service-artifactory.svg'
@@ -460,6 +463,7 @@ import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import TemplateLibrary from './template-library.svg'
+import TemplatesIcon from './templates-icon.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
 import TerraformDestroy from './terraform-destroy.svg'
@@ -497,6 +501,7 @@ type HarnessIconName =
   | 'Edit'
   | 'Inline'
   | 'Options'
+  | 'access-control'
   | 'activity'
   | 'adminRole'
   | 'advanced'
@@ -547,9 +552,9 @@ type HarnessIconName =
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
-  | 'ci-pending-build'
   | 'ci-hover'
   | 'ci-main'
+  | 'ci-pending-build'
   | 'circle-cross'
   | 'clipboard-alt'
   | 'cloud-sso'
@@ -596,6 +601,7 @@ type HarnessIconName =
   | 'cv-main'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'delegates-icon'
   | 'dependency-step'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
@@ -873,6 +879,7 @@ type HarnessIconName =
   | 'search-workflow'
   | 'secret-manager'
   | 'secret-ssh'
+  | 'secrets-icon'
   | 'send-data'
   | 'service-appdynamics'
   | 'service-artifactory'
@@ -950,6 +957,7 @@ type HarnessIconName =
   | 'synced'
   | 'syncing'
   | 'template-library'
+  | 'templates-icon'
   | 'terraform-apply-new'
   | 'terraform-apply'
   | 'terraform-destroy'
@@ -987,6 +995,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
   Inline: Inline,
   Options: Options,
+  'access-control': AccessControl,
   activity: Activity,
   adminRole: Adminrole,
   advanced: Advanced,
@@ -1037,9 +1046,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
-  'ci-pending-build': CiPendingBuild,
   'ci-hover': CiHover,
   'ci-main': CiMain,
+  'ci-pending-build': CiPendingBuild,
   'circle-cross': CircleCross,
   'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
@@ -1086,6 +1095,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cv-main': CvMain,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'delegates-icon': DelegatesIcon,
   'dependency-step': DependencyStep,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
@@ -1363,6 +1373,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'search-workflow': SearchWorkflow,
   'secret-manager': SecretManager,
   'secret-ssh': SecretSsh,
+  'secrets-icon': SecretsIcon,
   'send-data': SendData,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory': ServiceArtifactory,
@@ -1440,6 +1451,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   synced: Synced,
   syncing: Syncing,
   'template-library': TemplateLibrary,
+  'templates-icon': TemplatesIcon,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
   'terraform-destroy': TerraformDestroy,
