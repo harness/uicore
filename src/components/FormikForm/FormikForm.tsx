@@ -59,6 +59,7 @@ import { DataTooltipInterface } from '../../frameworks/Tooltip/types'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { FormikTooltipContext } from './FormikTooltipContext'
 import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
+import { FormError } from '../FormError/FormError'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -116,7 +117,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     items,
     label,
@@ -176,7 +177,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     label,
@@ -241,7 +242,7 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     label,
@@ -294,7 +295,7 @@ const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     label,
@@ -332,7 +333,7 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     placeholder = i18n.chooseFile,
@@ -389,7 +390,7 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     items = [],
@@ -440,7 +441,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     onChange,
@@ -482,7 +483,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     items,
     label,
@@ -549,7 +550,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     items,
     label,
@@ -610,7 +611,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     inputGroup,
@@ -667,7 +668,7 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     label,
     inline = formik?.inline,
@@ -712,7 +713,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     inline = formik?.inline,
     placeholder,
@@ -860,7 +861,7 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContextProps<any>) 
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     onChange,
     label,
@@ -905,7 +906,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     label,
     ...rest
@@ -994,7 +995,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     label,
     ...rest
@@ -1066,7 +1067,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     label,
     ...rest
@@ -1121,7 +1122,7 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     items = [],
     label,
@@ -1180,7 +1181,7 @@ const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContext
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     items = [],
     label,
@@ -1245,7 +1246,7 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? get(formik?.errors, name) : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
     disabled = formik?.disabled,
     items = [],
     placeholder,

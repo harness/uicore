@@ -1,25 +1,26 @@
 .main {
   display: flex;
   flex-flow: column;
-  margin-bottom: 12px;
+  margin-bottom: var(--spacing-4);
 
   :global(.bp3-input) {
     display: block;
-    border: 1px solid var(--form-field-border);
-    border-radius: 4px;
+    border: 1px solid var(--grey-200);
+    border-radius: var(--spacing-2);
     font-size: var(--form-input-font-size);
     padding: var(--spacing-small);
-    height: 32px;
+    height: var(--spacing-8);
     color: var(--black);
     box-shadow: none;
 
+    &:hover {
+      border-color: var(--primary-6);
+      box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
+    }
+
     &:focus {
-      /*
-      color: var(--grey-800);
-      border-color: var(--primary-7);
-      */
       color: var(--black);
-      border-color: var(--primary-5);
+      border-color: var(--primary-7);
       box-shadow: none;
     }
 
@@ -29,39 +30,24 @@
     &:-moz-placeholder,
     &::placeholder {
       color: var(--form-placeholder-text) !important;
-      /* opacity: 0.5; */
     }
 
     &:disabled {
-      background-color: var(--grey-100);
+      background-color: var(--grey-50);
     }
   }
 
   &.hasError {
     :global(.bp3-input) {
-      border-color: var(--red-500);
+      border-color: var(--red-600);
       &:focus {
-        border-color: var(--red-500);
-        outline-color: var(--red-500);
+        border-color: var(--red-600);
+        outline-color: var(--red-600);
       }
     }
 
-    .error {
-      font-weight: 400;
-      font-size: var(--font-size-xsmall);
-      line-height: 1.125rem;
-      color: var(--grey-300);
-      margin-top: 0;
-    }
-
-    & .errorIcon :global(.bp3-icon:first-child) {
-      margin: 10px;
-      color: var(--primary-7);
-    }
-
-    & .errorTextIcon {
-      color: var(--primary-7);
-      margin: 0px 2px 2px;
+    &.errorIcon :global(.bp3-icon:first-child) {
+      color: var(--red-600);
     }
   }
 
@@ -69,8 +55,8 @@
     :global(.bp3-input-action) {
       margin: var(--spacing-small);
       display: flex;
-      width: 12px;
-      height: 12px;
+      width: var(--spacing-4);
+      height: var(--spacing-4);
 
       :global(.bp3-icon) {
         display: flex;
