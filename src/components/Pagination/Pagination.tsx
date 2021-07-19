@@ -30,11 +30,6 @@ const Pagination: React.FC<PaginationProps> = props => {
       `Pagination: pageSize (${pageSize}) * pageCount (${pageCount}) can't be less than itemCount (${itemCount})`
     )
   }
-  if (pageCountClamp < 5) {
-    // eslint-disable-next-line no-console
-    console.warn(`Pagination: pageCountClamp (${pageCountClamp}) can't be less than 5`)
-    return null
-  }
 
   const moreLeft = pageIndex + 1 > pageCountClamp
   const moreRight = pageCount - pageIndex > pageCountClamp

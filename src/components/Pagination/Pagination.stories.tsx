@@ -17,5 +17,6 @@ export const Basic: Story<PaginationProps> = args => {
 Basic.args = {
   itemCount: 147,
   pageCount: 15,
-  pageSize: 10
+  pageSize: 10,
+  pageCountClamp: 5
 }
