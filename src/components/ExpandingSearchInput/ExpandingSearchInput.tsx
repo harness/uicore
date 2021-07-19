@@ -55,7 +55,7 @@ export function ExpandingSearchInput(
     showPrevNextButtons,
     fixedText,
     flip,
-    width
+    width = '350px'
   } = props
 
   const [key, setKey] = useState(Math.random())
