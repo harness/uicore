@@ -43,13 +43,27 @@ export default {
 export const Weights: Story<HeadingProps> = _args => {
   return (
     <>
-      <Heading level={1} font={{ kind: FontKind.H1 }}>Headline Text - H1/Bold - Module Landing Title</Heading>
-      <Heading level={1} font={{ kind: FontKind.H1_SEMI }}>Headline Text - H1/Semi - Semi Bold</Heading>
-      <Heading level={2} font={{ kind: FontKind.H2 }}>Headline Text - H2</Heading>
-      <Heading level={3} font={{ kind: FontKind.H3 }}>Headline Text - H3 - Dialogue Title</Heading>
-      <Heading level={4} font={{ kind: FontKind.H4 }}>Headline Text - H4 - Page Header Title/Landing/Listing Page Empty State Title</Heading>
-      <Heading level={5} font={{ kind: FontKind.H5 }}>Headline Text - H5 - Form/Section Title</Heading>
-      <Heading level={6} font={{ kind: FontKind.H6 }}>Headline Text - H6 - Section Title</Heading>
+      <Heading level={1} font={{ kind: FontKind.H1 }}>
+        Headline Text - H1/Bold - Module Landing Title
+      </Heading>
+      <Heading level={1} font={{ kind: FontKind.H1_SEMI }}>
+        Headline Text - H1/Semi - Semi Bold
+      </Heading>
+      <Heading level={2} font={{ kind: FontKind.H2 }}>
+        Headline Text - H2
+      </Heading>
+      <Heading level={3} font={{ kind: FontKind.H3 }}>
+        Headline Text - H3 - Dialogue Title
+      </Heading>
+      <Heading level={4} font={{ kind: FontKind.H4 }}>
+        Headline Text - H4 - Page Header Title/Landing/Listing Page Empty State Title
+      </Heading>
+      <Heading level={5} font={{ kind: FontKind.H5 }}>
+        Headline Text - H5 - Form/Section Title
+      </Heading>
+      <Heading level={6} font={{ kind: FontKind.H6 }}>
+        Headline Text - H6 - Section Title
+      </Heading>
     </>
   )
 }

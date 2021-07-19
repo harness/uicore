@@ -4,7 +4,7 @@ export type FontWeight = 'light' | 'bold' | 'semi-bold'
 
 export type TextAlignment = 'left' | 'center' | 'right'
 
-export const FontKind  = {
+export const FontKind = {
   DISPLAY1: 'display1',
   DISPLAY2: 'display2',
   H1: 'h1',
