@@ -1,4 +1,5 @@
 export const Color = {
+  PRIMARY_BG: 'primaryBG',
   PRIMARY_10: 'primary10',
   PRIMARY_9: 'primary9',
   PRIMARY_8: 'primary8',

@@ -11,6 +11,7 @@ import { Container } from '../Container/Container'
 
 import textCss from '../TextInput/TextInput.css'
 import css from './InputWithIdentifier.css'
+import { FormError } from '../FormError/FormError'
 
 export interface InputWithIdentifierProps {
   formik: any
@@ -117,15 +118,13 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
           isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
         }}
       />
-      {formik.errors[idName] ? (
-        <Text font="small" intent="danger" padding={{ bottom: 'medium' }}>
-          {get(formik.errors, idName)}
-        </Text>
-      ) : null}
+      {formik.errors[idName] ? <FormError errorMessage={get(formik.errors, idName)} /> : null}
       {formik.values[currentEditField]?.length >= maxInput ? (
-        <Text font="small" intent="danger" padding={{ bottom: 'medium' }}>
-          {`Limit of ${maxInput} characters is reached for ${currentEditField === idName ? idLabel : inputLabel}`}
-        </Text>
+        <FormError
+          errorMessage={`Limit of ${maxInput} characters is reached for ${
+            currentEditField === idName ? idLabel : inputLabel
+          }`}
+        />
       ) : null}
     </div>
   )

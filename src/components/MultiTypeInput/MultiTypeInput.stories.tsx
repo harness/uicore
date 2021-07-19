@@ -19,7 +19,7 @@ export default {
   }
 } as Meta
 
-export const TextInput: Story<MultiTextInputProps> = args => <MultiTextInput {...args} />
+export const TextInput: Story<MultiTextInputProps> = args => <MultiTextInput mini={true} disabled={true} {...args} />
 
 export const SelectInput: Story<MultiTypeInputProps> = args => <MultiTypeInput {...args} />
 

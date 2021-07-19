@@ -1,17 +1,43 @@
+@define-mixin intent {
+  &.bp3-intent-primary {
+    --bp3-intent-color: var(--primary-7);
+  }
+
+  &.bp3-intent-success {
+    --bp3-intent-color: var(--green-500);
+  }
+
+  &.bp3-intent-warning {
+    --bp3-intent-color: var(--yellow-500);
+  }
+
+  &.bp3-intent-danger {
+    --bp3-intent-color: var(--red-500);
+  }
+}
+
 .input {
   flex: 1 1 auto;
   position: relative;
 }
 
-.main {
+.mini {
   position: relative;
 
   input[type='text'],
   :global(.bp3-input) {
+    @mixin intent;
+
     box-shadow: none;
-    border: 1px solid var(--bp3-intent-color, var(--form-field-border));
+    border: 1px solid var(--bp3-intent-color, var(--grey-200));
     padding-right: 35px;
-    height: 32px;
+    height: var(--spacing-7);
+    border-radius: var(--spacing-2);
+
+    &:hover {
+      border-color: var(--primary-6);
+      box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
+    }
 
     &:focus {
       border-color: var(--primary-7);
@@ -19,7 +45,54 @@
 
     &[disabled],
     &:global(.bp3-disabled) {
-      background-color: var(--grey-100);
+      background-color: var(--grey-50);
+    }
+  }
+
+  :global {
+    .bp3-popover-target {
+      height: 100%;
+    }
+
+    .bp3-input-action {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &.disabled {
+    .btn::before {
+      background: var(--grey-50);
+    }
+  }
+}
+
+.main {
+  position: relative;
+
+  input[type='text'],
+  :global(.bp3-input) {
+    @mixin intent;
+
+    box-shadow: none;
+    border: 1px solid var(--bp3-intent-color, var(--grey-200));
+    padding-right: 35px;
+    height: var(--spacing-8);
+    border-radius: var(--spacing-2);
+
+    &:hover {
+      border-color: var(--primary-6);
+      box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
+    }
+
+    &:focus {
+      border-color: var(--primary-7);
+    }
+
+    &[disabled],
+    &:global(.bp3-disabled) {
+      background-color: var(--grey-50);
     }
   }
 
@@ -31,7 +104,7 @@
 
   &.disabled {
     .btn::before {
-      background: var(--grey-100);
+      background: var(--grey-50);
     }
   }
 }
@@ -40,33 +113,30 @@
   display: block;
 }
 
-.btn {
+.miniBtn {
   all: unset;
-  background: var(--form-field-border);
-  padding-left: 3px;
-  width: 24px;
+  background: var(--grey-100);
+  padding-left: var(--spacing-2);
+  width: var(--spacing-7);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0 2px 2px 0;
-  border: 1px solid var(--bp3-intent-color, var(--form-field-border));
-  border-left: none;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
   cursor: pointer;
   position: absolute;
-  top: 1px;
   right: 1px;
-  bottom: 1px;
-  height: 28px;
+  top: 1px;
+  height: 22px;
 
   &::before {
     content: '';
-    top: 0;
-    height: calc(100% + 0px);
-    width: 10px;
+    height: 22px;
+    width: var(--spacing-3);
     transform: translateX(-18px);
-    border-right: 1px solid var(--bp3-intent-color, var(--form-field-border));
     background: var(--white);
-    border-radius: 4px;
+    border-radius: var(--spacing-2);
+    border-right: 1px solid var(--grey-100);
     position: absolute;
   }
 
@@ -75,12 +145,70 @@
   }
 
   &.FIXED {
-    color: var(--primary-7);
-    height: auto;
+    color: var(--primary-6);
   }
 
   &.RUNTIME {
     color: var(--purple-500);
+
+    &::before {
+      background: var(--grey-50);
+    }
+  }
+
+  &.EXPRESSION {
+    color: var(--yellow-500);
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.btn {
+  all: unset;
+  background: var(--grey-100);
+  padding-left: var(--spacing-2);
+  width: var(--spacing-7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  height: 30px;
+
+  &::before {
+    content: '';
+    height: 28px;
+    left: var(--spacing-4);
+    width: var(--spacing-3);
+    transform: translateX(-18px);
+    background: var(--white);
+    border-radius: var(--spacing-2);
+    border-right: 1px solid var(--grey-100);
+    position: absolute;
+  }
+
+  & :global(.bp3-icon) {
+    color: currentColor !important;
+  }
+
+  &.FIXED {
+    color: var(--primary-6);
+  }
+
+  &.RUNTIME {
+    color: var(--purple-500);
+
+    &::before {
+      background: var(--grey-50);
+    }
   }
 
   &.EXPRESSION {

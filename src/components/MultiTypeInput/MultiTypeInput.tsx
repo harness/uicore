@@ -38,6 +38,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   fixedTypeComponentProps?: T
   name: string
   disabled?: boolean
+  mini?: boolean
 }
 
 export interface FixedTypeComponentProps {
@@ -105,7 +106,9 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
 
   return (
     <Layout.Horizontal
-      className={cx(css.main, { [css.disabled]: type === MultiTypeInputType.RUNTIME || disabled })}
+      className={cx(props.mini ? css.mini : css.main, {
+        [css.disabled]: type === MultiTypeInputType.RUNTIME || disabled
+      })}
       width={width}
       {...layoutProps}>
       {type === MultiTypeInputType.FIXED && (
@@ -144,7 +147,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       )}
       <Button
         noStyling
-        className={cx(css.btn, css[type], btnClassName)}
+        className={cx(props.mini ? css.miniBtn : css.btn, css[type], btnClassName)}
         tooltip={
           disabled ? undefined : (
             <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />

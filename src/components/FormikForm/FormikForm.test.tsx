@@ -206,7 +206,7 @@ describe('Test basic Components', () => {
     )
     const dropDownButton = container
       .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
-      ?.querySelector('[data-icon="caret-down"]')
+      ?.querySelector('[data-icon="chevron-down"]')
     fireEvent.click(dropDownButton!)
     const selectListMenu = document.body.querySelector('.bp3-menu')
     const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')
@@ -258,7 +258,7 @@ describe('Test basic Components', () => {
     )
     const dropDownButton = container
       .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
-      ?.querySelector('[data-icon="caret-down"]')
+      ?.querySelector('[data-icon="chevron-down"]')
     fireEvent.click(dropDownButton!)
     const selectListMenu = document.body.querySelector('.bp3-menu')
     const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')

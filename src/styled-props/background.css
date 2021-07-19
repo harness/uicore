@@ -383,6 +383,10 @@
     background: var(--primary-10);
   }
 
+  &.background-primaryBG {
+    background: var(--primary-bg);
+  }
+
   /* form style  @2021-04-27 */
   &.background-form {
     background: var(--form-bg);

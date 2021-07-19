@@ -7,6 +7,7 @@ import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
+import AccessControl from './access-control.svg'
 import Activity from './activity.svg'
 import Adminrole from './adminRole.svg'
 import Advanced from './advanced.svg'
@@ -37,8 +38,14 @@ import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
+import CcmSketch from './ccm-sketch.svg'
+import CcmSolid from './ccm-solid.svg'
+import CcmWithText from './ccm-with-text.svg'
 import CdHover from './cd-hover.svg'
 import CdMain from './cd-main.svg'
+import CdSketch from './cd-sketch.svg'
+import CdSolid from './cd-solid.svg'
+import CdWithText from './cd-with-text.svg'
 import Cd from './cd.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
@@ -57,9 +64,12 @@ import CfMain from './cf-main.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
-import CiPendingBuild from './ci-pending-build.svg'
 import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
+import CiPendingBuild from './ci-pending-build.svg'
+import CiSketch from './ci-sketch.svg'
+import CiSolid from './ci-solid.svg'
+import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
@@ -93,6 +103,7 @@ import ConditionalSkip from './conditional-skip.svg'
 import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
+import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import CopyAlt from './copy-alt.svg'
@@ -104,8 +115,12 @@ import CustomService from './custom-service.svg'
 import Customrole from './customRole.svg'
 import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
+import CvSketch from './cv-sketch.svg'
+import CvSolid from './cv-solid.svg'
+import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DelegatesIcon from './delegates-icon.svg'
 import DependencyStep from './dependency-step.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
@@ -146,6 +161,9 @@ import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
 import FatArrowUp from './fat-arrow-up.svg'
 import FeedbackGiven from './feedback-given.svg'
+import FfSketch from './ff-sketch.svg'
+import FfSolid from './ff-solid.svg'
+import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
 import FolderUpload from './folder-upload.svg'
@@ -383,6 +401,7 @@ import SearchUsers from './search-users.svg'
 import SearchWorkflow from './search-workflow.svg'
 import SecretManager from './secret-manager.svg'
 import SecretSsh from './secret-ssh.svg'
+import SecretsIcon from './secrets-icon.svg'
 import SendData from './send-data.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactory from './service-artifactory.svg'
@@ -460,6 +479,7 @@ import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import TemplateLibrary from './template-library.svg'
+import TemplatesIcon from './templates-icon.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
 import TerraformDestroy from './terraform-destroy.svg'
@@ -497,6 +517,7 @@ type HarnessIconName =
   | 'Edit'
   | 'Inline'
   | 'Options'
+  | 'access-control'
   | 'activity'
   | 'adminRole'
   | 'advanced'
@@ -527,8 +548,14 @@ type HarnessIconName =
   | 'canvas-position'
   | 'canvas-reset'
   | 'canvas-selector'
+  | 'ccm-sketch'
+  | 'ccm-solid'
+  | 'ccm-with-text'
   | 'cd-hover'
   | 'cd-main'
+  | 'cd-sketch'
+  | 'cd-solid'
+  | 'cd-with-text'
   | 'cd'
   | 'ce-application'
   | 'ce-beta'
@@ -547,9 +574,12 @@ type HarnessIconName =
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
-  | 'ci-pending-build'
   | 'ci-hover'
   | 'ci-main'
+  | 'ci-pending-build'
+  | 'ci-sketch'
+  | 'ci-solid'
+  | 'ci-with-text'
   | 'circle-cross'
   | 'clipboard-alt'
   | 'cloud-sso'
@@ -583,6 +613,7 @@ type HarnessIconName =
   | 'conditional-when'
   | 'config-change'
   | 'config-file'
+  | 'connectors-icon'
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
   | 'copy-alt'
@@ -594,8 +625,12 @@ type HarnessIconName =
   | 'customRole'
   | 'cv-hover'
   | 'cv-main'
+  | 'cv-sketch'
+  | 'cv-solid'
+  | 'cv-with-text'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'delegates-icon'
   | 'dependency-step'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
@@ -636,6 +671,9 @@ type HarnessIconName =
   | 'failure-strategy'
   | 'fat-arrow-up'
   | 'feedback-given'
+  | 'ff-sketch'
+  | 'ff-solid'
+  | 'ff-with-text'
   | 'file'
   | 'fixed-input'
   | 'folder-upload'
@@ -873,6 +911,7 @@ type HarnessIconName =
   | 'search-workflow'
   | 'secret-manager'
   | 'secret-ssh'
+  | 'secrets-icon'
   | 'send-data'
   | 'service-appdynamics'
   | 'service-artifactory'
@@ -950,6 +989,7 @@ type HarnessIconName =
   | 'synced'
   | 'syncing'
   | 'template-library'
+  | 'templates-icon'
   | 'terraform-apply-new'
   | 'terraform-apply'
   | 'terraform-destroy'
@@ -987,6 +1027,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
   Inline: Inline,
   Options: Options,
+  'access-control': AccessControl,
   activity: Activity,
   adminRole: Adminrole,
   advanced: Advanced,
@@ -1017,8 +1058,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
+  'ccm-sketch': CcmSketch,
+  'ccm-solid': CcmSolid,
+  'ccm-with-text': CcmWithText,
   'cd-hover': CdHover,
   'cd-main': CdMain,
+  'cd-sketch': CdSketch,
+  'cd-solid': CdSolid,
+  'cd-with-text': CdWithText,
   cd: Cd,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
@@ -1037,9 +1084,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
-  'ci-pending-build': CiPendingBuild,
   'ci-hover': CiHover,
   'ci-main': CiMain,
+  'ci-pending-build': CiPendingBuild,
+  'ci-sketch': CiSketch,
+  'ci-solid': CiSolid,
+  'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
   'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
@@ -1073,6 +1123,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
+  'connectors-icon': ConnectorsIcon,
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
   'copy-alt': CopyAlt,
@@ -1084,8 +1135,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   customRole: Customrole,
   'cv-hover': CvHover,
   'cv-main': CvMain,
+  'cv-sketch': CvSketch,
+  'cv-solid': CvSolid,
+  'cv-with-text': CvWithText,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'delegates-icon': DelegatesIcon,
   'dependency-step': DependencyStep,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
@@ -1126,6 +1181,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'failure-strategy': FailureStrategy,
   'fat-arrow-up': FatArrowUp,
   'feedback-given': FeedbackGiven,
+  'ff-sketch': FfSketch,
+  'ff-solid': FfSolid,
+  'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
   'folder-upload': FolderUpload,
@@ -1363,6 +1421,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'search-workflow': SearchWorkflow,
   'secret-manager': SecretManager,
   'secret-ssh': SecretSsh,
+  'secrets-icon': SecretsIcon,
   'send-data': SendData,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory': ServiceArtifactory,
@@ -1440,6 +1499,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   synced: Synced,
   syncing: Syncing,
   'template-library': TemplateLibrary,
+  'templates-icon': TemplatesIcon,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
   'terraform-destroy': TerraformDestroy,
