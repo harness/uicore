@@ -6,12 +6,13 @@
   --font-size: var(--font-size-normal);
 
   &.font {
-    font-size: var(--font-size);
-    font-weight: normal;
+    font-size: var(--typography-size, var(--font-size));
+    font-weight: var(--typography-weight, normal);
     font-family: var(--font-family);
 
     white-space: normal;
-    line-height: var(--line-height);
+    line-height: var(--typography-line-height, var(--line-height));
+    color: var(--typography-color, var(--grey-900));
   }
 
   &.font-h1 {
@@ -102,5 +103,196 @@
 
   &.font-mono {
     font-family: var(--font-family-mono);
+  }
+
+  &.font-kind-display1 {
+    --typography-weight: 700;
+    --typography-size: 64px;
+    --typography-line-height: 77px;
+  }
+
+  &.font-kind-display2 {
+    --typography-weight: 400;
+    --typography-size: 56px;
+    --typography-line-height: 68px;
+    --typography-color: var(--grey-800);
+  }
+
+  &.font-kind-h1,
+  &.font-kind-h1-semi {
+    --typography-weight: 700;
+    --typography-size: 32px;
+    --typography-line-height: 44px;
+  }
+
+  &.font-kind-h1-semi {
+    --typography-weight: 500;
+  }
+
+  &.font-kind-h2 {
+    --typography-weight: 600;
+    --typography-size: 28px;
+    --typography-line-height: 38px;
+  }
+
+  &.font-kind-h3 {
+    --typography-weight: 600;
+    --typography-size: 24px;
+    --typography-line-height: 32px;
+  }
+
+  &.font-kind-h4 {
+    --typography-weight: 600;
+    --typography-size: 20px;
+    --typography-line-height: 28px;
+  }
+
+  &.font-kind-h5 {
+    --typography-weight: 600;
+    --typography-size: 16px;
+    --typography-line-height: 24px;
+  }
+
+  &.font-kind-h6 {
+    --typography-weight: 600;
+    --typography-size: 14px;
+    --typography-line-height: 20px;
+  }
+
+  &.font-kind-lead {
+    --typography-weight: 700;
+    --typography-size: 14px;
+    --typography-line-height: 24px;
+  }
+
+  &.font-kind-body1 {
+    --typography-weight: 400;
+    --typography-size: 16px;
+    --typography-line-height: 24px;
+  }
+
+  &.font-kind-body,
+  &.font-kind-body2 {
+    --typography-weight: 400;
+    --typography-size: 13px;
+    --typography-line-height: 20px;
+  }
+
+  &.font-kind-body2 {
+    --typography-weight: 500;
+  }
+
+  &.font-kind-blockquote {
+    --typography-weight: 600;
+    --typography-size: 20px;
+    --typography-line-height: 28px;
+  }
+
+  &.font-kind-uppercased {
+    --typography-weight: 400;
+    --typography-size: 12px;
+    --typography-line-height: 14.52px;
+    text-transform: uppercase;
+  }
+
+  &.font-kind-small,
+  &.font-kind-small-bold,
+  &.font-kind-small-semi {
+    --typography-weight: 400;
+    --typography-size: 12px;
+    --typography-line-height: 18px;
+  }
+
+  &.font-kind-small-bold {
+    --typography-weight: 600;
+  }
+
+  &.font-kind-small-semi {
+    --typography-weight: 500;
+  }
+
+  &.font-kind-table-headers {
+    --typography-weight: 600;
+    --typography-size: 11px;
+    --typography-line-height: 13.31px;
+    letter-spacing: 0.2px;
+  }
+
+  &.font-kind-tiny,
+  &.font-kind-tiny-semi {
+    --typography-weight: 400;
+    --typography-size: 10px;
+    --typography-line-height: 12.1px;
+  }
+
+  &.font-kind-tiny-semi {
+    --typography-weight: 500;
+  }
+
+  &.font-kind-yaml {
+    font-family: var(--font-family-mono);
+    --typography-weight: 500;
+    --typography-size: 13px;
+    --typography-line-height: 24px;
+  }
+
+  &.font-kind-card-title {
+    --typography-weight: 600;
+    --typography-size: 14px;
+    --typography-line-height: 24px;
+  }
+
+  &.font-kind-form-title {
+    --typography-weight: 600;
+    --typography-size: 16px;
+    --typography-line-height: 24px;
+    --typography-color: var(--black);
+    letter-spacing: 0.5px;
+  }
+
+  &.font-kind-form-sub-section {
+    --typography-weight: 500;
+    --typography-size: 14px;
+    --typography-line-height: 24px;
+    --typography-color: var(--grey-800);
+    letter-spacing: 0.5px;
+  }
+
+  &.font-kind-form-input-text {
+    --typography-weight: 400;
+    --typography-size: 13px;
+    --typography-line-height: 20px;
+    --typography-color: var(--black);
+  }
+
+  &.font-kind-form-label,
+  &.font-kind-form-help {
+    --typography-weight: 500;
+    --typography-size: 12px;
+    --typography-line-height: 16px;
+    --typography-color: var(--grey-600);
+    letter-spacing: 0.2px;
+  }
+
+  &.font-kind-form-help {
+    --typography-color: var(--grey-800);
+  }
+
+  &.font-kind-form-message-danger,
+  &.font-kind-form-message-warning,
+  &.font-kind-form-message-success {
+    --typography-weight: 500;
+    --typography-size: 12px;
+    --typography-line-height: 26px;
+    --typography-color: var(--red-600);
+    letter-spacing: 0.2px;
+  }
+
+  &.font-kind-form-message-warning {
+    --typography-color: var(--orange-900);
+  }
+
+  &.font-kind-form-message-success {
+    --typography-color: var(--green-600);
   }
 }

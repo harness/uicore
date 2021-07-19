@@ -3,6 +3,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Heading, Container } from '../..'
 import { HeadingProps } from '../Heading/Heading'
+import { FontKind } from '../../styled-props/font/FontProps'
 
 export default {
   title: 'Components / Heading',
@@ -25,10 +26,7 @@ export default {
               </pre>
             </Subtitle>
             <Description>
-              {`Heading renders H1 to H6 tag based on 'level' prop. It supports all [Styled Props](/styled-props).
-
-At this moment, HDL defines four levels of heading (H1 to H4), H5 and H6 are not used.
-`}
+              {`Heading renders H1 to H6 tag based on 'level' prop. It supports all [Styled Props](/styled-props).`}
             </Description>
 
             <Primary />
@@ -42,60 +40,16 @@ At this moment, HDL defines four levels of heading (H1 to H4), H5 and H6 are not
   },
   decorators: [Story => <Story />]
 } as Meta
-export const Weights: Story<HeadingProps> = args => {
+export const Weights: Story<HeadingProps> = _args => {
   return (
     <>
-      <Heading level={args.level ? args.level : 1} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 1} font={{ weight: 'bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 1} font={{ weight: 'semi-bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 1} font={{ weight: 'light' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-
-      <Heading level={args.level ? args.level : 2} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 2} font={{ weight: 'bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 2} font={{ weight: 'semi-bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 2} font={{ weight: 'light' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-
-      <Heading level={args.level ? args.level : 3} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 3} font={{ weight: 'bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 3} font={{ weight: 'semi-bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 3} font={{ weight: 'light' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-
-      <Heading level={args.level ? args.level : 4} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 4} font={{ weight: 'bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 4} font={{ weight: 'semi-bold' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
-      <Heading level={args.level ? args.level : 4} font={{ weight: 'light' }} {...args}>
-        The quick brown fox jumps over the lazy dog
-      </Heading>
+      <Heading level={1} font={{ kind: FontKind.H1 }}>Headline Text - H1/Bold - Module Landing Title</Heading>
+      <Heading level={1} font={{ kind: FontKind.H1_SEMI }}>Headline Text - H1/Semi - Semi Bold</Heading>
+      <Heading level={2} font={{ kind: FontKind.H2 }}>Headline Text - H2</Heading>
+      <Heading level={3} font={{ kind: FontKind.H3 }}>Headline Text - H3 - Dialogue Title</Heading>
+      <Heading level={4} font={{ kind: FontKind.H4 }}>Headline Text - H4 - Page Header Title/Landing/Listing Page Empty State Title</Heading>
+      <Heading level={5} font={{ kind: FontKind.H5 }}>Headline Text - H5 - Form/Section Title</Heading>
+      <Heading level={6} font={{ kind: FontKind.H6 }}>Headline Text - H6 - Section Title</Heading>
     </>
   )
 }
