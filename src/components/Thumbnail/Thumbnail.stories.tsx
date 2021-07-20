@@ -2,7 +2,6 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { Thumbnail, ThumbnailProps } from './Thumbnail'
-import { Button, ButtonProps } from '../Button/Button'
 
 export default {
   title: 'Components / Thumbnail',
