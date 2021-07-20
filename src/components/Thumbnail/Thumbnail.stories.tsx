@@ -52,3 +52,20 @@ Basic.args = {
     alert(`Value: ${e.target.value}`)
   }
 }
+
+export const WithoutIcon: Story<ThumbnailProps> = args => {
+  return (
+    <>
+      <Thumbnail {...args} />
+    </>
+  )
+}
+
+WithoutIcon.args = {
+  label: 'Non Production',
+  value: 'non-production',
+  onClick: (e: React.ChangeEvent<HTMLInputElement>) => {
+    // eslint-disable-next-line no-alert
+    alert(`Value: ${e.target.value}`)
+  }
+}

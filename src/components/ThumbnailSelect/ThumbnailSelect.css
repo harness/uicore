@@ -3,4 +3,5 @@
   margin-top: var(--spacing-medium) !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  outline: none;
 }
