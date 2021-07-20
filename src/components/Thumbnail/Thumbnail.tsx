@@ -9,9 +9,9 @@ import { Color } from '../../core/Color'
 
 export interface ThumbnailProps {
   name?: string
-  label?: string
+  label: string
   value?: string
-  icon: IconName
+  icon?: IconName
   disabled?: boolean
   selected?: boolean
   className?: string
@@ -22,23 +22,30 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
   const { label, value, icon, disabled, selected, onClick, className, name } = props
 
   return (
-    <label className={cx(css.squareCardContainer, className)}>
+    <label className={cx(css.squareCardContainer, { [css.bigger]: !icon }, className)}>
       <Card
         disabled={disabled}
         interactive={!disabled && !selected}
         selected={selected}
         cornerSelected={selected}
-        className={css.squareCard}>
-        <Icon name={icon} size={26} />
+        className={cx(css.squareCard)}>
+        {icon ? (
+          <Icon name={icon} size={26} />
+        ) : (
+          <Text className={css.label} color={disabled ? Color.GREY_350 : Color.GREY_900}>
+            {label}
+          </Text>
+        )}
       </Card>
-      <Text
-        style={{
-          textAlign: 'center'
-        }}
-        font={{ size: 'small' }}
-        color={disabled ? Color.GREY_350 : Color.GREY_600}>
-        {label}
-      </Text>
+      {icon && (
+        <Text
+          className={cx(css.label, { [css.selected]: selected })}
+          font={{ weight: 'semi-bold' }}
+          color={disabled ? Color.GREY_350 : Color.GREY_500}
+          margin={{ top: 'small' }}>
+          {label}
+        </Text>
+      )}
       <input type="checkbox" name={name} value={value} onChange={onClick} checked={selected} disabled={disabled} />
     </label>
   )

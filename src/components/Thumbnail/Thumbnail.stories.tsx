@@ -2,6 +2,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { Thumbnail, ThumbnailProps } from './Thumbnail'
+import { Button, ButtonProps } from '../Button/Button'
 
 export default {
   title: 'Components / Thumbnail',
@@ -47,6 +48,23 @@ Basic.args = {
   label: 'Kubernetes',
   icon: 'service-kubernetes',
   value: 'kubernetes',
+  onClick: (e: React.ChangeEvent<HTMLInputElement>) => {
+    // eslint-disable-next-line no-alert
+    alert(`Value: ${e.target.value}`)
+  }
+}
+
+export const WithoutIcon: Story<ThumbnailProps> = args => {
+  return (
+    <>
+      <Thumbnail {...args} />
+    </>
+  )
+}
+
+WithoutIcon.args = {
+  label: 'Non Production',
+  value: 'non-production',
   onClick: (e: React.ChangeEvent<HTMLInputElement>) => {
     // eslint-disable-next-line no-alert
     alert(`Value: ${e.target.value}`)
