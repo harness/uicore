@@ -317,6 +317,7 @@ import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
+import Newartifact from './newArtifact.svg'
 import NgFilter from './ng-filter.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NotSynced from './not-synced.svg'
@@ -803,6 +804,7 @@ type HarnessIconName =
   | 'nav-user-profile'
   | 'new-decoration'
   | 'new-notification'
+  | 'newArtifact'
   | 'ng-filter'
   | 'no-feedback-given'
   | 'not-synced'
@@ -1289,6 +1291,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-user-profile': NavUserProfile,
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
+  newArtifact: Newartifact,
   'ng-filter': NgFilter,
   'no-feedback-given': NoFeedbackGiven,
   'not-synced': NotSynced,
