@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import ThumbnailSelect from './ThumbnailSelect'
+import ThumbnailSelect, { Item } from './ThumbnailSelect'
 import { Formik } from 'formik'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
@@ -38,7 +38,7 @@ export default {
   decorators: [Story => <Story />]
 } as Meta
 
-export const Basic: Story<{ items: any[]; isReadonly: boolean }> = args => {
+export const Basic: Story<{ items: Item[]; isReadonly: boolean }> = args => {
   return (
     <Formik
       initialValues={{ deploymentType: '' }}

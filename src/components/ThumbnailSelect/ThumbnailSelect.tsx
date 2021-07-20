@@ -13,7 +13,7 @@ import { Thumbnail } from '../Thumbnail/Thumbnail'
 
 export interface Item {
   label: string
-  icon: IconName
+  icon?: IconName
   value: string
   disabled?: boolean
 }
