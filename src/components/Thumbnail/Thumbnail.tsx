@@ -9,7 +9,7 @@ import { Color } from '../../core/Color'
 
 export interface ThumbnailProps {
   name?: string
-  label: string
+  label?: string
   value?: string
   icon?: IconName
   disabled?: boolean
@@ -31,13 +31,13 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         className={cx(css.squareCard)}>
         {icon ? (
           <Icon name={icon} size={26} />
-        ) : (
+        ) : label ? (
           <Text className={css.label} color={disabled ? Color.GREY_350 : Color.GREY_900}>
             {label}
           </Text>
-        )}
+        ) : null}
       </Card>
-      {icon && (
+      {icon && label && (
         <Text
           className={cx(css.label, { [css.selected]: selected })}
           font={{ weight: 'semi-bold' }}

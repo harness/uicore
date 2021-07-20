@@ -7,7 +7,7 @@
   .squareCard {
     width: 64px;
     height: 64px;
-    padding: 8px;
+    padding: var(--spacing-small);
     display: flex;
     justify-content: center;
     align-items: center;
