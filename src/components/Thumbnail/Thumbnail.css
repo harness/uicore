@@ -23,9 +23,6 @@
     font-size: var(--font-size-small) !important;
     text-align: center;
     word-break: break-word;
-    &.selected {
-      color: var(--grey-600);
-    }
   }
 
   &.bigger {

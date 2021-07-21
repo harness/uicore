@@ -18,7 +18,7 @@ const renderCornerTick = () => {
   return (
     <span className={css.corner}>
       <span className={css.badge}></span>
-      <UiIcon name="tick" size={9} color={'white'} />
+      <UiIcon name="main-tick" size={10} color={'white'} />
     </span>
   )
 }

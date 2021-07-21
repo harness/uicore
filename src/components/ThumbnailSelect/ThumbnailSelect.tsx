@@ -3,7 +3,6 @@ import css from './ThumbnailSelect.css'
 import { IconName } from '../../icons/Icon'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
-import { Color } from '../../core/Color'
 import { FormGroup } from '@blueprintjs/core'
 import { connect, FormikContext } from 'formik'
 import { get, isEmpty } from 'lodash-es'
@@ -112,7 +111,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             disabled={isReadonly}
             minimal
             icon="Edit"
-            iconProps={{ size: 10, color: Color.GREY_450 }}
+            iconProps={{ size: 12 }}
+            withoutCurrentColor={true}
             intent="primary"
             data-testid="thumbnail-select-change"
             onClick={handleChangeClick}
@@ -125,7 +125,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             disabled={isReadonly}
             minimal
             icon="cross"
-            iconProps={{ size: 12, color: Color.GREY_450 }}
+            iconProps={{ size: 12 }}
+            withoutCurrentColor={true}
             intent="primary"
             data-testid="thumbnail-select-cancel"
             onClick={handleCancelClick}
