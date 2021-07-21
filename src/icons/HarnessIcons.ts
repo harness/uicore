@@ -71,6 +71,7 @@ import CiSketch from './ci-sketch.svg'
 import CiSolid from './ci-solid.svg'
 import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
+import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
@@ -210,6 +211,7 @@ import Library from './library.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
+import Loading from './loading.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -460,7 +462,6 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
-import Spinner2 from './spinner2.svg'
 import StepGroup from './step-group.svg'
 import StepsSpinner from './steps-spinner.svg'
 import SupportAccount from './support-account.svg'
@@ -585,6 +586,7 @@ type HarnessIconName =
   | 'ci-solid'
   | 'ci-with-text'
   | 'circle-cross'
+  | 'circle-stop'
   | 'clipboard-alt'
   | 'cloud-sso'
   | 'cloudformation'
@@ -724,6 +726,7 @@ type HarnessIconName =
   | 'linkedin'
   | 'list-entity-infographic'
   | 'list-view'
+  | 'loading'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -974,7 +977,6 @@ type HarnessIconName =
   | 'setup-tags'
   | 'skipped'
   | 'spinner'
-  | 'spinner2'
   | 'step-group'
   | 'steps-spinner'
   | 'support-account'
@@ -1099,6 +1101,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-solid': CiSolid,
   'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
+  'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
@@ -1238,6 +1241,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,
+  loading: Loading,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
@@ -1488,7 +1492,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-tags': SetupTags,
   skipped: Skipped,
   spinner: Spinner,
-  spinner2: Spinner2,
   'step-group': StepGroup,
   'steps-spinner': StepsSpinner,
   'support-account': SupportAccount,
