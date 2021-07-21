@@ -206,7 +206,7 @@ export function ExpandingSearchInput(
         onKeyPress={onKeyPress}
         onFocus={onFocus}
         onBlur={onBlur}
-        style={{ paddingRight: `${padRightAmount}px`, width: focused ? width : undefined }}
+        style={{ paddingRight: `${padRightAmount}px` }}
       />
       {value.length > 0 ? (
         <>
