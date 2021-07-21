@@ -193,7 +193,7 @@ export function ExpandingSearchInput(
   }, [setFocused])
 
   return (
-    <div key={key} className={cssMain} data-name={name}>
+    <div key={key} className={cssMain} style={{ width }} data-name={name}>
       <Icon name="thinner-search" className={cssIcon} size={14} />
       <input
         ref={inputRef}
@@ -206,7 +206,7 @@ export function ExpandingSearchInput(
         onKeyPress={onKeyPress}
         onFocus={onFocus}
         onBlur={onBlur}
-        style={{ paddingRight: `${padRightAmount}px`, width: focused ? width : undefined }}
+        style={{ paddingRight: `${padRightAmount}px` }}
       />
       {value.length > 0 ? (
         <>
