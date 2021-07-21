@@ -3,10 +3,10 @@
 exports[`Render basic component should check snapshot with name 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main breadcrumbs flex flex-align flex-align-center-center"
+    class="horizontal layout-spacing-undefined main breadcrumbs flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
   >
     <div
-      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center"
+      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
     >
       <a
         class="breadcrumb"
@@ -48,7 +48,7 @@ exports[`Render basic component should check snapshot with name 1`] = `
       </span>
     </div>
     <div
-      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center"
+      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
     >
       <a
         class="breadcrumb"
@@ -80,7 +80,7 @@ exports[`Render basic component should check snapshot with name 1`] = `
       </span>
     </div>
     <div
-      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center"
+      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
     >
       <a
         class="breadcrumb"
