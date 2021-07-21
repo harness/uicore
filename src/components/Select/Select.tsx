@@ -6,6 +6,7 @@ import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 import css from './Select.css'
 import { Button } from '../../components/Button/Button'
 import { Icon, IconProps } from '../../icons/Icon'
+import { Utils } from '../../core/Utils'
 
 export interface SelectOption {
   label: string
@@ -136,11 +137,11 @@ export function Select(props: SelectProps): React.ReactElement {
       onChange(item)
     } else {
       setItem(item)
-      if (props.addClearBtn && item?.value) {
-        setShowClearBtn(true)
-      } else {
-        setShowClearBtn(false)
-      }
+    }
+    if (props.addClearBtn && item?.value) {
+      setShowClearBtn(true)
+    } else {
+      setShowClearBtn(false)
     }
   }
 
@@ -213,6 +214,7 @@ export function Select(props: SelectProps): React.ReactElement {
           setQuery(e.target.value)
         },
         value: query,
+        placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
         leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
         rightElement: (
           <>
@@ -224,7 +226,7 @@ export function Select(props: SelectProps): React.ReactElement {
                   handleItemSelect({ value: '', label: '' })
                 }}
                 size={14}
-                padding={{ top: 'small', left: 'xsmall', right: 'xsmall', bottom: 'small' }}
+                padding={{ top: 'small', right: 'xsmall', bottom: 'small' }}
               />
             ) : null}
             <Icon
@@ -234,13 +236,7 @@ export function Select(props: SelectProps): React.ReactElement {
                 input?.focus()
               }}
               size={14}
-              padding={
-                showClearBtn
-                  ? { top: 'small', right: 'xsmall', bottom: 'small' }
-                  : size === SelectSize.Small
-                  ? 'xsmall'
-                  : 'small'
-              }
+              padding={size === SelectSize.Small ? 'xsmall' : 'small'}
             />
           </>
         ),

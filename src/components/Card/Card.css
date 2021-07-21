@@ -109,9 +109,8 @@ div.card {
   :global {
     .bp3-icon {
       position: absolute;
-      right: 3px;
       top: 3px;
-      transform: rotate(8deg);
+      right: 2px;
       z-index: 10;
     }
   }
