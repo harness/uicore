@@ -544,6 +544,7 @@ export interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   usePortal?: UiKitSelectProps['usePortal']
   value?: UiKitSelectProps['value']
   onQueryChange?: UiKitSelectProps['onQueryChange']
+  addClearButton?: boolean
 }
 
 const Select = (props: SelectProps & FormikContextProps<any>) => {
@@ -578,6 +579,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
       {...rest}>
       <UiKitSelect
         name={name}
+        addClearBtn={props.addClearButton || false}
         inputProps={{
           ...inputGroup,
           autoComplete,
