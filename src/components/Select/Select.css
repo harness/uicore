@@ -49,13 +49,6 @@
     width: 100%;
   }
 
-  /*
-  // :global(.bp3-large) {
-
-  //   margin-top: 2px;
-  // }
-  */
-
   :global {
     .bp3-input-action {
       opacity: 0.5;
