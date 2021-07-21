@@ -6,8 +6,8 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { TagInput as BPTagInput, Utils } from '@blueprintjs/core'
-import { Utils as UiCoreUtils } from '../../core/Utils'
+import { TagInput as BPTagInput } from '@blueprintjs/core'
+import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import cssRadio from '../Radio/Radio.css'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
@@ -585,7 +585,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
           autoComplete,
           name,
           intent,
-          placeholder: UiCoreUtils.getSelectComponentPlaceholder(placeholder),
+          placeholder: Utils.getSelectComponentPlaceholder(placeholder),
           disabled: disabled
         }}
         {...selectProps}
