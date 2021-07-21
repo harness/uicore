@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef, useLayoutEffect } from
 
 import { Icon } from '../../icons/Icon'
 import { Button } from '../Button/Button'
-
+import { StyledProps } from '../../styled-props/StyledProps'
 import css from './ExpandingSearchInput.css'
 
 const DEFAULT_THROTTLE = 500 // ms
@@ -29,6 +29,7 @@ export interface ExpandingSearchInputProps {
   showPrevNextButtons?: boolean
   fixedText?: string
   flip?: boolean
+  width?: StyledProps['width']
 }
 
 export interface ExpandingSearchInputHandle {
@@ -53,7 +54,8 @@ export function ExpandingSearchInput(
     throttle = DEFAULT_THROTTLE,
     showPrevNextButtons,
     fixedText,
-    flip
+    flip,
+    width
   } = props
 
   const [key, setKey] = useState(Math.random())
@@ -204,7 +206,7 @@ export function ExpandingSearchInput(
         onKeyPress={onKeyPress}
         onFocus={onFocus}
         onBlur={onBlur}
-        style={{ paddingRight: `${padRightAmount}px` }}
+        style={{ paddingRight: `${padRightAmount}px`, width }}
       />
       {value.length > 0 ? (
         <>
