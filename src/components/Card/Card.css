@@ -5,7 +5,6 @@ div.card {
   position: relative;
   border: 1px solid transparent;
   box-shadow: var(--elevation-2);
-  overflow: hidden;
 
   &:focus {
     box-shadow: var(--elevation-3);
