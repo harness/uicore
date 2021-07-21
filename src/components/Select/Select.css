@@ -3,26 +3,37 @@
 
   :global(.bp3-input) {
     display: block;
-    border: 1px solid var(--form-field-border);
-    border-radius: 4px;
+    border: 1px solid var(--grey-200);
+    border-radius: var(--spacing-2);
     font-size: var(--font-size-normal);
     padding: var(--spacing-small);
-    height: 32px;
-    color: var(--grey-800);
+    height: var(--spacing-8);
+    color: var(--grey-900);
     box-shadow: none;
+
+    &:hover {
+      border-color: var(--primary-6);
+      box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
+    }
+
+    &:focus {
+      border-color: var(--primary-7);
+    }
 
     &::-moz-placeholder,
     &::-webkit-input-placeholder,
     &:-ms-input-placeholder,
     &:-moz-placeholder,
     &::placeholder {
-      color: var(--grey-100) !important;
-      opacity: 0.5;
+      color: var(--grey-400) !important;
+      font-weight: 400;
     }
 
     &:disabled {
-      background-color: var(--grey-100);
+      background-color: var(--grey-50);
       color: var(--grey-400);
+      border-color: var(--grey-200);
+      box-shadow: none;
     }
   }
 
@@ -33,20 +44,22 @@
     margin-top: 0;
   }
 
-  :global(.bp3-popover-open .bp3-input) {
-    color: var(--grey-800);
-    border-color: var(--primary-7);
-    box-shadow: none;
-    border-radius: 4px 4px 0 0;
-  }
-
   & :global(.bp3-overlay) {
     display: block;
     width: 100%;
   }
 
-  :global(.bp3-large .bp3-input-action) {
-    margin-top: 2px;
+  /*
+  // :global(.bp3-large) {
+
+  //   margin-top: 2px;
+  // }
+  */
+
+  :global {
+    .bp3-input-action {
+      opacity: 0.5;
+    }
   }
 
   & :global(.bp3-transition-container),
@@ -60,26 +73,30 @@
     max-height: 350px;
     width: 100%;
     overflow: auto;
-    box-shadow: none;
-    border: 1px solid var(--grey-400);
-    border-radius: 0 0 4px 4px;
+    border-radius: var(--spacing-2);
     padding: 0;
+    position: absolute;
+    top: var(--spacing-1);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 1px rgb(40 41 61 / 4%), 0px 2px 4px rgb(96 97 112 / 16%);
   }
 
   & .menuItem {
-    height: 32px;
+    height: var(--spacing-8);
     padding: 0 var(--spacing-small);
     display: flex;
     align-items: center;
     cursor: pointer;
+    color: var(--black);
+    font-weight: 400;
 
     :global(.bp3-icon) {
       margin-right: var(--spacing-small);
     }
 
     &.active {
-      background: var(--primary-7);
-      color: var(--white);
+      background: var(--primary-1);
     }
 
     &.menuItemSizeSmall {
@@ -103,8 +120,7 @@
     }
 
     &:hover {
-      background-color: var(--grey-100);
-      color: var(--grey-800);
+      background: var(--primary-1);
     }
   }
 

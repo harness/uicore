@@ -91,6 +91,9 @@ export function SelectV2(props: SelectV2Props): React.ReactElement {
       filterable={true}
       resetOnSelect={true}
       resetOnClose={true}
+      inputProps={{
+        placeholder: `- ${props.placeholder || 'Select'} -`
+      }}
       {...rest}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       onItemSelect={handleItemSelect}
