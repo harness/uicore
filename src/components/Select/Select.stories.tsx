@@ -39,7 +39,6 @@ export default {
 } as Meta
 export const Basic: Story<SelectProps> = args => {
   const {
-    size = SelectSize.Large,
     items = [
       { label: 'Kubernetes', value: 'service-kubernetes' },
       { label: 'GitHub', value: 'service-github' },
@@ -49,7 +48,7 @@ export const Basic: Story<SelectProps> = args => {
     ]
   } = args
   const argsCopy = omit(args, ['size', 'items'])
-  return <Select size={size} items={items} addClearBtn={true} {...argsCopy} />
+  return <Select items={items} addClearBtn={true} {...argsCopy} />
 }
 Basic.args = { size: SelectSize.Large }
 export const SelectWithIcons: Story<SelectProps> = args => {

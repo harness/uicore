@@ -7,6 +7,7 @@ import {
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
 import { TagInput as BPTagInput } from '@blueprintjs/core'
+import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import cssRadio from '../Radio/Radio.css'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
@@ -543,6 +544,7 @@ export interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   usePortal?: UiKitSelectProps['usePortal']
   value?: UiKitSelectProps['value']
   onQueryChange?: UiKitSelectProps['onQueryChange']
+  addClearButton?: boolean
 }
 
 const Select = (props: SelectProps & FormikContextProps<any>) => {
@@ -577,12 +579,13 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
       {...rest}>
       <UiKitSelect
         name={name}
+        addClearBtn={props.addClearButton || false}
         inputProps={{
           ...inputGroup,
           autoComplete,
           name,
           intent,
-          placeholder,
+          placeholder: Utils.getSelectComponentPlaceholder(placeholder),
           disabled: disabled
         }}
         {...selectProps}
