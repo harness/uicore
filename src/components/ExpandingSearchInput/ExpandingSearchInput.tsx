@@ -60,7 +60,7 @@ export function ExpandingSearchInput(
   const [value, setValue] = useState('')
   const [isDefaultSet, setIsDefaultSet] = useState(false)
   const [inputNoTransition, setInputNoTransition] = useState(false)
-
+  const [focused, setFocused] = useState<boolean>(false)
   const [onClearFlag, setOnClearFlag] = useState(false)
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -161,19 +161,18 @@ export function ExpandingSearchInput(
 
   const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip ? css.flip : ''}`
 
-  const cssInput = `bp3-input ${inputNoTransition ? css.notransition : ''}`
+  const cssInput = `bp3-input ${inputNoTransition ? css.notransition : ''} ${
+    showPrevNextButtons ? css.find : css.filter
+  }`
 
   const cssIcon = `${css.icon} ${flip ? css.flipicon : ''}`
 
   const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
-  const focused = document.activeElement === inputRef.current ? true : false
-
   const padRightAmount =
-    (focused ? 42 : 0) +
-    (flip ? 35 : 0) +
-    (showPrevNextButtons ? 84 : 0) +
-    (fixedText ? (fixedText.length || 0) * 9 : 0)
+    (focused ? (flip ? 32 : 0) + 36 : 0) +
+    (showPrevNextButtons ? 58 : 0) +
+    (fixedText ? (fixedText.length || 0) * 8 : 0)
 
   // needs to be the last useEffect
   // using ref instead of state variable to avoid triggering a rerender
@@ -183,9 +182,17 @@ export function ExpandingSearchInput(
     }
   })
 
+  const onFocus = useCallback(() => {
+    setFocused(true)
+  }, [setFocused])
+
+  const onBlur = useCallback(() => {
+    setFocused(false)
+  }, [setFocused])
+
   return (
     <div key={key} className={cssMain} data-name={name}>
-      <Icon name="search" className={cssIcon} size={14} />
+      <Icon name="thinner-search" className={cssIcon} size={14} />
       <input
         ref={inputRef}
         className={cssInput}
@@ -195,6 +202,8 @@ export function ExpandingSearchInput(
         value={value}
         onChange={onChange}
         onKeyPress={onKeyPress}
+        onFocus={onFocus}
+        onBlur={onBlur}
         style={{ paddingRight: `${padRightAmount}px` }}
       />
       {value.length > 0 ? (
@@ -203,11 +212,11 @@ export function ExpandingSearchInput(
             {fixedText ? <span>{fixedText}</span> : null}
             {showPrevNextButtons ? (
               <>
-                <Button icon={'arrow-up'} minimal onClick={onPrev} />
-                <Button icon={'arrow-down'} minimal onClick={onNext} />
+                <Button icon={'main-chevron-up'} iconProps={{ size: 10 }} minimal onClick={onPrev} />
+                <Button icon={'main-chevron-down'} iconProps={{ size: 10 }} minimal onClick={onNext} />
               </>
             ) : null}
-            <Button icon={'small-cross'} minimal onClick={onClear} />
+            <Button icon={'main-close'} iconProps={{ size: 8 }} minimal onClick={onClear} />
           </span>
         </>
       ) : null}

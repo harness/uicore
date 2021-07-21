@@ -16,7 +16,7 @@ export const Basic: Story<ExpandingSearchInputProps> = args => {
   const ref = React.useRef<ExpandingSearchInputHandle>()
 
   return (
-    <div>
+    <div style={{ width: '300px' }}>
       <ExpandingSearchInput {...args} ref={ref} />
       <br />
       <br />

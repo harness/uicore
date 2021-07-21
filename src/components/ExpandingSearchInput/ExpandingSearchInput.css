@@ -5,27 +5,36 @@
   height: 100%;
   input[type='search'] {
     position: relative;
-    padding-left: 33px !important;
+    padding-left: 30px !important;
     height: 100%;
     box-shadow: none;
-    background-color: #fff0; /* stylelint-disable-line */
-    border: 1px solid var(--grey-350);
     -webkit-transition-property: width, padding-right, border-radius;
     -webkit-transition-duration: 0.3s;
     -webkit-transition-timing-function: ease-in-out;
     transition-property: width, padding-right, border-radius;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
-    &:placeholder-shown:not(:focus) {
-      width: 0;
-      padding-right: 0;
-      border: 0;
-      min-height: 32px;
+    border-radius: 4px;
+    font-size: 13px;
+    min-height: 32px;
+    &.filter {
+      background-color: var(--primary-1);
+      border: 1px solid var(--primary-7);
     }
-    &:not(:placeholder-shown),
-    &:focus {
-      border-radius: 2px;
-      min-height: 32px;
+    &.find {
+      background-color: #fff0;
+      border: 1px solid var(--grey-350);
+    }
+    &:placeholder-shown:not(:focus) {
+      width: 32px;
+      padding-right: 0;
+      &.filter {
+        background-color: var(--primary-bg);
+        border-color: var(--grey-200);
+      }
+      &.find {
+        border-color: transparent;
+      }
     }
     &.notransition {
       -webkit-transition: none !important;
@@ -42,30 +51,50 @@
 
 .icon {
   position: absolute;
-  width: 35px;
+  width: 32px;
   height: 100%;
   color: var(--grey-350);
   display: flex !important;
   justify-content: center;
   align-items: center;
-  z-index: 0 !important;
   margin: 0 !important;
+  pointer-events: none;
 }
 
 .btnWrapper {
   position: absolute;
-  right: 2px;
+  right: 8px;
   width: auto;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 4px;
+  span {
+    font-size: var(--font-size-xsmall);
+    color: var(--grey-500);
+    font-weight: 500;
+  }
+  :global {
+    .bp3-button {
+      padding: 0px !important;
+      height: 24px !important;
+      box-shadow: none !important;
+      outline: none;
+      &:hover {
+        background-color: var(--primary-1) !important;
+        border-radius: 50%;
+      }
+    }
+  }
 }
 
 .flip {
   flex-direction: row-reverse !important;
   input[type='search'] {
-    padding-left: 10px !important;
+    &:focus {
+      padding-left: 10px !important;
+    }
   }
 }
 
@@ -74,5 +103,5 @@
 }
 
 .flipBtnWrapper {
-  right: 32px !important;
+  right: 40px !important;
 }
