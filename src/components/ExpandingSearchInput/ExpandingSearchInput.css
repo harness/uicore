@@ -92,6 +92,7 @@
 .flip {
   flex-direction: row-reverse !important;
   input[type='search'] {
+    &:not(:placeholder-shown),
     &:focus {
       padding-left: 10px !important;
     }
