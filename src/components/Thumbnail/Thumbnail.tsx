@@ -39,7 +39,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
       </Card>
       {icon && label && (
         <Text
-          className={cx(css.label, { [css.selected]: selected })}
+          className={css.label}
           font={{ weight: 'semi-bold' }}
           color={disabled ? Color.GREY_350 : Color.GREY_500}
           margin={{ top: 'small' }}>
