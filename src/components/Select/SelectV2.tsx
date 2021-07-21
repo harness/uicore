@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
 import { Select, ISelectProps } from '@blueprintjs/select'
 import { SelectOption, defaultItemRenderer, NoMatch, createNewItemFromQuery } from './Select'
-import css from './Select.css'
+import css from './SelectV2.css'
 import { Button } from '../Button/Button'
 import { Icon } from '../../icons/Icon'
 
