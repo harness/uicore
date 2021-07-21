@@ -47,6 +47,7 @@ Basic.args = {
   label: 'Kubernetes',
   icon: 'service-kubernetes',
   value: 'kubernetes',
+  selected: true,
   onClick: (e: React.ChangeEvent<HTMLInputElement>) => {
     // eslint-disable-next-line no-alert
     alert(`Value: ${e.target.value}`)

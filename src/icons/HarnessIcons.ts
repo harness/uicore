@@ -285,6 +285,7 @@ import MainTags from './main-tags.svg'
 import MainTemplateLibrary from './main-template-library.svg'
 import MainThumbsdown from './main-thumbsdown.svg'
 import MainThumbsup from './main-thumbsup.svg'
+import MainTick from './main-tick.svg'
 import MainTrash from './main-trash.svg'
 import MainUnlock from './main-unlock.svg'
 import MainUpload from './main-upload.svg'
@@ -798,6 +799,7 @@ type HarnessIconName =
   | 'main-template-library'
   | 'main-thumbsdown'
   | 'main-thumbsup'
+  | 'main-tick'
   | 'main-trash'
   | 'main-unlock'
   | 'main-upload'
@@ -1311,6 +1313,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-template-library': MainTemplateLibrary,
   'main-thumbsdown': MainThumbsdown,
   'main-thumbsup': MainThumbsup,
+  'main-tick': MainTick,
   'main-trash': MainTrash,
   'main-unlock': MainUnlock,
   'main-upload': MainUpload,
