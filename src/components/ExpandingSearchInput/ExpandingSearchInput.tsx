@@ -193,7 +193,7 @@ export function ExpandingSearchInput(
   }, [setFocused])
 
   return (
-    <div key={key} className={cssMain} style={{ width }} data-name={name}>
+    <div key={key} className={cssMain} style={{ width: focused ? width : undefined, maxWidth: width }} data-name={name}>
       <Icon name="thinner-search" className={cssIcon} size={14} />
       <input
         ref={inputRef}
