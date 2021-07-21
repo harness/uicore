@@ -1,7 +1,14 @@
-.changeButton {
-  font-size: 10px !important;
-  margin-top: var(--spacing-medium) !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  outline: none;
+.mainContainer {
+  :global {
+    .bp3-form-helper-text {
+      margin-top: var(--spacing-medium);
+    }
+  }
+  .changeButton {
+    font-size: 10px !important;
+    margin-top: var(--spacing-medium) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    outline: none;
+  }
 }

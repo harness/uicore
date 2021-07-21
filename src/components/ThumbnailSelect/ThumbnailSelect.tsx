@@ -10,6 +10,8 @@ import { get, isEmpty } from 'lodash-es'
 import { Intent } from '../../core/Intent'
 import { errorCheck } from '../../core/Utils'
 import { Thumbnail } from '../Thumbnail/Thumbnail'
+import { FormError } from '../FormError/FormError'
+import cx from 'classnames'
 
 export interface Item {
   label: string
@@ -53,7 +55,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
-  const helperText = hasError ? get(formik?.errors, name) : null
+  const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null
 
   React.useEffect(() => {
     setShowAllOptions(isEmpty(value))
@@ -87,7 +89,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   }
 
   return (
-    <FormGroup className={className} helperText={helperText} intent={intent}>
+    <FormGroup className={cx(css.mainContainer, className)} helperText={helperText} intent={intent}>
       <Layout.Horizontal spacing={'medium'} {...layoutProps}>
         {visibleItems.map(item => {
           return (
