@@ -26,7 +26,7 @@ export default {
               </pre>
             </Subtitle>
             <Description>
-              Heading renders H1 to H6 tag based on 'level' prop. It supports all [Styled Props](/styled-props).
+              Heading renders H1 to H6 tag based on &apos;level&apos; prop. It supports all [Styled Props](/styled-props).
             </Description>
 
             <Primary />
