@@ -47,10 +47,14 @@ export default {
 export const Basic: Story<TextProps> = () => {
   return (
     <>
-      <Text font={{ variation: FontVariation.DISPLAY1 }} tooltip={`<Text font={{ kind: FontKind.DISPLAY1 }}>Display 1</Text>`}>
+      <Text
+        font={{ variation: FontVariation.DISPLAY1 }}
+        tooltip={`<Text font={{ kind: FontKind.DISPLAY1 }}>Display 1</Text>`}>
         Display 1
       </Text>
-      <Text font={{ variation: FontVariation.DISPLAY2 }} tooltip={`<Text font={{ kind: FontKind.DISPLAY2 }}>Display 2</Text>`}>
+      <Text
+        font={{ variation: FontVariation.DISPLAY2 }}
+        tooltip={`<Text font={{ kind: FontKind.DISPLAY2 }}>Display 2</Text>`}>
         Display 2
       </Text>
       <Text
@@ -63,7 +67,9 @@ export const Basic: Story<TextProps> = () => {
         tooltip={`<Text font={{ kind: FontKind.H1_SEMI }}>Headline Text - H1/Semi - Semi Bold</Text>`}>
         Headline Text - H1/Semi - Semi Bold
       </Text>
-      <Text font={{ variation: FontVariation.H2 }} tooltip={`<Text font={{ kind: FontKind.H2 }}>Headline Text - H2</Text>`}>
+      <Text
+        font={{ variation: FontVariation.H2 }}
+        tooltip={`<Text font={{ kind: FontKind.H2 }}>Headline Text - H2</Text>`}>
         Headline Text - H2
       </Text>
       <Text
@@ -99,7 +105,9 @@ export const Basic: Story<TextProps> = () => {
         tooltip={`<Text font={{ kind: FontKind.BODY2 }}>Body 2 - Emphasized Text </Text>`}>
         Body 2 - Emphasized Text
       </Text>
-      <Text font={{ variation: FontVariation.BODY }} tooltip={`<Text font={{ kind: FontKind.BODY }}>Body - Normal Text</Text>`}>
+      <Text
+        font={{ variation: FontVariation.BODY }}
+        tooltip={`<Text font={{ kind: FontKind.BODY }}>Body - Normal Text</Text>`}>
         Body - Normal Text
       </Text>
       <Text
@@ -135,10 +143,14 @@ export const Basic: Story<TextProps> = () => {
       <Text font={{ variation: FontVariation.TINY }} tooltip={`<Text font={{ kind: FontKind.TINY }}>Tiny</Text>`}>
         Tiny
       </Text>
-      <Text font={{ variation: FontVariation.TINY_SEMI }} tooltip={`<Text font={{ kind: FontKind.TINY_SEMI }}>Tiny Semi</Text>`}>
+      <Text
+        font={{ variation: FontVariation.TINY_SEMI }}
+        tooltip={`<Text font={{ kind: FontKind.TINY_SEMI }}>Tiny Semi</Text>`}>
         Tiny Semi
       </Text>
-      <Text font={{ variation: FontVariation.YAML }} tooltip={`<Text font={{ kind: FontKind.YAML }}>YAML - YAML Code</Text>`}>
+      <Text
+        font={{ variation: FontVariation.YAML }}
+        tooltip={`<Text font={{ kind: FontKind.YAML }}>YAML - YAML Code</Text>`}>
         YAML - YAML Code
       </Text>
       <Text
