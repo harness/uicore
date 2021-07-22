@@ -12,6 +12,8 @@ import { Thumbnail } from '../Thumbnail/Thumbnail'
 import { Text } from '../Text/Text'
 import { Container } from '../Container/Container'
 import { Item, ThumbnailSelectProps } from '../ThumbnailSelect/ThumbnailSelect'
+import { FormError } from '../FormError/FormError'
+import cx from 'classnames'
 
 export interface Group {
   items: Item[]
@@ -86,8 +88,8 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
   }
 
   return (
-    <FormGroup className={className} helperText={helperText} intent={intent}>
-      <Layout.Horizontal className={css.mainContainer} spacing={'medium'}>
+    <FormGroup className={cx(css.mainContainer, className)} helperText={helperText} intent={intent}>
+      <Layout.Horizontal className={css.container} spacing={'medium'}>
         {visibleGroups.map((visibleGroup, index) => {
           return (
             <Container key={visibleGroup.groupLabel}>
