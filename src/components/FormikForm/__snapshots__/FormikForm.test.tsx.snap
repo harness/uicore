@@ -563,7 +563,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
                         autocomplete="off"
                         class="bp3-input-ghost"
                         name="color"
-                        placeholder="Search..."
+                        placeholder="- Select -"
                         value=""
                       />
                     </div>

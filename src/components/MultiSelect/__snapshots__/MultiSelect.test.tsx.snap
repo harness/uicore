@@ -19,7 +19,7 @@ exports[`<MultiSelect/> tests should work when no matching results found: Filter
           >
             <input
               class="bp3-input-ghost"
-              placeholder="Search..."
+              placeholder="- Select -"
               value="junk"
             />
           </div>
@@ -67,7 +67,7 @@ exports[`<MultiSelect/> tests works with async data 1`] = `
           >
             <input
               class="bp3-input-ghost"
-              placeholder="Search..."
+              placeholder="- Select -"
               value=""
             />
           </div>
@@ -97,7 +97,7 @@ exports[`<MultiSelect/> tests works with async data: Final state 1`] = `
           >
             <input
               class="bp3-input-ghost"
-              placeholder="Search..."
+              placeholder="- Select -"
               value=""
             />
           </div>
@@ -127,7 +127,7 @@ exports[`<MultiSelect/> tests works with async data: Loading state 1`] = `
           >
             <input
               class="bp3-input-ghost"
-              placeholder="Search..."
+              placeholder="- Select -"
               value=""
             />
           </div>
@@ -157,7 +157,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
           >
             <input
               class="bp3-input-ghost"
-              placeholder="Search..."
+              placeholder="- Select -"
               value="cha"
             />
           </div>
@@ -296,7 +296,7 @@ exports[`<MultiSelect/> tests works with static data 1`] = `
           >
             <input
               class="bp3-input-ghost"
-              placeholder="Search..."
+              placeholder="- Select -"
               value=""
             />
           </div>

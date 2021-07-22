@@ -6,6 +6,7 @@ import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } f
 import css from './MultiSelect.css'
 import { Button } from '../../components/Button/Button'
 import { Icon } from '../../icons/Icon'
+import { Utils } from '../../core/Utils'
 
 export interface MultiSelectOption {
   label: string
@@ -182,6 +183,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       {...rest}
       tagInputProps={{
         disabled,
+        placeholder: Utils.getSelectComponentPlaceholder(rest?.placeholder),
         inputProps: {
           ...props.tagInputProps?.inputProps,
           onChange: handleQueryChange,
