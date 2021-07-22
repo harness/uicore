@@ -48,7 +48,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
-  const helperText = hasError ? get(formik?.errors, name) : null
+  const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null
 
   React.useEffect(() => {
     setShowAllOptions(isEmpty(value))
