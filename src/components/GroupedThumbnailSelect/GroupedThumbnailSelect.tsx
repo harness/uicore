@@ -36,7 +36,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
     isReadonly = false,
     layoutProps,
     changeText = 'Change',
-    cancelText = 'Cancel',
+    cancelText = 'Close',
     className,
     thumbnailClassName,
     onChange
