@@ -363,6 +363,7 @@ import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
+import PlayOutline from './play-outline.svg'
 import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
@@ -509,6 +510,7 @@ import Waiting from './waiting.svg'
 import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
+import X from './x.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
 import YamlBuilderNotifications from './yaml-builder-notifications.svg'
@@ -878,6 +880,7 @@ type HarnessIconName =
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
+  | 'play-outline'
   | 'plugin-step'
   | 'polygon'
   | 'profile'
@@ -1024,6 +1027,7 @@ type HarnessIconName =
   | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
+  | 'x'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
   | 'yaml-builder-notifications'
@@ -1393,6 +1397,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
+  'play-outline': PlayOutline,
   'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
@@ -1539,6 +1544,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
+  'x': X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
