@@ -120,7 +120,8 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
                         disabled={isReadonly}
                         minimal
                         icon="Edit"
-                        iconProps={{ size: 10, color: Color.GREY_450 }}
+                        iconProps={{ size: 12 }}
+                        withoutCurrentColor={true}
                         intent="primary"
                         data-testid="thumbnail-select-change"
                         onClick={handleChangeClick}
@@ -133,7 +134,8 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
                         disabled={isReadonly}
                         minimal
                         icon="cross"
-                        iconProps={{ size: 12, color: Color.GREY_450 }}
+                        iconProps={{ size: 12 }}
+                        withoutCurrentColor={true}
                         intent="primary"
                         data-testid="thumbnail-select-cancel"
                         onClick={handleCancelClick}
