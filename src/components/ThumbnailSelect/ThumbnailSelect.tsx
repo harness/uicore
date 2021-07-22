@@ -43,7 +43,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     isReadonly = false,
     layoutProps,
     changeText = 'Change',
-    cancelText = 'Cancel',
+    cancelText = 'Close',
     className,
     thumbnailClassName,
     onChange

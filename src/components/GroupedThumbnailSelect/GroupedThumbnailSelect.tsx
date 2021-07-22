@@ -2,7 +2,6 @@ import React from 'react'
 import css from './GroupedThumbnailSelect.css'
 import { Layout } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
-import { Color } from '../../core/Color'
 import { FormGroup } from '@blueprintjs/core'
 import { connect, FormikContext } from 'formik'
 import { clone, get, isEmpty } from 'lodash-es'
@@ -12,6 +11,8 @@ import { Thumbnail } from '../Thumbnail/Thumbnail'
 import { Text } from '../Text/Text'
 import { Container } from '../Container/Container'
 import { Item, ThumbnailSelectProps } from '../ThumbnailSelect/ThumbnailSelect'
+import { FormError } from '../FormError/FormError'
+import cx from 'classnames'
 
 export interface Group {
   items: Item[]
@@ -34,7 +35,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
     isReadonly = false,
     layoutProps,
     changeText = 'Change',
-    cancelText = 'Cancel',
+    cancelText = 'Close',
     className,
     thumbnailClassName,
     onChange
@@ -46,7 +47,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
-  const helperText = hasError ? get(formik?.errors, name) : null
+  const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null
 
   React.useEffect(() => {
     setShowAllOptions(isEmpty(value))
@@ -86,8 +87,8 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
   }
 
   return (
-    <FormGroup className={className} helperText={helperText} intent={intent}>
-      <Layout.Horizontal className={css.mainContainer} spacing={'medium'}>
+    <FormGroup className={cx(css.mainContainer, className)} helperText={helperText} intent={intent}>
+      <Layout.Horizontal className={css.container} spacing={'medium'}>
         {visibleGroups.map((visibleGroup, index) => {
           return (
             <Container key={visibleGroup.groupLabel}>
@@ -118,7 +119,8 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
                         disabled={isReadonly}
                         minimal
                         icon="Edit"
-                        iconProps={{ size: 10, color: Color.GREY_450 }}
+                        iconProps={{ size: 12 }}
+                        withoutCurrentColor={true}
                         intent="primary"
                         data-testid="thumbnail-select-change"
                         onClick={handleChangeClick}
@@ -131,7 +133,8 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
                         disabled={isReadonly}
                         minimal
                         icon="cross"
-                        iconProps={{ size: 12, color: Color.GREY_450 }}
+                        iconProps={{ size: 12 }}
+                        withoutCurrentColor={true}
                         intent="primary"
                         data-testid="thumbnail-select-cancel"
                         onClick={handleCancelClick}
