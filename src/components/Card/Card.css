@@ -1,9 +1,10 @@
 div.card {
-  border-radius: 5px;
+  border-radius: 4px;
   display: inline-block;
   padding: var(--spacing-large);
   position: relative;
   border: 1px solid transparent;
+  box-shadow: var(--elevation-2);
 
   &:focus {
     box-shadow: var(--elevation-3);
@@ -14,8 +15,9 @@ div.card {
 .interactive {
   &:hover {
     cursor: pointer;
-    box-shadow: var(--thumbnail-hover-shadow) !important;
-    background-color: var(--primary-1);
+    box-shadow: var(--elevation-4) !important;
+    background-color: var(--primary-light-hover);
+    border: 1px solid var(--primary-7);
   }
 }
 
@@ -107,9 +109,8 @@ div.card {
   :global {
     .bp3-icon {
       position: absolute;
-      right: 3px;
       top: 3px;
-      transform: rotate(8deg);
+      right: 2px;
       z-index: 10;
     }
   }

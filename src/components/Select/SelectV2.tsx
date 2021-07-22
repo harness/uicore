@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
 import { Select, ISelectProps } from '@blueprintjs/select'
 import { SelectOption, defaultItemRenderer, NoMatch, createNewItemFromQuery } from './Select'
-import css from './Select.css'
+import css from './SelectV2.css'
 import { Button } from '../Button/Button'
 import { Icon } from '../../icons/Icon'
 
@@ -91,6 +91,9 @@ export function SelectV2(props: SelectV2Props): React.ReactElement {
       filterable={true}
       resetOnSelect={true}
       resetOnClose={true}
+      inputProps={{
+        placeholder: `- ${props.placeholder || 'Select'} -`
+      }}
       {...rest}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       onItemSelect={handleItemSelect}

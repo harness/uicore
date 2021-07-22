@@ -9,7 +9,7 @@ import Inline from './Inline.svg'
 import Options from './Options.svg'
 import AccessControl from './access-control.svg'
 import Activity from './activity.svg'
-import Adminrole from './adminRole.svg'
+import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
@@ -71,6 +71,7 @@ import CiSketch from './ci-sketch.svg'
 import CiSolid from './ci-solid.svg'
 import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
+import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
@@ -112,7 +113,7 @@ import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CsHover from './cs-hover.svg'
 import CustomService from './custom-service.svg'
-import Customrole from './customRole.svg'
+import CustomRole from './customRole.svg'
 import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
 import CvSketch from './cv-sketch.svg'
@@ -190,7 +191,7 @@ import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
-import Hashicorpvault from './hashiCorpVault.svg'
+import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
@@ -210,6 +211,7 @@ import Library from './library.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
+import Loading from './loading.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -285,6 +287,7 @@ import MainTags from './main-tags.svg'
 import MainTemplateLibrary from './main-template-library.svg'
 import MainThumbsdown from './main-thumbsdown.svg'
 import MainThumbsup from './main-thumbsup.svg'
+import MainTick from './main-tick.svg'
 import MainTrash from './main-trash.svg'
 import MainUnlock from './main-unlock.svg'
 import MainUpload from './main-upload.svg'
@@ -293,7 +296,7 @@ import MainUser from './main-user.svg'
 import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
-import Memberrole from './memberRole.svg'
+import MemberRole from './memberRole.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
@@ -336,6 +339,7 @@ import NavSettings from './nav-settings.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
+import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
@@ -359,6 +363,7 @@ import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
+import PlayOutline from './play-outline.svg'
 import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
@@ -375,7 +380,7 @@ import Repository from './repository.svg'
 import ResetIcon from './reset-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
-import RestoreCacheS from './restore-cache-s3.svg'
+import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RollbackExecution from './rollback-execution.svg'
@@ -385,7 +390,7 @@ import RunStep from './run-step.svg'
 import RunTestsStep from './run-tests-step.svg'
 import RuntimeInput from './runtime-input.svg'
 import SaveCacheGcs from './save-cache-gcs.svg'
-import SaveCacheS from './save-cache-s3.svg'
+import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
 import Script from './script.svg'
 import SearchApplications from './search-applications.svg'
@@ -443,7 +448,7 @@ import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
 import ServiceRedis from './service-redis.svg'
-import ServiceServiceS from './service-service-s3.svg'
+import ServiceServiceS3 from './service-service-s3.svg'
 import ServiceServicenow from './service-servicenow.svg'
 import ServiceSlack from './service-slack.svg'
 import ServiceSplunkWithName from './service-splunk-with-name.svg'
@@ -488,6 +493,7 @@ import TerraformRollback from './terraform-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
+import ThinnerSearch from './thinner-search.svg'
 import Timeout from './timeout.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -499,11 +505,12 @@ import Union from './union.svg'
 import Up from './up.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
-import Viewerrole from './viewerRole.svg'
+import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
 import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
+import X from './x.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
 import YamlBuilderNotifications from './yaml-builder-notifications.svg'
@@ -581,6 +588,7 @@ type HarnessIconName =
   | 'ci-solid'
   | 'ci-with-text'
   | 'circle-cross'
+  | 'circle-stop'
   | 'clipboard-alt'
   | 'cloud-sso'
   | 'cloudformation'
@@ -720,6 +728,7 @@ type HarnessIconName =
   | 'linkedin'
   | 'list-entity-infographic'
   | 'list-view'
+  | 'loading'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -795,6 +804,7 @@ type HarnessIconName =
   | 'main-template-library'
   | 'main-thumbsdown'
   | 'main-thumbsup'
+  | 'main-tick'
   | 'main-trash'
   | 'main-unlock'
   | 'main-upload'
@@ -846,6 +856,7 @@ type HarnessIconName =
   | 'nav-user-profile-hover'
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
+  | 'new-artifact'
   | 'new-decoration'
   | 'new-notification'
   | 'ng-filter'
@@ -869,6 +880,7 @@ type HarnessIconName =
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
+  | 'play-outline'
   | 'plugin-step'
   | 'polygon'
   | 'profile'
@@ -998,6 +1010,7 @@ type HarnessIconName =
   | 'test-connection'
   | 'test-verification'
   | 'text'
+  | 'thinner-search'
   | 'timeout'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -1014,6 +1027,7 @@ type HarnessIconName =
   | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
+  | 'x'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
   | 'yaml-builder-notifications'
@@ -1029,7 +1043,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Options: Options,
   'access-control': AccessControl,
   activity: Activity,
-  adminRole: Adminrole,
+  adminRole: AdminRole,
   advanced: Advanced,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
@@ -1091,6 +1105,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-solid': CiSolid,
   'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
+  'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
@@ -1132,7 +1147,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'coverage-status-success': CoverageStatusSuccess,
   'cs-hover': CsHover,
   'custom-service': CustomService,
-  customRole: Customrole,
+  customRole: CustomRole,
   'cv-hover': CvHover,
   'cv-main': CvMain,
   'cv-sketch': CvSketch,
@@ -1210,7 +1225,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'harness-logo-white': HarnessLogoWhite,
   'harness-with-color': HarnessWithColor,
   harness: Harness,
-  hashiCorpVault: Hashicorpvault,
+  hashiCorpVault: HashiCorpVault,
   health: Health,
   help: Help,
   hourglass: Hourglass,
@@ -1230,6 +1245,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,
+  loading: Loading,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
@@ -1305,6 +1321,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-template-library': MainTemplateLibrary,
   'main-thumbsdown': MainThumbsdown,
   'main-thumbsup': MainThumbsup,
+  'main-tick': MainTick,
   'main-trash': MainTrash,
   'main-unlock': MainUnlock,
   'main-upload': MainUpload,
@@ -1313,7 +1330,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-view': MainView,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
-  memberRole: Memberrole,
+  memberRole: MemberRole,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
@@ -1356,6 +1373,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-user-profile-hover': NavUserProfileHover,
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
+  'new-artifact': NewArtifact,
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
@@ -1379,6 +1397,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
+  'play-outline': PlayOutline,
   'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
@@ -1395,7 +1414,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'reset-icon': ResetIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
-  'restore-cache-s3': RestoreCacheS,
+  'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
   'rollback-execution': RollbackExecution,
@@ -1405,7 +1424,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'run-tests-step': RunTestsStep,
   'runtime-input': RuntimeInput,
   'save-cache-gcs': SaveCacheGcs,
-  'save-cache-s3': SaveCacheS,
+  'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
   script: Script,
   'search-applications': SearchApplications,
@@ -1463,7 +1482,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
   'service-redis': ServiceRedis,
-  'service-service-s3': ServiceServiceS,
+  'service-service-s3': ServiceServiceS3,
   'service-servicenow': ServiceServicenow,
   'service-slack': ServiceSlack,
   'service-splunk-with-name': ServiceSplunkWithName,
@@ -1508,6 +1527,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
+  'thinner-search': ThinnerSearch,
   timeout: Timeout,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
@@ -1519,11 +1539,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   up: Up,
   utility: Utility,
   'view-json': ViewJson,
-  viewerRole: Viewerrole,
+  viewerRole: ViewerRole,
   waiting: Waiting,
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
+  x: X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,

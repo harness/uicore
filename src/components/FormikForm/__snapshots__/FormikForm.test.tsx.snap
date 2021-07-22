@@ -563,7 +563,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
                         autocomplete="off"
                         class="bp3-input-ghost"
                         name="color"
-                        placeholder="Search..."
+                        placeholder="- Select -"
                         value=""
                       />
                     </div>
@@ -645,7 +645,7 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                       class="bp3-input-action"
                     >
                       <span
-                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        class="bp3-icon main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
                         data-icon="main-delete"
                       >
                         <svg
@@ -654,7 +654,7 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                         />
                       </span>
                       <span
-                        class="bp3-icon bp3-icon-chevron-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        class="bp3-icon bp3-icon-chevron-down main padding padding-small"
                         icon="chevron-down"
                       >
                         <svg
@@ -772,7 +772,7 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                       class="bp3-input-action"
                     >
                       <span
-                        class="bp3-icon main padding padding-top padding-top-small padding-left padding-left-xsmall padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        class="bp3-icon main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
                         data-icon="main-delete"
                       >
                         <svg
@@ -781,7 +781,7 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                         />
                       </span>
                       <span
-                        class="bp3-icon bp3-icon-chevron-down main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        class="bp3-icon bp3-icon-chevron-down main padding padding-small"
                         icon="chevron-down"
                       >
                         <svg
@@ -964,7 +964,7 @@ exports[`Test basic Components should render Select component 1`] = `
                     autocomplete="off"
                     class="bp3-input"
                     name="color"
-                    placeholder="Search..."
+                    placeholder="- Select -"
                     style="padding-right: 0px;"
                     type="text"
                     value=""

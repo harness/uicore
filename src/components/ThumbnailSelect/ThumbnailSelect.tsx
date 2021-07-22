@@ -3,17 +3,18 @@ import css from './ThumbnailSelect.css'
 import { IconName } from '../../icons/Icon'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
-import { Color } from '../../core/Color'
 import { FormGroup } from '@blueprintjs/core'
 import { connect, FormikContext } from 'formik'
 import { get, isEmpty } from 'lodash-es'
 import { Intent } from '../../core/Intent'
 import { errorCheck } from '../../core/Utils'
 import { Thumbnail } from '../Thumbnail/Thumbnail'
+import { FormError } from '../FormError/FormError'
+import cx from 'classnames'
 
 export interface Item {
   label: string
-  icon: IconName
+  icon?: IconName
   value: string
   disabled?: boolean
 }
@@ -42,7 +43,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     isReadonly = false,
     layoutProps,
     changeText = 'Change',
-    cancelText = 'Cancel',
+    cancelText = 'Close',
     className,
     thumbnailClassName,
     onChange
@@ -53,7 +54,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
-  const helperText = hasError ? get(formik?.errors, name) : null
+  const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null
 
   React.useEffect(() => {
     setShowAllOptions(isEmpty(value))
@@ -87,7 +88,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   }
 
   return (
-    <FormGroup className={className} helperText={helperText} intent={intent}>
+    <FormGroup className={cx(css.mainContainer, className)} helperText={helperText} intent={intent}>
       <Layout.Horizontal spacing={'medium'} {...layoutProps}>
         {visibleItems.map(item => {
           return (
@@ -110,7 +111,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             disabled={isReadonly}
             minimal
             icon="Edit"
-            iconProps={{ size: 10, color: Color.GREY_450 }}
+            iconProps={{ size: 12 }}
+            withoutCurrentColor={true}
             intent="primary"
             data-testid="thumbnail-select-change"
             onClick={handleChangeClick}
@@ -123,7 +125,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             disabled={isReadonly}
             minimal
             icon="cross"
-            iconProps={{ size: 12, color: Color.GREY_450 }}
+            iconProps={{ size: 12 }}
+            withoutCurrentColor={true}
             intent="primary"
             data-testid="thumbnail-select-cancel"
             onClick={handleCancelClick}

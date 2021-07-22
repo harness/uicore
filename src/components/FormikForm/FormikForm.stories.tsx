@@ -130,7 +130,21 @@ export const Basic: Story<FormikFormProps> = () => (
               placeholder="Select Multiple Colors"
               items={[
                 { label: 'Red', value: 'red' },
-                { label: 'Blue', value: 'blue' }
+                { label: 'Blue', value: 'blue' },
+                { label: 'Blue2', value: 'blue2' },
+                { label: 'Blue3', value: 'blue3' },
+                { label: 'Blue4', value: 'blue4' },
+                { label: 'Blue44', value: 'blue44' },
+                { label: 'Blue54', value: 'blue45w' },
+                {
+                  label:
+                    'Blueqw Blueqw Blueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw Blueqw',
+                  value: 'blueqw'
+                },
+                { label: 'Bluewew', value: 'bluewew' },
+                { label: 'Bluedd', value: 'blues' },
+                { label: 'Bluegf', value: 'bluesde' },
+                { label: 'Bluefgf', value: 'blueww' }
               ]}
             />
             <FormInput.TextArea name="description" label="Description" />

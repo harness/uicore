@@ -106,6 +106,7 @@ export const AsyncSelect: Story<SelectV2Props> = args => {
         items={items}
         value={val}
         onChange={setVal}
+        placeholder="xyz"
         itemRenderer={(item, props) => (
           <Button style={{ width: '100%', display: 'block' }} minimal onClick={ev => props.handleClick(ev as any)}>
             {item.label}

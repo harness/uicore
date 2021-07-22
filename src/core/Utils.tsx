@@ -128,6 +128,24 @@ export function romanize(num: number, isLowerCase = false): string | number {
   return isLowerCase ? returnStr.toLowerCase() : returnStr
 }
 
-const Utils = { stopEvent, copy, randomId, getIntentColors, getRealCSSColor, WrapOptionalTooltip, romanize }
+export const getSelectComponentPlaceholder = (plc?: string) => {
+  // idea is to display placeholder like `- Select -`
+  // This is as per the latest designs
+  if (plc) {
+    return `- ${plc} -`
+  }
+  return `- Select -`
+}
+
+const Utils = {
+  stopEvent,
+  copy,
+  randomId,
+  getIntentColors,
+  getRealCSSColor,
+  WrapOptionalTooltip,
+  romanize,
+  getSelectComponentPlaceholder
+}
 
 export { Utils }

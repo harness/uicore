@@ -7,11 +7,31 @@
   .squareCard {
     width: 64px;
     height: 64px;
-    margin-bottom: var(--spacing-small);
+    padding: var(--spacing-small);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: var(--elevation-2);
+    border-radius: 5px;
+    overflow: hidden;
+
+    &:hover {
+      background-color: var(--primary-1);
+      border-color: transparent;
+    }
+  }
+
+  .label {
+    font-size: var(--font-size-small) !important;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  &.bigger {
+    width: 88px;
+    .squareCard {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   & input[type='checkbox'] {

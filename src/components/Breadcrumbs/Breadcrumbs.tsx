@@ -18,9 +18,11 @@ export interface BreadcrumbsProps {
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links = [], className = '' }) => {
   return (
-    <Layout.Horizontal flex={{ align: 'center-center' }} className={cx(css.breadcrumbs, className)}>
+    <Layout.Horizontal
+      flex={{ align: 'center-center', justifyContent: 'flex-start' }}
+      className={cx(css.breadcrumbs, className)}>
       {links.map((link: Breadcrumb, index: number) => (
-        <Layout.Horizontal flex={{ align: 'center-center' }} key={index}>
+        <Layout.Horizontal flex={{ align: 'center-center', justifyContent: 'flex-start' }} key={index}>
           <Link className={css.breadcrumb} to={link.url}>
             {link.iconProps && link.iconProps.name && (
               <Icon size={12} padding={{ right: 'xsmall' }} {...link.iconProps} />
