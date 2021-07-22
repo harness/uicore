@@ -105,144 +105,144 @@
     font-family: var(--font-family-mono);
   }
 
-  &.font-kind-display1 {
+  &.font-variation-display1 {
     --typography-weight: 700;
     --typography-size: 64px;
     --typography-line-height: 77px;
   }
 
-  &.font-kind-display2 {
+  &.font-variation-display2 {
     --typography-weight: 400;
     --typography-size: 56px;
     --typography-line-height: 68px;
     --typography-color: var(--grey-800);
   }
 
-  &.font-kind-h1,
-  &.font-kind-h1-semi {
+  &.font-variation-h1,
+  &.font-variation-h1-semi {
     --typography-weight: 700;
     --typography-size: 32px;
     --typography-line-height: 44px;
   }
 
-  &.font-kind-h1-semi {
+  &.font-variation-h1-semi {
     --typography-weight: 500;
   }
 
-  &.font-kind-h2 {
+  &.font-variation-h2 {
     --typography-weight: 600;
     --typography-size: 28px;
     --typography-line-height: 38px;
   }
 
-  &.font-kind-h3 {
+  &.font-variation-h3 {
     --typography-weight: 600;
     --typography-size: 24px;
     --typography-line-height: 32px;
   }
 
-  &.font-kind-h4 {
+  &.font-variation-h4 {
     --typography-weight: 600;
     --typography-size: 20px;
     --typography-line-height: 28px;
   }
 
-  &.font-kind-h5 {
+  &.font-variation-h5 {
     --typography-weight: 600;
     --typography-size: 16px;
     --typography-line-height: 24px;
   }
 
-  &.font-kind-h6 {
+  &.font-variation-h6 {
     --typography-weight: 600;
     --typography-size: 14px;
     --typography-line-height: 20px;
   }
 
-  &.font-kind-lead {
+  &.font-variation-lead {
     --typography-weight: 700;
     --typography-size: 14px;
     --typography-line-height: 24px;
   }
 
-  &.font-kind-body1 {
+  &.font-variation-body1 {
     --typography-weight: 400;
     --typography-size: 16px;
     --typography-line-height: 24px;
   }
 
-  &.font-kind-body,
-  &.font-kind-body2 {
+  &.font-variation-body,
+  &.font-variation-body2 {
     --typography-weight: 400;
     --typography-size: 13px;
     --typography-line-height: 20px;
   }
 
-  &.font-kind-body2 {
+  &.font-variation-body2 {
     --typography-weight: 500;
   }
 
-  &.font-kind-blockquote {
+  &.font-variation-blockquote {
     --typography-weight: 600;
     --typography-size: 20px;
     --typography-line-height: 28px;
   }
 
-  &.font-kind-uppercased {
+  &.font-variation-uppercased {
     --typography-weight: 400;
     --typography-size: 12px;
     --typography-line-height: 14.52px;
     text-transform: uppercase;
   }
 
-  &.font-kind-small,
-  &.font-kind-small-bold,
-  &.font-kind-small-semi {
+  &.font-variation-small,
+  &.font-variation-small-bold,
+  &.font-variation-small-semi {
     --typography-weight: 400;
     --typography-size: 12px;
     --typography-line-height: 18px;
   }
 
-  &.font-kind-small-bold {
+  &.font-variation-small-bold {
     --typography-weight: 600;
   }
 
-  &.font-kind-small-semi {
+  &.font-variation-small-semi {
     --typography-weight: 500;
   }
 
-  &.font-kind-table-headers {
+  &.font-variation-table-headers {
     --typography-weight: 600;
     --typography-size: 11px;
     --typography-line-height: 13.31px;
     letter-spacing: 0.2px;
   }
 
-  &.font-kind-tiny,
-  &.font-kind-tiny-semi {
+  &.font-variation-tiny,
+  &.font-variation-tiny-semi {
     --typography-weight: 400;
     --typography-size: 10px;
     --typography-line-height: 12.1px;
   }
 
-  &.font-kind-tiny-semi {
+  &.font-variation-tiny-semi {
     --typography-weight: 500;
   }
 
-  &.font-kind-yaml {
+  &.font-variation-yaml {
     font-family: var(--font-family-mono);
     --typography-weight: 500;
     --typography-size: 13px;
     --typography-line-height: 24px;
   }
 
-  &.font-kind-card-title {
+  &.font-variation-card-title {
     --typography-weight: 600;
     --typography-size: 14px;
     --typography-line-height: 24px;
   }
 
-  &.font-kind-form-title {
+  &.font-variation-form-title {
     --typography-weight: 600;
     --typography-size: 16px;
     --typography-line-height: 24px;
@@ -250,7 +250,7 @@
     letter-spacing: 0.5px;
   }
 
-  &.font-kind-form-sub-section {
+  &.font-variation-form-sub-section {
     --typography-weight: 500;
     --typography-size: 14px;
     --typography-line-height: 24px;
@@ -258,15 +258,15 @@
     letter-spacing: 0.5px;
   }
 
-  &.font-kind-form-input-text {
+  &.font-variation-form-input-text {
     --typography-weight: 400;
     --typography-size: 13px;
     --typography-line-height: 20px;
     --typography-color: var(--black);
   }
 
-  &.font-kind-form-label,
-  &.font-kind-form-help {
+  &.font-variation-form-label,
+  &.font-variation-form-help {
     --typography-weight: 500;
     --typography-size: 12px;
     --typography-line-height: 16px;
@@ -274,13 +274,13 @@
     letter-spacing: 0.2px;
   }
 
-  &.font-kind-form-help {
+  &.font-variation-form-help {
     --typography-color: var(--grey-800);
   }
 
-  &.font-kind-form-message-danger,
-  &.font-kind-form-message-warning,
-  &.font-kind-form-message-success {
+  &.font-variation-form-message-danger,
+  &.font-variation-form-message-warning,
+  &.font-variation-form-message-success {
     --typography-weight: 500;
     --typography-size: 12px;
     --typography-line-height: 26px;
@@ -288,11 +288,11 @@
     letter-spacing: 0.2px;
   }
 
-  &.font-kind-form-message-warning {
+  &.font-variation-form-message-warning {
     --typography-color: var(--orange-900);
   }
 
-  &.font-kind-form-message-success {
+  &.font-variation-form-message-success {
     --typography-color: var(--green-600);
   }
 }

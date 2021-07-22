@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Heading, Container } from '../..'
 import { HeadingProps } from '../Heading/Heading'
-import { FontKind } from '../../styled-props/font/FontProps'
+import { FontVariation } from '../../styled-props/font/FontProps'
 
 export default {
   title: 'Components / Heading',
@@ -26,7 +26,7 @@ export default {
               </pre>
             </Subtitle>
             <Description>
-              {`Heading renders H1 to H6 tag based on 'level' prop. It supports all [Styled Props](/styled-props).`}
+              Heading renders H1 to H6 tag based on 'level' prop. It supports all [Styled Props](/styled-props).
             </Description>
 
             <Primary />
@@ -40,28 +40,28 @@ export default {
   },
   decorators: [Story => <Story />]
 } as Meta
-export const Weights: Story<HeadingProps> = _args => {
+export const Weights: Story<HeadingProps> = () => {
   return (
     <>
-      <Heading level={1} font={{ kind: FontKind.H1 }}>
+      <Heading level={1} font={{ variation: FontVariation.H1 }}>
         Headline Text - H1/Bold - Module Landing Title
       </Heading>
-      <Heading level={1} font={{ kind: FontKind.H1_SEMI }}>
+      <Heading level={1} font={{ variation: FontVariation.H1_SEMI }}>
         Headline Text - H1/Semi - Semi Bold
       </Heading>
-      <Heading level={2} font={{ kind: FontKind.H2 }}>
+      <Heading level={2} font={{ variation: FontVariation.H2 }}>
         Headline Text - H2
       </Heading>
-      <Heading level={3} font={{ kind: FontKind.H3 }}>
+      <Heading level={3} font={{ variation: FontVariation.H3 }}>
         Headline Text - H3 - Dialogue Title
       </Heading>
-      <Heading level={4} font={{ kind: FontKind.H4 }}>
+      <Heading level={4} font={{ variation: FontVariation.H4 }}>
         Headline Text - H4 - Page Header Title/Landing/Listing Page Empty State Title
       </Heading>
-      <Heading level={5} font={{ kind: FontKind.H5 }}>
+      <Heading level={5} font={{ variation: FontVariation.H5 }}>
         Headline Text - H5 - Form/Section Title
       </Heading>
-      <Heading level={6} font={{ kind: FontKind.H6 }}>
+      <Heading level={6} font={{ variation: FontVariation.H6 }}>
         Headline Text - H6 - Section Title
       </Heading>
     </>
