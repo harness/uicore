@@ -9,6 +9,7 @@ import Inline from './Inline.svg'
 import Options from './Options.svg'
 import AccessControl from './access-control.svg'
 import Activity from './activity.svg'
+import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
@@ -141,7 +142,6 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
-import DeploymentsIllustration from './deployments-illustration.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
@@ -527,6 +527,7 @@ type HarnessIconName =
   | 'Options'
   | 'access-control'
   | 'activity'
+  | 'add-stage'
   | 'adminRole'
   | 'advanced'
   | 'app-aws-code-deploy'
@@ -659,7 +660,6 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
-  | 'deployments-illustration'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
@@ -1045,6 +1045,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Options: Options,
   'access-control': AccessControl,
   activity: Activity,
+  'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
   'app-aws-code-deploy': AppAwsCodeDeploy,
@@ -1177,7 +1178,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
-  'deployments-illustration': DeploymentsIllustration,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
