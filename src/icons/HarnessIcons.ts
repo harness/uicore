@@ -188,6 +188,7 @@ import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
+import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
@@ -705,6 +706,7 @@ type HarnessIconName =
   | 'google'
   | 'grey-cluster'
   | 'harness-logo-black'
+  | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
   | 'harness-with-color'
   | 'harness'
@@ -1222,6 +1224,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   google: Google,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
+  'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
   'harness-with-color': HarnessWithColor,
   harness: Harness,
