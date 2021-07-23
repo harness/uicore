@@ -25,11 +25,11 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links = [], className 
         <Layout.Horizontal flex={{ align: 'center-center', justifyContent: 'flex-start' }} key={index}>
           <Link className={css.breadcrumb} to={link.url}>
             {link.iconProps && link.iconProps.name && (
-              <Icon size={12} padding={{ right: 'xsmall' }} {...link.iconProps} />
+              <Icon size={16} padding={{ right: 'xsmall' }} {...link.iconProps} />
             )}
             <Text intent="primary">{link.label}</Text>
           </Link>
-          <Icon size={8} name="main-chevron-right" padding={{ right: 'small', left: 'small' }} />
+          <Icon size={12} name="main-chevron-right" color="grey500" padding={{ right: 'xsmall', left: 'xsmall' }} />
         </Layout.Horizontal>
       ))}
     </Layout.Horizontal>
