@@ -11,7 +11,8 @@ interface TabProps extends ITabProps {
 interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
   renderAllTabPanels?: boolean
   children?: React.ReactNode
-  tabList: TabProps[]
+  // TODO: Remove optional field for tablist when old tab code in ng  is migrated to tablist props usage
+  tabList?: TabProps[]
 }
 
 function tab(props: TabProps) {
@@ -28,7 +29,7 @@ function tab(props: TabProps) {
 }
 
 function Tabs(props: TabsProps) {
-  const { renderAllTabPanels, vertical, tabList, ...rest } = props
+  const { renderAllTabPanels, vertical, children, tabList = [], ...rest } = props
   const hasIcons = tabList.findIndex(tabProp => tabProp.iconProps?.name) !== -1
   return (
     <BpTabs
@@ -43,8 +44,11 @@ function Tabs(props: TabsProps) {
       {tabList.map(tabProp => {
         return tab(tabProp)
       })}
+      {/* TODO: Remove children rendering when old tab code in ng  is migrated to tablist props usage */}
+      {/* rendering with children is for backward compatbility. This will be removed once all the code is moved using tablist props */}
+      {children}
     </BpTabs>
   )
 }
 
-export { Tabs, TabProps, TabsProps }
+export { Tabs, TabProps, Tab, TabsProps }
