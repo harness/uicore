@@ -1,75 +1,66 @@
 .checkbox {
-  --box-height: 12px;
+  --cb-size: var(--spacing-5);
+  --cb-bg-color: var(--white);
+  --cb-border-color: var(--primary-7);
+  --cb-border-radius: var(--spacing-2);
 
-  /* create template for repeated css into which vars can be passed */
-  @define-mixin checkbox-styles {
-    background: var(--box-background) !important;
-    box-shadow: inset 0 0 0 1px var(--box-border), inset 0 -1px 0 var(--box-border) !important; /* border color */
-  }
+  --cb-icon: none;
+  --cb-icon-tick: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m3.076 6.175c.477-.548 1.323-.568 1.825-.042l1.795 1.882c.008.008.02.008.027 0l4.531-4.722c.455-.474 1.215-.47 1.664.01.422.451.411 1.155-.025 1.593l-6.101 6.128c-.046.046-.12.048-.169.004l-3.445-3.128c-.498-.451-.543-1.218-.102-1.725z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E");
+  --cb-icon-dash: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 14' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='%23fff' height='2.5' rx='1' x='3' width='10' y='5.75'/%3E%3C/svg%3E");
+  --cb-icon-filter: none;
+  --cb-icon-shadow: drop-shadow(0 1px 2px rgba(40, 41, 61, 0.4)) drop-shadow(0 2px 4px rgba(96, 97, 112, 0.2));
 
-  font-family: var(--font-family);
-  font-size: var(--font-size-small);
-  color: var(--grey-800);
+  --line-height: 1rem !important;
+  --font-size: var(--font-size-small) !important;
+  --intent-color: var(--grey-700);
 
-  > span[class*='bp3-control-indicator'] {
-    height: var(--box-height) !important;
-    width: var(--box-height) !important;
+  display: flex;
+  padding: var(--spacing-xsmall) 0 !important;
 
-    /* the checkmark that appears when selected */
+  :global(.bp3-control-indicator) {
+    margin: 0 !important;
+    margin-right: var(--spacing-small) !important;
+    width: var(--cb-size);
+    height: var(--cb-size);
+    border-radius: var(--cb-border-radius) !important;
+    border: 1px solid var(--cb-border-color);
+
+    background-clip: border-box;
+    background-image: none !important;
+    background-color: var(--cb-bg-color) !important;
+    box-shadow: none !important;
+
     &::before {
-      width: var(--box-height);
-      height: var(--box-height);
+      width: 100%;
+      height: 100%;
+      background: var(--cb-icon) no-repeat center !important;
+      filter: var(--cb-icon-filter);
     }
   }
 
-  /*
-  There are 3 boolean properties that can be selected (disabled, checked, active), which yields 8 unique combinations.
-  However, 2 of these combinations are not possible (disabled + active)
-  */
-
-  /* -----NOT DISABLED----- */
-
-  /* disabled: F, checked: F */
-  input:not(:disabled):not(:checked) ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--white);
-    --box-border: var(--grey-500);
-    @mixin checkbox-styles;
+  :global(:checked ~ .bp3-control-indicator),
+  :global(:indeterminate ~ .bp3-control-indicator) {
+    --cb-bg-color: var(--cb-border-color);
+    --cb-icon-filter: var(--cb-icon-shadow);
   }
 
-  /* disabled: F, checked: T */
-  input:not(:disabled):checked ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--primary-7);
-    --box-border: var(--primary-8);
-    @mixin checkbox-styles;
+  :global(:checked ~ .bp3-control-indicator) {
+    --cb-icon: var(--cb-icon-tick);
   }
 
-  /* disabled: F, checked: F, active: T */
-  input:not(:disabled):not(:checked):active ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--grey-100);
-    --box-border: var(--grey-500);
-    @mixin checkbox-styles;
+  :global(:indeterminate ~ .bp3-control-indicator) {
+    --cb-icon: var(--cb-icon-dash);
   }
 
-  /* disabled: F, checked: T, active: T */
-  input:not(:disabled):checked:active ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--primary-8);
-    --box-border: var(--primary-8);
-    @mixin checkbox-styles;
+  :global(:disabled ~ .bp3-control-indicator) {
+    --cb-border-color: var(--grey-200);
+    --cb-bg-color: var(--grey-100);
+    --cb-icon-filter: none;
   }
 
-  /* -----DISABLED----- */
-
-  /* disabled: T, checked: F */
-  input:disabled:not(:checked) ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--white);
-    --box-border: var(--grey-300);
-    @mixin checkbox-styles;
-  }
-
-  /* disabled: T, checked: T */
-  input:disabled:checked ~ span[class*='bp3-control-indicator'] {
-    --box-background: var(--grey-400);
-    --box-border: var(--grey-400);
-    @mixin checkbox-styles;
+  :global(:disabled:checked ~ .bp3-control-indicator),
+  :global(:disabled:indeterminate ~ .bp3-control-indicator) {
+    --cb-border-color: var(--grey-500);
+    --cb-bg-color: var(--grey-500);
   }
 }

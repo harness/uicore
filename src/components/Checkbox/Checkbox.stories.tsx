@@ -1,9 +1,9 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Checkbox } from '../..'
+import { Checkbox, CheckboxProps } from './Checkbox'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
-import { CheckboxProps } from '../Checkbox/Checkbox'
+import { Heading } from '../Heading/Heading'
 
 export default {
   title: 'Components / Checkbox',
@@ -43,13 +43,46 @@ export default {
   },
   decorators: [Story => <Story />]
 } as Meta
+
 export const Basic: Story<CheckboxProps> = args => {
+  return (
+    <article style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
+      <section>
+        <Heading level="2" margin={{ bottom: 'medium' }}>
+          Active
+        </Heading>
+        <Checkbox label="Not Selected" {...args} />
+        <Checkbox label="Selected" checked {...args} />
+        <Checkbox label="Indeterminate" indeterminate {...args} />
+      </section>
+      <section>
+        <Heading level="2" margin={{ bottom: 'medium' }}>
+          Disabled
+        </Heading>
+        <Checkbox label="Disabled" disabled {...args} />
+        <Checkbox label="Disabled and Selected" disabled checked {...args} />
+        <Checkbox label="Indeterminate and Disabled" disabled indeterminate {...args} />
+      </section>
+    </article>
+  )
+}
+
+export const ActiveState: Story<CheckboxProps> = args => {
   return (
     <>
       <Checkbox label="Not Selected" {...args} />
       <Checkbox label="Selected" checked {...args} />
-      <Checkbox label="Disabled" disabled {...args} />
-      <Checkbox label="Disabled and Selected" disabled checked {...args} />
+      <Checkbox label="Indeterminate" indeterminate {...args} />
+    </>
+  )
+}
+
+export const DisabledState: Story<CheckboxProps> = args => {
+  return (
+    <>
+      <Checkbox label="Not Selected" disabled {...args} />
+      <Checkbox label="Selected" disabled checked {...args} />
+      <Checkbox label="Indeterminate" disabled indeterminate {...args} />
     </>
   )
 }
