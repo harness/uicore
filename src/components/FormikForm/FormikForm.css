@@ -45,6 +45,13 @@
         &:focus {
           border-color: var(--primary-7);
         }
+
+        &:disabled {
+          background-color: var(--grey-50);
+          color: var(--grey-400);
+          border-color: var(--grey-200);
+          box-shadow: none;
+        }
       }
     }
 
