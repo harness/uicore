@@ -3,10 +3,10 @@
   .dropdownButton {
     background-color: var(--primary-bg);
     border: 1px solid var(--grey-200);
-    border-radius: 4px;
+    border-radius: var(--spacing-2);
     padding: 0px var(--spacing-4);
     height: var(--spacing-8);
-    column-gap: var(--spacing-3);
+    column-gap: var(--spacing-medium);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
     &.selected {
@@ -25,8 +25,8 @@
     &.bp3-popover {
       box-shadow: 0px 0px 1px rgb(40 41 61 / 4%), 0px 2px 4px rgb(96 97 112 / 16%);
       border: 0.5px solid rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      transform: translateY(2px) !important;
+      border-radius: var(--spacing-2);
+      transform: translateY(var(--spacing-1)) !important;
       .bp3-input-group {
         margin: var(--spacing-small);
         margin-bottom: var(--spacing-xsmall);
@@ -65,9 +65,9 @@
         width: 100%;
         overflow: auto;
         border-radius: var(--spacing-2);
-        padding: 2px 0px;
+        padding: var(--spacing-1) 0px;
         box-sizing: border-box;
-        min-width: 220px;
+        min-width: 200px;
         :local {
           .menuItem {
             height: var(--spacing-8);
