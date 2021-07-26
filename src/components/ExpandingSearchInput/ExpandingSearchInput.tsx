@@ -172,7 +172,7 @@ export function ExpandingSearchInput(
   const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
   const padRightAmount =
-    (focused ? (flip ? 32 : 0) + 36 : 0) +
+    (focused || value.length > 0 ? (flip ? 32 : 0) + 36 : 0) +
     (showPrevNextButtons ? 58 : 0) +
     (fixedText ? (fixedText.length || 0) * 8 : 0)
 
@@ -193,7 +193,11 @@ export function ExpandingSearchInput(
   }, [setFocused])
 
   return (
-    <div key={key} className={cssMain} style={{ width }} data-name={name}>
+    <div
+      key={key}
+      className={cssMain}
+      style={{ width: focused || value.length > 0 ? width : undefined, maxWidth: width }}
+      data-name={name}>
       <Icon name="thinner-search" className={cssIcon} size={14} />
       <input
         ref={inputRef}

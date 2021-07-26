@@ -9,6 +9,7 @@ import Inline from './Inline.svg'
 import Options from './Options.svg'
 import AccessControl from './access-control.svg'
 import Activity from './activity.svg'
+import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
@@ -71,6 +72,7 @@ import CiSketch from './ci-sketch.svg'
 import CiSolid from './ci-solid.svg'
 import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
+import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
@@ -140,7 +142,6 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
-import DeploymentsIllustration from './deployments-illustration.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
@@ -187,6 +188,7 @@ import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
+import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
@@ -210,6 +212,7 @@ import Library from './library.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
+import Loading from './loading.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -337,9 +340,9 @@ import NavSettings from './nav-settings.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
+import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
-import NewArtifact from './newArtifact.svg'
 import NgFilter from './ng-filter.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NotSynced from './not-synced.svg'
@@ -361,6 +364,7 @@ import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
+import PlayOutline from './play-outline.svg'
 import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
@@ -460,7 +464,6 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
-import Spinner2 from './spinner2.svg'
 import StepGroup from './step-group.svg'
 import StepsSpinner from './steps-spinner.svg'
 import SupportAccount from './support-account.svg'
@@ -508,6 +511,7 @@ import Waiting from './waiting.svg'
 import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
+import X from './x.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
 import YamlBuilderNotifications from './yaml-builder-notifications.svg'
@@ -523,6 +527,7 @@ type HarnessIconName =
   | 'Options'
   | 'access-control'
   | 'activity'
+  | 'add-stage'
   | 'adminRole'
   | 'advanced'
   | 'app-aws-code-deploy'
@@ -585,6 +590,7 @@ type HarnessIconName =
   | 'ci-solid'
   | 'ci-with-text'
   | 'circle-cross'
+  | 'circle-stop'
   | 'clipboard-alt'
   | 'cloud-sso'
   | 'cloudformation'
@@ -654,7 +660,6 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
-  | 'deployments-illustration'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
@@ -701,6 +706,7 @@ type HarnessIconName =
   | 'google'
   | 'grey-cluster'
   | 'harness-logo-black'
+  | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
   | 'harness-with-color'
   | 'harness'
@@ -724,6 +730,7 @@ type HarnessIconName =
   | 'linkedin'
   | 'list-entity-infographic'
   | 'list-view'
+  | 'loading'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -851,9 +858,9 @@ type HarnessIconName =
   | 'nav-user-profile-hover'
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
+  | 'new-artifact'
   | 'new-decoration'
   | 'new-notification'
-  | 'newArtifact'
   | 'ng-filter'
   | 'no-feedback-given'
   | 'not-synced'
@@ -875,6 +882,7 @@ type HarnessIconName =
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
+  | 'play-outline'
   | 'plugin-step'
   | 'polygon'
   | 'profile'
@@ -974,7 +982,6 @@ type HarnessIconName =
   | 'setup-tags'
   | 'skipped'
   | 'spinner'
-  | 'spinner2'
   | 'step-group'
   | 'steps-spinner'
   | 'support-account'
@@ -1022,6 +1029,7 @@ type HarnessIconName =
   | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
+  | 'x'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
   | 'yaml-builder-notifications'
@@ -1037,6 +1045,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Options: Options,
   'access-control': AccessControl,
   activity: Activity,
+  'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
   'app-aws-code-deploy': AppAwsCodeDeploy,
@@ -1099,6 +1108,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-solid': CiSolid,
   'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
+  'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
@@ -1168,7 +1178,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
-  'deployments-illustration': DeploymentsIllustration,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
@@ -1215,6 +1224,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   google: Google,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
+  'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
   'harness-with-color': HarnessWithColor,
   harness: Harness,
@@ -1238,6 +1248,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,
+  loading: Loading,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
@@ -1365,9 +1376,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-user-profile-hover': NavUserProfileHover,
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
+  'new-artifact': NewArtifact,
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
-  newArtifact: NewArtifact,
   'ng-filter': NgFilter,
   'no-feedback-given': NoFeedbackGiven,
   'not-synced': NotSynced,
@@ -1389,6 +1400,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
+  'play-outline': PlayOutline,
   'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
@@ -1488,7 +1500,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-tags': SetupTags,
   skipped: Skipped,
   spinner: Spinner,
-  spinner2: Spinner2,
   'step-group': StepGroup,
   'steps-spinner': StepsSpinner,
   'support-account': SupportAccount,
@@ -1536,6 +1547,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
+  x: X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
