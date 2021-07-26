@@ -18,9 +18,9 @@ exports[`Render basic component should check snapshot with name 1`] = `
         >
           <svg
             data-icon="add"
-            height="12"
+            height="16"
             viewBox="0 0 16 16"
-            width="12"
+            width="16"
           >
             <desc>
               add
@@ -38,12 +38,12 @@ exports[`Render basic component should check snapshot with name 1`] = `
         </p>
       </a>
       <span
-        class="bp3-icon main padding padding-right padding-right-small padding-left padding-left-small"
+        class="bp3-icon main color color-grey500 padding padding-right padding-right-xsmall padding-left padding-left-xsmall"
         data-icon="main-chevron-right"
       >
         <svg
-          height="8"
-          width="8"
+          height="12"
+          width="12"
         />
       </span>
     </div>
@@ -59,8 +59,8 @@ exports[`Render basic component should check snapshot with name 1`] = `
           data-icon="pipeline-approval"
         >
           <svg
-            height="12"
-            width="12"
+            height="16"
+            width="16"
           />
         </span>
         <p
@@ -70,12 +70,12 @@ exports[`Render basic component should check snapshot with name 1`] = `
         </p>
       </a>
       <span
-        class="bp3-icon main padding padding-right padding-right-small padding-left padding-left-small"
+        class="bp3-icon main color color-grey500 padding padding-right padding-right-xsmall padding-left padding-left-xsmall"
         data-icon="main-chevron-right"
       >
         <svg
-          height="8"
-          width="8"
+          height="12"
+          width="12"
         />
       </span>
     </div>
@@ -93,12 +93,12 @@ exports[`Render basic component should check snapshot with name 1`] = `
         </p>
       </a>
       <span
-        class="bp3-icon main padding padding-right padding-right-small padding-left padding-left-small"
+        class="bp3-icon main color color-grey500 padding padding-right padding-right-xsmall padding-left padding-left-xsmall"
         data-icon="main-chevron-right"
       >
         <svg
-          height="8"
-          width="8"
+          height="12"
+          width="12"
         />
       </span>
     </div>
