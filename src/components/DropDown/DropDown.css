@@ -6,11 +6,10 @@
     border-radius: 4px;
     padding: 0px var(--spacing-4);
     height: var(--spacing-8);
-    min-width: 130px;
     column-gap: var(--spacing-3);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
-    & .selected {
+    &.selected {
       border-color: var(--primary-7);
       background-color: var(--primary-1);
     }

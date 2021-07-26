@@ -9,6 +9,7 @@ import { Icon } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
+import { StyledProps } from '../../styled-props/StyledProps'
 
 const Select = BPSelect.ofType<SelectOption>()
 
@@ -22,6 +23,7 @@ export interface DropDownProps extends Props {
   popoverClassName?: string
   filterable: Props['filterable']
   placeholder?: string
+  minWidth?: StyledProps['width']
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -55,7 +57,8 @@ export const DropDown: React.FC<DropDownProps> = props => {
     popoverClassName = '',
     usePortal,
     filterable = true,
-    placeholder = 'Select'
+    placeholder = 'Select',
+    minWidth = 130
   } = props
   return (
     <Select
@@ -85,6 +88,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
         popoverClassName: cx(css.popover, popoverClassName)
       }}>
       <Layout.Horizontal
+        style={{ minWidth }}
         className={cx(css.dropdownButton, { [css.selected]: value }, { [css.disabled]: items.length === 0 })}
         flex>
         <Text
@@ -92,7 +96,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
           color={items.length === 0 ? Color.GREY_400 : Color.GREY_800}>
           {(value as SelectOption)?.label || placeholder}
         </Text>
-        <Layout.Horizontal flex>
+        <Layout.Horizontal margin={{ left: 'medium' }} flex>
           {value && (
             <Button
               icon={'main-delete'}
