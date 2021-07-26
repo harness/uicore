@@ -51,7 +51,7 @@ import {
 } from '../CategorizedSelected/CategorizedSelect'
 import { SelectWithSubviewProps, SelectWithSubview } from '../SelectWithSubview/SelectWithSubview'
 import { MultiSelectWithSubviewProps, MultiSelectWithSubview } from '../MultiSelectWithSubView/MultiSelectWithSubView'
-import { MentionsInfo, register, unregister } from '@wings-software/mentions'
+
 import {
   ExpressionInputProps as ExpressionInputLocalProps,
   ExpressionInput as ExpressionInputLocal
@@ -159,22 +159,13 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
 
 export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
-  mentionsInfo?: Partial<MentionsInfo>
   tagsProps?: Partial<ITagInputProps>
 }
 
 type KVAccumulator = { [key: string]: string }
 
-const MENTIONS_DEFAULT: MentionsInfo = {
-  identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
-  trigger: ['<', '<+'],
-  rule: '<+__match__>',
-  cached: true,
-  data: done => done([])
-}
-
 function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
-  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
+  const { formik, name, tagsProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -185,11 +176,6 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     ...rest
   } = restProps
   const [mentionsType] = React.useState(`kv-tag-input-${name}}`)
-
-  React.useEffect(() => {
-    register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
-    return () => unregister(mentionsType)
-  }, [])
 
   return (
     <FormGroup
@@ -234,12 +220,11 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
 
 export interface MultiInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
-  mentionsInfo?: Partial<MentionsInfo>
   tagsProps?: Partial<ITagInputProps>
 }
 
 function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
-  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
+  const { formik, name, tagsProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -250,11 +235,6 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
     ...rest
   } = restProps
   const [mentionsType] = React.useState(`multi-input-${name}}`)
-
-  React.useEffect(() => {
-    register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
-    return () => unregister(mentionsType)
-  }, [])
 
   return (
     <FormGroup
