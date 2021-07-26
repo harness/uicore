@@ -6,9 +6,19 @@
     border-radius: var(--spacing-2);
     padding: 0px var(--spacing-4);
     height: var(--spacing-8);
-    column-gap: var(--spacing-medium);
+    column-gap: var(--spacing-xlarge);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
+    .btnWrapper {
+      column-gap: var(--spacing-4);
+    }
+    :global(.bp3-button) {
+      padding: 0px !important;
+      height: 14px !important;
+      min-height: 14px;
+      min-width: 14px;
+      outline: none;
+    }
     &.selected {
       border-color: var(--primary-7);
       background-color: var(--primary-1);

@@ -96,7 +96,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
           color={items.length === 0 ? Color.GREY_400 : Color.GREY_800}>
           {(value as SelectOption)?.label || placeholder}
         </Text>
-        <Layout.Horizontal flex>
+        <Layout.Horizontal className={css.btnWrapper} flex>
           {value && (
             <Button
               icon={'main-delete'}
