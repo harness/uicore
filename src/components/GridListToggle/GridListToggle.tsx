@@ -25,9 +25,12 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
   return (
     <Layout.Horizontal flex>
       <Button
-        className={cx({
-          [css.gridUnselected]: selectedView === Views.LIST
-        })}
+        className={cx(
+          {
+            [css.gridUnselected]: selectedView === Views.LIST
+          },
+          css.gridButton
+        )}
         minimal
         icon="grid-view"
         intent={selectedView === Views.GRID ? 'primary' : undefined}
@@ -39,9 +42,12 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
         data-tooltip-id="grid-view"
       />
       <Button
-        className={cx({
-          [css.listUnselected]: selectedView === Views.GRID
-        })}
+        className={cx(
+          {
+            [css.listUnselected]: selectedView === Views.GRID
+          },
+          css.listButton
+        )}
         minimal
         icon="list"
         intent={selectedView === Views.LIST ? 'primary' : undefined}
