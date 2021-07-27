@@ -15,9 +15,14 @@ const Select = BPSelect.ofType<SelectOption>()
 
 type Props = ISelectProps<SelectOption>
 
-export interface DropDownProps extends Props {
-  onChange: (item: SelectOption | null) => void
-  value?: Props['activeItem']
+export interface DropDownProps
+  extends Omit<
+    Props,
+    'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'query' | 'items' | 'activeItem' | 'onActiveItemChange'
+  > {
+  itemRenderer?: Props['itemRenderer']
+  onChange: Props['onItemSelect']
+  value?: SelectOption | null
   items: Props['items']
   usePortal?: boolean
   popoverClassName?: string
@@ -60,6 +65,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
     placeholder = 'Select',
     minWidth = 130
   } = props
+
   return (
     <Select
       itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
@@ -89,7 +95,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
       }}>
       <Layout.Horizontal
         style={{ minWidth }}
-        className={cx(css.dropdownButton, { [css.selected]: value }, { [css.disabled]: items.length === 0 })}
+        className={cx(css.dropdownButton, { [css.selected]: value?.value }, { [css.disabled]: items.length === 0 })}
         flex>
         <Text
           font={{ size: 'small', weight: 'semi-bold' }}
@@ -97,7 +103,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
           {(value as SelectOption)?.label || placeholder}
         </Text>
         <Layout.Horizontal className={css.btnWrapper} flex>
-          {value && (
+          {value?.value && (
             <Button
               icon={'main-delete'}
               iconProps={{ size: 14, color: Color.GREY_400 }}
@@ -106,7 +112,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
               withoutCurrentColor={true}
               onClick={e => {
                 e.stopPropagation()
-                onChange(null)
+                onChange({ label: '', value: '' })
               }}
             />
           )}

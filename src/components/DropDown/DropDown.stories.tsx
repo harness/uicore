@@ -38,7 +38,7 @@ export default {
 } as Meta
 
 export const Basic: Story<DropDownProps> = args => {
-  const [item, setItem] = useState<SelectOption | null>(null)
+  const [item, setItem] = useState<SelectOption | null>(args.items[5])
   return (
     <Layout.Horizontal flex>
       <DropDown {...args} value={item} onChange={setItem} />
