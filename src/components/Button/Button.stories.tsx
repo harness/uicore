@@ -44,6 +44,19 @@ export default {
     )
   ]
 } as Meta
+
+export const ButtonExamples: Story<ButtonProps> = args => {
+  return (
+    <>
+      <Button text="Primary"/>
+      <Button text="Secondary"/>
+      <Button text="Secondary (outline)"/>
+      <Button icon="plus" tooltip="Icon"/>
+      <Button loading text="Text Button" {...args} />
+    </>
+  )
+}
+
 export const PrimaryButton: Story<ButtonProps> = args => {
   return (
     <>

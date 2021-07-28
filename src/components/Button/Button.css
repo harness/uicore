@@ -17,6 +17,8 @@
     background-color: var(--grey-50);
     color: var(--primary-7);
 
+    --button-hover-shadow: none;
+
     &:not(.without-shadow) {
       box-shadow: var(--button-shadow);
       &:hover {
