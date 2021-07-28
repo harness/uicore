@@ -36,10 +36,6 @@ export interface DropDownProps
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
-  if (!props.modifiers.matchesPredicate) {
-    return null
-  }
-
   return (
     <li
       key={item.value.toString()}
@@ -148,17 +144,17 @@ export const DropDown: React.FC<DropDownProps> = props => {
       onItemSelect={setActiveItem}
       activeItem={activeItem}
       filterable={filterable}
-      disabled={isDisabled}
       itemListRenderer={renderMenu}
       inputProps={{
         leftElement: <Icon name={'thinner-search'} size={12} color={Color.GREY_500} />,
         placeholder: 'Search'
       }}
       query={internalQuery}
-      onQueryChange={debounce(setInternalQuery, 500)}
+      onQueryChange={debounce(setInternalQuery, 300)}
       popoverProps={{
         targetTagName: 'div',
         wrapperTagName: 'div',
+        fill: true,
         usePortal: !!usePortal,
         minimal: true,
         position: Position.BOTTOM_LEFT,
