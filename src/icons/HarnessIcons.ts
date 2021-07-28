@@ -439,6 +439,7 @@ import ServiceJira from './service-jira.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
 import ServiceMongodb from './service-mongodb.svg'
+import ServiceMsteams from './service-msteams.svg'
 import ServiceMydatacenter from './service-mydatacenter.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
@@ -957,6 +958,7 @@ type HarnessIconName =
   | 'service-kubernetes'
   | 'service-microsoft-teams'
   | 'service-mongodb'
+  | 'service-msteams'
   | 'service-mydatacenter'
   | 'service-newrelic'
   | 'service-nexus'
@@ -1475,6 +1477,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-kubernetes': ServiceKubernetes,
   'service-microsoft-teams': ServiceMicrosoftTeams,
   'service-mongodb': ServiceMongodb,
+  'service-msteams': ServiceMsteams,
   'service-mydatacenter': ServiceMydatacenter,
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
