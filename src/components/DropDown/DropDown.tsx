@@ -5,7 +5,7 @@ import { Color } from '../../core/Color'
 import { Layout } from '../../layouts/Layout'
 import css from './DropDown.css'
 import { SelectOption } from '../Select/Select'
-import { Icon } from '../../icons/Icon'
+import { Icon, IconName } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
@@ -18,7 +18,7 @@ type Props = ISelectProps<SelectOption>
 export interface DropDownProps
   extends Omit<
     Props,
-    'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'query' | 'items' | 'activeItem' | 'onActiveItemChange'
+    'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange'
   > {
   itemRenderer?: Props['itemRenderer']
   onChange: Props['onItemSelect']
@@ -29,6 +29,9 @@ export interface DropDownProps
   filterable: Props['filterable']
   placeholder?: string
   minWidth?: StyledProps['width']
+  buttonTestId?: string
+  isLabel?: boolean
+  labelIcon?: IconName
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -63,7 +66,10 @@ export const DropDown: React.FC<DropDownProps> = props => {
     usePortal,
     filterable = true,
     placeholder = 'Select',
-    minWidth = 130
+    minWidth = 130,
+    buttonTestId = 'dropdown-button',
+    labelIcon,
+    isLabel = false
   } = props
 
   return (
@@ -71,9 +77,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
       itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
         itemRenderer?.(item, props) || defaultItemRenderer(item, props)
       }
-      itemListPredicate={(query, items) =>
-        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
-      }
+      itemListPredicate={(query, items) => items.filter(item => item.label.toLowerCase().includes(query.toLowerCase()))}
       noResults={<NoMatch />}
       items={items}
       onItemSelect={onChange}
@@ -94,14 +98,21 @@ export const DropDown: React.FC<DropDownProps> = props => {
         popoverClassName: cx(css.popover, popoverClassName)
       }}>
       <Layout.Horizontal
+        data-testid={buttonTestId}
         style={{ minWidth }}
-        className={cx(css.dropdownButton, { [css.selected]: value?.value }, { [css.disabled]: items.length === 0 })}
+        className={cx(
+          css.dropdownButton,
+          { [css.withoutBorder]: isLabel },
+          { [css.selected]: value?.value },
+          { [css.disabled]: items.length === 0 }
+        )}
         flex>
-        <Text
-          font={{ size: 'small', weight: 'semi-bold' }}
-          color={items.length === 0 ? Color.GREY_400 : Color.GREY_800}>
-          {(value as SelectOption)?.label || placeholder}
-        </Text>
+        <Layout.Horizontal className={css.labelWrapper} flex>
+          {labelIcon && <Icon name={labelIcon} size={13} color={Color.GREY_600} />}
+          <Text data-testid="dropdown-value" className={cx(css.label, { [css.disabled]: items.length === 0 })}>
+            {(value as SelectOption)?.label || placeholder}
+          </Text>
+        </Layout.Horizontal>
         <Layout.Horizontal className={css.btnWrapper} flex>
           {value?.value && (
             <Button

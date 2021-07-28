@@ -9,6 +9,33 @@
     column-gap: var(--spacing-xlarge);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
+    &.withoutBorder {
+      border-color: transparent;
+      column-gap: var(--spacing-4);
+      background: none;
+      &:hover {
+        background-color: var(--grey-100);
+        border-color: var(--grey-100);
+      }
+      .labelWrapper {
+        .label {
+          font-size: var(--font-size-normal);
+          font-weight: 400;
+          color: var(--grey-900);
+        }
+      }
+    }
+    .labelWrapper {
+      column-gap: var(--spacing-3);
+      .label {
+        font-size: var(--font-size-small);
+        font-weight: 500;
+        color: var(--grey-800);
+        &.disabled {
+          color: var(--grey-400);
+        }
+      }
+    }
     .btnWrapper {
       column-gap: var(--spacing-4);
     }
@@ -19,7 +46,7 @@
       min-width: 14px;
       outline: none;
     }
-    &.selected {
+    &.selected:not(.withoutBorder) {
       border-color: var(--primary-7);
       background-color: var(--primary-1);
     }
