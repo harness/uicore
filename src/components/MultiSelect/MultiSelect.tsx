@@ -200,7 +200,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         onRemove(value: React.ReactNode) {
           const option = selectedItems.find(opt => {
             if (typeof value === 'string') return opt.label === value
-            else return opt.label === (value as ReactElement).key
+            else return opt.value === (value as ReactElement).key
           })
           if (option) {
             handleItemSelect(option)

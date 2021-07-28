@@ -65,17 +65,6 @@ export const Basic: Story<FormikFormProps> = () => (
               tooltipProps={{
                 dataTooltipId: 'tagInputId'
               }}
-              mentionsInfo={{
-                data: done =>
-                  done([
-                    'app.name',
-                    'app.description',
-                    'pipeline.name',
-                    'pipeline.description',
-                    'pipeline.identifier',
-                    'pipeline.stage.qa.displayName'
-                  ])
-              }}
             />
             <FormInput.ExpressionInput
               items={[
