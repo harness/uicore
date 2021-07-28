@@ -25,15 +25,22 @@
         }
       }
     }
+    &.disabled {
+      cursor: not-allowed;
+      .labelWrapper {
+        .label {
+          font-size: var(--font-size-normal);
+          font-weight: 400;
+          color: var(--grey-400);
+        }
+      }
+    }
     .labelWrapper {
       column-gap: var(--spacing-3);
       .label {
         font-size: var(--font-size-small);
         font-weight: 500;
         color: var(--grey-800);
-        &.disabled {
-          color: var(--grey-400);
-        }
       }
     }
     .btnWrapper {

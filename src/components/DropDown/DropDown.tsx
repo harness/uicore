@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select as BPSelect, ISelectProps, IItemRendererProps } from '@blueprintjs/select'
+import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '../../core/Color'
 import { Layout } from '../../layouts/Layout'
@@ -8,8 +8,9 @@ import { SelectOption } from '../Select/Select'
 import { Icon, IconName } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 import cx from 'classnames'
-import { Position } from '@blueprintjs/core'
+import { Menu, Position, Spinner } from '@blueprintjs/core'
 import { StyledProps } from '../../styled-props/StyledProps'
+import { debounce } from 'lodash-es'
 
 const Select = BPSelect.ofType<SelectOption>()
 
@@ -22,8 +23,8 @@ export interface DropDownProps
   > {
   itemRenderer?: Props['itemRenderer']
   onChange: Props['onItemSelect']
-  value?: SelectOption | null
-  items: Props['items']
+  value?: string | null
+  items: Props['items'] | (() => Promise<Props['items']>)
   usePortal?: boolean
   popoverClassName?: string
   filterable: Props['filterable']
@@ -69,25 +70,92 @@ export const DropDown: React.FC<DropDownProps> = props => {
     minWidth = 130,
     buttonTestId = 'dropdown-button',
     labelIcon,
-    isLabel = false
+    isLabel = false,
+    query,
+    onQueryChange
   } = props
+
+  const [dropDownItems, setDropDownItems] = React.useState<SelectOption[]>([])
+  const [loading, setLoading] = React.useState<boolean>(false)
+  const [internalQuery, setInternalQuery] = React.useState<string>('')
+  const [activeItem, setActiveItem] = React.useState<SelectOption | null>(null)
+
+  React.useEffect(() => {
+    if (Array.isArray(items)) {
+      setDropDownItems(items.filter(item => item.label.toLowerCase().includes(internalQuery.toLowerCase())))
+    } else if (typeof items === 'function') {
+      onQueryChange?.(internalQuery)
+    }
+  }, [internalQuery])
+
+  React.useEffect(
+    () => {
+      if (Array.isArray(items)) {
+        setDropDownItems([...items])
+      } else if (typeof items === 'function') {
+        setLoading(true)
+        const promise = items()
+
+        if (typeof promise.then === 'function') {
+          promise.then(results => {
+            setDropDownItems(results)
+            setLoading(false)
+          })
+        } else {
+          setLoading(false)
+        }
+      }
+    },
+    Array.isArray(items) ? [query, items] : [query]
+  )
+
+  React.useEffect(() => {
+    if (value) {
+      const newActiveItem = dropDownItems.find(item => item.value === value.toString())
+      newActiveItem && setActiveItem(newActiveItem)
+    }
+  }, [value, dropDownItems])
+
+  React.useEffect(() => {
+    activeItem && onChange(activeItem)
+  }, [activeItem])
+
+  const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
+    let renderedItems
+    if (loading) {
+      renderedItems = (
+        <li className={css.menuItem} style={{ justifyContent: 'center' }}>
+          <Spinner size={20} />
+        </li>
+      )
+    } else if (itemsToRender.length > 0) {
+      renderedItems = itemsToRender.map(renderItem).filter(item => item !== null)
+    } else {
+      renderedItems = <NoMatch />
+    }
+    return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
+  }
+
+  const isSelected = !!activeItem?.value
+  const isDisabled = internalQuery.length === 0 && dropDownItems.length === 0
 
   return (
     <Select
-      itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
-        itemRenderer?.(item, props) || defaultItemRenderer(item, props)
+      itemRenderer={(item: SelectOption, rendererProps: IItemRendererProps) =>
+        itemRenderer?.(item, rendererProps) || defaultItemRenderer(item, rendererProps)
       }
-      itemListPredicate={(query, items) => items.filter(item => item.label.toLowerCase().includes(query.toLowerCase()))}
-      noResults={<NoMatch />}
-      items={items}
-      onItemSelect={onChange}
-      activeItem={value}
+      items={dropDownItems}
+      onItemSelect={setActiveItem}
+      activeItem={activeItem}
       filterable={filterable}
-      disabled={items.length === 0}
+      disabled={isDisabled}
+      itemListRenderer={renderMenu}
       inputProps={{
         leftElement: <Icon name={'thinner-search'} size={12} color={Color.GREY_500} />,
         placeholder: 'Search'
       }}
+      query={internalQuery}
+      onQueryChange={debounce(setInternalQuery, 500)}
       popoverProps={{
         targetTagName: 'div',
         wrapperTagName: 'div',
@@ -103,18 +171,18 @@ export const DropDown: React.FC<DropDownProps> = props => {
         className={cx(
           css.dropdownButton,
           { [css.withoutBorder]: isLabel },
-          { [css.selected]: value?.value },
-          { [css.disabled]: items.length === 0 }
+          { [css.selected]: isSelected },
+          { [css.disabled]: isDisabled }
         )}
         flex>
         <Layout.Horizontal className={css.labelWrapper} flex>
           {labelIcon && <Icon name={labelIcon} size={13} color={Color.GREY_600} />}
-          <Text data-testid="dropdown-value" className={cx(css.label, { [css.disabled]: items.length === 0 })}>
-            {(value as SelectOption)?.label || placeholder}
+          <Text data-testid="dropdown-value" className={css.label}>
+            {isSelected ? activeItem!.label : placeholder}
           </Text>
         </Layout.Horizontal>
         <Layout.Horizontal className={css.btnWrapper} flex>
-          {value?.value && (
+          {isSelected && (
             <Button
               icon={'main-delete'}
               iconProps={{ size: 14, color: Color.GREY_400 }}
@@ -123,7 +191,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
               withoutCurrentColor={true}
               onClick={e => {
                 e.stopPropagation()
-                onChange({ label: '', value: '' })
+                setActiveItem({ label: '', value: '' })
               }}
             />
           )}
