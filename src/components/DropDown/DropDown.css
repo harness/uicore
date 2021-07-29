@@ -26,11 +26,8 @@
       }
     }
     &.disabled {
-      cursor: not-allowed;
       .labelWrapper {
         .label {
-          font-size: var(--font-size-normal);
-          font-weight: 400;
           color: var(--grey-400);
         }
       }
