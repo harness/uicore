@@ -473,7 +473,10 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
+import StepCi from './step-ci.svg'
+import StepCv from './step-cv.svg'
 import StepGroup from './step-group.svg'
+import StepKubernetes from './step-kubernetes.svg'
 import StepsSpinner from './steps-spinner.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
@@ -1000,7 +1003,10 @@ type HarnessIconName =
   | 'setup-tags'
   | 'skipped'
   | 'spinner'
+  | 'step-ci'
+  | 'step-cv'
   | 'step-group'
+  | 'step-kubernetes'
   | 'steps-spinner'
   | 'support-account'
   | 'support-api'
@@ -1527,7 +1533,10 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-tags': SetupTags,
   skipped: Skipped,
   spinner: Spinner,
+  'step-ci': StepCi,
+  'step-cv': StepCv,
   'step-group': StepGroup,
+  'step-kubernetes': StepKubernetes,
   'steps-spinner': StepsSpinner,
   'support-account': SupportAccount,
   'support-api': SupportApi,
@@ -1574,7 +1583,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
-  x: X,
+  'x': X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
