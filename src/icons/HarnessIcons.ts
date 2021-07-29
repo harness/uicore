@@ -15,6 +15,7 @@ import Advanced from './advanced.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
@@ -34,6 +35,7 @@ import Bitbucket from './bitbucket.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
+import BuildStage from './build-stage.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
@@ -62,6 +64,8 @@ import CeOptimization from './ce-optimization.svg'
 import CeVisibility from './ce-visibility.svg'
 import CfHover from './cf-hover.svg'
 import CfMain from './cf-main.svg'
+import ChainedPipelineHover from './chained-pipeline-hover.svg'
+import ChainedPipeline from './chained-pipeline.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
@@ -114,6 +118,8 @@ import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CsHover from './cs-hover.svg'
 import CustomService from './custom-service.svg'
+import CustomStageIcon from './custom-stage-icon.svg'
+import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
 import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
@@ -124,6 +130,7 @@ import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DelegatesIcon from './delegates-icon.svg'
 import DependencyStep from './dependency-step.svg'
+import DeployStage from './deploy-stage.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
 import DeploymentFailedLegacy from './deployment-failed-legacy.svg'
@@ -161,6 +168,7 @@ import Expired from './expired.svg'
 import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
 import FatArrowUp from './fat-arrow-up.svg'
+import FeatureFlagStage from './feature-flag-stage.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FfSketch from './ff-sketch.svg'
 import FfSolid from './ff-solid.svg'
@@ -534,6 +542,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'approval-stage'
   | 'approval-step'
   | 'arm'
   | 'audit-log-created'
@@ -553,6 +562,7 @@ type HarnessIconName =
   | 'blue-black-cluster'
   | 'bluegreen'
   | 'budget-alert-light'
+  | 'build-stage'
   | 'canary-outline'
   | 'canary'
   | 'canvas-position'
@@ -581,6 +591,8 @@ type HarnessIconName =
   | 'ce-visibility'
   | 'cf-hover'
   | 'cf-main'
+  | 'chained-pipeline-hover'
+  | 'chained-pipeline'
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
@@ -633,6 +645,8 @@ type HarnessIconName =
   | 'coverage-status-success'
   | 'cs-hover'
   | 'custom-service'
+  | 'custom-stage-icon'
+  | 'custom-stage'
   | 'customRole'
   | 'cv-hover'
   | 'cv-main'
@@ -643,6 +657,7 @@ type HarnessIconName =
   | 'dashboard'
   | 'delegates-icon'
   | 'dependency-step'
+  | 'deploy-stage'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
   | 'deployment-failed-legacy'
@@ -680,6 +695,7 @@ type HarnessIconName =
   | 'expression-input'
   | 'failure-strategy'
   | 'fat-arrow-up'
+  | 'feature-flag-stage'
   | 'feedback-given'
   | 'ff-sketch'
   | 'ff-solid'
@@ -1053,6 +1069,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
   arm: Arm,
   'audit-log-created': AuditLogCreated,
@@ -1072,6 +1089,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'blue-black-cluster': BlueBlackCluster,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
+  'build-stage': BuildStage,
   'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
@@ -1100,6 +1118,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-visibility': CeVisibility,
   'cf-hover': CfHover,
   'cf-main': CfMain,
+  'chained-pipeline-hover': ChainedPipelineHover,
+  'chained-pipeline': ChainedPipeline,
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
@@ -1152,6 +1172,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'coverage-status-success': CoverageStatusSuccess,
   'cs-hover': CsHover,
   'custom-service': CustomService,
+  'custom-stage-icon': CustomStageIcon,
+  'custom-stage': CustomStage,
   customRole: CustomRole,
   'cv-hover': CvHover,
   'cv-main': CvMain,
@@ -1162,6 +1184,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   dashboard: Dashboard,
   'delegates-icon': DelegatesIcon,
   'dependency-step': DependencyStep,
+  'deploy-stage': DeployStage,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
   'deployment-failed-legacy': DeploymentFailedLegacy,
@@ -1199,6 +1222,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'expression-input': ExpressionInput,
   'failure-strategy': FailureStrategy,
   'fat-arrow-up': FatArrowUp,
+  'feature-flag-stage': FeatureFlagStage,
   'feedback-given': FeedbackGiven,
   'ff-sketch': FfSketch,
   'ff-solid': FfSolid,
