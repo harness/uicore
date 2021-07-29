@@ -84,26 +84,23 @@ export const DropDown: React.FC<DropDownProps> = props => {
     }
   }, [internalQuery])
 
-  React.useEffect(
-    () => {
-      if (Array.isArray(items)) {
-        setDropDownItems([...items])
-      } else if (typeof items === 'function') {
-        setLoading(true)
-        const promise = items()
+  React.useEffect(() => {
+    if (Array.isArray(items)) {
+      setDropDownItems([...items])
+    } else if (typeof items === 'function') {
+      setLoading(true)
+      const promise = items()
 
-        if (typeof promise.then === 'function') {
-          promise.then(results => {
-            setDropDownItems(results)
-            setLoading(false)
-          })
-        } else {
+      if (typeof promise.then === 'function') {
+        promise.then(results => {
+          setDropDownItems(results)
           setLoading(false)
-        }
+        })
+      } else {
+        setLoading(false)
       }
-    },
-    Array.isArray(items) ? [query, items] : [query]
-  )
+    }
+  }, [query, JSON.stringify(items)])
 
   React.useEffect(() => {
     if (value) {
