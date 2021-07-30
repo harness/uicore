@@ -3,6 +3,16 @@
   justify-content: flex-start;
   background-color: transparent;
   height: 100%;
+  &.alwaysExpanded {
+    input[type='search'] {
+      width: 100% !important;
+    }
+    &.flip {
+      input[type='search'] {
+        width: 100% !important;
+      }
+    }
+  }
   input[type='search'] {
     position: relative;
     padding-left: 30px !important;
@@ -91,6 +101,11 @@
 
 .flip {
   flex-direction: row-reverse !important;
+  &.alwaysExpanded {
+    input[type='search'] {
+      padding-left: 10px !important;
+    }
+  }
   input[type='search'] {
     &:not(:placeholder-shown),
     &:focus {

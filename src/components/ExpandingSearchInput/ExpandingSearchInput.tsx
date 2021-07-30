@@ -30,6 +30,7 @@ export interface ExpandingSearchInputProps {
   fixedText?: string
   flip?: boolean
   width?: StyledProps['width']
+  alwaysExpanded?: boolean
 }
 
 export interface ExpandingSearchInputHandle {
@@ -55,7 +56,8 @@ export function ExpandingSearchInput(
     showPrevNextButtons,
     fixedText,
     flip,
-    width
+    width,
+    alwaysExpanded = false
   } = props
 
   const [key, setKey] = useState(Math.random())
@@ -161,7 +163,9 @@ export function ExpandingSearchInput(
     }
   }))
 
-  const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip ? css.flip : ''}`
+  const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip ? css.flip : ''} ${
+    alwaysExpanded ? css.alwaysExpanded : ''
+  }`
 
   const cssInput = `bp3-input ${inputNoTransition ? css.notransition : ''} ${
     showPrevNextButtons ? css.find : css.filter
@@ -172,7 +176,7 @@ export function ExpandingSearchInput(
   const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
 
   const padRightAmount =
-    (focused || value.length > 0 ? (flip ? 32 : 0) + 36 : 0) +
+    (alwaysExpanded || focused || value.length > 0 ? (flip ? 32 : 0) + 36 : 0) +
     (showPrevNextButtons ? 58 : 0) +
     (fixedText ? (fixedText.length || 0) * 8 : 0)
 
@@ -196,7 +200,7 @@ export function ExpandingSearchInput(
     <div
       key={key}
       className={cssMain}
-      style={{ width: focused || value.length > 0 ? width : undefined, maxWidth: width }}
+      style={{ width: alwaysExpanded || focused || value.length > 0 ? width : undefined, maxWidth: width }}
       data-name={name}>
       <Icon name="thinner-search" className={cssIcon} size={14} />
       <input
