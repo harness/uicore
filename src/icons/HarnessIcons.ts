@@ -8,6 +8,8 @@ import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
 import AccessControl from './access-control.svg'
+import AccordionCollapsed from './accordion-collapsed.svg'
+import AccordionExpanded from './accordion-expanded.svg'
 import Activity from './activity.svg'
 import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
@@ -408,6 +410,7 @@ import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
 import SearchInfraProv from './search-infra-prov.svg'
+import SearchList from './search-list.svg'
 import SearchPipelines from './search-pipelines.svg'
 import SearchServices from './search-services.svg'
 import SearchTips from './search-tips.svg'
@@ -538,6 +541,8 @@ type HarnessIconName =
   | 'Inline'
   | 'Options'
   | 'access-control'
+  | 'accordion-collapsed'
+  | 'accordion-expanded'
   | 'activity'
   | 'add-stage'
   | 'adminRole'
@@ -938,6 +943,7 @@ type HarnessIconName =
   | 'search-connectors'
   | 'search-environments'
   | 'search-infra-prov'
+  | 'search-list'
   | 'search-pipelines'
   | 'search-services'
   | 'search-tips'
@@ -1068,6 +1074,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Inline: Inline,
   Options: Options,
   'access-control': AccessControl,
+  'accordion-collapsed': AccordionCollapsed,
+  'accordion-expanded': AccordionExpanded,
   activity: Activity,
   'add-stage': AddStage,
   adminRole: AdminRole,
@@ -1468,6 +1476,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,
   'search-infra-prov': SearchInfraProv,
+  'search-list': SearchList,
   'search-pipelines': SearchPipelines,
   'search-services': SearchServices,
   'search-tips': SearchTips,
