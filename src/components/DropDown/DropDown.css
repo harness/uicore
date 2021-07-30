@@ -1,5 +1,14 @@
 .main {
-  position: relative;
+  &.disabled {
+    pointer-events: none;
+    .dropdownButton {
+      .labelWrapper {
+        .label {
+          color: var(--grey-400);
+        }
+      }
+    }
+  }
   .dropdownButton {
     background-color: var(--primary-bg);
     border: 1px solid var(--grey-200);
@@ -22,13 +31,6 @@
           font-size: var(--font-size-normal);
           font-weight: 400;
           color: var(--grey-900);
-        }
-      }
-    }
-    &.disabled {
-      .labelWrapper {
-        .label {
-          color: var(--grey-400);
         }
       }
     }
