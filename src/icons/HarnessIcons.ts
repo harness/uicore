@@ -73,6 +73,7 @@ import CiHover from './ci-hover.svg'
 import CiMain from './ci-main.svg'
 import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
+import CiSolidCurrentColor from './ci-solid-current-color.svg'
 import CiSolid from './ci-solid.svg'
 import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
@@ -124,6 +125,7 @@ import CustomRole from './customRole.svg'
 import CvHover from './cv-hover.svg'
 import CvMain from './cv-main.svg'
 import CvSketch from './cv-sketch.svg'
+import CvSolidCurrentColor from './cv-solid-current-color.svg'
 import CvSolid from './cv-solid.svg'
 import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
@@ -601,6 +603,7 @@ type HarnessIconName =
   | 'ci-main'
   | 'ci-pending-build'
   | 'ci-sketch'
+  | 'ci-solid-current-color'
   | 'ci-solid'
   | 'ci-with-text'
   | 'circle-cross'
@@ -652,6 +655,7 @@ type HarnessIconName =
   | 'cv-hover'
   | 'cv-main'
   | 'cv-sketch'
+  | 'cv-solid-current-color'
   | 'cv-solid'
   | 'cv-with-text'
   | 'dashboard-selected'
@@ -1129,6 +1133,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-main': CiMain,
   'ci-pending-build': CiPendingBuild,
   'ci-sketch': CiSketch,
+  'ci-solid-current-color': CiSolidCurrentColor,
   'ci-solid': CiSolid,
   'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
@@ -1180,6 +1185,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cv-hover': CvHover,
   'cv-main': CvMain,
   'cv-sketch': CvSketch,
+  'cv-solid-current-color': CvSolidCurrentColor,
   'cv-solid': CvSolid,
   'cv-with-text': CvWithText,
   'dashboard-selected': DashboardSelected,
