@@ -27,7 +27,6 @@ export interface DropDownProps
   items: Props['items'] | (() => Promise<Props['items']>)
   usePortal?: boolean
   popoverClassName?: string
-  filterable: Props['filterable']
   placeholder?: string
   minWidth?: StyledProps['width']
   buttonTestId?: string
@@ -60,7 +59,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
     items,
     itemRenderer,
     popoverClassName = '',
-    usePortal,
+    usePortal = false,
     filterable = true,
     placeholder = 'Select',
     minWidth = 130,
@@ -68,7 +67,8 @@ export const DropDown: React.FC<DropDownProps> = props => {
     labelIcon,
     isLabel = false,
     query,
-    onQueryChange
+    onQueryChange,
+    ...rest
   } = props
 
   const [dropDownItems, setDropDownItems] = React.useState<SelectOption[]>([])
@@ -151,22 +151,17 @@ export const DropDown: React.FC<DropDownProps> = props => {
       popoverProps={{
         targetTagName: 'div',
         wrapperTagName: 'div',
-        fill: true,
-        usePortal: !!usePortal,
+        usePortal,
         minimal: true,
         position: Position.BOTTOM_LEFT,
-        className: css.main,
+        className: `${css.main} ${isDisabled ? css.disabled : ''}`,
         popoverClassName: cx(css.popover, popoverClassName)
-      }}>
+      }}
+      {...rest}>
       <Layout.Horizontal
         data-testid={buttonTestId}
         style={{ minWidth }}
-        className={cx(
-          css.dropdownButton,
-          { [css.withoutBorder]: isLabel },
-          { [css.selected]: isSelected },
-          { [css.disabled]: isDisabled }
-        )}
+        className={cx(css.dropdownButton, { [css.withoutBorder]: isLabel }, { [css.selected]: isSelected })}
         flex>
         <Layout.Horizontal className={css.labelWrapper} flex>
           {labelIcon && <Icon name={labelIcon} size={13} color={Color.GREY_600} />}
