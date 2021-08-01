@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { MultiSelect, MultiSelectOption, MultiSelectProps } from '../MultiSelect/MultiSelect'
+import { MultiSelectOption } from '../MultiSelect/MultiSelect'
 import { omit } from 'lodash-es'
 import data from '../../_stories/components/pokedex.json'
 import { MultiSelectDropDown, MultiSelectDropDownProps } from './MultiSelectDropDown'
