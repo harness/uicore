@@ -2,11 +2,7 @@
   &.disabled {
     pointer-events: none;
     .dropdownButton {
-      .labelWrapper {
-        .label {
-          color: var(--grey-400);
-        }
-      }
+      opacity: 0.5;
     }
   }
   .dropdownButton {
