@@ -130,7 +130,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
   }
 
   const isSelected = !!activeItem?.value
-  const isDisabled = internalQuery.length === 0 && dropDownItems.length === 0
+  const isDisabled = (internalQuery.length === 0 && dropDownItems.length === 0) || !!rest.disabled
 
   return (
     <Select

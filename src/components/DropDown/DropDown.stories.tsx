@@ -41,6 +41,10 @@ export const Basic: Story<DropDownProps> = args => {
     <Layout.Horizontal flex>
       <DropDown
         {...args}
+        isLabel={true}
+        placeholder={'Default Branches'}
+        labelIcon={'git-new-branch'}
+        disabled={true}
         onChange={option => {
           // eslint-disable-next-line no-alert
           alert(option.value)

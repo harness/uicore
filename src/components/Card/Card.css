@@ -84,6 +84,11 @@ div.card {
       color: var(--primary-1);
       box-shadow: none;
 
+      & svg[data-icon='more'] {
+        transform: rotate(90deg);
+        transform-origin: 50% 50%;
+      }
+
       &:hover {
         box-shadow: none !important;
         color: var(--primary-6);
