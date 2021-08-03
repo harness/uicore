@@ -63,17 +63,32 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
                 <li
                   class="menuItem active"
                 >
-                  Charmander
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charmander
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Charmeleon
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charmeleon
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Charizard
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charizard
+                  </p>
                 </li>
               </ul>
             </div>
@@ -148,102 +163,202 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                 <li
                   class="menuItem active"
                 >
-                  Bulbasaur
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Bulbasaur
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Ivysaur
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Ivysaur
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Venusaur
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Venusaur
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Charmander
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charmander
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Charmeleon
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charmeleon
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Charizard
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charizard
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Squirtle
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Squirtle
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Wartortle
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Wartortle
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Blastoise
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Blastoise
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Caterpie
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Caterpie
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Metapod
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Metapod
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Butterfree
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Butterfree
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Weedle
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Weedle
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Kakuna
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Kakuna
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Beedrill
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Beedrill
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Pidgey
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Pidgey
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Pidgeotto
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Pidgeotto
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Pidgeot
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Pidgeot
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Rattata
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Rattata
+                  </p>
                 </li>
                 <li
                   class="menuItem"
                 >
-                  Raticate
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Raticate
+                  </p>
                 </li>
               </ul>
             </div>

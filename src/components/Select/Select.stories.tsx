@@ -53,17 +53,28 @@ export const Basic: Story<SelectProps> = args => {
 Basic.args = { size: SelectSize.Large }
 export const SelectWithIcons: Story<SelectProps> = args => {
   const {
-    size = SelectSize.Large,
     items = [
-      { label: 'Kubernetes', value: 'service-kubernetes', icon: { name: 'service-kubernetes' } },
-      { label: 'GitHub', value: 'service-github', icon: { name: 'service-github' } },
+      {
+        label: 'TryingTryingTryingTryingTryingTryingTryingTryingTrying',
+        value: 'service-kubernetes',
+        icon: { name: 'service-kubernetes' }
+      },
+      {
+        label: 'Trying a long phrase with spaces to try out different combinations',
+        value: 'service-github',
+        icon: { name: 'service-github' }
+      },
       { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
       { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
       { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
     ]
   } = args
   const argsCopy = omit(args, ['size', 'items'])
-  return <Select size={size} items={items} addClearBtn={true} {...argsCopy} />
+  return (
+    <div style={{ width: '300px' }}>
+      <Select items={items} addClearBtn={true} {...argsCopy} />
+    </div>
+  )
 }
 SelectWithIcons.args = { size: SelectSize.Large }
 export const AsyncSelect: Story<SelectProps> = args => {
