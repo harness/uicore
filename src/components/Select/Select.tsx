@@ -7,6 +7,7 @@ import css from './Select.css'
 import { Button } from '../../components/Button/Button'
 import { Icon, IconProps } from '../../icons/Icon'
 import { Utils } from '../../core/Utils'
+import { Text } from '../../components/Text/Text'
 
 export interface SelectOption {
   label: string
@@ -93,7 +94,9 @@ export function defaultItemRenderer(
       )}
       onClick={props.handleClick}>
       {item.icon ? <Icon size={getIconSizeFromSelect(size)} {...item.icon} /> : null}
-      {item.label}
+      <Text className={css.menuItemLabel} lineClamp={1}>
+        {item.label}
+      </Text>
     </li>
   )
 }
