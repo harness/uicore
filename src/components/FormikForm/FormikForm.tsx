@@ -10,7 +10,7 @@ import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
-import { RadioGroup as UiKitRadioGroup } from '../Radio/RadioGroup'
+import { RadioButtonGroup } from '../RadioButton/RadioButtonGroup'
 import {
   FormGroup,
   InputGroup,
@@ -388,7 +388,7 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
       disabled={disabled}
       inline={inline}
       {...rest}>
-      <UiKitRadioGroup
+      <RadioButtonGroup
         {...radioGroup}
         name={name}
         disabled={disabled}
@@ -417,12 +417,14 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
     disabled = formik?.disabled,
     inline = formik?.inline,
     onChange,
+    className = '',
     ...rest
   } = restProps
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <UiKitCheckbox
         {...omit(rest, 'tooltipProps')}
+        className={className}
         name={name}
         // eslint-disable-next-line
         // @ts-ignore

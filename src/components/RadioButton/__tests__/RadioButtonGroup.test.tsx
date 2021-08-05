@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { IOptionProps } from '@blueprintjs/core/src/common/props'
-import { RadioGroup } from '../RadioGroup'
+import { RadioButtonGroup } from '../RadioButtonGroup'
 
-const TestRadioGroupController = ({ options }: { options: IOptionProps[] }) => {
+const TestRadioButtonGroupController = ({ options }: { options: IOptionProps[] }) => {
   const [currentSelected, setCurrentSelected] = useState<string>('')
 
   return (
-    <RadioGroup
+    <RadioButtonGroup
       selectedValue={currentSelected}
       onChange={({ currentTarget: { value } }) => setCurrentSelected(value)}
       options={options}
@@ -16,10 +16,10 @@ const TestRadioGroupController = ({ options }: { options: IOptionProps[] }) => {
   )
 }
 
-describe('RadioGroup', () => {
+describe('RadioButtonGroup', () => {
   test('it should only have one radio selected at a time', async () => {
     render(
-      <TestRadioGroupController
+      <TestRadioButtonGroupController
         options={[
           { label: 'r1', value: 'r1' },
           { label: 'r2', value: 'r2' },
@@ -60,7 +60,7 @@ describe('RadioGroup', () => {
 
   test('it should not allow selection of disabled options', async () => {
     render(
-      <TestRadioGroupController
+      <TestRadioButtonGroupController
         options={[
           { label: 'e1', value: 'e1' },
           { label: 'd1', value: 'd1', disabled: true }
