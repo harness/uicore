@@ -1,9 +1,8 @@
-import React, { FormEvent, useState } from 'react'
+import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { Radio } from './Radio'
-import { RadioGroup, RadioGroupProps } from './RadioGroup'
-import { action } from '@storybook/addon-actions'
+import { Radio, RadioGroup } from '../..'
+import { RadioGroupProps } from '../Radio/Radio'
 
 export default {
   title: 'Components / RadioGroup',
@@ -23,7 +22,7 @@ export default {
             <Title>RadioGroup</Title>
             <Subtitle>
               <pre>
-                <code>{`import { RadioGroup } from '@wings-software/uicore'`}</code>
+                <code>{`import {RadioGroup} from '@wings-software/uicore'`}</code>
               </pre>
             </Subtitle>
 
@@ -35,26 +34,16 @@ export default {
         )
       }
     }
-  }
+  },
+  decorators: [Story => <Story />]
 } as Meta
-
-export const Basic: Story<RadioGroupProps> = () => {
-  const [currentOption, setCurrentOption] = useState<string>('one')
-
+export const Basic: Story<RadioGroupProps> = args => {
   return (
-    <RadioGroup
-      label="Section Headline"
-      selectedValue={currentOption}
-      onChange={(e: FormEvent<HTMLInputElement>) => {
-        action('changed')(e) // storybook action
-        setCurrentOption(e.currentTarget.value)
-      }}
-      options={[
-        { label: 'Option 1', value: 'one' },
-        { label: 'Option 2', value: 'two' },
-        { label: 'Option 3', value: 'three' },
-        { label: 'Option 4 (disabled)', value: 'four', disabled: true }
-      ]}
-    />
+    <RadioGroup label="Section Headline" {...args}>
+      <Radio label="Disabled" value="one" disabled />
+      <Radio label="Not Selected" value="three" />
+      <Radio label="Selected" value="two" defaultChecked={true} />
+      <Radio label="Disabled and Selected" value="four" defaultChecked={true} disabled />
+    </RadioGroup>
   )
 }

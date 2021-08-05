@@ -1,7 +1,8 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { Radio, RadioProps } from './Radio'
+import { Radio } from '../..'
+import { RadioProps } from '../Radio/Radio'
 
 export default {
   title: 'Components / Radio',
@@ -33,34 +34,8 @@ export default {
       }
     }
   },
-  argTypes: { onChange: { action: 'changed' } }
+  decorators: [Story => <Story />]
 } as Meta
-
 export const Basic: Story<RadioProps> = args => {
-  return (
-    <>
-      <Radio label="Not Selected" value="one" {...args} />
-      <Radio label="Selected" value="one" checked {...args} />
-      <Radio label="Disabled" disabled value="one" {...args} />
-      <Radio label="Disabled and Selected" disabled checked value="one" {...args} />
-    </>
-  )
-}
-
-export const ActiveState: Story<RadioProps> = args => {
-  return (
-    <>
-      <Radio label="Not Selected" value="one" {...args} />
-      <Radio label="Selected" value="one" checked {...args} />
-    </>
-  )
-}
-
-export const DisabledState: Story<RadioProps> = args => {
-  return (
-    <>
-      <Radio label="Disabled" disabled value="one" {...args} />
-      <Radio label="Disabled and Selected" disabled checked value="one" {...args} />
-    </>
-  )
+  return <Radio label="Item 1" value="one" {...args} />
 }
