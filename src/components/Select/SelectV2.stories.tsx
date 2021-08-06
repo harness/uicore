@@ -60,7 +60,7 @@ function dummyPromise(): Promise<SelectOption[]> {
 export const SimpleSelect: Story<SelectV2Props> = args => {
   const [val, setVal] = useState<SelectOption>()
   const { items = itemsLocal } = args
-  const argsCopy = omit(args, ['items'])
+  const argsCopy = omit(args, ['items', 'itemRenderer', 'tagRenderer'])
   return (
     <Layout.Horizontal id="primary-borderless-buttons">
       <SelectV2
@@ -98,7 +98,7 @@ export const SimpleSelect: Story<SelectV2Props> = args => {
 }
 export const AsyncSelect: Story<SelectV2Props> = args => {
   const { items = dummyPromise } = args
-  const argsCopy = omit(args, ['items'])
+  const argsCopy = omit(args, ['items', 'itemRenderer', 'tagRenderer'])
   const [val, setVal] = useState<SelectOption>()
   return (
     <Layout.Horizontal id="primary-borderless-buttons">
