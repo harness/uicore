@@ -36,7 +36,8 @@ if (storybookUrl !== null) {
           failureThreshold: 0.2,
           failureThresholdType: 'percent'
         }
-      }
+      },
+      chromeExecutablePath: process.env.PUPPETEER_EXECUTABLE_PATH
     })
   })
 }
