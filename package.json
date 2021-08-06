@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uicore",
-  "version": "0.1.340",
+  "version": "0.1.345",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -69,6 +69,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.2",
+    "@testing-library/user-event": "^13.2.1",
     "@types/classnames": "^2.2.9",
     "@types/jest": "^26.0.19",
     "@types/lodash-es": "^4.17.4",

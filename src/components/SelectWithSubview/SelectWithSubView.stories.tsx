@@ -9,8 +9,7 @@ import {
   Container,
   Heading,
   Layout,
-  Radio,
-  RadioGroup,
+  RadioButtonGroup,
   SelectOption,
   SelectWithSubview,
   SelectWithSubviewContext,
@@ -148,7 +147,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
         validateOnChange={false}
         validateOnBlur={false}>
         {props => {
-          const { setFieldValue, errors } = props
+          const { setFieldValue, errors, values } = props
           return (
             <Form style={{ padding: '10px' }}>
               <TextInput
@@ -165,15 +164,17 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
               <Heading level={3} margin={{ bottom: 'small' }} style={{ color: 'var(--black)' }}>
                 Select Environment Type
               </Heading>
-              <RadioGroup
+              <RadioButtonGroup
                 name="envType"
-                // selectedValue={values.envType}
+                selectedValue={values.envType}
                 onChange={(e: FormEvent<HTMLInputElement>) => {
                   setFieldValue('envType', e.currentTarget.value)
-                }}>
-                <Radio label="Live Monitoring (Production Types)" value={EnvTypes.PROD} />
-                <Radio label="Pre-Production" value={EnvTypes.NON_PROD} />
-              </RadioGroup>
+                }}
+                options={[
+                  { label: 'Live Monitoring (Production Types)', value: EnvTypes.PROD },
+                  { label: 'Pre-Production', value: EnvTypes.NON_PROD }
+                ]}
+              />
               <Layout.Horizontal spacing="medium" style={{ justifyContent: 'flex-end' }}>
                 <Button data-name="Cancel" onClick={onHideCallBack()}>
                   Cancel

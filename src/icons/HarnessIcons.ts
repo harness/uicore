@@ -34,10 +34,14 @@ import BitbucketNew from './bitbucket-new.svg'
 import BitbucketSelected from './bitbucket-selected.svg'
 import BitbucketUnselected from './bitbucket-unselected.svg'
 import Bitbucket from './bitbucket.svg'
+import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
+import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
+import BlueGreen from './blue-green.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
+import CanaryIcon from './canary-icon.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
@@ -377,6 +381,7 @@ import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import PlayOutline from './play-outline.svg'
+import Play from './play.svg'
 import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
@@ -397,6 +402,7 @@ import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RollbackExecution from './rollback-execution.svg'
+import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
 import RunStep from './run-step.svg'
@@ -567,10 +573,14 @@ type HarnessIconName =
   | 'bitbucket-selected'
   | 'bitbucket-unselected'
   | 'bitbucket'
+  | 'blank-canvas-card-icon'
+  | 'blank-canvas-header-icon'
   | 'blue-black-cluster'
+  | 'blue-green'
   | 'bluegreen'
   | 'budget-alert-light'
   | 'build-stage'
+  | 'canary-icon'
   | 'canary-outline'
   | 'canary'
   | 'canvas-position'
@@ -910,6 +920,7 @@ type HarnessIconName =
   | 'placeholder-selected'
   | 'placeholder'
   | 'play-outline'
+  | 'play'
   | 'plugin-step'
   | 'polygon'
   | 'profile'
@@ -930,6 +941,7 @@ type HarnessIconName =
   | 'restore-cache-step'
   | 'right-bar-notification'
   | 'rollback-execution'
+  | 'rolling-update'
   | 'rolling'
   | 'run-pipeline'
   | 'run-step'
@@ -1100,10 +1112,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'bitbucket-selected': BitbucketSelected,
   'bitbucket-unselected': BitbucketUnselected,
   bitbucket: Bitbucket,
+  'blank-canvas-card-icon': BlankCanvasCardIcon,
+  'blank-canvas-header-icon': BlankCanvasHeaderIcon,
   'blue-black-cluster': BlueBlackCluster,
+  'blue-green': BlueGreen,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
+  'canary-icon': CanaryIcon,
   'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
@@ -1443,6 +1459,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
   'play-outline': PlayOutline,
+  play: Play,
   'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
@@ -1463,6 +1480,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
   'rollback-execution': RollbackExecution,
+  'rolling-update': RollingUpdate,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
   'run-step': RunStep,

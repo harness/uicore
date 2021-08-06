@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import { Button } from '../Button/Button'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
@@ -26,6 +26,7 @@ type AcceptableValue = boolean | string | SelectOption | MultiSelectOption[]
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
+  multitypeInputValue?: MultiTypeInputType
   defaultValueToReset?: AcceptableValue
   width?: number
   expressions?: string[]
@@ -81,6 +82,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     allowableTypes = [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION],
     name,
     disabled,
+    multitypeInputValue,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -103,6 +105,12 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     },
     [onChange]
   )
+
+  useEffect(() => {
+    if (multitypeInputValue !== undefined) {
+      setType(multitypeInputValue)
+    }
+  }, [multitypeInputValue])
 
   return (
     <Layout.Horizontal

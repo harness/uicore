@@ -9,9 +9,8 @@ import {
 import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
-import cssRadio from '../Radio/Radio.css'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
-import checkBoxCss from '../Checkbox/Checkbox.css'
+import { RadioButtonGroup } from '../RadioButton/RadioButtonGroup'
 import {
   FormGroup,
   InputGroup,
@@ -24,7 +23,6 @@ import {
   IOptionProps,
   IFileInputProps,
   TextArea as BpTextArea,
-  RadioGroup as BpRadioGroup,
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
@@ -381,13 +379,6 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
     ...rest
   } = props
 
-  const itemTemp = items.map(item => {
-    const { className = '' } = item
-    return {
-      ...item,
-      className: cx(cssRadio.radio, className)
-    }
-  })
   return (
     <FormGroup
       label={getFormFieldLabel(label, name, props)}
@@ -397,12 +388,12 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
       disabled={disabled}
       inline={inline}
       {...rest}>
-      <BpRadioGroup
+      <RadioButtonGroup
         {...radioGroup}
         name={name}
         disabled={disabled}
         selectedValue={get(formik?.values, name)}
-        options={itemTemp}
+        options={items}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
@@ -433,7 +424,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <UiKitCheckbox
         {...omit(rest, 'tooltipProps')}
-        className={cx(checkBoxCss.checkbox, className)}
+        className={className}
         name={name}
         // eslint-disable-next-line
         // @ts-ignore
