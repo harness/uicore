@@ -28,7 +28,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "do-puppeteer-storyshots": "./node_modules/.bin/jest --projects=./storyshots-puppeteer",
-    "puppeteer-storyshots": "yarn build-storybook && yarn do-puppeteer-storyshots"
+    "puppeteer-storyshots": "yarn run build-storybook && yarn run do-puppeteer-storyshots"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/wings-software/uicore",
