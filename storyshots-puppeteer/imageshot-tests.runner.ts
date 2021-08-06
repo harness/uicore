@@ -34,7 +34,8 @@ if (storybookUrl !== null) {
       getMatchOptions: () => {
         return {
           failureThreshold: 0.2,
-          failureThresholdType: 'percent'
+          failureThresholdType: 'percent',
+          allowSizeMismatch: true
         }
       },
       chromeExecutablePath: process.env.PUPPETEER_EXECUTABLE_PATH
