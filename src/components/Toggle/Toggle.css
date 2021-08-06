@@ -1,0 +1,63 @@
+.toggle {
+  --toggle-background-color: var(--white);
+  --toggle-border-color: #c7c9d9; /* grey-200 too light and grey-250/300 too dark */
+  --toggle-pill-size: var(--spacing-4);
+  --toggle-pill-color: var(--white);
+  --toggle-pill-shadow: 0 1px 2px rgba(40, 41, 61, 0.2), 0 2px 4px rgba(96, 97, 112, 0.2);
+
+  line-height: 1rem;
+  font-size: var(--font-size-small);
+  color: var(--grey-700) !important;
+  padding: var(--spacing-xsmall) 0 !important;
+  display: flex;
+}
+
+.toggleIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(var(--toggle-pill-size) * 2);
+  border-radius: calc(var(--toggle-pill-size) / 2 + 4px);
+  background-color: var(--toggle-background-color);
+  border: 1px solid var(--toggle-border-color);
+  padding: 1px;
+  overflow: hidden;
+  margin-right: var(--spacing-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggleIcon::before {
+  content: '';
+  width: var(--toggle-pill-size);
+  height: var(--toggle-pill-size);
+  border-radius: 50%;
+  background-color: var(--toggle-pill-color);
+  box-shadow: var(--toggle-pill-shadow);
+}
+
+.input:checked ~ .toggleIcon {
+  justify-content: flex-end;
+  --toggle-background-color: var(--primary-7);
+  --toggle-border-color: var(--primary-7);
+}
+
+.input:disabled ~ .toggleIcon {
+  --toggle-background-color: var(--grey-100);
+  --toggle-border-color: var(--grey-200);
+  --toggle-pill-color: var(--grey-500);
+  --toggle-pill-shadow: none;
+}
+
+.input:focus ~ .toggleIcon {
+  outline: rgba(19, 124, 189, 0.6) auto 2px;
+  outline-offset: 2px;
+}
+
+.input {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
