@@ -526,6 +526,7 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Union from './union.svg'
 import Up from './up.svg'
+import UploadBox from './upload-box.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
@@ -1066,6 +1067,7 @@ type HarnessIconName =
   | 'trigger-schedule'
   | 'union'
   | 'up'
+  | 'upload-box'
   | 'utility'
   | 'view-json'
   | 'viewerRole'
@@ -1606,6 +1608,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-schedule': TriggerSchedule,
   union: Union,
   up: Up,
+  'upload-box': UploadBox,
   utility: Utility,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
@@ -1613,7 +1616,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
-  'x': X,
+  x: X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
