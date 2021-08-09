@@ -116,6 +116,7 @@ import ConditionalSkip from './conditional-skip.svg'
 import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
+import ConnectivityMode from './connectivity-mode.svg'
 import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
@@ -655,6 +656,7 @@ type HarnessIconName =
   | 'conditional-when'
   | 'config-change'
   | 'config-file'
+  | 'connectivity-mode'
   | 'connectors-icon'
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
@@ -1194,6 +1196,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
+  'connectivity-mode': ConnectivityMode,
   'connectors-icon': ConnectorsIcon,
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
@@ -1610,7 +1613,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
-  x: X,
+  'x': X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
