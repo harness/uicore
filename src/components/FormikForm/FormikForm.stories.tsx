@@ -88,6 +88,7 @@ export const Basic: Story<FormikFormProps> = () => (
                 dataTooltipId: 'checkboxField'
               }}
             />
+            <FormInput.Toggle name="toggle" label="Toggle" tooltipProps={{ dataTooltipId: 'toggleField' }} />
             <FormInput.FileInput
               name="picture"
               label="Upload Picture"

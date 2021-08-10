@@ -17,6 +17,7 @@ import Advanced from './advanced.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import Arm from './arm.svg'
@@ -116,6 +117,7 @@ import ConditionalSkip from './conditional-skip.svg'
 import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
+import ConnectivityMode from './connectivity-mode.svg'
 import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
@@ -525,6 +527,7 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Union from './union.svg'
 import Up from './up.svg'
+import UploadBox from './upload-box.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
@@ -556,6 +559,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
   | 'arm'
@@ -655,6 +659,7 @@ type HarnessIconName =
   | 'conditional-when'
   | 'config-change'
   | 'config-file'
+  | 'connectivity-mode'
   | 'connectors-icon'
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
@@ -1064,6 +1069,7 @@ type HarnessIconName =
   | 'trigger-schedule'
   | 'union'
   | 'up'
+  | 'upload-box'
   | 'utility'
   | 'view-json'
   | 'viewerRole'
@@ -1095,6 +1101,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
   arm: Arm,
@@ -1194,6 +1201,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
+  'connectivity-mode': ConnectivityMode,
   'connectors-icon': ConnectorsIcon,
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
@@ -1603,6 +1611,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-schedule': TriggerSchedule,
   union: Union,
   up: Up,
+  'upload-box': UploadBox,
   utility: Utility,
   'view-json': ViewJson,
   viewerRole: ViewerRole,

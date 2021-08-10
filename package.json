@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uicore",
-  "version": "0.1.345",
+  "version": "0.1.348",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
     "test:ci": "jest --no-cache ./src --ci  --coverage --reporters=jest-junit --reporters=default --runInBand --silent",
     "fmt": "prettier --write \"./src/**/*.{ts,tsx,css}\"",
     "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
-    "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts",
+    "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts && prettier --write src/icons/HarnessIcons.ts",
     "ui:watch": "NODE_ENV=development webpack --watch",
     "ui:build": "NODE_ENV=production webpack",
     "docs:watch": "cd docs; yarn watch",

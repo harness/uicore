@@ -9,6 +9,7 @@ import {
 import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
+import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
 import { RadioButtonGroup } from '../RadioButton/RadioButtonGroup'
 import {
@@ -433,6 +434,42 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
         disabled={disabled}
         checked={get(formik?.values, name)}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
+          formik?.setFieldValue(name, e.currentTarget.checked)
+          onChange?.(e)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
+export interface ToggleProps extends UiKitToggleProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+  name: string
+  label: string
+}
+
+const Toggle = (props: ToggleProps & FormikContextProps<any>) => {
+  const { formik, name, label, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    onChange,
+    className = '',
+    ...rest
+  } = restProps
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <UiKitToggle
+        {...omit(rest, 'tooltipProps')}
+        className={className}
+        name={name}
+        // eslint-disable-next-line
+        // @ts-ignore
+        label={getFormFieldLabel(label, name, props, css.checkBoxDocTooltipLabel)}
+        disabled={disabled}
+        checked={get(formik?.values, name)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.checked)
           onChange?.(e)
         }}
@@ -1282,6 +1319,7 @@ export const FormInput = {
   FileInput: connect(FileInput),
   RadioGroup: connect(RadioGroup),
   CheckBox: connect(CheckBox),
+  Toggle: connect(Toggle),
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
   Text: connect(Text),
