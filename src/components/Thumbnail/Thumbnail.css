@@ -13,7 +13,6 @@
     align-items: center;
     border-radius: 5px;
     overflow: hidden;
-    background-color: red !important;
 
     &:hover {
       background-color: var(--primary-1);
