@@ -1,0 +1,160 @@
+.main {
+  &.disabled {
+    pointer-events: none;
+    .dropdownButton {
+      .labelWrapper {
+        .label {
+          color: var(--grey-400);
+        }
+      }
+    }
+  }
+  .dropdownButton {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--spacing-2);
+    padding: 0px var(--spacing-4);
+    height: var(--spacing-8);
+    column-gap: var(--spacing-xlarge);
+    transition: all 200ms ease-out;
+    transition-property: border-color, background-color;
+    &.withoutBorder {
+      border-color: transparent;
+      column-gap: var(--spacing-4);
+      background: none;
+      &:hover {
+        background-color: var(--grey-100);
+        border-color: var(--grey-100);
+      }
+      .labelWrapper {
+        .label {
+          font-size: var(--font-size-normal);
+          font-weight: 400;
+          color: var(--grey-900);
+        }
+      }
+    }
+    .labelWrapper {
+      column-gap: var(--spacing-3);
+      .label {
+        font-size: var(--font-size-small);
+        font-weight: 500;
+        color: var(--grey-800);
+      }
+      .counter {
+        font-size: var(--font-size-small);
+        font-weight: 500;
+        background-color: var(--primary-7);
+        color: var(--white);
+        padding: 0 var(--spacing-small);
+        border-radius: 10px;
+      }
+    }
+    :global(.bp3-button) {
+      padding: 0px !important;
+      height: 14px !important;
+      min-height: 14px;
+      min-width: 14px;
+      outline: none;
+    }
+    &.selected:not(.withoutBorder) {
+      border-color: var(--primary-7);
+      background-color: var(--primary-1);
+    }
+    button {
+      box-shadow: none !important;
+      outline: none;
+      padding: 5px 12px !important;
+    }
+  }
+}
+.popover {
+  &:global {
+    &.bp3-popover {
+      box-shadow: 0px 0px 1px rgb(40 41 61 / 4%), 0px 2px 4px rgb(96 97 112 / 16%);
+      border: 0.5px solid rgba(0, 0, 0, 0.1);
+      border-radius: var(--spacing-2);
+      transform: translateY(var(--spacing-1)) !important;
+      .bp3-input-group {
+        margin: var(--spacing-small);
+        margin-bottom: var(--spacing-xsmall);
+        .bp3-input {
+          border-radius: var(--spacing-2);
+          font-size: 13px;
+          padding-left: var(--spacing-xxlarge) !important;
+          height: var(--spacing-8);
+          color: var(--grey-900);
+          box-shadow: none !important;
+          background: var(--grey-100);
+          & ::-moz-placeholder,
+          & ::-webkit-input-placeholder,
+          & :-ms-input-placeholder,
+          & :-moz-placeholder,
+          & ::placeholder {
+            color: var(--grey-300);
+          }
+        }
+        .bp3-input-left-container {
+          top: 50%;
+          transform: translateY(-50%);
+          left: 3px;
+        }
+        .bp3-input-action {
+          opacity: 0.5;
+          transform: scale(0.8);
+          top: 1px;
+          button {
+            outline: none;
+          }
+        }
+      }
+      .bp3-menu {
+        max-height: 350px;
+        width: 100%;
+        overflow: auto;
+        border-radius: var(--spacing-2);
+        padding: var(--spacing-1) 0px;
+        box-sizing: border-box;
+        min-width: 200px;
+        :local {
+          .menuItem {
+            height: var(--spacing-8);
+            padding: 0 var(--spacing-4);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--black);
+            font-weight: 400;
+            font-size: 13px;
+            &:global(.bp3-checkbox) {
+              --box-height: 16px;
+              padding: 0 var(--spacing-4) 0 var(--spacing-8);
+              :global {
+                .bp3-control-indicator {
+                  margin-left: -24px;
+                  border-radius: 4px;
+                  margin-top: 0px;
+                  outline: none;
+                }
+              }
+              span {
+                --box-border: var(--primary-7) !important;
+              }
+            }
+            &.active {
+              background: var(--primary-7);
+              color: var(--white);
+            }
+            &.disabled {
+              color: var(--grey-400);
+              cursor: default;
+            }
+            &:hover:local:not(.active, .disabled) {
+              background: var(--primary-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

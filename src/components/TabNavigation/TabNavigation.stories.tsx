@@ -52,7 +52,7 @@ Basic.args = {
   links: [
     { label: 'Tab 1', to: '/tab_1_url' },
     { label: 'Tab 2', to: '/tab_2_url' },
-    { label: 'Tab 3', to: '/tab_3_url' },
+    { label: 'Tab 3', to: '/tab_3_url', disabled: true },
     { label: 'Tab 4', to: '/tab_4_url' }
   ]
 }

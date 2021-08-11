@@ -13,7 +13,7 @@ module.exports = {
     '!src/**/__tests__/**'
   ],
   coverageReporters: ['lcov'],
-  setupFiles: ['<rootDir>/jest/setup-file.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest/setup-file.js'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'ts-jest'

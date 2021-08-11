@@ -88,6 +88,7 @@ export const Basic: Story<FormikFormProps> = () => (
                 dataTooltipId: 'checkboxField'
               }}
             />
+            <FormInput.Toggle name="toggle" label="Toggle" tooltipProps={{ dataTooltipId: 'toggleField' }} />
             <FormInput.FileInput
               name="picture"
               label="Upload Picture"
@@ -110,7 +111,12 @@ export const Basic: Story<FormikFormProps> = () => (
               placeholder="Select Color"
               items={[
                 { label: 'Red', value: 'red' },
-                { label: 'Blue', value: 'blue' }
+                { label: 'Blue', value: 'blue' },
+                {
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
+                },
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
             />
             <FormInput.MultiSelect
@@ -120,20 +126,11 @@ export const Basic: Story<FormikFormProps> = () => (
               items={[
                 { label: 'Red', value: 'red' },
                 { label: 'Blue', value: 'blue' },
-                { label: 'Blue2', value: 'blue2' },
-                { label: 'Blue3', value: 'blue3' },
-                { label: 'Blue4', value: 'blue4' },
-                { label: 'Blue44', value: 'blue44' },
-                { label: 'Blue54', value: 'blue45w' },
                 {
-                  label:
-                    'Blueqw Blueqw Blueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw Blueqw',
-                  value: 'blueqw'
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
                 },
-                { label: 'Bluewew', value: 'bluewew' },
-                { label: 'Bluedd', value: 'blues' },
-                { label: 'Bluegf', value: 'bluesde' },
-                { label: 'Bluefgf', value: 'blueww' }
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
             />
             <FormInput.TextArea name="description" label="Description" />
@@ -142,7 +139,12 @@ export const Basic: Story<FormikFormProps> = () => (
               label="Job"
               selectItems={[
                 { label: 'Software Engineer', value: 'SE' },
-                { label: 'Quality Engineer', value: 'QE' }
+                { label: 'Quality Engineer', value: 'QE' },
+                {
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
+                },
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
               useValue
               multiTypeInputProps={{
@@ -150,7 +152,12 @@ export const Basic: Story<FormikFormProps> = () => (
                   addClearBtn: true,
                   items: [
                     { label: 'Software Engineer', value: 'SE' },
-                    { label: 'Quality Engineer', value: 'QE' }
+                    { label: 'Quality Engineer', value: 'QE' },
+                    {
+                      label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                      value: 'xyz'
+                    },
+                    { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
                   ]
                 }
               }}
@@ -162,7 +169,12 @@ export const Basic: Story<FormikFormProps> = () => (
               label="Hobbies"
               selectItems={[
                 { label: 'Basket Ball', value: 'BBall' },
-                { label: 'Drawing', value: 'Drawing' }
+                { label: 'Drawing', value: 'Drawing' },
+                {
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
+                },
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
             />
             <FormInput.CategorizedSelect
