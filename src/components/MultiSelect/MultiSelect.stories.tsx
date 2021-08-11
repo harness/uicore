@@ -42,13 +42,13 @@ const localItems: MultiSelectOption[] = data.map((row, i) => ({
   value: row.id,
   disabled: i < 3
 }))
+
 export const Basic: Story<MultiSelectProps> = args => {
   const { items = localItems } = args
 
-  const argsCopy = omit(args, ['items', 'onChange', 'value'])
+  const argsCopy = omit(args, ['items', 'onChange', 'value', 'itemRender', 'tagRenderer'])
 
   const [value, setValue] = React.useState<MultiSelectOption[]>(localItems.slice(0, 3))
-
   return (
     <MultiSelect
       items={items}
@@ -70,7 +70,7 @@ function dummyPromise(): Promise<MultiSelectOption[]> {
 export const AsyncSelect: Story<MultiSelectProps> = args => {
   const { items = dummyPromise } = args
 
-  const argsCopy = omit(args, ['items', 'onChange', 'value'])
+  const argsCopy = omit(args, ['items', 'onChange', 'value', 'itemRender', 'tagRenderer'])
   const [value, setValue] = React.useState<MultiSelectOption[]>([])
 
   return (
