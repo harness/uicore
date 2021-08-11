@@ -378,6 +378,14 @@ import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
 import Repository from './repository.svg'
+import ResConnectors from './res-connectors.svg'
+import ResDelegates from './res-delegates.svg'
+import ResEnvironments from './res-environments.svg'
+import ResResourceGroups from './res-resourceGroups.svg'
+import ResRoles from './res-roles.svg'
+import ResSecrets from './res-secrets.svg'
+import ResUserGroups from './res-userGroups.svg'
+import ResUsers from './res-users.svg'
 import ResetIcon from './reset-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
@@ -896,6 +904,14 @@ type HarnessIconName =
   | 'report-gear'
   | 'report-icon'
   | 'repository'
+  | 'res-connectors'
+  | 'res-delegates'
+  | 'res-environments'
+  | 'res-resourceGroups'
+  | 'res-roles'
+  | 'res-secrets'
+  | 'res-userGroups'
+  | 'res-users'
   | 'reset-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
@@ -1414,6 +1430,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
   repository: Repository,
+  'res-connectors': ResConnectors,
+  'res-delegates': ResDelegates,
+  'res-environments': ResEnvironments,
+  'res-resourceGroups': ResResourceGroups,
+  'res-roles': ResRoles,
+  'res-secrets': ResSecrets,
+  'res-userGroups': ResUserGroups,
+  'res-users': ResUsers,
   'reset-icon': ResetIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
