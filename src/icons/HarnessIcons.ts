@@ -382,8 +382,8 @@ import Pipeline from './pipeline.svg'
 import PlaceholderHover from './placeholder-hover.svg'
 import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
+import PlayCircle from './play-circle.svg'
 import PlayOutline from './play-outline.svg'
-import Play from './play.svg'
 import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
@@ -932,8 +932,8 @@ type HarnessIconName =
   | 'placeholder-hover'
   | 'placeholder-selected'
   | 'placeholder'
+  | 'play-circle'
   | 'play-outline'
-  | 'play'
   | 'plugin-step'
   | 'polygon'
   | 'profile'
@@ -1482,8 +1482,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'placeholder-hover': PlaceholderHover,
   'placeholder-selected': PlaceholderSelected,
   placeholder: Placeholder,
+  'play-circle': PlayCircle,
   'play-outline': PlayOutline,
-  play: Play,
   'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
