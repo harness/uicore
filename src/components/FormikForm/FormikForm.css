@@ -118,3 +118,7 @@
 .checkBoxDocTooltipLabel {
   display: inline-block !important;
 }
+
+.inlineRadioGroup {
+  padding-top: var(--spacing-2) !important;
+}

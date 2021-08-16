@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { IOptionProps } from '@blueprintjs/core/src/common/props'
-import { RadioButtonGroup } from '../RadioButtonGroup'
+import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButtonGroup'
 
 const TestRadioButtonGroupController = ({ options }: { options: IOptionProps[] }) => {
   const [currentSelected, setCurrentSelected] = useState<string>('')
@@ -86,5 +86,24 @@ describe('RadioButtonGroup', () => {
       expect(e1).toBeChecked()
       expect(d1).not.toBeChecked()
     })
+  })
+
+  it('should add the inline class when inline is passed', function () {
+    const label = 'Test Group'
+
+    const props: RadioButtonGroupProps = {
+      label,
+      onChange: jest.fn(),
+      options: [
+        { label: 'option1', value: 'o1' },
+        { label: 'option2', value: 'o2' }
+      ]
+    }
+
+    const { rerender } = render(<RadioButtonGroup {...props} />)
+    expect(screen.getByText(label).parentElement).not.toHaveClass('inline')
+
+    rerender(<RadioButtonGroup {...props} inline />)
+    expect(screen.getByText(label).parentElement).toHaveClass('inline')
   })
 })

@@ -6,7 +6,12 @@ import styledClass from '../../styled-props/StyledProps.css'
 import css from './RadioButton.css'
 
 export type RadioButtonGroupProps = IRadioGroupProps & StyledProps & { options: IOptionProps[] }
-export function RadioButtonGroup({ options, className = '', ...props }: RadioButtonGroupProps): ReactElement {
+export function RadioButtonGroup({
+  options,
+  className = '',
+  inline = false,
+  ...props
+}: RadioButtonGroupProps): ReactElement {
   // map over all options to add `Radio` styling
   options = options.map(option => ({
     ...option,
@@ -16,7 +21,8 @@ export function RadioButtonGroup({ options, className = '', ...props }: RadioBut
   return (
     <BpRadioGroup
       {...(omitStyledProps(props) as IRadioGroupProps)}
-      className={styledClasses(props, styledClass.font, css.radioGroup, className)}
+      inline={inline}
+      className={styledClasses(props, styledClass.font, css.radioGroup, inline ? css.inline : '', className)}
       options={options}
     />
   )
