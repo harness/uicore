@@ -13,28 +13,15 @@ export default {
 } as Meta
 
 export const Basic: Story<ExpandingSearchInputProps> = args => {
+  const ref = React.useRef<ExpandingSearchInputHandle>()
+
   return (
     <div>
-      <div style={{ display: 'flex' }}>
-        <ExpandingSearchInput {...args} theme={'light'} />
-      </div>
+      <ExpandingSearchInput {...args} ref={ref} />
       <br />
       <br />
-      <div style={{ display: 'flex' }}>
-        <ExpandingSearchInput {...args} theme={'light'} showPrevNextButtons={true} />
-      </div>
-      <br />
-      <br />
-      <div style={{ display: 'flex', background: '#000', padding: '32px' }}>
-        <ExpandingSearchInput {...args} theme={'dark'} />
-      </div>
-      <br />
-      <br />
-      <div style={{ display: 'flex', background: '#000', padding: '32px' }}>
-        <ExpandingSearchInput {...args} theme={'dark'} showPrevNextButtons={true} />
-      </div>
-      <br />
-      <br />
+      <button onClick={() => ref.current?.focus()}>Focus</button>
+      <button onClick={() => ref.current?.clear()}>Clear</button>
     </div>
   )
 }
