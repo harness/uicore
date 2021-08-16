@@ -4,6 +4,7 @@ import { Icon } from '../../icons/Icon'
 import { Button } from '../Button/Button'
 import { StyledProps } from '../../styled-props/StyledProps'
 import css from './ExpandingSearchInput.css'
+import { Color } from '../../core/Color'
 
 const DEFAULT_THROTTLE = 500 // ms
 
@@ -31,6 +32,7 @@ export interface ExpandingSearchInputProps {
   flip?: boolean
   width?: StyledProps['width']
   alwaysExpanded?: boolean
+  theme?: 'light' | 'dark'
 }
 
 export interface ExpandingSearchInputHandle {
@@ -57,7 +59,8 @@ export function ExpandingSearchInput(
     fixedText,
     flip,
     width,
-    alwaysExpanded = false
+    alwaysExpanded = false,
+    theme = 'light'
   } = props
 
   const [key, setKey] = useState(Math.random())
@@ -165,20 +168,16 @@ export function ExpandingSearchInput(
 
   const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip ? css.flip : ''} ${
     alwaysExpanded ? css.alwaysExpanded : ''
-  }`
+  } ${theme === 'dark' ? css.dark : css.light}`
 
   const cssInput = `bp3-input ${inputNoTransition ? css.notransition : ''} ${
     showPrevNextButtons ? css.find : css.filter
   }`
 
-  const cssIcon = `${css.icon} ${flip ? css.flipicon : ''}`
-
-  const cssBtnWrapper = `${css.btnWrapper} ${flip ? css.flipBtnWrapper : ''} `
-
   const padRightAmount =
-    (alwaysExpanded || focused || value.length > 0 ? (flip ? 32 : 0) + 36 : 0) +
-    (showPrevNextButtons ? 58 : 0) +
-    (fixedText ? (fixedText.length || 0) * 8 : 0)
+    alwaysExpanded || focused || value.length > 0
+      ? 8 + 30 + (showPrevNextButtons ? 52 : 0) + (fixedText ? (fixedText.length || 0) * 8 : 0)
+      : 0
 
   // needs to be the last useEffect
   // using ref instead of state variable to avoid triggering a rerender
@@ -202,7 +201,12 @@ export function ExpandingSearchInput(
       className={cssMain}
       style={{ width: alwaysExpanded || focused || value.length > 0 ? width : undefined, maxWidth: width }}
       data-name={name}>
-      <Icon name="thinner-search" className={cssIcon} size={14} />
+      <Icon
+        name="thinner-search"
+        className={css.icon}
+        size={14}
+        color={theme === 'dark' ? Color.GREY_200 : Color.GREY_700}
+      />
       <input
         ref={inputRef}
         className={cssInput}
@@ -218,7 +222,7 @@ export function ExpandingSearchInput(
       />
       {value.length > 0 ? (
         <>
-          <span className={cssBtnWrapper}>
+          <span className={css.btnWrapper}>
             {fixedText ? <span>{fixedText}</span> : null}
             {showPrevNextButtons ? (
               <>

@@ -19,7 +19,7 @@ type Props = ISelectProps<SelectOption>
 export interface DropDownProps
   extends Omit<
     Props,
-    'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange'
+    'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange' | 'inputProps'
   > {
   itemRenderer?: Props['itemRenderer']
   onChange: Props['onItemSelect']
