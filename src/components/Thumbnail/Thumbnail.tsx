@@ -28,11 +28,11 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         interactive={!disabled && !selected}
         selected={selected}
         cornerSelected={selected}
-        className={cx(css.squareCard)}>
+        className={css.squareCard}>
         {icon ? (
           <Icon name={icon} size={26} />
         ) : label ? (
-          <Text className={css.label} color={disabled ? Color.GREY_350 : Color.GREY_900}>
+          <Text className={css.label} color={Color.BLACK}>
             {label}
           </Text>
         ) : null}
@@ -41,7 +41,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         <Text
           className={css.label}
           font={{ weight: 'semi-bold' }}
-          color={disabled ? Color.GREY_350 : Color.GREY_500}
+          color={disabled ? Color.GREY_500 : Color.GREY_600}
           margin={{ top: 'small' }}>
           {label}
         </Text>
