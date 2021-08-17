@@ -17,22 +17,6 @@
     background-color: var(--grey-50);
     color: var(--primary-7);
 
-    &.variation {
-      font-weight: 600;
-      background-color: var(--grey-100);
-      color: var(--grey-500);
-      border-radius: 4px;
-
-      &[disabled] {
-        border: none;
-        opacity: 0.5;
-      }
-
-      &.variation-primary {
-        height: 10px !important;
-      }
-    }
-
     &:not(.without-shadow) {
       box-shadow: var(--button-shadow);
       &:hover {
@@ -256,27 +240,4 @@
 .withDocsTooltip {
   display: flex;
   align-items: center;
-}
-
-:global {
-  html:not(.bp3-focus-disabled) {
-    [class*='bp3-button']:not([disabled]) {
-      &:focus {
-        outline: none;
-        position: relative;
-
-        &:after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: -2px;
-          bottom: -2px;
-          left: -2px;
-          right: -2px;
-          border-radius: 5px;
-          border: 1px solid var(--primary-7);
-        }
-      }
-    }
-  }
 }
