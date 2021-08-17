@@ -56,7 +56,7 @@ Basic.args = {
 export const WithoutIcon: Story<ThumbnailProps> = args => {
   return (
     <>
-      <Thumbnail {...args} disabled />
+      <Thumbnail {...args} />
     </>
   )
 }
