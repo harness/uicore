@@ -105,6 +105,15 @@ export const Basic: Story<FormikFormProps> = () => (
                 { label: 'Private', value: 'private' }
               ]}
             />
+            <FormInput.RadioGroup
+              name="eventTypeInline"
+              label="Event Type (inline)"
+              inline={true}
+              items={[
+                { label: 'Public', value: 'public' },
+                { label: 'Private', value: 'private' }
+              ]}
+            />
             <FormInput.Select
               name="color"
               label="Color"

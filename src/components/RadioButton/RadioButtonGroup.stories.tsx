@@ -58,3 +58,25 @@ export const Basic: Story<RadioButtonGroupProps> = () => {
     />
   )
 }
+
+export const Inline: Story<RadioButtonGroupProps> = () => {
+  const [currentOption, setCurrentOption] = useState<string>('one')
+
+  return (
+    <RadioButtonGroup
+      inline={true}
+      label="Section Headline"
+      selectedValue={currentOption}
+      onChange={(e: FormEvent<HTMLInputElement>) => {
+        action('changed')(e) // storybook action
+        setCurrentOption(e.currentTarget.value)
+      }}
+      options={[
+        { label: 'Option 1', value: 'one' },
+        { label: 'Option 2', value: 'two' },
+        { label: 'Option 3', value: 'three' },
+        { label: 'Option 4 (disabled)', value: 'four', disabled: true }
+      ]}
+    />
+  )
+}

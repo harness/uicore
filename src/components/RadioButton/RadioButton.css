@@ -20,6 +20,7 @@
     margin-right: var(--spacing-small) !important;
     width: var(--radio-size);
     height: var(--radio-size);
+    min-width: var(--radio-size); /* ensure flex doesn't squish the indicator */
     border-radius: var(--radio-border-radius) !important;
     border: 1px solid var(--radio-border-color);
 
@@ -69,4 +70,9 @@
     font-size: var(--font-size-small);
     color: var(--grey-700);
   }
+}
+
+.inline > .radio {
+  margin-right: var(--spacing-4);
+  display: inline-flex;
 }

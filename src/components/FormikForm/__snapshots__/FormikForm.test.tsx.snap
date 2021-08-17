@@ -1129,3 +1129,82 @@ exports[`Test basic Components should render TextArea component 1`] = `
   </div>
 </div>
 `;
+
+exports[`Test basic Components should render an inline RadioGroup component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group bp3-inline"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_color"
+            >
+              Color
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="font radioGroup inline inlineRadioGroup main"
+            >
+              <label
+                class="bp3-control bp3-radio bp3-inline radio main"
+              >
+                <input
+                  name="color"
+                  type="radio"
+                  value="Red"
+                />
+                <span
+                  class="bp3-control-indicator"
+                />
+                red
+              </label>
+              <label
+                class="bp3-control bp3-radio bp3-inline radio main"
+              >
+                <input
+                  name="color"
+                  type="radio"
+                  value="Blue"
+                />
+                <span
+                  class="bp3-control-indicator"
+                />
+                blue
+              </label>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
