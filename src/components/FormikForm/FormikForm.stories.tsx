@@ -105,15 +105,6 @@ export const Basic: Story<FormikFormProps> = () => (
                 { label: 'Private', value: 'private' }
               ]}
             />
-            <FormInput.RadioGroup
-              name="eventTypeInline"
-              label="Event Type (inline)"
-              inline={true}
-              items={[
-                { label: 'Public', value: 'public' },
-                { label: 'Private', value: 'private' }
-              ]}
-            />
             <FormInput.Select
               name="color"
               label="Color"
@@ -211,4 +202,50 @@ export const Basic: Story<FormikFormProps> = () => (
       }}
     </Formik>
   </Container>
+)
+
+export const RadioGroups: Story<FormikFormProps> = () => (
+  <Formik onSubmit={() => undefined} formName="radioButtons" initialValues={{}}>
+    <FormikForm>
+      <FormInput.RadioGroup
+        name="example1"
+        label="Basic"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        inline
+        name="example2"
+        label="Inline form input"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        radioGroup={{ inline: true }}
+        name="example3"
+        label="Inline RadioGroup"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        inline
+        radioGroup={{ inline: true }}
+        name="example4"
+        label="Inline both"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+    </FormikForm>
+  </Formik>
 )
