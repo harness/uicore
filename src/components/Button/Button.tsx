@@ -13,6 +13,13 @@ import { omitStyledProps, styledClasses, StyledProps } from '../../styled-props/
 import styledClass from '../../styled-props/StyledProps.css'
 import css from './Button.css'
 
+export enum ButtonVariation {
+  PRIMARY = 'variation-primary',
+  SECONDARY = 'variation-secondary',
+  OUTLINE = 'variation-outline',
+  LINK = 'variation-link'
+}
+
 export interface ButtonProps
   extends Assign<
       Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
@@ -52,6 +59,8 @@ export interface ButtonProps
 
   /** Make button round */
   round?: boolean
+
+  variation?: ButtonVariation
 }
 
 export interface LinkProps extends ButtonProps {
@@ -60,7 +69,7 @@ export interface LinkProps extends ButtonProps {
 }
 
 export function Button(props: ButtonProps): React.ReactElement {
-  const { icon, rightIcon, round } = props
+  const { icon, rightIcon, round, variation } = props
   const [loading, setLoading] = useState(props.loading === true)
   const isMounted = useIsMounted()
 
@@ -100,7 +109,8 @@ export function Button(props: ButtonProps): React.ReactElement {
     'noStyling',
     'withoutHref',
     'withoutCurrentColor',
-    'withoutBoxShadow'
+    'withoutBoxShadow',
+    'variation'
   )
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
@@ -111,13 +121,19 @@ export function Button(props: ButtonProps): React.ReactElement {
       icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}
       rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
       onClick={onClick}
-      className={cx(css.button, styledClass.font, styledClasses(props), {
-        [css['with-current-color']]: !props.withoutCurrentColor,
-        [css.round]: round,
-        [css.iconOnly]: !props.text && !props.intent && !props.href,
-        [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,
-        [css['without-shadow']]: props.withoutBoxShadow || props.minimal
-      })}
+      className={cx(
+        css.button,
+        styledClass.font,
+        styledClasses(props),
+        {
+          [css['with-current-color']]: !props.withoutCurrentColor,
+          [css.round]: round,
+          [css.iconOnly]: !props.text && !props.intent && !props.href,
+          [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,
+          [css['without-shadow']]: props.withoutBoxShadow || props.minimal
+        },
+        variation ? cx(css.variation, css[variation]) : ''
+      )}
     />
   )
 

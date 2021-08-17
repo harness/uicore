@@ -2,7 +2,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, Description, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { Layout, Button, ButtonProps, Text } from '../..'
+import { ButtonVariation, Layout, Button, ButtonProps, Text } from '../..'
 
 export default {
   title: 'Components / Button',
@@ -47,13 +47,24 @@ export default {
 
 export const ButtonExamples: Story<ButtonProps> = args => {
   return (
-    <>
-      <Button text="Primary"/>
-      <Button text="Secondary"/>
-      <Button text="Secondary (outline)"/>
-      <Button icon="plus" tooltip="Icon"/>
+    <Layout.Vertical spacing="medium">
+      <Button text="Primary" variation={ButtonVariation.PRIMARY} />
+      <Button text="Primary (disabled)" variation={ButtonVariation.PRIMARY} disabled />
+
+      <Button text="Secondary" />
+      <Button text="Secondary (disabled)" disabled />
+      <Button text="Outline" />
+      <Button text="Outline (disabled)" disabled />
+      <Button icon="plus" tooltip="Icon" />
       <Button loading text="Text Button" {...args} />
-    </>
+
+      <Button text="Danger" intent="danger" />
+      <Button text="Danger (disabled)" intent="danger" disabled />
+      <Button text="Success" intent="success" />
+      <Button text="Success (disabled)" intent="success" disabled />
+      <Button text="Warning" intent="warning" />
+      <Button text="Warning (disabled)" intent="warning" disabled />
+    </Layout.Vertical>
   )
 }
 

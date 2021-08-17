@@ -17,16 +17,19 @@
     background-color: var(--grey-50);
     color: var(--primary-7);
 
-    --button-hover-shadow: none;
+    &.variation {
+      font-weight: 600;
+      background-color: var(--grey-100);
+      color: var(--grey-500);
+      border-radius: 4px;
 
-    &:not(.without-shadow) {
-      box-shadow: var(--button-shadow);
-      &:hover {
-        box-shadow: var(--button-hover-shadow);
+      &[disabled] {
+        border: none;
+        opacity: 0.5;
       }
 
-      &.iconOnly:not([disabled]) {
-        box-shadow: var(--button-hover-shadow); /* none; */
+      &.variation-primary {
+        height: 10px !important;
       }
     }
 
@@ -64,10 +67,6 @@
     }
 
     &:hover {
-      background-color: var(--grey-50);
-      color: var(--primary-8);
-      text-decoration: none;
-
       &.iconOnly:not([disabled]) {
         background-color: transparent;
       }
@@ -90,16 +89,22 @@
       border: none;
       box-shadow: none;
       color: var(--primary-7);
-      &:hover {
-        background-color: transparent;
-        box-shadow: var(--button-shadow);
-      }
+    }
 
-      &:not(.without-shadow) {
-        &:hover {
-          box-shadow: var(--button-hover-shadow);
-        }
-      }
+    &.without-shadow,
+    &.without-shadow:active,
+    &.without-shadow:hover,
+    &.without-shadow:focus {
+      box-shadow: none !important;
+    }
+
+    &:hover:not([disabled]) {
+      box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
+    }
+
+    &:active,
+    &[class*='active'] {
+      box-shadow: inset 0px 0.5px 4px rgba(96, 97, 112, 0.32);
     }
 
     /* Primary */
@@ -107,17 +112,8 @@
       color: var(--grey-0);
       background-color: var(--primary-7);
 
-      &:hover {
-        color: var(--grey-0);
-        background-color: var(--primary-7);
-      }
-
-      &:not(.without-shadow) {
-        box-shadow: var(--button-shadow);
-
-        &:hover {
-          box-shadow: var(--button-hover-shadow);
-        }
+      &:hover:not([disabled]) {
+        background-color: var(--primary-8);
       }
 
       &:active,
@@ -242,4 +238,27 @@
 .withDocsTooltip {
   display: flex;
   align-items: center;
+}
+
+:global {
+  html:not(.bp3-focus-disabled) {
+    [class*='bp3-button']:not([disabled]) {
+      &:focus {
+        outline: none;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: -2px;
+          bottom: -2px;
+          left: -2px;
+          right: -2px;
+          border-radius: 5px;
+          border: 1px solid var(--primary-7);
+        }
+      }
+    }
+  }
 }
