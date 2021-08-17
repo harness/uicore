@@ -97,15 +97,50 @@ describe('Test basic Components', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('should render an inline RadioGroup component', () => {
+  test('should render RadioGroup component in an inline form input', () => {
     const { container } = render(
       renderFormikForm(
         <FormInput.RadioGroup
+          inline
           items={[
             { label: 'red', value: 'Red' },
             { label: 'blue', value: 'Blue' }
           ]}
-          inline={true}
+          name="color"
+          label="Color"
+        />
+      )
+    )
+    expect(container).toMatchSnapshot()
+  })
+
+  test('should render an inline RadioGroup component', () => {
+    const { container } = render(
+      renderFormikForm(
+        <FormInput.RadioGroup
+          radioGroup={{ inline: true }}
+          items={[
+            { label: 'red', value: 'Red' },
+            { label: 'blue', value: 'Blue' }
+          ]}
+          name="color"
+          label="Color"
+        />
+      )
+    )
+    expect(container).toMatchSnapshot()
+  })
+
+  test('should render an inline RadioGroup component in an inline form input', () => {
+    const { container } = render(
+      renderFormikForm(
+        <FormInput.RadioGroup
+          inline
+          radioGroup={{ inline: true }}
+          items={[
+            { label: 'red', value: 'Red' },
+            { label: 'blue', value: 'Blue' }
+          ]}
           name="color"
           label="Color"
         />

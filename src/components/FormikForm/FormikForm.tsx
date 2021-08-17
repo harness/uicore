@@ -391,7 +391,6 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
       {...rest}>
       <RadioButtonGroup
         {...radioGroup}
-        inline={inline}
         className={inline ? css.inlineRadioGroup : ''}
         name={name}
         disabled={disabled}
