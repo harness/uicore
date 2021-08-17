@@ -33,6 +33,17 @@
       }
     }
 
+    &:not(.without-shadow) {
+      box-shadow: var(--button-shadow);
+      &:hover {
+        box-shadow: var(--button-hover-shadow);
+      }
+
+      &.iconOnly:not([disabled]) {
+        box-shadow: var(--button-hover-shadow); /* none; */
+      }
+    }
+
     &.round {
       border-radius: 100px;
       padding-left: 15px;
@@ -67,6 +78,10 @@
     }
 
     &:hover {
+      background-color: var(--grey-50);
+      color: var(--primary-8);
+      text-decoration: none;
+
       &.iconOnly:not([disabled]) {
         background-color: transparent;
       }
@@ -89,22 +104,16 @@
       border: none;
       box-shadow: none;
       color: var(--primary-7);
-    }
+      &:hover {
+        background-color: transparent;
+        box-shadow: var(--button-shadow);
+      }
 
-    &.without-shadow,
-    &.without-shadow:active,
-    &.without-shadow:hover,
-    &.without-shadow:focus {
-      box-shadow: none !important;
-    }
-
-    &:hover:not([disabled]) {
-      box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
-    }
-
-    &:active,
-    &[class*='active'] {
-      box-shadow: inset 0px 0.5px 4px rgba(96, 97, 112, 0.32);
+      &:not(.without-shadow) {
+        &:hover {
+          box-shadow: var(--button-hover-shadow);
+        }
+      }
     }
 
     /* Primary */
@@ -112,8 +121,17 @@
       color: var(--grey-0);
       background-color: var(--primary-7);
 
-      &:hover:not([disabled]) {
-        background-color: var(--primary-8);
+      &:hover {
+        color: var(--grey-0);
+        background-color: var(--primary-7);
+      }
+
+      &:not(.without-shadow) {
+        box-shadow: var(--button-shadow);
+
+        &:hover {
+          box-shadow: var(--button-hover-shadow);
+        }
       }
 
       &:active,
