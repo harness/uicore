@@ -17,6 +17,7 @@ export enum ButtonVariation {
   PRIMARY = 'variation-primary',
   SECONDARY = 'variation-secondary',
   TERTIARY = 'variation-tertiary',
+  ICON = 'variation-icon',
   LINK = 'variation-link'
 }
 

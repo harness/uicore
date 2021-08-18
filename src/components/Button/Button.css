@@ -63,6 +63,26 @@
         --background-color-active: var(--grey-100);
         --border: none;
       }
+
+      &.variation-icon {
+        --text-color: var(--grey-300);
+        --background-color: transparent;
+        --background-color-hover: transparent;
+        --background-color-active: transparent;
+        --border: none;
+
+        &:hover {
+          --text-color: var(--primary-6);
+          --box-shadow: none;
+        }
+
+        &:active,
+        &[class*='active'],
+        &:focus {
+          --text-color: var(--primary-7);
+          --box-shadow: none;
+        }
+      }
     }
 
     &:not(.variation) {
@@ -324,7 +344,8 @@
             border-color: var(--primary-7);
           }
 
-          &[class*='variation-primary'] {
+          &[class*='variation-primary'],
+          &[class*='variation-tertiary'] {
             &:after {
               top: -2px;
               bottom: -2px;
@@ -335,11 +356,13 @@
 
           &[class*='variation-tertiary'] {
             &:after {
-              top: -2px;
-              bottom: -2px;
-              left: -2px;
-              right: -2px;
-              border-color: var(--grey-500);
+              border-color: var(--grey-100);
+            }
+          }
+
+          &[class*='variation-icon'] {
+            &:after {
+              border-color: var(--grey-100);
             }
           }
         }
