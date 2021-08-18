@@ -375,6 +375,7 @@ import PipelineBuild from './pipeline-build.svg'
 import PipelineCustom from './pipeline-custom.svg'
 import PipelineDeploy from './pipeline-deploy.svg'
 import PipelineDeployment from './pipeline-deployment.svg'
+import PipelineExecutor from './pipeline-executor.svg'
 import PipelineNg from './pipeline-ng.svg'
 import PipelineStageSelectionCaret from './pipeline-stage-selection-caret.svg'
 import PipelineVariables from './pipeline-variables.svg'
@@ -925,6 +926,7 @@ type HarnessIconName =
   | 'pipeline-custom'
   | 'pipeline-deploy'
   | 'pipeline-deployment'
+  | 'pipeline-executor'
   | 'pipeline-ng'
   | 'pipeline-stage-selection-caret'
   | 'pipeline-variables'
@@ -1475,6 +1477,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'pipeline-custom': PipelineCustom,
   'pipeline-deploy': PipelineDeploy,
   'pipeline-deployment': PipelineDeployment,
+  'pipeline-executor': PipelineExecutor,
   'pipeline-ng': PipelineNg,
   'pipeline-stage-selection-caret': PipelineStageSelectionCaret,
   'pipeline-variables': PipelineVariables,
