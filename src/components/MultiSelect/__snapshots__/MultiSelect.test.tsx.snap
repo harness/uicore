@@ -230,7 +230,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                   </p>
                 </li>
                 <button
-                  class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
+                  class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow withLeftIcon"
                   type="button"
                 >
                   <span

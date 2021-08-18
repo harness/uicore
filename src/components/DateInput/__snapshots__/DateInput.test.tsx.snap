@@ -27,7 +27,7 @@ exports[`<DateInput/> tests renders with empty value and allow variables 1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
+          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span
@@ -107,7 +107,7 @@ exports[`<DateInput/> tests renders with empty value date 1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
+          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span
@@ -163,7 +163,7 @@ exports[`<DateInput/> tests renders with empty value date time 1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
+          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span
@@ -283,7 +283,7 @@ exports[`<DateInput/> tests renders with value  1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow"
+          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span

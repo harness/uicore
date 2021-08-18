@@ -11,7 +11,7 @@ export {
 } from './components/Accordion/NestedAccordion'
 export { Avatar, AvatarProps, AvatarSizes } from './components/Avatar/Avatar'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
-export { Button, ButtonProps } from './components/Button/Button'
+export { Button, ButtonProps, ButtonVariation, ButtonSize } from './components/Button/Button'
 export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export { Checkbox } from './components/Checkbox/Checkbox'
@@ -165,3 +165,4 @@ export {
 export { Breadcrumbs, BreadcrumbsProps, Breadcrumb } from './components/Breadcrumbs/Breadcrumbs'
 export { GridListToggle, GridListToggleProps, Views } from './components/GridListToggle/GridListToggle'
 export { FormError } from './components/FormError/FormError'
+export { FontVariation } from './styled-props/font/FontProps'

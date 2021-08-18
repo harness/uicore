@@ -13,6 +13,20 @@ import { omitStyledProps, styledClasses, StyledProps } from '../../styled-props/
 import styledClass from '../../styled-props/StyledProps.css'
 import css from './Button.css'
 
+export enum ButtonVariation {
+  PRIMARY = 'variation-primary',
+  SECONDARY = 'variation-secondary',
+  TERTIARY = 'variation-tertiary',
+  ICON = 'variation-icon',
+  LINK = 'variation-link'
+}
+
+export enum ButtonSize {
+  LARGE = 'large',
+  MEDIUM = 'medium', // default
+  SMALL = 'small'
+}
+
 export interface ButtonProps
   extends Assign<
       Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
@@ -52,6 +66,10 @@ export interface ButtonProps
 
   /** Make button round */
   round?: boolean
+
+  variation?: ButtonVariation
+
+  size?: ButtonSize
 }
 
 export interface LinkProps extends ButtonProps {
@@ -60,7 +78,7 @@ export interface LinkProps extends ButtonProps {
 }
 
 export function Button(props: ButtonProps): React.ReactElement {
-  const { icon, rightIcon, round } = props
+  const { icon, rightIcon, round, variation, size } = props
   const [loading, setLoading] = useState(props.loading === true)
   const isMounted = useIsMounted()
 
@@ -87,7 +105,8 @@ export function Button(props: ButtonProps): React.ReactElement {
 
   const Component: ElementType = props.href || (props.disabled && props.tooltip) ? AnchorButton : BButton
   // Set icon size to 12px when there's one with button text
-  const iconSize = (icon || rightIcon) && (props.text || props.href) ? 16 : undefined
+  const iconSize =
+    (icon || rightIcon) && (props.text || props.href) ? (variation && size === ButtonSize.LARGE ? 24 : 16) : undefined
   // Extra left padding for left icon, for right icon, Blueprint already has proper margin
   const leftIconPadding: PaddingProps | undefined = props.text || props.href ? { right: 'xsmall' } : undefined
   const Tag = (props.href ? 'a' : 'button') as React.ElementType
@@ -100,7 +119,9 @@ export function Button(props: ButtonProps): React.ReactElement {
     'noStyling',
     'withoutHref',
     'withoutCurrentColor',
-    'withoutBoxShadow'
+    'withoutBoxShadow',
+    'variation',
+    'size'
   )
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
@@ -111,13 +132,22 @@ export function Button(props: ButtonProps): React.ReactElement {
       icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}
       rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
       onClick={onClick}
-      className={cx(css.button, styledClass.font, styledClasses(props), {
-        [css['with-current-color']]: !props.withoutCurrentColor,
-        [css.round]: round,
-        [css.iconOnly]: !props.text && !props.intent && !props.href,
-        [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,
-        [css['without-shadow']]: props.withoutBoxShadow || props.minimal
-      })}
+      className={cx(
+        css.button,
+        styledClass.font,
+        styledClasses(props),
+        {
+          [css['with-current-color']]: !props.withoutCurrentColor,
+          [css.round]: round,
+          [css.iconOnly]: !props.text && !props.intent && !props.href,
+          [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,
+          [css['without-shadow']]: props.withoutBoxShadow || props.minimal,
+          [css.withLeftIcon]: icon,
+          [css.withRightIcon]: rightIcon
+        },
+        variation ? cx(css.variation, css[variation]) : '',
+        size ? cx(css.size, css[size]) : ''
+      )}
     />
   )
 

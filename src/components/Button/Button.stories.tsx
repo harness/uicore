@@ -2,7 +2,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, Description, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { Layout, Button, ButtonProps, Text } from '../..'
+import { Container, ButtonVariation, ButtonSize, Layout, Button, ButtonProps, Text } from '../..'
 
 export default {
   title: 'Components / Button',
@@ -44,6 +44,203 @@ export default {
     )
   ]
 } as Meta
+
+export const ButtonVariationsAndSizesExamples: Story<ButtonProps> = () => {
+  return (
+    <Layout.Vertical spacing="large">
+      <Container>
+        <Layout.Horizontal spacing="medium">
+          <Button text="Primary" variation={ButtonVariation.PRIMARY} />
+          <Button text="With left button" icon="chevron-left" variation={ButtonVariation.PRIMARY} />
+          <Button text="With right button" rightIcon="chevron-right" variation={ButtonVariation.PRIMARY} />
+          <Button text="Loading..." loading variation={ButtonVariation.PRIMARY} />
+          <Button text="Disabled" variation={ButtonVariation.PRIMARY} disabled tooltip="Permission required" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="medium">
+          <Button text="Large" variation={ButtonVariation.PRIMARY} size={ButtonSize.LARGE} />
+          <Button
+            text="Large + left icon"
+            icon="arrow-left"
+            variation={ButtonVariation.PRIMARY}
+            size={ButtonSize.LARGE}
+          />
+          <Button
+            text="Large + right icon"
+            rightIcon="arrow-right"
+            variation={ButtonVariation.PRIMARY}
+            size={ButtonSize.LARGE}
+          />
+          <Button text="Small" variation={ButtonVariation.PRIMARY} size={ButtonSize.SMALL} />
+          <Button
+            text="Small + left icon"
+            icon="arrow-left"
+            variation={ButtonVariation.PRIMARY}
+            size={ButtonSize.SMALL}
+          />
+          <Button
+            text="Small + right icon"
+            rightIcon="arrow-right"
+            variation={ButtonVariation.PRIMARY}
+            size={ButtonSize.SMALL}
+          />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="medium">
+          <Button text="Secondary" variation={ButtonVariation.SECONDARY} />
+          <Button text="With left button" icon="chevron-left" variation={ButtonVariation.SECONDARY} />
+          <Button text="With right button" rightIcon="chevron-right" variation={ButtonVariation.SECONDARY} />
+          <Button text="Loading..." loading variation={ButtonVariation.SECONDARY} />
+          <Button text="Disabled" variation={ButtonVariation.SECONDARY} disabled tooltip="Permission required" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="medium">
+          <Button text="Large" variation={ButtonVariation.SECONDARY} size={ButtonSize.LARGE} />
+          <Button
+            text="Large + left icon"
+            icon="arrow-left"
+            variation={ButtonVariation.SECONDARY}
+            size={ButtonSize.LARGE}
+          />
+          <Button
+            text="Large + right icon"
+            rightIcon="arrow-right"
+            variation={ButtonVariation.SECONDARY}
+            size={ButtonSize.LARGE}
+          />
+          <Button text="Small" variation={ButtonVariation.SECONDARY} size={ButtonSize.SMALL} />
+          <Button
+            text="Small + left icon"
+            icon="arrow-left"
+            variation={ButtonVariation.SECONDARY}
+            size={ButtonSize.SMALL}
+          />
+          <Button
+            text="Small + right icon"
+            rightIcon="arrow-right"
+            variation={ButtonVariation.SECONDARY}
+            size={ButtonSize.SMALL}
+          />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="medium">
+          <Button text="Tertiary" variation={ButtonVariation.TERTIARY} />
+          <Button text="With left button" icon="chevron-left" variation={ButtonVariation.TERTIARY} />
+          <Button text="With right button" rightIcon="chevron-right" variation={ButtonVariation.TERTIARY} />
+          <Button text="Loading..." loading variation={ButtonVariation.TERTIARY} />
+          <Button text="Disabled" variation={ButtonVariation.TERTIARY} disabled tooltip="Permission required" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="medium">
+          <Button text="Link 1" variation={ButtonVariation.LINK} />
+          <Button text="Link 2" icon="chevron-left" variation={ButtonVariation.LINK} />
+          <Button text="Link 3" rightIcon="chevron-right" variation={ButtonVariation.LINK} />
+          <Button text="Link 4" loading variation={ButtonVariation.LINK} />
+          <Button text="Link 5" variation={ButtonVariation.LINK} disabled tooltip="Permission required" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="medium">
+          <Button text="Large" variation={ButtonVariation.TERTIARY} size={ButtonSize.LARGE} />
+          <Button
+            text="Large + left icon"
+            icon="arrow-left"
+            variation={ButtonVariation.TERTIARY}
+            size={ButtonSize.LARGE}
+          />
+          <Button
+            text="Large + right icon"
+            rightIcon="arrow-right"
+            variation={ButtonVariation.TERTIARY}
+            size={ButtonSize.LARGE}
+          />
+          <Button text="Small" variation={ButtonVariation.TERTIARY} size={ButtonSize.SMALL} />
+          <Button
+            text="Small + left icon"
+            icon="arrow-left"
+            variation={ButtonVariation.TERTIARY}
+            size={ButtonSize.SMALL}
+          />
+          <Button
+            text="Small + right icon"
+            rightIcon="arrow-right"
+            variation={ButtonVariation.TERTIARY}
+            size={ButtonSize.SMALL}
+          />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="xsmall">
+          <Button icon="plus" variation={ButtonVariation.ICON} />
+          <Button icon="Options" variation={ButtonVariation.ICON} />
+          <Button icon="dashboard" variation={ButtonVariation.ICON} />
+          <Button icon="cross" variation={ButtonVariation.ICON} disabled tooltip="Permission required" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="xxlarge">
+          <Button icon="upload-box" variation={ButtonVariation.PRIMARY} text="Save" />
+          <Button icon="run-pipeline" variation={ButtonVariation.PRIMARY} text="Run" intent="success" />
+          <Button icon="info" variation={ButtonVariation.PRIMARY} text="Warning" intent="warning" />
+          <Button icon="cross" variation={ButtonVariation.PRIMARY} text="Delete" intent="danger" />
+          <Button icon="chevron-left" variation={ButtonVariation.SECONDARY} text="Back" />
+          <Button icon="chevron-right" variation={ButtonVariation.PRIMARY} text="Continue" />
+          <Button icon="plus" rightIcon="chevron-down" variation={ButtonVariation.PRIMARY} text="New Secret" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="xxlarge">
+          <Button icon="upload-box" variation={ButtonVariation.PRIMARY} text="Save" size={ButtonSize.SMALL} />
+          <Button
+            icon="run-pipeline"
+            variation={ButtonVariation.PRIMARY}
+            text="Run"
+            intent="success"
+            size={ButtonSize.SMALL}
+          />
+          <Button
+            icon="info"
+            variation={ButtonVariation.PRIMARY}
+            text="Warning"
+            intent="warning"
+            size={ButtonSize.SMALL}
+          />
+          <Button
+            icon="cross"
+            variation={ButtonVariation.PRIMARY}
+            text="Delete"
+            intent="danger"
+            size={ButtonSize.SMALL}
+          />
+          <Button icon="chevron-left" variation={ButtonVariation.SECONDARY} text="Back" size={ButtonSize.SMALL} />
+          <Button icon="chevron-right" variation={ButtonVariation.PRIMARY} text="Continue" size={ButtonSize.SMALL} />
+          <Button
+            icon="plus"
+            rightIcon="chevron-down"
+            variation={ButtonVariation.PRIMARY}
+            text="New Secret"
+            size={ButtonSize.SMALL}
+          />
+        </Layout.Horizontal>
+      </Container>
+    </Layout.Vertical>
+  )
+}
+
 export const PrimaryButton: Story<ButtonProps> = args => {
   return (
     <>
