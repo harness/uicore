@@ -166,7 +166,7 @@ export function ExpandingSearchInput(
     }
   }))
 
-  const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip ? css.flip : ''} ${
+  const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip && !alwaysExpanded ? css.flip : ''} ${
     alwaysExpanded ? css.alwaysExpanded : ''
   } ${theme === 'dark' ? css.dark : css.light}`
 
