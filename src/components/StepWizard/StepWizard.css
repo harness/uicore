@@ -2,32 +2,32 @@
   &.navBar {
     display: grid;
     grid-template-columns: 320px 1fr;
-
+    min-height: 600px;
+    position: relative;
     .navBarList {
       background-color: #267cc9;
-      padding: 40px;
-      display: grid;
-      grid-gap: var(--spacing-xxlarge);
+      padding: 48px;
+
       border-right: 1px solid #979797;
       grid-template-rows: repeat(auto-fill, var(--spacing-xxlarge));
+      overflow: hidden;
       justify-content: center;
 
       .navStep {
         display: grid;
-        grid-template-columns: 20px 1fr;
-        grid-gap: 10px;
-        align-items: center;
+        grid-template-columns: 28px 1fr;
+        margin-bottom: var(--spacing-6);
         cursor: not-allowed;
 
         &.activeStep {
           cursor: unset;
 
           .stepName {
-            color: white;
+            color: var(--grey-50);
             font-weight: bold;
           }
           .number {
-            background-color: white;
+            background-color: var(--grey-50);
           }
         }
 
@@ -36,7 +36,7 @@
         }
 
         .stepName {
-          color: var(--grey-100);
+          color: var(--grey-50);
         }
         &.nestedStep {
           padding-left: var(--spacing-large);
@@ -56,7 +56,8 @@
     }
   }
   .stepDetails {
-    padding: var(--spacing-large);
+    padding: var(--spacing-9) var(--spacing-10) var(--spacing-10) var(--spacing-10);
+    background: var(--form-bg);
   }
 }
 
@@ -66,10 +67,11 @@
 }
 
 .title {
-  color: var(--white);
+  color: var(--grey-50);
   font-size: large;
-  margin-bottom: var(--spacing-xxlarge);
   font-weight: 600;
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-10);
 }
 
 .completedIcon {
@@ -77,4 +79,14 @@
   border-radius: 50%;
   height: var(--spacing-large);
   width: var(--spacing-large);
+}
+.harnessWatermark {
+  position: absolute;
+  left: -8.19%;
+  right: 78.36%;
+  top: 66.12%;
+  bottom: -17%;
+  svg {
+    opacity: 0.1;
+  }
 }

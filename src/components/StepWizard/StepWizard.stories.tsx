@@ -28,7 +28,7 @@ export const Nested: Story<void> = _args => (
     title="Kubernetes Cluster"
     subtitle={
       <Text
-        style={{ marginLeft: 16 }}
+        style={{ marginLeft: 24, marginTop: 'var(--spacing-6)' }}
         icon="service-dockerhub"
         iconProps={{ color: Color.WHITE, size: 26 }}
         color={Color.WHITE}>
