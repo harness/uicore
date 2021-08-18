@@ -45,16 +45,24 @@ export default {
   ]
 } as Meta
 
-export const ButtonExamples: Story<ButtonProps> = args => {
+export const ButtonVariationsAndSizesExamples: Story<ButtonProps> = args => {
   return (
-    <Layout.Vertical spacing="medium">
-      <Button text="Primary" variation={ButtonVariation.PRIMARY} />
-      <Button text="Primary (disabled)" variation={ButtonVariation.PRIMARY} disabled />
+    <Layout.Vertical spacing="large">
+      <Layout.Horizontal spacing="medium">
+        <Button text="Primary" variation={ButtonVariation.PRIMARY} />
+        <Button text="Primary (disabled)" variation={ButtonVariation.PRIMARY} disabled />
+      </Layout.Horizontal>
 
-      <Button text="Secondary" />
-      <Button text="Secondary (disabled)" disabled />
-      <Button text="Outline" />
-      <Button text="Outline (disabled)" disabled />
+      <Layout.Horizontal spacing="medium">
+        <Button text="Secondary" variation={ButtonVariation.SECONDARY} />
+        <Button text="Secondary (disabled)" variation={ButtonVariation.SECONDARY} disabled />
+      </Layout.Horizontal>
+
+      <Layout.Horizontal spacing="medium">
+        <Button text="Tertiary" variation={ButtonVariation.TERTIARY} />
+        <Button text="Tertiary (disabled)" variation={ButtonVariation.TERTIARY} disabled />
+      </Layout.Horizontal>
+
       <Button icon="plus" tooltip="Icon" />
       <Button loading text="Text Button" {...args} />
 

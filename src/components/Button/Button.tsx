@@ -16,8 +16,14 @@ import css from './Button.css'
 export enum ButtonVariation {
   PRIMARY = 'variation-primary',
   SECONDARY = 'variation-secondary',
-  OUTLINE = 'variation-outline',
+  TERTIARY = 'variation-tertiary',
   LINK = 'variation-link'
+}
+
+export enum ButtonSize {
+  LARGE = 'large',
+  MEDIUM = 'medium',
+  SMALL = 'small'
 }
 
 export interface ButtonProps
@@ -61,6 +67,8 @@ export interface ButtonProps
   round?: boolean
 
   variation?: ButtonVariation
+
+  size?: ButtonSize
 }
 
 export interface LinkProps extends ButtonProps {
