@@ -39,10 +39,11 @@ div.card {
 
 .disabled {
   cursor: not-allowed !important;
-  background-color: var(--grey-200) !important;
+  background-color: var(--grey-100) !important;
   color: var(--disabled-color) !important;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+  > * {
+    opacity: 0.5;
+  }
 }
 
 .cardMenu {
