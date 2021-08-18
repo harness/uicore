@@ -15,11 +15,14 @@
       --background-color: var(--white);
       --background-color-hover: var(--white);
       --background-color-active: var(--white);
+      --font-size: 14px;
       --font-weight: 600;
       --box-shadow: none;
-      --padding-left: 16px;
-      --padding-right: 16px;
+      --padding: 16px;
+      --padding-left: var(--padding);
+      --padding-right: var(--padding);
       --border: 1px solid var(--primary-7);
+      --icon-padding: 4px;
 
       height: var(--button-height);
       color: var(--text-color) !important;
@@ -48,12 +51,56 @@
         opacity: 0.5;
       }
 
+      &.withLeftIcon {
+        --padding-left: calc(var(--padding) - var(--icon-padding));
+
+        span[icon]:first-of-type,
+        span[data-icon]:first-of-type {
+          padding-right: var(--icon-padding);
+        }
+      }
+
+      &.withRightIcon {
+        --padding-right: calc(var(--padding) - var(--icon-padding));
+
+        span[class*='button-text'] {
+          &,
+          &::before,
+          & > * {
+            margin-right: 0;
+          }
+        }
+
+        span[icon]:last-of-type,
+        span[data-icon]:last-of-type {
+          padding-left: var(--icon-padding);
+        }
+      }
+
       &.variation-primary {
         --text-color: var(--white);
         --background-color: var(--primary-7);
         --background-color-hover: var(--primary-8);
         --background-color-active: var(--primary-7);
         --border: none;
+
+        &[class*='intent-success'] {
+          --background-color: var(--green-500);
+          --background-color-hover: var(--green-600);
+          --background-color-active: var(--green-800);
+        }
+
+        &[class*='intent-danger'] {
+          --background-color: var(--red-500);
+          --background-color-hover: var(--red-600);
+          --background-color-active: var(--red-800);
+        }
+
+        &[class*='intent-warning'] {
+          --background-color: var(--yellow-500);
+          --background-color-hover: var(--yellow-600);
+          --background-color-active: var(--yellow-800);
+        }
       }
 
       &.variation-tertiary {
@@ -81,6 +128,23 @@
         &:focus {
           --text-color: var(--primary-7);
           --box-shadow: none;
+        }
+      }
+
+      &.size {
+        &.large {
+          --button-height: 48px;
+          --padding: 32px;
+          --icon-padding: 8px;
+          --font-size: 18px;
+        }
+
+        &.small {
+          --button-height: 24px;
+          --padding: 12px;
+          --icon-padding: 4px;
+          --font-size: 13px;
+          --font-weight: 500;
         }
       }
     }
@@ -341,7 +405,7 @@
             border-radius: 5px;
             border-width: 0.01em;
             border-style: solid;
-            border-color: var(--primary-7);
+            border-color: var(--background-color);
           }
 
           &[class*='variation-primary'],
@@ -351,18 +415,6 @@
               bottom: -2px;
               left: -2px;
               right: -2px;
-            }
-          }
-
-          &[class*='variation-tertiary'] {
-            &:after {
-              border-color: var(--grey-100);
-            }
-          }
-
-          &[class*='variation-icon'] {
-            &:after {
-              border-color: var(--grey-100);
             }
           }
         }

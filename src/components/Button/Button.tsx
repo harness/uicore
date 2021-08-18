@@ -23,7 +23,7 @@ export enum ButtonVariation {
 
 export enum ButtonSize {
   LARGE = 'large',
-  MEDIUM = 'medium',
+  MEDIUM = 'medium', // default
   SMALL = 'small'
 }
 
@@ -78,7 +78,7 @@ export interface LinkProps extends ButtonProps {
 }
 
 export function Button(props: ButtonProps): React.ReactElement {
-  const { icon, rightIcon, round, variation } = props
+  const { icon, rightIcon, round, variation, size } = props
   const [loading, setLoading] = useState(props.loading === true)
   const isMounted = useIsMounted()
 
@@ -105,7 +105,8 @@ export function Button(props: ButtonProps): React.ReactElement {
 
   const Component: ElementType = props.href || (props.disabled && props.tooltip) ? AnchorButton : BButton
   // Set icon size to 12px when there's one with button text
-  const iconSize = (icon || rightIcon) && (props.text || props.href) ? 16 : undefined
+  const iconSize =
+    (icon || rightIcon) && (props.text || props.href) ? (variation && size === ButtonSize.LARGE ? 24 : 16) : undefined
   // Extra left padding for left icon, for right icon, Blueprint already has proper margin
   const leftIconPadding: PaddingProps | undefined = props.text || props.href ? { right: 'xsmall' } : undefined
   const Tag = (props.href ? 'a' : 'button') as React.ElementType
@@ -119,7 +120,8 @@ export function Button(props: ButtonProps): React.ReactElement {
     'withoutHref',
     'withoutCurrentColor',
     'withoutBoxShadow',
-    'variation'
+    'variation',
+    'size'
   )
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
@@ -139,9 +141,12 @@ export function Button(props: ButtonProps): React.ReactElement {
           [css.round]: round,
           [css.iconOnly]: !props.text && !props.intent && !props.href,
           [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,
-          [css['without-shadow']]: props.withoutBoxShadow || props.minimal
+          [css['without-shadow']]: props.withoutBoxShadow || props.minimal,
+          [css.withLeftIcon]: icon,
+          [css.withRightIcon]: rightIcon
         },
-        variation ? cx(css.variation, css[variation]) : ''
+        variation ? cx(css.variation, css[variation]) : '',
+        size ? cx(css.size, css[size]) : ''
       )}
     />
   )
