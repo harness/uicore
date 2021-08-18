@@ -211,7 +211,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main style style-marginRight style-marginRight-var(--spacing-medium) with-current-color iconOnly without-shadow"
+        class="bp3-button bp3-minimal button font main style style-marginRight style-marginRight-var(--spacing-medium) with-current-color iconOnly without-shadow withLeftIcon"
         type="button"
       >
         <span
