@@ -1,7 +1,7 @@
 .container {
   .tags {
     padding: 3px var(--spacing-5);
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 25px;
     font-size: var(--font-size-normal);
     color: var(--primary-7);

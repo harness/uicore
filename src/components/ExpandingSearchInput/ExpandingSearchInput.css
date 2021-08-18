@@ -3,13 +3,41 @@
   justify-content: flex-start;
   background-color: transparent;
   height: 100%;
+  &.flip {
+    justify-content: flex-end;
+  }
   &.alwaysExpanded {
     input[type='search'] {
       width: 100% !important;
     }
-    &.flip {
-      input[type='search'] {
-        width: 100% !important;
+  }
+  &.light {
+    input[type='search'] {
+      &.filter {
+        color: var(--black);
+        background-color: var(--primary-1);
+        border: 1px solid var(--primary-7);
+      }
+      &.find {
+        color: var(--grey-900);
+        background-color: var(--primary-bg);
+        border: 1px solid var(--grey-200);
+      }
+      &:placeholder-shown:not(:focus) {
+        &.filter {
+          background-color: var(--white);
+          border-color: var(--grey-200);
+        }
+      }
+    }
+  }
+  &.dark {
+    input[type='search'] {
+      color: var(--grey-200);
+      background-color: #fff0;
+      border: 1px solid var(--grey-350);
+      &:placeholder-shown:not(:focus) {
+        border-color: transparent;
       }
     }
   }
@@ -21,30 +49,15 @@
     -webkit-transition-property: width, padding-right, border-radius;
     -webkit-transition-duration: 0.3s;
     -webkit-transition-timing-function: ease-in-out;
-    transition-property: width, padding-right, border-radius;
+    transition-property: all;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
     border-radius: 4px;
     font-size: 13px;
     min-height: 32px;
-    &.filter {
-      background-color: var(--primary-1);
-      border: 1px solid var(--primary-7);
-    }
-    &.find {
-      background-color: #fff0;
-      border: 1px solid var(--grey-350);
-    }
     &:placeholder-shown:not(:focus) {
       width: 32px;
       padding-right: 0;
-      &.filter {
-        background-color: var(--primary-bg);
-        border-color: var(--grey-200);
-      }
-      &.find {
-        border-color: transparent;
-      }
     }
     &.notransition {
       -webkit-transition: none !important;
@@ -63,12 +76,19 @@
   position: absolute;
   width: 32px;
   height: 100%;
-  color: var(--grey-350);
   display: flex !important;
   justify-content: center;
   align-items: center;
   margin: 0 !important;
   pointer-events: none;
+}
+
+.flip {
+  .icon {
+    position: relative;
+    top: 9px;
+    left: 32px !important;
+  }
 }
 
 .btnWrapper {
@@ -88,36 +108,15 @@
   :global {
     .bp3-button {
       padding: 0px !important;
-      height: 24px !important;
+      height: 22px !important;
       box-shadow: none !important;
       outline: none;
+      min-height: 22px;
+      min-width: 22px;
       &:hover {
         background-color: var(--primary-1) !important;
         border-radius: 50%;
       }
     }
   }
-}
-
-.flip {
-  flex-direction: row-reverse !important;
-  &.alwaysExpanded {
-    input[type='search'] {
-      padding-left: 10px !important;
-    }
-  }
-  input[type='search'] {
-    &:not(:placeholder-shown),
-    &:focus {
-      padding-left: 10px !important;
-    }
-  }
-}
-
-.flipicon {
-  left: auto !important;
-}
-
-.flipBtnWrapper {
-  right: 40px !important;
 }
