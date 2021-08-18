@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { DropDown, DropDownProps } from './DropDown'
-import { SelectOption } from '../Select/Select'
 import { Layout } from '../../layouts/Layout'
 
 export default {
@@ -38,10 +37,15 @@ export default {
 } as Meta
 
 export const Basic: Story<DropDownProps> = args => {
-  const [item, setItem] = useState<SelectOption | null>(null)
   return (
     <Layout.Horizontal flex>
-      <DropDown {...args} value={item} onChange={setItem} />
+      <DropDown
+        {...args}
+        onChange={option => {
+          // eslint-disable-next-line no-alert
+          alert(option.value)
+        }}
+      />
     </Layout.Horizontal>
   )
 }

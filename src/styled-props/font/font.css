@@ -12,7 +12,6 @@
 
     white-space: normal;
     line-height: var(--typography-line-height, var(--line-height));
-    color: var(--typography-color, var(--grey-900));
   }
 
   &.font-h1 {
@@ -103,6 +102,10 @@
 
   &.font-mono {
     font-family: var(--font-family-mono);
+  }
+
+  &[class*='font-variation'] {
+    color: var(--typography-color, var(--grey-900));
   }
 
   &.font-variation-display1 {

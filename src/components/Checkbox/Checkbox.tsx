@@ -1,7 +1,7 @@
 import { Assign } from 'utility-types'
 import { Checkbox as BpCheckbox, ICheckboxProps } from '@blueprintjs/core'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
-import React, { FormEvent } from 'react'
+import React, { FormEvent, ReactElement } from 'react'
 import styledClass from '../../styled-props/StyledProps.css'
 
 import css from './Checkbox.css'
@@ -14,7 +14,7 @@ export interface CheckboxProps extends Assign<Omit<ICheckboxProps, 'onChange'>, 
   className?: string
 }
 
-export function Checkbox(props: CheckboxProps) {
+export function Checkbox(props: CheckboxProps): ReactElement {
   const { className = '', onChange } = props
 
   return (

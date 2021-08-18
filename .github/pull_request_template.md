@@ -7,3 +7,4 @@ You can use the following comments to re-trigger PR Checks
 - StyleLint: `retrigger stylelint`
 - Build: `retrigger build`
 - Title Check: `retrigger titlecheck`
+- ImageSnapshot `retrigger ImageSnapshot`

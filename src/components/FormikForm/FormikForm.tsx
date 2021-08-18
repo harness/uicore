@@ -9,9 +9,9 @@ import {
 import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
-import cssRadio from '../Radio/Radio.css'
+import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
-import checkBoxCss from '../Checkbox/Checkbox.css'
+import { RadioButtonGroup } from '../RadioButton/RadioButtonGroup'
 import {
   FormGroup,
   InputGroup,
@@ -24,7 +24,6 @@ import {
   IOptionProps,
   IFileInputProps,
   TextArea as BpTextArea,
-  RadioGroup as BpRadioGroup,
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
@@ -51,7 +50,7 @@ import {
 } from '../CategorizedSelected/CategorizedSelect'
 import { SelectWithSubviewProps, SelectWithSubview } from '../SelectWithSubview/SelectWithSubview'
 import { MultiSelectWithSubviewProps, MultiSelectWithSubview } from '../MultiSelectWithSubView/MultiSelectWithSubView'
-import { MentionsInfo, register, unregister } from '@wings-software/mentions'
+
 import {
   ExpressionInputProps as ExpressionInputLocalProps,
   ExpressionInput as ExpressionInputLocal
@@ -159,22 +158,13 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
 
 export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
-  mentionsInfo?: Partial<MentionsInfo>
   tagsProps?: Partial<ITagInputProps>
 }
 
 type KVAccumulator = { [key: string]: string }
 
-const MENTIONS_DEFAULT: MentionsInfo = {
-  identifiersSet: /[A-Za-z0-9_.'"\(\)]/, // eslint-disable-line no-useless-escape
-  trigger: ['<', '<+'],
-  rule: '<+__match__>',
-  cached: true,
-  data: done => done([])
-}
-
 function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
-  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
+  const { formik, name, tagsProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -185,11 +175,6 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     ...rest
   } = restProps
   const [mentionsType] = React.useState(`kv-tag-input-${name}}`)
-
-  React.useEffect(() => {
-    register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
-    return () => unregister(mentionsType)
-  }, [])
 
   return (
     <FormGroup
@@ -234,12 +219,11 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
 
 export interface MultiInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
-  mentionsInfo?: Partial<MentionsInfo>
   tagsProps?: Partial<ITagInputProps>
 }
 
 function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
-  const { formik, name, mentionsInfo, tagsProps, ...restProps } = props
+  const { formik, name, tagsProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -250,11 +234,6 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
     ...rest
   } = restProps
   const [mentionsType] = React.useState(`multi-input-${name}}`)
-
-  React.useEffect(() => {
-    register(mentionsType, Object.assign({}, MENTIONS_DEFAULT, mentionsInfo))
-    return () => unregister(mentionsType)
-  }, [])
 
   return (
     <FormGroup
@@ -401,13 +380,6 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
     ...rest
   } = props
 
-  const itemTemp = items.map(item => {
-    const { className = '' } = item
-    return {
-      ...item,
-      className: cx(cssRadio.radio, className)
-    }
-  })
   return (
     <FormGroup
       label={getFormFieldLabel(label, name, props)}
@@ -417,12 +389,13 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
       disabled={disabled}
       inline={inline}
       {...rest}>
-      <BpRadioGroup
+      <RadioButtonGroup
         {...radioGroup}
+        className={inline ? css.inlineRadioGroup : ''}
         name={name}
         disabled={disabled}
         selectedValue={get(formik?.values, name)}
-        options={itemTemp}
+        options={items}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
@@ -453,7 +426,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <UiKitCheckbox
         {...omit(rest, 'tooltipProps')}
-        className={cx(checkBoxCss.checkbox, className)}
+        className={className}
         name={name}
         // eslint-disable-next-line
         // @ts-ignore
@@ -462,6 +435,42 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
         disabled={disabled}
         checked={get(formik?.values, name)}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
+          formik?.setFieldValue(name, e.currentTarget.checked)
+          onChange?.(e)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
+export interface ToggleProps extends UiKitToggleProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+  name: string
+  label: string
+}
+
+const Toggle = (props: ToggleProps & FormikContextProps<any>) => {
+  const { formik, name, label, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    onChange,
+    className = '',
+    ...rest
+  } = restProps
+  return (
+    <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
+      <UiKitToggle
+        {...omit(rest, 'tooltipProps')}
+        className={className}
+        name={name}
+        // eslint-disable-next-line
+        // @ts-ignore
+        label={getFormFieldLabel(label, name, props, css.checkBoxDocTooltipLabel)}
+        disabled={disabled}
+        checked={get(formik?.values, name)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           formik?.setFieldValue(name, e.currentTarget.checked)
           onChange?.(e)
         }}
@@ -1311,6 +1320,7 @@ export const FormInput = {
   FileInput: connect(FileInput),
   RadioGroup: connect(RadioGroup),
   CheckBox: connect(CheckBox),
+  Toggle: connect(Toggle),
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
   Text: connect(Text),

@@ -11,3 +11,14 @@
     color: var(--primary-6) !important;
   }
 }
+
+.gridButton,
+.listButton {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  min-width: 24px;
+}
+
+.gridButton {
+  margin-right: var(--spacing-small) !important;
+}

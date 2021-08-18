@@ -65,17 +65,6 @@ export const Basic: Story<FormikFormProps> = () => (
               tooltipProps={{
                 dataTooltipId: 'tagInputId'
               }}
-              mentionsInfo={{
-                data: done =>
-                  done([
-                    'app.name',
-                    'app.description',
-                    'pipeline.name',
-                    'pipeline.description',
-                    'pipeline.identifier',
-                    'pipeline.stage.qa.displayName'
-                  ])
-              }}
             />
             <FormInput.ExpressionInput
               items={[
@@ -99,6 +88,7 @@ export const Basic: Story<FormikFormProps> = () => (
                 dataTooltipId: 'checkboxField'
               }}
             />
+            <FormInput.Toggle name="toggle" label="Toggle" tooltipProps={{ dataTooltipId: 'toggleField' }} />
             <FormInput.FileInput
               name="picture"
               label="Upload Picture"
@@ -121,7 +111,12 @@ export const Basic: Story<FormikFormProps> = () => (
               placeholder="Select Color"
               items={[
                 { label: 'Red', value: 'red' },
-                { label: 'Blue', value: 'blue' }
+                { label: 'Blue', value: 'blue' },
+                {
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
+                },
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
             />
             <FormInput.MultiSelect
@@ -131,20 +126,11 @@ export const Basic: Story<FormikFormProps> = () => (
               items={[
                 { label: 'Red', value: 'red' },
                 { label: 'Blue', value: 'blue' },
-                { label: 'Blue2', value: 'blue2' },
-                { label: 'Blue3', value: 'blue3' },
-                { label: 'Blue4', value: 'blue4' },
-                { label: 'Blue44', value: 'blue44' },
-                { label: 'Blue54', value: 'blue45w' },
                 {
-                  label:
-                    'Blueqw Blueqw Blueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw BlueqwBlueqw Blueqw Blueqw',
-                  value: 'blueqw'
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
                 },
-                { label: 'Bluewew', value: 'bluewew' },
-                { label: 'Bluedd', value: 'blues' },
-                { label: 'Bluegf', value: 'bluesde' },
-                { label: 'Bluefgf', value: 'blueww' }
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
             />
             <FormInput.TextArea name="description" label="Description" />
@@ -153,7 +139,12 @@ export const Basic: Story<FormikFormProps> = () => (
               label="Job"
               selectItems={[
                 { label: 'Software Engineer', value: 'SE' },
-                { label: 'Quality Engineer', value: 'QE' }
+                { label: 'Quality Engineer', value: 'QE' },
+                {
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
+                },
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
               useValue
               multiTypeInputProps={{
@@ -161,7 +152,12 @@ export const Basic: Story<FormikFormProps> = () => (
                   addClearBtn: true,
                   items: [
                     { label: 'Software Engineer', value: 'SE' },
-                    { label: 'Quality Engineer', value: 'QE' }
+                    { label: 'Quality Engineer', value: 'QE' },
+                    {
+                      label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                      value: 'xyz'
+                    },
+                    { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
                   ]
                 }
               }}
@@ -173,7 +169,12 @@ export const Basic: Story<FormikFormProps> = () => (
               label="Hobbies"
               selectItems={[
                 { label: 'Basket Ball', value: 'BBall' },
-                { label: 'Drawing', value: 'Drawing' }
+                { label: 'Drawing', value: 'Drawing' },
+                {
+                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                  value: 'xyz'
+                },
+                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
             />
             <FormInput.CategorizedSelect
@@ -201,4 +202,50 @@ export const Basic: Story<FormikFormProps> = () => (
       }}
     </Formik>
   </Container>
+)
+
+export const RadioGroups: Story<FormikFormProps> = () => (
+  <Formik onSubmit={() => undefined} formName="radioButtons" initialValues={{}}>
+    <FormikForm>
+      <FormInput.RadioGroup
+        name="example1"
+        label="Basic"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        inline
+        name="example2"
+        label="Inline form input"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        radioGroup={{ inline: true }}
+        name="example3"
+        label="Inline RadioGroup"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        inline
+        radioGroup={{ inline: true }}
+        name="example4"
+        label="Inline both"
+        items={[
+          { label: 'Option 1', value: 'opt1' },
+          { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+    </FormikForm>
+  </Formik>
 )

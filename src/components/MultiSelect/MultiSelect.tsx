@@ -5,6 +5,7 @@ import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } f
 
 import css from './MultiSelect.css'
 import { Button } from '../../components/Button/Button'
+import { Text } from '../../components/Text/Text'
 import { Icon } from '../../icons/Icon'
 import { Utils } from '../../core/Utils'
 
@@ -136,7 +137,9 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
           disabled={item.disabled}
           readOnly
         />
-        {item.label}
+        <Text className={css.menuItemLabel} lineClamp={1}>
+          {item.label}
+        </Text>
       </li>
     )
   }
@@ -200,7 +203,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         onRemove(value: React.ReactNode) {
           const option = selectedItems.find(opt => {
             if (typeof value === 'string') return opt.label === value
-            else return opt.label === (value as ReactElement).key
+            else return opt.value === (value as ReactElement).key
           })
           if (option) {
             handleItemSelect(option)

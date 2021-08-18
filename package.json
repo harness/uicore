@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uicore",
-  "version": "0.1.324",
+  "version": "0.1.353",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -19,14 +19,16 @@
     "test:ci": "jest --no-cache ./src --ci  --coverage --reporters=jest-junit --reporters=default --runInBand --silent",
     "fmt": "prettier --write \"./src/**/*.{ts,tsx,css}\"",
     "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/",
-    "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts",
+    "ui:icons": "node ./scripts/build-icons.js > ./src/icons/HarnessIcons.ts && prettier --write src/icons/HarnessIcons.ts",
     "ui:watch": "NODE_ENV=development webpack --watch",
     "ui:build": "NODE_ENV=production webpack",
     "docs:watch": "cd docs; yarn watch",
     "setup": "bash scripts/github-package-registry.sh",
     "types:copy": "echo 'Adhoc type copy...'; mv dist/src/* dist/; rm -rf dist/src",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "do-puppeteer-storyshots": "./node_modules/.bin/jest --projects=./storyshots-puppeteer",
+    "puppeteer-storyshots": "yarn run build-storybook && yarn run do-puppeteer-storyshots"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/wings-software/uicore",
@@ -37,7 +39,6 @@
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
-    "@wings-software/mentions": "^1.2.9",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
     "lodash-es": "^4.17.15",
@@ -59,12 +60,16 @@
     "@storybook/addon-docs": "^6.3.1",
     "@storybook/addon-essentials": "^6.3.1",
     "@storybook/addon-links": "^6.3.1",
+    "@storybook/addon-storyshots": "^6.3.6",
+    "@storybook/addon-storyshots-puppeteer": "^6.3.6",
     "@storybook/builder-webpack5": "^6.3.1",
     "@storybook/manager-webpack5": "^6.3.1",
     "@storybook/react": "^6.3.1",
     "@svgr/webpack": "^5.5.0",
+    "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.2",
+    "@testing-library/user-event": "^13.2.1",
     "@types/classnames": "^2.2.9",
     "@types/jest": "^26.0.19",
     "@types/lodash-es": "^4.17.4",
@@ -76,7 +81,6 @@
     "@types/react-table": "7.0.13",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
-    "@wings-software/mentions": "^1.2.9",
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
@@ -90,6 +94,7 @@
     "husky": "^4.3.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
+    "jest-image-snapshot": "^4.5.1",
     "jest-junit": "^12.0.0",
     "lint-staged": "^10.5.3",
     "lodash-es": "^4.17.21",
@@ -103,6 +108,7 @@
     "postcss-mixins": "^8.1.0",
     "postcss-nested": "^5.0.3",
     "prettier": "^2.2.1",
+    "puppeteer": "^10.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-draggable": "^4.2.0",
@@ -154,5 +160,6 @@
   },
   "files": [
     "dist/*"
-  ]
+  ],
+  "dependencies": {}
 }

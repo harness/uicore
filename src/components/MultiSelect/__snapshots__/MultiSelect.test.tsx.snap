@@ -190,7 +190,12 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     type="checkbox"
                     value="004"
                   />
-                  Charmander
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charmander
+                  </p>
                 </li>
                 <li
                   class="menuItem"
@@ -201,7 +206,12 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     type="checkbox"
                     value="005"
                   />
-                  Charmeleon
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charmeleon
+                  </p>
                 </li>
                 <li
                   class="menuItem"
@@ -212,7 +222,12 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     type="checkbox"
                     value="006"
                   />
-                  Charizard
+                  <p
+                    class="font lineclamp main menuItemLabel"
+                    style="--text-line-clamp: 1;"
+                  >
+                    Charizard
+                  </p>
                 </li>
                 <button
                   class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow"
