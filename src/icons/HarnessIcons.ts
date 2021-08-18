@@ -23,6 +23,7 @@ import ApprovalStep from './approval-step.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AwsKms from './aws-kms.svg'
+import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
@@ -574,6 +575,7 @@ type HarnessIconName =
   | 'arm'
   | 'audit-log-created'
   | 'aws-kms'
+  | 'aws-secret-manager'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'banned'
@@ -1125,6 +1127,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   arm: Arm,
   'audit-log-created': AuditLogCreated,
   'aws-kms': AwsKms,
+  'aws-secret-manager': AwsSecretManager,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
