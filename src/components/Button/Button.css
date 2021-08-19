@@ -25,6 +25,7 @@
       --icon-padding: 4px;
 
       height: var(--button-height);
+      min-height: var(--button-height);
       color: var(--text-color) !important;
       background-color: var(--background-color) !important;
       font-weight: var(--font-weight) !important;
