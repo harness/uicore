@@ -35,7 +35,13 @@ export const ConfirmActionButton: React.FC<ConfirmActionButtonProps> = ({
             <span />
             <Layout.Horizontal spacing="small">
               <Button text={cancelText} className={Classes.POPOVER_DISMISS} variation={ButtonVariation.TERTIARY} />
-              <Button intent="danger" variation={ButtonVariation.PRIMARY} text={confirmText} className={Classes.POPOVER_DISMISS} onClick={onClick} />
+              <Button
+                intent="danger"
+                variation={ButtonVariation.PRIMARY}
+                text={confirmText}
+                className={Classes.POPOVER_DISMISS}
+                onClick={onClick}
+              />
             </Layout.Horizontal>
           </Container>
         </Container>

@@ -26,8 +26,18 @@ export default {
 export const ConfirmButton: Story<ConfirmActionButtonProps> = args => {
   return (
     <>
-      <ConfirmActionButton variation={ButtonVariation.ICON} icon="pause" onClick={() => alert('Action is confirmed')} {...args} />
-      <ConfirmActionButton variation={ButtonVariation.ICON} icon="stop" onClick={() => alert('Action is confirmed')} {...args} />
+      <ConfirmActionButton
+        variation={ButtonVariation.ICON}
+        icon="pause"
+        onClick={() => alert('Action is confirmed')}
+        {...args}
+      />
+      <ConfirmActionButton
+        variation={ButtonVariation.ICON}
+        icon="stop"
+        onClick={() => alert('Action is confirmed')}
+        {...args}
+      />
     </>
   )
 }
