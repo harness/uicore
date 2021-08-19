@@ -122,6 +122,10 @@
         }
       }
 
+      &.variation-secondary {
+        --focus-outline-color: var(--primary-7);
+      }
+
       &.variation-tertiary {
         --text-color: var(--grey-500);
         --background-color: var(--grey-100);
@@ -136,6 +140,9 @@
         --background-color-hover: transparent;
         --background-color-active: transparent;
         --border: none;
+        --focus-outline-color: var(--text-color);
+        width: var(--button-height);
+        padding: 0;
 
         &:hover:not([disabled]) {
           --text-color: var(--primary-6);
@@ -147,6 +154,12 @@
         &:focus {
           --text-color: var(--primary-7);
           --box-shadow: none;
+        }
+
+        span[icon],
+        span[data-icon] {
+          padding: 0 !important;
+          margin: 0;
         }
       }
 
@@ -424,7 +437,7 @@
             border-radius: 5px;
             border-width: 0.01em;
             border-style: solid;
-            border-color: var(--background-color);
+            border-color: var(--focus-outline-color, var(--background-color));
           }
 
           &[class*='variation-primary'],
