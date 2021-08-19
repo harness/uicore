@@ -57,7 +57,7 @@
   }
   .stepDetails {
     padding: var(--spacing-9) var(--spacing-10) var(--spacing-10) var(--spacing-10);
-    background: var(--form-bg);
+    background: var(--form-bg) !important;
   }
 }
 
