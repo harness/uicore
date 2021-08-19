@@ -78,8 +78,8 @@
 .completedIcon {
   background-color: var(--green-500);
   border-radius: 50%;
-  height: var(--spacing-large);
-  width: var(--spacing-large);
+  height: var(--spacing-large) !important;
+  width: var(--spacing-large) !important;
 }
 .harnessWatermark {
   position: absolute;
