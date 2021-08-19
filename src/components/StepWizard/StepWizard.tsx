@@ -5,6 +5,7 @@ import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { Text } from '../../components/Text/Text'
 import { romanize } from '../../core/Utils'
 import { isNil } from 'lodash-es'
+import { Color } from '../../core/Color'
 
 interface StepChangeData<SharedObject> {
   prevStep: number
@@ -300,23 +301,24 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
               )}>
               {isNestedFirstStep && state.nestedStepWizard?.[index]?.wizard?.props?.title && (
                 <>
-                  <div style={{ gridColumn: '1/ span 2', color: 'var(--white)' }}>
+                  <div style={{ gridColumn: '1/ span 2', color: 'var(--grey-50)', marginBottom: 'var(--spacing-6)' }}>
                     {state.nestedStepWizard?.[index]?.wizard?.props?.title}
                   </div>
                 </>
               )}
               {completedSteps ? (
                 <span className={css.completedIcon}>
-                  <Icon name="small-tick" size={20} color="grey200" />
+                  <Icon name="small-tick" size={20} color={Color.PRIMARY_7} />
                 </span>
               ) : (
                 <>{typeof stepName === 'string' && <span className={css.number}>{stepIndex}</span>}</>
               )}
-              <Text className={css.stepName} lineClamp={2} width={240}>
+
+              <Text className={css.stepName} lineClamp={2} width={200}>
                 {stepName}
               </Text>
               {!isNestedFirstStep && state.nestedStepWizard?.[index]?.stepIndex === 1 ? (
-                <Text className={css.stepName} lineClamp={2} width={240}>
+                <Text className={css.stepName} lineClamp={2} width={200}>
                   {subtitle}
                 </Text>
               ) : null}
@@ -363,6 +365,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       {state.activeStep && (
         <div className={cx(css.stepDetails, stepClassName)}> {React.cloneElement(activeChild, childProps)}</div>
       )}
+      <Icon name="harness-with-color" className={css.harnessWatermark} size={346} color={Color.GREY_50} />
     </div>
   )
 }
