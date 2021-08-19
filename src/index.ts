@@ -166,3 +166,4 @@ export { Breadcrumbs, BreadcrumbsProps, Breadcrumb } from './components/Breadcru
 export { GridListToggle, GridListToggleProps, Views } from './components/GridListToggle/GridListToggle'
 export { FormError } from './components/FormError/FormError'
 export { FontVariation } from './styled-props/font/FontProps'
+export { FormikTooltipContext } from './components/FormikForm/FormikTooltipContext'
