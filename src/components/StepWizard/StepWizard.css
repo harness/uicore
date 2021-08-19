@@ -58,6 +58,7 @@
   .stepDetails {
     padding: var(--spacing-9) var(--spacing-10) var(--spacing-10) var(--spacing-10);
     background: var(--form-bg);
+    z-index: 2;
   }
 }
 
@@ -86,6 +87,7 @@
   right: 78.36%;
   top: 66.12%;
   bottom: -17%;
+  z-index: 1;
   svg {
     opacity: 0.1;
   }
