@@ -4,7 +4,7 @@ import { Container } from '../Container/Container'
 import { Heading } from '../Heading/Heading'
 import { Text } from '../Text/Text'
 import { Layout } from '../../layouts/Layout'
-import { ButtonProps, Button } from '../Button/Button'
+import { ButtonProps, Button, ButtonVariation } from '../Button/Button'
 
 export interface ConfirmActionButtonProps extends ButtonProps {
   title: string
@@ -34,8 +34,8 @@ export const ConfirmActionButton: React.FC<ConfirmActionButtonProps> = ({
           <Container flex>
             <span />
             <Layout.Horizontal spacing="small">
-              <Button text={cancelText} className={Classes.POPOVER_DISMISS} />
-              <Button intent="danger" text={confirmText} className={Classes.POPOVER_DISMISS} onClick={onClick} />
+              <Button text={cancelText} className={Classes.POPOVER_DISMISS} variation={ButtonVariation.TERTIARY} />
+              <Button intent="danger" variation={ButtonVariation.PRIMARY} text={confirmText} className={Classes.POPOVER_DISMISS} onClick={onClick} />
             </Layout.Horizontal>
           </Container>
         </Container>

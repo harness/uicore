@@ -1,8 +1,7 @@
 /* eslint-disable no-alert */
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-
-import { Layout, ConfirmActionButton, ConfirmActionButtonProps } from '../..'
+import { Layout, ConfirmActionButton, ConfirmActionButtonProps, ButtonVariation } from '../..'
 
 export default {
   title: 'Components / Confirm Action Button',
@@ -27,8 +26,8 @@ export default {
 export const ConfirmButton: Story<ConfirmActionButtonProps> = args => {
   return (
     <>
-      <ConfirmActionButton minimal icon="pause" onClick={() => alert('Action is confirmed')} {...args} />
-      <ConfirmActionButton minimal icon="stop" onClick={() => alert('Action is confirmed')} {...args} />
+      <ConfirmActionButton variation={ButtonVariation.ICON} icon="pause" onClick={() => alert('Action is confirmed')} {...args} />
+      <ConfirmActionButton variation={ButtonVariation.ICON} icon="stop" onClick={() => alert('Action is confirmed')} {...args} />
     </>
   )
 }
