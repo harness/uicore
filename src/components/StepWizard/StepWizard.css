@@ -87,6 +87,7 @@
   right: 78.36%;
   top: 66.12%;
   bottom: -17%;
+  width: 400px !important;
   z-index: 1;
   svg {
     opacity: 0.1;
