@@ -390,6 +390,7 @@ import PlayOutline from './play-outline.svg'
 import PluginStep from './plugin-step.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
+import ProjectsWizard from './projects-wizard.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Queued from './queued.svg'
@@ -944,6 +945,7 @@ type HarnessIconName =
   | 'plugin-step'
   | 'polygon'
   | 'profile'
+  | 'projects-wizard'
   | 'publish-step'
   | 'question'
   | 'queued'
@@ -1498,6 +1500,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'plugin-step': PluginStep,
   polygon: Polygon,
   profile: Profile,
+  'projects-wizard': ProjectsWizard,
   'publish-step': PublishStep,
   question: Question,
   queued: Queued,
