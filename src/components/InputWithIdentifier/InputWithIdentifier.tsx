@@ -95,7 +95,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
         </Popover>
         {isIdentifierEditable && !editable ? (
           <Icon
-            name="edit"
+            name="Edit"
             size={12}
             style={{ verticalAlign: 'middle', cursor: 'pointer' }}
             onClick={() => {
