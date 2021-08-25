@@ -20,6 +20,7 @@ import AppKubernetes from './app-kubernetes.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
+import Argo from './argo.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AwsKms from './aws-kms.svg'
@@ -573,6 +574,7 @@ type HarnessIconName =
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
+  | 'argo'
   | 'arm'
   | 'audit-log-created'
   | 'aws-kms'
@@ -1126,6 +1128,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
+  argo: Argo,
   arm: Arm,
   'audit-log-created': AuditLogCreated,
   'aws-kms': AwsKms,
