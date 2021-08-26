@@ -7,6 +7,7 @@ import { Formik, FormikForm, FormInput } from '../FormikForm/FormikForm'
 import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { FormikFormProps } from 'formik'
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
 export default {
   title: 'Form / FormikForm',
@@ -43,7 +44,7 @@ export const Basic: Story<FormikFormProps> = () => (
           <FormikForm>
             <FormInput.Text
               name="name"
-              label="Name"
+              label={<HarnessDocTooltip contentFromParent="XYZ tooltip" labelText="Name" tooltipId="nameTextField" />}
               placeholder="First Name"
               tooltipProps={{
                 dataTooltipId: 'nameTextField'

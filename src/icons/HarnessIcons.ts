@@ -532,6 +532,7 @@ import TestVerification from './test-verification.svg'
 import Text from './text.svg'
 import ThinnerSearch from './thinner-search.svg'
 import Timeout from './timeout.svg'
+import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerExecution from './trigger-execution.svg'
@@ -1087,6 +1088,7 @@ type HarnessIconName =
   | 'text'
   | 'thinner-search'
   | 'timeout'
+  | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
   | 'trigger-execution'
@@ -1642,6 +1644,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   text: Text,
   'thinner-search': ThinnerSearch,
   timeout: Timeout,
+  'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
   'trigger-execution': TriggerExecution,

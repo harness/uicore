@@ -21,14 +21,23 @@
     .bp3-popover-content {
       padding: 0;
     }
+
+    .bp3-popover-arrow-fill {
+      fill: var(--primary-9-dark);
+    }
   }
 }
 
 .tooltipContentWrapper {
   margin: 0;
-  padding: 10px;
+  padding: var(--spacing-5);
   height: 100%;
+  color: white;
   max-width: 400px;
+  border-radius: var(--spacing-2);
+  line-height: 18px;
+  outline: none;
+  background: var(--primary-9-dark);
 
   p {
     margin: 0 !important;
