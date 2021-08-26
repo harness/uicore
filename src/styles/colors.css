@@ -8,6 +8,7 @@
   /* ============ Colors ============ */
   /* Primary colors - for links, buttons, etc. */
   --primary-10: #1a1a1a;
+  --primary-9-dark: #1b2e49; /* To be used in tooltip background */
   --primary-9: #0a3364; /* Darker Primary */
   --primary-8: #004ba4;
   --primary-7: #0278d5; /* Main Primary */

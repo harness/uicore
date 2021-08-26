@@ -1,12 +1,13 @@
 import React from 'react'
 import cx from 'classnames'
 import snarkdown from 'snarkdown'
-import { Icon, PopoverInteractionKind } from '@blueprintjs/core'
+import { PopoverInteractionKind, Position } from '@blueprintjs/core'
 import { useTooltipContext } from './TooltipContext'
 import { TooltipRenderProps, UseTooltipsReturn } from './types'
 
 import css from './Tooltip.css'
 import { Popover } from '../../components/Popover/Popover'
+import { Icon } from '../../icons/Icon'
 
 export function useTooltips(): UseTooltipsReturn {
   const { getTooltip, tooltipDictionary } = useTooltipContext()
@@ -34,22 +35,23 @@ export const HarnessDocTooltip = ({
   useStandAlone = false,
   getTooltipAdditionalVars,
   labelText,
-  className: propsClassName
+  className: propsClassName,
+  contentFromParent
 }: TooltipRenderProps) => {
   const { getTooltip } = useTooltips()
-  const tooltipContent = getTooltip(tooltipId || '', getTooltipAdditionalVars)
+  const tooltipContent = contentFromParent || getTooltip(tooltipId || '', getTooltipAdditionalVars)
 
   const tooltipContentHtml = _asHtml(tooltipContent)
 
   const tooltipJsxComponent = (
     <Popover
       popoverClassName={css.tooltipWrapper}
-      position="auto"
+      position={Position.TOP}
       interactionKind={PopoverInteractionKind.HOVER}
       // eslint-disable-next-line
       content={<div className={css.tooltipContentWrapper} dangerouslySetInnerHTML={{ __html: tooltipContentHtml }} />}>
       <span className={css.tooltipIcon}>
-        <Icon iconSize={12} icon="help" />
+        <Icon size={12} name="tooltip-icon" />
       </span>
     </Popover>
   )

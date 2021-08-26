@@ -15,6 +15,7 @@ export interface TooltipRenderProps {
   labelText?: ReactNode | null
   useStandAlone?: boolean
   className?: string
+  contentFromParent?: string
 }
 
 export interface TooltipContextValue {
