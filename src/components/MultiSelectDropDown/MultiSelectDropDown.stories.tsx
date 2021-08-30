@@ -5,9 +5,10 @@ import { MultiSelectOption } from '../MultiSelect/MultiSelect'
 import { omit } from 'lodash-es'
 import data from '../../_stories/components/pokedex.json'
 import { MultiSelectDropDown, MultiSelectDropDownProps } from './MultiSelectDropDown'
+import { Layout } from '../../layouts/Layout'
 
 export default {
-  title: 'Form / MultiSelectDropDown',
+  title: 'Components / MultiSelectDropDown',
 
   component: MultiSelectDropDown,
   parameters: {
@@ -50,14 +51,16 @@ export const Basic: Story<MultiSelectDropDownProps> = args => {
   const [value, setValue] = React.useState<MultiSelectOption[]>(localItems.slice(0, 3))
 
   return (
-    <MultiSelectDropDown
-      items={items}
-      value={value}
-      onChange={items => {
-        setValue(items)
-      }}
-      {...argsCopy}
-    />
+    <Layout.Horizontal flex>
+      <MultiSelectDropDown
+        items={items}
+        value={value}
+        onChange={items => {
+          setValue(items)
+        }}
+        {...argsCopy}
+      />
+    </Layout.Horizontal>
   )
 }
 function dummyPromise(): Promise<MultiSelectOption[]> {
@@ -74,13 +77,15 @@ export const AsyncSelect: Story<MultiSelectDropDownProps> = args => {
   const [value, setValue] = React.useState<MultiSelectOption[]>([])
 
   return (
-    <MultiSelectDropDown
-      items={items}
-      value={value}
-      onChange={items => {
-        setValue(items)
-      }}
-      {...argsCopy}
-    />
+    <Layout.Horizontal flex>
+      <MultiSelectDropDown
+        items={items}
+        value={value}
+        onChange={items => {
+          setValue(items)
+        }}
+        {...argsCopy}
+      />
+    </Layout.Horizontal>
   )
 }
