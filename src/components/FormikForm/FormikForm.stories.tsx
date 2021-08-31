@@ -20,7 +20,6 @@ export const Basic: Story<FormikFormProps> = () => (
       formName="formikFormBasic"
       initialValues={{
         name: '',
-        tags: {},
         multiInput: '',
         colorMulti: '',
         description: '',
@@ -63,6 +62,7 @@ export const Basic: Story<FormikFormProps> = () => (
             <FormInput.KVTagInput
               name="tags"
               label="Tags"
+              isArray={true}
               tooltipProps={{
                 dataTooltipId: 'tagInputId'
               }}
