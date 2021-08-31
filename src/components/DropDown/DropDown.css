@@ -2,40 +2,57 @@
   &.disabled {
     pointer-events: none;
     .dropdownButton {
-      opacity: 0.5;
-    }
-  }
-  .dropdownButton {
-    background-color: var(--primary-bg);
-    border: 1px solid var(--grey-200);
-    border-radius: var(--spacing-2);
-    padding: 0px var(--spacing-4);
-    height: var(--spacing-8);
-    column-gap: var(--spacing-xlarge);
-    transition: all 200ms ease-out;
-    transition-property: border-color, background-color;
-    &.withoutBorder {
-      border-color: transparent;
-      column-gap: var(--spacing-4);
-      background: none;
-      &:hover {
+      &.withBorder {
         background-color: var(--grey-100);
-        border-color: var(--grey-100);
       }
       .labelWrapper {
         .label {
-          font-size: var(--font-size-normal);
-          font-weight: 400;
-          color: var(--grey-900);
+          color: var(--grey-400) !important;
+        }
+      }
+    }
+  }
+  .dropdownButton {
+    border-radius: var(--spacing-2);
+    padding: 0px var(--spacing-4);
+    height: var(--spacing-8);
+    transition: all 200ms ease-out;
+    transition-property: border-color, background-color;
+    &.minWidth {
+      column-gap: var(--spacing-xlarge);
+    }
+    &.withBorder {
+      background-color: var(--primary-bg);
+      border: 1px solid var(--grey-200);
+      &.selected {
+        border-color: var(--primary-7);
+        background-color: var(--primary-1);
+      }
+      .labelWrapper {
+        .label {
+          font-size: var(--font-size-small);
+          font-weight: 500;
+          color: var(--grey-800);
+          outline: none;
         }
       }
     }
     .labelWrapper {
+      flex-shrink: 1;
       column-gap: var(--spacing-3);
+      :global(.bp3-popover-wrapper) {
+        display: inline-flex;
+      }
       .label {
-        font-size: var(--font-size-small);
-        font-weight: 500;
-        color: var(--grey-800);
+        font-size: var(--font-size-normal);
+        font-weight: 400;
+        color: var(--grey-900);
+      }
+    }
+    &:not(.withBorder) {
+      &:hover {
+        background-color: var(--grey-100);
+        border-color: var(--grey-100);
       }
     }
     .btnWrapper {
@@ -47,10 +64,6 @@
       min-height: 14px;
       min-width: 14px;
       outline: none;
-    }
-    &.selected:not(.withoutBorder) {
-      border-color: var(--primary-7);
-      background-color: var(--primary-1);
     }
     button {
       box-shadow: none !important;

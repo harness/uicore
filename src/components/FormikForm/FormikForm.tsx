@@ -159,12 +159,21 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
 export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
   tagsProps?: Partial<ITagInputProps>
+  isArray?: boolean
+  placeholder?: string
 }
 
 type KVAccumulator = { [key: string]: string }
 
 function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
-  const { formik, name, tagsProps, ...restProps } = props
+  const {
+    formik,
+    name,
+    tagsProps,
+    isArray = false,
+    placeholder = 'Type and press enter to create a tag',
+    ...restProps
+  } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -186,19 +195,25 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
       inline={inline}
       {...rest}>
       <BPTagInput
-        values={Object.keys(formik?.values[name] || {}).map(key => {
-          const value = formik?.values[name][key]
-          return value ? `${key}:${value}` : key
-        })}
+        values={
+          isArray
+            ? formik?.values[name] || []
+            : Object.keys(formik?.values[name] || {}).map(key => {
+                const value = formik?.values[name][key]
+                return value ? `${key}:${value}` : key
+              })
+        }
         onChange={(changed: unknown) => {
           const values: string[] = changed as string[]
           formik?.setFieldValue(
             name,
-            values?.reduce((acc, tag) => {
-              const parts = tag.split(':')
-              acc[parts[0]] = parts[1]?.trim() || ''
-              return acc
-            }, {} as KVAccumulator) || {}
+            isArray
+              ? values
+              : values?.reduce((acc, tag) => {
+                  const parts = tag.split(':')
+                  acc[parts[0]] = parts[1]?.trim() || ''
+                  return acc
+                }, {} as KVAccumulator) || {}
           )
         }}
         inputRef={input => {
@@ -210,7 +225,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
             event.stopPropagation()
           }
         }}
-        placeholder="Type and press enter to create a tag"
+        placeholder={placeholder}
         {...tagsProps}
       />
     </FormGroup>

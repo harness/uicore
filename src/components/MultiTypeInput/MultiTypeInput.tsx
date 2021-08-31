@@ -97,7 +97,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     }
   }
 
-  const inputWidth = width && width - 28
   const FixedTypeComponent = fixedTypeComponent
   const fixedComponentOnChangeCallback = useCallback(
     (val, multiTypeInputValue: MultiTypeInputValue) => {
@@ -131,7 +130,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
         <TextInput
           wrapperClassName={css.input}
           name={name}
-          style={{ width: inputWidth }}
           placeholder={RUNTIME_INPUT_VALUE}
           disabled
           value={value as string}

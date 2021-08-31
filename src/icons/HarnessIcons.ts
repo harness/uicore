@@ -303,6 +303,7 @@ import MainServiceAmi from './main-service-ami.svg'
 import MainServices from './main-services.svg'
 import MainSetup from './main-setup.svg'
 import MainShare from './main-share.svg'
+import MainSort from './main-sort.svg'
 import MainStart from './main-start.svg'
 import MainTags from './main-tags.svg'
 import MainTemplateLibrary from './main-template-library.svg'
@@ -859,6 +860,7 @@ type HarnessIconName =
   | 'main-services'
   | 'main-setup'
   | 'main-share'
+  | 'main-sort'
   | 'main-start'
   | 'main-tags'
   | 'main-template-library'
@@ -1415,6 +1417,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-services': MainServices,
   'main-setup': MainSetup,
   'main-share': MainShare,
+  'main-sort': MainSort,
   'main-start': MainStart,
   'main-tags': MainTags,
   'main-template-library': MainTemplateLibrary,

@@ -2,44 +2,51 @@
   &.disabled {
     pointer-events: none;
     .dropdownButton {
+      &.withBorder {
+        background-color: var(--grey-100);
+      }
       .labelWrapper {
         .label {
-          color: var(--grey-400);
+          color: var(--grey-400) !important;
         }
       }
     }
   }
   .dropdownButton {
-    background-color: var(--primary-bg);
-    border: 1px solid var(--grey-200);
     border-radius: var(--spacing-2);
     padding: 0px var(--spacing-4);
     height: var(--spacing-8);
-    column-gap: var(--spacing-xlarge);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
-    &.withoutBorder {
-      border-color: transparent;
-      column-gap: var(--spacing-4);
-      background: none;
-      &:hover {
-        background-color: var(--grey-100);
-        border-color: var(--grey-100);
+    &.minWidth {
+      column-gap: var(--spacing-xlarge);
+    }
+    &.withBorder {
+      background-color: var(--primary-bg);
+      border: 1px solid var(--grey-200);
+      &.selected {
+        border-color: var(--primary-7);
+        background-color: var(--primary-1);
       }
       .labelWrapper {
         .label {
-          font-size: var(--font-size-normal);
-          font-weight: 400;
-          color: var(--grey-900);
+          font-size: var(--font-size-small);
+          font-weight: 500;
+          color: var(--grey-800);
+          outline: none;
         }
       }
     }
     .labelWrapper {
+      flex-shrink: 1;
       column-gap: var(--spacing-3);
+      :global(.bp3-popover-wrapper) {
+        display: inline-flex;
+      }
       .label {
-        font-size: var(--font-size-small);
-        font-weight: 500;
-        color: var(--grey-800);
+        font-size: var(--font-size-normal);
+        font-weight: 400;
+        color: var(--grey-900);
       }
       .counter {
         font-size: var(--font-size-small);
@@ -48,6 +55,13 @@
         color: var(--white);
         padding: 0 var(--spacing-small);
         border-radius: 10px;
+        line-height: 16px;
+      }
+    }
+    &:not(.withBorder) {
+      &:hover {
+        background-color: var(--grey-100);
+        border-color: var(--grey-100);
       }
     }
     :global(.bp3-button) {
@@ -56,10 +70,6 @@
       min-height: 14px;
       min-width: 14px;
       outline: none;
-    }
-    &.selected:not(.withoutBorder) {
-      border-color: var(--primary-7);
-      background-color: var(--primary-1);
     }
     button {
       box-shadow: none !important;
@@ -119,31 +129,16 @@
         :local {
           .menuItem {
             height: var(--spacing-8);
-            padding: 0 var(--spacing-4);
+            padding: 0 var(--spacing-4) !important;
             display: flex;
             align-items: center;
             cursor: pointer;
             color: var(--black);
             font-weight: 400;
             font-size: 13px;
-            &:global(.bp3-checkbox) {
-              --box-height: 16px;
-              padding: 0 var(--spacing-4) 0 var(--spacing-8);
-              :global {
-                .bp3-control-indicator {
-                  margin-left: -24px;
-                  border-radius: 4px;
-                  margin-top: 0px;
-                  outline: none;
-                }
-              }
-              span {
-                --box-border: var(--primary-7) !important;
-              }
-            }
             &.active {
               background: var(--primary-7);
-              color: var(--white);
+              color: var(--white) !important;
             }
             &.disabled {
               color: var(--grey-400);
@@ -151,6 +146,16 @@
             }
             &:hover:local:not(.active, .disabled) {
               background: var(--primary-1);
+            }
+            :global {
+              :checked ~ .bp3-control-indicator {
+                --cb-bg-color: var(--white);
+                --cb-icon-filter: invert(62%) sepia(98%) saturate(6594%) hue-rotate(191deg) brightness(93%)
+                  contrast(98%);
+              }
+              .bp3-control-indicator {
+                outline: none;
+              }
             }
           }
         }
