@@ -45,7 +45,7 @@ export const Basic: Story<DialogProps> = () => {
   )
   return (
     <>
-      <Dialog isOpen={true} title={'New User Group'} style={{ width: 461, height: 421 }} footer={footerRenderer}>
+      <Dialog isOpen={true} title={'New User Group'} style={{ width: 461, height: 421 }}>
         <div>Child Element </div>
       </Dialog>
     </>
