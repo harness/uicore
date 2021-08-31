@@ -15,6 +15,7 @@ export { Button, ButtonProps, ButtonVariation, ButtonSize } from './components/B
 export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export { Checkbox } from './components/Checkbox/Checkbox'
+export { Dialog } from './components/Dialog/Dialog'
 export { Toggle } from './components/Toggle/Toggle'
 export { Container } from './components/Container/Container'
 export { Heading } from './components/Heading/Heading'
