@@ -160,20 +160,12 @@ export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'ite
   name: string
   tagsProps?: Partial<ITagInputProps>
   isArray?: boolean
-  placeholder?: string
 }
 
 type KVAccumulator = { [key: string]: string }
 
 function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
-  const {
-    formik,
-    name,
-    tagsProps,
-    isArray = false,
-    placeholder = 'Type and press enter to create a tag',
-    ...restProps
-  } = props
+  const { formik, name, tagsProps, isArray = false, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -225,7 +217,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
             event.stopPropagation()
           }
         }}
-        placeholder={placeholder}
+        placeholder="Type and press enter to create a tag"
         {...tagsProps}
       />
     </FormGroup>
