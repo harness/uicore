@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import snarkdown from 'snarkdown'
-import { PopoverInteractionKind, Position } from '@blueprintjs/core'
+import { PopoverInteractionKind } from '@blueprintjs/core'
 import { useTooltipContext } from './TooltipContext'
 import { TooltipRenderProps, UseTooltipsReturn } from './types'
 
@@ -46,7 +46,7 @@ export const HarnessDocTooltip = ({
   const tooltipJsxComponent = (
     <Popover
       popoverClassName={css.tooltipWrapper}
-      position={Position.TOP}
+      position="auto"
       interactionKind={PopoverInteractionKind.HOVER}
       // eslint-disable-next-line
       content={<div className={css.tooltipContentWrapper} dangerouslySetInnerHTML={{ __html: tooltipContentHtml }} />}>
