@@ -1,6 +1,7 @@
 :global {
   .bp3-portal {
     .bp3-dialog {
+      border-left: 20px solid var(--blue-500);
       box-shadow: none;
       background: var(--white);
       .bp3-dialog-header {
