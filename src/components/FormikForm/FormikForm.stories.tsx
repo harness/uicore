@@ -14,6 +14,10 @@ export default {
   component: FormikForm
 } as Meta
 
+const getSampleTooltip = () => {
+  return ' If the image location is not specified in your Deployment manifest, you can add the image location to Harness as an Artifact. Next, you reference the Artifact you added to Harness in your manifest like this: `image: <+artifact.image>` [Learn More](https://ngdocs.harness.io/article/4ifq51cp0i)'
+}
+
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
     <Formik
@@ -43,7 +47,9 @@ export const Basic: Story<FormikFormProps> = () => (
           <FormikForm>
             <FormInput.Text
               name="name"
-              label={<HarnessDocTooltip contentFromParent="XYZ tooltip" labelText="Name" tooltipId="nameTextField" />}
+              label={
+                <HarnessDocTooltip contentFromParent={getSampleTooltip()} labelText="Name" tooltipId="nameTextField" />
+              }
               placeholder="First Name"
               tooltipProps={{
                 dataTooltipId: 'nameTextField'

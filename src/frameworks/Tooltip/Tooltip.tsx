@@ -46,7 +46,7 @@ export const HarnessDocTooltip = ({
   const tooltipJsxComponent = (
     <Popover
       popoverClassName={css.tooltipWrapper}
-      position={Position.TOP}
+      position="auto"
       interactionKind={PopoverInteractionKind.HOVER}
       // eslint-disable-next-line
       content={<div className={css.tooltipContentWrapper} dangerouslySetInnerHTML={{ __html: tooltipContentHtml }} />}>
