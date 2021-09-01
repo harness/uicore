@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import snarkdown from 'snarkdown'
-import { PopoverInteractionKind, Position } from '@blueprintjs/core'
+import { PopoverInteractionKind } from '@blueprintjs/core'
 import { useTooltipContext } from './TooltipContext'
 import { TooltipRenderProps, UseTooltipsReturn } from './types'
 
