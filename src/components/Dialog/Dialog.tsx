@@ -18,7 +18,7 @@ const defaultProps = {
 
 export function Dialog(props: DialogProps) {
   return (
-    <BluePrintDialog {...defaultProps} {...props} isOpen={true} className={css.dialog} isCloseButtonShown={false}>
+    <BluePrintDialog {...defaultProps} {...props} className={css.dialog} isCloseButtonShown={false}>
       <Icon name="Stroke" size={15} onClick={props.onClose} className={css.close} />
       <Container padding="none" className={css.children}>
         {props.children}

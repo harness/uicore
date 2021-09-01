@@ -37,6 +37,7 @@ export default {
   decorators: [Story => <Story />]
 } as Meta
 export const Basic: Story<DialogProps> = () => {
+  const [isOpen, setOpenDialog] = React.useState(false)
   const footerRenderer = (
     <Layout.Horizontal spacing="small" padding="none" margin="none">
       <Button text="Apply" variation={ButtonVariation.PRIMARY}></Button>
@@ -45,7 +46,8 @@ export const Basic: Story<DialogProps> = () => {
   )
   return (
     <>
-      <Dialog isOpen={false} title={'New User Group'} style={{ width: 461, height: 421 }} footer={footerRenderer}>
+      <Button text="Open Dialog" onClick={() => setOpenDialog(true)}></Button>
+      <Dialog isOpen={isOpen} title={'New User Group'} style={{ width: 461, height: 421 }} footer={footerRenderer}>
         <div>Child Element </div>
       </Dialog>
     </>
