@@ -7,6 +7,7 @@ import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
+import Stroke from './Stroke.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
 import AccordionExpanded from './accordion-expanded.svg'
@@ -564,6 +565,7 @@ type HarnessIconName =
   | 'Edit'
   | 'Inline'
   | 'Options'
+  | 'Stroke'
   | 'access-control'
   | 'accordion-collapsed'
   | 'accordion-expanded'
@@ -1121,6 +1123,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
   Inline: Inline,
   Options: Options,
+  Stroke: Stroke,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
   'accordion-expanded': AccordionExpanded,

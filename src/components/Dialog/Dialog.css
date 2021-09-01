@@ -1,0 +1,56 @@
+.dialog {
+  border-radius: 5px;
+
+  box-shadow: none !important;
+  background: var(--white) !important;
+  padding: var(--dialog-padding);
+  position: relative;
+  .children {
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .close {
+    position: absolute;
+
+    right: 22px;
+    top: 22px;
+
+    cursor: pointer;
+  }
+  footer {
+    position: absolute;
+    bottom: 46px;
+  }
+  :global {
+    .bp3-dialog-header {
+      box-shadow: none;
+      margin-top: 0 !important;
+      padding: 0;
+      margin-bottom: 32px !important;
+      min-height: 32px !important;
+      .bp3-heading {
+        font-weight: 600 !important;
+        font-style: normal;
+        color: var(--grey-900);
+      }
+    }
+    .bp3-dialog-close-button {
+      svg {
+        fill: var(--grey-400) !important;
+        height: 22px !important;
+        width: 22px !important;
+      }
+      &:hover {
+        background: none;
+        svg {
+          fill: var(--grey-500) !important;
+        }
+      }
+      margin-right: 0 !important;
+      min-height: 22px !important;
+      min-width: 22px !important;
+      padding: 0 !important;
+    }
+  }
+}
