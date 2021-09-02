@@ -21,7 +21,14 @@ describe('<ExpressionInputs /> tests', () => {
       const { container: container2 } = render(itemRenderer('app.Name', itemProps) as React.ReactElement)
 
       expect(container2).toMatchSnapshot()
-      // expect(container2.querySelector('mark')?.innerHTML).toBe('Name')
+      expect(container2.querySelector('mark')?.innerHTML).toBe('Name')
+
+      const { container: container3 } = render(
+        itemRenderer('app.xyz.name', { ...itemProps, query: '<+xyz' }) as React.ReactElement
+      )
+
+      expect(container3).toMatchSnapshot()
+      expect(container3.querySelector('mark')?.innerHTML).toBe('xyz')
     })
   })
 })

@@ -50,12 +50,48 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
           <span
             class="group1"
           >
-            app.Nam
+            app.
           </span>
+          <mark>
+            Name
+          </mark>
+        </span>
+      </div>
+    </a>
+  </li>
+</div>
+`;
+
+exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of case 3`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled"
+      tabindex="-1"
+      title="app.xyz.name"
+    >
+      <div
+        class="bp3-text-overflow-ellipsis bp3-fill"
+      >
+        <span
+          class="menuItem"
+        >
+          <span
+            class="group1"
+          >
+            app.
+          </span>
+          <mark>
+            xyz
+          </mark>
           <span
             class="group2"
           >
-            .Name
+            <bdi>
+              .name
+            </bdi>
           </span>
         </span>
       </div>
