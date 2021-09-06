@@ -27,9 +27,11 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links = [], className 
             {link.iconProps && link.iconProps.name && (
               <Icon size={16} padding={{ right: 'xsmall' }} {...link.iconProps} />
             )}
-            <Text intent="primary">{link.label}</Text>
+            <Text intent="primary" font={{ size: 'small' }}>
+              {link.label}
+            </Text>
           </Link>
-          <Icon size={12} name="main-chevron-right" color="grey500" padding={{ right: 'xsmall', left: 'xsmall' }} />
+          <Icon size={8} name="main-chevron-right" color="grey500" padding={{ right: 'xsmall', left: 'xsmall' }} />
         </Layout.Horizontal>
       ))}
     </Layout.Horizontal>
