@@ -24,6 +24,7 @@ import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
+import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
@@ -583,6 +584,7 @@ type HarnessIconName =
   | 'argo'
   | 'arm'
   | 'audit-log-created'
+  | 'aws-codecommit'
   | 'aws-kms'
   | 'aws-secret-manager'
   | 'azure-key-vault'
@@ -1142,6 +1144,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   argo: Argo,
   arm: Arm,
   'audit-log-created': AuditLogCreated,
+  'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
   'aws-secret-manager': AwsSecretManager,
   'azure-key-vault': AzureKeyVault,
