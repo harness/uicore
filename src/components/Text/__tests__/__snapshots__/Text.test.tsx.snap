@@ -6,7 +6,7 @@ exports[`Text component fixes basic rendering with nested: nested text 1`] = `
     class="bp3-popover-wrapper"
   >
     <span
-      class="bp3-popover-target bp3-popover-open"
+      class="bp3-popover-target bp3-popover-open targetClass"
     >
       <p
         class="font main"
