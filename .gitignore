@@ -75,3 +75,4 @@ typings/
 cypress/videos
 cypress/screenshots
 storybook-static
+/storyshots-puppeteer/__image_snapshots__/__diff_output__/

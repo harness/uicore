@@ -1,16 +1,42 @@
-import React, { ReactElement } from 'react'
-import { Radio as BpRadio, IRadioProps } from '@blueprintjs/core'
-import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
+import React, { ChangeEvent, ReactElement, ReactNode } from 'react'
+import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
 import styledClass from '../../styled-props/StyledProps.css'
 
 import css from './RadioButton.css'
 
-export type RadioButtonProps = IRadioProps & StyledProps
-export function RadioButton({ className = '', ...props }: RadioButtonProps): ReactElement {
+export interface RadioButtonProps {
+  label?: ReactNode
+  value?: string | number
+  name?: string
+  className?: string
+  checked?: boolean
+  disabled?: boolean
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
+export function RadioButton({
+  label = '',
+  value,
+  name = '',
+  className = '',
+  checked = false,
+  disabled = false,
+  onChange = () => undefined,
+  ...props
+}: RadioButtonProps & StyledProps): ReactElement {
   return (
-    <BpRadio
-      {...(omitStyledProps(props) as IRadioProps)}
-      className={styledClasses(props, styledClass.font, css.radio, className)}
-    />
+    <label className={styledClasses(styledClass.font, css.radio, className)} {...props}>
+      <input
+        type="radio"
+        name={name}
+        value={value}
+        defaultChecked={checked}
+        disabled={disabled}
+        className={css.input}
+        onChange={onChange}
+      />
+      <span className={css.radioIcon} />
+      {label}
+    </label>
   )
 }

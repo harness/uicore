@@ -268,6 +268,30 @@ export const RadioGroups: Story<FormikFormProps> = () => (
           { label: 'Option 2', value: 'opt2' }
         ]}
       />
+
+      <FormInput.RadioGroup
+        name="example5"
+        label="With elements as option labels"
+        items={[
+          {
+            label: (
+              <span>
+                A <strong>BOLD</strong> option
+              </span>
+            ),
+            value: 'opt1'
+          },
+          {
+            label: (
+              <span>
+                An <em>ITALIC</em> option
+              </span>
+            ),
+            value: 'opt2'
+          },
+          { label: <span style={{ transform: 'rotate(180deg)' }}>A strange option</span>, value: 'opt3' }
+        ]}
+      />
     </FormikForm>
   </Formik>
 )

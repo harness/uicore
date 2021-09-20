@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, findByText, fireEvent, render, waitFor } from '@testing-library/react'
+import { act, findByText, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { Formik, FormikForm, FormInput } from './FormikForm'
 import { Button } from '../Button/Button'
 import { MultiTypeInputType } from 'components/MultiTypeInput/MultiTypeInputUtils'
@@ -95,6 +95,25 @@ describe('Test basic Components', () => {
       )
     )
     expect(container).toMatchSnapshot()
+  })
+
+  test('it should allow either a string or an element as a RadioButton label', async () => {
+    const testId = 'TEST ID'
+    render(
+      renderFormikForm(
+        <FormInput.RadioGroup
+          name="color"
+          label="Color"
+          items={[
+            { label: <span data-testid={testId}>Red</span>, value: 'red' },
+            { label: 'Blue', value: 'blue' }
+          ]}
+        />
+      )
+    )
+
+    expect(screen.getByTestId(testId)).toBeInTheDocument()
+    expect(screen.getByText('Blue')).toBeInTheDocument()
   })
 
   test('should render RadioGroup component in an inline form input', () => {
