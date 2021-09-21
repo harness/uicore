@@ -24,6 +24,7 @@ import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
+import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
@@ -398,6 +399,7 @@ import Question from './question.svg'
 import Queued from './queued.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
+import RemoveMinus from './remove-minus.svg'
 import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
@@ -582,6 +584,7 @@ type HarnessIconName =
   | 'argo'
   | 'arm'
   | 'audit-log-created'
+  | 'aws-codecommit'
   | 'aws-kms'
   | 'aws-secret-manager'
   | 'azure-key-vault'
@@ -956,6 +959,7 @@ type HarnessIconName =
   | 'queued'
   | 'remote'
   | 'remotefile'
+  | 'remove-minus'
   | 'remove'
   | 'report-gear-grey'
   | 'report-gear'
@@ -1140,6 +1144,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   argo: Argo,
   arm: Arm,
   'audit-log-created': AuditLogCreated,
+  'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
   'aws-secret-manager': AwsSecretManager,
   'azure-key-vault': AzureKeyVault,
@@ -1514,6 +1519,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   queued: Queued,
   remote: Remote,
   remotefile: Remotefile,
+  'remove-minus': RemoveMinus,
   remove: Remove,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,

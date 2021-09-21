@@ -15,9 +15,9 @@ export function useTooltips(): UseTooltipsReturn {
   return {
     getTooltip(key: string, vars: Record<string, any> = {}): string {
       if (typeof getTooltip === 'function') {
-        return snarkdown(getTooltip(key, vars))
+        return getTooltip(key, vars)
       }
-      return tooltipDictionary[key] ? snarkdown(tooltipDictionary[key]) : ''
+      return tooltipDictionary[key] ? tooltipDictionary[key] : ''
     },
     tooltipDictionary
   }

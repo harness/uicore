@@ -39,7 +39,7 @@ export interface ModalErrorHandlerBinding {
    * @param helpLink: optional help link url.
    * @param iconName string: optional UICore icon name.
    */
-  showSuccess: (message: string, helpLink?: string, iconName?: IconName) => void
+  showSuccess: (message: string | React.ReactElement, helpLink?: string, iconName?: IconName) => void
 
   /**
    * Show a warning message.
@@ -47,7 +47,7 @@ export interface ModalErrorHandlerBinding {
    * @param helpLink: optional help link url.
    * @param iconName string: optional UICore icon name.
    */
-  showWarning: (message: string, helpLink?: string, iconName?: IconName) => void
+  showWarning: (message: string | React.ReactElement, helpLink?: string, iconName?: IconName) => void
 
   /**
    * Show a danger message.
@@ -55,7 +55,7 @@ export interface ModalErrorHandlerBinding {
    * @param helpLink: optional help link url.
    * @param iconName string: optional UICore icon name.
    */
-  showDanger: (message: string, helpLink?: string, iconName?: IconName) => void
+  showDanger: (message: string | React.ReactElement, helpLink?: string, iconName?: IconName) => void
 
   /**
    * Hide visible error/warning/success message(s).
@@ -71,7 +71,7 @@ export interface ModalErrorHandlerProps {
 const breakWorkStyle = { overflowWrap: 'break-word', wordWrap: 'break-word', hyphens: 'auto' } as React.CSSProperties
 const DEFAULT_ICON_NAME = 'warning-sign'
 
-function renderMessage(message: string, color: Color) {
+function renderMessage(message: string | React.ReactElement, color: Color) {
   return (
     <Container padding="small">
       <Text data-type="single-message" font={{ weight: 'bold' }} color={color} style={breakWorkStyle} lineClamp={5}>
@@ -131,7 +131,7 @@ function renderErrors(errors: ErrorInfo | undefined, color: Color) {
 export const ModalErrorHandler: React.FC<ModalErrorHandlerProps> = ({ bind, style }) => {
   const [intent, setIntent] = useState<Intent>(Intent.DANGER)
   const [errors, setErrors] = useState<ErrorInfo>()
-  const [message, setMessage] = useState<string | undefined>()
+  const [message, setMessage] = useState<string | React.ReactElement>()
   const [iconName, setIconName] = useState<IconName>(DEFAULT_ICON_NAME)
   const [helpLink, setHelpLink] = useState<string | undefined>()
 
@@ -145,19 +145,19 @@ export const ModalErrorHandler: React.FC<ModalErrorHandlerProps> = ({ bind, styl
           setHelpLink(undefined)
           setIntent(Intent.DANGER)
         },
-        showSuccess: (message: string, helpLink?: string, iconName?: IconName) => {
+        showSuccess: (message: string | React.ReactElement, helpLink?: string, iconName?: IconName) => {
           setIconName(iconName || DEFAULT_ICON_NAME)
           setMessage(message)
           setHelpLink(helpLink)
           setIntent(Intent.SUCCESS)
         },
-        showWarning: (message: string, helpLink?: string, iconName?: IconName) => {
+        showWarning: (message: string | React.ReactElement, helpLink?: string, iconName?: IconName) => {
           setIconName(iconName || DEFAULT_ICON_NAME)
           setMessage(message)
           setHelpLink(helpLink)
           setIntent(Intent.WARNING)
         },
-        showDanger: (message: string, helpLink?: string, iconName?: IconName) => {
+        showDanger: (message: string | React.ReactElement, helpLink?: string, iconName?: IconName) => {
           setIconName(iconName || DEFAULT_ICON_NAME)
           setMessage(message)
           setHelpLink(helpLink)
