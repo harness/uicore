@@ -566,6 +566,7 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
+import Description from './description.svg'
 
 type HarnessIconName =
   | 'Edit'
@@ -1130,6 +1131,7 @@ type HarnessIconName =
   | 'yaml-builder-trigger'
   | 'zoom-in'
   | 'zoom-out'
+  | 'description'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
@@ -1693,7 +1695,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut
+  'zoom-out': ZoomOut,
+  description: Description
 }
 
 export { HarnessIcons, HarnessIconName }
