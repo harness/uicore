@@ -1,15 +1,43 @@
-import React, { FormEvent, useState } from 'react'
+import React, { useState } from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton } from './RadioButton'
 import { RadioButtonGroup, RadioButtonGroupProps } from './RadioButtonGroup'
-import { action } from '@storybook/addon-actions'
+import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
+
+const options: RadioButtonGroupProps['options'] = [
+  { label: 'Option 1', value: 'one' },
+  { label: 'Option 2', value: 'two' },
+  { label: 'Option 3', value: 'three' },
+  { label: 'Option 4 (disabled)', value: 'four', disabled: true }
+]
+
+const tooltips: Record<string, string> = {
+  option1: 'Tooltip for option 1',
+  option2: 'Tooltip for option 2',
+  option3: 'Tooltip for option 3',
+  option4: 'Tooltip for option 4'
+}
 
 export default {
   title: 'Components / RadioButtonGroup',
-
   component: RadioButtonGroup,
   subcomponents: { RadioButton },
+  decorators: [
+    Story => (
+      <TooltipContextProvider initialTooltipDictionary={tooltips}>
+        <Story />
+      </TooltipContextProvider>
+    )
+  ],
+  argTypes: {
+    onChange: { action: 'change' },
+    selectedValue: { control: false }
+  },
+  args: {
+    label: 'Section Headline',
+    options
+  },
   parameters: {
     layout: 'centered',
     docs: {
@@ -38,45 +66,43 @@ export default {
   }
 } as Meta
 
-export const Basic: Story<RadioButtonGroupProps> = () => {
+const RadioButtonGroupTemplate: Story<RadioButtonGroupProps> = args => {
   const [currentOption, setCurrentOption] = useState<string>('one')
 
   return (
     <RadioButtonGroup
-      label="Section Headline"
+      {...args}
       selectedValue={currentOption}
-      onChange={(e: FormEvent<HTMLInputElement>) => {
-        action('changed')(e) // storybook action
+      onChange={e => {
+        args.onChange(e)
         setCurrentOption(e.currentTarget.value)
       }}
-      options={[
-        { label: 'Option 1', value: 'one' },
-        { label: 'Option 2', value: 'two' },
-        { label: 'Option 3', value: 'three' },
-        { label: 'Option 4 (disabled)', value: 'four', disabled: true }
-      ]}
     />
   )
 }
 
-export const Inline: Story<RadioButtonGroupProps> = () => {
-  const [currentOption, setCurrentOption] = useState<string>('one')
+export const Basic = RadioButtonGroupTemplate.bind({})
 
-  return (
-    <RadioButtonGroup
-      inline={true}
-      label="Section Headline"
-      selectedValue={currentOption}
-      onChange={(e: FormEvent<HTMLInputElement>) => {
-        action('changed')(e) // storybook action
-        setCurrentOption(e.currentTarget.value)
-      }}
-      options={[
-        { label: 'Option 1', value: 'one' },
-        { label: 'Option 2', value: 'two' },
-        { label: 'Option 3', value: 'three' },
-        { label: 'Option 4 (disabled)', value: 'four', disabled: true }
-      ]}
-    />
+export const Inline = RadioButtonGroupTemplate.bind({})
+Inline.args = {
+  inline: true
+}
+
+export const WithElementAsLabel = RadioButtonGroupTemplate.bind({})
+WithElementAsLabel.args = {
+  label: (
+    <span>
+      <strong>Bold text</strong> and <em>Italic text</em>
+    </span>
   )
+}
+
+export const WithElementAsOptionLabel = RadioButtonGroupTemplate.bind({})
+WithElementAsOptionLabel.args = {
+  options: [...options, { label: <span style={{ transform: 'rotate(180deg)' }}>A strange option</span>, value: 'five' }]
+}
+
+export const WithOptionTooltips = RadioButtonGroupTemplate.bind({})
+WithOptionTooltips.args = {
+  options: options.map((option, index) => ({ ...option, tooltipId: `option${index + 1}` }))
 }
