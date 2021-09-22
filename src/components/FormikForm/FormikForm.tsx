@@ -60,6 +60,7 @@ import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { FormikTooltipContext } from './FormikTooltipContext'
 import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 import { FormError } from '../FormError/FormError'
+import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -613,6 +614,59 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
           onChange?.(item)
         }}
         onQueryChange={(query: string) => onQueryChange?.(query)}
+      />
+    </FormGroup>
+  )
+}
+
+export interface DropDownFormProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  onChange?: DropDownProps['onChange']
+  items: DropDownProps['items']
+  usePortal?: boolean
+  addClearBtn?: boolean
+  placeholder?: string
+  dropDownProps?: Omit<DropDownProps, 'items' | 'onChange' | 'value'>
+}
+
+const DropDownForm = (props: DropDownFormProps & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    items,
+    addClearBtn,
+    label,
+    placeholder,
+    inline = formik?.inline,
+    onChange,
+    dropDownProps,
+    ...rest
+  } = restProps
+
+  return (
+    <FormGroup
+      label={getFormFieldLabel(label, name, props)}
+      labelFor={name}
+      helperText={helperText}
+      intent={intent}
+      disabled={disabled}
+      inline={inline}
+      usePortal={!!props.usePortal}
+      {...rest}>
+      <UiKitDropDown
+        addClearBtn={addClearBtn || false}
+        placeholder={placeholder}
+        {...dropDownProps}
+        items={items}
+        disabled={disabled}
+        value={get(formik?.values, name)?.[0]?.value}
+        onChange={(item: SelectOption) => {
+          formik?.setFieldValue(name, item.value)
+          onChange?.(item)
+        }}
       />
     </FormGroup>
   )
@@ -1330,6 +1384,7 @@ export const FormInput = {
   Toggle: connect(Toggle),
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
+  DropDown: connect(DropDownForm),
   Text: connect(Text),
   ExpressionInput: connect(ExpressionInput),
   TextArea: connect(TextArea),
