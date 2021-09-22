@@ -143,6 +143,7 @@ import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DelegatesIcon from './delegates-icon.svg'
+import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
 import DeployStage from './deploy-stage.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -704,6 +705,7 @@ type HarnessIconName =
   | 'dashboard-selected'
   | 'dashboard'
   | 'delegates-icon'
+  | 'dependency-default-icon'
   | 'dependency-step'
   | 'deploy-stage'
   | 'deployment-aborted-legacy'
@@ -1265,6 +1267,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'delegates-icon': DelegatesIcon,
+  'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
   'deploy-stage': DeployStage,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
