@@ -619,7 +619,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
   )
 }
 
-export interface DropDownFormProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface DropDownFormikProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   onChange?: DropDownProps['onChange']
   items: DropDownProps['items']
@@ -629,7 +629,7 @@ export interface DropDownFormProps extends Omit<IFormGroupProps, 'labelFor'> {
   dropDownProps?: Omit<DropDownProps, 'items' | 'onChange' | 'value'>
 }
 
-const DropDownForm = (props: DropDownFormProps & FormikContextProps<any>) => {
+const DropDown = (props: DropDownFormikProps & FormikContextProps<any>) => {
   const { formik, name, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
@@ -662,7 +662,7 @@ const DropDownForm = (props: DropDownFormProps & FormikContextProps<any>) => {
         {...dropDownProps}
         items={items}
         disabled={disabled}
-        value={get(formik?.values, name)?.[0]?.value}
+        value={get(formik?.values, name)}
         onChange={(item: SelectOption) => {
           formik?.setFieldValue(name, item.value)
           onChange?.(item)
@@ -1384,7 +1384,7 @@ export const FormInput = {
   Toggle: connect(Toggle),
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
-  DropDown: connect(DropDownForm),
+  DropDown: connect(DropDown),
   Text: connect(Text),
   ExpressionInput: connect(ExpressionInput),
   TextArea: connect(TextArea),

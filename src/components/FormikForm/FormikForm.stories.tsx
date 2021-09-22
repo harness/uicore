@@ -217,7 +217,6 @@ export const Basic: Story<FormikFormProps> = () => (
                 }
               }}
             />
-
             <FormInput.MultiInput name="multiInput" label="Multi Input" />
             <Button intent="primary" type="submit" text="Submit" />
           </FormikForm>
