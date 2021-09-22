@@ -30,6 +30,7 @@ import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
+import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
 import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
@@ -231,6 +232,7 @@ import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
+import LineChart from './line-chart.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
@@ -590,6 +592,7 @@ type HarnessIconName =
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'banned'
+  | 'bar-chart'
   | 'barrier-close'
   | 'barrier-open-with-links'
   | 'barrier-open'
@@ -791,6 +794,7 @@ type HarnessIconName =
   | 'layout-float'
   | 'layout-right'
   | 'library'
+  | 'line-chart'
   | 'linkedin'
   | 'list-entity-infographic'
   | 'list-view'
@@ -1150,6 +1154,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
+  'bar-chart': BarChart,
   'barrier-close': BarrierClose,
   'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
@@ -1351,6 +1356,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
   library: Library,
+  'line-chart': LineChart,
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,
