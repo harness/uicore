@@ -165,6 +165,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import Description from './description.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
@@ -566,7 +567,6 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
-import Description from './description.svg'
 
 type HarnessIconName =
   | 'Edit'
@@ -730,6 +730,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'description'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
@@ -1131,7 +1132,6 @@ type HarnessIconName =
   | 'yaml-builder-trigger'
   | 'zoom-in'
   | 'zoom-out'
-  | 'description'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
@@ -1295,6 +1295,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  description: Description,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
@@ -1695,8 +1696,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut,
-  description: Description
+  'zoom-out': ZoomOut
 }
 
 export { HarnessIcons, HarnessIconName }
