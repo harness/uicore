@@ -68,3 +68,8 @@
   top: 0;
   z-index: -1;
 }
+
+.tooltipAlign {
+  display: inline-flex;
+  align-items: baseline;
+}

@@ -1,8 +1,10 @@
 import React from 'react'
 import { act, findByText, fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { Formik, FormikForm, FormInput } from './FormikForm'
-import { Button } from '../Button/Button'
+import { Formik, FormikForm, FormInput } from '../FormikForm'
+import { Button } from '../../Button/Button'
 import { MultiTypeInputType } from 'components/MultiTypeInput/MultiTypeInputUtils'
+import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
+import userEvent from '@testing-library/user-event'
 
 const renderFormikForm = (
   fields: React.ReactNode,
@@ -114,6 +116,36 @@ describe('Test basic Components', () => {
 
     expect(screen.getByTestId(testId)).toBeInTheDocument()
     expect(screen.getByText('Blue')).toBeInTheDocument()
+  })
+
+  test('it should display a tooltip when a RadioGroup item has a tooltipId set', async () => {
+    const tooltipId = 'TOOLTIP ID'
+    const tooltips = {
+      [tooltipId]: 'TOOLTIP TEXT'
+    }
+
+    render(
+      <TooltipContextProvider initialTooltipDictionary={tooltips}>
+        {renderFormikForm(
+          <FormInput.RadioGroup
+            name="color"
+            label="Color"
+            items={[
+              { label: 'Red', value: 'red' },
+              { label: 'Blue', value: 'blue', tooltipId }
+            ]}
+          />
+        )}
+      </TooltipContextProvider>
+    )
+
+    expect(screen.queryByText(tooltips[tooltipId])).not.toBeInTheDocument()
+
+    userEvent.hover(screen.getByRole('radio', { name: 'Blue' })?.parentElement?.querySelector('svg') as SVGElement)
+
+    await waitFor(() => {
+      expect(screen.getByText(tooltips[tooltipId])).toBeInTheDocument()
+    })
   })
 
   test('should render RadioGroup component in an inline form input', () => {

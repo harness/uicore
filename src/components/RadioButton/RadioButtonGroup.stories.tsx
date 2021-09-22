@@ -3,18 +3,33 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton } from './RadioButton'
 import { RadioButtonGroup, RadioButtonGroupProps } from './RadioButtonGroup'
+import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
 
-const options = [
+const options: RadioButtonGroupProps['options'] = [
   { label: 'Option 1', value: 'one' },
   { label: 'Option 2', value: 'two' },
   { label: 'Option 3', value: 'three' },
   { label: 'Option 4 (disabled)', value: 'four', disabled: true }
 ]
 
+const tooltips: Record<string, string> = {
+  option1: 'Tooltip for option 1',
+  option2: 'Tooltip for option 2',
+  option3: 'Tooltip for option 3',
+  option4: 'Tooltip for option 4'
+}
+
 export default {
   title: 'Components / RadioButtonGroup',
   component: RadioButtonGroup,
   subcomponents: { RadioButton },
+  decorators: [
+    Story => (
+      <TooltipContextProvider initialTooltipDictionary={tooltips}>
+        <Story />
+      </TooltipContextProvider>
+    )
+  ],
   argTypes: {
     onChange: { action: 'change' },
     selectedValue: { control: false }
@@ -85,4 +100,9 @@ WithElementAsLabel.args = {
 export const WithElementAsOptionLabel = RadioButtonGroupTemplate.bind({})
 WithElementAsOptionLabel.args = {
   options: [...options, { label: <span style={{ transform: 'rotate(180deg)' }}>A strange option</span>, value: 'five' }]
+}
+
+export const WithOptionTooltips = RadioButtonGroupTemplate.bind({})
+WithOptionTooltips.args = {
+  options: options.map((option, index) => ({ ...option, tooltipId: `option${index + 1}` }))
 }

@@ -12,7 +12,7 @@ export interface RadioButtonGroupProps {
   label?: ReactNode
   name?: string
   onChange: (e: FormEvent<HTMLInputElement>) => void
-  options: Array<Pick<RadioButtonProps, 'label' | 'value' | 'disabled'>>
+  options: Array<Pick<RadioButtonProps, 'label' | 'value' | 'disabled' | 'tooltipId'>>
   selectedValue?: string | number
 }
 

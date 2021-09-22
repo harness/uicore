@@ -1,4 +1,5 @@
 import React, { ChangeEvent, ReactElement, ReactNode } from 'react'
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
 import styledClass from '../../styled-props/StyledProps.css'
 
@@ -11,6 +12,7 @@ export interface RadioButtonProps {
   className?: string
   checked?: boolean
   disabled?: boolean
+  tooltipId?: string
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -21,6 +23,7 @@ export function RadioButton({
   className = '',
   checked = false,
   disabled = false,
+  tooltipId,
   onChange = () => undefined,
   ...props
 }: RadioButtonProps & StyledProps): ReactElement {
@@ -36,7 +39,14 @@ export function RadioButton({
         onChange={onChange}
       />
       <span className={css.radioIcon} />
-      {label}
+      {tooltipId ? (
+        <span className={css.tooltipAlign} data-tooltip-id={tooltipId}>
+          {label}
+          <HarnessDocTooltip tooltipId={tooltipId} useStandAlone />
+        </span>
+      ) : (
+        label
+      )}
     </label>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButtonGroup'
+import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
 
 const TestRadioButtonGroupController = ({ options }: { options: RadioButtonGroupProps['options'] }) => {
   const [currentSelected, setCurrentSelected] = useState<string>('')
@@ -233,5 +234,31 @@ describe('RadioButtonGroup', () => {
     for (const el of screen.getAllByRole('radio')) {
       expect(el).toBeDisabled()
     }
+  })
+
+  test('it should display tooltips for options with a tooltipId', async () => {
+    const tooltipId = 'TOOLTIP ID'
+    const tooltips = {
+      [tooltipId]: 'TOOLTIP TEST'
+    }
+    render(
+      <TooltipContextProvider initialTooltipDictionary={tooltips}>
+        <RadioButtonGroup
+          onChange={jest.fn()}
+          options={[
+            { label: 'option1', value: 'o1' },
+            { label: 'option2', value: 'o2', tooltipId }
+          ]}
+        />
+      </TooltipContextProvider>
+    )
+
+    expect(screen.queryByText(tooltips[tooltipId])).not.toBeInTheDocument()
+
+    userEvent.hover(screen.getByRole('radio', { name: 'option2' })?.parentElement?.querySelector('svg') as SVGElement)
+
+    await waitFor(() => {
+      expect(screen.getByText(tooltips[tooltipId])).toBeInTheDocument()
+    })
   })
 })

@@ -1,7 +1,8 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { RadioButton } from '../RadioButton'
 import userEvent from '@testing-library/user-event'
+import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
 
 describe('RadioButton', () => {
   test('it should render a string label', async () => {
@@ -45,5 +46,34 @@ describe('RadioButton', () => {
 
     expect(screen.getByLabelText(label)).toHaveAttribute('name', name)
     expect(screen.getByLabelText(label)).toHaveAttribute('value', value)
+  })
+
+  test('it should render the tooltip icon and tooltip if a tooltipId is passed', async () => {
+    const tooltipId = 'TEST ID'
+    const tooltips = {
+      [tooltipId]: 'TEST TOOLTIP'
+    }
+    render(
+      <TooltipContextProvider initialTooltipDictionary={tooltips}>
+        <RadioButton label="My tooltip" tooltipId={tooltipId} />
+      </TooltipContextProvider>
+    )
+
+    const el = screen.getByRole('radio')?.parentElement
+    expect(el?.querySelector(`[data-tooltip-id="${tooltipId}"]`)).toBeInTheDocument()
+
+    expect(screen.queryByText(tooltips[tooltipId])).not.toBeInTheDocument()
+
+    userEvent.hover(el?.querySelector('svg') as SVGElement)
+
+    await waitFor(() => {
+      expect(screen.getByText(tooltips[tooltipId])).toBeInTheDocument()
+    })
+  })
+
+  test('it should not wrap the label with a tooltip span if the tooltipId was not passed', async () => {
+    const { container } = render(<RadioButton label="test" value="test" />)
+
+    expect(container.querySelector('[data-tooltip-id]')).not.toBeInTheDocument()
   })
 })

@@ -2,6 +2,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton, RadioButtonProps } from './RadioButton'
+import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
 
 export default {
   title: 'Components / RadioButton',
@@ -77,5 +78,13 @@ export const WithElementAsLabel: Story<RadioButtonProps> = args => {
       />
       <RadioButton label={<span style={{ transform: 'rotate(180deg)' }}>Upside-down text</span>} {...args} />
     </>
+  )
+}
+
+export const WithTooltip: Story<RadioButtonProps> = args => {
+  return (
+    <TooltipContextProvider initialTooltipDictionary={{ something: 'I am a tooltip' }}>
+      <RadioButton label="With a tooltip" tooltipId="something" value="one" {...args} />
+    </TooltipContextProvider>
   )
 }
