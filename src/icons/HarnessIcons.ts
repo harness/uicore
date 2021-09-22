@@ -144,6 +144,7 @@ import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DelegatesIcon from './delegates-icon.svg'
+import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
 import DeployStage from './deploy-stage.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -209,6 +210,7 @@ import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
@@ -706,6 +708,7 @@ type HarnessIconName =
   | 'dashboard-selected'
   | 'dashboard'
   | 'delegates-icon'
+  | 'dependency-default-icon'
   | 'dependency-step'
   | 'deploy-stage'
   | 'deployment-aborted-legacy'
@@ -771,6 +774,7 @@ type HarnessIconName =
   | 'gitlab'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'graph'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
@@ -1268,6 +1272,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'delegates-icon': DelegatesIcon,
+  'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
   'deploy-stage': DeployStage,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
@@ -1333,6 +1338,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  graph: Graph,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
