@@ -169,6 +169,21 @@ export const Basic: Story<FormikFormProps> = () => (
                 }
               }}
             />
+            <FormInput.DropDown
+              name="values"
+              label="DropDown"
+              items={[
+                { label: 'BBall', value: 'bball' },
+                { label: 'Soccer', value: 'soccer' },
+                { label: 'Football', value: 'football' },
+                { label: 'Pikachu', value: 'pikachu' },
+                { label: 'Garchomp', value: 'garchomp' }
+              ]}
+              dropDownProps={{
+                filterable: false,
+                isLabel: true
+              }}
+            />
             <FormInput.MultiTextInput name="jobDesc1" label="Job Desc 1" />
             <FormInput.MultiTextInput name="jobDec2" placeholder="Job Desc" label="Job Desc 2" />
             <FormInput.MultiSelectTypeInput
