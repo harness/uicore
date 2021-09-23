@@ -875,14 +875,14 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
             class="bp3-form-content"
           >
             <div
-              class="font main"
+              class="main"
             >
               
               <div
                 class=""
               >
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"
@@ -896,7 +896,7 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
                   red
                 </label>
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"
@@ -961,14 +961,14 @@ exports[`Test basic Components should render RadioGroup component in an inline f
             class="bp3-form-content"
           >
             <div
-              class="font inlineRadioGroup main"
+              class="inlineRadioGroup main"
             >
               
               <div
                 class=""
               >
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"
@@ -982,7 +982,7 @@ exports[`Test basic Components should render RadioGroup component in an inline f
                   red
                 </label>
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"
@@ -1255,14 +1255,14 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
             class="bp3-form-content"
           >
             <div
-              class="font main"
+              class="main"
             >
               
               <div
                 class="inline"
               >
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"
@@ -1276,7 +1276,7 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
                   red
                 </label>
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"
@@ -1341,14 +1341,14 @@ exports[`Test basic Components should render an inline RadioGroup component in a
             class="bp3-form-content"
           >
             <div
-              class="font inlineRadioGroup main"
+              class="inlineRadioGroup main"
             >
               
               <div
                 class="inline"
               >
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"
@@ -1362,7 +1362,7 @@ exports[`Test basic Components should render an inline RadioGroup component in a
                   red
                 </label>
                 <label
-                  class="font radio main"
+                  class="radio main"
                 >
                   <input
                     class="input"

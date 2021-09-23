@@ -5,6 +5,7 @@ import { RadioButton } from './RadioButton'
 import { RadioButtonGroup, RadioButtonGroupProps } from './RadioButtonGroup'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
 import { Color } from '../../core/Color'
+import filterStorybookArgs from '../../utils/filterStorybookArgs'
 
 const options: RadioButtonGroupProps['options'] = [
   { label: 'Option 1', value: 'one' },
@@ -72,7 +73,7 @@ const RadioButtonGroupTemplate: Story<RadioButtonGroupProps> = args => {
 
   return (
     <RadioButtonGroup
-      {...args}
+      {...filterStorybookArgs(args)}
       selectedValue={currentOption}
       onChange={e => {
         args.onChange(e)
