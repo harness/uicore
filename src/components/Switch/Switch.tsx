@@ -5,6 +5,9 @@ import React, { FormEvent } from 'react'
 import styledClass from '../../styled-props/StyledProps.css'
 
 import css from './Switch.css'
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
+import type { TooltipRenderProps } from '../../frameworks/Tooltip/types'
+import { omit } from 'lodash-es'
 
 export interface SwitchProps extends Assign<Omit<ISwitchProps, 'onChange'>, StyledProps> {
   /** onChange event handler */
@@ -12,15 +15,23 @@ export interface SwitchProps extends Assign<Omit<ISwitchProps, 'onChange'>, Styl
 
   /** className to be appended to default className */
   className?: string
+
+  /** props for adding documentation tooltip */
+  tooltipProps?: TooltipRenderProps
 }
 
-export function Switch(props: SwitchProps) {
-  const { className = '', onChange } = props
+export function Switch(props: SwitchProps): React.ReactElement {
+  const { className = '', tooltipProps, label } = props
 
   return (
     <BpSwitch
-      {...omitStyledProps(props)}
-      onChange={onChange}
+      labelElement={
+        <span>
+          {label}
+          {tooltipProps ? <HarnessDocTooltip useStandAlone {...tooltipProps} /> : null}
+        </span>
+      }
+      {...omitStyledProps(omit(props, ['tooltipProps', 'label']))}
       className={styledClasses(props, styledClass.font, css.switch, className)}
     />
   )
