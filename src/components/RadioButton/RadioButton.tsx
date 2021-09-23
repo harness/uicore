@@ -1,11 +1,11 @@
 import React, { ChangeEvent, ReactElement, ReactNode } from 'react'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
-import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
+import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
 import styledClass from '../../styled-props/StyledProps.css'
 
 import css from './RadioButton.css'
 
-export interface RadioButtonProps {
+export interface RadioButtonProps extends StyledProps {
   label?: ReactNode
   value?: string | number
   name?: string
@@ -28,7 +28,7 @@ export function RadioButton({
   ...props
 }: RadioButtonProps & StyledProps): ReactElement {
   return (
-    <label className={styledClasses(styledClass.font, css.radio, className)} {...props}>
+    <label className={styledClasses(props, styledClass.font, css.radio, className)} {...omitStyledProps(props)}>
       <input
         type="radio"
         name={name}

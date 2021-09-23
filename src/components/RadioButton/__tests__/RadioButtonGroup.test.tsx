@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButtonGroup'
 import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
+import { Color } from '../../../core/Color'
 
 const TestRadioButtonGroupController = ({ options }: { options: RadioButtonGroupProps['options'] }) => {
   const [currentSelected, setCurrentSelected] = useState<string>('')
@@ -260,5 +261,24 @@ describe('RadioButtonGroup', () => {
     await waitFor(() => {
       expect(screen.getByText(tooltips[tooltipId])).toBeInTheDocument()
     })
+  })
+
+  test('it should accept styled props', async () => {
+    const testId = 'TEST ID'
+    render(
+      <RadioButtonGroup
+        data-testid={testId}
+        margin="large"
+        background={Color.GREEN_50}
+        onChange={jest.fn()}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    expect(screen.getByTestId(testId)).toHaveClass('margin-large')
+    expect(screen.getByTestId(testId)).toHaveClass('background-green50')
   })
 })

@@ -4,6 +4,7 @@ import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@st
 import { RadioButton } from './RadioButton'
 import { RadioButtonGroup, RadioButtonGroupProps } from './RadioButtonGroup'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
+import { Color } from '../../core/Color'
 
 const options: RadioButtonGroupProps['options'] = [
   { label: 'Option 1', value: 'one' },
@@ -106,3 +107,19 @@ export const WithOptionTooltips = RadioButtonGroupTemplate.bind({})
 WithOptionTooltips.args = {
   options: options.map((option, index) => ({ ...option, tooltipId: `option${index + 1}` }))
 }
+
+export const WithLargeMargin = RadioButtonGroupTemplate.bind({})
+WithLargeMargin.args = {
+  margin: 'large',
+  background: Color.BLUE_100
+}
+WithLargeMargin.decorators = [
+  ...(WithLargeMargin.decorators || []),
+  Story => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ backgroundColor: 'lightgray', width: '100px' }} />
+      <Story />
+      <div style={{ backgroundColor: 'lightgray', width: '100px' }} />
+    </div>
+  )
+]

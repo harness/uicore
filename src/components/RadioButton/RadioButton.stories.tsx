@@ -3,6 +3,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
+import { Color } from '../../core/Color'
 
 export default {
   title: 'Components / RadioButton',
@@ -88,3 +89,17 @@ export const WithTooltip: Story<RadioButtonProps> = args => {
     </TooltipContextProvider>
   )
 }
+
+export const WithLargeMargin: Story<RadioButtonProps> = args => (
+  <RadioButton label="With a large margin" value="one" margin="large" background={Color.BLUE_100} {...args} />
+)
+WithLargeMargin.decorators = [
+  ...(WithLargeMargin.decorators || []),
+  Story => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ backgroundColor: 'lightgray', width: '100px' }} />
+      <Story />
+      <div style={{ backgroundColor: 'lightgray', width: '100px' }} />
+    </div>
+  )
+]
