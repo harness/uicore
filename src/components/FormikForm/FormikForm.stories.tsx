@@ -8,10 +8,23 @@ import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { FormikFormProps } from 'formik'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
+import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
+
+const tooltips: Record<string, string> = {
+  option1: 'This is example tooltip 1',
+  option2: 'This is example tooltip 2'
+}
 
 export default {
   title: 'Form / FormikForm',
-  component: FormikForm
+  component: FormikForm,
+  decorators: [
+    Story => (
+      <TooltipContextProvider initialTooltipDictionary={tooltips}>
+        <Story />
+      </TooltipContextProvider>
+    )
+  ]
 } as Meta
 
 const getSampleTooltip = () => {
@@ -266,6 +279,47 @@ export const RadioGroups: Story<FormikFormProps> = () => (
         items={[
           { label: 'Option 1', value: 'opt1' },
           { label: 'Option 2', value: 'opt2' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        name="example5"
+        label="With elements as option labels"
+        items={[
+          {
+            label: (
+              <span>
+                A <strong>BOLD</strong> option
+              </span>
+            ),
+            value: 'opt1'
+          },
+          {
+            label: (
+              <span>
+                An <em>ITALIC</em> option
+              </span>
+            ),
+            value: 'opt2'
+          },
+          { label: <span style={{ transform: 'rotate(180deg)' }}>A strange option</span>, value: 'opt3' }
+        ]}
+      />
+
+      <FormInput.RadioGroup
+        name="example6"
+        label="With option tooltip"
+        items={[
+          {
+            label: 'Option 1',
+            value: 'opt1',
+            tooltipId: 'option1'
+          },
+          {
+            label: 'Option 2',
+            value: 'opt2',
+            tooltipId: 'option2'
+          }
         ]}
       />
     </FormikForm>

@@ -11,7 +11,7 @@ import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
-import { RadioButtonGroup } from '../RadioButton/RadioButtonGroup'
+import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButton/RadioButtonGroup'
 import {
   FormGroup,
   InputGroup,
@@ -19,9 +19,7 @@ import {
   IInputGroupProps,
   Intent,
   ITagInputProps,
-  IRadioGroupProps,
   ITextAreaProps,
-  IOptionProps,
   IFileInputProps,
   TextArea as BpTextArea,
   FileInput as BpFileInput,
@@ -368,9 +366,9 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
 
 export interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
-  items: IOptionProps[]
-  radioGroup?: Omit<IRadioGroupProps, 'name' | 'value' | 'onChange' | 'options'>
-  onChange?: IRadioGroupProps['onChange']
+  items: RadioButtonGroupProps['options']
+  radioGroup?: Omit<RadioButtonGroupProps, 'selectedValue' | 'onChange' | 'options'>
+  onChange?: RadioButtonGroupProps['onChange']
 }
 
 const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {

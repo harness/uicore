@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { IOptionProps } from '@blueprintjs/core/src/common/props'
 import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButtonGroup'
+import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
 
-const TestRadioButtonGroupController = ({ options }: { options: IOptionProps[] }) => {
+const TestRadioButtonGroupController = ({ options }: { options: RadioButtonGroupProps['options'] }) => {
   const [currentSelected, setCurrentSelected] = useState<string>('')
 
   return (
@@ -88,11 +88,9 @@ describe('RadioButtonGroup', () => {
     })
   })
 
-  it('should add the inline class when inline is passed', function () {
-    const label = 'Test Group'
-
+  test('it should add the inline class when inline is passed', function () {
     const props: RadioButtonGroupProps = {
-      label,
+      label: 'Test Group',
       onChange: jest.fn(),
       options: [
         { label: 'option1', value: 'o1' },
@@ -101,9 +99,166 @@ describe('RadioButtonGroup', () => {
     }
 
     const { rerender } = render(<RadioButtonGroup {...props} />)
-    expect(screen.getByText(label).parentElement).not.toHaveClass('inline')
+    expect(screen.getByText('option1').parentElement).not.toHaveClass('inline')
 
     rerender(<RadioButtonGroup {...props} inline />)
-    expect(screen.getByText(label).parentElement).toHaveClass('inline')
+    expect(screen.getByText('option1').parentElement).toHaveClass('inline')
+  })
+
+  test('it should render a string label', async () => {
+    const label = 'TEST STRING'
+    render(
+      <RadioButtonGroup
+        label={label}
+        onChange={jest.fn()}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    expect(screen.getByText(label)).toBeInTheDocument()
+  })
+
+  test('it should render an element label', async () => {
+    const testId = 'TEST ID'
+    render(
+      <RadioButtonGroup
+        label={<span data-testid={testId}>Test label</span>}
+        onChange={jest.fn()}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    expect(screen.getByTestId(testId)).toBeInTheDocument()
+  })
+
+  test('it should render a option label as an element', async () => {
+    const testId = 'TEST ID'
+    render(
+      <RadioButtonGroup
+        onChange={jest.fn()}
+        options={[
+          { label: <span data-testid={testId}>Test option</span>, value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    expect(screen.getByTestId(testId)).toBeInTheDocument()
+  })
+
+  test('it should use the passed name', async () => {
+    const name = 'TEST NAME'
+    render(
+      <RadioButtonGroup
+        name={name}
+        onChange={jest.fn()}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    for (const el of screen.getAllByRole('radio')) {
+      expect(el).toHaveAttribute('name', name)
+    }
+  })
+
+  test('it should generate a name if one is not passed', async () => {
+    render(
+      <RadioButtonGroup
+        onChange={jest.fn()}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    for (const el of screen.getAllByRole('radio')) {
+      expect(el).toHaveAttribute('name', expect.stringMatching(/^RadioButtonGroup[0-9]+$/))
+    }
+  })
+
+  test('it should call the onChange handler when the selection changes', async () => {
+    const onChangeHandler = jest.fn()
+    render(
+      <RadioButtonGroup
+        onChange={onChangeHandler}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    expect(onChangeHandler).not.toHaveBeenCalled()
+
+    userEvent.click(screen.getByRole('radio', { name: 'option1' }))
+
+    expect(onChangeHandler).toHaveBeenCalled()
+  })
+
+  test('it should disable all options when the group is disabled', async () => {
+    const { rerender } = render(
+      <RadioButtonGroup
+        onChange={jest.fn()}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    for (const el of screen.getAllByRole('radio')) {
+      expect(el).toBeEnabled()
+    }
+
+    rerender(
+      <RadioButtonGroup
+        disabled
+        onChange={jest.fn()}
+        options={[
+          { label: 'option1', value: 'o1' },
+          { label: 'option2', value: 'o2' }
+        ]}
+      />
+    )
+
+    for (const el of screen.getAllByRole('radio')) {
+      expect(el).toBeDisabled()
+    }
+  })
+
+  test('it should display tooltips for options with a tooltipId', async () => {
+    const tooltipId = 'TOOLTIP ID'
+    const tooltips = {
+      [tooltipId]: 'TOOLTIP TEST'
+    }
+    render(
+      <TooltipContextProvider initialTooltipDictionary={tooltips}>
+        <RadioButtonGroup
+          onChange={jest.fn()}
+          options={[
+            { label: 'option1', value: 'o1' },
+            { label: 'option2', value: 'o2', tooltipId }
+          ]}
+        />
+      </TooltipContextProvider>
+    )
+
+    expect(screen.queryByText(tooltips[tooltipId])).not.toBeInTheDocument()
+
+    userEvent.hover(screen.getByRole('radio', { name: 'option2' })?.parentElement?.querySelector('svg') as SVGElement)
+
+    await waitFor(() => {
+      expect(screen.getByText(tooltips[tooltipId])).toBeInTheDocument()
+    })
   })
 })

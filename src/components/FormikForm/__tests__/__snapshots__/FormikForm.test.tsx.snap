@@ -1,0 +1,1396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test basic Components Tag Input component type duplicate values CDNG-8531 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="allowedValues-0"
+        >
+          <label
+            class="bp3-label"
+            for="allowedValues"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_allowedValues"
+            >
+              checking my tag input
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="bp3-popover-wrapper tagInput bp3-fill"
+            >
+              <div
+                class="bp3-popover-target bp3-popover-open"
+              >
+                <div
+                  class=""
+                >
+                  <div
+                    class="bp3-input bp3-tag-input bp3-active bp3-fill bp3-multi-select"
+                  >
+                    <div
+                      class="bp3-tag-input-values"
+                    >
+                      <span
+                        class="bp3-tag bp3-intent-primary bp3-minimal tag"
+                        data-tag-index="0"
+                      >
+                        <span
+                          class="bp3-text-overflow-ellipsis bp3-fill"
+                        >
+                          tag1
+                        </span>
+                        <button
+                          class="bp3-tag-remove"
+                          type="button"
+                        >
+                          <span
+                            class="bp3-icon bp3-icon-small-cross"
+                            icon="small-cross"
+                          >
+                            <svg
+                              data-icon="small-cross"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                            >
+                              <desc>
+                                small-cross
+                              </desc>
+                              <path
+                                d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </span>
+                      <span
+                        class="bp3-tag bp3-intent-primary bp3-minimal tag"
+                        data-tag-index="1"
+                      >
+                        <span
+                          class="bp3-text-overflow-ellipsis bp3-fill"
+                        >
+                          tag2
+                        </span>
+                        <button
+                          class="bp3-tag-remove"
+                          type="button"
+                        >
+                          <span
+                            class="bp3-icon bp3-icon-small-cross"
+                            icon="small-cross"
+                          >
+                            <svg
+                              data-icon="small-cross"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                            >
+                              <desc>
+                                small-cross
+                              </desc>
+                              <path
+                                d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </span>
+                      <input
+                        class="bp3-input-ghost"
+                        value=""
+                      />
+                    </div>
+                    <button
+                      class="bp3-button bp3-minimal"
+                      type="button"
+                    >
+                      <span
+                        class="bp3-icon bp3-icon-cross"
+                        icon="cross"
+                      >
+                        <svg
+                          data-icon="cross"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <desc>
+                            cross
+                          </desc>
+                          <path
+                            d="M9.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components render formik form custom render: custom render formik 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <div
+      class="bp3-form-group"
+    >
+      <label
+        class="bp3-label"
+        for="field1"
+      >
+        <span
+          class="acenter"
+          data-tooltip-id="sampleForm_field1"
+        >
+          field1label
+        </span>
+         
+        <span
+          class="bp3-text-muted"
+        />
+      </label>
+      <div
+        class="bp3-form-content"
+      >
+        <div
+          class="bp3-input-group"
+        >
+          <input
+            autocomplete="off"
+            class="bp3-input"
+            name="field1"
+            type="text"
+            value="val1"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="bp3-form-group"
+    >
+      <div
+        class="bp3-form-content"
+      >
+        <label
+          class="bp3-control bp3-checkbox font checkbox main inline inline-undefined"
+        >
+          <input
+            name="field2"
+            type="checkbox"
+          />
+          <span
+            class="bp3-control-indicator"
+          />
+          <span
+            class="acenter checkBoxDocTooltipLabel"
+            data-tooltip-id="field2tipId"
+          >
+            field2label
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render Checkbox component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="color-0"
+        >
+          <div
+            class="bp3-form-content"
+          >
+            <label
+              class="bp3-control bp3-checkbox font checkbox main inline inline-false"
+            >
+              <input
+                name="color"
+                type="checkbox"
+              />
+              <span
+                class="bp3-control-indicator"
+              />
+              <span
+                class="acenter checkBoxDocTooltipLabel"
+                data-tooltip-id="testform_color"
+              >
+                Color
+              </span>
+            </label>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render Custom Input component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="counter-0"
+        >
+          <label
+            class="bp3-label"
+            for="counter"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_counter"
+            >
+              Increment
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <button
+              class="bp3-button button font main with-current-color"
+              type="button"
+            >
+              <span
+                class="bp3-button-text"
+              >
+                Click Me
+              </span>
+            </button>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render FileInput component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="file-0"
+        >
+          <label
+            class="bp3-label"
+            for="file"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_file"
+            >
+              Attach File
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <label
+              class="bp3-file-input bp3-fill"
+            >
+              <input
+                name="file"
+                type="file"
+              />
+              <span
+                bp3-button-text="Select"
+                class="bp3-file-upload-input bp3-file-upload-input-custom-text"
+              >
+                Select file...
+              </span>
+            </label>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render FileInput component 2`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="tags-0"
+        >
+          <label
+            class="bp3-label"
+            for="tags"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_tags"
+            >
+              Add Tag
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="bp3-popover-wrapper tagInput bp3-fill"
+            >
+              <div
+                class="bp3-popover-target"
+              >
+                <div
+                  class=""
+                >
+                  <div
+                    class="bp3-input bp3-tag-input bp3-fill bp3-multi-select"
+                  >
+                    <div
+                      class="bp3-tag-input-values"
+                    >
+                      <span
+                        class="bp3-tag bp3-minimal tag addTagButton"
+                        data-tag-index="0"
+                      >
+                        <span
+                          class="bp3-text-overflow-ellipsis bp3-fill"
+                        >
+                          + tag
+                        </span>
+                        <button
+                          class="bp3-tag-remove"
+                          type="button"
+                        >
+                          <span
+                            class="bp3-icon bp3-icon-small-cross"
+                            icon="small-cross"
+                          >
+                            <svg
+                              data-icon="small-cross"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                            >
+                              <desc>
+                                small-cross
+                              </desc>
+                              <path
+                                d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </span>
+                      <input
+                        class="bp3-input-ghost"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiSelect component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_color"
+            >
+              Color
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="bp3-popover-wrapper main bp3-fill"
+            >
+              <div
+                class="bp3-popover-target"
+              >
+                <div
+                  class=""
+                >
+                  <div
+                    class="bp3-input bp3-tag-input bp3-multi-select"
+                  >
+                    <div
+                      class="bp3-tag-input-values"
+                    >
+                      <input
+                        autocomplete="off"
+                        class="bp3-input-ghost"
+                        name="color"
+                        placeholder="- Select -"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiTypeInput component with Select (with useValue and selectItems) 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="customvalue"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+                        icon="chevron-down"
+                      >
+                        <svg
+                          data-icon="chevron-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            chevron-down
+                          </desc>
+                          <path
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render MultiTypeInput component with Select 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="label-multitypeinput-0"
+        >
+          <label
+            class="bp3-label"
+            for="label-multitypeinput"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_label-multitypeinput"
+            >
+              select
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="horizontal layout-spacing-undefined main width width-undefined"
+            >
+              <div
+                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+              >
+                <div
+                  class="bp3-popover-target"
+                >
+                  <div
+                    class="bp3-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp3-input"
+                      name="label-multitypeinput"
+                      placeholder="Search..."
+                      style="padding-right: 0px;"
+                      type="text"
+                      value="customvalue"
+                    />
+                    <span
+                      class="bp3-input-action"
+                    >
+                      <span
+                        class="bp3-icon main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
+                        data-icon="main-delete"
+                      >
+                        <svg
+                          height="14"
+                          width="14"
+                        />
+                      </span>
+                      <span
+                        class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+                        icon="chevron-down"
+                      >
+                        <svg
+                          data-icon="chevron-down"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                        >
+                          <desc>
+                            chevron-down
+                          </desc>
+                          <path
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="bp3-popover-wrapper wrapper"
+              >
+                <span
+                  class="bp3-popover-target"
+                >
+                  <button
+                    class="btn FIXED"
+                  >
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render RadioGroup component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_color"
+            >
+              Color
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="main"
+            >
+              
+              <div
+                class=""
+              >
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render RadioGroup component in an inline form input 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group bp3-inline"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_color"
+            >
+              Color
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="inlineRadioGroup main"
+            >
+              
+              <div
+                class=""
+              >
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render Select component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_color"
+            >
+              Color
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="bp3-popover-wrapper main bp3-fill"
+            >
+              <div
+                class="bp3-popover-target"
+              >
+                <div
+                  class="bp3-input-group"
+                >
+                  <input
+                    autocomplete="off"
+                    class="bp3-input"
+                    name="color"
+                    placeholder="- Select -"
+                    style="padding-right: 0px;"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="bp3-input-action"
+                  >
+                    <span
+                      class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+                      icon="chevron-down"
+                    >
+                      <svg
+                        data-icon="chevron-down"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                      >
+                        <desc>
+                          chevron-down
+                        </desc>
+                        <path
+                          d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render Text component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="name-0"
+        >
+          <label
+            class="bp3-label"
+            for="name"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="renderFormikFormWithoutFormName_name"
+            >
+              Name
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="bp3-input-group"
+            >
+              <input
+                autocomplete="off"
+                class="bp3-input"
+                name="name"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render TextArea component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="name-0"
+        >
+          <label
+            class="bp3-label"
+            for="name"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="renderFormikFormWithoutFormName_name"
+            >
+              Name
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <textarea
+              autocomplete="off"
+              class="bp3-input bp3-fill"
+              maxlength="1024"
+              name="name"
+            />
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render an inline RadioGroup component 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_color"
+            >
+              Color
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="main"
+            >
+              
+              <div
+                class="inline"
+              >
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Test basic Components should render an inline RadioGroup component in an inline form input 1`] = `
+<div>
+  <div
+    class="overlaySpinner"
+  >
+    <form
+      class="main"
+    >
+      <div>
+        <div
+          class="bp3-form-group bp3-inline"
+          data-id="color-0"
+        >
+          <label
+            class="bp3-label"
+            for="color"
+          >
+            <span
+              class="acenter"
+              data-tooltip-id="testform_color"
+            >
+              Color
+            </span>
+             
+            <span
+              class="bp3-text-muted"
+            />
+          </label>
+          <div
+            class="bp3-form-content"
+          >
+            <div
+              class="inlineRadioGroup main"
+            >
+              
+              <div
+                class="inline"
+              >
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bp3-button button font main intent intent-primary with-current-color"
+          type="submit"
+        >
+          <span
+            class="bp3-button-text"
+          >
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
