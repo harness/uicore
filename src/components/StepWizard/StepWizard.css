@@ -16,7 +16,7 @@
       .navStep {
         display: grid;
         grid-template-columns: 28px 1fr;
-        margin-bottom: var(--spacing-6);
+        margin-bottom: var(--spacing-7);
         cursor: not-allowed;
 
         &.activeStep {
@@ -72,6 +72,7 @@
   font-weight: 600;
   margin-top: var(--spacing-6);
   margin-bottom: var(--spacing-10);
+  text-align: center;
 }
 
 .completedIcon {
