@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import { RadioButton } from '../RadioButton'
 import userEvent from '@testing-library/user-event'
 import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
+import { Color } from '../../../core/Color'
 
 describe('RadioButton', () => {
   test('it should render a string label', async () => {
@@ -75,5 +76,13 @@ describe('RadioButton', () => {
     const { container } = render(<RadioButton label="test" value="test" />)
 
     expect(container.querySelector('[data-tooltip-id]')).not.toBeInTheDocument()
+  })
+
+  test('it should accept styled props', async () => {
+    const testId = 'TEST ID'
+    render(<RadioButton data-testid={testId} margin="large" background={Color.GREEN_50} label="test" />)
+
+    expect(screen.getByTestId(testId)).toHaveClass('margin-large')
+    expect(screen.getByTestId(testId)).toHaveClass('background-green50')
   })
 })
