@@ -118,15 +118,12 @@ export const DropDown: React.FC<DropDownProps> = props => {
   }, [query, JSON.stringify(items)])
 
   React.useEffect(() => {
-    if (value) {
-      const newActiveItem = dropDownItems.find(item => item.value === value.toString())
-      newActiveItem && setActiveItem(newActiveItem)
+    const newActiveItem = dropDownItems.find(item => item.value === value?.toString()) || {
+      label: '',
+      value: ''
     }
+    setActiveItem(newActiveItem)
   }, [value, dropDownItems])
-
-  React.useEffect(() => {
-    activeItem && onChange(activeItem)
-  }, [activeItem])
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
@@ -153,7 +150,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
         itemRenderer?.(item, rendererProps) || defaultItemRenderer(item, rendererProps)
       }
       items={dropDownItems}
-      onItemSelect={setActiveItem}
+      onItemSelect={onChange}
       activeItem={activeItem}
       filterable={filterable}
       itemListRenderer={renderMenu}
@@ -203,7 +200,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
               withoutCurrentColor={true}
               onClick={e => {
                 e.stopPropagation()
-                setActiveItem({ label: '', value: '' })
+                onChange({ label: '', value: '' })
               }}
             />
           )}

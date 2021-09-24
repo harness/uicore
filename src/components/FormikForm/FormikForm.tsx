@@ -11,7 +11,7 @@ import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
-import { RadioButtonGroup } from '../RadioButton/RadioButtonGroup'
+import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButton/RadioButtonGroup'
 import {
   FormGroup,
   InputGroup,
@@ -19,9 +19,7 @@ import {
   IInputGroupProps,
   Intent,
   ITagInputProps,
-  IRadioGroupProps,
   ITextAreaProps,
-  IOptionProps,
   IFileInputProps,
   TextArea as BpTextArea,
   FileInput as BpFileInput,
@@ -60,6 +58,7 @@ import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { FormikTooltipContext } from './FormikTooltipContext'
 import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 import { FormError } from '../FormError/FormError'
+import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -367,9 +366,9 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
 
 export interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
-  items: IOptionProps[]
-  radioGroup?: Omit<IRadioGroupProps, 'name' | 'value' | 'onChange' | 'options'>
-  onChange?: IRadioGroupProps['onChange']
+  items: RadioButtonGroupProps['options']
+  radioGroup?: Omit<RadioButtonGroupProps, 'selectedValue' | 'onChange' | 'options'>
+  onChange?: RadioButtonGroupProps['onChange']
 }
 
 const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
@@ -613,6 +612,59 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
           onChange?.(item)
         }}
         onQueryChange={(query: string) => onQueryChange?.(query)}
+      />
+    </FormGroup>
+  )
+}
+
+export interface DropDownFormikProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  onChange?: DropDownProps['onChange']
+  items: DropDownProps['items']
+  usePortal?: boolean
+  addClearBtn?: boolean
+  placeholder?: string
+  dropDownProps?: Omit<DropDownProps, 'items' | 'onChange' | 'value'>
+}
+
+const DropDown = (props: DropDownFormikProps & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    items,
+    addClearBtn,
+    label,
+    placeholder,
+    inline = formik?.inline,
+    onChange,
+    dropDownProps,
+    ...rest
+  } = restProps
+
+  return (
+    <FormGroup
+      label={getFormFieldLabel(label, name, props)}
+      labelFor={name}
+      helperText={helperText}
+      intent={intent}
+      disabled={disabled}
+      inline={inline}
+      usePortal={!!props.usePortal}
+      {...rest}>
+      <UiKitDropDown
+        addClearBtn={addClearBtn || false}
+        placeholder={placeholder}
+        {...dropDownProps}
+        items={items}
+        disabled={disabled}
+        value={get(formik?.values, name)}
+        onChange={(item: SelectOption) => {
+          formik?.setFieldValue(name, item.value)
+          onChange?.(item)
+        }}
       />
     </FormGroup>
   )
@@ -1330,6 +1382,7 @@ export const FormInput = {
   Toggle: connect(Toggle),
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
+  DropDown: connect(DropDown),
   Text: connect(Text),
   ExpressionInput: connect(ExpressionInput),
   TextArea: connect(TextArea),

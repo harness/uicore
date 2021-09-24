@@ -30,6 +30,7 @@ import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
+import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
 import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
@@ -143,6 +144,7 @@ import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DelegatesIcon from './delegates-icon.svg'
+import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
 import DeployStage from './deploy-stage.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -163,6 +165,7 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import Description from './description.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
@@ -208,6 +211,7 @@ import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
@@ -231,6 +235,7 @@ import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
+import LineChart from './line-chart.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
@@ -590,6 +595,7 @@ type HarnessIconName =
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'banned'
+  | 'bar-chart'
   | 'barrier-close'
   | 'barrier-open-with-links'
   | 'barrier-open'
@@ -703,6 +709,7 @@ type HarnessIconName =
   | 'dashboard-selected'
   | 'dashboard'
   | 'delegates-icon'
+  | 'dependency-default-icon'
   | 'dependency-step'
   | 'deploy-stage'
   | 'deployment-aborted-legacy'
@@ -723,6 +730,7 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'description'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
@@ -768,6 +776,7 @@ type HarnessIconName =
   | 'gitlab'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'graph'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
@@ -791,6 +800,7 @@ type HarnessIconName =
   | 'layout-float'
   | 'layout-right'
   | 'library'
+  | 'line-chart'
   | 'linkedin'
   | 'list-entity-infographic'
   | 'list-view'
@@ -1150,6 +1160,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
+  'bar-chart': BarChart,
   'barrier-close': BarrierClose,
   'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
@@ -1263,6 +1274,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'delegates-icon': DelegatesIcon,
+  'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
   'deploy-stage': DeployStage,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
@@ -1283,6 +1295,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  description: Description,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
@@ -1328,6 +1341,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  graph: Graph,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
@@ -1351,6 +1365,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
   library: Library,
+  'line-chart': LineChart,
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,

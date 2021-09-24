@@ -32,7 +32,7 @@ exports[`Render basic component should check snapshot with name 1`] = `
           </svg>
         </span>
         <p
-          class="font main intent intent-primary"
+          class="font main intent intent-primary font-size font-size-small"
         >
           Google
         </p>
@@ -42,8 +42,8 @@ exports[`Render basic component should check snapshot with name 1`] = `
         data-icon="main-chevron-right"
       >
         <svg
-          height="12"
-          width="12"
+          height="8"
+          width="8"
         />
       </span>
     </div>
@@ -64,7 +64,7 @@ exports[`Render basic component should check snapshot with name 1`] = `
           />
         </span>
         <p
-          class="font main intent intent-primary"
+          class="font main intent intent-primary font-size font-size-small"
         >
           Gmail
         </p>
@@ -74,8 +74,8 @@ exports[`Render basic component should check snapshot with name 1`] = `
         data-icon="main-chevron-right"
       >
         <svg
-          height="12"
-          width="12"
+          height="8"
+          width="8"
         />
       </span>
     </div>
@@ -87,7 +87,7 @@ exports[`Render basic component should check snapshot with name 1`] = `
         href="/"
       >
         <p
-          class="font main intent intent-primary"
+          class="font main intent intent-primary font-size font-size-small"
         >
           Gmail2
         </p>
@@ -97,8 +97,8 @@ exports[`Render basic component should check snapshot with name 1`] = `
         data-icon="main-chevron-right"
       >
         <svg
-          height="12"
-          width="12"
+          height="8"
+          width="8"
         />
       </span>
     </div>

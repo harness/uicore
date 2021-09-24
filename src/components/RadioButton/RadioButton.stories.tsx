@@ -2,10 +2,10 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton, RadioButtonProps } from './RadioButton'
+import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
 
 export default {
   title: 'Components / RadioButton',
-
   component: RadioButton,
   parameters: {
     layout: 'centered',
@@ -20,7 +20,7 @@ export default {
             <Title>RadioButton</Title>
             <Subtitle>
               <pre>
-                <code>{`import {RadioButton} from '@wings-software/uicore'`}</code>
+                <code>{`import { RadioButton } from '@wings-software/uicore'`}</code>
               </pre>
             </Subtitle>
 
@@ -62,5 +62,29 @@ export const DisabledState: Story<RadioButtonProps> = args => {
       <RadioButton label="Disabled" disabled value="one" {...args} />
       <RadioButton label="Disabled and Selected" disabled checked value="one" {...args} />
     </>
+  )
+}
+
+export const WithElementAsLabel: Story<RadioButtonProps> = args => {
+  return (
+    <>
+      <RadioButton
+        label={
+          <span>
+            <strong>Bold text</strong> and <em>italic text</em>
+          </span>
+        }
+        {...args}
+      />
+      <RadioButton label={<span style={{ transform: 'rotate(180deg)' }}>Upside-down text</span>} {...args} />
+    </>
+  )
+}
+
+export const WithTooltip: Story<RadioButtonProps> = args => {
+  return (
+    <TooltipContextProvider initialTooltipDictionary={{ something: 'I am a tooltip' }}>
+      <RadioButton label="With a tooltip" tooltipId="something" value="one" {...args} />
+    </TooltipContextProvider>
   )
 }
