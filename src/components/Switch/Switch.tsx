@@ -28,7 +28,7 @@ export function Switch(props: SwitchProps): React.ReactElement {
       labelElement={
         <span>
           {label}
-          {tooltipProps ? <HarnessDocTooltip useStandAlone {...tooltipProps} /> : null}
+          {tooltipProps ? <HarnessDocTooltip useStandAlone tooltipId={tooltipProps.tooltipId} /> : null}
         </span>
       }
       {...omitStyledProps(omit(props, ['tooltipProps', 'label']))}
