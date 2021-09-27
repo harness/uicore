@@ -194,6 +194,7 @@ import File from './file.svg'
 import FixedInput from './fixed-input.svg'
 import FolderUpload from './folder-upload.svg'
 import Functions from './functions.svg'
+import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
 import GcrStep from './gcr-step.svg'
 import GcsStep from './gcs-step.svg'
@@ -759,6 +760,7 @@ type HarnessIconName =
   | 'fixed-input'
   | 'folder-upload'
   | 'functions'
+  | 'gcp-kms'
   | 'gcp'
   | 'gcr-step'
   | 'gcs-step'
@@ -1324,6 +1326,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'fixed-input': FixedInput,
   'folder-upload': FolderUpload,
   functions: Functions,
+  'gcp-kms': GcpKms,
   gcp: Gcp,
   'gcr-step': GcrStep,
   'gcs-step': GcsStep,
