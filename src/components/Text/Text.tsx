@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, useRef, useLayoutEffect, useState, useEffect } from 'react'
 import { Assign } from 'utility-types'
+import cx from 'classnames'
 import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
 import styledCSS from '../../styled-props/StyledProps.css'
 import { OptionalTooltip } from '../../core/Types'
@@ -76,7 +77,12 @@ export function Text(props: TextProps) {
   }, [lineClamp, props.tooltip, alwaysShowTooltip])
 
   const wrappedInTooltip = (
-    <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
+    <Utils.WrapOptionalTooltip
+      tooltip={tooltip}
+      tooltipProps={{
+        ...props.tooltipProps,
+        targetClassName: cx(css.targetClass, props.tooltipProps?.targetClassName)
+      }}>
       <Tag
         {...omitStyledProps(
           Object.assign({}, props, { style }),
