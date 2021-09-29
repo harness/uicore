@@ -168,3 +168,4 @@ export { GridListToggle, GridListToggleProps, Views } from './components/GridLis
 export { FormError } from './components/FormError/FormError'
 export { FontVariation } from './styled-props/font/FontProps'
 export { FormikTooltipContext } from './components/FormikForm/FormikTooltipContext'
+export { MultiSelectDropDown } from './components/MultiSelectDropDown/MultiSelectDropDown'
