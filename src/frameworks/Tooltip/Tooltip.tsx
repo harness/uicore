@@ -27,9 +27,8 @@ export const HarnessDocTooltip = ({
   const { getTooltip } = useTooltips()
   const tooltipContent = contentFromParent || getTooltip(tooltipId || '', getTooltipAdditionalVars)
 
-  const asString =
-    typeof tooltipContent === 'object' ? (tooltipContent as TooltipDictionaryValue).content : (tooltipContent as string)
-  const widthValue = typeof tooltipContent === 'object' && (tooltipContent as TooltipDictionaryValue).width
+  const asString = typeof tooltipContent === 'object' ? tooltipContent.content : tooltipContent
+  const widthValue = typeof tooltipContent === 'object' && tooltipContent.width
   const customWidth = widthValue ? Number(widthValue) : 400
   const tooltipContentHtml = _asHtml(asString)
 
@@ -38,11 +37,11 @@ export const HarnessDocTooltip = ({
       popoverClassName={css.tooltipWrapper}
       position="auto"
       interactionKind={PopoverInteractionKind.HOVER}
-      // eslint-disable-next-line
       content={
         <div
           className={css.tooltipContentWrapper}
           style={{ maxWidth: `${customWidth}px` }}
+          // eslint-disable-next-line
           dangerouslySetInnerHTML={{ __html: tooltipContentHtml }}
         />
       }>
