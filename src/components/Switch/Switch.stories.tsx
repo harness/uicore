@@ -38,7 +38,7 @@ export default {
 export const Basic: Story<SwitchProps> = args => {
   return (
     <>
-      <Switch label="Not Selected" tooltipProps={{ tooltipId: 'test', contentFromParent: 'Test Tooltip' }} {...args} />
+      <Switch label="Not Selected" {...args} />
       <Switch label="Selected" checked {...args} />
       <Switch label="Disabled" disabled {...args} />
       <Switch label="Disabled and Selected" disabled checked {...args} />
