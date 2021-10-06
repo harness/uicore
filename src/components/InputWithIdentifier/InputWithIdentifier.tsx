@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
 import { get } from 'lodash-es'
 import cx from 'classnames'
+import { FormikTooltipContext } from '../FormikForm/FormikTooltipContext'
 
 import { FormInput, TextProps } from '../FormikForm/FormikForm'
 import { Text } from '../Text/Text'
 import { Icon } from '../../icons/Icon'
 import { Layout } from '../../layouts/Layout'
 import { Container } from '../Container/Container'
-
 import textCss from '../TextInput/TextInput.css'
 import css from './InputWithIdentifier.css'
 import { FormError } from '../FormError/FormError'
@@ -66,10 +66,19 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
   const identifier = get(formik.values, idName) as string
   const [currentEditField, setCurrentEditField] = useState(inputLabel)
+  const tooltipContext = useContext(FormikTooltipContext)
+  const dataTooltipId = tooltipContext?.formName ? `${tooltipContext?.formName}_${idName}` : ''
+
   return (
     <div className={cx(css.txtNameContainer, textCss.main)}>
       <Layout.Horizontal className={css.txtIdContainer} spacing="xsmall">
-        <Text>{idLabel}:</Text>
+        <Text
+          tooltipProps={{
+            dataTooltipId
+          }}>
+          {idLabel}
+        </Text>
+        <Text>:</Text>
         <Popover
           content={<Container padding="small">{identifier}</Container>}
           interactionKind={PopoverInteractionKind.HOVER}
