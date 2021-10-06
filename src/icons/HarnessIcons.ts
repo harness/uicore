@@ -217,6 +217,7 @@ import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import Governance from './governance.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -788,6 +789,7 @@ type HarnessIconName =
   | 'gitlab'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'governance'
   | 'graph'
   | 'grey-cluster'
   | 'harness-logo-black'
@@ -1359,6 +1361,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  governance: Governance,
   graph: Graph,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
