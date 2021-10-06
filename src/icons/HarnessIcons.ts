@@ -57,6 +57,7 @@ import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
 import CcmWithText from './ccm-with-text.svg'
 import CdHover from './cd-hover.svg'
+import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import CdSolid from './cd-solid.svg'
@@ -71,10 +72,12 @@ import CeCluster from './ce-cluster.svg'
 import CeHover from './ce-hover.svg'
 import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
+import CeMainInverse from './ce-main-inverse.svg'
 import CeMain from './ce-main.svg'
 import CeOptimization from './ce-optimization.svg'
 import CeVisibility from './ce-visibility.svg'
 import CfHover from './cf-hover.svg'
+import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
@@ -82,6 +85,7 @@ import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiHover from './ci-hover.svg'
+import CiMainInverse from './ci-main-inverse.svg'
 import CiMain from './ci-main.svg'
 import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
@@ -136,6 +140,7 @@ import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
 import CvHover from './cv-hover.svg'
+import CvMainInverse from './cv-main-inverse.svg'
 import CvMain from './cv-main.svg'
 import CvSketch from './cv-sketch.svg'
 import CvSolidCurrentColor from './cv-solid-current-color.svg'
@@ -623,6 +628,7 @@ type HarnessIconName =
   | 'ccm-solid'
   | 'ccm-with-text'
   | 'cd-hover'
+  | 'cd-main-inverse'
   | 'cd-main'
   | 'cd-sketch'
   | 'cd-solid'
@@ -637,10 +643,12 @@ type HarnessIconName =
   | 'ce-hover'
   | 'ce-main-colored'
   | 'ce-main-grey'
+  | 'ce-main-inverse'
   | 'ce-main'
   | 'ce-optimization'
   | 'ce-visibility'
   | 'cf-hover'
+  | 'cf-main-inverse'
   | 'cf-main'
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
@@ -648,6 +656,7 @@ type HarnessIconName =
   | 'check'
   | 'ci-active-build'
   | 'ci-hover'
+  | 'ci-main-inverse'
   | 'ci-main'
   | 'ci-pending-build'
   | 'ci-sketch'
@@ -702,6 +711,7 @@ type HarnessIconName =
   | 'custom-stage'
   | 'customRole'
   | 'cv-hover'
+  | 'cv-main-inverse'
   | 'cv-main'
   | 'cv-sketch'
   | 'cv-solid-current-color'
@@ -1189,6 +1199,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ccm-solid': CcmSolid,
   'ccm-with-text': CcmWithText,
   'cd-hover': CdHover,
+  'cd-main-inverse': CdMainInverse,
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
   'cd-solid': CdSolid,
@@ -1203,10 +1214,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-hover': CeHover,
   'ce-main-colored': CeMainColored,
   'ce-main-grey': CeMainGrey,
+  'ce-main-inverse': CeMainInverse,
   'ce-main': CeMain,
   'ce-optimization': CeOptimization,
   'ce-visibility': CeVisibility,
   'cf-hover': CfHover,
+  'cf-main-inverse': CfMainInverse,
   'cf-main': CfMain,
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
@@ -1214,6 +1227,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   check: Check,
   'ci-active-build': CiActiveBuild,
   'ci-hover': CiHover,
+  'ci-main-inverse': CiMainInverse,
   'ci-main': CiMain,
   'ci-pending-build': CiPendingBuild,
   'ci-sketch': CiSketch,
@@ -1268,6 +1282,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'custom-stage': CustomStage,
   customRole: CustomRole,
   'cv-hover': CvHover,
+  'cv-main-inverse': CvMainInverse,
   'cv-main': CvMain,
   'cv-sketch': CvSketch,
   'cv-solid-current-color': CvSolidCurrentColor,
