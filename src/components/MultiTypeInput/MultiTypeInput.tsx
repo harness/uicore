@@ -69,7 +69,7 @@ export const getMultiTypeFromValue = (
 
 export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntimeTypeProps<T>): React.ReactElement {
   const {
-    value,
+    value: valueFromProps,
     defaultValueToReset,
     width,
     expressions = [],
@@ -86,7 +86,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
-  const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
+  const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(valueFromProps))
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = (newType: MultiTypeInputType) => {
     if (type !== newType) {
@@ -97,9 +97,21 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     }
   }
 
+  // Need to introduce this localValue.
+  // When the value from props changes, update the local value and automatically change the type to fix/runtime/expression. PIE-1477
+  // If the user types on their own, do not change the type. just update the localValue
+  const [localValue, setLocalValue] = useState(valueFromProps)
+
+  useEffect(() => {
+    // Try and change the type whenever the value changes
+    setType(getMultiTypeFromValue(valueFromProps))
+    setLocalValue(valueFromProps)
+  }, [valueFromProps])
+
   const FixedTypeComponent = fixedTypeComponent
   const fixedComponentOnChangeCallback = useCallback(
     (val, multiTypeInputValue: MultiTypeInputValue) => {
+      setLocalValue(val)
       onChange?.(val, multiTypeInputValue, MultiTypeInputType.FIXED)
     },
     [onChange]
@@ -121,7 +133,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       {type === MultiTypeInputType.FIXED && (
         <FixedTypeComponent
           {...(fixedTypeComponentProps as T)}
-          value={value}
+          value={localValue}
           disabled={disabled}
           onChange={fixedComponentOnChangeCallback}
         />
@@ -132,7 +144,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           name={name}
           placeholder={RUNTIME_INPUT_VALUE}
           disabled
-          value={value as string}
+          value={localValue as string}
         />
       )}
       {type === MultiTypeInputType.EXPRESSION && (
@@ -143,9 +155,10 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           name={name}
           items={expressions}
           inputProps={{ placeholder: EXPRESSION_INPUT_PLACEHOLDER }}
-          value={value as string}
+          value={localValue as string}
           disabled={disabled}
           onChange={val => {
+            setLocalValue(val)
             onChange?.(val, MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
           }}
           data-mentions={mentionsType}

@@ -27,6 +27,7 @@ export const MultiSelectInput: Story<MultiSelectTypeInputProps> = args => <Multi
 
 TextInput.args = {
   disabled: false,
+  value: '',
   expressions: [
     'app.name',
     'app.description',
