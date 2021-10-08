@@ -91,3 +91,7 @@
     @mixin switch-styles;
   }
 }
+
+.inlineTooltip {
+  display: inline !important;
+}
