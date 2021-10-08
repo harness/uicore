@@ -49,153 +49,154 @@ export const Basic: Story<TextProps> = () => {
     <>
       <Text
         font={{ variation: FontVariation.DISPLAY1 }}
-        tooltip={`<Text font={{ kind: FontKind.DISPLAY1 }}>Display 1</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.DISPLAY1 }}>Display 1</Text>`}>
         Display 1
       </Text>
       <Text
         font={{ variation: FontVariation.DISPLAY2 }}
-        tooltip={`<Text font={{ kind: FontKind.DISPLAY2 }}>Display 2</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.DISPLAY2 }}>Display 2</Text>`}>
         Display 2
       </Text>
       <Text
         font={{ variation: FontVariation.H1 }}
-        tooltip={`<Text font={{ kind: FontKind.H1 }}>Headline Text - H1/Bold - Module Landing Title</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.H1 }}>Headline Text - H1/Bold - Module Landing Title</Text>`}>
         Headline Text - H1/Bold - Module Landing Title
       </Text>
       <Text
         font={{ variation: FontVariation.H1_SEMI }}
-        tooltip={`<Text font={{ kind: FontKind.H1_SEMI }}>Headline Text - H1/Semi - Semi Bold</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.H1_SEMI }}>Headline Text - H1/Semi - Semi Bold</Text>`}>
         Headline Text - H1/Semi - Semi Bold
       </Text>
       <Text
         font={{ variation: FontVariation.H2 }}
-        tooltip={`<Text font={{ kind: FontKind.H2 }}>Headline Text - H2</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.H2 }}>Headline Text - H2</Text>`}>
         Headline Text - H2
       </Text>
       <Text
         font={{ variation: FontVariation.H3 }}
-        tooltip={`<Text font={{ kind: FontKind.H3 }}>Headline Text - H3 - Dialogue Title</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.H3 }}>Headline Text - H3 - Dialogue Title</Text>`}>
         Headline Text - H3 - Dialogue Title
       </Text>
       <Text
         font={{ variation: FontVariation.H4 }}
-        tooltip={`<Text font={{ kind: FontKind.H4 }}>Headline Text - H4 - Page Header Title/Landing/Listing Page Empty State Title</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.H4 }}>Headline Text - H4 - Page Header Title/Landing/Listing Page Empty State Title</Text>`}>
         Headline Text - H4 - Page Header Title/Landing/Listing Page Empty State Title
       </Text>
       <Text
         font={{ variation: FontVariation.H5 }}
-        tooltip={`<Text font={{ kind: FontKind.H5 }}>Headline Text - H5 - Form/Section Title</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.H5 }}>Headline Text - H5 - Form/Section Title</Text>`}>
         Headline Text - H5 - Form/Section Title
       </Text>
       <Text
         font={{ variation: FontVariation.H6 }}
-        tooltip={`<Text font={{ kind: FontKind.H6 }}>Headline Text - H6 - Section Title</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.H6 }}>Headline Text - H6 - Section Title</Text>`}>
         Headline Text - H6 - Section Title
       </Text>
-      <Text font={{ variation: FontVariation.LEAD }} tooltip={`<Text font={{ kind: FontKind.LEAD }}>Lead</Text>`}>
+      <Text font={{ variation: FontVariation.LEAD }} tooltip={`<Text font={{ kind: FontVariation.LEAD }}>Lead</Text>`}>
         Lead
       </Text>
       <Text
         font={{ variation: FontVariation.BODY1 }}
-        tooltip={`<Text font={{ kind: FontKind.BODY1 }}>Body 1 - Landing page body text/Landing page (Empty state body text)</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.BODY1 }}>Body 1 - Landing page body text/Landing page (Empty state body text)</Text>`}>
         Body 1 - Landing page body text/Landing page (Empty state body text){' '}
       </Text>
       <Text
         font={{ variation: FontVariation.BODY2 }}
-        tooltip={`<Text font={{ kind: FontKind.BODY2 }}>Body 2 - Emphasized Text </Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.BODY2 }}>Body 2 - Emphasized Text </Text>`}>
         Body 2 - Emphasized Text
       </Text>
       <Text
         font={{ variation: FontVariation.BODY }}
-        tooltip={`<Text font={{ kind: FontKind.BODY }}>Body - Normal Text</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.BODY }}>Body - Normal Text</Text>`}>
         Body - Normal Text
       </Text>
       <Text
         font={{ variation: FontVariation.BLOCKQUOTE }}
-        tooltip={`<Text font={{ kind: FontKind.BLOCKQUOTE }}>Blockquote</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.BLOCKQUOTE }}>Blockquote</Text>`}>
         Blockquote
       </Text>
       <Text
         font={{ variation: FontVariation.UPPERCASED }}
-        tooltip={`<Text font={{ kind: FontKind.UPPERCASED }}>UPPERCASED (CAPITALIZED on Design)</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.UPPERCASED }}>UPPERCASED (CAPITALIZED on Design)</Text>`}>
         UPPERCASED (CAPITALIZED on Design)
       </Text>
       <Text
         font={{ variation: FontVariation.SMALL_BOLD }}
-        tooltip={`<Text font={{ kind: FontKind.SMALL_BOLD }}>Small Bold</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.SMALL_BOLD }}>Small Bold</Text>`}>
         Small Bold
       </Text>
       <Text
         font={{ variation: FontVariation.SMALL_SEMI }}
-        tooltip={`<Text font={{ kind: FontKind.SMALL_SEMI }}>Small Semi Bold</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.SMALL_SEMI }}>Small Semi Bold</Text>`}>
         Small Semi Bold
       </Text>
       <Text
         font={{ variation: FontVariation.SMALL }}
-        tooltip={`<Text font={{ kind: FontKind.SMALL }}>Small - Supplementary info/Breadcrumb</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.SMALL }}>Small - Supplementary info/Breadcrumb</Text>`}>
         Small - Supplementary info/Breadcrumb
       </Text>
       <Text
         font={{ variation: FontVariation.TABLE_HEADERS }}
-        tooltip={`<Text font={{ kind: FontKind.TABLE_HEADERS }}>TABLE HEADERS - LIST/TABLE HEADER (GRAY BG)/LIST/TABLE HEADER (WHITE BG)</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.TABLE_HEADERS }}>TABLE HEADERS - LIST/TABLE HEADER (GRAY BG)/LIST/TABLE HEADER (WHITE BG)</Text>`}>
         TABLE HEADERS - LIST/TABLE HEADER (GRAY BG)/LIST/TABLE HEADER (WHITE BG)
       </Text>
-      <Text font={{ variation: FontVariation.TINY }} tooltip={`<Text font={{ kind: FontKind.TINY }}>Tiny</Text>`}>
+      <Text font={{ variation: FontVariation.TINY }} tooltip={`<Text font={{ kind: FontVariation.TINY }}>Tiny</Text>`}>
         Tiny
       </Text>
       <Text
         font={{ variation: FontVariation.TINY_SEMI }}
-        tooltip={`<Text font={{ kind: FontKind.TINY_SEMI }}>Tiny Semi</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.TINY_SEMI }}>Tiny Semi</Text>`}>
         Tiny Semi
       </Text>
       <Text
         font={{ variation: FontVariation.YAML }}
-        tooltip={`<Text font={{ kind: FontKind.YAML }}>YAML - YAML Code</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.YAML }} tag="pre">YAML - YAML Code</Text>`}
+        tag="pre">
         YAML - YAML Code
       </Text>
       <Text
         font={{ variation: FontVariation.CARD_TITLE }}
-        tooltip={`<Text font={{ kind: FontKind.CARD_TITLE }}>Card Title - Project/Execution/Templates/Dashboards</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.CARD_TITLE }}>Card Title - Project/Execution/Templates/Dashboards</Text>`}>
         Card Title - Project/Execution/Templates/Dashboards
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_TITLE }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_TITLE }}>Form Title</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_TITLE }}>Form Title</Text>`}>
         Form Title
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_SUB_SECTION }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_SUB_SECTION }}>Form Sub Section</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_SUB_SECTION }}>Form Sub Section</Text>`}>
         Form Sub Section
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_INPUT_TEXT }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_INPUT_TEXT }}>Form Input Text</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_INPUT_TEXT }}>Form Input Text</Text>`}>
         Form Input Text
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_LABEL }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_LABEL }}>Form Label</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_LABEL }}>Form Label</Text>`}>
         Form Label
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_HELP }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_HELP }}>Form Help Text</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_HELP }}>Form Help Text</Text>`}>
         Form Help Text
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_MESSAGE_DANGER }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_MESSAGE_DANGER }}>Form Message Danger</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_MESSAGE_DANGER }}>Form Message Danger</Text>`}>
         Form Message Danger
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_MESSAGE_WARNING }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_MESSAGE_WARNING }}>Form Message Warning</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_MESSAGE_WARNING }}>Form Message Warning</Text>`}>
         Form Message Warning
       </Text>
       <Text
         font={{ variation: FontVariation.FORM_MESSAGE_SUCCESS }}
-        tooltip={`<Text font={{ kind: FontKind.FORM_MESSAGE_SUCCESS }}>Form Message Success</Text>`}>
+        tooltip={`<Text font={{ kind: FontVariation.FORM_MESSAGE_SUCCESS }}>Form Message Success</Text>`}>
         Form Message Success
       </Text>
     </>

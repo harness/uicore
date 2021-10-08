@@ -29,10 +29,13 @@ export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, Styled
 
   /** Optional props for right icon */
   rightIconProps?: Partial<IconProps>
+
+  /** Optional HTML tag. Default is 'p' */
+  tag?: string
 }
 
 export function Text(props: TextProps) {
-  const Tag = (props.inline ? 'span' : 'p') as React.ElementType
+  const Tag = (props.tag ? props.tag : props.inline ? 'span' : 'p') as React.ElementType
   const [tooltip, setTooltip] = useState(props.tooltip)
   const lineClamp = props.lineClamp
   const style = { ...props.style }
@@ -92,7 +95,8 @@ export function Text(props: TextProps) {
           'icon',
           'iconProps',
           'rightIcon',
-          'rightIconProps'
+          'rightIconProps',
+          'tag'
         )}
         className={styledClasses(props, styledCSS.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
         ref={ref}>
