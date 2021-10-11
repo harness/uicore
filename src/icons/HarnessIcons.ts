@@ -148,6 +148,7 @@ import CvSolid from './cv-solid.svg'
 import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DataFetchError from './data-fetch-error.svg'
 import DelegatesIcon from './delegates-icon.svg'
 import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
@@ -379,6 +380,7 @@ import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
+import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
@@ -720,6 +722,7 @@ type HarnessIconName =
   | 'cv-with-text'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'data-fetch-error'
   | 'delegates-icon'
   | 'dependency-default-icon'
   | 'dependency-step'
@@ -951,6 +954,7 @@ type HarnessIconName =
   | 'new-decoration'
   | 'new-notification'
   | 'ng-filter'
+  | 'no-deployments'
   | 'no-feedback-given'
   | 'not-synced'
   | 'notification'
@@ -1292,6 +1296,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cv-with-text': CvWithText,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'data-fetch-error': DataFetchError,
   'delegates-icon': DelegatesIcon,
   'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
@@ -1523,6 +1528,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
+  'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
   'not-synced': NotSynced,
   notification: Notification,
