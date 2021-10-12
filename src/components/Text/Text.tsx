@@ -100,9 +100,11 @@ export function Text(props: TextProps) {
         )}
         className={styledClasses(props, styledCSS.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
         ref={ref}>
-        {icon && <Icon name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
+        {icon && <Icon className={css.icon} name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}
-        {rightIcon && <Icon name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />}
+        {rightIcon && (
+          <Icon className={css.icon} name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />
+        )}
       </Tag>
     </Utils.WrapOptionalTooltip>
   )

@@ -109,33 +109,48 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
 
   const defaultTooltip = (
     <Layout.Vertical className={css.hoverToolTipLayout}>
-      <Layout.Horizontal flex padding="small" className={css.hoverAvatarLayout}>
+      <Layout.Horizontal flex padding="medium" className={css.hoverAvatarLayout}>
         {src ? (
-          <img src={src} style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }} alt={name} />
+          <img
+            className={css.avatarImg}
+            src={src}
+            style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}
+            alt={name}
+          />
         ) : (
-          <div style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}>{inner}</div>
+          <div className={css.avatarImg} style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}>
+            {inner}
+          </div>
         )}
 
-        <Text lineClamp={1}>{name}</Text>
+        <Text margin={{ bottom: 'small' }} font={{ size: 'small', weight: 'bold' }} color={Color.BLACK} lineClamp={1}>
+          {name}
+        </Text>
       </Layout.Horizontal>
 
-      {email && (
-        <Container padding="small">
-          <Text
-            icon="command-email"
-            iconProps={{ color: 'grey300', size: 18 }}
-            lineClamp={1}
-            className={css.emailHover}>
-            {email}
-          </Text>
-        </Container>
-      )}
-
-      {hoverCardDetailsCallBack && (
-        <Container padding="small">
-          <Text color="blue500" lineClamp={1} onClick={hoverCardDetailsCallBack}>
-            Details
-          </Text>
+      {(email || hoverCardDetailsCallBack) && (
+        <Container padding="medium">
+          {email && (
+            <Text
+              margin={{ top: 'small' }}
+              font={{ size: 'small' }}
+              icon="email-inline"
+              iconProps={{ color: 'grey600', size: 10 }}
+              lineClamp={1}
+              className={css.emailHover}>
+              {email}
+            </Text>
+          )}
+          {hoverCardDetailsCallBack && (
+            <Text
+              font={{ size: 'xsmall' }}
+              margin={{ top: 'small' }}
+              color="primary7"
+              lineClamp={1}
+              onClick={hoverCardDetailsCallBack}>
+              Details
+            </Text>
+          )}
         </Container>
       )}
     </Layout.Vertical>
@@ -151,6 +166,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
         interactionKind="hover"
         usePortal={false}
         className={css.avatarPopOver}
+        position="top"
         disabled={!hoverCard}>
         <div className={css.AvatarInner} style={contentStyle}>
           {inner}
