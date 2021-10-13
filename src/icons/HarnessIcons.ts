@@ -183,6 +183,7 @@ import Entity from './entity.svg'
 import Environment from './environment.svg'
 import Environments from './environments.svg'
 import ExecutionAbort from './execution-abort.svg'
+import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionSuccess from './execution-success.svg'
@@ -758,6 +759,7 @@ type HarnessIconName =
   | 'environment'
   | 'environments'
   | 'execution-abort'
+  | 'execution-history'
   | 'execution-input'
   | 'execution-rollback'
   | 'execution-success'
@@ -1333,6 +1335,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   environment: Environment,
   environments: Environments,
   'execution-abort': ExecutionAbort,
+  'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
   'execution-success': ExecutionSuccess,
