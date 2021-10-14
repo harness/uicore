@@ -10,5 +10,8 @@
   }
   .stepWrap {
     display: flex;
+    .stepLabelContainer {
+      flex: 1;
+    }
   }
 }
