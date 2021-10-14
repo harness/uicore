@@ -177,6 +177,7 @@ import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
 import Environment from './environment.svg'
@@ -753,6 +754,7 @@ type HarnessIconName =
   | 'down'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'email-inline'
   | 'email-step'
   | 'entity'
   | 'environment'
@@ -1329,6 +1331,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   down: Down,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  'email-inline': EmailInline,
   'email-step': EmailStep,
   entity: Entity,
   environment: Environment,
