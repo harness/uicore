@@ -391,6 +391,7 @@ import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
 import Pending from './pending.svg'
+import PipelineAdvanced from './pipeline-advanced.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineBuildSelect from './pipeline-build-select.svg'
 import PipelineBuild from './pipeline-build.svg'
@@ -968,6 +969,7 @@ type HarnessIconName =
   | 'openshift'
   | 'other-workload'
   | 'pending'
+  | 'pipeline-advanced'
   | 'pipeline-approval'
   | 'pipeline-build-select'
   | 'pipeline-build'
@@ -1545,6 +1547,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   openshift: Openshift,
   'other-workload': OtherWorkload,
   pending: Pending,
+  'pipeline-advanced': PipelineAdvanced,
   'pipeline-approval': PipelineApproval,
   'pipeline-build-select': PipelineBuildSelect,
   'pipeline-build': PipelineBuild,
