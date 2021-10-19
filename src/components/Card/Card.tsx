@@ -59,7 +59,7 @@ export const Card: React.FC<CardProps> = props => {
         { [css.interactive]: bpProps.interactive }
       )}
       style={style}
-      onClick={onClick}>
+      onClick={disabled ? undefined : onClick}>
       {selected && cornerSelected && renderCornerTick()}
       {props.children}
     </BpCard>
