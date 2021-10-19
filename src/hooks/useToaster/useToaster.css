@@ -20,7 +20,7 @@
     margin: 16px 0 16px 12px;
   }
 
-  // colors
+  /* colors */
   :global(.bp3-toast.bp3-intent-warning) {
     background-color: var(--yellow-600);
   }
