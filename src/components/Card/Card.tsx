@@ -89,6 +89,7 @@ export interface CardMenuProps extends HTMLDivProps {
   title?: string
   colorIdentifier?: Color
   menuPopoverProps?: PopoverProps
+  menuHoverText?: string
 }
 
 export const Menu: React.FC<CardMenuProps> = props => {
@@ -103,7 +104,14 @@ export const Menu: React.FC<CardMenuProps> = props => {
       style={{ color: colorIdentifier ? colorIdentifier : '', ...style }}>
       <div className={css.dots}>
         <Popover content={menuContent} position={Position.RIGHT_TOP} usePortal={!isNext} {...menuPopoverProps}>
-          <Button className={css.menu} minimal round icon="more" />
+          <Button
+            className={css.menu}
+            minimal
+            round
+            icon="more"
+            tooltip={props.menuHoverText}
+            tooltipProps={{ isDark: true }}
+          />
         </Popover>
       </div>
       {title && (

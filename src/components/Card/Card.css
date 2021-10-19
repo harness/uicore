@@ -78,7 +78,13 @@ div.card {
     position: absolute;
     top: -15px;
     right: -19px;
-
+    border: 1px solid transparent;
+    border-radius: 4px;
+    &:hover,
+    &:focus,
+    &:focus-within {
+      border: solid 1px var(--grey-200);
+    }
     .menu {
       cursor: pointer;
       outline: none !important;
