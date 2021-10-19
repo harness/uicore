@@ -1,0 +1,33 @@
+.toaster {
+  :global(.bp3-toast) {
+    margin: 0;
+    min-height: 50px;
+    min-width: 250px;
+  }
+  :global(.bp3-toast .bp3-toast-message) {
+    padding: 16px;
+    padding-left: 8px;
+  }
+  :global(.bp3-toast .bp3-button-group) {
+    padding: 10px 5px;
+    visibility: hidden;
+  }
+  :global(.bp3-toast:hover .bp3-button-group) {
+    visibility: visible;
+  }
+
+  :global(.bp3-toast > .bp3-icon) {
+    margin: 16px 0 16px 12px;
+  }
+
+  // colors
+  :global(.bp3-toast.bp3-intent-warning) {
+    background-color: var(--yellow-600);
+  }
+  :global(.bp3-toast.bp3-intent-danger) {
+    background-color: var(--red-600);
+  }
+  :global(.bp3-toast.bp3-intent-success) {
+    background-color: var(--green-600);
+  }
+}
