@@ -1,13 +1,15 @@
 import React from 'react'
+import { Select } from '@blueprintjs/select'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { Button, ButtonSize } from '../Button/Button'
 import cx from 'classnames'
-import { DropDown } from '../DropDown/DropDown'
 import { SelectOption } from '../Select/Select'
 import { FontVariation } from '../../styled-props/font/FontProps'
+import { DropDown } from '../../components/DropDown/DropDown'
 
 import css from './Pagination.css'
+import { MenuItem } from '@blueprintjs/core'
 
 export interface PaginationProps {
   pageSize: number
@@ -17,6 +19,92 @@ export interface PaginationProps {
   gotoPage?: (index: number) => void
   pageSizeOptions?: number[]
   onPageSizeChange?: (newPageSize: number) => void
+}
+
+interface PageNumbersProps {
+  pageCount: number
+  pageCountClamp: number
+  pageIndex: number
+  gotoPage: (index: number) => void
+}
+
+const CustomSelect = Select.ofType<SelectOption>()
+
+const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pageIndex, gotoPage }) => {
+  const moreLeft = pageIndex + 1 > pageCountClamp
+  const moreRight = pageCount - pageIndex > pageCountClamp
+
+  const renderPageButton = (pageNumber: number) => {
+    const isCurrent = pageIndex + 1 === pageNumber
+    return (
+      <Button
+        key={`page-${pageNumber}`}
+        text={pageNumber}
+        disabled={isCurrent}
+        onClick={() => gotoPage(pageNumber - 1)}
+        className={cx(css.roundedButton, { [css.selected]: isCurrent })}
+      />
+    )
+  }
+
+  return (
+    <>
+      {pageCount <= pageCountClamp * 2 ? (
+        Array.from(Array(pageCount).keys()).map(pageNumber => {
+          const isCurrent = pageIndex === pageNumber
+          return (
+            <Button
+              key={`page-${pageNumber}`}
+              text={pageNumber + 1}
+              disabled={isCurrent}
+              className={cx(css.roundedButton, { [css.selected]: isCurrent })}
+              onClick={() => gotoPage(pageNumber)}
+            />
+          )
+        })
+      ) : (
+        <React.Fragment>
+          {Array.from({ length: moreLeft ? 2 : pageCountClamp }, (_, i) => renderPageButton(i + 1))}
+          {moreLeft && (
+            <CustomSelect
+              filterable={false}
+              items={Array.from(Array(moreRight ? pageIndex - 3 : pageCount - pageCountClamp - 2).keys()).map(
+                pageNumber => {
+                  return {
+                    label: `${pageNumber + 3}`,
+                    value: pageNumber + 2
+                  }
+                }
+              )}
+              itemRenderer={(item, { handleClick }) => <MenuItem text={item.label} onClick={handleClick} />}
+              onItemSelect={item => gotoPage(item.value as number)}>
+              <Button icon="more" className={css.roundedButton} />
+            </CustomSelect>
+          )}
+          {moreLeft && moreRight && Array.from({ length: 3 }, (_, i) => renderPageButton(pageIndex + i))}
+          {moreRight && (
+            <CustomSelect
+              filterable={false}
+              items={Array.from(
+                Array(moreLeft ? pageCount - pageIndex - 4 : pageCount - pageCountClamp - 2).keys()
+              ).map(pageNumber => {
+                return {
+                  label: `${pageNumber + (moreLeft ? pageIndex + 3 : pageCountClamp + 1)}`,
+                  value: pageNumber + (moreLeft ? pageIndex + 2 : pageCountClamp)
+                }
+              })}
+              itemRenderer={(item, { handleClick }) => <MenuItem text={item.label} onClick={handleClick} />}
+              onItemSelect={item => gotoPage(item.value as number)}>
+              <Button icon="more" className={css.roundedButton} />
+            </CustomSelect>
+          )}
+          {moreRight
+            ? [pageCount - 1, pageCount].map(i => renderPageButton(i))
+            : Array.from({ length: pageCountClamp }, (_, i) => renderPageButton(i + 1 + pageCount - pageCountClamp))}
+        </React.Fragment>
+      )}
+    </>
+  )
 }
 
 const Pagination: React.FC<PaginationProps> = props => {
@@ -65,6 +153,9 @@ const Pagination: React.FC<PaginationProps> = props => {
           onClick={() => gotoPage?.(pageIndex - 1)}
           disabled={pageIndex === 0}
         />
+        {gotoPage ? (
+          <PageNumbers gotoPage={gotoPage} pageIndex={pageIndex} pageCountClamp={5} pageCount={pageCount} />
+        ) : null}
         <Button
           text="Next"
           rightIcon="arrow-right"
