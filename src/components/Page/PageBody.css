@@ -1,0 +1,10 @@
+.pageBody {
+  height: calc(100% - var(--page-header-height, 64px));
+  min-height: calc(90vh - var(--page-header-height, 64px));
+  overflow: auto;
+  position: relative;
+
+  &.filled {
+    height: 100%;
+  }
+}
