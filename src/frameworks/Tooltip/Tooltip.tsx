@@ -2,26 +2,12 @@ import React from 'react'
 import cx from 'classnames'
 import snarkdown from 'snarkdown'
 import { PopoverInteractionKind } from '@blueprintjs/core'
-import { useTooltipContext } from './TooltipContext'
-import { TooltipRenderProps, UseTooltipsReturn } from './types'
+import { useTooltips } from './TooltipContext'
+import { TooltipRenderProps } from './types'
 
 import css from './Tooltip.css'
 import { Popover } from '../../components/Popover/Popover'
 import { Icon } from '../../icons/Icon'
-
-export function useTooltips(): UseTooltipsReturn {
-  const { getTooltip, tooltipDictionary } = useTooltipContext()
-
-  return {
-    getTooltip(key: string, vars: Record<string, any> = {}): string {
-      if (typeof getTooltip === 'function') {
-        return getTooltip(key, vars)
-      }
-      return tooltipDictionary[key] ? tooltipDictionary[key] : ''
-    },
-    tooltipDictionary
-  }
-}
 
 const _asHtml = (content: string) => {
   return `${content
@@ -41,15 +27,24 @@ export const HarnessDocTooltip = ({
   const { getTooltip } = useTooltips()
   const tooltipContent = contentFromParent || getTooltip(tooltipId || '', getTooltipAdditionalVars)
 
-  const tooltipContentHtml = _asHtml(tooltipContent)
+  const asString = typeof tooltipContent === 'object' ? tooltipContent.content : tooltipContent
+  const widthValue = typeof tooltipContent === 'object' && tooltipContent.width
+  const customWidth = widthValue ? Number(widthValue) : 400
+  const tooltipContentHtml = _asHtml(asString)
 
   const tooltipJsxComponent = (
     <Popover
       popoverClassName={css.tooltipWrapper}
       position="auto"
       interactionKind={PopoverInteractionKind.HOVER}
-      // eslint-disable-next-line
-      content={<div className={css.tooltipContentWrapper} dangerouslySetInnerHTML={{ __html: tooltipContentHtml }} />}>
+      content={
+        <div
+          className={css.tooltipContentWrapper}
+          style={{ maxWidth: `${customWidth}px` }}
+          // eslint-disable-next-line
+          dangerouslySetInnerHTML={{ __html: tooltipContentHtml }}
+        />
+      }>
       <span className={css.tooltipIcon}>
         <Icon size={12} name="tooltip-icon" />
       </span>

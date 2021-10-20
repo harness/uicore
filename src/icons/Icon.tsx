@@ -14,13 +14,18 @@ type IconName = HarnessIconName | BIconName
 
 interface IconProps extends Assign<HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'>> {
   name: IconName
+  inverse?: boolean
   size?: number
 }
 
 function Icon(props: IconProps) {
   const name = props.name as string
   const size = props.size || 16
-  const HarnessIcon: ElementType = HarnessIcons[name]
+  let HarnessIcon: ElementType = HarnessIcons[name]
+
+  if (HarnessIcon && props.inverse) {
+    HarnessIcon = HarnessIcons[`${name}-inverse`] ? HarnessIcons[`${name}-inverse`] : HarnessIcon
+  }
 
   if (HarnessIcon) {
     return (

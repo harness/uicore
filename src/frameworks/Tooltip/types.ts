@@ -4,9 +4,18 @@ export interface DataTooltipInterface {
   dataTooltipId: string
 }
 
+export interface TooltipDictionaryValue {
+  content: string
+  width: number | string
+}
+
+export interface TooltipDictionaryInterface {
+  [tooltipId: string]: string | TooltipDictionaryValue
+}
+
 export interface UseTooltipsReturn {
-  getTooltip(key: string, vars?: Record<string, any>): string
-  tooltipDictionary: Record<string, string>
+  getTooltip(key: string, vars?: Record<string, any>): string | TooltipDictionaryValue
+  tooltipDictionary: TooltipDictionaryInterface
 }
 
 export interface TooltipRenderProps {
@@ -19,11 +28,11 @@ export interface TooltipRenderProps {
 }
 
 export interface TooltipContextValue {
-  tooltipDictionary: Record<string, string>
-  getTooltip?(key: string, vars?: Record<string, any>): string
+  getTooltip?(key: string, vars?: Record<string, any>): string | TooltipDictionaryValue
+  tooltipDictionary: TooltipDictionaryInterface
 }
 
 export interface TooltipContextProviderProps extends Pick<TooltipContextValue, 'getTooltip'> {
   children: React.ReactNode
-  initialTooltipDictionary?: Record<string, string>
+  initialTooltipDictionary?: TooltipDictionaryInterface
 }

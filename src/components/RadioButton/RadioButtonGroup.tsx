@@ -1,11 +1,10 @@
 import React, { FormEvent, ReactElement, ReactNode, useMemo, useState } from 'react'
-import { styledClasses } from '../../styled-props/StyledProps'
+import { omitStyledProps, styledClasses, StyledProps } from '../../styled-props/StyledProps'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 
-import styledClass from '../../styled-props/StyledProps.css'
 import css from './RadioButtonGroup.css'
 
-export interface RadioButtonGroupProps {
+export interface RadioButtonGroupProps extends StyledProps {
   className?: string
   disabled?: boolean
   inline?: boolean
@@ -36,7 +35,7 @@ export function RadioButtonGroup({
   }
 
   return (
-    <div className={styledClasses(styledClass.font, className)} {...props}>
+    <div className={styledClasses(props, className)} {...omitStyledProps(props)}>
       {label && <label className={css.radioButtonGroupLabel}>{label}</label>}
 
       <div className={inline ? css.inline : ''}>

@@ -196,6 +196,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
         }
         onChange={(changed: unknown) => {
           const values: string[] = changed as string[]
+          formik?.setFieldTouched(name)
           formik?.setFieldValue(
             name,
             isArray

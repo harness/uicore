@@ -3,9 +3,17 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--text-line-clamp);
   overflow: hidden;
+  word-break: break-all;
 }
 
 .withDocsTooltip {
   display: flex;
   align-items: center;
+}
+
+.targetClass {
+  display: flex !important;
+}
+.icon {
+  vertical-align: middle;
 }

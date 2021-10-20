@@ -57,6 +57,7 @@ import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
 import CcmWithText from './ccm-with-text.svg'
 import CdHover from './cd-hover.svg'
+import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import CdSolid from './cd-solid.svg'
@@ -71,10 +72,12 @@ import CeCluster from './ce-cluster.svg'
 import CeHover from './ce-hover.svg'
 import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
+import CeMainInverse from './ce-main-inverse.svg'
 import CeMain from './ce-main.svg'
 import CeOptimization from './ce-optimization.svg'
 import CeVisibility from './ce-visibility.svg'
 import CfHover from './cf-hover.svg'
+import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
@@ -82,6 +85,7 @@ import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiHover from './ci-hover.svg'
+import CiMainInverse from './ci-main-inverse.svg'
 import CiMain from './ci-main.svg'
 import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
@@ -136,6 +140,7 @@ import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
 import CvHover from './cv-hover.svg'
+import CvMainInverse from './cv-main-inverse.svg'
 import CvMain from './cv-main.svg'
 import CvSketch from './cv-sketch.svg'
 import CvSolidCurrentColor from './cv-solid-current-color.svg'
@@ -143,6 +148,7 @@ import CvSolid from './cv-solid.svg'
 import CvWithText from './cv-with-text.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DataFetchError from './data-fetch-error.svg'
 import DelegatesIcon from './delegates-icon.svg'
 import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
@@ -165,16 +171,19 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import Description from './description.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
 import Environment from './environment.svg'
 import Environments from './environments.svg'
 import ExecutionAbort from './execution-abort.svg'
+import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionSuccess from './execution-success.svg'
@@ -193,6 +202,7 @@ import File from './file.svg'
 import FixedInput from './fixed-input.svg'
 import FolderUpload from './folder-upload.svg'
 import Functions from './functions.svg'
+import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
 import GcrStep from './gcr-step.svg'
 import GcsStep from './gcs-step.svg'
@@ -210,6 +220,7 @@ import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import Governance from './governance.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -230,6 +241,7 @@ import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import Kustamize from './kustamize.svg'
+import Kustomizeparam from './kustomizeparam.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
@@ -371,6 +383,7 @@ import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
+import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
@@ -378,6 +391,7 @@ import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
 import Pending from './pending.svg'
+import PipelineAdvanced from './pipeline-advanced.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineBuildSelect from './pipeline-build-select.svg'
 import PipelineBuild from './pipeline-build.svg'
@@ -621,6 +635,7 @@ type HarnessIconName =
   | 'ccm-solid'
   | 'ccm-with-text'
   | 'cd-hover'
+  | 'cd-main-inverse'
   | 'cd-main'
   | 'cd-sketch'
   | 'cd-solid'
@@ -635,10 +650,12 @@ type HarnessIconName =
   | 'ce-hover'
   | 'ce-main-colored'
   | 'ce-main-grey'
+  | 'ce-main-inverse'
   | 'ce-main'
   | 'ce-optimization'
   | 'ce-visibility'
   | 'cf-hover'
+  | 'cf-main-inverse'
   | 'cf-main'
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
@@ -646,6 +663,7 @@ type HarnessIconName =
   | 'check'
   | 'ci-active-build'
   | 'ci-hover'
+  | 'ci-main-inverse'
   | 'ci-main'
   | 'ci-pending-build'
   | 'ci-sketch'
@@ -700,6 +718,7 @@ type HarnessIconName =
   | 'custom-stage'
   | 'customRole'
   | 'cv-hover'
+  | 'cv-main-inverse'
   | 'cv-main'
   | 'cv-sketch'
   | 'cv-solid-current-color'
@@ -707,6 +726,7 @@ type HarnessIconName =
   | 'cv-with-text'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'data-fetch-error'
   | 'delegates-icon'
   | 'dependency-default-icon'
   | 'dependency-step'
@@ -729,16 +749,19 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'description'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'email-inline'
   | 'email-step'
   | 'entity'
   | 'environment'
   | 'environments'
   | 'execution-abort'
+  | 'execution-history'
   | 'execution-input'
   | 'execution-rollback'
   | 'execution-success'
@@ -757,6 +780,7 @@ type HarnessIconName =
   | 'fixed-input'
   | 'folder-upload'
   | 'functions'
+  | 'gcp-kms'
   | 'gcp'
   | 'gcr-step'
   | 'gcs-step'
@@ -774,6 +798,7 @@ type HarnessIconName =
   | 'gitlab'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'governance'
   | 'graph'
   | 'grey-cluster'
   | 'harness-logo-black'
@@ -794,6 +819,7 @@ type HarnessIconName =
   | 'key-main'
   | 'key'
   | 'kustamize'
+  | 'kustomizeparam'
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
@@ -935,6 +961,7 @@ type HarnessIconName =
   | 'new-decoration'
   | 'new-notification'
   | 'ng-filter'
+  | 'no-deployments'
   | 'no-feedback-given'
   | 'not-synced'
   | 'notification'
@@ -942,6 +969,7 @@ type HarnessIconName =
   | 'openshift'
   | 'other-workload'
   | 'pending'
+  | 'pipeline-advanced'
   | 'pipeline-approval'
   | 'pipeline-build-select'
   | 'pipeline-build'
@@ -1185,6 +1213,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ccm-solid': CcmSolid,
   'ccm-with-text': CcmWithText,
   'cd-hover': CdHover,
+  'cd-main-inverse': CdMainInverse,
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
   'cd-solid': CdSolid,
@@ -1199,10 +1228,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-hover': CeHover,
   'ce-main-colored': CeMainColored,
   'ce-main-grey': CeMainGrey,
+  'ce-main-inverse': CeMainInverse,
   'ce-main': CeMain,
   'ce-optimization': CeOptimization,
   'ce-visibility': CeVisibility,
   'cf-hover': CfHover,
+  'cf-main-inverse': CfMainInverse,
   'cf-main': CfMain,
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
@@ -1210,6 +1241,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   check: Check,
   'ci-active-build': CiActiveBuild,
   'ci-hover': CiHover,
+  'ci-main-inverse': CiMainInverse,
   'ci-main': CiMain,
   'ci-pending-build': CiPendingBuild,
   'ci-sketch': CiSketch,
@@ -1264,6 +1296,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'custom-stage': CustomStage,
   customRole: CustomRole,
   'cv-hover': CvHover,
+  'cv-main-inverse': CvMainInverse,
   'cv-main': CvMain,
   'cv-sketch': CvSketch,
   'cv-solid-current-color': CvSolidCurrentColor,
@@ -1271,6 +1304,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cv-with-text': CvWithText,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'data-fetch-error': DataFetchError,
   'delegates-icon': DelegatesIcon,
   'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
@@ -1293,16 +1327,19 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  description: Description,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  'email-inline': EmailInline,
   'email-step': EmailStep,
   entity: Entity,
   environment: Environment,
   environments: Environments,
   'execution-abort': ExecutionAbort,
+  'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
   'execution-success': ExecutionSuccess,
@@ -1321,6 +1358,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'fixed-input': FixedInput,
   'folder-upload': FolderUpload,
   functions: Functions,
+  'gcp-kms': GcpKms,
   gcp: Gcp,
   'gcr-step': GcrStep,
   'gcs-step': GcsStep,
@@ -1338,6 +1376,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  governance: Governance,
   graph: Graph,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
@@ -1358,6 +1397,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'key-main': KeyMain,
   key: Key,
   kustamize: Kustamize,
+  kustomizeparam: Kustomizeparam,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
@@ -1499,6 +1539,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
+  'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
   'not-synced': NotSynced,
   notification: Notification,
@@ -1506,6 +1547,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   openshift: Openshift,
   'other-workload': OtherWorkload,
   pending: Pending,
+  'pipeline-advanced': PipelineAdvanced,
   'pipeline-approval': PipelineApproval,
   'pipeline-build-select': PipelineBuildSelect,
   'pipeline-build': PipelineBuild,

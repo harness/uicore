@@ -7,7 +7,7 @@
   position: relative;
   .children {
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
   }
 
   .close {
