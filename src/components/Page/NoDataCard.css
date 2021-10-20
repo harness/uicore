@@ -1,0 +1,12 @@
+.noDataCard {
+  width: 100% !important;
+  height: calc(100vh - var(--page-header-height, 64px));
+
+  .message {
+    line-height: 24px !important ;
+  }
+
+  .buttonContainer {
+    padding-top: 24px;
+  }
+}

@@ -1,0 +1,6 @@
+.container {
+  background: var(--white) !important;
+  padding: var(--spacing-5) var(--spacing-xlarge) !important;
+  border-bottom: 1px solid var(--grey-200);
+  height: 65px;
+}
