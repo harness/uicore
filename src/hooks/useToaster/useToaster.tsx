@@ -11,6 +11,7 @@ export interface ToasterProps extends IToaster {
   showSuccess: (message: string | ReactNode, timeout?: number, key?: string) => void
   showError: (message: string | ReactNode, timeout?: number, key?: string) => void
   showWarning: (message: string | ReactNode, timeout?: number, key?: string) => void
+  showPrimary: (message: string | ReactNode, timeout?: number, key?: string) => void
 }
 
 const showSuccess = (message: string | ReactNode, timeout?: number, key?: string): void => {
@@ -25,12 +26,17 @@ const showWarning = (message: string | ReactNode, timeout?: number, key?: string
   toaster.show({ message, intent: Intent.WARNING, icon: 'warning-sign', timeout }, key)
 }
 
+const showPrimary = (message: string | ReactNode, timeout?: number, key?: string): void => {
+  toaster.show({ message, intent: Intent.PRIMARY, timeout }, key)
+}
+
 export function useToaster(): ToasterProps {
   return {
     ...toaster,
     showSuccess,
     showError,
     showWarning,
+    showPrimary,
     clear: () => {
       toaster.clear()
     }
