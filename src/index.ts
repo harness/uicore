@@ -190,3 +190,6 @@ export {
   StringsContextValue,
   LocaleStringProps
 } from './frameworks/Strings/createLocaleStrings'
+export { TagsPopover } from './components/TagsPopover/TagsPopover'
+export { getErrorInfoFromErrorObject, shouldShowError } from './utils/errorUtils'
+export { tagsType } from './utils/tagTypes'
