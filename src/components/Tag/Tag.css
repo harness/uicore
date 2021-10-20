@@ -3,9 +3,10 @@
 
   :global {
     .bp3-tag {
-      background-color: var(--primary-2);
-      border-radius: 2px;
-      color: var(--primary-9);
+      background-color: var(--grey-50);
+      color: var(--primary-9) !important;
+      border-radius: 4px;
+      border: 1px solid var(--grey-200);
     }
 
     .bp3-intent-primary {
