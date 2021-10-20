@@ -76,14 +76,26 @@ div.card {
 
   .dots {
     position: absolute;
-    top: -15px;
-    right: -19px;
+    top: -9px;
+    right: -10px;
+    width: 28px !important;
+    height: 28px !important;
     border: 1px solid transparent;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     border-radius: 4px;
     &:hover,
     &:focus,
     &:focus-within {
       border: solid 1px var(--grey-200);
+    }
+    button {
+      &:hover,
+      &:focus,
+      &:focus-within {
+        color: var(--primary-7) !important;
+      }
     }
     .menu {
       cursor: pointer;
