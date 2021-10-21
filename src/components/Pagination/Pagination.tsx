@@ -1,15 +1,16 @@
 import React from 'react'
-import { Select } from '@blueprintjs/select'
+import cx from 'classnames'
+import { Menu, MenuItem } from '@blueprintjs/core'
+import { Select, ItemListRenderer } from '@blueprintjs/select'
+
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { Button, ButtonSize } from '../Button/Button'
-import cx from 'classnames'
 import { SelectOption } from '../Select/Select'
 import { FontVariation } from '../../styled-props/font/FontProps'
 import { DropDown } from '../../components/DropDown/DropDown'
 
 import css from './Pagination.css'
-import { MenuItem } from '@blueprintjs/core'
 
 export interface PaginationProps {
   pageSize: number
@@ -29,6 +30,15 @@ interface PageNumbersProps {
 }
 
 const CustomSelect = Select.ofType<SelectOption>()
+
+const renderMenu: ItemListRenderer<SelectOption> = ({ items, itemsParentRef, renderItem }) => {
+  const renderedItems = items.map(renderItem).filter(item => item !== null)
+  return (
+    <Menu ulRef={itemsParentRef} className={css.pageSizeDropdown}>
+      {renderedItems}
+    </Menu>
+  )
+}
 
 const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pageIndex, gotoPage }) => {
   const moreLeft = pageIndex + 1 > pageCountClamp
@@ -76,7 +86,10 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
                   }
                 }
               )}
-              itemRenderer={(item, { handleClick }) => <MenuItem text={item.label} onClick={handleClick} />}
+              itemListRenderer={renderMenu}
+              itemRenderer={(item, { handleClick }) => (
+                <MenuItem key={item.label} text={item.label} onClick={handleClick} />
+              )}
               onItemSelect={item => gotoPage(item.value as number)}>
               <Button icon="more" className={css.roundedButton} />
             </CustomSelect>
@@ -93,7 +106,10 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
                   value: pageNumber + (moreLeft ? pageIndex + 2 : pageCountClamp)
                 }
               })}
-              itemRenderer={(item, { handleClick }) => <MenuItem text={item.label} onClick={handleClick} />}
+              itemListRenderer={renderMenu}
+              itemRenderer={(item, { handleClick }) => (
+                <MenuItem key={item.label} text={item.label} onClick={handleClick} />
+              )}
               onItemSelect={item => gotoPage(item.value as number)}>
               <Button icon="more" className={css.roundedButton} />
             </CustomSelect>
@@ -181,7 +197,7 @@ const Pagination: React.FC<PaginationProps> = props => {
           <Text>per page</Text>
         </Layout.Horizontal>
       ) : (
-        <span>{`Show ${pageSize} per page`}</span>
+        <span>{`Showing ${pageSize} per page`}</span>
       )}
     </Layout.Horizontal>
   )

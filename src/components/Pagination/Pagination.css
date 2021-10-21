@@ -31,9 +31,7 @@
 }
 
 .pageSizeDropdown {
-  :global {
-    .bp3-menu {
-      min-width: 60px;
-    }
-  }
+  max-height: 200px;
+  overflow-y: auto;
+  min-width: 60px;
 }
