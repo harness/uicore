@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'mustache'
+import mustache from 'mustache'
 import { get } from 'lodash-es'
 
 export interface StringsContextValue<T> {
@@ -68,7 +68,7 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
           throw new Error(`No valid template with id "${key}" found`)
         }
 
-        return render(template, { ...vars, $: strings })
+        return mustache.render(template, { ...vars, $: strings })
       }
     }
   }
