@@ -23,7 +23,7 @@ export interface LocaleStringProps<T> extends React.DetailedHTMLProps<React.HTML
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   vars?: Record<string, any>
   useRichText?: boolean
-  tagName: keyof JSX.IntrinsicElements
+  tagName?: keyof JSX.IntrinsicElements
 }
 
 export interface CreateLocaleStringsReturn<T> {
@@ -74,7 +74,7 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
   }
 
   function LocaleString(props: LocaleStringProps<T>): React.ReactElement | null {
-    const { stringID, vars, useRichText, tagName: Tag, ...rest } = props
+    const { stringID, vars, useRichText, tagName: Tag = 'span', ...rest } = props
     const { getString } = useLocaleStrings()
 
     try {
@@ -92,10 +92,6 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
 
       return null
     }
-  }
-
-  LocaleString.defaultProps = {
-    tagName: 'span'
   }
 
   return {
