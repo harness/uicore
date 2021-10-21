@@ -93,22 +93,17 @@ export const DropDown: React.FC<DropDownProps> = props => {
 
   React.useEffect(() => {
     if (Array.isArray(items)) {
-      console.log('1', internalQuery)
       setDropDownItems(items.filter(item => item.label.toLowerCase().includes(internalQuery.toLowerCase())))
     } else if (typeof items === 'function') {
-      console.log('2', internalQuery)
       onQueryChange?.(internalQuery)
     }
   }, [internalQuery])
 
   React.useEffect(() => {
-    console.log('3', items, query)
     if (Array.isArray(items)) {
-      console.log('4', query)
       setDropDownItems([...items])
     } else if (typeof items === 'function' && !loading) {
       // Do not enter this block if already loading
-      console.log('5', query, internalQuery, loading)
       setLoading(true)
       const promise = items()
 
@@ -116,17 +111,14 @@ export const DropDown: React.FC<DropDownProps> = props => {
         promise.then(results => {
           setDropDownItems(results)
           setLoading(false)
-          console.log('6', results, query, internalQuery, loading)
         })
       }
       if (typeof promise.catch === 'function') {
         promise.catch(errorResults => {
           setDropDownItems(errorResults)
           setLoading(false)
-          console.log('6b', errorResults, query, internalQuery, loading)
         })
       } else {
-        console.log('7')
         setLoading(false)
       }
     }
