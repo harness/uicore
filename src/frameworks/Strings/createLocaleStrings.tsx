@@ -8,19 +8,17 @@ export interface StringsContextValue<T> {
   getString?(key: keyof T, vars?: Record<string, any>): string
 }
 
-export interface StringsContextProviderProps<T extends Record<string, string>>
-  extends Pick<StringsContextValue<T>, 'getString'> {
+export interface StringsContextProviderProps<T> extends Pick<StringsContextValue<T>, 'getString'> {
   children: React.ReactNode
   data: T
 }
 
-export interface UseStringsReturn<T extends Record<string, string>> {
+export interface UseStringsReturn<T> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getString(key: keyof T, vars?: Record<string, any>): string
 }
 
-export interface LocaleStringProps<T extends Record<string, string>>
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface LocaleStringProps<T> extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   stringID: keyof T
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   vars?: Record<string, any>
@@ -28,14 +26,14 @@ export interface LocaleStringProps<T extends Record<string, string>>
   tagName: keyof JSX.IntrinsicElements
 }
 
-export interface CreateLocaleStringsReturn<T extends Record<string, string>> {
+export interface CreateLocaleStringsReturn<T> {
   useStringsContext: () => StringsContextValue<T>
   StringsContextProvider: React.FC<StringsContextProviderProps<T>>
   useLocaleStrings: () => UseStringsReturn<T>
   LocaleString: (props: LocaleStringProps<T>) => React.ReactElement | null
 }
 
-export function createLocaleStrings<T extends Record<string, string>>(): CreateLocaleStringsReturn<T> {
+export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
   const StringsContext = React.createContext<StringsContextValue<T>>({} as StringsContextValue<T>)
 
   function StringsContextProvider(props: StringsContextProviderProps<T>): React.ReactElement {

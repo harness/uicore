@@ -162,7 +162,8 @@
     ]
   },
   "files": [
-    "dist/*"
+    "dist/*",
+    "tools/*"
   ],
   "dependencies": {}
 }
