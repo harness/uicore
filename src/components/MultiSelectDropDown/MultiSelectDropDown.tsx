@@ -37,6 +37,8 @@ export interface MultiSelectDropDownProps
   icon?: IconName
   iconProps?: Partial<IconProps>
   placeholder?: string
+  hideItemCount?: boolean
+  onPopoverClose?(opts: MultiSelectOption[]): void
 }
 
 /**
@@ -59,6 +61,8 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     iconProps,
     isLabel,
     disabled,
+    hideItemCount,
+    onPopoverClose,
     ...rest
   } = props
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>([])
@@ -127,9 +131,14 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
         usePortal={usePortal}
         minimal
         hasBackdrop
-        backdropProps={{ onClick: () => setIsOpen(false) }}
+        backdropProps={{
+          onClick: () => {
+            setIsOpen(false)
+          }
+        }}
         autoFocus={false}
         enforceFocus={false}
+        onClose={() => onPopoverClose?.(selectedItems)}
         className={cx(css.main, { [css.disabled]: isDisabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
         isOpen={isOpen}>
@@ -149,7 +158,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
             <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
               {placeholder}
             </Text>
-            {selectedItems.length > 0 && (
+            {!hideItemCount && selectedItems.length > 0 && (
               <Text className={css.counter}>
                 {selectedItems.length <= 9 ? '0' : ''}
                 {selectedItems.length}
