@@ -4,6 +4,7 @@
  */
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
+import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
 import Stroke from './Stroke.svg'
@@ -175,7 +176,6 @@ import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
-import Edit from './edit.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
@@ -581,6 +581,7 @@ import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
+  | 'Edit'
   | 'Inline'
   | 'Options'
   | 'Stroke'
@@ -752,7 +753,6 @@ type HarnessIconName =
   | 'docker-hub-step'
   | 'down'
   | 'ecr-step'
-  | 'edit'
   | 'elastic-kubernetes-service'
   | 'email-inline'
   | 'email-step'
@@ -1158,6 +1158,7 @@ type HarnessIconName =
   | 'zoom-out'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
+  Edit: Edit,
   Inline: Inline,
   Options: Options,
   Stroke: Stroke,
@@ -1329,7 +1330,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'docker-hub-step': DockerHubStep,
   down: Down,
   'ecr-step': EcrStep,
-  edit: Edit,
   'elastic-kubernetes-service': ElasticKubernetesService,
   'email-inline': EmailInline,
   'email-step': EmailStep,
