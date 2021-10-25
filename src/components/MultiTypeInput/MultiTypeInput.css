@@ -157,7 +157,7 @@
   }
 
   &.EXPRESSION {
-    color: var(--yellow-500);
+    color: var(--orange-700);
   }
 
   &:disabled,
@@ -212,7 +212,7 @@
   }
 
   &.EXPRESSION {
-    color: var(--yellow-500);
+    color: var(--orange-700);
   }
 
   &:disabled,
