@@ -1,4 +1,3 @@
-import { Assign } from 'utility-types'
 import { Radio as BpRadio, RadioGroup as BpRadioGroup, IRadioProps } from '@blueprintjs/core'
 import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
 import React, { FormEvent } from 'react'
@@ -6,7 +5,7 @@ import styledClass from '../../styled-props/StyledProps.css'
 
 import css from './Radio.css'
 
-export interface RadioGroupProps extends Assign<Omit<IRadioProps, 'onChange'>, StyledProps> {
+export interface RadioGroupProps extends Omit<IRadioProps, 'onChange'>, StyledProps {
   /** onChange event handler */
   onChange?: (event: FormEvent<HTMLInputElement>) => void
 
@@ -17,7 +16,7 @@ export interface RadioGroupProps extends Assign<Omit<IRadioProps, 'onChange'>, S
   children?: React.ReactNode
 }
 
-export interface RadioProps extends Assign<Omit<IRadioProps, 'onChange'>, StyledProps> {
+export interface RadioProps extends Omit<IRadioProps, 'onChange'>, StyledProps {
   /** onChange event handler */
   onChange?: (event: FormEvent<HTMLInputElement>) => void
 
@@ -25,7 +24,7 @@ export interface RadioProps extends Assign<Omit<IRadioProps, 'onChange'>, Styled
   className?: string
 }
 
-function RadioGroup(props: RadioGroupProps) {
+function RadioGroup(props: RadioGroupProps): React.ReactElement {
   const { children, className = '', onChange = () => void 0 } = props
   return (
     <BpRadioGroup
@@ -37,7 +36,7 @@ function RadioGroup(props: RadioGroupProps) {
   )
 }
 
-function Radio(props: RadioProps) {
+function Radio(props: RadioProps): React.ReactElement {
   const { className = '', onChange = () => void 0 } = props
 
   return (

@@ -2,7 +2,6 @@ import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core
 import cx from 'classnames'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
-import { Assign } from 'utility-types'
 import { Config } from '../../core/Config'
 import { OptionalTooltip } from '../../core/Types'
 import { Utils } from '../../core/Utils'
@@ -28,10 +27,9 @@ export enum ButtonSize {
 }
 
 export interface ButtonProps
-  extends Assign<
-      Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
-      Assign<HTMLAttributes<HTMLButtonElement>, StyledProps>
-    >,
+  extends Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
+    HTMLAttributes<HTMLButtonElement>,
+    StyledProps,
     OptionalTooltip {
   /** Left icon */
   icon?: IconName
