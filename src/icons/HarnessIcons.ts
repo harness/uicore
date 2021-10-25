@@ -279,7 +279,6 @@ import MainDelete from './main-delete.svg'
 import MainDepricate from './main-depricate.svg'
 import MainDestroy from './main-destroy.svg'
 import MainDownload from './main-download.svg'
-import MainEdit from './main-edit.svg'
 import MainEmail from './main-email.svg'
 import MainEnvironments from './main-environments.svg'
 import MainFeedback from './main-feedback.svg'
@@ -857,7 +856,6 @@ type HarnessIconName =
   | 'main-depricate'
   | 'main-destroy'
   | 'main-download'
-  | 'main-edit'
   | 'main-email'
   | 'main-environments'
   | 'main-feedback'
@@ -1435,7 +1433,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-depricate': MainDepricate,
   'main-destroy': MainDestroy,
   'main-download': MainDownload,
-  'main-edit': MainEdit,
   'main-email': MainEmail,
   'main-environments': MainEnvironments,
   'main-feedback': MainFeedback,
