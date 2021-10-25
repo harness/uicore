@@ -8,6 +8,7 @@ import { TooltipRenderProps } from './types'
 import css from './Tooltip.css'
 import { Popover } from '../../components/Popover/Popover'
 import { Icon } from '../../icons/Icon'
+import { Color } from '../../core/Color'
 
 const _asHtml = (content: string) => {
   return `${content
@@ -23,7 +24,7 @@ export const HarnessDocTooltip = ({
   labelText,
   className: propsClassName,
   contentFromParent
-}: TooltipRenderProps) => {
+}: TooltipRenderProps): JSX.Element => {
   const { getTooltip } = useTooltips()
   const tooltipContent = contentFromParent || getTooltip(tooltipId || '', getTooltipAdditionalVars)
 
@@ -46,7 +47,7 @@ export const HarnessDocTooltip = ({
         />
       }>
       <span className={css.tooltipIcon}>
-        <Icon size={12} name="tooltip-icon" />
+        <Icon size={12} name="tooltip-icon" color={Color.PRIMARY_7} />
       </span>
     </Popover>
   )
