@@ -1,5 +1,4 @@
 import React, { HTMLAttributes, useRef, useLayoutEffect, useState, useEffect } from 'react'
-import { Assign } from 'utility-types'
 import cx from 'classnames'
 import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
 import styledCSS from '../../styled-props/StyledProps.css'
@@ -9,7 +8,7 @@ import css from './Text.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
-export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps>, OptionalTooltip {
+export interface TextProps extends HTMLAttributes<HTMLDivElement>, StyledProps, OptionalTooltip {
   // When lineClamp is specified, show ... (ellipsis) when text is overflown and show the full text
   // in a tooltip on hover. Note that `tooltip` prop takes precedence over this prop.
   // See more: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp
