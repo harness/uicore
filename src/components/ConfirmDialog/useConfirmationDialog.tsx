@@ -3,12 +3,12 @@ import { Intent, Dialog, IconName, Classes, IDialogProps } from '@blueprintjs/co
 import { useModalHook, Button, ButtonProps, Layout } from '../../'
 
 export interface UseConfirmationDialogProps {
-  titleText: string | React.ReactElement
-  contentText: string | JSX.Element
-  cancelButtonText: string | React.ReactElement
+  titleText: React.ReactNode
+  contentText: React.ReactNode
+  cancelButtonText: React.ReactNode
   intent?: Intent
   buttonIntent?: ButtonProps['intent']
-  confirmButtonText?: string | React.ReactElement
+  confirmButtonText?: React.ReactNode
   onCloseDialog?: (isConfirmed: boolean) => void
   customButtons?: React.ReactNode
 }
@@ -19,13 +19,13 @@ export interface UseConfirmationDialogReturn {
 
 const getIconForIntent = (intent: Intent): IconName => {
   switch (intent) {
-    /* istanbul ignore next */ case Intent.DANGER:
+    case Intent.DANGER:
       return 'error'
-    /* istanbul ignore next */ case Intent.WARNING:
+    case Intent.WARNING:
       return 'warning-sign'
-    /* istanbul ignore next */ case Intent.SUCCESS:
+    case Intent.SUCCESS:
       return 'small-tick'
-    /* istanbul ignore next */ case Intent.PRIMARY:
+    case Intent.PRIMARY:
       return 'info-sign'
     default:
       return 'info-sign'
@@ -60,9 +60,7 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
         <div className={Classes.DIALOG_FOOTER}>
           <Layout.Horizontal spacing="small">
             {confirmButtonText && (
-              <>
-                <Button intent={buttonIntent} text={confirmButtonText} onClick={() => onClose(true)} />
-              </>
+              <Button intent={buttonIntent} text={confirmButtonText} onClick={() => onClose(true)} />
             )}
             <Button text={cancelButtonText} onClick={() => onClose(false)} />
             {customButtons}
