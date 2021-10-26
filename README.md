@@ -44,4 +44,12 @@ Publishing is done using Github Actions and stored in [Harness GitHub Package Re
 
 As soon as the PR is merged into master, a new release will be built and published into [Harness GitHub Package Registry](https://github.com/orgs/wings-software/packages).
 
+## Updating Image Snapshots
+
+Run the following to update the Storybook Image Snapshots:
+
+```sh
+yarn run build-storybook && yarn run do-puppeteer-storyshots -u
+```
+
 Documentation is published at [uicore.harness.io](http://uicore.harness.io/).
