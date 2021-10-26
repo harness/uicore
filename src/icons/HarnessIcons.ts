@@ -233,6 +233,7 @@ import Health from './health.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
+import InfinityTrend from './infinityTrend.svg'
 import Info from './info.svg'
 import Infrastructure from './infrastructure.svg'
 import InitializeStep from './initialize-step.svg'
@@ -810,6 +811,7 @@ type HarnessIconName =
   | 'help'
   | 'hourglass'
   | 'http-step'
+  | 'infinityTrend'
   | 'info'
   | 'infrastructure'
   | 'initialize-step'
@@ -1387,6 +1389,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   help: Help,
   hourglass: Hourglass,
   'http-step': HttpStep,
+  infinityTrend: InfinityTrend,
   info: Info,
   infrastructure: Infrastructure,
   'initialize-step': InitializeStep,
