@@ -102,13 +102,20 @@ export const DropDown: React.FC<DropDownProps> = props => {
   React.useEffect(() => {
     if (Array.isArray(items)) {
       setDropDownItems([...items])
-    } else if (typeof items === 'function') {
+    } else if (typeof items === 'function' && !loading) {
+      // Do not enter this block if already loading
       setLoading(true)
       const promise = items()
 
       if (typeof promise.then === 'function') {
         promise.then(results => {
           setDropDownItems(results)
+          setLoading(false)
+        })
+      }
+      if (typeof promise.catch === 'function') {
+        promise.catch(errorResults => {
+          setDropDownItems(errorResults)
           setLoading(false)
         })
       } else {

@@ -12,6 +12,8 @@
 .tooltipIcon {
   margin-left: var(--spacing-xsmall);
   display: flex;
+  position: relative;
+  bottom: -2px;
 }
 
 .tooltipWrapper {
