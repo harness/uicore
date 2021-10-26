@@ -193,3 +193,8 @@ export {
 export { TagsPopover } from './components/TagsPopover/TagsPopover'
 export { getErrorInfoFromErrorObject, shouldShowError } from './utils/errorUtils'
 export { tagsType } from './utils/tagTypes'
+export {
+  useConfirmationDialog,
+  UseConfirmationDialogProps,
+  UseConfirmationDialogReturn
+} from './components/ConfirmDialog/useConfirmationDialog'
