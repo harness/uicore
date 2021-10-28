@@ -1,6 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
-import snarkdown from 'snarkdown'
+import marked from 'marked'
 import { PopoverInteractionKind } from '@blueprintjs/core'
 import { useTooltips } from './TooltipContext'
 import { TooltipRenderProps } from './types'
@@ -13,7 +13,7 @@ import { Color } from '../../core/Color'
 const _asHtml = (content: string) => {
   return `${content
     .split('\n\n')
-    .map(line => `<p>${snarkdown(line).replace(new RegExp('href=', 'g'), 'target="_blank" href=')}</p>`)
+    .map(line => `<p>${marked(line).replace(new RegExp('href=', 'g'), 'target="_blank" href=')}</p>`)
     .join('')}`
 }
 
