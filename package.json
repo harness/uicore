@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/uicore",
-  "version": "0.1.420-beta.3",
+  "version": "0.1.420",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -50,7 +50,7 @@
     "react-draggable": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-table": "^7.0.4",
-    "snarkdown": "^2.0.0"
+    "marked": "^3.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -120,7 +120,6 @@
     "react-router-dom": "^5.2.0",
     "react-table": "^7.0.4",
     "react-test-renderer": "^17.0.2",
-    "snarkdown": "^2.0.0",
     "standard-version": "^9.3.0",
     "style-loader": "^3.0.0",
     "stylelint": "^13.8.0",
