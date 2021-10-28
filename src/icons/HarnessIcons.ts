@@ -520,6 +520,8 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
+import StatusPending from './status-pending.svg'
+import StatusRunning from './status-running.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
@@ -1098,6 +1100,8 @@ type HarnessIconName =
   | 'setup-tags'
   | 'skipped'
   | 'spinner'
+  | 'status-pending'
+  | 'status-running'
   | 'step-group'
   | 'step-jira'
   | 'step-kubernetes'
@@ -1676,6 +1680,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-tags': SetupTags,
   skipped: Skipped,
   spinner: Spinner,
+  'status-pending': StatusPending,
+  'status-running': StatusRunning,
   'step-group': StepGroup,
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
