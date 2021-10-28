@@ -6,16 +6,92 @@ exports[`Pagination itemCount < pageSize 1`] = `
     class="horizontal layout-spacing-undefined main container padding padding-top padding-top-medium padding-bottom padding-bottom-medium flex flex-align flex-align-center-center flex-distribution flex-distribution-space-between"
   >
     <span
-      class="font main text inline inline-true"
+      class="font main inline inline-true font-variation font-variation-small-semi"
     >
-      Showing 
-      <strong>
-        5
-      </strong>
+      5
        of 
-      <strong>
-        5
-      </strong>
+      5
+    </span>
+    <div
+      class="horizontal layout-spacing-undefined main"
+    >
+      <button
+        class="bp3-button bp3-disabled button font main roundedButton buttonLeft with-current-color withLeftIcon size small"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="bp3-icon bp3-icon-arrow-left main padding padding-right padding-right-xsmall"
+          icon="arrow-left"
+        >
+          <svg
+            data-icon="arrow-left"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              arrow-left
+            </desc>
+            <path
+              d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+          Prev
+        </span>
+      </button>
+      <button
+        class="bp3-button bp3-disabled button font main roundedButton selected with-current-color"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="bp3-button-text"
+        >
+          1
+        </span>
+      </button>
+      <button
+        class="bp3-button bp3-disabled button font main roundedButton buttonRight with-current-color withRightIcon size small"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="bp3-button-text"
+        >
+          Next
+        </span>
+        <span
+          class="bp3-icon bp3-icon-arrow-right main"
+          icon="arrow-right"
+        >
+          <svg
+            data-icon="arrow-right"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              arrow-right
+            </desc>
+            <path
+              d="M14.7 7.29l-5-5a.965.965 0 00-.71-.3 1.003 1.003 0 00-.71 1.71l3.29 3.29H1.99c-.55 0-1 .45-1 1s.45 1 1 1h9.59l-3.29 3.29a1.003 1.003 0 001.42 1.42l5-5c.18-.18.29-.43.29-.71s-.12-.52-.3-.7z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <span>
+      Showing 10 per page
     </span>
   </div>
 </div>
@@ -27,27 +103,46 @@ exports[`Pagination pageCount < 8 1`] = `
     class="horizontal layout-spacing-undefined main container padding padding-top padding-top-medium padding-bottom padding-bottom-medium flex flex-align flex-align-center-center flex-distribution flex-distribution-space-between"
   >
     <span
-      class="font main text inline inline-true"
+      class="font main inline inline-true font-variation font-variation-small-semi"
     >
-      Showing 
-      <strong>
-        1
-      </strong>
-       -
-       
-      <strong>
-        10
-      </strong>
-       of 
-      <strong>
-        30
-      </strong>
+      (1 - 10) of 30
     </span>
     <div
-      class="horizontal layout-spacing-small main spacing spacing-small"
+      class="horizontal layout-spacing-undefined main"
     >
       <button
-        class="bp3-button bp3-disabled button font main intent intent-primary with-current-color"
+        class="bp3-button bp3-disabled button font main roundedButton buttonLeft with-current-color withLeftIcon size small"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="bp3-icon bp3-icon-arrow-left main padding padding-right padding-right-xsmall"
+          icon="arrow-left"
+        >
+          <svg
+            data-icon="arrow-left"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              arrow-left
+            </desc>
+            <path
+              d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+          Prev
+        </span>
+      </button>
+      <button
+        class="bp3-button bp3-disabled button font main roundedButton selected with-current-color"
         disabled=""
         tabindex="-1"
         type="button"
@@ -59,7 +154,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -69,7 +164,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -78,7 +173,39 @@ exports[`Pagination pageCount < 8 1`] = `
           3
         </span>
       </button>
+      <button
+        class="bp3-button button font main roundedButton buttonRight with-current-color withRightIcon size small"
+        type="button"
+      >
+        <span
+          class="bp3-button-text"
+        >
+          Next
+        </span>
+        <span
+          class="bp3-icon bp3-icon-arrow-right main"
+          icon="arrow-right"
+        >
+          <svg
+            data-icon="arrow-right"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              arrow-right
+            </desc>
+            <path
+              d="M14.7 7.29l-5-5a.965.965 0 00-.71-.3 1.003 1.003 0 00-.71 1.71l3.29 3.29H1.99c-.55 0-1 .45-1 1s.45 1 1 1h9.59l-3.29 3.29a1.003 1.003 0 001.42 1.42l5-5c.18-.18.29-.43.29-.71s-.12-.52-.3-.7z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
+    <span>
+      Showing 10 per page
+    </span>
   </div>
 </div>
 `;
@@ -89,27 +216,46 @@ exports[`Pagination pageCount >= 8 1`] = `
     class="horizontal layout-spacing-undefined main container padding padding-top padding-top-medium padding-bottom padding-bottom-medium flex flex-align flex-align-center-center flex-distribution flex-distribution-space-between"
   >
     <span
-      class="font main text inline inline-true"
+      class="font main inline inline-true font-variation font-variation-small-semi"
     >
-      Showing 
-      <strong>
-        1
-      </strong>
-       -
-       
-      <strong>
-        10
-      </strong>
-       of 
-      <strong>
-        100
-      </strong>
+      (1 - 10) of 100
     </span>
     <div
-      class="horizontal layout-spacing-small main spacing spacing-small"
+      class="horizontal layout-spacing-undefined main"
     >
       <button
-        class="bp3-button bp3-disabled button font main intent intent-primary with-current-color"
+        class="bp3-button bp3-disabled button font main roundedButton buttonLeft with-current-color withLeftIcon size small"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="bp3-icon bp3-icon-arrow-left main padding padding-right padding-right-xsmall"
+          icon="arrow-left"
+        >
+          <svg
+            data-icon="arrow-left"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+          >
+            <desc>
+              arrow-left
+            </desc>
+            <path
+              d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="bp3-button-text"
+        >
+          Prev
+        </span>
+      </button>
+      <button
+        class="bp3-button bp3-disabled button font main roundedButton selected with-current-color"
         disabled=""
         tabindex="-1"
         type="button"
@@ -121,7 +267,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -131,7 +277,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -141,7 +287,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -151,7 +297,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -161,7 +307,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -171,7 +317,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -181,7 +327,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -191,7 +337,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -201,7 +347,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main intent intent-none with-current-color without-shadow"
+        class="bp3-button button font main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -211,30 +357,38 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-minimal button font main style style-marginRight style-marginRight-var(--spacing-medium) with-current-color iconOnly without-shadow withLeftIcon"
+        class="bp3-button button font main roundedButton buttonRight with-current-color withRightIcon size small"
         type="button"
       >
         <span
-          class="bp3-icon bp3-icon-chevron-right main padding padding-undefined"
-          icon="chevron-right"
+          class="bp3-button-text"
+        >
+          Next
+        </span>
+        <span
+          class="bp3-icon bp3-icon-arrow-right main"
+          icon="arrow-right"
         >
           <svg
-            data-icon="chevron-right"
-            height="16"
+            data-icon="arrow-right"
+            height="12"
             viewBox="0 0 16 16"
-            width="16"
+            width="12"
           >
             <desc>
-              chevron-right
+              arrow-right
             </desc>
             <path
-              d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+              d="M14.7 7.29l-5-5a.965.965 0 00-.71-.3 1.003 1.003 0 00-.71 1.71l3.29 3.29H1.99c-.55 0-1 .45-1 1s.45 1 1 1h9.59l-3.29 3.29a1.003 1.003 0 001.42 1.42l5-5c.18-.18.29-.43.29-.71s-.12-.52-.3-.7z"
               fill-rule="evenodd"
             />
           </svg>
         </span>
       </button>
     </div>
+    <span>
+      Showing 10 per page
+    </span>
   </div>
 </div>
 `;
