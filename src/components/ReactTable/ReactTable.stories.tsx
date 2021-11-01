@@ -3,7 +3,6 @@ import type { Story, Meta } from '@storybook/react'
 
 import ReactTable, { TableProps } from './ReactTable'
 
-
 interface Data {
   name: string
   age: number
@@ -24,7 +23,7 @@ Basic.args = {
     {
       Header: 'Name',
       accessor: row => row.name,
-      id: 'name',
+      id: 'name'
     },
     {
       Header: 'Age',
