@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Story, Meta } from '@storybook/react'
 
-import ReactTable, { TableProps } from './ReactTable'
+import { ReactTable, TableProps } from './ReactTable'
 
 interface Data {
   name: string
