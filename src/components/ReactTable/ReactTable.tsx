@@ -38,7 +38,7 @@ export interface TableProps<Data extends Record<string, any>> {
   name?: string
 }
 
-const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
+export const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
   const {
     columns,
     data,
@@ -92,55 +92,55 @@ const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): 
       {hideHeaders
         ? null
         : headerGroups.map(headerGroup => {
-            return (
-              // react key is not needed since it's generated/added by `react-table`
-              // via the getHeaderGroupProps() function
-              // eslint-disable-next-line react/jsx-key
-              <div
-                {...headerGroup.getHeaderGroupProps()}
-                className={cx(css.header, { [css.minimal]: !!props.minimal })}>
-                {headerGroup.headers.map(header => {
-                  const label = header.render('Header')
-                  const tooltipId = name ? name + header.id : undefined
-                  const serverSideSort = header?.serverSortProps?.enableServerSort
-                    ? {
-                        onClick: () => {
-                          header.serverSortProps?.getSortedColumn?.({ sort: header.id })
-                        }
-                      }
-                    : {}
-                  return (
-                    // eslint-disable-next-line react/jsx-key
-                    <div
-                      {...header.getHeaderProps(sortable ? header.getSortByToggleProps() : void 0)}
-                      {...header.getHeaderProps(resizable ? header.getHeaderProps() : void 0)}
-                      className={cx(css.cell, { [css.sortable]: sortable }, { [css.resizable]: resizable })}
-                      style={{ width: header.width }}
-                      {...serverSideSort}>
-                      <Text
-                        font={{ variation: FontVariation.TABLE_HEADERS }}
-                        tooltipProps={{ dataTooltipId: tooltipId }}>
-                        {label}
-                      </Text>
-                      {sortable && header.canSort ? (
-                        <Icon
-                          name={getIconName({
-                            isSorted: header.isSorted,
-                            isSortedDesc: header.isSortedDesc,
-                            isServerSorted: header.serverSortProps?.isServerSorted,
-                            isServerSortedDesc: header.serverSortProps?.isServerSortedDesc
-                          })}
-                          size={15}
-                          padding={{ left: 'small' }}
-                        />
-                      ) : null}
-                      {resizable && <div {...header.getResizerProps()} className={css.resizer} />}
-                    </div>
-                  )
-                })}
-              </div>
-            )
-          })}
+          return (
+            // react key is not needed since it's generated/added by `react-table`
+            // via the getHeaderGroupProps() function
+            // eslint-disable-next-line react/jsx-key
+            <div
+              {...headerGroup.getHeaderGroupProps()}
+              className={cx(css.header, { [css.minimal]: !!props.minimal })}>
+              {headerGroup.headers.map(header => {
+                const label = header.render('Header')
+                const tooltipId = name ? name + header.id : undefined
+                const serverSideSort = header?.serverSortProps?.enableServerSort
+                  ? {
+                    onClick: () => {
+                      header.serverSortProps?.getSortedColumn?.({ sort: header.id })
+                    }
+                  }
+                  : {}
+                return (
+                  // eslint-disable-next-line react/jsx-key
+                  <div
+                    {...header.getHeaderProps(sortable ? header.getSortByToggleProps() : void 0)}
+                    {...header.getHeaderProps(resizable ? header.getHeaderProps() : void 0)}
+                    className={cx(css.cell, { [css.sortable]: sortable }, { [css.resizable]: resizable })}
+                    style={{ width: header.width }}
+                    {...serverSideSort}>
+                    <Text
+                      font={{ variation: FontVariation.TABLE_HEADERS }}
+                      tooltipProps={{ dataTooltipId: tooltipId }}>
+                      {label}
+                    </Text>
+                    {sortable && header.canSort ? (
+                      <Icon
+                        name={getIconName({
+                          isSorted: header.isSorted,
+                          isSortedDesc: header.isSortedDesc,
+                          isServerSorted: header.serverSortProps?.isServerSorted,
+                          isServerSortedDesc: header.serverSortProps?.isServerSortedDesc
+                        })}
+                        size={15}
+                        padding={{ left: 'small' }}
+                      />
+                    ) : null}
+                    {resizable && <div {...header.getResizerProps()} className={css.resizer} />}
+                  </div>
+                )
+              })}
+            </div>
+          )
+        })}
       <div className={css.body}>
         {page.map(row => {
           prepareRow(row)
@@ -181,4 +181,4 @@ const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): 
   )
 }
 
-export default ReactTable
+
