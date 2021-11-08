@@ -236,6 +236,7 @@ import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import InfinityTrend from './infinityTrend.svg'
+import InfoMessage from './info-message.svg'
 import Info from './info.svg'
 import Infrastructure from './infrastructure.svg'
 import InitializeStep from './initialize-step.svg'
@@ -567,6 +568,7 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Union from './union.svg'
 import Up from './up.svg'
+import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
@@ -818,6 +820,7 @@ type HarnessIconName =
   | 'hourglass'
   | 'http-step'
   | 'infinityTrend'
+  | 'info-message'
   | 'info'
   | 'infrastructure'
   | 'initialize-step'
@@ -1149,6 +1152,7 @@ type HarnessIconName =
   | 'trigger-schedule'
   | 'union'
   | 'up'
+  | 'upgrade-bolt'
   | 'upload-box'
   | 'utility'
   | 'view-json'
@@ -1400,6 +1404,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   hourglass: Hourglass,
   'http-step': HttpStep,
   infinityTrend: InfinityTrend,
+  'info-message': InfoMessage,
   info: Info,
   infrastructure: Infrastructure,
   'initialize-step': InitializeStep,
@@ -1731,6 +1736,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-schedule': TriggerSchedule,
   union: Union,
   up: Up,
+  'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
   utility: Utility,
   'view-json': ViewJson,
