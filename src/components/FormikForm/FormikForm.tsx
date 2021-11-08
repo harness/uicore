@@ -778,6 +778,7 @@ export interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   autoFocus?: boolean
   textArea?: Omit<ITextAreaProps, 'name' | 'value' | 'onChange'>
   onChange?: ITextAreaProps['onChange']
+  maxLength?: number
 }
 
 const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
@@ -792,6 +793,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
     label,
     textArea,
     onChange,
+    maxLength = 1024,
     ...rest
   } = restProps
 
@@ -809,7 +811,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
         fill={true}
         autoFocus={autoFocus}
         autoComplete={autoComplete}
-        maxLength={1024}
+        maxLength={maxLength}
         {...textArea}
         name={name}
         intent={intent}

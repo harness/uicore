@@ -198,3 +198,4 @@ export {
   UseConfirmationDialogProps,
   UseConfirmationDialogReturn
 } from './components/ConfirmDialog/useConfirmationDialog'
+export { ReactTable, TableProps as ReactTableProps } from './components/ReactTable/ReactTable'

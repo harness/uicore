@@ -38,7 +38,7 @@ export interface TableProps<Data extends Record<string, any>> {
   name?: string
 }
 
-const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
+export const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
   const {
     columns,
     data,
@@ -180,5 +180,3 @@ const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): 
     </div>
   )
 }
-
-export default ReactTable
