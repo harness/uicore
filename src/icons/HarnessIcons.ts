@@ -201,6 +201,8 @@ import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
 import FolderUpload from './folder-upload.svg'
+import FullScreenExit from './full-screen-exit.svg'
+import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
 import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
@@ -781,6 +783,8 @@ type HarnessIconName =
   | 'file'
   | 'fixed-input'
   | 'folder-upload'
+  | 'full-screen-exit'
+  | 'full-screen'
   | 'functions'
   | 'gcp-kms'
   | 'gcp'
@@ -1361,6 +1365,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   file: File,
   'fixed-input': FixedInput,
   'folder-upload': FolderUpload,
+  'full-screen-exit': FullScreenExit,
+  'full-screen': FullScreen,
   functions: Functions,
   'gcp-kms': GcpKms,
   gcp: Gcp,
