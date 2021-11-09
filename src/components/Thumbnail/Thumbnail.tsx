@@ -7,9 +7,6 @@ import { Icon, IconName } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 import { Color } from '../../core/Color'
 
-export enum ThumbnailSize {
-  LARGE = 'LARGE'
-}
 export interface ThumbnailProps {
   name?: string
   label?: string
@@ -18,7 +15,7 @@ export interface ThumbnailProps {
   disabled?: boolean
   selected?: boolean
   className?: string
-  size?: ThumbnailSize
+  size?: 'large'
   onClick?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -26,7 +23,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
   const { label, value, icon, disabled, selected, onClick, className, name, size } = props
 
   const getContainerClass = () => {
-    if (size === ThumbnailSize.LARGE) {
+    if (size === 'large') {
       return css.large
     }
     if (!icon) {

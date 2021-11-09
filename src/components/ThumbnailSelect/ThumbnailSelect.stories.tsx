@@ -5,7 +5,6 @@ import ThumbnailSelect, { Item } from './ThumbnailSelect'
 import { Formik } from 'formik'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
-import { ThumbnailSize } from '../Thumbnail/Thumbnail'
 
 export default {
   title: 'Components / ThumbnailSelect',
@@ -60,7 +59,7 @@ export const Large: Story<{ items: Item[]; isReadonly: boolean }> = args => {
       validationSchema={Yup.object().shape({
         deploymentType: Yup.string().trim().required('Deployment type is required')
       })}>
-      <ThumbnailSelect thumbnailSize={ThumbnailSize.LARGE} {...args} name={'deploymentType'} />
+      <ThumbnailSelect size="large" {...args} name={'deploymentType'} />
     </Formik>
   )
 }
