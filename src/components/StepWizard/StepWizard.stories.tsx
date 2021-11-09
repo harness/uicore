@@ -26,7 +26,7 @@ export const StepSubTitle: Story<void> = _args => (
     subtitle={'step wizard sub title'}>
     <ExampleStep name={' step title'} subTitle={'step sub title '} />
     <ExampleStep name={`New Project`} />
-    <ExampleStep name="Collaborator" />
+    <ExampleStep name="Collaborator" subTitle={'step sub title '} />
   </StepWizard>
 )
 export const FullExample: Story<void> = _args => <ExampleWizard />
