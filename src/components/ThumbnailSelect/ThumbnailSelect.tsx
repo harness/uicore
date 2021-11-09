@@ -8,7 +8,7 @@ import { connect, FormikContext } from 'formik'
 import { get, isEmpty } from 'lodash-es'
 import { Intent } from '../../core/Intent'
 import { errorCheck } from '../../core/Utils'
-import { Thumbnail } from '../Thumbnail/Thumbnail'
+import { Thumbnail, ThumbnailSize } from '../Thumbnail/Thumbnail'
 import { FormError } from '../FormError/FormError'
 import cx from 'classnames'
 
@@ -32,6 +32,7 @@ export interface ThumbnailSelectProps {
   cancelText?: string
   className?: string
   thumbnailClassName?: string
+  thumbnailSize?: ThumbnailSize
   onChange?(val: string): void
 }
 
@@ -46,6 +47,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     cancelText = 'Close',
     className,
     thumbnailClassName,
+    thumbnailSize,
     onChange
   } = props
   const value = get(formik.values, name)
@@ -93,6 +95,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
         {visibleItems.map(item => {
           return (
             <Thumbnail
+              size={thumbnailSize}
               name={name}
               key={item.value}
               label={item.label}

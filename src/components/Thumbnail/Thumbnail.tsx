@@ -7,6 +7,9 @@ import { Icon, IconName } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 import { Color } from '../../core/Color'
 
+export enum ThumbnailSize {
+  LARGE = 'LARGE'
+}
 export interface ThumbnailProps {
   name?: string
   label?: string
@@ -15,14 +18,24 @@ export interface ThumbnailProps {
   disabled?: boolean
   selected?: boolean
   className?: string
+  size?: ThumbnailSize
   onClick?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
-  const { label, value, icon, disabled, selected, onClick, className, name } = props
+  const { label, value, icon, disabled, selected, onClick, className, name, size } = props
+
+  const getContainerClass = () => {
+    if (size === ThumbnailSize.LARGE) {
+      return css.large
+    }
+    if (!icon) {
+      return css.bigger
+    }
+  }
 
   return (
-    <label className={cx(css.squareCardContainer, { [css.bigger]: !icon }, className)}>
+    <label className={cx(css.squareCardContainer, getContainerClass(), className)}>
       <Card
         disabled={disabled}
         interactive={!disabled && !selected}
