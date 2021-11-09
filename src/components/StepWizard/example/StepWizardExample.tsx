@@ -16,6 +16,7 @@ interface StepData {
 interface StepProps<PrevStepData> {
   name?: string | JSX.Element
   // These props will be passed by wizard
+  subTitle?: string | JSX.Element
   prevStepData?: PrevStepData
   currentStep?: () => number
   totalSteps?: () => number

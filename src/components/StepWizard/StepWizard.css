@@ -34,7 +34,12 @@
         &.completedStep {
           cursor: pointer;
         }
-
+        .stepSubTitle {
+          grid-column: 1 / span 2;
+        }
+        .stepSubTitleString {
+          grid-column: 2;
+        }
         .stepName {
           color: var(--grey-50);
         }
