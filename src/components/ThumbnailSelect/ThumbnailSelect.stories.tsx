@@ -51,6 +51,19 @@ export const Basic: Story<{ items: Item[]; isReadonly: boolean }> = args => {
   )
 }
 
+export const Large: Story<{ items: Item[]; isReadonly: boolean }> = args => {
+  return (
+    <Formik
+      initialValues={{ deploymentType: '' }}
+      onSubmit={noop}
+      validationSchema={Yup.object().shape({
+        deploymentType: Yup.string().trim().required('Deployment type is required')
+      })}>
+      <ThumbnailSelect size="large" {...args} name={'deploymentType'} />
+    </Formik>
+  )
+}
+
 Basic.args = {
   items: [
     {
@@ -93,6 +106,47 @@ Basic.args = {
     {
       label: 'Secure Shell',
       icon: 'secret-ssh',
+      disabled: true,
+      value: 'ssh'
+    }
+  ],
+  isReadonly: false
+}
+
+Large.args = {
+  items: [
+    {
+      label: 'Kubernetes',
+      value: 'kubernetes'
+    },
+    {
+      label: 'Amazon ECS',
+      value: 'amazonEcs'
+    },
+    {
+      label: 'AWS AMI',
+      value: 'amazonAmi'
+    },
+    {
+      label: 'CodeDeploy',
+      value: 'awsCodeDeploy'
+    },
+    {
+      label: 'WinRM',
+      value: 'winrm'
+    },
+    {
+      label: 'AWS Lambda',
+      disabled: true,
+      value: 'awsLambda'
+    },
+    {
+      label: 'PCF',
+      disabled: true,
+      value: 'pcf'
+    },
+    {
+      label: 'Secure Shell',
       disabled: true,
       value: 'ssh'
     }

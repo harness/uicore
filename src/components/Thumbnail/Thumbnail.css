@@ -34,6 +34,15 @@
     }
   }
 
+  &.large {
+    width: 320px;
+    .squareCard {
+      width: 320px;
+      justify-content: flex-start;
+      padding: 0px var(--spacing-large);
+    }
+  }
+
   & input[type='checkbox'] {
     position: absolute;
     top: 0;
