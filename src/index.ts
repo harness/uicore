@@ -199,3 +199,9 @@ export {
   UseConfirmationDialogReturn
 } from './components/ConfirmDialog/useConfirmationDialog'
 export { ReactTable, TableProps as ReactTableProps } from './components/ReactTable/ReactTable'
+export { PillToggle, PillToggleOption, PillToggleProps } from './components/PillToggle/PillToggle'
+export {
+  VisualYamlSelectedView,
+  VisualYamlToggle,
+  VisualYamlToggleProps
+} from './components/VisualYamlToggle/VisualYamlToggle'
