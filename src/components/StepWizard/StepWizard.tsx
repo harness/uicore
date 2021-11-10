@@ -41,8 +41,13 @@ export interface StepWizardProps<SharedObject> {
   initialStep?: number
 }
 
+interface StepName {
+  stepName: string
+  stepSubTitle: string
+}
 export interface StepProps<SharedObject> {
   name?: string | JSX.Element
+  subTitle?: string | JSX.Element
   identifier?: string
   children?: React.ReactElement<StepWizardProps<SharedObject>> | React.ReactNode
   // These props will be passed by wizard
@@ -67,7 +72,7 @@ interface StepState<SharedObject> {
   }>
   prevStepData?: SharedObject
   children?: Array<React.ReactElement<StepProps<SharedObject>>>
-  stepNames?: string[]
+  stepNames?: StepName[]
   totalSteps: number
   completedStep?: number
 }
@@ -236,7 +241,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     if (Array.isArray(props.children)) {
       const propsChild = React.Children.toArray(props.children) as React.ReactElement[]
       const steps: Array<React.ReactElement<StepProps<SharedObject>>> = []
-      const stepNames: string[] = []
+      const stepNames: StepName[] = []
       let stepIndex = 0
       const nestedStepWizard: StepState<SharedObject>['nestedStepWizard'] = []
       propsChild.forEach((child, i: number) => {
@@ -257,13 +262,20 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
           nestedChild.forEach((nested, j: number) => {
             steps.push(nested as React.ReactElement<StepProps<SharedObject>>)
             nestedStepWizard.push({ wizard: nestedStepWizardChild, stepIndex: j + 1 })
-            stepNames.push((nested && nested.props && nested.props.name) || `Step ${i + 1}-${j + 1}`)
+
+            stepNames.push({
+              stepName: (nested && nested.props && nested.props.name) || `Step ${i + 1}-${j + 1}`,
+              stepSubTitle: (nested && nested.props && nested.props.subTitle) || ''
+            })
           })
         } else {
           stepIndex++
           nestedStepWizard.push({ stepIndex })
           steps.push(child as React.ReactElement<StepProps<SharedObject>>)
-          stepNames.push((child && child.props && child.props.name) || `Step ${i + 1}`)
+          stepNames.push({
+            stepName: (child && child.props && child.props.name) || `Step ${i + 1}`,
+            stepSubTitle: (child && child.props && child.props.subTitle) || ''
+          })
         }
       })
       setState(prevState => ({
@@ -311,12 +323,25 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
                   <Icon name="small-tick" size={20} color={Color.PRIMARY_7} />
                 </span>
               ) : (
-                <>{typeof stepName === 'string' && <span className={css.number}>{stepIndex}</span>}</>
+                <>{typeof stepName.stepName === 'string' && <span className={css.number}>{stepIndex}</span>}</>
               )}
 
               <Text className={css.stepName} lineClamp={2} width={200}>
-                {stepName}
+                {stepName.stepName}
               </Text>
+              {stepName.stepSubTitle ? (
+                <Text
+                  className={cx(
+                    css.stepName,
+                    typeof stepName.stepSubTitle === 'string' && typeof stepName.stepName === 'string'
+                      ? css.stepSubTitleString
+                      : css.stepSubTitle
+                  )}
+                  lineClamp={2}
+                  width={200}>
+                  {stepName.stepSubTitle}
+                </Text>
+              ) : null}
               {!isNestedFirstStep && state.nestedStepWizard?.[index]?.stepIndex === 1 ? (
                 <Text className={css.stepName} lineClamp={2} width={200}>
                   {subtitle}

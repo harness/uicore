@@ -47,7 +47,7 @@ export const HarnessDocTooltip = ({
         />
       }>
       <span className={css.tooltipIcon}>
-        <Icon size={16} name="tooltip-icon" color={Color.PRIMARY_7} />
+        <Icon size={12} name="tooltip-icon" color={Color.PRIMARY_7} />
       </span>
     </Popover>
   )
