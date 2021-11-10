@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Story, Meta } from '@storybook/react'
 
-import { ReactTable, TableProps } from './ReactTable'
+import { TableV2, TableProps } from './TableV2'
 
 interface Data {
   name: string
@@ -9,12 +9,12 @@ interface Data {
 }
 
 export default {
-  title: 'Common / Table',
-  component: ReactTable,
+  title: 'Components / TableV2',
+  component: TableV2,
   argTypes: {}
 } as Meta
 
-const Template: Story<TableProps<Data>> = args => <ReactTable {...args} sortable={true} />
+const Template: Story<TableProps<Data>> = args => <TableV2 {...args} sortable={true} />
 
 export const Basic = Template.bind({})
 

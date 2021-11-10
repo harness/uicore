@@ -3,7 +3,7 @@ import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns } fro
 import cx from 'classnames'
 import { defaultTo } from 'lodash-es'
 import type { IconName } from '@blueprintjs/icons'
-import css from './ReactTable.css'
+import css from './TableV2.css'
 import Pagination, { PaginationProps } from '../Pagination/Pagination'
 import { Icon } from '../../icons/Icon'
 import { Text } from '../Text/Text'
@@ -38,7 +38,7 @@ export interface TableProps<Data extends Record<string, any>> {
   name?: string
 }
 
-export const ReactTable = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
+export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
   const {
     columns,
     data,
