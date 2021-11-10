@@ -1,5 +1,5 @@
 import { HTMLDivProps, Popover } from '@blueprintjs/core'
-import React from 'react'
+import React, { useState } from 'react'
 import css from './Avatar.css'
 import classnames from 'classnames'
 import { getInitialsFromNameOrEmail, getSumOfAllCharacters, defaultAvatarColor } from './utils'
@@ -9,6 +9,7 @@ import { Color } from '../../core/Color'
 import { Container } from '../../components/Container/Container'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
+import { Icon, IconProps } from '../../icons/Icon'
 export type AvatarSizes = FontSize
 export interface AvatarProps extends HTMLDivProps {
   name?: string
@@ -42,6 +43,8 @@ const sizes: SizesProps = {
 }
 
 export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
+  const [loadFailed, setLoadFailed] = useState(false)
+  const onLoadFailed = () => setLoadFailed(true)
   const {
     borderRadius = 100,
     src,
@@ -91,8 +94,13 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     ...(fontSize && { fontSize })
   }
   if (src) {
+    const parsedHeightWidth = parseInt(imageHeightWidth, 10) as IconProps['size']
     const imageStyleNew = { ...contentStyle, width: imageHeightWidth, height: imageHeightWidth, border: '' }
-    inner = <img src={src} style={imageStyleNew} className={css.imageStyle} alt={name} />
+    inner = loadFailed ? (
+      <Icon name="user" size={parsedHeightWidth} />
+    ) : (
+      <img src={src} style={imageStyleNew} className={css.imageStyle} alt={name} onError={onLoadFailed} />
+    )
   } else {
     if (!initials) {
       return null
@@ -109,16 +117,23 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     borderRadius: '100%'
   }
 
+  const parsedHeightWidthInTooltip = parseInt(sizes.medium.size, 10) as IconProps['size']
+
   const defaultTooltip = (
     <Layout.Vertical className={css.hoverToolTipLayout}>
       <Layout.Horizontal flex padding="medium" className={css.hoverAvatarLayout}>
         {src ? (
-          <img
-            className={css.avatarImg}
-            src={src}
-            style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}
-            alt={name}
-          />
+          loadFailed ? (
+            <Icon name="user" size={parsedHeightWidthInTooltip} className={css.avatarImg} />
+          ) : (
+            <img
+              className={css.avatarImg}
+              src={src}
+              style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}
+              alt={name}
+              onError={onLoadFailed}
+            />
+          )
         ) : (
           <div className={css.avatarImg} style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}>
             {inner}
