@@ -390,6 +390,7 @@ import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
+import OfflineOutline from './offline-outline.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
@@ -974,6 +975,7 @@ type HarnessIconName =
   | 'no-feedback-given'
   | 'not-synced'
   | 'notification'
+  | 'offline-outline'
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
@@ -1558,6 +1560,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'no-feedback-given': NoFeedbackGiven,
   'not-synced': NotSynced,
   notification: Notification,
+  'offline-outline': OfflineOutline,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
