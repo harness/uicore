@@ -22,7 +22,7 @@ import {
 } from './MultiTypeInputUtils'
 import { MultiTypeInputMenu } from './MultiTypeInputMenu'
 
-type AcceptableValue = boolean | string | SelectOption | MultiSelectOption[]
+type AcceptableValue = boolean | string | number | SelectOption | MultiSelectOption[]
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue

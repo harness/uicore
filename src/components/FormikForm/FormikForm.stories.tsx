@@ -820,6 +820,12 @@ export const Basic: Story<FormikFormProps> = () => (
             />
             <FormInput.MultiTextInput name="jobDesc1" label="Job Desc 1" />
             <FormInput.MultiTextInput name="jobDec2" placeholder="Job Desc" label="Job Desc 2" />
+            <FormInput.MultiTextInput
+              name="numbertype"
+              multiTextInputProps={{ textProps: { type: 'number' } }}
+              placeholder="Number type multi text"
+              label="Number type multi text"
+            />
             <FormInput.MultiSelectTypeInput
               name="hobbies"
               label="Hobbies"
