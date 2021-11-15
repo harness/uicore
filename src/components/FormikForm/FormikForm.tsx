@@ -1174,8 +1174,14 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
         textProps={{ ...customTextInputProps, autoComplete }}
         name={name}
         onChange={(valueChange, valueType, type) => {
-          formik?.setFieldValue(name, valueChange)
-          onChange?.(value, valueType, type)
+          let valueToBePassed = valueChange
+          const inputFieldType = multiTextInputProps?.textProps?.type
+          if (inputFieldType === 'number' && valueChange && typeof valueChange === 'string') {
+            // if the type is a number, propagate the value as a number
+            valueToBePassed = parseFloat(valueChange)
+          }
+          formik?.setFieldValue(name, valueToBePassed)
+          onChange?.(valueToBePassed, valueType, type)
         }}
       />
     </FormGroup>
