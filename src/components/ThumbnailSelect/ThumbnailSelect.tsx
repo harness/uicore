@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import css from './ThumbnailSelect.css'
 import { IconName } from '../../icons/Icon'
 import { Layout, LayoutProps } from '../../layouts/Layout'
@@ -7,9 +7,10 @@ import { FormGroup } from '@blueprintjs/core'
 import { connect, FormikContext } from 'formik'
 import { get, isEmpty } from 'lodash-es'
 import { Intent } from '../../core/Intent'
-import { errorCheck } from '../../core/Utils'
+import { errorCheck, WrapOptionalTooltip } from '../../core/Utils'
 import { Thumbnail, ThumbnailProps } from '../Thumbnail/Thumbnail'
 import { FormError } from '../FormError/FormError'
+import { PopoverProps } from 'components/Popover/Popover'
 import cx from 'classnames'
 
 export interface Item {
@@ -17,6 +18,8 @@ export interface Item {
   icon?: IconName
   value: string
   disabled?: boolean
+  tooltip?: ReactElement
+  tooltipProps?: PopoverProps
 }
 
 export interface ConnectedThumbnailSelectProps extends ThumbnailSelectProps {
@@ -93,18 +96,20 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
       <Layout.Horizontal spacing={'medium'} {...layoutProps}>
         {visibleItems.map(item => {
           return (
-            <Thumbnail
-              size={size}
-              name={name}
-              key={item.value}
-              label={item.label}
-              value={item.value}
-              icon={item.icon}
-              disabled={item.disabled || isReadonly}
-              selected={item.value === value}
-              onClick={handleChange}
-              className={thumbnailClassName}
-            />
+            <WrapOptionalTooltip tooltip={item.tooltip} tooltipProps={item.tooltipProps}>
+              <Thumbnail
+                size={size}
+                name={name}
+                key={item.value}
+                label={item.label}
+                value={item.value}
+                icon={item.icon}
+                disabled={item.disabled || isReadonly}
+                selected={item.value === value}
+                onClick={handleChange}
+                className={thumbnailClassName}
+              />
+            </WrapOptionalTooltip>
           )
         })}
         {showAllOptions ? null : (
