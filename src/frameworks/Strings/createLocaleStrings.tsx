@@ -4,7 +4,7 @@ import { get } from 'lodash-es'
 
 export interface StringsContextValue<T> {
   data: T
-  getString<K extends keyof T>(key: K, vars?: T[K]): string
+  getString?<K extends keyof T>(key: K, vars?: T[K]): string
 }
 
 export interface StringsContextProviderProps<T> extends Pick<StringsContextValue<T>, 'getString'> {
