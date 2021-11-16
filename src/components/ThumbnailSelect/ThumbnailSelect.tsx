@@ -96,7 +96,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
       <Layout.Horizontal spacing={'medium'} {...layoutProps}>
         {visibleItems.map(item => {
           return (
-            <WrapOptionalTooltip tooltip={item.tooltip} tooltipProps={item.tooltipProps}>
+            <WrapOptionalTooltip key={item.value} tooltip={item.tooltip} tooltipProps={item.tooltipProps}>
               <Thumbnail
                 size={size}
                 name={name}
