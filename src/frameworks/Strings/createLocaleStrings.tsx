@@ -7,7 +7,7 @@ export interface StringsContextValue<T> {
   getString<K extends keyof T>(key: K, vars?: T[K]): string
 }
 
-export interface StringsContextProviderProps<T> extends Pick<StringsContextValue<T>, 'getString'> {
+export interface StringsContextProviderProps<T> extends Partial<Pick<StringsContextValue<T>, 'getString'>> {
   children: React.ReactNode
   data: T
 }
