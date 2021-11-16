@@ -355,12 +355,12 @@
       /* Danger */
       &[class*='intent-danger'] {
         color: var(--white);
-        border: 1px solid var(--red-500);
-        background-color: var(--red-500);
+        border: 1px solid var(--red-800);
+        background-color: var(--red-800);
 
         &:hover {
-          border: 1px solid var(--red-600);
-          background-color: var(--red-600);
+          border: 1px solid var(--red-800);
+          background-color: var(--red-800);
         }
 
         &:active,
@@ -370,8 +370,8 @@
         }
 
         &[disabled] {
-          border: 1px solid var(--red-500);
-          background-color: var(--red-500);
+          border: 1px solid var(--red-800);
+          background-color: var(--red-800);
         }
       }
     }

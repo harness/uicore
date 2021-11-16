@@ -147,6 +147,7 @@ import CvSketch from './cv-sketch.svg'
 import CvSolidCurrentColor from './cv-solid-current-color.svg'
 import CvSolid from './cv-solid.svg'
 import CvWithText from './cv-with-text.svg'
+import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DataFetchError from './data-fetch-error.svg'
@@ -239,6 +240,7 @@ import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
+import InfoMessaging from './info-messaging.svg'
 import Info from './info.svg'
 import Infrastructure from './infrastructure.svg'
 import InitializeStep from './initialize-step.svg'
@@ -533,6 +535,7 @@ import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
 import StepsSpinner from './steps-spinner.svg'
+import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
 import SupportCode from './support-code.svg'
@@ -578,6 +581,7 @@ import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
+import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -735,6 +739,7 @@ type HarnessIconName =
   | 'cv-solid-current-color'
   | 'cv-solid'
   | 'cv-with-text'
+  | 'danger-icon'
   | 'dashboard-selected'
   | 'dashboard'
   | 'data-fetch-error'
@@ -827,6 +832,7 @@ type HarnessIconName =
   | 'http-step'
   | 'infinityTrend'
   | 'info-message'
+  | 'info-messaging'
   | 'info'
   | 'infrastructure'
   | 'initialize-step'
@@ -1121,6 +1127,7 @@ type HarnessIconName =
   | 'step-jira'
   | 'step-kubernetes'
   | 'steps-spinner'
+  | 'success-tick'
   | 'support-account'
   | 'support-api'
   | 'support-code'
@@ -1166,6 +1173,7 @@ type HarnessIconName =
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
+  | 'warning-icon'
   | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -1323,6 +1331,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cv-solid-current-color': CvSolidCurrentColor,
   'cv-solid': CvSolid,
   'cv-with-text': CvWithText,
+  'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'data-fetch-error': DataFetchError,
@@ -1415,6 +1424,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'http-step': HttpStep,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
+  'info-messaging': InfoMessaging,
   info: Info,
   infrastructure: Infrastructure,
   'initialize-step': InitializeStep,
@@ -1709,6 +1719,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
   'steps-spinner': StepsSpinner,
+  'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
   'support-code': SupportCode,
@@ -1754,6 +1765,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
+  'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
