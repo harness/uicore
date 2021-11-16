@@ -119,6 +119,7 @@ import CommandStop from './command-stop.svg'
 import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
+import CompareVersion from './compare-version.svg'
 import ConditionalExecution from './conditional-execution.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
@@ -201,6 +202,7 @@ import FfSolid from './ff-solid.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
+import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
@@ -526,6 +528,7 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
+import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
 import StepGroup from './step-group.svg'
@@ -708,6 +711,7 @@ type HarnessIconName =
   | 'command-swap'
   | 'command-switch'
   | 'command-winrm'
+  | 'compare-version'
   | 'conditional-execution'
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
@@ -790,6 +794,7 @@ type HarnessIconName =
   | 'ff-with-text'
   | 'file'
   | 'fixed-input'
+  | 'flash'
   | 'folder-upload'
   | 'full-screen-exit'
   | 'full-screen'
@@ -1115,6 +1120,7 @@ type HarnessIconName =
   | 'setup-tags'
   | 'skipped'
   | 'spinner'
+  | 'stars'
   | 'status-pending'
   | 'status-running'
   | 'step-group'
@@ -1297,6 +1303,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-swap': CommandSwap,
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
+  'compare-version': CompareVersion,
   'conditional-execution': ConditionalExecution,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
@@ -1379,6 +1386,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
+  flash: Flash,
   'folder-upload': FolderUpload,
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
@@ -1704,6 +1712,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-tags': SetupTags,
   skipped: Skipped,
   spinner: Spinner,
+  stars: Stars,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
   'step-group': StepGroup,
