@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const yaml = require('yaml')
 const _ = require('lodash')
+const mustache = require('mustache')
 
 function flattenKeys(data, parentPath = []) {
   const keys = []
@@ -26,25 +27,45 @@ function flattenKeys(data, parentPath = []) {
   return keys
 }
 
-function template(content) {
+function template(content, partialType) {
+  let typeStr = 'Record<T, string | number | boolean>'
+
+  if (partialType) {
+    typeStr = `Partial<${typeStr}>`
+  }
+
   return `/**
 * This file is auto-generated. Please do not modify this file manually.
 * Use the command \`yarn strings\` to regenerate this file.
 */
+export type PrimitiveObject<T extends string> = ${typeStr}
+
 export interface StringsMap {
     ${content}
 }`
 }
 
-async function generateStringTypes({ input, output, context, preProcess }) {
+async function generateStringTypes({ input, output, context, preProcess, partialType }) {
   const content = await fs.promises.readFile(path.resolve(context, input), 'utf8')
   const parsedData = yaml.parse(content)
 
   const keys = flattenKeys(parsedData)
-    .map(key => `${key}: string;`)
+    .map(key => {
+      const template = _.get(parsedData, key)
+      const variables = mustache
+        .parse(template)
+        .filter(v => v[0] === 'name' || v[0] === '#' || v[0] === '&')
+        .map(v => v[1])
+        .filter(v => !v.startsWith('$'))
+        .map(v => `'${v}'`)
+      const uniqVariables = _.uniq(variables)
+      const valueType = uniqVariables.length > 0 ? `PrimitiveObject<${variables.join(' | ')}>` : 'unknown'
+
+      return `'${key}': ${valueType}`
+    })
     .join('\n  ')
 
-  let typesContent = template(keys)
+  let typesContent = template(keys, partialType)
 
   if (typeof preProcess === 'function') {
     typesContent = await preProcess(typesContent)
@@ -59,11 +80,11 @@ class GenerateStringTypesPlugin {
   }
 
   apply(compiler) {
-    const { input, output, preProcess } = this.options
+    const { input, output, preProcess, partialType } = this.options
 
     compiler.hooks.emit.tapAsync('GenerateStringTypesPlugin', (compilation, callback) => {
       try {
-        generateStringTypes({ input, output, context: compiler.context, preProcess }).then(
+        generateStringTypes({ input, output, context: compiler.context, preProcess, partialType }).then(
           () => callback(),
           e => callback(e)
         )
