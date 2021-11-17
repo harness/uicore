@@ -280,7 +280,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
       tagRenderer={(item: T) => labelFor(getLabelFromItems(item, items))}
       tagInputProps={{
         disabled: readonly,
-        onRemove: (_value: string, index: number) => {
+        onRemove: (_value, index: number) => {
           const _selectedItems = selectedItems.filter((_item, _index) => _index !== index)
           setSelectedItems(_selectedItems)
           onChange?.(_selectedItems, createdItems, items)

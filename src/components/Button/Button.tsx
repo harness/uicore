@@ -194,7 +194,7 @@ export function Link(props: LinkProps): React.ReactElement {
     }
     extra.elementRef = element => {
       if (props.withoutHref && element) {
-        element.href = 'javascript:void()'
+        ;((element as unknown) as HTMLLinkElement).href = 'javascript:void()'
       }
     }
   }
