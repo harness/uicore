@@ -28,7 +28,7 @@ function tab(props: TabProps) {
   return <Tab key={id} id={id} title={titleContent} {...rest} />
 }
 
-function Tabs(props: TabsProps): React.ReactChild {
+function Tabs(props: TabsProps): React.ReactElement {
   const { renderAllTabPanels, vertical, children, tabList = [], ...rest } = props
   const hasIcons = tabList.findIndex(tabProp => tabProp.iconProps?.name) !== -1
   return (
