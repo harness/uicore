@@ -38,6 +38,7 @@
   "peerDependencies": {
     "@blueprintjs/core": "3.26.1",
     "@blueprintjs/datetime": "3.13.0",
+    "@blueprintjs/popover2": "^0.12.8",
     "@blueprintjs/select": "3.12.3",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
@@ -56,6 +57,7 @@
     "@babel/core": "^7.14.6",
     "@blueprintjs/core": "3.26.1",
     "@blueprintjs/datetime": "3.13.0",
+    "@blueprintjs/popover2": "^0.12.8",
     "@blueprintjs/select": "3.12.3",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-docs": "^6.3.1",
@@ -164,8 +166,5 @@
   "files": [
     "dist/*",
     "tools/*"
-  ],
-  "dependencies": {
-    "@blueprintjs/popover2": "^0.12.8"
-  }
+  ]
 }
