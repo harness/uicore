@@ -36,10 +36,10 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {
-    "@blueprintjs/core": "3.26.1",
+    "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/popover2": "^0.12.8",
-    "@blueprintjs/select": "3.12.3",
+    "@blueprintjs/select": "3.10.0",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
     "lodash-es": "^4.17.15",
@@ -55,10 +55,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@blueprintjs/core": "3.26.1",
+    "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/popover2": "^0.12.8",
-    "@blueprintjs/select": "3.12.3",
+    "@blueprintjs/select": "3.10.0",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-docs": "^6.3.1",
     "@storybook/addon-essentials": "^6.3.1",
