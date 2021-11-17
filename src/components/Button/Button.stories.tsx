@@ -50,11 +50,21 @@ export const ButtonVariationsAndSizesExamples: Story<ButtonProps> = () => {
     <Layout.Vertical spacing="large">
       <Container>
         <Layout.Horizontal spacing="medium">
-          <Button text="Primary" variation={ButtonVariation.PRIMARY} />
-          <Button text="With left button" icon="chevron-left" variation={ButtonVariation.PRIMARY} />
-          <Button text="With right button" rightIcon="chevron-right" variation={ButtonVariation.PRIMARY} />
-          <Button text="Loading..." loading variation={ButtonVariation.PRIMARY} />
-          <Button text="Disabled" variation={ButtonVariation.PRIMARY} disabled tooltip="Permission required" />
+          <Button text="Primary" variation={ButtonVariation.PRIMARY} tooltip="This is an example tooltip" />
+          <Button
+            text="With left button"
+            icon="chevron-left"
+            variation={ButtonVariation.PRIMARY}
+            tooltip="This is an example tooltip"
+          />
+          <Button
+            text="With right button"
+            rightIcon="chevron-right"
+            variation={ButtonVariation.PRIMARY}
+            tooltip="This is an example tooltip"
+          />
+          <Button text="Loading..." loading variation={ButtonVariation.PRIMARY} tooltip="This is an example tooltip" />
+          <Button text="Disabled" variation={ButtonVariation.PRIMARY} disabled tooltip="This is an example tooltip" />
         </Layout.Horizontal>
       </Container>
 
