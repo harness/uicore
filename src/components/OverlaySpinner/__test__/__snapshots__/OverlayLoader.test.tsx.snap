@@ -28,6 +28,7 @@ exports[`OverlayLoader Test  2`] = `
       >
         <div
           class="bp3-spinner"
+          role="progressbar"
         >
           <div
             class="bp3-spinner-animation"

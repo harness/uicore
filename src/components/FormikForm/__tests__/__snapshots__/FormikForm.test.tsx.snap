@@ -114,7 +114,7 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
                         </button>
                       </span>
                       <input
-                        class="bp3-input-ghost bp3-multi-select-tag-input-input"
+                        class="bp3-input-ghost"
                         value=""
                       />
                     </div>
@@ -123,6 +123,7 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
                       type="button"
                     >
                       <span
+                        aria-hidden="true"
                         class="bp3-icon bp3-icon-cross"
                         icon="cross"
                       >
@@ -132,9 +133,6 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
                           viewBox="0 0 16 16"
                           width="16"
                         >
-                          <desc>
-                            cross
-                          </desc>
                           <path
                             d="M9.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
                             fill-rule="evenodd"
@@ -486,7 +484,7 @@ exports[`Test basic Components should render FileInput component 2`] = `
                         </button>
                       </span>
                       <input
-                        class="bp3-input-ghost bp3-multi-select-tag-input-input"
+                        class="bp3-input-ghost"
                         value=""
                       />
                     </div>
@@ -561,7 +559,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
                     >
                       <input
                         autocomplete="off"
-                        class="bp3-input-ghost bp3-multi-select-tag-input-input"
+                        class="bp3-input-ghost"
                         name="color"
                         placeholder="- Select -"
                         value=""
@@ -655,6 +653,7 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                         />
                       </span>
                       <span
+                        aria-hidden="true"
                         class="bp3-icon bp3-icon-chevron-down main padding padding-small"
                         icon="chevron-down"
                       >
@@ -664,9 +663,6 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                           viewBox="0 0 16 16"
                           width="14"
                         >
-                          <desc>
-                            chevron-down
-                          </desc>
                           <path
                             d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                             fill-rule="evenodd"
@@ -780,6 +776,7 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                         />
                       </span>
                       <span
+                        aria-hidden="true"
                         class="bp3-icon bp3-icon-chevron-down main padding padding-small"
                         icon="chevron-down"
                       >
@@ -789,9 +786,6 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                           viewBox="0 0 16 16"
                           width="14"
                         >
-                          <desc>
-                            chevron-down
-                          </desc>
                           <path
                             d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                             fill-rule="evenodd"
@@ -1065,6 +1059,7 @@ exports[`Test basic Components should render Select component 1`] = `
                     class="bp3-input-action"
                   >
                     <span
+                      aria-hidden="true"
                       class="bp3-icon bp3-icon-chevron-down main padding padding-small"
                       icon="chevron-down"
                     >
@@ -1074,9 +1069,6 @@ exports[`Test basic Components should render Select component 1`] = `
                         viewBox="0 0 16 16"
                         width="14"
                       >
-                        <desc>
-                          chevron-down
-                        </desc>
                         <path
                           d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                           fill-rule="evenodd"

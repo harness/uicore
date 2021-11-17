@@ -9,6 +9,7 @@ exports[`Render basic component should check snapshot with email 1`] = `
       class="bp3-popover-wrapper avatarPopOver"
     >
       <span
+        aria-haspopup="true"
         class="bp3-popover-target"
       >
         <div
@@ -33,6 +34,7 @@ exports[`Render basic component should check snapshot with image 1`] = `
       class="bp3-popover-wrapper avatarPopOver"
     >
       <span
+        aria-haspopup="true"
         class="bp3-popover-target"
       >
         <div
@@ -62,6 +64,7 @@ exports[`Render basic component should check snapshot with name 1`] = `
       class="bp3-popover-wrapper avatarPopOver"
     >
       <span
+        aria-haspopup="true"
         class="bp3-popover-target"
       >
         <div

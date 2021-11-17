@@ -11,7 +11,7 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
       title="app.name"
     >
       <div
-        class="bp3-text-overflow-ellipsis bp3-fill"
+        class="bp3-fill bp3-text-overflow-ellipsis"
       >
         <span
           class="menuItem"
@@ -42,7 +42,7 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
       title="app.Name"
     >
       <div
-        class="bp3-text-overflow-ellipsis bp3-fill"
+        class="bp3-fill bp3-text-overflow-ellipsis"
       >
         <span
           class="menuItem"
@@ -73,7 +73,7 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
       title="app.xyz.name"
     >
       <div
-        class="bp3-text-overflow-ellipsis bp3-fill"
+        class="bp3-fill bp3-text-overflow-ellipsis"
       >
         <span
           class="menuItem"

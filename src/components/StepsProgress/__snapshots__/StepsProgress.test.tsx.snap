@@ -10,7 +10,11 @@ exports[`Steps Progress Component should render with default steps 1`] = `
       class="progressBar"
     >
       <div
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="75"
         class="bp3-progress-bar bp3-intent-danger bp3-no-stripes progressHeight"
+        role="progressbar"
       >
         <div
           class="bp3-progress-meter"
@@ -25,6 +29,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
         class="stepWrap"
       >
         <span
+          aria-hidden="true"
           class="bp3-icon bp3-icon-tick main color color-green500 margin margin-right margin-right-small"
           icon="tick"
         >
@@ -34,9 +39,6 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             viewBox="0 0 16 16"
             width="16"
           >
-            <desc>
-              tick
-            </desc>
             <path
               d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
               fill-rule="evenodd"
@@ -54,6 +56,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
         class="stepWrap"
       >
         <span
+          aria-hidden="true"
           class="bp3-icon bp3-icon-tick main color color-green500 margin margin-right margin-right-small"
           icon="tick"
         >
@@ -63,9 +66,6 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             viewBox="0 0 16 16"
             width="16"
           >
-            <desc>
-              tick
-            </desc>
             <path
               d="M14 3c-.28 0-.53.11-.71.29L6 10.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l8-8A1.003 1.003 0 0014 3z"
               fill-rule="evenodd"
@@ -83,6 +83,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
         class="stepWrap"
       >
         <span
+          aria-hidden="true"
           class="bp3-icon bp3-icon-error main color color-red500 margin margin-right margin-right-small"
           icon="error"
         >
@@ -92,9 +93,6 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             viewBox="0 0 16 16"
             width="16"
           >
-            <desc>
-              error
-            </desc>
             <path
               d="M7.99-.01c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm1 13h-2v-2h2v2zm0-3h-2v-7h2v7z"
               fill-rule="evenodd"
@@ -111,6 +109,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
         class="stepWrap"
       >
         <span
+          aria-hidden="true"
           class="bp3-icon bp3-icon-blank main color color-yellow500 margin margin-right margin-right-small"
           icon="blank"
         >
@@ -119,11 +118,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
             height="16"
             viewBox="0 0 16 16"
             width="16"
-          >
-            <desc>
-              blank
-            </desc>
-          </svg>
+          />
         </span>
         <div
           class="font main stepLabelContainer style style-fontWeight style-fontWeight-normal"
