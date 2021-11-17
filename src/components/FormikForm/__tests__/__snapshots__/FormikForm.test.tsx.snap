@@ -35,7 +35,6 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
               class="bp3-popover-wrapper tagInput bp3-fill"
             >
               <div
-                aria-haspopup="true"
                 class="bp3-popover-target bp3-popover-open"
               >
                 <div
@@ -52,17 +51,15 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
                         data-tag-index="0"
                       >
                         <span
-                          class="bp3-fill bp3-text-overflow-ellipsis"
+                          class="bp3-text-overflow-ellipsis bp3-fill"
                         >
                           tag1
                         </span>
                         <button
-                          aria-label="Remove"
                           class="bp3-tag-remove"
                           type="button"
                         >
                           <span
-                            aria-hidden="true"
                             class="bp3-icon bp3-icon-small-cross"
                             icon="small-cross"
                           >
@@ -72,6 +69,9 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
                               viewBox="0 0 16 16"
                               width="16"
                             >
+                              <desc>
+                                small-cross
+                              </desc>
                               <path
                                 d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
                                 fill-rule="evenodd"
@@ -85,17 +85,15 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
                         data-tag-index="1"
                       >
                         <span
-                          class="bp3-fill bp3-text-overflow-ellipsis"
+                          class="bp3-text-overflow-ellipsis bp3-fill"
                         >
                           tag2
                         </span>
                         <button
-                          aria-label="Remove"
                           class="bp3-tag-remove"
                           type="button"
                         >
                           <span
-                            aria-hidden="true"
                             class="bp3-icon bp3-icon-small-cross"
                             icon="small-cross"
                           >
@@ -105,6 +103,9 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
                               viewBox="0 0 16 16"
                               width="16"
                             >
+                              <desc>
+                                small-cross
+                              </desc>
                               <path
                                 d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
                                 fill-rule="evenodd"
@@ -438,7 +439,6 @@ exports[`Test basic Components should render FileInput component 2`] = `
               class="bp3-popover-wrapper tagInput bp3-fill"
             >
               <div
-                aria-haspopup="true"
                 class="bp3-popover-target"
               >
                 <div
@@ -455,17 +455,15 @@ exports[`Test basic Components should render FileInput component 2`] = `
                         data-tag-index="0"
                       >
                         <span
-                          class="bp3-fill bp3-text-overflow-ellipsis"
+                          class="bp3-text-overflow-ellipsis bp3-fill"
                         >
                           + tag
                         </span>
                         <button
-                          aria-label="Remove"
                           class="bp3-tag-remove"
                           type="button"
                         >
                           <span
-                            aria-hidden="true"
                             class="bp3-icon bp3-icon-small-cross"
                             icon="small-cross"
                           >
@@ -475,6 +473,9 @@ exports[`Test basic Components should render FileInput component 2`] = `
                               viewBox="0 0 16 16"
                               width="16"
                             >
+                              <desc>
+                                small-cross
+                              </desc>
                               <path
                                 d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 00-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L9.41 8z"
                                 fill-rule="evenodd"
@@ -545,7 +546,6 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
               class="bp3-popover-wrapper main bp3-fill"
             >
               <div
-                aria-haspopup="true"
                 class="bp3-popover-target"
               >
                 <div
@@ -625,7 +625,6 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                 class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
               >
                 <div
-                  aria-haspopup="true"
                   class="bp3-popover-target"
                 >
                   <div
@@ -674,22 +673,26 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                 </div>
               </div>
               <span
-                aria-haspopup="true"
-                class="wrapper bp3-popover2-target"
+                class="bp3-popover-wrapper wrapper"
               >
-                <button
-                  class="btn FIXED"
+                <span
+                  aria-haspopup="true"
+                  class="bp3-popover-target"
                 >
-                  <span
-                    class="bp3-icon main"
-                    data-icon="fixed-input"
+                  <button
+                    class="btn FIXED"
                   >
-                    <svg
-                      height="12"
-                      width="12"
-                    />
-                  </span>
-                </button>
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
               </span>
             </div>
           </div>
@@ -748,7 +751,6 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                 class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
               >
                 <div
-                  aria-haspopup="true"
                   class="bp3-popover-target"
                 >
                   <div
@@ -797,22 +799,26 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                 </div>
               </div>
               <span
-                aria-haspopup="true"
-                class="wrapper bp3-popover2-target"
+                class="bp3-popover-wrapper wrapper"
               >
-                <button
-                  class="btn FIXED"
+                <span
+                  aria-haspopup="true"
+                  class="bp3-popover-target"
                 >
-                  <span
-                    class="bp3-icon main"
-                    data-icon="fixed-input"
+                  <button
+                    class="btn FIXED"
                   >
-                    <svg
-                      height="12"
-                      width="12"
-                    />
-                  </span>
-                </button>
+                    <span
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
+                    >
+                      <svg
+                        height="12"
+                        width="12"
+                      />
+                    </span>
+                  </button>
+                </span>
               </span>
             </div>
           </div>
@@ -1040,7 +1046,6 @@ exports[`Test basic Components should render Select component 1`] = `
               class="bp3-popover-wrapper main bp3-fill"
             >
               <div
-                aria-haspopup="true"
                 class="bp3-popover-target"
               >
                 <div

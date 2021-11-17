@@ -3,23 +3,27 @@
 exports[`Text component fixes basic rendering with nested: nested text 1`] = `
 <div>
   <span
-    aria-haspopup="true"
-    class="bp3-popover2-target bp3-popover2-open"
+    class="bp3-popover-wrapper"
   >
-    <p
-      class="font main"
-      tabindex="0"
+    <span
+      aria-haspopup="true"
+      class="bp3-popover-target bp3-popover-open targetClass"
     >
-      <div
-        class="horizontal layout-spacing-undefined main"
+      <p
+        class="font main"
+        tabindex="0"
       >
-        <p
-          class="font main"
+        <div
+          class="horizontal layout-spacing-undefined main"
         >
-          Nested
-        </p>
-      </div>
-    </p>
+          <p
+            class="font main"
+          >
+            Nested
+          </p>
+        </div>
+      </p>
+    </span>
   </span>
 </div>
 `;

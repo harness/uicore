@@ -6,7 +6,6 @@ exports[`<MultiSelect/> tests should work when no matching results found: Filter
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target bp3-popover-open"
     >
       <div
@@ -28,7 +27,6 @@ exports[`<MultiSelect/> tests should work when no matching results found: Filter
       </div>
     </div>
     <div
-      aria-live="polite"
       class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
     >
       <div
@@ -56,7 +54,6 @@ exports[`<MultiSelect/> tests works with async data 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target"
     >
       <div
@@ -87,7 +84,6 @@ exports[`<MultiSelect/> tests works with async data: Final state 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target"
     >
       <div
@@ -118,7 +114,6 @@ exports[`<MultiSelect/> tests works with async data: Loading state 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target"
     >
       <div
@@ -149,7 +144,6 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target bp3-popover-open"
     >
       <div
@@ -171,7 +165,6 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
       </div>
     </div>
     <div
-      aria-live="polite"
       class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
     >
       <div
@@ -301,7 +294,6 @@ exports[`<MultiSelect/> tests works with static data 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target"
     >
       <div

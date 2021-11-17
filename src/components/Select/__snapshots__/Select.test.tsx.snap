@@ -6,7 +6,6 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target bp3-popover-open"
     >
       <div
@@ -43,7 +42,6 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
       </div>
     </div>
     <div
-      aria-live="polite"
       class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
     >
       <div
@@ -106,7 +104,6 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target bp3-popover-open"
     >
       <div
@@ -143,7 +140,6 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
       </div>
     </div>
     <div
-      aria-live="polite"
       class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
     >
       <div
@@ -376,7 +372,6 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target bp3-popover-open"
     >
       <div
@@ -413,7 +408,6 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
       </div>
     </div>
     <div
-      aria-live="polite"
       class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
     >
       <div
@@ -441,7 +435,6 @@ exports[`<Select/> tests works with async data 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target"
     >
       <div
@@ -487,7 +480,6 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target bp3-popover-open"
     >
       <div
@@ -524,7 +516,6 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
       </div>
     </div>
     <div
-      aria-live="polite"
       class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
     >
       <div
@@ -562,7 +553,6 @@ exports[`<Select/> tests works with static data 1`] = `
     class="bp3-popover-wrapper main bp3-fill"
   >
     <div
-      aria-haspopup="true"
       class="bp3-popover-target"
     >
       <div

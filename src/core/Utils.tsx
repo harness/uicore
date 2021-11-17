@@ -70,7 +70,7 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
       boundary="viewport"
       position="top"
       interactionKind="hover"
-      usePopover2
+      // usePopover2
       {...tooltipProps}
       popoverClassName={cx(isDark ? Classes.DARK : undefined, tooltipProps?.popoverClassName)}
       content={content || ''}>
