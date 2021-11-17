@@ -16,7 +16,7 @@ interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
 }
 
 function tab(props: TabProps) {
-  const { title, iconProps, ...rest } = props
+  const { title, iconProps, id, ...rest } = props
   const titleContent = iconProps ? (
     <span>
       <Icon {...iconProps} padding={{ right: 'small' }} />
@@ -25,10 +25,10 @@ function tab(props: TabProps) {
   ) : (
     title
   )
-  return <Tab title={titleContent} {...rest} />
+  return <Tab key={id} id={id} title={titleContent} {...rest} />
 }
 
-function Tabs(props: TabsProps) {
+function Tabs(props: TabsProps): React.ReactChild {
   const { renderAllTabPanels, vertical, children, tabList = [], ...rest } = props
   const hasIcons = tabList.findIndex(tabProp => tabProp.iconProps?.name) !== -1
   return (
