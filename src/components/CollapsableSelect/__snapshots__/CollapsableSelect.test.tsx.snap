@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test render CollapsableSelect collapsable select flow  1`] = `
+<div>
+  <form>
+    <div
+      class="bp3-form-group"
+    >
+      <div
+        class="bp3-form-content"
+      >
+        <div
+          class="horizontal layout-spacing-medium main spacing spacing-medium"
+        >
+          <div
+            class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+            data-index="0"
+            tabindex="0"
+          >
+            <span
+              class="corner"
+            >
+              <span
+                class="badge"
+              />
+              <span
+                class="bp3-icon main color color-white"
+                data-icon="main-tick"
+              >
+                <svg
+                  height="10"
+                  width="10"
+                />
+              </span>
+            </span>
+            <div
+              class="vertical layout-spacing-undefined main"
+            >
+              Github
+            </div>
+          </div>
+          <button
+            class="bp3-button bp3-minimal button font main style style-margin style-margin-auto intent intent-primary without-shadow withLeftIcon"
+            data-testid="collapsable-select-change"
+            style="margin: auto;"
+            type="button"
+          >
+            <span
+              class="bp3-icon main padding padding-right padding-right-xsmall"
+              data-icon="Edit"
+            >
+              <svg
+                height="12"
+                width="12"
+              />
+            </span>
+            <span
+              class="bp3-button-text"
+            >
+              Change
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Test render CollapsableSelect should render card view with defaultValue 1`] = `
+<div>
+  <form>
+    <div
+      class="bp3-form-group"
+    >
+      <div
+        class="bp3-form-content"
+      >
+        <div
+          class="horizontal layout-spacing-medium main spacing spacing-medium"
+        >
+          <div
+            class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+            data-index="0"
+            tabindex="0"
+          >
+            <span
+              class="corner"
+            >
+              <span
+                class="badge"
+              />
+              <span
+                class="bp3-icon main color color-white"
+                data-icon="main-tick"
+              >
+                <svg
+                  height="10"
+                  width="10"
+                />
+              </span>
+            </span>
+            <div
+              class="vertical layout-spacing-undefined main"
+            >
+              Kubernetes
+            </div>
+          </div>
+          <button
+            class="bp3-button bp3-minimal button font main style style-margin style-margin-auto intent intent-primary without-shadow withLeftIcon"
+            data-testid="collapsable-select-change"
+            style="margin: auto;"
+            type="button"
+          >
+            <span
+              class="bp3-icon main padding padding-right padding-right-xsmall"
+              data-icon="Edit"
+            >
+              <svg
+                height="12"
+                width="12"
+              />
+            </span>
+            <span
+              class="bp3-button-text"
+            >
+              Change
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Test render CollapsableSelect should render card view with no defaultValue 1`] = `
+<div>
+  <form>
+    <div
+      class="bp3-form-group"
+    >
+      <div
+        class="bp3-form-content"
+      >
+        <div
+          class="horizontal layout-spacing-medium main spacing spacing-medium"
+        >
+          <div
+            class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+            data-index="0"
+            tabindex="0"
+          >
+            <div
+              class="vertical layout-spacing-undefined main"
+            >
+              Kubernetes
+            </div>
+          </div>
+          <div
+            class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+            data-index="1"
+            tabindex="0"
+          >
+            <div
+              class="vertical layout-spacing-undefined main"
+            >
+              Github
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Test render CollapsableSelect should render customView  1`] = `
+<div>
+  <form>
+    <div
+      class="bp3-form-group"
+    >
+      <div
+        class="bp3-form-content"
+      >
+        <div
+          class="horizontal layout-spacing-medium main spacing spacing-medium"
+        >
+          <div
+            class=""
+            data-index="0"
+          >
+            <div
+              class="vertical layout-spacing-undefined main"
+            >
+              Kubernetes
+            </div>
+          </div>
+          <button
+            class="bp3-button bp3-minimal button font main style style-margin style-margin-auto intent intent-primary without-shadow withLeftIcon"
+            data-testid="collapsable-select-change"
+            style="margin: auto;"
+            type="button"
+          >
+            <span
+              class="bp3-icon main padding padding-right padding-right-xsmall"
+              data-icon="Edit"
+            >
+              <svg
+                height="12"
+                width="12"
+              />
+            </span>
+            <span
+              class="bp3-button-text"
+            >
+              Change
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
