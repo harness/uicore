@@ -40,9 +40,8 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
             </div>
           </div>
           <button
-            class="bp3-button bp3-minimal button font main style style-margin style-margin-auto intent intent-primary without-shadow withLeftIcon"
+            class="bp3-button bp3-minimal button font main closeChangeBtn intent intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
-            style="margin: auto;"
             type="button"
           >
             <span
@@ -107,9 +106,8 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
             </div>
           </div>
           <button
-            class="bp3-button bp3-minimal button font main style style-margin style-margin-auto intent intent-primary without-shadow withLeftIcon"
+            class="bp3-button bp3-minimal button font main closeChangeBtn intent intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
-            style="margin: auto;"
             type="button"
           >
             <span
@@ -188,7 +186,6 @@ exports[`Test render CollapsableSelect should render customView  1`] = `
           class="horizontal layout-spacing-medium main spacing spacing-medium"
         >
           <div
-            class=""
             data-index="0"
           >
             <div
@@ -198,9 +195,8 @@ exports[`Test render CollapsableSelect should render customView  1`] = `
             </div>
           </div>
           <button
-            class="bp3-button bp3-minimal button font main style style-margin style-margin-auto intent intent-primary without-shadow withLeftIcon"
+            class="bp3-button bp3-minimal button font main closeChangeBtn intent intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
-            style="margin: auto;"
             type="button"
           >
             <span

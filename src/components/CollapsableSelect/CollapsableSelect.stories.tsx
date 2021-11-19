@@ -19,7 +19,7 @@ export default {
         type: 'code'
       },
 
-      page: () => {
+      page: function PageDescription() {
         return (
           <>
             <Title>FormikCollapsableSelect</Title>

@@ -28,7 +28,7 @@ describe('Test render CollapsableSelect', () => {
               type={CollapsableSelectType.CardView}
               items={items}
               name={'connectivityMode'}
-              selected={items[items.findIndex(item => item.value === 'service-kubernetes')]}
+              selected={items[items.findIndex(item => item.value === formik.values.connectivityMode)]}
               renderItem={item => {
                 return <Layout.Vertical>{item.text}</Layout.Vertical>
               }}
@@ -53,6 +53,9 @@ describe('Test render CollapsableSelect', () => {
               items={items}
               name={'connectivityMode'}
               selected={undefined}
+              onChange={() => {
+                formik.setFieldTouched('connectivityMode', true)
+              }}
               renderItem={item => {
                 return <Layout.Vertical>{item?.text}</Layout.Vertical>
               }}
@@ -106,7 +109,7 @@ describe('Test render CollapsableSelect', () => {
   })
 
   test('should render customView ', () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <Formik initialValues={{ connectivityMode: 'service-kubernetes' }} onSubmit={noop}>
         {formik => (
           <Form>
