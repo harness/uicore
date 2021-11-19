@@ -7,7 +7,6 @@ import { noop } from 'lodash-es'
 import * as Yup from 'yup'
 import { Icon } from '../../icons/Icon'
 import { Layout, Text } from '../..'
-import { SSL_OP_TLS_BLOCK_PADDING_BUG } from 'constants'
 
 export default {
   title: 'Components / CollapsableSelect',
