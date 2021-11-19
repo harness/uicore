@@ -54,7 +54,6 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
 
   const [showAllOptions, setShowAllOptions] = React.useState(!isEmpty(value))
 
-
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
   const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null
@@ -103,8 +102,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
                     data-index={index}
                     selected={isSelected}
                     cornerSelected={true}
-                    onClick={event => handleChange(item, event)}
-                  >
+                    onClick={event => handleChange(item, event)}>
                     {renderItem(item, selected)}
                   </Card>
                 ) : (
@@ -132,7 +130,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
         )}
         {showAllOptions && value ? (
           <Button
-           className={css.closeChangeBtn}
+            className={css.closeChangeBtn}
             disabled={isReadonly}
             minimal
             icon="cross"
