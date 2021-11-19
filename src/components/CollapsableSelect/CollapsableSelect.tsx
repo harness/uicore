@@ -79,7 +79,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
   const selectedItemIndex = value ? items.findIndex(item => item.value === value) : -1
   let visibleItems =
     selectedItemIndex > -1
-      ? [items[selectedItemIndex], ...items.filter((val, index) => index !== selectedItemIndex)]
+      ? [items[selectedItemIndex], ...items.filter((_val, index) => index !== selectedItemIndex)]
       : items
 
   if (!showAllOptions) {
