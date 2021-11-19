@@ -6,13 +6,15 @@ import { Form, Formik } from 'formik'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
 import { Icon } from '../../icons/Icon'
-import { Layout } from '../..'
+import { Layout, Text } from '../..'
+import { SSL_OP_TLS_BLOCK_PADDING_BUG } from 'constants'
 
 export default {
   title: 'Components / CollapsableSelect',
 
   component: FormikCollapsableSelect,
   parameters: {
+    layout: 'centered',
     docs: {
       source: {
         type: 'code'
@@ -45,6 +47,7 @@ interface T {
 }
 
 interface U {
+  info: string
   icon: JSX.Element
 }
 
@@ -88,7 +91,12 @@ export const Custom: Story<{ items: Array<CollapsableSelectOptions & U>; isReado
             selected={args.items[args.items.findIndex(item => item.value === formik.values.connectivityMode)]}
             name={'connectivityMode'}
             renderItem={item => {
-              return item.icon
+              return (
+                <Layout.Vertical border={true} spacing="medium">
+                  {item.icon}
+                  <Text font="small">{item.info}</Text>
+                </Layout.Vertical>
+              )
             }}
           />
         </Form>
@@ -113,12 +121,13 @@ CardView.args = {
 Custom.args = {
   items: [
     {
-      icon: <Icon name="service-jenkins" />,
-
+      icon: <Icon name="service-jenkins" size={50} />,
+      info: 'This option selects Jenkins',
       value: 'Jenkins'
     },
     {
-      icon: <Icon name="service-gcp" />,
+      icon: <Icon name="service-gcp" size={50} />,
+      info: 'This option selects Gcp',
       value: 'Gcp'
     }
   ]
