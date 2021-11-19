@@ -36,8 +36,8 @@ export interface ConnectedCollapsableSelectProps<T> extends CollapsableSelectPro
 }
 export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) {
   const {
-    className = '',
-    itemClassName = '',
+    className,
+    itemClassName,
     formik,
     name,
     items = [],
@@ -79,44 +79,43 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
   const selectedItemIndex = value ? items.findIndex(item => item.value === value) : -1
   let visibleItems =
     selectedItemIndex > -1
-      ? [items[selectedItemIndex], ...items.slice(0, selectedItemIndex), ...items.slice(selectedItemIndex + 1)]
+      ? [items[selectedItemIndex], ...items.filter((val, index) => index !== selectedItemIndex)]
       : items
 
   if (!showAllOptions) {
-    visibleItems = visibleItems.slice(0, 1)
+    visibleItems = [visibleItems[0]]
   }
 
   return (
     <FormGroup className={className} helperText={helperText} intent={intent}>
       <Layout.Horizontal spacing={'medium'} {...layoutProps}>
-        {visibleItems.length > 0 &&
-          visibleItems.map((item, index) => {
-            const isSelected = isEqual(item, selected)
+        {visibleItems.map((item, index) => {
+          const isSelected = isEqual(item, selected)
 
-            return (
-              <React.Fragment key={index}>
-                {type === CollapsableSelectType.CardView ? (
-                  <Card
-                    className={itemClassName}
-                    interactive={true}
-                    data-index={index}
-                    selected={isSelected}
-                    cornerSelected={true}
-                    onClick={event => handleChange(item, event)}>
-                    {renderItem(item, selected)}
-                  </Card>
-                ) : (
-                  <div className={itemClassName} data-index={index} onClick={event => handleChange(item, event)}>
-                    {renderItem(item, selected)}
-                  </div>
-                )}
-              </React.Fragment>
-            )
-          })}
+          return (
+            <React.Fragment key={index}>
+              {type === CollapsableSelectType.CardView ? (
+                <Card
+                  className={itemClassName}
+                  interactive={true}
+                  data-index={index}
+                  selected={isSelected}
+                  cornerSelected={true}
+                  onClick={event => handleChange(item, event)}>
+                  {renderItem(item, selected)}
+                </Card>
+              ) : (
+                <div className={itemClassName} data-index={index} onClick={event => handleChange(item, event)}>
+                  {renderItem(item, selected)}
+                </div>
+              )}
+            </React.Fragment>
+          )
+        })}
 
         {showAllOptions ? null : (
           <Button
-            style={{ margin: 'auto' }}
+            className={css.closeChangeBtn}
             disabled={isReadonly}
             minimal
             icon="Edit"
