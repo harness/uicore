@@ -440,6 +440,9 @@ import ResSecrets from './res-secrets.svg'
 import ResUserGroups from './res-userGroups.svg'
 import ResUsers from './res-users.svg'
 import ResetIcon from './reset-icon.svg'
+import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
+import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
+import ResourceCenterSearchIcon from './resource-center-search-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
@@ -1032,6 +1035,9 @@ type HarnessIconName =
   | 'res-userGroups'
   | 'res-users'
   | 'reset-icon'
+  | 'resource-center-community-icon'
+  | 'resource-center-docs-icon'
+  | 'resource-center-search-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
@@ -1624,6 +1630,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'res-userGroups': ResUserGroups,
   'res-users': ResUsers,
   'reset-icon': ResetIcon,
+  'resource-center-community-icon': ResourceCenterCommunityIcon,
+  'resource-center-docs-icon': ResourceCenterDocsIcon,
+  'resource-center-search-icon': ResourceCenterSearchIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS3,
