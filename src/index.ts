@@ -205,3 +205,11 @@ export {
   VisualYamlToggle,
   VisualYamlToggleProps
 } from './components/VisualYamlToggle/VisualYamlToggle'
+export {
+  FormikCollapsableSelect,
+  CollapsableSelect,
+  CollapsableSelectType,
+  CollapsableSelectOptions,
+  CollapsableSelectProps,
+  ConnectedCollapsableSelectProps
+} from './components/CollapsableSelect/CollapsableSelect'
