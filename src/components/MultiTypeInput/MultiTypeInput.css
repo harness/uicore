@@ -229,9 +229,10 @@
 .menu {
   text-align: right !important;
   min-width: 150px !important;
+  max-width: 150px !important;
   box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
   border-radius: 8px;
-  padding: 12px 0;
+  padding: 12px 0 0 0;
 }
 
 .menuItem {
@@ -253,7 +254,19 @@
     }
   }
 
-  &:hover {
+  &.learnMoreItem {
+    padding: 0;
+    position: relative;
+    height: 36px;
+    width: 100%;
+
+    &:hover {
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+
+  &:not(.learnMoreItem):hover {
     background-color: var(--primary-7);
     color: var(--white);
 
@@ -276,5 +289,62 @@
   .fixedValueInput,
   :global(.bp3-input) {
     padding-right: 75px !important;
+  }
+}
+
+.learnMore {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 150px;
+  background-color: var(--white);
+
+  &[data-open='true'] {
+    width: 415px;
+    border-radius: 4px 0 4px 4px;
+    box-shadow: var(--elevation-4);
+  }
+
+  .header {
+    background-color: var(--grey-100);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-4);
+    font-size: var(--font-size-small);
+  }
+
+  .body {
+    padding: var(--spacing-5);
+  }
+
+  .content {
+    padding-bottom: var(--spacing-5);
+    margin-bottom: var(--spacing-5);
+    border-bottom: 1px solid var(--grey-200);
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    column-gap: var(--spacing-3);
+    font-size: var(--font-size-small);
+    white-space: normal;
+    text-align: left;
+
+    :global(.bp3-icon) {
+      align-self: center;
+      justify-self: center;
+
+      &[data-type='FIXED'] {
+        color: var(--primary-6);
+      }
+
+      &[data-type='RUNTIME'] {
+        color: var(--purple-500);
+      }
+
+      &[data-type='EXPRESSION'] {
+        color: var(--orange-700);
+      }
+    }
   }
 }
