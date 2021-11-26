@@ -5,9 +5,74 @@ import { Menu } from '@blueprintjs/core'
 import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as TypeIconSize } from './MultiTypeInputUtils'
 import { Icon } from '../../icons/Icon'
 import { I18nResource } from '../../core/Types'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { Button, ButtonVariation } from '../Button/Button'
+import { Checkbox } from '../Checkbox/Checkbox'
 
 import css from './MultiTypeInput.css'
 import i18nBase from './MultiTypeInput.i18n'
+
+export interface LearnMoreProps {
+  type: MultiTypeInputType
+}
+
+const helperText: Record<MultiTypeInputType, React.ReactNode> = {
+  [MultiTypeInputType.EXPRESSION]: (
+    <React.Fragment>
+      <b>Expressions</b> allow you to use Harness input, output, and execution variables in a setting.
+    </React.Fragment>
+  ),
+  [MultiTypeInputType.FIXED]: (
+    <React.Fragment>
+      <b>Fixed Values</b> are simply values that you enter manually when you configure a setting and do not change at
+      runtime.
+    </React.Fragment>
+  ),
+  [MultiTypeInputType.RUNTIME]: (
+    <React.Fragment>
+      <b>Runtime Inputs</b> are placeholders for values that will be provided when you start a Pipeline execution.
+    </React.Fragment>
+  )
+}
+
+export function LearnMore(props: LearnMoreProps): React.ReactElement {
+  const { type } = props
+  const [dontShowAgain, setDontShowAgain] = useLocalStorage('harness_multitype_input_learn_more_dontshowagain_0', false)
+  const [isOpen, setIsOpen] = React.useState(!dontShowAgain)
+
+  function headerClick(): void {
+    // only open if closed else do nothing
+    if (!isOpen) {
+      setIsOpen(true)
+    }
+  }
+
+  function handleChange(): void {
+    setDontShowAgain(status => !status)
+  }
+
+  return (
+    <div className={css.learnMore} data-open={isOpen} onClick={e => e.stopPropagation()}>
+      <div className={css.header} onClick={headerClick}>
+        <span>Learn more</span>
+        {isOpen ? (
+          <Button icon="cross" onClick={() => setIsOpen(false)} variation={ButtonVariation.ICON} />
+        ) : (
+          <Icon name="more" />
+        )}
+      </div>
+      {isOpen ? (
+        <div className={css.body}>
+          <div className={css.content}>
+            <Icon name={TypeIcon[type]} data-type={type} size={TypeIconSize[type] * 1.8} />
+            <span>{helperText[type]}</span>
+          </div>
+          <Checkbox checked={dontShowAgain} onChange={handleChange} label="Don't show again" />
+        </div>
+      ) : null}
+    </div>
+  )
+}
 
 export interface MultiTypeInputMenuProps {
   allowedTypes: MultiTypeInputType[]
@@ -17,6 +82,8 @@ export interface MultiTypeInputMenuProps {
 
 export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactElement {
   const { allowedTypes, i18n = i18nBase, onTypeSelect } = props
+  const [currentType, setCurrentType] = React.useState(MultiTypeInputType.FIXED)
+
   return (
     <Menu className={css.menu}>
       {allowedTypes.includes(MultiTypeInputType.FIXED) && (
@@ -26,6 +93,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           labelElement={<Icon name={TypeIcon.FIXED} size={TypeIconSize.FIXED} />}
           text={i18n.fixedValue}
           onClick={() => onTypeSelect(MultiTypeInputType.FIXED)}
+          onMouseEnter={() => setCurrentType(MultiTypeInputType.FIXED)}
         />
       )}
       {allowedTypes.includes(MultiTypeInputType.RUNTIME) && (
@@ -35,6 +103,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           labelElement={<Icon name={TypeIcon.RUNTIME} size={TypeIconSize.RUNTIME} />}
           text={i18n.runtimeInput}
           onClick={() => onTypeSelect(MultiTypeInputType.RUNTIME)}
+          onMouseEnter={() => setCurrentType(MultiTypeInputType.RUNTIME)}
         />
       )}
       {allowedTypes.includes(MultiTypeInputType.EXPRESSION) && (
@@ -44,8 +113,15 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           labelElement={<Icon name={TypeIcon.EXPRESSION} size={TypeIconSize.EXPRESSION} />}
           text={i18n.expression}
           onClick={() => onTypeSelect(MultiTypeInputType.EXPRESSION)}
+          onMouseEnter={() => setCurrentType(MultiTypeInputType.EXPRESSION)}
         />
       )}
+      <Menu.Item
+        shouldDismissPopover={false}
+        tagName="div"
+        className={cx(css.menuItem, css.learnMoreItem)}
+        text={<LearnMore type={currentType} />}
+      />
     </Menu>
   )
 }
