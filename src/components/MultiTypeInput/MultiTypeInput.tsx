@@ -166,7 +166,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           position: Position.BOTTOM_RIGHT,
           interactionKind: PopoverInteractionKind.CLICK,
           popoverClassName: css.popover,
-          className: css.wrapper
+          className: css.wrapper,
+          lazy: true
         }}>
         <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
       </Button>
