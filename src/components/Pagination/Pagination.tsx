@@ -19,6 +19,8 @@ export interface PaginationProps {
   pageIndex?: number
   gotoPage?: (index: number) => void
   pageSizeOptions?: number[]
+  hidePageNumbers?: boolean
+  className?: string
   onPageSizeChange?: (newPageSize: number) => void
 }
 
@@ -124,7 +126,17 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
 }
 
 const Pagination: React.FC<PaginationProps> = props => {
-  const { pageSize, pageIndex = 0, gotoPage, pageCount, itemCount, pageSizeOptions, onPageSizeChange } = props
+  const {
+    pageSize,
+    pageIndex = 0,
+    gotoPage,
+    pageCount,
+    itemCount,
+    pageSizeOptions,
+    onPageSizeChange,
+    hidePageNumbers,
+    className
+  } = props
 
   const selectOptions: SelectOption[] =
     pageSizeOptions?.map(option => {
@@ -147,7 +159,7 @@ const Pagination: React.FC<PaginationProps> = props => {
     <Layout.Horizontal
       padding={{ top: 'medium', bottom: 'medium' }}
       flex={{ align: 'center-center', distribution: 'space-between' }}
-      className={css.container}>
+      className={cx(className, css.container)}>
       {itemCount <= pageSize ? (
         // eg. 3 of 3
         <Text inline font={{ variation: FontVariation.SMALL_SEMI }}>
@@ -169,7 +181,7 @@ const Pagination: React.FC<PaginationProps> = props => {
           onClick={() => gotoPage?.(pageIndex - 1)}
           disabled={pageIndex === 0}
         />
-        {gotoPage ? (
+        {gotoPage && !hidePageNumbers ? (
           <PageNumbers gotoPage={gotoPage} pageIndex={pageIndex} pageCountClamp={5} pageCount={pageCount} />
         ) : null}
         <Button
