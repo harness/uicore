@@ -44,10 +44,14 @@ import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
 import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
+import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
+import CanaryDeleteInverse from './canary-delete-inverse.svg'
+import CanaryDelete from './canary-delete.svg'
 import CanaryIcon from './canary-icon.svg'
+import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
@@ -449,6 +453,7 @@ import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RollbackExecution from './rollback-execution.svg'
+import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -501,6 +506,7 @@ import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
 import ServiceInstana from './service-instana.svg'
 import ServiceJenkins from './service-jenkins.svg'
+import ServiceJiraInverse from './service-jira-inverse.svg'
 import ServiceJira from './service-jira.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
@@ -639,10 +645,14 @@ type HarnessIconName =
   | 'blank-canvas-header-icon'
   | 'blue-black-cluster'
   | 'blue-green'
+  | 'bluegreen-inverse'
   | 'bluegreen'
   | 'budget-alert-light'
   | 'build-stage'
+  | 'canary-delete-inverse'
+  | 'canary-delete'
   | 'canary-icon'
+  | 'canary-inverse'
   | 'canary-outline'
   | 'canary'
   | 'canvas-position'
@@ -1044,6 +1054,7 @@ type HarnessIconName =
   | 'restore-cache-step'
   | 'right-bar-notification'
   | 'rollback-execution'
+  | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
   | 'run-pipeline'
@@ -1096,6 +1107,7 @@ type HarnessIconName =
   | 'service-helm'
   | 'service-instana'
   | 'service-jenkins'
+  | 'service-jira-inverse'
   | 'service-jira'
   | 'service-kubernetes'
   | 'service-microsoft-teams'
@@ -1234,10 +1246,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'blank-canvas-header-icon': BlankCanvasHeaderIcon,
   'blue-black-cluster': BlueBlackCluster,
   'blue-green': BlueGreen,
+  'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
+  'canary-delete-inverse': CanaryDeleteInverse,
+  'canary-delete': CanaryDelete,
   'canary-icon': CanaryIcon,
+  'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
@@ -1639,6 +1655,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
   'rollback-execution': RollbackExecution,
+  'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
@@ -1691,6 +1708,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-helm': ServiceHelm,
   'service-instana': ServiceInstana,
   'service-jenkins': ServiceJenkins,
+  'service-jira-inverse': ServiceJiraInverse,
   'service-jira': ServiceJira,
   'service-kubernetes': ServiceKubernetes,
   'service-microsoft-teams': ServiceMicrosoftTeams,
