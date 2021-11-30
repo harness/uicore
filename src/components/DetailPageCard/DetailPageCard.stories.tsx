@@ -1,13 +1,11 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-
 import DetailPageCard from './DetailPageCard'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { DetailPageCardProps, Content, ContentType } from './DetailPagecard'
+import { DetailPageCardProps } from './DetailPagecard'
 
 export default {
   title: 'Components / DetailPageCard',
-
   component: DetailPageCard,
   parameters: {
     layout: 'centered',
@@ -15,12 +13,10 @@ export default {
       source: {
         type: 'code'
       },
-
       page: function PageDescription() {
         return (
           <>
             <Title>DetailPageCard</Title>
-
             <Subtitle>
               <pre>
                 <code>{`import { DetailPageCard }  from '@wings-software/uicore'`}</code>
@@ -28,7 +24,6 @@ export default {
             </Subtitle>
             <Primary />
             <ArgsTable story={PRIMARY_STORY} />
-
             <Stories />
           </>
         )
@@ -45,6 +40,7 @@ export const Basic: Story<DetailPageCardProps> = args => {
     </>
   )
 }
+
 Basic.args = {
   title: 'Overview',
   content: [

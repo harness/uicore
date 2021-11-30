@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail Page card should render DetailPagecard with title and content 1`] = `
+<div>
+  <div
+    class="bp3-card bp3-elevation-0 card main"
+  >
+    <p
+      class="font main color color-black style style-fontSize style-fontSize-16px style-fontWeight style-fontWeight-600"
+      style="font-size: 16px; font-weight: 600;"
+    >
+      Overview
+    </p>
+    <div
+      class="vertical layout-spacing-undefined main style style-marginTop style-marginTop-var(--spacing-4)"
+    >
+      <div
+        class="font main detailsSectionRowWrapper"
+      >
+        <div
+          class="vertical layout-spacing-small main spacing spacing-small"
+        >
+          <p
+            class="font main style style-fontSize style-fontSize-12px"
+            style="font-size: 12px;"
+          >
+            Name
+          </p>
+          <p
+            class="font lineclamp main color color-black width width-424px"
+            style="--text-line-clamp: 1; width: 424px;"
+          >
+            Cluster Name
+          </p>
+        </div>
+      </div>
+      <div
+        class="font main detailsSectionRowWrapper"
+      >
+        <div
+          class="vertical layout-spacing-small main spacing spacing-small"
+        >
+          <p
+            class="font main style style-fontSize style-fontSize-12px"
+            style="font-size: 12px;"
+          >
+            GitOps Agent 
+          </p>
+          <p
+            class="font lineclamp main color color-black width width-424px"
+            style="--text-line-clamp: 1; width: 424px;"
+          >
+            Agent 1
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
