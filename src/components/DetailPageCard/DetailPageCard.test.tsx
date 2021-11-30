@@ -1,7 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import DetailPagecard from './DetailPagecard'
-
 describe('Detail Page card', () => {
   test('should render DetailPagecard with title and content', () => {
     const { container } = render(
