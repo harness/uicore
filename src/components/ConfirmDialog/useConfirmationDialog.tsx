@@ -52,7 +52,7 @@ const confirmDialogProps: IDialogProps = {
   canEscapeKeyClose: true,
   canOutsideClickClose: true,
   enforceFocus: false,
-  style: { width: 500, minHeight: 200 }
+  style: { width: 500, minHeight: 218 }
 }
 
 export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseConfirmationDialogReturn => {
@@ -80,7 +80,7 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
         <Layout.Vertical
           font={{ variation: FontVariation.BODY }}
           color={Color.BLACK}
-          margin={{ top: 'large', bottom: 'medium' }}
+          margin={{ top: 'large', bottom: 'xxlarge' }}
           className={css.body}>
           {contentText}
         </Layout.Vertical>
