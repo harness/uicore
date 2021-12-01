@@ -213,3 +213,4 @@ export {
   CollapsableSelectProps,
   ConnectedCollapsableSelectProps
 } from './components/CollapsableSelect/CollapsableSelect'
+export { DetailPageCard, DetailPageCardProps, Content, ContentType } from './components/DetailPageCard/DetailPageCard'
