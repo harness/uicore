@@ -2,7 +2,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { DetailPageCard } from './DetailPageCard'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { DetailPageCardProps } from './DetailPagecard'
+import { DetailPageCardProps } from './DetailPageCard'
 
 export default {
   title: 'Components / DetailPageCard',
