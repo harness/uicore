@@ -9,7 +9,7 @@ import cx from 'classnames'
 import css from './DetailPageCard.css'
 
 export enum ContentType {
-  TEXT = 'TEXT', //default
+  TEXT = 'TEXT', // default
   CUSTOM = 'CUSTOM'
 }
 
