@@ -6,8 +6,7 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
     class="bp3-card bp3-elevation-0 card main"
   >
     <p
-      class="font main color color-black style style-fontSize style-fontSize-16px style-fontWeight style-fontWeight-600"
-      style="font-size: 16px; font-weight: 600;"
+      class="font main color color-black font-variation font-variation-h5"
     >
       Overview
     </p>
@@ -21,8 +20,7 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
           class="vertical layout-spacing-small main spacing spacing-small"
         >
           <p
-            class="font main style style-fontSize style-fontSize-12px"
-            style="font-size: 12px;"
+            class="font main font-small"
           >
             Name
           </p>
@@ -41,8 +39,7 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
           class="vertical layout-spacing-small main spacing spacing-small"
         >
           <p
-            class="font main style style-fontSize style-fontSize-12px"
-            style="font-size: 12px;"
+            class="font main font-small"
           >
             GitOps Agent 
           </p>
