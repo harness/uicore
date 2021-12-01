@@ -29,7 +29,7 @@ export enum FontVariation {
   TINY_SEMI = 'tiny-semi',
   YAML = 'yaml',
   CARD_TITLE = 'card-title',
-  FORM_TITLE = 'form-sub-section',
+  FORM_TITLE = 'form-title',
   FORM_SUB_SECTION = 'form-sub-section',
   FORM_INPUT_TEXT = 'form-input-text',
   FORM_LABEL = 'form-label',

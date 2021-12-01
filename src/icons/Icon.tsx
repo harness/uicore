@@ -6,21 +6,25 @@
  */
 import { HarnessIcons, HarnessIconName } from './HarnessIcons'
 import React, { ElementType, HTMLAttributes } from 'react'
-import { Assign } from 'utility-types'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
 import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
 
 type IconName = HarnessIconName | BIconName
 
-interface IconProps extends Assign<HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'>> {
+interface IconProps extends HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'> {
   name: IconName
+  inverse?: boolean
   size?: number
 }
 
-function Icon(props: IconProps) {
+function Icon(props: IconProps): React.ReactElement {
   const name = props.name as string
   const size = props.size || 16
-  const HarnessIcon: ElementType = HarnessIcons[name]
+  let HarnessIcon: ElementType = HarnessIcons[name]
+
+  if (HarnessIcon && props.inverse) {
+    HarnessIcon = HarnessIcons[`${name}-inverse`] ? HarnessIcons[`${name}-inverse`] : HarnessIcon
+  }
 
   if (HarnessIcon) {
     return (

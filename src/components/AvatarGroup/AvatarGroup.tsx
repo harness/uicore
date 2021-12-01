@@ -48,11 +48,12 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   if (onAdd) {
     avatars.push({
       name: '+',
-      color: Color.BLUE_500,
-      backgroundColor: Color.GREY_200,
+      color: Color.PRIMARY_7,
+      backgroundColor: 'transparent',
       onClick: onAdd,
       hoverCard: onAddTooltip ? true : false,
-      tooltip: onAddTooltip
+      tooltip: onAddTooltip,
+      borderColor: Color.PRIMARY_2
     })
   }
   if (overlap && avatars.length) {

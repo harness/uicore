@@ -4,7 +4,7 @@ import { TextInput, TextInputProps } from '../TextInput/TextInput'
 import { DatePicker, TimePrecision, IDatePickerProps } from '@blueprintjs/datetime'
 import { Intent } from '@blueprintjs/core'
 import { Button } from '../Button/Button'
-import { Popover } from '../Popover/Popover'
+import { Popover, PopoverProps } from '../Popover/Popover'
 import {
   getHelpPopoverContent,
   DurationInputHelpers,
@@ -20,6 +20,7 @@ export interface DateInputProps extends Omit<TextInputProps, 'onChange'> {
   timePrecision?: TimePrecision
   onChange?: (value: string | undefined, error?: string) => void
   allowVariables?: boolean
+  popoverProps?: PopoverProps
 }
 enum Errors {
   NOT_VALID_DATE = 'Not a valid date',
@@ -60,7 +61,7 @@ const isValidDateInput = (
 }
 
 export const DateInput: React.FC<DateInputProps> = props => {
-  const { timePrecision, allowVariables, dateProps, ...otherProps } = props
+  const { timePrecision, allowVariables, dateProps, popoverProps, ...otherProps } = props
   const { dateTimeFormat, onChange } = props
   const formatDateTime = dateTimeFormat || (timePrecision ? 'MM/DD/YYYY HH:mm' : 'MM/DD/YYYY')
 
@@ -238,7 +239,8 @@ export const DateInput: React.FC<DateInputProps> = props => {
           usePortal={false}
           position="top-left"
           className={css.calendarIcon}
-          content={<DatePicker {...dateInputProps} />}>
+          content={<DatePicker {...dateInputProps} />}
+          {...popoverProps}>
           <Button minimal icon="calendar" />
         </Popover>
       ) : null}
@@ -252,7 +254,8 @@ export const DateInput: React.FC<DateInputProps> = props => {
             lazy={true}
             interactionKind="hover"
             position="top"
-            usePortal={false}>
+            usePortal={false}
+            {...popoverProps}>
             <Icon name="question" size={14} />
           </Popover>{' '}
         </div>

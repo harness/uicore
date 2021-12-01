@@ -1,0 +1,16 @@
+.dialog {
+  padding: var(--spacing-large) var(--spacing-large) var(--spacing-xxlarge) var(--spacing-xxlarge);
+  .iconContainer {
+    flex-direction: row-reverse;
+    padding: var(--spacing-xsmall) 0 !important;
+    .icon {
+      cursor: pointer;
+    }
+  }
+  .header {
+    align-items: center;
+  }
+  .body {
+    flex: 1;
+  }
+}

@@ -16,7 +16,7 @@
       .navStep {
         display: grid;
         grid-template-columns: 28px 1fr;
-        margin-bottom: var(--spacing-6);
+        margin-bottom: var(--spacing-7);
         cursor: not-allowed;
 
         &.activeStep {
@@ -34,7 +34,14 @@
         &.completedStep {
           cursor: pointer;
         }
-
+        .stepSubTitle {
+          grid-column: 1 / span 2;
+        }
+        .stepSubTitleString {
+          grid-column: 2;
+          font-weight: 400 !important;
+          font-size: var(--form-input-font-size) !important;
+        }
         .stepName {
           color: var(--grey-50);
         }
@@ -72,6 +79,7 @@
   font-weight: 600;
   margin-top: var(--spacing-6);
   margin-bottom: var(--spacing-10);
+  text-align: center;
 }
 
 .completedIcon {

@@ -1,0 +1,15 @@
+.radioButtonGroupLabel {
+  display: block;
+  font-size: var(--font-size, var(--font-size-normal));
+  color: var(--grey-800);
+  margin-bottom: var(--spacing-3);
+}
+
+.inline {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.inline > * {
+  margin-right: var(--spacing-4) !important;
+}

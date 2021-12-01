@@ -12,7 +12,7 @@ import css from './MultiSelectDropDown.css'
 import { MultiSelectOption } from '../MultiSelect/MultiSelect'
 import cx from 'classnames'
 import { Layout } from '../../layouts/Layout'
-import { Icon, IconName } from '../../icons/Icon'
+import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { Color } from '../../core/Color'
 import { Text } from '../Text/Text'
 import { StyledProps } from '../../styled-props/StyledProps'
@@ -22,14 +22,23 @@ import { NoMatch } from '../DropDown/DropDown'
 
 type Props = IQueryListProps<MultiSelectOption>
 
-export interface MultiSelectDropDownProps extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps'> {
+export interface MultiSelectDropDownProps
+  extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps' | 'renderer' | 'itemRenderer' | 'onItemSelect'> {
+  onChange?(opts: MultiSelectOption[]): void
   value?: MultiSelectOption[]
   items: Props['items'] | (() => Promise<Props['items']>)
-  onChange?(opts: MultiSelectOption[]): void
-  isLabel?: boolean
-  labelIcon?: IconName
+  usePortal?: boolean
+  className?: string
+  popoverClassName?: string
   minWidth?: StyledProps['width']
+  width?: StyledProps['width']
+  buttonTestId?: string
+  isLabel?: boolean
+  icon?: IconName
+  iconProps?: Partial<IconProps>
   placeholder?: string
+  hideItemCount?: boolean
+  onPopoverClose?(opts: MultiSelectOption[]): void
 }
 
 /**
@@ -37,7 +46,25 @@ export interface MultiSelectDropDownProps extends Omit<Props, 'items' | 'selecte
  * because we want to match the start of the expression
  */
 export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.ReactElement {
-  const { items, value, onChange, placeholder = 'Select', isLabel, labelIcon, minWidth } = props
+  const {
+    onChange,
+    value,
+    items,
+    className = '',
+    popoverClassName = '',
+    usePortal = false,
+    placeholder = 'Select',
+    minWidth = 130,
+    width,
+    buttonTestId = 'multi-select-dropdown-button',
+    icon,
+    iconProps,
+    isLabel,
+    disabled,
+    hideItemCount,
+    onPopoverClose,
+    ...rest
+  } = props
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>([])
   const [dropDownItems, setDropDownItems] = React.useState<MultiSelectOption[]>([])
   const [loading, setLoading] = React.useState<boolean>(false)
@@ -93,36 +120,45 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
+  const isDisabled = dropDownItems.length === 0 || !!disabled
+
   function renderer(listProps: IQueryListRendererProps<MultiSelectOption>): JSX.Element {
     return (
       <Popover
         targetTagName="div"
         wrapperTagName="div"
         position="bottom-left"
+        usePortal={usePortal}
         minimal
         hasBackdrop
-        backdropProps={{ onClick: () => setIsOpen(false) }}
+        backdropProps={{
+          onClick: () => {
+            setIsOpen(false)
+          }
+        }}
         autoFocus={false}
         enforceFocus={false}
-        className={css.main}
-        popoverClassName={css.popover}
+        onClose={() => onPopoverClose?.(selectedItems)}
+        className={cx(css.main, { [css.disabled]: isDisabled }, className)}
+        popoverClassName={cx(css.popover, popoverClassName)}
         isOpen={isOpen}>
         <Layout.Horizontal
-          style={{ minWidth }}
+          data-testid={buttonTestId}
+          style={width ? { width } : { minWidth }}
           className={cx(
             css.dropdownButton,
-            css.rightElement,
-            { [css.withoutBorder]: isLabel },
-            { [css.selected]: selectedItems.length > 0 }
+            { [css.withBorder]: !isLabel },
+            { [css.selected]: selectedItems.length > 0 },
+            { [css.minWidth]: !width }
           )}
           onClick={() => setIsOpen(true)}
           flex>
           <Layout.Horizontal className={css.labelWrapper} flex>
-            {labelIcon && <Icon name={labelIcon} size={13} color={Color.GREY_600} />}
-            <Text data-testid="dropdown-value" className={css.label}>
+            {icon && <Icon name={icon} size={13} color={Color.GREY_600} {...iconProps} />}
+            <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
               {placeholder}
             </Text>
-            {selectedItems.length > 0 && (
+            {!hideItemCount && selectedItems.length > 0 && (
               <Text className={css.counter}>
                 {selectedItems.length <= 9 ? '0' : ''}
                 {selectedItems.length}
@@ -152,7 +188,11 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           [css.active]: isSelected,
           [css.disabled]: modifiers.disabled || item.disabled
         })}
-        onClick={handleClick}
+        onClick={e => {
+          if (!modifiers.disabled && !item.disabled) {
+            handleClick(e)
+          }
+        }}
         checked={isSelected}
         label={item.label}
       />
@@ -166,6 +206,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
       renderer={renderer}
       itemRenderer={itemRenderer}
       onItemSelect={handleItemSelect}
+      {...rest}
     />
   )
 }

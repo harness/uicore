@@ -15,6 +15,7 @@ export { Button, ButtonProps, ButtonVariation, ButtonSize } from './components/B
 export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export { Checkbox } from './components/Checkbox/Checkbox'
+export { Dialog } from './components/Dialog/Dialog'
 export { Toggle } from './components/Toggle/Toggle'
 export { Container } from './components/Container/Container'
 export { Heading } from './components/Heading/Heading'
@@ -29,7 +30,7 @@ export { Radio, RadioGroup } from './components/Radio/Radio'
 export { RadioButton } from './components/RadioButton/RadioButton'
 export { RadioButtonGroup } from './components/RadioButton/RadioButtonGroup'
 export { Spacing } from './core/Spacing'
-export { Switch } from './components/Switch/Switch'
+export { Switch, SwitchProps } from './components/Switch/Switch'
 export { SwitchIcon } from './components/Switch/SwitchIcon/SwitchIcon'
 export { Carousel } from './components/Carousel/Carousel'
 export { Tabs, Tab, TabProps } from './components/Tabs/Tabs'
@@ -153,8 +154,13 @@ export {
   WeightedStackData,
   LabelPosition
 } from './components/WeightedStack/WeightedStack'
-export { HarnessDocTooltip, useTooltips } from './frameworks/Tooltip/Tooltip'
-export { TooltipContext, TooltipContextProvider, useTooltipContext } from './frameworks/Tooltip/TooltipContext'
+export { HarnessDocTooltip } from './frameworks/Tooltip/Tooltip'
+export {
+  TooltipContext,
+  TooltipContextProvider,
+  useTooltipContext,
+  useTooltips
+} from './frameworks/Tooltip/TooltipContext'
 export {
   TooltipContextProviderProps,
   TooltipContextValue,
@@ -167,3 +173,44 @@ export { GridListToggle, GridListToggleProps, Views } from './components/GridLis
 export { FormError } from './components/FormError/FormError'
 export { FontVariation } from './styled-props/font/FontProps'
 export { FormikTooltipContext } from './components/FormikForm/FormikTooltipContext'
+export { MultiSelectDropDown } from './components/MultiSelectDropDown/MultiSelectDropDown'
+export { useToaster } from './hooks/useToaster/useToaster'
+export { Page } from './components/Page/Page'
+export { PageError, PageErrorProps } from './components/Page/PageError'
+export { PageSpinner, PageSpinnerProps } from './components/Page/PageSpinner'
+export { NoDataCard, NoDataCardProps } from './components/Page/NoDataCard'
+export { PageBody, PageBodyProps } from './components/Page/PageBody'
+export { PageHeader, PageHeaderProps } from './components/Page/PageHeader'
+export { PageSubHeader, PageSubHeaderProps } from './components/Page/PageSubHeader'
+export {
+  createLocaleStrings,
+  CreateLocaleStringsReturn,
+  UseStringsReturn,
+  StringsContextProviderProps,
+  StringsContextValue,
+  LocaleStringProps
+} from './frameworks/Strings/createLocaleStrings'
+export { TagsPopover } from './components/TagsPopover/TagsPopover'
+export { getErrorInfoFromErrorObject, shouldShowError } from './utils/errorUtils'
+export { tagsType } from './utils/tagTypes'
+export {
+  useConfirmationDialog,
+  UseConfirmationDialogProps,
+  UseConfirmationDialogReturn
+} from './components/ConfirmDialog/useConfirmationDialog'
+export { TableV2, TableProps as ReactTableProps } from './components/TableV2/TableV2'
+export { PillToggle, PillToggleOption, PillToggleProps } from './components/PillToggle/PillToggle'
+export {
+  VisualYamlSelectedView,
+  VisualYamlToggle,
+  VisualYamlToggleProps
+} from './components/VisualYamlToggle/VisualYamlToggle'
+export {
+  FormikCollapsableSelect,
+  CollapsableSelect,
+  CollapsableSelectType,
+  CollapsableSelectOptions,
+  CollapsableSelectProps,
+  ConnectedCollapsableSelectProps
+} from './components/CollapsableSelect/CollapsableSelect'
+export { DetailPageCard, DetailPageCardProps, Content, ContentType } from './components/DetailPageCard/DetailPageCard'

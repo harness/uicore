@@ -58,7 +58,7 @@ interface ICardProps extends IProps, HTMLDivProps {
 export const Basic: Story<CardProps> = args => (
   <Layout.Horizontal spacing="large">
     <Card interactive {...args}>
-      <CardBody.Menu menuContent={<Container padding="medium">hello</Container>} />
+      <CardBody.Menu menuHoverText="settings" menuContent={<Container padding="medium">hello</Container>} />
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>

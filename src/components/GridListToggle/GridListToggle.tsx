@@ -1,5 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
+import { IconName } from 'index'
 import { Button } from '../Button/Button'
 import { Layout } from '../../layouts/Layout'
 import css from './GridListToggle.css'
@@ -12,10 +13,14 @@ export enum Views {
 export interface GridListToggleProps {
   initialSelectedView?: Views
   onViewToggle?: (selectedView: Views) => void
+  icons?: {
+    left?: IconName
+    right?: IconName
+  }
 }
 
 export function GridListToggle(props: GridListToggleProps): JSX.Element {
-  const { initialSelectedView, onViewToggle } = props
+  const { initialSelectedView, onViewToggle, icons } = props
   const [selectedView, setSelectedView] = React.useState<Views>(initialSelectedView || Views.GRID)
 
   React.useEffect(() => {
@@ -32,7 +37,7 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
           css.gridButton
         )}
         minimal
-        icon="grid-view"
+        icon={icons?.left ?? 'grid-view'}
         intent={selectedView === Views.GRID ? 'primary' : undefined}
         onClick={() => {
           setSelectedView(Views.GRID)
@@ -49,7 +54,7 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
           css.listButton
         )}
         minimal
-        icon="list"
+        icon={icons?.right ?? 'list'}
         intent={selectedView === Views.LIST ? 'primary' : undefined}
         onClick={() => {
           setSelectedView(Views.LIST)

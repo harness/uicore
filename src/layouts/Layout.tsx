@@ -1,11 +1,10 @@
 import React, { HTMLAttributes } from 'react'
-import { Assign } from 'utility-types'
 import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
 import css from './Layout.css'
 import { Spacing } from 'core/Spacing'
 import { Masonry, MasonryRef, MasonryProps } from './Masonry'
 
-export interface LayoutProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps> {
+export interface LayoutProps extends HTMLAttributes<HTMLDivElement>, StyledProps {
   /** Spacing among children */
   spacing?: Spacing
 }

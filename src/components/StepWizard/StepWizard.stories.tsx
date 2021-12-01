@@ -18,7 +18,17 @@ export const Basic: Story<void> = _args => (
     <ExampleStep name="Collaborator" />
   </StepWizard>
 )
-
+export const StepSubTitle: Story<void> = _args => (
+  <StepWizard
+    icon="app-kubernetes"
+    iconProps={{ size: 50 }}
+    title="Kubernetes Cluster"
+    subtitle={'step wizard sub title'}>
+    <ExampleStep name={' step title'} subTitle={'step sub title '} />
+    <ExampleStep name={`New Project`} />
+    <ExampleStep name="Collaborator" subTitle={'step sub title '} />
+  </StepWizard>
+)
 export const FullExample: Story<void> = _args => <ExampleWizard />
 
 export const ModalStepExample: Story<void> = _args => <ModalExample />
@@ -27,11 +37,7 @@ export const Nested: Story<void> = _args => (
   <StepWizard
     title="Kubernetes Cluster"
     subtitle={
-      <Text
-        style={{ marginLeft: 24, marginTop: 'var(--spacing-6)' }}
-        icon="service-dockerhub"
-        iconProps={{ color: Color.WHITE, size: 26 }}
-        color={Color.WHITE}>
+      <Text style={{ marginLeft: 28, marginTop: 'var(--spacing-2)' }} color={Color.WHITE}>
         Docker subtitle
       </Text>
     }>

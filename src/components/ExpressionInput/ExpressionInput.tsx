@@ -1,7 +1,9 @@
 import React from 'react'
 import { InputGroup, IInputGroupProps, Popover, Menu, IPopoverProps } from '@blueprintjs/core'
-import { QueryList, IQueryListRendererProps, IItemRendererProps } from '@blueprintjs/select'
+import { QueryList, IQueryListRendererProps, IItemRendererProps, ItemRenderer } from '@blueprintjs/select'
 import { debounce } from 'lodash-es'
+
+import { escapeStringRegexp } from '../../core/Utils'
 
 import css from './ExpressionInput.css'
 
@@ -25,6 +27,50 @@ export interface ExpressionInputProps {
  * because we want to match the start of the expression
  */
 const EXPRESSION_START_REGEX = /<\+([A-Za-z0-9_.'"()]*?)$/
+
+export function getItemRenderer(setActiveItem: (item: string) => void): ItemRenderer<string> {
+  // eslint-disable-next-line react/display-name
+  return (item: string, itemProps: IItemRendererProps): JSX.Element | null => {
+    const { query, handleClick, modifiers, index } = itemProps
+    const queryMatch = query.match(EXPRESSION_START_REGEX)
+
+    if (!queryMatch || !queryMatch[1]) return null
+
+    const match = item.match(new RegExp(escapeStringRegexp(queryMatch[1]), 'i'))
+
+    if (!match) return null
+
+    const matchIndex = match.index || 0
+    const startText = item.slice(0, matchIndex)
+    const matchedText = item.slice(matchIndex, matchIndex + queryMatch[1].length)
+    const endText = item.slice(matchIndex + queryMatch[1].length)
+
+    // bdi Tag reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi
+    // https://stackoverflow.com/a/24800788
+
+    return (
+      <Menu.Item
+        key={`${item}${index}`}
+        text={
+          <span className={css.menuItem}>
+            {startText ? <span className={css.group1}>{startText}</span> : null}
+            {matchedText ? <mark>{matchedText}</mark> : null}
+            {endText ? (
+              <span className={css.group2}>
+                <bdi>{endText}</bdi>
+              </span>
+            ) : null}
+          </span>
+        }
+        title={item}
+        onClick={handleClick}
+        active={modifiers.active}
+        disabled={modifiers.disabled}
+        onMouseEnter={() => setActiveItem(item)}
+      />
+    )
+  }
+}
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
   const {
@@ -249,35 +295,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     )
   }
 
-  function itemRenderer(item: string, itemProps: IItemRendererProps): JSX.Element | null {
-    const { query, handleClick, modifiers, index } = itemProps
-    const match = query.match(EXPRESSION_START_REGEX)
-
-    if (!match) return null
-
-    const matchIndex = item.indexOf(match[1])
-    const startText = item.slice(0, matchIndex)
-    const matchedText = item.slice(matchIndex, matchIndex + match[1].length)
-    const endText = item.slice(matchIndex + match[1].length)
-
-    return (
-      <Menu.Item
-        key={`${item}${index}`}
-        text={
-          <span className={css.menuItem}>
-            {startText ? <span className={css.group1}>{startText}</span> : null}
-            {matchedText ? <mark>{matchedText}</mark> : null}
-            {endText ? <span className={css.group2}>{endText}</span> : null}
-          </span>
-        }
-        title={item}
-        onClick={handleClick}
-        active={modifiers.active}
-        disabled={modifiers.disabled}
-        onMouseEnter={() => setActiveItem(item)}
-      />
-    )
-  }
+  const itemRenderer = React.useMemo(() => getItemRenderer(setActiveItem), [setActiveItem])
 
   return (
     <QueryList

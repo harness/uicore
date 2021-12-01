@@ -7,6 +7,7 @@ import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
+import Stroke from './Stroke.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
 import AccordionExpanded from './accordion-expanded.svg'
@@ -23,11 +24,13 @@ import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
+import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
+import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
 import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
@@ -41,10 +44,14 @@ import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
 import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
+import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
+import CanaryDeleteInverse from './canary-delete-inverse.svg'
+import CanaryDelete from './canary-delete.svg'
 import CanaryIcon from './canary-icon.svg'
+import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
@@ -54,6 +61,7 @@ import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
 import CcmWithText from './ccm-with-text.svg'
 import CdHover from './cd-hover.svg'
+import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import CdSolid from './cd-solid.svg'
@@ -68,10 +76,12 @@ import CeCluster from './ce-cluster.svg'
 import CeHover from './ce-hover.svg'
 import CeMainColored from './ce-main-colored.svg'
 import CeMainGrey from './ce-main-grey.svg'
+import CeMainInverse from './ce-main-inverse.svg'
 import CeMain from './ce-main.svg'
 import CeOptimization from './ce-optimization.svg'
 import CeVisibility from './ce-visibility.svg'
 import CfHover from './cf-hover.svg'
+import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
@@ -79,6 +89,7 @@ import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiHover from './ci-hover.svg'
+import CiMainInverse from './ci-main-inverse.svg'
 import CiMain from './ci-main.svg'
 import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
@@ -112,6 +123,7 @@ import CommandStop from './command-stop.svg'
 import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
+import CompareVersion from './compare-version.svg'
 import ConditionalExecution from './conditional-execution.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
@@ -133,14 +145,18 @@ import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
 import CvHover from './cv-hover.svg'
+import CvMainInverse from './cv-main-inverse.svg'
 import CvMain from './cv-main.svg'
 import CvSketch from './cv-sketch.svg'
 import CvSolidCurrentColor from './cv-solid-current-color.svg'
 import CvSolid from './cv-solid.svg'
 import CvWithText from './cv-with-text.svg'
+import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DataFetchError from './data-fetch-error.svg'
 import DelegatesIcon from './delegates-icon.svg'
+import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
 import DeployStage from './deploy-stage.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -161,16 +177,19 @@ import DeploymentSuccessLegacy from './deployment-success-legacy.svg'
 import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
+import Description from './description.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
 import Environment from './environment.svg'
 import Environments from './environments.svg'
 import ExecutionAbort from './execution-abort.svg'
+import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionSuccess from './execution-success.svg'
@@ -187,8 +206,12 @@ import FfSolid from './ff-solid.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
+import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
+import FullScreenExit from './full-screen-exit.svg'
+import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
+import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
 import GcrStep from './gcr-step.svg'
 import GcsStep from './gcs-step.svg'
@@ -206,6 +229,8 @@ import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import Governance from './governance.svg'
+import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
@@ -217,6 +242,9 @@ import Health from './health.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
+import InfinityTrend from './infinityTrend.svg'
+import InfoMessage from './info-message.svg'
+import InfoMessaging from './info-messaging.svg'
 import Info from './info.svg'
 import Infrastructure from './infrastructure.svg'
 import InitializeStep from './initialize-step.svg'
@@ -225,10 +253,12 @@ import Integration from './integration.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import Kustamize from './kustamize.svg'
+import Kustomizeparam from './kustomizeparam.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
+import LineChart from './line-chart.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
@@ -261,7 +291,6 @@ import MainDelete from './main-delete.svg'
 import MainDepricate from './main-depricate.svg'
 import MainDestroy from './main-destroy.svg'
 import MainDownload from './main-download.svg'
-import MainEdit from './main-edit.svg'
 import MainEmail from './main-email.svg'
 import MainEnvironments from './main-environments.svg'
 import MainFeedback from './main-feedback.svg'
@@ -303,6 +332,7 @@ import MainServiceAmi from './main-service-ami.svg'
 import MainServices from './main-services.svg'
 import MainSetup from './main-setup.svg'
 import MainShare from './main-share.svg'
+import MainSort from './main-sort.svg'
 import MainStart from './main-start.svg'
 import MainTags from './main-tags.svg'
 import MainTemplateLibrary from './main-template-library.svg'
@@ -364,13 +394,16 @@ import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
+import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
+import OfflineOutline from './offline-outline.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
 import Pending from './pending.svg'
+import PipelineAdvanced from './pipeline-advanced.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineBuildSelect from './pipeline-build-select.svg'
 import PipelineBuild from './pipeline-build.svg'
@@ -396,6 +429,7 @@ import Question from './question.svg'
 import Queued from './queued.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
+import RemoveMinus from './remove-minus.svg'
 import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
@@ -410,12 +444,15 @@ import ResSecrets from './res-secrets.svg'
 import ResUserGroups from './res-userGroups.svg'
 import ResUsers from './res-users.svg'
 import ResetIcon from './reset-icon.svg'
+import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
+import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RollbackExecution from './rollback-execution.svg'
+import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -468,6 +505,7 @@ import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
 import ServiceInstana from './service-instana.svg'
 import ServiceJenkins from './service-jenkins.svg'
+import ServiceJiraInverse from './service-jira-inverse.svg'
 import ServiceJira from './service-jira.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
@@ -498,10 +536,14 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
+import Stars from './stars.svg'
+import StatusPending from './status-pending.svg'
+import StatusRunning from './status-running.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
 import StepsSpinner from './steps-spinner.svg'
+import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
 import SupportCode from './support-code.svg'
@@ -541,11 +583,13 @@ import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Union from './union.svg'
 import Up from './up.svg'
+import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
 import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
+import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -563,6 +607,7 @@ type HarnessIconName =
   | 'Edit'
   | 'Inline'
   | 'Options'
+  | 'Stroke'
   | 'access-control'
   | 'accordion-collapsed'
   | 'accordion-expanded'
@@ -579,11 +624,13 @@ type HarnessIconName =
   | 'argo'
   | 'arm'
   | 'audit-log-created'
+  | 'aws-codecommit'
   | 'aws-kms'
   | 'aws-secret-manager'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'banned'
+  | 'bar-chart'
   | 'barrier-close'
   | 'barrier-open-with-links'
   | 'barrier-open'
@@ -597,10 +644,14 @@ type HarnessIconName =
   | 'blank-canvas-header-icon'
   | 'blue-black-cluster'
   | 'blue-green'
+  | 'bluegreen-inverse'
   | 'bluegreen'
   | 'budget-alert-light'
   | 'build-stage'
+  | 'canary-delete-inverse'
+  | 'canary-delete'
   | 'canary-icon'
+  | 'canary-inverse'
   | 'canary-outline'
   | 'canary'
   | 'canvas-position'
@@ -610,6 +661,7 @@ type HarnessIconName =
   | 'ccm-solid'
   | 'ccm-with-text'
   | 'cd-hover'
+  | 'cd-main-inverse'
   | 'cd-main'
   | 'cd-sketch'
   | 'cd-solid'
@@ -624,10 +676,12 @@ type HarnessIconName =
   | 'ce-hover'
   | 'ce-main-colored'
   | 'ce-main-grey'
+  | 'ce-main-inverse'
   | 'ce-main'
   | 'ce-optimization'
   | 'ce-visibility'
   | 'cf-hover'
+  | 'cf-main-inverse'
   | 'cf-main'
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
@@ -635,6 +689,7 @@ type HarnessIconName =
   | 'check'
   | 'ci-active-build'
   | 'ci-hover'
+  | 'ci-main-inverse'
   | 'ci-main'
   | 'ci-pending-build'
   | 'ci-sketch'
@@ -668,6 +723,7 @@ type HarnessIconName =
   | 'command-swap'
   | 'command-switch'
   | 'command-winrm'
+  | 'compare-version'
   | 'conditional-execution'
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
@@ -689,14 +745,18 @@ type HarnessIconName =
   | 'custom-stage'
   | 'customRole'
   | 'cv-hover'
+  | 'cv-main-inverse'
   | 'cv-main'
   | 'cv-sketch'
   | 'cv-solid-current-color'
   | 'cv-solid'
   | 'cv-with-text'
+  | 'danger-icon'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'data-fetch-error'
   | 'delegates-icon'
+  | 'dependency-default-icon'
   | 'dependency-step'
   | 'deploy-stage'
   | 'deployment-aborted-legacy'
@@ -717,16 +777,19 @@ type HarnessIconName =
   | 'deployment-success-new'
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
+  | 'description'
   | 'digital-ocean'
   | 'docker-hub-step'
   | 'down'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'email-inline'
   | 'email-step'
   | 'entity'
   | 'environment'
   | 'environments'
   | 'execution-abort'
+  | 'execution-history'
   | 'execution-input'
   | 'execution-rollback'
   | 'execution-success'
@@ -743,8 +806,12 @@ type HarnessIconName =
   | 'ff-with-text'
   | 'file'
   | 'fixed-input'
+  | 'flash'
   | 'folder-upload'
+  | 'full-screen-exit'
+  | 'full-screen'
   | 'functions'
+  | 'gcp-kms'
   | 'gcp'
   | 'gcr-step'
   | 'gcs-step'
@@ -762,6 +829,8 @@ type HarnessIconName =
   | 'gitlab'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'governance'
+  | 'graph'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
@@ -773,6 +842,9 @@ type HarnessIconName =
   | 'help'
   | 'hourglass'
   | 'http-step'
+  | 'infinityTrend'
+  | 'info-message'
+  | 'info-messaging'
   | 'info'
   | 'infrastructure'
   | 'initialize-step'
@@ -781,10 +853,12 @@ type HarnessIconName =
   | 'key-main'
   | 'key'
   | 'kustamize'
+  | 'kustomizeparam'
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
   | 'library'
+  | 'line-chart'
   | 'linkedin'
   | 'list-entity-infographic'
   | 'list-view'
@@ -817,7 +891,6 @@ type HarnessIconName =
   | 'main-depricate'
   | 'main-destroy'
   | 'main-download'
-  | 'main-edit'
   | 'main-email'
   | 'main-environments'
   | 'main-feedback'
@@ -859,6 +932,7 @@ type HarnessIconName =
   | 'main-services'
   | 'main-setup'
   | 'main-share'
+  | 'main-sort'
   | 'main-start'
   | 'main-tags'
   | 'main-template-library'
@@ -920,13 +994,16 @@ type HarnessIconName =
   | 'new-decoration'
   | 'new-notification'
   | 'ng-filter'
+  | 'no-deployments'
   | 'no-feedback-given'
   | 'not-synced'
   | 'notification'
+  | 'offline-outline'
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
   | 'pending'
+  | 'pipeline-advanced'
   | 'pipeline-approval'
   | 'pipeline-build-select'
   | 'pipeline-build'
@@ -952,6 +1029,7 @@ type HarnessIconName =
   | 'queued'
   | 'remote'
   | 'remotefile'
+  | 'remove-minus'
   | 'remove'
   | 'report-gear-grey'
   | 'report-gear'
@@ -966,12 +1044,15 @@ type HarnessIconName =
   | 'res-userGroups'
   | 'res-users'
   | 'reset-icon'
+  | 'resource-center-community-icon'
+  | 'resource-center-docs-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'right-bar-notification'
   | 'rollback-execution'
+  | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
   | 'run-pipeline'
@@ -1024,6 +1105,7 @@ type HarnessIconName =
   | 'service-helm'
   | 'service-instana'
   | 'service-jenkins'
+  | 'service-jira-inverse'
   | 'service-jira'
   | 'service-kubernetes'
   | 'service-microsoft-teams'
@@ -1054,10 +1136,14 @@ type HarnessIconName =
   | 'setup-tags'
   | 'skipped'
   | 'spinner'
+  | 'stars'
+  | 'status-pending'
+  | 'status-running'
   | 'step-group'
   | 'step-jira'
   | 'step-kubernetes'
   | 'steps-spinner'
+  | 'success-tick'
   | 'support-account'
   | 'support-api'
   | 'support-code'
@@ -1097,11 +1183,13 @@ type HarnessIconName =
   | 'trigger-schedule'
   | 'union'
   | 'up'
+  | 'upgrade-bolt'
   | 'upload-box'
   | 'utility'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
+  | 'warning-icon'
   | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -1119,6 +1207,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
   Inline: Inline,
   Options: Options,
+  Stroke: Stroke,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
   'accordion-expanded': AccordionExpanded,
@@ -1135,11 +1224,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   argo: Argo,
   arm: Arm,
   'audit-log-created': AuditLogCreated,
+  'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
   'aws-secret-manager': AwsSecretManager,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
+  'bar-chart': BarChart,
   'barrier-close': BarrierClose,
   'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
@@ -1153,10 +1244,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'blank-canvas-header-icon': BlankCanvasHeaderIcon,
   'blue-black-cluster': BlueBlackCluster,
   'blue-green': BlueGreen,
+  'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
+  'canary-delete-inverse': CanaryDeleteInverse,
+  'canary-delete': CanaryDelete,
   'canary-icon': CanaryIcon,
+  'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
@@ -1166,6 +1261,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ccm-solid': CcmSolid,
   'ccm-with-text': CcmWithText,
   'cd-hover': CdHover,
+  'cd-main-inverse': CdMainInverse,
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
   'cd-solid': CdSolid,
@@ -1180,10 +1276,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ce-hover': CeHover,
   'ce-main-colored': CeMainColored,
   'ce-main-grey': CeMainGrey,
+  'ce-main-inverse': CeMainInverse,
   'ce-main': CeMain,
   'ce-optimization': CeOptimization,
   'ce-visibility': CeVisibility,
   'cf-hover': CfHover,
+  'cf-main-inverse': CfMainInverse,
   'cf-main': CfMain,
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
@@ -1191,6 +1289,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   check: Check,
   'ci-active-build': CiActiveBuild,
   'ci-hover': CiHover,
+  'ci-main-inverse': CiMainInverse,
   'ci-main': CiMain,
   'ci-pending-build': CiPendingBuild,
   'ci-sketch': CiSketch,
@@ -1224,6 +1323,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-swap': CommandSwap,
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
+  'compare-version': CompareVersion,
   'conditional-execution': ConditionalExecution,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
@@ -1245,14 +1345,18 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'custom-stage': CustomStage,
   customRole: CustomRole,
   'cv-hover': CvHover,
+  'cv-main-inverse': CvMainInverse,
   'cv-main': CvMain,
   'cv-sketch': CvSketch,
   'cv-solid-current-color': CvSolidCurrentColor,
   'cv-solid': CvSolid,
   'cv-with-text': CvWithText,
+  'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'data-fetch-error': DataFetchError,
   'delegates-icon': DelegatesIcon,
+  'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
   'deploy-stage': DeployStage,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
@@ -1273,16 +1377,19 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'deployment-success-new': DeploymentSuccessNew,
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
+  description: Description,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
   down: Down,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  'email-inline': EmailInline,
   'email-step': EmailStep,
   entity: Entity,
   environment: Environment,
   environments: Environments,
   'execution-abort': ExecutionAbort,
+  'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
   'execution-rollback': ExecutionRollback,
   'execution-success': ExecutionSuccess,
@@ -1299,8 +1406,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
+  flash: Flash,
   'folder-upload': FolderUpload,
+  'full-screen-exit': FullScreenExit,
+  'full-screen': FullScreen,
   functions: Functions,
+  'gcp-kms': GcpKms,
   gcp: Gcp,
   'gcr-step': GcrStep,
   'gcs-step': GcsStep,
@@ -1318,6 +1429,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   gitlab: Gitlab,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  governance: Governance,
+  graph: Graph,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
@@ -1329,6 +1442,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   help: Help,
   hourglass: Hourglass,
   'http-step': HttpStep,
+  infinityTrend: InfinityTrend,
+  'info-message': InfoMessage,
+  'info-messaging': InfoMessaging,
   info: Info,
   infrastructure: Infrastructure,
   'initialize-step': InitializeStep,
@@ -1337,10 +1453,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'key-main': KeyMain,
   key: Key,
   kustamize: Kustamize,
+  kustomizeparam: Kustomizeparam,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
   library: Library,
+  'line-chart': LineChart,
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,
@@ -1373,7 +1491,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-depricate': MainDepricate,
   'main-destroy': MainDestroy,
   'main-download': MainDownload,
-  'main-edit': MainEdit,
   'main-email': MainEmail,
   'main-environments': MainEnvironments,
   'main-feedback': MainFeedback,
@@ -1415,6 +1532,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-services': MainServices,
   'main-setup': MainSetup,
   'main-share': MainShare,
+  'main-sort': MainSort,
   'main-start': MainStart,
   'main-tags': MainTags,
   'main-template-library': MainTemplateLibrary,
@@ -1476,13 +1594,16 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
+  'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
   'not-synced': NotSynced,
   notification: Notification,
+  'offline-outline': OfflineOutline,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
   pending: Pending,
+  'pipeline-advanced': PipelineAdvanced,
   'pipeline-approval': PipelineApproval,
   'pipeline-build-select': PipelineBuildSelect,
   'pipeline-build': PipelineBuild,
@@ -1508,6 +1629,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   queued: Queued,
   remote: Remote,
   remotefile: Remotefile,
+  'remove-minus': RemoveMinus,
   remove: Remove,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
@@ -1522,12 +1644,15 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'res-userGroups': ResUserGroups,
   'res-users': ResUsers,
   'reset-icon': ResetIcon,
+  'resource-center-community-icon': ResourceCenterCommunityIcon,
+  'resource-center-docs-icon': ResourceCenterDocsIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
   'rollback-execution': RollbackExecution,
+  'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
@@ -1580,6 +1705,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-helm': ServiceHelm,
   'service-instana': ServiceInstana,
   'service-jenkins': ServiceJenkins,
+  'service-jira-inverse': ServiceJiraInverse,
   'service-jira': ServiceJira,
   'service-kubernetes': ServiceKubernetes,
   'service-microsoft-teams': ServiceMicrosoftTeams,
@@ -1610,10 +1736,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-tags': SetupTags,
   skipped: Skipped,
   spinner: Spinner,
+  stars: Stars,
+  'status-pending': StatusPending,
+  'status-running': StatusRunning,
   'step-group': StepGroup,
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
   'steps-spinner': StepsSpinner,
+  'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
   'support-code': SupportCode,
@@ -1653,11 +1783,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-schedule': TriggerSchedule,
   union: Union,
   up: Up,
+  'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
   utility: Utility,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
+  'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,

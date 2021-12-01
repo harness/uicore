@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of case 1`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled"
+      tabindex="-1"
+      title="app.name"
+    >
+      <div
+        class="bp3-text-overflow-ellipsis bp3-fill"
+      >
+        <span
+          class="menuItem"
+        >
+          <span
+            class="group1"
+          >
+            app.
+          </span>
+          <mark>
+            name
+          </mark>
+        </span>
+      </div>
+    </a>
+  </li>
+</div>
+`;
+
+exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of case 2`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled"
+      tabindex="-1"
+      title="app.Name"
+    >
+      <div
+        class="bp3-text-overflow-ellipsis bp3-fill"
+      >
+        <span
+          class="menuItem"
+        >
+          <span
+            class="group1"
+          >
+            app.
+          </span>
+          <mark>
+            Name
+          </mark>
+        </span>
+      </div>
+    </a>
+  </li>
+</div>
+`;
+
+exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of case 3`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled"
+      tabindex="-1"
+      title="app.xyz.name"
+    >
+      <div
+        class="bp3-text-overflow-ellipsis bp3-fill"
+      >
+        <span
+          class="menuItem"
+        >
+          <span
+            class="group1"
+          >
+            app.
+          </span>
+          <mark>
+            xyz
+          </mark>
+          <span
+            class="group2"
+          >
+            <bdi>
+              .name
+            </bdi>
+          </span>
+        </span>
+      </div>
+    </a>
+  </li>
+</div>
+`;

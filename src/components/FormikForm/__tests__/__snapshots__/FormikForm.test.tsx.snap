@@ -875,34 +875,41 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
             class="bp3-form-content"
           >
             <div
-              class="font radioGroup main"
+              class="main"
             >
-              <label
-                class="bp3-control bp3-radio radio main"
+              
+              <div
+                class=""
               >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Red"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                red
-              </label>
-              <label
-                class="bp3-control bp3-radio radio main"
-              >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Blue"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                blue
-              </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -954,34 +961,41 @@ exports[`Test basic Components should render RadioGroup component in an inline f
             class="bp3-form-content"
           >
             <div
-              class="font radioGroup inlineRadioGroup main"
+              class="inlineRadioGroup main"
             >
-              <label
-                class="bp3-control bp3-radio radio main"
+              
+              <div
+                class=""
               >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Red"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                red
-              </label>
-              <label
-                class="bp3-control bp3-radio radio main"
-              >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Blue"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                blue
-              </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -1241,34 +1255,41 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
             class="bp3-form-content"
           >
             <div
-              class="font radioGroup inline main"
+              class="main"
             >
-              <label
-                class="bp3-control bp3-radio bp3-inline radio main"
+              
+              <div
+                class="inline"
               >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Red"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                red
-              </label>
-              <label
-                class="bp3-control bp3-radio bp3-inline radio main"
-              >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Blue"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                blue
-              </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -1320,34 +1341,41 @@ exports[`Test basic Components should render an inline RadioGroup component in a
             class="bp3-form-content"
           >
             <div
-              class="font radioGroup inline inlineRadioGroup main"
+              class="inlineRadioGroup main"
             >
-              <label
-                class="bp3-control bp3-radio bp3-inline radio main"
+              
+              <div
+                class="inline"
               >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Red"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                red
-              </label>
-              <label
-                class="bp3-control bp3-radio bp3-inline radio main"
-              >
-                <input
-                  name="color"
-                  type="radio"
-                  value="Blue"
-                />
-                <span
-                  class="bp3-control-indicator"
-                />
-                blue
-              </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Red"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  red
+                </label>
+                <label
+                  class="radio main"
+                >
+                  <input
+                    class="input"
+                    name="color"
+                    type="radio"
+                    value="Blue"
+                  />
+                  <span
+                    class="radioIcon"
+                  />
+                  blue
+                </label>
+              </div>
             </div>
           </div>
         </div>

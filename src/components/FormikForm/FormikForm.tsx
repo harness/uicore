@@ -11,7 +11,7 @@ import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
 import { TagInputProps as UiKitTagInputProps, TagInput as UiKitTagInput } from '../TagInput/TagInput'
-import { RadioButtonGroup } from '../RadioButton/RadioButtonGroup'
+import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButton/RadioButtonGroup'
 import {
   FormGroup,
   InputGroup,
@@ -19,9 +19,7 @@ import {
   IInputGroupProps,
   Intent,
   ITagInputProps,
-  IRadioGroupProps,
   ITextAreaProps,
-  IOptionProps,
   IFileInputProps,
   TextArea as BpTextArea,
   FileInput as BpFileInput,
@@ -60,6 +58,7 @@ import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { FormikTooltipContext } from './FormikTooltipContext'
 import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 import { FormError } from '../FormError/FormError'
+import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 
 const IsOptionLabel = '(optional)'
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
@@ -159,12 +158,13 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
 export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
   tagsProps?: Partial<ITagInputProps>
+  isArray?: boolean
 }
 
 type KVAccumulator = { [key: string]: string }
 
 function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
-  const { formik, name, tagsProps, ...restProps } = props
+  const { formik, name, tagsProps, isArray = false, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -186,19 +186,26 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
       inline={inline}
       {...rest}>
       <BPTagInput
-        values={Object.keys(formik?.values[name] || {}).map(key => {
-          const value = formik?.values[name][key]
-          return value ? `${key}:${value}` : key
-        })}
+        values={
+          isArray
+            ? formik?.values[name] || []
+            : Object.keys(formik?.values[name] || {}).map(key => {
+                const value = formik?.values[name][key]
+                return value ? `${key}:${value}` : key
+              })
+        }
         onChange={(changed: unknown) => {
           const values: string[] = changed as string[]
+          formik?.setFieldTouched(name)
           formik?.setFieldValue(
             name,
-            values?.reduce((acc, tag) => {
-              const parts = tag.split(':')
-              acc[parts[0]] = parts[1]?.trim() || ''
-              return acc
-            }, {} as KVAccumulator) || {}
+            isArray
+              ? values
+              : values?.reduce((acc, tag) => {
+                  const parts = tag.split(':')
+                  acc[parts[0]] = parts[1]?.trim() || ''
+                  return acc
+                }, {} as KVAccumulator) || {}
           )
         }}
         inputRef={input => {
@@ -360,9 +367,9 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
 
 export interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
-  items: IOptionProps[]
-  radioGroup?: Omit<IRadioGroupProps, 'name' | 'value' | 'onChange' | 'options'>
-  onChange?: IRadioGroupProps['onChange']
+  items: RadioButtonGroupProps['options']
+  radioGroup?: Omit<RadioButtonGroupProps, 'selectedValue' | 'onChange' | 'options'>
+  onChange?: RadioButtonGroupProps['onChange']
 }
 
 const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
@@ -611,6 +618,59 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
   )
 }
 
+export interface DropDownFormikProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  onChange?: DropDownProps['onChange']
+  items: DropDownProps['items']
+  usePortal?: boolean
+  addClearBtn?: boolean
+  placeholder?: string
+  dropDownProps?: Omit<DropDownProps, 'items' | 'onChange' | 'value'>
+}
+
+const DropDown = (props: DropDownFormikProps & FormikContextProps<any>) => {
+  const { formik, name, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    items,
+    addClearBtn,
+    label,
+    placeholder,
+    inline = formik?.inline,
+    onChange,
+    dropDownProps,
+    ...rest
+  } = restProps
+
+  return (
+    <FormGroup
+      label={getFormFieldLabel(label, name, props)}
+      labelFor={name}
+      helperText={helperText}
+      intent={intent}
+      disabled={disabled}
+      inline={inline}
+      usePortal={!!props.usePortal}
+      {...rest}>
+      <UiKitDropDown
+        addClearBtn={addClearBtn || false}
+        placeholder={placeholder}
+        {...dropDownProps}
+        items={items}
+        disabled={disabled}
+        value={get(formik?.values, name)}
+        onChange={(item: SelectOption) => {
+          formik?.setFieldValue(name, item.value)
+          onChange?.(item)
+        }}
+      />
+    </FormGroup>
+  )
+}
+
 export interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   inputGroup?: Omit<IInputGroupProps & HTMLInputProps, 'name' | 'value' | 'onChange' | 'placeholder'>
@@ -718,6 +778,7 @@ export interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
   autoFocus?: boolean
   textArea?: Omit<ITextAreaProps, 'name' | 'value' | 'onChange'>
   onChange?: ITextAreaProps['onChange']
+  maxLength?: number
 }
 
 const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
@@ -732,6 +793,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
     label,
     textArea,
     onChange,
+    maxLength = 1024,
     ...rest
   } = restProps
 
@@ -749,7 +811,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
         fill={true}
         autoFocus={autoFocus}
         autoComplete={autoComplete}
-        maxLength={1024}
+        maxLength={maxLength}
         {...textArea}
         name={name}
         intent={intent}
@@ -1112,8 +1174,14 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
         textProps={{ ...customTextInputProps, autoComplete }}
         name={name}
         onChange={(valueChange, valueType, type) => {
-          formik?.setFieldValue(name, valueChange)
-          onChange?.(value, valueType, type)
+          let valueToBePassed = valueChange
+          const inputFieldType = multiTextInputProps?.textProps?.type
+          if (inputFieldType === 'number' && valueChange && typeof valueChange === 'string') {
+            // if the type is a number, propagate the value as a number
+            valueToBePassed = parseFloat(valueChange)
+          }
+          formik?.setFieldValue(name, valueToBePassed)
+          onChange?.(valueToBePassed, valueType, type)
         }}
       />
     </FormGroup>
@@ -1323,6 +1391,7 @@ export const FormInput = {
   Toggle: connect(Toggle),
   MultiSelect: connect(MultiSelect),
   Select: connect(Select),
+  DropDown: connect(DropDown),
   Text: connect(Text),
   ExpressionInput: connect(ExpressionInput),
   TextArea: connect(TextArea),

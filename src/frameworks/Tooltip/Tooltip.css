@@ -12,14 +12,17 @@
 .tooltipIcon {
   margin-left: var(--spacing-xsmall);
   display: flex;
+  position: relative;
 }
 
 .tooltipWrapper {
   margin: 0;
+  border-radius: var(--spacing-3);
 
   :global {
     .bp3-popover-content {
       padding: 0;
+      background: none;
     }
 
     .bp3-popover-arrow-fill {
@@ -34,10 +37,15 @@
   height: 100%;
   color: white;
   max-width: 400px;
-  border-radius: var(--spacing-2);
-  line-height: 18px;
+  border-radius: var(--spacing-3);
+  font-size: var(--font-size-small);
+  line-height: var(--font-size-medium);
   outline: none;
   background: var(--primary-9-dark);
+
+  a {
+    color: var(--primary-5);
+  }
 
   p {
     margin: 0 !important;

@@ -9,13 +9,14 @@ import css from './CodeBlock.css'
 export interface CodeBlockProps {
   snippet?: string
   allowCopy?: boolean
+  codeToCopy?: string
   format?: string
   lineClamp?: number
   height?: number
 }
 
 export function CodeBlock(props: CodeBlockProps) {
-  const { snippet = '', allowCopy, format = 'Text', lineClamp, height } = props
+  const { snippet = '', allowCopy, codeToCopy, format = 'Text', lineClamp, height } = props
 
   return (
     <Container
@@ -37,7 +38,9 @@ export function CodeBlock(props: CodeBlockProps) {
         </Text>
       )}
       {format === 'pre' && <pre>{snippet}</pre>}
-      {allowCopy && <Button icon="duplicate" minimal onClick={() => Utils.copy(snippet)} iconProps={{ size: 12 }} />}
+      {allowCopy && (
+        <Button icon="duplicate" minimal onClick={() => Utils.copy(codeToCopy || snippet)} iconProps={{ size: 12 }} />
+      )}
     </Container>
   )
 }

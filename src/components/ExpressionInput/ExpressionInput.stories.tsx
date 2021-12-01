@@ -18,8 +18,8 @@ export const Basic: Story<ExpressionInputProps> = args => {
 
 Basic.args = {
   items: [
-    'app.name',
-    'app.description',
+    'app.xyz.name',
+    'app.xyz.description',
     'pipeline.name',
     'pipeline.description',
     'pipeline.identifier',

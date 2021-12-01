@@ -1,0 +1,18 @@
+.main {
+  flex: 1;
+  height: fit-content;
+  overflow-x: hidden;
+
+  hr {
+    width: 100%;
+    border-top: 1px line var(--grey-300);
+  }
+
+  .detailsSectionRowWrapper {
+    padding: var(--spacing-4) 0 !important;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--grey-200);
+    }
+  }
+}

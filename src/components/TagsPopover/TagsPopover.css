@@ -1,0 +1,7 @@
+.tagsPopover {
+  max-width: 150px;
+}
+
+.tag {
+  margin: var(--spacing-small) var(--spacing-small) 0 0;
+}

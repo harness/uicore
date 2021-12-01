@@ -22,7 +22,7 @@ import {
 } from './MultiTypeInputUtils'
 import { MultiTypeInputMenu } from './MultiTypeInputMenu'
 
-type AcceptableValue = boolean | string | SelectOption | MultiSelectOption[]
+type AcceptableValue = boolean | string | number | SelectOption | MultiSelectOption[]
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
@@ -97,7 +97,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     }
   }
 
-  const inputWidth = width && width - 28
   const FixedTypeComponent = fixedTypeComponent
   const fixedComponentOnChangeCallback = useCallback(
     (val, multiTypeInputValue: MultiTypeInputValue) => {
@@ -131,7 +130,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
         <TextInput
           wrapperClassName={css.input}
           name={name}
-          style={{ width: inputWidth }}
           placeholder={RUNTIME_INPUT_VALUE}
           disabled
           value={value as string}
@@ -168,7 +166,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           position: Position.BOTTOM_RIGHT,
           interactionKind: PopoverInteractionKind.CLICK,
           popoverClassName: css.popover,
-          className: css.wrapper
+          className: css.wrapper,
+          lazy: true
         }}>
         <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
       </Button>

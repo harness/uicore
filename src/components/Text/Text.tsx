@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, useRef, useLayoutEffect, useState, useEffect } from 'react'
-import { Assign } from 'utility-types'
+import cx from 'classnames'
 import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
 import styledCSS from '../../styled-props/StyledProps.css'
 import { OptionalTooltip } from '../../core/Types'
@@ -8,7 +8,7 @@ import css from './Text.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
-export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, StyledProps>, OptionalTooltip {
+export interface TextProps extends HTMLAttributes<HTMLDivElement>, StyledProps, OptionalTooltip {
   // When lineClamp is specified, show ... (ellipsis) when text is overflown and show the full text
   // in a tooltip on hover. Note that `tooltip` prop takes precedence over this prop.
   // See more: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp
@@ -28,10 +28,13 @@ export interface TextProps extends Assign<HTMLAttributes<HTMLDivElement>, Styled
 
   /** Optional props for right icon */
   rightIconProps?: Partial<IconProps>
+
+  /** Optional HTML tag. Default is 'p' */
+  tag?: string
 }
 
 export function Text(props: TextProps) {
-  const Tag = (props.inline ? 'span' : 'p') as React.ElementType
+  const Tag = (props.tag ? props.tag : props.inline ? 'span' : 'p') as React.ElementType
   const [tooltip, setTooltip] = useState(props.tooltip)
   const lineClamp = props.lineClamp
   const style = { ...props.style }
@@ -76,7 +79,12 @@ export function Text(props: TextProps) {
   }, [lineClamp, props.tooltip, alwaysShowTooltip])
 
   const wrappedInTooltip = (
-    <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
+    <Utils.WrapOptionalTooltip
+      tooltip={tooltip}
+      tooltipProps={{
+        ...props.tooltipProps,
+        targetClassName: cx(css.targetClass, props.tooltipProps?.targetClassName)
+      }}>
       <Tag
         {...omitStyledProps(
           Object.assign({}, props, { style }),
@@ -86,13 +94,16 @@ export function Text(props: TextProps) {
           'icon',
           'iconProps',
           'rightIcon',
-          'rightIconProps'
+          'rightIconProps',
+          'tag'
         )}
         className={styledClasses(props, styledCSS.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
         ref={ref}>
-        {icon && <Icon name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
+        {icon && <Icon className={css.icon} name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}
-        {rightIcon && <Icon name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />}
+        {rightIcon && (
+          <Icon className={css.icon} name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />
+        )}
       </Tag>
     </Utils.WrapOptionalTooltip>
   )

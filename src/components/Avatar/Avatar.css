@@ -19,15 +19,22 @@
 .hoverToolTipLayout {
   word-break: break-all !important;
   text-align: start !important;
-  max-width: 400px;
-  min-width: 200px;
+  max-width: 320px;
+  min-width: 206px;
 }
 .hoverAvatarLayout {
   justify-content: flex-start !important;
   column-gap: 5px;
-  background: linear-gradient(var(--grey-250) 70%, var(--white) 30%) !important;
+  background: var(--grey-100) !important;
+  height: 54px;
+  padding-bottom: 0px !important;
+  align-items: flex-end !important;
 }
 .avatarPopOver {
   display: flex;
   align-items: center;
+}
+.avatarImg {
+  position: relative;
+  top: 11px;
 }

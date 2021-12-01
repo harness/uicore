@@ -5,7 +5,7 @@ import { Color } from '../../core/Color'
 import { Layout } from '../../layouts/Layout'
 import css from './DropDown.css'
 import { SelectOption } from '../Select/Select'
-import { Icon, IconName } from '../../icons/Icon'
+import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 import cx from 'classnames'
 import { Menu, Position, Spinner } from '@blueprintjs/core'
@@ -26,12 +26,17 @@ export interface DropDownProps
   value?: string | null
   items: Props['items'] | (() => Promise<Props['items']>)
   usePortal?: boolean
+  className?: string
   popoverClassName?: string
-  placeholder?: string
   minWidth?: StyledProps['width']
+  width?: StyledProps['width']
   buttonTestId?: string
   isLabel?: boolean
-  labelIcon?: IconName
+  icon?: IconName
+  iconProps?: Partial<IconProps>
+  addClearBtn?: boolean
+  placeholder?: string
+  getCustomLabel?: (item: SelectOption) => string
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -42,7 +47,11 @@ function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX
         [css.active]: props.modifiers.active,
         [css.disabled]: props.modifiers.disabled
       })}
-      onClick={props.handleClick}>
+      onClick={e => {
+        if (!props.modifiers.disabled) {
+          props.handleClick(e)
+        }
+      }}>
       {item.label}
     </li>
   )
@@ -58,16 +67,22 @@ export const DropDown: React.FC<DropDownProps> = props => {
     value,
     items,
     itemRenderer,
+    className = '',
     popoverClassName = '',
     usePortal = false,
     filterable = true,
     placeholder = 'Select',
     minWidth = 130,
+    width,
     buttonTestId = 'dropdown-button',
-    labelIcon,
-    isLabel = false,
+    icon,
+    iconProps,
+    isLabel,
     query,
     onQueryChange,
+    addClearBtn = false,
+    getCustomLabel,
+    disabled,
     ...rest
   } = props
 
@@ -87,13 +102,20 @@ export const DropDown: React.FC<DropDownProps> = props => {
   React.useEffect(() => {
     if (Array.isArray(items)) {
       setDropDownItems([...items])
-    } else if (typeof items === 'function') {
+    } else if (typeof items === 'function' && !loading) {
+      // Do not enter this block if already loading
       setLoading(true)
       const promise = items()
 
       if (typeof promise.then === 'function') {
         promise.then(results => {
           setDropDownItems(results)
+          setLoading(false)
+        })
+      }
+      if (typeof promise.catch === 'function') {
+        promise.catch(errorResults => {
+          setDropDownItems(errorResults)
           setLoading(false)
         })
       } else {
@@ -103,15 +125,12 @@ export const DropDown: React.FC<DropDownProps> = props => {
   }, [query, JSON.stringify(items)])
 
   React.useEffect(() => {
-    if (value) {
-      const newActiveItem = dropDownItems.find(item => item.value === value.toString())
-      newActiveItem && setActiveItem(newActiveItem)
+    const newActiveItem = dropDownItems.find(item => item.value === value?.toString()) || {
+      label: '',
+      value: ''
     }
+    setActiveItem(newActiveItem)
   }, [value, dropDownItems])
-
-  React.useEffect(() => {
-    activeItem && onChange(activeItem)
-  }, [activeItem])
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
@@ -129,8 +148,8 @@ export const DropDown: React.FC<DropDownProps> = props => {
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
+  const isDisabled = (internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
   const isSelected = !!activeItem?.value
-  const isDisabled = (internalQuery.length === 0 && dropDownItems.length === 0) || !!rest.disabled
 
   return (
     <Select
@@ -138,7 +157,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
         itemRenderer?.(item, rendererProps) || defaultItemRenderer(item, rendererProps)
       }
       items={dropDownItems}
-      onItemSelect={setActiveItem}
+      onItemSelect={onChange}
       activeItem={activeItem}
       filterable={filterable}
       itemListRenderer={renderMenu}
@@ -154,23 +173,32 @@ export const DropDown: React.FC<DropDownProps> = props => {
         usePortal,
         minimal: true,
         position: Position.BOTTOM_LEFT,
-        className: `${css.main} ${isDisabled ? css.disabled : ''}`,
+        className: cx(css.main, { [css.disabled]: isDisabled }, className),
         popoverClassName: cx(css.popover, popoverClassName)
       }}
       {...rest}>
       <Layout.Horizontal
         data-testid={buttonTestId}
-        style={{ minWidth }}
-        className={cx(css.dropdownButton, { [css.withoutBorder]: isLabel }, { [css.selected]: isSelected })}
+        style={width ? { width } : { minWidth }}
+        className={cx(
+          css.dropdownButton,
+          { [css.withBorder]: !isLabel },
+          { [css.selected]: isSelected && addClearBtn },
+          { [css.minWidth]: !width }
+        )}
         flex>
         <Layout.Horizontal className={css.labelWrapper} flex>
-          {labelIcon && <Icon name={labelIcon} size={13} color={Color.GREY_600} />}
-          <Text data-testid="dropdown-value" className={css.label}>
-            {isSelected ? activeItem!.label : placeholder}
+          {icon && <Icon name={icon} size={13} color={Color.GREY_600} {...iconProps} />}
+          <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
+            {activeItem && activeItem.value
+              ? getCustomLabel
+                ? getCustomLabel(activeItem)
+                : activeItem.label
+              : placeholder}
           </Text>
         </Layout.Horizontal>
         <Layout.Horizontal className={css.btnWrapper} flex>
-          {isSelected && (
+          {isSelected && addClearBtn && (
             <Button
               icon={'main-delete'}
               iconProps={{ size: 14, color: Color.GREY_400 }}
@@ -179,7 +207,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
               withoutCurrentColor={true}
               onClick={e => {
                 e.stopPropagation()
-                setActiveItem({ label: '', value: '' })
+                onChange({ label: '', value: '' })
               }}
             />
           )}

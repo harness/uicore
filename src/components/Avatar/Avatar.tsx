@@ -1,5 +1,5 @@
 import { HTMLDivProps, Popover } from '@blueprintjs/core'
-import React from 'react'
+import React, { useState } from 'react'
 import css from './Avatar.css'
 import classnames from 'classnames'
 import { getInitialsFromNameOrEmail, getSumOfAllCharacters, defaultAvatarColor } from './utils'
@@ -9,6 +9,7 @@ import { Color } from '../../core/Color'
 import { Container } from '../../components/Container/Container'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
+import { Icon, IconProps } from '../../icons/Icon'
 export type AvatarSizes = FontSize
 export interface AvatarProps extends HTMLDivProps {
   name?: string
@@ -17,6 +18,7 @@ export interface AvatarProps extends HTMLDivProps {
   email?: string
   size?: AvatarSizes
   borderRadius?: number
+  borderColor?: Color
   color?: Color
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
   hoverCard?: boolean
@@ -41,6 +43,8 @@ const sizes: SizesProps = {
 }
 
 export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
+  const [loadFailed, setLoadFailed] = useState(false)
+  const onLoadFailed = () => setLoadFailed(true)
   const {
     borderRadius = 100,
     src,
@@ -54,6 +58,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     color = Color.WHITE,
     onClick,
     hoverCard = true,
+    borderColor = Color.WHITE,
     hoverCardDetailsCallBack,
     ...rest
   } = props
@@ -85,12 +90,17 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
       backgroundColor: Utils.getRealCSSColor(calucatedBackgroundColor || 'BLUE_800'),
       color: Utils.getRealCSSColor(textColor)
     }),
-    border: '2px solid var(--white)',
+    border: `2px solid ${Utils.getRealCSSColor(borderColor)}`,
     ...(fontSize && { fontSize })
   }
   if (src) {
+    const parsedHeightWidth = parseInt(imageHeightWidth, 10) as IconProps['size']
     const imageStyleNew = { ...contentStyle, width: imageHeightWidth, height: imageHeightWidth, border: '' }
-    inner = <img src={src} style={imageStyleNew} className={css.imageStyle} alt={name} />
+    inner = loadFailed ? (
+      <Icon name="user" size={parsedHeightWidth} />
+    ) : (
+      <img src={src} style={imageStyleNew} className={css.imageStyle} alt={name} onError={onLoadFailed} />
+    )
   } else {
     if (!initials) {
       return null
@@ -107,35 +117,57 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     borderRadius: '100%'
   }
 
+  const parsedHeightWidthInTooltip = parseInt(sizes.medium.size, 10) as IconProps['size']
+
   const defaultTooltip = (
     <Layout.Vertical className={css.hoverToolTipLayout}>
-      <Layout.Horizontal flex padding="small" className={css.hoverAvatarLayout}>
+      <Layout.Horizontal flex padding="medium" className={css.hoverAvatarLayout}>
         {src ? (
-          <img src={src} style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }} alt={name} />
+          loadFailed ? (
+            <Icon name="user" size={parsedHeightWidthInTooltip} className={css.avatarImg} />
+          ) : (
+            <img
+              className={css.avatarImg}
+              src={src}
+              style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}
+              alt={name}
+              onError={onLoadFailed}
+            />
+          )
         ) : (
-          <div style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}>{inner}</div>
+          <div className={css.avatarImg} style={{ ...toolTipStyle, textAlign: 'center', minWidth: sizes.medium.size }}>
+            {inner}
+          </div>
         )}
 
-        <Text lineClamp={1}>{name}</Text>
+        <Text margin={{ bottom: 'small' }} font={{ size: 'small', weight: 'bold' }} color={Color.BLACK} lineClamp={1}>
+          {name}
+        </Text>
       </Layout.Horizontal>
 
-      {email && (
-        <Container padding="small">
-          <Text
-            icon="command-email"
-            iconProps={{ color: 'grey300', size: 18 }}
-            lineClamp={1}
-            className={css.emailHover}>
-            {email}
-          </Text>
-        </Container>
-      )}
-
-      {hoverCardDetailsCallBack && (
-        <Container padding="small">
-          <Text color="blue500" lineClamp={1} onClick={hoverCardDetailsCallBack}>
-            Details
-          </Text>
+      {(email || hoverCardDetailsCallBack) && (
+        <Container padding="medium">
+          {email && (
+            <Text
+              margin={{ top: 'small' }}
+              font={{ size: 'small' }}
+              icon="email-inline"
+              iconProps={{ color: 'grey600', size: 10 }}
+              lineClamp={1}
+              className={css.emailHover}>
+              {email}
+            </Text>
+          )}
+          {hoverCardDetailsCallBack && (
+            <Text
+              font={{ size: 'xsmall' }}
+              margin={{ top: 'small' }}
+              color="primary7"
+              lineClamp={1}
+              onClick={hoverCardDetailsCallBack}>
+              Details
+            </Text>
+          )}
         </Container>
       )}
     </Layout.Vertical>
@@ -151,6 +183,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
         interactionKind="hover"
         usePortal={false}
         className={css.avatarPopOver}
+        position="top"
         disabled={!hoverCard}>
         <div className={css.AvatarInner} style={contentStyle}>
           {inner}
