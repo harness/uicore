@@ -59,7 +59,7 @@ export const renderItem = ({
   return <Container className={css.detailsSectionRowWrapper}>{jsxContent}</Container>
 }
 
-export const DetailPageCard: React.FC<DetailPageCardProps> = props => {
+export function DetailPageCard(props: DetailPageCardProps) {
   const { title, content = [], classname } = props
   return (
     <Card className={cx(css.main, classname)} interactive={false} elevation={0} selected={false}>
