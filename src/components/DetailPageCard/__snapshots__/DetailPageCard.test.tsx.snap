@@ -6,7 +6,7 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
     class="bp3-card bp3-elevation-0 card main"
   >
     <p
-      class="font main title color color-black font-variation font-variation-h5"
+      class="font main title color color-black font-variation font-variation-card-title"
     >
       Overview
     </p>
@@ -20,12 +20,12 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
           class="vertical layout-spacing-small main spacing spacing-small"
         >
           <p
-            class="font main label font-small"
+            class="font main label font-variation font-variation-form-label"
           >
             Name
           </p>
           <p
-            class="font lineclamp main value color color-black width width-424px"
+            class="font lineclamp main value font-variation font-variation-form-input-text width width-424px"
             style="--text-line-clamp: 1; width: 424px;"
           >
             Cluster Name
@@ -39,12 +39,12 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
           class="vertical layout-spacing-small main spacing spacing-small"
         >
           <p
-            class="font main label font-small"
+            class="font main label font-variation font-variation-form-label"
           >
             GitOps Agent 
           </p>
           <p
-            class="font lineclamp main value color color-black width width-424px"
+            class="font lineclamp main value font-variation font-variation-form-input-text width width-424px"
             style="--text-line-clamp: 1; width: 424px;"
           >
             Agent 1
