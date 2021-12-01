@@ -26,7 +26,7 @@ export interface DetailPageCardProps {
   classname?: string
 }
 
-const renderItem = ({
+export const renderItem = ({
   type = ContentType.TEXT,
   label,
   value,
@@ -58,7 +58,7 @@ const renderItem = ({
   return <Container className={css.detailsSectionRowWrapper}>{jsxContent}</Container>
 }
 
-const DetailPageCard: React.FC<DetailPageCardProps> = props => {
+export const DetailPageCard: React.FC<DetailPageCardProps> = props => {
   const { title, content = [], classname } = props
   return (
     <Card className={cx(css.main, classname)} interactive={false} elevation={0} selected={false}>
@@ -71,5 +71,3 @@ const DetailPageCard: React.FC<DetailPageCardProps> = props => {
     </Card>
   )
 }
-
-export default DetailPageCard

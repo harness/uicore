@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import DetailPagecard from './DetailPagecard'
+import { DetailPageCard } from './DetailPageCard'
 describe('Detail Page card', () => {
   test('should render DetailPagecard with title and content', () => {
     const { container } = render(
-      <DetailPagecard
+      <DetailPageCard
         title="Overview"
         content={[
           { label: 'Name', value: 'Cluster Name' },
