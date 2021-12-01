@@ -7,6 +7,7 @@ import React from 'react'
 import { isUndefined } from 'lodash-es'
 import cx from 'classnames'
 import css from './DetailPageCard.css'
+import { FontVariation } from '../../styled-props/font/FontProps'
 
 export enum ContentType {
   TEXT = 'TEXT', // default
@@ -41,7 +42,7 @@ export const renderItem = ({
   if (type === ContentType.TEXT) {
     jsxContent = (
       <Layout.Vertical spacing="small" {...rest}>
-        <Text style={{ fontSize: '12px' }}>{label}</Text>
+        <Text font="small">{label}</Text>
         <Text color={Color.BLACK} width="424px" lineClamp={1}>
           {value}
         </Text>
@@ -50,7 +51,7 @@ export const renderItem = ({
   } else if (type === ContentType.CUSTOM) {
     jsxContent = (
       <>
-        {label ? <Text style={{ fontSize: '12px' }}>{label}</Text> : null}
+        {label ? <Text font="small">{label}</Text> : null}
         {value}
       </>
     )
@@ -62,7 +63,7 @@ export const DetailPageCard: React.FC<DetailPageCardProps> = props => {
   const { title, content = [], classname } = props
   return (
     <Card className={cx(css.main, classname)} interactive={false} elevation={0} selected={false}>
-      <Text color={Color.BLACK} style={{ fontSize: '16px', fontWeight: 600 }}>
+      <Text color={Color.BLACK} font={{ variation: FontVariation.H5 }}>
         {title}
       </Text>
       <Layout.Vertical style={{ marginTop: 'var(--spacing-4)' }}>
