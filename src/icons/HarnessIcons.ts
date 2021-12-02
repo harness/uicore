@@ -396,6 +396,7 @@ import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
 import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
+import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OfflineOutline from './offline-outline.svg'
@@ -996,6 +997,7 @@ type HarnessIconName =
   | 'ng-filter'
   | 'no-deployments'
   | 'no-feedback-given'
+  | 'no-instances'
   | 'not-synced'
   | 'notification'
   | 'offline-outline'
@@ -1596,6 +1598,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ng-filter': NgFilter,
   'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
+  'no-instances': NoInstances,
   'not-synced': NotSynced,
   notification: Notification,
   'offline-outline': OfflineOutline,
