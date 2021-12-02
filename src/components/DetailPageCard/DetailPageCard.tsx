@@ -8,7 +8,6 @@ import { isUndefined } from 'lodash-es'
 import cx from 'classnames'
 import css from './DetailPageCard.css'
 import { FontVariation } from '../../styled-props/font/FontProps'
-import { JSX_TYPES } from '@babel/types'
 
 export enum ContentType {
   TEXT = 'TEXT', // default

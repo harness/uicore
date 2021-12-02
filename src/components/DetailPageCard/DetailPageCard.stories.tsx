@@ -4,7 +4,6 @@ import { ContentType, DetailPageCard } from './DetailPageCard'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { DetailPageCardProps } from './DetailPageCard'
 import { Checkbox } from '../..'
-import { Color } from '../../core/Color'
 
 export default {
   title: 'Components / DetailPageCard',
