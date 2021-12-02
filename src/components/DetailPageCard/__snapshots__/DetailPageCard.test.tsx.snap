@@ -6,7 +6,7 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
     class="bp3-card bp3-elevation-0 card main"
   >
     <p
-      class="font main title color color-black font-variation font-variation-card-title"
+      class="font main color color-black font-variation font-variation-card-title"
     >
       Overview
     </p>
