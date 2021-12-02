@@ -87,7 +87,7 @@ export const DetailPageCard: React.FC<DetailPageCardProps> = props => {
   const { title, content = [], classname } = props
   return (
     <Card className={cx(css.main, classname)} interactive={false} elevation={0} selected={false}>
-      <Text className={css.title} color={Color.BLACK} font={{ variation: FontVariation.CARD_TITLE }}>
+      <Text color={Color.BLACK} font={{ variation: FontVariation.CARD_TITLE }}>
         {title}
       </Text>
       <Layout.Vertical style={{ marginTop: 'var(--spacing-4)' }}>
