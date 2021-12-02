@@ -25,7 +25,7 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
             Name
           </p>
           <p
-            class="font lineclamp main value font-variation font-variation-form-input-text width width-424px"
+            class="font lineclamp main font-variation font-variation-form-input-text width width-424px"
             style="--text-line-clamp: 1; width: 424px;"
           >
             Cluster Name
@@ -44,7 +44,7 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
             GitOps Agent 
           </p>
           <p
-            class="font lineclamp main value font-variation font-variation-form-input-text width width-424px"
+            class="font lineclamp main font-variation font-variation-form-input-text width width-424px"
             style="--text-line-clamp: 1; width: 424px;"
           >
             Agent 1

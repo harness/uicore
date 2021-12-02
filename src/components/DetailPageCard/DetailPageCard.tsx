@@ -43,7 +43,6 @@ export const renderItem = ({
   let jsxContent = newTitle ? (
     <Text
       style={{ marginBottom: 'var(--spacing-6)' }}
-      className="title"
       color={Color.BLACK}
       font={{ variation: FontVariation.CARD_TITLE }}>
       {newTitle}
@@ -58,7 +57,7 @@ export const renderItem = ({
           <Text font={{ variation: FontVariation.FORM_LABEL }} className="label">
             {label}
           </Text>
-          <Text className="value" font={{ variation: FontVariation.FORM_INPUT_TEXT }} width="424px" lineClamp={1}>
+          <Text font={{ variation: FontVariation.FORM_INPUT_TEXT }} width="424px" lineClamp={1}>
             {value}
           </Text>
         </Layout.Vertical>
@@ -74,7 +73,7 @@ export const renderItem = ({
               {label}
             </Text>
           ) : null}
-          <Text className="value" font={{ variation: FontVariation.FORM_INPUT_TEXT }} width="424px" lineClamp={1}>
+          <Text font={{ variation: FontVariation.FORM_INPUT_TEXT }} width="424px" lineClamp={1}>
             <Container className="customValue">{value}</Container>
           </Text>
         </Layout.Vertical>
@@ -88,7 +87,7 @@ export const DetailPageCard: React.FC<DetailPageCardProps> = props => {
   const { title, content = [], classname } = props
   return (
     <Card className={cx(css.main, classname)} interactive={false} elevation={0} selected={false}>
-      <Text className="title" color={Color.BLACK} font={{ variation: FontVariation.CARD_TITLE }}>
+      <Text className={css.title} color={Color.BLACK} font={{ variation: FontVariation.CARD_TITLE }}>
         {title}
       </Text>
       <Layout.Vertical style={{ marginTop: 'var(--spacing-4)' }}>
