@@ -18,11 +18,12 @@ export interface Content {
   type?: ContentType
   label: string
   value?: string | JSX.Element
+  newTitle?: string | JSX.Element // insert new section if there's a new title
   hideOnUndefinedValue?: boolean
 }
 
 export interface DetailPageCardProps {
-  title: string
+  title: string | JSX.Element
   content: Content[]
   classname?: string
 }
@@ -32,27 +33,50 @@ export const renderItem = ({
   label,
   value,
   hideOnUndefinedValue,
+  newTitle,
   ...rest
 }: Content): JSX.Element | undefined => {
   if (isUndefined(value) && hideOnUndefinedValue) {
     return
   }
 
-  let jsxContent
-  if (type === ContentType.TEXT) {
+  let jsxContent = newTitle ? (
+    <Text
+      style={{ marginBottom: 'var(--spacing-6)' }}
+      color={Color.BLACK}
+      font={{ variation: FontVariation.CARD_TITLE }}>
+      {newTitle}
+    </Text>
+  ) : null
+
+  if (type === ContentType.TEXT && typeof value === 'string') {
     jsxContent = (
-      <Layout.Vertical spacing="small" {...rest}>
-        <Text font="small">{label}</Text>
-        <Text color={Color.BLACK} width="424px" lineClamp={1}>
-          {value}
-        </Text>
-      </Layout.Vertical>
+      <>
+        {jsxContent}
+        <Layout.Vertical spacing="small" {...rest}>
+          <Text font={{ variation: FontVariation.FORM_LABEL }} className="label">
+            {label}
+          </Text>
+          <Text font={{ variation: FontVariation.FORM_INPUT_TEXT }} width="424px" lineClamp={1}>
+            {value}
+          </Text>
+        </Layout.Vertical>
+      </>
     )
   } else if (type === ContentType.CUSTOM) {
     jsxContent = (
       <>
-        {label ? <Text font="small">{label}</Text> : null}
-        {value}
+        {jsxContent}
+        <Layout.Vertical spacing="small" {...rest}>
+          {label ? (
+            <Text font={{ variation: FontVariation.FORM_LABEL }} className="label">
+              {label}
+            </Text>
+          ) : null}
+          <Text font={{ variation: FontVariation.FORM_INPUT_TEXT }} width="424px" lineClamp={1}>
+            <Container className="customValue">{value}</Container>
+          </Text>
+        </Layout.Vertical>
       </>
     )
   }
@@ -63,7 +87,7 @@ export const DetailPageCard: React.FC<DetailPageCardProps> = props => {
   const { title, content = [], classname } = props
   return (
     <Card className={cx(css.main, classname)} interactive={false} elevation={0} selected={false}>
-      <Text color={Color.BLACK} font={{ variation: FontVariation.H5 }}>
+      <Text color={Color.BLACK} font={{ variation: FontVariation.CARD_TITLE }}>
         {title}
       </Text>
       <Layout.Vertical style={{ marginTop: 'var(--spacing-4)' }}>

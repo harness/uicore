@@ -1,8 +1,9 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { DetailPageCard } from './DetailPageCard'
+import { ContentType, DetailPageCard } from './DetailPageCard'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { DetailPageCardProps } from './DetailPageCard'
+import { Checkbox } from '../..'
 
 export default {
   title: 'Components / DetailPageCard',
@@ -42,9 +43,17 @@ export const Basic: Story<DetailPageCardProps> = args => {
 }
 
 Basic.args = {
-  title: 'Overview',
+  title: 'Main Title',
   content: [
     { label: 'Name', value: 'Cluster Name' },
-    { label: 'GitOps Agent ', value: 'Agent 1' }
+    { label: 'GitOps Agent ', value: 'Agent 1' },
+    { label: 'Cache Info ', value: 'Cache 1', newTitle: 'Subtitle 1' },
+    { label: 'Name', value: 'Cluster Name' },
+    {
+      label: 'GitOps Agent ',
+      value: <Checkbox label="selected" />,
+      type: ContentType.CUSTOM,
+      newTitle: 'Subtitle 2'
+    }
   ]
 }
