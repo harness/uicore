@@ -227,6 +227,7 @@ import Github from './github.svg'
 import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
+import GitopsAgent from './gitops-agent.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import Governance from './governance.svg'
@@ -828,6 +829,7 @@ type HarnessIconName =
   | 'gitlab-selected'
   | 'gitlab-unselected'
   | 'gitlab'
+  | 'gitops-agent'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance'
@@ -1429,6 +1431,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
+  'gitops-agent': GitopsAgent,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   governance: Governance,
