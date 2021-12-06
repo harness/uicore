@@ -42,3 +42,14 @@ VariablePageSize.args = {
   pageSize: 10,
   pageSizeOptions: [5, 10, 25, 50]
 }
+
+export const HideNumberButtonsAtBreakpoint: Story<PaginationProps> = args => <Pagination {...args} />
+
+HideNumberButtonsAtBreakpoint.args = {
+  hidePageNumbers: false,
+  itemCount: 147,
+  pageCount: 15,
+  pageSize: 10,
+  breakAt: 830,
+  gotoPage: () => null
+}
