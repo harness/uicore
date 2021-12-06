@@ -19,6 +19,12 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
   const { initialSelectedView, beforeOnChange, disableSwitch = false, className = '', options } = props
   const [selectedView, setSelectedView] = React.useState<T>(initialSelectedView || options[0].value)
 
+  React.useEffect(() => {
+    if (selectedView !== initialSelectedView) {
+      setSelectedView(initialSelectedView || options[0].value)
+    }
+  }, [initialSelectedView])
+
   return (
     <div className={cx(css.optionBtns, className)}>
       <div
