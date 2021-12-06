@@ -1,7 +1,6 @@
 import React from 'react'
 import { FormGroup, HTMLInputProps, IFormGroupProps, IInputGroupProps, InputGroup, Intent } from '@blueprintjs/core'
 import { get } from 'lodash-es'
-import { FormikContext } from 'formik'
 import { errorCheck, FormikContextProps, getFormFieldLabel } from './utils'
 import { FormError } from '../FormError/FormError'
 import { DurationInputHelpers } from '../DurationInput/DurationInput'
@@ -13,13 +12,8 @@ export interface DurationInputProps extends Omit<IFormGroupProps, 'label' | 'pla
   inputProps?: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'>
 }
 
-export interface ConnectedDurationProps extends DurationInputProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  formik: FormikContext<any>
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function DurationInput(props: ConnectedDurationProps & FormikContextProps<any>): React.ReactElement {
+export function DurationInput(props: DurationInputProps & FormikContextProps<any>): React.ReactElement {
   const { formik, onChange, name, label, inputProps, ...restProps } = props
 
   const hasError = errorCheck(name, formik)
@@ -33,7 +27,7 @@ export function DurationInput(props: ConnectedDurationProps & FormikContextProps
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const correctVal = e.currentTarget.value.replace(DurationInputHelpers.TEXT_LIMIT_REGEX, '')
-    formik.setFieldValue(e.currentTarget.name, correctVal)
+    formik?.setFieldValue(e.currentTarget.name, correctVal)
     onChange?.(correctVal)
   }
 
@@ -52,9 +46,9 @@ export function DurationInput(props: ConnectedDurationProps & FormikContextProps
         disabled={disabled}
         name={name}
         intent={intent}
-        value={get(formik.values, name)}
+        value={get(formik?.values, name)}
         onChange={handleChange}
-        onBlur={formik.handleBlur}
+        onBlur={formik?.handleBlur}
       />
     </FormGroup>
   )
