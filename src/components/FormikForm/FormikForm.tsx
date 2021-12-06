@@ -1,5 +1,5 @@
-import React, { ReactNode, useCallback, useContext, useMemo } from 'react'
-import { connect, FormikContext, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
+import React, { ReactNode, useCallback, useMemo } from 'react'
+import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
   MultiSelect as UiKitMultiSelect,
@@ -53,54 +53,17 @@ import {
   ExpressionInputProps as ExpressionInputLocalProps,
   ExpressionInput as ExpressionInputLocal
 } from '../ExpressionInput/ExpressionInput'
-import { DataTooltipInterface } from '../../frameworks/Tooltip/types'
-import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
+
 import { FormikTooltipContext } from './FormikTooltipContext'
 import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
+import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
+import { DurationInput } from './DurationInput'
 
-const IsOptionLabel = '(optional)'
-const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 const isFunction = (obj: any): boolean => typeof obj === 'function'
 
-const errorCheck = (name: string, formik?: FormikContext<any>) =>
-  (get(formik?.touched, name) || (formik?.submitCount && formik?.submitCount > 0)) &&
-  get(formik?.errors, name) &&
-  !isObject(get(formik?.errors, name))
-
 export const getDefaultAutoCompleteValue = (): string => 'off'
-
-export interface FormikExtended<T> extends FormikContext<T> {
-  disabled?: boolean
-  inline?: boolean
-  formName: string
-}
-
-export interface FormikContextProps<T> {
-  formik?: FormikExtended<T>
-  optionalLabel?: string
-  isOptional?: boolean // default to false
-  autoComplete?: string
-  tooltipProps?: DataTooltipInterface // todo mark it as mandatory
-}
-
-export const getFormFieldLabel = (
-  label: ReactNode | string | undefined,
-  fieldName: string,
-  props: FormikContextProps<any>,
-  css?: string
-): ReactNode | string | undefined => {
-  const optionalLabel = props.optionalLabel || IsOptionLabel
-  const labelText = !props.isOptional ? label : `${label} ${optionalLabel}`
-  if (!labelText) {
-    return labelText
-  }
-  const tooltipContext = useContext(FormikTooltipContext)
-  const dataTooltipId =
-    props.tooltipProps?.dataTooltipId || (tooltipContext?.formName ? `${tooltipContext?.formName}_${fieldName}` : '')
-  return <HarnessDocTooltip tooltipId={dataTooltipId} labelText={labelText} className={css || ''} />
-}
 
 export interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
@@ -1402,7 +1365,8 @@ export const FormInput = {
   MultiSelectTypeInput: connect(FormMultiSelectTypeInput),
   CategorizedSelect: connect(FormCategorizedSelect),
   SelectWithSubview: connect(FormSelectWithSubview),
-  MultiSelectWithSubview: connect(FormMultiSelectWithSubview)
+  MultiSelectWithSubview: connect(FormMultiSelectWithSubview),
+  DurationInput: connect(DurationInput)
 }
 
 export const FormikForm = connect(Form)
