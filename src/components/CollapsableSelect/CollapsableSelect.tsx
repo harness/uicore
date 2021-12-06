@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { FormGroup, HTMLDivProps, Intent } from '@blueprintjs/core'
 import { connect, FormikContext } from 'formik'
+import cx from 'classnames'
 import { isEqual, isEmpty, get } from 'lodash-es'
 import { Card } from '../Card/Card'
 import { Layout, LayoutProps } from '../../layouts/Layout'
@@ -29,6 +30,7 @@ export interface CollapsableSelectProps<T> extends Omit<HTMLDivProps, 'onChange'
   changeText?: string
   cancelText?: string
   type?: CollapsableSelectType
+  actionBtnClassName?: string
 }
 
 export interface ConnectedCollapsableSelectProps<T> extends CollapsableSelectProps<T> {
@@ -47,7 +49,8 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
     cancelText = 'Close',
     layoutProps,
     isReadonly = false,
-    type = undefined
+    type = undefined,
+    actionBtnClassName
   } = props
 
   const value = get(formik?.values, name)
@@ -115,7 +118,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
 
         {showAllOptions ? null : (
           <Button
-            className={css.closeChangeBtn}
+            className={cx(css.closeChangeBtn, actionBtnClassName)}
             disabled={isReadonly}
             minimal
             icon="Edit"
@@ -129,7 +132,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
         )}
         {showAllOptions && value ? (
           <Button
-            className={css.closeChangeBtn}
+            className={cx(css.closeChangeBtn, actionBtnClassName)}
             disabled={isReadonly}
             minimal
             icon="cross"
