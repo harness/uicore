@@ -40,6 +40,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
   const {
     className,
     itemClassName,
+    actionBtnClassName,
     formik,
     name,
     items = [],
@@ -49,8 +50,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
     cancelText = 'Close',
     layoutProps,
     isReadonly = false,
-    type = undefined,
-    actionBtnClassName
+    type = undefined
   } = props
 
   const value = get(formik?.values, name)
