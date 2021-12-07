@@ -4,8 +4,7 @@ import { get } from 'lodash-es'
 
 export interface StringsContextValue<T> {
   data: T
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  getString?(key: keyof T, vars?: Record<string, any>): string
+  getString?<K extends keyof T>(key: K, vars?: T[K]): string
 }
 
 export interface StringsContextProviderProps<T> extends Pick<StringsContextValue<T>, 'getString'> {
@@ -14,14 +13,13 @@ export interface StringsContextProviderProps<T> extends Pick<StringsContextValue
 }
 
 export interface UseStringsReturn<T> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  getString(key: keyof T, vars?: Record<string, any>): string
+  getString<K extends keyof T>(key: K, vars?: T[K]): string
 }
 
-export interface LocaleStringProps<T> extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
-  stringID: keyof T
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  vars?: Record<string, any>
+export interface LocaleStringProps<T, K extends keyof T>
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+  stringID: K
+  vars?: T[K]
   useRichText?: boolean
   tagName?: keyof JSX.IntrinsicElements
 }
@@ -30,7 +28,7 @@ export interface CreateLocaleStringsReturn<T> {
   useStringsContext: () => StringsContextValue<T>
   StringsContextProvider: React.FC<StringsContextProviderProps<T>>
   useLocaleStrings: () => UseStringsReturn<T>
-  LocaleString: (props: LocaleStringProps<T>) => React.ReactElement | null
+  LocaleString<K extends keyof T>(props: LocaleStringProps<T, K>): React.ReactElement | null
 }
 
 export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
@@ -56,8 +54,7 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
     const { data: strings, getString } = useStringsContext()
 
     return {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      getString(key: keyof T, vars: Record<string, any> = {}) {
+      getString<K extends keyof T>(key: K, vars?: T[K]): string {
         if (typeof getString === 'function') {
           return getString(key, vars)
         }
@@ -73,7 +70,7 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
     }
   }
 
-  function LocaleString(props: LocaleStringProps<T>): React.ReactElement | null {
+  function LocaleString<K extends keyof T>(props: LocaleStringProps<T, K>): React.ReactElement | null {
     const { stringID, vars, useRichText, tagName: Tag = 'span', ...rest } = props
     const { getString } = useLocaleStrings()
 

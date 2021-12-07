@@ -1,6 +1,19 @@
 import React, { useCallback } from 'react'
-import { Intent, Dialog, IconName, Classes, IDialogProps } from '@blueprintjs/core'
-import { useModalHook, Button, ButtonProps, Layout } from '../../'
+import { Intent, Dialog, IDialogProps } from '@blueprintjs/core'
+import {
+  useModalHook,
+  Button,
+  ButtonProps,
+  Layout,
+  Container,
+  Icon,
+  Text,
+  ButtonVariation,
+  FontVariation,
+  Color
+} from '../../'
+import css from './useConfirmationDialog.css'
+import { HarnessIconName } from 'icons/HarnessIcons'
 
 export interface UseConfirmationDialogProps {
   titleText: React.ReactNode
@@ -17,18 +30,18 @@ export interface UseConfirmationDialogReturn {
   openDialog: () => void
 }
 
-const getIconForIntent = (intent: Intent): IconName => {
+const getIconForIntent = (intent: Intent): HarnessIconName => {
   switch (intent) {
     case Intent.DANGER:
-      return 'error'
+      return 'danger-icon'
     case Intent.WARNING:
-      return 'warning-sign'
+      return 'warning-icon'
     case Intent.SUCCESS:
-      return 'small-tick'
+      return 'success-tick'
     case Intent.PRIMARY:
-      return 'info-sign'
+      return 'info-messaging'
     default:
-      return 'info-sign'
+      return 'info-messaging'
   }
 }
 
@@ -39,7 +52,7 @@ const confirmDialogProps: IDialogProps = {
   canEscapeKeyClose: true,
   canOutsideClickClose: true,
   enforceFocus: false,
-  style: { width: 500, minHeight: 200 }
+  style: { width: 500, minHeight: 218 }
 }
 
 export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseConfirmationDialogReturn => {
@@ -55,17 +68,31 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
   } = props
   const [showModal, hideModal] = useModalHook(() => {
     return (
-      <Dialog title={titleText} icon={getIconForIntent(intent)} onClose={() => onClose(false)} {...confirmDialogProps}>
-        <div className={Classes.DIALOG_BODY}>{contentText}</div>
-        <div className={Classes.DIALOG_FOOTER}>
-          <Layout.Horizontal spacing="small">
-            {confirmButtonText && (
+      <Dialog className={css.dialog} {...confirmDialogProps}>
+        <Container flex className={css.iconContainer}>
+          <Icon onClick={() => onClose(false)} className={css.icon} size={8} name="main-close" />
+        </Container>
+
+        <Layout.Horizontal className={css.header} padding={{ left: 'xsmall' }}>
+          <Icon name={getIconForIntent(intent)} size={32} margin={{ right: 'small' }} />
+          <Text font={{ variation: FontVariation.H4 }}>{titleText}</Text>
+        </Layout.Horizontal>
+        <Layout.Vertical
+          font={{ variation: FontVariation.BODY }}
+          color={Color.BLACK}
+          margin={{ top: 'large', bottom: 'xxlarge' }}
+          className={css.body}>
+          {contentText}
+        </Layout.Vertical>
+        <Layout.Horizontal spacing="small">
+          {confirmButtonText && (
+            <>
               <Button intent={buttonIntent} text={confirmButtonText} onClick={() => onClose(true)} />
-            )}
-            <Button text={cancelButtonText} onClick={() => onClose(false)} />
-            {customButtons}
-          </Layout.Horizontal>
-        </div>
+            </>
+          )}
+          <Button variation={ButtonVariation.TERTIARY} text={cancelButtonText} onClick={() => onClose(false)} />
+          {customButtons}
+        </Layout.Horizontal>
       </Dialog>
     )
   }, [props])

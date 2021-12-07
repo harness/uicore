@@ -110,6 +110,7 @@ export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeS
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
 export { Table, TableProps } from './components/Table/Table'
 export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikForm'
+export { errorCheck } from './components/FormikForm/utils'
 export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
 export { ColorPicker } from './components/ColorPicker/ColorPicker'
@@ -205,3 +206,12 @@ export {
   VisualYamlToggle,
   VisualYamlToggleProps
 } from './components/VisualYamlToggle/VisualYamlToggle'
+export {
+  FormikCollapsableSelect,
+  CollapsableSelect,
+  CollapsableSelectType,
+  CollapsableSelectOptions,
+  CollapsableSelectProps,
+  ConnectedCollapsableSelectProps
+} from './components/CollapsableSelect/CollapsableSelect'
+export { DetailPageCard, DetailPageCardProps, Content, ContentType } from './components/DetailPageCard/DetailPageCard'

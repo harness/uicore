@@ -44,10 +44,14 @@ import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
 import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
+import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
+import CanaryDeleteInverse from './canary-delete-inverse.svg'
+import CanaryDelete from './canary-delete.svg'
 import CanaryIcon from './canary-icon.svg'
+import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
@@ -119,6 +123,7 @@ import CommandStop from './command-stop.svg'
 import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
+import CompareVersion from './compare-version.svg'
 import ConditionalExecution from './conditional-execution.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
@@ -146,6 +151,7 @@ import CvSketch from './cv-sketch.svg'
 import CvSolidCurrentColor from './cv-solid-current-color.svg'
 import CvSolid from './cv-solid.svg'
 import CvWithText from './cv-with-text.svg'
+import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DataFetchError from './data-fetch-error.svg'
@@ -200,6 +206,7 @@ import FfSolid from './ff-solid.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
+import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
@@ -220,6 +227,7 @@ import Github from './github.svg'
 import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
+import GitopsAgent from './gitops-agent.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import Governance from './governance.svg'
@@ -237,6 +245,7 @@ import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
+import InfoMessaging from './info-messaging.svg'
 import Info from './info.svg'
 import Infrastructure from './infrastructure.svg'
 import InitializeStep from './initialize-step.svg'
@@ -388,6 +397,7 @@ import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
 import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
+import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OfflineOutline from './offline-outline.svg'
@@ -436,12 +446,15 @@ import ResSecrets from './res-secrets.svg'
 import ResUserGroups from './res-userGroups.svg'
 import ResUsers from './res-users.svg'
 import ResetIcon from './reset-icon.svg'
+import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
+import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RollbackExecution from './rollback-execution.svg'
+import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -494,6 +507,7 @@ import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
 import ServiceInstana from './service-instana.svg'
 import ServiceJenkins from './service-jenkins.svg'
+import ServiceJiraInverse from './service-jira-inverse.svg'
 import ServiceJira from './service-jira.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
@@ -524,12 +538,14 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
+import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
 import StepsSpinner from './steps-spinner.svg'
+import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
 import SupportCode from './support-code.svg'
@@ -575,6 +591,7 @@ import Utility from './utility.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
+import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -629,10 +646,14 @@ type HarnessIconName =
   | 'blank-canvas-header-icon'
   | 'blue-black-cluster'
   | 'blue-green'
+  | 'bluegreen-inverse'
   | 'bluegreen'
   | 'budget-alert-light'
   | 'build-stage'
+  | 'canary-delete-inverse'
+  | 'canary-delete'
   | 'canary-icon'
+  | 'canary-inverse'
   | 'canary-outline'
   | 'canary'
   | 'canvas-position'
@@ -704,6 +725,7 @@ type HarnessIconName =
   | 'command-swap'
   | 'command-switch'
   | 'command-winrm'
+  | 'compare-version'
   | 'conditional-execution'
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
@@ -731,6 +753,7 @@ type HarnessIconName =
   | 'cv-solid-current-color'
   | 'cv-solid'
   | 'cv-with-text'
+  | 'danger-icon'
   | 'dashboard-selected'
   | 'dashboard'
   | 'data-fetch-error'
@@ -785,6 +808,7 @@ type HarnessIconName =
   | 'ff-with-text'
   | 'file'
   | 'fixed-input'
+  | 'flash'
   | 'folder-upload'
   | 'full-screen-exit'
   | 'full-screen'
@@ -805,6 +829,7 @@ type HarnessIconName =
   | 'gitlab-selected'
   | 'gitlab-unselected'
   | 'gitlab'
+  | 'gitops-agent'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance'
@@ -822,6 +847,7 @@ type HarnessIconName =
   | 'http-step'
   | 'infinityTrend'
   | 'info-message'
+  | 'info-messaging'
   | 'info'
   | 'infrastructure'
   | 'initialize-step'
@@ -973,6 +999,7 @@ type HarnessIconName =
   | 'ng-filter'
   | 'no-deployments'
   | 'no-feedback-given'
+  | 'no-instances'
   | 'not-synced'
   | 'notification'
   | 'offline-outline'
@@ -1021,12 +1048,15 @@ type HarnessIconName =
   | 'res-userGroups'
   | 'res-users'
   | 'reset-icon'
+  | 'resource-center-community-icon'
+  | 'resource-center-docs-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'right-bar-notification'
   | 'rollback-execution'
+  | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
   | 'run-pipeline'
@@ -1079,6 +1109,7 @@ type HarnessIconName =
   | 'service-helm'
   | 'service-instana'
   | 'service-jenkins'
+  | 'service-jira-inverse'
   | 'service-jira'
   | 'service-kubernetes'
   | 'service-microsoft-teams'
@@ -1109,12 +1140,14 @@ type HarnessIconName =
   | 'setup-tags'
   | 'skipped'
   | 'spinner'
+  | 'stars'
   | 'status-pending'
   | 'status-running'
   | 'step-group'
   | 'step-jira'
   | 'step-kubernetes'
   | 'steps-spinner'
+  | 'success-tick'
   | 'support-account'
   | 'support-api'
   | 'support-code'
@@ -1160,6 +1193,7 @@ type HarnessIconName =
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
+  | 'warning-icon'
   | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -1214,10 +1248,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'blank-canvas-header-icon': BlankCanvasHeaderIcon,
   'blue-black-cluster': BlueBlackCluster,
   'blue-green': BlueGreen,
+  'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
+  'canary-delete-inverse': CanaryDeleteInverse,
+  'canary-delete': CanaryDelete,
   'canary-icon': CanaryIcon,
+  'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
   canary: Canary,
   'canvas-position': CanvasPosition,
@@ -1289,6 +1327,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'command-swap': CommandSwap,
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
+  'compare-version': CompareVersion,
   'conditional-execution': ConditionalExecution,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
@@ -1316,6 +1355,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cv-solid-current-color': CvSolidCurrentColor,
   'cv-solid': CvSolid,
   'cv-with-text': CvWithText,
+  'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'data-fetch-error': DataFetchError,
@@ -1370,6 +1410,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
+  flash: Flash,
   'folder-upload': FolderUpload,
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
@@ -1390,6 +1431,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
+  'gitops-agent': GitopsAgent,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   governance: Governance,
@@ -1407,6 +1449,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'http-step': HttpStep,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
+  'info-messaging': InfoMessaging,
   info: Info,
   infrastructure: Infrastructure,
   'initialize-step': InitializeStep,
@@ -1558,6 +1601,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ng-filter': NgFilter,
   'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
+  'no-instances': NoInstances,
   'not-synced': NotSynced,
   notification: Notification,
   'offline-outline': OfflineOutline,
@@ -1606,12 +1650,15 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'res-userGroups': ResUserGroups,
   'res-users': ResUsers,
   'reset-icon': ResetIcon,
+  'resource-center-community-icon': ResourceCenterCommunityIcon,
+  'resource-center-docs-icon': ResourceCenterDocsIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
   'rollback-execution': RollbackExecution,
+  'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
@@ -1664,6 +1711,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-helm': ServiceHelm,
   'service-instana': ServiceInstana,
   'service-jenkins': ServiceJenkins,
+  'service-jira-inverse': ServiceJiraInverse,
   'service-jira': ServiceJira,
   'service-kubernetes': ServiceKubernetes,
   'service-microsoft-teams': ServiceMicrosoftTeams,
@@ -1694,12 +1742,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-tags': SetupTags,
   skipped: Skipped,
   spinner: Spinner,
+  stars: Stars,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
   'step-group': StepGroup,
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
   'steps-spinner': StepsSpinner,
+  'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
   'support-code': SupportCode,
@@ -1745,6 +1795,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
+  'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
