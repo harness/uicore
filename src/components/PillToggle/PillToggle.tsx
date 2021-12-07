@@ -1,4 +1,4 @@
-import React, { SetStateAction, Dispatch } from 'react'
+import React from 'react'
 import cx from 'classnames'
 import css from './PillToggle.css'
 
@@ -8,16 +8,15 @@ export interface PillToggleOption<T> {
 }
 
 export interface PillToggleProps<T> {
-  initialSelectedView?: T
+  selectedView?: T
   options: [PillToggleOption<T>, PillToggleOption<T>]
-  beforeOnChange: (val: T, callbackFn: Dispatch<SetStateAction<T>>) => void
-  disableSwitch?: boolean
+  onChange: (val: T) => void
+  disableToggle?: boolean
   className?: string
 }
 
 export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement => {
-  const { initialSelectedView, beforeOnChange, disableSwitch = false, className = '', options } = props
-  const [selectedView, setSelectedView] = React.useState<T>(initialSelectedView || options[0].value)
+  const { selectedView, onChange, disableToggle = false, className = '', options } = props
 
   return (
     <div className={cx(css.optionBtns, className)}>
@@ -25,13 +24,13 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
         data-name="toggle-option-one"
         className={cx(css.item, {
           [css.selected]: selectedView === options[0].value,
-          [css.disabledMode]: disableSwitch
+          [css.disabledMode]: disableToggle
         })}
         onClick={() => {
           if (selectedView === options[0].value) {
             return
           }
-          beforeOnChange(options[0].value, setSelectedView)
+          onChange(options[0].value)
         }}
         tabIndex={0}
         role="button">
@@ -41,10 +40,10 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
         data-name="toggle-option-two"
         className={cx(css.item, {
           [css.selected]: selectedView === options[1].value,
-          [css.disabledMode]: disableSwitch
+          [css.disabledMode]: disableToggle
         })}
         onClick={() => {
-          beforeOnChange(options[1].value, setSelectedView)
+          onChange(options[1].value)
         }}
         tabIndex={0}
         role="button">
