@@ -8,7 +8,8 @@ import { Text } from '../Text/Text'
 import { Button, ButtonSize } from '../Button/Button'
 import { SelectOption } from '../Select/Select'
 import { FontVariation } from '../../styled-props/font/FontProps'
-import { DropDown } from '../../components/DropDown/DropDown'
+import { DropDown } from '../DropDown/DropDown'
+import useWindowWidth from '../../hooks/useWindowWidth'
 
 import css from './Pagination.css'
 
@@ -22,6 +23,7 @@ export interface PaginationProps {
   hidePageNumbers?: boolean
   className?: string
   onPageSizeChange?: (newPageSize: number) => void
+  breakAt?: number
 }
 
 interface PageNumbersProps {
@@ -135,8 +137,10 @@ const Pagination: React.FC<PaginationProps> = props => {
     pageSizeOptions,
     onPageSizeChange,
     hidePageNumbers,
-    className
+    className,
+    breakAt
   } = props
+  const currentWindowWidth = useWindowWidth()
 
   const selectOptions: SelectOption[] =
     pageSizeOptions?.map(option => {
@@ -154,6 +158,8 @@ const Pagination: React.FC<PaginationProps> = props => {
       `Pagination: pageSize (${pageSize}) * pageCount (${pageCount}) can't be less than itemCount (${itemCount})`
     )
   }
+
+  const showNumbers = !hidePageNumbers && (!breakAt || breakAt <= currentWindowWidth)
 
   return (
     <Layout.Horizontal
@@ -181,7 +187,7 @@ const Pagination: React.FC<PaginationProps> = props => {
           onClick={() => gotoPage?.(pageIndex - 1)}
           disabled={pageIndex === 0}
         />
-        {gotoPage && !hidePageNumbers ? (
+        {gotoPage && showNumbers ? (
           <PageNumbers gotoPage={gotoPage} pageIndex={pageIndex} pageCountClamp={5} pageCount={pageCount} />
         ) : null}
         <Button
