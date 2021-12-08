@@ -538,6 +538,7 @@ import Service from './service.svg'
 import Services from './services.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
+import Smtp from './smtp.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
 import Stars from './stars.svg'
@@ -1142,6 +1143,7 @@ type HarnessIconName =
   | 'services'
   | 'setup-api'
   | 'setup-tags'
+  | 'smtp'
   | 'skipped'
   | 'spinner'
   | 'stars'
@@ -1746,6 +1748,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   services: Services,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
+  smtp: Smtp,
   skipped: Skipped,
   spinner: Spinner,
   stars: Stars,
