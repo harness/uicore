@@ -537,7 +537,6 @@ import Services from './services.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Smtp from './smtp.svg'
-import SmtpWhite from './smtp-white.svg'
 import Skipped from './skipped.svg'
 import Spinner from './spinner.svg'
 import Stars from './stars.svg'
@@ -1745,7 +1744,6 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
   smtp: Smtp,
-  'smtp-white': SmtpWhite,
   skipped: Skipped,
   spinner: Spinner,
   stars: Stars,
