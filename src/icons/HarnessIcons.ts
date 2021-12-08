@@ -240,6 +240,7 @@ import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
+import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
@@ -525,6 +526,7 @@ import ServicePrometheus from './service-prometheus.svg'
 import ServiceRedis from './service-redis.svg'
 import ServiceServiceS3 from './service-service-s3.svg'
 import ServiceServicenow from './service-servicenow.svg'
+import ServiceServicenowInverse from './service-servicenow_inverse.svg'
 import ServiceSlack from './service-slack.svg'
 import ServiceSplunkWithName from './service-splunk-with-name.svg'
 import ServiceSplunk from './service-splunk.svg'
@@ -843,6 +845,7 @@ type HarnessIconName =
   | 'harness'
   | 'hashiCorpVault'
   | 'health'
+  | 'helm-rollback'
   | 'help'
   | 'hourglass'
   | 'http-step'
@@ -1128,6 +1131,7 @@ type HarnessIconName =
   | 'service-redis'
   | 'service-service-s3'
   | 'service-servicenow'
+  | 'service-servicenow_inverse'
   | 'service-slack'
   | 'service-splunk-with-name'
   | 'service-splunk'
@@ -1446,6 +1450,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
   health: Health,
+  'helm-rollback': HelmRollback,
   help: Help,
   hourglass: Hourglass,
   'http-step': HttpStep,
@@ -1731,6 +1736,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-redis': ServiceRedis,
   'service-service-s3': ServiceServiceS3,
   'service-servicenow': ServiceServicenow,
+  'service-servicenow_inverse': ServiceServicenowInverse,
   'service-slack': ServiceSlack,
   'service-splunk-with-name': ServiceSplunkWithName,
   'service-splunk': ServiceSplunk,

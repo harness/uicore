@@ -1,4 +1,4 @@
-import React, { SetStateAction, Dispatch } from 'react'
+import React from 'react'
 import { PillToggle, PillToggleProps } from '../PillToggle/PillToggle'
 
 export enum VisualYamlSelectedView {
@@ -7,9 +7,9 @@ export enum VisualYamlSelectedView {
 }
 
 export interface VisualYamlToggleProps {
-  initialSelectedView?: VisualYamlSelectedView
-  beforeOnChange: (val: VisualYamlSelectedView, callbackFn: Dispatch<SetStateAction<VisualYamlSelectedView>>) => void
-  disableYaml?: boolean
+  selectedView?: VisualYamlSelectedView
+  onChange: (val: VisualYamlSelectedView) => void
+  disableToggle?: boolean
   className?: string
   labels?: {
     visual?: string
@@ -18,10 +18,10 @@ export interface VisualYamlToggleProps {
 }
 
 export function VisualYamlToggle(props: VisualYamlToggleProps): JSX.Element {
-  const { initialSelectedView, beforeOnChange, disableYaml = false, className = '', labels } = props
+  const { selectedView, onChange, disableToggle = false, className = '', labels } = props
 
   const toggleProps: PillToggleProps<VisualYamlSelectedView> = {
-    initialSelectedView,
+    selectedView,
     options: [
       {
         label: labels?.visual || 'VISUAL',
@@ -32,8 +32,8 @@ export function VisualYamlToggle(props: VisualYamlToggleProps): JSX.Element {
         value: VisualYamlSelectedView.YAML
       }
     ],
-    beforeOnChange,
-    disableSwitch: disableYaml,
+    onChange,
+    disableToggle,
     className
   }
 
