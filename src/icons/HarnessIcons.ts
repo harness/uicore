@@ -1140,7 +1140,6 @@ type HarnessIconName =
   | 'setup-api'
   | 'setup-tags'
   | 'smtp'
-  | 'smtp-white'
   | 'skipped'
   | 'spinner'
   | 'stars'
