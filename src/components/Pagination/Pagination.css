@@ -35,3 +35,7 @@
   overflow-y: auto;
   min-width: 60px;
 }
+
+.container {
+  gap: var(--spacing-small);
+}
