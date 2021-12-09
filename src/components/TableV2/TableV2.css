@@ -90,4 +90,8 @@
     z-index: 1;
     touch-action: none;
   }
+
+  .pagination {
+    padding: var(--spacing-medium);
+  }
 }
