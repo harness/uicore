@@ -5,14 +5,7 @@ import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
 import { Icon } from '../../icons/Icon'
-import {
-  Position,
-  PopoverInteractionKind,
-  IInputGroupProps,
-  InputGroup,
-  HTMLInputProps,
-  Classes
-} from '@blueprintjs/core'
+import { Position, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '../../core/Types'
@@ -28,9 +21,6 @@ import {
   EXPRESSION_INPUT_PLACEHOLDER
 } from './MultiTypeInputUtils'
 import { MultiTypeInputMenu } from './MultiTypeInputMenu'
-import { Popover } from '../Popover/Popover'
-import { Container } from '../Container/Container'
-import { Text } from '../Text/Text'
 
 type AcceptableValue = boolean | string | number | SelectOption | MultiSelectOption[]
 
@@ -161,42 +151,26 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
         />
       )}
-      <Popover
-        interactionKind={PopoverInteractionKind.HOVER}
-        position={Position.TOP}
-        className={cx(Classes.DARK, css.inputTypeBtnPopover)}>
-        <Button
-          noStyling
-          className={cx(props.mini ? css.miniBtn : css.btn, css[type], btnClassName)}
-          tooltip={
-            disabled ? undefined : (
-              <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
-            )
-          }
-          onClick={e => e.preventDefault()}
-          disabled={disabled}
-          tooltipProps={{
-            minimal: true,
-            position: Position.BOTTOM_RIGHT,
-            interactionKind: PopoverInteractionKind.CLICK,
-            popoverClassName: css.popover,
-            className: css.wrapper,
-            lazy: true
-          }}>
-          <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
-        </Button>
-        <Container className={css.inputTypeTooltipContainer} padding="medium">
-          <Layout.Horizontal margin={{ bottom: 'xsmall' }}>
-            <Text font={{ weight: 'bold' }} color={'white'}>
-              {'INPUT TYPE: '}
-            </Text>
-            <Text color={'white'} style={{ textTransform: 'capitalize', whiteSpace: 'pre' }}>
-              {` ${type.toLowerCase()}`}
-            </Text>
-          </Layout.Horizontal>
-          <Text color={'white'}>{'Click to change input type'}</Text>
-        </Container>
-      </Popover>
+      <Button
+        noStyling
+        className={cx(props.mini ? css.miniBtn : css.btn, css[type], btnClassName)}
+        tooltip={
+          disabled ? undefined : (
+            <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
+          )
+        }
+        onClick={e => e.preventDefault()}
+        disabled={disabled}
+        tooltipProps={{
+          minimal: true,
+          position: Position.BOTTOM_RIGHT,
+          interactionKind: PopoverInteractionKind.CLICK,
+          popoverClassName: css.popover,
+          className: css.wrapper,
+          lazy: true
+        }}>
+        <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
+      </Button>
     </Layout.Horizontal>
   )
 }

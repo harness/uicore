@@ -167,19 +167,6 @@
   }
 }
 
-.inputTypeTooltipContainer {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 10px;
-  line-height: 15px;
-  letter-spacing: 0.04em;
-  color: var(--grey-0);
-}
-
-.inputTypeBtnPopover {
-  margin-right: 14px;
-}
-
 .btn {
   all: unset;
   background: var(--grey-100);
