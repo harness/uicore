@@ -34,6 +34,7 @@ import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
 import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
+import BasicDeployment from './basic-deployment.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
@@ -538,8 +539,8 @@ import Service from './service.svg'
 import Services from './services.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
-import Smtp from './smtp.svg'
 import Skipped from './skipped.svg'
+import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
@@ -639,6 +640,7 @@ type HarnessIconName =
   | 'barrier-close'
   | 'barrier-open-with-links'
   | 'barrier-open'
+  | 'basic-deployment'
   | 'bin-main'
   | 'bitbucket-blue'
   | 'bitbucket-new'
@@ -1143,8 +1145,8 @@ type HarnessIconName =
   | 'services'
   | 'setup-api'
   | 'setup-tags'
-  | 'smtp'
   | 'skipped'
+  | 'smtp'
   | 'spinner'
   | 'stars'
   | 'status-pending'
@@ -1244,6 +1246,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'barrier-close': BarrierClose,
   'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
+  'basic-deployment': BasicDeployment,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
@@ -1748,8 +1751,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   services: Services,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
-  smtp: Smtp,
   skipped: Skipped,
+  smtp: Smtp,
   spinner: Spinner,
   stars: Stars,
   'status-pending': StatusPending,
