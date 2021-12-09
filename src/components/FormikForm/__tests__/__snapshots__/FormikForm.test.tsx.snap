@@ -677,33 +677,24 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                 </div>
               </div>
               <span
-                class="bp3-popover-wrapper bp3-dark inputTypeBtnPopover"
+                class="bp3-popover-wrapper wrapper"
               >
                 <span
                   class="bp3-popover-target"
                 >
-                  <span
-                    class="bp3-popover-wrapper wrapper"
+                  <button
+                    class="btn FIXED"
                   >
                     <span
-                      class="bp3-popover-target"
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
                     >
-                      <button
-                        class="btn FIXED"
-                        tabindex="0"
-                      >
-                        <span
-                          class="bp3-icon main"
-                          data-icon="fixed-input"
-                        >
-                          <svg
-                            height="12"
-                            width="12"
-                          />
-                        </span>
-                      </button>
+                      <svg
+                        height="12"
+                        width="12"
+                      />
                     </span>
-                  </span>
+                  </button>
                 </span>
               </span>
             </div>
@@ -813,33 +804,24 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
                 </div>
               </div>
               <span
-                class="bp3-popover-wrapper bp3-dark inputTypeBtnPopover"
+                class="bp3-popover-wrapper wrapper"
               >
                 <span
                   class="bp3-popover-target"
                 >
-                  <span
-                    class="bp3-popover-wrapper wrapper"
+                  <button
+                    class="btn FIXED"
                   >
                     <span
-                      class="bp3-popover-target"
+                      class="bp3-icon main"
+                      data-icon="fixed-input"
                     >
-                      <button
-                        class="btn FIXED"
-                        tabindex="0"
-                      >
-                        <span
-                          class="bp3-icon main"
-                          data-icon="fixed-input"
-                        >
-                          <svg
-                            height="12"
-                            width="12"
-                          />
-                        </span>
-                      </button>
+                      <svg
+                        height="12"
+                        width="12"
+                      />
                     </span>
-                  </span>
+                  </button>
                 </span>
               </span>
             </div>
