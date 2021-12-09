@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Story, Meta } from '@storybook/react'
+import { noop } from 'lodash-es'
 
 import { TableV2, TableProps } from './TableV2'
 
@@ -39,6 +40,21 @@ Basic.args = {
     {
       name: 'User 2',
       age: 25
+    },
+    {
+      name: 'User 3',
+      age: 25
+    },
+    {
+      name: 'User 4',
+      age: 25
     }
-  ]
+  ],
+  pagination: {
+    itemCount: 100,
+    pageCount: 10,
+    pageSize: 10,
+    gotoPage: noop,
+    pageIndex: 0
+  }
 }
