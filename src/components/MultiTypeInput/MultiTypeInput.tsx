@@ -161,10 +161,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
         />
       )}
-      <Popover
-        interactionKind={PopoverInteractionKind.HOVER}
-        position={Position.TOP}
-        className={cx(Classes.DARK, css.inputTypeBtnPopover)}>
+      <Popover interactionKind={PopoverInteractionKind.HOVER} position={Position.TOP} className={Classes.DARK}>
         <Button
           noStyling
           className={cx(props.mini ? css.miniBtn : css.btn, css[type], btnClassName)}

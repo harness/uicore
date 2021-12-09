@@ -176,10 +176,6 @@
   color: var(--grey-0);
 }
 
-.inputTypeBtnPopover {
-  margin-right: 14px;
-}
-
 .btn {
   all: unset;
   background: var(--grey-100);
