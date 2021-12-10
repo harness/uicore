@@ -15,5 +15,6 @@ Basic.args = {
   options: [
     { label: 'Label 1', value: 'label-1' },
     { label: 'Label 2', value: 'label-2' }
-  ]
+  ],
+  selectedView: 'label-1'
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { VisualYamlToggle, VisualYamlToggleProps } from './VisualYamlToggle'
+import { VisualYamlToggle, VisualYamlToggleProps, VisualYamlSelectedView } from './VisualYamlToggle'
 
 export default {
   title: 'Components / VisualYamlToggle',
@@ -9,3 +9,6 @@ export default {
 } as Meta
 
 export const Basic: Story<VisualYamlToggleProps> = args => <VisualYamlToggle {...args} />
+Basic.args = {
+  selectedView: VisualYamlSelectedView.VISUAL
+}
