@@ -8,7 +8,7 @@ export interface PillToggleOption<T> {
 }
 
 export interface PillToggleProps<T> {
-  selectedView?: T
+  selectedView: T
   options: [PillToggleOption<T>, PillToggleOption<T>]
   onChange: (val: T) => void
   disableToggle?: boolean
@@ -17,17 +17,16 @@ export interface PillToggleProps<T> {
 
 export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement => {
   const { selectedView, onChange, disableToggle = false, className = '', options } = props
-  const view = selectedView ?? options[0].value
   return (
     <div className={cx(css.optionBtns, className)}>
       <div
         data-name="toggle-option-one"
         className={cx(css.item, {
-          [css.selected]: view === options[0].value,
+          [css.selected]: selectedView === options[0].value,
           [css.disabledMode]: disableToggle
         })}
         onClick={() => {
-          if (view === options[0].value) {
+          if (selectedView === options[0].value) {
             return
           }
           onChange(options[0].value)
@@ -39,11 +38,11 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
       <div
         data-name="toggle-option-two"
         className={cx(css.item, {
-          [css.selected]: view === options[1].value,
+          [css.selected]: selectedView === options[1].value,
           [css.disabledMode]: disableToggle
         })}
         onClick={() => {
-          if (view === options[1].value) {
+          if (selectedView === options[1].value) {
             return
           }
           onChange(options[1].value)
