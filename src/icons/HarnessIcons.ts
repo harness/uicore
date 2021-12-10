@@ -250,6 +250,7 @@ import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
 import Info from './info.svg'
 import Infrastructure from './infrastructure.svg'
+import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Integration from './integration.svg'
@@ -484,6 +485,7 @@ import SecretSsh from './secret-ssh.svg'
 import SecretsIcon from './secrets-icon.svg'
 import SendData from './send-data.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
+import ServiceArtifactoryInverse from './service-artifactory-inverse.svg'
 import ServiceArtifactory from './service-artifactory.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
 import ServiceAwsLamda from './service-aws-lamda.svg'
@@ -856,6 +858,7 @@ type HarnessIconName =
   | 'info-messaging'
   | 'info'
   | 'infrastructure'
+  | 'initialize-step-inverse'
   | 'initialize-step'
   | 'insight-view'
   | 'integration'
@@ -1090,6 +1093,7 @@ type HarnessIconName =
   | 'secrets-icon'
   | 'send-data'
   | 'service-appdynamics'
+  | 'service-artifactory-inverse'
   | 'service-artifactory'
   | 'service-aws-code-deploy'
   | 'service-aws-lamda'
@@ -1462,6 +1466,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'info-messaging': InfoMessaging,
   info: Info,
   infrastructure: Infrastructure,
+  'initialize-step-inverse': InitializeStepInverse,
   'initialize-step': InitializeStep,
   'insight-view': InsightView,
   integration: Integration,
@@ -1696,6 +1701,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'secrets-icon': SecretsIcon,
   'send-data': SendData,
   'service-appdynamics': ServiceAppdynamics,
+  'service-artifactory-inverse': ServiceArtifactoryInverse,
   'service-artifactory': ServiceArtifactory,
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
   'service-aws-lamda': ServiceAwsLamda,
