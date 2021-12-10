@@ -7,7 +7,7 @@ export enum VisualYamlSelectedView {
 }
 
 export interface VisualYamlToggleProps {
-  selectedView?: VisualYamlSelectedView
+  selectedView: VisualYamlSelectedView
   onChange: (val: VisualYamlSelectedView) => void
   disableToggle?: boolean
   className?: string
