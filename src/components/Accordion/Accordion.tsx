@@ -32,8 +32,8 @@ function AccordionPanel(
       data-open={isOpen}
       id={addDomId ? `${id}-panel` : undefined}>
       <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, props.summaryClassName)}>
-        <div className={css.chevron} />
         <div className={cx({ [css.label]: typeof summary === 'string' })}>{summary}</div>
+        <div className={css.chevron} />
       </div>
       <Collapse {...collapseProps} className={cx(css.collapse, collapseProps?.className)} isOpen={isOpen}>
         <div data-testid={`${id}-details`} className={cx(css.details, props.detailsClassName)}>
