@@ -191,7 +191,7 @@
     transform: translateX(-18px);
     background: var(--white);
     border-radius: var(--spacing-2);
-    border-right: 1px solid var(--grey-100);
+    border-right: 1px solid var(--bp3-intent-color, var(--grey-200));
     position: absolute;
   }
 
@@ -213,6 +213,10 @@
 
   &.EXPRESSION {
     color: var(--orange-700);
+  }
+
+  &:hover {
+    background: var(--primary-1);
   }
 
   &:disabled,
