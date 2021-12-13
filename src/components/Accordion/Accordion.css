@@ -27,11 +27,11 @@
       font-weight: 600;
       font-size: var(--font-size-normal);
       color: var(--black);
-      padding-left: var(--spacing-medium) !important;
     }
   }
 
   .chevron {
+    padding-left: var(--spacing-7) !important;
     width: var(--spacing-4);
     height: 6px;
     position: relative;
