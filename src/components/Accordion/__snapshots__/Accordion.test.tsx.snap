@@ -15,13 +15,13 @@ exports[`<Accordion /> tests snapshot test 1`] = `
         data-testid="panel-1-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 1
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -43,13 +43,13 @@ exports[`<Accordion /> tests snapshot test 1`] = `
         data-testid="panel-2-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 2
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -80,13 +80,13 @@ exports[`<Accordion /> tests toggle works between panels: Panel 1 open 1`] = `
         data-testid="panel-1-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 1
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -116,13 +116,13 @@ exports[`<Accordion /> tests toggle works between panels: Panel 1 open 1`] = `
         data-testid="panel-2-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 2
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -153,13 +153,13 @@ exports[`<Accordion /> tests toggle works between panels: Panel 2 open 1`] = `
         data-testid="panel-1-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 1
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -189,13 +189,13 @@ exports[`<Accordion /> tests toggle works between panels: Panel 2 open 1`] = `
         data-testid="panel-2-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 2
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -234,13 +234,13 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 closed 1`] = `
         data-testid="panel-1-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 1
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -270,13 +270,13 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 closed 1`] = `
         data-testid="panel-2-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 2
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -307,13 +307,13 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 open 1`] = `
         data-testid="panel-1-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 1
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
@@ -343,13 +343,13 @@ exports[`<Accordion /> tests toggle works for same panel: Panel 1 open 1`] = `
         data-testid="panel-2-summary"
       >
         <div
-          class="chevron"
-        />
-        <div
           class="label"
         >
           Panel 2
         </div>
+        <div
+          class="chevron"
+        />
       </div>
       <div
         class="bp3-collapse collapse"
