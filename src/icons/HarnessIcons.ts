@@ -539,6 +539,7 @@ import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
 import Service from './service.svg'
 import Services from './services.svg'
+import Settings from './settings.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import Skipped from './skipped.svg'
@@ -1147,6 +1148,7 @@ type HarnessIconName =
   | 'service-terraform'
   | 'service'
   | 'services'
+  | 'settings'
   | 'setup-api'
   | 'setup-tags'
   | 'skipped'
@@ -1755,6 +1757,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-terraform': ServiceTerraform,
   service: Service,
   services: Services,
+  settings: Settings,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
   skipped: Skipped,
