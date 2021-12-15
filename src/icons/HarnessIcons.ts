@@ -182,6 +182,8 @@ import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
+import DockerStepInverse from './docker-step-inverse.svg'
+import DockerStep from './docker-step.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
@@ -215,7 +217,9 @@ import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
 import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
+import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
+import GcsStepInverse from './gcs-step-inverse.svg'
 import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitBranchExisting from './git-branch-existing.svg'
@@ -453,7 +457,11 @@ import ResetIcon from './reset-icon.svg'
 import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
 import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
+import RestoreCacheGcsStepInverse from './restore-cache-gcs-step-inverse.svg'
+import RestoreCacheGcsStep from './restore-cache-gcs-step.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
+import RestoreCacheS3StepInverse from './restore-cache-s3-step-inverse.svg'
+import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
@@ -465,7 +473,13 @@ import RunPipeline from './run-pipeline.svg'
 import RunStep from './run-step.svg'
 import RunTestsStep from './run-tests-step.svg'
 import RuntimeInput from './runtime-input.svg'
+import S3StepInverse from './s3-step-inverse.svg'
+import S3Step from './s3-step.svg'
+import SaveCacheGcsStepInverse from './save-cache-gcs-step-inverse.svg'
+import SaveCacheGcsStep from './save-cache-gcs-step.svg'
 import SaveCacheGcs from './save-cache-gcs.svg'
+import SaveCacheS3StepInverse from './save-cache-s3-step-inverse.svg'
+import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
 import Script from './script.svg'
@@ -791,6 +805,8 @@ type HarnessIconName =
   | 'description'
   | 'digital-ocean'
   | 'docker-hub-step'
+  | 'docker-step-inverse'
+  | 'docker-step'
   | 'down'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
@@ -824,7 +840,9 @@ type HarnessIconName =
   | 'functions'
   | 'gcp-kms'
   | 'gcp'
+  | 'gcr-step-inverse'
   | 'gcr-step'
+  | 'gcs-step-inverse'
   | 'gcs-step'
   | 'gear'
   | 'git-branch-existing'
@@ -1062,7 +1080,11 @@ type HarnessIconName =
   | 'resource-center-community-icon'
   | 'resource-center-docs-icon'
   | 'resources-icon'
+  | 'restore-cache-gcs-step-inverse'
+  | 'restore-cache-gcs-step'
   | 'restore-cache-gcs'
+  | 'restore-cache-s3-step-inverse'
+  | 'restore-cache-s3-step'
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'right-bar-notification'
@@ -1074,7 +1096,13 @@ type HarnessIconName =
   | 'run-step'
   | 'run-tests-step'
   | 'runtime-input'
+  | 's3-step-inverse'
+  | 's3-step'
+  | 'save-cache-gcs-step-inverse'
+  | 'save-cache-gcs-step'
   | 'save-cache-gcs'
+  | 'save-cache-s3-step-inverse'
+  | 'save-cache-s3-step'
   | 'save-cache-s3'
   | 'save-cache-step'
   | 'script'
@@ -1400,6 +1428,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   description: Description,
   'digital-ocean': DigitalOcean,
   'docker-hub-step': DockerHubStep,
+  'docker-step-inverse': DockerStepInverse,
+  'docker-step': DockerStep,
   down: Down,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
@@ -1433,7 +1463,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   functions: Functions,
   'gcp-kms': GcpKms,
   gcp: Gcp,
+  'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
+  'gcs-step-inverse': GcsStepInverse,
   'gcs-step': GcsStep,
   gear: Gear,
   'git-branch-existing': GitBranchExisting,
@@ -1671,7 +1703,11 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'resource-center-community-icon': ResourceCenterCommunityIcon,
   'resource-center-docs-icon': ResourceCenterDocsIcon,
   'resources-icon': ResourcesIcon,
+  'restore-cache-gcs-step-inverse': RestoreCacheGcsStepInverse,
+  'restore-cache-gcs-step': RestoreCacheGcsStep,
   'restore-cache-gcs': RestoreCacheGcs,
+  'restore-cache-s3-step-inverse': RestoreCacheS3StepInverse,
+  'restore-cache-s3-step': RestoreCacheS3Step,
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
@@ -1683,7 +1719,13 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'run-step': RunStep,
   'run-tests-step': RunTestsStep,
   'runtime-input': RuntimeInput,
+  's3-step-inverse': S3StepInverse,
+  's3-step': S3Step,
+  'save-cache-gcs-step-inverse': SaveCacheGcsStepInverse,
+  'save-cache-gcs-step': SaveCacheGcsStep,
   'save-cache-gcs': SaveCacheGcs,
+  'save-cache-s3-step-inverse': SaveCacheS3StepInverse,
+  'save-cache-s3-step': SaveCacheS3Step,
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
   script: Script,
