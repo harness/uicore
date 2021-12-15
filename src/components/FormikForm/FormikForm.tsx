@@ -1110,15 +1110,17 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     ...rest
   } = restProps
   const value = get(formik?.values, name, '')
+  const valueType = getMultiTypeFromValue(value)
   const customTextInputProps: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'> = useMemo(
     () => ({
       ...multiTextInputProps?.textProps,
       name,
       value,
       placeholder,
-      onBlur: () => formik?.setFieldTouched(name)
+      onBlur: () => formik?.setFieldTouched(name),
+      ...(valueType !== MultiTypeInputType.FIXED ? { type: 'text' } : {}) // set type text of input and expressions
     }),
-    [multiTextInputProps?.textProps]
+    [multiTextInputProps?.textProps, valueType]
   )
 
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
@@ -1139,8 +1141,13 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
         onChange={(valueChange, valueType, type) => {
           let valueToBePassed = valueChange
           const inputFieldType = multiTextInputProps?.textProps?.type
-          if (inputFieldType === 'number' && valueChange && typeof valueChange === 'string') {
-            // if the type is a number, propagate the value as a number
+          if (
+            inputFieldType === 'number' &&
+            valueChange &&
+            typeof valueChange === 'string' &&
+            type === MultiTypeInputType.FIXED
+          ) {
+            // if the type is a number, propagate the value as a number and type is Fixed
             valueToBePassed = parseFloat(valueChange)
           }
           formik?.setFieldValue(name, valueToBePassed)
