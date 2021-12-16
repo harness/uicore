@@ -8,6 +8,5 @@
     { "type": "refactor", "section": "Others", "hidden": false },
     { "type": "perf", "section": "Others", "hidden": false },
     { "type": "test", "section": "Others", "hidden": false }
-  ],
-  "preMajor": true
+  ]
 }
