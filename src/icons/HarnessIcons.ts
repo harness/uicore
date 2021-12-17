@@ -543,8 +543,8 @@ import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
 import ServiceRedis from './service-redis.svg'
 import ServiceServiceS3 from './service-service-s3.svg'
+import ServiceServicenowInverse from './service-servicenow-inverse.svg'
 import ServiceServicenow from './service-servicenow.svg'
-import ServiceServicenowInverse from './service-servicenow_inverse.svg'
 import ServiceSlack from './service-slack.svg'
 import ServiceSplunkWithName from './service-splunk-with-name.svg'
 import ServiceSplunk from './service-splunk.svg'
@@ -1166,8 +1166,8 @@ type HarnessIconName =
   | 'service-prometheus'
   | 'service-redis'
   | 'service-service-s3'
+  | 'service-servicenow-inverse'
   | 'service-servicenow'
-  | 'service-servicenow_inverse'
   | 'service-slack'
   | 'service-splunk-with-name'
   | 'service-splunk'
@@ -1789,8 +1789,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-prometheus': ServicePrometheus,
   'service-redis': ServiceRedis,
   'service-service-s3': ServiceServiceS3,
+  'service-servicenow-inverse': ServiceServicenowInverse,
   'service-servicenow': ServiceServicenow,
-  'service-servicenow_inverse': ServiceServicenowInverse,
   'service-slack': ServiceSlack,
   'service-splunk-with-name': ServiceSplunkWithName,
   'service-splunk': ServiceSplunk,
