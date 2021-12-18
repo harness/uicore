@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/wings-software/uicore/compare/v1.1.0...v1.2.0) (2021-12-18)
+
+
+### Features
+
+* [CI-3117]: ci step icons 28px ([#536](https://github.com/wings-software/uicore/issues/536)) ([0a2fbf3](https://github.com/wings-software/uicore/commit/0a2fbf3b8659a8f8fb1dac1671dd8e7e34f3da29))
+
 ## [1.1.0](https://github.com/wings-software/uicore/compare/v1.0.0...v1.1.0) (2021-12-17)
 
 
