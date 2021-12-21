@@ -512,6 +512,7 @@ import ServiceBugsnag from './service-bugsnag.svg'
 import ServiceCircleci from './service-circleci.svg'
 import ServiceCloudformation from './service-cloudformation.svg'
 import ServiceCloudwatch from './service-cloudwatch.svg'
+import ServiceCustomConnector from './service-custom-connector.svg'
 import ServiceDatadog from './service-datadog.svg'
 import ServiceDeployment from './service-deployment.svg'
 import ServiceDockerhub from './service-dockerhub.svg'
@@ -1758,6 +1759,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-circleci': ServiceCircleci,
   'service-cloudformation': ServiceCloudformation,
   'service-cloudwatch': ServiceCloudwatch,
+  'service-custom-connector': ServiceCustomConnector,
   'service-datadog': ServiceDatadog,
   'service-deployment': ServiceDeployment,
   'service-dockerhub': ServiceDockerhub,
