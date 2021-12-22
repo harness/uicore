@@ -31,7 +31,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       flex
       className={cx(css.container, css[size], className)}
       padding={{ left: 'xlarge', right: 'xlarge' }}
-      data-testid={testId}>
+      data-testid={testId}
+      background={Color.WHITE}>
       <Layout.Vertical>
         {breadcrumbs && <div className={css.breadcrumbsDiv}>{breadcrumbs}</div>}
         {typeof title === 'string' ? (
