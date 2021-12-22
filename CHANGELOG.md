@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/wings-software/uicore/compare/v1.3.0...v1.4.0) (2021-12-22)
+
+
+### Bug Fixes
+
+* [GTM-635]: fix Page Header default background to be white ([#540](https://github.com/wings-software/uicore/issues/540)) ([b552bf0](https://github.com/wings-software/uicore/commit/b552bf0f40d3e6b1f10b6c8c52a89a68ff77b4f8))
+
 ## [1.3.0](https://github.com/wings-software/uicore/compare/v1.2.0...v1.3.0) (2021-12-22)
 
 
