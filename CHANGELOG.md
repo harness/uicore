@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/wings-software/uicore/compare/v1.4.0...v1.5.0) (2021-12-23)
+
+
+### Features
+
+* [CVNG-3955]: Custom connector icon ([#538](https://github.com/wings-software/uicore/issues/538)) ([69e9515](https://github.com/wings-software/uicore/commit/69e95151d0a4ebf6ab3e0b2bfd2c2c45382b7cab))
+
 ## [1.4.0](https://github.com/wings-software/uicore/compare/v1.3.0...v1.4.0) (2021-12-22)
 
 
