@@ -87,7 +87,7 @@ export const Carousel: React.FC<CarouselProps> = ({
             </div>
           )
         ) : (
-          <span onClick={() => setActiveSlide(activeSlide - 1)}>{nextElement} </span>
+          <span onClick={() => setActiveSlide(activeSlide + 1)}>{nextElement} </span>
         )}
       </div>
       {!hideIndicators && <div className={css.carouselIndicators}>{indicators}</div>}

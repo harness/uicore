@@ -2,7 +2,6 @@
   padding-top: var(--spacing-4) !important;
   padding-bottom: 10px !important;
   border-bottom: 1px solid var(--grey-200);
-  background: var(--white);
   position: relative;
   z-index: 2;
 
