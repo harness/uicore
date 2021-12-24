@@ -28,10 +28,5 @@ export function getErrorInfoFromErrorObject(error: Record<string, any>, errorArr
   if (errorArrayAsPriority && errorArrayValStr) {
     return errorArrayValStr
   }
-  if (error?.data?.message) {
-    return error.data.message
-  } else if (!isEmpty(error?.data?.errors)) {
-    return errorArrayValStr
-  }
-  return error?.message || ''
+  return error?.data?.message || errorArrayValStr || error?.message || ''
 }
