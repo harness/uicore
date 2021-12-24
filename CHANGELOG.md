@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/wings-software/uicore/compare/v1.5.0...v1.6.0) (2021-12-24)
+
+
+### Bug Fixes
+
+* [PL-20896]: Add optional param for err info object ([#541](https://github.com/wings-software/uicore/issues/541)) ([7fda57d](https://github.com/wings-software/uicore/commit/7fda57d050836c1fa8c2092d832e4e0def0003b0))
+
 ## [1.5.0](https://github.com/wings-software/uicore/compare/v1.4.0...v1.5.0) (2021-12-23)
 
 
