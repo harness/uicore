@@ -15,12 +15,23 @@ export function shouldShowError(e: any): boolean {
 }
 
 /* TODO Don't see proper types for this new errors format, replace Record<string, any> with more stricter type when available */
-export function getErrorInfoFromErrorObject(error: Record<string, any>): string {
-  /* TODO @vardan extend this to N errors instead of first error */
+export function getErrorInfoFromErrorObject(error: Record<string, any>, errorArrayAsPriority?: boolean): string {
+  let errorArrayValStr = ''
+  if (!isEmpty(error?.data?.errors) && Array.isArray(error?.data?.errors)) {
+    const arrVal = error.data.errors as Array<{ fieldId: string; error: string }>
+    errorArrayValStr = arrVal
+      .map(err => {
+        return `${err.fieldId} ${err.error}`
+      })
+      .join(', ')
+  }
+  if (errorArrayAsPriority && errorArrayValStr) {
+    return errorArrayValStr
+  }
   if (error?.data?.message) {
     return error.data.message
   } else if (!isEmpty(error?.data?.errors)) {
-    return `${error?.data.errors[0]?.fieldId} ${error?.data.errors[0]?.error}`
+    return errorArrayValStr
   }
   return error?.message || ''
 }
