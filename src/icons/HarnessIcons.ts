@@ -1136,6 +1136,7 @@ type HarnessIconName =
   | 'service-circleci'
   | 'service-cloudformation'
   | 'service-cloudwatch'
+  | 'service-custom-connector'
   | 'service-datadog'
   | 'service-deployment'
   | 'service-dockerhub'
