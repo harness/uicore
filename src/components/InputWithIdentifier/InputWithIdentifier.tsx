@@ -45,6 +45,8 @@ export interface InputWithIdentifierProps {
 
 // https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
 export function getIdentifierFromName(str: string): string {
+  if (!str) return ''
+
   return str
     .trim()
     .replace(/[^0-9a-zA-Z_$ ]/g, '') // remove special chars except _ and $
