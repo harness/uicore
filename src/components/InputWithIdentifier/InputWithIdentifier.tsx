@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
-import { get } from 'lodash-es'
+import { get, isNil } from 'lodash-es'
 import cx from 'classnames'
 import { FormikTooltipContext } from '../FormikForm/FormikTooltipContext'
 
@@ -45,6 +45,8 @@ export interface InputWithIdentifierProps {
 
 // https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
 export function getIdentifierFromName(str: string): string {
+  if (isNil(str)) return ''
+
   return str
     .trim()
     .replace(/[^0-9a-zA-Z_$ ]/g, '') // remove special chars except _ and $
