@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/wings-software/uicore/compare/v1.7.0...v1.8.0) (2022-01-04)
+
+
+### Bug Fixes
+
+* [PIE-2023]: safe check added in getIdentifierFromName util ([#543](https://github.com/wings-software/uicore/issues/543)) ([c3efde0](https://github.com/wings-software/uicore/commit/c3efde0e2778235b2e919b63cf4c28953c875d5f))
+
 ## [1.7.0](https://github.com/wings-software/uicore/compare/v1.6.0...v1.7.0) (2021-12-27)
 
 
