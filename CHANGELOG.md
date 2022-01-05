@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/wings-software/uicore/compare/v1.9.0...v1.10.0) (2022-01-05)
+
+
+### Bug Fixes
+
+* [PL-20931]: margin bottom for modal error handler ([#545](https://github.com/wings-software/uicore/issues/545)) ([1ebc66a](https://github.com/wings-software/uicore/commit/1ebc66a01c8439177dbb4659757c1de0b18e7917))
+
 ## [1.9.0](https://github.com/wings-software/uicore/compare/v1.8.0...v1.9.0) (2022-01-05)
 
 
