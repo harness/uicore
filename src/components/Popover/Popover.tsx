@@ -1,7 +1,8 @@
 import React from 'react'
+import type { IPopoverProps } from '@blueprintjs/core'
 import { Popover as BPopover } from '@blueprintjs/core'
 
-export interface PopoverProps extends React.ComponentProps<typeof BPopover> {
+export interface PopoverProps extends IPopoverProps {
   /** If true, render BPopover in dark background and light font color */
   isDark?: boolean
 
@@ -12,6 +13,6 @@ export interface PopoverProps extends React.ComponentProps<typeof BPopover> {
   dataTooltipId?: string
 }
 
-export function Popover(props: PopoverProps) {
+export function Popover(props: PopoverProps): React.ReactElement {
   return <BPopover {...props} />
 }
