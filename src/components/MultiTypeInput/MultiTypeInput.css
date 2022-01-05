@@ -192,7 +192,7 @@
 
   &::before {
     content: '';
-    height: 28px;
+    height: 30px;
     left: var(--spacing-4);
     width: var(--spacing-3);
     transform: translateX(-18px);
