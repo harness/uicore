@@ -205,6 +205,7 @@ export const ModalErrorHandler: React.FC<ModalErrorHandlerProps> = ({ bind, styl
     <Container
       background={background}
       padding="medium"
+      margin={{ bottom: 'medium' }}
       flex
       style={{ padding: '10px 20px', ...style }}
       border={{ color: borderColor, bottom: true }}>
