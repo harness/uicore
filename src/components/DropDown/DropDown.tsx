@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '../../core/Color'
@@ -143,7 +143,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
   const isDisabled = (internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
   const isSelected = !!activeItem?.value
 
-  const debouncedQuery = useCallback(
+  const debouncedQuery = React.useCallback(
     debounce(query => {
       if (Array.isArray(items)) {
         setDropDownItems(items.filter(item => item.label.toLowerCase().includes(query.toLowerCase())))
