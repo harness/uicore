@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '../../core/Color'
@@ -93,14 +93,6 @@ export const DropDown: React.FC<DropDownProps> = props => {
 
   React.useEffect(() => {
     if (Array.isArray(items)) {
-      setDropDownItems(items.filter(item => item.label.toLowerCase().includes(internalQuery.toLowerCase())))
-    } else if (typeof items === 'function') {
-      onQueryChange?.(internalQuery)
-    }
-  }, [internalQuery])
-
-  React.useEffect(() => {
-    if (Array.isArray(items)) {
       setDropDownItems([...items])
     } else if (typeof items === 'function' && !loading) {
       // Do not enter this block if already loading
@@ -151,6 +143,18 @@ export const DropDown: React.FC<DropDownProps> = props => {
   const isDisabled = (internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
   const isSelected = !!activeItem?.value
 
+  const debouncedQuery = useCallback(
+    debounce(query => {
+      if (Array.isArray(items)) {
+        setDropDownItems(items.filter(item => item.label.toLowerCase().includes(query.toLowerCase())))
+      } else if (typeof items === 'function') {
+        onQueryChange?.(query)
+      }
+      setInternalQuery(query)
+    }, 300),
+    [setDropDownItems, onQueryChange]
+  )
+
   return (
     <Select
       itemRenderer={(item: SelectOption, rendererProps: IItemRendererProps) =>
@@ -165,8 +169,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
         leftElement: <Icon name={'thinner-search'} size={12} color={Color.GREY_500} />,
         placeholder: 'Search'
       }}
-      query={internalQuery}
-      onQueryChange={debounce(setInternalQuery, 300)}
+      onQueryChange={debouncedQuery}
       popoverProps={{
         targetTagName: 'div',
         wrapperTagName: 'div',
