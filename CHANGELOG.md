@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/wings-software/uicore/compare/v1.10.0...v1.11.0) (2022-01-07)
+
+
+### Bug Fixes
+
+* [PIE-1525]: Search input infinite calls ([#440](https://github.com/wings-software/uicore/issues/440)) ([6afe80a](https://github.com/wings-software/uicore/commit/6afe80aec03715b3aa1660c86c8b5371a703c403))
+
 ## [1.10.0](https://github.com/wings-software/uicore/compare/v1.9.0...v1.10.0) (2022-01-05)
 
 
