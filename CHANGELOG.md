@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/wings-software/uicore/compare/v1.11.0...v1.12.0) (2022-01-07)
+
+
+### Features
+
+* [PL-21230]: Launch icon ([#547](https://github.com/wings-software/uicore/issues/547)) ([d3da2a3](https://github.com/wings-software/uicore/commit/d3da2a33f6abac9b78e7de2c8ac7af1da9cbd3db))
+
 ## [1.11.0](https://github.com/wings-software/uicore/compare/v1.10.0...v1.11.0) (2022-01-07)
 
 
