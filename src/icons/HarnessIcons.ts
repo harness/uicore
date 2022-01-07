@@ -263,6 +263,7 @@ import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
+import Launch from './launch.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
@@ -887,6 +888,7 @@ type HarnessIconName =
   | 'key'
   | 'kustamize'
   | 'kustomizeparam'
+  | 'launch'
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
@@ -1511,6 +1513,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   key: Key,
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
+  launch: Launch,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
