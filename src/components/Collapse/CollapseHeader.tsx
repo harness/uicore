@@ -1,4 +1,5 @@
 import React from 'react'
+import { noop } from 'lodash-es'
 import { Color } from '../../core/Color'
 import { Icon, IconProps, IconName } from '../../icons/Icon'
 import css from './CollapseHeader.css'
@@ -17,6 +18,7 @@ export interface CollapseHeaderProps {
   onRemove?: () => void
   className?: string
   onToggleOpen: (isOpen?: boolean) => void
+  enableIconClick?: boolean
 }
 
 export function CollapseHeader(props: CollapseHeaderProps) {
@@ -29,15 +31,35 @@ export function CollapseHeader(props: CollapseHeaderProps) {
     iconProps,
     expandedIcon,
     collapsedIcon,
-    className
+    className,
+    enableIconClick
   } = props
+
+  const handleClick = (e: React.MouseEvent<HTMLHeadingElement, globalThis.MouseEvent>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    onToggleOpen(!isOpen)
+  }
+
   return (
     <Container className={cx(css.main, className)}>
-      <Container className={css.leftSection} onClick={() => onToggleOpen(!isOpen)}>
+      <Container className={css.leftSection} onClick={!enableIconClick ? handleClick : noop}>
         {isOpen ? (
-          <Icon name={expandedIcon || 'main-caret-down'} color={Color.GREY_400} size={10} {...iconProps} />
+          <Icon
+            name={expandedIcon || 'main-caret-down'}
+            color={Color.GREY_400}
+            size={10}
+            {...iconProps}
+            onClick={enableIconClick ? () => onToggleOpen(!isOpen) : noop}
+          />
         ) : (
-          <Icon name={collapsedIcon || 'main-caret-right'} color={Color.GREY_400} size={10} {...iconProps} />
+          <Icon
+            name={collapsedIcon || 'main-caret-right'}
+            color={Color.GREY_400}
+            size={10}
+            {...iconProps}
+            onClick={enableIconClick ? () => onToggleOpen(!isOpen) : noop}
+          />
         )}
         {typeof heading === 'string' ? <Text className={css.title}>{heading}</Text> : heading}
       </Container>
