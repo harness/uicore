@@ -297,17 +297,9 @@
 }
 
 .learnMore {
-  position: absolute;
-  right: 0;
-  top: 0;
   width: 150px;
   background-color: var(--white);
-
-  &[data-open='true'] {
-    width: 415px;
-    border-radius: 4px 0 4px 4px;
-    box-shadow: var(--elevation-4);
-  }
+  position: relative;
 
   .header {
     background-color: var(--grey-100);
@@ -351,4 +343,35 @@
       }
     }
   }
+}
+
+.learnMoreWrapper {
+  height: 1px;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  :global(.bp3-popover-target) {
+    display: block;
+  }
+}
+
+.learnMorePopover {
+  width: 415px;
+  border-radius: 4px 0 4px 4px;
+  box-shadow: var(--elevation-4) !important;
+
+  .learnMore {
+    width: 100%;
+  }
+}
+
+.learnMoreEmpty {
+  display: block;
+  height: 1px;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
