@@ -83,6 +83,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     name,
     disabled,
     multitypeInputValue,
+    mini,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -113,7 +114,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
 
   return (
     <Layout.Horizontal
-      className={cx(props.mini ? css.mini : css.main, {
+      className={cx(mini ? css.mini : css.main, {
         [css.disabled]: type === MultiTypeInputType.RUNTIME || disabled
       })}
       width={width}
@@ -153,7 +154,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       )}
       <Button
         noStyling
-        className={cx(props.mini ? css.miniBtn : css.btn, css[type], btnClassName)}
+        className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
         tooltip={
           disabled ? undefined : (
             <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />

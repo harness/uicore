@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import { Menu } from '@blueprintjs/core'
+import { Menu, Popover } from '@blueprintjs/core'
 import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as TypeIconSize } from './MultiTypeInputUtils'
 import { Icon } from '../../icons/Icon'
 import { I18nResource } from '../../core/Types'
@@ -51,25 +51,38 @@ export function LearnMore(props: LearnMoreProps): React.ReactElement {
     setDontShowAgain(status => !status)
   }
 
-  return (
-    <div className={css.learnMore} data-open={isOpen} onClick={e => e.stopPropagation()}>
+  const popoverContent = (
+    <div className={css.learnMore} onClick={e => e.stopPropagation()}>
       <div className={css.header} onClick={headerClick}>
         <span>Learn more</span>
-        {isOpen ? (
-          <Button icon="cross" onClick={() => setIsOpen(false)} variation={ButtonVariation.ICON} />
-        ) : (
-          <Icon name="more" />
-        )}
+        <Button icon="cross" onClick={() => setIsOpen(false)} variation={ButtonVariation.ICON} />
       </div>
-      {isOpen ? (
-        <div className={css.body}>
-          <div className={css.content}>
-            <Icon name={TypeIcon[type]} data-type={type} size={TypeIconSize[type] * 1.8} />
-            <span>{helperText[type]}</span>
-          </div>
-          <Checkbox checked={dontShowAgain} onChange={handleChange} label="Don't show again" />
+      <div className={css.body}>
+        <div className={css.content}>
+          <Icon name={TypeIcon[type]} data-type={type} size={TypeIconSize[type] * 1.8} />
+          <span>{helperText[type]}</span>
         </div>
-      ) : null}
+        <Checkbox checked={dontShowAgain} onChange={handleChange} label="Don't show again" />
+      </div>
+    </div>
+  )
+
+  return (
+    <div className={css.learnMore} onClick={e => e.stopPropagation()}>
+      <div className={css.header} onClick={headerClick}>
+        <span>Learn more</span>
+        <Icon name="more" />
+        <Popover
+          isOpen={isOpen}
+          target={<div className={css.learnMoreEmpty} />}
+          content={popoverContent}
+          minimal
+          position="bottom-right"
+          popoverClassName={css.learnMorePopover}
+          className={css.learnMoreWrapper}
+          modifiers={{ offset: { offset: '0px 0px' }, arrow: { enabled: false } }}
+        />
+      </div>
     </div>
   )
 }
