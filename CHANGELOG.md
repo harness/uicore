@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/wings-software/uicore/compare/v1.13.0...v1.14.0) (2022-01-10)
+
+
+### Others
+
+* [PIE-2272]: new error icons added as per design team requirements ([#549](https://github.com/wings-software/uicore/issues/549)) ([2024775](https://github.com/wings-software/uicore/commit/20247752031dbf465e66b8d7ed2b86c4239ae777))
+
 ## [1.13.0](https://github.com/wings-software/uicore/compare/v1.12.0...v1.13.0) (2022-01-10)
 
 
