@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/wings-software/uicore/compare/v1.12.0...v1.13.0) (2022-01-10)
+
+
+### Features
+
+* use popover within MutliTypeInput ([#550](https://github.com/wings-software/uicore/issues/550)) ([b3b70ed](https://github.com/wings-software/uicore/commit/b3b70ed490de16307a45120eaba5eb9072fbe192))
+
 ## [1.12.0](https://github.com/wings-software/uicore/compare/v1.11.0...v1.12.0) (2022-01-07)
 
 
