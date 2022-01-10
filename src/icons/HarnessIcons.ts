@@ -192,6 +192,8 @@ import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
 import Environment from './environment.svg'
 import Environments from './environments.svg'
+import ErrorOutline from './error-outline.svg'
+import ErrorTransparentNoOutline from './error-transparent-no-outline.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
@@ -817,6 +819,8 @@ type HarnessIconName =
   | 'entity'
   | 'environment'
   | 'environments'
+  | 'error-outline'
+  | 'error-transparent-no-outline'
   | 'execution-abort'
   | 'execution-history'
   | 'execution-input'
@@ -1442,6 +1446,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   entity: Entity,
   environment: Environment,
   environments: Environments,
+  'error-outline': ErrorOutline,
+  'error-transparent-no-outline': ErrorTransparentNoOutline,
   'execution-abort': ExecutionAbort,
   'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
