@@ -129,7 +129,9 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
           isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
         }}
       />
-      {formik.errors[idName] ? <FormError errorMessage={get(formik.errors, idName)} /> : null}
+      {!formik.errors[inputName] && formik.errors[idName] ? (
+        <FormError className={css.idError} errorMessage={get(formik.errors, idName)} />
+      ) : null}
       {formik.values[currentEditField]?.length >= maxInput ? (
         <FormError
           errorMessage={`Limit of ${maxInput} characters is reached for ${

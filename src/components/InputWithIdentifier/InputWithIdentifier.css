@@ -14,4 +14,8 @@
     text-overflow: ellipsis;
     color: var(--primary-7);
   }
+
+  .idError {
+    margin-top: -8px;
+  }
 }
