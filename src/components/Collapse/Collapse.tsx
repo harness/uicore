@@ -24,6 +24,7 @@ function Collapse(props: CollapseProps) {
     collapseClassName,
     collapseHeaderClassName,
     onToggleOpen,
+    enableIconClick = false,
     ...rest
   } = props
   const [isOpen, setIsOpen] = useState(propsIsOpen ?? false)
@@ -48,6 +49,7 @@ function Collapse(props: CollapseProps) {
         expandedIcon={expandedIcon}
         className={cx(css.header, collapseHeaderClassName)}
         collapsedIcon={collapsedIcon}
+        enableIconClick={enableIconClick}
       />
       <div className={css.collapse}>
         <BpCollapse {...rest} isOpen={isOpen}>
