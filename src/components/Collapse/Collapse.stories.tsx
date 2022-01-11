@@ -60,3 +60,28 @@ export const Basic: Story<CollapseProps> = args => {
     </Layout.Horizontal>
   )
 }
+
+export const IconCollapse: Story<CollapseProps> = args => {
+  return (
+    <Layout.Horizontal spacing="small">
+      <Collapse
+        isOpen={true}
+        heading={'This enables collapse/expand through icon click Click on Icon to collapse.'}
+        isRemovable={true}
+        onRemove={() => {
+          // eslint-disable-next-line no-alert
+          alert('This component will get removed')
+        }}
+        enableIconClick={true}
+        {...args}>
+        Hello world The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog The quick
+        brown fox jumps over the lazy dog <br />
+        The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog <br />
+        The quick brown fox jumps over the lazy dogThe quick brown fox jumps over the lazy dog The quick brown fox jumps
+        over the lazy dog The quick brown fox jumps over the lazy dog <br />
+        The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog The quick brown fox
+        jumps over the lazy dog The quick brown fox jumps over the lazy dog
+      </Collapse>
+    </Layout.Horizontal>
+  )
+}
