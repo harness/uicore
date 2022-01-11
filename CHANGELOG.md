@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/wings-software/uicore/compare/v1.14.0...v1.15.0) (2022-01-11)
+
+
+### Features
+
+* Added a prop  enableIconClick in Collapse component ([#548](https://github.com/wings-software/uicore/issues/548)) ([75d9941](https://github.com/wings-software/uicore/commit/75d99419a35c9dff35f9ba29c126f581d11e6ef9))
+
 ## [1.14.0](https://github.com/wings-software/uicore/compare/v1.13.0...v1.14.0) (2022-01-10)
 
 
