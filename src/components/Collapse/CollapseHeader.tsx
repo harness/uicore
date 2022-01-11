@@ -44,23 +44,13 @@ export function CollapseHeader(props: CollapseHeaderProps) {
   return (
     <Container className={cx(css.main, className)}>
       <Container className={css.leftSection} onClick={!enableIconClick ? handleClick : noop}>
-        {isOpen ? (
-          <Icon
-            name={expandedIcon || 'main-caret-down'}
-            color={Color.GREY_400}
-            size={10}
-            {...iconProps}
-            onClick={enableIconClick ? () => onToggleOpen(!isOpen) : noop}
-          />
-        ) : (
-          <Icon
-            name={collapsedIcon || 'main-caret-right'}
-            color={Color.GREY_400}
-            size={10}
-            {...iconProps}
-            onClick={enableIconClick ? () => onToggleOpen(!isOpen) : noop}
-          />
-        )}
+        <Icon
+          name={isOpen ? expandedIcon || 'main-caret-down' : collapsedIcon || 'main-caret-right'}
+          color={Color.GREY_400}
+          size={10}
+          {...iconProps}
+          onClick={enableIconClick ? () => onToggleOpen(!isOpen) : noop}
+        />
         {typeof heading === 'string' ? <Text className={css.title}>{heading}</Text> : heading}
       </Container>
 
