@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://github.com/harness/uicore/compare/v1.15.0...v1.16.0) (2022-01-12)
+
+
+### Others
+
+* [PL-21953]: update package name to @harness/uicore ([#553](https://github.com/harness/uicore/issues/553)) ([595294c](https://github.com/harness/uicore/commit/595294cf9886f00f62bf18135119cd68868a4365))
+* [PL-21953]: update repo name ([#554](https://github.com/harness/uicore/issues/554)) ([ba98cd4](https://github.com/harness/uicore/commit/ba98cd4c67441adb7fa0898c88eba14864e04751))
+
 ## [1.15.0](https://github.com/wings-software/uicore/compare/v1.14.0...v1.15.0) (2022-01-11)
 
 
