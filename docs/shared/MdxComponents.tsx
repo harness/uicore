@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 
 const CodeBlock = dynamic(() => import('./CodeBlock'), { ssr: false })
 
-const BASE_URL = 'https://github.com/wings-software/uicore/edit/master/'
+const BASE_URL = 'https://github.com/harness/uicore/edit/master/'
 
 const Title = (props: React.ComponentProps<typeof Heading>) => {
   const children = props.children as string
