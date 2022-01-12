@@ -22,7 +22,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { StatusBar }  from '@wings-software/uicore'`}</code>
+                <code>{`import { StatusBar }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

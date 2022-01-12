@@ -34,7 +34,7 @@ export default {
             <Title>DropDown</Title>
             <Subtitle>
               <pre>
-                <code>{`import {DropDown} from '@wings-software/uicore'`}</code>
+                <code>{`import {DropDown} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

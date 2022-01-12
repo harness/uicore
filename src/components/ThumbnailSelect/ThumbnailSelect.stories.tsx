@@ -22,7 +22,7 @@ export default {
             <Title>ThumbnailSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import {ThumbnailSelect} from '@wings-software/uicore'`}</code>
+                <code>{`import {ThumbnailSelect} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

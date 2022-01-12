@@ -22,7 +22,7 @@ export default {
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import {FieldArray} from '@wings-software/uicore'`}</code>
+                  <code>{`import {FieldArray} from '@harness/uicore'`}</code>
                 </pre>
                 <pre>
                   <code>{`interface Props {

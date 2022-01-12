@@ -25,7 +25,7 @@ export default {
             <Title>FormikCollapsableSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import { FormikCollapsableSelect } from '@wings-software/uicore'`}</code>
+                <code>{`import { FormikCollapsableSelect } from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

@@ -27,7 +27,7 @@ export default {
             <Subtitle>
               <pre>
                 <code>{`
-import { Breadcrumbs }  from '@wings-software/uicore'
+import { Breadcrumbs }  from '@harness/uicore'
 export interface Breadcrumb {
   url: string
   label: string

@@ -22,7 +22,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { Container }  from '@wings-software/uicore'`}</code>
+                <code>{`import { Container }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>

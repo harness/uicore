@@ -25,7 +25,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { CollapseList, CollapseListPanel  }  from '@wings-software/uicore'`}</code>
+                <code>{`import { CollapseList, CollapseListPanel  }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

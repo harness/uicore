@@ -1,5 +1,5 @@
 {
-  "name": "@wings-software/uicore",
+  "name": "@harness/uicore",
   "version": "1.15.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",

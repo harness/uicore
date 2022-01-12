@@ -27,7 +27,7 @@ export default {
             </Description>
             <Subtitle>
               <pre>
-                <code>{`import { Toggle }  from '@wings-software/uicore'`}</code>
+                <code>{`import { Toggle }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

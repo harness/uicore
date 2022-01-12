@@ -25,7 +25,7 @@ export default {
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import {SimpleTagInput} from '@wings-software/uicore'`}</code>
+                  <code>{`import {SimpleTagInput} from '@harness/uicore'`}</code>
                 </pre>
               </>
             </Subtitle>

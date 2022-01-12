@@ -23,7 +23,7 @@ export default {
             <Title>MultiSelectDropDown</Title>
             <Subtitle>
               <pre>
-                <code>{`import {MultiSelectDropDown} from '@wings-software/uicore'`}</code>
+                <code>{`import {MultiSelectDropDown} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

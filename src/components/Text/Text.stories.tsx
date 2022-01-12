@@ -21,7 +21,7 @@ export default {
             <Title>Text</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Text} from '@wings-software/uicore'`}</code>
+                <code>{`import {Text} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{`When lineClamp prop is provided, Text will handle string truncation automatically. Note that the truncation only happens when there is not enough space to render the text content.

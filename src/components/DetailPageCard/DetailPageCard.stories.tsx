@@ -20,7 +20,7 @@ export default {
             <Title>DetailPageCard</Title>
             <Subtitle>
               <pre>
-                <code>{`import { DetailPageCard }  from '@wings-software/uicore'`}</code>
+                <code>{`import { DetailPageCard }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

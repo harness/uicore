@@ -53,7 +53,7 @@ export default {
             <Title>RadioButtonGroup</Title>
             <Subtitle>
               <pre>
-                <code>{`import { RadioButtonGroup } from '@wings-software/uicore'`}</code>
+                <code>{`import { RadioButtonGroup } from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

@@ -29,7 +29,7 @@ export default {
             </Description>
             <Subtitle>
               <pre>
-                <code>{`import { Checkbox }  from '@wings-software/uicore'`}</code>
+                <code>{`import { Checkbox }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

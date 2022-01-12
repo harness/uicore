@@ -22,7 +22,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { SelectV2 }  from '@wings-software/uicore'`}</code>
+                <code>{`import { SelectV2 }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

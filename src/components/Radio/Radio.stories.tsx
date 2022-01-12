@@ -21,7 +21,7 @@ export default {
             <Title>Radio</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Radio} from '@wings-software/uicore'`}</code>
+                <code>{`import {Radio} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 
