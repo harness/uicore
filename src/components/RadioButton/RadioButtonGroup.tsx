@@ -1,4 +1,4 @@
-import React, { FormEvent, ReactElement, ReactNode, useMemo, useState } from 'react'
+import React, { FormEvent, ReactElement, ReactNode, useEffect, useMemo, useState } from 'react'
 import { omitStyledProps, styledClasses, StyledProps } from '../../styled-props/StyledProps'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 
@@ -28,6 +28,10 @@ export function RadioButtonGroup({
 }: RadioButtonGroupProps): ReactElement {
   const [value, setValue] = useState<string | number>(selectedValue)
   const groupName = useMemo<string>(() => name || `RadioButtonGroup${Math.floor(Math.random() * 10000)}`, [name])
+
+  useEffect(() => {
+    setValue(selectedValue)
+  }, [selectedValue])
 
   const optionOnChangeHandler: RadioButtonProps['onChange'] = e => {
     setValue(e.target.value)
