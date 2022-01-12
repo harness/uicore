@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/harness/uicore/compare/v1.17.0...v1.18.0) (2022-01-12)
+
+
+### Bug Fixes
+
+* [PL-21390]: Selected Value Update in RadioButtonGroup ([#557](https://github.com/harness/uicore/issues/557)) ([fface8d](https://github.com/harness/uicore/commit/fface8d1344062e0235ae34b11d813dca5c3b276))
+
 ## [1.17.0](https://github.com/harness/uicore/compare/v1.16.0...v1.17.0) (2022-01-12)
 
 ## [1.16.0](https://github.com/harness/uicore/compare/v1.15.0...v1.16.0) (2022-01-12)
