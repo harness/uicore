@@ -31,7 +31,7 @@
     "puppeteer-storyshots": "yarn run build-storybook && yarn run do-puppeteer-storyshots"
   },
   "license": "UNLICENSED",
-  "repository": "https://github.com/wings-software/uicore",
+  "repository": "https://github.com/harness/uicore",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
