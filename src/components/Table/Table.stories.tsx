@@ -24,7 +24,7 @@ export default {
             <Title>Table</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Table} from '@wings-software/uicore'`}</code>
+                <code>{`import {Table} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{`Table uses react-table underneath to render a table.<br/>

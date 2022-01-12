@@ -29,7 +29,7 @@ export default {
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import { CardBody }  from '@wings-software/uicore'`}</code>
+                  <code>{`import { CardBody }  from '@harness/uicore'`}</code>
                 </pre>
                 <pre>
                   <code>{`interface CardProps {

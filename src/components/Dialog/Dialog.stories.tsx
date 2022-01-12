@@ -22,7 +22,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { Dialog }  from '@wings-software/uicore'`}</code>
+                <code>{`import { Dialog }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

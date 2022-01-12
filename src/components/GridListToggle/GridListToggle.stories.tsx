@@ -20,7 +20,7 @@ export default {
           <>
             <Title>GridListToggle</Title>
             <Subtitle>
-              <code>{`import {GridListToggle} from '@wings-software/uicore'`}</code>
+              <code>{`import {GridListToggle} from '@harness/uicore'`}</code>
             </Subtitle>
             <Description>
               {'GridListToggle component can be used to switch between Grid and List view inside listing pages'}

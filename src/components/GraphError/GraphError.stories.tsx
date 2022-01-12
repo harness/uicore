@@ -22,7 +22,7 @@ export default {
             <Title>GraphError</Title>
             <Subtitle>
               <pre>
-                <code>{`import {GraphError} from '@wings-software/uicore'`}</code>
+                <code>{`import {GraphError} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

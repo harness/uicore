@@ -23,7 +23,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { Collapse }  from '@wings-software/uicore'`}</code>
+                <code>{`import { Collapse }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

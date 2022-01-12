@@ -22,7 +22,7 @@ export default {
             <Title>GroupedThumbnailSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import {GroupedThumbnailSelect} from '@wings-software/uicore'`}</code>
+                <code>{`import {GroupedThumbnailSelect} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

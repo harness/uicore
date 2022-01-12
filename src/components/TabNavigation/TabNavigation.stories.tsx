@@ -22,7 +22,7 @@ export default {
             <Title>TabNavigation</Title>
             <Subtitle>
               <pre>
-                <code>{`import {TabNavigation} from '@wings-software/uicore'`}</code>
+                <code>{`import {TabNavigation} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

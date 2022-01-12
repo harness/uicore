@@ -53,7 +53,7 @@ The component is built on top of uicore's standard select component.
                   re-render the original drop down menu. To do that first import
                 </Text>
                 <pre>
-                  <code>{`import { SelectWithSubviewContext } from '@wings-software/uikit'`}</code>
+                  <code>{`import { SelectWithSubviewContext } from '@harness/uikit'`}</code>
                 </pre>
                 <Text>and use the context api</Text>
                 <pre>
@@ -65,7 +65,7 @@ The component is built on top of uicore's standard select component.
                 </Text>
                 <h2>Import</h2>
                 <pre>
-                  <code>{`import {SelectWithSubview} from '@wings-software/uicore'`}</code>
+                  <code>{`import {SelectWithSubview} from '@harness/uicore'`}</code>
                 </pre>
               </>
             </Subtitle>

@@ -20,7 +20,7 @@ export default {
             <Title>Label</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Label} from '@wings-software/uicore'`}</code>
+                <code>{`import {Label} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

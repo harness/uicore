@@ -23,7 +23,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { CodeBlock }  from '@wings-software/uicore'`}</code>
+                <code>{`import { CodeBlock }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

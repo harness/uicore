@@ -22,7 +22,7 @@ export default {
             <Title>Select</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Select} from '@wings-software/uicore'`}</code>
+                <code>{`import {Select} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{'SelectSize:small,medium,large'}</Description>

@@ -20,7 +20,7 @@ export default {
             <Title>Carousel</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Carousel} from '@wings-software/uicore'`}</code>
+                <code>{`import {Carousel} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

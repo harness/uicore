@@ -24,7 +24,7 @@ export default {
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import { ButtonGroup, OptionsButtonGroup }  from '@wings-software/uicore'`}</code>
+                  <code>{`import { ButtonGroup, OptionsButtonGroup }  from '@harness/uicore'`}</code>
                 </pre>
                 <h3>ButtonGroup</h3>
                 <Text>This component takes Button components as its children</Text>

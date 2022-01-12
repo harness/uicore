@@ -22,7 +22,7 @@ export default {
             <Title>CategorizedSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import {CategorizedSelect} from '@wings-software/uicore'`}</code>
+                <code>{`import {CategorizedSelect} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

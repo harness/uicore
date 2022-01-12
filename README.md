@@ -22,12 +22,12 @@ Build and publish locally
 yarn build && yalc publish
 ```
 
-You'll see the published version like `@wings-software/uicore@0.1.256 published in store.`
+You'll see the published version like `@harness/uicore@0.1.256 published in store.`
 
 Install it in nextgenui
 
 ```
-yalc add @wings-software/uicore@0.1.256
+yalc add @harness/uicore@0.1.256
 ```
 
 Note: The version number must match to whatever was printed on the screen during publish.

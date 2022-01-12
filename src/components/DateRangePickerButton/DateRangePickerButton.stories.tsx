@@ -24,7 +24,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { DateRangePickerButton }  from '@wings-software/uicore'`}</code>
+                <code>{`import { DateRangePickerButton }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

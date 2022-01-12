@@ -23,7 +23,7 @@ export default {
             <Title>Weighted Stack</Title>
             <Subtitle>
               <pre>
-                <code>{`import {WeightedStack} from '@wings-software/uicore'`}</code>
+                <code>{`import {WeightedStack} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             This component renders horizontally stacked bars. Bars are in a weighted-average proportion of their values.

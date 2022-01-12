@@ -23,7 +23,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import {  SparkChart }  from '@wings-software/uicore'`}</code>
+                <code>{`import {  SparkChart }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

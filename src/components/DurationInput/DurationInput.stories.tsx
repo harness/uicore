@@ -22,7 +22,7 @@ export default {
             <Title>DurationInput</Title>
             <Subtitle>
               <pre>
-                <code>{`import {DurationInput} from '@wings-software/uicore'`}</code>
+                <code>{`import {DurationInput} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

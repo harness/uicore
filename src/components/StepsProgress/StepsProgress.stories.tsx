@@ -21,7 +21,7 @@ export default {
             <Title>StepsProgress</Title>
             <Subtitle>
               <pre>
-                <code>{`import {StepsProgress} from '@wings-software/uicore'`}</code>
+                <code>{`import {StepsProgress} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

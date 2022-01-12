@@ -29,7 +29,7 @@ When a link is disabled, all events are ignored.`}</Description>
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import {Link} from '@wings-software/uicore'`}</code>
+                  <code>{`import {Link} from '@harness/uicore'`}</code>
                 </pre>
               </>
             </Subtitle>

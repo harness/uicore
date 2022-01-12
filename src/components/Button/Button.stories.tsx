@@ -20,7 +20,7 @@ export default {
           <>
             <Title>Button</Title>
             <Subtitle>
-              <code>{`import {Button} from '@wings-software/uicore'`}</code>
+              <code>{`import {Button} from '@harness/uicore'`}</code>
             </Subtitle>
             <Description>
               {

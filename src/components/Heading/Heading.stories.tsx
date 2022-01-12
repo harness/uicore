@@ -22,7 +22,7 @@ export default {
             <Title>Heading</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Heading} from '@wings-software/uicore'`}</code>
+                <code>{`import {Heading} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>

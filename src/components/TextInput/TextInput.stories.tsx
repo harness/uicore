@@ -22,7 +22,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { TextInput }  from '@wings-software/uicore'`}</code>
+                <code>{`import { TextInput }  from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

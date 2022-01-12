@@ -21,7 +21,7 @@ export default {
             <Title>SwitchIcon</Title>
             <Subtitle>
               <pre>
-                <code>{`import {SwitchIcon} from '@wings-software/uicore'`}</code>
+                <code>{`import {SwitchIcon} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 

@@ -21,7 +21,7 @@ export default {
             <Title>Tag</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Tag} from '@wings-software/uicore'`}</code>
+                <code>{`import {Tag} from '@harness/uicore'`}</code>
               </pre>
             </Subtitle>
 
