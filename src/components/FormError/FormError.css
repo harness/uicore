@@ -1,22 +1,7 @@
-.errorDiv {
-  margin-top: var(--spacing-small);
-  display: flex;
-}
-
 .error {
-  font-size: var(--font-size-normal);
-  color: var(--red-600);
-  margin-left: var(--spacing-xsmall);
   word-break: break-word;
 }
 
-.errorIcon {
-  :global(.bp3-icon:first-child) {
-    color: var(--red-600);
-  }
-}
-
 .errorTextIcon {
-  color: var(--red-600);
   margin-top: var(--spacing-tiny) !important;
 }
