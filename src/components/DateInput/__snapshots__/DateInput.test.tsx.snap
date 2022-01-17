@@ -211,10 +211,10 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
         />
       </div>
       <div
-        class="horizontal layout-spacing-undefined main margin margin-top margin-top-small"
+        class="errorDiv"
       >
         <span
-          class="bp3-icon main errorTextIcon margin margin-right margin-right-xsmall intent intent-danger"
+          class="bp3-icon main errorTextIcon intent intent-danger"
           data-icon="circle-cross"
         >
           <svg
@@ -222,11 +222,11 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
             width="12"
           />
         </span>
-        <p
-          class="font main error color color-red600"
+        <span
+          class="error"
         >
           Not a valid Date Expression
-        </p>
+        </span>
       </div>
     </div>
     <div
