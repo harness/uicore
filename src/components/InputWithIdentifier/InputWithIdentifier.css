@@ -16,6 +16,6 @@
   }
 
   .idError {
-    margin-top: -8px;
+    margin-top: calc(-1 * var(--spacing-small));
   }
 }
