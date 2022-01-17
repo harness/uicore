@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.19.0](https://github.com/harness/uicore/compare/v1.18.0...v1.19.0) (2022-01-17)
+
+
+### Features
+
+* [GIT-361]: add pruned icons ([#558](https://github.com/harness/uicore/issues/558)) ([a93b126](https://github.com/harness/uicore/commit/a93b126987362faf7232bda39fc7686f1ac952bc))
+
 ## [1.18.0](https://github.com/harness/uicore/compare/v1.17.0...v1.18.0) (2022-01-12)
 
 
