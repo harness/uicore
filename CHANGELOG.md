@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/harness/uicore/compare/v1.19.0...v1.20.0) (2022-01-17)
+
+
+### Bug Fixes
+
+* [PL-21212]: fixed alignment of error icon ([#551](https://github.com/harness/uicore/issues/551)) ([4268697](https://github.com/harness/uicore/commit/4268697f374a598bb3b26cd715df392d8645ecfc))
+
 ## [1.19.0](https://github.com/harness/uicore/compare/v1.18.0...v1.19.0) (2022-01-17)
 
 
