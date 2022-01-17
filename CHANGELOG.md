@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.21.0](https://github.com/harness/uicore/compare/v1.20.0...v1.21.0) (2022-01-17)
+
+
+### Bug Fixes
+
+* [PL-20844]: Fixed alignment and visibility-condition issues of Identifier-error ([#552](https://github.com/harness/uicore/issues/552)) ([7fe1635](https://github.com/harness/uicore/commit/7fe16356377e31a70e0c5cc1f50ad1c723d2735e))
+
 ## [1.20.0](https://github.com/harness/uicore/compare/v1.19.0...v1.20.0) (2022-01-17)
 
 
