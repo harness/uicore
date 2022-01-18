@@ -1,4 +1,11 @@
 /*
+ * Copyright 2021 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+/*
   Make sure all color changes also reflect in `src/core/Color.ts`, `src/styled-props/color.css` and `src/styled-props/background.css` as well.
   A StyledProps based component can define color/background color by using React/TypeScript props directly like
   <Component color="red250"/>, <Component background="grey250"/>
