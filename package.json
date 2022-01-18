@@ -28,6 +28,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "do-puppeteer-storyshots": "./node_modules/.bin/jest --projects=./storyshots-puppeteer",
+    "prepare": "husky install",
     "puppeteer-storyshots": "yarn run build-storybook && yarn run do-puppeteer-storyshots"
   },
   "license": "UNLICENSED",
@@ -94,7 +95,7 @@
     "fork-ts-checker-webpack-plugin": "^6.0.8",
     "formik": "1.5.8",
     "glob": "^7.1.4",
-    "husky": "^4.3.6",
+    "husky": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "jest-image-snapshot": "^4.5.1",
@@ -141,13 +142,10 @@
     "react-dom": "17.0.2",
     "postcss": "8.3.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "node ./scripts/lint-commit-message.js \"$(cat $HUSKY_GIT_PARAMS)\""
-    }
-  },
   "lint-staged": {
+    "*": [
+      "sh scripts/license/stamp.sh"
+    ],
     "src/**/*.{js,jsx}": [
       "sh -c 'exit 1'"
     ],
