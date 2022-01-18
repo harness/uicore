@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.22.0](https://github.com/harness/uicore/compare/v1.21.0...v1.22.0) (2022-01-18)
+
+
+### Features
+
+* [ONP-258]: stamp source files with Polyform Shield header ([#559](https://github.com/harness/uicore/issues/559)) ([9f4a161](https://github.com/harness/uicore/commit/9f4a161142d958251fc63aacb6483880c2d324ea))
+
 ## [1.21.0](https://github.com/harness/uicore/compare/v1.20.0...v1.21.0) (2022-01-17)
 
 
