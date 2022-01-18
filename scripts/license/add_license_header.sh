@@ -234,13 +234,6 @@ function write_file_double_hyphen {
 ##  Execution Functions   ##
 ############################
 
-function print_possible_alternates {
-  POTENTIAL_ALTERNATE=$(find . -name "$(basename "$FILE")")
-  if [ ! -z "$POTENTIAL_ALTERNATE" ]; then
-    echo "Has the file been moved to         $POTENTIAL_ALTERNATE"
-  fi
-}
-
 function handle_directory {
   FILE_EXTENSIONS=$(awk 'NR>1 {print $1}' "$SUPPORTED_EXTENSIONS_FILE" | paste -s -d '|' -)
   FILES_IN_DIR=$(find "$FILE" -type f | grep -E "\.($FILE_EXTENSIONS)$")
@@ -277,9 +270,7 @@ PREVIOUSLY_OVERWRITTEN_HEADER=""
 
 while read -r FILE; do
   if [ ! -e "$FILE" ]; then
-    echo "ERROR: Skipping file as it does not exist $FILE"
-    print_possible_alternates
-    echo
+    debug "Skipping file as it does not exist $FILE"
     continue
   elif [ -d "$FILE" ]; then
     handle_directory
