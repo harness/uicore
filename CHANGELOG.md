@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.23.0](https://github.com/harness/uicore/compare/v1.22.0...v1.23.0) (2022-01-19)
+
+
+### Features
+
+* [ONP-257]: add git hook for stamping files with license ([#560](https://github.com/harness/uicore/issues/560)) ([ceaeb8f](https://github.com/harness/uicore/commit/ceaeb8fb84246fb07d233d2d366d46c49befa1cc))
+* add simple log viewer ([#563](https://github.com/harness/uicore/issues/563)) ([761bd90](https://github.com/harness/uicore/commit/761bd9027c41f1d32cb3dd9384daddcadeebd183))
+
+
+### Bug Fixes
+
+* [ONP-257]: no license stamping output for deleted files ([#561](https://github.com/harness/uicore/issues/561)) ([f095343](https://github.com/harness/uicore/commit/f0953436ae258db1893b9bd13b0a4d339554c4d6))
+
 ## [1.22.0](https://github.com/harness/uicore/compare/v1.21.0...v1.22.0) (2022-01-18)
 
 
