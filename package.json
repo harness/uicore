@@ -40,9 +40,11 @@
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
+    "anser": "^2.1.0",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
     "lodash-es": "^4.17.15",
+    "marked": "^3.0.8",
     "masonry-layout": "^4.2.2",
     "moment": "^2.25.3",
     "mustache": "^4.2.0",
@@ -50,8 +52,7 @@
     "react-dom": "^17.0.2",
     "react-draggable": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-table": "^7.0.4",
-    "marked": "^3.0.8"
+    "react-table": "^7.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -85,6 +86,7 @@
     "@types/react-table": "7.0.13",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
+    "anser": "^2.1.0",
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",

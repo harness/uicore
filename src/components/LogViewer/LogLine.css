@@ -1,0 +1,184 @@
+/*
+ * Copyright 2021 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+.logLine {
+  display: inline-block;
+  min-height: 20px;
+  min-width: 1px;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+:global {
+  .ansi-black-fg {
+    color: black !important;
+  }
+
+  .ansi-black-bg {
+    background-color: black !important;
+  }
+
+  .ansi-red-fg {
+    color: #b00 !important;
+  }
+
+  .ansi-red-bg {
+    background-color: #b00 !important;
+  }
+
+  .ansi-green-fg {
+    color: #0b0 !important;
+  }
+
+  .ansi-green-bg {
+    background-color: #0b0 !important;
+  }
+
+  .ansi-yellow-fg {
+    color: #bb0 !important;
+  }
+
+  .ansi-yellow-bg {
+    background-color: #bb0 !important;
+  }
+
+  .ansi-blue-fg {
+    color: #00b !important;
+  }
+
+  .ansi-blue-bg {
+    background-color: #00b !important;
+  }
+
+  .ansi-magenta-fg {
+    color: #b0b !important;
+  }
+
+  .ansi-magenta-bg {
+    background-color: #b0b !important;
+  }
+
+  .ansi-cyan-fg {
+    color: #0bb !important;
+  }
+
+  .ansi-cyan-bg {
+    background-color: #0bb !important;
+  }
+
+  .ansi-white-fg {
+    color: white !important;
+  }
+
+  .ansi-white-bg {
+    background-color: white !important;
+  }
+
+  .ansi-bright-black-fg {
+    color: #555 !important;
+  }
+
+  .ansi-bright-black-bg {
+    background-color: #555 !important;
+  }
+
+  .ansi-bright-red-fg {
+    color: #f55 !important;
+  }
+
+  .ansi-bright-red-bg {
+    background-color: #f55 !important;
+  }
+
+  .ansi-bright-green-fg {
+    color: lime !important;
+  }
+
+  .ansi-bright-green-bg {
+    background-color: lime !important;
+  }
+
+  .ansi-bright-yellow-fg {
+    color: #ff5 !important;
+  }
+
+  .ansi-bright-yellow-bg {
+    background-color: #ff5 !important;
+  }
+
+  .ansi-bright-blue-fg {
+    color: #55f !important;
+  }
+
+  .ansi-bright-blue-bg {
+    background-color: #55f !important;
+  }
+
+  .ansi-bright-magenta-fg {
+    color: #f5f !important;
+  }
+
+  .ansi-bright-magenta-bg {
+    background-color: #f5f !important;
+  }
+
+  .ansi-bright-cyan-fg {
+    color: #5ff !important;
+  }
+
+  .ansi-bright-cyan-bg {
+    background-color: #5ff !important;
+  }
+
+  .ansi-bright-white-fg {
+    color: white !important;
+  }
+
+  .ansi-bright-white-bg {
+    background-color: white !important;
+  }
+
+  a.ansi-decoration-link {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .ansi-decoration-bold {
+    font-weight: bold !important;
+  }
+
+  .ansi-decoration-dim {
+    opacity: 0.5 !important;
+  }
+  .ansi-decoration-italic {
+    font-style: italic !important;
+  }
+
+  .ansi-decoration-underline {
+    text-decoration: underline !important;
+  }
+
+  .ansi-decoration-blink {
+    animation: blinker 1s linear infinite;
+  }
+
+  .ansi-decoration-hidden {
+    opacity: 0 !important;
+  }
+
+  .ansi-decoration-strikethrough {
+    text-decoration: line-through !important;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+}
