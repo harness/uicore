@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://github.com/harness/uicore/compare/v1.23.0...v1.24.0) (2022-01-19)
+
+
+### Bug Fixes
+
+* [ONP-257]: run stamp script in bash ([#564](https://github.com/harness/uicore/issues/564)) ([83ee78f](https://github.com/harness/uicore/commit/83ee78f3d44b665fb38c27e7fa359b2a527eb442))
+
 ## [1.23.0](https://github.com/harness/uicore/compare/v1.22.0...v1.23.0) (2022-01-19)
 
 
