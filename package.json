@@ -146,7 +146,7 @@
   },
   "lint-staged": {
     "*": [
-      "sh scripts/license/stamp.sh"
+      "scripts/license/stamp.sh"
     ],
     "src/**/*.{js,jsx}": [
       "sh -c 'exit 1'"
