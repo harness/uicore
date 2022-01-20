@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.25.0](https://github.com/harness/uicore/compare/v1.24.0...v1.25.0) (2022-01-20)
+
+
+### Bug Fixes
+
+* [GIT-536]: text overflow in sync status table cell ([#565](https://github.com/harness/uicore/issues/565)) ([9da44e3](https://github.com/harness/uicore/commit/9da44e3d42f9adceeee5d4b71d96a74580245f3d))
+
 ## [1.24.0](https://github.com/harness/uicore/compare/v1.23.0...v1.24.0) (2022-01-19)
 
 
