@@ -173,6 +173,7 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
                   // eslint-disable-next-line react/jsx-key
                   <div
                     {...cell.getCellProps()}
+                    title={`${cell.value}`}
                     className={css.cell}
                     style={{ width: headerGroups[0].headers[index].width }}>
                     {cell.render('Cell')}
