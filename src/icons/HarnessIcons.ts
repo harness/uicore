@@ -11,6 +11,8 @@
  */
 import { FunctionComponent, ElementType } from 'react'
 import { KVO } from 'core/Types'
+import ApplicationIcon from './ApplicationIcon.svg'
+import Clusters from './Clusters.svg'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -640,6 +642,8 @@ import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
+  | 'ApplicationIcon'
+  | 'Clusters'
   | 'Edit'
   | 'Inline'
   | 'Options'
@@ -1269,6 +1273,8 @@ type HarnessIconName =
   | 'zoom-out'
 
 const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
+  ApplicationIcon: ApplicationIcon,
+  Clusters: Clusters,
   Edit: Edit,
   Inline: Inline,
   Options: Options,
