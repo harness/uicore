@@ -72,6 +72,7 @@
     display: inline-block;
     vertical-align: middle;
 
+    padding-right: var(--spacing-medium);
     overflow: hidden;
     text-overflow: ellipsis;
   }
