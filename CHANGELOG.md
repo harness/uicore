@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.27.0](https://github.com/harness/uicore/compare/v1.26.0...v1.27.0) (2022-01-23)
+
+
+### Bug Fixes
+
+* [PIE-1755]: MultiTypeInput - Prevent the click event when enter key pressed in InputGroup ([#567](https://github.com/harness/uicore/issues/567)) ([7155ea8](https://github.com/harness/uicore/commit/7155ea81711405c46ff3a79fe6850e26173c4f1a))
+
 ## [1.26.0](https://github.com/harness/uicore/compare/v1.25.0...v1.26.0) (2022-01-20)
 
 
