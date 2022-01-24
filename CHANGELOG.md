@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.28.0](https://github.com/harness/uicore/compare/v1.27.0...v1.28.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* [PL-15054]: border-radius fix for PageSpinner ([#568](https://github.com/harness/uicore/issues/568)) ([77d52fe](https://github.com/harness/uicore/commit/77d52fe342ea17fa033bafdbb92ab8a7bb5c9ec7))
+
 ## [1.27.0](https://github.com/harness/uicore/compare/v1.26.0...v1.27.0) (2022-01-23)
 
 
