@@ -243,6 +243,7 @@ import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GitopsAgent from './gitops-agent.svg'
+import GitopsApplicationWhite from './gitops-application-white.svg'
 import GitopsApplication from './gitops-application.svg'
 import GitopsClusters from './gitops-clusters.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
@@ -874,6 +875,7 @@ type HarnessIconName =
   | 'gitlab-unselected'
   | 'gitlab'
   | 'gitops-agent'
+  | 'gitops-application-white'
   | 'gitops-application'
   | 'gitops-clusters'
   | 'google-kubernetes-engine'
@@ -1505,6 +1507,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
   'gitops-agent': GitopsAgent,
+  'gitops-application-white': GitopsApplicationWhite,
   'gitops-application': GitopsApplication,
   'gitops-clusters': GitopsClusters,
   'google-kubernetes-engine': GoogleKubernetesEngine,
