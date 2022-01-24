@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.29.0](https://github.com/harness/uicore/compare/v1.28.0...v1.29.0) (2022-01-24)
+
+
+### Others
+
+* added white application icon ([#569](https://github.com/harness/uicore/issues/569)) ([6553978](https://github.com/harness/uicore/commit/6553978ffd2d19119238bac22a7460f854939306))
+
 ## [1.28.0](https://github.com/harness/uicore/compare/v1.27.0...v1.28.0) (2022-01-24)
 
 
