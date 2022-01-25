@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.31.0](https://github.com/harness/uicore/compare/v1.30.0...v1.31.0) (2022-01-25)
+
+
+### Features
+
+* remove error throw from useModal ([#571](https://github.com/harness/uicore/issues/571)) ([628b984](https://github.com/harness/uicore/commit/628b984ba0344336931f049543ce4cabb6496f30))
+
 ## [1.30.0](https://github.com/harness/uicore/compare/v1.29.0...v1.30.0) (2022-01-25)
 
 ## [1.29.0](https://github.com/harness/uicore/compare/v1.28.0...v1.29.0) (2022-01-24)
