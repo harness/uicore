@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.32.0](https://github.com/harness/uicore/compare/v1.31.0...v1.32.0) (2022-01-25)
+
+
+### Features
+
+* Add shield-gears icon ([#573](https://github.com/harness/uicore/issues/573)) ([eb588a3](https://github.com/harness/uicore/commit/eb588a307d3ebeaf8a8b78bdc491b6bb3cb2c8b3))
+
 ## [1.31.0](https://github.com/harness/uicore/compare/v1.30.0...v1.31.0) (2022-01-25)
 
 
