@@ -94,9 +94,5 @@ const ExampleModal = () => {
 }
 
 export const ModalExample = () => {
-  return (
-    <ModalProvider>
-      <ExampleModal />
-    </ModalProvider>
-  )
+  return <ExampleModal />
 }
