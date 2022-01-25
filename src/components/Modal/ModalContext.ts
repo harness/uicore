@@ -22,6 +22,9 @@ declare global {
  */
 export type ModalType = React.FunctionComponent<any>
 
+export const ERR_MSG =
+  'Attempted to call useModal outside of modal context. Make sure your app is rendered inside ModalProvider.'
+
 /**
  * The shape of the modal context
  */
@@ -35,11 +38,7 @@ export interface ModalContextType {
  */
 const invariantViolation = () => {
   if (window.bugsnagClient && typeof window.bugsnagClient.notify === 'function') {
-    window.bugsnagClient.notify(
-      new Error(
-        'Attempted to call useModal outside of modal context. Make sure your app is rendered inside ModalProvider.'
-      )
-    )
+    window.bugsnagClient.notify(new Error(ERR_MSG))
   }
 }
 
