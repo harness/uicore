@@ -12,6 +12,7 @@ import { render, fireEvent, RenderOptions } from '@testing-library/react'
 
 import { ModalProvider } from '../ModalProvider'
 import { useModalHook } from '../useModalHook'
+import { ERR_MSG } from '../ModalContext'
 
 // Helper to render components in modal context
 const renderWithProvider = (ui: React.ReactElement, options?: Omit<RenderOptions, 'queries'>) => {
@@ -25,7 +26,14 @@ const renderWithProvider = (ui: React.ReactElement, options?: Omit<RenderOptions
   }
 }
 
+const notify = jest.fn()
+window.bugsnagClient = { notify }
+
 describe('simple usage', () => {
+  beforeEach(() => {
+    notify.mockReset()
+  })
+
   const App = () => {
     const [showModal, hideModal] = useModalHook(() => (
       <div>
@@ -195,52 +203,8 @@ describe('calling useModal without ModalProvider', () => {
     return null
   }
 
-  test('should throw an error', () => {
-    const consoleError = jest.fn()
-    jest.spyOn(console, 'error').mockImplementation(consoleError)
-
-    expect(() => render(<App />)).toThrow(
-      new Error(
-        'Attempted to call useModal outside of modal context. Make sure your app is rendered inside ModalProvider.'
-      )
-    )
-
-    expect(consoleError).toHaveBeenCalled()
-  })
-})
-
-describe('calling useModal with class component', () => {
-  class Modal extends React.Component {
-    render() {
-      return <div>Modal content</div>
-    }
-  }
-
-  const App = () => {
-    useModalHook(Modal as any)
-
-    return null
-  }
-
-  beforeEach(() => {
-    jest.spyOn(console, 'error')
-    ;(global.console.error as any).mockImplementation(() => void 0)
-  })
-
-  afterEach(() => {
-    ;(global.console.error as any).mockRestore()
-  })
-
-  test('should throw an error', () => {
-    const catchError = jest.fn((e: Event) => e.preventDefault())
-    window.addEventListener('error', catchError)
-
-    expect(() => {
-      renderWithProvider(<App />)
-    }).toThrowError(
-      expect.objectContaining({
-        message: expect.stringMatching(/Only stateless components can be used as an argument to useModal/)
-      })
-    )
+  test('should report an error', () => {
+    render(<App />)
+    expect(notify).toHaveBeenLastCalledWith(new Error(ERR_MSG))
   })
 })

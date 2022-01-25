@@ -7,12 +7,23 @@
 
 import * as React from 'react'
 
+declare global {
+  interface Window {
+    bugsnagClient?: {
+      notify?(e: unknown): void
+    }
+  }
+}
+
 /**
  * Modals are represented as react components
  *
  * This is what gets passed to useModal as the first argument.
  */
 export type ModalType = React.FunctionComponent<any>
+
+export const ERR_MSG =
+  'Attempted to call useModal outside of modal context. Make sure your app is rendered inside ModalProvider.'
 
 /**
  * The shape of the modal context
@@ -26,9 +37,9 @@ export interface ModalContextType {
  * Throw error when ModalContext is used outside of context provider
  */
 const invariantViolation = () => {
-  throw new Error(
-    'Attempted to call useModal outside of modal context. Make sure your app is rendered inside ModalProvider.'
-  )
+  if (window.bugsnagClient && typeof window.bugsnagClient.notify === 'function') {
+    window.bugsnagClient.notify(new Error(ERR_MSG))
+  }
 }
 
 /**
