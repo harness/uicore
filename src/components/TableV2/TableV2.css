@@ -71,9 +71,6 @@
   .cell {
     display: inline-block;
     vertical-align: middle;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   [role='columnheader'].resizable {
