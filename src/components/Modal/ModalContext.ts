@@ -7,6 +7,14 @@
 
 import * as React from 'react'
 
+declare global {
+  interface Window {
+    bugsnagClient?: {
+      notify?(e: unknown): void
+    }
+  }
+}
+
 /**
  * Modals are represented as react components
  *
@@ -23,9 +31,22 @@ export interface ModalContextType {
 }
 
 /**
+ * Throw error when ModalContext is used outside of context provider
+ */
+const invariantViolation = () => {
+  if (window.bugsnagClient && typeof window.bugsnagClient.notify === 'function') {
+    window.bugsnagClient.notify(
+      new Error(
+        'Attempted to call useModal outside of modal context. Make sure your app is rendered inside ModalProvider.'
+      )
+    )
+  }
+}
+
+/**
  * Modal Context Object
  */
 export const ModalContext = React.createContext<ModalContextType>({
-  showModal: () => void 0,
-  hideModal: () => void 0
+  showModal: invariantViolation,
+  hideModal: invariantViolation
 })
