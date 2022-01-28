@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { cleanup, render } from '@testing-library/react'
-import { ModalErrorHandler, ModalErrorHandlerBinding } from '../ModalErrorHandler'
+import { ModalErrorHandler, ModalErrorHandlerBinding } from './ModalErrorHandler'
 
 const primaryError = {
   code: 'INVALID_REQUEST',
