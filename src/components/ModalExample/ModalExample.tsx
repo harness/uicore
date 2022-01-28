@@ -6,7 +6,8 @@
  */
 
 import React from 'react'
-import { ModalProvider, useModalHook, ModalErrorHandler, ModalErrorHandlerBinding } from '../Modal'
+import { ModalProvider, useModalHook } from '@harness/use-modal'
+import { ModalErrorHandler, ModalErrorHandlerBinding } from '../Modal/ModalErrorHandler'
 import { Button } from '../Button/Button'
 import { Dialog, Classes, IDialogProps } from '@blueprintjs/core'
 
