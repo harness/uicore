@@ -5,7 +5,6 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-export * from './ModalContext'
-export * from './ModalProvider'
-export * from './useModalHook'
-export * from './ModalErrorHandler'
+export { ERR_MSG, ModalContext, ModalContextType, ModalType } from './ModalContext'
+export { ModalProvider, ModalProviderProps } from './ModalProvider'
+export { useModalHook } from './useModalHook'

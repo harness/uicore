@@ -1,6 +1,6 @@
 docs/static/**/*
 docs/node_modules
-dist/**/*
+dist/
 types/*
 package-lock.json
 .idea/**/*
