@@ -7,18 +7,8 @@
 
 import React, { useCallback } from 'react'
 import { Intent, Dialog, IDialogProps } from '@blueprintjs/core'
-import {
-  useModalHook,
-  Button,
-  ButtonProps,
-  Layout,
-  Container,
-  Icon,
-  Text,
-  ButtonVariation,
-  FontVariation,
-  Color
-} from '../../'
+import { useModalHook } from '@harness/use-modal'
+import { Button, ButtonProps, Layout, Container, Icon, Text, ButtonVariation, FontVariation, Color } from '../../'
 import css from './useConfirmationDialog.css'
 import { HarnessIconName } from 'icons/HarnessIcons'
 

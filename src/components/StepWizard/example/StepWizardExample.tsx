@@ -6,14 +6,13 @@
  */
 
 import React from 'react'
+import { ModalProvider, useModalHook } from '@harness/use-modal'
 import { Button } from '../../Button/Button'
 import { Layout } from '../../../layouts/Layout'
 import { GotoStepArgs, StepWizard } from '../StepWizard'
-import { ModalProvider } from '../../Modal/ModalProvider'
 
 import './StepWizardExample.css'
 import { Dialog, IDialogProps } from '@blueprintjs/core'
-import { useModalHook } from '../../Modal/useModalHook'
 // For Example only defining this props , reason is the module loader over here has some type issue
 
 interface StepData {
