@@ -5,6 +5,11 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 const path = require('path')
+const _ = require('lodash')
+const package = require('./package.json')
+const globals = require('../globals.json')
+
+const external = Object.keys(package.peerDependencies)
 
 /**
  * @type {import('vite').UserConfig}
@@ -18,14 +23,11 @@ const config = {
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['react', 'react-dom'],
+      external,
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
-        }
+        globals: _.pick(globals, external)
       }
     }
   }
