@@ -11,6 +11,13 @@ const globals = require('../globals.json')
 
 const external = Object.keys(package.peerDependencies)
 
+external.forEach(dep => {
+  if (!_.has(globals, dep)) {
+    console.log(`Entry for "${dep}" not found in globals.json`)
+    process.exit(1)
+  }
+})
+
 /**
  * @type {import('vite').UserConfig}
  */
