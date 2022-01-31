@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/harness/uicore/compare/v2.0.0...v2.1.0) (2022-01-31)
+
+
+### Features
+
+* [CVS-9009]: Updated CV new icons ([#576](https://github.com/harness/uicore/issues/576)) ([ab93068](https://github.com/harness/uicore/commit/ab930680b90e2655e3a03f5c3c4b74b71a2122a1))
+
+
+### Others
+
+* update changelog ([d211614](https://github.com/harness/uicore/commit/d2116145807b42e0a2d8b67c341542396ff395b3))
+
 ## [2.0.0](https://github.com/harness/uicore/compare/v1.33.0...v2.0.0) (2022-01-31)
 
 
