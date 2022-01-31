@@ -1280,10 +1280,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@harness/use-modal@1.0.0-alpha.1":
-  version "1.0.0-alpha.1"
-  resolved "https://npm.pkg.github.com/download/@harness/use-modal/1.0.0-alpha.1/0d538f11f0ab9274d0b4389ea38b64792c16d3027b376b0438927486c9447517#6e2b3ed7c1b2306443149cb4e828fdb2812282a2"
-  integrity sha512-ZZp0qjmq7PHWybG1+GsG8g+NKqb2VU4Cc8NKImj6GMArC3eNZCq/MLs7/VNGSQqQUzN7wvn/EXzQHYhLH02WqA==
+"@harness/use-modal@1.0.0":
+  version "1.0.0"
+  resolved "https://npm.pkg.github.com/download/@harness/use-modal/1.0.0/a37c5be9ba7eef68ce2c3537d9fa5684579cb4e7367e02cab8fa7435830bb936#f5d680b42496943832e2b5f5007645cd7ee00f2a"
+  integrity sha512-cKWlvjiN1xwtMoeXjX6XvYPueYT0sT1q4X6YcGPmNdRhcmBueB1ob0OhfbnG/iMWD82OmvP78Z+Evh512+X9RA==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"

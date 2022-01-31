@@ -7,11 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* move useModal to seperate package ([725c526](https://github.com/harness/uicore/commit/725c526021eebac207212c73eef92a46a9970ebd))
-* move useModal to seperate package ([f561e89](https://github.com/harness/uicore/commit/f561e8967608da8fc74869752a590e8b88bdd7d4))
-* move useModal to seperate package ([b4bafa6](https://github.com/harness/uicore/commit/b4bafa66d79259eb575ca6d11ef606d42d189ffc))
-* move useModal to seperate package ([18cec26](https://github.com/harness/uicore/commit/18cec269ff9d76e4b427352f4c9d1e9433035c07))
-* move useModal to seperate package ([8fc9b25](https://github.com/harness/uicore/commit/8fc9b2570e07cf5ae5dbbcc5f384947f3180dbef))
+* BREAKING: move useModal to seperate package ([747b6727](https://github.com/harness/uicore/commit/747b67274b15d55c26c8104e5c1e5bffa2ff5129))
 
 ## [1.33.0](https://github.com/harness/uicore/compare/v1.32.0...v1.33.0) (2022-01-31)
 
