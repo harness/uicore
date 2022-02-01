@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/harness/uicore/compare/v2.1.0...v2.2.0) (2022-02-01)
+
+
+### Bug Fixes
+
+* modal styles css import ([#577](https://github.com/harness/uicore/issues/577)) ([857604d](https://github.com/harness/uicore/commit/857604dd8fe00531eba3a95893fcf3e645c8b013))
+
 ## [2.1.0](https://github.com/harness/uicore/compare/v2.0.0...v2.1.0) (2022-01-31)
 
 
