@@ -9,7 +9,6 @@ import { useCallback, useState, useMemo } from 'react'
 import * as React from 'react'
 import { ModalType, ModalContext } from './ModalContext'
 import { ModalRoot } from './ModalRoot'
-import './Modal.css'
 /**
  * Modal Provider Props
  */
