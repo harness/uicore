@@ -219,6 +219,7 @@ import FfSolid from './ff-solid.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
+import Flag from './flag.svg'
 import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FullScreenExit from './full-screen-exit.svg'
@@ -852,6 +853,7 @@ type HarnessIconName =
   | 'ff-with-text'
   | 'file'
   | 'fixed-input'
+  | 'flag'
   | 'flash'
   | 'folder-upload'
   | 'full-screen-exit'
@@ -1485,6 +1487,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
+  flag: Flag,
   flash: Flash,
   'folder-upload': FolderUpload,
   'full-screen-exit': FullScreenExit,
