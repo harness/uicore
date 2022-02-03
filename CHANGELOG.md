@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/harness/uicore/compare/v2.3.0...v2.4.0) (2022-02-03)
+
+
+### Features
+
+* [GTM-663]: add flag icon ([#578](https://github.com/harness/uicore/issues/578)) ([c3846cf](https://github.com/harness/uicore/commit/c3846cfc002bc2433cd58d986ea36c7436f876a3))
+
 ## [2.3.0](https://github.com/harness/uicore/compare/v2.2.0...v2.3.0) (2022-02-03)
 
 
