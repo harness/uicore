@@ -144,7 +144,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     label,
     ...rest
   } = restProps
-  const [mentionsType] = React.useState(`kv-tag-input-${name}}`)
+  const [mentionsType] = React.useState(`kv-tag-input-${name}`)
 
   return (
     <FormGroup
