@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0](https://github.com/harness/uicore/compare/v2.4.0...v2.5.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* [GTM-663]: fix flag icon viewbox ([#581](https://github.com/harness/uicore/issues/581)) ([d6ecbbb](https://github.com/harness/uicore/commit/d6ecbbb63f083b9c05ef175d81d55867b8b1db56))
+
 ## [2.4.0](https://github.com/harness/uicore/compare/v2.3.0...v2.4.0) (2022-02-03)
 
 
