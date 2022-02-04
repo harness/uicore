@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/harness/uicore/compare/v2.5.0...v2.6.0) (2022-02-04)
+
+
+### Bug Fixes
+
+* spacing for Multiselect inside of FormikForm ([#580](https://github.com/harness/uicore/issues/580)) ([0f8382e](https://github.com/harness/uicore/commit/0f8382e20cc2e9b6a63e01b94330279e0d1bc375))
+
 ## [2.5.0](https://github.com/harness/uicore/compare/v2.4.0...v2.5.0) (2022-02-03)
 
 
