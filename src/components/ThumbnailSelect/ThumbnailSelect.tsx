@@ -25,7 +25,7 @@ export interface Item {
   icon?: IconName
   value: string
   disabled?: boolean
-  tooltip?: ReactElement
+  tooltip?: ReactElement | string
   tooltipProps?: PopoverProps
 }
 
