@@ -584,6 +584,8 @@ import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
 import StepsSpinner from './steps-spinner.svg'
+import StoColorFilled from './sto-color-filled.svg'
+import StoGrey from './sto-grey.svg'
 import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
@@ -1218,6 +1220,8 @@ type HarnessIconName =
   | 'step-jira'
   | 'step-kubernetes'
   | 'steps-spinner'
+  | 'sto-color-filled'
+  | 'sto-grey'
   | 'success-tick'
   | 'support-account'
   | 'support-api'
@@ -1852,6 +1856,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
   'steps-spinner': StepsSpinner,
+  'sto-color-filled': StoColorFilled,
+  'sto-grey': StoGrey,
   'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
