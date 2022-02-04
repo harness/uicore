@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/harness/uicore/compare/v2.6.0...v2.7.0) (2022-02-04)
+
+
+### Bug Fixes
+
+* allow string as other tooltip type in ThumbnailSelect component ([#582](https://github.com/harness/uicore/issues/582)) ([23bc574](https://github.com/harness/uicore/commit/23bc574ba55d66944f97141e0bc85c399427b156))
+
 ## [2.6.0](https://github.com/harness/uicore/compare/v2.5.0...v2.6.0) (2022-02-04)
 
 
