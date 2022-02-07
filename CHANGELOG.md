@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.8.0](https://github.com/harness/uicore/compare/v2.7.0...v2.8.0) (2022-02-07)
+
+
+### Features
+
+* [PIE-2633]: Updated icons for Servicenow, Jira and Terraform ([#585](https://github.com/harness/uicore/issues/585)) ([f019766](https://github.com/harness/uicore/commit/f019766c7c9aefed37e34ed4b71531555966ca95))
+
 ## [2.7.0](https://github.com/harness/uicore/compare/v2.6.0...v2.7.0) (2022-02-04)
 
 
