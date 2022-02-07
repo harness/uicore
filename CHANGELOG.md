@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.9.0](https://github.com/harness/uicore/compare/v2.8.0...v2.9.0) (2022-02-07)
+
+
+### Features
+
+* Add sto-color-filled and sto-grey icons ([#583](https://github.com/harness/uicore/issues/583)) ([da57848](https://github.com/harness/uicore/commit/da57848e8bb92f5464e8041653147273637a954a))
+
 ## [2.8.0](https://github.com/harness/uicore/compare/v2.7.0...v2.8.0) (2022-02-07)
 
 
