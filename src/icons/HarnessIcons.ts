@@ -1,10 +1,3 @@
-/*
- * Copyright 2022 Harness Inc. All rights reserved.
- * Use of this source code is governed by the PolyForm Shield 1.0.0 license
- * that can be found in the licenses directory at the root of this repository, also available at
- * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
- */
-
 /**
  * This file is auto-generated. Please do not modify this file manually.
  * Use the command `yarn ui:icons` to regenerate this file.
@@ -272,6 +265,12 @@ import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Integration from './integration.svg'
+import JiraApproveInverse from './jira-approve-inverse.svg'
+import JiraApprove from './jira-approve.svg'
+import JiraCreateInverse from './jira-create-inverse.svg'
+import JiraCreate from './jira-create.svg'
+import JiraUpdateInverse from './jira-update-inverse.svg'
+import JiraUpdate from './jira-update.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import Kustamize from './kustamize.svg'
@@ -570,6 +569,12 @@ import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
 import Service from './service.svg'
+import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
+import ServicenowApprove from './servicenow-approve.svg'
+import ServicenowCreateInverse from './servicenow-create-inverse.svg'
+import ServicenowCreate from './servicenow-create.svg'
+import ServicenowUpdateInverse from './servicenow-update-inverse.svg'
+import ServicenowUpdate from './servicenow-update.svg'
 import Services from './services.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
@@ -605,10 +610,14 @@ import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesIcon from './templates-icon.svg'
+import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
+import TerraformDestroyInverse from './terraform-destroy-inverse.svg'
 import TerraformDestroy from './terraform-destroy.svg'
+import TerraformPlanInverse from './terraform-plan-inverse.svg'
 import TerraformPlan from './terraform-plan.svg'
+import TerraformRollbackInverse from './terraform-rollback-inverse.svg'
 import TerraformRollback from './terraform-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
@@ -906,6 +915,12 @@ type HarnessIconName =
   | 'initialize-step'
   | 'insight-view'
   | 'integration'
+  | 'jira-approve-inverse'
+  | 'jira-approve'
+  | 'jira-create-inverse'
+  | 'jira-create'
+  | 'jira-update-inverse'
+  | 'jira-update'
   | 'key-main'
   | 'key'
   | 'kustamize'
@@ -1204,6 +1219,12 @@ type HarnessIconName =
   | 'service-sumologic'
   | 'service-terraform'
   | 'service'
+  | 'servicenow-approve-inverse'
+  | 'servicenow-approve'
+  | 'servicenow-create-inverse'
+  | 'servicenow-create'
+  | 'servicenow-update-inverse'
+  | 'servicenow-update'
   | 'services'
   | 'setup-api'
   | 'setup-tags'
@@ -1239,10 +1260,14 @@ type HarnessIconName =
   | 'syncing'
   | 'template-library'
   | 'templates-icon'
+  | 'terraform-apply-inverse'
   | 'terraform-apply-new'
   | 'terraform-apply'
+  | 'terraform-destroy-inverse'
   | 'terraform-destroy'
+  | 'terraform-plan-inverse'
   | 'terraform-plan'
+  | 'terraform-rollback-inverse'
   | 'terraform-rollback'
   | 'test-connection'
   | 'test-verification'
@@ -1540,6 +1565,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'initialize-step': InitializeStep,
   'insight-view': InsightView,
   integration: Integration,
+  'jira-approve-inverse': JiraApproveInverse,
+  'jira-approve': JiraApprove,
+  'jira-create-inverse': JiraCreateInverse,
+  'jira-create': JiraCreate,
+  'jira-update-inverse': JiraUpdateInverse,
+  'jira-update': JiraUpdate,
   'key-main': KeyMain,
   key: Key,
   kustamize: Kustamize,
@@ -1838,6 +1869,12 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
   service: Service,
+  'servicenow-approve-inverse': ServicenowApproveInverse,
+  'servicenow-approve': ServicenowApprove,
+  'servicenow-create-inverse': ServicenowCreateInverse,
+  'servicenow-create': ServicenowCreate,
+  'servicenow-update-inverse': ServicenowUpdateInverse,
+  'servicenow-update': ServicenowUpdate,
   services: Services,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
@@ -1873,10 +1910,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   syncing: Syncing,
   'template-library': TemplateLibrary,
   'templates-icon': TemplatesIcon,
+  'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
+  'terraform-destroy-inverse': TerraformDestroyInverse,
   'terraform-destroy': TerraformDestroy,
+  'terraform-plan-inverse': TerraformPlanInverse,
   'terraform-plan': TerraformPlan,
+  'terraform-rollback-inverse': TerraformRollbackInverse,
   'terraform-rollback': TerraformRollback,
   'test-connection': TestConnection,
   'test-verification': TestVerification,
