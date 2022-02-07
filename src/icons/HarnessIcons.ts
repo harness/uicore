@@ -22,6 +22,7 @@ import Activity from './activity.svg'
 import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
+import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
@@ -94,6 +95,7 @@ import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
+import ChangeLog from './change-log.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
@@ -191,6 +193,7 @@ import DigitalOcean from './digital-ocean.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
+import Docs from './docs.svg'
 import Down from './down.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
@@ -260,6 +263,7 @@ import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import HelmRollback from './helm-rollback.svg'
+import HelpCenter from './help-center.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
@@ -641,6 +645,7 @@ import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import Union from './union.svg'
+import University from './university.svg'
 import Up from './up.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
@@ -674,6 +679,7 @@ type HarnessIconName =
   | 'add-stage'
   | 'adminRole'
   | 'advanced'
+  | 'api-docs'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
@@ -746,6 +752,7 @@ type HarnessIconName =
   | 'cf-main'
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
+  | 'change-log'
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
@@ -843,6 +850,7 @@ type HarnessIconName =
   | 'docker-hub-step'
   | 'docker-step-inverse'
   | 'docker-step'
+  | 'docs'
   | 'down'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
@@ -912,6 +920,7 @@ type HarnessIconName =
   | 'hashiCorpVault'
   | 'health'
   | 'helm-rollback'
+  | 'help-center'
   | 'help'
   | 'hourglass'
   | 'http-step'
@@ -1293,6 +1302,7 @@ type HarnessIconName =
   | 'trigger-pipeline'
   | 'trigger-schedule'
   | 'union'
+  | 'university'
   | 'up'
   | 'upgrade-bolt'
   | 'upload-box'
@@ -1326,6 +1336,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
+  'api-docs': ApiDocs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
@@ -1398,6 +1409,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'cf-main': CfMain,
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
+  'change-log': ChangeLog,
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
@@ -1495,6 +1507,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'docker-hub-step': DockerHubStep,
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
+  docs: Docs,
   down: Down,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
@@ -1564,6 +1577,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   hashiCorpVault: HashiCorpVault,
   health: Health,
   'helm-rollback': HelmRollback,
+  'help-center': HelpCenter,
   help: Help,
   hourglass: Hourglass,
   'http-step': HttpStep,
@@ -1945,6 +1959,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
   union: Union,
+  university: University,
   up: Up,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
