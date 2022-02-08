@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.10.0](https://github.com/harness/uicore/compare/v2.9.0...v2.10.0) (2022-02-08)
+
+
+### Features
+
+* [GTM-673]: add help center icons ([#586](https://github.com/harness/uicore/issues/586)) ([e9f9e4f](https://github.com/harness/uicore/commit/e9f9e4fd3fd929a463cc044b847315590b790bf0))
+
 ## [2.9.0](https://github.com/harness/uicore/compare/v2.8.0...v2.9.0) (2022-02-07)
 
 
