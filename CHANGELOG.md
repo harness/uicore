@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.13.0](https://github.com/harness/uicore/compare/v2.12.0...v2.13.0) (2022-02-10)
+
+
+### Features
+
+* [PIE-1735]: Add name as required prop to FormError ([#589](https://github.com/harness/uicore/issues/589)) ([e845d14](https://github.com/harness/uicore/commit/e845d14249e02846d2a75554623ac14d272d1aad))
+
 ## [2.12.0](https://github.com/harness/uicore/compare/v2.11.0...v2.12.0) (2022-02-10)
 
 
