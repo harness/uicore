@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.12.0](https://github.com/harness/uicore/compare/v2.11.0...v2.12.0) (2022-02-10)
+
+
+### Features
+
+* [PIE-2620]: Add expandAllByDefault option ([#588](https://github.com/harness/uicore/issues/588)) ([50395a4](https://github.com/harness/uicore/commit/50395a42067a3c34a76006897cc26c7101802581))
+
 ## [2.11.0](https://github.com/harness/uicore/compare/v2.10.0...v2.11.0) (2022-02-08)
 
 
