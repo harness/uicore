@@ -43,6 +43,7 @@ export interface ThumbnailSelectProps extends Pick<ThumbnailProps, 'size'> {
   className?: string
   thumbnailClassName?: string
   onChange?(val: string): void
+  expandAllByDefault?: boolean
 }
 
 const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
@@ -57,18 +58,19 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     className,
     thumbnailClassName,
     size,
-    onChange
+    onChange,
+    expandAllByDefault
   } = props
   const value = get(formik.values, name)
 
-  const [showAllOptions, setShowAllOptions] = React.useState(!isEmpty(value))
+  const [showAllOptions, setShowAllOptions] = React.useState(!isEmpty(value) || expandAllByDefault)
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
   const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null
 
   React.useEffect(() => {
-    setShowAllOptions(isEmpty(value))
+    setShowAllOptions(isEmpty(value) || expandAllByDefault)
   }, [value])
 
   const selectedItemIndex = value ? items.findIndex(item => item.value === value) : -1
