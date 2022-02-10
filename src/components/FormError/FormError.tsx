@@ -11,19 +11,19 @@ import cx from 'classnames'
 import { Icon } from '../../icons/Icon'
 import css from './FormError.css'
 
-export const FormError = ({
-  errorMessage,
-  className
-}: {
+interface FormErrorProps {
   errorMessage: string | undefined | FormikErrors<any>
+  name: string
   className?: string
-}) => {
+}
+
+export const FormError = ({ errorMessage, className, name }: FormErrorProps): React.ReactElement | null => {
   if (!errorMessage) {
     return null
   }
   // Used to display form errors below the fields, with an icon
   return (
-    <div className={cx(css.errorDiv, className)}>
+    <div data-name={name} className={cx(css.errorDiv, className)}>
       <Icon name="circle-cross" className={css.errorTextIcon} size={12} intent="danger" />
       <span className={css.error}>{errorMessage}</span>
     </div>

@@ -66,7 +66,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
-  const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null
+  const helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} name={name} /> : null
 
   function handleChangeClick(): void {
     setShowAllOptions(true)

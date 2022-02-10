@@ -27,7 +27,7 @@ export function DurationInput(props: DurationInputProps & FormikContextProps<any
 
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
-    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} /> : null,
+    helperText = hasError ? <FormError errorMessage={get(formik?.errors, name)} name={name} /> : null,
     disabled,
     ...rest
   } = restProps

@@ -87,7 +87,7 @@ export function TextInput(props: TextInputProps): React.ReactElement {
         leftIcon={leftIcon && <Icon name={leftIcon} size={12} {...leftIconProps} />}
         rightElement={rightElem}
       />
-      {hasError && !errorInPopover && errorText ? <FormError errorMessage={errorText} /> : null}
+      {hasError && !errorInPopover && errorText ? <FormError name={rest.name ?? ''} errorMessage={errorText} /> : null}
     </div>
   )
 }
