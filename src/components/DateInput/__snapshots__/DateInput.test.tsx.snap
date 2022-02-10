@@ -212,6 +212,7 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
       </div>
       <div
         class="errorDiv"
+        data-name=""
       >
         <span
           class="bp3-icon main errorTextIcon intent intent-danger"
