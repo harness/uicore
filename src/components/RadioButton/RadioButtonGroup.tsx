@@ -6,7 +6,7 @@
  */
 
 import React, { FormEvent, ReactElement, ReactNode, useEffect, useMemo, useState } from 'react'
-import { omitStyledProps, styledClasses, StyledProps } from '../../styled-props/StyledProps'
+import { omitStyledProps, styledClasses, StyledProps } from '@harness/design-system'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 
 import css from './RadioButtonGroup.css'

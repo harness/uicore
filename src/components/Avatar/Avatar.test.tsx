@@ -10,7 +10,7 @@ import { render } from '@testing-library/react'
 import { Avatar } from './Avatar'
 import { getInitialsFromNameOrEmail, getSumOfAllCharacters } from './utils'
 
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 
 describe('Render basic component', () => {
   test('should check snapshot with name', () => {

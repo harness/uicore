@@ -6,8 +6,8 @@
  */
 
 import React, { ChangeEvent, ReactElement } from 'react'
-import { StyledProps, styledClasses } from '../../styled-props/StyledProps'
-import styledClass from '../../styled-props/StyledProps.css'
+import { StyledProps, styledClasses } from '@harness/design-system'
+import { styledClass } from '@harness/design-system'
 
 import css from './Toggle.css'
 

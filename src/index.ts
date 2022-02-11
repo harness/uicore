@@ -6,9 +6,8 @@
  */
 
 import './styles/styles.css'
+import '@harness/design-system/dist/style.css'
 export { Config } from './core/Config'
-export { Color } from './core/Color'
-export { Intent } from './core/Intent'
 export { Accordion, AccordionProps, AccordionHandle } from './components/Accordion/Accordion'
 export {
   NestedAccordionProvider,
@@ -36,7 +35,6 @@ export { Tag } from './components/Tag/Tag'
 export { Radio, RadioGroup } from './components/Radio/Radio'
 export { RadioButton } from './components/RadioButton/RadioButton'
 export { RadioButtonGroup } from './components/RadioButton/RadioButtonGroup'
-export { Spacing } from './core/Spacing'
 export { Switch, SwitchProps } from './components/Switch/Switch'
 export { SwitchIcon } from './components/Switch/SwitchIcon/SwitchIcon'
 export { Carousel } from './components/Carousel/Carousel'
@@ -84,7 +82,6 @@ export {
 } from './components/ExpandingSearchInput/ExpandingSearchInput'
 export { TagInput, TagInputItemsFutureResult, TagInputProps } from './components/TagInput/TagInput'
 export { SimpleTagInput } from './components/TagInput/SimpleTagInput'
-export { I18nResourceFunction, I18nResource } from './core/Types'
 export { Card, CardProps, CardBody } from './components/Card/Card'
 export { CardSelect, CardSelectProps, CardSelectType } from './components/CardSelect/CardSelect'
 export { CodeBlock } from './components/CodeBlock/CodeBlock'
@@ -173,7 +170,6 @@ export {
 export { Breadcrumbs, BreadcrumbsProps, Breadcrumb } from './components/Breadcrumbs/Breadcrumbs'
 export { GridListToggle, GridListToggleProps, Views } from './components/GridListToggle/GridListToggle'
 export { FormError } from './components/FormError/FormError'
-export { FontVariation } from './styled-props/font/FontProps'
 export { FormikTooltipContext } from './components/FormikForm/FormikTooltipContext'
 export { MultiSelectDropDown } from './components/MultiSelectDropDown/MultiSelectDropDown'
 export { useToaster } from './hooks/useToaster/useToaster'

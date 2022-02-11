@@ -5,9 +5,9 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Spacing } from 'core/Spacing'
+import { Spacing } from '../../common/Spacing'
 
-export interface MarginProps {
+export interface PaddingProps {
   top?: Spacing
   right?: Spacing
   bottom?: Spacing

@@ -10,7 +10,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButtonGroup'
 import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
-import { Color } from '../../../core/Color'
+import { Color } from '../@harness/design-system'
 
 const TestRadioButtonGroupController = ({ options }: { options: RadioButtonGroupProps['options'] }) => {
   const [currentSelected, setCurrentSelected] = useState<string>('')

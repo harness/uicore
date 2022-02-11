@@ -14,7 +14,7 @@ import css from './TableV2.css'
 import Pagination, { PaginationProps } from '../Pagination/Pagination'
 import { Icon } from '../../icons/Icon'
 import { Text } from '../Text/Text'
-import { FontVariation } from '../../styled-props/font/FontProps'
+import { FontVariation } from '@harness/design-system'
 
 export interface TableProps<Data extends Record<string, any>> {
   /**

@@ -10,7 +10,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Heading, Container } from '../..'
 import { HeadingProps } from '../Heading/Heading'
-import { FontVariation } from '../../styled-props/font/FontProps'
+import { FontVariation } from '@harness/design-system'
 
 export default {
   title: 'Components / Heading',

@@ -8,7 +8,7 @@
 import React from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import { Layout } from '../../layouts/Layout'
 import css from './DropDown.css'
 import { SelectOption } from '../Select/Select'
@@ -16,7 +16,7 @@ import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { Text } from '../Text/Text'
 import cx from 'classnames'
 import { Menu, Position, Spinner } from '@blueprintjs/core'
-import { StyledProps } from '../../styled-props/StyledProps'
+import { StyledProps } from '@harness/design-system'
 import { debounce } from 'lodash-es'
 
 const Select = BPSelect.ofType<SelectOption>()

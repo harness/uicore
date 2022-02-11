@@ -7,9 +7,9 @@
 
 import React, { HTMLAttributes, useRef, useLayoutEffect, useState, useEffect } from 'react'
 import cx from 'classnames'
-import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
-import styledCSS from '../../styled-props/StyledProps.css'
-import { OptionalTooltip } from '../../core/Types'
+import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import styledCSS from '@harness/design-system'
+import { OptionalTooltip } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import css from './Text.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'

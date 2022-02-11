@@ -8,7 +8,7 @@
 @import './margin/margin.css';
 @import './padding/padding.css';
 @import './intent.css';
-@import './font/font.css';
+@import './font/font.module.css';
 @import './inline.css';
 @import './color.css';
 @import './background.css';

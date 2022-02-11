@@ -9,12 +9,12 @@ import { Container } from '../Container/Container'
 import { Card } from '../Card/Card'
 import { Text } from '../Text/Text'
 import { Layout } from '../../layouts/Layout'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import React from 'react'
 import { isUndefined } from 'lodash-es'
 import cx from 'classnames'
 import css from './DetailPageCard.css'
-import { FontVariation } from '../../styled-props/font/FontProps'
+import { FontVariation } from '@harness/design-system'
 
 export enum ContentType {
   TEXT = 'TEXT', // default

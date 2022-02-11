@@ -60,6 +60,7 @@
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
+    "@harness/design-system": "1.0.0",
     "@harness/use-modal": "1.0.0",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-docs": "^6.3.1",
@@ -166,6 +167,5 @@
   "files": [
     "dist/*",
     "tools/*"
-  ],
-  "dependencies": {}
+  ]
 }
