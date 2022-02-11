@@ -9,7 +9,6 @@ import React from 'react'
 import {
   ButtonProps,
   Button,
-  Color,
   Heading,
   Container,
   Icon,
@@ -20,6 +19,7 @@ import {
   ButtonSize
 } from '../../'
 import classNames from 'classnames'
+import { Color } from '@harness/design-system'
 import css from './NoDataCard.css'
 export interface NoDataCardProps {
   icon?: IconName

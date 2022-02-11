@@ -10,7 +10,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import { RadioButton } from '../RadioButton'
 import userEvent from '@testing-library/user-event'
 import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
-import { Color } from '../@harness/design-system'
+import { Color } from '@harness/design-system'
 
 describe('RadioButton', () => {
   test('it should render a string label', async () => {

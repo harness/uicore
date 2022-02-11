@@ -10,7 +10,8 @@
 //  - https://harness.atlassian.net/wiki/spaces/EN/pages/531103761/UI+Modal+Drawer+Error+Handling
 //  - https://harness.atlassian.net/wiki/spaces/CDNG/pages/736298085/Next+Gen+APIs+specification
 //
-import { Color, Container, Icon, Link, Text, IconName, Intent } from '../../'
+import { Container, Icon, Link, Text, IconName } from '../../'
+import { Color, Intent } from '@harness/design-system'
 import React, { useEffect, useMemo, useState } from 'react'
 
 export const GENERAL_ERROR = 'We cannot perform your request at the moment. Please try again.'

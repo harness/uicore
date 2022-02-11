@@ -10,7 +10,7 @@
  * Use the command `yarn ui:icons` to regenerate this file.
  */
 import { FunctionComponent, ElementType } from 'react'
-import { KVO } from 'core/Types'
+import { KVO } from '@harness/design-system'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'

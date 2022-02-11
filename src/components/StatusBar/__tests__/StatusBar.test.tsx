@@ -8,7 +8,7 @@
 import React from 'react'
 import { render, wait } from '@testing-library/react'
 import { StatusBar } from '../StatusBar'
-import { Color } from 'core/Color'
+import { Color } from '@harness/design-system'
 
 describe('StatusBar unit tests', () => {
   test('Render a vertical bar', async () => {

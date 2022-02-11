@@ -9,7 +9,6 @@ import React from 'react'
 import { Intent } from '@blueprintjs/core'
 import { useModalHook } from '@harness/use-modal'
 import { ButtonProps } from '../../'
-
 import { ConfirmationDialog } from './ConfirmationDialog'
 
 export interface UseConfirmationDialogProps {
