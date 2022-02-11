@@ -8,7 +8,7 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { SparkChart } from '../SparkChart'
-import { Color } from 'core/Color'
+import { Color } from '@harness/design-system'
 
 describe('SparkChrt unit tests', () => {
   test('render spark chart with data', () => {
