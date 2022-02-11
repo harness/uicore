@@ -39,6 +39,15 @@ const config = {
       }
     }
   },
+  css: {
+    modules: {
+      scopeBehaviour: 'local',
+      generateScopedName: (name, filename, _css) => {
+        const basename = path.basename(filename).replace(/\.module\.css?.*/, '')
+        return `${basename}--${name}`
+      }
+    }
+  },
   plugins: [dts()]
 }
 
