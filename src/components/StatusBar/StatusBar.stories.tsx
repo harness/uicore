@@ -8,8 +8,9 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Color, Container, StatusBar, StatusBarProps } from '../..'
+import { Container, StatusBar, StatusBarProps } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
+import { Color } from '@harness/design-system'
 
 export default {
   title: 'Charts / StatusBar',
