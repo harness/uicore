@@ -38,3 +38,5 @@ export type Spacing =
   // for margins only
   | 'form-panel-subsection'
   | 'form-action-buttons'
+  | string
+  | number
