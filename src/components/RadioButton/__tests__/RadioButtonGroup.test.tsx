@@ -276,7 +276,7 @@ describe('RadioButtonGroup', () => {
       <RadioButtonGroup
         data-testid={testId}
         margin="large"
-        background={Color.GREEN_50}
+        background={Color.GREEN_100}
         onChange={jest.fn()}
         options={[
           { label: 'option1', value: 'o1' },
@@ -285,7 +285,7 @@ describe('RadioButtonGroup', () => {
       />
     )
 
-    expect(screen.getByTestId(testId)).toHaveClass('margin-large')
-    expect(screen.getByTestId(testId)).toHaveClass('background-green50')
+    expect(screen.getByTestId(testId)).toHaveClass('StyledProps--margin-large')
+    expect(screen.getByTestId(testId)).toHaveClass('StyledProps--background-green100')
   })
 })

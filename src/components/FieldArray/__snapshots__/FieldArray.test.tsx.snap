@@ -7,7 +7,7 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
       class="container"
     >
       <div
-        class="horizontal layout-spacing-undefined main title"
+        class="horizontal layout-spacing-undefined StyledProps--main title"
       >
         <span
           class="text"
@@ -15,12 +15,12 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+            class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
             icon="plus"
           >
             <svg
@@ -71,12 +71,12 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg
@@ -98,12 +98,12 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg
@@ -128,7 +128,7 @@ exports[`<FieldArray /> tests render placeholder when no initial value given 1`]
       class="container"
     >
       <div
-        class="horizontal layout-spacing-undefined main title"
+        class="horizontal layout-spacing-undefined StyledProps--main title"
       >
         <span
           class="text"
@@ -145,12 +145,12 @@ exports[`<FieldArray /> tests render placeholder when no initial value given 1`]
           This is a no data/add data message.
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color withLeftIcon"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color withLeftIcon"
           data-id="btn-add-no-data"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+            class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
             icon="plus"
           >
             <svg
@@ -187,7 +187,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] =
       class="container"
     >
       <div
-        class="horizontal layout-spacing-undefined main title"
+        class="horizontal layout-spacing-undefined StyledProps--main title"
       >
         <span
           class="text"
@@ -195,12 +195,12 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] =
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+            class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
             icon="plus"
           >
             <svg
@@ -251,12 +251,12 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] =
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg
@@ -281,7 +281,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
       class="container"
     >
       <div
-        class="horizontal layout-spacing-undefined main title"
+        class="horizontal layout-spacing-undefined StyledProps--main title"
       >
         <span
           class="text"
@@ -289,12 +289,12 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+            class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
             icon="plus"
           >
             <svg
@@ -345,12 +345,12 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg
@@ -372,12 +372,12 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg
@@ -402,7 +402,7 @@ exports[`<FieldArray /> tests should be able to delete row 1`] = `
       class="container"
     >
       <div
-        class="horizontal layout-spacing-undefined main title"
+        class="horizontal layout-spacing-undefined StyledProps--main title"
       >
         <span
           class="text"
@@ -410,12 +410,12 @@ exports[`<FieldArray /> tests should be able to delete row 1`] = `
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+            class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
             icon="plus"
           >
             <svg
@@ -466,12 +466,12 @@ exports[`<FieldArray /> tests should be able to delete row 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg
@@ -496,7 +496,7 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
       class="container"
     >
       <div
-        class="horizontal layout-spacing-undefined main title"
+        class="horizontal layout-spacing-undefined StyledProps--main title"
       >
         <span
           class="text"
@@ -504,12 +504,12 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
           Field List
         </span>
         <button
-          class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+            class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
             icon="plus"
           >
             <svg
@@ -568,12 +568,12 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg
@@ -600,12 +600,12 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
               class="deleteColumn"
             >
               <button
-                class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+                class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
                 data-id="btn-delete"
                 type="button"
               >
                 <span
-                  class="bp3-icon main padding padding-undefined"
+                  class="bp3-icon StyledProps--main"
                   data-icon="main-trash"
                 >
                   <svg

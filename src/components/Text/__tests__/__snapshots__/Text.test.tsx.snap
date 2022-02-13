@@ -9,14 +9,14 @@ exports[`Text component fixes basic rendering with nested: nested text 1`] = `
       class="bp3-popover-target bp3-popover-open targetClass"
     >
       <p
-        class="font main"
+        class="StyledProps--font StyledProps--main"
         tabindex="0"
       >
         <div
-          class="horizontal layout-spacing-undefined main"
+          class="horizontal layout-spacing-undefined StyledProps--main"
         >
           <p
-            class="font main"
+            class="StyledProps--font StyledProps--main"
           >
             Nested
           </p>

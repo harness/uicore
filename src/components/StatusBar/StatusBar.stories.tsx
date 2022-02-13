@@ -48,8 +48,8 @@ export const HorizontalBars: Story<StatusBarProps> = args => {
   return (
     <>
       <StatusBar label="In Progress" background={Color.BLUE_500} height={15} width={150} />
-      <StatusBar background={Color.GREEN_500} {...args} />
-      <StatusBar gradient="linear-gradient(to right, var(--yellow-500), var(--red-500))" {...args} />
+      <StatusBar {...args} background={Color.GREEN_500} />
+      <StatusBar {...args} gradient="linear-gradient(to right, var(--yellow-500), var(--red-500))" />
     </>
   )
 }

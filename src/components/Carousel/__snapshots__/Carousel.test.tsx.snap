@@ -3,7 +3,7 @@
 exports[`Render basic component should check snapshot 1`] = `
 <div>
   <div
-    class="vertical layout-spacing-xsmall main carousel spacing spacing-xsmall padding padding-small"
+    class="vertical layout-spacing-xsmall StyledProps--main carousel StyledProps--padding-small"
   >
     <div
       class="carouselView"
@@ -67,7 +67,7 @@ exports[`Render basic component should check snapshot 1`] = `
       >
         <div>
           <span
-            class="bp3-icon main color color-white"
+            class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
             data-icon="main-chevron-right"
           >
             <svg

@@ -22,7 +22,7 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
@@ -64,7 +64,7 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
                   class="menuItem active"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charmander
@@ -74,7 +74,7 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charmeleon
@@ -84,7 +84,7 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charizard
@@ -122,7 +122,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
@@ -164,7 +164,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem active"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Bulbasaur
@@ -174,7 +174,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Ivysaur
@@ -184,7 +184,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Venusaur
@@ -194,7 +194,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charmander
@@ -204,7 +204,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charmeleon
@@ -214,7 +214,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charizard
@@ -224,7 +224,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Squirtle
@@ -234,7 +234,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Wartortle
@@ -244,7 +244,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Blastoise
@@ -254,7 +254,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Caterpie
@@ -264,7 +264,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Metapod
@@ -274,7 +274,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Butterfree
@@ -284,7 +284,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Weedle
@@ -294,7 +294,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Kakuna
@@ -304,7 +304,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Beedrill
@@ -314,7 +314,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Pidgey
@@ -324,7 +324,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Pidgeotto
@@ -334,7 +334,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Pidgeot
@@ -344,7 +344,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Rattata
@@ -354,7 +354,7 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
                   class="menuItem"
                 >
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Raticate
@@ -392,7 +392,7 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
@@ -457,7 +457,7 @@ exports[`<Select/> tests works with async data 1`] = `
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
@@ -504,7 +504,7 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
@@ -579,7 +579,7 @@ exports[`<Select/> tests works with static data 1`] = `
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg

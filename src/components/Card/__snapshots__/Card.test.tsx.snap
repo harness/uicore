@@ -10,7 +10,7 @@ exports[`Card icon test should render cards with props selected and interactive 
       class="cardIcon"
     >
       <span
-        class="bp3-icon main"
+        class="bp3-icon StyledProps--main"
         data-icon="service-kubernetes"
       >
         <svg
@@ -19,7 +19,7 @@ exports[`Card icon test should render cards with props selected and interactive 
         />
       </span>
       <p
-        class="font main style style-marginTop style-marginTop-5px font-medium"
+        class="StyledProps--font StyledProps--main StyledProps--font-medium"
         style="margin-top: 5px;"
       >
         Jenkin Artifact
@@ -38,7 +38,7 @@ exports[`Card icon test should render icon card with no props 1`] = `
       class="cardIcon"
     >
       <span
-        class="bp3-icon main"
+        class="bp3-icon StyledProps--main"
         data-icon="service-kubernetes"
       >
         <svg
@@ -47,7 +47,7 @@ exports[`Card icon test should render icon card with no props 1`] = `
         />
       </span>
       <p
-        class="font main style style-marginTop style-marginTop-5px font-medium"
+        class="StyledProps--font StyledProps--main StyledProps--font-medium"
         style="margin-top: 5px;"
       >
         Jenkin Artifact
@@ -77,11 +77,11 @@ exports[`Card menu test should render cards with props selected and interactive 
             class="bp3-popover-target"
           >
             <button
-              class="bp3-button bp3-minimal button font main menu with-current-color round iconOnly without-shadow withLeftIcon"
+              class="bp3-button bp3-minimal button StyledProps--font StyledProps--main menu with-current-color round iconOnly without-shadow withLeftIcon"
               type="button"
             >
               <span
-                class="bp3-icon bp3-icon-more main padding padding-undefined"
+                class="bp3-icon bp3-icon-more StyledProps--main"
                 icon="more"
               >
                 <svg
@@ -104,12 +104,12 @@ exports[`Card menu test should render cards with props selected and interactive 
         </span>
       </div>
       <p
-        class="font main title font-medium"
+        class="StyledProps--font StyledProps--main title StyledProps--font-medium"
       >
         Jenkins Artifact
       </p>
       <p
-        class="font main style style-marginTop style-marginTop-5px font-medium"
+        class="StyledProps--font StyledProps--main StyledProps--font-medium"
         style="margin-top: 5px;"
       >
         Jenkin Artifact
@@ -138,11 +138,11 @@ exports[`Card menu test should render icon card with no props 1`] = `
             class="bp3-popover-target"
           >
             <button
-              class="bp3-button bp3-minimal button font main menu with-current-color round iconOnly without-shadow withLeftIcon"
+              class="bp3-button bp3-minimal button StyledProps--font StyledProps--main menu with-current-color round iconOnly without-shadow withLeftIcon"
               type="button"
             >
               <span
-                class="bp3-icon bp3-icon-more main padding padding-undefined"
+                class="bp3-icon bp3-icon-more StyledProps--main"
                 icon="more"
               >
                 <svg
@@ -165,12 +165,12 @@ exports[`Card menu test should render icon card with no props 1`] = `
         </span>
       </div>
       <p
-        class="font main title font-medium"
+        class="StyledProps--font StyledProps--main title StyledProps--font-medium"
       >
         Jenkins Artifact
       </p>
       <p
-        class="font main style style-marginTop style-marginTop-5px font-medium"
+        class="StyledProps--font StyledProps--main StyledProps--font-medium"
         style="margin-top: 5px;"
       >
         Jenkin Artifact
@@ -186,7 +186,7 @@ exports[`Card test should render cards with no props 1`] = `
     class="bp3-card bp3-elevation-0 card"
   >
     <p
-      class="font main style style-marginTop style-marginTop-5px font-medium"
+      class="StyledProps--font StyledProps--main StyledProps--font-medium"
       style="margin-top: 5px;"
     >
       Jenkin Artifact
@@ -202,7 +202,7 @@ exports[`Card test should render cards with props selected and interactive 1`] =
     tabindex="0"
   >
     <p
-      class="font main style style-marginTop style-marginTop-5px font-medium"
+      class="StyledProps--font StyledProps--main StyledProps--font-medium"
       style="margin-top: 5px;"
     >
       Jenkin Artifact

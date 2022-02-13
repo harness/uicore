@@ -3,13 +3,13 @@
 exports[`GraphError unit tests Render GraphError with title and link should match snapshot 1`] = `
 <div>
   <div
-    class="font main"
+    class="StyledProps--font StyledProps--main main"
   >
     <div
-      class="font main"
+      class="StyledProps--font StyledProps--main"
     >
       <span
-        class="bp3-icon bp3-icon-error main"
+        class="bp3-icon bp3-icon-error StyledProps--main"
         icon="error"
       >
         <svg
@@ -29,7 +29,7 @@ exports[`GraphError unit tests Render GraphError with title and link should matc
       </span>
     </div>
     <div
-      class="font main title"
+      class="StyledProps--font StyledProps--main title"
     >
       <strong>
         Error occured

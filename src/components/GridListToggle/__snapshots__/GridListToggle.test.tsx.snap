@@ -3,16 +3,16 @@
 exports[`GridListToggle test When no props are passed By default Grid view should be selected 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main flex flex-true"
+    class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
   >
     <button
-      class="bp3-button bp3-minimal button font main gridButton intent intent-primary with-current-color without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main gridButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
       data-testid="grid-view"
       data-tooltip-id="grid-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-grid-view main padding padding-undefined"
+        class="bp3-icon bp3-icon-grid-view StyledProps--main"
         icon="grid-view"
       >
         <svg
@@ -32,13 +32,13 @@ exports[`GridListToggle test When no props are passed By default Grid view shoul
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button font main listUnselected listButton intent intent-undefined with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-list main padding padding-undefined"
+        class="bp3-icon bp3-icon-list StyledProps--main"
         icon="list"
       >
         <svg
@@ -64,16 +64,16 @@ exports[`GridListToggle test When no props are passed By default Grid view shoul
 exports[`GridListToggle test When props are passed - initialSelectedView: GRID By default Grid view should be selected 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main flex flex-true"
+    class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
   >
     <button
-      class="bp3-button bp3-minimal button font main gridButton intent intent-primary with-current-color without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main gridButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
       data-testid="grid-view"
       data-tooltip-id="grid-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-grid-view main padding padding-undefined"
+        class="bp3-icon bp3-icon-grid-view StyledProps--main"
         icon="grid-view"
       >
         <svg
@@ -93,13 +93,13 @@ exports[`GridListToggle test When props are passed - initialSelectedView: GRID B
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button font main listUnselected listButton intent intent-undefined with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-list main padding padding-undefined"
+        class="bp3-icon bp3-icon-list StyledProps--main"
         icon="list"
       >
         <svg
@@ -125,16 +125,16 @@ exports[`GridListToggle test When props are passed - initialSelectedView: GRID B
 exports[`GridListToggle test When props are passed - initialSelectedView: LIST By default List view should be selected 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main flex flex-true"
+    class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
   >
     <button
-      class="bp3-button bp3-minimal button font main gridUnselected gridButton intent intent-undefined with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main gridUnselected gridButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="grid-view"
       data-tooltip-id="grid-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-grid-view main padding padding-undefined"
+        class="bp3-icon bp3-icon-grid-view StyledProps--main"
         icon="grid-view"
       >
         <svg
@@ -154,13 +154,13 @@ exports[`GridListToggle test When props are passed - initialSelectedView: LIST B
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button font main listButton intent intent-primary with-current-color without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-list main padding padding-undefined"
+        class="bp3-icon bp3-icon-list StyledProps--main"
         icon="list"
       >
         <svg

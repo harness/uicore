@@ -191,7 +191,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     value="004"
                   />
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charmander
@@ -207,7 +207,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     value="005"
                   />
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charmeleon
@@ -223,18 +223,18 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     value="006"
                   />
                   <p
-                    class="font lineclamp main menuItemLabel"
+                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
                     style="--text-line-clamp: 1;"
                   >
                     Charizard
                   </p>
                 </li>
                 <button
-                  class="bp3-button bp3-minimal button font main intent intent-primary with-current-color without-shadow withLeftIcon"
+                  class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
                   type="button"
                 >
                   <span
-                    class="bp3-icon bp3-icon-plus main padding padding-right padding-right-xsmall"
+                    class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
                     icon="plus"
                   >
                     <svg
@@ -262,7 +262,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                   class="icon-container"
                 >
                   <span
-                    class="bp3-icon bp3-icon-info-sign main color color-grey400 padding padding-small"
+                    class="bp3-icon bp3-icon-info-sign StyledProps--main StyledProps--color StyledProps--color-grey400 StyledProps--padding-small"
                     icon="info-sign"
                     id="icon-styled-props"
                   >
