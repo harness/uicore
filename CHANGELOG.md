@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.14.0](https://github.com/harness/uicore/compare/v2.13.0...v2.14.0) (2022-02-14)
+
+
+### Features
+
+* [PIE-1735]: Git Commit the fix for multitype on firefox/safari ([#593](https://github.com/harness/uicore/issues/593)) ([ce9112f](https://github.com/harness/uicore/commit/ce9112f24b3eefe84a0d76e75460ef37f118a436))
+
 ## [2.13.0](https://github.com/harness/uicore/compare/v2.12.0...v2.13.0) (2022-02-10)
 
 
