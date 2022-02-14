@@ -1,0 +1,50 @@
+{
+  "name": "@harness/icons",
+  "version": "1.0.0-beta.3",
+  "description": "Harness UICore - Legos for building Harness UI applications",
+  "source": "src/index.ts",
+  "main": "dist/icons.umd.js",
+  "module": "dist/icons.es.js",
+  "types": "dist/src/index.d.ts",
+  "styles": "dist/style.css",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "vite build",
+    "clean": "rm -rf dist",
+    "test": "jest --no-cache ./src",
+    "prepublishOnly": "yarn build",
+    "ui:icons": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts"
+  },
+  "license": "UNLICENSED",
+  "repository": "https://github.com/harness/uicore",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "peerDependencies": {
+    "@blueprintjs/core": "^3.20.0",
+    "@harness/design-system": "1.0.0-beta.2",
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@blueprintjs/core": "^3.20.0",
+    "@harness/design-system": "1.0.0-beta.2",
+    "@svgr/rollup": "^6.2.1",
+    "@types/react": "^17.0.3",
+    "dts-bundle-generator": "^6.4.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "svg-inline-loader": "^0.8.2",
+    "typescript": "^4.1.3",
+    "vite": "^2.7.13",
+    "vite-plugin-dts": "^0.9.9",
+    "vite-plugin-svgr": "^1.0.1",
+    "vite-svg-loader": "^3.1.2"
+  },
+  "dependencies": {
+    "@svgr/core": "^6.2.1",
+    "fs": "^0.0.1-security"
+  }
+}

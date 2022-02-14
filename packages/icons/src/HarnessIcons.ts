@@ -12,7 +12,6 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Edit from './Edit.svg'
-import Inline from './Inline.svg'
 import Options from './Options.svg'
 import Stroke from './Stroke.svg'
 import AccessControl from './access-control.svg'
@@ -707,7 +706,6 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Edit'
-  | 'Inline'
   | 'Options'
   | 'Stroke'
   | 'access-control'
@@ -1402,7 +1400,6 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Edit: Edit,
-  Inline: Inline,
   Options: Options,
   Stroke: Stroke,
   'access-control': AccessControl,

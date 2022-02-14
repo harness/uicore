@@ -42,7 +42,7 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { }
+            options: {}
           },
           {
             loader: 'css-loader',
@@ -59,11 +59,7 @@ module.exports = {
             options: {
               sourceMap: isDev,
               postcssOptions: {
-                plugins: [
-                  require('postcss-import')(),
-                  require('postcss-mixins')(),
-                  require('postcss-nested')()
-              ]
+                plugins: [require('postcss-import')(), require('postcss-mixins')(), require('postcss-nested')()]
               }
             }
           }
