@@ -168,15 +168,15 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           )
         }
         onClick={ev => {
-          if ((ev.nativeEvent as PointerEvent).pointerType !== 'mouse') {
-            /*
-            PIE-1755
-            https://github.com/palantir/blueprint/issues/3856
-            Button attached next to an InputGroup triggers the click event when enter key is pressed while typing
-            So checking the event pointer type, and stopping the propagation if not clicked by the user
-            */
-            ev.stopPropagation()
-          }
+          // if ((ev.nativeEvent as PointerEvent).pointerType !== 'mouse') {
+          //   /*
+          //   PIE-1755
+          //   https://github.com/palantir/blueprint/issues/3856
+          //   Button attached next to an InputGroup triggers the click event when enter key is pressed while typing
+          //   So checking the event pointer type, and stopping the propagation if not clicked by the user
+          //   */
+          //   ev.stopPropagation()
+          // }
           ev.preventDefault()
         }}
         disabled={disabled}
