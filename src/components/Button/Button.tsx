@@ -19,8 +19,6 @@ import { omitStyledProps, styledClasses, StyledProps } from '@harness/design-sys
 import { styledClass } from '@harness/design-system'
 import css from './Button.css'
 
-console.log(styledClass.font)
-
 export enum ButtonVariation {
   PRIMARY = 'variation-primary',
   SECONDARY = 'variation-secondary',
