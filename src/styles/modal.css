@@ -57,7 +57,7 @@
     }
   }
   .bp3-dialog.bp3-dialog {
-    /* Default width in blueprint library is 500px. "min-width" prevents any wider dialogue from going below this value */
+    /* Default width in blueprint library is 500px. "min-width" prevents any wider dialog from going below this value */
     min-width: 500px;
     width: auto;
   }
