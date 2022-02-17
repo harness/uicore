@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.16.0](https://github.com/harness/uicore/compare/v2.15.0...v2.16.0) (2022-02-17)
+
+
+### Bug Fixes
+
+* [PL-23050]: Fixed dialog width ([#595](https://github.com/harness/uicore/issues/595)) ([c38f012](https://github.com/harness/uicore/commit/c38f012a21b66c5e3bb22cdb27f9fbb476392886))
+
 ## [2.15.0](https://github.com/harness/uicore/compare/v2.14.0...v2.15.0) (2022-02-16)
 
 
