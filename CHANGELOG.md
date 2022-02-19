@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.17.0](https://github.com/harness/uicore/compare/v2.16.0...v2.17.0) (2022-02-19)
+
+
+### Bug Fixes
+
+* [PL-23065]: undo universal "dialog-size fixing". ([#596](https://github.com/harness/uicore/issues/596)) ([e743b7c](https://github.com/harness/uicore/commit/e743b7cef138b955cb295e4a6b8c3dbf8741cc73))
+
 ## [2.16.0](https://github.com/harness/uicore/compare/v2.15.0...v2.16.0) (2022-02-17)
 
 
