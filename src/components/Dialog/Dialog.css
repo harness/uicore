@@ -7,7 +7,6 @@
 
 .dialog {
   border-radius: 5px;
-  border-left: 0px !important;
   box-shadow: none !important;
   background: var(--white) !important;
   padding: var(--dialog-padding);
