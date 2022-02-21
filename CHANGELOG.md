@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.18.0](https://github.com/harness/uicore/compare/v2.17.0...v2.18.0) (2022-02-21)
+
+
+### Bug Fixes
+
+* [PL-23087]: Removed left border from modals ([#597](https://github.com/harness/uicore/issues/597)) ([d9d1308](https://github.com/harness/uicore/commit/d9d1308721815010134109327206b1098a5e4e74))
+
 ## [2.17.0](https://github.com/harness/uicore/compare/v2.16.0...v2.17.0) (2022-02-19)
 
 
