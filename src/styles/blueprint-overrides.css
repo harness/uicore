@@ -52,4 +52,7 @@
   .bp3-dark .bp3-popover .bp3-popover-arrow-fill {
     fill: var(--primary-9-dark);
   }
+  .bp3-tooltip {
+    box-shadow: unset;
+  }
 }
