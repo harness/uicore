@@ -40,4 +40,7 @@ function Horizontal(props: LayoutProps, ref: React.Ref<HTMLDivElement>) {
 
 const Layout = { Vertical: React.forwardRef(Vertical), Horizontal: React.forwardRef(Horizontal), Masonry }
 
+Layout.Vertical.displayName = 'Layout.Vertical'
+Layout.Horizontal.displayName = 'Layout.Horizontal'
+
 export { Layout, MasonryRef, MasonryProps }
