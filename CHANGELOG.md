@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.20.0](https://github.com/harness/uicore/compare/v2.19.0...v2.20.0) (2022-02-23)
+
+
+### Bug Fixes
+
+* [PIE-2712]: Run pipeline modal - White background visible on notify tooltip corners ([#599](https://github.com/harness/uicore/issues/599)) ([bd7309a](https://github.com/harness/uicore/commit/bd7309a5a5b7411f317f9d939a5bd486157b609c))
+
 ## [2.19.0](https://github.com/harness/uicore/compare/v2.18.0...v2.19.0) (2022-02-22)
 
 
