@@ -215,4 +215,3 @@ export {
 export { DetailPageCard, DetailPageCardProps, Content, ContentType } from './components/DetailPageCard/DetailPageCard'
 export { SimpleLogViewer, SimpleLogViewerProps } from './components/LogViewer/SimpleLogViewer'
 export { breakOnLinks, LogLineProps, LogLine, MemoizedLogLine } from './components/LogViewer/LogLine'
-export * from '@harness/design-system'

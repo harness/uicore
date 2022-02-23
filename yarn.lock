@@ -1280,10 +1280,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@harness/design-system@1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://npm.pkg.github.com/download/@harness/design-system/1.0.0-beta.1/976bd1137d473e1c5aaf96163d539eb031217b2fe01cc24ae39897ec0ee6e871#5c5e3f56d6f79a1f8a76412f350cbbae28ebe368"
-  integrity sha512-DwSIusHGugNqWu6fgqWAoICO2a6ma6QzOn9sW5gCmYTvnC9gvXnnW0P6YYUza1AFjXxL6nXE2P8BJ+z5I0R7Yw==
+"@harness/design-system@1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://npm.pkg.github.com/download/@harness/design-system/1.0.0-beta.3/db5aa884e9618a2243b7a36a608bb605f29d662c2bb10f4771857aa064d59127#49c08d96a7264166f1b8733c184b7b14841951a2"
+  integrity sha512-86KtNSY7KUcKICXmqVPzsV8DtVV+P2cL1+GMrveg7QrMjeKeyYbBOtmtljKArQfsR8NOgZi52ZLXFeYnq6cZ+A==
 
 "@harness/use-modal@1.0.0":
   version "1.0.0"
