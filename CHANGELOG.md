@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.21.0](https://github.com/harness/uicore/compare/v2.20.0...v2.21.0) (2022-02-23)
+
+
+### Features
+
+* [CDS-25448]: Added element as an acceptable prop in FormError ([#600](https://github.com/harness/uicore/issues/600)) ([3e77727](https://github.com/harness/uicore/commit/3e77727f4ea8a58cb4d4e5d08e51960704ec615f))
+
 ## [2.20.0](https://github.com/harness/uicore/compare/v2.19.0...v2.20.0) (2022-02-23)
 
 
