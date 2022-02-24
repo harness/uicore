@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.22.0](https://github.com/harness/uicore/compare/v2.21.0...v2.22.0) (2022-02-24)
+
+
+### Bug Fixes
+
+* [CDS-25448]: CHanged element to jsx.element ([#601](https://github.com/harness/uicore/issues/601)) ([c5632c7](https://github.com/harness/uicore/commit/c5632c7d4c21b92bd7e97d5d3c18c0aed445ec4b))
+
 ## [2.21.0](https://github.com/harness/uicore/compare/v2.20.0...v2.21.0) (2022-02-23)
 
 
