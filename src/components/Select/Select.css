@@ -65,6 +65,13 @@
     }
   }
 
+  :global(.icon-container) {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.popover {
   & :global(.bp3-transition-container),
   & :global(.bp3-popover) {
     width: 100%;
@@ -73,7 +80,7 @@
   }
 
   & :global(.bp3-menu) {
-    max-height: 350px;
+    max-height: 300px;
     width: 100%;
     overflow: auto;
     border-radius: var(--spacing-2);
@@ -83,6 +90,7 @@
     border: 0.5px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     box-shadow: 0px 0px 1px rgb(40 41 61 / 4%), 0px 2px 4px rgb(96 97 112 / 16%);
+    min-width: 250px;
   }
 
   & .menuItem {
@@ -131,10 +139,5 @@
     &:hover {
       background: var(--primary-1);
     }
-  }
-
-  :global(.icon-container) {
-    position: absolute;
-    right: 0;
   }
 }
