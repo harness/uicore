@@ -406,6 +406,7 @@ import NavGovernance from './nav-governance.svg'
 import NavHarnessHover from './nav-harness-hover.svg'
 import NavHarnessSelected from './nav-harness-selected.svg'
 import NavHarness from './nav-harness.svg'
+import NavHelp from './nav-help.svg'
 import NavInfrastructureHover from './nav-infrastructure-hover.svg'
 import NavInfrastructureSelected from './nav-infrastructure-selected.svg'
 import NavOrganizationHover from './nav-organization-hover.svg'
@@ -1063,6 +1064,7 @@ type HarnessIconName =
   | 'nav-harness-hover'
   | 'nav-harness-selected'
   | 'nav-harness'
+  | 'nav-help'
   | 'nav-infrastructure-hover'
   | 'nav-infrastructure-selected'
   | 'nav-organization-hover'
@@ -1720,6 +1722,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'nav-harness-hover': NavHarnessHover,
   'nav-harness-selected': NavHarnessSelected,
   'nav-harness': NavHarness,
+  'nav-help': NavHelp,
   'nav-infrastructure-hover': NavInfrastructureHover,
   'nav-infrastructure-selected': NavInfrastructureSelected,
   'nav-organization-hover': NavOrganizationHover,
