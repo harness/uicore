@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.24.0](https://github.com/harness/uicore/compare/v2.23.0...v2.24.0) (2022-02-24)
+
+
+### Features
+
+* [PIE-2639]: evaluate policy icon ([#603](https://github.com/harness/uicore/issues/603)) ([73e4500](https://github.com/harness/uicore/commit/73e45000084e312ecc514c2c93c6979c84861ce9))
+
 ## [2.23.0](https://github.com/harness/uicore/compare/v2.22.0...v2.23.0) (2022-02-24)
 
 
