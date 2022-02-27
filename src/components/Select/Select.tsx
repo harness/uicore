@@ -7,7 +7,7 @@
 
 import React, { useState } from 'react'
 import cx from 'classnames'
-import { Position } from '@blueprintjs/core'
+import { Position, Classes } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
@@ -15,6 +15,7 @@ import { Button } from '../../components/Button/Button'
 import { Icon, IconProps } from '../../icons/Icon'
 import { Utils } from '../../core/Utils'
 import { Text } from '../../components/Text/Text'
+import { Popover } from '../../components/Popover/Popover'
 
 export interface SelectOption {
   label: string
@@ -206,14 +207,22 @@ export function Select(props: SelectProps): React.ReactElement {
         </React.Fragment>
       )
   }
+  const tooltipContent = item?.label ? (
+    <div className={css.tooltipContainer} color="white">
+      {item.label}
+    </div>
+  ) : (
+    ''
+  )
   return (
-    <Utils.WrapOptionalTooltip
-      tooltip={item?.label}
-      tooltipProps={{
-        isDark: true,
-        fill: true,
-        position: 'bottom'
-      }}>
+    <Popover
+      boundary="viewport"
+      interactionKind="hover"
+      content={tooltipContent}
+      isDark={true}
+      fill={true}
+      popoverClassName={cx(Classes.DARK)}
+      position="bottom">
       <Suggest
         inputValueRenderer={opt => opt.label}
         itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
@@ -280,7 +289,7 @@ export function Select(props: SelectProps): React.ReactElement {
           onClosed: whenPopoverClosed
         }}
       />
-    </Utils.WrapOptionalTooltip>
+    </Popover>
   )
 }
 

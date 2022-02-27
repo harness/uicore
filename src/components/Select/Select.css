@@ -138,3 +138,13 @@
     right: 0;
   }
 }
+
+.tooltipContainer {
+  padding: var(--spacing-medium);
+  max-width: 500px;
+  max-height: 500px;
+  overflow: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
