@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.26.0](https://github.com/harness/uicore/compare/v2.25.0...v2.26.0) (2022-02-28)
+
+
+### Others
+
+* Revert "fix: portal select popover has no styling ([#602](https://github.com/harness/uicore/issues/602))" ([#606](https://github.com/harness/uicore/issues/606)) ([dd94c24](https://github.com/harness/uicore/commit/dd94c24056d8af5331402d1598650660f628fb0d))
+
 ## [2.25.0](https://github.com/harness/uicore/compare/v2.24.0...v2.25.0) (2022-02-25)
 
 
