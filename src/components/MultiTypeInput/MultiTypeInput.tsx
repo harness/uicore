@@ -201,7 +201,6 @@ export function MultiTypeInputFixedTypeComponent(
   const { items = [] } = selectProps || {}
   return (
     <Select
-      usePortal={true}
       {...selectProps}
       className={cx(css.select, selectProps.className, {
         [css.fixedValueInput]: MultiTypeInputType.FIXED ? true : false
