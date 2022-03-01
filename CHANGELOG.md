@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.27.0](https://github.com/harness/uicore/compare/v2.26.0...v2.27.0) (2022-03-01)
+
+
+### Bug Fixes
+
+* [PIE-1661]: height fixed for multi type input icon ([#546](https://github.com/harness/uicore/issues/546)) ([5da8664](https://github.com/harness/uicore/commit/5da8664f4fbd12d50677fe07f53ae8fa6910b189))
+
 ## [2.26.0](https://github.com/harness/uicore/compare/v2.25.0...v2.26.0) (2022-02-28)
 
 
