@@ -22,7 +22,7 @@ const getIconForIntent = (intent: Intent): HarnessIconName => {
   }
 }
 
-export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose'> {
+export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose' | 'enforceFocus'> {
   titleText: React.ReactNode
   contentText: React.ReactNode
   cancelButtonText: React.ReactNode
@@ -60,7 +60,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
   }
 
   function closeWithTrue(): void {
-    onClose?.(false)
+    onClose?.(true)
   }
 
   return (
