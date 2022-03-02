@@ -8,14 +8,14 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { ConfirmationDialog, Button } from '../'
-import { useToggle2 } from './useToggle'
+import { useToggleOpen } from './useToggle'
 
 export default {
-  title: 'Hooks / useToggle2'
+  title: 'Hooks / useToggleOpen'
 } as Meta
 
 export const Basic: Story = () => {
-  const { isOpen, open, close } = useToggle2()
+  const { isOpen, open, close } = useToggleOpen()
   return (
     <>
       <Button onClick={open}>Open Modal</Button>

@@ -6,7 +6,7 @@
  */
 
 import { renderHook, act } from '@testing-library/react-hooks'
-import { useToggle, useToggleWithLocalStorage, useToggle2 } from './useToggle'
+import { useToggle, useToggleWithLocalStorage, useToggleOpen } from './useToggle'
 
 test('useToggle with default value', async () => {
   const { result, waitForNextUpdate } = renderHook(() => useToggle())
@@ -58,9 +58,9 @@ test('useToggleWithLocalStorage with default value passed', async () => {
   })
 })
 
-describe('useToggle2 tests', () => {
+describe('useToggleOpen tests', () => {
   test('open works', () => {
-    const { result } = renderHook(() => useToggle2())
+    const { result } = renderHook(() => useToggleOpen())
     expect(result.current.isOpen).toBe(false)
     act(() => {
       result.current.open()
@@ -69,7 +69,7 @@ describe('useToggle2 tests', () => {
   })
 
   test('close works', () => {
-    const { result } = renderHook(() => useToggle2(true))
+    const { result } = renderHook(() => useToggleOpen(true))
     expect(result.current.isOpen).toBe(true)
     act(() => {
       result.current.close()
@@ -78,7 +78,7 @@ describe('useToggle2 tests', () => {
   })
 
   test('toggle works', () => {
-    const { result } = renderHook(() => useToggle2())
+    const { result } = renderHook(() => useToggleOpen())
     expect(result.current.isOpen).toBe(false)
     act(() => {
       result.current.toggle()

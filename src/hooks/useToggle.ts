@@ -39,14 +39,14 @@ export function useToggleWithLocalStorage(localStorageKey: string, initialState 
   return [state, toggle]
 }
 
-export interface UseToggle2Return {
+export interface UseToggleOpenReturn {
   isOpen: boolean
   open(): void
   close(): void
   toggle(): void
 }
 
-export function useToggle2(init = false): UseToggle2Return {
+export function useToggleOpen(init = false): UseToggleOpenReturn {
   const [isOpen, setIsOpen] = useState(init)
   const toggle = useCallback(() => {
     setIsOpen(state => !state)
