@@ -46,7 +46,9 @@ const renderFormikFormWithoutFormName = (
     </Formik>
   )
 }
-const findPopoverWrapperContainer = (): HTMLElement | null => document.querySelector('.bp3-popover-wrapper')
+
+// '.select' class for inner 'bp3-popover-wrapper' container
+const findPopoverWrapperContainer = (): HTMLElement | null => document.querySelector('.bp3-popover-wrapper.select')
 
 describe('Test basic Components', () => {
   test('should render Text component', () => {
