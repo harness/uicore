@@ -59,7 +59,7 @@ export { SelectV2, SelectV2Props } from './components/Select/SelectV2'
 export { DropDown, DropDownProps } from './components/DropDown/DropDown'
 export { StepWizard, StepProps, StepWizardProps } from './components/StepWizard/StepWizard'
 export { MultiSelect, MultiSelectProps, MultiSelectOption } from './components/MultiSelect/MultiSelect'
-export { useToggle, useToggleWithLocalStorage } from './hooks/useToggle'
+export { useToggle, useToggleWithLocalStorage, useToggle2, UseToggle2Return } from './hooks/useToggle'
 export { useTween, Easing } from './hooks/useTween'
 export { useIsMounted } from './hooks/useIsMounted'
 export { CircularPercentageChart } from './components/CircularPercentageChart/CircularPercentageChart'
@@ -200,6 +200,7 @@ export {
   UseConfirmationDialogProps,
   UseConfirmationDialogReturn
 } from './components/ConfirmDialog/useConfirmationDialog'
+export { ConfirmationDialog, ConfirmationDialogProps } from './components/ConfirmDialog/ConfirmationDialog'
 export { TableV2, TableProps as ReactTableProps } from './components/TableV2/TableV2'
 export { PillToggle, PillToggleOption, PillToggleProps } from './components/PillToggle/PillToggle'
 export {
