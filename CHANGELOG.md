@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.29.0](https://github.com/harness/uicore/compare/v2.28.0...v2.29.0) (2022-03-02)
+
+
+### Features
+
+* abstract out confirmation dialog ([#608](https://github.com/harness/uicore/issues/608)) ([198e0ea](https://github.com/harness/uicore/commit/198e0ea6ee8bfa34b83ad25953308edcd20e921f))
+
 ## [2.28.0](https://github.com/harness/uicore/compare/v2.27.0...v2.28.0) (2022-03-02)
 
 
