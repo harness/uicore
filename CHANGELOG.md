@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.28.0](https://github.com/harness/uicore/compare/v2.27.0...v2.28.0) (2022-03-02)
+
+
+### Bug Fixes
+
+* removed fill none from svg ([#607](https://github.com/harness/uicore/issues/607)) ([5b51aee](https://github.com/harness/uicore/commit/5b51aee3203d2b15f6d827586dc2c725fb5f0428))
+
 ## [2.27.0](https://github.com/harness/uicore/compare/v2.26.0...v2.27.0) (2022-03-01)
 
 
