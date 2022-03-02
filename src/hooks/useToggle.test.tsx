@@ -6,7 +6,7 @@
  */
 
 import { renderHook, act } from '@testing-library/react-hooks'
-import { useToggle, useToggleWithLocalStorage } from './useToggle'
+import { useToggle, useToggleWithLocalStorage, useToggle2 } from './useToggle'
 
 test('useToggle with default value', async () => {
   const { result, waitForNextUpdate } = renderHook(() => useToggle())
@@ -55,5 +55,38 @@ test('useToggleWithLocalStorage with default value passed', async () => {
     await waitForNextUpdate()
     expect(result.current[0]).toEqual(false)
     expect(window.localStorage[KEY]).toEqual('false')
+  })
+})
+
+describe('useToggle2 tests', () => {
+  test('open works', () => {
+    const { result } = renderHook(() => useToggle2())
+    expect(result.current.isOpen).toBe(false)
+    act(() => {
+      result.current.open()
+    })
+    expect(result.current.isOpen).toBe(true)
+  })
+
+  test('close works', () => {
+    const { result } = renderHook(() => useToggle2(true))
+    expect(result.current.isOpen).toBe(true)
+    act(() => {
+      result.current.close()
+    })
+    expect(result.current.isOpen).toBe(false)
+  })
+
+  test('toggle works', () => {
+    const { result } = renderHook(() => useToggle2())
+    expect(result.current.isOpen).toBe(false)
+    act(() => {
+      result.current.toggle()
+    })
+    expect(result.current.isOpen).toBe(true)
+    act(() => {
+      result.current.toggle()
+    })
+    expect(result.current.isOpen).toBe(false)
   })
 })
