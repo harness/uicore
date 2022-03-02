@@ -46,6 +46,7 @@ const renderFormikFormWithoutFormName = (
     </Formik>
   )
 }
+const findPopoverWrapperContainer = (): HTMLElement | null => document.querySelector('.bp3-popover-wrapper')
 
 describe('Test basic Components', () => {
   test('should render Text component', () => {
@@ -337,7 +338,8 @@ describe('Test basic Components', () => {
       fireEvent.click(addButton!)
     })
     expect((inputSelect as any).value).toBe('customvalue') // selected value A
-    expect(container).toMatchSnapshot()
+    const popoverWrapper = findPopoverWrapperContainer()
+    expect(popoverWrapper).toMatchSnapshot()
   })
   test('should render MultiTypeInput component with Select', async () => {
     const selectItems = [
@@ -388,7 +390,8 @@ describe('Test basic Components', () => {
       fireEvent.click(addButton!)
     })
     expect((inputSelect as any).value).toBe('customvalue') // selected value A
-    expect(container).toMatchSnapshot()
+    const popoverWrapper = findPopoverWrapperContainer()
+    expect(popoverWrapper).toMatchSnapshot()
   })
 
   test('Tag Input component type duplicate values CDNG-8531', async () => {
