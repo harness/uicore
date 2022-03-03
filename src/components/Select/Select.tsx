@@ -221,7 +221,7 @@ export function Select(props: SelectProps): React.ReactElement {
       content={tooltipContent}
       isDark={true}
       fill={true}
-      popoverClassName={cx(Classes.DARK)}
+      popoverClassName={Classes.DARK}
       position="bottom">
       <Suggest
         inputValueRenderer={opt => opt.label}
