@@ -9,7 +9,7 @@
  * This file is auto-generated. Please do not modify this file manually.
  * Use the command `yarn ui:icons` to regenerate this file.
  */
-import { FunctionComponent, ElementType } from 'react'
+import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
