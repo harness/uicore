@@ -43,7 +43,7 @@ TextInput.args = {
     'pipeline.description',
     'pipeline.identifier',
     'pipeline.stage.qa.displayName'
-  ],
+  ]
 }
 
 SelectInput.args = {
@@ -95,4 +95,3 @@ MultiSelectInputWithNoMenu.args = {
     'pipeline.stage.qa.displayName'
   ]
 }
-
