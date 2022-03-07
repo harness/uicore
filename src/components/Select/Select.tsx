@@ -59,6 +59,7 @@ export interface SelectProps
   usePortal?: boolean
   popoverClassName?: string
   onQueryChange?: Props['onQueryChange']
+  addTooltip?: boolean
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -126,6 +127,7 @@ export function Select(props: SelectProps): React.ReactElement {
     popoverClassName = '',
     resetOnSelect = true,
     resetOnClose = true,
+    addTooltip = false,
     ...rest
   } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
@@ -207,6 +209,74 @@ export function Select(props: SelectProps): React.ReactElement {
         </React.Fragment>
       )
   }
+  const renderSuggestComponent = () => (
+    <Suggest
+      inputValueRenderer={opt => opt.label}
+      itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
+        itemRenderer?.(item, props) || defaultItemRenderer(item, props, size)
+      }
+      itemListPredicate={(query, items) =>
+        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
+      }
+      createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
+      createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
+      noResults={<NoMatch />}
+      {...rest}
+      inputProps={{
+        onChange(e: React.ChangeEvent<HTMLInputElement>) {
+          setQuery(e.target.value)
+        },
+        value: query,
+        placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
+        leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
+        rightElement: (
+          <>
+            {!props.disabled && showClearBtn ? (
+              <Icon
+                name="main-delete"
+                onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
+                  e.preventDefault()
+                  handleItemSelect({ value: '', label: '' })
+                }}
+                size={14}
+                padding={{ top: 'small', right: 'xsmall', bottom: 'small' }}
+              />
+            ) : null}
+            <Icon
+              name={'chevron-down'}
+              onClick={e => {
+                const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
+                input?.focus()
+              }}
+              size={14}
+              padding={size === SelectSize.Small ? 'xsmall' : 'small'}
+            />
+          </>
+        ),
+        small: size === SelectSize.Small,
+        large: size === SelectSize.Large,
+        name: props.name,
+        ...props.inputProps
+      }}
+      resetOnSelect={resetOnSelect}
+      resetOnClose={resetOnClose}
+      items={loading ? [{ label: 'Loading...', value: Loading }] : items}
+      selectedItem={item}
+      onItemSelect={handleItemSelect}
+      query={query}
+      popoverProps={{
+        targetTagName: 'div',
+        wrapperTagName: 'div',
+        fill: true,
+        usePortal: !!props.usePortal,
+        minimal: true,
+        position: Position.BOTTOM_LEFT,
+        className: css.main,
+        popoverClassName: cx(css.popover, popoverClassName),
+        onClosed: whenPopoverClosed
+      }}
+    />
+  )
   const tooltipContent = item?.label ? (
     <div className={css.tooltipContainer} color="white">
       {item.label}
@@ -214,7 +284,7 @@ export function Select(props: SelectProps): React.ReactElement {
   ) : (
     ''
   )
-  return (
+  return addTooltip ? (
     <Popover
       boundary="viewport"
       interactionKind="hover"
@@ -223,73 +293,10 @@ export function Select(props: SelectProps): React.ReactElement {
       fill={true}
       popoverClassName={Classes.DARK}
       position="bottom">
-      <Suggest
-        inputValueRenderer={opt => opt.label}
-        itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
-          itemRenderer?.(item, props) || defaultItemRenderer(item, props, size)
-        }
-        itemListPredicate={(query, items) =>
-          items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
-        }
-        createNewItemFromQuery={props.createNewItemFromQuery || createNewItemFromQuery}
-        createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
-        noResults={<NoMatch />}
-        {...rest}
-        inputProps={{
-          onChange(e: React.ChangeEvent<HTMLInputElement>) {
-            setQuery(e.target.value)
-          },
-          value: query,
-          placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
-          leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
-          rightElement: (
-            <>
-              {!props.disabled && showClearBtn ? (
-                <Icon
-                  name="main-delete"
-                  onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
-                    e.preventDefault()
-                    handleItemSelect({ value: '', label: '' })
-                  }}
-                  size={14}
-                  padding={{ top: 'small', right: 'xsmall', bottom: 'small' }}
-                />
-              ) : null}
-              <Icon
-                name={'chevron-down'}
-                onClick={e => {
-                  const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
-                  input?.focus()
-                }}
-                size={14}
-                padding={size === SelectSize.Small ? 'xsmall' : 'small'}
-              />
-            </>
-          ),
-          small: size === SelectSize.Small,
-          large: size === SelectSize.Large,
-          name: props.name,
-          ...props.inputProps
-        }}
-        resetOnSelect={resetOnSelect}
-        resetOnClose={resetOnClose}
-        items={loading ? [{ label: 'Loading...', value: Loading }] : items}
-        selectedItem={item}
-        onItemSelect={handleItemSelect}
-        query={query}
-        popoverProps={{
-          targetTagName: 'div',
-          wrapperTagName: 'div',
-          fill: true,
-          usePortal: !!props.usePortal,
-          minimal: true,
-          position: Position.BOTTOM_LEFT,
-          className: css.main,
-          popoverClassName: cx(css.popover, popoverClassName),
-          onClosed: whenPopoverClosed
-        }}
-      />
+      {renderSuggestComponent()}
     </Popover>
+  ) : (
+    renderSuggestComponent()
   )
 }
 
