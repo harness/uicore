@@ -32,6 +32,8 @@ export const SelectInput: Story<MultiTypeInputProps> = args => <MultiTypeInput {
 
 export const MultiSelectInput: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
 
+export const MultiSelectInputWithNoMenu: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
+
 TextInput.args = {
   disabled: false,
   expressions: [
@@ -41,7 +43,7 @@ TextInput.args = {
     'pipeline.description',
     'pipeline.identifier',
     'pipeline.stage.qa.displayName'
-  ]
+  ],
 }
 
 SelectInput.args = {
@@ -76,3 +78,21 @@ MultiSelectInput.args = {
     'pipeline.stage.qa.displayName'
   ]
 }
+
+MultiSelectInputWithNoMenu.args = {
+  multiSelectProps: {
+    items: data.slice(0, 10).map(row => ({ label: row.name, value: row.id }))
+  },
+  value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
+  disabled: false,
+  showMultiTypeInputMenu: false,
+  expressions: [
+    'app.name',
+    'app.description',
+    'pipeline.name',
+    'pipeline.description',
+    'pipeline.identifier',
+    'pipeline.stage.qa.displayName'
+  ]
+}
+
