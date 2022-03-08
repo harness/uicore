@@ -47,7 +47,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   name: string
   disabled?: boolean
   mini?: boolean
-  showMultiTypeInputMenu?: boolean
+  defaultAllowedType?: MultiTypeInputType
 }
 
 export interface FixedTypeComponentProps {
@@ -92,7 +92,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     disabled,
     multitypeInputValue,
     mini,
-    showMultiTypeInputMenu = true,
+    defaultAllowedType = '',
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -161,7 +161,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
         />
       )}
-      {showMultiTypeInputMenu ? (
+      {defaultAllowedType !== MultiTypeInputType.FIXED ? (
         <Button
           noStyling
           className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
@@ -220,20 +220,16 @@ export function MultiTypeInputFixedTypeComponent(
 export interface MultiTypeInputProps
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
   selectProps?: Omit<SelectProps, 'onChange' | 'value'>
-  showMultiTypeInputMenu?: boolean
+  defaultAllowedType?: MultiTypeInputType
 }
 
-export function MultiTypeInput({
-  selectProps,
-  showMultiTypeInputMenu,
-  ...rest
-}: MultiTypeInputProps): React.ReactElement {
+export function MultiTypeInput({ selectProps, defaultAllowedType, ...rest }: MultiTypeInputProps): React.ReactElement {
   return (
     <ExpressionAndRuntimeType
       {...rest}
       fixedTypeComponentProps={selectProps}
       fixedTypeComponent={MultiTypeInputFixedTypeComponent}
-      showMultiTypeInputMenu={showMultiTypeInputMenu}
+      defaultAllowedType={defaultAllowedType}
     />
   )
 }

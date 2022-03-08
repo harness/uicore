@@ -18,6 +18,8 @@ import {
   MultiSelectTypeInputProps
 } from './MultiTypeInput'
 
+import { MultiTypeInputType } from './MultiTypeInputUtils'
+
 export default {
   title: 'Form / MultiTypeInput',
   argTypes: {
@@ -85,7 +87,7 @@ MultiSelectInputWithNoMenu.args = {
   },
   value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
   disabled: false,
-  showMultiTypeInputMenu: false,
+  defaultAllowedType: MultiTypeInputType.FIXED,
   expressions: [
     'app.name',
     'app.description',
