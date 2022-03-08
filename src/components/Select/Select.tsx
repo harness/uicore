@@ -7,7 +7,7 @@
 
 import React, { useState } from 'react'
 import cx from 'classnames'
-import { Position } from '@blueprintjs/core'
+import { Position, Classes } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
@@ -15,6 +15,7 @@ import { Button } from '../../components/Button/Button'
 import { Icon, IconProps } from '../../icons/Icon'
 import { Utils } from '../../core/Utils'
 import { Text } from '../../components/Text/Text'
+import { Popover } from '../../components/Popover/Popover'
 
 export interface SelectOption {
   label: string
@@ -58,6 +59,7 @@ export interface SelectProps
   usePortal?: boolean
   popoverClassName?: string
   onQueryChange?: Props['onQueryChange']
+  addTooltip?: boolean
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -125,6 +127,7 @@ export function Select(props: SelectProps): React.ReactElement {
     popoverClassName = '',
     resetOnSelect = true,
     resetOnClose = true,
+    addTooltip = false,
     ...rest
   } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
@@ -206,7 +209,7 @@ export function Select(props: SelectProps): React.ReactElement {
         </React.Fragment>
       )
   }
-  return (
+  const renderSuggestComponent = () => (
     <Suggest
       inputValueRenderer={opt => opt.label}
       itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
@@ -273,6 +276,27 @@ export function Select(props: SelectProps): React.ReactElement {
         onClosed: whenPopoverClosed
       }}
     />
+  )
+  const tooltipContent = item?.label ? (
+    <div className={css.tooltipContainer} color="white">
+      {item.label}
+    </div>
+  ) : (
+    ''
+  )
+  return addTooltip ? (
+    <Popover
+      boundary="viewport"
+      interactionKind="hover"
+      content={tooltipContent}
+      isDark={true}
+      fill={true}
+      popoverClassName={Classes.DARK}
+      position="bottom">
+      {renderSuggestComponent()}
+    </Popover>
+  ) : (
+    renderSuggestComponent()
   )
 }
 
