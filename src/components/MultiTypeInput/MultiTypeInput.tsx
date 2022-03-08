@@ -47,7 +47,6 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   name: string
   disabled?: boolean
   mini?: boolean
-  defaultAllowedType?: MultiTypeInputType
 }
 
 export interface FixedTypeComponentProps {
@@ -92,7 +91,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     disabled,
     multitypeInputValue,
     mini,
-    defaultAllowedType = '',
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -161,7 +159,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
         />
       )}
-      {defaultAllowedType !== MultiTypeInputType.FIXED ? (
+      {!allowableTypes.length ||
+      (allowableTypes.length === 1 && allowableTypes[0] === MultiTypeInputType.FIXED) ? null : (
         <Button
           noStyling
           className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
@@ -193,7 +192,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           }}>
           <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
         </Button>
-      ) : null}
+      )}
     </Layout.Horizontal>
   )
 }
@@ -220,16 +219,14 @@ export function MultiTypeInputFixedTypeComponent(
 export interface MultiTypeInputProps
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
   selectProps?: Omit<SelectProps, 'onChange' | 'value'>
-  defaultAllowedType?: MultiTypeInputType
 }
 
-export function MultiTypeInput({ selectProps, defaultAllowedType, ...rest }: MultiTypeInputProps): React.ReactElement {
+export function MultiTypeInput({ selectProps, ...rest }: MultiTypeInputProps): React.ReactElement {
   return (
     <ExpressionAndRuntimeType
       {...rest}
       fixedTypeComponentProps={selectProps}
       fixedTypeComponent={MultiTypeInputFixedTypeComponent}
-      defaultAllowedType={defaultAllowedType}
     />
   )
 }

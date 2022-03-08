@@ -87,7 +87,7 @@ MultiSelectInputWithNoMenu.args = {
   },
   value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
   disabled: false,
-  defaultAllowedType: MultiTypeInputType.FIXED,
+  allowableTypes: [MultiTypeInputType.FIXED],
   expressions: [
     'app.name',
     'app.description',
