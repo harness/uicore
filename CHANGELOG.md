@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.30.0](https://github.com/harness/uicore/compare/v2.29.0...v2.30.0) (2022-03-08)
+
+
+### Bug Fixes
+
+* [PL-21624]: added tooltip for the ability to see the full name of a lengthy tag ([#592](https://github.com/harness/uicore/issues/592)) ([e731b84](https://github.com/harness/uicore/commit/e731b840342d8734744c3810305aa6ede6c06e0f))
+
 ## [2.29.0](https://github.com/harness/uicore/compare/v2.28.0...v2.29.0) (2022-03-02)
 
 
