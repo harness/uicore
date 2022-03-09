@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.32.0](https://github.com/harness/uicore/compare/v2.31.0...v2.32.0) (2022-03-09)
+
+
+### Bug Fixes
+
+* [CDS-34662]: added prop to the multitypeinput to customize menu ([#610](https://github.com/harness/uicore/issues/610)) ([bd97518](https://github.com/harness/uicore/commit/bd975184ad73be88326364051a48b8aa5a046b5c))
+
 ## [2.31.0](https://github.com/harness/uicore/compare/v2.30.0...v2.31.0) (2022-03-08)
 
 
