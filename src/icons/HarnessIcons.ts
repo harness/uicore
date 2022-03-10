@@ -527,13 +527,16 @@ import SecretManager from './secret-manager.svg'
 import SecretSsh from './secret-ssh.svg'
 import SecretsIcon from './secrets-icon.svg'
 import SendData from './send-data.svg'
+import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactoryInverse from './service-artifactory-inverse.svg'
 import ServiceArtifactory from './service-artifactory.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
 import ServiceAwsLamda from './service-aws-lamda.svg'
+import ServiceAwsSam from './service-aws-sam.svg'
 import ServiceAws from './service-aws.svg'
 import ServiceAzdevops from './service-azdevops.svg'
+import ServiceAzureFunctions from './service-azure-functions.svg'
 import ServiceAzure from './service-azure.svg'
 import ServiceBamboo from './service-bamboo.svg'
 import ServiceBugsnag from './service-bugsnag.svg'
@@ -571,6 +574,10 @@ import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
 import ServiceRedis from './service-redis.svg'
+import ServiceServerlessAws from './service-serverless-aws.svg'
+import ServiceServerlessAzure from './service-serverless-azure.svg'
+import ServiceServerlessGcp from './service-serverless-gcp.svg'
+import ServiceServerless from './service-serverless.svg'
 import ServiceServiceS3 from './service-service-s3.svg'
 import ServiceServicenowInverse from './service-servicenow-inverse.svg'
 import ServiceServicenow from './service-servicenow.svg'
@@ -1040,6 +1047,7 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
+  | 'microsoft-azure'
   | 'money-icon'
   | 'multi-service'
   | 'nav-account-admin-hover'
@@ -1185,13 +1193,16 @@ type HarnessIconName =
   | 'secret-ssh'
   | 'secrets-icon'
   | 'send-data'
+  | 'serverless-deploy-step'
   | 'service-appdynamics'
   | 'service-artifactory-inverse'
   | 'service-artifactory'
   | 'service-aws-code-deploy'
   | 'service-aws-lamda'
+  | 'service-aws-sam'
   | 'service-aws'
   | 'service-azdevops'
+  | 'service-azure-functions'
   | 'service-azure'
   | 'service-bamboo'
   | 'service-bugsnag'
@@ -1229,6 +1240,10 @@ type HarnessIconName =
   | 'service-pivotal'
   | 'service-prometheus'
   | 'service-redis'
+  | 'service-serverless-aws'
+  | 'service-serverless-azure'
+  | 'service-serverless-gcp'
+  | 'service-serverless'
   | 'service-service-s3'
   | 'service-servicenow-inverse'
   | 'service-servicenow'
@@ -1844,13 +1859,16 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'secret-ssh': SecretSsh,
   'secrets-icon': SecretsIcon,
   'send-data': SendData,
+  'serverless-deploy-step': ServerlessDeployStep,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory-inverse': ServiceArtifactoryInverse,
   'service-artifactory': ServiceArtifactory,
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
   'service-aws-lamda': ServiceAwsLamda,
+  'service-aws-sam': ServiceAwsSam,
   'service-aws': ServiceAws,
   'service-azdevops': ServiceAzdevops,
+  'service-azure-functions': ServiceAzureFunctions,
   'service-azure': ServiceAzure,
   'service-bamboo': ServiceBamboo,
   'service-bugsnag': ServiceBugsnag,
@@ -1888,6 +1906,10 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
   'service-redis': ServiceRedis,
+  'service-serverless-aws': ServiceServerlessAws,
+  'service-serverless-azure': ServiceServerlessAzure,
+  'service-serverless-gcp': ServiceServerlessGcp,
+  'service-serverless': ServiceServerless,
   'service-service-s3': ServiceServiceS3,
   'service-servicenow-inverse': ServiceServicenowInverse,
   'service-servicenow': ServiceServicenow,
