@@ -18,6 +18,8 @@ import {
   MultiSelectTypeInputProps
 } from './MultiTypeInput'
 
+import { MultiTypeInputType } from './MultiTypeInputUtils'
+
 export default {
   title: 'Form / MultiTypeInput',
   argTypes: {
@@ -31,6 +33,8 @@ export const TextInput: Story<MultiTextInputProps> = args => <MultiTextInput min
 export const SelectInput: Story<MultiTypeInputProps> = args => <MultiTypeInput {...args} />
 
 export const MultiSelectInput: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
+
+export const MultiSelectInputWithNoMenu: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
 
 TextInput.args = {
   disabled: false,
@@ -67,6 +71,23 @@ MultiSelectInput.args = {
   },
   value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
   disabled: false,
+  expressions: [
+    'app.name',
+    'app.description',
+    'pipeline.name',
+    'pipeline.description',
+    'pipeline.identifier',
+    'pipeline.stage.qa.displayName'
+  ]
+}
+
+MultiSelectInputWithNoMenu.args = {
+  multiSelectProps: {
+    items: data.slice(0, 10).map(row => ({ label: row.name, value: row.id }))
+  },
+  value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
+  disabled: false,
+  allowableTypes: [MultiTypeInputType.FIXED],
   expressions: [
     'app.name',
     'app.description',
