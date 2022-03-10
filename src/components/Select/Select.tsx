@@ -268,14 +268,24 @@ export function Select(props: SelectProps): React.ReactElement {
       query={query}
       popoverProps={{
         targetTagName: 'div',
-        wrapperTagName: 'div',
         fill: true,
         usePortal: !!props.usePortal,
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: cx(css.main, { [css.borderless]: borderless }),
         popoverClassName: cx(css.popover, popoverClassName),
-        onClosed: whenPopoverClosed
+        onClosed: whenPopoverClosed,
+        modifiers: {
+          preventOverflow: {
+            // This is required to always attach the portal to the start of the reference instead of the middle
+            escapeWithReference: !!props.usePortal
+          },
+          offset: {
+            // This is required to offset the portal after it is attached to the reference.
+            // By default the portal is positioned at top: 0, left:0 wrt it's reference
+            offset: !!props.usePortal ? '1 2' : 0
+          }
+        }
       }}
     />
   )
