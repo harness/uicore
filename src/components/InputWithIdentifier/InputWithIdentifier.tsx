@@ -64,7 +64,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
   const {
     formik,
     inputLabel = 'Name',
-    idLabel = 'ID',
+    idLabel = 'Id',
     inputName = 'name',
     idName = 'identifier',
     inputGroupProps,
