@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.36.0](https://github.com/harness/uicore/compare/v2.35.0...v2.36.0) (2022-03-15)
+
+
+### Features
+
+* [GTM-777]: update subscription module logos ([#615](https://github.com/harness/uicore/issues/615)) ([ee4a16e](https://github.com/harness/uicore/commit/ee4a16e81ee1248d3c1c974640af1beaa9dadd34))
+
 ## [2.35.0](https://github.com/harness/uicore/compare/v2.34.0...v2.35.0) (2022-03-15)
 
 
