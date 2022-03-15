@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.34.0](https://github.com/harness/uicore/compare/v2.33.0...v2.34.0) (2022-03-15)
+
+
+### Bug Fixes
+
+* [PIE-2241]: Update labels of Identifier ([#613](https://github.com/harness/uicore/issues/613)) ([4cdaff5](https://github.com/harness/uicore/commit/4cdaff5159fa732b9c792362510e48234c88c456))
+
 ## [2.33.0](https://github.com/harness/uicore/compare/v2.32.0...v2.33.0) (2022-03-10)
 
 
