@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.35.0](https://github.com/harness/uicore/compare/v2.34.0...v2.35.0) (2022-03-15)
+
+
+### Bug Fixes
+
+* [CDS-34081]: Template inputs icon added ([#614](https://github.com/harness/uicore/issues/614)) ([b53eca8](https://github.com/harness/uicore/commit/b53eca8a1d5156d02582293cd17007a883b21af6))
+
 ## [2.34.0](https://github.com/harness/uicore/compare/v2.33.0...v2.34.0) (2022-03-15)
 
 
