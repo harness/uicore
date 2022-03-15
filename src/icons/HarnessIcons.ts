@@ -69,12 +69,14 @@ import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
+import CcmWithDarkText from './ccm-with-dark-text.svg'
 import CcmWithText from './ccm-with-text.svg'
 import CdHover from './cd-hover.svg'
 import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import CdSolid from './cd-solid.svg'
+import CdWithDarkText from './cd-with-dark-text.svg'
 import CdWithText from './cd-with-text.svg'
 import Cd from './cd.svg'
 import CeApplication from './ce-application.svg'
@@ -106,6 +108,7 @@ import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
 import CiSolidCurrentColor from './ci-solid-current-color.svg'
 import CiSolid from './ci-solid.svg'
+import CiWithDarkText from './ci-with-dark-text.svg'
 import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CircleStop from './circle-stop.svg'
@@ -220,6 +223,7 @@ import FeatureFlagStage from './feature-flag-stage.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FfSketch from './ff-sketch.svg'
 import FfSolid from './ff-solid.svg'
+import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
@@ -602,6 +606,7 @@ import ShieldGears from './shield-gears.svg'
 import Skipped from './skipped.svg'
 import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
+import SrmWithDarkText from './srm-with-dark-text.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
@@ -736,12 +741,14 @@ type HarnessIconName =
   | 'canvas-selector'
   | 'ccm-sketch'
   | 'ccm-solid'
+  | 'ccm-with-dark-text'
   | 'ccm-with-text'
   | 'cd-hover'
   | 'cd-main-inverse'
   | 'cd-main'
   | 'cd-sketch'
   | 'cd-solid'
+  | 'cd-with-dark-text'
   | 'cd-with-text'
   | 'cd'
   | 'ce-application'
@@ -773,6 +780,7 @@ type HarnessIconName =
   | 'ci-sketch'
   | 'ci-solid-current-color'
   | 'ci-solid'
+  | 'ci-with-dark-text'
   | 'ci-with-text'
   | 'circle-cross'
   | 'circle-stop'
@@ -887,6 +895,7 @@ type HarnessIconName =
   | 'feedback-given'
   | 'ff-sketch'
   | 'ff-solid'
+  | 'ff-with-dark-text'
   | 'ff-with-text'
   | 'file'
   | 'fixed-input'
@@ -1269,6 +1278,7 @@ type HarnessIconName =
   | 'skipped'
   | 'smtp'
   | 'spinner'
+  | 'srm-with-dark-text'
   | 'stars'
   | 'status-pending'
   | 'status-running'
@@ -1403,12 +1413,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'canvas-selector': CanvasSelector,
   'ccm-sketch': CcmSketch,
   'ccm-solid': CcmSolid,
+  'ccm-with-dark-text': CcmWithDarkText,
   'ccm-with-text': CcmWithText,
   'cd-hover': CdHover,
   'cd-main-inverse': CdMainInverse,
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
   'cd-solid': CdSolid,
+  'cd-with-dark-text': CdWithDarkText,
   'cd-with-text': CdWithText,
   cd: Cd,
   'ce-application': CeApplication,
@@ -1440,6 +1452,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'ci-sketch': CiSketch,
   'ci-solid-current-color': CiSolidCurrentColor,
   'ci-solid': CiSolid,
+  'ci-with-dark-text': CiWithDarkText,
   'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
   'circle-stop': CircleStop,
@@ -1554,6 +1567,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   'ff-sketch': FfSketch,
   'ff-solid': FfSolid,
+  'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
@@ -1936,6 +1950,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   skipped: Skipped,
   smtp: Smtp,
   spinner: Spinner,
+  'srm-with-dark-text': SrmWithDarkText,
   stars: Stars,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
