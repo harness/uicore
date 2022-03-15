@@ -94,7 +94,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const { value } = e.target
 
-    formik.setFieldValue(name, value, false)
+    formik.setFieldValue(name, value)
     formik.setFieldTouched(name, true, false)
     onChange?.(value)
   }
