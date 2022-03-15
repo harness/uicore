@@ -11,7 +11,7 @@ import { IconName } from '../../icons/Icon'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
 import { FormGroup } from '@blueprintjs/core'
-import { connect, FormikContext } from 'formik'
+import { connect, FormikContextType } from 'formik'
 import { get, isEmpty } from 'lodash-es'
 import { Intent } from '../../core/Intent'
 import { errorCheck, WrapOptionalTooltip } from '../../core/Utils'
@@ -30,7 +30,7 @@ export interface Item {
 }
 
 export interface ConnectedThumbnailSelectProps extends ThumbnailSelectProps {
-  formik: FormikContext<Record<string, never>>
+  formik: FormikContextType<Record<string, never>>
 }
 
 export interface ThumbnailSelectProps extends Pick<ThumbnailProps, 'size'> {
@@ -94,9 +94,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const { value } = e.target
 
-    formik.setFieldValue(name, value)
-    formik.setFieldTouched(name, true)
-
+    formik.setFieldValue(name, value, false)
+    formik.setFieldTouched(name, true, false)
     onChange?.(value)
   }
 

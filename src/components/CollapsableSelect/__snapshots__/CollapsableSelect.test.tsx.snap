@@ -2,7 +2,9 @@
 
 exports[`Test render CollapsableSelect collapsable select flow  1`] = `
 <div>
-  <form>
+  <form
+    action="#"
+  >
     <div
       class="bp3-form-group"
     >
@@ -68,7 +70,9 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
 
 exports[`Test render CollapsableSelect should render card view with defaultValue 1`] = `
 <div>
-  <form>
+  <form
+    action="#"
+  >
     <div
       class="bp3-form-group"
     >
@@ -134,7 +138,9 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
 
 exports[`Test render CollapsableSelect should render card view with no defaultValue 1`] = `
 <div>
-  <form>
+  <form
+    action="#"
+  >
     <div
       class="bp3-form-group"
     >
@@ -175,7 +181,9 @@ exports[`Test render CollapsableSelect should render card view with no defaultVa
 
 exports[`Test render CollapsableSelect should render customView  1`] = `
 <div>
-  <form>
+  <form
+    action="#"
+  >
     <div
       class="bp3-form-group"
     >
