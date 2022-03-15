@@ -630,6 +630,7 @@ import SwapServices from './swap-services.svg'
 import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
+import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesIcon from './templates-icon.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
@@ -1296,6 +1297,7 @@ type HarnessIconName =
   | 'sync-failed'
   | 'synced'
   | 'syncing'
+  | 'template-inputs'
   | 'template-library'
   | 'templates-icon'
   | 'terraform-apply-inverse'
@@ -1962,6 +1964,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'sync-failed': SyncFailed,
   synced: Synced,
   syncing: Syncing,
+  'template-inputs': TemplateInputs,
   'template-library': TemplateLibrary,
   'templates-icon': TemplatesIcon,
   'terraform-apply-inverse': TerraformApplyInverse,
