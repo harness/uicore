@@ -26,7 +26,7 @@ describe('StatusBar unit tests', () => {
     expect(container.querySelector(`[data-name="verticalBar"]`)).not.toBeNull()
   })
 
-  test.only('Render a horizontal bar', async () => {
+  test.skip('Render a horizontal bar', async () => {
     const gradient = 'linear-gradient(to right, var(--yellow-500), var(--red-500))'
     const { container, rerender, getByText } = render(<StatusBar height={20} width={100} gradient={gradient} />)
     await wait()
