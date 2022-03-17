@@ -531,6 +531,7 @@ import SearchWorkflow from './search-workflow.svg'
 import SecretManager from './secret-manager.svg'
 import SecretSsh from './secret-ssh.svg'
 import SecretsIcon from './secrets-icon.svg'
+import SecurityStage from './security-stage.svg'
 import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
@@ -1204,6 +1205,7 @@ type HarnessIconName =
   | 'secret-manager'
   | 'secret-ssh'
   | 'secrets-icon'
+  | 'security-stage'
   | 'send-data'
   | 'serverless-deploy-step'
   | 'service-appdynamics'
@@ -1877,6 +1879,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'secret-manager': SecretManager,
   'secret-ssh': SecretSsh,
   'secrets-icon': SecretsIcon,
+  'security-stage': SecurityStage,
   'send-data': SendData,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-appdynamics': ServiceAppdynamics,
