@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.38.0](https://github.com/harness/uicore/compare/v2.37.0...v2.38.0) (2022-03-17)
+
+
+### Features
+
+* add icon for Security Stage ([#617](https://github.com/harness/uicore/issues/617)) ([74ae635](https://github.com/harness/uicore/commit/74ae635e061e889bcb44937da52602f5f6930931))
+
 ## [2.37.0](https://github.com/harness/uicore/compare/v2.36.0...v2.37.0) (2022-03-17)
 
 
