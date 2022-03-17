@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.37.0](https://github.com/harness/uicore/compare/v2.36.0...v2.37.0) (2022-03-17)
+
+
+### Features
+
+* [SRM-9546]: error tracking icon ([#616](https://github.com/harness/uicore/issues/616)) ([3d7aff0](https://github.com/harness/uicore/commit/3d7aff055494a562b926ca3ade3ca2d45f9d4a08))
+
 ## [2.36.0](https://github.com/harness/uicore/compare/v2.35.0...v2.36.0) (2022-03-15)
 
 
