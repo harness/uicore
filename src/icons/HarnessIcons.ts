@@ -206,6 +206,7 @@ import Entity from './entity.svg'
 import Environment from './environment.svg'
 import Environments from './environments.svg'
 import ErrorOutline from './error-outline.svg'
+import ErrorTracking from './error-tracking.svg'
 import ErrorTransparentNoOutline from './error-transparent-no-outline.svg'
 import EvaluatePolicy from './evaluate-policy.svg'
 import ExecutionAbort from './execution-abort.svg'
@@ -878,6 +879,7 @@ type HarnessIconName =
   | 'environment'
   | 'environments'
   | 'error-outline'
+  | 'error-tracking'
   | 'error-transparent-no-outline'
   | 'evaluate-policy'
   | 'execution-abort'
@@ -1550,6 +1552,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   environment: Environment,
   environments: Environments,
   'error-outline': ErrorOutline,
+  'error-tracking': ErrorTracking,
   'error-transparent-no-outline': ErrorTransparentNoOutline,
   'evaluate-policy': EvaluatePolicy,
   'execution-abort': ExecutionAbort,
