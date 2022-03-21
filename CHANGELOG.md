@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.39.0](https://github.com/harness/uicore/compare/v2.38.0...v2.39.0) (2022-03-21)
+
+
+### Features
+
+* [PL-22570]: Moving design-system to a separate package in UI-core ([#590](https://github.com/harness/uicore/issues/590)) ([8600cb6](https://github.com/harness/uicore/commit/8600cb6aa9d24531f1518b326abe2b2fe2440b98))
+
 ## [2.38.0](https://github.com/harness/uicore/compare/v2.37.0...v2.38.0) (2022-03-17)
 
 
