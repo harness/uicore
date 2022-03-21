@@ -11,7 +11,7 @@ import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@st
 import { RadioButton } from './RadioButton'
 import { RadioButtonGroup, RadioButtonGroupProps } from './RadioButtonGroup'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import filterStorybookArgs from '../../utils/filterStorybookArgs'
 
 const options: RadioButtonGroupProps['options'] = [

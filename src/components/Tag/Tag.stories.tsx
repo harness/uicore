@@ -8,8 +8,9 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { Tag, Intent, Layout } from '../..'
+import { Tag, Layout } from '../..'
 import { ITagProps } from '@blueprintjs/core'
+import { Intent } from '@harness/design-system'
 
 export default {
   title: 'Components / Tag',

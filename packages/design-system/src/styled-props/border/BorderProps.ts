@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Color } from 'core/Color'
+import { Color } from '../../common/Color'
 
 export interface BorderProps {
   top?: boolean

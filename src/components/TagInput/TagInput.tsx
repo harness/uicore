@@ -8,7 +8,7 @@
 import { Button, Icon, ITagProps, MenuItem, Spinner, HTMLInputProps } from '@blueprintjs/core'
 import { IItemRendererProps, IMultiSelectProps, MultiSelect } from '@blueprintjs/select'
 import cx from 'classnames'
-import { I18nResource } from 'core/Types'
+import { I18nResource } from '@harness/design-system'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useIsMounted } from '../../hooks/useIsMounted'
 import { Container } from '../Container/Container'

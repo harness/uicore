@@ -10,7 +10,7 @@ import { HTMLDivProps } from '@blueprintjs/core'
 import { AvatarProps, Avatar, AvatarSizes } from '../Avatar/Avatar'
 import { Text } from '../Text/Text'
 import css from './AvatarGroup.css'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import classnames from 'classnames'
 import { Layout } from '../../layouts/Layout'
 

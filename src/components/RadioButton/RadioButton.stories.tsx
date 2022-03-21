@@ -10,7 +10,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import filterStorybookArgs from '../../utils/filterStorybookArgs'
 
 export default {

@@ -7,9 +7,9 @@
 
 import { Icon, IconProps } from '../../icons/Icon'
 import React, { useEffect } from 'react'
-import { Color, Text, Utils } from '../..'
+import { Text, Utils } from '../..'
 import { Easing, useTween } from '../../hooks/useTween'
-import { FontSize, FontProps } from '../../styled-props/font/FontProps'
+import { FontSize, FontProps, Color } from '@harness/design-system'
 
 export interface CircularPercentageChartProps {
   size: number

@@ -26,7 +26,7 @@ exports[`<DurationInput/> tests component tests renders with given value (in tim
         class="bp3-popover-target"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -67,7 +67,7 @@ exports[`<DurationInput/> tests component tests renders with given value 1`] = `
         class="bp3-popover-target"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -108,7 +108,7 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
         class="bp3-popover-target bp3-popover-open"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -150,7 +150,7 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
               class="bp3-popover-content"
             >
               <p
-                class="font main padding padding-xlarge style style-minWidth style-minWidth-192px"
+                class="StyledProps--font StyledProps--main StyledProps--padding-xlarge"
                 style="min-width: 192px;"
               >
                 You can use:
@@ -251,7 +251,7 @@ exports[`<DurationInput/> tests component tests shows subset of allowed values i
         class="bp3-popover-target bp3-popover-open"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -293,7 +293,7 @@ exports[`<DurationInput/> tests component tests shows subset of allowed values i
               class="bp3-popover-content"
             >
               <p
-                class="font main padding padding-xlarge style style-minWidth style-minWidth-192px"
+                class="StyledProps--font StyledProps--main StyledProps--padding-xlarge"
                 style="min-width: 192px;"
               >
                 You can use:
@@ -371,7 +371,7 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign main warnIcon"
+            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
@@ -399,7 +399,7 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
         class="bp3-popover-target"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -437,7 +437,7 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign main warnIcon"
+            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
@@ -465,7 +465,7 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
         class="bp3-popover-target"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -503,7 +503,7 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign main warnIcon"
+            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
@@ -531,7 +531,7 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
         class="bp3-popover-target"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >

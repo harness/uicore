@@ -3,7 +3,7 @@
 exports[`Steps Progress Component should render with default steps 1`] = `
 <div>
   <div
-    class="vertical layout-spacing-large main stepsProgress spacing spacing-large"
+    class="vertical layout-spacing-large StyledProps--main stepsProgress"
     id="steps-progress"
   >
     <div
@@ -19,13 +19,13 @@ exports[`Steps Progress Component should render with default steps 1`] = `
       </div>
     </div>
     <div
-      class="vertical layout-spacing-large main spacing spacing-large"
+      class="vertical layout-spacing-large StyledProps--main"
     >
       <div
         class="stepWrap"
       >
         <span
-          class="bp3-icon bp3-icon-tick main color color-green500 margin margin-right margin-right-small"
+          class="bp3-icon bp3-icon-tick StyledProps--main StyledProps--color StyledProps--color-green500 StyledProps--margin-right-small"
           icon="tick"
         >
           <svg
@@ -44,7 +44,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
           </svg>
         </span>
         <div
-          class="font main stepLabelContainer style style-fontWeight style-fontWeight-bold"
+          class="StyledProps--font StyledProps--main stepLabelContainer"
           style="font-weight: bold;"
         >
           Checking Delegate
@@ -54,7 +54,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
         class="stepWrap"
       >
         <span
-          class="bp3-icon bp3-icon-tick main color color-green500 margin margin-right margin-right-small"
+          class="bp3-icon bp3-icon-tick StyledProps--main StyledProps--color StyledProps--color-green500 StyledProps--margin-right-small"
           icon="tick"
         >
           <svg
@@ -73,7 +73,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
           </svg>
         </span>
         <div
-          class="font main stepLabelContainer style style-fontWeight style-fontWeight-bold"
+          class="StyledProps--font StyledProps--main stepLabelContainer"
           style="font-weight: bold;"
         >
           Establising Connection with the Delegate and Kubernetes
@@ -83,7 +83,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
         class="stepWrap"
       >
         <span
-          class="bp3-icon bp3-icon-error main color color-red500 margin margin-right margin-right-small"
+          class="bp3-icon bp3-icon-error StyledProps--main StyledProps--color StyledProps--color-red500 StyledProps--margin-right-small"
           icon="error"
         >
           <svg
@@ -102,7 +102,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
           </svg>
         </span>
         <div
-          class="font main stepLabelContainer style style-fontWeight style-fontWeight-"
+          class="StyledProps--font StyledProps--main stepLabelContainer"
         >
           Checking for heartbeat
         </div>
@@ -111,7 +111,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
         class="stepWrap"
       >
         <span
-          class="bp3-icon bp3-icon-blank main color color-yellow500 margin margin-right margin-right-small"
+          class="bp3-icon bp3-icon-blank StyledProps--main StyledProps--color StyledProps--color-yellow500 StyledProps--margin-right-small"
           icon="blank"
         >
           <svg
@@ -126,7 +126,7 @@ exports[`Steps Progress Component should render with default steps 1`] = `
           </svg>
         </span>
         <div
-          class="font main stepLabelContainer style style-fontWeight style-fontWeight-normal"
+          class="StyledProps--font StyledProps--main stepLabelContainer"
           style="font-weight: normal;"
         >
           Verifying Connection

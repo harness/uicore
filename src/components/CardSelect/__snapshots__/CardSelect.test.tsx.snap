@@ -14,7 +14,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-kubernetes"
         >
           <svg
@@ -23,7 +23,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Kubernetes
         </p>
@@ -38,7 +38,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-github"
         >
           <svg
@@ -47,7 +47,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Github
         </p>
@@ -62,7 +62,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-gcp"
         >
           <svg
@@ -71,7 +71,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           GCP
         </p>
@@ -86,7 +86,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-elk"
         >
           <svg
@@ -95,7 +95,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           ELK Service
         </p>
@@ -110,7 +110,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-gotlab"
         >
           <svg
@@ -119,7 +119,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Git Labs
         </p>
@@ -134,7 +134,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-datadog"
         >
           <svg
@@ -143,7 +143,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Datadog
         </p>
@@ -158,7 +158,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-slack"
         >
           <svg
@@ -167,7 +167,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Slack
         </p>
@@ -182,7 +182,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-jenkins"
         >
           <svg
@@ -191,7 +191,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Jenkins
         </p>
@@ -215,7 +215,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-kubernetes"
         >
           <svg
@@ -224,7 +224,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Kubernetes
         </p>
@@ -239,7 +239,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-github"
         >
           <svg
@@ -248,7 +248,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Github
         </p>
@@ -262,7 +262,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-gcp"
         >
           <svg
@@ -271,7 +271,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           GCP
         </p>
@@ -286,7 +286,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-elk"
         >
           <svg
@@ -295,7 +295,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           ELK Service
         </p>
@@ -310,7 +310,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-gotlab"
         >
           <svg
@@ -319,7 +319,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Git Labs
         </p>
@@ -334,7 +334,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-datadog"
         >
           <svg
@@ -343,7 +343,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Datadog
         </p>
@@ -358,7 +358,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-slack"
         >
           <svg
@@ -367,7 +367,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Slack
         </p>
@@ -382,7 +382,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-jenkins"
         >
           <svg
@@ -391,7 +391,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Jenkins
         </p>
@@ -415,7 +415,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-kubernetes"
         >
           <svg
@@ -424,7 +424,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Kubernetes
         </p>
@@ -439,7 +439,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-github"
         >
           <svg
@@ -448,7 +448,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Github
         </p>
@@ -463,7 +463,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-gcp"
         >
           <svg
@@ -472,7 +472,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-900)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           GCP
         </p>
@@ -487,7 +487,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-elk"
         >
           <svg
@@ -496,7 +496,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           ELK Service
         </p>
@@ -511,7 +511,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-gotlab"
         >
           <svg
@@ -520,7 +520,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Git Labs
         </p>
@@ -535,7 +535,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-datadog"
         >
           <svg
@@ -544,7 +544,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Datadog
         </p>
@@ -559,7 +559,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-slack"
         >
           <svg
@@ -568,7 +568,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Slack
         </p>
@@ -583,7 +583,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon main"
+          class="bp3-icon StyledProps--main"
           data-icon="service-jenkins"
         >
           <svg
@@ -592,7 +592,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           />
         </span>
         <p
-          class="font main color color-var(--grey-350)"
+          class="StyledProps--font StyledProps--main StyledProps--color"
         >
           Jenkins
         </p>

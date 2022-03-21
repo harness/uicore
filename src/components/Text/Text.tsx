@@ -7,9 +7,9 @@
 
 import React, { HTMLAttributes, useRef, useLayoutEffect, useState, useEffect } from 'react'
 import cx from 'classnames'
-import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
-import styledCSS from '../../styled-props/StyledProps.css'
-import { OptionalTooltip } from '../../core/Types'
+import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import { styledClass } from '@harness/design-system'
+import { OptionalTooltip } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import css from './Text.css'
 import { Icon, IconName, IconProps } from '../../icons/Icon'
@@ -104,7 +104,7 @@ export function Text(props: TextProps) {
           'rightIconProps',
           'tag'
         )}
-        className={styledClasses(props, styledCSS.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
+        className={styledClasses(props, styledClass.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
         ref={ref}>
         {icon && <Icon className={css.icon} name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}

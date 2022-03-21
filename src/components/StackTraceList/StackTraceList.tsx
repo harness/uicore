@@ -11,7 +11,7 @@ import { Heading } from '../Heading/Heading'
 import { Link } from '../Link/Link'
 import css from './StackTraceList.css'
 import cx from 'classnames'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import { Text } from '../Text/Text'
 
 type StackTrace = string | { timestamp?: string; stackTrace?: string }

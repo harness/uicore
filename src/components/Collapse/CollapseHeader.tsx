@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import { Icon, IconProps, IconName } from '../../icons/Icon'
 import css from './CollapseHeader.css'
 import { Container } from '../Container/Container'

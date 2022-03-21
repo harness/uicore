@@ -6,9 +6,9 @@
  */
 
 import { Radio as BpRadio, RadioGroup as BpRadioGroup, IRadioProps } from '@blueprintjs/core'
-import { StyledProps, omitStyledProps, styledClasses } from '../../styled-props/StyledProps'
+import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
 import React, { FormEvent } from 'react'
-import styledClass from '../../styled-props/StyledProps.css'
+import { styledClass } from '@harness/design-system'
 
 import css from './Radio.css'
 

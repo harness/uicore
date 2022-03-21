@@ -3,26 +3,26 @@
 exports[`Pagination itemCount < pageSize 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main container padding padding-top padding-top-medium padding-bottom padding-bottom-medium flex flex-align flex-align-center-center flex-distribution flex-distribution-space-between"
+    class="horizontal layout-spacing-undefined StyledProps--main container StyledProps--padding-top-medium StyledProps--padding-bottom-medium StyledProps--flex StyledProps--flex-align-center-center StyledProps--flex-distribution-space-between"
   >
     <span
-      class="font main inline inline-true font-variation font-variation-small-semi"
+      class="StyledProps--font StyledProps--main StyledProps--inline StyledProps--font-variation-small-semi"
     >
       5
        of 
       5
     </span>
     <div
-      class="horizontal layout-spacing-undefined main"
+      class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <button
-        class="bp3-button bp3-disabled button font main roundedButton buttonLeft with-current-color withLeftIcon size small"
+        class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonLeft with-current-color withLeftIcon size small"
         disabled=""
         tabindex="-1"
         type="button"
       >
         <span
-          class="bp3-icon bp3-icon-arrow-left main padding padding-right padding-right-xsmall"
+          class="bp3-icon bp3-icon-arrow-left StyledProps--main StyledProps--padding-right-xsmall"
           icon="arrow-left"
         >
           <svg
@@ -47,7 +47,7 @@ exports[`Pagination itemCount < pageSize 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-disabled button font main roundedButton selected with-current-color"
+        class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton selected with-current-color"
         disabled=""
         tabindex="-1"
         type="button"
@@ -59,7 +59,7 @@ exports[`Pagination itemCount < pageSize 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-disabled button font main roundedButton buttonRight with-current-color withRightIcon size small"
+        class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonRight with-current-color withRightIcon size small"
         disabled=""
         tabindex="-1"
         type="button"
@@ -70,7 +70,7 @@ exports[`Pagination itemCount < pageSize 1`] = `
           Next
         </span>
         <span
-          class="bp3-icon bp3-icon-arrow-right main"
+          class="bp3-icon bp3-icon-arrow-right StyledProps--main"
           icon="arrow-right"
         >
           <svg
@@ -100,24 +100,24 @@ exports[`Pagination itemCount < pageSize 1`] = `
 exports[`Pagination pageCount < 8 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main container padding padding-top padding-top-medium padding-bottom padding-bottom-medium flex flex-align flex-align-center-center flex-distribution flex-distribution-space-between"
+    class="horizontal layout-spacing-undefined StyledProps--main container StyledProps--padding-top-medium StyledProps--padding-bottom-medium StyledProps--flex StyledProps--flex-align-center-center StyledProps--flex-distribution-space-between"
   >
     <span
-      class="font main inline inline-true font-variation font-variation-small-semi"
+      class="StyledProps--font StyledProps--main StyledProps--inline StyledProps--font-variation-small-semi"
     >
       (1 - 10) of 30
     </span>
     <div
-      class="horizontal layout-spacing-undefined main"
+      class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <button
-        class="bp3-button bp3-disabled button font main roundedButton buttonLeft with-current-color withLeftIcon size small"
+        class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonLeft with-current-color withLeftIcon size small"
         disabled=""
         tabindex="-1"
         type="button"
       >
         <span
-          class="bp3-icon bp3-icon-arrow-left main padding padding-right padding-right-xsmall"
+          class="bp3-icon bp3-icon-arrow-left StyledProps--main StyledProps--padding-right-xsmall"
           icon="arrow-left"
         >
           <svg
@@ -142,7 +142,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-disabled button font main roundedButton selected with-current-color"
+        class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton selected with-current-color"
         disabled=""
         tabindex="-1"
         type="button"
@@ -154,7 +154,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -164,7 +164,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -174,7 +174,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton buttonRight with-current-color withRightIcon size small"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton buttonRight with-current-color withRightIcon size small"
         type="button"
       >
         <span
@@ -183,7 +183,7 @@ exports[`Pagination pageCount < 8 1`] = `
           Next
         </span>
         <span
-          class="bp3-icon bp3-icon-arrow-right main"
+          class="bp3-icon bp3-icon-arrow-right StyledProps--main"
           icon="arrow-right"
         >
           <svg
@@ -213,24 +213,24 @@ exports[`Pagination pageCount < 8 1`] = `
 exports[`Pagination pageCount >= 8 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main container padding padding-top padding-top-medium padding-bottom padding-bottom-medium flex flex-align flex-align-center-center flex-distribution flex-distribution-space-between"
+    class="horizontal layout-spacing-undefined StyledProps--main container StyledProps--padding-top-medium StyledProps--padding-bottom-medium StyledProps--flex StyledProps--flex-align-center-center StyledProps--flex-distribution-space-between"
   >
     <span
-      class="font main inline inline-true font-variation font-variation-small-semi"
+      class="StyledProps--font StyledProps--main StyledProps--inline StyledProps--font-variation-small-semi"
     >
       (1 - 10) of 100
     </span>
     <div
-      class="horizontal layout-spacing-undefined main"
+      class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <button
-        class="bp3-button bp3-disabled button font main roundedButton buttonLeft with-current-color withLeftIcon size small"
+        class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonLeft with-current-color withLeftIcon size small"
         disabled=""
         tabindex="-1"
         type="button"
       >
         <span
-          class="bp3-icon bp3-icon-arrow-left main padding padding-right padding-right-xsmall"
+          class="bp3-icon bp3-icon-arrow-left StyledProps--main StyledProps--padding-right-xsmall"
           icon="arrow-left"
         >
           <svg
@@ -255,7 +255,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button bp3-disabled button font main roundedButton selected with-current-color"
+        class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton selected with-current-color"
         disabled=""
         tabindex="-1"
         type="button"
@@ -267,7 +267,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -277,7 +277,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -287,7 +287,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -297,7 +297,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -307,7 +307,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -317,7 +317,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -327,7 +327,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -337,7 +337,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -347,7 +347,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton with-current-color"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton with-current-color"
         type="button"
       >
         <span
@@ -357,7 +357,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
-        class="bp3-button button font main roundedButton buttonRight with-current-color withRightIcon size small"
+        class="bp3-button button StyledProps--font StyledProps--main roundedButton buttonRight with-current-color withRightIcon size small"
         type="button"
       >
         <span
@@ -366,7 +366,7 @@ exports[`Pagination pageCount >= 8 1`] = `
           Next
         </span>
         <span
-          class="bp3-icon bp3-icon-arrow-right main"
+          class="bp3-icon bp3-icon-arrow-right StyledProps--main"
           icon="arrow-right"
         >
           <svg

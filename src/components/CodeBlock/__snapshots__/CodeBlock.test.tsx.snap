@@ -3,17 +3,17 @@
 exports[`Code Block should render codeblock with code copy option 1`] = `
 <div>
   <div
-    class="font main codeBlock padding padding-xsmall background background-grey100 margin margin-none flex flex-true height height-undefined"
+    class="StyledProps--font StyledProps--main codeBlock StyledProps--padding-xsmall StyledProps--background-grey100 StyledProps--margin-none StyledProps--flex"
   >
     <pre>
       kubectl apply -f harness-delegate.yaml
     </pre>
     <button
-      class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-duplicate main padding padding-undefined"
+        class="bp3-icon bp3-icon-duplicate StyledProps--main"
         icon="duplicate"
       >
         <svg
@@ -39,7 +39,7 @@ exports[`Code Block should render codeblock with code copy option 1`] = `
 exports[`Code Block should render codeblock with code formatter 1`] = `
 <div>
   <div
-    class="font main codeBlock padding padding-xsmall background background-grey100 margin margin-none flex flex-true height height-undefined"
+    class="StyledProps--font StyledProps--main codeBlock StyledProps--padding-xsmall StyledProps--background-grey100 StyledProps--margin-none StyledProps--flex"
   >
     <pre>
       kubectl apply -f harness-delegate.yaml
@@ -51,10 +51,10 @@ exports[`Code Block should render codeblock with code formatter 1`] = `
 exports[`Code Block should render with just snippet props 1`] = `
 <div>
   <div
-    class="font main codeBlock padding padding-small background background-grey100 margin margin-none flex flex-true height height-undefined"
+    class="StyledProps--font StyledProps--main codeBlock StyledProps--padding-small StyledProps--background-grey100 StyledProps--margin-none StyledProps--flex"
   >
     <p
-      class="font main color color-grey350 font-size font-size-normal font-italic font-italic-true"
+      class="StyledProps--font StyledProps--main StyledProps--color StyledProps--color-grey350 StyledProps--font-size-normal StyledProps--font-italic"
     >
       You may have to wait upto 2 mins for the delegate to come initialize.
     </p>

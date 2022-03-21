@@ -8,7 +8,8 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Layout, AvatarGroup, AvatarGroupProps, Color } from '../..'
+import { Layout, AvatarGroup, AvatarGroupProps } from '../..'
+import { Color } from '@harness/design-system'
 
 export default {
   title: 'Components / AvatarGroup',

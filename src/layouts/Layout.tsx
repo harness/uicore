@@ -6,9 +6,9 @@
  */
 
 import React, { HTMLAttributes } from 'react'
-import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
+import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
 import css from './Layout.css'
-import { Spacing } from 'core/Spacing'
+import { Spacing } from '@harness/design-system'
 import { Masonry, MasonryRef, MasonryProps } from './Masonry'
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement>, StyledProps {

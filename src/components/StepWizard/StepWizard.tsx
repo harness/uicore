@@ -12,7 +12,7 @@ import { Icon, IconName, IconProps } from '../../icons/Icon'
 import { Text } from '../../components/Text/Text'
 import { romanize } from '../../core/Utils'
 import { isNil } from 'lodash-es'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 
 interface StepChangeData<SharedObject> {
   prevStep: number

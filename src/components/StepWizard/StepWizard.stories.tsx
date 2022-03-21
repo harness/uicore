@@ -11,7 +11,7 @@ import type { Meta, Story } from '@storybook/react'
 import { ExampleWizard, ExampleStep, ModalExample } from './example/StepWizardExample'
 import { Text } from '../Text/Text'
 import { StepWizard } from './StepWizard'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 
 export default {
   title: 'Components / Step Wizard',

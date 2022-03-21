@@ -5,10 +5,11 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Color, Heading, Layout } from '../../'
+import { Heading, Layout } from '../../'
 import React from 'react'
 import cx from 'classnames'
 import css from './PageHeader.css'
+import { Color } from '@harness/design-system'
 
 export interface PageHeaderProps {
   title: React.ReactNode

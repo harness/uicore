@@ -8,7 +8,7 @@
 import React from 'react'
 import { Text } from '../Text/Text'
 import { Container } from '../Container/Container'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import css from './StepsProgress.css'
 import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
 import { Layout } from '../../layouts/Layout'
