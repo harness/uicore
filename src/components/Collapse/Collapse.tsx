@@ -25,6 +25,7 @@ function Collapse(props: CollapseProps) {
     isOpen: propsIsOpen,
     isRemovable,
     heading,
+    expandedHeading,
     iconProps,
     expandedIcon,
     collapsedIcon,
@@ -51,6 +52,7 @@ function Collapse(props: CollapseProps) {
         isOpen={isOpen}
         isRemovable={isRemovable}
         heading={heading}
+        expandedHeading={expandedHeading}
         iconProps={iconProps}
         expandedIcon={expandedIcon}
         className={cx(css.header, collapseHeaderClassName)}
