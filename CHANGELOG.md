@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.40.0](https://github.com/harness/uicore/compare/v2.39.0...v2.40.0) (2022-03-21)
+
+
+### Features
+
+* [CDS-34141]: alt heading for Collapse when expanded ([#618](https://github.com/harness/uicore/issues/618)) ([94dfb06](https://github.com/harness/uicore/commit/94dfb064083cd69a97ce7096431206ef84df1915))
+
 ## [2.39.0](https://github.com/harness/uicore/compare/v2.38.0...v2.39.0) (2022-03-21)
 
 
