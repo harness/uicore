@@ -49,9 +49,15 @@ export function CollapseHeader(props: CollapseHeaderProps) {
           <Icon name={collapsedIcon || 'main-caret-right'} color={Color.GREY_400} size={10} {...iconProps} />
         )}
         {isOpen && expandedHeading ? (
-          typeof expandedHeading === 'string' ? <Text className={css.title}>{expandedHeading}</Text> : expandedHeading
+          typeof expandedHeading === 'string' ? (
+            <Text className={css.title}>{expandedHeading}</Text>
+          ) : (
+            expandedHeading
+          )
+        ) : typeof heading === 'string' ? (
+          <Text className={css.title}>{heading}</Text>
         ) : (
-          typeof heading === 'string' ? <Text className={css.title}>{heading}</Text> : heading
+          heading
         )}
       </Container>
 
