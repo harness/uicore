@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.42.0](https://github.com/harness/uicore/compare/v2.41.0...v2.42.0) (2022-03-22)
+
+
+### Features
+
+* [CCM-7066]: added aws-rds icon ([#619](https://github.com/harness/uicore/issues/619)) ([c051045](https://github.com/harness/uicore/commit/c051045e62b9869ffba2b13759ed131a5df7d402))
+
 ## [2.41.0](https://github.com/harness/uicore/compare/v2.40.0...v2.41.0) (2022-03-22)
 
 
