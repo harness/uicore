@@ -35,6 +35,7 @@ import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
+import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
@@ -709,6 +710,7 @@ type HarnessIconName =
   | 'audit-trail'
   | 'aws-codecommit'
   | 'aws-kms'
+  | 'aws-rds'
   | 'aws-secret-manager'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
@@ -1383,6 +1385,7 @@ const HarnessIcons: KVO<ElementType> = {
   'audit-trail': AuditTrail,
   'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
+  'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
