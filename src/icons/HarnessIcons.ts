@@ -1,16 +1,9 @@
-/*
- * Copyright 2022 Harness Inc. All rights reserved.
- * Use of this source code is governed by the PolyForm Shield 1.0.0 license
- * that can be found in the licenses directory at the root of this repository, also available at
- * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
- */
-
 /**
  * This file is auto-generated. Please do not modify this file manually.
  * Use the command `yarn ui:icons` to regenerate this file.
  */
-import { ElementType } from 'react'
-import { KVO } from '@harness/design-system'
+import { FunctionComponent, ElementType } from 'react'
+import { KVO } from 'core/Types'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -35,6 +28,7 @@ import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
+import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
@@ -709,6 +703,7 @@ type HarnessIconName =
   | 'audit-trail'
   | 'aws-codecommit'
   | 'aws-kms'
+  | 'aws-rds'
   | 'aws-secret-manager'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
@@ -1358,7 +1353,7 @@ type HarnessIconName =
   | 'zoom-in'
   | 'zoom-out'
 
-const HarnessIcons: KVO<ElementType> = {
+const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   Edit: Edit,
   Inline: Inline,
   Options: Options,
@@ -1383,6 +1378,7 @@ const HarnessIcons: KVO<ElementType> = {
   'audit-trail': AuditTrail,
   'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
+  'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
