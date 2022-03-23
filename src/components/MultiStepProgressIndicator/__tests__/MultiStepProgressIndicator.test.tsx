@@ -13,12 +13,14 @@ describe('Test MultiStepProgressIndicator', () => {
   test('Basic render', () => {
     const { container } = render(
       <MultiStepProgressIndicator
-        stepProgress={[
-          { stepIndex: 0, stepStatus: 'SUCCESS' },
-          { stepIndex: 1, stepStatus: 'FAILED' },
-          { stepIndex: 2, stepStatus: 'INPROGRESS' },
-          { stepIndex: 3, stepStatus: 'TODO' }
-        ]}
+        progressMap={
+          new Map([
+            [0, 'SUCCESS'],
+            [1, 'FAILED'],
+            [2, 'INPROGRESS'],
+            [3, 'TODO']
+          ])
+        }
       />
     )
     expect(document.body.getElementsByClassName('bp3-icon StyledProps--main').length).toBe(3)

@@ -14,16 +14,13 @@ import { Color } from '@harness/design-system'
 
 import css from './MultiStepProgressIndicator.css'
 
-interface StepDetails {
-  stepIndex: number
-  stepStatus: 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'
-}
+type StepStatus = 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'
 
 export interface MultiStepProgressIndicatorProps {
-  stepProgress: StepDetails[]
+  progressMap: Map<number, StepStatus>
 }
 
-const Dot: React.FC<{ status: StepDetails['stepStatus'] }> = ({ status }) => {
+const Dot: React.FC<{ status: StepStatus }> = ({ status }) => {
   switch (status) {
     case 'TODO':
       return <div className={cx(css.dot, css.spacing)} />
@@ -38,7 +35,7 @@ const Dot: React.FC<{ status: StepDetails['stepStatus'] }> = ({ status }) => {
   }
 }
 
-const Bar: React.FC<{ status: StepDetails['stepStatus'] }> = ({ status }) => {
+const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
   switch (status) {
     case 'TODO':
     case 'INPROGRESS':
@@ -51,19 +48,19 @@ const Bar: React.FC<{ status: StepDetails['stepStatus'] }> = ({ status }) => {
   }
 }
 
-export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({ stepProgress }) => {
-  const stepCount = stepProgress?.length
-  return stepCount ? (
-    <Layout.Horizontal>
-      {stepProgress.map(step => {
-        const { stepIndex, stepStatus } = step
-        return (
-          <Layout.Horizontal flex key={stepIndex}>
-            <Dot status={stepStatus} />
-            {stepIndex !== stepCount - 1 ? <Bar status={stepStatus} /> : null}
-          </Layout.Horizontal>
-        )
-      })}
-    </Layout.Horizontal>
-  ) : null
+export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({ progressMap }) => {
+  let entries = progressMap.size ? Array.from(progressMap.entries()) : []
+  const elements: React.ReactNode[] = []
+
+  entries.forEach((value, index) => {
+    const status = value[1]
+    elements.push(
+      <Layout.Horizontal flex key={index}>
+        <Dot status={status} />
+        {index !== progressMap.size - 1 ? <Bar status={status} /> : null}
+      </Layout.Horizontal>
+    )
+  })
+
+  return <Layout.Horizontal>{elements}</Layout.Horizontal>
 }

@@ -30,18 +30,14 @@ export default {
             <Primary />
             <Text style={{ fontWeight: 'bold' }}>Data Interface</Text>
             <pre>
-              <code>
-                {`interface StepDetails {
-  stepIndex: number
-  stepStatus: 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'
-}`}
-              </code>
+              <code>{`type StepStatus = 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'`}</code>
               <br />
               <br />
               <code>
                 {`interface MultiStepProgressIndicatorProps {
-   stepProgress: StepDetails[]
-}`}
+  progressMap: Map<number, StepStatus>
+}
+`}
               </code>
             </pre>
           </>
@@ -56,10 +52,10 @@ export const MultiStepProgressIndicatorComp: Story<MultiStepProgressIndicatorPro
 )
 
 MultiStepProgressIndicatorComp.args = {
-  stepProgress: [
-    { stepIndex: 0, stepStatus: 'SUCCESS' },
-    { stepIndex: 1, stepStatus: 'FAILED' },
-    { stepIndex: 2, stepStatus: 'INPROGRESS' },
-    { stepIndex: 3, stepStatus: 'TODO' }
-  ]
+  progressMap: new Map([
+    [0, 'SUCCESS'],
+    [1, 'FAILED'],
+    [2, 'INPROGRESS'],
+    [3, 'TODO']
+  ])
 }
