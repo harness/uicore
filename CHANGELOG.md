@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.44.0](https://github.com/harness/uicore/compare/v2.43.0...v2.44.0) (2022-03-23)
+
+
+### Features
+
+* [CI-3613]: Added `MultiStepProgressIndicator` component ([#622](https://github.com/harness/uicore/issues/622)) ([2816a6b](https://github.com/harness/uicore/commit/2816a6b8e2c50c722b2e6ea7595260eab113647c))
+
 ## [2.43.0](https://github.com/harness/uicore/compare/v2.42.0...v2.43.0) (2022-03-23)
 
 
