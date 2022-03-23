@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.45.0](https://github.com/harness/uicore/compare/v2.44.0...v2.45.0) (2022-03-23)
+
+
+### Bug Fixes
+
+* [PIE-3235]: Fix the canary inverse icon ([#625](https://github.com/harness/uicore/issues/625)) ([e4d6e37](https://github.com/harness/uicore/commit/e4d6e37ca1a07e5d9636f6c00f2c1cd9763db828))
+
 ## [2.44.0](https://github.com/harness/uicore/compare/v2.43.0...v2.44.0) (2022-03-23)
 
 
