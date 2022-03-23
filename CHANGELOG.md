@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.43.0](https://github.com/harness/uicore/compare/v2.42.0...v2.43.0) (2022-03-23)
+
+
+### Bug Fixes
+
+* [PL-22570]: Removing design-system css import ([#621](https://github.com/harness/uicore/issues/621)) ([ec7abce](https://github.com/harness/uicore/commit/ec7abce2ce4b378983dbd5e02cf12d78e14ace0f))
+
 ## [2.42.0](https://github.com/harness/uicore/compare/v2.41.0...v2.42.0) (2022-03-22)
 
 
