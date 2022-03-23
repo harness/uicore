@@ -5,8 +5,11 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Layout } from '../../layouts/Layout'
 import React from 'react'
+
+import { Layout } from '../../layouts/Layout'
+import { Icon } from '../../icons/Icon'
+import { Color } from '@harness/design-system'
 
 import css from './MultiStepProgressIndicator.css'
 
@@ -19,17 +22,32 @@ export interface MultiStepProgressIndicatorProps {
   stepProgress: StepDetails[]
 }
 
+const Dot: React.FC<{ status: StepDetails['stepStatus'] }> = ({ status }) => {
+  switch (status) {
+    case 'TODO':
+      return <div className={css.dot} />
+    case 'INPROGRESS':
+      return <Icon name="steps-spinner" size={22} color={Color.GREEN_600} className={css.spacing} />
+    case 'FAILED':
+      return <Icon name="circle-cross" size={20} color={Color.RED_600} className={css.spacing} />
+    case 'SUCCESS':
+      return <Icon name="success-tick" size={20} />
+    default:
+      return null
+  }
+}
+
 export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({ stepProgress }) => {
-  const Dot = <div className={css.dot}></div>
   const Bar = <div className={css.bar}></div>
+
   const stepCount = stepProgress?.length
   return stepCount ? (
     <Layout.Horizontal>
       {stepProgress.map(step => {
-        const { stepIndex } = step
+        const { stepIndex, stepStatus } = step
         return (
           <Layout.Horizontal flex key={stepIndex}>
-            {Dot}
+            <Dot status={stepStatus} />
             {stepIndex !== stepCount - 1 ? Bar : null}
           </Layout.Horizontal>
         )

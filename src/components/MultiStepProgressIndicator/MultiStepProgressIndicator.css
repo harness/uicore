@@ -6,9 +6,9 @@
  */
 
 .dot {
-  width: 13px;
-  height: 13px;
-  border-radius: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
   background: var(--grey-200);
   border: 1.35714px solid var(--white);
   box-sizing: border-box;
@@ -19,4 +19,8 @@
   height: 3px;
   background: var(--grey-200);
   border-radius: 10px;
+}
+
+.spacing {
+  padding: 2px !important;
 }
