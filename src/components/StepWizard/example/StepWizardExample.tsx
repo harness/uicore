@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { ModalProvider, useModalHook } from '@harness/use-modal'
+import { useModalHook } from '@harness/use-modal'
 import { Button } from '../../Button/Button'
 import { Layout } from '../../../layouts/Layout'
 import { GotoStepArgs, StepWizard } from '../StepWizard'
@@ -82,7 +82,7 @@ export const ExampleWizard = (): JSX.Element => {
   )
 }
 
-const ExampleModal = () => {
+export const ModalExample = (): JSX.Element => {
   const modalPropsDark: IDialogProps = {
     isOpen: true,
     style: {
@@ -105,13 +105,5 @@ const ExampleModal = () => {
     <React.Fragment>
       <Button text="Open Step Wizard" onClick={openDarkModal} />
     </React.Fragment>
-  )
-}
-
-export const ModalExample = (): JSX.Element => {
-  return (
-    <ModalProvider>
-      <ExampleModal />
-    </ModalProvider>
   )
 }
