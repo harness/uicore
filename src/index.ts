@@ -6,7 +6,6 @@
  */
 
 import './styles/styles.css'
-import '@harness/design-system/dist/style.css'
 export { Config } from './core/Config'
 export { Accordion, AccordionProps, AccordionHandle } from './components/Accordion/Accordion'
 export {
