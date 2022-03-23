@@ -21,6 +21,10 @@
   border-radius: 10px;
 }
 
+.barSuccess {
+  background: var(--green-600);
+}
+
 .spacing {
   padding: 2px !important;
 }

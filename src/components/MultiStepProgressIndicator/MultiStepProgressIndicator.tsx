@@ -6,6 +6,7 @@
  */
 
 import React from 'react'
+import cx from 'classnames'
 
 import { Layout } from '../../layouts/Layout'
 import { Icon } from '../../icons/Icon'
@@ -25,21 +26,32 @@ export interface MultiStepProgressIndicatorProps {
 const Dot: React.FC<{ status: StepDetails['stepStatus'] }> = ({ status }) => {
   switch (status) {
     case 'TODO':
-      return <div className={css.dot} />
+      return <div className={cx(css.dot, css.spacing)} />
     case 'INPROGRESS':
-      return <Icon name="steps-spinner" size={22} color={Color.GREEN_600} className={css.spacing} />
+      return <Icon name="steps-spinner" size={20} color={Color.GREEN_600} className={css.spacing} />
     case 'FAILED':
       return <Icon name="circle-cross" size={20} color={Color.RED_600} className={css.spacing} />
     case 'SUCCESS':
-      return <Icon name="success-tick" size={20} />
+      return <Icon name="success-tick" size={22} />
+    default:
+      return null
+  }
+}
+
+const Bar: React.FC<{ status: StepDetails['stepStatus'] }> = ({ status }) => {
+  switch (status) {
+    case 'TODO':
+    case 'INPROGRESS':
+    case 'FAILED':
+      return <div className={css.bar} />
+    case 'SUCCESS':
+      return <div className={cx(css.bar, css.barSuccess)} />
     default:
       return null
   }
 }
 
 export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({ stepProgress }) => {
-  const Bar = <div className={css.bar}></div>
-
   const stepCount = stepProgress?.length
   return stepCount ? (
     <Layout.Horizontal>
@@ -48,7 +60,7 @@ export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProp
         return (
           <Layout.Horizontal flex key={stepIndex}>
             <Dot status={stepStatus} />
-            {stepIndex !== stepCount - 1 ? Bar : null}
+            {stepIndex !== stepCount - 1 ? <Bar status={stepStatus} /> : null}
           </Layout.Horizontal>
         )
       })}
