@@ -114,11 +114,8 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
-import CloudFormationCreateLight from './cloud-formation-create-light.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
-import CloudFormationDestroyLight from './cloud-formation-destroy-light.svg'
-import CloudFormationRollbackLight from './cloud-formation-rollback-light.svg'
 import CloudFormationRollback from './cloud-formation-rollback.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
@@ -795,11 +792,8 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-stop'
   | 'clipboard-alt'
-  | 'cloud-formation-create-light'
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
-  | 'cloud-formation-destroy-light'
-  | 'cloud-formation-rollback-light'
   | 'cloud-formation-rollback'
   | 'cloud-sso'
   | 'cloudformation'
@@ -1476,11 +1470,8 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
-  'cloud-formation-create-light': CloudFormationCreateLight,
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
-  'cloud-formation-destroy-light': CloudFormationDestroyLight,
-  'cloud-formation-rollback-light': CloudFormationRollbackLight,
   'cloud-formation-rollback': CloudFormationRollback,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
