@@ -5,23 +5,15 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { useContext, useEffect, useState, useCallback, useMemo } from 'react'
-import { ModalContext, ModalType } from './ModalContext'
+import React, { useCallback, useEffect, useMemo, useRef } from 'react'
+import { unmountComponentAtNode } from 'react-dom'
+import ReactDOM from 'react-dom'
 
 /**
  * Callback types provided for descriptive type-hints
  */
 type ShowModal = () => void
 type HideModal = () => void
-
-/**
- * Utility function to generate unique number per component instance
- */
-const generateModalKey = (() => {
-  let count = 0
-
-  return () => `${++count}`
-})()
 
 /**
  * Check whether the argument is a stateless component.
@@ -43,30 +35,40 @@ const isFunctionalComponent = (Component: React.FunctionComponent) => {
 /**
  * React hook for showing modal windows
  */
-export const useModalHook = (component: ModalType, inputs: any[] = []): [ShowModal, HideModal] => {
+export const useModalHook = (
+  component: React.FunctionComponent<any>,
+  deps?: React.DependencyList
+): [ShowModal, HideModal] => {
   if (!isFunctionalComponent(component)) {
     throw new Error(
       'Only stateless components can be used as an argument to useModal. You have probably passed a class component where a function was expected.'
     )
   }
 
-  const key = useMemo(generateModalKey, [])
-  const modal = useMemo(() => component, inputs)
-  const context = useContext(ModalContext)
-  const [isShown, setShown] = useState<boolean>(false)
-  const showModal = useCallback(() => setShown(true), [])
-  const hideModal = useCallback(() => setShown(false), [])
+  const MemoizedComponent = useMemo(() => component, deps)
+  const rootRef = useRef<HTMLDivElement | null>()
+
+  const showModal = useCallback(() => {
+    const el = document.createElement('div')
+    el.setAttribute('data-id', 'harness-modal-root')
+    document.body.appendChild(el)
+    ReactDOM.render(<MemoizedComponent />, el)
+    rootRef.current = el
+  }, [])
+
+  const hideModal = useCallback(() => {
+    if (rootRef.current) {
+      unmountComponentAtNode(rootRef.current)
+      document.body.removeChild(rootRef.current)
+    }
+  }, [])
 
   useEffect(() => {
-    if (isShown) {
-      context.showModal(key, modal)
-    } else {
-      context.hideModal(key)
+    // remove modal when component unmounts
+    return () => {
+      hideModal()
     }
-
-    // Hide modal when parent component unmounts
-    return () => context.hideModal(key)
-  }, [modal, isShown])
+  }, [])
 
   return [showModal, hideModal]
 }

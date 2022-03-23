@@ -6,48 +6,51 @@
  */
 
 import React from 'react'
-import { ModalProvider, useModalHook } from '@harness/use-modal'
+import { useModalHook } from '@harness/use-modal'
 import { ModalErrorHandler, ModalErrorHandlerBinding } from '../Modal/ModalErrorHandler'
 import { Button } from '../Button/Button'
 import { Dialog, Classes, IDialogProps } from '@blueprintjs/core'
+import { Story } from '@storybook/react'
 
-const ExampleModal = () => {
-  const modalPropsLight: IDialogProps = {
-    isOpen: true,
-    usePortal: true,
-    autoFocus: true,
-    canEscapeKeyClose: true,
-    canOutsideClickClose: true,
-    enforceFocus: true,
-    title: 'Select Artifact Servers',
-    className: Classes.DIALOG,
-    style: { width: 600, height: 400 }
-  }
+const modalPropsLight: IDialogProps = {
+  isOpen: true,
+  usePortal: true,
+  autoFocus: true,
+  canEscapeKeyClose: true,
+  canOutsideClickClose: true,
+  enforceFocus: true,
+  title: 'Select Artifact Servers',
+  className: Classes.DIALOG,
+  style: { width: 600, height: 400 }
+}
 
-  const modalPropsDark: IDialogProps = {
-    isOpen: true,
-    usePortal: true,
-    autoFocus: true,
-    canEscapeKeyClose: true,
-    canOutsideClickClose: true,
-    enforceFocus: true,
-    title: '',
-    className: Classes.DARK,
-    style: { width: 600, height: 400 }
-  }
-  let modalErrorHander: ModalErrorHandlerBinding
+const modalPropsDark: IDialogProps = {
+  isOpen: true,
+  usePortal: true,
+  autoFocus: true,
+  canEscapeKeyClose: true,
+  canOutsideClickClose: true,
+  enforceFocus: true,
+  title: '',
+  className: Classes.DARK,
+  style: { width: 600, height: 400 }
+}
+
+export const ModalExample: Story = () => {
+  const modalErrorHander1 = React.useRef<ModalErrorHandlerBinding>({} as any)
+  const modalErrorHander2 = React.useRef<ModalErrorHandlerBinding>({} as any)
 
   const [openLightModal, hideLightModal] = useModalHook(() => (
     <Dialog onClose={hideLightModal} {...modalPropsLight}>
       <ModalErrorHandler
         bind={_handler => {
-          modalErrorHander = _handler
+          modalErrorHander1.current = _handler
         }}
       />
       <Button
         text="Show Sample Error"
         onClick={() => {
-          modalErrorHander.show({
+          modalErrorHander1.current.show({
             status: 'FAILURE',
             code: 'INVALID_REQUEST',
             message: 'There is some issue with the request sent',
@@ -67,13 +70,13 @@ const ExampleModal = () => {
     <Dialog onClose={hideDarkModal} {...modalPropsDark}>
       <ModalErrorHandler
         bind={_handler => {
-          modalErrorHander = _handler
+          modalErrorHander2.current = _handler
         }}
       />
       <Button
         text="Show Sample Error"
         onClick={() => {
-          modalErrorHander.show({
+          modalErrorHander2.current.show({
             status: 'ERROR',
             code: 'DUPLICATE_FIELD',
             message: 'Oops, something went wrong on our end, please contact Harness Support.',
@@ -91,13 +94,5 @@ const ExampleModal = () => {
       <Button text="Open Light Theme" onClick={openLightModal} /> &nbsp; &nbsp;
       <Button text="Open Dark Theme" onClick={openDarkModal} />
     </React.Fragment>
-  )
-}
-
-export const ModalExample = () => {
-  return (
-    <ModalProvider>
-      <ExampleModal />
-    </ModalProvider>
   )
 }
