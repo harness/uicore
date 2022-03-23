@@ -7,6 +7,7 @@
 
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
+import '@harness/design-system/dist/style.css'
 import '../src/styles/styles.css'
 import './storybook.css'
 
