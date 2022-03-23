@@ -49,7 +49,7 @@ const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
 }
 
 export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({ progressMap }) => {
-  let entries = progressMap.size ? Array.from(progressMap.entries()) : []
+  const entries = progressMap.size ? Array.from(progressMap.entries()) : []
   const elements: React.ReactNode[] = []
 
   entries.forEach((value, index) => {
