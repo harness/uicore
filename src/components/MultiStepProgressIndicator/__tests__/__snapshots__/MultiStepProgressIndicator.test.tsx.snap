@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test MultiStepProgressIndicator Basic render 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main"
+  >
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <span
+        class="bp3-icon StyledProps--main"
+        data-icon="success-tick"
+      >
+        <svg
+          height="22"
+          width="22"
+        />
+      </span>
+      <div
+        class="bar barSuccess"
+      />
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <span
+        class="bp3-icon StyledProps--main spacing StyledProps--color StyledProps--color-red600"
+        data-icon="circle-cross"
+      >
+        <svg
+          height="20"
+          width="20"
+        />
+      </span>
+      <div
+        class="bar"
+      />
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <span
+        class="bp3-icon StyledProps--main spacing StyledProps--color StyledProps--color-green600"
+        data-icon="steps-spinner"
+      >
+        <svg
+          height="20"
+          width="20"
+        />
+      </span>
+      <div
+        class="bar"
+      />
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="dot spacing"
+      />
+    </div>
+  </div>
+</div>
+`;
