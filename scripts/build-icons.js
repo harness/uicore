@@ -11,7 +11,7 @@ const { camelCase } = require('lodash')
 
 const pattern = path.resolve('src/icons/*.svg')
 const files = glob.sync(pattern, { nodir: true, realpath: false })
-const _imports = ["import { FunctionComponent, ElementType } from 'react'", "import { KVO } from 'core/Types'"]
+const _imports = ["import { ElementType } from 'react'", "import { KVO } from '@harness/design-system'"]
 const _exports = []
 let iconNames = 'type HarnessIconName =\n'
 
@@ -42,7 +42,7 @@ console.log(
     _imports.join('\n') +
     '\n\n' +
     iconNames +
-    '\nconst HarnessIcons: KVO<FunctionComponent<ElementType>> = {\n' +
+    '\nconst HarnessIcons: KVO<ElementType> = {\n' +
     _exports.join(',\n') +
     '\n}\n\nexport { HarnessIcons, HarnessIconName }'
 )
