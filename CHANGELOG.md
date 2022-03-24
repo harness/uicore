@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.46.0](https://github.com/harness/uicore/compare/v2.45.0...v2.46.0) (2022-03-24)
+
+
+### Others
+
+* upgrade to marked v4 ([#626](https://github.com/harness/uicore/issues/626)) ([662cb37](https://github.com/harness/uicore/commit/662cb370fc08cec41b3532f0721ac9607d27d43e))
+
 ## [2.45.0](https://github.com/harness/uicore/compare/v2.44.0...v2.45.0) (2022-03-23)
 
 
