@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import marked from 'marked'
+import { marked } from 'marked'
 import { PopoverInteractionKind } from '@blueprintjs/core'
 import { useTooltips } from './TooltipContext'
 import { TooltipRenderProps } from './types'
