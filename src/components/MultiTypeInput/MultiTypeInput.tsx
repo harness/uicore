@@ -29,7 +29,7 @@ import {
 } from './MultiTypeInputUtils'
 import { MultiTypeInputMenu } from './MultiTypeInputMenu'
 
-type AcceptableValue = boolean | string | number | SelectOption | MultiSelectOption[]
+type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[]
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
@@ -67,6 +67,10 @@ export const getMultiTypeFromValue = (
     value = value.toLocaleLowerCase().trim()
     if (value.startsWith(RUNTIME_INPUT_VALUE)) return MultiTypeInputType.RUNTIME
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
+  } else if (Array.isArray(value)) {
+    // To support list of expressions
+    if (value.some((item: string | MultiSelectOption) => typeof item === 'string' && isValueAnExpression(item)))
+      return MultiTypeInputType.EXPRESSION
   }
   if (!value && allowableTypes?.length) {
     return allowableTypes[0]

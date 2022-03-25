@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.47.0](https://github.com/harness/uicore/compare/v2.46.0...v2.47.0) (2022-03-25)
+
+
+### Bug Fixes
+
+* [PIE-2757]: adds support for list of expressions ([#627](https://github.com/harness/uicore/issues/627)) ([1dea367](https://github.com/harness/uicore/commit/1dea367b0223877237a3e7dc1e445dbbc833f2c6))
+
 ## [2.46.0](https://github.com/harness/uicore/compare/v2.45.0...v2.46.0) (2022-03-24)
 
 
