@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.48.0](https://github.com/harness/uicore/compare/v2.47.0...v2.48.0) (2022-03-25)
+
+
+### Features
+
+* [CDS-35460]: added cloudformation pipeline icons ([#624](https://github.com/harness/uicore/issues/624)) ([ad0faa7](https://github.com/harness/uicore/commit/ad0faa7250a5e4dc84ff6aa0ad62f28166f9d027))
+
 ## [2.47.0](https://github.com/harness/uicore/compare/v2.46.0...v2.47.0) (2022-03-25)
 
 
