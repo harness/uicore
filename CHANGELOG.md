@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.49.0](https://github.com/harness/uicore/compare/v2.48.0...v2.49.0) (2022-03-25)
+
+
+### Features
+
+* [PIE-3247]: Add support for showcloseButton, canOutsideClickClose and canEscapeKeyClose props to useConfirmationDialog ([#628](https://github.com/harness/uicore/issues/628)) ([d019755](https://github.com/harness/uicore/commit/d0197551e93d4763fc481bc7dfac2860034792b0))
+
 ## [2.48.0](https://github.com/harness/uicore/compare/v2.47.0...v2.48.0) (2022-03-25)
 
 
