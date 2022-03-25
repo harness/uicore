@@ -20,6 +20,9 @@ export interface UseConfirmationDialogProps {
   confirmButtonText?: React.ReactNode
   onCloseDialog?: (isConfirmed: boolean) => void
   customButtons?: React.ReactNode
+  showCloseButton?: boolean
+  canOutsideClickClose?: boolean
+  canEscapeKeyClose?: boolean
 }
 
 export interface UseConfirmationDialogReturn {
@@ -35,7 +38,10 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
     buttonIntent = Intent.PRIMARY,
     confirmButtonText,
     onCloseDialog,
-    customButtons
+    customButtons,
+    showCloseButton,
+    canOutsideClickClose,
+    canEscapeKeyClose
   } = props
 
   const [showModal, hideModal] = useModalHook(() => {
@@ -50,6 +56,9 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
         intent={intent}
         buttonIntent={buttonIntent}
         customButtons={customButtons}
+        showCloseButton={showCloseButton}
+        canOutsideClickClose={canOutsideClickClose}
+        canEscapeKeyClose={canEscapeKeyClose}
       />
     )
   }, [props])

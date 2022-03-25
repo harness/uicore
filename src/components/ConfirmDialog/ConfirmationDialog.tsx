@@ -37,6 +37,7 @@ export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose' | 
   confirmButtonText?: React.ReactNode
   onClose?: (isConfirmed: boolean) => void
   customButtons?: React.ReactNode
+  showCloseButton?: boolean
 }
 
 const confirmDialogProps: Partial<IDialogProps> = {
@@ -58,6 +59,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
     confirmButtonText,
     onClose,
     customButtons,
+    showCloseButton = true,
     ...rest
   } = props
 
@@ -71,9 +73,11 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
 
   return (
     <Dialog className={css.dialog} {...confirmDialogProps} {...rest} onClose={closeWithFalse}>
-      <Container flex className={css.iconContainer}>
-        <Icon onClick={closeWithFalse} className={css.icon} size={8} name="main-close" />
-      </Container>
+      {showCloseButton ? (
+        <Container flex className={css.iconContainer}>
+          <Icon onClick={closeWithFalse} className={css.icon} size={8} name="main-close" />
+        </Container>
+      ) : null}
 
       <Layout.Horizontal className={css.header} padding={{ left: 'xsmall' }}>
         <Icon name={getIconForIntent(intent)} size={32} margin={{ right: 'small' }} />
