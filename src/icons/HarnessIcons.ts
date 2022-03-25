@@ -114,6 +114,9 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
+import CloudFormationCreate from './cloud-formation-create.svg'
+import CloudFormationDelete from './cloud-formation-delete.svg'
+import CloudFormationRollback from './cloud-formation-rollback.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
@@ -789,6 +792,9 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-stop'
   | 'clipboard-alt'
+  | 'cloud-formation-create'
+  | 'cloud-formation-delete'
+  | 'cloud-formation-rollback'
   | 'cloud-sso'
   | 'cloudformation'
   | 'codebase-invalid'
@@ -1464,6 +1470,9 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
+  'cloud-formation-create': CloudFormationCreate,
+  'cloud-formation-delete': CloudFormationDelete,
+  'cloud-formation-rollback': CloudFormationRollback,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
   'codebase-invalid': CodebaseInvalid,
