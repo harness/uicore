@@ -14,7 +14,7 @@ import { ConfirmationDialog } from './ConfirmationDialog'
 export interface UseConfirmationDialogProps {
   titleText: React.ReactNode
   contentText: React.ReactNode
-  cancelButtonText: React.ReactNode
+  cancelButtonText?: React.ReactNode
   intent?: Intent
   buttonIntent?: ButtonProps['intent']
   confirmButtonText?: React.ReactNode
