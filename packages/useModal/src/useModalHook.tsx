@@ -16,6 +16,15 @@ type ShowModal = () => void
 type HideModal = () => void
 
 /**
+ * Utility function to generate unique number per component instance
+ */
+const generateModalKey = (() => {
+  let count = 0
+
+  return () => `${++count}`
+})()
+
+/**
  * Check whether the argument is a stateless component.
  *
  * We take advantage of the stateless nature of functional components to be
@@ -50,7 +59,7 @@ export const useModalHook = (
 
   const showModal = useCallback(() => {
     const el = document.createElement('div')
-    el.setAttribute('data-id', 'harness-modal-root')
+    el.setAttribute('data-id', `harness-modal-root-${generateModalKey()}`)
     document.body.appendChild(el)
     ReactDOM.render(<MemoizedComponent />, el)
     rootRef.current = el
