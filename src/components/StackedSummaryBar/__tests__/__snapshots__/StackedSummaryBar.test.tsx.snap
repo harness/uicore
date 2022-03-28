@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StackedSummaryBar Stack with 0 trend 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-small StyledProps--main"
+  >
+    <p
+      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    >
+      60
+    </p>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-green500"
+        style="width: 49px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-red500"
+        style="width: 9.8px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-grey100"
+        style="width: 39.2px;"
+      />
+    </div>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <span
+        class="bp3-icon bp3-icon-caret-right StyledProps--main StyledProps--color StyledProps--color-grey300"
+        icon="caret-right"
+      >
+        <svg
+          data-icon="caret-right"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            caret-right
+          </desc>
+          <path
+            d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <p
+        class="StyledProps--font StyledProps--main StyledProps--font-xsmall StyledProps--color StyledProps--color-grey300"
+      >
+        0%
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StackedSummaryBar Stack with infinity trend 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-small StyledProps--main"
+  >
+    <p
+      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    >
+      60
+    </p>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-green500"
+        style="width: 49px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-red500"
+        style="width: 9.8px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-grey100"
+        style="width: 39.2px;"
+      />
+    </div>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex StyledProps--flex-alignItems-center"
+    >
+      <span
+        class="bp3-icon bp3-icon-caret-up StyledProps--main StyledProps--color StyledProps--color-green500"
+        icon="caret-up"
+      >
+        <svg
+          data-icon="caret-up"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            caret-up
+          </desc>
+          <path
+            d="M11.87 9.17s.01 0 0 0l-3.5-4C8.28 5.07 8.15 5 8 5s-.28.07-.37.17l-3.5 4a.495.495 0 00.37.83h7a.495.495 0 00.37-.83z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <p
+        class="StyledProps--font StyledProps--main StyledProps--font-xsmall StyledProps--color StyledProps--color-green500"
+      >
+        N/A
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StackedSummaryBar Stack with negative trend 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-small StyledProps--main"
+  >
+    <p
+      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    >
+      60
+    </p>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-green500"
+        style="width: 49px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-red500"
+        style="width: 9.8px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-grey100"
+        style="width: 39.2px;"
+      />
+    </div>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <span
+        class="bp3-icon bp3-icon-caret-down StyledProps--main StyledProps--color StyledProps--color-red500"
+        icon="caret-down"
+      >
+        <svg
+          data-icon="caret-down"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            caret-down
+          </desc>
+          <path
+            d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <p
+        class="StyledProps--font StyledProps--main StyledProps--font-xsmall StyledProps--color StyledProps--color-red500"
+      >
+        10%
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StackedSummaryBar Stack with positive trend 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-small StyledProps--main"
+  >
+    <p
+      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    >
+      60
+    </p>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-green500"
+        style="width: 49px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-red500"
+        style="width: 9.8px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-grey100"
+        style="width: 39.2px;"
+      />
+    </div>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <span
+        class="bp3-icon bp3-icon-caret-up StyledProps--main StyledProps--color StyledProps--color-green500"
+        icon="caret-up"
+      >
+        <svg
+          data-icon="caret-up"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            caret-up
+          </desc>
+          <path
+            d="M11.87 9.17s.01 0 0 0l-3.5-4C8.28 5.07 8.15 5 8 5s-.28.07-.37.17l-3.5 4a.495.495 0 00.37.83h7a.495.495 0 00.37-.83z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <p
+        class="StyledProps--font StyledProps--main StyledProps--font-xsmall StyledProps--color StyledProps--color-green500"
+      >
+        10%
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StackedSummaryBar Stack without trend 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-small StyledProps--main"
+  >
+    <p
+      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    >
+      60
+    </p>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-green500"
+        style="width: 49px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-red500"
+        style="width: 9.8px;"
+      />
+      <div
+        class="StyledProps--font StyledProps--main barSection StyledProps--background-grey100"
+        style="width: 39.2px;"
+      />
+    </div>
+    <div
+      class="StyledProps--font StyledProps--main StyledProps--flex"
+    >
+      <span
+        class="bp3-icon bp3-icon-caret-right StyledProps--main StyledProps--color StyledProps--color-grey300"
+        icon="caret-right"
+      >
+        <svg
+          data-icon="caret-right"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            caret-right
+          </desc>
+          <path
+            d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <p
+        class="StyledProps--font StyledProps--main StyledProps--font-xsmall StyledProps--color StyledProps--color-grey300"
+      />
+    </div>
+  </div>
+</div>
+`;
