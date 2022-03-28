@@ -12,7 +12,7 @@ import { Color } from '@harness/design-system'
 import css from './StepsProgress.css'
 import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
 import { Layout } from '../../layouts/Layout'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 
 export interface StepsProgressProps {
   steps: Array<JSX.Element | string>

@@ -12,7 +12,7 @@ import { defaultTo } from 'lodash-es'
 import type { IconName } from '@blueprintjs/icons'
 import css from './TableV2.css'
 import Pagination, { PaginationProps } from '../Pagination/Pagination'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import { Text } from '../Text/Text'
 import { FontVariation } from '@harness/design-system'
 

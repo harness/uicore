@@ -8,7 +8,7 @@
 import React from 'react'
 import { FormikErrors } from 'formik'
 import cx from 'classnames'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import css from './FormError.css'
 
 interface FormErrorProps {

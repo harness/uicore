@@ -8,7 +8,7 @@
 import React, { MutableRefObject } from 'react'
 import cx from 'classnames'
 import css from './StepWizard.css'
-import { Icon, IconName, IconProps } from '../../icons/Icon'
+import { Icon, IconName, IconProps } from '@harness/icons'
 import { Text } from '../../components/Text/Text'
 import { romanize } from '../../core/Utils'
 import { isNil } from 'lodash-es'

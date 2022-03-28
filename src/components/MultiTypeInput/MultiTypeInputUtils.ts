@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import type { IconName } from '../../icons/Icon'
+import type { IconName } from '@harness/icons'
 
 export enum MultiTypeInputType {
   FIXED = 'FIXED',
