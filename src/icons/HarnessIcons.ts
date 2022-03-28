@@ -257,6 +257,9 @@ import GitopsAgent from './gitops-agent.svg'
 import GitopsApplicationWhite from './gitops-application-white.svg'
 import GitopsApplication from './gitops-application.svg'
 import GitopsClusters from './gitops-clusters.svg'
+import GitopsGnupgKey from './gitops-gnupg-key.svg'
+import GitopsRepositoryCertificate from './gitops-repository-certificate.svg'
+import GitopsRepository from './gitops-repository.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import Governance from './governance.svg'
@@ -932,6 +935,9 @@ type HarnessIconName =
   | 'gitops-application-white'
   | 'gitops-application'
   | 'gitops-clusters'
+  | 'gitops-gnupg-key'
+  | 'gitops-repository-certificate'
+  | 'gitops-repository'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance'
@@ -1607,6 +1613,9 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-application-white': GitopsApplicationWhite,
   'gitops-application': GitopsApplication,
   'gitops-clusters': GitopsClusters,
+  'gitops-gnupg-key': GitopsGnupgKey,
+  'gitops-repository-certificate': GitopsRepositoryCertificate,
+  'gitops-repository': GitopsRepository,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   governance: Governance,
