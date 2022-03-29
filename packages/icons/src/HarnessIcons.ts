@@ -9,7 +9,7 @@
  * This file is auto-generated. Please do not modify this file manually.
  * Use the command `yarn ui:icons` to regenerate this file.
  */
-import { FunctionComponent, ElementType } from 'react'
+import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
@@ -1400,7 +1400,7 @@ type HarnessIconName =
   | 'zoom-in'
   | 'zoom-out'
 
-const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
+const HarnessIcons: KVO<ElementType> = {
   Edit: Edit,
   Inline: Inline,
   Options: Options,
