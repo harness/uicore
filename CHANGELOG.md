@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.51.0](https://github.com/harness/uicore/compare/v2.50.0...v2.51.0) (2022-03-29)
+
+
+### Features
+
+* [CI-3613]: Adding new icons for CI Hosted Builds Experience ([#632](https://github.com/harness/uicore/issues/632)) ([9a04d6c](https://github.com/harness/uicore/commit/9a04d6c353865c23410cfcda264024b7069c25ef))
+
 ## [2.50.0](https://github.com/harness/uicore/compare/v2.49.0...v2.50.0) (2022-03-28)
 
 
