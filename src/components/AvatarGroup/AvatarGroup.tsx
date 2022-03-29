@@ -7,7 +7,7 @@
 
 import React, { CSSProperties } from 'react'
 import { HTMLDivProps } from '@blueprintjs/core'
-import { AvatarProps, Avatar, AvatarSizes } from '../Avatar/Avatar'
+import { AvatarProps, Avatar, AvatarSizes, plusIcon } from '../Avatar/Avatar'
 import { Text } from '../Text/Text'
 import css from './AvatarGroup.css'
 import { Color } from '../../core/Color'
@@ -54,7 +54,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   }
   if (onAdd) {
     avatars.push({
-      name: '+',
+      name: plusIcon,
       color: Color.PRIMARY_7,
       backgroundColor: 'transparent',
       onClick: onAdd,
