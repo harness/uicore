@@ -82,7 +82,7 @@ export const ExampleWizard = (): JSX.Element => {
   )
 }
 
-export const ModalExample = (): JSX.Element => {
+export const ModalExample = (): React.ReactElement => {
   const modalPropsDark: IDialogProps = {
     isOpen: true,
     style: {

@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 
 import { render, fireEvent } from '@testing-library/react'
 
@@ -23,7 +23,7 @@ describe('simple usage', () => {
     return <button onClick={showModal}>Show modal</button>
   }
 
-  test.only('should show the modal', async () => {
+  test('should show the modal', async () => {
     const { findByText, queryByText } = render(<App />)
 
     const showModal = await findByText('Show modal')
@@ -57,7 +57,7 @@ describe('simple usage', () => {
   })
 })
 
-describe.skip('updating modal', () => {
+describe('updating modal', () => {
   test('should work with internal state', () => {
     const App = () => {
       const [showModal] = useModalHook(() => {
@@ -151,7 +151,7 @@ describe.skip('updating modal', () => {
   })
 })
 
-describe.skip('multiple modals', () => {
+describe('multiple modals', () => {
   test('should show multiple modals at the same time', () => {
     const App = () => {
       const [showFirstModal] = useModalHook(() => <div>First modal content</div>)

@@ -1285,10 +1285,10 @@
   resolved "https://npm.pkg.github.com/download/@harness/design-system/1.0.0/4961fc151ffa0dd1f3d86b37572f9a5cd575d592c646cd5e68d508e1045c9d96#e463410da2c7ad9bff84eaa43fbe4ba9ba347da1"
   integrity sha512-sMsLP5Rxg08t87dJamTgpzEfRAef06C14bZO92SGqiXYtXsK01evjnXaOAiUS4gO36gMGi5cYJAqkJ0XBkERIg==
 
-"@harness/use-modal@^2.0.0":
-  version "2.0.0"
-  resolved "https://npm.pkg.github.com/download/@harness/use-modal/2.0.0/d6f4436e606331812e1ba58fdb4178c6847b4fb5cfc01e2c764f6856dd537d62#0a59fb1e003d835ec048641daf3c3dabe1634bfb"
-  integrity sha512-KwGdyTQ47BlFFEYH0KKA6EgUIvzMNaLcOH7xZRZCmsmrTr0V9k+WhlKq8MzeWIIYvSdzqglfJu3cjRcs1S4+2Q==
+"@harness/use-modal@^2.0.1":
+  version "2.0.1"
+  resolved "https://npm.pkg.github.com/download/@harness/use-modal/2.0.1/016fc871bce0760cfa466544fc7f97c1667bba19a0d3ddacfec347b3a78a0551#bd0d21094fbf72335d925c1c5be88392584cc597"
+  integrity sha512-GiEAUz1DZYWhW5gfMYFI94ezqPTw2UO7E7bD6/aHHgbp4jghWwMFH2eKbDWw+e1eKRYDYff73d5lGQ7uPB0F2w==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"

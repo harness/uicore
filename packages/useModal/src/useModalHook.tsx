@@ -6,8 +6,7 @@
  */
 
 import React, { useCallback, useEffect, useMemo, useRef } from 'react'
-import { unmountComponentAtNode } from 'react-dom'
-import ReactDOM from 'react-dom'
+import { render, unmountComponentAtNode } from 'react-dom'
 
 /**
  * Callback types provided for descriptive type-hints
@@ -61,9 +60,9 @@ export const useModalHook = (
     const el = document.createElement('div')
     el.setAttribute('data-id', `harness-modal-root-${generateModalKey()}`)
     document.body.appendChild(el)
-    ReactDOM.render(<MemoizedComponent />, el)
+    render(<MemoizedComponent />, el)
     rootRef.current = el
-  }, [])
+  }, [MemoizedComponent])
 
   const hideModal = useCallback(() => {
     if (rootRef.current) {
