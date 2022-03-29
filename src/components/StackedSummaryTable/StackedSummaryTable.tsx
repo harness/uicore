@@ -92,5 +92,7 @@ export const StackedSummaryTable: React.FC<StackedSummaryTableProps> = props => 
     }
   ]
 
-  return <TableV2<StackedSummaryInterface> columns={columns} data={summaryData} className={css.overviewSummary} minimal />
+  return (
+    <TableV2<StackedSummaryInterface> columns={columns} data={summaryData} className={css.overviewSummary} minimal />
+  )
 }
