@@ -534,6 +534,7 @@ import SaveCacheS3StepInverse from './save-cache-s3-step-inverse.svg'
 import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
+import Scm from './scm.svg'
 import Script from './script.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -1227,6 +1228,7 @@ type HarnessIconName =
   | 'save-cache-s3-step'
   | 'save-cache-s3'
   | 'save-cache-step'
+  | 'scm'
   | 'script'
   | 'search-applications'
   | 'search-connectors'
@@ -1920,6 +1922,7 @@ const HarnessIcons: KVO<ElementType> = {
   'save-cache-s3-step': SaveCacheS3Step,
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
+  scm: Scm,
   script: Script,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
