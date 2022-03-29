@@ -135,7 +135,9 @@ export const names = {
   '--black': 'var(--grey-1000)',
   '--black-100': 'var(--grey-900)',
   '--grey': 'var(--grey-500)',
-  '--grey-bg': 'var(--grey-50)'
+  '--grey-bg': 'var(--grey-50)',
+  '--pipeline-bg': '#f6fcff',
+  '--pipeline-bg-dot': '#bbc1c4'
 }
 
 export interface ColorRowProps {
