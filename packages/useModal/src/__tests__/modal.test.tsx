@@ -45,7 +45,7 @@ describe('simple usage', () => {
     return <button onClick={showModal}>Show modal</button>
   }
 
-  test('should show the modal', () => {
+  test.only('should show the modal', () => {
     const { getByText, queryByText } = renderWithProvider(<App />)
 
     fireEvent.click(getByText('Show modal'))

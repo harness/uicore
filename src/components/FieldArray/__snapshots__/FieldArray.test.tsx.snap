@@ -81,8 +81,31 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>
@@ -108,8 +131,31 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>
@@ -261,8 +307,31 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] =
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>
@@ -355,8 +424,31 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>
@@ -382,8 +474,31 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>
@@ -476,8 +591,31 @@ exports[`<FieldArray /> tests should be able to delete row 1`] = `
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>
@@ -578,8 +716,31 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>
@@ -610,8 +771,31 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
                 >
                   <svg
                     height="16"
+                    viewBox="0 0 16 20"
                     width="16"
-                  />
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M1.143 8.48A1.2 1.2 0 0 1 2.332 7.12h10.649a1.2 1.2 0 0 1 1.194 1.321l-1.039 10.208a1.2 1.2 0 0 1-1.193 1.079H3.716a1.2 1.2 0 0 1-1.189-1.04L1.143 8.48ZM12.98 8.32H2.332l1.385 10.207h8.226L12.98 8.32ZM5.916 1.594a.6.6 0 0 1 .719-.452l4.224.965a.6.6 0 0 1 .452.719L11 4.179l3.86.882a.6.6 0 0 1-.267 1.17L1.535 3.248a.6.6 0 1 1 .267-1.17l3.805.87.309-1.354Zm.86 1.62 3.056.698.175-.768-3.055-.698-.175.768Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 10.808a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5ZM5.239 10.82a.5.5 0 0 1 .541.454l.436 4.981a.5.5 0 1 1-.996.087l-.436-4.98a.5.5 0 0 1 .455-.542Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.762 10.82a.5.5 0 0 1 .455.541l-.436 4.981a.5.5 0 1 1-.996-.087l.435-4.98a.5.5 0 0 1 .542-.455Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      opacity="0.3"
+                    />
+                  </svg>
                 </span>
               </button>
             </td>

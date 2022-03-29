@@ -616,9 +616,17 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
           data-icon="main-delete"
         >
           <svg
+            enable-background="new 0 0 14 14"
             height="14"
+            viewBox="0 0 14 14"
             width="14"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m10.5 4.2c0-.4-.3-.7-.7-.7-.2 0-.4.1-.5.2l-2.3 2.3-2.3-2.3c-.1-.1-.3-.2-.5-.2-.4 0-.7.3-.7.7 0 .2.1.4.2.5l2.3 2.3-2.3 2.3c-.1.1-.2.3-.2.5 0 .4.3.7.7.7.2 0 .4-.1.5-.2l2.3-2.3 2.3 2.3c.1.1.3.2.5.2.4 0 .7-.3.7-.7 0-.2-.1-.4-.2-.5l-2.3-2.3 2.3-2.3c.1-.1.2-.3.2-.5zm-3.5-4.2c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 12.6c-3.1 0-5.6-2.5-5.6-5.6s2.5-5.6 5.6-5.6 5.6 2.5 5.6 5.6-2.5 5.6-5.6 5.6z"
+              fill="#4d5969"
+            />
+          </svg>
         </span>
         <span
           class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
@@ -672,9 +680,17 @@ exports[`Test basic Components should render MultiTypeInput component with Selec
           data-icon="main-delete"
         >
           <svg
+            enable-background="new 0 0 14 14"
             height="14"
+            viewBox="0 0 14 14"
             width="14"
-          />
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m10.5 4.2c0-.4-.3-.7-.7-.7-.2 0-.4.1-.5.2l-2.3 2.3-2.3-2.3c-.1-.1-.3-.2-.5-.2-.4 0-.7.3-.7.7 0 .2.1.4.2.5l2.3 2.3-2.3 2.3c-.1.1-.2.3-.2.5 0 .4.3.7.7.7.2 0 .4-.1.5-.2l2.3-2.3 2.3 2.3c.1.1.3.2.5.2.4 0 .7-.3.7-.7 0-.2-.1-.4-.2-.5l-2.3-2.3 2.3-2.3c.1-.1.2-.3.2-.5zm-3.5-4.2c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 12.6c-3.1 0-5.6-2.5-5.6-5.6s2.5-5.6 5.6-5.6 5.6 2.5 5.6 5.6-2.5 5.6-5.6 5.6z"
+              fill="#4d5969"
+            />
+          </svg>
         </span>
         <span
           class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
