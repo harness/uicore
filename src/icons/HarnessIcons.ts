@@ -491,6 +491,7 @@ import ResSecrets from './res-secrets.svg'
 import ResUserGroups from './res-userGroups.svg'
 import ResUsers from './res-users.svg'
 import ResetIcon from './reset-icon.svg'
+import Resizing from './resizing.svg'
 import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
 import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
@@ -1169,6 +1170,7 @@ type HarnessIconName =
   | 'res-userGroups'
   | 'res-users'
   | 'reset-icon'
+  | 'resizing'
   | 'resource-center-community-icon'
   | 'resource-center-docs-icon'
   | 'resources-icon'
@@ -1847,6 +1849,7 @@ const HarnessIcons: KVO<ElementType> = {
   'res-userGroups': ResUserGroups,
   'res-users': ResUsers,
   'reset-icon': ResetIcon,
+  resizing: Resizing,
   'resource-center-community-icon': ResourceCenterCommunityIcon,
   'resource-center-docs-icon': ResourceCenterDocsIcon,
   'resources-icon': ResourcesIcon,
