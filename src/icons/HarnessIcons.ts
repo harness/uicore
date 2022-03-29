@@ -108,6 +108,7 @@ import CiExecution from './ci-execution.svg'
 import CiGov from './ci-gov.svg'
 import CiHover from './ci-hover.svg'
 import CiInfraSupport from './ci-infra-support.svg'
+import CiInfra from './ci-infra.svg'
 import CiIntegrated from './ci-integrated.svg'
 import CiLanguage from './ci-language.svg'
 import CiMainInverse from './ci-main-inverse.svg'
@@ -802,6 +803,7 @@ type HarnessIconName =
   | 'ci-gov'
   | 'ci-hover'
   | 'ci-infra-support'
+  | 'ci-infra'
   | 'ci-integrated'
   | 'ci-language'
   | 'ci-main-inverse'
@@ -1496,6 +1498,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ci-gov': CiGov,
   'ci-hover': CiHover,
   'ci-infra-support': CiInfraSupport,
+  'ci-infra': CiInfra,
   'ci-integrated': CiIntegrated,
   'ci-language': CiLanguage,
   'ci-main-inverse': CiMainInverse,
