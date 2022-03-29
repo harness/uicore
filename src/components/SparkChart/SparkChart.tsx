@@ -9,7 +9,7 @@ import React, { FormEvent } from 'react'
 import css from './SparkChart.css'
 import cx from 'classnames'
 import { Container, ContainerProps } from '../Container/Container'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import { isEmpty } from 'lodash-es'
 

@@ -14,7 +14,7 @@ import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { Button, ButtonSize } from '../Button/Button'
 import { SelectOption } from '../Select/Select'
-import { FontVariation } from '../../styled-props/font/FontProps'
+import { FontVariation } from '@harness/design-system'
 import { DropDown } from '../DropDown/DropDown'
 import useWindowWidth from '../../hooks/useWindowWidth'
 

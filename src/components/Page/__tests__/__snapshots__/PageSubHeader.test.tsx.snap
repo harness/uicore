@@ -3,10 +3,10 @@
 exports[`PageSubHeader test snapshot testing 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main container flex flex-true"
+    class="horizontal layout-spacing-undefined StyledProps--main container StyledProps--flex"
   >
     <button
-      class="bp3-button button font main intent intent-primary with-current-color"
+      class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
       data-testid="add-pipeline"
       type="button"
     >

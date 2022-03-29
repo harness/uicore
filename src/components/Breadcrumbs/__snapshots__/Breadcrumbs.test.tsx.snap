@@ -3,17 +3,17 @@
 exports[`Render basic component should check snapshot with name 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main breadcrumbs flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
+    class="horizontal layout-spacing-undefined StyledProps--main breadcrumbs StyledProps--flex StyledProps--flex-align-center-center StyledProps--flex-justifyContent-flex-start"
   >
     <div
-      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex StyledProps--flex-align-center-center StyledProps--flex-justifyContent-flex-start"
     >
       <a
         class="breadcrumb"
         href="/"
       >
         <span
-          class="bp3-icon bp3-icon-add main padding padding-right padding-right-xsmall"
+          class="bp3-icon bp3-icon-add StyledProps--main StyledProps--padding-right-xsmall"
           icon="add"
         >
           <svg
@@ -32,13 +32,13 @@ exports[`Render basic component should check snapshot with name 1`] = `
           </svg>
         </span>
         <p
-          class="font main intent intent-primary font-size font-size-small"
+          class="StyledProps--font StyledProps--main StyledProps--intent-primary StyledProps--font-size-small"
         >
           Google
         </p>
       </a>
       <span
-        class="bp3-icon main color color-grey500 padding padding-right padding-right-xsmall padding-left padding-left-xsmall"
+        class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey500 StyledProps--padding-right-xsmall StyledProps--padding-left-xsmall"
         data-icon="main-chevron-right"
       >
         <svg
@@ -48,14 +48,14 @@ exports[`Render basic component should check snapshot with name 1`] = `
       </span>
     </div>
     <div
-      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex StyledProps--flex-align-center-center StyledProps--flex-justifyContent-flex-start"
     >
       <a
         class="breadcrumb"
         href="/"
       >
         <span
-          class="bp3-icon main padding padding-right padding-right-xsmall"
+          class="bp3-icon StyledProps--main StyledProps--padding-right-xsmall"
           data-icon="pipeline-approval"
         >
           <svg
@@ -64,13 +64,13 @@ exports[`Render basic component should check snapshot with name 1`] = `
           />
         </span>
         <p
-          class="font main intent intent-primary font-size font-size-small"
+          class="StyledProps--font StyledProps--main StyledProps--intent-primary StyledProps--font-size-small"
         >
           Gmail
         </p>
       </a>
       <span
-        class="bp3-icon main color color-grey500 padding padding-right padding-right-xsmall padding-left padding-left-xsmall"
+        class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey500 StyledProps--padding-right-xsmall StyledProps--padding-left-xsmall"
         data-icon="main-chevron-right"
       >
         <svg
@@ -80,20 +80,20 @@ exports[`Render basic component should check snapshot with name 1`] = `
       </span>
     </div>
     <div
-      class="horizontal layout-spacing-undefined main flex flex-align flex-align-center-center flex-justifyContent flex-justifyContent-flex-start"
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex StyledProps--flex-align-center-center StyledProps--flex-justifyContent-flex-start"
     >
       <a
         class="breadcrumb"
         href="/"
       >
         <p
-          class="font main intent intent-primary font-size font-size-small"
+          class="StyledProps--font StyledProps--main StyledProps--intent-primary StyledProps--font-size-small"
         >
           Gmail2
         </p>
       </a>
       <span
-        class="bp3-icon main color color-grey500 padding padding-right padding-right-xsmall padding-left padding-left-xsmall"
+        class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey500 StyledProps--padding-right-xsmall StyledProps--padding-left-xsmall"
         data-icon="main-chevron-right"
       >
         <svg

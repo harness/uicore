@@ -8,7 +8,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { AvatarGroup } from './AvatarGroup'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 
 describe('Render basic component', () => {
   test('should check snapshot with Avatar props with add button', () => {

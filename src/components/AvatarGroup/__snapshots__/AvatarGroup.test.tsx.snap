@@ -3,7 +3,7 @@
 exports[`Render basic component should check snapshot with Avatar props with add button 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main flex flex-alignItems flex-alignItems-center flex-justifyContent flex-justifyContent-flex-start"
+    class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex StyledProps--flex-alignItems-center StyledProps--flex-justifyContent-flex-start"
   >
     <div
       class="stack"
@@ -136,7 +136,7 @@ exports[`Render basic component should check snapshot with Avatar props with add
 exports[`Render basic component should check snapshot with Avatar props without add button 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main flex flex-alignItems flex-alignItems-center flex-justifyContent flex-justifyContent-flex-start"
+    class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex StyledProps--flex-alignItems-center StyledProps--flex-justifyContent-flex-start"
   >
     <div
       class="stack"
@@ -250,7 +250,7 @@ exports[`Render basic component should check snapshot with Avatar props without 
 exports[`Render basic component should check snapshot with Avatar props without overlap 1`] = `
 <div>
   <div
-    class="horizontal layout-spacing-undefined main flex flex-alignItems flex-alignItems-center flex-justifyContent flex-justifyContent-flex-start"
+    class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex StyledProps--flex-alignItems-center StyledProps--flex-justifyContent-flex-start"
   >
     <div
       class="noStack"

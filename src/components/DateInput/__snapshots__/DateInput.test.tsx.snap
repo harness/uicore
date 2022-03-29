@@ -27,11 +27,11 @@ exports[`<DateInput/> tests renders with empty value and allow variables 1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-calendar main padding padding-undefined"
+            class="bp3-icon bp3-icon-calendar StyledProps--main"
             icon="calendar"
           >
             <svg
@@ -63,7 +63,7 @@ exports[`<DateInput/> tests renders with empty value and allow variables 1`] = `
           class="bp3-popover-target"
         >
           <span
-            class="bp3-icon main"
+            class="bp3-icon StyledProps--main"
             data-icon="question"
             tabindex="0"
           >
@@ -107,11 +107,11 @@ exports[`<DateInput/> tests renders with empty value date 1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-calendar main padding padding-undefined"
+            class="bp3-icon bp3-icon-calendar StyledProps--main"
             icon="calendar"
           >
             <svg
@@ -163,11 +163,11 @@ exports[`<DateInput/> tests renders with empty value date time 1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-calendar main padding padding-undefined"
+            class="bp3-icon bp3-icon-calendar StyledProps--main"
             icon="calendar"
           >
             <svg
@@ -215,7 +215,7 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
         data-name=""
       >
         <span
-          class="bp3-icon main errorTextIcon intent intent-danger"
+          class="bp3-icon StyledProps--main errorTextIcon StyledProps--intent-danger"
           data-icon="circle-cross"
         >
           <svg
@@ -241,7 +241,7 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
           class="bp3-popover-target"
         >
           <span
-            class="bp3-icon main"
+            class="bp3-icon StyledProps--main"
             data-icon="question"
             tabindex="0"
           >
@@ -284,11 +284,11 @@ exports[`<DateInput/> tests renders with value  1`] = `
         class="bp3-popover-target"
       >
         <button
-          class="bp3-button bp3-minimal button font main with-current-color iconOnly without-shadow withLeftIcon"
+          class="bp3-button bp3-minimal button StyledProps--font StyledProps--main with-current-color iconOnly without-shadow withLeftIcon"
           type="button"
         >
           <span
-            class="bp3-icon bp3-icon-calendar main padding padding-undefined"
+            class="bp3-icon bp3-icon-calendar StyledProps--main"
             icon="calendar"
           >
             <svg
@@ -335,7 +335,7 @@ exports[`<DateInput/> tests renders with value and allow variables 1`] = `
           class="bp3-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-tick main"
+            class="bp3-icon bp3-icon-tick StyledProps--main"
             icon="tick"
           >
             <svg
@@ -367,7 +367,7 @@ exports[`<DateInput/> tests renders with value and allow variables 1`] = `
           class="bp3-popover-target"
         >
           <span
-            class="bp3-icon main"
+            class="bp3-icon StyledProps--main"
             data-icon="question"
             tabindex="0"
           >

@@ -10,7 +10,7 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
         class="bp3-form-content"
       >
         <div
-          class="horizontal layout-spacing-medium main spacing spacing-medium"
+          class="horizontal layout-spacing-medium StyledProps--main"
         >
           <div
             class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
@@ -24,7 +24,7 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
                 class="badge"
               />
               <span
-                class="bp3-icon main color color-white"
+                class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
                 data-icon="main-tick"
               >
                 <svg
@@ -34,18 +34,18 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
               </span>
             </span>
             <div
-              class="vertical layout-spacing-undefined main"
+              class="vertical layout-spacing-undefined StyledProps--main"
             >
               Github
             </div>
           </div>
           <button
-            class="bp3-button bp3-minimal button font main closeChangeBtn intent intent-primary without-shadow withLeftIcon"
+            class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
           >
             <span
-              class="bp3-icon main padding padding-right padding-right-xsmall"
+              class="bp3-icon StyledProps--main StyledProps--padding-right-xsmall"
               data-icon="Edit"
             >
               <svg
@@ -76,7 +76,7 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
         class="bp3-form-content"
       >
         <div
-          class="horizontal layout-spacing-medium main spacing spacing-medium"
+          class="horizontal layout-spacing-medium StyledProps--main"
         >
           <div
             class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
@@ -90,7 +90,7 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
                 class="badge"
               />
               <span
-                class="bp3-icon main color color-white"
+                class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
                 data-icon="main-tick"
               >
                 <svg
@@ -100,18 +100,18 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
               </span>
             </span>
             <div
-              class="vertical layout-spacing-undefined main"
+              class="vertical layout-spacing-undefined StyledProps--main"
             >
               Kubernetes
             </div>
           </div>
           <button
-            class="bp3-button bp3-minimal button font main closeChangeBtn intent intent-primary without-shadow withLeftIcon"
+            class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
           >
             <span
-              class="bp3-icon main padding padding-right padding-right-xsmall"
+              class="bp3-icon StyledProps--main StyledProps--padding-right-xsmall"
               data-icon="Edit"
             >
               <svg
@@ -142,7 +142,7 @@ exports[`Test render CollapsableSelect should render card view with no defaultVa
         class="bp3-form-content"
       >
         <div
-          class="horizontal layout-spacing-medium main spacing spacing-medium"
+          class="horizontal layout-spacing-medium StyledProps--main"
         >
           <div
             class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
@@ -150,7 +150,7 @@ exports[`Test render CollapsableSelect should render card view with no defaultVa
             tabindex="0"
           >
             <div
-              class="vertical layout-spacing-undefined main"
+              class="vertical layout-spacing-undefined StyledProps--main"
             >
               Kubernetes
             </div>
@@ -161,7 +161,7 @@ exports[`Test render CollapsableSelect should render card view with no defaultVa
             tabindex="0"
           >
             <div
-              class="vertical layout-spacing-undefined main"
+              class="vertical layout-spacing-undefined StyledProps--main"
             >
               Github
             </div>
@@ -183,24 +183,24 @@ exports[`Test render CollapsableSelect should render customView  1`] = `
         class="bp3-form-content"
       >
         <div
-          class="horizontal layout-spacing-medium main spacing spacing-medium"
+          class="horizontal layout-spacing-medium StyledProps--main"
         >
           <div
             data-index="0"
           >
             <div
-              class="vertical layout-spacing-undefined main"
+              class="vertical layout-spacing-undefined StyledProps--main"
             >
               Kubernetes
             </div>
           </div>
           <button
-            class="bp3-button bp3-minimal button font main closeChangeBtn intent intent-primary without-shadow withLeftIcon"
+            class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
           >
             <span
-              class="bp3-icon main padding padding-right padding-right-xsmall"
+              class="bp3-icon StyledProps--main StyledProps--padding-right-xsmall"
               data-icon="Edit"
             >
               <svg

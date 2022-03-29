@@ -4,8 +4,18 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+import type { IPopoverProps } from '@blueprintjs/core'
 
-import { PopoverProps } from '../components/Popover/Popover'
+export interface PopoverProps extends IPopoverProps {
+  /** If true, render BPopover in dark background and light font color */
+  isDark?: boolean
+
+  /** Popover target element */
+  children?: React.ReactNode
+
+  /** data-tooltip-id to be attached and used by docs team */
+  dataTooltipId?: string
+}
 
 export interface OptionalTooltip {
   /** Optional tooltip */

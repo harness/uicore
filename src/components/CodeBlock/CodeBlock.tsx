@@ -10,7 +10,7 @@ import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { Text } from '../Text/Text'
 import { Utils } from '../../core/Utils'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import css from './CodeBlock.css'
 
 export interface CodeBlockProps {

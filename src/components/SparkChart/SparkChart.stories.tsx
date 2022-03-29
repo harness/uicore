@@ -8,7 +8,8 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { SparkChart, Color } from '../..'
+import { SparkChart } from '../..'
+import { Color } from '@harness/design-system'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { SparkChartProps } from './SparkChart'
 

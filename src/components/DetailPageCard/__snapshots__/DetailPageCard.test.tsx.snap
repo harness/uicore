@@ -6,26 +6,26 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
     class="bp3-card bp3-elevation-0 card main"
   >
     <p
-      class="font main color color-black font-variation font-variation-card-title"
+      class="StyledProps--font StyledProps--main StyledProps--color StyledProps--color-black StyledProps--font-variation-card-title"
     >
       Overview
     </p>
     <div
-      class="vertical layout-spacing-undefined main style style-marginTop style-marginTop-var(--spacing-4)"
+      class="vertical layout-spacing-undefined StyledProps--main"
     >
       <div
-        class="font main detailsSectionRowWrapper"
+        class="StyledProps--font StyledProps--main detailsSectionRowWrapper"
       >
         <div
-          class="vertical layout-spacing-small main spacing spacing-small"
+          class="vertical layout-spacing-small StyledProps--main"
         >
           <p
-            class="font main label font-variation font-variation-form-label"
+            class="StyledProps--font StyledProps--main label StyledProps--font-variation-form-label"
           >
             Name
           </p>
           <p
-            class="font lineclamp main font-variation font-variation-form-input-text width width-424px"
+            class="StyledProps--font lineclamp StyledProps--main StyledProps--font-variation-form-input-text"
             style="--text-line-clamp: 1; width: 424px;"
           >
             Cluster Name
@@ -33,18 +33,18 @@ exports[`Detail Page card should render DetailPagecard with title and content 1`
         </div>
       </div>
       <div
-        class="font main detailsSectionRowWrapper"
+        class="StyledProps--font StyledProps--main detailsSectionRowWrapper"
       >
         <div
-          class="vertical layout-spacing-small main spacing spacing-small"
+          class="vertical layout-spacing-small StyledProps--main"
         >
           <p
-            class="font main label font-variation font-variation-form-label"
+            class="StyledProps--font StyledProps--main label StyledProps--font-variation-form-label"
           >
             GitOps Agent 
           </p>
           <p
-            class="font lineclamp main font-variation font-variation-form-input-text width width-424px"
+            class="StyledProps--font lineclamp StyledProps--main StyledProps--font-variation-form-input-text"
             style="--text-line-clamp: 1; width: 424px;"
           >
             Agent 1

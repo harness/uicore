@@ -6,7 +6,7 @@
  */
 
 import { pick } from 'lodash-es'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 export const getInitialsFromNameOrEmail = (name = '', email = ''): string => {
   let initialsFromName = name
     .split(/-| /)

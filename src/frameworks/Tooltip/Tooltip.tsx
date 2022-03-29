@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import marked from 'marked'
+import { marked } from 'marked'
 import { PopoverInteractionKind } from '@blueprintjs/core'
 import { useTooltips } from './TooltipContext'
 import { TooltipRenderProps } from './types'
@@ -15,7 +15,7 @@ import { TooltipRenderProps } from './types'
 import css from './Tooltip.css'
 import { Popover } from '../../components/Popover/Popover'
 import { Icon } from '../../icons/Icon'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 
 const _asHtml = (content: string) => {
   return `${content

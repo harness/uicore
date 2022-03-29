@@ -10,7 +10,7 @@ import { Card as BpCard, ICardProps, HTMLDivProps, Position } from '@blueprintjs
 import css from './Card.css'
 import cx from 'classnames'
 import { Icon as UiIcon, IconName, IconProps } from '../../icons/Icon'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import { Popover, PopoverProps } from '../../components/Popover/Popover'
 import { Text } from '../../components/Text/Text'
 import { Button } from '../../components/Button/Button'

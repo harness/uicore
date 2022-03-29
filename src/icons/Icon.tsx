@@ -14,7 +14,7 @@
 import { HarnessIcons, HarnessIconName } from './HarnessIcons'
 import React, { ElementType, HTMLAttributes } from 'react'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
-import { StyledProps, styledClasses, omitStyledProps } from '../styled-props/StyledProps'
+import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
 
 type IconName = HarnessIconName | BIconName
 

@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 import { Icon, IconProps, IconName } from '../../icons/Icon'
 import css from './CollapseHeader.css'
 import { Container } from '../Container/Container'
@@ -20,6 +20,7 @@ export interface CollapseHeaderProps {
   expandedIcon?: IconName
   iconProps?: IconProps
   heading?: string | JSX.Element
+  expandedHeading?: string | JSX.Element
   isRemovable?: boolean
   onRemove?: () => void
   className?: string
@@ -33,6 +34,7 @@ export function CollapseHeader(props: CollapseHeaderProps) {
     isOpen,
     isRemovable,
     heading,
+    expandedHeading,
     iconProps,
     expandedIcon,
     collapsedIcon,
@@ -46,7 +48,17 @@ export function CollapseHeader(props: CollapseHeaderProps) {
         ) : (
           <Icon name={collapsedIcon || 'main-caret-right'} color={Color.GREY_400} size={10} {...iconProps} />
         )}
-        {typeof heading === 'string' ? <Text className={css.title}>{heading}</Text> : heading}
+        {isOpen && expandedHeading ? (
+          typeof expandedHeading === 'string' ? (
+            <Text className={css.title}>{expandedHeading}</Text>
+          ) : (
+            expandedHeading
+          )
+        ) : typeof heading === 'string' ? (
+          <Text className={css.title}>{heading}</Text>
+        ) : (
+          heading
+        )}
       </Container>
 
       <Container>

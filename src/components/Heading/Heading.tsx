@@ -6,8 +6,8 @@
  */
 
 import React, { HTMLAttributes } from 'react'
-import { StyledProps, styledClasses, omitStyledProps } from '../../styled-props/StyledProps'
-import styledClass from '../../styled-props/StyledProps.css'
+import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import { styledClass } from '@harness/design-system'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6'
 

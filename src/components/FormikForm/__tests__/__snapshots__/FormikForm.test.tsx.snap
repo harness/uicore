@@ -150,7 +150,7 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -211,7 +211,7 @@ exports[`Test basic Components render formik form custom render: custom render f
         class="bp3-form-content"
       >
         <label
-          class="bp3-control bp3-checkbox font checkbox main inline inline-undefined"
+          class="bp3-control bp3-checkbox StyledProps--font checkbox StyledProps--main StyledProps--inline"
         >
           <input
             name="field2"
@@ -250,7 +250,7 @@ exports[`Test basic Components should render Checkbox component 1`] = `
             class="bp3-form-content"
           >
             <label
-              class="bp3-control bp3-checkbox font checkbox main inline inline-false"
+              class="bp3-control bp3-checkbox StyledProps--font checkbox StyledProps--main StyledProps--inline"
             >
               <input
                 name="color"
@@ -269,7 +269,7 @@ exports[`Test basic Components should render Checkbox component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -316,7 +316,7 @@ exports[`Test basic Components should render Custom Input component 1`] = `
             class="bp3-form-content"
           >
             <button
-              class="bp3-button button font main with-current-color"
+              class="bp3-button button StyledProps--font StyledProps--main with-current-color"
               type="button"
             >
               <span
@@ -328,7 +328,7 @@ exports[`Test basic Components should render Custom Input component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -391,7 +391,7 @@ exports[`Test basic Components should render FileInput component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -498,7 +498,7 @@ exports[`Test basic Components should render FileInput component 2`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -574,7 +574,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -590,255 +590,113 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
 `;
 
 exports[`Test basic Components should render MultiTypeInput component with Select (with useValue and selectItems) 1`] = `
-<div>
+<div
+  class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+>
   <div
-    class="overlaySpinner"
+    class="bp3-popover-target"
   >
-    <form
-      class="main"
+    <div
+      class="bp3-input-group"
     >
-      <div>
-        <div
-          class="bp3-form-group"
-          data-id="label-multitypeinput-0"
+      <input
+        autocomplete="off"
+        class="bp3-input"
+        name="label-multitypeinput"
+        placeholder="Search..."
+        style="padding-right: 0px;"
+        type="text"
+        value="customvalue"
+      />
+      <span
+        class="bp3-input-action"
+      >
+        <span
+          class="bp3-icon StyledProps--main StyledProps--padding-top-small StyledProps--padding-right-xsmall StyledProps--padding-bottom-small"
+          data-icon="main-delete"
         >
-          <label
-            class="bp3-label"
-            for="label-multitypeinput"
+          <svg
+            height="14"
+            width="14"
+          />
+        </span>
+        <span
+          class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+          icon="chevron-down"
+        >
+          <svg
+            data-icon="chevron-down"
+            height="14"
+            viewBox="0 0 16 16"
+            width="14"
           >
-            <span
-              class="acenter"
-              data-tooltip-id="testform_label-multitypeinput"
-            >
-              select
-            </span>
-             
-            <span
-              class="bp3-text-muted"
+            <desc>
+              chevron-down
+            </desc>
+            <path
+              d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+              fill-rule="evenodd"
             />
-          </label>
-          <div
-            class="bp3-form-content"
-          >
-            <div
-              class="horizontal layout-spacing-undefined main width width-undefined"
-            >
-              <div
-                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
-              >
-                <div
-                  class="bp3-popover-target"
-                >
-                  <div
-                    class="bp3-input-group"
-                  >
-                    <input
-                      autocomplete="off"
-                      class="bp3-input"
-                      name="label-multitypeinput"
-                      placeholder="Search..."
-                      style="padding-right: 0px;"
-                      type="text"
-                      value="customvalue"
-                    />
-                    <span
-                      class="bp3-input-action"
-                    >
-                      <span
-                        class="bp3-icon main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
-                        data-icon="main-delete"
-                      >
-                        <svg
-                          height="14"
-                          width="14"
-                        />
-                      </span>
-                      <span
-                        class="bp3-icon bp3-icon-chevron-down main padding padding-small"
-                        icon="chevron-down"
-                      >
-                        <svg
-                          data-icon="chevron-down"
-                          height="14"
-                          viewBox="0 0 16 16"
-                          width="14"
-                        >
-                          <desc>
-                            chevron-down
-                          </desc>
-                          <path
-                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <span
-                class="bp3-popover-wrapper wrapper"
-              >
-                <span
-                  class="bp3-popover-target"
-                >
-                  <button
-                    class="btn FIXED"
-                  >
-                    <span
-                      class="bp3-icon main"
-                      data-icon="fixed-input"
-                    >
-                      <svg
-                        height="12"
-                        width="12"
-                      />
-                    </span>
-                  </button>
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <button
-          class="bp3-button button font main intent intent-primary with-current-color"
-          type="submit"
-        >
-          <span
-            class="bp3-button-text"
-          >
-            Submit
-          </span>
-        </button>
-      </div>
-    </form>
+          </svg>
+        </span>
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Test basic Components should render MultiTypeInput component with Select 1`] = `
-<div>
+<div
+  class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
+>
   <div
-    class="overlaySpinner"
+    class="bp3-popover-target"
   >
-    <form
-      class="main"
+    <div
+      class="bp3-input-group"
     >
-      <div>
-        <div
-          class="bp3-form-group"
-          data-id="label-multitypeinput-0"
+      <input
+        autocomplete="off"
+        class="bp3-input"
+        name="label-multitypeinput"
+        placeholder="Search..."
+        style="padding-right: 0px;"
+        type="text"
+        value="customvalue"
+      />
+      <span
+        class="bp3-input-action"
+      >
+        <span
+          class="bp3-icon StyledProps--main StyledProps--padding-top-small StyledProps--padding-right-xsmall StyledProps--padding-bottom-small"
+          data-icon="main-delete"
         >
-          <label
-            class="bp3-label"
-            for="label-multitypeinput"
+          <svg
+            height="14"
+            width="14"
+          />
+        </span>
+        <span
+          class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+          icon="chevron-down"
+        >
+          <svg
+            data-icon="chevron-down"
+            height="14"
+            viewBox="0 0 16 16"
+            width="14"
           >
-            <span
-              class="acenter"
-              data-tooltip-id="testform_label-multitypeinput"
-            >
-              select
-            </span>
-             
-            <span
-              class="bp3-text-muted"
+            <desc>
+              chevron-down
+            </desc>
+            <path
+              d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+              fill-rule="evenodd"
             />
-          </label>
-          <div
-            class="bp3-form-content"
-          >
-            <div
-              class="horizontal layout-spacing-undefined main width width-undefined"
-            >
-              <div
-                class="bp3-popover-wrapper select fixedValueInput main bp3-fill"
-              >
-                <div
-                  class="bp3-popover-target"
-                >
-                  <div
-                    class="bp3-input-group"
-                  >
-                    <input
-                      autocomplete="off"
-                      class="bp3-input"
-                      name="label-multitypeinput"
-                      placeholder="Search..."
-                      style="padding-right: 0px;"
-                      type="text"
-                      value="customvalue"
-                    />
-                    <span
-                      class="bp3-input-action"
-                    >
-                      <span
-                        class="bp3-icon main padding padding-top padding-top-small padding-right padding-right-xsmall padding-bottom padding-bottom-small"
-                        data-icon="main-delete"
-                      >
-                        <svg
-                          height="14"
-                          width="14"
-                        />
-                      </span>
-                      <span
-                        class="bp3-icon bp3-icon-chevron-down main padding padding-small"
-                        icon="chevron-down"
-                      >
-                        <svg
-                          data-icon="chevron-down"
-                          height="14"
-                          viewBox="0 0 16 16"
-                          width="14"
-                        >
-                          <desc>
-                            chevron-down
-                          </desc>
-                          <path
-                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <span
-                class="bp3-popover-wrapper wrapper"
-              >
-                <span
-                  class="bp3-popover-target"
-                >
-                  <button
-                    class="btn FIXED"
-                  >
-                    <span
-                      class="bp3-icon main"
-                      data-icon="fixed-input"
-                    >
-                      <svg
-                        height="12"
-                        width="12"
-                      />
-                    </span>
-                  </button>
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <button
-          class="bp3-button button font main intent intent-primary with-current-color"
-          type="submit"
-        >
-          <span
-            class="bp3-button-text"
-          >
-            Submit
-          </span>
-        </button>
-      </div>
-    </form>
+          </svg>
+        </span>
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -875,14 +733,14 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
             class="bp3-form-content"
           >
             <div
-              class="main"
+              class="StyledProps--main"
             >
               
               <div
                 class=""
               >
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -896,7 +754,7 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
                   red
                 </label>
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -914,7 +772,7 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -961,14 +819,14 @@ exports[`Test basic Components should render RadioGroup component in an inline f
             class="bp3-form-content"
           >
             <div
-              class="inlineRadioGroup main"
+              class="inlineRadioGroup StyledProps--main"
             >
               
               <div
                 class=""
               >
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -982,7 +840,7 @@ exports[`Test basic Components should render RadioGroup component in an inline f
                   red
                 </label>
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -1000,7 +858,7 @@ exports[`Test basic Components should render RadioGroup component in an inline f
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -1068,7 +926,7 @@ exports[`Test basic Components should render Select component 1`] = `
                     class="bp3-input-action"
                   >
                     <span
-                      class="bp3-icon bp3-icon-chevron-down main padding padding-small"
+                      class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
                       icon="chevron-down"
                     >
                       <svg
@@ -1093,7 +951,7 @@ exports[`Test basic Components should render Select component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -1153,7 +1011,7 @@ exports[`Test basic Components should render Text component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -1208,7 +1066,7 @@ exports[`Test basic Components should render TextArea component 1`] = `
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -1255,14 +1113,14 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
             class="bp3-form-content"
           >
             <div
-              class="main"
+              class="StyledProps--main"
             >
               
               <div
                 class="inline"
               >
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -1276,7 +1134,7 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
                   red
                 </label>
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -1294,7 +1152,7 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span
@@ -1341,14 +1199,14 @@ exports[`Test basic Components should render an inline RadioGroup component in a
             class="bp3-form-content"
           >
             <div
-              class="inlineRadioGroup main"
+              class="inlineRadioGroup StyledProps--main"
             >
               
               <div
                 class="inline"
               >
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -1362,7 +1220,7 @@ exports[`Test basic Components should render an inline RadioGroup component in a
                   red
                 </label>
                 <label
-                  class="radio main"
+                  class="radio StyledProps--main"
                 >
                   <input
                     class="input"
@@ -1380,7 +1238,7 @@ exports[`Test basic Components should render an inline RadioGroup component in a
           </div>
         </div>
         <button
-          class="bp3-button button font main intent intent-primary with-current-color"
+          class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
           <span

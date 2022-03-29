@@ -15,7 +15,7 @@ import { Icon } from '../../icons/Icon'
 import { Position, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
-import { I18nResource } from '../../core/Types'
+import { I18nResource } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
 import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
@@ -29,7 +29,7 @@ import {
 } from './MultiTypeInputUtils'
 import { MultiTypeInputMenu } from './MultiTypeInputMenu'
 
-type AcceptableValue = boolean | string | number | SelectOption | MultiSelectOption[]
+type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[]
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
@@ -67,6 +67,10 @@ export const getMultiTypeFromValue = (
     value = value.toLocaleLowerCase().trim()
     if (value.startsWith(RUNTIME_INPUT_VALUE)) return MultiTypeInputType.RUNTIME
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
+  } else if (Array.isArray(value)) {
+    // To support list of expressions
+    if (value.some((item: string | MultiSelectOption) => typeof item === 'string' && isValueAnExpression(item)))
+      return MultiTypeInputType.EXPRESSION
   }
   if (!value && allowableTypes?.length) {
     return allowableTypes[0]
@@ -159,37 +163,40 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
         />
       )}
-      <Button
-        noStyling
-        className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
-        tooltip={
-          disabled ? undefined : (
-            <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
-          )
-        }
-        onClick={ev => {
-          // if ((ev.nativeEvent as PointerEvent).pointerType !== 'mouse') {
-          //   /*
-          //   PIE-1755
-          //   https://github.com/palantir/blueprint/issues/3856
-          //   Button attached next to an InputGroup triggers the click event when enter key is pressed while typing
-          //   So checking the event pointer type, and stopping the propagation if not clicked by the user
-          //   */
-          //   ev.stopPropagation()
-          // }
-          ev.preventDefault()
-        }}
-        disabled={disabled}
-        tooltipProps={{
-          minimal: true,
-          position: Position.BOTTOM_RIGHT,
-          interactionKind: PopoverInteractionKind.CLICK,
-          popoverClassName: css.popover,
-          className: css.wrapper,
-          lazy: true
-        }}>
-        <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
-      </Button>
+      {!allowableTypes.length ||
+      (allowableTypes.length === 1 && allowableTypes[0] === MultiTypeInputType.FIXED) ? null : (
+        <Button
+          noStyling
+          className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
+          tooltip={
+            disabled ? undefined : (
+              <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
+            )
+          }
+          onClick={ev => {
+            // if ((ev.nativeEvent as PointerEvent).pointerType !== 'mouse') {
+            //   /*
+            //   PIE-1755
+            //   https://github.com/palantir/blueprint/issues/3856
+            //   Button attached next to an InputGroup triggers the click event when enter key is pressed while typing
+            //   So checking the event pointer type, and stopping the propagation if not clicked by the user
+            //   */
+            //   ev.stopPropagation()
+            // }
+            ev.preventDefault()
+          }}
+          disabled={disabled}
+          tooltipProps={{
+            minimal: true,
+            position: Position.BOTTOM_RIGHT,
+            interactionKind: PopoverInteractionKind.CLICK,
+            popoverClassName: css.popover,
+            className: css.wrapper,
+            lazy: true
+          }}>
+          <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
+        </Button>
+      )}
     </Layout.Horizontal>
   )
 }

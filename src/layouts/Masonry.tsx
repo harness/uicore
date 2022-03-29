@@ -5,11 +5,11 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Container, Spacing } from '../'
+import { Container } from '../'
 import cx from 'classnames'
 import MasonryLayout from 'masonry-layout'
 import React, { useEffect, useState } from 'react'
-import { PaddingProps } from 'styled-props/padding/PaddingProps'
+import { PaddingProps, Spacing } from '@harness/design-system'
 
 const MASONRY_UNIQUE_CLASS_PREFIX = 'uicore-masonry-layout-'
 

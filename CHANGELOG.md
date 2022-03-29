@@ -2,6 +2,167 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.52.0](https://github.com/harness/uicore/compare/v2.51.0...v2.52.0) (2022-03-29)
+
+
+### Bug Fixes
+
+* [CI-3613]: Add news colors and another icon for CI Hosted Builds ([#633](https://github.com/harness/uicore/issues/633)) ([5ebf117](https://github.com/harness/uicore/commit/5ebf117f897883e0a521b884e4850a20b749388b))
+
+## [2.51.0](https://github.com/harness/uicore/compare/v2.50.0...v2.51.0) (2022-03-29)
+
+
+### Features
+
+* [CI-3613]: Adding new icons for CI Hosted Builds Experience ([#632](https://github.com/harness/uicore/issues/632)) ([9a04d6c](https://github.com/harness/uicore/commit/9a04d6c353865c23410cfcda264024b7069c25ef))
+
+## [2.50.0](https://github.com/harness/uicore/compare/v2.49.0...v2.50.0) (2022-03-28)
+
+
+### Bug Fixes
+
+* [PIE-3247]: Show cancel button if cancelButtonText is there ([#630](https://github.com/harness/uicore/issues/630)) ([2584362](https://github.com/harness/uicore/commit/2584362d79cf41bf99b452611472150298f684b4))
+
+## [2.49.0](https://github.com/harness/uicore/compare/v2.48.0...v2.49.0) (2022-03-25)
+
+
+### Features
+
+* [PIE-3247]: Add support for showcloseButton, canOutsideClickClose and canEscapeKeyClose props to useConfirmationDialog ([#628](https://github.com/harness/uicore/issues/628)) ([d019755](https://github.com/harness/uicore/commit/d0197551e93d4763fc481bc7dfac2860034792b0))
+
+## [2.48.0](https://github.com/harness/uicore/compare/v2.47.0...v2.48.0) (2022-03-25)
+
+
+### Features
+
+* [CDS-35460]: added cloudformation pipeline icons ([#624](https://github.com/harness/uicore/issues/624)) ([ad0faa7](https://github.com/harness/uicore/commit/ad0faa7250a5e4dc84ff6aa0ad62f28166f9d027))
+
+## [2.47.0](https://github.com/harness/uicore/compare/v2.46.0...v2.47.0) (2022-03-25)
+
+
+### Bug Fixes
+
+* [PIE-2757]: adds support for list of expressions ([#627](https://github.com/harness/uicore/issues/627)) ([1dea367](https://github.com/harness/uicore/commit/1dea367b0223877237a3e7dc1e445dbbc833f2c6))
+
+## [2.46.0](https://github.com/harness/uicore/compare/v2.45.0...v2.46.0) (2022-03-24)
+
+
+### Others
+
+* upgrade to marked v4 ([#626](https://github.com/harness/uicore/issues/626)) ([662cb37](https://github.com/harness/uicore/commit/662cb370fc08cec41b3532f0721ac9607d27d43e))
+
+## [2.45.0](https://github.com/harness/uicore/compare/v2.44.0...v2.45.0) (2022-03-23)
+
+
+### Bug Fixes
+
+* [PIE-3235]: Fix the canary inverse icon ([#625](https://github.com/harness/uicore/issues/625)) ([e4d6e37](https://github.com/harness/uicore/commit/e4d6e37ca1a07e5d9636f6c00f2c1cd9763db828))
+
+## [2.44.0](https://github.com/harness/uicore/compare/v2.43.0...v2.44.0) (2022-03-23)
+
+
+### Features
+
+* [CI-3613]: Added `MultiStepProgressIndicator` component ([#622](https://github.com/harness/uicore/issues/622)) ([2816a6b](https://github.com/harness/uicore/commit/2816a6b8e2c50c722b2e6ea7595260eab113647c))
+
+## [2.43.0](https://github.com/harness/uicore/compare/v2.42.0...v2.43.0) (2022-03-23)
+
+
+### Bug Fixes
+
+* [PL-22570]: Removing design-system css import ([#621](https://github.com/harness/uicore/issues/621)) ([ec7abce](https://github.com/harness/uicore/commit/ec7abce2ce4b378983dbd5e02cf12d78e14ace0f))
+
+## [2.42.0](https://github.com/harness/uicore/compare/v2.41.0...v2.42.0) (2022-03-22)
+
+
+### Features
+
+* [CCM-7066]: added aws-rds icon ([#619](https://github.com/harness/uicore/issues/619)) ([c051045](https://github.com/harness/uicore/commit/c051045e62b9869ffba2b13759ed131a5df7d402))
+
+## [2.41.0](https://github.com/harness/uicore/compare/v2.40.0...v2.41.0) (2022-03-22)
+
+
+### Bug Fixes
+
+* [PL-22570]: Importing from @harness/design-system in icons script ([#620](https://github.com/harness/uicore/issues/620)) ([116b4ea](https://github.com/harness/uicore/commit/116b4ea51744d6951f30b06c1db4b1323080c48b))
+
+## [2.40.0](https://github.com/harness/uicore/compare/v2.39.0...v2.40.0) (2022-03-21)
+
+
+### Features
+
+* [CDS-34141]: alt heading for Collapse when expanded ([#618](https://github.com/harness/uicore/issues/618)) ([94dfb06](https://github.com/harness/uicore/commit/94dfb064083cd69a97ce7096431206ef84df1915))
+
+## [2.39.0](https://github.com/harness/uicore/compare/v2.38.0...v2.39.0) (2022-03-21)
+
+
+### Features
+
+* [PL-22570]: Moving design-system to a separate package in UI-core ([#590](https://github.com/harness/uicore/issues/590)) ([8600cb6](https://github.com/harness/uicore/commit/8600cb6aa9d24531f1518b326abe2b2fe2440b98))
+
+## [2.38.0](https://github.com/harness/uicore/compare/v2.37.0...v2.38.0) (2022-03-17)
+
+
+### Features
+
+* add icon for Security Stage ([#617](https://github.com/harness/uicore/issues/617)) ([74ae635](https://github.com/harness/uicore/commit/74ae635e061e889bcb44937da52602f5f6930931))
+
+## [2.37.0](https://github.com/harness/uicore/compare/v2.36.0...v2.37.0) (2022-03-17)
+
+
+### Features
+
+* [SRM-9546]: error tracking icon ([#616](https://github.com/harness/uicore/issues/616)) ([3d7aff0](https://github.com/harness/uicore/commit/3d7aff055494a562b926ca3ade3ca2d45f9d4a08))
+
+## [2.36.0](https://github.com/harness/uicore/compare/v2.35.0...v2.36.0) (2022-03-15)
+
+
+### Features
+
+* [GTM-777]: update subscription module logos ([#615](https://github.com/harness/uicore/issues/615)) ([ee4a16e](https://github.com/harness/uicore/commit/ee4a16e81ee1248d3c1c974640af1beaa9dadd34))
+
+## [2.35.0](https://github.com/harness/uicore/compare/v2.34.0...v2.35.0) (2022-03-15)
+
+
+### Bug Fixes
+
+* [CDS-34081]: Template inputs icon added ([#614](https://github.com/harness/uicore/issues/614)) ([b53eca8](https://github.com/harness/uicore/commit/b53eca8a1d5156d02582293cd17007a883b21af6))
+
+## [2.34.0](https://github.com/harness/uicore/compare/v2.33.0...v2.34.0) (2022-03-15)
+
+
+### Bug Fixes
+
+* [PIE-2241]: Update labels of Identifier ([#613](https://github.com/harness/uicore/issues/613)) ([4cdaff5](https://github.com/harness/uicore/commit/4cdaff5159fa732b9c792362510e48234c88c456))
+
+## [2.33.0](https://github.com/harness/uicore/compare/v2.32.0...v2.33.0) (2022-03-10)
+
+
+### Bug Fixes
+
+* [CDS-34874]: add serverless deployment related icons ([#611](https://github.com/harness/uicore/issues/611)) ([53b6578](https://github.com/harness/uicore/commit/53b657887b12c7eeca514c12d1b81526ae1f334c))
+
+## [2.32.0](https://github.com/harness/uicore/compare/v2.31.0...v2.32.0) (2022-03-09)
+
+
+### Bug Fixes
+
+* [CDS-34662]: added prop to the multitypeinput to customize menu ([#610](https://github.com/harness/uicore/issues/610)) ([bd97518](https://github.com/harness/uicore/commit/bd975184ad73be88326364051a48b8aa5a046b5c))
+
+## [2.31.0](https://github.com/harness/uicore/compare/v2.30.0...v2.31.0) (2022-03-08)
+
+
+### Features
+
+* [PIE-2792]: add microsoft-azure icon ([#609](https://github.com/harness/uicore/issues/609)) ([89352b1](https://github.com/harness/uicore/commit/89352b1272fe207975f3c7eab4bc5e211b3d1b92))
+
+## [2.30.0](https://github.com/harness/uicore/compare/v2.29.0...v2.30.0) (2022-03-08)
+
+
+### Bug Fixes
+
+* [PL-21624]: added tooltip for the ability to see the full name of a lengthy tag ([#592](https://github.com/harness/uicore/issues/592)) ([e731b84](https://github.com/harness/uicore/commit/e731b840342d8734744c3810305aa6ede6c06e0f))
+
 ## [2.29.0](https://github.com/harness/uicore/compare/v2.28.0...v2.29.0) (2022-03-02)
 
 

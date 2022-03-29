@@ -9,8 +9,8 @@
  * This file is auto-generated. Please do not modify this file manually.
  * Use the command `yarn ui:icons` to regenerate this file.
  */
-import { FunctionComponent, ElementType } from 'react'
-import { KVO } from 'core/Types'
+import { ElementType } from 'react'
+import { KVO } from '@harness/design-system'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -35,6 +35,7 @@ import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
+import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
@@ -69,12 +70,14 @@ import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
+import CcmWithDarkText from './ccm-with-dark-text.svg'
 import CcmWithText from './ccm-with-text.svg'
 import CdHover from './cd-hover.svg'
 import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import CdSolid from './cd-solid.svg'
+import CdWithDarkText from './cd-with-dark-text.svg'
 import CdWithText from './cd-with-text.svg'
 import Cd from './cd.svg'
 import CeApplication from './ce-application.svg'
@@ -99,17 +102,34 @@ import ChangeLog from './change-log.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
+import CiBuildPipeline from './ci-build-pipeline.svg'
+import CiDevExp from './ci-dev-exp.svg'
+import CiExecution from './ci-execution.svg'
+import CiGov from './ci-gov.svg'
 import CiHover from './ci-hover.svg'
+import CiInfraSupport from './ci-infra-support.svg'
+import CiInfra from './ci-infra.svg'
+import CiIntegrated from './ci-integrated.svg'
+import CiLanguage from './ci-language.svg'
 import CiMainInverse from './ci-main-inverse.svg'
 import CiMain from './ci-main.svg'
+import CiParameterization from './ci-parameterization.svg'
 import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
 import CiSolidCurrentColor from './ci-solid-current-color.svg'
 import CiSolid from './ci-solid.svg'
+import CiTi from './ci-ti.svg'
+import CiTryPipeline from './ci-try-pipeline.svg'
+import CiWithDarkText from './ci-with-dark-text.svg'
 import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
+import CloudDark from './cloud-dark.svg'
+import CloudFormationCreate from './cloud-formation-create.svg'
+import CloudFormationDelete from './cloud-formation-delete.svg'
+import CloudFormationRollback from './cloud-formation-rollback.svg'
+import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
@@ -146,6 +166,7 @@ import ConnectivityMode from './connectivity-mode.svg'
 import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
+import ContactSupport from './contact-support.svg'
 import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
 import CoverageStatusError from './coverage-status-error.svg'
@@ -203,6 +224,7 @@ import Entity from './entity.svg'
 import Environment from './environment.svg'
 import Environments from './environments.svg'
 import ErrorOutline from './error-outline.svg'
+import ErrorTracking from './error-tracking.svg'
 import ErrorTransparentNoOutline from './error-transparent-no-outline.svg'
 import EvaluatePolicy from './evaluate-policy.svg'
 import ExecutionAbort from './execution-abort.svg'
@@ -220,6 +242,7 @@ import FeatureFlagStage from './feature-flag-stage.svg'
 import FeedbackGiven from './feedback-given.svg'
 import FfSketch from './ff-sketch.svg'
 import FfSolid from './ff-solid.svg'
+import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
@@ -381,6 +404,7 @@ import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import MemberRole from './memberRole.svg'
+import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
@@ -434,6 +458,8 @@ import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OfflineOutline from './offline-outline.svg'
+import OnpremDark from './onprem-dark.svg'
+import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
@@ -509,6 +535,7 @@ import SaveCacheS3StepInverse from './save-cache-s3-step-inverse.svg'
 import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
+import Scm from './scm.svg'
 import Script from './script.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -525,14 +552,18 @@ import SearchWorkflow from './search-workflow.svg'
 import SecretManager from './secret-manager.svg'
 import SecretSsh from './secret-ssh.svg'
 import SecretsIcon from './secrets-icon.svg'
+import SecurityStage from './security-stage.svg'
 import SendData from './send-data.svg'
+import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactoryInverse from './service-artifactory-inverse.svg'
 import ServiceArtifactory from './service-artifactory.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
 import ServiceAwsLamda from './service-aws-lamda.svg'
+import ServiceAwsSam from './service-aws-sam.svg'
 import ServiceAws from './service-aws.svg'
 import ServiceAzdevops from './service-azdevops.svg'
+import ServiceAzureFunctions from './service-azure-functions.svg'
 import ServiceAzure from './service-azure.svg'
 import ServiceBamboo from './service-bamboo.svg'
 import ServiceBugsnag from './service-bugsnag.svg'
@@ -570,6 +601,10 @@ import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
 import ServiceRedis from './service-redis.svg'
+import ServiceServerlessAws from './service-serverless-aws.svg'
+import ServiceServerlessAzure from './service-serverless-azure.svg'
+import ServiceServerlessGcp from './service-serverless-gcp.svg'
+import ServiceServerless from './service-serverless.svg'
 import ServiceServiceS3 from './service-service-s3.svg'
 import ServiceServicenowInverse from './service-servicenow-inverse.svg'
 import ServiceServicenow from './service-servicenow.svg'
@@ -594,6 +629,7 @@ import ShieldGears from './shield-gears.svg'
 import Skipped from './skipped.svg'
 import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
+import SrmWithDarkText from './srm-with-dark-text.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
@@ -622,6 +658,7 @@ import SwapServices from './swap-services.svg'
 import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
+import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesIcon from './templates-icon.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
@@ -693,6 +730,7 @@ type HarnessIconName =
   | 'audit-trail'
   | 'aws-codecommit'
   | 'aws-kms'
+  | 'aws-rds'
   | 'aws-secret-manager'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
@@ -727,12 +765,14 @@ type HarnessIconName =
   | 'canvas-selector'
   | 'ccm-sketch'
   | 'ccm-solid'
+  | 'ccm-with-dark-text'
   | 'ccm-with-text'
   | 'cd-hover'
   | 'cd-main-inverse'
   | 'cd-main'
   | 'cd-sketch'
   | 'cd-solid'
+  | 'cd-with-dark-text'
   | 'cd-with-text'
   | 'cd'
   | 'ce-application'
@@ -757,17 +797,34 @@ type HarnessIconName =
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
+  | 'ci-build-pipeline'
+  | 'ci-dev-exp'
+  | 'ci-execution'
+  | 'ci-gov'
   | 'ci-hover'
+  | 'ci-infra-support'
+  | 'ci-infra'
+  | 'ci-integrated'
+  | 'ci-language'
   | 'ci-main-inverse'
   | 'ci-main'
+  | 'ci-parameterization'
   | 'ci-pending-build'
   | 'ci-sketch'
   | 'ci-solid-current-color'
   | 'ci-solid'
+  | 'ci-ti'
+  | 'ci-try-pipeline'
+  | 'ci-with-dark-text'
   | 'ci-with-text'
   | 'circle-cross'
   | 'circle-stop'
   | 'clipboard-alt'
+  | 'cloud-dark'
+  | 'cloud-formation-create'
+  | 'cloud-formation-delete'
+  | 'cloud-formation-rollback'
+  | 'cloud-light'
   | 'cloud-sso'
   | 'cloudformation'
   | 'codebase-invalid'
@@ -804,6 +861,7 @@ type HarnessIconName =
   | 'connectors-icon'
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
+  | 'contact-support'
   | 'copy-alt'
   | 'copy'
   | 'coverage-status-error'
@@ -861,6 +919,7 @@ type HarnessIconName =
   | 'environment'
   | 'environments'
   | 'error-outline'
+  | 'error-tracking'
   | 'error-transparent-no-outline'
   | 'evaluate-policy'
   | 'execution-abort'
@@ -878,6 +937,7 @@ type HarnessIconName =
   | 'feedback-given'
   | 'ff-sketch'
   | 'ff-solid'
+  | 'ff-with-dark-text'
   | 'ff-with-text'
   | 'file'
   | 'fixed-input'
@@ -1039,6 +1099,7 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
+  | 'microsoft-azure'
   | 'money-icon'
   | 'multi-service'
   | 'nav-account-admin-hover'
@@ -1092,6 +1153,8 @@ type HarnessIconName =
   | 'not-synced'
   | 'notification'
   | 'offline-outline'
+  | 'onprem-dark'
+  | 'onprem-light'
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
@@ -1167,6 +1230,7 @@ type HarnessIconName =
   | 'save-cache-s3-step'
   | 'save-cache-s3'
   | 'save-cache-step'
+  | 'scm'
   | 'script'
   | 'search-applications'
   | 'search-connectors'
@@ -1183,14 +1247,18 @@ type HarnessIconName =
   | 'secret-manager'
   | 'secret-ssh'
   | 'secrets-icon'
+  | 'security-stage'
   | 'send-data'
+  | 'serverless-deploy-step'
   | 'service-appdynamics'
   | 'service-artifactory-inverse'
   | 'service-artifactory'
   | 'service-aws-code-deploy'
   | 'service-aws-lamda'
+  | 'service-aws-sam'
   | 'service-aws'
   | 'service-azdevops'
+  | 'service-azure-functions'
   | 'service-azure'
   | 'service-bamboo'
   | 'service-bugsnag'
@@ -1228,6 +1296,10 @@ type HarnessIconName =
   | 'service-pivotal'
   | 'service-prometheus'
   | 'service-redis'
+  | 'service-serverless-aws'
+  | 'service-serverless-azure'
+  | 'service-serverless-gcp'
+  | 'service-serverless'
   | 'service-service-s3'
   | 'service-servicenow-inverse'
   | 'service-servicenow'
@@ -1252,6 +1324,7 @@ type HarnessIconName =
   | 'skipped'
   | 'smtp'
   | 'spinner'
+  | 'srm-with-dark-text'
   | 'stars'
   | 'status-pending'
   | 'status-running'
@@ -1280,6 +1353,7 @@ type HarnessIconName =
   | 'sync-failed'
   | 'synced'
   | 'syncing'
+  | 'template-inputs'
   | 'template-library'
   | 'templates-icon'
   | 'terraform-apply-inverse'
@@ -1326,7 +1400,7 @@ type HarnessIconName =
   | 'zoom-in'
   | 'zoom-out'
 
-const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
+const HarnessIcons: KVO<ElementType> = {
   Edit: Edit,
   Inline: Inline,
   Options: Options,
@@ -1351,6 +1425,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'audit-trail': AuditTrail,
   'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
+  'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
@@ -1385,12 +1460,14 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'canvas-selector': CanvasSelector,
   'ccm-sketch': CcmSketch,
   'ccm-solid': CcmSolid,
+  'ccm-with-dark-text': CcmWithDarkText,
   'ccm-with-text': CcmWithText,
   'cd-hover': CdHover,
   'cd-main-inverse': CdMainInverse,
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
   'cd-solid': CdSolid,
+  'cd-with-dark-text': CdWithDarkText,
   'cd-with-text': CdWithText,
   cd: Cd,
   'ce-application': CeApplication,
@@ -1415,17 +1492,34 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
+  'ci-build-pipeline': CiBuildPipeline,
+  'ci-dev-exp': CiDevExp,
+  'ci-execution': CiExecution,
+  'ci-gov': CiGov,
   'ci-hover': CiHover,
+  'ci-infra-support': CiInfraSupport,
+  'ci-infra': CiInfra,
+  'ci-integrated': CiIntegrated,
+  'ci-language': CiLanguage,
   'ci-main-inverse': CiMainInverse,
   'ci-main': CiMain,
+  'ci-parameterization': CiParameterization,
   'ci-pending-build': CiPendingBuild,
   'ci-sketch': CiSketch,
   'ci-solid-current-color': CiSolidCurrentColor,
   'ci-solid': CiSolid,
+  'ci-ti': CiTi,
+  'ci-try-pipeline': CiTryPipeline,
+  'ci-with-dark-text': CiWithDarkText,
   'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
   'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
+  'cloud-dark': CloudDark,
+  'cloud-formation-create': CloudFormationCreate,
+  'cloud-formation-delete': CloudFormationDelete,
+  'cloud-formation-rollback': CloudFormationRollback,
+  'cloud-light': CloudLight,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
   'codebase-invalid': CodebaseInvalid,
@@ -1462,6 +1556,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'connectors-icon': ConnectorsIcon,
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
+  'contact-support': ContactSupport,
   'copy-alt': CopyAlt,
   copy: Copy,
   'coverage-status-error': CoverageStatusError,
@@ -1519,6 +1614,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   environment: Environment,
   environments: Environments,
   'error-outline': ErrorOutline,
+  'error-tracking': ErrorTracking,
   'error-transparent-no-outline': ErrorTransparentNoOutline,
   'evaluate-policy': EvaluatePolicy,
   'execution-abort': ExecutionAbort,
@@ -1536,6 +1632,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'feedback-given': FeedbackGiven,
   'ff-sketch': FfSketch,
   'ff-solid': FfSolid,
+  'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
@@ -1697,6 +1794,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: MemberRole,
+  'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
@@ -1750,6 +1848,8 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'not-synced': NotSynced,
   notification: Notification,
   'offline-outline': OfflineOutline,
+  'onprem-dark': OnpremDark,
+  'onprem-light': OnpremLight,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
@@ -1825,6 +1925,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'save-cache-s3-step': SaveCacheS3Step,
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
+  scm: Scm,
   script: Script,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
@@ -1841,14 +1942,18 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'secret-manager': SecretManager,
   'secret-ssh': SecretSsh,
   'secrets-icon': SecretsIcon,
+  'security-stage': SecurityStage,
   'send-data': SendData,
+  'serverless-deploy-step': ServerlessDeployStep,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory-inverse': ServiceArtifactoryInverse,
   'service-artifactory': ServiceArtifactory,
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
   'service-aws-lamda': ServiceAwsLamda,
+  'service-aws-sam': ServiceAwsSam,
   'service-aws': ServiceAws,
   'service-azdevops': ServiceAzdevops,
+  'service-azure-functions': ServiceAzureFunctions,
   'service-azure': ServiceAzure,
   'service-bamboo': ServiceBamboo,
   'service-bugsnag': ServiceBugsnag,
@@ -1886,6 +1991,10 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
   'service-redis': ServiceRedis,
+  'service-serverless-aws': ServiceServerlessAws,
+  'service-serverless-azure': ServiceServerlessAzure,
+  'service-serverless-gcp': ServiceServerlessGcp,
+  'service-serverless': ServiceServerless,
   'service-service-s3': ServiceServiceS3,
   'service-servicenow-inverse': ServiceServicenowInverse,
   'service-servicenow': ServiceServicenow,
@@ -1910,6 +2019,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   skipped: Skipped,
   smtp: Smtp,
   spinner: Spinner,
+  'srm-with-dark-text': SrmWithDarkText,
   stars: Stars,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
@@ -1938,6 +2048,7 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'sync-failed': SyncFailed,
   synced: Synced,
   syncing: Syncing,
+  'template-inputs': TemplateInputs,
   'template-library': TemplateLibrary,
   'templates-icon': TemplatesIcon,
   'terraform-apply-inverse': TerraformApplyInverse,

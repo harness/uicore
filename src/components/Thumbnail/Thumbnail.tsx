@@ -12,7 +12,7 @@ import css from '../Thumbnail/Thumbnail.css'
 import { Card } from '../Card/Card'
 import { Icon, IconName } from '../../icons/Icon'
 import { Text } from '../Text/Text'
-import { Color } from '../../core/Color'
+import { Color } from '@harness/design-system'
 
 export interface ThumbnailProps {
   name?: string

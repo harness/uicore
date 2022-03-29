@@ -5,11 +5,12 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import css from './StyledProps.css'
-import { Intent } from '../core/Intent'
-import { Spacing } from '../core/Spacing'
-import { Color } from '../core/Color'
-import { KVO } from '../core/Types'
+/// <reference types="../global" />
+import css from './StyledProps.module.css'
+import { Intent } from '../common/Intent'
+import { Spacing } from '../common/Spacing'
+import { Color } from '../common/Color'
+import { KVO } from '../common/Types'
 import { FlexProps } from './flex/FlexProps'
 import { BorderProps } from './border/BorderProps'
 import { FontSize, FontProps } from './font/FontProps'
