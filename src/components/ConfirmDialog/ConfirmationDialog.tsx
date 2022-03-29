@@ -31,7 +31,7 @@ const getIconForIntent = (intent: Intent): HarnessIconName => {
 export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose' | 'enforceFocus'> {
   titleText: React.ReactNode
   contentText: React.ReactNode
-  cancelButtonText: React.ReactNode
+  cancelButtonText?: React.ReactNode
   intent?: Intent
   buttonIntent?: ButtonProps['intent']
   confirmButtonText?: React.ReactNode
@@ -92,7 +92,9 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
       </Layout.Vertical>
       <Layout.Horizontal spacing="small">
         {confirmButtonText ? <Button intent={buttonIntent} text={confirmButtonText} onClick={closeWithTrue} /> : null}
-        <Button variation={ButtonVariation.TERTIARY} text={cancelButtonText} onClick={closeWithFalse} />
+        {cancelButtonText ? (
+          <Button variation={ButtonVariation.TERTIARY} text={cancelButtonText} onClick={closeWithFalse} />
+        ) : null}
         {customButtons}
       </Layout.Horizontal>
     </Dialog>

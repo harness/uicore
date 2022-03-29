@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.50.0](https://github.com/harness/uicore/compare/v2.49.0...v2.50.0) (2022-03-28)
+
+
+### Bug Fixes
+
+* [PIE-3247]: Show cancel button if cancelButtonText is there ([#630](https://github.com/harness/uicore/issues/630)) ([2584362](https://github.com/harness/uicore/commit/2584362d79cf41bf99b452611472150298f684b4))
+
 ## [2.49.0](https://github.com/harness/uicore/compare/v2.48.0...v2.49.0) (2022-03-25)
 
 

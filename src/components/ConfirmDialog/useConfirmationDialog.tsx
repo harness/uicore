@@ -14,7 +14,7 @@ import { ConfirmationDialog } from './ConfirmationDialog'
 export interface UseConfirmationDialogProps {
   titleText: React.ReactNode
   contentText: React.ReactNode
-  cancelButtonText: React.ReactNode
+  cancelButtonText?: React.ReactNode
   intent?: Intent
   buttonIntent?: ButtonProps['intent']
   confirmButtonText?: React.ReactNode
@@ -27,6 +27,7 @@ export interface UseConfirmationDialogProps {
 
 export interface UseConfirmationDialogReturn {
   openDialog: () => void
+  closeDialog: () => void
 }
 
 export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseConfirmationDialogReturn => {
@@ -72,6 +73,7 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
   )
 
   return {
-    openDialog: () => showModal()
+    openDialog: () => showModal(),
+    closeDialog: () => hideModal()
   }
 }
