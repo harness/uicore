@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.53.0](https://github.com/harness/uicore/compare/v2.52.0...v2.53.0) (2022-03-30)
+
+
+### Bug Fixes
+
+* custom artifact icon added ([#636](https://github.com/harness/uicore/issues/636)) ([1996be8](https://github.com/harness/uicore/commit/1996be87a25cbbca60d77b237cf83cacd17ed757))
+
 ## [2.52.0](https://github.com/harness/uicore/compare/v2.51.0...v2.52.0) (2022-03-29)
 
 
