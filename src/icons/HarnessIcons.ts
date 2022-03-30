@@ -102,21 +102,34 @@ import ChangeLog from './change-log.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
+import CiBuildPipeline from './ci-build-pipeline.svg'
+import CiDevExp from './ci-dev-exp.svg'
+import CiExecution from './ci-execution.svg'
+import CiGov from './ci-gov.svg'
 import CiHover from './ci-hover.svg'
+import CiInfraSupport from './ci-infra-support.svg'
+import CiInfra from './ci-infra.svg'
+import CiIntegrated from './ci-integrated.svg'
+import CiLanguage from './ci-language.svg'
 import CiMainInverse from './ci-main-inverse.svg'
 import CiMain from './ci-main.svg'
+import CiParameterization from './ci-parameterization.svg'
 import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
 import CiSolidCurrentColor from './ci-solid-current-color.svg'
 import CiSolid from './ci-solid.svg'
+import CiTi from './ci-ti.svg'
+import CiTryPipeline from './ci-try-pipeline.svg'
 import CiWithDarkText from './ci-with-dark-text.svg'
 import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
+import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
 import CloudFormationRollback from './cloud-formation-rollback.svg'
+import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
@@ -153,6 +166,7 @@ import ConnectivityMode from './connectivity-mode.svg'
 import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
+import ContactSupport from './contact-support.svg'
 import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
 import CoverageStatusError from './coverage-status-error.svg'
@@ -444,6 +458,8 @@ import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OfflineOutline from './offline-outline.svg'
+import OnpremDark from './onprem-dark.svg'
+import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
@@ -520,6 +536,7 @@ import SaveCacheS3StepInverse from './save-cache-s3-step-inverse.svg'
 import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
+import Scm from './scm.svg'
 import Script from './script.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
@@ -781,21 +798,34 @@ type HarnessIconName =
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
+  | 'ci-build-pipeline'
+  | 'ci-dev-exp'
+  | 'ci-execution'
+  | 'ci-gov'
   | 'ci-hover'
+  | 'ci-infra-support'
+  | 'ci-infra'
+  | 'ci-integrated'
+  | 'ci-language'
   | 'ci-main-inverse'
   | 'ci-main'
+  | 'ci-parameterization'
   | 'ci-pending-build'
   | 'ci-sketch'
   | 'ci-solid-current-color'
   | 'ci-solid'
+  | 'ci-ti'
+  | 'ci-try-pipeline'
   | 'ci-with-dark-text'
   | 'ci-with-text'
   | 'circle-cross'
   | 'circle-stop'
   | 'clipboard-alt'
+  | 'cloud-dark'
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
   | 'cloud-formation-rollback'
+  | 'cloud-light'
   | 'cloud-sso'
   | 'cloudformation'
   | 'codebase-invalid'
@@ -832,6 +862,7 @@ type HarnessIconName =
   | 'connectors-icon'
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
+  | 'contact-support'
   | 'copy-alt'
   | 'copy'
   | 'coverage-status-error'
@@ -1123,6 +1154,8 @@ type HarnessIconName =
   | 'not-synced'
   | 'notification'
   | 'offline-outline'
+  | 'onprem-dark'
+  | 'onprem-light'
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
@@ -1199,6 +1232,7 @@ type HarnessIconName =
   | 'save-cache-s3-step'
   | 'save-cache-s3'
   | 'save-cache-step'
+  | 'scm'
   | 'script'
   | 'search-applications'
   | 'search-connectors'
@@ -1460,21 +1494,34 @@ const HarnessIcons: KVO<ElementType> = {
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
+  'ci-build-pipeline': CiBuildPipeline,
+  'ci-dev-exp': CiDevExp,
+  'ci-execution': CiExecution,
+  'ci-gov': CiGov,
   'ci-hover': CiHover,
+  'ci-infra-support': CiInfraSupport,
+  'ci-infra': CiInfra,
+  'ci-integrated': CiIntegrated,
+  'ci-language': CiLanguage,
   'ci-main-inverse': CiMainInverse,
   'ci-main': CiMain,
+  'ci-parameterization': CiParameterization,
   'ci-pending-build': CiPendingBuild,
   'ci-sketch': CiSketch,
   'ci-solid-current-color': CiSolidCurrentColor,
   'ci-solid': CiSolid,
+  'ci-ti': CiTi,
+  'ci-try-pipeline': CiTryPipeline,
   'ci-with-dark-text': CiWithDarkText,
   'ci-with-text': CiWithText,
   'circle-cross': CircleCross,
   'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
+  'cloud-dark': CloudDark,
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
   'cloud-formation-rollback': CloudFormationRollback,
+  'cloud-light': CloudLight,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
   'codebase-invalid': CodebaseInvalid,
@@ -1511,6 +1558,7 @@ const HarnessIcons: KVO<ElementType> = {
   'connectors-icon': ConnectorsIcon,
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
+  'contact-support': ContactSupport,
   'copy-alt': CopyAlt,
   copy: Copy,
   'coverage-status-error': CoverageStatusError,
@@ -1802,6 +1850,8 @@ const HarnessIcons: KVO<ElementType> = {
   'not-synced': NotSynced,
   notification: Notification,
   'offline-outline': OfflineOutline,
+  'onprem-dark': OnpremDark,
+  'onprem-light': OnpremLight,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
@@ -1878,6 +1928,7 @@ const HarnessIcons: KVO<ElementType> = {
   'save-cache-s3-step': SaveCacheS3Step,
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
+  scm: Scm,
   script: Script,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
