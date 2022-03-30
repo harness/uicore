@@ -38,7 +38,6 @@ interface SizeValueProps {
   fontSize: string
   lineHeight: string
   imageHeight: string
-  plusIconFontSize: string
   plusIconLineHeight: string
 }
 type SizesProps = {
@@ -50,7 +49,6 @@ const sizes: SizesProps = {
     fontSize: '7px',
     lineHeight: '12px',
     imageHeight: '12px',
-    plusIconFontSize: '14px',
     plusIconLineHeight: '10px'
   },
   small: {
@@ -58,7 +56,6 @@ const sizes: SizesProps = {
     fontSize: '10px',
     lineHeight: '18px',
     imageHeight: '20px',
-    plusIconFontSize: '20px',
     plusIconLineHeight: '16px'
   },
   normal: {
@@ -66,7 +63,6 @@ const sizes: SizesProps = {
     fontSize: '10px',
     lineHeight: '26px',
     imageHeight: '28px',
-    plusIconFontSize: '22px',
     plusIconLineHeight: '25px'
   },
   medium: {
@@ -74,7 +70,6 @@ const sizes: SizesProps = {
     fontSize: '18px',
     lineHeight: '42px',
     imageHeight: '44px',
-    plusIconFontSize: '36px',
     plusIconLineHeight: '40px'
   },
   large: {
@@ -82,7 +77,6 @@ const sizes: SizesProps = {
     fontSize: '28px',
     lineHeight: '66px',
     imageHeight: '68px',
-    plusIconFontSize: '56px',
     plusIconLineHeight: '60px'
   }
 }
@@ -221,12 +215,17 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   if (hoverCard) {
     hoverCardContent = { content: tooltip || defaultTooltip }
   }
-  let updatedContentStyle = {}
-  updatedContentStyle = { ...contentStyle }
-  if (initials === plusIcon) {
-    contentStyle.fontSize = sizes[size].plusIconFontSize
-    contentStyle.lineHeight = sizes[size].plusIconLineHeight
-    updatedContentStyle = { ...contentStyle, fontWeight: 200 }
+  const getUpdatedContentStyle = () => {
+    if (name === plusIcon) {
+      return {
+        ...contentStyle,
+        fontSize: `${2 * parseInt(sizes[size].fontSize, 10)}px`,
+        lineHeight: sizes[size].plusIconLineHeight,
+        fontWeight: 200
+      }
+    } else {
+      return contentStyle
+    }
   }
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
@@ -237,7 +236,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
         className={css.avatarPopOver}
         position="top"
         disabled={!hoverCard}>
-        <div className={css.AvatarInner} style={updatedContentStyle}>
+        <div className={css.AvatarInner} style={getUpdatedContentStyle()}>
           {inner}
         </div>
       </Popover>
