@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.54.0](https://github.com/harness/uicore/compare/v2.53.0...v2.54.0) (2022-03-30)
+
+
+### Features
+
+* [PL-24217]: added variable icon ([#637](https://github.com/harness/uicore/issues/637)) ([d5f02a8](https://github.com/harness/uicore/commit/d5f02a8c47a17071700ccbeee96d4f36e94fae39))
+
 ## [2.53.0](https://github.com/harness/uicore/compare/v2.52.0...v2.53.0) (2022-03-30)
 
 
