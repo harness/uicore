@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.55.0](https://github.com/harness/uicore/compare/v2.54.0...v2.55.0) (2022-03-31)
+
+
+### Features
+
+* Added Azure Blob icon ([#638](https://github.com/harness/uicore/issues/638)) ([eb0cf11](https://github.com/harness/uicore/commit/eb0cf11639156b11f31a03bb942d506cde62fd5c))
+
 ## [2.54.0](https://github.com/harness/uicore/compare/v2.53.0...v2.54.0) (2022-03-30)
 
 
