@@ -37,6 +37,7 @@ import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
 import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
+import AzureBlob from './azure-blob.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import Banned from './banned.svg'
@@ -172,6 +173,7 @@ import Copy from './copy.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CsHover from './cs-hover.svg'
+import CustomArtifact from './custom-artifact.svg'
 import CustomService from './custom-service.svg'
 import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
@@ -688,6 +690,7 @@ import Up from './up.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
 import Utility from './utility.svg'
+import Variable from './variable.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
@@ -732,6 +735,7 @@ type HarnessIconName =
   | 'aws-kms'
   | 'aws-rds'
   | 'aws-secret-manager'
+  | 'azure-blob'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'banned'
@@ -867,6 +871,7 @@ type HarnessIconName =
   | 'coverage-status-error'
   | 'coverage-status-success'
   | 'cs-hover'
+  | 'custom-artifact'
   | 'custom-service'
   | 'custom-stage-icon'
   | 'custom-stage'
@@ -1383,6 +1388,7 @@ type HarnessIconName =
   | 'upgrade-bolt'
   | 'upload-box'
   | 'utility'
+  | 'variable'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
@@ -1427,6 +1433,7 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-kms': AwsKms,
   'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
+  'azure-blob': AzureBlob,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   banned: Banned,
@@ -1562,6 +1569,7 @@ const HarnessIcons: KVO<ElementType> = {
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   'cs-hover': CsHover,
+  'custom-artifact': CustomArtifact,
   'custom-service': CustomService,
   'custom-stage-icon': CustomStageIcon,
   'custom-stage': CustomStage,
@@ -2078,6 +2086,7 @@ const HarnessIcons: KVO<ElementType> = {
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
   utility: Utility,
+  variable: Variable,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
