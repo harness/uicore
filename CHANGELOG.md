@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.56.0](https://github.com/harness/uicore/compare/v2.55.0...v2.56.0) (2022-04-01)
+
+
+### Features
+
+* [CDS-34717]: migrate StackedSummaryTable from NGUI ([#634](https://github.com/harness/uicore/issues/634)) ([d9738a1](https://github.com/harness/uicore/commit/d9738a11465f5799bb9b85b13850ead27ab5b887))
+
 ## [2.55.0](https://github.com/harness/uicore/compare/v2.54.0...v2.55.0) (2022-03-31)
 
 
