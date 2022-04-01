@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.57.0](https://github.com/harness/uicore/compare/v2.56.0...v2.57.0) (2022-04-01)
+
+
+### Features
+
+* Exporting MultiStepProgressIndicator component ([#639](https://github.com/harness/uicore/issues/639)) ([5b8b669](https://github.com/harness/uicore/commit/5b8b669bd552d95e00d305f453e2eaeb6f08701c))
+
 ## [2.56.0](https://github.com/harness/uicore/compare/v2.55.0...v2.56.0) (2022-04-01)
 
 
