@@ -12,7 +12,7 @@ import { CollapsableSelectOptions, CollapsableSelectType, FormikCollapsableSelec
 import { Form, Formik } from 'formik'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import { Layout, Text } from '../..'
 
 export default {

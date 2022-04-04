@@ -9,7 +9,7 @@ import React from 'react'
 import cx from 'classnames'
 import { InputGroup, IInputGroupProps, Intent } from '@blueprintjs/core'
 import { Popover, PopoverProps } from '../Popover/Popover'
-import { IconName, Icon, IconProps } from '../../icons/Icon'
+import { IconName, Icon, IconProps } from '@harness/icons'
 import { Text } from '../Text/Text'
 
 import css from './TextInput.css'

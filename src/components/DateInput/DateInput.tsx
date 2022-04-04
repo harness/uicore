@@ -19,7 +19,7 @@ import {
   timeToDisplayText
 } from '../DurationInput/DurationInput'
 import moment from 'moment'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 
 export interface DateInputProps extends Omit<TextInputProps, 'onChange'> {
   dateTimeFormat?: string

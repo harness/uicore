@@ -7,7 +7,7 @@
 
 import React, { useState, useEffect, useCallback, useRef, useLayoutEffect } from 'react'
 
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import { Button } from '../Button/Button'
 import { StyledProps } from '@harness/design-system'
 import css from './ExpandingSearchInput.css'

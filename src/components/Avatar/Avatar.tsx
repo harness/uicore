@@ -16,7 +16,7 @@ import { Color } from '@harness/design-system'
 import { Container } from '../../components/Container/Container'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
-import { Icon, IconProps } from '../../icons/Icon'
+import { Icon, IconProps } from '@harness/icons'
 export type AvatarSizes = FontSize
 export interface AvatarProps extends HTMLDivProps {
   name?: string

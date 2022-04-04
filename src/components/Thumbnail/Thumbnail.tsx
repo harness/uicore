@@ -10,7 +10,7 @@ import cx from 'classnames'
 
 import css from '../Thumbnail/Thumbnail.css'
 import { Card } from '../Card/Card'
-import { Icon, IconName } from '../../icons/Icon'
+import { Icon, IconName } from '@harness/icons'
 import { Text } from '../Text/Text'
 import { Color } from '@harness/design-system'
 
