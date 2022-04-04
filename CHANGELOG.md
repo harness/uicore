@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.58.0](https://github.com/harness/uicore/compare/v2.57.0...v2.58.0) (2022-04-04)
+
+
+### Features
+
+* [CDS-35302]: pdc connector icon ([#641](https://github.com/harness/uicore/issues/641)) ([91d67b0](https://github.com/harness/uicore/commit/91d67b08eb3eeaf15bbef9385c91e349224333b6))
+
 ## [2.57.0](https://github.com/harness/uicore/compare/v2.56.0...v2.57.0) (2022-04-01)
 
 
