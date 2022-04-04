@@ -11,7 +11,7 @@ import { Intent, Dialog, IDialogProps } from '@blueprintjs/core'
 import { Button, ButtonProps, Layout, Container, Icon, Text, ButtonVariation, FontVariation, Color } from '../../'
 
 import css from './ConfirmationDialog.css'
-import { HarnessIconName } from 'icons/HarnessIcons'
+import { HarnessIconName } from '@harness/icons'
 
 const getIconForIntent = (intent: Intent): HarnessIconName => {
   switch (intent) {

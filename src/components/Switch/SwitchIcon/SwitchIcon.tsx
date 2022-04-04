@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { IControlProps } from '@blueprintjs/core'
-import { IconName, IconProps, Icon } from '../@harness/icons'
+import { IconName, IconProps, Icon } from '@harness/icons'
 import css from './SwitchIcon.css'
 import cx from 'classnames'
 import { Layout } from '../../../layouts/Layout'
