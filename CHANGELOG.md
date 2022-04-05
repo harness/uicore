@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.59.0](https://github.com/harness/uicore/compare/v2.58.0...v2.59.0) (2022-04-05)
+
+
+### Bug Fixes
+
+* [PL-21050]: increase + icon on avatar groups ([#635](https://github.com/harness/uicore/issues/635)) ([582a76a](https://github.com/harness/uicore/commit/582a76a46959e0b337f5a160b0299e5c01c53576))
+
 ## [2.58.0](https://github.com/harness/uicore/compare/v2.57.0...v2.58.0) (2022-04-04)
 
 
