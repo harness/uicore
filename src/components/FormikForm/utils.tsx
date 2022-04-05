@@ -19,7 +19,7 @@ export interface FormikExtended<T> extends FormikContextType<T> {
   formName: string
 }
 
-export interface FormikContextTypeProps<T> {
+export interface FormikContextProps<T> {
   formik?: FormikExtended<T>
   optionalLabel?: string
   isOptional?: boolean // default to false
@@ -41,7 +41,7 @@ export const errorCheck = (name: string, formik?: FormikContextType<any>): boole
 export const getFormFieldLabel = (
   label: ReactNode | string | undefined,
   fieldName: string,
-  props: FormikContextTypeProps<any>,
+  props: FormikContextProps<any>,
   css?: string
 ): ReactNode | string | undefined => {
   const optionalLabel = props.optionalLabel || IsOptionLabel
