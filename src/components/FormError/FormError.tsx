@@ -12,7 +12,7 @@ import { Icon } from '../../icons/Icon'
 import css from './FormError.css'
 
 interface FormErrorProps {
-  errorMessage: string | undefined | FormikErrors<any> | JSX.Element
+  errorMessage: string | undefined | FormikErrors<any> | Array<FormikErrors<any>> | string[] | JSX.Element
   name: string
   className?: string
 }
