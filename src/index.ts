@@ -103,6 +103,13 @@ export {
   SelectWithSubviewContext
 } from './components/SelectWithSubview/SelectWithSubview'
 export { SparkChart } from './components/SparkChart/SparkChart'
+export {
+  StackedSummaryTable,
+  StackedSummaryInterface,
+  StackedSummaryTableProps
+} from './components/StackedSummaryTable/StackedSummaryTable'
+export { StackedSummaryBar, getStackedSummaryBarCount } from './components/StackedSummaryBar/StackedSummaryBar'
+export { handleZeroOrInfinityTrend, renderTrend } from './components/StackedSummaryBar/utils'
 export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeSeriesChart'
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
 export { Table, TableProps } from './components/Table/Table'
@@ -214,4 +221,8 @@ export {
 export { DetailPageCard, DetailPageCardProps, Content, ContentType } from './components/DetailPageCard/DetailPageCard'
 export { SimpleLogViewer, SimpleLogViewerProps } from './components/LogViewer/SimpleLogViewer'
 export { breakOnLinks, LogLineProps, LogLine, MemoizedLogLine } from './components/LogViewer/LogLine'
+export {
+  MultiStepProgressIndicator,
+  MultiStepProgressIndicatorProps
+} from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
 export * from '@harness/design-system'

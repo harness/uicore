@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.58.0](https://github.com/harness/uicore/compare/v2.57.0...v2.58.0) (2022-04-04)
+
+
+### Features
+
+* [CDS-35302]: pdc connector icon ([#641](https://github.com/harness/uicore/issues/641)) ([91d67b0](https://github.com/harness/uicore/commit/91d67b08eb3eeaf15bbef9385c91e349224333b6))
+
+## [2.57.0](https://github.com/harness/uicore/compare/v2.56.0...v2.57.0) (2022-04-01)
+
+
+### Features
+
+* Exporting MultiStepProgressIndicator component ([#639](https://github.com/harness/uicore/issues/639)) ([5b8b669](https://github.com/harness/uicore/commit/5b8b669bd552d95e00d305f453e2eaeb6f08701c))
+
+## [2.56.0](https://github.com/harness/uicore/compare/v2.55.0...v2.56.0) (2022-04-01)
+
+
+### Features
+
+* [CDS-34717]: migrate StackedSummaryTable from NGUI ([#634](https://github.com/harness/uicore/issues/634)) ([d9738a1](https://github.com/harness/uicore/commit/d9738a11465f5799bb9b85b13850ead27ab5b887))
+
 ## [2.55.0](https://github.com/harness/uicore/compare/v2.54.0...v2.55.0) (2022-03-31)
 
 
