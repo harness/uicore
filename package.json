@@ -98,7 +98,7 @@
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-react": "^7.21.5",
     "fork-ts-checker-webpack-plugin": "^6.0.8",
-    "formik": "1.5.8",
+    "formik": "2.2.9",
     "glob": "^7.1.4",
     "husky": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",

@@ -6,20 +6,20 @@
  */
 
 import React, { ReactNode, useContext } from 'react'
-import { FormikContext } from 'formik'
+import { FormikContextType } from 'formik'
 
 import { get } from 'lodash-es'
 import { FormikTooltipContext } from './FormikTooltipContext'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { DataTooltipInterface } from '../../frameworks/Tooltip/types'
 
-export interface FormikExtended<T> extends FormikContext<T> {
+export interface FormikExtended<T> extends FormikContextType<T> {
   disabled?: boolean
   inline?: boolean
   formName: string
 }
 
-export interface FormikContextProps<T> {
+export interface FormikContextTypeProps<T> {
   formik?: FormikExtended<T>
   optionalLabel?: string
   isOptional?: boolean // default to false
@@ -31,7 +31,7 @@ export const IsOptionLabel = '(optional)'
 
 const isObject = (obj: any): boolean => obj !== null && typeof obj === 'object'
 
-export const errorCheck = (name: string, formik?: FormikContext<any>): boolean =>
+export const errorCheck = (name: string, formik?: FormikContextType<any>): boolean =>
   Boolean(
     (get(formik?.touched, name) || (formik?.submitCount && formik?.submitCount > 0)) &&
       get(formik?.errors, name) &&
@@ -41,7 +41,7 @@ export const errorCheck = (name: string, formik?: FormikContext<any>): boolean =
 export const getFormFieldLabel = (
   label: ReactNode | string | undefined,
   fieldName: string,
-  props: FormikContextProps<any>,
+  props: FormikContextTypeProps<any>,
   css?: string
 ): ReactNode | string | undefined => {
   const optionalLabel = props.optionalLabel || IsOptionLabel
