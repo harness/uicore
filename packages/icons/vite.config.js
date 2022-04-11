@@ -9,15 +9,37 @@ const _ = require('lodash')
 const package = require('./package.json')
 const globals = require('../globals.json')
 const dts = require('vite-plugin-dts')
+const fs = require('fs')
+const { transformWithEsbuild } = require('vite')
 
 const external = Object.keys(package.peerDependencies)
 
-external.forEach(dep => {
-  if (!_.has(globals, dep)) {
-    console.log(`Entry for "${dep}" not found in globals.json`)
-    process.exit(1)
+function reactSvgPlugin() {
+  return {
+    name: 'react-svg',
+    async transform(_code, id) {
+      if (id.endsWith('.svg')) {
+        const { transform: convert } = await import('@svgr/core')
+
+        const svgCode = await fs.promises.readFile(id, 'utf8')
+
+        const componentCode = await convert(
+          svgCode,
+          {},
+          {
+            componentName: 'Component'
+          }
+        )
+        const res = await transformWithEsbuild(componentCode, id, { loader: 'jsx' })
+
+        return {
+          code: res.code,
+          map: null
+        }
+      }
+    }
   }
-})
+}
 
 /**
  * @type {import('vite').UserConfig}
@@ -26,20 +48,22 @@ const config = {
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src'),
-      name: 'HarnessCore'
+      name: 'HarnessUseModal'
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external,
+      // plugins: [svgr()],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: _.pick(globals, external)
       }
+      // plugins: [svgr({ icon: true })]
     }
   },
-  plugins: [dts()]
+  plugins: [dts(), reactSvgPlugin()]
 }
 
 module.exports = config
