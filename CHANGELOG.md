@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.60.0](https://github.com/harness/uicore/compare/v2.59.0...v2.60.0) (2022-04-13)
+
+
+### Bug Fixes
+
+* [PIE-3456]: making multi type logic backward compatible ([#643](https://github.com/harness/uicore/issues/643)) ([592b0c6](https://github.com/harness/uicore/commit/592b0c6f60012c4f426664400fed06e28e1a7004))
+
 ## [2.59.0](https://github.com/harness/uicore/compare/v2.58.0...v2.59.0) (2022-04-05)
 
 
