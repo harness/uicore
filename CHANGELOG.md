@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.62.0](https://github.com/harness/uicore/compare/v2.61.0...v2.62.0) (2022-04-14)
+
+
+### Bug Fixes
+
+* [CDS-35302]: pdc icons viewport added ([#645](https://github.com/harness/uicore/issues/645)) ([b74a07f](https://github.com/harness/uicore/commit/b74a07f4b1b6ec6bdbec60ef74380b1bc659cc48))
+
 ## [2.61.0](https://github.com/harness/uicore/compare/v2.60.0...v2.61.0) (2022-04-14)
 
 
