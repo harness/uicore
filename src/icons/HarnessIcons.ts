@@ -257,6 +257,7 @@ import Functions from './functions.svg'
 import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
 import Pdc from './pdc.svg'
+import PdcInverse from './pdc-inverse.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
 import GcsStepInverse from './gcs-step-inverse.svg'
@@ -956,6 +957,7 @@ type HarnessIconName =
   | 'gcp-kms'
   | 'gcp'
   | 'pdc'
+  | 'pdc-inverse'
   | 'gcr-step-inverse'
   | 'gcr-step'
   | 'gcs-step-inverse'
@@ -1655,6 +1657,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gcp-kms': GcpKms,
   gcp: Gcp,
   pdc: Pdc,
+  'pdc-inverse': PdcInverse,
   'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
   'gcs-step-inverse': GcsStepInverse,
