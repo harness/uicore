@@ -32,21 +32,53 @@ export interface AvatarProps extends HTMLDivProps {
   tooltip?: JSX.Element
   hoverCardDetailsCallBack?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
+export const plusIcon = '+'
 interface SizeValueProps {
   size: string
   fontSize: string
   lineHeight: string
   imageHeight: string
+  plusIconLineHeight: string
 }
 type SizesProps = {
   [key in AvatarSizes]: SizeValueProps
 }
 const sizes: SizesProps = {
-  xsmall: { size: '16px', fontSize: '7px', lineHeight: '12px', imageHeight: '12px' },
-  small: { size: '24px', fontSize: '10px', lineHeight: '18px', imageHeight: '20px' },
-  normal: { size: '32px', fontSize: '10px', lineHeight: '26px', imageHeight: '28px' },
-  medium: { size: '48px', fontSize: '18px', lineHeight: '42px', imageHeight: '44px' },
-  large: { size: '72px', fontSize: '28px', lineHeight: '66px', imageHeight: '68px' }
+  xsmall: {
+    size: '16px',
+    fontSize: '7px',
+    lineHeight: '12px',
+    imageHeight: '12px',
+    plusIconLineHeight: '10px'
+  },
+  small: {
+    size: '24px',
+    fontSize: '10px',
+    lineHeight: '18px',
+    imageHeight: '20px',
+    plusIconLineHeight: '16px'
+  },
+  normal: {
+    size: '32px',
+    fontSize: '10px',
+    lineHeight: '26px',
+    imageHeight: '28px',
+    plusIconLineHeight: '25px'
+  },
+  medium: {
+    size: '48px',
+    fontSize: '18px',
+    lineHeight: '42px',
+    imageHeight: '44px',
+    plusIconLineHeight: '40px'
+  },
+  large: {
+    size: '72px',
+    fontSize: '28px',
+    lineHeight: '66px',
+    imageHeight: '68px',
+    plusIconLineHeight: '60px'
+  }
 }
 
 export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
@@ -183,6 +215,18 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   if (hoverCard) {
     hoverCardContent = { content: tooltip || defaultTooltip }
   }
+  const getUpdatedContentStyle = () => {
+    if (name === plusIcon) {
+      return {
+        ...contentStyle,
+        fontSize: `${2 * parseInt(sizes[size].fontSize, 10)}px`,
+        lineHeight: sizes[size].plusIconLineHeight,
+        fontWeight: 200
+      }
+    } else {
+      return contentStyle
+    }
+  }
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
       <Popover
@@ -192,7 +236,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
         className={css.avatarPopOver}
         position="top"
         disabled={!hoverCard}>
-        <div className={css.AvatarInner} style={contentStyle}>
+        <div className={css.AvatarInner} style={getUpdatedContentStyle()}>
           {inner}
         </div>
       </Popover>

@@ -59,7 +59,8 @@ export const isValueAnExpression = (value: string): boolean => /<\+.*>/.test(val
 
 export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
-  allowableTypes?: MultiTypeInputType[]
+  allowableTypes?: MultiTypeInputType[],
+  supportListOfExpressionsBehaviour?: boolean
 ): MultiTypeInputType => {
   if (typeof value === 'boolean') {
     return MultiTypeInputType.FIXED
@@ -67,7 +68,7 @@ export const getMultiTypeFromValue = (
     value = value.toLocaleLowerCase().trim()
     if (value.startsWith(RUNTIME_INPUT_VALUE)) return MultiTypeInputType.RUNTIME
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
-  } else if (Array.isArray(value)) {
+  } else if (Array.isArray(value) && supportListOfExpressionsBehaviour) {
     // To support list of expressions
     if (value.some((item: string | MultiSelectOption) => typeof item === 'string' && isValueAnExpression(item)))
       return MultiTypeInputType.EXPRESSION

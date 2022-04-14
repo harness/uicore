@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.61.0](https://github.com/harness/uicore/compare/v2.60.0...v2.61.0) (2022-04-14)
+
+
+### Features
+
+* [CDS-35302]: pdc icons ([#644](https://github.com/harness/uicore/issues/644)) ([57250cd](https://github.com/harness/uicore/commit/57250cdcdc47d8c99cb9b829069f420a672ff813))
+
+## [2.60.0](https://github.com/harness/uicore/compare/v2.59.0...v2.60.0) (2022-04-13)
+
+
+### Bug Fixes
+
+* [PIE-3456]: making multi type logic backward compatible ([#643](https://github.com/harness/uicore/issues/643)) ([592b0c6](https://github.com/harness/uicore/commit/592b0c6f60012c4f426664400fed06e28e1a7004))
+
+## [2.59.0](https://github.com/harness/uicore/compare/v2.58.0...v2.59.0) (2022-04-05)
+
+
+### Bug Fixes
+
+* [PL-21050]: increase + icon on avatar groups ([#635](https://github.com/harness/uicore/issues/635)) ([582a76a](https://github.com/harness/uicore/commit/582a76a46959e0b337f5a160b0299e5c01c53576))
+
+## [2.58.0](https://github.com/harness/uicore/compare/v2.57.0...v2.58.0) (2022-04-04)
+
+
+### Features
+
+* [CDS-35302]: pdc connector icon ([#641](https://github.com/harness/uicore/issues/641)) ([91d67b0](https://github.com/harness/uicore/commit/91d67b08eb3eeaf15bbef9385c91e349224333b6))
+
 ## [2.57.0](https://github.com/harness/uicore/compare/v2.56.0...v2.57.0) (2022-04-01)
 
 
