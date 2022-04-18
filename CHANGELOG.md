@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.63.0](https://github.com/harness/uicore/compare/v2.62.0...v2.63.0) (2022-04-18)
+
+
+### Others
+
+* added gitops icons ([#647](https://github.com/harness/uicore/issues/647)) ([880a725](https://github.com/harness/uicore/commit/880a7259ca7abbbb3067d0036cee0c2a64b645c5))
+
 ## [2.62.0](https://github.com/harness/uicore/compare/v2.61.0...v2.62.0) (2022-04-14)
 
 
