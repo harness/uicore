@@ -256,8 +256,6 @@ import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
 import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
-import Pdc from './pdc.svg'
-import PdcInverse from './pdc-inverse.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
 import GcsStepInverse from './gcs-step-inverse.svg'
@@ -278,6 +276,9 @@ import GitopsAgent from './gitops-agent.svg'
 import GitopsApplicationWhite from './gitops-application-white.svg'
 import GitopsApplication from './gitops-application.svg'
 import GitopsClusters from './gitops-clusters.svg'
+import GitopsMissing from './gitops-missing.svg'
+import GitopsSuspended from './gitops-suspended.svg'
+import GitopsUnknown from './gitops-unknown.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import Governance from './governance.svg'
@@ -467,6 +468,8 @@ import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
+import PdcInverse from './pdc-inverse.svg'
+import Pdc from './pdc.svg'
 import Pending from './pending.svg'
 import PipelineAdvanced from './pipeline-advanced.svg'
 import PipelineApproval from './pipeline-approval.svg'
@@ -956,8 +959,6 @@ type HarnessIconName =
   | 'functions'
   | 'gcp-kms'
   | 'gcp'
-  | 'pdc'
-  | 'pdc-inverse'
   | 'gcr-step-inverse'
   | 'gcr-step'
   | 'gcs-step-inverse'
@@ -978,6 +979,9 @@ type HarnessIconName =
   | 'gitops-application-white'
   | 'gitops-application'
   | 'gitops-clusters'
+  | 'gitops-missing'
+  | 'gitops-suspended'
+  | 'gitops-unknown'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance'
@@ -1167,6 +1171,8 @@ type HarnessIconName =
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
+  | 'pdc-inverse'
+  | 'pdc'
   | 'pending'
   | 'pipeline-advanced'
   | 'pipeline-approval'
@@ -1656,8 +1662,6 @@ const HarnessIcons: KVO<ElementType> = {
   functions: Functions,
   'gcp-kms': GcpKms,
   gcp: Gcp,
-  pdc: Pdc,
-  'pdc-inverse': PdcInverse,
   'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
   'gcs-step-inverse': GcsStepInverse,
@@ -1678,6 +1682,9 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-application-white': GitopsApplicationWhite,
   'gitops-application': GitopsApplication,
   'gitops-clusters': GitopsClusters,
+  'gitops-missing': GitopsMissing,
+  'gitops-suspended': GitopsSuspended,
+  'gitops-unknown': GitopsUnknown,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   governance: Governance,
@@ -1867,6 +1874,8 @@ const HarnessIcons: KVO<ElementType> = {
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
+  'pdc-inverse': PdcInverse,
+  pdc: Pdc,
   pending: Pending,
   'pipeline-advanced': PipelineAdvanced,
   'pipeline-approval': PipelineApproval,
