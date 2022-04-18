@@ -6,6 +6,7 @@
  */
 
 import React, { useEffect, useState } from 'react'
+import { getRefenceAndContentIdMap } from './utils/util'
 import { IContentIdMap, ContentType } from './types/contentfulTypes'
 import Contentful from './ContentfulApi'
 
@@ -31,16 +32,14 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
     const client = Contentful.getClient()
 
     const getContentIdMap = async (): Promise<void> => {
-      const response = await client.getEntries<IContentIdMap>({
-        content_type: ContentType.contentIdMap
-      })
-
-      // move this to a utility
-      const idToContentId: Record<string, string> = response.items.reduce((obj, item) => {
-        return { ...obj, [item.fields.referenceID]: item.fields.helpPanel.sys.id }
-      }, {})
-
-      setContentIdMap(idToContentId)
+      try {
+        const response = await client.getEntries<IContentIdMap>({
+          content_type: ContentType.contentIdMap
+        })
+        setContentIdMap(getRefenceAndContentIdMap(response))
+      } catch (e) {
+        // Error fetching contentID map - add handling in this case
+      }
     }
 
     getContentIdMap()
@@ -57,11 +56,13 @@ interface useContentfulOptions {
 interface useContentfulState<T> {
   data?: T
   loading: boolean
+  hasError: boolean
 }
 
 export function useContentful<T>(options: useContentfulOptions): useContentfulState<T> {
   const { referenceId, content_type } = options
   const [data, setData] = useState<T | undefined>()
+  const [hasError, setError] = useState<boolean>(false)
   const [loading, setLoading] = useState(false)
   const { contentIdMap } = React.useContext(HelpPanelContext)
 
@@ -75,16 +76,26 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
           content_type: content_type,
           include: 10
         })
-        .then(response => {
-          setLoading(false)
-          // add a null check
-          setData(response.items[0].fields)
-        })
+        .then(
+          response => {
+            setLoading(false)
+            if (response.items.length > 0) {
+              setData(response.items[0].fields)
+            } else {
+              setError(true)
+            }
+          },
+          e => {
+            setLoading(false)
+            setError(true)
+          }
+        )
     }
   }, [referenceId, content_type, contentIdMap])
 
   return {
     data,
-    loading
+    loading,
+    hasError
   }
 }

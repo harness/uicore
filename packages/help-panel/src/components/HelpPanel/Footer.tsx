@@ -8,6 +8,7 @@
 import React from 'react'
 import { Color, FontVariation } from '@harness/design-system'
 import Container from '../Container'
+import { HEADER_FOOTER_HEIGHT } from './HelpPanelContent'
 
 const Footer: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Footer: React.FC = () => {
       padding={{ top: 'xlarge', bottom: 'xlarge' }}
       color={Color.BLACK}
       font={{ variation: FontVariation.BODY }}
+      style={{ height: HEADER_FOOTER_HEIGHT }}
     >
       <input type="checkbox" name="dontshowagain" id="dontshowagain" />
       <label htmlFor="dontshowagain">&nbsp;&nbsp;Don't show this again</label>

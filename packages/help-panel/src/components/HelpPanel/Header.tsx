@@ -9,20 +9,22 @@ import React from 'react'
 import { Color, FontVariation } from '@harness/design-system'
 import Container from '../Container'
 import cross from '../../icons/cross.svg'
+import { HEADER_FOOTER_HEIGHT } from './HelpPanelContent'
 
 interface HeaderProps {
   title?: string
   onClose?: () => void
+  height: string
 }
 
 const Header: React.FC<HeaderProps> = ({ title, onClose }) => {
   return (
     <Container
       flex={{ justifyContent: 'space-between', alignItems: 'center' }}
-      padding={{ top: 'xlarge', bottom: 'xlarge' }}
       border={{ bottom: true, color: Color.GREY_200 }}
       color={Color.BLACK}
       font={{ variation: FontVariation.UPPERCASED }}
+      style={{ height: HEADER_FOOTER_HEIGHT }}
     >
       {title}
       <Container
