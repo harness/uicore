@@ -278,6 +278,9 @@ import GitopsAgent from './gitops-agent.svg'
 import GitopsApplicationWhite from './gitops-application-white.svg'
 import GitopsApplication from './gitops-application.svg'
 import GitopsClusters from './gitops-clusters.svg'
+import GitopsUnknown from './gitops-unknown.svg'
+import GitopsSuspended from './gitops-suspended.svg'
+import GitopsMissing from './gitops-missing.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import Governance from './governance.svg'
@@ -1678,6 +1681,9 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-application-white': GitopsApplicationWhite,
   'gitops-application': GitopsApplication,
   'gitops-clusters': GitopsClusters,
+  'gitops-unknown': GitopsUnknown,
+  'gitops-suspended': GitopsSuspended,
+  'gitops-missing': GitopsMissing,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   governance: Governance,
