@@ -21,5 +21,7 @@ export interface PopoverProps extends IPopoverProps {
 }
 
 export function Popover(props: PopoverProps): React.ReactElement {
-  return <BPopover {...props} />
+  /*  to resolve https://harness.atlassian.net/browse/PL-24226 */
+  const { autoFocus = false } = props
+  return <BPopover {...props} autoFocus={autoFocus} />
 }
