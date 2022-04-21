@@ -21,6 +21,7 @@ export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
 interface HelpPanelContextProviderProps {
   accessToken: string
   space: string
+  onError?: (error: unknown) => void
 }
 
 export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> = props => {
@@ -38,6 +39,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         })
         setContentIdMap(getRefenceAndContentIdMap(response))
       } catch (e) {
+        props.onError?.(e)
         // Error fetching contentID map - add handling in this case
       }
     }

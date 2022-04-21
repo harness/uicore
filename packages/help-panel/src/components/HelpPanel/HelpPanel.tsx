@@ -25,7 +25,7 @@ interface HelpPanelProps {
 const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
   let floatingBtnRef: HTMLButtonElement
-  const { data, loading, error } = useContentful<IHelpPanel>({
+  const { data, loading } = useContentful<IHelpPanel>({
     referenceId,
     content_type: ContentType.helpPanel
   })
@@ -45,7 +45,6 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
           <HelpPanelContent
             data={data}
             isLoading={loading}
-            error={error}
             onClose={() => {
               floatingBtnRef?.click()
             }}
@@ -53,11 +52,11 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
         </HelpPanelContainer>
       )
     case HelpPanelType.CONTENT_ONLY:
-      return <HelpPanelContent data={data} isLoading={loading} error={error} onClose={props.onClose} />
+      return <HelpPanelContent data={data} isLoading={loading} onClose={props.onClose} />
     default:
       return (
         <HelpPanelContainer>
-          <HelpPanelContent data={data} isLoading={loading} error={error} />
+          <HelpPanelContent data={data} isLoading={loading} />
         </HelpPanelContainer>
       )
   }
