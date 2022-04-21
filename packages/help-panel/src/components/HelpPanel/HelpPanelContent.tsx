@@ -6,41 +6,64 @@
  */
 
 import React from 'react'
+import { Color } from '@harness/design-system'
 import Container from '../Container'
 import RenderComponent from '../RenderComponent'
 import Header from './Header'
 import Footer from './Footer'
 import { IHelpPanel } from '../../types/contentfulTypes'
+import { Error } from '../../HelpPanelContext'
 
 interface Props {
-  data?: IHelpPanel
+  data: IHelpPanel
   isLoading: boolean
-  error: boolean
+  error: Error
+  onClose?: () => void
 }
 
 export const HEADER_FOOTER_HEIGHT = '64px'
-const HelpPanelContent: React.FC<Props> = ({ data, isLoading, error }) => {
-  const { backgroundColor, title, articles } = data || {}
+const HelpPanelContent: React.FC<Props> = ({ data, isLoading, error, onClose }) => {
+  const { backgroundColor = Color.BLUE_50, title, articles } = data || {}
 
-  if (error) {
-    return <>Error rendering help panel</>
+  const renderContent = () => {
+    if (isLoading) {
+      return 'Loading ...'
+    }
+    let errorText
+    if (error === Error.NOT_FOUND) {
+      errorText = `There is no help panel associated with the given id`
+    }
+
+    if (error === Error.API_FAILED) {
+      errorText = `Error fetching Help Pane; data`
+    }
+
+    if (error === Error.NOT_CREATED) {
+      errorText = 'Somethig went wrong'
+    }
+
+    if (errorText) {
+      return <Container padding={{ top: 'large' }}>{errorText}</Container>
+    }
+
+    return errorText ? (
+      <Container padding={{ top: 'large' }}>{errorText}</Container>
+    ) : (
+      <>
+        <Header title={title} onClose={onClose} />
+        <Container>
+          {articles?.map(article => (
+            <RenderComponent key={article.sys.id} data={article} />
+          ))}
+        </Container>
+        <Footer />
+      </>
+    )
   }
 
   return (
-    <Container background={backgroundColor} padding={{ left: 'xlarge', right: 'xlarge' }}>
-      {isLoading ? (
-        'Loading...'
-      ) : (
-        <>
-          <Header title={title} />
-          <Container>
-            {articles?.map(article => (
-              <RenderComponent key={article.sys.id} data={article} />
-            ))}
-          </Container>
-          <Footer />
-        </>
-      )}
+    <Container background={backgroundColor} padding={{ left: 'xlarge', right: 'xlarge' }} style={{ minHeight: '100%' }}>
+      {renderContent()}
     </Container>
   )
 }

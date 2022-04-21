@@ -53,49 +53,59 @@ interface useContentfulOptions {
   content_type: ContentType
 }
 
+export enum Error {
+  API_FAILED = 'API_FAILED',
+  NOT_FOUND = 'NOT_FOUND',
+  NOT_CREATED = 'NOT_CREATED'
+}
+
 interface useContentfulState<T> {
   data?: T
   loading: boolean
-  hasError: boolean
+  error?: Error
 }
 
 export function useContentful<T>(options: useContentfulOptions): useContentfulState<T> {
   const { referenceId, content_type } = options
   const [data, setData] = useState<T | undefined>()
-  const [hasError, setError] = useState<boolean>(false)
+  const [error, setError] = useState<Error | undefined>()
   const [loading, setLoading] = useState(false)
   const { contentIdMap } = React.useContext(HelpPanelContext)
 
   useEffect(() => {
-    const contentId = contentIdMap[referenceId]
-    if (contentId) {
-      setLoading(true)
-      Contentful.getClient()
-        .getEntries<T>({
-          'sys.id': contentId,
-          content_type: content_type,
-          include: 10
-        })
-        .then(
-          response => {
-            setLoading(false)
-            if (response.items.length > 0) {
-              setData(response.items[0].fields)
-            } else {
-              setError(true)
+    if (Object.keys(contentIdMap).length > 0) {
+      const contentId = contentIdMap[referenceId]
+      if (contentId) {
+        setLoading(true)
+        Contentful.getClient()
+          .getEntries<T>({
+            'sys.id': contentId,
+            content_type: content_type,
+            include: 10
+          })
+          .then(
+            response => {
+              setLoading(false)
+              if (response.items.length > 0) {
+                setData(response.items[0].fields)
+              } else {
+                setError(Error.NOT_CREATED)
+              }
+            },
+            e => {
+              setLoading(false)
+              setError(Error.API_FAILED)
             }
-          },
-          e => {
-            setLoading(false)
-            setError(true)
-          }
-        )
+          )
+      } else {
+        setError(Error.NOT_FOUND)
+      }
     }
   }, [referenceId, content_type, contentIdMap])
 
   return {
     data,
     loading,
-    hasError
+    error
   }
 }

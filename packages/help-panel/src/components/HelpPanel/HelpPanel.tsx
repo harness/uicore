@@ -8,36 +8,58 @@
 import React from 'react'
 import { useContentful } from '../../HelpPanelContext'
 import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
-import FloatingButton from '../FloatingButton/FloatingButton'
+import HelpPanelContainer, { HelpPanelContainerType } from './HelpPanelContainer'
 import HelpPanelContent from './HelpPanelContent'
 
 export enum HelpPanelType {
-  FIXED_LAYOUT = 'FIXED_LAYOUT'
+  FLOATING_CONTAINER = 'FLOATING_CONTAINER',
+  CONTENT_ONLY = 'CONTENT_ONLY'
 }
 
 interface HelpPanelProps {
-  contentId: string
+  referenceId: string
   type?: HelpPanelType
-  options?: any
+  onClose?: () => void
 }
 
 const HelpPanel: React.FC<HelpPanelProps> = props => {
-  const { contentId, type } = props
-
-  const { data, loading, hasError } = useContentful<IHelpPanel>({
-    referenceId: contentId,
+  const { referenceId, type } = props
+  let floatingBtnRef: HTMLButtonElement
+  const { data, loading, error } = useContentful<IHelpPanel>({
+    referenceId,
     content_type: ContentType.helpPanel
   })
 
+  if (!data || data?.articles?.length <= 0) {
+    return <></>
+  }
+
   switch (type) {
-    case HelpPanelType.FIXED_LAYOUT:
+    case HelpPanelType.FLOATING_CONTAINER:
       return (
-        <FloatingButton>
-          <HelpPanelContent data={data} isLoading={loading} error={hasError} />
-        </FloatingButton>
+        <HelpPanelContainer
+          type={HelpPanelContainerType.FLOATING}
+          ref={node => {
+            floatingBtnRef = node
+          }}>
+          <HelpPanelContent
+            data={data}
+            isLoading={loading}
+            error={error}
+            onClose={() => {
+              floatingBtnRef?.click()
+            }}
+          />
+        </HelpPanelContainer>
       )
+    case HelpPanelType.CONTENT_ONLY:
+      return <HelpPanelContent data={data} isLoading={loading} error={error} onClose={props.onClose} />
     default:
-      return <HelpPanelContent data={data} isLoading={loading} error={hasError} />
+      return (
+        <HelpPanelContainer>
+          <HelpPanelContent data={data} isLoading={loading} error={error} />
+        </HelpPanelContainer>
+      )
   }
 }
 

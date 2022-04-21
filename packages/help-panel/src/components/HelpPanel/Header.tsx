@@ -27,10 +27,12 @@ const Header: React.FC<HeaderProps> = ({ title, onClose }) => {
       style={{ height: HEADER_FOOTER_HEIGHT }}
     >
       {title}
-      <Container
-        onClick={onClose}
-        style={{ background: `transparent url(${cross})`, height: '13px', width: '13px', cursor: 'pointer' }}
-      ></Container>
+      {onClose ? (
+        <Container
+          onClick={onClose}
+          style={{ background: `transparent url(${cross})`, height: '13px', width: '13px', cursor: 'pointer' }}
+        ></Container>
+      ) : undefined}
     </Container>
   )
 }

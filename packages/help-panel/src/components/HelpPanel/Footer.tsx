@@ -7,10 +7,13 @@
 
 import React from 'react'
 import { Color, FontVariation } from '@harness/design-system'
+import useHelpPanelStorage from '../../hooks/useHelpPanelStorage'
 import Container from '../Container'
 import { HEADER_FOOTER_HEIGHT } from './HelpPanelContent'
 
 const Footer: React.FC = () => {
+  const [data, setStorage] = useHelpPanelStorage()
+
   return (
     <Container
       flex={{ alignItems: 'center', justifyContent: 'flex-start' }}
@@ -19,8 +22,16 @@ const Footer: React.FC = () => {
       font={{ variation: FontVariation.BODY }}
       style={{ height: HEADER_FOOTER_HEIGHT }}
     >
-      <input type="checkbox" name="dontshowagain" id="dontshowagain" />
-      <label htmlFor="dontshowagain">&nbsp;&nbsp;Don't show this again</label>
+      <input
+        type="checkbox"
+        name="dontShowAgain"
+        id="dontShowAgain"
+        checked={data.dontShowAgain}
+        onChange={e => {
+          setStorage({ ...data, dontShowAgain: e.target.checked })
+        }}
+      />
+      <label htmlFor="dontShowAgain">&nbsp;&nbsp;Don't show this again</label>
     </Container>
   )
 }

@@ -1,10 +1,15 @@
 {
   "name": "@harness/help-panel",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.21",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
-  "main": "src/index.ts",
+  "main": "dist/help-panel.umd.js",
+  "module": "dist/help-panel.es.js",
+  "types": "dist/src/index.d.ts",
   "styles": "dist/style.css",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "prebuild": "yarn clean",
     "build": "vite build",
