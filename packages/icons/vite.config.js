@@ -20,16 +20,20 @@ function reactSvgPlugin() {
     async transform(_code, id) {
       if (id.endsWith('.svg')) {
         const { transform: convert } = await import('@svgr/core')
+        const svgoPlugin = await import('@svgr/plugin-svgo')
 
         const svgCode = await fs.promises.readFile(id, 'utf8')
 
+        const svgoCode = await svgoPlugin.default(svgCode, { svgo: true }, {})
+
         const componentCode = await convert(
-          svgCode,
+          svgoCode,
           {},
           {
             componentName: 'Component'
           }
         )
+
         const res = await transformWithEsbuild(componentCode, id, { loader: 'jsx' })
 
         return {

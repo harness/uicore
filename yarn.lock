@@ -1298,10 +1298,10 @@
   resolved "https://npm.pkg.github.com/download/@harness/design-system/1.0.0/4961fc151ffa0dd1f3d86b37572f9a5cd575d592c646cd5e68d508e1045c9d96#e463410da2c7ad9bff84eaa43fbe4ba9ba347da1"
   integrity sha512-sMsLP5Rxg08t87dJamTgpzEfRAef06C14bZO92SGqiXYtXsK01evjnXaOAiUS4gO36gMGi5cYJAqkJ0XBkERIg==
 
-"@harness/icons@1.0.0-beta.12":
-  version "1.0.0-beta.12"
-  resolved "https://npm.pkg.github.com/download/@harness/icons/1.0.0-beta.12/c07893682c0e9affcdc6a14274b80ece7aefc9c56316d5641fdd15f6f909b216#f29c030871fdb77b026771f50ad94653228e8fb8"
-  integrity sha512-O9zJmpq5grkzCPWKz0TDwh9fTDog5L2uTN0jUbjpgMJuNawT9JYH23LVO7bIsGBjk8CUbV6XEeaiUZss9TCGFw==
+"@harness/icons@1.0.0-beta.13":
+  version "1.0.0-beta.13"
+  resolved "https://npm.pkg.github.com/download/@harness/icons/1.0.0-beta.13/3cc70767cefb5e0d927cb6f85cf2e46b8bf6525da450ebb654dcd76d98d97847#8bc0bb285c7bd4ceec185aaaa2d1dcf310d016a6"
+  integrity sha512-woqjLWjXzSEO2E1RQ/DXVBZKi7YJ0S6jcLtl5Oav5ZQbOdhe2Blvlpd+NrS7g5/4O90Z5Mys07JVBZIt7tkQMw==
 
 "@harness/use-modal@1.0.0":
   version "1.0.0"

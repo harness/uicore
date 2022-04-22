@@ -61,7 +61,7 @@
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
     "@harness/design-system": "1.0.0",
-    "@harness/icons": "1.0.0-beta.12",
+    "@harness/icons": "1.0.0-beta.13",
     "@harness/use-modal": "1.0.0",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-docs": "^6.3.1",
