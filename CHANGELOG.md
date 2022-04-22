@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.65.0](https://github.com/harness/uicore/compare/v2.64.0...v2.65.0) (2022-04-22)
+
+
+### Bug Fixes
+
+* [PIe-1808]: Add padding to StackSummaryTable ([#651](https://github.com/harness/uicore/issues/651)) ([790335e](https://github.com/harness/uicore/commit/790335ef80c44675cc14a8610964d21b23ae004a))
+
 ## [2.64.0](https://github.com/harness/uicore/compare/v2.63.0...v2.64.0) (2022-04-19)
 
 
