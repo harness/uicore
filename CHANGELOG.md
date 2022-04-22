@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.66.0](https://github.com/harness/uicore/compare/v2.65.0...v2.66.0) (2022-04-22)
+
+
+### Bug Fixes
+
+* [SRM-10130]: fix setup script ([#650](https://github.com/harness/uicore/issues/650)) ([a568946](https://github.com/harness/uicore/commit/a56894671427e5b8f2b1b2f829b31e08ac3e9c95))
+
 ## [2.65.0](https://github.com/harness/uicore/compare/v2.64.0...v2.65.0) (2022-04-22)
 
 
