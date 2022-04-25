@@ -192,20 +192,19 @@ export function Select(props: SelectProps): React.ReactElement {
     if (
       !loading &&
       props.allowCreatingNewItems &&
-      items.filter(item => item.label.toString().toLowerCase() === query.toLowerCase()).length === 0
+      items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0
     )
       return (
         <React.Fragment>
+          <div className={css.noResultsFound}>Nothing Found</div>
           <Button
             intent="primary"
             minimal
             text={query}
             icon="plus"
+            className={css.createNewItemButton}
             onClick={handleClick as React.MouseEventHandler<Element>}
           />
-          <span className="icon-container">
-            <Icon id="icon-styled-props" name="info-sign" size={16} color="grey400" padding="small" />
-          </span>
         </React.Fragment>
       )
   }
