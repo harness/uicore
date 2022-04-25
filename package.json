@@ -168,8 +168,5 @@
   "files": [
     "dist/*",
     "tools/*"
-  ],
-  "dependencies": {
-    "@svgr/core": "^6.2.1"
-  }
+  ]
 }
