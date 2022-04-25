@@ -9,41 +9,9 @@ const _ = require('lodash')
 const package = require('./package.json')
 const globals = require('../globals.json')
 const dts = require('vite-plugin-dts')
-const fs = require('fs')
-const { transformWithEsbuild } = require('vite')
+const reactSvgPlugin = require('vite-plugin-react-svg')
 
 const external = Object.keys(package.peerDependencies)
-
-function reactSvgPlugin() {
-  return {
-    name: 'react-svg',
-    async transform(_code, id) {
-      if (id.endsWith('.svg')) {
-        const { transform: convert } = await import('@svgr/core')
-        const svgoPlugin = await import('@svgr/plugin-svgo')
-
-        const svgCode = await fs.promises.readFile(id, 'utf8')
-
-        const svgoCode = await svgoPlugin.default(svgCode, { svgo: true }, {})
-
-        const componentCode = await convert(
-          svgoCode,
-          {},
-          {
-            componentName: 'Component'
-          }
-        )
-
-        const res = await transformWithEsbuild(componentCode, id, { loader: 'jsx' })
-
-        return {
-          code: res.code,
-          map: null
-        }
-      }
-    }
-  }
-}
 
 /**
  * @type {import('vite').UserConfig}
@@ -67,7 +35,14 @@ const config = {
       // plugins: [svgr({ icon: true })]
     }
   },
-  plugins: [dts(), reactSvgPlugin()]
+  plugins: [
+    dts(),
+    reactSvgPlugin({
+      defaultExport: 'component',
+      svgo: true,
+      expandProps: 'end'
+    })
+  ]
 }
 
 module.exports = config
