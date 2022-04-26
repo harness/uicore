@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.67.0](https://github.com/harness/uicore/compare/v2.66.0...v2.67.0) (2022-04-26)
+
+
+### Bug Fixes
+
+* [CDS-36079]: Enhance creation of new items in form multitype input ([#652](https://github.com/harness/uicore/issues/652)) ([5572973](https://github.com/harness/uicore/commit/55729734793b8022d83e7f6f26c902955bce4af2))
+
 ## [2.66.0](https://github.com/harness/uicore/compare/v2.65.0...v2.66.0) (2022-04-22)
 
 
