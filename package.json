@@ -53,7 +53,8 @@
     "react-dom": "^17.0.2",
     "react-draggable": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-table": "^7.0.4"
+    "react-table": "^7.0.4",
+    "@harness/icons": "1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -61,7 +62,6 @@
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
     "@harness/design-system": "1.0.0",
-    "@harness/icons": "1.0.0-beta.13",
     "@harness/use-modal": "1.0.0",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-docs": "^6.3.1",

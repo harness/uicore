@@ -1,6 +1,6 @@
 {
   "name": "@harness/icons",
-  "version": "1.0.0-beta.01",
+  "version": "1.0.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/icons.umd.js",
