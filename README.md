@@ -6,7 +6,15 @@ This repository contains implementation of [Next Generation UI Architecture](htt
 
 - `yarn setup` - to set up authentication to access Github Package Registry
 - `yarn storybook` - to start storybook
-- `yarn ui:icons` - to build icons, run this command after placing your icon svg inside `src/icons/` directory
+- Icons are moved to a separate package under /packages foldeer, `yarn ui:icons` - to build icons, run this command after placing your icon svg inside `src/icons/` directory
+
+## Icons
+
+Icons are moved to a separate npm package under /packages folder. Please follow below steps to add a new icon -
+
+- Go to `packages/icons`
+- Place your svg file under `src` directory
+- Run `yarn ui:icons` to build icons.
 
 Then navigate to [http://localhost:6006](http://localhost:6006) to see storybook.
 
