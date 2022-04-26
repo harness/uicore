@@ -32,6 +32,8 @@ export const TextInput: Story<MultiTextInputProps> = args => <MultiTextInput min
 
 export const SelectInput: Story<MultiTypeInputProps> = args => <MultiTypeInput {...args} />
 
+export const SelectInputWithCreationOfNewItems: Story<MultiTypeInputProps> = args => <MultiTypeInput {...args} />
+
 export const MultiSelectInput: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
 
 export const MultiSelectInputWithNoMenu: Story<MultiSelectTypeInputProps> = args => <MultiSelectTypeInput {...args} />
@@ -63,6 +65,26 @@ SelectInput.args = {
     'pipeline.identifier',
     'pipeline.stage.qa.displayName'
   ]
+}
+
+SelectInputWithCreationOfNewItems.args = {
+  expressions: [
+    'app.name',
+    'app.description',
+    'pipeline.name',
+    'pipeline.description',
+    'pipeline.identifier',
+    'pipeline.stage.qa.displayName'
+  ],
+  allowableTypes: [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION],
+  selectProps: {
+    defaultSelectedItem: { label: data[0].name, value: data[0].id },
+    noResults: 'No results',
+    items: data.slice(0, 10).map(row => ({ label: row.name, value: row.id })),
+    addClearBtn: true,
+    allowCreatingNewItems: true,
+    addTooltip: true
+  }
 }
 
 MultiSelectInput.args = {
