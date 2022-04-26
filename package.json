@@ -138,7 +138,8 @@
     "webpack": "^5.41.0",
     "webpack-cli": "^4.7.2",
     "webpack-node-externals": "^3.0.0",
-    "yup": "^0.32.8"
+    "yup": "^0.32.8",
+    "@harness/icons": "1.0.0"
   },
   "resolutions": {
     "@babel/core": "7.14.6",
