@@ -10,10 +10,10 @@ This repository contains implementation of [Next Generation UI Architecture](htt
 
 ## Icons
 
-Icons are moved to a separate npm package under /packages folder. Please follow below steps to add a new icon -
+Icons are moved to a separate npm package under /packages folder. Please follow below steps to add new icons -
 
 - Go to `packages/icons`
-- Place your svg file under `src` directory
+- Place your svg file inside `src` directory
 - Run `yarn ui:icons` to build icons.
 
 Then navigate to [http://localhost:6006](http://localhost:6006) to see storybook.
