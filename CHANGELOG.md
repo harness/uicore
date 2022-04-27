@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.68.0](https://github.com/harness/uicore/compare/v2.67.0...v2.68.0) (2022-04-27)
+
+
+### Features
+
+* [PIE-3223]: env group icon ([a2033ff](https://github.com/harness/uicore/commit/a2033ff8ee0180f6f208fbc88614be9527f08d53))
+
 ## [2.67.0](https://github.com/harness/uicore/compare/v2.66.0...v2.67.0) (2022-04-26)
 
 
