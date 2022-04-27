@@ -10,7 +10,7 @@ import css from './GroupedThumbnailSelect.css'
 import { Layout } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
 import { FormGroup } from '@blueprintjs/core'
-import { connect, FormikContext } from 'formik'
+import { connect, FormikContextType } from 'formik'
 import { clone, get, isEmpty } from 'lodash-es'
 import { Intent } from '@harness/design-system'
 import { errorCheck } from '../../core/Utils'
@@ -27,7 +27,7 @@ export interface Group {
 }
 
 export interface ConnectedGroupedThumbnailSelectProps extends GroupedThumbnailSelectProps {
-  formik: FormikContext<Record<string, never>>
+  formik: FormikContextType<Record<string, never>>
 }
 
 export interface GroupedThumbnailSelectProps extends Omit<ThumbnailSelectProps, 'items'> {
@@ -88,7 +88,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
     const { value } = e.target
 
     formik.setFieldValue(name, value)
-    formik.setFieldTouched(name, true)
+    formik.setFieldTouched(name, true, false)
 
     onChange?.(value)
   }

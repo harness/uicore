@@ -6,7 +6,7 @@
  */
 
 import React, { ReactNode, useCallback, useMemo } from 'react'
-import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikActions } from 'formik'
+import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikHelpers } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
   MultiSelect as UiKitMultiSelect,
@@ -68,7 +68,7 @@ import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
 import { DurationInput } from './DurationInput'
 
-const isFunction = (obj: any): boolean => typeof obj === 'function'
+// const isFunction = (obj: any): boolean => typeof obj === 'function'
 
 export const getDefaultAutoCompleteValue = (): string => 'off'
 
@@ -166,7 +166,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
         }
         onChange={(changed: unknown) => {
           const values: string[] = changed as string[]
-          formik?.setFieldTouched(name)
+          formik?.setFieldTouched(name, true, false)
           formik?.setFieldValue(
             name,
             isArray
@@ -502,7 +502,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
             name,
             placeholder,
 
-            onBlur: () => formik?.setFieldTouched(name)
+            onBlur: () => formik?.setFieldTouched(name, true, false)
           },
           intent,
           disabled: disabled
@@ -681,7 +681,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
         disabled={disabled}
         value={get(formik?.values, name, '')}
         onBlur={e => {
-          formik?.setFieldTouched(name)
+          formik?.setFieldTouched(name, true, false)
           inputGroup?.onBlur?.(e)
         }}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
@@ -787,7 +787,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
         intent={intent}
         disabled={disabled}
         placeholder={placeholder}
-        onBlur={() => formik?.setFieldTouched(name)}
+        onBlur={() => formik?.setFieldTouched(name, true, false)}
         value={get(formik?.values, name)}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
@@ -832,20 +832,20 @@ const Form = (props: FormikFormProps) => {
 
 export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
   formLoading?: true
-  render?: (props: FormikExtended<Values>) => React.ReactNode
-  onSubmit: (values: Values, formikActions: FormikActions<Values>) => void | Promise<Values>
+  // render?: (props: FormikExtended<Values>) => React.ReactNode
+  onSubmit: (values: Values, formikActions: FormikHelpers<Values>) => void | Promise<Values>
   formName: string
 }
 
 export function Formik<Values = Record<string, unknown>>(props: FormikProps<Values>): React.ReactElement {
-  const { formLoading = false, onSubmit, render, children, ...rest } = props
+  const { formLoading = false, onSubmit, children, ...rest } = props
   const [isFormLoading, setFormLoading] = React.useState(false)
   React.useEffect(() => {
     setFormLoading(formLoading)
   }, [formLoading])
 
   const onSubmitLocal = React.useCallback(
-    (values: Values, formikActions: FormikActions<Values>) => {
+    (values: Values, formikActions: FormikHelpers<Values>) => {
       const response = onSubmit(values, formikActions)
       if (response instanceof Promise) {
         setFormLoading(true)
@@ -857,39 +857,45 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
     [onSubmit]
   )
 
-  const renderLocal = React.useCallback(
-    (formik: FormikExtended<any>) => {
-      return <OverlaySpinner show={isFormLoading}>{render?.(formik)}</OverlaySpinner>
-    },
-    [render, isFormLoading]
-  )
+  // const renderLocal = React.useCallback(
+  //   (formik: FormikExtended<any>) => {
+  //     return <OverlaySpinner show={isFormLoading}>{render?.(formik)}</OverlaySpinner>
+  //   },
+  //   [render, isFormLoading]
+  // )
+  //
+  // const functionRenderLocal = React.useCallback(
+  //   (formik: FormikExtended<any>) => {
+  //     return (
+  //       <OverlaySpinner show={isFormLoading}>
+  //         {(children as (props: FormikExtended<any>) => React.ReactNode)(formik)}
+  //       </OverlaySpinner>
+  //     )
+  //   },
+  //   [children, isFormLoading]
+  // )
 
-  const functionRenderLocal = React.useCallback(
-    (formik: FormikExtended<any>) => {
-      return (
-        <OverlaySpinner show={isFormLoading}>
-          {(children as (props: FormikExtended<any>) => React.ReactNode)(formik)}
-        </OverlaySpinner>
-      )
-    },
-    [children, isFormLoading]
-  )
-
-  let renderProps: { render?: any } = {}
-  if (render) {
-    renderProps = {
-      render: renderLocal
-    }
-  } else if (isFunction(children)) {
-    renderProps = {
-      render: functionRenderLocal
-    }
-  }
+  // let renderProps: { render?: any } = {}
+  // if (render) {
+  //   renderProps = {
+  //     render: renderLocal
+  //   }
+  // } else if (isFunction(children)) {
+  //   renderProps = {
+  //     render: functionRenderLocal
+  //   }
+  // }
 
   return (
     <FormikTooltipContext.Provider value={{ formName: props.formName }}>
-      <FrmFormik {...rest} {...renderProps} onSubmit={onSubmitLocal}>
-        {!render && !isFunction(children) && <OverlaySpinner show={isFormLoading}>{children}</OverlaySpinner>}
+      <FrmFormik {...rest} onSubmit={onSubmitLocal}>
+        {formikProps => {
+          return (
+            <OverlaySpinner show={isFormLoading}>
+              {typeof children === 'function' ? children(formikProps) : children}
+            </OverlaySpinner>
+          )
+        }}
       </FrmFormik>
     </FormikTooltipContext.Provider>
   )
@@ -964,7 +970,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
       } else {
         formik?.setFieldValue(name, val)
       }
-      formik?.setFieldTouched(name)
+      formik?.setFieldTouched(name, true, false)
       multiTypeInputProps?.onChange?.(val, valueType, type)
     },
     [formik, multiTypeInputProps]
@@ -1089,7 +1095,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
           } else {
             formik?.setFieldValue(name, value)
           }
-          formik?.setFieldTouched(name)
+          formik?.setFieldTouched(name, true, false)
           multiSelectTypeInputProps?.onChange?.(value, valueType, type)
         }}
       />
@@ -1124,7 +1130,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
       name,
       value,
       placeholder,
-      onBlur: () => formik?.setFieldTouched(name),
+      onBlur: () => formik?.setFieldTouched(name, true, false),
       ...(valueType !== MultiTypeInputType.FIXED ? { type: 'text' } : {}) // set type text of input and expressions
     }),
     [multiTextInputProps?.textProps, valueType]
@@ -1270,7 +1276,7 @@ const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContext
         key={items?.[0]?.label}
         inputProps={{
           placeholder,
-          onBlur: () => formik?.setFieldTouched(name)
+          onBlur: () => formik?.setFieldTouched(name, true, false)
         }}
         items={items}
         value={items.find(item => item?.value === value)}
@@ -1340,7 +1346,7 @@ const FormMultiSelectWithSubview = (props: FormMultiSelectWithSubviewProps & For
             ...multiSelectWithSubviewProps?.multiSelectProps?.tagInputProps,
             inputProps: {
               ...multiSelectWithSubviewProps?.multiSelectProps?.tagInputProps?.inputProps,
-              onBlur: () => formik?.setFieldTouched(name)
+              onBlur: () => formik?.setFieldTouched(name, true, false)
             },
             intent,
             disabled

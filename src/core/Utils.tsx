@@ -11,7 +11,7 @@ import cx from 'classnames'
 import React, { KeyboardEvent, MouseEvent } from 'react'
 import { Popover } from '../components/Popover/Popover'
 import { Color, Intent, OptionalTooltip } from '@harness/design-system'
-import { FormikContext } from 'formik'
+import { FormikContextType } from 'formik'
 import { get, isPlainObject } from 'lodash-es'
 import css from './Utils.css'
 
@@ -85,7 +85,7 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
   )
 }
 
-export const errorCheck = (name: string, formik?: FormikContext<any>): boolean | '' | 0 | undefined =>
+export const errorCheck = (name: string, formik?: FormikContextType<any>): boolean | '' | 0 | undefined =>
   ((get(formik?.touched, name) || (formik?.submitCount && formik?.submitCount > 0)) &&
     get(formik?.errors, name) &&
     !isPlainObject(get(formik?.errors, name))) as boolean

@@ -7,7 +7,7 @@
 
 import React, { useEffect } from 'react'
 import { FormGroup, HTMLDivProps, Intent } from '@blueprintjs/core'
-import { connect, FormikContext } from 'formik'
+import { connect, FormikContextType } from 'formik'
 import cx from 'classnames'
 import { isEqual, isEmpty, get } from 'lodash-es'
 import { Card } from '../Card/Card'
@@ -41,7 +41,7 @@ export interface CollapsableSelectProps<T> extends Omit<HTMLDivProps, 'onChange'
 }
 
 export interface ConnectedCollapsableSelectProps<T> extends CollapsableSelectProps<T> {
-  formik: FormikContext<Record<string, unknown>>
+  formik: FormikContextType<Record<string, unknown>>
 }
 export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) {
   const {
@@ -78,7 +78,7 @@ export function CollapsableSelect<T>(props: ConnectedCollapsableSelectProps<T>) 
 
   function handleChange(item: CollapsableSelectOptions & T, event: React.MouseEvent<HTMLDivElement>): void {
     formik.setFieldValue(name, item.value)
-    formik.setFieldTouched(name, true)
+    formik.setFieldTouched(name, true, false)
     props.onChange?.(item, event)
   }
 

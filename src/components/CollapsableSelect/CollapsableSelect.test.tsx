@@ -61,7 +61,7 @@ describe('Test render CollapsableSelect', () => {
               name={'connectivityMode'}
               selected={undefined}
               onChange={() => {
-                formik.setFieldTouched('connectivityMode', true)
+                formik.setFieldTouched('connectivityMode', true, false)
               }}
               renderItem={item => {
                 return <Layout.Vertical>{item?.text}</Layout.Vertical>
