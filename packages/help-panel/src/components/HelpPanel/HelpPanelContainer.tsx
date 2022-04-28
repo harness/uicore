@@ -18,6 +18,8 @@ interface HelpPanelContaierProps {
   type?: HelpPanelContainerType
 }
 
+const DEFAULT_WIDTH = '400px'
+
 const floatingContainerStyle = {
   position: 'fixed',
   right: '20px',
@@ -33,7 +35,7 @@ const floatingContentStyle = {
   cursor: 'auto',
   height: '100%',
   overflow: 'scroll',
-  width: '400px',
+  width: DEFAULT_WIDTH,
   boxShadow: '0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16)'
 }
 
@@ -65,7 +67,6 @@ const defaultContainerStyle = {
 // eslint-disable-next-line react/display-name
 const HelpPanelContainer: React.FC<HelpPanelContaierProps> = forwardRef<HTMLButtonElement, HelpPanelContaierProps>(
   (props, ref) => {
-    // take boolean from localstorage
     const [storageData] = useHelpPanelStorage()
     const [showPanel, setShowPanel] = useState<boolean>(!storageData.dontShowAgain)
 
@@ -76,8 +77,7 @@ const HelpPanelContainer: React.FC<HelpPanelContaierProps> = forwardRef<HTMLButt
             setShowPanel(!showPanel)
           }}
           ref={ref}
-          style={style}
-        ></button>
+          style={style}></button>
       )
     }
 
@@ -91,7 +91,7 @@ const HelpPanelContainer: React.FC<HelpPanelContaierProps> = forwardRef<HTMLButt
         )
       default:
         return (
-          <Container style={defaultContainerStyle}>
+          <Container style={{ ...defaultContainerStyle, width: showPanel ? DEFAULT_WIDTH : 'auto' }}>
             {showPanel && props.children}
             {renderButton(defaultContainerBtnStyle)}
           </Container>
