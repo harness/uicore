@@ -25,7 +25,7 @@ const floatingContainerStyle = {
   right: '20px',
   bottom: '20px',
   zIndex: 1000
-}
+} as React.CSSProperties
 
 const floatingContentStyle = {
   position: 'absolute',
@@ -37,7 +37,7 @@ const floatingContentStyle = {
   overflow: 'scroll',
   width: DEFAULT_WIDTH,
   boxShadow: '0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16)'
-}
+} as React.CSSProperties
 
 const buttonStyle = {
   cursor: 'pointer',
@@ -45,7 +45,7 @@ const buttonStyle = {
   width: '56px',
   border: 'none',
   background: `transparent url(${floating_button})`
-}
+} as React.CSSProperties
 
 const defaultContainerBtnStyle = {
   position: 'absolute',
@@ -56,13 +56,13 @@ const defaultContainerBtnStyle = {
   width: '56px',
   cursor: 'pointer',
   background: `transparent url(${floating_button})`
-}
+} as React.CSSProperties
 
 const defaultContainerStyle = {
   position: 'relative',
   height: '100%',
   width: '100%'
-}
+} as React.CSSProperties
 
 // eslint-disable-next-line react/display-name
 const HelpPanelContainer: React.FC<HelpPanelContaierProps> = forwardRef<HTMLButtonElement, HelpPanelContaierProps>(
@@ -70,7 +70,7 @@ const HelpPanelContainer: React.FC<HelpPanelContaierProps> = forwardRef<HTMLButt
     const [storageData] = useHelpPanelStorage()
     const [showPanel, setShowPanel] = useState<boolean>(!storageData.dontShowAgain)
 
-    const renderButton = style => {
+    const renderButton = (style: React.CSSProperties) => {
       return (
         <button
           onClick={() => {

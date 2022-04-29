@@ -13,12 +13,17 @@ export interface ComponentValue {
   name: string
 }
 
+export enum HelpPanelEnvironment {
+  master = 'master',
+  qa = 'QA'
+}
+
 export enum ContentType {
   helpPanel = 'helpPanel',
   article = 'article',
   image = 'image',
   youtubeVideo = 'youtubeVideo',
-  contentIdMap = 'contentIdMap'
+  referenceIdMap = 'referenceIdMap'
 }
 
 export interface IHelpPanel {
@@ -51,7 +56,7 @@ export interface IVideo extends ComponentValue {
   thumbnailWidth: number
 }
 
-export interface IContentIdMap {
-  referenceID: string
+export interface IReferenceIdMap {
+  referenceId: string
   helpPanel: Entry<IHelpPanel>
 }

@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import type { StyledProps } from '@harness/design-system'
+import { StyledProps } from '@harness/design-system'
 import { styledClasses } from '@harness/design-system'
 import React, { HTMLAttributes } from 'react'
 
@@ -15,6 +15,7 @@ const Container: React.FC<ContainerProps> = props => {
   const { children } = props
 
   return (
+    // @ts-ignore
     <div className={styledClasses(props)} {...props}>
       {children}
     </div>

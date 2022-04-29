@@ -6,10 +6,10 @@
  */
 
 import { EntryCollection } from 'contentful'
-import { IContentIdMap } from '../types/contentfulTypes'
+import { IReferenceIdMap } from '../types/contentfulTypes'
 
-export const getRefenceAndContentIdMap = (data: EntryCollection<IContentIdMap>): Record<string, string> => {
+export const getRefenceAndContentIdMap = (data: EntryCollection<IReferenceIdMap>): Record<string, string> => {
   return data.items.reduce((obj, item) => {
-    return { ...obj, [item.fields.referenceID]: item.fields.helpPanel.sys.id }
+    return { ...obj, [item.fields.referenceId]: item.fields.helpPanel.sys.id }
   }, {})
 }

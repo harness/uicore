@@ -7,47 +7,47 @@
 
 import React, { useEffect, useState } from 'react'
 import { getRefenceAndContentIdMap } from './utils/util'
-import { IContentIdMap, ContentType } from './types/contentfulTypes'
+import { ContentType, HelpPanelEnvironment, IReferenceIdMap } from './types/contentfulTypes'
 import Contentful from './ContentfulApi'
 
 interface HelpPanelContextProps {
-  contentIdMap: Record<string, string>
+  referenceIdMap: Record<string, string>
 }
 
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
-  contentIdMap: {}
+  referenceIdMap: {}
 })
 
 interface HelpPanelContextProviderProps {
   accessToken: string
   space: string
+  environment?: HelpPanelEnvironment
   onError?: (error: unknown) => void
 }
 
 export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> = props => {
-  const { accessToken, space } = props
-  const [contentIdMap, setContentIdMap] = useState<Record<string, string>>({})
+  const { accessToken, space, environment = HelpPanelEnvironment.master } = props
+  const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
 
   useEffect(() => {
-    Contentful.initialise(accessToken, space)
+    Contentful.initialise(accessToken, space, environment)
     const client = Contentful.getClient()
 
     const getContentIdMap = async (): Promise<void> => {
       try {
-        const response = await client.getEntries<IContentIdMap>({
-          content_type: ContentType.contentIdMap
+        const response = await client.getEntries<IReferenceIdMap>({
+          content_type: ContentType.referenceIdMap
         })
-        setContentIdMap(getRefenceAndContentIdMap(response))
+        setReferenceIdMap(getRefenceAndContentIdMap(response))
       } catch (e) {
         props.onError?.(e)
-        // Error fetching contentID map - add handling in this case
       }
     }
 
     getContentIdMap()
   }, [accessToken, space])
 
-  return <HelpPanelContext.Provider value={{ contentIdMap }}>{props.children}</HelpPanelContext.Provider>
+  return <HelpPanelContext.Provider value={{ referenceIdMap }}>{props.children}</HelpPanelContext.Provider>
 }
 
 interface useContentfulOptions {
@@ -72,11 +72,11 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
   const [data, setData] = useState<T | undefined>()
   const [error, setError] = useState<Error | undefined>()
   const [loading, setLoading] = useState(false)
-  const { contentIdMap } = React.useContext(HelpPanelContext)
+  const { referenceIdMap } = React.useContext(HelpPanelContext)
 
   useEffect(() => {
-    if (Object.keys(contentIdMap).length > 0) {
-      const contentId = contentIdMap[referenceId]
+    if (Object.keys(referenceIdMap).length > 0) {
+      const contentId = referenceIdMap[referenceId]
       if (contentId) {
         setLoading(true)
         Contentful.getClient()
@@ -103,7 +103,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
         setError(Error.NOT_FOUND)
       }
     }
-  }, [referenceId, content_type, contentIdMap])
+  }, [referenceId, content_type, referenceIdMap])
 
   return {
     data,

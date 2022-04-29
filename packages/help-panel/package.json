@@ -1,6 +1,6 @@
 {
   "name": "@harness/help-panel",
-  "version": "1.0.0-beta.28",
+  "version": "1.0.0-beta.32",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/help-panel.umd.js",

@@ -6,6 +6,7 @@
  */
 
 import { createClient, ContentfulClientApi } from 'contentful'
+import { HelpPanelEnvironment } from 'types/contentfulTypes'
 
 class Contentful {
   private client: ContentfulClientApi | undefined = undefined
@@ -18,10 +19,11 @@ class Contentful {
     throw new Error('Please initialise Contentful before calling getClient')
   }
 
-  initialise(accessToken: string, space: string): void {
+  initialise(accessToken: string, space: string, environment: HelpPanelEnvironment): void {
     this.client = createClient({
       space,
-      accessToken
+      accessToken,
+      environment
     })
   }
 }

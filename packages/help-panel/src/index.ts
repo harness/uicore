@@ -7,4 +7,5 @@
 
 import { HelpPanelContextProvider, useContentful } from './HelpPanelContext'
 import HelpPanel, { HelpPanelType } from './components/HelpPanel/HelpPanel'
-export { HelpPanel, HelpPanelType, HelpPanelContextProvider, useContentful }
+import { HelpPanelEnvironment } from './types/contentfulTypes'
+export { HelpPanel, HelpPanelType, HelpPanelContextProvider, useContentful, HelpPanelEnvironment }
