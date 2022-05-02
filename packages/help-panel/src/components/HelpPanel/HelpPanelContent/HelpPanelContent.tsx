@@ -7,11 +7,12 @@
 
 import React from 'react'
 import { Color } from '@harness/design-system'
-import Container from '../Container'
-import RenderComponent from '../RenderComponent'
-import Header from './Header'
-import Footer from './Footer'
-import { IHelpPanel } from '../../types/contentfulTypes'
+import Container from '../../Container'
+import RenderComponent from '../../RenderComponent'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import { IHelpPanel } from '../../../types/contentfulTypes'
+import css from './HelpPanelContent.module.css'
 
 interface Props {
   data: IHelpPanel
@@ -19,19 +20,17 @@ interface Props {
   onClose?: () => void
 }
 
-export const HEADER_FOOTER_HEIGHT = '64px'
-const HelpPanelContent: React.FC<Props> = ({ data, isLoading, onClose }) => {
+export const HEADER_FOOTER_HEIGHT = 64
+const HelpPanelContent: React.FC<Props> = ({ data, onClose }) => {
   const { backgroundColor = Color.BLUE_50, title, articles } = data || {}
 
   const renderContent = () => {
-    if (isLoading) {
-      return 'Loading ...'
-    }
-
     return (
       <>
         <Header title={title} onClose={onClose} />
-        <Container>
+        <Container
+          className={css.centerContainer}
+          style={{ top: HEADER_FOOTER_HEIGHT, height: `calc(100% - ${HEADER_FOOTER_HEIGHT * 2}px)` }}>
           {articles?.map(article => (
             <RenderComponent key={article.sys.id} data={article} />
           ))}
@@ -42,7 +41,7 @@ const HelpPanelContent: React.FC<Props> = ({ data, isLoading, onClose }) => {
   }
 
   return (
-    <Container background={backgroundColor} padding={{ left: 'xlarge', right: 'xlarge' }} style={{ minHeight: '100%' }}>
+    <Container background={backgroundColor} padding={{ left: 'xlarge', right: 'xlarge' }} style={{ height: '100%' }}>
       {renderContent()}
     </Container>
   )

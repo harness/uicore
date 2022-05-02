@@ -8,8 +8,8 @@
 import React from 'react'
 import { useContentful } from '../../HelpPanelContext'
 import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
-import HelpPanelContainer, { HelpPanelContainerType } from './HelpPanelContainer'
-import HelpPanelContent from './HelpPanelContent'
+import HelpPanelContainer, { HelpPanelContainerType } from './HelpPanelContainer/HelpPanelContainer'
+import HelpPanelContent from './HelpPanelContent/HelpPanelContent'
 
 export enum HelpPanelType {
   FLOATING_CONTAINER = 'FLOATING_CONTAINER',

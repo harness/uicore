@@ -7,14 +7,18 @@
 
 import React from 'react'
 import { Color, FontVariation } from '@harness/design-system'
-import Container from '../Container'
-import cross from '../../icons/cross.svg'
-import { HEADER_FOOTER_HEIGHT } from './HelpPanelContent'
+import Container from '../../Container'
+import cross from '../../../icons/cross.svg'
+import { HEADER_FOOTER_HEIGHT } from '../HelpPanelContent/HelpPanelContent'
+import css from './Header.module.css'
 
 interface HeaderProps {
   title?: string
   onClose?: () => void
-  height: string
+}
+
+const closeBtnStyle = {
+  background: `transparent url(${cross})`
 }
 
 const Header: React.FC<HeaderProps> = ({ title, onClose }) => {
@@ -24,15 +28,9 @@ const Header: React.FC<HeaderProps> = ({ title, onClose }) => {
       border={{ bottom: true, color: Color.GREY_200 }}
       color={Color.BLACK}
       font={{ variation: FontVariation.UPPERCASED }}
-      style={{ height: HEADER_FOOTER_HEIGHT }}
-    >
+      style={{ height: HEADER_FOOTER_HEIGHT }}>
       {title}
-      {onClose ? (
-        <Container
-          onClick={onClose}
-          style={{ background: `transparent url(${cross})`, height: '13px', width: '13px', cursor: 'pointer' }}
-        ></Container>
-      ) : undefined}
+      {onClose ? <Container onClick={onClose} className={css.closeBtn} style={closeBtnStyle}></Container> : undefined}
     </Container>
   )
 }
