@@ -5,6 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
+import { Color } from '@harness/design-system'
 import React from 'react'
 import { useContentful } from '../../HelpPanelContext'
 import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
@@ -25,12 +26,18 @@ interface HelpPanelProps {
 const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
   let floatingBtnRef: HTMLButtonElement
-  const { data, loading } = useContentful<IHelpPanel>({
+  const {
+    data = {
+      backgroundColor: Color.WHITE,
+      articles: []
+    },
+    loading
+  } = useContentful<IHelpPanel>({
     referenceId,
     content_type: ContentType.helpPanel
   })
 
-  if (!data || data?.articles?.length <= 0) {
+  if (!data) {
     return <></>
   }
 

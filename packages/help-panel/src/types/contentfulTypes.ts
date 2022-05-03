@@ -29,7 +29,7 @@ export enum ContentType {
 export interface IHelpPanel {
   articles: Entry<IArticle>[]
   backgroundColor: Color
-  title: string
+  title?: string
 }
 
 export interface IArticle extends ComponentValue {

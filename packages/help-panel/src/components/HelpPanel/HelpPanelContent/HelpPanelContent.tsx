@@ -13,6 +13,7 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { IHelpPanel } from '../../../types/contentfulTypes'
 import css from './HelpPanelContent.module.css'
+import Skeleton from '../../Skeleton/Skeleton'
 
 interface Props {
   data: IHelpPanel
@@ -21,7 +22,7 @@ interface Props {
 }
 
 export const HEADER_FOOTER_HEIGHT = 64
-const HelpPanelContent: React.FC<Props> = ({ data, onClose }) => {
+const HelpPanelContent: React.FC<Props> = ({ data, onClose, isLoading }) => {
   const { backgroundColor = Color.BLUE_50, title, articles } = data || {}
 
   const renderContent = () => {
@@ -42,7 +43,13 @@ const HelpPanelContent: React.FC<Props> = ({ data, onClose }) => {
 
   return (
     <Container background={backgroundColor} padding={{ left: 'xlarge', right: 'xlarge' }} style={{ height: '100%' }}>
-      {renderContent()}
+      {isLoading ? (
+        <Container padding={{ top: 'xlarge', bottom: 'xlarge' }}>
+          <Skeleton />
+        </Container>
+      ) : (
+        renderContent()
+      )}
     </Container>
   )
 }
