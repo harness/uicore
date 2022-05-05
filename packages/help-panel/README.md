@@ -1,1 +1,1 @@
-how to use Help panel?
+Help Panel
