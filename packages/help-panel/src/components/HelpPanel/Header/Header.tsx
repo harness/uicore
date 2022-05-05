@@ -25,6 +25,7 @@ const Header: React.FC<HeaderProps> = ({ title, onClose }) => {
   return (
     <Container
       flex={{ justifyContent: 'space-between', alignItems: 'center' }}
+      padding={{ left: 'xlarge', right: 'xlarge' }}
       border={{ bottom: true, color: Color.GREY_200 }}
       color={Color.BLACK}
       font={{ variation: FontVariation.UPPERCASED }}

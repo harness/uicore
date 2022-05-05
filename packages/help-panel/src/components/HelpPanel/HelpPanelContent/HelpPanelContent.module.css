@@ -8,4 +8,6 @@
 .centerContainer {
   position: absolute;
   overflow: scroll;
+  width: 100%;
+  padding: 0px var(--spacing-xlarge);
 }

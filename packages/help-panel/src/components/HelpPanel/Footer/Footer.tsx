@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
   return (
     <Container
       flex={{ alignItems: 'center', justifyContent: 'flex-start' }}
-      padding={{ top: 'xlarge', bottom: 'xlarge' }}
       color={Color.BLACK}
       className={css.container}
       font={{ variation: FontVariation.BODY }}

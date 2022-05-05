@@ -31,6 +31,8 @@ const HelpPanelContent: React.FC<Props> = ({ data, onClose, isLoading }) => {
         <Header title={title} onClose={onClose} />
         <Container
           className={css.centerContainer}
+          padding={{ left: 'xlarge', right: 'xlarge' }}
+          width="100%"
           style={{ top: HEADER_FOOTER_HEIGHT, height: `calc(100% - ${HEADER_FOOTER_HEIGHT * 2}px)` }}>
           {articles?.map(article => (
             <RenderComponent key={article.sys.id} data={article} />
@@ -42,7 +44,7 @@ const HelpPanelContent: React.FC<Props> = ({ data, onClose, isLoading }) => {
   }
 
   return (
-    <Container background={backgroundColor} padding={{ left: 'xlarge', right: 'xlarge' }} style={{ height: '100%' }}>
+    <Container background={backgroundColor} style={{ height: '100%' }}>
       {isLoading ? (
         <Container padding={{ top: 'xlarge', bottom: 'xlarge' }}>
           <Skeleton />
