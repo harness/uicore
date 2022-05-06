@@ -57,7 +57,7 @@ export const Basic: Story<SelectProps> = args => {
   const argsCopy = omit(args, ['size', 'items'])
   return <Select items={items} addClearBtn={true} {...argsCopy} />
 }
-Basic.args = { size: SelectSize.Large }
+Basic.args = { size: SelectSize.Large, borderless: false }
 export const SelectWithIcons: Story<SelectProps> = args => {
   const {
     items = [
