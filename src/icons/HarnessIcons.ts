@@ -635,6 +635,7 @@ import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
 import Skipped from './skipped.svg'
+import SliderTrigger from './slider-trigger.svg'
 import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
@@ -1339,6 +1340,7 @@ type HarnessIconName =
   | 'setup-tags'
   | 'shield-gears'
   | 'skipped'
+  | 'slider-trigger'
   | 'smtp'
   | 'spinner'
   | 'srm-with-dark-text'
@@ -2043,6 +2045,7 @@ const HarnessIcons: KVO<ElementType> = {
   'setup-tags': SetupTags,
   'shield-gears': ShieldGears,
   skipped: Skipped,
+  'slider-trigger': SliderTrigger,
   smtp: Smtp,
   spinner: Spinner,
   'srm-with-dark-text': SrmWithDarkText,
