@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.71.0](https://github.com/harness/uicore/compare/v2.70.0...v2.71.0) (2022-05-06)
+
+
+### Bug Fixes
+
+* valuesFile icon added ([#657](https://github.com/harness/uicore/issues/657)) ([162cc9c](https://github.com/harness/uicore/commit/162cc9c5d501f1b8e609e69a3c80751665f72047))
+
 ## [2.70.0](https://github.com/harness/uicore/compare/v2.69.0...v2.70.0) (2022-05-06)
 
 
