@@ -6,7 +6,7 @@
  */
 
 import React, { useEffect, useState } from 'react'
-import { getRefenceAndContentIdMap } from './utils/util'
+import { getRefrenceIdToHelpPanelMap } from './utils/util'
 import { ContentType, HelpPanelEnvironment, IReferenceIdMap } from './types/contentfulTypes'
 import Contentful from './ContentfulApi'
 
@@ -38,7 +38,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         const response = await client.getEntries<IReferenceIdMap>({
           content_type: ContentType.referenceIdMap
         })
-        setReferenceIdMap(getRefenceAndContentIdMap(response))
+        setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
       } catch (e) {
         props.onError?.(e)
       }

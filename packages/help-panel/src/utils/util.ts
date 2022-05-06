@@ -8,7 +8,7 @@
 import { EntryCollection } from 'contentful'
 import { IReferenceIdMap } from '../types/contentfulTypes'
 
-export const getRefenceAndContentIdMap = (data: EntryCollection<IReferenceIdMap>): Record<string, string> => {
+export const getRefrenceIdToHelpPanelMap = (data: EntryCollection<IReferenceIdMap>): Record<string, string> => {
   return data.items.reduce((obj, item) => {
     return { ...obj, [item.fields.referenceId]: item.fields.helpPanel.sys.id }
   }, {})
