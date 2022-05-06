@@ -1,7 +1,7 @@
 {
   "name": "@harness/design-system",
   "version": "1.0.0",
-  "description": "Harness UICore - Legos for building Harness UI applications",
+  "description": "Harness Help panel - used for building Help panels generated through contentful",
   "source": "src/index.ts",
   "main": "dist/design-system.umd.js",
   "module": "dist/design-system.es.js",

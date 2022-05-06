@@ -83,7 +83,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
           .getEntries<T>({
             'sys.id': contentId,
             content_type: content_type,
-            include: 10
+            include: 10 // used of fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
           })
           .then(
             response => {
