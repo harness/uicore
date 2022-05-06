@@ -37,10 +37,6 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
     content_type: ContentType.helpPanel
   })
 
-  if (!data) {
-    return <></>
-  }
-
   switch (type) {
     case HelpPanelType.FLOATING_CONTAINER:
       return (
