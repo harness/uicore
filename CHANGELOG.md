@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.70.0](https://github.com/harness/uicore/compare/v2.69.0...v2.70.0) (2022-05-06)
+
+
+### Features
+
+* Add slider-trigger icon ([#656](https://github.com/harness/uicore/issues/656)) ([3d53772](https://github.com/harness/uicore/commit/3d53772f7dbbbff721a07690279678270810b5fc))
+
 ## [2.69.0](https://github.com/harness/uicore/compare/v2.68.0...v2.69.0) (2022-04-27)
 
 
