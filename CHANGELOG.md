@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.72.0](https://github.com/harness/uicore/compare/v2.71.0...v2.72.0) (2022-05-06)
+
+
+### Features
+
+* [PL-24394]: Help Panel ([#646](https://github.com/harness/uicore/issues/646)) ([aa8c7e4](https://github.com/harness/uicore/commit/aa8c7e44d75b409ac9ea46b2538a78a2c8f291ad))
+
 ## [2.71.0](https://github.com/harness/uicore/compare/v2.70.0...v2.71.0) (2022-05-06)
 
 
