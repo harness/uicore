@@ -23,15 +23,16 @@ const closeBtnStyle = {
 
 const Header: React.FC<HeaderProps> = ({ title, onClose }) => {
   return (
-    <Container
-      flex={{ justifyContent: 'space-between', alignItems: 'center' }}
-      padding={{ left: 'xlarge', right: 'xlarge' }}
-      border={{ bottom: true, color: Color.GREY_200 }}
-      color={Color.BLACK}
-      font={{ variation: FontVariation.UPPERCASED }}
-      style={{ height: HEADER_FOOTER_HEIGHT }}>
-      {title}
-      {onClose ? <Container onClick={onClose} className={css.closeBtn} style={closeBtnStyle}></Container> : undefined}
+    <Container padding={{ left: 'xlarge', right: 'xlarge' }}>
+      <Container
+        font={{ variation: FontVariation.UPPERCASED }}
+        flex={{ justifyContent: 'space-between', alignItems: 'center' }}
+        border={{ bottom: true, color: Color.GREY_200 }}
+        style={{ height: HEADER_FOOTER_HEIGHT }}
+        color={Color.BLACK}>
+        {title}
+        {onClose ? <Container onClick={onClose} className={css.closeBtn} style={closeBtnStyle}></Container> : undefined}
+      </Container>
     </Container>
   )
 }

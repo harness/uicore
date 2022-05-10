@@ -9,13 +9,20 @@ import React, { useEffect, useState } from 'react'
 import { getRefrenceIdToHelpPanelMap } from './utils/util'
 import { ContentType, HelpPanelEnvironment, IReferenceIdMap } from './types/contentfulTypes'
 import Contentful from './ContentfulApi'
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 interface HelpPanelContextProps {
   referenceIdMap: Record<string, string>
+  isHelpPanelVisible: boolean
+  setHelpPanelVisibility: (show: boolean, showAgain?: boolean) => void
+  showAgain: boolean
 }
 
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
-  referenceIdMap: {}
+  referenceIdMap: {},
+  isHelpPanelVisible: true,
+  setHelpPanelVisibility: () => {},
+  showAgain: false
 })
 
 interface HelpPanelContextProviderProps {
@@ -25,9 +32,25 @@ interface HelpPanelContextProviderProps {
   onError?: (error: unknown) => void
 }
 
+interface HelpPanelStorageState {
+  dontShowAgain: boolean
+}
+
+const TOP_LEVEL_KEY = 'helpPanel'
 export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> = props => {
   const { accessToken, space, environment = HelpPanelEnvironment.master } = props
   const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
+  const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(TOP_LEVEL_KEY, { dontShowAgain: false })
+  const [showHelpPanel, setShowHelpPanel] = useState<boolean>(!storageData.dontShowAgain)
+
+  const setHelpPanelVisibility = (isHelpPanelVisible: boolean, updateShowAgain?: boolean) => {
+    setShowHelpPanel(isHelpPanelVisible)
+    if (updateShowAgain) {
+      setStorage({
+        dontShowAgain: !storageData.dontShowAgain
+      })
+    }
+  }
 
   useEffect(() => {
     Contentful.initialise(accessToken, space, environment)
@@ -47,7 +70,17 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
     getContentIdMap()
   }, [accessToken, space])
 
-  return <HelpPanelContext.Provider value={{ referenceIdMap }}>{props.children}</HelpPanelContext.Provider>
+  return (
+    <HelpPanelContext.Provider
+      value={{
+        referenceIdMap,
+        isHelpPanelVisible: showHelpPanel,
+        setHelpPanelVisibility,
+        showAgain: storageData.dontShowAgain
+      }}>
+      {props.children}
+    </HelpPanelContext.Provider>
+  )
 }
 
 interface useContentfulOptions {
@@ -94,7 +127,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
                 setError(Error.NOT_CREATED)
               }
             },
-            e => {
+            () => {
               setLoading(false)
               setError(Error.API_FAILED)
             }

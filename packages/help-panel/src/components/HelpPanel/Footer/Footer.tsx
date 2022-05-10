@@ -7,31 +7,33 @@
 
 import React from 'react'
 import { Color, FontVariation } from '@harness/design-system'
-import useHelpPanelStorage from '../../../hooks/useHelpPanelStorage'
 import Container from '../../Container'
 import { HEADER_FOOTER_HEIGHT } from '../HelpPanelContent/HelpPanelContent'
 import css from './Footer.module.css'
+import { HelpPanelContext } from '../../../HelpPanelContext'
 
 const Footer: React.FC = () => {
-  const [data, setStorage] = useHelpPanelStorage()
+  const { showAgain, setHelpPanelVisibility } = React.useContext(HelpPanelContext)
 
   return (
-    <Container
-      flex={{ alignItems: 'center', justifyContent: 'flex-start' }}
-      color={Color.BLACK}
-      className={css.container}
-      font={{ variation: FontVariation.BODY }}
-      style={{ height: HEADER_FOOTER_HEIGHT }}>
-      <input
-        type="checkbox"
-        name="dontShowAgain"
-        id="dontShowAgain"
-        checked={data.dontShowAgain}
-        onChange={e => {
-          setStorage({ ...data, dontShowAgain: e.target.checked })
-        }}
-      />
-      <label htmlFor="dontShowAgain">&nbsp;&nbsp;Don't show this again</label>
+    <Container className={css.container}>
+      <Container
+        color={Color.BLACK}
+        flex={{ alignItems: 'center', justifyContent: 'flex-start' }}
+        font={{ variation: FontVariation.BODY }}
+        border={{ top: true, color: Color.GREY_200 }}
+        style={{ height: HEADER_FOOTER_HEIGHT, flex: 1 }}>
+        <input
+          type="checkbox"
+          name="dontShowAgain"
+          id="dontShowAgain"
+          checked={showAgain}
+          onChange={e => {
+            setHelpPanelVisibility(!e.target.checked, true)
+          }}
+        />
+        <label htmlFor="dontShowAgain">&nbsp;&nbsp;Don't show this again</label>
+      </Container>
     </Container>
   )
 }

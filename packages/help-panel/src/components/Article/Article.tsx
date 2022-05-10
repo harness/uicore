@@ -12,11 +12,17 @@ import type { IArticle } from '../../types/contentfulTypes'
 import Container from '../Container'
 import RenderComponent from '../RenderComponent'
 
-const Article: React.FC<IArticle> = (props: IArticle) => {
-  const { title, description, body } = props
+interface ArticleProps extends IArticle {
+  showBottomBorder?: boolean
+}
+
+const Article: React.FC<ArticleProps> = (props: ArticleProps) => {
+  const { title, description, body, showBottomBorder = true } = props
+
+  const borderStyle = showBottomBorder ? { border: { bottom: true, color: Color.GREY_200 } } : undefined
 
   return (
-    <Container border={{ bottom: true, color: Color.GREY_200 }} padding={{ top: 'xlarge', bottom: 'xlarge' }}>
+    <Container padding={{ top: 'xlarge', bottom: 'xlarge' }} {...borderStyle}>
       <Container font={{ variation: FontVariation.H4 }} color={Color.PRIMARY_9} margin={{ bottom: 'medium' }}>
         {title}
       </Container>

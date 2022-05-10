@@ -9,7 +9,8 @@ import { Color } from '@harness/design-system'
 import React from 'react'
 import { useContentful } from '../../HelpPanelContext'
 import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
-import HelpPanelContainer, { HelpPanelContainerType } from './HelpPanelContainer/HelpPanelContainer'
+import DefaultContainer from './Containers/DefaultContainer/DefaultContainer'
+import FloatingContainer from './Containers/FloatingContainer/FloatingContainer'
 import HelpPanelContent from './HelpPanelContent/HelpPanelContent'
 
 export enum HelpPanelType {
@@ -40,8 +41,7 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
   switch (type) {
     case HelpPanelType.FLOATING_CONTAINER:
       return (
-        <HelpPanelContainer
-          type={HelpPanelContainerType.FLOATING}
+        <FloatingContainer
           ref={node => {
             floatingBtnRef = node
           }}>
@@ -52,15 +52,15 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
               floatingBtnRef?.click()
             }}
           />
-        </HelpPanelContainer>
+        </FloatingContainer>
       )
     case HelpPanelType.CONTENT_ONLY:
       return <HelpPanelContent data={data} isLoading={loading} onClose={props.onClose} />
     default:
       return (
-        <HelpPanelContainer>
+        <DefaultContainer>
           <HelpPanelContent data={data} isLoading={loading} />
-        </HelpPanelContainer>
+        </DefaultContainer>
       )
   }
 }

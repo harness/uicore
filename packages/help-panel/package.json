@@ -1,6 +1,6 @@
 {
   "name": "@harness/help-panel",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/help-panel.umd.js",
@@ -26,13 +26,13 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@contentful/rich-text-types": "^15.12.0",
     "@types/react": "^17.0.3",
     "dts-bundle-generator": "^6.4.0",
     "react": "^17.0.2",
     "typescript": "^4.1.3",
     "vite": "^2.7.13",
-    "vite-plugin-dts": "^0.9.9",
-    "@contentful/rich-text-types": "^15.12.0"
+    "vite-plugin-dts": "^0.9.9"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.0",
