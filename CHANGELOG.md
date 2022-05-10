@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.73.0](https://github.com/harness/uicore/compare/v2.72.0...v2.73.0) (2022-05-10)
+
+
+### Features
+
+* [PIE-2618]: Formik Upgrade - April 27 ([#653](https://github.com/harness/uicore/issues/653)) ([b43be67](https://github.com/harness/uicore/commit/b43be67e12dcd78964c178d3850b4134aa7a9dd4))
+
 ## [2.72.0](https://github.com/harness/uicore/compare/v2.71.0...v2.72.0) (2022-05-06)
 
 
