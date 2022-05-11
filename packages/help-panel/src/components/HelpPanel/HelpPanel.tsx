@@ -7,7 +7,7 @@
 
 import { Color } from '@harness/design-system'
 import React from 'react'
-import { useContentful } from '../../HelpPanelContext'
+import { Error, useContentful } from '../../HelpPanelContext'
 import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
 import DefaultContainer from './Containers/DefaultContainer/DefaultContainer'
 import FloatingContainer from './Containers/FloatingContainer/FloatingContainer'
@@ -27,16 +27,22 @@ interface HelpPanelProps {
 const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
   let floatingBtnRef: HTMLButtonElement
+
   const {
     data = {
       backgroundColor: Color.WHITE,
       articles: []
     },
-    loading
+    loading,
+    error
   } = useContentful<IHelpPanel>({
     referenceId,
     content_type: ContentType.helpPanel
   })
+
+  if (error === Error.ERROR_INITIALIZING_CONTENTFUL) {
+    return null
+  }
 
   switch (type) {
     case HelpPanelType.FLOATING_CONTAINER:

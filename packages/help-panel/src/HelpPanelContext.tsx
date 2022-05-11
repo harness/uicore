@@ -16,18 +16,20 @@ interface HelpPanelContextProps {
   isHelpPanelVisible: boolean
   setHelpPanelVisibility: (show: boolean, showAgain?: boolean) => void
   showAgain: boolean
+  error: Error | undefined
 }
 
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   referenceIdMap: {},
   isHelpPanelVisible: true,
   setHelpPanelVisibility: () => {},
-  showAgain: false
+  showAgain: false,
+  error: undefined
 })
 
 interface HelpPanelContextProviderProps {
-  accessToken: string
-  space: string
+  accessToken?: string
+  space?: string
   environment?: HelpPanelEnvironment
   onError?: (error: unknown) => void
 }
@@ -42,6 +44,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
   const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
   const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(TOP_LEVEL_KEY, { dontShowAgain: false })
   const [showHelpPanel, setShowHelpPanel] = useState<boolean>(!storageData.dontShowAgain)
+  const [error, setError] = useState<Error | undefined>()
 
   const setHelpPanelVisibility = (isHelpPanelVisible: boolean, updateShowAgain?: boolean) => {
     setShowHelpPanel(isHelpPanelVisible)
@@ -53,21 +56,25 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
   }
 
   useEffect(() => {
-    Contentful.initialise(accessToken, space, environment)
-    const client = Contentful.getClient()
-
-    const getContentIdMap = async (): Promise<void> => {
+    if (accessToken && space) {
       try {
-        const response = await client.getEntries<IReferenceIdMap>({
-          content_type: ContentType.referenceIdMap
-        })
-        setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
+        Contentful.initialise(accessToken, space, environment)
+        const client = Contentful.getClient()
+
+        const getContentIdMap = async (): Promise<void> => {
+          const response = await client.getEntries<IReferenceIdMap>({
+            content_type: ContentType.referenceIdMap
+          })
+          setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
+        }
+        getContentIdMap()
       } catch (e) {
+        setError(Error.ERROR_INITIALIZING_CONTENTFUL)
         props.onError?.(e)
       }
+    } else {
+      setError(Error.ERROR_INITIALIZING_CONTENTFUL)
     }
-
-    getContentIdMap()
   }, [accessToken, space])
 
   return (
@@ -76,7 +83,8 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         referenceIdMap,
         isHelpPanelVisible: showHelpPanel,
         setHelpPanelVisibility,
-        showAgain: storageData.dontShowAgain
+        showAgain: storageData.dontShowAgain,
+        error
       }}>
       {props.children}
     </HelpPanelContext.Provider>
@@ -89,6 +97,7 @@ interface useContentfulOptions {
 }
 
 export enum Error {
+  ERROR_INITIALIZING_CONTENTFUL = 'ERROR_INITIALIZING_CONTENTFUL',
   API_FAILED = 'API_FAILED',
   NOT_FOUND = 'NOT_FOUND',
   NOT_CREATED = 'NOT_CREATED'
@@ -102,12 +111,16 @@ interface useContentfulState<T> {
 
 export function useContentful<T>(options: useContentfulOptions): useContentfulState<T> {
   const { referenceId, content_type } = options
+  const { referenceIdMap, error: contextError } = React.useContext(HelpPanelContext)
   const [data, setData] = useState<T | undefined>()
-  const [error, setError] = useState<Error | undefined>()
+  const [error, setError] = useState<Error | undefined>(contextError)
   const [loading, setLoading] = useState(false)
-  const { referenceIdMap } = React.useContext(HelpPanelContext)
 
   useEffect(() => {
+    if (error) {
+      return
+    }
+
     if (Object.keys(referenceIdMap).length > 0) {
       const contentId = referenceIdMap[referenceId]
       if (contentId) {
@@ -116,7 +129,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
           .getEntries<T>({
             'sys.id': contentId,
             content_type: content_type,
-            include: 10 // used of fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
+            include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
           })
           .then(
             response => {

@@ -11,18 +11,13 @@ import { FontVariation, Color } from '@harness/design-system'
 import type { IArticle } from '../../types/contentfulTypes'
 import Container from '../Container'
 import RenderComponent from '../RenderComponent'
+import css from './Article.module.css'
 
-interface ArticleProps extends IArticle {
-  showBottomBorder?: boolean
-}
-
-const Article: React.FC<ArticleProps> = (props: ArticleProps) => {
-  const { title, description, body, showBottomBorder = true } = props
-
-  const borderStyle = showBottomBorder ? { border: { bottom: true, color: Color.GREY_200 } } : undefined
+const Article: React.FC<IArticle> = (props: IArticle) => {
+  const { title, description, body } = props
 
   return (
-    <Container padding={{ top: 'xlarge', bottom: 'xlarge' }} {...borderStyle}>
+    <Container className={css.container}>
       <Container font={{ variation: FontVariation.H4 }} color={Color.PRIMARY_9} margin={{ bottom: 'medium' }}>
         {title}
       </Container>

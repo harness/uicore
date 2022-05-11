@@ -34,8 +34,8 @@ const HelpPanelContent: React.FC<Props> = ({ data, onClose, isLoading }) => {
           padding={{ left: 'xlarge', right: 'xlarge' }}
           width="100%"
           style={{ top: HEADER_FOOTER_HEIGHT, height: `calc(100% - ${HEADER_FOOTER_HEIGHT * 2}px)` }}>
-          {articles?.map((article, index) => (
-            <Article key={article.sys.id} {...article.fields} showBottomBorder={index < articles.length - 1} />
+          {articles?.map(article => (
+            <Article key={article.sys.id} {...article.fields} />
           ))}
         </Container>
         <Footer />
