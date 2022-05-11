@@ -8,6 +8,13 @@
 .main {
   position: relative;
 
+  &.borderless {
+    :global(.bp3-input) {
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+
   :global(.bp3-input) {
     display: block;
     border: 1px solid var(--grey-200);
