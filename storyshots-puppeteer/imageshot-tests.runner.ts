@@ -27,9 +27,18 @@ if (storybookUrl !== null) {
     test: imageSnapshot({
       storybookUrl,
       beforeScreenshot: async (page, { context }) => {
+        // if the story is a modal, open the modal before taking the screenshot
+        if (page.url().includes('modaldialog')) {
+          await page.click('button')
+          await page.waitForTimeout(500)
+        }
+
         ;(context as LocalContext).clip = await page.evaluate(() => {
-          // display 'table' is optional, but it prevents div's from using the full viewport width
-          document.body.style.display = 'table'
+          if (!document.location.href.includes('modaldialog')) {
+            // display 'table' is optional, but it prevents div's from using the full viewport width
+            document.body.style.display = 'table'
+          }
+
           const { height, width, left: x, top: y } = document.body.getBoundingClientRect()
           return { x, y, height, width }
         })
