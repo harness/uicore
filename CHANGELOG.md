@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.74.0](https://github.com/harness/uicore/compare/v2.73.0...v2.74.0) (2022-05-11)
+
+
+### Features
+
+* [PIE-3667]: Add borderless prop to Select input ([#658](https://github.com/harness/uicore/issues/658)) ([fd28d29](https://github.com/harness/uicore/commit/fd28d29c651da964fd45b28bb1dcfca82d428fc2))
+
 ## [2.73.0](https://github.com/harness/uicore/compare/v2.72.0...v2.73.0) (2022-05-10)
 
 
