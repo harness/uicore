@@ -7,7 +7,7 @@
 
 import React, { useState, useContext } from 'react'
 import { EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
-import { get, isNil } from 'lodash-es'
+import { get, isNil, set, cloneDeep } from 'lodash-es'
 import cx from 'classnames'
 import { FormikTooltipContext } from '../FormikForm/FormikTooltipContext'
 
@@ -132,8 +132,16 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
             (e.target as HTMLInputElement).value.length > maxInput
               ? formik.values[currentEditField]
               : (e.target as HTMLInputElement).value
-          formik.setFieldValue(inputName, name)
-          isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
+
+          // formik.setFieldValue(inputName, name)
+          // isIdentifierEditable && !userModifiedIdentifier && formik.setFieldValue(idName, getIdentifierFromName(name))
+
+          const updatedValues = cloneDeep(formik.values)
+          set(updatedValues, inputName, name)
+          if (isIdentifierEditable && !userModifiedIdentifier) {
+            set(updatedValues, idName, getIdentifierFromName(name))
+          }
+          formik.setValues(updatedValues)
         }}
       />
       {!formik.errors[inputName] && formik.errors[idName] ? (
