@@ -11,7 +11,7 @@ import { Story } from '@storybook/react'
 import { Color } from '@harness/design-system'
 import { Button, ButtonVariation } from '../Button/Button'
 import { TextInput } from '../TextInput/TextInput'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
 import { ModalDialog, ModalDialogProps } from './ModalDialog'
 
