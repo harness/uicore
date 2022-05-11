@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.75.0](https://github.com/harness/uicore/compare/v2.74.0...v2.75.0) (2022-05-11)
+
+
+### Features
+
+* [PL-25086]: Add ModalDialog component ([#660](https://github.com/harness/uicore/issues/660)) ([2395fb4](https://github.com/harness/uicore/commit/2395fb44143d85b1fde748d3b1f197184d1dabdb))
+
 ## [2.74.0](https://github.com/harness/uicore/compare/v2.73.0...v2.74.0) (2022-05-11)
 
 
