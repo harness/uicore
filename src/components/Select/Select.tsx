@@ -60,6 +60,7 @@ export interface SelectProps
   popoverClassName?: string
   onQueryChange?: Props['onQueryChange']
   addTooltip?: boolean
+  borderless?: boolean
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -128,6 +129,7 @@ export function Select(props: SelectProps): React.ReactElement {
     resetOnSelect = true,
     resetOnClose = true,
     addTooltip = false,
+    borderless = false,
     ...rest
   } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
@@ -191,20 +193,21 @@ export function Select(props: SelectProps): React.ReactElement {
 
     if (
       !loading &&
-      props.allowCreatingNewItems &&
       items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0
     )
       return (
         <React.Fragment>
           <div className={css.noResultsFound}>Nothing Found</div>
-          <Button
-            intent="primary"
-            minimal
-            text={query}
-            icon="plus"
-            className={css.createNewItemButton}
-            onClick={handleClick as React.MouseEventHandler<Element>}
-          />
+          {props.allowCreatingNewItems && (
+            <Button
+              intent="primary"
+              minimal
+              text={query}
+              icon="plus"
+              className={css.createNewItemButton}
+              onClick={handleClick as React.MouseEventHandler<Element>}
+            />
+          )}
         </React.Fragment>
       )
   }
@@ -270,7 +273,7 @@ export function Select(props: SelectProps): React.ReactElement {
         usePortal: !!props.usePortal,
         minimal: true,
         position: Position.BOTTOM_LEFT,
-        className: css.main,
+        className: cx(css.main, { [css.borderless]: borderless }),
         popoverClassName: cx(css.popover, popoverClassName),
         onClosed: whenPopoverClosed
       }}

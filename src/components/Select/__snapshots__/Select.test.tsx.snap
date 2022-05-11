@@ -426,7 +426,17 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
           <div
             class="bp3-popover-content"
           >
-            <div />
+            <div>
+              <ul
+                class="bp3-menu"
+              >
+                <div
+                  class="noResultsFound"
+                >
+                  Nothing Found
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
