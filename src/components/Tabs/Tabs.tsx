@@ -10,7 +10,7 @@ import { Tabs as BpTabs, Tab, ITabsProps, ITabProps } from '@blueprintjs/core'
 import css from './Tabs.css'
 import cx from 'classnames'
 
-import { Icon, IconProps } from '../../icons/Icon'
+import { Icon, IconProps } from '@harness/icons'
 
 interface TabProps extends ITabProps {
   iconProps?: IconProps

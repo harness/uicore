@@ -9,7 +9,7 @@ import React from 'react'
 import cx from 'classnames'
 
 import { Layout } from '../../layouts/Layout'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import { Color } from '@harness/design-system'
 
 import css from './MultiStepProgressIndicator.css'

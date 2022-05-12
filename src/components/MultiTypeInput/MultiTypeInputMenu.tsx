@@ -10,7 +10,7 @@ import cx from 'classnames'
 
 import { Menu, Popover } from '@blueprintjs/core'
 import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as TypeIconSize } from './MultiTypeInputUtils'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import { I18nResource } from '@harness/design-system'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { Button, ButtonVariation } from '../Button/Button'

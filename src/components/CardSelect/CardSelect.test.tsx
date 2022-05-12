@@ -10,7 +10,7 @@ import { render, fireEvent, wait } from '@testing-library/react'
 import { CardSelect } from './CardSelect'
 import { CardBody } from '../Card/Card'
 import { Text } from '../Text/Text'
-import { IconName } from 'icons/Icon'
+import { IconName } from '@harness/icons'
 
 interface Data {
   text: string
