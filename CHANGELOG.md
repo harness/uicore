@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.77.0](https://github.com/harness/uicore/compare/v2.76.0...v2.77.0) (2022-05-12)
+
+
+### Features
+
+* [PL-22282]: Icons as a separate package ([#640](https://github.com/harness/uicore/issues/640)) ([7debf5c](https://github.com/harness/uicore/commit/7debf5cb41f88e4856a8fb12005ef2f02d4fa129))
+
 ## [2.76.0](https://github.com/harness/uicore/compare/v2.75.0...v2.76.0) (2022-05-11)
 
 
