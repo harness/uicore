@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.78.0](https://github.com/harness/uicore/compare/v2.77.0...v2.78.0) (2022-05-12)
+
+
+### Bug Fixes
+
+* [STO-4451]: Match --purple-500 to UX Figma palette ([#662](https://github.com/harness/uicore/issues/662)) ([37c488c](https://github.com/harness/uicore/commit/37c488cfa4a5fb0f86fb70594cb4e9cccfce1039))
+
 ## [2.77.0](https://github.com/harness/uicore/compare/v2.76.0...v2.77.0) (2022-05-12)
 
 
