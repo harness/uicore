@@ -7,7 +7,7 @@
 
 import React, { ReactElement } from 'react'
 import css from './ThumbnailSelect.css'
-import { IconName } from '../../icons/Icon'
+import { IconName } from '@harness/icons'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
 import { FormGroup } from '@blueprintjs/core'

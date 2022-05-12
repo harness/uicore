@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Icon, IconProps } from '../../icons/Icon'
+import { Icon, IconProps } from '@harness/icons'
 import React, { useEffect } from 'react'
 import { Text, Utils } from '../..'
 import { Easing, useTween } from '../../hooks/useTween'

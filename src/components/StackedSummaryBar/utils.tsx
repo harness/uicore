@@ -9,7 +9,7 @@ import React from 'react'
 
 import { Color } from '@harness/design-system'
 import { Container } from '../Container/Container'
-import { Icon } from '../../icons/Icon'
+import { Icon } from '@harness/icons'
 import { Text } from '../Text/Text'
 
 export const handleZeroOrInfinityTrend = (trend: string | undefined, intentColor: Color): JSX.Element => {

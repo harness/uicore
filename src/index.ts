@@ -24,7 +24,7 @@ export { Dialog } from './components/Dialog/Dialog'
 export { Toggle } from './components/Toggle/Toggle'
 export { Container } from './components/Container/Container'
 export { Heading } from './components/Heading/Heading'
-export { Icon, HarnessIcons, IconName } from './icons/Icon'
+export { Icon, HarnessIcons, IconName } from '@harness/icons'
 export { Layout, MasonryRef, MasonryProps } from './layouts/Layout'
 export { Link } from './components/Link/Link'
 export { List } from './components/List/List'
@@ -226,3 +226,4 @@ export {
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
 export * from '@harness/design-system'
+export * from '@harness/icons'

@@ -8,7 +8,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import cx from 'classnames'
-import { Icon, IconProps } from '../../icons/Icon'
+import { Icon, IconProps } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import css from './Breadcrumbs.css'
