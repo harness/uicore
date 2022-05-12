@@ -107,7 +107,7 @@ export const names = {
   '--purple-800': '#4d278f',
   '--purple-700': '#592baa',
   '--purple-600': '#6938c0',
-  '--purple-500': '#6938c0',
+  '--purple-500': '#7d4dd3',
   '--purple-400': '#ae82fc',
   '--purple-300': '#c19eff',
   '--purple-200': '#cfb4ff',
