@@ -76,7 +76,12 @@ export interface ModalErrorHandlerProps {
   style?: React.CSSProperties
 }
 
-const breakWorkStyle = { overflowWrap: 'break-word', wordWrap: 'break-word', hyphens: 'auto' } as React.CSSProperties
+const breakWorkStyle = {
+  overflowWrap: 'break-word',
+  wordBreak: 'break-word',
+  whiteSpace: 'pre-wrap'
+} as React.CSSProperties
+
 const DEFAULT_ICON_NAME = 'warning-sign'
 
 function renderMessage(message: string | React.ReactElement, color: Color) {
