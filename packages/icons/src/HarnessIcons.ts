@@ -498,6 +498,7 @@ import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
 import Queued from './queued.svg'
+import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
 import RemoveMinus from './remove-minus.svg'
@@ -1204,6 +1205,7 @@ type HarnessIconName =
   | 'publish-step'
   | 'question'
   | 'queued'
+  | 'remote-setup'
   | 'remote'
   | 'remotefile'
   | 'remove-minus'
@@ -1910,6 +1912,7 @@ const HarnessIcons: KVO<ElementType> = {
   'publish-step': PublishStep,
   question: Question,
   queued: Queued,
+  'remote-setup': RemoteSetup,
   remote: Remote,
   remotefile: Remotefile,
   'remove-minus': RemoveMinus,
