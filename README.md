@@ -13,9 +13,8 @@ Icons are moved to a separate npm package under /packages folder. Please follow 
 
 ```
 $ cd packages/icons
-Place your icon inside `src` directory
+- Place your icon inside `src` directory
 $ yarn ui:icons
-
 ```
 
 ## Storybook
