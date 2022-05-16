@@ -164,6 +164,7 @@ import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
 import ConnectivityMode from './connectivity-mode.svg'
+import ConnectorsBlue from './connectors-blue.svg'
 import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
@@ -189,6 +190,7 @@ import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DataFetchError from './data-fetch-error.svg'
+import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
 import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
@@ -273,11 +275,25 @@ import Github from './github.svg'
 import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
+import GitopsAgentBlue from './gitops-agent-blue.svg'
 import GitopsAgent from './gitops-agent.svg'
+import GitopsAgentsBlueCircle from './gitops-agents-blue-circle.svg'
 import GitopsApplicationWhite from './gitops-application-white.svg'
 import GitopsApplication from './gitops-application.svg'
+import GitopsApplicationsBlueCircle from './gitops-applications-blue-circle.svg'
+import GitopsBlueCircle from './gitops-blue-circle.svg'
+import GitopsBlue from './gitops-blue.svg'
+import GitopsClustersBlueCircle from './gitops-clusters-blue-circle.svg'
+import GitopsClustersBlue from './gitops-clusters-blue.svg'
 import GitopsClusters from './gitops-clusters.svg'
+import GitopsGnupgKeyBlueCircle from './gitops-gnupg-key-blue-circle.svg'
+import GitopsGnupgKeyBlue from './gitops-gnupg-key-blue.svg'
+import GitopsGreen from './gitops-green.svg'
 import GitopsMissing from './gitops-missing.svg'
+import GitopsRepoCertBlue from './gitops-repo-cert-blue.svg'
+import GitopsRepositoryBlueCircle from './gitops-repository-blue-circle.svg'
+import GitopsRepositoryBlue from './gitops-repository-blue.svg'
+import GitopsRepositoryCertificatesBlueCircle from './gitops-repository-certificates-blue-circle.svg'
 import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
@@ -560,6 +576,7 @@ import SearchUsers from './search-users.svg'
 import SearchWorkflow from './search-workflow.svg'
 import SecretManager from './secret-manager.svg'
 import SecretSsh from './secret-ssh.svg'
+import SecretsBlue from './secrets-blue.svg'
 import SecretsIcon from './secrets-icon.svg'
 import SecurityStage from './security-stage.svg'
 import SendData from './send-data.svg'
@@ -637,6 +654,7 @@ import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
+import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
@@ -670,6 +688,7 @@ import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
+import TemplatesBlue from './templates-blue.svg'
 import TemplatesIcon from './templates-icon.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
@@ -700,6 +719,7 @@ import UploadBox from './upload-box.svg'
 import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
 import Variable from './variable.svg'
+import VariablesBlue from './variables-blue.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
@@ -871,6 +891,7 @@ type HarnessIconName =
   | 'config-change'
   | 'config-file'
   | 'connectivity-mode'
+  | 'connectors-blue'
   | 'connectors-icon'
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
@@ -896,6 +917,7 @@ type HarnessIconName =
   | 'dashboard-selected'
   | 'dashboard'
   | 'data-fetch-error'
+  | 'delegates-blue'
   | 'delegates-icon'
   | 'dependency-default-icon'
   | 'dependency-step'
@@ -980,11 +1002,25 @@ type HarnessIconName =
   | 'gitlab-selected'
   | 'gitlab-unselected'
   | 'gitlab'
+  | 'gitops-agent-blue'
   | 'gitops-agent'
+  | 'gitops-agents-blue-circle'
   | 'gitops-application-white'
   | 'gitops-application'
+  | 'gitops-applications-blue-circle'
+  | 'gitops-blue-circle'
+  | 'gitops-blue'
+  | 'gitops-clusters-blue-circle'
+  | 'gitops-clusters-blue'
   | 'gitops-clusters'
+  | 'gitops-gnupg-key-blue-circle'
+  | 'gitops-gnupg-key-blue'
+  | 'gitops-green'
   | 'gitops-missing'
+  | 'gitops-repo-cert-blue'
+  | 'gitops-repository-blue-circle'
+  | 'gitops-repository-blue'
+  | 'gitops-repository-certificates-blue-circle'
   | 'gitops-suspended'
   | 'gitops-unknown'
   | 'google-kubernetes-engine'
@@ -1267,6 +1303,7 @@ type HarnessIconName =
   | 'search-workflow'
   | 'secret-manager'
   | 'secret-ssh'
+  | 'secrets-blue'
   | 'secrets-icon'
   | 'security-stage'
   | 'send-data'
@@ -1344,6 +1381,7 @@ type HarnessIconName =
   | 'shield-gears'
   | 'skipped'
   | 'slider-trigger'
+  | 'smtp-configuration-blue'
   | 'smtp'
   | 'spinner'
   | 'srm-with-dark-text'
@@ -1377,6 +1415,7 @@ type HarnessIconName =
   | 'syncing'
   | 'template-inputs'
   | 'template-library'
+  | 'templates-blue'
   | 'templates-icon'
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
@@ -1407,6 +1446,7 @@ type HarnessIconName =
   | 'utility'
   | 'valuesFIle'
   | 'variable'
+  | 'variables-blue'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
@@ -1578,6 +1618,7 @@ const HarnessIcons: KVO<ElementType> = {
   'config-change': ConfigChange,
   'config-file': ConfigFile,
   'connectivity-mode': ConnectivityMode,
+  'connectors-blue': ConnectorsBlue,
   'connectors-icon': ConnectorsIcon,
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
@@ -1603,6 +1644,7 @@ const HarnessIcons: KVO<ElementType> = {
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'data-fetch-error': DataFetchError,
+  'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
   'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
@@ -1687,11 +1729,25 @@ const HarnessIcons: KVO<ElementType> = {
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
+  'gitops-agent-blue': GitopsAgentBlue,
   'gitops-agent': GitopsAgent,
+  'gitops-agents-blue-circle': GitopsAgentsBlueCircle,
   'gitops-application-white': GitopsApplicationWhite,
   'gitops-application': GitopsApplication,
+  'gitops-applications-blue-circle': GitopsApplicationsBlueCircle,
+  'gitops-blue-circle': GitopsBlueCircle,
+  'gitops-blue': GitopsBlue,
+  'gitops-clusters-blue-circle': GitopsClustersBlueCircle,
+  'gitops-clusters-blue': GitopsClustersBlue,
   'gitops-clusters': GitopsClusters,
+  'gitops-gnupg-key-blue-circle': GitopsGnupgKeyBlueCircle,
+  'gitops-gnupg-key-blue': GitopsGnupgKeyBlue,
+  'gitops-green': GitopsGreen,
   'gitops-missing': GitopsMissing,
+  'gitops-repo-cert-blue': GitopsRepoCertBlue,
+  'gitops-repository-blue-circle': GitopsRepositoryBlueCircle,
+  'gitops-repository-blue': GitopsRepositoryBlue,
+  'gitops-repository-certificates-blue-circle': GitopsRepositoryCertificatesBlueCircle,
   'gitops-suspended': GitopsSuspended,
   'gitops-unknown': GitopsUnknown,
   'google-kubernetes-engine': GoogleKubernetesEngine,
@@ -1974,6 +2030,7 @@ const HarnessIcons: KVO<ElementType> = {
   'search-workflow': SearchWorkflow,
   'secret-manager': SecretManager,
   'secret-ssh': SecretSsh,
+  'secrets-blue': SecretsBlue,
   'secrets-icon': SecretsIcon,
   'security-stage': SecurityStage,
   'send-data': SendData,
@@ -2051,6 +2108,7 @@ const HarnessIcons: KVO<ElementType> = {
   'shield-gears': ShieldGears,
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
+  'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   spinner: Spinner,
   'srm-with-dark-text': SrmWithDarkText,
@@ -2084,6 +2142,7 @@ const HarnessIcons: KVO<ElementType> = {
   syncing: Syncing,
   'template-inputs': TemplateInputs,
   'template-library': TemplateLibrary,
+  'templates-blue': TemplatesBlue,
   'templates-icon': TemplatesIcon,
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
@@ -2114,6 +2173,7 @@ const HarnessIcons: KVO<ElementType> = {
   utility: Utility,
   valuesFIle: ValuesFIle,
   variable: Variable,
+  'variables-blue': VariablesBlue,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
