@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.79.0](https://github.com/harness/uicore/compare/v2.78.0...v2.79.0) (2022-05-16)
+
+
+### Bug Fixes
+
+* [PL-25033]: fixed css for renderMessage ([#663](https://github.com/harness/uicore/issues/663)) ([6018f30](https://github.com/harness/uicore/commit/6018f30446bd489458a7c9793277c2711409df80))
+
 ## [2.78.0](https://github.com/harness/uicore/compare/v2.77.0...v2.78.0) (2022-05-12)
 
 
