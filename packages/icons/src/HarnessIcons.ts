@@ -277,15 +277,22 @@ import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import GitopsAgentBlue from './gitops-agent-blue.svg'
 import GitopsAgent from './gitops-agent.svg'
+import GitopsAgentsBlueCircle from './gitops-agents-blue-circle.svg'
 import GitopsApplicationWhite from './gitops-application-white.svg'
 import GitopsApplication from './gitops-application.svg'
+import GitopsApplicationsBlueCircle from './gitops-applications-blue-circle.svg'
+import GitopsBlueCircle from './gitops-blue-circle.svg'
 import GitopsBlue from './gitops-blue.svg'
+import GitopsClustersBlueCircle from './gitops-clusters-blue-circle.svg'
 import GitopsClustersBlue from './gitops-clusters-blue.svg'
 import GitopsClusters from './gitops-clusters.svg'
+import GitopsGnupgKeyBlueCircle from './gitops-gnupg-key-blue-circle.svg'
 import GitopsGnupgKeyBlue from './gitops-gnupg-key-blue.svg'
 import GitopsMissing from './gitops-missing.svg'
 import GitopsRepoCertBlue from './gitops-repo-cert-blue.svg'
+import GitopsRepositoryBlueCircle from './gitops-repository-blue-circle.svg'
 import GitopsRepositoryBlue from './gitops-repository-blue.svg'
+import GitopsRepositoryCertificatesBlueCircle from './gitops-repository-certificates-blue-circle.svg'
 import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
@@ -996,15 +1003,22 @@ type HarnessIconName =
   | 'gitlab'
   | 'gitops-agent-blue'
   | 'gitops-agent'
+  | 'gitops-agents-blue-circle'
   | 'gitops-application-white'
   | 'gitops-application'
+  | 'gitops-applications-blue-circle'
+  | 'gitops-blue-circle'
   | 'gitops-blue'
+  | 'gitops-clusters-blue-circle'
   | 'gitops-clusters-blue'
   | 'gitops-clusters'
+  | 'gitops-gnupg-key-blue-circle'
   | 'gitops-gnupg-key-blue'
   | 'gitops-missing'
   | 'gitops-repo-cert-blue'
+  | 'gitops-repository-blue-circle'
   | 'gitops-repository-blue'
+  | 'gitops-repository-certificates-blue-circle'
   | 'gitops-suspended'
   | 'gitops-unknown'
   | 'google-kubernetes-engine'
@@ -1715,15 +1729,22 @@ const HarnessIcons: KVO<ElementType> = {
   gitlab: Gitlab,
   'gitops-agent-blue': GitopsAgentBlue,
   'gitops-agent': GitopsAgent,
+  'gitops-agents-blue-circle': GitopsAgentsBlueCircle,
   'gitops-application-white': GitopsApplicationWhite,
   'gitops-application': GitopsApplication,
+  'gitops-applications-blue-circle': GitopsApplicationsBlueCircle,
+  'gitops-blue-circle': GitopsBlueCircle,
   'gitops-blue': GitopsBlue,
+  'gitops-clusters-blue-circle': GitopsClustersBlueCircle,
   'gitops-clusters-blue': GitopsClustersBlue,
   'gitops-clusters': GitopsClusters,
+  'gitops-gnupg-key-blue-circle': GitopsGnupgKeyBlueCircle,
   'gitops-gnupg-key-blue': GitopsGnupgKeyBlue,
   'gitops-missing': GitopsMissing,
   'gitops-repo-cert-blue': GitopsRepoCertBlue,
+  'gitops-repository-blue-circle': GitopsRepositoryBlueCircle,
   'gitops-repository-blue': GitopsRepositoryBlue,
+  'gitops-repository-certificates-blue-circle': GitopsRepositoryCertificatesBlueCircle,
   'gitops-suspended': GitopsSuspended,
   'gitops-unknown': GitopsUnknown,
   'google-kubernetes-engine': GoogleKubernetesEngine,
