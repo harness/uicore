@@ -6,7 +6,11 @@
   "main": "dist/index.js",
   "style": "dist/index.css",
   "types": "dist/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "NODE_ENV=production webpack --progress",
+    "prepublishOnly": "yarn build"
+  },
   "license": "UNLICENSED",
   "repository": "https://github.com/harness/uicore",
   "publishConfig": {
@@ -16,7 +20,9 @@
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
-    "@harness/use-modal": "1.0.0",
+    "@harness/design-system": "^1.0.0",
+    "@harness/icons": "^1.0.0",
+    "@harness/use-modal": "^1.0.0",
     "anser": "^2.1.0",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
@@ -29,16 +35,16 @@
     "react-dom": "^17.0.2",
     "react-draggable": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-table": "^7.0.4",
-    "@harness/icons": "1.0.0"
+    "react-table": "^7.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
-    "@harness/design-system": "1.0.0",
-    "@harness/use-modal": "1.0.0",
+    "@harness/design-system": "*",
+    "@harness/icons": "*",
+    "@harness/use-modal": "*",
     "@svgr/webpack": "^5.5.0",
     "@types/classnames": "^2.2.9",
     "@types/lodash-es": "^4.17.4",
@@ -56,9 +62,6 @@
     "css-loader": "^5.2.6",
     "fork-ts-checker-webpack-plugin": "^6.0.8",
     "formik": "2.2.9",
-    "glob": "^7.1.4",
-    "husky": "^6.0.0",
-    "identity-obj-proxy": "^3.0.0",
     "lodash-es": "^4.17.21",
     "marked": "^4.0.12",
     "masonry-layout": "^4.2.2",
@@ -66,11 +69,6 @@
     "moment": "^2.25.3",
     "mustache": "^4.2.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.3.5",
-    "postcss-import": "^14.0.0",
-    "postcss-loader": "^6.1.0",
-    "postcss-mixins": "^8.1.0",
-    "postcss-nested": "^5.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-draggable": "^4.2.0",
@@ -85,33 +83,7 @@
     "webpack": "^5.41.0",
     "webpack-cli": "^4.7.2",
     "webpack-node-externals": "^3.0.0",
-    "yup": "^0.32.8",
-    "@harness/icons": "1.0.0"
-  },
-  "resolutions": {
-    "@babel/core": "7.14.6",
-    "@types/react": "17.0.3",
-    "@types/react-dom": "17.0.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "postcss": "8.3.5"
-  },
-  "lint-staged": {
-    "*": [
-      "scripts/license/stamp.sh"
-    ],
-    "src/**/*.{js,jsx}": [
-      "sh -c 'exit 1'"
-    ],
-    "*.{ts,tsx},!docs/**/*": [
-      "eslint",
-      "prettier --check",
-      "sh scripts/typecheck-staged.sh"
-    ],
-    "*.css": [
-      "prettier --check",
-      "stylelint"
-    ]
+    "yup": "^0.32.8"
   },
   "files": [
     "dist/*",

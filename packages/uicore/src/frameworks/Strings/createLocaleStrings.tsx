@@ -89,7 +89,7 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
       ) : (
         <Tag {...(rest as unknown)}>{text}</Tag>
       )
-    } catch (e) {
+    } catch (e: any) {
       if (process.env.NODE_ENV !== 'production') {
         return <Tag style={{ color: 'var(--red-500)' }}>{e.message}</Tag>
       }

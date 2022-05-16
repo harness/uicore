@@ -1,0 +1,16 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "*.md"
+      ],
+      "registry": "https://npm.pkg.github.com/",
+      "message": "chore: publish new version"
+    }
+  },
+  "packages": [
+    "packages/*"
+  ]
+}

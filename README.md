@@ -2,6 +2,16 @@ This repo contains code used in the [Harness CD Community Edition](https://githu
 
 This repository contains implementation of [Next Generation UI Architecture](https://docs.google.com/document/d/1oe_cHcDyYhwjJ6QZqyOIlpUWGgYyeCIBfUOdElg2rBg/edit#heading=h.41cp29fl3vvn).
 
+This repo uses a [monorepo architechture](https://monorepo.tools/). We are using [yarn workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/) for dependency managment and [lerna](https://lerna.js.org/) for package publishing
+
+List of packages:
+
+- [@harness/design-system](./packages/design-system/)
+- [@harness/help-panel](./packages/help-panel/)
+- [@harness/icons](./packages/icons/)
+- [@harness/uicore](./packages/uicore/)
+- [@harness/use-modal](./packages/useModal/)
+
 ## Branches
 
 - `main` branch is on v3 and uses formik v2

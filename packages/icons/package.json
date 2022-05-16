@@ -11,7 +11,7 @@
     "dist/*"
   ],
   "scripts": {
-    "prebuild": "yarn clean",
+    "prebuild": "yarn clean && yarn ui:icons",
     "build": "vite build",
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn build",
@@ -23,13 +23,16 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {
+    "@harness/design-system": "^1.0.0",
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@harness/design-system": "*",
     "@svgr/core": "^6.2.1",
     "@svgr/plugin-svgo": "^6.2.0",
     "@types/react": "^17.0.3",
     "dts-bundle-generator": "^6.4.0",
+    "glob": "^7.1.4",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "typescript": "^4.1.3",
