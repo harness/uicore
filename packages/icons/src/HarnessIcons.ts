@@ -288,6 +288,7 @@ import GitopsClustersBlue from './gitops-clusters-blue.svg'
 import GitopsClusters from './gitops-clusters.svg'
 import GitopsGnupgKeyBlueCircle from './gitops-gnupg-key-blue-circle.svg'
 import GitopsGnupgKeyBlue from './gitops-gnupg-key-blue.svg'
+import GitopsGreen from './gitops-green.svg'
 import GitopsMissing from './gitops-missing.svg'
 import GitopsRepoCertBlue from './gitops-repo-cert-blue.svg'
 import GitopsRepositoryBlueCircle from './gitops-repository-blue-circle.svg'
@@ -1014,6 +1015,7 @@ type HarnessIconName =
   | 'gitops-clusters'
   | 'gitops-gnupg-key-blue-circle'
   | 'gitops-gnupg-key-blue'
+  | 'gitops-green'
   | 'gitops-missing'
   | 'gitops-repo-cert-blue'
   | 'gitops-repository-blue-circle'
@@ -1740,6 +1742,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-clusters': GitopsClusters,
   'gitops-gnupg-key-blue-circle': GitopsGnupgKeyBlueCircle,
   'gitops-gnupg-key-blue': GitopsGnupgKeyBlue,
+  'gitops-green': GitopsGreen,
   'gitops-missing': GitopsMissing,
   'gitops-repo-cert-blue': GitopsRepoCertBlue,
   'gitops-repository-blue-circle': GitopsRepositoryBlueCircle,
