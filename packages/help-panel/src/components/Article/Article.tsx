@@ -11,12 +11,13 @@ import { FontVariation, Color } from '@harness/design-system'
 import type { IArticle } from '../../types/contentfulTypes'
 import Container from '../Container'
 import RenderComponent from '../RenderComponent'
+import css from './Article.module.css'
 
 const Article: React.FC<IArticle> = (props: IArticle) => {
   const { title, description, body } = props
 
   return (
-    <Container border={{ bottom: true, color: Color.GREY_200 }} padding={{ top: 'xlarge', bottom: 'xlarge' }}>
+    <Container className={css.container}>
       <Container font={{ variation: FontVariation.H4 }} color={Color.PRIMARY_9} margin={{ bottom: 'medium' }}>
         {title}
       </Container>

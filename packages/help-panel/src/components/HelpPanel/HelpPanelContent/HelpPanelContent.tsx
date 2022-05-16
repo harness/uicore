@@ -8,12 +8,12 @@
 import React from 'react'
 import { Color } from '@harness/design-system'
 import Container from '../../Container'
-import RenderComponent from '../../RenderComponent'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { IHelpPanel } from '../../../types/contentfulTypes'
 import css from './HelpPanelContent.module.css'
 import Skeleton from '../../Skeleton/Skeleton'
+import Article from '../../Article/Article'
 
 interface Props {
   data: IHelpPanel
@@ -35,7 +35,7 @@ const HelpPanelContent: React.FC<Props> = ({ data, onClose, isLoading }) => {
           width="100%"
           style={{ top: HEADER_FOOTER_HEIGHT, height: `calc(100% - ${HEADER_FOOTER_HEIGHT * 2}px)` }}>
           {articles?.map(article => (
-            <RenderComponent key={article.sys.id} data={article} />
+            <Article key={article.sys.id} {...article.fields} />
           ))}
         </Container>
         <Footer />

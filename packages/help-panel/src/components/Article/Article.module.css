@@ -6,10 +6,9 @@
  */
 
 .container {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  padding: 0 var(--spacing-xlarge);
-  width: 100%;
+  padding: var(--spacing-xlarge) 0;
+  border-bottom: 1px solid var(--grey-200);
+}
+.container:last-child {
+  border-bottom: none;
 }
