@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.80.0](https://github.com/harness/uicore/compare/v2.79.0...v2.80.0) (2022-05-16)
+
+
+### Bug Fixes
+
+* [PL-22282]: Removed build:icons script from uicore ([#664](https://github.com/harness/uicore/issues/664)) ([e6c1ce8](https://github.com/harness/uicore/commit/e6c1ce8887d6c3ec4862bd318698f9b574a47ebe))
+
 ## [2.79.0](https://github.com/harness/uicore/compare/v2.78.0...v2.79.0) (2022-05-16)
 
 
