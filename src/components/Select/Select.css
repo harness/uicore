@@ -97,6 +97,31 @@
     padding: 7px 8px;
   }
 
+  :global(.icon-container) {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.tooltipContainer {
+  padding: var(--spacing-medium);
+  max-width: 500px;
+  max-height: 500px;
+  overflow: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.popover {
+  & :global(.bp3-menu) {
+    max-height: 350px;
+    overflow: auto;
+    min-width: 250px;
+    width: 100%;
+    padding: 0;
+  }
+
   & .menuItem {
     height: var(--spacing-8);
     padding: 0 var(--spacing-small);
@@ -144,21 +169,6 @@
       background: var(--primary-1);
     }
   }
-
-  :global(.icon-container) {
-    position: absolute;
-    right: 0;
-  }
-}
-
-.tooltipContainer {
-  padding: var(--spacing-medium);
-  max-width: 500px;
-  max-height: 500px;
-  overflow: auto;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
 }
 
 .createNewItemButton {
