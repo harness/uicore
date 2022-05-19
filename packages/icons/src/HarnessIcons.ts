@@ -290,12 +290,14 @@ import GitopsGnupgKeyBlueCircle from './gitops-gnupg-key-blue-circle.svg'
 import GitopsGnupgKeyBlue from './gitops-gnupg-key-blue.svg'
 import GitopsGreen from './gitops-green.svg'
 import GitopsMissing from './gitops-missing.svg'
+import GitopsNo from './gitops-no.svg'
 import GitopsRepoCertBlue from './gitops-repo-cert-blue.svg'
 import GitopsRepositoryBlueCircle from './gitops-repository-blue-circle.svg'
 import GitopsRepositoryBlue from './gitops-repository-blue.svg'
 import GitopsRepositoryCertificatesBlueCircle from './gitops-repository-certificates-blue-circle.svg'
 import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
+import GitopsYes from './gitops-yes.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import Governance from './governance.svg'
@@ -1017,12 +1019,14 @@ type HarnessIconName =
   | 'gitops-gnupg-key-blue'
   | 'gitops-green'
   | 'gitops-missing'
+  | 'gitops-no'
   | 'gitops-repo-cert-blue'
   | 'gitops-repository-blue-circle'
   | 'gitops-repository-blue'
   | 'gitops-repository-certificates-blue-circle'
   | 'gitops-suspended'
   | 'gitops-unknown'
+  | 'gitops-yes'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance'
@@ -1744,12 +1748,14 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-gnupg-key-blue': GitopsGnupgKeyBlue,
   'gitops-green': GitopsGreen,
   'gitops-missing': GitopsMissing,
+  'gitops-no': GitopsNo,
   'gitops-repo-cert-blue': GitopsRepoCertBlue,
   'gitops-repository-blue-circle': GitopsRepositoryBlueCircle,
   'gitops-repository-blue': GitopsRepositoryBlue,
   'gitops-repository-certificates-blue-circle': GitopsRepositoryCertificatesBlueCircle,
   'gitops-suspended': GitopsSuspended,
   'gitops-unknown': GitopsUnknown,
+  'gitops-yes': GitopsYes,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   governance: Governance,
