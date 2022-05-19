@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.82.0](https://github.com/harness/uicore/compare/v2.79.0...v2.82.0) (2022-05-19)
+
+
+### Features
+
+* [CDS-37040]: Add new icons for design updates on account resources and access control pages ([#666](https://github.com/harness/uicore/issues/666)) ([bbb62c5](https://github.com/harness/uicore/commit/bbb62c57b9ba5d2b376241382ecd38cf73ee0c8e))
+* [CI-4336]: Manual package version bump ([#669](https://github.com/harness/uicore/issues/669)) ([8d58233](https://github.com/harness/uicore/commit/8d58233a80b2185358815f89bfc3bc16022fb281))
+* [CI-4336]: Updating UX as per feedback for MultiStepProgressIndicator ([#668](https://github.com/harness/uicore/issues/668)) ([6bb1988](https://github.com/harness/uicore/commit/6bb1988bf416d9559e3d21ef85f3878344d30e28))
+* Update cloudformation icons ([#667](https://github.com/harness/uicore/issues/667)) ([ca7e753](https://github.com/harness/uicore/commit/ca7e7537006b3e4b385ad538a858dade0613a652))
+
+
+### Bug Fixes
+
+* [PIE-2699]: select popover portal css ([#612](https://github.com/harness/uicore/issues/612)) ([4825a5c](https://github.com/harness/uicore/commit/4825a5ce6cd95801896ddc02daa01e57645c9a10))
+* [PL-22282]: Removed build:icons script from uicore ([#664](https://github.com/harness/uicore/issues/664)) ([e6c1ce8](https://github.com/harness/uicore/commit/e6c1ce8887d6c3ec4862bd318698f9b574a47ebe))
+* [PL-25072]: Help panel UX review fixes and design improvements ([#659](https://github.com/harness/uicore/issues/659)) ([106be50](https://github.com/harness/uicore/commit/106be50d6d8d30d3d56501464e3e5746eb0b4795))
+* add remote setup icon for git exp 2.0 changes ([#665](https://github.com/harness/uicore/issues/665)) ([5f3c564](https://github.com/harness/uicore/commit/5f3c56400caf3a0f79eb9b0d0a2fc9f2395e74bd))
+
 ## [2.79.0](https://github.com/harness/uicore/compare/v2.78.0...v2.79.0) (2022-05-16)
 
 
