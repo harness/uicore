@@ -54,7 +54,7 @@ export const MultiStepProgressIndicatorComp: Story<MultiStepProgressIndicatorPro
 MultiStepProgressIndicatorComp.args = {
   progressMap: new Map([
     [0, 'SUCCESS'],
-    [1, 'FAILED'],
+    [1, 'SUCCESS'],
     [2, 'INPROGRESS'],
     [3, 'TODO']
   ])

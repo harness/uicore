@@ -23,7 +23,7 @@ const Dot: React.FC<{ status: StepStatus }> = ({ status }) => {
     case 'TODO':
     case 'INPROGRESS':
     case 'FAILED':
-      return <div className={cx(css.dot, css.spacing)} />
+      return <div className={cx(css.dot, css.dotOutLine, css.spacing)} />
     case 'SUCCESS':
       return <div className={cx(css.dot, css.dotSuccess, css.spacing)} />
     default:
@@ -34,11 +34,26 @@ const Dot: React.FC<{ status: StepStatus }> = ({ status }) => {
 const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
   switch (status) {
     case 'TODO':
-    case 'INPROGRESS':
     case 'FAILED':
-      return <div className={css.bar} />
+      return (
+        <div className={css.statusBar}>
+          <div className={cx(css.bar, css.fullBar)} />
+        </div>
+      )
+    case 'INPROGRESS':
+      return (
+        <div className={css.statusBar}>
+          <div className={cx(css.bar, css.fullBar)} />
+          <div className={cx(css.bar, css.barSuccess, css.halfBar)} />
+        </div>
+      )
     case 'SUCCESS':
-      return <div className={cx(css.bar, css.barSuccess)} />
+      return (
+        <div className={css.statusBar}>
+          <div className={cx(css.bar, css.fullBar)} />
+          <div className={cx(css.bar, css.barSuccess, css.fullBar)} />
+        </div>
+      )
     default:
       return null
   }
@@ -52,8 +67,8 @@ export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProp
     const status = value[1]
     elements.push(
       <Layout.Horizontal flex key={index}>
+        {index !== 0 ? <Bar status={status} /> : null}
         <Dot status={status} />
-        {index !== progressMap.size - 1 ? <Bar status={status} /> : null}
       </Layout.Horizontal>
     )
   })
