@@ -5,24 +5,54 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
+:root {
+  --barWidth: 25px;
+}
+
+.dotOutLine {
+  outline: 1px solid var(--grey-200);
+}
+
 .dot {
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background: var(--grey-200);
-  border: 1.35714px solid var(--white);
+  border: 3px solid var(--white);
+  background: var(--grey-300);
   box-sizing: border-box;
 }
 
+.dotSuccess {
+  background: var(--primary-6);
+  border: 3px solid var(--primary-4);
+  outline: 0.1px solid var(--primary-4);
+}
+
+.halfBar {
+  width: var(--barWidth);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.fullBar {
+  width: calc(2 * (var(--barWidth)));
+}
+
+.statusBar {
+  height: 5px;
+  width: calc(2 * (var(--barWidth)));
+  position: relative;
+}
+
 .bar {
-  width: 23px;
-  height: 3px;
+  height: 5px;
+  position: absolute;
   background: var(--grey-200);
-  border-radius: 10px;
 }
 
 .barSuccess {
-  background: var(--green-600);
+  height: 5px;
+  background: linear-gradient(var(--teal-300), var(--primary-6));
 }
 
 .spacing {

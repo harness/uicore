@@ -9,8 +9,6 @@ import React from 'react'
 import cx from 'classnames'
 
 import { Layout } from '../../layouts/Layout'
-import { Icon } from '@harness/icons'
-import { Color } from '@harness/design-system'
 
 import css from './MultiStepProgressIndicator.css'
 
@@ -23,13 +21,11 @@ export interface MultiStepProgressIndicatorProps {
 const Dot: React.FC<{ status: StepStatus }> = ({ status }) => {
   switch (status) {
     case 'TODO':
-      return <div className={cx(css.dot, css.spacing)} />
     case 'INPROGRESS':
-      return <Icon name="steps-spinner" size={20} color={Color.GREEN_600} className={css.spacing} />
     case 'FAILED':
-      return <Icon name="circle-cross" size={20} color={Color.RED_600} className={css.spacing} />
+      return <div className={cx(css.dot, css.dotOutLine, css.spacing)} />
     case 'SUCCESS':
-      return <Icon name="success-tick" size={22} />
+      return <div className={cx(css.dot, css.dotSuccess, css.spacing)} />
     default:
       return null
   }
@@ -38,11 +34,26 @@ const Dot: React.FC<{ status: StepStatus }> = ({ status }) => {
 const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
   switch (status) {
     case 'TODO':
-    case 'INPROGRESS':
     case 'FAILED':
-      return <div className={css.bar} />
+      return (
+        <div className={css.statusBar}>
+          <div className={cx(css.bar, css.fullBar)} />
+        </div>
+      )
+    case 'INPROGRESS':
+      return (
+        <div className={css.statusBar}>
+          <div className={cx(css.bar, css.fullBar)} />
+          <div className={cx(css.bar, css.barSuccess, css.halfBar)} />
+        </div>
+      )
     case 'SUCCESS':
-      return <div className={cx(css.bar, css.barSuccess)} />
+      return (
+        <div className={css.statusBar}>
+          <div className={cx(css.bar, css.fullBar)} />
+          <div className={cx(css.bar, css.barSuccess, css.fullBar)} />
+        </div>
+      )
     default:
       return null
   }
@@ -56,8 +67,8 @@ export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProp
     const status = value[1]
     elements.push(
       <Layout.Horizontal flex key={index}>
+        {index !== 0 ? <Bar status={status} /> : null}
         <Dot status={status} />
-        {index !== progressMap.size - 1 ? <Bar status={status} /> : null}
       </Layout.Horizontal>
     )
   })

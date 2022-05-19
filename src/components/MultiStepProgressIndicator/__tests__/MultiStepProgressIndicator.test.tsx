@@ -23,9 +23,19 @@ describe('Test MultiStepProgressIndicator', () => {
         }
       />
     )
-    expect(document.body.getElementsByClassName('bp3-icon StyledProps--main').length).toBe(3)
-    expect(document.body.getElementsByClassName('bar').length).toBe(3)
-    expect(document.body.getElementsByClassName('bar barSuccess').length).toBe(1)
+
+    const noOfSuccessfulSteps = 1
+    const noOfNotSuccessfulSteps = 3
+
+    // show should 3 grey dots
+    expect(document.body.getElementsByClassName('dot dotOutLine spacing').length).toBe(noOfNotSuccessfulSteps)
+    // should show 1 blue success dot
+    expect(document.body.getElementsByClassName('dot dotSuccess spacing').length).toBe(noOfSuccessfulSteps)
+
+    // show should 2 full grey and 1 half bar
+    expect(document.body.getElementsByClassName('bar fullBar').length).toBe(noOfNotSuccessfulSteps)
+    // should show 1 blue success half bar
+    expect(document.body.getElementsByClassName('bar barSuccess halfBar').length).toBe(noOfSuccessfulSteps)
 
     expect(container).toMatchSnapshot()
   })
