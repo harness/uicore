@@ -9,8 +9,6 @@ import React from 'react'
 import cx from 'classnames'
 
 import { Layout } from '../../layouts/Layout'
-import { Icon } from '@harness/icons'
-import { Color } from '@harness/design-system'
 
 import css from './MultiStepProgressIndicator.css'
 
@@ -23,13 +21,11 @@ export interface MultiStepProgressIndicatorProps {
 const Dot: React.FC<{ status: StepStatus }> = ({ status }) => {
   switch (status) {
     case 'TODO':
-      return <div className={cx(css.dot, css.spacing)} />
     case 'INPROGRESS':
-      return <Icon name="steps-spinner" size={20} color={Color.GREEN_600} className={css.spacing} />
     case 'FAILED':
-      return <Icon name="circle-cross" size={20} color={Color.RED_600} className={css.spacing} />
+      return <div className={cx(css.dot, css.spacing)} />
     case 'SUCCESS':
-      return <Icon name="success-tick" size={22} />
+      return <div className={cx(css.dot, css.dotSuccess, css.spacing)} />
     default:
       return null
   }
