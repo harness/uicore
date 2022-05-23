@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/harness/uicore/compare/v2.83.0...v3.1.0) (2022-05-23)
+
+
+### Bug Fixes
+
+* TS issue in FormikForm ([#672](https://github.com/harness/uicore/issues/672)) ([073828d](https://github.com/harness/uicore/commit/073828d193e2f015b1c2d903f0d4d78ef81a4716))
+
+
+### Others
+
+* bump to v3 ([#671](https://github.com/harness/uicore/issues/671)) ([4259a8f](https://github.com/harness/uicore/commit/4259a8f15a44474cb6e6b931f5646386b1436f52))
+
 ## [2.83.0](https://github.com/harness/uicore/compare/v2.82.0...v2.83.0) (2022-05-19)
 
 
