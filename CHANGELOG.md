@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/harness/uicore/compare/v3.1.0...v3.2.0) (2022-05-23)
+
+
+### Bug Fixes
+
+* inverse jenkins icon added ([#673](https://github.com/harness/uicore/issues/673)) ([6d5cd75](https://github.com/harness/uicore/commit/6d5cd7535075a7303a7c577d439187dc53a50583))
+
 ## [3.1.0](https://github.com/harness/uicore/compare/v2.83.0...v3.1.0) (2022-05-23)
 
 
