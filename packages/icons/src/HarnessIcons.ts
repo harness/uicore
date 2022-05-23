@@ -612,6 +612,7 @@ import ServiceGithub from './service-github.svg'
 import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
 import ServiceInstana from './service-instana.svg'
+import ServiceJenkinsInverse from './service-jenkins-inverse.svg'
 import ServiceJenkins from './service-jenkins.svg'
 import ServiceJiraInverse from './service-jira-inverse.svg'
 import ServiceJira from './service-jira.svg'
@@ -1341,6 +1342,7 @@ type HarnessIconName =
   | 'service-gotlab'
   | 'service-helm'
   | 'service-instana'
+  | 'service-jenkins-inverse'
   | 'service-jenkins'
   | 'service-jira-inverse'
   | 'service-jira'
@@ -2070,6 +2072,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-gotlab': ServiceGotlab,
   'service-helm': ServiceHelm,
   'service-instana': ServiceInstana,
+  'service-jenkins-inverse': ServiceJenkinsInverse,
   'service-jenkins': ServiceJenkins,
   'service-jira-inverse': ServiceJiraInverse,
   'service-jira': ServiceJira,
