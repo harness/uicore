@@ -831,8 +831,7 @@ const Form = (props: FormikFormProps) => {
 }
 
 export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
-  formLoading?: true
-  // render?: (props: FormikExtended<Values>) => React.ReactNode
+  formLoading?: boolean
   onSubmit: (values: Values, formikActions: FormikHelpers<Values>) => void | Promise<Values>
   formName: string
 }
@@ -856,35 +855,6 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
     },
     [onSubmit]
   )
-
-  // const renderLocal = React.useCallback(
-  //   (formik: FormikExtended<any>) => {
-  //     return <OverlaySpinner show={isFormLoading}>{render?.(formik)}</OverlaySpinner>
-  //   },
-  //   [render, isFormLoading]
-  // )
-  //
-  // const functionRenderLocal = React.useCallback(
-  //   (formik: FormikExtended<any>) => {
-  //     return (
-  //       <OverlaySpinner show={isFormLoading}>
-  //         {(children as (props: FormikExtended<any>) => React.ReactNode)(formik)}
-  //       </OverlaySpinner>
-  //     )
-  //   },
-  //   [children, isFormLoading]
-  // )
-
-  // let renderProps: { render?: any } = {}
-  // if (render) {
-  //   renderProps = {
-  //     render: renderLocal
-  //   }
-  // } else if (isFunction(children)) {
-  //   renderProps = {
-  //     render: functionRenderLocal
-  //   }
-  // }
 
   return (
     <FormikTooltipContext.Provider value={{ formName: props.formName }}>
