@@ -2,6 +2,13 @@ This repo contains code used in the [Harness CD Community Edition](https://githu
 
 This repository contains implementation of [Next Generation UI Architecture](https://docs.google.com/document/d/1oe_cHcDyYhwjJ6QZqyOIlpUWGgYyeCIBfUOdElg2rBg/edit#heading=h.41cp29fl3vvn).
 
+## Branches
+
+- `main` branch is on v3 and uses formik v2
+- `v2` branch is on v2 and uses formik v1
+
+> > Note: If you need your fix/feature in UICore v2, please one a PR against v2 also.
+
 ## Local development
 
 - `yarn setup` - to set up authentication to access Github Package Registry
