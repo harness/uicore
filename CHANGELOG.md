@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/harness/uicore/compare/v3.2.0...v3.3.0) (2022-05-24)
+
+
+### Bug Fixes
+
+* [PL-22282]: Icons version bump ([#675](https://github.com/harness/uicore/issues/675)) ([7444209](https://github.com/harness/uicore/commit/74442090e8444e2ceddcca9261f3f7496b8f0a6f))
+
 ## [3.2.0](https://github.com/harness/uicore/compare/v3.1.0...v3.2.0) (2022-05-23)
 
 
