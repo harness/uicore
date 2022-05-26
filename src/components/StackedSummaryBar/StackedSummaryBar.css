@@ -6,7 +6,7 @@
  */
 
 .summaryCount {
-  width: 30px;
+  width: var(--spacing-10);
   text-align: right;
 }
 
