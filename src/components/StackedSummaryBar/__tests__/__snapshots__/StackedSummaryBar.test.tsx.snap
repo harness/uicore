@@ -12,8 +12,7 @@ exports[`StackedSummaryBar Stack with 0 trend 1`] = `
         class="bp3-popover-target targetClass"
       >
         <p
-          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
-          style="--text-line-clamp: 1;"
+          class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
           tabindex="0"
         >
           60
@@ -80,8 +79,7 @@ exports[`StackedSummaryBar Stack with infinity trend 1`] = `
         class="bp3-popover-target targetClass"
       >
         <p
-          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
-          style="--text-line-clamp: 1;"
+          class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
           tabindex="0"
         >
           60
@@ -148,8 +146,7 @@ exports[`StackedSummaryBar Stack with negative trend 1`] = `
         class="bp3-popover-target targetClass"
       >
         <p
-          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
-          style="--text-line-clamp: 1;"
+          class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
           tabindex="0"
         >
           60
@@ -216,8 +213,7 @@ exports[`StackedSummaryBar Stack with positive trend 1`] = `
         class="bp3-popover-target targetClass"
       >
         <p
-          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
-          style="--text-line-clamp: 1;"
+          class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
           tabindex="0"
         >
           60
@@ -284,8 +280,7 @@ exports[`StackedSummaryBar Stack without trend 1`] = `
         class="bp3-popover-target targetClass"
       >
         <p
-          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
-          style="--text-line-clamp: 1;"
+          class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
           tabindex="0"
         >
           60
