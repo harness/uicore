@@ -5,11 +5,21 @@ exports[`StackedSummaryBar Stack with 0 trend 1`] = `
   <div
     class="horizontal layout-spacing-small StyledProps--main"
   >
-    <p
-      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    <span
+      class="bp3-popover-wrapper"
     >
-      60
-    </p>
+      <span
+        class="bp3-popover-target targetClass"
+      >
+        <p
+          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
+          style="--text-line-clamp: 1;"
+          tabindex="0"
+        >
+          60
+        </p>
+      </span>
+    </span>
     <div
       class="StyledProps--font StyledProps--main StyledProps--flex"
     >
@@ -63,11 +73,21 @@ exports[`StackedSummaryBar Stack with infinity trend 1`] = `
   <div
     class="horizontal layout-spacing-small StyledProps--main"
   >
-    <p
-      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    <span
+      class="bp3-popover-wrapper"
     >
-      60
-    </p>
+      <span
+        class="bp3-popover-target targetClass"
+      >
+        <p
+          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
+          style="--text-line-clamp: 1;"
+          tabindex="0"
+        >
+          60
+        </p>
+      </span>
+    </span>
     <div
       class="StyledProps--font StyledProps--main StyledProps--flex"
     >
@@ -121,11 +141,21 @@ exports[`StackedSummaryBar Stack with negative trend 1`] = `
   <div
     class="horizontal layout-spacing-small StyledProps--main"
   >
-    <p
-      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    <span
+      class="bp3-popover-wrapper"
     >
-      60
-    </p>
+      <span
+        class="bp3-popover-target targetClass"
+      >
+        <p
+          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
+          style="--text-line-clamp: 1;"
+          tabindex="0"
+        >
+          60
+        </p>
+      </span>
+    </span>
     <div
       class="StyledProps--font StyledProps--main StyledProps--flex"
     >
@@ -179,11 +209,21 @@ exports[`StackedSummaryBar Stack with positive trend 1`] = `
   <div
     class="horizontal layout-spacing-small StyledProps--main"
   >
-    <p
-      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    <span
+      class="bp3-popover-wrapper"
     >
-      60
-    </p>
+      <span
+        class="bp3-popover-target targetClass"
+      >
+        <p
+          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
+          style="--text-line-clamp: 1;"
+          tabindex="0"
+        >
+          60
+        </p>
+      </span>
+    </span>
     <div
       class="StyledProps--font StyledProps--main StyledProps--flex"
     >
@@ -237,11 +277,21 @@ exports[`StackedSummaryBar Stack without trend 1`] = `
   <div
     class="horizontal layout-spacing-small StyledProps--main"
   >
-    <p
-      class="StyledProps--font StyledProps--main summaryCount StyledProps--font-small"
+    <span
+      class="bp3-popover-wrapper"
     >
-      60
-    </p>
+      <span
+        class="bp3-popover-target targetClass"
+      >
+        <p
+          class="StyledProps--font lineclamp StyledProps--main summaryCount StyledProps--font-small"
+          style="--text-line-clamp: 1;"
+          tabindex="0"
+        >
+          60
+        </p>
+      </span>
+    </span>
     <div
       class="StyledProps--font StyledProps--main StyledProps--flex"
     >
