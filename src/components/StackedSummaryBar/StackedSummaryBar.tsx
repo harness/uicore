@@ -13,7 +13,6 @@ import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { handleZeroOrInfinityTrend, renderTrend } from './utils'
 import { Position } from '@blueprintjs/core'
-import { numberFormatter } from '../../utils/numberFormatter'
 
 export interface StackedBarSectionData {
   count: number
@@ -63,7 +62,13 @@ export const StackedSummaryBar: React.FC<StackedSummaryBarProps> = props => {
   barSections.push({ width: (1 - summaryCount / maxCount) * effectiveBarLength, color: Color.GREY_100 })
 
   const formattedSummaryCount = React.useMemo(() => {
-    return numberFormatter(summaryCount)
+    return new Intl.NumberFormat('default', {
+      notation: 'compact',
+      compactDisplay: 'short',
+      unitDisplay: 'long',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 1
+    }).format(summaryCount)
   }, [summaryCount])
 
   return (

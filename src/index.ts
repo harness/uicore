@@ -226,6 +226,5 @@ export {
   MultiStepProgressIndicator,
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
-export { numberFormatter } from '../src/utils/numberFormatter'
 export * from '@harness/design-system'
 export * from '@harness/icons'
