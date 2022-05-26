@@ -67,7 +67,7 @@ export const StackedSummaryBar: React.FC<StackedSummaryBarProps> = props => {
       compactDisplay: 'short',
       unitDisplay: 'long',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 1
+      maximumFractionDigits: 2
     }).format(summaryCount)
   }, [summaryCount])
 
@@ -76,7 +76,6 @@ export const StackedSummaryBar: React.FC<StackedSummaryBarProps> = props => {
       <Text
         font="small"
         className={css.summaryCount}
-        lineClamp={1}
         tooltip={<Text padding={'small'}>{summaryCount}</Text>}
         alwaysShowTooltip={true}
         tooltipProps={{

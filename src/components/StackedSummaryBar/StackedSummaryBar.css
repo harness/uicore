@@ -8,6 +8,7 @@
 .summaryCount {
   width: var(--spacing-10);
   text-align: right;
+  white-space: nowrap !important;
 }
 
 .barSection {
