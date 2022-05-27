@@ -12,6 +12,7 @@ import { Color, Intent } from '@harness/design-system'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { handleZeroOrInfinityTrend, renderTrend } from './utils'
+import { Position } from '@blueprintjs/core'
 
 export interface StackedBarSectionData {
   count: number
@@ -60,10 +61,27 @@ export const StackedSummaryBar: React.FC<StackedSummaryBarProps> = props => {
   // leftover section relative to maxCount should be as blank
   barSections.push({ width: (1 - summaryCount / maxCount) * effectiveBarLength, color: Color.GREY_100 })
 
+  const formattedSummaryCount = React.useMemo(() => {
+    return new Intl.NumberFormat('default', {
+      notation: 'compact',
+      compactDisplay: 'short',
+      unitDisplay: 'long',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2
+    }).format(summaryCount)
+  }, [summaryCount])
+
   return (
     <Layout.Horizontal spacing="small">
-      <Text font="small" className={css.summaryCount}>
-        {summaryCount}
+      <Text
+        font="small"
+        className={css.summaryCount}
+        tooltip={<Text padding={'small'}>{summaryCount}</Text>}
+        alwaysShowTooltip={true}
+        tooltipProps={{
+          position: Position.TOP_RIGHT
+        }}>
+        {formattedSummaryCount}
       </Text>
       <Container flex>
         {barSections.map((barSection: BarSection, index: number) => {
