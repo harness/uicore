@@ -457,13 +457,9 @@ import NavHarness from './nav-harness.svg'
 import NavHelp from './nav-help.svg'
 import NavInfrastructureHover from './nav-infrastructure-hover.svg'
 import NavInfrastructureSelected from './nav-infrastructure-selected.svg'
-import NavOrganizationHover from './nav-organization-hover.svg'
-import NavOrganizationSelected from './nav-organization-selected.svg'
-import NavPipelinesHover from './nav-pipelines-hover.svg'
+import NavOrganization from './nav-organization.svg'
 import NavPipelinesSelected from './nav-pipelines-selected.svg'
 import NavPipelines from './nav-pipelines.svg'
-import NavProjectHover from './nav-project-hover.svg'
-import NavProjectSelected from './nav-project-selected.svg'
 import NavProject from './nav-project.svg'
 import NavResourcesHover from './nav-resources-hover.svg'
 import NavResourcesSelected from './nav-resources-selected.svg'
@@ -1187,13 +1183,9 @@ type HarnessIconName =
   | 'nav-help'
   | 'nav-infrastructure-hover'
   | 'nav-infrastructure-selected'
-  | 'nav-organization-hover'
-  | 'nav-organization-selected'
-  | 'nav-pipelines-hover'
+  | 'nav-organization'
   | 'nav-pipelines-selected'
   | 'nav-pipelines'
-  | 'nav-project-hover'
-  | 'nav-project-selected'
   | 'nav-project'
   | 'nav-resources-hover'
   | 'nav-resources-selected'
@@ -1917,13 +1909,9 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-help': NavHelp,
   'nav-infrastructure-hover': NavInfrastructureHover,
   'nav-infrastructure-selected': NavInfrastructureSelected,
-  'nav-organization-hover': NavOrganizationHover,
-  'nav-organization-selected': NavOrganizationSelected,
-  'nav-pipelines-hover': NavPipelinesHover,
+  'nav-organization': NavOrganization,
   'nav-pipelines-selected': NavPipelinesSelected,
   'nav-pipelines': NavPipelines,
-  'nav-project-hover': NavProjectHover,
-  'nav-project-selected': NavProjectSelected,
   'nav-project': NavProject,
   'nav-resources-hover': NavResourcesHover,
   'nav-resources-selected': NavResourcesSelected,
