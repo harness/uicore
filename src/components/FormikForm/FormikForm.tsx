@@ -561,9 +561,9 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
       intent={intent}
       disabled={disabled}
       inline={inline}
-      usePortal={!!props.usePortal}
       {...rest}>
       <UiKitSelect
+        usePortal={!!props.usePortal}
         name={name}
         addClearBtn={props.addClearButton || false}
         inputProps={{
