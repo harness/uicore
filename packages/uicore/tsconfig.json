@@ -2,7 +2,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "alwaysStrict": true,
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "target": "ES6",
+    "jsx": "react"
   },
   "include": ["./src/**/*"]
 }

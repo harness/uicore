@@ -34,7 +34,11 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
-        options: { transpileOnly: isDev }
+        options: {
+          transpileOnly: true,
+          configFile: path.resolve(__dirname, 'tsconfig.json'),
+          onlyCompileBundledFiles: true
+        }
       },
       {
         test: /\.css$/,
@@ -42,12 +46,12 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { }
+            options: {}
           },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              sourceMap: isDev,
               modules: {
                 mode: 'local',
                 localIdentName: '[name]--[local]'
@@ -59,11 +63,7 @@ module.exports = {
             options: {
               sourceMap: isDev,
               postcssOptions: {
-                plugins: [
-                  require('postcss-import')(),
-                  require('postcss-mixins')(),
-                  require('postcss-nested')()
-              ]
+                plugins: [require('postcss-import')(), require('postcss-mixins')(), require('postcss-nested')()]
               }
             }
           }
