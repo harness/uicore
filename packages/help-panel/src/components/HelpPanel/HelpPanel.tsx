@@ -7,7 +7,7 @@
 
 import { Color } from '@harness/design-system'
 import React from 'react'
-import { Error, useContentful } from '../../HelpPanelContext'
+import { Error, HelpPanelContext, useContentful } from '../../HelpPanelContext'
 import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
 import DefaultContainer from './Containers/DefaultContainer/DefaultContainer'
 import FloatingContainer from './Containers/FloatingContainer/FloatingContainer'
@@ -28,17 +28,7 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
   let floatingBtnRef: HTMLButtonElement
 
-  const {
-    data = {
-      backgroundColor: Color.WHITE,
-      articles: []
-    },
-    loading,
-    error
-  } = useContentful<IHelpPanel>({
-    referenceId,
-    content_type: ContentType.helpPanel
-  })
+  const { error } = React.useContext(HelpPanelContext)
 
   if (error === Error.ERROR_INITIALIZING_CONTENTFUL) {
     return null
@@ -52,8 +42,7 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
             floatingBtnRef = node
           }}>
           <HelpPanelContent
-            data={data}
-            isLoading={loading}
+            referenceId={referenceId}
             onClose={() => {
               floatingBtnRef?.click()
             }}
@@ -61,11 +50,11 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
         </FloatingContainer>
       )
     case HelpPanelType.CONTENT_ONLY:
-      return <HelpPanelContent data={data} isLoading={loading} onClose={props.onClose} />
+      return <HelpPanelContent referenceId={referenceId} onClose={props.onClose} />
     default:
       return (
         <DefaultContainer>
-          <HelpPanelContent data={data} isLoading={loading} />
+          <HelpPanelContent referenceId={referenceId} />
         </DefaultContainer>
       )
   }

@@ -5,9 +5,16 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-.closeBtn {
-  height: 13px;
-  width: 13px;
-  cursor: pointer;
-  margin-left: auto;
+.errorIcon {
+  height: 144px;
+  width: 144px;
+}
+
+.harnessDocButton {
+  height: 30px;
+  padding: 5px 10px;
+  background: var(--primary-7);
+  color: var(--white);
+  border-radius: 4px;
+  margin-top: 12px;
 }
