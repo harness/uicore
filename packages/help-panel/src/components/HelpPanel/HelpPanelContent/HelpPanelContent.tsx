@@ -35,7 +35,7 @@ const HelpPanelContent: React.FC<Props> = ({ onClose, referenceId }) => {
     return (
       <>
         <Header title={title} onClose={onClose} />
-        {!error || articles?.length === 0 ? (
+        {!error && articles?.length !== 0 ? (
           <Container
             className={css.centerContainer}
             padding={{ left: 'xlarge', right: 'xlarge' }}
