@@ -7,8 +7,8 @@
 
 .floatingContainer {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 5px;
+  bottom: 60px;
   z-index: 1000;
   .floatingContent {
     position: absolute;
