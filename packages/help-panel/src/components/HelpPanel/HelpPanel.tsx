@@ -5,10 +5,8 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Color } from '@harness/design-system'
 import React from 'react'
-import { Error, HelpPanelContext, useContentful } from '../../HelpPanelContext'
-import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
+import { Error, HelpPanelContext } from '../../HelpPanelContext'
 import DefaultContainer from './Containers/DefaultContainer/DefaultContainer'
 import FloatingContainer from './Containers/FloatingContainer/FloatingContainer'
 import HelpPanelContent from './HelpPanelContent/HelpPanelContent'
