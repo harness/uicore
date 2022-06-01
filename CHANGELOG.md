@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.9.0](https://github.com/harness/uicore/compare/v3.8.0...v3.9.0) (2022-06-01)
+
+
+### Features
+
+* add support for execution time input ([#688](https://github.com/harness/uicore/issues/688)) ([ed1e5f9](https://github.com/harness/uicore/commit/ed1e5f96ba6b362e70052a3ff92e35c27ab0eed9))
+
 ## [3.8.0](https://github.com/harness/uicore/compare/v3.7.0...v3.8.0) (2022-06-01)
 
 
