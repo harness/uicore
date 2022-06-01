@@ -32,4 +32,5 @@ export const MultiTypeIconSize: Record<string, number> = {
 }
 
 export const RUNTIME_INPUT_VALUE = '<+input>'
+export const EXECUTION_TIME_INPUT_VALUE = '<+input>.executionInput()'
 export const EXPRESSION_INPUT_PLACEHOLDER = '<+expression>'
