@@ -134,8 +134,15 @@ export function Select(props: SelectProps): React.ReactElement {
     ...rest
   } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
+
   const showClearBtn =
-    !!addClearBtn && value !== null && typeof value?.value !== undefined && value?.value !== null && value?.value !== ''
+    !!addClearBtn &&
+    value !== null &&
+    value !== undefined &&
+    (value as any) !== '' &&
+    value?.value !== undefined &&
+    value?.value !== null &&
+    value?.value !== ''
 
   React.useEffect(() => {
     setItem(value)
