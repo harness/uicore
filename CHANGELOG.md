@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.8.0](https://github.com/harness/uicore/compare/v3.7.0...v3.8.0) (2022-06-01)
+
+
+### Features
+
+* [PL-25560]: Help panel improvements ([#686](https://github.com/harness/uicore/issues/686)) ([823c808](https://github.com/harness/uicore/commit/823c808fd9d0f05c999b11c3ce71bd7c8c487358))
+
+
+### Bug Fixes
+
+* [PL-24968]: should clear false values ([#687](https://github.com/harness/uicore/issues/687)) ([758285b](https://github.com/harness/uicore/commit/758285bf628e114fa9c0040d3fb55636ac5a5bca))
+
 ## [3.7.0](https://github.com/harness/uicore/compare/v3.2.0...v3.7.0) (2022-05-30)
 
 
