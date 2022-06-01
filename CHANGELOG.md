@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.10.0](https://github.com/harness/uicore/compare/v3.9.0...v3.10.0) (2022-06-01)
+
+
+### Bug Fixes
+
+* [PL-24968]: select clear button fixes ([#689](https://github.com/harness/uicore/issues/689)) ([b915980](https://github.com/harness/uicore/commit/b91598016bfdb3c741340473a971ee99de6d694d))
+
 ## [3.9.0](https://github.com/harness/uicore/compare/v3.8.0...v3.9.0) (2022-06-01)
 
 
