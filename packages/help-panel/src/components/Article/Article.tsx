@@ -7,6 +7,7 @@
 
 import React from 'react'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { INLINES, Text } from '@contentful/rich-text-types'
 import { FontVariation, Color } from '@harness/design-system'
 import type { IArticle } from '../../types/contentfulTypes'
 import Container from '../Container'
@@ -21,7 +22,19 @@ const Article: React.FC<IArticle> = (props: IArticle) => {
       <Container font={{ variation: FontVariation.H4 }} color={Color.PRIMARY_9} margin={{ bottom: 'medium' }}>
         {title}
       </Container>
-      {description ? documentToReactComponents(description) : undefined}
+      {description
+        ? documentToReactComponents(description, {
+            renderNode: {
+              [INLINES.HYPERLINK]: node => {
+                return (
+                  <a href={node.data.uri} target={'_blank'}>
+                    {(node.content[0] as Text).value}
+                  </a>
+                )
+              }
+            }
+          })
+        : undefined}
       {body?.map(item => (
         <RenderComponent key={item.sys.id} data={item} />
       ))}
