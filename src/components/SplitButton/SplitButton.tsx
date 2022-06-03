@@ -11,9 +11,16 @@ import React, { MouseEvent } from 'react'
 import { Button, ButtonProps, Popover } from '../..'
 import css from './SplitButton.css'
 
-type SplitButtonProps = Omit<ButtonProps, 'rightIcon'>
+type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & { className?: string }
 
-export const SplitButton: React.FC<SplitButtonProps> = ({ onClick, text, icon, children, ...rest }) => {
+export const SplitButton: React.FC<SplitButtonProps> = ({
+  onClick,
+  text,
+  icon,
+  children,
+  className,
+  ...commonProps
+}) => {
   const [isOptionsOpen, setOptionsOpen] = React.useState(false)
 
   const handleClick = async (event: MouseEvent) => {
@@ -22,7 +29,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({ onClick, text, icon, c
 
   return (
     <div className={css.splitButton}>
-      <Button {...rest} onClick={handleClick} text={text} icon={icon} className={cx(css.main)} />
+      <Button {...commonProps} onClick={handleClick} text={text} icon={icon} className={cx(css.main)} />
       <Popover
         isOpen={isOptionsOpen}
         onInteraction={nextOpenState => {
@@ -33,12 +40,22 @@ export const SplitButton: React.FC<SplitButtonProps> = ({ onClick, text, icon, c
         minimal={true}
         fill={false}
         position={Position.BOTTOM_RIGHT}>
-        <Button rightIcon="chevron-down" {...rest} onClick={() => setOptionsOpen(true)} className={cx(css.dropdown)} />
+        <Button
+          rightIcon="chevron-down"
+          {...commonProps}
+          onClick={() => setOptionsOpen(true)}
+          className={cx(css.dropdown, className)}
+        />
       </Popover>
     </div>
   )
 }
 
-export const SplitButtonOption: React.FC<IMenuItemProps> = ({ onClick, icon, text }) => {
-  return <MenuItem icon={icon} onClick={onClick} text={text} className={cx(css.splitButtonOption)} />
+export const SplitButtonOption: React.FC<IMenuItemProps & { className?: string }> = ({
+  onClick,
+  icon,
+  text,
+  className
+}) => {
+  return <MenuItem icon={icon} onClick={onClick} text={text} className={cx(css.splitButtonOption, className)} />
 }
