@@ -5,10 +5,9 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
-import { render, screen, fireEvent, act, findByRole, waitForElementToBeRemoved } from '@testing-library/react'
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-
+import React from 'react'
 import { SplitButton, SplitButtonOption } from '../..'
 
 describe('SplitButton interaction', () => {
