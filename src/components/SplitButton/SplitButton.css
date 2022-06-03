@@ -21,7 +21,7 @@
     position: absolute;
     left: 0;
     top: 20%;
-    background-color: #fff;
+    background-color: var(--white);
   }
 }
 
@@ -42,6 +42,10 @@
       .bp3-icon {
         color: var(--white);
       }
+    }
+
+    .bp3-icon.bp3-icon-chevron-down {
+      padding-left: 0 !important;
     }
   }
 }
