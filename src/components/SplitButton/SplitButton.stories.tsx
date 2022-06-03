@@ -8,8 +8,9 @@
 /* eslint-disable no-alert */
 import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Title } from '@storybook/addon-docs/blocks'
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { noop } from 'lodash-es'
 import React from 'react'
-import { Layout, SplitButton } from '../..'
+import { Layout, SplitButton, SplitButtonOption } from '../..'
 
 export default {
   title: 'Components / SplitButton',
@@ -49,14 +50,10 @@ export default {
 
 export const PrimarySplitButton: ComponentStory<typeof SplitButton> = args => {
   return (
-    <>
-      <SplitButton text="Text Button" {...args} />
-      <SplitButton icon="plus" {...args} />
-      <SplitButton text="Left Icon" icon="chevron-left" {...args} />
-      <SplitButton round text="Round Button" {...args} />
-      <SplitButton text="Disabled" disabled icon="cog" {...args} />
-      <SplitButton loading text="Text Button" {...args} />
-    </>
+    <SplitButton text="Save" icon="info-message" {...args}>
+      <SplitButtonOption icon="flash" text="Save as Template" onClick={noop} />
+      <SplitButtonOption icon="arrow-right" text="Save pipeline" onClick={noop} />
+    </SplitButton>
   )
 }
 PrimarySplitButton.argTypes = { onClick: { action: 'clicked' } }
