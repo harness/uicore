@@ -511,6 +511,7 @@ import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import Question from './question.svg'
+import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
@@ -1237,6 +1238,7 @@ type HarnessIconName =
   | 'pruned'
   | 'publish-step'
   | 'question'
+  | 'queue-step'
   | 'queued'
   | 'remote-setup'
   | 'remote'
@@ -1963,6 +1965,7 @@ const HarnessIcons: KVO<ElementType> = {
   pruned: Pruned,
   'publish-step': PublishStep,
   question: Question,
+  'queue-step': QueueStep,
   queued: Queued,
   'remote-setup': RemoteSetup,
   remote: Remote,
