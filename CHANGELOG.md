@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.10.0](https://github.com/harness/uicore/compare/v3.9.0...v3.10.0) (2022-06-01)
+
+
+### Bug Fixes
+
+* [PL-24968]: select clear button fixes ([#689](https://github.com/harness/uicore/issues/689)) ([b915980](https://github.com/harness/uicore/commit/b91598016bfdb3c741340473a971ee99de6d694d))
+
+## [3.9.0](https://github.com/harness/uicore/compare/v3.8.0...v3.9.0) (2022-06-01)
+
+
+### Features
+
+* add support for execution time input ([#688](https://github.com/harness/uicore/issues/688)) ([ed1e5f9](https://github.com/harness/uicore/commit/ed1e5f96ba6b362e70052a3ff92e35c27ab0eed9))
+
+## [3.8.0](https://github.com/harness/uicore/compare/v3.7.0...v3.8.0) (2022-06-01)
+
+
+### Features
+
+* [PL-25560]: Help panel improvements ([#686](https://github.com/harness/uicore/issues/686)) ([823c808](https://github.com/harness/uicore/commit/823c808fd9d0f05c999b11c3ce71bd7c8c487358))
+
+
+### Bug Fixes
+
+* [PL-24968]: should clear false values ([#687](https://github.com/harness/uicore/issues/687)) ([758285b](https://github.com/harness/uicore/commit/758285bf628e114fa9c0040d3fb55636ac5a5bca))
+
 ## [3.7.0](https://github.com/harness/uicore/compare/v3.2.0...v3.7.0) (2022-05-30)
 
 

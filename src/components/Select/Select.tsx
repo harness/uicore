@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useState } from 'react'
+import React from 'react'
 import cx from 'classnames'
 import { Position, Classes } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
@@ -124,6 +124,7 @@ export function Select(props: SelectProps): React.ReactElement {
     value,
     size,
     itemRenderer,
+    addClearBtn,
     whenPopoverClosed,
     popoverClassName = '',
     resetOnSelect = true,
@@ -133,15 +134,18 @@ export function Select(props: SelectProps): React.ReactElement {
     ...rest
   } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
-  const [showClearBtn, setShowClearBtn] = useState<boolean>()
+
+  const showClearBtn =
+    !!addClearBtn &&
+    value !== null &&
+    value !== undefined &&
+    (value as any) !== '' &&
+    value?.value !== undefined &&
+    value?.value !== null &&
+    value?.value !== ''
 
   React.useEffect(() => {
     setItem(value)
-    if (props.addClearBtn && value?.value) {
-      setShowClearBtn(true)
-    } else {
-      setShowClearBtn(false)
-    }
   }, [value])
 
   function handleItemSelect(item: SelectOption) {
@@ -152,11 +156,6 @@ export function Select(props: SelectProps): React.ReactElement {
       onChange(item)
     } else {
       setItem(item)
-    }
-    if (props.addClearBtn && item?.value) {
-      setShowClearBtn(true)
-    } else {
-      setShowClearBtn(false)
     }
   }
 

@@ -146,6 +146,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
             }
           )
       } else {
+        setLoading(false)
         setError(Error.NOT_FOUND)
       }
     }

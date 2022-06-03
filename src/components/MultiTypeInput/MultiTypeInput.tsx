@@ -25,7 +25,8 @@ import {
   MultiTypeIcon,
   MultiTypeIconSize,
   RUNTIME_INPUT_VALUE,
-  EXPRESSION_INPUT_PLACEHOLDER
+  EXPRESSION_INPUT_PLACEHOLDER,
+  EXECUTION_TIME_INPUT_VALUE
 } from './MultiTypeInputUtils'
 import { MultiTypeInputMenu } from './MultiTypeInputMenu'
 
@@ -47,6 +48,11 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   name: string
   disabled?: boolean
   mini?: boolean
+  /**
+   * When set to `true`, will set the value of input to
+   * `<+input>.executionInput()` instead of  just `<+input>`
+   */
+  useExecutionTimeInput?: boolean
 }
 
 export interface FixedTypeComponentProps {
@@ -96,6 +102,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     disabled,
     multitypeInputValue,
     mini,
+    useExecutionTimeInput,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -105,7 +112,12 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     if (type !== newType) {
       setType(newType)
       onTypeChange?.(newType)
-      const _inputValue = newType === MultiTypeInputType.RUNTIME ? RUNTIME_INPUT_VALUE : defaultValueToReset
+      const _inputValue =
+        newType === MultiTypeInputType.RUNTIME
+          ? useExecutionTimeInput
+            ? EXECUTION_TIME_INPUT_VALUE
+            : RUNTIME_INPUT_VALUE
+          : defaultValueToReset
       onChange?.(_inputValue, MultiTypeInputValue.STRING, newType)
     }
   }
