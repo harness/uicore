@@ -10,7 +10,7 @@ import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Title } from '
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import { noop } from 'lodash-es'
 import React from 'react'
-import { Layout, SplitButton, SplitButtonOption } from '../..'
+import { ButtonVariation, Layout, SplitButton, SplitButtonOption } from '../..'
 
 export default {
   title: 'Components / SplitButton',
@@ -50,11 +50,44 @@ export default {
 
 export const PrimarySplitButton: ComponentStory<typeof SplitButton> = args => {
   return (
-    <SplitButton text="Save" icon="info-message" {...args}>
-      <SplitButtonOption icon="flash" text="Save as Template" onClick={noop} />
-      <SplitButtonOption icon="arrow-right" text="Save pipeline" onClick={noop} />
+    <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.PRIMARY} {...args}>
+      <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
+      <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} />
     </SplitButton>
   )
 }
 PrimarySplitButton.argTypes = { onClick: { action: 'clicked' } }
 PrimarySplitButton.args = { intent: 'primary' }
+
+export const SecondarySplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.SECONDARY} {...args}>
+      <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
+      <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} />
+    </SplitButton>
+  )
+}
+SecondarySplitButton.argTypes = { onClick: { action: 'clicked' } }
+SecondarySplitButton.args = { intent: 'primary' }
+
+export const TertiarySplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.TERTIARY} {...args}>
+      <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
+      <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} />
+    </SplitButton>
+  )
+}
+TertiarySplitButton.argTypes = { onClick: { action: 'clicked' } }
+TertiarySplitButton.args = { intent: 'primary' }
+
+export const LinkSplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.LINK} {...args}>
+      <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
+      <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} />
+    </SplitButton>
+  )
+}
+LinkSplitButton.argTypes = { onClick: { action: 'clicked' } }
+LinkSplitButton.args = { intent: 'primary' }
