@@ -16,7 +16,7 @@
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn build",
     "ui:icons": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
-    "test": "jest --no-cache src"
+    "test": "jest --no-cache --passWithNoTests src --config ../../jest.config.js --silent"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/harness/uicore",

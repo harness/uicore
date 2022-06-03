@@ -10,7 +10,7 @@
     "prebuild": "rm -rf dist",
     "build": "NODE_ENV=production webpack --progress",
     "prepublishOnly": "yarn build",
-    "test": "jest --no-cache src"
+    "test": "jest --no-cache src --config ../../jest.config.js --silent"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/harness/uicore",

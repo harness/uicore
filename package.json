@@ -9,8 +9,7 @@
   "scripts": {
     "release": "lerna publish",
     "build": "lerna run build",
-    "lint": "eslint \"./packages/**/src/**/*.{ts,tsx}\" && stylelint ./packages/**/src && prettier --check \"./packages/**/src/**/*.{ts,tsx,css}\"",
-    "test": "jest --no-cache ./packages/**/src",
+    "test": "lerna run test --stream",
     "fmt": "prettier --write \"./packages/**/src/**/*.{ts,tsx,css}\"",
     "setup": "bash scripts/github-package-registry.sh",
     "storybook": "start-storybook -p 6006",
