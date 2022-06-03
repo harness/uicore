@@ -19,7 +19,7 @@
     height: 60%;
     width: 1px;
     position: absolute;
-    left: 0;
+    left: -0.5px;
     top: 20%;
     background-color: var(--white);
   }
