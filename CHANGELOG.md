@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.11.0](https://github.com/harness/uicore/compare/v3.10.0...v3.11.0) (2022-06-04)
+
+
+### Features
+
+* [PIE-3870]: Add queue step icon ([#692](https://github.com/harness/uicore/issues/692)) ([e13972c](https://github.com/harness/uicore/commit/e13972c89782f7e57018bc9eb62723c0acbdc0d3))
+* [PL-25655]: Open help panel links in new tab ([#690](https://github.com/harness/uicore/issues/690)) ([48eb123](https://github.com/harness/uicore/commit/48eb123b10c026b45c4ceb40662a2c366822b0c9))
+* PL-24845: split button component ([#691](https://github.com/harness/uicore/issues/691)) ([687a5d2](https://github.com/harness/uicore/commit/687a5d2e43b7b8b5fa0e0042c85779bc5c028f94))
+
 ## [3.10.0](https://github.com/harness/uicore/compare/v3.9.0...v3.10.0) (2022-06-01)
 
 
