@@ -17,6 +17,7 @@ export {
 export { Avatar, AvatarProps, AvatarSizes } from './components/Avatar/Avatar'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
 export { Button, ButtonProps, ButtonVariation, ButtonSize } from './components/Button/Button'
+export { SplitButton, SplitButtonOption } from './components/SplitButton/SplitButton'
 export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export { Checkbox } from './components/Checkbox/Checkbox'
