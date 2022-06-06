@@ -156,6 +156,7 @@ export {
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
+export { SelectWithSubmenu, SelectWithSubmenuProps } from './components/SelectWithSubmenu/SelectWithSubmenu'
 export {
   WeightedStack,
   WeightedStackProps,
