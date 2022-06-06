@@ -27,7 +27,7 @@ export enum ContentType {
 }
 
 export interface IHelpPanel {
-  articles: Entry<IArticle>[]
+  articles: Array<Entry<IArticle>>
   backgroundColor: Color
   title?: string
 }
@@ -35,7 +35,7 @@ export interface IHelpPanel {
 export interface IArticle extends ComponentValue {
   title: string
   description?: RichTextDocument
-  body?: Entry<ComponentValue>[]
+  body?: Array<Entry<ComponentValue>>
 }
 
 export interface IImage extends ComponentValue {

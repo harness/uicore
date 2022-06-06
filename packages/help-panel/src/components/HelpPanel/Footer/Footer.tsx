@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             setHelpPanelVisibility(!e.target.checked, true)
           }}
         />
-        <label htmlFor="dontShowAgain">&nbsp;&nbsp;Don't show this again</label>
+        <label htmlFor="dontShowAgain">&nbsp;&nbsp;Don&apos;t show this again</label>
       </Container>
     </Container>
   )

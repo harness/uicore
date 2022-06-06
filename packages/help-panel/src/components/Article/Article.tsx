@@ -25,9 +25,10 @@ const Article: React.FC<IArticle> = (props: IArticle) => {
       {description
         ? documentToReactComponents(description, {
             renderNode: {
+              // eslint-disable-next-line react/display-name
               [INLINES.HYPERLINK]: node => {
                 return (
-                  <a href={node.data.uri} target={'_blank'}>
+                  <a href={node.data.uri} target={'_blank'} rel="noreferrer">
                     {(node.content[0] as Text).value}
                   </a>
                 )

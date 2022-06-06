@@ -8,10 +8,10 @@
 import React, { forwardRef } from 'react'
 import Container from '../../../Container'
 import css from './FloatingContainer.module.css'
-import floating_button from '../../../../icons/floating_button.svg'
+import floatingButton from '../../../../icons/floating_button.svg'
 import { HelpPanelContext } from '../../../../HelpPanelContext'
 
-const FloatingContainer = forwardRef<HTMLButtonElement | null, any>((props, ref) => {
+function FloatingContainer(props: React.PropsWithChildren<unknown>, ref: React.ForwardedRef<HTMLButtonElement | null>) {
   const { isHelpPanelVisible, setHelpPanelVisibility } = React.useContext(HelpPanelContext)
   return (
     <Container className={css.floatingContainer}>
@@ -23,11 +23,15 @@ const FloatingContainer = forwardRef<HTMLButtonElement | null, any>((props, ref)
         ref={ref}
         className={css.toggleBtnFloating}
         style={{
-          background: `transparent url(${floating_button})`
+          background: `transparent url(${floatingButton})`
         }}
       />
     </Container>
   )
-})
+}
 
-export default FloatingContainer
+const FloatingContainerWithRef = forwardRef<HTMLButtonElement | null, React.PropsWithChildren<unknown>>(
+  FloatingContainer
+)
+
+export default FloatingContainerWithRef

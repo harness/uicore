@@ -24,7 +24,7 @@ interface HelpPanelProps {
 
 const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
-  let floatingBtnRef = React.useRef<HTMLButtonElement | null>(null)
+  const floatingBtnRef = React.useRef<HTMLButtonElement | null>(null)
 
   const { error } = React.useContext(HelpPanelContext)
 
