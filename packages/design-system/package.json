@@ -15,7 +15,7 @@
     "build": "vite build",
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn build",
-    "test": "jest --no-cache --passWithNoTests src --config ../../jest.config.js --silent"
+    "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/harness/uicore",

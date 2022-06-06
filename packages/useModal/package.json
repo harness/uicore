@@ -15,7 +15,7 @@
     "build": "vite build",
     "postbuild": "dts-bundle-generator -o dist/index.d.ts src/index.tsx --no-check --external-imports=react",
     "clean": "rm -rf dist",
-    "test": "jest --no-cache --passWithNoTests src --config ../../jest.config.js --silent",
+    "test": "jest --no-cache src --config ../../jest.config.js",
     "prepublishOnly": "yarn build"
   },
   "license": "UNLICENSED",
