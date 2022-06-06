@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "outDir": "./dist",
     "alwaysStrict": true,
     "module": "esnext",
     "lib": ["esnext", "dom"],
@@ -21,5 +19,5 @@
     "resolveJsonModule": true,
     "strict": true
   },
-  "include": ["./src/**/*", "./storyshots-puppeteer/**/*"]
+  "include": ["./packages/**/src/**/*", "./storyshots-puppeteer/**/*"]
 }

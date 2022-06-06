@@ -8,7 +8,7 @@
 import React from 'react'
 import Container from '../../../Container'
 import css from './DefaultContainer.module.css'
-import floating_button from '../../../../icons/floating_button.svg'
+import floatingButton from '../../../../icons/floating_button.svg'
 import { HelpPanelContext } from '../../../../HelpPanelContext'
 
 const DefaultContainer: React.FC = props => {
@@ -23,7 +23,7 @@ const DefaultContainer: React.FC = props => {
         }}
         className={css.toggleBtnDefault}
         style={{
-          background: `transparent url(${floating_button})`
+          background: `transparent url(${floatingButton})`
         }}
       />
     </Container>

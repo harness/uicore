@@ -7,14 +7,14 @@
 
 import React from 'react'
 import Container from '../../Container'
-import error_icon from '../../../icons/error.svg'
+import errorIconSvg from '../../../icons/error.svg'
 import css from './ErrorScreen.module.css'
 
 const errorIcon = {
-  background: `transparent url(${error_icon})`
+  background: `transparent url(${errorIconSvg})`
 }
 
-const ErrorScreen = () => {
+const ErrorScreen = (): React.ReactElement => {
   return (
     <Container
       flex={{ justifyContent: 'center', alignItems: 'center' }}
@@ -22,7 +22,7 @@ const ErrorScreen = () => {
       style={{ flexDirection: 'column', textAlign: 'center' }}>
       <Container style={errorIcon} className={css.errorIcon}></Container>
       <Container>Error loading content. Please check out our documentation for help on Harness.</Container>
-      <a href="https://ngdocs.harness.io/" target="_blank" className={css.harnessDocButton}>
+      <a href="https://ngdocs.harness.io/" target="_blank" rel="noreferrer" className={css.harnessDocButton}>
         Head to Harness Docs
       </a>
     </Container>

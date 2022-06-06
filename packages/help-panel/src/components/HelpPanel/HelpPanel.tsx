@@ -24,7 +24,7 @@ interface HelpPanelProps {
 
 const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
-  let floatingBtnRef: HTMLButtonElement
+  const floatingBtnRef = React.useRef<HTMLButtonElement | null>(null)
 
   const { error } = React.useContext(HelpPanelContext)
 
@@ -35,14 +35,11 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
   switch (type) {
     case HelpPanelType.FLOATING_CONTAINER:
       return (
-        <FloatingContainer
-          ref={node => {
-            floatingBtnRef = node
-          }}>
+        <FloatingContainer ref={floatingBtnRef}>
           <HelpPanelContent
             referenceId={referenceId}
             onClose={() => {
-              floatingBtnRef?.click()
+              floatingBtnRef.current?.click()
             }}
           />
         </FloatingContainer>

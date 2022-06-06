@@ -22,7 +22,7 @@ interface HelpPanelContextProps {
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   referenceIdMap: {},
   isHelpPanelVisible: true,
-  setHelpPanelVisibility: () => {},
+  setHelpPanelVisibility: () => void 0,
   showAgain: false,
   error: undefined
 })
@@ -63,6 +63,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
 
         const getContentIdMap = async (): Promise<void> => {
           const response = await client.getEntries<IReferenceIdMap>({
+            // eslint-disable-next-line camelcase
             content_type: ContentType.referenceIdMap
           })
           setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
@@ -93,6 +94,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
 
 interface useContentfulOptions {
   referenceId: string
+  // eslint-disable-next-line camelcase
   content_type: ContentType
 }
 
@@ -110,6 +112,7 @@ interface useContentfulState<T> {
 }
 
 export function useContentful<T>(options: useContentfulOptions): useContentfulState<T> {
+  // eslint-disable-next-line camelcase
   const { referenceId, content_type } = options
   const { referenceIdMap, error: contextError } = React.useContext(HelpPanelContext)
   const [data, setData] = useState<T | undefined>()
@@ -128,7 +131,8 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
         Contentful.getClient()
           .getEntries<T>({
             'sys.id': contentId,
-            content_type: content_type,
+            // eslint-disable-next-line camelcase
+            content_type,
             include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
           })
           .then(
@@ -150,6 +154,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
         setError(Error.NOT_FOUND)
       }
     }
+    // eslint-disable-next-line camelcase
   }, [referenceId, content_type, referenceIdMap])
 
   return {

@@ -3,10 +3,10 @@
   "version": "1.6.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
-  "main": "dist/help-panel.umd.js",
-  "module": "dist/help-panel.es.js",
-  "types": "dist/src/index.d.ts",
-  "styles": "dist/style.css",
+  "main": "./dist/help-panel.umd.js",
+  "exports": "./dist/help-panel.es.js",
+  "types": "./dist/src/index.d.ts",
+  "styles": "./dist/style.css",
   "files": [
     "dist/*"
   ],
@@ -14,7 +14,8 @@
     "prebuild": "yarn clean",
     "build": "vite build",
     "clean": "rm -rf dist",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/harness/uicore",
@@ -22,11 +23,12 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {
-    "@harness/design-system": "1.0.0",
+    "@harness/design-system": "^1.0.0",
     "react": "^17.0.2"
   },
   "devDependencies": {
     "@contentful/rich-text-types": "^15.12.0",
+    "@harness/design-system": "*",
     "@types/react": "^17.0.3",
     "dts-bundle-generator": "^6.4.0",
     "react": "^17.0.2",
