@@ -35,6 +35,7 @@ const Submenu = ({ items, onChange, primaryValue }: SubmenuProps) => (
   <Menu className={css.submenu}>
     {items?.map((item: any) => (
       <MenuItem
+        key={item.value}
         text={item.label}
         onClick={(_: any) => onChange?.(primaryValue as SelectOption, item)}
         className={css.submenuItem}

@@ -1085,7 +1085,6 @@ export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProp
 
 const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputProps & FormikContextProps<any>) => {
   const { formik, name, placeholder, selectWithSubmenuTypeInputProps, ...restProps } = props
-  console.log('selectWithSubmenuTypeInputProps: ', selectWithSubmenuTypeInputProps)
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1094,7 +1093,7 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
     label,
     ...rest
   } = restProps
-  let value = get(formik?.values, name)
+  const value = get(formik?.values, name)
 
   return (
     <FormGroup
@@ -1108,6 +1107,7 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
         disabled={disabled}
         value={value}
         name={name}
+        placeholder={placeholder}
         selectWithSubmenuProps={{
           items: defaultTo(selectWithSubmenuTypeInputProps?.items, [])
         }}
