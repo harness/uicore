@@ -12,7 +12,7 @@ export NODE_OPTIONS="--max-old-space-size=4096"
 # configure git
 git config --global user.email "bot@harness.io"
 git config --global user.name "bot-harness"
-git remote set-url origin "https://${GIT_BOT_TOKEN}@github.com/harness/uicore-test.git"
+git remote set-url origin "https://${GIT_BOT_TOKEN}@github.com/harness/uicore.git"
 git fetch --tags
 
 # Set up Github Package Registry token
