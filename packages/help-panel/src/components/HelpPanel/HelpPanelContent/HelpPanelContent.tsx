@@ -26,6 +26,7 @@ export const HEADER_FOOTER_HEIGHT = 64
 const HelpPanelContent: React.FC<Props> = ({ onClose, referenceId }) => {
   const { data, loading, error } = useContentful<IHelpPanel>({
     referenceId,
+    // eslint-disable-next-line camelcase
     content_type: ContentType.helpPanel
   })
 
