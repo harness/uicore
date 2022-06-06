@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/harness/uicore/compare/@harness/uicore@3.13.0...@harness/uicore@3.14.0) (2022-06-06)
+
+
+### Features
+
+* [CDS-36921]: select with sub menu ([#693](https://github.com/harness/uicore/issues/693)) ([167da11](https://github.com/harness/uicore/commit/167da1101a6022da5aa4aa04e267346ad59ed4e3))
+
+
+
+
+
 # [3.13.0](https://github.com/harness/uicore/compare/@harness/uicore@3.12.0...@harness/uicore@3.13.0) (2022-06-06)
 
 
