@@ -89,7 +89,7 @@ function isObject(value: any) {
 }
 
 /** Generate classes from styled props */
-export function styledClasses(props: StyledProps, ...classes: string[]) {
+export function styledClasses(props: StyledProps, ...classes: string[]): string {
   const classNames = new Set(classes)
 
   classNames.add(css.main)

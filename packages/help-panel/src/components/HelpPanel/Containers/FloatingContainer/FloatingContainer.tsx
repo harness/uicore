@@ -11,7 +11,7 @@ import css from './FloatingContainer.module.css'
 import floating_button from '../../../../icons/floating_button.svg'
 import { HelpPanelContext } from '../../../../HelpPanelContext'
 
-const FloatingContainer: React.FC = forwardRef<HTMLButtonElement, any>((props, ref) => {
+const FloatingContainer = forwardRef<HTMLButtonElement | null, any>((props, ref) => {
   const { isHelpPanelVisible, setHelpPanelVisibility } = React.useContext(HelpPanelContext)
   return (
     <Container className={css.floatingContainer}>
