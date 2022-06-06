@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/harness/uicore/compare/@harness/uicore@3.12.0...@harness/uicore@3.13.0) (2022-06-06)
+
+
+### Bug Fixes
+
+* [CDS-36717]: adding support for react element in custom label ([#694](https://github.com/harness/uicore/issues/694)) ([36f4a28](https://github.com/harness/uicore/commit/36f4a287745dfcb7daf91fef418a2ce77bb6b9da))
+
+
+
+
+
 # 3.12.0 (2022-06-06)
 
 
