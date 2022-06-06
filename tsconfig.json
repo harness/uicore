@@ -19,5 +19,5 @@
     "resolveJsonModule": true,
     "strict": true
   },
-  "include": ["./src/**/*", "./storyshots-puppeteer/**/*"]
+  "include": ["./packages/**/src/**/*", "./storyshots-puppeteer/**/*"]
 }
