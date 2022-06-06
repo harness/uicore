@@ -6,39 +6,57 @@
  */
 
 import React, { useCallback } from 'react'
-import { Select, SelectOption, SelectProps } from '../Select/Select'
-import { FormGroup, Menu, MenuItem, Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
-import selectCss from '../Select/Select.css'
-import css from './SelectWithSubmenu.css'
+import cx from 'classnames'
+import { omit } from 'lodash-es'
+import { Menu, MenuItem, Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
 
-interface SubmenuSelectOption extends SelectOption {
+import { Select, SelectOption, SelectProps } from '../Select/Select'
+import { Text } from '../Text/Text'
+
+import css from './SelectWithSubmenu.css'
+import selectCss from '../Select/Select.css'
+
+export interface SubmenuSelectOption extends SelectOption {
   submenuItems: SelectOption[]
 }
 
-export interface SelectWithSubmenuProps extends Omit<SelectProps, 'items'> {
+export interface SelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange'> {
   items: SubmenuSelectOption[]
-  itemSelect: any
-  loading?: boolean
-  label?: string
-  helperText?: string
+  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption) => void
 }
 
-const Submenu = ({ items, itemSelect }: SelectWithSubmenuProps) => (
-  <Menu>
+interface SubmenuProps {
+  items: SelectOption[]
+  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption) => void
+  primaryValue?: SelectOption
+}
+
+const Submenu = ({ items, onChange, primaryValue }: SubmenuProps) => (
+  <Menu className={css.submenu}>
     {items?.map((item: any) => (
-      <MenuItem text={item.label} onClick={(_: any) => itemSelect(item)} textClassName={selectCss.menuItem} />
+      <MenuItem
+        text={item.label}
+        onClick={(_: any) => onChange?.(primaryValue as SelectOption, item)}
+        className={css.submenuItem}
+      />
     ))}
   </Menu>
 )
 
 export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
-  const { items, className, itemSelect, loading, label, disabled, helperText, ...selectProps } = props
+  const { items, className, onChange, ...selectProps } = props
 
   const itemRenderer = useCallback(
-    (item: any) => {
+    (item: SelectOption) => {
       return (
         <Popover
-          content={<Submenu items={item.submenuItems} itemSelect={itemSelect} />}
+          content={
+            <Submenu
+              items={(item as SubmenuSelectOption).submenuItems}
+              onChange={onChange}
+              primaryValue={omit(item, 'submenuItems')}
+            />
+          }
           position={Position.LEFT_TOP}
           interactionKind={PopoverInteractionKind.HOVER}
           minimal
@@ -57,8 +75,11 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
               offset: '0 2'
             }
           }}>
-          <li key={item.value?.toString()} className={selectCss.menuItem}>
-            {item.label}
+          <li
+            key={item.value?.toString()}
+            className={cx(selectCss.menuItem, css.menuItem)}
+            onClick={event => event.preventDefault()}>
+            <Text rightIcon={'chevron-right'}>{item.label}</Text>
           </li>
         </Popover>
       )
@@ -66,16 +87,5 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
     [items]
   )
 
-  return (
-    <FormGroup label={label} disabled={disabled} helperText={helperText}>
-      <Select
-        {...selectProps}
-        disabled={disabled}
-        allowCreatingNewItems={false}
-        items={loading ? [{ value: '', label: 'Loading...' }] : items}
-        itemRenderer={itemRenderer}
-        className={className}
-      />
-    </FormGroup>
-  )
+  return <Select {...selectProps} items={items} itemRenderer={itemRenderer} className={className} />
 }
