@@ -24,7 +24,7 @@
 
 .noHeader .body {
   padding-top: var(--spacing-huge);
-  background-size: 0 0, 100% 5px, 0 0, 100% 1px;
+  --showScrollTop: 0 !important;
 }
 
 .noHeader .toolbar {
@@ -33,7 +33,7 @@
 
 .noFooter .body {
   padding-bottom: var(--spacing-huge);
-  background-size: 100% 5px, 0 0, 100% 1px, 0 0;
+  --showScrollBottom: 0 !important;
 }
 
 .noHeader.noFooter .body {
@@ -68,13 +68,29 @@
 }
 
 .body {
+  --showScrollTop: 0;
+  --showScrollBottom: 0;
+  position: relative;
   grid-area: body;
   overflow: auto;
   padding: 0 var(--spacing-huge);
-  background:
-    /* Shadow Cover TOP */ linear-gradient(white 30%, rgba(255, 255, 255, 0)) center top no-repeat local,
-    /* Shadow Cover BOTTOM */ linear-gradient(rgba(255, 255, 255, 0), white 70%) center bottom no-repeat local,
-    /* Shadow TOP */ linear-gradient(var(--grey-200), var(--grey-200)) center top no-repeat scroll,
-    /* Shadow BOTTOM */ linear-gradient(var(--grey-200), var(--grey-200)) center bottom no-repeat scroll;
-  background-size: 100% 10px, 100% 10px, 100% 1px, 100% 1px;
+}
+
+.body::before,
+.body::after {
+  content: '';
+  position: sticky;
+  margin: 0 calc(-1 * var(--spacing-huge));
+  top: 0;
+  height: 1px;
+  background-color: var(--grey-200);
+  display: block;
+  opacity: calc(1 * var(--showScrollTop));
+  transition: opacity 0.15s ease-in-out;
+}
+
+.body::after {
+  top: auto;
+  bottom: 0;
+  opacity: calc(1 * var(--showScrollBottom));
 }
