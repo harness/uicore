@@ -43,7 +43,7 @@ export interface DropDownProps
   iconProps?: Partial<IconProps>
   addClearBtn?: boolean
   placeholder?: string
-  getCustomLabel?: (item: SelectOption) => string
+  getCustomLabel?: (item: SelectOption) => string | React.ReactElement
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
