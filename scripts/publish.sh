@@ -27,7 +27,7 @@ if [[ "$(echo $CHANGED | wc -l)" -gt 0 ]]
 then
     echo $CHANGED
     yarn build
-    yarn release minor --yes --ignore-scripts
+    yarn release minor --yes --ignore-scripts --conventional-commits
     git pull origin $BASE_BRANCH --rebase
     git push origin $BASE_BRANCH --follow-tags --force
 else
