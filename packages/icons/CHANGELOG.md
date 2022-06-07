@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/harness/uicore/compare/@harness/icons@1.15.0...@harness/icons@1.16.0) (2022-06-07)
+
+
+### Bug Fixes
+
+* [CDS-38229]: added createpr icon ([#699](https://github.com/harness/uicore/issues/699)) ([81c6330](https://github.com/harness/uicore/commit/81c6330d245cf7f44d99099f0c1b6e4a33881fb7))
+
+
+
+
+
 # 1.15.0 (2022-06-06)
 
 
