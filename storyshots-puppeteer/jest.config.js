@@ -7,10 +7,12 @@
 
 const path = require('path')
 const globalJestConfig = require('../jest.config')
+const _ = require('lodash')
 
-const finalJestConfig = { ...globalJestConfig }
+const finalJestConfig = _.cloneDeep(globalJestConfig)
 
 finalJestConfig.rootDir = path.join(__dirname, '..')
 finalJestConfig.testMatch = ['<rootDir>/storyshots-puppeteer/*.runner.ts']
+finalJestConfig.moduleNameMapper['\\.mdx$'] = '<rootDir>/jest/mdx-mock.js'
 
 module.exports = finalJestConfig
