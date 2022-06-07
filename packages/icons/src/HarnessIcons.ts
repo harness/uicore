@@ -173,6 +173,7 @@ import CopyAlt from './copy-alt.svg'
 import Copy from './copy.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
+import CreatePr from './create-pr.svg'
 import CsHover from './cs-hover.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomService from './custom-service.svg'
@@ -900,6 +901,7 @@ type HarnessIconName =
   | 'copy'
   | 'coverage-status-error'
   | 'coverage-status-success'
+  | 'create-pr'
   | 'cs-hover'
   | 'custom-artifact'
   | 'custom-service'
@@ -1627,6 +1629,7 @@ const HarnessIcons: KVO<ElementType> = {
   copy: Copy,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
+  'create-pr': CreatePr,
   'cs-hover': CsHover,
   'custom-artifact': CustomArtifact,
   'custom-service': CustomService,
