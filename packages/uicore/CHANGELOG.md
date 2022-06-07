@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/harness/uicore/compare/@harness/uicore@3.15.0...@harness/uicore@3.16.0) (2022-06-07)
+
+
+### Bug Fixes
+
+* [PL-25618]: Ensure scroll indicators are above content ([#695](https://github.com/harness/uicore/issues/695)) ([d8be776](https://github.com/harness/uicore/commit/d8be77685a6d62fb19285b15c378fc7ea9baf424))
+
+
+
+
+
+# [3.15.0](https://github.com/harness/uicore/compare/@harness/uicore@3.14.0...@harness/uicore@3.15.0) (2022-06-07)
+
+
+### Bug Fixes
+
+* types generation issue in webpack ([#697](https://github.com/harness/uicore/issues/697)) ([0c6be71](https://github.com/harness/uicore/commit/0c6be71142e436410e36e263cc2c4383f30a041e))
+
+
+
+
+
 # [3.14.0](https://github.com/harness/uicore/compare/@harness/uicore@3.13.0...@harness/uicore@3.14.0) (2022-06-06)
 
 

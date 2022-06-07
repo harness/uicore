@@ -35,7 +35,7 @@ module.exports = {
         loader: 'ts-loader',
         exclude: /node_modules/,
         options: {
-          transpileOnly: true,
+          transpileOnly: isDev,
           configFile: path.resolve(__dirname, 'tsconfig.json'),
           onlyCompileBundledFiles: true
         }
