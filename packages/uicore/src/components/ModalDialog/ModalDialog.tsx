@@ -5,7 +5,8 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, useCallback, useRef } from 'react'
+import { throttle } from 'lodash-es'
 import { Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { FontVariation } from '@harness/design-system'
@@ -49,6 +50,7 @@ export interface ModalDialogProps extends IDialogProps {
 }
 
 export const ModalDialog: FC<ModalDialogProps> = ({
+  onOpened = () => undefined,
   title,
   footer,
   toolbar,
@@ -62,6 +64,25 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   style = {},
   ...dialogProps
 }) => {
+  const bodyRef = useRef<HTMLDivElement>(null)
+
+  const manageScrollIndicators = throttle(() => {
+    const el = bodyRef.current
+
+    if (el) {
+      el.style.setProperty('--showScrollTop', el.scrollTop > 0 ? '1' : '0')
+      el.style.setProperty('--showScrollBottom', el.scrollTop < el.scrollHeight - el.clientHeight ? '1' : '0')
+    }
+  }, 100)
+
+  const onModalOpened = useCallback(
+    arg => {
+      manageScrollIndicators()
+      onOpened(arg)
+    },
+    [manageScrollIndicators, onOpened]
+  )
+
   const modifiers = []
 
   if (!title && !toolbar) {
@@ -82,6 +103,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   return (
     <Dialog
+      onOpened={onModalOpened}
       autoFocus
       enforceFocus
       canEscapeKeyClose
@@ -104,7 +126,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         </aside>
       )}
 
-      <div className={css.body} data-testid="modaldialog-body">
+      <div className={css.body} data-testid="modaldialog-body" ref={bodyRef} onScroll={manageScrollIndicators}>
         {children}
       </div>
 
