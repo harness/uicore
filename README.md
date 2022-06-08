@@ -72,9 +72,9 @@ Please do not commit any changes made by `yalc` in nextgenui.
 
 ## Publish
 
-Publishing is done using Github Actions and stored in [Harness GitHub Package Registry](https://github.com/orgs/wings-software/packages).
+Publishing is done using Harness CI and stored in [Harness GitHub Package Registry](https://github.com/orgs/harness/packages).
 
-As soon as the PR is merged into master, a new release will be built and published into [Harness GitHub Package Registry](https://github.com/orgs/wings-software/packages).
+As soon as the PR is merged into master, a new release will be built and published into [Harness GitHub Package Registry](https://github.com/orgs/harness/packages).
 
 ## Updating Image Snapshots
 
@@ -83,5 +83,7 @@ Run the following to update the Storybook Image Snapshots:
 ```sh
 yarn run build-storybook && yarn run do-puppeteer-storyshots -u
 ```
+
+> note: You might want to set `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"` on MacOS
 
 Documentation is published at [uicore.harness.io](http://uicore.harness.io/).

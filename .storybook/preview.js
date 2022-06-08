@@ -7,8 +7,8 @@
 
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
-import '@harness/design-system/dist/style.css'
-import '../src/styles/styles.css'
+import '../packages/design-system/src/index.tsx'
+import '../packages/uicore/src/styles/styles.css'
 import './storybook.css'
 
 export const parameters = {
