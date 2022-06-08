@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/harness/uicore/compare/@harness/icons@1.16.0...@harness/icons@1.17.0) (2022-06-08)
+
+**Note:** Version bump only for package @harness/icons
+
+
+
+
+
 # [1.16.0](https://github.com/harness/uicore/compare/@harness/icons@1.15.0...@harness/icons@1.16.0) (2022-06-07)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.20.0](https://github.com/harness/uicore/compare/@harness/uicore@3.19.0...@harness/uicore@3.20.0) (2022-06-08)
+
+**Note:** Version bump only for package @harness/uicore
+
+
+
+
+
 # [3.19.0](https://github.com/harness/uicore/compare/@harness/uicore@3.18.0...@harness/uicore@3.19.0) (2022-06-08)
 
 

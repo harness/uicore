@@ -1,6 +1,6 @@
 {
   "name": "@harness/design-system",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Harness Help panel - used for building Help panels generated through contentful",
   "source": "src/index.ts",
   "main": "./dist/design-system.umd.js",
