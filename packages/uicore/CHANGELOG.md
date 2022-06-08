@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.18.0](https://github.com/harness/uicore/compare/@harness/uicore@3.17.0...@harness/uicore@3.18.0) (2022-06-08)
+
+
+### Bug Fixes
+
+* externals config in webpack ([#700](https://github.com/harness/uicore/issues/700)) ([ffc5353](https://github.com/harness/uicore/commit/ffc535379c8e46ccbc4aa0c847bf941350e01e20))
+
+
+
+
+
 # [3.17.0](https://github.com/harness/uicore/compare/@harness/uicore@3.16.0...@harness/uicore@3.17.0) (2022-06-07)
 
 **Note:** Version bump only for package @harness/uicore
