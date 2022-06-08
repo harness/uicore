@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/harness/uicore/compare/@harness/uicore@3.20.0...@harness/uicore@3.21.0) (2022-06-08)
+
+
+### Bug Fixes
+
+* [PIE-3783]: upgrades to SelectWithSubmenu ([#703](https://github.com/harness/uicore/issues/703)) ([cc0193d](https://github.com/harness/uicore/commit/cc0193d72499f08ec3b70ae01c24b480cdf1b08b))
+
+
+
+
+
 # [3.20.0](https://github.com/harness/uicore/compare/@harness/uicore@3.19.0...@harness/uicore@3.20.0) (2022-06-08)
 
 **Note:** Version bump only for package @harness/uicore
