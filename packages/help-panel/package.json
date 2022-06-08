@@ -1,12 +1,14 @@
 {
   "name": "@harness/help-panel",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "./dist/help-panel.umd.js",
-  "exports": "./dist/help-panel.es.js",
+  "exports": {
+    ".": "./dist/help-panel.es.js",
+    "./dist/style.css": "./dist/style.css"
+  },
   "types": "./dist/src/index.d.ts",
-  "styles": "./dist/style.css",
   "files": [
     "dist/*"
   ],
@@ -28,7 +30,7 @@
   },
   "devDependencies": {
     "@contentful/rich-text-types": "^15.12.0",
-    "@harness/design-system": "^1.1.0",
+    "@harness/design-system": "^1.2.0",
     "@types/react": "^17.0.3",
     "dts-bundle-generator": "^6.4.0",
     "react": "^17.0.2",
