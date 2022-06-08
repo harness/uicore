@@ -51,7 +51,7 @@ export interface InputWithIdentifierProps {
   /**
    * @default true
    */
-  useSameUnversialToolTipId?: boolean
+  useUnversialToolTipId?: boolean
 }
 
 // https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
@@ -74,14 +74,14 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     inputGroupProps,
     isIdentifierEditable = true,
     maxInput = 63,
-    useSameUnversialToolTipId = false
+    useUnversialToolTipId = true
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
   const identifier = get(formik.values, idName) as string
   const [currentEditField, setCurrentEditField] = useState(inputLabel)
   const tooltipContext = useContext(FormikTooltipContext)
-  const dataTooltipId = !useSameUnversialToolTipId
+  const dataTooltipId = !useUnversialToolTipId
     ? tooltipContext?.formName
       ? `${tooltipContext?.formName}_${idName}`
       : ''
