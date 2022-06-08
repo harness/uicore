@@ -96,7 +96,7 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
           className={cx(selectCss.menuItem, css.menuItem)}
           onClick={() => {
             if (onChange) {
-              onChange(item as SelectOption)
+              onChange(item)
             }
           }}>
           <Text>{item.label}</Text>
