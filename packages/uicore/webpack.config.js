@@ -10,10 +10,13 @@
 //
 
 const path = require('path')
-const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const packageJSON = require('./package.json')
+const TerserPlugin = require('terser-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
+
+const externals = Object.keys(packageJSON.peerDependencies).reduce((p, c) => ({ ...p, [c]: `commonjs ${c}` }), {})
 
 module.exports = {
   mode: isDev ? 'development' : 'production',
@@ -86,7 +89,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
 
-  externals: [nodeExternals()],
+  externals,
 
   plugins: [
     new MiniCssExtractPlugin({
