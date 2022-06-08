@@ -4,9 +4,11 @@
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "./dist/help-panel.umd.js",
-  "exports": "./dist/help-panel.es.js",
+  "exports": {
+    ".": "./dist/help-panel.es.js",
+    "./dist/style.css": "./dist/style.css"
+  },
   "types": "./dist/src/index.d.ts",
-  "styles": "./dist/style.css",
   "files": [
     "dist/*"
   ],

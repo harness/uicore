@@ -10,26 +10,22 @@ import { Color } from '@harness/design-system'
 import Container from '../../Container'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import { IHelpPanel, ContentType } from '../../../types/contentfulTypes'
+import { IHelpPanel } from '../../../types/contentfulTypes'
 import css from './HelpPanelContent.module.css'
 import Skeleton from '../../Skeleton/Skeleton'
 import Article from '../../Article/Article'
-import { useContentful } from '../../../HelpPanelContext'
+import { Error } from '../../../HelpPanelContext'
 import ErrorScreen from '../ErrorScreen/ErrorScreen'
 
 interface Props {
-  referenceId: string
   onClose?: () => void
+  data?: IHelpPanel
+  error?: Error
+  loading: boolean
 }
 
 export const HEADER_FOOTER_HEIGHT = 64
-const HelpPanelContent: React.FC<Props> = ({ onClose, referenceId }) => {
-  const { data, loading, error } = useContentful<IHelpPanel>({
-    referenceId,
-    // eslint-disable-next-line camelcase
-    content_type: ContentType.helpPanel
-  })
-
+const HelpPanelContent: React.FC<Props> = ({ onClose, data, loading, error }) => {
   const { articles, title, backgroundColor = Color.BLUE_50 } = data || {}
 
   const renderContent = () => {

@@ -4,9 +4,11 @@
   "description": "Harness Help panel - used for building Help panels generated through contentful",
   "source": "src/index.ts",
   "main": "./dist/design-system.umd.js",
-  "exports": "./dist/design-system.es.js",
+  "exports": {
+    ".": "./dist/design-system.es.js",
+    "./dist/style.css": "./dist/style.css"
+  },
   "types": "./dist/src/index.d.ts",
-  "styles": "./dist/style.css",
   "files": [
     "dist/*"
   ],
