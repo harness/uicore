@@ -15,19 +15,23 @@ import { Text } from '../Text/Text'
 
 import css from './SelectWithSubmenu.css'
 import selectCss from '../Select/Select.css'
+import { MultiTypeInputType } from 'index'
 
 export interface SubmenuSelectOption extends SelectOption {
   submenuItems: SelectOption[]
+  hasSubItems?: boolean
 }
 
 export interface SelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange'> {
   items: SubmenuSelectOption[]
-  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption) => void
+  onOpening?: (item: SelectOption) => void
+  interactionKind?: PopoverInteractionKind
+  onChange?: (primaryValue: SelectOption, selectedValue?: SelectOption, type?: MultiTypeInputType) => void
 }
 
 interface SubmenuProps {
   items: SelectOption[]
-  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption) => void
+  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption, type?: MultiTypeInputType) => void
   primaryValue?: SelectOption
 }
 
@@ -49,7 +53,7 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
 
   const itemRenderer = useCallback(
     (item: SelectOption) => {
-      return (
+      return (item as SubmenuSelectOption).hasSubItems ? (
         <Popover
           content={
             <Submenu
@@ -59,7 +63,10 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
             />
           }
           position={Position.LEFT_TOP}
-          interactionKind={PopoverInteractionKind.HOVER}
+          interactionKind={props?.interactionKind || PopoverInteractionKind.HOVER}
+          onOpening={() => {
+            if (props.onOpening) props.onOpening(item)
+          }}
           minimal
           usePortal
           className={css.wrapperClassName}
@@ -83,6 +90,17 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
             <Text rightIcon={'chevron-right'}>{item.label}</Text>
           </li>
         </Popover>
+      ) : (
+        <li
+          key={item.value?.toString()}
+          className={cx(selectCss.menuItem, css.menuItem)}
+          onClick={() => {
+            if (onChange) {
+              onChange(item)
+            }
+          }}>
+          <Text>{item.label}</Text>
+        </li>
       )
     },
     [items]

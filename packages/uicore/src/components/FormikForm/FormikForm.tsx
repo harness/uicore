@@ -13,7 +13,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { TagInput as BPTagInput } from '@blueprintjs/core'
+import { PopoverInteractionKind, TagInput as BPTagInput } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
@@ -1109,7 +1109,9 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
         name={name}
         placeholder={placeholder}
         selectWithSubmenuProps={{
-          items: defaultTo(selectWithSubmenuTypeInputProps?.items, [])
+          items: defaultTo(selectWithSubmenuTypeInputProps?.items, []),
+          onOpening: defaultTo(selectWithSubmenuTypeInputProps?.onOpening, noop),
+          interactionKind: defaultTo(selectWithSubmenuTypeInputProps?.interactionKind, PopoverInteractionKind.HOVER)
         }}
         onChange={defaultTo(selectWithSubmenuTypeInputProps?.onChange, noop)}
       />
