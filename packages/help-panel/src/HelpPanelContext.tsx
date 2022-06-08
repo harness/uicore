@@ -14,7 +14,7 @@ import { useLocalStorage } from './hooks/useLocalStorage'
 interface HelpPanelContextProps {
   referenceIdMap: Record<string, string>
   isHelpPanelVisible: boolean
-  setHelpPanelVisibility: (show: boolean, showAgain?: boolean) => void
+  toggleShowAgain: () => void
   showAgain: boolean
   error: Error | undefined
 }
@@ -22,7 +22,7 @@ interface HelpPanelContextProps {
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   referenceIdMap: {},
   isHelpPanelVisible: true,
-  setHelpPanelVisibility: () => void 0,
+  toggleShowAgain: () => void 0,
   showAgain: false,
   error: undefined
 })
@@ -43,16 +43,12 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
   const { accessToken, space, environment = HelpPanelEnvironment.master } = props
   const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
   const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(TOP_LEVEL_KEY, { dontShowAgain: false })
-  const [showHelpPanel, setShowHelpPanel] = useState<boolean>(!storageData.dontShowAgain)
   const [error, setError] = useState<Error | undefined>()
 
-  const setHelpPanelVisibility = (isHelpPanelVisible: boolean, updateShowAgain?: boolean) => {
-    setShowHelpPanel(isHelpPanelVisible)
-    if (updateShowAgain) {
-      setStorage({
-        dontShowAgain: !storageData.dontShowAgain
-      })
-    }
+  const toggleShowAgain = () => {
+    setStorage({
+      dontShowAgain: !storageData.dontShowAgain
+    })
   }
 
   useEffect(() => {
@@ -82,8 +78,8 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
     <HelpPanelContext.Provider
       value={{
         referenceIdMap,
-        isHelpPanelVisible: showHelpPanel,
-        setHelpPanelVisibility,
+        isHelpPanelVisible: storageData.dontShowAgain,
+        toggleShowAgain,
         showAgain: storageData.dontShowAgain,
         error
       }}>
