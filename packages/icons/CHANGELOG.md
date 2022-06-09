@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/harness/uicore/compare/@harness/icons@1.18.0...@harness/icons@1.19.0) (2022-06-09)
+
+
+### Bug Fixes
+
+* [CDS-38697]: Add loop icon for matrix ([#704](https://github.com/harness/uicore/issues/704)) ([45e283f](https://github.com/harness/uicore/commit/45e283f856359ab014482e3e3e93bcc80ddf09fb))
+
+
+
+
+
 # [1.18.0](https://github.com/harness/uicore/compare/@harness/icons@1.17.0...@harness/icons@1.18.0) (2022-06-09)
 
 
