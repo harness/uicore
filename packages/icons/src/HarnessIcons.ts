@@ -251,6 +251,7 @@ import FfSolid from './ff-solid.svg'
 import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
+import FileStore from './filestore.svg'
 import FixedInput from './fixed-input.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
@@ -979,6 +980,7 @@ type HarnessIconName =
   | 'ff-with-dark-text'
   | 'ff-with-text'
   | 'file'
+  | 'file-store'
   | 'fixed-input'
   | 'flag'
   | 'flash'
@@ -1707,6 +1709,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
   file: File,
+  'file-store': FileStore,
   'fixed-input': FixedInput,
   flag: Flag,
   flash: Flash,
