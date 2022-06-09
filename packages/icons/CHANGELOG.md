@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/harness/uicore/compare/@harness/icons@1.17.0...@harness/icons@1.18.0) (2022-06-09)
+
+
+### Bug Fixes
+
+* icon names ([#707](https://github.com/harness/uicore/issues/707)) ([8b3dd53](https://github.com/harness/uicore/commit/8b3dd535387aab760aeb03c24508e4740a57abe8))
+
+
+### Features
+
+* [CDS-38057] Filestore icon ([#705](https://github.com/harness/uicore/issues/705)) ([b1d5541](https://github.com/harness/uicore/commit/b1d5541048f11aae6a7ee50b48535270834f13d4))
+
+
+
+
+
 # [1.17.0](https://github.com/harness/uicore/compare/@harness/icons@1.16.0...@harness/icons@1.17.0) (2022-06-08)
 
 **Note:** Version bump only for package @harness/icons

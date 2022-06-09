@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/harness/uicore/compare/@harness/uicore@3.21.0...@harness/uicore@3.22.0) (2022-06-09)
+
+
+### Bug Fixes
+
+* formik bundling issue ([#706](https://github.com/harness/uicore/issues/706)) ([78e72b5](https://github.com/harness/uicore/commit/78e72b5ed06276f5964c893e05a0810fe40ff4cb))
+
+
+
+
+
 # [3.21.0](https://github.com/harness/uicore/compare/@harness/uicore@3.20.0...@harness/uicore@3.21.0) (2022-06-08)
 
 
