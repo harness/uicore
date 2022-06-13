@@ -51,4 +51,19 @@ describe('SplitButton interaction', () => {
     userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
     await waitForElementToBeRemoved(option) // if user clicks primary action while the the options are open, it should do primary action
   })
+
+  test(`shouldn't show options while SplitButton is disabled`, async () => {
+    const promise = Promise.resolve()
+    const primaryAction = jest.fn(() => promise)
+    const secondaryAction = jest.fn()
+
+    render(
+      <SplitButton text="Save trigger" icon="info-message" onClick={primaryAction} disabled>
+        <SplitButtonOption icon="flash" text="Save as Template" onClick={secondaryAction} />
+        <SplitButtonOption icon="arrow-right" text="Save pipeline" />
+      </SplitButton>
+    )
+    userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
+    expect(primaryAction).not.toBeCalled()
+  })
 })

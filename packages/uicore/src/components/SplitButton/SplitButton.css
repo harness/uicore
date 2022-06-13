@@ -8,11 +8,13 @@
 .main {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
+  border-right: none !important;
 }
 
 .dropdown {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+  border-left: none !important;
   position: relative;
   &::before {
     content: '';
@@ -22,6 +24,11 @@
     left: -0.5px;
     top: 20%;
     background-color: var(--white);
+  }
+
+  &[class*='variation-secondary']::before,
+  &[class*='variation-link']::before {
+    background-color: var(--primary-7);
   }
 }
 
