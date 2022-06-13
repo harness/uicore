@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/harness/uicore/compare/@harness/uicore@3.23.0...@harness/uicore@3.24.0) (2022-06-13)
+
+
+### Features
+
+* [CDS-38800]: split button disabled mode and style fixes ([#708](https://github.com/harness/uicore/issues/708)) ([08b6d54](https://github.com/harness/uicore/commit/08b6d5424bbdb354d0e0cc4eb520e959aaf0b619))
+
+
+
+
+
 # [3.23.0](https://github.com/harness/uicore/compare/@harness/uicore@3.22.0...@harness/uicore@3.23.0) (2022-06-09)
 
 **Note:** Version bump only for package @harness/uicore
