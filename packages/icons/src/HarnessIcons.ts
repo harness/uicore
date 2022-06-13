@@ -312,6 +312,7 @@ import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
+import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
@@ -1042,6 +1043,7 @@ type HarnessIconName =
   | 'harness'
   | 'hashiCorpVault'
   | 'health'
+  | 'helm-oci'
   | 'helm-rollback'
   | 'help'
   | 'hourglass'
@@ -1772,6 +1774,7 @@ const HarnessIcons: KVO<ElementType> = {
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
   health: Health,
+  'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
   hourglass: Hourglass,
