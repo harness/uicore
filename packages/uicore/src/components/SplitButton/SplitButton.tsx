@@ -31,6 +31,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
     <div className={css.splitButton}>
       <Button {...commonProps} onClick={handleClick} text={text} icon={icon} className={cx(css.main)} />
       <Popover
+        disabled={commonProps.disabled}
         isOpen={isOptionsOpen}
         onInteraction={nextOpenState => {
           setOptionsOpen(nextOpenState)

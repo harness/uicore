@@ -99,3 +99,17 @@ export const LinkSplitButton: ComponentStory<typeof SplitButton> = args => {
 }
 LinkSplitButton.argTypes = { onClick: { action: 'clicked' } }
 LinkSplitButton.args = { intent: 'primary' }
+
+
+export const DisabledSplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <Container>
+      <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.PRIMARY} {...args} disabled>
+        <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
+        <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} />
+      </SplitButton>
+    </Container>
+  )
+}
+DisabledSplitButton.argTypes = { onClick: { action: 'clicked' } }
+DisabledSplitButton.args = { intent: 'primary' }
