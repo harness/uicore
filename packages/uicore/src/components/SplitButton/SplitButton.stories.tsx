@@ -100,7 +100,6 @@ export const LinkSplitButton: ComponentStory<typeof SplitButton> = args => {
 LinkSplitButton.argTypes = { onClick: { action: 'clicked' } }
 LinkSplitButton.args = { intent: 'primary' }
 
-
 export const DisabledSplitButton: ComponentStory<typeof SplitButton> = args => {
   return (
     <Container>
