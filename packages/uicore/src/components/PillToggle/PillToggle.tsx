@@ -6,11 +6,14 @@
  */
 
 import React from 'react'
-import { isEmpty } from 'lodash-es'
 import cx from 'classnames'
 import { Classes, Intent, PopoverInteractionKind, Position } from '@blueprintjs/core'
 import { Icon, IconName } from '@harness/icons'
+import { Color } from '@harness/design-system'
 import { Popover } from '../Popover/Popover'
+import { Container } from '../Container/Container'
+import { Layout } from '../../layouts/Layout'
+import { Text } from '../Text/Text'
 import css from './PillToggle.css'
 
 export interface PillToggleOption<T> {
@@ -41,34 +44,38 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
     disableToggleReasonContent
   } = props
 
-  const renderInvalidIcon = () => {
-    return (
-      <Icon
-        name={disableToggleReasonIcon}
-        size={12}
-        className={css.disableToggleReasonIcon}
-        data-testid="invalid-icon"
-        intent={Intent.DANGER}
-      />
-    )
-  }
-
   const renderInvalidBadge = (pillToggleValue: T) => {
     if (disableToggle && showDisableToggleReason && selectedView !== pillToggleValue) {
-      if (!isEmpty(disableToggleReasonContent)) {
-        return (
-          <Popover interactionKind={PopoverInteractionKind.HOVER} position={Position.BOTTOM} className={Classes.DARK}>
-            {renderInvalidIcon()}
-            {disableToggleReasonContent}
-          </Popover>
-        )
-      }
-      return renderInvalidIcon()
+      return (
+        <Popover interactionKind={PopoverInteractionKind.HOVER} position={Position.BOTTOM} className={Classes.DARK}>
+          <Icon
+            name={disableToggleReasonIcon}
+            size={12}
+            className={css.disableToggleReasonIcon}
+            data-testid="invalid-icon"
+            intent={Intent.DANGER}
+          />
+          {disableToggleReasonContent ?? (
+            <Container padding="medium">
+              <Layout.Vertical width={325} padding={{ left: 'small' }}>
+                <Text
+                  width={284}
+                  color={Color.GREY_0}
+                  margin={{ bottom: 'small' }}
+                  font={{ size: 'normal', weight: 'light' }}>
+                  The Visual Editor is disabled because of the errors in the YAML file.
+                </Text>
+                <Text width={284} color={Color.GREY_0} font={{ size: 'normal', weight: 'light' }}>
+                  Fix all the errors indicated in the YAML Editor to enable the Visual mode.
+                </Text>
+              </Layout.Vertical>
+            </Container>
+          )}
+        </Popover>
+      )
     }
     return <></>
   }
-
-  const applyDisableModeClass = disableToggle && (isEmpty(disableToggleReasonContent) || !showDisableToggleReason)
 
   return (
     <div className={cx(css.optionBtns, className)}>
@@ -76,10 +83,10 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
         data-name="toggle-option-one"
         className={cx(css.item, {
           [css.selected]: selectedView === options[0].value,
-          [css.disabledMode]: applyDisableModeClass
+          [css.disabledMode]: disableToggle
         })}
         onClick={() => {
-          if (selectedView === options[0].value) {
+          if (selectedView === options[0].value || disableToggle) {
             return
           }
           onChange(options[0].value)
@@ -93,10 +100,10 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
         data-name="toggle-option-two"
         className={cx(css.item, {
           [css.selected]: selectedView === options[1].value,
-          [css.disabledMode]: applyDisableModeClass
+          [css.disabledMode]: disableToggle
         })}
         onClick={() => {
-          if (selectedView === options[1].value) {
+          if (selectedView === options[1].value || disableToggle) {
             return
           }
           onChange(options[1].value)

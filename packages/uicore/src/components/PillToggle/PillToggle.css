@@ -37,6 +37,6 @@
   }
 
   .disabledMode {
-    pointer-events: none;
+    cursor: default;
   }
 }
