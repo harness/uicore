@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/harness/uicore/compare/@harness/icons@1.19.0...@harness/icons@1.20.0) (2022-06-13)
+
+
+### Features
+
+* [PIE-4054]: added Helm Oci icon ([#709](https://github.com/harness/uicore/issues/709)) ([1340324](https://github.com/harness/uicore/commit/13403248b331bab209f5f77e66d45d2a07765bfd))
+
+
+
+
+
 # [1.19.0](https://github.com/harness/uicore/compare/@harness/icons@1.18.0...@harness/icons@1.19.0) (2022-06-09)
 
 
