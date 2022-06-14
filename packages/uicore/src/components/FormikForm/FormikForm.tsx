@@ -68,7 +68,7 @@ import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
 import { DurationInput } from './DurationInput'
-import { SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SelectWithSubmenuProps, SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenu'
 
 // const isFunction = (obj: any): boolean => typeof obj === 'function'
 
@@ -1078,6 +1078,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
 export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
+  value?: SubmenuSelectOption
   placeholder?: string
   selectWithSubmenuTypeInputProps?: SelectWithSubmenuProps
   disabled?: boolean
@@ -1093,7 +1094,7 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
     label,
     ...rest
   } = restProps
-  const value = get(formik?.values, name)
+  const value = props?.value || get(formik?.values, name)
 
   return (
     <FormGroup
