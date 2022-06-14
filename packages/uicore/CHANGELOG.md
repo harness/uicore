@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/harness/uicore/compare/@harness/uicore@3.25.0...@harness/uicore@3.26.0) (2022-06-14)
+
+
+### Features
+
+* [CDS-38820]: provide props in PillToggle component so that consumers show disable warning icon and tooltip ([#712](https://github.com/harness/uicore/issues/712)) ([658d91d](https://github.com/harness/uicore/commit/658d91d995fb91b9fba1604a54eed252e9fddd82))
+
+
+
+
+
 # [3.25.0](https://github.com/harness/uicore/compare/@harness/uicore@3.24.0...@harness/uicore@3.25.0) (2022-06-13)
 
 **Note:** Version bump only for package @harness/uicore

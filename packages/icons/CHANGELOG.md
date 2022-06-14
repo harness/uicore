@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/harness/uicore/compare/@harness/icons@1.20.0...@harness/icons@1.21.0) (2022-06-14)
+
+
+### Features
+
+* [PIE-4057]: Update Queue Icon ([#710](https://github.com/harness/uicore/issues/710)) ([52915b4](https://github.com/harness/uicore/commit/52915b42937db2e47dd4eeb2083e496c5c171ff8))
+
+
+
+
+
 # [1.20.0](https://github.com/harness/uicore/compare/@harness/icons@1.19.0...@harness/icons@1.20.0) (2022-06-13)
 
 
