@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/harness/uicore/compare/@harness/uicore@3.28.0...@harness/uicore@3.29.0) (2022-06-15)
+
+
+### Bug Fixes
+
+* pass tooltipProps to second button only in SplitButton component ([#715](https://github.com/harness/uicore/issues/715)) ([d5a2ee0](https://github.com/harness/uicore/commit/d5a2ee0bec1a4494acaee4baea0ffafc612a40b0))
+
+
+
+
+
 # [3.28.0](https://github.com/harness/uicore/compare/@harness/uicore@3.27.0...@harness/uicore@3.28.0) (2022-06-15)
 
 
