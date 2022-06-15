@@ -60,6 +60,7 @@ export interface AccordionProps {
   detailsClassName?: string
   collapseProps?: Omit<ICollapseProps, 'isOpen'>
   allowMultiOpen?: boolean
+  onChange?(tabs: string | string[]): void
 }
 
 export interface AccordionHandle {
@@ -72,7 +73,7 @@ export function AccordionWithoutRef(
   props: AccordionProps,
   ref: React.ForwardedRef<AccordionHandle>
 ): React.ReactElement {
-  const { children, allowMultiOpen, className, activeId, ...rest } = props
+  const { children, allowMultiOpen, className, activeId, onChange, ...rest } = props
   const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(
     typeof activeId === 'string' ? { [activeId]: true } : {}
   )
@@ -92,6 +93,12 @@ export function AccordionWithoutRef(
 
     return tabs
   }
+
+  React.useEffect(() => {
+    const activeIds = Object.keys(activePanels).filter(panel => activePanels[panel])
+
+    onChange?.(allowMultiOpen ? activeIds : activeIds[0])
+  }, [activePanels])
 
   React.useImperativeHandle(ref, () => ({
     open(tab: string | string[]): void {
