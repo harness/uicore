@@ -28,7 +28,11 @@ export const Basic: Story<AccordionProps> = args => (
 )
 
 Basic.args = {
-  activeId: '1'
+  activeId: '1',
+  onChange(tabs) {
+    // eslint-disable-next-line no-console
+    console.log('changed tabs', tabs)
+  }
 }
 
 function ToggleButton(props: { id: string } & Omit<IButtonProps, 'onClick'>): React.ReactElement {
