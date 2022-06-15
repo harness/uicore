@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.28.0](https://github.com/harness/uicore/compare/@harness/uicore@3.27.0...@harness/uicore@3.28.0) (2022-06-15)
+
+
+### Bug Fixes
+
+* add display flex to SplitButton ([#714](https://github.com/harness/uicore/issues/714)) ([8c82fae](https://github.com/harness/uicore/commit/8c82faef36716ad416205141cc6a06004e398fa0))
+
+
+
+
+
 # [3.27.0](https://github.com/harness/uicore/compare/@harness/uicore@3.26.0...@harness/uicore@3.27.0) (2022-06-14)
 
 
