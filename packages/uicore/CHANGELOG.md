@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.30.0](https://github.com/harness/uicore/compare/@harness/uicore@3.29.0...@harness/uicore@3.30.0) (2022-06-15)
+
+
+### Features
+
+* add onChange on Accordion ([#716](https://github.com/harness/uicore/issues/716)) ([f3486ba](https://github.com/harness/uicore/commit/f3486ba2e357356454c56359add69f59c3705287))
+
+
+
+
+
 # [3.29.0](https://github.com/harness/uicore/compare/@harness/uicore@3.28.0...@harness/uicore@3.29.0) (2022-06-15)
 
 
