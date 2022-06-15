@@ -34,6 +34,7 @@
 
 .splitButton {
   position: relative;
+  display: flex;
   button.bp3-button {
     box-shadow: none;
   }
