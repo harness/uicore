@@ -19,6 +19,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   icon,
   children,
   className,
+  tooltipProps,
   ...commonProps
 }) => {
   const [isOptionsOpen, setOptionsOpen] = React.useState(false)
@@ -43,6 +44,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
         position={Position.BOTTOM_RIGHT}>
         <Button
           rightIcon="chevron-down"
+          tooltipProps={tooltipProps}
           {...commonProps}
           onClick={() => setOptionsOpen(true)}
           className={cx(css.dropdown, className)}
