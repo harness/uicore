@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/harness/uicore/compare/@harness/uicore@3.30.0...@harness/uicore@3.31.0) (2022-06-16)
+
+
+### Features
+
+* add disabled state in accordion panel and css cleanup ([#717](https://github.com/harness/uicore/issues/717)) ([0c46b02](https://github.com/harness/uicore/commit/0c46b020caa467829c3f8c25d423234f5b95df8e))
+
+
+
+
+
 # [3.30.0](https://github.com/harness/uicore/compare/@harness/uicore@3.29.0...@harness/uicore@3.30.0) (2022-06-15)
 
 
