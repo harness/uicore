@@ -23,7 +23,7 @@ export const Basic: Story<AccordionProps> = args => (
   <Accordion {...args}>
     <Accordion.Panel id="1" details={text} summary="Panel 1" />
     <Accordion.Panel id="2" details={text} summary="Panel 2" />
-    <Accordion.Panel id="3" details={text} summary="Panel 3" />
+    <Accordion.Panel disabled id="3" details={text} summary="Panel 3" />
   </Accordion>
 )
 
