@@ -13,7 +13,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { PopoverInteractionKind, TagInput as BPTagInput } from '@blueprintjs/core'
+import { TagInput as BPTagInput } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
@@ -32,7 +32,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { compact, defaultTo, get, isNil, noop, omit } from 'lodash-es'
+import { compact, get, isNil, omit } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -47,7 +47,8 @@ import {
   MultiSelectTypeInput,
   MultiTextInputProps,
   MultiTextInput,
-  getMultiTypeFromValue
+  getMultiTypeFromValue,
+  SelectWithSubmenuTypeInputProps
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -68,7 +69,7 @@ import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
 import { DurationInput } from './DurationInput'
-import { SelectWithSubmenuProps, SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenu'
 
 // const isFunction = (obj: any): boolean => typeof obj === 'function'
 
@@ -1078,14 +1079,26 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
 export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
-  value?: SubmenuSelectOption
   placeholder?: string
-  selectWithSubmenuTypeInputProps?: SelectWithSubmenuProps
+  /**
+   *Enable this when we want to use value, instead of label/value
+   */
+  useValue?: boolean
+  selectItems: SubmenuSelectOption[]
+  selectWithSubmenuTypeInputProps?: Omit<SelectWithSubmenuTypeInputProps, 'name'>
   disabled?: boolean
 }
 
 const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputProps & FormikContextProps<any>) => {
-  const { formik, name, placeholder, selectWithSubmenuTypeInputProps, ...restProps } = props
+  const {
+    formik,
+    name,
+    useValue = false,
+    selectItems,
+    placeholder,
+    selectWithSubmenuTypeInputProps,
+    ...restProps
+  } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1094,7 +1107,33 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
     label,
     ...rest
   } = restProps
-  const value = props?.value || get(formik?.values, name)
+  const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
+  const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
+    (val, valueType, type) => {
+      type !== currentType && setCurrentType(type)
+      if (useValue && type === MultiTypeInputType.FIXED) {
+        formik?.setFieldValue(name, val?.value)
+      } else {
+        formik?.setFieldValue(name, val)
+      }
+      formik?.setFieldTouched(name, true, false)
+      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val, valueType, type)
+    },
+    [formik, selectWithSubmenuTypeInputProps]
+  )
+
+  let value = get(formik?.values, name) // formik form value
+  if (useValue && currentType === MultiTypeInputType.FIXED) {
+    const selectedItem = selectItems.find(item => item.value === value)
+    if (isNil(value)) {
+      value = ''
+    } else {
+      value = {
+        label: selectedItem?.label,
+        value: selectedItem?.value
+      }
+    }
+  }
 
   return (
     <FormGroup
@@ -1105,16 +1144,22 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
       disabled={disabled}
       {...rest}>
       <SelectWithSubmenuTypeInput
-        disabled={disabled}
+        {...selectWithSubmenuTypeInputProps}
         value={value}
         name={name}
-        placeholder={placeholder}
+        disabled={disabled}
         selectWithSubmenuProps={{
-          items: defaultTo(selectWithSubmenuTypeInputProps?.items, []),
-          onOpening: defaultTo(selectWithSubmenuTypeInputProps?.onOpening, noop),
-          interactionKind: defaultTo(selectWithSubmenuTypeInputProps?.interactionKind, PopoverInteractionKind.HOVER)
+          items: selectItems,
+          ...selectWithSubmenuTypeInputProps?.selectWithSubmenuProps,
+          name,
+          inputProps: {
+            name,
+            intent,
+            placeholder,
+            disabled
+          }
         }}
-        onChange={defaultTo(selectWithSubmenuTypeInputProps?.onChange, noop)}
+        onChange={onChangeCallback}
       />
     </FormGroup>
   )

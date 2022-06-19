@@ -37,14 +37,20 @@ interface SubmenuProps {
 
 const Submenu = ({ items, onChange, primaryValue }: SubmenuProps) => (
   <Menu className={css.submenu}>
-    {items?.map((item: any) => (
-      <MenuItem
-        key={item.value}
-        text={item.label}
-        onClick={(_: any) => onChange?.(primaryValue as SelectOption, item)}
-        className={css.submenuItem}
-      />
-    ))}
+    {items?.length ? (
+      items.map((item: any) => (
+        <MenuItem
+          key={item.value}
+          text={item.label}
+          onClick={() => {
+            onChange?.(primaryValue as SelectOption, item)
+          }}
+          className={css.submenuItem}
+        />
+      ))
+    ) : (
+      <div className={css.noResultsFound}>No Results Found</div>
+    )}
   </Menu>
 )
 
@@ -106,5 +112,13 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
     [items]
   )
 
-  return <Select {...selectProps} items={items} itemRenderer={itemRenderer} className={className} />
+  return (
+    <Select
+      {...selectProps}
+      items={items}
+      itemRenderer={itemRenderer}
+      className={className}
+      onChange={onChange as SelectProps['onChange']}
+    />
+  )
 }
