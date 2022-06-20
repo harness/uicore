@@ -645,6 +645,7 @@ import ServiceSpotinst from './service-spotinst.svg'
 import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
+import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
 import ServicenowApprove from './servicenow-approve.svg'
@@ -1376,6 +1377,7 @@ type HarnessIconName =
   | 'service-stackdriver'
   | 'service-sumologic'
   | 'service-terraform'
+  | 'service-vm'
   | 'service'
   | 'servicenow-approve-inverse'
   | 'servicenow-approve'
@@ -2107,6 +2109,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-stackdriver': ServiceStackdriver,
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
+  'service-vm': ServiceVm,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
   'servicenow-approve': ServicenowApprove,
