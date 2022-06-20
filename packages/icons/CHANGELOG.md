@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/harness/uicore/compare/@harness/icons@1.21.0...@harness/icons@1.22.0) (2022-06-20)
+
+
+### Features
+
+* [CI-4630]: add vm icon ([#720](https://github.com/harness/uicore/issues/720)) ([8a7b58a](https://github.com/harness/uicore/commit/8a7b58a4253de3f68bbb860b80a7c47b48b6cd97))
+
+
+
+
+
 # [1.21.0](https://github.com/harness/uicore/compare/@harness/icons@1.20.0...@harness/icons@1.21.0) (2022-06-14)
 
 
