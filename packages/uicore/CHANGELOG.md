@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.33.0](https://github.com/harness/uicore/compare/@harness/uicore@3.32.0...@harness/uicore@3.33.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* SplitButton css specificity for secondary variation ([#719](https://github.com/harness/uicore/issues/719)) ([b9adb8a](https://github.com/harness/uicore/commit/b9adb8a2d2511ba651c4e59e54fd89726b53a3d3))
+
+
+
+
+
 # [3.32.0](https://github.com/harness/uicore/compare/@harness/uicore@3.31.0...@harness/uicore@3.32.0) (2022-06-20)
 
 
