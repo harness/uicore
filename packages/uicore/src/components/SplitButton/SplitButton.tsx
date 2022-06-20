@@ -30,7 +30,13 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
 
   return (
     <div className={css.splitButton}>
-      <Button {...commonProps} onClick={handleClick} text={text} icon={icon} className={cx(css.main)} />
+      <Button
+        {...commonProps}
+        onClick={handleClick}
+        text={text}
+        icon={icon}
+        className={cx(css.main, 'border-right-0')}
+      />
       <Popover
         disabled={commonProps.disabled}
         isOpen={isOptionsOpen}
@@ -47,7 +53,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
           tooltipProps={tooltipProps}
           {...commonProps}
           onClick={() => setOptionsOpen(true)}
-          className={cx(css.dropdown, className)}
+          className={cx(css.dropdown, className, 'border-left-0')}
         />
       </Popover>
     </div>
