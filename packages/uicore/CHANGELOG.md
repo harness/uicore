@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.32.0](https://github.com/harness/uicore/compare/@harness/uicore@3.31.0...@harness/uicore@3.32.0) (2022-06-20)
+
+
+### Features
+
+* [CDS-38779]: add clear button to select with sub menu ([#718](https://github.com/harness/uicore/issues/718)) ([ed51d3d](https://github.com/harness/uicore/commit/ed51d3d69351426bc3942ae8bf0d8c74339e91c2))
+
+
+
+
+
 # [3.31.0](https://github.com/harness/uicore/compare/@harness/uicore@3.30.0...@harness/uicore@3.31.0) (2022-06-16)
 
 
