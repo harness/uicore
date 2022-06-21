@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/harness/uicore/compare/@harness/icons@1.22.0...@harness/icons@1.23.0) (2022-06-21)
+
+
+### Features
+
+* [CCM-8006]: pin and unpin icons added ([#721](https://github.com/harness/uicore/issues/721)) ([403a37b](https://github.com/harness/uicore/commit/403a37b2d8527996f300d3caafb26f5c62051147))
+
+
+
+
+
 # [1.22.0](https://github.com/harness/uicore/compare/@harness/icons@1.21.0...@harness/icons@1.22.0) (2022-06-20)
 
 
