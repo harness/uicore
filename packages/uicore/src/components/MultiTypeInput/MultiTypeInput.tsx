@@ -30,6 +30,7 @@ import {
 } from './MultiTypeInputUtils'
 import { MultiTypeInputMenu } from './MultiTypeInputMenu'
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 
 type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[]
 
@@ -330,6 +331,24 @@ export const SelectWithSubmenuTypeInput: React.FC<SelectWithSubmenuTypeInputProp
       {...rest}
       fixedTypeComponentProps={selectWithSubmenuProps}
       fixedTypeComponent={SelectWithSubmenu}
+    />
+  )
+}
+
+export interface MultiSelectWithSubmenuTypeInputProps
+  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
+  multiSelectWithSubmenuProps?: MultiSelectWithSubmenuProps
+}
+
+export const MultiSelectWithSubmenuTypeInput: React.FC<MultiSelectWithSubmenuTypeInputProps> = ({
+  multiSelectWithSubmenuProps,
+  ...rest
+}) => {
+  return (
+    <ExpressionAndRuntimeType
+      {...rest}
+      fixedTypeComponentProps={multiSelectWithSubmenuProps}
+      fixedTypeComponent={MultiSelectWithSubmenu}
     />
   )
 }
