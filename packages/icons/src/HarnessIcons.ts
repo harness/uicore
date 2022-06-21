@@ -402,6 +402,7 @@ import MainMove from './main-move.svg'
 import MainNotes from './main-notes.svg'
 import MainNotifications from './main-notifications.svg'
 import MainPause from './main-pause.svg'
+import MainPin from './main-pin.svg'
 import MainPipelines from './main-pipelines.svg'
 import MainPopularity from './main-popularity.svg'
 import MainRefresh from './main-refresh.svg'
@@ -425,6 +426,7 @@ import MainThumbsup from './main-thumbsup.svg'
 import MainTick from './main-tick.svg'
 import MainTrash from './main-trash.svg'
 import MainUnlock from './main-unlock.svg'
+import MainUnpin from './main-unpin.svg'
 import MainUpload from './main-upload.svg'
 import MainUserGroups from './main-user-groups.svg'
 import MainUser from './main-user.svg'
@@ -1134,6 +1136,7 @@ type HarnessIconName =
   | 'main-notes'
   | 'main-notifications'
   | 'main-pause'
+  | 'main-pin'
   | 'main-pipelines'
   | 'main-popularity'
   | 'main-refresh'
@@ -1157,6 +1160,7 @@ type HarnessIconName =
   | 'main-tick'
   | 'main-trash'
   | 'main-unlock'
+  | 'main-unpin'
   | 'main-upload'
   | 'main-user-groups'
   | 'main-user'
@@ -1866,6 +1870,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-notes': MainNotes,
   'main-notifications': MainNotifications,
   'main-pause': MainPause,
+  'main-pin': MainPin,
   'main-pipelines': MainPipelines,
   'main-popularity': MainPopularity,
   'main-refresh': MainRefresh,
@@ -1889,6 +1894,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-tick': MainTick,
   'main-trash': MainTrash,
   'main-unlock': MainUnlock,
+  'main-unpin': MainUnpin,
   'main-upload': MainUpload,
   'main-user-groups': MainUserGroups,
   'main-user': MainUser,
