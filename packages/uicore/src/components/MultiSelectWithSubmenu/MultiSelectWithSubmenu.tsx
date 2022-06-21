@@ -5,10 +5,10 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import cx from 'classnames'
 import { defaultTo, omit } from 'lodash-es'
-import { Checkbox, Menu, Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
+import { Menu, Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
 
 import { SelectOption, SelectProps } from '../Select/Select'
 import { MultiSelect } from '../MultiSelect/MultiSelect'
@@ -25,28 +25,48 @@ export interface SubmenuMultiSelectOption extends SelectOption {
 export interface MultiSelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange'> {
   items: SubmenuMultiSelectOption[]
   onChange?: (primaryValue: SelectOption, selectedValue?: SelectOption, type?: MultiTypeInputType) => void
+  onSubmenuOpen?: (value?: string) => Promise<void>
 }
 
 interface SubmenuProps {
   items: SelectOption[]
   onChange?: (primaryValue: SelectOption, selectedValue: SelectOption, type?: MultiTypeInputType) => void
   primaryValue?: SelectOption
+  onSubmenuOpen?: (value?: string) => Promise<void>
 }
 
-const Submenu = ({ items, onChange, primaryValue }: SubmenuProps) => {
+const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen }: SubmenuProps) => {
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (onSubmenuOpen) {
+      onSubmenuOpen?.(primaryValue?.value as string)
+        .then(() => {
+          setLoading(false)
+        })
+        .catch(() => {
+          setLoading(false)
+        })
+    }
+  }, [])
+
   return (
     <Menu className={css.submenu}>
-      {items?.length ? (
-        items.map((item: any) => (
-          <Checkbox
-            key={item.value}
-            label={item.label}
+      {loading ? (
+        <div className={css.loading}>Loading...</div>
+      ) : items?.length ? (
+        items.map(item => (
+          <label
+            key={item.value.toString()}
+            className={css.submenuItem}
             onClick={() => {
               onChange?.(primaryValue as SelectOption, item)
-            }}
-            className={css.submenuItem}
-            itemType="checkbox"
-          />
+            }}>
+            <input className={css.checkbox} type="checkbox" />
+            <Text className={css.menuItemLabel} lineClamp={1}>
+              {item.label}
+            </Text>
+          </label>
         ))
       ) : (
         <div className={css.noResultsFound}>No Results Found</div>
@@ -56,7 +76,7 @@ const Submenu = ({ items, onChange, primaryValue }: SubmenuProps) => {
 }
 
 export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
-  const { items, className, onChange, ...selectProps } = props
+  const { items, onChange, onSubmenuOpen, value, ...selectProps } = props
 
   const itemRenderer = useCallback(
     (item: SelectOption) => {
@@ -67,6 +87,7 @@ export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
               items={(item as SubmenuMultiSelectOption).submenuItems}
               onChange={onChange}
               primaryValue={omit(item, 'submenuItems')}
+              onSubmenuOpen={onSubmenuOpen}
             />
           }
           position={Position.LEFT_TOP}
@@ -104,16 +125,12 @@ export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
       {...selectProps}
       itemRender={itemRenderer}
       items={defaultTo(items, []) as any}
-      value={[]}
-      className={className}
+      value={value as any}
       itemsEqual={(a, b) => a.value === b.value}
       itemDisabled={a => !a.value}
-      // onItemSelect={item => console.log(item)}
-      // tagRenderer={what => {
-      //   console.log('what : ', what)
-      //   return <div>Tests</div>
-      // }}
-      // onChange={onChange as MultiSelectProps['onChange']}
+      tagRenderer={item => {
+        return <div>{item.label}</div>
+      }}
     />
   )
 }
