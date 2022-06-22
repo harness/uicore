@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/harness/uicore/compare/@harness/help-panel@1.8.0...@harness/help-panel@1.9.0) (2022-06-14)
+
+**Note:** Version bump only for package @harness/help-panel
+
+
+
+
+
+# [1.8.0](https://github.com/harness/uicore/compare/@harness/help-panel@1.7.0...@harness/help-panel@1.8.0) (2022-06-08)
+
+
+### Features
+
+* [PL-25757]: Help Panel bugs fixes and changed exports in package json ([#702](https://github.com/harness/uicore/issues/702)) ([321e38d](https://github.com/harness/uicore/commit/321e38dc9b3399e1fa760ae07288ea18461e8cee))
+
+
+
+
+
 # 1.7.0 (2022-06-06)
 
 

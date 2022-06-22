@@ -251,6 +251,7 @@ import FfSolid from './ff-solid.svg'
 import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
+import Filestore from './filestore.svg'
 import FixedInput from './fixed-input.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
@@ -311,6 +312,7 @@ import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
+import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
@@ -344,6 +346,7 @@ import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
 import Loading from './loading.svg'
+import Looping from './looping.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -399,6 +402,7 @@ import MainMove from './main-move.svg'
 import MainNotes from './main-notes.svg'
 import MainNotifications from './main-notifications.svg'
 import MainPause from './main-pause.svg'
+import MainPin from './main-pin.svg'
 import MainPipelines from './main-pipelines.svg'
 import MainPopularity from './main-popularity.svg'
 import MainRefresh from './main-refresh.svg'
@@ -422,6 +426,7 @@ import MainThumbsup from './main-thumbsup.svg'
 import MainTick from './main-tick.svg'
 import MainTrash from './main-trash.svg'
 import MainUnlock from './main-unlock.svg'
+import MainUnpin from './main-unpin.svg'
 import MainUpload from './main-upload.svg'
 import MainUserGroups from './main-user-groups.svg'
 import MainUser from './main-user.svg'
@@ -429,6 +434,7 @@ import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import MemberRole from './memberRole.svg'
+import MergePr from './merge-pr.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
@@ -642,6 +648,7 @@ import ServiceSpotinst from './service-spotinst.svg'
 import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
+import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
 import ServicenowApprove from './servicenow-approve.svg'
@@ -979,6 +986,7 @@ type HarnessIconName =
   | 'ff-with-dark-text'
   | 'ff-with-text'
   | 'file'
+  | 'filestore'
   | 'fixed-input'
   | 'flag'
   | 'flash'
@@ -1039,6 +1047,7 @@ type HarnessIconName =
   | 'harness'
   | 'hashiCorpVault'
   | 'health'
+  | 'helm-oci'
   | 'helm-rollback'
   | 'help'
   | 'hourglass'
@@ -1072,6 +1081,7 @@ type HarnessIconName =
   | 'list-entity-infographic'
   | 'list-view'
   | 'loading'
+  | 'looping'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -1127,6 +1137,7 @@ type HarnessIconName =
   | 'main-notes'
   | 'main-notifications'
   | 'main-pause'
+  | 'main-pin'
   | 'main-pipelines'
   | 'main-popularity'
   | 'main-refresh'
@@ -1150,6 +1161,7 @@ type HarnessIconName =
   | 'main-tick'
   | 'main-trash'
   | 'main-unlock'
+  | 'main-unpin'
   | 'main-upload'
   | 'main-user-groups'
   | 'main-user'
@@ -1157,6 +1169,7 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
+  | 'merge-pr'
   | 'microsoft-azure'
   | 'money-icon'
   | 'multi-service'
@@ -1370,6 +1383,7 @@ type HarnessIconName =
   | 'service-stackdriver'
   | 'service-sumologic'
   | 'service-terraform'
+  | 'service-vm'
   | 'service'
   | 'servicenow-approve-inverse'
   | 'servicenow-approve'
@@ -1707,6 +1721,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
   file: File,
+  filestore: Filestore,
   'fixed-input': FixedInput,
   flag: Flag,
   flash: Flash,
@@ -1767,6 +1782,7 @@ const HarnessIcons: KVO<ElementType> = {
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
   health: Health,
+  'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
   hourglass: Hourglass,
@@ -1800,6 +1816,7 @@ const HarnessIcons: KVO<ElementType> = {
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,
   loading: Loading,
+  looping: Looping,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
@@ -1855,6 +1872,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-notes': MainNotes,
   'main-notifications': MainNotifications,
   'main-pause': MainPause,
+  'main-pin': MainPin,
   'main-pipelines': MainPipelines,
   'main-popularity': MainPopularity,
   'main-refresh': MainRefresh,
@@ -1878,6 +1896,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-tick': MainTick,
   'main-trash': MainTrash,
   'main-unlock': MainUnlock,
+  'main-unpin': MainUnpin,
   'main-upload': MainUpload,
   'main-user-groups': MainUserGroups,
   'main-user': MainUser,
@@ -1885,6 +1904,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: MemberRole,
+  'merge-pr': MergePr,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
@@ -2098,6 +2118,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-stackdriver': ServiceStackdriver,
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
+  'service-vm': ServiceVm,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
   'servicenow-approve': ServicenowApprove,

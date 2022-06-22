@@ -316,7 +316,7 @@ export const MultiSelectTypeInput: React.FC<MultiSelectTypeInputProps> = ({ mult
   )
 }
 
-interface SelectWithSubmenuTypeInputProps
+export interface SelectWithSubmenuTypeInputProps
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
   selectWithSubmenuProps?: SelectWithSubmenuProps
 }

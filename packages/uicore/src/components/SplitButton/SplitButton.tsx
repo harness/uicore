@@ -19,6 +19,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   icon,
   children,
   className,
+  tooltipProps,
   ...commonProps
 }) => {
   const [isOptionsOpen, setOptionsOpen] = React.useState(false)
@@ -29,8 +30,15 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
 
   return (
     <div className={css.splitButton}>
-      <Button {...commonProps} onClick={handleClick} text={text} icon={icon} className={cx(css.main)} />
+      <Button
+        {...commonProps}
+        onClick={handleClick}
+        text={text}
+        icon={icon}
+        className={cx(css.main, 'border-right-0')}
+      />
       <Popover
+        disabled={commonProps.disabled}
         isOpen={isOptionsOpen}
         onInteraction={nextOpenState => {
           setOptionsOpen(nextOpenState)
@@ -42,9 +50,10 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
         position={Position.BOTTOM_RIGHT}>
         <Button
           rightIcon="chevron-down"
+          tooltipProps={tooltipProps}
           {...commonProps}
           onClick={() => setOptionsOpen(true)}
-          className={cx(css.dropdown, className)}
+          className={cx(css.dropdown, className, 'border-left-0')}
         />
       </Popover>
     </div>

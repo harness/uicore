@@ -23,16 +23,17 @@ List of packages:
 
 - `yarn setup` - to set up authentication to access Github Package Registry
 - `yarn storybook` - to start storybook
+- `yarn build` - to build all the packages locally.
+
+> Note: You will need to build the packages once before you start working on the codebase, else you will see error messages relating to package resolutions.
 
 ## Icons
 
-Icons are moved to a separate npm package under /packages folder. Please follow below steps to add new icons -
+Icons are under available `packages/icons` folder. Please follow below steps to add new icons -
 
-```
-$ cd packages/icons
-- Place your icon inside `src` directory
-$ yarn ui:icons
-```
+1. Place the new icon (in SVG format) inside `packages/icons/src` directory.
+2. Run `yarn ui:icons` (under the root directory)
+3. Commit all the changes and open a PR.
 
 ## Storybook
 
@@ -48,9 +49,11 @@ Install it globally
 yarn global add yalc
 ```
 
-Build and publish locally
+Build and publish locally. This should be done inside the particular package's folder.
 
 ```
+# package: @harness/uicore
+# dir: packages/uicore
 yarn build && yalc publish
 ```
 
@@ -65,10 +68,6 @@ yalc add @harness/uicore@0.1.256
 Note: The version number must match to whatever was printed on the screen during publish.
 
 Please do not commit any changes made by `yalc` in nextgenui.
-
-## Build
-
-`yarn build`
 
 ## Publish
 

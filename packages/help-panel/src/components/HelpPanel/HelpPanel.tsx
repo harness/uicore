@@ -10,6 +10,8 @@ import { Error, HelpPanelContext } from '../../HelpPanelContext'
 import DefaultContainer from './Containers/DefaultContainer/DefaultContainer'
 import FloatingContainer from './Containers/FloatingContainer/FloatingContainer'
 import HelpPanelContent from './HelpPanelContent/HelpPanelContent'
+import { useContentful } from '../../HelpPanelContext'
+import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
 
 export enum HelpPanelType {
   FLOATING_CONTAINER = 'FLOATING_CONTAINER',
@@ -26,18 +28,26 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
   const floatingBtnRef = React.useRef<HTMLButtonElement | null>(null)
 
-  const { error } = React.useContext(HelpPanelContext)
+  const { error: initialError } = React.useContext(HelpPanelContext)
 
-  if (error === Error.ERROR_INITIALIZING_CONTENTFUL) {
+  if (initialError === Error.ERROR_INITIALIZING_CONTENTFUL) {
     return null
   }
+
+  const { data, loading, error } = useContentful<IHelpPanel>({
+    referenceId,
+    // eslint-disable-next-line camelcase
+    content_type: ContentType.helpPanel
+  })
 
   switch (type) {
     case HelpPanelType.FLOATING_CONTAINER:
       return (
         <FloatingContainer ref={floatingBtnRef}>
           <HelpPanelContent
-            referenceId={referenceId}
+            data={data}
+            error={error}
+            loading={loading}
             onClose={() => {
               floatingBtnRef.current?.click()
             }}
@@ -45,11 +55,11 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
         </FloatingContainer>
       )
     case HelpPanelType.CONTENT_ONLY:
-      return <HelpPanelContent referenceId={referenceId} onClose={props.onClose} />
+      return <HelpPanelContent data={data} error={error} loading={loading} onClose={props.onClose} />
     default:
       return (
         <DefaultContainer>
-          <HelpPanelContent referenceId={referenceId} />
+          <HelpPanelContent data={data} error={error} loading={loading} />
         </DefaultContainer>
       )
   }

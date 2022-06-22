@@ -3,6 +3,129 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/harness/uicore/compare/@harness/icons@1.26.0...@harness/icons@1.27.0) (2022-06-22)
+
+
+### Bug Fixes
+
+* [CDS-37814]: updated create and merge pr icons ([#726](https://github.com/harness/uicore/issues/726)) ([118ae8c](https://github.com/harness/uicore/commit/118ae8ce311217a2a6e8ba53892478da60e4f3d0))
+
+
+
+
+
+# [1.26.0](https://github.com/harness/uicore/compare/@harness/icons@1.25.0...@harness/icons@1.26.0) (2022-06-22)
+
+
+### Bug Fixes
+
+* [CDS-38231]: updated icons ([#725](https://github.com/harness/uicore/issues/725)) ([87bd326](https://github.com/harness/uicore/commit/87bd326062ecb4d7ceed369901b43f087c990b20))
+
+
+
+
+
+# [1.25.0](https://github.com/harness/uicore/compare/@harness/icons@1.24.0...@harness/icons@1.25.0) (2022-06-21)
+
+
+### Features
+
+* [CDS-38231]: modified createpr and mergepr icons ([#722](https://github.com/harness/uicore/issues/722)) ([bacf7ff](https://github.com/harness/uicore/commit/bacf7ff85a1bcfde4bef9fde2358ee89e930ec29))
+
+
+
+
+
+# [1.24.0](https://github.com/harness/uicore/compare/@harness/icons@1.23.0...@harness/icons@1.24.0) (2022-06-21)
+
+
+### Features
+
+* [CI-4630]: optimize vm icon ([#724](https://github.com/harness/uicore/issues/724)) ([5b5c7bb](https://github.com/harness/uicore/commit/5b5c7bba784d7993d8fa59590b53e4e9caf71268))
+
+
+
+
+
+# [1.23.0](https://github.com/harness/uicore/compare/@harness/icons@1.22.0...@harness/icons@1.23.0) (2022-06-21)
+
+
+### Features
+
+* [CCM-8006]: pin and unpin icons added ([#721](https://github.com/harness/uicore/issues/721)) ([403a37b](https://github.com/harness/uicore/commit/403a37b2d8527996f300d3caafb26f5c62051147))
+
+
+
+
+
+# [1.22.0](https://github.com/harness/uicore/compare/@harness/icons@1.21.0...@harness/icons@1.22.0) (2022-06-20)
+
+
+### Features
+
+* [CI-4630]: add vm icon ([#720](https://github.com/harness/uicore/issues/720)) ([8a7b58a](https://github.com/harness/uicore/commit/8a7b58a4253de3f68bbb860b80a7c47b48b6cd97))
+
+
+
+
+
+# [1.21.0](https://github.com/harness/uicore/compare/@harness/icons@1.20.0...@harness/icons@1.21.0) (2022-06-14)
+
+
+### Features
+
+* [PIE-4057]: Update Queue Icon ([#710](https://github.com/harness/uicore/issues/710)) ([52915b4](https://github.com/harness/uicore/commit/52915b42937db2e47dd4eeb2083e496c5c171ff8))
+
+
+
+
+
+# [1.20.0](https://github.com/harness/uicore/compare/@harness/icons@1.19.0...@harness/icons@1.20.0) (2022-06-13)
+
+
+### Features
+
+* [PIE-4054]: added Helm Oci icon ([#709](https://github.com/harness/uicore/issues/709)) ([1340324](https://github.com/harness/uicore/commit/13403248b331bab209f5f77e66d45d2a07765bfd))
+
+
+
+
+
+# [1.19.0](https://github.com/harness/uicore/compare/@harness/icons@1.18.0...@harness/icons@1.19.0) (2022-06-09)
+
+
+### Bug Fixes
+
+* [CDS-38697]: Add loop icon for matrix ([#704](https://github.com/harness/uicore/issues/704)) ([45e283f](https://github.com/harness/uicore/commit/45e283f856359ab014482e3e3e93bcc80ddf09fb))
+
+
+
+
+
+# [1.18.0](https://github.com/harness/uicore/compare/@harness/icons@1.17.0...@harness/icons@1.18.0) (2022-06-09)
+
+
+### Bug Fixes
+
+* icon names ([#707](https://github.com/harness/uicore/issues/707)) ([8b3dd53](https://github.com/harness/uicore/commit/8b3dd535387aab760aeb03c24508e4740a57abe8))
+
+
+### Features
+
+* [CDS-38057] Filestore icon ([#705](https://github.com/harness/uicore/issues/705)) ([b1d5541](https://github.com/harness/uicore/commit/b1d5541048f11aae6a7ee50b48535270834f13d4))
+
+
+
+
+
+# [1.17.0](https://github.com/harness/uicore/compare/@harness/icons@1.16.0...@harness/icons@1.17.0) (2022-06-08)
+
+**Note:** Version bump only for package @harness/icons
+
+
+
+
+
 # [1.16.0](https://github.com/harness/uicore/compare/@harness/icons@1.15.0...@harness/icons@1.16.0) (2022-06-07)
 
 
