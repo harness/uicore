@@ -136,7 +136,6 @@ export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
       tagInputProps={{
         onRemove(item: React.ReactNode) {
           const values = (item as ReactElement)?.props?.children
-          console.log(values)
           onChange?.(
             {
               label: values[0],
@@ -144,8 +143,10 @@ export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
             },
             {
               label: values[2],
-              value: values[2]
-            }
+              value: values[2],
+              parentLabel: values[0],
+              parentValue: values[0]
+            } as any
           )
         }
       }}
