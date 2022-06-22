@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/harness/uicore/compare/@harness/icons@1.26.0...@harness/icons@1.27.0) (2022-06-22)
+
+
+### Bug Fixes
+
+* [CDS-37814]: updated create and merge pr icons ([#726](https://github.com/harness/uicore/issues/726)) ([118ae8c](https://github.com/harness/uicore/commit/118ae8ce311217a2a6e8ba53892478da60e4f3d0))
+
+
+
+
+
 # [1.26.0](https://github.com/harness/uicore/compare/@harness/icons@1.25.0...@harness/icons@1.26.0) (2022-06-22)
 
 
