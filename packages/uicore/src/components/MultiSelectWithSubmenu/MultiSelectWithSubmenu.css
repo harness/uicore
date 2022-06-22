@@ -28,6 +28,7 @@
   min-width: 250px;
   width: 100%;
   padding: 0;
+  cursor: pointer;
 
   :global(.bp3-control) {
     margin-bottom: 0px;

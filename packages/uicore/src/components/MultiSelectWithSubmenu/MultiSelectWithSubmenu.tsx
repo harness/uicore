@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { ReactElement, useCallback, useEffect, useState } from 'react'
 import cx from 'classnames'
 import { defaultTo, omit } from 'lodash-es'
 import { Menu, Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
@@ -22,7 +22,7 @@ export interface SubmenuMultiSelectOption extends SelectOption {
   submenuItems: SelectOption[]
 }
 
-export interface MultiSelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange'> {
+export interface MultiSelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange' | 'value'> {
   items: SubmenuMultiSelectOption[]
   onChange?: (primaryValue: SelectOption, selectedValue?: SelectOption, type?: MultiTypeInputType) => void
   onSubmenuOpen?: (value?: string) => Promise<void>
@@ -40,6 +40,7 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen }: SubmenuProps)
 
   useEffect(() => {
     if (onSubmenuOpen) {
+      setLoading(true)
       onSubmenuOpen?.(primaryValue?.value as string)
         .then(() => {
           setLoading(false)
@@ -63,7 +64,7 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen }: SubmenuProps)
               onChange?.(primaryValue as SelectOption, item)
             }}>
             <input className={css.checkbox} type="checkbox" />
-            <Text className={css.menuItemLabel} lineClamp={1}>
+            <Text className={css.menuItemLabel} lineClamp={1} onClick={event => event?.stopPropagation()}>
               {item.label}
             </Text>
           </label>
@@ -76,7 +77,7 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen }: SubmenuProps)
 }
 
 export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
-  const { items, onChange, onSubmenuOpen, value, ...selectProps } = props
+  const { items, onChange, onSubmenuOpen, ...selectProps } = props
 
   const itemRenderer = useCallback(
     (item: SelectOption) => {
@@ -124,12 +125,29 @@ export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
     <MultiSelect
       {...selectProps}
       itemRender={itemRenderer}
-      items={defaultTo(items, []) as any}
-      value={value as any}
+      items={defaultTo(items, [])}
       itemsEqual={(a, b) => a.value === b.value}
       itemDisabled={a => !a.value}
-      tagRenderer={item => {
-        return <div>{item.label}</div>
+      tagRenderer={(item: any) => (
+        <div>
+          {item.parentLabel}|{item.label}
+        </div>
+      )}
+      tagInputProps={{
+        onRemove(item: React.ReactNode) {
+          const values = (item as ReactElement)?.props?.children
+          console.log(values)
+          onChange?.(
+            {
+              label: values[0],
+              value: values[0]
+            },
+            {
+              label: values[2],
+              value: values[2]
+            }
+          )
+        }
       }}
     />
   )
