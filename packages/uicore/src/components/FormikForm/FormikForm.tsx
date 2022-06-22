@@ -1080,6 +1080,7 @@ export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProp
   name: string
   label: string
   placeholder?: string
+  value?: SubmenuSelectOption
   /**
    *Enable this when we want to use value, instead of label/value
    */
@@ -1122,7 +1123,7 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
     [formik, selectWithSubmenuTypeInputProps]
   )
 
-  let value = get(formik?.values, name) // formik form value
+  let value = props?.value || get(formik?.values, name) // formik form value
   if (useValue && currentType === MultiTypeInputType.FIXED) {
     const selectedItem = selectItems.find(item => item.value === value)
     if (isNil(value)) {
