@@ -29,6 +29,15 @@ exports[`PageError test Rendering error with a React Node 1`] = `
           />
         </svg>
       </span>
+      <div
+        class="vertical layout-spacing-undefined StyledProps--main"
+      >
+        <p
+          class="StyledProps--font StyledProps--main"
+        >
+          You are missing the following permission:
+        </p>
+      </div>
     </div>
   </div>
 </div>

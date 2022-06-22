@@ -27,7 +27,7 @@ describe('PageError test', () => {
         <Text>You are missing the following permission:</Text>
       </Layout.Vertical>
     )
-    const { container } = render(<PageError message={reactNode} />)
+    const { container } = render(<PageError message={reactNode()} />)
     expect(container).toMatchSnapshot()
   })
 })
