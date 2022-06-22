@@ -23,7 +23,7 @@ export interface PageBodyProps {
   loadingMessage?: string
 
   /** If not nullable, show page error */
-  error: React.ReactNode
+  error?: React.ReactNode
 
   /** If passed, render 'Retry' button alongside error message */
   retryOnError?: ButtonProps['onClick']
