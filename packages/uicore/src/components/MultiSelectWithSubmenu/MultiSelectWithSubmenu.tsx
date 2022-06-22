@@ -12,11 +12,11 @@ import { Menu, Popover, PopoverInteractionKind, Position } from '@blueprintjs/co
 
 import { SelectOption, SelectProps } from '../Select/Select'
 import { MultiSelect } from '../MultiSelect/MultiSelect'
+import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 import { Text } from '../Text/Text'
 
 import css from './MultiSelectWithSubmenu.css'
 import selectCss from '../Select/Select.css'
-import { MultiTypeInputType } from 'index'
 
 export interface SubmenuMultiSelectOption extends SelectOption {
   submenuItems: SelectOption[]
