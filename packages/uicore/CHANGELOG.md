@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.40.0](https://github.com/harness/uicore/compare/@harness/uicore@3.39.0...@harness/uicore@3.40.0) (2022-06-22)
+
+
+### Features
+
+* [PL-25701]: Add support for ReactNode as PageError prop ([#727](https://github.com/harness/uicore/issues/727)) ([d873fb8](https://github.com/harness/uicore/commit/d873fb82609692bd1bd694deb2587a72e741ac73))
+
+
+
+
+
 # [3.39.0](https://github.com/harness/uicore/compare/@harness/uicore@3.38.0...@harness/uicore@3.39.0) (2022-06-22)
 
 **Note:** Version bump only for package @harness/uicore
