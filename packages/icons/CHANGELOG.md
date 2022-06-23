@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.28.0](https://github.com/harness/uicore/compare/@harness/icons@1.27.0...@harness/icons@1.28.0) (2022-06-23)
+
+
+### Bug Fixes
+
+* added new inverse icons ([#729](https://github.com/harness/uicore/issues/729)) ([af928f6](https://github.com/harness/uicore/commit/af928f61cdcfe9a15c2a007906c1908e660d16ee))
+
+
+
+
+
 # [1.27.0](https://github.com/harness/uicore/compare/@harness/icons@1.26.0...@harness/icons@1.27.0) (2022-06-22)
 
 
