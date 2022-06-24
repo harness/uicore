@@ -80,6 +80,7 @@ export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
       }}
       onItemSelect={noop}
       items={items}
+      selectedItems={value}
       itemListRenderer={props => (
         <Menu className={css.menu}>
           {props.items.map((item, index) => {
@@ -153,12 +154,27 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen, value }: Submen
             key={itemValue}
             className={css.submenuItem}
             onClick={() => {
-              const index = value.findIndex(opt => opt.value === item.value)
+              const groupValues = value.filter(groupItem => groupItem.parentValue === item.parentValue)
+              const nonGroupValues = value.filter(groupItem => groupItem.parentValue !== item.parentValue)
+              const allItem = groupValues.filter(groupItem => groupItem.value === 'All')
 
-              if (index < 0) {
-                onChange?.(value.concat(item))
+              if (item.value === 'All') {
+                if (allItem.length) {
+                  onChange?.(nonGroupValues)
+                } else {
+                  onChange?.([...nonGroupValues, item])
+                }
               } else {
-                onChange?.(value.filter((_, i) => i !== index))
+                const index = value.findIndex(opt => opt.value === item.value)
+                if (allItem.length) {
+                  onChange?.([...nonGroupValues, item])
+                } else {
+                  if (index < 0) {
+                    onChange?.(value.concat(item))
+                  } else {
+                    onChange?.(value.filter((_, i) => i !== index))
+                  }
+                }
               }
             }}>
             <input
