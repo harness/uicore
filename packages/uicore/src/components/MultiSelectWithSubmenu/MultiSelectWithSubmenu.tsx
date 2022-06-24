@@ -145,7 +145,7 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen, value }: Submen
   return loading ? (
     <div className={css.loading}>Loading...</div>
   ) : items?.length ? (
-    <>
+    <div className={css.submenu}>
       {items.map(item => {
         const itemValue = `${primaryValue?.value} | ${item.value}`
 
@@ -191,7 +191,7 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen, value }: Submen
           </div>
         )
       })}
-    </>
+    </div>
   ) : (
     <div className={css.noResultsFound}>No Results Found</div>
   )
