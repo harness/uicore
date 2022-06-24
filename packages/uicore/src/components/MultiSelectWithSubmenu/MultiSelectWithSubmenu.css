@@ -4,13 +4,68 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+.main {
+  position: relative;
 
-.wrapperClassName {
-  display: block;
+  .MultiTypeInput--btn {
+    top: 25px;
+  }
 }
 
-.targetClassName {
-  width: 100%;
+.loading {
+  height: var(--spacing-8);
+  padding: 0 var(--spacing-small);
+  display: flex;
+  align-items: center;
+  color: var(--grey-400);
+  cursor: not-allowed;
+}
+
+.noResultsFound {
+  height: var(--spacing-8);
+  padding: 0 var(--spacing-small);
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  background: var(--primary-2);
+  color: var(--grey-900);
+  padding-right: var(--spacing-4);
+
+  :global {
+    .bp3-tag-remove {
+      width: var(--spacing-4);
+      height: var(--spacing-4);
+      display: flex;
+      border: 1px solid var(--grey-700);
+      border-radius: var(--spacing-10);
+      align-items: center;
+      opacity: 0.4;
+    }
+
+    .bp3-icon-small-cross {
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+.menu {
+  :global {
+    .bp3-menu-item {
+      & > .bp3-icon {
+        margin-top: 0;
+      }
+
+      &:hover {
+        background: var(--primary-1) !important;
+        color: var(--black) !important;
+      }
+    }
+  }
 }
 
 .menuItem {
@@ -53,29 +108,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
+    cursor: pointer;
   }
 
   & .checkbox {
     margin: 0 var(--spacing-small) 0 0;
+    cursor: pointer;
   }
 
   &:hover {
-    background: var(--primary-1);
+    background: var(--primary-1) !important;
+    color: var(--black) !important;
   }
-}
-
-.loading {
-  height: var(--spacing-8);
-  padding: 0 var(--spacing-small);
-  display: flex;
-  align-items: center;
-  color: var(--grey-400);
-  cursor: not-allowed;
-}
-
-.noResultsFound {
-  height: var(--spacing-8);
-  padding: 0 var(--spacing-small);
-  display: flex;
-  align-items: center;
 }

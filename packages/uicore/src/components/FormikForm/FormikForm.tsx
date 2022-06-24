@@ -32,7 +32,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { compact, get, isNil, omit } from 'lodash-es'
+import { compact, defaultTo, get, isNil, omit } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -1172,11 +1172,6 @@ export interface FormMultiSelectWithSubmenuTypeInputProps extends Omit<IFormGrou
   name: string
   label: string
   placeholder?: string
-  /**
-   *Enable this when we want to use value, instead of label/value
-   */
-  useValue?: boolean
-  selectItems: SubmenuSelectOption[]
   multiSelectWithSubmenuTypeInputProps?: Omit<MultiSelectWithSubmenuTypeInputProps, 'name'>
   disabled?: boolean
 }
@@ -1184,15 +1179,7 @@ export interface FormMultiSelectWithSubmenuTypeInputProps extends Omit<IFormGrou
 const FormMultiSelectWithSubmenuTypeInput = (
   props: FormMultiSelectWithSubmenuTypeInputProps & FormikContextProps<any>
 ) => {
-  const {
-    formik,
-    name,
-    useValue = false,
-    selectItems,
-    placeholder,
-    multiSelectWithSubmenuTypeInputProps,
-    ...restProps
-  } = props
+  const { formik, name, placeholder, multiSelectWithSubmenuTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1201,34 +1188,16 @@ const FormMultiSelectWithSubmenuTypeInput = (
     label,
     ...rest
   } = restProps
-  const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
-    (val, valueType, type) => {
-      type !== currentType && setCurrentType(type)
-      if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
-      } else {
-        formik?.setFieldValue(name, val)
-      }
+    val => {
+      formik?.setFieldValue(name, val)
       formik?.setFieldTouched(name, true, false)
-      multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.onChange?.(val, valueType, type)
+      multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.onChange?.(val)
     },
     [formik, multiSelectWithSubmenuTypeInputProps]
   )
 
   let value = get(formik?.values, name) // formik form value
-  if (useValue && currentType === MultiTypeInputType.FIXED) {
-    const selectedItem = selectItems.find(item => item.value === value)
-    if (isNil(value)) {
-      value = ''
-    } else {
-      value = {
-        label: selectedItem?.label,
-        value: selectedItem?.value
-      }
-    }
-  }
-
   return (
     <FormGroup
       label={getFormFieldLabel(label, name, props)}
@@ -1239,18 +1208,16 @@ const FormMultiSelectWithSubmenuTypeInput = (
       {...rest}>
       <MultiSelectWithSubmenuTypeInput
         {...multiSelectWithSubmenuTypeInputProps}
+        disabled={disabled}
         value={value}
         name={name}
-        disabled={disabled}
         multiSelectWithSubmenuProps={{
-          items: selectItems,
           ...multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps,
-          name,
-          inputProps: {
-            name,
-            intent,
-            placeholder,
-            disabled
+          items: defaultTo(multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.items, []),
+          placeholder: placeholder,
+          tagInputProps: {
+            ...multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.tagInputProps,
+            intent
           }
         }}
         onChange={onChangeCallback}

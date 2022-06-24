@@ -5,37 +5,127 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { ReactElement, useCallback, useEffect, useState } from 'react'
-import cx from 'classnames'
-import { defaultTo, omit } from 'lodash-es'
-import { Menu, Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
+import React, { useCallback, useEffect, useState } from 'react'
+import { defaultTo, noop } from 'lodash-es'
+import { Menu, MenuItem, Position } from '@blueprintjs/core'
+import { IMultiSelectProps, MultiSelect } from '@blueprintjs/select'
 
-import { SelectOption, SelectProps } from '../Select/Select'
-import { MultiSelect } from '../MultiSelect/MultiSelect'
-import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 import { Text } from '../Text/Text'
 
 import css from './MultiSelectWithSubmenu.css'
-import selectCss from '../Select/Select.css'
 
-export interface SubmenuMultiSelectOption extends SelectOption {
-  submenuItems: SelectOption[]
+export interface MultiSelectWithSubmenuOption {
+  label: string
+  value: string
+  parentLabel?: string
+  parentValue?: string
+  submenuItems?: MultiSelectWithSubmenuOption[]
 }
 
-export interface MultiSelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange' | 'value'> {
-  items: SubmenuMultiSelectOption[]
-  onChange?: (primaryValue: SelectOption, selectedValue?: SelectOption, type?: MultiTypeInputType) => void
+type Props = IMultiSelectProps<MultiSelectWithSubmenuOption>
+
+export interface MultiSelectWithSubmenuProps
+  extends Omit<
+    Props,
+    | 'popoverProps'
+    | 'selectedItems'
+    | 'itemRenderer'
+    | 'onItemSelect'
+    | 'items'
+    | 'tagRenderer'
+    | 'activeItem'
+    | 'onActiveItemChange'
+  > {
+  items: MultiSelectWithSubmenuOption[]
+  onChange?(opts: MultiSelectWithSubmenuOption[]): void
   onSubmenuOpen?: (value?: string) => Promise<void>
+  value?: MultiSelectWithSubmenuOption[]
+}
+
+export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
+  const { items, onChange, onSubmenuOpen, value, ...multiSelectProps } = props
+
+  const itemRenderer = useCallback(
+    (item: MultiSelectWithSubmenuOption) => {
+      return (
+        <Submenu
+          items={defaultTo(item.submenuItems, [])}
+          onChange={subItem => {
+            onChange?.(subItem)
+          }}
+          primaryValue={item}
+          onSubmenuOpen={onSubmenuOpen}
+          value={defaultTo(value, [])}
+        />
+      )
+    },
+    [items]
+  )
+
+  return (
+    <MultiSelect
+      {...multiSelectProps}
+      popoverProps={{
+        minimal: true,
+        className: css.main,
+        fill: true,
+        modifiers: {
+          preventOverflow: {
+            escapeWithReference: true
+          },
+          offset: {
+            offset: '0 2'
+          }
+        }
+      }}
+      onItemSelect={noop}
+      items={items}
+      selectedItems={value}
+      itemListRenderer={props => (
+        <Menu className={css.menu}>
+          {props.items.map((item, index) => {
+            return (
+              <MenuItem
+                className={css.menuItem}
+                text={item.label}
+                shouldDismissPopover={false}
+                popoverProps={{
+                  position: Position.RIGHT_TOP,
+                  minimal: true
+                }}>
+                {props.renderItem(item, index)}
+              </MenuItem>
+            )
+          })}
+        </Menu>
+      )}
+      itemRenderer={itemRenderer}
+      itemsEqual={(a, b) => a.value === b.value}
+      tagRenderer={item => `${item.parentLabel} | ${item.label}`}
+      tagInputProps={{
+        onRemove: item => {
+          if (value?.length) {
+            const index = value.findIndex(opt => `${opt.parentLabel} | ${opt.label}` === item)
+            onChange?.(value?.filter((_, i) => i !== index))
+          }
+        },
+        tagProps: {
+          className: css.tag
+        }
+      }}
+    />
+  )
 }
 
 interface SubmenuProps {
-  items: SelectOption[]
-  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption, type?: MultiTypeInputType) => void
-  primaryValue?: SelectOption
+  items: MultiSelectWithSubmenuOption[]
+  onChange?: (item: MultiSelectWithSubmenuOption[]) => void
+  primaryValue?: MultiSelectWithSubmenuOption
   onSubmenuOpen?: (value?: string) => Promise<void>
+  value: MultiSelectWithSubmenuOption[]
 }
 
-const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen }: SubmenuProps) => {
+const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen, value }: SubmenuProps) => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -51,105 +141,41 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen }: SubmenuProps)
     }
   }, [])
 
-  return (
-    <Menu className={css.submenu}>
-      {loading ? (
-        <div className={css.loading}>Loading...</div>
-      ) : items?.length ? (
-        items.map(item => (
-          <label
-            key={item.value.toString()}
+  return loading ? (
+    <div className={css.loading}>Loading...</div>
+  ) : items?.length ? (
+    <>
+      {items.map(item => {
+        const itemValue = primaryValue?.value + ' | ' + item.value
+
+        return (
+          <div
             className={css.submenuItem}
             onClick={() => {
-              onChange?.(primaryValue as SelectOption, item)
+              const index = value.findIndex(opt => opt.value === item.value)
+
+              if (index < 0) {
+                onChange?.(value.concat(item))
+              } else {
+                onChange?.(value.filter((_, i) => i !== index))
+              }
             }}>
-            <input className={css.checkbox} type="checkbox" />
-            <Text className={css.menuItemLabel} lineClamp={1} onClick={event => event?.stopPropagation()}>
-              {item.label}
-            </Text>
-          </label>
-        ))
-      ) : (
-        <div className={css.noResultsFound}>No Results Found</div>
-      )}
-    </Menu>
-  )
-}
-
-export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
-  const { items, onChange, onSubmenuOpen, ...selectProps } = props
-
-  const itemRenderer = useCallback(
-    (item: SelectOption) => {
-      return (
-        <Popover
-          content={
-            <Submenu
-              items={(item as SubmenuMultiSelectOption).submenuItems}
-              onChange={onChange}
-              primaryValue={omit(item, 'submenuItems')}
-              onSubmenuOpen={onSubmenuOpen}
+            <input
+              id={itemValue}
+              className={css.checkbox}
+              type="checkbox"
+              checked={value && value.findIndex(val => `${val.parentValue} | ${val.value}` === itemValue) > -1}
             />
-          }
-          position={Position.LEFT_TOP}
-          interactionKind={PopoverInteractionKind.CLICK}
-          minimal
-          usePortal
-          className={css.wrapperClassName}
-          targetClassName={css.targetClassName}
-          modifiers={{
-            preventOverflow: {
-              // This is required to always attach the popover portal to the start of the reference instead of the middle
-              escapeWithReference: true
-            },
-            offset: {
-              // This is required to offset the portal after it is attached to the reference.
-              // By default the portal is positioned at top: 0, left:0 wrt it's reference
-              // -2 is to adjust for the removed
-              offset: '0 2'
-            }
-          }}>
-          <li
-            key={item.value?.toString()}
-            className={cx(selectCss.menuItem, css.menuItem)}
-            onClick={event => event.preventDefault()}>
-            <Text rightIcon={'chevron-right'}>{item.label}</Text>
-          </li>
-        </Popover>
-      )
-    },
-    [items]
-  )
-
-  return (
-    <MultiSelect
-      {...selectProps}
-      itemRender={itemRenderer}
-      items={defaultTo(items, [])}
-      itemsEqual={(a, b) => a.value === b.value}
-      itemDisabled={a => !a.value}
-      tagRenderer={(item: any) => (
-        <div>
-          {item.parentLabel}|{item.label}
-        </div>
-      )}
-      tagInputProps={{
-        onRemove(item: React.ReactNode) {
-          const values = (item as ReactElement)?.props?.children
-          onChange?.(
-            {
-              label: values[0],
-              value: values[0]
-            },
-            {
-              label: values[2],
-              value: values[2],
-              parentLabel: values[0],
-              parentValue: values[0]
-            } as any
-          )
-        }
-      }}
-    />
+            <label key={item.value.toString()} htmlFor={itemValue} onClick={event => event.preventDefault()}>
+              <Text className={css.menuItemLabel} lineClamp={1}>
+                {item.label}
+              </Text>
+            </label>
+          </div>
+        )
+      })}
+    </>
+  ) : (
+    <div className={css.noResultsFound}>No Results Found</div>
   )
 }
