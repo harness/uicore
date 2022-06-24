@@ -32,7 +32,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { compact, get, isNil, omit } from 'lodash-es'
+import { compact, defaultTo, get, isNil, omit } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -48,7 +48,9 @@ import {
   MultiTextInputProps,
   MultiTextInput,
   getMultiTypeFromValue,
-  SelectWithSubmenuTypeInputProps
+  SelectWithSubmenuTypeInputProps,
+  MultiSelectWithSubmenuTypeInputProps,
+  MultiSelectWithSubmenuTypeInput
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -1166,6 +1168,64 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
   )
 }
 
+export interface FormMultiSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  multiSelectWithSubmenuTypeInputProps?: Omit<MultiSelectWithSubmenuTypeInputProps, 'name'>
+  disabled?: boolean
+}
+
+const FormMultiSelectWithSubmenuTypeInput = (
+  props: FormMultiSelectWithSubmenuTypeInputProps & FormikContextProps<any>
+) => {
+  const { formik, name, placeholder, multiSelectWithSubmenuTypeInputProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError name={name} errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    label,
+    ...rest
+  } = restProps
+  const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
+    val => {
+      formik?.setFieldValue(name, val)
+      formik?.setFieldTouched(name, true, false)
+      multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.onChange?.(val)
+    },
+    [formik, multiSelectWithSubmenuTypeInputProps]
+  )
+
+  const value = get(formik?.values, name) // formik form value
+  return (
+    <FormGroup
+      label={getFormFieldLabel(label, name, props)}
+      labelFor={name}
+      helperText={helperText}
+      intent={intent}
+      disabled={disabled}
+      {...rest}>
+      <MultiSelectWithSubmenuTypeInput
+        {...multiSelectWithSubmenuTypeInputProps}
+        disabled={disabled}
+        value={value}
+        name={name}
+        multiSelectWithSubmenuProps={{
+          ...multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps,
+          items: defaultTo(multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.items, []),
+          placeholder: placeholder,
+          tagInputProps: {
+            ...multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.tagInputProps,
+            intent
+          }
+        }}
+        onChange={onChangeCallback}
+      />
+    </FormGroup>
+  )
+}
+
 export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: ReactNode | string
@@ -1445,6 +1505,7 @@ export const FormInput = {
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
   SelectWithSubmenuTypeInput: connect(FormSelectWithSubmenuTypeInput),
+  MultiSelectWithSubmenuTypeInput: connect(FormMultiSelectWithSubmenuTypeInput),
   MultiTextInput: connect(FormMultiTextTypeInput),
   MultiSelectTypeInput: connect(FormMultiSelectTypeInput),
   CategorizedSelect: connect(FormCategorizedSelect),
