@@ -1197,7 +1197,7 @@ const FormMultiSelectWithSubmenuTypeInput = (
     [formik, multiSelectWithSubmenuTypeInputProps]
   )
 
-  let value = get(formik?.values, name) // formik form value
+  const value = get(formik?.values, name) // formik form value
   return (
     <FormGroup
       label={getFormFieldLabel(label, name, props)}
