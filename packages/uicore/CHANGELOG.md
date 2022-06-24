@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.43.0](https://github.com/harness/uicore/compare/@harness/uicore@3.42.0...@harness/uicore@3.43.0) (2022-06-24)
+
+
+### Features
+
+* [CDS-38779]: sub menu with multi select ([#723](https://github.com/harness/uicore/issues/723)) ([167f372](https://github.com/harness/uicore/commit/167f372660c83d652cd4faf9d702fa0a3bc428c3))
+
+
+
+
+
 # [3.42.0](https://github.com/harness/uicore/compare/@harness/uicore@3.41.0...@harness/uicore@3.42.0) (2022-06-23)
 
 **Note:** Version bump only for package @harness/uicore
