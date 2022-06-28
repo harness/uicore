@@ -28,9 +28,15 @@ describe('Test MultiStepProgressIndicator', () => {
     expect(document.body.getElementsByClassName('dotNameSuccess').length).toBe(3)
     expect(document.body.getElementsByClassName('dotNameFailed').length).toBe(1)
 
+<<<<<<< HEAD
     //  should  show 1 grey dot
     expect(document.body.getElementsByClassName('dot dotOutLine spacing').length).toBe(1)
     // should show 3 blue success dot
+=======
+    // show should 2 grey dots
+    expect(document.body.getElementsByClassName('dot dotOutLine spacing').length).toBe(1)
+    // should show 2 blue success dot
+>>>>>>> 1812cf2f551628c0480aaf0e912403ea113546ce
     expect(document.body.getElementsByClassName('dot dotSuccess spacing').length).toBe(3)
 
     // show should  full bar which will be overlapped by half bar if successfull
