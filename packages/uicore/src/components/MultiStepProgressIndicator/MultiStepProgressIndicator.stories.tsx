@@ -35,7 +35,8 @@ export default {
               <br />
               <code>
                 {`interface MultiStepProgressIndicatorProps {
-  progressMap: Map<number, StepStatus>
+  progressMap: Map<number, {StepStatus:'',StepName:''}>
+  
 }
 `}
               </code>
@@ -53,9 +54,9 @@ export const MultiStepProgressIndicatorComp: Story<MultiStepProgressIndicatorPro
 
 MultiStepProgressIndicatorComp.args = {
   progressMap: new Map([
-    [0, 'SUCCESS'],
-    [1, 'SUCCESS'],
-    [2, 'INPROGRESS'],
-    [3, 'TODO']
+    [0, { StepStatus: 'SUCCESS', StepName: 'Workload' }],
+    [1, { StepStatus: 'SUCCESS', StepName: 'Artifact' }],
+    [2, { StepStatus: 'INPROGRESS', StepName: 'Infrastructure' }],
+    [3, { StepStatus: 'TODO', StepName: 'Pipeline' }]
   ])
 }

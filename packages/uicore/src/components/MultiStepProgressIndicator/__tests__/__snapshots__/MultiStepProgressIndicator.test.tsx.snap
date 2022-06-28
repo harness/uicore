@@ -9,26 +9,78 @@ exports[`Test MultiStepProgressIndicator Basic render 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
     >
       <div
-        class="dot dotSuccess spacing"
-      />
-    </div>
-    <div
-      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
-    >
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
+      >
+        <div
+          class="dotNameSuccess"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength"
+            style="--text-line-clamp: 1;"
+          >
+            StepName1
+          </p>
+        </div>
+        <div
+          class="dot dotSuccess spacing"
+        />
+      </div>
       <div
         class="statusBar"
       >
         <div
-          class="bar fullBar"
+          class="bar barSuccess fullBar"
         />
       </div>
-      <div
-        class="dot dotOutLine spacing"
-      />
     </div>
     <div
       class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
     >
+      <div
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
+      >
+        <div
+          class="dotNameSuccess"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength"
+            style="--text-line-clamp: 1;"
+          >
+            StepName2
+          </p>
+        </div>
+        <div
+          class="dot dotSuccess spacing"
+        />
+      </div>
+      <div
+        class="statusBar"
+      >
+        <div
+          class="bar barSuccess fullBar"
+        />
+      </div>
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
+      >
+        <div
+          class="dotNameSuccess"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength"
+            style="--text-line-clamp: 1;"
+          >
+            StepName3
+          </p>
+        </div>
+        <div
+          class="dot dotSuccess spacing"
+        />
+      </div>
       <div
         class="statusBar"
       >
@@ -39,23 +91,27 @@ exports[`Test MultiStepProgressIndicator Basic render 1`] = `
           class="bar barSuccess halfBar"
         />
       </div>
-      <div
-        class="dot dotOutLine spacing"
-      />
     </div>
     <div
       class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
     >
       <div
-        class="statusBar"
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
       >
         <div
-          class="bar fullBar"
+          class="dotNameFailed"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength"
+            style="--text-line-clamp: 1;"
+          >
+            StepName4
+          </p>
+        </div>
+        <div
+          class="dot dotOutLine spacing"
         />
       </div>
-      <div
-        class="dot dotOutLine spacing"
-      />
     </div>
   </div>
 </div>
