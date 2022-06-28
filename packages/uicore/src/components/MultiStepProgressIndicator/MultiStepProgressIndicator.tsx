@@ -12,6 +12,7 @@ import { Layout } from '../../layouts/Layout'
 import { Text } from '../..'
 
 import css from './MultiStepProgressIndicator.css'
+import { Color } from '@harness/design-system'
 
 type StepStatus = 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'
 
@@ -38,7 +39,7 @@ const Dot: React.FC<{ status: StepStatus; name?: string }> = ({ status, name }) 
       return (
         <Layout.Vertical flex>
           <div className={css.dotNameSuccess}>
-            <Text lineClamp={1} className={css.textmaxlength}>
+            <Text lineClamp={1} className={css.textmaxlength} color={Color.PRIMARY_7}>
               {name}
             </Text>
           </div>
