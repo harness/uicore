@@ -15,27 +15,29 @@ describe('Test MultiStepProgressIndicator', () => {
       <MultiStepProgressIndicator
         progressMap={
           new Map([
-            [0, 'SUCCESS'],
-            [1, 'FAILED'],
-            [2, 'INPROGRESS'],
-            [3, 'TODO']
+            [0, { StepStatus: 'SUCCESS', StepName: 'StepName1' }],
+            [1, { StepStatus: 'SUCCESS', StepName: 'StepName2' }],
+            [2, { StepStatus: 'INPROGRESS', StepName: 'StepName3' }],
+            [3, { StepStatus: 'TODO', StepName: 'StepName4' }]
           ])
         }
       />
     )
 
-    const noOfSuccessfulSteps = 1
-    const noOfNotSuccessfulSteps = 3
+    // show stepname
+    expect(document.body.getElementsByClassName('dotNameSuccess').length).toBe(3)
+    expect(document.body.getElementsByClassName('dotNameFailed').length).toBe(1)
 
-    // show should 3 grey dots
-    expect(document.body.getElementsByClassName('dot dotOutLine spacing').length).toBe(noOfNotSuccessfulSteps)
-    // should show 1 blue success dot
-    expect(document.body.getElementsByClassName('dot dotSuccess spacing').length).toBe(noOfSuccessfulSteps)
+    //  should  show 1 grey dot
+    expect(document.body.getElementsByClassName('dot dotOutLine spacing').length).toBe(1)
+    // should show 3 blue success dot
+    expect(document.body.getElementsByClassName('dot dotSuccess spacing').length).toBe(3)
 
-    // show should 2 full grey and 1 half bar
-    expect(document.body.getElementsByClassName('bar fullBar').length).toBe(noOfNotSuccessfulSteps)
+    // show should  full bar which will be overlapped by half bar if successfull
+    expect(document.body.getElementsByClassName('bar fullBar').length).toBe(3)
+
     // should show 1 blue success half bar
-    expect(document.body.getElementsByClassName('bar barSuccess halfBar').length).toBe(noOfSuccessfulSteps)
+    expect(document.body.getElementsByClassName('bar barSuccess halfBar').length).toBe(1)
 
     expect(container).toMatchSnapshot()
   })
