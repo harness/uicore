@@ -112,3 +112,35 @@ export const DisabledSplitButton: ComponentStory<typeof SplitButton> = args => {
 }
 DisabledSplitButton.argTypes = { onClick: { action: 'clicked' } }
 DisabledSplitButton.args = { intent: 'primary' }
+
+export const DisabledSplitButtonOptions: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <Container>
+      <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.PRIMARY} {...args} disabled>
+        <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
+        <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} disabled />
+      </SplitButton>
+    </Container>
+  )
+}
+DisabledSplitButtonOptions.argTypes = { onClick: { action: 'clicked' } }
+DisabledSplitButtonOptions.args = { intent: 'primary' }
+
+export const DisabledAllSplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <Container>
+      <SplitButton
+        text="Save"
+        icon="upload-box"
+        variation={ButtonVariation.PRIMARY}
+        {...args}
+        disabled
+        dropdownDisabled>
+        <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
+        <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} />
+      </SplitButton>
+    </Container>
+  )
+}
+DisabledAllSplitButton.argTypes = { onClick: { action: 'clicked' } }
+DisabledAllSplitButton.args = { intent: 'primary' }
