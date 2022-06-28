@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.29.0](https://github.com/harness/uicore/compare/@harness/icons@1.28.0...@harness/icons@1.29.0) (2022-06-28)
+
+
+### Bug Fixes
+
+* [CDS-38231]: updated gitops cluster icon ([#730](https://github.com/harness/uicore/issues/730)) ([1b840a6](https://github.com/harness/uicore/commit/1b840a6d1f91d503bd048882f65e2e71502d6ba1))
+
+
+
+
+
 # [1.28.0](https://github.com/harness/uicore/compare/@harness/icons@1.27.0...@harness/icons@1.28.0) (2022-06-23)
 
 
