@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.46.0](https://github.com/harness/uicore/compare/@harness/uicore@3.45.0...@harness/uicore@3.46.0) (2022-06-28)
+
+
+### Features
+
+* [progressbar/update]: Updated component ([#731](https://github.com/harness/uicore/issues/731)) ([f87e2a6](https://github.com/harness/uicore/commit/f87e2a66e0db0d3a5d8397574e5ea089cf4b64a1))
+
+
+
+
+
 # [3.45.0](https://github.com/harness/uicore/compare/@harness/uicore@3.44.0...@harness/uicore@3.45.0) (2022-06-28)
 
 
