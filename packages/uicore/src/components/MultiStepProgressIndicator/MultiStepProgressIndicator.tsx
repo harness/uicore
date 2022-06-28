@@ -9,23 +9,42 @@ import React from 'react'
 import cx from 'classnames'
 
 import { Layout } from '../../layouts/Layout'
+import { Text } from '../..'
 
 import css from './MultiStepProgressIndicator.css'
 
 type StepStatus = 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'
 
 export interface MultiStepProgressIndicatorProps {
-  progressMap: Map<number, StepStatus>
+  progressMap: Map<number, { StepStatus: StepStatus; StepName?: string }>
 }
 
-const Dot: React.FC<{ status: StepStatus }> = ({ status }) => {
+const Dot: React.FC<{ status: StepStatus; name?: string }> = ({ status, name }) => {
   switch (status) {
     case 'TODO':
-    case 'INPROGRESS':
     case 'FAILED':
-      return <div className={cx(css.dot, css.dotOutLine, css.spacing)} />
+      return (
+        <Layout.Vertical flex>
+          <div className={css.dotNameFailed}>
+            <Text lineClamp={1} className={css.textmaxlength}>
+              {name}
+            </Text>
+          </div>
+          <div className={cx(css.dot, css.dotOutLine, css.spacing)} />
+        </Layout.Vertical>
+      )
+    case 'INPROGRESS':
     case 'SUCCESS':
-      return <div className={cx(css.dot, css.dotSuccess, css.spacing)} />
+      return (
+        <Layout.Vertical flex>
+          <div className={css.dotNameSuccess}>
+            <Text lineClamp={1} className={css.textmaxlength}>
+              {name}
+            </Text>
+          </div>
+          <div className={cx(css.dot, css.dotSuccess, css.spacing)} />
+        </Layout.Vertical>
+      )
     default:
       return null
   }
@@ -50,7 +69,6 @@ const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
     case 'SUCCESS':
       return (
         <div className={css.statusBar}>
-          <div className={cx(css.bar, css.fullBar)} />
           <div className={cx(css.bar, css.barSuccess, css.fullBar)} />
         </div>
       )
@@ -61,14 +79,17 @@ const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
 
 export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({ progressMap }) => {
   const entries = progressMap.size ? Array.from(progressMap.entries()) : []
+
   const elements: React.ReactNode[] = []
 
   entries.forEach((value, index) => {
-    const status = value[1]
+    const status = value[1].StepStatus
+    const name = value[1].StepName
+
     elements.push(
       <Layout.Horizontal flex key={index}>
-        {index !== 0 ? <Bar status={status} /> : null}
-        <Dot status={status} />
+        <Dot status={status} name={name} />
+        {index !== entries.length - 1 ? <Bar status={status} /> : null}
       </Layout.Horizontal>
     )
   })
