@@ -24,6 +24,7 @@ export interface SubmenuSelectOption extends SelectOption {
 
 export interface SelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange'> {
   items: SubmenuSelectOption[]
+  loading?: boolean
   onOpening?: (item: SelectOption) => void
   interactionKind?: PopoverInteractionKind
   onChange?: (primaryValue: SelectOption, selectedValue?: SelectOption, type?: MultiTypeInputType) => void
@@ -31,31 +32,36 @@ export interface SelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onC
 
 interface SubmenuProps {
   items: SelectOption[]
+  loading?: boolean
   onChange?: (primaryValue: SelectOption, selectedValue: SelectOption, type?: MultiTypeInputType) => void
   primaryValue?: SelectOption
 }
 
-const Submenu = ({ items, onChange, primaryValue }: SubmenuProps) => (
-  <Menu className={css.submenu}>
-    {items?.length ? (
-      items.map((item: any) => (
-        <MenuItem
-          key={item.value}
-          text={item.label}
-          onClick={() => {
-            onChange?.(primaryValue as SelectOption, item)
-          }}
-          className={css.submenuItem}
-        />
-      ))
-    ) : (
-      <div className={css.noResultsFound}>No Results Found</div>
-    )}
-  </Menu>
-)
+const Submenu = ({ items, onChange, primaryValue, loading }: SubmenuProps) => {
+  return (
+    <Menu className={css.submenu}>
+      {loading ? (
+        <div className={css.noResultsFound}>Loading...</div>
+      ) : items?.length ? (
+        items.map((item: any) => (
+          <MenuItem
+            key={item.value}
+            text={item.label}
+            onClick={() => {
+              onChange?.(primaryValue as SelectOption, item)
+            }}
+            className={css.submenuItem}
+          />
+        ))
+      ) : (
+        <div className={css.noResultsFound}>No Results Found</div>
+      )}
+    </Menu>
+  )
+}
 
 export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
-  const { items, className, onChange, ...selectProps } = props
+  const { items, className, loading, onChange, ...selectProps } = props
 
   const itemRenderer = useCallback(
     (item: SelectOption) => {
@@ -66,6 +72,7 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
               items={(item as SubmenuSelectOption).submenuItems}
               onChange={onChange}
               primaryValue={omit(item, 'submenuItems')}
+              loading={loading}
             />
           }
           position={Position.LEFT_TOP}
@@ -109,7 +116,7 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
         </li>
       )
     },
-    [items]
+    [items, loading]
   )
 
   return (
