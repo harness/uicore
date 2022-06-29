@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.47.0](https://github.com/harness/uicore/compare/@harness/uicore@3.46.0...@harness/uicore@3.47.0) (2022-06-29)
+
+
+### Bug Fixes
+
+* added loader in selectwithsubmenu ([#733](https://github.com/harness/uicore/issues/733)) ([52510d3](https://github.com/harness/uicore/commit/52510d3619c983f2309b96af560669033f35667c))
+
+
+
+
+
 # [3.46.0](https://github.com/harness/uicore/compare/@harness/uicore@3.45.0...@harness/uicore@3.46.0) (2022-06-28)
 
 
