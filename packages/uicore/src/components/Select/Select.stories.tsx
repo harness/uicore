@@ -47,7 +47,7 @@ export default {
 
 export const Basic: Story<SelectProps> = args => {
   const [value, setValue] = useState<SelectOption | null | undefined>(args.value || null)
-  return <Select {...args} value={value} onChange={item => setValue(item)} />
+  return <Select {...args} value={value} onChange={item => setValue(item)} allowCreatingNewItems={true} />
 }
 Basic.args = {
   size: SelectSize.Medium,
