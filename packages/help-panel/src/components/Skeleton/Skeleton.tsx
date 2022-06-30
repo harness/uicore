@@ -18,6 +18,7 @@ const Skeleton: React.FC = () => {
       <div className={lineStyle}></div>
       <div className={lineStyle}></div>
       <div className={cardStyle}></div>
+      <div className={lineStyle}></div>
     </div>
   )
 }

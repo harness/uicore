@@ -15,7 +15,6 @@ const Container: React.FC<ContainerProps> = props => {
   const { children } = props
 
   return (
-    // @ts-ignore
     <div className={styledClasses(props)} {...props}>
       {children}
     </div>

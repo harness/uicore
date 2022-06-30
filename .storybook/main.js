@@ -6,32 +6,32 @@
  */
 
 const path = require('path')
-const webpackConfig = require('../webpack.config')
+const webpackConfig = require('../packages/uicore/webpack.config')
 
-const srcFolder = path.resolve(__dirname, '../src')
+const packagesFolder = path.resolve(__dirname, '../packages')
 
 module.exports = {
   core: {
     builder: 'webpack5'
   },
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(ts|tsx)'],
+  stories: ['../packages/*/src/**/*.stories.mdx', '../packages/*/src/**/*.stories.@(ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   webpackFinal: config => {
     const fileLoaderRule = config.module.rules.find(rule => rule.test.test('.svg'))
-    fileLoaderRule.exclude = srcFolder
+    fileLoaderRule.exclude = packagesFolder
 
     const CSSLoader = config.module.rules.find(rule => rule.test.test('.css'))
-    CSSLoader.exclude = srcFolder
+    CSSLoader.exclude = packagesFolder
 
     config.module.rules.push({
       test: /\.svg$/,
-      include: srcFolder,
+      include: packagesFolder,
       use: ['@svgr/webpack']
     })
 
     config.module.rules.push({
       test: /\.css$/,
-      include: srcFolder,
+      include: packagesFolder,
       use: [
         { loader: 'style-loader' },
         {
@@ -47,6 +47,15 @@ module.exports = {
         { loader: 'postcss-loader' }
       ]
     })
+
+    config.resolve.alias = {
+      ...config.resolve?.alias,
+      '@harness/design-system$': path.resolve(packagesFolder, 'design-system/src'),
+      '@harness/help-panel$': path.resolve(packagesFolder, 'design-system/src'),
+      '@harness/icons$': path.resolve(packagesFolder, 'icons/src'),
+      '@harness/use-modal$': path.resolve(packagesFolder, 'useModal/src'),
+      '@harness/uicore$': path.resolve(packagesFolder, 'uicore/src')
+    }
 
     return config
   }

@@ -14,7 +14,7 @@ import { useLocalStorage } from './hooks/useLocalStorage'
 interface HelpPanelContextProps {
   referenceIdMap: Record<string, string>
   isHelpPanelVisible: boolean
-  setHelpPanelVisibility: (show: boolean, showAgain?: boolean) => void
+  toggleShowAgain: () => void
   showAgain: boolean
   error: Error | undefined
 }
@@ -22,7 +22,7 @@ interface HelpPanelContextProps {
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   referenceIdMap: {},
   isHelpPanelVisible: true,
-  setHelpPanelVisibility: () => {},
+  toggleShowAgain: () => void 0,
   showAgain: false,
   error: undefined
 })
@@ -43,16 +43,12 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
   const { accessToken, space, environment = HelpPanelEnvironment.master } = props
   const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
   const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(TOP_LEVEL_KEY, { dontShowAgain: false })
-  const [showHelpPanel, setShowHelpPanel] = useState<boolean>(!storageData.dontShowAgain)
   const [error, setError] = useState<Error | undefined>()
 
-  const setHelpPanelVisibility = (isHelpPanelVisible: boolean, updateShowAgain?: boolean) => {
-    setShowHelpPanel(isHelpPanelVisible)
-    if (updateShowAgain) {
-      setStorage({
-        dontShowAgain: !storageData.dontShowAgain
-      })
-    }
+  const toggleShowAgain = () => {
+    setStorage({
+      dontShowAgain: !storageData.dontShowAgain
+    })
   }
 
   useEffect(() => {
@@ -63,6 +59,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
 
         const getContentIdMap = async (): Promise<void> => {
           const response = await client.getEntries<IReferenceIdMap>({
+            // eslint-disable-next-line camelcase
             content_type: ContentType.referenceIdMap
           })
           setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
@@ -81,8 +78,8 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
     <HelpPanelContext.Provider
       value={{
         referenceIdMap,
-        isHelpPanelVisible: showHelpPanel,
-        setHelpPanelVisibility,
+        isHelpPanelVisible: storageData.dontShowAgain,
+        toggleShowAgain,
         showAgain: storageData.dontShowAgain,
         error
       }}>
@@ -93,6 +90,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
 
 interface useContentfulOptions {
   referenceId: string
+  // eslint-disable-next-line camelcase
   content_type: ContentType
 }
 
@@ -110,6 +108,7 @@ interface useContentfulState<T> {
 }
 
 export function useContentful<T>(options: useContentfulOptions): useContentfulState<T> {
+  // eslint-disable-next-line camelcase
   const { referenceId, content_type } = options
   const { referenceIdMap, error: contextError } = React.useContext(HelpPanelContext)
   const [data, setData] = useState<T | undefined>()
@@ -128,7 +127,8 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
         Contentful.getClient()
           .getEntries<T>({
             'sys.id': contentId,
-            content_type: content_type,
+            // eslint-disable-next-line camelcase
+            content_type,
             include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
           })
           .then(
@@ -146,9 +146,11 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
             }
           )
       } else {
+        setLoading(false)
         setError(Error.NOT_FOUND)
       }
     }
+    // eslint-disable-next-line camelcase
   }, [referenceId, content_type, referenceIdMap])
 
   return {

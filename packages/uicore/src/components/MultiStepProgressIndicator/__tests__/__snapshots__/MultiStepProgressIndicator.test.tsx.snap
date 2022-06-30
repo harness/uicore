@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test MultiStepProgressIndicator Basic render 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main"
+  >
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
+      >
+        <div
+          class="dotNameSuccess"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength StyledProps--color StyledProps--color-primary7"
+            style="--text-line-clamp: 1;"
+          >
+            StepName1
+          </p>
+        </div>
+        <div
+          class="dot dotSuccess spacing"
+        />
+      </div>
+      <div
+        class="statusBar"
+      >
+        <div
+          class="bar barSuccess fullBar"
+        />
+      </div>
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
+      >
+        <div
+          class="dotNameSuccess"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength StyledProps--color StyledProps--color-primary7"
+            style="--text-line-clamp: 1;"
+          >
+            StepName2
+          </p>
+        </div>
+        <div
+          class="dot dotSuccess spacing"
+        />
+      </div>
+      <div
+        class="statusBar"
+      >
+        <div
+          class="bar barSuccess fullBar"
+        />
+      </div>
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
+      >
+        <div
+          class="dotNameSuccess"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength StyledProps--color StyledProps--color-primary7"
+            style="--text-line-clamp: 1;"
+          >
+            StepName3
+          </p>
+        </div>
+        <div
+          class="dot dotSuccess spacing"
+        />
+      </div>
+      <div
+        class="statusBar"
+      >
+        <div
+          class="bar fullBar"
+        />
+        <div
+          class="bar barSuccess halfBar"
+        />
+      </div>
+    </div>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
+    >
+      <div
+        class="vertical layout-spacing-undefined StyledProps--main StyledProps--flex"
+      >
+        <div
+          class="dotNameFailed"
+        >
+          <p
+            class="StyledProps--font lineclamp StyledProps--main textmaxlength"
+            style="--text-line-clamp: 1;"
+          >
+            StepName4
+          </p>
+        </div>
+        <div
+          class="dot dotOutLine spacing"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

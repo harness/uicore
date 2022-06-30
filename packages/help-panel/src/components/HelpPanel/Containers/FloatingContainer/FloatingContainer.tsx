@@ -5,14 +5,15 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import Container from '../../../Container'
 import css from './FloatingContainer.module.css'
-import floating_button from '../../../../icons/floating_button.svg'
+import floatingButton from '../../../../icons/floating_button.svg'
 import { HelpPanelContext } from '../../../../HelpPanelContext'
 
-const FloatingContainer: React.FC = forwardRef<HTMLButtonElement, any>((props, ref) => {
-  const { isHelpPanelVisible, setHelpPanelVisibility } = React.useContext(HelpPanelContext)
+function FloatingContainer(props: React.PropsWithChildren<unknown>, ref: React.ForwardedRef<HTMLButtonElement | null>) {
+  const [isHelpPanelVisible, setHelpPanelVisibility] = useState(!React.useContext(HelpPanelContext).showAgain)
+
   return (
     <Container className={css.floatingContainer}>
       {isHelpPanelVisible && <Container className={css.floatingContent}>{props.children}</Container>}
@@ -23,11 +24,15 @@ const FloatingContainer: React.FC = forwardRef<HTMLButtonElement, any>((props, r
         ref={ref}
         className={css.toggleBtnFloating}
         style={{
-          background: `transparent url(${floating_button})`
+          background: `transparent url(${floatingButton})`
         }}
       />
     </Container>
   )
-})
+}
 
-export default FloatingContainer
+const FloatingContainerWithRef = forwardRef<HTMLButtonElement | null, React.PropsWithChildren<unknown>>(
+  FloatingContainer
+)
+
+export default FloatingContainerWithRef

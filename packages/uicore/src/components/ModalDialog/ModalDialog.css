@@ -1,0 +1,96 @@
+/*
+ * Copyright 2022 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+.container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: var(--ModalDialog-Height, auto);
+  min-height: 200px;
+  max-height: min(var(--ModalDialog-Height, 680px), calc(100vh - var(--spacing-huge)));
+  max-width: calc(100vw - var(--spacing-huge));
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'toolbar'
+    'body'
+    'footer';
+}
+
+.noHeader .body {
+  padding-top: var(--spacing-huge);
+  --showScrollTop: 0 !important;
+}
+
+.noHeader .toolbar {
+  padding-top: var(--spacing-huge);
+}
+
+.noFooter .body {
+  padding-bottom: var(--spacing-huge);
+  --showScrollBottom: 0 !important;
+}
+
+.noHeader.noFooter .body {
+  background: none;
+}
+
+.header,
+.footer {
+  padding: var(--spacing-xxlarge) var(--spacing-huge);
+}
+
+.header {
+  grid-area: header;
+  padding-bottom: var(--spacing-xlarge);
+}
+
+.footer {
+  grid-area: footer;
+  padding-top: var(--spacing-xlarge);
+}
+
+.toolbar {
+  grid-area: toolbar;
+  padding: 0 var(--spacing-huge) var(--spacing-large);
+}
+
+.closeButton {
+  position: absolute !important;
+  right: 22px;
+  top: 22px;
+  cursor: pointer;
+}
+
+.body {
+  --showScrollTop: 0;
+  --showScrollBottom: 0;
+  position: relative;
+  grid-area: body;
+  overflow: auto;
+  padding: 0 var(--spacing-huge);
+}
+
+.body::before,
+.body::after {
+  content: '';
+  position: sticky;
+  margin: 0 calc(-1 * var(--spacing-huge));
+  top: 0;
+  height: 1px;
+  background-color: var(--grey-200);
+  display: block;
+  opacity: calc(1 * var(--showScrollTop));
+  transition: opacity 0.15s ease-in-out;
+}
+
+.body::after {
+  top: auto;
+  bottom: 0;
+  opacity: calc(1 * var(--showScrollBottom));
+}

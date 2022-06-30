@@ -1,12 +1,14 @@
 {
   "name": "@harness/design-system",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "Harness Help panel - used for building Help panels generated through contentful",
   "source": "src/index.ts",
-  "main": "dist/design-system.umd.js",
-  "module": "dist/design-system.es.js",
-  "types": "dist/src/index.d.ts",
-  "styles": "dist/style.css",
+  "main": "./dist/design-system.umd.js",
+  "exports": {
+    ".": "./dist/design-system.es.js",
+    "./dist/style.css": "./dist/style.css"
+  },
+  "types": "./dist/src/index.d.ts",
   "files": [
     "dist/*"
   ],
@@ -14,7 +16,8 @@
     "prebuild": "yarn clean",
     "build": "vite build",
     "clean": "rm -rf dist",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/harness/uicore",

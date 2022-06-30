@@ -5,13 +5,13 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Color } from '@harness/design-system'
 import React from 'react'
-import { Error, useContentful } from '../../HelpPanelContext'
-import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
+import { Error, HelpPanelContext } from '../../HelpPanelContext'
 import DefaultContainer from './Containers/DefaultContainer/DefaultContainer'
 import FloatingContainer from './Containers/FloatingContainer/FloatingContainer'
 import HelpPanelContent from './HelpPanelContent/HelpPanelContent'
+import { useContentful } from '../../HelpPanelContext'
+import { ContentType, IHelpPanel } from '../../types/contentfulTypes'
 
 export enum HelpPanelType {
   FLOATING_CONTAINER = 'FLOATING_CONTAINER',
@@ -26,46 +26,40 @@ interface HelpPanelProps {
 
 const HelpPanel: React.FC<HelpPanelProps> = props => {
   const { referenceId, type } = props
-  let floatingBtnRef: HTMLButtonElement
+  const floatingBtnRef = React.useRef<HTMLButtonElement | null>(null)
 
-  const {
-    data = {
-      backgroundColor: Color.WHITE,
-      articles: []
-    },
-    loading,
-    error
-  } = useContentful<IHelpPanel>({
-    referenceId,
-    content_type: ContentType.helpPanel
-  })
+  const { error: initialError } = React.useContext(HelpPanelContext)
 
-  if (error === Error.ERROR_INITIALIZING_CONTENTFUL) {
+  if (initialError === Error.ERROR_INITIALIZING_CONTENTFUL) {
     return null
   }
+
+  const { data, loading, error } = useContentful<IHelpPanel>({
+    referenceId,
+    // eslint-disable-next-line camelcase
+    content_type: ContentType.helpPanel
+  })
 
   switch (type) {
     case HelpPanelType.FLOATING_CONTAINER:
       return (
-        <FloatingContainer
-          ref={node => {
-            floatingBtnRef = node
-          }}>
+        <FloatingContainer ref={floatingBtnRef}>
           <HelpPanelContent
             data={data}
-            isLoading={loading}
+            error={error}
+            loading={loading}
             onClose={() => {
-              floatingBtnRef?.click()
+              floatingBtnRef.current?.click()
             }}
           />
         </FloatingContainer>
       )
     case HelpPanelType.CONTENT_ONLY:
-      return <HelpPanelContent data={data} isLoading={loading} onClose={props.onClose} />
+      return <HelpPanelContent data={data} error={error} loading={loading} onClose={props.onClose} />
     default:
       return (
         <DefaultContainer>
-          <HelpPanelContent data={data} isLoading={loading} />
+          <HelpPanelContent data={data} error={error} loading={loading} />
         </DefaultContainer>
       )
   }

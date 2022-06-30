@@ -2,6 +2,65 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.11.0](https://github.com/harness/uicore/compare/v3.10.0...v3.11.0) (2022-06-04)
+
+
+### Features
+
+* [PIE-3870]: Add queue step icon ([#692](https://github.com/harness/uicore/issues/692)) ([e13972c](https://github.com/harness/uicore/commit/e13972c89782f7e57018bc9eb62723c0acbdc0d3))
+* [PL-25655]: Open help panel links in new tab ([#690](https://github.com/harness/uicore/issues/690)) ([48eb123](https://github.com/harness/uicore/commit/48eb123b10c026b45c4ceb40662a2c366822b0c9))
+* PL-24845: split button component ([#691](https://github.com/harness/uicore/issues/691)) ([687a5d2](https://github.com/harness/uicore/commit/687a5d2e43b7b8b5fa0e0042c85779bc5c028f94))
+
+## [3.10.0](https://github.com/harness/uicore/compare/v3.9.0...v3.10.0) (2022-06-01)
+
+
+### Bug Fixes
+
+* [PL-24968]: select clear button fixes ([#689](https://github.com/harness/uicore/issues/689)) ([b915980](https://github.com/harness/uicore/commit/b91598016bfdb3c741340473a971ee99de6d694d))
+
+## [3.9.0](https://github.com/harness/uicore/compare/v3.8.0...v3.9.0) (2022-06-01)
+
+
+### Features
+
+* add support for execution time input ([#688](https://github.com/harness/uicore/issues/688)) ([ed1e5f9](https://github.com/harness/uicore/commit/ed1e5f96ba6b362e70052a3ff92e35c27ab0eed9))
+
+## [3.8.0](https://github.com/harness/uicore/compare/v3.7.0...v3.8.0) (2022-06-01)
+
+
+### Features
+
+* [PL-25560]: Help panel improvements ([#686](https://github.com/harness/uicore/issues/686)) ([823c808](https://github.com/harness/uicore/commit/823c808fd9d0f05c999b11c3ce71bd7c8c487358))
+
+
+### Bug Fixes
+
+* [PL-24968]: should clear false values ([#687](https://github.com/harness/uicore/issues/687)) ([758285b](https://github.com/harness/uicore/commit/758285bf628e114fa9c0040d3fb55636ac5a5bca))
+
+## [3.7.0](https://github.com/harness/uicore/compare/v3.2.0...v3.7.0) (2022-05-30)
+
+
+### Features
+
+* [PIE-3563]: version bumpup ([#680](https://github.com/harness/uicore/issues/680)) ([a9d58fd](https://github.com/harness/uicore/commit/a9d58fd35a379ab419d1db28616060eba7f780fa))
+
+
+### Bug Fixes
+
+* [PIE-3563]: number formatting and css fix ([#678](https://github.com/harness/uicore/issues/678)) ([4ca642a](https://github.com/harness/uicore/commit/4ca642ac5ca2f326f93a1e731b4215b8e478af29))
+* [PIE-3711]: Update custom stage icon ([#681](https://github.com/harness/uicore/issues/681)) ([69d577f](https://github.com/harness/uicore/commit/69d577f60e0758b37344973770000d4f86b46257))
+* [PL-20957] Standardize org and project icon ([#677](https://github.com/harness/uicore/issues/677)) ([74b170b](https://github.com/harness/uicore/commit/74b170b3b703e03dd72e3d42fa99c32da92797b2))
+* [PL-22282]: Icons version bump ([#675](https://github.com/harness/uicore/issues/675)) ([7444209](https://github.com/harness/uicore/commit/74442090e8444e2ceddcca9261f3f7496b8f0a6f))
+
+
+### Others
+
+* [PIE-3711]: Version bump ([#683](https://github.com/harness/uicore/issues/683)) ([ba56694](https://github.com/harness/uicore/commit/ba56694e62d563f5420fd6ed03e20f549cfb63be))
+* [PL-25480] Bump version number ([#679](https://github.com/harness/uicore/issues/679)) ([580070f](https://github.com/harness/uicore/commit/580070f19713dd3f94a74c96eeed6eadbe378fd5))
+* [PL-25480]: Publish ModalDialog component ([#676](https://github.com/harness/uicore/issues/676)) ([0c24049](https://github.com/harness/uicore/commit/0c240493aeb252b7a04058a3128928e8b8f7983b))
+* [PL-25566]: Move usePortal prop to Select component ([#684](https://github.com/harness/uicore/issues/684)) ([e5dd391](https://github.com/harness/uicore/commit/e5dd3915bedd8f41971632b574d0912addefd19c))
+* version bump ([3def79b](https://github.com/harness/uicore/commit/3def79b333890abe191bed41d7288c5933cbb203))
+
 ## [3.2.0](https://github.com/harness/uicore/compare/v3.1.0...v3.2.0) (2022-05-23)
 
 

@@ -5,6 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
+// eslint-disable-next-line spaced-comment
 /// <reference types="../global" />
 import css from './StyledProps.module.css'
 import { Intent } from '../common/Intent'
@@ -89,7 +90,7 @@ function isObject(value: any) {
 }
 
 /** Generate classes from styled props */
-export function styledClasses(props: StyledProps, ...classes: string[]) {
+export function styledClasses(props: StyledProps, ...classes: string[]): string {
   const classNames = new Set(classes)
 
   classNames.add(css.main)
