@@ -170,6 +170,7 @@ import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import ContactSupport from './contact-support.svg'
 import CopyAlt from './copy-alt.svg'
+import CopyDoc from './copy-doc.svg'
 import Copy from './copy.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
@@ -251,6 +252,7 @@ import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import FixedInput from './fixed-input.svg'
+import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
@@ -896,6 +898,7 @@ type HarnessIconName =
   | 'connectthroughmanager'
   | 'contact-support'
   | 'copy-alt'
+  | 'copy-doc'
   | 'copy'
   | 'coverage-status-error'
   | 'coverage-status-success'
@@ -977,6 +980,7 @@ type HarnessIconName =
   | 'ff-with-text'
   | 'file'
   | 'fixed-input'
+  | 'flag-tick'
   | 'flag'
   | 'flash'
   | 'folder-upload'
@@ -1622,6 +1626,7 @@ const HarnessIcons: KVO<ElementType> = {
   connectthroughmanager: Connectthroughmanager,
   'contact-support': ContactSupport,
   'copy-alt': CopyAlt,
+  'copy-doc': CopyDoc,
   copy: Copy,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
@@ -1703,6 +1708,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ff-with-text': FfWithText,
   file: File,
   'fixed-input': FixedInput,
+  'flag-tick': FlagTick,
   flag: Flag,
   flash: Flash,
   'folder-upload': FolderUpload,
