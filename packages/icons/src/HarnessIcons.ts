@@ -175,6 +175,7 @@ import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CreatePr from './create-pr.svg'
 import CsHover from './cs-hover.svg'
+import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomService from './custom-service.svg'
 import CustomStageIcon from './custom-stage-icon.svg'
@@ -911,6 +912,7 @@ type HarnessIconName =
   | 'coverage-status-success'
   | 'create-pr'
   | 'cs-hover'
+  | 'custom-approval'
   | 'custom-artifact'
   | 'custom-service'
   | 'custom-stage-icon'
@@ -1647,6 +1649,7 @@ const HarnessIcons: KVO<ElementType> = {
   'coverage-status-success': CoverageStatusSuccess,
   'create-pr': CreatePr,
   'cs-hover': CsHover,
+  'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
   'custom-service': CustomService,
   'custom-stage-icon': CustomStageIcon,
