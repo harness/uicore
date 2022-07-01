@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { FC, ReactNode, useCallback, useRef } from 'react'
+import React, { FC, ReactNode, useCallback, useLayoutEffect, useRef } from 'react'
 import { throttle } from 'lodash-es'
 import { Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
@@ -82,6 +82,8 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     },
     [manageScrollIndicators, onOpened]
   )
+
+  useLayoutEffect(manageScrollIndicators)
 
   const modifiers = []
 
