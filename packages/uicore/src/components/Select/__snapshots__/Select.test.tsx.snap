@@ -90,11 +90,6 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
                     Charizard
                   </p>
                 </li>
-                <div
-                  class="noResultsFound"
-                >
-                  Nothing Found
-                </div>
               </ul>
             </div>
           </div>
