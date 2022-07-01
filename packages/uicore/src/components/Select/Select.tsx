@@ -190,10 +190,7 @@ export function Select(props: SelectProps): React.ReactElement {
       )
     }
 
-    if (
-      !loading &&
-      items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0
-    )
+    if (!loading)
       return (
         <React.Fragment>
           <div className={css.noResultsFound}>Nothing Found</div>
