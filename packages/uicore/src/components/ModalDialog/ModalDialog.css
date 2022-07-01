@@ -87,6 +87,7 @@
   display: block;
   opacity: calc(1 * var(--showScrollTop));
   transition: opacity 0.15s ease-in-out;
+  z-index: 2;
 }
 
 .body::after {

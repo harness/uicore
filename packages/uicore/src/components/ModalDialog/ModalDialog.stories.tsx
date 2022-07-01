@@ -297,3 +297,78 @@ export const WithCloseButtonHidden: Story<ModalDialogProps> = () => {
   )
 }
 AsAConfirmationDialog.storyName = 'As a confirmation dialog'
+
+export const WithChangingContent: Story<ModalDialogProps> = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [showExtra, setShowExtra] = useState<boolean>(true)
+
+  return (
+    <>
+      <Button variation={ButtonVariation.PRIMARY} text="Open Dialog" onClick={() => setIsOpen(true)} />
+
+      <ModalDialog
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Modal Dialog title"
+        width={700}
+        height={500}
+        footer={
+          <Layout.Horizontal spacing="small">
+            <Button variation={ButtonVariation.PRIMARY} text="Show" onClick={() => setShowExtra(true)} />
+            <Button variation={ButtonVariation.SECONDARY} text="Hide" onClick={() => setShowExtra(false)} />
+          </Layout.Horizontal>
+        }>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto consectetur dolorem dolores eaque
+          illum iusto laboriosam, odit provident sapiente tenetur, veritatis. Aperiam blanditiis cum dignissimos eveniet
+          praesentium repellendus similique?
+        </p>
+        {showExtra && (
+          <>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis eos ipsum natus nihil nobis numquam
+              officia sapiente voluptas. A atque blanditiis delectus dolorem eius exercitationem expedita magnam
+              obcaecati perspiciatis velit!
+            </p>
+            <p>
+              Beatae debitis deleniti deserunt distinctio est eum eveniet exercitationem, facilis, id incidunt laborum
+              laudantium libero maxime optio sit sunt voluptate? Ad atque debitis deleniti eius eveniet fuga molestiae
+              sint voluptatem.
+            </p>
+            <p>
+              Accusantium aut consequuntur debitis distinctio doloribus eligendi, eveniet explicabo fugit ipsa
+              laudantium maiores nobis obcaecati perferendis provident quas quos tenetur, ullam? Accusantium consectetur
+              cumque doloribus eligendi fuga maiores quasi vitae.
+            </p>
+            <p>
+              Dolorum eius exercitationem fugit maiores nisi obcaecati sit temporibus vel. Ad amet aspernatur cum
+              ducimus explicabo ipsam laboriosam laborum laudantium, magni maiores, molestias odio odit omnis quas
+              quidem sed unde.
+            </p>
+            <p>
+              Adipisci architecto cumque debitis, facere fugit harum hic ipsam iusto laboriosam laudantium libero minus,
+              nesciunt nobis non obcaecati qui quidem quis reiciendis rem sed sint soluta tempore veritatis voluptate
+              voluptatibus?
+            </p>
+            <p>
+              At cupiditate dignissimos dolores et excepturi, fugit illum ipsum libero maiores quia, quos voluptatem
+              voluptatibus? Accusantium amet earum error fuga laboriosam minima molestiae nesciunt nihil, nobis nulla
+              repellat, suscipit tenetur?
+            </p>
+            <p>
+              Aliquam animi commodi esse est incidunt ipsam itaque officia, quidem quo, reiciendis, reprehenderit soluta
+              tempora ut voluptatem voluptatum. Aliquam distinctio dolore inventore laudantium magnam molestias natus
+              necessitatibus recusandae unde, voluptatibus!
+            </p>
+            <p>
+              Ab alias amet dicta error facilis incidunt, ipsam ipsum iusto libero minus nemo reprehenderit repudiandae
+              sapiente sed sequi unde voluptatem. Aut cupiditate eum explicabo facere, harum minus odio perspiciatis
+              velit.
+            </p>
+          </>
+        )}
+      </ModalDialog>
+    </>
+  )
+}
+WithChangingContent.storyName = 'With changing content'
