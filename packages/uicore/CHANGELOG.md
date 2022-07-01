@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.52.0](https://github.com/harness/uicore/compare/@harness/uicore@3.51.0...@harness/uicore@3.52.0) (2022-07-01)
+
+
+### Bug Fixes
+
+* [CDS-38004]: modified select to create new items even when subst… ([#734](https://github.com/harness/uicore/issues/734)) ([e252ee3](https://github.com/harness/uicore/commit/e252ee3e351c03c72cb92a66cd05a95945b158f5))
+
+
+
+
+
 # [3.51.0](https://github.com/harness/uicore/compare/@harness/uicore@3.50.0...@harness/uicore@3.51.0) (2022-07-01)
 
 
