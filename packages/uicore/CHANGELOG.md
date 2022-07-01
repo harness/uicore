@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.51.0](https://github.com/harness/uicore/compare/@harness/uicore@3.50.0...@harness/uicore@3.51.0) (2022-07-01)
+
+
+### Bug Fixes
+
+* [PL-26179]: Ensure overflow indicator management triggered when content changes ([#738](https://github.com/harness/uicore/issues/738)) ([b4929b4](https://github.com/harness/uicore/commit/b4929b439f5fdaae02b1266993d3a1f055869c08))
+
+
+
+
+
+# [3.50.0](https://github.com/harness/uicore/compare/@harness/uicore@3.49.0...@harness/uicore@3.50.0) (2022-07-01)
+
+**Note:** Version bump only for package @harness/uicore
+
+
+
+
+
 # [3.49.0](https://github.com/harness/uicore/compare/@harness/uicore@3.48.0...@harness/uicore@3.49.0) (2022-06-30)
 
 **Note:** Version bump only for package @harness/uicore

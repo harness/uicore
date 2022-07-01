@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.32.0](https://github.com/harness/uicore/compare/@harness/icons@1.31.0...@harness/icons@1.32.0) (2022-07-01)
+
+
+### Bug Fixes
+
+* [CDS-37790]: adding fill attribute to custom approval icon ([#737](https://github.com/harness/uicore/issues/737)) ([bc47200](https://github.com/harness/uicore/commit/bc47200e018075338c5bad23f5b633c71e282652))
+
+
+
+
+
 # [1.31.0](https://github.com/harness/uicore/compare/@harness/icons@1.30.0...@harness/icons@1.31.0) (2022-06-30)
 
 **Note:** Version bump only for package @harness/icons
