@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.56.0](https://github.com/harness/uicore/compare/@harness/uicore@3.55.0...@harness/uicore@3.56.0) (2022-07-04)
+
+
+### Bug Fixes
+
+* [CDS-38004]: fixed to show noresults when string is not found ([#739](https://github.com/harness/uicore/issues/739)) ([08d41ec](https://github.com/harness/uicore/commit/08d41ecc093ce79c6f3cab19c8b16bffe5a293c8))
+
+
+
+
+
 # [3.55.0](https://github.com/harness/uicore/compare/@harness/uicore@3.54.0...@harness/uicore@3.55.0) (2022-07-04)
 
 **Note:** Version bump only for package @harness/uicore
