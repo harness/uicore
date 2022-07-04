@@ -334,8 +334,44 @@
     background: var(--orange-50);
   }
 
+  &.background-magenta900 {
+    background: var(--magenta-900);
+  }
+
+  &.background-magenta800 {
+    background: var(--magenta-800);
+  }
+
+  &.background-magenta700 {
+    background: var(--magenta-700);
+  }
+
+  &.background-magenta600 {
+    background: var(--magenta-600);
+  }
+
   &.background-magenta500 {
     background: var(--magenta-500);
+  }
+
+  &.background-magenta400 {
+    background: var(--magenta-400);
+  }
+
+  &.background-magenta300 {
+    background: var(--magenta-300);
+  }
+
+  &.background-magenta200 {
+    background: var(--magenta-200);
+  }
+
+  &.background-magenta100 {
+    background: var(--magenta-100);
+  }
+
+  &.background-magenta50 {
+    background: var(--magenta-50);
   }
 
   &.background-aqua500 {
