@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.33.0](https://github.com/harness/uicore/compare/@harness/icons@1.32.0...@harness/icons@1.33.0) (2022-07-04)
+
+
+### Features
+
+* [CDS-39410]: added icons ([#741](https://github.com/harness/uicore/issues/741)) ([18c56fc](https://github.com/harness/uicore/commit/18c56fc9176299fc5d4893234f98858072c5fafe))
+
+
+
+
+
 # [1.32.0](https://github.com/harness/uicore/compare/@harness/icons@1.31.0...@harness/icons@1.32.0) (2022-07-01)
 
 
