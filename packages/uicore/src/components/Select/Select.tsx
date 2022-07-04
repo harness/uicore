@@ -193,7 +193,9 @@ export function Select(props: SelectProps): React.ReactElement {
     if (!loading)
       return (
         <React.Fragment>
-          <div className={css.noResultsFound}>Nothing Found</div>
+          {items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0 ? (
+            <div className={css.noResultsFound}>Nothing Found</div>
+          ) : null}
           {props.allowCreatingNewItems && (
             <Button
               intent="primary"
