@@ -33,7 +33,7 @@ import Argo from './argo.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
-import AutoStopping from './autostopping.svg'
+import Autostopping from './autostopping.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
 import AwsRds from './aws-rds.svg'
@@ -41,7 +41,7 @@ import AwsSecretManager from './aws-secret-manager.svg'
 import AzureBlob from './azure-blob.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
-import AzureWebApp from './azurewebapp.svg'
+import Azurewebapp from './azurewebapp.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
@@ -777,7 +777,7 @@ type HarnessIconName =
   | 'arm'
   | 'audit-log-created'
   | 'audit-trail'
-  | 'auto-stopping'
+  | 'autostopping'
   | 'aws-codecommit'
   | 'aws-kms'
   | 'aws-rds'
@@ -1413,8 +1413,8 @@ type HarnessIconName =
   | 'setup-tags'
   | 'shield-gears'
   | 'skipped'
-  | 'slot-deployment'
   | 'slider-trigger'
+  | 'slot-deployment'
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'spinner'
@@ -1521,7 +1521,7 @@ const HarnessIcons: KVO<ElementType> = {
   arm: Arm,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
-  'auto-stopping': AutoStopping,
+  autostopping: Autostopping,
   'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
   'aws-rds': AwsRds,
@@ -1529,7 +1529,7 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-blob': AzureBlob,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
-  azurewebapp: AzureWebApp,
+  azurewebapp: Azurewebapp,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
@@ -1662,8 +1662,8 @@ const HarnessIcons: KVO<ElementType> = {
   'contact-support': ContactSupport,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
-  'cost-data-collection': CostDataCollection,
   copy: Copy,
+  'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   'create-pr': CreatePr,
