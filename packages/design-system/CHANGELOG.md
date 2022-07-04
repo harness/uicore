@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.4.0 (2022-07-04)
+
+
+### Bug Fixes
+
+* [CDS-39415]: added more colors in background prop ([#742](https://github.com/harness/uicore/issues/742)) ([a7ded54](https://github.com/harness/uicore/commit/a7ded54909efca0a3e71d223e5e1f57d1e2d84fd))
+
+
+
+
+
 # [1.3.0](https://github.com/harness/uicore/compare/@harness/design-system@1.2.0...@harness/design-system@1.3.0) (2022-06-14)
 
 **Note:** Version bump only for package @harness/design-system

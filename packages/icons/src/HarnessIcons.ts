@@ -33,6 +33,7 @@ import Argo from './argo.svg'
 import Arm from './arm.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
+import Autostopping from './autostopping.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsKms from './aws-kms.svg'
 import AwsRds from './aws-rds.svg'
@@ -40,6 +41,7 @@ import AwsSecretManager from './aws-secret-manager.svg'
 import AzureBlob from './azure-blob.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
+import Azurewebapp from './azurewebapp.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
@@ -126,6 +128,7 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
+import CloudAccounts from './cloud-accounts.svg'
 import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
@@ -172,6 +175,7 @@ import ContactSupport from './contact-support.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
 import Copy from './copy.svg'
+import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CreatePr from './create-pr.svg'
@@ -666,6 +670,7 @@ import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
+import SlotDeployment from './slot-deployment.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
@@ -772,6 +777,7 @@ type HarnessIconName =
   | 'arm'
   | 'audit-log-created'
   | 'audit-trail'
+  | 'autostopping'
   | 'aws-codecommit'
   | 'aws-kms'
   | 'aws-rds'
@@ -779,6 +785,7 @@ type HarnessIconName =
   | 'azure-blob'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
+  | 'azurewebapp'
   | 'banned'
   | 'bar-chart'
   | 'barrier-close'
@@ -865,6 +872,7 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-stop'
   | 'clipboard-alt'
+  | 'cloud-accounts'
   | 'cloud-dark'
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
@@ -911,6 +919,7 @@ type HarnessIconName =
   | 'copy-alt'
   | 'copy-doc'
   | 'copy'
+  | 'cost-data-collection'
   | 'coverage-status-error'
   | 'coverage-status-success'
   | 'create-pr'
@@ -1405,6 +1414,7 @@ type HarnessIconName =
   | 'shield-gears'
   | 'skipped'
   | 'slider-trigger'
+  | 'slot-deployment'
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'spinner'
@@ -1511,6 +1521,7 @@ const HarnessIcons: KVO<ElementType> = {
   arm: Arm,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
+  autostopping: Autostopping,
   'aws-codecommit': AwsCodecommit,
   'aws-kms': AwsKms,
   'aws-rds': AwsRds,
@@ -1518,6 +1529,7 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-blob': AzureBlob,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
+  azurewebapp: Azurewebapp,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
@@ -1604,6 +1616,7 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
+  'cloud-accounts': CloudAccounts,
   'cloud-dark': CloudDark,
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
@@ -1650,6 +1663,7 @@ const HarnessIcons: KVO<ElementType> = {
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
   copy: Copy,
+  'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   'create-pr': CreatePr,
@@ -2144,6 +2158,7 @@ const HarnessIcons: KVO<ElementType> = {
   'shield-gears': ShieldGears,
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
+  'slot-deployment': SlotDeployment,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   spinner: Spinner,
