@@ -62,6 +62,14 @@
     background: var(--grey-100);
   }
 
+  &.background-grey50 {
+    background: var(--grey-50);
+  }
+
+  &.background-blue900 {
+    background: var(--blue-900);
+  }
+
   &.background-blue800 {
     background: var(--blue-800);
   }
@@ -106,6 +114,10 @@
     background: var(--blue-50);
   }
 
+  &.background-red900 {
+    background: var(--red-900);
+  }
+
   &.background-red800 {
     background: var(--red-800);
   }
@@ -144,6 +156,10 @@
 
   &.background-red100 {
     background: var(--red-100);
+  }
+
+  &.background-red50 {
+    background: var(--red-50);
   }
 
   &.background-yellow800 {
@@ -186,6 +202,10 @@
     background: var(--yellow-100);
   }
 
+  &.background-yellow50 {
+    background: var(--yellow-50);
+  }
+
   &.background-green800 {
     background: var(--green-800);
   }
@@ -226,8 +246,20 @@
     background: var(--green-100);
   }
 
+  &.background-green50 {
+    background: var(--green-50);
+  }
+
   &.background-purple900 {
     background: var(--purple-900);
+  }
+
+  &.background-purple800 {
+    background: var(--purple-800);
+  }
+
+  &.background-purple700 {
+    background: var(--purple-700);
   }
 
   &.background-purple600 {
@@ -254,8 +286,24 @@
     background: var(--purple-100);
   }
 
+  &.background-purple50 {
+    background: var(--purple-50);
+  }
+
   &.background-seagreen500 {
     background: var(--sea-green-500);
+  }
+
+  &.background-orange900 {
+    background: var(--orange-900);
+  }
+
+  &.background-orange800 {
+    background: var(--orange-800);
+  }
+
+  &.background-orange700 {
+    background: var(--orange-700);
   }
 
   &.background-orange600 {
@@ -276,6 +324,14 @@
 
   &.background-orange200 {
     background: var(--orange-200);
+  }
+
+  &.background-orange100 {
+    background: var(--orange-100);
+  }
+
+  &.background-orange50 {
+    background: var(--orange-50);
   }
 
   &.background-magenta500 {
@@ -326,6 +382,22 @@
     background: var(--light-200);
   }
 
+  &.background-teal900 {
+    background: var(--teal-900);
+  }
+
+  &.background-teal800 {
+    background: var(--teal-800);
+  }
+
+  &.background-teal700 {
+    background: var(--teal-700);
+  }
+
+  &.background-teal600 {
+    background: var(--teal-600);
+  }
+
   &.background-teal500 {
     background: var(--teal-500);
   }
@@ -342,12 +414,16 @@
     background: var(--teal-200);
   }
 
-  &.background-black100 {
-    background: var(--black-100);
+  &.background-teal100 {
+    background: var(--teal-100);
   }
 
-  &.background-blue900 {
-    background: var(--blue-900);
+  &.background-teal50 {
+    background: var(--teal-50);
+  }
+
+  &.background-black100 {
+    background: var(--black-100);
   }
 
   &.background-primary1 {
