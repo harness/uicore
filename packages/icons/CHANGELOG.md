@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.35.0](https://github.com/harness/uicore/compare/@harness/icons@1.34.0...@harness/icons@1.35.0) (2022-07-05)
+
+
+### Bug Fixes
+
+* custom remote manifest icon added ([#743](https://github.com/harness/uicore/issues/743)) ([1c57f37](https://github.com/harness/uicore/commit/1c57f37be38ddf5b66bd59208fab031cfe51a591))
+
+
+
+
+
 # [1.34.0](https://github.com/harness/uicore/compare/@harness/icons@1.33.0...@harness/icons@1.34.0) (2022-07-04)
 
 **Note:** Version bump only for package @harness/icons
