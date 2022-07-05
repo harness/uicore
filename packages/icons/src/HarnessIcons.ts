@@ -182,6 +182,7 @@ import CreatePr from './create-pr.svg'
 import CsHover from './cs-hover.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
+import CustomRemoteManifest from './custom-remote-manifest.svg'
 import CustomService from './custom-service.svg'
 import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
@@ -926,6 +927,7 @@ type HarnessIconName =
   | 'cs-hover'
   | 'custom-approval'
   | 'custom-artifact'
+  | 'custom-remote-manifest'
   | 'custom-service'
   | 'custom-stage-icon'
   | 'custom-stage'
@@ -1670,6 +1672,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cs-hover': CsHover,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
+  'custom-remote-manifest': CustomRemoteManifest,
   'custom-service': CustomService,
   'custom-stage-icon': CustomStageIcon,
   'custom-stage': CustomStage,
