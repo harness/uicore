@@ -5,11 +5,11 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
-import type { Story, Meta, ComponentStory } from '@storybook/react'
+import type { ComponentStory, Meta } from '@storybook/react'
 import { noop } from 'lodash-es'
-import { TableV2, TableProps } from './TableV2'
-import { Icon } from '@harness/icons'
+import React from 'react'
+import { Icon } from '../..'
+import { TableV2 } from './TableV2'
 
 export default {
   title: 'Components / TableV2',
