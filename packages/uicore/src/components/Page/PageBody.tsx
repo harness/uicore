@@ -70,9 +70,6 @@ export interface PageBodyProps {
     buttonDisabledTooltip?: string
   }
 
-  /** True if Page does not have header */
-  filled?: boolean
-
   /** Optional classname */
   className?: string
 }
@@ -88,11 +85,10 @@ export const PageBody: React.FC<PageBodyProps> = ({
   error,
   retryOnError,
   noData,
-  filled,
   className
 }) => {
   return (
-    <Container className={cx(css.pageBody, filled && css.filled, className)} data-name="page-body">
+    <Container className={cx(css.pageBody, className)} data-name="page-body">
       {loading && <PageSpinner message={loadingMessage} />}
       {!loading && error && <PageError message={error} onClick={retryOnError} />}
       {!loading && !error && noData?.when?.() && (
