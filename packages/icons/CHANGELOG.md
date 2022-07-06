@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.36.0](https://github.com/harness/uicore/compare/@harness/icons@1.35.0...@harness/icons@1.36.0) (2022-07-06)
+
+
+### Features
+
+* [FFM-3966]: update options button ([#744](https://github.com/harness/uicore/issues/744)) ([eb9dd43](https://github.com/harness/uicore/commit/eb9dd43c785f14324d2abae2ddfacd485c7d3973))
+
+
+
+
+
 # [1.35.0](https://github.com/harness/uicore/compare/@harness/icons@1.34.0...@harness/icons@1.35.0) (2022-07-05)
 
 
