@@ -3,8 +3,7 @@
 exports[`PageError test Rendering error with a React Node 1`] = `
 <div>
   <div
-    class="StyledProps--font StyledProps--main StyledProps--flex StyledProps--flex-align-center-center"
-    style="width: 100%; height: 100%;"
+    class="StyledProps--font StyledProps--main pageError StyledProps--flex StyledProps--flex-align-center-center"
   >
     <div
       class="vertical layout-spacing-medium StyledProps--main"
@@ -46,8 +45,7 @@ exports[`PageError test Rendering error with a React Node 1`] = `
 exports[`PageError test Rendering error with a string 1`] = `
 <div>
   <div
-    class="StyledProps--font StyledProps--main StyledProps--flex StyledProps--flex-align-center-center"
-    style="width: 100%; height: 100%;"
+    class="StyledProps--font StyledProps--main pageError StyledProps--flex StyledProps--flex-align-center-center"
   >
     <div
       class="vertical layout-spacing-medium StyledProps--main"
@@ -85,8 +83,7 @@ exports[`PageError test Rendering error with a string 1`] = `
 exports[`PageError test Rendering error with no message 1`] = `
 <div>
   <div
-    class="StyledProps--font StyledProps--main StyledProps--flex StyledProps--flex-align-center-center"
-    style="width: 100%; height: 100%;"
+    class="StyledProps--font StyledProps--main pageError StyledProps--flex StyledProps--flex-align-center-center"
   >
     <div
       class="vertical layout-spacing-medium StyledProps--main"
