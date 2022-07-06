@@ -8,4 +8,5 @@
 .pageBody {
   display: flex;
   flex-direction: column;
+  min-height: calc(var(--page-min-height) - var(--page-header-height));
 }
