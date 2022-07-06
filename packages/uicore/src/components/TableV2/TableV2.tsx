@@ -5,8 +5,8 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
-import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns } from 'react-table'
+import React, { ReactNode } from 'react'
+import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns, useExpanded } from 'react-table'
 import cx from 'classnames'
 import { defaultTo } from 'lodash-es'
 import type { IconName } from '@blueprintjs/icons'
@@ -43,6 +43,7 @@ export interface TableProps<Data extends Record<string, any>> {
    * name - Unique identifier
    */
   name?: string
+  renderRowSubComponent?: (data: { row: Row<Data> }) => ReactNode
 }
 
 export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
@@ -56,7 +57,8 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
     pagination,
     rowDataTestID,
     getRowClassName,
-    name
+    name,
+    renderRowSubComponent
   } = props
 
   const { headerGroups, page, prepareRow } = useTable(
@@ -68,6 +70,7 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
       pageCount: defaultTo(pagination?.pageCount, -1)
     },
     useSortBy,
+    useExpanded,
     usePagination,
     useResizeColumns
   )
@@ -154,31 +157,35 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
           return (
             // eslint-disable-next-line react/jsx-key
             <div
-              {...row.getRowProps()}
               className={cx(
                 css.row,
                 {
                   [css.card]: !props.minimal,
-                  [css.clickable]: !!props.onRowClick,
-                  [css.minimal]: !!props.minimal
+                  [css.minimal]: !!props.minimal,
+                  [css.clickable]: !!props.onRowClick
                 },
                 getRowClassName?.(row)
-              )}
-              onClick={() => {
-                props.onRowClick?.(row.original, row.index)
-              }}
-              data-testid={rowDataTestID?.(row.original, row.index)}>
-              {row.cells.map((cell, index) => {
-                return (
-                  // eslint-disable-next-line react/jsx-key
-                  <div
-                    {...cell.getCellProps()}
-                    className={css.cell}
-                    style={{ width: headerGroups[0].headers[index].width }}>
-                    {cell.render('Cell')}
-                  </div>
-                )
-              })}
+              )}>
+              <div
+                {...row.getRowProps()}
+                className={css.cells}
+                onClick={() => {
+                  props.onRowClick?.(row.original, row.index)
+                }}
+                data-testid={rowDataTestID?.(row.original, row.index)}>
+                {row.cells.map((cell, index) => {
+                  return (
+                    // eslint-disable-next-line react/jsx-key
+                    <div
+                      {...cell.getCellProps()}
+                      className={css.cell}
+                      style={{ width: headerGroups[0].headers[index].width }}>
+                      {cell.render('Cell')}
+                    </div>
+                  )
+                })}
+              </div>
+              {row.isExpanded && <div className={css.rowSubComponent}>{renderRowSubComponent?.({ row })}</div>}
             </div>
           )
         })}
