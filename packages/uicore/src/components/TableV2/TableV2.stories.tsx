@@ -18,7 +18,7 @@ export default {
 } as Meta
 
 export const Basic: ComponentStory<typeof TableV2> = args => {
-  return <TableV2 {...args} sortable={true} onRowClick={() => {}} />
+  return <TableV2 {...args} sortable={true} onRowClick={noop} />
 }
 Basic.args = {
   data: [
