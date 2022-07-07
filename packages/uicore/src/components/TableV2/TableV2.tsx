@@ -167,12 +167,11 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
                 getRowClassName?.(row)
               )}
               {...row.getRowProps()}
-              data-testid={rowDataTestID?.(row.original, row.index)}>
-              <div
-                className={css.cells}
-                onClick={() => {
-                  props.onRowClick?.(row.original, row.index)
-                }}>
+              data-testid={rowDataTestID?.(row.original, row.index)}
+              onClick={() => {
+                props.onRowClick?.(row.original, row.index)
+              }}>
+              <div className={css.cells}>
                 {row.cells.map((cell, index) => {
                   return (
                     // eslint-disable-next-line react/jsx-key
