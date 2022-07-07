@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.64.0](https://github.com/harness/uicore/compare/@harness/uicore@3.63.0...@harness/uicore@3.64.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* [PIE-4356]: move onclick target to avoid updating several tests ([#752](https://github.com/harness/uicore/issues/752)) ([dd1d93a](https://github.com/harness/uicore/commit/dd1d93ad941ec14fe0f61106f035af8faf49eb67))
+
+
+
+
+
 # [3.63.0](https://github.com/harness/uicore/compare/@harness/uicore@3.62.0...@harness/uicore@3.63.0) (2022-07-07)
 
 
