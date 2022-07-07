@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.62.0](https://github.com/harness/uicore/compare/@harness/uicore@3.61.0...@harness/uicore@3.62.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* SplitButton padding consistency ([#749](https://github.com/harness/uicore/issues/749)) ([d1a5b01](https://github.com/harness/uicore/commit/d1a5b014f36e76cc1a9acfc1a38ee4b4b8366b4f))
+
+
+
+
+
 # [3.61.0](https://github.com/harness/uicore/compare/@harness/uicore@3.60.0...@harness/uicore@3.61.0) (2022-07-07)
 
 
