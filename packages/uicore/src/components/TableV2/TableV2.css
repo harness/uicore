@@ -34,10 +34,14 @@
 
   .row {
     display: flex;
+    flex-direction: column;
     padding: var(--spacing-medium);
     background-color: white;
     border: 1px solid transparent;
     position: relative;
+  }
+  .cells {
+    display: flex;
     align-items: center;
   }
 
@@ -100,5 +104,9 @@
 
   .pagination {
     padding: var(--spacing-medium);
+  }
+
+  .rowSubComponent {
+    margin-top: var(--spacing-medium);
   }
 }
