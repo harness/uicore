@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.38.0](https://github.com/harness/uicore/compare/@harness/icons@1.37.0...@harness/icons@1.38.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* added chat icon ([#748](https://github.com/harness/uicore/issues/748)) ([80281a1](https://github.com/harness/uicore/commit/80281a107aaa87dc7fe1f7ae63fd500dcea7e963))
+
+
+
+
+
 # [1.37.0](https://github.com/harness/uicore/compare/@harness/icons@1.36.0...@harness/icons@1.37.0) (2022-07-06)
 
 **Note:** Version bump only for package @harness/icons
