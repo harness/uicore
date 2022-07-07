@@ -239,19 +239,15 @@
 
 .menu {
   text-align: right !important;
-  min-width: 150px !important;
-  max-width: 150px !important;
+  min-width: 140px !important;
+  max-width: 140px !important;
   box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
   border-radius: 8px;
-  padding: var(--spacing-4) 0 0 0;
-
-  &.isLearnMoreOpen {
-    padding: var(--spacing-4) 0;
-  }
 }
 
 .bp3MenuItem {
   padding: 0;
+  line-height: 16px;
 }
 
 .menuItem {
@@ -259,7 +255,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: var(--spacing-2);
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: var(--spacing-2);
 
   & .menuItemLabel {
     display: inline-block;
@@ -267,6 +263,10 @@
   }
 
   & .menuItemIcon {
+    width: 16px;
+    display: flex;
+    justify-content: flex-end;
+
     & :global(.bp3-icon) {
       color: currentColor !important;
     }
@@ -311,11 +311,13 @@
 }
 
 .learnMoreItem {
-  margin-top: var(--spacing-4);
+  margin: 5px -5px -5px -5px;
   padding: 0;
   position: relative;
   height: 36px;
-  width: 100%;
+  width: 140px;
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
 
   &:hover {
     background-color: transparent;

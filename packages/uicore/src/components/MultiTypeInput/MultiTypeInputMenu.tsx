@@ -37,7 +37,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
   const [isLearnMoreOpen, setIsLearnMoreOpen] = React.useState(!dontShowAgain)
 
   return (
-    <Menu className={cx(css.menu, { [css.isLearnMoreOpen]: isLearnMoreOpen })}>
+    <Menu className={css.menu}>
       {allowedTypes.includes(MultiTypeInputType.FIXED) && (
         <Menu.Item
           className={css.bp3MenuItem}
