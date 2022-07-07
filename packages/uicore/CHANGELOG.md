@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.65.0](https://github.com/harness/uicore/compare/@harness/uicore@3.64.0...@harness/uicore@3.65.0) (2022-07-07)
+
+
+### Features
+
+* [PIE-4316]: update multitype menu interaction  [@vkbansal](https://github.com/vkbansal) ([#751](https://github.com/harness/uicore/issues/751)) ([bad366f](https://github.com/harness/uicore/commit/bad366ff439d550338c730df7a322b61317eeac6))
+
+
+
+
+
 # [3.64.0](https://github.com/harness/uicore/compare/@harness/uicore@3.63.0...@harness/uicore@3.64.0) (2022-07-07)
 
 
