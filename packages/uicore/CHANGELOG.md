@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.61.0](https://github.com/harness/uicore/compare/@harness/uicore@3.60.0...@harness/uicore@3.61.0) (2022-07-07)
+
+
+### Features
+
+* [PIE-4356]: expandable table rows ([#747](https://github.com/harness/uicore/issues/747)) ([c9892bb](https://github.com/harness/uicore/commit/c9892bb985f68e34e0ae78c36a98c1686a8a5793))
+
+
+
+
+
 # [3.60.0](https://github.com/harness/uicore/compare/@harness/uicore@3.59.0...@harness/uicore@3.60.0) (2022-07-07)
 
 **Note:** Version bump only for package @harness/uicore
