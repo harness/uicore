@@ -2,6 +2,7 @@ import React from 'react'
 import { I18nResource } from '@harness/design-system'
 import { Popover, PopoverPosition } from '@blueprintjs/core'
 import { Icon } from '@harness/icons'
+import cx from 'classnames'
 
 import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as TypeIconSize } from './MultiTypeInputUtils'
 
@@ -84,7 +85,10 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
       popoverClassName={css.learnMorePopover}
       className={css.learnMoreWrapper}
       modifiers={{ offset: { offset: '0px 0px' }, arrow: { enabled: false } }}>
-      <div>{i18n[labels[type]]}</div>
+      <div className={css.menuItem}>
+        <span className={css.menuItemLabel}>{i18n[labels[type]]}</span>
+        <Icon className={cx(css.menuItemIcon, css[type])} name={TypeIcon[type]} size={TypeIconSize[type]} />
+      </div>
     </Popover>
   )
 }

@@ -11,7 +11,7 @@ import { Icon } from '@harness/icons'
 import { I18nResource } from '@harness/design-system'
 import { Menu } from '@blueprintjs/core'
 
-import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as TypeIconSize } from './MultiTypeInputUtils'
+import { MultiTypeInputType } from './MultiTypeInputUtils'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 import { LearnMorePopover } from './LearnMorePopover'
@@ -37,12 +37,10 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
   const [isLearnMoreOpen, setIsLearnMoreOpen] = React.useState(!dontShowAgain)
 
   return (
-    <Menu className={css.menu}>
+    <Menu className={cx(css.menu, { [css.isLearnMoreOpen]: isLearnMoreOpen })}>
       {allowedTypes.includes(MultiTypeInputType.FIXED) && (
         <Menu.Item
-          className={css.menuItem}
-          labelClassName={cx(css.menuItemLabel, css[MultiTypeInputType.FIXED])}
-          labelElement={<Icon name={TypeIcon.FIXED} size={TypeIconSize.FIXED} />}
+          className={css.bp3MenuItem}
           text={
             <LearnMorePopover
               i18n={i18n}
@@ -59,9 +57,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
       )}
       {allowedTypes.includes(MultiTypeInputType.RUNTIME) && (
         <Menu.Item
-          className={css.menuItem}
-          labelClassName={cx(css.menuItemLabel, css[MultiTypeInputType.RUNTIME])}
-          labelElement={<Icon name={TypeIcon.RUNTIME} size={TypeIconSize.RUNTIME} />}
+          className={css.bp3MenuItem}
           text={
             <LearnMorePopover
               i18n={i18n}
@@ -78,9 +74,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
       )}
       {allowedTypes.includes(MultiTypeInputType.EXPRESSION) && (
         <Menu.Item
-          className={css.menuItem}
-          labelClassName={cx(css.menuItemLabel, css[MultiTypeInputType.EXPRESSION])}
-          labelElement={<Icon name={TypeIcon.EXPRESSION} size={TypeIconSize.EXPRESSION} />}
+          className={css.bp3MenuItem}
           text={
             <LearnMorePopover
               i18n={i18n}
@@ -99,7 +93,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
         <Menu.Item
           shouldDismissPopover={false}
           tagName="div"
-          className={cx(css.menuItem, css.learnMoreItem)}
+          className={cx(css.bp3MenuItem, css.learnMoreItem)}
           onClick={() => setIsLearnMoreOpen(true)}
           text={
             <div className={css.learnMore}>
