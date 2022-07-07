@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.63.0](https://github.com/harness/uicore/compare/@harness/uicore@3.62.0...@harness/uicore@3.63.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* [PIE-4356] move getRowClassName, testid to parent so existing tables won't break ([#750](https://github.com/harness/uicore/issues/750)) ([01a764a](https://github.com/harness/uicore/commit/01a764ac85417756c267d3cf7606f28c5be696f5))
+
+
+
+
+
 # [3.62.0](https://github.com/harness/uicore/compare/@harness/uicore@3.61.0...@harness/uicore@3.62.0) (2022-07-07)
 
 
