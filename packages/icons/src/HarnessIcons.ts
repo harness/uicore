@@ -814,6 +814,7 @@ type HarnessIconName =
   | 'canary-icon'
   | 'canary-inverse'
   | 'canary-outline'
+  | 'canary-grey'
   | 'canary'
   | 'canvas-position'
   | 'canvas-reset'
