@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.39.0](https://github.com/harness/uicore/compare/@harness/icons@1.38.0...@harness/icons@1.39.0) (2022-07-08)
+
+
+### Features
+
+* [CDS-38948]: Added icon - "canary-grey" ([#754](https://github.com/harness/uicore/issues/754)) ([7051993](https://github.com/harness/uicore/commit/705199360c933a836f7fd2bf19270ec9326aaece))
+
+
+
+
+
 # [1.38.0](https://github.com/harness/uicore/compare/@harness/icons@1.37.0...@harness/icons@1.38.0) (2022-07-07)
 
 
