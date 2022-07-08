@@ -64,6 +64,7 @@ import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
+import CanaryGrey from './canary-grey.svg'
 import CanaryIcon from './canary-icon.svg'
 import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
@@ -810,6 +811,7 @@ type HarnessIconName =
   | 'build-stage'
   | 'canary-delete-inverse'
   | 'canary-delete'
+  | 'canary-grey'
   | 'canary-icon'
   | 'canary-inverse'
   | 'canary-outline'
@@ -1556,6 +1558,7 @@ const HarnessIcons: KVO<ElementType> = {
   'build-stage': BuildStage,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
+  'canary-grey': CanaryGrey,
   'canary-icon': CanaryIcon,
   'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
