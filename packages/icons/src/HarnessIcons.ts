@@ -68,6 +68,7 @@ import CanaryIcon from './canary-icon.svg'
 import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
+import CanaryGrey from './canary-grey.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
@@ -1560,6 +1561,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
   canary: Canary,
+  'canary-grey': CanaryGrey,
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
