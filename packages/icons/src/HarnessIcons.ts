@@ -64,11 +64,11 @@ import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
+import CanaryGrey from './canary-grey.svg'
 import CanaryIcon from './canary-icon.svg'
 import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
-import CanaryGrey from './canary-grey.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
@@ -811,10 +811,10 @@ type HarnessIconName =
   | 'build-stage'
   | 'canary-delete-inverse'
   | 'canary-delete'
+  | 'canary-grey'
   | 'canary-icon'
   | 'canary-inverse'
   | 'canary-outline'
-  | 'canary-grey'
   | 'canary'
   | 'canvas-position'
   | 'canvas-reset'
@@ -1558,11 +1558,11 @@ const HarnessIcons: KVO<ElementType> = {
   'build-stage': BuildStage,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
+  'canary-grey': CanaryGrey,
   'canary-icon': CanaryIcon,
   'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
   canary: Canary,
-  'canary-grey': CanaryGrey,
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
