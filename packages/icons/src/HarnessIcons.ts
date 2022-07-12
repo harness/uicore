@@ -103,11 +103,11 @@ import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
-import Chat from './chat.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosMain from './chaos-main.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
+import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
@@ -854,11 +854,11 @@ type HarnessIconName =
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
-  | 'chat'
   | 'chaos-experiment-weight'
   | 'chaos-hubs'
   | 'chaos-main'
   | 'chaos-scenario-builder'
+  | 'chat'
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
@@ -1605,11 +1605,11 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
-  chat: Chat,
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-hubs': ChaosHubs,
   'chaos-main': ChaosMain,
   'chaos-scenario-builder': ChaosScenarioBuilder,
+  chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
