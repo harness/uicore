@@ -148,15 +148,9 @@ export const Color = {
   CORPORATE_STO_FOREGROUND: 'corporateStoForeground',
   CORPORATE_STO_BACKGROUND: 'corporateStoBackground',
   // Corporate Branding - Chaos Engineering
-  CORPORATE_CE_900: 'corporateCe900',
-  CORPORATE_CE_800: 'corporateCe800',
-  CORPORATE_CE_700: 'corporateCe700',
-  CORPORATE_CE_600: 'corporateCe600',
-  CORPORATE_CE_500: 'corporateCe500',
-  CORPORATE_CE_400: 'corporateCe400',
-  CORPORATE_CE_300: 'corporateCe300',
-  CORPORATE_CE_200: 'corporateCe200',
-  CORPORATE_CE_100: 'corporateCe100',
+  CORPORATE_CE_BORDER: 'corporateCeBorder',
+  CORPORATE_CE_FOREGROUND: 'corporateCeForeground',
+  CORPORATE_CE_BACKGROUND: 'corporateCeBackground',
   // Form styles
   FORM_BG: 'form',
   FORM_SECTION_BG: 'formSection',

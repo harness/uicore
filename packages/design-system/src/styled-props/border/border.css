@@ -281,32 +281,32 @@
     border-color: var(--magenta-500);
   }
 
-  &.border-color-corporateCdBorder {
+  &.border-color-corporateCd {
     border-color: var(--corporate-cd-border)
   }
 
-  &.border-color-corporateCiBorder {
+  &.border-color-corporateCi {
     border-color: var(--corporate-ci-border)
   }
   
-  &.border-color-corporateCcmBorder {
+  &.border-color-corporateCcm {
     border-color: var(--corporate-ccm-border)
   }
 
-  &.border-color-corporateFfBorder {
+  &.border-color-corporateFf {
     border-color: var(--corporate-ff-border)
   }
 
-  &.border-color-corporateSrmBorder {
+  &.border-color-corporateSrm {
     border-color: var(--corporate-srm-border)
   }
   
-  &.border-color-corporateStoBorder {
+  &.border-color-corporateSto {
     border-color: var(--corporate-sto-border)
   }
   
-  &.border-color-corporateCe500 {
-    border-color: var(--corporate-ce-500)
+  &.border-color-corporateCe {
+    border-color: var(--corporate-ce-border)
   }
 
   /* NextGen UI outline border colors */

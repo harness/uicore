@@ -506,32 +506,32 @@
     background: var(--primary-bg);
   }
 
-  &.background-corporateCdBackground {
+  &.background-corporateCd {
     color: var(--corporate-cd-background);
   }
 
-  &.background-corporateCiBackground {
+  &.background-corporateCi {
     color: var(--corporate-ci-background);
   }
 
-  &.background-corporateCcmBackground {
+  &.background-corporateCcm {
     color: var(--corporate-ccm-background);
   }
 
-  &.background-corporateFfBackground {
+  &.background-corporateFf {
     color: var(--corporate-ff-background);
   }
 
-  &.background-corporateSrmBackground {
+  &.background-corporateSrm {
     color: var(--corporate-srm-background);
   }
 
-  &.background-corporateStoBackground {
+  &.background-corporateSto {
     color: var(--corporate-sto-background);
   }
 
-  &.background-corporateCe100 {
-    color: var(--corporate-ce-100);
+  &.background-corporateCe {
+    color: var(--corporate-ce-background);
   }
 
   /* form style  @2021-04-27 */

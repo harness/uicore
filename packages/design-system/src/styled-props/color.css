@@ -650,40 +650,16 @@
     color: var(--corporate-sto-background);
   }
 
-  &.color-corporateCe900 {
-    color: var(--corporate-ce-900);
+  &.color-corporateCeBorder {
+    color: var(--corporate-ce-border);
   }
 
-  &.color-corporateCe800 {
-    color: var(--corporate-ce-800);
+  &.color-corporateCeForeground {
+    color: var(--corporate-ce-foreground);
   }
 
-  &.color-corporateCe700 {
-    color: var(--corporate-ce-700);
-  }
-  
-  &.color-corporateCe600 {
-    color: var(--corporate-ce-600);
-  }
-
-  &.color-corporateCe500 {
-    color: var(--corporate-ce-500);
-  }
-
-  &.color-corporateCe400 {
-    color: var(--corporate-ce-400);
-  }
-  
-  &.color-corporateCe300 {
-    color: var(--corporate-ce-300);
-  }
-  
-  &.color-corporateCe200 {
-    color: var(--corporate-ce-200);
-  }
-
-  &.color-corporateCe100 {
-    color: var(--corporate-ce-100);
+  &.color-corporateCeBackground {
+    color: var(--corporate-ce-background);
   }
 
   /* form style  @2021-04-27 */

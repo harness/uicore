@@ -190,15 +190,9 @@
   --corporate-sto-border: #4791ff;
   --corporate-sto-background: #ebefff;
   /* Chaos Engineering */
-  --corporate-ce-900: #350018;
-  --corporate-ce-800: #68002d;
-  --corporate-ce-700: #9a0041;
-  --corporate-ce-600: #cd0056;
-  --corporate-ce-500: #ff006a;
-  --corporate-ce-400: #ff368a;
-  --corporate-ce-300: #ff6cab;
-  --corporate-ce-200: #ffa1cb;
-  --corporate-ce-100: #fff1f7;
+  --corporate-ce-foreground: #9a0041;
+  --corporate-ce-border: #ff006a;
+  --corporate-ce-background: #fff1f7;
 
   /* ================================== *
    * ===== Style Variable Aliases ===== *
