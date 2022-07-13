@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.41.0](https://github.com/harness/uicore/compare/@harness/icons@1.40.0...@harness/icons@1.41.0) (2022-07-13)
+
+
+### Features
+
+* [CDS-39773]: added a currentColor to the fill ([#758](https://github.com/harness/uicore/issues/758)) ([cc7c6ee](https://github.com/harness/uicore/commit/cc7c6ee1dcaec0d86c7b05d108f9db0223ea9bd6))
+
+
+
+
+
 # [1.40.0](https://github.com/harness/uicore/compare/@harness/icons@1.39.0...@harness/icons@1.40.0) (2022-07-13)
 
 
