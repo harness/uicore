@@ -123,33 +123,32 @@ export const Color = {
   BLACK: 'black',
   BLACK_100: 'black100',
   WHITE: 'white',
-  /* ===== Corporate Brand Colors ===== */
   
-  // Continuous Delivery
+  // Corporate Branding - Continuous Delivery
   CORPORATE_CD_BORDER: 'corporateCdBorder',
   CORPORATE_CD_FOREGROUND: 'corporateCdForeground',
   CORPORATE_CD_BACKGROUND: 'corporateCdBackground',
-  // Continuous Integration
+  // Corporate Branding - Continuous Integration
   CORPORATE_CI_BORDER: 'corporateCiBorder',
   CORPORATE_CI_FOREGROUND: 'corporateCiForeground',
   CORPORATE_CI_BACKGROUND: 'corporateCiBackground',
-  // Cloud Cost Management
+  // Corporate Branding - Cloud Cost Management
   CORPORATE_CCM_BORDER: 'corporateCcmBorder',
   CORPORATE_CCM_FOREGROUND: 'corporateCcmForeground',
   CORPORATE_CCM_BACKGROUND: 'corporateCcmBackground',
-  // Feature Flag Management
+  // Corporate Branding - Feature Flag Management
   CORPORATE_FF_BORDER: 'corporateFfBorder',
   CORPORATE_FF_FOREGROUND: 'corporateFfForeground',
   CORPORATE_FF_BACKGROUND: 'corporateFfBackground',
-  // Service Reliability Management
+  // Corporate Branding - Service Reliability Management
   CORPORATE_SRM_BORDER: 'corporateSrmBorder',
   CORPORATE_SRM_FOREGROUND: 'corporateSrmForeground',
   CORPORATE_SRM_BACKGROUND: 'corporateSrmBackground',
-  // Security Test Orchestration
+  // Corporate Branding - Security Test Orchestration
   CORPORATE_STO_BORDER: 'corporateStoBorder',
   CORPORATE_STO_FOREGROUND: 'corporateStoForeground',
   CORPORATE_STO_BACKGROUND: 'corporateStoBackground',
-  // Chaos Engineering
+  // Corporate Branding - Chaos Engineering
   CORPORATE_CE_900: 'corporateCe900',
   CORPORATE_CE_800: 'corporateCe800',
   CORPORATE_CE_700: 'corporateCe700',
