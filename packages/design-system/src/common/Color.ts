@@ -123,7 +123,6 @@ export const Color = {
   BLACK: 'black',
   BLACK_100: 'black100',
   WHITE: 'white',
-  
   // Corporate Branding - Continuous Delivery
   CORPORATE_CD_BORDER: 'corporateCdBorder',
   CORPORATE_CD_FOREGROUND: 'corporateCdForeground',
@@ -158,7 +157,6 @@ export const Color = {
   CORPORATE_CE_300: 'corporateCe300',
   CORPORATE_CE_200: 'corporateCe200',
   CORPORATE_CE_100: 'corporateCe100',
-
   // Form styles
   FORM_BG: 'form',
   FORM_SECTION_BG: 'formSection',
