@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.40.0](https://github.com/harness/uicore/compare/@harness/icons@1.39.0...@harness/icons@1.40.0) (2022-07-13)
+
+
+### Features
+
+* [CDS-39773]: updated icons for pipelines, services and infrastructure ([#756](https://github.com/harness/uicore/issues/756)) ([e9b8f14](https://github.com/harness/uicore/commit/e9b8f145e0d3ff3057b9ef45a8ee187733545e8d))
+
+
+
+
+
 # [1.39.0](https://github.com/harness/uicore/compare/@harness/icons@1.38.0...@harness/icons@1.39.0) (2022-07-08)
 
 
