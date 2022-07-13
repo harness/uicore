@@ -281,28 +281,28 @@
     border-color: var(--magenta-500);
   }
 
-  &.border-color-corporateCdBackground {
-    border-color: var(--corporate-cd-background)
+  &.border-color-corporateCdBorder {
+    border-color: var(--corporate-cd-border)
   }
 
-  &.border-color-corporateCiBackground {
-    border-color: var(--corporate-ci-background)
+  &.border-color-corporateCiBorder {
+    border-color: var(--corporate-ci-border)
   }
   
-  &.border-color-corporateCcmBackground {
-    border-color: var(--corporate-ccm-background)
+  &.border-color-corporateCcmBorder {
+    border-color: var(--corporate-ccm-border)
   }
 
-  &.border-color-corporateFfBackground {
-    border-color: var(--corporate-ff-background)
+  &.border-color-corporateFfBorder {
+    border-color: var(--corporate-ff-border)
   }
 
-  &.border-color-corporateSrmBackground {
-    border-color: var(--corporate-srm-background)
+  &.border-color-corporateSrmBorder {
+    border-color: var(--corporate-srm-border)
   }
   
-  &.border-color-corporateStoBackground {
-    border-color: var(--corporate-sto-background)
+  &.border-color-corporateStoBorder {
+    border-color: var(--corporate-sto-border)
   }
   
   &.border-color-corporateCe500 {

@@ -166,28 +166,28 @@
   /* ===== Corporate Brand Colors ===== */
 
   // Continuous Delivery
-  --corporate-cd-border: #30841f;
-  --corporate-cd-foreground: #5fb34e;
+  --corporate-cd-foreground: #30841f;
+  --corporate-cd-border: #5fb34e;
   --corporate-cd-background: #f6fff2;
   // Continuous Integration
-  --corporate-ci-border: #0672b6;
-  --corporate-ci-foreground: #2bb1f2;
+  --corporate-ci-foreground: #0672b6;
+  --corporate-ci-border: #2bb1f2;
   --corporate-ci-background: #e2f5ff;
   // Cloud Cost Management
-  --corporate-ccm-border: #24807f;
-  --corporate-ccm-foreground: #01c9cc;
+  --corporate-ccm-foreground: #24807f;
+  --corporate-ccm-border: #01c9cc;
   --corporate-ccm-background: #ecffff;
   // Feature Flag Management
-  --corporate-ff-border: #c05809;
-  --corporate-ff-foreground: #ee8625;
+  --corporate-ff-foreground: #c05809;
+  --corporate-ff-border: #ee8625;
   --corporate-ff-background: #fcf4e3;
   // Service Reliability Management
-  --corporate-srm-border: #6938c0;
-  --corporate-srm-foreground: #ae82fc;
+  --corporate-srm-foreground: #6938c0;
+  --corporate-srm-border: #ae82fc;
   --corporate-srm-background: #f6f1ff;
   // Security Test Orchestration
-  --corporate-sto-border: #1947ec;
-  --corporate-sto-foreground: #4791ff;
+  --corporate-sto-foreground: #1947ec;
+  --corporate-sto-border: #4791ff;
   --corporate-sto-background: #ebefff;
   // Chaos Engineering
   --corporate-ce-900: #350018;
