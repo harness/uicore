@@ -506,6 +506,34 @@
     background: var(--primary-bg);
   }
 
+  &.background-corporateCdBackground {
+    color: var(--corporate-cd-background);
+  }
+
+  &.background-corporateCiBackground {
+    color: var(--corporate-ci-background);
+  }
+
+  &.background-corporateCcmBackground {
+    color: var(--corporate-ccm-background);
+  }
+
+  &.background-corporateFfBackground {
+    color: var(--corporate-ff-background);
+  }
+
+  &.background-corporateSrmBackground {
+    color: var(--corporate-srm-background);
+  }
+
+  &.background-corporateStoBackground {
+    color: var(--corporate-sto-background);
+  }
+
+  &.background-corporateCe100 {
+    color: var(--corporate-ce-100);
+  }
+
   /* form style  @2021-04-27 */
   &.background-form {
     background: var(--form-bg);

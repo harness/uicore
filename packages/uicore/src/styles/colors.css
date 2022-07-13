@@ -6,7 +6,7 @@
  */
 
 /*
-  Make sure all color changes also reflect in `src/core/Color.ts`, `src/styled-props/color.css` and `src/styled-props/background.css` as well.
+  Make sure all color changes also reflect in `design-system/src/common/Color.ts`, `design-system/src/styled-props/color.css` and `design-system/src/styled-props/background.css` as well.
   A StyledProps based component can define color/background color by using React/TypeScript props directly like
   <Component color="red250"/>, <Component background="grey250"/>
 */
@@ -162,6 +162,43 @@
   --theme-dark-canvas-bg: #090909;
   --theme-dark-canvas-dot: #585b81;
   --theme-dark-nav-panel-bg: #030d19;
+
+  /* ===== Corporate Brand Colors ===== */
+
+  // Continuous Delivery
+  --corporate-cd-border: #30841f;
+  --corporate-cd-foreground: #5fb34e;
+  --corporate-cd-background: #f6fff2;
+  // Continuous Integration
+  --corporate-ci-border: #0672b6;
+  --corporate-ci-foreground: #2bb1f2;
+  --corporate-ci-background: #e2f5ff;
+  // Cloud Cost Management
+  --corporate-ccm-border: #24807f;
+  --corporate-ccm-foreground: #01c9cc;
+  --corporate-ccm-background: #ecffff;
+  // Feature Flag Management
+  --corporate-ff-border: #c05809;
+  --corporate-ff-foreground: #ee8625;
+  --corporate-ff-background: #fcf4e3;
+  // Service Reliability Management
+  --corporate-srm-border: #6938c0;
+  --corporate-srm-foreground: #ae82fc;
+  --corporate-srm-background: #f6f1ff;
+  // Security Test Orchestration
+  --corporate-sto-border: #1947ec;
+  --corporate-sto-foreground: #4791ff;
+  --corporate-sto-background: #ebefff;
+  // Chaos Engineering
+  --corporate-ce-900: #350018;
+  --corporate-ce-800: #68002d;
+  --corporate-ce-700: #9a0041;
+  --corporate-ce-600: #cd0056;
+  --corporate-ce-500: #ff006a;
+  --corporate-ce-400: #ff368a;
+  --corporate-ce-300: #ff6cab;
+  --corporate-ce-200: #ffa1cb;
+  --corporate-ce-100: #fff1f7;
 
   /* ================================== *
    * ===== Style Variable Aliases ===== *

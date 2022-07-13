@@ -281,6 +281,34 @@
     border-color: var(--magenta-500);
   }
 
+  &.border-color-corporateCdBackground {
+    border-color: var(--corporate-cd-background)
+  }
+
+  &.border-color-corporateCiBackground {
+    border-color: var(--corporate-ci-background)
+  }
+  
+  &.border-color-corporateCcmBackground {
+    border-color: var(--corporate-ccm-background)
+  }
+
+  &.border-color-corporateFfBackground {
+    border-color: var(--corporate-ff-background)
+  }
+
+  &.border-color-corporateSrmBackground {
+    border-color: var(--corporate-srm-background)
+  }
+  
+  &.border-color-corporateStoBackground {
+    border-color: var(--corporate-sto-background)
+  }
+  
+  &.border-color-corporateCe500 {
+    border-color: var(--corporate-ce-500)
+  }
+
   /* NextGen UI outline border colors */
   &.border-color-dark {
     border-color: var(--dark-outline);

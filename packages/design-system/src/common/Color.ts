@@ -123,6 +123,43 @@ export const Color = {
   BLACK: 'black',
   BLACK_100: 'black100',
   WHITE: 'white',
+  /* ===== Corporate Brand Colors ===== */
+  
+  // Continuous Delivery
+  CORPORATE_CD_BORDER: 'corporateCdBorder',
+  CORPORATE_CD_FOREGROUND: 'corporateCdForeground',
+  CORPORATE_CD_BACKGROUND: 'corporateCdBackground',
+  // Continuous Integration
+  CORPORATE_CI_BORDER: 'corporateCiBorder',
+  CORPORATE_CI_FOREGROUND: 'corporateCiForeground',
+  CORPORATE_CI_BACKGROUND: 'corporateCiBackground',
+  // Cloud Cost Management
+  CORPORATE_CCM_BORDER: 'corporateCcmBorder',
+  CORPORATE_CCM_FOREGROUND: 'corporateCcmForeground',
+  CORPORATE_CCM_BACKGROUND: 'corporateCcmBackground',
+  // Feature Flag Management
+  CORPORATE_FF_BORDER: 'corporateFfBorder',
+  CORPORATE_FF_FOREGROUND: 'corporateFfForeground',
+  CORPORATE_FF_BACKGROUND: 'corporateFfBackground',
+  // Service Reliability Management
+  CORPORATE_SRM_BORDER: 'corporateSrmBorder',
+  CORPORATE_SRM_FOREGROUND: 'corporateSrmForeground',
+  CORPORATE_SRM_BACKGROUND: 'corporateSrmBackground',
+  // Security Test Orchestration
+  CORPORATE_STO_BORDER: 'corporateStoBorder',
+  CORPORATE_STO_FOREGROUND: 'corporateStoForeground',
+  CORPORATE_STO_BACKGROUND: 'corporateStoBackground',
+  // Chaos Engineering
+  CORPORATE_CE_900: 'corporateCe900',
+  CORPORATE_CE_800: 'corporateCe800',
+  CORPORATE_CE_700: 'corporateCe700',
+  CORPORATE_CE_600: 'corporateCe600',
+  CORPORATE_CE_500: 'corporateCe500',
+  CORPORATE_CE_400: 'corporateCe400',
+  CORPORATE_CE_300: 'corporateCe300',
+  CORPORATE_CE_200: 'corporateCe200',
+  CORPORATE_CE_100: 'corporateCe100',
+
   // Form styles
   FORM_BG: 'form',
   FORM_SECTION_BG: 'formSection',

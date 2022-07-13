@@ -578,6 +578,114 @@
     color: var(--lime-50);
   }
 
+  &.color-corporateCdBorder {
+    color: var(--corporate-cd-border);
+  }
+
+  &.color-corporateCdForeground {
+    color: var(--corporate-cd-foreground);
+  }
+
+  &.color-corporateCdBackground {
+    color: var(--corporate-cd-background);
+  }
+
+  &.color-corporateCiBorder {
+    color: var(--corporate-ci-border);
+  }
+
+  &.color-corporateCiForeground {
+    color: var(--corporate-ci-foreground);
+  }
+
+  &.color-corporateCiBackground {
+    color: var(--corporate-ci-background);
+  }
+
+  &.color-corporateCcmBorder {
+    color: var(--corporate-ccm-border);
+  }
+
+  &.color-corporateCcmForeground {
+    color: var(--corporate-ccm-foreground);
+  }
+
+  &.color-corporateCcmBackground {
+    color: var(--corporate-ccm-background);
+  }
+
+  &.color-corporateFfBorder {
+    color: var(--corporate-ff-border);
+  }
+
+  &.color-corporateFfForeground {
+    color: var(--corporate-ff-foreground);
+  }
+
+  &.color-corporateFfBackground {
+    color: var(--corporate-ff-background);
+  }
+
+  &.color-corporateSrmBorder {
+    color: var(--corporate-srm-border);
+  }
+
+  &.color-corporateSrmForeground {
+    color: var(--corporate-srm-foreground);
+  }
+
+  &.color-corporateSrmBackground {
+    color: var(--corporate-srm-background);
+  }
+
+  &.color-corporateStoBorder {
+    color: var(--corporate-sto-border);
+  }
+
+  &.color-corporateStoForeground {
+    color: var(--corporate-sto-foreground);
+  }
+
+  &.color-corporateStoBackground {
+    color: var(--corporate-sto-background);
+  }
+
+  &.color-corporateCe900 {
+    color: var(--corporate-ce-900);
+  }
+
+  &.color-corporateCe800 {
+    color: var(--corporate-ce-800);
+  }
+
+  &.color-corporateCe700 {
+    color: var(--corporate-ce-700);
+  }
+  
+  &.color-corporateCe600 {
+    color: var(--corporate-ce-600);
+  }
+
+  &.color-corporateCe500 {
+    color: var(--corporate-ce-500);
+  }
+
+  &.color-corporateCe400 {
+    color: var(--corporate-ce-400);
+  }
+  
+  &.color-corporateCe300 {
+    color: var(--corporate-ce-300);
+  }
+  
+  &.color-corporateCe200 {
+    color: var(--corporate-ce-200);
+  }
+
+  &.color-corporateCe100 {
+    color: var(--corporate-ce-100);
+  }
+
   /* form style  @2021-04-27 */
   &.color-error {
     color: var(--error);
