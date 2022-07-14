@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.69.0](https://github.com/harness/uicore/compare/@harness/uicore@3.68.0...@harness/uicore@3.69.0) (2022-07-14)
+
+
+### Bug Fixes
+
+* alignment in StackedSummaryTable ([#760](https://github.com/harness/uicore/issues/760)) ([6b9ddc5](https://github.com/harness/uicore/commit/6b9ddc5cbb606cd1743c0bc15ee4249e5d37c6d5))
+
+
+
+
+
 # [3.68.0](https://github.com/harness/uicore/compare/@harness/uicore@3.67.0...@harness/uicore@3.68.0) (2022-07-13)
 
 **Note:** Version bump only for package @harness/uicore
