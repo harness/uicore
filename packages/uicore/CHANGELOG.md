@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.70.0](https://github.com/harness/uicore/compare/@harness/uicore@3.69.0...@harness/uicore@3.70.0) (2022-07-14)
+
+
+### Features
+
+* [PL-24664]: Added column width to Stacked Summary bar ([#682](https://github.com/harness/uicore/issues/682)) ([b6cc2e2](https://github.com/harness/uicore/commit/b6cc2e2b6a570e8c920d943a07ebe2a2df975b46))
+
+
+
+
+
 # [3.69.0](https://github.com/harness/uicore/compare/@harness/uicore@3.68.0...@harness/uicore@3.69.0) (2022-07-14)
 
 
