@@ -9,6 +9,7 @@ import { Text, Icon, Layout, Button, ButtonVariation, ButtonProps, Container } f
 import { Color } from '@harness/design-system'
 import React from 'react'
 import i18n from './PageError.i18n'
+import css from './PageError.css'
 
 export interface PageErrorProps {
   message?: React.ReactNode
@@ -38,7 +39,7 @@ const getErrorNode = (message: React.ReactNode): React.ReactNode => {
 
 export const PageError: React.FC<PageErrorProps> = props => {
   return (
-    <Container width="100%" height="100%" flex={{ align: 'center-center' }}>
+    <Container width="100%" height="100%" flex={{ align: 'center-center' }} className={css.pageError}>
       <Layout.Vertical
         spacing="medium"
         width={props?.width || 500}
