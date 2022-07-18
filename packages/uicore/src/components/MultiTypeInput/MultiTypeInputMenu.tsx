@@ -24,8 +24,12 @@ export interface LearnMoreProps {
 
 export const MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY = 'harness_multitype_input_learn_more_dontshowagain_0'
 
+export type AllowedTypesWithExecutionTime = Exclude<MultiTypeInputType, MultiTypeInputType.RUNTIME>
+export type AllowedTypesWithRunTime = Exclude<MultiTypeInputType, MultiTypeInputType.EXECUTION_TIME>
+export type AllowedTypes = AllowedTypesWithExecutionTime[] | AllowedTypesWithRunTime[]
+
 export interface MultiTypeInputMenuProps {
-  allowedTypes: MultiTypeInputType[]
+  allowedTypes: AllowedTypes
   i18n?: I18nResource
   onTypeSelect(type: MultiTypeInputType): void
 }
@@ -55,7 +59,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           onMouseEnter={() => setCurrentType(MultiTypeInputType.FIXED)}
         />
       )}
-      {allowedTypes.includes(MultiTypeInputType.RUNTIME) && (
+      {(allowedTypes as AllowedTypesWithRunTime[]).includes(MultiTypeInputType.RUNTIME) && (
         <Menu.Item
           className={css.bp3MenuItem}
           text={
@@ -70,6 +74,23 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           }
           onClick={() => onTypeSelect(MultiTypeInputType.RUNTIME)}
           onMouseEnter={() => setCurrentType(MultiTypeInputType.RUNTIME)}
+        />
+      )}
+      {(allowedTypes as AllowedTypesWithExecutionTime[]).includes(MultiTypeInputType.EXECUTION_TIME) && (
+        <Menu.Item
+          className={css.bp3MenuItem}
+          text={
+            <LearnMorePopover
+              i18n={i18n}
+              type={MultiTypeInputType.EXECUTION_TIME}
+              isLearnMoreOpen={isLearnMoreOpen && currentType === MultiTypeInputType.EXECUTION_TIME}
+              dontShowAgain={dontShowAgain}
+              setIsLearnMoreOpen={setIsLearnMoreOpen}
+              setDontShowAgain={setDontShowAgain}
+            />
+          }
+          onClick={() => onTypeSelect(MultiTypeInputType.EXECUTION_TIME)}
+          onMouseEnter={() => setCurrentType(MultiTypeInputType.EXECUTION_TIME)}
         />
       )}
       {allowedTypes.includes(MultiTypeInputType.EXPRESSION) && (

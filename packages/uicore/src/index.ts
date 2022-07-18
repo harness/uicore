@@ -144,7 +144,10 @@ export {
 export {
   MultiTypeInputMenu,
   MultiTypeInputMenuProps,
-  MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY
+  MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY,
+  AllowedTypes,
+  AllowedTypesWithExecutionTime,
+  AllowedTypesWithRunTime
 } from './components/MultiTypeInput/MultiTypeInputMenu'
 export {
   CategorizedSelectProps,
