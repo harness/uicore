@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.71.0](https://github.com/harness/uicore/compare/@harness/uicore@3.70.0...@harness/uicore@3.71.0) (2022-07-18)
+
+
+### Bug Fixes
+
+* [PL-24388]: add PageError class ([#761](https://github.com/harness/uicore/issues/761)) ([a720628](https://github.com/harness/uicore/commit/a72062803a7c700f7df91137087dc8ae468c6750))
+
+
+
+
+
 # [3.70.0](https://github.com/harness/uicore/compare/@harness/uicore@3.69.0...@harness/uicore@3.70.0) (2022-07-14)
 
 
