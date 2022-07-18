@@ -13,6 +13,7 @@
 .dropdown {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+  padding-right: var(--spacing-medium) !important;
   position: relative;
   &::before {
     content: '';

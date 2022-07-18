@@ -9,6 +9,8 @@
   width: var(--spacing-10);
   text-align: right;
   white-space: nowrap !important;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .barSection {

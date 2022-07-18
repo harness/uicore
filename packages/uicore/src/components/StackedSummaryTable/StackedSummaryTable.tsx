@@ -28,13 +28,14 @@ export interface StackedSummaryInterface extends StackedSummaryBarData {
 
 export interface StackedSummaryTableProps {
   columnHeaders: Array<JSX.Element | string>
+  columnWidth?: number[]
   summaryData: StackedSummaryInterface[]
   barLength?: number
   noDataRenderer?: () => JSX.Element
 }
 
 export const StackedSummaryTable: React.FC<StackedSummaryTableProps> = props => {
-  const { columnHeaders, summaryData, barLength, noDataRenderer } = props
+  const { columnHeaders, summaryData, barLength, noDataRenderer, columnWidth = [] } = props
 
   if (!summaryData[0]?.barSectionsData?.length) {
     if (noDataRenderer) {
@@ -81,13 +82,13 @@ export const StackedSummaryTable: React.FC<StackedSummaryTableProps> = props => 
     {
       Header: () => columnHeaders[0],
       accessor: 'label',
-      width: '40%',
+      width: columnWidth[0] || '40%',
       Cell: RenderStackedSummaryBarLabelColumn
     },
     {
       Header: () => columnHeaders[1],
       accessor: 'trend',
-      width: '60%',
+      width: columnWidth[1] || '60%',
       Cell: RenderStackedSummaryBarCountColumn
     }
   ]

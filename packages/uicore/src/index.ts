@@ -141,7 +141,11 @@ export {
   MultiTypeIcon,
   MultiTypeIconSize
 } from './components/MultiTypeInput/MultiTypeInputUtils'
-export { MultiTypeInputMenu, MultiTypeInputMenuProps } from './components/MultiTypeInput/MultiTypeInputMenu'
+export {
+  MultiTypeInputMenu,
+  MultiTypeInputMenuProps,
+  MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY
+} from './components/MultiTypeInput/MultiTypeInputMenu'
 export {
   CategorizedSelectProps,
   CategorizedSelect,

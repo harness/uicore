@@ -3,6 +3,115 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.70.0](https://github.com/harness/uicore/compare/@harness/uicore@3.69.0...@harness/uicore@3.70.0) (2022-07-14)
+
+
+### Features
+
+* [PL-24664]: Added column width to Stacked Summary bar ([#682](https://github.com/harness/uicore/issues/682)) ([b6cc2e2](https://github.com/harness/uicore/commit/b6cc2e2b6a570e8c920d943a07ebe2a2df975b46))
+
+
+
+
+
+# [3.69.0](https://github.com/harness/uicore/compare/@harness/uicore@3.68.0...@harness/uicore@3.69.0) (2022-07-14)
+
+
+### Bug Fixes
+
+* alignment in StackedSummaryTable ([#760](https://github.com/harness/uicore/issues/760)) ([6b9ddc5](https://github.com/harness/uicore/commit/6b9ddc5cbb606cd1743c0bc15ee4249e5d37c6d5))
+
+
+
+
+
+# [3.68.0](https://github.com/harness/uicore/compare/@harness/uicore@3.67.0...@harness/uicore@3.68.0) (2022-07-13)
+
+**Note:** Version bump only for package @harness/uicore
+
+
+
+
+
+# [3.67.0](https://github.com/harness/uicore/compare/@harness/uicore@3.66.0...@harness/uicore@3.67.0) (2022-07-13)
+
+**Note:** Version bump only for package @harness/uicore
+
+
+
+
+
+# [3.66.0](https://github.com/harness/uicore/compare/@harness/uicore@3.65.0...@harness/uicore@3.66.0) (2022-07-08)
+
+**Note:** Version bump only for package @harness/uicore
+
+
+
+
+
+# [3.65.0](https://github.com/harness/uicore/compare/@harness/uicore@3.64.0...@harness/uicore@3.65.0) (2022-07-07)
+
+
+### Features
+
+* [PIE-4316]: update multitype menu interaction  [@vkbansal](https://github.com/vkbansal) ([#751](https://github.com/harness/uicore/issues/751)) ([bad366f](https://github.com/harness/uicore/commit/bad366ff439d550338c730df7a322b61317eeac6))
+
+
+
+
+
+# [3.64.0](https://github.com/harness/uicore/compare/@harness/uicore@3.63.0...@harness/uicore@3.64.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* [PIE-4356]: move onclick target to avoid updating several tests ([#752](https://github.com/harness/uicore/issues/752)) ([dd1d93a](https://github.com/harness/uicore/commit/dd1d93ad941ec14fe0f61106f035af8faf49eb67))
+
+
+
+
+
+# [3.63.0](https://github.com/harness/uicore/compare/@harness/uicore@3.62.0...@harness/uicore@3.63.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* [PIE-4356] move getRowClassName, testid to parent so existing tables won't break ([#750](https://github.com/harness/uicore/issues/750)) ([01a764a](https://github.com/harness/uicore/commit/01a764ac85417756c267d3cf7606f28c5be696f5))
+
+
+
+
+
+# [3.62.0](https://github.com/harness/uicore/compare/@harness/uicore@3.61.0...@harness/uicore@3.62.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* SplitButton padding consistency ([#749](https://github.com/harness/uicore/issues/749)) ([d1a5b01](https://github.com/harness/uicore/commit/d1a5b014f36e76cc1a9acfc1a38ee4b4b8366b4f))
+
+
+
+
+
+# [3.61.0](https://github.com/harness/uicore/compare/@harness/uicore@3.60.0...@harness/uicore@3.61.0) (2022-07-07)
+
+
+### Features
+
+* [PIE-4356]: expandable table rows ([#747](https://github.com/harness/uicore/issues/747)) ([c9892bb](https://github.com/harness/uicore/commit/c9892bb985f68e34e0ae78c36a98c1686a8a5793))
+
+
+
+
+
+# [3.60.0](https://github.com/harness/uicore/compare/@harness/uicore@3.59.0...@harness/uicore@3.60.0) (2022-07-07)
+
+**Note:** Version bump only for package @harness/uicore
+
+
+
+
+
 # [3.59.0](https://github.com/harness/uicore/compare/@harness/uicore@3.58.0...@harness/uicore@3.59.0) (2022-07-06)
 
 **Note:** Version bump only for package @harness/uicore

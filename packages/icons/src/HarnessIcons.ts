@@ -64,6 +64,7 @@ import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
+import CanaryGrey from './canary-grey.svg'
 import CanaryIcon from './canary-icon.svg'
 import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
@@ -102,6 +103,7 @@ import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
+import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
@@ -809,6 +811,7 @@ type HarnessIconName =
   | 'build-stage'
   | 'canary-delete-inverse'
   | 'canary-delete'
+  | 'canary-grey'
   | 'canary-icon'
   | 'canary-inverse'
   | 'canary-outline'
@@ -847,6 +850,7 @@ type HarnessIconName =
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
+  | 'chat'
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
@@ -1554,6 +1558,7 @@ const HarnessIcons: KVO<ElementType> = {
   'build-stage': BuildStage,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
+  'canary-grey': CanaryGrey,
   'canary-icon': CanaryIcon,
   'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
@@ -1592,6 +1597,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
+  chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
