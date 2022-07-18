@@ -10,6 +10,7 @@ import type { IconName } from '@harness/icons'
 export enum MultiTypeInputType {
   FIXED = 'FIXED',
   RUNTIME = 'RUNTIME',
+  EXECUTION_TIME = 'EXECUTION_TIME',
   EXPRESSION = 'EXPRESSION'
 }
 
@@ -19,15 +20,17 @@ export enum MultiTypeInputValue {
   MULTI_SELECT_OPTION = 'MULTI_SELECT_OPTION'
 }
 
-export const MultiTypeIcon: Record<string, IconName> = {
+export const MultiTypeIcon: Record<MultiTypeInputType, IconName> = {
   FIXED: 'fixed-input',
   RUNTIME: 'runtime-input',
+  EXECUTION_TIME: 'runtime-input',
   EXPRESSION: 'expression-input'
 }
 
-export const MultiTypeIconSize: Record<string, number> = {
+export const MultiTypeIconSize: Record<MultiTypeInputType, number> = {
   FIXED: 12,
   RUNTIME: 12,
+  EXECUTION_TIME: 12,
   EXPRESSION: 16
 }
 

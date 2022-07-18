@@ -28,7 +28,7 @@ import {
   EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE
 } from './MultiTypeInputUtils'
-import { MultiTypeInputMenu } from './MultiTypeInputMenu'
+import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 
@@ -44,17 +44,12 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   onChange?: (value: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => void
   i18n?: I18nResource
   btnClassName?: string
-  allowableTypes?: MultiTypeInputType[]
+  allowableTypes?: AllowedTypes
   fixedTypeComponent: (props: FixedTypeComponentProps & T) => JSX.Element
   fixedTypeComponentProps?: T
   name: string
   disabled?: boolean
   mini?: boolean
-  /**
-   * When set to `true`, will set the value of input to
-   * `<+input>.executionInput()` instead of  just `<+input>`
-   */
-  useExecutionTimeInput?: boolean
 }
 
 export interface FixedTypeComponentProps {
@@ -67,14 +62,23 @@ export const isValueAnExpression = (value: string): boolean => /<\+.*>/.test(val
 
 export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
-  allowableTypes?: MultiTypeInputType[],
+  allowableTypes?: AllowedTypes,
   supportListOfExpressionsBehaviour?: boolean
 ): MultiTypeInputType => {
   if (typeof value === 'boolean') {
     return MultiTypeInputType.FIXED
   } else if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
-    if (value.startsWith(RUNTIME_INPUT_VALUE)) return MultiTypeInputType.RUNTIME
+    if (value.startsWith(RUNTIME_INPUT_VALUE)) {
+      if (
+        Array.isArray(allowableTypes) &&
+        (allowableTypes as AllowedTypesWithExecutionTime[]).includes(MultiTypeInputType.EXECUTION_TIME)
+      ) {
+        return MultiTypeInputType.EXECUTION_TIME
+      }
+
+      return MultiTypeInputType.RUNTIME
+    }
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
   } else if (Array.isArray(value) && supportListOfExpressionsBehaviour) {
     // To support list of expressions
@@ -104,7 +108,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     disabled,
     multitypeInputValue,
     mini,
-    useExecutionTimeInput,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -114,12 +117,19 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     if (type !== newType) {
       setType(newType)
       onTypeChange?.(newType)
-      const _inputValue =
-        newType === MultiTypeInputType.RUNTIME
-          ? useExecutionTimeInput
-            ? EXECUTION_TIME_INPUT_VALUE
-            : RUNTIME_INPUT_VALUE
-          : defaultValueToReset
+      let _inputValue
+
+      switch (newType) {
+        case MultiTypeInputType.RUNTIME:
+          _inputValue = RUNTIME_INPUT_VALUE
+          break
+        case MultiTypeInputType.EXECUTION_TIME:
+          _inputValue = EXECUTION_TIME_INPUT_VALUE
+          break
+        default:
+          _inputValue = defaultValueToReset
+      }
+
       onChange?.(_inputValue, MultiTypeInputValue.STRING, newType)
     }
   }
@@ -158,6 +168,15 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           wrapperClassName={css.input}
           name={name}
           placeholder={RUNTIME_INPUT_VALUE}
+          disabled
+          value={value as string}
+        />
+      )}
+      {type === MultiTypeInputType.EXECUTION_TIME && (
+        <TextInput
+          wrapperClassName={css.input}
+          name={name}
+          placeholder={EXECUTION_TIME_INPUT_VALUE}
           disabled
           value={value as string}
         />
