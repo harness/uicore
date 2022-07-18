@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.72.0](https://github.com/harness/uicore/compare/@harness/uicore@3.71.0...@harness/uicore@3.72.0) (2022-07-18)
+
+
+### Features
+
+* add a new type in multitype input ([#762](https://github.com/harness/uicore/issues/762)) ([8911bf0](https://github.com/harness/uicore/commit/8911bf00c5c46bbfb596481fc3ff87e53b508338))
+
+
+
+
+
 # [3.71.0](https://github.com/harness/uicore/compare/@harness/uicore@3.70.0...@harness/uicore@3.71.0) (2022-07-18)
 
 
