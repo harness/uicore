@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.72.0](https://github.com/harness/uicore/compare/@harness/uicore@3.71.0...@harness/uicore@3.72.0) (2022-07-18)
+
+
+### Features
+
+* add a new type in multitype input ([#762](https://github.com/harness/uicore/issues/762)) ([8911bf0](https://github.com/harness/uicore/commit/8911bf00c5c46bbfb596481fc3ff87e53b508338))
+
+
+
+
+
+# [3.71.0](https://github.com/harness/uicore/compare/@harness/uicore@3.70.0...@harness/uicore@3.71.0) (2022-07-18)
+
+
+### Bug Fixes
+
+* [PL-24388]: add PageError class ([#761](https://github.com/harness/uicore/issues/761)) ([a720628](https://github.com/harness/uicore/commit/a72062803a7c700f7df91137087dc8ae468c6750))
+
+
+
+
+
 # [3.70.0](https://github.com/harness/uicore/compare/@harness/uicore@3.69.0...@harness/uicore@3.70.0) (2022-07-14)
 
 

@@ -1,3 +1,10 @@
+/*
+ * Copyright 2022 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
 import React from 'react'
 import { I18nResource } from '@harness/design-system'
 import { Popover, PopoverPosition } from '@blueprintjs/core'
@@ -27,13 +34,19 @@ const helperText: Record<MultiTypeInputType, React.ReactNode> = {
     <React.Fragment>
       <b>Runtime Inputs</b> are placeholders for values that will be provided when you start a Pipeline execution.
     </React.Fragment>
+  ),
+  [MultiTypeInputType.EXECUTION_TIME]: (
+    <React.Fragment>
+      <b>Runtime Inputs</b> are placeholders for values that will be provided during a Pipeline execution.
+    </React.Fragment>
   )
 }
 
 export const labels: Record<MultiTypeInputType, string> = {
   [MultiTypeInputType.EXPRESSION]: 'expression',
   [MultiTypeInputType.FIXED]: 'fixedValue',
-  [MultiTypeInputType.RUNTIME]: 'runtimeInput'
+  [MultiTypeInputType.RUNTIME]: 'runtimeInput',
+  [MultiTypeInputType.EXECUTION_TIME]: 'runtimeInput'
 }
 
 export interface LearnMorePopoverProps {
