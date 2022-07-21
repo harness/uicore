@@ -33,6 +33,7 @@
 .splitButton {
   position: relative;
   display: flex;
+  align-items: center;
   button.bp3-button {
     box-shadow: none;
   }
