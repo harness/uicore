@@ -238,6 +238,7 @@ import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
 import EnvironmentGroup from './environment-group.svg'
 import Environment from './environment.svg'
+import EnvironmentsOutline from './environments-outline.svg'
 import Environments from './environments.svg'
 import ErrorOutline from './error-outline.svg'
 import ErrorTracking from './error-tracking.svg'
@@ -985,6 +986,7 @@ type HarnessIconName =
   | 'entity'
   | 'environment-group'
   | 'environment'
+  | 'environments-outline'
   | 'environments'
   | 'error-outline'
   | 'error-tracking'
@@ -1732,6 +1734,7 @@ const HarnessIcons: KVO<ElementType> = {
   entity: Entity,
   'environment-group': EnvironmentGroup,
   environment: Environment,
+  'environments-outline': EnvironmentsOutline,
   environments: Environments,
   'error-outline': ErrorOutline,
   'error-tracking': ErrorTracking,
