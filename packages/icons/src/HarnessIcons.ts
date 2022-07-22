@@ -47,6 +47,7 @@ import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
 import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
+import BaselineTarget from './baseline-target.svg'
 import BasicDeployment from './basic-deployment.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
@@ -800,6 +801,7 @@ type HarnessIconName =
   | 'barrier-close'
   | 'barrier-open-with-links'
   | 'barrier-open'
+  | 'baseline-target'
   | 'basic-deployment'
   | 'bin-main'
   | 'bitbucket-blue'
@@ -1553,6 +1555,7 @@ const HarnessIcons: KVO<ElementType> = {
   'barrier-close': BarrierClose,
   'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
+  'baseline-target': BaselineTarget,
   'basic-deployment': BasicDeployment,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
