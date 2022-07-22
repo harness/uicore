@@ -240,8 +240,10 @@ import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
+import EnvironmentGroupOutline from './environment-group-outline.svg'
 import EnvironmentGroup from './environment-group.svg'
 import Environment from './environment.svg'
+import EnvironmentsOutline from './environments-outline.svg'
 import Environments from './environments.svg'
 import ErrorOutline from './error-outline.svg'
 import ErrorTracking from './error-tracking.svg'
@@ -991,8 +993,10 @@ type HarnessIconName =
   | 'email-inline'
   | 'email-step'
   | 'entity'
+  | 'environment-group-outline'
   | 'environment-group'
   | 'environment'
+  | 'environments-outline'
   | 'environments'
   | 'error-outline'
   | 'error-tracking'
@@ -1742,8 +1746,10 @@ const HarnessIcons: KVO<ElementType> = {
   'email-inline': EmailInline,
   'email-step': EmailStep,
   entity: Entity,
+  'environment-group-outline': EnvironmentGroupOutline,
   'environment-group': EnvironmentGroup,
   environment: Environment,
+  'environments-outline': EnvironmentsOutline,
   environments: Environments,
   'error-outline': ErrorOutline,
   'error-tracking': ErrorTracking,
