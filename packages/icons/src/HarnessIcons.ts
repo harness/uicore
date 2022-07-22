@@ -239,6 +239,7 @@ import Entity from './entity.svg'
 import EnvironmentGroupOutline from './environment-group-outline.svg'
 import EnvironmentGroup from './environment-group.svg'
 import Environment from './environment.svg'
+import EnvironmentsOutline from './environments-outline.svg'
 import Environments from './environments.svg'
 import ErrorOutline from './error-outline.svg'
 import ErrorTracking from './error-tracking.svg'
@@ -987,6 +988,7 @@ type HarnessIconName =
   | 'environment-group-outline'
   | 'environment-group'
   | 'environment'
+  | 'environments-outline'
   | 'environments'
   | 'error-outline'
   | 'error-tracking'
@@ -1735,6 +1737,7 @@ const HarnessIcons: KVO<ElementType> = {
   'environment-group-outline': EnvironmentGroupOutline,
   'environment-group': EnvironmentGroup,
   environment: Environment,
+  'environments-outline': EnvironmentsOutline,
   environments: Environments,
   'error-outline': ErrorOutline,
   'error-tracking': ErrorTracking,
