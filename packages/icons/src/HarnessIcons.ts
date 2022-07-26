@@ -35,12 +35,14 @@ import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import Autostopping from './autostopping.svg'
 import AwsCodecommit from './aws-codecommit.svg'
+import AwsEctwoService from './aws-ectwo-service.svg'
 import AwsKms from './aws-kms.svg'
 import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureBlob from './azure-blob.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
+import AzureVm from './azure-vm.svg'
 import Azurewebapp from './azurewebapp.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
@@ -205,6 +207,7 @@ import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DataFetchError from './data-fetch-error.svg'
+import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
 import DependencyDefaultIcon from './dependency-default-icon.svg'
@@ -277,6 +280,7 @@ import FolderUpload from './folder-upload.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
+import GcpEngine from './gcp-engine.svg'
 import GcpKms from './gcp-kms.svg'
 import Gcp from './gcp.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
@@ -789,12 +793,14 @@ type HarnessIconName =
   | 'audit-trail'
   | 'autostopping'
   | 'aws-codecommit'
+  | 'aws-ectwo-service'
   | 'aws-kms'
   | 'aws-rds'
   | 'aws-secret-manager'
   | 'azure-blob'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
+  | 'azure-vm'
   | 'azurewebapp'
   | 'banned'
   | 'bar-chart'
@@ -959,6 +965,7 @@ type HarnessIconName =
   | 'dashboard-selected'
   | 'dashboard'
   | 'data-fetch-error'
+  | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
   | 'dependency-default-icon'
@@ -1031,6 +1038,7 @@ type HarnessIconName =
   | 'full-screen-exit'
   | 'full-screen'
   | 'functions'
+  | 'gcp-engine'
   | 'gcp-kms'
   | 'gcp'
   | 'gcr-step-inverse'
@@ -1543,12 +1551,14 @@ const HarnessIcons: KVO<ElementType> = {
   'audit-trail': AuditTrail,
   autostopping: Autostopping,
   'aws-codecommit': AwsCodecommit,
+  'aws-ectwo-service': AwsEctwoService,
   'aws-kms': AwsKms,
   'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
   'azure-blob': AzureBlob,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
+  'azure-vm': AzureVm,
   azurewebapp: Azurewebapp,
   banned: Banned,
   'bar-chart': BarChart,
@@ -1713,6 +1723,7 @@ const HarnessIcons: KVO<ElementType> = {
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'data-fetch-error': DataFetchError,
+  'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
   'dependency-default-icon': DependencyDefaultIcon,
@@ -1785,6 +1796,7 @@ const HarnessIcons: KVO<ElementType> = {
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
   functions: Functions,
+  'gcp-engine': GcpEngine,
   'gcp-kms': GcpKms,
   gcp: Gcp,
   'gcr-step-inverse': GcrStepInverse,
