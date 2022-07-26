@@ -10,7 +10,7 @@ import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-sys
 import React, { FormEvent, ReactElement } from 'react'
 import { styledClass } from '@harness/design-system'
 
-import css from './Checkbox.css'
+import css from './Checkbox.module.css'
 
 export interface CheckboxProps extends Omit<ICheckboxProps, 'onChange'>, StyledProps {
   /** onChange event handler */

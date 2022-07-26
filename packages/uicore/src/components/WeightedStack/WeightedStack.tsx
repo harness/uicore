@@ -13,7 +13,7 @@ import { Color } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import { Text } from '../Text/Text'
 
-import css from './WeightedStack.css'
+import css from './WeightedStack.module.css'
 
 export enum LabelPosition {
   LEFT = 'LabelPosition.LEFT',

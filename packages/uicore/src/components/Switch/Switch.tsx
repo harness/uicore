@@ -11,7 +11,7 @@ import { omit } from 'lodash-es'
 import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
 import { styledClass } from '@harness/design-system'
 
-import css from './Switch.css'
+import css from './Switch.module.css'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import type { TooltipRenderProps } from '../../frameworks/Tooltip/types'
 

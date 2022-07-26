@@ -7,9 +7,10 @@
 
 import React, { HTMLAttributes } from 'react'
 import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
-import css from './Layout.css'
+import css from './Layout.module.css'
 import { Spacing } from '@harness/design-system'
-import { Masonry, MasonryRef, MasonryProps } from './Masonry'
+import { Masonry } from './Masonry'
+import type { MasonryRef, MasonryProps } from './Masonry'
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement>, StyledProps {
   /** Spacing among children */

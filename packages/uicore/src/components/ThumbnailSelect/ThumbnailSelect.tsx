@@ -6,7 +6,7 @@
  */
 
 import React, { ReactElement } from 'react'
-import css from './ThumbnailSelect.css'
+import css from './ThumbnailSelect.module.css'
 import { IconName } from '@harness/icons'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import { Button } from '../Button/Button'

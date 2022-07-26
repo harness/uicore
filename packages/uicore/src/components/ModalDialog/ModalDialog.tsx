@@ -13,7 +13,7 @@ import { FontVariation } from '@harness/design-system'
 import { Heading } from '../Heading/Heading'
 import { Button, ButtonVariation } from '../Button/Button'
 
-import css from './ModalDialog.css'
+import css from './ModalDialog.module.css'
 
 export interface ModalDialogProps extends IDialogProps {
   /**

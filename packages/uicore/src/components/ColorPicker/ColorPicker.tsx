@@ -10,7 +10,7 @@ import { Button, ButtonProps } from '../Button/Button'
 import React, { useState } from 'react'
 import { Container } from '../Container/Container'
 import { Position, Classes } from '@blueprintjs/core'
-import css from './ColorPicker.css'
+import css from './ColorPicker.module.css'
 import { Icon } from '@harness/icons'
 import cx from 'classnames'
 

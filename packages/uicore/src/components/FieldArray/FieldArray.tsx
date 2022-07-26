@@ -11,7 +11,7 @@ import { Button } from '../Button/Button'
 import { Layout } from '../../../src/layouts/Layout'
 import { connect, FormikContextType } from 'formik'
 
-import css from './FieldArray.css'
+import css from './FieldArray.module.css'
 
 export type FieldValue = any
 

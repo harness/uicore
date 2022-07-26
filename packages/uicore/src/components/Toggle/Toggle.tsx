@@ -9,7 +9,7 @@ import React, { ChangeEvent, ReactElement } from 'react'
 import { StyledProps, styledClasses } from '@harness/design-system'
 import { styledClass } from '@harness/design-system'
 
-import css from './Toggle.css'
+import css from './Toggle.module.css'
 
 export interface ToggleProps {
   label?: string

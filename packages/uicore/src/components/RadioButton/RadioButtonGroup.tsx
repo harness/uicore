@@ -9,7 +9,7 @@ import React, { FormEvent, ReactElement, ReactNode, useEffect, useMemo, useState
 import { omitStyledProps, styledClasses, StyledProps } from '@harness/design-system'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 
-import css from './RadioButtonGroup.css'
+import css from './RadioButtonGroup.module.css'
 
 export interface RadioButtonGroupProps extends StyledProps {
   className?: string

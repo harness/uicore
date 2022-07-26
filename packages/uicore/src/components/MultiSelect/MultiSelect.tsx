@@ -10,7 +10,7 @@ import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
 import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } from '@blueprintjs/select'
 
-import css from './MultiSelect.css'
+import css from './MultiSelect.module.css'
 import { Button } from '../../components/Button/Button'
 import { Text } from '../../components/Text/Text'
 import { Icon } from '@harness/icons'

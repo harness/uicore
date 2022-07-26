@@ -8,7 +8,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import css from '../Thumbnail/Thumbnail.css'
+import css from '../Thumbnail/Thumbnail.module.css'
 import { Card } from '../Card/Card'
 import { Icon, IconName } from '@harness/icons'
 import { Text } from '../Text/Text'

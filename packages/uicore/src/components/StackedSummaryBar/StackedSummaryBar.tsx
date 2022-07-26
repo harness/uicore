@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import css from './StackedSummaryBar.css'
+import css from './StackedSummaryBar.module.css'
 import { Container } from '../Container/Container'
 import { Color, Intent } from '@harness/design-system'
 import { Layout } from '../../layouts/Layout'

@@ -20,7 +20,7 @@ import {
 } from '../../'
 import classNames from 'classnames'
 import { Color } from '@harness/design-system'
-import css from './NoDataCard.css'
+import css from './NoDataCard.module.css'
 export interface NoDataCardProps {
   icon?: IconName
   iconSize?: number

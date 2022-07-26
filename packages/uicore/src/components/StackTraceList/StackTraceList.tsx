@@ -9,7 +9,7 @@ import React, { useState, useLayoutEffect, useRef, useCallback, RefObject } from
 import { Container } from '../Container/Container'
 import { Heading } from '../Heading/Heading'
 import { Link } from '../Link/Link'
-import css from './StackTraceList.css'
+import css from './StackTraceList.module.css'
 import cx from 'classnames'
 import { Color } from '@harness/design-system'
 import { Text } from '../Text/Text'

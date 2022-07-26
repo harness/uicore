@@ -6,9 +6,9 @@
  */
 
 import React, { useCallback, useMemo, useState } from 'react'
-import css from './CategorizedSelect.css'
+import css from './CategorizedSelect.module.css'
 import { SelectOption, Select, SelectProps } from '../Select/Select'
-import selectCss from '../Select/Select.css'
+import selectCss from '../Select/Select.module.css'
 import { IItemRendererProps } from '@blueprintjs/select'
 import cx from 'classnames'
 import { Icon } from '@harness/icons'

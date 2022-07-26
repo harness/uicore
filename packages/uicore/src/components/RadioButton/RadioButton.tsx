@@ -9,7 +9,7 @@ import React, { ChangeEvent, ReactElement, ReactNode } from 'react'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
 
-import css from './RadioButton.css'
+import css from './RadioButton.module.css'
 
 export interface RadioButtonProps extends StyledProps {
   label?: ReactNode

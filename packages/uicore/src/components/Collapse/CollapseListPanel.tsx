@@ -11,7 +11,7 @@ import { Collapse as BpCollapse, ICollapseProps } from '@blueprintjs/core'
 import { CollapseHeader, CollapseHeaderProps } from './CollapseHeader'
 import { Container } from '../Container/Container'
 import cx from 'classnames'
-import css from './CollapseListPanel.css'
+import css from './CollapseListPanel.module.css'
 
 interface ListPanelInterface {
   isOpen?: boolean

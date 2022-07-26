@@ -13,7 +13,7 @@ import { PageSpinner } from './PageSpinner'
 import { PageError } from './PageError'
 import { NoDataCard } from './NoDataCard'
 
-import css from './PageBody.css'
+import css from './PageBody.module.css'
 
 export interface PageBodyProps {
   /** If set to true, spinner should be shown */

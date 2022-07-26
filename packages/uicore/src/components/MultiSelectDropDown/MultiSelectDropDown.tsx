@@ -15,7 +15,7 @@ import {
   ItemListRenderer
 } from '@blueprintjs/select'
 
-import css from './MultiSelectDropDown.css'
+import css from './MultiSelectDropDown.module.css'
 import { MultiSelectOption } from '../MultiSelect/MultiSelect'
 import cx from 'classnames'
 import { Layout } from '../../layouts/Layout'

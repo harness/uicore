@@ -9,7 +9,7 @@ import React from 'react'
 import { FormikErrors } from 'formik'
 import cx from 'classnames'
 import { Icon } from '@harness/icons'
-import css from './FormError.css'
+import css from './FormError.module.css'
 
 interface FormErrorProps {
   errorMessage: string | undefined | FormikErrors<any> | Array<FormikErrors<any>> | string[] | JSX.Element

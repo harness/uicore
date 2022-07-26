@@ -14,7 +14,7 @@ import { useIsMounted } from '../../hooks/useIsMounted'
 import { Container } from '../Container/Container'
 import { Text } from '../Text/Text'
 import { Utils } from '../../core/Utils'
-import css from './TagInput.css'
+import css from './TagInput.module.css'
 import i18nBase from './TagInput.i18n'
 
 const isNext =

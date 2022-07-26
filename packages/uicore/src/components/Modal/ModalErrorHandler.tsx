@@ -73,14 +73,14 @@ export interface ModalErrorHandlerBinding {
 
 export interface ModalErrorHandlerProps {
   bind: (modalErrorHandler: ModalErrorHandlerBinding) => void
-  style?: React.CSSProperties
+  style?: React.module.cssProperties
 }
 
 const breakWorkStyle = {
   overflowWrap: 'break-word',
   wordBreak: 'break-word',
   whiteSpace: 'pre-wrap'
-} as React.CSSProperties
+} as React.module.cssProperties
 
 const DEFAULT_ICON_NAME = 'warning-sign'
 

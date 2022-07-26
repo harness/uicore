@@ -15,7 +15,7 @@ import { MultiTypeInputType } from './MultiTypeInputUtils'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 import { LearnMorePopover } from './LearnMorePopover'
-import css from './MultiTypeInput.css'
+import css from './MultiTypeInput.module.css'
 import i18nBase from './MultiTypeInput.i18n'
 
 export interface LearnMoreProps {

@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import css from './StackedSummaryTable.css'
+import css from './StackedSummaryTable.module.css'
 import { pick } from 'lodash-es'
 import type { Renderer, CellProps, Column } from 'react-table'
 import { PopoverProps } from '../Popover/Popover'

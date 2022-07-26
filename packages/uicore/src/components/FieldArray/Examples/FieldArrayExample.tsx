@@ -14,7 +14,7 @@ import { FieldArray, TextInput, Heading, Button, Select, MultiSelect } from '../
 import { Field } from '../../FieldArray/FieldArray'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import './FieldArrayExample.css'
+import './FieldArrayExample.module.css'
 
 const rowSchema = Yup.object().shape({
   col2: Yup.string().required('col2 is required')

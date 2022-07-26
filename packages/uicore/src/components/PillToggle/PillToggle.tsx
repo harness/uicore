@@ -14,7 +14,7 @@ import { Popover } from '../Popover/Popover'
 import { Container } from '../Container/Container'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
-import css from './PillToggle.css'
+import css from './PillToggle.module.css'
 
 export interface PillToggleOption<T> {
   label: string

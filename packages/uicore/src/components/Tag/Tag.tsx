@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { ITagProps, Intent, Tag as BpTag } from '@blueprintjs/core'
-import css from './Tag.css'
+import css from './Tag.module.css'
 
 function Tag(props: ITagProps) {
   return (

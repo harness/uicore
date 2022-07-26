@@ -11,7 +11,7 @@ import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-sys
 import { styledClass } from '@harness/design-system'
 import { OptionalTooltip } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
-import css from './Text.css'
+import css from './Text.module.css'
 import { Icon, IconName, IconProps } from '@harness/icons'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 

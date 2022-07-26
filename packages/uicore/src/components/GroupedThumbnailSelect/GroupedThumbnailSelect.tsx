@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import css from './GroupedThumbnailSelect.css'
+import css from './GroupedThumbnailSelect.module.css'
 import { Layout } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
 import { FormGroup } from '@blueprintjs/core'

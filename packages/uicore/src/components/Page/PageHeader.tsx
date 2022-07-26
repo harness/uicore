@@ -8,7 +8,7 @@
 import { Heading, Layout } from '../../'
 import React from 'react'
 import cx from 'classnames'
-import css from './PageHeader.css'
+import css from './PageHeader.module.css'
 import { Color } from '@harness/design-system'
 
 export interface PageHeaderProps {

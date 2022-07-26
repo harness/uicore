@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import css from './List.css'
+import css from './List.module.css'
 
 interface Props extends React.HTMLProps<HTMLElement> {
   /** If true, render List as an ordered list, default is false */

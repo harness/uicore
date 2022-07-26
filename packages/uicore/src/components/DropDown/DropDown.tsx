@@ -10,7 +10,7 @@ import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer 
 import { Button } from '../Button/Button'
 import { Color } from '@harness/design-system'
 import { Layout } from '../../layouts/Layout'
-import css from './DropDown.css'
+import css from './DropDown.module.css'
 import { SelectOption } from '../Select/Select'
 import { Icon, IconName, IconProps } from '@harness/icons'
 import { Text } from '../Text/Text'

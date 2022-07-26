@@ -13,8 +13,8 @@ import { Menu, MenuItem, Popover, PopoverInteractionKind, Position } from '@blue
 import { Select, SelectOption, SelectProps } from '../Select/Select'
 import { Text } from '../Text/Text'
 
-import css from './SelectWithSubmenu.css'
-import selectCss from '../Select/Select.css'
+import css from './SelectWithSubmenu.module.css'
+import selectCss from '../Select/Select.module.css'
 import { MultiTypeInputType } from 'index'
 
 export interface SubmenuSelectOption extends SelectOption {

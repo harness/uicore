@@ -12,7 +12,7 @@ import { IPopoverProps, PopoverInteractionKind } from '@blueprintjs/core'
 import { Icon, IconProps } from '@harness/icons'
 import type { tagsType } from '../../utils/tagTypes'
 import i18n from './TagsPopover.i18n'
-import css from './TagsPopover.css'
+import css from './TagsPopover.module.css'
 
 export interface ListTagsProps {
   className?: string

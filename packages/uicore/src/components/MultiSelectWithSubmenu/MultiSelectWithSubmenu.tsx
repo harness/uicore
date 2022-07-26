@@ -12,7 +12,7 @@ import { IMultiSelectProps, MultiSelect } from '@blueprintjs/select'
 
 import { Text } from '../Text/Text'
 
-import css from './MultiSelectWithSubmenu.css'
+import css from './MultiSelectWithSubmenu.module.css'
 
 export interface MultiSelectWithSubmenuOption {
   label: string

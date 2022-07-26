@@ -17,7 +17,7 @@ import { Icon, IconName, IconProps } from '@harness/icons'
 import { PaddingProps } from '@harness/design-system'
 import { omitStyledProps, styledClasses, StyledProps } from '@harness/design-system'
 import { styledClass } from '@harness/design-system'
-import css from './Button.css'
+import css from './Button.module.css'
 
 export enum ButtonVariation {
   PRIMARY = 'variation-primary',

@@ -16,8 +16,8 @@ import { Text } from '../Text/Text'
 import { Icon } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
 import { Container } from '../Container/Container'
-import textCss from '../TextInput/TextInput.css'
-import css from './InputWithIdentifier.css'
+import textCss from '../TextInput/TextInput.module.css'
+import css from './InputWithIdentifier.module.css'
 import { FormError } from '../FormError/FormError'
 
 export interface InputWithIdentifierProps {

@@ -11,7 +11,7 @@ import cx from 'classnames'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../..'
 
-import css from './MultiStepProgressIndicator.css'
+import css from './MultiStepProgressIndicator.module.css'
 import { Color } from '@harness/design-system'
 
 type StepStatus = 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'

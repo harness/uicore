@@ -16,7 +16,7 @@ import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as Typ
 import { Button, ButtonVariation } from '../Button/Button'
 import { Checkbox } from '../Checkbox/Checkbox'
 
-import css from './MultiTypeInput.css'
+import css from './MultiTypeInput.module.css'
 
 const helperText: Record<MultiTypeInputType, React.ReactNode> = {
   [MultiTypeInputType.EXPRESSION]: (

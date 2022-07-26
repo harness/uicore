@@ -9,7 +9,7 @@ import { Text, Icon, Layout, Button, ButtonVariation, ButtonProps, Container } f
 import { Color } from '@harness/design-system'
 import React from 'react'
 import i18n from './PageError.i18n'
-import css from './PageError.css'
+import css from './PageError.module.css'
 
 export interface PageErrorProps {
   message?: React.ReactNode

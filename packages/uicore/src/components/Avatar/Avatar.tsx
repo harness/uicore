@@ -7,7 +7,7 @@
 
 import { HTMLDivProps, Popover } from '@blueprintjs/core'
 import React, { useState } from 'react'
-import css from './Avatar.css'
+import css from './Avatar.module.css'
 import classnames from 'classnames'
 import { getInitialsFromNameOrEmail, getSumOfAllCharacters, defaultAvatarColor } from './utils'
 import { FontSize } from '@harness/design-system'

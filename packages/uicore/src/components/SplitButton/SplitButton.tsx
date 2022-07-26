@@ -9,7 +9,7 @@ import { IMenuItemProps, Menu, MenuItem, Position } from '@blueprintjs/core'
 import cx from 'classnames'
 import React, { MouseEvent } from 'react'
 import { Button, ButtonProps, HarnessDocTooltip, Popover } from '../..'
-import css from './SplitButton.css'
+import css from './SplitButton.module.css'
 
 type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & { className?: string; dropdownDisabled?: boolean }
 

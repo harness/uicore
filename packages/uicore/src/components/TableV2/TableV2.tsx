@@ -10,7 +10,7 @@ import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns, useE
 import cx from 'classnames'
 import { defaultTo } from 'lodash-es'
 import type { IconName } from '@blueprintjs/icons'
-import css from './TableV2.css'
+import css from './TableV2.module.css'
 import Pagination, { PaginationProps } from '../Pagination/Pagination'
 import { Icon } from '@harness/icons'
 import { Text } from '../Text/Text'

@@ -7,7 +7,7 @@
 
 import React, { useCallback } from 'react'
 import { Card as BpCard, ICardProps, HTMLDivProps, Position } from '@blueprintjs/core'
-import css from './Card.css'
+import css from './Card.module.css'
 import cx from 'classnames'
 import { Icon as UiIcon, IconName, IconProps } from '@harness/icons'
 import { Color } from '@harness/design-system'

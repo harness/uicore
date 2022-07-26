@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import css from './ListItem.css'
+import css from './ListItem.module.css'
 
 interface Props extends React.HTMLProps<HTMLElement> {
   /** List Item children */

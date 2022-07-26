@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import css from './OverlaySpinner.css'
+import css from './OverlaySpinner.module.css'
 import { ISpinnerProps, Spinner } from '@blueprintjs/core'
 
 export interface OverlaySpinnerProps extends ISpinnerProps {

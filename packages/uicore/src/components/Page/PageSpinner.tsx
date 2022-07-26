@@ -10,7 +10,7 @@ import React from 'react'
 import cx from 'classnames'
 import { Color } from '@harness/design-system'
 
-import css from './PageSpinner.css'
+import css from './PageSpinner.module.css'
 
 export interface PageSpinnerProps {
   message?: string

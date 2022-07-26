@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import css from './Label.css'
+import css from './Label.module.css'
 
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   children: React.ReactNode

@@ -9,7 +9,7 @@ import React from 'react'
 import { Collapse, ICollapseProps } from '@blueprintjs/core'
 import cx from 'classnames'
 
-import css from './Accordion.css'
+import css from './Accordion.module.css'
 
 const noop = () => void 0
 

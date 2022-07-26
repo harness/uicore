@@ -21,7 +21,7 @@ import {
 import { Formik, Form, FormikErrors } from 'formik'
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import { SelectOption } from '../Select/Select'
-import '../Radio/Radio.css'
+import '../Radio/Radio.module.css'
 
 interface EnvironmentTypeSubFormProps {
   onSubmit: (data: EnvironmentTypeFormData) => void

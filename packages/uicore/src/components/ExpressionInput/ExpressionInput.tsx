@@ -12,13 +12,13 @@ import { debounce } from 'lodash-es'
 
 import { escapeStringRegexp } from '../../core/Utils'
 
-import css from './ExpressionInput.css'
+import css from './ExpressionInput.module.css'
 
 export interface ExpressionInputProps {
   items?: string[]
   value?: string
   name: string
-  maxHeight?: React.CSSProperties['maxHeight']
+  maxHeight?: React.module.cssProperties['maxHeight']
   inputProps?: Omit<IInputGroupProps, 'value' | 'onChange'>
   popoverProps?: Omit<
     IPopoverProps,

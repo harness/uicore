@@ -7,8 +7,8 @@
 
 import React, { useMemo, useEffect, useState, createContext, useCallback, MouseEventHandler } from 'react'
 import { Select, SelectOption, SelectProps } from '../Select/Select'
-import selectCss from '../Select/Select.css'
-import css from './SelectWithSubview.css'
+import selectCss from '../Select/Select.module.css'
+import css from './SelectWithSubview.module.css'
 import { Text } from '../Text/Text'
 import { Classes } from '@blueprintjs/core'
 import { Container } from '../Container/Container'

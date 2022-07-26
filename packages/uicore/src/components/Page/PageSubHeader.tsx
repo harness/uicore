@@ -8,7 +8,7 @@
 import { Layout } from '../../'
 import React from 'react'
 import cx from 'classnames'
-import css from './PageSubHeader.css'
+import css from './PageSubHeader.module.css'
 
 export interface PageSubHeaderProps {
   className?: string

@@ -10,7 +10,7 @@ import React, { useState, useEffect, useCallback, useRef, useLayoutEffect } from
 import { Icon } from '@harness/icons'
 import { Button } from '../Button/Button'
 import { StyledProps } from '@harness/design-system'
-import css from './ExpandingSearchInput.css'
+import css from './ExpandingSearchInput.module.css'
 import { Color } from '@harness/design-system'
 
 const DEFAULT_THROTTLE = 500 // ms

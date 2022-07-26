@@ -10,7 +10,7 @@ import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-sys
 import React, { FormEvent } from 'react'
 import { styledClass } from '@harness/design-system'
 
-import css from './Radio.css'
+import css from './Radio.module.css'
 
 export interface RadioGroupProps extends Omit<IRadioProps, 'onChange'>, StyledProps {
   /** onChange event handler */

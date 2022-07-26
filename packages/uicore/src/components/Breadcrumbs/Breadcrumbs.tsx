@@ -11,7 +11,7 @@ import cx from 'classnames'
 import { Icon, IconProps } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
-import css from './Breadcrumbs.css'
+import css from './Breadcrumbs.module.css'
 
 export interface Breadcrumb {
   url: string

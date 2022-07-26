@@ -34,7 +34,7 @@ import {
 } from '@blueprintjs/core'
 import { compact, defaultTo, get, isNil, omit } from 'lodash-es'
 import cx from 'classnames'
-import css from './FormikForm.css'
+import css from './FormikForm.module.css'
 import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { ColorPickerProps, ColorPicker } from '../ColorPicker/ColorPicker'

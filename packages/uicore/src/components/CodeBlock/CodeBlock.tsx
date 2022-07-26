@@ -11,7 +11,7 @@ import { Button } from '../Button/Button'
 import { Text } from '../Text/Text'
 import { Utils } from '../../core/Utils'
 import { Color } from '@harness/design-system'
-import css from './CodeBlock.css'
+import css from './CodeBlock.module.css'
 
 export interface CodeBlockProps {
   snippet?: string

@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { Tabs as BpTabs, Tab, ITabsProps, ITabProps } from '@blueprintjs/core'
-import css from './Tabs.css'
+import css from './Tabs.module.css'
 import cx from 'classnames'
 
 import { Icon, IconProps } from '@harness/icons'

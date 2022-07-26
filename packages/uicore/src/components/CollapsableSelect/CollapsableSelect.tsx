@@ -15,7 +15,7 @@ import { Layout, LayoutProps } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
 import { FormError } from '../FormError/FormError'
 import { errorCheck } from '../../core/Utils'
-import css from './CollapsableSelect.css'
+import css from './CollapsableSelect.module.css'
 
 export enum CollapsableSelectType {
   CardView = 'CardView'

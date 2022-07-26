@@ -6,7 +6,7 @@
  */
 
 import React, { FormEvent } from 'react'
-import css from './SparkChart.css'
+import css from './SparkChart.module.css'
 import cx from 'classnames'
 import { Container, ContainerProps } from '../Container/Container'
 import { Color } from '@harness/design-system'
@@ -33,7 +33,7 @@ export interface SparkChartProps extends ContainerProps {
   color2?: Color
 
   /** empty record height */
-  emptyHeight?: React.CSSProperties['height']
+  emptyHeight?: React.module.cssProperties['height']
 }
 
 export const SparkChart: React.FC<SparkChartProps> = ({

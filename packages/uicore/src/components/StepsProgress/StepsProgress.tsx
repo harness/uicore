@@ -9,7 +9,7 @@ import React from 'react'
 import { Text } from '../Text/Text'
 import { Container } from '../Container/Container'
 import { Color } from '@harness/design-system'
-import css from './StepsProgress.css'
+import css from './StepsProgress.module.css'
 import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
 import { Layout } from '../../layouts/Layout'
 import { Icon } from '@harness/icons'
@@ -92,7 +92,9 @@ export function StepsProgress(props: StepsProgressProps) {
           stepsWithStatus.map(step => (
             <div key={`${step}`} className={css.stepWrap}>
               <Icon name={step.stepStatus} size={16} color={step.stepIconColor} margin={{ right: 'small' }} />
-              <Container className={css.stepLabelContainer} style={{ fontWeight: step.fonts } as React.CSSProperties}>
+              <Container
+                className={css.stepLabelContainer}
+                style={{ fontWeight: step.fonts } as React.module.cssProperties}>
                 {step.label}
               </Container>
             </div>

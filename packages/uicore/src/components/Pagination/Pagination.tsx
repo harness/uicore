@@ -18,7 +18,7 @@ import { FontVariation } from '@harness/design-system'
 import { DropDown } from '../DropDown/DropDown'
 import useWindowWidth from '../../hooks/useWindowWidth'
 
-import css from './Pagination.css'
+import css from './Pagination.module.css'
 
 export interface PaginationProps {
   pageSize: number

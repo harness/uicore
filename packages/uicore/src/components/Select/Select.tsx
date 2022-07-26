@@ -10,7 +10,7 @@ import cx from 'classnames'
 import { Position, Classes } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
-import css from './Select.css'
+import css from './Select.module.css'
 import { Button } from '../../components/Button/Button'
 import { Icon, IconProps } from '@harness/icons'
 import { Utils } from '../../core/Utils'

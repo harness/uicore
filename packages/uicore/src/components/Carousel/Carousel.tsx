@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import css from './Carousel.css'
+import css from './Carousel.module.css'
 import cx from 'classnames'
 import { Layout } from '../../layouts/Layout'
 import { Icon } from '@harness/icons'

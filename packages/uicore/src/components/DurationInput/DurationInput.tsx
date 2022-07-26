@@ -12,7 +12,7 @@ import { Icon } from '@harness/icons'
 import { Popover } from '../Popover/Popover'
 import { Text } from '../Text/Text'
 
-import css from './DurationInput.css'
+import css from './DurationInput.module.css'
 
 export type DurationUnits = 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
 const TEXT_EXTRACT_REGEX = /(\d+)\s*([a-z]{1,2})/gi

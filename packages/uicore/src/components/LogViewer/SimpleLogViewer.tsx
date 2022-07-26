@@ -10,7 +10,7 @@ import cx from 'classnames'
 import { Spinner } from '@blueprintjs/core'
 
 import { LogLine, LogLineProps } from './LogLine'
-import css from './SimpleLogViewer.css'
+import css from './SimpleLogViewer.module.css'
 
 export interface SimpleLogViewerProps {
   data: string

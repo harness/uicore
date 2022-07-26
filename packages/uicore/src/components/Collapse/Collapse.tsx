@@ -7,7 +7,7 @@
 
 import React, { useState, useCallback } from 'react'
 import { ICollapseProps, Collapse as BpCollapse } from '@blueprintjs/core'
-import css from './Collapse.css'
+import css from './Collapse.module.css'
 import { CollapseHeader, CollapseHeaderProps } from './CollapseHeader'
 import cx from 'classnames'
 

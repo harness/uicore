@@ -9,7 +9,7 @@ import React from 'react'
 import cx from 'classnames'
 import { Container, Icon } from '../..'
 import { Dialog as BluePrintDialog, IDialogProps } from '@blueprintjs/core'
-import css from './Dialog.css'
+import css from './Dialog.module.css'
 
 export interface DialogProps extends IDialogProps {
   footer?: JSX.Element | JSX.Element[]

@@ -45,7 +45,7 @@ export const breakOnLinks = (content = ''): BrokenText[] => {
   return nodes
 }
 
-import css from './LogLine.css'
+import css from './LogLine.module.css'
 
 function linkyText(txt: string): string {
   return breakOnLinks(txt)

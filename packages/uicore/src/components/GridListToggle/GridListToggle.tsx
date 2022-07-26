@@ -10,7 +10,7 @@ import cx from 'classnames'
 import { IconName } from 'index'
 import { Button } from '../Button/Button'
 import { Layout } from '../../layouts/Layout'
-import css from './GridListToggle.css'
+import css from './GridListToggle.module.css'
 
 export enum Views {
   LIST = 'LIST',

@@ -8,7 +8,7 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
 
-import css from './MultiLevelSelect.css'
+import css from './MultiLevelSelect.module.css'
 
 interface Option {
   value: string

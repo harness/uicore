@@ -6,7 +6,7 @@
  */
 
 import React, { useState, useEffect } from 'react'
-import css from './DateInput.css'
+import css from './DateInput.module.css'
 import { TextInput, TextInputProps } from '../TextInput/TextInput'
 import { DatePicker, TimePrecision, IDatePickerProps } from '@blueprintjs/datetime'
 import { Intent } from '@blueprintjs/core'

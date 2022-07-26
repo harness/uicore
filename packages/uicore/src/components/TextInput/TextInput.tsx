@@ -12,7 +12,7 @@ import { Popover, PopoverProps } from '../Popover/Popover'
 import { IconName, Icon, IconProps } from '@harness/icons'
 import { Text } from '../Text/Text'
 
-import css from './TextInput.css'
+import css from './TextInput.module.css'
 import { FormError } from '../FormError/FormError'
 
 export interface TextInputProps

@@ -24,7 +24,7 @@ import {
 import { Formik, Form, FormikErrors } from 'formik'
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import { SelectOption } from '../Select/Select'
-import '../Radio/Radio.css'
+import '../Radio/Radio.module.css'
 import { omit } from 'lodash-es'
 
 export default {

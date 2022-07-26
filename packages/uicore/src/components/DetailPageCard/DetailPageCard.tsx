@@ -13,7 +13,7 @@ import { Color } from '@harness/design-system'
 import React from 'react'
 import { isUndefined } from 'lodash-es'
 import cx from 'classnames'
-import css from './DetailPageCard.css'
+import css from './DetailPageCard.module.css'
 import { FontVariation } from '@harness/design-system'
 
 export enum ContentType {
