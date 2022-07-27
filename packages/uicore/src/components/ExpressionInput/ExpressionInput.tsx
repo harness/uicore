@@ -18,7 +18,7 @@ export interface ExpressionInputProps {
   items?: string[]
   value?: string
   name: string
-  maxHeight?: React.module.cssProperties['maxHeight']
+  maxHeight?: React.CSSProperties['maxHeight']
   inputProps?: Omit<IInputGroupProps, 'value' | 'onChange'>
   popoverProps?: Omit<
     IPopoverProps,

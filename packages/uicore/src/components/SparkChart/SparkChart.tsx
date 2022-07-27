@@ -33,7 +33,7 @@ export interface SparkChartProps extends ContainerProps {
   color2?: Color
 
   /** empty record height */
-  emptyHeight?: React.module.cssProperties['height']
+  emptyHeight?: React.CSSProperties['height']
 }
 
 export const SparkChart: React.FC<SparkChartProps> = ({

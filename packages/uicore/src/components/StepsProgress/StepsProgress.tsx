@@ -92,9 +92,7 @@ export function StepsProgress(props: StepsProgressProps) {
           stepsWithStatus.map(step => (
             <div key={`${step}`} className={css.stepWrap}>
               <Icon name={step.stepStatus} size={16} color={step.stepIconColor} margin={{ right: 'small' }} />
-              <Container
-                className={css.stepLabelContainer}
-                style={{ fontWeight: step.fonts } as React.module.cssProperties}>
+              <Container className={css.stepLabelContainer} style={{ fontWeight: step.fonts } as React.CSSProperties}>
                 {step.label}
               </Container>
             </div>
