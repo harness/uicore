@@ -40,11 +40,20 @@ export const HarnessDocTooltip = ({
   const customWidth = widthValue ? Number(widthValue) : 400
   const tooltipContentHtml = _asHtml(asString)
 
+  const stopPropagation = (e: React.SyntheticEvent<HTMLElement, Event>) => {
+    e?.preventDefault()
+    e?.nativeEvent.stopImmediatePropagation()
+  }
+
   const tooltipJsxComponent = (
     <Popover
       popoverClassName={css.tooltipWrapper}
       position="auto"
       interactionKind={PopoverInteractionKind.HOVER}
+      onInteraction={(_, e) => {
+        e?.preventDefault()
+        e?.nativeEvent.stopImmediatePropagation()
+      }}
       content={
         <div
           className={css.tooltipContentWrapper}
@@ -53,7 +62,7 @@ export const HarnessDocTooltip = ({
           dangerouslySetInnerHTML={{ __html: tooltipContentHtml }}
         />
       }>
-      <span className={css.tooltipIcon}>
+      <span className={css.tooltipIcon} onClick={stopPropagation}>
         <Icon size={12} name="tooltip-icon" color={Color.PRIMARY_7} />
       </span>
     </Popover>
