@@ -13,7 +13,7 @@ import { Popover } from '../components/Popover/Popover'
 import { Color, Intent, OptionalTooltip } from '@harness/design-system'
 import { FormikContextType } from 'formik'
 import { get, isPlainObject } from 'lodash-es'
-import css from './Utils.css'
+import css from './Utils.module.css'
 
 function stopEvent(event: MouseEvent | KeyboardEvent): void {
   event.stopPropagation()

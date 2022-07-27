@@ -12,7 +12,7 @@ import { PopoverInteractionKind } from '@blueprintjs/core'
 import { useTooltips } from './TooltipContext'
 import { TooltipRenderProps } from './types'
 
-import css from './Tooltip.css'
+import css from './Tooltip.module.css'
 import { Popover } from '../../components/Popover/Popover'
 import { Icon } from '@harness/icons'
 import { Color } from '@harness/design-system'

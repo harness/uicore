@@ -7,7 +7,7 @@
 
 import type { ReactNode } from 'react'
 import { Toaster, Position, IToaster, Intent } from '@blueprintjs/core'
-import css from './useToaster.css'
+import css from './useToaster.module.css'
 
 const toaster = Toaster.create({
   className: css.toaster,

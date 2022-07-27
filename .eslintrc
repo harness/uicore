@@ -77,8 +77,7 @@
           "Boolean": "Use boolean instead"
         }
       }
-    ],
-    "@typescript-eslint/consistent-type-exports": 2
+    ]
   },
   "settings": {
     "react": {
