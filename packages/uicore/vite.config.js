@@ -54,6 +54,7 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'src'),
       name: 'HarnessUICore'
     },
+    outDir: path.join(__dirname, 'dist'),
     rollupOptions: {
       external,
       output: {
@@ -66,7 +67,6 @@ export default defineConfig({
       scopeBehaviour: 'local',
       generateScopedName: (name, filename, _css) => {
         const basename = path.basename(filename).replace(/\.module\.css?.*/, '')
-        console.log(`${basename}--${name}`)
         return `${basename}--${name}`
       }
     }
