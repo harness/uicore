@@ -610,6 +610,7 @@ import SecretsIcon from './secrets-icon.svg'
 import SecurityStage from './security-stage.svg'
 import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
+import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactoryInverse from './service-artifactory-inverse.svg'
 import ServiceArtifactory from './service-artifactory.svg'
@@ -1369,6 +1370,7 @@ type HarnessIconName =
   | 'security-stage'
   | 'send-data'
   | 'serverless-deploy-step'
+  | 'service-amazon-ecs'
   | 'service-appdynamics'
   | 'service-artifactory-inverse'
   | 'service-artifactory'
@@ -2128,6 +2130,7 @@ const HarnessIcons: KVO<ElementType> = {
   'security-stage': SecurityStage,
   'send-data': SendData,
   'serverless-deploy-step': ServerlessDeployStep,
+  'service-amazon-ecs': ServiceAmazonEcs,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory-inverse': ServiceArtifactoryInverse,
   'service-artifactory': ServiceArtifactory,
