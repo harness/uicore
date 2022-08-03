@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.46.0](https://github.com/harness/uicore/compare/@harness/icons@1.41.0...@harness/icons@1.46.0) (2022-08-03)
+
+
+### Bug Fixes
+
+* add icon for Amazon ECS deployment tile ([#777](https://github.com/harness/uicore/issues/777)) ([6e59c08](https://github.com/harness/uicore/commit/6e59c0847c5f925ffce5e9cf4ba8793c3236073b))
+
+
+### Features
+
+* [CCM-8226]: Inventory Dashboard icons ([#769](https://github.com/harness/uicore/issues/769)) ([177afd8](https://github.com/harness/uicore/commit/177afd8b243f487191a47b4ad8576e74e4a5934a))
+* [CDS-40396]: Added environments-outline icon ([#766](https://github.com/harness/uicore/issues/766)) ([a825730](https://github.com/harness/uicore/commit/a82573067e5d7e32a8de703b68217307e5631316))
+* [CDS-40440]: added env group icon with background ([#763](https://github.com/harness/uicore/issues/763)) ([067b116](https://github.com/harness/uicore/commit/067b1166de9af6730d4638e791f974e9c24e720d))
+* [CHAOS-92]: Added initial chaos icons ([#755](https://github.com/harness/uicore/issues/755)) ([719bf61](https://github.com/harness/uicore/commit/719bf61196b9dcc7af2d33745ff95033ce2ef0fb))
+* [CI-4835]: add acr icon ([#772](https://github.com/harness/uicore/issues/772)) ([e1a176e](https://github.com/harness/uicore/commit/e1a176e6253fe72bb4318da70ebd5b38f53f70e2))
+* [CI-4835]: bump icon version ([#774](https://github.com/harness/uicore/issues/774)) ([4160381](https://github.com/harness/uicore/commit/4160381b4eceb218324375846fa524c299d7628b))
+* [STO-4670]: Adds STO Icons ([#765](https://github.com/harness/uicore/issues/765)) ([34f473a](https://github.com/harness/uicore/commit/34f473a294cc1b1dd4e52657e2d2b22cbc5cd3e1))
+* CCM-8226: Upgraded icons version ([#770](https://github.com/harness/uicore/issues/770)) ([7f71618](https://github.com/harness/uicore/commit/7f71618f54a1335bd906b116780b7e63d2c96723))
+
+
+
+
+
 # [1.41.0](https://github.com/harness/uicore/compare/@harness/icons@1.40.0...@harness/icons@1.41.0) (2022-07-13)
 
 
