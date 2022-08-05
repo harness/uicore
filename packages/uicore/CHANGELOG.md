@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.73.0](https://github.com/harness/uicore/compare/@harness/uicore@3.72.0...@harness/uicore@3.73.0) (2022-08-03)
+
+
+### Bug Fixes
+
+* [CDS-40874]: added support for children in useConfirmationDialog ([#775](https://github.com/harness/uicore/issues/775)) ([27493e9](https://github.com/harness/uicore/commit/27493e992ce48c9274cb7b3f531af7f7d356b189))
+* [CDS-40891]: restricted toggling when clicking the info icon ([#773](https://github.com/harness/uicore/issues/773)) ([fb97462](https://github.com/harness/uicore/commit/fb9746263dfb8e340846d6fd804eb703674a2274))
+* [PL-26644]: Popover alignment fix for SplitButton ([#767](https://github.com/harness/uicore/issues/767)) ([ad8d443](https://github.com/harness/uicore/commit/ad8d4434736382f3fa36e50b3b5dacef7d6d88e6))
+
+
+
+
+
 # [3.72.0](https://github.com/harness/uicore/compare/@harness/uicore@3.71.0...@harness/uicore@3.72.0) (2022-07-18)
 
 
