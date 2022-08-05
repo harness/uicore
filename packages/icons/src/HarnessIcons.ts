@@ -197,6 +197,7 @@ import CustomService from './custom-service.svg'
 import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
+import Customize from './customize.svg'
 import CvHover from './cv-hover.svg'
 import CvMainInverse from './cv-main-inverse.svg'
 import CvMain from './cv-main.svg'
@@ -957,6 +958,7 @@ type HarnessIconName =
   | 'custom-stage-icon'
   | 'custom-stage'
   | 'customRole'
+  | 'customize'
   | 'cv-hover'
   | 'cv-main-inverse'
   | 'cv-main'
@@ -1717,6 +1719,7 @@ const HarnessIcons: KVO<ElementType> = {
   'custom-stage-icon': CustomStageIcon,
   'custom-stage': CustomStage,
   customRole: CustomRole,
+  customize: Customize,
   'cv-hover': CvHover,
   'cv-main-inverse': CvMainInverse,
   'cv-main': CvMain,
