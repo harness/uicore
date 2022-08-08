@@ -51,6 +51,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
 
   const [showAllOptions, setShowAllOptions] = React.useState(isEmpty(value))
   const [visibleGroups, setVisibleGroups] = React.useState(groups)
+  console.log('Groups: ', groups, visibleGroups)
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
@@ -74,7 +75,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
         }
       }
     }
-  }, [showAllOptions])
+  }, [showAllOptions, groups])
 
   function handleChangeClick(): void {
     setShowAllOptions(true)
