@@ -51,7 +51,6 @@ export function GroupedThumbnailSelect(props: ConnectedGroupedThumbnailSelectPro
 
   const [showAllOptions, setShowAllOptions] = React.useState(isEmpty(value))
   const [visibleGroups, setVisibleGroups] = React.useState(groups)
-  console.log('Groups: ', groups, visibleGroups)
 
   const hasError = errorCheck(name, formik)
   const intent = hasError ? Intent.DANGER : Intent.NONE
