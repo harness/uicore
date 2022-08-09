@@ -8,13 +8,5 @@
 import { HelpPanelContextProvider, useContentful } from './HelpPanelContext'
 import HelpPanel, { HelpPanelType } from './components/HelpPanel/HelpPanel'
 import { HelpPanelEnvironment } from './types/contentfulTypes'
-import FloatingButton, { FloatingButtonProps } from './components/HelpPanel/FloatingButton/FloatingButton'
-export {
-  HelpPanel,
-  HelpPanelType,
-  HelpPanelContextProvider,
-  useContentful,
-  HelpPanelEnvironment,
-  FloatingButton,
-  FloatingButtonProps
-}
+import FloatingButton from './components/HelpPanel/FloatingButton/FloatingButton'
+export { HelpPanel, HelpPanelType, HelpPanelContextProvider, useContentful, HelpPanelEnvironment, FloatingButton }
