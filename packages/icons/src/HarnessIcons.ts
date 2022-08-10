@@ -176,6 +176,7 @@ import ConditionalSkip from './conditional-skip.svg'
 import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
+import Configure from './configure.svg'
 import ConnectivityMode from './connectivity-mode.svg'
 import ConnectorsBlue from './connectors-blue.svg'
 import ConnectorsIcon from './connectors-icon.svg'
@@ -937,6 +938,7 @@ type HarnessIconName =
   | 'conditional-when'
   | 'config-change'
   | 'config-file'
+  | 'configure'
   | 'connectivity-mode'
   | 'connectors-blue'
   | 'connectors-icon'
@@ -1698,6 +1700,7 @@ const HarnessIcons: KVO<ElementType> = {
   'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
+  configure: Configure,
   'connectivity-mode': ConnectivityMode,
   'connectors-blue': ConnectorsBlue,
   'connectors-icon': ConnectorsIcon,

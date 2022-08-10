@@ -34,7 +34,7 @@ export interface GroupedThumbnailSelectProps extends Omit<ThumbnailSelectProps, 
   groups: Group[]
 }
 
-const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = props => {
+export function GroupedThumbnailSelect(props: ConnectedGroupedThumbnailSelectProps): JSX.Element {
   const {
     name,
     formik,
@@ -74,7 +74,7 @@ const GroupedThumbnailSelect: React.FC<ConnectedGroupedThumbnailSelectProps> = p
         }
       }
     }
-  }, [showAllOptions])
+  }, [showAllOptions, groups])
 
   function handleChangeClick(): void {
     setShowAllOptions(true)
