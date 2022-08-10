@@ -74,7 +74,7 @@ export function GroupedThumbnailSelect(props: ConnectedGroupedThumbnailSelectPro
         }
       }
     }
-  }, [showAllOptions, groups])
+  }, [showAllOptions, groups, value])
 
   function handleChangeClick(): void {
     setShowAllOptions(true)
