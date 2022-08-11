@@ -45,6 +45,7 @@ import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import AzureVm from './azure-vm.svg'
 import Azurewebapp from './azurewebapp.svg'
+import BackgroundStep from './background-step.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
@@ -808,6 +809,7 @@ type HarnessIconName =
   | 'azure-kubernetes-service'
   | 'azure-vm'
   | 'azurewebapp'
+  | 'background-step'
   | 'banned'
   | 'bar-chart'
   | 'barrier-close'
@@ -1571,6 +1573,7 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-kubernetes-service': AzureKubernetesService,
   'azure-vm': AzureVm,
   azurewebapp: Azurewebapp,
+  'background-step': BackgroundStep,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
