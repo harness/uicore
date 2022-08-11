@@ -501,6 +501,7 @@ import NavSettings from './nav-settings.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
+import Network from './network.svg'
 import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
@@ -537,6 +538,7 @@ import Placeholder from './placeholder.svg'
 import PlayCircle from './play-circle.svg'
 import PlayOutline from './play-outline.svg'
 import PluginStep from './plugin-step.svg'
+import Pod from './pod.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
 import ProjectsWizard from './projects-wizard.svg'
@@ -1264,6 +1266,7 @@ type HarnessIconName =
   | 'nav-user-profile-hover'
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
+  | 'network'
   | 'new-artifact'
   | 'new-decoration'
   | 'new-notification'
@@ -1300,6 +1303,7 @@ type HarnessIconName =
   | 'play-circle'
   | 'play-outline'
   | 'plugin-step'
+  | 'pod'
   | 'polygon'
   | 'profile'
   | 'projects-wizard'
@@ -2027,6 +2031,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-user-profile-hover': NavUserProfileHover,
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
+  network: Network,
   'new-artifact': NewArtifact,
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
@@ -2063,6 +2068,7 @@ const HarnessIcons: KVO<ElementType> = {
   'play-circle': PlayCircle,
   'play-outline': PlayOutline,
   'plugin-step': PluginStep,
+  pod: Pod,
   polygon: Polygon,
   profile: Profile,
   'projects-wizard': ProjectsWizard,
