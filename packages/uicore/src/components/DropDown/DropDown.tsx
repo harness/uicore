@@ -159,7 +159,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
       }
       setInternalQuery(query)
     }, 300),
-    [setDropDownItems, onQueryChange]
+    [setDropDownItems, onQueryChange, items, setInternalQuery]
   )
 
   return (
