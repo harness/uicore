@@ -337,6 +337,7 @@ import Google from './google.svg'
 import Governance from './governance.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
+import Grid from './grid.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -1111,6 +1112,7 @@ type HarnessIconName =
   | 'governance'
   | 'graph'
   | 'grey-cluster'
+  | 'grid'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
@@ -1885,6 +1887,7 @@ const HarnessIcons: KVO<ElementType> = {
   governance: Governance,
   graph: Graph,
   'grey-cluster': GreyCluster,
+  grid: Grid,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
