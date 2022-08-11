@@ -195,7 +195,7 @@ import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
 import CustomService from './custom-service.svg'
-import CustomSM from './custom-sm.svg'
+import CustomSm from './custom-sm.svg'
 import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
@@ -1721,7 +1721,7 @@ const HarnessIcons: KVO<ElementType> = {
   'custom-artifact': CustomArtifact,
   'custom-remote-manifest': CustomRemoteManifest,
   'custom-service': CustomService,
-  'custom-sm': CustomSM,
+  'custom-sm': CustomSm,
   'custom-stage-icon': CustomStageIcon,
   'custom-stage': CustomStage,
   customRole: CustomRole,
