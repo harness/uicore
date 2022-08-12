@@ -24,6 +24,9 @@ interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
 
 function tab(props: TabProps) {
   const { title, iconProps, id, hidden, ...rest } = props
+
+  if (hidden) return null
+
   const titleContent = iconProps ? (
     <span>
       <Icon {...iconProps} padding={{ right: 'small' }} />
@@ -32,7 +35,7 @@ function tab(props: TabProps) {
   ) : (
     title
   )
-  return hidden ? null : <Tab key={id} id={id} title={titleContent} {...rest} />
+  return <Tab key={id} id={id} title={titleContent} {...rest} />
 }
 
 function Tabs(props: TabsProps): React.ReactElement {
