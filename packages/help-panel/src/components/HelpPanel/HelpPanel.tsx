@@ -55,7 +55,7 @@ const HelpPanel: React.FC<HelpPanelProps> = props => {
         </FloatingContainer>
       )
     case HelpPanelType.CONTENT_ONLY:
-      return <HelpPanelContent data={data} error={error} loading={loading} onClose={props.onClose} />
+      return <HelpPanelContent data={data} error={error} loading={loading} onClose={props.onClose} hideFooter />
     default:
       return (
         <DefaultContainer>

@@ -23,7 +23,10 @@ interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
 }
 
 function tab(props: TabProps) {
-  const { title, iconProps, id, ...rest } = props
+  const { title, iconProps, id, hidden, ...rest } = props
+
+  if (hidden) return null
+
   const titleContent = iconProps ? (
     <span>
       <Icon {...iconProps} padding={{ right: 'small' }} />
