@@ -18,47 +18,23 @@ const packageJSON = require('./package.json')
 const globals = require('../globals.json')
 import dts from 'vite-plugin-dts'
 const external = Object.keys(packageJSON.peerDependencies)
-
-// /**
-//  * @type {import('vite').UserConfig}
-//  */
-// const config = {
-//   build: {
-//     lib: {
-//       entry: path.resolve(__dirname, 'src'),
-//       name: 'HarnessUICore'
-//     },
-//     rollupOptions: {
-//       external,
-//       output: {
-//         globals: _.pick(globals, external)
-//       }
-//     }
-//   },
-//   css: {
-//     modules: {
-//       scopeBehaviour: 'local',
-//       generateScopedName: (name, filename, _css) => {
-//         const basename = path.basename(filename).replace(/\.module\.css?.*/, '')
-//         console.log(`${basename}--${name}`)
-//         return `${basename}--${name}`
-//       }
-//     }
-//   },
-//   plugins: [dts()]
-// }
+const reactSvgPlugin = require('vite-plugin-react-svg')
 
 export default defineConfig({
   build: {
+    minify: false,
+    target: 'esnext',
     lib: {
       entry: path.resolve(__dirname, 'src'),
-      name: 'HarnessUICore'
+      name: 'HarnessUICore',
+      formats: ['es']
     },
     outDir: path.join(__dirname, 'dist'),
     rollupOptions: {
       external,
       output: {
-        globals: _.pick(globals, external)
+        globals: _.pick(globals, external),
+        preserveModules: true
       }
     }
   },
@@ -71,5 +47,12 @@ export default defineConfig({
       }
     }
   },
-  plugins: [dts()]
+  plugins: [
+    dts(),
+    reactSvgPlugin({
+      defaultExport: 'component',
+      svgo: true,
+      expandProps: 'end'
+    })
+  ]
 })

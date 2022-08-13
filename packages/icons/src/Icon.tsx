@@ -51,4 +51,5 @@ function Icon(props: IconProps): React.ReactElement {
   }
 }
 
-export { IconName, HarnessIcons, Icon, IconProps }
+export { HarnessIcons, Icon }
+export type { IconName, IconProps }
