@@ -39,7 +39,9 @@ import AwsEctwoService from './aws-ectwo-service.svg'
 import AwsKms from './aws-kms.svg'
 import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
+import AzureArm from './azure-arm.svg'
 import AzureBlob from './azure-blob.svg'
+import AzureBlueprints from './azure-blueprints.svg'
 import AzureContainerRegistry from './azure-container-registry.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
@@ -805,7 +807,9 @@ type HarnessIconName =
   | 'aws-kms'
   | 'aws-rds'
   | 'aws-secret-manager'
+  | 'azure-arm'
   | 'azure-blob'
+  | 'azure-blueprints'
   | 'azure-container-registry'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
@@ -1571,7 +1575,9 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-kms': AwsKms,
   'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
+  'azure-arm': AzureArm,
   'azure-blob': AzureBlob,
+  'azure-blueprints': AzureBlueprints,
   'azure-container-registry': AzureContainerRegistry,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
