@@ -11,6 +11,7 @@
  */
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
+import Account from './Account.svg'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -31,6 +32,7 @@ import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
+import Arrow from './arrow.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import Autostopping from './autostopping.svg'
@@ -757,6 +759,7 @@ import University from './university.svg'
 import Up from './up.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
+import UserGroups from './user-groups.svg'
 import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
 import Variable from './variable.svg'
@@ -779,6 +782,7 @@ import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
+  | 'Account'
   | 'Edit'
   | 'Inline'
   | 'Options'
@@ -799,6 +803,7 @@ type HarnessIconName =
   | 'approval-step'
   | 'argo'
   | 'arm'
+  | 'arrow'
   | 'audit-log-created'
   | 'audit-trail'
   | 'autostopping'
@@ -1525,6 +1530,7 @@ type HarnessIconName =
   | 'up'
   | 'upgrade-bolt'
   | 'upload-box'
+  | 'user-groups'
   | 'utility'
   | 'valuesFIle'
   | 'variable'
@@ -1547,6 +1553,7 @@ type HarnessIconName =
   | 'zoom-out'
 
 const HarnessIcons: KVO<ElementType> = {
+  Account: Account,
   Edit: Edit,
   Inline: Inline,
   Options: Options,
@@ -1567,6 +1574,7 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-step': ApprovalStep,
   argo: Argo,
   arm: Arm,
+  arrow: Arrow,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
   autostopping: Autostopping,
@@ -2293,6 +2301,7 @@ const HarnessIcons: KVO<ElementType> = {
   up: Up,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
+  'user-groups': UserGroups,
   utility: Utility,
   valuesFIle: ValuesFIle,
   variable: Variable,
