@@ -30,6 +30,8 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
     onClick?.(event)
   }
 
+  const childrenCount = React.Children.count(children)
+
   return (
     <div className={css.splitButton}>
       <Button
@@ -38,27 +40,29 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
         onClick={handleClick}
         text={text}
         icon={icon}
-        className={cx(css.main, 'border-right-0')}
+        className={cx({ [css.main]: childrenCount }, 'border-right-0')}
       />
-      <Popover
-        disabled={dropdownDisabled}
-        isOpen={isOptionsOpen}
-        onInteraction={nextOpenState => {
-          setOptionsOpen(nextOpenState)
-        }}
-        content={<Menu>{children}</Menu>}
-        usePortal={false}
-        minimal={true}
-        fill={false}
-        position={Position.BOTTOM_RIGHT}>
-        <Button
+      {childrenCount > 0 && (
+        <Popover
           disabled={dropdownDisabled}
-          rightIcon="chevron-down"
-          {...commonProps}
-          onClick={() => setOptionsOpen(true)}
-          className={cx(css.dropdown, className, 'border-left-0')}
-        />
-      </Popover>
+          isOpen={isOptionsOpen}
+          onInteraction={nextOpenState => {
+            setOptionsOpen(nextOpenState)
+          }}
+          content={<Menu>{children}</Menu>}
+          usePortal={false}
+          minimal={true}
+          fill={false}
+          position={Position.BOTTOM_RIGHT}>
+          <Button
+            disabled={dropdownDisabled}
+            rightIcon="chevron-down"
+            {...commonProps}
+            onClick={() => setOptionsOpen(true)}
+            className={cx(css.dropdown, className, 'border-left-0')}
+          />
+        </Popover>
+      )}
       <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} useStandAlone={true} />
     </div>
   )
