@@ -19,6 +19,8 @@ export interface CarouselProps {
   hideIndicators?: boolean // false
   onChange?: (slideNumber: number) => void
   children: Array<React.ReactElement<HTMLElement>> | React.ReactElement<HTMLElement>
+  autoPlay?: boolean
+  autoPlayDuration?: number
 }
 
 export const Carousel: React.FC<CarouselProps> = ({
@@ -28,10 +30,19 @@ export const Carousel: React.FC<CarouselProps> = ({
   nextElement,
   previousElement,
   hideIndicators = false,
+  autoPlay,
+  autoPlayDuration = 2000,
   onChange
 }) => {
   const [totalSlides, setTotalSlides] = React.useState(1)
   const [activeSlide, setActiveSlide] = React.useState(1)
+  const timeoutRef = React.useRef(null)
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+  }
 
   React.useEffect(() => {
     let slides = 1
@@ -46,7 +57,20 @@ export const Carousel: React.FC<CarouselProps> = ({
   }, [defaultSlide])
 
   React.useEffect(() => {
+    resetTimeout()
+
+    if (autoPlay && Array.isArray(children) && children.length > activeSlide) {
+      //@ts-ignore
+      timeoutRef.current = setTimeout(() => {
+        setActiveSlide(activeSlide + 1)
+      }, autoPlayDuration)
+    }
+
     onChange?.(activeSlide)
+
+    return () => {
+      resetTimeout()
+    }
   }, [activeSlide])
 
   const indicators = [...Array(totalSlides)].map((_ar, index) => (
