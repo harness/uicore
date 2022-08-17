@@ -468,6 +468,8 @@ export interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
   placeholder?: string
   multiSelectProps?: Omit<UiKitMultiSelectProps, 'items' | 'onChange' | 'value' | 'tagInputProps'>
   onChange?: UiKitMultiSelectProps['onChange']
+  usePortal?: UiKitMultiSelectProps['usePortal']
+  popoverClassName?: UiKitMultiSelectProps['popoverClassName']
 }
 
 const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
@@ -520,6 +522,8 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
           onChange?.(items)
         }}
         resetOnSelect={true}
+        usePortal={!!props.usePortal}
+        popoverClassName={props.popoverClassName}
       />
     </FormGroup>
   )

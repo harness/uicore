@@ -145,3 +145,52 @@
     right: 0;
   }
 }
+
+.popover {
+  & :global(.bp3-menu) {
+    max-height: 350px;
+    overflow: auto;
+    min-width: 250px;
+    width: 100%;
+    padding: 0;
+  }
+
+  & .menuItem {
+    min-height: var(--spacing-8);
+    height: fit-content;
+    padding: 0 var(--spacing-small);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .menuItemLabel {
+      color: var(--black);
+      font-weight: 400;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+    }
+
+    & .checkbox {
+      margin: 0 var(--spacing-small) 0 0;
+    }
+
+    &.active {
+      background: var(--primary-1);
+    }
+
+    &.disabled {
+      color: var(--grey-400);
+      cursor: not-allowed;
+    }
+
+    &.loading {
+      color: var(--grey-400);
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      background: var(--primary-1);
+    }
+  }
+}

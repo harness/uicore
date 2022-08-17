@@ -22,10 +22,11 @@ interface Props {
   data?: IHelpPanel
   error?: Error
   loading: boolean
+  hideFooter?: boolean
 }
 
 export const HEADER_FOOTER_HEIGHT = 64
-const HelpPanelContent: React.FC<Props> = ({ onClose, data, loading, error }) => {
+const HelpPanelContent: React.FC<Props> = ({ onClose, data, loading, error, hideFooter }) => {
   const { articles, title, backgroundColor = Color.BLUE_50 } = data || {}
 
   const renderContent = () => {
@@ -45,8 +46,7 @@ const HelpPanelContent: React.FC<Props> = ({ onClose, data, loading, error }) =>
         ) : (
           <ErrorScreen />
         )}
-
-        <Footer />
+        {!hideFooter ? <Footer /> : null}
       </>
     )
   }
