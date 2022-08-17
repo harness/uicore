@@ -142,5 +142,22 @@ export const DisabledAllSplitButton: ComponentStory<typeof SplitButton> = args =
     </Container>
   )
 }
+
+export const NoChildrenSplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <Container>
+      <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.PRIMARY} {...args}></SplitButton>
+    </Container>
+  )
+}
+
+export const DisabledNoChildrenSplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <Container>
+      <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.PRIMARY} {...args} disabled></SplitButton>
+    </Container>
+  )
+}
+
 DisabledAllSplitButton.argTypes = { onClick: { action: 'clicked' } }
 DisabledAllSplitButton.args = { intent: 'primary' }
