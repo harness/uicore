@@ -19,8 +19,12 @@ export interface CarouselProps {
   hideIndicators?: boolean // false
   onChange?: (slideNumber: number) => void
   children: Array<React.ReactElement<HTMLElement>> | React.ReactElement<HTMLElement>
+
+  /** When true, the slide will change automatically  */
   autoPlay?: boolean
-  autoPlayDuration?: number
+
+  /** Interval in milliseconds to automatically go to the next item when autoPlay is true, defaults to 2000  */
+  autoPlayInterval?: number
 }
 
 export const Carousel: React.FC<CarouselProps> = ({
@@ -31,7 +35,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   previousElement,
   hideIndicators = false,
   autoPlay,
-  autoPlayDuration = 2000,
+  autoPlayInterval = 2000,
   onChange
 }) => {
   const [totalSlides, setTotalSlides] = React.useState(1)
@@ -62,7 +66,7 @@ export const Carousel: React.FC<CarouselProps> = ({
     if (autoPlay && Array.isArray(children) && children.length > activeSlide) {
       timeoutRef.current = setTimeout(() => {
         setActiveSlide(activeSlide + 1)
-      }, autoPlayDuration)
+      }, autoPlayInterval)
     }
 
     onChange?.(activeSlide)
