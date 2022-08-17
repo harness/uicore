@@ -36,7 +36,7 @@ export const Carousel: React.FC<CarouselProps> = ({
 }) => {
   const [totalSlides, setTotalSlides] = React.useState(1)
   const [activeSlide, setActiveSlide] = React.useState(1)
-  const timeoutRef = React.useRef(null)
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -60,7 +60,6 @@ export const Carousel: React.FC<CarouselProps> = ({
     resetTimeout()
 
     if (autoPlay && Array.isArray(children) && children.length > activeSlide) {
-      //@ts-ignore
       timeoutRef.current = setTimeout(() => {
         setActiveSlide(activeSlide + 1)
       }, autoPlayDuration)
