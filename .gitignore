@@ -9,6 +9,7 @@ package-lock.json
 .docz
 temp.*
 **/.mdx-data
+.vscode/
 
 # Logs
 logs
