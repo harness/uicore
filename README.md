@@ -29,7 +29,7 @@ List of packages:
 
 ## Icons
 
-Icons are under available `packages/icons` folder. Please follow below steps to add new icons -
+Icons are under available `packages/icons` folder. Please follow below steps to add new icons:
 
 1. Place the new icon (in SVG format) inside `packages/icons/src` directory.
 2. Run `yarn ui:icons` (under the root directory)
