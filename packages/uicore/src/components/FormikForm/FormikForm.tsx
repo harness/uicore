@@ -71,7 +71,7 @@ import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
 import { DurationInput } from './DurationInput'
-import { SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SelectWithSubmenuOption } from '../SelectWithSubmenu/SelectWithSubmenu'
 
 // const isFunction = (obj: any): boolean => typeof obj === 'function'
 
@@ -1104,12 +1104,12 @@ export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProp
   name: string
   label: string
   placeholder?: string
-  value?: SubmenuSelectOption
+  value?: SelectWithSubmenuOption
   /**
    *Enable this when we want to use value, instead of label/value
    */
   useValue?: boolean
-  selectItems: SubmenuSelectOption[]
+  selectItems: SelectWithSubmenuOption[]
   selectWithSubmenuTypeInputProps?: Omit<SelectWithSubmenuTypeInputProps, 'name'>
   disabled?: boolean
 }
@@ -1134,7 +1134,7 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
-    (val, valueType, type) => {
+    (val, type) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
         formik?.setFieldValue(name, val?.value)
@@ -1142,7 +1142,7 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
         formik?.setFieldValue(name, val)
       }
       formik?.setFieldTouched(name, true, false)
-      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val, valueType, type)
+      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val)
     },
     [formik, selectWithSubmenuTypeInputProps]
   )
@@ -1176,7 +1176,6 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
         selectWithSubmenuProps={{
           items: selectItems,
           ...selectWithSubmenuTypeInputProps?.selectWithSubmenuProps,
-          name,
           inputProps: {
             name,
             intent,

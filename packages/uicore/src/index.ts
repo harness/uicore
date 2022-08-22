@@ -165,7 +165,11 @@ export {
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
-export { SelectWithSubmenu, SelectWithSubmenuProps } from './components/SelectWithSubmenu/SelectWithSubmenu'
+export {
+  SelectWithSubmenu,
+  SelectWithSubmenuProps,
+  SelectWithSubmenuOption
+} from './components/SelectWithSubmenu/SelectWithSubmenu'
 export {
   MultiSelectWithSubmenu,
   MultiSelectWithSubmenuProps,
