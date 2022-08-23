@@ -5,11 +5,11 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react';
-import type { Meta, Story } from '@storybook/react';
+import React from 'react'
+import type { Meta, Story } from '@storybook/react'
 
-import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks';
-import { CopyToClipboard, CopyToClipboardProps } from './CopyToClipboard';
+import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
+import { CopyToClipboard, CopyToClipboardProps } from './CopyToClipboard'
 
 export default {
   title: 'Components / CopyToClipboard',
@@ -22,7 +22,7 @@ export default {
       },
 
       page: function PageDescription() {
-        <>
+        ;<>
           <Title>CopyToClipboard</Title>
           <Description>{`CopyToClipboard allows an easy to use button for users to copy content`}</Description>
           <Subtitle>
@@ -47,10 +47,10 @@ export default {
           <ArgsTable story={PRIMARY_STORY} />
 
           <Stories />
-        </>;
+        </>
       }
     }
   }
-} as Meta;
+} as Meta
 
-export const Basic: Story<CopyToClipboardProps> = args => <CopyToClipboard {...args} />;
+export const Basic: Story<CopyToClipboardProps> = args => <CopyToClipboard {...args} />

@@ -5,45 +5,44 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react';
-import { Position, PopoverInteractionKind, Popover } from '@blueprintjs/core';
-import { Icon, useToaster } from '../..';
+import React from 'react'
+import { Position, PopoverInteractionKind, Popover } from '@blueprintjs/core'
+import { Icon, useToaster } from '../..'
 
-import css from './CopyToClipboard.css';
+import css from './CopyToClipboard.css'
 
 export interface CopyToClipboardProps {
-  content: string;
-  showFeedback?: boolean;
-  iconSize?: number;
+  content: string
+  showFeedback?: boolean
+  iconSize?: number
 }
 
 export const CopyToClipboard: React.FC<CopyToClipboardProps> = props => {
-  const { showSuccess } = useToaster();
+  const { showSuccess } = useToaster()
   const getPopoverContent = (): JSX.Element => {
     return (
       <div className={css.popoverContent}>
         <span className={css.tooltipLabel}>Copy to Clipboard</span>
       </div>
-    );
-  };
+    )
+  }
   return (
     <>
       <Popover
         minimal
         position={Position.BOTTOM}
         interactionKind={PopoverInteractionKind.HOVER}
-        content={getPopoverContent()}
-      >
+        content={getPopoverContent()}>
         <div>
           <Icon
             name="copy-alt"
             size={props.iconSize ?? 20}
             onClick={async (event: React.MouseEvent<HTMLHeadingElement, globalThis.MouseEvent>) => {
-              event.preventDefault();
-              event.stopPropagation();
-              navigator?.clipboard?.writeText(props?.content);
+              event.preventDefault()
+              event.stopPropagation()
+              navigator?.clipboard?.writeText(props?.content)
               if (props.showFeedback) {
-                showSuccess('Successfully copied to clipboard');
+                showSuccess('Successfully copied to clipboard')
               }
             }}
             className={css.copyIcon}
@@ -51,5 +50,5 @@ export const CopyToClipboard: React.FC<CopyToClipboardProps> = props => {
         </div>
       </Popover>
     </>
-  );
-};
+  )
+}
