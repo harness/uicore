@@ -21,6 +21,7 @@ export { SplitButton, SplitButtonOption } from './components/SplitButton/SplitBu
 export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export { Checkbox } from './components/Checkbox/Checkbox'
+export { CopyToClipboard, CopyToClipboardProps } from './components/CopyToClipboard/CopyToClipboard'
 export { Dialog } from './components/Dialog/Dialog'
 export { ModalDialog } from './components/ModalDialog/ModalDialog'
 export { Toggle } from './components/Toggle/Toggle'
