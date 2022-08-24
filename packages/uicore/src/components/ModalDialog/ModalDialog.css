@@ -80,7 +80,6 @@
 .body::after {
   content: '';
   position: sticky;
-  margin: 0 calc(-1 * var(--spacing-huge));
   top: 0;
   height: 1px;
   background-color: var(--grey-200);
