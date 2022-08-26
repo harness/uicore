@@ -333,7 +333,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
                 <>{typeof stepName.stepName === 'string' && <span className={css.number}>{stepIndex}</span>}</>
               )}
 
-              <Text className={css.stepName} lineClamp={2} width={200}>
+              <Text className={css.stepName} lineClamp={2} width={250}>
                 {stepName.stepName}
               </Text>
               {stepName.stepSubTitle ? (
@@ -345,12 +345,12 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
                       : css.stepSubTitle
                   )}
                   lineClamp={2}
-                  width={200}>
+                  width={250}>
                   {stepName.stepSubTitle}
                 </Text>
               ) : null}
               {!isNestedFirstStep && state.nestedStepWizard?.[index]?.stepIndex === 1 ? (
-                <Text className={css.stepName} lineClamp={2} width={200}>
+                <Text className={css.stepName} lineClamp={2} width={250}>
                   {subtitle}
                 </Text>
               ) : null}
