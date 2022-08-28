@@ -6,13 +6,14 @@
  */
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { defaultTo, noop } from 'lodash-es'
+import { defaultTo } from 'lodash-es'
 import { Menu, MenuItem, Position } from '@blueprintjs/core'
 import { ISelectProps, Suggest } from '@blueprintjs/select'
 
 import { Text } from '../Text/Text'
 
 import css from './SelectWithSubmenu.css'
+import { Button } from '../../components/Button/Button'
 
 export interface SelectWithSubmenuOption {
   label: string
@@ -37,29 +38,47 @@ export interface SelectWithSubmenuProps
     | 'activeItem'
     | 'onActiveItemChange'
   > {
+  allowCreatingNewItems?: boolean
   items: SelectWithSubmenuOption[]
+  value?: SelectWithSubmenuOption
   onChange?(opts: SelectWithSubmenuOption): void
   onSubmenuOpen?: (item?: SelectWithSubmenuOption) => Promise<void>
 }
 
 export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactElement {
-  const { items, onChange, onSubmenuOpen, ...selectProps } = props
-
+  const { items, onChange, onSubmenuOpen, allowCreatingNewItems, value, ...selectProps } = props
+  const [selectedItem, setSelectedItem] = useState<SelectWithSubmenuOption | undefined>(undefined)
   const itemRenderer = useCallback(
-    (item: SelectWithSubmenuOption) => {
-      return (
+    (item: SelectWithSubmenuOption, { handleClick }) => {
+      return item.hasSubmenuItems ? (
         <Submenu
           items={defaultTo(item.submenuItems, [])}
           onChange={subItem => {
             onChange?.(subItem)
+            handleClick()
           }}
           primaryValue={item}
           onSubmenuOpen={onSubmenuOpen}
         />
+      ) : (
+        <div
+          key={`${item?.value}`}
+          className={css.submenuItem}
+          onClick={() => {
+            onChange?.(item)
+            handleClick()
+          }}>
+          <Text className={css.menuItemLabel} lineClamp={1}>
+            {item.label}
+          </Text>
+        </div>
       )
     },
     [items]
   )
+  React.useEffect(() => {
+    setSelectedItem(value)
+  }, [value])
 
   return (
     <Suggest
@@ -77,11 +96,16 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
           }
         }
       }}
-      onItemSelect={noop}
+      itemListPredicate={(query, items) =>
+        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
+      }
+      onItemSelect={item => setSelectedItem(item)}
+      selectedItem={selectedItem}
       items={items}
+      inputValueRenderer={opt => opt.label}
       itemListRenderer={props => (
         <Menu className={css.menu}>
-          {props.items.map((item, index) => {
+          {props.filteredItems.map((item, index) => {
             return item.hasSubmenuItems ? (
               <MenuItem
                 key={index}
@@ -94,22 +118,27 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
                 {props.renderItem(item, index)}
               </MenuItem>
             ) : (
-              <div
-                key={`${item?.value}`}
-                className={css.submenuItem}
-                onClick={() => {
-                  onChange?.(item)
-                }}>
-                <Text className={css.menuItemLabel} lineClamp={1}>
-                  {item.label}
-                </Text>
-              </div>
+              props.renderItem(item, index)
             )
           })}
+          {props.filteredItems.length === 0 && (
+            <React.Fragment>
+              {props.filteredItems.length === 0 ? <div className={css.noResultsFound}>Nothing Found</div> : null}
+              {allowCreatingNewItems && (
+                <Button
+                  intent="primary"
+                  minimal
+                  text={props.query}
+                  icon="plus"
+                  className={css.createNewItemButton}
+                  onClick={() => onChange?.({ label: props.query, value: props.query })}
+                />
+              )}
+            </React.Fragment>
+          )}
         </Menu>
       )}
       itemRenderer={itemRenderer}
-      itemsEqual={(a, b) => a.value === b.value}
     />
   )
 }
@@ -149,7 +178,6 @@ const Submenu = ({ items, onChange, primaryValue, onSubmenuOpen }: SubmenuProps)
             key={itemValue}
             className={css.submenuItem}
             onClick={() => {
-              console.log(itemValue, item)
               onChange?.(item)
             }}>
             <Text className={css.menuItemLabel} lineClamp={1}>
