@@ -15,6 +15,7 @@ export {
   NestedAccordionContextData
 } from './components/Accordion/NestedAccordion'
 export { Avatar, AvatarProps, AvatarSizes } from './components/Avatar/Avatar'
+export { getInitialsFromNameOrEmail } from './components/Avatar/utils'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
 export { Button, ButtonProps, ButtonVariation, ButtonSize } from './components/Button/Button'
 export { SplitButton, SplitButtonOption } from './components/SplitButton/SplitButton'
