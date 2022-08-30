@@ -5,8 +5,16 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { HelpPanelContextProvider, useContentful } from './HelpPanelContext'
+import { HelpPanelContextProvider, useContentful, HELP_PANEL_STORAGE_KEY } from './HelpPanelContext'
 import HelpPanel, { HelpPanelType } from './components/HelpPanel/HelpPanel'
 import { HelpPanelEnvironment } from './types/contentfulTypes'
 import FloatingButton from './components/HelpPanel/FloatingButton/FloatingButton'
-export { HelpPanel, HelpPanelType, HelpPanelContextProvider, useContentful, HelpPanelEnvironment, FloatingButton }
+export {
+  HelpPanel,
+  HelpPanelType,
+  HelpPanelContextProvider,
+  useContentful,
+  HelpPanelEnvironment,
+  FloatingButton,
+  HELP_PANEL_STORAGE_KEY
+}

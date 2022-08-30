@@ -38,11 +38,13 @@ interface HelpPanelStorageState {
   dontShowAgain: boolean
 }
 
-const TOP_LEVEL_KEY = 'helpPanel'
+export const HELP_PANEL_STORAGE_KEY = 'helpPanel'
 export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> = props => {
   const { accessToken, space, environment = HelpPanelEnvironment.master } = props
   const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
-  const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(TOP_LEVEL_KEY, { dontShowAgain: false })
+  const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(HELP_PANEL_STORAGE_KEY, {
+    dontShowAgain: false
+  })
   const [error, setError] = useState<Error | undefined>()
 
   const toggleShowAgain = () => {
