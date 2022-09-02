@@ -68,30 +68,22 @@
 }
 
 .body {
-  --showScrollTop: 0;
-  --showScrollBottom: 0;
+  --shadowTop: inset 0px 8px 5px -5px rgba(96, 97, 112, 0.16);
+  --shadowBottom: inset 0px -8px 5px -5px rgba(96, 97, 112, 0.16);
   position: relative;
   grid-area: body;
   overflow: auto;
   padding: 0 var(--spacing-huge);
 }
 
-.body::before,
-.body::after {
-  content: '';
-  position: sticky;
-  margin: 0 calc(-1 * var(--spacing-huge));
-  top: 0;
-  height: 1px;
-  background-color: var(--grey-200);
-  display: block;
-  opacity: calc(1 * var(--showScrollTop));
-  transition: opacity 0.15s ease-in-out;
-  z-index: 2;
+.body.shadowTop {
+  box-shadow: var(--shadowTop);
 }
 
-.body::after {
-  top: auto;
-  bottom: 0;
-  opacity: calc(1 * var(--showScrollBottom));
+.body.shadowBottom {
+  box-shadow: var(--shadowBottom);
+}
+
+.body.shadowTopAndBottom {
+  box-shadow: var(--shadowTop), var(--shadowBottom);
 }
