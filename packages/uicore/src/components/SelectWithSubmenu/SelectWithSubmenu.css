@@ -56,6 +56,9 @@
 .menu {
   max-height: 350px;
   overflow-y: scroll;
+  min-width: 250px;
+  width: 100%;
+  padding: 0;
 
   :global {
     .bp3-menu-item {
@@ -107,7 +110,7 @@
 
   .menuItemLabel {
     color: var(--black);
-    font-weight: 400;
+    font-weight: 400 !important;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
