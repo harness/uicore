@@ -73,17 +73,29 @@
   position: relative;
   grid-area: body;
   overflow: auto;
+}
+
+.body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.body .bodyContent {
+  overflow: auto;
+  height: 100%;
   padding: 0 var(--spacing-huge);
 }
 
-.body.shadowTop {
+.body.shadowTop::before {
   box-shadow: var(--shadowTop);
 }
 
-.body.shadowBottom {
+.body.shadowBottom::before {
   box-shadow: var(--shadowBottom);
 }
 
-.body.shadowTopAndBottom {
+.body.shadowTopAndBottom::before {
   box-shadow: var(--shadowTop), var(--shadowBottom);
 }
