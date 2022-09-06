@@ -251,6 +251,7 @@ import Down from './down.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import Elk from './elk.svg'
 import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
@@ -1026,6 +1027,7 @@ type HarnessIconName =
   | 'ecr-step-inverse'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'elk'
   | 'email-inline'
   | 'email-step'
   | 'entity'
@@ -1801,6 +1803,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  elk: Elk,
   'email-inline': EmailInline,
   'email-step': EmailStep,
   entity: Entity,
