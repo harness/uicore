@@ -17,10 +17,6 @@
   margin-right: 0.5rem !important;
 }
 
-.asPill input {
-  visibility: hidden;
-}
-
 .asPill span {
   margin: 0;
 }
@@ -29,6 +25,10 @@
   background-color: #4090de !important;
   border-color: #3b7fd1;
   color: white !important;
+}
+
+.asPill .radioIcon {
+  display: none;
 }
 
 .radio {
