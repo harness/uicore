@@ -6,10 +6,9 @@
  */
 
 .asPill {
-  font-family: sans-serif;
   display: inline-block;
   padding: 0.66rem 1.5rem !important;
-  border-radius: 2rem;
+  border-radius: 2em;
   background-color: white !important;
   border: 1px solid lightgray;
   cursor: pointer;
@@ -22,8 +21,8 @@
 }
 
 .pillChecked {
-  background-color: #4090de !important;
-  border-color: #3b7fd1;
+  background-color: var(--primary-6) !important;
+  border-color: var(--primary-7);
   color: white !important;
 }
 
