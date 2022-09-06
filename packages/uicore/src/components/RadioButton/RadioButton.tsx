@@ -19,6 +19,7 @@ export interface RadioButtonProps extends StyledProps {
   checked?: boolean
   disabled?: boolean
   tooltipId?: string
+  asPill?: boolean
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -30,11 +31,19 @@ export function RadioButton({
   checked = false,
   disabled = false,
   tooltipId,
+  asPill = false,
   onChange = () => undefined,
   ...props
 }: RadioButtonProps & StyledProps): ReactElement {
   return (
-    <label className={styledClasses(props, css.radio, className)} {...omitStyledProps(props)}>
+    <label
+      className={styledClasses(
+        props,
+        asPill ? css.asPill : css.radio,
+        asPill && checked ? css.pillChecked : '',
+        className
+      )}
+      {...omitStyledProps(props)}>
       <input
         type="radio"
         name={name}

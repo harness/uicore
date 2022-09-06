@@ -131,3 +131,8 @@ WithLargeMargin.decorators = [
     </div>
   )
 ]
+
+export const AsPills = RadioButtonGroupTemplate.bind({})
+AsPills.args = {
+  asPills: true
+}

@@ -5,6 +5,32 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
+.asPill {
+  font-family: sans-serif;
+  display: inline-block;
+  padding: 0.66rem 1.5rem !important;
+  border-radius: 2rem;
+  background-color: white !important;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-right: 0.5rem !important;
+}
+
+.asPill input {
+  visibility: hidden;
+}
+
+.asPill span {
+  margin: 0;
+}
+
+.pillChecked {
+  background-color: #4090de !important;
+  border-color: #3b7fd1;
+  color: white !important;
+}
+
 .radio {
   --radio-size: var(--spacing-5);
   --radio-bg-color: var(--white);

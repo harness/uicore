@@ -17,6 +17,7 @@ export interface RadioButtonGroupProps extends StyledProps {
   inline?: boolean
   label?: ReactNode
   name?: string
+  asPills?: boolean
   onChange: (e: FormEvent<HTMLInputElement>) => void
   options: Array<Pick<RadioButtonProps, 'label' | 'value' | 'disabled' | 'tooltipId'>>
   selectedValue?: string | number
@@ -28,6 +29,7 @@ export function RadioButtonGroup({
   inline = false,
   label = '',
   name = '',
+  asPills = false,
   onChange,
   options,
   selectedValue = '',
@@ -58,6 +60,7 @@ export function RadioButtonGroup({
             onChange={optionOnChangeHandler}
             {...optionProps}
             disabled={disabled || optionProps.disabled}
+            asPill={asPills}
           />
         ))}
       </div>
