@@ -70,13 +70,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   const [scrollShadows, setScrollShadows] = useState({ top: false, bottom: false })
 
-  const bodyShadowClass = useMemo(() => {
-    const { top, bottom } = scrollShadows
-    if (!top && !bottom) return ''
-    if (top && bottom) return css.shadowTopAndBottom
-    return top ? css.shadowTop : css.shadowBottom
-  }, [scrollShadows])
-
   const observeEdge = useCallback((element: HTMLDivElement | null | undefined, observer: IntersectionObserver) => {
     if (!element || !observer) return
     observer.observe(element)
@@ -119,8 +112,11 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   const modifiers = []
 
-  if (!title && !toolbar) {
+  if (!title) {
     modifiers.push(css.noHeader)
+  }
+  if (!toolbar) {
+    modifiers.push(css.noToolbar)
   }
   if (!footer) {
     modifiers.push(css.noFooter)
@@ -134,6 +130,15 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     // @ts-ignore
     style['--ModalDialog-Height'] = `${height}px`
   }
+
+  const bodyShadowClass = useMemo(() => {
+    const { top, bottom } = scrollShadows
+
+    if (top && bottom && (title || toolbar) && footer) return css.shadowTopAndBottom
+    if (top && (title || toolbar)) return css.shadowTop
+    if (bottom && footer) return css.shadowBottom
+    return ''
+  }, [scrollShadows])
 
   return (
     <Dialog

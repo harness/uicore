@@ -22,20 +22,6 @@
     'footer';
 }
 
-.noHeader .body {
-  padding-top: var(--spacing-huge);
-  --showScrollTop: 0 !important;
-}
-
-.noHeader .toolbar {
-  padding-top: var(--spacing-huge);
-}
-
-.noFooter .body {
-  padding-bottom: var(--spacing-huge);
-  --showScrollBottom: 0 !important;
-}
-
 .noHeader.noFooter .body {
   background: none;
 }
@@ -58,6 +44,10 @@
 .toolbar {
   grid-area: toolbar;
   padding: 0 var(--spacing-huge) var(--spacing-large);
+}
+
+.noHeader .toolbar {
+  padding-top: var(--spacing-huge);
 }
 
 .closeButton {
@@ -86,6 +76,14 @@
   overflow: auto;
   height: 100%;
   padding: 0 var(--spacing-huge);
+}
+
+.noHeader.noToolbar .body .bodyContent {
+  padding-top: var(--spacing-huge);
+}
+
+.noFooter .body .bodyContent {
+  padding-bottom: var(--spacing-huge);
 }
 
 .body.shadowTop::before {
