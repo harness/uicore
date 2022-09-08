@@ -70,12 +70,15 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 2;
 }
 
 .body .bodyContent {
   overflow: auto;
   height: 100%;
   padding: 0 var(--spacing-huge);
+  display: grid;
+  grid-template-rows: 1px 1fr 1px;
 }
 
 .noHeader.noToolbar .body .bodyContent {

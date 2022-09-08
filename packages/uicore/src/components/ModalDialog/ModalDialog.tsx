@@ -168,7 +168,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
       <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRef}>
         <div className={css.bodyContent}>
           <div ref={bodyTopEdgeRef} data-position="top" />
-          {children}
+          <div>{children}</div>
           <div ref={bodyBottomEdgeRef} data-position="bottom" />
         </div>
       </div>
