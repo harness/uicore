@@ -14,6 +14,11 @@ import { Button, ButtonVariation } from '../Button/Button'
 
 import css from './ModalDialog.css'
 
+const observeEdge = (element: HTMLDivElement | null | undefined, observer: IntersectionObserver) => {
+  if (!element || !observer) return
+  observer.observe(element)
+}
+
 export interface ModalDialogProps extends IDialogProps {
   /**
    * Optional title of the modal. Can be a string or anything that React can render.
@@ -70,11 +75,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   const [scrollShadows, setScrollShadows] = useState({ top: false, bottom: false })
 
-  const observeEdge = useCallback((element: HTMLDivElement | null | undefined, observer: IntersectionObserver) => {
-    if (!element || !observer) return
-    observer.observe(element)
-  }, [])
-
   const initScrollShadows = useCallback(() => {
     if (!bodyRef.current) return
 
@@ -94,7 +94,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     )
     observeEdge(bodyTopEdgeRef.current, bodyObserverRef.current)
     observeEdge(bodyBottomEdgeRef.current, bodyObserverRef.current)
-  }, [observeEdge])
+  }, [])
 
   const onModalOpened = useCallback(
     arg => {
