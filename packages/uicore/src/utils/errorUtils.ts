@@ -18,7 +18,7 @@ const IGNORED_ERRORS = [
 export function shouldShowError(e: any): boolean {
   const hideMessagesForStatusCodes = [502, 503]
   const message = (e?.message || '').trim()
-  if (IGNORED_ERRORS.includes(message) || hideMessagesForStatusCodes.includes(e?.status)) {
+  return !IGNORED_ERRORS.includes(message) && !hideMessagesForStatusCodes.includes(e?.status)
     return false
   }
   return true
