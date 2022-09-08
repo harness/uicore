@@ -18,10 +18,8 @@ const IGNORED_ERRORS = [
 export function shouldShowError(e: any): boolean {
   const hideMessagesForStatusCodes = [502, 503]
   const message = (e?.message || '').trim()
+
   return !IGNORED_ERRORS.includes(message) && !hideMessagesForStatusCodes.includes(e?.status)
-    return false
-  }
-  return true
 }
 
 /* TODO Don't see proper types for this new errors format, replace Record<string, any> with more stricter type when available */
