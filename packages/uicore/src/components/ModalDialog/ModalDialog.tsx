@@ -5,8 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { FC, ReactNode, useCallback, useLayoutEffect, useRef } from 'react'
-import { throttle } from 'lodash-es'
+import React, { FC, ReactNode, useCallback, useEffect, useRef, useState, useMemo } from 'react'
 import { Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { FontVariation } from '@harness/design-system'
@@ -14,6 +13,11 @@ import { Heading } from '../Heading/Heading'
 import { Button, ButtonVariation } from '../Button/Button'
 
 import css from './ModalDialog.css'
+
+const observeEdge = (element: HTMLDivElement | null | undefined, observer: IntersectionObserver) => {
+  if (!element || !observer) return
+  observer.observe(element)
+}
 
 export interface ModalDialogProps extends IDialogProps {
   /**
@@ -65,30 +69,54 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   ...dialogProps
 }) => {
   const bodyRef = useRef<HTMLDivElement>(null)
+  const bodyTopEdgeRef = useRef<HTMLDivElement>(null)
+  const bodyBottomEdgeRef = useRef<HTMLDivElement>(null)
+  const bodyObserverRef = useRef<IntersectionObserver>()
 
-  const manageScrollIndicators = throttle(() => {
-    const el = bodyRef.current
+  const [scrollShadows, setScrollShadows] = useState({ top: false, bottom: false })
 
-    if (el) {
-      el.style.setProperty('--showScrollTop', el.scrollTop > 0 ? '1' : '0')
-      el.style.setProperty('--showScrollBottom', el.scrollTop < el.scrollHeight - el.clientHeight ? '1' : '0')
-    }
-  }, 100)
+  const initScrollShadows = useCallback(() => {
+    if (!bodyRef.current) return
+
+    bodyObserverRef.current?.disconnect()
+    bodyObserverRef.current = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const position = (entry.target as HTMLDivElement).dataset.position
+          if (typeof position === 'string') {
+            setScrollShadows(prev => ({ ...prev, [position]: !entry.isIntersecting }))
+          }
+        })
+      },
+      {
+        root: bodyRef.current
+      }
+    )
+    observeEdge(bodyTopEdgeRef.current, bodyObserverRef.current)
+    observeEdge(bodyBottomEdgeRef.current, bodyObserverRef.current)
+  }, [])
 
   const onModalOpened = useCallback(
     arg => {
-      manageScrollIndicators()
+      initScrollShadows()
       onOpened(arg)
     },
-    [manageScrollIndicators, onOpened]
+    [initScrollShadows, onOpened]
   )
 
-  useLayoutEffect(manageScrollIndicators)
+  useEffect(() => {
+    return () => {
+      bodyObserverRef.current?.disconnect()
+    }
+  }, [])
 
   const modifiers = []
 
-  if (!title && !toolbar) {
+  if (!title) {
     modifiers.push(css.noHeader)
+  }
+  if (!toolbar) {
+    modifiers.push(css.noToolbar)
   }
   if (!footer) {
     modifiers.push(css.noFooter)
@@ -102,6 +130,15 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     // @ts-ignore
     style['--ModalDialog-Height'] = `${height}px`
   }
+
+  const bodyShadowClass = useMemo(() => {
+    const { top, bottom } = scrollShadows
+
+    if (top && bottom && (title || toolbar) && footer) return css.shadowTopAndBottom
+    if (top && (title || toolbar)) return css.shadowTop
+    if (bottom && footer) return css.shadowBottom
+    return ''
+  }, [scrollShadows])
 
   return (
     <Dialog
@@ -128,8 +165,12 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         </aside>
       )}
 
-      <div className={css.body} data-testid="modaldialog-body" ref={bodyRef} onScroll={manageScrollIndicators}>
-        {children}
+      <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRef}>
+        <div className={css.bodyContent}>
+          <div ref={bodyTopEdgeRef} data-position="top" />
+          <div>{children}</div>
+          <div ref={bodyBottomEdgeRef} data-position="bottom" />
+        </div>
       </div>
 
       {footer && (
