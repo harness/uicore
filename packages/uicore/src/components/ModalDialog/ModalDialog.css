@@ -22,20 +22,6 @@
     'footer';
 }
 
-.noHeader .body {
-  padding-top: var(--spacing-huge);
-  --showScrollTop: 0 !important;
-}
-
-.noHeader .toolbar {
-  padding-top: var(--spacing-huge);
-}
-
-.noFooter .body {
-  padding-bottom: var(--spacing-huge);
-  --showScrollBottom: 0 !important;
-}
-
 .noHeader.noFooter .body {
   background: none;
 }
@@ -60,6 +46,10 @@
   padding: 0 var(--spacing-huge) var(--spacing-large);
 }
 
+.noHeader .toolbar {
+  padding-top: var(--spacing-huge);
+}
+
 .closeButton {
   position: absolute !important;
   right: 22px;
@@ -68,30 +58,45 @@
 }
 
 .body {
-  --showScrollTop: 0;
-  --showScrollBottom: 0;
+  --shadowTop: inset 0px 8px 5px -5px rgba(96, 97, 112, 0.16);
+  --shadowBottom: inset 0px -8px 5px -5px rgba(96, 97, 112, 0.16);
   position: relative;
   grid-area: body;
   overflow: auto;
-  padding: 0 var(--spacing-huge);
 }
 
-.body::before,
-.body::after {
+.body::before {
   content: '';
-  position: sticky;
-  margin: 0 calc(-1 * var(--spacing-huge));
-  top: 0;
-  height: 1px;
-  background-color: var(--grey-200);
-  display: block;
-  opacity: calc(1 * var(--showScrollTop));
-  transition: opacity 0.15s ease-in-out;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   z-index: 2;
 }
 
-.body::after {
-  top: auto;
-  bottom: 0;
-  opacity: calc(1 * var(--showScrollBottom));
+.body .bodyContent {
+  overflow: auto;
+  height: 100%;
+  padding: 0 var(--spacing-huge);
+  display: grid;
+  grid-template-rows: 1px 1fr 1px;
+}
+
+.noHeader.noToolbar .body .bodyContent {
+  padding-top: var(--spacing-huge);
+}
+
+.noFooter .body .bodyContent {
+  padding-bottom: var(--spacing-huge);
+}
+
+.body.shadowTop::before {
+  box-shadow: var(--shadowTop);
+}
+
+.body.shadowBottom::before {
+  box-shadow: var(--shadowBottom);
+}
+
+.body.shadowTopAndBottom::before {
+  box-shadow: var(--shadowTop), var(--shadowBottom);
 }
