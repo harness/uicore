@@ -12,7 +12,8 @@ const IGNORED_ERRORS = [
   'Failed to fetch: Failed to fetch',
   'Failed to fetch: 504 Gateway Timeout',
   "Failed to fetch: Failed to execute 'fetch' on 'Window': The user aborted a request.",
-  'Failed to fetch: The operation was aborted.'
+  'Failed to fetch: The operation was aborted.',
+  'Failed to fetch: Fetch is aborted'
 ]
 
 export function shouldShowError(e: any): boolean {
