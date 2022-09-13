@@ -113,9 +113,12 @@ import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
+import ChaosCube from './chaos-cube.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
+import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
+import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
@@ -889,9 +892,12 @@ type HarnessIconName =
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
+  | 'chaos-cube'
   | 'chaos-experiment-weight'
   | 'chaos-hubs'
+  | 'chaos-litmuschaos'
   | 'chaos-main'
+  | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chat'
   | 'check-alt'
@@ -1665,9 +1671,12 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
+  'chaos-cube': ChaosCube,
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-hubs': ChaosHubs,
+  'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-main': ChaosMain,
+  'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   chat: Chat,
   'check-alt': CheckAlt,
