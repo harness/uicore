@@ -62,7 +62,8 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         const getContentIdMap = async (): Promise<void> => {
           const response = await client.getEntries<IReferenceIdMap>({
             // eslint-disable-next-line camelcase
-            content_type: ContentType.referenceIdMap
+            content_type: ContentType.referenceIdMap,
+            limit: 1000
           })
           setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
         }
