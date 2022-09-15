@@ -12,6 +12,7 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
+import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -791,6 +792,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
+  | 'CustomDeployment'
   | 'Edit'
   | 'Inline'
   | 'Options'
@@ -1570,6 +1572,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
+  CustomDeployment: CustomDeployment,
   Edit: Edit,
   Inline: Inline,
   Options: Options,
