@@ -342,6 +342,7 @@ import Google from './google.svg'
 import Governance from './governance.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
+import GridWhite from './grid-white.svg'
 import Grid from './grid.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
@@ -350,6 +351,8 @@ import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
+import HeartBrokenWhite from './heart-broken-white.svg'
+import HeartWhite from './heart-white.svg'
 import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
@@ -474,6 +477,7 @@ import MainZoomOut from './main-zoom-out.svg'
 import MemberRole from './memberRole.svg'
 import MergePr from './merge-pr.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
+import MinusWhite from './minus-white.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
@@ -523,6 +527,7 @@ import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
+import ObserveWhite from './observe-white.svg'
 import OfflineOutline from './offline-outline.svg'
 import OnpremDark from './onprem-dark.svg'
 import OnpremLight from './onprem-light.svg'
@@ -778,6 +783,7 @@ import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
+import WarningWhite from './warning-white.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import X from './x.svg'
@@ -1122,6 +1128,7 @@ type HarnessIconName =
   | 'governance'
   | 'graph'
   | 'grey-cluster'
+  | 'grid-white'
   | 'grid'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
@@ -1130,6 +1137,8 @@ type HarnessIconName =
   | 'harness'
   | 'hashiCorpVault'
   | 'health'
+  | 'heart-broken-white'
+  | 'heart-white'
   | 'helm-oci'
   | 'helm-rollback'
   | 'help'
@@ -1254,6 +1263,7 @@ type HarnessIconName =
   | 'memberRole'
   | 'merge-pr'
   | 'microsoft-azure'
+  | 'minus-white'
   | 'money-icon'
   | 'multi-service'
   | 'nav-account-admin-hover'
@@ -1303,6 +1313,7 @@ type HarnessIconName =
   | 'no-instances'
   | 'not-synced'
   | 'notification'
+  | 'observe-white'
   | 'offline-outline'
   | 'onprem-dark'
   | 'onprem-light'
@@ -1558,6 +1569,7 @@ type HarnessIconName =
   | 'waiting'
   | 'warning-icon'
   | 'warning-outline'
+  | 'warning-white'
   | 'white-cluster'
   | 'white-full-cluster'
   | 'x'
@@ -1902,6 +1914,7 @@ const HarnessIcons: KVO<ElementType> = {
   governance: Governance,
   graph: Graph,
   'grey-cluster': GreyCluster,
+  'grid-white': GridWhite,
   grid: Grid,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
@@ -1910,6 +1923,8 @@ const HarnessIcons: KVO<ElementType> = {
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
   health: Health,
+  'heart-broken-white': HeartBrokenWhite,
+  'heart-white': HeartWhite,
   'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
@@ -2034,6 +2049,7 @@ const HarnessIcons: KVO<ElementType> = {
   memberRole: MemberRole,
   'merge-pr': MergePr,
   'microsoft-azure': MicrosoftAzure,
+  'minus-white': MinusWhite,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
@@ -2083,6 +2099,7 @@ const HarnessIcons: KVO<ElementType> = {
   'no-instances': NoInstances,
   'not-synced': NotSynced,
   notification: Notification,
+  'observe-white': ObserveWhite,
   'offline-outline': OfflineOutline,
   'onprem-dark': OnpremDark,
   'onprem-light': OnpremLight,
@@ -2338,6 +2355,7 @@ const HarnessIcons: KVO<ElementType> = {
   waiting: Waiting,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
+  'warning-white': WarningWhite,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
   x: X,
