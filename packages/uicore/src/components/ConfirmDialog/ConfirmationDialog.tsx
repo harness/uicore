@@ -82,7 +82,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
       ) : null}
 
       <Layout.Horizontal className={css.header} padding={{ left: 'xsmall' }}>
-        <Icon name={getIconForIntent(intent)} size={32} margin={{ right: 'small' }} />
+        <Icon name={getIconForIntent(intent)} size={32} margin={{ right: 'small' }} intent={intent} />
         <Text font={{ variation: FontVariation.H4 }}>{titleText}</Text>
       </Layout.Horizontal>
       <Layout.Vertical
