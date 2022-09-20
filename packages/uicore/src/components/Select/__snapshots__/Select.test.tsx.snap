@@ -433,7 +433,7 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
                 <div
                   class="noResultsFound"
                 >
-                  Nothing Found
+                  No Match Found
                 </div>
               </ul>
             </div>
