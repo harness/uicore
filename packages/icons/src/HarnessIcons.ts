@@ -664,6 +664,7 @@ import ServiceElk from './service-elk.svg'
 import ServiceGar from './service-gar.svg'
 import ServiceGcpWithText from './service-gcp-with-text.svg'
 import ServiceGcp from './service-gcp.svg'
+import ServiceGithubPackage from './service-github-package.svg'
 import ServiceGithub from './service-github.svg'
 import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
@@ -1454,6 +1455,7 @@ type HarnessIconName =
   | 'service-gar'
   | 'service-gcp-with-text'
   | 'service-gcp'
+  | 'service-github-package'
   | 'service-github'
   | 'service-gotlab'
   | 'service-helm'
@@ -2244,6 +2246,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-gar': ServiceGar,
   'service-gcp-with-text': ServiceGcpWithText,
   'service-gcp': ServiceGcp,
+  'service-github-package': ServiceGithubPackage,
   'service-github': ServiceGithub,
   'service-gotlab': ServiceGotlab,
   'service-helm': ServiceHelm,
