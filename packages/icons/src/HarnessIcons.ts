@@ -121,6 +121,7 @@ import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
+import ChaosStage from './chaos-stage.svg'
 import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
@@ -901,6 +902,7 @@ type HarnessIconName =
   | 'chaos-main'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
+  | 'chaos-stage'
   | 'chat'
   | 'check-alt'
   | 'check'
@@ -1681,6 +1683,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-main': ChaosMain,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
+  'chaos-stage': ChaosStage,
   chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
