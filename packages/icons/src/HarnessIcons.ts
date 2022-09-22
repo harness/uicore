@@ -339,6 +339,8 @@ import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import GovernancePolicyset from './governance-policyset.svg'
+import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
@@ -1119,6 +1121,8 @@ type HarnessIconName =
   | 'gitops-yes'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'governance-policyset'
+  | 'governance-shield'
   | 'governance'
   | 'graph'
   | 'grey-cluster'
@@ -1899,6 +1903,8 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-yes': GitopsYes,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  'governance-policyset': GovernancePolicyset,
+  'governance-shield': GovernanceShield,
   governance: Governance,
   graph: Graph,
   'grey-cluster': GreyCluster,
