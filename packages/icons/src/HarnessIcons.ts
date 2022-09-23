@@ -200,6 +200,9 @@ import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CreatePr from './create-pr.svg'
+import CreateViaExistingYaml from './create-via-existing-yaml.svg'
+import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
+import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
 import CsHover from './cs-hover.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
@@ -982,6 +985,9 @@ type HarnessIconName =
   | 'coverage-status-error'
   | 'coverage-status-success'
   | 'create-pr'
+  | 'create-via-existing-yaml'
+  | 'create-via-pipeline-template'
+  | 'create-via-starter-pipeline'
   | 'cs-hover'
   | 'custom-approval'
   | 'custom-artifact'
@@ -1764,6 +1770,9 @@ const HarnessIcons: KVO<ElementType> = {
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   'create-pr': CreatePr,
+  'create-via-existing-yaml': CreateViaExistingYaml,
+  'create-via-pipeline-template': CreateViaPipelineTemplate,
+  'create-via-starter-pipeline': CreateViaStarterPipeline,
   'cs-hover': CsHover,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
