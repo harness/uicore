@@ -254,6 +254,7 @@ import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
+import Dotnet from './dotnet.svg'
 import Down from './down.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
@@ -340,6 +341,7 @@ import GitopsRepositoryCertificatesBlueCircle from './gitops-repository-certific
 import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
+import Golang from './golang.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
@@ -369,6 +371,7 @@ import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Integration from './integration.svg'
+import Java from './java.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
 import JiraCreateInverse from './jira-create-inverse.svg'
@@ -526,6 +529,7 @@ import NgFilter from './ng-filter.svg'
 import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
+import Nodejs from './nodejs.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OfflineOutline from './offline-outline.svg'
@@ -562,6 +566,7 @@ import ProjectsWizard from './projects-wizard.svg'
 import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
+import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
@@ -1039,6 +1044,7 @@ type HarnessIconName =
   | 'docker-step-inverse'
   | 'docker-step'
   | 'docs'
+  | 'dotnet'
   | 'down'
   | 'ecr-step-inverse'
   | 'ecr-step'
@@ -1125,6 +1131,7 @@ type HarnessIconName =
   | 'gitops-suspended'
   | 'gitops-unknown'
   | 'gitops-yes'
+  | 'golang'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance-policy-set'
@@ -1154,6 +1161,7 @@ type HarnessIconName =
   | 'initialize-step'
   | 'insight-view'
   | 'integration'
+  | 'java'
   | 'jira-approve-inverse'
   | 'jira-approve'
   | 'jira-create-inverse'
@@ -1311,6 +1319,7 @@ type HarnessIconName =
   | 'no-deployments'
   | 'no-feedback-given'
   | 'no-instances'
+  | 'nodejs'
   | 'not-synced'
   | 'notification'
   | 'offline-outline'
@@ -1347,6 +1356,7 @@ type HarnessIconName =
   | 'prune-skipped'
   | 'pruned'
   | 'publish-step'
+  | 'python'
   | 'question'
   | 'queue-step'
   | 'queued'
@@ -1824,6 +1834,7 @@ const HarnessIcons: KVO<ElementType> = {
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
   docs: Docs,
+  dotnet: Dotnet,
   down: Down,
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
@@ -1910,6 +1921,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-suspended': GitopsSuspended,
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
+  golang: Golang,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   'governance-policy-set': GovernancePolicySet,
@@ -1939,6 +1951,7 @@ const HarnessIcons: KVO<ElementType> = {
   'initialize-step': InitializeStep,
   'insight-view': InsightView,
   integration: Integration,
+  java: Java,
   'jira-approve-inverse': JiraApproveInverse,
   'jira-approve': JiraApprove,
   'jira-create-inverse': JiraCreateInverse,
@@ -2096,6 +2109,7 @@ const HarnessIcons: KVO<ElementType> = {
   'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
   'no-instances': NoInstances,
+  nodejs: Nodejs,
   'not-synced': NotSynced,
   notification: Notification,
   'offline-outline': OfflineOutline,
@@ -2132,6 +2146,7 @@ const HarnessIcons: KVO<ElementType> = {
   'prune-skipped': PruneSkipped,
   pruned: Pruned,
   'publish-step': PublishStep,
+  python: Python,
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
