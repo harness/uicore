@@ -259,6 +259,7 @@ import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
 import GcpKms from './gcp-kms.svg'
+import GcpSecretManager from './gcp-secret-manager.svg'
 import Gcp from './gcp.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
@@ -987,6 +988,7 @@ type HarnessIconName =
   | 'full-screen'
   | 'functions'
   | 'gcp-kms'
+  | 'gcp-secret-manager'
   | 'gcp'
   | 'gcr-step-inverse'
   | 'gcr-step'
@@ -1715,6 +1717,7 @@ const HarnessIcons: KVO<ElementType> = {
   'full-screen': FullScreen,
   functions: Functions,
   'gcp-kms': GcpKms,
+  'gcp-secret-manager': GcpSecretManager,
   gcp: Gcp,
   'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
