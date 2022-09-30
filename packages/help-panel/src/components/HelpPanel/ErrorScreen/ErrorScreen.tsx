@@ -22,7 +22,7 @@ const ErrorScreen = (): React.ReactElement => {
       style={{ flexDirection: 'column', textAlign: 'center' }}>
       <Container style={errorIcon} className={css.errorIcon}></Container>
       <Container>Error loading content. Please check out our documentation for help on Harness.</Container>
-      <a href="https://ngdocs.harness.io/" target="_blank" rel="noreferrer" className={css.harnessDocButton}>
+      <a href="https://docs.harness.io/" target="_blank" rel="noreferrer" className={css.harnessDocButton}>
         Head to Harness Docs
       </a>
     </Container>

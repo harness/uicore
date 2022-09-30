@@ -14,7 +14,7 @@ import { useLocalStorage } from './hooks/useLocalStorage'
 interface HelpPanelContextProps {
   referenceIdMap: Record<string, string>
   isHelpPanelVisible: boolean
-  setHelpPanelVisibility: (show: boolean, showAgain?: boolean) => void
+  toggleShowAgain: () => void
   showAgain: boolean
   error: Error | undefined
 }
@@ -22,7 +22,7 @@ interface HelpPanelContextProps {
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   referenceIdMap: {},
   isHelpPanelVisible: true,
-  setHelpPanelVisibility: () => void 0,
+  toggleShowAgain: () => void 0,
   showAgain: false,
   error: undefined
 })
@@ -38,21 +38,19 @@ interface HelpPanelStorageState {
   dontShowAgain: boolean
 }
 
-const TOP_LEVEL_KEY = 'helpPanel'
+export const HELP_PANEL_STORAGE_KEY = 'helpPanel'
 export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> = props => {
   const { accessToken, space, environment = HelpPanelEnvironment.master } = props
   const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
-  const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(TOP_LEVEL_KEY, { dontShowAgain: false })
-  const [showHelpPanel, setShowHelpPanel] = useState<boolean>(!storageData.dontShowAgain)
+  const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(HELP_PANEL_STORAGE_KEY, {
+    dontShowAgain: false
+  })
   const [error, setError] = useState<Error | undefined>()
 
-  const setHelpPanelVisibility = (isHelpPanelVisible: boolean, updateShowAgain?: boolean) => {
-    setShowHelpPanel(isHelpPanelVisible)
-    if (updateShowAgain) {
-      setStorage({
-        dontShowAgain: !storageData.dontShowAgain
-      })
-    }
+  const toggleShowAgain = () => {
+    setStorage({
+      dontShowAgain: !storageData.dontShowAgain
+    })
   }
 
   useEffect(() => {
@@ -64,7 +62,8 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         const getContentIdMap = async (): Promise<void> => {
           const response = await client.getEntries<IReferenceIdMap>({
             // eslint-disable-next-line camelcase
-            content_type: ContentType.referenceIdMap
+            content_type: ContentType.referenceIdMap,
+            limit: 1000
           })
           setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
         }
@@ -82,8 +81,8 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
     <HelpPanelContext.Provider
       value={{
         referenceIdMap,
-        isHelpPanelVisible: showHelpPanel,
-        setHelpPanelVisibility,
+        isHelpPanelVisible: storageData.dontShowAgain,
+        toggleShowAgain,
         showAgain: storageData.dontShowAgain,
         error
       }}>

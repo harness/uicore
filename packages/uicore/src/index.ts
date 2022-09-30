@@ -15,12 +15,14 @@ export {
   NestedAccordionContextData
 } from './components/Accordion/NestedAccordion'
 export { Avatar, AvatarProps, AvatarSizes } from './components/Avatar/Avatar'
+export { getInitialsFromNameOrEmail } from './components/Avatar/utils'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
 export { Button, ButtonProps, ButtonVariation, ButtonSize } from './components/Button/Button'
 export { SplitButton, SplitButtonOption } from './components/SplitButton/SplitButton'
 export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export { Checkbox } from './components/Checkbox/Checkbox'
+export { CopyToClipboard, CopyToClipboardProps } from './components/CopyToClipboard/CopyToClipboard'
 export { Dialog } from './components/Dialog/Dialog'
 export { ModalDialog } from './components/ModalDialog/ModalDialog'
 export { Toggle } from './components/Toggle/Toggle'
@@ -116,7 +118,7 @@ export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeS
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
 export { Table, TableProps } from './components/Table/Table'
 export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikForm'
-export { errorCheck } from './components/FormikForm/utils'
+export { errorCheck, getFormFieldLabel } from './components/FormikForm/utils'
 export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
 export { ColorPicker } from './components/ColorPicker/ColorPicker'
@@ -141,7 +143,14 @@ export {
   MultiTypeIcon,
   MultiTypeIconSize
 } from './components/MultiTypeInput/MultiTypeInputUtils'
-export { MultiTypeInputMenu, MultiTypeInputMenuProps } from './components/MultiTypeInput/MultiTypeInputMenu'
+export {
+  MultiTypeInputMenu,
+  MultiTypeInputMenuProps,
+  MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY,
+  AllowedTypes,
+  AllowedTypesWithExecutionTime,
+  AllowedTypesWithRunTime
+} from './components/MultiTypeInput/MultiTypeInputMenu'
 export {
   CategorizedSelectProps,
   CategorizedSelect,
@@ -157,6 +166,11 @@ export {
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
 export { SelectWithSubmenu, SelectWithSubmenuProps } from './components/SelectWithSubmenu/SelectWithSubmenu'
+export {
+  MultiSelectWithSubmenu,
+  MultiSelectWithSubmenuProps,
+  MultiSelectWithSubmenuOption
+} from './components/MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 export {
   WeightedStack,
   WeightedStackProps,
@@ -181,7 +195,7 @@ export { Breadcrumbs, BreadcrumbsProps, Breadcrumb } from './components/Breadcru
 export { GridListToggle, GridListToggleProps, Views } from './components/GridListToggle/GridListToggle'
 export { FormError } from './components/FormError/FormError'
 export { FormikTooltipContext } from './components/FormikForm/FormikTooltipContext'
-export { MultiSelectDropDown } from './components/MultiSelectDropDown/MultiSelectDropDown'
+export { MultiSelectDropDown, MultiSelectDropDownProps } from './components/MultiSelectDropDown/MultiSelectDropDown'
 export { useToaster } from './hooks/useToaster/useToaster'
 export { Page } from './components/Page/Page'
 export { PageError, PageErrorProps } from './components/Page/PageError'

@@ -36,15 +36,12 @@ describe('ModalDialog', () => {
       expect(screen.getByTestId('modaldialog-body').parentElement).toHaveClass('noHeader')
     })
 
-    test('it should not set the noHeader modifier when one of title or toolbar are omitted', async () => {
+    test('it should not set the noHeader modifier when title is passed', async () => {
       const { rerender } = renderComponent({ title: 'Test' })
       expect(screen.getByTestId('modaldialog-body').parentElement).not.toHaveClass('noHeader')
 
       rerender(<ModalDialog isOpen={true} />)
       expect(screen.getByTestId('modaldialog-body').parentElement).toHaveClass('noHeader')
-
-      rerender(<ModalDialog isOpen={true} toolbar="Test" />)
-      expect(screen.getByTestId('modaldialog-body').parentElement).not.toHaveClass('noHeader')
     })
   })
 
@@ -55,12 +52,19 @@ describe('ModalDialog', () => {
 
       expect(screen.getByTestId(toolbarTestId)).toBeInTheDocument()
       expect(screen.getByTestId('modaldialog-toolbar')).toBeInTheDocument()
+      expect(screen.getByTestId('modaldialog-body').parentElement).not.toHaveClass('noToolbar')
     })
 
     test('it should not include the toolbar when omitted', async () => {
       renderComponent()
 
       expect(screen.queryByTestId('modaldialog-toolbar')).not.toBeInTheDocument()
+    })
+
+    test('it should add the class noToolbar when toolbar is omitted', async () => {
+      renderComponent()
+
+      expect(screen.getByTestId('modaldialog-body').parentElement).toHaveClass('noToolbar')
     })
   })
 

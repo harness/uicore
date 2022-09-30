@@ -13,6 +13,7 @@
 .dropdown {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+  padding-right: var(--spacing-medium) !important;
   position: relative;
   &::before {
     content: '';
@@ -23,10 +24,16 @@
     top: 20%;
     background-color: var(--white);
   }
+  &[class*='variation-secondary']::before,
+  &[class*='variation-link']::before {
+    background-color: var(--primary-7);
+  }
 }
 
 .splitButton {
   position: relative;
+  display: flex;
+  align-items: center;
   button.bp3-button {
     box-shadow: none;
   }
@@ -46,6 +53,14 @@
 
     .bp3-icon.bp3-icon-chevron-down {
       padding-left: 0 !important;
+    }
+
+    .border-left-0.Button--button[class*='bp3-button'] {
+      border-left: none !important;
+    }
+
+    .border-right-0.Button--button[class*='bp3-button'] {
+      border-right: none !important;
     }
   }
 }

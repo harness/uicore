@@ -19,6 +19,15 @@ export interface CarouselProps {
   hideIndicators?: boolean // false
   onChange?: (slideNumber: number) => void
   children: Array<React.ReactElement<HTMLElement>> | React.ReactElement<HTMLElement>
+  indicatorsClassName?: string
+  slideClassName?: string
+  hideSlideChangeButtons?: boolean
+
+  /** When true, the slide will change automatically  */
+  autoPlay?: boolean
+
+  /** Interval in milliseconds to automatically go to the next item when autoPlay is true, defaults to 2000  */
+  autoPlayInterval?: number
 }
 
 export const Carousel: React.FC<CarouselProps> = ({
@@ -28,10 +37,22 @@ export const Carousel: React.FC<CarouselProps> = ({
   nextElement,
   previousElement,
   hideIndicators = false,
-  onChange
+  autoPlay,
+  autoPlayInterval = 2000,
+  onChange,
+  hideSlideChangeButtons = false,
+  indicatorsClassName,
+  slideClassName
 }) => {
   const [totalSlides, setTotalSlides] = React.useState(1)
   const [activeSlide, setActiveSlide] = React.useState(1)
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+  }
 
   React.useEffect(() => {
     let slides = 1
@@ -46,7 +67,19 @@ export const Carousel: React.FC<CarouselProps> = ({
   }, [defaultSlide])
 
   React.useEffect(() => {
+    resetTimeout()
+
+    if (autoPlay && Array.isArray(children) && children.length > activeSlide) {
+      timeoutRef.current = setTimeout(() => {
+        setActiveSlide(activeSlide + 1)
+      }, autoPlayInterval)
+    }
+
     onChange?.(activeSlide)
+
+    return () => {
+      resetTimeout()
+    }
   }, [activeSlide])
 
   const indicators = [...Array(totalSlides)].map((_ar, index) => (
@@ -64,7 +97,8 @@ export const Carousel: React.FC<CarouselProps> = ({
         css.carouselItem,
         { [css.carouselItemPrev]: activeSlide === index + 2 },
         { [css.active]: activeSlide === index + 1 },
-        { [css.carouselItemNext]: activeSlide === index }
+        { [css.carouselItemNext]: activeSlide === index },
+        slideClassName
       )}>
       {Array.isArray(children) ? children[index] : children}
     </div>
@@ -74,7 +108,8 @@ export const Carousel: React.FC<CarouselProps> = ({
     <Layout.Vertical spacing="xsmall" padding="small" className={cx(css.carousel, className)}>
       <div className={css.carouselView}>
         {!previousElement ? (
-          activeSlide > 1 && (
+          activeSlide > 1 &&
+          !hideSlideChangeButtons && (
             <div className={css.carouselLeft} onClick={() => setActiveSlide(activeSlide - 1)}>
               <div>
                 <Icon name="main-chevron-left" size={20} color="white" />
@@ -86,7 +121,8 @@ export const Carousel: React.FC<CarouselProps> = ({
         )}
         {items}
         {!nextElement ? (
-          activeSlide < totalSlides && (
+          activeSlide < totalSlides &&
+          !hideSlideChangeButtons && (
             <div className={css.carouselRight} onClick={() => setActiveSlide(activeSlide + 1)}>
               <div>
                 <Icon name="main-chevron-right" size={20} color="white" />
@@ -97,7 +133,7 @@ export const Carousel: React.FC<CarouselProps> = ({
           <span onClick={() => setActiveSlide(activeSlide + 1)}>{nextElement} </span>
         )}
       </div>
-      {!hideIndicators && <div className={css.carouselIndicators}>{indicators}</div>}
+      {!hideIndicators && <div className={cx(css.carouselIndicators, indicatorsClassName)}>{indicators}</div>}
     </Layout.Vertical>
   )
 }

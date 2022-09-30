@@ -61,6 +61,7 @@ export interface SelectProps
   onQueryChange?: Props['onQueryChange']
   addTooltip?: boolean
   borderless?: boolean
+  loadingItems?: boolean
 }
 
 function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
@@ -131,6 +132,7 @@ export function Select(props: SelectProps): React.ReactElement {
     resetOnClose = true,
     addTooltip = false,
     borderless = false,
+    loadingItems,
     ...rest
   } = props
   const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
@@ -182,7 +184,7 @@ export function Select(props: SelectProps): React.ReactElement {
     _active: boolean,
     handleClick: React.MouseEventHandler<HTMLElement>
   ): JSX.Element | undefined {
-    if (loading) {
+    if (loading || loadingItems) {
       return (
         <li key="loading" className={cx(css.menuItem, css.loading)}>
           Loading results...
@@ -190,13 +192,12 @@ export function Select(props: SelectProps): React.ReactElement {
       )
     }
 
-    if (
-      !loading &&
-      items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0
-    )
+    if (!loading)
       return (
         <React.Fragment>
-          <div className={css.noResultsFound}>Nothing Found</div>
+          {items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0 ? (
+            <div className={css.noResultsFound}>No Match Found</div>
+          ) : null}
           {props.allowCreatingNewItems && (
             <Button
               intent="primary"

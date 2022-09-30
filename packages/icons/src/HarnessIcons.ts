@@ -11,6 +11,8 @@
  */
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
+import Account from './Account.svg'
+import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -31,20 +33,31 @@ import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
+import Arrow from './arrow.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
+import Autostopping from './autostopping.svg'
 import AwsCodecommit from './aws-codecommit.svg'
+import AwsEctwoService from './aws-ectwo-service.svg'
 import AwsKms from './aws-kms.svg'
 import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
+import AzureArmRollback from './azure-arm-rollback.svg'
+import AzureArm from './azure-arm.svg'
 import AzureBlob from './azure-blob.svg'
+import AzureBlueprints from './azure-blueprints.svg'
+import AzureContainerRegistry from './azure-container-registry.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
+import AzureVm from './azure-vm.svg'
+import Azurewebapp from './azurewebapp.svg'
+import BackgroundStep from './background-step.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
 import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
+import BaselineTarget from './baseline-target.svg'
 import BasicDeployment from './basic-deployment.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
@@ -62,6 +75,7 @@ import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
+import CanaryGrey from './canary-grey.svg'
 import CanaryIcon from './canary-icon.svg'
 import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
@@ -100,6 +114,14 @@ import CfMain from './cf-main.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
+import ChaosCube from './chaos-cube.svg'
+import ChaosExperimentWeight from './chaos-experiment-weight.svg'
+import ChaosHubs from './chaos-hubs.svg'
+import ChaosLitmuschaos from './chaos-litmuschaos.svg'
+import ChaosMain from './chaos-main.svg'
+import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
+import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
+import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
 import CiActiveBuild from './ci-active-build.svg'
@@ -126,6 +148,7 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
+import CloudAccounts from './cloud-accounts.svg'
 import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
@@ -163,6 +186,7 @@ import ConditionalSkip from './conditional-skip.svg'
 import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
+import Configure from './configure.svg'
 import ConnectivityMode from './connectivity-mode.svg'
 import ConnectorsBlue from './connectors-blue.svg'
 import ConnectorsIcon from './connectors-icon.svg'
@@ -170,16 +194,25 @@ import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import ContactSupport from './contact-support.svg'
 import CopyAlt from './copy-alt.svg'
+import CopyDoc from './copy-doc.svg'
 import Copy from './copy.svg'
+import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import CreatePr from './create-pr.svg'
+import CreateViaExistingYaml from './create-via-existing-yaml.svg'
+import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
+import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
 import CsHover from './cs-hover.svg'
+import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
+import CustomRemoteManifest from './custom-remote-manifest.svg'
 import CustomService from './custom-service.svg'
+import CustomSm from './custom-sm.svg'
 import CustomStageIcon from './custom-stage-icon.svg'
 import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
+import Customize from './customize.svg'
 import CvHover from './cv-hover.svg'
 import CvMainInverse from './cv-main-inverse.svg'
 import CvMain from './cv-main.svg'
@@ -191,6 +224,7 @@ import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DataFetchError from './data-fetch-error.svg'
+import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
 import DependencyDefaultIcon from './dependency-default-icon.svg'
@@ -220,14 +254,19 @@ import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
+import Dotnet from './dotnet.svg'
 import Down from './down.svg'
+import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import Elk from './elk.svg'
 import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
 import Entity from './entity.svg'
+import EnvironmentGroupOutline from './environment-group-outline.svg'
 import EnvironmentGroup from './environment-group.svg'
 import Environment from './environment.svg'
+import EnvironmentsOutline from './environments-outline.svg'
 import Environments from './environments.svg'
 import ErrorOutline from './error-outline.svg'
 import ErrorTracking from './error-tracking.svg'
@@ -251,13 +290,16 @@ import FfSolid from './ff-solid.svg'
 import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
+import Filestore from './filestore.svg'
 import FixedInput from './fixed-input.svg'
+import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
+import GcpEngine from './gcp-engine.svg'
 import GcpKms from './gcp-kms.svg'
 import GcpSecretManager from './gcp-secret-manager.svg'
 import Gcp from './gcp.svg'
@@ -300,11 +342,15 @@ import GitopsRepositoryCertificatesBlueCircle from './gitops-repository-certific
 import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
+import Golang from './golang.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import GovernancePolicySet from './governance-policy-set.svg'
+import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
+import Grid from './grid.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -312,6 +358,7 @@ import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
+import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
@@ -325,6 +372,7 @@ import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Integration from './integration.svg'
+import Java from './java.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
 import JiraCreateInverse from './jira-create-inverse.svg'
@@ -345,6 +393,7 @@ import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListView from './list-view.svg'
 import Loading from './loading.svg'
+import Looping from './looping.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -400,6 +449,7 @@ import MainMove from './main-move.svg'
 import MainNotes from './main-notes.svg'
 import MainNotifications from './main-notifications.svg'
 import MainPause from './main-pause.svg'
+import MainPin from './main-pin.svg'
 import MainPipelines from './main-pipelines.svg'
 import MainPopularity from './main-popularity.svg'
 import MainRefresh from './main-refresh.svg'
@@ -423,6 +473,7 @@ import MainThumbsup from './main-thumbsup.svg'
 import MainTick from './main-tick.svg'
 import MainTrash from './main-trash.svg'
 import MainUnlock from './main-unlock.svg'
+import MainUnpin from './main-unpin.svg'
 import MainUpload from './main-upload.svg'
 import MainUserGroups from './main-user-groups.svg'
 import MainUser from './main-user.svg'
@@ -430,6 +481,7 @@ import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import MemberRole from './memberRole.svg'
+import MergePr from './merge-pr.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
@@ -470,6 +522,7 @@ import NavSettings from './nav-settings.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
+import Network from './network.svg'
 import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
@@ -477,6 +530,7 @@ import NgFilter from './ng-filter.svg'
 import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
+import Nodejs from './nodejs.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import OfflineOutline from './offline-outline.svg'
@@ -506,12 +560,14 @@ import Placeholder from './placeholder.svg'
 import PlayCircle from './play-circle.svg'
 import PlayOutline from './play-outline.svg'
 import PluginStep from './plugin-step.svg'
+import Pod from './pod.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
 import ProjectsWizard from './projects-wizard.svg'
 import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
+import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
@@ -582,6 +638,7 @@ import SecretsIcon from './secrets-icon.svg'
 import SecurityStage from './security-stage.svg'
 import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
+import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactoryInverse from './service-artifactory-inverse.svg'
 import ServiceArtifactory from './service-artifactory.svg'
@@ -605,8 +662,10 @@ import ServiceDynatrace from './service-dynatrace.svg'
 import ServiceEcs from './service-ecs.svg'
 import ServiceElastigroup from './service-elastigroup.svg'
 import ServiceElk from './service-elk.svg'
+import ServiceGar from './service-gar.svg'
 import ServiceGcpWithText from './service-gcp-with-text.svg'
 import ServiceGcp from './service-gcp.svg'
+import ServiceGithubPackage from './service-github-package.svg'
 import ServiceGithub from './service-github.svg'
 import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
@@ -643,6 +702,7 @@ import ServiceSpotinst from './service-spotinst.svg'
 import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
+import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
 import ServicenowApprove from './servicenow-approve.svg'
@@ -656,6 +716,7 @@ import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
+import SlotDeployment from './slot-deployment.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
@@ -718,6 +779,8 @@ import University from './university.svg'
 import Up from './up.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
+import UserGroups from './user-groups.svg'
+import User from './user.svg'
 import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
 import Variable from './variable.svg'
@@ -740,6 +803,8 @@ import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
+  | 'Account'
+  | 'CustomDeployment'
   | 'Edit'
   | 'Inline'
   | 'Options'
@@ -760,20 +825,31 @@ type HarnessIconName =
   | 'approval-step'
   | 'argo'
   | 'arm'
+  | 'arrow'
   | 'audit-log-created'
   | 'audit-trail'
+  | 'autostopping'
   | 'aws-codecommit'
+  | 'aws-ectwo-service'
   | 'aws-kms'
   | 'aws-rds'
   | 'aws-secret-manager'
+  | 'azure-arm-rollback'
+  | 'azure-arm'
   | 'azure-blob'
+  | 'azure-blueprints'
+  | 'azure-container-registry'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
+  | 'azure-vm'
+  | 'azurewebapp'
+  | 'background-step'
   | 'banned'
   | 'bar-chart'
   | 'barrier-close'
   | 'barrier-open-with-links'
   | 'barrier-open'
+  | 'baseline-target'
   | 'basic-deployment'
   | 'bin-main'
   | 'bitbucket-blue'
@@ -791,6 +867,7 @@ type HarnessIconName =
   | 'build-stage'
   | 'canary-delete-inverse'
   | 'canary-delete'
+  | 'canary-grey'
   | 'canary-icon'
   | 'canary-inverse'
   | 'canary-outline'
@@ -829,6 +906,14 @@ type HarnessIconName =
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
+  | 'chaos-cube'
+  | 'chaos-experiment-weight'
+  | 'chaos-hubs'
+  | 'chaos-litmuschaos'
+  | 'chaos-main'
+  | 'chaos-scenario-builder-faded'
+  | 'chaos-scenario-builder'
+  | 'chat'
   | 'check-alt'
   | 'check'
   | 'ci-active-build'
@@ -855,6 +940,7 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-stop'
   | 'clipboard-alt'
+  | 'cloud-accounts'
   | 'cloud-dark'
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
@@ -892,6 +978,7 @@ type HarnessIconName =
   | 'conditional-when'
   | 'config-change'
   | 'config-file'
+  | 'configure'
   | 'connectivity-mode'
   | 'connectors-blue'
   | 'connectors-icon'
@@ -899,16 +986,25 @@ type HarnessIconName =
   | 'connectthroughmanager'
   | 'contact-support'
   | 'copy-alt'
+  | 'copy-doc'
   | 'copy'
+  | 'cost-data-collection'
   | 'coverage-status-error'
   | 'coverage-status-success'
   | 'create-pr'
+  | 'create-via-existing-yaml'
+  | 'create-via-pipeline-template'
+  | 'create-via-starter-pipeline'
   | 'cs-hover'
+  | 'custom-approval'
   | 'custom-artifact'
+  | 'custom-remote-manifest'
   | 'custom-service'
+  | 'custom-sm'
   | 'custom-stage-icon'
   | 'custom-stage'
   | 'customRole'
+  | 'customize'
   | 'cv-hover'
   | 'cv-main-inverse'
   | 'cv-main'
@@ -920,6 +1016,7 @@ type HarnessIconName =
   | 'dashboard-selected'
   | 'dashboard'
   | 'data-fetch-error'
+  | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
   | 'dependency-default-icon'
@@ -949,14 +1046,19 @@ type HarnessIconName =
   | 'docker-step-inverse'
   | 'docker-step'
   | 'docs'
+  | 'dotnet'
   | 'down'
+  | 'ecr-step-inverse'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'elk'
   | 'email-inline'
   | 'email-step'
   | 'entity'
+  | 'environment-group-outline'
   | 'environment-group'
   | 'environment'
+  | 'environments-outline'
   | 'environments'
   | 'error-outline'
   | 'error-tracking'
@@ -980,13 +1082,16 @@ type HarnessIconName =
   | 'ff-with-dark-text'
   | 'ff-with-text'
   | 'file'
+  | 'filestore'
   | 'fixed-input'
+  | 'flag-tick'
   | 'flag'
   | 'flash'
   | 'folder-upload'
   | 'full-screen-exit'
   | 'full-screen'
   | 'functions'
+  | 'gcp-engine'
   | 'gcp-kms'
   | 'gcp-secret-manager'
   | 'gcp'
@@ -1029,11 +1134,15 @@ type HarnessIconName =
   | 'gitops-suspended'
   | 'gitops-unknown'
   | 'gitops-yes'
+  | 'golang'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'governance-policy-set'
+  | 'governance-shield'
   | 'governance'
   | 'graph'
   | 'grey-cluster'
+  | 'grid'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
@@ -1041,6 +1150,7 @@ type HarnessIconName =
   | 'harness'
   | 'hashiCorpVault'
   | 'health'
+  | 'helm-oci'
   | 'helm-rollback'
   | 'help'
   | 'hourglass'
@@ -1054,6 +1164,7 @@ type HarnessIconName =
   | 'initialize-step'
   | 'insight-view'
   | 'integration'
+  | 'java'
   | 'jira-approve-inverse'
   | 'jira-approve'
   | 'jira-create-inverse'
@@ -1074,6 +1185,7 @@ type HarnessIconName =
   | 'list-entity-infographic'
   | 'list-view'
   | 'loading'
+  | 'looping'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -1129,6 +1241,7 @@ type HarnessIconName =
   | 'main-notes'
   | 'main-notifications'
   | 'main-pause'
+  | 'main-pin'
   | 'main-pipelines'
   | 'main-popularity'
   | 'main-refresh'
@@ -1152,6 +1265,7 @@ type HarnessIconName =
   | 'main-tick'
   | 'main-trash'
   | 'main-unlock'
+  | 'main-unpin'
   | 'main-upload'
   | 'main-user-groups'
   | 'main-user'
@@ -1159,6 +1273,7 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
+  | 'merge-pr'
   | 'microsoft-azure'
   | 'money-icon'
   | 'multi-service'
@@ -1199,6 +1314,7 @@ type HarnessIconName =
   | 'nav-user-profile-hover'
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
+  | 'network'
   | 'new-artifact'
   | 'new-decoration'
   | 'new-notification'
@@ -1206,6 +1322,7 @@ type HarnessIconName =
   | 'no-deployments'
   | 'no-feedback-given'
   | 'no-instances'
+  | 'nodejs'
   | 'not-synced'
   | 'notification'
   | 'offline-outline'
@@ -1235,12 +1352,14 @@ type HarnessIconName =
   | 'play-circle'
   | 'play-outline'
   | 'plugin-step'
+  | 'pod'
   | 'polygon'
   | 'profile'
   | 'projects-wizard'
   | 'prune-skipped'
   | 'pruned'
   | 'publish-step'
+  | 'python'
   | 'question'
   | 'queue-step'
   | 'queued'
@@ -1311,6 +1430,7 @@ type HarnessIconName =
   | 'security-stage'
   | 'send-data'
   | 'serverless-deploy-step'
+  | 'service-amazon-ecs'
   | 'service-appdynamics'
   | 'service-artifactory-inverse'
   | 'service-artifactory'
@@ -1334,8 +1454,10 @@ type HarnessIconName =
   | 'service-ecs'
   | 'service-elastigroup'
   | 'service-elk'
+  | 'service-gar'
   | 'service-gcp-with-text'
   | 'service-gcp'
+  | 'service-github-package'
   | 'service-github'
   | 'service-gotlab'
   | 'service-helm'
@@ -1372,6 +1494,7 @@ type HarnessIconName =
   | 'service-stackdriver'
   | 'service-sumologic'
   | 'service-terraform'
+  | 'service-vm'
   | 'service'
   | 'servicenow-approve-inverse'
   | 'servicenow-approve'
@@ -1385,6 +1508,7 @@ type HarnessIconName =
   | 'shield-gears'
   | 'skipped'
   | 'slider-trigger'
+  | 'slot-deployment'
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'spinner'
@@ -1447,6 +1571,8 @@ type HarnessIconName =
   | 'up'
   | 'upgrade-bolt'
   | 'upload-box'
+  | 'user-groups'
+  | 'user'
   | 'utility'
   | 'valuesFIle'
   | 'variable'
@@ -1469,6 +1595,8 @@ type HarnessIconName =
   | 'zoom-out'
 
 const HarnessIcons: KVO<ElementType> = {
+  Account: Account,
+  CustomDeployment: CustomDeployment,
   Edit: Edit,
   Inline: Inline,
   Options: Options,
@@ -1489,20 +1617,31 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-step': ApprovalStep,
   argo: Argo,
   arm: Arm,
+  arrow: Arrow,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
+  autostopping: Autostopping,
   'aws-codecommit': AwsCodecommit,
+  'aws-ectwo-service': AwsEctwoService,
   'aws-kms': AwsKms,
   'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
+  'azure-arm-rollback': AzureArmRollback,
+  'azure-arm': AzureArm,
   'azure-blob': AzureBlob,
+  'azure-blueprints': AzureBlueprints,
+  'azure-container-registry': AzureContainerRegistry,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
+  'azure-vm': AzureVm,
+  azurewebapp: Azurewebapp,
+  'background-step': BackgroundStep,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
   'barrier-open-with-links': BarrierOpenWithLinks,
   'barrier-open': BarrierOpen,
+  'baseline-target': BaselineTarget,
   'basic-deployment': BasicDeployment,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
@@ -1520,6 +1659,7 @@ const HarnessIcons: KVO<ElementType> = {
   'build-stage': BuildStage,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
+  'canary-grey': CanaryGrey,
   'canary-icon': CanaryIcon,
   'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
@@ -1558,6 +1698,14 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
+  'chaos-cube': ChaosCube,
+  'chaos-experiment-weight': ChaosExperimentWeight,
+  'chaos-hubs': ChaosHubs,
+  'chaos-litmuschaos': ChaosLitmuschaos,
+  'chaos-main': ChaosMain,
+  'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
+  'chaos-scenario-builder': ChaosScenarioBuilder,
+  chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
   'ci-active-build': CiActiveBuild,
@@ -1584,6 +1732,7 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-stop': CircleStop,
   'clipboard-alt': ClipboardAlt,
+  'cloud-accounts': CloudAccounts,
   'cloud-dark': CloudDark,
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
@@ -1621,6 +1770,7 @@ const HarnessIcons: KVO<ElementType> = {
   'conditional-when': ConditionalWhen,
   'config-change': ConfigChange,
   'config-file': ConfigFile,
+  configure: Configure,
   'connectivity-mode': ConnectivityMode,
   'connectors-blue': ConnectorsBlue,
   'connectors-icon': ConnectorsIcon,
@@ -1628,16 +1778,25 @@ const HarnessIcons: KVO<ElementType> = {
   connectthroughmanager: Connectthroughmanager,
   'contact-support': ContactSupport,
   'copy-alt': CopyAlt,
+  'copy-doc': CopyDoc,
   copy: Copy,
+  'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   'create-pr': CreatePr,
+  'create-via-existing-yaml': CreateViaExistingYaml,
+  'create-via-pipeline-template': CreateViaPipelineTemplate,
+  'create-via-starter-pipeline': CreateViaStarterPipeline,
   'cs-hover': CsHover,
+  'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
+  'custom-remote-manifest': CustomRemoteManifest,
   'custom-service': CustomService,
+  'custom-sm': CustomSm,
   'custom-stage-icon': CustomStageIcon,
   'custom-stage': CustomStage,
   customRole: CustomRole,
+  customize: Customize,
   'cv-hover': CvHover,
   'cv-main-inverse': CvMainInverse,
   'cv-main': CvMain,
@@ -1649,6 +1808,7 @@ const HarnessIcons: KVO<ElementType> = {
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'data-fetch-error': DataFetchError,
+  'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
   'dependency-default-icon': DependencyDefaultIcon,
@@ -1678,14 +1838,19 @@ const HarnessIcons: KVO<ElementType> = {
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
   docs: Docs,
+  dotnet: Dotnet,
   down: Down,
+  'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  elk: Elk,
   'email-inline': EmailInline,
   'email-step': EmailStep,
   entity: Entity,
+  'environment-group-outline': EnvironmentGroupOutline,
   'environment-group': EnvironmentGroup,
   environment: Environment,
+  'environments-outline': EnvironmentsOutline,
   environments: Environments,
   'error-outline': ErrorOutline,
   'error-tracking': ErrorTracking,
@@ -1709,13 +1874,16 @@ const HarnessIcons: KVO<ElementType> = {
   'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
   file: File,
+  filestore: Filestore,
   'fixed-input': FixedInput,
+  'flag-tick': FlagTick,
   flag: Flag,
   flash: Flash,
   'folder-upload': FolderUpload,
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
   functions: Functions,
+  'gcp-engine': GcpEngine,
   'gcp-kms': GcpKms,
   'gcp-secret-manager': GcpSecretManager,
   gcp: Gcp,
@@ -1758,11 +1926,15 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-suspended': GitopsSuspended,
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
+  golang: Golang,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  'governance-policy-set': GovernancePolicySet,
+  'governance-shield': GovernanceShield,
   governance: Governance,
   graph: Graph,
   'grey-cluster': GreyCluster,
+  grid: Grid,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
@@ -1770,6 +1942,7 @@ const HarnessIcons: KVO<ElementType> = {
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
   health: Health,
+  'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
   hourglass: Hourglass,
@@ -1783,6 +1956,7 @@ const HarnessIcons: KVO<ElementType> = {
   'initialize-step': InitializeStep,
   'insight-view': InsightView,
   integration: Integration,
+  java: Java,
   'jira-approve-inverse': JiraApproveInverse,
   'jira-approve': JiraApprove,
   'jira-create-inverse': JiraCreateInverse,
@@ -1803,6 +1977,7 @@ const HarnessIcons: KVO<ElementType> = {
   'list-entity-infographic': ListEntityInfographic,
   'list-view': ListView,
   loading: Loading,
+  looping: Looping,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
@@ -1858,6 +2033,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-notes': MainNotes,
   'main-notifications': MainNotifications,
   'main-pause': MainPause,
+  'main-pin': MainPin,
   'main-pipelines': MainPipelines,
   'main-popularity': MainPopularity,
   'main-refresh': MainRefresh,
@@ -1881,6 +2057,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-tick': MainTick,
   'main-trash': MainTrash,
   'main-unlock': MainUnlock,
+  'main-unpin': MainUnpin,
   'main-upload': MainUpload,
   'main-user-groups': MainUserGroups,
   'main-user': MainUser,
@@ -1888,6 +2065,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: MemberRole,
+  'merge-pr': MergePr,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
@@ -1928,6 +2106,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-user-profile-hover': NavUserProfileHover,
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
+  network: Network,
   'new-artifact': NewArtifact,
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
@@ -1935,6 +2114,7 @@ const HarnessIcons: KVO<ElementType> = {
   'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
   'no-instances': NoInstances,
+  nodejs: Nodejs,
   'not-synced': NotSynced,
   notification: Notification,
   'offline-outline': OfflineOutline,
@@ -1964,12 +2144,14 @@ const HarnessIcons: KVO<ElementType> = {
   'play-circle': PlayCircle,
   'play-outline': PlayOutline,
   'plugin-step': PluginStep,
+  pod: Pod,
   polygon: Polygon,
   profile: Profile,
   'projects-wizard': ProjectsWizard,
   'prune-skipped': PruneSkipped,
   pruned: Pruned,
   'publish-step': PublishStep,
+  python: Python,
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
@@ -2040,6 +2222,7 @@ const HarnessIcons: KVO<ElementType> = {
   'security-stage': SecurityStage,
   'send-data': SendData,
   'serverless-deploy-step': ServerlessDeployStep,
+  'service-amazon-ecs': ServiceAmazonEcs,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory-inverse': ServiceArtifactoryInverse,
   'service-artifactory': ServiceArtifactory,
@@ -2063,8 +2246,10 @@ const HarnessIcons: KVO<ElementType> = {
   'service-ecs': ServiceEcs,
   'service-elastigroup': ServiceElastigroup,
   'service-elk': ServiceElk,
+  'service-gar': ServiceGar,
   'service-gcp-with-text': ServiceGcpWithText,
   'service-gcp': ServiceGcp,
+  'service-github-package': ServiceGithubPackage,
   'service-github': ServiceGithub,
   'service-gotlab': ServiceGotlab,
   'service-helm': ServiceHelm,
@@ -2101,6 +2286,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-stackdriver': ServiceStackdriver,
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
+  'service-vm': ServiceVm,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
   'servicenow-approve': ServicenowApprove,
@@ -2114,6 +2300,7 @@ const HarnessIcons: KVO<ElementType> = {
   'shield-gears': ShieldGears,
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
+  'slot-deployment': SlotDeployment,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   spinner: Spinner,
@@ -2176,6 +2363,8 @@ const HarnessIcons: KVO<ElementType> = {
   up: Up,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
+  'user-groups': UserGroups,
+  user: User,
   utility: Utility,
   valuesFIle: ValuesFIle,
   variable: Variable,

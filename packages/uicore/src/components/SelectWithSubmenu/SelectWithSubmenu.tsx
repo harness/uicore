@@ -15,51 +15,71 @@ import { Text } from '../Text/Text'
 
 import css from './SelectWithSubmenu.css'
 import selectCss from '../Select/Select.css'
+import { MultiTypeInputType } from 'index'
 
 export interface SubmenuSelectOption extends SelectOption {
   submenuItems: SelectOption[]
+  hasSubItems?: boolean
 }
 
 export interface SelectWithSubmenuProps extends Omit<SelectProps, 'items' | 'onChange'> {
   items: SubmenuSelectOption[]
-  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption) => void
+  loading?: boolean
+  onOpening?: (item: SelectOption) => void
+  interactionKind?: PopoverInteractionKind
+  onChange?: (primaryValue: SelectOption, selectedValue?: SelectOption, type?: MultiTypeInputType) => void
 }
 
 interface SubmenuProps {
   items: SelectOption[]
-  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption) => void
+  loading?: boolean
+  onChange?: (primaryValue: SelectOption, selectedValue: SelectOption, type?: MultiTypeInputType) => void
   primaryValue?: SelectOption
 }
 
-const Submenu = ({ items, onChange, primaryValue }: SubmenuProps) => (
-  <Menu className={css.submenu}>
-    {items?.map((item: any) => (
-      <MenuItem
-        key={item.value}
-        text={item.label}
-        onClick={(_: any) => onChange?.(primaryValue as SelectOption, item)}
-        className={css.submenuItem}
-      />
-    ))}
-  </Menu>
-)
+const Submenu = ({ items, onChange, primaryValue, loading }: SubmenuProps) => {
+  return (
+    <Menu className={css.submenu}>
+      {loading ? (
+        <div className={css.noResultsFound}>Loading...</div>
+      ) : items?.length ? (
+        items.map((item: any) => (
+          <MenuItem
+            key={item.value}
+            text={item.label}
+            onClick={() => {
+              onChange?.(primaryValue as SelectOption, item)
+            }}
+            className={css.submenuItem}
+          />
+        ))
+      ) : (
+        <div className={css.noResultsFound}>No Results Found</div>
+      )}
+    </Menu>
+  )
+}
 
 export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
-  const { items, className, onChange, ...selectProps } = props
+  const { items, className, loading, onChange, ...selectProps } = props
 
   const itemRenderer = useCallback(
     (item: SelectOption) => {
-      return (
+      return (item as SubmenuSelectOption).hasSubItems ? (
         <Popover
           content={
             <Submenu
               items={(item as SubmenuSelectOption).submenuItems}
               onChange={onChange}
               primaryValue={omit(item, 'submenuItems')}
+              loading={loading}
             />
           }
           position={Position.LEFT_TOP}
-          interactionKind={PopoverInteractionKind.HOVER}
+          interactionKind={props?.interactionKind || PopoverInteractionKind.HOVER}
+          onOpening={() => {
+            if (props.onOpening) props.onOpening(item)
+          }}
           minimal
           usePortal
           className={css.wrapperClassName}
@@ -83,10 +103,29 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps) {
             <Text rightIcon={'chevron-right'}>{item.label}</Text>
           </li>
         </Popover>
+      ) : (
+        <li
+          key={item.value?.toString()}
+          className={cx(selectCss.menuItem, css.menuItem)}
+          onClick={() => {
+            if (onChange) {
+              onChange(item)
+            }
+          }}>
+          <Text>{item.label}</Text>
+        </li>
       )
     },
-    [items]
+    [items, loading]
   )
 
-  return <Select {...selectProps} items={items} itemRenderer={itemRenderer} className={className} />
+  return (
+    <Select
+      {...selectProps}
+      items={items}
+      itemRenderer={itemRenderer}
+      className={className}
+      onChange={onChange as SelectProps['onChange']}
+    />
+  )
 }

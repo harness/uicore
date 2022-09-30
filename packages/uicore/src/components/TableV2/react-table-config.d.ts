@@ -1,4 +1,12 @@
 /*
+ * Copyright 2022 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+import { UseSortByOptions } from './react-table-config.d'
+/*
  * Copyright 2021 Harness Inc. All rights reserved.
  * Use of this source code is governed by the PolyForm Shield 1.0.0 license
  * that can be found in the licenses directory at the root of this repository, also available at
@@ -19,6 +27,7 @@ import {
   UseSortByOptions,
   UseSortByState,
   UsePaginationOptions,
+  UseExpandedOptions,
   UsePaginationInstanceProps,
   UsePaginationState,
   UseResizeColumnsColumnProps
@@ -35,8 +44,13 @@ interface serverSortProps {
 }
 
 declare module 'react-table' {
+  export interface Row<D extends Record<string, unknown> = Record<string, unknown>>
+    extends UseExpandedRowProps<D>,
+      UseTableRowProps<D> {}
+
   export interface TableOptions<D extends Record<string, unknown>>
     extends UseSortByOptions<D>,
+      UseExpandedOptions<D>,
       UsePaginationOptions<D>,
       // note that having Record here allows you to add anything to the options, this matches the spirit of the
       // underlying js library, but might be cleaner if it's replaced by a more specific type that matches your
@@ -52,6 +66,7 @@ declare module 'react-table' {
   export interface TableState<D extends Record<string, unknown> = Record<string, unknown>>
     extends UseColumnOrderState<D>,
       UseSortByState<D>,
+      UseExpandedState<D>,
       UsePaginationState<D> {}
 
   export interface ColumnInterface<D extends Record<string, unknown> = Record<string, unknown>>

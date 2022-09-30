@@ -19,6 +19,7 @@
 
 .panel {
   padding: var(--spacing-small) 0;
+
   .collapse {
     position: relative;
     z-index: 1;
@@ -34,11 +35,11 @@
       font-weight: 600;
       font-size: var(--font-size-normal);
       color: var(--black);
+      padding-right: var(--spacing-4) !important;
     }
   }
 
   .chevron {
-    padding-left: var(--spacing-7) !important;
     width: var(--spacing-4);
     height: 6px;
     position: relative;
@@ -66,23 +67,18 @@
     }
   }
 
-  :not([data-open='true']) {
-    & > .chevron {
-      transform: scale(-1, 1);
+  &[data-disabled='true'] {
+    & > .summary {
+      cursor: not-allowed;
+
+      & > .chevron {
+        opacity: 0;
+      }
     }
   }
 
   &[data-open='true'] {
     & > .summary {
-      &::before {
-        background-color: var(--primary-7);
-      }
-
-      :global(.bp3-icon[icon='chevron-down']) {
-        transform: rotate(180deg);
-        color: var(--primary-7);
-      }
-
       & > .chevron {
         transform: rotate(180deg);
       }

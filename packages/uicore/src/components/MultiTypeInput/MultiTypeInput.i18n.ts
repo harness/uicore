@@ -8,5 +8,6 @@
 export default {
   fixedValue: 'Fixed value',
   runtimeInput: 'Runtime input',
-  expression: 'Expression'
+  expression: 'Expression',
+  learnMore: 'Learn More'
 }

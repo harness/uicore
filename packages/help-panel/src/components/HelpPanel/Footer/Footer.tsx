@@ -13,7 +13,7 @@ import css from './Footer.module.css'
 import { HelpPanelContext } from '../../../HelpPanelContext'
 
 const Footer: React.FC = () => {
-  const { showAgain, setHelpPanelVisibility } = React.useContext(HelpPanelContext)
+  const { showAgain, toggleShowAgain } = React.useContext(HelpPanelContext)
 
   return (
     <Container className={css.container}>
@@ -28,8 +28,8 @@ const Footer: React.FC = () => {
           name="dontShowAgain"
           id="dontShowAgain"
           checked={showAgain}
-          onChange={e => {
-            setHelpPanelVisibility(!e.target.checked, true)
+          onChange={() => {
+            toggleShowAgain()
           }}
         />
         <label htmlFor="dontShowAgain">&nbsp;&nbsp;Don&apos;t show this again</label>

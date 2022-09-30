@@ -6,7 +6,7 @@
  */
 
 :root {
-  --barWidth: 25px;
+  --barWidth: 50px;
 }
 
 .dotOutLine {
@@ -57,4 +57,18 @@
 
 .spacing {
   padding: 2px !important;
+}
+.dotNameSuccess {
+  margin-top: -26px;
+  position: absolute;
+}
+
+.dotNameFailed {
+  color: var(--grey-500);
+  margin-top: -26px;
+  position: absolute;
+}
+
+.textmaxlength {
+  max-width: 100px;
 }

@@ -5,25 +5,22 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../../../Container'
 import css from './DefaultContainer.module.css'
-import floatingButton from '../../../../icons/floating_button.svg'
 import { HelpPanelContext } from '../../../../HelpPanelContext'
+import FloatingButton from '../../FloatingButton/FloatingButton'
 
 const DefaultContainer: React.FC = props => {
-  const { isHelpPanelVisible, setHelpPanelVisibility } = React.useContext(HelpPanelContext)
+  const [isHelpPanelVisible, setHelpPanelVisibility] = useState(!React.useContext(HelpPanelContext).showAgain)
 
   return (
     <Container className={[css.defaultContainer, isHelpPanelVisible ? css.visibleContainer : ''].join(' ')}>
       {isHelpPanelVisible && props.children}
-      <button
+      <FloatingButton
+        className={css.toggleBtnDefault}
         onClick={() => {
           setHelpPanelVisibility(!isHelpPanelVisible)
-        }}
-        className={css.toggleBtnDefault}
-        style={{
-          background: `transparent url(${floatingButton})`
         }}
       />
     </Container>

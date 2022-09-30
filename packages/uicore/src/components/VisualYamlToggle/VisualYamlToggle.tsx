@@ -6,6 +6,7 @@
  */
 
 import React from 'react'
+import { IconName } from '@harness/icons'
 import { PillToggle, PillToggleProps } from '../PillToggle/PillToggle'
 
 export enum VisualYamlSelectedView {
@@ -22,10 +23,13 @@ export interface VisualYamlToggleProps {
     visual?: string
     yaml?: string
   }
+  disableToggleReasonIcon?: IconName
+  showDisableToggleReason?: boolean
+  disableToggleReasonContent?: React.ReactElement
 }
 
 export function VisualYamlToggle(props: VisualYamlToggleProps): JSX.Element {
-  const { selectedView, onChange, disableToggle = false, className = '', labels } = props
+  const { selectedView, onChange, disableToggle = false, className = '', labels, ...restProps } = props
 
   const toggleProps: PillToggleProps<VisualYamlSelectedView> = {
     selectedView,
@@ -41,7 +45,8 @@ export function VisualYamlToggle(props: VisualYamlToggleProps): JSX.Element {
     ],
     onChange,
     disableToggle,
-    className
+    className,
+    ...restProps
   }
 
   return <PillToggle {...toggleProps} />

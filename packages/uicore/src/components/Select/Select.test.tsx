@@ -76,7 +76,7 @@ describe('<Select/> tests', () => {
     fireEvent.change(input, { target: { value: 'cha' } })
 
     expect(container).toMatchSnapshot('Filtered Menu')
-    expect(container.querySelectorAll('li.menuItem').length).toBe(3)
+    expect(container.querySelectorAll('.menuItemLabel').length).toBe(3)
   })
 
   test('no matching results', () => {

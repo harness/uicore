@@ -8,10 +8,10 @@
 import { IMenuItemProps, Menu, MenuItem, Position } from '@blueprintjs/core'
 import cx from 'classnames'
 import React, { MouseEvent } from 'react'
-import { Button, ButtonProps, Popover } from '../..'
+import { Button, ButtonProps, HarnessDocTooltip, Popover } from '../..'
 import css from './SplitButton.css'
 
-type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & { className?: string }
+type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & { className?: string; dropdownDisabled?: boolean }
 
 export const SplitButton: React.FC<SplitButtonProps> = ({
   onClick,
@@ -19,6 +19,9 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   icon,
   children,
   className,
+  tooltipProps,
+  disabled,
+  dropdownDisabled,
   ...commonProps
 }) => {
   const [isOptionsOpen, setOptionsOpen] = React.useState(false)
@@ -27,26 +30,40 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
     onClick?.(event)
   }
 
+  const childrenCount = React.Children.count(children)
+
   return (
     <div className={css.splitButton}>
-      <Button {...commonProps} onClick={handleClick} text={text} icon={icon} className={cx(css.main)} />
-      <Popover
-        isOpen={isOptionsOpen}
-        onInteraction={nextOpenState => {
-          setOptionsOpen(nextOpenState)
-        }}
-        content={<Menu>{children}</Menu>}
-        usePortal={false}
-        minimal={true}
-        fill={false}
-        position={Position.BOTTOM_RIGHT}>
-        <Button
-          rightIcon="chevron-down"
-          {...commonProps}
-          onClick={() => setOptionsOpen(true)}
-          className={cx(css.dropdown, className)}
-        />
-      </Popover>
+      <Button
+        {...commonProps}
+        disabled={disabled}
+        onClick={handleClick}
+        text={text}
+        icon={icon}
+        className={cx({ [css.main]: childrenCount }, 'border-right-0')}
+      />
+      {childrenCount > 0 && (
+        <Popover
+          disabled={dropdownDisabled}
+          isOpen={isOptionsOpen}
+          onInteraction={nextOpenState => {
+            setOptionsOpen(nextOpenState)
+          }}
+          content={<Menu>{children}</Menu>}
+          usePortal={false}
+          minimal={true}
+          fill={false}
+          position={Position.BOTTOM_RIGHT}>
+          <Button
+            disabled={dropdownDisabled}
+            rightIcon="chevron-down"
+            {...commonProps}
+            onClick={() => setOptionsOpen(true)}
+            className={cx(css.dropdown, className, 'border-left-0')}
+          />
+        </Popover>
+      )}
+      <HarnessDocTooltip tooltipId={tooltipProps?.dataTooltipId} useStandAlone={true} />
     </div>
   )
 }
@@ -55,7 +72,16 @@ export const SplitButtonOption: React.FC<IMenuItemProps & { className?: string }
   onClick,
   icon,
   text,
-  className
+  className,
+  disabled
 }) => {
-  return <MenuItem icon={icon} onClick={onClick} text={text} className={cx(css.splitButtonOption, className)} />
+  return (
+    <MenuItem
+      icon={icon}
+      onClick={onClick}
+      text={text}
+      className={cx(css.splitButtonOption, className)}
+      disabled={disabled}
+    />
+  )
 }

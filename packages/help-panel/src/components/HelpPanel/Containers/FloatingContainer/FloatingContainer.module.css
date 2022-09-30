@@ -9,7 +9,7 @@
   position: fixed;
   right: 5px;
   bottom: 60px;
-  z-index: 1000;
+  z-index: 10;
   .floatingContent {
     position: absolute;
     bottom: 50px;

@@ -5,14 +5,15 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import Container from '../../../Container'
 import css from './FloatingContainer.module.css'
 import floatingButton from '../../../../icons/floating_button.svg'
 import { HelpPanelContext } from '../../../../HelpPanelContext'
 
 function FloatingContainer(props: React.PropsWithChildren<unknown>, ref: React.ForwardedRef<HTMLButtonElement | null>) {
-  const { isHelpPanelVisible, setHelpPanelVisibility } = React.useContext(HelpPanelContext)
+  const [isHelpPanelVisible, setHelpPanelVisibility] = useState(!React.useContext(HelpPanelContext).showAgain)
+
   return (
     <Container className={css.floatingContainer}>
       {isHelpPanelVisible && <Container className={css.floatingContent}>{props.children}</Container>}

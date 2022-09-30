@@ -48,6 +48,10 @@ export interface InputWithIdentifierProps {
    * @default 63
    */
   maxInput?: number
+  /**
+   * @default true
+   */
+  useUnversialToolTipId?: boolean
 }
 
 // https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
@@ -56,6 +60,7 @@ export function getIdentifierFromName(str: string): string {
 
   return str
     .trim()
+    .replace(/^[0-9-$]*/, '') // remove starting digits, dashes and $
     .replace(/[^0-9a-zA-Z_$ ]/g, '') // remove special chars except _ and $
     .replace(/ +/g, '_') // replace spaces with _
 }
@@ -69,14 +74,19 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     idName = 'identifier',
     inputGroupProps,
     isIdentifierEditable = true,
-    maxInput = 63
+    maxInput = 63,
+    useUnversialToolTipId = true
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
   const identifier = get(formik.values, idName) as string
   const [currentEditField, setCurrentEditField] = useState(inputLabel)
   const tooltipContext = useContext(FormikTooltipContext)
-  const dataTooltipId = tooltipContext?.formName ? `${tooltipContext?.formName}_${idName}` : ''
+  const dataTooltipId = !useUnversialToolTipId
+    ? tooltipContext?.formName
+      ? `${tooltipContext?.formName}_${idName}`
+      : ''
+    : 'universalInputNameWithId'
 
   return (
     <div className={cx(css.txtNameContainer, textCss.main)}>

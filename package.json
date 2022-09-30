@@ -9,6 +9,7 @@
   "scripts": {
     "release": "lerna publish",
     "build": "lerna run build",
+    "ui:icons": "lerna run build --scope @harness/icons",
     "test": "lerna run test --stream",
     "fmt": "prettier --write \"./packages/**/src/**/*.{ts,tsx,css}\"",
     "setup": "bash scripts/github-package-registry.sh",

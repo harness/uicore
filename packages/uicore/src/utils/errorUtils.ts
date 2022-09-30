@@ -7,18 +7,20 @@
 
 import { isEmpty } from 'lodash-es'
 
+const IGNORED_ERRORS = [
+  'Failed to fetch: The user aborted a request.',
+  'Failed to fetch: Failed to fetch',
+  'Failed to fetch: 504 Gateway Timeout',
+  "Failed to fetch: Failed to execute 'fetch' on 'Window': The user aborted a request.",
+  'Failed to fetch: The operation was aborted.',
+  'Failed to fetch: Fetch is aborted'
+]
+
 export function shouldShowError(e: any): boolean {
   const hideMessagesForStatusCodes = [502, 503]
-  if (
-    e?.message === 'Failed to fetch: The user aborted a request.' ||
-    e?.message === 'Failed to fetch: Failed to fetch' ||
-    e?.message === 'Failed to fetch: 504 Gateway Timeout' ||
-    e?.message === "Failed to fetch: Failed to execute 'fetch' on 'Window': The user aborted a request." ||
-    hideMessagesForStatusCodes.includes(e?.status)
-  ) {
-    return false
-  }
-  return true
+  const message = (e?.message || '').trim()
+
+  return !IGNORED_ERRORS.includes(message) && !hideMessagesForStatusCodes.includes(e?.status)
 }
 
 /* TODO Don't see proper types for this new errors format, replace Record<string, any> with more stricter type when available */

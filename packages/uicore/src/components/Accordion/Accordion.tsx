@@ -11,11 +11,14 @@ import cx from 'classnames'
 
 import css from './Accordion.css'
 
+const noop = () => void 0
+
 export interface AccordionPanelProps {
   id: string
   details: React.ReactNode
   summary: React.ReactNode
   addDomId?: boolean
+  disabled?: boolean
 }
 
 export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
@@ -29,21 +32,35 @@ function AccordionPanel(
   props: AccordionPanelProps & AccordionPanelInternalProps,
   ref: React.Ref<HTMLDivElement>
 ): React.ReactElement {
-  const { summary, details, togglePanel, isOpen, id, collapseProps, addDomId } = props
+  const {
+    summary,
+    details,
+    togglePanel,
+    isOpen,
+    id,
+    collapseProps,
+    addDomId,
+    disabled,
+    panelClassName,
+    summaryClassName,
+    detailsClassName,
+    chevronClassName
+  } = props
 
   return (
     <div
       ref={ref}
       data-testid={`${id}-panel`}
-      className={cx(css.panel, props.panelClassName)}
+      data-disabled={disabled}
+      className={cx(css.panel, panelClassName)}
       data-open={isOpen}
       id={addDomId ? `${id}-panel` : undefined}>
-      <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, props.summaryClassName)}>
+      <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, summaryClassName)}>
         <div className={cx({ [css.label]: typeof summary === 'string' })}>{summary}</div>
-        <div className={css.chevron} />
+        <div className={cx(css.chevron, chevronClassName)} />
       </div>
       <Collapse {...collapseProps} className={cx(css.collapse, collapseProps?.className)} isOpen={isOpen}>
-        <div data-testid={`${id}-details`} className={cx(css.details, props.detailsClassName)}>
+        <div data-testid={`${id}-details`} className={cx(css.details, detailsClassName)}>
           {details}
         </div>
       </Collapse>
@@ -58,8 +75,10 @@ export interface AccordionProps {
   panelClassName?: string
   summaryClassName?: string
   detailsClassName?: string
+  chevronClassName?: string
   collapseProps?: Omit<ICollapseProps, 'isOpen'>
   allowMultiOpen?: boolean
+  onChange?(tabs: string | string[]): void
 }
 
 export interface AccordionHandle {
@@ -72,7 +91,7 @@ export function AccordionWithoutRef(
   props: AccordionProps,
   ref: React.ForwardedRef<AccordionHandle>
 ): React.ReactElement {
-  const { children, allowMultiOpen, className, activeId, ...rest } = props
+  const { children, allowMultiOpen, className, activeId, onChange, ...rest } = props
   const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(
     typeof activeId === 'string' ? { [activeId]: true } : {}
   )
@@ -92,6 +111,12 @@ export function AccordionWithoutRef(
 
     return tabs
   }
+
+  React.useEffect(() => {
+    const activeIds = Object.keys(activePanels).filter(panel => activePanels[panel])
+
+    onChange?.(allowMultiOpen ? activeIds : activeIds[0])
+  }, [activePanels])
 
   React.useImperativeHandle(ref, () => ({
     open(tab: string | string[]): void {
@@ -136,7 +161,7 @@ export function AccordionWithoutRef(
               {...rest}
               {...childProps}
               isOpen={!!activePanels[childProps.id]}
-              togglePanel={togglePanels(childProps.id)}
+              togglePanel={childProps.disabled ? noop : togglePanels(childProps.id)}
             />
           )
         })}

@@ -23,6 +23,10 @@
     padding: 2px;
     border-radius: 100px;
     cursor: pointer;
+
+    .disableToggleReasonIcon {
+      margin: 0 var(--spacing-tiny);
+    }
   }
 
   .selected {
@@ -32,6 +36,6 @@
   }
 
   .disabledMode {
-    pointer-events: none;
+    cursor: default;
   }
 }
