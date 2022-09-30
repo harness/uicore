@@ -35,6 +35,8 @@ Icons are under available `packages/icons` folder. Please follow below steps to 
 2. Run `yarn ui:icons` (under the root directory)
 3. Commit all the changes and open a PR.
 
+[SVG Guidelines/Best Practices](https://harness.atlassian.net/wiki/spaces/PLATFORM/pages/1963262066/SVG+Guidelines+Best+Practices).
+
 **Note**: For `uicore/icons` to be auto published, please ensure to bump up the package version in `packages/icons/package.json` _(only if an immediate new release is required)_
 
 ## Storybook
