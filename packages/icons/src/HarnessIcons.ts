@@ -313,6 +313,7 @@ import GitCloneStep from './git-clone-step.svg'
 import GitConfigure from './git-configure.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
+import GitPopover from './git-popover.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
 import Github from './github.svg'
@@ -1105,6 +1106,7 @@ type HarnessIconName =
   | 'git-configure'
   | 'git-landing-page'
   | 'git-new-branch'
+  | 'git-popover'
   | 'github-selected'
   | 'github-unselected'
   | 'github'
@@ -1897,6 +1899,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-configure': GitConfigure,
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
+  'git-popover': GitPopover,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
   github: Github,
