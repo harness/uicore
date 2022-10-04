@@ -176,6 +176,7 @@ export const DropDown: React.FC<DropDownProps> = props => {
         leftElement: <Icon name={'thinner-search'} size={12} color={Color.GREY_500} />,
         placeholder: 'Search'
       }}
+      query={query}
       onQueryChange={debouncedQuery}
       popoverProps={{
         targetTagName: 'div',
