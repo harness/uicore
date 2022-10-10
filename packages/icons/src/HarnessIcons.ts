@@ -301,6 +301,7 @@ import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
 import GcpEngine from './gcp-engine.svg'
 import GcpKms from './gcp-kms.svg'
+import GcpSecretManager from './gcp-secret-manager.svg'
 import Gcp from './gcp.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
@@ -312,6 +313,7 @@ import GitCloneStep from './git-clone-step.svg'
 import GitConfigure from './git-configure.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
+import GitPopover from './git-popover.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
 import Github from './github.svg'
@@ -1094,6 +1096,7 @@ type HarnessIconName =
   | 'functions'
   | 'gcp-engine'
   | 'gcp-kms'
+  | 'gcp-secret-manager'
   | 'gcp'
   | 'gcr-step-inverse'
   | 'gcr-step'
@@ -1105,6 +1108,7 @@ type HarnessIconName =
   | 'git-configure'
   | 'git-landing-page'
   | 'git-new-branch'
+  | 'git-popover'
   | 'github-selected'
   | 'github-unselected'
   | 'github'
@@ -1887,6 +1891,7 @@ const HarnessIcons: KVO<ElementType> = {
   functions: Functions,
   'gcp-engine': GcpEngine,
   'gcp-kms': GcpKms,
+  'gcp-secret-manager': GcpSecretManager,
   gcp: Gcp,
   'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
@@ -1898,6 +1903,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-configure': GitConfigure,
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
+  'git-popover': GitPopover,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
   github: Github,
