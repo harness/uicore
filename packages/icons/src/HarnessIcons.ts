@@ -349,6 +349,7 @@ import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
+import GraphIncrease from './graph-increase.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
@@ -564,6 +565,7 @@ import PluginStep from './plugin-step.svg'
 import Pod from './pod.svg'
 import Polygon from './polygon.svg'
 import Profile from './profile.svg'
+import ProgressDial from './progress-dial.svg'
 import ProjectsWizard from './projects-wizard.svg'
 import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
@@ -1142,6 +1144,7 @@ type HarnessIconName =
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
+  | 'graph-increase'
   | 'graph'
   | 'grey-cluster'
   | 'grid'
@@ -1357,6 +1360,7 @@ type HarnessIconName =
   | 'pod'
   | 'polygon'
   | 'profile'
+  | 'progress-dial'
   | 'projects-wizard'
   | 'prune-skipped'
   | 'pruned'
@@ -1935,6 +1939,7 @@ const HarnessIcons: KVO<ElementType> = {
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
+  'graph-increase': GraphIncrease,
   graph: Graph,
   'grey-cluster': GreyCluster,
   grid: Grid,
@@ -2150,6 +2155,7 @@ const HarnessIcons: KVO<ElementType> = {
   pod: Pod,
   polygon: Polygon,
   profile: Profile,
+  'progress-dial': ProgressDial,
   'projects-wizard': ProjectsWizard,
   'prune-skipped': PruneSkipped,
   pruned: Pruned,
