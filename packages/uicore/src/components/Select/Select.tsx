@@ -192,7 +192,7 @@ export function Select(props: SelectProps): React.ReactElement {
       )
     }
 
-    const isExactQueryElPresent = items.filter(item => item.label.toString() === query).length > 0
+    const isExactQueryElPresent = items.some(item => item.label === query)
     if (!loading)
       return (
         <React.Fragment>
