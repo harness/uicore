@@ -192,13 +192,14 @@ export function Select(props: SelectProps): React.ReactElement {
       )
     }
 
+    const isExactQueryElPresent = items.filter(item => item.label.toString() === query).length > 0
     if (!loading)
       return (
         <React.Fragment>
           {items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0 ? (
             <div className={css.noResultsFound}>No Match Found</div>
           ) : null}
-          {props.allowCreatingNewItems && (
+          {props.allowCreatingNewItems && !isExactQueryElPresent && (
             <Button
               intent="primary"
               minimal
