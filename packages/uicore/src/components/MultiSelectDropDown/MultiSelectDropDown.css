@@ -7,7 +7,7 @@
 
 .main {
   &.disabled {
-    pointer-events: none;
+    cursor: not-allowed;
     .dropdownButton {
       &.withBorder {
         background-color: var(--grey-100);
@@ -63,6 +63,10 @@
         padding: 0 var(--spacing-small);
         border-radius: 10px;
         line-height: 16px;
+      }
+      .disabled {
+        background-color: var(--grey-400) !important;
+        cursor: default;
       }
     }
     &:not(.withBorder) {
