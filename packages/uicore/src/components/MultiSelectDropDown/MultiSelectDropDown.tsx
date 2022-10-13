@@ -49,6 +49,7 @@ export interface MultiSelectDropDownProps
   placeholder?: string
   hideItemCount?: boolean
   onPopoverClose?(opts: MultiSelectOption[]): void
+  showBaseInputBlue?: boolean
 }
 
 /**
@@ -73,6 +74,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     disabled,
     hideItemCount,
     onPopoverClose,
+    showBaseInputBlue = true,
     ...rest
   } = props
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>([])
@@ -155,9 +157,10 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           style={width ? { width } : { minWidth }}
           className={cx(
             css.dropdownButton,
-            { [css.withBorder]: !isLabel },
-            { [css.selected]: selectedItems.length > 0 },
-            { [css.minWidth]: !width }
+            { [css.withBorder]: !isLabel && showBaseInputBlue },
+            { [css.selected]: selectedItems.length > 0 && !disabled && showBaseInputBlue },
+            { [css.minWidth]: !width },
+            { [css.disabledBg]: disabled }
           )}
           onClick={() => setIsOpen(true)}
           flex>
@@ -167,7 +170,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
               {placeholder}
             </Text>
             {!hideItemCount && selectedItems.length > 0 && (
-              <Text className={cx(css.counter, { [css.disabled]: !!disabled })}>
+              <Text className={css.counter}>
                 {selectedItems.length <= 9 ? '0' : ''}
                 {selectedItems.length}
               </Text>

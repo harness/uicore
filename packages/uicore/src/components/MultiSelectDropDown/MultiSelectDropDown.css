@@ -7,16 +7,19 @@
 
 .main {
   &.disabled {
-    cursor: not-allowed;
+    pointer-events: none;
     .dropdownButton {
-      &.withBorder {
-        background-color: var(--grey-100);
+      &.disabledBg {
+        background-color: var(--grey-50);
       }
       .labelWrapper {
         .label {
           color: var(--grey-400) !important;
         }
       }
+    }
+    .counter {
+      background-color: var(--grey-400) !important;
     }
   }
   .dropdownButton {
@@ -63,10 +66,6 @@
         padding: 0 var(--spacing-small);
         border-radius: 10px;
         line-height: 16px;
-      }
-      .disabled {
-        background-color: var(--grey-400) !important;
-        cursor: default;
       }
     }
     &:not(.withBorder) {
