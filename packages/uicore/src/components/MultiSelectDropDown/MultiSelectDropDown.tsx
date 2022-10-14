@@ -156,7 +156,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           className={cx(
             css.dropdownButton,
             { [css.withBorder]: !isLabel },
-            { [css.selected]: selectedItems.length > 0 && !disabled },
+            { [css.selected]: selectedItems.length > 0 },
             { [css.minWidth]: !width }
           )}
           onClick={() => setIsOpen(true)}
