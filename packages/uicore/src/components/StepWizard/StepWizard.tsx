@@ -49,6 +49,7 @@ export interface StepWizardProps<SharedObject> {
 }
 
 interface StepName {
+  stepId: string
   stepName: string
   stepSubTitle: string
 }
@@ -83,6 +84,8 @@ interface StepState<SharedObject> {
   totalSteps: number
   completedStep?: number
 }
+
+const STEP_ID_SEPARATOR = '_'
 
 // builds step identifier to step number map
 // recursive in nature to support nested wizards
@@ -133,13 +136,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   React.useEffect(() => {
     stepIdentifierToStepNumberMap.current = {}
     currentStepNumber.current = 0
-    createStepIdentifierToStepNumberMap<SharedObject>(
-      props.children,
-      true,
-      stepIdentifierToStepNumberMap,
-      currentStepNumber
-    )
-  }, [props.children])
+    createStepIdentifierToStepNumberMap<SharedObject>(children, true, stepIdentifierToStepNumberMap, currentStepNumber)
+  }, [children])
   const [state, setState] = React.useState<StepState<SharedObject>>({
     activeStep: Array.isArray(children) && (initialStep < 1 || initialStep > children.length) ? 1 : initialStep,
     totalSteps: 0,
@@ -165,6 +163,9 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         stepData?.stepIndex === React.Children.toArray(nestedWizard.props.children as any).length
       ) {
         nestedWizard.props.onCompleteWizard(prevStepData)
+        if (state.activeStep === state.totalSteps) {
+          return true
+        }
       } else if (
         props.onCompleteWizard &&
         state.totalSteps > 0 &&
@@ -215,7 +216,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   }, [state.activeStep])
   const totalSteps = React.useCallback(() => {
     return state.totalSteps
-  }, [state.activeStep])
+  }, [state.totalSteps])
   const nextStep = React.useCallback(
     (prevStepData?: SharedObject) => {
       gotoStep({ stepNumber: state.activeStep + 1, prevStepData })
@@ -245,8 +246,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   }, [])
 
   React.useLayoutEffect(() => {
-    if (Array.isArray(props.children)) {
-      const propsChild = React.Children.toArray(props.children) as React.ReactElement[]
+    if (Array.isArray(children)) {
+      const propsChild = React.Children.toArray(children) as React.ReactElement[]
       const steps: Array<React.ReactElement<StepProps<SharedObject>>> = []
       const stepNames: StepName[] = []
       let stepIndex = 0
@@ -272,7 +273,8 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
 
             stepNames.push({
               stepName: (nested && nested.props && nested.props.name) || `Step ${i + 1}-${j + 1}`,
-              stepSubTitle: (nested && nested.props && nested.props.subTitle) || ''
+              stepSubTitle: (nested && nested.props && nested.props.subTitle) || '',
+              stepId: `${stepIndex}${STEP_ID_SEPARATOR}${j + 1}`
             })
           })
         } else {
@@ -281,18 +283,39 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
           steps.push(child as React.ReactElement<StepProps<SharedObject>>)
           stepNames.push({
             stepName: (child && child.props && child.props.name) || `Step ${i + 1}`,
-            stepSubTitle: (child && child.props && child.props.subTitle) || ''
+            stepSubTitle: (child && child.props && child.props.subTitle) || '',
+            stepId: `${stepIndex}`
           })
         }
       })
-      setState(prevState => ({
-        ...prevState,
-        stepNames,
-        totalSteps: stepNames.length,
-        children: steps,
-        nestedStepWizard,
-        completedStep: undefined
-      }))
+
+      const getActiveStep = (prevState: StepState<SharedObject>) => {
+        const { activeStep, stepNames: prevStepNames, children: prevChildren } = prevState
+        if (prevStepNames && prevChildren) {
+          const { stepId: activeStepId } = prevStepNames[activeStep - 1]
+          if (activeStepId.includes(STEP_ID_SEPARATOR)) {
+            const currStepId = activeStepId.split(STEP_ID_SEPARATOR)[0]
+
+            return (stepNames.findIndex(stepName => stepName.stepId === currStepId) ?? 0) + 1
+          }
+          return activeStep
+        }
+
+        return activeStep
+      }
+
+      setState(prevState => {
+        const activeStep = getActiveStep(prevState)
+        return {
+          ...prevState,
+          activeStep,
+          stepNames,
+          totalSteps: stepNames.length,
+          children: steps,
+          nestedStepWizard,
+          completedStep: undefined
+        }
+      })
     }
   }, [children])
 
@@ -309,7 +332,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
           const isNestedFirstStep = isNestedStep ? state.nestedStepWizard?.[index]?.stepIndex === 1 : false
           return (
             <div
-              key={index}
+              key={stepName.stepId}
               onClick={() => completedSteps && gotoStep({ stepNumber: index + 1, prevStepData: state.prevStepData })}
               className={cx(
                 css.navStep,
