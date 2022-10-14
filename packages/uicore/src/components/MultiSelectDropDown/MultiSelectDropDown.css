@@ -9,7 +9,7 @@
   &.disabled {
     pointer-events: none;
     .dropdownButton {
-      &.disabledBg {
+      &.withBorder {
         background-color: var(--grey-50);
       }
       .labelWrapper {
