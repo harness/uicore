@@ -163,9 +163,6 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
         stepData?.stepIndex === React.Children.toArray(nestedWizard.props.children as any).length
       ) {
         nestedWizard.props.onCompleteWizard(prevStepData)
-        if (state.activeStep === state.totalSteps) {
-          return true
-        }
       } else if (
         props.onCompleteWizard &&
         state.totalSteps > 0 &&
@@ -174,10 +171,13 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       ) {
         props.onCompleteWizard(prevStepData)
         return true
-      } else if (!stepNumber || stepNumber > state.totalSteps || stepNumber < 1) {
+      }
+
+      if (stepNumber > state.totalSteps || stepNumber < 1) {
         // Not a valid step stepNumber
         return false
       }
+
       setState(prevState => ({
         ...prevState,
         prevStep: prevState.activeStep,
