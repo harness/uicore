@@ -1,0 +1,40 @@
+/*
+ * Copyright 2022 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+.container {
+  --shadowTop: inset 0px 8px 5px -5px rgba(96, 97, 112, 0.16);
+  --shadowBottom: inset 0px -8px 5px -5px rgba(96, 97, 112, 0.16);
+  --shadowZIndex: 2;
+  position: relative;
+  overflow: auto;
+  max-height: 100%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--shadowZIndex);
+}
+
+.container.shadowTop::after {
+  box-shadow: var(--shadowTop);
+}
+.container.shadowBottom::after {
+  box-shadow: var(--shadowBottom);
+}
+.container.shadowTopAndBottom::after {
+  box-shadow: var(--shadowTop), var(--shadowBottom);
+}
+
+.overflowWrapper {
+  position: relative;
+  z-index: calc(var(--shadowZIndex) - 1);
+  overflow: auto;
+  height: 100%;
+}

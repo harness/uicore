@@ -55,30 +55,15 @@
   right: 22px;
   top: 22px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .body {
-  --shadowTop: inset 0px 8px 5px -5px rgba(96, 97, 112, 0.16);
-  --shadowBottom: inset 0px -8px 5px -5px rgba(96, 97, 112, 0.16);
-  position: relative;
   grid-area: body;
-  overflow: auto;
-}
-
-.body::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
 }
 
 .body .bodyContent {
-  overflow: auto;
-  height: 100%;
   padding: 0 var(--spacing-huge);
-  display: grid;
-  grid-template-rows: 1px 1fr 1px;
 }
 
 .noHeader.noToolbar .body .bodyContent {
@@ -87,16 +72,4 @@
 
 .noFooter .body .bodyContent {
   padding-bottom: var(--spacing-huge);
-}
-
-.body.shadowTop::before {
-  box-shadow: var(--shadowTop);
-}
-
-.body.shadowBottom::before {
-  box-shadow: var(--shadowBottom);
-}
-
-.body.shadowTopAndBottom::before {
-  box-shadow: var(--shadowTop), var(--shadowBottom);
 }
