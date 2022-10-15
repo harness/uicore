@@ -795,6 +795,7 @@ import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
+import WigglyArrow from './wiggly-arrow.svg'
 import X from './x.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
@@ -1590,6 +1591,7 @@ type HarnessIconName =
   | 'warning-outline'
   | 'white-cluster'
   | 'white-full-cluster'
+  | 'wiggly-arrow'
   | 'x'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
@@ -2385,6 +2387,7 @@ const HarnessIcons: KVO<ElementType> = {
   'warning-outline': WarningOutline,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
+  'wiggly-arrow': WigglyArrow,
   x: X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
