@@ -125,3 +125,24 @@ export const WithDynamicContent: Story<ScrollContainerProps> = args => {
   )
 }
 WithDynamicContent.storyName = 'With dynamic content'
+
+export const WithResizableWrapper: Story<ScrollContainerProps> = args => {
+  return (
+    <div style={{ height: '400px', width: '400px', resize: 'both', overflow: 'scroll' }}>
+      <ScrollContainer {...args}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui perferendis dignissimos voluptas eaque distinctio
+          molestias itaque et animi blanditiis nam, esse voluptatum iure dolores odit impedit consectetur quia vero
+          delectus eveniet sunt voluptate nesciunt, asperiores nulla. Nam maxime recusandae eum. Nesciunt debitis nulla
+          dolore in consequuntur, aspernatur obcaecati eius excepturi soluta, veniam nisi iure ad architecto
+          consequatur, ipsam dolor numquam reiciendis. Illum ipsa, doloremque placeat a sunt distinctio officia dolore
+          possimus culpa ex quam animi expedita, perferendis saepe nulla, eius architecto est temporibus rem dolores!
+          Minima laboriosam illo iusto corrupti, animi, inventore debitis magni modi voluptate minus repellendus labore
+          odio perferendis quod explicabo ea saepe aliquid dolores quo! Cum maiores natus esse optio ipsum autem amet
+          doloremque.
+        </p>
+      </ScrollContainer>
+    </div>
+  )
+}
+WithResizableWrapper.storyName = 'With resizable wrapper'

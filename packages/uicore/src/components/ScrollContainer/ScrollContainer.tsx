@@ -5,8 +5,9 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { CSSProperties, FC, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { CSSProperties, FC, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import cx from 'classnames'
+import rafSchd from 'raf-schd'
 import css from './ScrollContainer.css'
 
 export interface ScrollContainerProps {
@@ -44,35 +45,55 @@ export const ScrollContainer: FC<ScrollContainerProps> = props => {
     showBottomShadow = true,
     showTopShadow = true
   } = props
-  const observerRef = useRef<IntersectionObserver>()
   const [scrollShadows, setScrollShadows] = useState({ top: false, bottom: false })
+  const scrollableRef = useRef<HTMLDivElement>(null)
+  const resizeObserverRef = useRef<ResizeObserver>()
 
-  const handleContainerRef = useCallback((container: HTMLDivElement | null) => {
-    observerRef.current?.disconnect()
+  const setShadows = useCallback(
+    rafSchd(() => {
+      const target = scrollableRef.current
 
-    if (!container) return
+      if (!target) return
 
-    observerRef.current = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const position = (entry.target as HTMLDivElement).dataset.position
-          if (typeof position === 'string') {
-            setScrollShadows(prev => ({ ...prev, [position]: !entry.isIntersecting }))
-          }
-        })
-      },
-      {
-        root: container
+      const { clientHeight, scrollHeight, scrollTop } = target
+      const hasScrollableContent = scrollHeight > clientHeight
+
+      if (!hasScrollableContent) return setScrollShadows({ top: false, bottom: false })
+
+      const isTop = scrollTop === 0
+      const isBetween = scrollTop > 0 && scrollTop < scrollHeight - clientHeight
+      const isBottom = scrollTop === scrollHeight - clientHeight
+
+      if (isTop) {
+        setScrollShadows({ top: false, bottom: true })
+      } else if (isBetween) {
+        setScrollShadows({ top: true, bottom: true })
+      } else if (isBottom) {
+        setScrollShadows({ top: true, bottom: false })
       }
-    )
+    }),
+    []
+  )
 
-    container.querySelectorAll('[data-sentinel]').forEach(edge => {
-      observerRef.current?.observe(edge)
-    })
-  }, [])
+  useEffect(() => {
+    if (scrollableRef.current) {
+      scrollableRef.current.addEventListener('scroll', setShadows)
 
-  // disconnect observer on unmount
-  useEffect(() => () => observerRef.current?.disconnect(), [])
+      resizeObserverRef.current = new ResizeObserver(() => {
+        setShadows()
+      })
+      resizeObserverRef.current.observe(scrollableRef.current)
+    }
+
+    return () => {
+      scrollableRef.current?.removeEventListener('scroll', setShadows)
+      resizeObserverRef.current?.disconnect()
+    }
+  }, [setShadows])
+
+  useLayoutEffect(() => {
+    setShadows()
+  }, [children, setShadows])
 
   const shadowClassName = useMemo(() => {
     const { top, bottom } = scrollShadows
@@ -85,15 +106,9 @@ export const ScrollContainer: FC<ScrollContainerProps> = props => {
   }, [scrollShadows])
 
   return (
-    <div
-      className={cx(css.container, shadowClassName, containerClassName)}
-      style={{ height }}
-      ref={handleContainerRef}
-      data-testid={testId}>
-      <div className={cx(css.overflowWrapper, overflowWrapperClassName)}>
-        <div data-sentinel data-position="top" />
+    <div className={cx(css.container, shadowClassName, containerClassName)} style={{ height }} data-testid={testId}>
+      <div ref={scrollableRef} className={cx(css.overflowWrapper, overflowWrapperClassName)}>
         {children}
-        <div data-sentinel data-position="bottom" />
       </div>
     </div>
   )
