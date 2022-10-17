@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { MultiSelectOption } from '../MultiSelect/MultiSelect'
@@ -55,8 +55,8 @@ export const Basic: Story<MultiSelectDropDownProps> = args => {
 
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
 
-  const [value, setValue] = React.useState<MultiSelectOption[]>(localItems.slice(0, 3))
-
+  const [value, setValue] = useState<MultiSelectOption[]>(localItems.slice(0, 3))
+  // console.log('MultiselectStories: ', { value, items })
   return (
     <Layout.Horizontal flex>
       <MultiSelectDropDown
@@ -70,11 +70,16 @@ export const Basic: Story<MultiSelectDropDownProps> = args => {
     </Layout.Horizontal>
   )
 }
-function dummyPromise(): Promise<MultiSelectOption[]> {
+function dummyPromise(query: string): Promise<MultiSelectOption[]> {
   return new Promise<MultiSelectOption[]>(resolve => {
+    // console.log('QUERY RECEIVED: ', query)
     setTimeout(() => {
-      resolve(localItems)
-    }, 5000)
+      resolve(
+        localItems.filter(item => {
+          return item.label.toLowerCase().includes(query.toLowerCase())
+        })
+      )
+    }, 1000)
   })
 }
 export const AsyncSelect: Story<MultiSelectDropDownProps> = args => {
