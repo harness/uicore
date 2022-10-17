@@ -36,7 +36,7 @@ export interface MultiSelectDropDownProps
   extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps' | 'renderer' | 'itemRenderer' | 'onItemSelect'> {
   onChange?(opts: MultiSelectOption[]): void
   value?: MultiSelectOption[]
-  items: Props['items'] | (() => Promise<Props['items']>)
+  items: Props['items'] | ((query?: string) => Promise<Props['items']>)
   usePortal?: boolean
   className?: string
   popoverClassName?: string
@@ -73,19 +73,22 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     disabled,
     hideItemCount,
     onPopoverClose,
+    query: queryFromProps = '',
+    onQueryChange,
     ...rest
   } = props
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>([])
   const [dropDownItems, setDropDownItems] = React.useState<MultiSelectOption[]>([])
   const [loading, setLoading] = React.useState<boolean>(false)
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [query, setQuery] = useState<string>(queryFromProps)
 
   React.useEffect(() => {
     if (Array.isArray(items)) {
       setDropDownItems([...items])
     } else if (typeof items === 'function') {
       setLoading(true)
-      const promise = items()
+      const promise = items(query)
 
       if (typeof promise.then === 'function') {
         promise.then(results => {
@@ -96,7 +99,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
         setLoading(false)
       }
     }
-  }, [JSON.stringify(items)])
+  }, [JSON.stringify(items), query])
 
   React.useEffect(() => {
     if (Array.isArray(value)) {
@@ -176,6 +179,15 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           <Icon name="main-chevron-down" size={8} color={Color.GREY_400} />
         </Layout.Horizontal>
         <React.Fragment>
+          <div>
+            <input
+              value={query}
+              onChange={e => {
+                setQuery(e.target.value)
+              }}
+              placeholder="search query"
+            />
+          </div>
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
                 className: css.menu
@@ -214,6 +226,8 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
       renderer={renderer}
       itemRenderer={itemRenderer}
       onItemSelect={handleItemSelect}
+      query={query}
+      onQueryChange={onQueryChange}
       {...rest}
     />
   )
