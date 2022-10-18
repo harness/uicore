@@ -733,8 +733,8 @@ import StepKubernetes from './step-kubernetes.svg'
 import StepsSpinner from './steps-spinner.svg'
 import StoColorFilled from './sto-color-filled.svg'
 import StoGrey from './sto-grey.svg'
-import StoWithText from './sto-with-text.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
+import StoWithText from './sto-with-text.svg'
 import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
@@ -1531,8 +1531,8 @@ type HarnessIconName =
   | 'steps-spinner'
   | 'sto-color-filled'
   | 'sto-grey'
-  | 'sto-with-text'
   | 'sto-with-dark-text'
+  | 'sto-with-text'
   | 'success-tick'
   | 'support-account'
   | 'support-api'
@@ -2329,8 +2329,8 @@ const HarnessIcons: KVO<ElementType> = {
   'steps-spinner': StepsSpinner,
   'sto-color-filled': StoColorFilled,
   'sto-grey': StoGrey,
-  'sto-with-text': StoWithText,
   'sto-with-dark-text': StoWithDarkText,
+  'sto-with-text': StoWithText,
   'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
