@@ -30,7 +30,7 @@ export interface ScrollContainerProps {
    *
    * default: `100%` */
   height?: CSSProperties['height']
-  containerClassName?: string
+  className?: string
   overflowWrapperClassName?: string
   testId?: string
 }
@@ -38,7 +38,7 @@ export interface ScrollContainerProps {
 export const ScrollContainer: FC<ScrollContainerProps> = props => {
   const {
     children,
-    containerClassName,
+    className,
     overflowWrapperClassName,
     testId,
     height = '100%',
@@ -106,7 +106,7 @@ export const ScrollContainer: FC<ScrollContainerProps> = props => {
   }, [scrollShadows])
 
   return (
-    <div className={cx(css.container, shadowClassName, containerClassName)} style={{ height }} data-testid={testId}>
+    <div className={cx(css.container, shadowClassName, className)} style={{ height }} data-testid={testId}>
       <div ref={scrollableRef} className={cx(css.overflowWrapper, overflowWrapperClassName)}>
         {children}
       </div>

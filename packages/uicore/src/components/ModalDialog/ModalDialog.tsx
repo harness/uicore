@@ -119,7 +119,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
       <ScrollContainer
         testId="modaldialog-body"
-        containerClassName={css.body}
+        className={css.body}
         overflowWrapperClassName={css.bodyContent}
         showTopShadow={!!(title || toolbar)}
         showBottomShadow={!!footer}>
