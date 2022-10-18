@@ -128,7 +128,7 @@ WithDynamicContent.storyName = 'With dynamic content'
 
 export const WithResizableWrapper: Story<ScrollContainerProps> = args => {
   return (
-    <div style={{ height: '400px', width: '400px', resize: 'both', overflow: 'scroll' }}>
+    <div style={{ height: '200px', width: '400px', resize: 'both', overflow: 'scroll' }}>
       <ScrollContainer {...args}>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui perferendis dignissimos voluptas eaque distinctio

@@ -6,7 +6,7 @@
  */
 
 import React, { ReactNode, useState } from 'react'
-import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Subtitle, Title } from '@storybook/addon-docs'
 import { Story } from '@storybook/react'
 import { Color } from '@harness/design-system'
 import { Button, ButtonVariation } from '../Button/Button'
