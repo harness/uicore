@@ -288,6 +288,7 @@ export interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   buttonText?: string
   onChange?: React.FormEventHandler<HTMLInputElement>
   multiple?: boolean
+  shouldSetFieldValue?: boolean
 }
 
 const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
@@ -305,8 +306,23 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
     onChange,
     inputProps,
     multiple = false,
+    shouldSetFieldValue = true,
     ...rest
   } = restProps
+  const value = get(formik?.values, name)
+
+  let text = placeholder
+
+  if (value) {
+    // multiple files
+    if (Array.isArray(value) && value.length) {
+      text = value.map(file => file.name).join(', ')
+    }
+    // single file
+    if (!Array.isArray(value)) {
+      text = value.name
+    }
+  }
 
   return (
     <FormGroup
@@ -329,12 +345,12 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
         }}
         disabled={disabled}
         onInputChange={(e: React.FormEvent<HTMLInputElement>) => {
-          formik?.setFieldValue(name, multiple ? Array.from(e.currentTarget.files || []) : e.currentTarget.files?.[0])
+          if (shouldSetFieldValue) {
+            formik?.setFieldValue(name, multiple ? Array.from(e.currentTarget.files || []) : e.currentTarget.files?.[0])
+          }
           onChange?.(e)
         }}
-        text={get(formik?.values, name, [{ name: placeholder }])
-          .map((file: File) => file.name)
-          .join(', ')}
+        text={text}
       />
     </FormGroup>
   )
