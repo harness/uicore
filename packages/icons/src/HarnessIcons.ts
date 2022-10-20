@@ -671,11 +671,13 @@ import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactoryInverse from './service-artifactory-inverse.svg'
 import ServiceArtifactory from './service-artifactory.svg'
+import ServiceAwsCcm from './service-aws-ccm.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
 import ServiceAwsLamda from './service-aws-lamda.svg'
 import ServiceAwsSam from './service-aws-sam.svg'
 import ServiceAws from './service-aws.svg'
 import ServiceAzdevops from './service-azdevops.svg'
+import ServiceAzureCcm from './service-azure-ccm.svg'
 import ServiceAzureFunctions from './service-azure-functions.svg'
 import ServiceAzure from './service-azure.svg'
 import ServiceBamboo from './service-bamboo.svg'
@@ -692,6 +694,7 @@ import ServiceEcs from './service-ecs.svg'
 import ServiceElastigroup from './service-elastigroup.svg'
 import ServiceElk from './service-elk.svg'
 import ServiceGar from './service-gar.svg'
+import ServiceGcpCcm from './service-gcp-ccm.svg'
 import ServiceGcpWithText from './service-gcp-with-text.svg'
 import ServiceGcp from './service-gcp.svg'
 import ServiceGithubPackage from './service-github-package.svg'
@@ -703,6 +706,8 @@ import ServiceJenkinsInverse from './service-jenkins-inverse.svg'
 import ServiceJenkins from './service-jenkins.svg'
 import ServiceJiraInverse from './service-jira-inverse.svg'
 import ServiceJira from './service-jira.svg'
+import ServiceKubernetesCcm from './service-kubernetes-ccm.svg'
+import ServiceKubernetesQuick from './service-kubernetes-quick.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
 import ServiceMongodb from './service-mongodb.svg'
@@ -1495,11 +1500,13 @@ type HarnessIconName =
   | 'service-appdynamics'
   | 'service-artifactory-inverse'
   | 'service-artifactory'
+  | 'service-aws-ccm'
   | 'service-aws-code-deploy'
   | 'service-aws-lamda'
   | 'service-aws-sam'
   | 'service-aws'
   | 'service-azdevops'
+  | 'service-azure-ccm'
   | 'service-azure-functions'
   | 'service-azure'
   | 'service-bamboo'
@@ -1516,6 +1523,7 @@ type HarnessIconName =
   | 'service-elastigroup'
   | 'service-elk'
   | 'service-gar'
+  | 'service-gcp-ccm'
   | 'service-gcp-with-text'
   | 'service-gcp'
   | 'service-github-package'
@@ -1527,6 +1535,8 @@ type HarnessIconName =
   | 'service-jenkins'
   | 'service-jira-inverse'
   | 'service-jira'
+  | 'service-kubernetes-ccm'
+  | 'service-kubernetes-quick'
   | 'service-kubernetes'
   | 'service-microsoft-teams'
   | 'service-mongodb'
@@ -2319,11 +2329,13 @@ const HarnessIcons: KVO<ElementType> = {
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory-inverse': ServiceArtifactoryInverse,
   'service-artifactory': ServiceArtifactory,
+  'service-aws-ccm': ServiceAwsCcm,
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
   'service-aws-lamda': ServiceAwsLamda,
   'service-aws-sam': ServiceAwsSam,
   'service-aws': ServiceAws,
   'service-azdevops': ServiceAzdevops,
+  'service-azure-ccm': ServiceAzureCcm,
   'service-azure-functions': ServiceAzureFunctions,
   'service-azure': ServiceAzure,
   'service-bamboo': ServiceBamboo,
@@ -2340,6 +2352,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-elastigroup': ServiceElastigroup,
   'service-elk': ServiceElk,
   'service-gar': ServiceGar,
+  'service-gcp-ccm': ServiceGcpCcm,
   'service-gcp-with-text': ServiceGcpWithText,
   'service-gcp': ServiceGcp,
   'service-github-package': ServiceGithubPackage,
@@ -2351,6 +2364,8 @@ const HarnessIcons: KVO<ElementType> = {
   'service-jenkins': ServiceJenkins,
   'service-jira-inverse': ServiceJiraInverse,
   'service-jira': ServiceJira,
+  'service-kubernetes-ccm': ServiceKubernetesCcm,
+  'service-kubernetes-quick': ServiceKubernetesQuick,
   'service-kubernetes': ServiceKubernetes,
   'service-microsoft-teams': ServiceMicrosoftTeams,
   'service-mongodb': ServiceMongodb,
