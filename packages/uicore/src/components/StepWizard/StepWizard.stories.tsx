@@ -6,9 +6,9 @@
  */
 
 /* eslint-disable no-console */
-import React, { useState } from 'react'
+import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { ExampleWizard, ExampleStep, ModalExample, ExampleStepWithStepHideShow } from './example/StepWizardExample'
+import { ExampleWizard, ExampleStep, ModalExample } from './example/StepWizardExample'
 import { Text } from '../Text/Text'
 import { StepWizard } from './StepWizard'
 import { Color } from '@harness/design-system'
@@ -97,86 +97,3 @@ export const NestedChildSteps: Story<void> = _args => (
     <ExampleStep name="Collaborator" />
   </StepWizard>
 )
-
-export const NestedChildStepsWithDynamicSteps: Story<void> = _args => {
-  const [showNewConnector, setShowNewConnector] = useState(false)
-  const [showNewConnector2, setShowNewConnector2] = useState(false)
-  return (
-    <StepWizard title="Kubernetes Cluster">
-      <ExampleStepWithStepHideShow
-        name={`New Project`}
-        setShowNewConnector={setShowNewConnector}
-        isNewConnectorVisible={showNewConnector}
-      />
-      {showNewConnector ? (
-        <StepWizard
-          title="Create new Connector"
-          onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
-          onStepChange={arg => console.log('Step Change', arg)}>
-          <ExampleStepWithStepHideShow
-            name="Overview"
-            setShowNewConnector={setShowNewConnector}
-            isNewConnectorVisible={showNewConnector}
-          />
-          <ExampleStepWithStepHideShow
-            name="Details"
-            setShowNewConnector={setShowNewConnector}
-            isNewConnectorVisible={showNewConnector}
-          />
-          <ExampleStepWithStepHideShow
-            name="Test Connection 1"
-            setShowNewConnector={setShowNewConnector}
-            isNewConnectorVisible={showNewConnector}
-          />
-          <ExampleStepWithStepHideShow
-            name="Test Connection 2"
-            setShowNewConnector={setShowNewConnector}
-            isNewConnectorVisible={showNewConnector}
-          />
-          <ExampleStepWithStepHideShow
-            name="Test Connection 3"
-            setShowNewConnector={setShowNewConnector}
-            isNewConnectorVisible={showNewConnector}
-          />
-        </StepWizard>
-      ) : null}
-      <ExampleStepWithStepHideShow
-        name="Collaborator"
-        setShowNewConnector={setShowNewConnector2}
-        isNewConnectorVisible={showNewConnector2}
-      />
-      {showNewConnector2 ? (
-        <StepWizard
-          title="Create new Connector 2"
-          onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
-          onStepChange={arg => console.log('Step Change', arg)}>
-          <ExampleStepWithStepHideShow
-            name="Overview"
-            setShowNewConnector={setShowNewConnector2}
-            isNewConnectorVisible={showNewConnector2}
-          />
-          <ExampleStepWithStepHideShow
-            name="Details"
-            setShowNewConnector={setShowNewConnector2}
-            isNewConnectorVisible={showNewConnector2}
-          />
-          <ExampleStepWithStepHideShow
-            name="Test Connection 1"
-            setShowNewConnector={setShowNewConnector2}
-            isNewConnectorVisible={showNewConnector2}
-          />
-          <ExampleStepWithStepHideShow
-            name="Test Connection 2"
-            setShowNewConnector={setShowNewConnector2}
-            isNewConnectorVisible={showNewConnector2}
-          />
-          <ExampleStepWithStepHideShow
-            name="Test Connection 3"
-            setShowNewConnector={setShowNewConnector2}
-            isNewConnectorVisible={showNewConnector2}
-          />
-        </StepWizard>
-      ) : null}
-    </StepWizard>
-  )
-}

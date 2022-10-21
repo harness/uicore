@@ -61,58 +61,6 @@ export const ExampleStep: React.FC<StepProps<StepData>> = props => {
   )
 }
 
-export const ExampleStepWithStepHideShow: React.FC<
-  StepProps<StepData> & { isNewConnectorVisible: boolean; setShowNewConnector: (val: boolean) => void }
-> = props => {
-  const totalSteps = props.totalSteps?.()
-  const currentStep = props.currentStep?.()
-  return (
-    <React.Fragment>
-      <Layout.Vertical>
-        <div style={{ height: '180px' }}>
-          {props.name}: {currentStep}
-          <div>Previous Step: {props.prevStepData && props.prevStepData.name}</div>
-        </div>
-        {props.setShowNewConnector && (
-          <Layout.Horizontal flex={{ justifyContent: 'center' }} margin={{ bottom: 'medium' }}>
-            {props.isNewConnectorVisible ? (
-              <Button
-                intent="warning"
-                text="Hide New Connector"
-                onClick={() => {
-                  props.setShowNewConnector(false)
-                }}
-              />
-            ) : (
-              <Button
-                intent="primary"
-                text="Show New Connector"
-                onClick={() => {
-                  props.setShowNewConnector(true)
-                  props.nextStep?.()
-                }}
-              />
-            )}
-          </Layout.Horizontal>
-        )}
-        <div style={{ height: '40px' }}>
-          <Button
-            disabled={currentStep === 1}
-            onClick={() => props.previousStep?.({ name: props.name || '' })}
-            text="Previous"
-          />
-          <Button
-            intent="primary"
-            style={{ float: 'right' }}
-            onClick={() => props.nextStep?.({ name: props.name || '' })}
-            text={currentStep === totalSteps ? 'Submit' : 'Next'}
-          />
-        </div>
-      </Layout.Vertical>
-    </React.Fragment>
-  )
-}
-
 export const ExampleWizard = (): JSX.Element => {
   const [counter, setCounter] = React.useState(1)
   return (
