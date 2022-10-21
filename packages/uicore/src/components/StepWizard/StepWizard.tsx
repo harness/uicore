@@ -22,15 +22,15 @@ interface StepChangeData<SharedObject> {
 
 export type GotoStepArgs<SharedObject> =
   | {
-  stepNumber: number
-  stepIdentifier?: never
-  prevStepData?: SharedObject
-}
+      stepNumber: number
+      stepIdentifier?: never
+      prevStepData?: SharedObject
+    }
   | {
-  stepNumber?: never
-  stepIdentifier: string
-  prevStepData?: SharedObject
-}
+      stepNumber?: never
+      stepIdentifier: string
+      prevStepData?: SharedObject
+    }
 export interface StepWizardProps<SharedObject> {
   icon?: IconName
   iconProps?: Omit<IconProps, 'name'>
@@ -299,64 +299,64 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
   const renderStep = () => (
     <React.Fragment>
       {state.stepNames &&
-      state.stepNames.map((stepName, index) => {
-        const activeStep = index + 1 === state.activeStep
-        const completedSteps = state.activeStep > index + 1 || state.completedStep == index
-        const isNestedStep = isNil(state.nestedStepWizard?.[index]?.wizard) ? false : true
-        const stepIndex = isNestedStep
-          ? romanize(state.nestedStepWizard?.[index]?.stepIndex || 0, true)
-          : state.nestedStepWizard?.[index]?.stepIndex
-        const isNestedFirstStep = isNestedStep ? state.nestedStepWizard?.[index]?.stepIndex === 1 : false
-        return (
-          <div
-            key={index}
-            onClick={() => completedSteps && gotoStep({ stepNumber: index + 1, prevStepData: state.prevStepData })}
-            className={cx(
-              css.navStep,
-              navClassName,
-              { [css.activeStep]: activeStep },
-              { [css.completedStep]: completedSteps },
-              { [css.nestedStep]: isNestedStep }
-            )}>
-            {isNestedFirstStep && state.nestedStepWizard?.[index]?.wizard?.props?.title && (
-              <>
-                <div style={{ gridColumn: '1/ span 2', color: 'var(--grey-50)', marginBottom: 'var(--spacing-6)' }}>
-                  {state.nestedStepWizard?.[index]?.wizard?.props?.title}
-                </div>
-              </>
-            )}
-            {completedSteps ? (
-              <span className={css.completedIcon}>
+        state.stepNames.map((stepName, index) => {
+          const activeStep = index + 1 === state.activeStep
+          const completedSteps = state.activeStep > index + 1 || state.completedStep == index
+          const isNestedStep = isNil(state.nestedStepWizard?.[index]?.wizard) ? false : true
+          const stepIndex = isNestedStep
+            ? romanize(state.nestedStepWizard?.[index]?.stepIndex || 0, true)
+            : state.nestedStepWizard?.[index]?.stepIndex
+          const isNestedFirstStep = isNestedStep ? state.nestedStepWizard?.[index]?.stepIndex === 1 : false
+          return (
+            <div
+              key={index}
+              onClick={() => completedSteps && gotoStep({ stepNumber: index + 1, prevStepData: state.prevStepData })}
+              className={cx(
+                css.navStep,
+                navClassName,
+                { [css.activeStep]: activeStep },
+                { [css.completedStep]: completedSteps },
+                { [css.nestedStep]: isNestedStep }
+              )}>
+              {isNestedFirstStep && state.nestedStepWizard?.[index]?.wizard?.props?.title && (
+                <>
+                  <div style={{ gridColumn: '1/ span 2', color: 'var(--grey-50)', marginBottom: 'var(--spacing-6)' }}>
+                    {state.nestedStepWizard?.[index]?.wizard?.props?.title}
+                  </div>
+                </>
+              )}
+              {completedSteps ? (
+                <span className={css.completedIcon}>
                   <Icon name="small-tick" size={20} color={Color.PRIMARY_7} />
                 </span>
-            ) : (
-              <>{typeof stepName.stepName === 'string' && <span className={css.number}>{stepIndex}</span>}</>
-            )}
+              ) : (
+                <>{typeof stepName.stepName === 'string' && <span className={css.number}>{stepIndex}</span>}</>
+              )}
 
-            <Text className={css.stepName} lineClamp={2} width={200}>
-              {stepName.stepName}
-            </Text>
-            {stepName.stepSubTitle ? (
-              <Text
-                className={cx(
-                  css.stepName,
-                  typeof stepName.stepSubTitle === 'string' && typeof stepName.stepName === 'string'
-                    ? css.stepSubTitleString
-                    : css.stepSubTitle
-                )}
-                lineClamp={2}
-                width={200}>
-                {stepName.stepSubTitle}
-              </Text>
-            ) : null}
-            {!isNestedFirstStep && state.nestedStepWizard?.[index]?.stepIndex === 1 ? (
               <Text className={css.stepName} lineClamp={2} width={200}>
-                {subtitle}
+                {stepName.stepName}
               </Text>
-            ) : null}
-          </div>
-        )
-      })}
+              {stepName.stepSubTitle ? (
+                <Text
+                  className={cx(
+                    css.stepName,
+                    typeof stepName.stepSubTitle === 'string' && typeof stepName.stepName === 'string'
+                      ? css.stepSubTitleString
+                      : css.stepSubTitle
+                  )}
+                  lineClamp={2}
+                  width={200}>
+                  {stepName.stepSubTitle}
+                </Text>
+              ) : null}
+              {!isNestedFirstStep && state.nestedStepWizard?.[index]?.stepIndex === 1 ? (
+                <Text className={css.stepName} lineClamp={2} width={200}>
+                  {subtitle}
+                </Text>
+              ) : null}
+            </div>
+          )
+        })}
     </React.Fragment>
   )
 
