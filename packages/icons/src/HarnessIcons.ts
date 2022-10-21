@@ -12,11 +12,37 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
+import AnchoreDark from './Anchore-Dark.svg'
+import Anchore from './Anchore.svg'
+import AuqaTrivyDark from './AuqaTrivy-Dark.svg'
+import AuqaTrivy from './AuqaTrivy.svg'
+import BlackDuckDark from './BlackDuck-Dark.svg'
+import BlackDuck from './BlackDuck.svg'
+import BurpDark from './Burp-Dark.svg'
+import Burp from './Burp.svg'
+import CheckmarxDark from './Checkmarx-Dark.svg'
+import Checkmarx from './Checkmarx.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
+import FortifyOnDemandDark from './FortifyOnDemand-Dark.svg'
+import FortifyOnDemand from './FortifyOnDemand.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
+import PrismaCloudDark from './PrismaCloud-Dark.svg'
+import PrismaCloud from './PrismaCloud.svg'
+import QualysDark from './Qualys-Dark.svg'
+import Qualys from './Qualys.svg'
+import SnykDark from './Snyk-Dark.svg'
+import Snyk from './Snyk.svg'
+import SonarQubeDark from './SonarQube-Dark.svg'
+import SonarQube from './SonarQube.svg'
 import Stroke from './Stroke.svg'
+import TenableDark from './Tenable-Dark.svg'
+import Tenable from './Tenable.svg'
+import VeracodeDark from './Veracode-Dark.svg'
+import Veracode from './Veracode.svg'
+import ZapDark from './ZAP-Dark .svg'
+import Zap from './ZAP.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
 import AccordionExpanded from './accordion-expanded.svg'
@@ -810,11 +836,37 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
+  | 'Anchore-Dark'
+  | 'Anchore'
+  | 'AuqaTrivy-Dark'
+  | 'AuqaTrivy'
+  | 'BlackDuck-Dark'
+  | 'BlackDuck'
+  | 'Burp-Dark'
+  | 'Burp'
+  | 'Checkmarx-Dark'
+  | 'Checkmarx'
   | 'CustomDeployment'
   | 'Edit'
+  | 'FortifyOnDemand-Dark'
+  | 'FortifyOnDemand'
   | 'Inline'
   | 'Options'
+  | 'PrismaCloud-Dark'
+  | 'PrismaCloud'
+  | 'Qualys-Dark'
+  | 'Qualys'
+  | 'Snyk-Dark'
+  | 'Snyk'
+  | 'SonarQube-Dark'
+  | 'SonarQube'
   | 'Stroke'
+  | 'Tenable-Dark'
+  | 'Tenable'
+  | 'Veracode-Dark'
+  | 'Veracode'
+  | 'ZAP-Dark '
+  | 'ZAP'
   | 'access-control'
   | 'accordion-collapsed'
   | 'accordion-expanded'
@@ -1608,11 +1660,37 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
+  'Anchore-Dark': AnchoreDark,
+  Anchore: Anchore,
+  'AuqaTrivy-Dark': AuqaTrivyDark,
+  AuqaTrivy: AuqaTrivy,
+  'BlackDuck-Dark': BlackDuckDark,
+  BlackDuck: BlackDuck,
+  'Burp-Dark': BurpDark,
+  Burp: Burp,
+  'Checkmarx-Dark': CheckmarxDark,
+  Checkmarx: Checkmarx,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
+  'FortifyOnDemand-Dark': FortifyOnDemandDark,
+  FortifyOnDemand: FortifyOnDemand,
   Inline: Inline,
   Options: Options,
+  'PrismaCloud-Dark': PrismaCloudDark,
+  PrismaCloud: PrismaCloud,
+  'Qualys-Dark': QualysDark,
+  Qualys: Qualys,
+  'Snyk-Dark': SnykDark,
+  Snyk: Snyk,
+  'SonarQube-Dark': SonarQubeDark,
+  SonarQube: SonarQube,
   Stroke: Stroke,
+  'Tenable-Dark': TenableDark,
+  Tenable: Tenable,
+  'Veracode-Dark': VeracodeDark,
+  Veracode: Veracode,
+  'ZAP-Dark ': ZapDark,
+  ZAP: Zap,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
   'accordion-expanded': AccordionExpanded,
