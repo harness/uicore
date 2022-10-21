@@ -41,7 +41,7 @@ import TenableDark from './Tenable-Dark.svg'
 import Tenable from './Tenable.svg'
 import VeracodeDark from './Veracode-Dark.svg'
 import Veracode from './Veracode.svg'
-import ZapDark from './ZAP-Dark .svg'
+import ZapDark from './ZAP-Dark.svg'
 import Zap from './ZAP.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
@@ -865,7 +865,7 @@ type HarnessIconName =
   | 'Tenable'
   | 'Veracode-Dark'
   | 'Veracode'
-  | 'ZAP-Dark '
+  | 'ZAP-Dark'
   | 'ZAP'
   | 'access-control'
   | 'accordion-collapsed'
@@ -1689,7 +1689,7 @@ const HarnessIcons: KVO<ElementType> = {
   Tenable: Tenable,
   'Veracode-Dark': VeracodeDark,
   Veracode: Veracode,
-  'ZAP-Dark ': ZapDark,
+  'ZAP-Dark': ZapDark,
   ZAP: Zap,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
