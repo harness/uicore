@@ -15,6 +15,7 @@ exports[`<FieldArray /> tests render initial value when given 1`] = `
           Field List
         </span>
         <button
+          aria-label="Add"
           class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
@@ -177,6 +178,7 @@ exports[`<FieldArray /> tests render placeholder when no initial value given 1`]
           This is a no data/add data message.
         </div>
         <button
+          aria-label="Add"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color withLeftIcon"
           data-id="btn-add-no-data"
           type="button"
@@ -227,6 +229,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 1`] =
           Field List
         </span>
         <button
+          aria-label="Add"
           class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
@@ -337,6 +340,7 @@ exports[`<FieldArray /> tests should be able to add rows from both buttons 2`] =
           Field List
         </span>
         <button
+          aria-label="Add"
           class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
@@ -490,6 +494,7 @@ exports[`<FieldArray /> tests should be able to delete row 1`] = `
           Field List
         </span>
         <button
+          aria-label="Add"
           class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"
@@ -600,6 +605,7 @@ exports[`<FieldArray /> tests should be able to render custom fields 1`] = `
           Field List
         </span>
         <button
+          aria-label="Add"
           class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
           data-id="btn-add"
           type="button"

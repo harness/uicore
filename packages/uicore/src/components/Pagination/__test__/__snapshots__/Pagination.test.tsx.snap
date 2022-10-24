@@ -16,6 +16,7 @@ exports[`Pagination itemCount < pageSize 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <button
+        aria-label="Prev"
         class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonLeft with-current-color withLeftIcon size small"
         disabled=""
         tabindex="-1"
@@ -59,6 +60,7 @@ exports[`Pagination itemCount < pageSize 1`] = `
         </span>
       </button>
       <button
+        aria-label="Next"
         class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonRight with-current-color withRightIcon size small"
         disabled=""
         tabindex="-1"
@@ -111,6 +113,7 @@ exports[`Pagination pageCount < 8 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <button
+        aria-label="Prev"
         class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonLeft with-current-color withLeftIcon size small"
         disabled=""
         tabindex="-1"
@@ -174,6 +177,7 @@ exports[`Pagination pageCount < 8 1`] = `
         </span>
       </button>
       <button
+        aria-label="Next"
         class="bp3-button button StyledProps--font StyledProps--main roundedButton buttonRight with-current-color withRightIcon size small"
         type="button"
       >
@@ -224,6 +228,7 @@ exports[`Pagination pageCount >= 8 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <button
+        aria-label="Prev"
         class="bp3-button bp3-disabled button StyledProps--font StyledProps--main roundedButton buttonLeft with-current-color withLeftIcon size small"
         disabled=""
         tabindex="-1"
@@ -357,6 +362,7 @@ exports[`Pagination pageCount >= 8 1`] = `
         </span>
       </button>
       <button
+        aria-label="Next"
         class="bp3-button button StyledProps--font StyledProps--main roundedButton buttonRight with-current-color withRightIcon size small"
         type="button"
       >

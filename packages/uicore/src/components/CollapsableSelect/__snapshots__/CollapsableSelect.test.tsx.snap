@@ -49,6 +49,7 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
             </div>
           </div>
           <button
+            aria-label="Change"
             class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
@@ -140,6 +141,7 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
             </div>
           </div>
           <button
+            aria-label="Change"
             class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
@@ -249,6 +251,7 @@ exports[`Test render CollapsableSelect should render customView  1`] = `
             </div>
           </div>
           <button
+            aria-label="Change"
             class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
