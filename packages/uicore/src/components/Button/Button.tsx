@@ -131,8 +131,8 @@ export function Button(props: ButtonProps): React.ReactElement {
 
   let buttonAriaLabel = !props.text && typeof props.tooltip === 'string' ? props.tooltip : ''
 
-  // In case a Button has icon, set aria label as text
-  if (typeof props.text === 'string' && (icon || rightIcon)) {
+  // In case a Button has text as a string, set aria label as text
+  if (typeof props.text === 'string') {
     buttonAriaLabel = props.text
   }
 
