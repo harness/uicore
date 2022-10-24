@@ -119,6 +119,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
             style="height: 40px;"
           >
             <button
+              aria-label="Previous"
               class="bp3-button bp3-disabled button StyledProps--font StyledProps--main with-current-color"
               disabled=""
               tabindex="-1"
@@ -131,6 +132,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
               </span>
             </button>
             <button
+              aria-label="Next"
               class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
               style="float: right;"
               type="button"

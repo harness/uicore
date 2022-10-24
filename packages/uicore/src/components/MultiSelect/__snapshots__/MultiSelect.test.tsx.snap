@@ -230,6 +230,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                   </p>
                 </li>
                 <button
+                  aria-label="cha"
                   class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
                   type="button"
                 >
