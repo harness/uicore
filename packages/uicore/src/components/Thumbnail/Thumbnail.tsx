@@ -42,8 +42,8 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
 
   const cardContent = useMemo(() => {
     if (imageProps?.src) {
-      const { className, ...rest } = imageProps
-      return <img {...rest} className={cx(css.image, className)} />
+      const { className: imageClassName, ...rest } = imageProps
+      return <img {...rest} className={cx(css.image, imageClassName)} />
     }
 
     if (icon) {
