@@ -25,6 +25,12 @@
       background-color: var(--primary-1);
       border-color: transparent;
     }
+
+    .image {
+      object-fit: contain;
+      width: 26px;
+      height: 26px;
+    }
   }
 
   .label {

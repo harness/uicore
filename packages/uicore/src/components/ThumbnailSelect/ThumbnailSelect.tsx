@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { ReactElement } from 'react'
+import React, { ImgHTMLAttributes, ReactElement } from 'react'
 import css from './ThumbnailSelect.css'
 import { IconName } from '@harness/icons'
 import { Layout, LayoutProps } from '../../layouts/Layout'
@@ -23,6 +23,7 @@ import cx from 'classnames'
 export interface Item {
   label: string
   icon?: IconName
+  imageProps?: ImgHTMLAttributes<HTMLOrSVGImageElement>
   value: string
   disabled?: boolean
   tooltip?: ReactElement | string
@@ -113,6 +114,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
                 label={item.label}
                 value={item.value}
                 icon={item.icon}
+                imageProps={item.imageProps}
                 disabled={item.disabled || isReadonly}
                 selected={item.value === value}
                 onClick={handleChange}

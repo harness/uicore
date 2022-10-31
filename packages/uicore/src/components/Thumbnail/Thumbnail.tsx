@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { ImgHTMLAttributes, useMemo } from 'react'
 import cx from 'classnames'
 
 import css from '../Thumbnail/Thumbnail.css'
@@ -19,6 +19,8 @@ export interface ThumbnailProps {
   label?: string
   value?: string
   icon?: IconName
+  /** renders image instead of icon when imageProps.src is passed */
+  imageProps?: ImgHTMLAttributes<HTMLOrSVGImageElement>
   disabled?: boolean
   selected?: boolean
   className?: string
@@ -27,16 +29,37 @@ export interface ThumbnailProps {
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
-  const { label, value, icon, disabled, selected, onClick, className, name, size } = props
+  const { label, value, icon, disabled, selected, onClick, className, name, size, imageProps } = props
 
   const getContainerClass = () => {
     if (size === 'large') {
       return css.large
     }
-    if (!icon) {
+    if (!icon && !imageProps?.src) {
       return css.bigger
     }
   }
+
+  const cardContent = useMemo(() => {
+    if (imageProps?.src) {
+      const { className, ...rest } = imageProps
+      return <img {...rest} className={cx(css.image, className)} />
+    }
+
+    if (icon) {
+      return <Icon name={icon} size={26} />
+    }
+
+    if (label) {
+      return (
+        <Text className={css.label} color={Color.BLACK}>
+          {label}
+        </Text>
+      )
+    }
+
+    return null
+  }, [imageProps, icon, label])
 
   return (
     <label className={cx(css.squareCardContainer, getContainerClass(), className)}>
@@ -46,15 +69,9 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         selected={selected}
         cornerSelected={selected}
         className={css.squareCard}>
-        {icon ? (
-          <Icon name={icon} size={26} />
-        ) : label ? (
-          <Text className={css.label} color={Color.BLACK}>
-            {label}
-          </Text>
-        ) : null}
+        {cardContent}
       </Card>
-      {icon && label && (
+      {(icon || imageProps?.src) && label && (
         <Text
           className={css.label}
           font={{ weight: 'semi-bold' }}
