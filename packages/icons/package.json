@@ -1,6 +1,6 @@
 {
   "name": "@harness/icons",
-  "version": "1.71.0",
+  "version": "1.72.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/icons.umd.js",
@@ -40,5 +40,8 @@
     "vite": "^2.7.13",
     "vite-plugin-dts": "^0.9.9",
     "vite-plugin-react-svg": "^0.2.0"
+  },
+  "dependencies": {
+    "@harness/icons": "file:.yalc/@harness/icons"
   }
 }
