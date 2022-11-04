@@ -73,11 +73,13 @@ import AzureArmRollback from './azure-arm-rollback.svg'
 import AzureArm from './azure-arm.svg'
 import AzureBlob from './azure-blob.svg'
 import AzureBlueprints from './azure-blueprints.svg'
+import AzureContainerRegistryInverse from './azure-container-registry-inverse.svg'
 import AzureContainerRegistry from './azure-container-registry.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import AzureVm from './azure-vm.svg'
 import Azurewebapp from './azurewebapp.svg'
+import BackgroundStepInverse from './background-step-inverse.svg'
 import BackgroundStep from './background-step.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
@@ -255,6 +257,7 @@ import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
 import DependencyDefaultIcon from './dependency-default-icon.svg'
+import DependencyStepInverse from './dependency-step-inverse.svg'
 import DependencyStep from './dependency-step.svg'
 import DeployStage from './deploy-stage.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
@@ -336,6 +339,7 @@ import GcsStepInverse from './gcs-step-inverse.svg'
 import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
 import GitBranchExisting from './git-branch-existing.svg'
+import GitCloneStepInverse from './git-clone-step-inverse.svg'
 import GitCloneStep from './git-clone-step.svg'
 import GitConfigure from './git-configure.svg'
 import GitLandingPage from './git-landing-page.svg'
@@ -588,6 +592,7 @@ import PlaceholderSelected from './placeholder-selected.svg'
 import Placeholder from './placeholder.svg'
 import PlayCircle from './play-circle.svg'
 import PlayOutline from './play-outline.svg'
+import PluginStepInverse from './plugin-step-inverse.svg'
 import PluginStep from './plugin-step.svg'
 import Pod from './pod.svg'
 import Polygon from './polygon.svg'
@@ -625,6 +630,7 @@ import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcsStepInverse from './restore-cache-gcs-step-inverse.svg'
 import RestoreCacheGcsStep from './restore-cache-gcs-step.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
+import RestoreCacheHarnessStep from './restore-cache-harness-step.svg'
 import RestoreCacheS3StepInverse from './restore-cache-s3-step-inverse.svg'
 import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
@@ -635,7 +641,9 @@ import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
 import RunPipeline from './run-pipeline.svg'
+import RunStepInverse from './run-step-inverse.svg'
 import RunStep from './run-step.svg'
+import RunTestsStepInverse from './run-tests-step-inverse.svg'
 import RunTestsStep from './run-tests-step.svg'
 import RuntimeInput from './runtime-input.svg'
 import S3StepInverse from './s3-step-inverse.svg'
@@ -643,6 +651,8 @@ import S3Step from './s3-step.svg'
 import SaveCacheGcsStepInverse from './save-cache-gcs-step-inverse.svg'
 import SaveCacheGcsStep from './save-cache-gcs-step.svg'
 import SaveCacheGcs from './save-cache-gcs.svg'
+import SaveCacheHarnessStepInverse from './save-cache-harness-step-inverse.svg'
+import SaveCacheHarnessStep from './save-cache-harness-step.svg'
 import SaveCacheS3StepInverse from './save-cache-s3-step-inverse.svg'
 import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
@@ -666,6 +676,8 @@ import SecretSsh from './secret-ssh.svg'
 import SecretsBlue from './secrets-blue.svg'
 import SecretsIcon from './secrets-icon.svg'
 import SecurityStage from './security-stage.svg'
+import SecurityStepInverse from './security-step-inverse.svg'
+import SecurityStep from './security-step.svg'
 import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
@@ -908,11 +920,13 @@ type HarnessIconName =
   | 'azure-arm'
   | 'azure-blob'
   | 'azure-blueprints'
+  | 'azure-container-registry-inverse'
   | 'azure-container-registry'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'azure-vm'
   | 'azurewebapp'
+  | 'background-step-inverse'
   | 'background-step'
   | 'banned'
   | 'bar-chart'
@@ -1090,6 +1104,7 @@ type HarnessIconName =
   | 'delegates-blue'
   | 'delegates-icon'
   | 'dependency-default-icon'
+  | 'dependency-step-inverse'
   | 'dependency-step'
   | 'deploy-stage'
   | 'deployment-aborted-legacy'
@@ -1171,6 +1186,7 @@ type HarnessIconName =
   | 'gcs-step'
   | 'gear'
   | 'git-branch-existing'
+  | 'git-clone-step-inverse'
   | 'git-clone-step'
   | 'git-configure'
   | 'git-landing-page'
@@ -1423,6 +1439,7 @@ type HarnessIconName =
   | 'placeholder'
   | 'play-circle'
   | 'play-outline'
+  | 'plugin-step-inverse'
   | 'plugin-step'
   | 'pod'
   | 'polygon'
@@ -1460,6 +1477,7 @@ type HarnessIconName =
   | 'restore-cache-gcs-step-inverse'
   | 'restore-cache-gcs-step'
   | 'restore-cache-gcs'
+  | 'restore-cache-harness-step'
   | 'restore-cache-s3-step-inverse'
   | 'restore-cache-s3-step'
   | 'restore-cache-s3'
@@ -1470,7 +1488,9 @@ type HarnessIconName =
   | 'rolling-update'
   | 'rolling'
   | 'run-pipeline'
+  | 'run-step-inverse'
   | 'run-step'
+  | 'run-tests-step-inverse'
   | 'run-tests-step'
   | 'runtime-input'
   | 's3-step-inverse'
@@ -1478,6 +1498,8 @@ type HarnessIconName =
   | 'save-cache-gcs-step-inverse'
   | 'save-cache-gcs-step'
   | 'save-cache-gcs'
+  | 'save-cache-harness-step-inverse'
+  | 'save-cache-harness-step'
   | 'save-cache-s3-step-inverse'
   | 'save-cache-s3-step'
   | 'save-cache-s3'
@@ -1501,6 +1523,8 @@ type HarnessIconName =
   | 'secrets-blue'
   | 'secrets-icon'
   | 'security-stage'
+  | 'security-step-inverse'
+  | 'security-step'
   | 'send-data'
   | 'serverless-deploy-step'
   | 'service-amazon-ecs'
@@ -1743,11 +1767,13 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-arm': AzureArm,
   'azure-blob': AzureBlob,
   'azure-blueprints': AzureBlueprints,
+  'azure-container-registry-inverse': AzureContainerRegistryInverse,
   'azure-container-registry': AzureContainerRegistry,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   'azure-vm': AzureVm,
   azurewebapp: Azurewebapp,
+  'background-step-inverse': BackgroundStepInverse,
   'background-step': BackgroundStep,
   banned: Banned,
   'bar-chart': BarChart,
@@ -1925,6 +1951,7 @@ const HarnessIcons: KVO<ElementType> = {
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
   'dependency-default-icon': DependencyDefaultIcon,
+  'dependency-step-inverse': DependencyStepInverse,
   'dependency-step': DependencyStep,
   'deploy-stage': DeployStage,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
@@ -2006,6 +2033,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gcs-step': GcsStep,
   gear: Gear,
   'git-branch-existing': GitBranchExisting,
+  'git-clone-step-inverse': GitCloneStepInverse,
   'git-clone-step': GitCloneStep,
   'git-configure': GitConfigure,
   'git-landing-page': GitLandingPage,
@@ -2258,6 +2286,7 @@ const HarnessIcons: KVO<ElementType> = {
   placeholder: Placeholder,
   'play-circle': PlayCircle,
   'play-outline': PlayOutline,
+  'plugin-step-inverse': PluginStepInverse,
   'plugin-step': PluginStep,
   pod: Pod,
   polygon: Polygon,
@@ -2295,6 +2324,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-gcs-step-inverse': RestoreCacheGcsStepInverse,
   'restore-cache-gcs-step': RestoreCacheGcsStep,
   'restore-cache-gcs': RestoreCacheGcs,
+  'restore-cache-harness-step': RestoreCacheHarnessStep,
   'restore-cache-s3-step-inverse': RestoreCacheS3StepInverse,
   'restore-cache-s3-step': RestoreCacheS3Step,
   'restore-cache-s3': RestoreCacheS3,
@@ -2305,7 +2335,9 @@ const HarnessIcons: KVO<ElementType> = {
   'rolling-update': RollingUpdate,
   rolling: Rolling,
   'run-pipeline': RunPipeline,
+  'run-step-inverse': RunStepInverse,
   'run-step': RunStep,
+  'run-tests-step-inverse': RunTestsStepInverse,
   'run-tests-step': RunTestsStep,
   'runtime-input': RuntimeInput,
   's3-step-inverse': S3StepInverse,
@@ -2313,6 +2345,8 @@ const HarnessIcons: KVO<ElementType> = {
   'save-cache-gcs-step-inverse': SaveCacheGcsStepInverse,
   'save-cache-gcs-step': SaveCacheGcsStep,
   'save-cache-gcs': SaveCacheGcs,
+  'save-cache-harness-step-inverse': SaveCacheHarnessStepInverse,
+  'save-cache-harness-step': SaveCacheHarnessStep,
   'save-cache-s3-step-inverse': SaveCacheS3StepInverse,
   'save-cache-s3-step': SaveCacheS3Step,
   'save-cache-s3': SaveCacheS3,
@@ -2336,6 +2370,8 @@ const HarnessIcons: KVO<ElementType> = {
   'secrets-blue': SecretsBlue,
   'secrets-icon': SecretsIcon,
   'security-stage': SecurityStage,
+  'security-step-inverse': SecurityStepInverse,
+  'security-step': SecurityStep,
   'send-data': SendData,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-amazon-ecs': ServiceAmazonEcs,
