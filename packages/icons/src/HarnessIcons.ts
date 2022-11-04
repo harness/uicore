@@ -26,6 +26,7 @@ import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
 import FortifyOnDemandDark from './FortifyOnDemand-Dark.svg'
 import FortifyOnDemand from './FortifyOnDemand.svg'
+import FreezeWindow from './FreezeWindow.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
 import PrismaCloudDark from './PrismaCloud-Dark.svg'
@@ -856,6 +857,7 @@ type HarnessIconName =
   | 'Edit'
   | 'FortifyOnDemand-Dark'
   | 'FortifyOnDemand'
+  | 'FreezeWindow'
   | 'Inline'
   | 'Options'
   | 'PrismaCloud-Dark'
@@ -1686,6 +1688,7 @@ const HarnessIcons: KVO<ElementType> = {
   Edit: Edit,
   'FortifyOnDemand-Dark': FortifyOnDemandDark,
   FortifyOnDemand: FortifyOnDemand,
+  FreezeWindow: FreezeWindow,
   Inline: Inline,
   Options: Options,
   'PrismaCloud-Dark': PrismaCloudDark,
