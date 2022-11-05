@@ -277,6 +277,7 @@ import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
 import DigitalOcean from './digital-ocean.svg'
+import Disable from './disable.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
@@ -289,6 +290,7 @@ import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import Elk from './elk.svg'
 import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
+import Enable from './enable.svg'
 import Entity from './entity.svg'
 import EnvironmentGroupOutline from './environment-group-outline.svg'
 import EnvironmentGroup from './environment-group.svg'
@@ -1108,6 +1110,7 @@ type HarnessIconName =
   | 'deployment-timeout-new'
   | 'description'
   | 'digital-ocean'
+  | 'disable'
   | 'docker-hub-step'
   | 'docker-step-inverse'
   | 'docker-step'
@@ -1120,6 +1123,7 @@ type HarnessIconName =
   | 'elk'
   | 'email-inline'
   | 'email-step'
+  | 'enable'
   | 'entity'
   | 'environment-group-outline'
   | 'environment-group'
@@ -1939,6 +1943,7 @@ const HarnessIcons: KVO<ElementType> = {
   'deployment-timeout-new': DeploymentTimeoutNew,
   description: Description,
   'digital-ocean': DigitalOcean,
+  disable: Disable,
   'docker-hub-step': DockerHubStep,
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
@@ -1951,6 +1956,7 @@ const HarnessIcons: KVO<ElementType> = {
   elk: Elk,
   'email-inline': EmailInline,
   'email-step': EmailStep,
+  enable: Enable,
   entity: Entity,
   'environment-group-outline': EnvironmentGroupOutline,
   'environment-group': EnvironmentGroup,
