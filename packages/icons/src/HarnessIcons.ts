@@ -679,6 +679,8 @@ import ServiceAwsLamda from './service-aws-lamda.svg'
 import ServiceAwsSam from './service-aws-sam.svg'
 import ServiceAws from './service-aws.svg'
 import ServiceAzdevops from './service-azdevops.svg'
+import ServiceAzureArtifactConnector from './service-azure-artifact-connector.svg'
+import ServiceAzureArtifacts from './service-azure-artifacts.svg'
 import ServiceAzureCcm from './service-azure-ccm.svg'
 import ServiceAzureFunctions from './service-azure-functions.svg'
 import ServiceAzure from './service-azure.svg'
@@ -1512,6 +1514,8 @@ type HarnessIconName =
   | 'service-aws-sam'
   | 'service-aws'
   | 'service-azdevops'
+  | 'service-azure-artifact-connector'
+  | 'service-azure-artifacts'
   | 'service-azure-ccm'
   | 'service-azure-functions'
   | 'service-azure'
@@ -2345,6 +2349,8 @@ const HarnessIcons: KVO<ElementType> = {
   'service-aws-sam': ServiceAwsSam,
   'service-aws': ServiceAws,
   'service-azdevops': ServiceAzdevops,
+  'service-azure-artifact-connector': ServiceAzureArtifactConnector,
+  'service-azure-artifacts': ServiceAzureArtifacts,
   'service-azure-ccm': ServiceAzureCcm,
   'service-azure-functions': ServiceAzureFunctions,
   'service-azure': ServiceAzure,
