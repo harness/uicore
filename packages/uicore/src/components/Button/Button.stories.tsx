@@ -108,6 +108,20 @@ export const ButtonVariationsAndSizesExamples: Story<ButtonProps> = () => {
 
       <Container>
         <Layout.Horizontal spacing="medium">
+          <Button text="Secondary Danger" variation={ButtonVariation.SECONDARY} intent="danger" />
+          <Button text="Secondary Warning" icon="chevron-left" variation={ButtonVariation.SECONDARY} intent="warning" />
+          <Button
+            text="Secondary Warning Disabled"
+            icon="chevron-left"
+            variation={ButtonVariation.SECONDARY}
+            intent="warning"
+            disabled
+          />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="medium">
           <Button text="Large" variation={ButtonVariation.SECONDARY} size={ButtonSize.LARGE} />
           <Button
             text="Large + left icon"
