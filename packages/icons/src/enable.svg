@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 16">
+  <defs>
+    <path id="reuse-0" fill-rule="evenodd" d="M4.79 4.87a3.13 3.13 0 0 0 0 6.26h6.458a3.13 3.13 0 0 0 0-6.26zm6.31 5.506a2.376 2.376 0 1 0 0-4.752 2.376 2.376 0 0 0 0 4.752z" clip-rule="evenodd"/>
+  </defs>
+  <mask id="a" fill="#currentColor">
+    <use xlink:href="#reuse-0" fill-rule="evenodd" clip-rule="evenodd"/>
+  </mask>
+  <g fill="#currentColor">
+    <use xlink:href="#reuse-0" fill-rule="evenodd" clip-rule="evenodd"/>
+    <path d="M2.66 8a2.13 2.13 0 0 1 2.13-2.13v-2A4.13 4.13 0 0 0 .66 8zm2.13 2.13A2.13 2.13 0 0 1 2.66 8h-2a4.13 4.13 0 0 0 4.13 4.13zm6.458 0H4.79v2h6.458zM13.378 8a2.13 2.13 0 0 1-2.13 2.13v2A4.13 4.13 0 0 0 15.378 8zm-2.13-2.13A2.13 2.13 0 0 1 13.378 8h2a4.13 4.13 0 0 0-4.13-4.13zm-6.458 0h6.458v-2H4.79zM12.475 8c0 .76-.616 1.376-1.376 1.376v2A3.376 3.376 0 0 0 14.475 8zM11.1 6.624c.76 0 1.376.616 1.376 1.376h2A3.376 3.376 0 0 0 11.1 4.624zM9.723 8c0-.76.616-1.376 1.376-1.376v-2A3.376 3.376 0 0 0 7.723 8zM11.1 9.376c-.76 0-1.376-.616-1.376-1.376h-2a3.376 3.376 0 0 0 3.376 3.376z" mask="url(#a)"/>
+  </g>
+</svg>
