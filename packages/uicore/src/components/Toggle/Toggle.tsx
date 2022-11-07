@@ -9,6 +9,8 @@ import React, { ChangeEvent, ReactElement } from 'react'
 import { StyledProps, styledClasses } from '@harness/design-system'
 import { styledClass } from '@harness/design-system'
 
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
+
 import css from './Toggle.css'
 
 export interface ToggleProps {
@@ -19,6 +21,7 @@ export interface ToggleProps {
   disabled?: boolean
   onToggle?: (checked: boolean) => void
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  tooltipId?: string
 }
 
 export function Toggle({
@@ -29,10 +32,11 @@ export function Toggle({
   disabled = false,
   onToggle = () => undefined,
   onChange = () => undefined,
+  tooltipId,
   ...props
 }: ToggleProps & StyledProps): ReactElement {
   return (
-    <label className={styledClasses(styledClass.font, css.toggle, className)} {...props}>
+    <label className={styledClasses(styledClass.font, css.toggle, className)} data-tooltip-id={tooltipId} {...props}>
       <input
         type="checkbox"
         value={value}
@@ -46,6 +50,7 @@ export function Toggle({
       />
       <span className={css.toggleIcon} />
       {label}
+      <HarnessDocTooltip tooltipId={tooltipId} useStandAlone={true} />
     </label>
   )
 }
