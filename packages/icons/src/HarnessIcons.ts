@@ -630,6 +630,7 @@ import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcsStepInverse from './restore-cache-gcs-step-inverse.svg'
 import RestoreCacheGcsStep from './restore-cache-gcs-step.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
+import RestoreCacheHarnessStepInverse from './restore-cache-harness-step-inverse.svg'
 import RestoreCacheHarnessStep from './restore-cache-harness-step.svg'
 import RestoreCacheS3StepInverse from './restore-cache-s3-step-inverse.svg'
 import RestoreCacheS3Step from './restore-cache-s3-step.svg'
@@ -1477,6 +1478,7 @@ type HarnessIconName =
   | 'restore-cache-gcs-step-inverse'
   | 'restore-cache-gcs-step'
   | 'restore-cache-gcs'
+  | 'restore-cache-harness-step-inverse'
   | 'restore-cache-harness-step'
   | 'restore-cache-s3-step-inverse'
   | 'restore-cache-s3-step'
@@ -2324,6 +2326,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-gcs-step-inverse': RestoreCacheGcsStepInverse,
   'restore-cache-gcs-step': RestoreCacheGcsStep,
   'restore-cache-gcs': RestoreCacheGcs,
+  'restore-cache-harness-step-inverse': RestoreCacheHarnessStepInverse,
   'restore-cache-harness-step': RestoreCacheHarnessStep,
   'restore-cache-s3-step-inverse': RestoreCacheS3StepInverse,
   'restore-cache-s3-step': RestoreCacheS3Step,
