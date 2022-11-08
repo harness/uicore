@@ -627,13 +627,11 @@ import ResetIcon from './reset-icon.svg'
 import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
 import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
-import RestoreCacheGcsStepInverse from './restore-cache-gcs-step-inverse.svg'
-import RestoreCacheGcsStep from './restore-cache-gcs-step.svg'
+import RestoreCacheGcsInverse from './restore-cache-gcs-inverse.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheHarnessStepInverse from './restore-cache-harness-step-inverse.svg'
 import RestoreCacheHarnessStep from './restore-cache-harness-step.svg'
-import RestoreCacheS3StepInverse from './restore-cache-s3-step-inverse.svg'
-import RestoreCacheS3Step from './restore-cache-s3-step.svg'
+import RestoreCacheS3Inverse from './restore-cache-s3-inverse.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
@@ -649,13 +647,11 @@ import RunTestsStep from './run-tests-step.svg'
 import RuntimeInput from './runtime-input.svg'
 import S3StepInverse from './s3-step-inverse.svg'
 import S3Step from './s3-step.svg'
-import SaveCacheGcsStepInverse from './save-cache-gcs-step-inverse.svg'
-import SaveCacheGcsStep from './save-cache-gcs-step.svg'
+import SaveCacheGcsInverse from './save-cache-gcs-inverse.svg'
 import SaveCacheGcs from './save-cache-gcs.svg'
 import SaveCacheHarnessStepInverse from './save-cache-harness-step-inverse.svg'
 import SaveCacheHarnessStep from './save-cache-harness-step.svg'
-import SaveCacheS3StepInverse from './save-cache-s3-step-inverse.svg'
-import SaveCacheS3Step from './save-cache-s3-step.svg'
+import SaveCacheS3Inverse from './save-cache-s3-inverse.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
 import Scm from './scm.svg'
@@ -1475,13 +1471,11 @@ type HarnessIconName =
   | 'resource-center-community-icon'
   | 'resource-center-docs-icon'
   | 'resources-icon'
-  | 'restore-cache-gcs-step-inverse'
-  | 'restore-cache-gcs-step'
+  | 'restore-cache-gcs-inverse'
   | 'restore-cache-gcs'
   | 'restore-cache-harness-step-inverse'
   | 'restore-cache-harness-step'
-  | 'restore-cache-s3-step-inverse'
-  | 'restore-cache-s3-step'
+  | 'restore-cache-s3-inverse'
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'right-bar-notification'
@@ -1497,13 +1491,11 @@ type HarnessIconName =
   | 'runtime-input'
   | 's3-step-inverse'
   | 's3-step'
-  | 'save-cache-gcs-step-inverse'
-  | 'save-cache-gcs-step'
+  | 'save-cache-gcs-inverse'
   | 'save-cache-gcs'
   | 'save-cache-harness-step-inverse'
   | 'save-cache-harness-step'
-  | 'save-cache-s3-step-inverse'
-  | 'save-cache-s3-step'
+  | 'save-cache-s3-inverse'
   | 'save-cache-s3'
   | 'save-cache-step'
   | 'scm'
@@ -2323,13 +2315,11 @@ const HarnessIcons: KVO<ElementType> = {
   'resource-center-community-icon': ResourceCenterCommunityIcon,
   'resource-center-docs-icon': ResourceCenterDocsIcon,
   'resources-icon': ResourcesIcon,
-  'restore-cache-gcs-step-inverse': RestoreCacheGcsStepInverse,
-  'restore-cache-gcs-step': RestoreCacheGcsStep,
+  'restore-cache-gcs-inverse': RestoreCacheGcsInverse,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-harness-step-inverse': RestoreCacheHarnessStepInverse,
   'restore-cache-harness-step': RestoreCacheHarnessStep,
-  'restore-cache-s3-step-inverse': RestoreCacheS3StepInverse,
-  'restore-cache-s3-step': RestoreCacheS3Step,
+  'restore-cache-s3-inverse': RestoreCacheS3Inverse,
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
@@ -2345,13 +2335,11 @@ const HarnessIcons: KVO<ElementType> = {
   'runtime-input': RuntimeInput,
   's3-step-inverse': S3StepInverse,
   's3-step': S3Step,
-  'save-cache-gcs-step-inverse': SaveCacheGcsStepInverse,
-  'save-cache-gcs-step': SaveCacheGcsStep,
+  'save-cache-gcs-inverse': SaveCacheGcsInverse,
   'save-cache-gcs': SaveCacheGcs,
   'save-cache-harness-step-inverse': SaveCacheHarnessStepInverse,
   'save-cache-harness-step': SaveCacheHarnessStep,
-  'save-cache-s3-step-inverse': SaveCacheS3StepInverse,
-  'save-cache-s3-step': SaveCacheS3Step,
+  'save-cache-s3-inverse': SaveCacheS3Inverse,
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
   scm: Scm,
