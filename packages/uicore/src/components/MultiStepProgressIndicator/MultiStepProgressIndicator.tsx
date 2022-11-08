@@ -13,21 +13,24 @@ import { Text } from '../..'
 
 import css from './MultiStepProgressIndicator.css'
 import { Color } from '@harness/design-system'
+import { defaultTo, noop } from 'lodash-es'
 
 type StepStatus = 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'
 
 export interface MultiStepProgressIndicatorProps {
-  progressMap: Map<number, { StepStatus: StepStatus; StepName?: string }>
+  progressMap: Map<number, { StepStatus: StepStatus; StepName?: string; onClick?: () => void }>
+  className?: string
+  textClassName?: string
+  barWidth?: number
 }
-
-const Dot: React.FC<{ status: StepStatus; name?: string }> = ({ status, name }) => {
+const Dot: React.FC<{ status: StepStatus; name?: string; className?: string }> = ({ status, name, className }) => {
   switch (status) {
     case 'TODO':
     case 'FAILED':
       return (
         <Layout.Vertical flex>
           <div className={css.dotNameFailed}>
-            <Text lineClamp={1} className={css.textmaxlength}>
+            <Text lineClamp={1} className={cx(css.textmaxlength, className)}>
               {name}
             </Text>
           </div>
@@ -39,7 +42,7 @@ const Dot: React.FC<{ status: StepStatus; name?: string }> = ({ status, name }) 
       return (
         <Layout.Vertical flex>
           <div className={css.dotNameSuccess}>
-            <Text lineClamp={1} className={css.textmaxlength} color={Color.PRIMARY_7}>
+            <Text lineClamp={1} className={cx(css.textmaxlength, className)} color={Color.PRIMARY_7}>
               {name}
             </Text>
           </div>
@@ -51,26 +54,28 @@ const Dot: React.FC<{ status: StepStatus; name?: string }> = ({ status, name }) 
   }
 }
 
-const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
+const Bar: React.FC<{ status: StepStatus; barWidth?: number }> = ({ status, barWidth }) => {
+  const fullBarWidth = barWidth && barWidth > 0 ? { width: `${barWidth}px` } : {}
+  const halfBarWidth = barWidth && barWidth > 0 ? { width: `${barWidth / 2}px` } : {}
   switch (status) {
     case 'TODO':
     case 'FAILED':
       return (
-        <div className={css.statusBar}>
-          <div className={cx(css.bar, css.fullBar)} />
+        <div className={css.statusBar} style={fullBarWidth}>
+          <div className={cx(css.bar, css.fullBar)} style={fullBarWidth} />
         </div>
       )
     case 'INPROGRESS':
       return (
-        <div className={css.statusBar}>
-          <div className={cx(css.bar, css.fullBar)} />
-          <div className={cx(css.bar, css.barSuccess, css.halfBar)} />
+        <div className={css.statusBar} style={fullBarWidth}>
+          <div className={cx(css.bar, css.fullBar)} style={fullBarWidth} />
+          <div className={cx(css.bar, css.barSuccess, css.halfBar)} style={halfBarWidth} />
         </div>
       )
     case 'SUCCESS':
       return (
-        <div className={css.statusBar}>
-          <div className={cx(css.bar, css.barSuccess, css.fullBar)} />
+        <div className={css.statusBar} style={fullBarWidth}>
+          <div className={cx(css.bar, css.barSuccess, css.fullBar)} style={fullBarWidth} />
         </div>
       )
     default:
@@ -78,7 +83,12 @@ const Bar: React.FC<{ status: StepStatus }> = ({ status }) => {
   }
 }
 
-export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({ progressMap }) => {
+export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProps> = ({
+  progressMap,
+  className = '',
+  textClassName = '',
+  barWidth
+}) => {
   const entries = progressMap.size ? Array.from(progressMap.entries()) : []
 
   const elements: React.ReactNode[] = []
@@ -86,14 +96,15 @@ export const MultiStepProgressIndicator: React.FC<MultiStepProgressIndicatorProp
   entries.forEach((value, index) => {
     const status = value[1].StepStatus
     const name = value[1].StepName
+    const onClick = defaultTo(value[1].onClick, noop)
 
     elements.push(
-      <Layout.Horizontal flex key={index}>
-        <Dot status={status} name={name} />
-        {index !== entries.length - 1 ? <Bar status={status} /> : null}
+      <Layout.Horizontal flex key={index} onClick={onClick}>
+        <Dot status={status} name={name} className={textClassName} />
+        {index !== entries.length - 1 ? <Bar status={status} barWidth={barWidth} /> : null}
       </Layout.Horizontal>
     )
   })
 
-  return <Layout.Horizontal>{elements}</Layout.Horizontal>
+  return <Layout.Horizontal className={className}>{elements}</Layout.Horizontal>
 }
