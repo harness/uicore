@@ -24,6 +24,7 @@ export interface UseConfirmationDialogProps {
   canOutsideClickClose?: boolean
   canEscapeKeyClose?: boolean
   children?: JSX.Element
+  className?: string
 }
 
 export interface UseConfirmationDialogReturn {
@@ -44,7 +45,8 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
     showCloseButton,
     canOutsideClickClose,
     canEscapeKeyClose,
-    children
+    children,
+    className
   } = props
 
   const [showModal, hideModal] = useModalHook(() => {
@@ -54,6 +56,7 @@ export const useConfirmationDialog = (props: UseConfirmationDialogProps): UseCon
         titleText={titleText}
         contentText={contentText}
         confirmButtonText={confirmButtonText}
+        className={className}
         onClose={onClose}
         cancelButtonText={cancelButtonText}
         intent={intent}
