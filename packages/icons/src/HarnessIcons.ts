@@ -110,7 +110,7 @@ import Canary from './canary.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
-import CcmPolicyPack from './ccm-policy-pack.svg'
+import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
 import CcmPolicyShield from './ccm-policy-shield.svg'
 import CcmSketch from './ccm-sketch.svg'
@@ -957,7 +957,7 @@ type HarnessIconName =
   | 'canvas-position'
   | 'canvas-reset'
   | 'canvas-selector'
-  | 'ccm-policy-pack'
+  | 'ccm-policy-details'
   | 'ccm-policy-shield-checked'
   | 'ccm-policy-shield'
   | 'ccm-sketch'
@@ -1804,7 +1804,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
-  'ccm-policy-pack': CcmPolicyPack,
+  'ccm-policy-details': CcmPolicyDetails,
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
   'ccm-policy-shield': CcmPolicyShield,
   'ccm-sketch': CcmSketch,
