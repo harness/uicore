@@ -286,6 +286,13 @@ import Down from './down.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import ElastigroupCanary from './elastigroup-canary.svg'
+import ElastigroupCanarydelete from './elastigroup-canarydelete.svg'
+import ElastigroupDeploy from './elastigroup-deploy.svg'
+import ElastigroupInverse from './elastigroup-inverse.svg'
+import ElastigroupSetup from './elastigroup-setup.svg'
+import ElastigroupSwap from './elastigroup-swap.svg'
+import Elastigroup from './elastigroup.svg'
 import Elk from './elk.svg'
 import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
@@ -758,6 +765,8 @@ import SlotDeployment from './slot-deployment.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import Spinner from './spinner.svg'
+import SpotInverse from './spot-inverse.svg'
+import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
@@ -1121,6 +1130,13 @@ type HarnessIconName =
   | 'ecr-step-inverse'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'elastigroup-canary'
+  | 'elastigroup-canarydelete'
+  | 'elastigroup-deploy'
+  | 'elastigroup-inverse'
+  | 'elastigroup-setup'
+  | 'elastigroup-swap'
+  | 'elastigroup'
   | 'elk'
   | 'email-inline'
   | 'email-step'
@@ -1593,6 +1609,8 @@ type HarnessIconName =
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'spinner'
+  | 'spot-inverse'
+  | 'spot'
   | 'srm-with-dark-text'
   | 'stars'
   | 'status-pending'
@@ -1956,6 +1974,13 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  'elastigroup-canary': ElastigroupCanary,
+  'elastigroup-canarydelete': ElastigroupCanarydelete,
+  'elastigroup-deploy': ElastigroupDeploy,
+  'elastigroup-inverse': ElastigroupInverse,
+  'elastigroup-setup': ElastigroupSetup,
+  'elastigroup-swap': ElastigroupSwap,
+  elastigroup: Elastigroup,
   elk: Elk,
   'email-inline': EmailInline,
   'email-step': EmailStep,
@@ -2428,6 +2453,8 @@ const HarnessIcons: KVO<ElementType> = {
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   spinner: Spinner,
+  'spot-inverse': SpotInverse,
+  spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
   stars: Stars,
   'status-pending': StatusPending,
