@@ -92,6 +92,7 @@ import BitbucketNew from './bitbucket-new.svg'
 import BitbucketSelected from './bitbucket-selected.svg'
 import BitbucketUnselected from './bitbucket-unselected.svg'
 import Bitbucket from './bitbucket.svg'
+import Bitrise from './bitrise.svg'
 import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
 import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
@@ -351,6 +352,7 @@ import GitConfigure from './git-configure.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
 import GitPopover from './git-popover.svg'
+import GithubActions from './github-actions.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
 import Github from './github.svg'
@@ -939,6 +941,7 @@ type HarnessIconName =
   | 'bitbucket-selected'
   | 'bitbucket-unselected'
   | 'bitbucket'
+  | 'bitrise'
   | 'blank-canvas-card-icon'
   | 'blank-canvas-header-icon'
   | 'blue-black-cluster'
@@ -1198,6 +1201,7 @@ type HarnessIconName =
   | 'git-landing-page'
   | 'git-new-branch'
   | 'git-popover'
+  | 'github-actions'
   | 'github-selected'
   | 'github-unselected'
   | 'github'
@@ -1786,6 +1790,7 @@ const HarnessIcons: KVO<ElementType> = {
   'bitbucket-selected': BitbucketSelected,
   'bitbucket-unselected': BitbucketUnselected,
   bitbucket: Bitbucket,
+  bitrise: Bitrise,
   'blank-canvas-card-icon': BlankCanvasCardIcon,
   'blank-canvas-header-icon': BlankCanvasHeaderIcon,
   'blue-black-cluster': BlueBlackCluster,
@@ -2045,6 +2050,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
   'git-popover': GitPopover,
+  'github-actions': GithubActions,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
   github: Github,
