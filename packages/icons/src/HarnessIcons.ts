@@ -407,6 +407,7 @@ import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
+import Iacm from './iacm.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -1259,6 +1260,7 @@ type HarnessIconName =
   | 'help'
   | 'hourglass'
   | 'http-step'
+  | 'iacm'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -2111,6 +2113,7 @@ const HarnessIcons: KVO<ElementType> = {
   help: Help,
   hourglass: Hourglass,
   'http-step': HttpStep,
+  iacm: Iacm,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
