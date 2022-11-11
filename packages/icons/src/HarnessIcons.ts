@@ -292,9 +292,12 @@ import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import ElastigroupCanary from './elastigroup-canary.svg'
 import ElastigroupCanarydelete from './elastigroup-canarydelete.svg'
+import ElastigroupDeployInverse from './elastigroup-deploy-inverse.svg'
 import ElastigroupDeploy from './elastigroup-deploy.svg'
 import ElastigroupInverse from './elastigroup-inverse.svg'
+import ElastigroupSetupInverse from './elastigroup-setup-inverse.svg'
 import ElastigroupSetup from './elastigroup-setup.svg'
+import ElastigroupSwapInverse from './elastigroup-swap-inverse.svg'
 import ElastigroupSwap from './elastigroup-swap.svg'
 import Elastigroup from './elastigroup.svg'
 import Elk from './elk.svg'
@@ -1141,9 +1144,12 @@ type HarnessIconName =
   | 'elastic-kubernetes-service'
   | 'elastigroup-canary'
   | 'elastigroup-canarydelete'
+  | 'elastigroup-deploy-inverse'
   | 'elastigroup-deploy'
   | 'elastigroup-inverse'
+  | 'elastigroup-setup-inverse'
   | 'elastigroup-setup'
+  | 'elastigroup-swap-inverse'
   | 'elastigroup-swap'
   | 'elastigroup'
   | 'elk'
@@ -1990,9 +1996,12 @@ const HarnessIcons: KVO<ElementType> = {
   'elastic-kubernetes-service': ElasticKubernetesService,
   'elastigroup-canary': ElastigroupCanary,
   'elastigroup-canarydelete': ElastigroupCanarydelete,
+  'elastigroup-deploy-inverse': ElastigroupDeployInverse,
   'elastigroup-deploy': ElastigroupDeploy,
   'elastigroup-inverse': ElastigroupInverse,
+  'elastigroup-setup-inverse': ElastigroupSetupInverse,
   'elastigroup-setup': ElastigroupSetup,
+  'elastigroup-swap-inverse': ElastigroupSwapInverse,
   'elastigroup-swap': ElastigroupSwap,
   elastigroup: Elastigroup,
   elk: Elk,
