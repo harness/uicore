@@ -191,6 +191,15 @@ import CloudFormationRollback from './cloud-formation-rollback.svg'
 import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
+import CodeBranch from './code-branch.svg'
+import CodeCommit from './code-commit.svg'
+import CodeCopy from './code-copy.svg'
+import CodeDelete from './code-delete.svg'
+import CodeFile from './code-file.svg'
+import CodeFolder from './code-folder.svg'
+import CodeHistory from './code-history.svg'
+import CodeRepo from './code-repo.svg'
+import CodeSettings from './code-settings.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
 import CodebaseNotConfigured from './codebase-not-configured.svg'
 import CodebaseValid from './codebase-valid.svg'
@@ -1086,6 +1095,15 @@ type HarnessIconName =
   | 'cloud-light'
   | 'cloud-sso'
   | 'cloudformation'
+  | 'code-branch'
+  | 'code-commit'
+  | 'code-copy'
+  | 'code-delete'
+  | 'code-file'
+  | 'code-folder'
+  | 'code-history'
+  | 'code-repo'
+  | 'code-settings'
   | 'codebase-invalid'
   | 'codebase-not-configured'
   | 'codebase-valid'
@@ -1981,6 +1999,15 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-light': CloudLight,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
+  'code-branch': CodeBranch,
+  'code-commit': CodeCommit,
+  'code-copy': CodeCopy,
+  'code-delete': CodeDelete,
+  'code-file': CodeFile,
+  'code-folder': CodeFolder,
+  'code-history': CodeHistory,
+  'code-repo': CodeRepo,
+  'code-settings': CodeSettings,
   'codebase-invalid': CodebaseInvalid,
   'codebase-not-configured': CodebaseNotConfigured,
   'codebase-valid': CodebaseValid,
