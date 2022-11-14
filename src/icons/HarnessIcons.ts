@@ -97,6 +97,15 @@ import CircleStop from './circle-stop.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
+import CodeBranch from './code-branch.svg'
+import CodeCommit from './code-commit.svg'
+import CodeCopy from './code-copy.svg'
+import CodeDelete from './code-delete.svg'
+import CodeFile from './code-file.svg'
+import CodeFolder from './code-folder.svg'
+import CodeHistory from './code-history.svg'
+import CodeRepo from './code-repo.svg'
+import CodeSettings from './code-settings.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
 import CodebaseNotConfigured from './codebase-not-configured.svg'
 import CodebaseValid from './codebase-valid.svg'
@@ -440,6 +449,9 @@ import ResSecrets from './res-secrets.svg'
 import ResUserGroups from './res-userGroups.svg'
 import ResUsers from './res-users.svg'
 import ResetIcon from './reset-icon.svg'
+import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
+import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
+import ResourceCenterSearchIcon from './resource-center-search-icon.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcs from './restore-cache-gcs.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
@@ -689,6 +701,15 @@ type HarnessIconName =
   | 'clipboard-alt'
   | 'cloud-sso'
   | 'cloudformation'
+  | 'code-branch'
+  | 'code-commit'
+  | 'code-copy'
+  | 'code-delete'
+  | 'code-file'
+  | 'code-folder'
+  | 'code-history'
+  | 'code-repo'
+  | 'code-settings'
   | 'codebase-invalid'
   | 'codebase-not-configured'
   | 'codebase-valid'
@@ -1032,6 +1053,9 @@ type HarnessIconName =
   | 'res-userGroups'
   | 'res-users'
   | 'reset-icon'
+  | 'resource-center-community-icon'
+  | 'resource-center-docs-icon'
+  | 'resource-center-search-icon'
   | 'resources-icon'
   | 'restore-cache-gcs'
   | 'restore-cache-s3'
@@ -1281,6 +1305,15 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'clipboard-alt': ClipboardAlt,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
+  'code-branch': CodeBranch,
+  'code-commit': CodeCommit,
+  'code-copy': CodeCopy,
+  'code-delete': CodeDelete,
+  'code-file': CodeFile,
+  'code-folder': CodeFolder,
+  'code-history': CodeHistory,
+  'code-repo': CodeRepo,
+  'code-settings': CodeSettings,
   'codebase-invalid': CodebaseInvalid,
   'codebase-not-configured': CodebaseNotConfigured,
   'codebase-valid': CodebaseValid,
@@ -1624,6 +1657,9 @@ const HarnessIcons: KVO<FunctionComponent<ElementType>> = {
   'res-userGroups': ResUserGroups,
   'res-users': ResUsers,
   'reset-icon': ResetIcon,
+  'resource-center-community-icon': ResourceCenterCommunityIcon,
+  'resource-center-docs-icon': ResourceCenterDocsIcon,
+  'resource-center-search-icon': ResourceCenterSearchIcon,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs': RestoreCacheGcs,
   'restore-cache-s3': RestoreCacheS3,
