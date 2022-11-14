@@ -12,7 +12,6 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
-import AnchoreDark from './Anchore-Dark.svg'
 import Anchore from './Anchore.svg'
 import AuqaTrivyDark from './AuqaTrivy-Dark.svg'
 import AuqaTrivy from './AuqaTrivy.svg'
@@ -53,6 +52,7 @@ import Activity from './activity.svg'
 import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
+import AnchoreDark from './anchore-dark.svg'
 import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
@@ -83,6 +83,8 @@ import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStep from './background-step.svg'
+import BanditDark from './bandit-dark.svg'
+import Bandit from './bandit.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
@@ -103,6 +105,8 @@ import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
 import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
+import BrakemanDark from './brakeman-dark.svg'
+import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
@@ -907,7 +911,6 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
-  | 'Anchore-Dark'
   | 'Anchore'
   | 'AuqaTrivy-Dark'
   | 'AuqaTrivy'
@@ -948,6 +951,7 @@ type HarnessIconName =
   | 'add-stage'
   | 'adminRole'
   | 'advanced'
+  | 'anchore-dark'
   | 'api-docs'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -978,6 +982,8 @@ type HarnessIconName =
   | 'background-ci-step-inverse'
   | 'background-ci-step'
   | 'background-step'
+  | 'bandit-dark'
+  | 'bandit'
   | 'banned'
   | 'bar-chart'
   | 'barrier-close'
@@ -998,6 +1004,8 @@ type HarnessIconName =
   | 'blue-green'
   | 'bluegreen-inverse'
   | 'bluegreen'
+  | 'brakeman-dark'
+  | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
   | 'canary-delete-inverse'
@@ -1802,7 +1810,6 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
-  'Anchore-Dark': AnchoreDark,
   Anchore: Anchore,
   'AuqaTrivy-Dark': AuqaTrivyDark,
   AuqaTrivy: AuqaTrivy,
@@ -1843,6 +1850,7 @@ const HarnessIcons: KVO<ElementType> = {
   'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
+  'anchore-dark': AnchoreDark,
   'api-docs': ApiDocs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
@@ -1873,6 +1881,8 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step-inverse': BackgroundCiStepInverse,
   'background-ci-step': BackgroundCiStep,
   'background-step': BackgroundStep,
+  'bandit-dark': BanditDark,
+  bandit: Bandit,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
@@ -1893,6 +1903,8 @@ const HarnessIcons: KVO<ElementType> = {
   'blue-green': BlueGreen,
   'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
+  'brakeman-dark': BrakemanDark,
+  brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
   'canary-delete-inverse': CanaryDeleteInverse,
