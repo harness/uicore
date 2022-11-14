@@ -44,10 +44,54 @@ export default {
   },
   decorators: [Story => <Story />]
 } as Meta
+
 export const Basic: Story<CodeBlockProps> = args => {
   return (
     <>
-      <CodeBlock allowCopy format="pre" snippet={'kubectl apply -f harness-delegate.yaml'} {...args} />
+      <CodeBlock allowCopy format="pre" snippet="kubectl apply -f harness-delegate.yaml" {...args} />
+    </>
+  )
+}
+
+export const Long: Story<CodeBlockProps> = args => {
+  const snippet = `
+export default {
+  title: 'Components / CodeBlock',
+
+  component: CodeBlock,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      source: {
+        type: 'code'
+      },
+
+      page: function PageDescription() {
+        return (
+          <>
+            <Title>CodeBlock</Title>
+
+            <Subtitle>
+              <pre>
+                <code>{\`import { CodeBlock }  from '@harness/uicore'\`}</code>
+              </pre>
+            </Subtitle>
+            <Primary />
+            <ArgsTable story={PRIMARY_STORY} />
+
+            <Stories />
+          </>
+        )
+      }
+    }
+  },
+  decorators: [Story => <Story />]
+} as Meta
+  `
+
+  return (
+    <>
+      <CodeBlock allowCopy format="pre" snippet={snippet} {...args} />
     </>
   )
 }
