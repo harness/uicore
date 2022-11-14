@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { Text } from '../Text/Text'
@@ -24,6 +24,10 @@ export interface CodeBlockProps {
 
 export function CodeBlock(props: CodeBlockProps) {
   const { snippet = '', allowCopy, codeToCopy, format = 'Text', lineClamp, height } = props
+
+  const floatButton = useMemo<boolean>(() => {
+    return lineClamp !== 1 && snippet.split(/\n/).length >= 2
+  }, [lineClamp, snippet])
 
   return (
     <Container
@@ -46,7 +50,13 @@ export function CodeBlock(props: CodeBlockProps) {
       )}
       {format === 'pre' && <pre>{snippet}</pre>}
       {allowCopy && (
-        <Button icon="duplicate" minimal onClick={() => Utils.copy(codeToCopy || snippet)} iconProps={{ size: 12 }} />
+        <Button
+          icon="duplicate"
+          minimal
+          onClick={() => Utils.copy(codeToCopy || snippet)}
+          iconProps={{ size: 12 }}
+          className={floatButton ? css.floatingCopyButton : undefined}
+        />
       )}
     </Container>
   )
