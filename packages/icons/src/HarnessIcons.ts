@@ -66,6 +66,7 @@ import ArrowDown from './arrow-down.svg'
 import Arrow from './arrow.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
+import AutoScaler from './autoScaler.svg'
 import Autostopping from './autostopping.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsEctwoService from './aws-ectwo-service.svg'
@@ -478,6 +479,7 @@ import Library from './library.svg'
 import LineChart from './line-chart.svg'
 import Linkedin from './linkedin.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
+import ListVars from './list-vars.svg'
 import ListView from './list-view.svg'
 import Loading from './loading.svg'
 import Looping from './looping.svg'
@@ -876,6 +878,9 @@ import SwitchOn from './switch-on.svg'
 import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
+import TasInverse from './tas-inverse.svg'
+import TasManifest from './tas-manifest.svg'
+import Tas from './tas.svg'
 import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
@@ -987,6 +992,7 @@ type HarnessIconName =
   | 'arrow'
   | 'audit-log-created'
   | 'audit-trail'
+  | 'autoScaler'
   | 'autostopping'
   | 'aws-codecommit'
   | 'aws-ectwo-service'
@@ -1399,6 +1405,7 @@ type HarnessIconName =
   | 'line-chart'
   | 'linkedin'
   | 'list-entity-infographic'
+  | 'list-vars'
   | 'list-view'
   | 'loading'
   | 'looping'
@@ -1797,6 +1804,9 @@ type HarnessIconName =
   | 'sync-failed'
   | 'synced'
   | 'syncing'
+  | 'tas-inverse'
+  | 'tas-manifest'
+  | 'tas'
   | 'template-inputs'
   | 'template-library'
   | 'templates-blue'
@@ -1908,6 +1918,7 @@ const HarnessIcons: KVO<ElementType> = {
   arrow: Arrow,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
+  autoScaler: AutoScaler,
   autostopping: Autostopping,
   'aws-codecommit': AwsCodecommit,
   'aws-ectwo-service': AwsEctwoService,
@@ -2320,6 +2331,7 @@ const HarnessIcons: KVO<ElementType> = {
   'line-chart': LineChart,
   linkedin: Linkedin,
   'list-entity-infographic': ListEntityInfographic,
+  'list-vars': ListVars,
   'list-view': ListView,
   loading: Loading,
   looping: Looping,
@@ -2718,6 +2730,9 @@ const HarnessIcons: KVO<ElementType> = {
   'sync-failed': SyncFailed,
   synced: Synced,
   syncing: Syncing,
+  'tas-inverse': TasInverse,
+  'tas-manifest': TasManifest,
+  tas: Tas,
   'template-inputs': TemplateInputs,
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
