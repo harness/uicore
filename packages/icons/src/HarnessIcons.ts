@@ -13,8 +13,8 @@ import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
 import Anchore from './Anchore.svg'
-import AuqaTrivyDark from './AuqaTrivy-Dark.svg'
-import AuqaTrivy from './AuqaTrivy.svg'
+import AquaTrivyDark from './AquaTrivy-Dark.svg'
+import AquaTrivy from './AquaTrivy.svg'
 import BlackDuckDark from './BlackDuck-Dark.svg'
 import BlackDuck from './BlackDuck.svg'
 import BurpDark from './Burp-Dark.svg'
@@ -912,8 +912,8 @@ import ZoomOut from './zoom-out.svg'
 type HarnessIconName =
   | 'Account'
   | 'Anchore'
-  | 'AuqaTrivy-Dark'
-  | 'AuqaTrivy'
+  | 'AquaTrivy-Dark'
+  | 'AquaTrivy'
   | 'BlackDuck-Dark'
   | 'BlackDuck'
   | 'Burp-Dark'
@@ -1811,8 +1811,8 @@ type HarnessIconName =
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
   Anchore: Anchore,
-  'AuqaTrivy-Dark': AuqaTrivyDark,
-  AuqaTrivy: AuqaTrivy,
+  'AquaTrivy-Dark': AquaTrivyDark,
+  AquaTrivy: AquaTrivy,
   'BlackDuck-Dark': BlackDuckDark,
   BlackDuck: BlackDuck,
   'Burp-Dark': BurpDark,
