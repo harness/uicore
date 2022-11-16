@@ -12,6 +12,7 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
+import AnchoreDark from './Anchore-Dark.svg'
 import Anchore from './Anchore.svg'
 import AquaTrivyDark from './AquaTrivy-Dark.svg'
 import AquaTrivy from './AquaTrivy.svg'
