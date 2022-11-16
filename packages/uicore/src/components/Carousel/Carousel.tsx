@@ -20,6 +20,7 @@ export interface CarouselProps {
   onChange?: (slideNumber: number) => void
   children: Array<React.ReactElement<HTMLElement>> | React.ReactElement<HTMLElement>
   indicatorsClassName?: string
+  activeIndicatorClassName?: string
   slideClassName?: string
   hideSlideChangeButtons?: boolean
 
@@ -42,6 +43,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   onChange,
   hideSlideChangeButtons = false,
   indicatorsClassName,
+  activeIndicatorClassName = '',
   slideClassName
 }) => {
   const [totalSlides, setTotalSlides] = React.useState(1)
@@ -85,7 +87,10 @@ export const Carousel: React.FC<CarouselProps> = ({
   const indicators = [...Array(totalSlides)].map((_ar, index) => (
     <span
       key={index}
-      className={cx(css.indicator, { [css.active]: activeSlide === index + 1 })}
+      className={cx(css.indicator, {
+        [css.active]: activeSlide === index + 1,
+        [activeIndicatorClassName]: activeSlide === index + 1
+      })}
       onClick={() => setActiveSlide(index + 1)}
     />
   ))

@@ -159,6 +159,7 @@ import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
+import ChevronDown from './chevron-down.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiBuildPipeline from './ci-build-pipeline.svg'
 import CiDevExp from './ci-dev-exp.svg'
@@ -1063,6 +1064,7 @@ type HarnessIconName =
   | 'chat'
   | 'check-alt'
   | 'check'
+  | 'chevron-down'
   | 'ci-active-build'
   | 'ci-build-pipeline'
   | 'ci-dev-exp'
@@ -1967,6 +1969,7 @@ const HarnessIcons: KVO<ElementType> = {
   chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
+  'chevron-down': ChevronDown,
   'ci-active-build': CiActiveBuild,
   'ci-build-pipeline': CiBuildPipeline,
   'ci-dev-exp': CiDevExp,
