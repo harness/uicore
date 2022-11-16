@@ -89,7 +89,7 @@ export const Carousel: React.FC<CarouselProps> = ({
       key={index}
       className={cx(css.indicator, {
         [css.active]: activeSlide === index + 1,
-        [activeIndicatorClassName]: activeSlide === index + 1
+        [activeIndicatorClassName]: activeSlide === index + 1 && activeIndicatorClassName
       })}
       onClick={() => setActiveSlide(index + 1)}
     />
