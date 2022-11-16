@@ -961,7 +961,6 @@ type HarnessIconName =
   | 'add-stage'
   | 'adminRole'
   | 'advanced'
-  | 'anchore-dark'
   | 'api-docs'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -1870,7 +1869,6 @@ const HarnessIcons: KVO<ElementType> = {
   'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
-  'anchore-dark': AnchoreDark,
   'api-docs': ApiDocs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
