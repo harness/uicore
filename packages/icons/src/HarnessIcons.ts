@@ -921,6 +921,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
+  | 'Anchore-Dark'
   | 'Anchore'
   | 'AquaTrivy-Dark'
   | 'AquaTrivy'
