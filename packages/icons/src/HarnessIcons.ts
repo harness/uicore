@@ -881,6 +881,7 @@ import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
 import ThinnerSearch from './thinner-search.svg'
+import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
@@ -1789,6 +1790,7 @@ type HarnessIconName =
   | 'test-verification'
   | 'text'
   | 'thinner-search'
+  | 'ti-callgraph'
   | 'timeout'
   | 'tooltip-icon'
   | 'traffic-lights'
@@ -2697,6 +2699,7 @@ const HarnessIcons: KVO<ElementType> = {
   'test-verification': TestVerification,
   text: Text,
   'thinner-search': ThinnerSearch,
+  'ti-callgraph': TiCallgraph,
   timeout: Timeout,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
