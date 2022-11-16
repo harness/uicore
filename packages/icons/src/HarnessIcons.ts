@@ -479,8 +479,10 @@ import MainCaretLeft from './main-caret-left.svg'
 import MainCaretRight from './main-caret-right.svg'
 import MainCaretUp from './main-caret-up.svg'
 import MainChangelog from './main-changelog.svg'
+import MainChevronDownV2 from './main-chevron-down-v2.svg'
 import MainChevronDown from './main-chevron-down.svg'
 import MainChevronLeft from './main-chevron-left.svg'
+import MainChevronRightV2 from './main-chevron-right-v2.svg'
 import MainChevronRight from './main-chevron-right.svg'
 import MainChevronUp from './main-chevron-up.svg'
 import MainClone from './main-clone.svg'
@@ -1384,8 +1386,10 @@ type HarnessIconName =
   | 'main-caret-right'
   | 'main-caret-up'
   | 'main-changelog'
+  | 'main-chevron-down-v2'
   | 'main-chevron-down'
   | 'main-chevron-left'
+  | 'main-chevron-right-v2'
   | 'main-chevron-right'
   | 'main-chevron-up'
   | 'main-clone'
@@ -2289,8 +2293,10 @@ const HarnessIcons: KVO<ElementType> = {
   'main-caret-right': MainCaretRight,
   'main-caret-up': MainCaretUp,
   'main-changelog': MainChangelog,
+  'main-chevron-down-v2': MainChevronDownV2,
   'main-chevron-down': MainChevronDown,
   'main-chevron-left': MainChevronLeft,
+  'main-chevron-right-v2': MainChevronRightV2,
   'main-chevron-right': MainChevronRight,
   'main-chevron-up': MainChevronUp,
   'main-clone': MainClone,
