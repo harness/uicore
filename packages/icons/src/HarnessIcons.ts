@@ -1831,6 +1831,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
+  'Anchore-Dark': AnchoreDark,
   Anchore: Anchore,
   'AquaTrivy-Dark': AquaTrivyDark,
   AquaTrivy: AquaTrivy,
