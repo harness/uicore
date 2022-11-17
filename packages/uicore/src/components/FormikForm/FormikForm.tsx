@@ -151,6 +151,8 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
   } = restProps
   const [mentionsType] = React.useState(`kv-tag-input-${name}`)
 
+  const fieldValue = get(formik?.values, name)
+
   return (
     <FormGroup
       labelFor={name}
@@ -163,9 +165,9 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
       <BPTagInput
         values={
           isArray
-            ? formik?.values[name] || []
-            : Object.keys(formik?.values[name] || {}).map(key => {
-                const value = formik?.values[name][key]
+            ? fieldValue || []
+            : Object.keys(fieldValue || {}).map(key => {
+                const value = fieldValue[key]
                 return value ? `${key}:${value}` : key
               })
         }
