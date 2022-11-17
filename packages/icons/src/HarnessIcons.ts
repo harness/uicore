@@ -200,6 +200,7 @@ import CodeFolder from './code-folder.svg'
 import CodeHistory from './code-history.svg'
 import CodeRepo from './code-repo.svg'
 import CodeSettings from './code-settings.svg'
+import Code from './code.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
 import CodebaseNotConfigured from './codebase-not-configured.svg'
 import CodebaseValid from './codebase-valid.svg'
@@ -1105,6 +1106,7 @@ type HarnessIconName =
   | 'code-history'
   | 'code-repo'
   | 'code-settings'
+  | 'code'
   | 'codebase-invalid'
   | 'codebase-not-configured'
   | 'codebase-valid'
@@ -2010,6 +2012,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-history': CodeHistory,
   'code-repo': CodeRepo,
   'code-settings': CodeSettings,
+  code: Code,
   'codebase-invalid': CodebaseInvalid,
   'codebase-not-configured': CodebaseNotConfigured,
   'codebase-valid': CodebaseValid,
