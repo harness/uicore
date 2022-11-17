@@ -192,15 +192,25 @@ import CloudFormationRollback from './cloud-formation-rollback.svg'
 import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
+import CodeBranchSmall from './code-branch-small.svg'
 import CodeBranch from './code-branch.svg'
+import CodeClone from './code-clone.svg'
+import CodeClose from './code-close.svg'
+import CodeCommitLight from './code-commit-light.svg'
+import CodeCommitSmall from './code-commit-small.svg'
 import CodeCommit from './code-commit.svg'
 import CodeCopy from './code-copy.svg'
 import CodeDelete from './code-delete.svg'
+import CodeEdit from './code-edit.svg'
+import CodeFileLight from './code-file-light.svg'
 import CodeFile from './code-file.svg'
 import CodeFolder from './code-folder.svg'
 import CodeHistory from './code-history.svg'
+import CodeInfo from './code-info.svg'
+import CodeMore from './code-more.svg'
 import CodeRepo from './code-repo.svg'
 import CodeSettings from './code-settings.svg'
+import CodeWebhook from './code-webhook.svg'
 import Code from './code.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
 import CodebaseNotConfigured from './codebase-not-configured.svg'
@@ -1099,15 +1109,25 @@ type HarnessIconName =
   | 'cloud-light'
   | 'cloud-sso'
   | 'cloudformation'
+  | 'code-branch-small'
   | 'code-branch'
+  | 'code-clone'
+  | 'code-close'
+  | 'code-commit-light'
+  | 'code-commit-small'
   | 'code-commit'
   | 'code-copy'
   | 'code-delete'
+  | 'code-edit'
+  | 'code-file-light'
   | 'code-file'
   | 'code-folder'
   | 'code-history'
+  | 'code-info'
+  | 'code-more'
   | 'code-repo'
   | 'code-settings'
+  | 'code-webhook'
   | 'code'
   | 'codebase-invalid'
   | 'codebase-not-configured'
@@ -2006,15 +2026,25 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-light': CloudLight,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
+  'code-branch-small': CodeBranchSmall,
   'code-branch': CodeBranch,
+  'code-clone': CodeClone,
+  'code-close': CodeClose,
+  'code-commit-light': CodeCommitLight,
+  'code-commit-small': CodeCommitSmall,
   'code-commit': CodeCommit,
   'code-copy': CodeCopy,
   'code-delete': CodeDelete,
+  'code-edit': CodeEdit,
+  'code-file-light': CodeFileLight,
   'code-file': CodeFile,
   'code-folder': CodeFolder,
   'code-history': CodeHistory,
+  'code-info': CodeInfo,
+  'code-more': CodeMore,
   'code-repo': CodeRepo,
   'code-settings': CodeSettings,
+  'code-webhook': CodeWebhook,
   code: Code,
   'codebase-invalid': CodebaseInvalid,
   'codebase-not-configured': CodebaseNotConfigured,
