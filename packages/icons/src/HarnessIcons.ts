@@ -774,6 +774,7 @@ import ServiceDatadog from './service-datadog.svg'
 import ServiceDeployment from './service-deployment.svg'
 import ServiceDockerhub from './service-dockerhub.svg'
 import ServiceDynatrace from './service-dynatrace.svg'
+import ServiceEC2 from './service-ec2.svg'
 import ServiceEcs from './service-ecs.svg'
 import ServiceElastigroup from './service-elastigroup.svg'
 import ServiceElk from './service-elk.svg'
@@ -1692,6 +1693,7 @@ type HarnessIconName =
   | 'service-deployment'
   | 'service-dockerhub'
   | 'service-dynatrace'
+  | 'service-ec2'
   | 'service-ecs'
   | 'service-elastigroup'
   | 'service-elk'
@@ -2610,6 +2612,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-deployment': ServiceDeployment,
   'service-dockerhub': ServiceDockerhub,
   'service-dynatrace': ServiceDynatrace,
+  'service-ec2':  ServiceEC2,
   'service-ecs': ServiceEcs,
   'service-elastigroup': ServiceElastigroup,
   'service-elk': ServiceElk,
