@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: 320px 1fr;
     overflow: hidden;
+    position: relative;
     .navBarList {
       background-color: #267cc9;
       padding: 48px;
