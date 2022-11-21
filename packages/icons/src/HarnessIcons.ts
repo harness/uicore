@@ -322,6 +322,8 @@ import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import ElastigroupBluegreenInverse from './elastigroup-bluegreen-inverse.svg'
+import ElastigroupBluegreen from './elastigroup-bluegreen.svg'
 import ElastigroupCanary from './elastigroup-canary.svg'
 import ElastigroupCanarydelete from './elastigroup-canarydelete.svg'
 import ElastigroupDeployInverse from './elastigroup-deploy-inverse.svg'
@@ -1240,6 +1242,8 @@ type HarnessIconName =
   | 'ecr-step-inverse'
   | 'ecr-step'
   | 'elastic-kubernetes-service'
+  | 'elastigroup-bluegreen-inverse'
+  | 'elastigroup-bluegreen'
   | 'elastigroup-canary'
   | 'elastigroup-canarydelete'
   | 'elastigroup-deploy-inverse'
@@ -2158,6 +2162,8 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  'elastigroup-bluegreen-inverse': ElastigroupBluegreenInverse,
+  'elastigroup-bluegreen': ElastigroupBluegreen,
   'elastigroup-canary': ElastigroupCanary,
   'elastigroup-canarydelete': ElastigroupCanarydelete,
   'elastigroup-deploy-inverse': ElastigroupDeployInverse,
