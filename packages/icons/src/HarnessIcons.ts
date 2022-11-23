@@ -62,7 +62,6 @@ import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
-import ArrowDown from './arrow-down.svg'
 import Arrow from './arrow.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
@@ -988,7 +987,6 @@ type HarnessIconName =
   | 'approval-step'
   | 'argo'
   | 'arm'
-  | 'arrow-down'
   | 'arrow'
   | 'audit-log-created'
   | 'audit-trail'
@@ -1914,7 +1912,6 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-step': ApprovalStep,
   argo: Argo,
   arm: Arm,
-  'arrow-down': ArrowDown,
   arrow: Arrow,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
