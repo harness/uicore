@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useState, useCallback, useMemo, useEffect } from 'react'
+import React, { useState, useCallback, useMemo, useEffect, CSSProperties } from 'react'
 import { Button } from '../Button/Button'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
@@ -38,7 +38,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   value?: AcceptableValue
   multitypeInputValue?: MultiTypeInputType
   defaultValueToReset?: AcceptableValue
-  width?: number
+  width?: CSSProperties['width']
   expressions?: string[]
   onTypeChange?: (type: MultiTypeInputType) => void
   onChange?: (value: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => void
