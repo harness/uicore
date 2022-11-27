@@ -44,6 +44,8 @@ export interface TableProps<Data extends Record<string, any>> {
    */
   name?: string
   renderRowSubComponent?: (data: { row: Row<Data> }) => ReactNode
+  autoResetSortBy?: boolean
+  autoResetPage?: boolean
 }
 
 export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
@@ -58,7 +60,9 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
     rowDataTestID,
     getRowClassName,
     name,
-    renderRowSubComponent
+    renderRowSubComponent,
+    autoResetSortBy = true,
+    autoResetPage = true
   } = props
 
   const { headerGroups, page, prepareRow } = useTable(
@@ -67,7 +71,9 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
       data,
       initialState: { pageIndex: defaultTo(pagination?.pageIndex, 0) },
       manualPagination: true,
-      pageCount: defaultTo(pagination?.pageCount, -1)
+      pageCount: defaultTo(pagination?.pageCount, -1),
+      autoResetSortBy: autoResetSortBy,
+      autoResetPage: autoResetPage
     },
     useSortBy,
     useExpanded,
