@@ -84,6 +84,8 @@ import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStep from './background-step.svg'
+import BanditDark from './bandit-dark.svg'
+import Bandit from './bandit.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
@@ -104,6 +106,8 @@ import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
 import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
+import BrakemanDark from './brakeman-dark.svg'
+import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
@@ -1009,6 +1013,8 @@ type HarnessIconName =
   | 'background-ci-step-inverse'
   | 'background-ci-step'
   | 'background-step'
+  | 'bandit-dark'
+  | 'bandit'
   | 'banned'
   | 'bar-chart'
   | 'barrier-close'
@@ -1029,6 +1035,8 @@ type HarnessIconName =
   | 'blue-green'
   | 'bluegreen-inverse'
   | 'bluegreen'
+  | 'brakeman-dark'
+  | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
   | 'canary-delete-inverse'
@@ -1934,6 +1942,8 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step-inverse': BackgroundCiStepInverse,
   'background-ci-step': BackgroundCiStep,
   'background-step': BackgroundStep,
+  'bandit-dark': BanditDark,
+  bandit: Bandit,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
@@ -1954,6 +1964,8 @@ const HarnessIcons: KVO<ElementType> = {
   'blue-green': BlueGreen,
   'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
+  'brakeman-dark': BrakemanDark,
+  brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
   'canary-delete-inverse': CanaryDeleteInverse,
