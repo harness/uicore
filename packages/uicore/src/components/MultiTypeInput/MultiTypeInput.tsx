@@ -197,8 +197,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
         />
       )}
-      {!allowableTypes.length ||
-      (allowableTypes.length === 1 && allowableTypes[0] === MultiTypeInputType.FIXED) ? null : (
+      {!allowableTypes.length ? null : (
         <Button
           noStyling
           className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
