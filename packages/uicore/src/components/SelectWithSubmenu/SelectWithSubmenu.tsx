@@ -60,6 +60,18 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
           primaryValue={item}
           onSubmenuOpen={onSubmenuOpen}
         />
+      ) : item.value === 'newlyCreatedItem' ? (
+        <Button
+          intent="primary"
+          minimal
+          text={item.label}
+          icon="plus"
+          className={css.createNewItemButton}
+          onClick={() => {
+            onChange?.({ label: item.label, value: item.label })
+            handleClick()
+          }}
+        />
       ) : (
         <div
           key={`${item?.value}`}
@@ -124,16 +136,9 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
           {props.filteredItems.length === 0 && (
             <React.Fragment>
               {props.filteredItems.length === 0 ? <div className={css.noResultsFound}>Nothing Found</div> : null}
-              {allowCreatingNewItems && (
-                <Button
-                  intent="primary"
-                  minimal
-                  text={props.query}
-                  icon="plus"
-                  className={css.createNewItemButton}
-                  onClick={() => onChange?.({ label: props.query, value: props.query })}
-                />
-              )}
+              {allowCreatingNewItems &&
+                props.query?.length > 0 &&
+                props.renderItem({ label: props.query, value: `newlyCreatedItem` }, 0)}
             </React.Fragment>
           )}
         </Menu>
