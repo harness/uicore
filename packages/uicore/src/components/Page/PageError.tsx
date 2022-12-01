@@ -39,7 +39,12 @@ const getErrorNode = (message: React.ReactNode): React.ReactNode => {
 
 export const PageError: React.FC<PageErrorProps> = props => {
   return (
-    <Container width="100%" height="100%" flex={{ align: 'center-center' }} className={css.pageError}>
+    <Container
+      width="100%"
+      height="100%"
+      flex={{ align: 'center-center' }}
+      className={css.pageError}
+      data-testid="page-error">
       <Layout.Vertical
         spacing="medium"
         width={props?.width || 500}

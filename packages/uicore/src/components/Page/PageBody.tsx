@@ -92,7 +92,10 @@ export const PageBody: React.FC<PageBodyProps> = ({
   className
 }) => {
   return (
-    <Container className={cx(css.pageBody, filled && css.filled, className)} data-name="page-body">
+    <Container
+      data-testid="page-body"
+      className={cx(css.pageBody, filled && css.filled, className)}
+      data-name="page-body">
       {loading && <PageSpinner message={loadingMessage} />}
       {!loading && error && <PageError message={error} onClick={retryOnError} />}
       {!loading && !error && noData?.when?.() && (

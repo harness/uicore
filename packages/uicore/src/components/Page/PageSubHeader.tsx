@@ -20,7 +20,7 @@ export interface PageSubHeaderProps {
  */
 export const PageSubHeader: React.FC<PageSubHeaderProps> = ({ className, children }) => {
   return (
-    <Layout.Horizontal flex className={cx(css.container, className)}>
+    <Layout.Horizontal flex className={cx(css.container, className)} data-testid="page-subheader">
       {children}
     </Layout.Horizontal>
   )

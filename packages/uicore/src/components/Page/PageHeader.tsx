@@ -32,7 +32,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   size = 'standard',
   className,
   breadcrumbs,
-  testId
+  testId = 'page-header'
 }) => {
   return (
     <Layout.Horizontal
