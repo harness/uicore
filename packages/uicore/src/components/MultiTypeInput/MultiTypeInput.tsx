@@ -29,7 +29,12 @@ import {
   EXECUTION_TIME_INPUT_VALUE
 } from './MultiTypeInputUtils'
 import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
-import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
+import {
+  SelectWithSubmenuV1,
+  SelectWithSubmenuV2,
+  SelectWithSubmenuPropsV1,
+  SelectWithSubmenuPropsV2
+} from '../SelectWithSubmenu/SelectWithSubmenu'
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 
 type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[]
@@ -335,12 +340,16 @@ export const MultiSelectTypeInput: React.FC<MultiSelectTypeInputProps> = ({ mult
   )
 }
 
-export interface SelectWithSubmenuTypeInputProps
+export interface SelectWithSubmenuTypeInputPropsV1
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
-  selectWithSubmenuProps?: SelectWithSubmenuProps
+  selectWithSubmenuProps?: SelectWithSubmenuPropsV1
+}
+export interface SelectWithSubmenuTypeInputPropsV2
+  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
+  selectWithSubmenuProps?: SelectWithSubmenuPropsV2
 }
 
-export const SelectWithSubmenuTypeInput: React.FC<SelectWithSubmenuTypeInputProps> = ({
+export const SelectWithSubmenuTypeInputV1: React.FC<SelectWithSubmenuTypeInputPropsV1> = ({
   selectWithSubmenuProps,
   ...rest
 }) => {
@@ -348,7 +357,20 @@ export const SelectWithSubmenuTypeInput: React.FC<SelectWithSubmenuTypeInputProp
     <ExpressionAndRuntimeType
       {...rest}
       fixedTypeComponentProps={selectWithSubmenuProps}
-      fixedTypeComponent={SelectWithSubmenu}
+      fixedTypeComponent={SelectWithSubmenuV1}
+    />
+  )
+}
+
+export const SelectWithSubmenuTypeInputV2: React.FC<SelectWithSubmenuTypeInputPropsV2> = ({
+  selectWithSubmenuProps,
+  ...rest
+}) => {
+  return (
+    <ExpressionAndRuntimeType
+      {...rest}
+      fixedTypeComponentProps={selectWithSubmenuProps}
+      fixedTypeComponent={SelectWithSubmenuV2}
     />
   )
 }
