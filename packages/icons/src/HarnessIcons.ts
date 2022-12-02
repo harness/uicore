@@ -63,10 +63,21 @@ import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import Arrow from './arrow.svg'
+import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
+import AsgBlueGreen from './asg-blue-green.svg'
+import AsgCanaryDeleteInverse from './asg-canary-delete-inverse.svg'
+import AsgCanaryDelete from './asg-canary-delete.svg'
+import AsgCanaryInverse from './asg-canary-inverse.svg'
+import AsgCanary from './asg-canary.svg'
+import AsgDeployInverse from './asg-deploy-inverse.svg'
+import AsgDeploy from './asg-deploy.svg'
+import AsgSwapInverse from './asg-swap-inverse.svg'
+import AsgSwap from './asg-swap.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
 import Autostopping from './autostopping.svg'
+import AwsAsg from './aws-asg.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsEctwoService from './aws-ectwo-service.svg'
 import AwsKms from './aws-kms.svg'
@@ -998,10 +1009,21 @@ type HarnessIconName =
   | 'argo'
   | 'arm'
   | 'arrow'
+  | 'asg-blue-green-inverse'
+  | 'asg-blue-green'
+  | 'asg-canary-delete-inverse'
+  | 'asg-canary-delete'
+  | 'asg-canary-inverse'
+  | 'asg-canary'
+  | 'asg-deploy-inverse'
+  | 'asg-deploy'
+  | 'asg-swap-inverse'
+  | 'asg-swap'
   | 'audit-log-created'
   | 'audit-trail'
   | 'autoScaler'
   | 'autostopping'
+  | 'aws-asg'
   | 'aws-codecommit'
   | 'aws-ectwo-service'
   | 'aws-kms'
@@ -1933,10 +1955,21 @@ const HarnessIcons: KVO<ElementType> = {
   argo: Argo,
   arm: Arm,
   arrow: Arrow,
+  'asg-blue-green-inverse': AsgBlueGreenInverse,
+  'asg-blue-green': AsgBlueGreen,
+  'asg-canary-delete-inverse': AsgCanaryDeleteInverse,
+  'asg-canary-delete': AsgCanaryDelete,
+  'asg-canary-inverse': AsgCanaryInverse,
+  'asg-canary': AsgCanary,
+  'asg-deploy-inverse': AsgDeployInverse,
+  'asg-deploy': AsgDeploy,
+  'asg-swap-inverse': AsgSwapInverse,
+  'asg-swap': AsgSwap,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
   autostopping: Autostopping,
+  'aws-asg': AwsAsg,
   'aws-codecommit': AwsCodecommit,
   'aws-ectwo-service': AwsEctwoService,
   'aws-kms': AwsKms,
