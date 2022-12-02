@@ -195,11 +195,7 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
           )
         })}
       </div>
-      {pagination ? (
-        pagination.itemCount > pagination.pageSize ? (
-          <Pagination className={css.pagination} {...pagination} />
-        ) : undefined
-      ) : null}
+      {pagination ? <Pagination className={css.pagination} {...pagination} /> : undefined}
     </div>
   )
 }
