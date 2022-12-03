@@ -42,15 +42,17 @@ import { InputWithIdentifier, InputWithIdentifierProps } from '../InputWithIdent
 import {
   MultiTypeInputProps,
   MultiTypeInput,
-  SelectWithSubmenuTypeInput,
   MultiSelectTypeInputProps,
   MultiSelectTypeInput,
   MultiTextInputProps,
   MultiTextInput,
   getMultiTypeFromValue,
-  SelectWithSubmenuTypeInputProps,
   MultiSelectWithSubmenuTypeInputProps,
-  MultiSelectWithSubmenuTypeInput
+  MultiSelectWithSubmenuTypeInput,
+  SelectWithSubmenuTypeInputProps,
+  SelectWithSubmenuTypeInputPropsV2,
+  SelectWithSubmenuTypeInputV2,
+  SelectWithSubmenuTypeInput
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -71,7 +73,8 @@ import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
 import { DurationInput } from './DurationInput'
-import { SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SelectWithSubmenuOption } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenuV2'
 
 // const isFunction = (obj: any): boolean => typeof obj === 'function'
 
@@ -1104,13 +1107,27 @@ export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProp
   name: string
   label: string
   placeholder?: string
+  value?: SelectWithSubmenuOption
+  /**
+   *Enable this when we want to use value, instead of label/value
+   */
+  useValue?: boolean
+  selectItems: SelectWithSubmenuOption[]
+  selectWithSubmenuTypeInputProps?: Omit<SelectWithSubmenuTypeInputProps, 'name'>
+  disabled?: boolean
+}
+
+export interface FormSelectWithSubmenuTypeInputPropsV2 extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
   value?: SubmenuSelectOption
   /**
    *Enable this when we want to use value, instead of label/value
    */
   useValue?: boolean
   selectItems: SubmenuSelectOption[]
-  selectWithSubmenuTypeInputProps?: Omit<SelectWithSubmenuTypeInputProps, 'name'>
+  selectWithSubmenuTypeInputProps?: Omit<SelectWithSubmenuTypeInputPropsV2, 'name'>
   disabled?: boolean
 }
 
@@ -1134,6 +1151,84 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
+    (val, type) => {
+      type !== currentType && setCurrentType(type)
+      if (useValue && type === MultiTypeInputType.FIXED) {
+        formik?.setFieldValue(name, val?.value)
+      } else {
+        formik?.setFieldValue(name, val)
+      }
+      formik?.setFieldTouched(name, true, false)
+      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val)
+    },
+    [formik, selectWithSubmenuTypeInputProps]
+  )
+
+  let value = props?.value || get(formik?.values, name) // formik form value
+  if (useValue && currentType === MultiTypeInputType.FIXED) {
+    const selectedItem = selectItems.find(item => item.value === value)
+    if (isNil(value)) {
+      value = ''
+    } else {
+      value = {
+        label: selectedItem?.label,
+        value: selectedItem?.value
+      }
+    }
+  }
+
+  return (
+    <FormGroup
+      label={getFormFieldLabel(label, name, props)}
+      labelFor={name}
+      helperText={helperText}
+      intent={intent}
+      disabled={disabled}
+      {...rest}>
+      <SelectWithSubmenuTypeInput
+        {...selectWithSubmenuTypeInputProps}
+        value={value}
+        name={name}
+        disabled={disabled}
+        selectWithSubmenuProps={{
+          items: selectItems,
+          ...selectWithSubmenuTypeInputProps?.selectWithSubmenuProps,
+          inputProps: {
+            name,
+            intent,
+            placeholder,
+            disabled
+          }
+        }}
+        onChange={onChangeCallback}
+      />
+    </FormGroup>
+  )
+}
+
+/**
+ * @deprecated use SelectWithSubmenu instead. This will be removed soon
+ */
+const FormSelectWithSubmenuTypeInputV2 = (props: FormSelectWithSubmenuTypeInputPropsV2 & FormikContextProps<any>) => {
+  const {
+    formik,
+    name,
+    useValue = false,
+    selectItems,
+    placeholder,
+    selectWithSubmenuTypeInputProps,
+    ...restProps
+  } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError name={name} errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    label,
+    ...rest
+  } = restProps
+  const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
+  const onChangeCallback: SelectWithSubmenuTypeInputPropsV2['onChange'] = useCallback(
     (val, valueType, type) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
@@ -1168,7 +1263,7 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
       intent={intent}
       disabled={disabled}
       {...rest}>
-      <SelectWithSubmenuTypeInput
+      <SelectWithSubmenuTypeInputV2
         {...selectWithSubmenuTypeInputProps}
         value={value}
         name={name}
@@ -1210,7 +1305,7 @@ const FormMultiSelectWithSubmenuTypeInput = (
     label,
     ...rest
   } = restProps
-  const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
+  const onChangeCallback: SelectWithSubmenuTypeInputPropsV2['onChange'] = useCallback(
     val => {
       formik?.setFieldValue(name, val)
       formik?.setFieldTouched(name, true, false)
@@ -1527,6 +1622,7 @@ export const FormInput = {
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
   SelectWithSubmenuTypeInput: connect(FormSelectWithSubmenuTypeInput),
+  SelectWithSubmenuTypeInputV2: connect(FormSelectWithSubmenuTypeInputV2),
   MultiSelectWithSubmenuTypeInput: connect(FormMultiSelectWithSubmenuTypeInput),
   MultiTextInput: connect(FormMultiTextTypeInput),
   MultiSelectTypeInput: connect(FormMultiSelectTypeInput),
