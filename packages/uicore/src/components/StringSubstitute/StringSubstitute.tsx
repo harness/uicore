@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 type SubstituteVars = Record<string, any> // eslint-disable-line @typescript-eslint/no-explicit-any
 const MATCH_ELSE_KEY = '___'
-const MAX_LOOP_COUNT = 1000
+const MAX_EXPRESSION_TRANSLATIONS_PER_KEY = 1000
 
 function translateExpression(str: string, key: string, vars: SubstituteVars) {
   let startFrom = 0
@@ -44,12 +44,12 @@ function translateExpression(str: string, key: string, vars: SubstituteVars) {
     const matchedValue = mapping[vars[key]] || mapping[MATCH_ELSE_KEY]
 
     if (matchedValue) {
-      startFrom = startIndex + matchedValue.length
+      startFrom = startIndex + matchedValue.length + 1
       str = str.replace(expression, matchedValue)
     } else {
       startFrom = endIndex
     }
-  } while (startFrom < str.length || loopCount > MAX_LOOP_COUNT)
+  } while (startFrom < str.length || loopCount <= MAX_EXPRESSION_TRANSLATIONS_PER_KEY)
 
   return str
 }
