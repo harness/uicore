@@ -49,10 +49,10 @@ import {
   getMultiTypeFromValue,
   MultiSelectWithSubmenuTypeInputProps,
   MultiSelectWithSubmenuTypeInput,
-  SelectWithSubmenuTypeInputPropsV1,
+  SelectWithSubmenuTypeInputProps,
   SelectWithSubmenuTypeInputPropsV2,
   SelectWithSubmenuTypeInputV2,
-  SelectWithSubmenuTypeInputV1
+  SelectWithSubmenuTypeInput
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -73,7 +73,8 @@ import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
 import { DurationInput } from './DurationInput'
-import { SelectWithSubmenuOption, SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SelectWithSubmenuOption } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenuV2'
 
 // const isFunction = (obj: any): boolean => typeof obj === 'function'
 
@@ -1102,7 +1103,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
   )
 }
 
-export interface FormSelectWithSubmenuTypeInputPropsV1 extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1112,7 +1113,7 @@ export interface FormSelectWithSubmenuTypeInputPropsV1 extends Omit<IFormGroupPr
    */
   useValue?: boolean
   selectItems: SelectWithSubmenuOption[]
-  selectWithSubmenuTypeInputProps?: Omit<SelectWithSubmenuTypeInputPropsV1, 'name'>
+  selectWithSubmenuTypeInputProps?: Omit<SelectWithSubmenuTypeInputProps, 'name'>
   disabled?: boolean
 }
 
@@ -1130,7 +1131,7 @@ export interface FormSelectWithSubmenuTypeInputPropsV2 extends Omit<IFormGroupPr
   disabled?: boolean
 }
 
-const FormSelectWithSubmenuTypeInputV1 = (props: FormSelectWithSubmenuTypeInputPropsV1 & FormikContextProps<any>) => {
+const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputProps & FormikContextProps<any>) => {
   const {
     formik,
     name,
@@ -1149,7 +1150,7 @@ const FormSelectWithSubmenuTypeInputV1 = (props: FormSelectWithSubmenuTypeInputP
     ...rest
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
-  const onChangeCallback: SelectWithSubmenuTypeInputPropsV1['onChange'] = useCallback(
+  const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
     (val, type) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
@@ -1184,7 +1185,7 @@ const FormSelectWithSubmenuTypeInputV1 = (props: FormSelectWithSubmenuTypeInputP
       intent={intent}
       disabled={disabled}
       {...rest}>
-      <SelectWithSubmenuTypeInputV1
+      <SelectWithSubmenuTypeInput
         {...selectWithSubmenuTypeInputProps}
         value={value}
         name={name}
@@ -1616,7 +1617,7 @@ export const FormInput = {
   ColorPicker: connect(FormColorPicker),
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
-  SelectWithSubmenuTypeInputV1: connect(FormSelectWithSubmenuTypeInputV1),
+  SelectWithSubmenuTypeInput: connect(FormSelectWithSubmenuTypeInput),
   SelectWithSubmenuTypeInputV2: connect(FormSelectWithSubmenuTypeInputV2),
   MultiSelectWithSubmenuTypeInput: connect(FormMultiSelectWithSubmenuTypeInput),
   MultiTextInput: connect(FormMultiTextTypeInput),
