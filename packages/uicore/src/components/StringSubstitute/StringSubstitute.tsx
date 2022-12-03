@@ -49,7 +49,7 @@ function translateExpression(str: string, key: string, vars: SubstituteVars) {
     } else {
       startFrom = endIndex
     }
-  } while (startFrom < str.length || loopCount <= MAX_EXPRESSION_TRANSLATIONS_PER_KEY)
+  } while (startFrom < str.length && loopCount <= MAX_EXPRESSION_TRANSLATIONS_PER_KEY)
 
   return str
 }
