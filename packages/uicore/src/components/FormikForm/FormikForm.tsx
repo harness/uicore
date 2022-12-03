@@ -1205,6 +1205,10 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
     </FormGroup>
   )
 }
+
+/**
+ * @deprecated use SelectWithSubmenu instead. This will be removed soon
+ */
 const FormSelectWithSubmenuTypeInputV2 = (props: FormSelectWithSubmenuTypeInputPropsV2 & FormikContextProps<any>) => {
   const {
     formik,
