@@ -12,7 +12,7 @@ import { Menu, MenuItem, Popover, PopoverInteractionKind, Position } from '@blue
 
 import { Text } from '../Text/Text'
 
-import css from './SelectWithSubmenu.css'
+import css from './SelectWithSubmenuV2.css'
 import selectCss from '../Select/Select.css'
 import { SelectProps, SelectOption, Select } from '../../components/Select/Select'
 import { MultiTypeInputType } from 'index'
