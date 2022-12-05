@@ -44,10 +44,10 @@ function translateExpression(str: string, key: string, vars: SubstituteVars) {
     const matchedValue = mapping[vars[key]] || mapping[MATCH_ELSE_KEY]
 
     if (matchedValue) {
-      startFrom = startIndex + matchedValue.length + 1
+      startFrom = startIndex + matchedValue.length
       str = str.replace(expression, matchedValue)
     } else {
-      startFrom = endIndex
+      startFrom = endIndex + 1
     }
   } while (startFrom < str.length && loopCount <= MAX_EXPRESSION_TRANSLATIONS_PER_KEY)
 
