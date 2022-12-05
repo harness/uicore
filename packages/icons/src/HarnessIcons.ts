@@ -199,6 +199,7 @@ import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import CodeBranchSmall from './code-branch-small.svg'
 import CodeBranch from './code-branch.svg'
+import CodeChat from './code-chat.svg'
 import CodeClone from './code-clone.svg'
 import CodeClose from './code-close.svg'
 import CodeCommitLight from './code-commit-light.svg'
@@ -213,6 +214,7 @@ import CodeFolder from './code-folder.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
 import CodeMore from './code-more.svg'
+import CodePullRequest from './code-pull-request.svg'
 import CodeRepo from './code-repo.svg'
 import CodeSettings from './code-settings.svg'
 import CodeWebhook from './code-webhook.svg'
@@ -1129,6 +1131,7 @@ type HarnessIconName =
   | 'cloudformation'
   | 'code-branch-small'
   | 'code-branch'
+  | 'code-chat'
   | 'code-clone'
   | 'code-close'
   | 'code-commit-light'
@@ -1143,6 +1146,7 @@ type HarnessIconName =
   | 'code-history'
   | 'code-info'
   | 'code-more'
+  | 'code-pull-request'
   | 'code-repo'
   | 'code-settings'
   | 'code-webhook'
@@ -2059,6 +2063,7 @@ const HarnessIcons: KVO<ElementType> = {
   cloudformation: Cloudformation,
   'code-branch-small': CodeBranchSmall,
   'code-branch': CodeBranch,
+  'code-chat': CodeChat,
   'code-clone': CodeClone,
   'code-close': CodeClose,
   'code-commit-light': CodeCommitLight,
@@ -2073,6 +2078,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-history': CodeHistory,
   'code-info': CodeInfo,
   'code-more': CodeMore,
+  'code-pull-request': CodePullRequest,
   'code-repo': CodeRepo,
   'code-settings': CodeSettings,
   'code-webhook': CodeWebhook,
