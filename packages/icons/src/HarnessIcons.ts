@@ -854,6 +854,7 @@ import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
+import StaleCache from './stale-cache.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
@@ -1788,6 +1789,7 @@ type HarnessIconName =
   | 'spot-inverse'
   | 'spot'
   | 'srm-with-dark-text'
+  | 'stale-cache'
   | 'stars'
   | 'status-pending'
   | 'status-running'
@@ -2722,6 +2724,7 @@ const HarnessIcons: KVO<ElementType> = {
   'spot-inverse': SpotInverse,
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
+  'stale-cache': StaleCache,
   stars: Stars,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
