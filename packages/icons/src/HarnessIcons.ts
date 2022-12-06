@@ -665,6 +665,7 @@ import ProjectsWizard from './projects-wizard.svg'
 import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
+import PullRequest from './pull-request.svg'
 import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
@@ -848,6 +849,7 @@ import SliderTrigger from './slider-trigger.svg'
 import SlotDeployment from './slot-deployment.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
+import SolidError from './solid-error.svg'
 import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
@@ -1597,6 +1599,7 @@ type HarnessIconName =
   | 'prune-skipped'
   | 'pruned'
   | 'publish-step'
+  | 'pull-request'
   | 'python'
   | 'question'
   | 'queue-step'
@@ -1780,6 +1783,7 @@ type HarnessIconName =
   | 'slot-deployment'
   | 'smtp-configuration-blue'
   | 'smtp'
+  | 'solid-error'
   | 'spinner'
   | 'spot-inverse'
   | 'spot'
@@ -2529,6 +2533,7 @@ const HarnessIcons: KVO<ElementType> = {
   'prune-skipped': PruneSkipped,
   pruned: Pruned,
   'publish-step': PublishStep,
+  'pull-request': PullRequest,
   python: Python,
   question: Question,
   'queue-step': QueueStep,
@@ -2712,6 +2717,7 @@ const HarnessIcons: KVO<ElementType> = {
   'slot-deployment': SlotDeployment,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
+  'solid-error': SolidError,
   spinner: Spinner,
   'spot-inverse': SpotInverse,
   spot: Spot,
