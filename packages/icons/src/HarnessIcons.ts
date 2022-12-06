@@ -398,6 +398,7 @@ import GitCloneCiStepInverse from './git-clone-ci-step-inverse.svg'
 import GitCloneCiStep from './git-clone-ci-step.svg'
 import GitCloneStep from './git-clone-step.svg'
 import GitConfigure from './git-configure.svg'
+import GitExperienceSetting from './git-experience-setting.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
 import GitPopover from './git-popover.svg'
@@ -1332,6 +1333,7 @@ type HarnessIconName =
   | 'git-clone-ci-step'
   | 'git-clone-step'
   | 'git-configure'
+  | 'git-experience-setting'
   | 'git-landing-page'
   | 'git-new-branch'
   | 'git-popover'
@@ -2266,6 +2268,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-clone-ci-step': GitCloneCiStep,
   'git-clone-step': GitCloneStep,
   'git-configure': GitConfigure,
+  'git-experience-setting': GitExperienceSetting,
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
   'git-popover': GitPopover,
