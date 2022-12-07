@@ -845,6 +845,7 @@ import ServiceSpotinst from './service-spotinst.svg'
 import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
+import ServiceTerragrunt from './service-terragrunt.svg'
 import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
@@ -916,6 +917,14 @@ import TerraformPlanInverse from './terraform-plan-inverse.svg'
 import TerraformPlan from './terraform-plan.svg'
 import TerraformRollbackInverse from './terraform-rollback-inverse.svg'
 import TerraformRollback from './terraform-rollback.svg'
+import TerragruntApplyInverse from './terragrunt-apply-inverse.svg'
+import TerragruntApply from './terragrunt-apply.svg'
+import TerragruntDestroyInverse from './terragrunt-destroy-inverse.svg'
+import TerragruntDestroy from './terragrunt-destroy.svg'
+import TerragruntPlanInverse from './terragrunt-plan-inverse.svg'
+import TerragruntPlan from './terragrunt-plan.svg'
+import TerragruntRollbackInverse from './terragrunt-rollback-inverse.svg'
+import TerragruntRollback from './terragrunt-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
@@ -1793,6 +1802,7 @@ type HarnessIconName =
   | 'service-stackdriver'
   | 'service-sumologic'
   | 'service-terraform'
+  | 'service-terragrunt'
   | 'service-vm'
   | 'service'
   | 'servicenow-approve-inverse'
@@ -1864,6 +1874,14 @@ type HarnessIconName =
   | 'terraform-plan'
   | 'terraform-rollback-inverse'
   | 'terraform-rollback'
+  | 'terragrunt-apply-inverse'
+  | 'terragrunt-apply'
+  | 'terragrunt-destroy-inverse'
+  | 'terragrunt-destroy'
+  | 'terragrunt-plan-inverse'
+  | 'terragrunt-plan'
+  | 'terragrunt-rollback-inverse'
+  | 'terragrunt-rollback'
   | 'test-connection'
   | 'test-verification'
   | 'text'
@@ -2741,6 +2759,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-stackdriver': ServiceStackdriver,
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
+  'service-terragrunt': ServiceTerragrunt,
   'service-vm': ServiceVm,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
@@ -2812,6 +2831,14 @@ const HarnessIcons: KVO<ElementType> = {
   'terraform-plan': TerraformPlan,
   'terraform-rollback-inverse': TerraformRollbackInverse,
   'terraform-rollback': TerraformRollback,
+  'terragrunt-apply-inverse': TerragruntApplyInverse,
+  'terragrunt-apply': TerragruntApply,
+  'terragrunt-destroy-inverse': TerragruntDestroyInverse,
+  'terragrunt-destroy': TerragruntDestroy,
+  'terragrunt-plan-inverse': TerragruntPlanInverse,
+  'terragrunt-plan': TerragruntPlan,
+  'terragrunt-rollback-inverse': TerragruntRollbackInverse,
+  'terragrunt-rollback': TerragruntRollback,
   'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
