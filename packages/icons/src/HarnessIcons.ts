@@ -128,6 +128,7 @@ import CanaryIcon from './canary-icon.svg'
 import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
+import CancelAlert from './cancel-alert.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
@@ -278,6 +279,7 @@ import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
 import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
 import CsHover from './cs-hover.svg'
+import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
@@ -1074,6 +1076,7 @@ type HarnessIconName =
   | 'canary-inverse'
   | 'canary-outline'
   | 'canary'
+  | 'cancel-alert'
   | 'canvas-position'
   | 'canvas-reset'
   | 'canvas-selector'
@@ -1224,6 +1227,7 @@ type HarnessIconName =
   | 'create-via-pipeline-template'
   | 'create-via-starter-pipeline'
   | 'cs-hover'
+  | 'currency-banner'
   | 'custom-approval'
   | 'custom-artifact'
   | 'custom-remote-manifest'
@@ -2020,6 +2024,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
   canary: Canary,
+  'cancel-alert': CancelAlert,
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
@@ -2170,6 +2175,7 @@ const HarnessIcons: KVO<ElementType> = {
   'create-via-pipeline-template': CreateViaPipelineTemplate,
   'create-via-starter-pipeline': CreateViaStarterPipeline,
   'cs-hover': CsHover,
+  'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
   'custom-remote-manifest': CustomRemoteManifest,
