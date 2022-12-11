@@ -535,6 +535,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
           intent,
           disabled: disabled
         }}
+        resetOnSelect={true}
         {...multiSelectProps}
         items={items}
         value={Array.isArray(formikValue) ? formikValue : []}
@@ -542,7 +543,6 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
           formik?.setFieldValue(name, items)
           onChange?.(items)
         }}
-        resetOnSelect={true}
         usePortal={!!props.usePortal}
         popoverClassName={props.popoverClassName}
       />
