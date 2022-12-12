@@ -904,6 +904,8 @@ import Syncing from './syncing.svg'
 import TanzuCommand from './tanzuCommand.svg'
 import TasInverse from './tas-inverse.svg'
 import TasManifest from './tas-manifest.svg'
+import TasPreProcessingArtifactGroup from './tas-pre-processing-artifact-group.svg'
+import TasPreProcessingArtifact from './tas-pre-processing-artifact.svg'
 import Tas from './tas.svg'
 import TasAppResize from './tasAppResize.svg'
 import TasBgSetup from './tasBGSetup.svg'
@@ -1872,6 +1874,8 @@ type HarnessIconName =
   | 'tanzuCommand'
   | 'tas-inverse'
   | 'tas-manifest'
+  | 'tas-pre-processing-artifact-group'
+  | 'tas-pre-processing-artifact'
   | 'tas'
   | 'tasAppResize'
   | 'tasBGSetup'
@@ -2840,6 +2844,8 @@ const HarnessIcons: KVO<ElementType> = {
   tanzuCommand: TanzuCommand,
   'tas-inverse': TasInverse,
   'tas-manifest': TasManifest,
+  'tas-pre-processing-artifact-group': TasPreProcessingArtifactGroup,
+  'tas-pre-processing-artifact': TasPreProcessingArtifact,
   tas: Tas,
   tasAppResize: TasAppResize,
   tasBGSetup: TasBgSetup,
