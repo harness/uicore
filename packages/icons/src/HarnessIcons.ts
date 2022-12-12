@@ -901,9 +901,20 @@ import SwitchOn from './switch-on.svg'
 import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
+import TanzuCommand from './tanzuCommand.svg'
 import TasInverse from './tas-inverse.svg'
 import TasManifest from './tas-manifest.svg'
 import Tas from './tas.svg'
+import TasAppResize from './tasAppResize.svg'
+import TasBgSetup from './tasBGSetup.svg'
+import TasBasicSetup from './tasBasicSetup.svg'
+import TasCanarySetup from './tasCanarySetup.svg'
+import TasMapRoute from './tasMapRoute.svg'
+import TasRollback from './tasRollback.svg'
+import TasRollingSetup from './tasRollingSetup.svg'
+import TasSwapRollback from './tasSwapRollback.svg'
+import TasSwapRoute from './tasSwapRoute.svg'
+import TasUnMapRoute from './tasUnMapRoute.svg'
 import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
@@ -1858,9 +1869,20 @@ type HarnessIconName =
   | 'sync-failed'
   | 'synced'
   | 'syncing'
+  | 'tanzuCommand'
   | 'tas-inverse'
   | 'tas-manifest'
   | 'tas'
+  | 'tasAppResize'
+  | 'tasBGSetup'
+  | 'tasBasicSetup'
+  | 'tasCanarySetup'
+  | 'tasMapRoute'
+  | 'tasRollback'
+  | 'tasRollingSetup'
+  | 'tasSwapRollback'
+  | 'tasSwapRoute'
+  | 'tasUnMapRoute'
   | 'template-inputs'
   | 'template-library'
   | 'templates-blue'
@@ -2815,9 +2837,20 @@ const HarnessIcons: KVO<ElementType> = {
   'sync-failed': SyncFailed,
   synced: Synced,
   syncing: Syncing,
+  tanzuCommand: TanzuCommand,
   'tas-inverse': TasInverse,
   'tas-manifest': TasManifest,
   tas: Tas,
+  tasAppResize: TasAppResize,
+  tasBGSetup: TasBgSetup,
+  tasBasicSetup: TasBasicSetup,
+  tasCanarySetup: TasCanarySetup,
+  tasMapRoute: TasMapRoute,
+  tasRollback: TasRollback,
+  tasRollingSetup: TasRollingSetup,
+  tasSwapRollback: TasSwapRollback,
+  tasSwapRoute: TasSwapRoute,
+  tasUnMapRoute: TasUnMapRoute,
   'template-inputs': TemplateInputs,
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
