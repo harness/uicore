@@ -63,10 +63,21 @@ import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import Arrow from './arrow.svg'
+import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
+import AsgBlueGreen from './asg-blue-green.svg'
+import AsgCanaryDeleteInverse from './asg-canary-delete-inverse.svg'
+import AsgCanaryDelete from './asg-canary-delete.svg'
+import AsgCanaryInverse from './asg-canary-inverse.svg'
+import AsgCanary from './asg-canary.svg'
+import AsgDeployInverse from './asg-deploy-inverse.svg'
+import AsgDeploy from './asg-deploy.svg'
+import AsgSwapInverse from './asg-swap-inverse.svg'
+import AsgSwap from './asg-swap.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
 import Autostopping from './autostopping.svg'
+import AwsAsg from './aws-asg.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsEctwoService from './aws-ectwo-service.svg'
 import AwsKms from './aws-kms.svg'
@@ -117,6 +128,7 @@ import CanaryIcon from './canary-icon.svg'
 import CanaryInverse from './canary-inverse.svg'
 import CanaryOutline from './canary-outline.svg'
 import Canary from './canary.svg'
+import CancelAlert from './cancel-alert.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
@@ -199,6 +211,7 @@ import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import CodeBranchSmall from './code-branch-small.svg'
 import CodeBranch from './code-branch.svg'
+import CodeChat from './code-chat.svg'
 import CodeClone from './code-clone.svg'
 import CodeClose from './code-close.svg'
 import CodeCommitLight from './code-commit-light.svg'
@@ -213,6 +226,7 @@ import CodeFolder from './code-folder.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
 import CodeMore from './code-more.svg'
+import CodePullRequest from './code-pull-request.svg'
 import CodeRepo from './code-repo.svg'
 import CodeSettings from './code-settings.svg'
 import CodeWebhook from './code-webhook.svg'
@@ -265,6 +279,7 @@ import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
 import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
 import CsHover from './cs-hover.svg'
+import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
@@ -663,6 +678,7 @@ import ProjectsWizard from './projects-wizard.svg'
 import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
+import PullRequest from './pull-request.svg'
 import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
@@ -829,6 +845,7 @@ import ServiceSpotinst from './service-spotinst.svg'
 import ServiceStackdriver from './service-stackdriver.svg'
 import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
+import ServiceTerragrunt from './service-terragrunt.svg'
 import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
@@ -846,10 +863,12 @@ import SliderTrigger from './slider-trigger.svg'
 import SlotDeployment from './slot-deployment.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
+import SolidError from './solid-error.svg'
 import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
+import StaleCache from './stale-cache.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
@@ -898,6 +917,14 @@ import TerraformPlanInverse from './terraform-plan-inverse.svg'
 import TerraformPlan from './terraform-plan.svg'
 import TerraformRollbackInverse from './terraform-rollback-inverse.svg'
 import TerraformRollback from './terraform-rollback.svg'
+import TerragruntApplyInverse from './terragrunt-apply-inverse.svg'
+import TerragruntApply from './terragrunt-apply.svg'
+import TerragruntDestroyInverse from './terragrunt-destroy-inverse.svg'
+import TerragruntDestroy from './terragrunt-destroy.svg'
+import TerragruntPlanInverse from './terragrunt-plan-inverse.svg'
+import TerragruntPlan from './terragrunt-plan.svg'
+import TerragruntRollbackInverse from './terragrunt-rollback-inverse.svg'
+import TerragruntRollback from './terragrunt-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
@@ -993,10 +1020,21 @@ type HarnessIconName =
   | 'argo'
   | 'arm'
   | 'arrow'
+  | 'asg-blue-green-inverse'
+  | 'asg-blue-green'
+  | 'asg-canary-delete-inverse'
+  | 'asg-canary-delete'
+  | 'asg-canary-inverse'
+  | 'asg-canary'
+  | 'asg-deploy-inverse'
+  | 'asg-deploy'
+  | 'asg-swap-inverse'
+  | 'asg-swap'
   | 'audit-log-created'
   | 'audit-trail'
   | 'autoScaler'
   | 'autostopping'
+  | 'aws-asg'
   | 'aws-codecommit'
   | 'aws-ectwo-service'
   | 'aws-kms'
@@ -1047,6 +1085,7 @@ type HarnessIconName =
   | 'canary-inverse'
   | 'canary-outline'
   | 'canary'
+  | 'cancel-alert'
   | 'canvas-position'
   | 'canvas-reset'
   | 'canvas-selector'
@@ -1129,6 +1168,7 @@ type HarnessIconName =
   | 'cloudformation'
   | 'code-branch-small'
   | 'code-branch'
+  | 'code-chat'
   | 'code-clone'
   | 'code-close'
   | 'code-commit-light'
@@ -1143,6 +1183,7 @@ type HarnessIconName =
   | 'code-history'
   | 'code-info'
   | 'code-more'
+  | 'code-pull-request'
   | 'code-repo'
   | 'code-settings'
   | 'code-webhook'
@@ -1195,6 +1236,7 @@ type HarnessIconName =
   | 'create-via-pipeline-template'
   | 'create-via-starter-pipeline'
   | 'cs-hover'
+  | 'currency-banner'
   | 'custom-approval'
   | 'custom-artifact'
   | 'custom-remote-manifest'
@@ -1593,6 +1635,7 @@ type HarnessIconName =
   | 'prune-skipped'
   | 'pruned'
   | 'publish-step'
+  | 'pull-request'
   | 'python'
   | 'question'
   | 'queue-step'
@@ -1759,6 +1802,7 @@ type HarnessIconName =
   | 'service-stackdriver'
   | 'service-sumologic'
   | 'service-terraform'
+  | 'service-terragrunt'
   | 'service-vm'
   | 'service'
   | 'servicenow-approve-inverse'
@@ -1776,10 +1820,12 @@ type HarnessIconName =
   | 'slot-deployment'
   | 'smtp-configuration-blue'
   | 'smtp'
+  | 'solid-error'
   | 'spinner'
   | 'spot-inverse'
   | 'spot'
   | 'srm-with-dark-text'
+  | 'stale-cache'
   | 'stars'
   | 'status-pending'
   | 'status-running'
@@ -1828,6 +1874,14 @@ type HarnessIconName =
   | 'terraform-plan'
   | 'terraform-rollback-inverse'
   | 'terraform-rollback'
+  | 'terragrunt-apply-inverse'
+  | 'terragrunt-apply'
+  | 'terragrunt-destroy-inverse'
+  | 'terragrunt-destroy'
+  | 'terragrunt-plan-inverse'
+  | 'terragrunt-plan'
+  | 'terragrunt-rollback-inverse'
+  | 'terragrunt-rollback'
   | 'test-connection'
   | 'test-verification'
   | 'text'
@@ -1923,10 +1977,21 @@ const HarnessIcons: KVO<ElementType> = {
   argo: Argo,
   arm: Arm,
   arrow: Arrow,
+  'asg-blue-green-inverse': AsgBlueGreenInverse,
+  'asg-blue-green': AsgBlueGreen,
+  'asg-canary-delete-inverse': AsgCanaryDeleteInverse,
+  'asg-canary-delete': AsgCanaryDelete,
+  'asg-canary-inverse': AsgCanaryInverse,
+  'asg-canary': AsgCanary,
+  'asg-deploy-inverse': AsgDeployInverse,
+  'asg-deploy': AsgDeploy,
+  'asg-swap-inverse': AsgSwapInverse,
+  'asg-swap': AsgSwap,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
   autostopping: Autostopping,
+  'aws-asg': AwsAsg,
   'aws-codecommit': AwsCodecommit,
   'aws-ectwo-service': AwsEctwoService,
   'aws-kms': AwsKms,
@@ -1977,6 +2042,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canary-inverse': CanaryInverse,
   'canary-outline': CanaryOutline,
   canary: Canary,
+  'cancel-alert': CancelAlert,
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
@@ -2059,6 +2125,7 @@ const HarnessIcons: KVO<ElementType> = {
   cloudformation: Cloudformation,
   'code-branch-small': CodeBranchSmall,
   'code-branch': CodeBranch,
+  'code-chat': CodeChat,
   'code-clone': CodeClone,
   'code-close': CodeClose,
   'code-commit-light': CodeCommitLight,
@@ -2073,6 +2140,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-history': CodeHistory,
   'code-info': CodeInfo,
   'code-more': CodeMore,
+  'code-pull-request': CodePullRequest,
   'code-repo': CodeRepo,
   'code-settings': CodeSettings,
   'code-webhook': CodeWebhook,
@@ -2125,6 +2193,7 @@ const HarnessIcons: KVO<ElementType> = {
   'create-via-pipeline-template': CreateViaPipelineTemplate,
   'create-via-starter-pipeline': CreateViaStarterPipeline,
   'cs-hover': CsHover,
+  'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
   'custom-remote-manifest': CustomRemoteManifest,
@@ -2523,6 +2592,7 @@ const HarnessIcons: KVO<ElementType> = {
   'prune-skipped': PruneSkipped,
   pruned: Pruned,
   'publish-step': PublishStep,
+  'pull-request': PullRequest,
   python: Python,
   question: Question,
   'queue-step': QueueStep,
@@ -2689,6 +2759,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-stackdriver': ServiceStackdriver,
   'service-sumologic': ServiceSumologic,
   'service-terraform': ServiceTerraform,
+  'service-terragrunt': ServiceTerragrunt,
   'service-vm': ServiceVm,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
@@ -2706,10 +2777,12 @@ const HarnessIcons: KVO<ElementType> = {
   'slot-deployment': SlotDeployment,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
+  'solid-error': SolidError,
   spinner: Spinner,
   'spot-inverse': SpotInverse,
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
+  'stale-cache': StaleCache,
   stars: Stars,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
@@ -2758,6 +2831,14 @@ const HarnessIcons: KVO<ElementType> = {
   'terraform-plan': TerraformPlan,
   'terraform-rollback-inverse': TerraformRollbackInverse,
   'terraform-rollback': TerraformRollback,
+  'terragrunt-apply-inverse': TerragruntApplyInverse,
+  'terragrunt-apply': TerragruntApply,
+  'terragrunt-destroy-inverse': TerragruntDestroyInverse,
+  'terragrunt-destroy': TerragruntDestroy,
+  'terragrunt-plan-inverse': TerragruntPlanInverse,
+  'terragrunt-plan': TerragruntPlan,
+  'terragrunt-rollback-inverse': TerragruntRollbackInverse,
+  'terragrunt-rollback': TerragruntRollback,
   'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
