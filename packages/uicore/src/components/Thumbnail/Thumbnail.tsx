@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { ImgHTMLAttributes, useMemo } from 'react'
+import React, { ImgHTMLAttributes, isValidElement, useMemo } from 'react'
 import cx from 'classnames'
 
 import css from '../Thumbnail/Thumbnail.css'
@@ -71,19 +71,18 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         className={css.squareCard}>
         {cardContent}
       </Card>
-      {(icon || imageProps?.src) &&
-        label &&
-        (typeof label === 'string' ? (
-          <Text
-            className={css.label}
-            font={{ weight: 'semi-bold' }}
-            color={disabled ? Color.GREY_500 : Color.GREY_600}
-            margin={{ top: 'small' }}>
-            {label}
-          </Text>
-        ) : (
-          label
-        ))}
+      {isValidElement(label)
+        ? label
+        : (icon || imageProps?.src) &&
+          label && (
+            <Text
+              className={css.label}
+              font={{ weight: 'semi-bold' }}
+              color={disabled ? Color.GREY_500 : Color.GREY_600}
+              margin={{ top: 'small' }}>
+              {label}
+            </Text>
+          )}
       <input type="checkbox" name={name} value={value} onChange={onClick} checked={selected} disabled={disabled} />
     </label>
   )
