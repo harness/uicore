@@ -21,7 +21,7 @@ import { PopoverProps } from 'components/Popover/Popover'
 import cx from 'classnames'
 
 export interface Item {
-  label: string
+  label: string | React.ReactElement
   icon?: IconName
   imageProps?: ImgHTMLAttributes<HTMLOrSVGImageElement>
   value: string
