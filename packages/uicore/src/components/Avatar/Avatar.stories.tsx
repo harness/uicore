@@ -74,3 +74,10 @@ export const Image: Story<AvatarProps> = args => (
     />
   </Layout.Horizontal>
 )
+
+// Edge case for testing, this should not render anything
+export const NullName: Story<AvatarProps> = args => (
+  <Layout.Horizontal spacing="small" id="primary-buttons">
+    <Avatar name={null as any} {...args} />
+  </Layout.Horizontal>
+)

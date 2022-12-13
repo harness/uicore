@@ -101,6 +101,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     hoverCardDetailsCallBack,
     ...rest
   } = props
+
   let textColor = color
   const formatedSize = sizes[size].size
   const fontSize = sizes[size].fontSize
