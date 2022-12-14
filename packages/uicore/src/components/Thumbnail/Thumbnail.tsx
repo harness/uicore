@@ -73,7 +73,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         className={css.squareCard}>
         {cardContent}
       </Card>
-      {(icon || imageProps?.src) && !isValidElement(label) && (
+      {(icon || imageProps?.src) && label && !isValidElement(label) && (
         <Text
           className={css.label}
           font={{ weight: 'semi-bold' }}
