@@ -115,24 +115,36 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = (newType: MultiTypeInputType) => {
-    if (type !== newType) {
-      setType(newType)
-      onTypeChange?.(newType)
-      let _inputValue
-
-      switch (newType) {
-        case MultiTypeInputType.RUNTIME:
-          _inputValue = RUNTIME_INPUT_VALUE
-          break
-        case MultiTypeInputType.EXECUTION_TIME:
-          _inputValue = EXECUTION_TIME_INPUT_VALUE
-          break
-        default:
-          _inputValue = defaultValueToReset
-      }
-
-      onChange?.(_inputValue, MultiTypeInputValue.STRING, newType)
+    if (type === newType) {
+      return
     }
+
+    setType(newType)
+    onTypeChange?.(newType)
+
+    let _inputValue
+
+    switch (newType) {
+      case MultiTypeInputType.RUNTIME:
+        _inputValue = RUNTIME_INPUT_VALUE
+        break
+      case MultiTypeInputType.EXECUTION_TIME:
+        _inputValue = EXECUTION_TIME_INPUT_VALUE
+        break
+      case MultiTypeInputType.EXPRESSION: {
+        // retain value if switching from fixed to expression type
+        if (type === MultiTypeInputType.FIXED && typeof value === 'string') {
+          _inputValue = value
+        } else {
+          _inputValue = defaultValueToReset
+        }
+        break
+      }
+      default:
+        _inputValue = defaultValueToReset
+    }
+
+    onChange?.(_inputValue, MultiTypeInputValue.STRING, newType)
   }
 
   const FixedTypeComponent = fixedTypeComponent
@@ -227,7 +239,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
             popoverClassName: css.popover,
             className: css.wrapper,
             lazy: true
-          }}>
+          }}
+          data-testid="multi-type-button">
           <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
         </Button>
       )}
