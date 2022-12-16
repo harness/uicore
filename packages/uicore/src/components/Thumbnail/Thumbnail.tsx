@@ -17,6 +17,7 @@ import { Color } from '@harness/design-system'
 export interface ThumbnailProps {
   name?: string
   label?: string | React.ReactElement
+  /** Don't pass icon or imageProps.src to render label as a React Element */
   value?: string
   icon?: IconName
   /** renders image instead of icon when imageProps.src is passed */
