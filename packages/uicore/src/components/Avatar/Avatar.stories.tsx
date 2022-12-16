@@ -74,3 +74,10 @@ export const Image: Story<AvatarProps> = args => (
     />
   </Layout.Horizontal>
 )
+
+// Edge case for testing, this should render user icon without any initials
+export const NullName: Story<AvatarProps> = args => (
+  <Layout.Horizontal spacing="small" id="primary-buttons">
+    <Avatar name={null as any} {...args} />
+  </Layout.Horizontal>
+)
