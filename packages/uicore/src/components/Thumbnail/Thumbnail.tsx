@@ -17,6 +17,7 @@ import { Color } from '@harness/design-system'
 export interface ThumbnailProps {
   name?: string
   label?: string | React.ReactElement
+  /** Don't pass icon or imageProps.src to render label as a React Element */
   value?: string
   icon?: IconName
   /** renders image instead of icon when imageProps.src is passed */
@@ -51,7 +52,9 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
     }
 
     if (label) {
-      return (
+      return isValidElement(label) ? (
+        label
+      ) : (
         <Text className={css.label} color={Color.BLACK}>
           {label}
         </Text>
@@ -71,18 +74,15 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         className={css.squareCard}>
         {cardContent}
       </Card>
-      {isValidElement(label)
-        ? label
-        : (icon || imageProps?.src) &&
-          label && (
-            <Text
-              className={css.label}
-              font={{ weight: 'semi-bold' }}
-              color={disabled ? Color.GREY_500 : Color.GREY_600}
-              margin={{ top: 'small' }}>
-              {label}
-            </Text>
-          )}
+      {(icon || imageProps?.src) && label && !isValidElement(label) && (
+        <Text
+          className={css.label}
+          font={{ weight: 'semi-bold' }}
+          color={disabled ? Color.GREY_500 : Color.GREY_600}
+          margin={{ top: 'small' }}>
+          {label}
+        </Text>
+      )}
       <input type="checkbox" name={name} value={value} onChange={onClick} checked={selected} disabled={disabled} />
     </label>
   )
