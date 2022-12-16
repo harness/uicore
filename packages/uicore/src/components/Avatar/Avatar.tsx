@@ -145,7 +145,8 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   } else {
     if (!initials) {
       // show empty user Icon if neither 'src', nor 'initials' are truthy
-      inner = <Icon name="user" color={Color.WHITE} />
+      const iconSize = parseInt(sizes?.[size].fontSize, 10) as IconProps['size']
+      inner = <Icon name="user" color={Color.WHITE} size={iconSize} />
       forcePreventHover = true
     } else {
       inner = initials.toUpperCase()

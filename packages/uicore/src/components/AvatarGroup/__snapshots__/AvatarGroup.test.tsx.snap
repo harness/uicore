@@ -186,9 +186,9 @@ exports[`Render basic component should check snapshot with Avatar props without 
               >
                 <svg
                   fill="currentColor"
-                  height="16"
+                  height="10"
                   viewBox="0 0 61 73"
-                  width="16"
+                  width="10"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -388,9 +388,9 @@ exports[`Render basic component should check snapshot with Avatar props without 
               >
                 <svg
                   fill="currentColor"
-                  height="16"
+                  height="10"
                   viewBox="0 0 61 73"
-                  width="16"
+                  width="10"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
