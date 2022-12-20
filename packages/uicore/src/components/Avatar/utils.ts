@@ -5,24 +5,29 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { pick } from 'lodash-es'
+import { pick, defaultTo } from 'lodash-es'
 import { Color } from '@harness/design-system'
-export const getInitialsFromNameOrEmail = (name = '', email = ''): string => {
-  let initialsFromName = name
-    .split(/-| /)
-    .map((n: string) => n[0])
-    .join('')
 
+export const getInitialsFromNameOrEmail = (name = '', email = ''): string => {
+  let initialsFromName = defaultTo(
+    name
+      ?.split(/-| /)
+      .map((n: string) => n[0])
+      .join(''),
+    ''
+  )
   initialsFromName =
     initialsFromName.length > 2
       ? `${initialsFromName[0]}${initialsFromName[initialsFromName.length - 1]}`
       : initialsFromName
-  let initialsFromEmail = email.split('@')[0]
+
+  let initialsFromEmail = defaultTo(email?.split('@')[0], '')
   const splitedInitialsFromEmail = initialsFromEmail.split('.')
   initialsFromEmail =
     splitedInitialsFromEmail.length > 1
       ? `${splitedInitialsFromEmail[0][0]}${splitedInitialsFromEmail[splitedInitialsFromEmail.length - 1][0]}`
       : initialsFromEmail[0]
+
   return initialsFromName || initialsFromEmail
 }
 
@@ -36,6 +41,7 @@ export const getSumOfAllCharacters = (str: string): number => {
         }, 0)
     : 0
 }
+
 export const defaultAvatarColor = Object.values(
   pick(Color, [
     'GREY_600',

@@ -1,6 +1,6 @@
 {
   "name": "@harness/uicore",
-  "version": "3.97.1",
+  "version": "3.98.2",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",

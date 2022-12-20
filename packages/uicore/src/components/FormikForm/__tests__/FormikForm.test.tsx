@@ -9,7 +9,7 @@ import React from 'react'
 import { act, findByText, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { Formik, FormikForm, FormInput } from '../FormikForm'
 import { Button } from '../../Button/Button'
-import { MultiTypeInputType } from 'components/MultiTypeInput/MultiTypeInputUtils'
+import { MultiTypeInputType, MultiTypeInputValue } from 'components/MultiTypeInput/MultiTypeInputUtils'
 import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
 import userEvent from '@testing-library/user-event'
 
@@ -437,5 +437,37 @@ describe('Test basic Components', () => {
 
     // tag2 should only be seen once as saved in the snapshot
     expect(container).toMatchSnapshot()
+  })
+
+  test('switching to expression from fixed type should not clear the value', async () => {
+    const onChange = jest.fn()
+    render(
+      renderFormikForm(
+        <FormInput.MultiTextInput
+          name="multiTextInputName"
+          label="Multi Text Input"
+          placeholder="enter text"
+          onChange={onChange}
+          multiTextInputProps={{}}
+        />
+      )
+    )
+
+    const input = screen.getByPlaceholderText('enter text')
+    userEvent.clear(input)
+    userEvent.type(input, 'value')
+    expect(input).toHaveDisplayValue('value')
+
+    const multiTypeButton = screen.getByTestId('multi-type-button')
+    expect(multiTypeButton).toBeInTheDocument()
+    userEvent.click(multiTypeButton as HTMLButtonElement)
+
+    const expressionOption = await screen.findByText(/expression/i)
+    userEvent.click(expressionOption)
+
+    await waitFor(() => {
+      expect(onChange).toHaveBeenLastCalledWith('value', MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
+    })
+    expect(input).toHaveDisplayValue('value')
   })
 })
