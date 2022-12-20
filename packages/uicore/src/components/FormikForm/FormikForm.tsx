@@ -528,9 +528,7 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
           inputProps: {
             autoComplete,
             name,
-            placeholder,
-
-            onBlur: () => formik?.setFieldTouched(name, true, false)
+            placeholder
           },
           intent,
           disabled: disabled
