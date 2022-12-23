@@ -44,6 +44,14 @@ export interface TableProps<Data extends Record<string, any>> {
    */
   name?: string
   renderRowSubComponent?: (data: { row: Row<Data> }) => ReactNode
+  /**
+   * When true, the expanded state will automatically reset if any of the following conditions are met:
+      data is changed
+   * To disable, set to false
+      https://react-table-v7.tanstack.com/docs/api/useExpanded#table-options
+   * @default true
+   */
+  autoResetExpanded?: false
 }
 
 export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
@@ -54,20 +62,21 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
     sortable = false,
     resizable = false,
     hideHeaders = false,
+    autoResetExpanded = true,
     pagination,
     rowDataTestID,
     getRowClassName,
     name,
     renderRowSubComponent
   } = props
-
   const { headerGroups, page, prepareRow } = useTable(
     {
       columns,
       data,
       initialState: { pageIndex: defaultTo(pagination?.pageIndex, 0) },
       manualPagination: true,
-      pageCount: defaultTo(pagination?.pageCount, -1)
+      pageCount: defaultTo(pagination?.pageCount, -1),
+      autoResetExpanded
     },
     useSortBy,
     useExpanded,
