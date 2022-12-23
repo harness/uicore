@@ -151,6 +151,7 @@ exports[`Test basic Components Tag Input component type duplicate values CDNG-85
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -271,6 +272,7 @@ exports[`Test basic Components should render Checkbox component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -319,6 +321,7 @@ exports[`Test basic Components should render Custom Input component 1`] = `
             class="bp3-form-content"
           >
             <button
+              aria-label="Click Me"
               class="bp3-button button StyledProps--font StyledProps--main with-current-color"
               type="button"
             >
@@ -331,6 +334,7 @@ exports[`Test basic Components should render Custom Input component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -395,6 +399,7 @@ exports[`Test basic Components should render FileInput component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -503,6 +508,7 @@ exports[`Test basic Components should render FileInput component 2`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -580,6 +586,7 @@ exports[`Test basic Components should render MultiSelect component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -793,6 +800,7 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -880,6 +888,7 @@ exports[`Test basic Components should render RadioGroup component in an inline f
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -974,6 +983,7 @@ exports[`Test basic Components should render Select component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -1035,6 +1045,7 @@ exports[`Test basic Components should render Text component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -1091,6 +1102,7 @@ exports[`Test basic Components should render TextArea component 1`] = `
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -1178,6 +1190,7 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >
@@ -1265,6 +1278,7 @@ exports[`Test basic Components should render an inline RadioGroup component in a
           </div>
         </div>
         <button
+          aria-label="Submit"
           class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
           type="submit"
         >

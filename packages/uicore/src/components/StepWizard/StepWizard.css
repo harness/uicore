@@ -32,6 +32,7 @@
           .stepName {
             color: var(--grey-50);
             font-weight: bold;
+            word-break: break-word;
           }
           .number {
             background-color: var(--grey-50);
@@ -51,6 +52,7 @@
         }
         .stepName {
           color: var(--grey-50);
+          word-break: break-word;
         }
         &.nestedStep {
           padding-left: var(--spacing-large);

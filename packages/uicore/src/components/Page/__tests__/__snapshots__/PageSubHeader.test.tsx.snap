@@ -4,8 +4,10 @@ exports[`PageSubHeader test snapshot testing 1`] = `
 <div>
   <div
     class="horizontal layout-spacing-undefined StyledProps--main container StyledProps--flex"
+    data-testid="page-subheader"
   >
     <button
+      aria-label="Add Pipeline"
       class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
       data-testid="add-pipeline"
       type="button"

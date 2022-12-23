@@ -25,9 +25,12 @@ import { Text } from '../Text/Text'
 import { StyledProps } from '@harness/design-system'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { SelectOption } from '../Select/Select'
-import { NoMatch } from '../DropDown/DropDown'
 
 type Props = IQueryListProps<MultiSelectOption>
+
+export function NoMatch(): React.ReactElement {
+  return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
+}
 
 export interface MultiSelectDropDownProps
   extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps' | 'renderer' | 'itemRenderer' | 'onItemSelect'> {
@@ -127,8 +130,6 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  const isDisabled = dropDownItems.length === 0 || !!disabled
-
   function renderer(listProps: IQueryListRendererProps<MultiSelectOption>): JSX.Element {
     return (
       <Popover
@@ -146,7 +147,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
         autoFocus={false}
         enforceFocus={false}
         onClose={() => onPopoverClose?.(selectedItems)}
-        className={cx(css.main, { [css.disabled]: isDisabled }, className)}
+        className={cx(css.main, { [css.disabled]: !!disabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
         isOpen={isOpen}>
         <Layout.Horizontal

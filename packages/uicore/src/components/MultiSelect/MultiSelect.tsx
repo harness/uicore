@@ -192,6 +192,9 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       tagRenderer={props.tagRenderer || tagRenderer}
       itemsEqual={(a, b) => a.value === b.value}
+      itemListPredicate={(query, items) =>
+        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
+      }
       {...rest}
       tagInputProps={{
         disabled,
@@ -220,9 +223,6 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         },
         ...props.tagInputProps
       }}
-      itemListPredicate={(query, items) =>
-        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
-      }
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       selectedItems={value}
       onItemSelect={handleItemSelect}

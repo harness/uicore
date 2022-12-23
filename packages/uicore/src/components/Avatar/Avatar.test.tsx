@@ -31,10 +31,20 @@ describe('Render basic component', () => {
     expect(getInitialsFromNameOrEmail('All Name Here')).toEqual('AH')
     expect(getInitialsFromNameOrEmail('All Name')).toEqual('AN')
     expect(getInitialsFromNameOrEmail('AllNameHere')).toEqual('A')
+    // eslint-disable-next-line
+    // @ts-ignore
+    expect(getInitialsFromNameOrEmail('AllNameHere', null)).toEqual('A')
   })
   test('getInitials with email', () => {
     expect(getInitialsFromNameOrEmail('', 'AllNameHere@com')).toEqual('A')
     expect(getInitialsFromNameOrEmail('', 'AllName.here@com')).toEqual('Ah')
+    expect(getInitialsFromNameOrEmail(undefined, 'abc')).toEqual('a')
+    // eslint-disable-next-line
+    // @ts-ignore
+    expect(getInitialsFromNameOrEmail(null, 'abc')).toEqual('a')
+    // eslint-disable-next-line
+    // @ts-ignore
+    expect(getInitialsFromNameOrEmail(null, null)).toEqual(undefined)
   })
   test('getSumofCharacters', () => {
     expect(getSumOfAllCharacters('abcd')).toEqual(10)

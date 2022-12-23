@@ -31,6 +31,7 @@ export interface PaginationProps {
   className?: string
   onPageSizeChange?: (newPageSize: number) => void
   breakAt?: number
+  showPagination?: boolean
 }
 
 interface PageNumbersProps {
@@ -145,7 +146,8 @@ const Pagination: React.FC<PaginationProps> = props => {
     onPageSizeChange,
     hidePageNumbers,
     className,
-    breakAt
+    breakAt,
+    showPagination
   } = props
   const currentWindowWidth = useWindowWidth()
 
@@ -167,8 +169,9 @@ const Pagination: React.FC<PaginationProps> = props => {
   }
 
   const showNumbers = !hidePageNumbers && (!breakAt || breakAt <= currentWindowWidth)
+  const showPaginationComponent = !!showPagination || itemCount > pageSize
 
-  return (
+  return showPaginationComponent ? (
     <Layout.Horizontal
       padding={{ top: 'medium', bottom: 'medium' }}
       flex={{ align: 'center-center', distribution: 'space-between' }}
@@ -225,7 +228,7 @@ const Pagination: React.FC<PaginationProps> = props => {
         <span>{`Showing ${pageSize} per page`}</span>
       )}
     </Layout.Horizontal>
-  )
+  ) : null
 }
 
 export default Pagination

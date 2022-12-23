@@ -128,10 +128,21 @@ export function Button(props: ButtonProps): React.ReactElement {
     'variation',
     'size'
   )
+
+  let buttonAriaLabel = !props.text && typeof props.tooltip === 'string' ? props.tooltip : ''
+
+  // In case a Button has text as a string, set aria label as text
+  if (typeof props.text === 'string') {
+    buttonAriaLabel = props.text
+  }
+
+  const ariaLabelProps = buttonAriaLabel ? { 'aria-label': buttonAriaLabel } : {}
+
   const button = props.noStyling ? (
     <Tag {...normalizedProps} />
   ) : (
     <Component
+      {...ariaLabelProps}
       {...normalizedProps}
       loading={loading}
       icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}

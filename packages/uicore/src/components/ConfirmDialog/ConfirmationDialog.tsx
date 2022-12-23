@@ -7,6 +7,7 @@
 import React from 'react'
 
 import { Intent, Dialog, IDialogProps } from '@blueprintjs/core'
+import cx from 'classnames'
 
 import { Button, ButtonProps, Layout, Container, Icon, Text, ButtonVariation, FontVariation, Color } from '../../'
 
@@ -62,6 +63,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
     customButtons,
     showCloseButton = true,
     children,
+    className,
     ...rest
   } = props
 
@@ -74,7 +76,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
   }
 
   return (
-    <Dialog className={css.dialog} {...confirmDialogProps} {...rest} onClose={closeWithFalse}>
+    <Dialog className={cx(css.dialog, className)} {...confirmDialogProps} {...rest} onClose={closeWithFalse}>
       {showCloseButton ? (
         <Container flex className={css.iconContainer}>
           <Icon onClick={closeWithFalse} className={css.icon} size={8} name="main-close" />
@@ -90,7 +92,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
         color={Color.BLACK}
         margin={{ top: 'large', bottom: 'xxlarge' }}
         className={css.body}>
-        {contentText}
+        <Text lineClamp={5}>{contentText}</Text>
       </Layout.Vertical>
       {children}
       <Layout.Horizontal spacing="small">

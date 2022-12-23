@@ -165,7 +165,16 @@ export {
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
-export { SelectWithSubmenu, SelectWithSubmenuProps } from './components/SelectWithSubmenu/SelectWithSubmenu'
+export {
+  SelectWithSubmenu,
+  SelectWithSubmenuProps,
+  SelectWithSubmenuOption
+} from './components/SelectWithSubmenu/SelectWithSubmenu'
+export {
+  SelectWithSubmenuV2,
+  SelectWithSubmenuPropsV2,
+  SubmenuSelectOption
+} from './components/SelectWithSubmenu/SelectWithSubmenuV2'
 export {
   MultiSelectWithSubmenu,
   MultiSelectWithSubmenuProps,
@@ -243,5 +252,6 @@ export {
   MultiStepProgressIndicator,
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
+export { StringSubstitute } from './components/StringSubstitute/StringSubstitute'
 export * from '@harness/design-system'
 export * from '@harness/icons'

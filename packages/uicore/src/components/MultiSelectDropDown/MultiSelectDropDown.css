@@ -18,6 +18,9 @@
         }
       }
     }
+    .counter {
+      background-color: var(--grey-400) !important;
+    }
   }
   .dropdownButton {
     border-radius: var(--spacing-2);

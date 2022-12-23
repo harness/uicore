@@ -12,3 +12,11 @@
     }
   }
 }
+
+.floatingCopyButton {
+  margin-top: var(--spacing-xsmall) !important;
+  position: sticky;
+  top: var(--spacing-small);
+  right: var(--spacing-small);
+  align-self: start;
+}

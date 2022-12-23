@@ -131,6 +131,20 @@
 
       &.variation-secondary {
         --focus-outline-color: var(--primary-7);
+        &[class*='intent-success'] {
+          border: 1px solid var(--green-800) !important;
+          color: var(--green-800) !important;
+        }
+
+        &[class*='intent-warning'] {
+          border: 1px solid var(--yellow-800) !important;
+          color: var(--yellow-800) !important;
+        }
+
+        &[class*='intent-danger'] {
+          border: 1px solid var(--red-800) !important;
+          color: var(--red-800) !important;
+        }
       }
 
       &.variation-tertiary {

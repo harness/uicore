@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useState, useCallback, useMemo, useEffect } from 'react'
+import React, { useState, useCallback, useMemo, useEffect, CSSProperties } from 'react'
 import { Button } from '../Button/Button'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
@@ -30,6 +30,7 @@ import {
 } from './MultiTypeInputUtils'
 import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
+import { SelectWithSubmenuV2, SelectWithSubmenuPropsV2 } from '../SelectWithSubmenu/SelectWithSubmenuV2'
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 
 type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[]
@@ -38,7 +39,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   value?: AcceptableValue
   multitypeInputValue?: MultiTypeInputType
   defaultValueToReset?: AcceptableValue
-  width?: number
+  width?: CSSProperties['width']
   expressions?: string[]
   onTypeChange?: (type: MultiTypeInputType) => void
   onChange?: (value: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => void
@@ -114,24 +115,36 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = (newType: MultiTypeInputType) => {
-    if (type !== newType) {
-      setType(newType)
-      onTypeChange?.(newType)
-      let _inputValue
-
-      switch (newType) {
-        case MultiTypeInputType.RUNTIME:
-          _inputValue = RUNTIME_INPUT_VALUE
-          break
-        case MultiTypeInputType.EXECUTION_TIME:
-          _inputValue = EXECUTION_TIME_INPUT_VALUE
-          break
-        default:
-          _inputValue = defaultValueToReset
-      }
-
-      onChange?.(_inputValue, MultiTypeInputValue.STRING, newType)
+    if (type === newType) {
+      return
     }
+
+    setType(newType)
+    onTypeChange?.(newType)
+
+    let _inputValue
+
+    switch (newType) {
+      case MultiTypeInputType.RUNTIME:
+        _inputValue = RUNTIME_INPUT_VALUE
+        break
+      case MultiTypeInputType.EXECUTION_TIME:
+        _inputValue = EXECUTION_TIME_INPUT_VALUE
+        break
+      case MultiTypeInputType.EXPRESSION: {
+        // retain value if switching from fixed to expression type
+        if (type === MultiTypeInputType.FIXED && typeof value === 'string') {
+          _inputValue = value
+        } else {
+          _inputValue = defaultValueToReset
+        }
+        break
+      }
+      default:
+        _inputValue = defaultValueToReset
+    }
+
+    onChange?.(_inputValue, MultiTypeInputValue.STRING, newType)
   }
 
   const FixedTypeComponent = fixedTypeComponent
@@ -197,8 +210,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
         />
       )}
-      {!allowableTypes.length ||
-      (allowableTypes.length === 1 && allowableTypes[0] === MultiTypeInputType.FIXED) ? null : (
+      {!allowableTypes.length ? null : (
         <Button
           noStyling
           className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
@@ -227,7 +239,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
             popoverClassName: css.popover,
             className: css.wrapper,
             lazy: true
-          }}>
+          }}
+          data-testid="multi-type-button">
           <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
         </Button>
       )}
@@ -340,6 +353,10 @@ export interface SelectWithSubmenuTypeInputProps
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
   selectWithSubmenuProps?: SelectWithSubmenuProps
 }
+export interface SelectWithSubmenuTypeInputPropsV2
+  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
+  selectWithSubmenuProps?: SelectWithSubmenuPropsV2
+}
 
 export const SelectWithSubmenuTypeInput: React.FC<SelectWithSubmenuTypeInputProps> = ({
   selectWithSubmenuProps,
@@ -350,6 +367,19 @@ export const SelectWithSubmenuTypeInput: React.FC<SelectWithSubmenuTypeInputProp
       {...rest}
       fixedTypeComponentProps={selectWithSubmenuProps}
       fixedTypeComponent={SelectWithSubmenu}
+    />
+  )
+}
+
+export const SelectWithSubmenuTypeInputV2: React.FC<SelectWithSubmenuTypeInputPropsV2> = ({
+  selectWithSubmenuProps,
+  ...rest
+}) => {
+  return (
+    <ExpressionAndRuntimeType
+      {...rest}
+      fixedTypeComponentProps={selectWithSubmenuProps}
+      fixedTypeComponent={SelectWithSubmenuV2}
     />
   )
 }

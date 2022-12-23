@@ -101,11 +101,13 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     hoverCardDetailsCallBack,
     ...rest
   } = props
+
   let textColor = color
   const formatedSize = sizes[size].size
   const fontSize = sizes[size].fontSize
   const lineHeight = sizes[size].lineHeight
   const imageHeightWidth = sizes[size].imageHeight
+  let forcePreventHover = false
   let inner
   let initials = ''
   if (!src) {
@@ -142,10 +144,13 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     )
   } else {
     if (!initials) {
-      return null
+      // show empty user Icon if neither 'src', nor 'initials' are truthy
+      const iconSize = parseInt(sizes[size].fontSize, 10) as IconProps['size']
+      inner = <Icon name="user" color={Color.WHITE} size={iconSize} />
+      forcePreventHover = true
+    } else {
+      inner = initials.toUpperCase()
     }
-    inner = initials
-    inner = inner.toUpperCase()
   }
   const toolTipStyle = {
     ...contentStyle,
@@ -227,6 +232,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
       return contentStyle
     }
   }
+  const isHoverDisabled = !hoverCard || forcePreventHover
   return (
     <div className={classnames(className, css.Avatar, css.contentStyle)} style={style} onClick={onClick} {...rest}>
       <Popover
@@ -235,7 +241,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
         usePortal={false}
         className={css.avatarPopOver}
         position="top"
-        disabled={!hoverCard}>
+        disabled={isHoverDisabled}>
         <div className={css.AvatarInner} style={getUpdatedContentStyle()}>
           {inner}
         </div>

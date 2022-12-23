@@ -21,7 +21,10 @@ export interface PageSpinnerProps {
 
 export const PageSpinner: React.FC<PageSpinnerProps> = props => {
   return (
-    <Container className={cx(css.spinner, { [css.fixed]: props.fixed })} flex={{ align: 'center-center' }}>
+    <Container
+      className={cx(css.spinner, { [css.fixed]: props.fixed })}
+      flex={{ align: 'center-center' }}
+      data-testid="page-spinner">
       <Layout.Vertical
         spacing="medium"
         width={props?.width || 500}
