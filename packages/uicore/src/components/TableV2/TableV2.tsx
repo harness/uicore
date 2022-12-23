@@ -51,7 +51,7 @@ export interface TableProps<Data extends Record<string, any>> {
       https://react-table-v7.tanstack.com/docs/api/useExpanded#table-options
    * @default true
    */
-  autoResetExpanded?: false
+  autoResetExpanded?: boolean
   autoResetSortBy?: boolean
   autoResetPage?: boolean
 }
