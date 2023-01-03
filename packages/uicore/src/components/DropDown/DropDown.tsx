@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState } from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '@harness/design-system'
@@ -31,7 +31,13 @@ export interface DropDownProps
   itemRenderer?: Props['itemRenderer']
   onChange: Props['onItemSelect']
   value?: string | null
-  items: Props['items'] | (() => Promise<Props['items']>)
+  items?: Props['items'] | (() => Promise<Props['items']>)
+  /**
+   * Provide a promise returning function that will be called on dropdown open if the items are not available.
+   * Useful with refetch + data combination
+   * This function should update the items as well
+   */
+  getLazyItems?: () => Promise<any>
   usePortal?: boolean
   className?: string
   popoverClassName?: string
@@ -43,7 +49,7 @@ export interface DropDownProps
   iconProps?: Partial<IconProps>
   addClearBtn?: boolean
   placeholder?: string
-  getCustomLabel?: (item: SelectOption) => string | React.ReactElement
+  getCustomLabel?: (item: SelectOption) => string | ReactElement
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -64,11 +70,15 @@ function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX
   )
 }
 
-export function NoMatch(): React.ReactElement {
-  return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
+export function NoMatch({ hasInternalQuery }: { hasInternalQuery: boolean }): ReactElement {
+  return (
+    <li className={cx(css.menuItem, css.disabled)}>
+      {hasInternalQuery ? 'No matching results found' : 'No items found'}
+    </li>
+  )
 }
 
-export const DropDown: React.FC<DropDownProps> = props => {
+export const DropDown: FC<DropDownProps> = props => {
   const {
     onChange,
     value,
@@ -90,46 +100,49 @@ export const DropDown: React.FC<DropDownProps> = props => {
     addClearBtn = false,
     getCustomLabel,
     disabled,
+    getLazyItems,
     ...rest
   } = props
 
-  const [dropDownItems, setDropDownItems] = React.useState<SelectOption[]>([])
-  const [loading, setLoading] = React.useState<boolean>(false)
-  const [internalQuery, setInternalQuery] = React.useState<string>('')
-  const [activeItem, setActiveItem] = React.useState<SelectOption | null>(null)
+  const [dropDownItems, setDropDownItems] = useState<SelectOption[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
+  const [internalQuery, setInternalQuery] = useState<string>('')
 
-  React.useEffect(() => {
+  const handleLazyLoadItems = () => {
+    if (!items && getLazyItems && !loading) {
+      setLoading(true)
+      getLazyItems().finally(() => {
+        setLoading(false)
+      })
+    }
+  }
+
+  const activeItem = useMemo(
+    () =>
+      dropDownItems.find(item => item.value === value?.toString()) || {
+        label: '',
+        value: ''
+      },
+    [value, dropDownItems]
+  )
+
+  useEffect(() => {
     if (Array.isArray(items)) {
-      setDropDownItems([...items])
+      setDropDownItems(items)
     } else if (typeof items === 'function' && !loading) {
       // Do not enter this block if already loading
+      if (loading) return
+
       setLoading(true)
-      const promise = items()
-
-      if (typeof promise.then === 'function') {
-        promise.then(results => {
-          setDropDownItems(results)
+      Promise.resolve(items())
+        .then(itemsResponse => {
+          setDropDownItems(itemsResponse)
+        })
+        .finally(() => {
           setLoading(false)
         })
-      }
-      if (typeof promise.catch === 'function') {
-        promise.catch(errorResults => {
-          setDropDownItems(errorResults)
-          setLoading(false)
-        })
-      } else {
-        setLoading(false)
-      }
     }
-  }, [query, JSON.stringify(items)])
-
-  React.useEffect(() => {
-    const newActiveItem = dropDownItems.find(item => item.value === value?.toString()) || {
-      label: '',
-      value: ''
-    }
-    setActiveItem(newActiveItem)
-  }, [value, dropDownItems])
+  }, [JSON.stringify(items)])
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
@@ -142,15 +155,15 @@ export const DropDown: React.FC<DropDownProps> = props => {
     } else if (itemsToRender.length > 0) {
       renderedItems = itemsToRender.map(renderItem).filter(item => item !== null)
     } else {
-      renderedItems = <NoMatch />
+      renderedItems = <NoMatch hasInternalQuery={!!internalQuery} />
     }
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  const isDisabled = (internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
+  const isDisabled = (!getLazyItems && internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
   const isSelected = !!activeItem?.value
 
-  const debouncedQuery = React.useCallback(
+  const debouncedQuery = useCallback(
     debounce(query => {
       if (Array.isArray(items)) {
         setDropDownItems(items.filter(item => item.label.toLowerCase().includes(query.toLowerCase())))
@@ -185,7 +198,12 @@ export const DropDown: React.FC<DropDownProps> = props => {
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: cx(css.main, { [css.disabled]: isDisabled }, className),
-        popoverClassName: cx(css.popover, popoverClassName)
+        popoverClassName: cx(css.popover, popoverClassName),
+        onInteraction: isOpen => {
+          if (isOpen) {
+            handleLazyLoadItems()
+          }
+        }
       }}
       {...rest}>
       <Layout.Horizontal

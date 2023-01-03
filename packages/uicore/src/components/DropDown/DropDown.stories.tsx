@@ -76,7 +76,7 @@ Basic.args = {
   items: staticItems
 }
 
-export const PromiseBased: Story<DropDownProps> = args => {
+export const AsyncItems: Story<DropDownProps> = args => {
   const [query, setQuery] = useState('')
   return (
     <Layout.Horizontal flex>
@@ -93,11 +93,40 @@ export const PromiseBased: Story<DropDownProps> = args => {
   )
 }
 
-PromiseBased.args = {
+AsyncItems.args = {
   placeholder: 'Status',
   items: (): Promise<SelectOption[]> => {
     return new Promise<SelectOption[]>(resolve => {
-      setTimeout(() => resolve(staticItems), 3000)
+      setTimeout(() => resolve(staticItems), 2000)
     })
   }
+}
+
+export const AsyncItemsLazy: Story<DropDownProps> = () => {
+  const [query, setQuery] = useState('')
+  const [items, setItems] = useState<SelectOption[] | undefined>()
+
+  const getLazyItems = async () => {
+    return new Promise<void>(resolve => {
+      setTimeout(() => {
+        resolve()
+        setItems(staticItems)
+      }, 2000)
+    })
+  }
+  return (
+    <Layout.Horizontal flex>
+      <DropDown
+        placeholder="Choose filter"
+        onChange={option => {
+          // eslint-disable-next-line no-alert
+          alert(option.value)
+        }}
+        onQueryChange={setQuery}
+        query={query}
+        items={items}
+        getLazyItems={getLazyItems}
+      />
+    </Layout.Horizontal>
+  )
 }
