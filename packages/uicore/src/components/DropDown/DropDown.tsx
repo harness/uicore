@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState, useRef } from 'react'
+import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState } from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '@harness/design-system'
@@ -32,6 +32,11 @@ export interface DropDownProps
   onChange: Props['onItemSelect']
   value?: string | null
   items: Props['items'] | (() => Promise<Props['items']>)
+  /**
+   * Delays calling the items promise function.
+   * Instead of fetching items on mount, fetch whenever dropdown is opened OR there exists a selected item
+   */
+  lazyItems?: boolean
   usePortal?: boolean
   className?: string
   popoverClassName?: string
@@ -44,11 +49,6 @@ export interface DropDownProps
   addClearBtn?: boolean
   placeholder?: string
   getCustomLabel?: (item: SelectOption) => string | ReactElement
-  /**
-   * Delays calling the items promise function.
-   * Instead of fetching items on mount, fetch whenever dropdown is opened OR there exists a selected item
-   */
-  isLazyItemsQuery?: boolean
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -99,7 +99,7 @@ export const DropDown: FC<DropDownProps> = props => {
     addClearBtn = false,
     getCustomLabel,
     disabled,
-    isLazyItemsQuery,
+    lazyItems,
     ...rest
   } = props
 
@@ -125,7 +125,7 @@ export const DropDown: FC<DropDownProps> = props => {
       if (loading) return
       // For lazy loaded queries call the items function once
       // defer the call until the dropdown is opened or there's already a previously selected item
-      if (isLazyItemsQuery && !(isDropdownOpenedOnce || value)) return
+      if (lazyItems && !(isDropdownOpenedOnce || value)) return
 
       setLoading(true)
       Promise.resolve(items())
@@ -136,7 +136,7 @@ export const DropDown: FC<DropDownProps> = props => {
           setLoading(false)
         })
     }
-  }, [JSON.stringify(items), isLazyItemsQuery, isDropdownOpenedOnce])
+  }, [JSON.stringify(items), lazyItems, isDropdownOpenedOnce])
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
@@ -154,7 +154,7 @@ export const DropDown: FC<DropDownProps> = props => {
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  const isDisabled = (!isLazyItemsQuery && internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
+  const isDisabled = (!lazyItems && internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
   const isSelected = !!activeItem?.value
 
   const debouncedQuery = useCallback(
