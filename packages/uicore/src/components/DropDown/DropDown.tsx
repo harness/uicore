@@ -120,24 +120,13 @@ export const DropDown: FC<DropDownProps> = props => {
   useEffect(() => {
     if (Array.isArray(items)) {
       setDropDownItems(items)
-    } else if (typeof items === 'function' && !loading && !isLazyItemsQuery) {
+    } else if (typeof items === 'function') {
       // Do not enter this block if already loading
       if (loading) return
-      setLoading(true)
-      Promise.resolve(items())
-        .then(itemsResponse => {
-          setDropDownItems(itemsResponse)
-        })
-        .finally(() => {
-          setLoading(false)
-        })
-    }
-  }, [JSON.stringify(items)])
+      // For lazy loaded queries call the items function once
+      // defer the call until the dropdown is opened or there's already a previously selected item
+      if (isLazyItemsQuery && !(isDropdownOpenedOnce || value)) return
 
-  useEffect(() => {
-    // For lazy loaded queries call the items function once
-    // defer the call until the dropdown is opened or there's already a previously selected item
-    if (isLazyItemsQuery && (isDropdownOpenedOnce || !!value) && typeof items === 'function') {
       setLoading(true)
       Promise.resolve(items())
         .then(itemsResponse => {
