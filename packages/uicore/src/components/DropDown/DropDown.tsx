@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState } from 'react'
+import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState, useRef } from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '@harness/design-system'
@@ -106,7 +106,7 @@ export const DropDown: FC<DropDownProps> = props => {
   const [dropDownItems, setDropDownItems] = useState<SelectOption[]>([])
   const [loading, setLoading] = useState<boolean>(false)
   const [internalQuery, setInternalQuery] = useState<string>('')
-  const [isDropdownOpenedOnce, setDropdownOpenedOnce] = React.useState(false)
+  const [isDropdownOpenedOnce, setDropdownOpenedOnce] = useState(false)
 
   const activeItem = useMemo(
     () =>
@@ -120,7 +120,9 @@ export const DropDown: FC<DropDownProps> = props => {
   useEffect(() => {
     if (Array.isArray(items)) {
       setDropDownItems(items)
-    } else if (typeof items === 'function' && !loading) {
+    } else if (typeof items === 'function' && !loading && !isLazyItemsQuery) {
+      // Do not enter this block if already loading
+      if (loading) return
       setLoading(true)
       Promise.resolve(items())
         .then(itemsResponse => {
@@ -133,8 +135,9 @@ export const DropDown: FC<DropDownProps> = props => {
   }, [JSON.stringify(items)])
 
   useEffect(() => {
-    // For lazy loaded queries call the items function once, only if dropdown is opened
-    if (isLazyItemsQuery && isDropdownOpenedOnce && dropDownItems.length === 0 && typeof items === 'function') {
+    // For lazy loaded queries call the items function once
+    // defer the call until the dropdown is opened or there's already a previously selected item
+    if (isLazyItemsQuery && (isDropdownOpenedOnce || !!value) && typeof items === 'function') {
       setLoading(true)
       Promise.resolve(items())
         .then(itemsResponse => {
