@@ -99,33 +99,34 @@ AsyncItems.args = {
     return new Promise<SelectOption[]>(resolve => {
       setTimeout(() => resolve(staticItems), 2000)
     })
-  },
-  lazyItems: false
+  }
 }
 
-export const AsyncItemsLazy: Story<DropDownProps> = args => {
+export const AsyncItemsLazy: Story<DropDownProps> = () => {
   const [query, setQuery] = useState('')
+  const [items, setItems] = useState<SelectOption[] | undefined>()
+
+  const getLazyItems = async () => {
+    return new Promise<void>(resolve => {
+      setTimeout(() => {
+        resolve()
+        setItems(staticItems)
+      }, 2000)
+    })
+  }
   return (
     <Layout.Horizontal flex>
       <DropDown
-        {...args}
+        placeholder="Choose filter"
         onChange={option => {
           // eslint-disable-next-line no-alert
           alert(option.value)
         }}
         onQueryChange={setQuery}
         query={query}
+        items={items}
+        getLazyItems={getLazyItems}
       />
     </Layout.Horizontal>
   )
-}
-
-AsyncItemsLazy.args = {
-  placeholder: 'Choose filter',
-  items: (): Promise<SelectOption[]> => {
-    return new Promise<SelectOption[]>(resolve => {
-      setTimeout(() => resolve(staticItems), 2000)
-    })
-  },
-  lazyItems: true
 }
