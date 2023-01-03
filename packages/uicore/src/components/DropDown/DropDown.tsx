@@ -48,7 +48,7 @@ export interface DropDownProps
    * Delays calling the items promise function.
    * Instead of fetching items on mount, fetch whenever dropdown is opened OR there exists a selected item
    */
-  lazyLoading?: boolean
+  isLazyItemsQuery?: boolean
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -99,13 +99,14 @@ export const DropDown: FC<DropDownProps> = props => {
     addClearBtn = false,
     getCustomLabel,
     disabled,
-    lazyLoading,
+    isLazyItemsQuery,
     ...rest
   } = props
 
   const [dropDownItems, setDropDownItems] = useState<SelectOption[]>([])
   const [loading, setLoading] = useState<boolean>(false)
   const [internalQuery, setInternalQuery] = useState<string>('')
+  const [isDropdownOpenedOnce, setDropdownOpenedOnce] = React.useState(false)
 
   const activeItem = useMemo(
     () =>
@@ -120,20 +121,30 @@ export const DropDown: FC<DropDownProps> = props => {
     if (Array.isArray(items)) {
       setDropDownItems(items)
     } else if (typeof items === 'function' && !loading) {
-      // Do not enter this block if already loading
       setLoading(true)
       Promise.resolve(items())
         .then(itemsResponse => {
           setDropDownItems(itemsResponse)
-        })
-        .catch(errorResults => {
-          setDropDownItems(errorResults)
         })
         .finally(() => {
           setLoading(false)
         })
     }
   }, [JSON.stringify(items)])
+
+  useEffect(() => {
+    // For lazy loaded queries call the items function once, only if dropdown is opened
+    if (isLazyItemsQuery && isDropdownOpenedOnce && dropDownItems.length === 0 && typeof items === 'function') {
+      setLoading(true)
+      Promise.resolve(items())
+        .then(itemsResponse => {
+          setDropDownItems(itemsResponse)
+        })
+        .finally(() => {
+          setLoading(false)
+        })
+    }
+  }, [JSON.stringify(items), isLazyItemsQuery, isDropdownOpenedOnce])
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
@@ -151,7 +162,7 @@ export const DropDown: FC<DropDownProps> = props => {
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  const isDisabled = (!lazyLoading && internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
+  const isDisabled = (!isLazyItemsQuery && internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
   const isSelected = !!activeItem?.value
 
   const debouncedQuery = useCallback(
@@ -189,7 +200,12 @@ export const DropDown: FC<DropDownProps> = props => {
         minimal: true,
         position: Position.BOTTOM_LEFT,
         className: cx(css.main, { [css.disabled]: isDisabled }, className),
-        popoverClassName: cx(css.popover, popoverClassName)
+        popoverClassName: cx(css.popover, popoverClassName),
+        onInteraction: isOpen => {
+          if (isOpen) {
+            setDropdownOpenedOnce(isOpen)
+          }
+        }
       }}
       {...rest}>
       <Layout.Horizontal
