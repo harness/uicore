@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState } from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '@harness/design-system'
@@ -43,7 +43,12 @@ export interface DropDownProps
   iconProps?: Partial<IconProps>
   addClearBtn?: boolean
   placeholder?: string
-  getCustomLabel?: (item: SelectOption) => string | React.ReactElement
+  getCustomLabel?: (item: SelectOption) => string | ReactElement
+  /**
+   * Delays calling the items promise function.
+   * Instead of fetching items on mount, fetch whenever dropdown is opened OR there exists a selected item
+   */
+  lazyLoading?: boolean
 }
 
 function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
@@ -64,11 +69,15 @@ function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX
   )
 }
 
-export function NoMatch(): React.ReactElement {
-  return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
+export function NoMatch({ hasInternalQuery }: { hasInternalQuery: boolean }): ReactElement {
+  return (
+    <li className={cx(css.menuItem, css.disabled)}>
+      {hasInternalQuery ? 'No matching results found' : 'No items found'}
+    </li>
+  )
 }
 
-export const DropDown: React.FC<DropDownProps> = props => {
+export const DropDown: FC<DropDownProps> = props => {
   const {
     onChange,
     value,
@@ -90,46 +99,41 @@ export const DropDown: React.FC<DropDownProps> = props => {
     addClearBtn = false,
     getCustomLabel,
     disabled,
+    lazyLoading,
     ...rest
   } = props
 
-  const [dropDownItems, setDropDownItems] = React.useState<SelectOption[]>([])
-  const [loading, setLoading] = React.useState<boolean>(false)
-  const [internalQuery, setInternalQuery] = React.useState<string>('')
-  const [activeItem, setActiveItem] = React.useState<SelectOption | null>(null)
+  const [dropDownItems, setDropDownItems] = useState<SelectOption[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
+  const [internalQuery, setInternalQuery] = useState<string>('')
 
-  React.useEffect(() => {
+  const activeItem = useMemo(
+    () =>
+      dropDownItems.find(item => item.value === value?.toString()) || {
+        label: '',
+        value: ''
+      },
+    [value, dropDownItems]
+  )
+
+  useEffect(() => {
     if (Array.isArray(items)) {
-      setDropDownItems([...items])
+      setDropDownItems(items)
     } else if (typeof items === 'function' && !loading) {
       // Do not enter this block if already loading
       setLoading(true)
-      const promise = items()
-
-      if (typeof promise.then === 'function') {
-        promise.then(results => {
-          setDropDownItems(results)
-          setLoading(false)
+      Promise.resolve(items())
+        .then(itemsResponse => {
+          setDropDownItems(itemsResponse)
         })
-      }
-      if (typeof promise.catch === 'function') {
-        promise.catch(errorResults => {
+        .catch(errorResults => {
           setDropDownItems(errorResults)
+        })
+        .finally(() => {
           setLoading(false)
         })
-      } else {
-        setLoading(false)
-      }
     }
-  }, [query, JSON.stringify(items)])
-
-  React.useEffect(() => {
-    const newActiveItem = dropDownItems.find(item => item.value === value?.toString()) || {
-      label: '',
-      value: ''
-    }
-    setActiveItem(newActiveItem)
-  }, [value, dropDownItems])
+  }, [JSON.stringify(items)])
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
@@ -142,15 +146,15 @@ export const DropDown: React.FC<DropDownProps> = props => {
     } else if (itemsToRender.length > 0) {
       renderedItems = itemsToRender.map(renderItem).filter(item => item !== null)
     } else {
-      renderedItems = <NoMatch />
+      renderedItems = <NoMatch hasInternalQuery={!!internalQuery} />
     }
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  const isDisabled = (internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
+  const isDisabled = (!lazyLoading && internalQuery.length === 0 && dropDownItems.length === 0) || !!disabled
   const isSelected = !!activeItem?.value
 
-  const debouncedQuery = React.useCallback(
+  const debouncedQuery = useCallback(
     debounce(query => {
       if (Array.isArray(items)) {
         setDropDownItems(items.filter(item => item.label.toLowerCase().includes(query.toLowerCase())))
