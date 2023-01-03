@@ -100,7 +100,7 @@ AsyncItems.args = {
       setTimeout(() => resolve(staticItems), 2000)
     })
   },
-  isLazyItemsQuery: false
+  lazyItems: false
 }
 
 export const AsyncItemsLazy: Story<DropDownProps> = args => {
@@ -127,5 +127,5 @@ AsyncItemsLazy.args = {
       setTimeout(() => resolve(staticItems), 2000)
     })
   },
-  isLazyItemsQuery: true
+  lazyItems: true
 }
