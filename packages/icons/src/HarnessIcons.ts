@@ -132,6 +132,7 @@ import CancelAlert from './cancel-alert.svg'
 import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
+import Cascading from './cascading.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
 import CcmPolicyShield from './ccm-policy-shield.svg'
@@ -1104,6 +1105,7 @@ type HarnessIconName =
   | 'canvas-position'
   | 'canvas-reset'
   | 'canvas-selector'
+  | 'cascading'
   | 'ccm-policy-details'
   | 'ccm-policy-shield-checked'
   | 'ccm-policy-shield'
@@ -2076,6 +2078,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-position': CanvasPosition,
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
+  cascading: Cascading,
   'ccm-policy-details': CcmPolicyDetails,
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
   'ccm-policy-shield': CcmPolicyShield,
