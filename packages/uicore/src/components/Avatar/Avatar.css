@@ -8,6 +8,7 @@
 .Avatar {
   display: inline-block;
   margin: 0 5px;
+  position: relative;
 }
 
 .AvatarInner {
