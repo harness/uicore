@@ -79,7 +79,7 @@
 
   [role='columnheader'].resizable {
     margin: 0;
-    padding: 0.5rem;
+    margin-right: 0.5rem;
     &:hover {
       border-right: 1px solid var(--grey-200);
     }

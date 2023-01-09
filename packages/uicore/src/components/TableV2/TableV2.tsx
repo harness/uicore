@@ -6,7 +6,17 @@
  */
 
 import React, { ReactNode } from 'react'
-import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns, useExpanded } from 'react-table'
+import {
+  useTable,
+  Column,
+  Row,
+  useSortBy,
+  usePagination,
+  useResizeColumns,
+  useExpanded,
+  UseSortByColumnOptions,
+  UseResizeColumnsOptions
+} from 'react-table'
 import cx from 'classnames'
 import { defaultTo } from 'lodash-es'
 import type { IconName } from '@blueprintjs/icons'
@@ -20,7 +30,7 @@ export interface TableProps<Data extends Record<string, any>> {
   /**
    * Column Configuration
    */
-  columns: Array<Column<Data>>
+  columns: Array<Column<Data> & UseSortByColumnOptions<Data> & UseResizeColumnsOptions<Data>>
   data: Data[]
   className?: string
   resizable?: boolean

@@ -39,7 +39,6 @@ Basic.args = {
       age: 25
     }
   ],
-  sortable: true,
   resizable: false,
   pagination: {
     itemCount: 100,
@@ -57,7 +56,8 @@ Basic.args = {
     {
       Header: 'Age',
       accessor: row => row.age,
-      id: 'age'
+      id: 'age',
+      disableSortBy: true
     }
   ]
 }
@@ -72,7 +72,7 @@ export const Expandable: ComponentStory<typeof TableV2> = args => {
     []
   )
 
-  return <TableV2 {...args} sortable={true} renderRowSubComponent={renderRowSubComponent} />
+  return <TableV2 {...args} renderRowSubComponent={renderRowSubComponent} />
 }
 Expandable.args = {
   columns: [
