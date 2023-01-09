@@ -18,7 +18,7 @@ export default {
 } as Meta
 
 export const Basic: ComponentStory<typeof TableV2> = args => {
-  return <TableV2 {...args} sortable={true} onRowClick={noop} />
+  return <TableV2 {...args} onRowClick={noop} />
 }
 Basic.args = {
   data: [
@@ -39,6 +39,8 @@ Basic.args = {
       age: 25
     }
   ],
+  sortable: true,
+  resizable: false,
   pagination: {
     itemCount: 100,
     pageCount: 10,

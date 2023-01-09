@@ -23,11 +23,6 @@ export interface TableProps<Data extends Record<string, any>> {
   columns: Array<Column<Data>>
   data: Data[]
   className?: string
-  /**
-   * Is the table sortable?
-   * @default true
-   */
-  sortable?: boolean
   resizable?: boolean
   hideHeaders?: boolean
   pagination?: PaginationProps
@@ -61,7 +56,6 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
     columns,
     data,
     className,
-    sortable = false,
     resizable = false,
     hideHeaders = false,
     autoResetExpanded = true,
@@ -124,42 +118,41 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
               <div
                 {...headerGroup.getHeaderGroupProps()}
                 className={cx(css.header, { [css.minimal]: !!props.minimal })}>
-                {headerGroup.headers.map(header => {
-                  const label = header.render('Header')
-                  const tooltipId = name ? name + header.id : undefined
-                  const serverSideSort = header?.serverSortProps?.enableServerSort
+                {headerGroup.headers.map(column => {
+                  const label = column.render('Header')
+                  const tooltipId = name ? name + column.id : undefined
+                  const serverSideSort = column?.serverSortProps?.enableServerSort
                     ? {
                         onClick: () => {
-                          header.serverSortProps?.getSortedColumn?.({ sort: header.id })
+                          column.serverSortProps?.getSortedColumn?.({ sort: column.id })
                         }
                       }
                     : {}
                   return (
                     // eslint-disable-next-line react/jsx-key
                     <div
-                      {...header.getHeaderProps(sortable ? header.getSortByToggleProps() : void 0)}
-                      {...header.getHeaderProps(resizable ? header.getHeaderProps() : void 0)}
-                      className={cx(css.cell, { [css.sortable]: sortable }, { [css.resizable]: resizable })}
-                      style={{ width: header.width }}
+                      {...column.getHeaderProps(column.getSortByToggleProps())}
+                      className={cx(css.cell, { [css.sortable]: column.canSort, [css.resizable]: resizable })}
+                      style={{ width: column.width }}
                       {...serverSideSort}>
                       <Text
                         font={{ variation: FontVariation.TABLE_HEADERS }}
                         tooltipProps={{ dataTooltipId: tooltipId }}>
                         {label}
                       </Text>
-                      {sortable && header.canSort ? (
+                      {column.canSort ? (
                         <Icon
                           name={getIconName({
-                            isSorted: header.isSorted,
-                            isSortedDesc: header.isSortedDesc,
-                            isServerSorted: header.serverSortProps?.isServerSorted,
-                            isServerSortedDesc: header.serverSortProps?.isServerSortedDesc
+                            isSorted: column.isSorted,
+                            isSortedDesc: column.isSortedDesc,
+                            isServerSorted: column.serverSortProps?.isServerSorted,
+                            isServerSortedDesc: column.serverSortProps?.isServerSortedDesc
                           })}
                           size={15}
                           padding={{ left: 'small' }}
                         />
                       ) : null}
-                      {resizable && <div {...header.getResizerProps()} className={css.resizer} />}
+                      {resizable && <div {...column.getResizerProps()} className={css.resizer} />}
                     </div>
                   )
                 })}
