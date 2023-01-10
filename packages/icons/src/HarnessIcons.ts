@@ -774,6 +774,7 @@ import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAmi from './service-ami.svg'
+import ServiceAnsible from './service-ansible.svg'
 import ServiceAppdynamics from './service-appdynamics.svg'
 import ServiceArtifactoryCiStepInverse from './service-artifactory-ci-step-inverse.svg'
 import ServiceArtifactoryCiStep from './service-artifactory-ci-step.svg'
@@ -792,6 +793,7 @@ import ServiceAzureFunctions from './service-azure-functions.svg'
 import ServiceAzure from './service-azure.svg'
 import ServiceBamboo from './service-bamboo.svg'
 import ServiceBugsnag from './service-bugsnag.svg'
+import ServiceCdk from './service-cdk.svg'
 import ServiceCircleci from './service-circleci.svg'
 import ServiceCloudformation from './service-cloudformation.svg'
 import ServiceCloudwatch from './service-cloudwatch.svg'
@@ -832,6 +834,7 @@ import ServiceOnelogin from './service-onelogin.svg'
 import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
+import ServicePulumi from './service-pulumi.svg'
 import ServiceRedis from './service-redis.svg'
 import ServiceServerlessAws from './service-serverless-aws.svg'
 import ServiceServerlessAzure from './service-serverless-azure.svg'
@@ -1747,6 +1750,7 @@ type HarnessIconName =
   | 'serverless-deploy-step'
   | 'service-amazon-ecs'
   | 'service-ami'
+  | 'service-ansible'
   | 'service-appdynamics'
   | 'service-artifactory-ci-step-inverse'
   | 'service-artifactory-ci-step'
@@ -1765,6 +1769,7 @@ type HarnessIconName =
   | 'service-azure'
   | 'service-bamboo'
   | 'service-bugsnag'
+  | 'service-cdk'
   | 'service-circleci'
   | 'service-cloudformation'
   | 'service-cloudwatch'
@@ -1805,6 +1810,7 @@ type HarnessIconName =
   | 'service-pagerduty'
   | 'service-pivotal'
   | 'service-prometheus'
+  | 'service-pulumi'
   | 'service-redis'
   | 'service-serverless-aws'
   | 'service-serverless-azure'
@@ -2720,6 +2726,7 @@ const HarnessIcons: KVO<ElementType> = {
   'serverless-deploy-step': ServerlessDeployStep,
   'service-amazon-ecs': ServiceAmazonEcs,
   'service-ami': ServiceAmi,
+  'service-ansible': ServiceAnsible,
   'service-appdynamics': ServiceAppdynamics,
   'service-artifactory-ci-step-inverse': ServiceArtifactoryCiStepInverse,
   'service-artifactory-ci-step': ServiceArtifactoryCiStep,
@@ -2738,6 +2745,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-azure': ServiceAzure,
   'service-bamboo': ServiceBamboo,
   'service-bugsnag': ServiceBugsnag,
+  'service-cdk': ServiceCdk,
   'service-circleci': ServiceCircleci,
   'service-cloudformation': ServiceCloudformation,
   'service-cloudwatch': ServiceCloudwatch,
@@ -2778,6 +2786,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-pagerduty': ServicePagerduty,
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
+  'service-pulumi': ServicePulumi,
   'service-redis': ServiceRedis,
   'service-serverless-aws': ServiceServerlessAws,
   'service-serverless-azure': ServiceServerlessAzure,
