@@ -222,11 +222,9 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
           name: props.name,
           disabled,
           onBlur: () => {
-            if (props?.allowCreatingNewItems) {
-              if (query?.trim()) {
-                handleItemSelect({ label: query, value: query })
-                setQuery('')
-              }
+            if (props?.allowCreatingNewItems && query?.trim()) {
+              handleItemSelect({ label: query, value: query })
+              setQuery('')
             }
           }
         }
