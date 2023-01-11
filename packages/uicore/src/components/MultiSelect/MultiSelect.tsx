@@ -199,12 +199,6 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       tagInputProps={{
         disabled,
         placeholder: Utils.getSelectComponentPlaceholder(rest?.placeholder),
-        inputProps: {
-          ...props.tagInputProps?.inputProps,
-          onChange: handleQueryChange,
-          name: props.name,
-          disabled
-        },
         tagProps: value => {
           return {
             className: cx(css.tag, {
@@ -221,7 +215,21 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
             handleItemSelect(option)
           }
         },
-        ...props.tagInputProps
+        ...props.tagInputProps,
+        inputProps: {
+          ...props.tagInputProps?.inputProps,
+          onChange: handleQueryChange,
+          name: props.name,
+          disabled,
+          onBlur: () => {
+            if (props?.allowCreatingNewItems) {
+              if (query?.trim()) {
+                handleItemSelect({ label: query, value: query })
+                setQuery('')
+              }
+            }
+          }
+        }
       }}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       selectedItems={value}
