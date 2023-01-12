@@ -324,6 +324,7 @@ export function MultiSelectTypeInputTypeComponent(
     <MultiSelect
       {...multiSelectProps}
       items={items}
+      name={multiSelectProps.tagInputProps?.inputProps?.name}
       value={value as MultiSelectOption[]}
       className={cx(css.multiSelect, multiSelectProps.className)}
       disabled={disabled}
