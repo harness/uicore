@@ -19,6 +19,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   icon,
   children,
   className,
+  tooltip,
   tooltipProps,
   disabled,
   dropdownDisabled,
@@ -36,6 +37,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
     <div className={css.splitButton}>
       <Button
         {...commonProps}
+        tooltip={tooltip}
         disabled={disabled}
         onClick={handleClick}
         text={text}
