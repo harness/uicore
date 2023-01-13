@@ -63,6 +63,8 @@ import ApprovalStep from './approval-step.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import Arrow from './arrow.svg'
+import ArtifactGoogleCloudSourceRepo from './artifact-google-cloud-source-repo.svg'
+import ArtifactGoogleCloudStorage from './artifact-google-cloud-storage.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
 import AsgCanaryDeleteInverse from './asg-canary-delete-inverse.svg'
@@ -816,6 +818,7 @@ import ServiceGcpWithText from './service-gcp-with-text.svg'
 import ServiceGcp from './service-gcp.svg'
 import ServiceGithubPackage from './service-github-package.svg'
 import ServiceGithub from './service-github.svg'
+import ServiceGoogleFunctions from './service-google-functions.svg'
 import ServiceGotlab from './service-gotlab.svg'
 import ServiceHelm from './service-helm.svg'
 import ServiceInstana from './service-instana.svg'
@@ -1043,6 +1046,8 @@ type HarnessIconName =
   | 'argo'
   | 'arm'
   | 'arrow'
+  | 'artifact-google-cloud-source-repo'
+  | 'artifact-google-cloud-storage'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
   | 'asg-canary-delete-inverse'
@@ -1796,6 +1801,7 @@ type HarnessIconName =
   | 'service-gcp'
   | 'service-github-package'
   | 'service-github'
+  | 'service-google-functions'
   | 'service-gotlab'
   | 'service-helm'
   | 'service-instana'
@@ -2023,6 +2029,8 @@ const HarnessIcons: KVO<ElementType> = {
   argo: Argo,
   arm: Arm,
   arrow: Arrow,
+  'artifact-google-cloud-source-repo': ArtifactGoogleCloudSourceRepo,
+  'artifact-google-cloud-storage': ArtifactGoogleCloudStorage,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
   'asg-canary-delete-inverse': AsgCanaryDeleteInverse,
@@ -2776,6 +2784,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-gcp': ServiceGcp,
   'service-github-package': ServiceGithubPackage,
   'service-github': ServiceGithub,
+  'service-google-functions': ServiceGoogleFunctions,
   'service-gotlab': ServiceGotlab,
   'service-helm': ServiceHelm,
   'service-instana': ServiceInstana,
