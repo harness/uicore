@@ -142,7 +142,7 @@ export const DropDown: FC<DropDownProps> = props => {
           setLoading(false)
         })
     }
-  }, [JSON.stringify(items)])
+  }, [JSON.stringify(items), query])
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
