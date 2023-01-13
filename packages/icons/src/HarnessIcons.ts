@@ -221,19 +221,24 @@ import CodeBranch from './code-branch.svg'
 import CodeChat from './code-chat.svg'
 import CodeClone from './code-clone.svg'
 import CodeClose from './code-close.svg'
+import CodeClosed from './code-closed.svg'
 import CodeCommitLight from './code-commit-light.svg'
 import CodeCommitSmall from './code-commit-small.svg'
 import CodeCommit from './code-commit.svg'
 import CodeCopy from './code-copy.svg'
 import CodeDelete from './code-delete.svg'
+import CodeDraft from './code-draft.svg'
 import CodeEdit from './code-edit.svg'
 import CodeFileLight from './code-file-light.svg'
 import CodeFile from './code-file.svg'
 import CodeFolder from './code-folder.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
+import CodeMerged from './code-merged.svg'
 import CodeMore from './code-more.svg'
+import CodeOpen from './code-open.svg'
 import CodePullRequest from './code-pull-request.svg'
+import CodeRejected from './code-rejected.svg'
 import CodeRepo from './code-repo.svg'
 import CodeSettings from './code-settings.svg'
 import CodeWebhook from './code-webhook.svg'
@@ -1204,19 +1209,24 @@ type HarnessIconName =
   | 'code-chat'
   | 'code-clone'
   | 'code-close'
+  | 'code-closed'
   | 'code-commit-light'
   | 'code-commit-small'
   | 'code-commit'
   | 'code-copy'
   | 'code-delete'
+  | 'code-draft'
   | 'code-edit'
   | 'code-file-light'
   | 'code-file'
   | 'code-folder'
   | 'code-history'
   | 'code-info'
+  | 'code-merged'
   | 'code-more'
+  | 'code-open'
   | 'code-pull-request'
+  | 'code-rejected'
   | 'code-repo'
   | 'code-settings'
   | 'code-webhook'
@@ -2187,19 +2197,24 @@ const HarnessIcons: KVO<ElementType> = {
   'code-chat': CodeChat,
   'code-clone': CodeClone,
   'code-close': CodeClose,
+  'code-closed': CodeClosed,
   'code-commit-light': CodeCommitLight,
   'code-commit-small': CodeCommitSmall,
   'code-commit': CodeCommit,
   'code-copy': CodeCopy,
   'code-delete': CodeDelete,
+  'code-draft': CodeDraft,
   'code-edit': CodeEdit,
   'code-file-light': CodeFileLight,
   'code-file': CodeFile,
   'code-folder': CodeFolder,
   'code-history': CodeHistory,
   'code-info': CodeInfo,
+  'code-merged': CodeMerged,
   'code-more': CodeMore,
+  'code-open': CodeOpen,
   'code-pull-request': CodePullRequest,
+  'code-rejected': CodeRejected,
   'code-repo': CodeRepo,
   'code-settings': CodeSettings,
   'code-webhook': CodeWebhook,
