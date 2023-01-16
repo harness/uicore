@@ -59,7 +59,7 @@ export function ExpandingSearchInput(
     onEnter,
     onPrev: propsOnPrev,
     onNext: propsOnNext,
-    autoFocus = true,
+    autoFocus,
     className = '',
     throttle = DEFAULT_THROTTLE,
     showPrevNextButtons,
