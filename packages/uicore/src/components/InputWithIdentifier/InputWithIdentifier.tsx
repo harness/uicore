@@ -45,7 +45,7 @@ export interface InputWithIdentifierProps {
    */
   isIdentifierEditable?: boolean
   /**
-   * @default 128
+   * @default 64
    */
   maxInput?: number
   /**
