@@ -74,7 +74,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     idName = 'identifier',
     inputGroupProps,
     isIdentifierEditable = true,
-    maxInput = 128,
+    maxInput = 64,
     useUnversialToolTipId = true
   } = props
   const [editable, setEditable] = useState(false)
