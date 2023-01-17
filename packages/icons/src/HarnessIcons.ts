@@ -348,6 +348,7 @@ import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
 import Dotnet from './dotnet.svg'
 import Down from './down.svg'
+import DryRun from './dry-run.svg'
 import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
@@ -1336,6 +1337,7 @@ type HarnessIconName =
   | 'docs'
   | 'dotnet'
   | 'down'
+  | 'dry-run'
   | 'ecr-ci-step-inverse'
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
@@ -2324,6 +2326,7 @@ const HarnessIcons: KVO<ElementType> = {
   docs: Docs,
   dotnet: Dotnet,
   down: Down,
+  'dry-run': DryRun,
   'ecr-ci-step-inverse': EcrCiStepInverse,
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
