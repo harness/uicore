@@ -682,6 +682,7 @@ import PlayCircle from './play-circle.svg'
 import PlayOutline from './play-outline.svg'
 import PluginCiStepInverse from './plugin-ci-step-inverse.svg'
 import PluginCiStep from './plugin-ci-step.svg'
+import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
 import Pod from './pod.svg'
 import Polygon from './polygon.svg'
@@ -1671,6 +1672,7 @@ type HarnessIconName =
   | 'play-outline'
   | 'plugin-ci-step-inverse'
   | 'plugin-ci-step'
+  | 'plugin-inputs'
   | 'plugin-step'
   | 'pod'
   | 'polygon'
@@ -2660,6 +2662,7 @@ const HarnessIcons: KVO<ElementType> = {
   'play-outline': PlayOutline,
   'plugin-ci-step-inverse': PluginCiStepInverse,
   'plugin-ci-step': PluginCiStep,
+  'plugin-inputs': PluginInputs,
   'plugin-step': PluginStep,
   pod: Pod,
   polygon: Polygon,
