@@ -24,10 +24,7 @@ const Select = BPSelect.ofType<SelectOption>()
 type Props = ISelectProps<SelectOption>
 
 export interface DropDownProps
-  extends Omit<
-    Props,
-    'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange' | 'inputProps'
-  > {
+  extends Omit<Props, 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange' | 'inputProps'> {
   itemRenderer?: Props['itemRenderer']
   onChange: Props['onItemSelect']
   value?: string | null
@@ -86,6 +83,7 @@ export const DropDown: FC<DropDownProps> = props => {
     itemRenderer,
     className = '',
     popoverClassName = '',
+    popoverProps,
     usePortal = false,
     filterable = true,
     placeholder = 'Select',
@@ -202,7 +200,8 @@ export const DropDown: FC<DropDownProps> = props => {
           if (isOpen) {
             handleLazyLoadItems()
           }
-        }
+        },
+        ...popoverProps
       }}
       {...rest}>
       <Layout.Horizontal

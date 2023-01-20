@@ -15,7 +15,7 @@ import { Text } from '../Text/Text'
 import { Button, ButtonSize } from '../Button/Button'
 import { SelectOption } from '../Select/Select'
 import { FontVariation } from '@harness/design-system'
-import { DropDown } from '../DropDown/DropDown'
+import { DropDown, DropDownProps } from '../DropDown/DropDown'
 import useWindowWidth from '../../hooks/useWindowWidth'
 
 import css from './Pagination.css'
@@ -32,6 +32,7 @@ export interface PaginationProps {
   onPageSizeChange?: (newPageSize: number) => void
   breakAt?: number
   showPagination?: boolean
+  pageSizeDropdownProps?: DropDownProps
 }
 
 interface PageNumbersProps {
@@ -147,7 +148,8 @@ const Pagination: React.FC<PaginationProps> = props => {
     hidePageNumbers,
     className,
     breakAt,
-    showPagination
+    showPagination,
+    pageSizeDropdownProps
   } = props
   const currentWindowWidth = useWindowWidth()
 
@@ -221,6 +223,7 @@ const Pagination: React.FC<PaginationProps> = props => {
             filterable={false}
             width={60}
             className={css.pageSizeDropdown}
+            {...pageSizeDropdownProps}
           />
           <Text>per page</Text>
         </Layout.Horizontal>
