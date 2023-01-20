@@ -12,37 +12,39 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
-import AnchoreDark from './Anchore-Dark.svg'
+import AnchoreInverse from './Anchore-inverse.svg'
 import Anchore from './Anchore.svg'
-import AuqaTrivyDark from './AuqaTrivy-Dark.svg'
+import AquaTrivyInverse from './AquaTrivy-inverse.svg'
+import AquaTrivy from './AquaTrivy.svg'
+import AuqaTrivyInverse from './AuqaTrivy-inverse.svg'
 import AuqaTrivy from './AuqaTrivy.svg'
-import BlackDuckDark from './BlackDuck-Dark.svg'
+import BlackDuckInverse from './BlackDuck-inverse.svg'
 import BlackDuck from './BlackDuck.svg'
-import BurpDark from './Burp-Dark.svg'
+import BurpInverse from './Burp-inverse.svg'
 import Burp from './Burp.svg'
-import CheckmarxDark from './Checkmarx-Dark.svg'
+import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
-import FortifyOnDemandDark from './FortifyOnDemand-Dark.svg'
+import FortifyOnDemandInverse from './FortifyOnDemand-inverse.svg'
 import FortifyOnDemand from './FortifyOnDemand.svg'
 import FreezeWindow from './FreezeWindow.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
-import PrismaCloudDark from './PrismaCloud-Dark.svg'
+import PrismaCloudInverse from './PrismaCloud-inverse.svg'
 import PrismaCloud from './PrismaCloud.svg'
-import QualysDark from './Qualys-Dark.svg'
+import QualysInverse from './Qualys-inverse.svg'
 import Qualys from './Qualys.svg'
-import SnykDark from './Snyk-Dark.svg'
+import SnykInverse from './Snyk-inverse.svg'
 import Snyk from './Snyk.svg'
-import SonarQubeDark from './SonarQube-Dark.svg'
+import SonarQubeInverse from './SonarQube-inverse.svg'
 import SonarQube from './SonarQube.svg'
 import Stroke from './Stroke.svg'
-import TenableDark from './Tenable-Dark.svg'
+import TenableInverse from './Tenable-inverse.svg'
 import Tenable from './Tenable.svg'
-import VeracodeDark from './Veracode-Dark.svg'
+import VeracodeInverse from './Veracode-inverse.svg'
 import Veracode from './Veracode.svg'
-import ZapDark from './ZAP-Dark.svg'
+import ZapInverse from './ZAP-inverse.svg'
 import Zap from './ZAP.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
@@ -97,7 +99,7 @@ import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStep from './background-step.svg'
-import BanditDark from './bandit-dark.svg'
+import BanditInverse from './bandit-inverse.svg'
 import Bandit from './bandit.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
@@ -119,7 +121,7 @@ import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
 import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
-import BrakemanDark from './brakeman-dark.svg'
+import BrakemanInverse from './brakeman-inverse.svg'
 import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
@@ -601,7 +603,7 @@ import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import MemberRole from './memberRole.svg'
-import MendDark from './mend-dark.svg'
+import MendInverse from './mend-inverse.svg'
 import Mend from './mend.svg'
 import MergePr from './merge-pr.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
@@ -1004,37 +1006,39 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
-  | 'Anchore-Dark'
+  | 'Anchore-inverse'
   | 'Anchore'
-  | 'AuqaTrivy-Dark'
+  | 'AquaTrivy-inverse'
+  | 'AquaTrivy'
+  | 'AuqaTrivy-inverse'
   | 'AuqaTrivy'
-  | 'BlackDuck-Dark'
+  | 'BlackDuck-inverse'
   | 'BlackDuck'
-  | 'Burp-Dark'
+  | 'Burp-inverse'
   | 'Burp'
-  | 'Checkmarx-Dark'
+  | 'Checkmarx-inverse'
   | 'Checkmarx'
   | 'CustomDeployment'
   | 'Edit'
-  | 'FortifyOnDemand-Dark'
+  | 'FortifyOnDemand-inverse'
   | 'FortifyOnDemand'
   | 'FreezeWindow'
   | 'Inline'
   | 'Options'
-  | 'PrismaCloud-Dark'
+  | 'PrismaCloud-inverse'
   | 'PrismaCloud'
-  | 'Qualys-Dark'
+  | 'Qualys-inverse'
   | 'Qualys'
-  | 'Snyk-Dark'
+  | 'Snyk-inverse'
   | 'Snyk'
-  | 'SonarQube-Dark'
+  | 'SonarQube-inverse'
   | 'SonarQube'
   | 'Stroke'
-  | 'Tenable-Dark'
+  | 'Tenable-inverse'
   | 'Tenable'
-  | 'Veracode-Dark'
+  | 'Veracode-inverse'
   | 'Veracode'
-  | 'ZAP-Dark'
+  | 'ZAP-inverse'
   | 'ZAP'
   | 'access-control'
   | 'accordion-collapsed'
@@ -1089,7 +1093,7 @@ type HarnessIconName =
   | 'background-ci-step-inverse'
   | 'background-ci-step'
   | 'background-step'
-  | 'bandit-dark'
+  | 'bandit-inverse'
   | 'bandit'
   | 'banned'
   | 'bar-chart'
@@ -1111,7 +1115,7 @@ type HarnessIconName =
   | 'blue-green'
   | 'bluegreen-inverse'
   | 'bluegreen'
-  | 'brakeman-dark'
+  | 'brakeman-inverse'
   | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
@@ -1593,7 +1597,7 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
-  | 'mend-dark'
+  | 'mend-inverse'
   | 'mend'
   | 'merge-pr'
   | 'microsoft-azure'
@@ -1996,37 +2000,39 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
-  'Anchore-Dark': AnchoreDark,
+  'Anchore-inverse': AnchoreInverse,
   Anchore: Anchore,
-  'AuqaTrivy-Dark': AuqaTrivyDark,
+  'AquaTrivy-inverse': AquaTrivyInverse,
+  AquaTrivy: AquaTrivy,
+  'AuqaTrivy-inverse': AuqaTrivyInverse,
   AuqaTrivy: AuqaTrivy,
-  'BlackDuck-Dark': BlackDuckDark,
+  'BlackDuck-inverse': BlackDuckInverse,
   BlackDuck: BlackDuck,
-  'Burp-Dark': BurpDark,
+  'Burp-inverse': BurpInverse,
   Burp: Burp,
-  'Checkmarx-Dark': CheckmarxDark,
+  'Checkmarx-inverse': CheckmarxInverse,
   Checkmarx: Checkmarx,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
-  'FortifyOnDemand-Dark': FortifyOnDemandDark,
+  'FortifyOnDemand-inverse': FortifyOnDemandInverse,
   FortifyOnDemand: FortifyOnDemand,
   FreezeWindow: FreezeWindow,
   Inline: Inline,
   Options: Options,
-  'PrismaCloud-Dark': PrismaCloudDark,
+  'PrismaCloud-inverse': PrismaCloudInverse,
   PrismaCloud: PrismaCloud,
-  'Qualys-Dark': QualysDark,
+  'Qualys-inverse': QualysInverse,
   Qualys: Qualys,
-  'Snyk-Dark': SnykDark,
+  'Snyk-inverse': SnykInverse,
   Snyk: Snyk,
-  'SonarQube-Dark': SonarQubeDark,
+  'SonarQube-inverse': SonarQubeInverse,
   SonarQube: SonarQube,
   Stroke: Stroke,
-  'Tenable-Dark': TenableDark,
+  'Tenable-inverse': TenableInverse,
   Tenable: Tenable,
-  'Veracode-Dark': VeracodeDark,
+  'Veracode-inverse': VeracodeInverse,
   Veracode: Veracode,
-  'ZAP-Dark': ZapDark,
+  'ZAP-inverse': ZapInverse,
   ZAP: Zap,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
@@ -2081,7 +2087,7 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step-inverse': BackgroundCiStepInverse,
   'background-ci-step': BackgroundCiStep,
   'background-step': BackgroundStep,
-  'bandit-dark': BanditDark,
+  'bandit-inverse': BanditInverse,
   bandit: Bandit,
   banned: Banned,
   'bar-chart': BarChart,
@@ -2103,7 +2109,7 @@ const HarnessIcons: KVO<ElementType> = {
   'blue-green': BlueGreen,
   'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
-  'brakeman-dark': BrakemanDark,
+  'brakeman-inverse': BrakemanInverse,
   brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
@@ -2585,7 +2591,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: MemberRole,
-  'mend-dark': MendDark,
+  'mend-inverse': MendInverse,
   mend: Mend,
   'merge-pr': MergePr,
   'microsoft-azure': MicrosoftAzure,
