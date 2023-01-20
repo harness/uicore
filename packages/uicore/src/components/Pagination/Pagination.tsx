@@ -32,7 +32,7 @@ export interface PaginationProps {
   onPageSizeChange?: (newPageSize: number) => void
   breakAt?: number
   showPagination?: boolean
-  pageSizeDropdownProps?: DropDownProps
+  pageSizeDropdownProps?: Partial<DropDownProps>
 }
 
 interface PageNumbersProps {
