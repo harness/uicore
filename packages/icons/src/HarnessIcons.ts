@@ -601,6 +601,8 @@ import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import MemberRole from './memberRole.svg'
+import MendDark from './mend-dark.svg'
+import Mend from './mend.svg'
 import MergePr from './merge-pr.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
@@ -1591,6 +1593,8 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
+  | 'mend-dark'
+  | 'mend'
   | 'merge-pr'
   | 'microsoft-azure'
   | 'money-icon'
@@ -2581,6 +2585,8 @@ const HarnessIcons: KVO<ElementType> = {
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: MemberRole,
+  'mend-dark': MendDark,
+  mend: Mend,
   'merge-pr': MergePr,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
