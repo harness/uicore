@@ -502,6 +502,7 @@ import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import KubernetesGitops from './kubernetes-gitops.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
 import Launch from './launch.svg'
@@ -1496,6 +1497,7 @@ type HarnessIconName =
   | 'jira-update'
   | 'key-main'
   | 'key'
+  | 'kubernetes-gitops'
   | 'kustamize'
   | 'kustomizeparam'
   | 'launch'
@@ -2490,6 +2492,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update': JiraUpdate,
   'key-main': KeyMain,
   key: Key,
+  'kubernetes-gitops': KubernetesGitops,
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
   launch: Launch,
