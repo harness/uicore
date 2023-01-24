@@ -115,14 +115,21 @@ export const DropDown: FC<DropDownProps> = props => {
     }
   }
 
-  const activeItem = useMemo(
-    () =>
-      dropDownItems.find(item => item.value === value?.toString()) || {
-        label: '',
-        value: ''
-      },
-    [value, dropDownItems]
-  )
+  const activeItem = useMemo(() => {
+    const selectedFromList = dropDownItems.find(item => item.value === value?.toString())
+    if (selectedFromList) {
+      return selectedFromList
+    }
+
+    if (value) {
+      return { value: value, label: value }
+    }
+
+    return {
+      label: '',
+      value: ''
+    }
+  }, [value, dropDownItems])
 
   useEffect(() => {
     if (Array.isArray(items)) {
