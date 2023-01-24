@@ -54,10 +54,7 @@ function translateExpression(str: string, key: string, vars: SubstituteVars) {
   return str
 }
 
-export const StringSubstitute: React.FC<{
-  str: string
-  vars?: SubstituteVars
-}> = ({ str, vars = {} }) => {
+export function stringSubstitute(str: string, vars: SubstituteVars = {}, asTokens = false): string | string[] {
   const re = Object.keys(vars)
     .map(key => {
       str = translateExpression(str, key, vars)
@@ -65,20 +62,26 @@ export const StringSubstitute: React.FC<{
     })
     .join('|')
 
+  if (!re) {
+    return str
+  }
+
+  const tokens = str
+    .split(new RegExp('(' + re + ')', 'gi'))
+    .filter(token => !!(token || '').trim())
+    .map(token =>
+      token.startsWith('{') && token.endsWith('}') ? vars[token.substring(1, token.length - 1)] || token : token
+    )
+  return asTokens ? tokens : tokens.join('')
+}
+
+export const StringSubstitute: React.FC<{
+  str: string
+  vars?: SubstituteVars
+}> = ({ str, vars = {} }) => {
+  const tokens = stringSubstitute(str, vars, true)
+
   return (
-    <>
-      {!re
-        ? str
-        : str
-            .split(new RegExp('(' + re + ')', 'gi'))
-            .filter(token => !!(token || '').trim())
-            .map((token, index) => (
-              <Fragment key={index}>
-                {token.startsWith('{') && token.endsWith('}')
-                  ? vars[token.substring(1, token.length - 1)] || token
-                  : token}
-              </Fragment>
-            ))}
-    </>
+    <>{typeof tokens === 'string' ? str : tokens.map((token, index) => <Fragment key={index}>{token}</Fragment>)}</>
   )
 }
