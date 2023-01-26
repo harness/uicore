@@ -45,6 +45,7 @@ export interface ThumbnailSelectProps extends Pick<ThumbnailProps, 'size'> {
   thumbnailClassName?: string
   onChange?(val: string): void
   expandAllByDefault?: boolean
+  staticItems?: boolean
 }
 
 const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
@@ -60,7 +61,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     thumbnailClassName,
     size,
     onChange,
-    expandAllByDefault
+    expandAllByDefault,
+    staticItems = false
   } = props
   const value = get(formik.values, name)
 
@@ -75,13 +77,18 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
   }, [value])
 
   const selectedItemIndex = value ? items.findIndex(item => item.value === value) : -1
-  let visibleItems: Item[] =
-    selectedItemIndex > -1
-      ? [items[selectedItemIndex], ...items.slice(0, selectedItemIndex), ...items.slice(selectedItemIndex + 1)]
-      : items
 
-  if (!showAllOptions) {
-    visibleItems = visibleItems.slice(0, 1)
+  let visibleItems: Item[] = items
+
+  if (!staticItems) {
+    visibleItems =
+      selectedItemIndex > -1
+        ? [items[selectedItemIndex], ...items.slice(0, selectedItemIndex), ...items.slice(selectedItemIndex + 1)]
+        : items
+
+    if (!showAllOptions) {
+      visibleItems = visibleItems.slice(0, 1)
+    }
   }
 
   function handleChangeClick(): void {
@@ -123,7 +130,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             </WrapOptionalTooltip>
           )
         })}
-        {showAllOptions ? null : (
+        {showAllOptions || staticItems ? null : (
           <Button
             className={css.changeButton}
             disabled={isReadonly}
@@ -137,7 +144,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
             text={changeText}
           />
         )}
-        {showAllOptions && value ? (
+        {showAllOptions && value && !staticItems ? (
           <Button
             className={css.changeButton}
             disabled={isReadonly}
