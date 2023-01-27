@@ -479,6 +479,7 @@ import Health from './health.svg'
 import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
+import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import Iacm from './iacm.svg'
@@ -492,6 +493,7 @@ import InitializeCiStep from './initialize-ci-step.svg'
 import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
+import Instances from './instances.svg'
 import Integration from './integration.svg'
 import Java from './java.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
@@ -1474,6 +1476,7 @@ type HarnessIconName =
   | 'helm-oci'
   | 'helm-rollback'
   | 'help'
+  | 'hotfix'
   | 'hourglass'
   | 'http-step'
   | 'iacm'
@@ -1487,6 +1490,7 @@ type HarnessIconName =
   | 'initialize-step-inverse'
   | 'initialize-step'
   | 'insight-view'
+  | 'instances'
   | 'integration'
   | 'java'
   | 'jira-approve-inverse'
@@ -2469,6 +2473,7 @@ const HarnessIcons: KVO<ElementType> = {
   'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
+  hotfix: Hotfix,
   hourglass: Hourglass,
   'http-step': HttpStep,
   iacm: Iacm,
@@ -2482,6 +2487,7 @@ const HarnessIcons: KVO<ElementType> = {
   'initialize-step-inverse': InitializeStepInverse,
   'initialize-step': InitializeStep,
   'insight-view': InsightView,
+  instances: Instances,
   integration: Integration,
   java: Java,
   'jira-approve-inverse': JiraApproveInverse,
