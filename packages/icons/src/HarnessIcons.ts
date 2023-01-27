@@ -215,6 +215,9 @@ import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
 import CloudFormationRollback from './cloud-formation-rollback.svg'
+import CloudFunctionNoTrafficShift from './cloud-function-no-traffic-shift.svg'
+import CloudFunctionRollback from './cloud-function-rollback.svg'
+import CloudFunctionTrafficShift from './cloud-function-traffic-shift.svg'
 import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
@@ -321,6 +324,7 @@ import DependencyCiStepInverse from './dependency-ci-step-inverse.svg'
 import DependencyCiStep from './dependency-ci-step.svg'
 import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
+import DeployCloudFunction from './deploy-cloud-function.svg'
 import DeployStage from './deploy-stage.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
@@ -1212,6 +1216,9 @@ type HarnessIconName =
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
   | 'cloud-formation-rollback'
+  | 'cloud-function-no-traffic-shift'
+  | 'cloud-function-rollback'
+  | 'cloud-function-traffic-shift'
   | 'cloud-light'
   | 'cloud-sso'
   | 'cloudformation'
@@ -1318,6 +1325,7 @@ type HarnessIconName =
   | 'dependency-ci-step'
   | 'dependency-default-icon'
   | 'dependency-step'
+  | 'deploy-cloud-function'
   | 'deploy-stage'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
@@ -2209,6 +2217,9 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
   'cloud-formation-rollback': CloudFormationRollback,
+  'cloud-function-no-traffic-shift': CloudFunctionNoTrafficShift,
+  'cloud-function-rollback': CloudFunctionRollback,
+  'cloud-function-traffic-shift': CloudFunctionTrafficShift,
   'cloud-light': CloudLight,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
@@ -2315,6 +2326,7 @@ const HarnessIcons: KVO<ElementType> = {
   'dependency-ci-step': DependencyCiStep,
   'dependency-default-icon': DependencyDefaultIcon,
   'dependency-step': DependencyStep,
+  'deploy-cloud-function': DeployCloudFunction,
   'deploy-stage': DeployStage,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
