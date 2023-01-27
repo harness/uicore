@@ -6,6 +6,7 @@
  */
 
 /* eslint-disable no-alert */
+import { PopoverPosition } from '@blueprintjs/core'
 import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Title } from '@storybook/addon-docs/blocks'
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import { noop } from 'lodash-es'
@@ -51,7 +52,16 @@ export default {
 export const PrimarySplitButton: ComponentStory<typeof SplitButton> = args => {
   return (
     <Container>
-      <SplitButton text="Save" icon="upload-box" variation={ButtonVariation.PRIMARY} {...args}>
+      <SplitButton
+        text="Save"
+        icon="upload-box"
+        variation={ButtonVariation.PRIMARY}
+        popoverProps={{
+          interactionKind: 'click',
+          usePortal: true,
+          position: PopoverPosition.BOTTOM_RIGHT
+        }}
+        {...args}>
         <SplitButtonOption icon="search-template" text="Save as Template" onClick={noop} />
         <SplitButtonOption icon="refresh" text="Refresh" onClick={noop} />
       </SplitButton>

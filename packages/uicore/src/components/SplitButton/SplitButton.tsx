@@ -7,11 +7,16 @@
 
 import { IMenuItemProps, Menu, MenuItem, Position } from '@blueprintjs/core'
 import cx from 'classnames'
+import { PopoverProps } from 'components/Popover/Popover'
 import React, { MouseEvent } from 'react'
 import { Button, ButtonProps, HarnessDocTooltip, Popover } from '../..'
 import css from './SplitButton.css'
 
-type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & { className?: string; dropdownDisabled?: boolean }
+type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & {
+  className?: string
+  dropdownDisabled?: boolean
+  popoverProps?: PopoverProps
+}
 
 export const SplitButton: React.FC<SplitButtonProps> = ({
   onClick,
@@ -23,6 +28,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   tooltipProps,
   disabled,
   dropdownDisabled,
+  popoverProps,
   ...commonProps
 }) => {
   const [isOptionsOpen, setOptionsOpen] = React.useState(false)
@@ -55,7 +61,8 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
           usePortal={false}
           minimal={true}
           fill={false}
-          position={Position.BOTTOM_RIGHT}>
+          position={Position.BOTTOM_RIGHT}
+          {...popoverProps}>
           <Button
             disabled={dropdownDisabled}
             rightIcon="chevron-down"

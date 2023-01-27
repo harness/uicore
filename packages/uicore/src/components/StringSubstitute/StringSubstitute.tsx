@@ -1,3 +1,10 @@
+/*
+ * Copyright 2022 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
 import React, { Fragment } from 'react'
 
 type SubstituteVars = Record<string, any> // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -54,10 +61,7 @@ function translateExpression(str: string, key: string, vars: SubstituteVars) {
   return str
 }
 
-export const StringSubstitute: React.FC<{
-  str: string
-  vars?: SubstituteVars
-}> = ({ str, vars = {} }) => {
+export function stringSubstitute(str: string, vars: SubstituteVars = {}, asTokens = false): string | string[] {
   const re = Object.keys(vars)
     .map(key => {
       str = translateExpression(str, key, vars)
@@ -65,20 +69,26 @@ export const StringSubstitute: React.FC<{
     })
     .join('|')
 
+  if (!re) {
+    return str
+  }
+
+  const tokens = str
+    .split(new RegExp('(' + re + ')', 'gi'))
+    .filter(token => !!(token || '').trim())
+    .map(token =>
+      token.startsWith('{') && token.endsWith('}') ? vars[token.substring(1, token.length - 1)] || token : token
+    )
+  return asTokens ? tokens : tokens.join('')
+}
+
+export const StringSubstitute: React.FC<{
+  str: string
+  vars?: SubstituteVars
+}> = ({ str, vars = {} }) => {
+  const tokens = stringSubstitute(str, vars, true)
+
   return (
-    <>
-      {!re
-        ? str
-        : str
-            .split(new RegExp('(' + re + ')', 'gi'))
-            .filter(token => !!(token || '').trim())
-            .map((token, index) => (
-              <Fragment key={index}>
-                {token.startsWith('{') && token.endsWith('}')
-                  ? vars[token.substring(1, token.length - 1)] || token
-                  : token}
-              </Fragment>
-            ))}
-    </>
+    <>{typeof tokens === 'string' ? str : tokens.map((token, index) => <Fragment key={index}>{token}</Fragment>)}</>
   )
 }

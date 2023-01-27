@@ -12,37 +12,39 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
-import AnchoreDark from './Anchore-Dark.svg'
+import AnchoreInverse from './Anchore-inverse.svg'
 import Anchore from './Anchore.svg'
-import AuqaTrivyDark from './AuqaTrivy-Dark.svg'
+import AquaTrivyInverse from './AquaTrivy-inverse.svg'
+import AquaTrivy from './AquaTrivy.svg'
+import AuqaTrivyInverse from './AuqaTrivy-inverse.svg'
 import AuqaTrivy from './AuqaTrivy.svg'
-import BlackDuckDark from './BlackDuck-Dark.svg'
+import BlackDuckInverse from './BlackDuck-inverse.svg'
 import BlackDuck from './BlackDuck.svg'
-import BurpDark from './Burp-Dark.svg'
+import BurpInverse from './Burp-inverse.svg'
 import Burp from './Burp.svg'
-import CheckmarxDark from './Checkmarx-Dark.svg'
+import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
-import FortifyOnDemandDark from './FortifyOnDemand-Dark.svg'
+import FortifyOnDemandInverse from './FortifyOnDemand-inverse.svg'
 import FortifyOnDemand from './FortifyOnDemand.svg'
 import FreezeWindow from './FreezeWindow.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
-import PrismaCloudDark from './PrismaCloud-Dark.svg'
+import PrismaCloudInverse from './PrismaCloud-inverse.svg'
 import PrismaCloud from './PrismaCloud.svg'
-import QualysDark from './Qualys-Dark.svg'
+import QualysInverse from './Qualys-inverse.svg'
 import Qualys from './Qualys.svg'
-import SnykDark from './Snyk-Dark.svg'
+import SnykInverse from './Snyk-inverse.svg'
 import Snyk from './Snyk.svg'
-import SonarQubeDark from './SonarQube-Dark.svg'
+import SonarQubeInverse from './SonarQube-inverse.svg'
 import SonarQube from './SonarQube.svg'
 import Stroke from './Stroke.svg'
-import TenableDark from './Tenable-Dark.svg'
+import TenableInverse from './Tenable-inverse.svg'
 import Tenable from './Tenable.svg'
-import VeracodeDark from './Veracode-Dark.svg'
+import VeracodeInverse from './Veracode-inverse.svg'
 import Veracode from './Veracode.svg'
-import ZapDark from './ZAP-Dark.svg'
+import ZapInverse from './ZAP-inverse.svg'
 import Zap from './ZAP.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
@@ -97,7 +99,7 @@ import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStep from './background-step.svg'
-import BanditDark from './bandit-dark.svg'
+import BanditInverse from './bandit-inverse.svg'
 import Bandit from './bandit.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
@@ -119,7 +121,7 @@ import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
 import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
-import BrakemanDark from './brakeman-dark.svg'
+import BrakemanInverse from './brakeman-inverse.svg'
 import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
@@ -221,19 +223,24 @@ import CodeBranch from './code-branch.svg'
 import CodeChat from './code-chat.svg'
 import CodeClone from './code-clone.svg'
 import CodeClose from './code-close.svg'
+import CodeClosed from './code-closed.svg'
 import CodeCommitLight from './code-commit-light.svg'
 import CodeCommitSmall from './code-commit-small.svg'
 import CodeCommit from './code-commit.svg'
 import CodeCopy from './code-copy.svg'
 import CodeDelete from './code-delete.svg'
+import CodeDraft from './code-draft.svg'
 import CodeEdit from './code-edit.svg'
 import CodeFileLight from './code-file-light.svg'
 import CodeFile from './code-file.svg'
 import CodeFolder from './code-folder.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
+import CodeMerged from './code-merged.svg'
 import CodeMore from './code-more.svg'
+import CodeOpen from './code-open.svg'
 import CodePullRequest from './code-pull-request.svg'
+import CodeRejected from './code-rejected.svg'
 import CodeRepo from './code-repo.svg'
 import CodeSettings from './code-settings.svg'
 import CodeWebhook from './code-webhook.svg'
@@ -343,6 +350,7 @@ import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
 import Dotnet from './dotnet.svg'
 import Down from './down.svg'
+import DryRun from './dry-run.svg'
 import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
@@ -471,6 +479,7 @@ import Health from './health.svg'
 import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
+import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
 import Iacm from './iacm.svg'
@@ -484,6 +493,7 @@ import InitializeCiStep from './initialize-ci-step.svg'
 import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
+import Instances from './instances.svg'
 import Integration from './integration.svg'
 import Java from './java.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
@@ -494,6 +504,7 @@ import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import KubernetesGitops from './kubernetes-gitops.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
 import Launch from './launch.svg'
@@ -595,6 +606,8 @@ import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import MemberRole from './memberRole.svg'
+import MendInverse from './mend-inverse.svg'
+import Mend from './mend.svg'
 import MergePr from './merge-pr.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
@@ -676,6 +689,7 @@ import PlayCircle from './play-circle.svg'
 import PlayOutline from './play-outline.svg'
 import PluginCiStepInverse from './plugin-ci-step-inverse.svg'
 import PluginCiStep from './plugin-ci-step.svg'
+import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
 import Pod from './pod.svg'
 import Polygon from './polygon.svg'
@@ -995,37 +1009,39 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
-  | 'Anchore-Dark'
+  | 'Anchore-inverse'
   | 'Anchore'
-  | 'AuqaTrivy-Dark'
+  | 'AquaTrivy-inverse'
+  | 'AquaTrivy'
+  | 'AuqaTrivy-inverse'
   | 'AuqaTrivy'
-  | 'BlackDuck-Dark'
+  | 'BlackDuck-inverse'
   | 'BlackDuck'
-  | 'Burp-Dark'
+  | 'Burp-inverse'
   | 'Burp'
-  | 'Checkmarx-Dark'
+  | 'Checkmarx-inverse'
   | 'Checkmarx'
   | 'CustomDeployment'
   | 'Edit'
-  | 'FortifyOnDemand-Dark'
+  | 'FortifyOnDemand-inverse'
   | 'FortifyOnDemand'
   | 'FreezeWindow'
   | 'Inline'
   | 'Options'
-  | 'PrismaCloud-Dark'
+  | 'PrismaCloud-inverse'
   | 'PrismaCloud'
-  | 'Qualys-Dark'
+  | 'Qualys-inverse'
   | 'Qualys'
-  | 'Snyk-Dark'
+  | 'Snyk-inverse'
   | 'Snyk'
-  | 'SonarQube-Dark'
+  | 'SonarQube-inverse'
   | 'SonarQube'
   | 'Stroke'
-  | 'Tenable-Dark'
+  | 'Tenable-inverse'
   | 'Tenable'
-  | 'Veracode-Dark'
+  | 'Veracode-inverse'
   | 'Veracode'
-  | 'ZAP-Dark'
+  | 'ZAP-inverse'
   | 'ZAP'
   | 'access-control'
   | 'accordion-collapsed'
@@ -1080,7 +1096,7 @@ type HarnessIconName =
   | 'background-ci-step-inverse'
   | 'background-ci-step'
   | 'background-step'
-  | 'bandit-dark'
+  | 'bandit-inverse'
   | 'bandit'
   | 'banned'
   | 'bar-chart'
@@ -1102,7 +1118,7 @@ type HarnessIconName =
   | 'blue-green'
   | 'bluegreen-inverse'
   | 'bluegreen'
-  | 'brakeman-dark'
+  | 'brakeman-inverse'
   | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
@@ -1204,19 +1220,24 @@ type HarnessIconName =
   | 'code-chat'
   | 'code-clone'
   | 'code-close'
+  | 'code-closed'
   | 'code-commit-light'
   | 'code-commit-small'
   | 'code-commit'
   | 'code-copy'
   | 'code-delete'
+  | 'code-draft'
   | 'code-edit'
   | 'code-file-light'
   | 'code-file'
   | 'code-folder'
   | 'code-history'
   | 'code-info'
+  | 'code-merged'
   | 'code-more'
+  | 'code-open'
   | 'code-pull-request'
+  | 'code-rejected'
   | 'code-repo'
   | 'code-settings'
   | 'code-webhook'
@@ -1326,6 +1347,7 @@ type HarnessIconName =
   | 'docs'
   | 'dotnet'
   | 'down'
+  | 'dry-run'
   | 'ecr-ci-step-inverse'
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
@@ -1454,6 +1476,7 @@ type HarnessIconName =
   | 'helm-oci'
   | 'helm-rollback'
   | 'help'
+  | 'hotfix'
   | 'hourglass'
   | 'http-step'
   | 'iacm'
@@ -1467,6 +1490,7 @@ type HarnessIconName =
   | 'initialize-step-inverse'
   | 'initialize-step'
   | 'insight-view'
+  | 'instances'
   | 'integration'
   | 'java'
   | 'jira-approve-inverse'
@@ -1477,6 +1501,7 @@ type HarnessIconName =
   | 'jira-update'
   | 'key-main'
   | 'key'
+  | 'kubernetes-gitops'
   | 'kustamize'
   | 'kustomizeparam'
   | 'launch'
@@ -1578,6 +1603,8 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'memberRole'
+  | 'mend-inverse'
+  | 'mend'
   | 'merge-pr'
   | 'microsoft-azure'
   | 'money-icon'
@@ -1659,6 +1686,7 @@ type HarnessIconName =
   | 'play-outline'
   | 'plugin-ci-step-inverse'
   | 'plugin-ci-step'
+  | 'plugin-inputs'
   | 'plugin-step'
   | 'pod'
   | 'polygon'
@@ -1978,37 +2006,39 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
-  'Anchore-Dark': AnchoreDark,
+  'Anchore-inverse': AnchoreInverse,
   Anchore: Anchore,
-  'AuqaTrivy-Dark': AuqaTrivyDark,
+  'AquaTrivy-inverse': AquaTrivyInverse,
+  AquaTrivy: AquaTrivy,
+  'AuqaTrivy-inverse': AuqaTrivyInverse,
   AuqaTrivy: AuqaTrivy,
-  'BlackDuck-Dark': BlackDuckDark,
+  'BlackDuck-inverse': BlackDuckInverse,
   BlackDuck: BlackDuck,
-  'Burp-Dark': BurpDark,
+  'Burp-inverse': BurpInverse,
   Burp: Burp,
-  'Checkmarx-Dark': CheckmarxDark,
+  'Checkmarx-inverse': CheckmarxInverse,
   Checkmarx: Checkmarx,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
-  'FortifyOnDemand-Dark': FortifyOnDemandDark,
+  'FortifyOnDemand-inverse': FortifyOnDemandInverse,
   FortifyOnDemand: FortifyOnDemand,
   FreezeWindow: FreezeWindow,
   Inline: Inline,
   Options: Options,
-  'PrismaCloud-Dark': PrismaCloudDark,
+  'PrismaCloud-inverse': PrismaCloudInverse,
   PrismaCloud: PrismaCloud,
-  'Qualys-Dark': QualysDark,
+  'Qualys-inverse': QualysInverse,
   Qualys: Qualys,
-  'Snyk-Dark': SnykDark,
+  'Snyk-inverse': SnykInverse,
   Snyk: Snyk,
-  'SonarQube-Dark': SonarQubeDark,
+  'SonarQube-inverse': SonarQubeInverse,
   SonarQube: SonarQube,
   Stroke: Stroke,
-  'Tenable-Dark': TenableDark,
+  'Tenable-inverse': TenableInverse,
   Tenable: Tenable,
-  'Veracode-Dark': VeracodeDark,
+  'Veracode-inverse': VeracodeInverse,
   Veracode: Veracode,
-  'ZAP-Dark': ZapDark,
+  'ZAP-inverse': ZapInverse,
   ZAP: Zap,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
@@ -2063,7 +2093,7 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step-inverse': BackgroundCiStepInverse,
   'background-ci-step': BackgroundCiStep,
   'background-step': BackgroundStep,
-  'bandit-dark': BanditDark,
+  'bandit-inverse': BanditInverse,
   bandit: Bandit,
   banned: Banned,
   'bar-chart': BarChart,
@@ -2085,7 +2115,7 @@ const HarnessIcons: KVO<ElementType> = {
   'blue-green': BlueGreen,
   'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
-  'brakeman-dark': BrakemanDark,
+  'brakeman-inverse': BrakemanInverse,
   brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
@@ -2187,19 +2217,24 @@ const HarnessIcons: KVO<ElementType> = {
   'code-chat': CodeChat,
   'code-clone': CodeClone,
   'code-close': CodeClose,
+  'code-closed': CodeClosed,
   'code-commit-light': CodeCommitLight,
   'code-commit-small': CodeCommitSmall,
   'code-commit': CodeCommit,
   'code-copy': CodeCopy,
   'code-delete': CodeDelete,
+  'code-draft': CodeDraft,
   'code-edit': CodeEdit,
   'code-file-light': CodeFileLight,
   'code-file': CodeFile,
   'code-folder': CodeFolder,
   'code-history': CodeHistory,
   'code-info': CodeInfo,
+  'code-merged': CodeMerged,
   'code-more': CodeMore,
+  'code-open': CodeOpen,
   'code-pull-request': CodePullRequest,
+  'code-rejected': CodeRejected,
   'code-repo': CodeRepo,
   'code-settings': CodeSettings,
   'code-webhook': CodeWebhook,
@@ -2309,6 +2344,7 @@ const HarnessIcons: KVO<ElementType> = {
   docs: Docs,
   dotnet: Dotnet,
   down: Down,
+  'dry-run': DryRun,
   'ecr-ci-step-inverse': EcrCiStepInverse,
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
@@ -2437,6 +2473,7 @@ const HarnessIcons: KVO<ElementType> = {
   'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
+  hotfix: Hotfix,
   hourglass: Hourglass,
   'http-step': HttpStep,
   iacm: Iacm,
@@ -2450,6 +2487,7 @@ const HarnessIcons: KVO<ElementType> = {
   'initialize-step-inverse': InitializeStepInverse,
   'initialize-step': InitializeStep,
   'insight-view': InsightView,
+  instances: Instances,
   integration: Integration,
   java: Java,
   'jira-approve-inverse': JiraApproveInverse,
@@ -2460,6 +2498,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update': JiraUpdate,
   'key-main': KeyMain,
   key: Key,
+  'kubernetes-gitops': KubernetesGitops,
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
   launch: Launch,
@@ -2561,6 +2600,8 @@ const HarnessIcons: KVO<ElementType> = {
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   memberRole: MemberRole,
+  'mend-inverse': MendInverse,
+  mend: Mend,
   'merge-pr': MergePr,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
@@ -2642,6 +2683,7 @@ const HarnessIcons: KVO<ElementType> = {
   'play-outline': PlayOutline,
   'plugin-ci-step-inverse': PluginCiStepInverse,
   'plugin-ci-step': PluginCiStep,
+  'plugin-inputs': PluginInputs,
   'plugin-step': PluginStep,
   pod: Pod,
   polygon: Polygon,

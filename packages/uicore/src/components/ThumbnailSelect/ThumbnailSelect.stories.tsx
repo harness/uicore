@@ -71,6 +71,19 @@ export const Large: Story<{ items: Item[]; isReadonly: boolean }> = args => {
   )
 }
 
+export const Static: Story<{ items: Item[]; isReadonly: boolean }> = args => {
+  return (
+    <Formik
+      initialValues={{ deploymentType: '' }}
+      onSubmit={noop}
+      validationSchema={Yup.object().shape({
+        deploymentType: Yup.string().trim().required('Deployment type is required')
+      })}>
+      <ThumbnailSelect {...args} name={'deploymentType'} staticItems />
+    </Formik>
+  )
+}
+
 Basic.args = {
   items: [
     {
@@ -154,6 +167,55 @@ Large.args = {
     },
     {
       label: 'Secure Shell',
+      disabled: true,
+      value: 'ssh'
+    }
+  ],
+  isReadonly: false
+}
+
+Static.args = {
+  items: [
+    {
+      label: 'Kubernetes',
+      icon: 'service-kubernetes',
+      value: 'kubernetes'
+    },
+    {
+      label: 'Amazon ECS',
+      icon: 'service-ecs',
+      value: 'amazonEcs'
+    },
+    {
+      label: 'AWS AMI',
+      icon: 'main-service-ami',
+      value: 'amazonAmi'
+    },
+    {
+      label: 'CodeDeploy',
+      icon: 'app-aws-code-deploy',
+      value: 'awsCodeDeploy'
+    },
+    {
+      label: 'WinRM',
+      icon: 'command-winrm',
+      value: 'winrm'
+    },
+    {
+      label: 'AWS Lambda',
+      icon: 'app-aws-lambda',
+      disabled: true,
+      value: 'awsLambda'
+    },
+    {
+      label: 'PCF',
+      icon: 'service-pivotal',
+      disabled: true,
+      value: 'pcf'
+    },
+    {
+      label: 'Secure Shell',
+      icon: 'secret-ssh',
       disabled: true,
       value: 'ssh'
     }

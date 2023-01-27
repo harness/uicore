@@ -24,13 +24,10 @@ const Select = BPSelect.ofType<SelectOption>()
 type Props = ISelectProps<SelectOption>
 
 export interface DropDownProps
-  extends Omit<
-    Props,
-    'popoverProps' | 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange' | 'inputProps'
-  > {
+  extends Omit<Props, 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange' | 'inputProps'> {
   itemRenderer?: Props['itemRenderer']
   onChange: Props['onItemSelect']
-  value?: string | null
+  value?: SelectOption | string | null
   items?: Props['items'] | (() => Promise<Props['items']>)
   /**
    * Provide a promise returning function that will be called on dropdown open if the items are not available.
@@ -86,6 +83,7 @@ export const DropDown: FC<DropDownProps> = props => {
     itemRenderer,
     className = '',
     popoverClassName = '',
+    popoverProps,
     usePortal = false,
     filterable = true,
     placeholder = 'Select',
@@ -117,14 +115,24 @@ export const DropDown: FC<DropDownProps> = props => {
     }
   }
 
-  const activeItem = useMemo(
-    () =>
-      dropDownItems.find(item => item.value === value?.toString()) || {
-        label: '',
-        value: ''
-      },
-    [value, dropDownItems]
-  )
+  const activeItem = useMemo(() => {
+    const selectedFromList = dropDownItems.find(item => item.value === value?.toString())
+    if (selectedFromList) {
+      return selectedFromList
+    }
+
+    if (value && typeof items === 'function') {
+      if (typeof value === 'object') {
+        return { value: value.value, label: value.label }
+      }
+      return { value: value, label: value }
+    }
+
+    return {
+      label: '',
+      value: ''
+    }
+  }, [value, dropDownItems])
 
   useEffect(() => {
     if (Array.isArray(items)) {
@@ -189,7 +197,6 @@ export const DropDown: FC<DropDownProps> = props => {
         leftElement: <Icon name={'thinner-search'} size={12} color={Color.GREY_500} />,
         placeholder: 'Search'
       }}
-      query={query}
       onQueryChange={debouncedQuery}
       popoverProps={{
         targetTagName: 'div',
@@ -203,7 +210,8 @@ export const DropDown: FC<DropDownProps> = props => {
           if (isOpen) {
             handleLazyLoadItems()
           }
-        }
+        },
+        ...popoverProps
       }}
       {...rest}>
       <Layout.Horizontal
