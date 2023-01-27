@@ -486,6 +486,8 @@ import Help from './help.svg'
 import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpStep from './http-step.svg'
+import IacmBlue from './iacm-blue.svg'
+import IacmGrey from './iacm-grey.svg'
 import Iacm from './iacm.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
@@ -1487,6 +1489,8 @@ type HarnessIconName =
   | 'hotfix'
   | 'hourglass'
   | 'http-step'
+  | 'iacm-blue'
+  | 'iacm-grey'
   | 'iacm'
   | 'infinityTrend'
   | 'info-message'
@@ -2488,6 +2492,8 @@ const HarnessIcons: KVO<ElementType> = {
   hotfix: Hotfix,
   hourglass: Hourglass,
   'http-step': HttpStep,
+  'iacm-blue': IacmBlue,
+  'iacm-grey': IacmGrey,
   iacm: Iacm,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
