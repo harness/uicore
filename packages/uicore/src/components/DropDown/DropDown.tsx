@@ -27,7 +27,7 @@ export interface DropDownProps
   extends Omit<Props, 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange' | 'inputProps'> {
   itemRenderer?: Props['itemRenderer']
   onChange: Props['onItemSelect']
-  value?: string | null
+  value?: SelectOption | string | null
   items?: Props['items'] | (() => Promise<Props['items']>)
   /**
    * Provide a promise returning function that will be called on dropdown open if the items are not available.
@@ -121,7 +121,10 @@ export const DropDown: FC<DropDownProps> = props => {
       return selectedFromList
     }
 
-    if (value) {
+    if (value && typeof items === 'function') {
+      if (typeof value === 'object') {
+        return { value: value.value, label: value.label }
+      }
       return { value: value, label: value }
     }
 
