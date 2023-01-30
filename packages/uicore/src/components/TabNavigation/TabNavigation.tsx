@@ -16,6 +16,8 @@ interface NavigationLink {
   label: string
   to: string
   disabled?: boolean
+  strict?: boolean
+  exact?: boolean
 }
 
 export interface TabNavigationProps {
@@ -36,6 +38,8 @@ export const TabNavigation: React.FC<TabNavigationProps> = props => {
           })}
           activeClassName={css.active}
           to={link.to}
+          exact={link.exact}
+          strict={link.strict}
           onClick={e => link.disabled && e.preventDefault()}>
           {link.label}
         </NavLink>
