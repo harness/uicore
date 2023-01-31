@@ -1,25 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
-  viewBox="0 0 35 37">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40">
+  <path fill="url(#a)"
+    d="M21.414 39.18C4.296 30.837 1.786 11.062 2.717 1.231 2.77.662 3.255.24 3.827.24H39.76c.602 0 1.101.48 1.126 1.082C41.88 25.747 29.2 36.63 22.254 39.228c-.274.102-.577.08-.84-.049Z" />
+  <circle cx="13.148" cy="15.228" r="3.847" fill="none" stroke="#fff" stroke-width="2.6"
+    transform="rotate(45 13.148 15.228)" />
+  <circle cx="26.069" cy="8.271" r="3.847" fill="none" stroke="#fff" stroke-width="2.6"
+    transform="rotate(45 26.069 8.27)" />
+  <circle cx="24.445" cy="26.524" r="4.361" fill="none" stroke="#fff" stroke-width="2.6"
+    transform="rotate(45 24.445 26.524)" />
+  <path stroke="#fff" stroke-linecap="round" stroke-width="2.6"
+    d="m17.212 12.869 5.131-2.647M16.212 18.708l4.162 4.001M1.517 12.852l7.867 1.476" />
   <defs>
-    <path id="reuse-0" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
-      stroke-width="2.6"
-      d="M19.623 16.467v0a3.969 3.969 0 0 0-5.613 0l-5.157 5.157a3.97 3.97 0 0 0 0 5.613v0a3.97 3.97 0 0 0 5.613 0l2.579-2.578" />
-    <path id="reuse-1" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
-      stroke-width="2.6"
-      d="M15.943 19.788v0a3.969 3.969 0 0 0 5.613 0l5.157-5.157a3.97 3.97 0 0 0 0-5.613v0a3.97 3.97 0 0 0-5.613 0l-2.578 2.579" />
-    <path id="reuse-2" stroke="#fff" stroke-linecap="round" stroke-width="2.6"
-      d="M26.842 8.32 33.161 2M2 34.291l6.32-6.32" />
-  </defs>
-  <rect width="32.718" height="32.718" x="34.718" y="2.327" fill="url(#a)" rx="6.903"
-    transform="rotate(90 34.718 2.327)" />
-  <use xlink:href="#reuse-0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" />
-  <use xlink:href="#reuse-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" />
-  <use xlink:href="#reuse-2" stroke-linecap="round" stroke-width="2.6" />
-  <use xlink:href="#reuse-0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" />
-  <use xlink:href="#reuse-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" />
-  <use xlink:href="#reuse-2" stroke-linecap="round" stroke-width="2.6" />
-  <defs>
-    <linearGradient id="a" x1="67.785" x2="34.785" y1="2.741" y2="38.741"
+    <linearGradient id="a" x1="41.35" x2="-5.362" y1="-6.413" y2="35.771"
       gradientUnits="userSpaceOnUse">
       <stop stop-color="#F04E29" />
       <stop offset="1" stop-color="#FF8E75" />
