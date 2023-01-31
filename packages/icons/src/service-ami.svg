@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
-<g>
-	<rect x="30.211" y="39.292" fill="#FF9900" width="8.499" height="9.625"/>
-	<rect x="19.211" y="39.292" fill="#FF9900" width="8.5" height="9.625"/>
-	<rect x="41.21" y="39.292" fill="#FF9900" width="8.25" height="9.625"/>
-	<rect x="41.21" y="20.625" fill="#FF9900" width="8.25" height="9.625"/>
-	<rect x="30.211" y="20.625" fill="#FF9900" width="8.499" height="9.625"/>
-	<rect x="19.211" y="20.625" fill="#FF9900" width="8.5" height="9.625"/>
-	<g>
-		<rect x="41.21" y="20.625" fill="none" width="8.25" height="9.625"/>
-		<rect x="30.211" y="20.625" fill="none" width="8.499" height="9.625"/>
-		<rect x="16.711" y="36.792" fill="none" width="35.249" height="14.625"/>
-		<rect x="19.211" y="20.625" fill="none" width="8.5" height="9.625"/>
-		<path fill="#FF9900" d="M57.183,6.594H11.486c-2.762,0-5,2.239-5,5v46.813c0,2.761,2.238,5,5,5h45.696c2.762,0,5-2.239,5-5V11.594    C62.183,8.833,59.944,6.594,57.183,6.594z M51.96,51.417H16.711V36.792H51.96V51.417z M51.96,32.75H16.711V18.125H51.96V32.75z"/>
-	</g>
-</g>
-</svg>
+<svg enable-background="new 0 0 70 70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg"><g fill="#f90"><path d="m30.211 39.292h8.499v9.625h-8.499z"/><path d="m19.211 39.292h8.5v9.625h-8.5z"/><path d="m41.21 39.292h8.25v9.625h-8.25z"/><path d="m41.21 20.625h8.25v9.625h-8.25z"/><path d="m30.211 20.625h8.499v9.625h-8.499z"/><path d="m19.211 20.625h8.5v9.625h-8.5z"/></g><path d="m41.21 20.625h8.25v9.625h-8.25z" fill="none"/><path d="m30.211 20.625h8.499v9.625h-8.499z" fill="none"/><path d="m16.711 36.792h35.249v14.625h-35.249z" fill="none"/><path d="m19.211 20.625h8.5v9.625h-8.5z" fill="none"/><path d="m57.183 6.594h-45.697c-2.762 0-5 2.239-5 5v46.813c0 2.761 2.238 5 5 5h45.696c2.762 0 5-2.239 5-5v-46.813c.001-2.761-2.238-5-4.999-5zm-5.223 44.823h-35.249v-14.625h35.249zm0-18.667h-35.249v-14.625h35.249z" fill="#f90"/></svg>
