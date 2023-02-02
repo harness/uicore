@@ -489,6 +489,7 @@ import HttpStep from './http-step.svg'
 import IacmBlue from './iacm-blue.svg'
 import IacmGrey from './iacm-grey.svg'
 import Iacm from './iacm.svg'
+import Idp from './idp.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -1494,6 +1495,7 @@ type HarnessIconName =
   | 'iacm-blue'
   | 'iacm-grey'
   | 'iacm'
+  | 'idp'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -2499,6 +2501,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-blue': IacmBlue,
   'iacm-grey': IacmGrey,
   iacm: Iacm,
+  idp: Idp,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
