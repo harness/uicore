@@ -221,6 +221,7 @@ import CloudFunctionTrafficShift from './cloud-function-traffic-shift.svg'
 import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
+import ClusterEffieiencyScore from './clusterEffieiencyScore.svg'
 import CodeBranchSmall from './code-branch-small.svg'
 import CodeBranch from './code-branch.svg'
 import CodeChat from './code-chat.svg'
@@ -1227,6 +1228,7 @@ type HarnessIconName =
   | 'cloud-light'
   | 'cloud-sso'
   | 'cloudformation'
+  | 'clusterEffieiencyScore'
   | 'code-branch-small'
   | 'code-branch'
   | 'code-chat'
@@ -2233,6 +2235,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-light': CloudLight,
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
+  clusterEffieiencyScore: ClusterEffieiencyScore,
   'code-branch-small': CodeBranchSmall,
   'code-branch': CodeBranch,
   'code-chat': CodeChat,
