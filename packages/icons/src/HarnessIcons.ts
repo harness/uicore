@@ -851,6 +851,7 @@ import ServiceJira from './service-jira.svg'
 import ServiceKubernetesCcm from './service-kubernetes-ccm.svg'
 import ServiceKubernetesQuick from './service-kubernetes-quick.svg'
 import ServiceKubernetes from './service-kubernetes.svg'
+import ServiceLinux from './service-linux.svg'
 import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
 import ServiceMongodb from './service-mongodb.svg'
 import ServiceMsteams from './service-msteams.svg'
@@ -860,6 +861,7 @@ import ServiceNexus from './service-nexus.svg'
 import ServiceOgz from './service-ogz.svg'
 import ServiceOkta from './service-okta.svg'
 import ServiceOnelogin from './service-onelogin.svg'
+import ServiceOpenstack from './service-openstack.svg'
 import ServicePagerduty from './service-pagerduty.svg'
 import ServicePivotal from './service-pivotal.svg'
 import ServicePrometheus from './service-prometheus.svg'
@@ -881,6 +883,8 @@ import ServiceSumologic from './service-sumologic.svg'
 import ServiceTerraform from './service-terraform.svg'
 import ServiceTerragrunt from './service-terragrunt.svg'
 import ServiceVm from './service-vm.svg'
+import ServiceVmware from './service-vmware.svg'
+import ServiceWindows from './service-windows.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
 import ServicenowApprove from './servicenow-approve.svg'
@@ -1858,6 +1862,7 @@ type HarnessIconName =
   | 'service-kubernetes-ccm'
   | 'service-kubernetes-quick'
   | 'service-kubernetes'
+  | 'service-linux'
   | 'service-microsoft-teams'
   | 'service-mongodb'
   | 'service-msteams'
@@ -1867,6 +1872,7 @@ type HarnessIconName =
   | 'service-ogz'
   | 'service-okta'
   | 'service-onelogin'
+  | 'service-openstack'
   | 'service-pagerduty'
   | 'service-pivotal'
   | 'service-prometheus'
@@ -1888,6 +1894,8 @@ type HarnessIconName =
   | 'service-terraform'
   | 'service-terragrunt'
   | 'service-vm'
+  | 'service-vmware'
+  | 'service-windows'
   | 'service'
   | 'servicenow-approve-inverse'
   | 'servicenow-approve'
@@ -2865,6 +2873,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-kubernetes-ccm': ServiceKubernetesCcm,
   'service-kubernetes-quick': ServiceKubernetesQuick,
   'service-kubernetes': ServiceKubernetes,
+  'service-linux': ServiceLinux,
   'service-microsoft-teams': ServiceMicrosoftTeams,
   'service-mongodb': ServiceMongodb,
   'service-msteams': ServiceMsteams,
@@ -2874,6 +2883,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-ogz': ServiceOgz,
   'service-okta': ServiceOkta,
   'service-onelogin': ServiceOnelogin,
+  'service-openstack': ServiceOpenstack,
   'service-pagerduty': ServicePagerduty,
   'service-pivotal': ServicePivotal,
   'service-prometheus': ServicePrometheus,
@@ -2895,6 +2905,8 @@ const HarnessIcons: KVO<ElementType> = {
   'service-terraform': ServiceTerraform,
   'service-terragrunt': ServiceTerragrunt,
   'service-vm': ServiceVm,
+  'service-vmware': ServiceVmware,
+  'service-windows': ServiceWindows,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
   'servicenow-approve': ServicenowApprove,
