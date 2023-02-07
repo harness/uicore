@@ -965,6 +965,7 @@ import TemplatesIcon from './templates-icon.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
+import TerraformCloud from './terraform-cloud.svg'
 import TerraformDestroyInverse from './terraform-destroy-inverse.svg'
 import TerraformDestroy from './terraform-destroy.svg'
 import TerraformPlanInverse from './terraform-plan-inverse.svg'
@@ -1976,6 +1977,7 @@ type HarnessIconName =
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
   | 'terraform-apply'
+  | 'terraform-cloud'
   | 'terraform-destroy-inverse'
   | 'terraform-destroy'
   | 'terraform-plan-inverse'
@@ -2987,6 +2989,7 @@ const HarnessIcons: KVO<ElementType> = {
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
+  'terraform-cloud': TerraformCloud,
   'terraform-destroy-inverse': TerraformDestroyInverse,
   'terraform-destroy': TerraformDestroy,
   'terraform-plan-inverse': TerraformPlanInverse,
