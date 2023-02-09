@@ -273,6 +273,7 @@ import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import CompareVersion from './compare-version.svg'
 import ConditionalExecution from './conditional-execution.svg'
+import ConditionalFilled from './conditional-filled.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
 import ConditionalSkipNew from './conditional-skip-new.svg'
 import ConditionalSkip from './conditional-skip.svg'
@@ -387,10 +388,18 @@ import ErrorTracking from './error-tracking.svg'
 import ErrorTransparentNoOutline from './error-transparent-no-outline.svg'
 import EvaluatePolicy from './evaluate-policy.svg'
 import ExecutionAbort from './execution-abort.svg'
+import ExecutionCompleted from './execution-completed.svg'
+import ExecutionConditional from './execution-conditional.svg'
+import ExecutionError from './execution-error.svg'
 import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
+import ExecutionIssue from './execution-issue.svg'
+import ExecutionPaused from './execution-paused.svg'
 import ExecutionRollback from './execution-rollback.svg'
+import ExecutionRunning from './execution-running.svg'
+import ExecutionStopped from './execution-stopped.svg'
 import ExecutionSuccess from './execution-success.svg'
+import ExecutionTimeout from './execution-timeout.svg'
 import ExecutionWarning from './execution-warning.svg'
 import Execution from './execution.svg'
 import Expired from './expired.svg'
@@ -760,6 +769,7 @@ import RunTaskStep from './run-task-step.svg'
 import RunTestsCiStepInverse from './run-tests-ci-step-inverse.svg'
 import RunTestsCiStep from './run-tests-ci-step.svg'
 import RunTestsStep from './run-tests-step.svg'
+import RunningFilled from './running-filled.svg'
 import RuntimeInput from './runtime-input.svg'
 import S3CiStepInverse from './s3-ci-step-inverse.svg'
 import S3CiStep from './s3-ci-step.svg'
@@ -1286,6 +1296,7 @@ type HarnessIconName =
   | 'command-winrm'
   | 'compare-version'
   | 'conditional-execution'
+  | 'conditional-filled'
   | 'conditional-skip-filled'
   | 'conditional-skip-new'
   | 'conditional-skip'
@@ -1400,10 +1411,18 @@ type HarnessIconName =
   | 'error-transparent-no-outline'
   | 'evaluate-policy'
   | 'execution-abort'
+  | 'execution-completed'
+  | 'execution-conditional'
+  | 'execution-error'
   | 'execution-history'
   | 'execution-input'
+  | 'execution-issue'
+  | 'execution-paused'
   | 'execution-rollback'
+  | 'execution-running'
+  | 'execution-stopped'
   | 'execution-success'
+  | 'execution-timeout'
   | 'execution-warning'
   | 'execution'
   | 'expired'
@@ -1773,6 +1792,7 @@ type HarnessIconName =
   | 'run-tests-ci-step-inverse'
   | 'run-tests-ci-step'
   | 'run-tests-step'
+  | 'running-filled'
   | 'runtime-input'
   | 's3-ci-step-inverse'
   | 's3-ci-step'
@@ -2299,6 +2319,7 @@ const HarnessIcons: KVO<ElementType> = {
   'command-winrm': CommandWinrm,
   'compare-version': CompareVersion,
   'conditional-execution': ConditionalExecution,
+  'conditional-filled': ConditionalFilled,
   'conditional-skip-filled': ConditionalSkipFilled,
   'conditional-skip-new': ConditionalSkipNew,
   'conditional-skip': ConditionalSkip,
@@ -2413,10 +2434,18 @@ const HarnessIcons: KVO<ElementType> = {
   'error-transparent-no-outline': ErrorTransparentNoOutline,
   'evaluate-policy': EvaluatePolicy,
   'execution-abort': ExecutionAbort,
+  'execution-completed': ExecutionCompleted,
+  'execution-conditional': ExecutionConditional,
+  'execution-error': ExecutionError,
   'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
+  'execution-issue': ExecutionIssue,
+  'execution-paused': ExecutionPaused,
   'execution-rollback': ExecutionRollback,
+  'execution-running': ExecutionRunning,
+  'execution-stopped': ExecutionStopped,
   'execution-success': ExecutionSuccess,
+  'execution-timeout': ExecutionTimeout,
   'execution-warning': ExecutionWarning,
   execution: Execution,
   expired: Expired,
@@ -2786,6 +2815,7 @@ const HarnessIcons: KVO<ElementType> = {
   'run-tests-ci-step-inverse': RunTestsCiStepInverse,
   'run-tests-ci-step': RunTestsCiStep,
   'run-tests-step': RunTestsStep,
+  'running-filled': RunningFilled,
   'runtime-input': RuntimeInput,
   's3-ci-step-inverse': S3CiStepInverse,
   's3-ci-step': S3CiStep,

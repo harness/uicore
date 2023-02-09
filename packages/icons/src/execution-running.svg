@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="12" fill="#fff"/>
+  <circle cx="12" cy="12" r="10.5" fill="currentColor"/>
+  <g fill="#fff" transform="matrix(1.5 0 0 1.5 4.5 6)">
+    <circle r="1" transform="translate(2 4)">
+      <animateTransform additive="sum" attributeName="transform" begin="0s" dur="1s" repeatCount="indefinite" type="scale" values="0; 1.25; 0"/>
+    </circle>
+    <circle r="1" transform="translate(5 4)">
+      <animateTransform additive="sum" attributeName="transform" begin="0.2s" dur="1s" repeatCount="indefinite" type="scale" values="0; 1.25; 0"/>
+    </circle>
+    <circle r="1" transform="translate(8 4)">
+      <animateTransform additive="sum" attributeName="transform" begin="0.4s" dur="1s" repeatCount="indefinite" type="scale" values="0; 1.25; 0"/>
+    </circle>
+  </g>
+</svg>
