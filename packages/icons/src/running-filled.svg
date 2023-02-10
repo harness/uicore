@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 12">
+  <circle cx="6" cy="6" r="5.625" fill="currentColor"/>
+  <g fill="#fff" transform="translate(1 2)">
+    <circle r="1" transform="translate(2 4)">
+      <animateTransform additive="sum" attributeName="transform" begin="0s" dur="1s" repeatCount="indefinite" type="scale" values="0; 1.25; 0"/>
+    </circle>
+    <circle r="1" transform="translate(5 4)">
+      <animateTransform additive="sum" attributeName="transform" begin="0.2s" dur="1s" repeatCount="indefinite" type="scale" values="0; 1.25; 0"/>
+    </circle>
+    <circle r="1" transform="translate(8 4)">
+      <animateTransform additive="sum" attributeName="transform" begin="0.4s" dur="1s" repeatCount="indefinite" type="scale" values="0; 1.25; 0"/>
+    </circle>
+  </g>
+</svg>
