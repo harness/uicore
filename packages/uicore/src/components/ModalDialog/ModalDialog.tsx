@@ -54,7 +54,6 @@ export interface ModalDialogProps extends IDialogProps {
 }
 
 export const ModalDialog: FC<ModalDialogProps> = ({
-  onOpened = () => undefined,
   title,
   footer,
   toolbar,
@@ -63,7 +62,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   children,
   className = '',
   closeButtonLabel = 'Close',
-  onClose,
   isCloseButtonShown = true,
   style = {},
   ...dialogProps
@@ -92,23 +90,22 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         root: bodyRef.current
       }
     )
+
     observeEdge(bodyTopEdgeRef.current, bodyObserverRef.current)
     observeEdge(bodyBottomEdgeRef.current, bodyObserverRef.current)
   }, [])
 
-  const onModalOpened = useCallback(
-    arg => {
-      initScrollShadows()
-      onOpened(arg)
-    },
-    [initScrollShadows, onOpened]
-  )
+  useEffect(() => bodyObserverRef.current?.disconnect, [])
 
-  useEffect(() => {
-    return () => {
-      bodyObserverRef.current?.disconnect()
-    }
-  }, [])
+  const onOpening: IDialogProps['onOpening'] = arg => {
+    initScrollShadows()
+    dialogProps.onOpening?.(arg)
+  }
+
+  const onClose: IDialogProps['onClose'] = arg => {
+    bodyObserverRef.current?.disconnect()
+    dialogProps.onClose?.(arg)
+  }
 
   const modifiers = []
 
@@ -142,7 +139,8 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   return (
     <Dialog
-      onOpened={onModalOpened}
+      onOpening={onOpening}
+      onClose={onClose}
       autoFocus
       enforceFocus
       canEscapeKeyClose
@@ -179,7 +177,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         </footer>
       )}
 
-      {onClose && isCloseButtonShown && (
+      {dialogProps.onClose && isCloseButtonShown && (
         <Button
           aria-label={closeButtonLabel}
           icon="Stroke"
