@@ -250,6 +250,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       const { key } = e
 
       if (key === 'Enter') {
+        e.stopPropagation()
         e.preventDefault()
       } else if ((key === 'ArrowUp' || key === 'ArrowDown') && activeItem) {
         let index = filteredItems.indexOf(activeItem)
