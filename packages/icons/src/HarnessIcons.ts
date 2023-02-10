@@ -917,9 +917,9 @@ import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
-import SscsEnforce from './sscs-enforce.svg'
-import SscsMain from './sscs-main.svg'
-import SscsOrchestrate from './sscs-orchestrate.svg'
+import SscaEnforce from './ssca-enforce.svg'
+import SscaMain from './ssca-main.svg'
+import SscaOrchestrate from './ssca-orchestrate.svg'
 import StaleCache from './stale-cache.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
@@ -1940,9 +1940,9 @@ type HarnessIconName =
   | 'spot-inverse'
   | 'spot'
   | 'srm-with-dark-text'
-  | 'sscs-enforce'
-  | 'sscs-main'
-  | 'sscs-orchestrate'
+  | 'ssca-enforce'
+  | 'ssca-main'
+  | 'ssca-orchestrate'
   | 'stale-cache'
   | 'stars'
   | 'status-pending'
@@ -2963,9 +2963,9 @@ const HarnessIcons: KVO<ElementType> = {
   'spot-inverse': SpotInverse,
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
-  'sscs-enforce': SscsEnforce,
-  'sscs-main': SscsMain,
-  'sscs-orchestrate': SscsOrchestrate,
+  'ssca-enforce': SscaEnforce,
+  'ssca-main': SscaMain,
+  'ssca-orchestrate': SscaOrchestrate,
   'stale-cache': StaleCache,
   stars: Stars,
   'status-pending': StatusPending,
