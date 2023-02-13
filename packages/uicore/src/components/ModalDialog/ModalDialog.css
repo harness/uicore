@@ -55,6 +55,7 @@
   right: 22px;
   top: 22px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .body {
@@ -74,6 +75,8 @@
 }
 
 .body .bodyContent {
+  position: relative;
+  z-index: 1;
   overflow: auto;
   height: 100%;
   padding: 0 var(--spacing-huge);
