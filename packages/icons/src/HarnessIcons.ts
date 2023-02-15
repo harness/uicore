@@ -222,6 +222,7 @@ import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import ClusterEffieiencyScore from './clusterEffieiencyScore.svg'
+import CodeAscending from './code-ascending.svg'
 import CodeBranchSmall from './code-branch-small.svg'
 import CodeBranch from './code-branch.svg'
 import CodeChat from './code-chat.svg'
@@ -233,6 +234,7 @@ import CodeCommitSmall from './code-commit-small.svg'
 import CodeCommit from './code-commit.svg'
 import CodeCopy from './code-copy.svg'
 import CodeDelete from './code-delete.svg'
+import CodeDescending from './code-descending.svg'
 import CodeDraft from './code-draft.svg'
 import CodeEdit from './code-edit.svg'
 import CodeFileLight from './code-file-light.svg'
@@ -1246,6 +1248,7 @@ type HarnessIconName =
   | 'cloud-sso'
   | 'cloudformation'
   | 'clusterEffieiencyScore'
+  | 'code-ascending'
   | 'code-branch-small'
   | 'code-branch'
   | 'code-chat'
@@ -1257,6 +1260,7 @@ type HarnessIconName =
   | 'code-commit'
   | 'code-copy'
   | 'code-delete'
+  | 'code-descending'
   | 'code-draft'
   | 'code-edit'
   | 'code-file-light'
@@ -2270,6 +2274,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
   clusterEffieiencyScore: ClusterEffieiencyScore,
+  'code-ascending': CodeAscending,
   'code-branch-small': CodeBranchSmall,
   'code-branch': CodeBranch,
   'code-chat': CodeChat,
@@ -2281,6 +2286,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-commit': CodeCommit,
   'code-copy': CodeCopy,
   'code-delete': CodeDelete,
+  'code-descending': CodeDescending,
   'code-draft': CodeDraft,
   'code-edit': CodeEdit,
   'code-file-light': CodeFileLight,
