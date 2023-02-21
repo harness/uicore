@@ -110,7 +110,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
-  // const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = (newType: MultiTypeInputType) => {
     if (type === newType) {
       return
