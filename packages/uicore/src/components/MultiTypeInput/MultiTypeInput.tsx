@@ -94,7 +94,6 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     value,
     defaultValueToReset,
     width,
-    expressions = [],
     onTypeChange,
     onChange,
     i18n: _i18n = {},
