@@ -16,16 +16,13 @@ import { Position, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInp
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '@harness/design-system'
-import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
-import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
 import {
   MultiTypeInputType,
   MultiTypeInputValue,
   MultiTypeIcon,
   MultiTypeIconSize,
   RUNTIME_INPUT_VALUE,
-  EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE
 } from './MultiTypeInputUtils'
 import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
@@ -113,7 +110,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
-  const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
+  // const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = (newType: MultiTypeInputType) => {
     if (type === newType) {
       return
@@ -195,19 +192,11 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
         />
       )}
       {type === MultiTypeInputType.EXPRESSION && (
-        <ExpressionInput
-          popoverProps={{
-            className: css.input
-          }}
-          name={name}
-          items={expressions}
-          inputProps={{ placeholder: EXPRESSION_INPUT_PLACEHOLDER }}
-          value={value as string}
+        <FixedTypeComponent
+          {...(fixedTypeComponentProps as T)}
+          value={value}
           disabled={disabled}
-          onChange={val => {
-            onChange?.(val, MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
-          }}
-          data-mentions={mentionsType}
+          onChange={fixedComponentOnChangeCallback}
         />
       )}
       {!allowableTypes.length ? null : (
