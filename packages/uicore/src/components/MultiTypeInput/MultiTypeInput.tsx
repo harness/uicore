@@ -51,6 +51,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   name: string
   disabled?: boolean
   mini?: boolean
+  resetExpressionOnFixedTypeChange?: boolean
 }
 
 export interface FixedTypeComponentProps {
@@ -109,6 +110,11 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     disabled,
     multitypeInputValue,
     mini,
+    /**
+     * By default, string fixed values are retained on changing from fixed to expresssion
+     * If `resetExpressionOnFixedTypeChange` is set to true, these values would be reset
+     */
+    resetExpressionOnFixedTypeChange,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -133,7 +139,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
         break
       case MultiTypeInputType.EXPRESSION: {
         // retain value if switching from fixed to expression type
-        if (type === MultiTypeInputType.FIXED && typeof value === 'string') {
+        if (type === MultiTypeInputType.FIXED && !resetExpressionOnFixedTypeChange && typeof value === 'string') {
           _inputValue = value
         } else {
           _inputValue = defaultValueToReset
