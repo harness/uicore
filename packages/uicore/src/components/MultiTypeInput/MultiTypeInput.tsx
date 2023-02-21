@@ -112,7 +112,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     mini,
     /**
      * By default, string fixed values are retained on changing from fixed to expresssion
-     * `resetExpressionOnFixedTypeChange`, if set to true, would reset these values
+     * If `resetExpressionOnFixedTypeChange` is set to true, these values would be reset
      */
     resetExpressionOnFixedTypeChange,
     ...layoutProps
