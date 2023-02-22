@@ -979,6 +979,10 @@ import TemplatesIcon from './templates-icon.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
+import TerraformCloudRollbackInverse from './terraform-cloud-rollback-inverse.svg'
+import TerraformCloudRollback from './terraform-cloud-rollback.svg'
+import TerraformCloudRunInverse from './terraform-cloud-run-inverse.svg'
+import TerraformCloudRun from './terraform-cloud-run.svg'
 import TerraformCloud from './terraform-cloud.svg'
 import TerraformDestroyInverse from './terraform-destroy-inverse.svg'
 import TerraformDestroy from './terraform-destroy.svg'
@@ -2005,6 +2009,10 @@ type HarnessIconName =
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
   | 'terraform-apply'
+  | 'terraform-cloud-rollback-inverse'
+  | 'terraform-cloud-rollback'
+  | 'terraform-cloud-run-inverse'
+  | 'terraform-cloud-run'
   | 'terraform-cloud'
   | 'terraform-destroy-inverse'
   | 'terraform-destroy'
@@ -3031,6 +3039,10 @@ const HarnessIcons: KVO<ElementType> = {
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
+  'terraform-cloud-rollback-inverse': TerraformCloudRollbackInverse,
+  'terraform-cloud-rollback': TerraformCloudRollback,
+  'terraform-cloud-run-inverse': TerraformCloudRunInverse,
+  'terraform-cloud-run': TerraformCloudRun,
   'terraform-cloud': TerraformCloud,
   'terraform-destroy-inverse': TerraformDestroyInverse,
   'terraform-destroy': TerraformDestroy,
