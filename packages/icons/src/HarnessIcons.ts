@@ -85,6 +85,9 @@ import AwsAsg from './aws-asg.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsEctwoService from './aws-ectwo-service.svg'
 import AwsKms from './aws-kms.svg'
+import AwsLambdaDeploy from './aws-lambda-deploy.svg'
+import AwsLambdaRollback from './aws-lambda-rollback.svg'
+import AwsLambdaTrafficShift from './aws-lambda-traffic-shift.svg'
 import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AzureArmRollback from './azure-arm-rollback.svg'
@@ -825,6 +828,7 @@ import ServiceArtifactory from './service-artifactory.svg'
 import ServiceAwsCcm from './service-aws-ccm.svg'
 import ServiceAwsCodeDeploy from './service-aws-code-deploy.svg'
 import ServiceAwsLamda from './service-aws-lamda.svg'
+import ServiceAwsNativeLambda from './service-aws-native-lambda.svg'
 import ServiceAwsSam from './service-aws-sam.svg'
 import ServiceAws from './service-aws.svg'
 import ServiceAzdevops from './service-azdevops.svg'
@@ -1115,6 +1119,9 @@ type HarnessIconName =
   | 'aws-codecommit'
   | 'aws-ectwo-service'
   | 'aws-kms'
+  | 'aws-lambda-deploy'
+  | 'aws-lambda-rollback'
+  | 'aws-lambda-traffic-shift'
   | 'aws-rds'
   | 'aws-secret-manager'
   | 'azure-arm-rollback'
@@ -1855,6 +1862,7 @@ type HarnessIconName =
   | 'service-aws-ccm'
   | 'service-aws-code-deploy'
   | 'service-aws-lamda'
+  | 'service-aws-native-lambda'
   | 'service-aws-sam'
   | 'service-aws'
   | 'service-azdevops'
@@ -2145,6 +2153,9 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-codecommit': AwsCodecommit,
   'aws-ectwo-service': AwsEctwoService,
   'aws-kms': AwsKms,
+  'aws-lambda-deploy': AwsLambdaDeploy,
+  'aws-lambda-rollback': AwsLambdaRollback,
+  'aws-lambda-traffic-shift': AwsLambdaTrafficShift,
   'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
   'azure-arm-rollback': AzureArmRollback,
@@ -2885,6 +2896,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-aws-ccm': ServiceAwsCcm,
   'service-aws-code-deploy': ServiceAwsCodeDeploy,
   'service-aws-lamda': ServiceAwsLamda,
+  'service-aws-native-lambda': ServiceAwsNativeLambda,
   'service-aws-sam': ServiceAwsSam,
   'service-aws': ServiceAws,
   'service-azdevops': ServiceAzdevops,
