@@ -52,6 +52,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   disabled?: boolean
   mini?: boolean
   resetExpressionOnFixedTypeChange?: boolean
+  showFixedComponentOnExpressionType?: boolean
 }
 
 export interface FixedTypeComponentProps {
@@ -110,6 +111,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     disabled,
     multitypeInputValue,
     mini,
+    showFixedComponentOnExpressionType,
     /**
      * By default, string fixed values are retained on changing from fixed to expresssion
      * If `resetExpressionOnFixedTypeChange` is set to true, these values would be reset
@@ -174,7 +176,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       })}
       width={width}
       {...layoutProps}>
-      {type === MultiTypeInputType.FIXED && (
+      {(type === MultiTypeInputType.FIXED ||
+        (!!showFixedComponentOnExpressionType && type === MultiTypeInputType.EXPRESSION)) && (
         <FixedTypeComponent
           {...(fixedTypeComponentProps as T)}
           value={value}
@@ -200,7 +203,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           value={value as string}
         />
       )}
-      {type === MultiTypeInputType.EXPRESSION && (
+      {!showFixedComponentOnExpressionType && type === MultiTypeInputType.EXPRESSION && (
         <ExpressionInput
           popoverProps={{
             className: css.input
