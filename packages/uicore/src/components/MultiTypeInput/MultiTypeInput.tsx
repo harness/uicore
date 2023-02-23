@@ -16,13 +16,16 @@ import { Position, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInp
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '@harness/design-system'
+import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
+import { ExpressionInput } from 'components/ExpressionInput/ExpressionInput'
 import {
   MultiTypeInputType,
   MultiTypeInputValue,
   MultiTypeIcon,
   MultiTypeIconSize,
   RUNTIME_INPUT_VALUE,
+  EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE
 } from './MultiTypeInputUtils'
 import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
@@ -49,6 +52,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   disabled?: boolean
   mini?: boolean
   resetExpressionOnFixedTypeChange?: boolean
+  showFixedComponentOnExpressionType?: boolean
 }
 
 export interface FixedTypeComponentProps {
@@ -95,6 +99,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     value,
     defaultValueToReset,
     width,
+    expressions = [],
     onTypeChange,
     onChange,
     i18n: _i18n = {},
@@ -106,6 +111,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     disabled,
     multitypeInputValue,
     mini,
+    showFixedComponentOnExpressionType,
     /**
      * By default, string fixed values are retained on changing from fixed to expresssion
      * If `resetExpressionOnFixedTypeChange` is set to true, these values would be reset
@@ -115,6 +121,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
+  const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = (newType: MultiTypeInputType) => {
     if (type === newType) {
       return
@@ -169,7 +176,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       })}
       width={width}
       {...layoutProps}>
-      {type === MultiTypeInputType.FIXED && (
+      {(type === MultiTypeInputType.FIXED ||
+        (!!showFixedComponentOnExpressionType && type === MultiTypeInputType.EXPRESSION)) && (
         <FixedTypeComponent
           {...(fixedTypeComponentProps as T)}
           value={value}
@@ -195,12 +203,20 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           value={value as string}
         />
       )}
-      {type === MultiTypeInputType.EXPRESSION && (
-        <FixedTypeComponent
-          {...(fixedTypeComponentProps as T)}
-          value={value}
+      {!showFixedComponentOnExpressionType && type === MultiTypeInputType.EXPRESSION && (
+        <ExpressionInput
+          popoverProps={{
+            className: css.input
+          }}
+          name={name}
+          items={expressions}
+          inputProps={{ placeholder: EXPRESSION_INPUT_PLACEHOLDER }}
+          value={value as string}
           disabled={disabled}
-          onChange={fixedComponentOnChangeCallback}
+          onChange={val => {
+            onChange?.(val, MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
+          }}
+          data-mentions={mentionsType}
         />
       )}
       {!allowableTypes.length ? null : (
