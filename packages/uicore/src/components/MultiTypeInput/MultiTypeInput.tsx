@@ -18,7 +18,7 @@ import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
-import { ExpressionInput } from 'components/ExpressionInput/ExpressionInput'
+import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
 import {
   MultiTypeInputType,
   MultiTypeInputValue,
