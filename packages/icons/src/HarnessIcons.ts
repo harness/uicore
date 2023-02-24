@@ -748,6 +748,9 @@ import ResUsers from './res-users.svg'
 import ResetIcon from './reset-icon.svg'
 import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
 import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
+import ResourceStackDestroy from './resource-stack-destroy.svg'
+import ResourceStackProvision from './resource-stack-provision.svg'
+import ResourceStack from './resource-stack.svg'
 import ResourcesIcon from './resources-icon.svg'
 import RestoreCacheGcsCiStepInverse from './restore-cache-gcs-ci-step-inverse.svg'
 import RestoreCacheGcsCiStep from './restore-cache-gcs-ci-step.svg'
@@ -1782,6 +1785,9 @@ type HarnessIconName =
   | 'reset-icon'
   | 'resource-center-community-icon'
   | 'resource-center-docs-icon'
+  | 'resource-stack-destroy'
+  | 'resource-stack-provision'
+  | 'resource-stack'
   | 'resources-icon'
   | 'restore-cache-gcs-ci-step-inverse'
   | 'restore-cache-gcs-ci-step'
@@ -2816,6 +2822,9 @@ const HarnessIcons: KVO<ElementType> = {
   'reset-icon': ResetIcon,
   'resource-center-community-icon': ResourceCenterCommunityIcon,
   'resource-center-docs-icon': ResourceCenterDocsIcon,
+  'resource-stack-destroy': ResourceStackDestroy,
+  'resource-stack-provision': ResourceStackProvision,
+  'resource-stack': ResourceStack,
   'resources-icon': ResourcesIcon,
   'restore-cache-gcs-ci-step-inverse': RestoreCacheGcsCiStepInverse,
   'restore-cache-gcs-ci-step': RestoreCacheGcsCiStep,
