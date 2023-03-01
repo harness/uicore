@@ -226,6 +226,7 @@ import CloudLight from './cloud-light.svg'
 import CloudSso from './cloud-sso.svg'
 import Cloudformation from './cloudformation.svg'
 import ClusterEffieiencyScore from './clusterEffieiencyScore.svg'
+import CmdProbe from './cmd-probe.svg'
 import CodeAscending from './code-ascending.svg'
 import CodeBranchSmall from './code-branch-small.svg'
 import CodeBranch from './code-branch.svg'
@@ -503,6 +504,7 @@ import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
+import HttpProbe from './http-probe.svg'
 import HttpStep from './http-step.svg'
 import IacmBlue from './iacm-blue.svg'
 import IacmGrey from './iacm-grey.svg'
@@ -718,6 +720,11 @@ import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
 import Pod from './pod.svg'
 import Polygon from './polygon.svg'
+import ProbeEot from './probe-EOT.svg'
+import ProbeSot from './probe-SOT.svg'
+import ProbeContinuos from './probe-continuos.svg'
+import ProbeEdge from './probe-edge.svg'
+import ProbeOnChaos from './probe-onChaos.svg'
 import Profile from './profile.svg'
 import ProgressDial from './progress-dial.svg'
 import ProjectsWizard from './projects-wizard.svg'
@@ -1264,6 +1271,7 @@ type HarnessIconName =
   | 'cloud-sso'
   | 'cloudformation'
   | 'clusterEffieiencyScore'
+  | 'cmd-probe'
   | 'code-ascending'
   | 'code-branch-small'
   | 'code-branch'
@@ -1541,6 +1549,7 @@ type HarnessIconName =
   | 'help'
   | 'hotfix'
   | 'hourglass'
+  | 'http-probe'
   | 'http-step'
   | 'iacm-blue'
   | 'iacm-grey'
@@ -1756,6 +1765,11 @@ type HarnessIconName =
   | 'plugin-step'
   | 'pod'
   | 'polygon'
+  | 'probe-EOT'
+  | 'probe-SOT'
+  | 'probe-continuos'
+  | 'probe-edge'
+  | 'probe-onChaos'
   | 'profile'
   | 'progress-dial'
   | 'projects-wizard'
@@ -2302,6 +2316,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-sso': CloudSso,
   cloudformation: Cloudformation,
   clusterEffieiencyScore: ClusterEffieiencyScore,
+  'cmd-probe': CmdProbe,
   'code-ascending': CodeAscending,
   'code-branch-small': CodeBranchSmall,
   'code-branch': CodeBranch,
@@ -2579,6 +2594,7 @@ const HarnessIcons: KVO<ElementType> = {
   help: Help,
   hotfix: Hotfix,
   hourglass: Hourglass,
+  'http-probe': HttpProbe,
   'http-step': HttpStep,
   'iacm-blue': IacmBlue,
   'iacm-grey': IacmGrey,
@@ -2794,6 +2810,11 @@ const HarnessIcons: KVO<ElementType> = {
   'plugin-step': PluginStep,
   pod: Pod,
   polygon: Polygon,
+  'probe-EOT': ProbeEot,
+  'probe-SOT': ProbeSot,
+  'probe-continuos': ProbeContinuos,
+  'probe-edge': ProbeEdge,
+  'probe-onChaos': ProbeOnChaos,
   profile: Profile,
   'progress-dial': ProgressDial,
   'projects-wizard': ProjectsWizard,

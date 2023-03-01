@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
   <g clip-path="url(#a)">
     <circle cx="12" cy="12" r="12" fill="#fff"/>
     <path fill="currentColor" d="M14.7745 8.96924H9.22814c-.13279 0-.24181.10413-.24181.23902v5.60644c0 .1321.10832.2404.24181.2404h5.54636c.1328 0 .2404-.1076.2404-.2404V9.20826c-.0007-.13419-.1076-.23902-.2404-.23902Z"/>
