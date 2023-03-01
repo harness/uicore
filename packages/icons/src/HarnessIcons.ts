@@ -169,6 +169,7 @@ import CeMain from './ce-main.svg'
 import CeOptimization from './ce-optimization.svg'
 import CeVisibilityPlus from './ce-visibility-plus.svg'
 import CeVisibility from './ce-visibility.svg'
+import Cet from './cet.svg'
 import CfHover from './cf-hover.svg'
 import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
@@ -1206,6 +1207,7 @@ type HarnessIconName =
   | 'ce-optimization'
   | 'ce-visibility-plus'
   | 'ce-visibility'
+  | 'cet'
   | 'cf-hover'
   | 'cf-main-inverse'
   | 'cf-main'
@@ -2243,6 +2245,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ce-optimization': CeOptimization,
   'ce-visibility-plus': CeVisibilityPlus,
   'ce-visibility': CeVisibility,
+  cet: Cet,
   'cf-hover': CfHover,
   'cf-main-inverse': CfMainInverse,
   'cf-main': CfMain,
