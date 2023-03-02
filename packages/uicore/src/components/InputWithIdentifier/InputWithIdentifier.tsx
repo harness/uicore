@@ -52,6 +52,11 @@ export interface InputWithIdentifierProps {
    * @default true
    */
   useUnversialToolTipId?: boolean
+  /**
+   * callback function that gets triggered when
+   * identifier changes, either directly or due to changes in name field
+   */
+  onIdentifierChangeCallback?: (identifier: string) => void
 }
 
 // https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
@@ -75,7 +80,8 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     inputGroupProps,
     isIdentifierEditable = true,
     maxInput = 128,
-    useUnversialToolTipId = true
+    useUnversialToolTipId = true,
+    onIdentifierChangeCallback
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
@@ -114,9 +120,11 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
             onCancel={() => setEditable(false)}
             onEdit={() => setEditable(true)}
             onChange={value => {
+              const identifierFromName = getIdentifierFromName(value)
               setCurrentEditField(idName)
-              formik.setFieldValue(idName, getIdentifierFromName(value))
+              formik.setFieldValue(idName, identifierFromName)
               setUserModifiedIdentifier(true)
+              onIdentifierChangeCallback?.(identifierFromName)
             }}
             className={css.idValue}
           />
@@ -148,10 +156,18 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
 
           const updatedValues = cloneDeep(formik.values)
           set(updatedValues, inputName, name)
+          const identifierFromName = getIdentifierFromName(name)
+
           if (isIdentifierEditable && !userModifiedIdentifier) {
-            set(updatedValues, idName, getIdentifierFromName(name))
+            set(updatedValues, idName, identifierFromName)
           }
+
           formik.setValues(updatedValues)
+
+          // onIdentifierChangeCallback needs to be called after the above formik.setValues
+          if (isIdentifierEditable && !userModifiedIdentifier) {
+            onIdentifierChangeCallback?.(identifierFromName)
+          }
         }}
       />
       {!formik.errors[inputName] && formik.errors[idName] ? (
