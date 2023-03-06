@@ -13,7 +13,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { TagInput as BPTagInput } from '@blueprintjs/core'
+import { IconName, TagInput as BPTagInput } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
@@ -52,7 +52,9 @@ import {
   SelectWithSubmenuTypeInputProps,
   SelectWithSubmenuTypeInputPropsV2,
   SelectWithSubmenuTypeInputV2,
-  SelectWithSubmenuTypeInput
+  SelectWithSubmenuTypeInput,
+  MultiTypeBiLevelInput,
+  MultiTypeBiLevelInputProps
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -75,6 +77,7 @@ import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } fro
 import { DurationInput } from './DurationInput'
 import { SelectWithSubmenuOption } from '../SelectWithSubmenu/SelectWithSubmenu'
 import { SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenuV2'
+import { SelectWithBiLevelOption } from 'components/Select/BiLevelSelect'
 
 // const isFunction = (obj: any): boolean => typeof obj === 'function'
 
@@ -1024,6 +1027,97 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     </FormGroup>
   )
 }
+export interface FormMultiTypeBiLevelInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+  name: string
+  label: string
+  placeholder?: string
+  value?: SelectWithBiLevelOption
+  /**
+   *Enable this when we want to use value, instead of label/value
+   */
+  useValue?: boolean
+  selectItems: SelectWithBiLevelOption[]
+  parentIcon?: IconName
+  childIcon?: IconName
+  multiTypeInputProps?: Omit<MultiTypeInputProps, 'name'>
+  disabled?: boolean
+}
+
+const FormMultiTypeBiLevelInput = (props: FormMultiTypeBiLevelInputProps & FormikContextProps<any>) => {
+  const { formik, name, useValue = false, selectItems, placeholder, multiTypeInputProps, ...restProps } = props
+  const hasError = errorCheck(name, formik)
+  const {
+    intent = hasError ? Intent.DANGER : Intent.NONE,
+    helperText = hasError ? <FormError name={name} errorMessage={get(formik?.errors, name)} /> : null,
+    disabled = formik?.disabled,
+    label,
+    ...rest
+  } = restProps
+  const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
+  const onChangeCallback: MultiTypeBiLevelInputProps['onChange'] = useCallback(
+    (val, valueType, type) => {
+      type !== currentType && setCurrentType(type)
+      if (useValue && type === MultiTypeInputType.FIXED) {
+        formik?.setFieldValue(name, val?.value)
+      } else {
+        formik?.setFieldValue(name, val)
+      }
+      formik?.setFieldTouched(name, true, false)
+      multiTypeInputProps?.onChange?.(val, valueType, type)
+    },
+    [formik, multiTypeInputProps]
+  )
+
+  let value = props?.value || get(formik?.values, name) // formik form value
+  if (useValue && currentType === MultiTypeInputType.FIXED) {
+    const selectedItem = selectItems.find(item => item.value === value)
+    if (isNil(selectedItem) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
+      // If allow creating custom value is true
+      value = {
+        label: value,
+        value: value
+      }
+    } else if (isNil(value)) {
+      value = ''
+    } else {
+      value = {
+        label: selectedItem?.label,
+        value: selectedItem?.value
+      }
+    }
+  }
+
+  const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+  return (
+    <FormGroup
+      label={getFormFieldLabel(label, name, props)}
+      labelFor={name}
+      helperText={helperText}
+      intent={intent}
+      disabled={disabled}
+      {...rest}>
+      <MultiTypeBiLevelInput
+        {...multiTypeInputProps}
+        value={value}
+        name={name}
+        disabled={disabled}
+        selectProps={{
+          items: selectItems,
+          ...multiTypeInputProps?.selectProps,
+          name,
+          inputProps: {
+            name,
+            autoComplete,
+            intent,
+            placeholder,
+            disabled
+          }
+        }}
+        onChange={onChangeCallback}
+      />
+    </FormGroup>
+  )
+}
 
 export interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
@@ -1619,6 +1713,7 @@ export const FormInput = {
   ColorPicker: connect(FormColorPicker),
   InputWithIdentifier: connect<Omit<InputWithIdentifierProps, 'formik'>>(InputWithIdentifier),
   MultiTypeInput: connect(FormMultiTypeInput),
+  MultiTypeBiLevelInput: connect(FormMultiTypeBiLevelInput),
   SelectWithSubmenuTypeInput: connect(FormSelectWithSubmenuTypeInput),
   SelectWithSubmenuTypeInputV2: connect(FormSelectWithSubmenuTypeInputV2),
   MultiSelectWithSubmenuTypeInput: connect(FormMultiSelectWithSubmenuTypeInput),

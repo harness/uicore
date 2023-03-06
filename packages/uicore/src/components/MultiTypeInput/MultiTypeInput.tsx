@@ -32,8 +32,9 @@ import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from 
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
 import { SelectWithSubmenuV2, SelectWithSubmenuPropsV2 } from '../SelectWithSubmenu/SelectWithSubmenuV2'
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
+import { BiLevelSelect, BiLevelSelectProps, SelectWithBiLevelOption } from '../Select/BiLevelSelect'
 
-type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[]
+type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[] | BiLevelSelectProps
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
@@ -277,9 +278,36 @@ export function MultiTypeInputFixedTypeComponent(
   )
 }
 
+export function MultiTypeBiLevelInputFixedTypeComponent(
+  props: FixedTypeComponentProps & Partial<MultiTypeBiLevelInputProps['selectProps']>
+): React.ReactElement {
+  const { onChange, value, disabled, ...selectProps } = props
+  const { items = [] } = selectProps || {}
+  return (
+    <BiLevelSelect
+      usePortal={true}
+      {...selectProps}
+      className={cx(css.select, selectProps.className, {
+        [css.fixedValueInput]: MultiTypeInputType.FIXED ? true : false
+      })}
+      items={items}
+      value={value as SelectWithBiLevelOption}
+      disabled={disabled}
+      onChange={(item: SelectWithBiLevelOption) =>
+        onChange?.(item, MultiTypeInputValue.SELECT_OPTION, MultiTypeInputType.FIXED)
+      }
+    />
+  )
+}
+
 export interface MultiTypeInputProps
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
   selectProps?: Omit<SelectProps, 'onChange' | 'value'>
+}
+
+export interface MultiTypeBiLevelInputProps
+  extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
+  selectProps?: Omit<BiLevelSelectProps, 'onChange' | 'value'>
 }
 
 export function MultiTypeInput({ selectProps, ...rest }: MultiTypeInputProps): React.ReactElement {
@@ -288,6 +316,16 @@ export function MultiTypeInput({ selectProps, ...rest }: MultiTypeInputProps): R
       {...rest}
       fixedTypeComponentProps={selectProps}
       fixedTypeComponent={MultiTypeInputFixedTypeComponent}
+    />
+  )
+}
+
+export function MultiTypeBiLevelInput({ selectProps, ...rest }: MultiTypeBiLevelInputProps): React.ReactElement {
+  return (
+    <ExpressionAndRuntimeType
+      {...rest}
+      fixedTypeComponentProps={selectProps}
+      fixedTypeComponent={MultiTypeBiLevelInputFixedTypeComponent}
     />
   )
 }
