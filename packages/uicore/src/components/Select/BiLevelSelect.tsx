@@ -140,14 +140,7 @@ export function BiLevelSelect(props: BiLevelSelectProps): React.ReactElement {
   } = props
   const [item, setItem] = React.useState<SelectWithBiLevelOption | undefined | null>(undefined)
 
-  const showClearBtn =
-    !!addClearBtn &&
-    value !== null &&
-    value !== undefined &&
-    (value as any) !== '' &&
-    value?.value !== undefined &&
-    value?.value !== null &&
-    value?.value !== ''
+  const showClearBtn = !!(addClearBtn && value?.value)
 
   React.useEffect(() => {
     setItem(value)
