@@ -34,7 +34,14 @@ import { SelectWithSubmenuV2, SelectWithSubmenuPropsV2 } from '../SelectWithSubm
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 import { BiLevelSelect, BiLevelSelectProps, SelectWithBiLevelOption } from '../Select/BiLevelSelect'
 
-type AcceptableValue = boolean | string | number | SelectOption | string[] | MultiSelectOption[] | BiLevelSelectProps
+type AcceptableValue =
+  | boolean
+  | string
+  | number
+  | SelectOption
+  | string[]
+  | MultiSelectOption[]
+  | SelectWithBiLevelOption[]
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
