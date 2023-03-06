@@ -632,6 +632,8 @@ import MainUser from './main-user.svg'
 import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
+import MarkAsFailure from './mark-as-failure.svg'
 import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
 import Mend from './mend.svg'
@@ -1677,6 +1679,8 @@ type HarnessIconName =
   | 'main-view'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'mark-as-failure-inverse'
+  | 'mark-as-failure'
   | 'memberRole'
   | 'mend-inverse'
   | 'mend'
@@ -2722,6 +2726,8 @@ const HarnessIcons: KVO<ElementType> = {
   'main-view': MainView,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  'mark-as-failure-inverse': MarkAsFailureInverse,
+  'mark-as-failure': MarkAsFailure,
   memberRole: MemberRole,
   'mend-inverse': MendInverse,
   mend: Mend,
