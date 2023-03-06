@@ -23,7 +23,6 @@ export interface SelectWithBiLevelOption {
   parentLabel?: string
   parentValue?: string
   icon?: IconProps
-  submenuItems?: SelectWithBiLevelOption[]
   hasSubmenuItems?: boolean
 }
 
