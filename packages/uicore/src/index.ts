@@ -222,6 +222,7 @@ export {
   LocaleStringProps
 } from './frameworks/Strings/createLocaleStrings'
 export { TagsPopover } from './components/TagsPopover/TagsPopover'
+export { MinMaxSlider } from './components/MinMaxSlider/MinMaxSlider'
 export { getErrorInfoFromErrorObject, shouldShowError } from './utils/errorUtils'
 export { tagsType } from './utils/tagTypes'
 export {

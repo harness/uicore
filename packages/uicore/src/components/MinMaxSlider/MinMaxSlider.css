@@ -1,0 +1,98 @@
+.slider {
+  position: relative;
+}
+
+.slider__track,
+.slider__range,
+.slider__left-value,
+.slider__right-value {
+  position: absolute;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 5px;
+}
+
+.slider__track {
+  background-color: var(--grey-200);
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: var(--primary-7);
+  z-index: 2;
+}
+
+.slider__left-value {
+  left: 6px;
+}
+
+.slider__right-value {
+  right: -4px;
+}
+
+.slider__left-value,
+.slider__right-value {
+  margin-top: -32px;
+  background: var(--primary-7);
+  padding: var(--spacing-tiny) var(--spacing-xsmall);
+  color: var(--white);
+  font-size: var(--font-size-small);
+  border-radius: 2px;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  outline: none;
+}
+
+.thumbZindex-3 {
+  z-index: 3;
+}
+
+.thumbZindex-5 {
+  z-index: 5;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  background-color: var(--white);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px var(--grey-200);
+  margin-top: 4px;
+  pointer-events: all;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: var(--white);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px var(--grey-200);
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+.resetButton {
+  margin: var(--spacing-small) 0 !important;
+}
