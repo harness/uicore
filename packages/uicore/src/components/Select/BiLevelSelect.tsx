@@ -18,12 +18,20 @@ import { Text } from '../../components/Text/Text'
 import { Popover } from '../../components/Popover/Popover'
 
 export interface SelectWithBiLevelOption {
+  /** label for the item */
   label: string
+
+  /** value for the item */
   value: string | number | symbol
-  parentLabel?: string
-  parentValue?: string
-  icon?: IconProps
+
+  /** checks if the item has some subitems */
   hasSubmenuItems?: boolean
+
+  /** icon to render in defaultItemRenderer */
+  icon?: IconProps
+
+  /** list of all subitems */
+  submenuItems?: SelectWithBiLevelOption[]
 }
 
 export enum SelectSize {
@@ -50,6 +58,8 @@ export interface BiLevelSelectProps
     | 'onActiveItemChange'
   > {
   inputValueRender?: BiLevelProps['inputValueRenderer']
+
+  /** This is custom item renderer in which user can provide custom icons for parent and child item */
   itemRenderer?: BiLevelProps['itemRenderer']
   onChange?: BiLevelProps['onItemSelect']
   value?: BiLevelProps['selectedItem']
@@ -119,6 +129,13 @@ export function createNewItemFromQuery(query: string): SelectWithBiLevelOption {
   return { label: query, value: query }
 }
 
+/**
+ * @description This component renders SelectWithBiLevelOption type items which has more features than SelectOption which can help user to manipulate custom itemRenderer.
+ *
+ * @param props itemRenderer onChange value
+ * props itemRenderer - This is custom item renderer in which user can provide custom icons for parent and child item
+ * @returns ReactElement
+ */
 export function BiLevelSelect(props: BiLevelSelectProps): React.ReactElement {
   const [query, setQuery] = React.useState('')
   const [loading, setLoading] = React.useState(false)
