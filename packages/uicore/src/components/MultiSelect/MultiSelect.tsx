@@ -245,10 +245,6 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
               setQuery('')
             }
           }
-        },
-        onAdd(values) {
-          console.log('on add is called')
-          console.log('values', values)
         }
       }}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
