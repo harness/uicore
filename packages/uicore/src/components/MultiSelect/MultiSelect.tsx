@@ -50,6 +50,7 @@ export interface MultiSelectProps
   disabled?: boolean
   usePortal?: boolean
   popoverClassName?: string
+  allowCommaSeparatedList?: boolean
 }
 
 export function NoMatch(): React.ReactElement {
@@ -57,7 +58,16 @@ export function NoMatch(): React.ReactElement {
 }
 
 export function MultiSelect(props: MultiSelectProps): React.ReactElement {
-  const { onChange, value, items: _items, onPopoverClose, disabled, popoverClassName, ...rest } = props
+  const {
+    onChange,
+    value,
+    items: _items,
+    onPopoverClose,
+    disabled,
+    popoverClassName,
+    allowCommaSeparatedList,
+    ...rest
+  } = props
   const [query, setQuery] = React.useState(props.query || '')
   const [loading, setLoading] = React.useState(false)
   const [items, setItems] = React.useState<MultiSelectOption[]>(Array.isArray(_items) ? _items : [])
@@ -76,7 +86,15 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       const index = selectedItems.findIndex(opt => opt.value === item.value)
 
       if (index < 0) {
-        onChange(selectedItems.concat(item))
+        if (allowCommaSeparatedList && typeof item.value === 'string' && item.value.indexOf(',') > -1) {
+          const values: MultiSelectOption[] = item.value
+            .split(',')
+            .filter(i => !!i)
+            .map(value => ({ label: value, value: value.trim() }))
+          onChange(selectedItems.concat(values))
+        } else {
+          onChange(selectedItems.concat(item))
+        }
         setQuery('')
       } else {
         onChange(selectedItems.filter((_, i) => i !== index))
