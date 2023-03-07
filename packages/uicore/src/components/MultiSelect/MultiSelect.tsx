@@ -89,6 +89,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         if (allowCommaSeparatedList && typeof item.value === 'string' && item.value.indexOf(',') > -1) {
           const values: MultiSelectOption[] = item.value
             .split(',')
+            .filter(i => !!i)
             .map(value => ({ label: value, value: value.trim() }))
           onChange(selectedItems.concat(values))
         } else {
