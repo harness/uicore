@@ -15,8 +15,10 @@ describe('MinMaxSlider', () => {
     expect(screen.getByTestId('MinMaxSlider_MinInput')).toHaveValue('10')
     expect(screen.getByTestId('MinMaxSlider_MaxInput')).toHaveValue('100')
 
-    fireEvent.change(screen.getByTestId('MinMaxSlider_MinInput'), {
-      target: { value: '20' }
+    act(() => {
+      fireEvent.change(screen.getByTestId('MinMaxSlider_MinInput'), {
+        target: { value: '20' }
+      })
     })
 
     act(() => {
@@ -26,8 +28,10 @@ describe('MinMaxSlider', () => {
     expect(onChangeFn).toHaveBeenCalledWith({ max: 100, min: 20 })
     expect(screen.getByTestId('MinMaxSlider_MinInput')).toHaveValue('20')
 
-    fireEvent.change(screen.getByTestId('MinMaxSlider_MaxInput'), {
-      target: { value: '80' }
+    act(() => {
+      fireEvent.change(screen.getByTestId('MinMaxSlider_MaxInput'), {
+        target: { value: '80' }
+      })
     })
 
     expect(onChangeFn).toHaveBeenCalledWith({ max: 100, min: 20 })
@@ -41,18 +45,24 @@ describe('MinMaxSlider', () => {
     expect(screen.getByTestId('MinMaxSlider_MinInput')).toHaveValue('10')
     expect(screen.getByTestId('MinMaxSlider_MaxInput')).toHaveValue('100')
 
-    fireEvent.change(screen.getByTestId('MinMaxSlider_MinInput'), {
-      target: { value: '20' }
+    act(() => {
+      fireEvent.change(screen.getByTestId('MinMaxSlider_MinInput'), {
+        target: { value: '20' }
+      })
     })
 
-    fireEvent.change(screen.getByTestId('MinMaxSlider_MaxInput'), {
-      target: { value: '80' }
+    act(() => {
+      fireEvent.change(screen.getByTestId('MinMaxSlider_MaxInput'), {
+        target: { value: '80' }
+      })
     })
 
     expect(screen.getByTestId('MinMaxSlider_MinInput')).toHaveValue('20')
     expect(screen.getByTestId('MinMaxSlider_MaxInput')).toHaveValue('80')
 
-    fireEvent.click(screen.getByTestId('MinMaxSlider_reset'))
+    act(() => {
+      fireEvent.click(screen.getByTestId('MinMaxSlider_reset'))
+    })
 
     expect(screen.getByTestId('MinMaxSlider_MinInput')).toHaveValue('10')
     expect(screen.getByTestId('MinMaxSlider_MaxInput')).toHaveValue('100')
@@ -71,12 +81,13 @@ describe('MinMaxSlider', () => {
     expect(screen.getByTestId('MinMaxSlider_Range').style.left).toBe('0%')
     expect(screen.getByTestId('MinMaxSlider_Range').style.width).toBe('100%')
 
-    fireEvent.change(screen.getByTestId('MinMaxSlider_MinInput'), {
-      target: { value: '20' }
-    })
-
-    fireEvent.change(screen.getByTestId('MinMaxSlider_MaxInput'), {
-      target: { value: '80' }
+    act(() => {
+      fireEvent.change(screen.getByTestId('MinMaxSlider_MinInput'), {
+        target: { value: '20' }
+      })
+      fireEvent.change(screen.getByTestId('MinMaxSlider_MaxInput'), {
+        target: { value: '80' }
+      })
     })
 
     expect(screen.getByTestId('MinMaxSlider_MinValue')).toHaveTextContent('20ms')
@@ -91,5 +102,39 @@ describe('MinMaxSlider', () => {
     render(<MinMaxSlider min={10} max={100} width="50%" onChange={onChangeFn} />)
 
     expect(screen.getByTestId('minMaxSlider_container').style.width).toBe('50%')
+  })
+
+  describe('MinMaxSlider Error messages', () => {
+    test('MinMaxSlider should throw error if min or max values are not passed', () => {
+      const onChangeFn = jest.fn()
+
+      expect(() =>
+        render(<MinMaxSlider min={(undefined as unknown) as number} max={100} onChange={onChangeFn} />)
+      ).toThrow('MinMaxSlider: Pass min, max and onChange prop values')
+    })
+
+    test('MinMaxSlider should throw error if onChange callback is not passed', () => {
+      const onChangeFn = (undefined as unknown) as () => void
+
+      expect(() => render(<MinMaxSlider min={0} max={100} onChange={onChangeFn} />)).toThrow(
+        'MinMaxSlider: Pass min, max and onChange prop values'
+      )
+    })
+
+    test('MinMaxSlider should throw error if min value is greater than max value', () => {
+      const onChangeFn = jest.fn()
+
+      expect(() => render(<MinMaxSlider min={101} max={100} onChange={onChangeFn} />)).toThrow(
+        'MinMaxSlider: Pass min value smaller than max value'
+      )
+    })
+
+    test('MinMaxSlider should throw error if min or max value is not a valid number', () => {
+      const onChangeFn = jest.fn()
+
+      expect(() =>
+        render(<MinMaxSlider min={('zero' as unknown) as number} max={100} onChange={onChangeFn} />)
+      ).toThrow('MinMaxSlider: Invalid min or max values, pass valid number values')
+    })
   })
 })

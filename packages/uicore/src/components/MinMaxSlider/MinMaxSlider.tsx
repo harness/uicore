@@ -40,28 +40,40 @@ export const MinMaxSlider: React.FC<MultiRangeSliderProps> = ({
 
   const displayValueSuffix = unitSuffixString.trim()
 
-  const isMounted = useRef(false)
+  if (typeof min === 'undefined' || typeof max === 'undefined' || !onChange) {
+    throw new Error('MinMaxSlider: Pass min, max and onChange prop values')
+  }
+
+  if (typeof min !== 'number' || typeof max !== 'number') {
+    throw new Error('MinMaxSlider: Invalid min or max values, pass valid number values')
+  }
+
+  if (min > max) {
+    throw new Error('MinMaxSlider: Pass min value smaller than max value')
+  }
 
   // Convert to percentage
   const getPercent = useCallback((value: number) => Math.round(((value - min) / (max - min)) * 100), [min, max])
-
-  const handleReset = useCallback(() => {
-    setMinVal(min)
-    setMaxVal(max)
-  }, [min, max])
 
   const delayedOnChange = useCallback(
     debounce((updatedAngle: MinMaxAngleState) => onChange(updatedAngle), debounceDuration),
     [onChange]
   )
 
+  const handleReset = useCallback(() => {
+    setMinVal(min)
+    setMaxVal(max)
+    delayedOnChange({ min, max })
+  }, [min, max, delayedOnChange])
+
   const handleMaxChangeValue = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       const value = Math.max(+event.target.value, minVal + 1)
       setMaxVal(value)
       event.target.value = value.toString()
+      delayedOnChange({ min: minVal, max: value })
     },
-    [setMaxVal, minVal]
+    [setMaxVal, minVal, delayedOnChange]
   )
 
   const handleMinChangeValue = useCallback(
@@ -69,8 +81,9 @@ export const MinMaxSlider: React.FC<MultiRangeSliderProps> = ({
       const value = Math.min(+event.target.value, maxVal - 1)
       setMinVal(value)
       event.target.value = value.toString()
+      delayedOnChange({ min: value, max: maxVal })
     },
-    [setMinVal, maxVal]
+    [setMinVal, maxVal, delayedOnChange]
   )
 
   // Set width of the range to decrease from the left side
@@ -105,16 +118,6 @@ export const MinMaxSlider: React.FC<MultiRangeSliderProps> = ({
       }
     }
   }, [maxVal, getPercent])
-
-  // Get min and max values when their state changes
-  useEffect(() => {
-    // To prevent calling onChange during mount
-    if (isMounted.current) {
-      delayedOnChange({ min: minVal, max: maxVal })
-    } else {
-      isMounted.current = true
-    }
-  }, [minVal, maxVal, delayedOnChange])
 
   return (
     <Layout.Vertical style={{ alignItems: 'center', position: 'relative' }}>
