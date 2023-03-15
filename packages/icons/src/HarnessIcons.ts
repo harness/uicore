@@ -101,6 +101,7 @@ import AzureVm from './azure-vm.svg'
 import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
+import BackgroundStepPlugin from './background-step-plugin.svg'
 import BackgroundStep from './background-step.svg'
 import BanditInverse from './bandit-inverse.svg'
 import Bandit from './bandit.svg'
@@ -117,6 +118,7 @@ import BitbucketNew from './bitbucket-new.svg'
 import BitbucketSelected from './bitbucket-selected.svg'
 import BitbucketUnselected from './bitbucket-unselected.svg'
 import Bitbucket from './bitbucket.svg'
+import BitrisePlugin from './bitrise-plugin.svg'
 import Bitrise from './bitrise.svg'
 import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
 import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
@@ -451,6 +453,7 @@ import GitConfigure from './git-configure.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
 import GitPopover from './git-popover.svg'
+import GithubActionPlugin from './github-action-plugin.svg'
 import GithubActions from './github-actions.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
@@ -495,6 +498,7 @@ import HandManual from './hand-manual.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
+import HarnessPlugin from './harness-plugin.svg'
 import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
@@ -783,8 +787,10 @@ import Rolling from './rolling.svg'
 import RunCiStepInverse from './run-ci-step-inverse.svg'
 import RunCiStep from './run-ci-step.svg'
 import RunPipeline from './run-pipeline.svg'
+import RunStepPlugin from './run-step-plugin.svg'
 import RunStep from './run-step.svg'
 import RunTaskStep from './run-task-step.svg'
+import RunTestStepPlugin from './run-test-step-plugin.svg'
 import RunTestsCiStepInverse from './run-tests-ci-step-inverse.svg'
 import RunTestsCiStep from './run-tests-ci-step.svg'
 import RunTestsStep from './run-tests-step.svg'
@@ -1149,6 +1155,7 @@ type HarnessIconName =
   | 'azurewebapp'
   | 'background-ci-step-inverse'
   | 'background-ci-step'
+  | 'background-step-plugin'
   | 'background-step'
   | 'bandit-inverse'
   | 'bandit'
@@ -1165,6 +1172,7 @@ type HarnessIconName =
   | 'bitbucket-selected'
   | 'bitbucket-unselected'
   | 'bitbucket'
+  | 'bitrise-plugin'
   | 'bitrise'
   | 'blank-canvas-card-icon'
   | 'blank-canvas-header-icon'
@@ -1499,6 +1507,7 @@ type HarnessIconName =
   | 'git-landing-page'
   | 'git-new-branch'
   | 'git-popover'
+  | 'github-action-plugin'
   | 'github-actions'
   | 'github-selected'
   | 'github-unselected'
@@ -1543,6 +1552,7 @@ type HarnessIconName =
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
+  | 'harness-plugin'
   | 'harness-with-color'
   | 'harness'
   | 'hashiCorpVault'
@@ -1831,8 +1841,10 @@ type HarnessIconName =
   | 'run-ci-step-inverse'
   | 'run-ci-step'
   | 'run-pipeline'
+  | 'run-step-plugin'
   | 'run-step'
   | 'run-task-step'
+  | 'run-test-step-plugin'
   | 'run-tests-ci-step-inverse'
   | 'run-tests-ci-step'
   | 'run-tests-step'
@@ -2197,6 +2209,7 @@ const HarnessIcons: KVO<ElementType> = {
   azurewebapp: Azurewebapp,
   'background-ci-step-inverse': BackgroundCiStepInverse,
   'background-ci-step': BackgroundCiStep,
+  'background-step-plugin': BackgroundStepPlugin,
   'background-step': BackgroundStep,
   'bandit-inverse': BanditInverse,
   bandit: Bandit,
@@ -2213,6 +2226,7 @@ const HarnessIcons: KVO<ElementType> = {
   'bitbucket-selected': BitbucketSelected,
   'bitbucket-unselected': BitbucketUnselected,
   bitbucket: Bitbucket,
+  'bitrise-plugin': BitrisePlugin,
   bitrise: Bitrise,
   'blank-canvas-card-icon': BlankCanvasCardIcon,
   'blank-canvas-header-icon': BlankCanvasHeaderIcon,
@@ -2547,6 +2561,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
   'git-popover': GitPopover,
+  'github-action-plugin': GithubActionPlugin,
   'github-actions': GithubActions,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
@@ -2591,6 +2606,7 @@ const HarnessIcons: KVO<ElementType> = {
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
+  'harness-plugin': HarnessPlugin,
   'harness-with-color': HarnessWithColor,
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
@@ -2879,8 +2895,10 @@ const HarnessIcons: KVO<ElementType> = {
   'run-ci-step-inverse': RunCiStepInverse,
   'run-ci-step': RunCiStep,
   'run-pipeline': RunPipeline,
+  'run-step-plugin': RunStepPlugin,
   'run-step': RunStep,
   'run-task-step': RunTaskStep,
+  'run-test-step-plugin': RunTestStepPlugin,
   'run-tests-ci-step-inverse': RunTestsCiStepInverse,
   'run-tests-ci-step': RunTestsCiStep,
   'run-tests-step': RunTestsStep,
