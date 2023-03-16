@@ -214,7 +214,7 @@ export function Select(props: SelectProps): React.ReactElement {
   }
   const renderSuggestComponent = () => (
     <Suggest
-      inputValueRenderer={opt => opt.label.toString()}
+      inputValueRenderer={opt => opt.label?.toString()}
       itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
         itemRenderer?.(item, props) || defaultItemRenderer(item, props, size)
       }
