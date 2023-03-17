@@ -90,6 +90,8 @@ import AwsLambdaRollback from './aws-lambda-rollback.svg'
 import AwsLambdaTrafficShift from './aws-lambda-traffic-shift.svg'
 import AwsRds from './aws-rds.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
+import AwsSecurityHubInverse from './aws-security-hub-inverse.svg'
+import AwsSecurityHub from './aws-security-hub.svg'
 import AzureArmRollback from './azure-arm-rollback.svg'
 import AzureArm from './azure-arm.svg'
 import AzureBlob from './azure-blob.svg'
@@ -360,6 +362,8 @@ import Description from './description.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerCiStepInverse from './docker-ci-step-inverse.svg'
 import DockerCiStep from './docker-ci-step.svg'
+import DockerContentTrustInverse from './docker-content-trust-inverse.svg'
+import DockerContentTrust from './docker-content-trust.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
@@ -687,6 +691,10 @@ import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
+import NiktoInvrse from './nikto-invrse.svg'
+import Nikto from './nikto.svg'
+import NmapInverse from './nmap-inverse.svg'
+import Nmap from './nmap.svg'
 import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
@@ -699,6 +707,8 @@ import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
+import OwaspInverse from './owasp-inverse.svg'
+import Owasp from './owasp.svg'
 import PdcInverse from './pdc-inverse.svg'
 import Pdc from './pdc.svg'
 import Pending from './pending.svg'
@@ -734,6 +744,8 @@ import ProbeOnChaos from './probe-onChaos.svg'
 import Profile from './profile.svg'
 import ProgressDial from './progress-dial.svg'
 import ProjectsWizard from './projects-wizard.svg'
+import ProwlerInverse from './prowler-inverse.svg'
+import Prowler from './prowler.svg'
 import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
@@ -1144,6 +1156,8 @@ type HarnessIconName =
   | 'aws-lambda-traffic-shift'
   | 'aws-rds'
   | 'aws-secret-manager'
+  | 'aws-security-hub-inverse'
+  | 'aws-security-hub'
   | 'azure-arm-rollback'
   | 'azure-arm'
   | 'azure-blob'
@@ -1414,6 +1428,8 @@ type HarnessIconName =
   | 'digital-ocean'
   | 'docker-ci-step-inverse'
   | 'docker-ci-step'
+  | 'docker-content-trust-inverse'
+  | 'docker-content-trust'
   | 'docker-hub-step'
   | 'docker-step-inverse'
   | 'docker-step'
@@ -1741,6 +1757,10 @@ type HarnessIconName =
   | 'new-decoration'
   | 'new-notification'
   | 'ng-filter'
+  | 'nikto-invrse'
+  | 'nikto'
+  | 'nmap-inverse'
+  | 'nmap'
   | 'no-deployments'
   | 'no-feedback-given'
   | 'no-instances'
@@ -1753,6 +1773,8 @@ type HarnessIconName =
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
+  | 'owasp-inverse'
+  | 'owasp'
   | 'pdc-inverse'
   | 'pdc'
   | 'pending'
@@ -1788,6 +1810,8 @@ type HarnessIconName =
   | 'profile'
   | 'progress-dial'
   | 'projects-wizard'
+  | 'prowler-inverse'
+  | 'prowler'
   | 'prune-skipped'
   | 'pruned'
   | 'publish-step'
@@ -2198,6 +2222,8 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-lambda-traffic-shift': AwsLambdaTrafficShift,
   'aws-rds': AwsRds,
   'aws-secret-manager': AwsSecretManager,
+  'aws-security-hub-inverse': AwsSecurityHubInverse,
+  'aws-security-hub': AwsSecurityHub,
   'azure-arm-rollback': AzureArmRollback,
   'azure-arm': AzureArm,
   'azure-blob': AzureBlob,
@@ -2468,6 +2494,8 @@ const HarnessIcons: KVO<ElementType> = {
   'digital-ocean': DigitalOcean,
   'docker-ci-step-inverse': DockerCiStepInverse,
   'docker-ci-step': DockerCiStep,
+  'docker-content-trust-inverse': DockerContentTrustInverse,
+  'docker-content-trust': DockerContentTrust,
   'docker-hub-step': DockerHubStep,
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
@@ -2795,6 +2823,10 @@ const HarnessIcons: KVO<ElementType> = {
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
+  'nikto-invrse': NiktoInvrse,
+  nikto: Nikto,
+  'nmap-inverse': NmapInverse,
+  nmap: Nmap,
   'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
   'no-instances': NoInstances,
@@ -2807,6 +2839,8 @@ const HarnessIcons: KVO<ElementType> = {
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
+  'owasp-inverse': OwaspInverse,
+  owasp: Owasp,
   'pdc-inverse': PdcInverse,
   pdc: Pdc,
   pending: Pending,
@@ -2842,6 +2876,8 @@ const HarnessIcons: KVO<ElementType> = {
   profile: Profile,
   'progress-dial': ProgressDial,
   'projects-wizard': ProjectsWizard,
+  'prowler-inverse': ProwlerInverse,
+  prowler: Prowler,
   'prune-skipped': PruneSkipped,
   pruned: Pruned,
   'publish-step': PublishStep,
