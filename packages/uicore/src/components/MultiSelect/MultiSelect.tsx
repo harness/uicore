@@ -250,6 +250,11 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
       selectedItems={value}
       onItemSelect={handleItemSelect}
+      onItemsPaste={items => {
+        if (typeof onChange === 'function' && allowCommaSeparatedList) {
+          onChange(selectedItems.concat(items))
+        }
+      }}
       query={query}
       noResults={<NoMatch />}
       popoverProps={{
