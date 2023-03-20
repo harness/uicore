@@ -540,6 +540,7 @@ import JiraUpdate from './jira-update.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import KubernetesGitops from './kubernetes-gitops.svg'
+import KubernetesHarness from './kubernetes-harness.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
 import Launch from './launch.svg'
@@ -792,6 +793,7 @@ import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
+import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
 import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
@@ -1040,6 +1042,7 @@ import Text from './text.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
+import TodoListHarness from './todo-list-harness.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1606,6 +1609,7 @@ type HarnessIconName =
   | 'key-main'
   | 'key'
   | 'kubernetes-gitops'
+  | 'kubernetes-harness'
   | 'kustamize'
   | 'kustomizeparam'
   | 'launch'
@@ -1858,6 +1862,7 @@ type HarnessIconName =
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'right-bar-notification'
+  | 'right-drawer'
   | 'rollback-execution'
   | 'rolling-inverse'
   | 'rolling-update'
@@ -2106,6 +2111,7 @@ type HarnessIconName =
   | 'thinner-search'
   | 'ti-callgraph'
   | 'timeout'
+  | 'todo-list-harness'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -2672,6 +2678,7 @@ const HarnessIcons: KVO<ElementType> = {
   'key-main': KeyMain,
   key: Key,
   'kubernetes-gitops': KubernetesGitops,
+  'kubernetes-harness': KubernetesHarness,
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
   launch: Launch,
@@ -2924,6 +2931,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
+  'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
   'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
@@ -3172,6 +3180,7 @@ const HarnessIcons: KVO<ElementType> = {
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
   timeout: Timeout,
+  'todo-list-harness': TodoListHarness,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
