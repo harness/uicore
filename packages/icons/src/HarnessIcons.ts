@@ -792,6 +792,7 @@ import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
+import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
 import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
@@ -1858,6 +1859,7 @@ type HarnessIconName =
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'right-bar-notification'
+  | 'right-drawer'
   | 'rollback-execution'
   | 'rolling-inverse'
   | 'rolling-update'
@@ -2924,6 +2926,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'right-bar-notification': RightBarNotification,
+  'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
   'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
