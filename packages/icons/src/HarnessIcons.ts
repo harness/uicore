@@ -540,6 +540,7 @@ import JiraUpdate from './jira-update.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import KubernetesGitops from './kubernetes-gitops.svg'
+import KubernetesHarness from './kubernetes-harness.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
 import Launch from './launch.svg'
@@ -1040,6 +1041,7 @@ import Text from './text.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
+import TodoListHarness from './todo-list-harness.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1606,6 +1608,7 @@ type HarnessIconName =
   | 'key-main'
   | 'key'
   | 'kubernetes-gitops'
+  | 'kubernetes-harness'
   | 'kustamize'
   | 'kustomizeparam'
   | 'launch'
@@ -2106,6 +2109,7 @@ type HarnessIconName =
   | 'thinner-search'
   | 'ti-callgraph'
   | 'timeout'
+  | 'todo-list-harness'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -2672,6 +2676,7 @@ const HarnessIcons: KVO<ElementType> = {
   'key-main': KeyMain,
   key: Key,
   'kubernetes-gitops': KubernetesGitops,
+  'kubernetes-harness': KubernetesHarness,
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
   launch: Launch,
@@ -3172,6 +3177,7 @@ const HarnessIcons: KVO<ElementType> = {
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
   timeout: Timeout,
+  'todo-list-harness': TodoListHarness,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
