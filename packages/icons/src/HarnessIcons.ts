@@ -692,7 +692,7 @@ import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
-import NiktoInvrse from './nikto-invrse.svg'
+import NiktoInverse from './nikto-inverse.svg'
 import Nikto from './nikto.svg'
 import NmapInverse from './nmap-inverse.svg'
 import Nmap from './nmap.svg'
@@ -1761,7 +1761,7 @@ type HarnessIconName =
   | 'new-decoration'
   | 'new-notification'
   | 'ng-filter'
-  | 'nikto-invrse'
+  | 'nikto-inverse'
   | 'nikto'
   | 'nmap-inverse'
   | 'nmap'
@@ -2830,7 +2830,7 @@ const HarnessIcons: KVO<ElementType> = {
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
-  'nikto-invrse': NiktoInvrse,
+  'nikto-inverse': NiktoInverse,
   nikto: Nikto,
   'nmap-inverse': NmapInverse,
   nmap: Nmap,
