@@ -6,13 +6,13 @@
  */
 
 import React from 'react'
-import { InputGroup, IInputGroupProps, Popover, Menu, IPopoverProps } from '@blueprintjs/core'
+import { IInputGroupProps, Popover, Menu, IPopoverProps } from '@blueprintjs/core'
 import { QueryList, IQueryListRendererProps, IItemRendererProps, ItemRenderer } from '@blueprintjs/select'
 import { debounce } from 'lodash-es'
-
 import { escapeStringRegexp } from '../../core/Utils'
 
 import css from './ExpressionInput.css'
+import { TextAreaEditable } from '../TextAreaEditable/TextAreaEditable'
 
 export interface ExpressionInputProps {
   items?: string[]
@@ -80,17 +80,7 @@ export function getItemRenderer(setActiveItem: (item: string) => void): ItemRend
 }
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
-  const {
-    items = [],
-    value,
-    inputProps,
-    popoverProps,
-    onChange,
-    name,
-    maxHeight = 400,
-    disabled,
-    autoComplete = 'off'
-  } = props
+  const { items = [], value, inputProps, popoverProps, onChange, name, maxHeight = 400, disabled } = props
   const mountRef = React.useRef(false)
   /**
    * This holds the complete value of the input
@@ -181,14 +171,33 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         window.requestAnimationFrame(() => {
           if (inputRef.current) {
             // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
-            const position = firstHalf.length + 2 + item.length + 1
+            const position = firstHalf.length + 2 + item.length + 2
 
-            inputRef.current.focus()
-            inputRef.current.setSelectionRange(position, position)
+            // this is required to maintain the carrot position
 
-            // this is required to bring cursor into view for text which is longer than the field
-            inputRef.current.blur()
-            inputRef.current.focus()
+            const childNodesTextLength = Array.from(inputRef.current.childNodes).reduce((arr: number[], child, i) => {
+              const l = child.textContent?.length as number
+              const prev = arr[i - 1] || 0
+
+              arr.push(l + prev)
+
+              return arr
+            }, [])
+
+            const childIndex = childNodesTextLength.findIndex(i => {
+              return i >= position
+            })
+
+            const child = inputRef.current.childNodes[childIndex]
+            const offset = childNodesTextLength[childIndex - 1] - position + 2
+
+            const range = document.createRange()
+            range.setStart(child, offset)
+            range.collapse(true)
+
+            const sel = window.getSelection() as any
+            sel.removeAllRanges()
+            sel.addRange(range)
           }
         })
       }
@@ -221,29 +230,48 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
   }
 
   function renderer(listProps: IQueryListRendererProps<string>): JSX.Element {
+    function getCaretIndex(element: HTMLElement): number {
+      let position = 0
+      const selection = window.getSelection()
+
+      if (selection?.rangeCount !== 0) {
+        const range = (window.getSelection() as any).getRangeAt(0)
+        const preCaretRange = range.cloneRange()
+        preCaretRange.selectNodeContents(element)
+        preCaretRange.setEnd(range.endContainer, range.endOffset)
+        position = preCaretRange.toString().length
+      }
+
+      return position
+    }
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-      const { value, selectionStart } = e.target as HTMLInputElement
+      const { textContent } = e.target as HTMLInputElement
 
-      listProps.handleQueryChange(e)
+      const selectionStart = getCaretIndex(e.target)
 
-      setInputValue(value)
-      updateQueryBasedOnCursor(selectionStart, value)
+      listProps.handleQueryChange({ ...e, target: { ...e.target, value: textContent as string, selectionStart } })
+
+      setInputValue(textContent as string)
+      updateQueryBasedOnCursor(selectionStart, textContent as string)
     }
 
     function handleKeyUp(e: React.KeyboardEvent<HTMLInputElement>) {
       listProps.handleKeyUp(e)
       const { key } = e
-      const { selectionStart, value } = e.target as HTMLInputElement
+      const { textContent } = e.target as HTMLInputElement
+
+      const selectionStart = getCaretIndex(e.target as any)
 
       // only update query when moving left and right
       if (key === 'ArrowLeft' || key === 'ArrowRight') {
-        updateQueryBasedOnCursor(selectionStart, value)
+        updateQueryBasedOnCursor(selectionStart, textContent as string)
       }
     }
 
     function handleMouseUp(e: React.MouseEvent): void {
-      const { selectionStart, value } = e.target as HTMLInputElement
-      updateQueryBasedOnCursor(selectionStart, value)
+      const { textContent } = e.target as HTMLInputElement
+      const selectionStart = getCaretIndex(e.target as any)
+      updateQueryBasedOnCursor(selectionStart, textContent as string)
     }
 
     function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void {
@@ -279,13 +307,12 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         enforceFocus={false}
         popoverClassName={css.popover}
         isOpen={items.length > 0 && !!queryValue}>
-        <InputGroup
+        <TextAreaEditable
           {...inputProps}
-          autoComplete={autoComplete}
           name={name}
           inputRef={inputRef}
           value={inputValue}
-          onChange={handleChange}
+          onInput={handleChange}
           onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           onMouseUp={handleMouseUp}

@@ -47,6 +47,7 @@ export { Utils } from './core/Utils'
 export { TextInput } from './components/TextInput/TextInput'
 export { default as FieldArray } from './components/FieldArray/FieldArray'
 export { Label } from './components/Label/Label'
+export { TextAreaEditable } from './components/TextAreaEditable/TextAreaEditable'
 export {
   parseStringToTime,
   timeToDisplayText,
