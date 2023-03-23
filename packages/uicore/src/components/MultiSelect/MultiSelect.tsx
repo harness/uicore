@@ -83,7 +83,6 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
     }
 
     if (typeof onChange === 'function') {
-      console.log('onchange is called')
       const index = selectedItems.findIndex(opt => opt.value === item.value)
 
       if (index < 0) {
@@ -236,10 +235,6 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
           }
         },
         ...props.tagInputProps,
-        addOnBlur: true,
-        onAdd: items => {
-          console.log('on add ', items)
-        },
         inputProps: {
           ...props.tagInputProps?.inputProps,
           onChange: handleQueryChange,
