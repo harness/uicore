@@ -518,6 +518,9 @@ import HttpProbe from './http-probe.svg'
 import HttpStep from './http-step.svg'
 import IacmBlue from './iacm-blue.svg'
 import IacmGrey from './iacm-grey.svg'
+import IacmResourceAdded from './iacm-resource-added.svg'
+import IacmResourceChanged from './iacm-resource-changed.svg'
+import IacmResourceDeleted from './iacm-resource-deleted.svg'
 import Iacm from './iacm.svg'
 import Idp from './idp.svg'
 import InfinityTrend from './infinityTrend.svg'
@@ -1589,6 +1592,9 @@ type HarnessIconName =
   | 'http-step'
   | 'iacm-blue'
   | 'iacm-grey'
+  | 'iacm-resource-added'
+  | 'iacm-resource-changed'
+  | 'iacm-resource-deleted'
   | 'iacm'
   | 'idp'
   | 'infinityTrend'
@@ -2660,6 +2666,9 @@ const HarnessIcons: KVO<ElementType> = {
   'http-step': HttpStep,
   'iacm-blue': IacmBlue,
   'iacm-grey': IacmGrey,
+  'iacm-resource-added': IacmResourceAdded,
+  'iacm-resource-changed': IacmResourceChanged,
+  'iacm-resource-deleted': IacmResourceDeleted,
   iacm: Iacm,
   idp: Idp,
   infinityTrend: InfinityTrend,
