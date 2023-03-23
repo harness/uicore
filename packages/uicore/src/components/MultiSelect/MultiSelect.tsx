@@ -83,6 +83,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
     }
 
     if (typeof onChange === 'function') {
+      console.log('onchange is called')
       const index = selectedItems.findIndex(opt => opt.value === item.value)
 
       if (index < 0) {
@@ -224,6 +225,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
             })
           }
         },
+
         onRemove(value: React.ReactNode) {
           const option = selectedItems.find(opt => {
             if (typeof value === 'string') return opt.label === value
@@ -234,17 +236,15 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
           }
         },
         ...props.tagInputProps,
+        addOnBlur: true,
+        onAdd: items => {
+          console.log('on add ', items)
+        },
         inputProps: {
           ...props.tagInputProps?.inputProps,
           onChange: handleQueryChange,
           name: props.name,
-          disabled,
-          onBlur: () => {
-            if (props?.allowCreatingNewItems && query?.trim()) {
-              handleItemSelect({ label: query, value: query })
-              setQuery('')
-            }
-          }
+          disabled
         }
       }}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
