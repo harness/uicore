@@ -404,11 +404,13 @@ import EvaluatePolicy from './evaluate-policy.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionCompleted from './execution-completed.svg'
 import ExecutionConditional from './execution-conditional.svg'
+import ExecutionDestroy from './execution-destroy.svg'
 import ExecutionError from './execution-error.svg'
 import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionIssue from './execution-issue.svg'
 import ExecutionPaused from './execution-paused.svg'
+import ExecutionProvision from './execution-provision.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionRunning from './execution-running.svg'
 import ExecutionStopped from './execution-stopped.svg'
@@ -516,6 +518,9 @@ import HttpProbe from './http-probe.svg'
 import HttpStep from './http-step.svg'
 import IacmBlue from './iacm-blue.svg'
 import IacmGrey from './iacm-grey.svg'
+import IacmResourceAdded from './iacm-resource-added.svg'
+import IacmResourceChanged from './iacm-resource-changed.svg'
+import IacmResourceDeleted from './iacm-resource-deleted.svg'
 import Iacm from './iacm.svg'
 import Idp from './idp.svg'
 import InfinityTrend from './infinityTrend.svg'
@@ -1473,11 +1478,13 @@ type HarnessIconName =
   | 'execution-abort'
   | 'execution-completed'
   | 'execution-conditional'
+  | 'execution-destroy'
   | 'execution-error'
   | 'execution-history'
   | 'execution-input'
   | 'execution-issue'
   | 'execution-paused'
+  | 'execution-provision'
   | 'execution-rollback'
   | 'execution-running'
   | 'execution-stopped'
@@ -1585,6 +1592,9 @@ type HarnessIconName =
   | 'http-step'
   | 'iacm-blue'
   | 'iacm-grey'
+  | 'iacm-resource-added'
+  | 'iacm-resource-changed'
+  | 'iacm-resource-deleted'
   | 'iacm'
   | 'idp'
   | 'infinityTrend'
@@ -2542,11 +2552,13 @@ const HarnessIcons: KVO<ElementType> = {
   'execution-abort': ExecutionAbort,
   'execution-completed': ExecutionCompleted,
   'execution-conditional': ExecutionConditional,
+  'execution-destroy': ExecutionDestroy,
   'execution-error': ExecutionError,
   'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
   'execution-issue': ExecutionIssue,
   'execution-paused': ExecutionPaused,
+  'execution-provision': ExecutionProvision,
   'execution-rollback': ExecutionRollback,
   'execution-running': ExecutionRunning,
   'execution-stopped': ExecutionStopped,
@@ -2654,6 +2666,9 @@ const HarnessIcons: KVO<ElementType> = {
   'http-step': HttpStep,
   'iacm-blue': IacmBlue,
   'iacm-grey': IacmGrey,
+  'iacm-resource-added': IacmResourceAdded,
+  'iacm-resource-changed': IacmResourceChanged,
+  'iacm-resource-deleted': IacmResourceDeleted,
   iacm: Iacm,
   idp: Idp,
   infinityTrend: InfinityTrend,
