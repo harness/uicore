@@ -1071,6 +1071,7 @@ import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
+import Webhook from './webhook.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import WigglyArrow from './wiggly-arrow.svg'
@@ -2145,6 +2146,7 @@ type HarnessIconName =
   | 'waiting'
   | 'warning-icon'
   | 'warning-outline'
+  | 'webhook'
   | 'white-cluster'
   | 'white-full-cluster'
   | 'wiggly-arrow'
@@ -3219,6 +3221,7 @@ const HarnessIcons: KVO<ElementType> = {
   waiting: Waiting,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
+  webhook: Webhook,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
   'wiggly-arrow': WigglyArrow,
