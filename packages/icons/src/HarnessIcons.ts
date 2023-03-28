@@ -59,6 +59,7 @@ import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
@@ -375,6 +376,8 @@ import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
+import EksInverse from './eks-inverse.svg'
+import Eks from './eks.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import ElastigroupBluegreenInverse from './elastigroup-bluegreen-inverse.svg'
 import ElastigroupBluegreen from './elastigroup-bluegreen.svg'
@@ -1134,6 +1137,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'apply'
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
@@ -1450,6 +1454,8 @@ type HarnessIconName =
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
   | 'ecr-step'
+  | 'eks-inverse'
+  | 'eks'
   | 'elastic-kubernetes-service'
   | 'elastigroup-bluegreen-inverse'
   | 'elastigroup-bluegreen'
@@ -2209,6 +2215,7 @@ const HarnessIcons: KVO<ElementType> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  apply: Apply,
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
@@ -2525,6 +2532,8 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
+  'eks-inverse': EksInverse,
+  eks: Eks,
   'elastic-kubernetes-service': ElasticKubernetesService,
   'elastigroup-bluegreen-inverse': ElastigroupBluegreenInverse,
   'elastigroup-bluegreen': ElastigroupBluegreen,
