@@ -20,6 +20,8 @@ import AuqaTrivyInverse from './AuqaTrivy-inverse.svg'
 import AuqaTrivy from './AuqaTrivy.svg'
 import BlackDuckInverse from './BlackDuck-inverse.svg'
 import BlackDuck from './BlackDuck.svg'
+import BurpInverse from './Burp-inverse.svg'
+import Burp from './Burp.svg'
 import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
 import CustomDeployment from './CustomDeployment.svg'
@@ -29,11 +31,17 @@ import Inline from './Inline.svg'
 import Options from './Options.svg'
 import PrismaCloudInverse from './PrismaCloud-inverse.svg'
 import PrismaCloud from './PrismaCloud.svg'
+import QualysInverse from './Qualys-inverse.svg'
+import Qualys from './Qualys.svg'
 import SnykInverse from './Snyk-inverse.svg'
 import Snyk from './Snyk.svg'
 import SonarQubeInverse from './SonarQube-inverse.svg'
 import SonarQube from './SonarQube.svg'
 import Stroke from './Stroke.svg'
+import TenableInverse from './Tenable-inverse.svg'
+import Tenable from './Tenable.svg'
+import VeracodeInverse from './Veracode-inverse.svg'
+import Veracode from './Veracode.svg'
 import ZapInverse from './ZAP-inverse.svg'
 import Zap from './ZAP.svg'
 import AccessControl from './access-control.svg'
@@ -123,8 +131,6 @@ import BrakemanInverse from './brakeman-inverse.svg'
 import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
-import BurpInverse from './burp-inverse.svg'
-import Burp from './burp.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
 import CanaryGrey from './canary-grey.svg'
@@ -757,8 +763,6 @@ import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import PullRequest from './pull-request.svg'
 import Python from './python.svg'
-import QualysInverse from './qualys-inverse.svg'
-import Qualys from './qualys.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
@@ -1021,8 +1025,6 @@ import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
 import TemplatesIcon from './templates-icon.svg'
-import TenableInverse from './tenable-inverse.svg'
-import Tenable from './tenable.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
@@ -1070,8 +1072,6 @@ import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
 import Variable from './variable.svg'
 import VariablesBlue from './variables-blue.svg'
-import VeracodeInverse from './veracode-inverse.svg'
-import Veracode from './veracode.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
@@ -1101,6 +1101,8 @@ type HarnessIconName =
   | 'AuqaTrivy'
   | 'BlackDuck-inverse'
   | 'BlackDuck'
+  | 'Burp-inverse'
+  | 'Burp'
   | 'Checkmarx-inverse'
   | 'Checkmarx'
   | 'CustomDeployment'
@@ -1110,11 +1112,17 @@ type HarnessIconName =
   | 'Options'
   | 'PrismaCloud-inverse'
   | 'PrismaCloud'
+  | 'Qualys-inverse'
+  | 'Qualys'
   | 'Snyk-inverse'
   | 'Snyk'
   | 'SonarQube-inverse'
   | 'SonarQube'
   | 'Stroke'
+  | 'Tenable-inverse'
+  | 'Tenable'
+  | 'Veracode-inverse'
+  | 'Veracode'
   | 'ZAP-inverse'
   | 'ZAP'
   | 'access-control'
@@ -1204,8 +1212,6 @@ type HarnessIconName =
   | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
-  | 'burp-inverse'
-  | 'burp'
   | 'canary-delete-inverse'
   | 'canary-delete'
   | 'canary-grey'
@@ -1838,8 +1844,6 @@ type HarnessIconName =
   | 'publish-step'
   | 'pull-request'
   | 'python'
-  | 'qualys-inverse'
-  | 'qualys'
   | 'question'
   | 'queue-step'
   | 'queued'
@@ -2102,8 +2106,6 @@ type HarnessIconName =
   | 'template-library'
   | 'templates-blue'
   | 'templates-icon'
-  | 'tenable-inverse'
-  | 'tenable'
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
   | 'terraform-apply'
@@ -2151,8 +2153,6 @@ type HarnessIconName =
   | 'valuesFIle'
   | 'variable'
   | 'variables-blue'
-  | 'veracode-inverse'
-  | 'veracode'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
@@ -2182,6 +2182,8 @@ const HarnessIcons: KVO<ElementType> = {
   AuqaTrivy: AuqaTrivy,
   'BlackDuck-inverse': BlackDuckInverse,
   BlackDuck: BlackDuck,
+  'Burp-inverse': BurpInverse,
+  Burp: Burp,
   'Checkmarx-inverse': CheckmarxInverse,
   Checkmarx: Checkmarx,
   CustomDeployment: CustomDeployment,
@@ -2191,11 +2193,17 @@ const HarnessIcons: KVO<ElementType> = {
   Options: Options,
   'PrismaCloud-inverse': PrismaCloudInverse,
   PrismaCloud: PrismaCloud,
+  'Qualys-inverse': QualysInverse,
+  Qualys: Qualys,
   'Snyk-inverse': SnykInverse,
   Snyk: Snyk,
   'SonarQube-inverse': SonarQubeInverse,
   SonarQube: SonarQube,
   Stroke: Stroke,
+  'Tenable-inverse': TenableInverse,
+  Tenable: Tenable,
+  'Veracode-inverse': VeracodeInverse,
+  Veracode: Veracode,
   'ZAP-inverse': ZapInverse,
   ZAP: Zap,
   'access-control': AccessControl,
@@ -2285,8 +2293,6 @@ const HarnessIcons: KVO<ElementType> = {
   brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
-  'burp-inverse': BurpInverse,
-  burp: Burp,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
   'canary-grey': CanaryGrey,
@@ -2919,8 +2925,6 @@ const HarnessIcons: KVO<ElementType> = {
   'publish-step': PublishStep,
   'pull-request': PullRequest,
   python: Python,
-  'qualys-inverse': QualysInverse,
-  qualys: Qualys,
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
@@ -3183,8 +3187,6 @@ const HarnessIcons: KVO<ElementType> = {
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
   'templates-icon': TemplatesIcon,
-  'tenable-inverse': TenableInverse,
-  tenable: Tenable,
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
@@ -3232,8 +3234,6 @@ const HarnessIcons: KVO<ElementType> = {
   valuesFIle: ValuesFIle,
   variable: Variable,
   'variables-blue': VariablesBlue,
-  'veracode-inverse': VeracodeInverse,
-  veracode: Veracode,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
