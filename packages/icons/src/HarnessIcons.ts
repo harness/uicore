@@ -26,8 +26,6 @@ import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
-import FortifyOnDemandInverse from './FortifyOnDemand-inverse.svg'
-import FortifyOnDemand from './FortifyOnDemand.svg'
 import FreezeWindow from './FreezeWindow.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -438,6 +436,8 @@ import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
+import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
+import FortifyOnDemand from './fortify-on-demand.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
@@ -655,6 +655,8 @@ import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
 import Mend from './mend.svg'
 import MergePr from './merge-pr.svg'
+import MetasploitInverse from './metasploit-inverse.svg'
+import Metasploit from './metasploit.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
@@ -716,6 +718,7 @@ import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
+import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
 import OwaspInverse from './owasp-inverse.svg'
 import Owasp from './owasp.svg'
 import PdcInverse from './pdc-inverse.svg'
@@ -1104,8 +1107,6 @@ type HarnessIconName =
   | 'Checkmarx'
   | 'CustomDeployment'
   | 'Edit'
-  | 'FortifyOnDemand-inverse'
-  | 'FortifyOnDemand'
   | 'FreezeWindow'
   | 'Inline'
   | 'Options'
@@ -1516,6 +1517,8 @@ type HarnessIconName =
   | 'flag'
   | 'flash'
   | 'folder-upload'
+  | 'fortify-on-demand-inverse'
+  | 'fortify-on-demand'
   | 'full-screen-exit'
   | 'full-screen'
   | 'functions'
@@ -1733,6 +1736,8 @@ type HarnessIconName =
   | 'mend-inverse'
   | 'mend'
   | 'merge-pr'
+  | 'metasploit-inverse'
+  | 'metasploit'
   | 'microsoft-azure'
   | 'money-icon'
   | 'multi-service'
@@ -1794,6 +1799,7 @@ type HarnessIconName =
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
+  | 'owasp-dependency-check-inverse'
   | 'owasp-inverse'
   | 'owasp'
   | 'pdc-inverse'
@@ -2182,8 +2188,6 @@ const HarnessIcons: KVO<ElementType> = {
   Checkmarx: Checkmarx,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
-  'FortifyOnDemand-inverse': FortifyOnDemandInverse,
-  FortifyOnDemand: FortifyOnDemand,
   FreezeWindow: FreezeWindow,
   Inline: Inline,
   Options: Options,
@@ -2594,6 +2598,8 @@ const HarnessIcons: KVO<ElementType> = {
   flag: Flag,
   flash: Flash,
   'folder-upload': FolderUpload,
+  'fortify-on-demand-inverse': FortifyOnDemandInverse,
+  'fortify-on-demand': FortifyOnDemand,
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
   functions: Functions,
@@ -2811,6 +2817,8 @@ const HarnessIcons: KVO<ElementType> = {
   'mend-inverse': MendInverse,
   mend: Mend,
   'merge-pr': MergePr,
+  'metasploit-inverse': MetasploitInverse,
+  metasploit: Metasploit,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
@@ -2872,6 +2880,7 @@ const HarnessIcons: KVO<ElementType> = {
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
+  'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
   'owasp-inverse': OwaspInverse,
   owasp: Owasp,
   'pdc-inverse': PdcInverse,
