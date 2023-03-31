@@ -5,7 +5,8 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { HTMLAttributes, useRef, useLayoutEffect, useState, useEffect } from 'react'
+import React, { HTMLAttributes, useRef, useState, useCallback, useMemo } from 'react'
+import { debounce } from 'lodash-es'
 import cx from 'classnames'
 import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
 import { styledClass } from '@harness/design-system'
@@ -40,13 +41,13 @@ export interface TextProps extends HTMLAttributes<HTMLDivElement>, StyledProps, 
   tag?: string
 }
 
-export function Text(props: TextProps) {
+export function Text(props: TextProps): JSX.Element {
+  const { icon, iconProps, rightIcon, rightIconProps, alwaysShowTooltip, lineClamp } = props
   const Tag = (props.tag ? props.tag : props.inline ? 'span' : 'p') as React.ElementType
-  const [tooltip, setTooltip] = useState(props.tooltip)
-  const lineClamp = props.lineClamp
+  const [isScrollable, setIsScrollable] = useState(false)
+  const ref = useRef<HTMLElement | null>(null)
+  const observerRef = useRef<ResizeObserver>()
   const style = { ...props.style }
-  const ref = useRef<HTMLElement>()
-  const { icon, iconProps, rightIcon, rightIconProps, alwaysShowTooltip } = props
 
   if (lineClamp) {
     ;(style as any)['--text-line-clamp'] = lineClamp // eslint-disable-line
@@ -57,33 +58,46 @@ export function Text(props: TextProps) {
     ;(style as any)['alignItems'] = 'center' // eslint-disable-line
   }
 
-  useLayoutEffect(() => {
-    const renderTooltip = () => {
-      const heightDifference = (ref.current?.scrollHeight || 0) - (ref.current?.offsetHeight || 0)
-      const widthDifference = (ref.current?.scrollWidth || 0) - (ref.current?.offsetWidth || 0)
-      // Reason to consider difference more than 1 px is
-      // If height is 18.2 Px, chrome taking scrollHeight as 18px and firefox take this as 19px
-      // where as offsetHeight both take it as 18px
-      if (lineClamp && lineClamp > 0 && (heightDifference > 1 || widthDifference > 1)) {
-        setTooltip(props.tooltip || (props.children as JSX.Element))
-      } else {
-        setTooltip(undefined)
-      }
+  const onResize = useMemo(
+    () =>
+      debounce(() => {
+        if (!ref.current) return
+
+        const element = ref.current
+        const heightDifference = (element.scrollHeight || 0) - (element.offsetHeight || 0)
+        const widthDifference = (element.scrollWidth || 0) - (element.offsetWidth || 0)
+
+        // Reason to consider difference more than 1 px is
+        // If height is 18.2 Px, chrome taking scrollHeight as 18px and firefox take this as 19px
+        // where as offsetHeight both take it as 18px
+        setIsScrollable(heightDifference > 1 || widthDifference > 1)
+      }, 300),
+    []
+  )
+
+  const refCallback = useCallback(
+    (el: HTMLElement | null) => {
+      ref.current = el
+      observerRef.current?.disconnect()
+
+      if (!ref.current || !lineClamp) return
+      observerRef.current = new ResizeObserver(onResize)
+      observerRef.current.observe(ref.current)
+    },
+    [lineClamp]
+  )
+
+  const tooltip = (() => {
+    if (props.tooltip && (alwaysShowTooltip || !lineClamp)) {
+      return props.tooltip
     }
 
-    renderTooltip()
-    addEventListener('resize', renderTooltip)
-
-    return () => {
-      removeEventListener('resize', renderTooltip)
+    if (isScrollable && lineClamp && lineClamp > 0) {
+      return props.tooltip || (props.children as JSX.Element)
     }
-  }, [props.children, props.tooltip, props.tooltipProps])
 
-  useEffect(() => {
-    if ((!lineClamp || alwaysShowTooltip) && props.tooltip) {
-      setTooltip(props.tooltip)
-    }
-  }, [lineClamp, props.tooltip, alwaysShowTooltip])
+    return undefined
+  })()
 
   const wrappedInTooltip = (
     <Utils.WrapOptionalTooltip
@@ -105,7 +119,7 @@ export function Text(props: TextProps) {
           'tag'
         )}
         className={styledClasses(props, styledClass.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
-        ref={ref}>
+        ref={refCallback}>
         {icon && <Icon className={css.icon} name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
         {props.children}
         {rightIcon && (

@@ -383,10 +383,19 @@ export const CustomTooltip2: Story<TextProps> = args => {
 }
 export const NoTooltipWhenThereIsEnoughSpaceToRenderTheWholeText: Story<TextProps> = args => {
   return (
-    <Text font="normal" width={300} lineClamp={3} {...args}>
-      The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox
-      jumps over the lazy dog.
-    </Text>
+    <>
+      <Text margin={{ bottom: 'medium' }}>
+        Tooltip renders only when there is not enough space. The tooltip can be seen when the below div is resized until
+        lines are clamped.
+      </Text>
+      <div style={{ resize: 'horizontal', overflow: 'auto', width: '600px', border: '3px solid #c5c5c5' }}>
+        <Text font="normal" lineClamp={3} {...args}>
+          The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox
+          jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy
+          dog.
+        </Text>
+      </div>
+    </>
   )
 }
 export const LeftIcon: Story<TextProps> = args => {
