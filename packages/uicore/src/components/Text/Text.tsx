@@ -80,7 +80,7 @@ export function Text(props: TextProps): JSX.Element {
       ref.current = el
       observerRef.current?.disconnect()
 
-      if (!ref.current || !lineClamp) return
+      if (!ref.current || !lineClamp || !('ResizeObserver' in window)) return
       observerRef.current = new ResizeObserver(onResize)
       observerRef.current.observe(ref.current)
     },
