@@ -312,6 +312,7 @@ import CsHover from './cs-hover.svg'
 import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
+import CustomIngest from './custom-ingest.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
 import CustomService from './custom-service.svg'
 import CustomSm from './custom-sm.svg'
@@ -470,6 +471,7 @@ import Github from './github.svg'
 import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
+import Gitleaks from './gitleaks.svg'
 import GitopsAgentBlue from './gitops-agent-blue.svg'
 import GitopsAgent from './gitops-agent.svg'
 import GitopsAgentsBlueCircle from './gitops-agents-blue-circle.svg'
@@ -1393,6 +1395,7 @@ type HarnessIconName =
   | 'currency-banner'
   | 'custom-approval'
   | 'custom-artifact'
+  | 'custom-ingest'
   | 'custom-remote-manifest'
   | 'custom-service'
   | 'custom-sm'
@@ -1551,6 +1554,7 @@ type HarnessIconName =
   | 'gitlab-selected'
   | 'gitlab-unselected'
   | 'gitlab'
+  | 'gitleaks'
   | 'gitops-agent-blue'
   | 'gitops-agent'
   | 'gitops-agents-blue-circle'
@@ -2474,6 +2478,7 @@ const HarnessIcons: KVO<ElementType> = {
   'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
+  'custom-ingest': CustomIngest,
   'custom-remote-manifest': CustomRemoteManifest,
   'custom-service': CustomService,
   'custom-sm': CustomSm,
@@ -2632,6 +2637,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
+  gitleaks: Gitleaks,
   'gitops-agent-blue': GitopsAgentBlue,
   'gitops-agent': GitopsAgent,
   'gitops-agents-blue-circle': GitopsAgentsBlueCircle,
