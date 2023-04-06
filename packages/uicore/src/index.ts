@@ -55,6 +55,8 @@ export {
   DurationInputHelpers,
   DurationInputProps
 } from './components/DurationInput/DurationInput'
+export { ListHeader } from './components/ListHeader/ListHeader'
+export * from './components/SortDropdown/SortDropdown'
 export { Select, SelectProps, SelectOption } from './components/Select/Select'
 export { SelectV2, SelectV2Props } from './components/Select/SelectV2'
 export { DropDown, DropDownProps } from './components/DropDown/DropDown'
