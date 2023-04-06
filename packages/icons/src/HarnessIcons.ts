@@ -26,8 +26,6 @@ import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
-import FortifyOnDemandInverse from './FortifyOnDemand-inverse.svg'
-import FortifyOnDemand from './FortifyOnDemand.svg'
 import FreezeWindow from './FreezeWindow.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
@@ -59,6 +57,7 @@ import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
@@ -313,6 +312,7 @@ import CsHover from './cs-hover.svg'
 import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
+import CustomIngest from './custom-ingest.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
 import CustomService from './custom-service.svg'
 import CustomSm from './custom-sm.svg'
@@ -375,6 +375,8 @@ import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
+import EksInverse from './eks-inverse.svg'
+import Eks from './eks.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import ElastigroupBluegreenInverse from './elastigroup-bluegreen-inverse.svg'
 import ElastigroupBluegreen from './elastigroup-bluegreen.svg'
@@ -435,6 +437,8 @@ import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
+import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
+import FortifyOnDemand from './fortify-on-demand.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
@@ -467,6 +471,7 @@ import Github from './github.svg'
 import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
+import Gitleaks from './gitleaks.svg'
 import GitopsAgentBlue from './gitops-agent-blue.svg'
 import GitopsAgent from './gitops-agent.svg'
 import GitopsAgentsBlueCircle from './gitops-agents-blue-circle.svg'
@@ -652,6 +657,8 @@ import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
 import Mend from './mend.svg'
 import MergePr from './merge-pr.svg'
+import MetasploitInverse from './metasploit-inverse.svg'
+import Metasploit from './metasploit.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
 import MultiService from './multi-service.svg'
@@ -713,6 +720,7 @@ import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OtherWorkload from './other-workload.svg'
+import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
 import OwaspInverse from './owasp-inverse.svg'
 import Owasp from './owasp.svg'
 import PdcInverse from './pdc-inverse.svg'
@@ -1101,8 +1109,6 @@ type HarnessIconName =
   | 'Checkmarx'
   | 'CustomDeployment'
   | 'Edit'
-  | 'FortifyOnDemand-inverse'
-  | 'FortifyOnDemand'
   | 'FreezeWindow'
   | 'Inline'
   | 'Options'
@@ -1134,6 +1140,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'apply'
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
@@ -1388,6 +1395,7 @@ type HarnessIconName =
   | 'currency-banner'
   | 'custom-approval'
   | 'custom-artifact'
+  | 'custom-ingest'
   | 'custom-remote-manifest'
   | 'custom-service'
   | 'custom-sm'
@@ -1450,6 +1458,8 @@ type HarnessIconName =
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
   | 'ecr-step'
+  | 'eks-inverse'
+  | 'eks'
   | 'elastic-kubernetes-service'
   | 'elastigroup-bluegreen-inverse'
   | 'elastigroup-bluegreen'
@@ -1510,6 +1520,8 @@ type HarnessIconName =
   | 'flag'
   | 'flash'
   | 'folder-upload'
+  | 'fortify-on-demand-inverse'
+  | 'fortify-on-demand'
   | 'full-screen-exit'
   | 'full-screen'
   | 'functions'
@@ -1542,6 +1554,7 @@ type HarnessIconName =
   | 'gitlab-selected'
   | 'gitlab-unselected'
   | 'gitlab'
+  | 'gitleaks'
   | 'gitops-agent-blue'
   | 'gitops-agent'
   | 'gitops-agents-blue-circle'
@@ -1727,6 +1740,8 @@ type HarnessIconName =
   | 'mend-inverse'
   | 'mend'
   | 'merge-pr'
+  | 'metasploit-inverse'
+  | 'metasploit'
   | 'microsoft-azure'
   | 'money-icon'
   | 'multi-service'
@@ -1788,6 +1803,7 @@ type HarnessIconName =
   | 'openshift-params'
   | 'openshift'
   | 'other-workload'
+  | 'owasp-dependency-check-inverse'
   | 'owasp-inverse'
   | 'owasp'
   | 'pdc-inverse'
@@ -2176,8 +2192,6 @@ const HarnessIcons: KVO<ElementType> = {
   Checkmarx: Checkmarx,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
-  'FortifyOnDemand-inverse': FortifyOnDemandInverse,
-  FortifyOnDemand: FortifyOnDemand,
   FreezeWindow: FreezeWindow,
   Inline: Inline,
   Options: Options,
@@ -2209,6 +2223,7 @@ const HarnessIcons: KVO<ElementType> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  apply: Apply,
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
@@ -2463,6 +2478,7 @@ const HarnessIcons: KVO<ElementType> = {
   'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
+  'custom-ingest': CustomIngest,
   'custom-remote-manifest': CustomRemoteManifest,
   'custom-service': CustomService,
   'custom-sm': CustomSm,
@@ -2525,6 +2541,8 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
+  'eks-inverse': EksInverse,
+  eks: Eks,
   'elastic-kubernetes-service': ElasticKubernetesService,
   'elastigroup-bluegreen-inverse': ElastigroupBluegreenInverse,
   'elastigroup-bluegreen': ElastigroupBluegreen,
@@ -2585,6 +2603,8 @@ const HarnessIcons: KVO<ElementType> = {
   flag: Flag,
   flash: Flash,
   'folder-upload': FolderUpload,
+  'fortify-on-demand-inverse': FortifyOnDemandInverse,
+  'fortify-on-demand': FortifyOnDemand,
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
   functions: Functions,
@@ -2617,6 +2637,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
+  gitleaks: Gitleaks,
   'gitops-agent-blue': GitopsAgentBlue,
   'gitops-agent': GitopsAgent,
   'gitops-agents-blue-circle': GitopsAgentsBlueCircle,
@@ -2802,6 +2823,8 @@ const HarnessIcons: KVO<ElementType> = {
   'mend-inverse': MendInverse,
   mend: Mend,
   'merge-pr': MergePr,
+  'metasploit-inverse': MetasploitInverse,
+  metasploit: Metasploit,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
   'multi-service': MultiService,
@@ -2863,6 +2886,7 @@ const HarnessIcons: KVO<ElementType> = {
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'other-workload': OtherWorkload,
+  'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
   'owasp-inverse': OwaspInverse,
   owasp: Owasp,
   'pdc-inverse': PdcInverse,

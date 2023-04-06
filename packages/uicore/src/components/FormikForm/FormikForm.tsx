@@ -834,6 +834,7 @@ export interface FormikFormProps extends Omit<HTMLFormElement, 'className'> {
   disabled?: boolean
   children: React.ReactNode
   formik?: FormikExtended<any>
+  [Symbol.iterator]?(): IterableIterator<Element>
 }
 
 const Form = (props: FormikFormProps) => {
