@@ -17,7 +17,7 @@
 }
 
 .tooltipIcon {
-  margin-left: var(--spacing-xsmall);
+  margin: 0 var(--spacing-xsmall) var(--spacing-xsmall) var(--spacing-xsmall);
   display: flex;
   position: relative;
 }
