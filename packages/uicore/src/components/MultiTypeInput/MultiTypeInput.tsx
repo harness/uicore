@@ -60,6 +60,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   disabled?: boolean
   mini?: boolean
   resetExpressionOnFixedTypeChange?: boolean
+  placeholder?: string
 }
 
 export interface FixedTypeComponentProps {
@@ -123,6 +124,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
      * If `resetExpressionOnFixedTypeChange` is set to true, these values would be reset
      */
     resetExpressionOnFixedTypeChange,
+    placeholder,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -194,7 +196,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
         <TextInput
           wrapperClassName={css.input}
           name={name}
-          placeholder={RUNTIME_INPUT_VALUE}
+          placeholder={placeholder || RUNTIME_INPUT_VALUE}
           disabled
           value={value as string}
         />
@@ -203,7 +205,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
         <TextInput
           wrapperClassName={css.input}
           name={name}
-          placeholder={EXECUTION_TIME_INPUT_VALUE}
+          placeholder={placeholder || EXECUTION_TIME_INPUT_VALUE}
           disabled
           value={value as string}
         />
@@ -215,7 +217,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           }}
           name={name}
           items={expressions}
-          inputProps={{ placeholder: EXPRESSION_INPUT_PLACEHOLDER }}
+          inputProps={{ placeholder: placeholder || EXPRESSION_INPUT_PLACEHOLDER }}
           value={value as string}
           disabled={disabled}
           onChange={val => {
