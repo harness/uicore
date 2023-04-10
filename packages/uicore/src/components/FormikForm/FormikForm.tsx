@@ -864,7 +864,7 @@ const Form = (props: FormikFormProps) => {
 
 export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
   formLoading?: boolean
-  onSubmit: (values: Values, formikActions: FormikHelpers<Values>) => void | Promise<Values>
+  onSubmit: (values: Values, formikActions: FormikHelpers<Values>) => void | Promise<void> | Promise<Values>
   formName: string
 }
 
