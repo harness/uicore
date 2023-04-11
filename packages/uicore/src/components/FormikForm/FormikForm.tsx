@@ -38,7 +38,11 @@ import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { ColorPickerProps, ColorPicker } from '../ColorPicker/ColorPicker'
-import { InputWithIdentifier, InputWithIdentifierProps } from '../InputWithIdentifier/InputWithIdentifier'
+import {
+  InputWithIdentifier,
+  InputWithIdentifierProps,
+  getIdentifierFromName
+} from '../InputWithIdentifier/InputWithIdentifier'
 import {
   MultiTypeInputProps,
   MultiTypeInput,
@@ -677,10 +681,11 @@ export interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   inputGroup?: Omit<IInputGroupProps & HTMLInputProps, 'name' | 'value' | 'onChange' | 'placeholder'>
   placeholder?: string
   onChange?: IInputGroupProps['onChange']
+  isIdentifier?: boolean
 }
 
 const Text = (props: TextProps & FormikContextProps<any>) => {
-  const { formik, name, ...restProps } = props
+  const { formik, name, isIdentifier = false, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -716,10 +721,15 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
           inputGroup?.onBlur?.(e)
         }}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
-          if (inputGroup?.type === 'number') {
-            formik?.setFieldValue(name, parseFloat(e.currentTarget.value))
+          if (isIdentifier) {
+            const identifier = getIdentifierFromName(e.currentTarget.value)
+            formik?.setFieldValue(name, identifier)
           } else {
-            formik?.setFieldValue(name, e.currentTarget.value)
+            if (inputGroup?.type === 'number') {
+              formik?.setFieldValue(name, parseFloat(e.currentTarget.value))
+            } else {
+              formik?.setFieldValue(name, e.currentTarget.value)
+            }
           }
           onChange?.(e)
         }}
