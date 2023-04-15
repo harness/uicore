@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { IInputGroupProps, Popover, Menu, IPopoverProps } from '@blueprintjs/core'
+import { IInputGroupProps, Popover, Menu, IPopoverProps, InputGroup } from '@blueprintjs/core'
 import { QueryList, IQueryListRendererProps, IItemRendererProps, ItemRenderer } from '@blueprintjs/select'
 import { debounce } from 'lodash-es'
 import { escapeStringRegexp } from '../../core/Utils'
@@ -27,6 +27,7 @@ export interface ExpressionInputProps {
   onChange(str: string): void
   autoComplete?: string
   disabled?: boolean
+  newExpressionComponent: boolean
 }
 
 /**
@@ -80,7 +81,18 @@ export function getItemRenderer(setActiveItem: (item: string) => void): ItemRend
 }
 
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
-  const { items = [], value, inputProps, popoverProps, onChange, name, maxHeight = 400, disabled } = props
+  const {
+    items = [],
+    value,
+    inputProps,
+    popoverProps,
+    onChange,
+    name,
+    maxHeight = 400,
+    disabled,
+    autoComplete = 'off',
+    newExpressionComponent
+  } = props
   const mountRef = React.useRef(false)
   /**
    * This holds the complete value of the input
@@ -171,33 +183,44 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         window.requestAnimationFrame(() => {
           if (inputRef.current) {
             // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
-            const position = firstHalf.length + 2 + item.length + 2
+            if (newExpressionComponent) {
+              const position = firstHalf.length + 2 + item.length + 2
 
-            // this is required to maintain the carrot position
+              // this is required to maintain the carrot position
 
-            const childNodesTextLength = Array.from(inputRef.current.childNodes).reduce((arr: number[], child, i) => {
-              const l = child.textContent?.length as number
-              const prev = arr[i - 1] || 0
+              const childNodesTextLength = Array.from(inputRef.current.childNodes).reduce((arr: number[], child, i) => {
+                const l = child.textContent?.length as number
+                const prev = arr[i - 1] || 0
 
-              arr.push(l + prev)
+                arr.push(l + prev)
 
-              return arr
-            }, [])
+                return arr
+              }, [])
 
-            const childIndex = childNodesTextLength.findIndex(i => {
-              return i >= position
-            })
+              const childIndex = childNodesTextLength.findIndex(i => {
+                return i >= position
+              })
 
-            const child = inputRef.current.childNodes[childIndex]
-            const offset = childNodesTextLength[childIndex - 1] - position + 2
+              const child = inputRef.current.childNodes[childIndex]
+              const offset = childNodesTextLength[childIndex - 1] - position + 2
 
-            const range = document.createRange()
-            range.setStart(child, offset)
-            range.collapse(true)
+              const range = document.createRange()
+              range.setStart(child, offset)
+              range.collapse(true)
 
-            const sel = window.getSelection() as any
-            sel.removeAllRanges()
-            sel.addRange(range)
+              const sel = window.getSelection() as any
+              sel.removeAllRanges()
+              sel.addRange(range)
+            } else {
+              const position = firstHalf.length + 2 + item.length + 1
+
+              inputRef.current.focus()
+              inputRef.current.setSelectionRange(position, position)
+
+              // this is required to bring cursor into view for text which is longer than the field
+              inputRef.current.blur()
+              inputRef.current.focus()
+            }
           }
         })
       }
@@ -245,33 +268,57 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       return position
     }
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-      const { textContent } = e.target as HTMLInputElement
+      if (newExpressionComponent) {
+        const { textContent } = e.target as HTMLInputElement
 
-      const selectionStart = getCaretIndex(e.target)
+        const selectionStart = getCaretIndex(e.target)
 
-      listProps.handleQueryChange({ ...e, target: { ...e.target, value: textContent as string, selectionStart } })
+        listProps.handleQueryChange({ ...e, target: { ...e.target, value: textContent as string, selectionStart } })
 
-      setInputValue(textContent as string)
-      updateQueryBasedOnCursor(selectionStart, textContent as string)
+        setInputValue(textContent as string)
+        updateQueryBasedOnCursor(selectionStart, textContent as string)
+      } else {
+        const { value, selectionStart } = e.target as HTMLInputElement
+
+        listProps.handleQueryChange(e)
+
+        setInputValue(value)
+        updateQueryBasedOnCursor(selectionStart, value)
+      }
     }
 
     function handleKeyUp(e: React.KeyboardEvent<HTMLInputElement>) {
       listProps.handleKeyUp(e)
-      const { key } = e
-      const { textContent } = e.target as HTMLInputElement
+      if (newExpressionComponent) {
+        const { key } = e
+        const { textContent } = e.target as HTMLInputElement
 
-      const selectionStart = getCaretIndex(e.target as any)
+        const selectionStart = getCaretIndex(e.target as any)
 
-      // only update query when moving left and right
-      if (key === 'ArrowLeft' || key === 'ArrowRight') {
-        updateQueryBasedOnCursor(selectionStart, textContent as string)
+        // only update query when moving left and right
+        if (key === 'ArrowLeft' || key === 'ArrowRight') {
+          updateQueryBasedOnCursor(selectionStart, textContent as string)
+        }
+      } else {
+        const { key } = e
+        const { selectionStart, value } = e.target as HTMLInputElement
+
+        // only update query when moving left and right
+        if (key === 'ArrowLeft' || key === 'ArrowRight') {
+          updateQueryBasedOnCursor(selectionStart, value)
+        }
       }
     }
 
     function handleMouseUp(e: React.MouseEvent): void {
-      const { textContent } = e.target as HTMLInputElement
-      const selectionStart = getCaretIndex(e.target as any)
-      updateQueryBasedOnCursor(selectionStart, textContent as string)
+      if (newExpressionComponent) {
+        const { textContent } = e.target as HTMLInputElement
+        const selectionStart = getCaretIndex(e.target as any)
+        updateQueryBasedOnCursor(selectionStart, textContent as string)
+      } else {
+        const { selectionStart, value } = e.target as HTMLInputElement
+        updateQueryBasedOnCursor(selectionStart, value)
+      }
     }
 
     function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void {
@@ -307,17 +354,32 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         enforceFocus={false}
         popoverClassName={css.popover}
         isOpen={items.length > 0 && !!queryValue}>
-        <TextAreaEditable
-          {...inputProps}
-          name={name}
-          inputRef={inputRef}
-          value={inputValue}
-          onInput={handleChange}
-          onKeyDown={handleKeyDown}
-          onKeyUp={handleKeyUp}
-          onMouseUp={handleMouseUp}
-          disabled={disabled}
-        />
+        {!newExpressionComponent ? (
+          <InputGroup
+            {...inputProps}
+            autoComplete={autoComplete}
+            name={name}
+            inputRef={inputRef}
+            value={inputValue}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            onMouseUp={handleMouseUp}
+            disabled={disabled}
+          />
+        ) : (
+          <TextAreaEditable
+            {...inputProps}
+            name={name}
+            inputRef={inputRef}
+            value={inputValue}
+            onInput={handleChange}
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            onMouseUp={handleMouseUp}
+            disabled={disabled}
+          />
+        )}
         <React.Fragment>
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
