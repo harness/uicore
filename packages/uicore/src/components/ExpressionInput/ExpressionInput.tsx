@@ -27,7 +27,7 @@ export interface ExpressionInputProps {
   onChange(str: string): void
   autoComplete?: string
   disabled?: boolean
-  newExpressionComponent: boolean
+  newExpressionComponent?: boolean
 }
 
 /**
