@@ -62,6 +62,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   resetExpressionOnFixedTypeChange?: boolean
   placeholder?: string
   newExpressionComponent?: boolean
+  textAreaInputClassName?: string
 }
 
 export interface FixedTypeComponentProps {
@@ -127,6 +128,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     resetExpressionOnFixedTypeChange,
     placeholder,
     newExpressionComponent = false,
+    textAreaInputClassName,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -227,6 +229,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           }}
           data-mentions={mentionsType}
           newExpressionComponent={newExpressionComponent}
+          textAreaClassName={textAreaInputClassName}
         />
       )}
       {!allowableTypes.length ? null : (

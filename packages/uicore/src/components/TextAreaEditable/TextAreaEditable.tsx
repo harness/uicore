@@ -7,6 +7,7 @@
 
 /* eslint-disable react/no-danger */
 import React from 'react'
+import cx from 'classnames'
 import css from './TextAreaEditable.css'
 
 const VAR_REGEX = /(<\+[a-zA-z0-9_.]+?>)/
@@ -91,6 +92,7 @@ type TextAreaEditableProps = {
   onKeyUp: (e: React.KeyboardEvent<HTMLInputElement>) => void
   onMouseUp: (e: React.MouseEvent) => void
   disabled?: boolean
+  textAreaClassName?: string
 }
 
 export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
@@ -130,12 +132,12 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
   }
 
   render() {
-    const { value, inputRef, ...rest } = this.props
+    const { value, inputRef, textAreaClassName, ...rest } = this.props
 
     return (
       <div
-        className={css.editable}
         {...rest}
+        className={cx(css.editable, textAreaClassName)}
         ref={inputRef}
         contentEditable={'plaintext-only' as any}
         onKeyDown={this.handleKeyDown.bind(this)}

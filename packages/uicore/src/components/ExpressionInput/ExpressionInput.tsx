@@ -28,6 +28,7 @@ export interface ExpressionInputProps {
   autoComplete?: string
   disabled?: boolean
   newExpressionComponent?: boolean
+  textAreaClassName?: string
 }
 
 /**
@@ -91,7 +92,8 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     maxHeight = 400,
     disabled,
     autoComplete = 'off',
-    newExpressionComponent
+    newExpressionComponent,
+    textAreaClassName = ''
   } = props
   const mountRef = React.useRef(false)
   /**
@@ -354,7 +356,6 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           />
         ) : (
           <TextAreaEditable
-            {...inputProps}
             name={name}
             inputRef={inputRef}
             value={inputValue}
@@ -363,6 +364,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
             onKeyUp={handleKeyUpForTextAreaEditable}
             onMouseUp={handleMouseUpForTextAreaEditable}
             disabled={disabled}
+            textAreaClassName={textAreaClassName}
           />
         )}
         <React.Fragment>
