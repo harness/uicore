@@ -35,7 +35,7 @@ interface TextObject {
 
 function highlight(input: TextObject[]): string {
   return input
-    .flatMap(r => {
+    .map(r => {
       if (r.type === 'variable') {
         return `<span style="color:darkorange">&lt;+${r.text}&gt;</span>`
       }

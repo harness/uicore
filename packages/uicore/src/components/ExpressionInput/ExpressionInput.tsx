@@ -12,7 +12,12 @@ import { debounce } from 'lodash-es'
 import { escapeStringRegexp } from '../../core/Utils'
 
 import css from './ExpressionInput.css'
-import { getCaretIndex, setCaret, TextAreaEditable } from '../TextAreaEditable/TextAreaEditable'
+import {
+  createChildNodeLengthSumArray,
+  getCaretIndex,
+  setCaret,
+  TextAreaEditable
+} from '../TextAreaEditable/TextAreaEditable'
 
 export interface ExpressionInputProps {
   items?: string[]
@@ -191,14 +196,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
               const position = firstHalf.length + 2 + item.length + 2
               // this is required to maintain the caret position
 
-              const childNodesTextLength = Array.from(inputRef.current.childNodes).reduce((arr: number[], child, i) => {
-                const l = child.textContent?.length as number
-                const prev = arr[i - 1] || 0
-
-                arr.push(l + prev)
-
-                return arr
-              }, [])
+              const childNodesTextLength = createChildNodeLengthSumArray(inputRef.current.childNodes)
 
               const childIndex = childNodesTextLength.findIndex(i => {
                 return i >= position
