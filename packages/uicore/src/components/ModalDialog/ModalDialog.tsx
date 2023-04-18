@@ -53,7 +53,7 @@ export interface ModalDialogProps extends IDialogProps {
    */
   closeButtonLabel?: string
   /**
-   * Optional: when set to true a overlay is shown over the entire modal
+   * Optional: when set to true an overlay is shown over the entire modal
    */
   showOverlay?: boolean
 }
