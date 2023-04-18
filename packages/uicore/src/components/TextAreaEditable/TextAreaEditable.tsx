@@ -44,7 +44,7 @@ function highlight(input: TextObject[]): string {
     .join('')
 }
 
-function getCaretIndex(element: HTMLElement): number {
+export function getCaretIndex(element: HTMLElement): number {
   let position = 0
   const selection = window.getSelection()
 
@@ -59,7 +59,7 @@ function getCaretIndex(element: HTMLElement): number {
   return position
 }
 
-function setCaret(element: ChildNode, index: any): void {
+export function setCaret(element: ChildNode, index: number): void {
   const range = document.createRange()
   range.setStart(element, index)
   range.collapse(true)
@@ -69,14 +69,27 @@ function setCaret(element: ChildNode, index: any): void {
   sel.addRange(range)
 }
 
+export function createChildNodeLengthSumArray(arr: NodeListOf<ChildNode>): number[] {
+  const childNodeLengthArray = Array.from(arr).reduce((arr: number[], child, i) => {
+    const l = child.textContent?.length as number
+    const prev = arr[i - 1] || 0
+
+    arr.push(l + prev)
+
+    return arr
+  }, [])
+
+  return childNodeLengthArray
+}
+
 type TextAreaEditableProps = {
   name: string
   inputRef: React.RefObject<HTMLDivElement>
   value: string
-  onInput: any
-  onKeyDown: any
-  onKeyUp: any
-  onMouseUp: any
+  onInput: (e: React.ChangeEvent<HTMLInputElement>) => void
+  keyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void
+  onKeyUp: (e: React.KeyboardEvent<HTMLInputElement>) => void
+  onMouseUp: (e: React.MouseEvent) => void
   disabled?: boolean
 }
 
@@ -100,17 +113,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
 
       this.props.inputRef.current.innerHTML = highlight(deserialize(newStr))
 
-      const childNodesTextLength = Array.from(this.props.inputRef.current.childNodes).reduce(
-        (arr: number[], child, i) => {
-          const l = child.textContent?.length as number
-          const prev = arr[i - 1] || 0
-
-          arr.push(l + prev)
-
-          return arr
-        },
-        []
-      )
+      const childNodesTextLength = createChildNodeLengthSumArray(this.props.inputRef.current.childNodes)
 
       const childIndex = childNodesTextLength.findIndex(i => {
         return i >= index
@@ -123,7 +126,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
 
       this.props.onInput(e)
     }
-    this.props.onKeyDown(e)
+    this.props.keyDown(e)
   }
 
   render() {
@@ -131,8 +134,8 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
 
     return (
       <div
-        {...rest}
         className={css.editable}
+        {...rest}
         ref={inputRef}
         contentEditable={'plaintext-only' as any}
         onKeyDown={this.handleKeyDown.bind(this)}

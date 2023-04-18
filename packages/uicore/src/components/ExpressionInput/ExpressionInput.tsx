@@ -12,7 +12,7 @@ import { debounce } from 'lodash-es'
 import { escapeStringRegexp } from '../../core/Utils'
 
 import css from './ExpressionInput.css'
-import { TextAreaEditable } from '../TextAreaEditable/TextAreaEditable'
+import { getCaretIndex, setCaret, TextAreaEditable } from '../TextAreaEditable/TextAreaEditable'
 
 export interface ExpressionInputProps {
   items?: string[]
@@ -182,11 +182,12 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         // maintain cursor position
         window.requestAnimationFrame(() => {
           if (inputRef.current) {
-            // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
             if (newExpressionComponent) {
-              const position = firstHalf.length + 2 + item.length + 2
+              // the + 1 extra for this position is to put the cursor one step ahead of expression closing to bring
+              // it out of the scope for editable span
 
-              // this is required to maintain the carrot position
+              const position = firstHalf.length + 2 + item.length + 2
+              // this is required to maintain the caret position
 
               const childNodesTextLength = Array.from(inputRef.current.childNodes).reduce((arr: number[], child, i) => {
                 const l = child.textContent?.length as number
@@ -204,14 +205,9 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
               const child = inputRef.current.childNodes[childIndex]
               const offset = childNodesTextLength[childIndex - 1] - position + 2
 
-              const range = document.createRange()
-              range.setStart(child, offset)
-              range.collapse(true)
-
-              const sel = window.getSelection() as any
-              sel.removeAllRanges()
-              sel.addRange(range)
+              setCaret(child, offset)
             } else {
+              // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
               const position = firstHalf.length + 2 + item.length + 1
 
               inputRef.current.focus()
@@ -253,72 +249,61 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
   }
 
   function renderer(listProps: IQueryListRendererProps<string>): JSX.Element {
-    function getCaretIndex(element: HTMLElement): number {
-      let position = 0
-      const selection = window.getSelection()
+    function handleChangeForTextAreaEditable(e: React.ChangeEvent<HTMLInputElement>) {
+      const { textContent } = e.target as HTMLInputElement
 
-      if (selection?.rangeCount !== 0) {
-        const range = (window.getSelection() as any).getRangeAt(0)
-        const preCaretRange = range.cloneRange()
-        preCaretRange.selectNodeContents(element)
-        preCaretRange.setEnd(range.endContainer, range.endOffset)
-        position = preCaretRange.toString().length
-      }
+      const selectionStart = getCaretIndex(e.target)
 
-      return position
+      listProps.handleQueryChange({ ...e, target: { ...e.target, value: textContent as string, selectionStart } })
+
+      setInputValue(textContent as string)
+      updateQueryBasedOnCursor(selectionStart, textContent as string)
     }
+
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-      if (newExpressionComponent) {
-        const { textContent } = e.target as HTMLInputElement
+      const { value, selectionStart } = e.target as HTMLInputElement
 
-        const selectionStart = getCaretIndex(e.target)
+      listProps.handleQueryChange(e)
 
-        listProps.handleQueryChange({ ...e, target: { ...e.target, value: textContent as string, selectionStart } })
+      setInputValue(value)
+      updateQueryBasedOnCursor(selectionStart, value)
+    }
 
-        setInputValue(textContent as string)
+    function handleKeyUpForTextAreaEditable(e: React.KeyboardEvent<HTMLInputElement>) {
+      listProps.handleKeyUp(e)
+
+      const { key } = e
+      const { textContent } = e.target as HTMLInputElement
+
+      const selectionStart = getCaretIndex(e.target as any)
+
+      // only update query when moving left and right
+      if (key === 'ArrowLeft' || key === 'ArrowRight') {
         updateQueryBasedOnCursor(selectionStart, textContent as string)
-      } else {
-        const { value, selectionStart } = e.target as HTMLInputElement
-
-        listProps.handleQueryChange(e)
-
-        setInputValue(value)
-        updateQueryBasedOnCursor(selectionStart, value)
       }
     }
 
     function handleKeyUp(e: React.KeyboardEvent<HTMLInputElement>) {
       listProps.handleKeyUp(e)
-      if (newExpressionComponent) {
-        const { key } = e
-        const { textContent } = e.target as HTMLInputElement
 
-        const selectionStart = getCaretIndex(e.target as any)
+      const { key } = e
+      const { selectionStart, value } = e.target as HTMLInputElement
 
-        // only update query when moving left and right
-        if (key === 'ArrowLeft' || key === 'ArrowRight') {
-          updateQueryBasedOnCursor(selectionStart, textContent as string)
-        }
-      } else {
-        const { key } = e
-        const { selectionStart, value } = e.target as HTMLInputElement
-
-        // only update query when moving left and right
-        if (key === 'ArrowLeft' || key === 'ArrowRight') {
-          updateQueryBasedOnCursor(selectionStart, value)
-        }
+      // only update query when moving left and right
+      if (key === 'ArrowLeft' || key === 'ArrowRight') {
+        updateQueryBasedOnCursor(selectionStart, value)
       }
     }
 
+    function handleMouseUpForTextAreaEditable(e: React.MouseEvent): void {
+      const { textContent } = e.target as HTMLInputElement
+      const selectionStart = getCaretIndex(e.target as any)
+      updateQueryBasedOnCursor(selectionStart, textContent as string)
+    }
+
     function handleMouseUp(e: React.MouseEvent): void {
-      if (newExpressionComponent) {
-        const { textContent } = e.target as HTMLInputElement
-        const selectionStart = getCaretIndex(e.target as any)
-        updateQueryBasedOnCursor(selectionStart, textContent as string)
-      } else {
-        const { selectionStart, value } = e.target as HTMLInputElement
-        updateQueryBasedOnCursor(selectionStart, value)
-      }
+      const { selectionStart, value } = e.target as HTMLInputElement
+      updateQueryBasedOnCursor(selectionStart, value)
     }
 
     function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void {
@@ -373,10 +358,10 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
             name={name}
             inputRef={inputRef}
             value={inputValue}
-            onInput={handleChange}
-            onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp}
-            onMouseUp={handleMouseUp}
+            onInput={handleChangeForTextAreaEditable}
+            keyDown={handleKeyDown}
+            onKeyUp={handleKeyUpForTextAreaEditable}
+            onMouseUp={handleMouseUpForTextAreaEditable}
             disabled={disabled}
           />
         )}
