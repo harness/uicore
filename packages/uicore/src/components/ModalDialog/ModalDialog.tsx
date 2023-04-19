@@ -143,19 +143,9 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     return ''
   }, [scrollShadows])
 
-  return (
-    <Dialog
-      onOpening={onOpening}
-      onClose={onClose}
-      autoFocus
-      enforceFocus
-      canEscapeKeyClose
-      canOutsideClickClose
-      usePortal
-      className={cx(className, css.container, ...modifiers)}
-      style={style}
-      {...dialogProps}>
-      <OverlaySpinner show={showOverlay}>
+  const modalContent = useMemo(() => {
+    return (
+      <>
         {title && (
           <header className={css.header} data-testid="modaldialog-header">
             <Heading level={3} font={{ variation: FontVariation.H3 }}>
@@ -163,7 +153,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
             </Heading>
           </header>
         )}
-
         {toolbar && (
           <aside className={css.toolbar} data-testid="modaldialog-toolbar">
             {toolbar}
@@ -194,7 +183,29 @@ export const ModalDialog: FC<ModalDialogProps> = ({
             className={css.closeButton}
           />
         )}
-      </OverlaySpinner>
+      </>
+    )
+  }, [title, toolbar, children, footer])
+
+  return (
+    <Dialog
+      onOpening={onOpening}
+      onClose={onClose}
+      autoFocus
+      enforceFocus
+      canEscapeKeyClose
+      canOutsideClickClose
+      usePortal
+      className={cx(className, css.container, ...modifiers)}
+      style={{ ...style, ...{ maxHeight: '400px' } }}
+      {...dialogProps}>
+      {showOverlay ? (
+        <OverlaySpinner className={css.overlayContainer} show={true}>
+          {modalContent}
+        </OverlaySpinner>
+      ) : (
+        modalContent
+      )}
     </Dialog>
   )
 }
