@@ -10,6 +10,7 @@ import { Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { FontVariation } from '@harness/design-system'
 import { Heading } from '../Heading/Heading'
+import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { Button, ButtonVariation } from '../Button/Button'
 
 import css from './ModalDialog.css'
@@ -51,6 +52,10 @@ export interface ModalDialogProps extends IDialogProps {
    * Optional override of the accessible label of the close button of the modal. Defaults to "Close"
    */
   closeButtonLabel?: string
+  /**
+   * Optional: when set to true an overlay is shown over the entire modal
+   */
+  showOverlay?: boolean
 }
 
 export const ModalDialog: FC<ModalDialogProps> = ({
@@ -63,6 +68,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   className = '',
   closeButtonLabel = 'Close',
   isCloseButtonShown = true,
+  showOverlay = false,
   style = {},
   ...dialogProps
 }) => {
@@ -149,44 +155,46 @@ export const ModalDialog: FC<ModalDialogProps> = ({
       className={cx(className, css.container, ...modifiers)}
       style={style}
       {...dialogProps}>
-      {title && (
-        <header className={css.header} data-testid="modaldialog-header">
-          <Heading level={3} font={{ variation: FontVariation.H3 }}>
-            {title}
-          </Heading>
-        </header>
-      )}
+      <OverlaySpinner show={showOverlay}>
+        {title && (
+          <header className={css.header} data-testid="modaldialog-header">
+            <Heading level={3} font={{ variation: FontVariation.H3 }}>
+              {title}
+            </Heading>
+          </header>
+        )}
 
-      {toolbar && (
-        <aside className={css.toolbar} data-testid="modaldialog-toolbar">
-          {toolbar}
-        </aside>
-      )}
+        {toolbar && (
+          <aside className={css.toolbar} data-testid="modaldialog-toolbar">
+            {toolbar}
+          </aside>
+        )}
 
-      <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRef}>
-        <div className={css.bodyContent}>
-          <div ref={bodyTopEdgeRef} data-position="top" />
-          <div>{children}</div>
-          <div ref={bodyBottomEdgeRef} data-position="bottom" />
+        <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRef}>
+          <div className={css.bodyContent}>
+            <div ref={bodyTopEdgeRef} data-position="top" />
+            <div>{children}</div>
+            <div ref={bodyBottomEdgeRef} data-position="bottom" />
+          </div>
         </div>
-      </div>
 
-      {footer && (
-        <footer className={css.footer} data-testid="modaldialog-footer">
-          {footer}
-        </footer>
-      )}
+        {footer && (
+          <footer className={css.footer} data-testid="modaldialog-footer">
+            {footer}
+          </footer>
+        )}
 
-      {dialogProps.onClose && isCloseButtonShown && (
-        <Button
-          aria-label={closeButtonLabel}
-          icon="Stroke"
-          intent="primary"
-          variation={ButtonVariation.ICON}
-          onClick={() => onClose()}
-          className={css.closeButton}
-        />
-      )}
+        {dialogProps.onClose && isCloseButtonShown && (
+          <Button
+            aria-label={closeButtonLabel}
+            icon="Stroke"
+            intent="primary"
+            variation={ButtonVariation.ICON}
+            onClick={() => onClose()}
+            className={css.closeButton}
+          />
+        )}
+      </OverlaySpinner>
     </Dialog>
   )
 }

@@ -72,6 +72,35 @@ export const Basic: Story<ModalDialogProps> = () => {
 }
 Basic.storyName = 'Basic usage'
 
+export const BasicWithOverlay: Story<ModalDialogProps> = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
+  return (
+    <>
+      <Button variation={ButtonVariation.PRIMARY} text="Open Dialog" onClick={() => setIsOpen(true)} />
+
+      <ModalDialog
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="ModalDialog title"
+        showOverlay={true}
+        footer={
+          <Layout.Horizontal spacing="small">
+            <Button variation={ButtonVariation.PRIMARY} text="Option 1" />
+            <Button variation={ButtonVariation.SECONDARY} text="Option 2" />
+          </Layout.Horizontal>
+        }>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto consectetur dolorem dolores eaque
+          illum iusto laboriosam, odit provident sapiente tenetur, veritatis. Aperiam blanditiis cum dignissimos eveniet
+          praesentium repellendus similique?
+        </p>
+      </ModalDialog>
+    </>
+  )
+}
+BasicWithOverlay.storyName = 'Basic usage with overlay'
+
 export const WithLongContent: Story<ModalDialogProps> = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 

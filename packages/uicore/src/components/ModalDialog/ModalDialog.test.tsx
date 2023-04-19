@@ -33,15 +33,15 @@ describe('ModalDialog', () => {
     test('it should set the noHeader modifier when no title or toolbar are passed', async () => {
       renderComponent()
 
-      expect(screen.getByTestId('modaldialog-body').parentElement).toHaveClass('noHeader')
+      expect(screen.getByTestId('modaldialog-body').parentElement?.parentElement).toHaveClass('noHeader')
     })
 
     test('it should not set the noHeader modifier when title is passed', async () => {
       const { rerender } = renderComponent({ title: 'Test' })
-      expect(screen.getByTestId('modaldialog-body').parentElement).not.toHaveClass('noHeader')
+      expect(screen.getByTestId('modaldialog-body').parentElement?.parentElement).not.toHaveClass('noHeader')
 
       rerender(<ModalDialog isOpen={true} />)
-      expect(screen.getByTestId('modaldialog-body').parentElement).toHaveClass('noHeader')
+      expect(screen.getByTestId('modaldialog-body').parentElement?.parentElement).toHaveClass('noHeader')
     })
   })
 
@@ -64,7 +64,7 @@ describe('ModalDialog', () => {
     test('it should add the class noToolbar when toolbar is omitted', async () => {
       renderComponent()
 
-      expect(screen.getByTestId('modaldialog-body').parentElement).toHaveClass('noToolbar')
+      expect(screen.getByTestId('modaldialog-body').parentElement?.parentElement).toHaveClass('noToolbar')
     })
   })
 
@@ -93,10 +93,10 @@ describe('ModalDialog', () => {
 
     test('it should set the noFooter modifier when no footer is passed', async () => {
       const { rerender } = renderComponent()
-      expect(screen.getByTestId('modaldialog-body').parentElement).toHaveClass('noFooter')
+      expect(screen.getByTestId('modaldialog-body').parentElement?.parentElement).toHaveClass('noFooter')
 
       rerender(<ModalDialog isOpen={true} footer="test" />)
-      expect(screen.getByTestId('modaldialog-body').parentElement).not.toHaveClass('noFooter')
+      expect(screen.getByTestId('modaldialog-body').parentElement?.parentElement).not.toHaveClass('noFooter')
     })
   })
 
@@ -142,7 +142,7 @@ describe('ModalDialog', () => {
       const width = 100
       renderComponent({ width })
 
-      const dialog = screen.getByTestId('modaldialog-body').parentElement
+      const dialog = screen.getByTestId('modaldialog-body').parentElement?.parentElement
 
       expect(dialog).toHaveStyle({ width: `${width}px` })
     })
@@ -151,7 +151,7 @@ describe('ModalDialog', () => {
       const height = 100
       renderComponent({ height })
 
-      const dialog = screen.getByTestId('modaldialog-body').parentElement
+      const dialog = screen.getByTestId('modaldialog-body').parentElement?.parentElement
 
       expect(dialog).toHaveAttribute('style', expect.stringContaining(`--ModalDialog-Height: ${height}px`))
     })
