@@ -197,7 +197,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
       canOutsideClickClose
       usePortal
       className={cx(className, css.container, ...modifiers)}
-      style={{ ...style, ...{ maxHeight: '400px' } }}
+      style={style}
       {...dialogProps}>
       {showOverlay ? (
         <OverlaySpinner className={css.overlayContainer} show={true}>
