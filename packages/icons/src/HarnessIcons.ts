@@ -443,6 +443,9 @@ import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
 import FortifyOnDemand from './fortify-on-demand.svg'
+import FsClosedFolder from './fs-closed-folder.svg'
+import FsOpenFolder from './fs-open-folder.svg'
+import FsRootFolder from './fs-root-folder.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
@@ -1097,10 +1100,6 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
-import FileStoreOpenFolder from './fs-open-folder.svg'
-import FileStoreClosedFolder from './fs-closed-folder.svg'
-import FileStoreRootFolder from './fs-root-folder.svg'
-
 
 type HarnessIconName =
   | 'Account'
@@ -1535,6 +1534,9 @@ type HarnessIconName =
   | 'folder-upload'
   | 'fortify-on-demand-inverse'
   | 'fortify-on-demand'
+  | 'fs-closed-folder'
+  | 'fs-open-folder'
+  | 'fs-root-folder'
   | 'full-screen-exit'
   | 'full-screen'
   | 'functions'
@@ -2189,9 +2191,6 @@ type HarnessIconName =
   | 'yaml-builder-trigger'
   | 'zoom-in'
   | 'zoom-out'
-  | 'fs-open-folder'
-  | 'fs-closed-folder'
-  | 'fs-root-folder'
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
@@ -2626,6 +2625,9 @@ const HarnessIcons: KVO<ElementType> = {
   'folder-upload': FolderUpload,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
   'fortify-on-demand': FortifyOnDemand,
+  'fs-closed-folder': FsClosedFolder,
+  'fs-open-folder': FsOpenFolder,
+  'fs-root-folder': FsRootFolder,
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
   functions: Functions,
@@ -3279,10 +3281,7 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut,
-  'fs-open-folder': FileStoreOpenFolder,
-  'fs-closed-folder': FileStoreClosedFolder,
-  'fs-root-folder': FileStoreRootFolder
+  'zoom-out': ZoomOut
 }
 
 export { HarnessIcons, HarnessIconName }
