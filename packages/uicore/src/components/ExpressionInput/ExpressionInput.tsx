@@ -6,13 +6,18 @@
  */
 
 import React from 'react'
-import { InputGroup, IInputGroupProps, Popover, Menu, IPopoverProps } from '@blueprintjs/core'
+import { IInputGroupProps, Popover, Menu, IPopoverProps, InputGroup } from '@blueprintjs/core'
 import { QueryList, IQueryListRendererProps, IItemRendererProps, ItemRenderer } from '@blueprintjs/select'
 import { debounce } from 'lodash-es'
-
 import { escapeStringRegexp } from '../../core/Utils'
 
 import css from './ExpressionInput.css'
+import {
+  createChildNodeLengthSumArray,
+  getCaretIndex,
+  setCaret,
+  TextAreaEditable
+} from '../TextAreaEditable/TextAreaEditable'
 
 export interface ExpressionInputProps {
   items?: string[]
@@ -27,6 +32,8 @@ export interface ExpressionInputProps {
   onChange(str: string): void
   autoComplete?: string
   disabled?: boolean
+  newExpressionComponent?: boolean
+  textAreaClassName?: string
 }
 
 /**
@@ -89,7 +96,9 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     name,
     maxHeight = 400,
     disabled,
-    autoComplete = 'off'
+    autoComplete = 'off',
+    newExpressionComponent,
+    textAreaClassName = ''
   } = props
   const mountRef = React.useRef(false)
   /**
@@ -180,15 +189,34 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         // maintain cursor position
         window.requestAnimationFrame(() => {
           if (inputRef.current) {
-            // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
-            const position = firstHalf.length + 2 + item.length + 1
+            if (newExpressionComponent) {
+              // the + 1 extra for this position is to put the cursor one step ahead of expression closing to bring
+              // it out of the scope for editable span
 
-            inputRef.current.focus()
-            inputRef.current.setSelectionRange(position, position)
+              const position = firstHalf.length + 2 + item.length + 2
+              // this is required to maintain the caret position
 
-            // this is required to bring cursor into view for text which is longer than the field
-            inputRef.current.blur()
-            inputRef.current.focus()
+              const childNodesTextLength = createChildNodeLengthSumArray(inputRef.current.childNodes)
+
+              const childIndex = childNodesTextLength.findIndex(i => {
+                return i >= position
+              })
+
+              const child = inputRef.current.childNodes[childIndex]
+              const offset = childNodesTextLength[childIndex - 1] - position + 2
+
+              setCaret(child, offset)
+            } else {
+              // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
+              const position = firstHalf.length + 2 + item.length + 1
+
+              inputRef.current.focus()
+              inputRef.current.setSelectionRange(position, position)
+
+              // this is required to bring cursor into view for text which is longer than the field
+              inputRef.current.blur()
+              inputRef.current.focus()
+            }
           }
         })
       }
@@ -221,6 +249,17 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
   }
 
   function renderer(listProps: IQueryListRendererProps<string>): JSX.Element {
+    function handleChangeForTextAreaEditable(e: React.ChangeEvent<HTMLInputElement>) {
+      const { textContent } = e.target as HTMLInputElement
+
+      const selectionStart = getCaretIndex(e.target)
+
+      listProps.handleQueryChange({ ...e, target: { ...e.target, value: textContent as string, selectionStart } })
+
+      setInputValue(textContent as string)
+      updateQueryBasedOnCursor(selectionStart, textContent as string)
+    }
+
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
       const { value, selectionStart } = e.target as HTMLInputElement
 
@@ -230,8 +269,23 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       updateQueryBasedOnCursor(selectionStart, value)
     }
 
+    function handleKeyUpForTextAreaEditable(e: React.KeyboardEvent<HTMLInputElement>) {
+      listProps.handleKeyUp(e)
+
+      const { key } = e
+      const { textContent } = e.target as HTMLInputElement
+
+      const selectionStart = getCaretIndex(e.target as any)
+
+      // only update query when moving left and right
+      if (key === 'ArrowLeft' || key === 'ArrowRight') {
+        updateQueryBasedOnCursor(selectionStart, textContent as string)
+      }
+    }
+
     function handleKeyUp(e: React.KeyboardEvent<HTMLInputElement>) {
       listProps.handleKeyUp(e)
+
       const { key } = e
       const { selectionStart, value } = e.target as HTMLInputElement
 
@@ -239,6 +293,12 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       if (key === 'ArrowLeft' || key === 'ArrowRight') {
         updateQueryBasedOnCursor(selectionStart, value)
       }
+    }
+
+    function handleMouseUpForTextAreaEditable(e: React.MouseEvent): void {
+      const { textContent } = e.target as HTMLInputElement
+      const selectionStart = getCaretIndex(e.target as any)
+      updateQueryBasedOnCursor(selectionStart, textContent as string)
     }
 
     function handleMouseUp(e: React.MouseEvent): void {
@@ -279,18 +339,32 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         enforceFocus={false}
         popoverClassName={css.popover}
         isOpen={items.length > 0 && !!queryValue}>
-        <InputGroup
-          {...inputProps}
-          autoComplete={autoComplete}
-          name={name}
-          inputRef={inputRef}
-          value={inputValue}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          onKeyUp={handleKeyUp}
-          onMouseUp={handleMouseUp}
-          disabled={disabled}
-        />
+        {!newExpressionComponent ? (
+          <InputGroup
+            {...inputProps}
+            autoComplete={autoComplete}
+            name={name}
+            inputRef={inputRef}
+            value={inputValue}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            onMouseUp={handleMouseUp}
+            disabled={disabled}
+          />
+        ) : (
+          <TextAreaEditable
+            name={name}
+            inputRef={inputRef}
+            value={inputValue}
+            onInput={handleChangeForTextAreaEditable}
+            keyDown={handleKeyDown}
+            onKeyUp={handleKeyUpForTextAreaEditable}
+            onMouseUp={handleMouseUpForTextAreaEditable}
+            disabled={disabled}
+            textAreaClassName={textAreaClassName}
+          />
+        )}
         <React.Fragment>
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
