@@ -8,16 +8,18 @@
 import React from 'react'
 import css from './OverlaySpinner.css'
 import { ISpinnerProps, Spinner } from '@blueprintjs/core'
+import cx from 'classnames'
 
 export interface OverlaySpinnerProps extends ISpinnerProps {
   show: boolean
   children: React.ReactNode
+  className?: string
 }
 
 export const OverlaySpinner: React.FC<OverlaySpinnerProps> = props => {
-  const { show, children, ...rest } = props
+  const { show, children, className = '', ...rest } = props
   return (
-    <div className={css.overlaySpinner}>
+    <div className={cx(css.overlaySpinner, className)}>
       {children}
       {show ? (
         <div className={css.overlay}>
