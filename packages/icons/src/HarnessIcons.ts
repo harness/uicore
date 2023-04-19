@@ -1097,6 +1097,10 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
+import FileStoreOpenFolder from './fs-open-folder.svg'
+import FileStoreClosedFolder from './fs-closed-folder.svg'
+import FileStoreRootFolder from './fs-root-folder.svg'
+
 
 type HarnessIconName =
   | 'Account'
@@ -2185,6 +2189,9 @@ type HarnessIconName =
   | 'yaml-builder-trigger'
   | 'zoom-in'
   | 'zoom-out'
+  | 'fs-open-folder'
+  | 'fs-closed-folder'
+  | 'fs-root-folder'
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
@@ -3272,7 +3279,10 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut
+  'zoom-out': ZoomOut,
+  'fs-open-folder': FileStoreOpenFolder,
+  'fs-closed-folder': FileStoreClosedFolder,
+  'fs-root-folder': FileStoreRootFolder
 }
 
 export { HarnessIcons, HarnessIconName }
