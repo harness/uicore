@@ -143,49 +143,47 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     return ''
   }, [scrollShadows])
 
-  const modalContent = useMemo(() => {
-    return (
-      <>
-        {title && (
-          <header className={css.header} data-testid="modaldialog-header">
-            <Heading level={3} font={{ variation: FontVariation.H3 }}>
-              {title}
-            </Heading>
-          </header>
-        )}
-        {toolbar && (
-          <aside className={css.toolbar} data-testid="modaldialog-toolbar">
-            {toolbar}
-          </aside>
-        )}
+  const modalContent = (
+    <>
+      {title && (
+        <header className={css.header} data-testid="modaldialog-header">
+          <Heading level={3} font={{ variation: FontVariation.H3 }}>
+            {title}
+          </Heading>
+        </header>
+      )}
+      {toolbar && (
+        <aside className={css.toolbar} data-testid="modaldialog-toolbar">
+          {toolbar}
+        </aside>
+      )}
 
-        <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRef}>
-          <div className={css.bodyContent}>
-            <div ref={bodyTopEdgeRef} data-position="top" />
-            <div>{children}</div>
-            <div ref={bodyBottomEdgeRef} data-position="bottom" />
-          </div>
+      <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRef}>
+        <div className={css.bodyContent}>
+          <div ref={bodyTopEdgeRef} data-position="top" />
+          <div>{children}</div>
+          <div ref={bodyBottomEdgeRef} data-position="bottom" />
         </div>
+      </div>
 
-        {footer && (
-          <footer className={css.footer} data-testid="modaldialog-footer">
-            {footer}
-          </footer>
-        )}
+      {footer && (
+        <footer className={css.footer} data-testid="modaldialog-footer">
+          {footer}
+        </footer>
+      )}
 
-        {dialogProps.onClose && isCloseButtonShown && (
-          <Button
-            aria-label={closeButtonLabel}
-            icon="Stroke"
-            intent="primary"
-            variation={ButtonVariation.ICON}
-            onClick={() => onClose()}
-            className={css.closeButton}
-          />
-        )}
-      </>
-    )
-  }, [title, toolbar, children, footer])
+      {dialogProps.onClose && isCloseButtonShown && (
+        <Button
+          aria-label={closeButtonLabel}
+          icon="Stroke"
+          intent="primary"
+          variation={ButtonVariation.ICON}
+          onClick={() => onClose()}
+          className={css.closeButton}
+        />
+      )}
+    </>
+  )
 
   return (
     <Dialog
