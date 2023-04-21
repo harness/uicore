@@ -143,7 +143,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     return ''
   }, [scrollShadows])
 
-  const modalContent = useMemo(() => {
+  const modalContent = () => {
     return (
       <>
         {title && (
@@ -185,7 +185,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         )}
       </>
     )
-  }, [title, toolbar, children, footer])
+  }
 
   return (
     <Dialog
