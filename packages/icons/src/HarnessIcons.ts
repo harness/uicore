@@ -816,6 +816,11 @@ import RestoreCacheStep from './restore-cache-step.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
+import RollbackPipelineInverse from './rollback-pipeline-inverse.svg'
+import RollbackPipeline from './rollback-pipeline.svg'
+import RollbackService from './rollback-service.svg'
+import RollbackStageInverse from './rollback-stage-inverse.svg'
+import RollbackStage from './rollback-stage.svg'
 import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
@@ -1907,6 +1912,11 @@ type HarnessIconName =
   | 'right-bar-notification'
   | 'right-drawer'
   | 'rollback-execution'
+  | 'rollback-pipeline-inverse'
+  | 'rollback-pipeline'
+  | 'rollback-service'
+  | 'rollback-stage-inverse'
+  | 'rollback-stage'
   | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
@@ -2998,6 +3008,11 @@ const HarnessIcons: KVO<ElementType> = {
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
+  'rollback-pipeline-inverse': RollbackPipelineInverse,
+  'rollback-pipeline': RollbackPipeline,
+  'rollback-service': RollbackService,
+  'rollback-stage-inverse': RollbackStageInverse,
+  'rollback-stage': RollbackStage,
   'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
