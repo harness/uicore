@@ -8,6 +8,7 @@
 import React, { FC, ReactNode, useCallback, useEffect, useRef, useState, useMemo } from 'react'
 import { Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
+import { isFunction } from 'lodash-es'
 import { FontVariation } from '@harness/design-system'
 import { Heading } from '../Heading/Heading'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
@@ -83,7 +84,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   const initScrollShadows = useCallback(() => {
     if (!bodyRef.current) return
 
-    bodyObserverRef.current?.disconnect()
+    isFunction(bodyObserverRef.current?.disconnect) && bodyObserverRef.current?.disconnect()
     bodyObserverRef.current = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -107,7 +108,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   const bodyRefCallback = useCallback(
     (el: HTMLDivElement | null) => {
       if (!el) {
-        return bodyObserverRef.current?.disconnect()
+        return isFunction(bodyObserverRef.current?.disconnect) && bodyObserverRef.current?.disconnect()
       }
       bodyRef.current = el
       initScrollShadows()
