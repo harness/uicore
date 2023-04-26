@@ -70,9 +70,10 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   isCloseButtonShown = true,
   showOverlay = false,
   style = {},
+  onClose,
   ...dialogProps
 }) => {
-  const bodyRef = useRef<HTMLDivElement>(null)
+  const bodyRef = useRef<HTMLDivElement | null>(null)
   const bodyTopEdgeRef = useRef<HTMLDivElement>(null)
   const bodyBottomEdgeRef = useRef<HTMLDivElement>(null)
   const bodyObserverRef = useRef<IntersectionObserver>()
@@ -103,15 +104,16 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   useEffect(() => bodyObserverRef.current?.disconnect, [])
 
-  const onOpening: IDialogProps['onOpening'] = arg => {
-    initScrollShadows()
-    dialogProps.onOpening?.(arg)
-  }
-
-  const onClose: IDialogProps['onClose'] = arg => {
-    bodyObserverRef.current?.disconnect()
-    dialogProps.onClose?.(arg)
-  }
+  const bodyRefCallback = useCallback(
+    (el: HTMLDivElement | null) => {
+      if (!el) {
+        return bodyObserverRef.current?.disconnect()
+      }
+      bodyRef.current = el
+      initScrollShadows()
+    },
+    [initScrollShadows]
+  )
 
   const modifiers = []
 
@@ -158,7 +160,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         </aside>
       )}
 
-      <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRef}>
+      <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRefCallback}>
         <div className={css.bodyContent}>
           <div ref={bodyTopEdgeRef} data-position="top" />
           <div>{children}</div>
@@ -172,7 +174,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         </footer>
       )}
 
-      {dialogProps.onClose && isCloseButtonShown && (
+      {onClose && isCloseButtonShown && (
         <Button
           aria-label={closeButtonLabel}
           icon="Stroke"
@@ -187,7 +189,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   return (
     <Dialog
-      onOpening={onOpening}
       onClose={onClose}
       autoFocus
       enforceFocus
