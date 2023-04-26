@@ -951,6 +951,7 @@ import ServiceServerless from './service-serverless.svg'
 import ServiceServiceS3 from './service-service-s3.svg'
 import ServiceServicenowInverse from './service-servicenow-inverse.svg'
 import ServiceServicenow from './service-servicenow.svg'
+import ServiceSignalfx from './service-signalfx.svg'
 import ServiceSlack from './service-slack.svg'
 import ServiceSplunkWithName from './service-splunk-with-name.svg'
 import ServiceSplunk from './service-splunk.svg'
@@ -2047,6 +2048,7 @@ type HarnessIconName =
   | 'service-service-s3'
   | 'service-servicenow-inverse'
   | 'service-servicenow'
+  | 'service-signalfx'
   | 'service-slack'
   | 'service-splunk-with-name'
   | 'service-splunk'
@@ -3143,6 +3145,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-service-s3': ServiceServiceS3,
   'service-servicenow-inverse': ServiceServicenowInverse,
   'service-servicenow': ServiceServicenow,
+  'service-signalfx': ServiceSignalfx,
   'service-slack': ServiceSlack,
   'service-splunk-with-name': ServiceSplunkWithName,
   'service-splunk': ServiceSplunk,
