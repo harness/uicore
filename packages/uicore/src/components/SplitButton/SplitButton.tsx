@@ -16,6 +16,7 @@ type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & {
   className?: string
   dropdownDisabled?: boolean
   popoverProps?: PopoverProps
+  usePortal?: boolean
 }
 
 export const SplitButton: React.FC<SplitButtonProps> = ({
@@ -29,6 +30,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   disabled,
   dropdownDisabled,
   popoverProps,
+  usePortal = false,
   ...commonProps
 }) => {
   const [isOptionsOpen, setOptionsOpen] = React.useState(false)
@@ -58,7 +60,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
             setOptionsOpen(nextOpenState)
           }}
           content={<Menu>{children}</Menu>}
-          usePortal={false}
+          usePortal={usePortal}
           minimal={true}
           fill={false}
           position={Position.BOTTOM_RIGHT}
