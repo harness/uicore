@@ -99,6 +99,7 @@ import AzureBlueprints from './azure-blueprints.svg'
 import AzureContainerRegistry from './azure-container-registry.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
+import AzureResourceManager from './azure-resource-manager.svg'
 import AzureVm from './azure-vm.svg'
 import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
@@ -1197,6 +1198,7 @@ type HarnessIconName =
   | 'azure-container-registry'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
+  | 'azure-resource-manager'
   | 'azure-vm'
   | 'azurewebapp'
   | 'background-ci-step-inverse'
@@ -2295,6 +2297,7 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-container-registry': AzureContainerRegistry,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
+  'azure-resource-manager': AzureResourceManager,
   'azure-vm': AzureVm,
   azurewebapp: Azurewebapp,
   'background-ci-step-inverse': BackgroundCiStepInverse,
