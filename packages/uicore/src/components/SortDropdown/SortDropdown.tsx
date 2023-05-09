@@ -22,7 +22,11 @@ export enum SortMethod {
   LastModifiedDesc = 'lastModifiedAt,DESC',
   LastUpdatedDesc = 'lastUpdatedAt,DESC',
   Newest = 'createdAt,DESC',
-  Oldest = 'createdAt,ASC'
+  Oldest = 'createdAt,ASC',
+  StatusAsc = 'status,ASC',
+  StatusDesc = 'status,DESC',
+  VersionAsc = 'version,ASC',
+  VersionDesc = 'version,DESC'
 }
 
 export const sortByName: SelectOption[] = [
@@ -42,6 +46,16 @@ export const sortByLastUpdated: SelectOption[] = [{ label: 'Last Updated', value
 export const sortByCreated: SelectOption[] = [
   { label: 'Newest', value: SortMethod.Newest },
   { label: 'Oldest', value: SortMethod.Oldest }
+]
+
+export const sortByStatus: SelectOption[] = [
+  { label: 'Status (A->Z, 0->9)', value: SortMethod.StatusAsc },
+  { label: 'Status (Z->A, 9->0)', value: SortMethod.StatusDesc }
+]
+
+export const sortByVersion: SelectOption[] = [
+  { label: 'Version (A->Z, 0->9)', value: SortMethod.VersionAsc },
+  { label: 'Version (Z->A, 9->0)', value: SortMethod.VersionDesc }
 ]
 
 export function SortDropdown(props: SortDropdownProps): JSX.Element {
