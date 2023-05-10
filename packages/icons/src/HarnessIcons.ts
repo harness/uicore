@@ -332,6 +332,7 @@ import CvMain from './cv-main.svg'
 import CvSketch from './cv-sketch.svg'
 import CvSolidCurrentColor from './cv-solid-current-color.svg'
 import CvSolid from './cv-solid.svg'
+import CvVerifystep from './cv-verifystep.svg'
 import CvWithText from './cv-with-text.svg'
 import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
@@ -1431,6 +1432,7 @@ type HarnessIconName =
   | 'cv-sketch'
   | 'cv-solid-current-color'
   | 'cv-solid'
+  | 'cv-verifystep'
   | 'cv-with-text'
   | 'danger-icon'
   | 'dashboard-selected'
@@ -2530,6 +2532,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cv-sketch': CvSketch,
   'cv-solid-current-color': CvSolidCurrentColor,
   'cv-solid': CvSolid,
+  'cv-verifystep': CvVerifystep,
   'cv-with-text': CvWithText,
   'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
