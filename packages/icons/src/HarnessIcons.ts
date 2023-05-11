@@ -133,6 +133,8 @@ import BrakemanInverse from './brakeman-inverse.svg'
 import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
+import BurpSuiteInverse from './burp-suite-inverse.svg'
+import BurpSuite from './burp-suite.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
 import CanaryGrey from './canary-grey.svg'
@@ -447,6 +449,7 @@ import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
 import FortifyOnDemand from './fortify-on-demand.svg'
+import Fossa from './fossa.svg'
 import FsClosedFolder from './fs-closed-folder.svg'
 import FsOpenFolder from './fs-open-folder.svg'
 import FsRootFolder from './fs-root-folder.svg'
@@ -878,6 +881,7 @@ import SecretsIcon from './secrets-icon.svg'
 import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
+import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
@@ -1025,6 +1029,7 @@ import SwitchOn from './switch-on.svg'
 import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
+import Sysdig from './sysdig.svg'
 import TanzuCommand from './tanzuCommand.svg'
 import TasInverse from './tas-inverse.svg'
 import TasManifest from './tas-manifest.svg'
@@ -1234,6 +1239,8 @@ type HarnessIconName =
   | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
+  | 'burp-suite-inverse'
+  | 'burp-suite'
   | 'canary-delete-inverse'
   | 'canary-delete'
   | 'canary-grey'
@@ -1548,6 +1555,7 @@ type HarnessIconName =
   | 'folder-upload'
   | 'fortify-on-demand-inverse'
   | 'fortify-on-demand'
+  | 'fossa'
   | 'fs-closed-folder'
   | 'fs-open-folder'
   | 'fs-root-folder'
@@ -1979,6 +1987,7 @@ type HarnessIconName =
   | 'security-ci-step-inverse'
   | 'security-ci-step'
   | 'security-stage'
+  | 'semgrep'
   | 'send-data'
   | 'serverless-deploy-step'
   | 'service-amazon-ecs'
@@ -2126,6 +2135,7 @@ type HarnessIconName =
   | 'sync-failed'
   | 'synced'
   | 'syncing'
+  | 'sysdig'
   | 'tanzuCommand'
   | 'tas-inverse'
   | 'tas-manifest'
@@ -2335,6 +2345,8 @@ const HarnessIcons: KVO<ElementType> = {
   brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
+  'burp-suite-inverse': BurpSuiteInverse,
+  'burp-suite': BurpSuite,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
   'canary-grey': CanaryGrey,
@@ -2649,6 +2661,7 @@ const HarnessIcons: KVO<ElementType> = {
   'folder-upload': FolderUpload,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
   'fortify-on-demand': FortifyOnDemand,
+  fossa: Fossa,
   'fs-closed-folder': FsClosedFolder,
   'fs-open-folder': FsOpenFolder,
   'fs-root-folder': FsRootFolder,
@@ -3080,6 +3093,7 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step-inverse': SecurityCiStepInverse,
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
+  semgrep: Semgrep,
   'send-data': SendData,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-amazon-ecs': ServiceAmazonEcs,
@@ -3227,6 +3241,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sync-failed': SyncFailed,
   synced: Synced,
   syncing: Syncing,
+  sysdig: Sysdig,
   tanzuCommand: TanzuCommand,
   'tas-inverse': TasInverse,
   'tas-manifest': TasManifest,
