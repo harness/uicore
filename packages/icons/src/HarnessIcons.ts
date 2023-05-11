@@ -99,6 +99,7 @@ import AzureBlueprints from './azure-blueprints.svg'
 import AzureContainerRegistry from './azure-container-registry.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
+import AzureResourceManager from './azure-resource-manager.svg'
 import AzureVm from './azure-vm.svg'
 import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
@@ -333,6 +334,8 @@ import CvMain from './cv-main.svg'
 import CvSketch from './cv-sketch.svg'
 import CvSolidCurrentColor from './cv-solid-current-color.svg'
 import CvSolid from './cv-solid.svg'
+import CvVerifystepInverse from './cv-verifystep-inverse.svg'
+import CvVerifystep from './cv-verifystep.svg'
 import CvWithText from './cv-with-text.svg'
 import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
@@ -1202,6 +1205,7 @@ type HarnessIconName =
   | 'azure-container-registry'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
+  | 'azure-resource-manager'
   | 'azure-vm'
   | 'azurewebapp'
   | 'background-ci-step-inverse'
@@ -1436,6 +1440,8 @@ type HarnessIconName =
   | 'cv-sketch'
   | 'cv-solid-current-color'
   | 'cv-solid'
+  | 'cv-verifystep-inverse'
+  | 'cv-verifystep'
   | 'cv-with-text'
   | 'danger-icon'
   | 'dashboard-selected'
@@ -2305,6 +2311,7 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-container-registry': AzureContainerRegistry,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
+  'azure-resource-manager': AzureResourceManager,
   'azure-vm': AzureVm,
   azurewebapp: Azurewebapp,
   'background-ci-step-inverse': BackgroundCiStepInverse,
@@ -2539,6 +2546,8 @@ const HarnessIcons: KVO<ElementType> = {
   'cv-sketch': CvSketch,
   'cv-solid-current-color': CvSolidCurrentColor,
   'cv-solid': CvSolid,
+  'cv-verifystep-inverse': CvVerifystepInverse,
+  'cv-verifystep': CvVerifystep,
   'cv-with-text': CvWithText,
   'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
