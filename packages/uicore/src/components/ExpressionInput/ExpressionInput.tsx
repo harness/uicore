@@ -126,6 +126,11 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
 
   const [filteredItems, setFilteredItems] = React.useState<string[]>([])
 
+  // this is required for onChange of value prop
+  React.useEffect(() => {
+    setInputValue(value as string)
+  }, [value])
+
   React.useEffect(() => {
     // reset cursor position when query value is empty
     if (!queryValue) {
