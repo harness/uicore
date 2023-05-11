@@ -92,7 +92,14 @@ export const getMultiTypeFromValue = (
 
       return MultiTypeInputType.RUNTIME
     }
-    if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
+    // Do not allow expression type if allowableTypes array is defined and expression type is not present in allowableTypes array
+    if (
+      (!Array.isArray(allowableTypes) && isValueAnExpression(value)) ||
+      (Array.isArray(allowableTypes) &&
+        isValueAnExpression(value) &&
+        (allowableTypes as AllowedTypesWithExecutionTime[]).includes(MultiTypeInputType.EXPRESSION))
+    )
+      return MultiTypeInputType.EXPRESSION
   } else if (Array.isArray(value) && supportListOfExpressionsBehaviour) {
     // To support list of expressions
     if (value.some((item: string | MultiSelectOption) => typeof item === 'string' && isValueAnExpression(item)))
