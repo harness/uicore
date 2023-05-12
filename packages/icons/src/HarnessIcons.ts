@@ -317,7 +317,6 @@ import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
 import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
 import CsHover from './cs-hover.svg'
-import CubeOutline from './cube-outline.svg'
 import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
@@ -1425,7 +1424,6 @@ type HarnessIconName =
   | 'create-via-pipeline-template'
   | 'create-via-starter-pipeline'
   | 'cs-hover'
-  | 'cube-outline'
   | 'currency-banner'
   | 'custom-approval'
   | 'custom-artifact'
@@ -2533,7 +2531,6 @@ const HarnessIcons: KVO<ElementType> = {
   'create-via-pipeline-template': CreateViaPipelineTemplate,
   'create-via-starter-pipeline': CreateViaStarterPipeline,
   'cs-hover': CsHover,
-  'cube-outline': CubeOutline,
   'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
