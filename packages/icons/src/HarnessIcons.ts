@@ -784,6 +784,7 @@ import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
+import RegEx from './reg-ex.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
@@ -1891,6 +1892,7 @@ type HarnessIconName =
   | 'question'
   | 'queue-step'
   | 'queued'
+  | 'reg-ex'
   | 'remote-setup'
   | 'remote'
   | 'remotefile'
@@ -2998,6 +3000,7 @@ const HarnessIcons: KVO<ElementType> = {
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
+  'reg-ex': RegEx,
   'remote-setup': RemoteSetup,
   remote: Remote,
   remotefile: Remotefile,
