@@ -39,6 +39,12 @@ const helperText: Record<MultiTypeInputType, React.ReactNode> = {
     <React.Fragment>
       <b>Runtime Inputs</b> are placeholders for values that will be provided during a Pipeline execution.
     </React.Fragment>
+  ),
+  [MultiTypeInputType.REGEX]: (
+    <React.Fragment>
+      A <b>RegEx</b> (Regular Expression) allows you specify a text pattern that will be matched against, following a
+      standardized syntax.
+    </React.Fragment>
   )
 }
 
@@ -46,7 +52,8 @@ export const labels: Record<MultiTypeInputType, string> = {
   [MultiTypeInputType.EXPRESSION]: 'expression',
   [MultiTypeInputType.FIXED]: 'fixedValue',
   [MultiTypeInputType.RUNTIME]: 'runtimeInput',
-  [MultiTypeInputType.EXECUTION_TIME]: 'runtimeInput'
+  [MultiTypeInputType.EXECUTION_TIME]: 'runtimeInput',
+  [MultiTypeInputType.REGEX]: 'regex'
 }
 
 export interface LearnMorePopoverProps {

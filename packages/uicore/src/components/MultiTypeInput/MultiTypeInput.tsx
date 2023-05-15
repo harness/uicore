@@ -26,7 +26,8 @@ import {
   MultiTypeIconSize,
   RUNTIME_INPUT_VALUE,
   EXPRESSION_INPUT_PLACEHOLDER,
-  EXECUTION_TIME_INPUT_VALUE
+  EXECUTION_TIME_INPUT_VALUE,
+  REGEX_INPUT_PLACEHOLDER
 } from './MultiTypeInputUtils'
 import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
@@ -212,6 +213,18 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           placeholder={placeholder || EXECUTION_TIME_INPUT_VALUE}
           disabled
           value={value as string}
+        />
+      )}
+      {type === MultiTypeInputType.REGEX && (
+        <TextInput
+          wrapperClassName={css.input}
+          name={name}
+          placeholder={placeholder || REGEX_INPUT_PLACEHOLDER}
+          disabled={disabled}
+          value={value as string}
+          onChange={(ev: React.ChangeEvent<HTMLInputElement>) => {
+            onChange?.(ev.target.value, MultiTypeInputValue.STRING, MultiTypeInputType.REGEX)
+          }}
         />
       )}
       {type === MultiTypeInputType.EXPRESSION && (
