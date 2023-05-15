@@ -47,6 +47,12 @@ TextInput.args = {
     'pipeline.description',
     'pipeline.identifier',
     'pipeline.stage.qa.displayName'
+  ],
+  allowableTypes: [
+    MultiTypeInputType.FIXED,
+    MultiTypeInputType.RUNTIME,
+    MultiTypeInputType.EXPRESSION,
+    MultiTypeInputType.REGEX
   ]
 }
 
@@ -64,6 +70,12 @@ SelectInput.args = {
     'pipeline.description',
     'pipeline.identifier',
     'pipeline.stage.qa.displayName'
+  ],
+  allowableTypes: [
+    MultiTypeInputType.FIXED,
+    MultiTypeInputType.RUNTIME,
+    MultiTypeInputType.EXPRESSION,
+    MultiTypeInputType.REGEX
   ]
 }
 
