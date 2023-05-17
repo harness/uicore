@@ -115,6 +115,8 @@ import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
 import BaselineTarget from './baseline-target.svg'
 import BasicDeployment from './basic-deployment.svg'
+import BgScaleDownStepInverse from './bg-scale-down-step-inverse.svg'
+import BgScaleDownStep from './bg-scale-down-step.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
@@ -1224,6 +1226,8 @@ type HarnessIconName =
   | 'barrier-open'
   | 'baseline-target'
   | 'basic-deployment'
+  | 'bg-scale-down-step-inverse'
+  | 'bg-scale-down-step'
   | 'bin-main'
   | 'bitbucket-blue'
   | 'bitbucket-new'
@@ -2333,6 +2337,8 @@ const HarnessIcons: KVO<ElementType> = {
   'barrier-open': BarrierOpen,
   'baseline-target': BaselineTarget,
   'basic-deployment': BasicDeployment,
+  'bg-scale-down-step-inverse': BgScaleDownStepInverse,
+  'bg-scale-down-step': BgScaleDownStep,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
