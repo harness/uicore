@@ -18,6 +18,8 @@ import {
   setCaret,
   TextAreaEditable
 } from '../TextAreaEditable/TextAreaEditable'
+import { NewExpressionDropdown } from '../ExpressionDropdown/ExpressionDropdown'
+import { formatData } from './utils'
 
 export interface ExpressionInputProps {
   items?: string[]
@@ -136,7 +138,6 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     if (!queryValue) {
       cursorRef.current = null
     }
-
     setFilteredItems(
       items.filter((item: string) => {
         const match = queryValue.match(EXPRESSION_START_REGEX)
@@ -371,12 +372,27 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           />
         )}
         <React.Fragment>
-          {listProps.itemList
-            ? React.cloneElement(listProps.itemList as React.ReactElement, {
-                className: css.menu,
-                style: { maxHeight }
-              })
-            : null}
+          {newExpressionComponent ? (
+            <NewExpressionDropdown
+              query={queryValue}
+              rootTrieNode={formatData(items)}
+              itemRenderer={
+                listProps.itemList
+                  ? React.cloneElement(listProps.itemList as React.ReactElement, {
+                      className: css.expressionDropdownMenu,
+                      style: { maxHeight }
+                    })
+                  : null
+              }
+              setQueryValue={setQueryValue}
+              setInputValue={setInputValue}
+            />
+          ) : listProps.itemList ? (
+            React.cloneElement(listProps.itemList as React.ReactElement, {
+              className: css.menu,
+              style: { maxHeight }
+            })
+          ) : null}
         </React.Fragment>
       </Popover>
     )

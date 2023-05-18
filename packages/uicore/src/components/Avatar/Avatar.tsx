@@ -30,6 +30,7 @@ export interface AvatarProps extends HTMLDivProps {
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
   hoverCard?: boolean
   tooltip?: JSX.Element
+  usePortal?: boolean
   hoverCardDetailsCallBack?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 export const plusIcon = '+'
@@ -94,6 +95,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     className,
     email = '',
     tooltip,
+    usePortal = false,
     color = Color.WHITE,
     onClick,
     hoverCard = true,
@@ -238,7 +240,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
       <Popover
         {...hoverCardContent}
         interactionKind="hover"
-        usePortal={false}
+        usePortal={usePortal}
         className={css.avatarPopOver}
         position="top"
         disabled={isHoverDisabled}>
