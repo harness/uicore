@@ -53,7 +53,7 @@ function getOverflowRenderer(props: getVisibleItemRendererProps): any {
 
     return (
       <Layout.Horizontal>
-        <Popover isOpen={isPopoverOpen}>
+        <Popover isOpen={isPopoverOpen} minimal>
           <Layout.Horizontal className={css.visibleItemText} onClick={() => itemClickHandler(items[0].valueTillHere)}>
             <div className={css.visibleItemTextHeader}>{items[0].value}</div>
             <Icon name={getDropDownIcon(items[0], isOpen)} padding={{ left: '5px', right: '10px' }} size={10} />
@@ -75,7 +75,7 @@ function getOverflowRenderer(props: getVisibleItemRendererProps): any {
           </Menu>
         </Popover>
         {items.length > 1 ? (
-          <Popover>
+          <Popover minimal>
             <div style={{ cursor: 'pointer' }}>...</div>
             <Menu>
               {items.map((item, index) => {
@@ -111,7 +111,7 @@ function getVisibleItemRenderer(props: getVisibleItemRendererProps): any {
     const shallShowNesting = item.children.some(child => child.children.length !== 0)
 
     return (
-      <Popover key={index}>
+      <Popover key={index} minimal>
         <Layout.Horizontal className={css.visibleItemText} onClick={() => itemClickHandler(item.valueTillHere)}>
           <div className={css.visibleItemTextHeader}>{item.value}</div>
           {shallShowNesting && <Icon name={getDropDownIcon(item, isOpen)} className={css.paddingLeft} size={10} />}
