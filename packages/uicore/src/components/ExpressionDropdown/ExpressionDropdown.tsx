@@ -6,18 +6,18 @@
  */
 import React, { useState } from 'react'
 import { Boundary, Card, Menu, OverflowList, Popover } from '@blueprintjs/core'
-import { Icon, IconName } from '@harness/icons'
+import { Icon } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
-import { isEmpty, isUndefined } from 'lodash-es'
+import { isUndefined } from 'lodash-es'
 import css from './ExpressionDropdown.css'
-import { setOpenTargetElement } from './utils'
+import { getDropDownIcon, setOpenTargetElement } from './utils'
 
 export interface ChildKeyNode {
   key: string
   value: string
 }
 
-interface TrieNode {
+export interface TrieNode {
   value: string
   valueTillHere: string
   children: TrieNode[]
@@ -37,19 +37,6 @@ interface getVisibleItemRendererProps {
   dropDownItemClickHandler: (value: string) => void
   isOpen: boolean[]
   setIsOpen: React.Dispatch<React.SetStateAction<boolean[]>>
-}
-
-function getDropDownIcon(item: TrieNode, isOpen: boolean[]): IconName {
-  let targetElement
-  if (isEmpty(item.valueTillHere)) {
-    targetElement = item.valueTillHere.split('.').length - 1
-  } else {
-    targetElement = item.valueTillHere.split('.').length
-  }
-  if (isOpen[targetElement]) {
-    return 'main-chevron-down'
-  }
-  return 'main-chevron-right'
 }
 
 function getOverflowRenderer(props: getVisibleItemRendererProps): any {
@@ -160,7 +147,7 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
     // set list items here and get the correct currentTrieNode
     let currentNode: TrieNode | undefined = rootTrieNode
     const listItems: TrieNode[] = [currentNode]
-    const queryItems = query.substring(query.indexOf('+') + 1).split('.')
+    const queryItems = query.substring(query.lastIndexOf('+') + 1).split('.')
 
     queryItems.forEach(word => {
       const wordIndex = currentNode?.children.findIndex(child => child.value === word)
