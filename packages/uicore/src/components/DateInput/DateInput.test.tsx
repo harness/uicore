@@ -84,7 +84,9 @@ describe('<DateInput/> tests', () => {
   })
 
   test('renders with placeholder ', () => {
-    const { container } = render(<DateInput value="1579773180000" placeholder={'This is dateInput component'} />)
-    expect(container.querySelector('input[placeholder="This is dateInput component"]')).toBeInTheDocument()
+    const { getByPlaceholderText } = render(
+      <DateInput value="1579773180000" placeholder={'This is dateInput component'} />
+    )
+    expect(getByPlaceholderText('This is dateInput component')).toBeInTheDocument()
   })
 })

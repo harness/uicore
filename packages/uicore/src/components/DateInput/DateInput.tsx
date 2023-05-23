@@ -20,6 +20,7 @@ import {
 } from '../DurationInput/DurationInput'
 import moment from 'moment'
 import { Icon } from '@harness/icons'
+import { defaultTo } from 'lodash-es'
 
 export interface DateInputProps extends Omit<TextInputProps, 'onChange'> {
   dateTimeFormat?: string
@@ -235,7 +236,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
         type="text"
         value={state.value}
         intent={state.intent}
-        placeholder={placeholder}
+        placeholder={defaultTo(placeholder, formatDateTime)}
         errorText={state.error}
         onChange={onChangeText}
       />
