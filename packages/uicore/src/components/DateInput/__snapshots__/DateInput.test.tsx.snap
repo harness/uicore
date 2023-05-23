@@ -14,7 +14,6 @@ exports[`<DateInput/> tests renders with empty value and allow variables 1`] = `
         <input
           class="bp3-input"
           data-testid="input"
-          placeholder="MM/DD/YYYY"
           type="text"
           value=""
         />
@@ -100,7 +99,6 @@ exports[`<DateInput/> tests renders with empty value date 1`] = `
         <input
           class="bp3-input"
           data-testid="input"
-          placeholder="MM/DD/YYYY"
           type="text"
           value=""
         />
@@ -156,7 +154,6 @@ exports[`<DateInput/> tests renders with empty value date time 1`] = `
         <input
           class="bp3-input"
           data-testid="input"
-          placeholder="MM/DD/YYYY HH:mm"
           type="text"
           value=""
         />
@@ -211,7 +208,6 @@ exports[`<DateInput/> tests renders with invalid value and allow variables 1`] =
       >
         <input
           class="bp3-input"
-          placeholder="MM/DD/YYYY"
           type="text"
           value="current() + 2x"
         />
@@ -291,7 +287,6 @@ exports[`<DateInput/> tests renders with value  1`] = `
       >
         <input
           class="bp3-input"
-          placeholder="MM/DD/YYYY"
           type="text"
           value="01/23/2020"
         />
@@ -346,7 +341,6 @@ exports[`<DateInput/> tests renders with value and allow variables 1`] = `
       >
         <input
           class="bp3-input"
-          placeholder="MM/DD/YYYY"
           style="padding-right: 0px;"
           type="text"
           value="current() + 2h"
