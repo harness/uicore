@@ -68,7 +68,7 @@ const isValidDateInput = (
 }
 
 export const DateInput: React.FC<DateInputProps> = props => {
-  const { timePrecision, allowVariables, dateProps, popoverProps, ...otherProps } = props
+  const { timePrecision, allowVariables, dateProps, popoverProps, placeholder, ...otherProps } = props
   const { dateTimeFormat, onChange } = props
   const formatDateTime = dateTimeFormat || (timePrecision ? 'MM/DD/YYYY HH:mm' : 'MM/DD/YYYY')
 
@@ -223,7 +223,6 @@ export const DateInput: React.FC<DateInputProps> = props => {
     parseDate: (str: string) => new Date(str),
     maxDate,
     minDate,
-    placeholder: formatDateTime,
     timePrecision,
     onChange: onChangeDate,
     ...dateProps
@@ -236,7 +235,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
         type="text"
         value={state.value}
         intent={state.intent}
-        placeholder={formatDateTime}
+        placeholder={placeholder}
         errorText={state.error}
         onChange={onChangeText}
       />
