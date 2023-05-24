@@ -302,7 +302,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     }
 
     function handleMouseUpForTextAreaEditable(e: React.MouseEvent): void {
-      const { textContent } = e.target as HTMLInputElement
+      const { innerText: textContent } = (e.target as any).parentNode
       const selectionStart = getCaretIndex(e.target as any)
       updateQueryBasedOnCursor(selectionStart, textContent as string)
     }
