@@ -89,6 +89,12 @@ import AwsLambdaDeploy from './aws-lambda-deploy.svg'
 import AwsLambdaRollback from './aws-lambda-rollback.svg'
 import AwsLambdaTrafficShift from './aws-lambda-traffic-shift.svg'
 import AwsRds from './aws-rds.svg'
+import AwsSamBuildInverse from './aws-sam-build-inverse.svg'
+import AwsSamBuild from './aws-sam-build.svg'
+import AwsSamDeployInverse from './aws-sam-deploy-inverse.svg'
+import AwsSamDeploy from './aws-sam-deploy.svg'
+import AwsSamPackageInverse from './aws-sam-package-inverse.svg'
+import AwsSamPackage from './aws-sam-package.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AwsSecurityHubInverse from './aws-security-hub-inverse.svg'
 import AwsSecurityHub from './aws-security-hub.svg'
@@ -1203,6 +1209,12 @@ type HarnessIconName =
   | 'aws-lambda-rollback'
   | 'aws-lambda-traffic-shift'
   | 'aws-rds'
+  | 'aws-sam-build-inverse'
+  | 'aws-sam-build'
+  | 'aws-sam-deploy-inverse'
+  | 'aws-sam-deploy'
+  | 'aws-sam-package-inverse'
+  | 'aws-sam-package'
   | 'aws-secret-manager'
   | 'aws-security-hub-inverse'
   | 'aws-security-hub'
@@ -2317,6 +2329,12 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-lambda-rollback': AwsLambdaRollback,
   'aws-lambda-traffic-shift': AwsLambdaTrafficShift,
   'aws-rds': AwsRds,
+  'aws-sam-build-inverse': AwsSamBuildInverse,
+  'aws-sam-build': AwsSamBuild,
+  'aws-sam-deploy-inverse': AwsSamDeployInverse,
+  'aws-sam-deploy': AwsSamDeploy,
+  'aws-sam-package-inverse': AwsSamPackageInverse,
+  'aws-sam-package': AwsSamPackage,
   'aws-secret-manager': AwsSecretManager,
   'aws-security-hub-inverse': AwsSecurityHubInverse,
   'aws-security-hub': AwsSecurityHub,
