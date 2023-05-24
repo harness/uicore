@@ -199,8 +199,10 @@ import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
+import ChaosNamespace from './chaos-namespace.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
+import ChaosServiceDiscovery from './chaos-service-discovery.svg'
 import ChaosSketch from './chaos-sketch.svg'
 import ChaosSolid from './chaos-solid.svg'
 import ChaosWithDarkText from './chaos-with-dark-text.svg'
@@ -1319,8 +1321,10 @@ type HarnessIconName =
   | 'chaos-hubs'
   | 'chaos-litmuschaos'
   | 'chaos-main'
+  | 'chaos-namespace'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
+  | 'chaos-service-discovery'
   | 'chaos-sketch'
   | 'chaos-solid'
   | 'chaos-with-dark-text'
@@ -2439,8 +2443,10 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-hubs': ChaosHubs,
   'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-main': ChaosMain,
+  'chaos-namespace': ChaosNamespace,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
+  'chaos-service-discovery': ChaosServiceDiscovery,
   'chaos-sketch': ChaosSketch,
   'chaos-solid': ChaosSolid,
   'chaos-with-dark-text': ChaosWithDarkText,
