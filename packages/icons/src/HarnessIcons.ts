@@ -258,6 +258,7 @@ import CodeClosed from './code-closed.svg'
 import CodeCommitLight from './code-commit-light.svg'
 import CodeCommitSmall from './code-commit-small.svg'
 import CodeCommit from './code-commit.svg'
+import CodeContent from './code-content.svg'
 import CodeCopy from './code-copy.svg'
 import CodeDelete from './code-delete.svg'
 import CodeDescending from './code-descending.svg'
@@ -1380,6 +1381,7 @@ type HarnessIconName =
   | 'code-commit-light'
   | 'code-commit-small'
   | 'code-commit'
+  | 'code-content'
   | 'code-copy'
   | 'code-delete'
   | 'code-descending'
@@ -2502,6 +2504,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-commit-light': CodeCommitLight,
   'code-commit-small': CodeCommitSmall,
   'code-commit': CodeCommit,
+  'code-content': CodeContent,
   'code-copy': CodeCopy,
   'code-delete': CodeDelete,
   'code-descending': CodeDescending,
