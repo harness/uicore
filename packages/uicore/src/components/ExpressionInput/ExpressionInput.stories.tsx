@@ -52,5 +52,6 @@ Basic.args = {
     'pipeline.stages.serviceDeploy.spec.serviceConfig.serviceDefinition.spec.manifests.file.var20',
     'pipeline.stage.qa.displayNameeqrfddsfweyudfrtyhsdfqsqwdxwdcwtrcfqwtdwcrwqhjdwvcqwhyjevcjwhtevcwqthercjhwvqerhwqtevrcwqhtevqwhtcevqwjhtrv qdwhjhydfuqjywfdrjhasyqfd'
   ],
-  value: '<+se'
+  value: '<+se',
+  newExpressionComponent: true
 }

@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 import { Boundary, Card, Menu, OverflowList, Popover } from '@blueprintjs/core'
 import { Icon } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
-import { isUndefined } from 'lodash-es'
+import { isEmpty, isUndefined } from 'lodash-es'
 import css from './ExpressionDropdown.css'
 import { getDropDownIcon, setOpenTargetElement } from './utils'
 
@@ -171,6 +171,13 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
   const visibleItemRenderer = getVisibleItemRenderer({ dropDownItemClickHandler, isOpen, setIsOpen })
 
   const overflowListRenderer = getOverflowRenderer({ dropDownItemClickHandler, isOpen, setIsOpen })
+
+  const queryValue = query.substring(query.lastIndexOf('+') + 1)
+
+  if (isEmpty(queryValue)) {
+    return <></>
+  }
+
   return (
     <Card className={css.dropdown}>
       <OverflowList
