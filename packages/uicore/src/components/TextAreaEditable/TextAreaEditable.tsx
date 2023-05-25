@@ -54,7 +54,7 @@ export function getCaretIndex(element: HTMLElement): number {
     const preCaretRange = range.cloneRange()
     preCaretRange.selectNodeContents(element)
     preCaretRange.setEnd(range.endContainer, range.endOffset)
-    position = preCaretRange.toString().length
+    position = preCaretRange.toString().length - (range.endOffset - range.startOffset)
   }
 
   return position
