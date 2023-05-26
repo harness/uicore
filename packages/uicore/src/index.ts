@@ -14,6 +14,7 @@ export {
   useNestedAccordion,
   NestedAccordionContextData
 } from './components/Accordion/NestedAccordion'
+export { AccordionTabsProps, TabListProps, AccordionTabs } from './components/AccordionTabs/AccordionTabs'
 export { Avatar, AvatarProps, AvatarSizes } from './components/Avatar/Avatar'
 export { getInitialsFromNameOrEmail } from './components/Avatar/utils'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
