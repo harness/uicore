@@ -837,6 +837,7 @@ import RestoreCacheS3StepInverse from './restore-cache-s3-step-inverse.svg'
 import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
+import RetryStepGroup from './retry-step-group.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
@@ -1961,6 +1962,7 @@ type HarnessIconName =
   | 'restore-cache-s3-step'
   | 'restore-cache-s3'
   | 'restore-cache-step'
+  | 'retry-step-group'
   | 'right-bar-notification'
   | 'right-drawer'
   | 'rollback-execution'
@@ -3085,6 +3087,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3-step': RestoreCacheS3Step,
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
+  'retry-step-group': RetryStepGroup,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
