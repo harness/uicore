@@ -54,6 +54,7 @@ import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import Ai from './ai.svg'
+import Aix from './aix.svg'
 import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
@@ -1179,6 +1180,7 @@ type HarnessIconName =
   | 'adminRole'
   | 'advanced'
   | 'ai'
+  | 'aix'
   | 'api-docs'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -2304,6 +2306,7 @@ const HarnessIcons: KVO<ElementType> = {
   adminRole: AdminRole,
   advanced: Advanced,
   ai: Ai,
+  aix: Aix,
   'api-docs': ApiDocs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
