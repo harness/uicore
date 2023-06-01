@@ -519,4 +519,41 @@
   &.background-form-subsection {
     background: var(--form-subsection-bg);
   }
+
+  /* ai theme */
+  &.background-aipurple900 {
+    background: var(--ai-purple-900);
+  }
+
+  &.background-aipurple800 {
+    background: var(--ai-purple-800);
+  }
+
+  &.background-aipurple700 {
+    background: var(--ai-purple-700);
+  }
+
+  &.background-aipurple600 {
+    background: var(--ai-purple-600);
+  }
+
+  &.background-aipurple500 {
+    background: var(--ai-purple-500);
+  }
+
+  &.background-aipurple400 {
+    background: var(--ai-purple-400);
+  }
+
+  &.background-aipurple300 {
+    background: var(--ai-purple-300);
+  }
+
+  &.background-aipurple200 {
+    background: var(--ai-purple-200);
+  }
+
+  &.background-aipurple100 {
+    background: var(--ai-purple-100);
+  }
 }
