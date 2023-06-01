@@ -143,7 +143,16 @@ export const Color = {
   YELLOW_350: 'yellow350',
   GREEN_450: 'green450',
   GREEN_350: 'green350',
-  SEA_GREEN_500: 'seaGreen500'
+  SEA_GREEN_500: 'seaGreen500',
+  AI_PURPLE_900: 'aipurple900',
+  AI_PURPLE_800: 'aipurple800',
+  AI_PURPLE_700: 'aipurple700',
+  AI_PURPLE_600: 'aipurple600',
+  AI_PURPLE_500: 'aipurple500',
+  AI_PURPLE_400: 'aipurple400',
+  AI_PURPLE_300: 'aipurple300',
+  AI_PURPLE_200: 'aipurple200',
+  AI_PURPLE_100: 'aipurple100'
 }
 
 export type Color = typeof Color[keyof typeof Color]

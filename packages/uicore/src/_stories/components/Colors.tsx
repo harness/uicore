@@ -137,7 +137,17 @@ export const names = {
   '--grey': 'var(--grey-500)',
   '--grey-bg': 'var(--grey-50)',
   '--pipeline-bg': '#f6fcff',
-  '--pipeline-bg-dot': '#bbc1c4'
+  '--pipeline-bg-dot': '#bbc1c4',
+  /* ai theme */
+  '--ai-purple-900': '#4715d2',
+  '--ai-purple-800': '#592cd7',
+  '--ai-purple-700': '#6c44db',
+  '--ai-purple-600': '#7e5be0',
+  '--ai-purple-500': '#a38ae9',
+  '--ai-purple-400': '#b5a1ed',
+  '--ai-purple-300': '#c8b9f2',
+  '--ai-purple-200': '#dad0f6',
+  '--ai-purple-100': '#ede8fb'
 }
 
 export interface ColorRowProps {
