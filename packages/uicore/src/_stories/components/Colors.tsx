@@ -147,7 +147,8 @@ export const names = {
   '--ai-purple-400': '#b5a1ed',
   '--ai-purple-300': '#c8b9f2',
   '--ai-purple-200': '#dad0f6',
-  '--ai-purple-100': '#ede8fb'
+  '--ai-purple-100': '#ede8fb',
+  '--ai-purple-50': '#f8f5ff'
 }
 
 export interface ColorRowProps {
