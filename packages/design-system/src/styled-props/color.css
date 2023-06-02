@@ -625,4 +625,8 @@
   &.color-aipurple100 {
     color: var(--ai-purple-100);
   }
+
+  &.color-aipurple50 {
+    color: var(--ai-purple-50);
+  }
 }

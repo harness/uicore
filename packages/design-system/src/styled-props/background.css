@@ -556,4 +556,8 @@
   &.background-aipurple100 {
     background: var(--ai-purple-100);
   }
+
+  &.background-aipurple50 {
+    background: var(--ai-purple-50);
+  }
 }

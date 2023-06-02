@@ -354,4 +354,8 @@
   &.border-color-aipurple100 {
     border-color: var(--ai-purple-100);
   }
+
+  &.border-color-aipurple50 {
+    border-color: var(--ai-purple-50);
+  }
 }
