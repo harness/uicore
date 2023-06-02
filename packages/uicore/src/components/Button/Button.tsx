@@ -24,7 +24,8 @@ export enum ButtonVariation {
   SECONDARY = 'variation-secondary',
   TERTIARY = 'variation-tertiary',
   ICON = 'variation-icon',
-  LINK = 'variation-link'
+  LINK = 'variation-link',
+  AI = 'variation-ai'
 }
 
 export enum ButtonSize {

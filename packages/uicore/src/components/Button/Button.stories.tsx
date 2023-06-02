@@ -258,6 +258,12 @@ export const ButtonVariationsAndSizesExamples: Story<ButtonProps> = () => {
           />
         </Layout.Horizontal>
       </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="xxlarge">
+          <Button icon="harness-copilot" variation={ButtonVariation.AI} text="Harness AI Copilot" />
+        </Layout.Horizontal>
+      </Container>
     </Layout.Vertical>
   )
 }

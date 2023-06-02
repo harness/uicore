@@ -184,6 +184,14 @@
         }
       }
 
+      &.variation-ai {
+        --text-color: var(--white);
+        --background-color: var(--ai-purple-800);
+        --background-color-hover: var(--ai-purple-900);
+        --background-color-active: var(--ai-purple-900);
+        --border: none;
+      }
+
       &.size {
         &.large {
           --button-height: 48px;
