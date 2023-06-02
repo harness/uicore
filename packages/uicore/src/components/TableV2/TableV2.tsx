@@ -6,7 +6,7 @@
  */
 
 import React, { ReactNode } from 'react'
-import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns, useExpanded } from 'react-table'
+import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns, useExpanded, TableState } from 'react-table'
 import cx from 'classnames'
 import { defaultTo } from 'lodash-es'
 import type { IconName } from '@blueprintjs/icons'
@@ -54,7 +54,7 @@ export interface TableProps<Data extends Record<string, any>> {
   autoResetExpanded?: boolean
   autoResetSortBy?: boolean
   autoResetPage?: boolean
-  initialState?: any
+  initialState?: Partial<TableState<Data>>
 }
 
 export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
