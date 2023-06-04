@@ -71,3 +71,20 @@
     --cb-bg-color: var(--grey-500);
   }
 }
+
+:global(.bp3-checkbox) {
+  &.boxed {
+    display: flex;
+    align-items: center;
+    height: var(--spacing-8);
+    padding: 0 var(--spacing-4) 0 var(--spacing-3) !important;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--grey-200);
+    border-radius: 4px;
+  }
+
+  &.checked {
+    border-color: var(--primary-7);
+    background-color: var(--primary-1);
+  }
+}

@@ -12,12 +12,18 @@ import { styledClass } from '@harness/design-system'
 
 import css from './Checkbox.css'
 
+export enum CheckboxVariant {
+  BOXED = 'BOXED'
+}
+
 export interface CheckboxProps extends Omit<ICheckboxProps, 'onChange'>, StyledProps {
   /** onChange event handler */
   onChange?: (event: FormEvent<HTMLInputElement>) => void
 
   /** className to be appended to default className */
   className?: string
+
+  variant?: CheckboxVariant
 }
 
 export function Checkbox(props: CheckboxProps): ReactElement {
@@ -27,7 +33,14 @@ export function Checkbox(props: CheckboxProps): ReactElement {
     <BpCheckbox
       {...omitStyledProps(props)}
       onChange={onChange}
-      className={styledClasses(props, styledClass.font, css.checkbox, className)}
+      className={styledClasses(
+        props,
+        styledClass.font,
+        css.checkbox,
+        className,
+        props.checked ? css.checked : undefined,
+        props.variant === CheckboxVariant.BOXED ? css.boxed : undefined
+      )}
     />
   )
 }
