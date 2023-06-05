@@ -93,6 +93,8 @@ import AwsSamBuildInverse from './aws-sam-build-inverse.svg'
 import AwsSamBuild from './aws-sam-build.svg'
 import AwsSamDeployInverse from './aws-sam-deploy-inverse.svg'
 import AwsSamDeploy from './aws-sam-deploy.svg'
+import AwsSamDownloadManifestsInverse from './aws-sam-download-manifests-inverse.svg'
+import AwsSamDownloadManifests from './aws-sam-download-manifests.svg'
 import AwsSamPackageInverse from './aws-sam-package-inverse.svg'
 import AwsSamPackage from './aws-sam-package.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
@@ -1220,6 +1222,8 @@ type HarnessIconName =
   | 'aws-sam-build'
   | 'aws-sam-deploy-inverse'
   | 'aws-sam-deploy'
+  | 'aws-sam-download-manifests-inverse'
+  | 'aws-sam-download-manifests'
   | 'aws-sam-package-inverse'
   | 'aws-sam-package'
   | 'aws-secret-manager'
@@ -2347,6 +2351,8 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-sam-build': AwsSamBuild,
   'aws-sam-deploy-inverse': AwsSamDeployInverse,
   'aws-sam-deploy': AwsSamDeploy,
+  'aws-sam-download-manifests-inverse': AwsSamDownloadManifestsInverse,
+  'aws-sam-download-manifests': AwsSamDownloadManifests,
   'aws-sam-package-inverse': AwsSamPackageInverse,
   'aws-sam-package': AwsSamPackage,
   'aws-secret-manager': AwsSecretManager,
