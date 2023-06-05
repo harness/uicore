@@ -38,8 +38,8 @@ export function Checkbox(props: CheckboxProps): ReactElement {
         styledClass.font,
         css.checkbox,
         className,
-        props.checked ? css.checked : undefined,
-        props.variant === CheckboxVariant.BOXED ? css.boxed : undefined
+        props.variant === CheckboxVariant.BOXED ? css.boxed : undefined,
+        props.checked ? css.checked : undefined
       )}
     />
   )

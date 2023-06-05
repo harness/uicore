@@ -81,10 +81,10 @@
     background-color: var(--primary-bg);
     border: 1px solid var(--grey-200);
     border-radius: 4px;
-  }
 
-  &.checked {
-    border-color: var(--primary-7);
-    background-color: var(--primary-1);
+    &.checked {
+      border-color: var(--primary-7);
+      background-color: var(--primary-1);
+    }
   }
 }
