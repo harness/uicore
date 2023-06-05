@@ -588,4 +588,45 @@
   &.color-success {
     color: var(--success);
   }
+
+  /* ai theme */
+  &.color-aipurple900 {
+    color: var(--ai-purple-900);
+  }
+
+  &.color-aipurple800 {
+    color: var(--ai-purple-800);
+  }
+
+  &.color-aipurple700 {
+    color: var(--ai-purple-700);
+  }
+
+  &.color-aipurple600 {
+    color: var(--ai-purple-600);
+  }
+
+  &.color-aipurple500 {
+    color: var(--ai-purple-500);
+  }
+
+  &.color-aipurple400 {
+    color: var(--ai-purple-400);
+  }
+
+  &.color-aipurple300 {
+    color: var(--ai-purple-300);
+  }
+
+  &.color-aipurple200 {
+    color: var(--ai-purple-200);
+  }
+
+  &.color-aipurple100 {
+    color: var(--ai-purple-100);
+  }
+
+  &.color-aipurple50 {
+    color: var(--ai-purple-50);
+  }
 }

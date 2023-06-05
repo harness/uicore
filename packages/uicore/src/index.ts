@@ -14,6 +14,7 @@ export {
   useNestedAccordion,
   NestedAccordionContextData
 } from './components/Accordion/NestedAccordion'
+export { AccordionTabsProps, TabListProps, AccordionTabs } from './components/AccordionTabs/AccordionTabs'
 export { Avatar, AvatarProps, AvatarSizes } from './components/Avatar/Avatar'
 export { getInitialsFromNameOrEmail } from './components/Avatar/utils'
 export { AvatarGroup, AvatarGroupProps } from './components/AvatarGroup/AvatarGroup'
@@ -21,7 +22,7 @@ export { Button, ButtonProps, ButtonVariation, ButtonSize } from './components/B
 export { SplitButton, SplitButtonOption } from './components/SplitButton/SplitButton'
 export { ConfirmActionButtonProps, ConfirmActionButton } from './components/ConfirmActionButton/ConfirmActionButton'
 export { ButtonGroup, OptionsButtonGroupProps, OptionsButtonGroup } from './components/ButtonGroup/ButtonGroup'
-export { Checkbox } from './components/Checkbox/Checkbox'
+export { Checkbox, CheckboxVariant } from './components/Checkbox/Checkbox'
 export { CopyToClipboard, CopyToClipboardProps } from './components/CopyToClipboard/CopyToClipboard'
 export { Dialog } from './components/Dialog/Dialog'
 export { ModalDialog } from './components/ModalDialog/ModalDialog'

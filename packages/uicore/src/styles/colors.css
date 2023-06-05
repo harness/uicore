@@ -223,4 +223,16 @@
   /* box shadows */
   --dark-shadow-color: rgb(0 0 0 / 16%);
   --light-shadow-color: rgb(255 255 255 / 16%);
+
+  /* ai theme */
+  --ai-purple-900: #4715d2;
+  --ai-purple-800: #592cd7;
+  --ai-purple-700: #6c44db;
+  --ai-purple-600: #7e5be0;
+  --ai-purple-500: #a38ae9;
+  --ai-purple-400: #b5a1ed;
+  --ai-purple-300: #c8b9f2;
+  --ai-purple-200: #dad0f6;
+  --ai-purple-100: #ede8fb;
+  --ai-purple-50: #f8f5ff;
 }

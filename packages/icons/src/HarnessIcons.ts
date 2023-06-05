@@ -201,8 +201,10 @@ import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
+import ChaosNamespace from './chaos-namespace.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
+import ChaosServiceDiscovery from './chaos-service-discovery.svg'
 import ChaosSketch from './chaos-sketch.svg'
 import ChaosSolid from './chaos-solid.svg'
 import ChaosWithDarkText from './chaos-with-dark-text.svg'
@@ -258,6 +260,7 @@ import CodeClosed from './code-closed.svg'
 import CodeCommitLight from './code-commit-light.svg'
 import CodeCommitSmall from './code-commit-small.svg'
 import CodeCommit from './code-commit.svg'
+import CodeContent from './code-content.svg'
 import CodeCopy from './code-copy.svg'
 import CodeDelete from './code-delete.svg'
 import CodeDescending from './code-descending.svg'
@@ -532,6 +535,7 @@ import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
+import HarnessCopilot from './harness-copilot.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -796,6 +800,8 @@ import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
+import RancherInverse from './rancher-inverse.svg'
+import Rancher from './rancher.svg'
 import ReExecuted from './re-executed.svg'
 import RegEx from './reg-ex.svg'
 import RemoteSetup from './remote-setup.svg'
@@ -835,6 +841,7 @@ import RestoreCacheS3StepInverse from './restore-cache-s3-step-inverse.svg'
 import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
+import RetryStepGroup from './retry-step-group.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
@@ -1323,8 +1330,10 @@ type HarnessIconName =
   | 'chaos-hubs'
   | 'chaos-litmuschaos'
   | 'chaos-main'
+  | 'chaos-namespace'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
+  | 'chaos-service-discovery'
   | 'chaos-sketch'
   | 'chaos-solid'
   | 'chaos-with-dark-text'
@@ -1380,6 +1389,7 @@ type HarnessIconName =
   | 'code-commit-light'
   | 'code-commit-small'
   | 'code-commit'
+  | 'code-content'
   | 'code-copy'
   | 'code-delete'
   | 'code-descending'
@@ -1654,6 +1664,7 @@ type HarnessIconName =
   | 'grey-cluster'
   | 'grid'
   | 'hand-manual'
+  | 'harness-copilot'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
@@ -1918,6 +1929,8 @@ type HarnessIconName =
   | 'question'
   | 'queue-step'
   | 'queued'
+  | 'rancher-inverse'
+  | 'rancher'
   | 're-executed'
   | 'reg-ex'
   | 'remote-setup'
@@ -1957,6 +1970,7 @@ type HarnessIconName =
   | 'restore-cache-s3-step'
   | 'restore-cache-s3'
   | 'restore-cache-step'
+  | 'retry-step-group'
   | 'right-bar-notification'
   | 'right-drawer'
   | 'rollback-execution'
@@ -2445,8 +2459,10 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-hubs': ChaosHubs,
   'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-main': ChaosMain,
+  'chaos-namespace': ChaosNamespace,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
+  'chaos-service-discovery': ChaosServiceDiscovery,
   'chaos-sketch': ChaosSketch,
   'chaos-solid': ChaosSolid,
   'chaos-with-dark-text': ChaosWithDarkText,
@@ -2502,6 +2518,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-commit-light': CodeCommitLight,
   'code-commit-small': CodeCommitSmall,
   'code-commit': CodeCommit,
+  'code-content': CodeContent,
   'code-copy': CodeCopy,
   'code-delete': CodeDelete,
   'code-descending': CodeDescending,
@@ -2776,6 +2793,7 @@ const HarnessIcons: KVO<ElementType> = {
   'grey-cluster': GreyCluster,
   grid: Grid,
   'hand-manual': HandManual,
+  'harness-copilot': HarnessCopilot,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
@@ -3040,6 +3058,8 @@ const HarnessIcons: KVO<ElementType> = {
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
+  'rancher-inverse': RancherInverse,
+  rancher: Rancher,
   're-executed': ReExecuted,
   'reg-ex': RegEx,
   'remote-setup': RemoteSetup,
@@ -3079,6 +3099,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3-step': RestoreCacheS3Step,
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
+  'retry-step-group': RetryStepGroup,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
