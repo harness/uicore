@@ -585,6 +585,7 @@ import KubernetesHarness from './kubernetes-harness.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
 import Launch from './launch.svg'
+import LayersOutline from './layers-outline.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
@@ -1714,6 +1715,7 @@ type HarnessIconName =
   | 'kustamize'
   | 'kustomizeparam'
   | 'launch'
+  | 'layers-outline'
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
@@ -2843,6 +2845,7 @@ const HarnessIcons: KVO<ElementType> = {
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
   launch: Launch,
+  'layers-outline': LayersOutline,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
