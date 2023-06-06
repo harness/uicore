@@ -54,8 +54,12 @@ export default {
   }
 } as Meta
 
-export const Basic: Story<MarkdownProps> = () => (
-  <Layout.Horizontal spacing="large">
-    <Markdown value="```hello```" />
-  </Layout.Horizontal>
-)
+export const Basic: Story<MarkdownProps> = () => {
+  const markdownContent =
+    '## Error Message\r\n```\r\ncould not provision a VM from the pool: provision: failed to create instance: failed to create vm after 3 retries: client error 400: {"status":"FAIL","message":"VM not in the registry"}\r\n```\r\n\r\n## Root Cause\r\nThe error message indicates that the VM could not be provisioned from the pool because the creation of the VM failed after 3 retries due to a client error 400. The error message further specifies that the VM is not in the registry.\r\n\r\n## Remediation\r\nTo resolve the issue, the VM needs to be added to the registry. Once the VM is added to the registry, the provisioning process can be retried. Additionally, it is recommended to check the configuration of the pool and ensure that it is correctly set up to provision VMs.'
+  return (
+    <Layout.Horizontal spacing="large">
+      <Markdown value={markdownContent} />
+    </Layout.Horizontal>
+  )
+}
