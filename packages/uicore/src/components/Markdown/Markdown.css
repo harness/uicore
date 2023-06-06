@@ -1,0 +1,41 @@
+.markdown {
+  h1 {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  h4 {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  h5 {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  h6 {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  th {
+    font-weight: bold;
+  }
+  td,
+  td {
+    min-width: 200px;
+  }
+  th,
+  table,
+  td {
+    padding: 10px;
+    border: 1px solid;
+    border-color: var(--gray-500);
+    border-collapse: collapse;
+  }
+}
