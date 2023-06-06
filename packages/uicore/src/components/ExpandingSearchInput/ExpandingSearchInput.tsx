@@ -40,6 +40,7 @@ export interface ExpandingSearchInputProps {
   width?: StyledProps['width']
   alwaysExpanded?: boolean
   theme?: 'light' | 'dark'
+  disabled?: boolean
 }
 
 export interface ExpandingSearchInputHandle {
@@ -67,7 +68,8 @@ export function ExpandingSearchInput(
     flip,
     width,
     alwaysExpanded = false,
-    theme = 'light'
+    theme = 'light',
+    disabled
   } = props
 
   const [key, setKey] = useState(Math.random())
@@ -226,6 +228,7 @@ export function ExpandingSearchInput(
         onFocus={onFocus}
         onBlur={onBlur}
         style={{ paddingRight: `${padRightAmount}px` }}
+        disabled={disabled}
       />
       {value.length > 0 ? (
         <>
