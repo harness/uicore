@@ -1,5 +1,5 @@
 {
   "react": "React",
   "react-dom": "ReactDOM",
-  "@harness/design-system": "design-system"
+  "@harnessio/design-system": "design-system"
 }

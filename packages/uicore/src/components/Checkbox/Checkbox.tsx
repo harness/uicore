@@ -6,9 +6,9 @@
  */
 
 import { Checkbox as BpCheckbox, ICheckboxProps } from '@blueprintjs/core'
-import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
+import { StyledProps, omitStyledProps, styledClasses } from '@harnessio/design-system'
 import React, { FormEvent, ReactElement } from 'react'
-import { styledClass } from '@harness/design-system'
+import { styledClass } from '@harnessio/design-system'
 
 import css from './Checkbox.css'
 

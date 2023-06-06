@@ -6,20 +6,10 @@
  */
 
 import React from 'react'
-import {
-  ButtonProps,
-  Button,
-  Heading,
-  Container,
-  Icon,
-  Layout,
-  IconName,
-  Text,
-  ButtonVariation,
-  ButtonSize
-} from '../../'
+import { ButtonProps, Button, Heading, Container, Layout, Text, ButtonVariation, ButtonSize } from '../../'
+import { Icon, IconName } from '@harnessio/icons'
 import classNames from 'classnames'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import css from './NoDataCard.css'
 export interface NoDataCardProps {
   icon?: IconName

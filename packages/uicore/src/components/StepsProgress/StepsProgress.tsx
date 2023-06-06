@@ -8,11 +8,11 @@
 import React from 'react'
 import { Text } from '../Text/Text'
 import { Container } from '../Container/Container'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import css from './StepsProgress.css'
 import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
 import { Layout } from '../../layouts/Layout'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 
 export interface StepsProgressProps {
   steps: Array<JSX.Element | string>

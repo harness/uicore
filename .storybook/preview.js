@@ -7,7 +7,7 @@
 
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
-import '../packages/design-system/src/index.tsx'
+import '../packages/design-system/src/index.ts'
 import '../packages/uicore/src/styles/styles.css'
 import './storybook.css'
 

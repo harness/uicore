@@ -11,11 +11,11 @@ import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Position, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
-import { I18nResource } from '@harness/design-system'
+import { I18nResource } from '@harnessio/design-system'
 import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
 import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
@@ -97,7 +97,14 @@ export const getMultiTypeFromValue = (
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
   } else if (Array.isArray(value) && supportListOfExpressionsBehaviour) {
     // To support list of expressions
-    if (value.some((item: string | MultiSelectOption) => typeof item === 'string' && isValueAnExpression(item)))
+    if (
+      value.some(
+        (item: string | MultiSelectOption) =>
+          typeof item === 'string' &&
+          isValueAnExpression(item) &&
+          allowableTypes?.includes(MultiTypeInputType.EXPRESSION)
+      )
+    )
       return MultiTypeInputType.EXPRESSION
   }
   if (!value && allowableTypes?.length) {

@@ -10,7 +10,7 @@ import type { Meta, Story } from '@storybook/react'
 
 import { Container, StatusBar, StatusBarProps } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 export default {
   title: 'Charts / StatusBar',

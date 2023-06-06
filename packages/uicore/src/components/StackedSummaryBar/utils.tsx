@@ -7,9 +7,9 @@
 
 import React from 'react'
 
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { Container } from '../Container/Container'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Text } from '../Text/Text'
 
 export const handleZeroOrInfinityTrend = (trend: string | undefined, intentColor: Color): JSX.Element => {
