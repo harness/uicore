@@ -442,6 +442,7 @@ import ExecutionRunning from './execution-running.svg'
 import ExecutionStopped from './execution-stopped.svg'
 import ExecutionSuccess from './execution-success.svg'
 import ExecutionTimeout from './execution-timeout.svg'
+import ExecutionWaiting from './execution-waiting.svg'
 import ExecutionWarning from './execution-warning.svg'
 import Execution from './execution.svg'
 import Expired from './expired.svg'
@@ -1572,6 +1573,7 @@ type HarnessIconName =
   | 'execution-stopped'
   | 'execution-success'
   | 'execution-timeout'
+  | 'execution-waiting'
   | 'execution-warning'
   | 'execution'
   | 'expired'
@@ -2702,6 +2704,7 @@ const HarnessIcons: KVO<ElementType> = {
   'execution-stopped': ExecutionStopped,
   'execution-success': ExecutionSuccess,
   'execution-timeout': ExecutionTimeout,
+  'execution-waiting': ExecutionWaiting,
   'execution-warning': ExecutionWarning,
   execution: Execution,
   expired: Expired,
