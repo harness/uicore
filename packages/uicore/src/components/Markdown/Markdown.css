@@ -6,17 +6,26 @@
 
   pre {
     background-color: var(--grey-100);
-    color: var(--black);
+    color: var(--grey-700);
     padding: var(--spacing-small);
     overflow-x: auto;
     border: 1px solid var(--grey-200);
     border-radius: 4px;
     white-space: pre-wrap; /* wrap text */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 23px;
+    letter-spacing: 0.2px;
   }
 
   code {
     font-family: 'Inter', monospace;
     font-weight: bold;
+    box-sizing: border-box;
+    background: var(--grey-100);
+    border-radius: 4px;
   }
 
   h1 {
