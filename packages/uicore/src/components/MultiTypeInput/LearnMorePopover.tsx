@@ -6,9 +6,9 @@
  */
 
 import React from 'react'
-import { I18nResource } from '@harness/design-system'
+import { I18nResource } from '@harnessio/design-system'
 import { Popover, PopoverPosition } from '@blueprintjs/core'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import cx from 'classnames'
 
 import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as TypeIconSize } from './MultiTypeInputUtils'

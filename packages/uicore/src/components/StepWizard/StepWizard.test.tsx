@@ -10,6 +10,8 @@ import { StepWizard, StepProps } from './StepWizard'
 import { Layout } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
 import { render, fireEvent, wait, queryByText, waitFor } from '@testing-library/react'
+import { Icon } from '@harnessio/icons'
+import { Color } from '@harnessio/design-system'
 
 interface SharedObject {
   prevStepName: string | JSX.Element
@@ -54,8 +56,8 @@ const ExampleWizard = ({ initialStep, stepChange, onSubmit }: ExampleProps) => {
     <div>
       Steps Changed: {counter}
       <StepWizard
-        icon="app-kubernetes"
-        iconProps={{ size: 37 }}
+        icon={<Icon name="advanced" size={37} />}
+        watermarkLogo={<Icon name="advanced" size={346} color={Color.GREY_50} />}
         title="Kubernetes Cluster"
         initialStep={initialStep}
         onStepChange={values => {

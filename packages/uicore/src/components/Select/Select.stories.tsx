@@ -52,11 +52,11 @@ export const Basic: Story<SelectProps> = args => {
 Basic.args = {
   size: SelectSize.Medium,
   items: [
-    { label: 'Kubernetes', value: 'service-kubernetes' },
-    { label: 'GitHub', value: 'service-github' },
-    { label: 'ELK', value: 'service-elk' },
-    { label: 'Jenkins', value: 'service-jenkins' },
-    { label: 'GCP', value: 'service-gcp' }
+    { label: 'Kubernetes', value: 'advanced' },
+    { label: 'GitHub', value: 'advanced' },
+    { label: 'ELK', value: 'advanced' },
+    { label: 'Jenkins', value: 'advanced' },
+    { label: 'GCP', value: 'advanced' }
   ]
 }
 
@@ -65,17 +65,17 @@ export const SelectWithIcons: Story<SelectProps> = args => {
     items = [
       {
         label: 'TryingTryingTryingTryingTryingTryingTryingTryingTrying',
-        value: 'service-kubernetes',
-        icon: { name: 'service-kubernetes' }
+        value: 'advanced',
+        icon: { name: 'advanced' }
       },
       {
         label: 'Trying a long phrase with spaces to try out different combinations',
-        value: 'service-github',
-        icon: { name: 'service-github' }
+        value: 'advanced',
+        icon: { name: 'advanced' }
       },
-      { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
-      { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
-      { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
+      { label: 'ELK', value: 'advanced', icon: { name: 'advanced' } },
+      { label: 'Jenkins', value: 'advanced', icon: { name: 'advanced' } },
+      { label: 'GCP', value: 'advanced', icon: { name: 'advanced' } }
     ]
   } = args
   const argsCopy = omit(args, ['size', 'items'])

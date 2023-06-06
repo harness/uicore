@@ -8,9 +8,10 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Layout, Card, Text, Icon, CardProps, Container } from '../..'
+import { Layout, Card, Text, CardProps, Container } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { CardBody, Menu, Icon as CardBodyIcon } from './Card'
+import { Icon } from '@harnessio/icons'
 
 export default {
   title: 'Components / Card',
@@ -69,7 +70,7 @@ export const Basic: Story<CardProps> = args => (
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>
-            <Icon name="service-jenkins" size={30} />
+            <Icon name="advanced" size={30} />
             <Text style={{ marginTop: '5px' }} font="medium">
               Jenkin Artifact
             </Text>
@@ -94,7 +95,7 @@ export const Basic: Story<CardProps> = args => (
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>
-            <Icon name="service-bamboo" size={30} />
+            <Icon name="advanced" size={30} />
             <Text style={{ marginTop: '5px' }} font="medium">
               Bamboo Artifact
             </Text>

@@ -18,43 +18,43 @@ interface Data {
 const data: Data[] = [
   {
     text: 'Kubernetes',
-    value: 'service-kubernetes',
-    icon: 'service-kubernetes'
+    value: 'advanced',
+    icon: 'advanced'
   },
   {
     text: 'Github',
-    value: 'service-github',
-    icon: 'service-github'
+    value: 'advanced',
+    icon: 'advanced'
   },
   {
     text: 'GCP',
-    value: 'service-gcp',
-    icon: 'service-gcp'
+    value: 'advanced',
+    icon: 'advanced'
   },
   {
     text: 'ELK Service',
-    value: 'service-elk',
-    icon: 'service-elk'
+    value: 'advanced',
+    icon: 'advanced'
   },
   {
     text: 'Git Labs',
-    value: 'service-gotlab',
-    icon: 'service-gotlab'
+    value: 'advanced',
+    icon: 'advanced'
   },
   {
     text: 'Datadog',
-    value: 'service-datadog',
-    icon: 'service-datadog'
+    value: 'advanced',
+    icon: 'advanced'
   },
   {
     text: 'Slack',
-    value: 'service-slack',
-    icon: 'service-slack'
+    value: 'advanced',
+    icon: 'advanced'
   },
   {
     text: 'Jenkins',
-    value: 'service-jenkins',
-    icon: 'service-jenkins'
+    value: 'advanced',
+    icon: 'advanced'
   }
 ]
 
