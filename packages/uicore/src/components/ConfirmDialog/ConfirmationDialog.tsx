@@ -9,10 +9,12 @@ import React from 'react'
 import { Intent, Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
 
-import { Button, ButtonProps, Layout, Container, Icon, Text, ButtonVariation, FontVariation, Color } from '../../'
+import { Button, ButtonProps, Layout, Container, Text, ButtonVariation } from '../../'
+import { Icon } from '@harnessio/icons'
+import { Color, FontVariation } from '@harnessio/design-system'
 
 import css from './ConfirmationDialog.css'
-import { HarnessIconName } from '@harness/icons'
+import { HarnessIconName } from '@harnessio/icons'
 
 const getIconForIntent = (intent: Intent): HarnessIconName => {
   switch (intent) {

@@ -29,7 +29,6 @@ export { ModalDialog } from './components/ModalDialog/ModalDialog'
 export { Toggle } from './components/Toggle/Toggle'
 export { Container } from './components/Container/Container'
 export { Heading } from './components/Heading/Heading'
-export { Icon, HarnessIcons, IconName } from '@harness/icons'
 export { Layout, MasonryRef, MasonryProps } from './layouts/Layout'
 export { Link } from './components/Link/Link'
 export { List } from './components/List/List'
@@ -165,11 +164,6 @@ export {
   CategorizedSelectOption
 } from './components/CategorizedSelected/CategorizedSelect'
 export {
-  ModalErrorHandlerBinding,
-  ModalErrorHandler,
-  ModalErrorHandlerProps
-} from './components/Modal/ModalErrorHandler'
-export {
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
@@ -233,11 +227,6 @@ export { TagsPopover } from './components/TagsPopover/TagsPopover'
 export { MinMaxSlider } from './components/MinMaxSlider/MinMaxSlider'
 export { getErrorInfoFromErrorObject, shouldShowError } from './utils/errorUtils'
 export { tagsType } from './utils/tagTypes'
-export {
-  useConfirmationDialog,
-  UseConfirmationDialogProps,
-  UseConfirmationDialogReturn
-} from './components/ConfirmDialog/useConfirmationDialog'
 export { ConfirmationDialog, ConfirmationDialogProps } from './components/ConfirmDialog/ConfirmationDialog'
 export { TableV2, TableProps as ReactTableProps } from './components/TableV2/TableV2'
 export { PillToggle, PillToggleOption, PillToggleProps } from './components/PillToggle/PillToggle'
@@ -262,5 +251,3 @@ export {
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
 export { StringSubstitute, stringSubstitute } from './components/StringSubstitute/StringSubstitute'
-export * from '@harness/design-system'
-export * from '@harness/icons'

@@ -12,7 +12,7 @@ import { Select, ISelectProps } from '@blueprintjs/select'
 import { SelectOption, defaultItemRenderer, NoMatch, createNewItemFromQuery } from './Select'
 import css from './SelectV2.css'
 import { Button } from '../Button/Button'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 
 const SelectBp = Select.ofType<SelectOption>()
 

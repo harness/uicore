@@ -8,7 +8,7 @@
 import React from 'react'
 
 import { TextInput, TextInputProps } from '../TextInput/TextInput'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Popover } from '../Popover/Popover'
 import { Text } from '../Text/Text'
 

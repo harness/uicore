@@ -7,7 +7,8 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { Container, Icon } from '../..'
+import { Container } from '../..'
+import { Icon } from '@harnessio/icons'
 import { Dialog as BluePrintDialog, IDialogProps } from '@blueprintjs/core'
 import css from './Dialog.css'
 

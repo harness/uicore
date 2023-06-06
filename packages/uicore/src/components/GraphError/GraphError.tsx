@@ -7,7 +7,7 @@
 
 import React from 'react'
 import css from './GraphError.css'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Container } from '../Container/Container'
 import { Link } from '../Link/Link'
 

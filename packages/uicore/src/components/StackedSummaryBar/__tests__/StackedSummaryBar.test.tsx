@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { StackedSummaryBar } from '../StackedSummaryBar'
 
 const barData = [

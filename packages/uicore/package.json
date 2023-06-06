@@ -13,17 +13,13 @@
     "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/harness/uicore",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+  "repository": "https://github.com/harness/uicore/packages/uicore",
   "peerDependencies": {
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
-    "@harness/design-system": "^1.0.0",
-    "@harness/icons": "^1.0.0",
-    "@harness/use-modal": "^1.0.0",
+    "@harnessio/design-system": "1.6.0-beta.1",
+    "@harnessio/icons": "^2.0.0-beta.2",
     "anser": "^2.1.0",
     "classnames": "^2.2.6",
     "clipboard-copy": "^3.1.0",
@@ -44,9 +40,8 @@
     "@blueprintjs/core": "^3.20.0",
     "@blueprintjs/datetime": "3.13.0",
     "@blueprintjs/select": "3.10.0",
-    "@harness/design-system": "^1.4.0",
-    "@harness/icons": "^1.46.0",
-    "@harness/use-modal": "^1.3.0",
+    "@harnessio/design-system": "1.6.0-beta.1",
+    "@harnessio/icons": "^2.0.0-beta.2",
     "@svgr/webpack": "^5.5.0",
     "@types/classnames": "^2.2.9",
     "@types/lodash-es": "^4.17.4",

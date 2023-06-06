@@ -12,7 +12,7 @@ import { CollapsableSelectOptions, CollapsableSelectType, FormikCollapsableSelec
 import { Form, Formik } from 'formik'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Layout, Text } from '../..'
 
 export default {
@@ -127,12 +127,12 @@ CardView.args = {
 Custom.args = {
   items: [
     {
-      icon: <Icon name="service-jenkins" size={50} />,
+      icon: <Icon name="advanced" size={50} />,
       info: 'This option selects Jenkins',
       value: 'Jenkins'
     },
     {
-      icon: <Icon name="service-gcp" size={50} />,
+      icon: <Icon name="advanced" size={50} />,
       info: 'This option selects Gcp',
       value: 'Gcp'
     }

@@ -6,7 +6,7 @@
  */
 import React, { useState } from 'react'
 import { Boundary, Card, Menu, OverflowList, Popover } from '@blueprintjs/core'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Layout } from '../../layouts/Layout'
 import { isEmpty, isUndefined } from 'lodash-es'
 import css from './ExpressionDropdown.css'

@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { IconName } from '@harness/icons'
+import { IconName } from '@harnessio/icons'
 import { isEmpty } from 'lodash-es'
 import { TrieNode } from './ExpressionDropdown'
 
