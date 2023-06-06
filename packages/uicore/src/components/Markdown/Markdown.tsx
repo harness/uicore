@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import { Prism } from 'react-syntax-highlighter'
 import { vs } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import remarkGfm from 'remark-gfm'
-import styles from './Markdown.css'
+import css from './Markdown.css'
 
 export interface MarkdownProps {
   value: string
@@ -12,7 +12,7 @@ export interface MarkdownProps {
 const Markdown: React.FC<MarkdownProps> = ({ value }) => {
   return (
     <ReactMarkdown
-      className={styles.markdown}
+      className={css.markdown}
       remarkPlugins={[remarkGfm]}
       components={{
         code({ node, className, children, ...props }) {
