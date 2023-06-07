@@ -467,6 +467,7 @@ import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
 import FortifyOnDemand from './fortify-on-demand.svg'
+import FossaInverse from './fossa-inverse.svg'
 import Fossa from './fossa.svg'
 import FsClosedFolder from './fs-closed-folder.svg'
 import FsOpenFolder from './fs-open-folder.svg'
@@ -1602,6 +1603,7 @@ type HarnessIconName =
   | 'folder-upload'
   | 'fortify-on-demand-inverse'
   | 'fortify-on-demand'
+  | 'fossa-inverse'
   | 'fossa'
   | 'fs-closed-folder'
   | 'fs-open-folder'
@@ -2737,6 +2739,7 @@ const HarnessIcons: KVO<ElementType> = {
   'folder-upload': FolderUpload,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
   'fortify-on-demand': FortifyOnDemand,
+  'fossa-inverse': FossaInverse,
   fossa: Fossa,
   'fs-closed-folder': FsClosedFolder,
   'fs-open-folder': FsOpenFolder,
