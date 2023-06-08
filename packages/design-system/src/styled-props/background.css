@@ -62,10 +62,6 @@
     background: var(--grey-100);
   }
 
-  &.background-grey50 {
-    background: var(--grey-50);
-  }
-
   &.background-blue900 {
     background: var(--blue-900);
   }
@@ -200,10 +196,6 @@
 
   &.background-yellow100 {
     background: var(--yellow-100);
-  }
-
-  &.background-yellow50 {
-    background: var(--yellow-50);
   }
 
   &.background-green800 {
