@@ -431,12 +431,14 @@ import EvaluatePolicy from './evaluate-policy.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionCompleted from './execution-completed.svg'
 import ExecutionConditional from './execution-conditional.svg'
+import ExecutionDestroyStrategy from './execution-destroy-strategy.svg'
 import ExecutionDestroy from './execution-destroy.svg'
 import ExecutionError from './execution-error.svg'
 import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionIssue from './execution-issue.svg'
 import ExecutionPaused from './execution-paused.svg'
+import ExecutionProvisionStrategy from './execution-provision-strategy.svg'
 import ExecutionProvision from './execution-provision.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionRunning from './execution-running.svg'
@@ -1564,12 +1566,14 @@ type HarnessIconName =
   | 'execution-abort'
   | 'execution-completed'
   | 'execution-conditional'
+  | 'execution-destroy-strategy'
   | 'execution-destroy'
   | 'execution-error'
   | 'execution-history'
   | 'execution-input'
   | 'execution-issue'
   | 'execution-paused'
+  | 'execution-provision-strategy'
   | 'execution-provision'
   | 'execution-rollback'
   | 'execution-running'
@@ -2697,12 +2701,14 @@ const HarnessIcons: KVO<ElementType> = {
   'execution-abort': ExecutionAbort,
   'execution-completed': ExecutionCompleted,
   'execution-conditional': ExecutionConditional,
+  'execution-destroy-strategy': ExecutionDestroyStrategy,
   'execution-destroy': ExecutionDestroy,
   'execution-error': ExecutionError,
   'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
   'execution-issue': ExecutionIssue,
   'execution-paused': ExecutionPaused,
+  'execution-provision-strategy': ExecutionProvisionStrategy,
   'execution-provision': ExecutionProvision,
   'execution-rollback': ExecutionRollback,
   'execution-running': ExecutionRunning,
