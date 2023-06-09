@@ -326,6 +326,7 @@ import Copy from './copy.svg'
 import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
+import Coverity from './coverity.svg'
 import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
@@ -1460,6 +1461,7 @@ type HarnessIconName =
   | 'cost-data-collection'
   | 'coverage-status-error'
   | 'coverage-status-success'
+  | 'coverity'
   | 'create-pr'
   | 'create-via-existing-yaml'
   | 'create-via-pipeline-template'
@@ -2594,6 +2596,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
+  coverity: Coverity,
   'create-pr': CreatePr,
   'create-via-existing-yaml': CreateViaExistingYaml,
   'create-via-pipeline-template': CreateViaPipelineTemplate,
