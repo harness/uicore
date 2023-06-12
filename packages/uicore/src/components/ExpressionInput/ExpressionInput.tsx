@@ -18,6 +18,8 @@ import {
   setCaret,
   TextAreaEditable
 } from '../TextAreaEditable/TextAreaEditable'
+import { NewExpressionDropdown } from '../ExpressionDropdown/ExpressionDropdown'
+import { formatData } from './utils'
 
 export interface ExpressionInputProps {
   items?: string[]
@@ -126,12 +128,16 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
 
   const [filteredItems, setFilteredItems] = React.useState<string[]>([])
 
+  // this is required for onChange of value prop
+  React.useEffect(() => {
+    setInputValue(value as string)
+  }, [value])
+
   React.useEffect(() => {
     // reset cursor position when query value is empty
     if (!queryValue) {
       cursorRef.current = null
     }
-
     setFilteredItems(
       items.filter((item: string) => {
         const match = queryValue.match(EXPRESSION_START_REGEX)
@@ -296,8 +302,8 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     }
 
     function handleMouseUpForTextAreaEditable(e: React.MouseEvent): void {
-      const { textContent } = e.target as HTMLInputElement
-      const selectionStart = getCaretIndex(e.target as any)
+      const { innerText: textContent } = (e.target as any).parentNode
+      const selectionStart = getCaretIndex((e.target as any).parentNode)
       updateQueryBasedOnCursor(selectionStart, textContent as string)
     }
 
@@ -366,12 +372,27 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
           />
         )}
         <React.Fragment>
-          {listProps.itemList
-            ? React.cloneElement(listProps.itemList as React.ReactElement, {
-                className: css.menu,
-                style: { maxHeight }
-              })
-            : null}
+          {newExpressionComponent ? (
+            <NewExpressionDropdown
+              query={queryValue}
+              rootTrieNode={formatData(items)}
+              itemRenderer={
+                listProps.itemList
+                  ? React.cloneElement(listProps.itemList as React.ReactElement, {
+                      className: css.expressionDropdownMenu,
+                      style: { maxHeight }
+                    })
+                  : null
+              }
+              setQueryValue={setQueryValue}
+              setInputValue={setInputValue}
+            />
+          ) : listProps.itemList ? (
+            React.cloneElement(listProps.itemList as React.ReactElement, {
+              className: css.menu,
+              style: { maxHeight }
+            })
+          ) : null}
         </React.Fragment>
       </Popover>
     )

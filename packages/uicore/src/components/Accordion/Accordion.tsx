@@ -79,6 +79,8 @@ export interface AccordionProps {
   collapseProps?: Omit<ICollapseProps, 'isOpen'>
   allowMultiOpen?: boolean
   onChange?(tabs: string | string[]): void
+  /** Controlled accordion active ID which drives accordion state from onChange over internal toggle state  */
+  controlledActiveId?: string
 }
 
 export interface AccordionHandle {
@@ -91,14 +93,31 @@ export function AccordionWithoutRef(
   props: AccordionProps,
   ref: React.ForwardedRef<AccordionHandle>
 ): React.ReactElement {
-  const { children, allowMultiOpen, className, activeId, onChange, ...rest } = props
-  const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(
-    typeof activeId === 'string' ? { [activeId]: true } : {}
-  )
+  const { children, allowMultiOpen, className, activeId, onChange, controlledActiveId, ...rest } = props
 
+  // Use the controlledActiveId prop to manage the active panels
+  const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(() => {
+    if (controlledActiveId) {
+      return { [controlledActiveId]: true }
+    }
+    return typeof activeId === 'string' ? { [activeId]: true } : {}
+  })
+
+  // Handle changes in controlledActiveId prop
+  React.useEffect(() => {
+    if (controlledActiveId) {
+      setActivePanels({ [controlledActiveId]: true })
+    }
+  }, [controlledActiveId])
+
+  // Update the togglePanels function to check if controlledActiveId is set
   function togglePanels(id: string) {
     return () => {
-      setActivePanels(prev => ({ ...(allowMultiOpen ? prev : {}), [id]: !prev[id] }))
+      if (!controlledActiveId) {
+        setActivePanels(prev => ({ ...(allowMultiOpen ? prev : {}), [id]: !prev[id] }))
+      } else {
+        onChange?.(id)
+      }
     }
   }
 
@@ -115,7 +134,7 @@ export function AccordionWithoutRef(
   React.useEffect(() => {
     const activeIds = Object.keys(activePanels).filter(panel => activePanels[panel])
 
-    onChange?.(allowMultiOpen ? activeIds : activeIds[0])
+    !controlledActiveId && onChange?.(allowMultiOpen ? activeIds : activeIds[0])
   }, [activePanels])
 
   React.useImperativeHandle(ref, () => ({

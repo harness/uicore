@@ -8,7 +8,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Checkbox, CheckboxProps } from './Checkbox'
+import { Checkbox, CheckboxProps, CheckboxVariant } from './Checkbox'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Heading } from '../Heading/Heading'
 
@@ -90,6 +90,16 @@ export const DisabledState: Story<CheckboxProps> = args => {
       <Checkbox label="Not Selected" disabled {...args} />
       <Checkbox label="Selected" disabled checked {...args} />
       <Checkbox label="Indeterminate" disabled indeterminate {...args} />
+    </>
+  )
+}
+
+export const VariantBoxed: Story<CheckboxProps> = args => {
+  return (
+    <>
+      <Checkbox margin={{ bottom: 'small' }} label="Not Selected" {...args} variant={CheckboxVariant.BOXED} />
+      <Checkbox margin={{ bottom: 'small' }} label="Selected" checked {...args} variant={CheckboxVariant.BOXED} />
+      <Checkbox label="Indeterminate" disabled indeterminate {...args} variant={CheckboxVariant.BOXED} />
     </>
   )
 }

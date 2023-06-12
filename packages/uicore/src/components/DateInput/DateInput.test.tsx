@@ -82,4 +82,11 @@ describe('<DateInput/> tests', () => {
     const { container } = render(<DateInput value="1579773180000" />)
     expect(container).toMatchSnapshot()
   })
+
+  test('renders with placeholder ', () => {
+    const { getByPlaceholderText } = render(
+      <DateInput value="1579773180000" placeholder={'This is dateInput component'} />
+    )
+    expect(getByPlaceholderText('This is dateInput component')).toBeInTheDocument()
+  })
 })

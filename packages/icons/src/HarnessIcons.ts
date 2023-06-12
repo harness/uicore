@@ -89,6 +89,14 @@ import AwsLambdaDeploy from './aws-lambda-deploy.svg'
 import AwsLambdaRollback from './aws-lambda-rollback.svg'
 import AwsLambdaTrafficShift from './aws-lambda-traffic-shift.svg'
 import AwsRds from './aws-rds.svg'
+import AwsSamBuildInverse from './aws-sam-build-inverse.svg'
+import AwsSamBuild from './aws-sam-build.svg'
+import AwsSamDeployInverse from './aws-sam-deploy-inverse.svg'
+import AwsSamDeploy from './aws-sam-deploy.svg'
+import AwsSamDownloadManifestsInverse from './aws-sam-download-manifests-inverse.svg'
+import AwsSamDownloadManifests from './aws-sam-download-manifests.svg'
+import AwsSamPackageInverse from './aws-sam-package-inverse.svg'
+import AwsSamPackage from './aws-sam-package.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AwsSecurityHubInverse from './aws-security-hub-inverse.svg'
 import AwsSecurityHub from './aws-security-hub.svg'
@@ -115,6 +123,8 @@ import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
 import BaselineTarget from './baseline-target.svg'
 import BasicDeployment from './basic-deployment.svg'
+import BgScaleDownStepInverse from './bg-scale-down-step-inverse.svg'
+import BgScaleDownStep from './bg-scale-down-step.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
 import BitbucketNew from './bitbucket-new.svg'
@@ -133,6 +143,8 @@ import BrakemanInverse from './brakeman-inverse.svg'
 import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
+import BurpSuiteInverse from './burp-suite-inverse.svg'
+import BurpSuite from './burp-suite.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
 import CanaryGrey from './canary-grey.svg'
@@ -189,8 +201,10 @@ import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
+import ChaosNamespace from './chaos-namespace.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
+import ChaosServiceDiscovery from './chaos-service-discovery.svg'
 import ChaosSketch from './chaos-sketch.svg'
 import ChaosSolid from './chaos-solid.svg'
 import ChaosWithDarkText from './chaos-with-dark-text.svg'
@@ -246,6 +260,7 @@ import CodeClosed from './code-closed.svg'
 import CodeCommitLight from './code-commit-light.svg'
 import CodeCommitSmall from './code-commit-small.svg'
 import CodeCommit from './code-commit.svg'
+import CodeContent from './code-content.svg'
 import CodeCopy from './code-copy.svg'
 import CodeDelete from './code-delete.svg'
 import CodeDescending from './code-descending.svg'
@@ -264,6 +279,7 @@ import CodeQuote from './code-quote.svg'
 import CodeRejected from './code-rejected.svg'
 import CodeRepo from './code-repo.svg'
 import CodeSettings from './code-settings.svg'
+import CodeTag from './code-tag.svg'
 import CodeWebhook from './code-webhook.svg'
 import Code from './code.svg'
 import CodebaseInvalid from './codebase-invalid.svg'
@@ -310,6 +326,7 @@ import Copy from './copy.svg'
 import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
+import Coverity from './coverity.svg'
 import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
@@ -414,18 +431,21 @@ import EvaluatePolicy from './evaluate-policy.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionCompleted from './execution-completed.svg'
 import ExecutionConditional from './execution-conditional.svg'
+import ExecutionDestroyStrategy from './execution-destroy-strategy.svg'
 import ExecutionDestroy from './execution-destroy.svg'
 import ExecutionError from './execution-error.svg'
 import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionIssue from './execution-issue.svg'
 import ExecutionPaused from './execution-paused.svg'
+import ExecutionProvisionStrategy from './execution-provision-strategy.svg'
 import ExecutionProvision from './execution-provision.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionRunning from './execution-running.svg'
 import ExecutionStopped from './execution-stopped.svg'
 import ExecutionSuccess from './execution-success.svg'
 import ExecutionTimeout from './execution-timeout.svg'
+import ExecutionWaiting from './execution-waiting.svg'
 import ExecutionWarning from './execution-warning.svg'
 import Execution from './execution.svg'
 import Expired from './expired.svg'
@@ -447,6 +467,7 @@ import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
 import FortifyOnDemand from './fortify-on-demand.svg'
+import Fossa from './fossa.svg'
 import FsClosedFolder from './fs-closed-folder.svg'
 import FsOpenFolder from './fs-open-folder.svg'
 import FsRootFolder from './fs-root-folder.svg'
@@ -518,6 +539,7 @@ import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
+import HarnessCopilot from './harness-copilot.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -529,6 +551,7 @@ import Health from './health.svg'
 import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
+import HexagonOutline from './hexagon-outline.svg'
 import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpProbe from './http-probe.svg'
@@ -538,6 +561,7 @@ import IacmGrey from './iacm-grey.svg'
 import IacmResourceAdded from './iacm-resource-added.svg'
 import IacmResourceChanged from './iacm-resource-changed.svg'
 import IacmResourceDeleted from './iacm-resource-deleted.svg'
+import IacmTerraformStep from './iacm-terraform-step.svg'
 import Iacm from './iacm.svg'
 import Idp from './idp.svg'
 import InfinityTrend from './infinityTrend.svg'
@@ -566,6 +590,7 @@ import KubernetesHarness from './kubernetes-harness.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
 import Launch from './launch.svg'
+import LayersOutline from './layers-outline.svg'
 import LayoutBottom from './layout-bottom.svg'
 import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
@@ -663,6 +688,7 @@ import MainUser from './main-user.svg'
 import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import MarkAsFailed from './mark-as-failed.svg'
 import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
 import MemberRole from './memberRole.svg'
@@ -780,6 +806,10 @@ import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
+import RancherInverse from './rancher-inverse.svg'
+import Rancher from './rancher.svg'
+import ReExecuted from './re-executed.svg'
+import RegEx from './reg-ex.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
@@ -817,6 +847,7 @@ import RestoreCacheS3StepInverse from './restore-cache-s3-step-inverse.svg'
 import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
+import RetryStepGroup from './retry-step-group.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
@@ -878,6 +909,7 @@ import SecretsIcon from './secrets-icon.svg'
 import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
+import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
@@ -923,6 +955,7 @@ import ServiceGithubPackage from './service-github-package.svg'
 import ServiceGithub from './service-github.svg'
 import ServiceGoogleFunctions from './service-google-functions.svg'
 import ServiceGotlab from './service-gotlab.svg'
+import ServiceGrafanaLoki from './service-grafana-loki.svg'
 import ServiceHelm from './service-helm.svg'
 import ServiceInstana from './service-instana.svg'
 import ServiceJenkinsInverse from './service-jenkins-inverse.svg'
@@ -1025,6 +1058,7 @@ import SwitchOn from './switch-on.svg'
 import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
+import Sysdig from './sysdig.svg'
 import TanzuCommand from './tanzuCommand.svg'
 import TasInverse from './tas-inverse.svg'
 import TasManifest from './tas-manifest.svg'
@@ -1190,6 +1224,14 @@ type HarnessIconName =
   | 'aws-lambda-rollback'
   | 'aws-lambda-traffic-shift'
   | 'aws-rds'
+  | 'aws-sam-build-inverse'
+  | 'aws-sam-build'
+  | 'aws-sam-deploy-inverse'
+  | 'aws-sam-deploy'
+  | 'aws-sam-download-manifests-inverse'
+  | 'aws-sam-download-manifests'
+  | 'aws-sam-package-inverse'
+  | 'aws-sam-package'
   | 'aws-secret-manager'
   | 'aws-security-hub-inverse'
   | 'aws-security-hub'
@@ -1216,6 +1258,8 @@ type HarnessIconName =
   | 'barrier-open'
   | 'baseline-target'
   | 'basic-deployment'
+  | 'bg-scale-down-step-inverse'
+  | 'bg-scale-down-step'
   | 'bin-main'
   | 'bitbucket-blue'
   | 'bitbucket-new'
@@ -1234,6 +1278,8 @@ type HarnessIconName =
   | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
+  | 'burp-suite-inverse'
+  | 'burp-suite'
   | 'canary-delete-inverse'
   | 'canary-delete'
   | 'canary-grey'
@@ -1290,8 +1336,10 @@ type HarnessIconName =
   | 'chaos-hubs'
   | 'chaos-litmuschaos'
   | 'chaos-main'
+  | 'chaos-namespace'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
+  | 'chaos-service-discovery'
   | 'chaos-sketch'
   | 'chaos-solid'
   | 'chaos-with-dark-text'
@@ -1347,6 +1395,7 @@ type HarnessIconName =
   | 'code-commit-light'
   | 'code-commit-small'
   | 'code-commit'
+  | 'code-content'
   | 'code-copy'
   | 'code-delete'
   | 'code-descending'
@@ -1365,6 +1414,7 @@ type HarnessIconName =
   | 'code-rejected'
   | 'code-repo'
   | 'code-settings'
+  | 'code-tag'
   | 'code-webhook'
   | 'code'
   | 'codebase-invalid'
@@ -1411,6 +1461,7 @@ type HarnessIconName =
   | 'cost-data-collection'
   | 'coverage-status-error'
   | 'coverage-status-success'
+  | 'coverity'
   | 'create-pr'
   | 'create-via-existing-yaml'
   | 'create-via-pipeline-template'
@@ -1515,18 +1566,21 @@ type HarnessIconName =
   | 'execution-abort'
   | 'execution-completed'
   | 'execution-conditional'
+  | 'execution-destroy-strategy'
   | 'execution-destroy'
   | 'execution-error'
   | 'execution-history'
   | 'execution-input'
   | 'execution-issue'
   | 'execution-paused'
+  | 'execution-provision-strategy'
   | 'execution-provision'
   | 'execution-rollback'
   | 'execution-running'
   | 'execution-stopped'
   | 'execution-success'
   | 'execution-timeout'
+  | 'execution-waiting'
   | 'execution-warning'
   | 'execution'
   | 'expired'
@@ -1548,6 +1602,7 @@ type HarnessIconName =
   | 'folder-upload'
   | 'fortify-on-demand-inverse'
   | 'fortify-on-demand'
+  | 'fossa'
   | 'fs-closed-folder'
   | 'fs-open-folder'
   | 'fs-root-folder'
@@ -1619,6 +1674,7 @@ type HarnessIconName =
   | 'grey-cluster'
   | 'grid'
   | 'hand-manual'
+  | 'harness-copilot'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
@@ -1630,6 +1686,7 @@ type HarnessIconName =
   | 'helm-oci'
   | 'helm-rollback'
   | 'help'
+  | 'hexagon-outline'
   | 'hotfix'
   | 'hourglass'
   | 'http-probe'
@@ -1639,6 +1696,7 @@ type HarnessIconName =
   | 'iacm-resource-added'
   | 'iacm-resource-changed'
   | 'iacm-resource-deleted'
+  | 'iacm-terraform-step'
   | 'iacm'
   | 'idp'
   | 'infinityTrend'
@@ -1667,6 +1725,7 @@ type HarnessIconName =
   | 'kustamize'
   | 'kustomizeparam'
   | 'launch'
+  | 'layers-outline'
   | 'layout-bottom'
   | 'layout-float'
   | 'layout-right'
@@ -1764,6 +1823,7 @@ type HarnessIconName =
   | 'main-view'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'mark-as-failed'
   | 'mark-as-failure-inverse'
   | 'mark-as-failure'
   | 'memberRole'
@@ -1881,6 +1941,10 @@ type HarnessIconName =
   | 'question'
   | 'queue-step'
   | 'queued'
+  | 'rancher-inverse'
+  | 'rancher'
+  | 're-executed'
+  | 'reg-ex'
   | 'remote-setup'
   | 'remote'
   | 'remotefile'
@@ -1918,6 +1982,7 @@ type HarnessIconName =
   | 'restore-cache-s3-step'
   | 'restore-cache-s3'
   | 'restore-cache-step'
+  | 'retry-step-group'
   | 'right-bar-notification'
   | 'right-drawer'
   | 'rollback-execution'
@@ -1979,6 +2044,7 @@ type HarnessIconName =
   | 'security-ci-step-inverse'
   | 'security-ci-step'
   | 'security-stage'
+  | 'semgrep'
   | 'send-data'
   | 'serverless-deploy-step'
   | 'service-amazon-ecs'
@@ -2024,6 +2090,7 @@ type HarnessIconName =
   | 'service-github'
   | 'service-google-functions'
   | 'service-gotlab'
+  | 'service-grafana-loki'
   | 'service-helm'
   | 'service-instana'
   | 'service-jenkins-inverse'
@@ -2126,6 +2193,7 @@ type HarnessIconName =
   | 'sync-failed'
   | 'synced'
   | 'syncing'
+  | 'sysdig'
   | 'tanzuCommand'
   | 'tas-inverse'
   | 'tas-manifest'
@@ -2291,6 +2359,14 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-lambda-rollback': AwsLambdaRollback,
   'aws-lambda-traffic-shift': AwsLambdaTrafficShift,
   'aws-rds': AwsRds,
+  'aws-sam-build-inverse': AwsSamBuildInverse,
+  'aws-sam-build': AwsSamBuild,
+  'aws-sam-deploy-inverse': AwsSamDeployInverse,
+  'aws-sam-deploy': AwsSamDeploy,
+  'aws-sam-download-manifests-inverse': AwsSamDownloadManifestsInverse,
+  'aws-sam-download-manifests': AwsSamDownloadManifests,
+  'aws-sam-package-inverse': AwsSamPackageInverse,
+  'aws-sam-package': AwsSamPackage,
   'aws-secret-manager': AwsSecretManager,
   'aws-security-hub-inverse': AwsSecurityHubInverse,
   'aws-security-hub': AwsSecurityHub,
@@ -2317,6 +2393,8 @@ const HarnessIcons: KVO<ElementType> = {
   'barrier-open': BarrierOpen,
   'baseline-target': BaselineTarget,
   'basic-deployment': BasicDeployment,
+  'bg-scale-down-step-inverse': BgScaleDownStepInverse,
+  'bg-scale-down-step': BgScaleDownStep,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
   'bitbucket-new': BitbucketNew,
@@ -2335,6 +2413,8 @@ const HarnessIcons: KVO<ElementType> = {
   brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
+  'burp-suite-inverse': BurpSuiteInverse,
+  'burp-suite': BurpSuite,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
   'canary-grey': CanaryGrey,
@@ -2391,8 +2471,10 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-hubs': ChaosHubs,
   'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-main': ChaosMain,
+  'chaos-namespace': ChaosNamespace,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
+  'chaos-service-discovery': ChaosServiceDiscovery,
   'chaos-sketch': ChaosSketch,
   'chaos-solid': ChaosSolid,
   'chaos-with-dark-text': ChaosWithDarkText,
@@ -2448,6 +2530,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-commit-light': CodeCommitLight,
   'code-commit-small': CodeCommitSmall,
   'code-commit': CodeCommit,
+  'code-content': CodeContent,
   'code-copy': CodeCopy,
   'code-delete': CodeDelete,
   'code-descending': CodeDescending,
@@ -2466,6 +2549,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-rejected': CodeRejected,
   'code-repo': CodeRepo,
   'code-settings': CodeSettings,
+  'code-tag': CodeTag,
   'code-webhook': CodeWebhook,
   code: Code,
   'codebase-invalid': CodebaseInvalid,
@@ -2512,6 +2596,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
+  coverity: Coverity,
   'create-pr': CreatePr,
   'create-via-existing-yaml': CreateViaExistingYaml,
   'create-via-pipeline-template': CreateViaPipelineTemplate,
@@ -2616,18 +2701,21 @@ const HarnessIcons: KVO<ElementType> = {
   'execution-abort': ExecutionAbort,
   'execution-completed': ExecutionCompleted,
   'execution-conditional': ExecutionConditional,
+  'execution-destroy-strategy': ExecutionDestroyStrategy,
   'execution-destroy': ExecutionDestroy,
   'execution-error': ExecutionError,
   'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
   'execution-issue': ExecutionIssue,
   'execution-paused': ExecutionPaused,
+  'execution-provision-strategy': ExecutionProvisionStrategy,
   'execution-provision': ExecutionProvision,
   'execution-rollback': ExecutionRollback,
   'execution-running': ExecutionRunning,
   'execution-stopped': ExecutionStopped,
   'execution-success': ExecutionSuccess,
   'execution-timeout': ExecutionTimeout,
+  'execution-waiting': ExecutionWaiting,
   'execution-warning': ExecutionWarning,
   execution: Execution,
   expired: Expired,
@@ -2649,6 +2737,7 @@ const HarnessIcons: KVO<ElementType> = {
   'folder-upload': FolderUpload,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
   'fortify-on-demand': FortifyOnDemand,
+  fossa: Fossa,
   'fs-closed-folder': FsClosedFolder,
   'fs-open-folder': FsOpenFolder,
   'fs-root-folder': FsRootFolder,
@@ -2720,6 +2809,7 @@ const HarnessIcons: KVO<ElementType> = {
   'grey-cluster': GreyCluster,
   grid: Grid,
   'hand-manual': HandManual,
+  'harness-copilot': HarnessCopilot,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
@@ -2731,6 +2821,7 @@ const HarnessIcons: KVO<ElementType> = {
   'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
+  'hexagon-outline': HexagonOutline,
   hotfix: Hotfix,
   hourglass: Hourglass,
   'http-probe': HttpProbe,
@@ -2740,6 +2831,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-resource-added': IacmResourceAdded,
   'iacm-resource-changed': IacmResourceChanged,
   'iacm-resource-deleted': IacmResourceDeleted,
+  'iacm-terraform-step': IacmTerraformStep,
   iacm: Iacm,
   idp: Idp,
   infinityTrend: InfinityTrend,
@@ -2768,6 +2860,7 @@ const HarnessIcons: KVO<ElementType> = {
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
   launch: Launch,
+  'layers-outline': LayersOutline,
   'layout-bottom': LayoutBottom,
   'layout-float': LayoutFloat,
   'layout-right': LayoutRight,
@@ -2865,6 +2958,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-view': MainView,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  'mark-as-failed': MarkAsFailed,
   'mark-as-failure-inverse': MarkAsFailureInverse,
   'mark-as-failure': MarkAsFailure,
   memberRole: MemberRole,
@@ -2982,6 +3076,10 @@ const HarnessIcons: KVO<ElementType> = {
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
+  'rancher-inverse': RancherInverse,
+  rancher: Rancher,
+  're-executed': ReExecuted,
+  'reg-ex': RegEx,
   'remote-setup': RemoteSetup,
   remote: Remote,
   remotefile: Remotefile,
@@ -3019,6 +3117,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3-step': RestoreCacheS3Step,
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
+  'retry-step-group': RetryStepGroup,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
@@ -3080,6 +3179,7 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step-inverse': SecurityCiStepInverse,
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
+  semgrep: Semgrep,
   'send-data': SendData,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-amazon-ecs': ServiceAmazonEcs,
@@ -3125,6 +3225,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-github': ServiceGithub,
   'service-google-functions': ServiceGoogleFunctions,
   'service-gotlab': ServiceGotlab,
+  'service-grafana-loki': ServiceGrafanaLoki,
   'service-helm': ServiceHelm,
   'service-instana': ServiceInstana,
   'service-jenkins-inverse': ServiceJenkinsInverse,
@@ -3227,6 +3328,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sync-failed': SyncFailed,
   synced: Synced,
   syncing: Syncing,
+  sysdig: Sysdig,
   tanzuCommand: TanzuCommand,
   'tas-inverse': TasInverse,
   'tas-manifest': TasManifest,

@@ -26,11 +26,11 @@ const showSuccess = (message: string | ReactNode, timeout?: number, key?: string
 }
 
 const showError = (message: string | ReactNode, timeout?: number, key?: string): void => {
-  toaster.show({ message, intent: Intent.DANGER, icon: 'error', timeout }, key)
+  toaster.show({ message, intent: Intent.DANGER, icon: 'warning-sign', timeout }, key)
 }
 
 const showWarning = (message: string | ReactNode, timeout?: number, key?: string): void => {
-  toaster.show({ message, intent: Intent.WARNING, icon: 'warning-sign', timeout }, key)
+  toaster.show({ message, intent: Intent.WARNING, icon: 'error', timeout }, key)
 }
 
 const showPrimary = (message: string | ReactNode, timeout?: number, key?: string): void => {

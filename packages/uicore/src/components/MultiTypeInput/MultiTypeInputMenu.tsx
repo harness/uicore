@@ -110,6 +110,23 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           onMouseEnter={() => setCurrentType(MultiTypeInputType.EXPRESSION)}
         />
       )}
+      {allowedTypes.includes(MultiTypeInputType.REGEX) && (
+        <Menu.Item
+          className={css.bp3MenuItem}
+          text={
+            <LearnMorePopover
+              i18n={i18n}
+              type={MultiTypeInputType.REGEX}
+              isLearnMoreOpen={isLearnMoreOpen && currentType === MultiTypeInputType.REGEX}
+              dontShowAgain={dontShowAgain}
+              setIsLearnMoreOpen={setIsLearnMoreOpen}
+              setDontShowAgain={setDontShowAgain}
+            />
+          }
+          onClick={() => onTypeSelect(MultiTypeInputType.REGEX)}
+          onMouseEnter={() => setCurrentType(MultiTypeInputType.REGEX)}
+        />
+      )}
       {isLearnMoreOpen ? null : (
         <Menu.Item
           shouldDismissPopover={false}
