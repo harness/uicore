@@ -1025,8 +1025,8 @@ import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import StaleCache from './stale-cache.svg'
+import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
-import StarEmpty from './star_empty.svg'
 import Stars from './stars.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
@@ -2162,8 +2162,8 @@ type HarnessIconName =
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'stale-cache'
+  | 'star-empty'
   | 'star'
-  | 'star_empty'
   | 'stars'
   | 'status-pending'
   | 'status-running'
@@ -3299,8 +3299,8 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'stale-cache': StaleCache,
+  'star-empty': StarEmpty,
   star: Star,
-  star_empty: StarEmpty,
   stars: Stars,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
