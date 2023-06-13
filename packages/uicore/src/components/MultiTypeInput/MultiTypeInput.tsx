@@ -236,7 +236,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           }}
           name={name}
           items={expressions}
-          inputProps={{ placeholder: expressionPlaceHolder || placeholder }}
+          inputProps={{ placeholder: expressionPlaceHolder ?? placeholder ?? EXPRESSION_INPUT_PLACEHOLDER }}
           value={value as string}
           disabled={disabled}
           onChange={val => {
