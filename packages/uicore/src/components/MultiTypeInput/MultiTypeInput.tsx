@@ -64,6 +64,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   placeholder?: string
   newExpressionComponent?: boolean
   textAreaInputClassName?: string
+  expressionPlaceHolder?: string
 }
 
 export interface FixedTypeComponentProps {
@@ -128,6 +129,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
      */
     resetExpressionOnFixedTypeChange,
     placeholder,
+    expressionPlaceHolder,
     newExpressionComponent = false,
     textAreaInputClassName,
     ...layoutProps
@@ -234,7 +236,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           }}
           name={name}
           items={expressions}
-          inputProps={{ placeholder: placeholder || EXPRESSION_INPUT_PLACEHOLDER }}
+          inputProps={{ placeholder: expressionPlaceHolder || placeholder }}
           value={value as string}
           disabled={disabled}
           onChange={val => {
