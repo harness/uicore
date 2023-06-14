@@ -400,6 +400,10 @@ import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
+import EemaDark from './eema-dark.svg'
+import EemaLight from './eema-light.svg'
+import EemaWithDarkText from './eema-with-dark-text.svg'
+import EemaWithText from './eema-with-text.svg'
 import EksInverse from './eks-inverse.svg'
 import Eks from './eks.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
@@ -835,6 +839,7 @@ import ResourceStackDestroy from './resource-stack-destroy.svg'
 import ResourceStackProvision from './resource-stack-provision.svg'
 import ResourceStack from './resource-stack.svg'
 import ResourcesIcon from './resources-icon.svg'
+import Resources from './resources.svg'
 import RestoreCacheGcsCiStepInverse from './restore-cache-gcs-ci-step-inverse.svg'
 import RestoreCacheGcsCiStep from './restore-cache-gcs-ci-step.svg'
 import RestoreCacheGcsStepInverse from './restore-cache-gcs-step-inverse.svg'
@@ -910,6 +915,7 @@ import SecretsIcon from './secrets-icon.svg'
 import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
+import SeiMain from './sei-main.svg'
 import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
@@ -1021,6 +1027,7 @@ import SolidError from './solid-error.svg'
 import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
+import SrmMain from './srm-main.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
 import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
@@ -1538,6 +1545,10 @@ type HarnessIconName =
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
   | 'ecr-step'
+  | 'eema-dark'
+  | 'eema-light'
+  | 'eema-with-dark-text'
+  | 'eema-with-text'
   | 'eks-inverse'
   | 'eks'
   | 'elastic-kubernetes-service'
@@ -1973,6 +1984,7 @@ type HarnessIconName =
   | 'resource-stack-provision'
   | 'resource-stack'
   | 'resources-icon'
+  | 'resources'
   | 'restore-cache-gcs-ci-step-inverse'
   | 'restore-cache-gcs-ci-step'
   | 'restore-cache-gcs-step-inverse'
@@ -2048,6 +2060,7 @@ type HarnessIconName =
   | 'security-ci-step-inverse'
   | 'security-ci-step'
   | 'security-stage'
+  | 'sei-main'
   | 'semgrep'
   | 'send-data'
   | 'serverless-deploy-step'
@@ -2159,6 +2172,7 @@ type HarnessIconName =
   | 'spinner'
   | 'spot-inverse'
   | 'spot'
+  | 'srm-main'
   | 'srm-with-dark-text'
   | 'ssca-enforce'
   | 'ssca-main'
@@ -2676,6 +2690,10 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
+  'eema-dark': EemaDark,
+  'eema-light': EemaLight,
+  'eema-with-dark-text': EemaWithDarkText,
+  'eema-with-text': EemaWithText,
   'eks-inverse': EksInverse,
   eks: Eks,
   'elastic-kubernetes-service': ElasticKubernetesService,
@@ -3111,6 +3129,7 @@ const HarnessIcons: KVO<ElementType> = {
   'resource-stack-provision': ResourceStackProvision,
   'resource-stack': ResourceStack,
   'resources-icon': ResourcesIcon,
+  resources: Resources,
   'restore-cache-gcs-ci-step-inverse': RestoreCacheGcsCiStepInverse,
   'restore-cache-gcs-ci-step': RestoreCacheGcsCiStep,
   'restore-cache-gcs-step-inverse': RestoreCacheGcsStepInverse,
@@ -3186,6 +3205,7 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step-inverse': SecurityCiStepInverse,
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
+  'sei-main': SeiMain,
   semgrep: Semgrep,
   'send-data': SendData,
   'serverless-deploy-step': ServerlessDeployStep,
@@ -3297,6 +3317,7 @@ const HarnessIcons: KVO<ElementType> = {
   spinner: Spinner,
   'spot-inverse': SpotInverse,
   spot: Spot,
+  'srm-main': SrmMain,
   'srm-with-dark-text': SrmWithDarkText,
   'ssca-enforce': SscaEnforce,
   'ssca-main': SscaMain,
