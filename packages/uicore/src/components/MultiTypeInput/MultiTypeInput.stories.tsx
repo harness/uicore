@@ -40,6 +40,7 @@ export const MultiSelectInputWithNoMenu: Story<MultiSelectTypeInputProps> = args
 
 TextInput.args = {
   disabled: false,
+  expressionPlaceHolder: '<+test.app>',
   expressions: [
     'app.name',
     'app.description',
@@ -62,6 +63,7 @@ SelectInput.args = {
     addClearBtn: true
   },
   disabled: false,
+  expressionPlaceHolder: '<+test.app>',
   value: { label: data[0].name, value: data[0].id },
   expressions: [
     'app.name',
@@ -88,6 +90,7 @@ SelectInputWithCreationOfNewItems.args = {
     'pipeline.identifier',
     'pipeline.stage.qa.displayName'
   ],
+  expressionPlaceHolder: '<+test.app>',
   allowableTypes: [MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION],
   selectProps: {
     defaultSelectedItem: { label: data[0].name, value: data[0].id },
@@ -105,6 +108,7 @@ MultiSelectInput.args = {
   },
   value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
   disabled: false,
+  expressionPlaceHolder: '<+test.app>',
   expressions: [
     'app.name',
     'app.description',
@@ -122,6 +126,7 @@ MultiSelectInputWithNoMenu.args = {
   value: data.slice(0, 2).map(row => ({ label: row.name, value: row.id })),
   disabled: false,
   allowableTypes: [MultiTypeInputType.FIXED],
+  expressionPlaceHolder: '<+test.app>',
   expressions: [
     'app.name',
     'app.description',
