@@ -36,11 +36,11 @@
   .label {
     font-size: var(--font-size-small) !important;
     text-align: center;
-    word-break: break-word;
   }
 
   &.bigger {
     width: 88px;
+
     .squareCard {
       width: 80px;
       height: 80px;
@@ -49,6 +49,7 @@
 
   &.large {
     width: 320px;
+
     .squareCard {
       width: 320px;
       justify-content: flex-start;

@@ -326,6 +326,7 @@ import Copy from './copy.svg'
 import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
+import Coverity from './coverity.svg'
 import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
@@ -430,12 +431,14 @@ import EvaluatePolicy from './evaluate-policy.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionCompleted from './execution-completed.svg'
 import ExecutionConditional from './execution-conditional.svg'
+import ExecutionDestroyStrategy from './execution-destroy-strategy.svg'
 import ExecutionDestroy from './execution-destroy.svg'
 import ExecutionError from './execution-error.svg'
 import ExecutionHistory from './execution-history.svg'
 import ExecutionInput from './execution-input.svg'
 import ExecutionIssue from './execution-issue.svg'
 import ExecutionPaused from './execution-paused.svg'
+import ExecutionProvisionStrategy from './execution-provision-strategy.svg'
 import ExecutionProvision from './execution-provision.svg'
 import ExecutionRollback from './execution-rollback.svg'
 import ExecutionRunning from './execution-running.svg'
@@ -464,6 +467,7 @@ import Flash from './flash.svg'
 import FolderUpload from './folder-upload.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
 import FortifyOnDemand from './fortify-on-demand.svg'
+import FossaInverse from './fossa-inverse.svg'
 import Fossa from './fossa.svg'
 import FsClosedFolder from './fs-closed-folder.svg'
 import FsOpenFolder from './fs-open-folder.svg'
@@ -1458,6 +1462,7 @@ type HarnessIconName =
   | 'cost-data-collection'
   | 'coverage-status-error'
   | 'coverage-status-success'
+  | 'coverity'
   | 'create-pr'
   | 'create-via-existing-yaml'
   | 'create-via-pipeline-template'
@@ -1562,12 +1567,14 @@ type HarnessIconName =
   | 'execution-abort'
   | 'execution-completed'
   | 'execution-conditional'
+  | 'execution-destroy-strategy'
   | 'execution-destroy'
   | 'execution-error'
   | 'execution-history'
   | 'execution-input'
   | 'execution-issue'
   | 'execution-paused'
+  | 'execution-provision-strategy'
   | 'execution-provision'
   | 'execution-rollback'
   | 'execution-running'
@@ -1596,6 +1603,7 @@ type HarnessIconName =
   | 'folder-upload'
   | 'fortify-on-demand-inverse'
   | 'fortify-on-demand'
+  | 'fossa-inverse'
   | 'fossa'
   | 'fs-closed-folder'
   | 'fs-open-folder'
@@ -2590,6 +2598,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
+  coverity: Coverity,
   'create-pr': CreatePr,
   'create-via-existing-yaml': CreateViaExistingYaml,
   'create-via-pipeline-template': CreateViaPipelineTemplate,
@@ -2694,12 +2703,14 @@ const HarnessIcons: KVO<ElementType> = {
   'execution-abort': ExecutionAbort,
   'execution-completed': ExecutionCompleted,
   'execution-conditional': ExecutionConditional,
+  'execution-destroy-strategy': ExecutionDestroyStrategy,
   'execution-destroy': ExecutionDestroy,
   'execution-error': ExecutionError,
   'execution-history': ExecutionHistory,
   'execution-input': ExecutionInput,
   'execution-issue': ExecutionIssue,
   'execution-paused': ExecutionPaused,
+  'execution-provision-strategy': ExecutionProvisionStrategy,
   'execution-provision': ExecutionProvision,
   'execution-rollback': ExecutionRollback,
   'execution-running': ExecutionRunning,
@@ -2728,6 +2739,7 @@ const HarnessIcons: KVO<ElementType> = {
   'folder-upload': FolderUpload,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
   'fortify-on-demand': FortifyOnDemand,
+  'fossa-inverse': FossaInverse,
   fossa: Fossa,
   'fs-closed-folder': FsClosedFolder,
   'fs-open-folder': FsOpenFolder,
