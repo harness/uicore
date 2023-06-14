@@ -15,7 +15,6 @@ export interface MarkdownProps {
   className?: string
 }
 
-const Markdown: React.FC<MarkdownProps> = ({ value, className }) => {
+export const Markdown: React.FC<MarkdownProps> = ({ value, className }) => {
   return <ReactMarkdown className={cx(css.markdown, className)}>{value}</ReactMarkdown>
 }
-export default Markdown

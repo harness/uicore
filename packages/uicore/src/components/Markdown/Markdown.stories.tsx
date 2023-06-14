@@ -10,7 +10,7 @@ import type { Meta, Story } from '@storybook/react'
 
 import { Layout } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
-import Markdown, { MarkdownProps } from './Markdown'
+import { Markdown, MarkdownProps } from './Markdown'
 
 export default {
   title: 'Components / Markdown',

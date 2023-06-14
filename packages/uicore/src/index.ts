@@ -259,5 +259,6 @@ export {
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
 export { StringSubstitute, stringSubstitute } from './components/StringSubstitute/StringSubstitute'
+export { Markdown, MarkdownProps } from './components/Markdown/Markdown'
 export * from '@harness/design-system'
 export * from '@harness/icons'
