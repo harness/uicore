@@ -1,35 +1,21 @@
+/*
+ * Copyright 2023 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
 import React from 'react'
+import cx from 'classnames'
 import ReactMarkdown from 'react-markdown'
-import { Prism } from 'react-syntax-highlighter'
-import { vs } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import remarkGfm from 'remark-gfm'
 import css from './Markdown.css'
 
 export interface MarkdownProps {
   value: string
+  className?: string
 }
 
-const Markdown: React.FC<MarkdownProps> = ({ value }) => {
-  return (
-    <ReactMarkdown
-      className={css.markdown}
-      remarkPlugins={[remarkGfm]}
-      components={{
-        code({ node, className, children, ...props }) {
-          const match = /language-(\w+)/.exec(className || '')
-          return match ? (
-            <Prism {...props} style={vs} language={match[1]} PreTag="div">
-              {String(children).replace(/\n$/, '')}
-            </Prism>
-          ) : (
-            <code {...props} className={className}>
-              {children}
-            </code>
-          )
-        }
-      }}>
-      {value}
-    </ReactMarkdown>
-  )
+const Markdown: React.FC<MarkdownProps> = ({ value, className }) => {
+  return <ReactMarkdown className={cx(css.markdown, className)}>{value}</ReactMarkdown>
 }
 export default Markdown
