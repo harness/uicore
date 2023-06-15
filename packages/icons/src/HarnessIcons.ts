@@ -1019,7 +1019,7 @@ import Services from './services.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
-import SimpleVerification from './simple_verification.svg'
+import SimpleVerification from './simple-verification.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
 import SlotDeployment from './slot-deployment.svg'
@@ -2165,7 +2165,7 @@ type HarnessIconName =
   | 'setup-api'
   | 'setup-tags'
   | 'shield-gears'
-  | 'simple_verification'
+  | 'simple-verification'
   | 'skipped'
   | 'slider-trigger'
   | 'slot-deployment'
@@ -3311,7 +3311,7 @@ const HarnessIcons: KVO<ElementType> = {
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
   'shield-gears': ShieldGears,
-  simple_verification: SimpleVerification,
+  'simple-verification': SimpleVerification,
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
   'slot-deployment': SlotDeployment,
