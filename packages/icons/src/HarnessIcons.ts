@@ -402,8 +402,6 @@ import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
 import EemaDark from './eema-dark.svg'
 import EemaLight from './eema-light.svg'
-import EemaWithDarkText from './eema-with-dark-text.svg'
-import EemaWithText from './eema-with-text.svg'
 import EksInverse from './eks-inverse.svg'
 import Eks from './eks.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
@@ -1547,8 +1545,6 @@ type HarnessIconName =
   | 'ecr-step'
   | 'eema-dark'
   | 'eema-light'
-  | 'eema-with-dark-text'
-  | 'eema-with-text'
   | 'eks-inverse'
   | 'eks'
   | 'elastic-kubernetes-service'
@@ -2692,8 +2688,6 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-step': EcrStep,
   'eema-dark': EemaDark,
   'eema-light': EemaLight,
-  'eema-with-dark-text': EemaWithDarkText,
-  'eema-with-text': EemaWithText,
   'eks-inverse': EksInverse,
   eks: Eks,
   'elastic-kubernetes-service': ElasticKubernetesService,
