@@ -1025,7 +1025,6 @@ import SolidError from './solid-error.svg'
 import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
-import SrmMain from './srm-main.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
 import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
@@ -2168,7 +2167,6 @@ type HarnessIconName =
   | 'spinner'
   | 'spot-inverse'
   | 'spot'
-  | 'srm-main'
   | 'srm-with-dark-text'
   | 'ssca-enforce'
   | 'ssca-main'
@@ -3311,7 +3309,6 @@ const HarnessIcons: KVO<ElementType> = {
   spinner: Spinner,
   'spot-inverse': SpotInverse,
   spot: Spot,
-  'srm-main': SrmMain,
   'srm-with-dark-text': SrmWithDarkText,
   'ssca-enforce': SscaEnforce,
   'ssca-main': SscaMain,
