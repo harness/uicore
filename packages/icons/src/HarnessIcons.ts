@@ -50,6 +50,7 @@ import AccordionExpanded from './accordion-expanded.svg'
 import AcrCiStepInverse from './acr-ci-step-inverse.svg'
 import AcrCiStep from './acr-ci-step.svg'
 import Activity from './activity.svg'
+import AddGraph from './add-graph.svg'
 import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
@@ -451,6 +452,7 @@ import ExecutionWaiting from './execution-waiting.svg'
 import ExecutionWarning from './execution-warning.svg'
 import Execution from './execution.svg'
 import Expired from './expired.svg'
+import Explode from './explode.svg'
 import ExpressionInput from './expression-input.svg'
 import FailureStrategy from './failure-strategy.svg'
 import FatArrowUp from './fat-arrow-up.svg'
@@ -816,6 +818,7 @@ import RegEx from './reg-ex.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
+import RemoveGraph from './remove-graph.svg'
 import RemoveMinus from './remove-minus.svg'
 import Remove from './remove.svg'
 import ReportGearGrey from './report-gear-grey.svg'
@@ -1192,6 +1195,7 @@ type HarnessIconName =
   | 'acr-ci-step-inverse'
   | 'acr-ci-step'
   | 'activity'
+  | 'add-graph'
   | 'add-stage'
   | 'adminRole'
   | 'advanced'
@@ -1593,6 +1597,7 @@ type HarnessIconName =
   | 'execution-warning'
   | 'execution'
   | 'expired'
+  | 'explode'
   | 'expression-input'
   | 'failure-strategy'
   | 'fat-arrow-up'
@@ -1958,6 +1963,7 @@ type HarnessIconName =
   | 'remote-setup'
   | 'remote'
   | 'remotefile'
+  | 'remove-graph'
   | 'remove-minus'
   | 'remove'
   | 'report-gear-grey'
@@ -2334,6 +2340,7 @@ const HarnessIcons: KVO<ElementType> = {
   'acr-ci-step-inverse': AcrCiStepInverse,
   'acr-ci-step': AcrCiStep,
   activity: Activity,
+  'add-graph': AddGraph,
   'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
@@ -2735,6 +2742,7 @@ const HarnessIcons: KVO<ElementType> = {
   'execution-warning': ExecutionWarning,
   execution: Execution,
   expired: Expired,
+  explode: Explode,
   'expression-input': ExpressionInput,
   'failure-strategy': FailureStrategy,
   'fat-arrow-up': FatArrowUp,
@@ -3100,6 +3108,7 @@ const HarnessIcons: KVO<ElementType> = {
   'remote-setup': RemoteSetup,
   remote: Remote,
   remotefile: Remotefile,
+  'remove-graph': RemoveGraph,
   'remove-minus': RemoveMinus,
   remove: Remove,
   'report-gear-grey': ReportGearGrey,
