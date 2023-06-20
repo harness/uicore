@@ -34,6 +34,7 @@ export type GotoStepArgs<SharedObject> =
 export interface StepWizardProps<SharedObject> {
   icon?: IconName
   iconProps?: Omit<IconProps, 'name'>
+  watermarkIcon?: IconName
   title?: string | JSX.Element
   subtitle?: string | JSX.Element
   children:
@@ -124,6 +125,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     navClassName = '',
     icon = '',
     iconProps,
+    watermarkIcon = 'harness-with-color',
     title = '',
     subtitle = ''
   } = props
@@ -397,7 +399,7 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
       {state.activeStep && (
         <div className={cx(css.stepDetails, stepClassName)}> {React.cloneElement(activeChild, childProps)}</div>
       )}
-      <Icon name="harness-with-color" className={css.harnessWatermark} size={346} color={Color.GREY_50} />
+      <Icon name={watermarkIcon} className={css.harnessWatermark} size={346} color={Color.GREY_50} />
     </div>
   )
 }
