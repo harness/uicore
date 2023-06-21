@@ -264,3 +264,4 @@ export {
 export { StringSubstitute, stringSubstitute } from './components/StringSubstitute/StringSubstitute'
 export * from '@harness/design-system'
 export * from '@harness/icons'
+export * from '../../logos'
