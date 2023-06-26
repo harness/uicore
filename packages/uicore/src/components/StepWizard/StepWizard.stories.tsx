@@ -12,6 +12,7 @@ import { ExampleWizard, ExampleStep, ModalExample } from './example/StepWizardEx
 import { Text } from '../Text/Text'
 import { StepWizard } from './StepWizard'
 import { Color } from '@harness/design-system'
+import { Icon } from '@harness/icons'
 
 export default {
   title: 'Components / Step Wizard',
@@ -19,7 +20,10 @@ export default {
 } as Meta
 
 export const Basic: Story<void> = _args => (
-  <StepWizard icon="app-kubernetes" iconProps={{ size: 50 }} title="Kubernetes Cluster">
+  <StepWizard
+    icon={<Icon name="app-kubernetes" size={50} />}
+    watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
+    title="Kubernetes Cluster">
     <ExampleStep name="Create a New Project" />
     <ExampleStep name={`New Project`} />
     <ExampleStep name="Collaborator" />
@@ -27,8 +31,8 @@ export const Basic: Story<void> = _args => (
 )
 export const StepSubTitle: Story<void> = _args => (
   <StepWizard
-    icon="app-kubernetes"
-    iconProps={{ size: 50 }}
+    icon={<Icon name="app-kubernetes" size={50} />}
+    watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
     title="Kubernetes Cluster"
     subtitle={'step wizard sub title'}>
     <ExampleStep name={' step title'} subTitle={'step sub title '} />
@@ -42,6 +46,7 @@ export const ModalStepExample: Story<void> = _args => <ModalExample />
 
 export const Nested: Story<void> = _args => (
   <StepWizard
+    watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
     title="Kubernetes Cluster"
     subtitle={
       <Text style={{ marginLeft: 28, marginTop: 'var(--spacing-2)' }} color={Color.WHITE}>
@@ -52,6 +57,7 @@ export const Nested: Story<void> = _args => (
 
     <ExampleStep name={`New Project`} />
     <StepWizard
+      watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
       title="Create new Connector"
       onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
       onStepChange={arg => console.log('Step Change', arg)}>
@@ -61,6 +67,7 @@ export const Nested: Story<void> = _args => (
     </StepWizard>
     <ExampleStep name="Collaborator" />
     <StepWizard
+      watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
       onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
       onStepChange={arg => console.log('Step Change', arg)}>
       <ExampleStep
@@ -76,10 +83,13 @@ export const Nested: Story<void> = _args => (
 )
 
 export const NestedChildSteps: Story<void> = _args => (
-  <StepWizard title="Kubernetes Cluster">
+  <StepWizard
+    watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
+    title="Kubernetes Cluster">
     <ExampleStep name="Artifact Repository Type" />
     <div>
       <StepWizard
+        watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
         onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
         onStepChange={arg => console.log('Step Change', arg)}>
         <ExampleStep name={'Docker Registry'} />
@@ -87,6 +97,7 @@ export const NestedChildSteps: Story<void> = _args => (
     </div>
     <ExampleStep name={`New Project`} />
     <StepWizard
+      watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
       title="Create new Connector"
       onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
       onStepChange={arg => console.log('Step Change', arg)}>

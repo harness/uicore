@@ -13,6 +13,8 @@ import { GotoStepArgs, StepWizard } from '../StepWizard'
 
 import './StepWizardExample.css'
 import { Dialog, IDialogProps } from '@blueprintjs/core'
+import { Icon } from '@harness/icons'
+import { Color } from '@harness/design-system'
 // For Example only defining this props , reason is the module loader over here has some type issue
 
 interface StepData {
@@ -66,8 +68,8 @@ export const ExampleWizard = (): JSX.Element => {
   return (
     <div>
       <StepWizard
-        icon="app-kubernetes"
-        iconProps={{ size: 50 }}
+        icon={<Icon name="app-kubernetes" size={50} />}
+        watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
         title="Kubernetes Cluster"
         onStepChange={() => {
           setCounter(counter + 1)
