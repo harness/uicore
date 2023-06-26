@@ -97,7 +97,8 @@
   height: var(--spacing-large) !important;
   width: var(--spacing-large) !important;
 }
-.harnessWatermark {
+
+.defaultWatermark {
   position: absolute;
   left: -8.19%;
   right: 78.36%;

@@ -7,7 +7,9 @@
 
 import React from 'react'
 
-import { Layout, HarnessIcons, Popover, Icon, Text, IconName, Utils, Logos, LogoName, Logo } from '../../'
+import { Layout, Popover, Text, Utils } from '../../'
+import { HarnessIcons, Icon, IconName } from '@harness/icons'
+import { Logos, LogoName, Logo } from '../../../../logos'
 import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
 
 export function HarnessLogos(): React.ReactElement {
