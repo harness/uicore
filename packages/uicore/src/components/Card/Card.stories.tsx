@@ -8,9 +8,10 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { Layout, Card, Text, Icon, CardProps, Container } from '../..'
+import { Layout, Card, Text, CardProps, Container } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { CardBody, Menu, Icon as CardBodyIcon } from './Card'
+import { Icon } from '@harness/icons'
 
 export default {
   title: 'Components / Card',

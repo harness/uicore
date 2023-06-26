@@ -1,6 +1,6 @@
 {
   "name": "@harness/icons",
-  "version": "1.128.1",
+  "version": "2.0.0-beta.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/icons.umd.js",
@@ -18,7 +18,7 @@
     "ui:icons": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
     "test": "jest --no-cache src --config ../../jest.config.js"
   },
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "repository": "https://github.com/harness/uicore",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

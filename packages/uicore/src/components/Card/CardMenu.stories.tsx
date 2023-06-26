@@ -9,12 +9,13 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { CardBody, Icon, Layout, Text } from '../..'
+import { CardBody, Layout, Text } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Card, CardMenuProps } from '../Card/Card'
 import { omit } from 'lodash-es'
 
 import * as BP from '@blueprintjs/core'
+import { Icon } from '@harness/icons'
 export default {
   title: 'Components / CardMenu',
 

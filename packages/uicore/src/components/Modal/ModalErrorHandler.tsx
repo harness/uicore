@@ -10,7 +10,8 @@
 //  - https://harness.atlassian.net/wiki/spaces/EN/pages/531103761/UI+Modal+Drawer+Error+Handling
 //  - https://harness.atlassian.net/wiki/spaces/CDNG/pages/736298085/Next+Gen+APIs+specification
 //
-import { Container, Icon, Link, Text, IconName } from '../../'
+import { Container, Link, Text } from '../../'
+import { Icon, IconName } from '@harness/icons'
 import { Color, Intent } from '@harness/design-system'
 import React, { useEffect, useMemo, useState } from 'react'
 
