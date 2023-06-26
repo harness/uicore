@@ -9,7 +9,9 @@ import React from 'react'
 import { Intent, Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
 
-import { Button, ButtonProps, Layout, Container, Icon, Text, ButtonVariation, FontVariation, Color } from '../../'
+import { Button, ButtonProps, Layout, Container, Text, ButtonVariation } from '../../'
+import { Icon } from '@harness/icons'
+import { Color, FontVariation } from '@harness/design-system'
 
 import css from './ConfirmationDialog.css'
 import { HarnessIconName } from '@harness/icons'

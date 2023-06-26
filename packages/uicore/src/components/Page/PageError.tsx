@@ -5,7 +5,8 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Text, Icon, Layout, Button, ButtonVariation, ButtonProps, Container } from '../../'
+import { Text, Layout, Button, ButtonVariation, ButtonProps, Container } from '../../'
+import { Icon } from '@harness/icons'
 import { Color } from '@harness/design-system'
 import React from 'react'
 import i18n from './PageError.i18n'
