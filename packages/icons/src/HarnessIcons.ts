@@ -135,7 +135,8 @@ import CfHover from './cf-hover.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
-import Changes from './changes.svg'
+import ChaosChaoshubPrivate from './chaos-chaoshub-private.svg'
+import ChaosChaoshubPublic from './chaos-chaoshub-public.svg'
 import ChaosCube from './chaos-cube.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
@@ -1131,7 +1132,8 @@ type HarnessIconName =
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
-  | 'changes'
+  | 'chaos-chaoshub-private'
+  | 'chaos-chaoshub-public'
   | 'chaos-cube'
   | 'chaos-experiment-weight'
   | 'chaos-hubs'
@@ -2127,7 +2129,8 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
-  changes: Changes,
+  'chaos-chaoshub-private': ChaosChaoshubPrivate,
+  'chaos-chaoshub-public': ChaosChaoshubPublic,
   'chaos-cube': ChaosCube,
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-hubs': ChaosHubs,
