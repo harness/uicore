@@ -97,7 +97,14 @@ export const getMultiTypeFromValue = (
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
   } else if (Array.isArray(value) && supportListOfExpressionsBehaviour) {
     // To support list of expressions
-    if (value.some((item: string | MultiSelectOption) => typeof item === 'string' && isValueAnExpression(item)))
+    if (
+      value.some(
+        (item: string | MultiSelectOption) =>
+          typeof item === 'string' &&
+          isValueAnExpression(item) &&
+          allowableTypes?.includes(MultiTypeInputType.EXPRESSION)
+      )
+    )
       return MultiTypeInputType.EXPRESSION
   }
   if (!value && allowableTypes?.length) {
