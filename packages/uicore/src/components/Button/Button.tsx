@@ -53,7 +53,7 @@ export interface ButtonProps
   withoutBoxShadow?: boolean
 
   /** onClick event handler */
-  onClick?: (event: MouseEvent) => Promise<void> | void
+  onClick?: (event: MouseEvent) => Promise<unknown> | void
 
   /** Link href. If provided, Button rendered as Link */
   href?: string
