@@ -21,8 +21,8 @@ export default {
 
 export const Basic: Story<void> = _args => (
   <StepWizard
-    icon={<Icon name="chaos-hubs" size={50} />}
-    watermarkLogo={<Icon name="chaos-hubs" size={346} color={Color.GREY_50} />}
+    icon={<Icon name="advanced" size={50} />}
+    watermarkLogo={<Icon name="advanced" size={346} color={Color.GREY_50} />}
     title="Kubernetes Cluster">
     <ExampleStep name="Create a New Project" />
     <ExampleStep name={`New Project`} />
@@ -31,8 +31,8 @@ export const Basic: Story<void> = _args => (
 )
 export const StepSubTitle: Story<void> = _args => (
   <StepWizard
-    icon={<Icon name="chaos-hubs" size={50} />}
-    watermarkLogo={<Icon name="chaos-hubs" size={346} color={Color.GREY_50} />}
+    icon={<Icon name="advanced" size={50} />}
+    watermarkLogo={<Icon name="advanced" size={346} color={Color.GREY_50} />}
     title="Kubernetes Cluster"
     subtitle={'step wizard sub title'}>
     <ExampleStep name={' step title'} subTitle={'step sub title '} />
@@ -46,7 +46,8 @@ export const ModalStepExample: Story<void> = _args => <ModalExample />
 
 export const Nested: Story<void> = _args => (
   <StepWizard
-    watermarkLogo={<Icon name="chaos-hubs" size={346} color={Color.GREY_50} />}
+    icon={<Icon name="advanced" size={50} />}
+    watermarkLogo={<Icon name="advanced" size={346} color={Color.GREY_50} />}
     title="Kubernetes Cluster"
     subtitle={
       <Text style={{ marginLeft: 28, marginTop: 'var(--spacing-2)' }} color={Color.WHITE}>
@@ -57,7 +58,8 @@ export const Nested: Story<void> = _args => (
 
     <ExampleStep name={`New Project`} />
     <StepWizard
-      watermarkLogo={<Icon name="chaos-hubs" size={346} color={Color.GREY_50} />}
+      icon={<Icon name="advanced" size={50} />}
+      watermarkLogo={<Icon name="advanced" size={346} color={Color.GREY_50} />}
       title="Create new Connector"
       onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
       onStepChange={arg => console.log('Step Change', arg)}>
@@ -72,7 +74,7 @@ export const Nested: Story<void> = _args => (
       onStepChange={arg => console.log('Step Change', arg)}>
       <ExampleStep
         name={
-          <Text icon="service-dockerhub" iconProps={{ color: Color.WHITE, size: 26 }} color={Color.WHITE}>
+          <Text icon="cmd-probe" iconProps={{ color: Color.WHITE, size: 16 }} color={Color.WHITE}>
             Docker Registry
           </Text>
         }
@@ -83,11 +85,13 @@ export const Nested: Story<void> = _args => (
 )
 
 export const NestedChildSteps: Story<void> = _args => (
-  <StepWizard watermarkLogo={<Icon name="chaos-hubs" size={346} color={Color.GREY_50} />} title="Kubernetes Cluster">
+  <StepWizard
+    icon={<Icon name="advanced" size={50} />}
+    watermarkLogo={<Icon name="advanced" size={346} color={Color.GREY_50} />}
+    title="Kubernetes Cluster">
     <ExampleStep name="Artifact Repository Type" />
     <div>
       <StepWizard
-        watermarkLogo={<Icon name="chaos-hubs" size={346} color={Color.GREY_50} />}
         onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
         onStepChange={arg => console.log('Step Change', arg)}>
         <ExampleStep name={'Docker Registry'} />
@@ -95,7 +99,6 @@ export const NestedChildSteps: Story<void> = _args => (
     </div>
     <ExampleStep name={`New Project`} />
     <StepWizard
-      watermarkLogo={<Icon name="chaos-hubs" size={346} color={Color.GREY_50} />}
       title="Create new Connector"
       onCompleteWizard={arg => console.log('onCompleteWizard', arg)}
       onStepChange={arg => console.log('Step Change', arg)}>

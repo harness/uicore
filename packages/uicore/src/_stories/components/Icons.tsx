@@ -9,20 +9,7 @@ import React from 'react'
 
 import { Layout, Popover, Text, Utils } from '../../'
 import { HarnessIcons, Icon, IconName } from '@harness/icons'
-import { Logos, LogoName, Logo } from '../../../../logos'
 import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
-
-export function HarnessLogos(): React.ReactElement {
-  return (
-    <div style={{ background: 'var(--grey-100)', padding: '20px', borderRadius: '5px' }}>
-      <Layout.Horizontal spacing="small">
-        {[Logos['harness-logo-black'], Logos['harness-logo-white']].map((HarnessLogo, index) => (
-          <HarnessLogo {...({ height: 48 } as any)} key={index} />
-        ))}
-      </Layout.Horizontal>
-    </div>
-  )
-}
 
 export function HarnessIconsGrid(): React.ReactElement {
   return (
@@ -59,50 +46,6 @@ export function HarnessIconsGrid(): React.ReactElement {
                 alignItems: 'center'
               }}>
               <Icon name={name as IconName} size={24} padding="small" border={{ color: 'grey300' }} />
-              <Text font="small">{name}</Text>
-            </Layout.Vertical>
-          </Popover>
-        </button>
-      ))}
-    </div>
-  )
-}
-
-export function LogosGrid(): React.ReactElement {
-  return (
-    <div
-      id="logos"
-      style={{
-        padding: '20px',
-        display: 'grid',
-        background: 'var(--grey-100)',
-        gridGap: '20px',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        borderRadius: '5px'
-      }}>
-      {Object.keys(Logos).map(name => (
-        <button
-          key={name}
-          style={{
-            all: 'unset',
-            justifySelf: 'center',
-            alignSelf: 'center',
-            display: 'inline-block',
-            cursor: 'pointer'
-          }}
-          onClick={() => Utils.copy(name)}>
-          <Popover
-            key={name}
-            interactionKind="hover"
-            content={<Text padding="small">{name} (click to copy)</Text>}
-            usePortal={false}>
-            <Layout.Vertical
-              spacing="small"
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}>
-              <Logo name={name as LogoName} size={24} padding="small" border={{ color: 'grey300' }} />
               <Text font="small">{name}</Text>
             </Layout.Vertical>
           </Popover>

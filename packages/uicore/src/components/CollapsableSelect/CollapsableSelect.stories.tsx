@@ -127,12 +127,12 @@ CardView.args = {
 Custom.args = {
   items: [
     {
-      icon: <Icon name="service-jenkins" size={50} />,
+      icon: <Icon name="advanced" size={50} />,
       info: 'This option selects Jenkins',
       value: 'Jenkins'
     },
     {
-      icon: <Icon name="service-gcp" size={50} />,
+      icon: <Icon name="advanced" size={50} />,
       info: 'This option selects Gcp',
       value: 'Gcp'
     }

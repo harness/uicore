@@ -11,7 +11,7 @@ exports[`Card icon test should render cards with props selected and interactive 
     >
       <span
         class="bp3-icon StyledProps--main"
-        data-icon="service-kubernetes"
+        data-icon='advanced'
       >
         <svg
           height="25"
@@ -52,7 +52,7 @@ exports[`Card icon test should render icon card with no props 1`] = `
     >
       <span
         class="bp3-icon StyledProps--main"
-        data-icon="service-kubernetes"
+        data-icon='advanced'
       >
         <svg
           height="25"

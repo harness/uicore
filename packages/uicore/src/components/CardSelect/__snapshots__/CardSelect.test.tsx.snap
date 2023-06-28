@@ -15,7 +15,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-kubernetes"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -52,7 +52,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-github"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -83,7 +83,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-gcp"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -93,7 +93,7 @@ exports[`Test render Radio Select should render default values 1`] = `
           >
             <mask
               height="8.5"
-              id="service-gcp_svg__a"
+              id='advanced'
               maskUnits="userSpaceOnUse"
               width="9.1"
               x="0"
@@ -172,7 +172,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-elk"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -227,7 +227,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-gotlab"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -282,7 +282,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-datadog"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -317,7 +317,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-slack"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -372,7 +372,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-jenkins"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -546,7 +546,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-kubernetes"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -583,7 +583,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-github"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -613,7 +613,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-gcp"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -623,7 +623,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
           >
             <mask
               height="8.5"
-              id="service-gcp_svg__a"
+              id='advanced'
               maskUnits="userSpaceOnUse"
               width="9.1"
               x="0"
@@ -702,7 +702,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-elk"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -757,7 +757,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-gotlab"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -812,7 +812,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-datadog"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -847,7 +847,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-slack"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -902,7 +902,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-jenkins"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1076,7 +1076,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-kubernetes"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1113,7 +1113,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-github"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1144,7 +1144,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-gcp"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1154,7 +1154,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
           >
             <mask
               height="8.5"
-              id="service-gcp_svg__a"
+              id='advanced'
               maskUnits="userSpaceOnUse"
               width="9.1"
               x="0"
@@ -1233,7 +1233,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-elk"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1288,7 +1288,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-gotlab"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1343,7 +1343,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-datadog"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1378,7 +1378,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-slack"
+          data-icon='advanced'
         >
           <svg
             height="25"
@@ -1433,7 +1433,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       >
         <span
           class="bp3-icon StyledProps--main"
-          data-icon="service-jenkins"
+          data-icon='advanced'
         >
           <svg
             height="25"

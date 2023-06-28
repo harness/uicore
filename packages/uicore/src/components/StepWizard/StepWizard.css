@@ -6,6 +6,7 @@
  */
 
 .main {
+  height: 100%;
   &.navBar {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -80,6 +81,9 @@
 .header {
   display: grid;
   justify-content: center;
+  svg {
+    color: var(--white);
+  }
 }
 
 .title {

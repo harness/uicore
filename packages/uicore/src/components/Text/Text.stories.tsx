@@ -401,7 +401,7 @@ export const NoTooltipWhenThereIsEnoughSpaceToRenderTheWholeText: Story<TextProp
 export const LeftIcon: Story<TextProps> = args => {
   return (
     <>
-      <Text inline icon="service-datadog" iconProps={{ size: 20 }} {...args}>
+      <Text inline icon="advanced" iconProps={{ size: 20 }} {...args}>
         Datadog
       </Text>
       <Text inline icon="full-circle" iconProps={{ size: 10, color: Color.BLUE_500 }} {...args}>
@@ -428,7 +428,7 @@ export const RightIcon: Story<TextProps> = args => {
 export const RightAlignment: Story<TextProps> = args => {
   return (
     <>
-      <Text icon="service-datadog" iconProps={{ size: 20 }} style={{ justifyContent: 'flex-end' }} {...args}>
+      <Text icon="advanced" iconProps={{ size: 20 }} style={{ justifyContent: 'flex-end' }} {...args}>
         Datadog
       </Text>
     </>

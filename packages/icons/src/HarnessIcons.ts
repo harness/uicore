@@ -51,25 +51,16 @@ import Autostopping from './autostopping.svg'
 import AwsLambdaDeploy from './aws-lambda-deploy.svg'
 import AwsLambdaRollback from './aws-lambda-rollback.svg'
 import AwsLambdaTrafficShift from './aws-lambda-traffic-shift.svg'
-import AwsRds from './aws-rds.svg'
 import AwsSamBuildInverse from './aws-sam-build-inverse.svg'
 import AwsSamBuild from './aws-sam-build.svg'
 import AwsSamDeployInverse from './aws-sam-deploy-inverse.svg'
 import AwsSamDeploy from './aws-sam-deploy.svg'
 import AwsSamPackageInverse from './aws-sam-package-inverse.svg'
 import AwsSamPackage from './aws-sam-package.svg'
-import AwsSecretManager from './aws-secret-manager.svg'
-import AwsSecurityHubInverse from './aws-security-hub-inverse.svg'
-import AwsSecurityHub from './aws-security-hub.svg'
 import AzureArmRollback from './azure-arm-rollback.svg'
 import AzureArm from './azure-arm.svg'
 import AzureBlueprints from './azure-blueprints.svg'
-import AzureContainerRegistry from './azure-container-registry.svg'
-import AzureKeyVault from './azure-key-vault.svg'
-import AzureKubernetesService from './azure-kubernetes-service.svg'
 import AzureResourceManager from './azure-resource-manager.svg'
-import AzureVm from './azure-vm.svg'
-import Azurewebapp from './azurewebapp.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStepPlugin from './background-step-plugin.svg'
@@ -141,14 +132,7 @@ import ChaosCube from './chaos-cube.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
-import ChaosMain from './chaos-main.svg'
 import ChaosNamespace from './chaos-namespace.svg'
-import ChaosNavChaosguard from './chaos-nav-chaosguard.svg'
-import ChaosNavChaoshub from './chaos-nav-chaoshub.svg'
-import ChaosNavExperiments from './chaos-nav-experiments.svg'
-import ChaosNavGamedays from './chaos-nav-gamedays.svg'
-import ChaosNavNetworkMaps from './chaos-nav-network-maps.svg'
-import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
@@ -281,11 +265,8 @@ import CustomStage from './custom-stage.svg'
 import CustomRole from './customRole.svg'
 import Customize from './customize.svg'
 import CvSketch from './cv-sketch.svg'
-import CvSolidCurrentColor from './cv-solid-current-color.svg'
-import CvSolid from './cv-solid.svg'
 import CvVerifystepInverse from './cv-verifystep-inverse.svg'
 import CvVerifystep from './cv-verifystep.svg'
-import CvWithText from './cv-with-text.svg'
 import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
@@ -321,19 +302,8 @@ import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
 import Docs from './docs.svg'
 import DryRun from './dry-run.svg'
-import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
-import EcrCiStep from './ecr-ci-step.svg'
-import EcrStepInverse from './ecr-step-inverse.svg'
-import EcrStep from './ecr-step.svg'
-import EcsServiceSetupInverse from './ecs-service-setup-inverse.svg'
-import EcsServiceSetup from './ecs-service-setup.svg'
-import EcsUpgradeContainersInverse from './ecs-upgrade-containers-inverse.svg'
-import EcsUpgradeContainers from './ecs-upgrade-containers.svg'
 import EemaDark from './eema-dark.svg'
 import EemaLight from './eema-light.svg'
-import EksInverse from './eks-inverse.svg'
-import Eks from './eks.svg'
-import ElasticKubernetesService from './elastic-kubernetes-service.svg'
 import ElastigroupBluegreenInverse from './elastigroup-bluegreen-inverse.svg'
 import ElastigroupBluegreen from './elastigroup-bluegreen.svg'
 import ElastigroupCanary from './elastigroup-canary.svg'
@@ -391,9 +361,6 @@ import Flag from './flag.svg'
 import Flash from './flash.svg'
 import Flux from './flux.svg'
 import FolderUpload from './folder-upload.svg'
-import Folder from './folder.svg'
-import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
-import FortifyOnDemand from './fortify-on-demand.svg'
 import FossaInverse from './fossa-inverse.svg'
 import Fossa from './fossa.svg'
 import FsClosedFolder from './fs-closed-folder.svg'
@@ -442,14 +409,6 @@ import Graph from './graph.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
 import HarnessCopilot from './harness-copilot.svg'
-import HarnessGrey from './harness-grey.svg'
-import HarnessLogoBlack from './harness-logo-black.svg'
-import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
-import HarnessLogoWhite from './harness-logo-white.svg'
-import HarnessPlugin from './harness-plugin.svg'
-import HarnessWithColor from './harness-with-color.svg'
-import Harness from './harness.svg'
-import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
 import Help from './help.svg'
 import HexagonOutline from './hexagon-outline.svg'
@@ -462,20 +421,6 @@ import IacmResourceChanged from './iacm-resource-changed.svg'
 import IacmResourceDeleted from './iacm-resource-deleted.svg'
 import IacmResourceUnchanged from './iacm-resource-unchanged.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
-import Iacm from './iacm.svg'
-import IdpNavAllowlist from './idp-nav-allowlist.svg'
-import IdpNavConnectors from './idp-nav-connectors.svg'
-import IdpNavLayout from './idp-nav-layout.svg'
-import IdpNavOauth from './idp-nav-oauth.svg'
-import IdpNavPluginconfig from './idp-nav-pluginconfig.svg'
-import IdpNavPlugins from './idp-nav-plugins.svg'
-import IdpNavScorecards from './idp-nav-scorecards.svg'
-import IdpStageHover from './idp-stage-hover.svg'
-import IdpWithDarkText from './idp-with-dark-text.svg'
-import Idp from './idp.svg'
-import IgnoreFailedSquare from './ignore-failed-square.svg'
-import IgnoreList from './ignore-list.svg'
-import IgnoreFailed from './ignoreFailed.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -793,75 +738,10 @@ import SeiMain from './sei-main.svg'
 import SeiWithDarkText from './sei-with-dark-text.svg'
 import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
-import SendData from './send-data.svg'
-import ServerlessAwsLambdaDeployV2Inverse from './serverless-aws-lambda-deploy-v2-inverse.svg'
-import ServerlessAwsLambdaDeployV2 from './serverless-aws-lambda-deploy-v2.svg'
-import ServerlessAwsLambdaPackageInverse from './serverless-aws-lambda-package-inverse.svg'
-import ServerlessAwsLambdaPackage from './serverless-aws-lambda-package.svg'
-import ServerlessAwsLambdaPrepareRollbackInverse from './serverless-aws-lambda-prepare-rollback-inverse.svg'
-import ServerlessAwsLambdaPrepareRollback from './serverless-aws-lambda-prepare-rollback.svg'
-import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollback-v2-inverse.svg'
-import ServerlessAwsLambdaRollbackV2 from './serverless-aws-lambda-rollback-v2.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceCustomConnector from './service-custom-connector.svg'
-import ServiceDatadog from './service-datadog.svg'
-import ServiceDeployment from './service-deployment.svg'
-import ServiceDockerhub from './service-dockerhub.svg'
-import ServiceDynatrace from './service-dynatrace.svg'
-import ServiceEc2 from './service-ec2.svg'
-import ServiceEcs from './service-ecs.svg'
-import ServiceElastigroup from './service-elastigroup.svg'
-import ServiceElk from './service-elk.svg'
-import ServiceGar from './service-gar.svg'
-import ServiceGcpCcm from './service-gcp-ccm.svg'
-import ServiceGcpWithText from './service-gcp-with-text.svg'
-import ServiceGcp from './service-gcp.svg'
-import ServiceGithubPackage from './service-github-package.svg'
-import ServiceGithub from './service-github.svg'
-import ServiceGoogleFunctions from './service-google-functions.svg'
-import ServiceGotlab from './service-gotlab.svg'
 import ServiceGrafanaLoki from './service-grafana-loki.svg'
-import ServiceHelm from './service-helm.svg'
-import ServiceInstana from './service-instana.svg'
-import ServiceJenkinsInverse from './service-jenkins-inverse.svg'
-import ServiceJenkins from './service-jenkins.svg'
-import ServiceJiraInverse from './service-jira-inverse.svg'
-import ServiceJira from './service-jira.svg'
-import ServiceKubernetesCcm from './service-kubernetes-ccm.svg'
-import ServiceKubernetesQuick from './service-kubernetes-quick.svg'
-import ServiceKubernetes from './service-kubernetes.svg'
-import ServiceLinux from './service-linux.svg'
-import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
-import ServiceMongodb from './service-mongodb.svg'
-import ServiceMsteams from './service-msteams.svg'
-import ServiceMydatacenter from './service-mydatacenter.svg'
-import ServiceNewrelic from './service-newrelic.svg'
-import ServiceNexus from './service-nexus.svg'
-import ServiceOgz from './service-ogz.svg'
-import ServiceOkta from './service-okta.svg'
-import ServiceOnelogin from './service-onelogin.svg'
-import ServiceOpenstack from './service-openstack.svg'
-import ServicePagerduty from './service-pagerduty.svg'
-import ServicePivotal from './service-pivotal.svg'
-import ServicePrometheus from './service-prometheus.svg'
-import ServicePulumi from './service-pulumi.svg'
-import ServiceRedis from './service-redis.svg'
-import ServiceServerlessAws from './service-serverless-aws.svg'
-import ServiceServerlessAzure from './service-serverless-azure.svg'
-import ServiceServerlessGcp from './service-serverless-gcp.svg'
-import ServiceServerless from './service-serverless.svg'
-import ServiceServiceS3 from './service-service-s3.svg'
-import ServiceServicenowInverse from './service-servicenow-inverse.svg'
-import ServiceServicenow from './service-servicenow.svg'
 import ServiceSignalfx from './service-signalfx.svg'
-import ServiceSlack from './service-slack.svg'
-import ServiceSplunkWithName from './service-splunk-with-name.svg'
-import ServiceSplunk from './service-splunk.svg'
-import ServiceSpotinst from './service-spotinst.svg'
-import ServiceStackdriver from './service-stackdriver.svg'
-import ServiceSumologic from './service-sumologic.svg'
-import ServiceTerraform from './service-terraform.svg'
-import ServiceTerragrunt from './service-terragrunt.svg'
 import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
@@ -1048,25 +928,16 @@ type HarnessIconName =
   | 'aws-lambda-deploy'
   | 'aws-lambda-rollback'
   | 'aws-lambda-traffic-shift'
-  | 'aws-rds'
   | 'aws-sam-build-inverse'
   | 'aws-sam-build'
   | 'aws-sam-deploy-inverse'
   | 'aws-sam-deploy'
   | 'aws-sam-package-inverse'
   | 'aws-sam-package'
-  | 'aws-secret-manager'
-  | 'aws-security-hub-inverse'
-  | 'aws-security-hub'
   | 'azure-arm-rollback'
   | 'azure-arm'
   | 'azure-blueprints'
-  | 'azure-container-registry'
-  | 'azure-key-vault'
-  | 'azure-kubernetes-service'
   | 'azure-resource-manager'
-  | 'azure-vm'
-  | 'azurewebapp'
   | 'background-ci-step-inverse'
   | 'background-ci-step'
   | 'background-step-plugin'
@@ -1138,14 +1009,7 @@ type HarnessIconName =
   | 'chaos-experiment-weight'
   | 'chaos-hubs'
   | 'chaos-litmuschaos'
-  | 'chaos-main'
   | 'chaos-namespace'
-  | 'chaos-nav-chaosguard'
-  | 'chaos-nav-chaoshub'
-  | 'chaos-nav-experiments'
-  | 'chaos-nav-gamedays'
-  | 'chaos-nav-network-maps'
-  | 'chaos-nav-resilience-probes'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chaos-service-discovery'
@@ -1278,11 +1142,8 @@ type HarnessIconName =
   | 'customRole'
   | 'customize'
   | 'cv-sketch'
-  | 'cv-solid-current-color'
-  | 'cv-solid'
   | 'cv-verifystep-inverse'
   | 'cv-verifystep'
-  | 'cv-with-text'
   | 'danger-icon'
   | 'dashboard-selected'
   | 'dashboard'
@@ -1318,19 +1179,8 @@ type HarnessIconName =
   | 'description'
   | 'docs'
   | 'dry-run'
-  | 'ecr-ci-step-inverse'
-  | 'ecr-ci-step'
-  | 'ecr-step-inverse'
-  | 'ecr-step'
-  | 'ecs-service-setup-inverse'
-  | 'ecs-service-setup'
-  | 'ecs-upgrade-containers-inverse'
-  | 'ecs-upgrade-containers'
   | 'eema-dark'
   | 'eema-light'
-  | 'eks-inverse'
-  | 'eks'
-  | 'elastic-kubernetes-service'
   | 'elastigroup-bluegreen-inverse'
   | 'elastigroup-bluegreen'
   | 'elastigroup-canary'
@@ -1388,9 +1238,6 @@ type HarnessIconName =
   | 'flash'
   | 'flux'
   | 'folder-upload'
-  | 'folder'
-  | 'fortify-on-demand-inverse'
-  | 'fortify-on-demand'
   | 'fossa-inverse'
   | 'fossa'
   | 'fs-closed-folder'
@@ -1439,14 +1286,6 @@ type HarnessIconName =
   | 'grid'
   | 'hand-manual'
   | 'harness-copilot'
-  | 'harness-grey'
-  | 'harness-logo-black'
-  | 'harness-logo-white-bg-blue'
-  | 'harness-logo-white'
-  | 'harness-plugin'
-  | 'harness-with-color'
-  | 'harness'
-  | 'hashiCorpVault'
   | 'health'
   | 'help'
   | 'hexagon-outline'
@@ -1459,20 +1298,6 @@ type HarnessIconName =
   | 'iacm-resource-deleted'
   | 'iacm-resource-unchanged'
   | 'iacm-terraform-step'
-  | 'iacm'
-  | 'idp-nav-allowlist'
-  | 'idp-nav-connectors'
-  | 'idp-nav-layout'
-  | 'idp-nav-oauth'
-  | 'idp-nav-pluginconfig'
-  | 'idp-nav-plugins'
-  | 'idp-nav-scorecards'
-  | 'idp-stage-hover'
-  | 'idp-with-dark-text'
-  | 'idp'
-  | 'ignore-failed-square'
-  | 'ignore-list'
-  | 'ignoreFailed'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -1790,75 +1615,10 @@ type HarnessIconName =
   | 'sei-with-dark-text'
   | 'select-scope'
   | 'semgrep'
-  | 'send-data'
-  | 'serverless-aws-lambda-deploy-v2-inverse'
-  | 'serverless-aws-lambda-deploy-v2'
-  | 'serverless-aws-lambda-package-inverse'
-  | 'serverless-aws-lambda-package'
-  | 'serverless-aws-lambda-prepare-rollback-inverse'
-  | 'serverless-aws-lambda-prepare-rollback'
-  | 'serverless-aws-lambda-rollback-v2-inverse'
-  | 'serverless-aws-lambda-rollback-v2'
   | 'serverless-deploy-step'
   | 'service-custom-connector'
-  | 'service-datadog'
-  | 'service-deployment'
-  | 'service-dockerhub'
-  | 'service-dynatrace'
-  | 'service-ec2'
-  | 'service-ecs'
-  | 'service-elastigroup'
-  | 'service-elk'
-  | 'service-gar'
-  | 'service-gcp-ccm'
-  | 'service-gcp-with-text'
-  | 'service-gcp'
-  | 'service-github-package'
-  | 'service-github'
-  | 'service-google-functions'
-  | 'service-gotlab'
   | 'service-grafana-loki'
-  | 'service-helm'
-  | 'service-instana'
-  | 'service-jenkins-inverse'
-  | 'service-jenkins'
-  | 'service-jira-inverse'
-  | 'service-jira'
-  | 'service-kubernetes-ccm'
-  | 'service-kubernetes-quick'
-  | 'service-kubernetes'
-  | 'service-linux'
-  | 'service-microsoft-teams'
-  | 'service-mongodb'
-  | 'service-msteams'
-  | 'service-mydatacenter'
-  | 'service-newrelic'
-  | 'service-nexus'
-  | 'service-ogz'
-  | 'service-okta'
-  | 'service-onelogin'
-  | 'service-openstack'
-  | 'service-pagerduty'
-  | 'service-pivotal'
-  | 'service-prometheus'
-  | 'service-pulumi'
-  | 'service-redis'
-  | 'service-serverless-aws'
-  | 'service-serverless-azure'
-  | 'service-serverless-gcp'
-  | 'service-serverless'
-  | 'service-service-s3'
-  | 'service-servicenow-inverse'
-  | 'service-servicenow'
   | 'service-signalfx'
-  | 'service-slack'
-  | 'service-splunk-with-name'
-  | 'service-splunk'
-  | 'service-spotinst'
-  | 'service-stackdriver'
-  | 'service-sumologic'
-  | 'service-terraform'
-  | 'service-terragrunt'
   | 'service-vm'
   | 'service'
   | 'servicenow-approve-inverse'
@@ -2045,25 +1805,16 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-lambda-deploy': AwsLambdaDeploy,
   'aws-lambda-rollback': AwsLambdaRollback,
   'aws-lambda-traffic-shift': AwsLambdaTrafficShift,
-  'aws-rds': AwsRds,
   'aws-sam-build-inverse': AwsSamBuildInverse,
   'aws-sam-build': AwsSamBuild,
   'aws-sam-deploy-inverse': AwsSamDeployInverse,
   'aws-sam-deploy': AwsSamDeploy,
   'aws-sam-package-inverse': AwsSamPackageInverse,
   'aws-sam-package': AwsSamPackage,
-  'aws-secret-manager': AwsSecretManager,
-  'aws-security-hub-inverse': AwsSecurityHubInverse,
-  'aws-security-hub': AwsSecurityHub,
   'azure-arm-rollback': AzureArmRollback,
   'azure-arm': AzureArm,
   'azure-blueprints': AzureBlueprints,
-  'azure-container-registry': AzureContainerRegistry,
-  'azure-key-vault': AzureKeyVault,
-  'azure-kubernetes-service': AzureKubernetesService,
   'azure-resource-manager': AzureResourceManager,
-  'azure-vm': AzureVm,
-  azurewebapp: Azurewebapp,
   'background-ci-step-inverse': BackgroundCiStepInverse,
   'background-ci-step': BackgroundCiStep,
   'background-step-plugin': BackgroundStepPlugin,
@@ -2135,14 +1886,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-hubs': ChaosHubs,
   'chaos-litmuschaos': ChaosLitmuschaos,
-  'chaos-main': ChaosMain,
   'chaos-namespace': ChaosNamespace,
-  'chaos-nav-chaosguard': ChaosNavChaosguard,
-  'chaos-nav-chaoshub': ChaosNavChaoshub,
-  'chaos-nav-experiments': ChaosNavExperiments,
-  'chaos-nav-gamedays': ChaosNavGamedays,
-  'chaos-nav-network-maps': ChaosNavNetworkMaps,
-  'chaos-nav-resilience-probes': ChaosNavResilienceProbes,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   'chaos-service-discovery': ChaosServiceDiscovery,
@@ -2275,11 +2019,8 @@ const HarnessIcons: KVO<ElementType> = {
   customRole: CustomRole,
   customize: Customize,
   'cv-sketch': CvSketch,
-  'cv-solid-current-color': CvSolidCurrentColor,
-  'cv-solid': CvSolid,
   'cv-verifystep-inverse': CvVerifystepInverse,
   'cv-verifystep': CvVerifystep,
-  'cv-with-text': CvWithText,
   'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
@@ -2315,19 +2056,8 @@ const HarnessIcons: KVO<ElementType> = {
   description: Description,
   docs: Docs,
   'dry-run': DryRun,
-  'ecr-ci-step-inverse': EcrCiStepInverse,
-  'ecr-ci-step': EcrCiStep,
-  'ecr-step-inverse': EcrStepInverse,
-  'ecr-step': EcrStep,
-  'ecs-service-setup-inverse': EcsServiceSetupInverse,
-  'ecs-service-setup': EcsServiceSetup,
-  'ecs-upgrade-containers-inverse': EcsUpgradeContainersInverse,
-  'ecs-upgrade-containers': EcsUpgradeContainers,
   'eema-dark': EemaDark,
   'eema-light': EemaLight,
-  'eks-inverse': EksInverse,
-  eks: Eks,
-  'elastic-kubernetes-service': ElasticKubernetesService,
   'elastigroup-bluegreen-inverse': ElastigroupBluegreenInverse,
   'elastigroup-bluegreen': ElastigroupBluegreen,
   'elastigroup-canary': ElastigroupCanary,
@@ -2385,9 +2115,6 @@ const HarnessIcons: KVO<ElementType> = {
   flash: Flash,
   flux: Flux,
   'folder-upload': FolderUpload,
-  folder: Folder,
-  'fortify-on-demand-inverse': FortifyOnDemandInverse,
-  'fortify-on-demand': FortifyOnDemand,
   'fossa-inverse': FossaInverse,
   fossa: Fossa,
   'fs-closed-folder': FsClosedFolder,
@@ -2436,14 +2163,6 @@ const HarnessIcons: KVO<ElementType> = {
   grid: Grid,
   'hand-manual': HandManual,
   'harness-copilot': HarnessCopilot,
-  'harness-grey': HarnessGrey,
-  'harness-logo-black': HarnessLogoBlack,
-  'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
-  'harness-logo-white': HarnessLogoWhite,
-  'harness-plugin': HarnessPlugin,
-  'harness-with-color': HarnessWithColor,
-  harness: Harness,
-  hashiCorpVault: HashiCorpVault,
   health: Health,
   help: Help,
   'hexagon-outline': HexagonOutline,
@@ -2456,20 +2175,6 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-resource-deleted': IacmResourceDeleted,
   'iacm-resource-unchanged': IacmResourceUnchanged,
   'iacm-terraform-step': IacmTerraformStep,
-  iacm: Iacm,
-  'idp-nav-allowlist': IdpNavAllowlist,
-  'idp-nav-connectors': IdpNavConnectors,
-  'idp-nav-layout': IdpNavLayout,
-  'idp-nav-oauth': IdpNavOauth,
-  'idp-nav-pluginconfig': IdpNavPluginconfig,
-  'idp-nav-plugins': IdpNavPlugins,
-  'idp-nav-scorecards': IdpNavScorecards,
-  'idp-stage-hover': IdpStageHover,
-  'idp-with-dark-text': IdpWithDarkText,
-  idp: Idp,
-  'ignore-failed-square': IgnoreFailedSquare,
-  'ignore-list': IgnoreList,
-  ignoreFailed: IgnoreFailed,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
@@ -2787,75 +2492,10 @@ const HarnessIcons: KVO<ElementType> = {
   'sei-with-dark-text': SeiWithDarkText,
   'select-scope': SelectScope,
   semgrep: Semgrep,
-  'send-data': SendData,
-  'serverless-aws-lambda-deploy-v2-inverse': ServerlessAwsLambdaDeployV2Inverse,
-  'serverless-aws-lambda-deploy-v2': ServerlessAwsLambdaDeployV2,
-  'serverless-aws-lambda-package-inverse': ServerlessAwsLambdaPackageInverse,
-  'serverless-aws-lambda-package': ServerlessAwsLambdaPackage,
-  'serverless-aws-lambda-prepare-rollback-inverse': ServerlessAwsLambdaPrepareRollbackInverse,
-  'serverless-aws-lambda-prepare-rollback': ServerlessAwsLambdaPrepareRollback,
-  'serverless-aws-lambda-rollback-v2-inverse': ServerlessAwsLambdaRollbackV2Inverse,
-  'serverless-aws-lambda-rollback-v2': ServerlessAwsLambdaRollbackV2,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-custom-connector': ServiceCustomConnector,
-  'service-datadog': ServiceDatadog,
-  'service-deployment': ServiceDeployment,
-  'service-dockerhub': ServiceDockerhub,
-  'service-dynatrace': ServiceDynatrace,
-  'service-ec2': ServiceEc2,
-  'service-ecs': ServiceEcs,
-  'service-elastigroup': ServiceElastigroup,
-  'service-elk': ServiceElk,
-  'service-gar': ServiceGar,
-  'service-gcp-ccm': ServiceGcpCcm,
-  'service-gcp-with-text': ServiceGcpWithText,
-  'service-gcp': ServiceGcp,
-  'service-github-package': ServiceGithubPackage,
-  'service-github': ServiceGithub,
-  'service-google-functions': ServiceGoogleFunctions,
-  'service-gotlab': ServiceGotlab,
   'service-grafana-loki': ServiceGrafanaLoki,
-  'service-helm': ServiceHelm,
-  'service-instana': ServiceInstana,
-  'service-jenkins-inverse': ServiceJenkinsInverse,
-  'service-jenkins': ServiceJenkins,
-  'service-jira-inverse': ServiceJiraInverse,
-  'service-jira': ServiceJira,
-  'service-kubernetes-ccm': ServiceKubernetesCcm,
-  'service-kubernetes-quick': ServiceKubernetesQuick,
-  'service-kubernetes': ServiceKubernetes,
-  'service-linux': ServiceLinux,
-  'service-microsoft-teams': ServiceMicrosoftTeams,
-  'service-mongodb': ServiceMongodb,
-  'service-msteams': ServiceMsteams,
-  'service-mydatacenter': ServiceMydatacenter,
-  'service-newrelic': ServiceNewrelic,
-  'service-nexus': ServiceNexus,
-  'service-ogz': ServiceOgz,
-  'service-okta': ServiceOkta,
-  'service-onelogin': ServiceOnelogin,
-  'service-openstack': ServiceOpenstack,
-  'service-pagerduty': ServicePagerduty,
-  'service-pivotal': ServicePivotal,
-  'service-prometheus': ServicePrometheus,
-  'service-pulumi': ServicePulumi,
-  'service-redis': ServiceRedis,
-  'service-serverless-aws': ServiceServerlessAws,
-  'service-serverless-azure': ServiceServerlessAzure,
-  'service-serverless-gcp': ServiceServerlessGcp,
-  'service-serverless': ServiceServerless,
-  'service-service-s3': ServiceServiceS3,
-  'service-servicenow-inverse': ServiceServicenowInverse,
-  'service-servicenow': ServiceServicenow,
   'service-signalfx': ServiceSignalfx,
-  'service-slack': ServiceSlack,
-  'service-splunk-with-name': ServiceSplunkWithName,
-  'service-splunk': ServiceSplunk,
-  'service-spotinst': ServiceSpotinst,
-  'service-stackdriver': ServiceStackdriver,
-  'service-sumologic': ServiceSumologic,
-  'service-terraform': ServiceTerraform,
-  'service-terragrunt': ServiceTerragrunt,
   'service-vm': ServiceVm,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
