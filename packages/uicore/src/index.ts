@@ -161,11 +161,6 @@ export {
   CategorizedSelectOption
 } from './components/CategorizedSelected/CategorizedSelect'
 export {
-  ModalErrorHandlerBinding,
-  ModalErrorHandler,
-  ModalErrorHandlerProps
-} from './components/Modal/ModalErrorHandler'
-export {
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from './components/MultiSelectWithSubView/MultiSelectWithSubView'
@@ -229,11 +224,6 @@ export { TagsPopover } from './components/TagsPopover/TagsPopover'
 export { MinMaxSlider } from './components/MinMaxSlider/MinMaxSlider'
 export { getErrorInfoFromErrorObject, shouldShowError } from './utils/errorUtils'
 export { tagsType } from './utils/tagTypes'
-export {
-  useConfirmationDialog,
-  UseConfirmationDialogProps,
-  UseConfirmationDialogReturn
-} from './components/ConfirmDialog/useConfirmationDialog'
 export { ConfirmationDialog, ConfirmationDialogProps } from './components/ConfirmDialog/ConfirmationDialog'
 export { TableV2, TableProps as ReactTableProps } from './components/TableV2/TableV2'
 export { PillToggle, PillToggleOption, PillToggleProps } from './components/PillToggle/PillToggle'

@@ -56,8 +56,8 @@ const ExampleWizard = ({ initialStep, stepChange, onSubmit }: ExampleProps) => {
     <div>
       Steps Changed: {counter}
       <StepWizard
-        icon={<Icon name="app-kubernetes" size={37} />}
-        watermarkLogo={<Icon name="harness-with-color" size={346} color={Color.GREY_50} />}
+        icon={<Icon name="advanced" size={37} />}
+        watermarkLogo={<Icon name="advanced" size={346} color={Color.GREY_50} />}
         title="Kubernetes Cluster"
         initialStep={initialStep}
         onStepChange={values => {

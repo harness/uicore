@@ -65,7 +65,7 @@ Basic.args = {
       items: [
         {
           label: 'Kubernetes',
-          icon: 'service-kubernetes',
+          icon: 'advanced',
           value: 'KubernetesDirect'
         }
       ]
@@ -75,12 +75,12 @@ Basic.args = {
       items: [
         {
           label: 'Google Kubernetes Engine',
-          icon: 'google-kubernetes-engine',
+          icon: 'advanced',
           value: 'KubernetesGcp'
         },
         {
           label: 'Elastic Kubernetes Engine',
-          icon: 'elastic-kubernetes-service',
+          icon: 'advanced',
           value: 'KubernetesElastic'
         }
       ]
