@@ -92,7 +92,6 @@ import CetWithText from './cet-with-text.svg'
 import Cet from './cet.svg'
 import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
-import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
 import ChaosSolid from './chaos-solid.svg'
 import ChaosWithDarkText from './chaos-with-dark-text.svg'
@@ -405,7 +404,6 @@ type LogoNames =
   | 'cet'
   | 'cf-main-inverse'
   | 'cf-main'
-  | 'chaos-litmuschaos'
   | 'chaos-main'
   | 'chaos-solid'
   | 'chaos-with-dark-text'
@@ -718,7 +716,6 @@ const Logos: KVO<ElementType> = {
   cet: Cet,
   'cf-main-inverse': CfMainInverse,
   'cf-main': CfMain,
-  'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-main': ChaosMain,
   'chaos-solid': ChaosSolid,
   'chaos-with-dark-text': ChaosWithDarkText,
