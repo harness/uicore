@@ -107,6 +107,7 @@ import ChaosChaoshubPublic from './chaos-chaoshub-public.svg'
 import ChaosCube from './chaos-cube.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
+import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosSketch from './chaos-sketch.svg'
@@ -882,6 +883,7 @@ type HarnessIconName =
   | 'chaos-cube'
   | 'chaos-experiment-weight'
   | 'chaos-hubs'
+  | 'chaos-litmuschaos'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chaos-sketch'
@@ -1657,6 +1659,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-cube': ChaosCube,
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-hubs': ChaosHubs,
+  'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   'chaos-sketch': ChaosSketch,
