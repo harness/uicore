@@ -1,7 +1,7 @@
 {
   "name": "@harness/logos",
   "version": "1.0.0",
-  "description": "Harness UICore - Legos for building Harness UI applications",
+  "description": "Harness Logos - Provides a set of third party logos for use in Harness UI",
   "source": "src/index.ts",
   "main": "dist/logos.umd.js",
   "module": "dist/logos.es.js",
