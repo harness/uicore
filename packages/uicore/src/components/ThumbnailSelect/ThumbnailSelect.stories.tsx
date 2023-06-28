@@ -88,22 +88,22 @@ Basic.args = {
   items: [
     {
       label: 'Kubernetes',
-      icon: 'service-kubernetes',
+      icon: 'advanced',
       value: 'kubernetes'
     },
     {
       label: 'Amazon ECS',
-      icon: 'service-ecs',
+      icon: 'advanced',
       value: 'amazonEcs'
     },
     {
       label: 'AWS AMI',
-      icon: 'main-service-ami',
+      icon: 'advanced',
       value: 'amazonAmi'
     },
     {
       label: 'CodeDeploy',
-      icon: 'app-aws-code-deploy',
+      icon: 'advanced',
       value: 'awsCodeDeploy'
     },
     {
@@ -113,13 +113,13 @@ Basic.args = {
     },
     {
       label: 'AWS Lambda',
-      icon: 'app-aws-lambda',
+      icon: 'advanced',
       disabled: true,
       value: 'awsLambda'
     },
     {
       label: 'PCF',
-      icon: 'service-pivotal',
+      icon: 'advanced',
       disabled: true,
       value: 'pcf'
     },
@@ -178,22 +178,22 @@ Static.args = {
   items: [
     {
       label: 'Kubernetes',
-      icon: 'service-kubernetes',
+      icon: 'advanced',
       value: 'kubernetes'
     },
     {
       label: 'Amazon ECS',
-      icon: 'service-ecs',
+      icon: 'advanced',
       value: 'amazonEcs'
     },
     {
       label: 'AWS AMI',
-      icon: 'main-service-ami',
+      icon: 'advanced',
       value: 'amazonAmi'
     },
     {
       label: 'CodeDeploy',
-      icon: 'app-aws-code-deploy',
+      icon: 'advanced',
       value: 'awsCodeDeploy'
     },
     {
@@ -203,13 +203,13 @@ Static.args = {
     },
     {
       label: 'AWS Lambda',
-      icon: 'app-aws-lambda',
+      icon: 'advanced',
       disabled: true,
       value: 'awsLambda'
     },
     {
       label: 'PCF',
-      icon: 'service-pivotal',
+      icon: 'advanced',
       disabled: true,
       value: 'pcf'
     },

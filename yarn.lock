@@ -1301,11 +1301,6 @@
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@harness/icons@^1.46.0":
-  version "1.164.0"
-  resolved "https://npm.pkg.github.com/download/@harness/icons/1.164.0/012e08e4268689bbc92768c326c1b5245ff95fea#012e08e4268689bbc92768c326c1b5245ff95fea"
-  integrity sha512-E4npNtgp8xgHHSI+lCQzintHUZF7f1n4hx3ZC8LssG1w/4DXzpWl7wj224PimuEZU9ROthg0y1EyliW8uRj9Ag==
-
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
   resolved "https://registry.npmjs.org/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"

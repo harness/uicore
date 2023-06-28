@@ -66,7 +66,7 @@ export const WithIcon: Story<CircularPercentageChartProps> = args => {
         value={value}
         color={color}
         icon={{
-          name: 'nav-cd',
+          name: 'advanced',
           size: 40
         }}
         {...argsCopy}

@@ -96,7 +96,7 @@ export const Basic: Story<CardMenuProps> = args => {
             <div style={{ height: '200px', width: '150px' }}>
               <Layout.Vertical spacing="large">
                 <div>
-                  <Icon name="service-jenkins" size={30} />
+                  <Icon name="advanced" size={30} />
                   <Text style={{ marginTop: '5px' }} font="small">
                     ToDolist.war
                   </Text>

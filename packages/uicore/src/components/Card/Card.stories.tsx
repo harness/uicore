@@ -70,7 +70,7 @@ export const Basic: Story<CardProps> = args => (
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>
-            <Icon name="service-jenkins" size={30} />
+            <Icon name="advanced" size={30} />
             <Text style={{ marginTop: '5px' }} font="medium">
               Jenkin Artifact
             </Text>
@@ -95,7 +95,7 @@ export const Basic: Story<CardProps> = args => (
       <div style={{ height: '200px', width: '150px' }}>
         <Layout.Vertical spacing="large">
           <div>
-            <Icon name="service-bamboo" size={30} />
+            <Icon name="advanced" size={30} />
             <Text style={{ marginTop: '5px' }} font="medium">
               Bamboo Artifact
             </Text>
