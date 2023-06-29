@@ -6,12 +6,12 @@
  */
 const path = require('path')
 const _ = require('lodash')
-const package = require('./package.json')
+const packages = require('./package.json')
 const globals = require('../globals.json')
 const dts = require('vite-plugin-dts')
 const reactSvgPlugin = require('vite-plugin-react-svg')
 
-const external = Object.keys(package.peerDependencies)
+const external = Object.keys(packages.peerDependencies)
 
 /**
  * @type {import('vite').UserConfig}
