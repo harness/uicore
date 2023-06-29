@@ -15,12 +15,12 @@ import { noop } from 'lodash'
 const items = [
   {
     text: 'Kubernetes',
-    value: 'advanced',
+    value: 'kubernetes',
     icon: 'advanced'
   },
   {
     text: 'Github',
-    value: 'advanced',
+    value: 'github',
     icon: 'advanced'
   }
 ]
@@ -28,7 +28,7 @@ const items = [
 describe('Test render CollapsableSelect', () => {
   test('should render card view with defaultValue', () => {
     const { container, getByText } = render(
-      <Formik initialValues={{ connectivityMode: 'advanced' }} onSubmit={jest.fn()}>
+      <Formik initialValues={{ connectivityMode: 'kubernetes' }} onSubmit={jest.fn()}>
         {formik => (
           <Form>
             <FormikCollapsableSelect
@@ -80,7 +80,7 @@ describe('Test render CollapsableSelect', () => {
 
   test('collapsable select flow ', () => {
     const { container, getByText } = render(
-      <Formik initialValues={{ connectivityMode: 'advanced' }} onSubmit={noop}>
+      <Formik initialValues={{ connectivityMode: 'kubernetes' }} onSubmit={noop}>
         {formik => (
           <Form>
             <FormikCollapsableSelect
@@ -117,7 +117,7 @@ describe('Test render CollapsableSelect', () => {
 
   test('should render customView ', () => {
     const { container } = render(
-      <Formik initialValues={{ connectivityMode: 'advanced' }} onSubmit={noop}>
+      <Formik initialValues={{ connectivityMode: 'kubernetes' }} onSubmit={noop}>
         {formik => (
           <Form>
             <FormikCollapsableSelect
