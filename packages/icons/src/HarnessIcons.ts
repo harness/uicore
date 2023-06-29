@@ -919,6 +919,16 @@ import SecurityStage from './security-stage.svg'
 import SeiMain from './sei-main.svg'
 import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
+import ServerlessAwsLambdaDeployV2Inverse from './serverless-aws-lambda-deploy-v2-inverse.svg'
+import ServerlessAwsLambdaDeployV2 from './serverless-aws-lambda-deploy-v2.svg'
+import ServerlessAwsLambdaDownloadInverse from './serverless-aws-lambda-download-inverse.svg'
+import ServerlessAwsLambdaDownload from './serverless-aws-lambda-download.svg'
+import ServerlessAwsLambdaPackageInverse from './serverless-aws-lambda-package-inverse.svg'
+import ServerlessAwsLambdaPackage from './serverless-aws-lambda-package.svg'
+import ServerlessAwsLambdaPrepareRollbackInverse from './serverless-aws-lambda-prepare-rollback-inverse.svg'
+import ServerlessAwsLambdaPrepareRollback from './serverless-aws-lambda-prepare-rollback.svg'
+import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollback-v2-inverse.svg'
+import ServerlessAwsLambdaRollbackV2 from './serverless-aws-lambda-rollback-v2.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAmi from './service-ami.svg'
@@ -2065,6 +2075,16 @@ type HarnessIconName =
   | 'sei-main'
   | 'semgrep'
   | 'send-data'
+  | 'serverless-aws-lambda-deploy-v2-inverse'
+  | 'serverless-aws-lambda-deploy-v2'
+  | 'serverless-aws-lambda-download-inverse'
+  | 'serverless-aws-lambda-download'
+  | 'serverless-aws-lambda-package-inverse'
+  | 'serverless-aws-lambda-package'
+  | 'serverless-aws-lambda-prepare-rollback-inverse'
+  | 'serverless-aws-lambda-prepare-rollback'
+  | 'serverless-aws-lambda-rollback-v2-inverse'
+  | 'serverless-aws-lambda-rollback-v2'
   | 'serverless-deploy-step'
   | 'service-amazon-ecs'
   | 'service-ami'
@@ -3211,6 +3231,16 @@ const HarnessIcons: KVO<ElementType> = {
   'sei-main': SeiMain,
   semgrep: Semgrep,
   'send-data': SendData,
+  'serverless-aws-lambda-deploy-v2-inverse': ServerlessAwsLambdaDeployV2Inverse,
+  'serverless-aws-lambda-deploy-v2': ServerlessAwsLambdaDeployV2,
+  'serverless-aws-lambda-download-inverse': ServerlessAwsLambdaDownloadInverse,
+  'serverless-aws-lambda-download': ServerlessAwsLambdaDownload,
+  'serverless-aws-lambda-package-inverse': ServerlessAwsLambdaPackageInverse,
+  'serverless-aws-lambda-package': ServerlessAwsLambdaPackage,
+  'serverless-aws-lambda-prepare-rollback-inverse': ServerlessAwsLambdaPrepareRollbackInverse,
+  'serverless-aws-lambda-prepare-rollback': ServerlessAwsLambdaPrepareRollback,
+  'serverless-aws-lambda-rollback-v2-inverse': ServerlessAwsLambdaRollbackV2Inverse,
+  'serverless-aws-lambda-rollback-v2': ServerlessAwsLambdaRollbackV2,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-amazon-ecs': ServiceAmazonEcs,
   'service-ami': ServiceAmi,
