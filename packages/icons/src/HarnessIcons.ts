@@ -569,6 +569,7 @@ import IacmResourceDeleted from './iacm-resource-deleted.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
 import Iacm from './iacm.svg'
 import Idp from './idp.svg'
+import IgnoreList from './ignore-list.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -1725,6 +1726,7 @@ type HarnessIconName =
   | 'iacm-terraform-step'
   | 'iacm'
   | 'idp'
+  | 'ignore-list'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -2881,6 +2883,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-terraform-step': IacmTerraformStep,
   iacm: Iacm,
   idp: Idp,
+  'ignore-list': IgnoreList,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
