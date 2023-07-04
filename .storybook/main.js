@@ -50,9 +50,9 @@ module.exports = {
 
     config.resolve.alias = {
       ...config.resolve?.alias,
-      '@harness/design-system$': path.resolve(packagesFolder, 'design-system/src'),
-      '@harness/help-panel$': path.resolve(packagesFolder, 'design-system/src'),
-      '@harness/icons$': path.resolve(packagesFolder, 'icons/src'),
+      '@harnessio/design-system$': path.resolve(packagesFolder, 'design-system/src'),
+      '@harness/help-panel$': path.resolve(packagesFolder, 'help-panel/src'),
+      '@harnessio/icons$': path.resolve(packagesFolder, 'icons/src'),
       '@harness/use-modal$': path.resolve(packagesFolder, 'useModal/src'),
       '@harness/uicore$': path.resolve(packagesFolder, 'uicore/src')
     }
