@@ -9,7 +9,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
 import { Layout, AvatarGroup, AvatarGroupProps } from '../..'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 export default {
   title: 'Components / AvatarGroup',

@@ -9,7 +9,7 @@ import React, { useMemo } from 'react'
 import cx from 'classnames'
 
 import { Container } from '../Container/Container'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { Utils } from '../../core/Utils'
 import { Text } from '../Text/Text'
 

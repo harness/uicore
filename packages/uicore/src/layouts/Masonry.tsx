@@ -9,7 +9,7 @@ import { Container } from '../'
 import cx from 'classnames'
 import MasonryLayout from 'masonry-layout'
 import React, { useEffect, useState } from 'react'
-import { PaddingProps, Spacing } from '@harness/design-system'
+import { PaddingProps, Spacing } from '@harnessio/design-system'
 
 const MASONRY_UNIQUE_CLASS_PREFIX = 'uicore-masonry-layout-'
 

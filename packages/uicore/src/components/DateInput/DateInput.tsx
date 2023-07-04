@@ -19,7 +19,7 @@ import {
   timeToDisplayText
 } from '../DurationInput/DurationInput'
 import moment from 'moment'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { defaultTo } from 'lodash-es'
 
 export interface DateInputProps extends Omit<TextInputProps, 'onChange'> {

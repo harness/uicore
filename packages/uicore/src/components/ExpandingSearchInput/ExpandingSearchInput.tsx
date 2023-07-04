@@ -7,11 +7,11 @@
 
 import React, { useState, useEffect, useCallback, useRef, useLayoutEffect } from 'react'
 
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Button } from '../Button/Button'
-import { StyledProps } from '@harness/design-system'
+import { StyledProps } from '@harnessio/design-system'
 import css from './ExpandingSearchInput.css'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 const DEFAULT_THROTTLE = 500 // ms
 
