@@ -11,8 +11,8 @@ import { Layout } from '../../../layouts/Layout'
 import { GotoStepArgs, StepWizard } from '../StepWizard'
 
 import './StepWizardExample.css'
-import { Icon } from '@harness/icons'
-import { Color } from '@harness/design-system'
+import { Icon } from '@harnessio/icons'
+import { Color } from '@harnessio/design-system'
 import { useToggleOpen } from '../../../hooks/useToggle'
 import { Dialog } from '../../../components/Dialog/Dialog'
 // For Example only defining this props , reason is the module loader over here has some type issue

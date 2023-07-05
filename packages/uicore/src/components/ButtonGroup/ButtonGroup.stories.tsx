@@ -12,7 +12,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Layout, ButtonGroup, Button, OptionsButtonGroup, OptionsButtonGroupProps, Text } from '../..'
 import { omit } from 'lodash-es'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { IconName } from '@harness/icons'
+import { IconName } from '@harnessio/icons'
 export default {
   title: 'Components / ButtonGroup',
 

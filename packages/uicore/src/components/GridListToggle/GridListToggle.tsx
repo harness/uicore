@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { IconName } from '@harness/icons'
+import { IconName } from '@harnessio/icons'
 import { Button } from '../Button/Button'
 import { Layout } from '../../layouts/Layout'
 import css from './GridListToggle.css'

@@ -15,7 +15,7 @@ import { Card, CardMenuProps } from '../Card/Card'
 import { omit } from 'lodash-es'
 
 import * as BP from '@blueprintjs/core'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 export default {
   title: 'Components / CardMenu',
 

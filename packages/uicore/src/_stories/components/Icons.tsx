@@ -8,7 +8,7 @@
 import React from 'react'
 
 import { Layout, Popover, Text, Utils } from '../../'
-import { HarnessIcons, Icon, IconName } from '@harness/icons'
+import { HarnessIcons, Icon, IconName } from '@harnessio/icons'
 import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
 
 export function HarnessIconsGrid(): React.ReactElement {
