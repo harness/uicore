@@ -5,11 +5,11 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Icon, IconProps } from '@harness/icons'
+import { Icon, IconProps } from '@harnessio/icons'
 import React, { useEffect } from 'react'
 import { Text, Utils } from '../..'
 import { Easing, useTween } from '../../hooks/useTween'
-import { FontSize, FontProps, Color } from '@harness/design-system'
+import { FontSize, FontProps, Color } from '@harnessio/design-system'
 
 export interface CircularPercentageChartProps {
   size: number

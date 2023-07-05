@@ -9,7 +9,7 @@ import React, { FC, ReactNode, useCallback, useEffect, useRef, useState, useMemo
 import { Dialog, IDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { isFunction } from 'lodash-es'
-import { FontVariation } from '@harness/design-system'
+import { FontVariation } from '@harnessio/design-system'
 import { Heading } from '../Heading/Heading'
 import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { Button, ButtonVariation } from '../Button/Button'

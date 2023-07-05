@@ -7,7 +7,7 @@
 
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 import { PillToggle, PillToggleProps } from './PillToggle'
 import { Container } from '../Container/Container'

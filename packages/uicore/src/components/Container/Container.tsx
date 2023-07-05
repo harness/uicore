@@ -6,8 +6,8 @@
  */
 
 import React, { HTMLAttributes } from 'react'
-import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
-import { styledClass } from '@harness/design-system'
+import { StyledProps, styledClasses, omitStyledProps } from '@harnessio/design-system'
+import { styledClass } from '@harnessio/design-system'
 
 export interface ContainerProps extends HTMLAttributes<HTMLDivElement>, StyledProps {
   tag?: keyof JSX.IntrinsicElements

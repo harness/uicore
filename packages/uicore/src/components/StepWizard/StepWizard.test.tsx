@@ -10,8 +10,8 @@ import { StepWizard, StepProps } from './StepWizard'
 import { Layout } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
 import { render, fireEvent, wait, queryByText, waitFor } from '@testing-library/react'
-import { Icon } from '@harness/icons'
-import { Color } from '@harness/design-system'
+import { Icon } from '@harnessio/icons'
+import { Color } from '@harnessio/design-system'
 
 interface SharedObject {
   prevStepName: string | JSX.Element

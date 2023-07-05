@@ -6,8 +6,8 @@
  */
 
 import { Text, Layout, Button, ButtonVariation, ButtonProps, Container } from '../../'
-import { Icon } from '@harness/icons'
-import { Color } from '@harness/design-system'
+import { Icon } from '@harnessio/icons'
+import { Color } from '@harnessio/design-system'
 import React from 'react'
 import i18n from './PageError.i18n'
 import css from './PageError.css'

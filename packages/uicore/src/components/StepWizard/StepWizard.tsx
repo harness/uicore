@@ -8,11 +8,11 @@
 import React, { MutableRefObject } from 'react'
 import cx from 'classnames'
 import css from './StepWizard.css'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Text } from '../../components/Text/Text'
 import { romanize } from '../../core/Utils'
 import { isNil } from 'lodash-es'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 interface StepChangeData<SharedObject> {
   prevStep: number
