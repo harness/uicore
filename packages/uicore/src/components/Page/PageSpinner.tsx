@@ -6,10 +6,10 @@
  */
 
 import { Text, Layout, Container } from '../../'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import React from 'react'
 import cx from 'classnames'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 import css from './PageSpinner.css'
 

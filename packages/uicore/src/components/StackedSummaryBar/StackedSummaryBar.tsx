@@ -8,7 +8,7 @@
 import React from 'react'
 import css from './StackedSummaryBar.css'
 import { Container } from '../Container/Container'
-import { Color, Intent } from '@harness/design-system'
+import { Color, Intent } from '@harnessio/design-system'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
 import { handleZeroOrInfinityTrend, renderTrend } from './utils'

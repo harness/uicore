@@ -1,6 +1,6 @@
 {
-  "name": "@harness/icons",
-  "version": "2.0.0-beta.1",
+  "name": "@harnessio/icons",
+  "version": "2.0.0-beta.2",
   "description": "Harness Icons - Provides a set of icons for use in Harness UI",
   "source": "src/index.ts",
   "main": "dist/icons.umd.js",
@@ -19,16 +19,13 @@
     "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/harness/uicore",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+  "repository": "https://github.com/harness/uicore/packages/icons",
   "peerDependencies": {
-    "@harness/design-system": "^1.6.0",
+    "@harnessio/design-system": "^1.6.0",
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@harness/design-system": "^1.6.0",
+    "@harnessio/design-system": "^1.6.0",
     "@svgr/core": "^6.2.1",
     "@svgr/plugin-svgo": "^6.2.0",
     "@types/react": "^17.0.3",

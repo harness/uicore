@@ -9,7 +9,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Text, TextProps, Layout, Container, SupText } from '../..'
-import { FontVariation, Color } from '@harness/design-system'
+import { FontVariation, Color } from '@harnessio/design-system'
 
 export default {
   title: 'Components / Text',

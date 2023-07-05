@@ -9,7 +9,7 @@ import type { ComponentStory, Meta } from '@storybook/react'
 import { noop } from 'lodash-es'
 import React from 'react'
 import { TableV2 } from './TableV2'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 
 export default {
   title: 'Components / TableV2',

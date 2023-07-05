@@ -14,7 +14,7 @@ import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } f
 import css from './MultiSelect.css'
 import { Button } from '../../components/Button/Button'
 import { Text } from '../../components/Text/Text'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Utils } from '../../core/Utils'
 
 export interface MultiSelectOption {
