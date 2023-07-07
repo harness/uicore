@@ -6,9 +6,9 @@
  */
 
 import React from 'react'
-import { DropDown, SelectOption } from '../../'
+import { DropDown, DropDownProps, SelectOption } from '../../'
 
-export interface SortDropdownProps {
+export interface SortDropdownProps extends Partial<DropDownProps> {
   sortOptions: SelectOption[]
   onSortMethodChange(option: SelectOption): void
   selectedSortMethod: string
@@ -59,13 +59,15 @@ export const sortByVersion: SelectOption[] = [
 ]
 
 export function SortDropdown(props: SortDropdownProps): JSX.Element {
+  const { sortOptions, onSortMethodChange, selectedSortMethod, ...rest } = props
   return (
     <DropDown
       icon={'main-sort'}
-      items={props.sortOptions}
-      onChange={props.onSortMethodChange}
-      value={props.selectedSortMethod}
+      items={sortOptions}
+      onChange={onSortMethodChange}
+      value={selectedSortMethod}
       filterable={false}
+      {...rest}
     />
   )
 }
