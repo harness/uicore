@@ -18,17 +18,14 @@ interface ListHeaderProps extends SortDropdownProps {
 }
 
 export function ListHeader(props: ListHeaderProps): JSX.Element {
+  const { totalCount, className, ...rest } = props
   return (
     <Layout.Horizontal
       flex={{ distribution: 'space-between' }}
       margin={{ bottom: 'small' }}
-      className={cx(css.listHeader, props.className)}>
-      <Text font={{ variation: FontVariation.H5 }}>Total: {props.totalCount}</Text>
-      <SortDropdown
-        sortOptions={props.sortOptions}
-        onSortMethodChange={props.onSortMethodChange}
-        selectedSortMethod={props.selectedSortMethod}
-      />
+      className={cx(css.listHeader, className)}>
+      <Text font={{ variation: FontVariation.H5 }}>Total: {totalCount}</Text>
+      <SortDropdown {...rest} />
     </Layout.Horizontal>
   )
 }
