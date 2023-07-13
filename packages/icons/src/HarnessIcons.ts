@@ -396,6 +396,7 @@ import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
 import Dotnet from './dotnet.svg'
 import Down from './down.svg'
+import DownloadBox from './download-box.svg'
 import DryRun from './dry-run.svg'
 import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
@@ -569,6 +570,8 @@ import IacmResourceDeleted from './iacm-resource-deleted.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
 import Iacm from './iacm.svg'
 import Idp from './idp.svg'
+import IgnoreList from './ignore-list.svg'
+import IgnoreFailed from './ignoreFailed.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -1552,6 +1555,7 @@ type HarnessIconName =
   | 'docs'
   | 'dotnet'
   | 'down'
+  | 'download-box'
   | 'dry-run'
   | 'ecr-ci-step-inverse'
   | 'ecr-ci-step'
@@ -1725,6 +1729,8 @@ type HarnessIconName =
   | 'iacm-terraform-step'
   | 'iacm'
   | 'idp'
+  | 'ignore-list'
+  | 'ignoreFailed'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -2708,6 +2714,7 @@ const HarnessIcons: KVO<ElementType> = {
   docs: Docs,
   dotnet: Dotnet,
   down: Down,
+  'download-box': DownloadBox,
   'dry-run': DryRun,
   'ecr-ci-step-inverse': EcrCiStepInverse,
   'ecr-ci-step': EcrCiStep,
@@ -2881,6 +2888,8 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-terraform-step': IacmTerraformStep,
   iacm: Iacm,
   idp: Idp,
+  'ignore-list': IgnoreList,
+  ignoreFailed: IgnoreFailed,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
