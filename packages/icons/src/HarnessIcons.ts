@@ -94,8 +94,6 @@ import AwsSamBuildInverse from './aws-sam-build-inverse.svg'
 import AwsSamBuild from './aws-sam-build.svg'
 import AwsSamDeployInverse from './aws-sam-deploy-inverse.svg'
 import AwsSamDeploy from './aws-sam-deploy.svg'
-import AwsSamDownloadManifestsInverse from './aws-sam-download-manifests-inverse.svg'
-import AwsSamDownloadManifests from './aws-sam-download-manifests.svg'
 import AwsSamPackageInverse from './aws-sam-package-inverse.svg'
 import AwsSamPackage from './aws-sam-package.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
@@ -397,6 +395,8 @@ import Docs from './docs.svg'
 import Dotnet from './dotnet.svg'
 import Down from './down.svg'
 import DownloadBox from './download-box.svg'
+import DownloadManifestsInverse from './download-manifests-inverse.svg'
+import DownloadManifests from './download-manifests.svg'
 import DryRun from './dry-run.svg'
 import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
@@ -924,8 +924,6 @@ import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
 import ServerlessAwsLambdaDeployV2Inverse from './serverless-aws-lambda-deploy-v2-inverse.svg'
 import ServerlessAwsLambdaDeployV2 from './serverless-aws-lambda-deploy-v2.svg'
-import ServerlessAwsLambdaDownloadInverse from './serverless-aws-lambda-download-inverse.svg'
-import ServerlessAwsLambdaDownload from './serverless-aws-lambda-download.svg'
 import ServerlessAwsLambdaPackageInverse from './serverless-aws-lambda-package-inverse.svg'
 import ServerlessAwsLambdaPackage from './serverless-aws-lambda-package.svg'
 import ServerlessAwsLambdaPrepareRollbackInverse from './serverless-aws-lambda-prepare-rollback-inverse.svg'
@@ -1253,8 +1251,6 @@ type HarnessIconName =
   | 'aws-sam-build'
   | 'aws-sam-deploy-inverse'
   | 'aws-sam-deploy'
-  | 'aws-sam-download-manifests-inverse'
-  | 'aws-sam-download-manifests'
   | 'aws-sam-package-inverse'
   | 'aws-sam-package'
   | 'aws-secret-manager'
@@ -1556,6 +1552,8 @@ type HarnessIconName =
   | 'dotnet'
   | 'down'
   | 'download-box'
+  | 'download-manifests-inverse'
+  | 'download-manifests'
   | 'dry-run'
   | 'ecr-ci-step-inverse'
   | 'ecr-ci-step'
@@ -2083,8 +2081,6 @@ type HarnessIconName =
   | 'send-data'
   | 'serverless-aws-lambda-deploy-v2-inverse'
   | 'serverless-aws-lambda-deploy-v2'
-  | 'serverless-aws-lambda-download-inverse'
-  | 'serverless-aws-lambda-download'
   | 'serverless-aws-lambda-package-inverse'
   | 'serverless-aws-lambda-package'
   | 'serverless-aws-lambda-prepare-rollback-inverse'
@@ -2412,8 +2408,6 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-sam-build': AwsSamBuild,
   'aws-sam-deploy-inverse': AwsSamDeployInverse,
   'aws-sam-deploy': AwsSamDeploy,
-  'aws-sam-download-manifests-inverse': AwsSamDownloadManifestsInverse,
-  'aws-sam-download-manifests': AwsSamDownloadManifests,
   'aws-sam-package-inverse': AwsSamPackageInverse,
   'aws-sam-package': AwsSamPackage,
   'aws-secret-manager': AwsSecretManager,
@@ -2715,6 +2709,8 @@ const HarnessIcons: KVO<ElementType> = {
   dotnet: Dotnet,
   down: Down,
   'download-box': DownloadBox,
+  'download-manifests-inverse': DownloadManifestsInverse,
+  'download-manifests': DownloadManifests,
   'dry-run': DryRun,
   'ecr-ci-step-inverse': EcrCiStepInverse,
   'ecr-ci-step': EcrCiStep,
@@ -3242,8 +3238,6 @@ const HarnessIcons: KVO<ElementType> = {
   'send-data': SendData,
   'serverless-aws-lambda-deploy-v2-inverse': ServerlessAwsLambdaDeployV2Inverse,
   'serverless-aws-lambda-deploy-v2': ServerlessAwsLambdaDeployV2,
-  'serverless-aws-lambda-download-inverse': ServerlessAwsLambdaDownloadInverse,
-  'serverless-aws-lambda-download': ServerlessAwsLambdaDownload,
   'serverless-aws-lambda-package-inverse': ServerlessAwsLambdaPackageInverse,
   'serverless-aws-lambda-package': ServerlessAwsLambdaPackage,
   'serverless-aws-lambda-prepare-rollback-inverse': ServerlessAwsLambdaPrepareRollbackInverse,
