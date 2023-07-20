@@ -92,7 +92,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
         color={Color.BLACK}
         margin={{ top: 'large', bottom: 'xxlarge' }}
         className={css.body}>
-        <Text lineClamp={5}>{contentText}</Text>
+        {contentText}
       </Layout.Vertical>
       {children}
       <Layout.Horizontal spacing="small">
