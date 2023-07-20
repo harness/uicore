@@ -30,6 +30,9 @@ export interface SelectWithBiLevelOption {
   /** icon to render in defaultItemRenderer */
   icon?: IconProps
 
+  /** right icon to render in defaultItemRenderer */
+  rightIcon?: IconProps
+
   /** list of all subitems */
   submenuItems?: SelectWithBiLevelOption[]
 }
