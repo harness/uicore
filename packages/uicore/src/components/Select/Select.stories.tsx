@@ -52,7 +52,7 @@ export const Basic: Story<SelectProps> = args => {
 Basic.args = {
   size: SelectSize.Medium,
   items: [
-    { label: 'Kubernetes', value: 'service-kubernetes', rightIcon: { name: 'Account', size: 10 } },
+    { label: 'Kubernetes', value: 'service-kubernetes' },
     { label: 'GitHub', value: 'service-github' },
     { label: 'ELK', value: 'service-elk' },
     { label: 'Jenkins', value: 'service-jenkins' },
