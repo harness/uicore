@@ -159,6 +159,9 @@
       color: var(--grey-400);
       cursor: not-allowed;
     }
+    &.rightIcon {
+      justify-content: space-between;
+    }
 
     &:hover {
       background: var(--primary-1);

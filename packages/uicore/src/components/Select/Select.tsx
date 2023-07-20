@@ -21,6 +21,8 @@ export interface SelectOption {
   label: string
   value: string | number | symbol
   icon?: IconProps
+  rightIcon?: IconProps
+  rightIconClassName?: string
 }
 
 export enum SelectSize {
@@ -101,13 +103,17 @@ export function defaultItemRenderer(
           [css.disabled]: props.modifiers.disabled
         },
         { [css.menuItemSizeSmall]: size === SelectSize.Small },
-        { [css.menuItemSizeLarge]: size === SelectSize.Large }
+        { [css.menuItemSizeLarge]: size === SelectSize.Large },
+        { [css.rightIcon]: item.rightIcon }
       )}
       onClick={props.handleClick}>
       {item.icon ? <Icon size={getIconSizeFromSelect(size)} {...item.icon} /> : null}
       <Text className={css.menuItemLabel} lineClamp={1}>
         {item.label}
       </Text>
+      {item.rightIcon ? (
+        <Icon className={item.rightIconClassName} size={getIconSizeFromSelect(size)} {...item.rightIcon} />
+      ) : null}
     </li>
   )
 }
