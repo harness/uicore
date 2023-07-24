@@ -82,6 +82,7 @@ import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
 import Autostopping from './autostopping.svg'
+import Avatar from './avatar.svg'
 import AwsAsg from './aws-asg.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsEctwoService from './aws-ectwo-service.svg'
@@ -1130,6 +1131,7 @@ import Text from './text.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
+import Timer from './timer.svg'
 import TodoListHarness from './todo-list-harness.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
@@ -1240,6 +1242,7 @@ type HarnessIconName =
   | 'audit-trail'
   | 'autoScaler'
   | 'autostopping'
+  | 'avatar'
   | 'aws-asg'
   | 'aws-codecommit'
   | 'aws-ectwo-service'
@@ -2288,6 +2291,7 @@ type HarnessIconName =
   | 'thinner-search'
   | 'ti-callgraph'
   | 'timeout'
+  | 'timer'
   | 'todo-list-harness'
   | 'tooltip-icon'
   | 'traffic-lights'
@@ -2398,6 +2402,7 @@ const HarnessIcons: KVO<ElementType> = {
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
   autostopping: Autostopping,
+  avatar: Avatar,
   'aws-asg': AwsAsg,
   'aws-codecommit': AwsCodecommit,
   'aws-ectwo-service': AwsEctwoService,
@@ -3446,6 +3451,7 @@ const HarnessIcons: KVO<ElementType> = {
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
   timeout: Timeout,
+  timer: Timer,
   'todo-list-harness': TodoListHarness,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
