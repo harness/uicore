@@ -861,6 +861,7 @@ import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RetryStepGroup from './retry-step-group.svg'
+import RightArrow from './right-arrow.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
@@ -1057,7 +1058,7 @@ import StatusUpgrade from './status-upgrade.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
-import StepLibrary from './stepLibrary.svg'
+import StepLibrary from './step-library.svg'
 import StepsSpinner from './steps-spinner.svg'
 import StoColorFilled from './sto-color-filled.svg'
 import StoGrey from './sto-grey.svg'
@@ -1139,7 +1140,6 @@ import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerExecution from './trigger-execution.svg'
-import TriggerExplorerArrow from './trigger-explorer-arrow.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
@@ -2024,6 +2024,7 @@ type HarnessIconName =
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'retry-step-group'
+  | 'right-arrow'
   | 'right-bar-notification'
   | 'right-drawer'
   | 'rollback-execution'
@@ -2220,7 +2221,7 @@ type HarnessIconName =
   | 'step-group'
   | 'step-jira'
   | 'step-kubernetes'
-  | 'stepLibrary'
+  | 'step-library'
   | 'steps-spinner'
   | 'sto-color-filled'
   | 'sto-grey'
@@ -2302,7 +2303,6 @@ type HarnessIconName =
   | 'traffic-lights'
   | 'trigger-artifact'
   | 'trigger-execution'
-  | 'trigger-explorer-arrow'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
@@ -3187,6 +3187,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'retry-step-group': RetryStepGroup,
+  'right-arrow': RightArrow,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
@@ -3383,7 +3384,7 @@ const HarnessIcons: KVO<ElementType> = {
   'step-group': StepGroup,
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
-  stepLibrary: StepLibrary,
+  'step-library': StepLibrary,
   'steps-spinner': StepsSpinner,
   'sto-color-filled': StoColorFilled,
   'sto-grey': StoGrey,
@@ -3465,7 +3466,6 @@ const HarnessIcons: KVO<ElementType> = {
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
   'trigger-execution': TriggerExecution,
-  'trigger-explorer-arrow': TriggerExplorerArrow,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
