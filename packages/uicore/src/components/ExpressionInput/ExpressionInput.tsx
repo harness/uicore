@@ -209,9 +209,10 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
               })
 
               const child = inputRef.current.childNodes[childIndex]
-              const offset = childNodesTextLength[childIndex - 1] - position + 2
-
-              setCaret(child, offset)
+              if (child.nodeType === Node.ELEMENT_NODE) {
+                const offset = childNodesTextLength[childIndex - 1] - position + 2
+                setCaret(child, offset)
+              }
             } else {
               // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
               const position = firstHalf.length + 2 + item.length + 1
