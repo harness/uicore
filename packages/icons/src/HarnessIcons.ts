@@ -860,6 +860,7 @@ import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RetryStepGroup from './retry-step-group.svg'
+import RightArrow from './right-arrow.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
 import RollbackExecution from './rollback-execution.svg'
@@ -1103,6 +1104,7 @@ import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
 import TemplatesIcon from './templates-icon.svg'
+import Terminal from './terminal.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
@@ -1140,6 +1142,7 @@ import TriggerExecution from './trigger-execution.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
+import TriggerStack from './trigger-stack.svg'
 import Union from './union.svg'
 import University from './university.svg'
 import Up from './up.svg'
@@ -2020,6 +2023,7 @@ type HarnessIconName =
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'retry-step-group'
+  | 'right-arrow'
   | 'right-bar-notification'
   | 'right-drawer'
   | 'rollback-execution'
@@ -2263,6 +2267,7 @@ type HarnessIconName =
   | 'template-library'
   | 'templates-blue'
   | 'templates-icon'
+  | 'terminal'
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
   | 'terraform-apply'
@@ -2300,6 +2305,7 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+  | 'trigger-stack'
   | 'union'
   | 'university'
   | 'up'
@@ -3180,6 +3186,7 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'retry-step-group': RetryStepGroup,
+  'right-arrow': RightArrow,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
   'rollback-execution': RollbackExecution,
@@ -3423,6 +3430,7 @@ const HarnessIcons: KVO<ElementType> = {
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
   'templates-icon': TemplatesIcon,
+  terminal: Terminal,
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
@@ -3460,6 +3468,7 @@ const HarnessIcons: KVO<ElementType> = {
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
+  'trigger-stack': TriggerStack,
   union: Union,
   university: University,
   up: Up,
