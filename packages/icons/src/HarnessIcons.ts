@@ -1137,6 +1137,9 @@ import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerExecution from './trigger-execution.svg'
+import TriggerExplorerArrow from './trigger-explorer-arrow.svg'
+import TriggerExplorer1 from './trigger-explorer1.svg'
+import TriggerExplorer2 from './trigger-explorer2.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
@@ -2297,6 +2300,9 @@ type HarnessIconName =
   | 'traffic-lights'
   | 'trigger-artifact'
   | 'trigger-execution'
+  | 'trigger-explorer-arrow'
+  | 'trigger-explorer1'
+  | 'trigger-explorer2'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
@@ -3457,6 +3463,9 @@ const HarnessIcons: KVO<ElementType> = {
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
   'trigger-execution': TriggerExecution,
+  'trigger-explorer-arrow': TriggerExplorerArrow,
+  'trigger-explorer1': TriggerExplorer1,
+  'trigger-explorer2': TriggerExplorer2,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
