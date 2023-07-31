@@ -546,7 +546,6 @@ import GraphIncrease from './graph-increase.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
-import Group from './group.svg'
 import HandManual from './hand-manual.svg'
 import HarnessCopilot from './harness-copilot.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -1058,7 +1057,6 @@ import StatusUpgrade from './status-upgrade.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
-import StepLibrary from './step-library.svg'
 import StepsSpinner from './steps-spinner.svg'
 import StoColorFilled from './sto-color-filled.svg'
 import StoGrey from './sto-grey.svg'
@@ -1106,6 +1104,7 @@ import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
 import TemplatesIcon from './templates-icon.svg'
+import Terminal from './terminal.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
@@ -1143,6 +1142,7 @@ import TriggerExecution from './trigger-execution.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
+import TriggerStack from './trigger-stack.svg'
 import Union from './union.svg'
 import University from './university.svg'
 import Up from './up.svg'
@@ -1709,7 +1709,6 @@ type HarnessIconName =
   | 'graph'
   | 'grey-cluster'
   | 'grid'
-  | 'group'
   | 'hand-manual'
   | 'harness-copilot'
   | 'harness-logo-black'
@@ -2221,7 +2220,6 @@ type HarnessIconName =
   | 'step-group'
   | 'step-jira'
   | 'step-kubernetes'
-  | 'step-library'
   | 'steps-spinner'
   | 'sto-color-filled'
   | 'sto-grey'
@@ -2269,6 +2267,7 @@ type HarnessIconName =
   | 'template-library'
   | 'templates-blue'
   | 'templates-icon'
+  | 'terminal'
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
   | 'terraform-apply'
@@ -2306,6 +2305,7 @@ type HarnessIconName =
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+  | 'trigger-stack'
   | 'union'
   | 'university'
   | 'up'
@@ -2872,7 +2872,6 @@ const HarnessIcons: KVO<ElementType> = {
   graph: Graph,
   'grey-cluster': GreyCluster,
   grid: Grid,
-  group: Group,
   'hand-manual': HandManual,
   'harness-copilot': HarnessCopilot,
   'harness-logo-black': HarnessLogoBlack,
@@ -3384,7 +3383,6 @@ const HarnessIcons: KVO<ElementType> = {
   'step-group': StepGroup,
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
-  'step-library': StepLibrary,
   'steps-spinner': StepsSpinner,
   'sto-color-filled': StoColorFilled,
   'sto-grey': StoGrey,
@@ -3432,6 +3430,7 @@ const HarnessIcons: KVO<ElementType> = {
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
   'templates-icon': TemplatesIcon,
+  terminal: Terminal,
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
@@ -3469,6 +3468,7 @@ const HarnessIcons: KVO<ElementType> = {
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
+  'trigger-stack': TriggerStack,
   union: Union,
   university: University,
   up: Up,
