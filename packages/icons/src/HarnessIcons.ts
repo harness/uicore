@@ -546,6 +546,7 @@ import GraphIncrease from './graph-increase.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
+import Group from './group.svg'
 import HandManual from './hand-manual.svg'
 import HarnessCopilot from './harness-copilot.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -1056,6 +1057,7 @@ import StatusUpgrade from './status-upgrade.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
+import StepLibrary from './stepLibrary.svg'
 import StepsSpinner from './steps-spinner.svg'
 import StoColorFilled from './sto-color-filled.svg'
 import StoGrey from './sto-grey.svg'
@@ -1138,8 +1140,6 @@ import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerExecution from './trigger-execution.svg'
 import TriggerExplorerArrow from './trigger-explorer-arrow.svg'
-import TriggerExplorer1 from './trigger-explorer1.svg'
-import TriggerExplorer2 from './trigger-explorer2.svg'
 import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
@@ -1709,6 +1709,7 @@ type HarnessIconName =
   | 'graph'
   | 'grey-cluster'
   | 'grid'
+  | 'group'
   | 'hand-manual'
   | 'harness-copilot'
   | 'harness-logo-black'
@@ -2219,6 +2220,7 @@ type HarnessIconName =
   | 'step-group'
   | 'step-jira'
   | 'step-kubernetes'
+  | 'stepLibrary'
   | 'steps-spinner'
   | 'sto-color-filled'
   | 'sto-grey'
@@ -2301,8 +2303,6 @@ type HarnessIconName =
   | 'trigger-artifact'
   | 'trigger-execution'
   | 'trigger-explorer-arrow'
-  | 'trigger-explorer1'
-  | 'trigger-explorer2'
   | 'trigger-github'
   | 'trigger-pipeline'
   | 'trigger-schedule'
@@ -2872,6 +2872,7 @@ const HarnessIcons: KVO<ElementType> = {
   graph: Graph,
   'grey-cluster': GreyCluster,
   grid: Grid,
+  group: Group,
   'hand-manual': HandManual,
   'harness-copilot': HarnessCopilot,
   'harness-logo-black': HarnessLogoBlack,
@@ -3382,6 +3383,7 @@ const HarnessIcons: KVO<ElementType> = {
   'step-group': StepGroup,
   'step-jira': StepJira,
   'step-kubernetes': StepKubernetes,
+  stepLibrary: StepLibrary,
   'steps-spinner': StepsSpinner,
   'sto-color-filled': StoColorFilled,
   'sto-grey': StoGrey,
@@ -3464,8 +3466,6 @@ const HarnessIcons: KVO<ElementType> = {
   'trigger-artifact': TriggerArtifact,
   'trigger-execution': TriggerExecution,
   'trigger-explorer-arrow': TriggerExplorerArrow,
-  'trigger-explorer1': TriggerExplorer1,
-  'trigger-explorer2': TriggerExplorer2,
   'trigger-github': TriggerGithub,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
