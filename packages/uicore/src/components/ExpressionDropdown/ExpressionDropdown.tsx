@@ -58,13 +58,12 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
     return listItems
   }, [rootTrieNode, query])
 
-  const dropDownItemClickHandler = React.useCallback(
-    (value: string): void => {
-      const valueBefore = query.substring(0, query.lastIndexOf('<'))
-      setQueryValue(`${valueBefore}<+${value}`)
-    },
-    [query]
-  )
+  const dropDownItemClickHandler = React.useCallback((value: string): void => {
+    setQueryValue(prevQuery => {
+      const valueBefore = prevQuery.substring(0, prevQuery.lastIndexOf('<'))
+      return `${valueBefore}<+${value}`
+    })
+  }, [])
 
   const itemClickHandler = React.useCallback(
     (valueTillHere: string, isOverflow = false): void => {
