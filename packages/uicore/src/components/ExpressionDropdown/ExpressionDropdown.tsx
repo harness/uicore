@@ -58,10 +58,13 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
     return listItems
   }, [rootTrieNode, query])
 
-  const dropDownItemClickHandler = (value: string): void => {
-    const valueBefore = query.substring(0, query.lastIndexOf('<'))
-    setQueryValue(`${valueBefore}<+${value}`)
-  }
+  const dropDownItemClickHandler = React.useCallback(
+    (value: string): void => {
+      const valueBefore = query.substring(0, query.lastIndexOf('<'))
+      setQueryValue(`${valueBefore}<+${value}`)
+    },
+    [query]
+  )
 
   const itemClickHandler = React.useCallback(
     (valueTillHere: string, isOverflow = false): void => {
@@ -71,18 +74,17 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
     [isOpen, setIsOpen]
   )
 
-  const shallShowNesting = (item: TrieNode) => item.children.some(child => child.children.length !== 0)
+  const showDropdownIcon = (item: TrieNode) => item.children.some(child => child.children.length !== 0)
 
   const visibleItemRenderer = React.useMemo(() => {
-    // eslint-disable-next-line react/display-name
-    return (item: TrieNode, index: number): JSX.Element => {
+    const VisibleItem = (item: TrieNode, index: number): JSX.Element => {
       const clickHandler = () => itemClickHandler(item.valueTillHere)
 
       // return the visible item JSX from here
       const content = (
         <Layout.Horizontal className={css.visibleItemText} onClick={clickHandler}>
           <div className={css.visibleItemTextHeader}>{item.value}</div>
-          {shallShowNesting(item) && (
+          {showDropdownIcon(item) && (
             <Icon name={getDropDownIcon(item, isOpen)} className={css.paddingLeft} size={10} />
           )}
         </Layout.Horizontal>
@@ -109,11 +111,11 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
         </Popover>
       )
     }
+    return VisibleItem
   }, [dropDownItemClickHandler, isOpen, setIsOpen])
 
   const overflowListRenderer = React.useMemo(() => {
-    // eslint-disable-next-line react/display-name
-    return (items: TrieNode[]): JSX.Element => {
+    const OverflowList = (items: TrieNode[]): JSX.Element => {
       const clickHandler = () => itemClickHandler(items[0].valueTillHere, true)
 
       return (
@@ -160,6 +162,8 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
         </Layout.Horizontal>
       )
     }
+
+    return OverflowList
   }, [dropDownItemClickHandler, isOpen, setIsOpen])
 
   const queryValue = query.substring(query.lastIndexOf('+') + 1)
