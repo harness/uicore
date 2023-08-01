@@ -50,10 +50,6 @@ export const HarnessDocTooltip = ({
       popoverClassName={css.tooltipWrapper}
       position="auto"
       interactionKind={PopoverInteractionKind.HOVER}
-      onInteraction={(_, e) => {
-        e?.preventDefault()
-        e?.nativeEvent.stopImmediatePropagation()
-      }}
       content={
         <div
           className={css.tooltipContentWrapper}
