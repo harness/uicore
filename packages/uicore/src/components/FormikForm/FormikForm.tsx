@@ -144,6 +144,7 @@ export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'ite
   name: string
   tagsProps?: Partial<ITagInputProps>
   isArray?: boolean
+  onChange?: ITagInputProps['onChange']
 }
 
 type KVAccumulator = { [key: string]: string }
@@ -194,6 +195,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
                   return acc
                 }, {} as KVAccumulator) || {}
           )
+          props.onChange?.(values)
         }}
         inputRef={input => {
           input?.setAttribute('data-mentions', mentionsType)
