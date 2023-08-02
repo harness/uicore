@@ -122,7 +122,7 @@ export const getMultiTypeFromValue = (
 export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntimeTypeProps<T>): React.ReactElement {
   const {
     value,
-    defaultValueToReset,
+    defaultValueToReset = '',
     width,
     expressions = [],
     onTypeChange,
