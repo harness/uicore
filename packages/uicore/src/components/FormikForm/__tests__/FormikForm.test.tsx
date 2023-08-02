@@ -470,4 +470,45 @@ describe('Test basic Components', () => {
     })
     expect(input).toHaveDisplayValue('value')
   })
+
+  test('switching to expression from fixed type for MultiTypeInput component should call onChange with value as empty string', async () => {
+    const mockedOnChangeFunc = jest.fn()
+    render(
+      renderFormikForm(
+        <FormInput.MultiTypeInput
+          name="dropdown"
+          label="Dropdown Field"
+          placeholder="enter value"
+          selectItems={[
+            {
+              label: 'Field 1',
+              value: 'Field_1'
+            },
+            {
+              label: 'Field 2',
+              value: 'Field_2'
+            }
+          ]}
+          useValue={true}
+          multiTypeInputProps={{
+            onChange: mockedOnChangeFunc
+          }}
+        />
+      )
+    )
+
+    const input = screen.getByPlaceholderText('enter value')
+    expect(input).toBeInTheDocument()
+
+    const multiTypeButton = screen.getByTestId('multi-type-button')
+    expect(multiTypeButton).toBeInTheDocument()
+    userEvent.click(multiTypeButton as HTMLButtonElement)
+
+    const expressionOption = await screen.findByText(/expression/i)
+    userEvent.click(expressionOption)
+
+    await waitFor(() => {
+      expect(mockedOnChangeFunc).toHaveBeenLastCalledWith('', MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
+    })
+  })
 })
