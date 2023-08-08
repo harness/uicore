@@ -126,8 +126,8 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
 
       this.props.onInput(e)
       setCaret(child, offset)
-      this.props.keyDown(e)
     }
+    this.props.keyDown(e)
   }
 
   render() {
