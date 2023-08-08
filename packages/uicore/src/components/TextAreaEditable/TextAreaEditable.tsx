@@ -20,7 +20,7 @@ function sanitizeHTML(str: string): string {
     .replace(/\u00a0/g, ' ')
 }
 
-function sanitizerForTextElements(input: TextObject[]): TextObject[] {
+function sanitizeHTMLTextObject(input: TextObject[]): TextObject[] {
   return input.map(item => {
     if (item.type === 'text') {
       return { type: item.type, text: sanitizeHTML(item.text) }
@@ -134,7 +134,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
         (textContent.slice(index).trimEnd() as string) +
         ' '
 
-      this.props.inputRef.current.innerHTML = highlight(sanitizerForTextElements(deserialize(newStr)))
+      this.props.inputRef.current.innerHTML = highlight(sanitizeHTMLTextObject(deserialize(newStr)))
 
       const childNodesTextLength = createChildNodeLengthSumArray(this.props.inputRef.current.childNodes)
 
