@@ -76,9 +76,13 @@ export function getCaretIndex(element: HTMLElement): number {
   return position
 }
 
-export function setCaret(element: ChildNode, index: number): void {
+export function setCaret(element: ChildNode, index: number, isCompleteElement?: boolean): void {
   const range = document.createRange()
-  range.setStart(element, index)
+  if (isCompleteElement) {
+    range.setStartAfter(element)
+  } else {
+    range.setStart(element, index)
+  }
   range.collapse(true)
 
   const sel = window.getSelection() as any
@@ -145,8 +149,9 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
       } else {
         offset = index + 1
       }
+
       this.props.onInput(e)
-      setCaret(child, offset)
+      setCaret(child, offset, child.nodeName.toLowerCase() !== '#text')
     }
     this.props.keyDown(e)
   }
