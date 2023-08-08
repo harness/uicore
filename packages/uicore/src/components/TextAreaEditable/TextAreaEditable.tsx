@@ -78,6 +78,7 @@ export function getCaretIndex(element: HTMLElement): number {
 
 export function setCaret(element: ChildNode, index: number, isCompleteElement?: boolean): void {
   const range = document.createRange()
+  // DOM treats the nested element's text (isCompleteElement) as a single entity so range cannot be handled with offset length
   if (isCompleteElement) {
     range.setStartAfter(element)
   } else {
@@ -151,6 +152,10 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
       }
 
       this.props.onInput(e)
+      /**
+       * node.nodeName returns #text for an exclusive Text node
+       *  MDN Reference :- https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName
+       */
       setCaret(child, offset, child.nodeName.toLowerCase() !== '#text')
     }
     this.props.keyDown(e)
