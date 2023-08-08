@@ -12,6 +12,22 @@ import css from './TextAreaEditable.css'
 
 const VAR_REGEX = /(<\+[a-zA-z0-9_.]+?>)/
 
+function sanitizeHTML(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\u00a0/g, ' ')
+}
+
+function sanitizerForTextElements(input: TextObject[]): TextObject[] {
+  return input.map(item => {
+    if (item.type === 'text') {
+      return { type: item.type, text: sanitizeHTML(item.text) }
+    } else return item
+  })
+}
+
 function deserialize(input: string): TextObject[] {
   const split = input.split(VAR_REGEX)
 
@@ -113,7 +129,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
         (textContent.slice(index).trimEnd() as string) +
         ' '
 
-      this.props.inputRef.current.innerHTML = highlight(deserialize(newStr))
+      this.props.inputRef.current.innerHTML = highlight(sanitizerForTextElements(deserialize(newStr)))
 
       const childNodesTextLength = createChildNodeLengthSumArray(this.props.inputRef.current.childNodes)
 
