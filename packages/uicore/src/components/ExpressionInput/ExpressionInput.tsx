@@ -209,7 +209,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
               })
 
               const child = inputRef.current.childNodes[childIndex]
-              if (child?.nodeType === Node.ELEMENT_NODE) {
+              if (child?.nodeType === Node.ELEMENT_NODE || child?.nodeType === Node.TEXT_NODE) {
                 const offset = childNodesTextLength[childIndex - 1] - position + 2
                 setCaret(child, offset)
               }
