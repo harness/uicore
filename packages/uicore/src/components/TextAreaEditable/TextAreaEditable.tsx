@@ -134,12 +134,17 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
       const childNodesTextLength = createChildNodeLengthSumArray(this.props.inputRef.current.childNodes)
 
       const childIndex = childNodesTextLength.findIndex(i => {
-        return i >= index + 1
+        return i >= index
       })
 
       const child = this.props.inputRef.current.childNodes[childIndex]
-      const offset = childNodesTextLength[childIndex] - index
-
+      const prevChild = this.props.inputRef.current.childNodes[childIndex - 1]
+      let offset = 0
+      if (prevChild) {
+        offset = index - childNodesTextLength[childIndex - 1] + 1
+      } else {
+        offset = index + 1
+      }
       this.props.onInput(e)
       setCaret(child, offset)
     }
