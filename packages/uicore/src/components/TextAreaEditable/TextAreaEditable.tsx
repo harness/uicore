@@ -12,6 +12,22 @@ import css from './TextAreaEditable.css'
 
 const VAR_REGEX = /(<\+[a-zA-z0-9_.]+?>)/
 
+function sanitizeHTML(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\u00a0/g, ' ')
+}
+
+function sanitizeHTMLTextObject(input: TextObject[]): TextObject[] {
+  return input.map(item => {
+    if (item.type === 'text') {
+      return { type: item.type, text: sanitizeHTML(item.text) }
+    } else return item
+  })
+}
+
 function deserialize(input: string): TextObject[] {
   const split = input.split(VAR_REGEX)
 
@@ -60,9 +76,14 @@ export function getCaretIndex(element: HTMLElement): number {
   return position
 }
 
-export function setCaret(element: ChildNode, index: number): void {
+export function setCaret(element: ChildNode, index: number, isCompleteElement?: boolean): void {
   const range = document.createRange()
-  range.setStart(element, index)
+  // DOM treats the nested element's text (isCompleteElement) as a single entity so range cannot be handled with offset length
+  if (isCompleteElement) {
+    range.setStartAfter(element)
+  } else {
+    range.setStart(element, index)
+  }
   range.collapse(true)
 
   const sel = window.getSelection() as any
@@ -113,19 +134,29 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
         (textContent.slice(index).trimEnd() as string) +
         ' '
 
-      this.props.inputRef.current.innerHTML = highlight(deserialize(newStr))
+      this.props.inputRef.current.innerHTML = highlight(sanitizeHTMLTextObject(deserialize(newStr)))
 
       const childNodesTextLength = createChildNodeLengthSumArray(this.props.inputRef.current.childNodes)
 
       const childIndex = childNodesTextLength.findIndex(i => {
-        return i >= index + 1
+        return i >= index
       })
 
       const child = this.props.inputRef.current.childNodes[childIndex]
-      const offset = childNodesTextLength[childIndex] - index
+      const prevChild = this.props.inputRef.current.childNodes[childIndex - 1]
+      let offset = 0
+      if (prevChild) {
+        offset = index - childNodesTextLength[childIndex - 1] + 1
+      } else {
+        offset = index + 1
+      }
 
       this.props.onInput(e)
-      setCaret(child, offset)
+      /**
+       * node.nodeName returns #text for an exclusive Text node
+       *  MDN Reference :- https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName
+       */
+      setCaret(child, offset, child.nodeName.toLowerCase() !== '#text')
     }
     this.props.keyDown(e)
   }
