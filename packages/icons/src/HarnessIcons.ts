@@ -514,7 +514,7 @@ import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
 import Gitlab from './gitlab.svg'
 import Gitleaks from './gitleaks.svg'
-import GitnessNoRepository from './gitness-no-repository.svg'
+import GitnessNoRepositories from './gitness-no-repository.svg'
 import GitopsAgentBlue from './gitops-agent-blue.svg'
 import GitopsAgent from './gitops-agent.svg'
 import GitopsAgentsBlueCircle from './gitops-agents-blue-circle.svg'
@@ -2844,7 +2844,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
   gitlab: Gitlab,
-  gitnessNoRepositories: GitnessNoRepository,
+  'gitness-no-repositories': GitnessNoRepositories,
   gitleaks: Gitleaks,
   'gitops-agent-blue': GitopsAgentBlue,
   'gitops-agent': GitopsAgent,
