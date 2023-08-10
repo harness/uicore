@@ -356,6 +356,7 @@ import CvWithText from './cv-with-text.svg'
 import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
@@ -754,6 +755,7 @@ import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
 import NiktoInverse from './nikto-inverse.svg'
 import Nikto from './nikto.svg'
+import NineDotOptions from './nine-dot-options.svg'
 import NmapInverse from './nmap-inverse.svg'
 import Nmap from './nmap.svg'
 import NoDeployments from './no-deployments.svg'
@@ -1519,6 +1521,7 @@ type HarnessIconName =
   | 'danger-icon'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'dashboards-solid-border'
   | 'data-fetch-error'
   | 'default-dashboard'
   | 'delegates-blue'
@@ -1917,6 +1920,7 @@ type HarnessIconName =
   | 'ng-filter'
   | 'nikto-inverse'
   | 'nikto'
+  | 'nine-dot-options'
   | 'nmap-inverse'
   | 'nmap'
   | 'no-deployments'
@@ -2682,6 +2686,7 @@ const HarnessIcons: KVO<ElementType> = {
   'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
@@ -3080,6 +3085,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ng-filter': NgFilter,
   'nikto-inverse': NiktoInverse,
   nikto: Nikto,
+  'nine-dot-options': NineDotOptions,
   'nmap-inverse': NmapInverse,
   nmap: Nmap,
   'no-deployments': NoDeployments,
