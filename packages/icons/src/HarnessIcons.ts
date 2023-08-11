@@ -1680,6 +1680,7 @@ type HarnessIconName =
   | 'gitlab-unselected'
   | 'gitlab'
   | 'gitleaks'
+  | 'gitness-no-repository'
   | 'gitops-agent-blue'
   | 'gitops-agent'
   | 'gitops-agents-blue-circle'
