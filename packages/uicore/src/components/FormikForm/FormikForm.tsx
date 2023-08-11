@@ -1457,7 +1457,10 @@ export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labe
   disabled?: boolean
 }
 function escapeNewlines(input: string) {
-  return input.replace(/\n/g, '\\n').replace(/\r/g, '\\r')
+  if (typeof input === 'string') {
+    return input.replace(/\n/g, '\\n').replace(/\r/g, '\\r')
+  }
+  return input
 }
 
 const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
