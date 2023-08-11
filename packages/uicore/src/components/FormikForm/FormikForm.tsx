@@ -1456,6 +1456,9 @@ export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labe
   multiTextInputProps?: Omit<MultiTextInputProps, 'name'> /* In case you really want to customize the text input */
   disabled?: boolean
 }
+function escapeNewlines(input: string) {
+  return input.replace(/\n/g, '\\n').replace(/\r/g, '\\r')
+}
 
 const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
   const { formik, name, placeholder, multiTextInputProps, onChange, ...restProps } = props
@@ -1467,7 +1470,8 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     label,
     ...rest
   } = restProps
-  const value = get(formik?.values, name, '')
+  const _value = get(formik?.values, name, '')
+  const value = escapeNewlines(_value)
   const valueType = getMultiTypeFromValue(value)
   const customTextInputProps: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'> = useMemo(
     () => ({
