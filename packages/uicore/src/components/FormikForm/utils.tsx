@@ -55,7 +55,7 @@ export const getFormFieldLabel = (
   return <HarnessDocTooltip tooltipId={dataTooltipId} labelText={labelText} className={css || ''} />
 }
 
-export function escapeNewlines(input: string): string {
+export function escapeNewlines(input: string | number): string | number {
   if (typeof input === 'string') {
     return input.replace(/\n/g, '\\n').replace(/\r/g, '\\r')
   }
