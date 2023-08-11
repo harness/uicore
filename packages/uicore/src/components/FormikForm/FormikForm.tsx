@@ -77,7 +77,7 @@ import { FormikTooltipContext } from './FormikTooltipContext'
 import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
 import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
-import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended } from './utils'
+import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended, escapeNewlines } from './utils'
 import { DurationInput } from './DurationInput'
 import { SelectWithSubmenuOption } from '../SelectWithSubmenu/SelectWithSubmenu'
 import { SubmenuSelectOption } from '../SelectWithSubmenu/SelectWithSubmenuV2'
@@ -1455,9 +1455,6 @@ export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labe
   onChange?: MultiTextInputProps['onChange']
   multiTextInputProps?: Omit<MultiTextInputProps, 'name'> /* In case you really want to customize the text input */
   disabled?: boolean
-}
-function escapeNewlines(input: string) {
-  return input.replace(/\n/g, '\\n').replace(/\r/g, '\\r')
 }
 
 const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikContextProps<any>) => {
