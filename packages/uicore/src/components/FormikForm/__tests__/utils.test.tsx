@@ -3,7 +3,7 @@ import { escapeNewlines } from '../utils'
 
 describe('escapeNewlines Tests', () => {
   test('escapeNewlines should return null for null input', () => {
-    const _inputValue = get({ name: 'formikObject' }, 'value', '')
+    const _inputValue = get(null, 'value', '')
     const _value = escapeNewlines(_inputValue)
     expect(_value).toBe(null)
   })
