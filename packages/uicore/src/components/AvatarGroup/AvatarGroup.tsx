@@ -24,6 +24,7 @@ export interface AvatarGroupProps extends HTMLDivProps {
   className?: string
   onAddTooltip?: JSX.Element
   avatarClassName?: string
+  hideAddOption?: boolean
 }
 type overLap = {
   [key in AvatarSizes]: string
@@ -39,6 +40,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
   onAddTooltip,
   className = '',
   avatarClassName,
+  hideAddOption,
   ...rest
 }) => {
   let remainingLength
@@ -54,7 +56,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
     // to avoid mutation of props
     avatars = [...avatars]
   }
-  if (onAdd) {
+  if (onAdd && !hideAddOption) {
     avatars.push({
       name: plusIcon,
       color: Color.PRIMARY_7,
