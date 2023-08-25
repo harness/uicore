@@ -54,6 +54,7 @@ export interface SelectProps
   size?: SelectSize
   items: Props['items'] | (() => Promise<Props['items']>)
   allowCreatingNewItems?: boolean
+  newItemRenderer?: (query: string) => string
   name?: string
   whenPopoverClosed?: (node: HTMLElement) => void
   addClearBtn?: boolean
@@ -202,16 +203,27 @@ export function Select(props: SelectProps): React.ReactElement {
           {items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0 ? (
             <div className={css.noResultsFound}>No Match Found</div>
           ) : null}
-          {props.allowCreatingNewItems && !isExactQueryElPresent && (
-            <Button
-              intent="primary"
-              minimal
-              text={query}
-              icon="plus"
-              className={css.createNewItemButton}
-              onClick={handleClick as React.MouseEventHandler<Element>}
-            />
-          )}
+          {props.allowCreatingNewItems &&
+            !isExactQueryElPresent &&
+            (props.newItemRenderer ? (
+              <Button
+                intent="primary"
+                minimal
+                text={props.newItemRenderer?.(query)}
+                icon="plus"
+                className={css.createNewItemButton}
+                onClick={handleClick as React.MouseEventHandler<Element>}
+              />
+            ) : (
+              <Button
+                intent="primary"
+                minimal
+                text={query}
+                icon="plus"
+                className={css.createNewItemButton}
+                onClick={handleClick as React.MouseEventHandler<Element>}
+              />
+            ))}
         </React.Fragment>
       )
   }
