@@ -54,7 +54,7 @@ export interface SelectProps
   size?: SelectSize
   items: Props['items'] | (() => Promise<Props['items']>)
   allowCreatingNewItems?: boolean
-  newItemRenderer?: (query: string) => string
+  newItemRenderer?: (query: string) => React.ReactNode
   name?: string
   whenPopoverClosed?: (node: HTMLElement) => void
   addClearBtn?: boolean
