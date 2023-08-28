@@ -210,7 +210,7 @@ export function Select(props: SelectProps): React.ReactElement {
                 intent="primary"
                 minimal
                 text={props.newItemRenderer?.(query)}
-                icon="plus"
+                icon="chevron-right"
                 className={css.createNewItemButton}
                 onClick={handleClick as React.MouseEventHandler<Element>}
               />
