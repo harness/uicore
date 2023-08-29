@@ -203,6 +203,14 @@ import ChaosHubs from './chaos-hubs.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
 import ChaosNamespace from './chaos-namespace.svg'
+import ChaosNavChaosguard from './chaos-nav-chaosguard.svg'
+import ChaosNavChaoshub from './chaos-nav-chaoshub.svg'
+import ChaosNavEnvironment from './chaos-nav-environment.svg'
+import ChaosNavExperiments from './chaos-nav-experiments.svg'
+import ChaosNavGamedays from './chaos-nav-gamedays.svg'
+import ChaosNavHome from './chaos-nav-home.svg'
+import ChaosNavNetworkMaps from './chaos-nav-network-maps.svg'
+import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
@@ -1370,6 +1378,14 @@ type HarnessIconName =
   | 'chaos-litmuschaos'
   | 'chaos-main'
   | 'chaos-namespace'
+  | 'chaos-nav-chaosguard'
+  | 'chaos-nav-chaoshub'
+  | 'chaos-nav-environment'
+  | 'chaos-nav-experiments'
+  | 'chaos-nav-gamedays'
+  | 'chaos-nav-home'
+  | 'chaos-nav-network-maps'
+  | 'chaos-nav-resilience-probes'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chaos-service-discovery'
@@ -2537,6 +2553,14 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-main': ChaosMain,
   'chaos-namespace': ChaosNamespace,
+  'chaos-nav-chaosguard': ChaosNavChaosguard,
+  'chaos-nav-chaoshub': ChaosNavChaoshub,
+  'chaos-nav-environment': ChaosNavEnvironment,
+  'chaos-nav-experiments': ChaosNavExperiments,
+  'chaos-nav-gamedays': ChaosNavGamedays,
+  'chaos-nav-home': ChaosNavHome,
+  'chaos-nav-network-maps': ChaosNavNetworkMaps,
+  'chaos-nav-resilience-probes': ChaosNavResilienceProbes,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   'chaos-service-discovery': ChaosServiceDiscovery,
