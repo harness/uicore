@@ -424,6 +424,7 @@ import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
+import Kubernetes from './kubernetes.svg'
 import Launch from './launch.svg'
 import LayersOutline from './layers-outline.svg'
 import LayoutBottom from './layout-bottom.svg'
@@ -710,6 +711,7 @@ import Semgrep from './semgrep.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceCustomConnector from './service-custom-connector.svg'
 import ServiceGrafanaLoki from './service-grafana-loki.svg'
+import ServicePrometheus from './service-prometheus.svg'
 import ServiceSignalfx from './service-signalfx.svg'
 import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
@@ -1259,6 +1261,7 @@ type HarnessIconName =
   | 'jira-update'
   | 'key-main'
   | 'key'
+  | 'kubernetes'
   | 'launch'
   | 'layers-outline'
   | 'layout-bottom'
@@ -1545,6 +1548,7 @@ type HarnessIconName =
   | 'serverless-deploy-step'
   | 'service-custom-connector'
   | 'service-grafana-loki'
+  | 'service-prometheus'
   | 'service-signalfx'
   | 'service-vm'
   | 'service'
@@ -2094,6 +2098,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update': JiraUpdate,
   'key-main': KeyMain,
   key: Key,
+  kubernetes: Kubernetes,
   launch: Launch,
   'layers-outline': LayersOutline,
   'layout-bottom': LayoutBottom,
@@ -2380,6 +2385,7 @@ const HarnessIcons: KVO<ElementType> = {
   'serverless-deploy-step': ServerlessDeployStep,
   'service-custom-connector': ServiceCustomConnector,
   'service-grafana-loki': ServiceGrafanaLoki,
+  'service-prometheus': ServicePrometheus,
   'service-signalfx': ServiceSignalfx,
   'service-vm': ServiceVm,
   service: Service,
