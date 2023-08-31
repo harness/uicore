@@ -194,6 +194,8 @@ import Cet from './cet.svg'
 import CfHover from './cf-hover.svg'
 import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
+import CfNavFeatureFlags from './cf-nav-featureFags.svg'
+import CfNavTargetManagement from './cf-nav-targetManagement.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
@@ -1369,6 +1371,8 @@ type HarnessIconName =
   | 'cf-hover'
   | 'cf-main-inverse'
   | 'cf-main'
+  | 'cf-nav-feature-flags'
+  | 'cf-nav-target-management'
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
@@ -2544,6 +2548,8 @@ const HarnessIcons: KVO<ElementType> = {
   'cf-hover': CfHover,
   'cf-main-inverse': CfMainInverse,
   'cf-main': CfMain,
+  'cf-nav-feature-flags': CfNavFeatureFlags,
+  'cf-nav-target-management': CfNavTargetManagement,
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
