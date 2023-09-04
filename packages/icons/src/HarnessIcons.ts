@@ -157,6 +157,16 @@ import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
+import CcmNavAnomalies from './ccm-nav-anomalies.svg'
+import CcmNavAssetGovernance from './ccm-nav-asset-governance.svg'
+import CcmNavAutostoppingRules from './ccm-nav-autostopping-rules.svg'
+import CcmNavBiDashboards from './ccm-nav-bi-dashboards.svg'
+import CcmNavBudgets from './ccm-nav-budgets.svg'
+import CcmNavClusterOrchestration from './ccm-nav-cluster-orchestration.svg'
+import CcmNavCommitments from './ccm-nav-commitments.svg'
+import CcmNavCostCategories from './ccm-nav-cost-categories.svg'
+import CcmNavPerspectives from './ccm-nav-perspectives.svg'
+import CcmNavRecommendations from './ccm-nav-recommendations.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
 import CcmPolicyShield from './ccm-policy-shield.svg'
@@ -195,7 +205,6 @@ import CfHover from './cf-hover.svg'
 import CfMainInverse from './cf-main-inverse.svg'
 import CfMain from './cf-main.svg'
 import CfNavFeatureFlags from './cf-nav-featureFlags.svg'
-import CfNavTargetManagement from './cf-nav-targetManagement.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
@@ -482,6 +491,7 @@ import Flag from './flag.svg'
 import Flash from './flash.svg'
 import Flux from './flux.svg'
 import FolderUpload from './folder-upload.svg'
+import Folder from './folder.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
 import FortifyOnDemand from './fortify-on-demand.svg'
 import FossaInverse from './fossa-inverse.svg'
@@ -547,6 +557,7 @@ import GitopsRepositoryCertificatesBlueCircle from './gitops-repository-certific
 import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
+import Gitops from './gitops.svg'
 import Golang from './golang.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
@@ -618,6 +629,7 @@ import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
 import LineChart from './line-chart.svg'
 import Linkedin from './linkedin.svg'
+import ListBlue from './list-blue.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListVars from './list-vars.svg'
 import ListView from './list-view.svg'
@@ -750,6 +762,7 @@ import NavHome from './nav-home.svg'
 import NavInfrastructureHover from './nav-infrastructure-hover.svg'
 import NavInfrastructureSelected from './nav-infrastructure-selected.svg'
 import NavOrganization from './nav-organization.svg'
+import NavPipeline from './nav-pipeline.svg'
 import NavPipelinesSelected from './nav-pipelines-selected.svg'
 import NavPipelines from './nav-pipelines.svg'
 import NavProject from './nav-project.svg'
@@ -781,6 +794,7 @@ import OnpremDark from './onprem-dark.svg'
 import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
+import OptionsHollow from './options-hollow.svg'
 import OtherWorkload from './other-workload.svg'
 import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
 import OwaspInverse from './owasp-inverse.svg'
@@ -877,6 +891,7 @@ import RetryStepGroup from './retry-step-group.svg'
 import RightArrow from './right-arrow.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
+import Roles from './roles.svg'
 import RollbackExecution from './rollback-execution.svg'
 import RollbackPipelineInverse from './rollback-pipeline-inverse.svg'
 import RollbackPipeline from './rollback-pipeline.svg'
@@ -937,6 +952,7 @@ import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
 import SeiMain from './sei-main.svg'
+import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
 import ServerlessAwsLambdaDeployV2Inverse from './serverless-aws-lambda-deploy-v2-inverse.svg'
@@ -1044,6 +1060,7 @@ import ServicenowCreate from './servicenow-create.svg'
 import ServicenowUpdateInverse from './servicenow-update-inverse.svg'
 import ServicenowUpdate from './servicenow-update.svg'
 import Services from './services.svg'
+import Setting from './setting.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
@@ -1099,6 +1116,8 @@ import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import Sysdig from './sysdig.svg'
 import TanzuCommand from './tanzuCommand.svg'
+import TargetManagement from './target-management.svg'
+import Target from './target.svg'
 import TasInverse from './tas-inverse.svg'
 import TasManifest from './tas-manifest.svg'
 import TasPreProcessingArtifactGroup from './tas-pre-processing-artifact-group.svg'
@@ -1168,6 +1187,7 @@ import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
 import Variable from './variable.svg'
 import VariablesBlue from './variables-blue.svg'
+import Variables from './variables.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
@@ -1334,6 +1354,16 @@ type HarnessIconName =
   | 'canvas-reset'
   | 'canvas-selector'
   | 'cascading'
+  | 'ccm-nav-anomalies'
+  | 'ccm-nav-asset-governance'
+  | 'ccm-nav-autostopping-rules'
+  | 'ccm-nav-bi-dashboards'
+  | 'ccm-nav-budgets'
+  | 'ccm-nav-cluster-orchestration'
+  | 'ccm-nav-commitments'
+  | 'ccm-nav-cost-categories'
+  | 'ccm-nav-perspectives'
+  | 'ccm-nav-recommendations'
   | 'ccm-policy-details'
   | 'ccm-policy-shield-checked'
   | 'ccm-policy-shield'
@@ -1372,7 +1402,6 @@ type HarnessIconName =
   | 'cf-main-inverse'
   | 'cf-main'
   | 'cf-nav-featureFlags'
-  | 'cf-nav-targetManagement'
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
@@ -1659,6 +1688,7 @@ type HarnessIconName =
   | 'flash'
   | 'flux'
   | 'folder-upload'
+  | 'folder'
   | 'fortify-on-demand-inverse'
   | 'fortify-on-demand'
   | 'fossa-inverse'
@@ -1724,6 +1754,7 @@ type HarnessIconName =
   | 'gitops-suspended'
   | 'gitops-unknown'
   | 'gitops-yes'
+  | 'gitops'
   | 'golang'
   | 'google-kubernetes-engine'
   | 'google'
@@ -1795,6 +1826,7 @@ type HarnessIconName =
   | 'library'
   | 'line-chart'
   | 'linkedin'
+  | 'list-blue'
   | 'list-entity-infographic'
   | 'list-vars'
   | 'list-view'
@@ -1927,6 +1959,7 @@ type HarnessIconName =
   | 'nav-infrastructure-hover'
   | 'nav-infrastructure-selected'
   | 'nav-organization'
+  | 'nav-pipeline'
   | 'nav-pipelines-selected'
   | 'nav-pipelines'
   | 'nav-project'
@@ -1958,6 +1991,7 @@ type HarnessIconName =
   | 'onprem-light'
   | 'openshift-params'
   | 'openshift'
+  | 'options-hollow'
   | 'other-workload'
   | 'owasp-dependency-check-inverse'
   | 'owasp-inverse'
@@ -2054,6 +2088,7 @@ type HarnessIconName =
   | 'right-arrow'
   | 'right-bar-notification'
   | 'right-drawer'
+  | 'roles'
   | 'rollback-execution'
   | 'rollback-pipeline-inverse'
   | 'rollback-pipeline'
@@ -2114,6 +2149,7 @@ type HarnessIconName =
   | 'security-ci-step'
   | 'security-stage'
   | 'sei-main'
+  | 'select-scope'
   | 'semgrep'
   | 'send-data'
   | 'serverless-aws-lambda-deploy-v2-inverse'
@@ -2221,6 +2257,7 @@ type HarnessIconName =
   | 'servicenow-update-inverse'
   | 'servicenow-update'
   | 'services'
+  | 'setting'
   | 'setup-api'
   | 'setup-tags'
   | 'shield-gears'
@@ -2276,6 +2313,8 @@ type HarnessIconName =
   | 'syncing'
   | 'sysdig'
   | 'tanzuCommand'
+  | 'target-management'
+  | 'target'
   | 'tas-inverse'
   | 'tas-manifest'
   | 'tas-pre-processing-artifact-group'
@@ -2345,6 +2384,7 @@ type HarnessIconName =
   | 'valuesFIle'
   | 'variable'
   | 'variables-blue'
+  | 'variables'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
@@ -2511,6 +2551,16 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
+  'ccm-nav-anomalies': CcmNavAnomalies,
+  'ccm-nav-asset-governance': CcmNavAssetGovernance,
+  'ccm-nav-autostopping-rules': CcmNavAutostoppingRules,
+  'ccm-nav-bi-dashboards': CcmNavBiDashboards,
+  'ccm-nav-budgets': CcmNavBudgets,
+  'ccm-nav-cluster-orchestration': CcmNavClusterOrchestration,
+  'ccm-nav-commitments': CcmNavCommitments,
+  'ccm-nav-cost-categories': CcmNavCostCategories,
+  'ccm-nav-perspectives': CcmNavPerspectives,
+  'ccm-nav-recommendations': CcmNavRecommendations,
   'ccm-policy-details': CcmPolicyDetails,
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
   'ccm-policy-shield': CcmPolicyShield,
@@ -2549,7 +2599,6 @@ const HarnessIcons: KVO<ElementType> = {
   'cf-main-inverse': CfMainInverse,
   'cf-main': CfMain,
   'cf-nav-featureFlags': CfNavFeatureFlags,
-  'cf-nav-targetManagement': CfNavTargetManagement,
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
@@ -2836,6 +2885,7 @@ const HarnessIcons: KVO<ElementType> = {
   flash: Flash,
   flux: Flux,
   'folder-upload': FolderUpload,
+  folder: Folder,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
   'fortify-on-demand': FortifyOnDemand,
   'fossa-inverse': FossaInverse,
@@ -2901,6 +2951,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-suspended': GitopsSuspended,
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
+  gitops: Gitops,
   golang: Golang,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
@@ -2972,6 +3023,7 @@ const HarnessIcons: KVO<ElementType> = {
   library: Library,
   'line-chart': LineChart,
   linkedin: Linkedin,
+  'list-blue': ListBlue,
   'list-entity-infographic': ListEntityInfographic,
   'list-vars': ListVars,
   'list-view': ListView,
@@ -3104,6 +3156,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-infrastructure-hover': NavInfrastructureHover,
   'nav-infrastructure-selected': NavInfrastructureSelected,
   'nav-organization': NavOrganization,
+  'nav-pipeline': NavPipeline,
   'nav-pipelines-selected': NavPipelinesSelected,
   'nav-pipelines': NavPipelines,
   'nav-project': NavProject,
@@ -3135,6 +3188,7 @@ const HarnessIcons: KVO<ElementType> = {
   'onprem-light': OnpremLight,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
+  'options-hollow': OptionsHollow,
   'other-workload': OtherWorkload,
   'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
   'owasp-inverse': OwaspInverse,
@@ -3231,6 +3285,7 @@ const HarnessIcons: KVO<ElementType> = {
   'right-arrow': RightArrow,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
+  roles: Roles,
   'rollback-execution': RollbackExecution,
   'rollback-pipeline-inverse': RollbackPipelineInverse,
   'rollback-pipeline': RollbackPipeline,
@@ -3291,6 +3346,7 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
   'sei-main': SeiMain,
+  'select-scope': SelectScope,
   semgrep: Semgrep,
   'send-data': SendData,
   'serverless-aws-lambda-deploy-v2-inverse': ServerlessAwsLambdaDeployV2Inverse,
@@ -3398,6 +3454,7 @@ const HarnessIcons: KVO<ElementType> = {
   'servicenow-update-inverse': ServicenowUpdateInverse,
   'servicenow-update': ServicenowUpdate,
   services: Services,
+  setting: Setting,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
   'shield-gears': ShieldGears,
@@ -3453,6 +3510,8 @@ const HarnessIcons: KVO<ElementType> = {
   syncing: Syncing,
   sysdig: Sysdig,
   tanzuCommand: TanzuCommand,
+  'target-management': TargetManagement,
+  target: Target,
   'tas-inverse': TasInverse,
   'tas-manifest': TasManifest,
   'tas-pre-processing-artifact-group': TasPreProcessingArtifactGroup,
@@ -3522,6 +3581,7 @@ const HarnessIcons: KVO<ElementType> = {
   valuesFIle: ValuesFIle,
   variable: Variable,
   'variables-blue': VariablesBlue,
+  variables: Variables,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
