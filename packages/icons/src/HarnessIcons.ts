@@ -207,10 +207,8 @@ import ChaosMain from './chaos-main.svg'
 import ChaosNamespace from './chaos-namespace.svg'
 import ChaosNavChaosguard from './chaos-nav-chaosguard.svg'
 import ChaosNavChaoshub from './chaos-nav-chaoshub.svg'
-import ChaosNavEnvironment from './chaos-nav-environment.svg'
 import ChaosNavExperiments from './chaos-nav-experiments.svg'
 import ChaosNavGamedays from './chaos-nav-gamedays.svg'
-import ChaosNavHome from './chaos-nav-home.svg'
 import ChaosNavNetworkMaps from './chaos-nav-network-maps.svg'
 import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
@@ -739,6 +737,7 @@ import NavDashboard from './nav-dashboard.svg'
 import NavDeploymentsHover from './nav-deployments-hover.svg'
 import NavDeploymentsSelected from './nav-deployments-selected.svg'
 import NavDeployments from './nav-deployments.svg'
+import NavEnvironments from './nav-environments.svg'
 import NavGitSync from './nav-git-sync.svg'
 import NavGovernanceHover from './nav-governance-hover.svg'
 import NavGovernanceSelected from './nav-governance-selected.svg'
@@ -747,6 +746,7 @@ import NavHarnessHover from './nav-harness-hover.svg'
 import NavHarnessSelected from './nav-harness-selected.svg'
 import NavHarness from './nav-harness.svg'
 import NavHelp from './nav-help.svg'
+import NavHome from './nav-home.svg'
 import NavInfrastructureHover from './nav-infrastructure-hover.svg'
 import NavInfrastructureSelected from './nav-infrastructure-selected.svg'
 import NavOrganization from './nav-organization.svg'
@@ -1384,10 +1384,8 @@ type HarnessIconName =
   | 'chaos-namespace'
   | 'chaos-nav-chaosguard'
   | 'chaos-nav-chaoshub'
-  | 'chaos-nav-environment'
   | 'chaos-nav-experiments'
   | 'chaos-nav-gamedays'
-  | 'chaos-nav-home'
   | 'chaos-nav-network-maps'
   | 'chaos-nav-resilience-probes'
   | 'chaos-scenario-builder-faded'
@@ -1916,6 +1914,7 @@ type HarnessIconName =
   | 'nav-deployments-hover'
   | 'nav-deployments-selected'
   | 'nav-deployments'
+  | 'nav-environments'
   | 'nav-git-sync'
   | 'nav-governance-hover'
   | 'nav-governance-selected'
@@ -1924,6 +1923,7 @@ type HarnessIconName =
   | 'nav-harness-selected'
   | 'nav-harness'
   | 'nav-help'
+  | 'nav-home'
   | 'nav-infrastructure-hover'
   | 'nav-infrastructure-selected'
   | 'nav-organization'
@@ -2561,10 +2561,8 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-namespace': ChaosNamespace,
   'chaos-nav-chaosguard': ChaosNavChaosguard,
   'chaos-nav-chaoshub': ChaosNavChaoshub,
-  'chaos-nav-environment': ChaosNavEnvironment,
   'chaos-nav-experiments': ChaosNavExperiments,
   'chaos-nav-gamedays': ChaosNavGamedays,
-  'chaos-nav-home': ChaosNavHome,
   'chaos-nav-network-maps': ChaosNavNetworkMaps,
   'chaos-nav-resilience-probes': ChaosNavResilienceProbes,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
@@ -3093,6 +3091,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-deployments-hover': NavDeploymentsHover,
   'nav-deployments-selected': NavDeploymentsSelected,
   'nav-deployments': NavDeployments,
+  'nav-environments': NavEnvironments,
   'nav-git-sync': NavGitSync,
   'nav-governance-hover': NavGovernanceHover,
   'nav-governance-selected': NavGovernanceSelected,
@@ -3101,6 +3100,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-harness-selected': NavHarnessSelected,
   'nav-harness': NavHarness,
   'nav-help': NavHelp,
+  'nav-home': NavHome,
   'nav-infrastructure-hover': NavInfrastructureHover,
   'nav-infrastructure-selected': NavInfrastructureSelected,
   'nav-organization': NavOrganization,
