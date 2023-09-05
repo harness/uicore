@@ -182,6 +182,20 @@ import CdSolid from './cd-solid.svg'
 import CdWithDarkText from './cd-with-dark-text.svg'
 import CdWithText from './cd-with-text.svg'
 import Cd from './cd.svg'
+import CdkBootstrapInverse from './cdk-bootstrap-inverse.svg'
+import CdkBootstrap from './cdk-bootstrap.svg'
+import CdkDeployInverse from './cdk-deploy-inverse.svg'
+import CdkDeploy from './cdk-deploy.svg'
+import CdkDestroyInverse from './cdk-destroy-inverse.svg'
+import CdkDestroy from './cdk-destroy.svg'
+import CdkDiffInverse from './cdk-diff-inverse.svg'
+import CdkDiff from './cdk-diff.svg'
+import CdkInverse from './cdk-inverse.svg'
+import CdkRollBackInverse from './cdk-roll-back-inverse.svg'
+import CdkRollBack from './cdk-roll-back.svg'
+import CdkSynthInverse from './cdk-synth-inverse.svg'
+import CdkSynth from './cdk-synth.svg'
+import Cdk from './cdk.svg'
 import CeApplication from './ce-application.svg'
 import CeBeta from './ce-beta.svg'
 import CeBudgetColored from './ce-budget_colored.svg'
@@ -1379,6 +1393,20 @@ type HarnessIconName =
   | 'cd-with-dark-text'
   | 'cd-with-text'
   | 'cd'
+  | 'cdk-bootstrap-inverse'
+  | 'cdk-bootstrap'
+  | 'cdk-deploy-inverse'
+  | 'cdk-deploy'
+  | 'cdk-destroy-inverse'
+  | 'cdk-destroy'
+  | 'cdk-diff-inverse'
+  | 'cdk-diff'
+  | 'cdk-inverse'
+  | 'cdk-roll-back-inverse'
+  | 'cdk-roll-back'
+  | 'cdk-synth-inverse'
+  | 'cdk-synth'
+  | 'cdk'
   | 'ce-application'
   | 'ce-beta'
   | 'ce-budget_colored'
@@ -2576,6 +2604,20 @@ const HarnessIcons: KVO<ElementType> = {
   'cd-with-dark-text': CdWithDarkText,
   'cd-with-text': CdWithText,
   cd: Cd,
+  'cdk-bootstrap-inverse': CdkBootstrapInverse,
+  'cdk-bootstrap': CdkBootstrap,
+  'cdk-deploy-inverse': CdkDeployInverse,
+  'cdk-deploy': CdkDeploy,
+  'cdk-destroy-inverse': CdkDestroyInverse,
+  'cdk-destroy': CdkDestroy,
+  'cdk-diff-inverse': CdkDiffInverse,
+  'cdk-diff': CdkDiff,
+  'cdk-inverse': CdkInverse,
+  'cdk-roll-back-inverse': CdkRollBackInverse,
+  'cdk-roll-back': CdkRollBack,
+  'cdk-synth-inverse': CdkSynthInverse,
+  'cdk-synth': CdkSynth,
+  cdk: Cdk,
   'ce-application': CeApplication,
   'ce-beta': CeBeta,
   'ce-budget_colored': CeBudgetColored,
