@@ -15,6 +15,7 @@ import { Button } from '../../components/Button/Button'
 import { Text } from '../../components/Text/Text'
 import { Icon } from '@harness/icons'
 import { Utils } from '../../core/Utils'
+import { defaultTo } from 'lodash-es'
 
 export interface MultiSelectOption {
   label: string
@@ -216,7 +217,9 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       {...rest}
       tagInputProps={{
         disabled,
-        placeholder: Utils.getSelectComponentPlaceholder(rest?.placeholder),
+        placeholder: Utils.getSelectComponentPlaceholder(
+          defaultTo(rest?.placeholder, rest?.tagInputProps?.inputProps?.placeholder)
+        ),
         tagProps: value => {
           return {
             className: cx(css.tag, {
