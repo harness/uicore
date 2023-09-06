@@ -8,6 +8,7 @@
 import React, { ReactElement } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
+import { defaultTo } from 'lodash-es'
 import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './MultiSelect.css'
@@ -216,7 +217,9 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       {...rest}
       tagInputProps={{
         disabled,
-        placeholder: Utils.getSelectComponentPlaceholder(rest?.placeholder),
+        placeholder: Utils.getSelectComponentPlaceholder(
+          defaultTo(rest?.placeholder, rest?.tagInputProps?.inputProps?.placeholder)
+        ),
         tagProps: value => {
           return {
             className: cx(css.tag, {
