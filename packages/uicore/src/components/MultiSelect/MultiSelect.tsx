@@ -8,6 +8,7 @@
 import React, { ReactElement } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
+import { defaultTo } from 'lodash-es'
 import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './MultiSelect.css'
@@ -15,7 +16,6 @@ import { Button } from '../../components/Button/Button'
 import { Text } from '../../components/Text/Text'
 import { Icon } from '@harness/icons'
 import { Utils } from '../../core/Utils'
-import { defaultTo } from 'lodash-es'
 
 export interface MultiSelectOption {
   label: string
