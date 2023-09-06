@@ -427,6 +427,7 @@ export const MultiSelectTypeInput: React.FC<MultiSelectTypeInputProps> = ({ mult
       {...rest}
       fixedTypeComponentProps={multiSelectProps}
       fixedTypeComponent={MultiSelectTypeInputTypeComponent}
+      defaultValueToReset={[]}
     />
   )
 }
