@@ -1082,6 +1082,7 @@ import SimpleVerification from './simple-verification.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
 import SlotDeployment from './slot-deployment.svg'
+import SlsaVerification from './slsa-verification.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import SolidError from './solid-error.svg'
@@ -2293,6 +2294,7 @@ type HarnessIconName =
   | 'skipped'
   | 'slider-trigger'
   | 'slot-deployment'
+  | 'slsa-verification'
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'solid-error'
@@ -3504,6 +3506,7 @@ const HarnessIcons: KVO<ElementType> = {
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
   'slot-deployment': SlotDeployment,
+  'slsa-verification': SlsaVerification,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   'solid-error': SolidError,
