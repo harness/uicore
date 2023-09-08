@@ -750,6 +750,7 @@ import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
 import NavAccountAdmin from './nav-account-admin.svg'
+import NavBuilds from './nav-builds.svg'
 import NavCdHover from './nav-cd-hover.svg'
 import NavCdSelected from './nav-cd-selected.svg'
 import NavCd from './nav-cd.svg'
@@ -1962,6 +1963,7 @@ type HarnessIconName =
   | 'nav-account-admin-hover'
   | 'nav-account-admin-selected'
   | 'nav-account-admin'
+  | 'nav-builds'
   | 'nav-cd-hover'
   | 'nav-cd-selected'
   | 'nav-cd'
@@ -3174,6 +3176,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-account-admin-hover': NavAccountAdminHover,
   'nav-account-admin-selected': NavAccountAdminSelected,
   'nav-account-admin': NavAccountAdmin,
+  'nav-builds': NavBuilds,
   'nav-cd-hover': NavCdHover,
   'nav-cd-selected': NavCdSelected,
   'nav-cd': NavCd,
