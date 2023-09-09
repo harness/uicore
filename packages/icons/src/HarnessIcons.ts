@@ -222,6 +222,7 @@ import CfNavFeatureFlags from './cf-nav-featureFlags.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
+import Changes from './changes.svg'
 import ChaosCube from './chaos-cube.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
@@ -746,6 +747,7 @@ import MetasploitInverse from './metasploit-inverse.svg'
 import Metasploit from './metasploit.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
+import MonitoredService from './monitored-service.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
@@ -1082,6 +1084,7 @@ import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
+import Slo from './slo.svg'
 import SlotDeployment from './slot-deployment.svg'
 import SlsaVerification from './slsa-verification.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
@@ -1435,6 +1438,7 @@ type HarnessIconName =
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
+  | 'changes'
   | 'chaos-cube'
   | 'chaos-experiment-weight'
   | 'chaos-hubs'
@@ -1959,6 +1963,7 @@ type HarnessIconName =
   | 'metasploit'
   | 'microsoft-azure'
   | 'money-icon'
+  | 'monitored-service'
   | 'multi-service'
   | 'nav-account-admin-hover'
   | 'nav-account-admin-selected'
@@ -2295,6 +2300,7 @@ type HarnessIconName =
   | 'simple-verification'
   | 'skipped'
   | 'slider-trigger'
+  | 'slo'
   | 'slot-deployment'
   | 'slsa-verification'
   | 'smtp-configuration-blue'
@@ -2648,6 +2654,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
+  changes: Changes,
   'chaos-cube': ChaosCube,
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-hubs': ChaosHubs,
@@ -3172,6 +3179,7 @@ const HarnessIcons: KVO<ElementType> = {
   metasploit: Metasploit,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
+  'monitored-service': MonitoredService,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
   'nav-account-admin-selected': NavAccountAdminSelected,
@@ -3508,6 +3516,7 @@ const HarnessIcons: KVO<ElementType> = {
   'simple-verification': SimpleVerification,
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
+  slo: Slo,
   'slot-deployment': SlotDeployment,
   'slsa-verification': SlsaVerification,
   'smtp-configuration-blue': SmtpConfigurationBlue,
