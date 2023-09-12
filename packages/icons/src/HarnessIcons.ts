@@ -1096,9 +1096,12 @@ import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
+import SscaArtifacts from './ssca-artifacts.svg'
+import SscaComponents from './ssca-components.svg'
 import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
+import SscaRemediation from './ssca-remediation.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
@@ -2314,9 +2317,12 @@ type HarnessIconName =
   | 'spot-inverse'
   | 'spot'
   | 'srm-with-dark-text'
+  | 'ssca-artifacts'
+  | 'ssca-components'
   | 'ssca-enforce'
   | 'ssca-main'
   | 'ssca-orchestrate'
+  | 'ssca-remediation'
   | 'stale-cache'
   | 'star-empty'
   | 'star'
@@ -3532,9 +3538,12 @@ const HarnessIcons: KVO<ElementType> = {
   'spot-inverse': SpotInverse,
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
+  'ssca-artifacts': SscaArtifacts,
+  'ssca-components': SscaComponents,
   'ssca-enforce': SscaEnforce,
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
+  'ssca-remediation': SscaRemediation,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
   star: Star,
