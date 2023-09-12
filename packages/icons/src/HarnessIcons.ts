@@ -157,6 +157,8 @@ import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
+import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
+import CcmCurrencySettings from './ccm-currency-settings.svg'
 import CcmNavAnomalies from './ccm-nav-anomalies.svg'
 import CcmNavAssetGovernance from './ccm-nav-asset-governance.svg'
 import CcmNavAutostoppingRules from './ccm-nav-autostopping-rules.svg'
@@ -1376,6 +1378,8 @@ type HarnessIconName =
   | 'canvas-reset'
   | 'canvas-selector'
   | 'cascading'
+  | 'ccm-cloud-integration-settings'
+  | 'ccm-currency-settings'
   | 'ccm-nav-anomalies'
   | 'ccm-nav-asset-governance'
   | 'ccm-nav-autostopping-rules'
@@ -2595,6 +2599,8 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
+  'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
+  'ccm-currency-settings': CcmCurrencySettings,
   'ccm-nav-anomalies': CcmNavAnomalies,
   'ccm-nav-asset-governance': CcmNavAssetGovernance,
   'ccm-nav-autostopping-rules': CcmNavAutostoppingRules,
