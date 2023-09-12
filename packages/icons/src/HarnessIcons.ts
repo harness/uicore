@@ -358,6 +358,7 @@ import ContactSupport from './contact-support.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
 import Copy from './copy.svg'
+import CostChange from './cost-change.svg'
 import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
@@ -1579,6 +1580,7 @@ type HarnessIconName =
   | 'copy-alt'
   | 'copy-doc'
   | 'copy'
+  | 'cost-change'
   | 'cost-data-collection'
   | 'coverage-status-error'
   | 'coverage-status-success'
@@ -2800,6 +2802,7 @@ const HarnessIcons: KVO<ElementType> = {
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
   copy: Copy,
+  'cost-change': CostChange,
   'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
