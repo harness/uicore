@@ -533,7 +533,6 @@ import GcsCiStep from './gcs-ci-step.svg'
 import GcsStepInverse from './gcs-step-inverse.svg'
 import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
-import GetStarted from './get-started.svg'
 import GitBranchExisting from './git-branch-existing.svg'
 import GitCloneCiStepInverse from './git-clone-ci-step-inverse.svg'
 import GitCloneCiStep from './git-clone-ci-step.svg'
@@ -1756,7 +1755,6 @@ type HarnessIconName =
   | 'gcs-step-inverse'
   | 'gcs-step'
   | 'gear'
-  | 'get-started'
   | 'git-branch-existing'
   | 'git-clone-ci-step-inverse'
   | 'git-clone-ci-step'
@@ -2979,7 +2977,6 @@ const HarnessIcons: KVO<ElementType> = {
   'gcs-step-inverse': GcsStepInverse,
   'gcs-step': GcsStep,
   gear: Gear,
-  'get-started': GetStarted,
   'git-branch-existing': GitBranchExisting,
   'git-clone-ci-step-inverse': GitCloneCiStepInverse,
   'git-clone-ci-step': GitCloneCiStep,
