@@ -1090,6 +1090,7 @@ import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
 import Slo from './slo.svg'
 import SlotDeployment from './slot-deployment.svg'
+import SlsaGeneration from './slsa-generation.svg'
 import SlsaVerification from './slsa-verification.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
@@ -2313,6 +2314,7 @@ type HarnessIconName =
   | 'slider-trigger'
   | 'slo'
   | 'slot-deployment'
+  | 'slsa-generation'
   | 'slsa-verification'
   | 'smtp-configuration-blue'
   | 'smtp'
@@ -3536,6 +3538,7 @@ const HarnessIcons: KVO<ElementType> = {
   'slider-trigger': SliderTrigger,
   slo: Slo,
   'slot-deployment': SlotDeployment,
+  'slsa-generation': SlsaGeneration,
   'slsa-verification': SlsaVerification,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
