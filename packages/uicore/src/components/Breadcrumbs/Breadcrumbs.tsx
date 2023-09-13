@@ -10,13 +10,15 @@ import { Link } from 'react-router-dom'
 import cx from 'classnames'
 import { Icon, IconProps } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
+import { Container } from '../Container/Container'
 import { Text } from '../Text/Text'
 import css from './Breadcrumbs.css'
 
 export interface Breadcrumb {
-  url: string
+  url?: string
   label: string
   iconProps?: IconProps
+  onClick?: () => void
 }
 export interface BreadcrumbsProps {
   links: Breadcrumb[]
@@ -30,14 +32,26 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links = [], className 
       className={cx(css.breadcrumbs, className)}>
       {links.map((link: Breadcrumb, index: number) => (
         <Layout.Horizontal flex={{ align: 'center-center', justifyContent: 'flex-start' }} key={index}>
-          <Link className={css.breadcrumb} to={link.url}>
-            {link.iconProps && link.iconProps.name && (
-              <Icon size={16} padding={{ right: 'xsmall' }} {...link.iconProps} />
-            )}
-            <Text intent="primary" font={{ size: 'small' }}>
-              {link.label}
-            </Text>
-          </Link>
+          {link.onClick ? (
+            <Container className={css.breadcrumb} onClick={link.onClick}>
+              {link.iconProps && link.iconProps.name && (
+                <Icon size={16} padding={{ right: 'xsmall' }} {...link.iconProps} />
+              )}
+              <Text intent="primary" font={{ size: 'small' }}>
+                {link.label}
+              </Text>
+            </Container>
+          ) : (
+            <Link className={css.breadcrumb} to={link.url || '/'}>
+              {link.iconProps && link.iconProps.name && (
+                <Icon size={16} padding={{ right: 'xsmall' }} {...link.iconProps} />
+              )}
+              <Text intent="primary" font={{ size: 'small' }}>
+                {link.label}
+              </Text>
+            </Link>
+          )}
+
           <Icon size={8} name="main-chevron-right" color="grey500" padding={{ right: 'xsmall', left: 'xsmall' }} />
         </Layout.Horizontal>
       ))}
