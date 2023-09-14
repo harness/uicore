@@ -14,7 +14,7 @@ import { Text } from '../Text/Text'
 import css from './Breadcrumbs.css'
 
 export interface Breadcrumb {
-  url?: string
+  url: string
   label: string
   iconProps?: IconProps
   onClick?: () => void
@@ -32,7 +32,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links = [], className 
           <Layout.Horizontal flex={{ align: 'center-center', justifyContent: 'flex-start' }} key={link.label}>
             {
               <Link
-                to={link.url || '/'}
+                to={link.url}
                 onClick={event => {
                   if (link.onClick) {
                     event.preventDefault()
