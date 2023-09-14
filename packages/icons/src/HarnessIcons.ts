@@ -313,6 +313,7 @@ import CodePullRequest from './code-pull-request.svg'
 import CodeQuote from './code-quote.svg'
 import CodeRejected from './code-rejected.svg'
 import CodeRepo from './code-repo.svg'
+import CodeSecret from './code-secret.svg'
 import CodeSettings from './code-settings.svg'
 import CodeTag from './code-tag.svg'
 import CodeWebhook from './code-webhook.svg'
@@ -1537,6 +1538,7 @@ type HarnessIconName =
   | 'code-quote'
   | 'code-rejected'
   | 'code-repo'
+  | 'code-secret'
   | 'code-settings'
   | 'code-tag'
   | 'code-webhook'
@@ -2761,6 +2763,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-quote': CodeQuote,
   'code-rejected': CodeRejected,
   'code-repo': CodeRepo,
+  'code-secret': CodeSecret,
   'code-settings': CodeSettings,
   'code-tag': CodeTag,
   'code-webhook': CodeWebhook,
