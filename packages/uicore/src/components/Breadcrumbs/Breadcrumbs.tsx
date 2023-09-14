@@ -26,12 +26,15 @@ export interface BreadcrumbsProps {
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links = [], className = '' }) => {
   return (
-    <Layout.Horizontal className={cx(css.breadcrumbs, className)}>
+    <Layout.Horizontal
+      flex={{ align: 'center-center', justifyContent: 'flex-start' }}
+      className={cx(css.breadcrumbs, className)}>
       {links.map((link: Breadcrumb) => {
         return (
           <Layout.Horizontal flex={{ align: 'center-center', justifyContent: 'flex-start' }} key={link.label}>
             <Link
               to={link.url}
+              className={css.breadcrumb}
               onClick={event => {
                 if (link.onClick) {
                   event.preventDefault()
