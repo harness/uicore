@@ -7,4 +7,9 @@
 
 .breadcrumbs {
   line-height: 18px;
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
