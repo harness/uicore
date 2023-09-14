@@ -30,24 +30,21 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links = [], className 
       {links.map((link: Breadcrumb) => {
         return (
           <Layout.Horizontal flex={{ align: 'center-center', justifyContent: 'flex-start' }} key={link.label}>
-            {
-              <Link
-                to={link.url}
-                onClick={event => {
-                  if (link.onClick) {
-                    event.preventDefault()
-                    link.onClick()
-                  }
-                }}>
-                {link.iconProps && link.iconProps.name && (
-                  <Icon size={16} padding={{ right: 'xsmall' }} {...link.iconProps} />
-                )}
-                <Text intent="primary" font={{ size: 'small' }}>
-                  {link.label}
-                </Text>
-              </Link>
-            }
-
+            <Link
+              to={link.url}
+              onClick={event => {
+                if (link.onClick) {
+                  event.preventDefault()
+                  link.onClick()
+                }
+              }}>
+              {link.iconProps && link.iconProps.name && (
+                <Icon size={16} padding={{ right: 'xsmall' }} {...link.iconProps} />
+              )}
+              <Text intent="primary" font={{ size: 'small' }}>
+                {link.label}
+              </Text>
+            </Link>
             <Icon size={8} name="main-chevron-right" color="grey500" padding={{ right: 'xsmall', left: 'xsmall' }} />
           </Layout.Horizontal>
         )
