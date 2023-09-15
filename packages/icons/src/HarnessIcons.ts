@@ -794,6 +794,7 @@ import NavSettings from './nav-settings.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
+import NavWorkspaces from './nav-workspaces.svg'
 import Network from './network.svg'
 import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
@@ -2018,6 +2019,7 @@ type HarnessIconName =
   | 'nav-user-profile-hover'
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
+  | 'nav-workspaces'
   | 'network'
   | 'new-artifact'
   | 'new-decoration'
@@ -3242,6 +3244,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-user-profile-hover': NavUserProfileHover,
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
+  'nav-workspaces': NavWorkspaces,
   network: Network,
   'new-artifact': NewArtifact,
   'new-decoration': NewDecoration,
