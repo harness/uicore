@@ -1208,6 +1208,7 @@ import TriggerStack from './trigger-stack.svg'
 import Union from './union.svg'
 import University from './university.svg'
 import Up from './up.svg'
+import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
 import UserGroups from './user-groups.svg'
@@ -2434,6 +2435,7 @@ type HarnessIconName =
   | 'union'
   | 'university'
   | 'up'
+  | 'update-app'
   | 'upgrade-bolt'
   | 'upload-box'
   | 'user-groups'
@@ -3660,6 +3662,7 @@ const HarnessIcons: KVO<ElementType> = {
   union: Union,
   university: University,
   up: Up,
+  'update-app': UpdateApp,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
   'user-groups': UserGroups,
