@@ -17,4 +17,5 @@
   padding-right: 35px;
   border-radius: var(--spacing-2);
   word-break: break-all;
+  white-space: pre;
 }
