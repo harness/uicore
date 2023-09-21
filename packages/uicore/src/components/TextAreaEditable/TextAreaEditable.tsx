@@ -169,7 +169,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
         {...rest}
         className={cx(css.editable, textAreaClassName)}
         ref={inputRef}
-        contentEditable={'plaintext-only' as any}
+        contentEditable={true}
         onKeyDown={this.handleKeyDown.bind(this)}
         dangerouslySetInnerHTML={{ __html: highlight(deserialize(value + ' ')) }}
       />
