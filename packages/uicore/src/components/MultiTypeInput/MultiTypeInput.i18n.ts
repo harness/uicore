@@ -9,6 +9,7 @@ export default {
   fixedValue: 'Fixed value',
   runtimeInput: 'Runtime input',
   expression: 'Expression',
+  executionTimeInput: 'Execution Input',
   regex: 'RegEx',
   learnMore: 'Learn More'
 }
