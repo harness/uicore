@@ -169,7 +169,11 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
         {...rest}
         className={cx(css.editable, textAreaClassName)}
         ref={inputRef}
-        contentEditable={'plaintext-only' as any}
+        /**
+         * https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable
+         * plaintext-only is not supported in firefox
+         */
+        contentEditable={true}
         onKeyDown={this.handleKeyDown.bind(this)}
         dangerouslySetInnerHTML={{ __html: highlight(deserialize(value + ' ')) }}
       />
