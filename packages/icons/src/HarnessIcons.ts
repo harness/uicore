@@ -442,6 +442,10 @@ import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
+import EcsServiceSetupInverse from './ecs-service-setup-inverse.svg'
+import EcsServiceSetup from './ecs-service-setup.svg'
+import EcsUpgradeContainersInverse from './ecs-upgrade-containers-inverse.svg'
+import EcsUpgradeContainers from './ecs-upgrade-containers.svg'
 import EemaDark from './eema-dark.svg'
 import EemaLight from './eema-light.svg'
 import EksInverse from './eks-inverse.svg'
@@ -1672,6 +1676,10 @@ type HarnessIconName =
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
   | 'ecr-step'
+  | 'ecs-service-setup-inverse'
+  | 'ecs-service-setup'
+  | 'ecs-upgrade-containers-inverse'
+  | 'ecs-upgrade-containers'
   | 'eema-dark'
   | 'eema-light'
   | 'eks-inverse'
@@ -2902,6 +2910,10 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
+  'ecs-service-setup-inverse': EcsServiceSetupInverse,
+  'ecs-service-setup': EcsServiceSetup,
+  'ecs-upgrade-containers-inverse': EcsUpgradeContainersInverse,
+  'ecs-upgrade-containers': EcsUpgradeContainers,
   'eema-dark': EemaDark,
   'eema-light': EemaLight,
   'eks-inverse': EksInverse,
