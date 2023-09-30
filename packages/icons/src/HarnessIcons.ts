@@ -1243,6 +1243,8 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
+import Policies from './policies.svg'
+import PolicySets from './policysets.svg'
 
 type HarnessIconName =
   | 'Account'
@@ -2477,6 +2479,8 @@ type HarnessIconName =
   | 'yaml-builder-trigger'
   | 'zoom-in'
   | 'zoom-out'
+  | 'policies'
+  | 'policySets'
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
@@ -3710,7 +3714,9 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut
+  'zoom-out': ZoomOut,
+  policies: Policies,
+  policysets: PolicySets
 }
 
 export { HarnessIcons, HarnessIconName }
