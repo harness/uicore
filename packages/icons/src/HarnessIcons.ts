@@ -855,6 +855,8 @@ import PluginCiStep from './plugin-ci-step.svg'
 import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
 import Pod from './pod.svg'
+import Policies from './policies.svg'
+import Policysets from './policysets.svg'
 import Polygon from './polygon.svg'
 import ProbeEot from './probe-EOT.svg'
 import ProbeSot from './probe-SOT.svg'
@@ -1243,8 +1245,6 @@ import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
-import Policies from './policies.svg'
-import PolicySets from './policysets.svg'
 
 type HarnessIconName =
   | 'Account'
@@ -2091,6 +2091,8 @@ type HarnessIconName =
   | 'plugin-inputs'
   | 'plugin-step'
   | 'pod'
+  | 'policies'
+  | 'policysets'
   | 'polygon'
   | 'probe-EOT'
   | 'probe-SOT'
@@ -2479,8 +2481,6 @@ type HarnessIconName =
   | 'yaml-builder-trigger'
   | 'zoom-in'
   | 'zoom-out'
-  | 'policies'
-  | 'policySets'
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
@@ -3327,6 +3327,8 @@ const HarnessIcons: KVO<ElementType> = {
   'plugin-inputs': PluginInputs,
   'plugin-step': PluginStep,
   pod: Pod,
+  policies: Policies,
+  policysets: Policysets,
   polygon: Polygon,
   'probe-EOT': ProbeEot,
   'probe-SOT': ProbeSot,
@@ -3714,9 +3716,7 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut,
-  policies: Policies,
-  policysets: PolicySets
+  'zoom-out': ZoomOut
 }
 
 export { HarnessIcons, HarnessIconName }
