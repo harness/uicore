@@ -857,6 +857,8 @@ import PluginCiStep from './plugin-ci-step.svg'
 import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
 import Pod from './pod.svg'
+import Policies from './policies.svg'
+import Policysets from './policysets.svg'
 import Polygon from './polygon.svg'
 import ProbeEot from './probe-EOT.svg'
 import ProbeSot from './probe-SOT.svg'
@@ -2093,6 +2095,8 @@ type HarnessIconName =
   | 'plugin-inputs'
   | 'plugin-step'
   | 'pod'
+  | 'policies'
+  | 'policysets'
   | 'polygon'
   | 'probe-EOT'
   | 'probe-SOT'
@@ -3329,6 +3333,8 @@ const HarnessIcons: KVO<ElementType> = {
   'plugin-inputs': PluginInputs,
   'plugin-step': PluginStep,
   pod: Pod,
+  policies: Policies,
+  policysets: Policysets,
   polygon: Polygon,
   'probe-EOT': ProbeEot,
   'probe-SOT': ProbeSot,
