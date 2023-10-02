@@ -55,6 +55,8 @@ import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import Ai from './ai.svg'
+import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
+import AnchoreGrype from './anchore-grype.svg'
 import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
@@ -1291,6 +1293,8 @@ type HarnessIconName =
   | 'adminRole'
   | 'advanced'
   | 'ai'
+  | 'anchore-grype-inverse'
+  | 'anchore-grype'
   | 'api-docs'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -2527,6 +2531,8 @@ const HarnessIcons: KVO<ElementType> = {
   adminRole: AdminRole,
   advanced: Advanced,
   ai: Ai,
+  'anchore-grype-inverse': AnchoreGrypeInverse,
+  'anchore-grype': AnchoreGrype,
   'api-docs': ApiDocs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
