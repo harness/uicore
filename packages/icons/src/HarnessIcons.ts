@@ -37,6 +37,7 @@ import SnykInverse from './Snyk-inverse.svg'
 import Snyk from './Snyk.svg'
 import SonarQubeInverse from './SonarQube-inverse.svg'
 import SonarQube from './SonarQube.svg'
+import SplitView from './SplitView.svg'
 import Stroke from './Stroke.svg'
 import TenableInverse from './Tenable-inverse.svg'
 import Tenable from './Tenable.svg'
@@ -1275,6 +1276,7 @@ type HarnessIconName =
   | 'Snyk'
   | 'SonarQube-inverse'
   | 'SonarQube'
+  | 'SplitView'
   | 'Stroke'
   | 'Tenable-inverse'
   | 'Tenable'
@@ -2513,6 +2515,7 @@ const HarnessIcons: KVO<ElementType> = {
   Snyk: Snyk,
   'SonarQube-inverse': SonarQubeInverse,
   SonarQube: SonarQube,
+  SplitView: SplitView,
   Stroke: Stroke,
   'Tenable-inverse': TenableInverse,
   Tenable: Tenable,
