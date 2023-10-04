@@ -619,6 +619,7 @@ import IacmGrey from './iacm-grey.svg'
 import IacmResourceAdded from './iacm-resource-added.svg'
 import IacmResourceChanged from './iacm-resource-changed.svg'
 import IacmResourceDeleted from './iacm-resource-deleted.svg'
+import IacmResourceUnchanged from './iacm-resource-unchanged.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
 import Iacm from './iacm.svg'
 import Idp from './idp.svg'
@@ -1858,6 +1859,7 @@ type HarnessIconName =
   | 'iacm-resource-added'
   | 'iacm-resource-changed'
   | 'iacm-resource-deleted'
+  | 'iacm-resource-unchanged'
   | 'iacm-terraform-step'
   | 'iacm'
   | 'idp'
@@ -3097,6 +3099,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-resource-added': IacmResourceAdded,
   'iacm-resource-changed': IacmResourceChanged,
   'iacm-resource-deleted': IacmResourceDeleted,
+  'iacm-resource-unchanged': IacmResourceUnchanged,
   'iacm-terraform-step': IacmTerraformStep,
   iacm: Iacm,
   idp: Idp,
