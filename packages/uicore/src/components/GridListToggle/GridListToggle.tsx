@@ -82,7 +82,7 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
             css.splitButton
           )}
           minimal
-          icon={icons?.right ?? 'SplitView'}
+          icon={'SplitView'}
           iconProps={{ size: 20 }}
           intent={selectedView === Views.SPLIT_VIEW ? 'primary' : undefined}
           onClick={() => {
