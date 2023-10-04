@@ -14,7 +14,8 @@ import css from './GridListToggle.css'
 
 export enum Views {
   LIST = 'LIST',
-  GRID = 'GRID'
+  GRID = 'GRID',
+  SPLIT_VIEW = 'SPLIT_VIEW'
 }
 
 export interface GridListToggleProps {
@@ -24,10 +25,11 @@ export interface GridListToggleProps {
     left?: IconName
     right?: IconName
   }
+  splitView?: boolean
 }
 
 export function GridListToggle(props: GridListToggleProps): JSX.Element {
-  const { initialSelectedView, onViewToggle, icons } = props
+  const { initialSelectedView, onViewToggle, icons, splitView } = props
   const [selectedView, setSelectedView] = React.useState<Views>(initialSelectedView || Views.GRID)
 
   React.useEffect(() => {
@@ -58,7 +60,8 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
           {
             [css.listUnselected]: selectedView === Views.GRID
           },
-          css.listButton
+          css.listButton,
+          css.gridButton
         )}
         minimal
         icon={icons?.right ?? 'list'}
@@ -70,6 +73,26 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
         data-testid="list-view"
         data-tooltip-id="list-view"
       />
+      {splitView && (
+        <Button
+          className={cx(
+            {
+              [css.listUnselected]: selectedView === Views.SPLIT_VIEW
+            },
+            css.splitButton
+          )}
+          minimal
+          icon={'SplitView'}
+          iconProps={{ size: 20 }}
+          intent={selectedView === Views.SPLIT_VIEW ? 'primary' : undefined}
+          onClick={() => {
+            setSelectedView(Views.SPLIT_VIEW)
+            onViewToggle?.(Views.SPLIT_VIEW)
+          }}
+          data-testid="split-view"
+          data-tooltip-id="split-view"
+        />
+      )}
     </Layout.Horizontal>
   )
 }
