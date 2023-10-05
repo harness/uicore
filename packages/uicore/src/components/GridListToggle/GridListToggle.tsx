@@ -41,7 +41,7 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
       <Button
         className={cx(
           {
-            [css.gridUnselected]: selectedView === Views.LIST
+            [css.gridUnselected]: selectedView !== Views.GRID
           },
           css.gridButton
         )}
@@ -58,10 +58,9 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
       <Button
         className={cx(
           {
-            [css.listUnselected]: selectedView === Views.GRID
+            [css.listUnselected]: selectedView !== Views.LIST
           },
-          css.listButton,
-          css.gridButton
+          css.listButton
         )}
         minimal
         icon={icons?.right ?? 'list'}
@@ -77,7 +76,7 @@ export function GridListToggle(props: GridListToggleProps): JSX.Element {
         <Button
           className={cx(
             {
-              [css.listUnselected]: selectedView === Views.SPLIT_VIEW
+              [css.splitUnselected]: selectedView !== Views.SPLIT_VIEW
             },
             css.splitButton
           )}

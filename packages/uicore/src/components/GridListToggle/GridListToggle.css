@@ -19,10 +19,22 @@
   }
 }
 
+.splitUnselected {
+  box-shadow: none !important;
+  &:hover {
+    color: var(--primary-6) !important;
+  }
+}
+
 .gridButton,
-.splitButton,
 .listButton {
   padding-left: 0px !important;
+  padding-right: 0px !important;
+  min-width: 24px;
+}
+
+.splitButton {
+  padding-left: var(--spacing-small) !important;
   padding-right: 0px !important;
   min-width: 24px;
 }
