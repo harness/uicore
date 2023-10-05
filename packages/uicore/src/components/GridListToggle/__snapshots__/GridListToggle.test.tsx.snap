@@ -32,7 +32,7 @@ exports[`GridListToggle test When no props are passed By default Grid view shoul
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton gridButton with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
@@ -93,7 +93,7 @@ exports[`GridListToggle test When props are passed - initialSelectedView: GRID B
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton gridButton with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
@@ -154,7 +154,7 @@ exports[`GridListToggle test When props are passed - initialSelectedView: LIST B
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listButton gridButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
+      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
