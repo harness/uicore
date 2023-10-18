@@ -529,6 +529,7 @@ import FsRootFolder from './fs-root-folder.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
+import GarStepInverse from './gar-step-inverse.svg'
 import GarStep from './gar-step.svg'
 import GcpEngine from './gcp-engine.svg'
 import GcpKms from './gcp-kms.svg'
@@ -1777,6 +1778,7 @@ type HarnessIconName =
   | 'full-screen-exit'
   | 'full-screen'
   | 'functions'
+  | 'gar-step-inverse'
   | 'gar-step'
   | 'gcp-engine'
   | 'gcp-kms'
@@ -3025,6 +3027,7 @@ const HarnessIcons: KVO<ElementType> = {
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
   functions: Functions,
+  'gar-step-inverse': GarStepInverse,
   'gar-step': GarStep,
   'gcp-engine': GcpEngine,
   'gcp-kms': GcpKms,
