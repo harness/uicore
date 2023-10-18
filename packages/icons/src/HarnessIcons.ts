@@ -623,6 +623,13 @@ import IacmResourceDeleted from './iacm-resource-deleted.svg'
 import IacmResourceUnchanged from './iacm-resource-unchanged.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
 import Iacm from './iacm.svg'
+import IdpNavAllowlist from './idp-nav-allowlist.svg'
+import IdpNavConnectors from './idp-nav-connectors.svg'
+import IdpNavLayout from './idp-nav-layout.svg'
+import IdpNavOauth from './idp-nav-oauth.svg'
+import IdpNavPluginconfig from './idp-nav-pluginconfig.svg'
+import IdpNavPlugins from './idp-nav-plugins.svg'
+import IdpNavScorecards from './idp-nav-scorecards.svg'
 import Idp from './idp.svg'
 import IgnoreFailedSquare from './ignore-failed-square.svg'
 import IgnoreList from './ignore-list.svg'
@@ -1864,6 +1871,13 @@ type HarnessIconName =
   | 'iacm-resource-unchanged'
   | 'iacm-terraform-step'
   | 'iacm'
+  | 'idp-nav-allowlist'
+  | 'idp-nav-connectors'
+  | 'idp-nav-layout'
+  | 'idp-nav-oauth'
+  | 'idp-nav-pluginconfig'
+  | 'idp-nav-plugins'
+  | 'idp-nav-scorecards'
   | 'idp'
   | 'ignore-failed-square'
   | 'ignore-list'
@@ -3105,6 +3119,13 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-resource-unchanged': IacmResourceUnchanged,
   'iacm-terraform-step': IacmTerraformStep,
   iacm: Iacm,
+  'idp-nav-allowlist': IdpNavAllowlist,
+  'idp-nav-connectors': IdpNavConnectors,
+  'idp-nav-layout': IdpNavLayout,
+  'idp-nav-oauth': IdpNavOauth,
+  'idp-nav-pluginconfig': IdpNavPluginconfig,
+  'idp-nav-plugins': IdpNavPlugins,
+  'idp-nav-scorecards': IdpNavScorecards,
   idp: Idp,
   'ignore-failed-square': IgnoreFailedSquare,
   'ignore-list': IgnoreList,
