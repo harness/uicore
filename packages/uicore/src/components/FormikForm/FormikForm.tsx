@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { ReactNode, useCallback, useMemo } from 'react'
+import React, { ReactNode, useCallback, useMemo, useState, useRef } from 'react'
 import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikHelpers } from 'formik'
 import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
 import {
@@ -13,7 +13,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { IconName, TagInput as BPTagInput } from '@blueprintjs/core'
+import { IconName, TagInput as BPTagInput, Popover, MenuItem, Menu, Position } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
@@ -32,7 +32,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { compact, defaultTo, get, isNil, omit } from 'lodash-es'
+import { compact, defaultTo, get, isNil, omit, uniq } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -160,9 +160,56 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
     label,
     ...rest
   } = restProps
+  const { separator = /[,\n\r]/ } = tagsProps ?? {}
   const [mentionsType] = React.useState(`kv-tag-input-${name}`)
 
   const fieldValue = get(formik?.values, name)
+
+  const inputRef = useRef<HTMLInputElement | null>(null)
+  const [inputValue, setInputValue] = useState('')
+  const trimmedInputValue = useMemo(() => inputValue.trim(), [inputValue])
+  const showCreatePopover = !!trimmedInputValue
+
+  const popoverContent = (
+    <Menu>
+      <MenuItem
+        icon="add"
+        active
+        text={`Create "${trimmedInputValue}"`}
+        onClick={() => {
+          inputRef.current?.focus()
+
+          if (!trimmedInputValue) {
+            return
+          }
+
+          // Ignore `separator` if it is strictly false.
+          const tagsToAdd = separator === false ? [trimmedInputValue] : trimmedInputValue.split(separator)
+          const isValid = tagsProps?.onAdd?.(tagsToAdd, 'default') ?? true
+
+          if (!isValid) {
+            return
+          }
+
+          const values = isArray
+            ? uniq([...(fieldValue ?? []), ...tagsToAdd])
+            : tagsToAdd.reduce(
+                (acc, tag) => {
+                  const [k, v] = tag.split(':')
+                  acc[k] = v?.trim() || ''
+                  return acc
+                },
+                { ...(fieldValue ?? {}) }
+              )
+
+          setInputValue('')
+          formik?.setFieldTouched(name, true, false)
+          formik?.setFieldValue(name, values)
+          props.onChange?.(values)
+        }}
+      />
+    </Menu>
+  )
 
   return (
     <FormGroup
@@ -173,42 +220,65 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
       disabled={disabled}
       inline={inline}
       {...rest}>
-      <BPTagInput
-        values={
-          isArray
-            ? fieldValue || []
-            : Object.keys(fieldValue || {}).map(key => {
-                const value = fieldValue[key]
-                return value ? `${key}:${value}` : key
-              })
-        }
-        onChange={(changed: unknown) => {
-          const values: string[] = changed as string[]
-          formik?.setFieldTouched(name, true, false)
-          formik?.setFieldValue(
-            name,
+      <Popover
+        position={Position.BOTTOM_LEFT}
+        fill
+        minimal
+        disabled={disabled}
+        isOpen={showCreatePopover}
+        content={popoverContent}>
+        <BPTagInput
+          values={
             isArray
-              ? values
-              : values?.reduce((acc, tag) => {
-                  const parts = tag.split(':')
-                  acc[parts[0]] = parts[1]?.trim() || ''
-                  return acc
-                }, {} as KVAccumulator) || {}
-          )
-          props.onChange?.(values)
-        }}
-        inputRef={input => {
-          input?.setAttribute('data-mentions', mentionsType)
-        }}
-        onKeyDown={(event: React.KeyboardEvent) => {
-          if (event.keyCode === 13) {
-            event.preventDefault()
-            event.stopPropagation()
+              ? fieldValue || []
+              : Object.keys(fieldValue || {}).map(key => {
+                  const value = fieldValue[key]
+                  return value ? `${key}:${value}` : key
+                })
           }
-        }}
-        placeholder="Type and press enter to create a tag"
-        {...tagsProps}
-      />
+          onChange={(changed: unknown) => {
+            const values: string[] = changed as string[]
+            formik?.setFieldTouched(name, true, false)
+            formik?.setFieldValue(
+              name,
+              isArray
+                ? uniq(values)
+                : values?.reduce((acc, tag) => {
+                    const parts = tag.split(':')
+                    acc[parts[0]] = parts[1]?.trim() || ''
+                    return acc
+                  }, {} as KVAccumulator) || {}
+            )
+            props.onChange?.(values)
+          }}
+          inputRef={input => {
+            input?.setAttribute('data-mentions', mentionsType)
+            inputRef.current = input
+          }}
+          onKeyDown={(event: React.KeyboardEvent) => {
+            if (event.keyCode === 13) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+          }}
+          placeholder="Type and press enter to create a tag"
+          {...tagsProps}
+          inputValue={inputValue}
+          onInputChange={e => {
+            setInputValue(e.currentTarget.value)
+            tagsProps?.onInputChange?.(e)
+          }}
+          onAdd={(values, method) => {
+            const isValid = tagsProps?.onAdd?.(values, method) ?? true
+
+            if (isValid) {
+              setInputValue('')
+            }
+
+            return isValid
+          }}
+        />
+      </Popover>
     </FormGroup>
   )
 }
