@@ -110,8 +110,9 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
 
   // to filter out the options based on search
   const filterItems = (itemsToRender: SelectOption[]) => {
-    if (query.trim().length === 0) return itemsToRender
-    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()))
+    const searchValue = query.trim().toLocaleLowerCase()
+    if (searchValue.length === 0) return itemsToRender
+    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
   }
 
   function handleItemSelect(item: MultiSelectOption): void {
