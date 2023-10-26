@@ -49,7 +49,7 @@ export interface MultiSelectDropDownProps
   iconProps?: Partial<IconProps>
   placeholder?: string
   hideItemCount?: boolean
-  hideSearchInput?: boolean
+  allowSearch?: boolean
   onPopoverClose?(opts: MultiSelectOption[]): void
 }
 
@@ -74,7 +74,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     isLabel,
     disabled,
     hideItemCount,
-    hideSearchInput = true,
+    allowSearch = false,
     onPopoverClose,
     ...rest
   } = props
@@ -110,8 +110,8 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
 
   // to filter out the options based on search
   const filterItems = (itemsToRender: SelectOption[]) => {
-    if (query.length === 0) return itemsToRender
-    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+    if (query.trim().length === 0) return itemsToRender
+    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()))
   }
 
   function handleItemSelect(item: MultiSelectOption): void {
@@ -188,7 +188,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           <Icon name="main-chevron-down" size={8} color={Color.GREY_400} />
         </Layout.Horizontal>
         <React.Fragment>
-          {!hideSearchInput && <ExpandingSearchInputWithRef onChange={setQuery} alwaysExpanded />}
+          {allowSearch && <ExpandingSearchInputWithRef onChange={setQuery} alwaysExpanded />}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
                 className: css.menu
