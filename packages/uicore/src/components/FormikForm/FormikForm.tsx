@@ -901,7 +901,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
         disabled={disabled}
         placeholder={placeholder}
         onBlur={() => formik?.setFieldTouched(name, true, false)}
-        value={get(formik?.values, name)}
+        value={get(formik?.values, name) ?? ''}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
