@@ -388,7 +388,7 @@ function MultiTextInputFixedTypeComponent(props: FixedTypeComponentProps & Multi
     <InputGroup
       className={css.input}
       {...rest}
-      value={value as string}
+      value={(value as string) ?? ''}
       disabled={disabled}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(event.target.value, MultiTypeInputValue.STRING, MultiTypeInputType.FIXED)
