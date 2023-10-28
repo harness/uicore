@@ -32,7 +32,7 @@ import {
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
-import { compact, defaultTo, get, isNil, omit, uniq } from 'lodash-es'
+import { defaultTo, get, isNil, omit, uniq } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
 import i18n from './FormikForm.i18n'
@@ -901,7 +901,7 @@ const TextArea = (props: TextAreaProps & FormikContextProps<any>) => {
         disabled={disabled}
         placeholder={placeholder}
         onBlur={() => formik?.setFieldTouched(name, true, false)}
-        value={get(formik?.values, name)}
+        value={get(formik?.values, name) ?? ''}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
           formik?.setFieldValue(name, e.currentTarget.value)
           onChange?.(e)
@@ -1226,14 +1226,12 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
     ...rest
   } = restProps
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+
   let value = get(formik?.values, name)
   if (useValue && getMultiTypeFromValue(value) === MultiTypeInputType.FIXED) {
-    value = compact(
-      value.map((val: string) => {
-        return selectItems.filter(item => item.value === val)
-      })
-    )
+    value = Array.isArray(value) ? selectItems.filter(item => value.includes(item.value)) : []
   }
+
   return (
     <FormGroup
       label={getFormFieldLabel(label, name, props)}

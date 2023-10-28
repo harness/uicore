@@ -25,6 +25,7 @@ import { Text } from '../Text/Text'
 import { StyledProps } from '@harness/design-system'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { SelectOption } from '../Select/Select'
+import { ExpandingSearchInputWithRef } from '../ExpandingSearchInput/ExpandingSearchInput'
 
 type Props = IQueryListProps<MultiSelectOption>
 
@@ -48,6 +49,7 @@ export interface MultiSelectDropDownProps
   iconProps?: Partial<IconProps>
   placeholder?: string
   hideItemCount?: boolean
+  allowSearch?: boolean
   onPopoverClose?(opts: MultiSelectOption[]): void
 }
 
@@ -72,9 +74,11 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     isLabel,
     disabled,
     hideItemCount,
+    allowSearch = false,
     onPopoverClose,
     ...rest
   } = props
+  const [query, setQuery] = React.useState<string>('')
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>([])
   const [dropDownItems, setDropDownItems] = React.useState<MultiSelectOption[]>([])
   const [loading, setLoading] = React.useState<boolean>(false)
@@ -104,6 +108,13 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     }
   }, [value])
 
+  // to filter out the options based on search
+  const filterItems = (itemsToRender: SelectOption[]) => {
+    const searchValue = query.trim().toLocaleLowerCase()
+    if (searchValue.length === 0) return itemsToRender
+    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
+  }
+
   function handleItemSelect(item: MultiSelectOption): void {
     const index = selectedItems.findIndex(opt => opt.value === item.value)
 
@@ -123,7 +134,9 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
         </li>
       )
     } else if (itemsToRender.length > 0) {
-      renderedItems = itemsToRender.map(renderItem).filter(item => item !== null)
+      renderedItems = filterItems(itemsToRender)
+        .map(renderItem)
+        .filter(item => item !== null)
     } else {
       renderedItems = <NoMatch />
     }
@@ -176,6 +189,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           <Icon name="main-chevron-down" size={8} color={Color.GREY_400} />
         </Layout.Horizontal>
         <React.Fragment>
+          {allowSearch && <ExpandingSearchInputWithRef onChange={setQuery} alwaysExpanded />}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
                 className: css.menu
