@@ -36,7 +36,7 @@ export const getStateByStatus = (
     case StepStatus.INCONCLUSIVE:
     default:
       return {
-        icon: DefaultState.icon as IconName,
+        icon: DefaultState.icon,
         cursor: DefaultState.cursor,
         iconColor: DefaultState.iconColor,
         labelColor: DefaultState.labelColor
