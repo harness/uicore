@@ -868,6 +868,7 @@ import PluginCiStepInverse from './plugin-ci-step-inverse.svg'
 import PluginCiStep from './plugin-ci-step.svg'
 import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
+import PodWithbg from './pod-withbg.svg'
 import Pod from './pod.svg'
 import Policies from './policies.svg'
 import Policysets from './policysets.svg'
@@ -2118,6 +2119,7 @@ type HarnessIconName =
   | 'plugin-ci-step'
   | 'plugin-inputs'
   | 'plugin-step'
+  | 'pod-withbg'
   | 'pod'
   | 'policies'
   | 'policysets'
@@ -3368,6 +3370,7 @@ const HarnessIcons: KVO<ElementType> = {
   'plugin-ci-step': PluginCiStep,
   'plugin-inputs': PluginInputs,
   'plugin-step': PluginStep,
+  'pod-withbg': PodWithbg,
   pod: Pod,
   policies: Policies,
   policysets: Policysets,
