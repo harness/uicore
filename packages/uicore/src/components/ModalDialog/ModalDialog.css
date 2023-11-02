@@ -22,14 +22,19 @@
     'footer';
 }
 
-.overlayContainer {
-  overflow: auto;
-  pointer-events: none;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
+.spinnerContainer {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .noHeader.noFooter .body {

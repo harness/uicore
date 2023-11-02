@@ -6,12 +6,11 @@
  */
 
 import React, { FC, ReactNode, useCallback, useEffect, useRef, useState, useMemo } from 'react'
-import { Dialog, IDialogProps } from '@blueprintjs/core'
+import { Dialog, IDialogProps, Spinner } from '@blueprintjs/core'
 import cx from 'classnames'
 import { isFunction } from 'lodash-es'
 import { FontVariation } from '@harnessio/design-system'
 import { Heading } from '../Heading/Heading'
-import { OverlaySpinner } from '../OverlaySpinner/OverlaySpinner'
 import { Button, ButtonVariation } from '../Button/Button'
 
 import css from './ModalDialog.css'
@@ -199,12 +198,11 @@ export const ModalDialog: FC<ModalDialogProps> = ({
       className={cx(className, css.container, ...modifiers)}
       style={style}
       {...dialogProps}>
-      {showOverlay ? (
-        <OverlaySpinner className={css.overlayContainer} show={true}>
-          {modalContent}
-        </OverlaySpinner>
-      ) : (
-        modalContent
+      {modalContent}
+      {showOverlay && (
+        <div className={css.spinnerContainer}>
+          <Spinner />
+        </div>
       )}
     </Dialog>
   )
