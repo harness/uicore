@@ -631,6 +631,7 @@ import IdpNavOauth from './idp-nav-oauth.svg'
 import IdpNavPluginconfig from './idp-nav-pluginconfig.svg'
 import IdpNavPlugins from './idp-nav-plugins.svg'
 import IdpNavScorecards from './idp-nav-scorecards.svg'
+import IdpStageHover from './idp-stage-hover.svg'
 import Idp from './idp.svg'
 import IgnoreFailedSquare from './ignore-failed-square.svg'
 import IgnoreList from './ignore-list.svg'
@@ -1882,6 +1883,7 @@ type HarnessIconName =
   | 'idp-nav-pluginconfig'
   | 'idp-nav-plugins'
   | 'idp-nav-scorecards'
+  | 'idp-stage-hover'
   | 'idp'
   | 'ignore-failed-square'
   | 'ignore-list'
@@ -3133,6 +3135,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-nav-pluginconfig': IdpNavPluginconfig,
   'idp-nav-plugins': IdpNavPlugins,
   'idp-nav-scorecards': IdpNavScorecards,
+  'idp-stage-hover': IdpStageHover,
   idp: Idp,
   'ignore-failed-square': IgnoreFailedSquare,
   'ignore-list': IgnoreList,
