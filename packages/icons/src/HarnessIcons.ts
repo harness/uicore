@@ -1012,6 +1012,7 @@ import ServerlessAwsLambdaPrepareRollback from './serverless-aws-lambda-prepare-
 import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollback-v2-inverse.svg'
 import ServerlessAwsLambdaRollbackV2 from './serverless-aws-lambda-rollback-v2.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
+import ServiceAccounts from './service-accounts.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAmi from './service-ami.svg'
 import ServiceAnsible from './service-ansible.svg'
@@ -1147,6 +1148,7 @@ import StoColorFilled from './sto-color-filled.svg'
 import StoGrey from './sto-grey.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
+import Subscriptions from './subscriptions.svg'
 import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
@@ -2264,6 +2266,7 @@ type HarnessIconName =
   | 'serverless-aws-lambda-rollback-v2-inverse'
   | 'serverless-aws-lambda-rollback-v2'
   | 'serverless-deploy-step'
+  | 'service-accounts'
   | 'service-amazon-ecs'
   | 'service-ami'
   | 'service-ansible'
@@ -2399,6 +2402,7 @@ type HarnessIconName =
   | 'sto-grey'
   | 'sto-with-dark-text'
   | 'sto-with-text'
+  | 'subscriptions'
   | 'success-tick'
   | 'support-account'
   | 'support-api'
@@ -3516,6 +3520,7 @@ const HarnessIcons: KVO<ElementType> = {
   'serverless-aws-lambda-rollback-v2-inverse': ServerlessAwsLambdaRollbackV2Inverse,
   'serverless-aws-lambda-rollback-v2': ServerlessAwsLambdaRollbackV2,
   'serverless-deploy-step': ServerlessDeployStep,
+  'service-accounts': ServiceAccounts,
   'service-amazon-ecs': ServiceAmazonEcs,
   'service-ami': ServiceAmi,
   'service-ansible': ServiceAnsible,
@@ -3651,6 +3656,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-grey': StoGrey,
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
+  subscriptions: Subscriptions,
   'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
