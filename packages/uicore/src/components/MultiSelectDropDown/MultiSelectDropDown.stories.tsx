@@ -65,6 +65,9 @@ export const Basic: Story<MultiSelectDropDownProps> = args => {
         onChange={items => {
           setValue(items)
         }}
+        customItemRender={() => {
+          return <div>AgentId: test Agent</div>
+        }}
         {...argsCopy}
       />
     </Layout.Horizontal>

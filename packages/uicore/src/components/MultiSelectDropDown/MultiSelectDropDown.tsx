@@ -51,6 +51,7 @@ export interface MultiSelectDropDownProps
   hideItemCount?: boolean
   allowSearch?: boolean
   onPopoverClose?(opts: MultiSelectOption[]): void
+  customItemRender?: () => JSX.Element
 }
 
 /**
@@ -76,6 +77,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     hideItemCount,
     allowSearch = false,
     onPopoverClose,
+    customItemRender,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -204,20 +206,26 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     const { handleClick, modifiers } = itemProps
     const isSelected = value && value.findIndex(val => val.value === item.value) > -1
     return (
-      <Checkbox
-        key={item.value.toString()}
-        className={cx(css.menuItem, {
-          [css.active]: isSelected,
-          [css.disabled]: modifiers.disabled || item.disabled
-        })}
-        onClick={e => {
-          if (!modifiers.disabled && !item.disabled) {
-            handleClick(e)
+      <div style={{ marginBottom: '5px' }}>
+        <Checkbox
+          key={item.value.toString()}
+          className={cx(css.menuItem, {
+            [css.active]: isSelected,
+            [css.disabled]: modifiers.disabled || item.disabled
+          })}
+          onClick={e => {
+            if (!modifiers.disabled && !item.disabled) {
+              handleClick(e)
+            }
+          }}
+          checked={isSelected}
+          labelElement={
+            <Layout.Vertical>
+              {item.label} {customItemRender ? customItemRender() : null}
+            </Layout.Vertical>
           }
-        }}
-        checked={isSelected}
-        label={item.label}
-      />
+        />
+      </div>
     )
   }
 
