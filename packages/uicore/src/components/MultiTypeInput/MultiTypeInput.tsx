@@ -65,6 +65,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   newExpressionComponent?: boolean
   textAreaInputClassName?: string
   expressionPlaceHolder?: string
+  customItemRender?: (item: MultiSelectOption) => JSX.Element
 }
 
 export interface FixedTypeComponentProps {

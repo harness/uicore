@@ -51,7 +51,7 @@ export interface MultiSelectDropDownProps
   hideItemCount?: boolean
   allowSearch?: boolean
   onPopoverClose?(opts: MultiSelectOption[]): void
-  customItemRender?: () => JSX.Element
+  customItemRender?: (item: MultiSelectOption) => JSX.Element
 }
 
 /**
@@ -221,7 +221,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           checked={isSelected}
           labelElement={
             <Layout.Vertical>
-              {item.label} {customItemRender ? customItemRender() : null}
+              {item.label} {customItemRender ? customItemRender(item) : null}
             </Layout.Vertical>
           }
         />

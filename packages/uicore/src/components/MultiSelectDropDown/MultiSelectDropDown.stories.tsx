@@ -65,8 +65,8 @@ export const Basic: Story<MultiSelectDropDownProps> = args => {
         onChange={items => {
           setValue(items)
         }}
-        customItemRender={() => {
-          return <div>AgentId: test Agent</div>
+        customItemRender={item => {
+          return <div>agentId: {item.value}</div>
         }}
         {...argsCopy}
       />
