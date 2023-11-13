@@ -282,6 +282,7 @@ import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
 import CloudFormationRollback from './cloud-formation-rollback.svg'
+import CloudFoundry from './cloud-foundry.svg'
 import CloudFunctionNoTrafficShift from './cloud-function-no-traffic-shift.svg'
 import CloudFunctionRollback from './cloud-function-rollback.svg'
 import CloudFunctionTrafficShift from './cloud-function-traffic-shift.svg'
@@ -1538,6 +1539,7 @@ type HarnessIconName =
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
   | 'cloud-formation-rollback'
+  | 'cloud-foundry'
   | 'cloud-function-no-traffic-shift'
   | 'cloud-function-rollback'
   | 'cloud-function-traffic-shift'
@@ -2794,6 +2796,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
   'cloud-formation-rollback': CloudFormationRollback,
+  'cloud-foundry': CloudFoundry,
   'cloud-function-no-traffic-shift': CloudFunctionNoTrafficShift,
   'cloud-function-rollback': CloudFunctionRollback,
   'cloud-function-traffic-shift': CloudFunctionTrafficShift,
