@@ -15,10 +15,15 @@ export const getTitleStatus = ({
   stepId,
   isCurrentStep,
   isStepValid,
-  currentStepStatus
-}: GetTitleStatusProps): StepStatusType =>
-  runValidationOnMount
+  currentStepStatus,
+  isDisabled
+}: GetTitleStatusProps): StepStatusType => {
+  if (isDisabled) {
+    return StepStatus.DISABLED
+  }
+  return runValidationOnMount
     ? getStepStatus(!!isStepValid?.(stepId))
-    : isCurrentStep && currentStepStatus !== StepStatus.INCONCLUSIVE
+    : isCurrentStep && ![StepStatus.INCONCLUSIVE, StepStatus.DISABLED].includes(currentStepStatus as StepStatus)
     ? getStepStatus(!!isStepValid?.(stepId))
     : currentStepStatus
+}

@@ -94,6 +94,7 @@ export { Card, CardProps, CardBody } from './components/Card/Card'
 export { CardSelect, CardSelectProps, CardSelectType } from './components/CardSelect/CardSelect'
 export { CodeBlock } from './components/CodeBlock/CodeBlock'
 export { StatusBar, StatusBarProps } from './components/StatusBar/StatusBar'
+export { Stepper } from './components/Stepper'
 export { MultiLevelSelect } from './components/MultiLevelSelect/MultiLevelSelect'
 export {
   StackTraceList,

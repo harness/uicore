@@ -58,7 +58,12 @@ export const Basic: Story<StepperProps> = args => {
   )
 }
 export const StepperWithAllValidSteps: Story<StepperProps> = args => {
-  const { id = 'createSLOTabs', isStepValid = () => true, runValidationOnMount = false, stepList = StepList } = args
+  const stepArr = [...StepList]
+  stepArr[1] = {
+    ...stepArr[1],
+    disabled: true
+  } as any
+  const { id = 'createSLOTabs', isStepValid = () => true, runValidationOnMount = false, stepList = stepArr } = args
   const argsCopy = omit(args, ['id', 'isStepValid', 'runValidationOnMount', 'stepList'])
   return (
     <Stepper
@@ -86,14 +91,19 @@ export const ValidateStepOnNext: Story<StepperProps> = args => {
 }
 
 export const ValidateAllStepsOnMount: Story<StepperProps> = args => {
-  const { id = 'createSLOTabs', isStepValid = () => false, runValidationOnMount = true, stepList = StepList } = args
+  const { id = 'createSLOTabs', isStepValid = () => false, runValidationOnMount = true } = args
   const argsCopy = omit(args, ['id', 'isStepValid', 'runValidationOnMount', 'stepList'])
+  const stepArr = [...StepList]
+  stepArr[1] = {
+    ...stepArr[1],
+    disabled: true
+  } as any
   return (
     <Stepper
       id={id}
       isStepValid={isStepValid}
       runValidationOnMount={runValidationOnMount}
-      stepList={stepList}
+      stepList={stepArr}
       {...argsCopy}
     />
   )

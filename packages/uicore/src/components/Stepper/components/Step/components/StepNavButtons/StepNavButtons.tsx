@@ -14,7 +14,9 @@ export const StepNavButtons = ({
   isLastStep,
   onContinue,
   nextButtonTitle,
-  disableNext
+  disableNext,
+  isNextStepDisabled,
+  isPreviousStepDisabled
 }: StepNavButtonsInterface): JSX.Element => {
   return (
     <Layout.Horizontal spacing="small" padding={{ top: 'xlarge' }}>
@@ -22,7 +24,7 @@ export const StepNavButtons = ({
         <Button
           data-testid="backButton"
           variation={ButtonVariation.SECONDARY}
-          onClick={() => onContinue(index - 1, true)}
+          onClick={() => onContinue(isPreviousStepDisabled ? index - 2 : index - 1, true)}
           icon={'chevron-left'}>
           Back
         </Button>
@@ -32,7 +34,7 @@ export const StepNavButtons = ({
           data-testid="nextButton"
           variation={ButtonVariation.PRIMARY}
           text={nextButtonTitle ? nextButtonTitle : 'Next'}
-          onClick={() => onContinue(index + 1)}
+          onClick={() => onContinue(isNextStepDisabled ? index + 2 : index + 1)}
           rightIcon={'chevron-right'}
           disabled={disableNext?.()}
         />
