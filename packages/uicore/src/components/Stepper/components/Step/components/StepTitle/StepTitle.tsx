@@ -12,9 +12,9 @@ import { Icon } from '@harness/icons'
 import { FontVariation } from '@harness/design-system'
 import type { StepTitleInterface } from './StepTitle.types'
 import { getStateByStatus } from './StepTitle.utils'
-import { StepStatus } from '../../Step.constants'
+import { StepStatus, neutralStepStatusList } from '../../Step.constants'
 import { Text, Layout } from '../../../../../../'
-import css from './StepTitle.module.css'
+import css from './StepTitle.css'
 
 export const StepTitle = ({
   step,
@@ -25,8 +25,11 @@ export const StepTitle = ({
   isOptional,
   hideTitle
 }: StepTitleInterface): JSX.Element => {
-  const isErrorOrSuccess = stepStatus !== StepStatus.INCONCLUSIVE
+  const { disabled } = step
+  const isDisabled = disabled
+  const isErrorOrSuccess = !neutralStepStatusList.includes(stepStatus as StepStatus)
   const { icon, labelColor, iconColor, cursor } = getStateByStatus(stepStatus)
+
   return (
     <Layout.Vertical spacing="small">
       <Layout.Horizontal
@@ -35,7 +38,7 @@ export const StepTitle = ({
         key={`${step.id}_horizontal`}
         onClick={() => (isErrorOrSuccess ? onClick(index) : noop)}
         flex={{ alignItems: 'center', justifyContent: 'start' }}>
-        {isCurrent ? (
+        {isCurrent && !isDisabled ? (
           <Icon
             name={isErrorOrSuccess ? icon : 'Edit'}
             size={isErrorOrSuccess ? 20 : 16}
