@@ -59,7 +59,7 @@ export const StepTitle = ({
         )}
         {!hideTitle && (
           <Text font={{ variation: FontVariation.H5 }} color={labelColor}>
-            {step.title} {isOptional && '(Optional)'} {isDisabled && '(Disabled)'}
+            {step.title} {isOptional && '(Optional)'}
           </Text>
         )}
       </Layout.Horizontal>
