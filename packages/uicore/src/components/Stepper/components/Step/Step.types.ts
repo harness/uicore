@@ -28,4 +28,5 @@ export interface GetTitleStatusProps {
   isCurrentStep: boolean
   currentStepStatus: StepStatusType
   isStepValid?: (selectedTabId: string) => boolean
+  isDisabled?: boolean
 }

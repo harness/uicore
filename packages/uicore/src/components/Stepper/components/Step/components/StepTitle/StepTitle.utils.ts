@@ -8,7 +8,7 @@
 import { IconName } from '@harness/icons'
 import { StepStatus } from '../../Step.constants'
 import type { StepStatusType } from '../../Step.types'
-import { DefaultState, SuccessState, ErrorState } from './StepTitle.constants'
+import { DefaultState, SuccessState, ErrorState, DisabledState } from './StepTitle.constants'
 
 export const getStateByStatus = (
   stepStatus: StepStatusType
@@ -32,6 +32,13 @@ export const getStateByStatus = (
         cursor: SuccessState.cursor,
         iconColor: SuccessState.iconColor,
         labelColor: SuccessState.labelColor
+      }
+    case StepStatus.DISABLED:
+      return {
+        icon: DisabledState.icon,
+        cursor: DisabledState.cursor,
+        iconColor: DisabledState.iconColor,
+        labelColor: DisabledState.labelColor
       }
     case StepStatus.INCONCLUSIVE:
     default:

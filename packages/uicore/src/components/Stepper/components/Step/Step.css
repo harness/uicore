@@ -35,3 +35,8 @@
 .stepSubtitle {
   padding: 0 calc(var(--spacing-medium) + var(--spacing-tiny)) !important;
 }
+
+.disabledStep {
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
