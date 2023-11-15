@@ -12,7 +12,7 @@ import { Icon } from '@harness/icons'
 import { FontVariation } from '@harness/design-system'
 import type { StepTitleInterface } from './StepTitle.types'
 import { getStateByStatus } from './StepTitle.utils'
-import { StepStatus } from '../../Step.constants'
+import { StepStatus, neutralStepStatusList } from '../../Step.constants'
 import { Text, Layout } from '../../../../../../'
 import css from './StepTitle.css'
 
@@ -27,7 +27,7 @@ export const StepTitle = ({
 }: StepTitleInterface): JSX.Element => {
   const { disabled } = step
   const isDisabled = disabled
-  const isErrorOrSuccess = ![StepStatus.INCONCLUSIVE, StepStatus.DISABLED].includes(stepStatus as StepStatus)
+  const isErrorOrSuccess = !neutralStepStatusList.includes(stepStatus as StepStatus)
   const { icon, labelColor, iconColor, cursor } = getStateByStatus(stepStatus)
 
   return (

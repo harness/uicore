@@ -11,3 +11,5 @@ export enum StepStatus {
   INCONCLUSIVE = 'INCONCLUSIVE',
   DISABLED = 'DISABLED'
 }
+
+export const neutralStepStatusList = [StepStatus.INCONCLUSIVE, StepStatus.DISABLED]
