@@ -15,7 +15,7 @@ import { StepNavButtons } from './components/StepNavButtons/StepNavButtons'
 import { StepStatus } from './Step.constants'
 import { getStepStatus, getTitleStatus } from './Step.utils'
 import { Container, Card, Text } from '../../../../'
-import css from './Step.module.css'
+import css from './Step.css'
 
 const Step = ({
   stepList,
@@ -30,7 +30,9 @@ const Step = ({
   hideTitleWhenActive
 }: StepPropsInterface): JSX.Element => {
   const selectedStepIndex = stepList.map(item => item.id).indexOf(selectedStepId || '')
-  const [stepStatus, setStepStatus] = useState<StepStatusType>(StepStatus.INCONCLUSIVE)
+  const [stepStatus, setStepStatus] = useState<StepStatusType>(
+    step.disabled ? StepStatus.DISABLED : StepStatus.INCONCLUSIVE
+  )
   const isLastStep = selectedStepIndex === stepList.length - 1
   const isCurrentStep = selectedStepIndex === index
   const { id, panel, preview, helpPanelReferenceId } = step
@@ -50,7 +52,9 @@ const Step = ({
         setSelectedStepId(stepList[selectedIndex].id)
         onStepChange?.(stepList[selectedIndex].id)
       }
-      setStepStatus(getStepStatus(validStatus))
+      if (!step.disabled) {
+        setStepStatus(getStepStatus(validStatus))
+      }
     },
     [isStepValid, onStepChange, setSelectedStepId, step.id, stepList]
   )
@@ -62,18 +66,20 @@ const Step = ({
         currentStepStatus: stepStatus,
         runValidationOnMount: Boolean(runValidationOnMount),
         isCurrentStep,
-        isStepValid
+        isStepValid,
+        isDisabled: step.disabled
       }),
     [isStepValid, isCurrentStep, runValidationOnMount, step.id, stepStatus]
   )
 
   const isErrorMessageVisible = stepTitleStatus === StepStatus.ERROR
-  const isPreviewVisible = useMemo(() => selectedStepIndex > index && step.preview && !isErrorMessageVisible, [
-    index,
-    selectedStepIndex,
-    step.preview,
-    isErrorMessageVisible
-  ])
+  const isPreviewVisible = useMemo(
+    () => (step.disabled ? step.disabled : selectedStepIndex > index && step.preview && !isErrorMessageVisible),
+    [index, selectedStepIndex, step.disabled, step.preview, isErrorMessageVisible]
+  )
+
+  const isNextStepDisabled = stepList[index + 1]?.disabled
+  const isPreviousStepDisabled = stepList[index - 1]?.disabled
 
   return (
     <Container className={cx(css.stepContainer, index === stepList.length - 1 && css.bottomMargin)}>
@@ -122,7 +128,7 @@ const Step = ({
                 )}
               </>
             )}
-            {isCurrentStep && (
+            {isCurrentStep && !step.disabled && (
               <>
                 <Card data-testid={`panel_${id}`} className={css.card}>
                   {panel}
@@ -133,6 +139,8 @@ const Step = ({
                   isLastStep={isLastStep}
                   nextButtonTitle={step.nextButtonTitle}
                   disableNext={step?.disableNext}
+                  isNextStepDisabled={isNextStepDisabled}
+                  isPreviousStepDisabled={isPreviousStepDisabled}
                 />
               </>
             )}

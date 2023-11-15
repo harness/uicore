@@ -16,6 +16,7 @@ export interface StepDetailsInterface {
   errorMessage?: string[]
   nextButtonTitle?: string
   disableNext?: () => boolean
+  disabled?: boolean
 }
 
 export interface StepperProps {

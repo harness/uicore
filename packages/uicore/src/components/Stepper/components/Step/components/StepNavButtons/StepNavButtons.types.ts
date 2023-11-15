@@ -11,4 +11,6 @@ export interface StepNavButtonsInterface {
   onContinue: (index: number, skipValidation?: boolean) => void
   nextButtonTitle?: string
   disableNext?: () => boolean
+  isNextStepDisabled?: boolean
+  isPreviousStepDisabled?: boolean
 }

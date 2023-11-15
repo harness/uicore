@@ -7,6 +7,7 @@
 
 import React from 'react'
 import { Text } from '../../..'
+import { StepDetailsInterface } from '../Stepper.types'
 
 export const StepList = [
   {
@@ -27,4 +28,4 @@ export const StepList = [
     panel: <Text>Panel Step 3</Text>,
     preview: <Text>Preview Panel Step 3</Text>
   }
-]
+] as StepDetailsInterface[]

@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { StepStatus } from './Step.constants'
+import { StepStatus, neutralStepStatusList } from './Step.constants'
 import type { GetTitleStatusProps, StepStatusType } from './Step.types'
 
 export const getStepStatus = (value: boolean): StepStatusType => (value ? StepStatus.SUCCESS : StepStatus.ERROR)
@@ -15,10 +15,15 @@ export const getTitleStatus = ({
   stepId,
   isCurrentStep,
   isStepValid,
-  currentStepStatus
-}: GetTitleStatusProps): StepStatusType =>
-  runValidationOnMount
+  currentStepStatus,
+  isDisabled
+}: GetTitleStatusProps): StepStatusType => {
+  if (isDisabled) {
+    return StepStatus.DISABLED
+  }
+  return runValidationOnMount
     ? getStepStatus(!!isStepValid?.(stepId))
-    : isCurrentStep && currentStepStatus !== StepStatus.INCONCLUSIVE
+    : isCurrentStep && !neutralStepStatusList.includes(currentStepStatus as StepStatus)
     ? getStepStatus(!!isStepValid?.(stepId))
     : currentStepStatus
+}
