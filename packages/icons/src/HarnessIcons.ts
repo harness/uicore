@@ -12,6 +12,8 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
+import AgentSettings from './AgentSettings.svg'
+import AgentTokenSettings from './AgentTokenSettings.svg'
 import AnchoreInverse from './Anchore-inverse.svg'
 import Anchore from './Anchore.svg'
 import AquaTrivyInverse from './AquaTrivy-inverse.svg'
@@ -24,6 +26,7 @@ import BurpInverse from './Burp-inverse.svg'
 import Burp from './Burp.svg'
 import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
+import CriticalEventSettings from './CriticalEventSettings.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
 import FreezeWindow from './FreezeWindow.svg'
@@ -1269,6 +1272,8 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
+  | 'AgentSettings'
+  | 'AgentTokenSettings'
   | 'Anchore-inverse'
   | 'Anchore'
   | 'AquaTrivy-inverse'
@@ -1281,6 +1286,7 @@ type HarnessIconName =
   | 'Burp'
   | 'Checkmarx-inverse'
   | 'Checkmarx'
+  | 'CriticalEventSettings'
   | 'CustomDeployment'
   | 'Edit'
   | 'FreezeWindow'
@@ -2526,6 +2532,8 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
+  AgentSettings: AgentSettings,
+  AgentTokenSettings: AgentTokenSettings,
   'Anchore-inverse': AnchoreInverse,
   Anchore: Anchore,
   'AquaTrivy-inverse': AquaTrivyInverse,
@@ -2538,6 +2546,7 @@ const HarnessIcons: KVO<ElementType> = {
   Burp: Burp,
   'Checkmarx-inverse': CheckmarxInverse,
   Checkmarx: Checkmarx,
+  CriticalEventSettings: CriticalEventSettings,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
   FreezeWindow: FreezeWindow,
