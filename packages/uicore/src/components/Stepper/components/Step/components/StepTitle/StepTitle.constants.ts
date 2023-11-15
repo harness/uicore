@@ -28,3 +28,10 @@ export const DefaultState = {
   iconColor: 'primary9',
   labelColor: Color.PRIMARY_10
 }
+
+export const DisabledState = {
+  cursor: 'not-allowed',
+  icon: 'ring' as IconName,
+  iconColor: 'grey9',
+  labelColor: Color.GREY_300
+}
