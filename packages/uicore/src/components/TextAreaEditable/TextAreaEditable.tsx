@@ -129,10 +129,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
       const index = getCaretIndex(e.target)
 
       const newStr =
-        (textContent.slice(0, index) as string) +
-        (e.key as string) +
-        (textContent.slice(index).trimEnd() as string) +
-        ' '
+        (textContent.slice(0, index) as string) + (e.key as string) + (textContent.slice(index).trimEnd() as string)
 
       this.props.inputRef.current.innerHTML = highlight(sanitizeHTMLTextObject(deserialize(newStr)))
 
@@ -175,7 +172,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
          */
         contentEditable={true}
         onKeyDown={this.handleKeyDown.bind(this)}
-        dangerouslySetInnerHTML={{ __html: highlight(deserialize(value + ' ')) }}
+        dangerouslySetInnerHTML={{ __html: highlight(deserialize(value)) }}
       />
     )
   }
