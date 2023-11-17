@@ -282,6 +282,7 @@ import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
 import CloudFormationRollback from './cloud-formation-rollback.svg'
+import CloudFoundry from './cloud-foundry.svg'
 import CloudFunctionNoTrafficShift from './cloud-function-no-traffic-shift.svg'
 import CloudFunctionRollback from './cloud-function-rollback.svg'
 import CloudFunctionTrafficShift from './cloud-function-traffic-shift.svg'
@@ -431,6 +432,7 @@ import DockerCiStepInverse from './docker-ci-step-inverse.svg'
 import DockerCiStep from './docker-ci-step.svg'
 import DockerContentTrustInverse from './docker-content-trust-inverse.svg'
 import DockerContentTrust from './docker-content-trust.svg'
+import DockerGrey from './docker-grey.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
@@ -600,6 +602,7 @@ import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
 import HarnessCopilot from './harness-copilot.svg'
+import HarnessGrey from './harness-grey.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
@@ -1536,6 +1539,7 @@ type HarnessIconName =
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
   | 'cloud-formation-rollback'
+  | 'cloud-foundry'
   | 'cloud-function-no-traffic-shift'
   | 'cloud-function-rollback'
   | 'cloud-function-traffic-shift'
@@ -1685,6 +1689,7 @@ type HarnessIconName =
   | 'docker-ci-step'
   | 'docker-content-trust-inverse'
   | 'docker-content-trust'
+  | 'docker-grey'
   | 'docker-hub-step'
   | 'docker-step-inverse'
   | 'docker-step'
@@ -1854,6 +1859,7 @@ type HarnessIconName =
   | 'grid'
   | 'hand-manual'
   | 'harness-copilot'
+  | 'harness-grey'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
@@ -2790,6 +2796,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
   'cloud-formation-rollback': CloudFormationRollback,
+  'cloud-foundry': CloudFoundry,
   'cloud-function-no-traffic-shift': CloudFunctionNoTrafficShift,
   'cloud-function-rollback': CloudFunctionRollback,
   'cloud-function-traffic-shift': CloudFunctionTrafficShift,
@@ -2939,6 +2946,7 @@ const HarnessIcons: KVO<ElementType> = {
   'docker-ci-step': DockerCiStep,
   'docker-content-trust-inverse': DockerContentTrustInverse,
   'docker-content-trust': DockerContentTrust,
+  'docker-grey': DockerGrey,
   'docker-hub-step': DockerHubStep,
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
@@ -3108,6 +3116,7 @@ const HarnessIcons: KVO<ElementType> = {
   grid: Grid,
   'hand-manual': HandManual,
   'harness-copilot': HarnessCopilot,
+  'harness-grey': HarnessGrey,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
