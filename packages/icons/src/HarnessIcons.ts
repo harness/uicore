@@ -12,8 +12,6 @@
 import { ElementType } from 'react'
 import { KVO } from '@harness/design-system'
 import Account from './Account.svg'
-import AgentSettings from './AgentSettings.svg'
-import AgentTokenSettings from './AgentTokenSettings.svg'
 import AnchoreInverse from './Anchore-inverse.svg'
 import Anchore from './Anchore.svg'
 import AquaTrivyInverse from './AquaTrivy-inverse.svg'
@@ -26,7 +24,6 @@ import BurpInverse from './Burp-inverse.svg'
 import Burp from './Burp.svg'
 import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
-import CriticalEventSettings from './CriticalEventSettings.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
 import FreezeWindow from './FreezeWindow.svg'
@@ -220,6 +217,9 @@ import CeMain from './ce-main.svg'
 import CeOptimization from './ce-optimization.svg'
 import CeVisibilityPlus from './ce-visibility-plus.svg'
 import CeVisibility from './ce-visibility.svg'
+import CetAgentTokensSettings from './cet-agent-tokens-settings.svg'
+import CetAgentsSettings from './cet-agents-settings.svg'
+import CetCriticalEventsSettings from './cet-critical-events-settings.svg'
 import CetGrey from './cet-grey.svg'
 import CetInverse from './cet-inverse.svg'
 import CetWithDarkText from './cet-with-dark-text.svg'
@@ -1272,8 +1272,6 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
-  | 'AgentSettings'
-  | 'AgentTokenSettings'
   | 'Anchore-inverse'
   | 'Anchore'
   | 'AquaTrivy-inverse'
@@ -1286,7 +1284,6 @@ type HarnessIconName =
   | 'Burp'
   | 'Checkmarx-inverse'
   | 'Checkmarx'
-  | 'CriticalEventSettings'
   | 'CustomDeployment'
   | 'Edit'
   | 'FreezeWindow'
@@ -1480,6 +1477,9 @@ type HarnessIconName =
   | 'ce-optimization'
   | 'ce-visibility-plus'
   | 'ce-visibility'
+  | 'cet-agent-tokens-settings'
+  | 'cet-agents-settings'
+  | 'cet-critical-events-settings'
   | 'cet-grey'
   | 'cet-inverse'
   | 'cet-with-dark-text'
@@ -2532,8 +2532,6 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
-  AgentSettings: AgentSettings,
-  AgentTokenSettings: AgentTokenSettings,
   'Anchore-inverse': AnchoreInverse,
   Anchore: Anchore,
   'AquaTrivy-inverse': AquaTrivyInverse,
@@ -2546,7 +2544,6 @@ const HarnessIcons: KVO<ElementType> = {
   Burp: Burp,
   'Checkmarx-inverse': CheckmarxInverse,
   Checkmarx: Checkmarx,
-  CriticalEventSettings: CriticalEventSettings,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
   FreezeWindow: FreezeWindow,
@@ -2740,6 +2737,9 @@ const HarnessIcons: KVO<ElementType> = {
   'ce-optimization': CeOptimization,
   'ce-visibility-plus': CeVisibilityPlus,
   'ce-visibility': CeVisibility,
+  'cet-agent-tokens-settings': CetAgentTokensSettings,
+  'cet-agents-settings': CetAgentsSettings,
+  'cet-critical-events-settings': CetCriticalEventsSettings,
   'cet-grey': CetGrey,
   'cet-inverse': CetInverse,
   'cet-with-dark-text': CetWithDarkText,
