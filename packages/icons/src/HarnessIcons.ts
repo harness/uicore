@@ -1006,6 +1006,7 @@ import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
 import SeiMain from './sei-main.svg'
+import SeiWithDarkText from './sei-with-dark-text.svg'
 import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
@@ -1154,6 +1155,7 @@ import StoColorFilled from './sto-color-filled.svg'
 import StoGrey from './sto-grey.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
+import StoreArtifactBundle from './store-artifact-bundle.svg'
 import Subscriptions from './subscriptions.svg'
 import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
@@ -2266,6 +2268,7 @@ type HarnessIconName =
   | 'security-ci-step'
   | 'security-stage'
   | 'sei-main'
+  | 'sei-with-dark-text'
   | 'select-scope'
   | 'semgrep'
   | 'send-data'
@@ -2414,6 +2417,7 @@ type HarnessIconName =
   | 'sto-grey'
   | 'sto-with-dark-text'
   | 'sto-with-text'
+  | 'store-artifact-bundle'
   | 'subscriptions'
   | 'success-tick'
   | 'support-account'
@@ -3526,6 +3530,7 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
   'sei-main': SeiMain,
+  'sei-with-dark-text': SeiWithDarkText,
   'select-scope': SelectScope,
   semgrep: Semgrep,
   'send-data': SendData,
@@ -3674,6 +3679,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-grey': StoGrey,
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
+  'store-artifact-bundle': StoreArtifactBundle,
   subscriptions: Subscriptions,
   'success-tick': SuccessTick,
   'support-account': SupportAccount,
