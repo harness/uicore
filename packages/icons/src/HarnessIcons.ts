@@ -217,6 +217,9 @@ import CeMain from './ce-main.svg'
 import CeOptimization from './ce-optimization.svg'
 import CeVisibilityPlus from './ce-visibility-plus.svg'
 import CeVisibility from './ce-visibility.svg'
+import CetAgentTokensSettings from './cet-agent-tokens-settings.svg'
+import CetAgentsSettings from './cet-agents-settings.svg'
+import CetCriticalEventsSettings from './cet-critical-events-settings.svg'
 import CetGrey from './cet-grey.svg'
 import CetInverse from './cet-inverse.svg'
 import CetWithDarkText from './cet-with-dark-text.svg'
@@ -1476,6 +1479,9 @@ type HarnessIconName =
   | 'ce-optimization'
   | 'ce-visibility-plus'
   | 'ce-visibility'
+  | 'cet-agent-tokens-settings'
+  | 'cet-agents-settings'
+  | 'cet-critical-events-settings'
   | 'cet-grey'
   | 'cet-inverse'
   | 'cet-with-dark-text'
@@ -2735,6 +2741,9 @@ const HarnessIcons: KVO<ElementType> = {
   'ce-optimization': CeOptimization,
   'ce-visibility-plus': CeVisibilityPlus,
   'ce-visibility': CeVisibility,
+  'cet-agent-tokens-settings': CetAgentTokensSettings,
+  'cet-agents-settings': CetAgentsSettings,
+  'cet-critical-events-settings': CetCriticalEventsSettings,
   'cet-grey': CetGrey,
   'cet-inverse': CetInverse,
   'cet-with-dark-text': CetWithDarkText,
