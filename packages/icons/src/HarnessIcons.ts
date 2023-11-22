@@ -1151,6 +1151,7 @@ import StoColorFilled from './sto-color-filled.svg'
 import StoGrey from './sto-grey.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
+import StoreArtifactBundle from './store-artifact-bundle.svg'
 import Subscriptions from './subscriptions.svg'
 import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
@@ -2408,6 +2409,7 @@ type HarnessIconName =
   | 'sto-grey'
   | 'sto-with-dark-text'
   | 'sto-with-text'
+  | 'store-artifact-bundle'
   | 'subscriptions'
   | 'success-tick'
   | 'support-account'
@@ -3665,6 +3667,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-grey': StoGrey,
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
+  'store-artifact-bundle': StoreArtifactBundle,
   subscriptions: Subscriptions,
   'success-tick': SuccessTick,
   'support-account': SupportAccount,
