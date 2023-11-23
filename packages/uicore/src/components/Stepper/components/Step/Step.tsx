@@ -7,7 +7,7 @@
 
 import React, { useState, useCallback, useMemo } from 'react'
 import cx from 'classnames'
-import { FontVariation } from '@harness/design-system'
+import { Color, FontVariation } from '@harness/design-system'
 import { HelpPanel, HelpPanelType } from '@harness/help-panel'
 import type { StepPropsInterface, StepStatusType } from './Step.types'
 import { StepTitle } from './components/StepTitle/StepTitle'
@@ -95,7 +95,9 @@ const Step = ({
 
       {step.subTitle && (
         <Container className={cx(css.alignContainerRight, css.borderLeft, css.stepSubtitle)}>
-          <Text font={{ variation: FontVariation.FORM_LABEL }}>{step.subTitle}</Text>
+          <Text font={{ variation: FontVariation.FORM_LABEL }} color={step.disabled ? Color.GREY_300 : ''}>
+            {step.subTitle}
+          </Text>
         </Container>
       )}
       <Container
@@ -105,7 +107,7 @@ const Step = ({
           [css.stepMargin]: isCurrentStep || isErrorMessageVisible || isPreviewVisible
         })}>
         {isPreviewVisible && (
-          <Container data-testid={`preview_${id}`} width={500}>
+          <Container data-testid={`preview_${id}`} width={step.disabled ? '100%' : 500}>
             <>{preview}</>
           </Container>
         )}
