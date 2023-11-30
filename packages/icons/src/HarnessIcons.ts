@@ -55,6 +55,8 @@ import AddGraph from './add-graph.svg'
 import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
+import AgentTokens from './agent-tokens.svg'
+import Agents from './agents.svg'
 import Ai from './ai.svg'
 import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
 import AnchoreGrype from './anchore-grype.svg'
@@ -376,6 +378,7 @@ import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
 import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
+import CriticalEvents from './critical-events.svg'
 import CsHover from './cs-hover.svg'
 import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
@@ -1123,6 +1126,7 @@ import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
+import SloDowntime from './slo-downtime.svg'
 import Slo from './slo.svg'
 import SlotDeployment from './slot-deployment.svg'
 import SlsaGeneration from './slsa-generation.svg'
@@ -1317,6 +1321,8 @@ type HarnessIconName =
   | 'add-stage'
   | 'adminRole'
   | 'advanced'
+  | 'agent-tokens'
+  | 'agents'
   | 'ai'
   | 'anchore-grype-inverse'
   | 'anchore-grype'
@@ -1638,6 +1644,7 @@ type HarnessIconName =
   | 'create-via-existing-yaml'
   | 'create-via-pipeline-template'
   | 'create-via-starter-pipeline'
+  | 'critical-events'
   | 'cs-hover'
   | 'currency-banner'
   | 'custom-approval'
@@ -2385,6 +2392,7 @@ type HarnessIconName =
   | 'simple-verification'
   | 'skipped'
   | 'slider-trigger'
+  | 'slo-downtime'
   | 'slo'
   | 'slot-deployment'
   | 'slsa-generation'
@@ -2579,6 +2587,8 @@ const HarnessIcons: KVO<ElementType> = {
   'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
+  'agent-tokens': AgentTokens,
+  agents: Agents,
   ai: Ai,
   'anchore-grype-inverse': AnchoreGrypeInverse,
   'anchore-grype': AnchoreGrype,
@@ -2900,6 +2910,7 @@ const HarnessIcons: KVO<ElementType> = {
   'create-via-existing-yaml': CreateViaExistingYaml,
   'create-via-pipeline-template': CreateViaPipelineTemplate,
   'create-via-starter-pipeline': CreateViaStarterPipeline,
+  'critical-events': CriticalEvents,
   'cs-hover': CsHover,
   'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
@@ -3647,6 +3658,7 @@ const HarnessIcons: KVO<ElementType> = {
   'simple-verification': SimpleVerification,
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
+  'slo-downtime': SloDowntime,
   slo: Slo,
   'slot-deployment': SlotDeployment,
   'slsa-generation': SlsaGeneration,
