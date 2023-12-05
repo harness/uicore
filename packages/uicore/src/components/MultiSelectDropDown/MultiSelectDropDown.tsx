@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Popover, Spinner, Menu } from '@blueprintjs/core'
 import {
   QueryList,
@@ -25,6 +25,7 @@ import { Text } from '../Text/Text'
 import { StyledProps } from '@harnessio/design-system'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { SelectOption } from '../Select/Select'
+import { ExpandingSearchInputWithRef, ExpandingSearchInputProps } from '../ExpandingSearchInput/ExpandingSearchInput'
 
 type Props = IQueryListProps<MultiSelectOption>
 
@@ -49,6 +50,7 @@ export interface MultiSelectDropDownProps
   placeholder?: string
   hideItemCount?: boolean
   onPopoverClose?(opts: MultiSelectOption[]): void
+  expandingSearchInputProps?: ExpandingSearchInputProps
 }
 
 /**
@@ -73,6 +75,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     disabled,
     hideItemCount,
     onPopoverClose,
+    expandingSearchInputProps,
     ...rest
   } = props
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>([])
@@ -80,7 +83,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
   const [loading, setLoading] = React.useState<boolean>(false)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (Array.isArray(items)) {
       setDropDownItems([...items])
     } else if (typeof items === 'function') {
@@ -98,11 +101,28 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     }
   }, [JSON.stringify(items)])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (Array.isArray(value)) {
       setSelectedItems(value)
     }
   }, [value])
+
+  const onSearchChange = useCallback(
+    (newQuery: string) => {
+      if (expandingSearchInputProps?.onChange) {
+        expandingSearchInputProps.onChange(newQuery)
+      }
+      setQuery(newQuery)
+    },
+    [expandingSearchInputProps]
+  )
+
+  // to filter out the options based on search
+  const filterItems = (itemsToRender: SelectOption[]) => {
+    const searchValue = query.trim().toLocaleLowerCase()
+    if (searchValue.length === 0) return itemsToRender
+    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
+  }
 
   function handleItemSelect(item: MultiSelectOption): void {
     const index = selectedItems.findIndex(opt => opt.value === item.value)
@@ -176,6 +196,9 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           <Icon name="main-chevron-down" size={8} color={Color.GREY_400} />
         </Layout.Horizontal>
         <React.Fragment>
+          {allowSearch && (
+            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+          )}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
                 className: css.menu
