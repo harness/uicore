@@ -40,18 +40,14 @@ describe('MultiSelectDropDown', () => {
     expect(screen.queryByRole('searchbox')).not.toBeInTheDocument()
   })
 
-  test('it should call MultiSelectDropDown onChange when ExpandingSearchInputProps is undefined ', async () => {
-    const onChange = jest.fn()
-
+  test('it should filter out non-matching results when a user performs a search', async () => {
     renderComponent({
       items: [
         { label: 'value1', value: 'value1id' },
         { label: 'value2', value: 'value2id' }
       ],
       allowSearch: true,
-      usePortal: true,
-      onChange: onChange,
-      expandingSearchInputProps: undefined
+      usePortal: true
     })
 
     userEvent.click(screen.getByText('Select'))
@@ -69,5 +65,35 @@ describe('MultiSelectDropDown', () => {
 
     expect(await screen.findByText(dropdownInput)).toBeInTheDocument()
     await waitFor(() => expect(screen.queryByText('value2')).not.toBeInTheDocument())
+  })
+
+  test('it should call ExpandingSearchInputProps onChange with the correct value when user performs a search when that prop is defined', async () => {
+    const onSearchChange = jest.fn()
+
+    renderComponent({
+      items: [
+        { label: 'value1', value: 'value1id' },
+        { label: 'value2', value: 'value2id' }
+      ],
+      allowSearch: true,
+      expandingSearchInputProps: {
+        onChange: onSearchChange
+      },
+      usePortal: true
+    })
+
+    userEvent.click(screen.getByText('Select'))
+
+    const dropdownSearchbox = await screen.findByRole('searchbox')
+
+    const dropdownInput = 'value1'
+
+    await waitFor(() => expect(onSearchChange).not.toHaveBeenCalled())
+
+    userEvent.type(dropdownSearchbox, dropdownInput)
+
+    expect(dropdownSearchbox).toHaveValue(dropdownInput)
+
+    await waitFor(() => expect(onSearchChange).toHaveBeenCalledWith(dropdownInput))
   })
 })
