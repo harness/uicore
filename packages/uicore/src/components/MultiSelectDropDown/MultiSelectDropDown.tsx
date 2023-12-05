@@ -112,7 +112,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
 
   const onSearchChange = useCallback(
     (newQuery: string) => {
-      if (expandingSearchInputProps && 'onChange' in expandingSearchInputProps) {
+      if (expandingSearchInputProps?.onChange) {
         expandingSearchInputProps.onChange(newQuery)
       }
       setQuery(newQuery)
