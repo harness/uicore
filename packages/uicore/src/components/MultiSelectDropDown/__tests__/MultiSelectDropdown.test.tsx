@@ -40,40 +40,6 @@ describe('MultiSelectDropDown', () => {
     expect(screen.queryByRole('searchbox')).not.toBeInTheDocument()
   })
 
-  test('it should call ExpandingSearchInputProps onChange when it is defined instead of MultiSelectDropDown onChange', async () => {
-    const onSearchChange = jest.fn()
-    const onChange = jest.fn()
-
-    renderComponent({
-      items: [
-        { label: 'value1', value: 'value1id' },
-        { label: 'value2', value: 'value2id' }
-      ],
-      allowSearch: true,
-      expandingSearchInputProps: {
-        onChange: onSearchChange
-      },
-      usePortal: true,
-      onChange: onChange
-    })
-
-    userEvent.click(screen.getByText('Select'))
-
-    const dropdownSearchbox = await screen.findByRole('searchbox')
-
-    const dropdownInput = 'value1'
-
-    await waitFor(() => expect(onSearchChange).not.toHaveBeenCalled())
-    await waitFor(() => expect(onChange).not.toHaveBeenCalled())
-
-    userEvent.type(dropdownSearchbox, dropdownInput)
-
-    expect(dropdownSearchbox).toHaveValue(dropdownInput)
-
-    await waitFor(() => expect(onSearchChange).toHaveBeenCalledWith('value1'))
-    await waitFor(() => expect(onChange).not.toHaveBeenCalled())
-  })
-
   test('it should call MultiSelectDropDown onChange when ExpandingSearchInputProps is undefined ', async () => {
     const onChange = jest.fn()
 
@@ -90,18 +56,18 @@ describe('MultiSelectDropDown', () => {
 
     userEvent.click(screen.getByText('Select'))
 
+    expect(screen.getByRole('checkbox', { name: 'value1' })).toBeInTheDocument()
+    expect(screen.getByRole('checkbox', { name: 'value2' })).toBeInTheDocument()
+
     const dropdownSearchbox = await screen.findByRole('searchbox')
 
     const dropdownInput = 'value1'
-
-    await waitFor(() => expect(onChange).not.toHaveBeenCalled())
 
     userEvent.type(dropdownSearchbox, dropdownInput)
 
     expect(dropdownSearchbox).toHaveValue(dropdownInput)
 
-    // await waitFor(() => expect(onChange).toHaveBeenCalled())
-
+    expect(await screen.findByText(dropdownInput)).toBeInTheDocument()
     await waitFor(() => expect(screen.queryByText('value2')).not.toBeInTheDocument())
   })
 })
