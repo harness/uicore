@@ -236,6 +236,7 @@ import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
 import Changes from './changes.svg'
 import ChaosCube from './chaos-cube.svg'
+import RemediationCube from './remediation-cube.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
@@ -2770,6 +2771,7 @@ const HarnessIcons: KVO<ElementType> = {
   'change-log': ChangeLog,
   changes: Changes,
   'chaos-cube': ChaosCube,
+  'remediation-cube': RemediationCube,
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-hubs': ChaosHubs,
   'chaos-litmuschaos': ChaosLitmuschaos,
