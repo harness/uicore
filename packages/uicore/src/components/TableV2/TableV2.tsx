@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useMemo } from 'react'
 import { useTable, Column, Row, useSortBy, usePagination, useResizeColumns, useExpanded, TableState } from 'react-table'
 import cx from 'classnames'
 import { defaultTo } from 'lodash-es'
@@ -55,6 +55,38 @@ export interface TableProps<Data extends Record<string, any>> {
   autoResetSortBy?: boolean
   autoResetPage?: boolean
   initialState?: Partial<TableState<Data>>
+  /**
+   * maxTableWidth is required, when using resizable
+   */
+  maxTableWidth?: number | string
+}
+
+type ColumnProperty = string | number
+
+function convertColumnWidth(columnProperty: ColumnProperty, tableWidth: number): number {
+  if (typeof columnProperty === 'string' && columnProperty.endsWith('%')) {
+    // If the column property is a percentage, calculate the relative width
+    const percentage = parseFloat(columnProperty)
+    return (percentage / 100) * tableWidth
+  } else if (typeof columnProperty === 'number') {
+    // If the column property is a number, use it as is
+    return columnProperty
+  } else if (typeof columnProperty === 'string' && columnProperty.endsWith('px')) {
+    // If the column property is in pixels, convert it to a number
+    return parseInt(columnProperty)
+  } else {
+    // If the column property is not recognized, return a default value
+    return 0
+  }
+}
+
+const columnRelativeWidthParser = (column: Array<Column<any>>, tableWidth?: number): Array<Column<any>> => {
+  if (tableWidth) {
+    return column.map(i => {
+      return { ...i, width: i.width ? convertColumnWidth(i.width, tableWidth) : i.width }
+    })
+  }
+  return column
 }
 
 export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data>): React.ReactElement => {
@@ -73,11 +105,35 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
     renderRowSubComponent,
     autoResetSortBy = true,
     autoResetPage = true,
-    initialState = {}
+    initialState = {},
+    maxTableWidth
   } = props
+
+  const tableRef = React.useRef<HTMLDivElement>(null)
+  const [tableWidth, setTableWidth] = React.useState<number>()
+
+  React.useEffect(() => {
+    const onResize = (): void => {
+      if (tableRef?.current) {
+        setTableWidth(tableRef.current.clientWidth)
+      }
+    }
+    if (resizable) {
+      onResize()
+    }
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
+
   const { headerGroups, page, prepareRow } = useTable(
     {
-      columns,
+      columns: useMemo(() => (resizable ? columnRelativeWidthParser(columns, tableWidth) : columns), [
+        tableWidth,
+        columns
+      ]),
       data,
       initialState: { pageIndex: defaultTo(pagination?.pageIndex, 0), ...initialState },
       manualPagination: true,
@@ -115,7 +171,7 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
   }
 
   return (
-    <div className={cx(css.table, className)}>
+    <div className={cx(css.table, className)} ref={tableRef} style={{ maxWidth: maxTableWidth }}>
       {hideHeaders
         ? null
         : headerGroups.map(headerGroup => {
@@ -142,7 +198,7 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
                       {...header.getHeaderProps(sortable ? header.getSortByToggleProps() : void 0)}
                       {...header.getHeaderProps(resizable ? header.getHeaderProps() : void 0)}
                       className={cx(css.cell, { [css.sortable]: sortable }, { [css.resizable]: resizable })}
-                      style={{ width: header.width }}
+                      style={{ width: header.width, minWidth: header?.minWidth, maxWidth: header?.maxWidth }}
                       {...serverSideSort}>
                       <Text
                         font={{ variation: FontVariation.TABLE_HEADERS }}
@@ -195,7 +251,11 @@ export const TableV2 = <Data extends Record<string, any>>(props: TableProps<Data
                     <div
                       {...cell.getCellProps()}
                       className={css.cell}
-                      style={{ width: headerGroups[0].headers[index].width }}>
+                      style={{
+                        width: headerGroups[0].headers[index].width,
+                        maxWidth: headerGroups[0].headers[index]?.maxWidth,
+                        minWidth: headerGroups[0].headers[index]?.minWidth
+                      }}>
                       {cell.render('Cell')}
                     </div>
                   )
