@@ -28,7 +28,7 @@ import {
   EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE,
   REGEX_INPUT_PLACEHOLDER,
-  RUNTIME_INPUT_Y1_PREFIX
+  RUNTIME_INPUT_V1_PREFIX
 } from './MultiTypeInputUtils'
 import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
@@ -86,8 +86,8 @@ export const getMultiTypeFromValue = (
   } else if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
 
-    if (value.startsWith(RUNTIME_INPUT_Y1_PREFIX)) {
-      return MultiTypeInputType.RUNTIMEY1
+    if (value.startsWith(RUNTIME_INPUT_V1_PREFIX)) {
+      return MultiTypeInputType.RUNTIMEV1
     }
 
     if (value.startsWith(RUNTIME_INPUT_VALUE)) {
@@ -165,8 +165,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       case MultiTypeInputType.RUNTIME:
         _inputValue = RUNTIME_INPUT_VALUE
         break
-      case MultiTypeInputType.RUNTIMEY1:
-        _inputValue = RUNTIME_INPUT_Y1_PREFIX
+      case MultiTypeInputType.RUNTIMEV1:
+        _inputValue = RUNTIME_INPUT_V1_PREFIX
         break
       case MultiTypeInputType.EXECUTION_TIME:
         _inputValue = EXECUTION_TIME_INPUT_VALUE
@@ -216,7 +216,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           onChange={fixedComponentOnChangeCallback}
         />
       )}
-      {[MultiTypeInputType.RUNTIME, MultiTypeInputType.RUNTIMEY1].includes(type) &&
+      {[MultiTypeInputType.RUNTIME, MultiTypeInputType.RUNTIMEV1].includes(type) &&
         (renderRuntimeInput ? (
           renderRuntimeInput({
             disabled,

@@ -156,7 +156,7 @@
   }
 
   &.RUNTIME,
-  &.RUNTIMEY1 {
+  &.RUNTIMEV1 {
     color: var(--purple-500);
 
     &::before {
@@ -216,7 +216,7 @@
   }
 
   &.RUNTIME,
-  &.RUNTIMEY1 {
+  &.RUNTIMEV1 {
     color: var(--purple-500);
 
     &::before {
@@ -286,7 +286,7 @@
     }
 
     &.RUNTIME,
-    &.RUNTIMEY1 {
+    &.RUNTIMEV1 {
       color: var(--purple-500);
     }
 
@@ -394,7 +394,7 @@
       }
 
       &[data-type='RUNTIME'],
-      &[data-type='RUNTIMEY1'] {
+      &[data-type='RUNTIMEV1'] {
         color: var(--purple-500);
       }
 
