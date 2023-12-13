@@ -155,7 +155,8 @@
     color: var(--primary-6);
   }
 
-  &.RUNTIME {
+  &.RUNTIME,
+  &.RUNTIMEY1 {
     color: var(--purple-500);
 
     &::before {
@@ -214,7 +215,8 @@
     color: var(--primary-6);
   }
 
-  &.RUNTIME {
+  &.RUNTIME,
+  &.RUNTIMEY1 {
     color: var(--purple-500);
 
     &::before {
@@ -283,7 +285,8 @@
       color: var(--primary-7);
     }
 
-    &.RUNTIME {
+    &.RUNTIME,
+    &.RUNTIMEY1 {
       color: var(--purple-500);
     }
 
@@ -390,7 +393,8 @@
         color: var(--primary-6);
       }
 
-      &[data-type='RUNTIME'] {
+      &[data-type='RUNTIME'],
+      &[data-type='RUNTIMEY1'] {
         color: var(--purple-500);
       }
 

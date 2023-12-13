@@ -138,12 +138,14 @@ export {
   ExpressionAndRuntimeType,
   MultiSelectTypeInput,
   getMultiTypeFromValue,
-  FixedTypeComponentProps
+  FixedTypeComponentProps,
+  RuntimeTypeComponentProps
 } from './components/MultiTypeInput/MultiTypeInput'
 export {
   MultiTypeInputValue,
   MultiTypeInputType,
   RUNTIME_INPUT_VALUE,
+  RUNTIME_INPUT_Y1_PREFIX,
   EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE,
   MultiTypeIcon,

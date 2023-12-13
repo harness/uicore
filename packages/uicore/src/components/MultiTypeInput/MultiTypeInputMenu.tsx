@@ -24,7 +24,10 @@ export interface LearnMoreProps {
 
 export const MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY = 'harness_multitype_input_learn_more_dontshowagain_0'
 
-export type AllowedTypesWithExecutionTime = Exclude<MultiTypeInputType, MultiTypeInputType.RUNTIME>
+export type AllowedTypesWithExecutionTime = Exclude<
+  MultiTypeInputType,
+  MultiTypeInputType.RUNTIME | MultiTypeInputType.RUNTIMEY1
+>
 export type AllowedTypesWithRunTime = Exclude<MultiTypeInputType, MultiTypeInputType.EXECUTION_TIME>
 export type AllowedTypes = AllowedTypesWithExecutionTime[] | AllowedTypesWithRunTime[]
 
@@ -74,6 +77,23 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           }
           onClick={() => onTypeSelect(MultiTypeInputType.RUNTIME)}
           onMouseEnter={() => setCurrentType(MultiTypeInputType.RUNTIME)}
+        />
+      )}
+      {(allowedTypes as AllowedTypesWithRunTime[]).includes(MultiTypeInputType.RUNTIMEY1) && (
+        <Menu.Item
+          className={css.bp3MenuItem}
+          text={
+            <LearnMorePopover
+              i18n={i18n}
+              type={MultiTypeInputType.RUNTIMEY1}
+              isLearnMoreOpen={isLearnMoreOpen && currentType === MultiTypeInputType.RUNTIMEY1}
+              dontShowAgain={dontShowAgain}
+              setIsLearnMoreOpen={setIsLearnMoreOpen}
+              setDontShowAgain={setDontShowAgain}
+            />
+          }
+          onClick={() => onTypeSelect(MultiTypeInputType.RUNTIMEY1)}
+          onMouseEnter={() => setCurrentType(MultiTypeInputType.RUNTIMEY1)}
         />
       )}
       {(allowedTypes as AllowedTypesWithExecutionTime[]).includes(MultiTypeInputType.EXECUTION_TIME) && (
