@@ -2112,7 +2112,7 @@ type HarnessIconName =
   | 'nodejs'
   | 'not-synced'
   | 'notification'
-  | 'npm'
+  | 'npm-logo'
   | 'offline-outline'
   | 'oidc-authentication'
   | 'onprem-dark'
@@ -3381,7 +3381,7 @@ const HarnessIcons: KVO<ElementType> = {
   nodejs: Nodejs,
   'not-synced': NotSynced,
   notification: Notification,
-  npm: NpmLogo,
+  'npm-logo': NpmLogo,
   'offline-outline': OfflineOutline,
   'oidc-authentication': OidcAuthentication,
   'onprem-dark': OnpremDark,
