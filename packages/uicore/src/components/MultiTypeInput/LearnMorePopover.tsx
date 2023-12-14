@@ -35,6 +35,11 @@ const helperText: Record<MultiTypeInputType, React.ReactNode> = {
       <b>Runtime Inputs</b> are placeholders for values that will be provided when you start a Pipeline execution.
     </React.Fragment>
   ),
+  [MultiTypeInputType.RUNTIMEV1]: (
+    <React.Fragment>
+      <b>Runtime Inputs</b> are placeholders for values that will be provided when you start a Pipeline execution.
+    </React.Fragment>
+  ),
   [MultiTypeInputType.EXECUTION_TIME]: (
     <React.Fragment>
       <b>Runtime Inputs</b> are placeholders for values that will be provided during a Pipeline execution.
@@ -52,7 +57,8 @@ export const labels: Record<MultiTypeInputType, string> = {
   [MultiTypeInputType.EXPRESSION]: 'expression',
   [MultiTypeInputType.FIXED]: 'fixedValue',
   [MultiTypeInputType.RUNTIME]: 'runtimeInput',
-  [MultiTypeInputType.EXECUTION_TIME]: 'runtimeInput',
+  [MultiTypeInputType.RUNTIMEV1]: 'runtimeInput',
+  [MultiTypeInputType.EXECUTION_TIME]: 'executionTimeInput',
   [MultiTypeInputType.REGEX]: 'regex'
 }
 
