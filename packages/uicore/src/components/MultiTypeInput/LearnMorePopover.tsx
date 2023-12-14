@@ -58,6 +58,7 @@ export const labels: Record<MultiTypeInputType, string> = {
   [MultiTypeInputType.EXPRESSION]: 'expression',
   [MultiTypeInputType.FIXED]: 'fixedValue',
   [MultiTypeInputType.RUNTIME]: 'runtimeInput',
+  [MultiTypeInputType.RUNTIMEV1]: 'runtimeInput',
   [MultiTypeInputType.EXECUTION_TIME]: 'executionTimeInput',
   [MultiTypeInputType.REGEX]: 'regex'
 }
