@@ -843,7 +843,7 @@ import NoInstances from './no-instances.svg'
 import Nodejs from './nodejs.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
-import NpmLogo from './npm.svg'
+import Npm from './npm.svg'
 import OfflineOutline from './offline-outline.svg'
 import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
@@ -2112,7 +2112,7 @@ type HarnessIconName =
   | 'nodejs'
   | 'not-synced'
   | 'notification'
-  | 'npm-logo'
+  | 'npm'
   | 'offline-outline'
   | 'oidc-authentication'
   | 'onprem-dark'
@@ -3381,7 +3381,7 @@ const HarnessIcons: KVO<ElementType> = {
   nodejs: Nodejs,
   'not-synced': NotSynced,
   notification: Notification,
-  'npm-logo': NpmLogo,
+  npm: Npm,
   'offline-outline': OfflineOutline,
   'oidc-authentication': OidcAuthentication,
   'onprem-dark': OnpremDark,
