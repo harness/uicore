@@ -224,6 +224,7 @@ import CetAgentsSettings from './cet-agents-settings.svg'
 import CetCriticalEventsSettings from './cet-critical-events-settings.svg'
 import CetGrey from './cet-grey.svg'
 import CetInverse from './cet-inverse.svg'
+import CetQualityGate from './cet-quality-gate.svg'
 import CetWithDarkText from './cet-with-dark-text.svg'
 import CetWithText from './cet-with-text.svg'
 import Cet from './cet.svg'
@@ -1493,6 +1494,7 @@ type HarnessIconName =
   | 'cet-critical-events-settings'
   | 'cet-grey'
   | 'cet-inverse'
+  | 'cet-quality-gate'
   | 'cet-with-dark-text'
   | 'cet-with-text'
   | 'cet'
@@ -2762,6 +2764,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cet-critical-events-settings': CetCriticalEventsSettings,
   'cet-grey': CetGrey,
   'cet-inverse': CetInverse,
+  'cet-quality-gate': CetQualityGate,
   'cet-with-dark-text': CetWithDarkText,
   'cet-with-text': CetWithText,
   cet: Cet,
