@@ -121,6 +121,7 @@ import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStepPlugin from './background-step-plugin.svg'
 import BackgroundStep from './background-step.svg'
+import BackstageLogo from './backstage-logo.svg'
 import BanditInverse from './bandit-inverse.svg'
 import Bandit from './bandit.svg'
 import Banned from './banned.svg'
@@ -643,6 +644,7 @@ import IdpNavPluginconfig from './idp-nav-pluginconfig.svg'
 import IdpNavPlugins from './idp-nav-plugins.svg'
 import IdpNavScorecards from './idp-nav-scorecards.svg'
 import IdpStageHover from './idp-stage-hover.svg'
+import IdpWithDarkText from './idp-with-dark-text.svg'
 import Idp from './idp.svg'
 import IgnoreFailedSquare from './ignore-failed-square.svg'
 import IgnoreList from './ignore-list.svg'
@@ -1391,6 +1393,7 @@ type HarnessIconName =
   | 'background-ci-step'
   | 'background-step-plugin'
   | 'background-step'
+  | 'backstage-logo'
   | 'bandit-inverse'
   | 'bandit'
   | 'banned'
@@ -1913,6 +1916,7 @@ type HarnessIconName =
   | 'idp-nav-plugins'
   | 'idp-nav-scorecards'
   | 'idp-stage-hover'
+  | 'idp-with-dark-text'
   | 'idp'
   | 'ignore-failed-square'
   | 'ignore-list'
@@ -2661,6 +2665,7 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step': BackgroundCiStep,
   'background-step-plugin': BackgroundStepPlugin,
   'background-step': BackgroundStep,
+  'backstage-logo': BackstageLogo,
   'bandit-inverse': BanditInverse,
   bandit: Bandit,
   banned: Banned,
@@ -3183,6 +3188,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-nav-plugins': IdpNavPlugins,
   'idp-nav-scorecards': IdpNavScorecards,
   'idp-stage-hover': IdpStageHover,
+  'idp-with-dark-text': IdpWithDarkText,
   idp: Idp,
   'ignore-failed-square': IgnoreFailedSquare,
   'ignore-list': IgnoreList,
