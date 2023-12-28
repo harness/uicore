@@ -21,9 +21,6 @@
   },
   "license": "UNLICENSED",
   "repository": "https://github.com/harness/uicore",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.7",
     "@storybook/addon-docs": "^6.5.7",

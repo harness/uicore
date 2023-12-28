@@ -7,8 +7,8 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { Icon } from '@harness/icons'
-import { I18nResource } from '@harness/design-system'
+import { Icon } from '@harnessio/icons'
+import { I18nResource } from '@harnessio/design-system'
 import { Menu } from '@blueprintjs/core'
 
 import { MultiTypeInputType } from './MultiTypeInputUtils'

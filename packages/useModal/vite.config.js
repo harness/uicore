@@ -6,10 +6,10 @@
  */
 const path = require('path')
 const _ = require('lodash')
-const package = require('./package.json')
+const packages = require('./package.json')
 const globals = require('../globals.json')
 
-const external = Object.keys(package.peerDependencies)
+const external = Object.keys(packages.peerDependencies)
 
 external.forEach(dep => {
   if (!_.has(globals, dep)) {

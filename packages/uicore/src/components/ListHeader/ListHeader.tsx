@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { FontVariation } from '@harness/design-system'
+import { FontVariation } from '@harnessio/design-system'
 import css from './ListHeader.css'
 import { Layout, Text } from '../../'
 import { SortDropdown, SortDropdownProps } from '../SortDropdown/SortDropdown'

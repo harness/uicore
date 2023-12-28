@@ -14,8 +14,8 @@ import { TooltipRenderProps } from './types'
 
 import css from './Tooltip.css'
 import { Popover } from '../../components/Popover/Popover'
-import { Icon } from '@harness/icons'
-import { Color } from '@harness/design-system'
+import { Icon } from '@harnessio/icons'
+import { Color } from '@harnessio/design-system'
 
 const _asHtml = (content: string) => {
   return `${content

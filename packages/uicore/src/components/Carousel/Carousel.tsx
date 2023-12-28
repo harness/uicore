@@ -9,7 +9,7 @@ import React from 'react'
 import css from './Carousel.css'
 import cx from 'classnames'
 import { Layout } from '../../layouts/Layout'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 
 export interface CarouselProps {
   className?: string

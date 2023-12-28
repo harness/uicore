@@ -12,7 +12,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { BreadcrumbsProps, Breadcrumbs } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 
 export default {
   title: 'Components / Breadcrumbs',

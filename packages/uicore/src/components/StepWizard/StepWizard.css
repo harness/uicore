@@ -6,6 +6,7 @@
  */
 
 .main {
+  height: 100%;
   &.navBar {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -80,6 +81,9 @@
 .header {
   display: grid;
   justify-content: center;
+  svg {
+    color: var(--white);
+  }
 }
 
 .title {
@@ -97,7 +101,8 @@
   height: var(--spacing-large) !important;
   width: var(--spacing-large) !important;
 }
-.harnessWatermark {
+
+.defaultWatermark {
   position: absolute;
   left: -8.19%;
   right: 78.36%;

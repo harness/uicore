@@ -8,11 +8,11 @@
 import React, { MutableRefObject } from 'react'
 import cx from 'classnames'
 import css from './StepWizard.css'
-import { Icon, IconName, IconProps } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Text } from '../../components/Text/Text'
 import { romanize } from '../../core/Utils'
 import { isNil } from 'lodash-es'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 interface StepChangeData<SharedObject> {
   prevStep: number
@@ -32,9 +32,9 @@ export type GotoStepArgs<SharedObject> =
       prevStepData?: SharedObject
     }
 export interface StepWizardProps<SharedObject> {
-  icon?: IconName
-  iconProps?: Omit<IconProps, 'name'>
-  watermarkIcon?: IconName
+  watermarkLogo?: JSX.Element
+  watermarkLogoClassName?: string
+  icon?: JSX.Element
   title?: string | JSX.Element
   subtitle?: string | JSX.Element
   children:
@@ -123,11 +123,11 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     children,
     stepClassName = '',
     navClassName = '',
-    icon = '',
-    iconProps,
-    watermarkIcon = 'harness-with-color',
     title = '',
-    subtitle = ''
+    subtitle = '',
+    watermarkLogo,
+    watermarkLogoClassName,
+    icon
   } = props
   const stepIdentifierToStepNumberMap = React.useRef<Record<string, number>>({})
   const currentStepNumber = React.useRef<number>(0)
@@ -381,25 +381,15 @@ export function StepWizard<SharedObject = Record<string, unknown>>(
     <div className={cx(css.main, className, { [css.navBar]: isNavMode })}>
       {isNavMode && (
         <div className={css.navBarList}>
-          {icon ? (
-            <span className={css.header}>
-              <Icon name={icon} {...iconProps} />
-            </span>
-          ) : null}
-          {title ? (
-            typeof title === 'string' ? (
-              <span className={cx(css.title, css.header)}>{title}</span>
-            ) : (
-              title
-            )
-          ) : null}
+          {icon && <span className={css.header}>{icon}</span>}
+          {title && (typeof title === 'string' ? <span className={cx(css.title, css.header)}>{title}</span> : title)}
           {renderStep()}
         </div>
       )}
       {state.activeStep && (
         <div className={cx(css.stepDetails, stepClassName)}> {React.cloneElement(activeChild, childProps)}</div>
       )}
-      <Icon name={watermarkIcon} className={css.harnessWatermark} size={346} color={Color.GREY_50} />
+      {watermarkLogo && <div className={cx(css.defaultWatermark, watermarkLogoClassName)}>{watermarkLogo}</div>}
     </div>
   )
 }

@@ -7,20 +7,9 @@
 
 import React from 'react'
 
-import { Layout, HarnessIcons, Popover, Icon, Text, IconName, Utils } from '../../'
+import { Layout, Popover, Text, Utils } from '../../'
+import { HarnessIcons, Icon, IconName } from '@harnessio/icons'
 import { IconNames as BlueprintIconNames } from '@blueprintjs/icons'
-
-export function HarnessLogos(): React.ReactElement {
-  return (
-    <div style={{ background: 'var(--grey-100)', padding: '20px', borderRadius: '5px' }}>
-      <Layout.Horizontal spacing="small">
-        {[HarnessIcons['harness-logo-black'], HarnessIcons['harness-logo-white']].map((HarnessLogo, index) => (
-          <HarnessLogo {...({ height: 48 } as any)} key={index} />
-        ))}
-      </Layout.Horizontal>
-    </div>
-  )
-}
 
 export function HarnessIconsGrid(): React.ReactElement {
   return (

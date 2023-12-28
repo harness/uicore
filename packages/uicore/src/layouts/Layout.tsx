@@ -6,9 +6,9 @@
  */
 
 import React, { HTMLAttributes } from 'react'
-import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import { StyledProps, styledClasses, omitStyledProps } from '@harnessio/design-system'
 import css from './Layout.css'
-import { Spacing } from '@harness/design-system'
+import { Spacing } from '@harnessio/design-system'
 import { Masonry, MasonryRef, MasonryProps } from './Masonry'
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement>, StyledProps {

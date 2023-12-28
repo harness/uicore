@@ -8,12 +8,12 @@
 import React, { HTMLAttributes, useRef, useState, useCallback, useMemo } from 'react'
 import { debounce } from 'lodash-es'
 import cx from 'classnames'
-import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
-import { styledClass } from '@harness/design-system'
-import { OptionalTooltip } from '@harness/design-system'
+import { StyledProps, styledClasses, omitStyledProps } from '@harnessio/design-system'
+import { styledClass } from '@harnessio/design-system'
+import { OptionalTooltip } from '@harnessio/design-system'
 import { Utils } from '../../core/Utils'
 import css from './Text.css'
-import { Icon, IconName, IconProps } from '@harness/icons'
+import { Icon, IconName, IconProps } from '@harnessio/icons'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
 export interface TextProps extends HTMLAttributes<HTMLDivElement>, StyledProps, OptionalTooltip {

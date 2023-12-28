@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/addon-docs/blocks'
-import { Layout, Icon } from '../'
+import { Layout } from '../'
+import { Icon } from '@harnessio/icons'
 import { HarnessLogos, HarnessIconsGrid, BlueprintIconsGrid } from './components/Icons.tsx'
 
 <Meta title="Foundation/Icons" />
@@ -11,20 +12,13 @@ Note that `<Icon/>` component supports multiple colors in svg file, but when com
 To use a Harness icon, first import `Icon` from UICore.
 
 ```js
-import { Icon } from '@harness/uicore'
+import { Icon } from '@harnessio/icons'
 ```
 
 Then render icon as a React component.
 
 ```js
 <Layout.Horizontal spacing="small" id="color-icons">
-  <Icon name="service-gotlab" size={64} />
-  <Icon name="service-datadog" size={64} />
-  <Icon name="service-github" size={64} />
-  <Icon name="service-gcp" size={64} />
-  <Icon name="service-jenkins" size={64} />
-  <Icon name="service-slack" size={64} />
-  <Icon name="spinner" size={64} color="blue500" />
   <Icon name="gear" size={64} color="green500" />
   <Icon name="hourglass" size={64} color="green500" />
   <Icon name="pending" size={64} color="grey300" />
@@ -32,13 +26,6 @@ Then render icon as a React component.
 ```
 
 <Layout.Horizontal spacing="small" id="color-icons">
-  <Icon name="service-gotlab" size={64} />
-  <Icon name="service-datadog" size={64} />
-  <Icon name="service-github" size={64} />
-  <Icon name="service-gcp" size={64} />
-  <Icon name="service-jenkins" size={64} />
-  <Icon name="service-slack" size={64} />
-  <Icon name="spinner" size={64} color="blue500" />
   <Icon name="gear" size={64} color="green500" />
   <Icon name="hourglass" size={64} color="green500" />
   <Icon name="pending" size={64} color="grey300" />
@@ -52,12 +39,6 @@ You can pass styled props to Icon as well.
 
 <Icon id="icon-styled-props" name="heart" size={64} color="blue500" padding="small" border={{ color: 'blue400' }} />
 
-## Harness Logos
-
-UICore currently has two Harness logos which are not suitable to be rendered by `<Icon />` due to the fact that the logos are not square. To render these logos, you can use their SVG components directly from `HarnessIcons['harness-logo-black']` and `HarnessIcons['harness-logo-white']`.
-
-<HarnessLogos />
-
 ## How to add an icon?
 
 To add an icon into UICore, copy the icon into UICore's `./src/icons` folder then run
@@ -69,6 +50,10 @@ yarn ui:icons
 ## Harness Icons
 
 <HarnessIconsGrid />
+
+## External Logos
+
+<LogosGrid />
 
 ## Blueprint Icons
 

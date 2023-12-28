@@ -7,7 +7,8 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { Container, IconName, ButtonProps } from '../../'
+import { Container, ButtonProps } from '../../'
+import { IconName } from '@harnessio/icons'
 
 import { PageSpinner } from './PageSpinner'
 import { PageError } from './PageError'

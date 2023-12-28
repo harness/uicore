@@ -9,12 +9,13 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
-import { CardBody, Icon, Layout, Text } from '../..'
+import { CardBody, Layout, Text } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Card, CardMenuProps } from '../Card/Card'
 import { omit } from 'lodash-es'
 
 import * as BP from '@blueprintjs/core'
+import { Icon } from '@harnessio/icons'
 export default {
   title: 'Components / CardMenu',
 
@@ -95,7 +96,7 @@ export const Basic: Story<CardMenuProps> = args => {
             <div style={{ height: '200px', width: '150px' }}>
               <Layout.Vertical spacing="large">
                 <div>
-                  <Icon name="service-jenkins" size={30} />
+                  <Icon name="advanced" size={30} />
                   <Text style={{ marginTop: '5px' }} font="small">
                     ToDolist.war
                   </Text>

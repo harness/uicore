@@ -8,8 +8,8 @@
 import React, { useMemo } from 'react'
 import { Container } from '../Container/Container'
 import { Text } from '../Text/Text'
-import { Color } from '@harness/design-system'
-import { MarginProps } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
+import { MarginProps } from '@harnessio/design-system'
 
 const TOP_LABEL_MARGIN: MarginProps = { bottom: 'small' }
 const BOTTOM_LABEL_MARGIN: MarginProps = { bottom: 'small' }

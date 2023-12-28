@@ -6,7 +6,7 @@
  */
 
 :global {
-  @keyframes :global(spinner-rotation) {
+  @keyframes spinner-rotation {
     from {
       transform: rotate(0deg);
     }

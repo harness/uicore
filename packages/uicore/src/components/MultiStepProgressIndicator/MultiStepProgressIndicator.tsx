@@ -12,7 +12,7 @@ import { Layout } from '../../layouts/Layout'
 import { Text } from '../..'
 
 import css from './MultiStepProgressIndicator.css'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { defaultTo, noop } from 'lodash-es'
 
 type StepStatus = 'TODO' | 'INPROGRESS' | 'FAILED' | 'SUCCESS'

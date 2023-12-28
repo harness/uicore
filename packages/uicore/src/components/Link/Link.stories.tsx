@@ -9,8 +9,9 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
-import { Link, Layout, Icon } from '../..'
+import { Link, Layout } from '../..'
 import { LinkProps } from '../Button/Button'
+import { Icon } from '@harnessio/icons'
 
 export default {
   title: 'Components / Link',

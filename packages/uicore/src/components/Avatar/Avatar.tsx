@@ -10,13 +10,13 @@ import React, { useState } from 'react'
 import css from './Avatar.css'
 import classnames from 'classnames'
 import { getInitialsFromNameOrEmail, getSumOfAllCharacters, defaultAvatarColor } from './utils'
-import { FontSize } from '@harness/design-system'
+import { FontSize } from '@harnessio/design-system'
 import { Utils } from '../../core/Utils'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { Container } from '../../components/Container/Container'
 import { Layout } from '../../layouts/Layout'
 import { Text } from '../Text/Text'
-import { Icon, IconProps } from '@harness/icons'
+import { Icon, IconProps } from '@harnessio/icons'
 export type AvatarSizes = FontSize
 export interface AvatarProps extends HTMLDivProps {
   name?: string

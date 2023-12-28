@@ -1301,6 +1301,16 @@
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
+"@harness/design-system@^1.4.0":
+  version "1.6.0"
+  resolved "https://npm.pkg.github.com/download/@harness/design-system/1.6.0/08be4ff6b6e6a42f163f69d6141875d995685a02#08be4ff6b6e6a42f163f69d6141875d995685a02"
+  integrity sha512-Js2mtSIrCrc0Slsc0P4+MGxQwIPqwwC6ynbSeytYaWmUHbvp9oXzuTw9ZN2CYYstaEv+xI6tJDCEJ4vqoM8ubw==
+
+"@harnessio/design-system@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/@harnessio/design-system/-/design-system-1.6.0.tgz#8d9323d1d5b8881b41069f7a98c700eca78481c9"
+  integrity sha512-MpNxpRBZLw9vMK/kDtFURI3JcN4cxxzj8STevZZoWbPZyEJ9/y/KJYi2GdERZ0z4Is/ccPv3ZcKDo3OK08OFVA==
+
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
   resolved "https://registry.npmjs.org/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"

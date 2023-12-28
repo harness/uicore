@@ -17,7 +17,7 @@ const content = (
 )
 
 const iconCardBody = (
-  <CardBody.Icon icon="service-kubernetes" iconSize={25}>
+  <CardBody.Icon icon="advanced" iconSize={25}>
     {content}
   </CardBody.Icon>
 )

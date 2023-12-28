@@ -7,7 +7,7 @@
 
 import React, { useMemo, useState } from 'react'
 import { Container } from '../Container/Container'
-import { Intent } from '@harness/design-system'
+import { Intent } from '@harnessio/design-system'
 import css from './ButtonGroup.css'
 import cx from 'classnames'
 import { Button, ButtonProps } from '../Button/Button'

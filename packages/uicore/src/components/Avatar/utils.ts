@@ -6,7 +6,7 @@
  */
 
 import { pick, defaultTo } from 'lodash-es'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 export const getInitialsFromNameOrEmail = (name = '', email = ''): string => {
   let initialsFromName = defaultTo(

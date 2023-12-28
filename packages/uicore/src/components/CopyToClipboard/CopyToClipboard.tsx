@@ -7,7 +7,8 @@
 
 import React from 'react'
 import { Position, PopoverInteractionKind, Popover } from '@blueprintjs/core'
-import { Icon, useToaster } from '../..'
+import { useToaster } from '../..'
+import { Icon } from '@harnessio/icons'
 
 import css from './CopyToClipboard.css'
 

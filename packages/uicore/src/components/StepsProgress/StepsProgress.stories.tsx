@@ -11,7 +11,7 @@ import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@st
 import { StepsProgress } from '../..'
 import { StepsProgressProps } from '../StepsProgress/StepsProgress'
 import { omit } from 'lodash-es'
-import { Intent } from '@harness/design-system'
+import { Intent } from '@harnessio/design-system'
 
 export default {
   title: 'Components / StepsProgress',

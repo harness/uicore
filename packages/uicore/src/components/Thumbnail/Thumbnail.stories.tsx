@@ -52,7 +52,7 @@ export const Basic: Story<ThumbnailProps> = args => {
 
 Basic.args = {
   label: 'Kubernetes',
-  icon: 'service-kubernetes',
+  icon: 'advanced',
   value: 'kubernetes',
   onClick: (e: React.ChangeEvent<HTMLInputElement>) => {
     // eslint-disable-next-line no-alert

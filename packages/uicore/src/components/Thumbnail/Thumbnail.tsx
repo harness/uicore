@@ -10,9 +10,9 @@ import cx from 'classnames'
 
 import css from '../Thumbnail/Thumbnail.css'
 import { Card } from '../Card/Card'
-import { Icon, IconName } from '@harness/icons'
+import { Icon, IconName } from '@harnessio/icons'
 import { Text } from '../Text/Text'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 export interface ThumbnailProps {
   name?: string

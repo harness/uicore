@@ -6,8 +6,8 @@
  */
 
 import React, { ChangeEvent, ReactElement } from 'react'
-import { StyledProps, styledClasses } from '@harness/design-system'
-import { styledClass } from '@harness/design-system'
+import { StyledProps, styledClasses } from '@harnessio/design-system'
+import { styledClass } from '@harnessio/design-system'
 
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 

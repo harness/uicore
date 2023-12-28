@@ -8,8 +8,8 @@
 import React, { FormEvent } from 'react'
 import { Switch as BpSwitch, ISwitchProps } from '@blueprintjs/core'
 import { omit } from 'lodash-es'
-import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
-import { styledClass } from '@harness/design-system'
+import { StyledProps, omitStyledProps, styledClasses } from '@harnessio/design-system'
+import { styledClass } from '@harnessio/design-system'
 
 import css from './Switch.css'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'

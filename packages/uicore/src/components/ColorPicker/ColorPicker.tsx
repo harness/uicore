@@ -11,7 +11,7 @@ import React, { useState } from 'react'
 import { Container } from '../Container/Container'
 import { Position, Classes } from '@blueprintjs/core'
 import css from './ColorPicker.css'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import cx from 'classnames'
 
 export interface ColorPickerProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'onChange'> {

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useCallback, useEffect, useState, useRef } from 'react'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { Button, ButtonVariation, Container, Layout } from '../..'
 import type * as CSS from 'csstype'
 import { debounce } from 'lodash-es'

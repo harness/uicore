@@ -9,7 +9,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 
 import { SparkChart } from '../..'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { SparkChartProps } from './SparkChart'
 

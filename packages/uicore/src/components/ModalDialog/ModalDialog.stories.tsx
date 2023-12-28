@@ -8,10 +8,10 @@
 import React, { ReactNode, useState } from 'react'
 import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks'
 import { Story } from '@storybook/react'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { Button, ButtonVariation } from '../Button/Button'
 import { TextInput } from '../TextInput/TextInput'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Layout } from '../../layouts/Layout'
 import { ModalDialog, ModalDialogProps } from './ModalDialog'
 

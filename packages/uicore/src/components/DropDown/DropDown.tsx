@@ -8,15 +8,15 @@
 import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState } from 'react'
 import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
 import { Button } from '../Button/Button'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import { Layout } from '../../layouts/Layout'
 import css from './DropDown.css'
 import { SelectOption } from '../Select/Select'
-import { Icon, IconName, IconProps } from '@harness/icons'
+import { Icon, IconName, IconProps } from '@harnessio/icons'
 import { Text } from '../Text/Text'
 import cx from 'classnames'
 import { Menu, Position, Spinner } from '@blueprintjs/core'
-import { StyledProps } from '@harness/design-system'
+import { StyledProps } from '@harnessio/design-system'
 import { debounce } from 'lodash-es'
 
 const Select = BPSelect.ofType<SelectOption>()

@@ -6,10 +6,10 @@ This repo uses a [monorepo architechture](https://monorepo.tools/). We are using
 
 List of packages:
 
-- [@harness/design-system](./packages/design-system/)
+- [@harnessio/design-system](./packages/design-system/)
 - [@harness/help-panel](./packages/help-panel/)
-- [@harness/icons](./packages/icons/)
-- [@harness/uicore](./packages/uicore/)
+- [@harnessio/icons](./packages/icons/)
+- [@harnessio/uicore](./packages/uicore/)
 - [@harness/use-modal](./packages/useModal/)
 
 ## Branches

@@ -7,7 +7,7 @@
 
 import React, { ChangeEvent, ReactElement, ReactNode } from 'react'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
-import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import { StyledProps, styledClasses, omitStyledProps } from '@harnessio/design-system'
 
 import css from './RadioButton.css'
 

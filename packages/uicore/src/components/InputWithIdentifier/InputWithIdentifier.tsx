@@ -13,7 +13,7 @@ import { FormikTooltipContext } from '../FormikForm/FormikTooltipContext'
 
 import { FormInput, TextProps } from '../FormikForm/FormikForm'
 import { Text } from '../Text/Text'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Layout } from '../../layouts/Layout'
 import { Container } from '../Container/Container'
 import textCss from '../TextInput/TextInput.css'
