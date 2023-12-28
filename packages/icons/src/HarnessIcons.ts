@@ -448,7 +448,9 @@ import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
 import Dotnet from './dotnet.svg'
 import Down from './down.svg'
+import DownloadAwsS3Store from './download-aws-s3-store.svg'
 import DownloadBox from './download-box.svg'
+import DownloadHarnessStore from './download-harness-store.svg'
 import DownloadManifestsInverse from './download-manifests-inverse.svg'
 import DownloadManifests from './download-manifests.svg'
 import DryRun from './dry-run.svg'
@@ -1720,7 +1722,9 @@ type HarnessIconName =
   | 'docs'
   | 'dotnet'
   | 'down'
+  | 'download-aws-s3-store'
   | 'download-box'
+  | 'download-harness-store'
   | 'download-manifests-inverse'
   | 'download-manifests'
   | 'dry-run'
@@ -2992,7 +2996,9 @@ const HarnessIcons: KVO<ElementType> = {
   docs: Docs,
   dotnet: Dotnet,
   down: Down,
+  'download-aws-s3-store': DownloadAwsS3Store,
   'download-box': DownloadBox,
+  'download-harness-store': DownloadHarnessStore,
   'download-manifests-inverse': DownloadManifestsInverse,
   'download-manifests': DownloadManifests,
   'dry-run': DryRun,
