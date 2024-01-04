@@ -38,9 +38,13 @@ import Zap from './ZAP.svg'
 import AcrCiStepInverse from './acr-ci-step-inverse.svg'
 import AcrCiStep from './acr-ci-step.svg'
 import Ai from './ai.svg'
+import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
+import AnchoreGrype from './anchore-grype.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import AquasecInverse from './aquasec-inverse.svg'
+import Aquasec from './aquasec.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import ArtifactGoogleCloudSourceRepo from './artifact-google-cloud-source-repo.svg'
@@ -59,6 +63,7 @@ import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import AzureVm from './azure-vm.svg'
 import Azurewebapp from './azurewebapp.svg'
+import BackstageLogo from './backstage-logo.svg'
 import BanditInverse from './bandit-inverse.svg'
 import Bandit from './bandit.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
@@ -102,9 +107,11 @@ import CiSolidCurrentColor from './ci-solid-current-color.svg'
 import CiSolid from './ci-solid.svg'
 import CiWithDarkText from './ci-with-dark-text.svg'
 import CiWithText from './ci-with-text.svg'
+import CloudFoundry from './cloud-foundry.svg'
 import CloudLight from './cloud-light.svg'
 import Cloudformation from './cloudformation.svg'
 import Code from './code.svg'
+import Cookiecutter from './cookiecutter.svg'
 import CsHover from './cs-hover.svg'
 import CvHover from './cv-hover.svg'
 import CvMainInverse from './cv-main-inverse.svg'
@@ -117,6 +124,7 @@ import DockerCiStepInverse from './docker-ci-step-inverse.svg'
 import DockerCiStep from './docker-ci-step.svg'
 import DockerContentTrustInverse from './docker-content-trust-inverse.svg'
 import DockerContentTrust from './docker-content-trust.svg'
+import DockerGrey from './docker-grey.svg'
 import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
@@ -205,6 +213,7 @@ import Nikto from './nikto.svg'
 import NmapInverse from './nmap-inverse.svg'
 import Nmap from './nmap.svg'
 import Nodejs from './nodejs.svg'
+import Npm from './npm.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
@@ -350,9 +359,13 @@ type LogoNames =
   | 'acr-ci-step-inverse'
   | 'acr-ci-step'
   | 'ai'
+  | 'anchore-grype-inverse'
+  | 'anchore-grype'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'aquasec-inverse'
+  | 'aquasec'
   | 'argo'
   | 'arm'
   | 'artifact-google-cloud-source-repo'
@@ -371,6 +384,7 @@ type LogoNames =
   | 'azure-kubernetes-service'
   | 'azure-vm'
   | 'azurewebapp'
+  | 'backstage-logo'
   | 'bandit-inverse'
   | 'bandit'
   | 'bitbucket-blue'
@@ -414,9 +428,11 @@ type LogoNames =
   | 'ci-solid'
   | 'ci-with-dark-text'
   | 'ci-with-text'
+  | 'cloud-foundry'
   | 'cloud-light'
   | 'cloudformation'
   | 'code'
+  | 'cookiecutter'
   | 'cs-hover'
   | 'cv-hover'
   | 'cv-main-inverse'
@@ -429,6 +445,7 @@ type LogoNames =
   | 'docker-ci-step'
   | 'docker-content-trust-inverse'
   | 'docker-content-trust'
+  | 'docker-grey'
   | 'docker-hub-step'
   | 'docker-step-inverse'
   | 'docker-step'
@@ -517,6 +534,7 @@ type LogoNames =
   | 'nmap-inverse'
   | 'nmap'
   | 'nodejs'
+  | 'npm'
   | 'openshift-params'
   | 'openshift'
   | 'owasp-dependency-check-inverse'
@@ -662,9 +680,13 @@ const Logos: KVO<ElementType> = {
   'acr-ci-step-inverse': AcrCiStepInverse,
   'acr-ci-step': AcrCiStep,
   ai: Ai,
+  'anchore-grype-inverse': AnchoreGrypeInverse,
+  'anchore-grype': AnchoreGrype,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'aquasec-inverse': AquasecInverse,
+  aquasec: Aquasec,
   argo: Argo,
   arm: Arm,
   'artifact-google-cloud-source-repo': ArtifactGoogleCloudSourceRepo,
@@ -683,6 +705,7 @@ const Logos: KVO<ElementType> = {
   'azure-kubernetes-service': AzureKubernetesService,
   'azure-vm': AzureVm,
   azurewebapp: Azurewebapp,
+  'backstage-logo': BackstageLogo,
   'bandit-inverse': BanditInverse,
   bandit: Bandit,
   'bitbucket-blue': BitbucketBlue,
@@ -726,9 +749,11 @@ const Logos: KVO<ElementType> = {
   'ci-solid': CiSolid,
   'ci-with-dark-text': CiWithDarkText,
   'ci-with-text': CiWithText,
+  'cloud-foundry': CloudFoundry,
   'cloud-light': CloudLight,
   cloudformation: Cloudformation,
   code: Code,
+  cookiecutter: Cookiecutter,
   'cs-hover': CsHover,
   'cv-hover': CvHover,
   'cv-main-inverse': CvMainInverse,
@@ -741,6 +766,7 @@ const Logos: KVO<ElementType> = {
   'docker-ci-step': DockerCiStep,
   'docker-content-trust-inverse': DockerContentTrustInverse,
   'docker-content-trust': DockerContentTrust,
+  'docker-grey': DockerGrey,
   'docker-hub-step': DockerHubStep,
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
@@ -829,6 +855,7 @@ const Logos: KVO<ElementType> = {
   'nmap-inverse': NmapInverse,
   nmap: Nmap,
   nodejs: Nodejs,
+  npm: Npm,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
