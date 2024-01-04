@@ -856,6 +856,8 @@ import OnpremLight from './onprem-light.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OptionsHollow from './options-hollow.svg'
+import OsvInverse from './osv-inverse.svg'
+import Osv from './osv.svg'
 import OtherWorkload from './other-workload.svg'
 import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
 import OwaspInverse from './owasp-inverse.svg'
@@ -2130,6 +2132,8 @@ type HarnessIconName =
   | 'openshift-params'
   | 'openshift'
   | 'options-hollow'
+  | 'osv-inverse'
+  | 'osv'
   | 'other-workload'
   | 'owasp-dependency-check-inverse'
   | 'owasp-inverse'
@@ -3404,6 +3408,8 @@ const HarnessIcons: KVO<ElementType> = {
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'options-hollow': OptionsHollow,
+  'osv-inverse': OsvInverse,
+  osv: Osv,
   'other-workload': OtherWorkload,
   'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
   'owasp-inverse': OwaspInverse,
