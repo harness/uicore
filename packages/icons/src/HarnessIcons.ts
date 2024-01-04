@@ -19,6 +19,7 @@ import Inline from './Inline.svg'
 import Options from './Options.svg'
 import SnykInverse from './Snyk-inverse.svg'
 import Snyk from './Snyk.svg'
+import SplitView from './SplitView.svg'
 import Stroke from './Stroke.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
@@ -28,11 +29,17 @@ import AddGraph from './add-graph.svg'
 import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
+import AgentTokens from './agent-tokens.svg'
+import Agents from './agents.svg'
+import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
+import AnchoreGrype from './anchore-grype.svg'
 import ApiDocs from './api-docs.svg'
 import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
+import AquasecInverse from './aquasec-inverse.svg'
+import Aquasec from './aquasec.svg'
 import Arrow from './arrow.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
@@ -48,6 +55,7 @@ import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
 import Autostopping from './autostopping.svg'
+import Avatar from './avatar.svg'
 import AwsLambdaDeploy from './aws-lambda-deploy.svg'
 import AwsLambdaRollback from './aws-lambda-rollback.svg'
 import AwsLambdaTrafficShift from './aws-lambda-traffic-shift.svg'
@@ -67,6 +75,7 @@ import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStepPlugin from './background-step-plugin.svg'
 import BackgroundStep from './background-step.svg'
+import BackstageLogo from './backstage-logo.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
@@ -98,12 +107,38 @@ import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
+import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
+import CcmCurrencySettings from './ccm-currency-settings.svg'
+import CcmNavAnomalies from './ccm-nav-anomalies.svg'
+import CcmNavAssetGovernance from './ccm-nav-asset-governance.svg'
+import CcmNavAutostoppingRules from './ccm-nav-autostopping-rules.svg'
+import CcmNavBiDashboards from './ccm-nav-bi-dashboards.svg'
+import CcmNavBudgets from './ccm-nav-budgets.svg'
+import CcmNavClusterOrchestration from './ccm-nav-cluster-orchestration.svg'
+import CcmNavCommitments from './ccm-nav-commitments.svg'
+import CcmNavCostCategories from './ccm-nav-cost-categories.svg'
+import CcmNavPerspectives from './ccm-nav-perspectives.svg'
+import CcmNavRecommendations from './ccm-nav-recommendations.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
 import CcmPolicyShield from './ccm-policy-shield.svg'
 import CcmSketch from './ccm-sketch.svg'
 import CdSketch from './cd-sketch.svg'
 import Cd from './cd.svg'
+import CdkBootstrapInverse from './cdk-bootstrap-inverse.svg'
+import CdkBootstrap from './cdk-bootstrap.svg'
+import CdkDeployInverse from './cdk-deploy-inverse.svg'
+import CdkDeploy from './cdk-deploy.svg'
+import CdkDestroyInverse from './cdk-destroy-inverse.svg'
+import CdkDestroy from './cdk-destroy.svg'
+import CdkDiffInverse from './cdk-diff-inverse.svg'
+import CdkDiff from './cdk-diff.svg'
+import CdkInverse from './cdk-inverse.svg'
+import CdkRollBackInverse from './cdk-roll-back-inverse.svg'
+import CdkRollBack from './cdk-roll-back.svg'
+import CdkSynthInverse from './cdk-synth-inverse.svg'
+import CdkSynth from './cdk-synth.svg'
+import Cdk from './cdk.svg'
 import CeBudgetColored from './ce-budget_colored.svg'
 import CeBudgetGrey from './ce-budget_grey.svg'
 import CeCloud from './ce-cloud.svg'
@@ -112,10 +147,17 @@ import CeHover from './ce-hover.svg'
 import CeOptimization from './ce-optimization.svg'
 import CeVisibilityPlus from './ce-visibility-plus.svg'
 import CeVisibility from './ce-visibility.svg'
+import CetAgentTokensSettings from './cet-agent-tokens-settings.svg'
+import CetAgentsSettings from './cet-agents-settings.svg'
+import CetCriticalEventsSettings from './cet-critical-events-settings.svg'
+import CetGrey from './cet-grey.svg'
+import CetQualityGate from './cet-quality-gate.svg'
 import CfHover from './cf-hover.svg'
+import CfNavFeatureFlags from './cf-nav-featureFlags.svg'
 import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
+import Changes from './changes.svg'
 import ChaosChaoshubPrivate from './chaos-chaoshub-private.svg'
 import ChaosChaoshubPublic from './chaos-chaoshub-public.svg'
 import ChaosCube from './chaos-cube.svg'
@@ -123,6 +165,12 @@ import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosNamespace from './chaos-namespace.svg'
+import ChaosNavChaosguard from './chaos-nav-chaosguard.svg'
+import ChaosNavChaoshub from './chaos-nav-chaoshub.svg'
+import ChaosNavExperiments from './chaos-nav-experiments.svg'
+import ChaosNavGamedays from './chaos-nav-gamedays.svg'
+import ChaosNavNetworkMaps from './chaos-nav-network-maps.svg'
+import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
@@ -154,6 +202,7 @@ import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
 import CloudFormationRollback from './cloud-formation-rollback.svg'
+import CloudFoundry from './cloud-foundry.svg'
 import CloudFunctionNoTrafficShift from './cloud-function-no-traffic-shift.svg'
 import CloudFunctionRollback from './cloud-function-rollback.svg'
 import CloudFunctionTrafficShift from './cloud-function-traffic-shift.svg'
@@ -229,9 +278,11 @@ import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import ContactSupport from './contact-support.svg'
+import Cookiecutter from './cookiecutter.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
 import Copy from './copy.svg'
+import CostChange from './cost-change.svg'
 import CostDataCollection from './cost-data-collection.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
@@ -240,6 +291,7 @@ import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
 import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
+import CriticalEvents from './critical-events.svg'
 import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
@@ -257,6 +309,7 @@ import CvVerifystep from './cv-verifystep.svg'
 import DangerIcon from './danger-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
+import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
@@ -286,8 +339,18 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
+import DockerGrey from './docker-grey.svg'
 import Docs from './docs.svg'
+import DownloadAwsS3Store from './download-aws-s3-store.svg'
+import DownloadBox from './download-box.svg'
+import DownloadHarnessStore from './download-harness-store.svg'
+import DownloadManifestsInverse from './download-manifests-inverse.svg'
+import DownloadManifests from './download-manifests.svg'
 import DryRun from './dry-run.svg'
+import EcsServiceSetupInverse from './ecs-service-setup-inverse.svg'
+import EcsServiceSetup from './ecs-service-setup.svg'
+import EcsUpgradeContainersInverse from './ecs-upgrade-containers-inverse.svg'
+import EcsUpgradeContainers from './ecs-upgrade-containers.svg'
 import EemaDark from './eema-dark.svg'
 import EemaLight from './eema-light.svg'
 import ElastigroupBluegreenInverse from './elastigroup-bluegreen-inverse.svg'
@@ -345,7 +408,9 @@ import FixedInput from './fixed-input.svg'
 import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
+import Flux from './flux.svg'
 import FolderUpload from './folder-upload.svg'
+import Folder from './folder.svg'
 import FossaInverse from './fossa-inverse.svg'
 import Fossa from './fossa.svg'
 import FsClosedFolder from './fs-closed-folder.svg'
@@ -354,7 +419,10 @@ import FsRootFolder from './fs-root-folder.svg'
 import FullScreenExit from './full-screen-exit.svg'
 import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
+import GarStepInverse from './gar-step-inverse.svg'
+import GarStep from './gar-step.svg'
 import Gear from './gear.svg'
+import GetStarted from './get-started.svg'
 import GitBranchExisting from './git-branch-existing.svg'
 import GitCloneCiStepInverse from './git-clone-ci-step-inverse.svg'
 import GitCloneCiStep from './git-clone-ci-step.svg'
@@ -364,6 +432,7 @@ import GitExperienceSetting from './git-experience-setting.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
 import GithubActions from './github-actions.svg'
+import GitnessNoRepositories from './gitness-no-repositories.svg'
 import GitopsAgentBlue from './gitops-agent-blue.svg'
 import GitopsAgent from './gitops-agent.svg'
 import GitopsAgentsBlueCircle from './gitops-agents-blue-circle.svg'
@@ -385,6 +454,7 @@ import GitopsRepositoryCertificatesBlueCircle from './gitops-repository-certific
 import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
+import Gitops from './gitops.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
@@ -393,6 +463,7 @@ import Graph from './graph.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
 import HarnessCopilot from './harness-copilot.svg'
+import HarnessGrey from './harness-grey.svg'
 import Health from './health.svg'
 import Help from './help.svg'
 import HexagonOutline from './hexagon-outline.svg'
@@ -403,7 +474,20 @@ import HttpStep from './http-step.svg'
 import IacmResourceAdded from './iacm-resource-added.svg'
 import IacmResourceChanged from './iacm-resource-changed.svg'
 import IacmResourceDeleted from './iacm-resource-deleted.svg'
+import IacmResourceUnchanged from './iacm-resource-unchanged.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
+import IdpNavAllowlist from './idp-nav-allowlist.svg'
+import IdpNavConnectors from './idp-nav-connectors.svg'
+import IdpNavLayout from './idp-nav-layout.svg'
+import IdpNavOauth from './idp-nav-oauth.svg'
+import IdpNavPluginconfig from './idp-nav-pluginconfig.svg'
+import IdpNavPlugins from './idp-nav-plugins.svg'
+import IdpNavScorecards from './idp-nav-scorecards.svg'
+import IdpStageHover from './idp-stage-hover.svg'
+import IdpWithDarkText from './idp-with-dark-text.svg'
+import IgnoreFailedSquare from './ignore-failed-square.svg'
+import IgnoreList from './ignore-list.svg'
+import IgnoreFailed from './ignoreFailed.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -431,6 +515,7 @@ import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
 import LineChart from './line-chart.svg'
+import ListBlue from './list-blue.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListVars from './list-vars.svg'
 import ListView from './list-view.svg'
@@ -526,10 +611,12 @@ import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
 import MemberRole from './memberRole.svg'
 import MergePr from './merge-pr.svg'
+import MonitoredService from './monitored-service.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
 import NavAccountAdmin from './nav-account-admin.svg'
+import NavBuilds from './nav-builds.svg'
 import NavCvHover from './nav-cv-hover.svg'
 import NavCvSelected from './nav-cv-selected.svg'
 import NavDashboardHover from './nav-dashboard-hover.svg'
@@ -538,13 +625,16 @@ import NavDashboard from './nav-dashboard.svg'
 import NavDeploymentsHover from './nav-deployments-hover.svg'
 import NavDeploymentsSelected from './nav-deployments-selected.svg'
 import NavDeployments from './nav-deployments.svg'
+import NavEnvironments from './nav-environments.svg'
 import NavGovernanceHover from './nav-governance-hover.svg'
 import NavGovernanceSelected from './nav-governance-selected.svg'
 import NavGovernance from './nav-governance.svg'
 import NavHelp from './nav-help.svg'
+import NavHome from './nav-home.svg'
 import NavInfrastructureHover from './nav-infrastructure-hover.svg'
 import NavInfrastructureSelected from './nav-infrastructure-selected.svg'
 import NavOrganization from './nav-organization.svg'
+import NavPipeline from './nav-pipeline.svg'
 import NavPipelinesSelected from './nav-pipelines-selected.svg'
 import NavPipelines from './nav-pipelines.svg'
 import NavProject from './nav-project.svg'
@@ -552,22 +642,28 @@ import NavResourcesHover from './nav-resources-hover.svg'
 import NavResourcesSelected from './nav-resources-selected.svg'
 import NavResources from './nav-resources.svg'
 import NavSettings from './nav-settings.svg'
+import NavSupport from './nav-support.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
 import NavUserProfile from './nav-user-profile.svg'
+import NavWorkspaces from './nav-workspaces.svg'
 import Network from './network.svg'
 import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
 import NgFilter from './ng-filter.svg'
+import NineDotOptions from './nine-dot-options.svg'
 import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
+import Npm from './npm.svg'
 import OfflineOutline from './offline-outline.svg'
+import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
 import OnpremLight from './onprem-light.svg'
+import OptionsHollow from './options-hollow.svg'
 import OtherWorkload from './other-workload.svg'
 import PdcInverse from './pdc-inverse.svg'
 import Pdc from './pdc.svg'
@@ -594,7 +690,10 @@ import PluginCiStepInverse from './plugin-ci-step-inverse.svg'
 import PluginCiStep from './plugin-ci-step.svg'
 import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
+import PodWithbg from './pod-withbg.svg'
 import Pod from './pod.svg'
+import Policies from './policies.svg'
+import Policysets from './policysets.svg'
 import Polygon from './polygon.svg'
 import ProbeEot from './probe-EOT.svg'
 import ProbeSot from './probe-SOT.svg'
@@ -615,6 +714,7 @@ import RancherInverse from './rancher-inverse.svg'
 import Rancher from './rancher.svg'
 import ReExecuted from './re-executed.svg'
 import RegEx from './reg-ex.svg'
+import RegisterCatalog from './register-catalog.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
@@ -655,8 +755,10 @@ import RestoreCacheS3Step from './restore-cache-s3-step.svg'
 import RestoreCacheS3 from './restore-cache-s3.svg'
 import RestoreCacheStep from './restore-cache-step.svg'
 import RetryStepGroup from './retry-step-group.svg'
+import RightArrow from './right-arrow.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
+import Roles from './roles.svg'
 import RollbackExecution from './rollback-execution.svg'
 import RollbackPipelineInverse from './rollback-pipeline-inverse.svg'
 import RollbackPipeline from './rollback-pipeline.svg'
@@ -706,8 +808,18 @@ import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
 import SeiMain from './sei-main.svg'
+import SeiWithDarkText from './sei-with-dark-text.svg'
+import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
+import ServerlessAwsLambdaDeployV2Inverse from './serverless-aws-lambda-deploy-v2-inverse.svg'
+import ServerlessAwsLambdaDeployV2 from './serverless-aws-lambda-deploy-v2.svg'
+import ServerlessAwsLambdaPackageInverse from './serverless-aws-lambda-package-inverse.svg'
+import ServerlessAwsLambdaPackage from './serverless-aws-lambda-package.svg'
+import ServerlessAwsLambdaPrepareRollbackInverse from './serverless-aws-lambda-prepare-rollback-inverse.svg'
+import ServerlessAwsLambdaPrepareRollback from './serverless-aws-lambda-prepare-rollback.svg'
+import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollback-v2-inverse.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
+import ServiceAccounts from './service-accounts.svg'
 import ServiceCustomConnector from './service-custom-connector.svg'
 import ServiceGrafanaLoki from './service-grafana-loki.svg'
 import ServiceSignalfx from './service-signalfx.svg'
@@ -720,18 +832,27 @@ import ServicenowCreate from './servicenow-create.svg'
 import ServicenowUpdateInverse from './servicenow-update-inverse.svg'
 import ServicenowUpdate from './servicenow-update.svg'
 import Services from './services.svg'
+import Setting from './setting.svg'
 import SetupApi from './setup-api.svg'
 import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
 import Skipped from './skipped.svg'
 import SliderTrigger from './slider-trigger.svg'
+import SloDowntime from './slo-downtime.svg'
+import Slo from './slo.svg'
 import SlotDeployment from './slot-deployment.svg'
+import SlsaGeneration from './slsa-generation.svg'
+import SlsaVerification from './slsa-verification.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import SolidError from './solid-error.svg'
+import SscaArtifacts from './ssca-artifacts.svg'
+import SscaComponents from './ssca-components.svg'
 import SscaEnforce from './ssca-enforce.svg'
+import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
+import SscaRemediation from './ssca-remediation.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
@@ -744,6 +865,8 @@ import StepJira from './step-jira.svg'
 import StepsSpinner from './steps-spinner.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
+import StoreArtifactBundle from './store-artifact-bundle.svg'
+import Subscriptions from './subscriptions.svg'
 import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
@@ -767,6 +890,8 @@ import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import Sysdig from './sysdig.svg'
 import TanzuCommand from './tanzuCommand.svg'
+import TargetManagement from './target-management.svg'
+import Target from './target.svg'
 import TasManifest from './tas-manifest.svg'
 import TasPreProcessingArtifactGroup from './tas-pre-processing-artifact-group.svg'
 import TasPreProcessingArtifact from './tas-pre-processing-artifact.svg'
@@ -785,6 +910,7 @@ import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
 import TemplatesIcon from './templates-icon.svg'
+import Terminal from './terminal.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
 import TerraformApply from './terraform-apply.svg'
@@ -812,21 +938,25 @@ import Text from './text.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
+import Timer from './timer.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerExecution from './trigger-execution.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
+import TriggerStack from './trigger-stack.svg'
 import Union from './union.svg'
 import University from './university.svg'
 import Up from './up.svg'
+import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
 import UserGroups from './user-groups.svg'
 import User from './user.svg'
 import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
+import Variables from './variables.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
 import WarningIcon from './warning-icon.svg'
@@ -854,6 +984,7 @@ type HarnessIconName =
   | 'Options'
   | 'Snyk-inverse'
   | 'Snyk'
+  | 'SplitView'
   | 'Stroke'
   | 'access-control'
   | 'accordion-collapsed'
@@ -863,11 +994,17 @@ type HarnessIconName =
   | 'add-stage'
   | 'adminRole'
   | 'advanced'
+  | 'agent-tokens'
+  | 'agents'
+  | 'anchore-grype-inverse'
+  | 'anchore-grype'
   | 'api-docs'
   | 'apply'
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
+  | 'aquasec-inverse'
+  | 'aquasec'
   | 'arrow'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
@@ -883,6 +1020,7 @@ type HarnessIconName =
   | 'audit-trail'
   | 'autoScaler'
   | 'autostopping'
+  | 'avatar'
   | 'aws-lambda-deploy'
   | 'aws-lambda-rollback'
   | 'aws-lambda-traffic-shift'
@@ -902,6 +1040,7 @@ type HarnessIconName =
   | 'background-ci-step'
   | 'background-step-plugin'
   | 'background-step'
+  | 'backstage-logo'
   | 'banned'
   | 'bar-chart'
   | 'barrier-close'
@@ -933,12 +1072,38 @@ type HarnessIconName =
   | 'canvas-reset'
   | 'canvas-selector'
   | 'cascading'
+  | 'ccm-cloud-integration-settings'
+  | 'ccm-currency-settings'
+  | 'ccm-nav-anomalies'
+  | 'ccm-nav-asset-governance'
+  | 'ccm-nav-autostopping-rules'
+  | 'ccm-nav-bi-dashboards'
+  | 'ccm-nav-budgets'
+  | 'ccm-nav-cluster-orchestration'
+  | 'ccm-nav-commitments'
+  | 'ccm-nav-cost-categories'
+  | 'ccm-nav-perspectives'
+  | 'ccm-nav-recommendations'
   | 'ccm-policy-details'
   | 'ccm-policy-shield-checked'
   | 'ccm-policy-shield'
   | 'ccm-sketch'
   | 'cd-sketch'
   | 'cd'
+  | 'cdk-bootstrap-inverse'
+  | 'cdk-bootstrap'
+  | 'cdk-deploy-inverse'
+  | 'cdk-deploy'
+  | 'cdk-destroy-inverse'
+  | 'cdk-destroy'
+  | 'cdk-diff-inverse'
+  | 'cdk-diff'
+  | 'cdk-inverse'
+  | 'cdk-roll-back-inverse'
+  | 'cdk-roll-back'
+  | 'cdk-synth-inverse'
+  | 'cdk-synth'
+  | 'cdk'
   | 'ce-budget_colored'
   | 'ce-budget_grey'
   | 'ce-cloud'
@@ -947,10 +1112,17 @@ type HarnessIconName =
   | 'ce-optimization'
   | 'ce-visibility-plus'
   | 'ce-visibility'
+  | 'cet-agent-tokens-settings'
+  | 'cet-agents-settings'
+  | 'cet-critical-events-settings'
+  | 'cet-grey'
+  | 'cet-quality-gate'
   | 'cf-hover'
+  | 'cf-nav-featureFlags'
   | 'chained-pipeline-hover'
   | 'chained-pipeline'
   | 'change-log'
+  | 'changes'
   | 'chaos-chaoshub-private'
   | 'chaos-chaoshub-public'
   | 'chaos-cube'
@@ -958,6 +1130,12 @@ type HarnessIconName =
   | 'chaos-hubs'
   | 'chaos-litmuschaos'
   | 'chaos-namespace'
+  | 'chaos-nav-chaosguard'
+  | 'chaos-nav-chaoshub'
+  | 'chaos-nav-experiments'
+  | 'chaos-nav-gamedays'
+  | 'chaos-nav-network-maps'
+  | 'chaos-nav-resilience-probes'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chaos-service-discovery'
@@ -989,6 +1167,7 @@ type HarnessIconName =
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
   | 'cloud-formation-rollback'
+  | 'cloud-foundry'
   | 'cloud-function-no-traffic-shift'
   | 'cloud-function-rollback'
   | 'cloud-function-traffic-shift'
@@ -1064,9 +1243,11 @@ type HarnessIconName =
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
   | 'contact-support'
+  | 'cookiecutter'
   | 'copy-alt'
   | 'copy-doc'
   | 'copy'
+  | 'cost-change'
   | 'cost-data-collection'
   | 'coverage-status-error'
   | 'coverage-status-success'
@@ -1075,6 +1256,7 @@ type HarnessIconName =
   | 'create-via-existing-yaml'
   | 'create-via-pipeline-template'
   | 'create-via-starter-pipeline'
+  | 'critical-events'
   | 'currency-banner'
   | 'custom-approval'
   | 'custom-artifact'
@@ -1092,6 +1274,7 @@ type HarnessIconName =
   | 'danger-icon'
   | 'dashboard-selected'
   | 'dashboard'
+  | 'dashboards-solid-border'
   | 'data-fetch-error'
   | 'default-dashboard'
   | 'delegates-blue'
@@ -1121,8 +1304,18 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'description'
+  | 'docker-grey'
   | 'docs'
+  | 'download-aws-s3-store'
+  | 'download-box'
+  | 'download-harness-store'
+  | 'download-manifests-inverse'
+  | 'download-manifests'
   | 'dry-run'
+  | 'ecs-service-setup-inverse'
+  | 'ecs-service-setup'
+  | 'ecs-upgrade-containers-inverse'
+  | 'ecs-upgrade-containers'
   | 'eema-dark'
   | 'eema-light'
   | 'elastigroup-bluegreen-inverse'
@@ -1180,7 +1373,9 @@ type HarnessIconName =
   | 'flag-tick'
   | 'flag'
   | 'flash'
+  | 'flux'
   | 'folder-upload'
+  | 'folder'
   | 'fossa-inverse'
   | 'fossa'
   | 'fs-closed-folder'
@@ -1189,7 +1384,10 @@ type HarnessIconName =
   | 'full-screen-exit'
   | 'full-screen'
   | 'functions'
+  | 'gar-step-inverse'
+  | 'gar-step'
   | 'gear'
+  | 'get-started'
   | 'git-branch-existing'
   | 'git-clone-ci-step-inverse'
   | 'git-clone-ci-step'
@@ -1199,6 +1397,7 @@ type HarnessIconName =
   | 'git-landing-page'
   | 'git-new-branch'
   | 'github-actions'
+  | 'gitness-no-repositories'
   | 'gitops-agent-blue'
   | 'gitops-agent'
   | 'gitops-agents-blue-circle'
@@ -1220,6 +1419,7 @@ type HarnessIconName =
   | 'gitops-suspended'
   | 'gitops-unknown'
   | 'gitops-yes'
+  | 'gitops'
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
@@ -1228,6 +1428,7 @@ type HarnessIconName =
   | 'grid'
   | 'hand-manual'
   | 'harness-copilot'
+  | 'harness-grey'
   | 'health'
   | 'help'
   | 'hexagon-outline'
@@ -1238,7 +1439,20 @@ type HarnessIconName =
   | 'iacm-resource-added'
   | 'iacm-resource-changed'
   | 'iacm-resource-deleted'
+  | 'iacm-resource-unchanged'
   | 'iacm-terraform-step'
+  | 'idp-nav-allowlist'
+  | 'idp-nav-connectors'
+  | 'idp-nav-layout'
+  | 'idp-nav-oauth'
+  | 'idp-nav-pluginconfig'
+  | 'idp-nav-plugins'
+  | 'idp-nav-scorecards'
+  | 'idp-stage-hover'
+  | 'idp-with-dark-text'
+  | 'ignore-failed-square'
+  | 'ignore-list'
+  | 'ignoreFailed'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -1266,6 +1480,7 @@ type HarnessIconName =
   | 'layout-right'
   | 'library'
   | 'line-chart'
+  | 'list-blue'
   | 'list-entity-infographic'
   | 'list-vars'
   | 'list-view'
@@ -1361,10 +1576,12 @@ type HarnessIconName =
   | 'mark-as-failure'
   | 'memberRole'
   | 'merge-pr'
+  | 'monitored-service'
   | 'multi-service'
   | 'nav-account-admin-hover'
   | 'nav-account-admin-selected'
   | 'nav-account-admin'
+  | 'nav-builds'
   | 'nav-cv-hover'
   | 'nav-cv-selected'
   | 'nav-dashboard-hover'
@@ -1373,13 +1590,16 @@ type HarnessIconName =
   | 'nav-deployments-hover'
   | 'nav-deployments-selected'
   | 'nav-deployments'
+  | 'nav-environments'
   | 'nav-governance-hover'
   | 'nav-governance-selected'
   | 'nav-governance'
   | 'nav-help'
+  | 'nav-home'
   | 'nav-infrastructure-hover'
   | 'nav-infrastructure-selected'
   | 'nav-organization'
+  | 'nav-pipeline'
   | 'nav-pipelines-selected'
   | 'nav-pipelines'
   | 'nav-project'
@@ -1387,22 +1607,28 @@ type HarnessIconName =
   | 'nav-resources-selected'
   | 'nav-resources'
   | 'nav-settings'
+  | 'nav-support'
   | 'nav-user-profile-hover'
   | 'nav-user-profile-selected'
   | 'nav-user-profile'
+  | 'nav-workspaces'
   | 'network'
   | 'new-artifact'
   | 'new-decoration'
   | 'new-notification'
   | 'ng-filter'
+  | 'nine-dot-options'
   | 'no-deployments'
   | 'no-feedback-given'
   | 'no-instances'
   | 'not-synced'
   | 'notification'
+  | 'npm'
   | 'offline-outline'
+  | 'oidc-authentication'
   | 'onprem-dark'
   | 'onprem-light'
+  | 'options-hollow'
   | 'other-workload'
   | 'pdc-inverse'
   | 'pdc'
@@ -1429,7 +1655,10 @@ type HarnessIconName =
   | 'plugin-ci-step'
   | 'plugin-inputs'
   | 'plugin-step'
+  | 'pod-withbg'
   | 'pod'
+  | 'policies'
+  | 'policysets'
   | 'polygon'
   | 'probe-EOT'
   | 'probe-SOT'
@@ -1450,6 +1679,7 @@ type HarnessIconName =
   | 'rancher'
   | 're-executed'
   | 'reg-ex'
+  | 'register-catalog'
   | 'remote-setup'
   | 'remote'
   | 'remotefile'
@@ -1490,8 +1720,10 @@ type HarnessIconName =
   | 'restore-cache-s3'
   | 'restore-cache-step'
   | 'retry-step-group'
+  | 'right-arrow'
   | 'right-bar-notification'
   | 'right-drawer'
+  | 'roles'
   | 'rollback-execution'
   | 'rollback-pipeline-inverse'
   | 'rollback-pipeline'
@@ -1541,8 +1773,18 @@ type HarnessIconName =
   | 'security-ci-step'
   | 'security-stage'
   | 'sei-main'
+  | 'sei-with-dark-text'
+  | 'select-scope'
   | 'semgrep'
+  | 'serverless-aws-lambda-deploy-v2-inverse'
+  | 'serverless-aws-lambda-deploy-v2'
+  | 'serverless-aws-lambda-package-inverse'
+  | 'serverless-aws-lambda-package'
+  | 'serverless-aws-lambda-prepare-rollback-inverse'
+  | 'serverless-aws-lambda-prepare-rollback'
+  | 'serverless-aws-lambda-rollback-v2-inverse'
   | 'serverless-deploy-step'
+  | 'service-accounts'
   | 'service-custom-connector'
   | 'service-grafana-loki'
   | 'service-signalfx'
@@ -1555,18 +1797,27 @@ type HarnessIconName =
   | 'servicenow-update-inverse'
   | 'servicenow-update'
   | 'services'
+  | 'setting'
   | 'setup-api'
   | 'setup-tags'
   | 'shield-gears'
   | 'simple-verification'
   | 'skipped'
   | 'slider-trigger'
+  | 'slo-downtime'
+  | 'slo'
   | 'slot-deployment'
+  | 'slsa-generation'
+  | 'slsa-verification'
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'solid-error'
+  | 'ssca-artifacts'
+  | 'ssca-components'
   | 'ssca-enforce'
+  | 'ssca-main'
   | 'ssca-orchestrate'
+  | 'ssca-remediation'
   | 'stale-cache'
   | 'star-empty'
   | 'star'
@@ -1579,6 +1830,8 @@ type HarnessIconName =
   | 'steps-spinner'
   | 'sto-with-dark-text'
   | 'sto-with-text'
+  | 'store-artifact-bundle'
+  | 'subscriptions'
   | 'success-tick'
   | 'support-account'
   | 'support-api'
@@ -1602,6 +1855,8 @@ type HarnessIconName =
   | 'syncing'
   | 'sysdig'
   | 'tanzuCommand'
+  | 'target-management'
+  | 'target'
   | 'tas-manifest'
   | 'tas-pre-processing-artifact-group'
   | 'tas-pre-processing-artifact'
@@ -1620,6 +1875,7 @@ type HarnessIconName =
   | 'template-library'
   | 'templates-blue'
   | 'templates-icon'
+  | 'terminal'
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
   | 'terraform-apply'
@@ -1647,21 +1903,25 @@ type HarnessIconName =
   | 'thinner-search'
   | 'ti-callgraph'
   | 'timeout'
+  | 'timer'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
   | 'trigger-execution'
   | 'trigger-pipeline'
   | 'trigger-schedule'
+  | 'trigger-stack'
   | 'union'
   | 'university'
   | 'up'
+  | 'update-app'
   | 'upgrade-bolt'
   | 'upload-box'
   | 'user-groups'
   | 'user'
   | 'utility'
   | 'valuesFIle'
+  | 'variables'
   | 'viewerRole'
   | 'waiting'
   | 'warning-icon'
@@ -1689,6 +1949,7 @@ const HarnessIcons: KVO<ElementType> = {
   Options: Options,
   'Snyk-inverse': SnykInverse,
   Snyk: Snyk,
+  SplitView: SplitView,
   Stroke: Stroke,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
@@ -1698,11 +1959,17 @@ const HarnessIcons: KVO<ElementType> = {
   'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
+  'agent-tokens': AgentTokens,
+  agents: Agents,
+  'anchore-grype-inverse': AnchoreGrypeInverse,
+  'anchore-grype': AnchoreGrype,
   'api-docs': ApiDocs,
   apply: Apply,
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
+  'aquasec-inverse': AquasecInverse,
+  aquasec: Aquasec,
   arrow: Arrow,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
@@ -1718,6 +1985,7 @@ const HarnessIcons: KVO<ElementType> = {
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
   autostopping: Autostopping,
+  avatar: Avatar,
   'aws-lambda-deploy': AwsLambdaDeploy,
   'aws-lambda-rollback': AwsLambdaRollback,
   'aws-lambda-traffic-shift': AwsLambdaTrafficShift,
@@ -1737,6 +2005,7 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step': BackgroundCiStep,
   'background-step-plugin': BackgroundStepPlugin,
   'background-step': BackgroundStep,
+  'backstage-logo': BackstageLogo,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
@@ -1768,12 +2037,38 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
+  'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
+  'ccm-currency-settings': CcmCurrencySettings,
+  'ccm-nav-anomalies': CcmNavAnomalies,
+  'ccm-nav-asset-governance': CcmNavAssetGovernance,
+  'ccm-nav-autostopping-rules': CcmNavAutostoppingRules,
+  'ccm-nav-bi-dashboards': CcmNavBiDashboards,
+  'ccm-nav-budgets': CcmNavBudgets,
+  'ccm-nav-cluster-orchestration': CcmNavClusterOrchestration,
+  'ccm-nav-commitments': CcmNavCommitments,
+  'ccm-nav-cost-categories': CcmNavCostCategories,
+  'ccm-nav-perspectives': CcmNavPerspectives,
+  'ccm-nav-recommendations': CcmNavRecommendations,
   'ccm-policy-details': CcmPolicyDetails,
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
   'ccm-policy-shield': CcmPolicyShield,
   'ccm-sketch': CcmSketch,
   'cd-sketch': CdSketch,
   cd: Cd,
+  'cdk-bootstrap-inverse': CdkBootstrapInverse,
+  'cdk-bootstrap': CdkBootstrap,
+  'cdk-deploy-inverse': CdkDeployInverse,
+  'cdk-deploy': CdkDeploy,
+  'cdk-destroy-inverse': CdkDestroyInverse,
+  'cdk-destroy': CdkDestroy,
+  'cdk-diff-inverse': CdkDiffInverse,
+  'cdk-diff': CdkDiff,
+  'cdk-inverse': CdkInverse,
+  'cdk-roll-back-inverse': CdkRollBackInverse,
+  'cdk-roll-back': CdkRollBack,
+  'cdk-synth-inverse': CdkSynthInverse,
+  'cdk-synth': CdkSynth,
+  cdk: Cdk,
   'ce-budget_colored': CeBudgetColored,
   'ce-budget_grey': CeBudgetGrey,
   'ce-cloud': CeCloud,
@@ -1782,10 +2077,17 @@ const HarnessIcons: KVO<ElementType> = {
   'ce-optimization': CeOptimization,
   'ce-visibility-plus': CeVisibilityPlus,
   'ce-visibility': CeVisibility,
+  'cet-agent-tokens-settings': CetAgentTokensSettings,
+  'cet-agents-settings': CetAgentsSettings,
+  'cet-critical-events-settings': CetCriticalEventsSettings,
+  'cet-grey': CetGrey,
+  'cet-quality-gate': CetQualityGate,
   'cf-hover': CfHover,
+  'cf-nav-featureFlags': CfNavFeatureFlags,
   'chained-pipeline-hover': ChainedPipelineHover,
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
+  changes: Changes,
   'chaos-chaoshub-private': ChaosChaoshubPrivate,
   'chaos-chaoshub-public': ChaosChaoshubPublic,
   'chaos-cube': ChaosCube,
@@ -1793,6 +2095,12 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-hubs': ChaosHubs,
   'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-namespace': ChaosNamespace,
+  'chaos-nav-chaosguard': ChaosNavChaosguard,
+  'chaos-nav-chaoshub': ChaosNavChaoshub,
+  'chaos-nav-experiments': ChaosNavExperiments,
+  'chaos-nav-gamedays': ChaosNavGamedays,
+  'chaos-nav-network-maps': ChaosNavNetworkMaps,
+  'chaos-nav-resilience-probes': ChaosNavResilienceProbes,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   'chaos-service-discovery': ChaosServiceDiscovery,
@@ -1824,6 +2132,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
   'cloud-formation-rollback': CloudFormationRollback,
+  'cloud-foundry': CloudFoundry,
   'cloud-function-no-traffic-shift': CloudFunctionNoTrafficShift,
   'cloud-function-rollback': CloudFunctionRollback,
   'cloud-function-traffic-shift': CloudFunctionTrafficShift,
@@ -1899,9 +2208,11 @@ const HarnessIcons: KVO<ElementType> = {
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
   'contact-support': ContactSupport,
+  cookiecutter: Cookiecutter,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
   copy: Copy,
+  'cost-change': CostChange,
   'cost-data-collection': CostDataCollection,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
@@ -1910,6 +2221,7 @@ const HarnessIcons: KVO<ElementType> = {
   'create-via-existing-yaml': CreateViaExistingYaml,
   'create-via-pipeline-template': CreateViaPipelineTemplate,
   'create-via-starter-pipeline': CreateViaStarterPipeline,
+  'critical-events': CriticalEvents,
   'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
@@ -1927,6 +2239,7 @@ const HarnessIcons: KVO<ElementType> = {
   'danger-icon': DangerIcon,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
+  'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
@@ -1956,8 +2269,18 @@ const HarnessIcons: KVO<ElementType> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   description: Description,
+  'docker-grey': DockerGrey,
   docs: Docs,
+  'download-aws-s3-store': DownloadAwsS3Store,
+  'download-box': DownloadBox,
+  'download-harness-store': DownloadHarnessStore,
+  'download-manifests-inverse': DownloadManifestsInverse,
+  'download-manifests': DownloadManifests,
   'dry-run': DryRun,
+  'ecs-service-setup-inverse': EcsServiceSetupInverse,
+  'ecs-service-setup': EcsServiceSetup,
+  'ecs-upgrade-containers-inverse': EcsUpgradeContainersInverse,
+  'ecs-upgrade-containers': EcsUpgradeContainers,
   'eema-dark': EemaDark,
   'eema-light': EemaLight,
   'elastigroup-bluegreen-inverse': ElastigroupBluegreenInverse,
@@ -2015,7 +2338,9 @@ const HarnessIcons: KVO<ElementType> = {
   'flag-tick': FlagTick,
   flag: Flag,
   flash: Flash,
+  flux: Flux,
   'folder-upload': FolderUpload,
+  folder: Folder,
   'fossa-inverse': FossaInverse,
   fossa: Fossa,
   'fs-closed-folder': FsClosedFolder,
@@ -2024,7 +2349,10 @@ const HarnessIcons: KVO<ElementType> = {
   'full-screen-exit': FullScreenExit,
   'full-screen': FullScreen,
   functions: Functions,
+  'gar-step-inverse': GarStepInverse,
+  'gar-step': GarStep,
   gear: Gear,
+  'get-started': GetStarted,
   'git-branch-existing': GitBranchExisting,
   'git-clone-ci-step-inverse': GitCloneCiStepInverse,
   'git-clone-ci-step': GitCloneCiStep,
@@ -2034,6 +2362,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
   'github-actions': GithubActions,
+  'gitness-no-repositories': GitnessNoRepositories,
   'gitops-agent-blue': GitopsAgentBlue,
   'gitops-agent': GitopsAgent,
   'gitops-agents-blue-circle': GitopsAgentsBlueCircle,
@@ -2055,6 +2384,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-suspended': GitopsSuspended,
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
+  gitops: Gitops,
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
@@ -2063,6 +2393,7 @@ const HarnessIcons: KVO<ElementType> = {
   grid: Grid,
   'hand-manual': HandManual,
   'harness-copilot': HarnessCopilot,
+  'harness-grey': HarnessGrey,
   health: Health,
   help: Help,
   'hexagon-outline': HexagonOutline,
@@ -2073,7 +2404,20 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-resource-added': IacmResourceAdded,
   'iacm-resource-changed': IacmResourceChanged,
   'iacm-resource-deleted': IacmResourceDeleted,
+  'iacm-resource-unchanged': IacmResourceUnchanged,
   'iacm-terraform-step': IacmTerraformStep,
+  'idp-nav-allowlist': IdpNavAllowlist,
+  'idp-nav-connectors': IdpNavConnectors,
+  'idp-nav-layout': IdpNavLayout,
+  'idp-nav-oauth': IdpNavOauth,
+  'idp-nav-pluginconfig': IdpNavPluginconfig,
+  'idp-nav-plugins': IdpNavPlugins,
+  'idp-nav-scorecards': IdpNavScorecards,
+  'idp-stage-hover': IdpStageHover,
+  'idp-with-dark-text': IdpWithDarkText,
+  'ignore-failed-square': IgnoreFailedSquare,
+  'ignore-list': IgnoreList,
+  ignoreFailed: IgnoreFailed,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
@@ -2101,6 +2445,7 @@ const HarnessIcons: KVO<ElementType> = {
   'layout-right': LayoutRight,
   library: Library,
   'line-chart': LineChart,
+  'list-blue': ListBlue,
   'list-entity-infographic': ListEntityInfographic,
   'list-vars': ListVars,
   'list-view': ListView,
@@ -2196,10 +2541,12 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-as-failure': MarkAsFailure,
   memberRole: MemberRole,
   'merge-pr': MergePr,
+  'monitored-service': MonitoredService,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
   'nav-account-admin-selected': NavAccountAdminSelected,
   'nav-account-admin': NavAccountAdmin,
+  'nav-builds': NavBuilds,
   'nav-cv-hover': NavCvHover,
   'nav-cv-selected': NavCvSelected,
   'nav-dashboard-hover': NavDashboardHover,
@@ -2208,13 +2555,16 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-deployments-hover': NavDeploymentsHover,
   'nav-deployments-selected': NavDeploymentsSelected,
   'nav-deployments': NavDeployments,
+  'nav-environments': NavEnvironments,
   'nav-governance-hover': NavGovernanceHover,
   'nav-governance-selected': NavGovernanceSelected,
   'nav-governance': NavGovernance,
   'nav-help': NavHelp,
+  'nav-home': NavHome,
   'nav-infrastructure-hover': NavInfrastructureHover,
   'nav-infrastructure-selected': NavInfrastructureSelected,
   'nav-organization': NavOrganization,
+  'nav-pipeline': NavPipeline,
   'nav-pipelines-selected': NavPipelinesSelected,
   'nav-pipelines': NavPipelines,
   'nav-project': NavProject,
@@ -2222,22 +2572,28 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-resources-selected': NavResourcesSelected,
   'nav-resources': NavResources,
   'nav-settings': NavSettings,
+  'nav-support': NavSupport,
   'nav-user-profile-hover': NavUserProfileHover,
   'nav-user-profile-selected': NavUserProfileSelected,
   'nav-user-profile': NavUserProfile,
+  'nav-workspaces': NavWorkspaces,
   network: Network,
   'new-artifact': NewArtifact,
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
   'ng-filter': NgFilter,
+  'nine-dot-options': NineDotOptions,
   'no-deployments': NoDeployments,
   'no-feedback-given': NoFeedbackGiven,
   'no-instances': NoInstances,
   'not-synced': NotSynced,
   notification: Notification,
+  npm: Npm,
   'offline-outline': OfflineOutline,
+  'oidc-authentication': OidcAuthentication,
   'onprem-dark': OnpremDark,
   'onprem-light': OnpremLight,
+  'options-hollow': OptionsHollow,
   'other-workload': OtherWorkload,
   'pdc-inverse': PdcInverse,
   pdc: Pdc,
@@ -2264,7 +2620,10 @@ const HarnessIcons: KVO<ElementType> = {
   'plugin-ci-step': PluginCiStep,
   'plugin-inputs': PluginInputs,
   'plugin-step': PluginStep,
+  'pod-withbg': PodWithbg,
   pod: Pod,
+  policies: Policies,
+  policysets: Policysets,
   polygon: Polygon,
   'probe-EOT': ProbeEot,
   'probe-SOT': ProbeSot,
@@ -2285,6 +2644,7 @@ const HarnessIcons: KVO<ElementType> = {
   rancher: Rancher,
   're-executed': ReExecuted,
   'reg-ex': RegEx,
+  'register-catalog': RegisterCatalog,
   'remote-setup': RemoteSetup,
   remote: Remote,
   remotefile: Remotefile,
@@ -2325,8 +2685,10 @@ const HarnessIcons: KVO<ElementType> = {
   'restore-cache-s3': RestoreCacheS3,
   'restore-cache-step': RestoreCacheStep,
   'retry-step-group': RetryStepGroup,
+  'right-arrow': RightArrow,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
+  roles: Roles,
   'rollback-execution': RollbackExecution,
   'rollback-pipeline-inverse': RollbackPipelineInverse,
   'rollback-pipeline': RollbackPipeline,
@@ -2376,8 +2738,18 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
   'sei-main': SeiMain,
+  'sei-with-dark-text': SeiWithDarkText,
+  'select-scope': SelectScope,
   semgrep: Semgrep,
+  'serverless-aws-lambda-deploy-v2-inverse': ServerlessAwsLambdaDeployV2Inverse,
+  'serverless-aws-lambda-deploy-v2': ServerlessAwsLambdaDeployV2,
+  'serverless-aws-lambda-package-inverse': ServerlessAwsLambdaPackageInverse,
+  'serverless-aws-lambda-package': ServerlessAwsLambdaPackage,
+  'serverless-aws-lambda-prepare-rollback-inverse': ServerlessAwsLambdaPrepareRollbackInverse,
+  'serverless-aws-lambda-prepare-rollback': ServerlessAwsLambdaPrepareRollback,
+  'serverless-aws-lambda-rollback-v2-inverse': ServerlessAwsLambdaRollbackV2Inverse,
   'serverless-deploy-step': ServerlessDeployStep,
+  'service-accounts': ServiceAccounts,
   'service-custom-connector': ServiceCustomConnector,
   'service-grafana-loki': ServiceGrafanaLoki,
   'service-signalfx': ServiceSignalfx,
@@ -2390,18 +2762,27 @@ const HarnessIcons: KVO<ElementType> = {
   'servicenow-update-inverse': ServicenowUpdateInverse,
   'servicenow-update': ServicenowUpdate,
   services: Services,
+  setting: Setting,
   'setup-api': SetupApi,
   'setup-tags': SetupTags,
   'shield-gears': ShieldGears,
   'simple-verification': SimpleVerification,
   skipped: Skipped,
   'slider-trigger': SliderTrigger,
+  'slo-downtime': SloDowntime,
+  slo: Slo,
   'slot-deployment': SlotDeployment,
+  'slsa-generation': SlsaGeneration,
+  'slsa-verification': SlsaVerification,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   'solid-error': SolidError,
+  'ssca-artifacts': SscaArtifacts,
+  'ssca-components': SscaComponents,
   'ssca-enforce': SscaEnforce,
+  'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
+  'ssca-remediation': SscaRemediation,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
   star: Star,
@@ -2414,6 +2795,8 @@ const HarnessIcons: KVO<ElementType> = {
   'steps-spinner': StepsSpinner,
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
+  'store-artifact-bundle': StoreArtifactBundle,
+  subscriptions: Subscriptions,
   'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
@@ -2437,6 +2820,8 @@ const HarnessIcons: KVO<ElementType> = {
   syncing: Syncing,
   sysdig: Sysdig,
   tanzuCommand: TanzuCommand,
+  'target-management': TargetManagement,
+  target: Target,
   'tas-manifest': TasManifest,
   'tas-pre-processing-artifact-group': TasPreProcessingArtifactGroup,
   'tas-pre-processing-artifact': TasPreProcessingArtifact,
@@ -2455,6 +2840,7 @@ const HarnessIcons: KVO<ElementType> = {
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
   'templates-icon': TemplatesIcon,
+  terminal: Terminal,
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
   'terraform-apply': TerraformApply,
@@ -2482,21 +2868,25 @@ const HarnessIcons: KVO<ElementType> = {
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
   timeout: Timeout,
+  timer: Timer,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
   'trigger-execution': TriggerExecution,
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
+  'trigger-stack': TriggerStack,
   union: Union,
   university: University,
   up: Up,
+  'update-app': UpdateApp,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
   'user-groups': UserGroups,
   user: User,
   utility: Utility,
   valuesFIle: ValuesFIle,
+  variables: Variables,
   viewerRole: ViewerRole,
   waiting: Waiting,
   'warning-icon': WarningIcon,
