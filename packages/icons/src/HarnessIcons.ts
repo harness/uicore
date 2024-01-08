@@ -31,15 +31,11 @@ import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
-import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
-import AnchoreGrype from './anchore-grype.svg'
 import ApiDocs from './api-docs.svg'
 import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
-import AquasecInverse from './aquasec-inverse.svg'
-import Aquasec from './aquasec.svg'
 import Arrow from './arrow.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
@@ -75,7 +71,6 @@ import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStepPlugin from './background-step-plugin.svg'
 import BackgroundStep from './background-step.svg'
-import BackstageLogo from './backstage-logo.svg'
 import Banned from './banned.svg'
 import BarChart from './bar-chart.svg'
 import BarrierClose from './barrier-close.svg'
@@ -202,7 +197,6 @@ import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
 import CloudFormationRollback from './cloud-formation-rollback.svg'
-import CloudFoundry from './cloud-foundry.svg'
 import CloudFunctionNoTrafficShift from './cloud-function-no-traffic-shift.svg'
 import CloudFunctionRollback from './cloud-function-rollback.svg'
 import CloudFunctionTrafficShift from './cloud-function-traffic-shift.svg'
@@ -278,7 +272,6 @@ import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import ContactSupport from './contact-support.svg'
-import Cookiecutter from './cookiecutter.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
 import Copy from './copy.svg'
@@ -339,7 +332,6 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
-import DockerGrey from './docker-grey.svg'
 import Docs from './docs.svg'
 import DownloadAwsS3Store from './download-aws-s3-store.svg'
 import DownloadBox from './download-box.svg'
@@ -658,7 +650,6 @@ import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
-import Npm from './npm.svg'
 import OfflineOutline from './offline-outline.svg'
 import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
@@ -996,15 +987,11 @@ type HarnessIconName =
   | 'advanced'
   | 'agent-tokens'
   | 'agents'
-  | 'anchore-grype-inverse'
-  | 'anchore-grype'
   | 'api-docs'
   | 'apply'
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
-  | 'aquasec-inverse'
-  | 'aquasec'
   | 'arrow'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
@@ -1040,7 +1027,6 @@ type HarnessIconName =
   | 'background-ci-step'
   | 'background-step-plugin'
   | 'background-step'
-  | 'backstage-logo'
   | 'banned'
   | 'bar-chart'
   | 'barrier-close'
@@ -1167,7 +1153,6 @@ type HarnessIconName =
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
   | 'cloud-formation-rollback'
-  | 'cloud-foundry'
   | 'cloud-function-no-traffic-shift'
   | 'cloud-function-rollback'
   | 'cloud-function-traffic-shift'
@@ -1243,7 +1228,6 @@ type HarnessIconName =
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
   | 'contact-support'
-  | 'cookiecutter'
   | 'copy-alt'
   | 'copy-doc'
   | 'copy'
@@ -1304,7 +1288,6 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'description'
-  | 'docker-grey'
   | 'docs'
   | 'download-aws-s3-store'
   | 'download-box'
@@ -1623,7 +1606,6 @@ type HarnessIconName =
   | 'no-instances'
   | 'not-synced'
   | 'notification'
-  | 'npm'
   | 'offline-outline'
   | 'oidc-authentication'
   | 'onprem-dark'
@@ -1961,15 +1943,11 @@ const HarnessIcons: KVO<ElementType> = {
   advanced: Advanced,
   'agent-tokens': AgentTokens,
   agents: Agents,
-  'anchore-grype-inverse': AnchoreGrypeInverse,
-  'anchore-grype': AnchoreGrype,
   'api-docs': ApiDocs,
   apply: Apply,
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
-  'aquasec-inverse': AquasecInverse,
-  aquasec: Aquasec,
   arrow: Arrow,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
@@ -2005,7 +1983,6 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step': BackgroundCiStep,
   'background-step-plugin': BackgroundStepPlugin,
   'background-step': BackgroundStep,
-  'backstage-logo': BackstageLogo,
   banned: Banned,
   'bar-chart': BarChart,
   'barrier-close': BarrierClose,
@@ -2132,7 +2109,6 @@ const HarnessIcons: KVO<ElementType> = {
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
   'cloud-formation-rollback': CloudFormationRollback,
-  'cloud-foundry': CloudFoundry,
   'cloud-function-no-traffic-shift': CloudFunctionNoTrafficShift,
   'cloud-function-rollback': CloudFunctionRollback,
   'cloud-function-traffic-shift': CloudFunctionTrafficShift,
@@ -2208,7 +2184,6 @@ const HarnessIcons: KVO<ElementType> = {
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
   'contact-support': ContactSupport,
-  cookiecutter: Cookiecutter,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
   copy: Copy,
@@ -2269,7 +2244,6 @@ const HarnessIcons: KVO<ElementType> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   description: Description,
-  'docker-grey': DockerGrey,
   docs: Docs,
   'download-aws-s3-store': DownloadAwsS3Store,
   'download-box': DownloadBox,
@@ -2588,7 +2562,6 @@ const HarnessIcons: KVO<ElementType> = {
   'no-instances': NoInstances,
   'not-synced': NotSynced,
   notification: Notification,
-  npm: Npm,
   'offline-outline': OfflineOutline,
   'oidc-authentication': OidcAuthentication,
   'onprem-dark': OnpremDark,
