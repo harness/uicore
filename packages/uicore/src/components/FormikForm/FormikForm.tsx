@@ -584,8 +584,11 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
     inline = formik?.inline,
     tagInputProps,
     placeholder,
-    multiSelectProps,
     onChange,
+    multiSelectProps: { resetOnQuery = false, resetOnSelect = false, ...otherMultiSelectProps } = {
+      resetOnQuery: false,
+      resetOnSelect: false
+    },
     ...rest
   } = restProps
 
@@ -612,8 +615,9 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
           intent,
           disabled: disabled
         }}
-        resetOnSelect={true}
-        {...multiSelectProps}
+        resetOnSelect={resetOnSelect}
+        resetOnQuery={resetOnQuery}
+        {...otherMultiSelectProps}
         items={items}
         value={Array.isArray(formikValue) ? formikValue : []}
         onChange={(items: MultiSelectOption[]) => {
