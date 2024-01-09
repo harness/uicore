@@ -19,6 +19,7 @@ export interface AccordionPanelProps {
   summary: React.ReactNode
   addDomId?: boolean
   disabled?: boolean
+  className?: string
 }
 
 export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
@@ -44,7 +45,8 @@ function AccordionPanel(
     panelClassName,
     summaryClassName,
     detailsClassName,
-    chevronClassName
+    chevronClassName,
+    className
   } = props
 
   return (
@@ -52,7 +54,7 @@ function AccordionPanel(
       ref={ref}
       data-testid={`${id}-panel`}
       data-disabled={disabled}
-      className={cx(css.panel, panelClassName)}
+      className={cx(css.panel, panelClassName, className)}
       data-open={isOpen}
       id={addDomId ? `${id}-panel` : undefined}>
       <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, summaryClassName)}>
