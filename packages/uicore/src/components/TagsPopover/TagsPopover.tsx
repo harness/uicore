@@ -21,10 +21,12 @@ export interface ListTagsProps {
   target?: React.ReactElement
   popoverProps?: IPopoverProps
   iconProps?: Omit<IconProps, 'name'>
+  tagsTitle?: string
+  containerClassName?: string
 }
 
 export const TagsPopover: React.FC<ListTagsProps> = props => {
-  const { tags, target, tagClassName, popoverProps, iconProps, className } = props
+  const { tags, target, tagClassName, popoverProps, iconProps, className, tagsTitle, containerClassName } = props
   return (
     <Popover interactionKind={PopoverInteractionKind.HOVER} {...popoverProps}>
       {target || (
@@ -33,8 +35,8 @@ export const TagsPopover: React.FC<ListTagsProps> = props => {
           <Text>{Object.keys(tags).length}</Text>
         </Layout.Horizontal>
       )}
-      <Container padding="small">
-        <Text font={{ size: 'small', weight: 'bold' }}>{i18n.tags}</Text>
+      <Container padding="small" className={containerClassName}>
+        <Text font={{ size: 'small', weight: 'bold' }}>{tagsTitle || i18n.tags}</Text>
         <Container className={css.tagsPopover}>
           {Object.keys(tags).map(key => {
             const value = tags[key]
