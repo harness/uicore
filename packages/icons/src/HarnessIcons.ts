@@ -175,6 +175,7 @@ import CcmNavBudgets from './ccm-nav-budgets.svg'
 import CcmNavClusterOrchestration from './ccm-nav-cluster-orchestration.svg'
 import CcmNavCommitments from './ccm-nav-commitments.svg'
 import CcmNavCostCategories from './ccm-nav-cost-categories.svg'
+import CcmNavMsp from './ccm-nav-msp.svg'
 import CcmNavPerspectives from './ccm-nav-perspectives.svg'
 import CcmNavRecommendations from './ccm-nav-recommendations.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
@@ -1451,6 +1452,7 @@ type HarnessIconName =
   | 'ccm-nav-cluster-orchestration'
   | 'ccm-nav-commitments'
   | 'ccm-nav-cost-categories'
+  | 'ccm-nav-msp'
   | 'ccm-nav-perspectives'
   | 'ccm-nav-recommendations'
   | 'ccm-policy-details'
@@ -2727,6 +2729,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-nav-cluster-orchestration': CcmNavClusterOrchestration,
   'ccm-nav-commitments': CcmNavCommitments,
   'ccm-nav-cost-categories': CcmNavCostCategories,
+  'ccm-nav-msp': CcmNavMsp,
   'ccm-nav-perspectives': CcmNavPerspectives,
   'ccm-nav-recommendations': CcmNavRecommendations,
   'ccm-policy-details': CcmPolicyDetails,
