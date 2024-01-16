@@ -20,6 +20,7 @@ export interface AccordionPanelProps {
   addDomId?: boolean
   disabled?: boolean
   className?: string
+  shouldRender?: () => boolean
 }
 
 export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
@@ -46,8 +47,13 @@ function AccordionPanel(
     summaryClassName,
     detailsClassName,
     chevronClassName,
-    className
+    className,
+    shouldRender
   } = props
+
+  if (!shouldRender?.()) {
+    return <></>
+  }
 
   return (
     <div
