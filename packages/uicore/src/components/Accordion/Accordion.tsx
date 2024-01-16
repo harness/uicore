@@ -51,7 +51,7 @@ function AccordionPanel(
     shouldRender
   } = props
 
-  if (!shouldRender?.()) {
+  if (shouldRender && !shouldRender?.()) {
     return <></>
   }
 
