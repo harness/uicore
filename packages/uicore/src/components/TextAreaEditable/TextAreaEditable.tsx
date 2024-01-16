@@ -29,7 +29,7 @@ function sanitizeHTMLTextObject(input: TextObject[]): TextObject[] {
 }
 
 function deserialize(input: string): TextObject[] {
-  const split = input.split(VAR_REGEX)
+  const split = (typeof input !== 'string' ? String(input) : input).split(VAR_REGEX)
 
   return split.map(part => {
     if (part.match(VAR_REGEX)) {
