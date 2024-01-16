@@ -318,12 +318,14 @@ import CodeEdit from './code-edit.svg'
 import CodeFileLight from './code-file-light.svg'
 import CodeFile from './code-file.svg'
 import CodeFolder from './code-folder.svg'
+import CodeGear from './code-gear.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
 import CodeMerged from './code-merged.svg'
 import CodeMore from './code-more.svg'
 import CodeOpen from './code-open.svg'
 import CodePullRequest from './code-pull-request.svg'
+import CodePull from './code-pull.svg'
 import CodeQuote from './code-quote.svg'
 import CodeRejected from './code-rejected.svg'
 import CodeRepo from './code-repo.svg'
@@ -1248,6 +1250,8 @@ import TerragruntRollback from './terragrunt-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
+import ThinnerCodeRepos from './thinner-code-repos.svg'
+import ThinnerCodeWebhook from './thinner-code-webhook.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
@@ -1601,12 +1605,14 @@ type HarnessIconName =
   | 'code-file-light'
   | 'code-file'
   | 'code-folder'
+  | 'code-gear'
   | 'code-history'
   | 'code-info'
   | 'code-merged'
   | 'code-more'
   | 'code-open'
   | 'code-pull-request'
+  | 'code-pull'
   | 'code-quote'
   | 'code-rejected'
   | 'code-repo'
@@ -2531,6 +2537,8 @@ type HarnessIconName =
   | 'test-connection'
   | 'test-verification'
   | 'text'
+  | 'thinner-code-repos'
+  | 'thinner-code-webhook'
   | 'thinner-search'
   | 'ti-callgraph'
   | 'timeout'
@@ -2884,12 +2892,14 @@ const HarnessIcons: KVO<ElementType> = {
   'code-file-light': CodeFileLight,
   'code-file': CodeFile,
   'code-folder': CodeFolder,
+  'code-gear': CodeGear,
   'code-history': CodeHistory,
   'code-info': CodeInfo,
   'code-merged': CodeMerged,
   'code-more': CodeMore,
   'code-open': CodeOpen,
   'code-pull-request': CodePullRequest,
+  'code-pull': CodePull,
   'code-quote': CodeQuote,
   'code-rejected': CodeRejected,
   'code-repo': CodeRepo,
@@ -3814,6 +3824,8 @@ const HarnessIcons: KVO<ElementType> = {
   'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
+  'thinner-code-repos': ThinnerCodeRepos,
+  'thinner-code-webhook': ThinnerCodeWebhook,
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
   timeout: Timeout,
