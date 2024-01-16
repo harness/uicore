@@ -175,6 +175,7 @@ import CcmNavBudgets from './ccm-nav-budgets.svg'
 import CcmNavClusterOrchestration from './ccm-nav-cluster-orchestration.svg'
 import CcmNavCommitments from './ccm-nav-commitments.svg'
 import CcmNavCostCategories from './ccm-nav-cost-categories.svg'
+import CcmNavMsp from './ccm-nav-msp.svg'
 import CcmNavPerspectives from './ccm-nav-perspectives.svg'
 import CcmNavRecommendations from './ccm-nav-recommendations.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
@@ -368,6 +369,7 @@ import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import ContactSupport from './contact-support.svg'
+import Container from './container.svg'
 import Cookiecutter from './cookiecutter.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
@@ -1456,6 +1458,7 @@ type HarnessIconName =
   | 'ccm-nav-cluster-orchestration'
   | 'ccm-nav-commitments'
   | 'ccm-nav-cost-categories'
+  | 'ccm-nav-msp'
   | 'ccm-nav-perspectives'
   | 'ccm-nav-recommendations'
   | 'ccm-policy-details'
@@ -1649,6 +1652,7 @@ type HarnessIconName =
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
   | 'contact-support'
+  | 'container'
   | 'cookiecutter'
   | 'copy-alt'
   | 'copy-doc'
@@ -2737,6 +2741,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-nav-cluster-orchestration': CcmNavClusterOrchestration,
   'ccm-nav-commitments': CcmNavCommitments,
   'ccm-nav-cost-categories': CcmNavCostCategories,
+  'ccm-nav-msp': CcmNavMsp,
   'ccm-nav-perspectives': CcmNavPerspectives,
   'ccm-nav-recommendations': CcmNavRecommendations,
   'ccm-policy-details': CcmPolicyDetails,
@@ -2930,6 +2935,7 @@ const HarnessIcons: KVO<ElementType> = {
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
   'contact-support': ContactSupport,
+  container: Container,
   cookiecutter: Cookiecutter,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
