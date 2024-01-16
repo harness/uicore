@@ -1168,7 +1168,12 @@ import StepJira from './step-jira.svg'
 import StepKubernetes from './step-kubernetes.svg'
 import StepsSpinner from './steps-spinner.svg'
 import StoColorFilled from './sto-color-filled.svg'
+import StoContainers from './sto-containers.svg'
+import StoDast from './sto-dast.svg'
 import StoGrey from './sto-grey.svg'
+import StoSast from './sto-sast.svg'
+import StoSca from './sto-sca.svg'
+import StoSecrets from './sto-secrets.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
 import StoreArtifactBundle from './store-artifact-bundle.svg'
@@ -2446,7 +2451,12 @@ type HarnessIconName =
   | 'step-kubernetes'
   | 'steps-spinner'
   | 'sto-color-filled'
+  | 'sto-containers'
+  | 'sto-dast'
   | 'sto-grey'
+  | 'sto-sast'
+  | 'sto-sca'
+  | 'sto-secrets'
   | 'sto-with-dark-text'
   | 'sto-with-text'
   | 'store-artifact-bundle'
@@ -3724,7 +3734,12 @@ const HarnessIcons: KVO<ElementType> = {
   'step-kubernetes': StepKubernetes,
   'steps-spinner': StepsSpinner,
   'sto-color-filled': StoColorFilled,
+  'sto-containers': StoContainers,
+  'sto-dast': StoDast,
   'sto-grey': StoGrey,
+  'sto-sast': StoSast,
+  'sto-sca': StoSca,
+  'sto-secrets': StoSecrets,
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
   'store-artifact-bundle': StoreArtifactBundle,
