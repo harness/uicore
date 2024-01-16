@@ -369,6 +369,7 @@ import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import ContactSupport from './contact-support.svg'
+import Container from './container.svg'
 import Cookiecutter from './cookiecutter.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
@@ -1646,6 +1647,7 @@ type HarnessIconName =
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
   | 'contact-support'
+  | 'container'
   | 'cookiecutter'
   | 'copy-alt'
   | 'copy-doc'
@@ -2923,6 +2925,7 @@ const HarnessIcons: KVO<ElementType> = {
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
   'contact-support': ContactSupport,
+  container: Container,
   cookiecutter: Cookiecutter,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
