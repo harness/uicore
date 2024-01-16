@@ -20,6 +20,7 @@ export interface AccordionPanelProps {
   addDomId?: boolean
   disabled?: boolean
   className?: string
+  shouldRender?: boolean | (() => boolean)
 }
 
 export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
@@ -32,7 +33,7 @@ export const AccordionPanelWithRef = React.forwardRef(AccordionPanel)
 function AccordionPanel(
   props: AccordionPanelProps & AccordionPanelInternalProps,
   ref: React.Ref<HTMLDivElement>
-): React.ReactElement {
+): React.ReactElement | null {
   const {
     summary,
     details,
@@ -46,8 +47,17 @@ function AccordionPanel(
     summaryClassName,
     detailsClassName,
     chevronClassName,
-    className
+    className,
+    shouldRender
   } = props
+
+  if (typeof shouldRender === 'boolean' && !shouldRender) {
+    return null
+  }
+
+  if (typeof shouldRender === 'function' && !shouldRender?.()) {
+    return null
+  }
 
   return (
     <div
