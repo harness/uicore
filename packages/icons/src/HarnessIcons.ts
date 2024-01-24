@@ -857,6 +857,7 @@ import OfflineOutline from './offline-outline.svg'
 import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
 import OnpremLight from './onprem-light.svg'
+import OpenTofu from './openTofu.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import OptionsHollow from './options-hollow.svg'
@@ -2144,6 +2145,7 @@ type HarnessIconName =
   | 'oidc-authentication'
   | 'onprem-dark'
   | 'onprem-light'
+  | 'openTofu'
   | 'openshift-params'
   | 'openshift'
   | 'options-hollow'
@@ -3431,6 +3433,7 @@ const HarnessIcons: KVO<ElementType> = {
   'oidc-authentication': OidcAuthentication,
   'onprem-dark': OnpremDark,
   'onprem-light': OnpremLight,
+  openTofu: OpenTofu,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   'options-hollow': OptionsHollow,
