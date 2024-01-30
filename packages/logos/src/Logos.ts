@@ -214,8 +214,11 @@ import NmapInverse from './nmap-inverse.svg'
 import Nmap from './nmap.svg'
 import Nodejs from './nodejs.svg'
 import Npm from './npm.svg'
+import OpenTofu from './openTofu.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
+import OsvInverse from './osv-inverse.svg'
+import Osv from './osv.svg'
 import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
 import OwaspInverse from './owasp-inverse.svg'
 import Owasp from './owasp.svg'
@@ -535,8 +538,11 @@ type LogoNames =
   | 'nmap'
   | 'nodejs'
   | 'npm'
+  | 'openTofu'
   | 'openshift-params'
   | 'openshift'
+  | 'osv-inverse'
+  | 'osv'
   | 'owasp-dependency-check-inverse'
   | 'owasp-inverse'
   | 'owasp'
@@ -856,8 +862,11 @@ const Logos: KVO<ElementType> = {
   nmap: Nmap,
   nodejs: Nodejs,
   npm: Npm,
+  openTofu: OpenTofu,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
+  'osv-inverse': OsvInverse,
+  osv: Osv,
   'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
   'owasp-inverse': OwaspInverse,
   owasp: Owasp,

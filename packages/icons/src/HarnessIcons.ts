@@ -112,6 +112,7 @@ import CcmNavBudgets from './ccm-nav-budgets.svg'
 import CcmNavClusterOrchestration from './ccm-nav-cluster-orchestration.svg'
 import CcmNavCommitments from './ccm-nav-commitments.svg'
 import CcmNavCostCategories from './ccm-nav-cost-categories.svg'
+import CcmNavMsp from './ccm-nav-msp.svg'
 import CcmNavPerspectives from './ccm-nav-perspectives.svg'
 import CcmNavRecommendations from './ccm-nav-recommendations.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
@@ -222,12 +223,14 @@ import CodeEdit from './code-edit.svg'
 import CodeFileLight from './code-file-light.svg'
 import CodeFile from './code-file.svg'
 import CodeFolder from './code-folder.svg'
+import CodeGear from './code-gear.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
 import CodeMerged from './code-merged.svg'
 import CodeMore from './code-more.svg'
 import CodeOpen from './code-open.svg'
 import CodePullRequest from './code-pull-request.svg'
+import CodePull from './code-pull.svg'
 import CodeQuote from './code-quote.svg'
 import CodeRejected from './code-rejected.svg'
 import CodeRepo from './code-repo.svg'
@@ -272,6 +275,7 @@ import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
 import Connectthroughmanager from './connectthroughmanager.svg'
 import ContactSupport from './contact-support.svg'
+import Container from './container.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
 import Copy from './copy.svg'
@@ -809,6 +813,7 @@ import ServerlessAwsLambdaPackage from './serverless-aws-lambda-package.svg'
 import ServerlessAwsLambdaPrepareRollbackInverse from './serverless-aws-lambda-prepare-rollback-inverse.svg'
 import ServerlessAwsLambdaPrepareRollback from './serverless-aws-lambda-prepare-rollback.svg'
 import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollback-v2-inverse.svg'
+import ServerlessAwsLambdaRollbackV2 from './serverless-aws-lambda-rollback-v2.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAccounts from './service-accounts.svg'
 import ServiceCustomConnector from './service-custom-connector.svg'
@@ -854,6 +859,11 @@ import StatusUpgrade from './status-upgrade.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepsSpinner from './steps-spinner.svg'
+import StoContainers from './sto-containers.svg'
+import StoDast from './sto-dast.svg'
+import StoSast from './sto-sast.svg'
+import StoSca from './sto-sca.svg'
+import StoSecrets from './sto-secrets.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
 import StoreArtifactBundle from './store-artifact-bundle.svg'
@@ -926,10 +936,13 @@ import TerragruntRollback from './terragrunt-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
+import ThinnerCodeRepos from './thinner-code-repos.svg'
+import ThinnerCodeWebhook from './thinner-code-webhook.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
 import Timer from './timer.svg'
+import TodoListHarness from './todo-list-harness.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1068,6 +1081,7 @@ type HarnessIconName =
   | 'ccm-nav-cluster-orchestration'
   | 'ccm-nav-commitments'
   | 'ccm-nav-cost-categories'
+  | 'ccm-nav-msp'
   | 'ccm-nav-perspectives'
   | 'ccm-nav-recommendations'
   | 'ccm-policy-details'
@@ -1178,12 +1192,14 @@ type HarnessIconName =
   | 'code-file-light'
   | 'code-file'
   | 'code-folder'
+  | 'code-gear'
   | 'code-history'
   | 'code-info'
   | 'code-merged'
   | 'code-more'
   | 'code-open'
   | 'code-pull-request'
+  | 'code-pull'
   | 'code-quote'
   | 'code-rejected'
   | 'code-repo'
@@ -1228,6 +1244,7 @@ type HarnessIconName =
   | 'connectthroughdelegate'
   | 'connectthroughmanager'
   | 'contact-support'
+  | 'container'
   | 'copy-alt'
   | 'copy-doc'
   | 'copy'
@@ -1765,6 +1782,7 @@ type HarnessIconName =
   | 'serverless-aws-lambda-prepare-rollback-inverse'
   | 'serverless-aws-lambda-prepare-rollback'
   | 'serverless-aws-lambda-rollback-v2-inverse'
+  | 'serverless-aws-lambda-rollback-v2'
   | 'serverless-deploy-step'
   | 'service-accounts'
   | 'service-custom-connector'
@@ -1810,6 +1828,11 @@ type HarnessIconName =
   | 'step-group'
   | 'step-jira'
   | 'steps-spinner'
+  | 'sto-containers'
+  | 'sto-dast'
+  | 'sto-sast'
+  | 'sto-sca'
+  | 'sto-secrets'
   | 'sto-with-dark-text'
   | 'sto-with-text'
   | 'store-artifact-bundle'
@@ -1882,10 +1905,13 @@ type HarnessIconName =
   | 'test-connection'
   | 'test-verification'
   | 'text'
+  | 'thinner-code-repos'
+  | 'thinner-code-webhook'
   | 'thinner-search'
   | 'ti-callgraph'
   | 'timeout'
   | 'timer'
+  | 'todo-list-harness'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -2024,6 +2050,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-nav-cluster-orchestration': CcmNavClusterOrchestration,
   'ccm-nav-commitments': CcmNavCommitments,
   'ccm-nav-cost-categories': CcmNavCostCategories,
+  'ccm-nav-msp': CcmNavMsp,
   'ccm-nav-perspectives': CcmNavPerspectives,
   'ccm-nav-recommendations': CcmNavRecommendations,
   'ccm-policy-details': CcmPolicyDetails,
@@ -2134,12 +2161,14 @@ const HarnessIcons: KVO<ElementType> = {
   'code-file-light': CodeFileLight,
   'code-file': CodeFile,
   'code-folder': CodeFolder,
+  'code-gear': CodeGear,
   'code-history': CodeHistory,
   'code-info': CodeInfo,
   'code-merged': CodeMerged,
   'code-more': CodeMore,
   'code-open': CodeOpen,
   'code-pull-request': CodePullRequest,
+  'code-pull': CodePull,
   'code-quote': CodeQuote,
   'code-rejected': CodeRejected,
   'code-repo': CodeRepo,
@@ -2184,6 +2213,7 @@ const HarnessIcons: KVO<ElementType> = {
   connectthroughdelegate: Connectthroughdelegate,
   connectthroughmanager: Connectthroughmanager,
   'contact-support': ContactSupport,
+  container: Container,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
   copy: Copy,
@@ -2721,6 +2751,7 @@ const HarnessIcons: KVO<ElementType> = {
   'serverless-aws-lambda-prepare-rollback-inverse': ServerlessAwsLambdaPrepareRollbackInverse,
   'serverless-aws-lambda-prepare-rollback': ServerlessAwsLambdaPrepareRollback,
   'serverless-aws-lambda-rollback-v2-inverse': ServerlessAwsLambdaRollbackV2Inverse,
+  'serverless-aws-lambda-rollback-v2': ServerlessAwsLambdaRollbackV2,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-accounts': ServiceAccounts,
   'service-custom-connector': ServiceCustomConnector,
@@ -2766,6 +2797,11 @@ const HarnessIcons: KVO<ElementType> = {
   'step-group': StepGroup,
   'step-jira': StepJira,
   'steps-spinner': StepsSpinner,
+  'sto-containers': StoContainers,
+  'sto-dast': StoDast,
+  'sto-sast': StoSast,
+  'sto-sca': StoSca,
+  'sto-secrets': StoSecrets,
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
   'store-artifact-bundle': StoreArtifactBundle,
@@ -2838,10 +2874,13 @@ const HarnessIcons: KVO<ElementType> = {
   'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
+  'thinner-code-repos': ThinnerCodeRepos,
+  'thinner-code-webhook': ThinnerCodeWebhook,
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
   timeout: Timeout,
   timer: Timer,
+  'todo-list-harness': TodoListHarness,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
