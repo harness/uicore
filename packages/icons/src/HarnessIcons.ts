@@ -813,6 +813,7 @@ import ServerlessAwsLambdaPackage from './serverless-aws-lambda-package.svg'
 import ServerlessAwsLambdaPrepareRollbackInverse from './serverless-aws-lambda-prepare-rollback-inverse.svg'
 import ServerlessAwsLambdaPrepareRollback from './serverless-aws-lambda-prepare-rollback.svg'
 import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollback-v2-inverse.svg'
+import ServerlessAwsLambdaRollbackV2 from './serverless-aws-lambda-rollback-v2.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAccounts from './service-accounts.svg'
 import ServiceCustomConnector from './service-custom-connector.svg'
@@ -941,6 +942,7 @@ import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
 import Timer from './timer.svg'
+import TodoListHarness from './todo-list-harness.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1780,6 +1782,7 @@ type HarnessIconName =
   | 'serverless-aws-lambda-prepare-rollback-inverse'
   | 'serverless-aws-lambda-prepare-rollback'
   | 'serverless-aws-lambda-rollback-v2-inverse'
+  | 'serverless-aws-lambda-rollback-v2'
   | 'serverless-deploy-step'
   | 'service-accounts'
   | 'service-custom-connector'
@@ -1908,6 +1911,7 @@ type HarnessIconName =
   | 'ti-callgraph'
   | 'timeout'
   | 'timer'
+  | 'todo-list-harness'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -2747,6 +2751,7 @@ const HarnessIcons: KVO<ElementType> = {
   'serverless-aws-lambda-prepare-rollback-inverse': ServerlessAwsLambdaPrepareRollbackInverse,
   'serverless-aws-lambda-prepare-rollback': ServerlessAwsLambdaPrepareRollback,
   'serverless-aws-lambda-rollback-v2-inverse': ServerlessAwsLambdaRollbackV2Inverse,
+  'serverless-aws-lambda-rollback-v2': ServerlessAwsLambdaRollbackV2,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-accounts': ServiceAccounts,
   'service-custom-connector': ServiceCustomConnector,
@@ -2875,6 +2880,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ti-callgraph': TiCallgraph,
   timeout: Timeout,
   timer: Timer,
+  'todo-list-harness': TodoListHarness,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
