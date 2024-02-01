@@ -1304,7 +1304,7 @@
 "@harness/design-system@^1.4.0":
   version "1.6.0"
   resolved "https://npm.pkg.github.com/download/@harness/design-system/1.6.0/08be4ff6b6e6a42f163f69d6141875d995685a02#08be4ff6b6e6a42f163f69d6141875d995685a02"
-  integrity sha512-Js2mtSIrCrc0Slsc0P4+MGxQwIPqwwC6ynbSeytYaWmUHbvp9oXzuTw9ZN2CYYstaEv+xI6tJDCEJ4vqoM8ubw==
+  integrity "sha1-CL5P9rbmpC8WP2nWFBh12ZVoWgI= sha512-Js2mtSIrCrc0Slsc0P4+MGxQwIPqwwC6ynbSeytYaWmUHbvp9oXzuTw9ZN2CYYstaEv+xI6tJDCEJ4vqoM8ubw=="
 
 "@harnessio/design-system@^1.6.0":
   version "1.6.0"
