@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react'
-import { Icon as Icons, IconName, HarnessIcons, IconProps } from '@harnessio/icons'
+import { Icon as Icons, IconName as IconsName, HarnessIcons, IconProps } from '@harnessio/icons'
 import { Logo, LogoName, Logos } from '@harness/logos'
 import { StyledProps } from '@harnessio/design-system'
 
@@ -14,7 +14,7 @@ export const Icon: React.FC<IconLogoProps> = props => {
   const { name, size, color, className, ...rest } = props
 
   if (isIconName(name)) {
-    return <Icons name={name as IconName} size={size} color={color} className={className} {...rest} />
+    return <Icons name={name as IconsName} size={size} color={color} className={className} {...rest} />
   }
 
   if (isLogoName(name)) {
@@ -32,5 +32,5 @@ function isLogoName(name: string): boolean {
   return Object.keys(Logos).includes(name)
 }
 
-export type IconName = IconName | LogoName
+export type IconName = IconsName | LogoName
 export { IconProps }

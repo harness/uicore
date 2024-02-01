@@ -1311,6 +1311,9 @@
   resolved "https://registry.npmjs.org/@harnessio/design-system/-/design-system-1.6.0.tgz#8d9323d1d5b8881b41069f7a98c700eca78481c9"
   integrity sha512-MpNxpRBZLw9vMK/kDtFURI3JcN4cxxzj8STevZZoWbPZyEJ9/y/KJYi2GdERZ0z4Is/ccPv3ZcKDo3OK08OFVA==
 
+"@harnessio/icons@^1.0.0":
+  version "2.0.0-beta.4"
+
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
   resolved "https://registry.npmjs.org/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"

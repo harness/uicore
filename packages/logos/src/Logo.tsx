@@ -15,10 +15,11 @@ import { Logos, LogoNames } from './Logos'
 import React, { ElementType, HTMLAttributes } from 'react'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
 import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import { IconProps } from '@harnessio/icons'
 
 type LogoName = LogoNames | BIconName
 
-interface LogoProps extends HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'> {
+interface LogoProps extends Omit<IconProps, 'name'> {
   name: LogoName
   inverse?: boolean
   size?: number
