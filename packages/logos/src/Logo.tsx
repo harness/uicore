@@ -12,9 +12,9 @@
  * TODO: Implement accessible attributes for icons as explained in https://blueprintjs.com/docs/#core/components/icon.
  */
 import { Logos, LogoNames } from './Logos'
-import React, { ElementType, HTMLAttributes } from 'react'
+import React, { ElementType } from 'react'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
-import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import { styledClasses, omitStyledProps } from '@harness/design-system'
 import { IconProps } from '@harnessio/icons'
 
 type LogoName = LogoNames | BIconName

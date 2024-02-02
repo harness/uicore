@@ -960,6 +960,7 @@ import UserGroups from './user-groups.svg'
 import User from './user.svg'
 import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
+import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
@@ -1929,6 +1930,7 @@ type HarnessIconName =
   | 'user'
   | 'utility'
   | 'valuesFIle'
+  | 'variables-blue'
   | 'variables'
   | 'viewerRole'
   | 'waiting'
@@ -2898,6 +2900,7 @@ const HarnessIcons: KVO<ElementType> = {
   user: User,
   utility: Utility,
   valuesFIle: ValuesFIle,
+  'variables-blue': VariablesBlue,
   variables: Variables,
   viewerRole: ViewerRole,
   waiting: Waiting,

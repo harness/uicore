@@ -12,7 +12,7 @@ import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
 import { Button } from '../../components/Button/Button'
-import { Icon, IconProps } from '@harnessio/icons'
+import { Icon, IconProps } from '../../utils/IconLogoUtil'
 import { Utils } from '../../core/Utils'
 import { Text } from '../../components/Text/Text'
 import { Popover } from '../../components/Popover/Popover'
