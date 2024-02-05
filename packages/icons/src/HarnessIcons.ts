@@ -674,6 +674,7 @@ import JiraCreateInverse from './jira-create-inverse.svg'
 import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
+import K8STrafficRouting from './k8s-traffic-routing.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import KubernetesGitops from './kubernetes-gitops.svg'
@@ -1963,6 +1964,7 @@ type HarnessIconName =
   | 'jira-create'
   | 'jira-update-inverse'
   | 'jira-update'
+  | 'k8s-traffic-routing'
   | 'key-main'
   | 'key'
   | 'kubernetes-gitops'
@@ -3252,6 +3254,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-create': JiraCreate,
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
+  'k8s-traffic-routing': K8STrafficRouting,
   'key-main': KeyMain,
   key: Key,
   'kubernetes-gitops': KubernetesGitops,
