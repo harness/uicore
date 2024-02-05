@@ -12,16 +12,14 @@
  * TODO: Implement accessible attributes for icons as explained in https://blueprintjs.com/docs/#core/components/icon.
  */
 import { HarnessIcons, HarnessIconName } from './HarnessIcons'
-import React, { ElementType, HTMLAttributes } from 'react'
+import React, { ElementType } from 'react'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
-import { StyledProps, styledClasses, omitStyledProps } from '@harnessio/design-system'
+import { styledClasses, omitStyledProps, IconBase } from '@harnessio/design-system'
 
 type IconName = HarnessIconName | BIconName
 
-interface IconProps extends HTMLAttributes<HTMLHeadingElement>, Omit<StyledProps, 'children'> {
+interface IconProps extends IconBase {
   name: IconName
-  inverse?: boolean
-  size?: number
 }
 
 function Icon(props: IconProps): React.ReactElement {

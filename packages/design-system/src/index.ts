@@ -16,6 +16,7 @@ export * from './styled-props/padding/PaddingProps'
 export * from './styled-props/flex/FlexProps'
 export * from './styled-props/font/FontProps'
 export * from './styled-props/margin/MarginProps'
+export * from './common/IconBase'
 
 import styledClass from './styled-props/StyledProps.module.css'
 

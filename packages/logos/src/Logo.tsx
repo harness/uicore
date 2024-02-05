@@ -14,15 +14,12 @@
 import { Logos, LogoNames } from './Logos'
 import React, { ElementType } from 'react'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
-import { styledClasses, omitStyledProps } from '@harness/design-system'
-import { IconProps } from '@harnessio/icons'
+import { styledClasses, omitStyledProps, IconBase } from '@harnessio/design-system'
 
 type LogoName = LogoNames | BIconName
 
-interface LogoProps extends Omit<IconProps, 'name'> {
+interface LogoProps extends IconBase {
   name: LogoName
-  inverse?: boolean
-  size?: number
 }
 
 function Logo(props: LogoProps): React.ReactElement {

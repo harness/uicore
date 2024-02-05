@@ -12,15 +12,18 @@ import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
 import { Button } from '../../components/Button/Button'
-import { Icon, IconProps } from '../../utils/IconLogoUtil'
+import { Icon } from '../../utils/IconLogoUtil'
 import { Utils } from '../../core/Utils'
 import { Text } from '../../components/Text/Text'
 import { Popover } from '../../components/Popover/Popover'
+import { IconBase } from '@harnessio/design-system'
+import { LogoName } from '@harness/logos'
+import { IconName } from '@harnessio/icons'
 
 export interface SelectOption {
   label: string
   value: string | number | symbol
-  icon?: IconProps
+  icon?: IconBase & { name: IconName | LogoName }
 }
 
 export enum SelectSize {
