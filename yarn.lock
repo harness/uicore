@@ -1304,12 +1304,15 @@
 "@harness/design-system@^1.4.0":
   version "1.6.0"
   resolved "https://npm.pkg.github.com/download/@harness/design-system/1.6.0/08be4ff6b6e6a42f163f69d6141875d995685a02#08be4ff6b6e6a42f163f69d6141875d995685a02"
-  integrity sha512-Js2mtSIrCrc0Slsc0P4+MGxQwIPqwwC6ynbSeytYaWmUHbvp9oXzuTw9ZN2CYYstaEv+xI6tJDCEJ4vqoM8ubw==
+  integrity "sha1-CL5P9rbmpC8WP2nWFBh12ZVoWgI= sha512-Js2mtSIrCrc0Slsc0P4+MGxQwIPqwwC6ynbSeytYaWmUHbvp9oXzuTw9ZN2CYYstaEv+xI6tJDCEJ4vqoM8ubw=="
 
 "@harnessio/design-system@^1.6.0":
   version "1.6.0"
   resolved "https://registry.npmjs.org/@harnessio/design-system/-/design-system-1.6.0.tgz#8d9323d1d5b8881b41069f7a98c700eca78481c9"
   integrity sha512-MpNxpRBZLw9vMK/kDtFURI3JcN4cxxzj8STevZZoWbPZyEJ9/y/KJYi2GdERZ0z4Is/ccPv3ZcKDo3OK08OFVA==
+
+"@harnessio/icons@^1.0.0":
+  version "2.0.0-beta.4"
 
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
