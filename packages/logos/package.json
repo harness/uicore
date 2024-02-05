@@ -25,11 +25,14 @@
   },
   "peerDependencies": {
     "@harness/design-system": "^1.0.0",
-    "@harnessio/icons": "^1.0.0",
+    "@harnessio/design-system": "1.6.0-beta.2",
+    "@harnessio/icons": "^2.0.0-beta.2",
     "react": "^17.0.2"
   },
   "devDependencies": {
     "@harness/design-system": "^1.4.0",
+    "@harnessio/design-system": "^1.6.0-beta.2",
+    "@harnessio/icons": "^2.0.0-beta.2",
     "@svgr/core": "^6.2.1",
     "@svgr/plugin-svgo": "^6.2.0",
     "@types/react": "^17.0.3",
@@ -42,7 +45,6 @@
     "vite-plugin-dts": "^0.9.9",
     "vite-plugin-react-svg": "^0.2.0",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.9.2",
-    "@harnessio/icons": "^1.0.0"
+    "webpack-cli": "^4.9.2"
   }
 }
