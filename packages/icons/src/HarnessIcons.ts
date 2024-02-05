@@ -1160,6 +1160,7 @@ import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
+import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
@@ -2449,6 +2450,7 @@ type HarnessIconName =
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
+  | 'ssl-cert'
   | 'stale-cache'
   | 'star-empty'
   | 'star'
@@ -3738,6 +3740,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
+  'ssl-cert': SslCert,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
   star: Star,
