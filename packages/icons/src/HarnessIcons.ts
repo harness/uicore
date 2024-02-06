@@ -1290,6 +1290,7 @@ import Webhook from './webhook.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import WigglyArrow from './wiggly-arrow.svg'
+import Wiz from './wiz.svg'
 import X from './x.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
@@ -2580,6 +2581,7 @@ type HarnessIconName =
   | 'white-cluster'
   | 'white-full-cluster'
   | 'wiggly-arrow'
+  | 'wiz'
   | 'x'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
@@ -3870,6 +3872,7 @@ const HarnessIcons: KVO<ElementType> = {
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
   'wiggly-arrow': WigglyArrow,
+  wiz: Wiz,
   x: X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
