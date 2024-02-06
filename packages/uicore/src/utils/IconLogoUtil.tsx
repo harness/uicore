@@ -7,6 +7,7 @@
 
 import React, { HTMLAttributes } from 'react'
 import { Icon as IconOriginal, IconName as IconOriginalName, HarnessIcons, IconProps } from '@harnessio/icons'
+import { IconName as BIconName } from '@blueprintjs/core'
 import { Logo, LogoName, Logos } from '@harness/logos'
 import { StyledProps } from '@harnessio/design-system'
 
@@ -18,17 +19,15 @@ interface IconLogoProps extends HTMLAttributes<HTMLHeadingElement>, Omit<StyledP
 }
 
 export const Icon: React.FC<IconLogoProps> = props => {
-  const { name, size, color, className, ...rest } = props
+  const { name, ...rest } = props
 
   if (isIconName(name)) {
-    return <IconOriginal name={name as IconOriginalName} size={size} color={color} className={className} {...rest} />
+    return <IconOriginal name={name as IconOriginalName} {...rest} />
+  } else if (isLogoName(name)) {
+    return <Logo name={name as LogoName} {...rest} />
+  } else {
+    return <IconOriginal name={name as BIconName} {...rest} />
   }
-
-  if (isLogoName(name)) {
-    return <Logo name={name as LogoName} size={size} color={color} className={className} {...rest} />
-  }
-
-  return null
 }
 
 function isIconName(name: string): boolean {

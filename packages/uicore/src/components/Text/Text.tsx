@@ -14,7 +14,6 @@ import { styledClass } from '@harnessio/design-system'
 import { OptionalTooltip } from '@harnessio/design-system'
 import { Utils } from '../../core/Utils'
 import css from './Text.css'
-// import { Icon, IconName, IconProps } from '@harnessio/icons'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
 export interface TextProps extends HTMLAttributes<HTMLDivElement>, StyledProps, OptionalTooltip {

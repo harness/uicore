@@ -31,6 +31,7 @@
   "devDependencies": {
     "@contentful/rich-text-types": "^15.12.0",
     "@harness/design-system": "^1.4.0",
+    "@harnessio/design-system": "^1.6.0-beta.2",
     "@types/react": "^17.0.3",
     "dts-bundle-generator": "^6.4.0",
     "react": "^17.0.2",
@@ -42,6 +43,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.0",
+    "@harnessio/design-system": "1.6.0-beta.2",
     "contentful": "^9.1.20"
   }
 }
