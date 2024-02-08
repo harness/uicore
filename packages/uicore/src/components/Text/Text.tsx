@@ -26,7 +26,7 @@ export interface TextProps extends HTMLAttributes<HTMLDivElement>, StyledProps, 
   alwaysShowTooltip?: boolean
 
   /** Left icon */
-  icon?: IconName
+  icon?: IconName | React.ReactElement
 
   /** Optional props for left icon */
   iconProps?: Partial<IconProps>
@@ -120,7 +120,12 @@ export function Text(props: TextProps): JSX.Element {
         )}
         className={styledClasses(props, styledClass.font, lineClamp && lineClamp >= 1 && css.lineclamp)}
         ref={refCallback}>
-        {icon && <Icon className={css.icon} name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />}
+        {icon &&
+          (React.isValidElement(icon) ? (
+            icon
+          ) : (
+            <Icon className={css.icon} name={icon as IconName} size={16} padding={{ right: 'xsmall' }} {...iconProps} />
+          ))}
         {props.children}
         {rightIcon && (
           <Icon className={css.icon} name={rightIcon} size={16} padding={{ left: 'xsmall' }} {...rightIconProps} />

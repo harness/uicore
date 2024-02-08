@@ -8,7 +8,7 @@
 import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
-import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
+import React, { ElementType, HTMLAttributes, MouseEvent, isValidElement, useState } from 'react'
 import { Config } from '../../core/Config'
 import { OptionalTooltip } from '@harnessio/design-system'
 import { Utils } from '../../core/Utils'
@@ -40,7 +40,7 @@ export interface ButtonProps
     StyledProps,
     OptionalTooltip {
   /** Left icon */
-  icon?: IconName
+  icon?: IconName | React.ReactElement
 
   /** Right icon */
   rightIcon?: IconName
@@ -146,7 +146,14 @@ export function Button(props: ButtonProps): React.ReactElement {
       {...ariaLabelProps}
       {...normalizedProps}
       loading={loading}
-      icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}
+      icon={
+        icon &&
+        (isValidElement(icon) ? (
+          icon
+        ) : (
+          <Icon name={icon as IconName} size={iconSize} padding={leftIconPadding} {...props.iconProps} />
+        ))
+      }
       rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
       onClick={onClick}
       className={cx(
