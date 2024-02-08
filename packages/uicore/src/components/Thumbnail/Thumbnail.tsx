@@ -10,7 +10,7 @@ import cx from 'classnames'
 
 import css from '../Thumbnail/Thumbnail.css'
 import { Card } from '../Card/Card'
-import { Icon, IconName } from '../../utils/IconLogoUtil'
+import { Icon, IconName } from '@harnessio/icons'
 import { Text } from '../Text/Text'
 import { Color } from '@harnessio/design-system'
 

@@ -12,10 +12,7 @@ import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
 import { Button } from '../../components/Button/Button'
-import { Icon } from '../../utils/IconLogoUtil'
-import { IconName } from '@harnessio/icons'
-import { LogoName } from '@harness/logos'
-import { IconBase } from '@harnessio/design-system'
+import { Icon, IconProps } from '@harnessio/icons'
 import { Utils } from '../../core/Utils'
 import { Text } from '../../components/Text/Text'
 import { Popover } from '../../components/Popover/Popover'
@@ -31,7 +28,7 @@ export interface SelectWithBiLevelOption {
   hasSubmenuItems?: boolean
 
   /** icon to render in defaultItemRenderer */
-  icon?: IconBase & { name: IconName | LogoName }
+  icon?: IconProps
 
   /** list of all subitems */
   submenuItems?: SelectWithBiLevelOption[]

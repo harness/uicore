@@ -9,7 +9,7 @@ import React, { HTMLAttributes, useRef, useState, useCallback, useMemo } from 'r
 import { debounce } from 'lodash-es'
 import cx from 'classnames'
 import { StyledProps, styledClasses, omitStyledProps } from '@harnessio/design-system'
-import { Icon, IconName, IconProps } from '../../utils/IconLogoUtil'
+import { Icon, IconName, IconProps } from '@harnessio/icons'
 import { styledClass } from '@harnessio/design-system'
 import { OptionalTooltip } from '@harnessio/design-system'
 import { Utils } from '../../core/Utils'
