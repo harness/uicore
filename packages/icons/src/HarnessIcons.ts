@@ -112,6 +112,7 @@ import AzureArm from './azure-arm.svg'
 import AzureBlob from './azure-blob.svg'
 import AzureBlueprints from './azure-blueprints.svg'
 import AzureContainerRegistry from './azure-container-registry.svg'
+import AzureDevops from './azure-devops.svg'
 import AzureKeyVault from './azure-key-vault.svg'
 import AzureKubernetesService from './azure-kubernetes-service.svg'
 import AzureResourceManager from './azure-resource-manager.svg'
@@ -365,6 +366,7 @@ import ConditionalWhen from './conditional-when.svg'
 import ConfigChange from './config-change.svg'
 import ConfigFile from './config-file.svg'
 import Configure from './configure.svg'
+import Confluence from './confluence.svg'
 import ConnectivityMode from './connectivity-mode.svg'
 import ConnectorsBlue from './connectors-blue.svg'
 import ConnectorsIcon from './connectors-icon.svg'
@@ -391,6 +393,7 @@ import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomIngest from './custom-ingest.svg'
+import CustomPlugin from './custom-plugin.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
 import CustomService from './custom-service.svg'
 import CustomSm from './custom-sm.svg'
@@ -529,6 +532,7 @@ import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
 import File from './file.svg'
 import Filestore from './filestore.svg'
+import Firehydrant from './firehydrant.svg'
 import FixedInput from './fixed-input.svg'
 import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
@@ -573,6 +577,7 @@ import GitNewBranch from './git-new-branch.svg'
 import GitPopover from './git-popover.svg'
 import GithubActionPlugin from './github-action-plugin.svg'
 import GithubActions from './github-actions.svg'
+import GithubInsights from './github-insights.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
 import Github from './github.svg'
@@ -611,6 +616,7 @@ import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
+import Grafana from './grafana.svg'
 import GraphIncrease from './graph-increase.svg'
 import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
@@ -863,6 +869,7 @@ import OnpremLight from './onprem-light.svg'
 import OpenTofu from './openTofu.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
+import Opsgenie from './opsgenie.svg'
 import OptionsHollow from './options-hollow.svg'
 import OsvInverse from './osv-inverse.svg'
 import Osv from './osv.svg'
@@ -870,6 +877,7 @@ import OtherWorkload from './other-workload.svg'
 import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
 import OwaspInverse from './owasp-inverse.svg'
 import Owasp from './owasp.svg'
+import PagerDuty from './pager-duty.svg'
 import PdcInverse from './pdc-inverse.svg'
 import Pdc from './pdc.svg'
 import Pending from './pending.svg'
@@ -918,6 +926,7 @@ import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
+import Rafay from './rafay.svg'
 import RancherInverse from './rancher-inverse.svg'
 import Rancher from './rancher.svg'
 import ReExecuted from './re-executed.svg'
@@ -976,6 +985,7 @@ import RollbackStage from './rollback-stage.svg'
 import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
+import Rootly from './rootly.svg'
 import RunCiStepInverse from './run-ci-step-inverse.svg'
 import RunCiStep from './run-ci-step.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -1262,6 +1272,7 @@ import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
 import Timer from './timer.svg'
 import TodoListHarness from './todo-list-harness.svg'
+import Todo from './todo.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1404,6 +1415,7 @@ type HarnessIconName =
   | 'azure-blob'
   | 'azure-blueprints'
   | 'azure-container-registry'
+  | 'azure-devops'
   | 'azure-key-vault'
   | 'azure-kubernetes-service'
   | 'azure-resource-manager'
@@ -1657,6 +1669,7 @@ type HarnessIconName =
   | 'config-change'
   | 'config-file'
   | 'configure'
+  | 'confluence'
   | 'connectivity-mode'
   | 'connectors-blue'
   | 'connectors-icon'
@@ -1683,6 +1696,7 @@ type HarnessIconName =
   | 'custom-approval'
   | 'custom-artifact'
   | 'custom-ingest'
+  | 'custom-plugin'
   | 'custom-remote-manifest'
   | 'custom-service'
   | 'custom-sm'
@@ -1821,6 +1835,7 @@ type HarnessIconName =
   | 'ff-with-text'
   | 'file'
   | 'filestore'
+  | 'firehydrant'
   | 'fixed-input'
   | 'flag-tick'
   | 'flag'
@@ -1865,6 +1880,7 @@ type HarnessIconName =
   | 'git-popover'
   | 'github-action-plugin'
   | 'github-actions'
+  | 'github-insights'
   | 'github-selected'
   | 'github-unselected'
   | 'github'
@@ -1903,6 +1919,7 @@ type HarnessIconName =
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
+  | 'grafana'
   | 'graph-increase'
   | 'graph'
   | 'grey-cluster'
@@ -2155,6 +2172,7 @@ type HarnessIconName =
   | 'openTofu'
   | 'openshift-params'
   | 'openshift'
+  | 'opsgenie'
   | 'options-hollow'
   | 'osv-inverse'
   | 'osv'
@@ -2162,6 +2180,7 @@ type HarnessIconName =
   | 'owasp-dependency-check-inverse'
   | 'owasp-inverse'
   | 'owasp'
+  | 'pager-duty'
   | 'pdc-inverse'
   | 'pdc'
   | 'pending'
@@ -2210,6 +2229,7 @@ type HarnessIconName =
   | 'question'
   | 'queue-step'
   | 'queued'
+  | 'rafay'
   | 'rancher-inverse'
   | 'rancher'
   | 're-executed'
@@ -2268,6 +2288,7 @@ type HarnessIconName =
   | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
+  | 'rootly'
   | 'run-ci-step-inverse'
   | 'run-ci-step'
   | 'run-pipeline'
@@ -2554,6 +2575,7 @@ type HarnessIconName =
   | 'timeout'
   | 'timer'
   | 'todo-list-harness'
+  | 'todo'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -2696,6 +2718,7 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-blob': AzureBlob,
   'azure-blueprints': AzureBlueprints,
   'azure-container-registry': AzureContainerRegistry,
+  'azure-devops': AzureDevops,
   'azure-key-vault': AzureKeyVault,
   'azure-kubernetes-service': AzureKubernetesService,
   'azure-resource-manager': AzureResourceManager,
@@ -2949,6 +2972,7 @@ const HarnessIcons: KVO<ElementType> = {
   'config-change': ConfigChange,
   'config-file': ConfigFile,
   configure: Configure,
+  confluence: Confluence,
   'connectivity-mode': ConnectivityMode,
   'connectors-blue': ConnectorsBlue,
   'connectors-icon': ConnectorsIcon,
@@ -2975,6 +2999,7 @@ const HarnessIcons: KVO<ElementType> = {
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
   'custom-ingest': CustomIngest,
+  'custom-plugin': CustomPlugin,
   'custom-remote-manifest': CustomRemoteManifest,
   'custom-service': CustomService,
   'custom-sm': CustomSm,
@@ -3113,6 +3138,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ff-with-text': FfWithText,
   file: File,
   filestore: Filestore,
+  firehydrant: Firehydrant,
   'fixed-input': FixedInput,
   'flag-tick': FlagTick,
   flag: Flag,
@@ -3157,6 +3183,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-popover': GitPopover,
   'github-action-plugin': GithubActionPlugin,
   'github-actions': GithubActions,
+  'github-insights': GithubInsights,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
   github: Github,
@@ -3195,6 +3222,7 @@ const HarnessIcons: KVO<ElementType> = {
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
+  grafana: Grafana,
   'graph-increase': GraphIncrease,
   graph: Graph,
   'grey-cluster': GreyCluster,
@@ -3447,6 +3475,7 @@ const HarnessIcons: KVO<ElementType> = {
   openTofu: OpenTofu,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
+  opsgenie: Opsgenie,
   'options-hollow': OptionsHollow,
   'osv-inverse': OsvInverse,
   osv: Osv,
@@ -3454,6 +3483,7 @@ const HarnessIcons: KVO<ElementType> = {
   'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
   'owasp-inverse': OwaspInverse,
   owasp: Owasp,
+  'pager-duty': PagerDuty,
   'pdc-inverse': PdcInverse,
   pdc: Pdc,
   pending: Pending,
@@ -3502,6 +3532,7 @@ const HarnessIcons: KVO<ElementType> = {
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
+  rafay: Rafay,
   'rancher-inverse': RancherInverse,
   rancher: Rancher,
   're-executed': ReExecuted,
@@ -3560,6 +3591,7 @@ const HarnessIcons: KVO<ElementType> = {
   'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
+  rootly: Rootly,
   'run-ci-step-inverse': RunCiStepInverse,
   'run-ci-step': RunCiStep,
   'run-pipeline': RunPipeline,
@@ -3846,6 +3878,7 @@ const HarnessIcons: KVO<ElementType> = {
   timeout: Timeout,
   timer: Timer,
   'todo-list-harness': TodoListHarness,
+  todo: Todo,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
