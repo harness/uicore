@@ -22,7 +22,7 @@ import cx from 'classnames'
 
 export interface Item {
   label: string | React.ReactElement
-  icon?: IconName
+  icon?: IconName | React.ReactElement
   imageProps?: ImgHTMLAttributes<HTMLOrSVGImageElement>
   value: string
   disabled?: boolean

@@ -19,7 +19,7 @@ export interface ThumbnailProps {
   label?: string | React.ReactElement
   /** Don't pass icon or imageProps.src to render label as a React Element */
   value?: string
-  icon?: IconName
+  icon?: IconName | React.ReactElement
   /** renders image instead of icon when imageProps.src is passed */
   imageProps?: ImgHTMLAttributes<HTMLOrSVGImageElement>
   disabled?: boolean
@@ -48,7 +48,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
     }
 
     if (icon) {
-      return <Icon name={icon} size={26} />
+      return isValidElement(icon) ? icon : <Icon name={icon as IconName} size={26} />
     }
 
     if (label) {
