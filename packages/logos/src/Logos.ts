@@ -111,6 +111,7 @@ import CloudFoundry from './cloud-foundry.svg'
 import CloudLight from './cloud-light.svg'
 import Cloudformation from './cloudformation.svg'
 import Code from './code.svg'
+import Confluence from './confluence.svg'
 import Cookiecutter from './cookiecutter.svg'
 import CsHover from './cs-hover.svg'
 import CvHover from './cv-hover.svg'
@@ -144,6 +145,7 @@ import Entity from './entity.svg'
 import FfSolid from './ff-solid.svg'
 import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
+import Firehydrant from './firehydrant.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
 import FortifyOnDemand from './fortify-on-demand.svg'
 import GcpEngine from './gcp-engine.svg'
@@ -172,6 +174,7 @@ import GitopsGreen from './gitops-green.svg'
 import Golang from './golang.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
+import Grafana from './grafana.svg'
 import GreyCluster from './grey-cluster.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
@@ -217,14 +220,18 @@ import Npm from './npm.svg'
 import OpenTofu from './openTofu.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
+import Opsgenie from './opsgenie.svg'
 import OsvInverse from './osv-inverse.svg'
 import Osv from './osv.svg'
 import OwaspDependencyCheckInverse from './owasp-dependency-check-inverse.svg'
 import OwaspInverse from './owasp-inverse.svg'
 import Owasp from './owasp.svg'
+import PagerDuty from './pager-duty.svg'
 import ProwlerInverse from './prowler-inverse.svg'
 import Prowler from './prowler.svg'
 import Python from './python.svg'
+import Rafay from './rafay.svg'
+import Rootly from './rootly.svg'
 import S3CiStepInverse from './s3-ci-step-inverse.svg'
 import S3CiStep from './s3-ci-step.svg'
 import S3StepInverse from './s3-step-inverse.svg'
@@ -333,6 +340,7 @@ import TasInverse from './tas-inverse.svg'
 import TerraformCloud from './terraform-cloud.svg'
 import TriggerGithub from './trigger-github.svg'
 import ViewJson from './view-json.svg'
+import Wiz from './wiz.svg'
 
 type LogoNames =
   | 'Anchore-inverse'
@@ -435,6 +443,7 @@ type LogoNames =
   | 'cloud-light'
   | 'cloudformation'
   | 'code'
+  | 'confluence'
   | 'cookiecutter'
   | 'cs-hover'
   | 'cv-hover'
@@ -468,6 +477,7 @@ type LogoNames =
   | 'ff-solid'
   | 'ff-with-dark-text'
   | 'ff-with-text'
+  | 'firehydrant'
   | 'fortify-on-demand-inverse'
   | 'fortify-on-demand'
   | 'gcp-engine'
@@ -496,6 +506,7 @@ type LogoNames =
   | 'golang'
   | 'google-kubernetes-engine'
   | 'google'
+  | 'grafana'
   | 'grey-cluster'
   | 'harness-logo-black'
   | 'harness-logo-white-bg-blue'
@@ -541,14 +552,18 @@ type LogoNames =
   | 'openTofu'
   | 'openshift-params'
   | 'openshift'
+  | 'opsgenie'
   | 'osv-inverse'
   | 'osv'
   | 'owasp-dependency-check-inverse'
   | 'owasp-inverse'
   | 'owasp'
+  | 'pager-duty'
   | 'prowler-inverse'
   | 'prowler'
   | 'python'
+  | 'rafay'
+  | 'rootly'
   | 's3-ci-step-inverse'
   | 's3-ci-step'
   | 's3-step-inverse'
@@ -657,6 +672,7 @@ type LogoNames =
   | 'terraform-cloud'
   | 'trigger-github'
   | 'view-json'
+  | 'wiz'
 
 const Logos: KVO<ElementType> = {
   'Anchore-inverse': AnchoreInverse,
@@ -759,6 +775,7 @@ const Logos: KVO<ElementType> = {
   'cloud-light': CloudLight,
   cloudformation: Cloudformation,
   code: Code,
+  confluence: Confluence,
   cookiecutter: Cookiecutter,
   'cs-hover': CsHover,
   'cv-hover': CvHover,
@@ -792,6 +809,7 @@ const Logos: KVO<ElementType> = {
   'ff-solid': FfSolid,
   'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
+  firehydrant: Firehydrant,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
   'fortify-on-demand': FortifyOnDemand,
   'gcp-engine': GcpEngine,
@@ -820,6 +838,7 @@ const Logos: KVO<ElementType> = {
   golang: Golang,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
+  grafana: Grafana,
   'grey-cluster': GreyCluster,
   'harness-logo-black': HarnessLogoBlack,
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
@@ -865,14 +884,18 @@ const Logos: KVO<ElementType> = {
   openTofu: OpenTofu,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
+  opsgenie: Opsgenie,
   'osv-inverse': OsvInverse,
   osv: Osv,
   'owasp-dependency-check-inverse': OwaspDependencyCheckInverse,
   'owasp-inverse': OwaspInverse,
   owasp: Owasp,
+  'pager-duty': PagerDuty,
   'prowler-inverse': ProwlerInverse,
   prowler: Prowler,
   python: Python,
+  rafay: Rafay,
+  rootly: Rootly,
   's3-ci-step-inverse': S3CiStepInverse,
   's3-ci-step': S3CiStep,
   's3-step-inverse': S3StepInverse,
@@ -980,7 +1003,8 @@ const Logos: KVO<ElementType> = {
   'tas-inverse': TasInverse,
   'terraform-cloud': TerraformCloud,
   'trigger-github': TriggerGithub,
-  'view-json': ViewJson
+  'view-json': ViewJson,
+  wiz: Wiz
 }
 
 export { Logos, LogoNames }
