@@ -66,6 +66,7 @@ import AwsSamPackage from './aws-sam-package.svg'
 import AzureArmRollback from './azure-arm-rollback.svg'
 import AzureArm from './azure-arm.svg'
 import AzureBlueprints from './azure-blueprints.svg'
+import AzureDevops from './azure-devops.svg'
 import AzureResourceManager from './azure-resource-manager.svg'
 import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
@@ -293,6 +294,7 @@ import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomIngest from './custom-ingest.svg'
+import CustomPlugin from './custom-plugin.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
 import CustomService from './custom-service.svg'
 import CustomSm from './custom-sm.svg'
@@ -428,6 +430,7 @@ import GitExperienceSetting from './git-experience-setting.svg'
 import GitLandingPage from './git-landing-page.svg'
 import GitNewBranch from './git-new-branch.svg'
 import GithubActions from './github-actions.svg'
+import GithubInsights from './github-insights.svg'
 import GitnessNoRepositories from './gitness-no-repositories.svg'
 import GitopsAgentBlue from './gitops-agent-blue.svg'
 import GitopsAgent from './gitops-agent.svg'
@@ -467,6 +470,8 @@ import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpProbe from './http-probe.svg'
 import HttpStep from './http-step.svg'
+import IacmOpentofuInverseStep from './iacm-opentofu-inverse-step.svg'
+import IacmOpentofuStep from './iacm-opentofu-step.svg'
 import IacmResourceAdded from './iacm-resource-added.svg'
 import IacmResourceChanged from './iacm-resource-changed.svg'
 import IacmResourceDeleted from './iacm-resource-deleted.svg'
@@ -850,6 +855,7 @@ import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
+import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
@@ -944,6 +950,7 @@ import TiCallgraph from './ti-callgraph.svg'
 import Timeout from './timeout.svg'
 import Timer from './timer.svg'
 import TodoListHarness from './todo-list-harness.svg'
+import Todo from './todo.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1037,6 +1044,7 @@ type HarnessIconName =
   | 'azure-arm-rollback'
   | 'azure-arm'
   | 'azure-blueprints'
+  | 'azure-devops'
   | 'azure-resource-manager'
   | 'background-ci-step-inverse'
   | 'background-ci-step'
@@ -1264,6 +1272,7 @@ type HarnessIconName =
   | 'custom-approval'
   | 'custom-artifact'
   | 'custom-ingest'
+  | 'custom-plugin'
   | 'custom-remote-manifest'
   | 'custom-service'
   | 'custom-sm'
@@ -1399,6 +1408,7 @@ type HarnessIconName =
   | 'git-landing-page'
   | 'git-new-branch'
   | 'github-actions'
+  | 'github-insights'
   | 'gitness-no-repositories'
   | 'gitops-agent-blue'
   | 'gitops-agent'
@@ -1438,6 +1448,8 @@ type HarnessIconName =
   | 'hourglass'
   | 'http-probe'
   | 'http-step'
+  | 'iacm-opentofu-inverse-step'
+  | 'iacm-opentofu-step'
   | 'iacm-resource-added'
   | 'iacm-resource-changed'
   | 'iacm-resource-deleted'
@@ -1821,6 +1833,7 @@ type HarnessIconName =
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
+  | 'ssl-cert'
   | 'stale-cache'
   | 'star-empty'
   | 'star'
@@ -1915,6 +1928,7 @@ type HarnessIconName =
   | 'timeout'
   | 'timer'
   | 'todo-list-harness'
+  | 'todo'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -2008,6 +2022,7 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-arm-rollback': AzureArmRollback,
   'azure-arm': AzureArm,
   'azure-blueprints': AzureBlueprints,
+  'azure-devops': AzureDevops,
   'azure-resource-manager': AzureResourceManager,
   'background-ci-step-inverse': BackgroundCiStepInverse,
   'background-ci-step': BackgroundCiStep,
@@ -2235,6 +2250,7 @@ const HarnessIcons: KVO<ElementType> = {
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
   'custom-ingest': CustomIngest,
+  'custom-plugin': CustomPlugin,
   'custom-remote-manifest': CustomRemoteManifest,
   'custom-service': CustomService,
   'custom-sm': CustomSm,
@@ -2370,6 +2386,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-landing-page': GitLandingPage,
   'git-new-branch': GitNewBranch,
   'github-actions': GithubActions,
+  'github-insights': GithubInsights,
   'gitness-no-repositories': GitnessNoRepositories,
   'gitops-agent-blue': GitopsAgentBlue,
   'gitops-agent': GitopsAgent,
@@ -2409,6 +2426,8 @@ const HarnessIcons: KVO<ElementType> = {
   hourglass: Hourglass,
   'http-probe': HttpProbe,
   'http-step': HttpStep,
+  'iacm-opentofu-inverse-step': IacmOpentofuInverseStep,
+  'iacm-opentofu-step': IacmOpentofuStep,
   'iacm-resource-added': IacmResourceAdded,
   'iacm-resource-changed': IacmResourceChanged,
   'iacm-resource-deleted': IacmResourceDeleted,
@@ -2792,6 +2811,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
+  'ssl-cert': SslCert,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
   star: Star,
@@ -2886,6 +2906,7 @@ const HarnessIcons: KVO<ElementType> = {
   timeout: Timeout,
   timer: Timer,
   'todo-list-harness': TodoListHarness,
+  todo: Todo,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
