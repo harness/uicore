@@ -27,7 +27,8 @@ import {
   RUNTIME_INPUT_VALUE,
   EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE,
-  REGEX_INPUT_PLACEHOLDER
+  REGEX_INPUT_PLACEHOLDER,
+  RUNTIME_INPUT_V1_PREFIX
 } from './MultiTypeInputUtils'
 import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
@@ -35,7 +36,7 @@ import { SelectWithSubmenuV2, SelectWithSubmenuPropsV2 } from '../SelectWithSubm
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 import { BiLevelSelect, BiLevelSelectProps, SelectWithBiLevelOption } from '../Select/BiLevelSelect'
 
-type AcceptableValue =
+export type AcceptableValue =
   | boolean
   | string
   | number
@@ -43,6 +44,11 @@ type AcceptableValue =
   | string[]
   | MultiSelectOption[]
   | SelectWithBiLevelOption[]
+
+type CommonMultiTypeComponentProps = Pick<ExpressionAndRuntimeTypeProps, 'onChange' | 'disabled' | 'value'>
+
+export type FixedTypeComponentProps = CommonMultiTypeComponentProps
+export type RuntimeTypeComponentProps = CommonMultiTypeComponentProps
 
 export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
   value?: AcceptableValue
@@ -65,12 +71,7 @@ export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutP
   newExpressionComponent?: boolean
   textAreaInputClassName?: string
   expressionPlaceHolder?: string
-}
-
-export interface FixedTypeComponentProps {
-  onChange: ExpressionAndRuntimeTypeProps['onChange']
-  value?: AcceptableValue
-  disabled?: boolean
+  renderRuntimeInput?: (props: RuntimeTypeComponentProps) => JSX.Element
 }
 
 export const isValueAnExpression = (value: string): boolean => /<\+.*>/.test(value)
@@ -84,6 +85,11 @@ export const getMultiTypeFromValue = (
     return MultiTypeInputType.FIXED
   } else if (typeof value === 'string') {
     value = value.toLocaleLowerCase().trim()
+
+    if (value.startsWith(RUNTIME_INPUT_V1_PREFIX)) {
+      return MultiTypeInputType.RUNTIMEV1
+    }
+
     if (value.startsWith(RUNTIME_INPUT_VALUE)) {
       if (
         Array.isArray(allowableTypes) &&
@@ -116,7 +122,7 @@ export const getMultiTypeFromValue = (
 export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntimeTypeProps<T>): React.ReactElement {
   const {
     value,
-    defaultValueToReset,
+    defaultValueToReset = '',
     width,
     expressions = [],
     onTypeChange,
@@ -139,6 +145,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     expressionPlaceHolder,
     newExpressionComponent = false,
     textAreaInputClassName,
+    renderRuntimeInput,
     ...layoutProps
   } = props
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
@@ -157,6 +164,9 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     switch (newType) {
       case MultiTypeInputType.RUNTIME:
         _inputValue = RUNTIME_INPUT_VALUE
+        break
+      case MultiTypeInputType.RUNTIMEV1:
+        _inputValue = RUNTIME_INPUT_V1_PREFIX
         break
       case MultiTypeInputType.EXECUTION_TIME:
         _inputValue = EXECUTION_TIME_INPUT_VALUE
@@ -206,15 +216,22 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           onChange={fixedComponentOnChangeCallback}
         />
       )}
-      {type === MultiTypeInputType.RUNTIME && (
-        <TextInput
-          wrapperClassName={css.input}
-          name={name}
-          placeholder={placeholder || RUNTIME_INPUT_VALUE}
-          disabled
-          value={value as string}
-        />
-      )}
+      {[MultiTypeInputType.RUNTIME, MultiTypeInputType.RUNTIMEV1].includes(type) &&
+        (renderRuntimeInput ? (
+          renderRuntimeInput({
+            disabled,
+            value,
+            onChange
+          })
+        ) : (
+          <TextInput
+            wrapperClassName={css.input}
+            name={name}
+            placeholder={placeholder || RUNTIME_INPUT_VALUE}
+            disabled
+            value={value as string}
+          />
+        ))}
       {type === MultiTypeInputType.EXECUTION_TIME && (
         <TextInput
           wrapperClassName={css.input}
@@ -371,7 +388,7 @@ function MultiTextInputFixedTypeComponent(props: FixedTypeComponentProps & Multi
     <InputGroup
       className={css.input}
       {...rest}
-      value={value as string}
+      value={(value as string) ?? ''}
       disabled={disabled}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(event.target.value, MultiTypeInputValue.STRING, MultiTypeInputType.FIXED)
@@ -427,6 +444,7 @@ export const MultiSelectTypeInput: React.FC<MultiSelectTypeInputProps> = ({ mult
       {...rest}
       fixedTypeComponentProps={multiSelectProps}
       fixedTypeComponent={MultiSelectTypeInputTypeComponent}
+      defaultValueToReset={[]}
     />
   )
 }

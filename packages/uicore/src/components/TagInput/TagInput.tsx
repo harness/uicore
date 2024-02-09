@@ -98,15 +98,6 @@ function FailToFetch({ error, retry }: { error: string; retry: () => void }) {
   )
 }
 
-const getId = (item: string | { value: string } | any) => (typeof item === 'object' ? item.value : item)
-
-const getLabelFromItems = (
-  item: string | { value: string; label: string } | any,
-  items: string[] | Array<{ value: string; label: string }> | any[] = []
-) => items.find(i => (typeof i === 'object' ? i?.value === item : i === item))?.label || item
-
-const getLabel = (item: string | { label: string } | any) => (typeof item === 'object' ? item.label : item)
-
 export function TagInput<T>(props: TagInputProps<T>) {
   const {
     selectedItems: _selectedItems,
@@ -151,7 +142,6 @@ export function TagInput<T>(props: TagInputProps<T>) {
   const onItemSelect = useCallback(
     (item: T) => {
       const index = selectedItems.findIndex(_item => keyOf(_item) === keyOf(item))
-      item = getId(item)
       const isSelectedItemAlreadyCreated = createdItems.find((_item: T) => keyOf(_item) === keyOf(item))
       if (index >= 0 && !isSelectedItemAlreadyCreated) {
         // item was already selected before
@@ -274,7 +264,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
         return (
           <MenuItem
             key={keyOf(item)}
-            text={labelFor(getLabel(item))}
+            text={labelFor(item)}
             icon={isItemSelected(item) ? 'tick' : 'blank'}
             onClick={itemProps.handleClick}
             active={itemProps.modifiers.active}
@@ -284,7 +274,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
       createNewItemFromQuery={(allowNewTag && itemFromNewTag) || undefined}
       createNewItemRenderer={renderCreateNewTag}
       onItemSelect={onItemSelect}
-      tagRenderer={(item: T) => labelFor(getLabelFromItems(item, items))}
+      tagRenderer={labelFor}
       tagInputProps={{
         disabled: readonly,
         onRemove: (_value: string, index: number) => {

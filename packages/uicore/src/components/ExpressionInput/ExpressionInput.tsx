@@ -196,10 +196,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         window.requestAnimationFrame(() => {
           if (inputRef.current) {
             if (newExpressionComponent) {
-              // the + 1 extra for this position is to put the cursor one step ahead of expression closing to bring
-              // it out of the scope for editable span
-
-              const position = firstHalf.length + 2 + item.length + 2
+              const position = firstHalf.length + 2 + item.length + 1
               // this is required to maintain the caret position
 
               const childNodesTextLength = createChildNodeLengthSumArray(inputRef.current.childNodes)
@@ -209,9 +206,11 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
               })
 
               const child = inputRef.current.childNodes[childIndex]
-              const offset = childNodesTextLength[childIndex - 1] - position + 2
 
-              setCaret(child, offset)
+              if (child?.nodeType === Node.ELEMENT_NODE || child?.nodeType === Node.TEXT_NODE) {
+                const offset = position - childNodesTextLength[childIndex - 1] + 1
+                setCaret(child, offset, true)
+              }
             } else {
               // position is sum of firstHalf.length + 2 (for '<+') + item.length + 1 (for '>')
               const position = firstHalf.length + 2 + item.length + 1

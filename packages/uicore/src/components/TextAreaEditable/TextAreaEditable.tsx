@@ -12,8 +12,24 @@ import css from './TextAreaEditable.css'
 
 const VAR_REGEX = /(<\+[a-zA-z0-9_.]+?>)/
 
+function sanitizeHTML(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\u00a0/g, ' ')
+}
+
+function sanitizeHTMLTextObject(input: TextObject[]): TextObject[] {
+  return input.map(item => {
+    if (item.type === 'text') {
+      return { type: item.type, text: sanitizeHTML(item.text) }
+    } else return item
+  })
+}
+
 function deserialize(input: string): TextObject[] {
-  const split = input.split(VAR_REGEX)
+  const split = (typeof input !== 'string' ? String(input) : input).split(VAR_REGEX)
 
   return split.map(part => {
     if (part.match(VAR_REGEX)) {
@@ -60,9 +76,14 @@ export function getCaretIndex(element: HTMLElement): number {
   return position
 }
 
-export function setCaret(element: ChildNode, index: number): void {
+export function setCaret(element: ChildNode, index: number, isCompleteElement?: boolean): void {
   const range = document.createRange()
-  range.setStart(element, index)
+  // DOM treats the nested element's text (isCompleteElement) as a single entity so range cannot be handled with offset length
+  if (isCompleteElement) {
+    range.setStartAfter(element)
+  } else {
+    range.setStart(element, index)
+  }
   range.collapse(true)
 
   const sel = window.getSelection() as any
@@ -105,15 +126,12 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
 
     if (e.key === '>' && this.props.inputRef.current) {
       e.preventDefault()
-      const index = getCaretIndex(e.target) + 2
+      const index = getCaretIndex(e.target)
 
       const newStr =
-        (textContent.slice(0, index) as string) +
-        (e.key as string) +
-        (textContent.slice(index).trimEnd() as string) +
-        ' '
+        (textContent.slice(0, index) as string) + (e.key as string) + (textContent.slice(index).trimEnd() as string)
 
-      this.props.inputRef.current.innerHTML = highlight(deserialize(newStr))
+      this.props.inputRef.current.innerHTML = highlight(sanitizeHTMLTextObject(deserialize(newStr)))
 
       const childNodesTextLength = createChildNodeLengthSumArray(this.props.inputRef.current.childNodes)
 
@@ -122,11 +140,20 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
       })
 
       const child = this.props.inputRef.current.childNodes[childIndex]
-      const offset = childNodesTextLength[childIndex] - index + 1
-
-      setCaret(child, offset)
+      const prevChild = this.props.inputRef.current.childNodes[childIndex - 1]
+      let offset = 0
+      if (prevChild) {
+        offset = index - childNodesTextLength[childIndex - 1] + 1
+      } else {
+        offset = index + 1
+      }
 
       this.props.onInput(e)
+      /**
+       * node.nodeName returns #text for an exclusive Text node
+       *  MDN Reference :- https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName
+       */
+      setCaret(child, offset, child.nodeName.toLowerCase() !== '#text')
     }
     this.props.keyDown(e)
   }
@@ -139,9 +166,13 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
         {...rest}
         className={cx(css.editable, textAreaClassName)}
         ref={inputRef}
-        contentEditable={'plaintext-only' as any}
+        /**
+         * https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable
+         * plaintext-only is not supported in firefox
+         */
+        contentEditable={true}
         onKeyDown={this.handleKeyDown.bind(this)}
-        dangerouslySetInnerHTML={{ __html: highlight(deserialize(value + ' ')) }}
+        dangerouslySetInnerHTML={{ __html: highlight(deserialize(value)) }}
       />
     )
   }

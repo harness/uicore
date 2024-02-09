@@ -114,7 +114,7 @@ export function ExpandingSearchInput(
       const text = event.target.value
       setValue(text)
       timerRef.current = setTimeout(() => {
-        propsOnChange?.(text)
+        propsOnChange?.(text?.trim())
       }, throttle)
     },
     [setValue, propsOnChange, throttle]

@@ -21,6 +21,7 @@ export interface SelectOption {
   label: string
   value: string | number | symbol
   icon?: IconProps
+  rightIcon?: IconProps
 }
 
 export enum SelectSize {
@@ -53,6 +54,7 @@ export interface SelectProps
   size?: SelectSize
   items: Props['items'] | (() => Promise<Props['items']>)
   allowCreatingNewItems?: boolean
+  newItemRenderer?: (query: string, clickHandler?: React.MouseEventHandler<Element>) => React.ReactNode
   name?: string
   whenPopoverClosed?: (node: HTMLElement) => void
   addClearBtn?: boolean
@@ -101,13 +103,15 @@ export function defaultItemRenderer(
           [css.disabled]: props.modifiers.disabled
         },
         { [css.menuItemSizeSmall]: size === SelectSize.Small },
-        { [css.menuItemSizeLarge]: size === SelectSize.Large }
+        { [css.menuItemSizeLarge]: size === SelectSize.Large },
+        { [css.rightIcon]: item.rightIcon }
       )}
       onClick={props.handleClick}>
       {item.icon ? <Icon size={getIconSizeFromSelect(size)} {...item.icon} /> : null}
       <Text className={css.menuItemLabel} lineClamp={1}>
         {item.label}
       </Text>
+      {item.rightIcon ? <Icon size={getIconSizeFromSelect(size)} {...item.rightIcon} /> : null}
     </li>
   )
 }
@@ -199,16 +203,20 @@ export function Select(props: SelectProps): React.ReactElement {
           {items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0 ? (
             <div className={css.noResultsFound}>No Match Found</div>
           ) : null}
-          {props.allowCreatingNewItems && !isExactQueryElPresent && (
-            <Button
-              intent="primary"
-              minimal
-              text={query}
-              icon="plus"
-              className={css.createNewItemButton}
-              onClick={handleClick as React.MouseEventHandler<Element>}
-            />
-          )}
+          {props.allowCreatingNewItems && !isExactQueryElPresent ? (
+            props.newItemRenderer ? (
+              props.newItemRenderer?.(query, handleClick)
+            ) : (
+              <Button
+                intent="primary"
+                minimal
+                text={query}
+                icon="plus"
+                className={css.createNewItemButton}
+                onClick={handleClick as React.MouseEventHandler<Element>}
+              />
+            )
+          ) : null}
         </React.Fragment>
       )
   }

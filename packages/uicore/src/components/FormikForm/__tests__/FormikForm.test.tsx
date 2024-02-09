@@ -470,4 +470,107 @@ describe('Test basic Components', () => {
     })
     expect(input).toHaveDisplayValue('value')
   })
+
+  test('switching to expression from fixed type for MultiTypeInput component should call onChange with value as empty string', async () => {
+    const mockedOnChangeFunc = jest.fn()
+    render(
+      renderFormikForm(
+        <FormInput.MultiTypeInput
+          name="dropdown"
+          label="Dropdown Field"
+          placeholder="enter value"
+          selectItems={[
+            {
+              label: 'Field 1',
+              value: 'Field_1'
+            },
+            {
+              label: 'Field 2',
+              value: 'Field_2'
+            }
+          ]}
+          useValue={true}
+          multiTypeInputProps={{
+            onChange: mockedOnChangeFunc
+          }}
+        />
+      )
+    )
+
+    const input = screen.getByPlaceholderText('enter value')
+    expect(input).toBeInTheDocument()
+
+    const multiTypeButton = screen.getByTestId('multi-type-button')
+    expect(multiTypeButton).toBeInTheDocument()
+    userEvent.click(multiTypeButton as HTMLButtonElement)
+
+    const expressionOption = await screen.findByText(/expression/i)
+    userEvent.click(expressionOption)
+
+    await waitFor(() => {
+      expect(mockedOnChangeFunc).toHaveBeenLastCalledWith('', MultiTypeInputValue.STRING, MultiTypeInputType.EXPRESSION)
+    })
+  })
+})
+
+describe('<FormInput.KVTagInput />', () => {
+  test('should render create tag popover and add the tag on click when isArray is false', async () => {
+    const onSubmit = jest.fn()
+    render(
+      renderFormikForm(<FormInput.KVTagInput name="tags" isArray={false} />, onSubmit, { tags: { t1: 'v1', t2: '' } })
+    )
+
+    expect(await screen.findByText('t1:v1')).toBeInTheDocument()
+    expect(screen.getByText('t2')).toBeInTheDocument()
+
+    const input = screen.getByDisplayValue('')
+
+    userEvent.type(input, 't3:v3,t4:v4')
+    userEvent.click(await screen.findByText('Create "t3:v3,t4:v4"'))
+
+    await waitFor(() => expect(screen.queryByText('Create "t3:v3,t4:v4"')).toBeNull())
+    expect(await screen.findByText('t3:v3')).toBeInTheDocument()
+    expect(screen.getByText('t4:v4')).toBeInTheDocument()
+    expect(input).toHaveDisplayValue('')
+
+    userEvent.click(screen.getByText('Submit'))
+
+    await waitFor(() =>
+      expect(onSubmit).toBeCalledWith({ tags: { t1: 'v1', t2: '', t3: 'v3', t4: 'v4' } }, expect.anything())
+    )
+  })
+
+  test('should render create tag popover and add the tag on click when isArray is true', async () => {
+    const onSubmit = jest.fn()
+    render(renderFormikForm(<FormInput.KVTagInput name="tags" isArray />, onSubmit, { tags: ['t1'] }))
+
+    expect(await screen.findByText('t1')).toBeInTheDocument()
+
+    const input = screen.getByDisplayValue('')
+
+    userEvent.type(input, 't2,t3')
+    userEvent.click(await screen.findByText('Create "t2,t3"'))
+
+    await waitFor(() => expect(screen.queryByText('Create "t2,t3"')).toBeNull())
+    expect(await screen.findByText('t2')).toBeInTheDocument()
+    expect(screen.getByText('t3')).toBeInTheDocument()
+    expect(input).toHaveDisplayValue('')
+
+    userEvent.click(screen.getByText('Submit'))
+
+    await waitFor(() => expect(onSubmit).toBeCalledWith({ tags: ['t1', 't2', 't3'] }, expect.anything()))
+
+    // Pressing enter should also close the create tag popover.
+    userEvent.type(input, 't4')
+
+    expect(await screen.findByText('Create "t4"')).toBeInTheDocument()
+
+    userEvent.type(input, '{enter}')
+
+    await waitFor(() => expect(screen.queryByText('Create "t4"')).toBeNull())
+
+    userEvent.click(screen.getByText('Submit'))
+
+    await waitFor(() => expect(onSubmit).toBeCalledWith({ tags: ['t1', 't2', 't3', 't4'] }, expect.anything()))
+  })
 })

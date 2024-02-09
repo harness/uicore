@@ -19,6 +19,8 @@ export interface AccordionPanelProps {
   summary: React.ReactNode
   addDomId?: boolean
   disabled?: boolean
+  className?: string
+  shouldRender?: boolean | (() => boolean)
 }
 
 export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
@@ -31,7 +33,7 @@ export const AccordionPanelWithRef = React.forwardRef(AccordionPanel)
 function AccordionPanel(
   props: AccordionPanelProps & AccordionPanelInternalProps,
   ref: React.Ref<HTMLDivElement>
-): React.ReactElement {
+): React.ReactElement | null {
   const {
     summary,
     details,
@@ -44,15 +46,25 @@ function AccordionPanel(
     panelClassName,
     summaryClassName,
     detailsClassName,
-    chevronClassName
+    chevronClassName,
+    className,
+    shouldRender
   } = props
+
+  if (typeof shouldRender === 'boolean' && !shouldRender) {
+    return null
+  }
+
+  if (typeof shouldRender === 'function' && !shouldRender?.()) {
+    return null
+  }
 
   return (
     <div
       ref={ref}
       data-testid={`${id}-panel`}
       data-disabled={disabled}
-      className={cx(css.panel, panelClassName)}
+      className={cx(css.panel, panelClassName, className)}
       data-open={isOpen}
       id={addDomId ? `${id}-panel` : undefined}>
       <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, summaryClassName)}>

@@ -175,6 +175,7 @@ export const DropDown: FC<DropDownProps> = props => {
     debounce(query => {
       if (Array.isArray(items)) {
         setDropDownItems(items.filter(item => item.label.toLowerCase().includes(query.toLowerCase())))
+        onQueryChange?.(query)
       } else if (typeof items === 'function') {
         onQueryChange?.(query)
       }

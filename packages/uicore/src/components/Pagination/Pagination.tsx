@@ -33,6 +33,8 @@ export interface PaginationProps {
   breakAt?: number
   showPagination?: boolean
   pageSizeDropdownProps?: Partial<DropDownProps>
+  hidePageSize?: boolean
+  minimal?: boolean
 }
 
 interface PageNumbersProps {
@@ -149,7 +151,9 @@ const Pagination: React.FC<PaginationProps> = props => {
     className,
     breakAt,
     showPagination,
-    pageSizeDropdownProps
+    pageSizeDropdownProps,
+    hidePageSize = false,
+    minimal = false
   } = props
   const currentWindowWidth = useWindowWidth()
 
@@ -191,7 +195,7 @@ const Pagination: React.FC<PaginationProps> = props => {
       )}
       <Layout.Horizontal>
         <Button
-          text="Prev"
+          text={!minimal && 'Prev'}
           icon="arrow-left"
           size={ButtonSize.SMALL}
           className={cx(css.roundedButton, css.buttonLeft)}
@@ -203,7 +207,7 @@ const Pagination: React.FC<PaginationProps> = props => {
           <PageNumbers gotoPage={gotoPage} pageIndex={pageIndex} pageCountClamp={5} pageCount={pageCount} />
         ) : null}
         <Button
-          text="Next"
+          text={!minimal && 'Next'}
           rightIcon="arrow-right"
           size={ButtonSize.SMALL}
           className={cx(css.roundedButton, css.buttonRight)}
@@ -212,24 +216,24 @@ const Pagination: React.FC<PaginationProps> = props => {
           disabled={pageIndex === pageCount - 1}
         />
       </Layout.Horizontal>
-
-      {pageSizeOptions && onPageSizeChange ? (
-        <Layout.Horizontal flex={{ alignItems: 'baseline' }} spacing="small">
-          <Text>Show</Text>
-          <DropDown
-            items={selectOptions}
-            onChange={item => onPageSizeChange(item.value as number)}
-            value={pageSize.toString()}
-            filterable={false}
-            width={60}
-            className={css.pageSizeDropdown}
-            {...pageSizeDropdownProps}
-          />
-          <Text>per page</Text>
-        </Layout.Horizontal>
-      ) : (
-        <span>{`Showing ${pageSize} per page`}</span>
-      )}
+      {!hidePageSize &&
+        (pageSizeOptions && onPageSizeChange ? (
+          <Layout.Horizontal flex={{ alignItems: 'baseline' }} spacing="small">
+            <Text>Show</Text>
+            <DropDown
+              items={selectOptions}
+              onChange={item => onPageSizeChange(item.value as number)}
+              value={pageSize.toString()}
+              filterable={false}
+              width={60}
+              className={css.pageSizeDropdown}
+              {...pageSizeDropdownProps}
+            />
+            <Text>per page</Text>
+          </Layout.Horizontal>
+        ) : (
+          <span>{`Showing ${pageSize} per page`}</span>
+        ))}
     </Layout.Horizontal>
   ) : null
 }

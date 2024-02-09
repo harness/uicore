@@ -93,6 +93,7 @@ export { Card, CardProps, CardBody } from './components/Card/Card'
 export { CardSelect, CardSelectProps, CardSelectType } from './components/CardSelect/CardSelect'
 export { CodeBlock } from './components/CodeBlock/CodeBlock'
 export { StatusBar, StatusBarProps } from './components/StatusBar/StatusBar'
+export { Stepper } from './components/Stepper'
 export { MultiLevelSelect } from './components/MultiLevelSelect/MultiLevelSelect'
 export {
   StackTraceList,
@@ -136,12 +137,14 @@ export {
   ExpressionAndRuntimeType,
   MultiSelectTypeInput,
   getMultiTypeFromValue,
-  FixedTypeComponentProps
+  FixedTypeComponentProps,
+  RuntimeTypeComponentProps
 } from './components/MultiTypeInput/MultiTypeInput'
 export {
   MultiTypeInputValue,
   MultiTypeInputType,
   RUNTIME_INPUT_VALUE,
+  RUNTIME_INPUT_V1_PREFIX,
   EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE,
   MultiTypeIcon,
