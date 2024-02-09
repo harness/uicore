@@ -8,7 +8,7 @@
 import React from 'react'
 import { noop } from 'lodash-es'
 import cx from 'classnames'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { FontVariation } from '@harness/design-system'
 import type { StepTitleInterface } from './StepTitle.types'
 import { getStateByStatus } from './StepTitle.utils'

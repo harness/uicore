@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { IconName } from '@harness/icons'
+import { IconName } from '@harnessio/icons'
 import { StepStatus } from '../../Step.constants'
 import type { StepStatusType } from '../../Step.types'
 import { DefaultState, SuccessState, ErrorState, DisabledState } from './StepTitle.constants'
