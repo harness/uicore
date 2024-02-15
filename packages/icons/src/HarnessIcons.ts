@@ -1159,6 +1159,8 @@ import Slo from './slo.svg'
 import SlotDeployment from './slot-deployment.svg'
 import SlsaGeneration from './slsa-generation.svg'
 import SlsaVerification from './slsa-verification.svg'
+import Slsa from './slsa.svg'
+import SBOMDriftDetected from './sbom-drift-detected.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import SolidError from './solid-error.svg'
@@ -2319,6 +2321,7 @@ type HarnessIconName =
   | 'save-cache-s3-step'
   | 'save-cache-s3'
   | 'save-cache-step'
+  | 'sbom-drift-detected'
   | 'scm'
   | 'script'
   | 'search-applications'
@@ -2461,6 +2464,7 @@ type HarnessIconName =
   | 'slo-downtime'
   | 'slo'
   | 'slot-deployment'
+  | 'slsa'
   | 'slsa-generation'
   | 'slsa-verification'
   | 'smtp-configuration-blue'
@@ -3767,6 +3771,8 @@ const HarnessIcons: KVO<ElementType> = {
   'slot-deployment': SlotDeployment,
   'slsa-generation': SlsaGeneration,
   'slsa-verification': SlsaVerification,
+  slsa: Slsa,
+  'sbom-drift-detected': SBOMDriftDetected,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   'solid-error': SolidError,
