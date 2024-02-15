@@ -251,3 +251,16 @@ export {
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
 export { StringSubstitute, stringSubstitute } from './components/StringSubstitute/StringSubstitute'
+export {
+  useConfirmationDialog,
+  UseConfirmationDialogProps,
+  UseConfirmationDialogReturn
+} from './components/ConfirmDialog/useConfirmationDialog'
+
+export {
+  ModalErrorHandlerBinding,
+  ModalErrorHandler,
+  ModalErrorHandlerProps
+} from './components/Modal/ModalErrorHandler'
+export { Icon, IconName, IconProps } from '@harness/icons'
+export * from '@harnessio/design-system'
