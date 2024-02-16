@@ -262,5 +262,5 @@ export {
   ModalErrorHandler,
   ModalErrorHandlerProps
 } from './components/Modal/ModalErrorHandler'
-export { Icon, IconName, IconProps } from '@harness/icons'
+export { Icon, IconName, IconProps } from '@harnessio/icons'
 export * from '@harnessio/design-system'

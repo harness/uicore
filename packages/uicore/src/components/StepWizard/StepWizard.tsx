@@ -8,7 +8,7 @@
 import React, { MutableRefObject } from 'react'
 import cx from 'classnames'
 import css from './StepWizard.css'
-import { Icon, IconProps } from '@harnessio/icons'
+import { Icon } from '@harnessio/icons'
 import { Text } from '../../components/Text/Text'
 import { romanize } from '../../core/Utils'
 import { isNil } from 'lodash-es'
@@ -36,7 +36,7 @@ export interface StepWizardProps<SharedObject> {
   watermarkLogoClassName?: string
   // icon?: JSX.Element
   icon?: any
-  iconProps?: IconProps
+  iconProps?: any
   title?: string | JSX.Element
   subtitle?: string | JSX.Element
   children:

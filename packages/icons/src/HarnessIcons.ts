@@ -808,7 +808,6 @@ import SecretsIcon from './secrets-icon.svg'
 import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
-import SeiMain from './sei-main.svg'
 import SeiWithDarkText from './sei-with-dark-text.svg'
 import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
@@ -849,10 +848,10 @@ import SlsaVerification from './slsa-verification.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import SolidError from './solid-error.svg'
+import Spinner from './spinner.svg'
 import SscaArtifacts from './ssca-artifacts.svg'
 import SscaComponents from './ssca-components.svg'
 import SscaEnforce from './ssca-enforce.svg'
-import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
 import SslCert from './ssl-cert.svg'
@@ -1786,7 +1785,6 @@ type HarnessIconName =
   | 'security-ci-step-inverse'
   | 'security-ci-step'
   | 'security-stage'
-  | 'sei-main'
   | 'sei-with-dark-text'
   | 'select-scope'
   | 'semgrep'
@@ -1827,10 +1825,10 @@ type HarnessIconName =
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'solid-error'
+  | 'spinner'
   | 'ssca-artifacts'
   | 'ssca-components'
   | 'ssca-enforce'
-  | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
   | 'ssl-cert'
@@ -2764,7 +2762,6 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step-inverse': SecurityCiStepInverse,
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
-  'sei-main': SeiMain,
   'sei-with-dark-text': SeiWithDarkText,
   'select-scope': SelectScope,
   semgrep: Semgrep,
@@ -2805,10 +2802,10 @@ const HarnessIcons: KVO<ElementType> = {
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   'solid-error': SolidError,
+  spinner: Spinner,
   'ssca-artifacts': SscaArtifacts,
   'ssca-components': SscaComponents,
   'ssca-enforce': SscaEnforce,
-  'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
   'ssl-cert': SslCert,

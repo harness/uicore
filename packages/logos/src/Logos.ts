@@ -243,6 +243,7 @@ import SaveCacheS3StepInverse from './save-cache-s3-step-inverse.svg'
 import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
+import SeiMain from './sei-main.svg'
 import SendData from './send-data.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAmi from './service-ami.svg'
@@ -328,7 +329,6 @@ import ServiceTerraform from './service-terraform.svg'
 import ServiceTerragrunt from './service-terragrunt.svg'
 import ServiceVmware from './service-vmware.svg'
 import ServiceWindows from './service-windows.svg'
-import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
@@ -575,6 +575,7 @@ type LogoNames =
   | 'save-cache-s3-step'
   | 'save-cache-s3'
   | 'save-cache-step'
+  | 'sei-main'
   | 'send-data'
   | 'service-amazon-ecs'
   | 'service-ami'
@@ -660,7 +661,6 @@ type LogoNames =
   | 'service-terragrunt'
   | 'service-vmware'
   | 'service-windows'
-  | 'spinner'
   | 'spot-inverse'
   | 'spot'
   | 'srm-with-dark-text'
@@ -907,6 +907,7 @@ const Logos: KVO<ElementType> = {
   'save-cache-s3-step': SaveCacheS3Step,
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
+  'sei-main': SeiMain,
   'send-data': SendData,
   'service-amazon-ecs': ServiceAmazonEcs,
   'service-ami': ServiceAmi,
@@ -992,7 +993,6 @@ const Logos: KVO<ElementType> = {
   'service-terragrunt': ServiceTerragrunt,
   'service-vmware': ServiceVmware,
   'service-windows': ServiceWindows,
-  spinner: Spinner,
   'spot-inverse': SpotInverse,
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
