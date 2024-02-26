@@ -57,6 +57,10 @@ export interface InputWithIdentifierProps {
    * identifier changes, either directly or due to changes in name field
    */
   onIdentifierChangeCallback?: (identifier: string) => void
+  /**
+   * @default false
+   */
+  hideId?: boolean
 }
 
 // https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
@@ -81,7 +85,8 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     isIdentifierEditable = true,
     maxInput = 128,
     useUnversialToolTipId = true,
-    onIdentifierChangeCallback
+    onIdentifierChangeCallback,
+    hideId = false
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
@@ -96,50 +101,52 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
 
   return (
     <div className={cx(css.txtNameContainer, textCss.main)}>
-      <Layout.Horizontal className={css.txtIdContainer} spacing="xsmall">
-        <Text
-          tooltipProps={{
-            dataTooltipId
-          }}>
-          {idLabel}
-        </Text>
-        <Text>:</Text>
-        <Popover
-          content={<Container padding="small">{identifier}</Container>}
-          interactionKind={PopoverInteractionKind.HOVER}
-          hoverOpenDelay={500}
-          disabled={!identifier || identifier.length < 10}>
-          <EditableText
-            maxLength={maxInput}
-            disabled={!isIdentifierEditable}
-            placeholder=""
-            minWidth={0}
-            value={identifier}
-            isEditing={editable}
-            onConfirm={() => setEditable(false)}
-            onCancel={() => setEditable(false)}
-            onEdit={() => setEditable(true)}
-            onChange={value => {
-              const identifierFromName = getIdentifierFromName(value)
-              setCurrentEditField(idName)
-              formik.setFieldValue(idName, identifierFromName)
-              setUserModifiedIdentifier(true)
-              onIdentifierChangeCallback?.(identifierFromName)
-            }}
-            className={css.idValue}
-          />
-        </Popover>
-        {isIdentifierEditable && !editable ? (
-          <Icon
-            name="Edit"
-            size={12}
-            style={{ verticalAlign: 'middle', cursor: 'pointer' }}
-            onClick={() => {
-              setEditable(true)
-            }}
-          />
-        ) : null}
-      </Layout.Horizontal>
+      {!hideId ? (
+        <Layout.Horizontal className={css.txtIdContainer} spacing="xsmall">
+          <Text
+            tooltipProps={{
+              dataTooltipId
+            }}>
+            {idLabel}
+          </Text>
+          <Text>:</Text>
+          <Popover
+            content={<Container padding="small">{identifier}</Container>}
+            interactionKind={PopoverInteractionKind.HOVER}
+            hoverOpenDelay={500}
+            disabled={!identifier || identifier.length < 10}>
+            <EditableText
+              maxLength={maxInput}
+              disabled={!isIdentifierEditable}
+              placeholder=""
+              minWidth={0}
+              value={identifier}
+              isEditing={editable}
+              onConfirm={() => setEditable(false)}
+              onCancel={() => setEditable(false)}
+              onEdit={() => setEditable(true)}
+              onChange={value => {
+                const identifierFromName = getIdentifierFromName(value)
+                setCurrentEditField(idName)
+                formik.setFieldValue(idName, identifierFromName)
+                setUserModifiedIdentifier(true)
+                onIdentifierChangeCallback?.(identifierFromName)
+              }}
+              className={css.idValue}
+            />
+          </Popover>
+          {isIdentifierEditable && !editable ? (
+            <Icon
+              name="Edit"
+              size={12}
+              style={{ verticalAlign: 'middle', cursor: 'pointer' }}
+              onClick={() => {
+                setEditable(true)
+              }}
+            />
+          ) : null}
+        </Layout.Horizontal>
+      ) : null}
       <FormInput.Text
         {...inputGroupProps}
         label={inputLabel}
