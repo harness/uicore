@@ -25,6 +25,7 @@ export interface AvatarProps extends HTMLDivProps {
   email?: string
   size?: AvatarSizes
   borderRadius?: number
+  borderWidth?: number
   borderColor?: Color
   color?: Color
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
@@ -100,6 +101,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
     onClick,
     hoverCard = true,
     borderColor = Color.WHITE,
+    borderWidth = 2,
     hoverCardDetailsCallBack,
     ...rest
   } = props
@@ -133,7 +135,7 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
       backgroundColor: Utils.getRealCSSColor(calucatedBackgroundColor || 'BLUE_800'),
       color: Utils.getRealCSSColor(textColor)
     }),
-    border: `2px solid ${Utils.getRealCSSColor(borderColor)}`,
+    border: `${borderWidth}px solid ${Utils.getRealCSSColor(borderColor)}`,
     ...(fontSize && { fontSize })
   }
   if (src) {
