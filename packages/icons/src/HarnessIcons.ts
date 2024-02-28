@@ -85,6 +85,9 @@ import AsgDeployInverse from './asg-deploy-inverse.svg'
 import AsgDeploy from './asg-deploy.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
+import AsgSetup from './asg-setup.svg'
+import AsgPhasedDeploy from './asg-phased-deploy.svg'
+import AsgRollback from './asg-rollback.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
@@ -2697,6 +2700,9 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-deploy': AsgDeploy,
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
+  'asg-setup': AsgSetup,
+  'asg-phased-deploy': AsgPhasedDeploy,
+  'asg-rollback': AsgRollback,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
