@@ -1005,6 +1005,7 @@ import S3CiStepInverse from './s3-ci-step-inverse.svg'
 import S3CiStep from './s3-ci-step.svg'
 import S3StepInverse from './s3-step-inverse.svg'
 import S3Step from './s3-step.svg'
+import SackDollar from './sack-dollar.svg'
 import SaveCacheGcsCiStepInverse from './save-cache-gcs-ci-step-inverse.svg'
 import SaveCacheGcsCiStep from './save-cache-gcs-ci-step.svg'
 import SaveCacheGcsStepInverse from './save-cache-gcs-step-inverse.svg'
@@ -2314,6 +2315,7 @@ type HarnessIconName =
   | 's3-ci-step'
   | 's3-step-inverse'
   | 's3-step'
+  | 'sack-dollar'
   | 'save-cache-gcs-ci-step-inverse'
   | 'save-cache-gcs-ci-step'
   | 'save-cache-gcs-step-inverse'
@@ -3623,6 +3625,7 @@ const HarnessIcons: KVO<ElementType> = {
   's3-ci-step': S3CiStep,
   's3-step-inverse': S3StepInverse,
   's3-step': S3Step,
+  'sack-dollar': SackDollar,
   'save-cache-gcs-ci-step-inverse': SaveCacheGcsCiStepInverse,
   'save-cache-gcs-ci-step': SaveCacheGcsCiStep,
   'save-cache-gcs-step-inverse': SaveCacheGcsStepInverse,
