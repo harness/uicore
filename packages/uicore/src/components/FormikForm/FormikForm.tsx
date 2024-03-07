@@ -758,6 +758,7 @@ export interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   placeholder?: string
   onChange?: IInputGroupProps['onChange']
   isIdentifier?: boolean
+  // to allow hyphen in identifier
   allowHyphen?: boolean
 }
 
