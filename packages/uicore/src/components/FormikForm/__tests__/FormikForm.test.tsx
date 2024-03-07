@@ -12,6 +12,7 @@ import { Button } from '../../Button/Button'
 import { MultiTypeInputType, MultiTypeInputValue } from 'components/MultiTypeInput/MultiTypeInputUtils'
 import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
 import userEvent from '@testing-library/user-event'
+import { getIdentifierFromName } from 'components/InputWithIdentifier/InputWithIdentifier'
 
 const renderFormikForm = (
   fields: React.ReactNode,
@@ -572,5 +573,29 @@ describe('<FormInput.KVTagInput />', () => {
     userEvent.click(screen.getByText('Submit'))
 
     await waitFor(() => expect(onSubmit).toBeCalledWith({ tags: ['t1', 't2', 't3', 't4'] }, expect.anything()))
+  })
+  test('test getIdentifierFromName() function', () => {
+    expect(getIdentifierFromName('Test Name', true)).toBe('Test_Name')
+    expect(getIdentifierFromName('Test Name', false)).toBe('Test_Name')
+
+    expect(getIdentifierFromName('Test Name-123', true)).toBe('Test_Name-123')
+    expect(getIdentifierFromName('Test Name-123', false)).toBe('Test_Name123')
+
+    expect(getIdentifierFromName('Test Name-123-', true)).toBe('Test_Name-123-')
+    expect(getIdentifierFromName('Test Name-123-', false)).toBe('Test_Name123')
+
+    expect(getIdentifierFromName('-Test Name-123- ', true)).toBe('Test_Name-123-')
+    expect(getIdentifierFromName('-$Test Name-123- ', true)).toBe('Test_Name-123-')
+    expect(getIdentifierFromName('-$Test Name-123- ', true)).toBe('Test_Name-123-')
+    //
+    expect(getIdentifierFromName('-Test Name-123- ', false)).toBe('Test_Name123')
+    expect(getIdentifierFromName('-$Test Name-123- ', false)).toBe('Test_Name123')
+    expect(getIdentifierFromName('-$Test Name-123- ', false)).toBe('Test_Name123')
+
+    expect(getIdentifierFromName('_-$33var1--', true)).toBe('_-$33var1--')
+    expect(getIdentifierFromName('_-$33var1--', false)).toBe('_$33var1')
+
+    expect(getIdentifierFromName('_-$33var-abc-1--', true)).toBe('_-$33var-abc-1--')
+    expect(getIdentifierFromName('_-$33var-abc-1--', false)).toBe('_$33varabc1')
   })
 })
