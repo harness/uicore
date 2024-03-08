@@ -7,10 +7,27 @@
 
 import React from 'react'
 import { queryByAttribute, render, within } from '@testing-library/react'
-import { FormInput } from 'components/FormikForm/FormikForm'
+import { FormInput, Formik, FormikForm } from 'components/FormikForm/FormikForm'
 import userEvent from '@testing-library/user-event'
-import { renderFormikForm } from 'components/FormikForm/__tests__/FormikForm.test'
 import { getIdentifierFromName } from '../InputWithIdentifier'
+import { Button } from 'components/Button/Button'
+
+const renderFormikForm = (
+  fields: React.ReactNode,
+  submitMethod = jest.fn(),
+  initialValues = {},
+  disabled = false,
+  inline = false
+) => {
+  return (
+    <Formik initialValues={initialValues} onSubmit={submitMethod} formName="testform">
+      <FormikForm disabled={disabled} inline={inline}>
+        {fields}
+        <Button intent="primary" type="submit" text="Submit" />
+      </FormikForm>
+    </Formik>
+  )
+}
 
 describe('Test InputWithIdentifier', () => {
   function addNameAndAssertModifiedIdentifier(

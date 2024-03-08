@@ -13,7 +13,7 @@ import { MultiTypeInputType, MultiTypeInputValue } from 'components/MultiTypeInp
 import { TooltipContextProvider } from '../../../frameworks/Tooltip/TooltipContext'
 import userEvent from '@testing-library/user-event'
 
-export const renderFormikForm = (
+const renderFormikForm = (
   fields: React.ReactNode,
   submitMethod = jest.fn(),
   initialValues = {},
