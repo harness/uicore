@@ -26,7 +26,6 @@ describe('Test InputWithIdentifier', () => {
     expect(input).toHaveValue('')
   }
   test('allowHyphen false', async () => {
-    const onSubmit = jest.fn()
     const { container } = render(
       renderFormikForm(
         <FormInput.InputWithIdentifier
@@ -34,10 +33,6 @@ describe('Test InputWithIdentifier', () => {
           idName="identifier"
           inputLabel="Name"
           idLabel="ID"
-          isIdentifierEditable
-          maxInput={128}
-          useUnversialToolTipId
-          onIdentifierChangeCallback={onSubmit}
           // not passing allowHyphen as its optional
         />
       )
@@ -57,8 +52,8 @@ describe('Test InputWithIdentifier', () => {
     addNameAndAssertModifiedIdentifier('_-$33var1--', '_$33var1', input, idClass)
     addNameAndAssertModifiedIdentifier('_-$33var-abc-1--', '_$33varabc1', input, idClass)
   })
+
   test('allowHyphen true', async () => {
-    const onSubmit = jest.fn()
     const { container } = render(
       renderFormikForm(
         <FormInput.InputWithIdentifier
@@ -66,10 +61,6 @@ describe('Test InputWithIdentifier', () => {
           idName="identifier"
           inputLabel="Name"
           idLabel="ID"
-          isIdentifierEditable
-          maxInput={128}
-          useUnversialToolTipId
-          onIdentifierChangeCallback={onSubmit}
           allowHyphen={true}
         />
       )
@@ -89,6 +80,7 @@ describe('Test InputWithIdentifier', () => {
     addNameAndAssertModifiedIdentifier('_-$33var1--', '_-$33var1--', input, idClass)
     addNameAndAssertModifiedIdentifier('_-$33var-abc-1--', '_-$33var-abc-1--', input, idClass)
   })
+
   test('test getIdentifierFromName() function', () => {
     expect(getIdentifierFromName('Test Name', true)).toBe('Test_Name')
     expect(getIdentifierFromName('Test Name', false)).toBe('Test_Name')
