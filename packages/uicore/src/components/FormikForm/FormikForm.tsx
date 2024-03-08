@@ -758,10 +758,12 @@ export interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
   placeholder?: string
   onChange?: IInputGroupProps['onChange']
   isIdentifier?: boolean
+  // to allow hyphen in identifier
+  allowHyphen?: boolean
 }
 
 const Text = (props: TextProps & FormikContextProps<any>) => {
-  const { formik, name, isIdentifier = false, ...restProps } = props
+  const { formik, name, isIdentifier = false, allowHyphen = false, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -798,7 +800,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
         }}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           if (isIdentifier) {
-            const identifier = getIdentifierFromName(e.currentTarget.value)
+            const identifier = getIdentifierFromName(e.currentTarget.value, allowHyphen)
             formik?.setFieldValue(name, identifier)
           } else {
             if (inputGroup?.type === 'number') {

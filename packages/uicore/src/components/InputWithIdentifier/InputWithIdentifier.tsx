@@ -57,12 +57,24 @@ export interface InputWithIdentifierProps {
    * identifier changes, either directly or due to changes in name field
    */
   onIdentifierChangeCallback?: (identifier: string) => void
+  /**
+   * Allow hyphen in identifier
+   * @default false
+   */
+  allowHyphen?: boolean
 }
 
 // https://harness.atlassian.net/wiki/spaces/CDNG/pages/736200458/Entity+Identifier
-export function getIdentifierFromName(str: string): string {
+export function getIdentifierFromName(str: string, allowHyphen: boolean): string {
   if (isNil(str)) return ''
 
+  if (allowHyphen) {
+    return str
+      .trim()
+      .replace(/^[0-9-$]*/, '') // remove starting digits, dashes and $
+      .replace(/[^0-9a-zA-Z_$ -]/g, '') // remove special chars except _ and $ and -
+      .replace(/ +/g, '_') // replace spaces with _
+  }
   return str
     .trim()
     .replace(/^[0-9-$]*/, '') // remove starting digits, dashes and $
@@ -81,7 +93,8 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
     isIdentifierEditable = true,
     maxInput = 128,
     useUnversialToolTipId = true,
-    onIdentifierChangeCallback
+    onIdentifierChangeCallback,
+    allowHyphen = false
   } = props
   const [editable, setEditable] = useState(false)
   const [userModifiedIdentifier, setUserModifiedIdentifier] = useState(false)
@@ -120,7 +133,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
             onCancel={() => setEditable(false)}
             onEdit={() => setEditable(true)}
             onChange={value => {
-              const identifierFromName = getIdentifierFromName(value)
+              const identifierFromName = getIdentifierFromName(value, allowHyphen)
               setCurrentEditField(idName)
               formik.setFieldValue(idName, identifierFromName)
               setUserModifiedIdentifier(true)
@@ -156,7 +169,7 @@ export const InputWithIdentifier: React.FC<InputWithIdentifierProps> = props => 
 
           const updatedValues = cloneDeep(formik.values)
           set(updatedValues, inputName, name)
-          const identifierFromName = getIdentifierFromName(name)
+          const identifierFromName = getIdentifierFromName(name, allowHyphen)
 
           if (isIdentifierEditable && !userModifiedIdentifier) {
             set(updatedValues, idName, identifierFromName)
