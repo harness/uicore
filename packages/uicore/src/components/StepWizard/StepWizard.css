@@ -12,10 +12,8 @@
     overflow: hidden;
     position: relative;
     .navBarList {
-      background-color: #267cc9;
+      background-color: var(--primary-7);
       padding: 48px;
-
-      border-right: 1px solid #979797;
       grid-template-rows: repeat(auto-fill, var(--spacing-xxlarge));
       overflow: hidden;
       justify-content: center;
