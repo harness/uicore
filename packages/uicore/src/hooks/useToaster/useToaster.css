@@ -37,4 +37,7 @@
   :global(.bp3-toast.bp3-intent-success) {
     background-color: var(--green-600);
   }
+  :global(.bp3-toast.bp3-intent-primary) {
+    background-color: var(--primary-7);
+  }
 }
