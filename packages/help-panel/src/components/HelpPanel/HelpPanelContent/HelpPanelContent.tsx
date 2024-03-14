@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 import Container from '../../Container'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
