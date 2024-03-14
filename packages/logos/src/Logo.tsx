@@ -14,7 +14,7 @@
 import { Logos, LogoNames } from './Logos'
 import React, { ElementType, HTMLAttributes } from 'react'
 import { Icon as BIcon, IconName as BIconName, Classes } from '@blueprintjs/core'
-import { StyledProps, styledClasses, omitStyledProps } from '@harness/design-system'
+import { StyledProps, styledClasses, omitStyledProps } from '@harnessio/design-system'
 
 type LogoName = LogoNames | BIconName
 

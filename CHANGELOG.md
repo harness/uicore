@@ -376,7 +376,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* [PL-22570]: Importing from @harness/design-system in icons script ([#620](https://github.com/harness/uicore/issues/620)) ([116b4ea](https://github.com/harness/uicore/commit/116b4ea51744d6951f30b06c1db4b1323080c48b))
+* [PL-22570]: Importing from @harnessio/design-system in icons script ([#620](https://github.com/harness/uicore/issues/620)) ([116b4ea](https://github.com/harness/uicore/commit/116b4ea51744d6951f30b06c1db4b1323080c48b))
 
 ## [2.40.0](https://github.com/harness/uicore/compare/v2.39.0...v2.40.0) (2022-03-21)
 

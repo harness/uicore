@@ -14,15 +14,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.3.0](https://github.com/harness/uicore/compare/@harness/design-system@1.2.0...@harness/design-system@1.3.0) (2022-06-14)
+# [1.3.0](https://github.com/harness/uicore/compare/@harnessio/design-system@1.2.0...@harnessio/design-system@1.3.0) (2022-06-14)
 
-**Note:** Version bump only for package @harness/design-system
-
-
+**Note:** Version bump only for package @harnessio/design-system
 
 
 
-# [1.2.0](https://github.com/harness/uicore/compare/@harness/design-system@1.1.0...@harness/design-system@1.2.0) (2022-06-08)
+
+
+# [1.2.0](https://github.com/harness/uicore/compare/@harnessio/design-system@1.1.0...@harnessio/design-system@1.2.0) (2022-06-08)
 
 
 ### Features
