@@ -11,7 +11,7 @@ const { camelCase } = require('lodash')
 
 const pattern = path.resolve('src/*.svg')
 const files = glob.sync(pattern, { nodir: true, realpath: false })
-const _imports = ["import { ElementType } from 'react'", "import { KVO } from '@harness/design-system'"]
+const _imports = ["import { ElementType } from 'react'", "import { KVO } from '@harnessio/design-system'"]
 const _exports = []
 let logoNames = 'type LogoNames =\n'
 

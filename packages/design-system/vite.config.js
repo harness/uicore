@@ -9,6 +9,7 @@ const _ = require('lodash')
 const packages = require('./package.json')
 const globals = require('../globals.json')
 const dts = require('vite-plugin-dts')
+const crypto = require('crypto')
 
 const external = Object.keys(packages.peerDependencies)
 
@@ -43,8 +44,14 @@ const config = {
     modules: {
       scopeBehaviour: 'local',
       generateScopedName: (name, filename, _css) => {
+        const hash = crypto
+          .createHash('md5')
+          .update(_css)
+          .digest('base64')
+          .substring(0, 5); 
+
         const basename = path.basename(filename).replace(/\.module\.css?.*/, '')
-        return `${basename}--${name}`
+        return `${basename}--${name}-${hash}`
       }
     }
   },
