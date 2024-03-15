@@ -264,6 +264,7 @@ import ChaosWithText from './chaos-with-text.svg'
 import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
+import Checkov from './checkov.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiBuildPipeline from './ci-build-pipeline.svg'
 import CiDevExp from './ci-dev-exp.svg'
@@ -1254,6 +1255,7 @@ import TerraformCloudRollback from './terraform-cloud-rollback.svg'
 import TerraformCloudRunInverse from './terraform-cloud-run-inverse.svg'
 import TerraformCloudRun from './terraform-cloud-run.svg'
 import TerraformCloud from './terraform-cloud.svg'
+import TerraformComplicance from './terraform-complicance.svg'
 import TerraformDestroyInverse from './terraform-destroy-inverse.svg'
 import TerraformDestroy from './terraform-destroy.svg'
 import TerraformPlanInverse from './terraform-plan-inverse.svg'
@@ -1271,6 +1273,7 @@ import TerragruntRollback from './terragrunt-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
+import Tfsec from './tfsec.svg'
 import ThinnerCodeRepos from './thinner-code-repos.svg'
 import ThinnerCodeWebhook from './thinner-code-webhook.svg'
 import ThinnerSearch from './thinner-search.svg'
@@ -1574,6 +1577,7 @@ type HarnessIconName =
   | 'chat'
   | 'check-alt'
   | 'check'
+  | 'checkov'
   | 'ci-active-build'
   | 'ci-build-pipeline'
   | 'ci-dev-exp'
@@ -2564,6 +2568,7 @@ type HarnessIconName =
   | 'terraform-cloud-run-inverse'
   | 'terraform-cloud-run'
   | 'terraform-cloud'
+  | 'terraform-complicance'
   | 'terraform-destroy-inverse'
   | 'terraform-destroy'
   | 'terraform-plan-inverse'
@@ -2581,6 +2586,7 @@ type HarnessIconName =
   | 'test-connection'
   | 'test-verification'
   | 'text'
+  | 'tfsec'
   | 'thinner-code-repos'
   | 'thinner-code-webhook'
   | 'thinner-search'
@@ -2884,6 +2890,7 @@ const HarnessIcons: KVO<ElementType> = {
   chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
+  checkov: Checkov,
   'ci-active-build': CiActiveBuild,
   'ci-build-pipeline': CiBuildPipeline,
   'ci-dev-exp': CiDevExp,
@@ -3874,6 +3881,7 @@ const HarnessIcons: KVO<ElementType> = {
   'terraform-cloud-run-inverse': TerraformCloudRunInverse,
   'terraform-cloud-run': TerraformCloudRun,
   'terraform-cloud': TerraformCloud,
+  'terraform-complicance': TerraformComplicance,
   'terraform-destroy-inverse': TerraformDestroyInverse,
   'terraform-destroy': TerraformDestroy,
   'terraform-plan-inverse': TerraformPlanInverse,
@@ -3891,6 +3899,7 @@ const HarnessIcons: KVO<ElementType> = {
   'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
+  tfsec: Tfsec,
   'thinner-code-repos': ThinnerCodeRepos,
   'thinner-code-webhook': ThinnerCodeWebhook,
   'thinner-search': ThinnerSearch,
