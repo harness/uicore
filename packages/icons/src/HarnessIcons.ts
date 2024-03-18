@@ -75,6 +75,7 @@ import Arm from './arm.svg'
 import Arrow from './arrow.svg'
 import ArtifactGoogleCloudSourceRepo from './artifact-google-cloud-source-repo.svg'
 import ArtifactGoogleCloudStorage from './artifact-google-cloud-storage.svg'
+import ArtifactRegistry from './artifact-registry.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
 import AsgCanaryDeleteInverse from './asg-canary-delete-inverse.svg'
@@ -1389,6 +1390,7 @@ type HarnessIconName =
   | 'arrow'
   | 'artifact-google-cloud-source-repo'
   | 'artifact-google-cloud-storage'
+  | 'artifact-registry'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
   | 'asg-canary-delete-inverse'
@@ -2703,6 +2705,7 @@ const HarnessIcons: KVO<ElementType> = {
   arrow: Arrow,
   'artifact-google-cloud-source-repo': ArtifactGoogleCloudSourceRepo,
   'artifact-google-cloud-storage': ArtifactGoogleCloudStorage,
+  'artifact-registry': ArtifactRegistry,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
   'asg-canary-delete-inverse': AsgCanaryDeleteInverse,
