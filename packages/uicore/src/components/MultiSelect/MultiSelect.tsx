@@ -254,6 +254,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         }
       }}
       query={query}
+      resetOnQuery={false}
       noResults={<NoMatch />}
       popoverProps={{
         targetTagName: 'div',
