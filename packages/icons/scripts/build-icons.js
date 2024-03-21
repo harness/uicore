@@ -34,7 +34,8 @@ const warningLines = [
   * Copyright (c) Harness Inc.
   *
   * This source code is licensed under the Apache 2.0 license found in the
-  * LICENSE file in the root directory of this source tree.  */\n`,
+  * LICENSE file in the root directory of this source tree.
+  */\n`,
   '/**',
   ' * This file is auto-generated. Please do not modify this file manually.',
   ' * Use the command `yarn ui:icons` to regenerate this file.',
