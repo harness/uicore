@@ -26,7 +26,7 @@ export default {
             <Title>Thumbnail</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Thumbnail} from '@harness/uicore'`}</code>
+                <code>{`import {Thumbnail} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

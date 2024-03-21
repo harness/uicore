@@ -27,7 +27,7 @@ export default {
             <Title>Switch</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Switch} from '@harness/uicore'`}</code>
+                <code>{`import {Switch} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

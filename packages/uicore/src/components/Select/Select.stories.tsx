@@ -29,7 +29,7 @@ export default {
             <Title>Select</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Select} from '@harness/uicore'`}</code>
+                <code>{`import {Select} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{'SelectSize:small,medium,large'}</Description>

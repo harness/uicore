@@ -29,7 +29,7 @@ export default {
             <Title>Tag</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Tag} from '@harness/uicore'`}</code>
+                <code>{`import {Tag} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

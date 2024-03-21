@@ -29,7 +29,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { SelectV2 }  from '@harness/uicore'`}</code>
+                <code>{`import { SelectV2 }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

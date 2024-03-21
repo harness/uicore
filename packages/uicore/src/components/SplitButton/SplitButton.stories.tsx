@@ -28,7 +28,7 @@ export default {
           <>
             <Title>SplitButton</Title>
 
-            <code>{`import {SplitButton} from '@harness/uicore'`}</code>
+            <code>{`import {SplitButton} from '@harnessio/uicore'`}</code>
             <Description>
               {`SplitButton component reuses Blueprint's Button and Dropdown and implements the look and feel of [HDL](https://www.figma.com/file/ea1BP4IVHDXqeOND0S9YVZ/branch/2J7UGgUU3p83RkO4BtX1Mo/HDS-Toolkit?node-id=880%3A33183).`}
             </Description>

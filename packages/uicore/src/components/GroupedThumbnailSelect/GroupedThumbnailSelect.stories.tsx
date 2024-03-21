@@ -29,7 +29,7 @@ export default {
             <Title>GroupedThumbnailSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import {GroupedThumbnailSelect} from '@harness/uicore'`}</code>
+                <code>{`import {GroupedThumbnailSelect} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

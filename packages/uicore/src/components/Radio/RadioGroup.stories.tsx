@@ -29,7 +29,7 @@ export default {
             <Title>RadioGroup</Title>
             <Subtitle>
               <pre>
-                <code>{`import {RadioGroup} from '@harness/uicore'`}</code>
+                <code>{`import {RadioGroup} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

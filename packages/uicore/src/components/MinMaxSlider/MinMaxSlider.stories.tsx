@@ -28,7 +28,7 @@ export default {
             <Title>MinMaxSlider</Title>
             <Subtitle>
               <pre>
-                <code>{`import { MinMaxSlider } from '@harness/uicore'`}</code>
+                <code>{`import { MinMaxSlider } from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

@@ -31,7 +31,7 @@ export default {
             <Title>Table</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Table} from '@harness/uicore'`}</code>
+                <code>{`import {Table} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{`Table uses react-table underneath to render a table.<br/>

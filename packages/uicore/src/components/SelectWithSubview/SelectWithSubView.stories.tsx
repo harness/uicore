@@ -72,7 +72,7 @@ The component is built on top of uicore's standard select component.
                 </Text>
                 <h2>Import</h2>
                 <pre>
-                  <code>{`import {SelectWithSubview} from '@harness/uicore'`}</code>
+                  <code>{`import {SelectWithSubview} from '@harnessio/uicore'`}</code>
                 </pre>
               </>
             </Subtitle>

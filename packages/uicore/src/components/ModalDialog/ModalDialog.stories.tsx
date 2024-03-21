@@ -29,7 +29,7 @@ export default {
           <>
             <Title>ModalDialog</Title>
             <Subtitle>
-              <pre>{`import { ModalDialog } from '@harness/uicore'`}</pre>
+              <pre>{`import { ModalDialog } from '@harnessio/uicore'`}</pre>
             </Subtitle>
             <Description>`ModalDialog` displays a dialog with heading, toolbar, body and footer.</Description>
 

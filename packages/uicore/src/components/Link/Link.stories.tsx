@@ -37,7 +37,7 @@ When a link is disabled, all events are ignored.`}</Description>
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import {Link} from '@harness/uicore'`}</code>
+                  <code>{`import {Link} from '@harnessio/uicore'`}</code>
                 </pre>
               </>
             </Subtitle>

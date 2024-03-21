@@ -33,7 +33,7 @@ export default {
               <>
                 <h4>Import</h4>
                 <pre>
-                  <code>{`import { Card, CardBody }  from '@harness/uicore'`}</code>
+                  <code>{`import { Card, CardBody }  from '@harnessio/uicore'`}</code>
                 </pre>
                 <h4>Types</h4>
                 <pre>

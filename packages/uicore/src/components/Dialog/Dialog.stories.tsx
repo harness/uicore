@@ -29,7 +29,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { Dialog }  from '@harness/uicore'`}</code>
+                <code>{`import { Dialog }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

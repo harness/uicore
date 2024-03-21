@@ -41,7 +41,7 @@ export default {
             <Title>DropDown</Title>
             <Subtitle>
               <pre>
-                <code>{`import {DropDown} from '@harness/uicore'`}</code>
+                <code>{`import {DropDown} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

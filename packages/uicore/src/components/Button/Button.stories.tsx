@@ -27,7 +27,7 @@ export default {
           <>
             <Title>Button</Title>
             <Subtitle>
-              <code>{`import {Button} from '@harness/uicore'`}</code>
+              <code>{`import {Button} from '@harnessio/uicore'`}</code>
             </Subtitle>
             <Description>
               {

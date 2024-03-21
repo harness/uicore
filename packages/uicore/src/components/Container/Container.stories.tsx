@@ -29,7 +29,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { Container }  from '@harness/uicore'`}</code>
+                <code>{`import { Container }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>

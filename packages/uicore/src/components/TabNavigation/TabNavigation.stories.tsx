@@ -29,7 +29,7 @@ export default {
             <Title>TabNavigation</Title>
             <Subtitle>
               <pre>
-                <code>{`import {TabNavigation} from '@harness/uicore'`}</code>
+                <code>{`import {TabNavigation} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

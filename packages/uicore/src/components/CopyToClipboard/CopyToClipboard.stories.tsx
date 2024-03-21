@@ -29,7 +29,7 @@ export default {
             <>
               <h4>Import</h4>
               <pre>
-                <code>{`import { CopyToClipboard, CopyToClipboardProps } from '@harness/uicore';`}</code>
+                <code>{`import { CopyToClipboard, CopyToClipboardProps } from '@harnessio/uicore';`}</code>
               </pre>
               <h4>Types</h4>
               <pre>

@@ -27,7 +27,7 @@ export default {
             <Title>DetailPageCard</Title>
             <Subtitle>
               <pre>
-                <code>{`import { DetailPageCard }  from '@harness/uicore'`}</code>
+                <code>{`import { DetailPageCard }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

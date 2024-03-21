@@ -34,7 +34,7 @@ export default {
             </Description>
             <Subtitle>
               <pre>
-                <code>{`import { Toggle }  from '@harness/uicore'`}</code>
+                <code>{`import { Toggle }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

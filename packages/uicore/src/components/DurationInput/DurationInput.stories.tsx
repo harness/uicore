@@ -29,7 +29,7 @@ export default {
             <Title>DurationInput</Title>
             <Subtitle>
               <pre>
-                <code>{`import {DurationInput} from '@harness/uicore'`}</code>
+                <code>{`import {DurationInput} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

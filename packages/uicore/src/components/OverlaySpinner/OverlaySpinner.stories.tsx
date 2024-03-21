@@ -27,7 +27,7 @@ export default {
             <Title>OverlaySpinner</Title>
             <Subtitle>
               <pre>
-                <code>{`import {OverlaySpinner} from '@harness/uicore'`}</code>
+                <code>{`import {OverlaySpinner} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{`Adds [Blueprint spinner](https://blueprintjs.com/docs/#core/components/spinner) to the overlay and blocks the user interaction

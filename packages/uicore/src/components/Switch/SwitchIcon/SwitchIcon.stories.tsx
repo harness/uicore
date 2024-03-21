@@ -28,7 +28,7 @@ export default {
             <Title>SwitchIcon</Title>
             <Subtitle>
               <pre>
-                <code>{`import {SwitchIcon} from '@harness/uicore'`}</code>
+                <code>{`import {SwitchIcon} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

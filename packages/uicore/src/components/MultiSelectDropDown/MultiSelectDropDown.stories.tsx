@@ -30,7 +30,7 @@ export default {
             <Title>MultiSelectDropDown</Title>
             <Subtitle>
               <pre>
-                <code>{`import {MultiSelectDropDown} from '@harness/uicore'`}</code>
+                <code>{`import {MultiSelectDropDown} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

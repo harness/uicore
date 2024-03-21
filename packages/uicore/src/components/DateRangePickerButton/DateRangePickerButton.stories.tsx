@@ -31,7 +31,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { DateRangePickerButton }  from '@harness/uicore'`}</code>
+                <code>{`import { DateRangePickerButton }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

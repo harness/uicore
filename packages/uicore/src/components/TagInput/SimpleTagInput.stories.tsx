@@ -32,7 +32,7 @@ export default {
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import {SimpleTagInput} from '@harness/uicore'`}</code>
+                  <code>{`import {SimpleTagInput} from '@harnessio/uicore'`}</code>
                 </pre>
               </>
             </Subtitle>

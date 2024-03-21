@@ -30,7 +30,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { Collapse }  from '@harness/uicore'`}</code>
+                <code>{`import { Collapse }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

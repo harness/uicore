@@ -30,7 +30,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { StatusBar }  from '@harness/uicore'`}</code>
+                <code>{`import { StatusBar }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

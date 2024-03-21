@@ -30,7 +30,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { CodeBlock }  from '@harness/uicore'`}</code>
+                <code>{`import { CodeBlock }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />
@@ -73,7 +73,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{\`import { CodeBlock }  from '@harness/uicore'\`}</code>
+                <code>{\`import { CodeBlock }  from '@harnessio/uicore'\`}</code>
               </pre>
             </Subtitle>
             <Primary />

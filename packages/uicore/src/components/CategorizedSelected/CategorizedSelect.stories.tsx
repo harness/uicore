@@ -29,7 +29,7 @@ export default {
             <Title>CategorizedSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import {CategorizedSelect} from '@harness/uicore'`}</code>
+                <code>{`import {CategorizedSelect} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

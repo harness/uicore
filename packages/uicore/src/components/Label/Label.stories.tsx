@@ -27,7 +27,7 @@ export default {
             <Title>Label</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Label} from '@harness/uicore'`}</code>
+                <code>{`import {Label} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

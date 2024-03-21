@@ -29,7 +29,7 @@ export default {
             <Title>GraphError</Title>
             <Subtitle>
               <pre>
-                <code>{`import {GraphError} from '@harness/uicore'`}</code>
+                <code>{`import {GraphError} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

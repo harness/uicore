@@ -27,7 +27,7 @@ export default {
             <Title>DateInput</Title>
             <Subtitle>
               <pre>
-                <code>{`import {DateInput} from '@harness/uicore'`}</code>
+                <code>{`import {DateInput} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{`DateInput use cases

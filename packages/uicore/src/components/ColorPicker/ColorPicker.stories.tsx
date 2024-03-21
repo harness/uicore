@@ -31,7 +31,7 @@ export default {
             <Description>{`ColorPicker allows to pick a color as being defined [here](https://www.sketch.com/s/0f81cf53-d980-4da3-bdbf-2dd49a875922/a/ndyo00#Inspector).`}</Description>
             <Subtitle>
               <pre>
-                <code>{`import { ColorPicker }  from '@harness/uicore'`}</code>
+                <code>{`import { ColorPicker }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

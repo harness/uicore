@@ -32,7 +32,7 @@ export default {
             <Title>FormikCollapsableSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import { FormikCollapsableSelect } from '@harness/uicore'`}</code>
+                <code>{`import { FormikCollapsableSelect } from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

@@ -27,7 +27,7 @@ export default {
             <Title>Carousel</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Carousel} from '@harness/uicore'`}</code>
+                <code>{`import {Carousel} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

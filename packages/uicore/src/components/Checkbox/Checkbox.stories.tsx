@@ -36,7 +36,7 @@ export default {
             </Description>
             <Subtitle>
               <pre>
-                <code>{`import { Checkbox }  from '@harness/uicore'`}</code>
+                <code>{`import { Checkbox }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

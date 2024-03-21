@@ -32,7 +32,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { CircularPercentageChart }  from '@harness/uicore'`}</code>
+                <code>{`import { CircularPercentageChart }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

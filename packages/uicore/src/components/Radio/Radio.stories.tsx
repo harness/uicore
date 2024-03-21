@@ -28,7 +28,7 @@ export default {
             <Title>Radio</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Radio} from '@harness/uicore'`}</code>
+                <code>{`import {Radio} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

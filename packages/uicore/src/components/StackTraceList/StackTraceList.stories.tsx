@@ -27,7 +27,7 @@ export default {
             <Title>StackTraceList</Title>
             <Subtitle>
               <pre>
-                <code>{`import {StackTraceList} from '@harness/uicore'`}</code>
+                <code>{`import {StackTraceList} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{`StackTraceList renders a list of stack traces (or logs) using the code block component with "pre" as the format.`}</Description>

@@ -42,7 +42,7 @@ Internally it uses [Card](/card) component and define renderItem method to defin
             <Subtitle>
               <>
                 <pre>
-                  <code>{`import { CardSelect }  from '@harness/uicore'`}</code>
+                  <code>{`import { CardSelect }  from '@harnessio/uicore'`}</code>
                 </pre>
                 <pre>
                   <code>{`interface Data {

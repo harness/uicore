@@ -29,7 +29,7 @@ export default {
             <Title>StepsProgress</Title>
             <Subtitle>
               <pre>
-                <code>{`import {StepsProgress} from '@harness/uicore'`}</code>
+                <code>{`import {StepsProgress} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

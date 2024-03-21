@@ -32,7 +32,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { CollapseList, CollapseListPanel  }  from '@harness/uicore'`}</code>
+                <code>{`import { CollapseList, CollapseListPanel  }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

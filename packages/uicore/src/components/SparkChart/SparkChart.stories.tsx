@@ -31,7 +31,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import {  SparkChart }  from '@harness/uicore'`}</code>
+                <code>{`import {  SparkChart }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

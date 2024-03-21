@@ -29,7 +29,7 @@ export default {
 
             <Subtitle>
               <pre>
-                <code>{`import { TextInput }  from '@harness/uicore'`}</code>
+                <code>{`import { TextInput }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Primary />

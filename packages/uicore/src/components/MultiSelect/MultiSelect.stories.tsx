@@ -29,7 +29,7 @@ export default {
             <Title>MultiSelect</Title>
             <Subtitle>
               <pre>
-                <code>{`import {MultiSelect} from '@harness/uicore'`}</code>
+                <code>{`import {MultiSelect} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 
