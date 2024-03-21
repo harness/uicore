@@ -40,7 +40,7 @@ export interface MultiSelectProps
     | 'onActiveItemChange'
   > {
   itemRender?: Props['itemRenderer']
-  avoidResetOnSelect?: boolean // Once verified, we can replace it with BP resetOnSelect to make new behavior as default
+  avoidResetOnSelect?: boolean // This will prevent scroll reset to top
   onChange?(opts: MultiSelectOption[]): void
   value?: MultiSelectOption[]
   items: Props['items'] | (() => Promise<Props['items']>)
@@ -256,7 +256,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         }
       }}
       query={query}
-      resetOnSelect={!avoidResetOnSelect}
+      resetOnQuery={!avoidResetOnSelect}
       noResults={<NoMatch />}
       popoverProps={{
         targetTagName: 'div',
