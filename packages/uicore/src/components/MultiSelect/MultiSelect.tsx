@@ -40,6 +40,7 @@ export interface MultiSelectProps
     | 'onActiveItemChange'
   > {
   itemRender?: Props['itemRenderer']
+  avoidResetOnSelect?: boolean // This will prevent scroll reset to top
   onChange?(opts: MultiSelectOption[]): void
   value?: MultiSelectOption[]
   items: Props['items'] | (() => Promise<Props['items']>)
@@ -67,6 +68,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
     disabled,
     popoverClassName,
     allowCommaSeparatedList,
+    avoidResetOnSelect = false || props?.resetOnSelect === false, // Keeping backward compatibility
     ...rest
   } = props
   const [query, setQuery] = React.useState(props.query || '')
@@ -96,7 +98,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         } else {
           onChange(selectedItems.concat(item))
         }
-        setQuery('')
+        !avoidResetOnSelect && setQuery('')
       } else {
         onChange(selectedItems.filter((_, i) => i !== index))
       }
@@ -254,6 +256,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         }
       }}
       query={query}
+      resetOnQuery={!avoidResetOnSelect}
       noResults={<NoMatch />}
       popoverProps={{
         targetTagName: 'div',
