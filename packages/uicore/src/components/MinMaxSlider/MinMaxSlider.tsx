@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) Harness Inc.
+ *
+ * This source code is licensed under the Apache 2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import React, { ChangeEvent, useCallback, useEffect, useState, useRef } from 'react'
 import { Color } from '@harnessio/design-system'
 import { Button, ButtonVariation, Container, Layout } from '../..'

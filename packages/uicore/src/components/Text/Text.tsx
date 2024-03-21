@@ -1,8 +1,8 @@
 /*
- * Copyright 2021 Harness Inc. All rights reserved.
- * Use of this source code is governed by the PolyForm Shield 1.0.0 license
- * that can be found in the licenses directory at the root of this repository, also available at
- * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ * Copyright (c) Harness Inc.
+ *
+ * This source code is licensed under the Apache 2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 import React, { HTMLAttributes, useRef, useState, useCallback, useMemo } from 'react'
@@ -124,7 +124,7 @@ export function Text(props: TextProps): JSX.Element {
           (React.isValidElement(icon) ? (
             icon
           ) : (
-            <Icon className={css.icon} name={icon as IconName} size={16} padding={{ right: 'xsmall' }} {...iconProps} />
+            <Icon className={css.icon} name={icon} size={16} padding={{ right: 'xsmall' }} {...iconProps} />
           ))}
         {props.children}
         {rightIcon && (

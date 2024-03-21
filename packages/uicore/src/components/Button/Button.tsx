@@ -1,8 +1,8 @@
 /*
- * Copyright 2021 Harness Inc. All rights reserved.
- * Use of this source code is governed by the PolyForm Shield 1.0.0 license
- * that can be found in the licenses directory at the root of this repository, also available at
- * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ * Copyright (c) Harness Inc.
+ *
+ * This source code is licensed under the Apache 2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
@@ -151,7 +151,7 @@ export function Button(props: ButtonProps): React.ReactElement {
         (isValidElement(icon) ? (
           icon
         ) : (
-          <Icon name={icon as IconName} size={iconSize} padding={leftIconPadding} {...props.iconProps} />
+          <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />
         ))
       }
       rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}

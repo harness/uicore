@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# Copyright (c) Harness Inc.
+#
+# This source code is licensed under the Apache 2.0 license found in the
+# LICENSE file in the root directory of this source tree.
+
 # Copyright 2022 Harness Inc. All rights reserved.
 # Use of this source code is governed by the PolyForm Shield 1.0.0 license
 # that can be found in the licenses directory at the root of this repository, also available at
@@ -84,8 +89,8 @@ function add_header_if_required {
   HEADER_WITHOUT_YEAR=$(sed 's/ 20[0-9][0-9] / <YEAR> /' <<< "$HEADER_WITHOUT_COMMENT_SYMBOL")
   if [ "$HEADER_WITHOUT_YEAR" = "$LICENSE_TEXT" ]; then
     debug "File has correct license header: $FILE"
-  elif [ $(grep -m1 -ciE "(copyright|license)" <<<"$EXISTING_HEADER") -eq 1 ]; then
-    debug "Skipping file with alternate license header: $FILE"
+  # elif [ $(grep -m1 -ciE "(copyright|license)" <<<"$EXISTING_HEADER") -eq 1 ]; then
+  #   debug "Skipping file with alternate license header: $FILE"
   else
     $1
   fi
