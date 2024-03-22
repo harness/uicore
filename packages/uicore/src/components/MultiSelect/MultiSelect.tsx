@@ -100,7 +100,10 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         } else {
           onChange(selectedItems.concat(item))
         }
-        ;(rest?.allowCreatingNewItems || !avoidResetOnSelect) && setQuery('')
+
+        if (rest?.allowCreatingNewItems || !avoidResetOnSelect) {
+          setQuery('')
+        }
       } else {
         onChange(selectedItems.filter((_, i) => i !== index))
       }
