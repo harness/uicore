@@ -41,7 +41,7 @@ export interface MultiSelectProps
   > {
   itemRender?: Props['itemRenderer']
   /** Avoid resetting the query and scroll to the top upon selection.
-   * Will be ignored with allowCreatingNewItems as query must ne reset. */
+   * Will be ignored with allowCreatingNewItems as query must be reset after each creation. */
   avoidResetOnSelect?: boolean
   onChange?(opts: MultiSelectOption[]): void
   value?: MultiSelectOption[]
