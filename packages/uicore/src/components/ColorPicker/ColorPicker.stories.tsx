@@ -1,8 +1,8 @@
 /*
- * Copyright 2022 Harness Inc. All rights reserved.
- * Use of this source code is governed by the PolyForm Shield 1.0.0 license
- * that can be found in the licenses directory at the root of this repository, also available at
- * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ * Copyright (c) Harness Inc.
+ *
+ * This source code is licensed under the Apache 2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 /* eslint-disable no-console */
@@ -31,7 +31,7 @@ export default {
             <Description>{`ColorPicker allows to pick a color as being defined [here](https://www.sketch.com/s/0f81cf53-d980-4da3-bdbf-2dd49a875922/a/ndyo00#Inspector).`}</Description>
             <Subtitle>
               <pre>
-                <code>{`import { ColorPicker }  from '@harness/uicore'`}</code>
+                <code>{`import { ColorPicker }  from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
 

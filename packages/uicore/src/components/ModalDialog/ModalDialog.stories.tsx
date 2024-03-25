@@ -1,8 +1,8 @@
 /*
- * Copyright 2022 Harness Inc. All rights reserved.
- * Use of this source code is governed by the PolyForm Shield 1.0.0 license
- * that can be found in the licenses directory at the root of this repository, also available at
- * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ * Copyright (c) Harness Inc.
+ *
+ * This source code is licensed under the Apache 2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 import React, { ReactNode, useState } from 'react'
@@ -29,7 +29,7 @@ export default {
           <>
             <Title>ModalDialog</Title>
             <Subtitle>
-              <pre>{`import { ModalDialog } from '@harness/uicore'`}</pre>
+              <pre>{`import { ModalDialog } from '@harnessio/uicore'`}</pre>
             </Subtitle>
             <Description>`ModalDialog` displays a dialog with heading, toolbar, body and footer.</Description>
 

@@ -1,8 +1,8 @@
 /*
- * Copyright 2022 Harness Inc. All rights reserved.
- * Use of this source code is governed by the PolyForm Shield 1.0.0 license
- * that can be found in the licenses directory at the root of this repository, also available at
- * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ * Copyright (c) Harness Inc.
+ *
+ * This source code is licensed under the Apache 2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 import React from 'react'
@@ -28,7 +28,7 @@ export default {
             <Title>Text</Title>
             <Subtitle>
               <pre>
-                <code>{`import {Text} from '@harness/uicore'`}</code>
+                <code>{`import {Text} from '@harnessio/uicore'`}</code>
               </pre>
             </Subtitle>
             <Description>{`When lineClamp prop is provided, Text will handle string truncation automatically. Note that the truncation only happens when there is not enough space to render the text content.
