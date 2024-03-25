@@ -7,8 +7,7 @@
 
 import React, { useState, useCallback, useMemo } from 'react'
 import cx from 'classnames'
-import { Color, FontVariation } from '@harness/design-system'
-import { HelpPanel, HelpPanelType } from '@harness/help-panel'
+import { Color, FontVariation } from '@harnessio/design-system'
 import type { StepPropsInterface, StepStatusType } from './Step.types'
 import { StepTitle } from './components/StepTitle/StepTitle'
 import { StepNavButtons } from './components/StepNavButtons/StepNavButtons'
@@ -35,7 +34,7 @@ const Step = ({
   )
   const isLastStep = selectedStepIndex === stepList.length - 1
   const isCurrentStep = selectedStepIndex === index
-  const { id, panel, preview, helpPanelReferenceId } = step
+  const { id, panel, preview } = step
 
   const onTitleClick = useCallback(
     (titleIndex: number): void => {
@@ -149,9 +148,6 @@ const Step = ({
           </Container>
         )}
       </Container>
-      {isCurrentStep && helpPanelReferenceId && (
-        <HelpPanel referenceId={helpPanelReferenceId} type={HelpPanelType.FLOATING_CONTAINER} />
-      )}
     </Container>
   )
 }
