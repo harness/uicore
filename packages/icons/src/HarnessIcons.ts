@@ -421,6 +421,7 @@ import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
+import DbDevops from './db-devops.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -1749,6 +1750,7 @@ type HarnessIconName =
   | 'dashboard'
   | 'dashboards-solid-border'
   | 'data-fetch-error'
+  | 'db-devops'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -3077,6 +3079,7 @@ const HarnessIcons: KVO<ElementType> = {
   dashboard: Dashboard,
   'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
+  'db-devops': DbDevops,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
