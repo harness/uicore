@@ -56,7 +56,7 @@ module.exports = {
               sourceMap: isDev,
               modules: {
                 mode: 'local',
-                localIdentName: '[name]--[local]'
+                localIdentName: '[name]--[local]--[hash:base64:5]'
               }
             }
           },
