@@ -668,6 +668,8 @@ import Idp from './idp.svg'
 import IgnoreFailedSquare from './ignore-failed-square.svg'
 import IgnoreList from './ignore-list.svg'
 import IgnoreFailed from './ignoreFailed.svg'
+import ImageAppLayer from './image-app-layer.svg'
+import ImageBaseLayer from './image-base-layer.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -1983,6 +1985,8 @@ type HarnessIconName =
   | 'ignore-failed-square'
   | 'ignore-list'
   | 'ignoreFailed'
+  | 'image-app-layer'
+  | 'image-base-layer'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -3298,6 +3302,8 @@ const HarnessIcons: KVO<ElementType> = {
   'ignore-failed-square': IgnoreFailedSquare,
   'ignore-list': IgnoreList,
   ignoreFailed: IgnoreFailed,
+  'image-app-layer': ImageAppLayer,
+  'image-base-layer': ImageBaseLayer,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
