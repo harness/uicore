@@ -205,10 +205,12 @@ export const DateInput: React.FC<DateInputProps> = props => {
 
   // On Change with CAlender
   const onChangeDate = (selectedDate: Date) => {
+    if (!selectedDate) return
+
     if (onChange) {
-      onChange(selectedDate?.getTime().toString())
+      onChange(selectedDate.getTime().toString())
     }
-    setState(prevState => ({ ...prevState, value: moment(selectedDate?.getTime()).format(formatDateTime) }))
+    setState(prevState => ({ ...prevState, value: moment(selectedDate.getTime()).format(formatDateTime) }))
   }
 
   // Pase Date input pass to blueprint DatePicker
