@@ -264,6 +264,7 @@ import ChaosWithText from './chaos-with-text.svg'
 import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
+import Checkov from './checkov.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiBuildPipeline from './ci-build-pipeline.svg'
 import CiDevExp from './ci-dev-exp.svg'
@@ -418,6 +419,7 @@ import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
+import DbDevops from './db-devops.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -666,6 +668,8 @@ import Idp from './idp.svg'
 import IgnoreFailedSquare from './ignore-failed-square.svg'
 import IgnoreList from './ignore-list.svg'
 import IgnoreFailed from './ignoreFailed.svg'
+import ImageAppLayer from './image-app-layer.svg'
+import ImageBaseLayer from './image-base-layer.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -685,6 +689,7 @@ import JiraCreateInverse from './jira-create-inverse.svg'
 import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
+import K8SPatch from './k8s-patch.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
@@ -1254,6 +1259,7 @@ import TerraformCloudRollback from './terraform-cloud-rollback.svg'
 import TerraformCloudRunInverse from './terraform-cloud-run-inverse.svg'
 import TerraformCloudRun from './terraform-cloud-run.svg'
 import TerraformCloud from './terraform-cloud.svg'
+import TerraformComplicance from './terraform-complicance.svg'
 import TerraformDestroyInverse from './terraform-destroy-inverse.svg'
 import TerraformDestroy from './terraform-destroy.svg'
 import TerraformPlanInverse from './terraform-plan-inverse.svg'
@@ -1271,6 +1277,7 @@ import TerragruntRollback from './terragrunt-rollback.svg'
 import TestConnection from './test-connection.svg'
 import TestVerification from './test-verification.svg'
 import Text from './text.svg'
+import Tfsec from './tfsec.svg'
 import ThinnerCodeRepos from './thinner-code-repos.svg'
 import ThinnerCodeWebhook from './thinner-code-webhook.svg'
 import ThinnerSearch from './thinner-search.svg'
@@ -1574,6 +1581,7 @@ type HarnessIconName =
   | 'chat'
   | 'check-alt'
   | 'check'
+  | 'checkov'
   | 'ci-active-build'
   | 'ci-build-pipeline'
   | 'ci-dev-exp'
@@ -1728,6 +1736,7 @@ type HarnessIconName =
   | 'dashboard'
   | 'dashboards-solid-border'
   | 'data-fetch-error'
+  | 'db-devops'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -1976,6 +1985,8 @@ type HarnessIconName =
   | 'ignore-failed-square'
   | 'ignore-list'
   | 'ignoreFailed'
+  | 'image-app-layer'
+  | 'image-base-layer'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -1995,6 +2006,7 @@ type HarnessIconName =
   | 'jira-create'
   | 'jira-update-inverse'
   | 'jira-update'
+  | 'k8s-patch'
   | 'k8s-traffic-routing'
   | 'key-main'
   | 'key'
@@ -2564,6 +2576,7 @@ type HarnessIconName =
   | 'terraform-cloud-run-inverse'
   | 'terraform-cloud-run'
   | 'terraform-cloud'
+  | 'terraform-complicance'
   | 'terraform-destroy-inverse'
   | 'terraform-destroy'
   | 'terraform-plan-inverse'
@@ -2581,6 +2594,7 @@ type HarnessIconName =
   | 'test-connection'
   | 'test-verification'
   | 'text'
+  | 'tfsec'
   | 'thinner-code-repos'
   | 'thinner-code-webhook'
   | 'thinner-search'
@@ -2884,6 +2898,7 @@ const HarnessIcons: KVO<ElementType> = {
   chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
+  checkov: Checkov,
   'ci-active-build': CiActiveBuild,
   'ci-build-pipeline': CiBuildPipeline,
   'ci-dev-exp': CiDevExp,
@@ -3038,6 +3053,7 @@ const HarnessIcons: KVO<ElementType> = {
   dashboard: Dashboard,
   'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
+  'db-devops': DbDevops,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
@@ -3286,6 +3302,8 @@ const HarnessIcons: KVO<ElementType> = {
   'ignore-failed-square': IgnoreFailedSquare,
   'ignore-list': IgnoreList,
   ignoreFailed: IgnoreFailed,
+  'image-app-layer': ImageAppLayer,
+  'image-base-layer': ImageBaseLayer,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
@@ -3305,6 +3323,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-create': JiraCreate,
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
+  'k8s-patch': K8SPatch,
   'k8s-traffic-routing': K8STrafficRouting,
   'key-main': KeyMain,
   key: Key,
@@ -3874,6 +3893,7 @@ const HarnessIcons: KVO<ElementType> = {
   'terraform-cloud-run-inverse': TerraformCloudRunInverse,
   'terraform-cloud-run': TerraformCloudRun,
   'terraform-cloud': TerraformCloud,
+  'terraform-complicance': TerraformComplicance,
   'terraform-destroy-inverse': TerraformDestroyInverse,
   'terraform-destroy': TerraformDestroy,
   'terraform-plan-inverse': TerraformPlanInverse,
@@ -3891,6 +3911,7 @@ const HarnessIcons: KVO<ElementType> = {
   'test-connection': TestConnection,
   'test-verification': TestVerification,
   text: Text,
+  tfsec: Tfsec,
   'thinner-code-repos': ThinnerCodeRepos,
   'thinner-code-webhook': ThinnerCodeWebhook,
   'thinner-search': ThinnerSearch,

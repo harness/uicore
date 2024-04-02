@@ -63,6 +63,7 @@ export const Basic: Story<MultiSelectProps> = args => {
       onChange={items => {
         setValue(items)
       }}
+      avoidResetOnSelect={true}
       {...argsCopy}
     />
   )

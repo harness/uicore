@@ -7,6 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
+import { isNil } from 'lodash-es'
 import { Container, Icon } from '../..'
 import { Dialog as BluePrintDialog, IDialogProps } from '@blueprintjs/core'
 import css from './Dialog.css'
@@ -26,12 +27,15 @@ const defaultProps = {
 }
 
 export function Dialog(props: DialogProps): React.ReactElement {
+  // blueprint throws a warning when isCloseButtonShown is set and title is not set
+  const isCloseButtonShown = isNil(props.title) ? undefined : false
+
   return (
     <BluePrintDialog
       {...defaultProps}
       {...props}
       className={cx(css.dialog, props.className)}
-      isCloseButtonShown={false}>
+      isCloseButtonShown={isCloseButtonShown}>
       <Icon name="Stroke" size={15} onClick={props.onClose} className={css.close} />
       <Container padding="none" className={cx(css.children, props.chidrenClassName)}>
         {props.children}
