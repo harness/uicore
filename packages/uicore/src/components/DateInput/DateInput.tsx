@@ -205,6 +205,8 @@ export const DateInput: React.FC<DateInputProps> = props => {
 
   // On Change with CAlender
   const onChangeDate = (selectedDate: Date) => {
+    if (!selectedDate) return
+
     if (onChange) {
       onChange(selectedDate.getTime().toString())
     }
