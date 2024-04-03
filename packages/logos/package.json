@@ -1,5 +1,5 @@
 {
-  "name": "@harness/logos",
+  "name": "@harnessio/logos",
   "version": "1.0.0-beta.5",
   "description": "Harness Logos - Provides a set of third party logos for use in Harness UI",
   "source": "src/index.ts",
@@ -24,13 +24,13 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {
-    "@harness/design-system": "^1.0.0",
+    "@harnessio/design-system": "^1.0.0",
     "@harnessio/design-system": "1.6.0-beta.2",
     "@harnessio/icons": "^2.0.0-beta.2",
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@harness/design-system": "^1.4.0",
+    "@harnessio/design-system": "^1.4.0",
     "@harnessio/design-system": "^1.6.0-beta.2",
     "@harnessio/icons": "^2.0.0-beta.2",
     "@svgr/core": "^6.2.1",

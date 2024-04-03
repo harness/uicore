@@ -2,5 +2,5 @@
   "react": "React",
   "react-dom": "ReactDOM",
   "@harnessio/design-system": "design-system",
-  "@harness/design-system": "design-system-old"
+  "@harnessio/design-system": "design-system-old"
 }

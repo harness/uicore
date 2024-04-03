@@ -60,7 +60,7 @@ The component is built on top of uicore's standard multiselect component.
                   re-render the original drop down menu. To do that first import
                 </Text>
                 <pre>
-                  <code>{`import { SelectWithSubviewContext } from '@harness/uikit'`}</code>
+                  <code>{`import { SelectWithSubviewContext } from '@harnessio/uikit'`}</code>
                 </pre>
                 <Text>and use the context api</Text>
                 <pre>

@@ -10,7 +10,7 @@
  * Use the command `yarn ui:logos` to regenerate this file.
  */
 import { ElementType } from 'react'
-import { KVO } from '@harness/design-system'
+import { KVO } from '@harnessio/design-system'
 import AnchoreInverse from './Anchore-inverse.svg'
 import Anchore from './Anchore.svg'
 import AquaTrivyInverse from './AquaTrivy-inverse.svg'

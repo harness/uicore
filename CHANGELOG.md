@@ -376,7 +376,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* [PL-22570]: Importing from @harness/design-system in icons script ([#620](https://github.com/harness/uicore/issues/620)) ([116b4ea](https://github.com/harness/uicore/commit/116b4ea51744d6951f30b06c1db4b1323080c48b))
+* [PL-22570]: Importing from @harnessio/design-system in icons script ([#620](https://github.com/harness/uicore/issues/620)) ([116b4ea](https://github.com/harness/uicore/commit/116b4ea51744d6951f30b06c1db4b1323080c48b))
 
 ## [2.40.0](https://github.com/harness/uicore/compare/v2.39.0...v2.40.0) (2022-03-21)
 
@@ -790,7 +790,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Others
 
-* [PL-21953]: update package name to @harness/uicore ([#553](https://github.com/harness/uicore/issues/553)) ([595294c](https://github.com/harness/uicore/commit/595294cf9886f00f62bf18135119cd68868a4365))
+* [PL-21953]: update package name to @harnessio/uicore ([#553](https://github.com/harness/uicore/issues/553)) ([595294c](https://github.com/harness/uicore/commit/595294cf9886f00f62bf18135119cd68868a4365))
 * [PL-21953]: update repo name ([#554](https://github.com/harness/uicore/issues/554)) ([ba98cd4](https://github.com/harness/uicore/commit/ba98cd4c67441adb7fa0898c88eba14864e04751))
 
 ## [1.15.0](https://github.com/wings-software/uicore/compare/v1.14.0...v1.15.0) (2022-01-11)

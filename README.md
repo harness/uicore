@@ -7,10 +7,10 @@ This repo uses a [monorepo architechture](https://monorepo.tools/). We are using
 List of packages:
 
 - [@harnessio/design-system](./packages/design-system/)
-- [@harness/help-panel](./packages/help-panel/)
+- [@harnessio/help-panel](./packages/help-panel/)
 - [@harnessio/icons](./packages/icons/)
 - [@harnessio/uicore](./packages/uicore/)
-- [@harness/use-modal](./packages/useModal/)
+- [@harnessio/use-modal](./packages/useModal/)
 
 ## Branches
 
@@ -54,17 +54,17 @@ yarn global add yalc
 Build and publish locally. This should be done inside the particular package's folder.
 
 ```
-# package: @harness/uicore
+# package: @harnessio/uicore
 # dir: packages/uicore
 yarn build && yalc publish
 ```
 
-You'll see the published version like `@harness/uicore@0.1.256 published in store.`
+You'll see the published version like `@harnessio/uicore@0.1.256 published in store.`
 
 Install it in nextgenui
 
 ```
-yalc add @harness/uicore@0.1.256
+yalc add @harnessio/uicore@0.1.256
 ```
 
 Note: The version number must match to whatever was printed on the screen during publish.
