@@ -17,6 +17,7 @@ export interface PageHeaderProps {
   content?: React.ReactNode
   size?: 'small' | 'standard' | 'medium' | 'large' | 'xlarge' | 'xxlarge'
   className?: string
+  titleContainerClassName?: string
   breadcrumbs?: React.ReactNode
   testId?: string
 }
@@ -31,6 +32,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   toolbar,
   size = 'standard',
   className,
+  titleContainerClassName,
   breadcrumbs,
   testId = 'page-header'
 }) => {
@@ -41,7 +43,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       padding={{ left: 'xlarge', right: 'xlarge' }}
       data-testid={testId}
       background={Color.WHITE}>
-      <Layout.Vertical>
+      <Layout.Vertical className={titleContainerClassName}>
         {breadcrumbs && <div className={css.breadcrumbsDiv}>{breadcrumbs}</div>}
         {typeof title === 'string' ? (
           <Heading level={2} color={Color.GREY_800} font={{ weight: 'bold' }}>
