@@ -683,6 +683,7 @@ import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
+import IroMain from './iro-main.svg'
 import Java from './java.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
@@ -2001,6 +2002,7 @@ type HarnessIconName =
   | 'insight-view'
   | 'instances'
   | 'integration'
+  | 'iro-main'
   | 'java'
   | 'jira-approve-inverse'
   | 'jira-approve'
@@ -3319,6 +3321,7 @@ const HarnessIcons: KVO<ElementType> = {
   'insight-view': InsightView,
   instances: Instances,
   integration: Integration,
+  'iro-main': IroMain,
   java: Java,
   'jira-approve-inverse': JiraApproveInverse,
   'jira-approve': JiraApprove,
