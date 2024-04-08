@@ -125,7 +125,12 @@ import BackgroundCiStepInverse from './background-ci-step-inverse.svg'
 import BackgroundCiStep from './background-ci-step.svg'
 import BackgroundStepPlugin from './background-step-plugin.svg'
 import BackgroundStep from './background-step.svg'
+import BackstageApi from './backstage-api.svg'
+import BackstageComponent from './backstage-component.svg'
+import BackstageDomain from './backstage-domain.svg'
 import BackstageLogo from './backstage-logo.svg'
+import BackstageResource from './backstage-resource.svg'
+import BackstageSystem from './backstage-system.svg'
 import BanditInverse from './bandit-inverse.svg'
 import Bandit from './bandit.svg'
 import Banned from './banned.svg'
@@ -1444,7 +1449,12 @@ type HarnessIconName =
   | 'background-ci-step'
   | 'background-step-plugin'
   | 'background-step'
+  | 'backstage-api'
+  | 'backstage-component'
+  | 'backstage-domain'
   | 'backstage-logo'
+  | 'backstage-resource'
+  | 'backstage-system'
   | 'bandit-inverse'
   | 'bandit'
   | 'banned'
@@ -2763,7 +2773,12 @@ const HarnessIcons: KVO<ElementType> = {
   'background-ci-step': BackgroundCiStep,
   'background-step-plugin': BackgroundStepPlugin,
   'background-step': BackgroundStep,
+  'backstage-api': BackstageApi,
+  'backstage-component': BackstageComponent,
+  'backstage-domain': BackstageDomain,
   'backstage-logo': BackstageLogo,
+  'backstage-resource': BackstageResource,
+  'backstage-system': BackstageSystem,
   'bandit-inverse': BanditInverse,
   bandit: Bandit,
   banned: Banned,
