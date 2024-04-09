@@ -1306,6 +1306,16 @@
   resolved "https://npm.pkg.github.com/download/@harness/design-system/1.6.0/08be4ff6b6e6a42f163f69d6141875d995685a02#08be4ff6b6e6a42f163f69d6141875d995685a02"
   integrity "sha1-CL5P9rbmpC8WP2nWFBh12ZVoWgI= sha512-Js2mtSIrCrc0Slsc0P4+MGxQwIPqwwC6ynbSeytYaWmUHbvp9oXzuTw9ZN2CYYstaEv+xI6tJDCEJ4vqoM8ubw=="
 
+"@harnessio/design-system@1.6.0-beta.2":
+  version "1.6.0-beta.2"
+  resolved "https://registry.npmjs.org/@harnessio/design-system/-/design-system-1.6.0-beta.2.tgz#88f09604e43ae0b843f8c243e0d6a79ad68798e9"
+  integrity sha512-iDNK/SuPDD8PSVP/CbLeSLAGkheR1/BGamQh9fdQrjlprVLG82YA3dCeWfVecZwsxcN5LKfSSFqJAPmWi8yTuQ==
+
+"@harnessio/design-system@^1.6.0-beta.2":
+  version "1.6.0-beta.1b"
+  resolved "https://registry.npmjs.org/@harnessio/design-system/-/design-system-1.6.0-beta.1b.tgz#f124f93b2232f1790fac82a5e71ab76254724f8d"
+  integrity sha512-GlTaQjWopiuKl+9kRjVSJJHpSHp5tZDMw26Dr5vS8x6Tdibv9+i4McjkXF3ZAMfhmpgnpk8wbyr0KI8TyJ6gGQ==
+
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
   resolved "https://registry.npmjs.org/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
