@@ -405,6 +405,7 @@ import CustomArtifact from './custom-artifact.svg'
 import CustomIngest from './custom-ingest.svg'
 import CustomPlugin from './custom-plugin.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
+import CustomScan from './custom-scan.svg'
 import CustomService from './custom-service.svg'
 import CustomSm from './custom-sm.svg'
 import CustomStageIcon from './custom-stage-icon.svg'
@@ -1730,6 +1731,7 @@ type HarnessIconName =
   | 'custom-ingest'
   | 'custom-plugin'
   | 'custom-remote-manifest'
+  | 'custom-scan'
   | 'custom-service'
   | 'custom-sm'
   | 'custom-stage-icon'
@@ -3055,6 +3057,7 @@ const HarnessIcons: KVO<ElementType> = {
   'custom-ingest': CustomIngest,
   'custom-plugin': CustomPlugin,
   'custom-remote-manifest': CustomRemoteManifest,
+  'custom-scan': CustomScan,
   'custom-service': CustomService,
   'custom-sm': CustomSm,
   'custom-stage-icon': CustomStageIcon,
