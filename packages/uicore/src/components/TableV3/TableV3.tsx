@@ -58,7 +58,7 @@ interface ExecutionListV2Props<Data extends Record<string, unknown>> {
   leftFixed?: string[]
   rightFixed?: string[]
   tableData: Data[]
-  columns: ColumnDef<unknown>[]
+  columns: Array<ColumnDef<unknown>>
   isSorting?: boolean
   resize?: boolean
   className?: string
