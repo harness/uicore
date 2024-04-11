@@ -678,6 +678,7 @@ import IgnoreFailed from './ignoreFailed.svg'
 import ImageAppLayer from './image-app-layer.svg'
 import ImageBaseLayer from './image-base-layer.svg'
 import ImageDistroLayer from './image-distro-layer.svg'
+import Incidents from './incidents.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -2004,6 +2005,7 @@ type HarnessIconName =
   | 'image-app-layer'
   | 'image-base-layer'
   | 'image-distro-layer'
+  | 'incidents'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -3330,6 +3332,7 @@ const HarnessIcons: KVO<ElementType> = {
   'image-app-layer': ImageAppLayer,
   'image-base-layer': ImageBaseLayer,
   'image-distro-layer': ImageDistroLayer,
+  incidents: Incidents,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
