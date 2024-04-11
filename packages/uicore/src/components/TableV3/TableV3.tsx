@@ -28,9 +28,7 @@ import {
   GroupingTableState,
   ColumnSizingTableState,
   PaginationTableState,
-  RowSelectionTableState,
-  HeaderGroup,
-  Header
+  RowSelectionTableState
 } from '@tanstack/react-table'
 import cx from 'classnames'
 
@@ -140,9 +138,9 @@ export const TableV3 = <Data extends Record<string, unknown>>(
           }}>
           {hideHeaders ? null : (
             <thead>
-              {table.getHeaderGroups().map((headerGroup: HeaderGroup) => (
+              {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup?.id}>
-                  {headerGroup.headers.map((header: Header) => {
+                  {headerGroup.headers.map(header => {
                     const { column } = header
                     const isResizing = header.column.getIsResizing()
                     const resizeOptions = resize
@@ -203,9 +201,9 @@ export const TableV3 = <Data extends Record<string, unknown>>(
             </thead>
           )}
           <tbody>
-            {table.getRowModel().rows.map((row: any) => (
+            {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
-                {row.getVisibleCells().map((cell: any) => {
+                {row.getVisibleCells().map(cell => {
                   const { column } = cell
                   return (
                     <td
