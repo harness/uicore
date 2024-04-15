@@ -48,6 +48,7 @@ import Zap from './ZAP.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
 import AccordionExpanded from './accordion-expanded.svg'
+import AccountDelete from './account-delete.svg'
 import AcrCiStepInverse from './acr-ci-step-inverse.svg'
 import AcrCiStep from './acr-ci-step.svg'
 import Activity from './activity.svg'
@@ -1376,6 +1377,7 @@ type HarnessIconName =
   | 'access-control'
   | 'accordion-collapsed'
   | 'accordion-expanded'
+  | 'account-delete'
   | 'acr-ci-step-inverse'
   | 'acr-ci-step'
   | 'activity'
@@ -2704,6 +2706,7 @@ const HarnessIcons: KVO<ElementType> = {
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
   'accordion-expanded': AccordionExpanded,
+  'account-delete': AccountDelete,
   'acr-ci-step-inverse': AcrCiStepInverse,
   'acr-ci-step': AcrCiStep,
   activity: Activity,
