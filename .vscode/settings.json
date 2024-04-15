@@ -24,6 +24,5 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
     "*.css": "scss"
-  },
-  "svg.preview.background": "transparent"
+  }
 }
