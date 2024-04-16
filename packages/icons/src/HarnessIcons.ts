@@ -194,6 +194,7 @@ import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
 import CcmWithDarkText from './ccm-with-dark-text.svg'
 import CcmWithText from './ccm-with-text.svg'
+import Cde from './cde.svg'
 import CdHover from './cd-hover.svg'
 import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
@@ -623,6 +624,7 @@ import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
+import Gitspace from './gitspace.svg'
 import Golang from './golang.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
@@ -1530,6 +1532,7 @@ type HarnessIconName =
   | 'cd-with-dark-text'
   | 'cd-with-text'
   | 'cd'
+  | 'cde'
   | 'cdk-bootstrap-inverse'
   | 'cdk-bootstrap'
   | 'cdk-deploy-inverse'
@@ -1951,6 +1954,7 @@ type HarnessIconName =
   | 'gitops-unknown'
   | 'gitops-yes'
   | 'gitops'
+  | 'gitspace'
   | 'golang'
   | 'google-kubernetes-engine'
   | 'google'
@@ -2858,6 +2862,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cd-with-dark-text': CdWithDarkText,
   'cd-with-text': CdWithText,
   cd: Cd,
+  cde: Cde,
   'cdk-bootstrap-inverse': CdkBootstrapInverse,
   'cdk-bootstrap': CdkBootstrap,
   'cdk-deploy-inverse': CdkDeployInverse,
@@ -3279,6 +3284,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
   gitops: Gitops,
+  gitspace: Gitspace,
   golang: Golang,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
