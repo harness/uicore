@@ -1,6 +1,6 @@
 {
   "name": "@harnessio/icons",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Harness Icons - Provides a set of icons for use in Harness UI",
   "source": "src/index.ts",
   "main": "dist/icons.umd.js",
