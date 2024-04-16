@@ -876,6 +876,7 @@ import StoWithText from './sto-with-text.svg'
 import StoreArtifactBundle from './store-artifact-bundle.svg'
 import Subscriptions from './subscriptions.svg'
 import SuccessTick from './success-tick.svg'
+import Suggestion from './suggestion.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
 import SupportCode from './support-code.svg'
@@ -1854,6 +1855,7 @@ type HarnessIconName =
   | 'store-artifact-bundle'
   | 'subscriptions'
   | 'success-tick'
+  | 'suggestion'
   | 'support-account'
   | 'support-api'
   | 'support-code'
@@ -2832,6 +2834,7 @@ const HarnessIcons: KVO<ElementType> = {
   'store-artifact-bundle': StoreArtifactBundle,
   subscriptions: Subscriptions,
   'success-tick': SuccessTick,
+  suggestion: Suggestion,
   'support-account': SupportAccount,
   'support-api': SupportApi,
   'support-code': SupportCode,
