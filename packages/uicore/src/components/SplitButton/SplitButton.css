@@ -55,11 +55,11 @@
       padding-left: 0 !important;
     }
 
-    .border-left-0.Button--button[class*='bp3-button'] {
+    .border-left-0[class*='Button--button'][class*='bp3-button'] {
       border-left: none !important;
     }
 
-    .border-right-0.Button--button[class*='bp3-button'] {
+    .border-right-0[class*='Button--button'][class*='bp3-button'] {
       border-right: none !important;
     }
   }
