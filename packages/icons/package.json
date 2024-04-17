@@ -3,10 +3,10 @@
   "version": "1.243.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
-  "main": "dist/icons.umd.js",
-  "module": "dist/icons.es.js",
+  "main": "dist/icons.mjs",
   "types": "dist/src/index.d.ts",
   "styles": "dist/style.css",
+  "sideEffect": false,
   "files": [
     "dist/*"
   ],
@@ -15,7 +15,9 @@
     "build": "vite build",
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn build",
-    "ui:icons": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
+    "ui:iconsV1": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
+    "ui:iconsV2": "node ./scripts/build-iconsV2.js > ./src/HarnessIconsV2.ts && prettier --write src/HarnessIconsV2.ts",
+    "ui:icons": "yarn ui:iconsV1 && yarn ui:iconsV2",
     "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "UNLICENSED",

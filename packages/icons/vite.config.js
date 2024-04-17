@@ -6,12 +6,12 @@
  */
 const path = require('path')
 const _ = require('lodash')
-const package = require('./package.json')
+const packageJson = require('./package.json')
 const globals = require('../globals.json')
 const dts = require('vite-plugin-dts')
 const reactSvgPlugin = require('vite-plugin-react-svg')
 
-const external = Object.keys(package.peerDependencies)
+const external = Object.keys(packageJson.peerDependencies)
 
 /**
  * @type {import('vite').UserConfig}
@@ -20,7 +20,8 @@ const config = {
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src'),
-      name: 'HarnessUseModal'
+      name: 'HarnessUseModal',
+      formats: ['es']
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
