@@ -11,7 +11,7 @@ const { camelCase } = require('lodash')
 
 const pattern = path.resolve('src/*.svg')
 const files = glob.sync(pattern, { nodir: true, realpath: false })
-const _imports = ["import { ElementType } from 'react'", "import { KVO } from '@harness/design-system'"]
+const _imports = ["import { ElementType, lazy } from 'react'", "import { KVO } from '@harness/design-system'"]
 const _exports = []
 let iconNames = 'type HarnessIconName =\n'
 
@@ -20,13 +20,13 @@ files
   .map(file => file.split('/icons/src/')[1])
   .forEach(fileName => {
     const name = fileName.split('.svg')[0]
-    const ComponentName = name[0].toUpperCase() + camelCase(name).slice(1)
+    // const ComponentName = name[0].toUpperCase() + camelCase(name).slice(1)
     const key = /^[a-z][a-z0-9]+$/i.test(name) ? name : "'" + name + "'"
 
     iconNames += "  | '" + name + "'\n"
 
-    _imports.push(`import ${ComponentName} from './${fileName}'`)
-    _exports.push('  ' + key + ': ' + ComponentName)
+    // _imports.push(`import ${ComponentName} from './${fileName}'`)
+    _exports.push('  ' + key + `: lazy(() => import('./${fileName}'))`)
   })
 
 const warningLines = [

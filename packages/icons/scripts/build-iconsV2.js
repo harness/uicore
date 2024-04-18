@@ -11,8 +11,8 @@ const { camelCase } = require('lodash')
 
 const pattern = path.resolve('src/*.svg')
 const files = glob.sync(pattern, { nodir: true, realpath: false })
-const _imports = []
-
+const _imports = ["import { lazy } from 'react'", "import withHarnessIcon from './withHarnessIcon'"]
+const _exports = []
 files
   .sort()
   .map(file => file.split('/icons/src/')[1])
@@ -21,7 +21,8 @@ files
     const ComponentName = name[0].toUpperCase() + camelCase(name).slice(1)
     const key = /^[a-z][a-z0-9]+$/i.test(name) ? name : "'" + name + "'"
 
-    _imports.push(`export { default as ${ComponentName} } from './${fileName}'`)
+    // _imports.push(`export { default as ${ComponentName} } from './${fileName}'`)
+    _exports.push(`export const ${ComponentName} = withHarnessIcon(lazy(() => import('./${fileName}')), '${name}')`)
   })
 
 const warningLines = [
@@ -37,4 +38,4 @@ const warningLines = [
   ' */'
 ]
 
-console.log(warningLines.join('\n') + '\n' + _imports.join('\n'))
+console.log(warningLines.join('\n') + '\n' + _imports.join('\n') + '\n' + _exports.join('\n'))
