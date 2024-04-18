@@ -162,6 +162,7 @@ import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import BurpSuiteInverse from './burp-suite-inverse.svg'
 import BurpSuite from './burp-suite.svg'
+import CalendarPage from './calendar-page.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
 import CanaryGrey from './canary-grey.svg'
@@ -694,6 +695,7 @@ import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
+import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
@@ -1492,6 +1494,7 @@ type HarnessIconName =
   | 'build-stage'
   | 'burp-suite-inverse'
   | 'burp-suite'
+  | 'calendar-page'
   | 'canary-delete-inverse'
   | 'canary-delete'
   | 'canary-grey'
@@ -2024,6 +2027,7 @@ type HarnessIconName =
   | 'insight-view'
   | 'instances'
   | 'integration'
+  | 'iro-logo-outline'
   | 'iro-main'
   | 'java'
   | 'jira-approve-inverse'
@@ -2822,6 +2826,7 @@ const HarnessIcons: KVO<ElementType> = {
   'build-stage': BuildStage,
   'burp-suite-inverse': BurpSuiteInverse,
   'burp-suite': BurpSuite,
+  'calendar-page': CalendarPage,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
   'canary-grey': CanaryGrey,
@@ -3354,6 +3359,7 @@ const HarnessIcons: KVO<ElementType> = {
   'insight-view': InsightView,
   instances: Instances,
   integration: Integration,
+  'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
   java: Java,
   'jira-approve-inverse': JiraApproveInverse,
