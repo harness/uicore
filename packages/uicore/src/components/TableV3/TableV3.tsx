@@ -47,7 +47,6 @@ const getCommonPinningStyles = (column: Column<unknown>): CSSProperties => {
       : undefined,
     left: isPinned === 'left' ? `${column.getStart('left')}px` : undefined,
     right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
-    opacity: isPinned ? 0.95 : 1,
     position: isPinned ? 'sticky' : 'relative',
     width: column.getSize(),
     zIndex: isPinned ? 1 : 0
@@ -59,7 +58,6 @@ interface ExecutionListV2Props<Data extends Record<string, unknown>> {
   rightFixed?: string[]
   tableData: Data[]
   columns: Array<ColumnDef<unknown>>
-  isSorting?: boolean
   resize?: boolean
   className?: string
   hideHeaders?: boolean
@@ -84,11 +82,8 @@ export const TableV3 = <Data extends Record<string, unknown>>(
 ): React.ReactElement => {
   const containerRef = useRef(null)
   const {
-    leftFixed = DEFAULT_EMPTY_ARR,
-    rightFixed = DEFAULT_EMPTY_ARR,
     tableData = DEFAULT_EMPTY_ARR,
     columns = [],
-    isSorting = false,
     resize = false,
     hideHeaders = false,
     initialState = {},
@@ -109,10 +104,6 @@ export const TableV3 = <Data extends Record<string, unknown>>(
     },
     onSortingChange: setSorting,
     initialState: {
-      columnPinning: {
-        left: leftFixed,
-        right: rightFixed
-      },
       ...initialState
     }
   })
@@ -166,7 +157,7 @@ export const TableV3 = <Data extends Record<string, unknown>>(
                           }
                         }}
                         onClick={() => {
-                          if (isSorting) {
+                          if (initialState?.sorting) {
                             header?.column?.getToggleSortingHandler()
                           }
                         }}
@@ -178,7 +169,7 @@ export const TableV3 = <Data extends Record<string, unknown>>(
                             flex={{ justifyContent: 'flex-start' }}>
                             <Text
                               tooltipProps={{ dataTooltipId: tooltipId }}
-                              font={{ size: 'normal', weight: 'bold', variation: FontVariation.TABLE_HEADERS }}
+                              font={{ variation: FontVariation.TABLE_HEADERS }}
                               color={Color.GREY_800}>
                               {header.isPlaceholder
                                 ? null

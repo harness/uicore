@@ -19,7 +19,7 @@ th,
 .th,
 td,
 .td {
-  box-shadow: inset 0 0 0 0px lightgray;
+  box-shadow: inset 0 0 0 0px var(--grey-200);
   padding: 0.25rem;
 }
 
@@ -27,7 +27,6 @@ th,
 .th {
   padding: 2px 4px;
   position: relative;
-  font-weight: bold;
   text-align: center;
   min-height: 30px;
   text-transform: uppercase;
