@@ -139,9 +139,9 @@ export const TableV3 = <Data extends Record<string, unknown>>(
                           onDoubleClick: () => header.column.resetSize(),
                           onMouseDown: header.getResizeHandler(),
                           onTouchStart: header.getResizeHandler(),
-                          className: `${css.resizer} ${table.options.columnResizeDirection} ${cx({
+                          className: cx(table.options.columnResizeDirection, css.resizer, {
                             [css.isResizing]: isResizing
-                          })}`
+                          })
                         }
                       : {}
                     const tooltipId = name ? `${name}${header.id}` : undefined
