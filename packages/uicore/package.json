@@ -1,6 +1,6 @@
 {
   "name": "@harness/uicore",
-  "version": "3.162.0",
+  "version": "3.163.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -57,6 +57,7 @@
     "@types/react-dom": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-table": "7.0.13",
+    "@tanstack/react-table": "^8.15.3",
     "anser": "^2.1.0",
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
