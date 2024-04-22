@@ -162,6 +162,7 @@ import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
 import BurpSuiteInverse from './burp-suite-inverse.svg'
 import BurpSuite from './burp-suite.svg'
+import CalendarPage from './calendar-page.svg'
 import CanaryDeleteInverse from './canary-delete-inverse.svg'
 import CanaryDelete from './canary-delete.svg'
 import CanaryGrey from './canary-grey.svg'
@@ -202,6 +203,7 @@ import CdSolid from './cd-solid.svg'
 import CdWithDarkText from './cd-with-dark-text.svg'
 import CdWithText from './cd-with-text.svg'
 import Cd from './cd.svg'
+import Cde from './cde.svg'
 import CdkBootstrapInverse from './cdk-bootstrap-inverse.svg'
 import CdkBootstrap from './cdk-bootstrap.svg'
 import CdkDeployInverse from './cdk-deploy-inverse.svg'
@@ -427,6 +429,7 @@ import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
 import DbDevops from './db-devops.svg'
+import DbSchema from './db-schema.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -622,6 +625,7 @@ import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
+import Gitspaces from './gitspaces.svg'
 import Golang from './golang.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
@@ -691,6 +695,7 @@ import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
+import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
@@ -1489,6 +1494,7 @@ type HarnessIconName =
   | 'build-stage'
   | 'burp-suite-inverse'
   | 'burp-suite'
+  | 'calendar-page'
   | 'canary-delete-inverse'
   | 'canary-delete'
   | 'canary-grey'
@@ -1529,6 +1535,7 @@ type HarnessIconName =
   | 'cd-with-dark-text'
   | 'cd-with-text'
   | 'cd'
+  | 'cde'
   | 'cdk-bootstrap-inverse'
   | 'cdk-bootstrap'
   | 'cdk-deploy-inverse'
@@ -1754,6 +1761,7 @@ type HarnessIconName =
   | 'dashboards-solid-border'
   | 'data-fetch-error'
   | 'db-devops'
+  | 'db-schema'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -1949,6 +1957,7 @@ type HarnessIconName =
   | 'gitops-unknown'
   | 'gitops-yes'
   | 'gitops'
+  | 'gitspaces'
   | 'golang'
   | 'google-kubernetes-engine'
   | 'google'
@@ -2018,6 +2027,7 @@ type HarnessIconName =
   | 'insight-view'
   | 'instances'
   | 'integration'
+  | 'iro-logo-outline'
   | 'iro-main'
   | 'java'
   | 'jira-approve-inverse'
@@ -2816,6 +2826,7 @@ const HarnessIcons: KVO<ElementType> = {
   'build-stage': BuildStage,
   'burp-suite-inverse': BurpSuiteInverse,
   'burp-suite': BurpSuite,
+  'calendar-page': CalendarPage,
   'canary-delete-inverse': CanaryDeleteInverse,
   'canary-delete': CanaryDelete,
   'canary-grey': CanaryGrey,
@@ -2856,6 +2867,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cd-with-dark-text': CdWithDarkText,
   'cd-with-text': CdWithText,
   cd: Cd,
+  cde: Cde,
   'cdk-bootstrap-inverse': CdkBootstrapInverse,
   'cdk-bootstrap': CdkBootstrap,
   'cdk-deploy-inverse': CdkDeployInverse,
@@ -3081,6 +3093,7 @@ const HarnessIcons: KVO<ElementType> = {
   'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
   'db-devops': DbDevops,
+  'db-schema': DbSchema,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
@@ -3276,6 +3289,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
   gitops: Gitops,
+  gitspaces: Gitspaces,
   golang: Golang,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
@@ -3345,6 +3359,7 @@ const HarnessIcons: KVO<ElementType> = {
   'insight-view': InsightView,
   instances: Instances,
   integration: Integration,
+  'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
   java: Java,
   'jira-approve-inverse': JiraApproveInverse,
