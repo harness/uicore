@@ -1,6 +1,6 @@
 .body {
-  --shadowTop: inset 0px 8px 5px -5px rgba(0, 0, 0, 0.7);
-  --shadowBottom: inset 0px -8px 5px -5px rgba(0, 0, 0, 0.7);
+  --bodyShadowTop: inset 0px 8px 5px -5px rgba(0, 0, 0, 0.7);
+  --bodyShadowBottom: inset 0px -8px 5px -5px rgba(0, 0, 0, 0.7);
   position: relative;
   overflow: auto;
 }
@@ -17,23 +17,19 @@
   position: relative;
   z-index: 1;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
 }
 
 .body.shadowTop::before {
-  box-shadow: var(--shadowTop);
+  box-shadow: var(--bodyShadowTop);
 }
 
 .body.shadowBottom::before {
-  box-shadow: var(--shadowBottom);
+  box-shadow: var(--bodyShadowBottom);
 }
 
 .body.shadowTopAndBottom::before {
-  box-shadow: var(--shadowTop), var(--shadowBottom);
+  box-shadow: var(--bodyShadowTop), var(--bodyShadowBottom);
 }

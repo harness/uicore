@@ -14,13 +14,21 @@ import cx from 'classnames'
 
 export interface ScrollShadowContainerProps extends HTMLAttributes<HTMLDivElement>, StyledProps {
   tag?: keyof JSX.IntrinsicElements
-  shadowTop?: string
-  shadowBottom?: string
-  shadowTopAndBottom?: string
+  shadowTopClassname?: string
+  shadowBottomClassname?: string
+  shadowTopAndBottomClassname?: string
+  bodyClassname?: string
+  bodyContentClassname?: string
 }
 
 function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
-  const { tag = 'div', children } = props
+  const {
+    tag = 'div',
+    children,
+    shadowTopClassname = css.shadowTop,
+    shadowBottomClassname = css.shadowBottom,
+    shadowTopAndBottomClassname = css.shadowTopAndBottom
+  } = props
   const Tag = tag as React.ElementType
 
   const bodyRef = useRef<HTMLDivElement | null>(null)
@@ -72,13 +80,13 @@ function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
     const { top, bottom } = scrollShadows
 
     if (top && bottom) {
-      return props.shadowTopAndBottom ? props.shadowTopAndBottom : css.shadowTopAndBottom
+      return shadowTopAndBottomClassname
     }
     if (top) {
-      return props.shadowTop ? props.shadowTop : css.shadowTop
+      return shadowTopClassname
     }
     if (bottom) {
-      return props.shadowBottom ? props.shadowBottom : css.shadowBottom
+      return shadowBottomClassname
     }
     return ''
   }, [scrollShadows])
@@ -86,9 +94,9 @@ function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
   return (
     <Tag
       {...omitStyledProps(props)}
-      className={cx(styledClasses(props, styledClass.font), bodyShadowClass, css.body)}
+      className={cx(styledClasses(props, styledClass.font), bodyShadowClass, css.body, props.bodyClassname)}
       ref={bodyRefCallback}>
-      <div className={css.bodyContent}>
+      <div className={cx(css.bodyContent, props.bodyContentClassname)}>
         <div ref={bodyTopEdgeRef} data-position="top" />
         {children}
         <div ref={bodyBottomEdgeRef} data-position="bottom" />
