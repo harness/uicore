@@ -53,7 +53,7 @@ const getCommonPinningStyles = (column: Column<unknown>): CSSProperties => {
   }
 }
 
-interface ExecutionListV2Props<Data extends Record<string, unknown>> {
+export interface ExecutionListV2Props<Data extends Record<string, unknown>> {
   leftFixed?: string[]
   rightFixed?: string[]
   tableData: Data[]
