@@ -5,20 +5,15 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { FC, ReactNode, useCallback, useEffect, useRef, useState, useMemo } from 'react'
+import React, { FC, ReactNode } from 'react'
 import { Dialog, IDialogProps, Spinner } from '@blueprintjs/core'
 import cx from 'classnames'
-import { isFunction } from 'lodash-es'
 import { FontVariation } from '@harness/design-system'
 import { Heading } from '../Heading/Heading'
 import { Button, ButtonVariation } from '../Button/Button'
+import { ScrollShadowContainer } from '../ScrollShadowContainer/ScrollShadowContainer'
 
 import css from './ModalDialog.css'
-
-const observeEdge = (element: HTMLDivElement | null | undefined, observer: IntersectionObserver) => {
-  if (!element || !observer) return
-  observer.observe(element)
-}
 
 export interface ModalDialogProps extends IDialogProps {
   /**
@@ -73,48 +68,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
   onClose,
   ...dialogProps
 }) => {
-  const bodyRef = useRef<HTMLDivElement | null>(null)
-  const bodyTopEdgeRef = useRef<HTMLDivElement>(null)
-  const bodyBottomEdgeRef = useRef<HTMLDivElement>(null)
-  const bodyObserverRef = useRef<IntersectionObserver>()
-
-  const [scrollShadows, setScrollShadows] = useState({ top: false, bottom: false })
-
-  const initScrollShadows = useCallback(() => {
-    if (!bodyRef.current) return
-
-    isFunction(bodyObserverRef.current?.disconnect) && bodyObserverRef.current?.disconnect()
-    bodyObserverRef.current = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const position = (entry.target as HTMLDivElement).dataset.position
-          if (typeof position === 'string') {
-            setScrollShadows(prev => ({ ...prev, [position]: !entry.isIntersecting }))
-          }
-        })
-      },
-      {
-        root: bodyRef.current
-      }
-    )
-
-    observeEdge(bodyTopEdgeRef.current, bodyObserverRef.current)
-    observeEdge(bodyBottomEdgeRef.current, bodyObserverRef.current)
-  }, [])
-
-  useEffect(() => bodyObserverRef.current?.disconnect, [])
-
-  const bodyRefCallback = useCallback(
-    (el: HTMLDivElement | null) => {
-      if (!el) {
-        return isFunction(bodyObserverRef.current?.disconnect) && bodyObserverRef.current?.disconnect()
-      }
-      bodyRef.current = el
-      initScrollShadows()
-    },
-    [initScrollShadows]
-  )
-
   const modifiers = []
 
   if (!title) {
@@ -136,15 +89,6 @@ export const ModalDialog: FC<ModalDialogProps> = ({
     style['--ModalDialog-Height'] = `${height}px`
   }
 
-  const bodyShadowClass = useMemo(() => {
-    const { top, bottom } = scrollShadows
-
-    if (top && bottom && (title || toolbar) && footer) return css.shadowTopAndBottom
-    if (top && (title || toolbar)) return css.shadowTop
-    if (bottom && footer) return css.shadowBottom
-    return ''
-  }, [scrollShadows])
-
   const modalContent = (
     <>
       {title && (
@@ -160,13 +104,15 @@ export const ModalDialog: FC<ModalDialogProps> = ({
         </aside>
       )}
 
-      <div className={cx(css.body, bodyShadowClass)} data-testid="modaldialog-body" ref={bodyRefCallback}>
-        <div className={css.bodyContent}>
-          <div ref={bodyTopEdgeRef} data-position="top" />
-          <div>{children}</div>
-          <div ref={bodyBottomEdgeRef} data-position="bottom" />
-        </div>
-      </div>
+      <ScrollShadowContainer
+        shadowTopAndBottomClassname={css.shadowTopAndBottom}
+        shadowTopClassname={css.shadowTop}
+        shadowBottomClassname={css.shadowBottom}
+        bodyClassname={css.body}
+        bodyContentClassname={css.bodyContent}
+        data-testid="modaldialog-body">
+        <div>{children}</div>
+      </ScrollShadowContainer>
 
       {footer && (
         <footer className={css.footer} data-testid="modaldialog-footer">

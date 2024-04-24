@@ -81,22 +81,11 @@
   overflow: auto;
 }
 
-.body::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.body .bodyContent {
-  position: relative;
-  z-index: 1;
-  overflow: auto;
-  height: 100%;
+.bodyContent {
   padding: 0 var(--spacing-huge);
   display: grid;
   grid-template-rows: 1px 1fr 1px;
+  color: var(--grey-900);
 }
 
 .noHeader.noToolbar .body .bodyContent {
@@ -107,14 +96,14 @@
   padding-bottom: var(--spacing-huge);
 }
 
-.body.shadowTop::before {
+.shadowTop::before {
   box-shadow: var(--shadowTop);
 }
 
-.body.shadowBottom::before {
+.shadowBottom::before {
   box-shadow: var(--shadowBottom);
 }
 
-.body.shadowTopAndBottom::before {
+.shadowTopAndBottom::before {
   box-shadow: var(--shadowTop), var(--shadowBottom);
 }
