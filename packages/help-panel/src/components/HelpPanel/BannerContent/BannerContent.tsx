@@ -1,0 +1,83 @@
+/*
+ * Copyright 2022 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+import React from 'react'
+import { Color } from '@harness/design-system'
+import Container from '../../Container'
+// import Header from '../Header/Header'
+// import Footer from '../Footer/Footer'
+import { IHelpPanel } from '../../../types/contentfulTypes'
+// import css from './HelpPanelContent.module.css'
+// import Skeleton from '../../Skeleton/Skeleton'
+// import Article from '../../Article/Article'
+// import { Error } from '../../../HelpPanelContext'
+// import ErrorScreen from '../ErrorScreen/ErrorScreen'
+
+interface Props {
+  onClose?: () => void
+  data?: any
+  // error?: Error
+  // loading: boolean
+  hideFooter?: boolean
+}
+
+export const HEADER_FOOTER_HEIGHT = 64
+const BannerContent: React.FC<Props> = ({
+  // onClose,
+  data
+  // loading
+  //  error,
+  // hideFooter
+}) => {
+  // const {
+  //   // articles, title,
+  //   backgroundColor = Color.BLUE_50
+  // } = data || {}
+
+  const renderContent = () => {
+    return (
+      <>
+        <div>${JSON.stringify(data)}</div>
+      </>
+    )
+    // return (
+    //   <>
+    //     <Header title={title} onClose={onClose} />
+    //     {!error && articles?.length !== 0 ? (
+    //       <Container
+    //         className={css.centerContainer}
+    //         padding={{ left: 'xlarge', right: 'xlarge' }}
+    //         width="100%"
+    //         style={{ top: HEADER_FOOTER_HEIGHT, height: `calc(100% - ${HEADER_FOOTER_HEIGHT * 2}px)` }}>
+    //         {articles?.map(article => (
+    //           <Article key={article.sys.id} {...article.fields} />
+    //         ))}
+    //       </Container>
+    //     ) : (
+    //       <ErrorScreen />
+    //     )}
+    //     {!hideFooter ? <Footer /> : null}
+    //   </>
+    // )
+  }
+
+  return (
+    <Container
+    // background={backgroundColor}
+    //  style={{ height: '100%' }}
+    >
+      {/* {loading ? (
+        <Container padding="xlarge">
+          <Skeleton />
+        </Container>
+      ) : ( */}
+      {renderContent()}
+      {/* )} */}
+    </Container>
+  )
+}
+export default BannerContent
