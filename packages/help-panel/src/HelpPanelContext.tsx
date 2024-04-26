@@ -13,6 +13,7 @@ import { useLocalStorage } from './hooks/useLocalStorage'
 
 interface HelpPanelContextProps {
   referenceIdMap: Record<string, string>
+  banners?: any
   isHelpPanelVisible: boolean
   toggleShowAgain: () => void
   showAgain: boolean
@@ -21,6 +22,7 @@ interface HelpPanelContextProps {
 
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   referenceIdMap: {},
+  banners: {},
   isHelpPanelVisible: true,
   toggleShowAgain: () => void 0,
   showAgain: false,
@@ -42,6 +44,7 @@ export const HELP_PANEL_STORAGE_KEY = 'helpPanel'
 export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> = props => {
   const { accessToken, space, environment = HelpPanelEnvironment.master } = props
   const [referenceIdMap, setReferenceIdMap] = useState<Record<string, string>>({})
+  // const [banners, setBanners] = useState({})
   const [storageData, setStorage] = useLocalStorage<HelpPanelStorageState>(HELP_PANEL_STORAGE_KEY, {
     dontShowAgain: false
   })
@@ -59,6 +62,15 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         Contentful.initialise(accessToken, space, environment)
         const client = Contentful.getClient()
 
+        // const getUrlBannerMap = async (): Promise<void> => {
+        //   const response = await client.getEntries({
+        //     // eslint-disable-next-line camelcase
+        //     content_type: ContentType.urlBannerMap,
+        //     limit: 1000
+        //   })
+        //   setBanners(response)
+        // }
+
         const getContentIdMap = async (): Promise<void> => {
           const response = await client.getEntries<IReferenceIdMap>({
             // eslint-disable-next-line camelcase
@@ -67,7 +79,9 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
           })
           setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
         }
+
         getContentIdMap()
+        // getUrlBannerMap()
       } catch (e) {
         setError(Error.ERROR_INITIALIZING_CONTENTFUL)
         props.onError?.(e)
@@ -81,6 +95,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
     <HelpPanelContext.Provider
       value={{
         referenceIdMap,
+        // banners,
         isHelpPanelVisible: storageData.dontShowAgain,
         toggleShowAgain,
         showAgain: storageData.dontShowAgain,
@@ -123,36 +138,46 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
       return
     }
 
-    if (Object.keys(referenceIdMap).length > 0) {
-      const contentId = referenceIdMap[referenceId]
-      if (contentId) {
-        setLoading(true)
-        Contentful.getClient()
-          .getEntries<T>({
-            'sys.id': contentId,
-            // eslint-disable-next-line camelcase
-            content_type,
-            include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
-          })
-          .then(
-            response => {
-              setLoading(false)
-              if (response.items.length > 0) {
-                setData(response.items[0].fields)
-              } else {
-                setError(Error.NOT_CREATED)
-              }
-            },
-            () => {
-              setLoading(false)
-              setError(Error.API_FAILED)
-            }
-          )
-      } else {
-        setLoading(false)
-        setError(Error.NOT_FOUND)
+    // eslint-disable-next-line camelcase
+    switch (content_type) {
+      case ContentType.banner: {
+        // do nothing for banner
+        break
       }
+      case ContentType.helpPanel:
+      default:
+        if (Object.keys(referenceIdMap).length > 0) {
+          const contentId = referenceIdMap[referenceId]
+          if (contentId) {
+            setLoading(true)
+            Contentful.getClient()
+              .getEntries<T>({
+                'sys.id': contentId,
+                // eslint-disable-next-line camelcase
+                content_type,
+                include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
+              })
+              .then(
+                response => {
+                  setLoading(false)
+                  if (response.items.length > 0) {
+                    setData(response.items[0].fields)
+                  } else {
+                    setError(Error.NOT_CREATED)
+                  }
+                },
+                () => {
+                  setLoading(false)
+                  setError(Error.API_FAILED)
+                }
+              )
+          } else {
+            setLoading(false)
+            setError(Error.NOT_FOUND)
+          }
+        }
     }
+
     // eslint-disable-next-line camelcase
   }, [referenceId, content_type, referenceIdMap])
 

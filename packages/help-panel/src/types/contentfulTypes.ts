@@ -23,7 +23,10 @@ export enum ContentType {
   article = 'article',
   image = 'image',
   youtubeVideo = 'youtubeVideo',
-  referenceIdMap = 'referenceIdMap'
+  referenceIdMap = 'referenceIdMap',
+  banner = 'banner',
+  url = 'url',
+  urlBannerMap = 'urlBannerMap'
 }
 
 export interface IHelpPanel {
@@ -59,4 +62,8 @@ export interface IVideo extends ComponentValue {
 export interface IReferenceIdMap {
   referenceId: string
   helpPanel: Entry<IHelpPanel>
+}
+
+export interface IBanner {
+  title: string
 }
