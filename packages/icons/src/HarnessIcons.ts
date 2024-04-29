@@ -75,7 +75,6 @@ import Arm from './arm.svg'
 import Arrow from './arrow.svg'
 import ArtifactGoogleCloudSourceRepo from './artifact-google-cloud-source-repo.svg'
 import ArtifactGoogleCloudStorage from './artifact-google-cloud-storage.svg'
-import ArtifactIcon from './artifact-icon.svg'
 import ArtifactRegistry from './artifact-registry.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
@@ -475,7 +474,6 @@ import Down from './down.svg'
 import DownloadAwsS3Store from './download-aws-s3-store.svg'
 import DownloadBox from './download-box.svg'
 import DownloadHarnessStore from './download-harness-store.svg'
-import DownloadIcon from './download-icon.svg'
 import DownloadManifestsInverse from './download-manifests-inverse.svg'
 import DownloadManifests from './download-manifests.svg'
 import DryRun from './dry-run.svg'
@@ -953,7 +951,6 @@ import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import PullRequest from './pull-request.svg'
-import PypiRepositoryType from './pypi-repository-type.svg'
 import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
@@ -970,9 +967,6 @@ import Remotefile from './remotefile.svg'
 import RemoveGraph from './remove-graph.svg'
 import RemoveMinus from './remove-minus.svg'
 import Remove from './remove.svg'
-import RepoDelete from './repo-delete.svg'
-import RepoQuarantine from './repo-quarantine.svg'
-import RepoScan from './repo-scan.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
@@ -1422,7 +1416,6 @@ type HarnessIconName =
   | 'arrow'
   | 'artifact-google-cloud-source-repo'
   | 'artifact-google-cloud-storage'
-  | 'artifact-icon'
   | 'artifact-registry'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
@@ -1822,7 +1815,6 @@ type HarnessIconName =
   | 'download-aws-s3-store'
   | 'download-box'
   | 'download-harness-store'
-  | 'download-icon'
   | 'download-manifests-inverse'
   | 'download-manifests'
   | 'dry-run'
@@ -2300,7 +2292,6 @@ type HarnessIconName =
   | 'pruned'
   | 'publish-step'
   | 'pull-request'
-  | 'pypi-repository-type'
   | 'python'
   | 'question'
   | 'queue-step'
@@ -2317,9 +2308,6 @@ type HarnessIconName =
   | 'remove-graph'
   | 'remove-minus'
   | 'remove'
-  | 'repo-delete'
-  | 'repo-quarantine'
-  | 'repo-scan'
   | 'report-gear-grey'
   | 'report-gear'
   | 'report-icon'
@@ -2769,7 +2757,6 @@ const HarnessIcons: KVO<ElementType> = {
   arrow: Arrow,
   'artifact-google-cloud-source-repo': ArtifactGoogleCloudSourceRepo,
   'artifact-google-cloud-storage': ArtifactGoogleCloudStorage,
-  'artifact-icon': ArtifactIcon,
   'artifact-registry': ArtifactRegistry,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
@@ -3169,7 +3156,6 @@ const HarnessIcons: KVO<ElementType> = {
   'download-aws-s3-store': DownloadAwsS3Store,
   'download-box': DownloadBox,
   'download-harness-store': DownloadHarnessStore,
-  'download-icon': DownloadIcon,
   'download-manifests-inverse': DownloadManifestsInverse,
   'download-manifests': DownloadManifests,
   'dry-run': DryRun,
@@ -3647,7 +3633,6 @@ const HarnessIcons: KVO<ElementType> = {
   pruned: Pruned,
   'publish-step': PublishStep,
   'pull-request': PullRequest,
-  'pypi-repository-type': PypiRepositoryType,
   python: Python,
   question: Question,
   'queue-step': QueueStep,
@@ -3664,9 +3649,6 @@ const HarnessIcons: KVO<ElementType> = {
   'remove-graph': RemoveGraph,
   'remove-minus': RemoveMinus,
   remove: Remove,
-  'repo-delete': RepoDelete,
-  'repo-quarantine': RepoQuarantine,
-  'repo-scan': RepoScan,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
