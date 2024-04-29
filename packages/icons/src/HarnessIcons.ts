@@ -75,6 +75,8 @@ import Arm from './arm.svg'
 import Arrow from './arrow.svg'
 import ArtifactGoogleCloudSourceRepo from './artifact-google-cloud-source-repo.svg'
 import ArtifactGoogleCloudStorage from './artifact-google-cloud-storage.svg'
+import ArtifactIcon from './artifact-icon.svg'
+import ArtifactRegistry from './artifact-registry.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
 import AsgCanaryDeleteInverse from './asg-canary-delete-inverse.svg'
@@ -473,6 +475,7 @@ import Down from './down.svg'
 import DownloadAwsS3Store from './download-aws-s3-store.svg'
 import DownloadBox from './download-box.svg'
 import DownloadHarnessStore from './download-harness-store.svg'
+import DownloadIcon from './download-icon.svg'
 import DownloadManifestsInverse from './download-manifests-inverse.svg'
 import DownloadManifests from './download-manifests.svg'
 import DryRun from './dry-run.svg'
@@ -580,6 +583,7 @@ import GcsCiStep from './gcs-ci-step.svg'
 import GcsStepInverse from './gcs-step-inverse.svg'
 import GcsStep from './gcs-step.svg'
 import Gear from './gear.svg'
+import GenericRepositoryType from './generic-repository-type.svg'
 import GetStarted from './get-started.svg'
 import GitBranchExisting from './git-branch-existing.svg'
 import GitCloneCiStepInverse from './git-clone-ci-step-inverse.svg'
@@ -632,6 +636,7 @@ import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
+import GradleRepositoryType from './gradle-repository-type.svg'
 import Grafana from './grafana.svg'
 import GraphIncrease from './graph-increase.svg'
 import Graph from './graph.svg'
@@ -815,6 +820,7 @@ import MainZoomOut from './main-zoom-out.svg'
 import MarkAsFailed from './mark-as-failed.svg'
 import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
+import MavenRepositoryType from './maven-repository-type.svg'
 import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
 import Mend from './mend.svg'
@@ -884,7 +890,9 @@ import NoInstances from './no-instances.svg'
 import Nodejs from './nodejs.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
+import NpmRepositoryType from './npm-repository-type.svg'
 import Npm from './npm.svg'
+import NugetRepositoryType from './nuget-repository-type.svg'
 import OfflineOutline from './offline-outline.svg'
 import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
@@ -945,6 +953,7 @@ import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import PullRequest from './pull-request.svg'
+import PypiRepositoryType from './pypi-repository-type.svg'
 import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
@@ -961,6 +970,9 @@ import Remotefile from './remotefile.svg'
 import RemoveGraph from './remove-graph.svg'
 import RemoveMinus from './remove-minus.svg'
 import Remove from './remove.svg'
+import RepoDelete from './repo-delete.svg'
+import RepoQuarantine from './repo-quarantine.svg'
+import RepoScan from './repo-scan.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
@@ -1174,6 +1186,7 @@ import ServicenowUpdate from './servicenow-update.svg'
 import Services from './services.svg'
 import Setting from './setting.svg'
 import SetupApi from './setup-api.svg'
+import SetupClient from './setup-client.svg'
 import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
@@ -1316,6 +1329,7 @@ import Up from './up.svg'
 import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
+import UpstreamProxiesIcon from './upstream-proxies-icon.svg'
 import UserGroups from './user-groups.svg'
 import User from './user.svg'
 import Utility from './utility.svg'
@@ -1408,6 +1422,8 @@ type HarnessIconName =
   | 'arrow'
   | 'artifact-google-cloud-source-repo'
   | 'artifact-google-cloud-storage'
+  | 'artifact-icon'
+  | 'artifact-registry'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
   | 'asg-canary-delete-inverse'
@@ -1806,6 +1822,7 @@ type HarnessIconName =
   | 'download-aws-s3-store'
   | 'download-box'
   | 'download-harness-store'
+  | 'download-icon'
   | 'download-manifests-inverse'
   | 'download-manifests'
   | 'dry-run'
@@ -1913,6 +1930,7 @@ type HarnessIconName =
   | 'gcs-step-inverse'
   | 'gcs-step'
   | 'gear'
+  | 'generic-repository-type'
   | 'get-started'
   | 'git-branch-existing'
   | 'git-clone-ci-step-inverse'
@@ -1965,6 +1983,7 @@ type HarnessIconName =
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
+  | 'gradle-repository-type'
   | 'grafana'
   | 'graph-increase'
   | 'graph'
@@ -2148,6 +2167,7 @@ type HarnessIconName =
   | 'mark-as-failed'
   | 'mark-as-failure-inverse'
   | 'mark-as-failure'
+  | 'maven-repository-type'
   | 'memberRole'
   | 'mend-inverse'
   | 'mend'
@@ -2217,7 +2237,9 @@ type HarnessIconName =
   | 'nodejs'
   | 'not-synced'
   | 'notification'
+  | 'npm-repository-type'
   | 'npm'
+  | 'nuget-repository-type'
   | 'offline-outline'
   | 'oidc-authentication'
   | 'onprem-dark'
@@ -2278,6 +2300,7 @@ type HarnessIconName =
   | 'pruned'
   | 'publish-step'
   | 'pull-request'
+  | 'pypi-repository-type'
   | 'python'
   | 'question'
   | 'queue-step'
@@ -2294,6 +2317,9 @@ type HarnessIconName =
   | 'remove-graph'
   | 'remove-minus'
   | 'remove'
+  | 'repo-delete'
+  | 'repo-quarantine'
+  | 'repo-scan'
   | 'report-gear-grey'
   | 'report-gear'
   | 'report-icon'
@@ -2507,6 +2533,7 @@ type HarnessIconName =
   | 'services'
   | 'setting'
   | 'setup-api'
+  | 'setup-client'
   | 'setup-tags'
   | 'shield-gears'
   | 'simple-verification'
@@ -2649,6 +2676,7 @@ type HarnessIconName =
   | 'update-app'
   | 'upgrade-bolt'
   | 'upload-box'
+  | 'upstream-proxies-icon'
   | 'user-groups'
   | 'user'
   | 'utility'
@@ -2741,6 +2769,8 @@ const HarnessIcons: KVO<ElementType> = {
   arrow: Arrow,
   'artifact-google-cloud-source-repo': ArtifactGoogleCloudSourceRepo,
   'artifact-google-cloud-storage': ArtifactGoogleCloudStorage,
+  'artifact-icon': ArtifactIcon,
+  'artifact-registry': ArtifactRegistry,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
   'asg-canary-delete-inverse': AsgCanaryDeleteInverse,
@@ -3139,6 +3169,7 @@ const HarnessIcons: KVO<ElementType> = {
   'download-aws-s3-store': DownloadAwsS3Store,
   'download-box': DownloadBox,
   'download-harness-store': DownloadHarnessStore,
+  'download-icon': DownloadIcon,
   'download-manifests-inverse': DownloadManifestsInverse,
   'download-manifests': DownloadManifests,
   'dry-run': DryRun,
@@ -3246,6 +3277,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gcs-step-inverse': GcsStepInverse,
   'gcs-step': GcsStep,
   gear: Gear,
+  'generic-repository-type': GenericRepositoryType,
   'get-started': GetStarted,
   'git-branch-existing': GitBranchExisting,
   'git-clone-ci-step-inverse': GitCloneCiStepInverse,
@@ -3298,6 +3330,7 @@ const HarnessIcons: KVO<ElementType> = {
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
+  'gradle-repository-type': GradleRepositoryType,
   grafana: Grafana,
   'graph-increase': GraphIncrease,
   graph: Graph,
@@ -3481,6 +3514,7 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-as-failed': MarkAsFailed,
   'mark-as-failure-inverse': MarkAsFailureInverse,
   'mark-as-failure': MarkAsFailure,
+  'maven-repository-type': MavenRepositoryType,
   memberRole: MemberRole,
   'mend-inverse': MendInverse,
   mend: Mend,
@@ -3550,7 +3584,9 @@ const HarnessIcons: KVO<ElementType> = {
   nodejs: Nodejs,
   'not-synced': NotSynced,
   notification: Notification,
+  'npm-repository-type': NpmRepositoryType,
   npm: Npm,
+  'nuget-repository-type': NugetRepositoryType,
   'offline-outline': OfflineOutline,
   'oidc-authentication': OidcAuthentication,
   'onprem-dark': OnpremDark,
@@ -3611,6 +3647,7 @@ const HarnessIcons: KVO<ElementType> = {
   pruned: Pruned,
   'publish-step': PublishStep,
   'pull-request': PullRequest,
+  'pypi-repository-type': PypiRepositoryType,
   python: Python,
   question: Question,
   'queue-step': QueueStep,
@@ -3627,6 +3664,9 @@ const HarnessIcons: KVO<ElementType> = {
   'remove-graph': RemoveGraph,
   'remove-minus': RemoveMinus,
   remove: Remove,
+  'repo-delete': RepoDelete,
+  'repo-quarantine': RepoQuarantine,
+  'repo-scan': RepoScan,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
@@ -3840,6 +3880,7 @@ const HarnessIcons: KVO<ElementType> = {
   services: Services,
   setting: Setting,
   'setup-api': SetupApi,
+  'setup-client': SetupClient,
   'setup-tags': SetupTags,
   'shield-gears': ShieldGears,
   'simple-verification': SimpleVerification,
@@ -3982,6 +4023,7 @@ const HarnessIcons: KVO<ElementType> = {
   'update-app': UpdateApp,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
+  'upstream-proxies-icon': UpstreamProxiesIcon,
   'user-groups': UserGroups,
   user: User,
   utility: Utility,
