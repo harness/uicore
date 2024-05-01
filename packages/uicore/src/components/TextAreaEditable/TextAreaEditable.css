@@ -18,4 +18,9 @@
   border-radius: var(--spacing-2);
   word-break: break-all;
   white-space: pre-wrap;
+
+  &.disabled {
+    background-color: var(--grey-50);
+    cursor: not-allowed;
+  }
 }

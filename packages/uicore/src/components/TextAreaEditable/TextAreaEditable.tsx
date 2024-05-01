@@ -118,7 +118,10 @@ type TextAreaEditableProps = {
 
 export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
   shouldComponentUpdate(nextProps: TextAreaEditableProps) {
-    return nextProps.value !== (this.props.inputRef.current as any)?.textContent
+    return (
+      nextProps.value !== (this.props.inputRef.current as any)?.textContent ||
+      nextProps.disabled !== this.props.disabled
+    )
   }
 
   handleKeyDown(e: any): void {
@@ -159,19 +162,21 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
   }
 
   render() {
-    const { value, inputRef, textAreaClassName, ...rest } = this.props
+    const { value, inputRef, textAreaClassName, disabled, ...rest } = this.props
 
     return (
       <div
         {...rest}
-        className={cx(css.editable, textAreaClassName)}
+        className={cx(css.editable, textAreaClassName, {
+          [css.disabled]: disabled
+        })}
         ref={inputRef}
         /**
          * https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable
          * plaintext-only is not supported in firefox
          */
-        contentEditable={true}
-        onKeyDown={this.handleKeyDown.bind(this)}
+        contentEditable={!disabled}
+        onKeyDown={disabled ? () => {} : this.handleKeyDown.bind(this)}
         dangerouslySetInnerHTML={{ __html: highlight(deserialize(value)) }}
       />
     )

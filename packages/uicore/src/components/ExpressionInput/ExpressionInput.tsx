@@ -343,6 +343,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
         autoFocus={false}
         enforceFocus={false}
         popoverClassName={css.popover}
+        disabled={disabled}
         isOpen={items.length > 0 && !!queryValue}>
         {!newExpressionComponent ? (
           <InputGroup
