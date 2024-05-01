@@ -176,7 +176,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
          * plaintext-only is not supported in firefox
          */
         contentEditable={!disabled}
-        onKeyDown={disabled ? () => {} : this.handleKeyDown.bind(this)}
+        onKeyDown={disabled ? undefined : this.handleKeyDown.bind(this)}
         dangerouslySetInnerHTML={{ __html: highlight(deserialize(value)) }}
       />
     )
