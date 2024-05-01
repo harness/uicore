@@ -201,6 +201,45 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     }
   }, [multitypeInputValue])
 
+  const renderButtonType = useCallback(() => {
+    if (!allowableTypes.length) return null
+
+    return (
+      <Button
+        noStyling
+        className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
+        tooltip={
+          disabled ? undefined : (
+            <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
+          )
+        }
+        onClick={ev => {
+          // if ((ev.nativeEvent as PointerEvent).pointerType !== 'mouse') {
+          //   /*
+          //   PIE-1755
+          //   https://github.com/palantir/blueprint/issues/3856
+          //   Button attached next to an InputGroup triggers the click event when enter key is pressed while typing
+          //   So checking the event pointer type, and stopping the propagation if not clicked by the user
+          //   */
+          //   ev.stopPropagation()
+          // }
+          ev.preventDefault()
+        }}
+        disabled={disabled}
+        tooltipProps={{
+          minimal: true,
+          position: Position.BOTTOM_RIGHT,
+          interactionKind: PopoverInteractionKind.CLICK,
+          popoverClassName: css.popover,
+          className: css.wrapper,
+          lazy: true
+        }}
+        data-testid="multi-type-button">
+        <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
+      </Button>
+    )
+  }, [allowableTypes, mini, css, type, btnClassName, disabled, i18n, switchType])
+
   return (
     <Layout.Horizontal
       className={cx(mini ? css.mini : css.main, {
@@ -271,40 +310,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           textAreaClassName={textAreaInputClassName}
         />
       )}
-      {!allowableTypes.length ? null : (
-        <Button
-          noStyling
-          className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
-          tooltip={
-            disabled ? undefined : (
-              <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
-            )
-          }
-          onClick={ev => {
-            // if ((ev.nativeEvent as PointerEvent).pointerType !== 'mouse') {
-            //   /*
-            //   PIE-1755
-            //   https://github.com/palantir/blueprint/issues/3856
-            //   Button attached next to an InputGroup triggers the click event when enter key is pressed while typing
-            //   So checking the event pointer type, and stopping the propagation if not clicked by the user
-            //   */
-            //   ev.stopPropagation()
-            // }
-            ev.preventDefault()
-          }}
-          disabled={disabled}
-          tooltipProps={{
-            minimal: true,
-            position: Position.BOTTOM_RIGHT,
-            interactionKind: PopoverInteractionKind.CLICK,
-            popoverClassName: css.popover,
-            className: css.wrapper,
-            lazy: true
-          }}
-          data-testid="multi-type-button">
-          <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
-        </Button>
-      )}
+      {renderButtonType()}
     </Layout.Horizontal>
   )
 }
