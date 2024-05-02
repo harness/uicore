@@ -6,13 +6,11 @@
  */
 
 import React, { useState, useCallback, useMemo, useEffect, CSSProperties } from 'react'
-import { Button } from '../Button/Button'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
-import { Icon } from '@harness/icons'
-import { Position, PopoverInteractionKind, IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
+import { IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '@harness/design-system'
@@ -22,15 +20,14 @@ import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
 import {
   MultiTypeInputType,
   MultiTypeInputValue,
-  MultiTypeIcon,
-  MultiTypeIconSize,
   RUNTIME_INPUT_VALUE,
   EXPRESSION_INPUT_PLACEHOLDER,
   EXECUTION_TIME_INPUT_VALUE,
   REGEX_INPUT_PLACEHOLDER,
   RUNTIME_INPUT_V1_PREFIX
 } from './MultiTypeInputUtils'
-import { AllowedTypes, AllowedTypesWithExecutionTime, MultiTypeInputMenu } from './MultiTypeInputMenu'
+import { AllowedTypes, AllowedTypesWithExecutionTime } from './MultiTypeInputMenu'
+import TypeSelectorButton from './TypeSelectorButton'
 import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/SelectWithSubmenu'
 import { SelectWithSubmenuV2, SelectWithSubmenuPropsV2 } from '../SelectWithSubmenu/SelectWithSubmenuV2'
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
@@ -148,6 +145,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     renderRuntimeInput,
     ...layoutProps
   } = props
+
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
   const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
@@ -271,40 +269,15 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           textAreaClassName={textAreaInputClassName}
         />
       )}
-      {!allowableTypes.length ? null : (
-        <Button
-          noStyling
-          className={cx(mini ? css.miniBtn : css.btn, css[type], btnClassName)}
-          tooltip={
-            disabled ? undefined : (
-              <MultiTypeInputMenu i18n={i18n} onTypeSelect={switchType} allowedTypes={allowableTypes} />
-            )
-          }
-          onClick={ev => {
-            // if ((ev.nativeEvent as PointerEvent).pointerType !== 'mouse') {
-            //   /*
-            //   PIE-1755
-            //   https://github.com/palantir/blueprint/issues/3856
-            //   Button attached next to an InputGroup triggers the click event when enter key is pressed while typing
-            //   So checking the event pointer type, and stopping the propagation if not clicked by the user
-            //   */
-            //   ev.stopPropagation()
-            // }
-            ev.preventDefault()
-          }}
-          disabled={disabled}
-          tooltipProps={{
-            minimal: true,
-            position: Position.BOTTOM_RIGHT,
-            interactionKind: PopoverInteractionKind.CLICK,
-            popoverClassName: css.popover,
-            className: css.wrapper,
-            lazy: true
-          }}
-          data-testid="multi-type-button">
-          <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
-        </Button>
-      )}
+      <TypeSelectorButton
+        allowableTypes={allowableTypes}
+        mini={mini}
+        type={type}
+        btnClassName={btnClassName}
+        disabled={disabled}
+        i18n={i18n}
+        switchType={switchType}
+      />
     </Layout.Horizontal>
   )
 }
