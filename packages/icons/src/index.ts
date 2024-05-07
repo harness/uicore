@@ -7,4 +7,3 @@
 
 export * from './Icon'
 export * from './HarnessIcons'
-export * from './HarnessIconsV2'

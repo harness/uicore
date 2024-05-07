@@ -16,9 +16,7 @@
     "build": "vite build",
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn build",
-    "ui:iconsV1": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
-    "ui:iconsV2": "node ./scripts/build-iconsV2.js > ./src/HarnessIconsV2.ts && prettier --write src/HarnessIconsV2.ts",
-    "ui:icons": "yarn ui:iconsV1 && yarn ui:iconsV2",
+    "ui:icons": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
     "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "UNLICENSED",
