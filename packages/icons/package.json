@@ -15,7 +15,9 @@
     "build": "vite build",
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn build",
-    "ui:icons": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
+    "ui:iconsV1": "node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts",
+    "ui:iconsV2": "node ./scripts/build-iconsV2.js > ./src/HarnessIconsV2.tsx && prettier --write src/HarnessIconsV2.tsx",
+    "ui:icons": "yarn ui:iconsV2",
     "test": "jest --no-cache src --config ../../jest.config.js"
   },
   "license": "UNLICENSED",
@@ -33,6 +35,7 @@
     "@svgr/plugin-svgo": "^6.2.0",
     "@types/react": "^17.0.3",
     "dts-bundle-generator": "^6.4.0",
+    "ejs": "^3.1.10",
     "glob": "^7.1.4",
     "prettier": "^2.2.1",
     "react": "^17.0.2",

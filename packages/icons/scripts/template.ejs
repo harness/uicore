@@ -1,0 +1,9 @@
+export function <%= component.name %>(props: any) { 
+    const name = '<%= component.iconName %>'; 
+    const size = props.size ||16; 
+    return (
+        <span {...omitStyledProps(props, 'name', 'size')} data-icon={name} className={styledClasses(props, Classes.ICON)}>
+            <<%= component.iconComponent %> width={size} height={size} />
+        </span>
+    )
+}
