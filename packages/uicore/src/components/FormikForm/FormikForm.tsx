@@ -13,7 +13,7 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { IconName, TagInput as BPTagInput, Popover, MenuItem, Menu, Position } from '@blueprintjs/core'
+import { IconName, TagInput as BPTagInput, Popover, MenuItem, Menu, Position, IPopoverProps } from '@blueprintjs/core'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
@@ -143,6 +143,7 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
 export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
   name: string
   tagsProps?: Partial<ITagInputProps>
+  popoverProps?: Pick<IPopoverProps, 'captureDismiss'>
   isArray?: boolean
   onChange?: ITagInputProps['onChange']
 }
@@ -150,7 +151,7 @@ export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'ite
 type KVAccumulator = { [key: string]: string }
 
 function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
-  const { formik, name, tagsProps, isArray = false, ...restProps } = props
+  const { formik, name, tagsProps, popoverProps = {}, isArray = false, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -226,7 +227,8 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
         minimal
         disabled={disabled}
         isOpen={showCreatePopover}
-        content={popoverContent}>
+        content={popoverContent}
+        {...popoverProps}>
         <BPTagInput
           values={
             isArray
