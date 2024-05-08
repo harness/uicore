@@ -698,6 +698,7 @@ import InitializeStep from './initialize-step.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
+import IntelligenceFlash from './intelligence-flash.svg'
 import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
@@ -2039,6 +2040,7 @@ type HarnessIconName =
   | 'insight-view'
   | 'instances'
   | 'integration'
+  | 'intelligence-flash'
   | 'iro-logo-outline'
   | 'iro-main'
   | 'java'
@@ -3380,6 +3382,7 @@ const HarnessIcons: KVO<ElementType> = {
   'insight-view': InsightView,
   instances: Instances,
   integration: Integration,
+  'intelligence-flash': IntelligenceFlash,
   'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
   java: Java,
