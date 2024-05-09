@@ -59,7 +59,7 @@ export function GroupedThumbnailSelect(props: ConnectedGroupedThumbnailSelectPro
 
   React.useEffect(() => {
     setShowAllOptions(isEmpty(value) || expandAllByDefault)
-  }, [value])
+  }, [value, expandAllByDefault])
 
   React.useEffect(() => {
     if (showAllOptions) {
