@@ -45,11 +45,12 @@ export function GroupedThumbnailSelect(props: ConnectedGroupedThumbnailSelectPro
     cancelText = 'Close',
     className,
     thumbnailClassName,
+    expandAllByDefault,
     onChange
   } = props
   const value = get(formik.values, name)
 
-  const [showAllOptions, setShowAllOptions] = React.useState(isEmpty(value))
+  const [showAllOptions, setShowAllOptions] = React.useState(isEmpty(value) || expandAllByDefault)
   const [visibleGroups, setVisibleGroups] = React.useState(groups)
 
   const hasError = errorCheck(name, formik)
@@ -57,7 +58,7 @@ export function GroupedThumbnailSelect(props: ConnectedGroupedThumbnailSelectPro
   const helperText = hasError ? <FormError name={name} errorMessage={get(formik?.errors, name)} /> : null
 
   React.useEffect(() => {
-    setShowAllOptions(isEmpty(value))
+    setShowAllOptions(isEmpty(value) || expandAllByDefault)
   }, [value])
 
   React.useEffect(() => {
