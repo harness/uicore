@@ -64,6 +64,7 @@ import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import ApplySchema from './apply-schema.svg'
 import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
@@ -1012,6 +1013,7 @@ import RollbackPipeline from './rollback-pipeline.svg'
 import RollbackService from './rollback-service.svg'
 import RollbackStageInverse from './rollback-stage-inverse.svg'
 import RollbackStage from './rollback-stage.svg'
+import RollbackSchema from './rollback_schema.svg'
 import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
@@ -1406,6 +1408,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'apply-schema'
   | 'apply'
   | 'approval-stage-icon'
   | 'approval-stage'
@@ -2354,6 +2357,7 @@ type HarnessIconName =
   | 'rollback-service'
   | 'rollback-stage-inverse'
   | 'rollback-stage'
+  | 'rollback_schema'
   | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
@@ -2748,6 +2752,7 @@ const HarnessIcons: KVO<ElementType> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'apply-schema': ApplySchema,
   apply: Apply,
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
@@ -3696,6 +3701,7 @@ const HarnessIcons: KVO<ElementType> = {
   'rollback-service': RollbackService,
   'rollback-stage-inverse': RollbackStageInverse,
   'rollback-stage': RollbackStage,
+  rollback_schema: RollbackSchema,
   'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
