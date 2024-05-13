@@ -1010,10 +1010,10 @@ import Roles from './roles.svg'
 import RollbackExecution from './rollback-execution.svg'
 import RollbackPipelineInverse from './rollback-pipeline-inverse.svg'
 import RollbackPipeline from './rollback-pipeline.svg'
+import RollbackSchema from './rollback-schema.svg'
 import RollbackService from './rollback-service.svg'
 import RollbackStageInverse from './rollback-stage-inverse.svg'
 import RollbackStage from './rollback-stage.svg'
-import RollbackSchema from './rollback_schema.svg'
 import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
@@ -2354,10 +2354,10 @@ type HarnessIconName =
   | 'rollback-execution'
   | 'rollback-pipeline-inverse'
   | 'rollback-pipeline'
+  | 'rollback-schema'
   | 'rollback-service'
   | 'rollback-stage-inverse'
   | 'rollback-stage'
-  | 'rollback_schema'
   | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
@@ -3698,10 +3698,10 @@ const HarnessIcons: KVO<ElementType> = {
   'rollback-execution': RollbackExecution,
   'rollback-pipeline-inverse': RollbackPipelineInverse,
   'rollback-pipeline': RollbackPipeline,
+  'rollback-schema': RollbackSchema,
   'rollback-service': RollbackService,
   'rollback-stage-inverse': RollbackStageInverse,
   'rollback-stage': RollbackStage,
-  rollback_schema: RollbackSchema,
   'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
