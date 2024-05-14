@@ -204,7 +204,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       className={cx(mini ? css.mini : css.main, {
         [css.disabled]: type === MultiTypeInputType.RUNTIME || disabled
       })}
-      width={width}
+      width={width || '100%'}
       {...layoutProps}>
       {type === MultiTypeInputType.FIXED && (
         <FixedTypeComponent
