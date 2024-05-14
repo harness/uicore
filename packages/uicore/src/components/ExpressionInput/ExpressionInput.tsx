@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { useMemo } from 'react'
 import { IInputGroupProps, Popover, Menu, IPopoverProps, InputGroup } from '@blueprintjs/core'
 import { QueryList, IQueryListRendererProps, IItemRendererProps, ItemRenderer } from '@blueprintjs/select'
 import { debounce } from 'lodash-es'
@@ -88,6 +88,54 @@ export function getItemRenderer(setActiveItem: (item: string) => void): ItemRend
   }
 }
 
+interface ExpressionDropdownProps {
+  newExpressionComponent: boolean | undefined
+  queryValue: string
+  items: string[]
+  listProps: IQueryListRendererProps<string>
+  maxHeight: React.CSSProperties['maxHeight']
+  setQueryValue: React.Dispatch<React.SetStateAction<string>>
+  setInputValue: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const ExpressionDropdown = (props: ExpressionDropdownProps): JSX.Element => {
+  const {
+    newExpressionComponent = false,
+    queryValue,
+    items,
+    listProps,
+    maxHeight,
+    setInputValue,
+    setQueryValue
+  } = props
+
+  return (
+    <>
+      {newExpressionComponent ? (
+        <NewExpressionDropdown
+          query={queryValue}
+          rootTrieNode={formatData(items)}
+          itemRenderer={
+            listProps.itemList
+              ? React.cloneElement(listProps.itemList as React.ReactElement, {
+                  className: css.expressionDropdownMenu,
+                  style: { maxHeight }
+                })
+              : null
+          }
+          setQueryValue={setQueryValue}
+          setInputValue={setInputValue}
+        />
+      ) : listProps.itemList ? (
+        React.cloneElement(listProps.itemList as React.ReactElement, {
+          className: css.menu,
+          style: { maxHeight }
+        })
+      ) : null}
+    </>
+  )
+}
+
 export function ExpressionInput(props: ExpressionInputProps): React.ReactElement {
   const {
     items = [],
@@ -126,26 +174,20 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
 
   const [activeItem, setActiveItem] = React.useState<string | null>(null)
 
-  const [filteredItems, setFilteredItems] = React.useState<string[]>([])
+  const filteredItems = useMemo(() => {
+    // reset cursor position when query value is empty
+    if (!queryValue) return []
+    return items.filter((item: string) => {
+      const match = queryValue.match(EXPRESSION_START_REGEX)
+
+      return !!match && item.toLowerCase().includes(match[1].toLowerCase())
+    })
+  }, [queryValue, items])
 
   // this is required for onChange of value prop
   React.useEffect(() => {
     setInputValue(value as string)
   }, [value])
-
-  React.useEffect(() => {
-    // reset cursor position when query value is empty
-    if (!queryValue) {
-      cursorRef.current = null
-    }
-    setFilteredItems(
-      items.filter((item: string) => {
-        const match = queryValue.match(EXPRESSION_START_REGEX)
-
-        return !!match && item.toLowerCase().includes(match[1].toLowerCase())
-      })
-    )
-  }, [queryValue])
 
   React.useEffect(() => {
     if (mountRef.current) {
@@ -371,34 +413,20 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
             textAreaClassName={textAreaClassName}
           />
         )}
-        <React.Fragment>
-          {newExpressionComponent ? (
-            <NewExpressionDropdown
-              query={queryValue}
-              rootTrieNode={formatData(items)}
-              itemRenderer={
-                listProps.itemList
-                  ? React.cloneElement(listProps.itemList as React.ReactElement, {
-                      className: css.expressionDropdownMenu,
-                      style: { maxHeight }
-                    })
-                  : null
-              }
-              setQueryValue={setQueryValue}
-              setInputValue={setInputValue}
-            />
-          ) : listProps.itemList ? (
-            React.cloneElement(listProps.itemList as React.ReactElement, {
-              className: css.menu,
-              style: { maxHeight }
-            })
-          ) : null}
-        </React.Fragment>
+        <ExpressionDropdown
+          items={items}
+          listProps={listProps}
+          maxHeight={maxHeight}
+          newExpressionComponent={newExpressionComponent}
+          queryValue={queryValue}
+          setInputValue={setInputValue}
+          setQueryValue={setQueryValue}
+        />
       </Popover>
     )
   }
 
-  const itemRenderer = React.useMemo(() => getItemRenderer(setActiveItem), [setActiveItem])
+  const itemRenderer = useMemo(() => getItemRenderer(setActiveItem), [setActiveItem])
 
   return (
     <QueryList
