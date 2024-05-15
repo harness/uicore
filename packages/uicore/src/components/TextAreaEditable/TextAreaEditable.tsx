@@ -126,24 +126,22 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
 
   handleKeyDown(e: any): void {
     const { textContent } = e.target
+    const { inputRef, onInput, keyDown } = this.props
 
-    if (e.key === '>' && this.props.inputRef.current) {
+    if (e.key === '>' && inputRef.current) {
       e.preventDefault()
       const index = getCaretIndex(e.target)
 
       const newStr =
         (textContent.slice(0, index) as string) + (e.key as string) + (textContent.slice(index).trimEnd() as string)
 
-      this.props.inputRef.current.innerHTML = highlight(sanitizeHTMLTextObject(deserialize(newStr)))
+      inputRef.current.innerHTML = highlight(sanitizeHTMLTextObject(deserialize(newStr)))
 
-      const childNodesTextLength = createChildNodeLengthSumArray(this.props.inputRef.current.childNodes)
+      const childNodesTextLength = createChildNodeLengthSumArray(inputRef.current.childNodes)
 
-      const childIndex = childNodesTextLength.findIndex(i => {
-        return i >= index
-      })
-
-      const child = this.props.inputRef.current.childNodes[childIndex]
-      const prevChild = this.props.inputRef.current.childNodes[childIndex - 1]
+      const childIndex = childNodesTextLength.findIndex(i => i >= index)
+      const child = inputRef.current.childNodes[childIndex]
+      const prevChild = inputRef.current.childNodes[childIndex - 1]
       let offset = 0
       if (prevChild) {
         offset = index - childNodesTextLength[childIndex - 1] + 1
@@ -151,14 +149,14 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
         offset = index + 1
       }
 
-      this.props.onInput(e)
+      onInput(e)
       /**
        * node.nodeName returns #text for an exclusive Text node
        *  MDN Reference :- https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName
        */
       setCaret(child, offset, child.nodeName.toLowerCase() !== '#text')
     }
-    this.props.keyDown(e)
+    keyDown(e)
   }
 
   render() {
