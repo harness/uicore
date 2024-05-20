@@ -197,7 +197,6 @@ import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
 import CcmWithDarkText from './ccm-with-dark-text.svg'
 import CcmWithText from './ccm-with-text.svg'
-import CdHover from './cd-hover.svg'
 import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
@@ -835,8 +834,6 @@ import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
 import NavAccountAdmin from './nav-account-admin.svg'
 import NavBuilds from './nav-builds.svg'
-import NavCdHover from './nav-cd-hover.svg'
-import NavCdSelected from './nav-cd-selected.svg'
 import NavCd from './nav-cd.svg'
 import NavCf from './nav-cf.svg'
 import NavCvHover from './nav-cv-hover.svg'
@@ -1195,6 +1192,8 @@ import SlotDeployment from './slot-deployment.svg'
 import SlsaGeneration from './slsa-generation.svg'
 import SlsaVerification from './slsa-verification.svg'
 import Slsa from './slsa.svg'
+import SmileConfused from './smile-confused.svg'
+import SmileHappy from './smile-happy.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import SolidError from './solid-error.svg'
@@ -1541,7 +1540,6 @@ type HarnessIconName =
   | 'ccm-solid'
   | 'ccm-with-dark-text'
   | 'ccm-with-text'
-  | 'cd-hover'
   | 'cd-main-inverse'
   | 'cd-main'
   | 'cd-sketch'
@@ -2179,8 +2177,6 @@ type HarnessIconName =
   | 'nav-account-admin-selected'
   | 'nav-account-admin'
   | 'nav-builds'
-  | 'nav-cd-hover'
-  | 'nav-cd-selected'
   | 'nav-cd'
   | 'nav-cf'
   | 'nav-cv-hover'
@@ -2539,6 +2535,8 @@ type HarnessIconName =
   | 'slsa-generation'
   | 'slsa-verification'
   | 'slsa'
+  | 'smile-confused'
+  | 'smile-happy'
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'solid-error'
@@ -2885,7 +2883,6 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-solid': CcmSolid,
   'ccm-with-dark-text': CcmWithDarkText,
   'ccm-with-text': CcmWithText,
-  'cd-hover': CdHover,
   'cd-main-inverse': CdMainInverse,
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
@@ -3523,8 +3520,6 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-account-admin-selected': NavAccountAdminSelected,
   'nav-account-admin': NavAccountAdmin,
   'nav-builds': NavBuilds,
-  'nav-cd-hover': NavCdHover,
-  'nav-cd-selected': NavCdSelected,
   'nav-cd': NavCd,
   'nav-cf': NavCf,
   'nav-cv-hover': NavCvHover,
@@ -3883,6 +3878,8 @@ const HarnessIcons: KVO<ElementType> = {
   'slsa-generation': SlsaGeneration,
   'slsa-verification': SlsaVerification,
   slsa: Slsa,
+  'smile-confused': SmileConfused,
+  'smile-happy': SmileHappy,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   'solid-error': SolidError,
