@@ -119,6 +119,8 @@ export function AccordionWithoutRef(
   React.useEffect(() => {
     if (controlledActiveId) {
       setActivePanels({ [controlledActiveId]: true })
+    } else {
+      setActivePanels({})
     }
   }, [controlledActiveId])
 
