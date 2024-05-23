@@ -21,7 +21,7 @@ import {
 } from '../..'
 import { ListHeaderProps } from './ListHeader'
 import { IconName } from '@blueprintjs/core'
-import css from './ListHeader.css'
+import css from './ListHeaderStory.css'
 import cx from 'classnames'
 import { noop } from 'lodash-es'
 
