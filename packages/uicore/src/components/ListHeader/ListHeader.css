@@ -8,3 +8,7 @@
 .listHeader {
   margin: var(--spacing-medium) var(--spacing-xxlarge) !important;
 }
+
+.listHeaderStory {
+  width: 100% !important;
+}
