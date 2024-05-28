@@ -40,6 +40,7 @@ export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose' | 
   customButtons?: React.ReactNode
   showCloseButton?: boolean
   children?: JSX.Element
+  titleLineClamp?: number
 }
 
 const confirmDialogProps: Partial<IDialogProps> = {
@@ -64,6 +65,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
     showCloseButton = true,
     children,
     className,
+    titleLineClamp,
     ...rest
   } = props
 
@@ -85,7 +87,9 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
 
       <Layout.Horizontal className={css.header} padding={{ left: 'xsmall' }}>
         <Icon name={getIconForIntent(intent)} size={32} margin={{ right: 'small' }} intent={intent} />
-        <Text font={{ variation: FontVariation.H4 }}>{titleText}</Text>
+        <Text lineClamp={titleLineClamp} font={{ variation: FontVariation.H4 }}>
+          {titleText}
+        </Text>
       </Layout.Horizontal>
       <Layout.Vertical
         font={{ variation: FontVariation.BODY }}
