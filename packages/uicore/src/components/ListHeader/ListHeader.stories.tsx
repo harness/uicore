@@ -25,6 +25,22 @@ import css from './ListHeaderStory.css'
 import cx from 'classnames'
 import { noop } from 'lodash-es'
 
+const selectOptions = [
+  {
+    label: 'Service Kubernetes',
+    value: 'service-kubernetes',
+    icon: { name: 'service-kubernetes' as IconName }
+  },
+  {
+    label: 'Service Github',
+    value: 'service-github',
+    icon: { name: 'service-github' as IconName }
+  },
+  { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' as IconName } },
+  { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' as IconName } },
+  { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' as IconName } }
+]
+
 export default {
   title: 'Components / ListHeader',
 
@@ -75,31 +91,59 @@ export const ListHeaderWithoutContent: Story<ListHeaderProps> = () => {
   )
 }
 
-export const ListHeaderWithContent: Story<ListHeaderProps> = () => {
-  const items = [
-    {
-      label: 'Service Kubernetes',
-      value: 'service-kubernetes',
-      icon: { name: 'service-kubernetes' as IconName }
-    },
-    {
-      label: 'Service Github',
-      value: 'service-github',
-      icon: { name: 'service-github' as IconName }
-    },
-    { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' as IconName } },
-    { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' as IconName } },
-    { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' as IconName } }
-  ]
+export const ListHeaderWithPreDropdownContent: Story<ListHeaderProps> = () => {
   return (
     <ListHeader
       totalCount={100}
       sortOptions={[...sortByName, ...sortByEmail, ...sortByCreated, ...sortByStatus, ...sortByVersion]}
       selectedSortMethod={SortMethod.NameAsc}
       onSortMethodChange={noop}
-      content={
-        <div style={{ width: '240px', marginRight: '12px' }}>
-          <Select items={items} addClearBtn={true} value={items[1]} />
+      preDropdownContent={
+        <div className={cx(css.selectWrapper, css.selectWrapperPre)}>
+          <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+        </div>
+      }
+      className={cx(css.listHeaderStory)}
+    />
+  )
+}
+
+export const ListHeaderWithPostDropdownContent: Story<ListHeaderProps> = () => {
+  return (
+    <ListHeader
+      totalCount={100}
+      sortOptions={[...sortByName, ...sortByEmail, ...sortByCreated, ...sortByStatus, ...sortByVersion]}
+      selectedSortMethod={SortMethod.NameAsc}
+      onSortMethodChange={noop}
+      postDropdownContent={
+        <div>
+          <div className={cx(css.selectWrapper, css.selectWrapperPost)}>
+            <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+          </div>
+        </div>
+      }
+      className={cx(css.listHeaderStory)}
+    />
+  )
+}
+
+export const ListHeaderWithPreAndPostDropdownContent: Story<ListHeaderProps> = () => {
+  return (
+    <ListHeader
+      totalCount={100}
+      sortOptions={[...sortByName, ...sortByEmail, ...sortByCreated, ...sortByStatus, ...sortByVersion]}
+      selectedSortMethod={SortMethod.NameAsc}
+      onSortMethodChange={noop}
+      preDropdownContent={
+        <div className={cx(css.selectWrapper, css.selectWrapperPre)}>
+          <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+        </div>
+      }
+      postDropdownContent={
+        <div>
+          <div className={cx(css.selectWrapper, css.selectWrapperPost)}>
+            <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+          </div>
         </div>
       }
       className={cx(css.listHeaderStory)}

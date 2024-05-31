@@ -8,3 +8,15 @@
 .listHeaderStory {
   width: 100% !important;
 }
+
+.selectWrapper {
+  width: 240px;
+
+  &Pre {
+    margin-right: 8px;
+  }
+
+  &Post {
+    margin-left: 8px !important;
+  }
+}
