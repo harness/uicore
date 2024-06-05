@@ -5,6 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
+import { Intent } from '@blueprintjs/core'
 import type { Entry, Asset } from 'contentful'
 import type { Color } from '@harness/design-system'
 import type { Document as RichTextDocument } from '@contentful/rich-text-types'
@@ -64,6 +65,14 @@ export interface IReferenceIdMap {
   helpPanel: Entry<IHelpPanel>
 }
 
-export interface IBanner {
+export interface BannerFields {
   title: string
+  message?: string
+  intent: Intent
+}
+
+export interface IUrlBannerMap {
+  url: string
+  banner: Array<Entry<BannerFields>>
+  matchExactUrl: boolean
 }

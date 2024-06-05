@@ -25,22 +25,13 @@ import { useCache } from '../../hooks/useCache'
 // import BannerContent from './BannerContent/BannerContent'
 import Contentful from '../../ContentfulApi'
 // import { useContentful } from '../../HelpPanelContext'
-import {
-  ContentType
-  // IHelpPanel
-} from '../../types/contentfulTypes'
+import { ContentType, BannerFields, IUrlBannerMap } from '../../types/contentfulTypes'
 
 import css from './Banner.module.css'
 
 export enum BannerType {
   TOP_BANNER = 'TOP_BANNER',
   POST = 'POST'
-}
-
-export interface BannerFields {
-  title: string
-  message?: string
-  intent: Intent
 }
 
 // export interface BannerInterface {
@@ -75,6 +66,7 @@ interface BannerProps {
 }
 
 const Banner: React.FC<BannerProps> = props => {
+  const client = Contentful.getClient()
   const {
     // referenceId
     path,
@@ -96,7 +88,6 @@ const Banner: React.FC<BannerProps> = props => {
   }
   useEffect(() => {
     const getUrlBannerMap = async (): Promise<void> => {
-      const client = Contentful.getClient()
       const response = await client.getEntries({
         'fields.url[match]': path,
         // eslint-disable-next-line camelcase
@@ -131,9 +122,26 @@ const Banner: React.FC<BannerProps> = props => {
   //     hideFooter
   //   />
   // )
-  const filteredBanners = useMemo(() => {
-    const entries = get(urlBannerMapResponse, 'includes.Entry')
-    return entries?.map((entry: Entry<BannerFields>) => {
+  const finalBannersToBeShown = useMemo(() => {
+    // const entries = get(urlBannerMapResponse, 'includes.Entry')
+    console.log('data: ', JSON.stringify(urlBannerMapResponse))
+    console.log('parsedData: ', JSON.stringify(client.parseEntries(urlBannerMapResponse)))
+    const urlBannerMapArray = get(urlBannerMapResponse, 'items')
+
+    let innerFilteredBanners: IUrlBannerMap['banner'] = []
+    urlBannerMapArray?.map((urlBannerMapEntry: Entry<IUrlBannerMap>) => {
+      const urlBannerMap = urlBannerMapEntry?.fields
+      const { url, banner: bannerArray, matchExactUrl } = urlBannerMap || {}
+      if (matchExactUrl === true) {
+        if (url === path) {
+          innerFilteredBanners = [...innerFilteredBanners, ...(bannerArray || [])]
+        }
+      } else {
+        innerFilteredBanners = [...innerFilteredBanners, ...(bannerArray || [])]
+      }
+    })
+
+    return innerFilteredBanners?.map((entry: Entry<BannerFields>) => {
       const plainBannerObj = entry?.fields
       // console.log('plainBannerObj: ', plainBannerObj)
       return plainBannerObj
@@ -143,7 +151,7 @@ const Banner: React.FC<BannerProps> = props => {
   // console.log('filteredBanners: ', filteredBanners)
   return (
     <div>
-      {filteredBanners?.map((banner: BannerFields) => {
+      {finalBannersToBeShown?.map((banner: BannerFields) => {
         // const { bannerProps } = banner
         const { message, title, intent } = banner
         // const {
