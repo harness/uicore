@@ -298,6 +298,7 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CirclePipelineRollback from './circle-pipeline-rollback.svg'
 import CircleStop from './circle-stop.svg'
+import Cis from './cis.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudAccounts from './cloud-accounts.svg'
 import CloudDark from './cloud-dark.svg'
@@ -1209,6 +1210,7 @@ import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
+import SscaRuledefinition from './ssca-ruledefinition.svg'
 import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
@@ -1643,6 +1645,7 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-pipeline-rollback'
   | 'circle-stop'
+  | 'cis'
   | 'clipboard-alt'
   | 'cloud-accounts'
   | 'cloud-dark'
@@ -2554,6 +2557,7 @@ type HarnessIconName =
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
+  | 'ssca-ruledefinition'
   | 'ssl-cert'
   | 'stale-cache'
   | 'star-empty'
@@ -2988,6 +2992,7 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-pipeline-rollback': CirclePipelineRollback,
   'circle-stop': CircleStop,
+  cis: Cis,
   'clipboard-alt': ClipboardAlt,
   'cloud-accounts': CloudAccounts,
   'cloud-dark': CloudDark,
@@ -3899,6 +3904,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
+  'ssca-ruledefinition': SscaRuledefinition,
   'ssl-cert': SslCert,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
