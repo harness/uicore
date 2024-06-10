@@ -298,6 +298,7 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CirclePipelineRollback from './circle-pipeline-rollback.svg'
 import CircleStop from './circle-stop.svg'
+import Cis from './cis.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudAccounts from './cloud-accounts.svg'
 import CloudDark from './cloud-dark.svg'
@@ -1644,6 +1645,7 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-pipeline-rollback'
   | 'circle-stop'
+  | 'cis'
   | 'clipboard-alt'
   | 'cloud-accounts'
   | 'cloud-dark'
@@ -2990,6 +2992,7 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-pipeline-rollback': CirclePipelineRollback,
   'circle-stop': CircleStop,
+  cis: Cis,
   'clipboard-alt': ClipboardAlt,
   'cloud-accounts': CloudAccounts,
   'cloud-dark': CloudDark,
