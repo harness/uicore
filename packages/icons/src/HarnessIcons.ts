@@ -704,6 +704,7 @@ import IntelligenceFlash from './intelligence-flash.svg'
 import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
+import Jdbc from './jdbc.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
 import JiraCreateInverse from './jira-create-inverse.svg'
@@ -2052,6 +2053,7 @@ type HarnessIconName =
   | 'iro-logo-outline'
   | 'iro-main'
   | 'java'
+  | 'jdbc'
   | 'jira-approve-inverse'
   | 'jira-approve'
   | 'jira-create-inverse'
@@ -3400,6 +3402,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
   java: Java,
+  jdbc: Jdbc,
   'jira-approve-inverse': JiraApproveInverse,
   'jira-approve': JiraApprove,
   'jira-create-inverse': JiraCreateInverse,
