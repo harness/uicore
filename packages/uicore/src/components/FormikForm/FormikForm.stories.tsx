@@ -17,6 +17,7 @@ import { Button } from '../Button/Button'
 import { FormikFormProps } from 'formik'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
+import { SelectOption } from '../Select/Select'
 
 const tooltips: Record<string, string> = {
   option1: 'This is example tooltip 1',
@@ -684,6 +685,12 @@ export const Basic: Story<FormikFormProps> = () => (
         sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
       })}>
       {() => {
+        const asyncFetchItems = async (): Promise<SelectOption[]> => {
+          const response = await fetch('https://api.restful-api.dev/objects')
+          const data = await response.json()
+          return data.map((item: any) => ({ value: item.id, label: item.name })) as SelectOption[]
+        }
+
         return (
           <FormikForm>
             <FormInput.Text
@@ -807,6 +814,18 @@ export const Basic: Story<FormikFormProps> = () => (
                     },
                     { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
                   ]
+                }
+              }}
+            />
+            <FormInput.MultiTypeInput
+              name="phone"
+              label="Phones (Async Select)"
+              selectItems={asyncFetchItems}
+              useValue
+              multiTypeInputProps={{
+                selectProps: {
+                  addClearBtn: true,
+                  items: []
                 }
               }}
             />
