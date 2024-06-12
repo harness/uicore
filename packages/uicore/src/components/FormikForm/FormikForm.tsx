@@ -1094,7 +1094,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
 
   let value = get(formik?.values, name) // formik form value
   if (useValue && currentType === MultiTypeInputType.FIXED) {
-    const selectedItem = (Array.isArray(items) ? (items as SelectOption[]) : []).find(item => item.value === value)
+    const selectedItem = items.find(item => item.value === value)
     if (isNil(selectedItem) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
       // If allow creating custom value is true
       value = {
