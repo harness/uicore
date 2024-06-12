@@ -39,18 +39,22 @@ function tab(props: TabProps) {
 }
 
 function Tabs(props: TabsProps): React.ReactElement {
-  const { renderAllTabPanels, vertical, children, tabList = [], ...rest } = props
+  const { renderAllTabPanels, vertical, children, className, tabList = [], ...rest } = props
   const hasIcons = tabList.findIndex(tabProp => tabProp.iconProps?.name) !== -1
   return (
     <BpTabs
       {...rest}
       vertical={vertical}
       renderActiveTabPanelOnly={!renderAllTabPanels}
-      className={cx(css.main, {
-        [css.vertical]: vertical,
-        [css.horizontal]: !vertical,
-        [css.icons]: hasIcons && !vertical
-      })}>
+      className={cx(
+        css.main,
+        {
+          [css.vertical]: vertical,
+          [css.horizontal]: !vertical,
+          [css.icons]: hasIcons && !vertical
+        },
+        className
+      )}>
       {tabList.map(tabProp => {
         return tab(tabProp)
       })}

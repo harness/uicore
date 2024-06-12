@@ -298,6 +298,7 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CirclePipelineRollback from './circle-pipeline-rollback.svg'
 import CircleStop from './circle-stop.svg'
+import Cis from './cis.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudAccounts from './cloud-accounts.svg'
 import CloudDark from './cloud-dark.svg'
@@ -703,6 +704,7 @@ import IntelligenceFlash from './intelligence-flash.svg'
 import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
+import Jdbc from './jdbc.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
 import JiraCreateInverse from './jira-create-inverse.svg'
@@ -710,6 +712,7 @@ import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import K8SPatch from './k8s-patch.svg'
+import K8SRollout from './k8s-rollout.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
@@ -1203,11 +1206,13 @@ import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
 import SscaArtifacts from './ssca-artifacts.svg'
+import SscaCompliance from './ssca-compliance.svg'
 import SscaComponents from './ssca-components.svg'
 import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
+import SscaRuledefinition from './ssca-ruledefinition.svg'
 import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
@@ -1642,6 +1647,7 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-pipeline-rollback'
   | 'circle-stop'
+  | 'cis'
   | 'clipboard-alt'
   | 'cloud-accounts'
   | 'cloud-dark'
@@ -2047,6 +2053,7 @@ type HarnessIconName =
   | 'iro-logo-outline'
   | 'iro-main'
   | 'java'
+  | 'jdbc'
   | 'jira-approve-inverse'
   | 'jira-approve'
   | 'jira-create-inverse'
@@ -2054,6 +2061,7 @@ type HarnessIconName =
   | 'jira-update-inverse'
   | 'jira-update'
   | 'k8s-patch'
+  | 'k8s-rollout'
   | 'k8s-traffic-routing'
   | 'key-main'
   | 'key'
@@ -2547,11 +2555,13 @@ type HarnessIconName =
   | 'spot'
   | 'srm-with-dark-text'
   | 'ssca-artifacts'
+  | 'ssca-compliance'
   | 'ssca-components'
   | 'ssca-enforce'
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
+  | 'ssca-ruledefinition'
   | 'ssl-cert'
   | 'stale-cache'
   | 'star-empty'
@@ -2986,6 +2996,7 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-pipeline-rollback': CirclePipelineRollback,
   'circle-stop': CircleStop,
+  cis: Cis,
   'clipboard-alt': ClipboardAlt,
   'cloud-accounts': CloudAccounts,
   'cloud-dark': CloudDark,
@@ -3391,6 +3402,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
   java: Java,
+  jdbc: Jdbc,
   'jira-approve-inverse': JiraApproveInverse,
   'jira-approve': JiraApprove,
   'jira-create-inverse': JiraCreateInverse,
@@ -3398,6 +3410,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
   'k8s-patch': K8SPatch,
+  'k8s-rollout': K8SRollout,
   'k8s-traffic-routing': K8STrafficRouting,
   'key-main': KeyMain,
   key: Key,
@@ -3891,11 +3904,13 @@ const HarnessIcons: KVO<ElementType> = {
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
   'ssca-artifacts': SscaArtifacts,
+  'ssca-compliance': SscaCompliance,
   'ssca-components': SscaComponents,
   'ssca-enforce': SscaEnforce,
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
+  'ssca-ruledefinition': SscaRuledefinition,
   'ssl-cert': SslCert,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
