@@ -963,6 +963,7 @@ import Rancher from './rancher.svg'
 import ReExecuted from './re-executed.svg'
 import RegEx from './reg-ex.svg'
 import RegisterCatalog from './register-catalog.svg'
+import RemoteArtifact from './remote-artifact.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
@@ -2311,6 +2312,7 @@ type HarnessIconName =
   | 're-executed'
   | 'reg-ex'
   | 'register-catalog'
+  | 'remote-artifact'
   | 'remote-setup'
   | 'remote'
   | 'remotefile'
@@ -3659,6 +3661,7 @@ const HarnessIcons: KVO<ElementType> = {
   're-executed': ReExecuted,
   'reg-ex': RegEx,
   'register-catalog': RegisterCatalog,
+  'remote-artifact': RemoteArtifact,
   'remote-setup': RemoteSetup,
   remote: Remote,
   remotefile: Remotefile,
