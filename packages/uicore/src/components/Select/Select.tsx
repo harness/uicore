@@ -34,6 +34,8 @@ type Props = ISuggestProps<SelectOption>
 
 const Loading = Symbol('loading')
 
+export const LoadingSelectOption: SelectOption = { label: 'Loading...', value: Loading }
+
 export interface SelectProps
   extends Omit<
     Props,
@@ -271,7 +273,7 @@ export function Select(props: SelectProps): React.ReactElement {
       }}
       resetOnSelect={resetOnSelect}
       resetOnClose={resetOnClose}
-      items={loading ? [{ label: 'Loading...', value: Loading }] : items}
+      items={loading ? [LoadingSelectOption] : items}
       selectedItem={item}
       onItemSelect={handleItemSelect}
       query={query}

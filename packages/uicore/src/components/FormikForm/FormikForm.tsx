@@ -7,7 +7,12 @@
 
 import React, { ReactNode, useCallback, useMemo, useState, useRef, useEffect } from 'react'
 import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikHelpers } from 'formik'
-import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
+import {
+  LoadingSelectOption,
+  SelectOption,
+  Select as UiKitSelect,
+  SelectProps as UiKitSelectProps
+} from '../Select/Select'
 import {
   MultiSelect as UiKitMultiSelect,
   MultiSelectOption,
@@ -1046,7 +1051,7 @@ export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor
 }
 
 const isFetchSelectOptionsFunction = (fn: unknown): fn is FetchSelectOptions => {
-  return typeof fn === 'function' && fn() instanceof Promise
+  return typeof fn === 'function'
 }
 
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
@@ -1060,7 +1065,9 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     ...rest
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
-  const [items, setItems] = useState<SelectOption[]>([])
+  const [items, setItems] = useState<SelectOption[]>(
+    Array.isArray(props.selectItems) ? props.selectItems : [LoadingSelectOption] // Required, otherwise dropdown shows "No results found" even before the api call is made
+  )
   const [loading, setLoading] = useState<boolean>(false)
   const fetchPromiseRef = useRef<Promise<SelectOption[]> | null>(null)
   const isAsyncSelect = isFetchSelectOptionsFunction(props.selectItems)
