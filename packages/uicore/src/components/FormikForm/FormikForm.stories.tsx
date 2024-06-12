@@ -8,7 +8,7 @@
 /* eslint-disable no-useless-escape */
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { noop } from 'lodash-es'
+import { get, noop } from 'lodash-es'
 import * as Yup from 'yup'
 
 import { Formik, FormikForm, FormInput } from '../FormikForm/FormikForm'
@@ -660,6 +660,8 @@ const getSampleTooltip = () => {
   }
 }
 
+const PUBLIC_API_URL = 'https://api.restful-api.dev/objects'
+
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
     <Formik
@@ -685,10 +687,11 @@ export const Basic: Story<FormikFormProps> = () => (
         sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
       })}>
       {() => {
+        /* Calls a public api to provide mock data for Dropdown Options */
         const asyncFetchItems = async (): Promise<SelectOption[]> => {
-          const response = await fetch('https://api.restful-api.dev/objects')
-          const data = await response.json()
-          return data.map((item: any) => ({ value: item.id, label: item.name })) as SelectOption[]
+          const response = await fetch(PUBLIC_API_URL)
+          const data: unknown[] = await response.json()
+          return (data || [])?.map(item => ({ value: get(item, 'id'), label: get(item, 'name') })) as SelectOption[]
         }
 
         return (
