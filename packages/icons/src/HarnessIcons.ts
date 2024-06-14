@@ -209,6 +209,7 @@ import CodeAscending from './code-ascending.svg'
 import CodeBranchSmall from './code-branch-small.svg'
 import CodeBranch from './code-branch.svg'
 import CodeChat from './code-chat.svg'
+import CodeChecks from './code-checks.svg'
 import CodeClone from './code-clone.svg'
 import CodeClose from './code-close.svg'
 import CodeClosed from './code-closed.svg'
@@ -1188,6 +1189,7 @@ type HarnessIconName =
   | 'code-branch-small'
   | 'code-branch'
   | 'code-chat'
+  | 'code-checks'
   | 'code-clone'
   | 'code-close'
   | 'code-closed'
@@ -2167,6 +2169,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-branch-small': CodeBranchSmall,
   'code-branch': CodeBranch,
   'code-chat': CodeChat,
+  'code-checks': CodeChecks,
   'code-clone': CodeClone,
   'code-close': CodeClose,
   'code-closed': CodeClosed,
