@@ -18,6 +18,7 @@ import { FormikFormProps } from 'formik'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
 import { SelectOption } from '../Select/Select'
+import { mockData } from './mock'
 
 const tooltips: Record<string, string> = {
   option1: 'This is example tooltip 1',
@@ -660,8 +661,6 @@ const getSampleTooltip = () => {
   }
 }
 
-const PUBLIC_API_URL = 'https://api.restful-api.dev/objects'
-
 export const Basic: Story<FormikFormProps> = () => (
   <Container width={400} margin={{ left: 'large' }}>
     <Formik
@@ -687,11 +686,11 @@ export const Basic: Story<FormikFormProps> = () => (
         sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
       })}>
       {() => {
-        /* Calls a public api to provide mock data for Dropdown Options */
         const asyncFetchItems = async (): Promise<SelectOption[]> => {
-          const response = await fetch(PUBLIC_API_URL)
-          const data: unknown[] = await response.json()
-          return (data || [])?.map(item => ({ value: get(item, 'id'), label: get(item, 'name') })) as SelectOption[]
+          return mockData?.map(item => ({
+            value: item?.id,
+            label: item?.name
+          })) as SelectOption[]
         }
 
         return (
