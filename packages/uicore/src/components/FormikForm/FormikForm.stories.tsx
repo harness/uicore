@@ -687,10 +687,12 @@ export const Basic: Story<FormikFormProps> = () => (
       })}>
       {() => {
         const asyncFetchItems = async (): Promise<SelectOption[]> => {
-          return mockData?.map(item => ({
-            value: item?.id,
-            label: item?.name
-          })) as SelectOption[]
+          return Promise.resolve(
+            mockData?.map(item => ({
+              value: item?.id,
+              label: item?.name
+            })) as SelectOption[]
+          )
         }
 
         return (
