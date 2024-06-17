@@ -8,7 +8,7 @@
 /* eslint-disable no-useless-escape */
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { get, noop } from 'lodash-es'
+import { noop } from 'lodash-es'
 import * as Yup from 'yup'
 
 import { Formik, FormikForm, FormInput } from '../FormikForm/FormikForm'
