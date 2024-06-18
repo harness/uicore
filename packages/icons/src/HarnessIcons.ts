@@ -1317,6 +1317,7 @@ import Timeout from './timeout.svg'
 import Timer from './timer.svg'
 import TodoListHarness from './todo-list-harness.svg'
 import Todo from './todo.svg'
+import Tools from './tools.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -2666,6 +2667,7 @@ type HarnessIconName =
   | 'timer'
   | 'todo-list-harness'
   | 'todo'
+  | 'tools'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -4015,6 +4017,7 @@ const HarnessIcons: KVO<ElementType> = {
   timer: Timer,
   'todo-list-harness': TodoListHarness,
   todo: Todo,
+  tools: Tools,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,
