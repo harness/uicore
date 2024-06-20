@@ -37,6 +37,7 @@ import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import Arrow from './arrow.svg'
+import ArtifactRegistry from './artifact-registry.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
 import AsgCanaryDeleteInverse from './asg-canary-delete-inverse.svg'
@@ -120,6 +121,7 @@ import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
 import CcmPolicyShield from './ccm-policy-shield.svg'
 import CcmSketch from './ccm-sketch.svg'
+import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import Cd from './cd.svg'
 import CdkBootstrapInverse from './cdk-bootstrap-inverse.svg'
@@ -339,6 +341,7 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
+import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
 import DownloadAwsS3Store from './download-aws-s3-store.svg'
 import DownloadBox from './download-box.svg'
@@ -421,6 +424,7 @@ import Functions from './functions.svg'
 import GarStepInverse from './gar-step-inverse.svg'
 import GarStep from './gar-step.svg'
 import Gear from './gear.svg'
+import GenericRepositoryType from './generic-repository-type.svg'
 import GetStarted from './get-started.svg'
 import GitBranchExisting from './git-branch-existing.svg'
 import GitCloneCiStepInverse from './git-clone-ci-step-inverse.svg'
@@ -458,6 +462,7 @@ import Gitops from './gitops.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
+import GradleRepositoryType from './gradle-repository-type.svg'
 import GraphIncrease from './graph-increase.svg'
 import Graph from './graph.svg'
 import Grid from './grid.svg'
@@ -612,6 +617,7 @@ import MainZoomOut from './main-zoom-out.svg'
 import MarkAsFailed from './mark-as-failed.svg'
 import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
+import MavenRepositoryType from './maven-repository-type.svg'
 import MemberRole from './memberRole.svg'
 import MergePr from './merge-pr.svg'
 import MonitoredService from './monitored-service.svg'
@@ -661,6 +667,8 @@ import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
+import NpmRepositoryType from './npm-repository-type.svg'
+import NugetRepositoryType from './nuget-repository-type.svg'
 import OfflineOutline from './offline-outline.svg'
 import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
@@ -709,6 +717,7 @@ import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import PullRequest from './pull-request.svg'
+import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
@@ -825,6 +834,7 @@ import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAccounts from './service-accounts.svg'
 import ServiceCustomConnector from './service-custom-connector.svg'
 import ServiceGrafanaLoki from './service-grafana-loki.svg'
+import ServiceHelm from './service-helm.svg'
 import ServiceSignalfx from './service-signalfx.svg'
 import ServiceVm from './service-vm.svg'
 import Service from './service.svg'
@@ -837,6 +847,7 @@ import ServicenowUpdate from './servicenow-update.svg'
 import Services from './services.svg'
 import Setting from './setting.svg'
 import SetupApi from './setup-api.svg'
+import SetupClient from './setup-client.svg'
 import SetupTags from './setup-tags.svg'
 import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
@@ -867,8 +878,10 @@ import StatusUpgrade from './status-upgrade.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
 import StepsSpinner from './steps-spinner.svg'
+import StoColorFilled from './sto-color-filled.svg'
 import StoContainers from './sto-containers.svg'
 import StoDast from './sto-dast.svg'
+import StoGrey from './sto-grey.svg'
 import StoSast from './sto-sast.svg'
 import StoSca from './sto-sca.svg'
 import StoSecrets from './sto-secrets.svg'
@@ -966,6 +979,7 @@ import Up from './up.svg'
 import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
+import UpstreamProxiesIcon from './upstream-proxies-icon.svg'
 import UserGroups from './user-groups.svg'
 import User from './user.svg'
 import Utility from './utility.svg'
@@ -1017,6 +1031,7 @@ type HarnessIconName =
   | 'approval-stage'
   | 'approval-step'
   | 'arrow'
+  | 'artifact-registry'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
   | 'asg-canary-delete-inverse'
@@ -1100,6 +1115,7 @@ type HarnessIconName =
   | 'ccm-policy-shield-checked'
   | 'ccm-policy-shield'
   | 'ccm-sketch'
+  | 'cd-main'
   | 'cd-sketch'
   | 'cd'
   | 'cdk-bootstrap-inverse'
@@ -1319,6 +1335,7 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'description'
+  | 'docker-step'
   | 'docs'
   | 'download-aws-s3-store'
   | 'download-box'
@@ -1401,6 +1418,7 @@ type HarnessIconName =
   | 'gar-step-inverse'
   | 'gar-step'
   | 'gear'
+  | 'generic-repository-type'
   | 'get-started'
   | 'git-branch-existing'
   | 'git-clone-ci-step-inverse'
@@ -1438,6 +1456,7 @@ type HarnessIconName =
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
+  | 'gradle-repository-type'
   | 'graph-increase'
   | 'graph'
   | 'grid'
@@ -1592,6 +1611,7 @@ type HarnessIconName =
   | 'mark-as-failed'
   | 'mark-as-failure-inverse'
   | 'mark-as-failure'
+  | 'maven-repository-type'
   | 'memberRole'
   | 'merge-pr'
   | 'monitored-service'
@@ -1641,6 +1661,8 @@ type HarnessIconName =
   | 'no-instances'
   | 'not-synced'
   | 'notification'
+  | 'npm-repository-type'
+  | 'nuget-repository-type'
   | 'offline-outline'
   | 'oidc-authentication'
   | 'onprem-dark'
@@ -1689,6 +1711,7 @@ type HarnessIconName =
   | 'pruned'
   | 'publish-step'
   | 'pull-request'
+  | 'python'
   | 'question'
   | 'queue-step'
   | 'queued'
@@ -1805,6 +1828,7 @@ type HarnessIconName =
   | 'service-accounts'
   | 'service-custom-connector'
   | 'service-grafana-loki'
+  | 'service-helm'
   | 'service-signalfx'
   | 'service-vm'
   | 'service'
@@ -1817,6 +1841,7 @@ type HarnessIconName =
   | 'services'
   | 'setting'
   | 'setup-api'
+  | 'setup-client'
   | 'setup-tags'
   | 'shield-gears'
   | 'simple-verification'
@@ -1847,8 +1872,10 @@ type HarnessIconName =
   | 'step-group'
   | 'step-jira'
   | 'steps-spinner'
+  | 'sto-color-filled'
   | 'sto-containers'
   | 'sto-dast'
+  | 'sto-grey'
   | 'sto-sast'
   | 'sto-sca'
   | 'sto-secrets'
@@ -1946,6 +1973,7 @@ type HarnessIconName =
   | 'update-app'
   | 'upgrade-bolt'
   | 'upload-box'
+  | 'upstream-proxies-icon'
   | 'user-groups'
   | 'user'
   | 'utility'
@@ -1997,6 +2025,7 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
   arrow: Arrow,
+  'artifact-registry': ArtifactRegistry,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
   'asg-canary-delete-inverse': AsgCanaryDeleteInverse,
@@ -2080,6 +2109,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
   'ccm-policy-shield': CcmPolicyShield,
   'ccm-sketch': CcmSketch,
+  'cd-main': CdMain,
   'cd-sketch': CdSketch,
   cd: Cd,
   'cdk-bootstrap-inverse': CdkBootstrapInverse,
@@ -2299,6 +2329,7 @@ const HarnessIcons: KVO<ElementType> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   description: Description,
+  'docker-step': DockerStep,
   docs: Docs,
   'download-aws-s3-store': DownloadAwsS3Store,
   'download-box': DownloadBox,
@@ -2381,6 +2412,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gar-step-inverse': GarStepInverse,
   'gar-step': GarStep,
   gear: Gear,
+  'generic-repository-type': GenericRepositoryType,
   'get-started': GetStarted,
   'git-branch-existing': GitBranchExisting,
   'git-clone-ci-step-inverse': GitCloneCiStepInverse,
@@ -2418,6 +2450,7 @@ const HarnessIcons: KVO<ElementType> = {
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
+  'gradle-repository-type': GradleRepositoryType,
   'graph-increase': GraphIncrease,
   graph: Graph,
   grid: Grid,
@@ -2572,6 +2605,7 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-as-failed': MarkAsFailed,
   'mark-as-failure-inverse': MarkAsFailureInverse,
   'mark-as-failure': MarkAsFailure,
+  'maven-repository-type': MavenRepositoryType,
   memberRole: MemberRole,
   'merge-pr': MergePr,
   'monitored-service': MonitoredService,
@@ -2621,6 +2655,8 @@ const HarnessIcons: KVO<ElementType> = {
   'no-instances': NoInstances,
   'not-synced': NotSynced,
   notification: Notification,
+  'npm-repository-type': NpmRepositoryType,
+  'nuget-repository-type': NugetRepositoryType,
   'offline-outline': OfflineOutline,
   'oidc-authentication': OidcAuthentication,
   'onprem-dark': OnpremDark,
@@ -2669,6 +2705,7 @@ const HarnessIcons: KVO<ElementType> = {
   pruned: Pruned,
   'publish-step': PublishStep,
   'pull-request': PullRequest,
+  python: Python,
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
@@ -2785,6 +2822,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-accounts': ServiceAccounts,
   'service-custom-connector': ServiceCustomConnector,
   'service-grafana-loki': ServiceGrafanaLoki,
+  'service-helm': ServiceHelm,
   'service-signalfx': ServiceSignalfx,
   'service-vm': ServiceVm,
   service: Service,
@@ -2797,6 +2835,7 @@ const HarnessIcons: KVO<ElementType> = {
   services: Services,
   setting: Setting,
   'setup-api': SetupApi,
+  'setup-client': SetupClient,
   'setup-tags': SetupTags,
   'shield-gears': ShieldGears,
   'simple-verification': SimpleVerification,
@@ -2827,8 +2866,10 @@ const HarnessIcons: KVO<ElementType> = {
   'step-group': StepGroup,
   'step-jira': StepJira,
   'steps-spinner': StepsSpinner,
+  'sto-color-filled': StoColorFilled,
   'sto-containers': StoContainers,
   'sto-dast': StoDast,
+  'sto-grey': StoGrey,
   'sto-sast': StoSast,
   'sto-sca': StoSca,
   'sto-secrets': StoSecrets,
@@ -2926,6 +2967,7 @@ const HarnessIcons: KVO<ElementType> = {
   'update-app': UpdateApp,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
+  'upstream-proxies-icon': UpstreamProxiesIcon,
   'user-groups': UserGroups,
   user: User,
   utility: Utility,
