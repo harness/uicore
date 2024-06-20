@@ -631,6 +631,7 @@ import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
 import Gitspaces from './gitspaces.svg'
 import Golang from './golang.svg'
+import GoogleBigquery from './google-bigquery.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
@@ -1981,6 +1982,7 @@ type HarnessIconName =
   | 'gitops'
   | 'gitspaces'
   | 'golang'
+  | 'google-bigquery'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance-policy-set'
@@ -3331,6 +3333,7 @@ const HarnessIcons: KVO<ElementType> = {
   gitops: Gitops,
   gitspaces: Gitspaces,
   golang: Golang,
+  'google-bigquery': GoogleBigquery,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   'governance-policy-set': GovernancePolicySet,
