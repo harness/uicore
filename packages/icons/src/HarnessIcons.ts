@@ -1207,6 +1207,7 @@ import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
 import SscaArtifacts from './ssca-artifacts.svg'
+import SscaCod from './ssca-cod.svg'
 import SscaCompliance from './ssca-compliance.svg'
 import SscaComponents from './ssca-components.svg'
 import SscaEnforce from './ssca-enforce.svg'
@@ -2558,6 +2559,7 @@ type HarnessIconName =
   | 'spot'
   | 'srm-with-dark-text'
   | 'ssca-artifacts'
+  | 'ssca-cod'
   | 'ssca-compliance'
   | 'ssca-components'
   | 'ssca-enforce'
@@ -3909,6 +3911,7 @@ const HarnessIcons: KVO<ElementType> = {
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
   'ssca-artifacts': SscaArtifacts,
+  'ssca-cod': SscaCod,
   'ssca-compliance': SscaCompliance,
   'ssca-components': SscaComponents,
   'ssca-enforce': SscaEnforce,
