@@ -1087,6 +1087,7 @@ import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollba
 import ServerlessAwsLambdaRollbackV2 from './serverless-aws-lambda-rollback-v2.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAccounts from './service-accounts.svg'
+import ServiceAdr from './service-adr.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAmi from './service-ami.svg'
 import ServiceAnsible from './service-ansible.svg'
@@ -1145,6 +1146,7 @@ import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
 import ServiceMongodb from './service-mongodb.svg'
 import ServiceMsteams from './service-msteams.svg'
 import ServiceMydatacenter from './service-mydatacenter.svg'
+import ServiceNameBugsnag from './service-name-bugsnag.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
 import ServiceOgz from './service-ogz.svg'
@@ -2439,6 +2441,7 @@ type HarnessIconName =
   | 'serverless-aws-lambda-rollback-v2'
   | 'serverless-deploy-step'
   | 'service-accounts'
+  | 'service-adr'
   | 'service-amazon-ecs'
   | 'service-ami'
   | 'service-ansible'
@@ -2497,6 +2500,7 @@ type HarnessIconName =
   | 'service-mongodb'
   | 'service-msteams'
   | 'service-mydatacenter'
+  | 'service-name-bugsnag'
   | 'service-newrelic'
   | 'service-nexus'
   | 'service-ogz'
@@ -3791,6 +3795,7 @@ const HarnessIcons: KVO<ElementType> = {
   'serverless-aws-lambda-rollback-v2': ServerlessAwsLambdaRollbackV2,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-accounts': ServiceAccounts,
+  'service-adr': ServiceAdr,
   'service-amazon-ecs': ServiceAmazonEcs,
   'service-ami': ServiceAmi,
   'service-ansible': ServiceAnsible,
@@ -3849,6 +3854,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-mongodb': ServiceMongodb,
   'service-msteams': ServiceMsteams,
   'service-mydatacenter': ServiceMydatacenter,
+  'service-name-bugsnag': ServiceNameBugsnag,
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
   'service-ogz': ServiceOgz,
