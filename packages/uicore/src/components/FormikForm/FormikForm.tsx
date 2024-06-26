@@ -1156,7 +1156,12 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
           loadingItems: loading
         }}
         onChange={onChangeCallback}
-        onFocus={fetchItems}
+        onFocus={(event: React.FocusEvent<HTMLInputElement>) => {
+          multiTypeInputProps?.onFocus?.(event)
+          if (isAsyncSelect) {
+            fetchItems()
+          }
+        }}
       />
     </FormGroup>
   )
