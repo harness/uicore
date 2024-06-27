@@ -5,9 +5,14 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { ReactNode, useCallback, useMemo, useState, useRef } from 'react'
+import React, { ReactNode, useCallback, useMemo, useState, useRef, useEffect } from 'react'
 import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikHelpers } from 'formik'
-import { SelectOption, Select as UiKitSelect, SelectProps as UiKitSelectProps } from '../Select/Select'
+import {
+  LoadingSelectOption,
+  SelectOption,
+  Select as UiKitSelect,
+  SelectProps as UiKitSelectProps
+} from '../Select/Select'
 import {
   MultiSelect as UiKitMultiSelect,
   MultiSelectOption,
@@ -1030,6 +1035,8 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContextProps<any>) 
   )
 }
 
+type FetchSelectOptions = () => Promise<SelectOption[]>
+
 export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
   name: string
   label: string
@@ -1038,13 +1045,17 @@ export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor
    *Enable this when we want to use value, instead of label/value
    */
   useValue?: boolean
-  selectItems: SelectOption[]
+  selectItems: SelectOption[] | FetchSelectOptions
   multiTypeInputProps?: Omit<MultiTypeInputProps, 'name'>
   disabled?: boolean
 }
 
+const isFetchSelectOptionsFunction = (fn: unknown): fn is FetchSelectOptions => {
+  return typeof fn === 'function'
+}
+
 const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<any>) => {
-  const { formik, name, useValue = false, selectItems, placeholder, multiTypeInputProps, ...restProps } = props
+  const { formik, name, useValue = false, placeholder, multiTypeInputProps, ...restProps } = props
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -1054,6 +1065,19 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     ...rest
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
+  const [items, setItems] = useState<SelectOption[]>(
+    Array.isArray(props.selectItems) ? props.selectItems : [LoadingSelectOption] // Required, otherwise dropdown shows "No results found" even before the api call is made
+  )
+  const [loading, setLoading] = useState<boolean>(false)
+  const fetchPromiseRef = useRef<Promise<SelectOption[]> | null>(null)
+  const isAsyncSelect = isFetchSelectOptionsFunction(props.selectItems)
+
+  useEffect(() => {
+    if (Array.isArray(props.selectItems)) {
+      setItems(props.selectItems)
+    }
+  }, [props.selectItems])
+
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
     (val, valueType, type) => {
       type !== currentType && setCurrentType(type)
@@ -1070,7 +1094,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
 
   let value = get(formik?.values, name) // formik form value
   if (useValue && currentType === MultiTypeInputType.FIXED) {
-    const selectedItem = selectItems.find(item => item.value === value)
+    const selectedItem = items.find(item => item.value === value)
     if (isNil(selectedItem) && multiTypeInputProps?.selectProps?.allowCreatingNewItems) {
       // If allow creating custom value is true
       value = {
@@ -1087,6 +1111,23 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     }
   }
 
+  const fetchItems = useCallback((): void => {
+    if (!fetchPromiseRef.current) {
+      if (typeof props.selectItems === 'function') {
+        setLoading(true)
+        fetchPromiseRef.current = props.selectItems()
+        fetchPromiseRef.current
+          .then(results => {
+            setItems(results)
+            setLoading(false)
+          })
+          .catch(() => {
+            setLoading(false)
+          })
+      }
+    }
+  }, [fetchPromiseRef.current])
+
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
   return (
     <FormGroup
@@ -1102,8 +1143,8 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
         name={name}
         disabled={disabled}
         selectProps={{
-          items: selectItems,
-          ...multiTypeInputProps?.selectProps,
+          items,
+          ...(isAsyncSelect ? { ...multiTypeInputProps?.selectProps, items } : multiTypeInputProps?.selectProps),
           name,
           inputProps: {
             name,
@@ -1111,9 +1152,16 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
             intent,
             placeholder,
             disabled
-          }
+          },
+          loadingItems: loading
         }}
         onChange={onChangeCallback}
+        onFocus={(event: React.FocusEvent<HTMLInputElement>) => {
+          multiTypeInputProps?.onFocus?.(event)
+          if (isAsyncSelect) {
+            fetchItems()
+          }
+        }}
       />
     </FormGroup>
   )

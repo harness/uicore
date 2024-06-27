@@ -198,7 +198,6 @@ import CcmSketch from './ccm-sketch.svg'
 import CcmSolid from './ccm-solid.svg'
 import CcmWithDarkText from './ccm-with-dark-text.svg'
 import CcmWithText from './ccm-with-text.svg'
-import CdHover from './cd-hover.svg'
 import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
@@ -300,6 +299,7 @@ import CiWithText from './ci-with-text.svg'
 import CircleCross from './circle-cross.svg'
 import CirclePipelineRollback from './circle-pipeline-rollback.svg'
 import CircleStop from './circle-stop.svg'
+import Cis from './cis.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudAccounts from './cloud-accounts.svg'
 import CloudDark from './cloud-dark.svg'
@@ -433,6 +433,7 @@ import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
 import DbDevops from './db-devops.svg'
 import DbSchema from './db-schema.svg'
+import DbStep from './db-step.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -631,6 +632,7 @@ import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
 import Gitspaces from './gitspaces.svg'
 import Golang from './golang.svg'
+import GoogleBigquery from './google-bigquery.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
@@ -704,6 +706,7 @@ import IntelligenceFlash from './intelligence-flash.svg'
 import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
+import Jdbc from './jdbc.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
 import JiraCreateInverse from './jira-create-inverse.svg'
@@ -711,6 +714,7 @@ import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import K8SPatch from './k8s-patch.svg'
+import K8SRollout from './k8s-rollout.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
@@ -836,8 +840,6 @@ import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
 import NavAccountAdmin from './nav-account-admin.svg'
 import NavBuilds from './nav-builds.svg'
-import NavCdHover from './nav-cd-hover.svg'
-import NavCdSelected from './nav-cd-selected.svg'
 import NavCd from './nav-cd.svg'
 import NavCf from './nav-cf.svg'
 import NavCvHover from './nav-cv-hover.svg'
@@ -1087,6 +1089,7 @@ import ServerlessAwsLambdaRollbackV2Inverse from './serverless-aws-lambda-rollba
 import ServerlessAwsLambdaRollbackV2 from './serverless-aws-lambda-rollback-v2.svg'
 import ServerlessDeployStep from './serverless-deploy-step.svg'
 import ServiceAccounts from './service-accounts.svg'
+import ServiceAdr from './service-adr.svg'
 import ServiceAmazonEcs from './service-amazon-ecs.svg'
 import ServiceAmi from './service-ami.svg'
 import ServiceAnsible from './service-ansible.svg'
@@ -1145,6 +1148,7 @@ import ServiceMicrosoftTeams from './service-microsoft-teams.svg'
 import ServiceMongodb from './service-mongodb.svg'
 import ServiceMsteams from './service-msteams.svg'
 import ServiceMydatacenter from './service-mydatacenter.svg'
+import ServiceNameBugsnag from './service-name-bugsnag.svg'
 import ServiceNewrelic from './service-newrelic.svg'
 import ServiceNexus from './service-nexus.svg'
 import ServiceOgz from './service-ogz.svg'
@@ -1197,6 +1201,8 @@ import SlotDeployment from './slot-deployment.svg'
 import SlsaGeneration from './slsa-generation.svg'
 import SlsaVerification from './slsa-verification.svg'
 import Slsa from './slsa.svg'
+import SmileConfused from './smile-confused.svg'
+import SmileHappy from './smile-happy.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import SolidError from './solid-error.svg'
@@ -1205,11 +1211,14 @@ import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
 import SrmWithDarkText from './srm-with-dark-text.svg'
 import SscaArtifacts from './ssca-artifacts.svg'
+import SscaCod from './ssca-cod.svg'
+import SscaCompliance from './ssca-compliance.svg'
 import SscaComponents from './ssca-components.svg'
 import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
+import SscaRuledefinition from './ssca-ruledefinition.svg'
 import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
@@ -1314,6 +1323,7 @@ import Timeout from './timeout.svg'
 import Timer from './timer.svg'
 import TodoListHarness from './todo-list-harness.svg'
 import Todo from './todo.svg'
+import Tools from './tools.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1544,7 +1554,6 @@ type HarnessIconName =
   | 'ccm-solid'
   | 'ccm-with-dark-text'
   | 'ccm-with-text'
-  | 'cd-hover'
   | 'cd-main-inverse'
   | 'cd-main'
   | 'cd-sketch'
@@ -1646,6 +1655,7 @@ type HarnessIconName =
   | 'circle-cross'
   | 'circle-pipeline-rollback'
   | 'circle-stop'
+  | 'cis'
   | 'clipboard-alt'
   | 'cloud-accounts'
   | 'cloud-dark'
@@ -1779,6 +1789,7 @@ type HarnessIconName =
   | 'data-fetch-error'
   | 'db-devops'
   | 'db-schema'
+  | 'db-step'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -1977,6 +1988,7 @@ type HarnessIconName =
   | 'gitops'
   | 'gitspaces'
   | 'golang'
+  | 'google-bigquery'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance-policy-set'
@@ -2050,6 +2062,7 @@ type HarnessIconName =
   | 'iro-logo-outline'
   | 'iro-main'
   | 'java'
+  | 'jdbc'
   | 'jira-approve-inverse'
   | 'jira-approve'
   | 'jira-create-inverse'
@@ -2057,6 +2070,7 @@ type HarnessIconName =
   | 'jira-update-inverse'
   | 'jira-update'
   | 'k8s-patch'
+  | 'k8s-rollout'
   | 'k8s-traffic-routing'
   | 'key-main'
   | 'key'
@@ -2182,8 +2196,6 @@ type HarnessIconName =
   | 'nav-account-admin-selected'
   | 'nav-account-admin'
   | 'nav-builds'
-  | 'nav-cd-hover'
-  | 'nav-cd-selected'
   | 'nav-cd'
   | 'nav-cf'
   | 'nav-cv-hover'
@@ -2433,6 +2445,7 @@ type HarnessIconName =
   | 'serverless-aws-lambda-rollback-v2'
   | 'serverless-deploy-step'
   | 'service-accounts'
+  | 'service-adr'
   | 'service-amazon-ecs'
   | 'service-ami'
   | 'service-ansible'
@@ -2491,6 +2504,7 @@ type HarnessIconName =
   | 'service-mongodb'
   | 'service-msteams'
   | 'service-mydatacenter'
+  | 'service-name-bugsnag'
   | 'service-newrelic'
   | 'service-nexus'
   | 'service-ogz'
@@ -2543,6 +2557,8 @@ type HarnessIconName =
   | 'slsa-generation'
   | 'slsa-verification'
   | 'slsa'
+  | 'smile-confused'
+  | 'smile-happy'
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'solid-error'
@@ -2551,11 +2567,14 @@ type HarnessIconName =
   | 'spot'
   | 'srm-with-dark-text'
   | 'ssca-artifacts'
+  | 'ssca-cod'
+  | 'ssca-compliance'
   | 'ssca-components'
   | 'ssca-enforce'
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
+  | 'ssca-ruledefinition'
   | 'ssl-cert'
   | 'stale-cache'
   | 'star-empty'
@@ -2660,6 +2679,7 @@ type HarnessIconName =
   | 'timer'
   | 'todo-list-harness'
   | 'todo'
+  | 'tools'
   | 'tooltip-icon'
   | 'traffic-lights'
   | 'trigger-artifact'
@@ -2890,7 +2910,6 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-solid': CcmSolid,
   'ccm-with-dark-text': CcmWithDarkText,
   'ccm-with-text': CcmWithText,
-  'cd-hover': CdHover,
   'cd-main-inverse': CdMainInverse,
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
@@ -2992,6 +3011,7 @@ const HarnessIcons: KVO<ElementType> = {
   'circle-cross': CircleCross,
   'circle-pipeline-rollback': CirclePipelineRollback,
   'circle-stop': CircleStop,
+  cis: Cis,
   'clipboard-alt': ClipboardAlt,
   'cloud-accounts': CloudAccounts,
   'cloud-dark': CloudDark,
@@ -3125,6 +3145,7 @@ const HarnessIcons: KVO<ElementType> = {
   'data-fetch-error': DataFetchError,
   'db-devops': DbDevops,
   'db-schema': DbSchema,
+  'db-step': DbStep,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
@@ -3323,6 +3344,7 @@ const HarnessIcons: KVO<ElementType> = {
   gitops: Gitops,
   gitspaces: Gitspaces,
   golang: Golang,
+  'google-bigquery': GoogleBigquery,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   'governance-policy-set': GovernancePolicySet,
@@ -3396,6 +3418,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
   java: Java,
+  jdbc: Jdbc,
   'jira-approve-inverse': JiraApproveInverse,
   'jira-approve': JiraApprove,
   'jira-create-inverse': JiraCreateInverse,
@@ -3403,6 +3426,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
   'k8s-patch': K8SPatch,
+  'k8s-rollout': K8SRollout,
   'k8s-traffic-routing': K8STrafficRouting,
   'key-main': KeyMain,
   key: Key,
@@ -3528,8 +3552,6 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-account-admin-selected': NavAccountAdminSelected,
   'nav-account-admin': NavAccountAdmin,
   'nav-builds': NavBuilds,
-  'nav-cd-hover': NavCdHover,
-  'nav-cd-selected': NavCdSelected,
   'nav-cd': NavCd,
   'nav-cf': NavCf,
   'nav-cv-hover': NavCvHover,
@@ -3779,6 +3801,7 @@ const HarnessIcons: KVO<ElementType> = {
   'serverless-aws-lambda-rollback-v2': ServerlessAwsLambdaRollbackV2,
   'serverless-deploy-step': ServerlessDeployStep,
   'service-accounts': ServiceAccounts,
+  'service-adr': ServiceAdr,
   'service-amazon-ecs': ServiceAmazonEcs,
   'service-ami': ServiceAmi,
   'service-ansible': ServiceAnsible,
@@ -3837,6 +3860,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-mongodb': ServiceMongodb,
   'service-msteams': ServiceMsteams,
   'service-mydatacenter': ServiceMydatacenter,
+  'service-name-bugsnag': ServiceNameBugsnag,
   'service-newrelic': ServiceNewrelic,
   'service-nexus': ServiceNexus,
   'service-ogz': ServiceOgz,
@@ -3889,6 +3913,8 @@ const HarnessIcons: KVO<ElementType> = {
   'slsa-generation': SlsaGeneration,
   'slsa-verification': SlsaVerification,
   slsa: Slsa,
+  'smile-confused': SmileConfused,
+  'smile-happy': SmileHappy,
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   'solid-error': SolidError,
@@ -3897,11 +3923,14 @@ const HarnessIcons: KVO<ElementType> = {
   spot: Spot,
   'srm-with-dark-text': SrmWithDarkText,
   'ssca-artifacts': SscaArtifacts,
+  'ssca-cod': SscaCod,
+  'ssca-compliance': SscaCompliance,
   'ssca-components': SscaComponents,
   'ssca-enforce': SscaEnforce,
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
+  'ssca-ruledefinition': SscaRuledefinition,
   'ssl-cert': SslCert,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
@@ -4006,6 +4035,7 @@ const HarnessIcons: KVO<ElementType> = {
   timer: Timer,
   'todo-list-harness': TodoListHarness,
   todo: Todo,
+  tools: Tools,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
   'trigger-artifact': TriggerArtifact,

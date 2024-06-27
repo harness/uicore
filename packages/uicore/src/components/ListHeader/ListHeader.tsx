@@ -12,20 +12,26 @@ import css from './ListHeader.css'
 import { Layout, Text } from '../../'
 import { SortDropdown, SortDropdownProps } from '../SortDropdown/SortDropdown'
 
-interface ListHeaderProps extends SortDropdownProps {
+export interface ListHeaderProps extends SortDropdownProps {
   totalCount?: number
   className?: string
+  preDropdownContent?: React.ReactNode
+  postDropdownContent?: React.ReactNode
 }
 
 export function ListHeader(props: ListHeaderProps): JSX.Element {
-  const { totalCount, className, ...rest } = props
+  const { totalCount, className, preDropdownContent, postDropdownContent, ...rest } = props
   return (
     <Layout.Horizontal
       flex={{ distribution: 'space-between' }}
       margin={{ bottom: 'small' }}
       className={cx(css.listHeader, className)}>
       <Text font={{ variation: FontVariation.H5 }}>Total: {totalCount}</Text>
-      <SortDropdown {...rest} />
+      <Layout.Horizontal>
+        {preDropdownContent}
+        <SortDropdown {...rest} />
+        {postDropdownContent}
+      </Layout.Horizontal>
     </Layout.Horizontal>
   )
 }

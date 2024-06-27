@@ -8,7 +8,7 @@
 import React from 'react'
 import cx from 'classnames'
 import { marked } from 'marked'
-import { PopoverInteractionKind } from '@blueprintjs/core'
+import { Classes, PopoverInteractionKind } from '@blueprintjs/core'
 import { useTooltips } from './TooltipContext'
 import { TooltipRenderProps } from './types'
 
@@ -47,7 +47,7 @@ export const HarnessDocTooltip = ({
 
   const tooltipJsxComponent = (
     <Popover
-      popoverClassName={css.tooltipWrapper}
+      popoverClassName={cx(Classes.DARK, css.tooltipWrapper)}
       position="auto"
       interactionKind={PopoverInteractionKind.HOVER}
       content={
