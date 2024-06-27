@@ -48,6 +48,7 @@ import Zap from './ZAP.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
 import AccordionExpanded from './accordion-expanded.svg'
+import AccountSettings from './account-settings.svg'
 import AcrCiStepInverse from './acr-ci-step-inverse.svg'
 import AcrCiStep from './acr-ci-step.svg'
 import Activity from './activity.svg'
@@ -902,6 +903,7 @@ import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import Opsgenie from './opsgenie.svg'
 import OptionsHollow from './options-hollow.svg'
+import OrganisationSettings from './organisation-settings.svg'
 import OsvInverse from './osv-inverse.svg'
 import Osv from './osv.svg'
 import OtherWorkload from './other-workload.svg'
@@ -1392,6 +1394,7 @@ type HarnessIconName =
   | 'access-control'
   | 'accordion-collapsed'
   | 'accordion-expanded'
+  | 'account-settings'
   | 'acr-ci-step-inverse'
   | 'acr-ci-step'
   | 'activity'
@@ -2246,6 +2249,7 @@ type HarnessIconName =
   | 'openshift'
   | 'opsgenie'
   | 'options-hollow'
+  | 'organisation-settings'
   | 'osv-inverse'
   | 'osv'
   | 'other-workload'
@@ -2736,6 +2740,7 @@ const HarnessIcons: KVO<ElementType> = {
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
   'accordion-expanded': AccordionExpanded,
+  'account-settings': AccountSettings,
   'acr-ci-step-inverse': AcrCiStepInverse,
   'acr-ci-step': AcrCiStep,
   activity: Activity,
@@ -3590,6 +3595,7 @@ const HarnessIcons: KVO<ElementType> = {
   openshift: Openshift,
   opsgenie: Opsgenie,
   'options-hollow': OptionsHollow,
+  'organisation-settings': OrganisationSettings,
   'osv-inverse': OsvInverse,
   osv: Osv,
   'other-workload': OtherWorkload,
