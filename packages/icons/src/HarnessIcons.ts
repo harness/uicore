@@ -459,6 +459,7 @@ import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
+import Gitspace from './gitspace.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
@@ -987,6 +988,7 @@ import ValuesFIle from './valuesFIle.svg'
 import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import ViewerRole from './viewerRole.svg'
+import Vscode from './vscode.svg'
 import Waiting from './waiting.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
@@ -1453,6 +1455,7 @@ type HarnessIconName =
   | 'gitops-unknown'
   | 'gitops-yes'
   | 'gitops'
+  | 'gitspace'
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
@@ -1981,6 +1984,7 @@ type HarnessIconName =
   | 'variables-blue'
   | 'variables'
   | 'viewerRole'
+  | 'vscode'
   | 'waiting'
   | 'warning-icon'
   | 'warning-outline'
@@ -2447,6 +2451,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
   gitops: Gitops,
+  gitspace: Gitspace,
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
@@ -2975,6 +2980,7 @@ const HarnessIcons: KVO<ElementType> = {
   'variables-blue': VariablesBlue,
   variables: Variables,
   viewerRole: ViewerRole,
+  vscode: Vscode,
   waiting: Waiting,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
