@@ -630,6 +630,7 @@ import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
+import Gitspace from './gitspace.svg'
 import Gitspaces from './gitspaces.svg'
 import Golang from './golang.svg'
 import GoogleBigquery from './google-bigquery.svg'
@@ -1348,6 +1349,7 @@ import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
+import Vscode from './vscode.svg'
 import Waiting from './waiting.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
@@ -1986,6 +1988,7 @@ type HarnessIconName =
   | 'gitops-unknown'
   | 'gitops-yes'
   | 'gitops'
+  | 'gitspace'
   | 'gitspaces'
   | 'golang'
   | 'google-bigquery'
@@ -2704,6 +2707,7 @@ type HarnessIconName =
   | 'variables'
   | 'view-json'
   | 'viewerRole'
+  | 'vscode'
   | 'waiting'
   | 'warning-icon'
   | 'warning-outline'
@@ -3342,6 +3346,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
   gitops: Gitops,
+  gitspace: Gitspace,
   gitspaces: Gitspaces,
   golang: Golang,
   'google-bigquery': GoogleBigquery,
@@ -4060,6 +4065,7 @@ const HarnessIcons: KVO<ElementType> = {
   variables: Variables,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
+  vscode: Vscode,
   waiting: Waiting,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
