@@ -273,6 +273,8 @@ import ChaosWithText from './chaos-with-text.svg'
 import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
+import CheckovScannerInverse from './checkov-scanner-inverse.svg'
+import CheckovScanner from './checkov-scanner.svg'
 import Checkov from './checkov.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiBuildPipeline from './ci-build-pipeline.svg'
@@ -1629,6 +1631,8 @@ type HarnessIconName =
   | 'chat'
   | 'check-alt'
   | 'check'
+  | 'checkov-scanner-inverse'
+  | 'checkov-scanner'
   | 'checkov'
   | 'ci-active-build'
   | 'ci-build-pipeline'
@@ -2985,6 +2989,8 @@ const HarnessIcons: KVO<ElementType> = {
   chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
+  'checkov-scanner-inverse': CheckovScannerInverse,
+  'checkov-scanner': CheckovScanner,
   checkov: Checkov,
   'ci-active-build': CiActiveBuild,
   'ci-build-pipeline': CiBuildPipeline,
