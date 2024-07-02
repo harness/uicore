@@ -340,6 +340,7 @@ import TasInverse from './tas-inverse.svg'
 import TerraformCloud from './terraform-cloud.svg'
 import TriggerGithub from './trigger-github.svg'
 import ViewJson from './view-json.svg'
+import Vscode from './vscode.svg'
 import Wiz from './wiz.svg'
 
 type LogoNames =
@@ -672,6 +673,7 @@ type LogoNames =
   | 'terraform-cloud'
   | 'trigger-github'
   | 'view-json'
+  | 'vscode'
   | 'wiz'
 
 const Logos: KVO<ElementType> = {
@@ -1004,6 +1006,7 @@ const Logos: KVO<ElementType> = {
   'terraform-cloud': TerraformCloud,
   'trigger-github': TriggerGithub,
   'view-json': ViewJson,
+  vscode: Vscode,
   wiz: Wiz
 }
 

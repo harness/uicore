@@ -459,6 +459,7 @@ import GitopsSuspended from './gitops-suspended.svg'
 import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
+import Gitspace from './gitspace.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
@@ -619,6 +620,7 @@ import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
 import MavenRepositoryType from './maven-repository-type.svg'
 import MemberRole from './memberRole.svg'
+import MenuPause from './menu-pause.svg'
 import MergePr from './merge-pr.svg'
 import MonitoredService from './monitored-service.svg'
 import MultiService from './multi-service.svg'
@@ -1453,6 +1455,7 @@ type HarnessIconName =
   | 'gitops-unknown'
   | 'gitops-yes'
   | 'gitops'
+  | 'gitspace'
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
@@ -1613,6 +1616,7 @@ type HarnessIconName =
   | 'mark-as-failure'
   | 'maven-repository-type'
   | 'memberRole'
+  | 'menu-pause'
   | 'merge-pr'
   | 'monitored-service'
   | 'multi-service'
@@ -2447,6 +2451,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-unknown': GitopsUnknown,
   'gitops-yes': GitopsYes,
   gitops: Gitops,
+  gitspace: Gitspace,
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
@@ -2607,6 +2612,7 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-as-failure': MarkAsFailure,
   'maven-repository-type': MavenRepositoryType,
   memberRole: MemberRole,
+  'menu-pause': MenuPause,
   'merge-pr': MergePr,
   'monitored-service': MonitoredService,
   'multi-service': MultiService,
