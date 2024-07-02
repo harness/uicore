@@ -620,6 +620,7 @@ import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
 import MavenRepositoryType from './maven-repository-type.svg'
 import MemberRole from './memberRole.svg'
+import MenuPause from './menu-pause.svg'
 import MergePr from './merge-pr.svg'
 import MonitoredService from './monitored-service.svg'
 import MultiService from './multi-service.svg'
@@ -1615,6 +1616,7 @@ type HarnessIconName =
   | 'mark-as-failure'
   | 'maven-repository-type'
   | 'memberRole'
+  | 'menu-pause'
   | 'merge-pr'
   | 'monitored-service'
   | 'multi-service'
@@ -2610,6 +2612,7 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-as-failure': MarkAsFailure,
   'maven-repository-type': MavenRepositoryType,
   memberRole: MemberRole,
+  'menu-pause': MenuPause,
   'merge-pr': MergePr,
   'monitored-service': MonitoredService,
   'multi-service': MultiService,
