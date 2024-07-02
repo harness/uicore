@@ -988,7 +988,6 @@ import ValuesFIle from './valuesFIle.svg'
 import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import ViewerRole from './viewerRole.svg'
-import Vscode from './vscode.svg'
 import Waiting from './waiting.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
@@ -1984,7 +1983,6 @@ type HarnessIconName =
   | 'variables-blue'
   | 'variables'
   | 'viewerRole'
-  | 'vscode'
   | 'waiting'
   | 'warning-icon'
   | 'warning-outline'
@@ -2980,7 +2978,6 @@ const HarnessIcons: KVO<ElementType> = {
   'variables-blue': VariablesBlue,
   variables: Variables,
   viewerRole: ViewerRole,
-  vscode: Vscode,
   waiting: Waiting,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
