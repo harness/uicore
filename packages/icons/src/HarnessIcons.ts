@@ -731,6 +731,7 @@ import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
 import LineChart from './line-chart.svg'
+import LinkedApps from './linked-apps.svg'
 import Linkedin from './linkedin.svg'
 import ListBlue from './list-blue.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
@@ -2089,6 +2090,7 @@ type HarnessIconName =
   | 'layout-right'
   | 'library'
   | 'line-chart'
+  | 'linked-apps'
   | 'linkedin'
   | 'list-blue'
   | 'list-entity-infographic'
@@ -3447,6 +3449,7 @@ const HarnessIcons: KVO<ElementType> = {
   'layout-right': LayoutRight,
   library: Library,
   'line-chart': LineChart,
+  'linked-apps': LinkedApps,
   linkedin: Linkedin,
   'list-blue': ListBlue,
   'list-entity-infographic': ListEntityInfographic,
