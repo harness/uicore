@@ -70,6 +70,7 @@ import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
+import AppsLinked from './apps-linked.svg'
 import AquasecInverse from './aquasec-inverse.svg'
 import Aquasec from './aquasec.svg'
 import Argo from './argo.svg'
@@ -1429,6 +1430,7 @@ type HarnessIconName =
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
+  | 'apps-linked'
   | 'aquasec-inverse'
   | 'aquasec'
   | 'argo'
@@ -2788,6 +2790,7 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
+  'apps-linked': AppsLinked,
   'aquasec-inverse': AquasecInverse,
   aquasec: Aquasec,
   argo: Argo,
