@@ -70,6 +70,7 @@ import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
+import AppsLinked from './apps-linked.svg'
 import AquasecInverse from './aquasec-inverse.svg'
 import Aquasec from './aquasec.svg'
 import Argo from './argo.svg'
@@ -635,6 +636,7 @@ import Gitops from './gitops.svg'
 import Gitspaces from './gitspaces.svg'
 import Golang from './golang.svg'
 import GoogleBigquery from './google-bigquery.svg'
+import GoogleGemini from './google-gemini.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
@@ -731,6 +733,7 @@ import LayoutFloat from './layout-float.svg'
 import LayoutRight from './layout-right.svg'
 import Library from './library.svg'
 import LineChart from './line-chart.svg'
+import LinkedApps from './linked-apps.svg'
 import Linkedin from './linkedin.svg'
 import ListBlue from './list-blue.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
@@ -1430,6 +1433,7 @@ type HarnessIconName =
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
+  | 'apps-linked'
   | 'aquasec-inverse'
   | 'aquasec'
   | 'argo'
@@ -1995,6 +1999,7 @@ type HarnessIconName =
   | 'gitspaces'
   | 'golang'
   | 'google-bigquery'
+  | 'google-gemini'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance-policy-set'
@@ -2091,6 +2096,7 @@ type HarnessIconName =
   | 'layout-right'
   | 'library'
   | 'line-chart'
+  | 'linked-apps'
   | 'linkedin'
   | 'list-blue'
   | 'list-entity-infographic'
@@ -2790,6 +2796,7 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
+  'apps-linked': AppsLinked,
   'aquasec-inverse': AquasecInverse,
   aquasec: Aquasec,
   argo: Argo,
@@ -3355,6 +3362,7 @@ const HarnessIcons: KVO<ElementType> = {
   gitspaces: Gitspaces,
   golang: Golang,
   'google-bigquery': GoogleBigquery,
+  'google-gemini': GoogleGemini,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   'governance-policy-set': GovernancePolicySet,
@@ -3451,6 +3459,7 @@ const HarnessIcons: KVO<ElementType> = {
   'layout-right': LayoutRight,
   library: Library,
   'line-chart': LineChart,
+  'linked-apps': LinkedApps,
   linkedin: Linkedin,
   'list-blue': ListBlue,
   'list-entity-infographic': ListEntityInfographic,
