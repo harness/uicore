@@ -834,9 +834,11 @@ import Mend from './mend.svg'
 import MergePr from './merge-pr.svg'
 import MetasploitInverse from './metasploit-inverse.svg'
 import Metasploit from './metasploit.svg'
+import MetricSources from './metric-sources.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MoneyIcon from './money-icon.svg'
 import MonitoredService from './monitored-service.svg'
+import MonitoringAgents from './monitoring-agents.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
@@ -2192,9 +2194,11 @@ type HarnessIconName =
   | 'merge-pr'
   | 'metasploit-inverse'
   | 'metasploit'
+  | 'metric-sources'
   | 'microsoft-azure'
   | 'money-icon'
   | 'monitored-service'
+  | 'monitoring-agents'
   | 'multi-service'
   | 'nav-account-admin-hover'
   | 'nav-account-admin-selected'
@@ -3550,9 +3554,11 @@ const HarnessIcons: KVO<ElementType> = {
   'merge-pr': MergePr,
   'metasploit-inverse': MetasploitInverse,
   metasploit: Metasploit,
+  'metric-sources': MetricSources,
   'microsoft-azure': MicrosoftAzure,
   'money-icon': MoneyIcon,
   'monitored-service': MonitoredService,
+  'monitoring-agents': MonitoringAgents,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
   'nav-account-admin-selected': NavAccountAdminSelected,
