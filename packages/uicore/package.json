@@ -37,7 +37,8 @@
     "react-dom": "^17.0.2",
     "react-draggable": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-table": "^7.0.4"
+    "react-table": "^7.0.4",
+    "@tanstack/react-table": "^8.15.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -57,7 +58,6 @@
     "@types/react-dom": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-table": "7.0.13",
-    "@tanstack/react-table": "^8.15.3",
     "anser": "^2.1.0",
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
