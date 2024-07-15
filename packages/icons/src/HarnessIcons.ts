@@ -981,7 +981,9 @@ import Up from './up.svg'
 import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
+import UpstreamArtifact from './upstream-artifact.svg'
 import UpstreamProxiesIcon from './upstream-proxies-icon.svg'
+import UpstreamRegistry from './upstream-registry.svg'
 import UserGroups from './user-groups.svg'
 import User from './user.svg'
 import Utility from './utility.svg'
@@ -989,6 +991,7 @@ import ValuesFIle from './valuesFIle.svg'
 import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import ViewerRole from './viewerRole.svg'
+import VirtualRegistry from './virtual-registry.svg'
 import Waiting from './waiting.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
@@ -1977,7 +1980,9 @@ type HarnessIconName =
   | 'update-app'
   | 'upgrade-bolt'
   | 'upload-box'
+  | 'upstream-artifact'
   | 'upstream-proxies-icon'
+  | 'upstream-registry'
   | 'user-groups'
   | 'user'
   | 'utility'
@@ -1985,6 +1990,7 @@ type HarnessIconName =
   | 'variables-blue'
   | 'variables'
   | 'viewerRole'
+  | 'virtual-registry'
   | 'waiting'
   | 'warning-icon'
   | 'warning-outline'
@@ -2973,7 +2979,9 @@ const HarnessIcons: KVO<ElementType> = {
   'update-app': UpdateApp,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
+  'upstream-artifact': UpstreamArtifact,
   'upstream-proxies-icon': UpstreamProxiesIcon,
+  'upstream-registry': UpstreamRegistry,
   'user-groups': UserGroups,
   user: User,
   utility: Utility,
@@ -2981,6 +2989,7 @@ const HarnessIcons: KVO<ElementType> = {
   'variables-blue': VariablesBlue,
   variables: Variables,
   viewerRole: ViewerRole,
+  'virtual-registry': VirtualRegistry,
   waiting: Waiting,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
