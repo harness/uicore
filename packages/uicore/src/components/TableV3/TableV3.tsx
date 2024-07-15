@@ -61,7 +61,7 @@ export function TableV3<T>(props: TableV3Props<T>) {
 
   const [sorting, setSorting] = React.useState<SortingState>([])
 
-  const table = useReactTable({
+  const table = useReactTable<T>({
     data,
     columns: columns,
     columnResizeMode: 'onChange',
@@ -79,45 +79,41 @@ export function TableV3<T>(props: TableV3Props<T>) {
 
   return (
     <>
-      <div className={css.tableContainer}>
-        <table
-          id="table-v3"
-          className={cx(css.table, className)}
-          style={{
-            width: useDynamicTableSize ? table.getTotalSize() : '100%'
-          }}>
-          <thead>
-            {table.getHeaderGroups().map(headerGroup => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map(header => (
-                  <th
-                    key={header.id}
-                    colSpan={header.colSpan}
-                    style={{ ...getCommonPinningStyles(header.column as any), width: header.getSize() }}>
-                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map(row => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map(cell => {
-                  const { column } = cell
-                  return (
-                    <td
-                      key={cell.id}
-                      style={{ ...getCommonPinningStyles(column as any), width: cell.column.getSize() }}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </td>
-                  )
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <table
+        id="table-v3"
+        className={cx(css.table, className)}
+        style={{
+          width: useDynamicTableSize ? table.getTotalSize() : '100%'
+        }}>
+        <thead>
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <th
+                  key={header.id}
+                  colSpan={header.colSpan}
+                  style={{ ...getCommonPinningStyles(header.column as any), width: header.getSize() }}>
+                  {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {table.getRowModel().rows.map(row => (
+            <tr key={row.id}>
+              {row.getVisibleCells().map(cell => {
+                const { column } = cell
+                return (
+                  <td key={cell.id} style={{ ...getCommonPinningStyles(column as any), width: cell.column.getSize() }}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
       {pagination ? <Pagination className={css.pagination} {...pagination} /> : null}
     </>
   )
