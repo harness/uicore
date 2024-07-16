@@ -7,9 +7,12 @@
 
 import { HelpPanelContextProvider, useContentful, HELP_PANEL_STORAGE_KEY } from './HelpPanelContext'
 import HelpPanel, { HelpPanelType } from './components/HelpPanel/HelpPanel'
+import Banner, { BannerType } from './components/HelpPanel/Banner'
 import { HelpPanelEnvironment } from './types/contentfulTypes'
 import FloatingButton from './components/HelpPanel/FloatingButton/FloatingButton'
 export {
+  Banner,
+  BannerType,
   HelpPanel,
   HelpPanelType,
   HelpPanelContextProvider,
