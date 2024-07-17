@@ -42,7 +42,7 @@ const getCommonPinningStyles = (column: Column<unknown>): CSSProperties => {
 
 export interface TableV3Props<T> {
   columns: Array<ColumnDef<T, any>>
-  data: Array<T>
+  data: T[]
   columnPinning?: ColumnPinningState
   useDynamicTableSize?: boolean
   className?: string
