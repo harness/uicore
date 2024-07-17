@@ -79,6 +79,7 @@ export function getItemRenderer(setActiveItem: (item: string) => void): ItemRend
           </span>
         }
         title={item}
+        className={css.menuDropdown}
         onClick={handleClick}
         active={modifiers.active}
         disabled={modifiers.disabled}
@@ -437,6 +438,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
       onItemSelect={handleItemSelect}
       activeItem={activeItem}
       onActiveItemChange={handleActiveItemChange}
+      className={css.color}
     />
   )
 }

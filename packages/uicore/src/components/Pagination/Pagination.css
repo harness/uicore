@@ -46,3 +46,7 @@
 .container {
   gap: var(--spacing-small);
 }
+
+.paginationMenu {
+  color: var(--grey-900);
+}

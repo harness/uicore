@@ -46,3 +46,11 @@
 .popover {
   box-shadow: none;
 }
+
+.menuDropdown {
+  color: var(--grey-900);
+
+  &:hover {
+    color: var(--white);
+  }
+}
