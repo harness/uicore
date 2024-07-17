@@ -6,7 +6,7 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
     class=""
   >
     <a
-      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled"
+      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled menuDropdown"
       tabindex="-1"
       title="app.name"
     >
@@ -37,7 +37,7 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
     class=""
   >
     <a
-      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled"
+      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled menuDropdown"
       tabindex="-1"
       title="app.Name"
     >
@@ -68,7 +68,7 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
     class=""
   >
     <a
-      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled"
+      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled menuDropdown"
       tabindex="-1"
       title="app.xyz.name"
     >
