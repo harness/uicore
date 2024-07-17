@@ -123,7 +123,7 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
               })}
               itemListRenderer={renderMenu}
               itemRenderer={(item, { handleClick }) => (
-                <MenuItem key={item.label} text={item.label} onClick={handleClick} />
+                <MenuItem key={item.label} text={item.label} onClick={handleClick} className={css.paginationMenu} />
               )}
               onItemSelect={item => gotoPage(item.value as number)}>
               <Button icon="more" className={css.roundedButton} />

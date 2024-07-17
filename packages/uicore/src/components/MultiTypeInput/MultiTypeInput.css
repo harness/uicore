@@ -270,6 +270,7 @@
   & .menuItemLabel {
     display: inline-block;
     text-align: right;
+    color: var(--grey-900);
   }
 
   & .menuItemIcon {
