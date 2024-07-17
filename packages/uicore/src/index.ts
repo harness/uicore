@@ -241,7 +241,7 @@ export {
 } from './components/ConfirmDialog/useConfirmationDialog'
 export { ConfirmationDialog, ConfirmationDialogProps } from './components/ConfirmDialog/ConfirmationDialog'
 export { TableV2, TableProps as ReactTableProps } from './components/TableV2/TableV2'
-export { TableV3, ExecutionListV2Props as ExecutionTableProps } from './components/TableV3/TableV3'
+export { TableV3, TableV3Props } from './components/TableV3/TableV3'
 export { PillToggle, PillToggleOption, PillToggleProps } from './components/PillToggle/PillToggle'
 export {
   VisualYamlSelectedView,
