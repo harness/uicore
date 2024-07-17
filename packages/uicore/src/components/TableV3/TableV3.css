@@ -5,89 +5,30 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-.tr {
-  display: flex;
-}
+.table {
+  background-color: var(--white);
+  border-collapse: separate;
+  border-spacing: 0;
 
-tr,
-.tr {
-  width: fit-content;
-  min-height: 30px;
-}
-
-th,
-.th,
-td,
-.td {
-  box-shadow: inset 0 0 0 0px var(--grey-200);
-  padding: 0.25rem;
-}
-
-th,
-.th {
-  padding: 2px 4px;
-  position: relative;
-  text-align: center;
-  min-height: 30px;
-  text-transform: uppercase;
-}
-
-.resizer {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  right: 0;
-  width: 2px;
-  background: var(--grey-600);
-  cursor: col-resize;
-  user-select: none;
-  touch-action: none;
-}
-
-.resizer.ltr {
-  right: 0;
-}
-
-.resizer.rtl {
-  left: 0;
-}
-
-.resizer.isResizing {
-  background: var(--grey-900);
-  opacity: 1;
-}
-
-@media (hover: hover) {
-  .resizer {
-    opacity: 0;
+  thead {
+    th {
+      color: var(--grey-700);
+      text-align: unset;
+      font-size: 14px;
+      font-weight: 500;
+      background-color: var(--white);
+    }
   }
 
-  *:hover > .resizer {
-    opacity: 1;
-  }
-}
-
-.headerWrapper {
-  background-color: var(--grey-200);
-}
-
-.tableContainer {
-  overflow-x: scroll;
-  width: 100%;
-  position: relative;
+  th,
   td {
-    padding: var(--spacing-small);
-    margin-right: 0px;
-  }
-  tr {
-    border-bottom: 1px solid var(--grey-400);
-  }
-  th {
-    text-align: left;
-    padding: 5px 10px;
-    background-color: var(--grey-200);
+    border: 1px solid var(--grey-100);
+    background-color: var(--white);
+    padding: var(--spacing-small) var(--spacing-medium);
+    box-shadow: none !important;
   }
 }
-.cursorPointer {
-  cursor: pointer;
+
+.pagination {
+  padding: var(--spacing-medium);
 }

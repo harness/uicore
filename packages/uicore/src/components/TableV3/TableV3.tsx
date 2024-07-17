@@ -5,12 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { CSSProperties, useRef } from 'react'
-import { get, defaultTo } from 'lodash-es'
-import { Icon } from '@harness/icons'
-import { Color, FontVariation } from '@harness/design-system'
-import { Text } from '../Text/Text'
-import { Container } from '../Container/Container'
+import React, { CSSProperties } from 'react'
 
 import {
   flexRender,
@@ -20,18 +15,10 @@ import {
   Column,
   SortingState,
   getSortedRowModel,
-  VisibilityTableState,
-  ColumnOrderTableState,
-  ColumnPinningTableState,
-  SortingTableState,
-  ExpandedTableState,
-  GroupingTableState,
-  ColumnSizingTableState,
-  PaginationTableState,
-  RowSelectionTableState
+  ColumnPinningState
 } from '@tanstack/react-table'
 import cx from 'classnames'
-
+import Pagination, { PaginationProps } from '../Pagination/Pagination'
 import css from './TableV3.css'
 
 const getCommonPinningStyles = (column: Column<unknown>): CSSProperties => {
@@ -53,47 +40,29 @@ const getCommonPinningStyles = (column: Column<unknown>): CSSProperties => {
   }
 }
 
-export interface ExecutionListV2Props<Data extends Record<string, unknown>> {
-  leftFixed?: string[]
-  rightFixed?: string[]
-  tableData: Data[]
-  columns: Array<ColumnDef<unknown>>
-  resize?: boolean
+export interface TableV3Props<T> {
+  columns: Array<ColumnDef<T, any>>
+  data: T[]
+  columnPinning?: ColumnPinningState
+  useDynamicTableSize?: boolean
   className?: string
-  hideHeaders?: boolean
-  initialState?: Partial<
-    VisibilityTableState &
-      ColumnOrderTableState &
-      ColumnPinningTableState &
-      SortingTableState &
-      ExpandedTableState &
-      GroupingTableState &
-      ColumnSizingTableState &
-      PaginationTableState &
-      RowSelectionTableState
-  >
-  name?: string
+  pagination?: PaginationProps
 }
 
-const DEFAULT_EMPTY_ARR: string[] = []
-
-export const TableV3 = <Data extends Record<string, unknown>>(
-  props: ExecutionListV2Props<Data>
-): React.ReactElement => {
-  const containerRef = useRef(null)
+export function TableV3<T>(props: TableV3Props<T>) {
   const {
-    tableData = DEFAULT_EMPTY_ARR,
+    data,
     columns = [],
-    resize = false,
-    hideHeaders = false,
-    initialState = {},
-    name
+    columnPinning = { left: [], right: [] },
+    useDynamicTableSize,
+    className,
+    pagination
   } = props
 
   const [sorting, setSorting] = React.useState<SortingState>([])
 
-  const table = useReactTable({
-    data: defaultTo(tableData, []),
+  const table = useReactTable<T>({
+    data,
     columns: columns,
     columnResizeMode: 'onChange',
     getCoreRowModel: getCoreRowModel(),
@@ -104,115 +73,48 @@ export const TableV3 = <Data extends Record<string, unknown>>(
     },
     onSortingChange: setSorting,
     initialState: {
-      ...initialState
+      columnPinning
     }
   })
 
   return (
-    <div
-      id="execution-table-container"
-      ref={containerRef}
-      style={{
-        direction: table?.options?.columnResizeDirection
-      }}>
-      <div
+    <>
+      <table
+        id="table-v3"
+        className={cx(css.table, className)}
         style={{
-          maxWidth: defaultTo(get(containerRef, 'current.offsetWidth'), '100%')
-        }}
-        className={css.tableContainer}>
-        <table
-          {...{
-            style: {
-              overflowX: 'scroll',
-              width: table.getCenterTotalSize()
-            }
-          }}>
-          {hideHeaders ? null : (
-            <thead>
-              {table.getHeaderGroups().map(headerGroup => (
-                <tr key={headerGroup?.id}>
-                  {headerGroup.headers.map(header => {
-                    const { column } = header
-                    const isResizing = header.column.getIsResizing()
-                    const resizeOptions = resize
-                      ? {
-                          onDoubleClick: () => header.column.resetSize(),
-                          onMouseDown: header.getResizeHandler(),
-                          onTouchStart: header.getResizeHandler(),
-                          className: cx(table.options.columnResizeDirection, css.resizer, {
-                            [css.isResizing]: isResizing
-                          })
-                        }
-                      : {}
-                    const tooltipId = name ? `${name}${header.id}` : undefined
-
-                    return (
-                      <th
-                        key={header?.id}
-                        {...{
-                          colSpan: header.colSpan,
-                          style: {
-                            width: header.getSize(),
-                            ...getCommonPinningStyles(column)
-                          }
-                        }}
-                        onClick={() => {
-                          if (initialState?.sorting) {
-                            header?.column?.getToggleSortingHandler()
-                          }
-                        }}
-                        className={css.headerWrapper}>
-                        {header.isPlaceholder ? null : (
-                          <Container
-                            className={cx({ [css.cursorPointer]: header.column.getCanSort() })}
-                            onClick={header.column.getToggleSortingHandler()}
-                            flex={{ justifyContent: 'flex-start' }}>
-                            <Text
-                              tooltipProps={{ dataTooltipId: tooltipId }}
-                              font={{ variation: FontVariation.TABLE_HEADERS }}
-                              color={Color.GREY_800}>
-                              {header.isPlaceholder
-                                ? null
-                                : flexRender(header.column.columnDef.header, header.getContext())}
-                            </Text>
-                            <Container margin={{ left: 'small' }}>
-                              {{
-                                asc: <Icon name="arrow-up" size={16} />,
-                                desc: <Icon name="arrow-down" size={16} />
-                              }[header.column.getIsSorted() as string] ?? null}
-                            </Container>
-                          </Container>
-                        )}
-                        <div {...resizeOptions} />
-                      </th>
-                    )
-                  })}
-                </tr>
+          width: useDynamicTableSize ? table.getTotalSize() : '100%'
+        }}>
+        <thead>
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <th
+                  key={header.id}
+                  colSpan={header.colSpan}
+                  style={{ ...getCommonPinningStyles(header.column as any), width: header.getSize() }}>
+                  {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                </th>
               ))}
-            </thead>
-          )}
-          <tbody>
-            {table.getRowModel().rows.map(row => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map(cell => {
-                  const { column } = cell
-                  return (
-                    <td
-                      key={cell?.id}
-                      {...{
-                        style: {
-                          ...getCommonPinningStyles(column)
-                        }
-                      }}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </td>
-                  )
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {table.getRowModel().rows.map(row => (
+            <tr key={row.id}>
+              {row.getVisibleCells().map(cell => {
+                const { column } = cell
+                return (
+                  <td key={cell.id} style={{ ...getCommonPinningStyles(column as any), width: cell.column.getSize() }}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {pagination ? <Pagination className={css.pagination} {...pagination} /> : null}
+    </>
   )
 }
