@@ -6,7 +6,7 @@
  */
 
 import { IconName } from '@harnessio/icons'
-import { Color } from '@harness/design-system'
+import { Color } from '@harnessio/design-system'
 
 export const SuccessState = {
   icon: 'tick-circle',

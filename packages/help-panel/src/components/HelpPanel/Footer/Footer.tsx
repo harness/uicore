@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { Color, FontVariation } from '@harness/design-system'
+import { Color, FontVariation } from '@harnessio/design-system'
 import Container from '../../Container'
 import { HEADER_FOOTER_HEIGHT } from '../HelpPanelContent/HelpPanelContent'
 import css from './Footer.module.css'

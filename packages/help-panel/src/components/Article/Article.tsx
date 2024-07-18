@@ -8,7 +8,7 @@
 import React from 'react'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { INLINES, Text } from '@contentful/rich-text-types'
-import { FontVariation, Color } from '@harness/design-system'
+import { FontVariation, Color } from '@harnessio/design-system'
 import type { IArticle } from '../../types/contentfulTypes'
 import Container from '../Container'
 import RenderComponent from '../RenderComponent'
