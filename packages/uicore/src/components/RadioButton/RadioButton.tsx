@@ -48,7 +48,7 @@ export function RadioButton({
         type="radio"
         name={name}
         value={value}
-        defaultChecked={checked}
+        checked={checked}
         disabled={disabled}
         className={css.input}
         onChange={onChange}
