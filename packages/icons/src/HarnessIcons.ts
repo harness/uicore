@@ -37,6 +37,7 @@ import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import Arrow from './arrow.svg'
+import ArtifactRegistryOutlined from './artifact-registry-outlined.svg'
 import ArtifactRegistry from './artifact-registry.svg'
 import AsgBlueGreenInverse from './asg-blue-green-inverse.svg'
 import AsgBlueGreen from './asg-blue-green.svg'
@@ -1036,6 +1037,7 @@ type HarnessIconName =
   | 'approval-stage'
   | 'approval-step'
   | 'arrow'
+  | 'artifact-registry-outlined'
   | 'artifact-registry'
   | 'asg-blue-green-inverse'
   | 'asg-blue-green'
@@ -2035,6 +2037,7 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
   arrow: Arrow,
+  'artifact-registry-outlined': ArtifactRegistryOutlined,
   'artifact-registry': ArtifactRegistry,
   'asg-blue-green-inverse': AsgBlueGreenInverse,
   'asg-blue-green': AsgBlueGreen,
