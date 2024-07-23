@@ -5,8 +5,8 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { StyledProps } from '@harness/design-system'
-import { styledClasses } from '@harness/design-system'
+import { StyledProps } from '@harnessio/design-system'
+import { styledClasses } from '@harnessio/design-system'
 import React, { HTMLAttributes } from 'react'
 
 export interface ContainerProps extends HTMLAttributes<HTMLDivElement>, StyledProps {}

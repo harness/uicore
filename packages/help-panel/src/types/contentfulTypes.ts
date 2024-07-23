@@ -6,7 +6,7 @@
  */
 
 import type { Entry, Asset } from 'contentful'
-import type { Color } from '@harness/design-system'
+import type { Color } from '@harnessio/design-system'
 import type { Document as RichTextDocument } from '@contentful/rich-text-types'
 
 export interface ComponentValue {
