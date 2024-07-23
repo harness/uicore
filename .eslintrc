@@ -77,6 +77,17 @@
           "Boolean": "Use boolean instead"
         }
       }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@harness/design-system",
+            "message": "import from @harnessio/design-system instead"
+          }
+        ]
+      }
     ]
   },
   "settings": {
