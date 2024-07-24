@@ -1237,7 +1237,7 @@ import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
 import Stars from './stars.svg'
-import StatsUpSquar from './stats-up-square.svg'
+import StatsUpSquare from './stats-up-square.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
 import StatusUpgrade from './status-upgrade.svg'
@@ -3981,7 +3981,7 @@ const HarnessIcons: KVO<ElementType> = {
   'star-empty': StarEmpty,
   star: Star,
   stars: Stars,
-  'stats-up-square': StatsUpSquar,
+  'stats-up-square': StatsUpSquare,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
   'status-upgrade': StatusUpgrade,
