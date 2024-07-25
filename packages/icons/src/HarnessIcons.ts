@@ -405,6 +405,7 @@ import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
 import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
+import CreativeIdea from './creative-idea.svg'
 import CriticalEvents from './critical-events.svg'
 import CsHover from './cs-hover.svg'
 import CurrencyBanner from './currency-banner.svg'
@@ -434,6 +435,7 @@ import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
+import DataIntegrationHub from './data-integration-hub.svg'
 import DbDevops from './db-devops.svg'
 import DbSchema from './db-schema.svg'
 import DbStep from './db-step.svg'
@@ -827,6 +829,7 @@ import MainUser from './main-user.svg'
 import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import MapRoute from './map-route.svg'
 import MarkAsFailed from './mark-as-failed.svg'
 import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
@@ -974,12 +977,14 @@ import Rancher from './rancher.svg'
 import ReExecuted from './re-executed.svg'
 import RegEx from './reg-ex.svg'
 import RegisterCatalog from './register-catalog.svg'
+import Reminder from './reminder.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
 import Remotefile from './remotefile.svg'
 import RemoveGraph from './remove-graph.svg'
 import RemoveMinus from './remove-minus.svg'
 import Remove from './remove.svg'
+import ReportColumns from './report-columns.svg'
 import ReportGearGrey from './report-gear-grey.svg'
 import ReportGear from './report-gear.svg'
 import ReportIcon from './report-icon.svg'
@@ -1086,6 +1091,7 @@ import SeiWithDarkText from './sei-with-dark-text.svg'
 import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
+import Server from './server.svg'
 import ServerlessAwsLambdaDeployV2Inverse from './serverless-aws-lambda-deploy-v2-inverse.svg'
 import ServerlessAwsLambdaDeployV2 from './serverless-aws-lambda-deploy-v2.svg'
 import ServerlessAwsLambdaPackageInverse from './serverless-aws-lambda-package-inverse.svg'
@@ -1231,6 +1237,7 @@ import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
 import Stars from './stars.svg'
+import StatsUpSquare from './stats-up-square.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
 import StatusUpgrade from './status-upgrade.svg'
@@ -1272,6 +1279,7 @@ import SyncFailed from './sync-failed.svg'
 import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import Sysdig from './sysdig.svg'
+import Table from './table.svg'
 import TanzuCommand from './tanzuCommand.svg'
 import TargetManagement from './target-management.svg'
 import Target from './target.svg'
@@ -1346,6 +1354,7 @@ import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
 import UpstreamProxiesIcon from './upstream-proxies-icon.svg'
+import UserGroupBlue from './user-group-blue.svg'
 import UserGroups from './user-groups.svg'
 import User from './user.svg'
 import Utility from './utility.svg'
@@ -1768,6 +1777,7 @@ type HarnessIconName =
   | 'create-via-existing-yaml'
   | 'create-via-pipeline-template'
   | 'create-via-starter-pipeline'
+  | 'creative-idea'
   | 'critical-events'
   | 'cs-hover'
   | 'currency-banner'
@@ -1797,6 +1807,7 @@ type HarnessIconName =
   | 'dashboard'
   | 'dashboards-solid-border'
   | 'data-fetch-error'
+  | 'data-integration-hub'
   | 'db-devops'
   | 'db-schema'
   | 'db-step'
@@ -2190,6 +2201,7 @@ type HarnessIconName =
   | 'main-view'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'map-route'
   | 'mark-as-failed'
   | 'mark-as-failure-inverse'
   | 'mark-as-failure'
@@ -2337,12 +2349,14 @@ type HarnessIconName =
   | 're-executed'
   | 'reg-ex'
   | 'register-catalog'
+  | 'reminder'
   | 'remote-setup'
   | 'remote'
   | 'remotefile'
   | 'remove-graph'
   | 'remove-minus'
   | 'remove'
+  | 'report-columns'
   | 'report-gear-grey'
   | 'report-gear'
   | 'report-icon'
@@ -2449,6 +2463,7 @@ type HarnessIconName =
   | 'select-scope'
   | 'semgrep'
   | 'send-data'
+  | 'server'
   | 'serverless-aws-lambda-deploy-v2-inverse'
   | 'serverless-aws-lambda-deploy-v2'
   | 'serverless-aws-lambda-package-inverse'
@@ -2594,6 +2609,7 @@ type HarnessIconName =
   | 'star-empty'
   | 'star'
   | 'stars'
+  | 'stats-up-square'
   | 'status-pending'
   | 'status-running'
   | 'status-upgrade'
@@ -2635,6 +2651,7 @@ type HarnessIconName =
   | 'synced'
   | 'syncing'
   | 'sysdig'
+  | 'table'
   | 'tanzuCommand'
   | 'target-management'
   | 'target'
@@ -2709,6 +2726,7 @@ type HarnessIconName =
   | 'upgrade-bolt'
   | 'upload-box'
   | 'upstream-proxies-icon'
+  | 'user-group-blue'
   | 'user-groups'
   | 'user'
   | 'utility'
@@ -3131,6 +3149,7 @@ const HarnessIcons: KVO<ElementType> = {
   'create-via-existing-yaml': CreateViaExistingYaml,
   'create-via-pipeline-template': CreateViaPipelineTemplate,
   'create-via-starter-pipeline': CreateViaStarterPipeline,
+  'creative-idea': CreativeIdea,
   'critical-events': CriticalEvents,
   'cs-hover': CsHover,
   'currency-banner': CurrencyBanner,
@@ -3160,6 +3179,7 @@ const HarnessIcons: KVO<ElementType> = {
   dashboard: Dashboard,
   'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
+  'data-integration-hub': DataIntegrationHub,
   'db-devops': DbDevops,
   'db-schema': DbSchema,
   'db-step': DbStep,
@@ -3553,6 +3573,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-view': MainView,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  'map-route': MapRoute,
   'mark-as-failed': MarkAsFailed,
   'mark-as-failure-inverse': MarkAsFailureInverse,
   'mark-as-failure': MarkAsFailure,
@@ -3700,12 +3721,14 @@ const HarnessIcons: KVO<ElementType> = {
   're-executed': ReExecuted,
   'reg-ex': RegEx,
   'register-catalog': RegisterCatalog,
+  reminder: Reminder,
   'remote-setup': RemoteSetup,
   remote: Remote,
   remotefile: Remotefile,
   'remove-graph': RemoveGraph,
   'remove-minus': RemoveMinus,
   remove: Remove,
+  'report-columns': ReportColumns,
   'report-gear-grey': ReportGearGrey,
   'report-gear': ReportGear,
   'report-icon': ReportIcon,
@@ -3812,6 +3835,7 @@ const HarnessIcons: KVO<ElementType> = {
   'select-scope': SelectScope,
   semgrep: Semgrep,
   'send-data': SendData,
+  server: Server,
   'serverless-aws-lambda-deploy-v2-inverse': ServerlessAwsLambdaDeployV2Inverse,
   'serverless-aws-lambda-deploy-v2': ServerlessAwsLambdaDeployV2,
   'serverless-aws-lambda-package-inverse': ServerlessAwsLambdaPackageInverse,
@@ -3957,6 +3981,7 @@ const HarnessIcons: KVO<ElementType> = {
   'star-empty': StarEmpty,
   star: Star,
   stars: Stars,
+  'stats-up-square': StatsUpSquare,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
   'status-upgrade': StatusUpgrade,
@@ -3998,6 +4023,7 @@ const HarnessIcons: KVO<ElementType> = {
   synced: Synced,
   syncing: Syncing,
   sysdig: Sysdig,
+  table: Table,
   tanzuCommand: TanzuCommand,
   'target-management': TargetManagement,
   target: Target,
@@ -4072,6 +4098,7 @@ const HarnessIcons: KVO<ElementType> = {
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
   'upstream-proxies-icon': UpstreamProxiesIcon,
+  'user-group-blue': UserGroupBlue,
   'user-groups': UserGroups,
   user: User,
   utility: Utility,
