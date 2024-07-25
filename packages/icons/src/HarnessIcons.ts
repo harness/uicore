@@ -357,6 +357,7 @@ import CodebaseNotConfigured from './codebase-not-configured.svg'
 import CodebaseValid from './codebase-valid.svg'
 import CodebaseValidating from './codebase-validating.svg'
 import CodebaseZeroState from './codebase-zero-state.svg'
+import Collections from './collections.svg'
 import CommandApproval from './command-approval.svg'
 import CommandArtifactCheck from './command-artifact-check.svg'
 import CommandBarrier from './command-barrier.svg'
@@ -1729,6 +1730,7 @@ type HarnessIconName =
   | 'codebase-valid'
   | 'codebase-validating'
   | 'codebase-zero-state'
+  | 'collections'
   | 'command-approval'
   | 'command-artifact-check'
   | 'command-barrier'
@@ -3101,6 +3103,7 @@ const HarnessIcons: KVO<ElementType> = {
   'codebase-valid': CodebaseValid,
   'codebase-validating': CodebaseValidating,
   'codebase-zero-state': CodebaseZeroState,
+  collections: Collections,
   'command-approval': CommandApproval,
   'command-artifact-check': CommandArtifactCheck,
   'command-barrier': CommandBarrier,
