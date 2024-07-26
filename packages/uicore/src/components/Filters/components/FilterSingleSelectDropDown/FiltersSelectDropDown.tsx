@@ -1,0 +1,268 @@
+/*
+ * Copyright 2021 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+import React, { useCallback, useEffect, useState } from 'react'
+import { Popover, Spinner, Menu } from '@blueprintjs/core'
+import {
+  QueryList,
+  IQueryListRendererProps,
+  IItemRendererProps,
+  IQueryListProps,
+  ItemListRenderer
+} from '@blueprintjs/select'
+
+import css from './FiltersSelectDropDown.css'
+import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
+import cx from 'classnames'
+import { Layout } from '../../../../layouts/Layout'
+import { Icon, IconName, IconProps } from '@harness/icons'
+import { Color } from '@harness/design-system'
+import { Text } from '../../../Text/Text'
+import { StyledProps } from '@harness/design-system'
+import { SelectOption } from '../../../Select/Select'
+import {
+  ExpandingSearchInputWithRef,
+  ExpandingSearchInputProps
+} from '../../../ExpandingSearchInput/ExpandingSearchInput'
+
+type Props = IQueryListProps<MultiSelectOption>
+
+export function NoMatch(): React.ReactElement {
+  return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
+}
+
+export interface MultiSelectDropDownProps
+  extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps' | 'renderer' | 'itemRenderer' | 'onItemSelect'> {
+  onChange?(opts: MultiSelectOption): void
+  value?: MultiSelectOption
+  items: Props['items'] | (() => Promise<Props['items']>)
+  usePortal?: boolean
+  className?: string
+  popoverClassName?: string
+  minWidth?: StyledProps['width']
+  width?: StyledProps['width']
+  buttonTestId?: string
+  isLabel?: boolean
+  icon?: IconName
+  iconProps?: Partial<IconProps>
+  placeholder?: string
+  hideItemCount?: boolean
+  allowSearch?: boolean
+  onRemove?: () => void
+  onPopoverClose?(opts: MultiSelectOption): void
+  expandingSearchInputProps?: ExpandingSearchInputProps
+  customPlaceholderRenderer?: () => React.ReactElement
+}
+
+/**
+ * This regex does not have ending bracket intentionally
+ * because we want to match the start of the expression
+ */
+export function FiltersSelectDropDown(props: MultiSelectDropDownProps): React.ReactElement {
+  const {
+    value,
+    items,
+    onChange,
+    className = '',
+    popoverClassName = '',
+    usePortal = false,
+    placeholder = 'Select',
+    minWidth = 130,
+    width,
+    onRemove,
+    buttonTestId = 'multi-select-dropdown-button',
+    icon,
+    iconProps,
+    isLabel,
+    disabled,
+    hideItemCount,
+    allowSearch = false,
+    onPopoverClose,
+    customPlaceholderRenderer,
+    expandingSearchInputProps,
+    ...rest
+  } = props
+  const [query, setQuery] = React.useState<string>('')
+  const [selectedItem, setSelectedItem] = React.useState<MultiSelectOption>({ label: '', value: '' })
+  const [dropDownItems, setDropDownItems] = React.useState<MultiSelectOption[]>([])
+  const [loading, setLoading] = React.useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (Array.isArray(items)) {
+      setDropDownItems([...items])
+    } else if (typeof items === 'function') {
+      setLoading(true)
+      const promise = items()
+
+      if (typeof promise.then === 'function') {
+        promise.then(results => {
+          setDropDownItems(results)
+          setLoading(false)
+        })
+      } else {
+        setLoading(false)
+      }
+    }
+  }, [JSON.stringify(items)])
+
+  useEffect(() => {
+    if (value !== undefined) setSelectedItem(value)
+  }, [value])
+
+  const onSearchChange = useCallback(
+    (newQuery: string) => {
+      if (expandingSearchInputProps?.onChange) {
+        expandingSearchInputProps.onChange(newQuery)
+      }
+      setQuery(newQuery)
+    },
+    [expandingSearchInputProps]
+  )
+
+  // to filter out the options based on search
+  const filterItems = (itemsToRender: SelectOption[]) => {
+    const searchValue = query.trim().toLocaleLowerCase()
+    if (searchValue.length === 0) return itemsToRender
+    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
+  }
+
+  function handleItemSelect(item: MultiSelectOption): void {
+    setSelectedItem(item)
+    onChange?.(item)
+  }
+
+  const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
+    let renderedItems
+    if (loading) {
+      renderedItems = (
+        <li className={css.menuItem} style={{ justifyContent: 'center' }}>
+          <Spinner size={20} />
+        </li>
+      )
+    } else if (itemsToRender.length > 0) {
+      renderedItems = filterItems(itemsToRender)
+        .map(renderItem)
+        .filter(item => item !== null)
+    } else {
+      renderedItems = <NoMatch />
+    }
+    return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
+  }
+
+  function renderer(listProps: IQueryListRendererProps<MultiSelectOption>): JSX.Element {
+    return (
+      <Popover
+        targetTagName="div"
+        wrapperTagName="div"
+        position="bottom-left"
+        usePortal={usePortal}
+        minimal
+        hasBackdrop
+        backdropProps={{
+          onClick: () => {
+            setIsOpen(false)
+          }
+        }}
+        autoFocus={false}
+        enforceFocus={false}
+        onClose={() => onPopoverClose?.(selectedItem)}
+        className={cx(css.main, { [css.disabled]: !!disabled }, className)}
+        popoverClassName={cx(css.popover, popoverClassName)}
+        isOpen={isOpen}>
+        {customPlaceholderRenderer ? (
+          <div onClick={() => setIsOpen(true)}>{customPlaceholderRenderer()}</div>
+        ) : (
+          <Layout.Horizontal
+            data-testid={buttonTestId}
+            style={width ? { width } : { minWidth }}
+            className={cx(
+              css.dropdownButton,
+              { [css.withBorder]: !isLabel },
+              { [css.selected]: !!selectedItem },
+              { [css.minWidth]: !width }
+            )}
+            onClick={() => setIsOpen(true)}
+            flex>
+            <>
+              <Layout.Horizontal className={css.labelWrapper} flex>
+                {icon && <Icon name={icon} size={13} color={Color.GREY_600} {...iconProps} />}
+                <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
+                  {placeholder}
+                </Text>
+                {!hideItemCount && selectedItem.value !== '' && (
+                  <>
+                    <div className={css.verticalDivider}></div>
+                    <Text className={css.counter}>{selectedItem.label}</Text>
+                  </>
+                )}
+              </Layout.Horizontal>
+              <Icon
+                name="cross"
+                size={12}
+                className={css.crossIcon}
+                color={Color.GREY_400}
+                onClick={e => {
+                  e.stopPropagation()
+                  onRemove?.()
+                }}
+              />
+            </>
+          </Layout.Horizontal>
+        )}
+        <React.Fragment>
+          {allowSearch && (
+            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+          )}
+          {listProps.itemList
+            ? React.cloneElement(listProps.itemList as React.ReactElement, {
+                className: css.menu,
+                onClick: () => setIsOpen(false)
+              })
+            : null}
+          {/* <div
+            className={css.menuItem}
+            // onClick={e => {
+            //   if (!modifiers.disabled && !item.disabled) {
+            //     handleClick(e)
+            //   }
+            // }}
+          >
+            Clear Selection
+          </div> */}
+        </React.Fragment>
+      </Popover>
+    )
+  }
+
+  function itemRenderer(item: MultiSelectOption, itemProps: IItemRendererProps): JSX.Element | null {
+    const { handleClick, modifiers } = itemProps
+    return (
+      <div
+        key={item.value.toString()}
+        className={css.menuItem}
+        onClick={e => {
+          if (!modifiers.disabled && !item.disabled) {
+            handleClick(e)
+          }
+        }}>
+        {item.label}
+      </div>
+    )
+  }
+
+  return (
+    <QueryList
+      items={dropDownItems}
+      itemListRenderer={renderMenu}
+      renderer={renderer}
+      itemRenderer={itemRenderer}
+      onItemSelect={handleItemSelect}
+      {...rest}
+    />
+  )
+}

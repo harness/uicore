@@ -264,5 +264,7 @@ export {
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
 export { StringSubstitute, stringSubstitute } from './components/StringSubstitute/StringSubstitute'
+export { FiltersMultiSelectDropDown } from './components/Filters/components/FiltersMultiSelectDropDown/FiltersMultiSelectDropDown'
+export { FiltersSelectDropDown } from './components/Filters/components/FilterSingleSelectDropDown/FiltersSelectDropDown'
 export * from '@harness/design-system'
 export * from '@harness/icons'
