@@ -608,6 +608,7 @@ import GithubUnselected from './github-unselected.svg'
 import Github from './github.svg'
 import GitlabSelected from './gitlab-selected.svg'
 import GitlabUnselected from './gitlab-unselected.svg'
+import GitlabViewbox from './gitlab-viewbox.svg'
 import Gitlab from './gitlab.svg'
 import Gitleaks from './gitleaks.svg'
 import GitnessNoRepositories from './gitness-no-repositories.svg'
@@ -661,6 +662,7 @@ import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
 import Health from './health.svg'
+import Helix from './helix.svg'
 import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
@@ -1980,6 +1982,7 @@ type HarnessIconName =
   | 'github'
   | 'gitlab-selected'
   | 'gitlab-unselected'
+  | 'gitlab-viewbox'
   | 'gitlab'
   | 'gitleaks'
   | 'gitness-no-repositories'
@@ -2033,6 +2036,7 @@ type HarnessIconName =
   | 'harness'
   | 'hashiCorpVault'
   | 'health'
+  | 'helix'
   | 'helm-oci'
   | 'helm-rollback'
   | 'help'
@@ -3352,6 +3356,7 @@ const HarnessIcons: KVO<ElementType> = {
   github: Github,
   'gitlab-selected': GitlabSelected,
   'gitlab-unselected': GitlabUnselected,
+  'gitlab-viewbox': GitlabViewbox,
   gitlab: Gitlab,
   gitleaks: Gitleaks,
   'gitness-no-repositories': GitnessNoRepositories,
@@ -3405,6 +3410,7 @@ const HarnessIcons: KVO<ElementType> = {
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
   health: Health,
+  helix: Helix,
   'helm-oci': HelmOci,
   'helm-rollback': HelmRollback,
   help: Help,
