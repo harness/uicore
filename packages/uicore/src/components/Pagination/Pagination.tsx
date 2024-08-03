@@ -19,13 +19,14 @@ import { DropDown, DropDownProps } from '../DropDown/DropDown'
 import useWindowWidth from '../../hooks/useWindowWidth'
 
 import css from './Pagination.css'
+export type PaginationActions = 'Prev' | 'PageNumber' | 'Next'
 
 export interface PaginationProps {
   pageSize: number
   pageCount: number
   itemCount: number
   pageIndex?: number
-  gotoPage?: (index: number) => void
+  gotoPage?: (index: number, context?: PaginationActions) => void
   pageSizeOptions?: number[]
   hidePageNumbers?: boolean
   className?: string
@@ -41,7 +42,7 @@ interface PageNumbersProps {
   pageCount: number
   pageCountClamp: number
   pageIndex: number
-  gotoPage: (index: number) => void
+  gotoPage: Required<PaginationProps>['gotoPage']
 }
 
 const CustomSelect = Select.ofType<SelectOption>()
@@ -66,7 +67,7 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
         key={`page-${pageNumber}`}
         text={pageNumber}
         disabled={isCurrent}
-        onClick={() => gotoPage(pageNumber - 1)}
+        onClick={() => gotoPage(pageNumber - 1, 'PageNumber')}
         className={cx(css.roundedButton, { [css.selected]: isCurrent })}
       />
     )
@@ -83,7 +84,7 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
               text={pageNumber + 1}
               disabled={isCurrent}
               className={cx(css.roundedButton, { [css.selected]: isCurrent })}
-              onClick={() => gotoPage(pageNumber)}
+              onClick={() => gotoPage(pageNumber, 'PageNumber')}
             />
           )
         })
@@ -105,7 +106,7 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
               itemRenderer={(item, { handleClick }) => (
                 <MenuItem key={item.label} text={item.label} onClick={handleClick} />
               )}
-              onItemSelect={item => gotoPage(item.value as number)}>
+              onItemSelect={item => gotoPage(item.value as number, 'PageNumber')}>
               <Button icon="more" className={css.roundedButton} />
             </CustomSelect>
           )}
@@ -125,7 +126,7 @@ const PageNumbers: React.FC<PageNumbersProps> = ({ pageCount, pageCountClamp, pa
               itemRenderer={(item, { handleClick }) => (
                 <MenuItem key={item.label} text={item.label} onClick={handleClick} className={css.paginationMenu} />
               )}
-              onItemSelect={item => gotoPage(item.value as number)}>
+              onItemSelect={item => gotoPage(item.value as number, 'PageNumber')}>
               <Button icon="more" className={css.roundedButton} />
             </CustomSelect>
           )}
@@ -200,7 +201,7 @@ const Pagination: React.FC<PaginationProps> = props => {
           size={ButtonSize.SMALL}
           className={cx(css.roundedButton, css.buttonLeft)}
           iconProps={{ size: 12 }}
-          onClick={() => gotoPage?.(pageIndex - 1)}
+          onClick={() => gotoPage?.(pageIndex - 1, 'Prev')}
           disabled={pageIndex === 0}
         />
         {gotoPage && showNumbers ? (
@@ -212,7 +213,7 @@ const Pagination: React.FC<PaginationProps> = props => {
           size={ButtonSize.SMALL}
           className={cx(css.roundedButton, css.buttonRight)}
           iconProps={{ size: 12 }}
-          onClick={() => gotoPage?.(pageIndex + 1)}
+          onClick={() => gotoPage?.(pageIndex + 1, 'Next')}
           disabled={pageIndex === pageCount - 1}
         />
       </Layout.Horizontal>
