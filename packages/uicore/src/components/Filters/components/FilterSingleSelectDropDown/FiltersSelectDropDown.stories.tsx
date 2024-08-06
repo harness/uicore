@@ -8,7 +8,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
-import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
+import { SelectOption } from '../../../Select/Select'
 import { omit } from 'lodash-es'
 import data from '../../../../_stories/components/pokedex.json'
 import { FiltersSelectDropDown, MultiSelectDropDownProps } from './FiltersSelectDropDown'
@@ -45,7 +45,7 @@ export default {
   },
   decorators: [Story => <Story />]
 } as Meta
-const localItems: MultiSelectOption[] = data.map((row, i) => ({
+const localItems: SelectOption[] = data.map((row, i) => ({
   label: row.name,
   value: row.id,
   disabled: i < 3
@@ -55,16 +55,14 @@ export const Basic: Story<MultiSelectDropDownProps> = args => {
 
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
 
-  const [value, setValue] = React.useState<MultiSelectOption>({ label: 'Bulbasaur', value: 1 })
+  const [value, setValue] = React.useState<SelectOption>({ label: 'Bulbasaur', value: 1 })
 
-  const button: React.ReactElement = <div>button</div>
   return (
     <Layout.Horizontal flex>
       <FiltersSelectDropDown
         items={items}
         value={value}
         allowSearch
-        customPlaceholderRenderer={() => button}
         onChange={items => {
           setValue(items)
         }}
@@ -73,8 +71,8 @@ export const Basic: Story<MultiSelectDropDownProps> = args => {
     </Layout.Horizontal>
   )
 }
-function dummyPromise(): Promise<MultiSelectOption[]> {
-  return new Promise<MultiSelectOption[]>(resolve => {
+function dummyPromise(): Promise<SelectOption[]> {
+  return new Promise<SelectOption[]>(resolve => {
     setTimeout(() => {
       resolve(localItems)
     }, 5000)
@@ -84,7 +82,7 @@ export const AsyncSelect: Story<MultiSelectDropDownProps> = args => {
   const { items = dummyPromise } = args
 
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
-  const [value, setValue] = React.useState<MultiSelectOption>()
+  const [value, setValue] = React.useState<SelectOption>()
 
   return (
     <Layout.Horizontal flex>

@@ -16,7 +16,6 @@ import {
 } from '@blueprintjs/select'
 
 import css from './FiltersSelectDropDown.css'
-import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
 import cx from 'classnames'
 import { Layout } from '../../../../layouts/Layout'
 import { Icon, IconName, IconProps } from '@harness/icons'
@@ -29,7 +28,7 @@ import {
   ExpandingSearchInputProps
 } from '../../../ExpandingSearchInput/ExpandingSearchInput'
 
-type Props = IQueryListProps<MultiSelectOption>
+type Props = IQueryListProps<SelectOption>
 
 export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
@@ -37,8 +36,8 @@ export function NoMatch(): React.ReactElement {
 
 export interface MultiSelectDropDownProps
   extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps' | 'renderer' | 'itemRenderer' | 'onItemSelect'> {
-  onChange?(opts: MultiSelectOption): void
-  value?: MultiSelectOption
+  onChange?(opts: SelectOption): void
+  value?: SelectOption
   items: Props['items'] | (() => Promise<Props['items']>)
   usePortal?: boolean
   className?: string
@@ -53,7 +52,7 @@ export interface MultiSelectDropDownProps
   hideItemCount?: boolean
   allowSearch?: boolean
   onRemove?: () => void
-  onPopoverClose?(opts: MultiSelectOption): void
+  onPopoverClose?(opts: SelectOption): void
   expandingSearchInputProps?: ExpandingSearchInputProps
   customPlaceholderRenderer?: () => React.ReactElement
 }
@@ -87,8 +86,8 @@ export function FiltersSelectDropDown(props: MultiSelectDropDownProps): React.Re
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
-  const [selectedItem, setSelectedItem] = React.useState<MultiSelectOption>({ label: '', value: '' })
-  const [dropDownItems, setDropDownItems] = React.useState<MultiSelectOption[]>([])
+  const [selectedItem, setSelectedItem] = React.useState<SelectOption>({ label: '', value: '' })
+  const [dropDownItems, setDropDownItems] = React.useState<SelectOption[]>([])
   const [loading, setLoading] = React.useState<boolean>(false)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -131,7 +130,7 @@ export function FiltersSelectDropDown(props: MultiSelectDropDownProps): React.Re
     return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
   }
 
-  function handleItemSelect(item: MultiSelectOption): void {
+  function handleItemSelect(item: SelectOption): void {
     setSelectedItem(item)
     onChange?.(item)
   }
@@ -154,7 +153,7 @@ export function FiltersSelectDropDown(props: MultiSelectDropDownProps): React.Re
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  function renderer(listProps: IQueryListRendererProps<MultiSelectOption>): JSX.Element {
+  function renderer(listProps: IQueryListRendererProps<SelectOption>): JSX.Element {
     return (
       <Popover
         targetTagName="div"
@@ -224,29 +223,19 @@ export function FiltersSelectDropDown(props: MultiSelectDropDownProps): React.Re
                 onClick: () => setIsOpen(false)
               })
             : null}
-          {/* <div
-            className={css.menuItem}
-            // onClick={e => {
-            //   if (!modifiers.disabled && !item.disabled) {
-            //     handleClick(e)
-            //   }
-            // }}
-          >
-            Clear Selection
-          </div> */}
         </React.Fragment>
       </Popover>
     )
   }
 
-  function itemRenderer(item: MultiSelectOption, itemProps: IItemRendererProps): JSX.Element | null {
+  function itemRenderer(item: SelectOption, itemProps: IItemRendererProps): JSX.Element | null {
     const { handleClick, modifiers } = itemProps
     return (
       <div
         key={item.value.toString()}
         className={css.menuItem}
         onClick={e => {
-          if (!modifiers.disabled && !item.disabled) {
+          if (!modifiers.disabled) {
             handleClick(e)
           }
         }}>
