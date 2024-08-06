@@ -19,7 +19,7 @@ import css from './FiltersSelectDropDown.css'
 import cx from 'classnames'
 import { Layout } from '../../../../layouts/Layout'
 import { Icon, IconName, IconProps } from '@harness/icons'
-import { Color } from '@harness/design-system'
+import { Color, FontVariation } from '@harness/design-system'
 import { Text } from '../../../Text/Text'
 import { StyledProps } from '@harness/design-system'
 import { SelectOption } from '../../../Select/Select'
@@ -27,6 +27,7 @@ import {
   ExpandingSearchInputWithRef,
   ExpandingSearchInputProps
 } from '../../../ExpandingSearchInput/ExpandingSearchInput'
+import { Container } from '../../../Container/Container'
 
 type Props = IQueryListProps<SelectOption>
 
@@ -135,6 +136,11 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     onChange?.(item)
   }
 
+  function handleClearSelection() {
+    setSelectedItem({ label: '', value: '' })
+    onChange?.({ label: '', value: '' })
+  }
+
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
     if (loading) {
@@ -223,6 +229,11 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
                 onClick: () => setIsOpen(false)
               })
             : null}
+          <Container className={css.clearSelection} onClick={handleClearSelection}>
+            <Text font={{ variation: FontVariation.SMALL }} color={Color.GREY_600}>
+              Clear Selection
+            </Text>
+          </Container>
         </React.Fragment>
       </Popover>
     )

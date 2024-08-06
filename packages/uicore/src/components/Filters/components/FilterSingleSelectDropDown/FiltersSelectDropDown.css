@@ -106,7 +106,7 @@
             cursor: pointer;
             color: var(--black);
             font-weight: 400;
-            font-size: 13px;
+            font-size: 12px;
             &.active {
               background: var(--primary-7);
               color: var(--white) !important;
@@ -130,5 +130,14 @@
 
 .crossIcon {
   margin-left: 5px !important;
+  cursor: pointer;
+}
+
+.clearSelection {
+  padding: 0 var(--spacing-4) !important;
+  height: var(--spacing-8);
+  padding: 0 var(--spacing-4) !important;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }

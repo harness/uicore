@@ -20,7 +20,7 @@ import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
 import cx from 'classnames'
 import { Layout } from '../../../../layouts/Layout'
 import { Icon, IconName, IconProps } from '@harness/icons'
-import { Color } from '@harness/design-system'
+import { Color, FontVariation } from '@harness/design-system'
 import { Text } from '../../../Text/Text'
 import { StyledProps } from '@harness/design-system'
 import { Checkbox } from '../../../Checkbox/Checkbox'
@@ -29,6 +29,7 @@ import {
   ExpandingSearchInputWithRef,
   ExpandingSearchInputProps
 } from '../../../ExpandingSearchInput/ExpandingSearchInput'
+import { Container } from '../../../Container/Container'
 
 type Props = IQueryListProps<MultiSelectOption>
 
@@ -132,6 +133,11 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
   }
 
+  function handleClearSelection(): void {
+    setSelectedItems([])
+    onChange?.([])
+  }
+
   function handleItemSelect(item: MultiSelectOption): void {
     const index = selectedItems.findIndex(opt => opt.value === item.value)
 
@@ -226,6 +232,11 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
                 className: css.menu
               })
             : null}
+          <Container className={css.clearSelection} onClick={handleClearSelection}>
+            <Text font={{ variation: FontVariation.SMALL }} color={Color.GREY_600}>
+              Clear Selection
+            </Text>
+          </Container>
         </React.Fragment>
       </Popover>
     )
