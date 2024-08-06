@@ -1,27 +1,11 @@
 /*
- * Copyright 2021 Harness Inc. All rights reserved.
+ * Copyright 2024 Harness Inc. All rights reserved.
  * Use of this source code is governed by the PolyForm Shield 1.0.0 license
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
 .main {
-  &.disabled {
-    pointer-events: none;
-    .dropdownButton {
-      &.withBorder {
-        background-color: var(--grey-100);
-      }
-      .labelWrapper {
-        .label {
-          color: var(--grey-400) !important;
-        }
-      }
-    }
-    .counter {
-      background-color: var(--grey-400) !important;
-    }
-  }
   .dropdownButton {
     border-radius: var(--spacing-2);
     padding: 0px var(--spacing-4);
@@ -62,24 +46,6 @@
         border-radius: var(--spacing-xsmall);
         font-size: 13px;
       }
-    }
-    &:not(.withBorder) {
-      &:hover {
-        background-color: var(--grey-100);
-        border-color: var(--grey-100);
-      }
-    }
-    :global(.bp3-button) {
-      padding: 0px !important;
-      height: 14px !important;
-      min-height: 14px;
-      min-width: 14px;
-      outline: none;
-    }
-    button {
-      box-shadow: none !important;
-      outline: none;
-      padding: 5px 12px !important;
     }
   }
 }
@@ -145,22 +111,9 @@
               background: var(--primary-7);
               color: var(--white) !important;
             }
-            &.disabled {
-              color: var(--grey-400);
-              cursor: default;
-            }
             &:hover:local:not(.active, .disabled) {
-              background: var(--primary-1);
-            }
-            :global {
-              :checked ~ .bp3-control-indicator {
-                --cb-bg-color: var(--white);
-                --cb-icon-filter: invert(62%) sepia(98%) saturate(6594%) hue-rotate(191deg) brightness(93%)
-                  contrast(98%);
-              }
-              .bp3-control-indicator {
-                outline: none;
-              }
+              background: var(--primary-7);
+              color: var(--white) !important;
             }
           }
         }

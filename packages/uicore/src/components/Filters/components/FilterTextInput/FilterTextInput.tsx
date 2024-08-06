@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Harness Inc. All rights reserved.
+ * Copyright 2024 Harness Inc. All rights reserved.
  * Use of this source code is governed by the PolyForm Shield 1.0.0 license
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
@@ -8,8 +8,8 @@
 import React from 'react'
 import cx from 'classnames'
 import { IInputGroupProps, Intent, TextArea } from '@blueprintjs/core'
-import { Popover, PopoverProps } from '../../../Popover/Popover'
-import { IconName, Icon, IconProps } from '@harness/icons'
+import { Popover } from '../../../Popover/Popover'
+import { Icon } from '@harness/icons'
 import { Text } from '../../../Text/Text'
 
 import css from './FilterTextInput.css'
@@ -19,13 +19,6 @@ import { Color, StyledProps } from '@harness/design-system'
 export interface FilterTextInputProps
   extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange'>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
-  leftIcon?: IconName
-  leftIconProps?: IconProps
-  rightElement?: IconName
-  rightElementProps?: Omit<IconProps, 'name'>
-  errorText?: string
-  errorInPopover?: boolean
-  popoverProps?: PopoverProps
   wrapperClassName?: string
   placeholder?: string
   onRemove?: () => void
@@ -35,8 +28,9 @@ export interface FilterTextInputProps
   buttonTestId?: string
   hideItemCount?: boolean
   isLabel?: boolean
-  value?: string[]
-  onChange?: (value: string[]) => void
+  value?: string[] | string
+  onChange?: (value: string[] | string) => void
+  acceptple?: boolean
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -51,26 +45,32 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     hideItemCount,
     isLabel,
     value,
-    onChange
+    onChange,
+    acceptple
   } = props
   const [isOpen, setIsOpen] = React.useState(false)
-  const [selectedItems, setSelectedItems] = React.useState<string[]>([])
+  const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])
   const [textAreaValue, setTextAreaValue] = React.useState<string>('')
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = e.target.value
-    const values = inputValue.split(',').filter(value => value.trim() !== '')
+    if (acceptple) {
+      const values = inputValue.split(',').filter(value => value.trim() !== '')
+      setSelectedItems(values)
+      onChange?.(values)
+    } else {
+      setSelectedItems(inputValue)
+      onChange?.(inputValue)
+    }
 
     setTextAreaValue(inputValue)
-    setSelectedItems(values)
-
-    onChange?.(values)
   }
 
   React.useEffect(() => {
     if (value && value.length > 0) {
       setSelectedItems(value)
-      setTextAreaValue(value.join(', '))
+      if (acceptple) setTextAreaValue((value as string[]).join(', '))
+      else setTextAreaValue(value as string)
     }
   }, [])
 
@@ -117,10 +117,16 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
           {!hideItemCount && selectedItems.length > 0 && (
             <>
               <div className={css.verticalDivider}></div>
-              <Text className={css.counter}>
-                {selectedItems.length <= 9 ? '0' : ''}
-                {selectedItems.length} selected
-              </Text>
+              {acceptple ? (
+                <Text className={css.counter} lineClamp={1}>
+                  {selectedItems.length <= 9 ? '0' : ''}
+                  {selectedItems.length} selected
+                </Text>
+              ) : (
+                <Text className={css.counter} lineClamp={1}>
+                  {selectedItems}
+                </Text>
+              )}
             </>
           )}
         </Layout.Horizontal>

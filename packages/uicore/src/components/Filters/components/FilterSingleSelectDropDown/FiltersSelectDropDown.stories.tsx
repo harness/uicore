@@ -11,7 +11,7 @@ import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@st
 import { SelectOption } from '../../../Select/Select'
 import { omit } from 'lodash-es'
 import data from '../../../../_stories/components/pokedex.json'
-import { FiltersSelectDropDown, MultiSelectDropDownProps } from './FiltersSelectDropDown'
+import { FiltersSelectDropDown, FilterSelectDropDownProps } from './FiltersSelectDropDown'
 import { Layout } from '../../../../layouts/Layout'
 
 export default {
@@ -50,7 +50,7 @@ const localItems: SelectOption[] = data.map((row, i) => ({
   value: row.id,
   disabled: i < 3
 }))
-export const Basic: Story<MultiSelectDropDownProps> = args => {
+export const Basic: Story<FilterSelectDropDownProps> = args => {
   const { items = localItems } = args
 
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
@@ -78,7 +78,7 @@ function dummyPromise(): Promise<SelectOption[]> {
     }, 5000)
   })
 }
-export const AsyncSelect: Story<MultiSelectDropDownProps> = args => {
+export const AsyncSelect: Story<FilterSelectDropDownProps> = args => {
   const { items = dummyPromise } = args
 
   const argsCopy = omit(args, ['items', 'onChange', 'value'])

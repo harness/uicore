@@ -16,16 +16,16 @@ import {
 } from '@blueprintjs/select'
 
 import css from './FiltersMultiSelectDropDown.css'
-import { MultiSelectOption } from '@harness/uicore'
+import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
 import cx from 'classnames'
-import { Layout } from '@harness/uicore'
+import { Layout } from '../../../../layouts/Layout'
 import { Icon, IconName, IconProps } from '@harness/icons'
 import { Color } from '@harness/design-system'
-import { Text } from '@harness/uicore'
+import { Text } from '../../../Text/Text'
 import { StyledProps } from '@harness/design-system'
-import { Checkbox } from '@harness/uicore'
-import { SelectOption } from '@harness/uicore'
-import { ExpandingSearchInput, ExpandingSearchInputProps } from '@harness/uicore'
+import { Checkbox } from '../../../Checkbox/Checkbox'
+import { SelectOption } from '../../../Select/Select'
+import { ExpandingSearchInput, ExpandingSearchInputProps } from '../../../ExpandingSearchInput/ExpandingSearchInput'
 
 type Props = IQueryListProps<MultiSelectOption>
 
