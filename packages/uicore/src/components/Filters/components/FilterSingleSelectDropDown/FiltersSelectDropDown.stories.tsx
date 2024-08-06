@@ -63,6 +63,7 @@ export const Basic: Story<FilterSelectDropDownProps> = args => {
         items={items}
         value={value}
         allowSearch
+        showDropDownIcon
         onChange={items => {
           setValue(items)
         }}

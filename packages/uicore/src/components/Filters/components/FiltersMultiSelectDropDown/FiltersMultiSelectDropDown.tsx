@@ -57,6 +57,7 @@ export interface FilterMultiSelectDropDownProps
   onRemove?: () => void
   onPopoverClose?(opts: MultiSelectOption[]): void
   expandingSearchInputProps?: ExpandingSearchInputProps
+  showDropDownIcon?: boolean
 }
 
 /**
@@ -84,6 +85,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     allowSearch = false,
     onPopoverClose,
     expandingSearchInputProps,
+    showDropDownIcon,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -212,16 +214,20 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
               </>
             )}
           </Layout.Horizontal>
-          <Icon
-            name="cross"
-            size={12}
-            className={css.crossIcon}
-            color={Color.GREY_400}
-            onClick={e => {
-              e.stopPropagation()
-              onRemove?.()
-            }}
-          />
+          {showDropDownIcon ? (
+            <Icon name="main-chevron-down" size={8} className={css.crossIcon} color={Color.GREY_400} />
+          ) : (
+            <Icon
+              name="cross"
+              size={12}
+              className={css.crossIcon}
+              color={Color.GREY_400}
+              onClick={e => {
+                e.stopPropagation()
+                onRemove?.()
+              }}
+            />
+          )}
         </Layout.Horizontal>
         <React.Fragment>
           {allowSearch && (

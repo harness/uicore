@@ -56,6 +56,7 @@ export interface FilterSelectDropDownProps
   onPopoverClose?(opts: SelectOption): void
   expandingSearchInputProps?: ExpandingSearchInputProps
   customPlaceholderRenderer?: () => React.ReactElement
+  showDropDownIcon?: boolean
 }
 
 /**
@@ -84,6 +85,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     onPopoverClose,
     customPlaceholderRenderer,
     expandingSearchInputProps,
+    showDropDownIcon,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -206,16 +208,20 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
                   </>
                 )}
               </Layout.Horizontal>
-              <Icon
-                name="cross"
-                size={12}
-                className={css.crossIcon}
-                color={Color.GREY_400}
-                onClick={e => {
-                  e.stopPropagation()
-                  onRemove?.()
-                }}
-              />
+              {showDropDownIcon ? (
+                <Icon name="main-chevron-down" size={8} className={css.crossIcon} color={Color.GREY_400} />
+              ) : (
+                <Icon
+                  name="cross"
+                  size={12}
+                  className={css.crossIcon}
+                  color={Color.GREY_400}
+                  onClick={e => {
+                    e.stopPropagation()
+                    onRemove?.()
+                  }}
+                />
+              )}
             </>
           </Layout.Horizontal>
         )}
