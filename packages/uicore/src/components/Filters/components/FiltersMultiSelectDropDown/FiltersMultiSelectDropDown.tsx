@@ -25,7 +25,10 @@ import { Text } from '../../../Text/Text'
 import { StyledProps } from '@harness/design-system'
 import { Checkbox } from '../../../Checkbox/Checkbox'
 import { SelectOption } from '../../../Select/Select'
-import { ExpandingSearchInput, ExpandingSearchInputProps } from '../../../ExpandingSearchInput/ExpandingSearchInput'
+import {
+  ExpandingSearchInputWithRef,
+  ExpandingSearchInputProps
+} from '../../../ExpandingSearchInput/ExpandingSearchInput'
 
 type Props = IQueryListProps<MultiSelectOption>
 
@@ -216,7 +219,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
         </Layout.Horizontal>
         <React.Fragment>
           {allowSearch && (
-            <ExpandingSearchInput alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
           )}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {

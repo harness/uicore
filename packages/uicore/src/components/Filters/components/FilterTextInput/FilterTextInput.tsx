@@ -30,7 +30,7 @@ export interface FilterTextInputProps
   isLabel?: boolean
   value?: string[] | string
   onChange?: (value: string[] | string) => void
-  acceptple?: boolean
+  accepMultiple?: boolean
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -46,7 +46,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     isLabel,
     value,
     onChange,
-    acceptple
+    accepMultiple
   } = props
   const [isOpen, setIsOpen] = React.useState(false)
   const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])
@@ -54,7 +54,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = e.target.value
-    if (acceptple) {
+    if (accepMultiple) {
       const values = inputValue.split(',').filter(value => value.trim() !== '')
       setSelectedItems(values)
       onChange?.(values)
@@ -69,7 +69,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
   React.useEffect(() => {
     if (value && value.length > 0) {
       setSelectedItems(value)
-      if (acceptple) setTextAreaValue((value as string[]).join(', '))
+      if (accepMultiple) setTextAreaValue((value as string[]).join(', '))
       else setTextAreaValue(value as string)
     }
   }, [])
@@ -117,7 +117,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
           {!hideItemCount && selectedItems.length > 0 && (
             <>
               <div className={css.verticalDivider}></div>
-              {acceptple ? (
+              {accepMultiple ? (
                 <Text className={css.counter} lineClamp={1}>
                   {selectedItems.length <= 9 ? '0' : ''}
                   {selectedItems.length} selected
