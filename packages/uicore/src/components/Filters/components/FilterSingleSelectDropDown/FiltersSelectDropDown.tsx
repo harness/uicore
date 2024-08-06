@@ -23,7 +23,10 @@ import { Color } from '@harness/design-system'
 import { Text } from '../../../Text/Text'
 import { StyledProps } from '@harness/design-system'
 import { SelectOption } from '../../../Select/Select'
-import { ExpandingSearchInput, ExpandingSearchInputProps } from '../../../ExpandingSearchInput/ExpandingSearchInput'
+import {
+  ExpandingSearchInputWithRef,
+  ExpandingSearchInputProps
+} from '../../../ExpandingSearchInput/ExpandingSearchInput'
 
 type Props = IQueryListProps<SelectOption>
 
@@ -212,7 +215,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
         )}
         <React.Fragment>
           {allowSearch && (
-            <ExpandingSearchInput alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
           )}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
