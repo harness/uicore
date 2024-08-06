@@ -58,7 +58,7 @@
       }
       .counter {
         background-color: var(--grey-100);
-        padding-left: 0 var(--spacing-xsmall);
+        padding: 0 var(--spacing-xsmall);
         border-radius: var(--spacing-xsmall);
         font-size: 13px;
       }

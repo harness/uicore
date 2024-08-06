@@ -45,22 +45,11 @@ export default {
 } as Meta
 
 export const Basic: Story<FilterTextInputProps> = args => {
-  //   const { items = localItems } = args
-
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
-
-  //   const [value, setValue] = React.useState<MultiSelectOption[]>(localItems.slice(0, 3))
 
   return (
     <Layout.Horizontal flex>
-      <FilterTextInput
-        // items={items}
-        // value={value}
-        placeholder={'Pokemon'}
-        value={['Bulbasaur', 'Ivysaur']}
-        // allowSearch
-        {...argsCopy}
-      />
+      <FilterTextInput placeholder={'Pokemon'} value={['Bulbasaur', 'Ivysaur']} {...argsCopy} />
     </Layout.Horizontal>
   )
 }

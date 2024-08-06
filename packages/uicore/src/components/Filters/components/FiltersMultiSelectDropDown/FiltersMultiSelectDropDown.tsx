@@ -16,19 +16,16 @@ import {
 } from '@blueprintjs/select'
 
 import css from './FiltersMultiSelectDropDown.css'
-import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
+import { MultiSelectOption } from '@harness/uicore'
 import cx from 'classnames'
-import { Layout } from '../../../../layouts/Layout'
+import { Layout } from '@harness/uicore'
 import { Icon, IconName, IconProps } from '@harness/icons'
 import { Color } from '@harness/design-system'
-import { Text } from '../../../Text/Text'
+import { Text } from '@harness/uicore'
 import { StyledProps } from '@harness/design-system'
-import { Checkbox } from '../../../Checkbox/Checkbox'
-import { SelectOption } from '../../../Select/Select'
-import {
-  ExpandingSearchInputWithRef,
-  ExpandingSearchInputProps
-} from '../../../ExpandingSearchInput/ExpandingSearchInput'
+import { Checkbox } from '@harness/uicore'
+import { SelectOption } from '@harness/uicore'
+import { ExpandingSearchInput, ExpandingSearchInputProps } from '@harness/uicore'
 
 type Props = IQueryListProps<MultiSelectOption>
 
@@ -36,7 +33,7 @@ export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
 }
 
-export interface MultiSelectDropDownProps
+export interface FilterMultiSelectDropDownProps
   extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps' | 'renderer' | 'itemRenderer' | 'onItemSelect'> {
   onChange?(opts: MultiSelectOption[]): void
   value?: MultiSelectOption[]
@@ -62,7 +59,7 @@ export interface MultiSelectDropDownProps
  * This regex does not have ending bracket intentionally
  * because we want to match the start of the expression
  */
-export function FiltersMultiSelectDropDown(props: MultiSelectDropDownProps): React.ReactElement {
+export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps): React.ReactElement {
   const {
     onChange,
     value,
@@ -219,7 +216,7 @@ export function FiltersMultiSelectDropDown(props: MultiSelectDropDownProps): Rea
         </Layout.Horizontal>
         <React.Fragment>
           {allowSearch && (
-            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+            <ExpandingSearchInput alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
           )}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
