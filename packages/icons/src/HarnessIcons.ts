@@ -1093,7 +1093,7 @@ import SeiActivityLog from './sei-activity-log.svg'
 import SeiBaArchived from './sei-ba-archived.svg'
 import SeiBaInvestment from './sei-ba-investment.svg'
 import SeiCollections from './sei-collections.svg'
-import SeiDiagonostic from './sei-diagonostic.svg'
+import SeiDiagnostic from './sei-diagnostic.svg'
 import SeiIntegration from './sei-integration.svg'
 import SeiKey from './sei-key.svg'
 import SeiMain from './sei-main.svg'
@@ -2480,7 +2480,7 @@ type HarnessIconName =
   | 'sei-ba-archived'
   | 'sei-ba-investment'
   | 'sei-collections'
-  | 'sei-diagonostic'
+  | 'sei-diagnostic'
   | 'sei-integration'
   | 'sei-key'
   | 'sei-main'
@@ -3867,7 +3867,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sei-ba-archived': SeiBaArchived,
   'sei-ba-investment': SeiBaInvestment,
   'sei-collections': SeiCollections,
-  'sei-diagonostic': SeiDiagonostic,
+  'sei-diagnostic': SeiDiagnostic,
   'sei-integration': SeiIntegration,
   'sei-key': SeiKey,
   'sei-main': SeiMain,
