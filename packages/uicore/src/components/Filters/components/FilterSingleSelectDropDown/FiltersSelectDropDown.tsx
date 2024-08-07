@@ -261,6 +261,8 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     )
   }
 
+  // This logic was picked from MultiSelectDropDown.tsx
+
   return (
     <QueryList
       items={dropDownItems}
