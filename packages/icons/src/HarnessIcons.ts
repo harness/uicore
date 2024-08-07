@@ -1343,6 +1343,7 @@ import Todo from './todo.svg'
 import Tools from './tools.svg'
 import TooltipIcon from './tooltip-icon.svg'
 import TrafficLights from './traffic-lights.svg'
+import Translate from './translate.svg'
 import TriggerArtifact from './trigger-artifact.svg'
 import TriggerExecution from './trigger-execution.svg'
 import TriggerGithub from './trigger-github.svg'
@@ -2717,6 +2718,7 @@ type HarnessIconName =
   | 'tools'
   | 'tooltip-icon'
   | 'traffic-lights'
+  | 'translate'
   | 'trigger-artifact'
   | 'trigger-execution'
   | 'trigger-github'
@@ -4091,6 +4093,7 @@ const HarnessIcons: KVO<ElementType> = {
   tools: Tools,
   'tooltip-icon': TooltipIcon,
   'traffic-lights': TrafficLights,
+  translate: Translate,
   'trigger-artifact': TriggerArtifact,
   'trigger-execution': TriggerExecution,
   'trigger-github': TriggerGithub,
