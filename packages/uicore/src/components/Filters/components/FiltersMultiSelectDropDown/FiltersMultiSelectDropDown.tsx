@@ -207,7 +207,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
             {!hideItemCount && selectedItems.length > 0 && (
               <>
                 <div className={css.verticalDivider}></div>
-                <Text className={css.counter}>
+                <Text className={css.counter} lineClamp={1}>
                   {selectedItems.length <= 9 ? '0' : ''}
                   {selectedItems.length} selected
                 </Text>

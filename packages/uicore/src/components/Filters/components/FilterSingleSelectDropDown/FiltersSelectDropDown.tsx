@@ -204,7 +204,9 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
                 {!hideItemCount && selectedItem.value !== '' && (
                   <>
                     <div className={css.verticalDivider}></div>
-                    <Text className={css.counter}>{selectedItem.label}</Text>
+                    <Text className={css.counter} lineClamp={1}>
+                      {selectedItem.label}
+                    </Text>
                   </>
                 )}
               </Layout.Horizontal>

@@ -46,6 +46,7 @@
         padding: 0 var(--spacing-xsmall);
         border-radius: var(--spacing-xsmall);
         font-size: 13px;
+        max-width: 96px;
       }
     }
   }
