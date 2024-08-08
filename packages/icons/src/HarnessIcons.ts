@@ -962,6 +962,7 @@ import ProbeEdge from './probe-edge.svg'
 import ProbeOnChaos from './probe-onChaos.svg'
 import Profile from './profile.svg'
 import ProgressDial from './progress-dial.svg'
+import ProjectSettings from './project-settings.svg'
 import ProjectsWizard from './projects-wizard.svg'
 import ProwlerInverse from './prowler-inverse.svg'
 import Prowler from './prowler.svg'
@@ -1088,8 +1089,19 @@ import SecretsIcon from './secrets-icon.svg'
 import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
 import SecurityStage from './security-stage.svg'
+import SeiActivityLog from './sei-activity-log.svg'
+import SeiBaArchived from './sei-ba-archived.svg'
+import SeiBaInvestment from './sei-ba-investment.svg'
+import SeiCollections from './sei-collections.svg'
+import SeiDiagnostic from './sei-diagnostic.svg'
+import SeiIntegration from './sei-integration.svg'
+import SeiKey from './sei-key.svg'
 import SeiMain from './sei-main.svg'
+import SeiPano from './sei-pano.svg'
+import SeiPropel from './sei-propel.svg'
+import SeiTrellis from './sei-trellis.svg'
 import SeiWithDarkText from './sei-with-dark-text.svg'
+import SeiWorkflow from './sei-workflow.svg'
 import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
 import SendData from './send-data.svg'
@@ -2337,6 +2349,7 @@ type HarnessIconName =
   | 'probe-onChaos'
   | 'profile'
   | 'progress-dial'
+  | 'project-settings'
   | 'projects-wizard'
   | 'prowler-inverse'
   | 'prowler'
@@ -2463,8 +2476,19 @@ type HarnessIconName =
   | 'security-ci-step-inverse'
   | 'security-ci-step'
   | 'security-stage'
+  | 'sei-activity-log'
+  | 'sei-ba-archived'
+  | 'sei-ba-investment'
+  | 'sei-collections'
+  | 'sei-diagnostic'
+  | 'sei-integration'
+  | 'sei-key'
   | 'sei-main'
+  | 'sei-pano'
+  | 'sei-propel'
+  | 'sei-trellis'
   | 'sei-with-dark-text'
+  | 'sei-workflow'
   | 'select-scope'
   | 'semgrep'
   | 'send-data'
@@ -3712,6 +3736,7 @@ const HarnessIcons: KVO<ElementType> = {
   'probe-onChaos': ProbeOnChaos,
   profile: Profile,
   'progress-dial': ProgressDial,
+  'project-settings': ProjectSettings,
   'projects-wizard': ProjectsWizard,
   'prowler-inverse': ProwlerInverse,
   prowler: Prowler,
@@ -3838,8 +3863,19 @@ const HarnessIcons: KVO<ElementType> = {
   'security-ci-step-inverse': SecurityCiStepInverse,
   'security-ci-step': SecurityCiStep,
   'security-stage': SecurityStage,
+  'sei-activity-log': SeiActivityLog,
+  'sei-ba-archived': SeiBaArchived,
+  'sei-ba-investment': SeiBaInvestment,
+  'sei-collections': SeiCollections,
+  'sei-diagnostic': SeiDiagnostic,
+  'sei-integration': SeiIntegration,
+  'sei-key': SeiKey,
   'sei-main': SeiMain,
+  'sei-pano': SeiPano,
+  'sei-propel': SeiPropel,
+  'sei-trellis': SeiTrellis,
   'sei-with-dark-text': SeiWithDarkText,
+  'sei-workflow': SeiWorkflow,
   'select-scope': SelectScope,
   semgrep: Semgrep,
   'send-data': SendData,
