@@ -707,6 +707,8 @@ import InitializeCiStepInverse from './initialize-ci-step-inverse.svg'
 import InitializeCiStep from './initialize-ci-step.svg'
 import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
+import InjectConsumer from './inject-consumer.svg'
+import InjectCreator from './inject-creator.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
@@ -2094,6 +2096,8 @@ type HarnessIconName =
   | 'initialize-ci-step'
   | 'initialize-step-inverse'
   | 'initialize-step'
+  | 'inject-consumer'
+  | 'inject-creator'
   | 'insight-view'
   | 'instances'
   | 'integration'
@@ -3481,6 +3485,8 @@ const HarnessIcons: KVO<ElementType> = {
   'initialize-ci-step': InitializeCiStep,
   'initialize-step-inverse': InitializeStepInverse,
   'initialize-step': InitializeStep,
+  'inject-consumer': InjectConsumer,
+  'inject-creator': InjectCreator,
   'insight-view': InsightView,
   instances: Instances,
   integration: Integration,
