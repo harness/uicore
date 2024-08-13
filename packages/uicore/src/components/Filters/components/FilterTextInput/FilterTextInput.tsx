@@ -23,14 +23,13 @@ export interface FilterTextInputProps
   placeholder?: string
   onRemove?: () => void
   usePortal?: boolean
-  minWidth?: StyledProps['width']
   width?: StyledProps['width']
   buttonTestId?: string
   hideItemCount?: boolean
   isLabel?: boolean
   value?: string[] | string
   onChange?: (value: string[] | string) => void
-  accepMultiple?: boolean
+  acceptMultipleValues?: boolean
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -41,12 +40,11 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     usePortal,
     buttonTestId,
     width,
-    minWidth,
     hideItemCount,
     isLabel,
     value,
     onChange,
-    accepMultiple
+    acceptMultipleValues
   } = props
   const [isOpen, setIsOpen] = React.useState(false)
   const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])
@@ -54,7 +52,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = e.target.value
-    if (accepMultiple) {
+    if (acceptMultipleValues) {
       const values = inputValue.split(',').filter(value => value.trim() !== '')
       setSelectedItems(values)
       onChange?.(values)
@@ -69,7 +67,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
   React.useEffect(() => {
     if (value && value.length > 0) {
       setSelectedItems(value)
-      if (accepMultiple) setTextAreaValue((value as string[]).join(', '))
+      if (acceptMultipleValues) setTextAreaValue((value as string[]).join(', '))
       else setTextAreaValue(value as string)
     }
   }, [])
@@ -101,7 +99,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
       content={TextInput}>
       <Layout.Horizontal
         data-testid={buttonTestId}
-        style={width ? { width } : { minWidth }}
+        style={width ? { width } : undefined}
         className={cx(
           css.dropdownButton,
           { [css.withBorder]: !isLabel },
@@ -117,7 +115,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
           {!hideItemCount && selectedItems.length > 0 && (
             <>
               <div className={css.verticalDivider}></div>
-              {accepMultiple ? (
+              {acceptMultipleValues ? (
                 <Text className={css.counter} lineClamp={1}>
                   {selectedItems.length <= 9 ? '0' : ''}
                   {selectedItems.length} selected

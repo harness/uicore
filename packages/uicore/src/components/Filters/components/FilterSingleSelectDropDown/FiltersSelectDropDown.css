@@ -9,7 +9,7 @@
 .main {
   .dropdownButton {
     border-radius: var(--spacing-2);
-    padding: 0px var(--spacing-4);
+    padding: 0px var(--spacing-3);
     height: var(--spacing-8);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
@@ -32,7 +32,8 @@
     }
     .labelWrapper {
       flex-shrink: 1;
-      column-gap: var(--spacing-3);
+      column-gap: var(--spacing-2);
+      cursor: pointer;
       :global(.bp3-popover-wrapper) {
         display: inline-flex;
       }

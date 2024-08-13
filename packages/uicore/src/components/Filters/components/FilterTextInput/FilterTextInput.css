@@ -10,7 +10,7 @@
 .main {
   .dropdownButton {
     border-radius: var(--spacing-2);
-    padding: 0px var(--spacing-4);
+    padding: 0px var(--spacing-3);
     height: var(--spacing-8);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
@@ -32,7 +32,8 @@
       }
     }
     .labelWrapper {
-      column-gap: var(--spacing-3);
+      column-gap: var(--spacing-2);
+      cursor: pointer;
       .label {
         font-size: var(--font-size-normal);
         font-weight: 400;
@@ -75,5 +76,7 @@
   textarea {
     width: 286px;
     min-height: 32px;
+    resize: vertical;
+    height: 38px;
   }
 }

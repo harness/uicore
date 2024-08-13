@@ -45,7 +45,6 @@ export interface FilterMultiSelectDropDownProps
   usePortal?: boolean
   className?: string
   popoverClassName?: string
-  minWidth?: StyledProps['width']
   width?: StyledProps['width']
   buttonTestId?: string
   isLabel?: boolean
@@ -73,7 +72,6 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     popoverClassName = '',
     usePortal = false,
     placeholder = 'Select',
-    minWidth = 130,
     width,
     onRemove,
     buttonTestId = 'multi-select-dropdown-button',
@@ -190,7 +188,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
         isOpen={isOpen}>
         <Layout.Horizontal
           data-testid={buttonTestId}
-          style={width ? { width } : { minWidth }}
+          style={width ? { width } : undefined}
           className={cx(
             css.dropdownButton,
             { [css.withBorder]: !isLabel },
