@@ -1266,6 +1266,7 @@ import StoColorFilled from './sto-color-filled.svg'
 import StoContainers from './sto-containers.svg'
 import StoDast from './sto-dast.svg'
 import StoGrey from './sto-grey.svg'
+import StoIac from './sto-iac.svg'
 import StoSast from './sto-sast.svg'
 import StoSca from './sto-sca.svg'
 import StoSecrets from './sto-secrets.svg'
@@ -2655,6 +2656,7 @@ type HarnessIconName =
   | 'sto-containers'
   | 'sto-dast'
   | 'sto-grey'
+  | 'sto-iac'
   | 'sto-sast'
   | 'sto-sca'
   | 'sto-secrets'
@@ -4044,6 +4046,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-containers': StoContainers,
   'sto-dast': StoDast,
   'sto-grey': StoGrey,
+  'sto-iac': StoIac,
   'sto-sast': StoSast,
   'sto-sca': StoSca,
   'sto-secrets': StoSecrets,
