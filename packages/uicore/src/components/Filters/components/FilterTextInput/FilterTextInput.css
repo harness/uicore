@@ -72,11 +72,8 @@
 }
 
 .wrapper {
-  padding: var(--spacing-small) var(--spacing-medium);
-  textarea {
+  padding: var(--spacing-small);
+  .input {
     width: 286px;
-    min-height: 32px;
-    resize: vertical;
-    height: 38px;
   }
 }

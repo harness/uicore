@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { IInputGroupProps, Intent, TextArea } from '@blueprintjs/core'
+import { IInputGroupProps, Intent, InputGroup } from '@blueprintjs/core'
 import { Popover } from '../../../Popover/Popover'
 import { Icon } from '@harness/icons'
 import { Text } from '../../../Text/Text'
@@ -17,7 +17,7 @@ import { Layout } from '../../../../layouts/Layout'
 import { Color, StyledProps } from '@harness/design-system'
 
 export interface FilterTextInputProps
-  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange'>,
+  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   wrapperClassName?: string
   placeholder?: string
@@ -30,6 +30,7 @@ export interface FilterTextInputProps
   value?: string[] | string
   onChange?: (value: string[] | string) => void
   acceptMultipleValues?: boolean
+  inputPlaceholder?: string
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -44,13 +45,14 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     isLabel,
     value,
     onChange,
-    acceptMultipleValues
+    acceptMultipleValues,
+    inputPlaceholder
   } = props
   const [isOpen, setIsOpen] = React.useState(false)
   const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])
-  const [textAreaValue, setTextAreaValue] = React.useState<string>('')
+  const [textInputValue, setTextInputValue] = React.useState<string>('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value
     if (acceptMultipleValues) {
       const values = inputValue.split(',').filter(value => value.trim() !== '')
@@ -61,20 +63,26 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
       onChange?.(inputValue)
     }
 
-    setTextAreaValue(inputValue)
+    setTextInputValue(inputValue)
   }
 
   React.useEffect(() => {
     if (value && value.length > 0) {
       setSelectedItems(value)
-      if (acceptMultipleValues) setTextAreaValue((value as string[]).join(', '))
-      else setTextAreaValue(value as string)
+      if (acceptMultipleValues) setTextInputValue((value as string[]).join(', '))
+      else setTextInputValue(value as string)
     }
   }, [])
 
   const TextInput = (
     <div className={cx(css.wrapper, wrapperClassName)}>
-      <TextArea growVertically intent={Intent.PRIMARY} onChange={e => handleChange(e)} value={textAreaValue} />
+      <InputGroup
+        intent={Intent.PRIMARY}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
+        value={textInputValue}
+        className={css.input}
+        placeholder={inputPlaceholder}
+      />
     </div>
   )
 
