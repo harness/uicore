@@ -29,7 +29,7 @@ export interface FilterTextInputProps
   isLabel?: boolean
   value?: string[] | string
   onChange?: (value: string[] | string) => void
-  acceptMultipleValues?: boolean
+  enableMultiInput?: boolean
   inputPlaceholder?: string
 }
 
@@ -45,7 +45,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     isLabel,
     value,
     onChange,
-    acceptMultipleValues,
+    enableMultiInput,
     inputPlaceholder
   } = props
   const [isOpen, setIsOpen] = React.useState(false)
@@ -54,7 +54,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value
-    if (acceptMultipleValues) {
+    if (enableMultiInput) {
       const values = inputValue.split(',').filter(value => value.trim() !== '')
       setSelectedItems(values)
       onChange?.(values)
@@ -69,7 +69,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
   React.useEffect(() => {
     if (value && value.length > 0) {
       setSelectedItems(value)
-      if (acceptMultipleValues) setTextInputValue((value as string[]).join(', '))
+      if (enableMultiInput) setTextInputValue((value as string[]).join(', '))
       else setTextInputValue(value as string)
     }
   }, [])
@@ -123,7 +123,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
           {!hideItemCount && selectedItems.length > 0 && (
             <>
               <div className={css.verticalDivider}></div>
-              {acceptMultipleValues ? (
+              {enableMultiInput ? (
                 <Text className={css.counter} lineClamp={1}>
                   {selectedItems.length <= 9 ? '0' : ''}
                   {selectedItems.length} selected
