@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { IInputGroupProps, Intent, TextArea } from '@blueprintjs/core'
+import { IInputGroupProps, Intent, InputGroup } from '@blueprintjs/core'
 import { Popover } from '../../../Popover/Popover'
 import { Icon } from '@harness/icons'
 import { Text } from '../../../Text/Text'
@@ -17,20 +17,20 @@ import { Layout } from '../../../../layouts/Layout'
 import { Color, StyledProps } from '@harness/design-system'
 
 export interface FilterTextInputProps
-  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange'>,
+  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   wrapperClassName?: string
   placeholder?: string
   onRemove?: () => void
   usePortal?: boolean
-  minWidth?: StyledProps['width']
   width?: StyledProps['width']
   buttonTestId?: string
   hideItemCount?: boolean
   isLabel?: boolean
   value?: string[] | string
   onChange?: (value: string[] | string) => void
-  accepMultiple?: boolean
+  enableMultiInput?: boolean
+  inputPlaceholder?: string
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -41,20 +41,20 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     usePortal,
     buttonTestId,
     width,
-    minWidth,
     hideItemCount,
     isLabel,
     value,
     onChange,
-    accepMultiple
+    enableMultiInput,
+    inputPlaceholder
   } = props
   const [isOpen, setIsOpen] = React.useState(false)
   const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])
-  const [textAreaValue, setTextAreaValue] = React.useState<string>('')
+  const [textInputValue, setTextInputValue] = React.useState<string>('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value
-    if (accepMultiple) {
+    if (enableMultiInput) {
       const values = inputValue.split(',').filter(value => value.trim() !== '')
       setSelectedItems(values)
       onChange?.(values)
@@ -63,20 +63,26 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
       onChange?.(inputValue)
     }
 
-    setTextAreaValue(inputValue)
+    setTextInputValue(inputValue)
   }
 
   React.useEffect(() => {
     if (value && value.length > 0) {
       setSelectedItems(value)
-      if (accepMultiple) setTextAreaValue((value as string[]).join(', '))
-      else setTextAreaValue(value as string)
+      if (enableMultiInput) setTextInputValue((value as string[]).join(', '))
+      else setTextInputValue(value as string)
     }
   }, [])
 
   const TextInput = (
     <div className={cx(css.wrapper, wrapperClassName)}>
-      <TextArea growVertically intent={Intent.PRIMARY} onChange={e => handleChange(e)} value={textAreaValue} />
+      <InputGroup
+        intent={Intent.PRIMARY}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
+        value={textInputValue}
+        className={css.input}
+        placeholder={inputPlaceholder}
+      />
     </div>
   )
 
@@ -101,7 +107,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
       content={TextInput}>
       <Layout.Horizontal
         data-testid={buttonTestId}
-        style={width ? { width } : { minWidth }}
+        style={width ? { width } : undefined}
         className={cx(
           css.dropdownButton,
           { [css.withBorder]: !isLabel },
@@ -117,7 +123,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
           {!hideItemCount && selectedItems.length > 0 && (
             <>
               <div className={css.verticalDivider}></div>
-              {accepMultiple ? (
+              {enableMultiInput ? (
                 <Text className={css.counter} lineClamp={1}>
                   {selectedItems.length <= 9 ? '0' : ''}
                   {selectedItems.length} selected

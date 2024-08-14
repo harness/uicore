@@ -43,7 +43,6 @@ export interface FilterSelectDropDownProps
   usePortal?: boolean
   className?: string
   popoverClassName?: string
-  minWidth?: StyledProps['width']
   width?: StyledProps['width']
   buttonTestId?: string
   isLabel?: boolean
@@ -57,6 +56,7 @@ export interface FilterSelectDropDownProps
   expandingSearchInputProps?: ExpandingSearchInputProps
   customPlaceholderRenderer?: () => React.ReactElement
   showDropDownIcon?: boolean
+  allowClearSelection?: boolean
 }
 
 /**
@@ -72,7 +72,6 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     popoverClassName = '',
     usePortal = false,
     placeholder = 'Select',
-    minWidth = 130,
     width,
     onRemove,
     buttonTestId = 'multi-select-dropdown-button',
@@ -86,6 +85,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     customPlaceholderRenderer,
     expandingSearchInputProps,
     showDropDownIcon,
+    allowClearSelection,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -186,7 +186,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
         ) : (
           <Layout.Horizontal
             data-testid={buttonTestId}
-            style={width ? { width } : { minWidth }}
+            style={width ? { width } : undefined}
             className={cx(
               css.dropdownButton,
               { [css.withBorder]: !isLabel },
@@ -237,11 +237,13 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
                 onClick: () => setIsOpen(false)
               })
             : null}
-          <Container className={css.clearSelection} onClick={handleClearSelection}>
-            <Text font={{ variation: FontVariation.SMALL }} color={Color.GREY_600}>
-              Clear Selection
-            </Text>
-          </Container>
+          {allowClearSelection ? (
+            <Container className={css.clearSelection} onClick={handleClearSelection}>
+              <Text font={{ variation: FontVariation.SMALL }} color={Color.GREY_600}>
+                Clear Selection
+              </Text>
+            </Container>
+          ) : null}
         </React.Fragment>
       </Popover>
     )

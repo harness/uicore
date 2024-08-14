@@ -49,7 +49,7 @@ export const Basic: Story<FilterTextInputProps> = args => {
 
   return (
     <Layout.Horizontal flex>
-      <FilterTextInput accepMultiple placeholder={'Pokemon'} value={['Bulbasaur', 'Ivysaur']} {...argsCopy} />
+      <FilterTextInput enableMultiInput placeholder={'Pokemon'} value={['Bulbasaur', 'Ivysaur']} {...argsCopy} />
     </Layout.Horizontal>
   )
 }
