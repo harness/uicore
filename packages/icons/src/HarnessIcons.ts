@@ -707,6 +707,8 @@ import InitializeCiStepInverse from './initialize-ci-step-inverse.svg'
 import InitializeCiStep from './initialize-ci-step.svg'
 import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
+import InjectConsumer from './inject-consumer.svg'
+import InjectCreator from './inject-creator.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
@@ -1264,6 +1266,7 @@ import StoColorFilled from './sto-color-filled.svg'
 import StoContainers from './sto-containers.svg'
 import StoDast from './sto-dast.svg'
 import StoGrey from './sto-grey.svg'
+import StoIac from './sto-iac.svg'
 import StoSast from './sto-sast.svg'
 import StoSca from './sto-sca.svg'
 import StoSecrets from './sto-secrets.svg'
@@ -2094,6 +2097,8 @@ type HarnessIconName =
   | 'initialize-ci-step'
   | 'initialize-step-inverse'
   | 'initialize-step'
+  | 'inject-consumer'
+  | 'inject-creator'
   | 'insight-view'
   | 'instances'
   | 'integration'
@@ -2651,6 +2656,7 @@ type HarnessIconName =
   | 'sto-containers'
   | 'sto-dast'
   | 'sto-grey'
+  | 'sto-iac'
   | 'sto-sast'
   | 'sto-sca'
   | 'sto-secrets'
@@ -3481,6 +3487,8 @@ const HarnessIcons: KVO<ElementType> = {
   'initialize-ci-step': InitializeCiStep,
   'initialize-step-inverse': InitializeStepInverse,
   'initialize-step': InitializeStep,
+  'inject-consumer': InjectConsumer,
+  'inject-creator': InjectCreator,
   'insight-view': InsightView,
   instances: Instances,
   integration: Integration,
@@ -4038,6 +4046,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-containers': StoContainers,
   'sto-dast': StoDast,
   'sto-grey': StoGrey,
+  'sto-iac': StoIac,
   'sto-sast': StoSast,
   'sto-sca': StoSca,
   'sto-secrets': StoSecrets,
