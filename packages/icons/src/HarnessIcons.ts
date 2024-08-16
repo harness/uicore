@@ -602,6 +602,7 @@ import GitNewBranch from './git-new-branch.svg'
 import GitPopover from './git-popover.svg'
 import GithubActionPlugin from './github-action-plugin.svg'
 import GithubActions from './github-actions.svg'
+import GithubCopilot from './github-copilot.svg'
 import GithubInsights from './github-insights.svg'
 import GithubSelected from './github-selected.svg'
 import GithubUnselected from './github-unselected.svg'
@@ -1992,6 +1993,7 @@ type HarnessIconName =
   | 'git-popover'
   | 'github-action-plugin'
   | 'github-actions'
+  | 'github-copilot'
   | 'github-insights'
   | 'github-selected'
   | 'github-unselected'
@@ -3382,6 +3384,7 @@ const HarnessIcons: KVO<ElementType> = {
   'git-popover': GitPopover,
   'github-action-plugin': GithubActionPlugin,
   'github-actions': GithubActions,
+  'github-copilot': GithubCopilot,
   'github-insights': GithubInsights,
   'github-selected': GithubSelected,
   'github-unselected': GithubUnselected,
