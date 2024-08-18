@@ -1249,6 +1249,7 @@ import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
+import SscaRocket from './ssca-rocket.svg'
 import SscaRuledefinition from './ssca-ruledefinition.svg'
 import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
@@ -2641,6 +2642,7 @@ type HarnessIconName =
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
+  | 'ssca-rocket'
   | 'ssca-ruledefinition'
   | 'ssl-cert'
   | 'stale-cache'
@@ -4033,6 +4035,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
+  'ssca-rocket': SscaRocket,
   'ssca-ruledefinition': SscaRuledefinition,
   'ssl-cert': SslCert,
   'stale-cache': StaleCache,
