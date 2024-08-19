@@ -699,6 +699,7 @@ import ImageAppLayer from './image-app-layer.svg'
 import ImageBaseLayer from './image-base-layer.svg'
 import ImageDistroLayer from './image-distro-layer.svg'
 import Incidents from './incidents.svg'
+import Infinity from './infinity.svg'
 import InfinityTrend from './infinityTrend.svg'
 import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
@@ -1248,6 +1249,7 @@ import SscaEnforce from './ssca-enforce.svg'
 import SscaMain from './ssca-main.svg'
 import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
+import SscaRocket from './ssca-rocket.svg'
 import SscaRuledefinition from './ssca-ruledefinition.svg'
 import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
@@ -2090,6 +2092,7 @@ type HarnessIconName =
   | 'image-base-layer'
   | 'image-distro-layer'
   | 'incidents'
+  | 'infinity'
   | 'infinityTrend'
   | 'info-message'
   | 'info-messaging'
@@ -2639,6 +2642,7 @@ type HarnessIconName =
   | 'ssca-main'
   | 'ssca-orchestrate'
   | 'ssca-remediation'
+  | 'ssca-rocket'
   | 'ssca-ruledefinition'
   | 'ssl-cert'
   | 'stale-cache'
@@ -3481,6 +3485,7 @@ const HarnessIcons: KVO<ElementType> = {
   'image-base-layer': ImageBaseLayer,
   'image-distro-layer': ImageDistroLayer,
   incidents: Incidents,
+  infinity: Infinity,
   infinityTrend: InfinityTrend,
   'info-message': InfoMessage,
   'info-messaging': InfoMessaging,
@@ -4030,6 +4035,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-main': SscaMain,
   'ssca-orchestrate': SscaOrchestrate,
   'ssca-remediation': SscaRemediation,
+  'ssca-rocket': SscaRocket,
   'ssca-ruledefinition': SscaRuledefinition,
   'ssl-cert': SslCert,
   'stale-cache': StaleCache,
