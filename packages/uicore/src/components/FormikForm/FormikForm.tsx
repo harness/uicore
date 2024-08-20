@@ -169,7 +169,12 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
   const { separator = /[,\n\r]/ } = tagsProps ?? {}
   const [mentionsType] = React.useState(`kv-tag-input-${name}`)
 
-  const fieldValue = get(formik?.values, name)
+  let fieldValue = get(formik?.values, name)
+
+  // Overrides fieldValue if passed by consumer
+  if (tagsProps?.values) {
+    fieldValue = tagsProps.values
+  }
 
   const inputRef = useRef<HTMLInputElement | null>(null)
   const [inputValue, setInputValue] = useState('')
