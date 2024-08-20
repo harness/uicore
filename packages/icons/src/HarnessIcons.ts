@@ -437,6 +437,7 @@ import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
 import DataIntegrationHub from './data-integration-hub.svg'
 import DbDevops from './db-devops.svg'
+import DbInstance from './db-instance.svg'
 import DbSchema from './db-schema.svg'
 import DbStep from './db-step.svg'
 import DefaultDashboard from './default-dashboard.svg'
@@ -1830,6 +1831,7 @@ type HarnessIconName =
   | 'data-fetch-error'
   | 'data-integration-hub'
   | 'db-devops'
+  | 'db-instance'
   | 'db-schema'
   | 'db-step'
   | 'default-dashboard'
@@ -3223,6 +3225,7 @@ const HarnessIcons: KVO<ElementType> = {
   'data-fetch-error': DataFetchError,
   'data-integration-hub': DataIntegrationHub,
   'db-devops': DbDevops,
+  'db-instance': DbInstance,
   'db-schema': DbSchema,
   'db-step': DbStep,
   'default-dashboard': DefaultDashboard,
