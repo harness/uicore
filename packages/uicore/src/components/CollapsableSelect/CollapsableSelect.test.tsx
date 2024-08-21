@@ -9,8 +9,8 @@ import React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import { CollapsableSelectType, FormikCollapsableSelect } from './CollapsableSelect'
 import { Form, Formik } from 'formik'
-import { Layout } from 'index'
 import { noop } from 'lodash'
+import { Layout } from '../../layouts/Layout'
 
 const items = [
   {

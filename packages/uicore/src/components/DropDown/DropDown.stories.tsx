@@ -10,7 +10,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { DropDown, DropDownProps } from './DropDown'
 import { Layout } from '../../layouts/Layout'
-import { SelectOption } from 'index'
+import { SelectOption } from '../../components/Select/Select'
 
 const staticItems = [
   { label: 'Aborted', value: 'aborted' },
