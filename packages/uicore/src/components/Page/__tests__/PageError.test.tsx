@@ -6,8 +6,9 @@
  */
 
 import React from 'react'
-import { Layout, Text } from 'index'
 import { render } from '@testing-library/react'
+import { Layout } from '../../../layouts/Layout'
+import { Text } from '../../../components/Text/Text'
 import { PageError } from '../PageError'
 
 describe('PageError test', () => {

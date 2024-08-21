@@ -5,9 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { UseTooltipsReturn } from 'index'
 import React from 'react'
-import { TooltipContextProviderProps, TooltipContextValue, TooltipDictionaryValue } from './types'
+import { TooltipContextProviderProps, TooltipContextValue, TooltipDictionaryValue, UseTooltipsReturn } from './types'
 
 export const TooltipContext = React.createContext<TooltipContextValue>({ tooltipDictionary: {} })
 

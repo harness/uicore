@@ -15,7 +15,7 @@ import { Text } from '../Text/Text'
 import css from './SelectWithSubmenuV2.css'
 import selectCss from '../Select/Select.css'
 import { SelectProps, SelectOption, Select } from '../../components/Select/Select'
-import { MultiTypeInputType } from 'index'
+import { MultiTypeInputType } from '../../components/MultiTypeInput/MultiTypeInputUtils'
 
 export interface SubmenuSelectOption extends SelectOption {
   submenuItems: SelectOption[]
