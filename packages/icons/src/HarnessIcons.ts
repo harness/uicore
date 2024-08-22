@@ -1074,6 +1074,7 @@ import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
 import SbomDriftDetected from './sbom-drift-detected.svg'
+import SchemaRollback from './schema-rollback.svg'
 import Scm from './scm.svg'
 import Script from './script.svg'
 import SearchApplications from './search-applications.svg'
@@ -2470,6 +2471,7 @@ type HarnessIconName =
   | 'save-cache-s3'
   | 'save-cache-step'
   | 'sbom-drift-detected'
+  | 'schema-rollback'
   | 'scm'
   | 'script'
   | 'search-applications'
@@ -3866,6 +3868,7 @@ const HarnessIcons: KVO<ElementType> = {
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
   'sbom-drift-detected': SbomDriftDetected,
+  'schema-rollback': SchemaRollback,
   scm: Scm,
   script: Script,
   'search-applications': SearchApplications,
