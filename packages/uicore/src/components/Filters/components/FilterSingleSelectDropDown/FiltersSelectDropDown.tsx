@@ -57,6 +57,8 @@ export interface FilterSelectDropDownProps
   customPlaceholderRenderer?: () => React.ReactElement
   showDropDownIcon?: boolean
   allowClearSelection?: boolean
+  initialDropDownOpen?: boolean
+  isLoading?: boolean
 }
 
 /**
@@ -86,13 +88,15 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     expandingSearchInputProps,
     showDropDownIcon,
     allowClearSelection,
+    initialDropDownOpen = false,
+    isLoading,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
   const [selectedItem, setSelectedItem] = React.useState<SelectOption>({ label: '', value: '' })
   const [dropDownItems, setDropDownItems] = React.useState<SelectOption[]>([])
   const [loading, setLoading] = React.useState<boolean>(false)
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(initialDropDownOpen)
 
   useEffect(() => {
     if (Array.isArray(items)) {
@@ -145,7 +149,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
-    if (loading) {
+    if (loading || isLoading) {
       renderedItems = (
         <li className={css.menuItem} style={{ justifyContent: 'center' }}>
           <Spinner size={20} />
@@ -177,7 +181,10 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
         }}
         autoFocus={false}
         enforceFocus={false}
-        onClose={() => onPopoverClose?.(selectedItem)}
+        onClose={() => {
+          setIsOpen(false)
+          onPopoverClose?.(selectedItem)
+        }}
         className={cx(css.main, { [css.disabled]: !!disabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
         isOpen={isOpen}>
@@ -210,20 +217,17 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
                   </>
                 )}
               </Layout.Horizontal>
-              {showDropDownIcon ? (
-                <Icon name="main-chevron-down" size={8} className={css.crossIcon} color={Color.GREY_400} />
-              ) : (
-                <Icon
-                  name="cross"
-                  size={12}
-                  className={css.crossIcon}
-                  color={Color.GREY_400}
-                  onClick={e => {
-                    e.stopPropagation()
-                    onRemove?.()
-                  }}
-                />
-              )}
+
+              <Icon
+                name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
+                size={showDropDownIcon ? 8 : 12}
+                className={css.crossIcon}
+                color={Color.GREY_400}
+                onClick={e => {
+                  e.stopPropagation()
+                  onRemove?.()
+                }}
+              />
             </>
           </Layout.Horizontal>
         )}
