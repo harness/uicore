@@ -836,6 +836,7 @@ import MainUser from './main-user.svg'
 import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
+import Management from './management.svg'
 import MapRoute from './map-route.svg'
 import MarkAsFailed from './mark-as-failed.svg'
 import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
@@ -1220,6 +1221,7 @@ import ServicenowUpdateInverse from './servicenow-update-inverse.svg'
 import ServicenowUpdate from './servicenow-update.svg'
 import Services from './services.svg'
 import Setting from './setting.svg'
+import SettingsHorizontal from './settings-horizontal.svg'
 import SetupApi from './setup-api.svg'
 import SetupClient from './setup-client.svg'
 import SetupTags from './setup-tags.svg'
@@ -2230,6 +2232,7 @@ type HarnessIconName =
   | 'main-view'
   | 'main-workflows'
   | 'main-zoom-out'
+  | 'management'
   | 'map-route'
   | 'mark-as-failed'
   | 'mark-as-failure-inverse'
@@ -2614,6 +2617,7 @@ type HarnessIconName =
   | 'servicenow-update'
   | 'services'
   | 'setting'
+  | 'settings-horizontal'
   | 'setup-api'
   | 'setup-client'
   | 'setup-tags'
@@ -3624,6 +3628,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-view': MainView,
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
+  management: Management,
   'map-route': MapRoute,
   'mark-as-failed': MarkAsFailed,
   'mark-as-failure-inverse': MarkAsFailureInverse,
@@ -4008,6 +4013,7 @@ const HarnessIcons: KVO<ElementType> = {
   'servicenow-update': ServicenowUpdate,
   services: Services,
   setting: Setting,
+  'settings-horizontal': SettingsHorizontal,
   'setup-api': SetupApi,
   'setup-client': SetupClient,
   'setup-tags': SetupTags,
