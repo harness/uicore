@@ -273,5 +273,6 @@ export {
   FilterSelectDropDownProps
 } from './components/Filters/components/FilterSingleSelectDropDown/FiltersSelectDropDown'
 export { FilterTextInput, FilterTextInputProps } from './components/Filters/components/FilterTextInput/FilterTextInput'
+export { FilterTagInput, FilterTagInputProps } from './components/Filters/components/FilterTagInput/FilterTagInput'
 export * from '@harness/design-system'
 export * from '@harness/icons'
