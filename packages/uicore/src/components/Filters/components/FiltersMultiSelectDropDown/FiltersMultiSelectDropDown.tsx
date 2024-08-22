@@ -57,6 +57,8 @@ export interface FilterMultiSelectDropDownProps
   onPopoverClose?(opts: MultiSelectOption[]): void
   expandingSearchInputProps?: ExpandingSearchInputProps
   showDropDownIcon?: boolean
+  initialDropDownOpen?: boolean
+  isLoading?: boolean
 }
 
 /**
@@ -84,13 +86,15 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     onPopoverClose,
     expandingSearchInputProps,
     showDropDownIcon,
+    initialDropDownOpen = false,
+    isLoading = false,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
   const [selectedItems, setSelectedItems] = React.useState<MultiSelectOption[]>([])
   const [dropDownItems, setDropDownItems] = React.useState<MultiSelectOption[]>([])
   const [loading, setLoading] = React.useState<boolean>(false)
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(initialDropDownOpen)
 
   useEffect(() => {
     if (Array.isArray(items)) {
@@ -150,7 +154,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
-    if (loading) {
+    if (loading || isLoading) {
       renderedItems = (
         <li className={css.menuItem} style={{ justifyContent: 'center' }}>
           <Spinner size={20} />
@@ -212,20 +216,16 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
               </>
             )}
           </Layout.Horizontal>
-          {showDropDownIcon ? (
-            <Icon name="main-chevron-down" size={8} className={css.crossIcon} color={Color.GREY_400} />
-          ) : (
-            <Icon
-              name="cross"
-              size={12}
-              className={css.crossIcon}
-              color={Color.GREY_400}
-              onClick={e => {
-                e.stopPropagation()
-                onRemove?.()
-              }}
-            />
-          )}
+          <Icon
+            name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
+            size={showDropDownIcon ? 8 : 12}
+            className={css.crossIcon}
+            color={Color.GREY_400}
+            onClick={e => {
+              e.stopPropagation()
+              onRemove?.()
+            }}
+          />
         </Layout.Horizontal>
         <React.Fragment>
           {allowSearch && (

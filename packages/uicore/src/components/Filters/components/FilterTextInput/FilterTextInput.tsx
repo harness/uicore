@@ -31,6 +31,8 @@ export interface FilterTextInputProps
   onChange?: (value: string[] | string) => void
   enableMultiInput?: boolean
   inputPlaceholder?: string
+  initialDropDownOpen?: boolean
+  showDropDownIcon?: boolean
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -46,9 +48,11 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     value,
     onChange,
     enableMultiInput,
-    inputPlaceholder
+    inputPlaceholder,
+    showDropDownIcon = false,
+    initialDropDownOpen = false
   } = props
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(initialDropDownOpen)
   const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])
   const [textInputValue, setTextInputValue] = React.useState<string>('')
 
@@ -103,6 +107,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
       enforceFocus={false}
       className={cx(css.main)}
       popoverClassName={cx(css.popover)}
+      onClose={() => setIsOpen(false)}
       isOpen={isOpen}
       content={TextInput}>
       <Layout.Horizontal
@@ -137,8 +142,8 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
           )}
         </Layout.Horizontal>
         <Icon
-          name="cross"
-          size={12}
+          name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
+          size={showDropDownIcon ? 8 : 12}
           className={css.crossIcon}
           color={Color.GREY_400}
           onClick={e => {
