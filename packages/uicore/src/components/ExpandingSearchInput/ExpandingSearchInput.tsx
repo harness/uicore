@@ -41,6 +41,7 @@ export interface ExpandingSearchInputProps {
   alwaysExpanded?: boolean
   theme?: 'light' | 'dark'
   disabled?: boolean
+  value?: string
 }
 
 export interface ExpandingSearchInputHandle {
@@ -69,7 +70,8 @@ export function ExpandingSearchInput(
     width,
     alwaysExpanded = false,
     theme = 'light',
-    disabled
+    disabled,
+    value: valueFromProps
   } = props
 
   const [key, setKey] = useState(Math.random())
@@ -83,6 +85,12 @@ export function ExpandingSearchInput(
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   const mounted = useRef(false)
+
+  useEffect(() => {
+    if (typeof valueFromProps === 'string') {
+      setValue(valueFromProps)
+    }
+  }, [valueFromProps])
 
   // getDerivedStateFromProps
   if (!isDefaultSet && typeof defaultValue === 'string' && defaultValue.length > 0) {

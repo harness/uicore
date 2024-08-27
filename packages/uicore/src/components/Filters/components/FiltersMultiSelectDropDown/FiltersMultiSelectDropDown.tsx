@@ -222,8 +222,10 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
             className={css.crossIcon}
             color={Color.GREY_400}
             onClick={e => {
-              e.stopPropagation()
-              onRemove?.()
+              if (!showDropDownIcon) {
+                e.stopPropagation()
+                onRemove?.()
+              }
             }}
           />
         </Layout.Horizontal>

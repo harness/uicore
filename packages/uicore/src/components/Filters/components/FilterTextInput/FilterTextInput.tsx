@@ -147,8 +147,10 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
           className={css.crossIcon}
           color={Color.GREY_400}
           onClick={e => {
-            e.stopPropagation()
-            onRemove?.()
+            if (!showDropDownIcon) {
+              e.stopPropagation()
+              onRemove?.()
+            }
           }}
         />
       </Layout.Horizontal>

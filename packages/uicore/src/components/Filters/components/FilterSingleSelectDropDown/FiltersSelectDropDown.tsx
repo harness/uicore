@@ -224,8 +224,10 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
                 className={css.crossIcon}
                 color={Color.GREY_400}
                 onClick={e => {
-                  e.stopPropagation()
-                  onRemove?.()
+                  if (!showDropDownIcon) {
+                    e.stopPropagation()
+                    onRemove?.()
+                  }
                 }}
               />
             </>
