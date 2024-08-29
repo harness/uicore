@@ -468,6 +468,7 @@ import DeploymentSuccessNew from './deployment-success-new.svg'
 import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
+import DeveloperExperience from './developer-experience.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerCiStepInverse from './docker-ci-step-inverse.svg'
 import DockerCiStep from './docker-ci-step.svg'
@@ -660,6 +661,7 @@ import HarnessLogoBlack from './harness-logo-black.svg'
 import HarnessLogoWhiteBgBlue from './harness-logo-white-bg-blue.svg'
 import HarnessLogoWhite from './harness-logo-white.svg'
 import HarnessPlugin from './harness-plugin.svg'
+import HarnessUniversity from './harness-university.svg'
 import HarnessWithColor from './harness-with-color.svg'
 import Harness from './harness.svg'
 import HashiCorpVault from './hashiCorpVault.svg'
@@ -1865,6 +1867,7 @@ type HarnessIconName =
   | 'deployment-timeout-legacy'
   | 'deployment-timeout-new'
   | 'description'
+  | 'developer-experience'
   | 'digital-ocean'
   | 'docker-ci-step-inverse'
   | 'docker-ci-step'
@@ -2057,6 +2060,7 @@ type HarnessIconName =
   | 'harness-logo-white-bg-blue'
   | 'harness-logo-white'
   | 'harness-plugin'
+  | 'harness-university'
   | 'harness-with-color'
   | 'harness'
   | 'hashiCorpVault'
@@ -3262,6 +3266,7 @@ const HarnessIcons: KVO<ElementType> = {
   'deployment-timeout-legacy': DeploymentTimeoutLegacy,
   'deployment-timeout-new': DeploymentTimeoutNew,
   description: Description,
+  'developer-experience': DeveloperExperience,
   'digital-ocean': DigitalOcean,
   'docker-ci-step-inverse': DockerCiStepInverse,
   'docker-ci-step': DockerCiStep,
@@ -3454,6 +3459,7 @@ const HarnessIcons: KVO<ElementType> = {
   'harness-logo-white-bg-blue': HarnessLogoWhiteBgBlue,
   'harness-logo-white': HarnessLogoWhite,
   'harness-plugin': HarnessPlugin,
+  'harness-university': HarnessUniversity,
   'harness-with-color': HarnessWithColor,
   harness: Harness,
   hashiCorpVault: HashiCorpVault,
