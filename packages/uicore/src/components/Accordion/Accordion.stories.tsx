@@ -9,7 +9,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Button, IButtonProps } from '@blueprintjs/core'
 
-import { Accordion, AccordionProps } from './Accordion'
+import { Accordion, AccordionProps, ChevronPosition } from './Accordion'
 import { NestedAccordionProvider, NestedAccordionPanel, useNestedAccordion } from './NestedAccordion'
 
 const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi temporibus error, id recusandae doloribus earum inventore, soluta fugit quidem nulla labore optio incidunt quis facilis. Rem illum unde tempore tempora.`
@@ -32,6 +32,14 @@ Basic.args = {
   onChange(tabs) {
     // eslint-disable-next-line no-console
     console.log('changed tabs', tabs)
+  },
+  chevronPosition: ChevronPosition.RIGHT
+}
+
+Basic.argTypes = {
+  chevronPosition: {
+    options: [ChevronPosition.RIGHT, ChevronPosition.LEFT],
+    control: { type: 'select' }
   }
 }
 

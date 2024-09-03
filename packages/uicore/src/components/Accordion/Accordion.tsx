@@ -13,6 +13,11 @@ import css from './Accordion.css'
 
 const noop = () => void 0
 
+export enum ChevronPosition {
+  LEFT = 'left',
+  RIGHT = 'right'
+}
+
 export interface AccordionPanelProps {
   id: string
   details: React.ReactNode
@@ -21,6 +26,7 @@ export interface AccordionPanelProps {
   disabled?: boolean
   className?: string
   shouldRender?: boolean | (() => boolean)
+  chevronPosition?: ChevronPosition
 }
 
 export interface AccordionPanelInternalProps extends Omit<AccordionProps, 'children' | 'activeId' | 'className'> {
@@ -48,7 +54,8 @@ function AccordionPanel(
     detailsClassName,
     chevronClassName,
     className,
-    shouldRender
+    shouldRender,
+    chevronPosition = ChevronPosition.RIGHT
   } = props
 
   if (typeof shouldRender === 'boolean' && !shouldRender) {
@@ -68,8 +75,15 @@ function AccordionPanel(
       data-open={isOpen}
       id={addDomId ? `${id}-panel` : undefined}>
       <div data-testid={`${id}-summary`} onClick={togglePanel} className={cx(css.summary, summaryClassName)}>
-        <div className={cx({ [css.label]: typeof summary === 'string' })}>{summary}</div>
-        <div className={cx(css.chevron, chevronClassName)} />
+        {chevronPosition === ChevronPosition.LEFT && <div className={cx(css.chevron, chevronClassName)} />}
+        <div
+          className={cx({
+            [css.label]: typeof summary === 'string',
+            [css.iconPositionedLeft]: typeof summary === 'string' && chevronPosition === ChevronPosition.LEFT
+          })}>
+          {summary}
+        </div>
+        {chevronPosition === ChevronPosition.RIGHT && <div className={cx(css.chevron, chevronClassName)} />}
       </div>
       <Collapse {...collapseProps} className={cx(css.collapse, collapseProps?.className)} isOpen={isOpen}>
         <div data-testid={`${id}-details`} className={cx(css.details, detailsClassName)}>
@@ -93,6 +107,7 @@ export interface AccordionProps {
   onChange?(tabs: string | string[]): void
   /** Controlled accordion active ID which drives accordion state from onChange over internal toggle state  */
   controlledActiveId?: string
+  chevronPosition?: ChevronPosition
 }
 
 export interface AccordionHandle {

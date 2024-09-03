@@ -36,6 +36,11 @@
       color: var(--black);
       padding-right: var(--spacing-4) !important;
     }
+
+    .iconPositionedLeft {
+      padding-right: 0 !important;
+      padding-left: var(--spacing-4);
+    }
   }
 
   .chevron {
