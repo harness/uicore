@@ -15,7 +15,8 @@ import {
   Column,
   SortingState,
   getSortedRowModel,
-  ColumnPinningState
+  ColumnPinningState,
+  Row
 } from '@tanstack/react-table'
 import cx from 'classnames'
 import Pagination, { PaginationProps } from '../Pagination/Pagination'
@@ -47,6 +48,7 @@ export interface TableV3Props<T> {
   useDynamicTableSize?: boolean
   className?: string
   pagination?: PaginationProps
+  getRowClassName?: (row: Row<T>) => string | undefined
 }
 
 export function TableV3<T>(props: TableV3Props<T>) {
@@ -56,7 +58,8 @@ export function TableV3<T>(props: TableV3Props<T>) {
     columnPinning = { left: [], right: [] },
     useDynamicTableSize,
     className,
-    pagination
+    pagination,
+    getRowClassName
   } = props
 
   const [sorting, setSorting] = React.useState<SortingState>([])
@@ -101,7 +104,7 @@ export function TableV3<T>(props: TableV3Props<T>) {
         </thead>
         <tbody>
           {table.getRowModel().rows.map(row => (
-            <tr key={row.id}>
+            <tr key={row.id} className={getRowClassName?.(row)}>
               {row.getVisibleCells().map(cell => {
                 const { column } = cell
                 return (
