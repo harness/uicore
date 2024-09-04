@@ -139,9 +139,8 @@
   &::before {
     content: '';
     height: 22px;
-    width: var(--spacing-3);
+    width: 6px;
     transform: translateX(-18px);
-    background: var(--white);
     border-radius: var(--spacing-2);
     border-right: 1px solid var(--grey-100);
     position: absolute;
@@ -199,9 +198,8 @@
     content: '';
     height: 30px;
     left: var(--spacing-4);
-    width: var(--spacing-3);
+    width: 6px;
     transform: translateX(-18px);
-    background: var(--white);
     border-radius: var(--spacing-2);
     border-right: 1px solid var(--bp3-intent-color, var(--grey-200));
     position: absolute;
