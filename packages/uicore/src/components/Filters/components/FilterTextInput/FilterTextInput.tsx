@@ -7,14 +7,17 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { IInputGroupProps, Intent, InputGroup } from '@blueprintjs/core'
+import { IInputGroupProps, Intent, InputGroup, PopoverInteractionKind, Classes } from '@blueprintjs/core'
 import { Popover } from '../../../Popover/Popover'
 import { Icon } from '@harness/icons'
 import { Text } from '../../../Text/Text'
+import { Utils } from '../../../../core/Utils'
 
 import css from './FilterTextInput.css'
 import { Layout } from '../../../../layouts/Layout'
-import { Color, StyledProps } from '@harness/design-system'
+import { Color, FontVariation, StyledProps } from '@harness/design-system'
+import { Container } from '../../../Container/Container'
+import { PopoverProps } from '../../../Popover/Popover'
 
 export interface FilterTextInputProps
   extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
@@ -33,6 +36,8 @@ export interface FilterTextInputProps
   inputPlaceholder?: string
   initialDropDownOpen?: boolean
   showDropDownIcon?: boolean
+  tooltip?: string
+  tooltipProps?: PopoverProps 
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -50,7 +55,9 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     enableMultiInput,
     inputPlaceholder,
     showDropDownIcon = false,
-    initialDropDownOpen = false
+    initialDropDownOpen = false,
+    disabled,
+    tooltip,
   } = props
   const [isOpen, setIsOpen] = React.useState(initialDropDownOpen)
   const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])
@@ -90,6 +97,23 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     </div>
   )
 
+  const getLength = (items: string[] | string): number => {
+    if (Array.isArray(items)) {
+      return items.length
+    }
+    return items ? 1 : 0
+  }
+
+  // Helper function to safely join items
+  const joinItems = (items: string[] | string): string => {
+    if (Array.isArray(items)) {
+      return items.join(', ')
+    }
+    return items
+  }
+
+  const itemsLength = getLength(selectedItems)
+
   return (
     <Popover
       targetTagName="div"
@@ -108,52 +132,72 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
       className={cx(css.main)}
       popoverClassName={cx(css.popover)}
       onClose={() => setIsOpen(false)}
-      isOpen={isOpen}
+      isOpen={!disabled ? isOpen : false}
       content={TextInput}>
-      <Layout.Horizontal
-        data-testid={buttonTestId}
-        style={width ? { width } : undefined}
-        className={cx(
-          css.dropdownButton,
-          { [css.withBorder]: !isLabel },
-          { [css.selected]: selectedItems.length > 0 },
-          { [css.minWidth]: !width }
-        )}
-        onClick={() => setIsOpen(true)}
-        flex>
-        <Layout.Horizontal className={css.labelWrapper} flex>
-          <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
-            {placeholder}
-          </Text>
-          {!hideItemCount && selectedItems.length > 0 && (
-            <>
-              <div className={css.verticalDivider}></div>
-              {enableMultiInput ? (
-                <Text className={css.counter} lineClamp={1}>
-                  {selectedItems.length <= 9 ? '0' : ''}
-                  {selectedItems.length} selected
-                </Text>
-              ) : (
-                <Text className={css.counter} lineClamp={1}>
-                  {selectedItems}
-                </Text>
-              )}
-            </>
+      <Utils.WrapOptionalTooltip tooltip={tooltip} tooltipProps={props.tooltipProps}>
+        <Layout.Horizontal
+          data-testid={buttonTestId}
+          style={width ? { width } : undefined}
+          className={cx(
+            css.dropdownButton,
+            { [css.withBorder]: !isLabel },
+            { [css.selected]: selectedItems.length > 0 },
+            { [css.minWidth]: !width },
+            { [css.disabled]: disabled }
           )}
+          onClick={() => setIsOpen(true)}
+          flex>
+          <Layout.Horizontal className={css.labelWrapper} flex>
+            <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
+              {placeholder}
+            </Text>
+            {!hideItemCount && selectedItems.length > 0 && (
+              <>
+                <div className={css.verticalDivider}></div>
+                {enableMultiInput ? (
+                  <Popover
+                    position="top"
+                    usePortal={true}
+                    interactionKind={PopoverInteractionKind.HOVER}
+                    className={cx(Classes.DARK, css.itemsPopover)}
+                    content={
+                      itemsLength > 0 ? (
+                        <Container className={css.selectedItemsPopover}>
+                          <Text color={Color.GREY_100} padding={'small'} font={{ variation: FontVariation.SMALL }}>
+                            {joinItems(selectedItems)}
+                          </Text>
+                        </Container>
+                      ) : (
+                        <Text>No items selected</Text>
+                      )
+                    }>
+                    <Text className={css.counter} lineClamp={1}>
+                      {selectedItems.length <= 9 ? '0' : ''}
+                      {selectedItems.length} selected
+                    </Text>
+                  </Popover>
+                ) : (
+                  <Text className={css.counter} lineClamp={1}>
+                    {selectedItems}
+                  </Text>
+                )}
+              </>
+            )}
+          </Layout.Horizontal>
+          <Icon
+            name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
+            size={showDropDownIcon ? 8 : 12}
+            className={css.crossIcon}
+            color={Color.GREY_400}
+            onClick={e => {
+              if (!showDropDownIcon) {
+                e.stopPropagation()
+                onRemove?.()
+              }
+            }}
+          />
         </Layout.Horizontal>
-        <Icon
-          name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
-          size={showDropDownIcon ? 8 : 12}
-          className={css.crossIcon}
-          color={Color.GREY_400}
-          onClick={e => {
-            if (!showDropDownIcon) {
-              e.stopPropagation()
-              onRemove?.()
-            }
-          }}
-        />
-      </Layout.Horizontal>
+      </Utils.WrapOptionalTooltip>
     </Popover>
   )
 }

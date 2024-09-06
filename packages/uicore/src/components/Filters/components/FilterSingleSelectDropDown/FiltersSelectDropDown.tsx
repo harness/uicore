@@ -7,6 +7,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 import { Popover, Spinner, Menu } from '@blueprintjs/core'
+import { Utils } from '../../../../core/Utils'
 import {
   QueryList,
   IQueryListRendererProps,
@@ -28,11 +29,12 @@ import {
   ExpandingSearchInputProps
 } from '../../../ExpandingSearchInput/ExpandingSearchInput'
 import { Container } from '../../../Container/Container'
+import { PopoverProps } from '../../../Popover/Popover'
 
 type Props = IQueryListProps<SelectOption>
 
 export function NoMatch(): React.ReactElement {
-  return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
+  return <li className={cx(css.menuItem )}>No matching results found</li>
 }
 
 export interface FilterSelectDropDownProps
@@ -59,6 +61,8 @@ export interface FilterSelectDropDownProps
   allowClearSelection?: boolean
   initialDropDownOpen?: boolean
   isLoading?: boolean
+  tooltip?: string
+  tooltipProps?: PopoverProps 
 }
 
 /**
@@ -80,7 +84,6 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     icon,
     iconProps,
     isLabel,
-    disabled,
     hideItemCount,
     allowSearch = false,
     onPopoverClose,
@@ -185,12 +188,13 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
           setIsOpen(false)
           onPopoverClose?.(selectedItem)
         }}
-        className={cx(css.main, { [css.disabled]: !!disabled }, className)}
+        className={cx(css.main, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
-        isOpen={isOpen}>
+        isOpen={!props.disabled ? isOpen : false}>
         {customPlaceholderRenderer ? (
           <div onClick={() => setIsOpen(true)}>{customPlaceholderRenderer()}</div>
         ) : (
+          <Utils.WrapOptionalTooltip tooltip={props.tooltip} tooltipProps={props.tooltipProps}>
           <Layout.Horizontal
             data-testid={buttonTestId}
             style={width ? { width } : undefined}
@@ -198,7 +202,8 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
               css.dropdownButton,
               { [css.withBorder]: !isLabel },
               { [css.selected]: !!selectedItem },
-              { [css.minWidth]: !width }
+              { [css.minWidth]: !width },
+              { [css.disabled]: props.disabled }
             )}
             onClick={() => setIsOpen(true)}
             flex>
@@ -232,10 +237,11 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
               />
             </>
           </Layout.Horizontal>
+          </Utils.WrapOptionalTooltip>
         )}
         <React.Fragment>
           {allowSearch && (
-            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} value={query}/>
           )}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
@@ -260,7 +266,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     return (
       <div
         key={item.value.toString()}
-        className={css.menuItem}
+        className={cx(css.menuItem, { [css.active]: item.value === selectedItem.value })}
         onClick={e => {
           if (!modifiers.disabled) {
             handleClick(e)

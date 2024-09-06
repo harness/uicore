@@ -14,6 +14,10 @@
     height: var(--spacing-8);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
+    &:hover:not(.disabled) {
+      background-color: var(--grey-100);
+      transition: background-color 0.2s ease;
+    }
     &.minWidth {
       column-gap: var(--spacing-small);
     }
@@ -47,6 +51,13 @@
         max-width: 96px;
       }
     }
+    &.disabled {
+      .labelWrapper {
+        .counter {
+          background-color: var(--grey-200);
+        }
+      }
+    }
   }
 }
 .popover {
@@ -63,7 +74,7 @@
 .verticalDivider {
   width: 1px;
   height: 13px;
-  background-color: var(--grey-200);
+  background-color: var(--grey-300);
 }
 
 .crossIcon {
@@ -76,4 +87,16 @@
   .input {
     width: 286px;
   }
+}
+
+.disabled {
+  background-color: var(--grey-200) !important;
+}
+
+.selectedItemsPopover {
+  max-width: 250px;
+}
+
+.itemsPopover {
+  display: flex;
 }
