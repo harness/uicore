@@ -13,6 +13,10 @@
     height: var(--spacing-8);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
+    &:hover:not(.disabled) {
+      background-color: var(--grey-100);
+      transition: background-color 0.2s ease;
+    }
     &.minWidth {
       column-gap: var(--spacing-small);
     }
@@ -48,6 +52,13 @@
         border-radius: var(--spacing-xsmall);
         font-size: 13px;
         max-width: 96px;
+      }
+    }
+    &.disabled {
+      .labelWrapper {
+        .counter {
+          background-color: var(--grey-200);
+        }
       }
     }
   }
@@ -110,13 +121,14 @@
             color: var(--black);
             font-weight: 400;
             font-size: 12px;
+            transition: background-color 0.2s ease, color 0.2s ease;
             &.active {
               background: var(--primary-7);
               color: var(--white) !important;
             }
             &:hover:local:not(.active, .disabled) {
-              background: var(--primary-7);
-              color: var(--white) !important;
+              background: var(--grey-100);
+              color: var(--black) !important;
             }
           }
         }
@@ -128,7 +140,7 @@
 .verticalDivider {
   width: 1px;
   height: 13px;
-  background-color: var(--grey-200);
+  background-color: var(--grey-300);
 }
 
 .crossIcon {
@@ -143,4 +155,8 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.disabled {
+  background-color: var(--grey-200) !important;
 }

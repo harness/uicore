@@ -6,7 +6,7 @@
  */
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { Popover, Spinner, Menu } from '@blueprintjs/core'
+import { Popover, Spinner, Menu, PopoverInteractionKind, Classes } from '@blueprintjs/core'
 import {
   QueryList,
   IQueryListRendererProps,
@@ -209,10 +209,27 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
             {!hideItemCount && selectedItems.length > 0 && (
               <>
                 <div className={css.verticalDivider}></div>
-                <Text className={css.counter} lineClamp={1}>
-                  {selectedItems.length <= 9 ? '0' : ''}
-                  {selectedItems.length} selected
-                </Text>
+                <Popover
+                  position="top"
+                  usePortal={true}
+                  interactionKind={PopoverInteractionKind.HOVER}
+                  className={Classes.DARK}
+                  content={
+                    selectedItems.length > 0 ? (
+                      <Container className={css.selectedItemsPopover}>
+                        <Text color={Color.GREY_100} padding={'small'} font={{ variation: FontVariation.SMALL }}>
+                          {selectedItems.map(item => item.label).join(', ')}
+                        </Text>
+                      </Container>
+                    ) : (
+                      <Text>No items selected</Text>
+                    )
+                  }>
+                  <Text className={css.counter} lineClamp={1}>
+                    {selectedItems.length <= 9 ? '0' : ''}
+                    {selectedItems.length} selected
+                  </Text>
+                </Popover>
               </>
             )}
           </Layout.Horizontal>
@@ -231,7 +248,12 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
         </Layout.Horizontal>
         <React.Fragment>
           {allowSearch && (
-            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+            <ExpandingSearchInputWithRef
+              alwaysExpanded
+              {...expandingSearchInputProps}
+              onChange={onSearchChange}
+              value={query}
+            />
           )}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
