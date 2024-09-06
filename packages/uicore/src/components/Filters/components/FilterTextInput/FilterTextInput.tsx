@@ -37,7 +37,7 @@ export interface FilterTextInputProps
   initialDropDownOpen?: boolean
   showDropDownIcon?: boolean
   tooltip?: string
-  tooltipProps?: PopoverProps 
+  tooltipProps?: PopoverProps
 }
 
 export function FilterTextInput(props: FilterTextInputProps): React.ReactElement {
@@ -57,7 +57,7 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     showDropDownIcon = false,
     initialDropDownOpen = false,
     disabled,
-    tooltip,
+    tooltip
   } = props
   const [isOpen, setIsOpen] = React.useState(initialDropDownOpen)
   const [selectedItems, setSelectedItems] = React.useState<string[] | string>([])

@@ -34,7 +34,7 @@ import { PopoverProps } from '../../../Popover/Popover'
 type Props = IQueryListProps<SelectOption>
 
 export function NoMatch(): React.ReactElement {
-  return <li className={cx(css.menuItem )}>No matching results found</li>
+  return <li className={cx(css.menuItem)}>No matching results found</li>
 }
 
 export interface FilterSelectDropDownProps
@@ -62,7 +62,7 @@ export interface FilterSelectDropDownProps
   initialDropDownOpen?: boolean
   isLoading?: boolean
   tooltip?: string
-  tooltipProps?: PopoverProps 
+  tooltipProps?: PopoverProps
 }
 
 /**
@@ -195,53 +195,58 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
           <div onClick={() => setIsOpen(true)}>{customPlaceholderRenderer()}</div>
         ) : (
           <Utils.WrapOptionalTooltip tooltip={props.tooltip} tooltipProps={props.tooltipProps}>
-          <Layout.Horizontal
-            data-testid={buttonTestId}
-            style={width ? { width } : undefined}
-            className={cx(
-              css.dropdownButton,
-              { [css.withBorder]: !isLabel },
-              { [css.selected]: !!selectedItem },
-              { [css.minWidth]: !width },
-              { [css.disabled]: props.disabled }
-            )}
-            onClick={() => setIsOpen(true)}
-            flex>
-            <>
-              <Layout.Horizontal className={css.labelWrapper} flex>
-                {icon && <Icon name={icon} size={13} color={Color.GREY_600} {...iconProps} />}
-                <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
-                  {placeholder}
-                </Text>
-                {!hideItemCount && selectedItem.value !== '' && (
-                  <>
-                    <div className={css.verticalDivider}></div>
-                    <Text className={css.counter} lineClamp={1}>
-                      {selectedItem.label}
-                    </Text>
-                  </>
-                )}
-              </Layout.Horizontal>
+            <Layout.Horizontal
+              data-testid={buttonTestId}
+              style={width ? { width } : undefined}
+              className={cx(
+                css.dropdownButton,
+                { [css.withBorder]: !isLabel },
+                { [css.selected]: !!selectedItem },
+                { [css.minWidth]: !width },
+                { [css.disabled]: props.disabled }
+              )}
+              onClick={() => setIsOpen(true)}
+              flex>
+              <>
+                <Layout.Horizontal className={css.labelWrapper} flex>
+                  {icon && <Icon name={icon} size={13} color={Color.GREY_600} {...iconProps} />}
+                  <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
+                    {placeholder}
+                  </Text>
+                  {!hideItemCount && selectedItem.value !== '' && (
+                    <>
+                      <div className={css.verticalDivider}></div>
+                      <Text className={css.counter} lineClamp={1}>
+                        {selectedItem.label}
+                      </Text>
+                    </>
+                  )}
+                </Layout.Horizontal>
 
-              <Icon
-                name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
-                size={showDropDownIcon ? 8 : 12}
-                className={css.crossIcon}
-                color={Color.GREY_400}
-                onClick={e => {
-                  if (!showDropDownIcon) {
-                    e.stopPropagation()
-                    onRemove?.()
-                  }
-                }}
-              />
-            </>
-          </Layout.Horizontal>
+                <Icon
+                  name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
+                  size={showDropDownIcon ? 8 : 12}
+                  className={css.crossIcon}
+                  color={Color.GREY_400}
+                  onClick={e => {
+                    if (!showDropDownIcon) {
+                      e.stopPropagation()
+                      onRemove?.()
+                    }
+                  }}
+                />
+              </>
+            </Layout.Horizontal>
           </Utils.WrapOptionalTooltip>
         )}
         <React.Fragment>
           {allowSearch && (
-            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} value={query}/>
+            <ExpandingSearchInputWithRef
+              alwaysExpanded
+              {...expandingSearchInputProps}
+              onChange={onSearchChange}
+              value={query}
+            />
           )}
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
