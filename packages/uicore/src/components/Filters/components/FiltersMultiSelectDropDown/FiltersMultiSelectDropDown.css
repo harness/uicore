@@ -30,6 +30,10 @@
     height: var(--spacing-8);
     transition: all 200ms ease-out;
     transition-property: border-color, background-color;
+    &:hover {
+      background-color: var(--grey-100);
+      transition: background-color 0.2s ease;
+    }
     &.minWidth {
       column-gap: var(--spacing-small);
     }
@@ -71,6 +75,7 @@
       &:hover {
         background-color: var(--grey-100);
         border-color: var(--grey-100);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
       }
     }
     :global(.bp3-button) {
@@ -145,6 +150,7 @@
             color: var(--black);
             font-weight: 400;
             font-size: 12px;
+            transition: background-color 0.2s ease;
             &.active {
               background: var(--primary-7);
               color: var(--white) !important;
@@ -154,7 +160,7 @@
               cursor: default;
             }
             &:hover:local:not(.active, .disabled) {
-              background: var(--primary-1);
+              background: var(--grey-100);
             }
             :global {
               :checked ~ .bp3-control-indicator {
@@ -176,7 +182,7 @@
 .verticalDivider {
   width: 1px;
   height: 13px;
-  background-color: var(--grey-200);
+  background-color: var(--grey-300);
 }
 
 .crossIcon {
@@ -191,4 +197,8 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.selectedItemsPopover {
+  max-width: 250px;
 }
