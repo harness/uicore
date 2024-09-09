@@ -33,7 +33,9 @@ Basic.args = {
     // eslint-disable-next-line no-console
     console.log('changed tabs', tabs)
   },
-  chevronPosition: ChevronPosition.RIGHT
+  chevronPosition: ChevronPosition.RIGHT,
+  allowMultiOpen: true,
+  openAllByDefault: true
 }
 
 Basic.argTypes = {

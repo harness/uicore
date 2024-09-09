@@ -108,6 +108,8 @@ export interface AccordionProps {
   /** Controlled accordion active ID which drives accordion state from onChange over internal toggle state  */
   controlledActiveId?: string
   chevronPosition?: ChevronPosition
+  allowOtherChildElem?: boolean
+  openAllByDefault?: boolean
 }
 
 export interface AccordionHandle {
@@ -120,14 +122,35 @@ export function AccordionWithoutRef(
   props: AccordionProps,
   ref: React.ForwardedRef<AccordionHandle>
 ): React.ReactElement {
-  const { children, allowMultiOpen, className, activeId, onChange, controlledActiveId, ...rest } = props
+  const {
+    children,
+    allowMultiOpen,
+    className,
+    activeId,
+    onChange,
+    controlledActiveId,
+    allowOtherChildElem,
+    openAllByDefault,
+    ...rest
+  } = props
 
   // Use the controlledActiveId prop to manage the active panels
   const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(() => {
     if (controlledActiveId) {
       return { [controlledActiveId]: true }
     }
-    return typeof activeId === 'string' ? { [activeId]: true } : {}
+
+    return activeId && typeof activeId === 'string'
+      ? { [activeId]: true }
+      : React.Children.toArray(children)
+          .filter(child => (child as any).type === Accordion.Panel)
+          .reduce(
+            (acc: any, child: any) => ({
+              ...acc,
+              [child.props.id]: openAllByDefault ? true : false
+            }),
+            {} as Object
+          )
   })
 
   // Handle changes in controlledActiveId prop
@@ -197,9 +220,12 @@ export function AccordionWithoutRef(
     <div className={cx(css.accordion, className)}>
       {React.Children.toArray(children)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .filter(child => (child as any).type === Accordion.Panel)
         .map(child => {
           const { props: childProps } = child as React.ReactElement<AccordionPanelProps>
+
+          if ((child as any).type !== Accordion.Panel) {
+            return allowOtherChildElem ? child : null
+          }
 
           return (
             <AccordionPanelWithRef
