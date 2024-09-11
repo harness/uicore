@@ -1401,7 +1401,7 @@ import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import WigglyArrow from './wiggly-arrow.svg'
 import Wiz from './wiz.svg'
-import WokflowInverse from './wokflow-inverse.svg'
+import WorkflowInverse from './workflow-inverse.svg'
 import X from './x.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
@@ -2803,7 +2803,7 @@ type HarnessIconName =
   | 'white-full-cluster'
   | 'wiggly-arrow'
   | 'wiz'
-  | 'wokflow-inverse'
+  | 'workflow-inverse'
   | 'x'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
@@ -4205,7 +4205,7 @@ const HarnessIcons: KVO<ElementType> = {
   'white-full-cluster': WhiteFullCluster,
   'wiggly-arrow': WigglyArrow,
   wiz: Wiz,
-  'wokflow-inverse': WokflowInverse,
+  'workflow-inverse': WorkflowInverse,
   x: X,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
