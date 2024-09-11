@@ -106,8 +106,9 @@ export interface AccordionProps {
   allowMultiOpen?: boolean
   onChange?(tabs: string | string[]): void
   /** Controlled accordion active ID which drives accordion state from onChange over internal toggle state  */
-  controlledActiveId?: string
+  controlledActiveId?: string | string[]
   chevronPosition?: ChevronPosition
+  allowOtherChildElem?: boolean
 }
 
 export interface AccordionHandle {
@@ -120,20 +121,30 @@ export function AccordionWithoutRef(
   props: AccordionProps,
   ref: React.ForwardedRef<AccordionHandle>
 ): React.ReactElement {
-  const { children, allowMultiOpen, className, activeId, onChange, controlledActiveId, ...rest } = props
+  const {
+    children,
+    allowMultiOpen,
+    className,
+    activeId,
+    onChange,
+    controlledActiveId,
+    allowOtherChildElem,
+    ...rest
+  } = props
 
   // Use the controlledActiveId prop to manage the active panels
   const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(() => {
     if (controlledActiveId) {
-      return { [controlledActiveId]: true }
+      return getControlledActiveIds(controlledActiveId)
     }
-    return typeof activeId === 'string' ? { [activeId]: true } : {}
+
+    return activeId && typeof activeId === 'string' ? { [activeId]: true } : {}
   })
 
   // Handle changes in controlledActiveId prop
   React.useEffect(() => {
     if (controlledActiveId) {
-      setActivePanels({ [controlledActiveId]: true })
+      setActivePanels(getControlledActiveIds(controlledActiveId))
     }
   }, [controlledActiveId])
 
@@ -146,6 +157,12 @@ export function AccordionWithoutRef(
         onChange?.(id)
       }
     }
+  }
+
+  function getControlledActiveIds(controlledActiveId: string | string[]) {
+    return Array.isArray(controlledActiveId)
+      ? controlledActiveId.reduce((acc, id) => ({ ...acc, [id]: true }), {})
+      : { [controlledActiveId]: true }
   }
 
   function resolveTabs(tab: string | string[]): string[] {
@@ -197,9 +214,12 @@ export function AccordionWithoutRef(
     <div className={cx(css.accordion, className)}>
       {React.Children.toArray(children)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .filter(child => (child as any).type === Accordion.Panel)
         .map(child => {
           const { props: childProps } = child as React.ReactElement<AccordionPanelProps>
+
+          if ((child as any).type !== Accordion.Panel) {
+            return allowOtherChildElem ? child : null
+          }
 
           return (
             <AccordionPanelWithRef
