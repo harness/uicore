@@ -7,7 +7,7 @@
 
 import './styles/styles.css'
 export { Config } from './core/Config'
-export { Accordion, AccordionProps, AccordionHandle } from './components/Accordion/Accordion'
+export { Accordion, AccordionProps, AccordionHandle, ChevronPosition } from './components/Accordion/Accordion'
 export {
   NestedAccordionProvider,
   NestedAccordionPanel,
