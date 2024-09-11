@@ -34,8 +34,7 @@ Basic.args = {
     console.log('changed tabs', tabs)
   },
   chevronPosition: ChevronPosition.RIGHT,
-  allowMultiOpen: true,
-  openAllByDefault: true
+  allowMultiOpen: true
 }
 
 Basic.argTypes = {

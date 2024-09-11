@@ -106,10 +106,9 @@ export interface AccordionProps {
   allowMultiOpen?: boolean
   onChange?(tabs: string | string[]): void
   /** Controlled accordion active ID which drives accordion state from onChange over internal toggle state  */
-  controlledActiveId?: string
+  controlledActiveId?: string | string[]
   chevronPosition?: ChevronPosition
   allowOtherChildElem?: boolean
-  openAllByDefault?: boolean
 }
 
 export interface AccordionHandle {
@@ -130,33 +129,22 @@ export function AccordionWithoutRef(
     onChange,
     controlledActiveId,
     allowOtherChildElem,
-    openAllByDefault,
     ...rest
   } = props
 
   // Use the controlledActiveId prop to manage the active panels
   const [activePanels, setActivePanels] = React.useState<Record<string, boolean>>(() => {
     if (controlledActiveId) {
-      return { [controlledActiveId]: true }
+      return getControlledActiveIds(controlledActiveId)
     }
 
-    return activeId && typeof activeId === 'string'
-      ? { [activeId]: true }
-      : React.Children.toArray(children)
-          .filter(child => (child as any).type === Accordion.Panel)
-          .reduce(
-            (acc: any, child: any) => ({
-              ...acc,
-              [child.props.id]: openAllByDefault ? true : false
-            }),
-            {} as Object
-          )
+    return activeId && typeof activeId === 'string' ? { [activeId]: true } : {}
   })
 
   // Handle changes in controlledActiveId prop
   React.useEffect(() => {
     if (controlledActiveId) {
-      setActivePanels({ [controlledActiveId]: true })
+      setActivePanels(getControlledActiveIds(controlledActiveId))
     }
   }, [controlledActiveId])
 
@@ -169,6 +157,12 @@ export function AccordionWithoutRef(
         onChange?.(id)
       }
     }
+  }
+
+  function getControlledActiveIds(controlledActiveId: string | string[]) {
+    return Array.isArray(controlledActiveId)
+      ? controlledActiveId.reduce((acc, id) => ({ ...acc, [id]: true }), {})
+      : { [controlledActiveId]: true }
   }
 
   function resolveTabs(tab: string | string[]): string[] {
