@@ -1216,7 +1216,6 @@ import ServiceTerragrunt from './service-terragrunt.svg'
 import ServiceVm from './service-vm.svg'
 import ServiceVmware from './service-vmware.svg'
 import ServiceWindows from './service-windows.svg'
-import ServiceYoutube from './service-youtube.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
 import ServicenowApprove from './servicenow-approve.svg'
@@ -1410,6 +1409,7 @@ import YamlBuilderNotifications from './yaml-builder-notifications.svg'
 import YamlBuilderStages from './yaml-builder-stages.svg'
 import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
+import Youtube from './youtube.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
 
@@ -2619,7 +2619,6 @@ type HarnessIconName =
   | 'service-vm'
   | 'service-vmware'
   | 'service-windows'
-  | 'service-youtube'
   | 'service'
   | 'servicenow-approve-inverse'
   | 'servicenow-approve'
@@ -2813,6 +2812,7 @@ type HarnessIconName =
   | 'yaml-builder-stages'
   | 'yaml-builder-steps'
   | 'yaml-builder-trigger'
+  | 'youtube'
   | 'zoom-in'
   | 'zoom-out'
 
@@ -4022,7 +4022,6 @@ const HarnessIcons: KVO<ElementType> = {
   'service-vm': ServiceVm,
   'service-vmware': ServiceVmware,
   'service-windows': ServiceWindows,
-  'service-youtube': ServiceYoutube,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
   'servicenow-approve': ServicenowApprove,
@@ -4216,6 +4215,7 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-stages': YamlBuilderStages,
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
+  youtube: Youtube,
   'zoom-in': ZoomIn,
   'zoom-out': ZoomOut
 }
