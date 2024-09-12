@@ -1216,6 +1216,7 @@ import ServiceTerragrunt from './service-terragrunt.svg'
 import ServiceVm from './service-vm.svg'
 import ServiceVmware from './service-vmware.svg'
 import ServiceWindows from './service-windows.svg'
+import ServiceYoutube from './service-youtube.svg'
 import Service from './service.svg'
 import ServicenowApproveInverse from './servicenow-approve-inverse.svg'
 import ServicenowApprove from './servicenow-approve.svg'
@@ -2618,6 +2619,7 @@ type HarnessIconName =
   | 'service-vm'
   | 'service-vmware'
   | 'service-windows'
+  | 'service-youtube'
   | 'service'
   | 'servicenow-approve-inverse'
   | 'servicenow-approve'
@@ -4020,6 +4022,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-vm': ServiceVm,
   'service-vmware': ServiceVmware,
   'service-windows': ServiceWindows,
+  'service-youtube': ServiceYoutube,
   service: Service,
   'servicenow-approve-inverse': ServicenowApproveInverse,
   'servicenow-approve': ServicenowApprove,
