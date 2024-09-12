@@ -1409,6 +1409,7 @@ import YamlBuilderNotifications from './yaml-builder-notifications.svg'
 import YamlBuilderStages from './yaml-builder-stages.svg'
 import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
+import Youtube from './youtube.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
 
@@ -2811,6 +2812,7 @@ type HarnessIconName =
   | 'yaml-builder-stages'
   | 'yaml-builder-steps'
   | 'yaml-builder-trigger'
+  | 'youtube'
   | 'zoom-in'
   | 'zoom-out'
 
@@ -4213,6 +4215,7 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-stages': YamlBuilderStages,
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
+  youtube: Youtube,
   'zoom-in': ZoomIn,
   'zoom-out': ZoomOut
 }
