@@ -564,6 +564,7 @@ import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
 import Flux from './flux.svg'
+import FmeMain from './fme-main.svg'
 import FolderUpload from './folder-upload.svg'
 import Folder from './folder.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
@@ -1967,6 +1968,7 @@ type HarnessIconName =
   | 'flag'
   | 'flash'
   | 'flux'
+  | 'fme-main'
   | 'folder-upload'
   | 'folder'
   | 'fortify-on-demand-inverse'
@@ -3370,6 +3372,7 @@ const HarnessIcons: KVO<ElementType> = {
   flag: Flag,
   flash: Flash,
   flux: Flux,
+  'fme-main': FmeMain,
   'folder-upload': FolderUpload,
   folder: Folder,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
