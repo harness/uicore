@@ -564,6 +564,7 @@ import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
 import Flux from './flux.svg'
+import FmeMain from './fme-main.svg'
 import FolderUpload from './folder-upload.svg'
 import Folder from './folder.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
@@ -1099,6 +1100,8 @@ import SecretsBlue from './secrets-blue.svg'
 import SecretsIcon from './secrets-icon.svg'
 import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
+import SecurityScsStageHover from './security-scs-stage-hover.svg'
+import SecurityScsStage from './security-scs-stage.svg'
 import SecurityStage from './security-stage.svg'
 import SeiActivityLog from './sei-activity-log.svg'
 import SeiBaArchived from './sei-ba-archived.svg'
@@ -1968,6 +1971,7 @@ type HarnessIconName =
   | 'flag'
   | 'flash'
   | 'flux'
+  | 'fme-main'
   | 'folder-upload'
   | 'folder'
   | 'fortify-on-demand-inverse'
@@ -2503,6 +2507,8 @@ type HarnessIconName =
   | 'secrets-icon'
   | 'security-ci-step-inverse'
   | 'security-ci-step'
+  | 'security-scs-stage-hover'
+  | 'security-scs-stage'
   | 'security-stage'
   | 'sei-activity-log'
   | 'sei-ba-archived'
@@ -3372,6 +3378,7 @@ const HarnessIcons: KVO<ElementType> = {
   flag: Flag,
   flash: Flash,
   flux: Flux,
+  'fme-main': FmeMain,
   'folder-upload': FolderUpload,
   folder: Folder,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
@@ -3907,6 +3914,8 @@ const HarnessIcons: KVO<ElementType> = {
   'secrets-icon': SecretsIcon,
   'security-ci-step-inverse': SecurityCiStepInverse,
   'security-ci-step': SecurityCiStep,
+  'security-scs-stage-hover': SecurityScsStageHover,
+  'security-scs-stage': SecurityScsStage,
   'security-stage': SecurityStage,
   'sei-activity-log': SeiActivityLog,
   'sei-ba-archived': SeiBaArchived,
