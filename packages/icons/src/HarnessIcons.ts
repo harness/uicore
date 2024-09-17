@@ -974,6 +974,7 @@ import Profile from './profile.svg'
 import ProgressDial from './progress-dial.svg'
 import ProjectSettings from './project-settings.svg'
 import ProjectsWizard from './projects-wizard.svg'
+import Providers from './providers.svg'
 import ProwlerInverse from './prowler-inverse.svg'
 import Prowler from './prowler.svg'
 import PruneSkipped from './prune-skipped.svg'
@@ -2380,6 +2381,7 @@ type HarnessIconName =
   | 'progress-dial'
   | 'project-settings'
   | 'projects-wizard'
+  | 'providers'
   | 'prowler-inverse'
   | 'prowler'
   | 'prune-skipped'
@@ -3786,6 +3788,7 @@ const HarnessIcons: KVO<ElementType> = {
   'progress-dial': ProgressDial,
   'project-settings': ProjectSettings,
   'projects-wizard': ProjectsWizard,
+  providers: Providers,
   'prowler-inverse': ProwlerInverse,
   prowler: Prowler,
   'prune-skipped': PruneSkipped,
