@@ -715,6 +715,7 @@ import InitializeStepInverse from './initialize-step-inverse.svg'
 import InitializeStep from './initialize-step.svg'
 import InjectConsumer from './inject-consumer.svg'
 import InjectCreator from './inject-creator.svg'
+import InsightSetting from './insight-setting.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
@@ -1036,6 +1037,7 @@ import RetryStepGroup from './retry-step-group.svg'
 import RightArrow from './right-arrow.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
+import Rocket from './rocket.svg'
 import Roles from './roles.svg'
 import RollbackExecution from './rollback-execution.svg'
 import RollbackPipelineInverse from './rollback-pipeline-inverse.svg'
@@ -1108,6 +1110,7 @@ import SeiBaArchived from './sei-ba-archived.svg'
 import SeiBaInvestment from './sei-ba-investment.svg'
 import SeiCollections from './sei-collections.svg'
 import SeiDiagnostic from './sei-diagnostic.svg'
+import SeiIntegrationMap from './sei-integration-map.svg'
 import SeiIntegration from './sei-integration.svg'
 import SeiKey from './sei-key.svg'
 import SeiMain from './sei-main.svg'
@@ -2122,6 +2125,7 @@ type HarnessIconName =
   | 'initialize-step'
   | 'inject-consumer'
   | 'inject-creator'
+  | 'insight-setting'
   | 'insight-view'
   | 'instances'
   | 'integration'
@@ -2443,6 +2447,7 @@ type HarnessIconName =
   | 'right-arrow'
   | 'right-bar-notification'
   | 'right-drawer'
+  | 'rocket'
   | 'roles'
   | 'rollback-execution'
   | 'rollback-pipeline-inverse'
@@ -2515,6 +2520,7 @@ type HarnessIconName =
   | 'sei-ba-investment'
   | 'sei-collections'
   | 'sei-diagnostic'
+  | 'sei-integration-map'
   | 'sei-integration'
   | 'sei-key'
   | 'sei-main'
@@ -3529,6 +3535,7 @@ const HarnessIcons: KVO<ElementType> = {
   'initialize-step': InitializeStep,
   'inject-consumer': InjectConsumer,
   'inject-creator': InjectCreator,
+  'insight-setting': InsightSetting,
   'insight-view': InsightView,
   instances: Instances,
   integration: Integration,
@@ -3850,6 +3857,7 @@ const HarnessIcons: KVO<ElementType> = {
   'right-arrow': RightArrow,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
+  rocket: Rocket,
   roles: Roles,
   'rollback-execution': RollbackExecution,
   'rollback-pipeline-inverse': RollbackPipelineInverse,
@@ -3922,6 +3930,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sei-ba-investment': SeiBaInvestment,
   'sei-collections': SeiCollections,
   'sei-diagnostic': SeiDiagnostic,
+  'sei-integration-map': SeiIntegrationMap,
   'sei-integration': SeiIntegration,
   'sei-key': SeiKey,
   'sei-main': SeiMain,
