@@ -11,7 +11,7 @@
     "build": "lerna run build",
     "ui:icons": "lerna run build --scope @harness/icons",
     "test": "lerna run test --stream",
-    "fmt": "prettier --write \"./packages/**/src/**/*.{ts,tsx,css}\"",
+    "fmt": "prettier --write packages/uicore/src/components/MultiTypeInput/MultiTypeInput.css",
     "setup": "bash scripts/github-package-registry.sh",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
