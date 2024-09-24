@@ -395,6 +395,7 @@ import Container from './container.svg'
 import Cookiecutter from './cookiecutter.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
+import CopyToAll from './copy-to-all.svg'
 import Copy from './copy.svg'
 import CostChange from './cost-change.svg'
 import CostDataCollection from './cost-data-collection.svg'
@@ -1805,6 +1806,7 @@ type HarnessIconName =
   | 'cookiecutter'
   | 'copy-alt'
   | 'copy-doc'
+  | 'copy-to-all'
   | 'copy'
   | 'cost-change'
   | 'cost-data-collection'
@@ -3215,6 +3217,7 @@ const HarnessIcons: KVO<ElementType> = {
   cookiecutter: Cookiecutter,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
+  'copy-to-all': CopyToAll,
   copy: Copy,
   'cost-change': CostChange,
   'cost-data-collection': CostDataCollection,
