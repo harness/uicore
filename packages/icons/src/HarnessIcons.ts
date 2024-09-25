@@ -1377,6 +1377,7 @@ import TodoListHarness from './todo-list-harness.svg'
 import Todo from './todo.svg'
 import Tools from './tools.svg'
 import TooltipIcon from './tooltip-icon.svg'
+import Traceable from './traceable.svg'
 import TrafficLights from './traffic-lights.svg'
 import Translate from './translate.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -2790,6 +2791,7 @@ type HarnessIconName =
   | 'todo'
   | 'tools'
   | 'tooltip-icon'
+  | 'traceable'
   | 'traffic-lights'
   | 'translate'
   | 'trigger-artifact'
@@ -4203,6 +4205,7 @@ const HarnessIcons: KVO<ElementType> = {
   todo: Todo,
   tools: Tools,
   'tooltip-icon': TooltipIcon,
+  traceable: Traceable,
   'traffic-lights': TrafficLights,
   translate: Translate,
   'trigger-artifact': TriggerArtifact,
