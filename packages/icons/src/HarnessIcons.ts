@@ -158,6 +158,7 @@ import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
 import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
+import BlueTickGradient from './blue-tick-gradient.svg'
 import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
 import BrakemanInverse from './brakeman-inverse.svg'
@@ -1369,6 +1370,7 @@ import ThinnerCodeRepos from './thinner-code-repos.svg'
 import ThinnerCodeWebhook from './thinner-code-webhook.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
+import TickMark from './tick-mark.svg'
 import Timeout from './timeout.svg'
 import Timer from './timer.svg'
 import TodoListHarness from './todo-list-harness.svg'
@@ -1569,6 +1571,7 @@ type HarnessIconName =
   | 'blank-canvas-header-icon'
   | 'blue-black-cluster'
   | 'blue-green'
+  | 'blue-tick-gradient'
   | 'bluegreen-inverse'
   | 'bluegreen'
   | 'brakeman-inverse'
@@ -2780,6 +2783,7 @@ type HarnessIconName =
   | 'thinner-code-webhook'
   | 'thinner-search'
   | 'ti-callgraph'
+  | 'tick-mark'
   | 'timeout'
   | 'timer'
   | 'todo-list-harness'
@@ -2980,6 +2984,7 @@ const HarnessIcons: KVO<ElementType> = {
   'blank-canvas-header-icon': BlankCanvasHeaderIcon,
   'blue-black-cluster': BlueBlackCluster,
   'blue-green': BlueGreen,
+  'blue-tick-gradient': BlueTickGradient,
   'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
   'brakeman-inverse': BrakemanInverse,
@@ -4191,6 +4196,7 @@ const HarnessIcons: KVO<ElementType> = {
   'thinner-code-webhook': ThinnerCodeWebhook,
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
+  'tick-mark': TickMark,
   timeout: Timeout,
   timer: Timer,
   'todo-list-harness': TodoListHarness,
