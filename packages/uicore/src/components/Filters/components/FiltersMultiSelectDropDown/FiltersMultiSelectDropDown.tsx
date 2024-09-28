@@ -218,7 +218,6 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
                   usePortal={true}
                   interactionKind={PopoverInteractionKind.HOVER}
                   className={Classes.DARK}
-                  onClose={() => setQuery('')}
                   content={
                     selectedItems.length > 0 ? (
                       <Container className={css.selectedItemsPopover}>
