@@ -126,9 +126,13 @@
               background: var(--primary-7);
               color: var(--white) !important;
             }
-            &:hover:local:not(.active, .disabled) {
+            &:hover:local:not(.active, .disabled, .noResultsFound) {
               background: var(--grey-100);
               color: var(--black) !important;
+            }
+            &.noResultsFound {
+              cursor: default;
+              color: var(--grey-400);
             }
           }
         }

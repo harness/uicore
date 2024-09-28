@@ -186,7 +186,11 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
         }}
         autoFocus={false}
         enforceFocus={false}
-        onClose={() => onPopoverClose?.(selectedItems)}
+        onClose={() => {
+          expandingSearchInputProps?.onChange?.('')
+          setQuery('')
+          onPopoverClose?.(selectedItems)
+        }}
         className={cx(css.main, { [css.disabled]: !!disabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
         isOpen={isOpen}>
@@ -214,6 +218,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
                   usePortal={true}
                   interactionKind={PopoverInteractionKind.HOVER}
                   className={Classes.DARK}
+                  onClose={() => setQuery('')}
                   content={
                     selectedItems.length > 0 ? (
                       <Container className={css.selectedItemsPopover}>
