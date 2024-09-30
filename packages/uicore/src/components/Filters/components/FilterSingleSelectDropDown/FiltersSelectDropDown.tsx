@@ -34,7 +34,7 @@ import { PopoverProps } from '../../../Popover/Popover'
 type Props = IQueryListProps<SelectOption>
 
 export function NoMatch(): React.ReactElement {
-  return <li className={cx(css.menuItem)}>No matching results found</li>
+  return <li className={cx(css.menuItem, css.noResultsFound)}>No matching results found</li>
 }
 
 export interface FilterSelectDropDownProps
@@ -143,6 +143,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
   function handleItemSelect(item: SelectOption): void {
     setSelectedItem(item)
     onChange?.(item)
+    setQuery('')
   }
 
   function handleClearSelection() {
@@ -187,6 +188,8 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
         onClose={() => {
           setIsOpen(false)
           onPopoverClose?.(selectedItem)
+          expandingSearchInputProps?.onChange?.('')
+          setQuery('')
         }}
         className={cx(css.main, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
