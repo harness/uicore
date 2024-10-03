@@ -727,7 +727,7 @@ import IrAlert from './ir-alert.svg'
 import IrEnvironments from './ir-environments.svg'
 import IrIncident from './ir-incident.svg'
 import IrIntegrations from './ir-integrations.svg'
-import IrOncall from './ir-on-call.svg'
+import IrOnCall from './ir-on-call.svg'
 import IrRunbooks from './ir-runbooks.svg'
 import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
@@ -2148,7 +2148,7 @@ type HarnessIconName =
   | 'ir-environments'
   | 'ir-incident'
   | 'ir-integrations'
-  | 'ir-oncall'
+  | 'ir-on-call'
   | 'ir-runbooks'
   | 'iro-logo-outline'
   | 'iro-main'
@@ -3569,7 +3569,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ir-environments': IrEnvironments,
   'ir-incident': IrIncident,
   'ir-integrations': IrIntegrations,
-  'ir-oncall': IrOncall,
+  'ir-on-call': IrOnCall,
   'ir-runbooks': IrRunbooks,
   'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
