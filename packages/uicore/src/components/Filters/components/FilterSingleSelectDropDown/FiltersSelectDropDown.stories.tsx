@@ -56,12 +56,17 @@ export const Basic: Story<FilterSelectDropDownProps> = args => {
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
 
   const [value, setValue] = React.useState<SelectOption>({ label: 'Bulbasaur', value: 1 })
+  const sections = {
+    General: ['001', 'pipelineTags', 'myDeployments', 'timeRange', 'pipelineName'],
+    Advance: ['hello']
+  }
 
   return (
     <Layout.Horizontal flex>
       <FiltersSelectDropDown
         items={items}
         value={value}
+        sections={sections}
         allowSearch
         showDropDownIcon
         onChange={items => {

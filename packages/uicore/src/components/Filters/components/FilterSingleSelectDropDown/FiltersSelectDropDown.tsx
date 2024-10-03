@@ -6,7 +6,7 @@
  */
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { Popover, Spinner, Menu } from '@blueprintjs/core'
+import { Popover, Spinner, Menu, MenuDivider } from '@blueprintjs/core'
 import { Utils } from '../../../../core/Utils'
 import {
   QueryList,
@@ -37,6 +37,10 @@ export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.noResultsFound)}>No matching results found</li>
 }
 
+export interface Section {
+  [key: string]: string[]
+}
+
 export interface FilterSelectDropDownProps
   extends Omit<Props, 'items' | 'selectedItems' | 'popoverProps' | 'renderer' | 'itemRenderer' | 'onItemSelect'> {
   onChange?(opts: SelectOption): void
@@ -63,6 +67,7 @@ export interface FilterSelectDropDownProps
   isLoading?: boolean
   tooltip?: string
   tooltipProps?: PopoverProps
+  sections?: Section
 }
 
 /**
@@ -93,6 +98,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     allowClearSelection,
     initialDropDownOpen = false,
     isLoading,
+    sections,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -153,6 +159,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
 
   const renderMenu: ItemListRenderer<SelectOption> = ({ items: itemsToRender, itemsParentRef, renderItem }) => {
     let renderedItems
+
     if (loading || isLoading) {
       renderedItems = (
         <li className={css.menuItem} style={{ justifyContent: 'center' }}>
@@ -160,12 +167,38 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
         </li>
       )
     } else if (itemsToRender.length > 0) {
-      renderedItems = filterItems(itemsToRender)
-        .map(renderItem)
-        .filter(item => item !== null)
+      const filteredItems = filterItems(itemsToRender)
+
+      if (sections) {
+        renderedItems = Object.keys(sections).map((sectionTitle, index) => {
+          const sectionItems = sections[sectionTitle]
+          const sectionFilteredItems = filteredItems.filter(item => sectionItems.includes(item.value as string))
+
+          return sectionFilteredItems.length > 0 ? (
+            <React.Fragment key={index}>
+              <MenuDivider title={sectionTitle} className={css.sectionTitle} />
+              {sectionFilteredItems.map(renderItem)}
+            </React.Fragment>
+          ) : null
+        })
+
+        // Render items not in any section
+        const uncategorizedItems = filteredItems.filter(
+          item => !Object.values(sections).some(sectionItems => sectionItems.includes(item.value as string))
+        )
+
+        if (uncategorizedItems.length > 0) {
+          renderedItems.push(<React.Fragment key="uncategorized">{uncategorizedItems.map(renderItem)}</React.Fragment>)
+        }
+      } else {
+        renderedItems = filteredItems.map(renderItem)
+      }
+
+      renderedItems = renderedItems.filter(item => item !== null)
     } else {
       renderedItems = <NoMatch />
     }
+
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 

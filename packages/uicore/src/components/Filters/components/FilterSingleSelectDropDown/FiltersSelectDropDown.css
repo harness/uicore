@@ -164,3 +164,13 @@
 .disabled {
   background-color: var(--grey-200) !important;
 }
+
+.sectionTitle {
+  border-top: none !important;
+  margin-top: 0px !important;
+  h6 {
+    color: var(--grey-500) !important;
+    font-size: 11px;
+    font-weight: 400;
+  }
+}
