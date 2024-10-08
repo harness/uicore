@@ -12,6 +12,7 @@
 import { ElementType } from 'react'
 import { KVO } from '@harnessio/design-system'
 import Account from './Account.svg'
+import AquaTrivy from './AquaTrivy.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
 import FreezeWindow from './FreezeWindow.svg'
@@ -31,6 +32,7 @@ import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
+import AnchoreGrype from './anchore-grype.svg'
 import ApiDocs from './api-docs.svg'
 import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
@@ -1012,6 +1014,7 @@ import ZoomOut from './zoom-out.svg'
 
 type HarnessIconName =
   | 'Account'
+  | 'AquaTrivy'
   | 'CustomDeployment'
   | 'Edit'
   | 'FreezeWindow'
@@ -1031,6 +1034,7 @@ type HarnessIconName =
   | 'advanced'
   | 'agent-tokens'
   | 'agents'
+  | 'anchore-grype'
   | 'api-docs'
   | 'apply'
   | 'approval-stage-icon'
@@ -2012,6 +2016,7 @@ type HarnessIconName =
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
+  AquaTrivy: AquaTrivy,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
   FreezeWindow: FreezeWindow,
@@ -2031,6 +2036,7 @@ const HarnessIcons: KVO<ElementType> = {
   advanced: Advanced,
   'agent-tokens': AgentTokens,
   agents: Agents,
+  'anchore-grype': AnchoreGrype,
   'api-docs': ApiDocs,
   apply: Apply,
   'approval-stage-icon': ApprovalStageIcon,
