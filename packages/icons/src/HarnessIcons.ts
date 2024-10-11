@@ -41,7 +41,6 @@ import SplitView from './SplitView.svg'
 import Stroke from './Stroke.svg'
 import TenableInverse from './Tenable-inverse.svg'
 import Tenable from './Tenable.svg'
-import VeracodeInverse from './Veracode-inverse.svg'
 import Veracode from './Veracode.svg'
 import ZapInverse from './ZAP-inverse.svg'
 import Zap from './ZAP.svg'
@@ -158,6 +157,7 @@ import BlankCanvasCardIcon from './blank-canvas-card-icon.svg'
 import BlankCanvasHeaderIcon from './blank-canvas-header-icon.svg'
 import BlueBlackCluster from './blue-black-cluster.svg'
 import BlueGreen from './blue-green.svg'
+import BlueTickGradient from './blue-tick-gradient.svg'
 import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
 import BrakemanInverse from './brakeman-inverse.svg'
@@ -395,6 +395,7 @@ import Container from './container.svg'
 import Cookiecutter from './cookiecutter.svg'
 import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
+import CopyToAll from './copy-to-all.svg'
 import Copy from './copy.svg'
 import CostChange from './cost-change.svg'
 import CostDataCollection from './cost-data-collection.svg'
@@ -438,6 +439,7 @@ import DataFetchError from './data-fetch-error.svg'
 import DataIntegrationHub from './data-integration-hub.svg'
 import DbDevops from './db-devops.svg'
 import DbInstance from './db-instance.svg'
+import DbLiquibase from './db-liquibase.svg'
 import DbSchema from './db-schema.svg'
 import DbStep from './db-step.svg'
 import DefaultDashboard from './default-dashboard.svg'
@@ -720,6 +722,11 @@ import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
 import Integration from './integration.svg'
 import IntelligenceFlash from './intelligence-flash.svg'
+import IrAlert from './ir-alert.svg'
+import IrIncident from './ir-incident.svg'
+import IrIntegrations from './ir-integrations.svg'
+import IrOnCall from './ir-on-call.svg'
+import IrRunbooks from './ir-runbooks.svg'
 import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
@@ -730,6 +737,7 @@ import JiraCreateInverse from './jira-create-inverse.svg'
 import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
+import Jira from './jira.svg'
 import K8SPatch from './k8s-patch.svg'
 import K8SRollout from './k8s-rollout.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
@@ -1370,12 +1378,14 @@ import ThinnerCodeRepos from './thinner-code-repos.svg'
 import ThinnerCodeWebhook from './thinner-code-webhook.svg'
 import ThinnerSearch from './thinner-search.svg'
 import TiCallgraph from './ti-callgraph.svg'
+import TickMark from './tick-mark.svg'
 import Timeout from './timeout.svg'
 import Timer from './timer.svg'
 import TodoListHarness from './todo-list-harness.svg'
 import Todo from './todo.svg'
 import Tools from './tools.svg'
 import TooltipIcon from './tooltip-icon.svg'
+import Traceable from './traceable.svg'
 import TrafficLights from './traffic-lights.svg'
 import Translate from './translate.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -1453,7 +1463,6 @@ type HarnessIconName =
   | 'Stroke'
   | 'Tenable-inverse'
   | 'Tenable'
-  | 'Veracode-inverse'
   | 'Veracode'
   | 'ZAP-inverse'
   | 'ZAP'
@@ -1570,6 +1579,7 @@ type HarnessIconName =
   | 'blank-canvas-header-icon'
   | 'blue-black-cluster'
   | 'blue-green'
+  | 'blue-tick-gradient'
   | 'bluegreen-inverse'
   | 'bluegreen'
   | 'brakeman-inverse'
@@ -1807,6 +1817,7 @@ type HarnessIconName =
   | 'cookiecutter'
   | 'copy-alt'
   | 'copy-doc'
+  | 'copy-to-all'
   | 'copy'
   | 'cost-change'
   | 'cost-data-collection'
@@ -1850,6 +1861,7 @@ type HarnessIconName =
   | 'data-integration-hub'
   | 'db-devops'
   | 'db-instance'
+  | 'db-liquibase'
   | 'db-schema'
   | 'db-step'
   | 'default-dashboard'
@@ -2132,6 +2144,11 @@ type HarnessIconName =
   | 'instances'
   | 'integration'
   | 'intelligence-flash'
+  | 'ir-alert'
+  | 'ir-incident'
+  | 'ir-integrations'
+  | 'ir-on-call'
+  | 'ir-runbooks'
   | 'iro-logo-outline'
   | 'iro-main'
   | 'java'
@@ -2142,6 +2159,7 @@ type HarnessIconName =
   | 'jira-create'
   | 'jira-update-inverse'
   | 'jira-update'
+  | 'jira'
   | 'k8s-patch'
   | 'k8s-rollout'
   | 'k8s-traffic-routing'
@@ -2782,12 +2800,14 @@ type HarnessIconName =
   | 'thinner-code-webhook'
   | 'thinner-search'
   | 'ti-callgraph'
+  | 'tick-mark'
   | 'timeout'
   | 'timer'
   | 'todo-list-harness'
   | 'todo'
   | 'tools'
   | 'tooltip-icon'
+  | 'traceable'
   | 'traffic-lights'
   | 'translate'
   | 'trigger-artifact'
@@ -2865,7 +2885,6 @@ const HarnessIcons: KVO<ElementType> = {
   Stroke: Stroke,
   'Tenable-inverse': TenableInverse,
   Tenable: Tenable,
-  'Veracode-inverse': VeracodeInverse,
   Veracode: Veracode,
   'ZAP-inverse': ZapInverse,
   ZAP: Zap,
@@ -2982,6 +3001,7 @@ const HarnessIcons: KVO<ElementType> = {
   'blank-canvas-header-icon': BlankCanvasHeaderIcon,
   'blue-black-cluster': BlueBlackCluster,
   'blue-green': BlueGreen,
+  'blue-tick-gradient': BlueTickGradient,
   'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
   'brakeman-inverse': BrakemanInverse,
@@ -3219,6 +3239,7 @@ const HarnessIcons: KVO<ElementType> = {
   cookiecutter: Cookiecutter,
   'copy-alt': CopyAlt,
   'copy-doc': CopyDoc,
+  'copy-to-all': CopyToAll,
   copy: Copy,
   'cost-change': CostChange,
   'cost-data-collection': CostDataCollection,
@@ -3262,6 +3283,7 @@ const HarnessIcons: KVO<ElementType> = {
   'data-integration-hub': DataIntegrationHub,
   'db-devops': DbDevops,
   'db-instance': DbInstance,
+  'db-liquibase': DbLiquibase,
   'db-schema': DbSchema,
   'db-step': DbStep,
   'default-dashboard': DefaultDashboard,
@@ -3544,6 +3566,11 @@ const HarnessIcons: KVO<ElementType> = {
   instances: Instances,
   integration: Integration,
   'intelligence-flash': IntelligenceFlash,
+  'ir-alert': IrAlert,
+  'ir-incident': IrIncident,
+  'ir-integrations': IrIntegrations,
+  'ir-on-call': IrOnCall,
+  'ir-runbooks': IrRunbooks,
   'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
   java: Java,
@@ -3554,6 +3581,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-create': JiraCreate,
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
+  jira: Jira,
   'k8s-patch': K8SPatch,
   'k8s-rollout': K8SRollout,
   'k8s-traffic-routing': K8STrafficRouting,
@@ -4194,12 +4222,14 @@ const HarnessIcons: KVO<ElementType> = {
   'thinner-code-webhook': ThinnerCodeWebhook,
   'thinner-search': ThinnerSearch,
   'ti-callgraph': TiCallgraph,
+  'tick-mark': TickMark,
   timeout: Timeout,
   timer: Timer,
   'todo-list-harness': TodoListHarness,
   todo: Todo,
   tools: Tools,
   'tooltip-icon': TooltipIcon,
+  traceable: Traceable,
   'traffic-lights': TrafficLights,
   translate: Translate,
   'trigger-artifact': TriggerArtifact,
