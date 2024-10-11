@@ -67,12 +67,6 @@
       align-items: center;
     }
   }
-
-  &.disabled {
-    .btn::before {
-      background: var(--grey-50);
-    }
-  }
 }
 
 .main {
@@ -106,12 +100,6 @@
   :global {
     .bp3-popover-target {
       height: 100%;
-    }
-  }
-
-  &.disabled {
-    .btn::before {
-      background: var(--grey-50);
     }
   }
 }
