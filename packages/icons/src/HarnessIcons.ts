@@ -41,7 +41,6 @@ import SplitView from './SplitView.svg'
 import Stroke from './Stroke.svg'
 import TenableInverse from './Tenable-inverse.svg'
 import Tenable from './Tenable.svg'
-import VeracodeInverse from './Veracode-inverse.svg'
 import Veracode from './Veracode.svg'
 import ZapInverse from './ZAP-inverse.svg'
 import Zap from './ZAP.svg'
@@ -1462,7 +1461,6 @@ type HarnessIconName =
   | 'Stroke'
   | 'Tenable-inverse'
   | 'Tenable'
-  | 'Veracode-inverse'
   | 'Veracode'
   | 'ZAP-inverse'
   | 'ZAP'
@@ -2883,7 +2881,6 @@ const HarnessIcons: KVO<ElementType> = {
   Stroke: Stroke,
   'Tenable-inverse': TenableInverse,
   Tenable: Tenable,
-  'Veracode-inverse': VeracodeInverse,
   Veracode: Veracode,
   'ZAP-inverse': ZapInverse,
   ZAP: Zap,
