@@ -1287,6 +1287,8 @@ import StoIac from './sto-iac.svg'
 import StoSast from './sto-sast.svg'
 import StoSca from './sto-sca.svg'
 import StoSecrets from './sto-secrets.svg'
+import StoThumbsDown from './sto-thumbs-down.svg'
+import StoThumbsUp from './sto-thumbs-up.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
 import StoreArtifactBundle from './store-artifact-bundle.svg'
@@ -2697,6 +2699,8 @@ type HarnessIconName =
   | 'sto-sast'
   | 'sto-sca'
   | 'sto-secrets'
+  | 'sto-thumbs-down'
+  | 'sto-thumbs-up'
   | 'sto-with-dark-text'
   | 'sto-with-text'
   | 'store-artifact-bundle'
@@ -4107,6 +4111,8 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-sast': StoSast,
   'sto-sca': StoSca,
   'sto-secrets': StoSecrets,
+  'sto-thumbs-down': StoThumbsDown,
+  'sto-thumbs-up': StoThumbsUp,
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
   'store-artifact-bundle': StoreArtifactBundle,
