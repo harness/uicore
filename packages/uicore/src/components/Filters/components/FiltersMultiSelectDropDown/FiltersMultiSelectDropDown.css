@@ -151,23 +151,10 @@
             font-weight: 400;
             font-size: 12px;
             transition: background-color 0.2s ease;
-            &.active {
-              background: var(--primary-7);
-              color: var(--white) !important;
-            }
-            &.disabled {
-              color: var(--grey-400);
-              cursor: default;
-            }
-            &:hover:local:not(.active, .disabled) {
+            &:hover {
               background: var(--grey-100);
             }
             :global {
-              :checked ~ .bp3-control-indicator {
-                --cb-bg-color: var(--white);
-                --cb-icon-filter: invert(62%) sepia(98%) saturate(6594%) hue-rotate(191deg) brightness(93%)
-                  contrast(98%);
-              }
               .bp3-control-indicator {
                 outline: none;
               }
