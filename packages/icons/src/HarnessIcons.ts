@@ -587,8 +587,11 @@ import GcpSecretManager from './gcp-secret-manager.svg'
 import Gcp from './gcp.svg'
 import GcrCiStepInverse from './gcr-ci-step-inverse.svg'
 import GcrCiStep from './gcr-ci-step.svg'
+import GcrDeploy from './gcr-deploy.svg'
+import GcrRollback from './gcr-rollback.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
+import GcrTrafficShift from './gcr-traffic-shift.svg'
 import GcsCiStepInverse from './gcs-ci-step-inverse.svg'
 import GcsCiStep from './gcs-ci-step.svg'
 import GcsStepInverse from './gcs-step-inverse.svg'
@@ -1186,6 +1189,7 @@ import ServiceGcpWithText from './service-gcp-with-text.svg'
 import ServiceGcp from './service-gcp.svg'
 import ServiceGithubPackage from './service-github-package.svg'
 import ServiceGithub from './service-github.svg'
+import ServiceGoogleCloudRun from './service-google-cloud-run.svg'
 import ServiceGoogleFunctions from './service-google-functions.svg'
 import ServiceGotlab from './service-gotlab.svg'
 import ServiceGrafanaLoki from './service-grafana-loki.svg'
@@ -2012,8 +2016,11 @@ type HarnessIconName =
   | 'gcp'
   | 'gcr-ci-step-inverse'
   | 'gcr-ci-step'
+  | 'gcr-deploy'
+  | 'gcr-rollback'
   | 'gcr-step-inverse'
   | 'gcr-step'
+  | 'gcr-traffic-shift'
   | 'gcs-ci-step-inverse'
   | 'gcs-ci-step'
   | 'gcs-step-inverse'
@@ -2611,6 +2618,7 @@ type HarnessIconName =
   | 'service-gcp'
   | 'service-github-package'
   | 'service-github'
+  | 'service-google-cloud-run'
   | 'service-google-functions'
   | 'service-gotlab'
   | 'service-grafana-loki'
@@ -3437,8 +3445,11 @@ const HarnessIcons: KVO<ElementType> = {
   gcp: Gcp,
   'gcr-ci-step-inverse': GcrCiStepInverse,
   'gcr-ci-step': GcrCiStep,
+  'gcr-deploy': GcrDeploy,
+  'gcr-rollback': GcrRollback,
   'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
+  'gcr-traffic-shift': GcrTrafficShift,
   'gcs-ci-step-inverse': GcsCiStepInverse,
   'gcs-ci-step': GcsCiStep,
   'gcs-step-inverse': GcsStepInverse,
@@ -4036,6 +4047,7 @@ const HarnessIcons: KVO<ElementType> = {
   'service-gcp': ServiceGcp,
   'service-github-package': ServiceGithubPackage,
   'service-github': ServiceGithub,
+  'service-google-cloud-run': ServiceGoogleCloudRun,
   'service-google-functions': ServiceGoogleFunctions,
   'service-gotlab': ServiceGotlab,
   'service-grafana-loki': ServiceGrafanaLoki,
