@@ -281,8 +281,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
       <Checkbox
         key={item.value.toString()}
         className={cx(css.menuItem, {
-          [css.active]: isSelected,
-          [css.disabled]: modifiers.disabled || item.disabled
+          [css.active]: isSelected
         })}
         onClick={e => {
           if (!modifiers.disabled && !item.disabled) {
