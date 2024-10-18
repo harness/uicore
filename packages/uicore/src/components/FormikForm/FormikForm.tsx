@@ -6,7 +6,7 @@
  */
 
 import React, { ReactNode, useCallback, useMemo, useState, useRef, useEffect } from 'react'
-import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikHelpers } from 'formik'
+import { connect, Form as FrmForm, Formik as FrmFormik, FormikConfig, FormikHelpers, useFormikContext } from 'formik'
 import {
   LoadingSelectOption,
   SelectOption,
@@ -1869,3 +1869,6 @@ export const FormInput = {
 }
 
 export const FormikForm = connect(Form)
+
+// allow access to the form context without prop drilling
+export { useFormikContext }
