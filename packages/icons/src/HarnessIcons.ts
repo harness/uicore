@@ -587,7 +587,13 @@ import GcpSecretManager from './gcp-secret-manager.svg'
 import Gcp from './gcp.svg'
 import GcrCiStepInverse from './gcr-ci-step-inverse.svg'
 import GcrCiStep from './gcr-ci-step.svg'
+import GcrDeployLight from './gcr-deploy-light.svg'
+import GcrDeployPrimary from './gcr-deploy-primary.svg'
 import GcrDeploy from './gcr-deploy.svg'
+import GcrDeploymentLight from './gcr-deployment-light.svg'
+import GcrDeploymentPrimary from './gcr-deployment-primary.svg'
+import GcrRollbackLight from './gcr-rollback-light.svg'
+import GcrRollbackPrimary from './gcr-rollback-primary.svg'
 import GcrRollback from './gcr-rollback.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
@@ -2017,7 +2023,13 @@ type HarnessIconName =
   | 'gcp'
   | 'gcr-ci-step-inverse'
   | 'gcr-ci-step'
+  | 'gcr-deploy-light'
+  | 'gcr-deploy-primary'
   | 'gcr-deploy'
+  | 'gcr-deployment-light'
+  | 'gcr-deployment-primary'
+  | 'gcr-rollback-light'
+  | 'gcr-rollback-primary'
   | 'gcr-rollback'
   | 'gcr-step-inverse'
   | 'gcr-step'
@@ -3447,7 +3459,13 @@ const HarnessIcons: KVO<ElementType> = {
   gcp: Gcp,
   'gcr-ci-step-inverse': GcrCiStepInverse,
   'gcr-ci-step': GcrCiStep,
+  'gcr-deploy-light': GcrDeployLight,
+  'gcr-deploy-primary': GcrDeployPrimary,
   'gcr-deploy': GcrDeploy,
+  'gcr-deployment-light': GcrDeploymentLight,
+  'gcr-deployment-primary': GcrDeploymentPrimary,
+  'gcr-rollback-light': GcrRollbackLight,
+  'gcr-rollback-primary': GcrRollbackPrimary,
   'gcr-rollback': GcrRollback,
   'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
