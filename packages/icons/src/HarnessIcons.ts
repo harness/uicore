@@ -113,6 +113,10 @@ import AwsSamPackage from './aws-sam-package.svg'
 import AwsSecretManager from './aws-secret-manager.svg'
 import AwsSecurityHubInverse from './aws-security-hub-inverse.svg'
 import AwsSecurityHub from './aws-security-hub.svg'
+import AzfDeploymentLight from './azf-deployment-light.svg'
+import AzfDeploymentPrimary from './azf-deployment-primary.svg'
+import AzfRollbackLight from './azf-rollback-light.svg'
+import AzfRollbackPrimary from './azf-rollback-primary.svg'
 import AzureArmRollback from './azure-arm-rollback.svg'
 import AzureArm from './azure-arm.svg'
 import AzureBlob from './azure-blob.svg'
@@ -1549,6 +1553,10 @@ type HarnessIconName =
   | 'aws-secret-manager'
   | 'aws-security-hub-inverse'
   | 'aws-security-hub'
+  | 'azf-deployment-light'
+  | 'azf-deployment-primary'
+  | 'azf-rollback-light'
+  | 'azf-rollback-primary'
   | 'azure-arm-rollback'
   | 'azure-arm'
   | 'azure-blob'
@@ -2985,6 +2993,10 @@ const HarnessIcons: KVO<ElementType> = {
   'aws-secret-manager': AwsSecretManager,
   'aws-security-hub-inverse': AwsSecurityHubInverse,
   'aws-security-hub': AwsSecurityHub,
+  'azf-deployment-light': AzfDeploymentLight,
+  'azf-deployment-primary': AzfDeploymentPrimary,
+  'azf-rollback-light': AzfRollbackLight,
+  'azf-rollback-primary': AzfRollbackPrimary,
   'azure-arm-rollback': AzureArmRollback,
   'azure-arm': AzureArm,
   'azure-blob': AzureBlob,
