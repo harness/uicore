@@ -124,7 +124,7 @@ export { handleZeroOrInfinityTrend, renderTrend } from './components/StackedSumm
 export { timeSeriesChartDefaultConfig } from './components/TimeSeriesChart/TimeSeriesChart'
 export { columnChartDefaultConfig } from './components/ColumnChart/ColumnChart'
 export { Table, TableProps } from './components/Table/Table'
-export { FormikForm, Formik, FormInput } from './components/FormikForm/FormikForm'
+export { FormikForm, Formik, FormInput, useFormikContext } from './components/FormikForm/FormikForm'
 export { errorCheck, getFormFieldLabel } from './components/FormikForm/utils'
 export { StepsProgress } from './components/StepsProgress/StepsProgress'
 export { OverlaySpinner, OverlaySpinnerProps } from './components/OverlaySpinner/OverlaySpinner'
