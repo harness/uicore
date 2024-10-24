@@ -1017,6 +1017,7 @@ import Rancher from './rancher.svg'
 import ReExecuted from './re-executed.svg'
 import RegEx from './reg-ex.svg'
 import RegisterCatalog from './register-catalog.svg'
+import Registry from './registry.svg'
 import Reminder from './reminder.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
@@ -2457,6 +2458,7 @@ type HarnessIconName =
   | 're-executed'
   | 'reg-ex'
   | 'register-catalog'
+  | 'registry'
   | 'reminder'
   | 'remote-setup'
   | 'remote'
@@ -3897,6 +3899,7 @@ const HarnessIcons: KVO<ElementType> = {
   're-executed': ReExecuted,
   'reg-ex': RegEx,
   'register-catalog': RegisterCatalog,
+  registry: Registry,
   reminder: Reminder,
   'remote-setup': RemoteSetup,
   remote: Remote,
