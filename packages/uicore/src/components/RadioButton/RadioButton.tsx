@@ -20,6 +20,7 @@ export interface RadioButtonProps extends StyledProps {
   disabled?: boolean
   tooltipId?: string
   asPill?: boolean
+  defaultChecked?: boolean
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -28,6 +29,7 @@ export function RadioButton({
   value,
   name = '',
   className = '',
+  defaultChecked = false,
   checked = false,
   disabled = false,
   tooltipId,
@@ -48,7 +50,8 @@ export function RadioButton({
         type="radio"
         name={name}
         value={value}
-        defaultChecked={checked}
+        defaultChecked={defaultChecked}
+        checked={checked}
         disabled={disabled}
         className={css.input}
         onChange={onChange}
