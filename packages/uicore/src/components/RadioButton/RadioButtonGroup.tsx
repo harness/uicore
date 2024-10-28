@@ -21,6 +21,7 @@ export interface RadioButtonGroupProps extends StyledProps {
   onChange: (e: FormEvent<HTMLInputElement>) => void
   options: Array<Pick<RadioButtonProps, 'label' | 'value' | 'disabled' | 'tooltipId'>>
   selectedValue?: string | number
+  defaultSelectedValue?: string | number
 }
 
 export function RadioButtonGroup({
@@ -33,6 +34,7 @@ export function RadioButtonGroup({
   onChange,
   options,
   selectedValue = '',
+  defaultSelectedValue = '',
   ...props
 }: RadioButtonGroupProps): ReactElement {
   const [value, setValue] = useState<string | number>(selectedValue)
@@ -57,6 +59,7 @@ export function RadioButtonGroup({
             key={optionProps.value}
             name={groupName}
             checked={optionProps.value === value}
+            defaultChecked={optionProps.value === defaultSelectedValue}
             onChange={optionOnChangeHandler}
             {...optionProps}
             disabled={disabled || optionProps.disabled}
