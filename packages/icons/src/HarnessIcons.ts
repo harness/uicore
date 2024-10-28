@@ -687,6 +687,7 @@ import HelmOci from './helm-oci.svg'
 import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import HexagonOutline from './hexagon-outline.svg'
+import Hibernate from './hibernate.svg'
 import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpProbe from './http-probe.svg'
@@ -2128,6 +2129,7 @@ type HarnessIconName =
   | 'helm-rollback'
   | 'help'
   | 'hexagon-outline'
+  | 'hibernate'
   | 'hotfix'
   | 'hourglass'
   | 'http-probe'
@@ -3569,6 +3571,7 @@ const HarnessIcons: KVO<ElementType> = {
   'helm-rollback': HelmRollback,
   help: Help,
   'hexagon-outline': HexagonOutline,
+  hibernate: Hibernate,
   hotfix: Hotfix,
   hourglass: Hourglass,
   'http-probe': HttpProbe,
