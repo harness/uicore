@@ -7,7 +7,11 @@
 
 import React from 'react'
 import { render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { CodeBlock } from './CodeBlock'
+import copy from 'clipboard-copy'
+
+jest.mock('clipboard-copy', () => jest.fn())
 
 describe('Code Block', () => {
   test('should render with just snippet props', () => {
@@ -27,5 +31,17 @@ describe('Code Block', () => {
     const copybutton = document.querySelector('button')
     expect(copybutton).toBeDefined()
     expect(container).toMatchSnapshot()
+  })
+
+  test('should render codeblock with code copy and trigger onCopySuccess', async () => {
+    const onCopySuccess = jest.fn()
+    const copyContent = 'kubectl apply -f harness-delegate.yaml'
+    const { getByRole } = render(
+      <CodeBlock format="pre" allowCopy snippet={copyContent} onCopySuccess={onCopySuccess} />
+    )
+    const copyButton = getByRole('button')
+    await userEvent.click(copyButton)
+    expect(copy).toHaveBeenCalledWith(copyContent)
+    expect(onCopySuccess).toHaveBeenCalledWith(copyContent)
   })
 })
