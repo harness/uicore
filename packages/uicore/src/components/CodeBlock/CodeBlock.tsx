@@ -33,13 +33,12 @@ export function CodeBlock(props: CodeBlockProps) {
 
   const handleCopyButtonClick = useCallback(async () => {
     const copyContent = codeToCopy || snippet
-    Utils.copy(copyContent)
-      .then(() => {
-        onCopySuccess?.(copyContent)
-      })
-      .catch((error: unknown) => {
-        onCopyError?.(error)
-      })
+    try {
+      await Utils.copy(copyContent)
+      onCopySuccess?.(copyContent)
+    } catch (e) {
+      onCopyError?.(e)
+    }
   }, [codeToCopy, snippet])
 
   return (
