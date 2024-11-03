@@ -21,11 +21,10 @@ export interface CodeBlockProps {
   lineClamp?: number
   height?: number
   onCopySuccess?: (arg: string) => void
-  onCopyError?: (error: unknown) => void
 }
 
 export function CodeBlock(props: CodeBlockProps) {
-  const { snippet = '', allowCopy, codeToCopy, format = 'Text', lineClamp, height, onCopySuccess, onCopyError } = props
+  const { snippet = '', allowCopy, codeToCopy, format = 'Text', lineClamp, height, onCopySuccess } = props
 
   const floatButton = useMemo<boolean>(() => {
     return lineClamp !== 1 && snippet.split(/\n/).length >= 2
@@ -33,12 +32,9 @@ export function CodeBlock(props: CodeBlockProps) {
 
   const handleCopyButtonClick = useCallback(async () => {
     const copyContent = codeToCopy || snippet
-    try {
-      await Utils.copy(copyContent)
+    Utils.copy(copyContent).then(() => {
       onCopySuccess?.(copyContent)
-    } catch (e) {
-      onCopyError?.(e)
-    }
+    })
   }, [codeToCopy, snippet])
 
   return (

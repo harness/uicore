@@ -11,7 +11,7 @@ import userEvent from '@testing-library/user-event'
 import { CodeBlock } from './CodeBlock'
 import copy from 'clipboard-copy'
 
-jest.mock('clipboard-copy', () => jest.fn())
+jest.mock('clipboard-copy', () => jest.fn(() => new Promise(resolve => resolve(null))))
 
 describe('Code Block', () => {
   test('should render with just snippet props', () => {
