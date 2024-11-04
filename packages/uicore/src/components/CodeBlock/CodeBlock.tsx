@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
 import { Text } from '../Text/Text'
@@ -20,14 +20,26 @@ export interface CodeBlockProps {
   format?: string
   lineClamp?: number
   height?: number
+  onCopySuccess?: (arg: string) => void
+  onCopyError?: (arg: unknown) => void
 }
 
 export function CodeBlock(props: CodeBlockProps) {
-  const { snippet = '', allowCopy, codeToCopy, format = 'Text', lineClamp, height } = props
+  const { snippet = '', allowCopy, codeToCopy, format = 'Text', lineClamp, height, onCopySuccess, onCopyError } = props
 
   const floatButton = useMemo<boolean>(() => {
     return lineClamp !== 1 && snippet.split(/\n/).length >= 2
   }, [lineClamp, snippet])
+
+  const handleCopyButtonClick = useCallback(async () => {
+    const copyContent = codeToCopy || snippet
+    try {
+      await Utils.copy(copyContent)
+      onCopySuccess?.(copyContent)
+    } catch (e) {
+      onCopyError?.(e)
+    }
+  }, [codeToCopy, snippet])
 
   return (
     <Container
@@ -53,7 +65,7 @@ export function CodeBlock(props: CodeBlockProps) {
         <Button
           icon="duplicate"
           minimal
-          onClick={() => Utils.copy(codeToCopy || snippet)}
+          onClick={handleCopyButtonClick}
           iconProps={{ size: 12 }}
           className={floatButton ? css.floatingCopyButton : undefined}
         />
