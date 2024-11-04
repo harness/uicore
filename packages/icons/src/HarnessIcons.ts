@@ -91,6 +91,7 @@ import AsgRollback from './asg-rollback.svg'
 import AsgSetup from './asg-setup.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
+import Atlassian from './atlassian.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
@@ -1533,6 +1534,7 @@ type HarnessIconName =
   | 'asg-setup'
   | 'asg-swap-inverse'
   | 'asg-swap'
+  | 'atlassian'
   | 'audit-log-created'
   | 'audit-trail'
   | 'autoScaler'
@@ -2975,6 +2977,7 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-setup': AsgSetup,
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
+  atlassian: Atlassian,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
