@@ -1112,6 +1112,8 @@ import SbomDriftDetected from './sbom-drift-detected.svg'
 import SchemaRollback from './schema-rollback.svg'
 import Scm from './scm.svg'
 import Script from './script.svg'
+import ScsSbom from './scs-sbom.svg'
+import ScsSlsa from './scs-slsa.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -1294,8 +1296,6 @@ import SscaOrchestrate from './ssca-orchestrate.svg'
 import SscaRemediation from './ssca-remediation.svg'
 import SscaRocket from './ssca-rocket.svg'
 import SscaRuledefinition from './ssca-ruledefinition.svg'
-import SscaSbom from './ssca-sbom.svg'
-import SscaSlsa from './ssca-slsa.svg'
 import SslCert from './ssl-cert.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
@@ -2558,6 +2558,8 @@ type HarnessIconName =
   | 'schema-rollback'
   | 'scm'
   | 'script'
+  | 'scs-sbom'
+  | 'scs-slsa'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -2740,8 +2742,6 @@ type HarnessIconName =
   | 'ssca-remediation'
   | 'ssca-rocket'
   | 'ssca-ruledefinition'
-  | 'ssca-sbom'
-  | 'ssca-slsa'
   | 'ssl-cert'
   | 'stale-cache'
   | 'star-empty'
@@ -4004,6 +4004,8 @@ const HarnessIcons: KVO<ElementType> = {
   'schema-rollback': SchemaRollback,
   scm: Scm,
   script: Script,
+  'scs-sbom': ScsSbom,
+  'scs-slsa': ScsSlsa,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,
@@ -4186,8 +4188,6 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-remediation': SscaRemediation,
   'ssca-rocket': SscaRocket,
   'ssca-ruledefinition': SscaRuledefinition,
-  'ssca-sbom': SscaSbom,
-  'ssca-slsa': SscaSlsa,
   'ssl-cert': SslCert,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
