@@ -921,6 +921,7 @@ import NavResourcesHover from './nav-resources-hover.svg'
 import NavResourcesSelected from './nav-resources-selected.svg'
 import NavResources from './nav-resources.svg'
 import NavSettings from './nav-settings.svg'
+import NavStoIssues from './nav-sto-issues.svg'
 import NavSupport from './nav-support.svg'
 import NavUserProfileHover from './nav-user-profile-hover.svg'
 import NavUserProfileSelected from './nav-user-profile-selected.svg'
@@ -2367,6 +2368,7 @@ type HarnessIconName =
   | 'nav-resources-selected'
   | 'nav-resources'
   | 'nav-settings'
+  | 'nav-sto-issues'
   | 'nav-support'
   | 'nav-user-profile-hover'
   | 'nav-user-profile-selected'
@@ -3813,6 +3815,7 @@ const HarnessIcons: KVO<ElementType> = {
   'nav-resources-selected': NavResourcesSelected,
   'nav-resources': NavResources,
   'nav-settings': NavSettings,
+  'nav-sto-issues': NavStoIssues,
   'nav-support': NavSupport,
   'nav-user-profile-hover': NavUserProfileHover,
   'nav-user-profile-selected': NavUserProfileSelected,
