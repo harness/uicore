@@ -597,6 +597,8 @@ import GcrDeployPrimary from './gcr-deploy-primary.svg'
 import GcrDeploy from './gcr-deploy.svg'
 import GcrDeploymentLight from './gcr-deployment-light.svg'
 import GcrDeploymentPrimary from './gcr-deployment-primary.svg'
+import GcrPepareRollbackLight from './gcr-pepareRollback-light.svg'
+import GcrPrepareRollbackPrimary from './gcr-prepareRollback-primary.svg'
 import GcrRollbackLight from './gcr-rollback-light.svg'
 import GcrRollbackPrimary from './gcr-rollback-primary.svg'
 import GcrRollback from './gcr-rollback.svg'
@@ -2044,6 +2046,8 @@ type HarnessIconName =
   | 'gcr-deploy'
   | 'gcr-deployment-light'
   | 'gcr-deployment-primary'
+  | 'gcr-pepareRollback-light'
+  | 'gcr-prepareRollback-primary'
   | 'gcr-rollback-light'
   | 'gcr-rollback-primary'
   | 'gcr-rollback'
@@ -3491,6 +3495,8 @@ const HarnessIcons: KVO<ElementType> = {
   'gcr-deploy': GcrDeploy,
   'gcr-deployment-light': GcrDeploymentLight,
   'gcr-deployment-primary': GcrDeploymentPrimary,
+  'gcr-pepareRollback-light': GcrPepareRollbackLight,
+  'gcr-prepareRollback-primary': GcrPrepareRollbackPrimary,
   'gcr-rollback-light': GcrRollbackLight,
   'gcr-rollback-primary': GcrRollbackPrimary,
   'gcr-rollback': GcrRollback,
