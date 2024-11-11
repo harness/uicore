@@ -1115,6 +1115,8 @@ import SbomDriftDetected from './sbom-drift-detected.svg'
 import SchemaRollback from './schema-rollback.svg'
 import Scm from './scm.svg'
 import Script from './script.svg'
+import ScsBot from './scs-bot.svg'
+import ScsPerson from './scs-person.svg'
 import ScsSbom from './scs-sbom.svg'
 import ScsSlsa from './scs-slsa.svg'
 import SearchApplications from './search-applications.svg'
@@ -2564,6 +2566,8 @@ type HarnessIconName =
   | 'schema-rollback'
   | 'scm'
   | 'script'
+  | 'scs-bot'
+  | 'scs-person'
   | 'scs-sbom'
   | 'scs-slsa'
   | 'search-applications'
@@ -4013,6 +4017,8 @@ const HarnessIcons: KVO<ElementType> = {
   'schema-rollback': SchemaRollback,
   scm: Scm,
   script: Script,
+  'scs-bot': ScsBot,
+  'scs-person': ScsPerson,
   'scs-sbom': ScsSbom,
   'scs-slsa': ScsSlsa,
   'search-applications': SearchApplications,
