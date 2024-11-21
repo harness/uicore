@@ -1471,6 +1471,7 @@ import YamlBuilderTrigger from './yaml-builder-trigger.svg'
 import Youtube from './youtube.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
+import Zoom from './zoom.svg'
 
 type HarnessIconName =
   | 'Account'
@@ -2933,6 +2934,7 @@ type HarnessIconName =
   | 'youtube'
   | 'zoom-in'
   | 'zoom-out'
+  | 'zoom'
 
 const HarnessIcons: KVO<ElementType> = {
   Account: Account,
@@ -4394,7 +4396,8 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-trigger': YamlBuilderTrigger,
   youtube: Youtube,
   'zoom-in': ZoomIn,
-  'zoom-out': ZoomOut
+  'zoom-out': ZoomOut,
+  zoom: Zoom
 }
 
 export { HarnessIcons, HarnessIconName }
