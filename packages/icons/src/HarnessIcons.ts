@@ -596,14 +596,14 @@ import GcrCiStepInverse from './gcr-ci-step-inverse.svg'
 import GcrCiStep from './gcr-ci-step.svg'
 import GcrDeployLight from './gcr-deploy-light.svg'
 import GcrDeployPrimary from './gcr-deploy-primary.svg'
-import GcrDeploy from './gcr-deploy.svg'
 import GcrDeploymentLight from './gcr-deployment-light.svg'
 import GcrDeploymentPrimary from './gcr-deployment-primary.svg'
+import GcrJobLight from './gcr-job-light.svg'
+import GcrJobPrimary from './gcr-job-primary.svg'
 import GcrPepareRollbackLight from './gcr-pepareRollback-light.svg'
 import GcrPrepareRollbackPrimary from './gcr-prepareRollback-primary.svg'
 import GcrRollbackLight from './gcr-rollback-light.svg'
 import GcrRollbackPrimary from './gcr-rollback-primary.svg'
-import GcrRollback from './gcr-rollback.svg'
 import GcrStepInverse from './gcr-step-inverse.svg'
 import GcrStep from './gcr-step.svg'
 import GcrTrafficShift from './gcr-traffic-shift.svg'
@@ -2059,14 +2059,14 @@ type HarnessIconName =
   | 'gcr-ci-step'
   | 'gcr-deploy-light'
   | 'gcr-deploy-primary'
-  | 'gcr-deploy'
   | 'gcr-deployment-light'
   | 'gcr-deployment-primary'
+  | 'gcr-job-light'
+  | 'gcr-job-primary'
   | 'gcr-pepareRollback-light'
   | 'gcr-prepareRollback-primary'
   | 'gcr-rollback-light'
   | 'gcr-rollback-primary'
-  | 'gcr-rollback'
   | 'gcr-step-inverse'
   | 'gcr-step'
   | 'gcr-traffic-shift'
@@ -3522,14 +3522,14 @@ const HarnessIcons: KVO<ElementType> = {
   'gcr-ci-step': GcrCiStep,
   'gcr-deploy-light': GcrDeployLight,
   'gcr-deploy-primary': GcrDeployPrimary,
-  'gcr-deploy': GcrDeploy,
   'gcr-deployment-light': GcrDeploymentLight,
   'gcr-deployment-primary': GcrDeploymentPrimary,
+  'gcr-job-light': GcrJobLight,
+  'gcr-job-primary': GcrJobPrimary,
   'gcr-pepareRollback-light': GcrPepareRollbackLight,
   'gcr-prepareRollback-primary': GcrPrepareRollbackPrimary,
   'gcr-rollback-light': GcrRollbackLight,
   'gcr-rollback-primary': GcrRollbackPrimary,
-  'gcr-rollback': GcrRollback,
   'gcr-step-inverse': GcrStepInverse,
   'gcr-step': GcrStep,
   'gcr-traffic-shift': GcrTrafficShift,
