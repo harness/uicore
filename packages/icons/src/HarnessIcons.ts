@@ -417,6 +417,7 @@ import CsHover from './cs-hover.svg'
 import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
+import CustomBanner from './custom-banner.svg'
 import CustomIngest from './custom-ingest.svg'
 import CustomPlugin from './custom-plugin.svg'
 import CustomRemoteManifest from './custom-remote-manifest.svg'
@@ -1880,6 +1881,7 @@ type HarnessIconName =
   | 'currency-banner'
   | 'custom-approval'
   | 'custom-artifact'
+  | 'custom-banner'
   | 'custom-ingest'
   | 'custom-plugin'
   | 'custom-remote-manifest'
@@ -3343,6 +3345,7 @@ const HarnessIcons: KVO<ElementType> = {
   'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
+  'custom-banner': CustomBanner,
   'custom-ingest': CustomIngest,
   'custom-plugin': CustomPlugin,
   'custom-remote-manifest': CustomRemoteManifest,
