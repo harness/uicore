@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { Position, Classes } from '@blueprintjs/core'
+import { Position, Classes, PopoverPosition } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
@@ -64,6 +64,7 @@ export interface SelectProps
   popoverClassName?: string
   onQueryChange?: Props['onQueryChange']
   addTooltip?: boolean
+  tooltipPosition?: PopoverPosition
   borderless?: boolean
   loadingItems?: boolean
 }
@@ -137,6 +138,7 @@ export function Select(props: SelectProps): React.ReactElement {
     resetOnSelect = true,
     resetOnClose = true,
     addTooltip = false,
+    tooltipPosition = 'bottom',
     borderless = false,
     loadingItems,
     ...rest
@@ -315,7 +317,7 @@ export function Select(props: SelectProps): React.ReactElement {
       isDark={true}
       fill={true}
       popoverClassName={Classes.DARK}
-      position="bottom">
+      position={tooltipPosition}>
       {renderSuggestComponent()}
     </Popover>
   ) : (
