@@ -85,6 +85,31 @@ export const SelectWithIcons: Story<SelectProps> = args => {
     </div>
   )
 }
+export const SelectWithIconsAndTooltip: Story<SelectProps> = args => {
+  const {
+    items = [
+      {
+        label: 'TryingTryingTryingTryingTryingTryingTryingTryingTrying',
+        value: 'service-kubernetes',
+        icon: { name: 'service-kubernetes' }
+      },
+      {
+        label: 'Trying a long phrase with spaces to try out different combinations',
+        value: 'service-github',
+        icon: { name: 'service-github' }
+      },
+      { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
+      { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
+      { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
+    ]
+  } = args
+  const argsCopy = omit(args, ['size', 'items'])
+  return (
+    <div style={{ width: '300px', marginTop: 60 }}>
+      <Select items={items} addClearBtn={true} addTooltip={true} tooltipProps={{ position: 'top' }} {...argsCopy} />
+    </div>
+  )
+}
 SelectWithIcons.args = { size: SelectSize.Large }
 export const AsyncSelect: Story<SelectProps> = args => {
   interface SelectOption {

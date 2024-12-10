@@ -777,6 +777,10 @@ export const Basic: Story<FormikFormProps> = () => (
                 },
                 { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
               ]}
+              selectProps={{
+                addTooltip: true,
+                tooltipProps: { position: 'top' }
+              }}
             />
             <FormInput.MultiSelect
               name="colorMulti"

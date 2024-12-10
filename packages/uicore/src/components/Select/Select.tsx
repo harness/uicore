@@ -5,9 +5,19 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  ChangeEvent,
+  MouseEventHandler,
+  ReactNode,
+  ReactElement,
+  MouseEvent,
+  useCallback
+} from 'react'
 import cx from 'classnames'
-import { Position, Classes, PopoverPosition } from '@blueprintjs/core'
+import { Position } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './Select.css'
@@ -15,7 +25,7 @@ import { Button } from '../../components/Button/Button'
 import { Icon, IconProps } from '@harness/icons'
 import { Utils } from '../../core/Utils'
 import { Text } from '../../components/Text/Text'
-import { Popover } from '../../components/Popover/Popover'
+import { OptionalTooltip } from '@harness/design-system'
 
 export interface SelectOption {
   label: string
@@ -37,18 +47,19 @@ const Loading = Symbol('loading')
 export const LoadingSelectOption: SelectOption = { label: 'Loading...', value: Loading }
 
 export interface SelectProps
-  extends Omit<
-    Props,
-    | 'popoverProps'
-    | 'inputValueRenderer'
-    | 'itemRenderer'
-    | 'onItemSelect'
-    | 'query'
-    | 'selectedItem'
-    | 'items'
-    | 'activeItem'
-    | 'onActiveItemChange'
-  > {
+  extends OptionalTooltip,
+    Omit<
+      Props,
+      | 'popoverProps'
+      | 'inputValueRenderer'
+      | 'itemRenderer'
+      | 'onItemSelect'
+      | 'query'
+      | 'selectedItem'
+      | 'items'
+      | 'activeItem'
+      | 'onActiveItemChange'
+    > {
   inputValueRender?: Props['inputValueRenderer']
   itemRenderer?: Props['itemRenderer']
   onChange?: Props['onItemSelect']
@@ -56,7 +67,7 @@ export interface SelectProps
   size?: SelectSize
   items: Props['items'] | (() => Promise<Props['items']>)
   allowCreatingNewItems?: boolean
-  newItemRenderer?: (query: string, clickHandler?: React.MouseEventHandler<Element>) => React.ReactNode
+  newItemRenderer?: (query: string, clickHandler?: MouseEventHandler<Element>) => ReactNode
   name?: string
   whenPopoverClosed?: (node: HTMLElement) => void
   addClearBtn?: boolean
@@ -64,7 +75,6 @@ export interface SelectProps
   popoverClassName?: string
   onQueryChange?: Props['onQueryChange']
   addTooltip?: boolean
-  tooltipPosition?: PopoverPosition
   borderless?: boolean
   loadingItems?: boolean
 }
@@ -123,10 +133,10 @@ export function createNewItemFromQuery(query: string): SelectOption {
   return { label: query, value: query }
 }
 
-export function Select(props: SelectProps): React.ReactElement {
-  const [query, setQuery] = React.useState('')
-  const [loading, setLoading] = React.useState(false)
-  const [items, setItems] = React.useState(Array.isArray(props.items) ? props.items : [])
+export function Select(props: SelectProps): ReactElement {
+  const [query, setQuery] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [items, setItems] = useState(Array.isArray(props.items) ? props.items : [])
   const {
     onChange,
     value,
@@ -138,12 +148,15 @@ export function Select(props: SelectProps): React.ReactElement {
     resetOnSelect = true,
     resetOnClose = true,
     addTooltip = false,
-    tooltipPosition = 'bottom',
     borderless = false,
     loadingItems,
+    tooltipProps,
     ...rest
   } = props
-  const [item, setItem] = React.useState<SelectOption | undefined | null>(undefined)
+  const [selectedItem, setSelectedItem] = useState<SelectOption | undefined | null>(undefined)
+  const inputRef = useRef<HTMLInputElement | null>(null)
+  const [isScrollable, setIsScrollable] = useState(false)
+  const [tooltip, setTooltip] = useState<OptionalTooltip['tooltip']>()
 
   const showClearBtn =
     !!addClearBtn &&
@@ -154,8 +167,8 @@ export function Select(props: SelectProps): React.ReactElement {
     value?.value !== null &&
     value?.value !== ''
 
-  React.useEffect(() => {
-    setItem(value)
+  useEffect(() => {
+    setSelectedItem(value)
   }, [value])
 
   function handleItemSelect(item: SelectOption) {
@@ -164,12 +177,26 @@ export function Select(props: SelectProps): React.ReactElement {
     }
     if (typeof onChange === 'function') {
       onChange(item)
+    }
+
+    setIsScrollable(false)
+    setSelectedItem(item)
+  }
+
+  function onPopoverClosed(node: HTMLElement): void {
+    whenPopoverClosed?.(node)
+
+    if (inputRef.current) {
+      const element = inputRef.current
+      const widthDifference = (element.scrollWidth || 0) - (element.offsetWidth || 0)
+
+      setIsScrollable(widthDifference > 1)
     } else {
-      setItem(item)
+      setIsScrollable(false)
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (Array.isArray(props.items)) {
       setItems(props.items)
     } else if (typeof props.items === 'function') {
@@ -190,7 +217,7 @@ export function Select(props: SelectProps): React.ReactElement {
   function createNewItemRenderer(
     query: string,
     _active: boolean,
-    handleClick: React.MouseEventHandler<HTMLElement>
+    handleClick: MouseEventHandler<HTMLElement>
   ): JSX.Element | undefined {
     if (loading || loadingItems) {
       return (
@@ -203,7 +230,7 @@ export function Select(props: SelectProps): React.ReactElement {
     const isExactQueryElPresent = items.some(item => item.label === query)
     if (!loading)
       return (
-        <React.Fragment>
+        <>
           {items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())).length === 0 ? (
             <div className={css.noResultsFound}>No Match Found</div>
           ) : null}
@@ -217,13 +244,32 @@ export function Select(props: SelectProps): React.ReactElement {
                 text={query}
                 icon="plus"
                 className={css.createNewItemButton}
-                onClick={handleClick as React.MouseEventHandler<Element>}
+                onClick={handleClick as MouseEventHandler<Element>}
               />
             )
           ) : null}
-        </React.Fragment>
+        </>
       )
   }
+
+  const inputRefCallback = useCallback((el: HTMLInputElement | null) => {
+    inputRef.current = el
+  }, [])
+
+  useEffect(() => {
+    if (addTooltip) {
+      if (props.tooltip) {
+        setTooltip(props.tooltip)
+      } else if (isScrollable) {
+        setTooltip(selectedItem?.label ?? '')
+      } else {
+        setTooltip(undefined)
+      }
+    } else {
+      setTooltip(undefined)
+    }
+  }, [addTooltip, isScrollable, selectedItem?.label])
+
   const renderSuggestComponent = () => (
     <Suggest
       inputValueRenderer={opt => opt.label?.toString()}
@@ -238,18 +284,20 @@ export function Select(props: SelectProps): React.ReactElement {
       noResults={<NoMatch />}
       {...rest}
       inputProps={{
-        onChange(e: React.ChangeEvent<HTMLInputElement>) {
+        onChange(e: ChangeEvent<HTMLInputElement>) {
           setQuery(e.target.value)
         },
         value: query,
         placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
-        leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
+        leftElement: selectedItem?.icon ? (
+          <Icon size={getIconSizeFromSelect(size)} {...selectedItem?.icon} />
+        ) : undefined,
         rightElement: (
           <>
             {!props.disabled && showClearBtn ? (
               <Icon
                 name="main-delete"
-                onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
+                onClick={(e: MouseEvent<HTMLSpanElement>) => {
                   e.preventDefault()
                   handleItemSelect({ value: '', label: '' })
                 }}
@@ -271,12 +319,13 @@ export function Select(props: SelectProps): React.ReactElement {
         small: size === SelectSize.Small,
         large: size === SelectSize.Large,
         name: props.name,
+        inputRef: inputRefCallback,
         ...props.inputProps
       }}
       resetOnSelect={resetOnSelect}
       resetOnClose={resetOnClose}
       items={loading ? [LoadingSelectOption] : items}
-      selectedItem={item}
+      selectedItem={selectedItem}
       onItemSelect={handleItemSelect}
       query={query}
       popoverProps={{
@@ -287,7 +336,7 @@ export function Select(props: SelectProps): React.ReactElement {
         position: Position.BOTTOM_LEFT,
         className: cx(css.main, { [css.borderless]: borderless }),
         popoverClassName: cx(css.popover, popoverClassName),
-        onClosed: whenPopoverClosed,
+        onClosed: onPopoverClosed,
         modifiers: {
           preventOverflow: {
             // This is required to always attach the portal to the start of the reference instead of the middle
@@ -302,29 +351,21 @@ export function Select(props: SelectProps): React.ReactElement {
       }}
     />
   )
-  const tooltipContent = item?.label ? (
-    <div className={css.tooltipContainer} color="white">
-      {item.label}
-    </div>
-  ) : (
-    ''
-  )
-  return addTooltip ? (
-    <Popover
-      boundary="viewport"
-      interactionKind="hover"
-      content={tooltipContent}
-      isDark={true}
-      fill={true}
-      popoverClassName={Classes.DARK}
-      position={tooltipPosition}>
+
+  return (
+    <Utils.WrapOptionalTooltip
+      tooltip={tooltip}
+      tooltipProps={{
+        ...tooltipProps,
+        targetTagName: tooltipProps?.targetTagName || 'div',
+        position: tooltipProps?.position || 'bottom',
+        targetClassName: cx(tooltipProps?.targetClassName)
+      }}>
       {renderSuggestComponent()}
-    </Popover>
-  ) : (
-    renderSuggestComponent()
+    </Utils.WrapOptionalTooltip>
   )
 }
 
-export function NoMatch(): React.ReactElement {
+export function NoMatch(): ReactElement {
   return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
 }

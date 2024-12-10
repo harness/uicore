@@ -60,7 +60,7 @@ interface WrapOptionalTooltipProps extends OptionalTooltip {
 }
 
 export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOptionalTooltipProps): React.ReactElement {
-  const isDark = tooltipProps?.isDark
+  const { isDark = false, boundary = 'viewport', position = 'top', interactionKind = 'hover' } = tooltipProps ?? {}
   const content =
     typeof tooltip === 'string' ? (
       <div className={css.tooltipContainer} color={(isDark && 'white') || undefined}>
@@ -72,9 +72,9 @@ export function WrapOptionalTooltip({ tooltip, tooltipProps, children }: WrapOpt
 
   return tooltip ? (
     <Popover
-      boundary="viewport"
-      position="top"
-      interactionKind="hover"
+      boundary={boundary}
+      position={position}
+      interactionKind={interactionKind}
       {...tooltipProps}
       popoverClassName={cx(isDark ? Classes.DARK : undefined, tooltipProps?.popoverClassName)}
       content={content || ''}>
