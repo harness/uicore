@@ -792,6 +792,7 @@ import ListEntityInfographic from './list-entity-infographic.svg'
 import ListVars from './list-vars.svg'
 import ListView from './list-view.svg'
 import Loading from './loading.svg'
+import LocalRepository from './local-repository.svg'
 import Looping from './looping.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -2256,6 +2257,7 @@ type HarnessIconName =
   | 'list-vars'
   | 'list-view'
   | 'loading'
+  | 'local-repository'
   | 'looping'
   | 'main-abort'
   | 'main-account-notifications'
@@ -3720,6 +3722,7 @@ const HarnessIcons: KVO<ElementType> = {
   'list-vars': ListVars,
   'list-view': ListView,
   loading: Loading,
+  'local-repository': LocalRepository,
   looping: Looping,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
