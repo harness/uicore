@@ -105,11 +105,11 @@ export const ModalDialog: FC<ModalDialogProps> = ({
       )}
 
       <ScrollShadowContainer
-        shadowTopAndBottomClassname={css.shadowTopAndBottom}
-        shadowTopClassname={css.shadowTop}
-        shadowBottomClassname={css.shadowBottom}
-        bodyClassname={css.body}
-        bodyContentClassname={css.bodyContent}
+        shadowTopAndBottomClassName={css.shadowTopAndBottom}
+        shadowTopClassName={css.shadowTop}
+        shadowBottomClassName={css.shadowBottom}
+        bodyClassName={css.body}
+        bodyContentClassName={css.bodyContent}
         data-testid="modaldialog-body">
         <div>{children}</div>
       </ScrollShadowContainer>

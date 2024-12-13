@@ -24,3 +24,11 @@
 .icon {
   vertical-align: middle;
 }
+
+.tooltip {
+  max-width: 600px;
+}
+
+.tooltipWrapper {
+  display: inline-flex;
+}
