@@ -6,28 +6,27 @@
  */
 
 import React, { HTMLAttributes, useCallback, useMemo, useRef, useState } from 'react'
-import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
-import { styledClass } from '@harness/design-system'
+import { StyledProps, omitStyledProps, styledClasses, styledClass } from '@harness/design-system'
 import { isFunction } from 'lodash-es'
 import css from './ScrollShadowContainer.module.css'
 import cx from 'classnames'
 
 export interface ScrollShadowContainerProps extends HTMLAttributes<HTMLDivElement>, StyledProps {
   tag?: keyof JSX.IntrinsicElements
-  shadowTopClassname?: string
-  shadowBottomClassname?: string
-  shadowTopAndBottomClassname?: string
-  bodyClassname?: string
-  bodyContentClassname?: string
+  shadowTopClassName?: string
+  shadowBottomClassName?: string
+  shadowTopAndBottomClassName?: string
+  bodyClassName?: string
+  bodyContentClassName?: string
 }
 
 function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
   const {
     tag = 'div',
     children,
-    shadowTopClassname = css.shadowTop,
-    shadowBottomClassname = css.shadowBottom,
-    shadowTopAndBottomClassname = css.shadowTopAndBottom
+    shadowTopClassName = css.shadowTop,
+    shadowBottomClassName = css.shadowBottom,
+    shadowTopAndBottomClassName = css.shadowTopAndBottom
   } = props
   const Tag = tag as React.ElementType
 
@@ -80,13 +79,13 @@ function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
     const { top, bottom } = scrollShadows
 
     if (top && bottom) {
-      return shadowTopAndBottomClassname
+      return shadowTopAndBottomClassName
     }
     if (top) {
-      return shadowTopClassname
+      return shadowTopClassName
     }
     if (bottom) {
-      return shadowBottomClassname
+      return shadowBottomClassName
     }
     return ''
   }, [scrollShadows])
@@ -94,9 +93,9 @@ function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
   return (
     <Tag
       {...omitStyledProps(props)}
-      className={cx(styledClasses(props, styledClass.font), bodyShadowClass, css.body, props.bodyClassname)}
+      className={cx(styledClasses(props, styledClass.font), bodyShadowClass, css.body, props.bodyClassName)}
       ref={bodyRefCallback}>
-      <div className={cx(css.bodyContent, props.bodyContentClassname)}>
+      <div className={cx(css.bodyContent, props.bodyContentClassName)}>
         <div ref={bodyTopEdgeRef} data-position="top" />
         {children}
         <div ref={bodyBottomEdgeRef} data-position="bottom" />

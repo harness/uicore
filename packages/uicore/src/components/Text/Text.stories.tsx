@@ -10,6 +10,7 @@ import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
 import { Text, TextProps, Layout, Container, SupText } from '../..'
 import { FontVariation, Color } from '@harness/design-system'
+import css from './Text.css'
 
 export default {
   title: 'Components / Text',
@@ -54,6 +55,23 @@ export default {
 export const Basic: Story<TextProps> = () => {
   return (
     <>
+      <Text
+        inline
+        icon="full-circle"
+        iconProps={{ size: 6, color: 'green' }}
+        tooltip={
+          <Text font={{ variation: FontVariation.FORM_MESSAGE_SUCCESS }}>
+            RandomLongName RandomLongName RandomLongNameRandomLongNameRandomLongNameRandomLongName
+          </Text>
+        }
+        tooltipProps={{
+          isDark: true,
+          position: 'bottom',
+          popoverClassName: css.tooltip,
+          className: css.tooltipWrapper
+        }}>
+        RandomLongName Form Message Success
+      </Text>
       <Text
         font={{ variation: FontVariation.DISPLAY1 }}
         tooltip={`<Text font={{ variation: FontVariation.DISPLAY1 }}>Display 1</Text>`}>
