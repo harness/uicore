@@ -359,7 +359,8 @@ export function Select(props: SelectProps): ReactElement {
         ...tooltipProps,
         targetTagName: tooltipProps?.targetTagName || 'div',
         position: tooltipProps?.position || 'bottom',
-        targetClassName: cx(tooltipProps?.targetClassName)
+        targetClassName: cx(tooltipProps?.targetClassName),
+        className: cx(css.target)
       }}>
       {renderSuggestComponent()}
     </Utils.WrapOptionalTooltip>
