@@ -531,6 +531,7 @@ import EnvironmentGroup from './environment-group.svg'
 import Environment from './environment.svg'
 import EnvironmentsOutline from './environments-outline.svg'
 import Environments from './environments.svg'
+import ErrorHover from './error-hover.svg'
 import ErrorOutline from './error-outline.svg'
 import ErrorTracking from './error-tracking.svg'
 import ErrorTransparentNoOutline from './error-transparent-no-outline.svg'
@@ -1345,6 +1346,7 @@ import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
 import StoreArtifactBundle from './store-artifact-bundle.svg'
 import Subscriptions from './subscriptions.svg'
+import SuccessTickHover from './success-tick-hover.svg'
 import SuccessTick from './success-tick.svg'
 import SupportAccount from './support-account.svg'
 import SupportApi from './support-api.svg'
@@ -1998,6 +2000,7 @@ type HarnessIconName =
   | 'environment'
   | 'environments-outline'
   | 'environments'
+  | 'error-hover'
   | 'error-outline'
   | 'error-tracking'
   | 'error-transparent-no-outline'
@@ -2812,6 +2815,7 @@ type HarnessIconName =
   | 'sto-with-text'
   | 'store-artifact-bundle'
   | 'subscriptions'
+  | 'success-tick-hover'
   | 'success-tick'
   | 'support-account'
   | 'support-api'
@@ -3465,6 +3469,7 @@ const HarnessIcons: KVO<ElementType> = {
   environment: Environment,
   'environments-outline': EnvironmentsOutline,
   environments: Environments,
+  'error-hover': ErrorHover,
   'error-outline': ErrorOutline,
   'error-tracking': ErrorTracking,
   'error-transparent-no-outline': ErrorTransparentNoOutline,
@@ -4279,6 +4284,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-with-text': StoWithText,
   'store-artifact-bundle': StoreArtifactBundle,
   subscriptions: Subscriptions,
+  'success-tick-hover': SuccessTickHover,
   'success-tick': SuccessTick,
   'support-account': SupportAccount,
   'support-api': SupportApi,
