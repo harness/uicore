@@ -65,6 +65,8 @@ export default function FieldArrayExample() {
     }
   ]
 
+  const longLabel = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+
   const fields2: Field[] = [
     {
       name: 'name',
@@ -81,8 +83,10 @@ export default function FieldArrayExample() {
         <Select
           items={[
             { label: 'Text', value: 'TEXT' },
-            { label: 'Encrypted Text', value: 'ENCRYPTED_TEXT' }
+            { label: 'Encrypted Text', value: 'ENCRYPTED_TEXT' },
+            { label: longLabel, value: longLabel }
           ]}
+          addTooltip
           value={value}
           onChange={handleChange}
         />

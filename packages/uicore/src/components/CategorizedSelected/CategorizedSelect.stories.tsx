@@ -45,15 +45,17 @@ export default {
   decorators: [Story => <Story />]
 } as Meta
 export const Basic: Story<CategorizedSelectProps> = args => {
+  const longLabel = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
   const {
     items = [
       { label: 'Squirtle', value: 'squirtle', category: 'Water' },
       { label: 'Charizard', value: 'charizard', category: 'Fire' },
       { label: 'Venosaur', value: 'venosaur', category: 'Grass' },
       { label: 'Typhlosion', value: 'typhlosion', category: 'Fire' },
-      { label: 'Feraligatr', value: 'feraligator', category: 'Water' }
+      { label: 'Feraligatr', value: 'feraligator', category: 'Water' },
+      { label: longLabel, value: longLabel, category: 'Water' }
     ]
   } = args
   const argsCopy = omit(args, ['items'])
-  return <CategorizedSelect items={items} {...argsCopy} />
+  return <CategorizedSelect items={items} {...argsCopy} selectProps={{ addTooltip: true }} />
 }

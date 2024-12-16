@@ -101,12 +101,16 @@ export const WithCustomRowRenderer: Story<TableProps<any>> = args => {
       return cell.value
     }
 
+    const longLabel = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+
     return (
       <Select
         items={[
           { value: 'service1_uuid', label: 'service1' },
-          { value: 'service1_uuid', label: 'service2' }
+          { value: 'service1_uuid', label: 'service2' },
+          { value: longLabel, label: longLabel }
         ]}
+        addTooltip
       />
     )
   }

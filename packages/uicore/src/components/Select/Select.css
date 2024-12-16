@@ -177,3 +177,7 @@
   color: var(--grey-500);
   padding: 8px 0px 0px 7px;
 }
+
+.target {
+  width: 100%;
+}

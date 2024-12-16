@@ -25,6 +25,7 @@ import css from './ListHeaderStory.css'
 import cx from 'classnames'
 import { noop } from 'lodash-es'
 
+const longLabel = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
 const selectOptions = [
   {
     label: 'Service Kubernetes',
@@ -38,7 +39,8 @@ const selectOptions = [
   },
   { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' as IconName } },
   { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' as IconName } },
-  { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' as IconName } }
+  { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' as IconName } },
+  { label: longLabel, value: longLabel, icon: { name: 'service-gcp' as IconName } }
 ]
 
 export default {
@@ -100,7 +102,7 @@ export const ListHeaderWithPreDropdownContent: Story<ListHeaderProps> = () => {
       onSortMethodChange={noop}
       preDropdownContent={
         <div className={cx(css.selectWrapper, css.selectWrapperPre)}>
-          <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+          <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} addTooltip />
         </div>
       }
       className={cx(css.listHeaderStory)}
@@ -118,7 +120,7 @@ export const ListHeaderWithPostDropdownContent: Story<ListHeaderProps> = () => {
       postDropdownContent={
         <div>
           <div className={cx(css.selectWrapper, css.selectWrapperPost)}>
-            <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+            <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} addTooltip />
           </div>
         </div>
       }
@@ -136,13 +138,19 @@ export const ListHeaderWithPreAndPostDropdownContent: Story<ListHeaderProps> = (
       onSortMethodChange={noop}
       preDropdownContent={
         <div className={cx(css.selectWrapper, css.selectWrapperPre)}>
-          <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+          <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} addTooltip />
         </div>
       }
       postDropdownContent={
         <div>
           <div className={cx(css.selectWrapper, css.selectWrapperPost)}>
-            <Select items={selectOptions} addClearBtn={true} value={selectOptions[1]} />
+            <Select
+              items={selectOptions}
+              addClearBtn={true}
+              value={selectOptions[1]}
+              addTooltip
+              tooltipProps={{ position: 'top' }}
+            />
           </div>
         </div>
       }
