@@ -183,9 +183,7 @@ export function Select(props: SelectProps): ReactElement {
     setSelectedItem(item)
   }
 
-  function onPopoverClosed(node: HTMLElement): void {
-    whenPopoverClosed?.(node)
-
+  function handleInputValueScroll() {
     if (inputRef.current) {
       const element = inputRef.current
       const widthDifference = (element.scrollWidth || 0) - (element.offsetWidth || 0)
@@ -194,6 +192,12 @@ export function Select(props: SelectProps): ReactElement {
     } else {
       setIsScrollable(false)
     }
+  }
+
+  function onPopoverClosed(node: HTMLElement): void {
+    whenPopoverClosed?.(node)
+
+    handleInputValueScroll()
   }
 
   useEffect(() => {
@@ -255,6 +259,11 @@ export function Select(props: SelectProps): ReactElement {
   const inputRefCallback = useCallback((el: HTMLInputElement | null) => {
     inputRef.current = el
   }, [])
+
+  // This effect is to handle the case when initial selected value is itself overflowing
+  useEffect(() => {
+    handleInputValueScroll()
+  }, [inputRef.current])
 
   useEffect(() => {
     if (addTooltip) {
