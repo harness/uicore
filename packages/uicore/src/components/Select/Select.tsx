@@ -21,11 +21,11 @@ import { Position } from '@blueprintjs/core'
 import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
 import { OptionalTooltip } from '@harness/design-system'
 
-import css from './Select.css'
 import { Button } from '../../components/Button/Button'
 import { Icon, IconProps } from '@harness/icons'
 import { Utils } from '../../core/Utils'
 import { Text } from '../../components/Text/Text'
+import css from './Select.css'
 
 export interface SelectOption {
   label: string
