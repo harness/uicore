@@ -74,7 +74,7 @@ SelectInput.args = {
   },
   disabled: false,
   expressionPlaceHolder: '<+test.app>',
-  value: { label: data[0].name, value: data[0].id },
+  value: { label: longLabel, value: longLabel },
   expressions: [
     'app.name',
     'app.description',
