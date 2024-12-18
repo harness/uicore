@@ -186,7 +186,7 @@ export function Select(props: SelectProps): ReactElement {
   function handleInputValueScroll() {
     if (inputRef.current) {
       const element = inputRef.current
-      const widthDifference = (element.scrollWidth || 0) - (element.offsetWidth || 0)
+      const widthDifference = (element.scrollWidth || 0) - (element.getBoundingClientRect().width || 0)
 
       setIsScrollable(widthDifference > 1)
     } else {
@@ -260,10 +260,12 @@ export function Select(props: SelectProps): ReactElement {
     inputRef.current = el
   }, [])
 
-  // This effect is to handle the case when initial selected value is itself overflowing
+  /**
+   * Calculate isScrollable on initial render and when value changes
+   */
   useEffect(() => {
     handleInputValueScroll()
-  }, [inputRef.current])
+  }, [inputRef.current, value])
 
   useEffect(() => {
     if (addTooltip) {
