@@ -576,7 +576,21 @@ import FlagTick from './flag-tick.svg'
 import Flag from './flag.svg'
 import Flash from './flash.svg'
 import Flux from './flux.svg'
+import FmeAccountSettings from './fme-account-settings.svg'
+import FmeAskSwitch from './fme-ask-switch.svg'
+import FmeDatahub from './fme-datahub.svg'
+import FmeEnvironments from './fme-environments.svg'
+import FmeExperimentation from './fme-experimentation.svg'
+import FmeFeatureFlags from './fme-feature-flags.svg'
 import FmeMain from './fme-main.svg'
+import FmeMetrics from './fme-metrics.svg'
+import FmeMyWork from './fme-my-work.svg'
+import FmeOrgSettings from './fme-org-settings.svg'
+import FmeProjectSettings from './fme-project-settings.svg'
+import FmeRolloutBoard from './fme-rollout-board.svg'
+import FmeSearch from './fme-search.svg'
+import FmeSegments from './fme-segments.svg'
+import FmeSettings from './fme-settings.svg'
 import FolderUpload from './folder-upload.svg'
 import Folder from './folder.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
@@ -2047,7 +2061,21 @@ type HarnessIconName =
   | 'flag'
   | 'flash'
   | 'flux'
+  | 'fme-account-settings'
+  | 'fme-ask-switch'
+  | 'fme-datahub'
+  | 'fme-environments'
+  | 'fme-experimentation'
+  | 'fme-feature-flags'
   | 'fme-main'
+  | 'fme-metrics'
+  | 'fme-my-work'
+  | 'fme-org-settings'
+  | 'fme-project-settings'
+  | 'fme-rollout-board'
+  | 'fme-search'
+  | 'fme-segments'
+  | 'fme-settings'
   | 'folder-upload'
   | 'folder'
   | 'fortify-on-demand-inverse'
@@ -3518,7 +3546,21 @@ const HarnessIcons: KVO<ElementType> = {
   flag: Flag,
   flash: Flash,
   flux: Flux,
+  'fme-account-settings': FmeAccountSettings,
+  'fme-ask-switch': FmeAskSwitch,
+  'fme-datahub': FmeDatahub,
+  'fme-environments': FmeEnvironments,
+  'fme-experimentation': FmeExperimentation,
+  'fme-feature-flags': FmeFeatureFlags,
   'fme-main': FmeMain,
+  'fme-metrics': FmeMetrics,
+  'fme-my-work': FmeMyWork,
+  'fme-org-settings': FmeOrgSettings,
+  'fme-project-settings': FmeProjectSettings,
+  'fme-rollout-board': FmeRolloutBoard,
+  'fme-search': FmeSearch,
+  'fme-segments': FmeSegments,
+  'fme-settings': FmeSettings,
   'folder-upload': FolderUpload,
   folder: Folder,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
