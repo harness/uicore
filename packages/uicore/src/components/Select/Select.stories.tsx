@@ -86,27 +86,39 @@ export const SelectWithIcons: Story<SelectProps> = args => {
   )
 }
 export const SelectWithIconsAndTooltip: Story<SelectProps> = args => {
-  const {
-    items = [
-      {
-        label: 'TryingTryingTryingTryingTryingTryingTryingTryingTrying',
-        value: 'service-kubernetes',
-        icon: { name: 'service-kubernetes' }
-      },
-      {
-        label: 'Trying a long phrase with spaces to try out different combinations',
-        value: 'service-github',
-        icon: { name: 'service-github' }
-      },
-      { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
-      { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
-      { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
-    ]
-  } = args
+  const items: SelectOption[] = [
+    {
+      label: 'TryingTryingTryingTryingTryingTryingTryingTryingTrying',
+      value: 'service-kubernetes',
+      icon: { name: 'service-kubernetes' }
+    },
+    {
+      label: 'Trying a long phrase with spaces to try out different combinations',
+      value: 'service-github',
+      icon: { name: 'service-github' }
+    },
+    { label: 'ELK', value: 'service-elk', icon: { name: 'service-elk' } },
+    { label: 'Jenkins', value: 'service-jenkins', icon: { name: 'service-jenkins' } },
+    { label: 'GCP', value: 'service-gcp', icon: { name: 'service-gcp' } }
+  ]
+
+  const [selectedValue, setSelectedValue] = useState(items[2])
   const argsCopy = omit(args, ['size', 'items'])
+
+  setTimeout(() => {
+    setSelectedValue(items[1])
+  }, 100)
+
   return (
     <div style={{ width: '300px', marginTop: 60 }}>
-      <Select items={items} addClearBtn={true} addTooltip={true} tooltipProps={{ position: 'top' }} {...argsCopy} />
+      <Select
+        items={items}
+        value={selectedValue}
+        addClearBtn={true}
+        addTooltip={true}
+        tooltipProps={{ position: 'top' }}
+        {...argsCopy}
+      />
     </div>
   )
 }
