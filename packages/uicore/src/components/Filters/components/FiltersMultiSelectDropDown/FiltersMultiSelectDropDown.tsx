@@ -59,6 +59,7 @@ export interface FilterMultiSelectDropDownProps
   showDropDownIcon?: boolean
   initialDropDownOpen?: boolean
   isLoading?: boolean
+  listItemRenderer?: (item: MultiSelectOption, itemProps: IItemRendererProps) => JSX.Element | null
 }
 
 /**
@@ -88,6 +89,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     showDropDownIcon,
     initialDropDownOpen = false,
     isLoading = false,
+    listItemRenderer,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -301,7 +303,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
       items={dropDownItems}
       itemListRenderer={renderMenu}
       renderer={renderer}
-      itemRenderer={itemRenderer}
+      itemRenderer={listItemRenderer ? listItemRenderer : itemRenderer}
       onItemSelect={handleItemSelect}
       {...rest}
     />
