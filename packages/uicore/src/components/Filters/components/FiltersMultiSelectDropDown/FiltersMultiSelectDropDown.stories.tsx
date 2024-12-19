@@ -6,6 +6,7 @@
  */
 
 import React from 'react'
+import cx from 'classnames'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
@@ -13,6 +14,12 @@ import { omit } from 'lodash-es'
 import data from '../../../../_stories/components/pokedex.json'
 import { FiltersMultiSelectDropDown, FilterMultiSelectDropDownProps } from './FiltersMultiSelectDropDown'
 import { Layout } from '../../../../layouts/Layout'
+import { IItemRendererProps } from '@blueprintjs/select'
+import { Checkbox } from '../../../Checkbox/Checkbox'
+import { Text } from '../../../Text/Text'
+import { FontVariation } from '@harness/design-system'
+import { Icon } from '@harness/icons'
+import css from './FiltersMultiSelectDropDown.css'
 
 export default {
   title: 'Components / FiltersMultiSelectDropDown',
@@ -72,6 +79,50 @@ export const Basic: Story<FilterMultiSelectDropDownProps> = args => {
     </Layout.Horizontal>
   )
 }
+
+export const Custom: Story<FilterMultiSelectDropDownProps> = args => {
+  const { items = localItems } = args
+  const argsCopy = omit(args, ['items', 'onChange', 'value', 'listItemRenderer'])
+  const [value, setValue] = React.useState<MultiSelectOption[]>(localItems.slice(0, 3))
+
+  const itemRenderer = (item: MultiSelectOption, itemProps: IItemRendererProps): JSX.Element | null => {
+    const { handleClick, modifiers } = itemProps
+    const isSelected = value && value.findIndex(val => val.value === item.value) > -1
+    return (
+      <Checkbox
+        key={item.value.toString()}
+        checked={isSelected}
+        className={cx(css.menuItem, {
+          [css.active]: isSelected
+        })}
+        onClick={e => {
+          if (!modifiers.disabled && !item.disabled) handleClick(e)
+        }}>
+        <Layout.Horizontal spacing="xsmall" flex={{ alignItems: 'center' }}>
+          <Icon name="harness" size={12} />
+          <Text font={{ variation: FontVariation.SMALL, weight: 'light' }}>{item.label}</Text>
+        </Layout.Horizontal>
+      </Checkbox>
+    )
+  }
+
+  return (
+    <Layout.Horizontal flex>
+      <FiltersMultiSelectDropDown
+        items={items}
+        value={value}
+        placeholder={'Pokemon'}
+        allowSearch
+        onChange={items => {
+          setValue(items)
+        }}
+        listItemRenderer={itemRenderer}
+        {...argsCopy}
+      />
+    </Layout.Horizontal>
+  )
+}
+
 function dummyPromise(): Promise<MultiSelectOption[]> {
   return new Promise<MultiSelectOption[]>(resolve => {
     setTimeout(() => {
