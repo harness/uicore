@@ -735,10 +735,13 @@ import IdpNavPluginconfig from './idp-nav-pluginconfig.svg'
 import IdpNavPlugins from './idp-nav-plugins.svg'
 import IdpNavScorecards from './idp-nav-scorecards.svg'
 import IdpOwner from './idp-owner.svg'
+import IdpProtection from './idp-protection.svg'
 import IdpRecentlyVisited from './idp-recently-visited.svg'
 import IdpSelfService from './idp-self-service.svg'
 import IdpStageHover from './idp-stage-hover.svg'
 import IdpStarredEntity from './idp-starred-entity.svg'
+import IdpStrategy from './idp-strategy.svg'
+import IdpTable from './idp-table.svg'
 import IdpTopVisited from './idp-top-visited.svg'
 import IdpVideo from './idp-video.svg'
 import IdpWithDarkText from './idp-with-dark-text.svg'
@@ -2221,10 +2224,13 @@ type HarnessIconName =
   | 'idp-nav-plugins'
   | 'idp-nav-scorecards'
   | 'idp-owner'
+  | 'idp-protection'
   | 'idp-recently-visited'
   | 'idp-self-service'
   | 'idp-stage-hover'
   | 'idp-starred-entity'
+  | 'idp-strategy'
+  | 'idp-table'
   | 'idp-top-visited'
   | 'idp-video'
   | 'idp-with-dark-text'
@@ -3707,10 +3713,13 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-nav-plugins': IdpNavPlugins,
   'idp-nav-scorecards': IdpNavScorecards,
   'idp-owner': IdpOwner,
+  'idp-protection': IdpProtection,
   'idp-recently-visited': IdpRecentlyVisited,
   'idp-self-service': IdpSelfService,
   'idp-stage-hover': IdpStageHover,
   'idp-starred-entity': IdpStarredEntity,
+  'idp-strategy': IdpStrategy,
+  'idp-table': IdpTable,
   'idp-top-visited': IdpTopVisited,
   'idp-video': IdpVideo,
   'idp-with-dark-text': IdpWithDarkText,
