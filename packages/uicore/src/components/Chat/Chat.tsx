@@ -135,7 +135,13 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             <messageRenderer.suggestions
               message={message}
               addTextToInput={text => setUserInput(text)}
-              sendMessage={text => handleSubmit(text)}
+              sendMessage={text => {
+                if (loading && abortController) {
+                  abortController.abort()
+                }
+
+                handleSubmit(text)
+              }}
             />
           )
         }
