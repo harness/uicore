@@ -72,7 +72,11 @@ interface ChatProps {
   messageRenderer?: Partial<{
     yaml: React.FC<{ message: YamlMessage }>
     text: React.FC<{ message: TextMessage }>
-    suggestions: React.FC<{ message: SuggestionsMessage; addTextToInput: (text: string) => void }>
+    suggestions: React.FC<{
+      message: SuggestionsMessage
+      addTextToInput: (text: string) => void
+      sendMessage: (text: string) => void
+    }>
     error: React.FC<{ message: ErrorMessage }>
   }>
   inputProps?: InputProps
@@ -127,7 +131,13 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         return <YamlMessage content={message.content} />
       case 'suggestions':
         if (messageRenderer?.suggestions) {
-          return <messageRenderer.suggestions message={message} addTextToInput={text => setUserInput(text)} />
+          return (
+            <messageRenderer.suggestions
+              message={message}
+              addTextToInput={text => setUserInput(text)}
+              sendMessage={text => handleSubmit(text)}
+            />
+          )
         }
         return (
           <SuggestionsMessage content={message.content} handleClick={suggestion => setUserInput(suggestion.text)} />
@@ -142,14 +152,14 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     }
   }
 
-  const handleSubmit = () => {
-    if (!userInput.trim() || loading) return
+  const handleSubmit = (text: string = userInput) => {
+    if (!text.trim() || loading) return
 
     const newMessage: Message = {
       id: generateUniqueId(), // Use the unique ID function here
       type: 'text',
       direction: 'outgoing',
-      content: userInput
+      content: text
     }
 
     const newMessages = [...messages, newMessage]
@@ -275,7 +285,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
 
           <button
             className={cx(css.submitBtn, submitButtonProps?.className)}
-            onClick={loading ? handleCancelRequest : handleSubmit}>
+            onClick={loading ? handleCancelRequest : () => handleSubmit()}>
             {!loading ? (
               <Icon
                 className={submitButtonProps?.iconClassName}
