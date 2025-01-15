@@ -1,0 +1,14 @@
+.container {
+  .suggestion {
+    cursor: pointer;
+    width: 100%;
+    padding: var(--spacing-small);
+    margin-bottom: var(--spacing-medium);
+    border: 1px solid var(--grey-200);
+    border-radius: 8px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

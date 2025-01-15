@@ -1,0 +1,101 @@
+.container {
+  --footer-height: 72px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.loaderContainer {
+  padding: var(--spacing-small);
+}
+
+.footer {
+  position: relative;
+  height: var(--footer-height);
+  padding: var(--spacing-medium);
+  padding-top: 0px;
+
+  .inputContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.userInput {
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-small);
+  padding-right: 42px;
+  border: 1px solid var(--grey-200);
+  border-radius: 4px;
+  min-height: 56px;
+  resize: none;
+  font-size: 12px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.submitBtn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid var(--grey-200);
+  background: transparent;
+  cursor: pointer;
+}
+
+.messagesContainer {
+  overflow-y: scroll;
+  height: calc(100% - var(--footer-height));
+  padding: var(--spacing-medium) !important;
+}
+
+.message {
+  display: flex;
+  width: fit-content;
+  margin-bottom: var(--spacing-small);
+
+  &.incoming {
+    &.text {
+      background-color: var(--grey-100);
+      border-bottom-left-radius: 0px;
+    }
+  }
+
+  &.outgoing {
+    align-self: flex-end;
+    max-width: 80%;
+
+    &.text {
+      background-color: var(--primary-6);
+      border-bottom-right-radius: 0px;
+    }
+  }
+
+  &.text {
+    padding: var(--spacing-small);
+    border-radius: 12px;
+  }
+
+  &.yaml {
+    background-color: transparent !important;
+    padding: 0px;
+    max-width: unset !important;
+    width: 100%;
+  }
+
+  &.animate {
+    animation: slideIn 0.3s ease-out;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
