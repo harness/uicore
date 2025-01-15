@@ -1193,6 +1193,7 @@ import SeiWithDarkText from './sei-with-dark-text.svg'
 import SeiWorkflow from './sei-workflow.svg'
 import SelectScope from './select-scope.svg'
 import Semgrep from './semgrep.svg'
+import SendAi from './send-ai.svg'
 import SendData from './send-data.svg'
 import Server from './server.svg'
 import ServerlessAwsLambdaDeployV2Inverse from './serverless-aws-lambda-deploy-v2-inverse.svg'
@@ -2683,6 +2684,7 @@ type HarnessIconName =
   | 'sei-workflow'
   | 'select-scope'
   | 'semgrep'
+  | 'send-ai'
   | 'send-data'
   | 'server'
   | 'serverless-aws-lambda-deploy-v2-inverse'
@@ -4173,6 +4175,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sei-workflow': SeiWorkflow,
   'select-scope': SelectScope,
   semgrep: Semgrep,
+  'send-ai': SendAi,
   'send-data': SendData,
   server: Server,
   'serverless-aws-lambda-deploy-v2-inverse': ServerlessAwsLambdaDeployV2Inverse,
