@@ -196,19 +196,6 @@ const Pagination: React.FC<PaginationProps> = props => {
     moreLeftIcon,
     moreRightIcon
   } = classNames || {}
-  console.log({
-    pageNumbersClassName,
-    buttonLeftClassName,
-    buttonRightClassName,
-    pageNumbersLayoutClassName,
-    pageSizeOptionsLayoutClassName,
-    pageSizeDropdownClassName,
-    pageSizeFeedbackClassName,
-    moreButtonClassName,
-    moreLeftIcon,
-    moreRightIcon
-  })
-
   const selectOptions: SelectOption[] =
     pageSizeOptions?.map(option => {
       return { label: option.toString(), value: option.toString() }
