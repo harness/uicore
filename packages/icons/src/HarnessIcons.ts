@@ -44,6 +44,7 @@ import Tenable from './Tenable.svg'
 import Veracode from './Veracode.svg'
 import ZapInverse from './ZAP-inverse.svg'
 import Zap from './ZAP.svg'
+import AbortAi from './abort-ai.svg'
 import AccessControl from './access-control.svg'
 import AccordionCollapsed from './accordion-collapsed.svg'
 import AccordionExpanded from './accordion-expanded.svg'
@@ -1537,6 +1538,7 @@ type HarnessIconName =
   | 'Veracode'
   | 'ZAP-inverse'
   | 'ZAP'
+  | 'abort-ai'
   | 'access-control'
   | 'accordion-collapsed'
   | 'accordion-expanded'
@@ -3030,6 +3032,7 @@ const HarnessIcons: KVO<ElementType> = {
   Veracode: Veracode,
   'ZAP-inverse': ZapInverse,
   ZAP: Zap,
+  'abort-ai': AbortAi,
   'access-control': AccessControl,
   'accordion-collapsed': AccordionCollapsed,
   'accordion-expanded': AccordionExpanded,

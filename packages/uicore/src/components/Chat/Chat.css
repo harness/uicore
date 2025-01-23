@@ -39,7 +39,6 @@
   position: absolute;
   right: 8px;
   bottom: 8px;
-  border: 1px solid var(--grey-200);
   background: transparent;
   cursor: pointer;
 }
