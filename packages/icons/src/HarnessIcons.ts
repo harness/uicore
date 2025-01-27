@@ -281,6 +281,7 @@ import ChaosWithText from './chaos-with-text.svg'
 import Chat from './chat.svg'
 import CheckAlt from './check-alt.svg'
 import Check from './check.svg'
+import CheckmarxOne from './checkmarx-one.svg'
 import CheckovScannerInverse from './checkov-scanner-inverse.svg'
 import CheckovScanner from './checkov-scanner.svg'
 import Checkov from './checkov.svg'
@@ -1776,6 +1777,7 @@ type HarnessIconName =
   | 'chat'
   | 'check-alt'
   | 'check'
+  | 'checkmarx-one'
   | 'checkov-scanner-inverse'
   | 'checkov-scanner'
   | 'checkov'
@@ -3271,6 +3273,7 @@ const HarnessIcons: KVO<ElementType> = {
   chat: Chat,
   'check-alt': CheckAlt,
   check: Check,
+  'checkmarx-one': CheckmarxOne,
   'checkov-scanner-inverse': CheckovScannerInverse,
   'checkov-scanner': CheckovScanner,
   checkov: Checkov,
