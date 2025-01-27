@@ -93,6 +93,7 @@ import AsgSetup from './asg-setup.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
 import Atlassian from './atlassian.svg'
+import Atom from './atom.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
@@ -407,6 +408,7 @@ import CopyToAll from './copy-to-all.svg'
 import Copy from './copy.svg'
 import CostChange from './cost-change.svg'
 import CostDataCollection from './cost-data-collection.svg'
+import CostImpact from './cost-impact.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import Coverity from './coverity.svg'
@@ -1589,6 +1591,7 @@ type HarnessIconName =
   | 'asg-swap-inverse'
   | 'asg-swap'
   | 'atlassian'
+  | 'atom'
   | 'audit-log-created'
   | 'audit-trail'
   | 'autoScaler'
@@ -1903,6 +1906,7 @@ type HarnessIconName =
   | 'copy'
   | 'cost-change'
   | 'cost-data-collection'
+  | 'cost-impact'
   | 'coverage-status-error'
   | 'coverage-status-success'
   | 'coverity'
@@ -3085,6 +3089,7 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
   atlassian: Atlassian,
+  atom: Atom,
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
@@ -3399,6 +3404,7 @@ const HarnessIcons: KVO<ElementType> = {
   copy: Copy,
   'cost-change': CostChange,
   'cost-data-collection': CostDataCollection,
+  'cost-impact': CostImpact,
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   coverity: Coverity,
