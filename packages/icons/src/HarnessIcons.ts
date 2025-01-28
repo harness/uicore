@@ -186,8 +186,10 @@ import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
+import CcmApply from './ccm-apply.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
 import CcmCurrencySettings from './ccm-currency-settings.svg'
+import CcmEyeOpen from './ccm-eye-open.svg'
 import CcmIgnoreFailure from './ccm-ignore-failure.svg'
 import CcmNavAnomalies from './ccm-nav-anomalies.svg'
 import CcmNavAssetGovernance from './ccm-nav-asset-governance.svg'
@@ -798,6 +800,7 @@ import Jira from './jira.svg'
 import K8SPatch from './k8s-patch.svg'
 import K8SRollout from './k8s-rollout.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
+import Karpenter from './karpenter.svg'
 import KeyMain from './key-main.svg'
 import Key from './key.svg'
 import KubernetesGitops from './kubernetes-gitops.svg'
@@ -1684,8 +1687,10 @@ type HarnessIconName =
   | 'canvas-reset'
   | 'canvas-selector'
   | 'cascading'
+  | 'ccm-apply'
   | 'ccm-cloud-integration-settings'
   | 'ccm-currency-settings'
+  | 'ccm-eye-open'
   | 'ccm-ignore-failure'
   | 'ccm-nav-anomalies'
   | 'ccm-nav-asset-governance'
@@ -2296,6 +2301,7 @@ type HarnessIconName =
   | 'k8s-patch'
   | 'k8s-rollout'
   | 'k8s-traffic-routing'
+  | 'karpenter'
   | 'key-main'
   | 'key'
   | 'kubernetes-gitops'
@@ -3182,8 +3188,10 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
+  'ccm-apply': CcmApply,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
   'ccm-currency-settings': CcmCurrencySettings,
+  'ccm-eye-open': CcmEyeOpen,
   'ccm-ignore-failure': CcmIgnoreFailure,
   'ccm-nav-anomalies': CcmNavAnomalies,
   'ccm-nav-asset-governance': CcmNavAssetGovernance,
@@ -3794,6 +3802,7 @@ const HarnessIcons: KVO<ElementType> = {
   'k8s-patch': K8SPatch,
   'k8s-rollout': K8SRollout,
   'k8s-traffic-routing': K8STrafficRouting,
+  karpenter: Karpenter,
   'key-main': KeyMain,
   key: Key,
   'kubernetes-gitops': KubernetesGitops,
