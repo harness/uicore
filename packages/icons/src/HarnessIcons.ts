@@ -305,6 +305,7 @@ import CiPendingBuild from './ci-pending-build.svg'
 import CiSketch from './ci-sketch.svg'
 import CiSolidCurrentColor from './ci-solid-current-color.svg'
 import CiSolid from './ci-solid.svg'
+import CiTestIntelligence from './ci-test-intelligence.svg'
 import CiTestStep from './ci-test-step.svg'
 import CiTi from './ci-ti.svg'
 import CiTryPipeline from './ci-try-pipeline.svg'
@@ -1806,6 +1807,7 @@ type HarnessIconName =
   | 'ci-sketch'
   | 'ci-solid-current-color'
   | 'ci-solid'
+  | 'ci-test-intelligence'
   | 'ci-test-step'
   | 'ci-ti'
   | 'ci-try-pipeline'
@@ -3307,6 +3309,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ci-sketch': CiSketch,
   'ci-solid-current-color': CiSolidCurrentColor,
   'ci-solid': CiSolid,
+  'ci-test-intelligence': CiTestIntelligence,
   'ci-test-step': CiTestStep,
   'ci-ti': CiTi,
   'ci-try-pipeline': CiTryPipeline,
