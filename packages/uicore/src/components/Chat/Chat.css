@@ -5,7 +5,7 @@
 }
 
 .loaderContainer {
-  padding: var(--spacing-small);
+  width: 100%;
 }
 
 .footer {

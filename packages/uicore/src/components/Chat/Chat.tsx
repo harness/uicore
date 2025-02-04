@@ -23,23 +23,23 @@ interface MessageBase {
   renderer?: React.FC<{ message: Message }>
 }
 
-interface TextMessage extends MessageBase {
+export interface TextMessage extends MessageBase {
   type: 'text'
   content: string
   isMarkdown?: boolean
 }
 
-interface YamlMessage extends MessageBase {
+export interface YamlMessage extends MessageBase {
   type: 'yaml'
   content: string
 }
 
-interface ErrorMessage extends MessageBase {
+export interface ErrorMessage extends MessageBase {
   type: 'error'
   content: string
 }
 
-interface SuggestionsMessage extends MessageBase {
+export interface SuggestionsMessage extends MessageBase {
   type: 'suggestions'
   content: Suggestion[]
 }
@@ -64,7 +64,7 @@ interface SubmitButtonProps {
   }
 }
 
-interface ChatProps {
+export interface ChatProps {
   handleNewMessage: (message: Message, abortSignal?: AbortSignal) => Promise<Omit<Message, 'role' | 'id'>>
   initialMessages?: Message[]
   loader?: React.ReactElement
