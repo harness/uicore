@@ -54,25 +54,22 @@
   width: fit-content;
   margin-bottom: var(--spacing-small);
 
-  &.incoming {
+  &.system {
     &.text {
-      background-color: var(--grey-100);
       border-bottom-left-radius: 0px;
     }
   }
 
-  &.outgoing {
+  &.user {
     align-self: flex-end;
     max-width: 80%;
 
     &.text {
-      background-color: var(--primary-6);
       border-bottom-right-radius: 0px;
     }
   }
 
   &.text {
-    padding: var(--spacing-small);
     border-radius: 12px;
   }
 

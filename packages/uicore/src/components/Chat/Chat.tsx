@@ -16,9 +16,10 @@ interface SuggestionType {
 
 type Suggestion = SuggestionType
 
+type MessageRole = 'system' | 'user'
 interface MessageBase {
   id: string
-  direction: 'incoming' | 'outgoing'
+  role: MessageRole
   renderer?: React.FC<{ message: Message }>
 }
 
@@ -64,14 +65,14 @@ interface SubmitButtonProps {
 }
 
 interface ChatProps {
-  handleNewMessage: (message: Message, abortSignal?: AbortSignal) => Promise<Omit<Message, 'direction' | 'id'>>
+  handleNewMessage: (message: Message, abortSignal?: AbortSignal) => Promise<Omit<Message, 'role' | 'id'>>
   initialMessages?: Message[]
   loader?: React.ReactElement
-  incomingMessageClassName?: string
-  outgoingMessageClassName?: string
+  systemMessageClassName?: string
+  userMessageClassName?: string
   messageRenderer?: Partial<{
-    yaml: React.FC<{ message: YamlMessage }>
-    text: React.FC<{ message: TextMessage }>
+    yaml: React.FC<{ message: YamlMessage; role: MessageRole }>
+    text: React.FC<{ message: TextMessage; role: MessageRole }>
     suggestions: React.FC<{
       message: SuggestionsMessage
       addTextToInput: (text: string) => void
@@ -91,7 +92,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   const { initialMessages = [], handleNewMessage, loader, messageRenderer, inputProps, submitButtonProps } = props
   const [userInput, setUserInput] = useState<string>('')
   const [messages, setMessages] = useState<Message[]>(initialMessages)
-  const [animatedMessages, setAnimatedMessages] = useState<Set<string>>(new Set()) // Changed to string for unique IDs
+  const [animatedMessages, setAnimatedMessages] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState<boolean>(false)
   const [abortController, setAbortController] = useState<AbortController | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -115,18 +116,18 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     switch (message.type) {
       case 'text':
         if (messageRenderer?.text) {
-          return <messageRenderer.text message={message} />
+          return <messageRenderer.text message={message} role={message.role} />
         }
         return (
           <TextMessage
             content={message.content}
             isMarkdown={message.isMarkdown}
-            color={message.direction === 'outgoing' ? Color.WHITE : Color.GREY_600}
+            color={message.role === 'user' ? Color.WHITE : Color.GREY_600}
           />
         )
       case 'yaml':
         if (messageRenderer?.yaml) {
-          return <messageRenderer.yaml message={message} />
+          return <messageRenderer.yaml message={message} role={message.role} />
         }
         return <YamlMessage content={message.content} />
       case 'suggestions':
@@ -164,7 +165,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     const newMessage: Message = {
       id: generateUniqueId(),
       type: 'text',
-      direction: 'outgoing',
+      role: 'user',
       content: text.trim()
     }
 
@@ -178,10 +179,10 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     setAbortController(controller)
 
     handleNewMessage(newMessage, controller.signal)
-      .then((response: Omit<Message, 'direction' | 'id'>) => {
+      .then((response: Omit<Message, 'role' | 'id'>) => {
         const messageReceived = {
           id: generateUniqueId(),
-          direction: 'incoming',
+          role: 'system',
           type: response.type,
           content: response.content
         } as Message
@@ -189,10 +190,10 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         setMessages([...newMessages, messageReceived])
         setAnimatedMessages(prev => new Set([...prev, messageReceived.id]))
       })
-      .catch((errorMessage: Omit<Message, 'direction' | 'id'>) => {
+      .catch((errorMessage: Omit<Message, 'role' | 'id'>) => {
         const message = {
           id: generateUniqueId(),
-          direction: 'incoming',
+          role: 'system',
           ...errorMessage
         } as Message
         setMessages([...newMessages, message])
@@ -236,8 +237,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     <Layout.Vertical className={css.container}>
       <Layout.Vertical className={css.messagesContainer}>
         {messages.map(message => {
-          const messageClass =
-            message.direction === 'incoming' ? props.incomingMessageClassName : props.outgoingMessageClassName
+          const messageClass = message.role === 'system' ? props.systemMessageClassName : props.userMessageClassName
 
           const isAnimated = animatedMessages.has(message.id)
 
@@ -247,8 +247,8 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
               className={cx(
                 css.message,
                 {
-                  [css.incoming]: message.direction === 'incoming',
-                  [css.outgoing]: message.direction === 'outgoing',
+                  [css.system]: message.role === 'system',
+                  [css.user]: message.role === 'user',
                   [css.text]: message.type === 'text' || message.type === 'error',
                   [css.yaml]: message.type === 'yaml',
                   [css.animate]: isAnimated
@@ -269,7 +269,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
           )
         })}
         {loading ? (
-          <div className={cx(css.message, css.incoming, css.text, css.animate, props.incomingMessageClassName)}>
+          <div className={cx(css.message, css.system, css.text, css.animate, props.systemMessageClassName)}>
             {renderLoader()}
           </div>
         ) : null}
