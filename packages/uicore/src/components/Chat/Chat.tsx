@@ -65,7 +65,7 @@ interface SubmitButtonProps {
 }
 
 export interface ChatProps {
-  handleNewMessage: (message: Message, abortSignal?: AbortSignal) => Promise<Omit<Message, 'role' | 'id'>>
+  handleNewMessage: (message: Message, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
   initialMessages?: Message[]
   loader?: React.ReactElement
   systemMessageClassName?: string
@@ -179,16 +179,19 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     setAbortController(controller)
 
     handleNewMessage(newMessage, controller.signal)
-      .then((response: Omit<Message, 'role' | 'id'>) => {
-        const messageReceived = {
-          id: generateUniqueId(),
-          role: 'system',
-          type: response.type,
-          content: response.content
-        } as Message
+      .then((response: Array<Omit<Message, 'role' | 'id'>>) => {
+        const messagesReceived = response.map(
+          msg =>
+            ({
+              id: generateUniqueId(),
+              role: 'system',
+              type: msg.type,
+              content: msg.content
+            } as Message)
+        )
 
-        setMessages([...newMessages, messageReceived])
-        setAnimatedMessages(prev => new Set([...prev, messageReceived.id]))
+        setMessages([...newMessages, ...messagesReceived])
+        setAnimatedMessages(prev => new Set([...prev, ...messagesReceived.map(m => m.id)]))
       })
       .catch((errorMessage: Omit<Message, 'role' | 'id'>) => {
         const message = {
