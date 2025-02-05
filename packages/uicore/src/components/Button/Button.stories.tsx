@@ -261,24 +261,17 @@ export const ButtonVariationsAndSizesExamples: Story<ButtonProps> = () => {
 
       <Container>
         <Layout.Horizontal spacing="xxlarge" flex={{ justifyContent: 'flex-start' }}>
-          <Button
-            icon="harness-copilot"
-            variation={ButtonVariation.AI}
-            text="Harness AI Copilot"
-            size={ButtonSize.LARGE}
-          />
-          <Button
-            icon="harness-copilot"
-            variation={ButtonVariation.AI}
-            text="Harness AI Copilot"
-            size={ButtonSize.MEDIUM}
-          />
-          <Button
-            icon="harness-copilot"
-            variation={ButtonVariation.AI}
-            text="Harness AI Copilot"
-            size={ButtonSize.SMALL}
-          />
+          <Button variation={ButtonVariation.AI} text="Harness AI Copilot" size={ButtonSize.LARGE} />
+          <Button variation={ButtonVariation.AI} text="Harness AI Copilot" size={ButtonSize.MEDIUM} />
+          <Button variation={ButtonVariation.AI} text="Harness AI Copilot" size={ButtonSize.SMALL} />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container>
+        <Layout.Horizontal spacing="xxlarge" flex={{ justifyContent: 'flex-start' }}>
+          <Button variation={ButtonVariation.AI_PRIMARY} text="Harness AI" size={ButtonSize.LARGE} />
+          <Button variation={ButtonVariation.AI_PRIMARY} text="Harness AI" size={ButtonSize.MEDIUM} />
+          <Button variation={ButtonVariation.AI_PRIMARY} text="Harness AI" size={ButtonSize.SMALL} />
         </Layout.Horizontal>
       </Container>
     </Layout.Vertical>

@@ -153,7 +153,8 @@ export const Color = {
   AI_PURPLE_300: 'aipurple300',
   AI_PURPLE_200: 'aipurple200',
   AI_PURPLE_100: 'aipurple100',
-  AI_PURPLE_50: 'aipurple50'
+  AI_PURPLE_50: 'aipurple50',
+  AI_PRIMARY_GRADIENT: 'aiprimarygradient'
 }
 
 export type Color = typeof Color[keyof typeof Color]

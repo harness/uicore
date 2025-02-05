@@ -25,7 +25,8 @@ export enum ButtonVariation {
   TERTIARY = 'variation-tertiary',
   ICON = 'variation-icon',
   LINK = 'variation-link',
-  AI = 'variation-ai'
+  AI = 'variation-ai',
+  AI_PRIMARY = 'variation-ai-primary'
 }
 
 export enum ButtonSize {
@@ -137,6 +138,8 @@ export function Button(props: ButtonProps): React.ReactElement {
     buttonAriaLabel = props.text
   }
 
+  const computedRightIcon = variation === ButtonVariation.AI_PRIMARY ? 'harness-ai' : rightIcon
+  const computedWithCurrentColor = variation !== ButtonVariation.AI_PRIMARY ? !props.withoutCurrentColor : undefined
   const ariaLabelProps = buttonAriaLabel ? { 'aria-label': buttonAriaLabel } : {}
 
   const button = props.noStyling ? (
@@ -147,14 +150,14 @@ export function Button(props: ButtonProps): React.ReactElement {
       {...normalizedProps}
       loading={loading}
       icon={icon && <Icon name={icon} size={iconSize} padding={leftIconPadding} {...props.iconProps} />}
-      rightIcon={rightIcon && <Icon name={rightIcon} size={iconSize} {...props.iconProps} />}
+      rightIcon={computedRightIcon && <Icon name={computedRightIcon} size={iconSize} {...props.iconProps} />}
       onClick={onClick}
       className={cx(
         css.button,
         styledClass.font,
         styledClasses(props),
         {
-          [css['with-current-color']]: !props.withoutCurrentColor,
+          [css['with-current-color']]: computedWithCurrentColor,
           [css.round]: round,
           [css.iconOnly]: !props.text && !props.intent && !props.href,
           [css.link]: props.href && !(props.icon || props.rightIcon) && !props.intent,

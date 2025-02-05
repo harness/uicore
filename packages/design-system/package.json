@@ -1,6 +1,6 @@
 {
   "name": "@harness/design-system",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Harness Design System - Provides standardized Color, Intent and Style Variations for Harness UI Components",
   "source": "src/index.ts",
   "main": "./dist/design-system.umd.js",

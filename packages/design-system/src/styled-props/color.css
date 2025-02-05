@@ -629,4 +629,8 @@
   &.color-aipurple50 {
     color: var(--ai-purple-50);
   }
+
+  &.color-aiprimarygradient {
+    color: var(--ai-primary-gradient);
+  }
 }
