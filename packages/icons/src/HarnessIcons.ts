@@ -545,6 +545,7 @@ import ErrorOutline from './error-outline.svg'
 import ErrorTracking from './error-tracking.svg'
 import ErrorTransparentNoOutline from './error-transparent-no-outline.svg'
 import EvaluatePolicy from './evaluate-policy.svg'
+import EventListener from './event-listener.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionCompleted from './execution-completed.svg'
 import ExecutionConditional from './execution-conditional.svg'
@@ -2049,6 +2050,7 @@ type HarnessIconName =
   | 'error-tracking'
   | 'error-transparent-no-outline'
   | 'evaluate-policy'
+  | 'event-listener'
   | 'execution-abort'
   | 'execution-completed'
   | 'execution-conditional'
@@ -3553,6 +3555,7 @@ const HarnessIcons: KVO<ElementType> = {
   'error-tracking': ErrorTracking,
   'error-transparent-no-outline': ErrorTransparentNoOutline,
   'evaluate-policy': EvaluatePolicy,
+  'event-listener': EventListener,
   'execution-abort': ExecutionAbort,
   'execution-completed': ExecutionCompleted,
   'execution-conditional': ExecutionConditional,
