@@ -29,6 +29,7 @@ export interface UseTooltipsReturn {
 export interface TooltipRenderProps {
   tooltipId?: string
   position?: IPopoverProps['position']
+  modifiers?: IPopoverProps['modifiers']
   getTooltipAdditionalVars?: Record<string, string>
   labelText?: ReactNode | null
   useStandAlone?: boolean

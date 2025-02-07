@@ -27,7 +27,8 @@ const _asHtml = (content: string) => {
 export const HarnessDocTooltip = ({
   tooltipId,
   useStandAlone = false,
-  position,
+  position = 'auto',
+  modifiers,
   getTooltipAdditionalVars,
   labelText,
   className: propsClassName,
@@ -49,7 +50,8 @@ export const HarnessDocTooltip = ({
   const tooltipJsxComponent = (
     <Popover
       popoverClassName={cx(Classes.DARK, css.tooltipWrapper)}
-      position={position || 'auto'}
+      position={position}
+      modifiers={modifiers}
       interactionKind={PopoverInteractionKind.HOVER}
       content={
         <div
