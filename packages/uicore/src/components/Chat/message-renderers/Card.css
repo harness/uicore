@@ -1,0 +1,13 @@
+.container {
+  width: 100% !important;
+  padding: var(--spacing-medium) !important;
+  border: 1px solid var(--ai-purple-200);
+  border-radius: 6px;
+  .header {
+    padding-bottom: var(--spacing-medium);
+    border-bottom: 1px solid var(--grey-200);
+  }
+  .body {
+    padding-top: var(--spacing-medium);
+  }
+}

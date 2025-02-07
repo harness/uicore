@@ -8,7 +8,6 @@
 .container {
   --footer-height: 72px;
   height: 100%;
-  justify-content: flex-end;
 }
 
 .loaderContainer {

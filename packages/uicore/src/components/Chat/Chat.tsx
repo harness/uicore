@@ -13,6 +13,7 @@ import TextMessage from './message-renderers/TextMessage'
 import YamlMessage from './message-renderers/YamlMessage'
 import SuggestionsMessage from './message-renderers/Suggestions'
 import Error from './message-renderers/Error'
+import Card, { CardContent } from './message-renderers/Card'
 import { Layout } from '../../index'
 import css from './Chat.css'
 
@@ -51,10 +52,17 @@ export interface SuggestionsMessage extends MessageBase {
   content: Suggestion[]
 }
 
-export type Message = TextMessage | YamlMessage | SuggestionsMessage | ErrorMessage
+export interface CardMessage extends MessageBase {
+  type: 'card'
+  content: CardContent
+}
+
+export type Message = TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage
 
 export interface ChatRef {
   getMessages: () => Message[]
+  clearMessages: () => void
+  addMessages: (messages: Message[]) => void
 }
 
 interface InputProps {
@@ -74,6 +82,7 @@ interface SubmitButtonProps {
 export interface ChatProps {
   handleNewMessage: (message: Message, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
   initialMessages?: Message[]
+  showLoader?: boolean
   loader?: React.ReactElement
   systemMessageClassName?: string
   userMessageClassName?: string
@@ -85,6 +94,7 @@ export interface ChatProps {
       addTextToInput: (text: string) => void
       sendMessage: (text: string) => void
     }>
+    card: React.FC<{ message: CardMessage }>
     error: React.FC<{ message: ErrorMessage }>
   }>
   inputProps?: InputProps
@@ -96,7 +106,15 @@ const generateUniqueId = (): string => {
 }
 
 export const Chat = forwardRef((props: ChatProps, ref) => {
-  const { initialMessages = [], handleNewMessage, loader, messageRenderer, inputProps, submitButtonProps } = props
+  const {
+    initialMessages = [],
+    handleNewMessage,
+    loader,
+    messageRenderer,
+    inputProps,
+    submitButtonProps,
+    showLoader = false
+  } = props
   const [userInput, setUserInput] = useState<string>('')
   const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [animatedMessages, setAnimatedMessages] = useState<Set<string>>(new Set())
@@ -104,9 +122,25 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   const [abortController, setAbortController] = useState<AbortController | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
+  const clearMessages = () => {
+    setMessages([])
+  }
+
+  const addMessages = (newMessages: Message[]) => {
+    setMessages([...messages, ...newMessages])
+  }
+
   useImperativeHandle(ref, () => ({
-    getMessages: () => messages
+    getMessages: () => messages,
+    clearMessages,
+    addMessages
   }))
+
+  useEffect(() => {
+    if (loading !== showLoader) {
+      setLoading(showLoader)
+    }
+  }, [showLoader])
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -156,6 +190,11 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         return (
           <SuggestionsMessage content={message.content} handleClick={suggestion => setUserInput(suggestion.text)} />
         )
+      case 'card':
+        if (messageRenderer?.card) {
+          return <messageRenderer.card message={message} />
+        }
+        return <Card content={message.content} />
       case 'error':
         if (messageRenderer?.error) {
           return <messageRenderer.error message={message} />
