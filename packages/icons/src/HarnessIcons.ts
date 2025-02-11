@@ -191,8 +191,10 @@ import Cascading from './cascading.svg'
 import CcmApply from './ccm-apply.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
 import CcmCurrencySettings from './ccm-currency-settings.svg'
+import CcmExternalCostSource from './ccm-external-cost-source.svg'
 import CcmEyeOpen from './ccm-eye-open.svg'
 import CcmIgnoreFailure from './ccm-ignore-failure.svg'
+import CcmMongo from './ccm-mongo.svg'
 import CcmNavAnomalies from './ccm-nav-anomalies.svg'
 import CcmNavAssetGovernance from './ccm-nav-asset-governance.svg'
 import CcmNavAutostoppingRules from './ccm-nav-autostopping-rules.svg'
@@ -208,6 +210,7 @@ import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
 import CcmPolicyShield from './ccm-policy-shield.svg'
 import CcmSketch from './ccm-sketch.svg'
+import CcmSnowflake from './ccm-snowflake.svg'
 import CcmSolid from './ccm-solid.svg'
 import CcmWithDarkText from './ccm-with-dark-text.svg'
 import CcmWithText from './ccm-with-text.svg'
@@ -454,6 +457,7 @@ import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
 import DataIntegrationHub from './data-integration-hub.svg'
+import Databricks from './databricks.svg'
 import DbDevops from './db-devops.svg'
 import DbInstance from './db-instance.svg'
 import DbLiquibase from './db-liquibase.svg'
@@ -1697,8 +1701,10 @@ type HarnessIconName =
   | 'ccm-apply'
   | 'ccm-cloud-integration-settings'
   | 'ccm-currency-settings'
+  | 'ccm-external-cost-source'
   | 'ccm-eye-open'
   | 'ccm-ignore-failure'
+  | 'ccm-mongo'
   | 'ccm-nav-anomalies'
   | 'ccm-nav-asset-governance'
   | 'ccm-nav-autostopping-rules'
@@ -1714,6 +1720,7 @@ type HarnessIconName =
   | 'ccm-policy-shield-checked'
   | 'ccm-policy-shield'
   | 'ccm-sketch'
+  | 'ccm-snowflake'
   | 'ccm-solid'
   | 'ccm-with-dark-text'
   | 'ccm-with-text'
@@ -1960,6 +1967,7 @@ type HarnessIconName =
   | 'dashboards-solid-border'
   | 'data-fetch-error'
   | 'data-integration-hub'
+  | 'databricks'
   | 'db-devops'
   | 'db-instance'
   | 'db-liquibase'
@@ -3203,8 +3211,10 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-apply': CcmApply,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
   'ccm-currency-settings': CcmCurrencySettings,
+  'ccm-external-cost-source': CcmExternalCostSource,
   'ccm-eye-open': CcmEyeOpen,
   'ccm-ignore-failure': CcmIgnoreFailure,
+  'ccm-mongo': CcmMongo,
   'ccm-nav-anomalies': CcmNavAnomalies,
   'ccm-nav-asset-governance': CcmNavAssetGovernance,
   'ccm-nav-autostopping-rules': CcmNavAutostoppingRules,
@@ -3220,6 +3230,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
   'ccm-policy-shield': CcmPolicyShield,
   'ccm-sketch': CcmSketch,
+  'ccm-snowflake': CcmSnowflake,
   'ccm-solid': CcmSolid,
   'ccm-with-dark-text': CcmWithDarkText,
   'ccm-with-text': CcmWithText,
@@ -3466,6 +3477,7 @@ const HarnessIcons: KVO<ElementType> = {
   'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
   'data-integration-hub': DataIntegrationHub,
+  databricks: Databricks,
   'db-devops': DbDevops,
   'db-instance': DbInstance,
   'db-liquibase': DbLiquibase,
