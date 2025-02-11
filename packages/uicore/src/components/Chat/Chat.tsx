@@ -63,6 +63,7 @@ export interface ChatRef {
   getMessages: () => Message[]
   clearMessages: () => void
   addMessages: (messages: Message[]) => void
+  scrollToEnd: () => void
 }
 
 interface InputProps {
@@ -130,10 +131,15 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     setMessages([...messages, ...newMessages])
   }
 
+  const scrollToEnd = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   useImperativeHandle(ref, () => ({
     getMessages: () => messages,
     clearMessages,
-    addMessages
+    addMessages,
+    scrollToEnd
   }))
 
   useEffect(() => {
@@ -143,7 +149,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   }, [showLoader])
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    scrollToEnd()
   }, [messages])
 
   const renderMessage = (message: Message) => {
