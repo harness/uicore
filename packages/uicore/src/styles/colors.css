@@ -236,4 +236,12 @@
   --ai-purple-100: #ede8fb;
   --ai-purple-50: #f8f5ff;
   --ai-primary-gradient: linear-gradient(137.21deg, #ff8ac1 3.5%, #6c44db 50.71%, #47d5df 97.92%);
+  --ai-secondary-gradient: linear-gradient(
+    137.21deg,
+    #ffbdc8 3.5%,
+    #cc9fe9 37.49%,
+    #aa8cff 50.71%,
+    #a1c2ff 72.9%,
+    #98eeff 97.92%
+  );
 }

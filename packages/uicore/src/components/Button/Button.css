@@ -203,7 +203,6 @@
         position: relative;
         display: inline-flex;
         align-items: center;
-        justify-content: center;
         background: var(--ai-primary-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -215,6 +214,42 @@
           border-radius: inherit;
           padding: 1.5px;
           background: var(--ai-primary-gradient);
+          -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+          mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+          margin-right: 0px;
+        }
+
+        &[disabled] {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+      }
+
+      &.variation-ai-secondary {
+        --text-color: var(--ai-secondary-gradient);
+        --background-color: var(--white);
+        --background-color-hover: var(--white);
+        --background-color-active: var(--white);
+        --border: none;
+        --padding: 16px;
+
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        background: var(--ai-secondary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          padding: 1.5px;
+          background: var(--ai-secondary-gradient);
           -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
           mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
           -webkit-mask-composite: xor;

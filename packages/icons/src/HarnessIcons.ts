@@ -58,6 +58,8 @@ import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
+import AiPrimary from './ai-primary.svg'
+import AiSecondary from './ai-secondary.svg'
 import Ai from './ai.svg'
 import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
 import AnchoreGrype from './anchore-grype.svg'
@@ -702,7 +704,6 @@ import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
-import HarnessAi from './harness-ai.svg'
 import HarnessCopilot from './harness-copilot.svg'
 import HarnessGrey from './harness-grey.svg'
 import HarnessLogoBlack from './harness-logo-black.svg'
@@ -1563,6 +1564,8 @@ type HarnessIconName =
   | 'advanced'
   | 'agent-tokens'
   | 'agents'
+  | 'ai-primary'
+  | 'ai-secondary'
   | 'ai'
   | 'anchore-grype-inverse'
   | 'anchore-grype'
@@ -2207,7 +2210,6 @@ type HarnessIconName =
   | 'grey-cluster'
   | 'grid'
   | 'hand-manual'
-  | 'harness-ai'
   | 'harness-copilot'
   | 'harness-grey'
   | 'harness-logo-black'
@@ -3068,6 +3070,8 @@ const HarnessIcons: KVO<ElementType> = {
   advanced: Advanced,
   'agent-tokens': AgentTokens,
   agents: Agents,
+  'ai-primary': AiPrimary,
+  'ai-secondary': AiSecondary,
   ai: Ai,
   'anchore-grype-inverse': AnchoreGrypeInverse,
   'anchore-grype': AnchoreGrype,
@@ -3712,7 +3716,6 @@ const HarnessIcons: KVO<ElementType> = {
   'grey-cluster': GreyCluster,
   grid: Grid,
   'hand-manual': HandManual,
-  'harness-ai': HarnessAi,
   'harness-copilot': HarnessCopilot,
   'harness-grey': HarnessGrey,
   'harness-logo-black': HarnessLogoBlack,
