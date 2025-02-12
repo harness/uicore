@@ -540,6 +540,7 @@ import Elastigroup from './elastigroup.svg'
 import Elk from './elk.svg'
 import EmailInline from './email-inline.svg'
 import EmailStep from './email-step.svg'
+import EmptyBox from './empty-box.svg'
 import Entity from './entity.svg'
 import EnvironmentGroupOutline from './environment-group-outline.svg'
 import EnvironmentGroup from './environment-group.svg'
@@ -2050,6 +2051,7 @@ type HarnessIconName =
   | 'elk'
   | 'email-inline'
   | 'email-step'
+  | 'empty-box'
   | 'entity'
   | 'environment-group-outline'
   | 'environment-group'
@@ -3560,6 +3562,7 @@ const HarnessIcons: KVO<ElementType> = {
   elk: Elk,
   'email-inline': EmailInline,
   'email-step': EmailStep,
+  'empty-box': EmptyBox,
   entity: Entity,
   'environment-group-outline': EnvironmentGroupOutline,
   'environment-group': EnvironmentGroup,
