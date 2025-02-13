@@ -1369,6 +1369,7 @@ import StatusPage from './status-page.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
 import StatusUpgrade from './status-upgrade.svg'
+import SteadyState from './steady-state.svg'
 import StepFlash from './step-flash.svg'
 import StepGroup from './step-group.svg'
 import StepJira from './step-jira.svg'
@@ -2880,6 +2881,7 @@ type HarnessIconName =
   | 'status-pending'
   | 'status-running'
   | 'status-upgrade'
+  | 'steady-state'
   | 'step-flash'
   | 'step-group'
   | 'step-jira'
@@ -4391,6 +4393,7 @@ const HarnessIcons: KVO<ElementType> = {
   'status-pending': StatusPending,
   'status-running': StatusRunning,
   'status-upgrade': StatusUpgrade,
+  'steady-state': SteadyState,
   'step-flash': StepFlash,
   'step-group': StepGroup,
   'step-jira': StepJira,
