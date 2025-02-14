@@ -22,7 +22,6 @@ import BlackDuckInverse from './BlackDuck-inverse.svg'
 import BlackDuck from './BlackDuck.svg'
 import BurpInverse from './Burp-inverse.svg'
 import Burp from './Burp.svg'
-import CheckmarxInverse from './Checkmarx-inverse.svg'
 import Checkmarx from './Checkmarx.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
@@ -1534,7 +1533,6 @@ type HarnessIconName =
   | 'BlackDuck'
   | 'Burp-inverse'
   | 'Burp'
-  | 'Checkmarx-inverse'
   | 'Checkmarx'
   | 'CustomDeployment'
   | 'Edit'
@@ -3046,7 +3044,6 @@ const HarnessIcons: KVO<ElementType> = {
   BlackDuck: BlackDuck,
   'Burp-inverse': BurpInverse,
   Burp: Burp,
-  'Checkmarx-inverse': CheckmarxInverse,
   Checkmarx: Checkmarx,
   CustomDeployment: CustomDeployment,
   Edit: Edit,
