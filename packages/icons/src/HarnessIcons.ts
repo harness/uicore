@@ -762,6 +762,7 @@ import IdpTable from './idp-table.svg'
 import IdpTopVisited from './idp-top-visited.svg'
 import IdpVideo from './idp-video.svg'
 import IdpWithDarkText from './idp-with-dark-text.svg'
+import IdpWorkflow from './idp-workflow.svg'
 import Idp from './idp.svg'
 import IgnoreFailedSquare from './ignore-failed-square.svg'
 import IgnoreList from './ignore-list.svg'
@@ -2273,6 +2274,7 @@ type HarnessIconName =
   | 'idp-top-visited'
   | 'idp-video'
   | 'idp-with-dark-text'
+  | 'idp-workflow'
   | 'idp'
   | 'ignore-failed-square'
   | 'ignore-list'
@@ -3784,6 +3786,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-top-visited': IdpTopVisited,
   'idp-video': IdpVideo,
   'idp-with-dark-text': IdpWithDarkText,
+  'idp-workflow': IdpWorkflow,
   idp: Idp,
   'ignore-failed-square': IgnoreFailedSquare,
   'ignore-list': IgnoreList,
