@@ -606,6 +606,7 @@ import FmeRolloutBoard from './fme-rollout-board.svg'
 import FmeSearch from './fme-search.svg'
 import FmeSegments from './fme-segments.svg'
 import FmeSettings from './fme-settings.svg'
+import FmeWithDarkText from './fme-with-dark-text.svg'
 import FolderUpload from './folder-upload.svg'
 import Folder from './folder.svg'
 import FortifyOnDemandInverse from './fortify-on-demand-inverse.svg'
@@ -2118,6 +2119,7 @@ type HarnessIconName =
   | 'fme-search'
   | 'fme-segments'
   | 'fme-settings'
+  | 'fme-with-dark-text'
   | 'folder-upload'
   | 'folder'
   | 'fortify-on-demand-inverse'
@@ -3630,6 +3632,7 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-search': FmeSearch,
   'fme-segments': FmeSegments,
   'fme-settings': FmeSettings,
+  'fme-with-dark-text': FmeWithDarkText,
   'folder-upload': FolderUpload,
   folder: Folder,
   'fortify-on-demand-inverse': FortifyOnDemandInverse,
