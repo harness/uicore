@@ -81,7 +81,7 @@ interface SubmitButtonProps {
 }
 
 export interface ChatProps {
-  handleNewMessage: (message: Message, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
+  handleNewMessage: (message: TextMessage, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
   initialMessages?: Message[]
   showLoader?: boolean
   loader?: React.ReactElement
