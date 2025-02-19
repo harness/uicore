@@ -996,6 +996,7 @@ import NoDeployments from './no-deployments.svg'
 import NoFeedbackGiven from './no-feedback-given.svg'
 import NoInstances from './no-instances.svg'
 import Nodejs from './nodejs.svg'
+import NonContainer from './non-container.svg'
 import NotSynced from './not-synced.svg'
 import Notification from './notification.svg'
 import NpmRepositoryType from './npm-repository-type.svg'
@@ -1503,6 +1504,7 @@ import Variables from './variables.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
+import WarArtifact from './war-artifact.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
 import Webhook from './webhook.svg'
@@ -1518,6 +1520,7 @@ import YamlBuilderNotifications from './yaml-builder-notifications.svg'
 import YamlBuilderStages from './yaml-builder-stages.svg'
 import YamlBuilderSteps from './yaml-builder-steps.svg'
 import YamlBuilderTrigger from './yaml-builder-trigger.svg'
+import YamlFile from './yaml-file.svg'
 import Youtube from './youtube.svg'
 import ZoomIn from './zoom-in.svg'
 import ZoomOut from './zoom-out.svg'
@@ -2509,6 +2512,7 @@ type HarnessIconName =
   | 'no-feedback-given'
   | 'no-instances'
   | 'nodejs'
+  | 'non-container'
   | 'not-synced'
   | 'notification'
   | 'npm-repository-type'
@@ -3016,6 +3020,7 @@ type HarnessIconName =
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
+  | 'war-artifact'
   | 'warning-icon'
   | 'warning-outline'
   | 'webhook'
@@ -3031,6 +3036,7 @@ type HarnessIconName =
   | 'yaml-builder-stages'
   | 'yaml-builder-steps'
   | 'yaml-builder-trigger'
+  | 'yaml-file'
   | 'youtube'
   | 'zoom-in'
   | 'zoom-out'
@@ -4022,6 +4028,7 @@ const HarnessIcons: KVO<ElementType> = {
   'no-feedback-given': NoFeedbackGiven,
   'no-instances': NoInstances,
   nodejs: Nodejs,
+  'non-container': NonContainer,
   'not-synced': NotSynced,
   notification: Notification,
   'npm-repository-type': NpmRepositoryType,
@@ -4529,6 +4536,7 @@ const HarnessIcons: KVO<ElementType> = {
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
+  'war-artifact': WarArtifact,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
   webhook: Webhook,
@@ -4544,6 +4552,7 @@ const HarnessIcons: KVO<ElementType> = {
   'yaml-builder-stages': YamlBuilderStages,
   'yaml-builder-steps': YamlBuilderSteps,
   'yaml-builder-trigger': YamlBuilderTrigger,
+  'yaml-file': YamlFile,
   youtube: Youtube,
   'zoom-in': ZoomIn,
   'zoom-out': ZoomOut,
