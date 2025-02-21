@@ -266,9 +266,108 @@ import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
 import Changes from './changes.svg'
+import ChaosAwsAlbAzDown from './chaos-aws-alb-az-down.svg'
+import ChaosAwsClbAzDown from './chaos-aws-clb-az-down.svg'
+import ChaosAwsEbsLossById from './chaos-aws-ebs-loss-by-id.svg'
+import ChaosAwsEbsLossByTag from './chaos-aws-ebs-loss-by-tag.svg'
+import ChaosAwsRdsInstanceDelete from './chaos-aws-rds-instance-delete.svg'
+import ChaosAwsRdsInstanceReboot from './chaos-aws-rds-instance-reboot.svg'
+import ChaosAzureDiskLoss from './chaos-azure-disk-loss.svg'
+import ChaosAzureInstanceCpuHog from './chaos-azure-instance-cpu-hog.svg'
+import ChaosAzureInstanceIoStress from './chaos-azure-instance-io-stress.svg'
+import ChaosAzureInstanceMemoryHog from './chaos-azure-instance-memory-hog.svg'
+import ChaosAzureInstanceStop from './chaos-azure-instance-stop.svg'
+import ChaosAzureWebAppAccessRestrict from './chaos-azure-web-app-access-restrict.svg'
+import ChaosAzureWebAppStop from './chaos-azure-web-app-stop.svg'
 import ChaosCube from './chaos-cube.svg'
+import ChaosEcsAgentStop from './chaos-ecs-agent-stop.svg'
+import ChaosEcsContainerCpuHog from './chaos-ecs-container-cpu-hog.svg'
+import ChaosEcsContainerHttpLatency from './chaos-ecs-container-http-latency.svg'
+import ChaosEcsContainerHttpModifyBody from './chaos-ecs-container-http-modify-body.svg'
+import ChaosEcsContainerHttpResetPeer from './chaos-ecs-container-http-reset-peer.svg'
+import ChaosEcsContainerHttpStatusCode from './chaos-ecs-container-http-status-code.svg'
+import ChaosEcsContainerIoStress from './chaos-ecs-container-io-stress.svg'
+import ChaosEcsContainerMemoryHog from './chaos-ecs-container-memory-hog.svg'
+import ChaosEcsContainerNetworkLatency from './chaos-ecs-container-network-latency.svg'
+import ChaosEcsContainerNetworkLoss from './chaos-ecs-container-network-loss.svg'
+import ChaosEcsCpuHog from './chaos-ecs-cpu-hog.svg'
+import ChaosEcsDnsChaos from './chaos-ecs-dns-chaos.svg'
+import ChaosEcsHttpLatency from './chaos-ecs-http-latency.svg'
+import ChaosEcsHttpModifyBody from './chaos-ecs-http-modify-body.svg'
+import ChaosEcsHttpModifyHeader from './chaos-ecs-http-modify-header.svg'
+import ChaosEcsHttpResetPeer from './chaos-ecs-http-reset-peer.svg'
+import ChaosEcsHttpStatusCode from './chaos-ecs-http-status-code.svg'
+import ChaosEcsInstanceStop from './chaos-ecs-instance-stop.svg'
+import ChaosEcsInvalidContainerImage from './chaos-ecs-invalid-container-image.svg'
+import ChaosEcsIoStress from './chaos-ecs-io-stress.svg'
+import ChaosEcsMemoryHog from './chaos-ecs-memory-hog.svg'
+import ChaosEcsNetworkLatency from './chaos-ecs-network-latency.svg'
+import ChaosEcsNetworkLoss from './chaos-ecs-network-loss.svg'
+import ChaosEcsNetworkRestrict from './chaos-ecs-network-restrict.svg'
+import ChaosEcsProcessKill from './chaos-ecs-process-kill.svg'
+import ChaosEcsStopById from './chaos-ecs-stop-by-id.svg'
+import ChaosEcsStopByTag from './chaos-ecs-stop-by-tag.svg'
+import ChaosEcsTaskStop from './chaos-ecs-task-stop.svg'
+import ChaosEcsUpdateContainerResourceLimit from './chaos-ecs-update-container-resource-limit.svg'
+import ChaosEcsUpdateContainerTimeout from './chaos-ecs-update-container-timeout.svg'
+import ChaosEcsUpdateTaskRole from './chaos-ecs-update-task-role.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
+import ChaosGcpInstanceStop from './chaos-gcp-instance-stop.svg'
+import ChaosGcpVmDiskLossByLabel from './chaos-gcp-vm-disk-loss-by-label.svg'
+import ChaosGcpVmDiskLoss from './chaos-gcp-vm-disk-loss.svg'
+import ChaosGcpVmInstanceStopByLabel from './chaos-gcp-vm-instance-stop-by-label.svg'
 import ChaosHubs from './chaos-hubs.svg'
+import ChaosK8SContainerKill from './chaos-k8s-container-kill.svg'
+import ChaosK8SDiskFill from './chaos-k8s-disk-fill.svg'
+import ChaosK8SDockerServiceKill from './chaos-k8s-docker-service-kill.svg'
+import ChaosK8SKubeletServiceKill from './chaos-k8s-kubelet-service-kill.svg'
+import ChaosK8SNodeCpuHog from './chaos-k8s-node-cpu-hog.svg'
+import ChaosK8SNodeDrain from './chaos-k8s-node-drain.svg'
+import ChaosK8SNodeIoStress from './chaos-k8s-node-io-stress.svg'
+import ChaosK8SNodeMemoryHog from './chaos-k8s-node-memory-hog.svg'
+import ChaosK8SNodeNetworkLatency from './chaos-k8s-node-network-latency.svg'
+import ChaosK8SNodeNetworkLoss from './chaos-k8s-node-network-loss.svg'
+import ChaosK8SNodeRestart from './chaos-k8s-node-restart.svg'
+import ChaosK8SNodeTaint from './chaos-k8s-node-taint.svg'
+import ChaosK8SPodAutoscaler from './chaos-k8s-pod-autoscaler.svg'
+import ChaosK8SPodCpuHogExec from './chaos-k8s-pod-cpu-hog-exec.svg'
+import ChaosK8SPodCpuHog from './chaos-k8s-pod-cpu-hog.svg'
+import ChaosK8SPodDelete from './chaos-k8s-pod-delete.svg'
+import ChaosK8SPodDnsError from './chaos-k8s-pod-dns-error.svg'
+import ChaosK8SPodDnsSpoof from './chaos-k8s-pod-dns-spoof.svg'
+import ChaosK8SPodHttpLatency from './chaos-k8s-pod-http-latency.svg'
+import ChaosK8SPodHttpModifyBody from './chaos-k8s-pod-http-modify-body.svg'
+import ChaosK8SPodHttpModifyHeader from './chaos-k8s-pod-http-modify-header.svg'
+import ChaosK8SPodHttpResetPeer from './chaos-k8s-pod-http-reset-peer.svg'
+import ChaosK8SPodHttpStatusCode from './chaos-k8s-pod-http-status-code.svg'
+import ChaosK8SPodIoStress from './chaos-k8s-pod-io-stress.svg'
+import ChaosK8SPodMemoryHogExec from './chaos-k8s-pod-memory-hog-exec.svg'
+import ChaosK8SPodMemoryHog from './chaos-k8s-pod-memory-hog.svg'
+import ChaosK8SPodNetworkCorruption from './chaos-k8s-pod-network-corruption.svg'
+import ChaosK8SPodNetworkDuplication from './chaos-k8s-pod-network-duplication.svg'
+import ChaosK8SPodNetworkLatency from './chaos-k8s-pod-network-latency.svg'
+import ChaosK8SPodNetworkLoss from './chaos-k8s-pod-network-loss.svg'
+import ChaosK8SPodNetworkPartition from './chaos-k8s-pod-network-partition.svg'
+import ChaosK8STimeChaos from './chaos-k8s-time-chaos.svg'
+import ChaosLambdaDeleteEventSourceMapping from './chaos-lambda-delete-event-source-mapping.svg'
+import ChaosLambdaDeleteFunctionConcurrency from './chaos-lambda-delete-function-concurrency.svg'
+import ChaosLambdaDeleteFunctionRolePermission from './chaos-lambda-delete-function-role-permission.svg'
+import ChaosLambdaToggle from './chaos-lambda-toggle.svg'
+import ChaosLambdaUpdateFunctionMemory from './chaos-lambda-update-function-memory.svg'
+import ChaosLambdaUpdateFunctionTimeout from './chaos-lambda-update-function-timeout.svg'
+import ChaosLinuxDiskFill from './chaos-linux-disk-fill.svg'
+import ChaosLinuxDiskIoStress from './chaos-linux-disk-io-stress.svg'
+import ChaosLinuxDnsChaos from './chaos-linux-dns-chaos.svg'
+import ChaosLinuxDnsError from './chaos-linux-dns-error.svg'
+import ChaosLinuxHogStress from './chaos-linux-hog-stress.svg'
+import ChaosLinuxMemoryStress from './chaos-linux-memory-stress.svg'
+import ChaosLinuxNetworkDuplication from './chaos-linux-network-duplication.svg'
+import ChaosLinuxNetworkLatencyTimeChaos from './chaos-linux-network-latency-time-chaos.svg'
+import ChaosLinuxNetworkLatency from './chaos-linux-network-latency.svg'
+import ChaosLinuxNetworkLoss from './chaos-linux-network-loss.svg'
+import ChaosLinuxNetworkRestrict from './chaos-linux-network-restrict.svg'
+import ChaosLinuxProcessKill from './chaos-linux-process-kill.svg'
+import ChaosLinuxServiceRestart from './chaos-linux-service-restart.svg'
 import ChaosLitmuschaos from './chaos-litmuschaos.svg'
 import ChaosMain from './chaos-main.svg'
 import ChaosNamespace from './chaos-namespace.svg'
@@ -283,6 +382,24 @@ import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
 import ChaosSketch from './chaos-sketch.svg'
 import ChaosSolid from './chaos-solid.svg'
+import ChaosVmwareCpuHog from './chaos-vmware-cpu-hog.svg'
+import ChaosVmwareDiskLoss from './chaos-vmware-disk-loss.svg'
+import ChaosVmwareDnsChaos from './chaos-vmware-dns-chaos.svg'
+import ChaosVmwareHostReboot from './chaos-vmware-host-reboot.svg'
+import ChaosVmwareHttpLatency from './chaos-vmware-http-latency.svg'
+import ChaosVmwareHttpModifyResponse from './chaos-vmware-http-modify-response.svg'
+import ChaosVmwareHttpResetPeer from './chaos-vmware-http-reset-peer.svg'
+import ChaosVmwareIoStress from './chaos-vmware-io-stress.svg'
+import ChaosVmwareMemoryHog from './chaos-vmware-memory-hog.svg'
+import ChaosVmwareNetworkLatency from './chaos-vmware-network-latency.svg'
+import ChaosVmwareNetworkLoss from './chaos-vmware-network-loss.svg'
+import ChaosVmwareProcessKill from './chaos-vmware-process-kill.svg'
+import ChaosVmwareServiceKill from './chaos-vmware-service-kill.svg'
+import ChaosVmwareVmPowerOff from './chaos-vmware-vm-power-off.svg'
+import ChaosVmwareWindowsCpuHog from './chaos-vmware-windows-cpu- hog.svg'
+import ChaosWindowsEc2BlackholeChaos from './chaos-windows-ec2-blackhole-chaos.svg'
+import ChaosWindowsEc2CpuHog from './chaos-windows-ec2-cpu-hog.svg'
+import ChaosWindowsEc2MemoryHog from './chaos-windows-ec2-memory-hog.svg'
 import ChaosWithDarkText from './chaos-with-dark-text.svg'
 import ChaosWithText from './chaos-with-text.svg'
 import Chat from './chat.svg'
@@ -1782,9 +1899,108 @@ type HarnessIconName =
   | 'chained-pipeline'
   | 'change-log'
   | 'changes'
+  | 'chaos-aws-alb-az-down'
+  | 'chaos-aws-clb-az-down'
+  | 'chaos-aws-ebs-loss-by-id'
+  | 'chaos-aws-ebs-loss-by-tag'
+  | 'chaos-aws-rds-instance-delete'
+  | 'chaos-aws-rds-instance-reboot'
+  | 'chaos-azure-disk-loss'
+  | 'chaos-azure-instance-cpu-hog'
+  | 'chaos-azure-instance-io-stress'
+  | 'chaos-azure-instance-memory-hog'
+  | 'chaos-azure-instance-stop'
+  | 'chaos-azure-web-app-access-restrict'
+  | 'chaos-azure-web-app-stop'
   | 'chaos-cube'
+  | 'chaos-ecs-agent-stop'
+  | 'chaos-ecs-container-cpu-hog'
+  | 'chaos-ecs-container-http-latency'
+  | 'chaos-ecs-container-http-modify-body'
+  | 'chaos-ecs-container-http-reset-peer'
+  | 'chaos-ecs-container-http-status-code'
+  | 'chaos-ecs-container-io-stress'
+  | 'chaos-ecs-container-memory-hog'
+  | 'chaos-ecs-container-network-latency'
+  | 'chaos-ecs-container-network-loss'
+  | 'chaos-ecs-cpu-hog'
+  | 'chaos-ecs-dns-chaos'
+  | 'chaos-ecs-http-latency'
+  | 'chaos-ecs-http-modify-body'
+  | 'chaos-ecs-http-modify-header'
+  | 'chaos-ecs-http-reset-peer'
+  | 'chaos-ecs-http-status-code'
+  | 'chaos-ecs-instance-stop'
+  | 'chaos-ecs-invalid-container-image'
+  | 'chaos-ecs-io-stress'
+  | 'chaos-ecs-memory-hog'
+  | 'chaos-ecs-network-latency'
+  | 'chaos-ecs-network-loss'
+  | 'chaos-ecs-network-restrict'
+  | 'chaos-ecs-process-kill'
+  | 'chaos-ecs-stop-by-id'
+  | 'chaos-ecs-stop-by-tag'
+  | 'chaos-ecs-task-stop'
+  | 'chaos-ecs-update-container-resource-limit'
+  | 'chaos-ecs-update-container-timeout'
+  | 'chaos-ecs-update-task-role'
   | 'chaos-experiment-weight'
+  | 'chaos-gcp-instance-stop'
+  | 'chaos-gcp-vm-disk-loss-by-label'
+  | 'chaos-gcp-vm-disk-loss'
+  | 'chaos-gcp-vm-instance-stop-by-label'
   | 'chaos-hubs'
+  | 'chaos-k8s-container-kill'
+  | 'chaos-k8s-disk-fill'
+  | 'chaos-k8s-docker-service-kill'
+  | 'chaos-k8s-kubelet-service-kill'
+  | 'chaos-k8s-node-cpu-hog'
+  | 'chaos-k8s-node-drain'
+  | 'chaos-k8s-node-io-stress'
+  | 'chaos-k8s-node-memory-hog'
+  | 'chaos-k8s-node-network-latency'
+  | 'chaos-k8s-node-network-loss'
+  | 'chaos-k8s-node-restart'
+  | 'chaos-k8s-node-taint'
+  | 'chaos-k8s-pod-autoscaler'
+  | 'chaos-k8s-pod-cpu-hog-exec'
+  | 'chaos-k8s-pod-cpu-hog'
+  | 'chaos-k8s-pod-delete'
+  | 'chaos-k8s-pod-dns-error'
+  | 'chaos-k8s-pod-dns-spoof'
+  | 'chaos-k8s-pod-http-latency'
+  | 'chaos-k8s-pod-http-modify-body'
+  | 'chaos-k8s-pod-http-modify-header'
+  | 'chaos-k8s-pod-http-reset-peer'
+  | 'chaos-k8s-pod-http-status-code'
+  | 'chaos-k8s-pod-io-stress'
+  | 'chaos-k8s-pod-memory-hog-exec'
+  | 'chaos-k8s-pod-memory-hog'
+  | 'chaos-k8s-pod-network-corruption'
+  | 'chaos-k8s-pod-network-duplication'
+  | 'chaos-k8s-pod-network-latency'
+  | 'chaos-k8s-pod-network-loss'
+  | 'chaos-k8s-pod-network-partition'
+  | 'chaos-k8s-time-chaos'
+  | 'chaos-lambda-delete-event-source-mapping'
+  | 'chaos-lambda-delete-function-concurrency'
+  | 'chaos-lambda-delete-function-role-permission'
+  | 'chaos-lambda-toggle'
+  | 'chaos-lambda-update-function-memory'
+  | 'chaos-lambda-update-function-timeout'
+  | 'chaos-linux-disk-fill'
+  | 'chaos-linux-disk-io-stress'
+  | 'chaos-linux-dns-chaos'
+  | 'chaos-linux-dns-error'
+  | 'chaos-linux-hog-stress'
+  | 'chaos-linux-memory-stress'
+  | 'chaos-linux-network-duplication'
+  | 'chaos-linux-network-latency-time-chaos'
+  | 'chaos-linux-network-latency'
+  | 'chaos-linux-network-loss'
+  | 'chaos-linux-network-restrict'
+  | 'chaos-linux-process-kill'
+  | 'chaos-linux-service-restart'
   | 'chaos-litmuschaos'
   | 'chaos-main'
   | 'chaos-namespace'
@@ -1799,6 +2015,24 @@ type HarnessIconName =
   | 'chaos-service-discovery'
   | 'chaos-sketch'
   | 'chaos-solid'
+  | 'chaos-vmware-cpu-hog'
+  | 'chaos-vmware-disk-loss'
+  | 'chaos-vmware-dns-chaos'
+  | 'chaos-vmware-host-reboot'
+  | 'chaos-vmware-http-latency'
+  | 'chaos-vmware-http-modify-response'
+  | 'chaos-vmware-http-reset-peer'
+  | 'chaos-vmware-io-stress'
+  | 'chaos-vmware-memory-hog'
+  | 'chaos-vmware-network-latency'
+  | 'chaos-vmware-network-loss'
+  | 'chaos-vmware-process-kill'
+  | 'chaos-vmware-service-kill'
+  | 'chaos-vmware-vm-power-off'
+  | 'chaos-vmware-windows-cpu- hog'
+  | 'chaos-windows-ec2-blackhole-chaos'
+  | 'chaos-windows-ec2-cpu-hog'
+  | 'chaos-windows-ec2-memory-hog'
   | 'chaos-with-dark-text'
   | 'chaos-with-text'
   | 'chat'
@@ -3298,9 +3532,108 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
   changes: Changes,
+  'chaos-aws-alb-az-down': ChaosAwsAlbAzDown,
+  'chaos-aws-clb-az-down': ChaosAwsClbAzDown,
+  'chaos-aws-ebs-loss-by-id': ChaosAwsEbsLossById,
+  'chaos-aws-ebs-loss-by-tag': ChaosAwsEbsLossByTag,
+  'chaos-aws-rds-instance-delete': ChaosAwsRdsInstanceDelete,
+  'chaos-aws-rds-instance-reboot': ChaosAwsRdsInstanceReboot,
+  'chaos-azure-disk-loss': ChaosAzureDiskLoss,
+  'chaos-azure-instance-cpu-hog': ChaosAzureInstanceCpuHog,
+  'chaos-azure-instance-io-stress': ChaosAzureInstanceIoStress,
+  'chaos-azure-instance-memory-hog': ChaosAzureInstanceMemoryHog,
+  'chaos-azure-instance-stop': ChaosAzureInstanceStop,
+  'chaos-azure-web-app-access-restrict': ChaosAzureWebAppAccessRestrict,
+  'chaos-azure-web-app-stop': ChaosAzureWebAppStop,
   'chaos-cube': ChaosCube,
+  'chaos-ecs-agent-stop': ChaosEcsAgentStop,
+  'chaos-ecs-container-cpu-hog': ChaosEcsContainerCpuHog,
+  'chaos-ecs-container-http-latency': ChaosEcsContainerHttpLatency,
+  'chaos-ecs-container-http-modify-body': ChaosEcsContainerHttpModifyBody,
+  'chaos-ecs-container-http-reset-peer': ChaosEcsContainerHttpResetPeer,
+  'chaos-ecs-container-http-status-code': ChaosEcsContainerHttpStatusCode,
+  'chaos-ecs-container-io-stress': ChaosEcsContainerIoStress,
+  'chaos-ecs-container-memory-hog': ChaosEcsContainerMemoryHog,
+  'chaos-ecs-container-network-latency': ChaosEcsContainerNetworkLatency,
+  'chaos-ecs-container-network-loss': ChaosEcsContainerNetworkLoss,
+  'chaos-ecs-cpu-hog': ChaosEcsCpuHog,
+  'chaos-ecs-dns-chaos': ChaosEcsDnsChaos,
+  'chaos-ecs-http-latency': ChaosEcsHttpLatency,
+  'chaos-ecs-http-modify-body': ChaosEcsHttpModifyBody,
+  'chaos-ecs-http-modify-header': ChaosEcsHttpModifyHeader,
+  'chaos-ecs-http-reset-peer': ChaosEcsHttpResetPeer,
+  'chaos-ecs-http-status-code': ChaosEcsHttpStatusCode,
+  'chaos-ecs-instance-stop': ChaosEcsInstanceStop,
+  'chaos-ecs-invalid-container-image': ChaosEcsInvalidContainerImage,
+  'chaos-ecs-io-stress': ChaosEcsIoStress,
+  'chaos-ecs-memory-hog': ChaosEcsMemoryHog,
+  'chaos-ecs-network-latency': ChaosEcsNetworkLatency,
+  'chaos-ecs-network-loss': ChaosEcsNetworkLoss,
+  'chaos-ecs-network-restrict': ChaosEcsNetworkRestrict,
+  'chaos-ecs-process-kill': ChaosEcsProcessKill,
+  'chaos-ecs-stop-by-id': ChaosEcsStopById,
+  'chaos-ecs-stop-by-tag': ChaosEcsStopByTag,
+  'chaos-ecs-task-stop': ChaosEcsTaskStop,
+  'chaos-ecs-update-container-resource-limit': ChaosEcsUpdateContainerResourceLimit,
+  'chaos-ecs-update-container-timeout': ChaosEcsUpdateContainerTimeout,
+  'chaos-ecs-update-task-role': ChaosEcsUpdateTaskRole,
   'chaos-experiment-weight': ChaosExperimentWeight,
+  'chaos-gcp-instance-stop': ChaosGcpInstanceStop,
+  'chaos-gcp-vm-disk-loss-by-label': ChaosGcpVmDiskLossByLabel,
+  'chaos-gcp-vm-disk-loss': ChaosGcpVmDiskLoss,
+  'chaos-gcp-vm-instance-stop-by-label': ChaosGcpVmInstanceStopByLabel,
   'chaos-hubs': ChaosHubs,
+  'chaos-k8s-container-kill': ChaosK8SContainerKill,
+  'chaos-k8s-disk-fill': ChaosK8SDiskFill,
+  'chaos-k8s-docker-service-kill': ChaosK8SDockerServiceKill,
+  'chaos-k8s-kubelet-service-kill': ChaosK8SKubeletServiceKill,
+  'chaos-k8s-node-cpu-hog': ChaosK8SNodeCpuHog,
+  'chaos-k8s-node-drain': ChaosK8SNodeDrain,
+  'chaos-k8s-node-io-stress': ChaosK8SNodeIoStress,
+  'chaos-k8s-node-memory-hog': ChaosK8SNodeMemoryHog,
+  'chaos-k8s-node-network-latency': ChaosK8SNodeNetworkLatency,
+  'chaos-k8s-node-network-loss': ChaosK8SNodeNetworkLoss,
+  'chaos-k8s-node-restart': ChaosK8SNodeRestart,
+  'chaos-k8s-node-taint': ChaosK8SNodeTaint,
+  'chaos-k8s-pod-autoscaler': ChaosK8SPodAutoscaler,
+  'chaos-k8s-pod-cpu-hog-exec': ChaosK8SPodCpuHogExec,
+  'chaos-k8s-pod-cpu-hog': ChaosK8SPodCpuHog,
+  'chaos-k8s-pod-delete': ChaosK8SPodDelete,
+  'chaos-k8s-pod-dns-error': ChaosK8SPodDnsError,
+  'chaos-k8s-pod-dns-spoof': ChaosK8SPodDnsSpoof,
+  'chaos-k8s-pod-http-latency': ChaosK8SPodHttpLatency,
+  'chaos-k8s-pod-http-modify-body': ChaosK8SPodHttpModifyBody,
+  'chaos-k8s-pod-http-modify-header': ChaosK8SPodHttpModifyHeader,
+  'chaos-k8s-pod-http-reset-peer': ChaosK8SPodHttpResetPeer,
+  'chaos-k8s-pod-http-status-code': ChaosK8SPodHttpStatusCode,
+  'chaos-k8s-pod-io-stress': ChaosK8SPodIoStress,
+  'chaos-k8s-pod-memory-hog-exec': ChaosK8SPodMemoryHogExec,
+  'chaos-k8s-pod-memory-hog': ChaosK8SPodMemoryHog,
+  'chaos-k8s-pod-network-corruption': ChaosK8SPodNetworkCorruption,
+  'chaos-k8s-pod-network-duplication': ChaosK8SPodNetworkDuplication,
+  'chaos-k8s-pod-network-latency': ChaosK8SPodNetworkLatency,
+  'chaos-k8s-pod-network-loss': ChaosK8SPodNetworkLoss,
+  'chaos-k8s-pod-network-partition': ChaosK8SPodNetworkPartition,
+  'chaos-k8s-time-chaos': ChaosK8STimeChaos,
+  'chaos-lambda-delete-event-source-mapping': ChaosLambdaDeleteEventSourceMapping,
+  'chaos-lambda-delete-function-concurrency': ChaosLambdaDeleteFunctionConcurrency,
+  'chaos-lambda-delete-function-role-permission': ChaosLambdaDeleteFunctionRolePermission,
+  'chaos-lambda-toggle': ChaosLambdaToggle,
+  'chaos-lambda-update-function-memory': ChaosLambdaUpdateFunctionMemory,
+  'chaos-lambda-update-function-timeout': ChaosLambdaUpdateFunctionTimeout,
+  'chaos-linux-disk-fill': ChaosLinuxDiskFill,
+  'chaos-linux-disk-io-stress': ChaosLinuxDiskIoStress,
+  'chaos-linux-dns-chaos': ChaosLinuxDnsChaos,
+  'chaos-linux-dns-error': ChaosLinuxDnsError,
+  'chaos-linux-hog-stress': ChaosLinuxHogStress,
+  'chaos-linux-memory-stress': ChaosLinuxMemoryStress,
+  'chaos-linux-network-duplication': ChaosLinuxNetworkDuplication,
+  'chaos-linux-network-latency-time-chaos': ChaosLinuxNetworkLatencyTimeChaos,
+  'chaos-linux-network-latency': ChaosLinuxNetworkLatency,
+  'chaos-linux-network-loss': ChaosLinuxNetworkLoss,
+  'chaos-linux-network-restrict': ChaosLinuxNetworkRestrict,
+  'chaos-linux-process-kill': ChaosLinuxProcessKill,
+  'chaos-linux-service-restart': ChaosLinuxServiceRestart,
   'chaos-litmuschaos': ChaosLitmuschaos,
   'chaos-main': ChaosMain,
   'chaos-namespace': ChaosNamespace,
@@ -3315,6 +3648,24 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-service-discovery': ChaosServiceDiscovery,
   'chaos-sketch': ChaosSketch,
   'chaos-solid': ChaosSolid,
+  'chaos-vmware-cpu-hog': ChaosVmwareCpuHog,
+  'chaos-vmware-disk-loss': ChaosVmwareDiskLoss,
+  'chaos-vmware-dns-chaos': ChaosVmwareDnsChaos,
+  'chaos-vmware-host-reboot': ChaosVmwareHostReboot,
+  'chaos-vmware-http-latency': ChaosVmwareHttpLatency,
+  'chaos-vmware-http-modify-response': ChaosVmwareHttpModifyResponse,
+  'chaos-vmware-http-reset-peer': ChaosVmwareHttpResetPeer,
+  'chaos-vmware-io-stress': ChaosVmwareIoStress,
+  'chaos-vmware-memory-hog': ChaosVmwareMemoryHog,
+  'chaos-vmware-network-latency': ChaosVmwareNetworkLatency,
+  'chaos-vmware-network-loss': ChaosVmwareNetworkLoss,
+  'chaos-vmware-process-kill': ChaosVmwareProcessKill,
+  'chaos-vmware-service-kill': ChaosVmwareServiceKill,
+  'chaos-vmware-vm-power-off': ChaosVmwareVmPowerOff,
+  'chaos-vmware-windows-cpu- hog': ChaosVmwareWindowsCpuHog,
+  'chaos-windows-ec2-blackhole-chaos': ChaosWindowsEc2BlackholeChaos,
+  'chaos-windows-ec2-cpu-hog': ChaosWindowsEc2CpuHog,
+  'chaos-windows-ec2-memory-hog': ChaosWindowsEc2MemoryHog,
   'chaos-with-dark-text': ChaosWithDarkText,
   'chaos-with-text': ChaosWithText,
   chat: Chat,
