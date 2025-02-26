@@ -291,7 +291,11 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
           }
         }}
         checked={isSelected}
-        label={item.label}
+        labelElement={
+          <Text lineClamp={1} font={{ variation: FontVariation.SMALL }}>
+            {item.label}
+          </Text>
+        }
       />
     )
   }

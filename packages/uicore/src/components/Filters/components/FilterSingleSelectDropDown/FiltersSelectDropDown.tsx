@@ -313,7 +313,11 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
             handleClick(e)
           }
         }}>
-        {item.label}
+        {
+          <Text lineClamp={1} font={{ variation: FontVariation.SMALL }}>
+            {item.label}
+          </Text>
+        }
       </div>
     )
   }
