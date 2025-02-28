@@ -139,6 +139,8 @@ export function Button(props: ButtonProps): React.ReactElement {
     buttonAriaLabel = props.text
   }
 
+  const isAIButton = variation === ButtonVariation.AI_PRIMARY || variation === ButtonVariation.AI_SECONDARY
+
   const ariaLabelProps = buttonAriaLabel ? { 'aria-label': buttonAriaLabel } : {}
 
   const button = props.noStyling ? (
@@ -164,6 +166,7 @@ export function Button(props: ButtonProps): React.ReactElement {
           [css.withLeftIcon]: icon,
           [css.withRightIcon]: rightIcon
         },
+        isAIButton ? cx(css.ai, css[variation]) : '',
         variation ? cx(css.variation, css[variation]) : '',
         size ? cx(css.size, css[size]) : ''
       )}

@@ -236,6 +236,23 @@
   --ai-purple-100: #ede8fb;
   --ai-purple-50: #f8f5ff;
   --ai-primary-gradient: linear-gradient(137.21deg, #ff8ac1 3.5%, #6c44db 50.71%, #47d5df 97.92%);
+
+  /* Box shadow variables for different button sizes */
+  --ai-primary-gradient-box-shadow-small: -1px -1px 3px 0 rgba(255, 138, 193, 0.25),
+    1px -1px 3px 0 rgba(108, 68, 219, 0.25), 1px 1px 3px 0 rgba(71, 213, 223, 0.35),
+    -1px 1px 3px 0 rgba(108, 68, 219, 0.25);
+
+  --ai-primary-gradient-box-shadow-medium: -2px -2px 4px 0 rgba(255, 138, 193, 0.25),
+    2px -2px 4px 0 rgba(108, 68, 219, 0.25), 2px 2px 4px 0 rgba(71, 213, 223, 0.35),
+    -2px 2px 4px 0 rgba(108, 68, 219, 0.25);
+
+  --ai-primary-gradient-box-shadow-large: -3px -3px 5px 0 rgba(255, 138, 193, 0.25),
+    3px -3px 5px 0 rgba(108, 68, 219, 0.25), 3px 3px 5px 0 rgba(71, 213, 223, 0.35),
+    -3px 3px 5px 0 rgba(108, 68, 219, 0.25);
+
+  /* Default box shadow (medium size) */
+  --ai-primary-gradient-box-shadow: var(--ai-primary-gradient-box-shadow-medium);
+
   --ai-secondary-gradient: linear-gradient(
     137.21deg,
     #ffbdc8 3.5%,
