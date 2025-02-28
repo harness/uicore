@@ -274,6 +274,7 @@ export {
 } from './components/Filters/components/FilterSingleSelectDropDown/FiltersSelectDropDown'
 export { getIdentifierFromName } from './components/InputWithIdentifier/InputWithIdentifier'
 export { FilterTextInput, FilterTextInputProps } from './components/Filters/components/FilterTextInput/FilterTextInput'
+export * from './components/Chat/message-renderers/HelpfulButton'
 export * from './components/Chat/Chat'
 export * from '@harness/design-system'
 export * from '@harness/icons'

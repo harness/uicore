@@ -28,7 +28,7 @@ type MessageRole = 'system' | 'user'
 interface MessageBase {
   id: string
   role: MessageRole
-  renderer?: React.FC<{ message: Message }>
+  showHelpfulButton?: boolean
 }
 
 export interface TextMessage extends MessageBase {
@@ -59,11 +59,36 @@ export interface CardMessage extends MessageBase {
 
 export type Message = TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage
 
-export interface ChatRef {
-  getMessages: () => Message[]
-  clearMessages: () => void
-  addMessages: (messages: Message[]) => void
-  scrollToEnd: () => void
+// Common props for all renderers
+export interface CommonRendererProps {
+  role: MessageRole
+  handleHelpfulClick?: (messageId: string, isHelpful: boolean) => void
+}
+
+export interface ChatProps {
+  handleNewMessage: (message: TextMessage, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
+  initialMessages?: Message[]
+  showLoader?: boolean
+  loader?: React.ReactElement
+  systemMessageClassName?: string
+  userMessageClassName?: string
+  messageRenderer?: Partial<{
+    yaml: React.FC<{ message: YamlMessage } & CommonRendererProps>
+    text: React.FC<{ message: TextMessage } & CommonRendererProps>
+    suggestions: React.FC<
+      {
+        message: SuggestionsMessage
+        addTextToInput: (text: string) => void
+        sendMessage: (text: string) => void
+      } & CommonRendererProps
+    >
+    card: React.FC<{ message: CardMessage } & CommonRendererProps>
+    error: React.FC<{ message: ErrorMessage } & CommonRendererProps>
+  }>
+  inputProps?: InputProps
+  submitButtonProps?: SubmitButtonProps
+  hideInputArea?: boolean
+  handleHelpfulClick?: (messageId: string, isHelpful: boolean) => void
 }
 
 interface InputProps {
@@ -80,26 +105,11 @@ interface SubmitButtonProps {
   }
 }
 
-export interface ChatProps {
-  handleNewMessage: (message: TextMessage, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
-  initialMessages?: Message[]
-  showLoader?: boolean
-  loader?: React.ReactElement
-  systemMessageClassName?: string
-  userMessageClassName?: string
-  messageRenderer?: Partial<{
-    yaml: React.FC<{ message: YamlMessage; role: MessageRole }>
-    text: React.FC<{ message: TextMessage; role: MessageRole }>
-    suggestions: React.FC<{
-      message: SuggestionsMessage
-      addTextToInput: (text: string) => void
-      sendMessage: (text: string) => void
-    }>
-    card: React.FC<{ message: CardMessage }>
-    error: React.FC<{ message: ErrorMessage }>
-  }>
-  inputProps?: InputProps
-  submitButtonProps?: SubmitButtonProps
+export interface ChatRef {
+  getMessages: () => Message[]
+  clearMessages: () => void
+  addMessages: (messages: Message[]) => void
+  scrollToEnd: () => void
 }
 
 const generateUniqueId = (): string => {
@@ -114,7 +124,8 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     messageRenderer,
     inputProps,
     submitButtonProps,
-    showLoader = false
+    showLoader = false,
+    hideInputArea = false
   } = props
   const [userInput, setUserInput] = useState<string>('')
   const [messages, setMessages] = useState<Message[]>(initialMessages)
@@ -153,28 +164,29 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   }, [messages])
 
   const renderMessage = (message: Message) => {
-    const { renderer } = message
-
-    if (renderer) {
-      const Component = renderer
-      return <Component message={message} />
-    }
-
     switch (message.type) {
       case 'text':
         if (messageRenderer?.text) {
-          return <messageRenderer.text message={message} role={message.role} />
+          return (
+            <messageRenderer.text message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+          )
         }
         return (
           <TextMessage
             content={message.content}
             isMarkdown={message.isMarkdown}
             color={message.role === 'user' ? Color.WHITE : Color.GREY_600}
+            role={message.role}
+            messageId={message.id}
+            handleHelpfulClick={props.handleHelpfulClick}
+            showHelpfulButton={message.showHelpfulButton}
           />
         )
       case 'yaml':
         if (messageRenderer?.yaml) {
-          return <messageRenderer.yaml message={message} role={message.role} />
+          return (
+            <messageRenderer.yaml message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+          )
         }
         return <YamlMessage content={message.content} />
       case 'suggestions':
@@ -182,14 +194,14 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
           return (
             <messageRenderer.suggestions
               message={message}
+              role={message.role}
               addTextToInput={text => setUserInput(text)}
               sendMessage={text => {
-                if (loading && abortController) {
-                  abortController.abort()
-                }
+                setUserInput(text)
 
                 handleSubmit(text)
               }}
+              handleHelpfulClick={props.handleHelpfulClick}
             />
           )
         }
@@ -198,16 +210,24 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         )
       case 'card':
         if (messageRenderer?.card) {
-          return <messageRenderer.card message={message} />
+          return (
+            <messageRenderer.card message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+          )
         }
         return <Card content={message.content} />
       case 'error':
         if (messageRenderer?.error) {
-          return <messageRenderer.error message={message} />
+          return (
+            <messageRenderer.error
+              message={message}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
+          )
         }
         return <Error content={message.content} />
       default:
-        return <div>Unsupported message type</div>
+        return null
     }
   }
 
@@ -289,7 +309,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   }
 
   return (
-    <Layout.Vertical className={css.container}>
+    <Layout.Vertical className={cx(css.container, { [css.containerWithFooter]: !hideInputArea })}>
       <Layout.Vertical className={css.messagesContainer}>
         {messages.map(message => {
           const messageClass = message.role === 'system' ? props.systemMessageClassName : props.userMessageClassName
@@ -331,40 +351,42 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         <div ref={messagesEndRef} />
       </Layout.Vertical>
 
-      <div className={css.footer}>
-        <div className={css.inputContainer}>
-          <textarea
-            className={cx(css.userInput, inputProps?.className)}
-            autoComplete="off"
-            autoFocus
-            name="chat-input"
-            value={userInput}
-            onChange={handleUserInput}
-            onKeyDown={handleKeyDown}
-            placeholder={inputProps?.placeholder || 'Type a message…'}
-          />
+      {!hideInputArea && (
+        <div className={css.footer}>
+          <div className={css.inputContainer}>
+            <textarea
+              className={cx(css.userInput, inputProps?.className)}
+              autoComplete="off"
+              autoFocus
+              name="chat-input"
+              value={userInput}
+              onChange={handleUserInput}
+              onKeyDown={handleKeyDown}
+              placeholder={inputProps?.placeholder || 'Type a message…'}
+            />
 
-          <button
-            className={cx(css.submitBtn, submitButtonProps?.className)}
-            onClick={loading ? handleCancelRequest : () => handleSubmit()}>
-            {!loading ? (
-              <Icon
-                className={submitButtonProps?.iconClassName}
-                name={'pipeline-deploy'}
-                size={16}
-                {...submitButtonProps?.icon?.active}
-              />
-            ) : (
-              <Icon
-                className={submitButtonProps?.iconClassName}
-                name={'execution-stopped'}
-                size={16}
-                {...submitButtonProps?.icon?.inactive}
-              />
-            )}
-          </button>
+            <button
+              className={cx(css.submitBtn, submitButtonProps?.className)}
+              onClick={loading ? handleCancelRequest : () => handleSubmit()}>
+              {!loading ? (
+                <Icon
+                  className={submitButtonProps?.iconClassName}
+                  name={'pipeline-deploy'}
+                  size={16}
+                  {...submitButtonProps?.icon?.active}
+                />
+              ) : (
+                <Icon
+                  className={submitButtonProps?.iconClassName}
+                  name={'execution-stopped'}
+                  size={16}
+                  {...submitButtonProps?.icon?.inactive}
+                />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </Layout.Vertical>
   )
 })

@@ -51,8 +51,13 @@
 
 .messagesContainer {
   overflow-y: scroll;
-  height: calc(100% - var(--footer-height));
+  height: 100%;
   padding: var(--spacing-medium) !important;
+}
+
+/* When footer is present, adjust messagesContainer height */
+.containerWithFooter .messagesContainer {
+  height: calc(100% - var(--footer-height));
 }
 
 .message {
