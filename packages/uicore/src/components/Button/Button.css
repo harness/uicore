@@ -194,21 +194,19 @@
 
       &.ai {
         &.size {
+          --font-size: var(--font-size-small);
+          --font-weight: 600;
+
+          .variation-ai-primary:hover:not([disabled]) {
+            box-shadow: var(--ai-primary-gradient-box-shadow-medium);
+          }
+
           &.small {
             --font-size: var(--font-size-xsmall);
             --font-weight: 500;
 
             .variation-ai-primary:hover:not([disabled]) {
               box-shadow: var(--ai-primary-gradient-box-shadow-small);
-            }
-          }
-
-          &.medium {
-            --font-size: var(--font-size-small);
-            --font-weight: 600;
-
-            .variation-ai-primary:hover:not([disabled]) {
-              box-shadow: var(--ai-primary-gradient-box-shadow-medium);
             }
           }
 
