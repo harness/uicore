@@ -872,6 +872,7 @@ import IdpOwner from './idp-owner.svg'
 import IdpPlay from './idp-play.svg'
 import IdpProtection from './idp-protection.svg'
 import IdpRecentlyVisited from './idp-recently-visited.svg'
+import IdpScopeFilter from './idp-scope-filter.svg'
 import IdpSelfService from './idp-self-service.svg'
 import IdpStageHover from './idp-stage-hover.svg'
 import IdpStarredEntity from './idp-starred-entity.svg'
@@ -2505,6 +2506,7 @@ type HarnessIconName =
   | 'idp-play'
   | 'idp-protection'
   | 'idp-recently-visited'
+  | 'idp-scope-filter'
   | 'idp-self-service'
   | 'idp-stage-hover'
   | 'idp-starred-entity'
@@ -4138,6 +4140,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-play': IdpPlay,
   'idp-protection': IdpProtection,
   'idp-recently-visited': IdpRecentlyVisited,
+  'idp-scope-filter': IdpScopeFilter,
   'idp-self-service': IdpSelfService,
   'idp-stage-hover': IdpStageHover,
   'idp-starred-entity': IdpStarredEntity,
