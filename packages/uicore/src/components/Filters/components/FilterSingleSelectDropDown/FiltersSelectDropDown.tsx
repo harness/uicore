@@ -314,7 +314,10 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
           }
         }}>
         {
-          <Text lineClamp={1} font={{ variation: FontVariation.SMALL }}>
+          <Text
+            lineClamp={1}
+            font={{ variation: FontVariation.SMALL }}
+            color={item.value === selectedItem.value ? Color.WHITE : Color.BLACK}>
             {item.label}
           </Text>
         }
