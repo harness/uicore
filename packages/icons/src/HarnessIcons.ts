@@ -927,6 +927,7 @@ import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import Jira from './jira.svg'
+import K8SDiff from './k8s-diff.svg'
 import K8SPatch from './k8s-patch.svg'
 import K8SRollout from './k8s-rollout.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
@@ -2562,6 +2563,7 @@ type HarnessIconName =
   | 'jira-update-inverse'
   | 'jira-update'
   | 'jira'
+  | 'k8s-diff'
   | 'k8s-patch'
   | 'k8s-rollout'
   | 'k8s-traffic-routing'
@@ -4197,6 +4199,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
   jira: Jira,
+  'k8s-diff': K8SDiff,
   'k8s-patch': K8SPatch,
   'k8s-rollout': K8SRollout,
   'k8s-traffic-routing': K8STrafficRouting,
