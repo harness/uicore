@@ -520,6 +520,7 @@ import ConfigFile from './config-file.svg'
 import Configure from './configure.svg'
 import Confluence from './confluence.svg'
 import ConnectivityMode from './connectivity-mode.svg'
+import Connector from './connector.svg'
 import ConnectorsBlue from './connectors-blue.svg'
 import ConnectorsIcon from './connectors-icon.svg'
 import Connectthroughdelegate from './connectthroughdelegate.svg'
@@ -2154,6 +2155,7 @@ type HarnessIconName =
   | 'configure'
   | 'confluence'
   | 'connectivity-mode'
+  | 'connector'
   | 'connectors-blue'
   | 'connectors-icon'
   | 'connectthroughdelegate'
@@ -3788,6 +3790,7 @@ const HarnessIcons: KVO<ElementType> = {
   configure: Configure,
   confluence: Confluence,
   'connectivity-mode': ConnectivityMode,
+  connector: Connector,
   'connectors-blue': ConnectorsBlue,
   'connectors-icon': ConnectorsIcon,
   connectthroughdelegate: Connectthroughdelegate,
