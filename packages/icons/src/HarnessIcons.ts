@@ -280,6 +280,20 @@ import ChaosAzureInstanceStop from './chaos-azure-instance-stop.svg'
 import ChaosAzureWebAppAccessRestrict from './chaos-azure-web-app-access-restrict.svg'
 import ChaosAzureWebAppStop from './chaos-azure-web-app-stop.svg'
 import ChaosCube from './chaos-cube.svg'
+import ChaosEc2CpuHog from './chaos-ec2-cpu-hog.svg'
+import ChaosEc2DnsChaos from './chaos-ec2-dns-chaos.svg'
+import ChaosEc2HttpLatency from './chaos-ec2-http-latency.svg'
+import ChaosEc2HttpModifyBody from './chaos-ec2-http-modify-body.svg'
+import ChaosEc2HttpModifyHeader from './chaos-ec2-http-modify-header.svg'
+import ChaosEc2HttpResetPeer from './chaos-ec2-http-reset-peer.svg'
+import ChaosEc2HttpStatusCode from './chaos-ec2-http-status-code.svg'
+import ChaosEc2IoStress from './chaos-ec2-io-stress.svg'
+import ChaosEc2MemoryHog from './chaos-ec2-memory-hog.svg'
+import ChaosEc2NetworkLatency from './chaos-ec2-network-latency.svg'
+import ChaosEc2NetworkLoss from './chaos-ec2-network-loss.svg'
+import ChaosEc2ProcessKill from './chaos-ec2-process-kill.svg'
+import ChaosEc2StopById from './chaos-ec2-stop-by-id.svg'
+import ChaosEc2StopByTag from './chaos-ec2-stop-by-tag.svg'
 import ChaosEcsAgentStop from './chaos-ecs-agent-stop.svg'
 import ChaosEcsContainerCpuHog from './chaos-ecs-container-cpu-hog.svg'
 import ChaosEcsContainerHttpLatency from './chaos-ecs-container-http-latency.svg'
@@ -290,32 +304,18 @@ import ChaosEcsContainerIoStress from './chaos-ecs-container-io-stress.svg'
 import ChaosEcsContainerMemoryHog from './chaos-ecs-container-memory-hog.svg'
 import ChaosEcsContainerNetworkLatency from './chaos-ecs-container-network-latency.svg'
 import ChaosEcsContainerNetworkLoss from './chaos-ecs-container-network-loss.svg'
-import ChaosEcsCpuHog from './chaos-ecs-cpu-hog.svg'
-import ChaosEcsDnsChaos from './chaos-ecs-dns-chaos.svg'
-import ChaosEcsHttpLatency from './chaos-ecs-http-latency.svg'
-import ChaosEcsHttpModifyBody from './chaos-ecs-http-modify-body.svg'
-import ChaosEcsHttpModifyHeader from './chaos-ecs-http-modify-header.svg'
-import ChaosEcsHttpResetPeer from './chaos-ecs-http-reset-peer.svg'
-import ChaosEcsHttpStatusCode from './chaos-ecs-http-status-code.svg'
 import ChaosEcsInstanceStop from './chaos-ecs-instance-stop.svg'
 import ChaosEcsInvalidContainerImage from './chaos-ecs-invalid-container-image.svg'
-import ChaosEcsIoStress from './chaos-ecs-io-stress.svg'
-import ChaosEcsMemoryHog from './chaos-ecs-memory-hog.svg'
-import ChaosEcsNetworkLatency from './chaos-ecs-network-latency.svg'
-import ChaosEcsNetworkLoss from './chaos-ecs-network-loss.svg'
 import ChaosEcsNetworkRestrict from './chaos-ecs-network-restrict.svg'
-import ChaosEcsProcessKill from './chaos-ecs-process-kill.svg'
-import ChaosEcsStopById from './chaos-ecs-stop-by-id.svg'
-import ChaosEcsStopByTag from './chaos-ecs-stop-by-tag.svg'
 import ChaosEcsTaskStop from './chaos-ecs-task-stop.svg'
 import ChaosEcsUpdateContainerResourceLimit from './chaos-ecs-update-container-resource-limit.svg'
 import ChaosEcsUpdateContainerTimeout from './chaos-ecs-update-container-timeout.svg'
 import ChaosEcsUpdateTaskRole from './chaos-ecs-update-task-role.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
-import ChaosGcpInstanceStop from './chaos-gcp-instance-stop.svg'
 import ChaosGcpVmDiskLossByLabel from './chaos-gcp-vm-disk-loss-by-label.svg'
 import ChaosGcpVmDiskLoss from './chaos-gcp-vm-disk-loss.svg'
 import ChaosGcpVmInstanceStopByLabel from './chaos-gcp-vm-instance-stop-by-label.svg'
+import ChaosGcpVmInstanceStop from './chaos-gcp-vm-instance-stop.svg'
 import ChaosHubs from './chaos-hubs.svg'
 import ChaosK8SContainerKill from './chaos-k8s-container-kill.svg'
 import ChaosK8SDiskFill from './chaos-k8s-disk-fill.svg'
@@ -1916,6 +1916,20 @@ type HarnessIconName =
   | 'chaos-azure-web-app-access-restrict'
   | 'chaos-azure-web-app-stop'
   | 'chaos-cube'
+  | 'chaos-ec2-cpu-hog'
+  | 'chaos-ec2-dns-chaos'
+  | 'chaos-ec2-http-latency'
+  | 'chaos-ec2-http-modify-body'
+  | 'chaos-ec2-http-modify-header'
+  | 'chaos-ec2-http-reset-peer'
+  | 'chaos-ec2-http-status-code'
+  | 'chaos-ec2-io-stress'
+  | 'chaos-ec2-memory-hog'
+  | 'chaos-ec2-network-latency'
+  | 'chaos-ec2-network-loss'
+  | 'chaos-ec2-process-kill'
+  | 'chaos-ec2-stop-by-id'
+  | 'chaos-ec2-stop-by-tag'
   | 'chaos-ecs-agent-stop'
   | 'chaos-ecs-container-cpu-hog'
   | 'chaos-ecs-container-http-latency'
@@ -1926,32 +1940,18 @@ type HarnessIconName =
   | 'chaos-ecs-container-memory-hog'
   | 'chaos-ecs-container-network-latency'
   | 'chaos-ecs-container-network-loss'
-  | 'chaos-ecs-cpu-hog'
-  | 'chaos-ecs-dns-chaos'
-  | 'chaos-ecs-http-latency'
-  | 'chaos-ecs-http-modify-body'
-  | 'chaos-ecs-http-modify-header'
-  | 'chaos-ecs-http-reset-peer'
-  | 'chaos-ecs-http-status-code'
   | 'chaos-ecs-instance-stop'
   | 'chaos-ecs-invalid-container-image'
-  | 'chaos-ecs-io-stress'
-  | 'chaos-ecs-memory-hog'
-  | 'chaos-ecs-network-latency'
-  | 'chaos-ecs-network-loss'
   | 'chaos-ecs-network-restrict'
-  | 'chaos-ecs-process-kill'
-  | 'chaos-ecs-stop-by-id'
-  | 'chaos-ecs-stop-by-tag'
   | 'chaos-ecs-task-stop'
   | 'chaos-ecs-update-container-resource-limit'
   | 'chaos-ecs-update-container-timeout'
   | 'chaos-ecs-update-task-role'
   | 'chaos-experiment-weight'
-  | 'chaos-gcp-instance-stop'
   | 'chaos-gcp-vm-disk-loss-by-label'
   | 'chaos-gcp-vm-disk-loss'
   | 'chaos-gcp-vm-instance-stop-by-label'
+  | 'chaos-gcp-vm-instance-stop'
   | 'chaos-hubs'
   | 'chaos-k8s-container-kill'
   | 'chaos-k8s-disk-fill'
@@ -3552,6 +3552,20 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-azure-web-app-access-restrict': ChaosAzureWebAppAccessRestrict,
   'chaos-azure-web-app-stop': ChaosAzureWebAppStop,
   'chaos-cube': ChaosCube,
+  'chaos-ec2-cpu-hog': ChaosEc2CpuHog,
+  'chaos-ec2-dns-chaos': ChaosEc2DnsChaos,
+  'chaos-ec2-http-latency': ChaosEc2HttpLatency,
+  'chaos-ec2-http-modify-body': ChaosEc2HttpModifyBody,
+  'chaos-ec2-http-modify-header': ChaosEc2HttpModifyHeader,
+  'chaos-ec2-http-reset-peer': ChaosEc2HttpResetPeer,
+  'chaos-ec2-http-status-code': ChaosEc2HttpStatusCode,
+  'chaos-ec2-io-stress': ChaosEc2IoStress,
+  'chaos-ec2-memory-hog': ChaosEc2MemoryHog,
+  'chaos-ec2-network-latency': ChaosEc2NetworkLatency,
+  'chaos-ec2-network-loss': ChaosEc2NetworkLoss,
+  'chaos-ec2-process-kill': ChaosEc2ProcessKill,
+  'chaos-ec2-stop-by-id': ChaosEc2StopById,
+  'chaos-ec2-stop-by-tag': ChaosEc2StopByTag,
   'chaos-ecs-agent-stop': ChaosEcsAgentStop,
   'chaos-ecs-container-cpu-hog': ChaosEcsContainerCpuHog,
   'chaos-ecs-container-http-latency': ChaosEcsContainerHttpLatency,
@@ -3562,32 +3576,18 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-ecs-container-memory-hog': ChaosEcsContainerMemoryHog,
   'chaos-ecs-container-network-latency': ChaosEcsContainerNetworkLatency,
   'chaos-ecs-container-network-loss': ChaosEcsContainerNetworkLoss,
-  'chaos-ecs-cpu-hog': ChaosEcsCpuHog,
-  'chaos-ecs-dns-chaos': ChaosEcsDnsChaos,
-  'chaos-ecs-http-latency': ChaosEcsHttpLatency,
-  'chaos-ecs-http-modify-body': ChaosEcsHttpModifyBody,
-  'chaos-ecs-http-modify-header': ChaosEcsHttpModifyHeader,
-  'chaos-ecs-http-reset-peer': ChaosEcsHttpResetPeer,
-  'chaos-ecs-http-status-code': ChaosEcsHttpStatusCode,
   'chaos-ecs-instance-stop': ChaosEcsInstanceStop,
   'chaos-ecs-invalid-container-image': ChaosEcsInvalidContainerImage,
-  'chaos-ecs-io-stress': ChaosEcsIoStress,
-  'chaos-ecs-memory-hog': ChaosEcsMemoryHog,
-  'chaos-ecs-network-latency': ChaosEcsNetworkLatency,
-  'chaos-ecs-network-loss': ChaosEcsNetworkLoss,
   'chaos-ecs-network-restrict': ChaosEcsNetworkRestrict,
-  'chaos-ecs-process-kill': ChaosEcsProcessKill,
-  'chaos-ecs-stop-by-id': ChaosEcsStopById,
-  'chaos-ecs-stop-by-tag': ChaosEcsStopByTag,
   'chaos-ecs-task-stop': ChaosEcsTaskStop,
   'chaos-ecs-update-container-resource-limit': ChaosEcsUpdateContainerResourceLimit,
   'chaos-ecs-update-container-timeout': ChaosEcsUpdateContainerTimeout,
   'chaos-ecs-update-task-role': ChaosEcsUpdateTaskRole,
   'chaos-experiment-weight': ChaosExperimentWeight,
-  'chaos-gcp-instance-stop': ChaosGcpInstanceStop,
   'chaos-gcp-vm-disk-loss-by-label': ChaosGcpVmDiskLossByLabel,
   'chaos-gcp-vm-disk-loss': ChaosGcpVmDiskLoss,
   'chaos-gcp-vm-instance-stop-by-label': ChaosGcpVmInstanceStopByLabel,
+  'chaos-gcp-vm-instance-stop': ChaosGcpVmInstanceStop,
   'chaos-hubs': ChaosHubs,
   'chaos-k8s-container-kill': ChaosK8SContainerKill,
   'chaos-k8s-disk-fill': ChaosK8SDiskFill,
