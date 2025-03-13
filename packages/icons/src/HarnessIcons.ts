@@ -1048,6 +1048,7 @@ import MarkAsFailed from './mark-as-failed.svg'
 import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
 import MavenRepositoryType from './maven-repository-type.svg'
+import Medal from './medal.svg'
 import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
 import Mend from './mend.svg'
@@ -2685,6 +2686,7 @@ type HarnessIconName =
   | 'mark-as-failure-inverse'
   | 'mark-as-failure'
   | 'maven-repository-type'
+  | 'medal'
   | 'memberRole'
   | 'mend-inverse'
   | 'mend'
@@ -4322,6 +4324,7 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-as-failure-inverse': MarkAsFailureInverse,
   'mark-as-failure': MarkAsFailure,
   'maven-repository-type': MavenRepositoryType,
+  medal: Medal,
   memberRole: MemberRole,
   'mend-inverse': MendInverse,
   mend: Mend,
