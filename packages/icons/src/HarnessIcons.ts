@@ -1058,6 +1058,7 @@ import Metasploit from './metasploit.svg'
 import MetricSources from './metric-sources.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MigrationState from './migration-state.svg'
+import ModuleTesting from './module-testing.svg'
 import MoneyIcon from './money-icon.svg'
 import MonitoredService from './monitored-service.svg'
 import MonitoringAgents from './monitoring-agents.svg'
@@ -2696,6 +2697,7 @@ type HarnessIconName =
   | 'metric-sources'
   | 'microsoft-azure'
   | 'migration-state'
+  | 'module-testing'
   | 'money-icon'
   | 'monitored-service'
   | 'monitoring-agents'
@@ -4334,6 +4336,7 @@ const HarnessIcons: KVO<ElementType> = {
   'metric-sources': MetricSources,
   'microsoft-azure': MicrosoftAzure,
   'migration-state': MigrationState,
+  'module-testing': ModuleTesting,
   'money-icon': MoneyIcon,
   'monitored-service': MonitoredService,
   'monitoring-agents': MonitoringAgents,
