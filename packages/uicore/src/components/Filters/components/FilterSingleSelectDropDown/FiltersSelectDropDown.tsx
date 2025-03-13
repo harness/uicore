@@ -68,6 +68,8 @@ export interface FilterSelectDropDownProps
   tooltip?: string
   tooltipProps?: PopoverProps
   sections?: Section
+  isHorizontalLayout?: boolean
+  columnSplitIndex?: number
 }
 
 /**
@@ -203,6 +205,34 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
   }
 
   function renderer(listProps: IQueryListRendererProps<SelectOption>): JSX.Element {
+    const midPoint = props.columnSplitIndex || 0
+
+    const getAllMenuItems = (children: React.ReactNode): React.ReactNode[] => {
+      return React.Children.toArray(children).reduce((acc: React.ReactNode[], child) => {
+        if (React.isValidElement(child)) {
+          if (child.type === React.Fragment) {
+            // If it's a Fragment, recursively get its children
+            return [...acc, ...getAllMenuItems(child.props.children)]
+          }
+          // If it's a menu item (not a divider)
+          if (!child.props.className?.includes('bp3-menu-divider')) {
+            return [...acc, child]
+          }
+        }
+        return acc
+      }, [])
+    }
+
+    const menuItems = getAllMenuItems((listProps.itemList as React.ReactElement).props.children)
+
+    // Create column structure
+    const modifiedItemList = (
+      <div className={css.horizontalMenuWrapper}>
+        <div className={css.firstColumn}>{menuItems.slice(0, midPoint)}</div>
+        <div className={css.secondColumn}>{menuItems.slice(midPoint)}</div>
+      </div>
+    )
+
     return (
       <Popover
         targetTagName="div"
@@ -225,7 +255,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
           setQuery('')
         }}
         className={cx(css.main, className)}
-        popoverClassName={cx(css.popover, popoverClassName)}
+        popoverClassName={cx(css.popover, { [css.horizontalPopover]: props.isHorizontalLayout }, popoverClassName)}
         isOpen={!props.disabled ? isOpen : false}>
         {customPlaceholderRenderer ? (
           <div onClick={() => setIsOpen(true)}>{customPlaceholderRenderer()}</div>
@@ -287,7 +317,11 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
           {listProps.itemList
             ? React.cloneElement(listProps.itemList as React.ReactElement, {
                 className: css.menu,
-                onClick: () => setIsOpen(false)
+                onClick: () => setIsOpen(false),
+                children:
+                  props.isHorizontalLayout && midPoint && menuItems.length > midPoint
+                    ? modifiedItemList
+                    : listProps.itemList
               })
             : null}
           {allowClearSelection ? (
