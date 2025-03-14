@@ -217,6 +217,7 @@ import CdMainInverse from './cd-main-inverse.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import CdSolid from './cd-solid.svg'
+import CdWithBorder from './cd-with-border.svg'
 import CdWithDarkText from './cd-with-dark-text.svg'
 import CdWithText from './cd-with-text.svg'
 import Cd from './cd.svg'
@@ -928,9 +929,14 @@ import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import Jira from './jira.svg'
+import K8SDaemonset from './k8s-daemonset.svg'
+import K8SDeployment from './k8s-deployment.svg'
 import K8SDiff from './k8s-diff.svg'
 import K8SPatch from './k8s-patch.svg'
+import K8SReplicaset from './k8s-replicaset.svg'
 import K8SRollout from './k8s-rollout.svg'
+import K8SService from './k8s-service.svg'
+import K8SStatefulset from './k8s-statefulset.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
 import Karpenter from './karpenter.svg'
 import KeyMain from './key-main.svg'
@@ -1630,6 +1636,7 @@ import Waiting from './waiting.svg'
 import WarArtifact from './war-artifact.svg'
 import WarningIcon from './warning-icon.svg'
 import WarningOutline from './warning-outline.svg'
+import WarningWithBorder from './warning-with-border.svg'
 import Webhook from './webhook.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
@@ -1856,6 +1863,7 @@ type HarnessIconName =
   | 'cd-main'
   | 'cd-sketch'
   | 'cd-solid'
+  | 'cd-with-border'
   | 'cd-with-dark-text'
   | 'cd-with-text'
   | 'cd'
@@ -2567,9 +2575,14 @@ type HarnessIconName =
   | 'jira-update-inverse'
   | 'jira-update'
   | 'jira'
+  | 'k8s-daemonset'
+  | 'k8s-deployment'
   | 'k8s-diff'
   | 'k8s-patch'
+  | 'k8s-replicaset'
   | 'k8s-rollout'
+  | 'k8s-service'
+  | 'k8s-statefulset'
   | 'k8s-traffic-routing'
   | 'karpenter'
   | 'key-main'
@@ -3269,6 +3282,7 @@ type HarnessIconName =
   | 'war-artifact'
   | 'warning-icon'
   | 'warning-outline'
+  | 'warning-with-border'
   | 'webhook'
   | 'white-cluster'
   | 'white-full-cluster'
@@ -3495,6 +3509,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
   'cd-solid': CdSolid,
+  'cd-with-border': CdWithBorder,
   'cd-with-dark-text': CdWithDarkText,
   'cd-with-text': CdWithText,
   cd: Cd,
@@ -4206,9 +4221,14 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
   jira: Jira,
+  'k8s-daemonset': K8SDaemonset,
+  'k8s-deployment': K8SDeployment,
   'k8s-diff': K8SDiff,
   'k8s-patch': K8SPatch,
+  'k8s-replicaset': K8SReplicaset,
   'k8s-rollout': K8SRollout,
+  'k8s-service': K8SService,
+  'k8s-statefulset': K8SStatefulset,
   'k8s-traffic-routing': K8STrafficRouting,
   karpenter: Karpenter,
   'key-main': KeyMain,
@@ -4908,6 +4928,7 @@ const HarnessIcons: KVO<ElementType> = {
   'war-artifact': WarArtifact,
   'warning-icon': WarningIcon,
   'warning-outline': WarningOutline,
+  'warning-with-border': WarningWithBorder,
   webhook: Webhook,
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
