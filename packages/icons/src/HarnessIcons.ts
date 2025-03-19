@@ -1206,6 +1206,7 @@ import ReExecuted from './re-executed.svg'
 import RegEx from './reg-ex.svg'
 import RegisterCatalog from './register-catalog.svg'
 import Registry from './registry.svg'
+import ReleaseNotes from './release-notes.svg'
 import ReleaseOrchestration from './release-orchestration.svg'
 import Reminder from './reminder.svg'
 import RemoteSetup from './remote-setup.svg'
@@ -2852,6 +2853,7 @@ type HarnessIconName =
   | 'reg-ex'
   | 'register-catalog'
   | 'registry'
+  | 'release-notes'
   | 'release-orchestration'
   | 'reminder'
   | 'remote-setup'
@@ -4498,6 +4500,7 @@ const HarnessIcons: KVO<ElementType> = {
   'reg-ex': RegEx,
   'register-catalog': RegisterCatalog,
   registry: Registry,
+  'release-notes': ReleaseNotes,
   'release-orchestration': ReleaseOrchestration,
   reminder: Reminder,
   'remote-setup': RemoteSetup,
