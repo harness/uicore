@@ -139,7 +139,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   }
 
   const addMessages = (newMessages: Message[]) => {
-    setMessages([...messages, ...newMessages])
+    setMessages(prevMessages => [...prevMessages, ...newMessages])
   }
 
   const scrollToEnd = () => {
@@ -257,8 +257,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             ({
               id: generateUniqueId(),
               role: 'system',
-              type: msg.type,
-              content: msg.content
+              ...msg
             } as Message)
         )
 
