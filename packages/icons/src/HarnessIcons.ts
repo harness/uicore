@@ -539,6 +539,7 @@ import CostImpact from './cost-impact.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import Coverity from './coverity.svg'
+import Crane from './crane.svg'
 import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
 import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
@@ -1141,6 +1142,7 @@ import Openshift from './openshift.svg'
 import Opsgenie from './opsgenie.svg'
 import OptionsHollow from './options-hollow.svg'
 import OrganisationSettings from './organisation-settings.svg'
+import OrganizeGroups from './organize-groups.svg'
 import OsvInverse from './osv-inverse.svg'
 import Osv from './osv.svg'
 import OtherWorkload from './other-workload.svg'
@@ -2186,6 +2188,7 @@ type HarnessIconName =
   | 'coverage-status-error'
   | 'coverage-status-success'
   | 'coverity'
+  | 'crane'
   | 'create-pr'
   | 'create-via-existing-yaml'
   | 'create-via-pipeline-template'
@@ -2788,6 +2791,7 @@ type HarnessIconName =
   | 'opsgenie'
   | 'options-hollow'
   | 'organisation-settings'
+  | 'organize-groups'
   | 'osv-inverse'
   | 'osv'
   | 'other-workload'
@@ -3833,6 +3837,7 @@ const HarnessIcons: KVO<ElementType> = {
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   coverity: Coverity,
+  crane: Crane,
   'create-pr': CreatePr,
   'create-via-existing-yaml': CreateViaExistingYaml,
   'create-via-pipeline-template': CreateViaPipelineTemplate,
@@ -4435,6 +4440,7 @@ const HarnessIcons: KVO<ElementType> = {
   opsgenie: Opsgenie,
   'options-hollow': OptionsHollow,
   'organisation-settings': OrganisationSettings,
+  'organize-groups': OrganizeGroups,
   'osv-inverse': OsvInverse,
   osv: Osv,
   'other-workload': OtherWorkload,
