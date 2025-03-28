@@ -14,6 +14,7 @@ import YamlMessage from './message-renderers/YamlMessage'
 import SuggestionsMessage from './message-renderers/Suggestions'
 import Error from './message-renderers/Error'
 import Card, { CardContent } from './message-renderers/Card'
+import StreamMessageRenderer from './message-renderers/StreamMessage'
 import { Layout } from '../../index'
 import css from './Chat.css'
 
@@ -57,12 +58,26 @@ export interface CardMessage extends MessageBase {
   content: CardContent
 }
 
-export type Message = TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage
+export interface StreamTextMessage extends Omit<TextMessage, 'id' | 'role'> {
+  isFirstInStream?: boolean
+  isLastInStream?: boolean
+}
+
+export interface StreamMessage extends MessageBase {
+  type: 'stream'
+  streamId: string
+  messages: StreamTextMessage[]
+  isComplete: boolean
+}
+
+export type Message = TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage | StreamMessage
 
 // Common props for all renderers
 export interface CommonRendererProps {
   role: MessageRole
   handleHelpfulClick?: (messageId: string, isHelpful: boolean) => void
+  stream?: boolean
+  isFirstInStream?: boolean
 }
 
 export interface ChatProps {
@@ -84,6 +99,7 @@ export interface ChatProps {
     >
     card: React.FC<{ message: CardMessage } & CommonRendererProps>
     error: React.FC<{ message: ErrorMessage } & CommonRendererProps>
+    stream: React.FC<{ message: StreamMessage } & CommonRendererProps>
   }>
   inputProps?: InputProps
   submitButtonProps?: SubmitButtonProps
@@ -109,6 +125,8 @@ export interface ChatRef {
   getMessages: () => Message[]
   clearMessages: () => void
   addMessages: (messages: Message[]) => void
+  addToStream: (streamId: string, message: Omit<TextMessage, 'id' | 'role'>, isFirstMessage?: boolean) => void
+  endStream: (streamId: string, finalMessage?: Omit<TextMessage, 'id' | 'role'>) => void
   scrollToEnd: () => void
 }
 
@@ -142,6 +160,98 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     setMessages(prevMessages => [...prevMessages, ...newMessages])
   }
 
+  // Stream management methods
+  const activeStreams = useRef<Record<string, boolean>>({})
+
+  const addToStream = (streamId: string, message: Omit<TextMessage, 'id' | 'role'>, isFirstMessage = false) => {
+    const streamExists = activeStreams.current[streamId]
+
+    if (isFirstMessage || !streamExists) {
+      const streamTextMessage: StreamTextMessage = {
+        ...message,
+        isFirstInStream: true
+      }
+
+      const newMessage: StreamMessage = {
+        id: generateUniqueId(),
+        role: 'system',
+        type: 'stream',
+        streamId,
+        messages: [streamTextMessage],
+        isComplete: false,
+        showHelpfulButton: false
+      }
+
+      activeStreams.current[streamId] = true
+      setMessages(prevMessages => [...prevMessages, newMessage])
+      setAnimatedMessages(prev => new Set([...prev, newMessage.id]))
+      return
+    }
+
+    // If the stream exists, add to it
+    setMessages(prevMessages => {
+      const streamIndex = prevMessages.findIndex(msg => msg.type === 'stream' && msg.streamId === streamId)
+
+      if (streamIndex === -1) return prevMessages
+
+      const streamMsg = prevMessages[streamIndex] as StreamMessage
+      const updatedStreamMsg = {
+        ...streamMsg,
+        messages: [...streamMsg.messages, { ...message }]
+      }
+
+      const updatedMessages = [...prevMessages]
+      updatedMessages[streamIndex] = updatedStreamMsg
+
+      return updatedMessages
+    })
+  }
+
+  const endStream = (streamId: string, finalMessage?: Omit<TextMessage, 'id' | 'role'>) => {
+    if (!activeStreams.current[streamId]) {
+      // Stream doesn't exist or has been closed
+      return
+    }
+
+    setMessages(prevMessages => {
+      const streamIndex = prevMessages.findIndex(msg => msg.type === 'stream' && msg.streamId === streamId)
+
+      if (streamIndex === -1) return prevMessages
+
+      const streamMsg = prevMessages[streamIndex] as StreamMessage
+      const updatedMessages = [...streamMsg.messages]
+
+      if (finalMessage) {
+        // Add the final message with isLastInStream flag
+        updatedMessages.push({
+          ...finalMessage,
+          isLastInStream: true
+        })
+      } else if (updatedMessages.length > 0) {
+        // Mark the last message as the last in stream
+        const lastMsgIndex = updatedMessages.length - 1
+        updatedMessages[lastMsgIndex] = {
+          ...updatedMessages[lastMsgIndex],
+          isLastInStream: true
+        }
+      }
+
+      const updatedStreamMsg = {
+        ...streamMsg,
+        messages: updatedMessages,
+        isComplete: true,
+        showHelpfulButton: true
+      }
+
+      const newMessages = [...prevMessages]
+      newMessages[streamIndex] = updatedStreamMsg
+
+      return newMessages
+    })
+
+    delete activeStreams.current[streamId]
+  }
+
   const scrollToEnd = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -150,6 +260,8 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     getMessages: () => messages,
     clearMessages,
     addMessages,
+    addToStream,
+    endStream,
     scrollToEnd
   }))
 
@@ -182,6 +294,25 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             showHelpfulButton={message.showHelpfulButton}
           />
         )
+      case 'stream': {
+        if (messageRenderer?.stream) {
+          return (
+            <messageRenderer.stream
+              message={message}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
+          )
+        }
+        return (
+          <StreamMessageRenderer
+            message={message}
+            role={message.role}
+            handleHelpfulClick={props.handleHelpfulClick}
+            messageRenderer={messageRenderer}
+          />
+        )
+      }
       case 'yaml':
         if (messageRenderer?.yaml) {
           return (
@@ -312,7 +443,6 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       <Layout.Vertical className={css.messagesContainer}>
         {messages.map(message => {
           const messageClass = message.role === 'system' ? props.systemMessageClassName : props.userMessageClassName
-
           const isAnimated = animatedMessages.has(message.id)
 
           return (
