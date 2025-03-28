@@ -17,15 +17,15 @@ const StreamMessageRenderer: React.FC<StreamMessageProps> = ({
   handleHelpfulClick,
   messageRenderer
 }) => {
-  if (message.messages.length === 0) {
+  if (message.content.length === 0) {
     return null
   }
 
   return (
     <Layout.Vertical spacing="none" width="100%">
-      {message.messages.map((msg, msgIndex) => {
+      {message.content.map((msg, msgIndex) => {
         const isFirst = msgIndex === 0
-        const isLast = msgIndex === message.messages.length - 1 || msg.isLastInStream
+        const isLast = msgIndex === message.content.length - 1 || msg.isLastInStream
 
         return (
           <>

@@ -66,7 +66,7 @@ export interface StreamTextMessage extends Omit<TextMessage, 'id' | 'role'> {
 export interface StreamMessage extends MessageBase {
   type: 'stream'
   streamId: string
-  messages: StreamTextMessage[]
+  content: StreamTextMessage[]
   isComplete: boolean
 }
 
@@ -177,7 +177,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         role: 'system',
         type: 'stream',
         streamId,
-        messages: [streamTextMessage],
+        content: [streamTextMessage],
         isComplete: false,
         showHelpfulButton: false
       }
@@ -197,7 +197,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       const streamMsg = prevMessages[streamIndex] as StreamMessage
       const updatedStreamMsg = {
         ...streamMsg,
-        messages: [...streamMsg.messages, { ...message }]
+        content: [...streamMsg.content, { ...message }]
       }
 
       const updatedMessages = [...prevMessages]
@@ -219,7 +219,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       if (streamIndex === -1) return prevMessages
 
       const streamMsg = prevMessages[streamIndex] as StreamMessage
-      const updatedMessages = [...streamMsg.messages]
+      const updatedMessages = [...streamMsg.content]
 
       if (finalMessage) {
         // Add the final message with isLastInStream flag
