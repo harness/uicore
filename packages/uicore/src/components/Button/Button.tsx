@@ -8,7 +8,7 @@
 import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
-import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
+import React, { ElementType, HTMLAttributes, MouseEvent, useEffect, useState } from 'react'
 import { Config } from '../../core/Config'
 import { OptionalTooltip } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
@@ -87,8 +87,11 @@ export interface LinkProps extends ButtonProps {
 
 export function Button(props: ButtonProps): React.ReactElement {
   const { icon, rightIcon, round, variation, size } = props
-  const [loading, setLoading] = useState(props.loading === true)
+  const [loading, setLoading] = useState(Boolean(props.loading))
   const isMounted = useIsMounted()
+  useEffect(() => {
+    setLoading(Boolean(props.loading))
+  }, [props.loading])
 
   const onClick = async (event: MouseEvent) => {
     // TODO (tan): Improve loading state when props.onClick() is resolved way too fast
