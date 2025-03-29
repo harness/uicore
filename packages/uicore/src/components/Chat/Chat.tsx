@@ -70,7 +70,20 @@ export interface StreamMessage extends MessageBase {
   isComplete: boolean
 }
 
-export type Message = TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage | StreamMessage
+export interface PreviewMessage extends MessageBase {
+  type: 'preview'
+  title: string
+  content: string
+}
+
+export type Message =
+  | TextMessage
+  | YamlMessage
+  | SuggestionsMessage
+  | CardMessage
+  | ErrorMessage
+  | StreamMessage
+  | PreviewMessage
 
 // Common props for all renderers
 export interface CommonRendererProps {
@@ -100,6 +113,7 @@ export interface ChatProps {
     card: React.FC<{ message: CardMessage } & CommonRendererProps>
     error: React.FC<{ message: ErrorMessage } & CommonRendererProps>
     stream: React.FC<{ message: StreamMessage } & CommonRendererProps>
+    preview: React.FC<{ message: PreviewMessage } & CommonRendererProps>
   }>
   inputProps?: InputProps
   submitButtonProps?: SubmitButtonProps
@@ -312,6 +326,18 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             messageRenderer={messageRenderer}
           />
         )
+      }
+      case 'preview': {
+        if (messageRenderer?.preview) {
+          return (
+            <messageRenderer.preview
+              message={message}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
+          )
+        }
+        return null
       }
       case 'yaml':
         if (messageRenderer?.yaml) {

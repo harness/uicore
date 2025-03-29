@@ -63,7 +63,6 @@
 .message {
   display: flex;
   width: fit-content;
-  margin-bottom: var(--spacing-medium);
 
   &.system {
     &.text {
