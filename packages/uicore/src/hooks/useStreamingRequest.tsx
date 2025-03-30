@@ -92,6 +92,18 @@ export function useStreamingRequest<T = Record<string, unknown>>(): StreamingReq
           throw new Error(`Server responded with status: ${response.status}`)
         }
 
+        const contentType = response.headers.get('content-type')
+
+        if (contentType && contentType.includes('application/json')) {
+          const jsonData = await response.json()
+          onEvent('json', jsonData, JSON.stringify(jsonData))
+          if (isMountedRef.current) {
+            onComplete?.()
+            setIsStreaming(false)
+          }
+          return
+        }
+
         if (!response.body) {
           throw new Error('Response body is null')
         }

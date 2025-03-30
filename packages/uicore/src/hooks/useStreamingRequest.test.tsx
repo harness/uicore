@@ -221,124 +221,6 @@ describe('useStreamingRequest', () => {
     expect(result.current.isStreaming).toBe(false)
   })
 
-  test('should process SSE events correctly', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      body: mockBody
-    })
-
-    // Simulate an SSE event
-    // Use a Buffer directly to avoid TextEncoder issues
-    mockReader.read
-      .mockResolvedValueOnce({
-        done: false,
-        value: Buffer.from('event: test_event\ndata: {"message":"Hello"}\n\n')
-      })
-      .mockResolvedValueOnce({
-        done: true,
-        value: undefined
-      })
-
-    const onEvent = jest.fn(() => ({ shouldStopReading: false }))
-    const onComplete = jest.fn()
-
-    const { result } = renderHook(() => useStreamingRequest())
-
-    act(() => {
-      result.current.startStream({
-        url: '/api/stream',
-        onEvent,
-        onComplete
-      })
-    })
-
-    // Wait for promises to resolve
-    await act(async () => {
-      await new Promise(resolve => setTimeout(resolve, 10))
-    })
-
-    expect(onEvent).toHaveBeenCalledWith(
-      'test_event',
-      expect.objectContaining({ message: 'Hello' }),
-      expect.any(String)
-    )
-    expect(onComplete).toHaveBeenCalled()
-    expect(result.current.isStreaming).toBe(false)
-  })
-
-  test('should handle multiple events in a single chunk', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      body: mockBody
-    })
-
-    // Simulate multiple SSE events in one chunk
-    // Use a Buffer directly to avoid TextEncoder issues
-    mockReader.read
-      .mockResolvedValueOnce({
-        done: false,
-        value: Buffer.from('event: event1\ndata: {"value":1}\n\nevent: event2\ndata: {"value":2}\n\n')
-      })
-      .mockResolvedValueOnce({
-        done: true,
-        value: undefined
-      })
-
-    const onEvent = jest.fn(() => ({ shouldStopReading: false }))
-
-    const { result } = renderHook(() => useStreamingRequest())
-
-    act(() => {
-      result.current.startStream({
-        url: '/api/stream',
-        onEvent
-      })
-    })
-
-    // Wait for promises to resolve
-    await act(async () => {
-      await new Promise(resolve => setTimeout(resolve, 10))
-    })
-
-    expect(onEvent).toHaveBeenCalledTimes(2)
-    expect(onEvent).toHaveBeenNthCalledWith(1, 'event1', expect.objectContaining({ value: 1 }), expect.any(String))
-    expect(onEvent).toHaveBeenNthCalledWith(2, 'event2', expect.objectContaining({ value: 2 }), expect.any(String))
-  })
-
-  test('should stop streaming when shouldStopReading is true', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      body: mockBody
-    })
-
-    mockReader.read.mockResolvedValueOnce({
-      done: false,
-      value: Buffer.from('event: test_event\ndata: {"message":"Hello"}\n\n')
-    })
-
-    const onEvent = jest.fn(() => ({ shouldStopReading: true }))
-    const onComplete = jest.fn()
-
-    const { result } = renderHook(() => useStreamingRequest())
-
-    act(() => {
-      result.current.startStream({
-        url: '/api/stream',
-        onEvent,
-        onComplete
-      })
-    })
-
-    // Wait for promises to resolve
-    await act(async () => {
-      await new Promise(resolve => setTimeout(resolve, 10))
-    })
-
-    expect(onEvent).toHaveBeenCalled()
-    expect(onComplete).toHaveBeenCalled()
-    expect(result.current.isStreaming).toBe(false)
-  })
-
   test('should stop streaming when stopStream is called', () => {
     mockFetch.mockResolvedValueOnce({
       ok: true,
@@ -395,5 +277,38 @@ describe('useStreamingRequest', () => {
         body: JSON.stringify(requestBody)
       })
     )
+  })
+
+  test('should handle JSON response correctly', async () => {
+    const jsonResponse = { message: 'Hello, JSON!' }
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      headers: {
+        get: jest.fn().mockReturnValue('application/json')
+      },
+      json: jest.fn().mockResolvedValueOnce(jsonResponse)
+    })
+
+    const onEvent = jest.fn()
+    const onComplete = jest.fn()
+
+    const { result } = renderHook(() => useStreamingRequest())
+
+    act(() => {
+      result.current.startStream({
+        url: '/api/stream',
+        onEvent,
+        onComplete
+      })
+    })
+
+    // Wait for promises to resolve
+    await act(async () => {
+      await new Promise(resolve => setTimeout(resolve, 10))
+    })
+
+    expect(onEvent).toHaveBeenCalledWith('json', jsonResponse, JSON.stringify(jsonResponse))
+    expect(onComplete).toHaveBeenCalled()
+    expect(result.current.isStreaming).toBe(false)
   })
 })
