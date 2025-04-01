@@ -93,6 +93,7 @@ export function ColorPicker(props: ColorPickerProps) {
       rightIcon="caret-down"
       width={width}
       height={props.height}
+      disabled={props.disable}
       tooltip={
         <Container padding="medium" className={css.grid}>
           {colors.map(color => (
@@ -115,7 +116,8 @@ export function ColorPicker(props: ColorPickerProps) {
         interactionKind: 'click',
         minimal: true,
         position: Position.BOTTOM_LEFT,
-        hasBackdrop: true
+        hasBackdrop: true,
+        disabled: props.disable
       }}
     />
   )
