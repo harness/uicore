@@ -66,6 +66,7 @@ import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
 import AppKubernetes from './app-kubernetes.svg'
+import AppSet from './app-set.svg'
 import ApplySchema from './apply-schema.svg'
 import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
@@ -1716,6 +1717,7 @@ type HarnessIconName =
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
   | 'app-kubernetes'
+  | 'app-set'
   | 'apply-schema'
   | 'apply'
   | 'approval-stage-icon'
@@ -3366,6 +3368,7 @@ const HarnessIcons: KVO<ElementType> = {
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
   'app-kubernetes': AppKubernetes,
+  'app-set': AppSet,
   'apply-schema': ApplySchema,
   apply: Apply,
   'approval-stage-icon': ApprovalStageIcon,
