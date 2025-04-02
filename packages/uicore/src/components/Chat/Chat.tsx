@@ -432,7 +432,6 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       })
       .finally(() => {
         setLoading(false)
-        setAbortController(null)
       })
   }
 

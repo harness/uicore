@@ -704,6 +704,7 @@ import FfSketch from './ff-sketch.svg'
 import FfSolid from './ff-solid.svg'
 import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
+import FileCode from './file-code.svg'
 import File from './file.svg'
 import Filestore from './filestore.svg'
 import Firehydrant from './firehydrant.svg'
@@ -2355,6 +2356,7 @@ type HarnessIconName =
   | 'ff-solid'
   | 'ff-with-dark-text'
   | 'ff-with-text'
+  | 'file-code'
   | 'file'
   | 'filestore'
   | 'firehydrant'
@@ -4006,6 +4008,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ff-solid': FfSolid,
   'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
+  'file-code': FileCode,
   file: File,
   filestore: Filestore,
   firehydrant: Firehydrant,
