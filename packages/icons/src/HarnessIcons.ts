@@ -378,6 +378,7 @@ import ChaosNavChaoshub from './chaos-nav-chaoshub.svg'
 import ChaosNavExperiments from './chaos-nav-experiments.svg'
 import ChaosNavGamedays from './chaos-nav-gamedays.svg'
 import ChaosNavNetworkMaps from './chaos-nav-network-maps.svg'
+import ChaosNavResilienceMgmt from './chaos-nav-resilience-mgmt.svg'
 import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
@@ -2030,6 +2031,7 @@ type HarnessIconName =
   | 'chaos-nav-experiments'
   | 'chaos-nav-gamedays'
   | 'chaos-nav-network-maps'
+  | 'chaos-nav-resilience-mgmt'
   | 'chaos-nav-resilience-probes'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
@@ -3682,6 +3684,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-nav-experiments': ChaosNavExperiments,
   'chaos-nav-gamedays': ChaosNavGamedays,
   'chaos-nav-network-maps': ChaosNavNetworkMaps,
+  'chaos-nav-resilience-mgmt': ChaosNavResilienceMgmt,
   'chaos-nav-resilience-probes': ChaosNavResilienceProbes,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
