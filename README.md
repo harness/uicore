@@ -32,8 +32,10 @@ List of packages:
 Icons are under available `packages/icons` folder. Please follow below steps to add new icons -
 
 1. Place the new icon (in SVG format) inside `packages/icons/src` directory.
-2. Run `yarn ui:icons` (under the root directory)
-3. Commit all the changes and open a PR.
+2. compress svg images using https://vecta.io/nano
+3. remove width and height from svg
+4. Run `yarn ui:icons` (under the root directory)
+5. Commit all the changes and open a PR.
 
 **Note**: For `uicore/icons` to be auto published, please ensure to bump up the package version in `packages/icons/package.json` _(only if an immediate new release is required)_
 

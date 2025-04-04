@@ -59,6 +59,7 @@ import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
 import AiPrimary from './ai-primary.svg'
 import AiSecondary from './ai-secondary.svg'
+import AiTestAutomation from './ai-test-automation.svg'
 import Ai from './ai.svg'
 import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
 import AnchoreGrype from './anchore-grype.svg'
@@ -94,6 +95,12 @@ import AsgRollback from './asg-rollback.svg'
 import AsgSetup from './asg-setup.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
+import AtaNavOverview from './ata-nav-overview.svg'
+import AtaNavRecommendations from './ata-nav-recommendations.svg'
+import AtaNavTasks from './ata-nav-tasks.svg'
+import AtaNavTestRuns from './ata-nav-test-runs.svg'
+import AtaNavTestSuites from './ata-nav-test-suites.svg'
+import AtaNavTests from './ata-nav-tests.svg'
 import Atlassian from './atlassian.svg'
 import Atom from './atom.svg'
 import AuditLogCreated from './audit-log-created.svg'
@@ -1712,6 +1719,7 @@ type HarnessIconName =
   | 'agents'
   | 'ai-primary'
   | 'ai-secondary'
+  | 'ai-test-automation'
   | 'ai'
   | 'anchore-grype-inverse'
   | 'anchore-grype'
@@ -1747,6 +1755,12 @@ type HarnessIconName =
   | 'asg-setup'
   | 'asg-swap-inverse'
   | 'asg-swap'
+  | 'ata-nav-overview'
+  | 'ata-nav-recommendations'
+  | 'ata-nav-tasks'
+  | 'ata-nav-test-runs'
+  | 'ata-nav-test-suites'
+  | 'ata-nav-tests'
   | 'atlassian'
   | 'atom'
   | 'audit-log-created'
@@ -3365,6 +3379,7 @@ const HarnessIcons: KVO<ElementType> = {
   agents: Agents,
   'ai-primary': AiPrimary,
   'ai-secondary': AiSecondary,
+  'ai-test-automation': AiTestAutomation,
   ai: Ai,
   'anchore-grype-inverse': AnchoreGrypeInverse,
   'anchore-grype': AnchoreGrype,
@@ -3400,6 +3415,12 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-setup': AsgSetup,
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
+  'ata-nav-overview': AtaNavOverview,
+  'ata-nav-recommendations': AtaNavRecommendations,
+  'ata-nav-tasks': AtaNavTasks,
+  'ata-nav-test-runs': AtaNavTestRuns,
+  'ata-nav-test-suites': AtaNavTestSuites,
+  'ata-nav-tests': AtaNavTests,
   atlassian: Atlassian,
   atom: Atom,
   'audit-log-created': AuditLogCreated,
