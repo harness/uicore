@@ -1611,6 +1611,8 @@ import Tfsec from './tfsec.svg'
 import ThinnerCodeRepos from './thinner-code-repos.svg'
 import ThinnerCodeWebhook from './thinner-code-webhook.svg'
 import ThinnerSearch from './thinner-search.svg'
+import ThumbsDownOutline from './thumbs-down-outline.svg'
+import ThumbsUpOutline from './thumbs-up-outline.svg'
 import TiCallgraph from './ti-callgraph.svg'
 import TickMark from './tick-mark.svg'
 import Timeout from './timeout.svg'
@@ -3271,6 +3273,8 @@ type HarnessIconName =
   | 'thinner-code-repos'
   | 'thinner-code-webhook'
   | 'thinner-search'
+  | 'thumbs-down-outline'
+  | 'thumbs-up-outline'
   | 'ti-callgraph'
   | 'tick-mark'
   | 'timeout'
@@ -4931,6 +4935,8 @@ const HarnessIcons: KVO<ElementType> = {
   'thinner-code-repos': ThinnerCodeRepos,
   'thinner-code-webhook': ThinnerCodeWebhook,
   'thinner-search': ThinnerSearch,
+  'thumbs-down-outline': ThumbsDownOutline,
+  'thumbs-up-outline': ThumbsUpOutline,
   'ti-callgraph': TiCallgraph,
   'tick-mark': TickMark,
   timeout: Timeout,
