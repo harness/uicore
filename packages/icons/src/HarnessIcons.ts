@@ -1510,6 +1510,8 @@ import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
 import Stars from './stars.svg'
 import StatsUpSquare from './stats-up-square.svg'
+import StatusExtendFilled from './status-extend-filled.svg'
+import StatusExtend from './status-extend.svg'
 import StatusPage from './status-page.svg'
 import StatusPending from './status-pending.svg'
 import StatusRunning from './status-running.svg'
@@ -3172,6 +3174,8 @@ type HarnessIconName =
   | 'star'
   | 'stars'
   | 'stats-up-square'
+  | 'status-extend-filled'
+  | 'status-extend'
   | 'status-page'
   | 'status-pending'
   | 'status-running'
@@ -4834,6 +4838,8 @@ const HarnessIcons: KVO<ElementType> = {
   star: Star,
   stars: Stars,
   'stats-up-square': StatsUpSquare,
+  'status-extend-filled': StatusExtendFilled,
+  'status-extend': StatusExtend,
   'status-page': StatusPage,
   'status-pending': StatusPending,
   'status-running': StatusRunning,
