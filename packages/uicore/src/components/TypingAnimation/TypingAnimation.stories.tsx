@@ -8,7 +8,7 @@
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary, Description } from '@storybook/addon-docs/blocks'
-import TypingAnimation from './TypingAnimation'
+import { TypingAnimation } from './TypingAnimation'
 import { Layout, Container } from '../..'
 import { FontVariation } from '@harness/design-system'
 

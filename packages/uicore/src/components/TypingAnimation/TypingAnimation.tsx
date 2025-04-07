@@ -14,7 +14,7 @@ interface TypingAnimationProps extends TextProps {
   delay?: number
 }
 
-const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, typingSpeed = 50, delay = 0, ...rest }) => {
+export const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, typingSpeed = 50, delay = 0, ...rest }) => {
   const [displayText, setDisplayText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTyping, setIsTyping] = useState(false)
@@ -58,5 +58,3 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, typingSpeed = 5
 
   return <Text {...rest}>{displayText}</Text>
 }
-
-export default TypingAnimation

@@ -277,5 +277,6 @@ export { FilterTextInput, FilterTextInputProps } from './components/Filters/comp
 export * from './hooks/useStreamingRequest'
 export * from './components/Chat/message-renderers/HelpfulButton'
 export * from './components/Chat/Chat'
+export * from './components/TypingAnimation/TypingAnimation'
 export * from '@harness/design-system'
 export * from '@harness/icons'
