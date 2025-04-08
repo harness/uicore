@@ -95,12 +95,17 @@ import AsgRollback from './asg-rollback.svg'
 import AsgSetup from './asg-setup.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
+import AtaNavCiCd from './ata-nav-ci-cd.svg'
+import AtaNavEmailIntegration from './ata-nav-email-integration.svg'
 import AtaNavOverview from './ata-nav-overview.svg'
 import AtaNavRecommendations from './ata-nav-recommendations.svg'
+import AtaNavSalckIntegration from './ata-nav-salck-integration.svg'
+import AtaNavSettings from './ata-nav-settings.svg'
 import AtaNavTasks from './ata-nav-tasks.svg'
 import AtaNavTestRuns from './ata-nav-test-runs.svg'
 import AtaNavTestSuites from './ata-nav-test-suites.svg'
 import AtaNavTests from './ata-nav-tests.svg'
+import AtaNavTunnels from './ata-nav-tunnels.svg'
 import Atlassian from './atlassian.svg'
 import Atom from './atom.svg'
 import AuditLogCreated from './audit-log-created.svg'
@@ -1760,12 +1765,17 @@ type HarnessIconName =
   | 'asg-setup'
   | 'asg-swap-inverse'
   | 'asg-swap'
+  | 'ata-nav-ci-cd'
+  | 'ata-nav-email-integration'
   | 'ata-nav-overview'
   | 'ata-nav-recommendations'
+  | 'ata-nav-salck-integration'
+  | 'ata-nav-settings'
   | 'ata-nav-tasks'
   | 'ata-nav-test-runs'
   | 'ata-nav-test-suites'
   | 'ata-nav-tests'
+  | 'ata-nav-tunnels'
   | 'atlassian'
   | 'atom'
   | 'audit-log-created'
@@ -3425,12 +3435,17 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-setup': AsgSetup,
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
+  'ata-nav-ci-cd': AtaNavCiCd,
+  'ata-nav-email-integration': AtaNavEmailIntegration,
   'ata-nav-overview': AtaNavOverview,
   'ata-nav-recommendations': AtaNavRecommendations,
+  'ata-nav-salck-integration': AtaNavSalckIntegration,
+  'ata-nav-settings': AtaNavSettings,
   'ata-nav-tasks': AtaNavTasks,
   'ata-nav-test-runs': AtaNavTestRuns,
   'ata-nav-test-suites': AtaNavTestSuites,
   'ata-nav-tests': AtaNavTests,
+  'ata-nav-tunnels': AtaNavTunnels,
   atlassian: Atlassian,
   atom: Atom,
   'audit-log-created': AuditLogCreated,
