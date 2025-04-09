@@ -49,6 +49,7 @@ export interface TableV3Props<T> {
   className?: string
   pagination?: PaginationProps
   getRowClassName?: (row: Row<T>) => string | undefined
+  onRowClick?: (data: T, index: number) => void
 }
 
 export function TableV3<T>(props: TableV3Props<T>) {
@@ -108,7 +109,10 @@ export function TableV3<T>(props: TableV3Props<T>) {
               {row.getVisibleCells().map(cell => {
                 const { column } = cell
                 return (
-                  <td key={cell.id} style={{ ...getCommonPinningStyles(column as any), width: cell.column.getSize() }}>
+                  <td
+                    key={cell.id}
+                    style={{ ...getCommonPinningStyles(column as any), width: cell.column.getSize() }}
+                    onClick={() => props?.onRowClick?.(row.original, row.index)}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 )
