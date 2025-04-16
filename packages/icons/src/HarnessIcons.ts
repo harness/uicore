@@ -729,6 +729,7 @@ import Queued from './queued.svg'
 import RancherInverse from './rancher-inverse.svg'
 import Rancher from './rancher.svg'
 import ReExecuted from './re-executed.svg'
+import RedHatLogo from './red-hat-logo.svg'
 import RegEx from './reg-ex.svg'
 import RegisterCatalog from './register-catalog.svg'
 import Registry from './registry.svg'
@@ -1732,6 +1733,7 @@ type HarnessIconName =
   | 'rancher-inverse'
   | 'rancher'
   | 're-executed'
+  | 'red-hat-logo'
   | 'reg-ex'
   | 'register-catalog'
   | 'registry'
@@ -2735,6 +2737,7 @@ const HarnessIcons: KVO<ElementType> = {
   'rancher-inverse': RancherInverse,
   rancher: Rancher,
   're-executed': ReExecuted,
+  'red-hat-logo': RedHatLogo,
   'reg-ex': RegEx,
   'register-catalog': RegisterCatalog,
   registry: Registry,
