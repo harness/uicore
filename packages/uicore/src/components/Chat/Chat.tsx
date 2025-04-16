@@ -308,6 +308,11 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
 
   const handleKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = e => {
     if (e.key === 'Enter') {
+      // Allow multiline input when Shift+Enter is pressed
+      if (e.shiftKey) {
+        return // Let the default behavior happen (new line)
+      }
+
       e.preventDefault()
       if (loading) {
         abortController?.abort()
