@@ -34,7 +34,7 @@ export interface ConnectedThumbnailSelectProps extends ThumbnailSelectProps {
   formik: FormikContextType<Record<string, never>>
 }
 
-export interface ThumbnailSelectProps extends Pick<ThumbnailProps, 'size'> {
+export interface ThumbnailSelectProps extends Pick<ThumbnailProps, 'size' | 'cornerSelected'> {
   name: string
   items: Item[]
   isReadonly?: boolean
@@ -62,7 +62,8 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
     size,
     onChange,
     expandAllByDefault,
-    staticItems = false
+    staticItems = false,
+    cornerSelected = true
   } = props
   const value = get(formik.values, name)
 
@@ -126,6 +127,7 @@ const ThumbnailSelect: React.FC<ConnectedThumbnailSelectProps> = props => {
                 selected={item.value === value}
                 onClick={handleChange}
                 className={thumbnailClassName}
+                cornerSelected={cornerSelected}
               />
             </WrapOptionalTooltip>
           )
