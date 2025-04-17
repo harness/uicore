@@ -32,6 +32,7 @@ import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
+import AlpineLogo from './alpine-logo.svg'
 import AnchoreGrype from './anchore-grype.svg'
 import ApiDocs from './api-docs.svg'
 import Apply from './apply.svg'
@@ -316,6 +317,7 @@ import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
 import DataFetchError from './data-fetch-error.svg'
+import DebianLogo from './debian-logo.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -463,6 +465,7 @@ import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
 import Gitspace from './gitspace.svg'
+import GoLogo from './go-logo.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
 import Governance from './governance.svg'
@@ -798,6 +801,7 @@ import RunTestsCiStep from './run-tests-ci-step.svg'
 import RunTestsStep from './run-tests-step.svg'
 import RunningFilled from './running-filled.svg'
 import RuntimeInput from './runtime-input.svg'
+import RustLogo from './rust-logo.svg'
 import SaveCacheGcsCiStepInverse from './save-cache-gcs-ci-step-inverse.svg'
 import SaveCacheGcsCiStep from './save-cache-gcs-ci-step.svg'
 import SaveCacheHarnessCiStepInverse from './save-cache-harness-ci-step-inverse.svg'
@@ -1036,6 +1040,7 @@ type HarnessIconName =
   | 'advanced'
   | 'agent-tokens'
   | 'agents'
+  | 'alpine-logo'
   | 'anchore-grype'
   | 'api-docs'
   | 'apply'
@@ -1320,6 +1325,7 @@ type HarnessIconName =
   | 'dashboard'
   | 'dashboards-solid-border'
   | 'data-fetch-error'
+  | 'debian-logo'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -1467,6 +1473,7 @@ type HarnessIconName =
   | 'gitops-yes'
   | 'gitops'
   | 'gitspace'
+  | 'go-logo'
   | 'governance-policy-set'
   | 'governance-shield'
   | 'governance'
@@ -1802,6 +1809,7 @@ type HarnessIconName =
   | 'run-tests-step'
   | 'running-filled'
   | 'runtime-input'
+  | 'rust-logo'
   | 'save-cache-gcs-ci-step-inverse'
   | 'save-cache-gcs-ci-step'
   | 'save-cache-harness-ci-step-inverse'
@@ -2040,6 +2048,7 @@ const HarnessIcons: KVO<ElementType> = {
   advanced: Advanced,
   'agent-tokens': AgentTokens,
   agents: Agents,
+  'alpine-logo': AlpineLogo,
   'anchore-grype': AnchoreGrype,
   'api-docs': ApiDocs,
   apply: Apply,
@@ -2324,6 +2333,7 @@ const HarnessIcons: KVO<ElementType> = {
   dashboard: Dashboard,
   'dashboards-solid-border': DashboardsSolidBorder,
   'data-fetch-error': DataFetchError,
+  'debian-logo': DebianLogo,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
@@ -2471,6 +2481,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-yes': GitopsYes,
   gitops: Gitops,
   gitspace: Gitspace,
+  'go-logo': GoLogo,
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
   governance: Governance,
@@ -2806,6 +2817,7 @@ const HarnessIcons: KVO<ElementType> = {
   'run-tests-step': RunTestsStep,
   'running-filled': RunningFilled,
   'runtime-input': RuntimeInput,
+  'rust-logo': RustLogo,
   'save-cache-gcs-ci-step-inverse': SaveCacheGcsCiStepInverse,
   'save-cache-gcs-ci-step': SaveCacheGcsCiStep,
   'save-cache-harness-ci-step-inverse': SaveCacheHarnessCiStepInverse,
