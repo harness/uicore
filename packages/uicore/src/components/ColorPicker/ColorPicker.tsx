@@ -20,6 +20,8 @@ export interface ColorPickerProps extends Omit<HTMLAttributes<HTMLButtonElement>
   width?: ButtonProps['width']
   height?: ButtonProps['height']
   onChange?: (color: string) => void
+  colors?: string[]
+  containerClassName?: string
 }
 
 // NextGen UI Colors (not finalized yet)
@@ -74,13 +76,15 @@ const colors = [
 
 export const ColorPickerColors = colors
 
-export function ColorPicker(props: ColorPickerProps) {
+export function ColorPicker(props: ColorPickerProps): JSX.Element {
   const [selected, setSelected] = useState((props.color || 'transparent').toLowerCase())
   const width = Math.max(props.width ? parseInt(props.width as string) : 60, 60)
 
   useEffect(() => {
     props.color ? setSelected(props.color.toLowerCase()) : null
   }, [props])
+
+  const colorList = props.colors || colors
 
   return (
     <Button
@@ -95,8 +99,8 @@ export function ColorPicker(props: ColorPickerProps) {
       height={props.height}
       disabled={props.disable}
       tooltip={
-        <Container padding="medium" className={css.grid}>
-          {colors.map(color => (
+        <Container padding="medium" className={cx(props.containerClassName, css.grid)}>
+          {colorList.map(color => (
             <button
               type="button"
               tabIndex={0}
