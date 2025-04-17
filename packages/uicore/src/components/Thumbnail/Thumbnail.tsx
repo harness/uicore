@@ -24,13 +24,26 @@ export interface ThumbnailProps {
   imageProps?: ImgHTMLAttributes<HTMLOrSVGImageElement>
   disabled?: boolean
   selected?: boolean
+  cornerSelected?: boolean
   className?: string
   size?: 'large'
   onClick?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
-  const { label, value, icon, disabled, selected, onClick, className, name, size, imageProps } = props
+  const {
+    label,
+    value,
+    icon,
+    disabled,
+    selected,
+    onClick,
+    className,
+    name,
+    size,
+    imageProps,
+    cornerSelected = true
+  } = props
 
   const getContainerClass = () => {
     if (size === 'large') {
@@ -70,7 +83,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
         disabled={disabled}
         interactive={!disabled && !selected}
         selected={selected}
-        cornerSelected={selected}
+        cornerSelected={cornerSelected}
         className={css.squareCard}>
         {cardContent}
       </Card>
@@ -83,6 +96,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = props => {
           {label}
         </Text>
       )}
+      {(icon || imageProps?.src) && label && isValidElement(label) && label}
       <input type="checkbox" name={name} value={value} onChange={onClick} checked={selected} disabled={disabled} />
     </label>
   )
