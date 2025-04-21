@@ -1567,6 +1567,7 @@ import Synced from './synced.svg'
 import Syncing from './syncing.svg'
 import Sysdig from './sysdig.svg'
 import Table from './table.svg'
+import Tag from './tag.svg'
 import TanzuCommand from './tanzuCommand.svg'
 import TargetManagement from './target-management.svg'
 import Target from './target.svg'
@@ -3238,6 +3239,7 @@ type HarnessIconName =
   | 'syncing'
   | 'sysdig'
   | 'table'
+  | 'tag'
   | 'tanzuCommand'
   | 'target-management'
   | 'target'
@@ -4909,6 +4911,7 @@ const HarnessIcons: KVO<ElementType> = {
   syncing: Syncing,
   sysdig: Sysdig,
   table: Table,
+  tag: Tag,
   tanzuCommand: TanzuCommand,
   'target-management': TargetManagement,
   target: Target,
