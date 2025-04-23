@@ -1227,6 +1227,7 @@ import RedHatLogo from './red-hat-logo.svg'
 import RegEx from './reg-ex.svg'
 import RegisterCatalog from './register-catalog.svg'
 import Registry from './registry.svg'
+import ReleaseCalendar from './release-calendar.svg'
 import ReleaseNotes from './release-notes.svg'
 import ReleaseOrchestration from './release-orchestration.svg'
 import Reminder from './reminder.svg'
@@ -2901,6 +2902,7 @@ type HarnessIconName =
   | 'reg-ex'
   | 'register-catalog'
   | 'registry'
+  | 'release-calendar'
   | 'release-notes'
   | 'release-orchestration'
   | 'reminder'
@@ -4575,6 +4577,7 @@ const HarnessIcons: KVO<ElementType> = {
   'reg-ex': RegEx,
   'register-catalog': RegisterCatalog,
   registry: Registry,
+  'release-calendar': ReleaseCalendar,
   'release-notes': ReleaseNotes,
   'release-orchestration': ReleaseOrchestration,
   reminder: Reminder,
