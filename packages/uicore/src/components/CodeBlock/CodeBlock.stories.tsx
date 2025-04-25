@@ -11,6 +11,7 @@ import type { Meta, Story } from '@storybook/react'
 import { CodeBlock } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { CodeBlockProps } from '../CodeBlock/CodeBlock'
+import css from './CodeBlockStories.css'
 
 export default {
   title: 'Components / CodeBlock',
@@ -47,9 +48,9 @@ export default {
 
 export const Basic: Story<CodeBlockProps> = args => {
   return (
-    <>
+    <div className={css.codeBlockStory}>
       <CodeBlock allowCopy format="pre" snippet="kubectl apply -f harness-delegate.yaml" {...args} />
-    </>
+    </div>
   )
 }
 
@@ -90,8 +91,8 @@ export default {
   `
 
   return (
-    <>
+    <div className={css.codeBlockStory}>
       <CodeBlock allowCopy format="pre" snippet={snippet} {...args} />
-    </>
+    </div>
   )
 }
