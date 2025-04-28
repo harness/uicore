@@ -39,6 +39,7 @@ export function RadioButton({
     <label
       className={styledClasses(
         props,
+        css.radioLabel,
         asPill ? css.asPill : css.radio,
         asPill && checked ? css.pillChecked : '',
         className
