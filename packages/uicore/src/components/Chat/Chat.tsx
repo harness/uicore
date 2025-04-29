@@ -75,6 +75,7 @@ export interface CommonRendererProps {
 export interface ChatProps {
   handleNewMessage: (message: TextMessage, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
   initialMessages?: Message[]
+  messages?: Message[] // Added messages prop to support external control
   showLoader?: boolean
   loader?: React.ReactElement
   systemMessageClassName?: string
@@ -124,9 +125,45 @@ const generateUniqueId = (): string => {
   return `${Date.now()}-${Math.floor(Math.random() * 1e9)}`
 }
 
+function useChatMessages(initialMessages: Message[] = [], externalMessages?: Message[]) {
+  const [internalMessages, setInternalMessages] = useState<Message[]>(initialMessages)
+
+  const isControlled = externalMessages !== undefined
+
+  const displayMessages = isControlled ? externalMessages : internalMessages
+
+  useEffect(() => {
+    if (!isControlled) {
+      setInternalMessages(initialMessages)
+    }
+  }, [initialMessages, isControlled])
+
+  const clearMessages = () => {
+    if (!isControlled) {
+      setInternalMessages([])
+    }
+  }
+
+  const addMessages = (newMessages: Message[]) => {
+    if (!isControlled) {
+      setInternalMessages(prevMessages => [...prevMessages, ...newMessages])
+    }
+  }
+
+  return {
+    messages: displayMessages || [],
+    isControlled,
+    internalMessages,
+    setInternalMessages,
+    clearMessages,
+    addMessages
+  }
+}
+
 export const Chat = forwardRef((props: ChatProps, ref) => {
   const {
     initialMessages = [],
+    messages: externalMessages,
     handleNewMessage,
     loader,
     messageRenderer,
@@ -135,20 +172,18 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     showLoader = false,
     hideInputArea = false
   } = props
+
+  // Use custom hook to manage messages
+  const { messages, isControlled, setInternalMessages, clearMessages, addMessages } = useChatMessages(
+    initialMessages,
+    externalMessages
+  )
+
   const [userInput, setUserInput] = useState<string>('')
-  const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [animatedMessages, setAnimatedMessages] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState<boolean>(false)
   const [abortController, setAbortController] = useState<AbortController | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
-
-  const clearMessages = () => {
-    setMessages([])
-  }
-
-  const addMessages = (newMessages: Message[]) => {
-    setMessages(prevMessages => [...prevMessages, ...newMessages])
-  }
 
   const scrollToEnd = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -254,6 +289,8 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   const handleSubmit = (text: string = userInput) => {
     if (!text.trim() || loading) return
 
+    if (isControlled) return
+
     const newMessage: Message = {
       id: generateUniqueId(),
       type: 'text',
@@ -261,8 +298,9 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       content: text.trim()
     }
 
+    // Add the user message to the chat
     const newMessages = [...messages, newMessage]
-    setMessages(newMessages)
+    setInternalMessages(newMessages)
     setAnimatedMessages(prev => new Set([...prev, newMessage.id]))
     setUserInput('')
     setLoading(true)
@@ -281,7 +319,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             } as Message)
         )
 
-        setMessages([...newMessages, ...messagesReceived])
+        setInternalMessages([...newMessages, ...messagesReceived])
         setAnimatedMessages(prev => new Set([...prev, ...messagesReceived.map(m => m.id)]))
       })
       .catch((errorMessage: Omit<Message, 'role' | 'id'>) => {
@@ -290,7 +328,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
           role: 'system',
           ...errorMessage
         } as Message
-        setMessages([...newMessages, message])
+        setInternalMessages([...newMessages, message])
         setAnimatedMessages(prev => new Set([...prev, message.id]))
       })
       .finally(() => {
