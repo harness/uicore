@@ -86,9 +86,10 @@ export interface LinkProps extends ButtonProps {
 }
 
 export function Button(props: ButtonProps): React.ReactElement {
-  const { icon, rightIcon, round, variation, size } = props
-  const [loading, setLoading] = useState(props.loading === true)
+  const { icon, rightIcon, round, variation, size, loading: propLoading = false } = props
+  const [internalLoading, setInternalLoading] = useState(propLoading)
   const isMounted = useIsMounted()
+  const loading = internalLoading || propLoading
 
   const onClick = async (event: MouseEvent) => {
     // TODO (tan): Improve loading state when props.onClick() is resolved way too fast
@@ -99,13 +100,13 @@ export function Button(props: ButtonProps): React.ReactElement {
     }
 
     if (props.onClick) {
-      setLoading(true)
+      setInternalLoading(true)
 
       try {
         await props.onClick(event)
       } finally {
         if (isMounted.current) {
-          setLoading(false)
+          setInternalLoading(false)
         }
       }
     }

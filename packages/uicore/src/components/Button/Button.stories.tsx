@@ -6,10 +6,11 @@
  */
 
 /* eslint-disable no-alert */
-import React from 'react'
+import React, { useState } from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, Description, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { Container, ButtonVariation, ButtonSize, Layout, Button, ButtonProps, Text } from '../..'
+import { noop } from 'lodash-es'
 
 export default {
   title: 'Components / Button',
@@ -469,6 +470,36 @@ export const LoadingTransition: Story<ButtonProps> = args => {
             text="Submit (rejected after 3s)"
             {...args}
             onClick={async () => new Promise((_, reject) => setTimeout(reject, 3000))}
+          />
+        </Layout.Horizontal>
+      </Layout.Vertical>
+    </>
+  )
+}
+export const ParentLoadingTransition: Story<ButtonProps> = args => {
+  const [loading, setLoading] = useState(false)
+
+  return (
+    <>
+      <Layout.Vertical flex spacing="medium">
+        <Text>Buttons accept loading prop. When loading is true, loading state is triggered automatically.</Text>
+        <Layout.Horizontal spacing="medium">
+          <Button
+            intent="primary"
+            text="Start Loading"
+            {...args}
+            onClick={() => {
+              setLoading(true)
+            }}
+          />
+          <Button intent="primary" text="Submit" loading={loading} {...args} onClick={noop} />
+          <Button
+            intent="primary"
+            text="Stop Loading"
+            {...args}
+            onClick={() => {
+              setLoading(false)
+            }}
           />
         </Layout.Horizontal>
       </Layout.Vertical>
