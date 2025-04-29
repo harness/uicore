@@ -25,13 +25,18 @@ interface SuggestionType {
 type Suggestion = SuggestionType
 
 type MessageRole = 'system' | 'user'
-interface MessageBase {
+
+export interface MessageBase {
   id: string
   role: MessageRole
+  type: string
   showHelpfulButton?: boolean
   additionalData?: Record<string, unknown>
+  // Allow for generic content property that all message types will have
+  content?: unknown
 }
 
+// Built-in message types for backward compatibility
 export interface TextMessage extends MessageBase {
   type: 'text'
   content: string
@@ -64,7 +69,17 @@ export interface PreviewMessage extends MessageBase {
   content: string
 }
 
-export type Message = TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage | PreviewMessage
+// Union type for built-in message types
+export type BuiltInMessage =
+  | TextMessage
+  | YamlMessage
+  | SuggestionsMessage
+  | CardMessage
+  | ErrorMessage
+  | PreviewMessage
+
+// Generic message type to allow for custom message types
+export type Message = BuiltInMessage | (MessageBase & Record<string, unknown>)
 
 // Common props for all renderers
 export interface CommonRendererProps {
@@ -73,13 +88,15 @@ export interface CommonRendererProps {
 }
 
 export interface ChatProps {
-  handleNewMessage: (message: TextMessage, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
+  onUserMessageAsync?: (message: TextMessage, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
+  onUserMessage?: (message: TextMessage) => void
   initialMessages?: Message[]
-  messages?: Message[] // Added messages prop to support external control
+  messages?: Message[]
   showLoader?: boolean
   loader?: React.ReactElement
   systemMessageClassName?: string
   userMessageClassName?: string
+  messageRenderers?: Record<string, MessageRenderer>
   messageRenderer?: Partial<{
     yaml: React.FC<{ message: YamlMessage } & CommonRendererProps>
     text: React.FC<{ message: TextMessage } & CommonRendererProps>
@@ -120,6 +137,17 @@ export interface ChatRef {
   addMessages: (messages: Message[]) => void
   scrollToEnd: () => void
 }
+
+// Type for message renderers
+export type MessageRenderer = (
+  message: Message,
+  options: {
+    role: MessageRole
+    handleHelpfulClick?: (messageId: string, isHelpful: boolean) => void
+    addTextToInput?: (text: string) => void
+    sendMessage?: (text: string) => void
+  }
+) => React.ReactNode
 
 const generateUniqueId = (): string => {
   return `${Date.now()}-${Math.floor(Math.random() * 1e9)}`
@@ -164,9 +192,9 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   const {
     initialMessages = [],
     messages: externalMessages,
-    handleNewMessage,
     loader,
     messageRenderer,
+    messageRenderers = {}, // Default to empty object
     inputProps,
     submitButtonProps,
     showLoader = false,
@@ -207,17 +235,38 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   }, [messages])
 
   const renderMessage = (message: Message) => {
-    switch (message.type) {
-      case 'text':
+    const messageType = message.type
+
+    // First check if there's a renderer in the new messageRenderers prop
+    if (messageRenderers && messageRenderers[messageType]) {
+      return messageRenderers[messageType](message, {
+        role: message.role,
+        handleHelpfulClick: props.handleHelpfulClick,
+        addTextToInput: text => setUserInput(text),
+        sendMessage: text => {
+          setUserInput(text)
+          handleSubmit(text)
+        }
+      })
+    }
+
+    // For backward compatibility, check the legacy messageRenderer prop
+    switch (messageType) {
+      case 'text': {
+        const textMessage = message as TextMessage
         if (messageRenderer?.text) {
           return (
-            <messageRenderer.text message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+            <messageRenderer.text
+              message={textMessage}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
           )
         }
         return (
           <TextMessage
-            content={message.content}
-            isMarkdown={message.isMarkdown}
+            content={typeof textMessage.content === 'string' ? textMessage.content : ''}
+            isMarkdown={textMessage.isMarkdown}
             color={message.role === 'user' ? Color.WHITE : Color.GREY_600}
             role={message.role}
             messageId={message.id}
@@ -225,11 +274,13 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             showHelpfulButton={message.showHelpfulButton}
           />
         )
+      }
       case 'preview': {
+        const previewMessage = message as PreviewMessage
         if (messageRenderer?.preview) {
           return (
             <messageRenderer.preview
-              message={message}
+              message={previewMessage}
               role={message.role}
               handleHelpfulClick={props.handleHelpfulClick}
             />
@@ -237,18 +288,25 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         }
         return null
       }
-      case 'yaml':
+      case 'yaml': {
+        const yamlMessage = message as YamlMessage
         if (messageRenderer?.yaml) {
           return (
-            <messageRenderer.yaml message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+            <messageRenderer.yaml
+              message={yamlMessage}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
           )
         }
-        return <YamlMessage content={message.content} />
-      case 'suggestions':
+        return <YamlMessage content={typeof yamlMessage.content === 'string' ? yamlMessage.content : ''} />
+      }
+      case 'suggestions': {
+        const suggestionsMessage = message as SuggestionsMessage
         if (messageRenderer?.suggestions) {
           return (
             <messageRenderer.suggestions
-              message={message}
+              message={suggestionsMessage}
               role={message.role}
               addTextToInput={text => setUserInput(text)}
               sendMessage={text => {
@@ -261,26 +319,40 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
           )
         }
         return (
-          <SuggestionsMessage content={message.content} handleClick={suggestion => setUserInput(suggestion.text)} />
+          <SuggestionsMessage
+            content={Array.isArray(suggestionsMessage.content) ? suggestionsMessage.content : []}
+            handleClick={suggestion => setUserInput(suggestion.text)}
+          />
         )
-      case 'card':
+      }
+      case 'card': {
+        const cardMessage = message as CardMessage
         if (messageRenderer?.card) {
           return (
-            <messageRenderer.card message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
-          )
-        }
-        return <Card content={message.content} />
-      case 'error':
-        if (messageRenderer?.error) {
-          return (
-            <messageRenderer.error
-              message={message}
+            <messageRenderer.card
+              message={cardMessage}
               role={message.role}
               handleHelpfulClick={props.handleHelpfulClick}
             />
           )
         }
-        return <Error content={message.content} />
+        // We need to handle the CardContent type safely
+        const cardContent = cardMessage.content as unknown
+        return <Card content={cardContent as CardContent} />
+      }
+      case 'error': {
+        const errorMessage = message as ErrorMessage
+        if (messageRenderer?.error) {
+          return (
+            <messageRenderer.error
+              message={errorMessage}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
+          )
+        }
+        return <Error content={typeof errorMessage.content === 'string' ? errorMessage.content : ''} />
+      }
       default:
         return null
     }
@@ -289,27 +361,43 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   const handleSubmit = (text: string = userInput) => {
     if (!text.trim() || loading) return
 
-    if (isControlled) return
-
-    const newMessage: Message = {
+    const newMessage: TextMessage = {
       id: generateUniqueId(),
       type: 'text',
       role: 'user',
       content: text.trim()
     }
 
-    // Add the user message to the chat
+    // If the component is controlled by parent, just call onUserMessage and let parent handle it
+    if (isControlled) {
+      if (props.onUserMessage) {
+        props.onUserMessage(newMessage)
+      }
+      setUserInput('')
+      return
+    }
+
+    // For uncontrolled mode, handle the message internally
     const newMessages = [...messages, newMessage]
     setInternalMessages(newMessages)
     setAnimatedMessages(prev => new Set([...prev, newMessage.id]))
     setUserInput('')
     setLoading(true)
 
+    // If onUserMessageAsync is not provided, we can't process the message further
+    if (!props.onUserMessageAsync) {
+      setLoading(false)
+      return
+    }
+
+    // Create abort controller for the API request
     const controller = new AbortController()
     setAbortController(controller)
 
-    handleNewMessage(newMessage, controller.signal)
+    // Send the message to the API and handle the response
+    props.onUserMessageAsync(newMessage, controller.signal)
       .then((response: Array<Omit<Message, 'role' | 'id'>>) => {
+        // Create system messages from the response
         const messagesReceived = response.map(
           msg =>
             ({
@@ -319,10 +407,12 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             } as Message)
         )
 
+        // Add the system messages to the chat
         setInternalMessages([...newMessages, ...messagesReceived])
         setAnimatedMessages(prev => new Set([...prev, ...messagesReceived.map(m => m.id)]))
       })
       .catch((errorMessage: Omit<Message, 'role' | 'id'>) => {
+        // Handle error response
         const message = {
           id: generateUniqueId(),
           role: 'system',
