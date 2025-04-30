@@ -212,6 +212,25 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   const [loading, setLoading] = useState<boolean>(false)
   const [abortController, setAbortController] = useState<AbortController | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const previousMessagesLengthRef = useRef<number>(messages.length)
+  
+  // Track external messages to animate new ones
+  useEffect(() => {
+    if (isControlled && messages.length > previousMessagesLengthRef.current) {
+      // Get the new messages that were added
+      const newMessages = messages.slice(previousMessagesLengthRef.current)
+      
+      // Add their IDs to the animated messages set
+      setAnimatedMessages(prev => {
+        const newSet = new Set(prev)
+        newMessages.forEach(msg => newSet.add(msg.id))
+        return newSet
+      })
+    }
+    
+    // Update the reference for next comparison
+    previousMessagesLengthRef.current = messages.length
+  }, [messages, isControlled])
 
   const scrollToEnd = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
