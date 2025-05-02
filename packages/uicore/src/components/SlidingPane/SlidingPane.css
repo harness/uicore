@@ -1,0 +1,142 @@
+/*
+ * Copyright 2025 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+/* Backdrop overlay */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Sliding pane */
+.paneContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: var(--white) !important;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  z-index: 1000;
+  transform: translateX(100%);
+  width: 400px; /* Fixed width */
+}
+
+.paneContent {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.paneMinimized {
+  transform: translateX(100%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-medium);
+  border-bottom: 1px solid var(--grey-200);
+  min-height: 50px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-small);
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--grey-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--grey-100);
+    color: var(--grey-700);
+  }
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.minimizedContainer {
+  position: fixed;
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.defaultMinimized {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-7);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Positioning for minimized view */
+.minimizedRight {
+  right: var(--spacing-medium);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.minimizedLeft {
+  left: var(--spacing-medium);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.minimizedTop {
+  top: var(--spacing-medium);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.minimizedBottom {
+  bottom: var(--spacing-medium);
+  left: 50%;
+  transform: translateX(-50%);
+}
