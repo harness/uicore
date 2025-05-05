@@ -70,6 +70,7 @@ export interface FilterSelectDropDownProps
   sections?: Section
   isHorizontalLayout?: boolean
   columnSplitIndex?: number
+  listItemRenderer?: (item: SelectOption, itemProps: IItemRendererProps) => JSX.Element | null
 }
 
 /**
@@ -101,6 +102,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     initialDropDownOpen = false,
     isLoading,
     sections,
+    listItemRenderer,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -366,7 +368,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
       items={dropDownItems}
       itemListRenderer={renderMenu}
       renderer={renderer}
-      itemRenderer={itemRenderer}
+      itemRenderer={listItemRenderer ? listItemRenderer : itemRenderer}
       onItemSelect={handleItemSelect}
       {...rest}
     />
