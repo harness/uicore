@@ -6,6 +6,7 @@
  */
 
 import React, { useState, useEffect, useCallback, ReactNode } from 'react'
+import ReactDOM from 'react-dom'
 import cx from 'classnames'
 import { Icon } from '@harness/icons'
 import { Color, FontVariation } from '@harness/design-system'
@@ -35,6 +36,14 @@ export interface SlidingPaneProps {
   showMinimizeButton?: boolean
   headerContent?: ReactNode
   zIndex?: number
+  usePortal?: boolean
+  /**
+   * Custom DOM node to render the portal into
+   * Only used when usePortal is true
+   * Defaults to document.body
+   */
+  portalContainer?: HTMLElement
+  hideOverlay?: boolean
 }
 
 export const SlidingPane: React.FC<SlidingPaneProps> = ({
@@ -54,7 +63,10 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
   showCloseButton = true,
   showMinimizeButton = true,
   headerContent,
-  zIndex = 1000
+  zIndex = 1000,
+  usePortal = false,
+  portalContainer,
+  hideOverlay = false
 }) => {
   const [internalState, setInternalState] = useState<SlidingPaneState>(externalState || 'closed')
   const currentState = externalState !== undefined ? externalState : internalState
@@ -118,7 +130,7 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
   }
 
   const renderBackdrop = (): React.ReactNode => {
-    if (currentState === 'closed') return null
+    if (currentState === 'closed' || hideOverlay) return null
 
     const isVisible = currentState === 'open'
 
@@ -172,13 +184,22 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
     )
   }
 
-  return (
+  const renderContent = () => (
     <>
       {renderBackdrop()}
       {renderPane()}
       {renderMinimizedView()}
     </>
   )
+
+  // If usePortal is true, render the content in a portal
+  if (usePortal) {
+    const container = portalContainer || document.body
+    return ReactDOM.createPortal(renderContent(), container)
+  }
+
+  // Otherwise render normally
+  return renderContent()
 }
 
 export default SlidingPane
