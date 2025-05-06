@@ -142,9 +142,7 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
   const renderPane = () => {
     // Always render the pane, but control its visibility with CSS
     const isOpen = currentState === 'open'
-    const isVisible = currentState !== 'closed'
-
-    if (!isVisible) return null
+    const isClosed = currentState === 'closed'
 
     return (
       <Container
@@ -155,30 +153,35 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
           width
         }}>
         <div className={cx(css.paneContent, { [css.visible]: isOpen })}>
-          <div className={cx(css.header, headerClassName)}>
-            {headerContent || (
-              <>
-                {title && (
-                  <Text color={Color.GREEN_900} font={{ variation: FontVariation.CARD_TITLE }}>
-                    {title}
-                  </Text>
+          {/* Only render internal content when not closed to improve performance */}
+          {!isClosed ? (
+            <>
+              <div className={cx(css.header, headerClassName)}>
+                {headerContent || (
+                  <>
+                    {title && (
+                      <Text color={Color.GREEN_900} font={{ variation: FontVariation.CARD_TITLE }}>
+                        {title}
+                      </Text>
+                    )}
+                    <div className={css.actions}>
+                      {showMinimizeButton && (
+                        <button className={css.actionButton} onClick={handleMinimize}>
+                          <Icon name="minimize" size={16} />
+                        </button>
+                      )}
+                      {showCloseButton && (
+                        <button className={css.actionButton} onClick={handleClose}>
+                          <Icon name="cross" size={16} />
+                        </button>
+                      )}
+                    </div>
+                  </>
                 )}
-                <div className={css.actions}>
-                  {showMinimizeButton && (
-                    <button className={css.actionButton} onClick={handleMinimize}>
-                      <Icon name="minimize" size={16} />
-                    </button>
-                  )}
-                  {showCloseButton && (
-                    <button className={css.actionButton} onClick={handleClose}>
-                      <Icon name="cross" size={16} />
-                    </button>
-                  )}
-                </div>
-              </>
-            )}
-          </div>
-          <div className={cx(css.content, contentClassName)}>{children}</div>
+              </div>
+              <div className={cx(css.content, contentClassName)}>{children}</div>
+            </>
+          ) : null}
         </div>
       </Container>
     )
