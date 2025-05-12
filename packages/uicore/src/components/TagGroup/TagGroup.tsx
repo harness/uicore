@@ -19,7 +19,7 @@ export interface TagItem {
 
 type TagItemOrString = TagItem | string
 
-interface TagGroupProps {
+export interface TagGroupProps {
   tags: TagItemOrString[]
   className?: string
   tagProps?: ITagProps

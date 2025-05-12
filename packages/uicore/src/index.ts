@@ -274,6 +274,8 @@ export {
 } from './components/Filters/components/FilterSingleSelectDropDown/FiltersSelectDropDown'
 export { getIdentifierFromName } from './components/InputWithIdentifier/InputWithIdentifier'
 export { FilterTextInput, FilterTextInputProps } from './components/Filters/components/FilterTextInput/FilterTextInput'
+export { NewLineText } from './components/NewLineText/NewLineText'
+export { TagGroup, TagGroupProps } from './components/TagGroup/TagGroup'
 export * from './hooks/useStreamingRequest'
 export * from './components/Chat/message-renderers/HelpfulButton'
 export * from './components/Chat/Chat'
