@@ -280,6 +280,7 @@ import ChainedPipelineHover from './chained-pipeline-hover.svg'
 import ChainedPipeline from './chained-pipeline.svg'
 import ChangeLog from './change-log.svg'
 import Changes from './changes.svg'
+import ChangesetDetails from './changeset-details.svg'
 import ChaosApm from './chaos-apm.svg'
 import ChaosAwsAlbAzDown from './chaos-aws-alb-az-down.svg'
 import ChaosAwsClbAzDown from './chaos-aws-clb-az-down.svg'
@@ -1954,6 +1955,7 @@ type HarnessIconName =
   | 'chained-pipeline'
   | 'change-log'
   | 'changes'
+  | 'changeset-details'
   | 'chaos-apm'
   | 'chaos-aws-alb-az-down'
   | 'chaos-aws-clb-az-down'
@@ -3628,6 +3630,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chained-pipeline': ChainedPipeline,
   'change-log': ChangeLog,
   changes: Changes,
+  'changeset-details': ChangesetDetails,
   'chaos-apm': ChaosApm,
   'chaos-aws-alb-az-down': ChaosAwsAlbAzDown,
   'chaos-aws-clb-az-down': ChaosAwsClbAzDown,
