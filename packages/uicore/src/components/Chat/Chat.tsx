@@ -25,11 +25,13 @@ interface SuggestionType {
 type Suggestion = SuggestionType
 
 type MessageRole = 'system' | 'user'
-interface MessageBase {
+export interface MessageBase<T = Record<string, any>, P = any> {
+  content: P
+  type: string
   id: string
   role: MessageRole
   showHelpfulButton?: boolean
-  additionalData?: Record<string, unknown>
+  additionalData?: T
 }
 
 export interface TextMessage extends MessageBase {
@@ -64,7 +66,9 @@ export interface PreviewMessage extends MessageBase {
   content: string
 }
 
-export type Message = TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage | PreviewMessage
+export type Message =
+  | (TextMessage | YamlMessage | SuggestionsMessage | CardMessage | ErrorMessage | PreviewMessage)
+  | MessageBase
 
 // Common props for all renderers
 export interface CommonRendererProps {
@@ -79,6 +83,9 @@ export interface ChatProps {
   loader?: React.ReactElement
   systemMessageClassName?: string
   userMessageClassName?: string
+  /**
+   * @deprecated Use messageRenderers
+   */
   messageRenderer?: Partial<{
     yaml: React.FC<{ message: YamlMessage } & CommonRendererProps>
     text: React.FC<{ message: TextMessage } & CommonRendererProps>
@@ -92,6 +99,9 @@ export interface ChatProps {
     card: React.FC<{ message: CardMessage } & CommonRendererProps>
     error: React.FC<{ message: ErrorMessage } & CommonRendererProps>
     preview: React.FC<{ message: PreviewMessage } & CommonRendererProps>
+  }>
+  messageRenderers?: Partial<{
+    [key: string]: React.FC<{ message: MessageBase } & CommonRendererProps>
   }>
   inputProps?: InputProps
   submitButtonProps?: SubmitButtonProps
@@ -130,6 +140,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     handleNewMessage,
     loader,
     messageRenderer,
+    messageRenderers,
     inputProps,
     submitButtonProps,
     showLoader = false,
@@ -176,13 +187,17 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       case 'text':
         if (messageRenderer?.text) {
           return (
-            <messageRenderer.text message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+            <messageRenderer.text
+              message={message as TextMessage}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
           )
         }
         return (
           <TextMessage
             content={message.content}
-            isMarkdown={message.isMarkdown}
+            isMarkdown={(message as TextMessage).isMarkdown}
             color={message.role === 'user' ? Color.WHITE : Color.GREY_600}
             role={message.role}
             messageId={message.id}
@@ -194,7 +209,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         if (messageRenderer?.preview) {
           return (
             <messageRenderer.preview
-              message={message}
+              message={message as PreviewMessage}
               role={message.role}
               handleHelpfulClick={props.handleHelpfulClick}
             />
@@ -205,7 +220,11 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       case 'yaml':
         if (messageRenderer?.yaml) {
           return (
-            <messageRenderer.yaml message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+            <messageRenderer.yaml
+              message={message as YamlMessage}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
           )
         }
         return <YamlMessage content={message.content} />
@@ -213,7 +232,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         if (messageRenderer?.suggestions) {
           return (
             <messageRenderer.suggestions
-              message={message}
+              message={message as SuggestionsMessage}
               role={message.role}
               addTextToInput={text => setUserInput(text)}
               sendMessage={text => {
@@ -231,7 +250,11 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       case 'card':
         if (messageRenderer?.card) {
           return (
-            <messageRenderer.card message={message} role={message.role} handleHelpfulClick={props.handleHelpfulClick} />
+            <messageRenderer.card
+              message={message as CardMessage}
+              role={message.role}
+              handleHelpfulClick={props.handleHelpfulClick}
+            />
           )
         }
         return <Card content={message.content} />
@@ -239,7 +262,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         if (messageRenderer?.error) {
           return (
             <messageRenderer.error
-              message={message}
+              message={message as ErrorMessage}
               role={message.role}
               handleHelpfulClick={props.handleHelpfulClick}
             />
@@ -247,6 +270,18 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
         }
         return <Error content={message.content} />
       default:
+        {
+          const defaultMessage = message as MessageBase
+          if (messageRenderers?.[defaultMessage.type]) {
+            const Renderer = messageRenderers[defaultMessage.type] as React.ComponentType<
+              { message: MessageBase } & CommonRendererProps
+            >
+            return (
+              <Renderer message={message} role={defaultMessage.role} handleHelpfulClick={props.handleHelpfulClick} />
+            )
+          }
+        }
+
         return null
     }
   }
@@ -270,7 +305,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     const controller = new AbortController()
     setAbortController(controller)
 
-    handleNewMessage(newMessage, controller.signal)
+    handleNewMessage(newMessage as TextMessage, controller.signal)
       .then((response: Array<Omit<Message, 'role' | 'id'>>) => {
         const messagesReceived = response.map(
           msg =>
