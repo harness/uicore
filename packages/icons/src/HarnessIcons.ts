@@ -185,6 +185,7 @@ import BrakemanInverse from './brakeman-inverse.svg'
 import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
 import BuildStage from './build-stage.svg'
+import Buildkite from './buildkite.svg'
 import BurpSuiteInverse from './burp-suite-inverse.svg'
 import BurpSuite from './burp-suite.svg'
 import CalendarPage from './calendar-page.svg'
@@ -1860,6 +1861,7 @@ type HarnessIconName =
   | 'brakeman'
   | 'budget-alert-light'
   | 'build-stage'
+  | 'buildkite'
   | 'burp-suite-inverse'
   | 'burp-suite'
   | 'calendar-page'
@@ -3535,6 +3537,7 @@ const HarnessIcons: KVO<ElementType> = {
   brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
   'build-stage': BuildStage,
+  buildkite: Buildkite,
   'burp-suite-inverse': BurpSuiteInverse,
   'burp-suite': BurpSuite,
   'calendar-page': CalendarPage,
