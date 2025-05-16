@@ -1136,6 +1136,8 @@ import Network from './network.svg'
 import NewArtifact from './new-artifact.svg'
 import NewDecoration from './new-decoration.svg'
 import NewNotification from './new-notification.svg'
+import NexusiqInverse from './nexusiq-inverse.svg'
+import Nexusiq from './nexusiq.svg'
 import NgFilter from './ng-filter.svg'
 import NiktoInverse from './nikto-inverse.svg'
 import Nikto from './nikto.svg'
@@ -2812,6 +2814,8 @@ type HarnessIconName =
   | 'new-artifact'
   | 'new-decoration'
   | 'new-notification'
+  | 'nexusiq-inverse'
+  | 'nexusiq'
   | 'ng-filter'
   | 'nikto-inverse'
   | 'nikto'
@@ -4488,6 +4492,8 @@ const HarnessIcons: KVO<ElementType> = {
   'new-artifact': NewArtifact,
   'new-decoration': NewDecoration,
   'new-notification': NewNotification,
+  'nexusiq-inverse': NexusiqInverse,
+  nexusiq: Nexusiq,
   'ng-filter': NgFilter,
   'nikto-inverse': NiktoInverse,
   nikto: Nikto,
