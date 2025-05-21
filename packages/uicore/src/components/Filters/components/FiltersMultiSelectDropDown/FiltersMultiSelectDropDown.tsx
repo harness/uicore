@@ -198,7 +198,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
         }}
         className={cx(css.main, { [css.disabled]: !!disabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
-        isOpen={isOpen}>
+        isOpen={disabled ? false : isOpen}>
         <Utils.WrapOptionalTooltip tooltip={props.tooltip} tooltipProps={props.tooltipProps}>
           <Layout.Horizontal
             data-testid={buttonTestId}

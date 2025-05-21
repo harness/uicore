@@ -9,19 +9,13 @@
 
 .main {
   &.disabled {
-    pointer-events: none;
     .dropdownButton {
       &.withBorder {
-        background-color: var(--grey-100);
-      }
-      .labelWrapper {
-        .label {
-          color: var(--grey-400) !important;
-        }
+        background-color: var(--grey-200);
       }
     }
     .counter {
-      background-color: var(--grey-400) !important;
+      background-color: var(--grey-200) !important;
     }
   }
   .dropdownButton {
