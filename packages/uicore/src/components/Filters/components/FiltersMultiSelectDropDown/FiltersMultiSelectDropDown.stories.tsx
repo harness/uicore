@@ -80,6 +80,33 @@ export const Basic: Story<FilterMultiSelectDropDownProps> = args => {
   )
 }
 
+export const WithTooltip: Story<FilterMultiSelectDropDownProps> = args => {
+  const { items = localItems } = args
+
+  const argsCopy = omit(args, ['items', 'onChange', 'value'])
+
+  const [value, setValue] = React.useState<MultiSelectOption[]>(localItems.slice(0, 3))
+
+  return (
+    <Layout.Horizontal flex>
+      <FiltersMultiSelectDropDown
+        items={items}
+        value={value}
+        placeholder={'Pokemon'}
+        allowSearch
+        onChange={items => {
+          setValue(items)
+        }}
+        tooltip="Tooltip"
+        tooltipProps={{
+          position: 'right'
+        }}
+        {...argsCopy}
+      />
+    </Layout.Horizontal>
+  )
+}
+
 export const Custom: Story<FilterMultiSelectDropDownProps> = args => {
   const { items = localItems } = args
   const argsCopy = omit(args, ['items', 'onChange', 'value', 'listItemRenderer'])

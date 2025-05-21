@@ -152,8 +152,12 @@
             font-weight: 400;
             font-size: 12px;
             transition: background-color 0.2s ease;
-            &:hover {
+            &:not(.noResults):hover {
               background: var(--grey-100);
+            }
+            &.noResults {
+              color: var(--grey-400);
+              cursor: default;
             }
             :global {
               .bp3-control-indicator {

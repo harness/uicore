@@ -19,8 +19,9 @@ import css from './FiltersMultiSelectDropDown.css'
 import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
 import cx from 'classnames'
 import { Layout } from '../../../../layouts/Layout'
+import { Utils } from '../../../../core/Utils'
 import { Icon, IconName, IconProps } from '@harness/icons'
-import { Color, FontVariation } from '@harness/design-system'
+import { Color, FontVariation, PopoverProps } from '@harness/design-system'
 import { Text } from '../../../Text/Text'
 import { StyledProps } from '@harness/design-system'
 import { Checkbox } from '../../../Checkbox/Checkbox'
@@ -34,7 +35,7 @@ import { Container } from '../../../Container/Container'
 type Props = IQueryListProps<MultiSelectOption>
 
 export function NoMatch(): React.ReactElement {
-  return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
+  return <li className={cx(css.menuItem, css.noResults)}>No matching results found</li>
 }
 
 export interface FilterMultiSelectDropDownProps
@@ -59,6 +60,8 @@ export interface FilterMultiSelectDropDownProps
   showDropDownIcon?: boolean
   initialDropDownOpen?: boolean
   isLoading?: boolean
+  tooltip?: string
+  tooltipProps?: PopoverProps
   listItemRenderer?: (item: MultiSelectOption, itemProps: IItemRendererProps) => JSX.Element | null
 }
 
@@ -196,62 +199,64 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
         className={cx(css.main, { [css.disabled]: !!disabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
         isOpen={isOpen}>
-        <Layout.Horizontal
-          data-testid={buttonTestId}
-          style={width ? { width } : undefined}
-          className={cx(
-            css.dropdownButton,
-            { [css.withBorder]: !isLabel },
-            { [css.selected]: selectedItems.length > 0 },
-            { [css.minWidth]: !width }
-          )}
-          onClick={() => setIsOpen(true)}
-          flex>
-          <Layout.Horizontal className={css.labelWrapper} flex>
-            {icon && <Icon name={icon} size={13} color={Color.GREY_600} {...iconProps} />}
-            <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
-              {placeholder}
-            </Text>
-            {!hideItemCount && selectedItems.length > 0 && (
-              <>
-                <div className={css.verticalDivider}></div>
-                <Popover
-                  position="top"
-                  usePortal={true}
-                  interactionKind={PopoverInteractionKind.HOVER}
-                  className={Classes.DARK}
-                  content={
-                    selectedItems.length > 0 ? (
-                      <Container className={css.selectedItemsPopover}>
-                        <Text color={Color.GREY_100} padding={'small'} font={{ variation: FontVariation.SMALL }}>
-                          {selectedItems.map(item => item.label).join(', ')}
-                        </Text>
-                      </Container>
-                    ) : (
-                      <Text>No items selected</Text>
-                    )
-                  }>
-                  <Text className={css.counter} lineClamp={1}>
-                    {selectedItems.length <= 9 ? '0' : ''}
-                    {selectedItems.length} selected
-                  </Text>
-                </Popover>
-              </>
+        <Utils.WrapOptionalTooltip tooltip={props.tooltip} tooltipProps={props.tooltipProps}>
+          <Layout.Horizontal
+            data-testid={buttonTestId}
+            style={width ? { width } : undefined}
+            className={cx(
+              css.dropdownButton,
+              { [css.withBorder]: !isLabel },
+              { [css.selected]: selectedItems.length > 0 },
+              { [css.minWidth]: !width }
             )}
+            onClick={() => setIsOpen(true)}
+            flex>
+            <Layout.Horizontal className={css.labelWrapper} flex>
+              {icon && <Icon name={icon} size={13} color={Color.GREY_600} {...iconProps} />}
+              <Text data-testid="dropdown-value" className={css.label} lineClamp={1}>
+                {placeholder}
+              </Text>
+              {!hideItemCount && selectedItems.length > 0 && (
+                <>
+                  <div className={css.verticalDivider}></div>
+                  <Popover
+                    position="top"
+                    usePortal={true}
+                    interactionKind={PopoverInteractionKind.HOVER}
+                    className={Classes.DARK}
+                    content={
+                      selectedItems.length > 0 ? (
+                        <Container className={css.selectedItemsPopover}>
+                          <Text color={Color.GREY_100} padding={'small'} font={{ variation: FontVariation.SMALL }}>
+                            {selectedItems.map(item => item.label).join(', ')}
+                          </Text>
+                        </Container>
+                      ) : (
+                        <Text>No items selected</Text>
+                      )
+                    }>
+                    <Text className={css.counter} lineClamp={1}>
+                      {selectedItems.length <= 9 ? '0' : ''}
+                      {selectedItems.length} selected
+                    </Text>
+                  </Popover>
+                </>
+              )}
+            </Layout.Horizontal>
+            <Icon
+              name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
+              size={showDropDownIcon ? 8 : 12}
+              className={css.crossIcon}
+              color={Color.GREY_400}
+              onClick={e => {
+                if (!showDropDownIcon) {
+                  e.stopPropagation()
+                  onRemove?.()
+                }
+              }}
+            />
           </Layout.Horizontal>
-          <Icon
-            name={showDropDownIcon ? 'main-chevron-down' : 'cross'}
-            size={showDropDownIcon ? 8 : 12}
-            className={css.crossIcon}
-            color={Color.GREY_400}
-            onClick={e => {
-              if (!showDropDownIcon) {
-                e.stopPropagation()
-                onRemove?.()
-              }
-            }}
-          />
-        </Layout.Horizontal>
+        </Utils.WrapOptionalTooltip>
         <React.Fragment>
           {allowSearch && (
             <ExpandingSearchInputWithRef
