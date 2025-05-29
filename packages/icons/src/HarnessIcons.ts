@@ -1233,6 +1233,7 @@ import RegisterCatalog from './register-catalog.svg'
 import Registry from './registry.svg'
 import ReleaseNotes from './release-notes.svg'
 import ReleaseOrchestration from './release-orchestration.svg'
+import ReleaseProcesses from './release-processes.svg'
 import Reminder from './reminder.svg'
 import RemoteSetup from './remote-setup.svg'
 import Remote from './remote.svg'
@@ -2915,6 +2916,7 @@ type HarnessIconName =
   | 'registry'
   | 'release-notes'
   | 'release-orchestration'
+  | 'release-processes'
   | 'reminder'
   | 'remote-setup'
   | 'remote'
@@ -4597,6 +4599,7 @@ const HarnessIcons: KVO<ElementType> = {
   registry: Registry,
   'release-notes': ReleaseNotes,
   'release-orchestration': ReleaseOrchestration,
+  'release-processes': ReleaseProcesses,
   reminder: Reminder,
   'remote-setup': RemoteSetup,
   remote: Remote,
