@@ -877,6 +877,8 @@ import IacmOpentofuStep from './iacm-opentofu-step.svg'
 import IacmResourceAdded from './iacm-resource-added.svg'
 import IacmResourceChanged from './iacm-resource-changed.svg'
 import IacmResourceDeleted from './iacm-resource-deleted.svg'
+import IacmResourceImported from './iacm-resource-imported.svg'
+import IacmResourceRemoved from './iacm-resource-removed.svg'
 import IacmResourceUnchanged from './iacm-resource-unchanged.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
 import IacmWithDarkText from './iacm-with-dark-text.svg'
@@ -2560,6 +2562,8 @@ type HarnessIconName =
   | 'iacm-resource-added'
   | 'iacm-resource-changed'
   | 'iacm-resource-deleted'
+  | 'iacm-resource-imported'
+  | 'iacm-resource-removed'
   | 'iacm-resource-unchanged'
   | 'iacm-terraform-step'
   | 'iacm-with-dark-text'
@@ -4243,6 +4247,8 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-resource-added': IacmResourceAdded,
   'iacm-resource-changed': IacmResourceChanged,
   'iacm-resource-deleted': IacmResourceDeleted,
+  'iacm-resource-imported': IacmResourceImported,
+  'iacm-resource-removed': IacmResourceRemoved,
   'iacm-resource-unchanged': IacmResourceUnchanged,
   'iacm-terraform-step': IacmTerraformStep,
   'iacm-with-dark-text': IacmWithDarkText,
