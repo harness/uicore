@@ -62,6 +62,7 @@ export interface FilterMultiSelectDropDownProps
   isLoading?: boolean
   tooltip?: string
   tooltipProps?: PopoverProps
+  footer?: React.ReactNode
   listItemRenderer?: (item: MultiSelectOption, itemProps: IItemRendererProps) => JSX.Element | null
 }
 
@@ -93,6 +94,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     initialDropDownOpen = false,
     isLoading = false,
     listItemRenderer,
+    footer,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -271,6 +273,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
                 className: css.menu
               })
             : null}
+          {footer}
           <Container className={css.clearSelection} onClick={handleClearSelection}>
             <Text font={{ variation: FontVariation.SMALL }} color={Color.GREY_600}>
               Clear Selection
