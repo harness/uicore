@@ -20,14 +20,16 @@ export interface ScrollShadowContainerProps extends HTMLAttributes<HTMLDivElemen
   bodyContentClassName?: string
 }
 
-function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
-  const {
-    tag = 'div',
-    children,
-    shadowTopClassName = css.shadowTop,
-    shadowBottomClassName = css.shadowBottom,
-    shadowTopAndBottomClassName = css.shadowTopAndBottom
-  } = props
+function ScrollShadowContainer({
+  tag = 'div',
+  children,
+  shadowTopClassName = css.shadowTop,
+  shadowBottomClassName = css.shadowBottom,
+  shadowTopAndBottomClassName = css.shadowTopAndBottom,
+  bodyClassName,
+  bodyContentClassName,
+  ...props
+}: ScrollShadowContainerProps): JSX.Element {
   const Tag = tag as React.ElementType
 
   const bodyRef = useRef<HTMLDivElement | null>(null)
@@ -93,9 +95,9 @@ function ScrollShadowContainer(props: ScrollShadowContainerProps): JSX.Element {
   return (
     <Tag
       {...omitStyledProps(props)}
-      className={cx(styledClasses(props, styledClass.font), bodyShadowClass, css.body, props.bodyClassName)}
+      className={cx(styledClasses(props, styledClass.font), bodyShadowClass, css.body, bodyClassName)}
       ref={bodyRefCallback}>
-      <div className={cx(css.bodyContent, props.bodyContentClassName)}>
+      <div className={cx(css.bodyContent, bodyContentClassName)}>
         <div ref={bodyTopEdgeRef} data-position="top" />
         {children}
         <div ref={bodyBottomEdgeRef} data-position="bottom" />
