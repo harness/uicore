@@ -113,7 +113,7 @@
     font-weight: 500;
   }
   :global {
-    .bp3-button {
+    .bp4-button {
       padding: 0px !important;
       height: 22px !important;
       box-shadow: none !important;

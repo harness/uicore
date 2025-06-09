@@ -18,7 +18,8 @@ describe('<ExpressionInputs /> tests', () => {
       const itemProps: IItemRendererProps = {
         query: '<+name',
         handleClick: jest.fn(),
-        modifiers: { active: true, disabled: true, matchesPredicate: true }
+        modifiers: { active: true, disabled: true, matchesPredicate: true },
+        ref: jest.fn()
       }
       const { container: container1 } = render(itemRenderer('app.name', itemProps) as React.ReactElement)
 

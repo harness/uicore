@@ -18,7 +18,7 @@
   font-size: var(--font-size-small);
   color: var(--grey-800);
 
-  > span[class*='bp3-control-indicator'] {
+  > span[class*='bp4-control-indicator'] {
     height: var(--radio-height) !important;
     width: var(--radio-height) !important;
 
@@ -37,28 +37,28 @@
   /* -----NOT DISABLED----- */
 
   /* disabled: F, checked: F */
-  input:not(:disabled):not(:checked) ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):not(:checked) ~ span[class*='bp4-control-indicator'] {
     --box-background: var(--white);
     --box-border: var(--grey-500);
     @mixin radio-styles;
   }
 
   /* disabled: F, checked: T */
-  input:not(:disabled):checked ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):checked ~ span[class*='bp4-control-indicator'] {
     --box-background: var(--primary-7);
     --box-border: var(--primary-8);
     @mixin radio-styles;
   }
 
   /* disabled: F, checked: F, active: T */
-  input:not(:disabled):not(:checked):active ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):not(:checked):active ~ span[class*='bp4-control-indicator'] {
     --box-background: var(--grey-100);
     --box-border: var(--grey-500);
     @mixin radio-styles;
   }
 
   /* disabled: F, checked: T, active: T */
-  input:not(:disabled):checked:active ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):checked:active ~ span[class*='bp4-control-indicator'] {
     --box-background: var(--grey-400);
     --box-border: var(--grey-400);
     @mixin radio-styles;
@@ -67,14 +67,14 @@
   /* -----DISABLED----- */
 
   /* disabled: T, checked: F */
-  input:disabled:not(:checked) ~ span[class*='bp3-control-indicator'] {
+  input:disabled:not(:checked) ~ span[class*='bp4-control-indicator'] {
     --box-background: var(--white);
     --box-border: var(--grey-300);
     @mixin radio-styles;
   }
 
   /* disabled: T, checked: T */
-  input:disabled:checked ~ span[class*='bp3-control-indicator'] {
+  input:disabled:checked ~ span[class*='bp4-control-indicator'] {
     --box-background: var(--grey-400);
     --box-border: var(--grey-400);
     @mixin radio-styles;

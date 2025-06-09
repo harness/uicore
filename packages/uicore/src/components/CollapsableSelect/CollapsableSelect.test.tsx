@@ -133,7 +133,7 @@ describe('Test render CollapsableSelect', () => {
       </Formik>
     )
     // View will not have card  and will be controlled by user
-    expect(container.querySelector('[class="bp3-card bp3-interactive bp3-elevation-0 card interactive"]')).toBeNull()
+    expect(container.querySelector('[class="bp4-card bp4-interactive bp4-elevation-0 card interactive"]')).toBeNull()
 
     expect(container).toMatchSnapshot()
   })

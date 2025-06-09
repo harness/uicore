@@ -217,7 +217,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
             return [...acc, ...getAllMenuItems(child.props.children)]
           }
           // If it's a menu item (not a divider)
-          if (!child.props.className?.includes('bp3-menu-divider')) {
+          if (!child.props.className?.includes('bp4-menu-divider')) {
             return [...acc, child]
           }
         }

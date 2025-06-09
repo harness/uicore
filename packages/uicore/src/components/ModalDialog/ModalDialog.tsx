@@ -15,7 +15,7 @@ import { ScrollShadowContainer } from '../ScrollShadowContainer/ScrollShadowCont
 
 import css from './ModalDialog.css'
 
-export interface ModalDialogProps extends IDialogProps {
+export interface ModalDialogProps extends Omit<IDialogProps, 'onClose'> {
   /**
    * Optional title of the modal. Can be a string or anything that React can render.
    * Content will be rendered within a `<h3>` tag with appropriate styling.
@@ -51,6 +51,10 @@ export interface ModalDialogProps extends IDialogProps {
    * Optional: when set to true an overlay is shown over the entire modal
    */
   showOverlay?: boolean
+  /**
+   * Optional: callback to invoke when the user requests to close the modal
+   */
+  onClose?: () => void
 }
 
 export const ModalDialog: FC<ModalDialogProps> = ({
@@ -126,7 +130,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
           icon="Stroke"
           intent="primary"
           variation={ButtonVariation.ICON}
-          onClick={() => onClose()}
+          onClick={() => onClose?.()}
           className={css.closeButton}
         />
       )}

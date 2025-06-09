@@ -29,19 +29,19 @@
     bottom: 46px;
   }
   :global {
-    .bp3-dialog-header {
+    .bp4-dialog-header {
       box-shadow: none;
       margin-top: 0 !important;
       padding: 0;
       margin-bottom: 32px !important;
       min-height: 32px !important;
-      .bp3-heading {
+      .bp4-heading {
         font-weight: 600 !important;
         font-style: normal;
         color: var(--grey-900);
       }
     }
-    .bp3-dialog-close-button {
+    .bp4-dialog-close-button {
       svg {
         fill: var(--grey-400) !important;
         height: 22px !important;

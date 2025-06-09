@@ -26,7 +26,7 @@ describe('OverlayLoader Test', () => {
         <DummyComponent />
       </OverlaySpinner>
     )
-    expect(queryByAttribute('class', document.body, 'bp3-spinner')).not.toBeNull()
+    expect(queryByAttribute('class', document.body, 'bp4-spinner')).not.toBeNull()
     expect(document.body).toMatchSnapshot()
   })
 })

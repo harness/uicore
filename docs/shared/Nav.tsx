@@ -16,7 +16,7 @@ function NavSection({ name, items }) {
   return (
     <li>
       <span className="name">{name}</span>
-      <ul className="bp3-list-unstyled">
+      <ul className="bp4-list-unstyled">
         {items
           .sort((a, b) => (a.label < b.label ? -1 : 1))
           .map(({ label, url, items }) => {
@@ -101,7 +101,7 @@ function NavSection({ name, items }) {
 }
 
 export default () => (
-  <ul className="bp3-list-unstyled">
+  <ul className="bp4-list-unstyled">
     {NavDataset.map(({ name, items }) => (
       <NavSection key={name} name={name} items={items} />
     ))}

@@ -80,9 +80,9 @@ export const Basic: Story<CardMenuProps> = args => {
     title = 'Jenkins Artifact',
     menuContent = (
       <BP.Menu>
-        <BP.Menu.Item icon="edit" text="Edit" />
-        <BP.Menu.Item icon="duplicate" text="Clone" />
-        <BP.Menu.Item icon="cross" text="Delee" />
+        <BP.MenuItem icon="edit" text="Edit" />
+        <BP.MenuItem icon="duplicate" text="Clone" />
+        <BP.MenuItem icon="cross" text="Delee" />
       </BP.Menu>
     )
   } = args

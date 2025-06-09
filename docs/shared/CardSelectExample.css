@@ -12,7 +12,7 @@
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
 }
 
-.grid .bp3-card {
+.grid .bp4-card {
   padding: 10px 5px;
   width: 80px;
   height: 80px;

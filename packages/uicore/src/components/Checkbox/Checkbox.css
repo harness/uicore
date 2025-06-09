@@ -24,7 +24,7 @@
   display: flex;
   padding: var(--spacing-xsmall) 0 !important;
 
-  :global(.bp3-control-indicator) {
+  :global(.bp4-control-indicator) {
     margin: 0 !important;
     margin-right: var(--spacing-small) !important;
     width: var(--cb-size);
@@ -45,34 +45,34 @@
     }
   }
 
-  :global(:checked ~ .bp3-control-indicator),
-  :global(:indeterminate ~ .bp3-control-indicator) {
+  :global(:checked ~ .bp4-control-indicator),
+  :global(:indeterminate ~ .bp4-control-indicator) {
     --cb-bg-color: var(--cb-border-color);
     --cb-icon-filter: var(--cb-icon-shadow);
   }
 
-  :global(:checked ~ .bp3-control-indicator) {
+  :global(:checked ~ .bp4-control-indicator) {
     --cb-icon: var(--cb-icon-tick);
   }
 
-  :global(:indeterminate ~ .bp3-control-indicator) {
+  :global(:indeterminate ~ .bp4-control-indicator) {
     --cb-icon: var(--cb-icon-dash);
   }
 
-  :global(:disabled ~ .bp3-control-indicator) {
+  :global(:disabled ~ .bp4-control-indicator) {
     --cb-border-color: var(--grey-200);
     --cb-bg-color: var(--grey-100);
     --cb-icon-filter: none;
   }
 
-  :global(:disabled:checked ~ .bp3-control-indicator),
-  :global(:disabled:indeterminate ~ .bp3-control-indicator) {
+  :global(:disabled:checked ~ .bp4-control-indicator),
+  :global(:disabled:indeterminate ~ .bp4-control-indicator) {
     --cb-border-color: var(--grey-500);
     --cb-bg-color: var(--grey-500);
   }
 }
 
-:global(.bp3-checkbox) {
+:global(.bp4-checkbox) {
   &.boxed {
     display: flex;
     align-items: center;

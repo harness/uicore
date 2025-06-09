@@ -206,7 +206,7 @@ describe('<DurationInput/> tests', () => {
     test('shows help popover', async () => {
       const { container } = render(<DurationInput value={123456789} />)
 
-      const icon = container.querySelector('.bp3-popover-target')
+      const icon = container.querySelector('.bp4-popover-target')
 
       fireEvent.mouseOver(icon!)
 
@@ -218,7 +218,7 @@ describe('<DurationInput/> tests', () => {
     test('shows subset of allowed values in help popover', async () => {
       const { container } = render(<DurationInput value={123456789} allowedUnits={['w', 'd', 'h', 'm']} />)
 
-      const icon = container.querySelector('.bp3-popover-target')
+      const icon = container.querySelector('.bp4-popover-target')
 
       fireEvent.mouseOver(icon!)
 

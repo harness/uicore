@@ -6,41 +6,41 @@
  */
 
 @define-mixin intent {
-  &.bp3-intent-primary {
-    --bp3-intent-color: var(--primary-7);
+  &.bp4-intent-primary {
+    --bp4-intent-color: var(--primary-7);
   }
 
-  &.bp3-intent-success {
-    --bp3-intent-color: var(--green-500);
+  &.bp4-intent-success {
+    --bp4-intent-color: var(--green-500);
   }
 
-  &.bp3-intent-warning {
-    --bp3-intent-color: var(--yellow-500);
+  &.bp4-intent-warning {
+    --bp4-intent-color: var(--yellow-500);
   }
 
-  &.bp3-intent-danger {
-    --bp3-intent-color: var(--red-500);
+  &.bp4-intent-danger {
+    --bp4-intent-color: var(--red-500);
   }
 }
 
 .main {
   :global {
-    .bp3-form-group {
+    .bp4-form-group {
       @mixin intent;
 
-      .bp3-form-helper-text {
-        color: var(--bp3-intent-color, var(--grey-500)) !important;
+      .bp4-form-helper-text {
+        color: var(--bp4-intent-color, var(--grey-500)) !important;
       }
-      .bp3-file-upload-input,
+      .bp4-file-upload-input,
       .ColorPicker--picker {
         box-shadow: none !important;
         border: 1px solid var(--grey-200) !important;
       }
 
-      .bp3-input {
+      .bp4-input {
         height: var(--spacing-8);
         border-radius: var(--spacing-2);
-        border: 1px solid var(--bp3-intent-color, var(--grey-200));
+        border: 1px solid var(--bp4-intent-color, var(--grey-200));
         outline: none;
         box-shadow: none;
 
@@ -62,37 +62,37 @@
       }
     }
 
-    .bp3-label {
+    .bp4-label {
       color: var(--grey-600);
       font-size: var(--form-input-font-size);
       font-weight: 500;
     }
 
-    .bp3-input.bp3-tag-input {
+    .bp4-input.bp4-tag-input {
       overflow: auto;
       height: fit-content;
       max-height: 70px;
-      &.bp3-disabled {
+      &.bp4-disabled {
         background: var(--grey-50) !important;
       }
-      &.bp3-active {
-        --bp3-intent-color: var(--primary-5);
+      &.bp4-active {
+        --bp4-intent-color: var(--primary-5);
       }
 
-      .bp3-tag-input-values {
+      .bp4-tag-input-values {
         margin: 2px 7px 0 1px !important;
       }
     }
 
-    .bp3-file-input {
+    .bp4-file-input {
       height: 38px;
     }
 
-    textarea.bp3-input {
+    textarea.bp4-input {
       min-height: var(--spacing-10);
     }
 
-    .bp3-file-upload-input {
+    .bp4-file-upload-input {
       height: 38px;
       border-radius: 5px;
       box-shadow: none;
@@ -107,14 +107,14 @@
         background-color: var(--white);
       }
     }
-    .bp3-input-ghost {
+    .bp4-input-ghost {
       font-size: 14px;
       line-height: 22px;
       margin-top: 3px;
       margin-bottom: 3px;
     }
 
-    .bp3-tag-input .bp3-tag {
+    .bp4-tag-input .bp4-tag {
       height: 22px;
       line-height: 22px;
       font-size: 14px;

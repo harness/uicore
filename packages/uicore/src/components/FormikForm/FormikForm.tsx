@@ -941,11 +941,11 @@ const Form = (props: FormikFormProps) => {
   const formElementRef = React.useRef<HTMLDivElement>(null)
   React.useLayoutEffect(() => {
     if (formElementRef?.current?.childElementCount) {
-      const formGroupElements = formElementRef?.current?.querySelectorAll('.bp3-form-group')
+      const formGroupElements = formElementRef?.current?.querySelectorAll('.bp4-form-group')
       formGroupElements?.forEach((element, index) => {
         const name =
           element.querySelector('[name]')?.getAttribute('name') ||
-          element.querySelector('.bp3-label')?.getAttribute('for')
+          element.querySelector('.bp4-label')?.getAttribute('for')
         element.setAttribute('data-id', `${name}-${index}`)
       })
     }

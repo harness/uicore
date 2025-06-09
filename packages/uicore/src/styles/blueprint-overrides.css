@@ -6,15 +6,15 @@
  */
 
 :global {
-  .bp3-menu-item:hover {
+  .bp4-menu-item:hover {
     background: var(--primary-6);
     color: var(--white);
   }
 
-  .bp3-menu-item.bp3-active,
-  .bp3-menu-item.bp3-intent-primary.bp3-active,
-  .bp3-submenu .bp3-popover-target.bp3-intent-primary.bp3-popover-open > .bp3-menu-item,
-  .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-menu-item {
+  .bp4-menu-item.bp4-active,
+  .bp4-menu-item.bp4-intent-primary.bp4-active,
+  .bp4-submenu .bp4-popover-target.bp4-intent-primary.bp4-popover-open > .bp4-menu-item,
+  .bp4-submenu .bp4-popover-target.bp4-popover-open > .bp4-menu-item {
     background: var(--primary-7);
     color: var(--white);
 
@@ -24,35 +24,35 @@
     }
   }
 
-  .bp3-popover.bp3-dark .bp3-popover-arrow::before,
-  .bp3-dark .bp3-popover .bp3-popover-arrow::before {
+  .bp4-popover.bp4-dark .bp4-popover-arrow::before,
+  .bp4-dark .bp4-popover .bp4-popover-arrow::before {
     box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
   }
 
-  .bp3-popover.bp3-dark,
-  .bp3-dark .bp3-popover {
+  .bp4-popover.bp4-dark,
+  .bp4-dark .bp4-popover {
     border-radius: 8px;
     box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
   }
 
-  .bp3-popover .bp3-popover-content {
+  .bp4-popover .bp4-popover-content {
     border-radius: 8px;
   }
 
   /** Background color */
-  .bp3-popover.bp3-dark .bp3-popover-content,
-  .bp3-dark .bp3-popover .bp3-popover-content {
+  .bp4-popover.bp4-dark .bp4-popover-content,
+  .bp4-dark .bp4-popover .bp4-popover-content {
     background: var(--primary-9-dark);
   }
 
   /** Twisty */
-  .bp3-popover.bp3-dark .bp3-popover-arrow-border,
-  .bp3-dark .bp3-popover .bp3-popover-arrow-border,
-  .bp3-popover.bp3-dark .bp3-popover-arrow-fill,
-  .bp3-dark .bp3-popover .bp3-popover-arrow-fill {
+  .bp4-popover.bp4-dark .bp4-popover-arrow-border,
+  .bp4-dark .bp4-popover .bp4-popover-arrow-border,
+  .bp4-popover.bp4-dark .bp4-popover-arrow-fill,
+  .bp4-dark .bp4-popover .bp4-popover-arrow-fill {
     fill: var(--primary-9-dark);
   }
-  .bp3-tooltip {
+  .bp4-tooltip {
     box-shadow: unset;
   }
 }
