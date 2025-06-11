@@ -1,0 +1,191 @@
+/*
+ * Copyright 2024 Harness Inc. All rights reserved.
+ * Use of this source code is governed by the PolyForm Shield 1.0.0 license
+ * that can be found in the licenses directory at the root of this repository, also available at
+ * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
+ */
+
+/* CSS picked from MultiSelectDropDown.css */
+
+.main {
+  &.disabled {
+    .dropdownButton {
+      &.withBorder {
+        background-color: var(--grey-200);
+      }
+    }
+    .counter {
+      background-color: var(--grey-200) !important;
+    }
+  }
+  .dropdownButton {
+    border-radius: var(--spacing-2);
+    padding: 0px var(--spacing-3);
+    height: var(--spacing-8);
+    transition: all 200ms ease-out;
+    transition-property: border-color, background-color;
+    &:hover {
+      background-color: var(--grey-100);
+      transition: background-color 0.2s ease;
+    }
+    &.minWidth {
+      column-gap: var(--spacing-small);
+    }
+    &.withBorder {
+      border: 1px solid var(--grey-200);
+      &.selected {
+        border-color: var(--grey-200);
+      }
+      .labelWrapper {
+        .label {
+          font-size: var(--font-size-small);
+          font-weight: 500;
+          color: var(--grey-800);
+          outline: none;
+        }
+      }
+    }
+    .labelWrapper {
+      flex-shrink: 1;
+      column-gap: var(--spacing-2);
+      cursor: pointer;
+      :global(.bp3-popover-wrapper) {
+        display: inline-flex;
+      }
+      .label {
+        font-size: var(--font-size-normal);
+        font-weight: 400;
+        color: var(--grey-900);
+      }
+      .counter {
+        background-color: var(--grey-100);
+        padding: 0 var(--spacing-xsmall);
+        border-radius: var(--spacing-xsmall);
+        font-size: 13px;
+        max-width: 96px;
+      }
+    }
+    &:not(.withBorder) {
+      &:hover {
+        background-color: var(--grey-100);
+        border-color: var(--grey-100);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+      }
+    }
+    :global(.bp3-button) {
+      padding: 0px !important;
+      height: 14px !important;
+      min-height: 14px;
+      min-width: 14px;
+      outline: none;
+    }
+    button {
+      box-shadow: none !important;
+      outline: none;
+      padding: 5px 12px !important;
+    }
+  }
+}
+.popover {
+  &:global {
+    &.bp3-popover {
+      max-width: 350px;
+      box-shadow: 0px 0px 1px rgb(40 41 61 / 4%), 0px 2px 4px rgb(96 97 112 / 16%);
+      border: 0.5px solid rgba(0, 0, 0, 0.1);
+      border-radius: var(--spacing-2);
+      transform: translateY(var(--spacing-1)) !important;
+      .bp3-input-group {
+        margin: var(--spacing-small);
+        margin-bottom: var(--spacing-xsmall);
+        .bp3-input {
+          border-radius: var(--spacing-2);
+          font-size: 13px;
+          padding-left: var(--spacing-xxlarge) !important;
+          height: var(--spacing-8);
+          color: var(--grey-900);
+          box-shadow: none !important;
+          background: var(--grey-100);
+          & ::-moz-placeholder,
+          & ::-webkit-input-placeholder,
+          & :-ms-input-placeholder,
+          & :-moz-placeholder,
+          & ::placeholder {
+            color: var(--grey-300);
+          }
+        }
+        .bp3-input-left-container {
+          top: 50%;
+          transform: translateY(-50%);
+          left: 3px;
+        }
+        .bp3-input-action {
+          opacity: 0.5;
+          transform: scale(0.8);
+          top: 1px;
+          button {
+            outline: none;
+          }
+        }
+      }
+      .bp3-menu {
+        max-height: 350px;
+        width: 100%;
+        overflow: auto;
+        border-radius: var(--spacing-2);
+        padding: var(--spacing-1) 0px;
+        box-sizing: border-box;
+        min-width: 200px;
+        :local {
+          .menuItem {
+            height: var(--spacing-8);
+            padding: 0 var(--spacing-4) !important;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--black);
+            font-weight: 400;
+            font-size: 12px;
+            transition: background-color 0.2s ease;
+            &:not(.noResults):hover {
+              background: var(--grey-100);
+            }
+            &.noResults {
+              color: var(--grey-400);
+              cursor: default;
+            }
+            :global {
+              .bp3-control-indicator {
+                outline: none;
+                flex-shrink: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.verticalDivider {
+  width: 1px;
+  height: 13px;
+  background-color: var(--grey-300);
+}
+
+.crossIcon {
+  margin-left: 5px !important;
+  cursor: pointer;
+}
+
+.clearSelection {
+  padding: 0 var(--spacing-4) !important;
+  height: var(--spacing-8);
+  padding: 0 var(--spacing-4) !important;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selectedItemsPopover {
+  max-width: 250px;
+}
