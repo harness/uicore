@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, act, wait } from '@testing-library/react'
+import { render, fireEvent, act, waitFor } from '@testing-library/react'
 
 import { MultiSelect, MultiSelectOption } from './MultiSelect'
 
@@ -56,7 +56,7 @@ describe('<MultiSelect/> tests', () => {
     await act(() => {
       jest.runTimersToTime(TIMEOUT)
 
-      return wait()
+      return waitFor(() => {})
     })
 
     expect(container).toMatchSnapshot('Final state')

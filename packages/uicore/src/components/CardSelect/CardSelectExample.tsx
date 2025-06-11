@@ -80,7 +80,7 @@ export const CardMultiSelectExample = () => {
   const [selected, setSelected] = useState([data[2], data[4]])
 
   const onChange = React.useCallback(
-    value => {
+    (value: Data) => {
       const selectedAr = [...selected]
       const index = selectedAr.indexOf(value)
       if (index > -1) {
