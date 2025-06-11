@@ -60,6 +60,7 @@ export interface SelectProps
       | 'activeItem'
       | 'onActiveItemChange'
     > {
+  children?: React.ReactNode
   inputValueRender?: Props['inputValueRenderer']
   itemRenderer?: Props['itemRenderer']
   onChange?: Props['onItemSelect']

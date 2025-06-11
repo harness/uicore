@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, Story, StoryFn } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
@@ -111,8 +111,7 @@ export const WithLargeMargin: Story<RadioButtonProps> = args => (
   />
 )
 WithLargeMargin.decorators = [
-  ...(WithLargeMargin.decorators || []),
-  Story => (
+  (Story: StoryFn) => (
     <div style={{ display: 'flex' }}>
       <div style={{ backgroundColor: 'lightgray', width: '100px' }} />
       <Story />

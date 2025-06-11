@@ -25,7 +25,7 @@ import {
   TextInput
 } from '../..'
 import { omit } from 'lodash-es'
-import { Form, Formik, FormikErrors } from 'formik'
+import { Form as FormikForm, Formik, FormikErrors, Form } from 'formik'
 import { DateRangePicker, DateRange, IDateRangePickerProps } from '@blueprintjs/datetime'
 import moment from 'moment'
 
@@ -90,6 +90,7 @@ The component is built on top of uicore's standard select component.
 } as Meta
 export const Basic: Story<SelectWithSubviewProps> = args => {
   interface EnvironmentTypeSubFormProps {
+    children?: React.ReactNode
     onSubmit: (data: EnvironmentTypeFormData) => void
     onHide?: () => void
   }
@@ -159,7 +160,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
         {props => {
           const { setFieldValue, errors, values } = props
           return (
-            <Form style={{ padding: '10px' }}>
+            <FormikForm style={{ padding: '10px' }}>
               <TextInput
                 placeholder="Enter Environment Name"
                 name="environment"
@@ -194,7 +195,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
                 </Button>
               </Layout.Horizontal>
               {error && <Text intent="danger">{error}</Text>}
-            </Form>
+            </FormikForm>
           )
         }}
       </Formik>
@@ -294,7 +295,7 @@ export const CalendarWidgetExample: Story<SelectWithSubviewProps> = () => {
   return (
     <Formik initialValues={{ selectedDate: { label: '', value: '' } }} onSubmit={() => {}}>
       {props => (
-        <Form>
+        <FormikForm>
           <SelectWithSubview
             value={props.values.selectedDate}
             items={ExampleItems}
@@ -304,7 +305,7 @@ export const CalendarWidgetExample: Story<SelectWithSubviewProps> = () => {
               <DatePickerSubview onSelectRange={(range: SelectOption) => props.setFieldValue('selectedDate', range)} />
             }
           />
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   )
