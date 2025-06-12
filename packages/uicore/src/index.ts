@@ -251,3 +251,12 @@ export {
   MultiStepProgressIndicatorProps
 } from './components/MultiStepProgressIndicator/MultiStepProgressIndicator'
 export { StringSubstitute, stringSubstitute } from './components/StringSubstitute/StringSubstitute'
+export {
+  FiltersMultiSelectDropDown,
+  FilterMultiSelectDropDownProps
+} from './components/Filters/components/FiltersMultiSelectDropDown/FiltersMultiSelectDropDown'
+export {
+  FiltersSelectDropDown,
+  FilterSelectDropDownProps
+} from './components/Filters/components/FilterSingleSelectDropDown/FiltersSelectDropDown'
+export { FilterTextInput, FilterTextInputProps } from './components/Filters/components/FilterTextInput/FilterTextInput'
