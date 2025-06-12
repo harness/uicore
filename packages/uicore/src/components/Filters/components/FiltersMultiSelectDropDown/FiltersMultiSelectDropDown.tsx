@@ -20,10 +20,9 @@ import { MultiSelectOption } from '../../../MultiSelect/MultiSelect'
 import cx from 'classnames'
 import { Layout } from '../../../../layouts/Layout'
 import { Utils } from '../../../../core/Utils'
-import { Icon, IconName, IconProps } from '@harness/icons'
-import { Color, FontVariation, PopoverProps } from '@harness/design-system'
+import { Icon, IconName, IconProps } from '@harnessio/icons'
+import { Color, FontVariation, PopoverProps, StyledProps } from '@harnessio/design-system'
 import { Text } from '../../../Text/Text'
-import { StyledProps } from '@harness/design-system'
 import { Checkbox } from '../../../Checkbox/Checkbox'
 import { SelectOption } from '../../../Select/Select'
 import {
@@ -265,7 +264,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
               alwaysExpanded
               {...expandingSearchInputProps}
               onChange={onSearchChange}
-              value={query}
+              defaultValue={query}
             />
           )}
           {listProps.itemList

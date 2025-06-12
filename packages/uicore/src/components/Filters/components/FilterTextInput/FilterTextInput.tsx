@@ -9,15 +9,15 @@ import React from 'react'
 import cx from 'classnames'
 import { IInputGroupProps, Intent, InputGroup, PopoverInteractionKind, Classes } from '@blueprintjs/core'
 import { Popover } from '../../../Popover/Popover'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import { Text } from '../../../Text/Text'
 import { Utils } from '../../../../core/Utils'
-
-import css from './FilterTextInput.css'
 import { Layout } from '../../../../layouts/Layout'
-import { Color, FontVariation, StyledProps } from '@harness/design-system'
+import { Color, FontVariation, StyledProps } from '@harnessio/design-system'
 import { Container } from '../../../Container/Container'
 import { PopoverProps } from '../../../Popover/Popover'
+import css from './FilterTextInput.css'
+
 
 export interface FilterTextInputProps
   extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
