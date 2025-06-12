@@ -19,10 +19,9 @@ import {
 import css from './FiltersSelectDropDown.css'
 import cx from 'classnames'
 import { Layout } from '../../../../layouts/Layout'
-import { Icon, IconName, IconProps } from '@harness/icons'
-import { Color, FontVariation } from '@harness/design-system'
+import { Icon, IconName, IconProps } from '@harnessio/icons'
+import { Color, FontVariation, StyledProps } from '@harnessio/design-system'
 import { Text } from '../../../Text/Text'
-import { StyledProps } from '@harness/design-system'
 import { SelectOption } from '../../../Select/Select'
 import {
   ExpandingSearchInputWithRef,
@@ -313,7 +312,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
               alwaysExpanded
               {...expandingSearchInputProps}
               onChange={onSearchChange}
-              value={query}
+              defaultValue={query}
             />
           )}
           {listProps.itemList

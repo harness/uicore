@@ -15,9 +15,9 @@ import { FiltersSelectDropDown, FilterSelectDropDownProps } from './FiltersSelec
 import { Layout } from '../../../../layouts/Layout'
 import { IItemRendererProps } from '@blueprintjs/select'
 import cx from 'classnames'
-import { FontVariation } from '@harness/design-system'
+import { FontVariation } from '@harnessio/design-system'
 import { Text } from '../../../Text/Text'
-import { Icon } from '@harness/icons'
+import { Icon } from '@harnessio/icons'
 import css from './FiltersSelectDropDown.css'
 
 export default {
@@ -101,7 +101,7 @@ export const Custom: Story<FilterSelectDropDownProps> = args => {
             handleClick(e)
           }
         }}>
-        <Icon name="harness" size={12} />
+        <Icon name="harness-grey" size={12} />
         <Text lineClamp={1} font={{ variation: FontVariation.SMALL }}>
           {item.label}
         </Text>

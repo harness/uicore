@@ -17,8 +17,8 @@ import { Layout } from '../../../../layouts/Layout'
 import { IItemRendererProps } from '@blueprintjs/select'
 import { Checkbox } from '../../../Checkbox/Checkbox'
 import { Text } from '../../../Text/Text'
-import { FontVariation } from '@harness/design-system'
-import { Icon } from '@harness/icons'
+import { FontVariation } from '@harnessio/design-system'
+import { Icon } from '@harnessio/icons'
 import css from './FiltersMultiSelectDropDown.css'
 
 export default {
@@ -126,7 +126,7 @@ export const Custom: Story<FilterMultiSelectDropDownProps> = args => {
           if (!modifiers.disabled && !item.disabled) handleClick(e)
         }}>
         <Layout.Horizontal spacing="xsmall" flex={{ alignItems: 'center' }}>
-          <Icon name="harness" size={12} />
+          <Icon name="harness-grey" size={12} />
           <Text font={{ variation: FontVariation.SMALL, weight: 'light' }}>{item.label}</Text>
         </Layout.Horizontal>
       </Checkbox>
