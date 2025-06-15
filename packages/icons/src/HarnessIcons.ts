@@ -1330,10 +1330,12 @@ import ScsArtifactSigning from './scs-artifact-signing.svg'
 import ScsArtifactVerification from './scs-artifact-verification.svg'
 import ScsBot from './scs-bot.svg'
 import ScsInvalid from './scs-invalid.svg'
+import ScsOutdated from './scs-outdated.svg'
 import ScsPerson from './scs-person.svg'
 import ScsSbom from './scs-sbom.svg'
 import ScsSlsa from './scs-slsa.svg'
 import ScsSuccess from './scs-success.svg'
+import ScsUnmaintained from './scs-unmaintained.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -3013,10 +3015,12 @@ type HarnessIconName =
   | 'scs-artifact-verification'
   | 'scs-bot'
   | 'scs-invalid'
+  | 'scs-outdated'
   | 'scs-person'
   | 'scs-sbom'
   | 'scs-slsa'
   | 'scs-success'
+  | 'scs-unmaintained'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -4696,10 +4700,12 @@ const HarnessIcons: KVO<ElementType> = {
   'scs-artifact-verification': ScsArtifactVerification,
   'scs-bot': ScsBot,
   'scs-invalid': ScsInvalid,
+  'scs-outdated': ScsOutdated,
   'scs-person': ScsPerson,
   'scs-sbom': ScsSbom,
   'scs-slsa': ScsSlsa,
   'scs-success': ScsSuccess,
+  'scs-unmaintained': ScsUnmaintained,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,
