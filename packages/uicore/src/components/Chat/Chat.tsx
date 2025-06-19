@@ -73,6 +73,7 @@ export type Message =
 // Common props for all renderers
 export interface CommonRendererProps {
   role: MessageRole
+  previousMessageRole?: MessageRole
   handleHelpfulClick?: (messageId: string, isHelpful: boolean) => void
 }
 
@@ -182,7 +183,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     scrollToEnd()
   }, [messages])
 
-  const renderMessage = (message: Message) => {
+  const renderMessage = (message: Message, previousMessageRole?: MessageRole) => {
     switch (message.type) {
       case 'text':
         if (messageRenderer?.text) {
@@ -190,6 +191,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             <messageRenderer.text
               message={message as TextMessage}
               role={message.role}
+              previousMessageRole={previousMessageRole}
               handleHelpfulClick={props.handleHelpfulClick}
             />
           )
@@ -277,7 +279,12 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
               { message: MessageBase } & CommonRendererProps
             >
             return (
-              <Renderer message={message} role={defaultMessage.role} handleHelpfulClick={props.handleHelpfulClick} />
+              <Renderer
+                previousMessageRole={previousMessageRole}
+                message={message}
+                role={defaultMessage.role}
+                handleHelpfulClick={props.handleHelpfulClick}
+              />
             )
           }
         }
@@ -369,9 +376,11 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   return (
     <Layout.Vertical className={cx(css.container, { [css.containerWithFooter]: !hideInputArea })}>
       <Layout.Vertical className={css.messagesContainer}>
-        {messages.map(message => {
+        {messages.map((message, index) => {
           const messageClass = message.role === 'system' ? props.systemMessageClassName : props.userMessageClassName
           const isAnimated = animatedMessages.has(message.id)
+
+          const previousMessageRole = index > 0 ? messages[index - 1].role : undefined
 
           return (
             <div
@@ -396,7 +405,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
                   })
                 }
               }}>
-              {renderMessage(message)}
+              {renderMessage(message, previousMessageRole)}
             </div>
           )
         })}
