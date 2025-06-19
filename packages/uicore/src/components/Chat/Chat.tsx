@@ -12,7 +12,6 @@ import { Icon, IconProps } from '@harness/icons'
 import TextMessage from './message-renderers/TextMessage'
 import YamlMessage from './message-renderers/YamlMessage'
 import SuggestionsMessage from './message-renderers/Suggestions'
-import Error from './message-renderers/Error'
 import Card, { CardContent } from './message-renderers/Card'
 import { Layout } from '../../index'
 import css from './Chat.css'
@@ -260,17 +259,6 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
           )
         }
         return <Card content={message.content} />
-      case 'error':
-        if (messageRenderer?.error) {
-          return (
-            <messageRenderer.error
-              message={message as ErrorMessage}
-              role={message.role}
-              handleHelpfulClick={props.handleHelpfulClick}
-            />
-          )
-        }
-        return <Error content={message.content} />
       default:
         {
           const defaultMessage = message as MessageBase
