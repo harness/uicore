@@ -901,6 +901,7 @@ import IdpSelfService from './idp-self-service.svg'
 import IdpStageHover from './idp-stage-hover.svg'
 import IdpStarredEntity from './idp-starred-entity.svg'
 import IdpStrategy from './idp-strategy.svg'
+import IdpSystem from './idp-system.svg'
 import IdpTable from './idp-table.svg'
 import IdpTopVisited from './idp-top-visited.svg'
 import IdpVideo from './idp-video.svg'
@@ -2588,6 +2589,7 @@ type HarnessIconName =
   | 'idp-stage-hover'
   | 'idp-starred-entity'
   | 'idp-strategy'
+  | 'idp-system'
   | 'idp-table'
   | 'idp-top-visited'
   | 'idp-video'
@@ -4275,6 +4277,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-stage-hover': IdpStageHover,
   'idp-starred-entity': IdpStarredEntity,
   'idp-strategy': IdpStrategy,
+  'idp-system': IdpSystem,
   'idp-table': IdpTable,
   'idp-top-visited': IdpTopVisited,
   'idp-video': IdpVideo,
