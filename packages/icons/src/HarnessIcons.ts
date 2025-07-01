@@ -882,6 +882,7 @@ import IacmTerraformStep from './iacm-terraform-step.svg'
 import IacmWithDarkText from './iacm-with-dark-text.svg'
 import Iacm from './iacm.svg'
 import IdpCustomLink from './idp-custom-link.svg'
+import IdpIngestedProperty from './idp-ingested-property.svg'
 import IdpLearnMore from './idp-learn-more.svg'
 import IdpMarkdown from './idp-markdown.svg'
 import IdpNavAllowlist from './idp-nav-allowlist.svg'
@@ -2568,6 +2569,7 @@ type HarnessIconName =
   | 'iacm-with-dark-text'
   | 'iacm'
   | 'idp-custom-link'
+  | 'idp-ingested-property'
   | 'idp-learn-more'
   | 'idp-markdown'
   | 'idp-nav-allowlist'
@@ -4254,6 +4256,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-with-dark-text': IacmWithDarkText,
   iacm: Iacm,
   'idp-custom-link': IdpCustomLink,
+  'idp-ingested-property': IdpIngestedProperty,
   'idp-learn-more': IdpLearnMore,
   'idp-markdown': IdpMarkdown,
   'idp-nav-allowlist': IdpNavAllowlist,
