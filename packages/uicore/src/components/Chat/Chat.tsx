@@ -76,7 +76,11 @@ export interface CommonRendererProps {
   handleHelpfulClick?: (messageId: string, isHelpful: boolean) => void
 }
 
-export interface ChatProps {
+// Helper type for extracting message types from a mapping
+export type MessageTypeMapping<T> = { [K in keyof T]: T[K] extends MessageBase ? T[K] : never }
+
+// Generic interface for Chat props
+export interface ChatProps<T = Record<string, MessageBase>> {
   handleNewMessage: (message: TextMessage, abortSignal?: AbortSignal) => Promise<Array<Omit<Message, 'role' | 'id'>>>
   initialMessages?: Message[]
   showLoader?: boolean
@@ -100,9 +104,9 @@ export interface ChatProps {
     error: React.FC<{ message: ErrorMessage } & CommonRendererProps>
     preview: React.FC<{ message: PreviewMessage } & CommonRendererProps>
   }>
-  messageRenderers?: Partial<{
-    [key: string]: React.FC<{ message: MessageBase } & CommonRendererProps>
-  }>
+  messageRenderers?: {
+    [K in keyof T]?: React.FC<{ message: T[K] extends MessageBase ? T[K] : MessageBase } & CommonRendererProps>
+  }
   inputProps?: InputProps
   submitButtonProps?: SubmitButtonProps
   hideInputArea?: boolean
@@ -123,10 +127,12 @@ interface SubmitButtonProps {
   }
 }
 
-export interface ChatRef {
+export interface ChatRef<T = Record<string, MessageBase>> {
   getMessages: () => Message[]
   clearMessages: () => void
-  addMessages: (messages: Message[]) => void
+  addMessages: <K extends keyof T>(
+    messages: Array<Omit<T[K], 'id' | 'role'> & { id?: string; role?: MessageRole; type: K }>
+  ) => void
   scrollToEnd: () => void
 }
 
@@ -134,7 +140,8 @@ const generateUniqueId = (): string => {
   return `${Date.now()}-${Math.floor(Math.random() * 1e9)}`
 }
 
-export const Chat = forwardRef((props: ChatProps, ref) => {
+// Implementation of the Chat component with generic support
+function ChatComponent<T = Record<string, MessageBase>>(props: ChatProps<T>, ref: React.ForwardedRef<ChatRef<T>>) {
   const {
     initialMessages = [],
     handleNewMessage,
@@ -168,7 +175,18 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   useImperativeHandle(ref, () => ({
     getMessages: () => messages,
     clearMessages,
-    addMessages,
+    addMessages: <K extends keyof T>(
+      messages: Array<Omit<T[K], 'id' | 'role'> & { id?: string; role?: MessageRole; type: K }>
+    ) => {
+      // Process messages to ensure they have id and role
+      const processedMessages = (messages.map(msg => ({
+        ...msg,
+        id: msg.id || generateUniqueId(),
+        role: msg.role || 'system'
+      })) as unknown) as Message[]
+
+      addMessages(processedMessages)
+    },
     scrollToEnd
   }))
 
@@ -262,14 +280,16 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       default:
         {
           const defaultMessage = message as MessageBase
-          if (messageRenderers?.[defaultMessage.type]) {
-            const Renderer = messageRenderers[defaultMessage.type] as React.ComponentType<
+          const messageType = defaultMessage.type as keyof T
+          if (messageRenderers?.[messageType]) {
+            // We need to cast here because TypeScript can't verify the exact type at runtime
+            const Renderer = messageRenderers[messageType] as React.ComponentType<
               { message: MessageBase } & CommonRendererProps
             >
             return (
               <Renderer
                 previousMessageRole={previousMessageRole}
-                message={message}
+                message={message as any} // Type assertion needed since we can't guarantee the exact type at runtime
                 role={defaultMessage.role}
                 handleHelpfulClick={props.handleHelpfulClick}
               />
@@ -443,4 +463,13 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
       )}
     </Layout.Vertical>
   )
-})
+}
+
+// Export the Chat component with proper generic typing
+export const Chat = forwardRef(ChatComponent) as (<T = Record<string, MessageBase>>(
+  props: ChatProps<T> & { ref?: React.ForwardedRef<ChatRef<T>> }
+) => JSX.Element) & {
+  displayName?: string
+}
+
+Chat.displayName = 'Chat'
