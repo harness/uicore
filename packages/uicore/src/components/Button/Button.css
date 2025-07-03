@@ -230,8 +230,9 @@
         position: relative;
         display: inline-flex;
         align-items: center;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent;
+        background: var(--white) !important;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
 
         &::before {
           content: '';
@@ -254,7 +255,15 @@
 
         &.variation-ai-primary {
           --text-color: var(--ai-primary-gradient);
-          background: var(--ai-primary-gradient);
+          color: transparent;
+          background: var(--white) !important;
+
+          span {
+            background: var(--ai-primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
 
           &::before {
             background: var(--ai-primary-gradient);
@@ -268,7 +277,15 @@
 
         &.variation-ai-secondary {
           --text-color: var(--ai-secondary-gradient);
-          background: var(--ai-secondary-gradient);
+          color: transparent;
+          background: var(--white) !important;
+
+          span {
+            background: var(--ai-secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
 
           &::before {
             background: var(--ai-secondary-gradient);
