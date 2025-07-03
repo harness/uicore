@@ -535,6 +535,10 @@
       cursor: not-allowed;
     }
   }
+
+  &.round.ai {
+    border-radius: 100px !important;
+  }
 }
 
 .withDocsTooltip {
