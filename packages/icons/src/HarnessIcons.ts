@@ -57,6 +57,7 @@ import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
+import AiArrowUp from './ai-arrow-up.svg'
 import AiCanary from './ai-canary.svg'
 import AiPrimary from './ai-primary.svg'
 import AiSecondary from './ai-secondary.svg'
@@ -1746,6 +1747,7 @@ type HarnessIconName =
   | 'advanced'
   | 'agent-tokens'
   | 'agents'
+  | 'ai-arrow-up'
   | 'ai-canary'
   | 'ai-primary'
   | 'ai-secondary'
@@ -3435,6 +3437,7 @@ const HarnessIcons: KVO<ElementType> = {
   advanced: Advanced,
   'agent-tokens': AgentTokens,
   agents: Agents,
+  'ai-arrow-up': AiArrowUp,
   'ai-canary': AiCanary,
   'ai-primary': AiPrimary,
   'ai-secondary': AiSecondary,
