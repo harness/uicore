@@ -213,10 +213,6 @@
           &.large {
             --font-size: var(--font-size-medium);
             --font-weight: 600;
-
-            .variation-ai-primary:hover:not([disabled]) {
-              box-shadow: var(--ai-primary-gradient-box-shadow-large);
-            }
           }
         }
 
@@ -230,7 +226,6 @@
         position: relative;
         display: inline-flex;
         align-items: center;
-        background: var(--white) !important;
         -webkit-background-clip: initial;
         -webkit-text-fill-color: initial;
 
@@ -256,7 +251,6 @@
         &.variation-ai-primary {
           --text-color: var(--ai-primary-gradient);
           color: transparent;
-          background: var(--white) !important;
 
           span {
             background: var(--ai-primary-gradient);
@@ -278,7 +272,6 @@
         &.variation-ai-secondary {
           --text-color: var(--ai-secondary-gradient);
           color: transparent;
-          background: var(--white) !important;
 
           span {
             background: var(--ai-secondary-gradient);
