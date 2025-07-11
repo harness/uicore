@@ -209,9 +209,11 @@ import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
 import CcmApply from './ccm-apply.svg'
+import CcmCloudAccounts from './ccm-cloud-accounts.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
 import CcmCurrencySettings from './ccm-currency-settings.svg'
 import CcmExternalCostSource from './ccm-external-cost-source.svg'
+import CcmExternalDataSources from './ccm-external-data-sources.svg'
 import CcmEyeOpen from './ccm-eye-open.svg'
 import CcmIgnoreFailure from './ccm-ignore-failure.svg'
 import CcmMongo from './ccm-mongo.svg'
@@ -845,6 +847,7 @@ import Gitspaces from './gitspaces.svg'
 import Golang from './golang.svg'
 import GoogleBigquery from './google-bigquery.svg'
 import GoogleGemini from './google-gemini.svg'
+import GoogleInstanceGroup from './google-instance-group.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
@@ -1911,9 +1914,11 @@ type HarnessIconName =
   | 'canvas-selector'
   | 'cascading'
   | 'ccm-apply'
+  | 'ccm-cloud-accounts'
   | 'ccm-cloud-integration-settings'
   | 'ccm-currency-settings'
   | 'ccm-external-cost-source'
+  | 'ccm-external-data-sources'
   | 'ccm-eye-open'
   | 'ccm-ignore-failure'
   | 'ccm-mongo'
@@ -2547,6 +2552,7 @@ type HarnessIconName =
   | 'golang'
   | 'google-bigquery'
   | 'google-gemini'
+  | 'google-instance-group'
   | 'google-kubernetes-engine'
   | 'google'
   | 'governance-policy-set'
@@ -3613,9 +3619,11 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
   'ccm-apply': CcmApply,
+  'ccm-cloud-accounts': CcmCloudAccounts,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
   'ccm-currency-settings': CcmCurrencySettings,
   'ccm-external-cost-source': CcmExternalCostSource,
+  'ccm-external-data-sources': CcmExternalDataSources,
   'ccm-eye-open': CcmEyeOpen,
   'ccm-ignore-failure': CcmIgnoreFailure,
   'ccm-mongo': CcmMongo,
@@ -4249,6 +4257,7 @@ const HarnessIcons: KVO<ElementType> = {
   golang: Golang,
   'google-bigquery': GoogleBigquery,
   'google-gemini': GoogleGemini,
+  'google-instance-group': GoogleInstanceGroup,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   google: Google,
   'governance-policy-set': GovernancePolicySet,
