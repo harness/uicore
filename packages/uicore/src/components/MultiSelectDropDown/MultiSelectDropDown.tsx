@@ -6,7 +6,7 @@
  */
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { Popover, Spinner, Menu } from '@blueprintjs/core'
+import { Popover, Spinner, Menu, PopoverInteractionKind } from '@blueprintjs/core'
 import {
   QueryList,
   IQueryListRendererProps,
@@ -52,6 +52,7 @@ export interface MultiSelectDropDownProps
   allowSearch?: boolean
   onPopoverClose?(opts: MultiSelectOption[]): void
   expandingSearchInputProps?: ExpandingSearchInputProps
+  interactionKind?: PopoverInteractionKind
 }
 
 /**
@@ -78,6 +79,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     allowSearch = false,
     onPopoverClose,
     expandingSearchInputProps,
+    interactionKind,
     ...rest
   } = props
   const [query, setQuery] = React.useState<string>('')
@@ -174,6 +176,7 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
         onClose={() => onPopoverClose?.(selectedItems)}
         className={cx(css.main, { [css.disabled]: !!disabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
+        interactionKind={interactionKind}
         isOpen={isOpen}>
         <Layout.Horizontal
           data-testid={buttonTestId}
