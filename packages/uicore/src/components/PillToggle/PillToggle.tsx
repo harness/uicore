@@ -21,29 +21,42 @@ export interface PillToggleOption<T> {
   value: T
 }
 
-export interface PillToggleProps<T> {
+interface BasePillToggleProps<T> {
   selectedView: T
-  options: [PillToggleOption<T>, PillToggleOption<T>]
-  onChange: (val: T) => void
   disableToggle?: boolean
-  className?: string
   disableToggleReasonIcon?: IconName
   showDisableToggleReason?: boolean
   disableToggleReasonContent?: React.ReactElement
 }
 
-export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement => {
-  const {
-    selectedView,
-    onChange,
-    disableToggle = false,
-    className = '',
-    options,
-    disableToggleReasonIcon = 'error-outline',
-    showDisableToggleReason = false,
-    disableToggleReasonContent
-  } = props
+export interface PillBadgeProps<T>
+  extends BasePillToggleProps<T>,
+    Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onClick'> {
+  dataName?: string
+  item: PillToggleOption<T>
+  children?: React.ReactNode
+  onClick: (val: T) => void
+}
 
+export interface PillToggleProps<T> extends BasePillToggleProps<T> {
+  OptionComponent?: (props: PillBadgeProps<T>) => JSX.Element
+  options: [PillToggleOption<T>, PillToggleOption<T>]
+  onChange: (val: T) => void
+  className?: string
+}
+
+const PillBadge = <T,>({
+  selectedView,
+  item,
+  disableToggle = false,
+  dataName,
+  children,
+  showDisableToggleReason = false,
+  disableToggleReasonIcon = 'error-outline',
+  disableToggleReasonContent,
+  onClick,
+  ...restProps
+}: PillBadgeProps<T>) => {
   const renderInvalidBadge = (pillToggleValue: T) => {
     if (disableToggle && showDisableToggleReason && selectedView !== pillToggleValue) {
       return (
@@ -78,41 +91,51 @@ export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement =>
   }
 
   return (
-    <div className={cx(css.optionBtns, className)}>
-      <div
-        data-name="toggle-option-one"
-        className={cx(css.item, {
-          [css.selected]: selectedView === options[0].value,
-          [css.disabledMode]: disableToggle
-        })}
-        onClick={() => {
-          if (selectedView === options[0].value || disableToggle) {
-            return
-          }
-          onChange(options[0].value)
-        }}
+    <div
+      data-name={dataName}
+      className={cx(css.item, {
+        [css.selected]: selectedView === item.value,
+        [css.disabledMode]: disableToggle
+      })}
+      onClick={() => {
+        if (selectedView === item.value || disableToggle) {
+          return
+        }
+        onClick(item.value)
+      }}
+      tabIndex={0}
+      role="button"
+      {...restProps}>
+      {item.label}
+      {renderInvalidBadge(item.value)}
+    </div>
+  )
+}
+
+export const PillToggle = <T,>(props: PillToggleProps<T>): React.ReactElement => {
+  const { selectedView, onChange, className, options, OptionComponent, ...rest } = props
+
+  const PillBadgeComponent = OptionComponent || PillBadge
+
+  return (
+    <div className={cx(css.optionBtns, className, { [css.customBtns]: !!OptionComponent })}>
+      <PillBadgeComponent
+        dataName="toggle-option-one"
+        selectedView={selectedView}
+        onClick={onChange}
         tabIndex={0}
-        role="button">
-        {options[0].label}
-        {renderInvalidBadge(options[0].value)}
-      </div>
-      <div
-        data-name="toggle-option-two"
-        className={cx(css.item, {
-          [css.selected]: selectedView === options[1].value,
-          [css.disabledMode]: disableToggle
-        })}
-        onClick={() => {
-          if (selectedView === options[1].value || disableToggle) {
-            return
-          }
-          onChange(options[1].value)
-        }}
+        item={options[0]}
+        {...rest}
+      />
+
+      <PillBadgeComponent
+        dataName="toggle-option-two"
+        selectedView={selectedView}
+        onClick={onChange}
         tabIndex={0}
-        role="button">
-        {options[1].label}
-        {renderInvalidBadge(options[1].value)}
-      </div>
+        item={options[1]}
+        {...rest}
+      />
     </div>
   )
 }
