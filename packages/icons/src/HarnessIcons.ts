@@ -429,6 +429,7 @@ import CheckmarxOne from './checkmarx-one.svg'
 import CheckovScannerInverse from './checkov-scanner-inverse.svg'
 import CheckovScanner from './checkov-scanner.svg'
 import Checkov from './checkov.svg'
+import ChevronDownAi from './chevron-down-ai.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiBuildPipeline from './ci-build-pipeline.svg'
 import CiDevExp from './ci-dev-exp.svg'
@@ -2120,6 +2121,7 @@ type HarnessIconName =
   | 'checkov-scanner-inverse'
   | 'checkov-scanner'
   | 'checkov'
+  | 'chevron-down-ai'
   | 'ci-active-build'
   | 'ci-build-pipeline'
   | 'ci-dev-exp'
@@ -3811,6 +3813,7 @@ const HarnessIcons: KVO<ElementType> = {
   'checkov-scanner-inverse': CheckovScannerInverse,
   'checkov-scanner': CheckovScanner,
   checkov: Checkov,
+  'chevron-down-ai': ChevronDownAi,
   'ci-active-build': CiActiveBuild,
   'ci-build-pipeline': CiBuildPipeline,
   'ci-dev-exp': CiDevExp,
