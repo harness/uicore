@@ -38,6 +38,7 @@ export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose' | 
   cancelButtonText?: React.ReactNode
   intent?: Intent
   buttonIntent?: ButtonProps['intent']
+  buttonDisabled?: boolean
   confirmButtonText?: React.ReactNode
   onClose?: (isConfirmed: boolean) => void
   customButtons?: React.ReactNode
@@ -61,6 +62,7 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
     cancelButtonText,
     intent = Intent.NONE,
     buttonIntent = Intent.PRIMARY,
+    buttonDisabled = false,
     confirmButtonText,
     onClose,
     customButtons,
@@ -99,7 +101,9 @@ export function ConfirmationDialog(props: ConfirmationDialogProps): React.ReactE
       </Layout.Vertical>
       {children}
       <Layout.Horizontal spacing="small">
-        {confirmButtonText ? <Button intent={buttonIntent} text={confirmButtonText} onClick={closeWithTrue} /> : null}
+        {confirmButtonText ? (
+          <Button intent={buttonIntent} disabled={buttonDisabled} text={confirmButtonText} onClick={closeWithTrue} />
+        ) : null}
         {cancelButtonText ? (
           <Button variation={ButtonVariation.TERTIARY} text={cancelButtonText} onClick={closeWithFalse} />
         ) : null}
