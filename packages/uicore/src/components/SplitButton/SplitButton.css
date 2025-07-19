@@ -30,6 +30,31 @@
   }
 }
 
+.aiIcon {
+  padding-right: 12px !important;
+  border-right: 1px solid var(--grey-300);
+}
+
+.aiDropdownButton {
+  padding-right: 0px !important;
+  min-width: unset !important;
+  height: 22px !important;
+  min-height: unset !important;
+  border-left: 1px solid black !important;
+  margin-left: var(--spacing-small) !important;
+  width: unset !important;
+
+  &::before {
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    left: -0.5px;
+    top: 20%;
+    background-color: none !important;
+  }
+}
+
 .splitButton {
   position: relative;
   display: flex;
@@ -63,4 +88,9 @@
       border-right: none !important;
     }
   }
+}
+
+.iconMenuItem {
+  margin-top: 2px !important;
+  margin-right: 7px !important;
 }

@@ -171,3 +171,30 @@ export const DisabledNoChildrenSplitButton: ComponentStory<typeof SplitButton> =
 
 DisabledAllSplitButton.argTypes = { onClick: { action: 'clicked' } }
 DisabledAllSplitButton.args = { intent: 'primary' }
+
+export const AIPrimarySplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <Container>
+      <SplitButton text="AI Generate" variation={ButtonVariation.AI_PRIMARY} {...args}>
+        <SplitButtonOption icon="search-template" text="Generate from Template" onClick={noop} />
+        <SplitButtonOption icon="refresh" text="Regenerate" onClick={noop} />
+        <SplitButtonOption icon="edit" text="Edit Prompt" onClick={noop} />
+      </SplitButton>
+    </Container>
+  )
+}
+AIPrimarySplitButton.argTypes = { onClick: { action: 'clicked' } }
+AIPrimarySplitButton.args = {}
+
+export const AISecondarySplitButton: ComponentStory<typeof SplitButton> = args => {
+  return (
+    <Container>
+      <SplitButton text="AI Assist" variation={ButtonVariation.AI_SECONDARY} {...args}>
+        <SplitButtonOption icon="search-template" text="Use Template" onClick={noop} />
+        <SplitButtonOption icon="settings" text="Configure" onClick={noop} />
+      </SplitButton>
+    </Container>
+  )
+}
+AISecondarySplitButton.argTypes = { onClick: { action: 'clicked' } }
+AISecondarySplitButton.args = {}
