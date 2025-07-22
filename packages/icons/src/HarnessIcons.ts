@@ -495,6 +495,7 @@ import CodeFolder from './code-folder.svg'
 import CodeGear from './code-gear.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
+import CodeMaintenance from './code-maintenance.svg'
 import CodeMerged from './code-merged.svg'
 import CodeMore from './code-more.svg'
 import CodeOpen from './code-open.svg'
@@ -2187,6 +2188,7 @@ type HarnessIconName =
   | 'code-gear'
   | 'code-history'
   | 'code-info'
+  | 'code-maintenance'
   | 'code-merged'
   | 'code-more'
   | 'code-open'
@@ -3879,6 +3881,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-gear': CodeGear,
   'code-history': CodeHistory,
   'code-info': CodeInfo,
+  'code-maintenance': CodeMaintenance,
   'code-merged': CodeMerged,
   'code-more': CodeMore,
   'code-open': CodeOpen,
