@@ -12,7 +12,14 @@
     .dropdownButton {
       &.withBorder {
         background-color: var(--grey-200);
+        cursor: not-allowed !important;
+        .labelWrapper {
+          cursor: not-allowed !important;
+        }
       }
+    }
+    .crossIcon {
+      cursor: not-allowed !important;
     }
     .counter {
       background-color: var(--grey-200) !important;
@@ -180,7 +187,6 @@
 .clearSelection {
   padding: 0 var(--spacing-4) !important;
   height: var(--spacing-8);
-  padding: 0 var(--spacing-4) !important;
   display: flex;
   align-items: center;
   cursor: pointer;

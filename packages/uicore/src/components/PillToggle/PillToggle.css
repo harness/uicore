@@ -15,6 +15,12 @@
   height: 16px;
   box-sizing: border-box;
 
+  &.customBtns {
+    height: max-content;
+    overflow: hidden;
+    background-color: var(--white);
+  }
+
   .item {
     width: 62px;
     height: 16px;

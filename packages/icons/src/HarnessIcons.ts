@@ -57,6 +57,8 @@ import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
+import AiArrowUp from './ai-arrow-up.svg'
+import AiCanary from './ai-canary.svg'
 import AiPrimary from './ai-primary.svg'
 import AiSecondary from './ai-secondary.svg'
 import AiTestAutomation from './ai-test-automation.svg'
@@ -427,6 +429,7 @@ import CheckmarxOne from './checkmarx-one.svg'
 import CheckovScannerInverse from './checkov-scanner-inverse.svg'
 import CheckovScanner from './checkov-scanner.svg'
 import Checkov from './checkov.svg'
+import ChevronDownAi from './chevron-down-ai.svg'
 import CiActiveBuild from './ci-active-build.svg'
 import CiBuildPipeline from './ci-build-pipeline.svg'
 import CiDevExp from './ci-dev-exp.svg'
@@ -492,6 +495,7 @@ import CodeFolder from './code-folder.svg'
 import CodeGear from './code-gear.svg'
 import CodeHistory from './code-history.svg'
 import CodeInfo from './code-info.svg'
+import CodeMaintenance from './code-maintenance.svg'
 import CodeMerged from './code-merged.svg'
 import CodeMore from './code-more.svg'
 import CodeOpen from './code-open.svg'
@@ -882,6 +886,7 @@ import IacmTerraformStep from './iacm-terraform-step.svg'
 import IacmWithDarkText from './iacm-with-dark-text.svg'
 import Iacm from './iacm.svg'
 import IdpCustomLink from './idp-custom-link.svg'
+import IdpIngestedProperty from './idp-ingested-property.svg'
 import IdpLearnMore from './idp-learn-more.svg'
 import IdpMarkdown from './idp-markdown.svg'
 import IdpNavAllowlist from './idp-nav-allowlist.svg'
@@ -900,6 +905,7 @@ import IdpSelfService from './idp-self-service.svg'
 import IdpStageHover from './idp-stage-hover.svg'
 import IdpStarredEntity from './idp-starred-entity.svg'
 import IdpStrategy from './idp-strategy.svg'
+import IdpSystem from './idp-system.svg'
 import IdpTable from './idp-table.svg'
 import IdpTopVisited from './idp-top-visited.svg'
 import IdpVideo from './idp-video.svg'
@@ -932,6 +938,7 @@ import Instances from './instances.svg'
 import Integration from './integration.svg'
 import IntelligenceFlash from './intelligence-flash.svg'
 import IrAlert from './ir-alert.svg'
+import IrChanges from './ir-changes.svg'
 import IrEnvironments from './ir-environments.svg'
 import IrFireDrills from './ir-fire-drills.svg'
 import IrIncident from './ir-incident.svg'
@@ -1309,6 +1316,7 @@ import S3CiStep from './s3-ci-step.svg'
 import S3StepInverse from './s3-step-inverse.svg'
 import S3Step from './s3-step.svg'
 import SackDollar from './sack-dollar.svg'
+import Salesforce from './salesforce.svg'
 import SaveCacheGcsCiStepInverse from './save-cache-gcs-ci-step-inverse.svg'
 import SaveCacheGcsCiStep from './save-cache-gcs-ci-step.svg'
 import SaveCacheGcsStepInverse from './save-cache-gcs-step-inverse.svg'
@@ -1330,10 +1338,12 @@ import ScsArtifactSigning from './scs-artifact-signing.svg'
 import ScsArtifactVerification from './scs-artifact-verification.svg'
 import ScsBot from './scs-bot.svg'
 import ScsInvalid from './scs-invalid.svg'
+import ScsOutdated from './scs-outdated.svg'
 import ScsPerson from './scs-person.svg'
 import ScsSbom from './scs-sbom.svg'
 import ScsSlsa from './scs-slsa.svg'
 import ScsSuccess from './scs-success.svg'
+import ScsUnmaintained from './scs-unmaintained.svg'
 import SearchApplications from './search-applications.svg'
 import SearchConnectors from './search-connectors.svg'
 import SearchEnvironments from './search-environments.svg'
@@ -1740,6 +1750,8 @@ type HarnessIconName =
   | 'advanced'
   | 'agent-tokens'
   | 'agents'
+  | 'ai-arrow-up'
+  | 'ai-canary'
   | 'ai-primary'
   | 'ai-secondary'
   | 'ai-test-automation'
@@ -2110,6 +2122,7 @@ type HarnessIconName =
   | 'checkov-scanner-inverse'
   | 'checkov-scanner'
   | 'checkov'
+  | 'chevron-down-ai'
   | 'ci-active-build'
   | 'ci-build-pipeline'
   | 'ci-dev-exp'
@@ -2175,6 +2188,7 @@ type HarnessIconName =
   | 'code-gear'
   | 'code-history'
   | 'code-info'
+  | 'code-maintenance'
   | 'code-merged'
   | 'code-more'
   | 'code-open'
@@ -2565,6 +2579,7 @@ type HarnessIconName =
   | 'iacm-with-dark-text'
   | 'iacm'
   | 'idp-custom-link'
+  | 'idp-ingested-property'
   | 'idp-learn-more'
   | 'idp-markdown'
   | 'idp-nav-allowlist'
@@ -2583,6 +2598,7 @@ type HarnessIconName =
   | 'idp-stage-hover'
   | 'idp-starred-entity'
   | 'idp-strategy'
+  | 'idp-system'
   | 'idp-table'
   | 'idp-top-visited'
   | 'idp-video'
@@ -2615,6 +2631,7 @@ type HarnessIconName =
   | 'integration'
   | 'intelligence-flash'
   | 'ir-alert'
+  | 'ir-changes'
   | 'ir-environments'
   | 'ir-fire-drills'
   | 'ir-incident'
@@ -2992,6 +3009,7 @@ type HarnessIconName =
   | 's3-step-inverse'
   | 's3-step'
   | 'sack-dollar'
+  | 'salesforce'
   | 'save-cache-gcs-ci-step-inverse'
   | 'save-cache-gcs-ci-step'
   | 'save-cache-gcs-step-inverse'
@@ -3013,10 +3031,12 @@ type HarnessIconName =
   | 'scs-artifact-verification'
   | 'scs-bot'
   | 'scs-invalid'
+  | 'scs-outdated'
   | 'scs-person'
   | 'scs-sbom'
   | 'scs-slsa'
   | 'scs-success'
+  | 'scs-unmaintained'
   | 'search-applications'
   | 'search-connectors'
   | 'search-environments'
@@ -3423,6 +3443,8 @@ const HarnessIcons: KVO<ElementType> = {
   advanced: Advanced,
   'agent-tokens': AgentTokens,
   agents: Agents,
+  'ai-arrow-up': AiArrowUp,
+  'ai-canary': AiCanary,
   'ai-primary': AiPrimary,
   'ai-secondary': AiSecondary,
   'ai-test-automation': AiTestAutomation,
@@ -3793,6 +3815,7 @@ const HarnessIcons: KVO<ElementType> = {
   'checkov-scanner-inverse': CheckovScannerInverse,
   'checkov-scanner': CheckovScanner,
   checkov: Checkov,
+  'chevron-down-ai': ChevronDownAi,
   'ci-active-build': CiActiveBuild,
   'ci-build-pipeline': CiBuildPipeline,
   'ci-dev-exp': CiDevExp,
@@ -3858,6 +3881,7 @@ const HarnessIcons: KVO<ElementType> = {
   'code-gear': CodeGear,
   'code-history': CodeHistory,
   'code-info': CodeInfo,
+  'code-maintenance': CodeMaintenance,
   'code-merged': CodeMerged,
   'code-more': CodeMore,
   'code-open': CodeOpen,
@@ -4248,6 +4272,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-with-dark-text': IacmWithDarkText,
   iacm: Iacm,
   'idp-custom-link': IdpCustomLink,
+  'idp-ingested-property': IdpIngestedProperty,
   'idp-learn-more': IdpLearnMore,
   'idp-markdown': IdpMarkdown,
   'idp-nav-allowlist': IdpNavAllowlist,
@@ -4266,6 +4291,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-stage-hover': IdpStageHover,
   'idp-starred-entity': IdpStarredEntity,
   'idp-strategy': IdpStrategy,
+  'idp-system': IdpSystem,
   'idp-table': IdpTable,
   'idp-top-visited': IdpTopVisited,
   'idp-video': IdpVideo,
@@ -4298,6 +4324,7 @@ const HarnessIcons: KVO<ElementType> = {
   integration: Integration,
   'intelligence-flash': IntelligenceFlash,
   'ir-alert': IrAlert,
+  'ir-changes': IrChanges,
   'ir-environments': IrEnvironments,
   'ir-fire-drills': IrFireDrills,
   'ir-incident': IrIncident,
@@ -4675,6 +4702,7 @@ const HarnessIcons: KVO<ElementType> = {
   's3-step-inverse': S3StepInverse,
   's3-step': S3Step,
   'sack-dollar': SackDollar,
+  salesforce: Salesforce,
   'save-cache-gcs-ci-step-inverse': SaveCacheGcsCiStepInverse,
   'save-cache-gcs-ci-step': SaveCacheGcsCiStep,
   'save-cache-gcs-step-inverse': SaveCacheGcsStepInverse,
@@ -4696,10 +4724,12 @@ const HarnessIcons: KVO<ElementType> = {
   'scs-artifact-verification': ScsArtifactVerification,
   'scs-bot': ScsBot,
   'scs-invalid': ScsInvalid,
+  'scs-outdated': ScsOutdated,
   'scs-person': ScsPerson,
   'scs-sbom': ScsSbom,
   'scs-slsa': ScsSlsa,
   'scs-success': ScsSuccess,
+  'scs-unmaintained': ScsUnmaintained,
   'search-applications': SearchApplications,
   'search-connectors': SearchConnectors,
   'search-environments': SearchEnvironments,

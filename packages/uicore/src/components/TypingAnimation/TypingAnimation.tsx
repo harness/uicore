@@ -12,9 +12,16 @@ interface TypingAnimationProps extends TextProps {
   text: string
   typingSpeed?: number
   delay?: number
+  onComplete?: () => void
 }
 
-export const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, typingSpeed = 50, delay = 0, ...rest }) => {
+export const TypingAnimation: React.FC<TypingAnimationProps> = ({
+  text,
+  typingSpeed = 50,
+  delay = 0,
+  onComplete,
+  ...rest
+}) => {
   const [displayText, setDisplayText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTyping, setIsTyping] = useState(false)
@@ -53,6 +60,8 @@ export const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, typingSp
     } else if (currentIndex === text.length) {
       // Mark as animated once complete
       hasAnimatedRef.current = true
+      // Call onComplete callback if provided
+      onComplete?.()
     }
   }, [currentIndex, isTyping, text, typingSpeed])
 

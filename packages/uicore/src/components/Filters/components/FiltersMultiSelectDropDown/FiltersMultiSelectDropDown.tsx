@@ -53,6 +53,7 @@ export interface FilterMultiSelectDropDownProps
   iconProps?: Partial<IconProps>
   placeholder?: string
   hideItemCount?: boolean
+  disabled?: boolean
   allowSearch?: boolean
   onRemove?: () => void
   onPopoverClose?(opts: MultiSelectOption[]): void
@@ -251,7 +252,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
               className={css.crossIcon}
               color={Color.GREY_400}
               onClick={e => {
-                if (!showDropDownIcon) {
+                if (!showDropDownIcon && !disabled) {
                   e.stopPropagation()
                   onRemove?.()
                 }

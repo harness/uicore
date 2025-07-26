@@ -12,7 +12,6 @@ import { Icon, IconProps } from '@harness/icons'
 import TextMessage from './message-renderers/TextMessage'
 import YamlMessage from './message-renderers/YamlMessage'
 import SuggestionsMessage from './message-renderers/Suggestions'
-import Error from './message-renderers/Error'
 import Card, { CardContent } from './message-renderers/Card'
 import { Layout } from '../../index'
 import css from './Chat.css'
@@ -73,6 +72,7 @@ export type Message =
 // Common props for all renderers
 export interface CommonRendererProps {
   role: MessageRole
+  previousMessageRole?: MessageRole
   handleHelpfulClick?: (messageId: string, isHelpful: boolean) => void
 }
 
@@ -182,7 +182,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
     scrollToEnd()
   }, [messages])
 
-  const renderMessage = (message: Message) => {
+  const renderMessage = (message: Message, previousMessageRole?: MessageRole) => {
     switch (message.type) {
       case 'text':
         if (messageRenderer?.text) {
@@ -190,6 +190,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
             <messageRenderer.text
               message={message as TextMessage}
               role={message.role}
+              previousMessageRole={previousMessageRole}
               handleHelpfulClick={props.handleHelpfulClick}
             />
           )
@@ -258,17 +259,6 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
           )
         }
         return <Card content={message.content} />
-      case 'error':
-        if (messageRenderer?.error) {
-          return (
-            <messageRenderer.error
-              message={message as ErrorMessage}
-              role={message.role}
-              handleHelpfulClick={props.handleHelpfulClick}
-            />
-          )
-        }
-        return <Error content={message.content} />
       default:
         {
           const defaultMessage = message as MessageBase
@@ -277,7 +267,12 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
               { message: MessageBase } & CommonRendererProps
             >
             return (
-              <Renderer message={message} role={defaultMessage.role} handleHelpfulClick={props.handleHelpfulClick} />
+              <Renderer
+                previousMessageRole={previousMessageRole}
+                message={message}
+                role={defaultMessage.role}
+                handleHelpfulClick={props.handleHelpfulClick}
+              />
             )
           }
         }
@@ -369,9 +364,11 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
   return (
     <Layout.Vertical className={cx(css.container, { [css.containerWithFooter]: !hideInputArea })}>
       <Layout.Vertical className={css.messagesContainer}>
-        {messages.map(message => {
+        {messages.map((message, index) => {
           const messageClass = message.role === 'system' ? props.systemMessageClassName : props.userMessageClassName
           const isAnimated = animatedMessages.has(message.id)
+
+          const previousMessageRole = index > 0 ? messages[index - 1].role : undefined
 
           return (
             <div
@@ -396,7 +393,7 @@ export const Chat = forwardRef((props: ChatProps, ref) => {
                   })
                 }
               }}>
-              {renderMessage(message)}
+              {renderMessage(message, previousMessageRole)}
             </div>
           )
         })}
