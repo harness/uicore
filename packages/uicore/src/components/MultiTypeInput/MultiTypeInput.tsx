@@ -187,7 +187,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
 
   const FixedTypeComponent = fixedTypeComponent
   const fixedComponentOnChangeCallback = useCallback(
-    (val, multiTypeInputValue: MultiTypeInputValue) => {
+    (val: AcceptableValue | undefined, multiTypeInputValue: MultiTypeInputValue) => {
       onChange?.(val, multiTypeInputValue, MultiTypeInputType.FIXED)
     },
     [onChange]

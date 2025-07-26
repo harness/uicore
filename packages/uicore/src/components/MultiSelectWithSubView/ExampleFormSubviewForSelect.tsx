@@ -16,9 +16,10 @@ import {
   Text,
   SelectWithSubviewContext,
   SelectWithSubview,
-  MultiSelectWithSubview
+  MultiSelectWithSubview,
+  FormikForm
 } from '../..'
-import { Formik, Form, FormikErrors } from 'formik'
+import { Formik, FormikErrors } from 'formik'
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import { SelectOption } from '../Select/Select'
 import '../Radio/Radio.css'
@@ -90,7 +91,7 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
       {props => {
         const { setFieldValue, errors, values } = props
         return (
-          <Form style={{ padding: '10px' }}>
+          <FormikForm style={{ padding: '10px' }}>
             <TextInput
               placeholder="Enter Environment Name"
               name="environment"
@@ -123,7 +124,7 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
               </Button>
             </Layout.Horizontal>
             {error && <Text intent="danger">{error}</Text>}
-          </Form>
+          </FormikForm>
         )
       }}
     </Formik>
@@ -134,13 +135,13 @@ export function ExampleFormSubviewForSelect() {
   return (
     <Formik initialValues={{}} onSubmit={() => {}}>
       {() => (
-        <Form>
+        <FormikForm>
           <SelectWithSubview
             items={ExampleItems}
             changeViewButtonLabel="+ Add an environment"
             subview={<EnvironmentTypeSubForm onSubmit={values => console.log(values)} />}
           />
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   )

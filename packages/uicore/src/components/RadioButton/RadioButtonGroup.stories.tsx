@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from 'react'
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, Story, StoryFn } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { RadioButton } from './RadioButton'
 import { RadioButtonGroup, RadioButtonGroupProps } from './RadioButtonGroup'
@@ -122,8 +122,7 @@ WithLargeMargin.args = {
   background: Color.BLUE_100
 }
 WithLargeMargin.decorators = [
-  ...(WithLargeMargin.decorators || []),
-  Story => (
+  (Story: StoryFn) => (
     <div style={{ display: 'flex' }}>
       <div style={{ backgroundColor: 'lightgray', width: '100px' }} />
       <Story />

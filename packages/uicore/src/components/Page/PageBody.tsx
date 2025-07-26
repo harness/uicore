@@ -16,6 +16,8 @@ import { NoDataCard } from './NoDataCard'
 import css from './PageBody.css'
 
 export interface PageBodyProps {
+  children?: React.ReactNode
+
   /** If set to true, spinner should be shown */
   loading?: boolean
 

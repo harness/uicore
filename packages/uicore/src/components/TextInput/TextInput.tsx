@@ -16,7 +16,7 @@ import css from './TextInput.css'
 import { FormError } from '../FormError/FormError'
 
 export interface TextInputProps
-  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement'>,
+  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'type'>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   leftIcon?: IconName
   leftIconProps?: IconProps

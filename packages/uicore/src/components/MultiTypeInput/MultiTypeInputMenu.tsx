@@ -9,7 +9,7 @@ import React from 'react'
 import cx from 'classnames'
 import { Icon } from '@harness/icons'
 import { I18nResource } from '@harness/design-system'
-import { Menu } from '@blueprintjs/core'
+import { Menu, MenuItem } from '@blueprintjs/core'
 
 import { MultiTypeInputType } from './MultiTypeInputUtils'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
@@ -20,6 +20,7 @@ import i18nBase from './MultiTypeInput.i18n'
 
 export interface LearnMoreProps {
   type: MultiTypeInputType
+  children?: React.ReactNode
 }
 
 export const MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY = 'harness_multitype_input_learn_more_dontshowagain_0'
@@ -46,7 +47,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
   return (
     <Menu className={css.menu}>
       {allowedTypes.includes(MultiTypeInputType.FIXED) && (
-        <Menu.Item
+        <MenuItem
           className={css.bp3MenuItem}
           text={
             <LearnMorePopover
@@ -63,7 +64,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
         />
       )}
       {(allowedTypes as AllowedTypesWithRunTime[]).includes(MultiTypeInputType.RUNTIME) && (
-        <Menu.Item
+        <MenuItem
           className={css.bp3MenuItem}
           text={
             <LearnMorePopover
@@ -80,7 +81,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
         />
       )}
       {(allowedTypes as AllowedTypesWithRunTime[]).includes(MultiTypeInputType.RUNTIMEV1) && (
-        <Menu.Item
+        <MenuItem
           className={css.bp3MenuItem}
           text={
             <LearnMorePopover
@@ -97,7 +98,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
         />
       )}
       {(allowedTypes as AllowedTypesWithExecutionTime[]).includes(MultiTypeInputType.EXECUTION_TIME) && (
-        <Menu.Item
+        <MenuItem
           className={css.bp3MenuItem}
           text={
             <LearnMorePopover
@@ -114,7 +115,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
         />
       )}
       {allowedTypes.includes(MultiTypeInputType.EXPRESSION) && (
-        <Menu.Item
+        <MenuItem
           className={css.bp3MenuItem}
           text={
             <LearnMorePopover
@@ -131,7 +132,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
         />
       )}
       {allowedTypes.includes(MultiTypeInputType.REGEX) && (
-        <Menu.Item
+        <MenuItem
           className={css.bp3MenuItem}
           text={
             <LearnMorePopover
@@ -148,14 +149,14 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
         />
       )}
       {isLearnMoreOpen ? null : (
-        <Menu.Item
+        <MenuItem
           shouldDismissPopover={false}
           tagName="div"
           className={cx(css.bp3MenuItem, css.learnMoreItem)}
           onClick={() => setIsLearnMoreOpen(true)}
           text={
             <div className={css.learnMore}>
-              <span>{i18n.learnMore}</span>
+              <span>{i18n.learnMore as string}</span>
               <Icon name="more" />
             </div>
           }

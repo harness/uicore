@@ -59,7 +59,7 @@ export function StackTracePanel(props: StackTracePanelProps) {
       <Container className={cx(css.textContainer, isExpandible ? css.isExpandible : undefined)}>
         {timestamp && <Text className={css.timestamp}>{timestamp}</Text>}
         <pre className={css.textContent} data-is-collapsed={isCollapsed} ref={textContentRef}>
-          {stackTraceString}
+          {stackTraceString.toString()}
         </pre>
       </Container>
       {isExpandible && (

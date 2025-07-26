@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { ReactElement } from 'react'
 import css from './StackedSummaryTable.css'
 import { pick } from 'lodash-es'
 import type { Renderer, CellProps, Column } from 'react-table'
@@ -27,7 +27,7 @@ export interface StackedSummaryInterface extends StackedSummaryBarData {
 }
 
 export interface StackedSummaryTableProps {
-  columnHeaders: Array<JSX.Element | string>
+  columnHeaders: Array<ReactElement<any, any> | null>
   columnWidth?: number[]
   summaryData: StackedSummaryInterface[]
   barLength?: number

@@ -19,9 +19,10 @@ import {
   Text,
   SelectWithSubviewContext,
   MultiSelectWithSubview,
-  MultiSelectWithSubviewProps
+  MultiSelectWithSubviewProps,
+  FormikForm
 } from '../..'
-import { Formik, Form, FormikErrors } from 'formik'
+import { Formik, FormikErrors } from 'formik'
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import { SelectOption } from '../Select/Select'
 import '../Radio/Radio.css'
@@ -156,7 +157,7 @@ export const Basic: Story<MultiSelectWithSubviewProps> = args => {
         {props => {
           const { setFieldValue, errors, values } = props
           return (
-            <Form style={{ padding: '10px' }}>
+            <FormikForm style={{ padding: '10px' }}>
               <TextInput
                 placeholder="Enter Environment Name"
                 name="environment"
@@ -189,7 +190,7 @@ export const Basic: Story<MultiSelectWithSubviewProps> = args => {
                 </Button>
               </Layout.Horizontal>
               {error && <Text intent="danger">{error}</Text>}
-            </Form>
+            </FormikForm>
           )
         }}
       </Formik>

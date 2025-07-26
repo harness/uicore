@@ -65,7 +65,7 @@ export function getItemRenderer(setActiveItem: (item: string) => void): ItemRend
     // https://stackoverflow.com/a/24800788
 
     return (
-      <Menu.Item
+      <MenuItem
         key={`${item}${index}`}
         text={
           <span className={css.menuItem}>
