@@ -1,0 +1,29 @@
+[2K[1G[2m$ yarn clean && yarn ui:icons[22m
+[2K[1G[2m$ rm -rf dist[22m
+[2K[1G[2m$ node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts[22m
+src/HarnessIcons.ts 284ms
+[2K[1G[2m$ vite build[22m
+[36mvite v2.9.9 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 2 modules transformed.
+[32m[39m
+[32m[36m[vite:dts][39m[32m Start generate declaration files...[39m
+[32m[36m[vite:dts][39m[32m Declaration files built in 2032ms.[39m
+[32m[39m
+[31m[vite]: Rollup failed to resolve import "@blueprintjs/core" from "src/Icon.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`[39m
+[31merror during build:
+Error: [vite]: Rollup failed to resolve import "@blueprintjs/core" from "src/Icon.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at onRollupWarning (/Users/anand/trc/harness/uicore/node_modules/vite/dist/node/chunks/dep-59dc6e00.js:41489:19)
+    at onwarn (/Users/anand/trc/harness/uicore/node_modules/vite/dist/node/chunks/dep-59dc6e00.js:41305:13)
+    at Object.onwarn (/Users/anand/trc/harness/uicore/node_modules/rollup/dist/shared/rollup.js:23202:13)
+    at ModuleLoader.handleResolveId (/Users/anand/trc/harness/uicore/node_modules/rollup/dist/shared/rollup.js:22492:26)
+    at /Users/anand/trc/harness/uicore/node_modules/rollup/dist/shared/rollup.js:22453:26
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
+[2K[1G[31merror[39m Command failed with exit code 1.
+[2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.

@@ -5,10 +5,10 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { IMenuItemProps, Menu, MenuItem, Position } from '@blueprintjs/core'
+import { MenuItemProps as MMenuItemProps, Menu, MenuItem, Position } from '@blueprintjs/core'
 import cx from 'classnames'
 import { PopoverProps } from 'components/Popover/Popover'
-import React, { MouseEvent } from 'react'
+import React from 'react'
 import { Button, ButtonProps, ButtonVariation, Color, HarnessDocTooltip, Icon, IconProps, Popover } from '../..'
 import css from './SplitButton.css'
 
@@ -21,7 +21,7 @@ type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & {
   isDropdownOpen?: boolean
 }
 
-interface MenuItemProps extends IMenuItemProps {
+interface MenuItemProps extends MMenuItemProps {
   iconProps?: IconProps
 }
 
@@ -43,7 +43,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
 }) => {
   const [isOptionsOpen, setOptionsOpen] = React.useState(false)
 
-  const handleClick = async (event: MouseEvent) => {
+  const handleClick = async (event: React.MouseEvent<HTMLElement>) => {
     onClick?.(event)
   }
 

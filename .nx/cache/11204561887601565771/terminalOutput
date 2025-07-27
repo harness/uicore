@@ -1,0 +1,14 @@
+[2K[1G[2m$ yarn clean[22m
+[2K[1G[2m$ rm -rf dist[22m
+[2K[1G[2m$ vite build[22m
+[36mvite v2.9.9 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 216 modules transformed.
+rendering chunks...
+[90m[37m[2mdist/[22m[90m[39m[35mstyle.css         [39m [2m1.77 KiB / gzip: 0.73 KiB[22m
+[90m[37m[2mdist/[22m[90m[39m[36mhelp-panel.es.js  [39m [2m220.99 KiB / gzip: 59.45 KiB[22m
+[90m[37m[2mdist/[22m[90m[39m[36mhelp-panel.umd.js  [39m [2m125.82 KiB / gzip: 46.99 KiB[22m
+[32m[39m
+[32m[36m[vite:dts][39m[32m Start generate declaration files...[39m
+[32m[36m[vite:dts][39m[32m Declaration files built in 2509ms.[39m
+[32m[39m

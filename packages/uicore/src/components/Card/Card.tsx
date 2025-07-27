@@ -46,8 +46,8 @@ export const Card: React.FC<CardProps> = props => {
   }
   const tabIndexProps = bpProps.interactive ? { tabIndex } : {}
   const onClick = useCallback(
-    event => {
-      if (!event.target.closest(`.${css.dots}`)) {
+    (event: React.MouseEvent<HTMLDivElement>) => {
+      if (!(event.target as HTMLElement).closest(`.${css.dots}`)) {
         props.onClick?.(event)
       }
     },

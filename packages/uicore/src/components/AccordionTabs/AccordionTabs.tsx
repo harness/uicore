@@ -19,6 +19,7 @@ export interface TabListProps extends Omit<ITabProps, 'id' | 'title'> {
 export interface AccordionTabsProps {
   tabList: TabListProps[]
   tabsProps: TabsProps
+  children?: React.ReactNode
   accordionProps: Omit<AccordionProps, 'children'> & {
     /** The controlled active ID for the Accordion. Must be provided for synchronization with Tabs. */
     controlledActiveId: string

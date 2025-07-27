@@ -126,7 +126,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
           icon="Stroke"
           intent="primary"
           variation={ButtonVariation.ICON}
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => onClose(e)}
+          onClick={(e: React.MouseEvent<HTMLElement>) => onClose(e)}
           className={css.closeButton}
         />
       )}

@@ -1,0 +1,65 @@
+{
+  "run": {
+    "command": "nx run @harness/uicore:build",
+    "startTime": "2025-05-19T07:06:36.513Z",
+    "endTime": "2025-05-19T07:06:50.907Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "@harness/use-modal:build",
+      "target": "build",
+      "projectName": "@harness/use-modal",
+      "hash": "3425808563951220420",
+      "startTime": "2025-05-19T07:06:36.521Z",
+      "endTime": "2025-05-19T07:06:36.578Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "@harness/design-system:build",
+      "target": "build",
+      "projectName": "@harness/design-system",
+      "hash": "14718280497133935515",
+      "startTime": "2025-05-19T07:06:36.521Z",
+      "endTime": "2025-05-19T07:06:36.593Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "@harness/icons:build",
+      "target": "build",
+      "projectName": "@harness/icons",
+      "hash": "9750587242293236801",
+      "startTime": "2025-05-19T07:06:36.611Z",
+      "endTime": "2025-05-19T07:06:36.623Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "@harness/help-panel:build",
+      "target": "build",
+      "projectName": "@harness/help-panel",
+      "hash": "13170803858286259599",
+      "startTime": "2025-05-19T07:06:36.611Z",
+      "endTime": "2025-05-19T07:06:36.646Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "@harness/uicore:build",
+      "target": "build",
+      "projectName": "@harness/uicore",
+      "hash": "9656707330181974322",
+      "startTime": "2025-05-19T07:06:36.659Z",
+      "endTime": "2025-05-19T07:06:50.907Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

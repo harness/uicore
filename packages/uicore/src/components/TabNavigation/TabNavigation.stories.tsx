@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { TabNavigation } from '../..'
 import { TabNavigationProps } from '../TabNavigation/TabNavigation'
@@ -45,7 +45,7 @@ export default {
   decorators: [Story => <Story />]
 } as Meta
 
-export const Basic: Story<TabNavigationProps> = args => {
+export const Basic: StoryFn<TabNavigationProps> = args => {
   const initialEntries = args.links.map(item => item.to)
   return (
     <MemoryRouter initialEntries={initialEntries} initialIndex={0}>

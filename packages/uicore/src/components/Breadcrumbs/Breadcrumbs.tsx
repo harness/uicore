@@ -21,6 +21,7 @@ export interface Breadcrumb {
 }
 export interface BreadcrumbsProps {
   links: Breadcrumb[]
+  children?: React.ReactNode
   className?: string
 }
 

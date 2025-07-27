@@ -5,9 +5,15 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { HTMLInputTypeAttribute } from 'react'
 import cx from 'classnames'
-import { IInputGroupProps, Intent, InputGroup, PopoverInteractionKind, Classes } from '@blueprintjs/core'
+import {
+  InputGroupProps2 as InputGroupProps,
+  Intent,
+  InputGroup,
+  PopoverInteractionKind,
+  Classes
+} from '@blueprintjs/core'
 import { Popover } from '../../../Popover/Popover'
 import { Icon } from '@harness/icons'
 import { Text } from '../../../Text/Text'
@@ -20,8 +26,9 @@ import { Container } from '../../../Container/Container'
 import { PopoverProps } from '../../../Popover/Popover'
 
 export interface FilterTextInputProps
-  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
+  extends Omit<InputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
+  type: string | HTMLInputTypeAttribute
   wrapperClassName?: string
   placeholder?: string
   onRemove?: () => void

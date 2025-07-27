@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 
 import { DurationInput, timeToDisplayText, parseStringToTime, UNIT_MULTIPLIERS } from './DurationInput'
 
@@ -210,9 +210,9 @@ describe('<DurationInput/> tests', () => {
 
       fireEvent.mouseOver(icon!)
 
-      await waitForDomChange({ container: document.body })
-
-      expect(container).toMatchSnapshot()
+      await waitFor(() => {
+        expect(container).toMatchSnapshot()
+      })
     })
 
     test('shows subset of allowed values in help popover', async () => {
@@ -222,9 +222,9 @@ describe('<DurationInput/> tests', () => {
 
       fireEvent.mouseOver(icon!)
 
-      await waitForDomChange({ container: document.body })
-
-      expect(container).toMatchSnapshot()
+      await waitFor(() => {
+        expect(container).toMatchSnapshot()
+      })
     })
   })
 

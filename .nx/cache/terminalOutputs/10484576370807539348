@@ -1,0 +1,15 @@
+[2K[1G[2m$ yarn clean && yarn ui:icons[22m
+[2K[1G[2m$ rm -rf dist[22m
+[2K[1G[2m$ node ./scripts/build-icons.js > ./src/HarnessIcons.ts && prettier --write src/HarnessIcons.ts[22m
+src/HarnessIcons.ts 361ms
+[2K[1G[2m$ vite build[22m
+[36mvite v2.9.9 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 1918 modules transformed.
+rendering chunks...
+[90m[37m[2mdist/[22m[90m[39m[36micons.es.js  [39m [33m6773.78 KiB / gzip: 2753.54 KiB[39m
+[90m[37m[2mdist/[22m[90m[39m[36micons.umd.js  [39m [33m6262.58 KiB / gzip: 2723.75 KiB[39m
+[32m[39m
+[32m[36m[vite:dts][39m[32m Start generate declaration files...[39m
+[32m[36m[vite:dts][39m[32m Declaration files built in 3471ms.[39m
+[32m[39m

@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { omit } from 'lodash-es'
 import { FilterTextInput, FilterTextInputProps } from './FilterTextInput'
@@ -44,7 +44,7 @@ export default {
   decorators: [Story => <Story />]
 } as Meta
 
-export const Basic: Story<FilterTextInputProps> = args => {
+export const Basic: StoryFn<FilterTextInputProps> = args => {
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
 
   return (

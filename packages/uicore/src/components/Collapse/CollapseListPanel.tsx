@@ -25,6 +25,7 @@ interface CollapseListPanelProps extends ListPanelInterface {
   nextButtonProps?: ButtonProps
   footerContent?: JSX.Element
   nextButtonText?: string
+  children?: React.ReactNode
   className?: string
   bpCollapseProps?: ICollapseProps
   collapseHeaderProps?: CollapseListPanelHeaderProps

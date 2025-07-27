@@ -8,7 +8,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { defaultTo } from 'lodash-es'
 import { Menu, MenuItem, Position } from '@blueprintjs/core'
-import { ISelectProps, Suggest } from '@blueprintjs/select'
+import { SelectProps, Suggest2, ItemRendererProps } from '@blueprintjs/select'
 
 import { Text } from '../Text/Text'
 
@@ -24,7 +24,7 @@ export interface SelectWithSubmenuOption {
   hasSubmenuItems?: boolean
 }
 
-type Props = ISelectProps<SelectWithSubmenuOption>
+type Props = SelectProps<SelectWithSubmenuOption>
 
 export interface SelectWithSubmenuProps
   extends Omit<
@@ -49,13 +49,13 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
   const { items, onChange, onSubmenuOpen, allowCreatingNewItems, value, ...selectProps } = props
   const [selectedItem, setSelectedItem] = useState<SelectWithSubmenuOption | undefined>(undefined)
   const itemRenderer = useCallback(
-    (item: SelectWithSubmenuOption, { handleClick }) => {
+    (item: SelectWithSubmenuOption, { handleClick }: ItemRendererProps) => {
       return item.hasSubmenuItems ? (
         <Submenu
           items={defaultTo(item.submenuItems, [])}
           onChange={subItem => {
             onChange?.(subItem)
-            handleClick()
+            handleClick({} as React.MouseEvent<HTMLElement>)
           }}
           primaryValue={item}
           onSubmenuOpen={onSubmenuOpen}
@@ -69,16 +69,16 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
           className={css.createNewItemButton}
           onClick={() => {
             onChange?.({ label: item.label, value: item.label })
-            handleClick()
+            handleClick({} as React.MouseEvent<HTMLElement>)
           }}
         />
       ) : (
         <div
           key={`${item?.value}`}
           className={css.submenuItem}
-          onClick={() => {
+          onClick={e => {
             onChange?.(item)
-            handleClick()
+            handleClick(e)
           }}>
           <Text className={css.menuItemLabel} lineClamp={1}>
             {item.label}
@@ -93,18 +93,17 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
   }, [value])
 
   return (
-    <Suggest
+    <Suggest2
       {...selectProps}
       popoverProps={{
         minimal: true,
         className: css.main,
-        fill: true,
+        boundary: 'clippingParents',
         modifiers: {
-          preventOverflow: {
-            escapeWithReference: true
-          },
           offset: {
-            offset: '0 2'
+            options: {
+              offset: [0, 2]
+            }
           }
         }
       }}

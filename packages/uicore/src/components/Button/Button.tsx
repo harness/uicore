@@ -5,10 +5,10 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
+import { AnchorButton, Button as BButton, ButtonProps as BButtonProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
-import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
+import React, { ElementType, HTMLAttributes, useState } from 'react'
 import { Config } from '../../core/Config'
 import { OptionalTooltip } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
@@ -37,8 +37,8 @@ export enum ButtonSize {
 }
 
 export interface ButtonProps
-  extends Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
-    HTMLAttributes<HTMLButtonElement>,
+  extends Omit<BButtonProps, 'icon' | 'rightIcon' | 'onFocus'>,
+    Omit<HTMLAttributes<HTMLButtonElement>, 'onClick'>,
     StyledProps,
     OptionalTooltip {
   /** Left icon */
@@ -55,7 +55,7 @@ export interface ButtonProps
   withoutBoxShadow?: boolean
 
   /** onClick event handler */
-  onClick?: (event: MouseEvent) => Promise<unknown> | void
+  onClick?: (event: React.MouseEvent<HTMLElement>) => Promise<unknown> | void
 
   /** Link href. If provided, Button rendered as Link */
   href?: string
@@ -91,7 +91,7 @@ export function Button(props: ButtonProps): React.ReactElement {
   const isMounted = useIsMounted()
   const loading = internalLoading || propLoading
 
-  const onClick = async (event: MouseEvent) => {
+  const onClick = async (event: React.MouseEvent<HTMLElement>) => {
     // TODO (tan): Improve loading state when props.onClick() is resolved way too fast
     // that showing loading state causes flickering
 
@@ -217,8 +217,8 @@ export function Link(props: LinkProps): React.ReactElement {
       Utils.stopEvent(event)
       props.onClick?.(event)
     }
-    extra.elementRef = element => {
-      if (props.withoutHref && element) {
+    extra.elementRef = (element: HTMLButtonElement | HTMLAnchorElement | null) => {
+      if (props.withoutHref && element && 'href' in element) {
         element.href = 'javascript:void()'
       }
     }

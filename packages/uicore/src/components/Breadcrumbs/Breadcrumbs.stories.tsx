@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import type { Meta, Story } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { BrowserRouter } from 'react-router-dom'
 
 import { BreadcrumbsProps, Breadcrumbs } from '../..'
@@ -53,7 +53,7 @@ export interface Breadcrumb {
   },
   decorators: [Story => <Story />]
 } as Meta
-export const Basic: Story<BreadcrumbsProps> = args => {
+export const Basic: StoryFn<BreadcrumbsProps> = args => {
   const { links, className } = args
   return (
     <BrowserRouter>

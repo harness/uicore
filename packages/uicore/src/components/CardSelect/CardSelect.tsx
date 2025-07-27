@@ -32,7 +32,7 @@ enum Keys {
   MoveRight = 39
 }
 
-const ValidKeys = [Keys.Enter, Keys.MoveLeft, Keys.MoveRight]
+// const ValidKeys = [Keys.Enter, Keys.MoveLeft, Keys.MoveRight]
 
 export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
   const {
@@ -49,19 +49,20 @@ export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
   } = props
   const rootRef = useRef<HTMLDivElement>(null)
 
-  const handleUserKeyPress = useCallback(event => {
-    const { keyCode, target } = event
-    if (ValidKeys.indexOf(keyCode) > -1) {
-      if (keyCode === Keys.Enter) {
-        target.click()
-      } else if (keyCode === Keys.MoveLeft) {
-        target.previousSibling?.click()
-        target.previousSibling?.focus()
-      } else if (keyCode === Keys.MoveRight) {
-        target.nextSibling?.click()
-        target.nextSibling?.focus()
-      }
-    }
+  const handleUserKeyPress = useCallback((_event: KeyboardEvent) => {
+    // const { key, target } = event
+    // const keyCode = parseInt(key)
+    // if (ValidKeys.indexOf(keyCode) > -1) {
+    //   if (keyCode === Keys.Enter) {
+    //     target.click()
+    //   } else if (keyCode === Keys.MoveLeft) {
+    //     target.previousSibling?.click()
+    //     target.previousSibling?.focus()
+    //   } else if (keyCode === Keys.MoveRight) {
+    //     target.nextSibling?.click()
+    //     target.nextSibling?.focus()
+    //   }
+    // }
   }, [])
 
   useEffect(() => {
