@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M12 8V4H8"/>
-  <rect width="16" height="12" x="4" y="8" rx="2"/>
-  <path d="M2 14h2"/>
-  <path d="M20 14h2"/>
-  <path d="M15 13v2"/>
-  <path d="M9 13v2"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" fill="none"><path fill="url(#a)" d="M4.864 4.43A5.975 5.975 0 0 1 12.182.205l17.388 4.66a5.974 5.974 0 0 1 4.225 7.317l-4.66 17.388a5.975 5.975 0 0 1-7.317 4.225L4.43 29.135a5.975 5.975 0 0 1-4.225-7.317L4.865 4.43Zm5.043 8.935a1 1 0 0 0-1.225.707L6.443 22.43a1 1 0 0 0 .705 1.223l8.205 2.225a3.622 3.622 0 1 0 .676-1.889l-7.397-2.005 1.982-7.393a1 1 0 0 0-.707-1.225Zm8.25 11.335a1.622 1.622 0 1 1 1.621 2.81 1.622 1.622 0 0 1-1.62-2.81Zm-.63-17.946a3.622 3.622 0 1 0-.197 3.927l7.398 2.006-1.983 7.393a1 1 0 0 0 1.932.518l2.24-8.357a1 1 0 0 0-.705-1.223l-8.207-2.226a3.605 3.605 0 0 0-.477-2.038Zm-3.947.407a1.623 1.623 0 1 1 1.623 2.81 1.623 1.623 0 0 1-1.623-2.81Z"/><defs><linearGradient id="a" x1=".225" x2="35.642" y1="-2.626" y2="35.641" gradientUnits="userSpaceOnUse"><stop stop-color="#FF99C9"/><stop offset=".5" stop-color="#926EF7"/><stop offset="1" stop-color="#6EEEF7"/></linearGradient></defs></svg>
