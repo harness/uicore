@@ -35,13 +35,17 @@
   border-right: 1px solid var(--grey-300);
 }
 
-.aiDropdownButton {
+.aiButton {
   padding-right: 0px !important;
+}
+
+.aiDropdownButton {
+  padding-right: var(--spacing-medium) !important;
+  padding-left: var(--spacing-small) !important;
   min-width: unset !important;
   height: 22px !important;
   min-height: unset !important;
   border-left: 1px solid black !important;
-  margin-left: var(--spacing-small) !important;
   width: unset !important;
 
   &::before {

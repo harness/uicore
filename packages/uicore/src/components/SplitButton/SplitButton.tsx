@@ -83,6 +83,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
           withoutCurrentColor
           variation={variation}
           {...commonProps}
+          className={css.aiButton}
           tooltip={tooltip}
           disabled={disabled}
           onClick={e => {
