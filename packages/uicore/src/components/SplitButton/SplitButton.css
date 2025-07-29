@@ -46,6 +46,7 @@
   height: 22px !important;
   min-height: unset !important;
   border-left: 1px solid black !important;
+  margin-left: var(--spacing-xsmall) !important;
   width: unset !important;
 
   &::before {

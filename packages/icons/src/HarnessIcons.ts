@@ -1604,6 +1604,8 @@ import TasRollingSetup from './tasRollingSetup.svg'
 import TasSwapRollback from './tasSwapRollback.svg'
 import TasSwapRoute from './tasSwapRoute.svg'
 import TasUnMapRoute from './tasUnMapRoute.svg'
+import TaskRun from './task-run.svg'
+import Task from './task.svg'
 import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
@@ -3298,6 +3300,8 @@ type HarnessIconName =
   | 'tasSwapRollback'
   | 'tasSwapRoute'
   | 'tasUnMapRoute'
+  | 'task-run'
+  | 'task'
   | 'template-inputs'
   | 'template-library'
   | 'templates-blue'
@@ -4992,6 +4996,8 @@ const HarnessIcons: KVO<ElementType> = {
   tasSwapRollback: TasSwapRollback,
   tasSwapRoute: TasSwapRoute,
   tasUnMapRoute: TasUnMapRoute,
+  'task-run': TaskRun,
+  task: Task,
   'template-inputs': TemplateInputs,
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
