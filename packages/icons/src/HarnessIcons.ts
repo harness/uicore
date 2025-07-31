@@ -62,6 +62,7 @@ import AiCanary from './ai-canary.svg'
 import AiPrimary from './ai-primary.svg'
 import AiSecondary from './ai-secondary.svg'
 import AiTestAutomation from './ai-test-automation.svg'
+import AiVerifyAlt from './ai-verify-alt.svg'
 import AiVerify from './ai-verify.svg'
 import Ai from './ai.svg'
 import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
@@ -1759,6 +1760,7 @@ type HarnessIconName =
   | 'ai-primary'
   | 'ai-secondary'
   | 'ai-test-automation'
+  | 'ai-verify-alt'
   | 'ai-verify'
   | 'ai'
   | 'anchore-grype-inverse'
@@ -3456,6 +3458,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ai-primary': AiPrimary,
   'ai-secondary': AiSecondary,
   'ai-test-automation': AiTestAutomation,
+  'ai-verify-alt': AiVerifyAlt,
   'ai-verify': AiVerify,
   ai: Ai,
   'anchore-grype-inverse': AnchoreGrypeInverse,
