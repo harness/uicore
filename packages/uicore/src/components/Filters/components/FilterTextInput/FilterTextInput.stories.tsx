@@ -53,3 +53,30 @@ export const Basic: Story<FilterTextInputProps> = args => {
     </Layout.Horizontal>
   )
 }
+
+/**
+ * FilterTextInput is a component that combines the functionality of TextInput and TagsInput.
+ * The component also supports multi input. The user can type in multiple values separated by comma
+ * The user can type in free text and it will be added as a tag or just a simple text.
+ *
+ * This is a variant of FilterTextInput that is a *pseudo* controlled component where you can
+ * 1. populate initial data using value during component mount
+ * 2. Reset the value using the onRemove prop.
+ *
+ */
+export const FilterTextInputWithExternalState: Story<FilterTextInputProps> = args => {
+  const argsCopy = omit(args, ['items', 'onChange', 'value', 'onRemove'])
+  const [filterValue, setFilterValue] = React.useState<string[] | string>(['Bulbasaur', 'Ivysaur'])
+  return (
+    <Layout.Horizontal flex>
+      <FilterTextInput
+        enableMultiInput
+        placeholder={'Pokemon'}
+        value={filterValue}
+        onChange={(value: string[] | string) => setFilterValue(value)}
+        onRemove={() => setFilterValue([])}
+        {...argsCopy}
+      />
+    </Layout.Horizontal>
+  )
+}

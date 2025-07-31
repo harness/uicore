@@ -77,6 +77,21 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
     setTextInputValue(inputValue)
   }
 
+  /**
+   * Side effect used to reset the states when value is empty.
+   * eg. when user clears the input using clear icon
+   */
+  React.useEffect(() => {
+    if (value === undefined || value?.length === 0) {
+      setSelectedItems(enableMultiInput ? [] : '')
+      setTextInputValue('')
+    }
+  }, [value])
+
+  /**
+   * Side effect used to set the states when value is not empty - executed only once at component mount
+   * eg. when user wants to load initial values
+   */
   React.useEffect(() => {
     if (value && value.length > 0) {
       setSelectedItems(value)
