@@ -1079,6 +1079,7 @@ import MainView from './main-view.svg'
 import MainWorkflows from './main-workflows.svg'
 import MainZoomOut from './main-zoom-out.svg'
 import Management from './management.svg'
+import ManualRun from './manual-run.svg'
 import MapRoute from './map-route.svg'
 import MarkAsFailed from './mark-as-failed.svg'
 import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
@@ -2777,6 +2778,7 @@ type HarnessIconName =
   | 'main-workflows'
   | 'main-zoom-out'
   | 'management'
+  | 'manual-run'
   | 'map-route'
   | 'mark-as-failed'
   | 'mark-as-failure-inverse'
@@ -4475,6 +4477,7 @@ const HarnessIcons: KVO<ElementType> = {
   'main-workflows': MainWorkflows,
   'main-zoom-out': MainZoomOut,
   management: Management,
+  'manual-run': ManualRun,
   'map-route': MapRoute,
   'mark-as-failed': MarkAsFailed,
   'mark-as-failure-inverse': MarkAsFailureInverse,
