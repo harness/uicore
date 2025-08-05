@@ -483,6 +483,7 @@ import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpProbe from './http-probe.svg'
 import HttpStep from './http-step.svg'
+import Huggingface from './huggingface.svg'
 import IacmOpentofuInverseStep from './iacm-opentofu-inverse-step.svg'
 import IacmOpentofuStep from './iacm-opentofu-step.svg'
 import IacmResourceAdded from './iacm-resource-added.svg'
@@ -1491,6 +1492,7 @@ type HarnessIconName =
   | 'hourglass'
   | 'http-probe'
   | 'http-step'
+  | 'huggingface'
   | 'iacm-opentofu-inverse-step'
   | 'iacm-opentofu-step'
   | 'iacm-resource-added'
@@ -2499,6 +2501,7 @@ const HarnessIcons: KVO<ElementType> = {
   hourglass: Hourglass,
   'http-probe': HttpProbe,
   'http-step': HttpStep,
+  huggingface: Huggingface,
   'iacm-opentofu-inverse-step': IacmOpentofuInverseStep,
   'iacm-opentofu-step': IacmOpentofuStep,
   'iacm-resource-added': IacmResourceAdded,
