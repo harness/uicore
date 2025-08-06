@@ -59,6 +59,7 @@ import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
 import AiArrowUp from './ai-arrow-up.svg'
 import AiCanary from './ai-canary.svg'
+import AiOps from './ai-ops.svg'
 import AiPrimary from './ai-primary.svg'
 import AiSecondary from './ai-secondary.svg'
 import AiTestAutomation from './ai-test-automation.svg'
@@ -168,6 +169,7 @@ import BarrierOpenWithLinks from './barrier-open-with-links.svg'
 import BarrierOpen from './barrier-open.svg'
 import BaselineTarget from './baseline-target.svg'
 import BasicDeployment from './basic-deployment.svg'
+import Beaker02 from './beaker-02.svg'
 import BgScaleDownStepInverse from './bg-scale-down-step-inverse.svg'
 import BgScaleDownStep from './bg-scale-down-step.svg'
 import BinMain from './bin-main.svg'
@@ -1758,6 +1760,7 @@ type HarnessIconName =
   | 'agents'
   | 'ai-arrow-up'
   | 'ai-canary'
+  | 'ai-ops'
   | 'ai-primary'
   | 'ai-secondary'
   | 'ai-test-automation'
@@ -1867,6 +1870,7 @@ type HarnessIconName =
   | 'barrier-open'
   | 'baseline-target'
   | 'basic-deployment'
+  | 'beaker-02'
   | 'bg-scale-down-step-inverse'
   | 'bg-scale-down-step'
   | 'bin-main'
@@ -3457,6 +3461,7 @@ const HarnessIcons: KVO<ElementType> = {
   agents: Agents,
   'ai-arrow-up': AiArrowUp,
   'ai-canary': AiCanary,
+  'ai-ops': AiOps,
   'ai-primary': AiPrimary,
   'ai-secondary': AiSecondary,
   'ai-test-automation': AiTestAutomation,
@@ -3566,6 +3571,7 @@ const HarnessIcons: KVO<ElementType> = {
   'barrier-open': BarrierOpen,
   'baseline-target': BaselineTarget,
   'basic-deployment': BasicDeployment,
+  'beaker-02': Beaker02,
   'bg-scale-down-step-inverse': BgScaleDownStepInverse,
   'bg-scale-down-step': BgScaleDownStep,
   'bin-main': BinMain,
