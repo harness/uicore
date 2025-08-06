@@ -81,6 +81,7 @@ import ApprovalStep from './approval-step.svg'
 import AppsLinked from './apps-linked.svg'
 import AquasecInverse from './aquasec-inverse.svg'
 import Aquasec from './aquasec.svg'
+import ArchitectMode from './architect-mode.svg'
 import Argo from './argo.svg'
 import Arm from './arm.svg'
 import Arrow from './arrow.svg'
@@ -1782,6 +1783,7 @@ type HarnessIconName =
   | 'apps-linked'
   | 'aquasec-inverse'
   | 'aquasec'
+  | 'architect-mode'
   | 'argo'
   | 'arm'
   | 'arrow'
@@ -3483,6 +3485,7 @@ const HarnessIcons: KVO<ElementType> = {
   'apps-linked': AppsLinked,
   'aquasec-inverse': AquasecInverse,
   aquasec: Aquasec,
+  'architect-mode': ArchitectMode,
   argo: Argo,
   arm: Arm,
   arrow: Arrow,
