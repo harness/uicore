@@ -13,7 +13,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 9;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
@@ -34,7 +34,7 @@
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
-  z-index: 1000;
+  z-index: 10;
   transform: translateX(100%);
   width: 400px; /* Fixed width */
 }
@@ -99,7 +99,7 @@
 
 .minimizedContainer {
   position: fixed;
-  z-index: 1000;
+  z-index: 10;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }

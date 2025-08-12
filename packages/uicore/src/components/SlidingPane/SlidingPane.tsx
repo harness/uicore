@@ -63,7 +63,7 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
   showCloseButton = true,
   showMinimizeButton = true,
   headerContent,
-  zIndex = 1000,
+  zIndex = 10,
   usePortal = false,
   portalContainer,
   hideOverlay = false
