@@ -1688,6 +1688,7 @@ import Variable from './variable.svg'
 import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import VeeCodeKong from './vee-code-kong.svg'
+import VideoRecorder from './video-recorder.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
@@ -3392,6 +3393,7 @@ type HarnessIconName =
   | 'variables-blue'
   | 'variables'
   | 'vee-code-kong'
+  | 'video-recorder'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
@@ -5096,6 +5098,7 @@ const HarnessIcons: KVO<ElementType> = {
   'variables-blue': VariablesBlue,
   variables: Variables,
   'vee-code-kong': VeeCodeKong,
+  'video-recorder': VideoRecorder,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
