@@ -14,8 +14,8 @@ import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } f
 import css from './MultiSelect.css'
 import { Button } from '../../components/Button/Button'
 import { Text } from '../../components/Text/Text'
-import { Icon } from '@harness/icons'
 import { Utils } from '../../core/Utils'
+import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 
 export interface MultiSelectOption {
   label: string
@@ -49,6 +49,7 @@ export interface MultiSelectProps
   tagRenderer?: Props['tagRenderer']
   createNewItemFromQuery?: Props['createNewItemFromQuery']
   allowCreatingNewItems?: boolean
+  createNewItemTooltipId?: string
   name?: string
   onPopoverClose?: (node: HTMLElement) => void
   disabled?: boolean
@@ -204,9 +205,11 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       return (
         <React.Fragment>
           <Button intent="primary" minimal text={query} icon="plus" onClick={handleClick} />
-          <span className="icon-container">
-            <Icon id="icon-styled-props" name="info-sign" size={16} color="grey400" padding="small" />
-          </span>
+          {props.createNewItemTooltipId && (
+            <span className="icon-container" data-tooltip-id={props.createNewItemTooltipId}>
+              <HarnessDocTooltip tooltipId={props.createNewItemTooltipId} useStandAlone />
+            </span>
+          )}
         </React.Fragment>
       )
   }

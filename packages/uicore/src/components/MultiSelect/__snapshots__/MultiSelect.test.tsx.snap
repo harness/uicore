@@ -259,30 +259,6 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     cha
                   </span>
                 </button>
-                <span
-                  class="icon-container"
-                >
-                  <span
-                    class="bp3-icon bp3-icon-info-sign StyledProps--main StyledProps--color StyledProps--color-grey400 StyledProps--padding-small"
-                    icon="info-sign"
-                    id="icon-styled-props"
-                  >
-                    <svg
-                      data-icon="info-sign"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      width="16"
-                    >
-                      <desc>
-                        info-sign
-                      </desc>
-                      <path
-                        d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </span>
               </ul>
             </div>
           </div>
