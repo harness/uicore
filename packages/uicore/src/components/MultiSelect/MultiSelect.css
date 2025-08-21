@@ -143,6 +143,7 @@
   :global(.icon-container) {
     position: absolute;
     right: 0;
+    align-self: center;
   }
 }
 
