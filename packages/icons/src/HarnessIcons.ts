@@ -980,6 +980,7 @@ import KubernetesGitops from './kubernetes-gitops.svg'
 import KubernetesHarness from './kubernetes-harness.svg'
 import Kustamize from './kustamize.svg'
 import Kustomizeparam from './kustomizeparam.svg'
+import Langsmith from './langsmith.svg'
 import Launch from './launch.svg'
 import LayersOutline from './layers-outline.svg'
 import LayoutBottom from './layout-bottom.svg'
@@ -1101,6 +1102,7 @@ import Metasploit from './metasploit.svg'
 import MetricSources from './metric-sources.svg'
 import MicrosoftAzure from './microsoft-azure.svg'
 import MigrationState from './migration-state.svg'
+import Mlflow from './mlflow.svg'
 import ModuleTesting from './module-testing.svg'
 import MoneyIcon from './money-icon.svg'
 import MonitoredService from './monitored-service.svg'
@@ -2684,6 +2686,7 @@ type HarnessIconName =
   | 'kubernetes-harness'
   | 'kustamize'
   | 'kustomizeparam'
+  | 'langsmith'
   | 'launch'
   | 'layers-outline'
   | 'layout-bottom'
@@ -2805,6 +2808,7 @@ type HarnessIconName =
   | 'metric-sources'
   | 'microsoft-azure'
   | 'migration-state'
+  | 'mlflow'
   | 'module-testing'
   | 'money-icon'
   | 'monitored-service'
@@ -4388,6 +4392,7 @@ const HarnessIcons: KVO<ElementType> = {
   'kubernetes-harness': KubernetesHarness,
   kustamize: Kustamize,
   kustomizeparam: Kustomizeparam,
+  langsmith: Langsmith,
   launch: Launch,
   'layers-outline': LayersOutline,
   'layout-bottom': LayoutBottom,
@@ -4509,6 +4514,7 @@ const HarnessIcons: KVO<ElementType> = {
   'metric-sources': MetricSources,
   'microsoft-azure': MicrosoftAzure,
   'migration-state': MigrationState,
+  mlflow: Mlflow,
   'module-testing': ModuleTesting,
   'money-icon': MoneyIcon,
   'monitored-service': MonitoredService,
