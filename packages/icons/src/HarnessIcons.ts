@@ -660,6 +660,7 @@ import DownloadManifestsInverse from './download-manifests-inverse.svg'
 import DownloadManifests from './download-manifests.svg'
 import DryRun from './dry-run.svg'
 import Dx from './dx.svg'
+import DynamicStage from './dynamic-stage.svg'
 import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
@@ -2366,6 +2367,7 @@ type HarnessIconName =
   | 'download-manifests'
   | 'dry-run'
   | 'dx'
+  | 'dynamic-stage'
   | 'ecr-ci-step-inverse'
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
@@ -4072,6 +4074,7 @@ const HarnessIcons: KVO<ElementType> = {
   'download-manifests': DownloadManifests,
   'dry-run': DryRun,
   dx: Dx,
+  'dynamic-stage': DynamicStage,
   'ecr-ci-step-inverse': EcrCiStepInverse,
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
