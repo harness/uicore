@@ -609,9 +609,11 @@ import DbInstance from './db-instance.svg'
 import DbLiquibase from './db-liquibase.svg'
 import DbPreviewInverse from './db-preview-inverse.svg'
 import DbPreview from './db-preview.svg'
+import DbRollbackSql from './db-rollback-sql.svg'
 import DbSchema from './db-schema.svg'
 import DbStep from './db-step.svg'
 import DbTestAndPreview from './db-test-and-preview.svg'
+import DbUpdateSql from './db-update-sql.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -2316,9 +2318,11 @@ type HarnessIconName =
   | 'db-liquibase'
   | 'db-preview-inverse'
   | 'db-preview'
+  | 'db-rollback-sql'
   | 'db-schema'
   | 'db-step'
   | 'db-test-and-preview'
+  | 'db-update-sql'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -4023,9 +4027,11 @@ const HarnessIcons: KVO<ElementType> = {
   'db-liquibase': DbLiquibase,
   'db-preview-inverse': DbPreviewInverse,
   'db-preview': DbPreview,
+  'db-rollback-sql': DbRollbackSql,
   'db-schema': DbSchema,
   'db-step': DbStep,
   'db-test-and-preview': DbTestAndPreview,
+  'db-update-sql': DbUpdateSql,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
