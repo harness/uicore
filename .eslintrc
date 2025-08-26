@@ -83,5 +83,29 @@
     "react": {
       "version": "16.9.0"
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.svg"],
+      "parser": "espree",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      },
+      "rules": {
+        "@typescript-eslint/no-unnecessary-type-assertion": "off",
+        "@typescript-eslint/restrict-plus-operands": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/no-unknown-property": "off",
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "JSXElement[openingElement.name.name=\"image\"]",
+            "message": "The `image` tag is not allowed inside inline SVG components."
+          }
+        ]
+      }
+    }
+  ]
 }
