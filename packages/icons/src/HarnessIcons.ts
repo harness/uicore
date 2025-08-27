@@ -80,6 +80,35 @@ import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import AppsLinked from './apps-linked.svg'
+import AppsecAiatom from './appsec-aiatom.svg'
+import AppsecAnalysis from './appsec-analysis.svg'
+import AppsecApidoc from './appsec-apidoc.svg'
+import AppsecAuth from './appsec-auth.svg'
+import AppsecBarchart from './appsec-barchart.svg'
+import AppsecCaughtexception from './appsec-caughtexception.svg'
+import AppsecCodepiece from './appsec-codepiece.svg'
+import AppsecControls from './appsec-controls.svg'
+import AppsecDashboard from './appsec-dashboard.svg'
+import AppsecDocument from './appsec-document.svg'
+import AppsecDrawers from './appsec-drawers.svg'
+import AppsecEvent from './appsec-event.svg'
+import AppsecHome from './appsec-home.svg'
+import AppsecHoneycomb from './appsec-honeycomb.svg'
+import AppsecHttpevent from './appsec-httpevent.svg'
+import AppsecKey from './appsec-key.svg'
+import AppsecLock from './appsec-lock.svg'
+import AppsecPiechart from './appsec-piechart.svg'
+import AppsecPipeline from './appsec-pipeline.svg'
+import AppsecPipelinebranch from './appsec-pipelinebranch.svg'
+import AppsecPolicyset from './appsec-policyset.svg'
+import AppsecReports from './appsec-reports.svg'
+import AppsecSettings from './appsec-settings.svg'
+import AppsecShieldcheck from './appsec-shieldcheck.svg'
+import AppsecShieldgears from './appsec-shieldgears.svg'
+import AppsecShieldmagnifier from './appsec-shieldmagnifier.svg'
+import AppsecSnapshot from './appsec-snapshot.svg'
+import AppsecUser from './appsec-user.svg'
+import AppsecUsers from './appsec-users.svg'
 import AquasecInverse from './aquasec-inverse.svg'
 import Aquasec from './aquasec.svg'
 import ArchitectMode from './architect-mode.svg'
@@ -1789,6 +1818,35 @@ type HarnessIconName =
   | 'approval-stage'
   | 'approval-step'
   | 'apps-linked'
+  | 'appsec-aiatom'
+  | 'appsec-analysis'
+  | 'appsec-apidoc'
+  | 'appsec-auth'
+  | 'appsec-barchart'
+  | 'appsec-caughtexception'
+  | 'appsec-codepiece'
+  | 'appsec-controls'
+  | 'appsec-dashboard'
+  | 'appsec-document'
+  | 'appsec-drawers'
+  | 'appsec-event'
+  | 'appsec-home'
+  | 'appsec-honeycomb'
+  | 'appsec-httpevent'
+  | 'appsec-key'
+  | 'appsec-lock'
+  | 'appsec-piechart'
+  | 'appsec-pipeline'
+  | 'appsec-pipelinebranch'
+  | 'appsec-policyset'
+  | 'appsec-reports'
+  | 'appsec-settings'
+  | 'appsec-shieldcheck'
+  | 'appsec-shieldgears'
+  | 'appsec-shieldmagnifier'
+  | 'appsec-snapshot'
+  | 'appsec-user'
+  | 'appsec-users'
   | 'aquasec-inverse'
   | 'aquasec'
   | 'architect-mode'
@@ -3498,6 +3556,35 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
   'apps-linked': AppsLinked,
+  'appsec-aiatom': AppsecAiatom,
+  'appsec-analysis': AppsecAnalysis,
+  'appsec-apidoc': AppsecApidoc,
+  'appsec-auth': AppsecAuth,
+  'appsec-barchart': AppsecBarchart,
+  'appsec-caughtexception': AppsecCaughtexception,
+  'appsec-codepiece': AppsecCodepiece,
+  'appsec-controls': AppsecControls,
+  'appsec-dashboard': AppsecDashboard,
+  'appsec-document': AppsecDocument,
+  'appsec-drawers': AppsecDrawers,
+  'appsec-event': AppsecEvent,
+  'appsec-home': AppsecHome,
+  'appsec-honeycomb': AppsecHoneycomb,
+  'appsec-httpevent': AppsecHttpevent,
+  'appsec-key': AppsecKey,
+  'appsec-lock': AppsecLock,
+  'appsec-piechart': AppsecPiechart,
+  'appsec-pipeline': AppsecPipeline,
+  'appsec-pipelinebranch': AppsecPipelinebranch,
+  'appsec-policyset': AppsecPolicyset,
+  'appsec-reports': AppsecReports,
+  'appsec-settings': AppsecSettings,
+  'appsec-shieldcheck': AppsecShieldcheck,
+  'appsec-shieldgears': AppsecShieldgears,
+  'appsec-shieldmagnifier': AppsecShieldmagnifier,
+  'appsec-snapshot': AppsecSnapshot,
+  'appsec-user': AppsecUser,
+  'appsec-users': AppsecUsers,
   'aquasec-inverse': AquasecInverse,
   aquasec: Aquasec,
   'architect-mode': ArchitectMode,
