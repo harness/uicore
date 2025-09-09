@@ -893,6 +893,7 @@ import Graph from './graph.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
+import HarWithDarkText from './har-with-dark-text.svg'
 import HarnessAi from './harness-ai.svg'
 import HarnessCopilot from './harness-copilot.svg'
 import HarnessGrey from './harness-grey.svg'
@@ -2633,6 +2634,7 @@ type HarnessIconName =
   | 'grey-cluster'
   | 'grid'
   | 'hand-manual'
+  | 'har-with-dark-text'
   | 'harness-ai'
   | 'harness-copilot'
   | 'harness-grey'
@@ -4373,6 +4375,7 @@ const HarnessIcons: KVO<ElementType> = {
   'grey-cluster': GreyCluster,
   grid: Grid,
   'hand-manual': HandManual,
+  'har-with-dark-text': HarWithDarkText,
   'harness-ai': HarnessAi,
   'harness-copilot': HarnessCopilot,
   'harness-grey': HarnessGrey,
