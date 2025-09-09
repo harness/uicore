@@ -642,7 +642,9 @@ import DbRollbackSql from './db-rollback-sql.svg'
 import DbSchema from './db-schema.svg'
 import DbStep from './db-step.svg'
 import DbTestAndPreview from './db-test-and-preview.svg'
+import DbTrialStar from './db-trial-star.svg'
 import DbUpdateSql from './db-update-sql.svg'
+import DbopsTrail from './dbops-trail.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -2380,7 +2382,9 @@ type HarnessIconName =
   | 'db-schema'
   | 'db-step'
   | 'db-test-and-preview'
+  | 'db-trial-star'
   | 'db-update-sql'
+  | 'dbops-trail'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -4118,7 +4122,9 @@ const HarnessIcons: KVO<ElementType> = {
   'db-schema': DbSchema,
   'db-step': DbStep,
   'db-test-and-preview': DbTestAndPreview,
+  'db-trial-star': DbTrialStar,
   'db-update-sql': DbUpdateSql,
+  'dbops-trail': DbopsTrail,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
