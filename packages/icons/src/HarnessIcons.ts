@@ -1544,6 +1544,9 @@ import SettingsHorizontal from './settings-horizontal.svg'
 import SetupApi from './setup-api.svg'
 import SetupClient from './setup-client.svg'
 import SetupTags from './setup-tags.svg'
+import SfDxProject from './sf-dx-project.svg'
+import SfOrgBasedDiff from './sf-org-based-diff.svg'
+import SfUnlockedPackage from './sf-unlocked-package.svg'
 import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
 import Skipped from './skipped.svg'
@@ -3285,6 +3288,9 @@ type HarnessIconName =
   | 'setup-api'
   | 'setup-client'
   | 'setup-tags'
+  | 'sf-dx-project'
+  | 'sf-org-based-diff'
+  | 'sf-unlocked-package'
   | 'shield-gears'
   | 'simple-verification'
   | 'skipped'
@@ -5026,6 +5032,9 @@ const HarnessIcons: KVO<ElementType> = {
   'setup-api': SetupApi,
   'setup-client': SetupClient,
   'setup-tags': SetupTags,
+  'sf-dx-project': SfDxProject,
+  'sf-org-based-diff': SfOrgBasedDiff,
+  'sf-unlocked-package': SfUnlockedPackage,
   'shield-gears': ShieldGears,
   'simple-verification': SimpleVerification,
   skipped: Skipped,
