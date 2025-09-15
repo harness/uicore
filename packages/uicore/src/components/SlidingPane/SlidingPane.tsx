@@ -81,7 +81,7 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
   useEffect(() => {
     const isOpen = currentState === 'open'
 
-    if (isOpen) {
+    if (isOpen && !hideOverlay) {
       const originalOverflow = document.body.style.overflow
 
       document.body.style.overflow = 'hidden'
@@ -90,7 +90,7 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
         document.body.style.overflow = originalOverflow
       }
     }
-  }, [currentState])
+  }, [currentState, hideOverlay])
 
   const handleStateChange = useCallback(
     (newState: SlidingPaneState) => {
