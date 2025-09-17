@@ -71,6 +71,8 @@
 
 .actions {
   display: flex;
+  margin-left: auto;
+  padding: 0px var(--spacing-small);
   gap: var(--spacing-small);
 }
 

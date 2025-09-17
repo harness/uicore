@@ -913,6 +913,7 @@ import HelmRollback from './helm-rollback.svg'
 import Help from './help.svg'
 import HexagonOutline from './hexagon-outline.svg'
 import Hibernate from './hibernate.svg'
+import HistoryTimer from './history-timer.svg'
 import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpProbe from './http-probe.svg'
@@ -1128,6 +1129,7 @@ import MarkAsFailureInverse from './mark-as-failure-inverse.svg'
 import MarkAsFailure from './mark-as-failure.svg'
 import MarkFailedChangsetRun from './mark-failed-changset-run.svg'
 import MavenRepositoryType from './maven-repository-type.svg'
+import MaximizeButton from './maximize-button.svg'
 import Medal from './medal.svg'
 import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
@@ -2658,6 +2660,7 @@ type HarnessIconName =
   | 'help'
   | 'hexagon-outline'
   | 'hibernate'
+  | 'history-timer'
   | 'hotfix'
   | 'hourglass'
   | 'http-probe'
@@ -2873,6 +2876,7 @@ type HarnessIconName =
   | 'mark-as-failure'
   | 'mark-failed-changset-run'
   | 'maven-repository-type'
+  | 'maximize-button'
   | 'medal'
   | 'memberRole'
   | 'mend-inverse'
@@ -4403,6 +4407,7 @@ const HarnessIcons: KVO<ElementType> = {
   help: Help,
   'hexagon-outline': HexagonOutline,
   hibernate: Hibernate,
+  'history-timer': HistoryTimer,
   hotfix: Hotfix,
   hourglass: Hourglass,
   'http-probe': HttpProbe,
@@ -4618,6 +4623,7 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-as-failure': MarkAsFailure,
   'mark-failed-changset-run': MarkFailedChangsetRun,
   'maven-repository-type': MavenRepositoryType,
+  'maximize-button': MaximizeButton,
   medal: Medal,
   memberRole: MemberRole,
   'mend-inverse': MendInverse,

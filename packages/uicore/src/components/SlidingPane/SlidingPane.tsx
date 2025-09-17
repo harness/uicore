@@ -35,6 +35,11 @@ export interface SlidingPaneProps {
   showCloseButton?: boolean
   showMinimizeButton?: boolean
   headerContent?: ReactNode
+  /**
+   * If true, the header will not be rendered
+   * If false (default), the header will be rendered with either headerContent or title and action buttons
+   */
+  hideHeader?: boolean
   zIndex?: number
   usePortal?: boolean
   /**
@@ -63,6 +68,7 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
   showCloseButton = true,
   showMinimizeButton = true,
   headerContent,
+  hideHeader = false,
   zIndex = 10,
   usePortal = false,
   portalContainer,
@@ -156,29 +162,31 @@ export const SlidingPane: React.FC<SlidingPaneProps> = ({
           {/* Only render internal content when not closed to improve performance */}
           {!isClosed ? (
             <>
-              <div className={cx(css.header, headerClassName)}>
-                {headerContent || (
-                  <>
-                    {title && (
-                      <Text color={Color.GREEN_900} font={{ variation: FontVariation.CARD_TITLE }}>
-                        {title}
-                      </Text>
-                    )}
-                    <div className={css.actions}>
-                      {showMinimizeButton && (
-                        <button className={css.actionButton} onClick={handleMinimize}>
-                          <Icon name="minimize" size={16} />
-                        </button>
+              {!hideHeader && (headerContent || title || showMinimizeButton || showCloseButton) && (
+                <div className={cx(css.header, headerClassName)}>
+                  {headerContent || (
+                    <>
+                      {title && (
+                        <Text color={Color.GREEN_900} font={{ variation: FontVariation.CARD_TITLE }}>
+                          {title}
+                        </Text>
                       )}
-                      {showCloseButton && (
-                        <button className={css.actionButton} onClick={handleClose}>
-                          <Icon name="cross" size={16} />
-                        </button>
-                      )}
-                    </div>
-                  </>
-                )}
-              </div>
+                      <div className={css.actions}>
+                        {showMinimizeButton && (
+                          <button className={css.actionButton} onClick={handleMinimize}>
+                            <Icon name="minimize" size={16} />
+                          </button>
+                        )}
+                        {showCloseButton && (
+                          <button className={css.actionButton} onClick={handleClose}>
+                            <Icon name="cross" size={16} />
+                          </button>
+                        )}
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
               <div className={cx(css.content, contentClassName)}>{children}</div>
             </>
           ) : null}
