@@ -257,7 +257,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
                 ? uniq(values)
                 : values?.reduce((acc, tag) => {
                     const parts = tag.split(':')
-                    acc[parts[0]] = parts[1]?.trim() || ''
+                    acc[parts[0]] = parts.length > 1 ? parts.slice(1).join(':') : ''
                     return acc
                   }, {} as KVAccumulator) || {}
             )
