@@ -13,7 +13,8 @@ export enum MultiTypeInputType {
   RUNTIMEV1 = 'RUNTIMEV1',
   EXECUTION_TIME = 'EXECUTION_TIME',
   EXPRESSION = 'EXPRESSION',
-  REGEX = 'REGEX'
+  REGEX = 'REGEX',
+  CUSTOM_EXPRESSION = 'CUSTOM_EXPRESSION'
 }
 
 export enum MultiTypeInputValue {
@@ -28,7 +29,9 @@ export const MultiTypeIcon: Record<MultiTypeInputType, IconName> = {
   RUNTIMEV1: 'runtime-input',
   EXECUTION_TIME: 'runtime-input',
   EXPRESSION: 'expression-input',
-  REGEX: 'reg-ex'
+  REGEX: 'reg-ex',
+  // for fallback value and typesafety
+  CUSTOM_EXPRESSION: 'line-chart'
 }
 
 export const MultiTypeIconSize: Record<MultiTypeInputType, number> = {
@@ -37,7 +40,9 @@ export const MultiTypeIconSize: Record<MultiTypeInputType, number> = {
   RUNTIMEV1: 12,
   EXECUTION_TIME: 12,
   EXPRESSION: 16,
-  REGEX: 16
+  REGEX: 16,
+  // for fallback value and typesafety
+  CUSTOM_EXPRESSION: 16
 }
 
 export const RUNTIME_INPUT_VALUE = '<+input>'

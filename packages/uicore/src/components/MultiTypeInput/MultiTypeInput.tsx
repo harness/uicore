@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useState, useCallback, useMemo, useEffect, CSSProperties } from 'react'
+import React, { useState, useCallback, useMemo, useEffect, CSSProperties, useContext } from 'react'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
@@ -32,6 +32,11 @@ import { SelectWithSubmenu, SelectWithSubmenuProps } from '../SelectWithSubmenu/
 import { SelectWithSubmenuV2, SelectWithSubmenuPropsV2 } from '../SelectWithSubmenu/SelectWithSubmenuV2'
 import { MultiSelectWithSubmenu, MultiSelectWithSubmenuProps } from '../MultiSelectWithSubmenu/MultiSelectWithSubmenu'
 import { BiLevelSelect, BiLevelSelectProps, SelectWithBiLevelOption } from '../Select/BiLevelSelect'
+import CustomExpressionInput from '../CustomExpressionInput/CustomExpressionInput'
+import {
+  CustomExpressionInputContext,
+  ICustomExpressionInputContext
+} from '../CustomExpressionInput/CustomExpressionInputContext'
 
 export type AcceptableValue =
   | boolean
@@ -76,7 +81,8 @@ export const isValueAnExpression = (value: string): boolean => /<\+.*>/.test(val
 export const getMultiTypeFromValue = (
   value: AcceptableValue | undefined = '',
   allowableTypes?: AllowedTypes,
-  supportListOfExpressionsBehaviour?: boolean
+  supportListOfExpressionsBehaviour?: boolean,
+  isCustomExpression?: ICustomExpressionInputContext['isCustomExpression']
 ): MultiTypeInputType => {
   if (typeof value === 'boolean') {
     return MultiTypeInputType.FIXED
@@ -97,6 +103,9 @@ export const getMultiTypeFromValue = (
 
       return MultiTypeInputType.RUNTIME
     }
+
+    if (isCustomExpression?.(value)) return MultiTypeInputType.CUSTOM_EXPRESSION
+
     if (isValueAnExpression(value)) return MultiTypeInputType.EXPRESSION
   } else if (Array.isArray(value) && supportListOfExpressionsBehaviour) {
     // To support list of expressions
@@ -145,9 +154,12 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     renderRuntimeInput,
     ...layoutProps
   } = props
+  const customExpressionInputContext = useContext(CustomExpressionInputContext)
 
   const i18n = useMemo(() => Object.assign({}, i18nBase, _i18n), [_i18n])
-  const [type, setType] = useState<MultiTypeInputType>(getMultiTypeFromValue(value))
+  const [type, setType] = useState<MultiTypeInputType>(
+    getMultiTypeFromValue(value, undefined, undefined, customExpressionInputContext?.isCustomExpression)
+  )
   const [mentionsType] = useState(`multi-type-input-${Utils.randomId()}`)
   const switchType = (newType: MultiTypeInputType) => {
     if (type === newType) {
@@ -267,6 +279,15 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
           data-mentions={mentionsType}
           newExpressionComponent={newExpressionComponent}
           textAreaClassName={textAreaInputClassName}
+        />
+      )}
+      {type === MultiTypeInputType.CUSTOM_EXPRESSION && (
+        <CustomExpressionInput
+          name={name}
+          value={value}
+          onChange={val => {
+            onChange?.(val, MultiTypeInputValue.STRING, MultiTypeInputType.CUSTOM_EXPRESSION)
+          }}
         />
       )}
       <TypeSelectorButton

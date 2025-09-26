@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { useContext } from 'react'
 import cx from 'classnames'
 import { Icon } from '@harness/icons'
 import { I18nResource } from '@harness/design-system'
@@ -14,6 +14,7 @@ import { Button } from '../Button/Button'
 import { MultiTypeIcon, MultiTypeIconSize, MultiTypeInputType } from './MultiTypeInputUtils'
 import { AllowedTypes, MultiTypeInputMenu } from './MultiTypeInputMenu'
 import css from './MultiTypeInput.css'
+import { CustomExpressionInputContext } from '../CustomExpressionInput/CustomExpressionInputContext'
 
 interface RenderButtonTypeProps {
   type: MultiTypeInputType
@@ -27,6 +28,9 @@ interface RenderButtonTypeProps {
 const TypeSelectorButton = (props: RenderButtonTypeProps): React.ReactElement | null => {
   const { allowableTypes, mini, type, btnClassName, disabled, i18n, switchType } = props
   if (!allowableTypes.length) return null
+  const customExpressionInput = useContext(CustomExpressionInputContext)
+  const iconProps =
+    type === MultiTypeInputType.CUSTOM_EXPRESSION ? customExpressionInput?.popoverInfo?.iconProps : undefined
 
   return (
     <Button
@@ -59,7 +63,7 @@ const TypeSelectorButton = (props: RenderButtonTypeProps): React.ReactElement | 
         lazy: true
       }}
       data-testid="multi-type-button">
-      <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} />
+      <Icon name={MultiTypeIcon[type]} size={MultiTypeIconSize[type]} {...iconProps} />
     </Button>
   )
 }

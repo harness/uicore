@@ -15,15 +15,19 @@ import { MultiTypeInputType, MultiTypeIcon as TypeIcon, MultiTypeIconSize as Typ
 
 import { Button, ButtonVariation } from '../Button/Button'
 import { Checkbox } from '../Checkbox/Checkbox'
+import { ICustomExpressionInputContext } from '../CustomExpressionInput/CustomExpressionInputContext'
 
 import css from './MultiTypeInput.css'
 
-const helperText: Record<MultiTypeInputType, React.ReactNode> = {
-  [MultiTypeInputType.EXPRESSION]: (
-    <React.Fragment>
-      <b>Expressions</b> allow you to use Harness input, output, and execution variables in a setting.
-    </React.Fragment>
-  ),
+const ExpressionHelperText = (
+  <React.Fragment>
+    <b>Expressions</b> allow you to use Harness input, output, and execution variables in a setting.
+  </React.Fragment>
+)
+const helperText = {
+  [MultiTypeInputType.EXPRESSION]: ExpressionHelperText,
+  // for fallback value and typesafety
+  [MultiTypeInputType.CUSTOM_EXPRESSION]: ExpressionHelperText,
   [MultiTypeInputType.FIXED]: (
     <React.Fragment>
       <b>Fixed Values</b> are simply values that you enter manually when you configure a setting and do not change at
@@ -54,8 +58,10 @@ const helperText: Record<MultiTypeInputType, React.ReactNode> = {
   )
 }
 
-export const labels: Record<MultiTypeInputType, string> = {
+export const labels = {
   [MultiTypeInputType.EXPRESSION]: 'expression',
+  // for fallback value and typesafety
+  [MultiTypeInputType.CUSTOM_EXPRESSION]: 'expression',
   [MultiTypeInputType.FIXED]: 'fixedValue',
   [MultiTypeInputType.RUNTIME]: 'runtimeInput',
   [MultiTypeInputType.RUNTIMEV1]: 'runtimeInput',
@@ -68,12 +74,16 @@ export interface LearnMorePopoverProps {
   type: MultiTypeInputType
   isLearnMoreOpen: boolean
   dontShowAgain: boolean
+  customPopoverInfo?: ICustomExpressionInputContext['popoverInfo']
   setDontShowAgain(val: boolean): void
   setIsLearnMoreOpen(val: boolean): void
 }
 
 export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactElement {
-  const { i18n, type, isLearnMoreOpen, dontShowAgain, setDontShowAgain, setIsLearnMoreOpen } = props
+  const { i18n, type, isLearnMoreOpen, dontShowAgain, customPopoverInfo, setDontShowAgain, setIsLearnMoreOpen } = props
+
+  const labelText = customPopoverInfo ? customPopoverInfo?.label : i18n[labels[type]]
+  const helperTextValue = customPopoverInfo ? customPopoverInfo?.helperText : helperText[type]
 
   function handleChange(e: React.FormEvent<HTMLInputElement>): void {
     if ((e.target as HTMLInputElement).checked) {
@@ -81,6 +91,8 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
       setIsLearnMoreOpen(false)
     }
   }
+
+  const { className: iconClassName, ...iconProps } = customPopoverInfo?.iconProps || {}
 
   const popoverContent = (
     <div onClick={e => e.stopPropagation()}>
@@ -90,8 +102,8 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
       </div>
       <div className={css.body}>
         <div className={css.content}>
-          <Icon name={TypeIcon[type]} data-type={type} size={TypeIconSize[type] * 1.8} />
-          <span>{helperText[type]}</span>
+          <Icon name={TypeIcon[type]} data-type={type} size={TypeIconSize[type] * 1.8} {...iconProps} />
+          <span>{helperTextValue}</span>
         </div>
 
         {dontShowAgain ? null : (
@@ -113,8 +125,13 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
       className={css.learnMoreWrapper}
       modifiers={{ offset: { offset: '0px 0px' }, arrow: { enabled: false } }}>
       <div className={css.menuItem}>
-        <span className={css.menuItemLabel}>{i18n[labels[type]]}</span>
-        <Icon className={cx(css.menuItemIcon, css[type])} name={TypeIcon[type]} size={TypeIconSize[type]} />
+        <span className={css.menuItemLabel}>{labelText}</span>
+        <Icon
+          className={cx(css.menuItemIcon, css[type], iconClassName)}
+          name={TypeIcon[type]}
+          size={TypeIconSize[type]}
+          {...iconProps}
+        />
       </div>
     </Popover>
   )

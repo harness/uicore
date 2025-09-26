@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React from 'react'
+import React, { useContext } from 'react'
 import cx from 'classnames'
 import { Icon } from '@harness/icons'
 import { I18nResource } from '@harness/design-system'
@@ -17,6 +17,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { LearnMorePopover } from './LearnMorePopover'
 import css from './MultiTypeInput.css'
 import i18nBase from './MultiTypeInput.i18n'
+import { CustomExpressionInputContext } from '../CustomExpressionInput/CustomExpressionInputContext'
 
 export interface LearnMoreProps {
   type: MultiTypeInputType
@@ -42,6 +43,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
   const [currentType, setCurrentType] = React.useState(MultiTypeInputType.FIXED)
   const [dontShowAgain, setDontShowAgain] = useLocalStorage(MULTI_TYPE_INPUT_MENU_LEARN_MORE_STORAGE_KEY, false)
   const [isLearnMoreOpen, setIsLearnMoreOpen] = React.useState(!dontShowAgain)
+  const customExpressionInputContext = useContext(CustomExpressionInputContext)
 
   return (
     <Menu className={css.menu}>
@@ -145,6 +147,24 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           }
           onClick={() => onTypeSelect(MultiTypeInputType.REGEX)}
           onMouseEnter={() => setCurrentType(MultiTypeInputType.REGEX)}
+        />
+      )}
+      {allowedTypes.includes(MultiTypeInputType.CUSTOM_EXPRESSION) && customExpressionInputContext && (
+        <Menu.Item
+          className={css.bp3MenuItem}
+          text={
+            <LearnMorePopover
+              i18n={i18n}
+              type={MultiTypeInputType.CUSTOM_EXPRESSION}
+              isLearnMoreOpen={isLearnMoreOpen && currentType === MultiTypeInputType.CUSTOM_EXPRESSION}
+              dontShowAgain={dontShowAgain}
+              customPopoverInfo={customExpressionInputContext.popoverInfo}
+              setIsLearnMoreOpen={setIsLearnMoreOpen}
+              setDontShowAgain={setDontShowAgain}
+            />
+          }
+          onClick={() => onTypeSelect(MultiTypeInputType.CUSTOM_EXPRESSION)}
+          onMouseEnter={() => setCurrentType(MultiTypeInputType.CUSTOM_EXPRESSION)}
         />
       )}
       {isLearnMoreOpen ? null : (

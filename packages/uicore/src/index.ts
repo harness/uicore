@@ -276,6 +276,7 @@ export { getIdentifierFromName } from './components/InputWithIdentifier/InputWit
 export { FilterTextInput, FilterTextInputProps } from './components/Filters/components/FilterTextInput/FilterTextInput'
 export { NewLineText } from './components/NewLineText/NewLineText'
 export { TagGroup, TagGroupProps } from './components/TagGroup/TagGroup'
+export { CustomExpressionInputContext } from './components/CustomExpressionInput/CustomExpressionInputContext'
 export * from './hooks/useStreamingRequest'
 export * from './components/Chat/message-renderers/HelpfulButton'
 export * from './components/Chat/Chat'
