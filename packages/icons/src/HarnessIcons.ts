@@ -1382,6 +1382,7 @@ import SaveCacheS3Step from './save-cache-s3-step.svg'
 import SaveCacheS3 from './save-cache-s3.svg'
 import SaveCacheStep from './save-cache-step.svg'
 import SbomDriftDetected from './sbom-drift-detected.svg'
+import ScheduleAutostopping from './schedule-autostopping.svg'
 import SchemaRollback from './schema-rollback.svg'
 import Scm from './scm.svg'
 import Script from './script.svg'
@@ -1708,6 +1709,7 @@ import TraceableDiscovery from './traceable-discovery.svg'
 import TraceableProtection from './traceable-protection.svg'
 import TraceableTesting from './traceable-testing.svg'
 import Traceable from './traceable.svg'
+import TrafficAutostopping from './traffic-autostopping.svg'
 import TrafficLights from './traffic-lights.svg'
 import Translate from './translate.svg'
 import TriggerArtifact from './trigger-artifact.svg'
@@ -3131,6 +3133,7 @@ type HarnessIconName =
   | 'save-cache-s3'
   | 'save-cache-step'
   | 'sbom-drift-detected'
+  | 'schedule-autostopping'
   | 'schema-rollback'
   | 'scm'
   | 'script'
@@ -3457,6 +3460,7 @@ type HarnessIconName =
   | 'traceable-protection'
   | 'traceable-testing'
   | 'traceable'
+  | 'traffic-autostopping'
   | 'traffic-lights'
   | 'translate'
   | 'trigger-artifact'
@@ -4880,6 +4884,7 @@ const HarnessIcons: KVO<ElementType> = {
   'save-cache-s3': SaveCacheS3,
   'save-cache-step': SaveCacheStep,
   'sbom-drift-detected': SbomDriftDetected,
+  'schedule-autostopping': ScheduleAutostopping,
   'schema-rollback': SchemaRollback,
   scm: Scm,
   script: Script,
@@ -5206,6 +5211,7 @@ const HarnessIcons: KVO<ElementType> = {
   'traceable-protection': TraceableProtection,
   'traceable-testing': TraceableTesting,
   traceable: Traceable,
+  'traffic-autostopping': TrafficAutostopping,
   'traffic-lights': TrafficLights,
   translate: Translate,
   'trigger-artifact': TriggerArtifact,
