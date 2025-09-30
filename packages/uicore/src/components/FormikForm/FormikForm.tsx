@@ -502,10 +502,20 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
 export interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
   name: string
   label: string
+  // When true, inverts the checkbox value (checked returns false, unchecked returns true)
+  invertValue?: boolean
 }
 
 const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
-  const { formik, name, label, ...restProps } = props
+  const { formik, name, label, invertValue, ...restProps } = props
+
+  const getCheckBoxValue = useCallback(
+    (val: boolean) => {
+      return invertValue ? !val : val
+    },
+    [invertValue]
+  )
+
   const hasError = errorCheck(name, formik)
   const {
     intent = hasError ? Intent.DANGER : Intent.NONE,
@@ -516,6 +526,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
     className = '',
     ...rest
   } = restProps
+
   return (
     <FormGroup labelFor={name} helperText={helperText} intent={intent} disabled={disabled} {...rest}>
       <UiKitCheckbox
@@ -527,9 +538,9 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
         label={getFormFieldLabel(label, name, props, css.checkBoxDocTooltipLabel)}
         inline={inline}
         disabled={disabled}
-        checked={get(formik?.values, name)}
+        checked={getCheckBoxValue(get(formik?.values, name))}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
-          formik?.setFieldValue(name, e.currentTarget.checked)
+          formik?.setFieldValue(name, getCheckBoxValue(e.currentTarget.checked))
           onChange?.(e)
         }}
       />
