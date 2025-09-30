@@ -6,8 +6,9 @@
  */
 
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { Button } from './Button'
+import userEvent from '@testing-library/user-event'
 
 describe('Button', () => {
   describe('loading prop', () => {
@@ -31,5 +32,21 @@ describe('Button', () => {
       // Verify loading=false state again
       expect(button).not.toHaveClass('bp3-loading')
     })
+  })
+
+  test('it should submit the named form when the button is clicked', async () => {
+    const onSubmit = jest.fn()
+    render(
+      <>
+        <form id="test-form" onSubmit={onSubmit}></form>
+        <Button type="submit" form="test-form" text="Submit" />
+      </>
+    )
+
+    expect(onSubmit).not.toHaveBeenCalled()
+
+    userEvent.click(screen.getByRole('button'))
+
+    await waitFor(() => expect(onSubmit).toHaveBeenCalled())
   })
 })

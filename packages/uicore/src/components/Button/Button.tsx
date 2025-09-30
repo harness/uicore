@@ -8,15 +8,19 @@
 import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
-import React, { ElementType, HTMLAttributes, MouseEvent, useState } from 'react'
+import React, { ButtonHTMLAttributes, ElementType, MouseEvent, useState } from 'react'
 import { Config } from '../../core/Config'
-import { OptionalTooltip } from '@harness/design-system'
+import {
+  omitStyledProps,
+  OptionalTooltip,
+  PaddingProps,
+  styledClass,
+  styledClasses,
+  StyledProps
+} from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import { useIsMounted } from '../../hooks/useIsMounted'
 import { Icon, IconName, IconProps } from '@harness/icons'
-import { PaddingProps } from '@harness/design-system'
-import { omitStyledProps, styledClasses, StyledProps } from '@harness/design-system'
-import { styledClass } from '@harness/design-system'
 import css from './Button.css'
 
 export enum ButtonVariation {
@@ -38,7 +42,7 @@ export enum ButtonSize {
 
 export interface ButtonProps
   extends Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
-    HTMLAttributes<HTMLButtonElement>,
+    ButtonHTMLAttributes<HTMLButtonElement>,
     StyledProps,
     OptionalTooltip {
   /** Left icon */
