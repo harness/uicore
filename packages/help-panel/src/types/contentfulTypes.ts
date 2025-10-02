@@ -5,7 +5,6 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Intent } from '@blueprintjs/core'
 import type { Entry, Asset } from 'contentful'
 import type { Color } from '@harness/design-system'
 import type { Document as RichTextDocument } from '@contentful/rich-text-types'
@@ -25,9 +24,7 @@ export enum ContentType {
   image = 'image',
   youtubeVideo = 'youtubeVideo',
   referenceIdMap = 'referenceIdMap',
-  banner = 'banner',
-  url = 'url',
-  urlBannerMap = 'urlBannerMap'
+  banner = 'banner'
 }
 
 export interface IHelpPanel {
@@ -65,14 +62,23 @@ export interface IReferenceIdMap {
   helpPanel: Entry<IHelpPanel>
 }
 
-export interface BannerFields {
-  title: string
-  message?: string
-  intent: Intent
+export enum BannerType {
+  /** Shows up on top of the page */
+  TOP_BANNER = 'TOP_BANNER',
+  /** Shows up as a post (chat box) on the page */
+  POST = 'POST'
 }
 
-export interface IUrlBannerMap {
-  url: string
-  banner: Array<Entry<BannerFields>>
-  matchExactUrl: boolean
+export enum BannerCategory {
+  MARKETING = 'MARKETING',
+  SERVICING = 'SERVICING'
 }
+
+export interface BannerFields {
+  title: string
+  category: BannerCategory
+  type: BannerType
+  markdown?: string
+}
+
+export type IContentfulBanner = Entry<BannerFields>
