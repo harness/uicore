@@ -7,13 +7,12 @@
 
 import React, { useEffect, useState } from 'react'
 import { getRefrenceIdToHelpPanelMap } from './utils/util'
-import { ContentType, HelpPanelEnvironment, IReferenceIdMap } from './types/contentfulTypes'
+import { ContentType, HelpPanelEnvironment, IReferenceIdMap, IContentfulBanner } from './types/contentfulTypes'
 import Contentful from './ContentfulApi'
 import { useLocalStorage } from './hooks/useLocalStorage'
 
 interface HelpPanelContextProps {
   referenceIdMap: Record<string, string>
-  banners?: any
   isHelpPanelVisible: boolean
   toggleShowAgain: () => void
   showAgain: boolean
@@ -22,7 +21,6 @@ interface HelpPanelContextProps {
 
 export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   referenceIdMap: {},
-  banners: {},
   isHelpPanelVisible: true,
   toggleShowAgain: () => void 0,
   showAgain: false,
@@ -62,15 +60,6 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         Contentful.initialise(accessToken, space, environment)
         const client = Contentful.getClient()
 
-        // const getUrlBannerMap = async (): Promise<void> => {
-        //   const response = await client.getEntries({
-        //     // eslint-disable-next-line camelcase
-        //     content_type: ContentType.urlBannerMap,
-        //     limit: 1000
-        //   })
-        //   setBanners(response)
-        // }
-
         const getContentIdMap = async (): Promise<void> => {
           const response = await client.getEntries<IReferenceIdMap>({
             // eslint-disable-next-line camelcase
@@ -81,7 +70,6 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
         }
 
         getContentIdMap()
-        // getUrlBannerMap()
       } catch (e) {
         setError(Error.ERROR_INITIALIZING_CONTENTFUL)
         props.onError?.(e)
@@ -95,7 +83,6 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
     <HelpPanelContext.Provider
       value={{
         referenceIdMap,
-        // banners,
         isHelpPanelVisible: storageData.dontShowAgain,
         toggleShowAgain,
         showAgain: storageData.dontShowAgain,
@@ -106,10 +93,15 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
   )
 }
 
-interface useContentfulOptions {
-  referenceId: string
+interface useContentfulOptionsForBanner {
   // eslint-disable-next-line camelcase
-  content_type: ContentType
+  content_type: ContentType.banner
+}
+
+interface useContentfulOptionsForNonBanner {
+  // eslint-disable-next-line camelcase
+  content_type: Exclude<ContentType, ContentType.banner>
+  referenceId: string
 }
 
 export enum Error {
@@ -125,11 +117,14 @@ interface useContentfulState<T> {
   error?: Error
 }
 
-export function useContentful<T>(options: useContentfulOptions): useContentfulState<T> {
-  // eslint-disable-next-line camelcase
-  const { referenceId, content_type } = options
+// Overloads to provide precise return typing based on content_type
+export function useContentful(options: useContentfulOptionsForBanner): useContentfulState<IContentfulBanner[]>
+export function useContentful<T>(options: useContentfulOptionsForNonBanner): useContentfulState<T>
+export function useContentful<T>(
+  options: useContentfulOptionsForBanner | useContentfulOptionsForNonBanner
+): useContentfulState<T | IContentfulBanner[]> {
   const { referenceIdMap, error: contextError } = React.useContext(HelpPanelContext)
-  const [data, setData] = useState<T | undefined>()
+  const [data, setData] = useState<T | IContentfulBanner[] | undefined>()
   const [error, setError] = useState<Error | undefined>(contextError)
   const [loading, setLoading] = useState(false)
 
@@ -138,15 +133,35 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
       return
     }
 
-    // eslint-disable-next-line camelcase
-    switch (content_type) {
+    switch (options.content_type) {
       case ContentType.banner: {
-        // do nothing for banner
+        setLoading(true)
+        Contentful.getClient()
+          .getEntries({
+            // eslint-disable-next-line camelcase
+            content_type: ContentType.banner,
+            limit: 1000
+          })
+          .then(
+            response => {
+              setLoading(false)
+              if (response.items.length > 0) {
+                setData(response.items as IContentfulBanner[])
+              } else {
+                setError(Error.NOT_CREATED)
+              }
+            },
+            () => {
+              setLoading(false)
+              setError(Error.API_FAILED)
+            }
+          )
         break
       }
       case ContentType.helpPanel:
       default:
         if (Object.keys(referenceIdMap).length > 0) {
+          const { referenceId } = options
           const contentId = referenceIdMap[referenceId]
           if (contentId) {
             setLoading(true)
@@ -154,7 +169,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
               .getEntries<T>({
                 'sys.id': contentId,
                 // eslint-disable-next-line camelcase
-                content_type,
+                content_type: options.content_type,
                 include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
               })
               .then(
@@ -177,9 +192,7 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
           }
         }
     }
-
-    // eslint-disable-next-line camelcase
-  }, [referenceId, content_type, referenceIdMap])
+  }, [options, referenceIdMap])
 
   return {
     data,
