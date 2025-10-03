@@ -16,7 +16,7 @@ interface RenderComponentProps {
   data: Entry<ComponentValue>
 }
 
-type RenderComponentType = Exclude<ContentType, 'document' | 'helpPanel' | 'contentIdMap' | 'referenceIdMap'>
+type RenderComponentType = Exclude<ContentType, 'document' | 'helpPanel' | 'contentIdMap' | 'referenceIdMap' | 'banner'>
 
 const componentMap: Record<RenderComponentType, any> = {
   [ContentType.article]: Article,
