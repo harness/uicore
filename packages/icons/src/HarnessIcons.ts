@@ -686,6 +686,7 @@ import DockerHubStep from './docker-hub-step.svg'
 import DockerStepInverse from './docker-step-inverse.svg'
 import DockerStep from './docker-step.svg'
 import Docs from './docs.svg'
+import DollarCircle from './dollar-circle.svg'
 import Dotnet from './dotnet.svg'
 import Down from './down.svg'
 import DownloadAwsS3Store from './download-aws-s3-store.svg'
@@ -2437,6 +2438,7 @@ type HarnessIconName =
   | 'docker-step-inverse'
   | 'docker-step'
   | 'docs'
+  | 'dollar-circle'
   | 'dotnet'
   | 'down'
   | 'download-aws-s3-store'
@@ -4188,6 +4190,7 @@ const HarnessIcons: KVO<ElementType> = {
   'docker-step-inverse': DockerStepInverse,
   'docker-step': DockerStep,
   docs: Docs,
+  'dollar-circle': DollarCircle,
   dotnet: Dotnet,
   down: Down,
   'download-aws-s3-store': DownloadAwsS3Store,
