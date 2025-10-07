@@ -1551,7 +1551,13 @@ import SettingsHorizontal from './settings-horizontal.svg'
 import SetupApi from './setup-api.svg'
 import SetupClient from './setup-client.svg'
 import SetupTags from './setup-tags.svg'
+import SfCommandInverse from './sf-command-inverse.svg'
+import SfCommand from './sf-command.svg'
+import SfDxProjRollbackInverse from './sf-dx-proj-rollback-inverse.svg'
+import SfDxProjRollback from './sf-dx-proj-rollback.svg'
 import SfDxProject from './sf-dx-project.svg'
+import SfLogoInverse from './sf-logo-inverse.svg'
+import SfLogo from './sf-logo.svg'
 import SfOrgBasedDiff from './sf-org-based-diff.svg'
 import SfUnlockedPackage from './sf-unlocked-package.svg'
 import ShieldGears from './shield-gears.svg'
@@ -3303,7 +3309,13 @@ type HarnessIconName =
   | 'setup-api'
   | 'setup-client'
   | 'setup-tags'
+  | 'sf-command-inverse'
+  | 'sf-command'
+  | 'sf-dx-proj-rollback-inverse'
+  | 'sf-dx-proj-rollback'
   | 'sf-dx-project'
+  | 'sf-logo-inverse'
+  | 'sf-logo'
   | 'sf-org-based-diff'
   | 'sf-unlocked-package'
   | 'shield-gears'
@@ -5055,7 +5067,13 @@ const HarnessIcons: KVO<ElementType> = {
   'setup-api': SetupApi,
   'setup-client': SetupClient,
   'setup-tags': SetupTags,
+  'sf-command-inverse': SfCommandInverse,
+  'sf-command': SfCommand,
+  'sf-dx-proj-rollback-inverse': SfDxProjRollbackInverse,
+  'sf-dx-proj-rollback': SfDxProjRollback,
   'sf-dx-project': SfDxProject,
+  'sf-logo-inverse': SfLogoInverse,
+  'sf-logo': SfLogo,
   'sf-org-based-diff': SfOrgBasedDiff,
   'sf-unlocked-package': SfUnlockedPackage,
   'shield-gears': ShieldGears,
