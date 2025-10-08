@@ -257,6 +257,7 @@ import CcmNavCostCategories from './ccm-nav-cost-categories.svg'
 import CcmNavMsp from './ccm-nav-msp.svg'
 import CcmNavPerspectives from './ccm-nav-perspectives.svg'
 import CcmNavRecommendations from './ccm-nav-recommendations.svg'
+import CcmPod from './ccm-pod.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
 import CcmPolicyShield from './ccm-policy-shield.svg'
@@ -2015,6 +2016,7 @@ type HarnessIconName =
   | 'ccm-nav-msp'
   | 'ccm-nav-perspectives'
   | 'ccm-nav-recommendations'
+  | 'ccm-pod'
   | 'ccm-policy-details'
   | 'ccm-policy-shield-checked'
   | 'ccm-policy-shield'
@@ -3773,6 +3775,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-nav-msp': CcmNavMsp,
   'ccm-nav-perspectives': CcmNavPerspectives,
   'ccm-nav-recommendations': CcmNavRecommendations,
+  'ccm-pod': CcmPod,
   'ccm-policy-details': CcmPolicyDetails,
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
   'ccm-policy-shield': CcmPolicyShield,
