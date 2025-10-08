@@ -605,6 +605,7 @@ import CreateViaPipelineTemplate from './create-via-pipeline-template.svg'
 import CreateViaStarterPipeline from './create-via-starter-pipeline.svg'
 import CreativeIdea from './creative-idea.svg'
 import CriticalEvents from './critical-events.svg'
+import CrossThin from './cross-thin.svg'
 import CsHover from './cs-hover.svg'
 import CurrencyBanner from './currency-banner.svg'
 import CustomApproval from './custom-approval.svg'
@@ -1257,6 +1258,7 @@ import PluginCiStepInverse from './plugin-ci-step-inverse.svg'
 import PluginCiStep from './plugin-ci-step.svg'
 import PluginInputs from './plugin-inputs.svg'
 import PluginStep from './plugin-step.svg'
+import PlusThin from './plus-thin.svg'
 import PodWithbg from './pod-withbg.svg'
 import Pod from './pod.svg'
 import Policies from './policies.svg'
@@ -2364,6 +2366,7 @@ type HarnessIconName =
   | 'create-via-starter-pipeline'
   | 'creative-idea'
   | 'critical-events'
+  | 'cross-thin'
   | 'cs-hover'
   | 'currency-banner'
   | 'custom-approval'
@@ -3016,6 +3019,7 @@ type HarnessIconName =
   | 'plugin-ci-step'
   | 'plugin-inputs'
   | 'plugin-step'
+  | 'plus-thin'
   | 'pod-withbg'
   | 'pod'
   | 'policies'
@@ -4123,6 +4127,7 @@ const HarnessIcons: KVO<ElementType> = {
   'create-via-starter-pipeline': CreateViaStarterPipeline,
   'creative-idea': CreativeIdea,
   'critical-events': CriticalEvents,
+  'cross-thin': CrossThin,
   'cs-hover': CsHover,
   'currency-banner': CurrencyBanner,
   'custom-approval': CustomApproval,
@@ -4775,6 +4780,7 @@ const HarnessIcons: KVO<ElementType> = {
   'plugin-ci-step': PluginCiStep,
   'plugin-inputs': PluginInputs,
   'plugin-step': PluginStep,
+  'plus-thin': PlusThin,
   'pod-withbg': PodWithbg,
   pod: Pod,
   policies: Policies,
