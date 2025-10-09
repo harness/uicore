@@ -246,6 +246,7 @@ import CcmExternalCostSource from './ccm-external-cost-source.svg'
 import CcmEyeOpen from './ccm-eye-open.svg'
 import CcmIgnoreFailure from './ccm-ignore-failure.svg'
 import CcmMongo from './ccm-mongo.svg'
+import CcmNamespace from './ccm-namespace.svg'
 import CcmNavAnomalies from './ccm-nav-anomalies.svg'
 import CcmNavAssetGovernance from './ccm-nav-asset-governance.svg'
 import CcmNavAutostoppingRules from './ccm-nav-autostopping-rules.svg'
@@ -2007,6 +2008,7 @@ type HarnessIconName =
   | 'ccm-eye-open'
   | 'ccm-ignore-failure'
   | 'ccm-mongo'
+  | 'ccm-namespace'
   | 'ccm-nav-anomalies'
   | 'ccm-nav-asset-governance'
   | 'ccm-nav-autostopping-rules'
@@ -3768,6 +3770,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-eye-open': CcmEyeOpen,
   'ccm-ignore-failure': CcmIgnoreFailure,
   'ccm-mongo': CcmMongo,
+  'ccm-namespace': CcmNamespace,
   'ccm-nav-anomalies': CcmNavAnomalies,
   'ccm-nav-asset-governance': CcmNavAssetGovernance,
   'ccm-nav-autostopping-rules': CcmNavAutostoppingRules,
