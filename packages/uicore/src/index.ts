@@ -274,6 +274,7 @@ export {
 } from './components/Filters/components/FilterSingleSelectDropDown/FiltersSelectDropDown'
 export { getIdentifierFromName } from './components/InputWithIdentifier/InputWithIdentifier'
 export { FilterTextInput, FilterTextInputProps } from './components/Filters/components/FilterTextInput/FilterTextInput'
+export { FilterTagInput, FilterTagInputProps } from './components/Filters/components/FilterTagInput/FilterTagInput'
 export { NewLineText } from './components/NewLineText/NewLineText'
 export { TagGroup, TagGroupProps } from './components/TagGroup/TagGroup'
 export { CustomExpressionInputContext } from './components/CustomExpressionInput/CustomExpressionInputContext'
