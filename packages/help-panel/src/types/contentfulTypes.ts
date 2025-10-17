@@ -78,7 +78,7 @@ export interface BannerFields {
   title: string
   category: BannerCategory
   type: BannerType
-  markdown?: string
+  markdown: string
 }
 
 export type IContentfulBanner = Entry<BannerFields>
