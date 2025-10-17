@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */ // needed for "content_type" field
 /*
  * Copyright 2022 Harness Inc. All rights reserved.
  * Use of this source code is governed by the PolyForm Shield 1.0.0 license
@@ -191,7 +192,11 @@ export function useContentful<T>(
           }
         }
     }
-  }, [options, referenceIdMap])
+  }, [
+    options.content_type === ContentType.banner ? undefined : options.referenceId, // avoiding type errors for referenceId field
+    options.content_type,
+    referenceIdMap
+  ])
 
   return {
     data,
