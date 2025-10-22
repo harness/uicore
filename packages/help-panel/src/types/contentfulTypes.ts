@@ -23,7 +23,8 @@ export enum ContentType {
   article = 'article',
   image = 'image',
   youtubeVideo = 'youtubeVideo',
-  referenceIdMap = 'referenceIdMap'
+  referenceIdMap = 'referenceIdMap',
+  banner = 'banner'
 }
 
 export interface IHelpPanel {
@@ -60,3 +61,24 @@ export interface IReferenceIdMap {
   referenceId: string
   helpPanel: Entry<IHelpPanel>
 }
+
+export enum BannerType {
+  /** Shows up on top of the page */
+  TOP_BANNER = 'TOP_BANNER',
+  /** Shows up as a post (chat box) on the page */
+  POST = 'POST'
+}
+
+export enum BannerCategory {
+  MARKETING = 'MARKETING',
+  SERVICING = 'SERVICING'
+}
+
+export interface BannerFields {
+  title: string
+  category: BannerCategory
+  type: BannerType
+  markdown: string
+}
+
+export type IContentfulBanner = Entry<BannerFields>

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */ // needed for "content_type" field
 /*
  * Copyright 2022 Harness Inc. All rights reserved.
  * Use of this source code is governed by the PolyForm Shield 1.0.0 license
@@ -7,7 +8,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { getRefrenceIdToHelpPanelMap } from './utils/util'
-import { ContentType, HelpPanelEnvironment, IReferenceIdMap } from './types/contentfulTypes'
+import { ContentType, HelpPanelEnvironment, IReferenceIdMap, IContentfulBanner } from './types/contentfulTypes'
 import Contentful from './ContentfulApi'
 import { useLocalStorage } from './hooks/useLocalStorage'
 
@@ -67,6 +68,7 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
           })
           setReferenceIdMap(getRefrenceIdToHelpPanelMap(response))
         }
+
         getContentIdMap()
       } catch (e) {
         setError(Error.ERROR_INITIALIZING_CONTENTFUL)
@@ -91,10 +93,15 @@ export const HelpPanelContextProvider: React.FC<HelpPanelContextProviderProps> =
   )
 }
 
-interface useContentfulOptions {
-  referenceId: string
+interface useContentfulOptionsForBanner {
   // eslint-disable-next-line camelcase
-  content_type: ContentType
+  content_type: ContentType.banner
+}
+
+interface useContentfulOptionsForNonBanner {
+  // eslint-disable-next-line camelcase
+  content_type: Exclude<ContentType, ContentType.banner>
+  referenceId: string
 }
 
 export enum Error {
@@ -110,11 +117,14 @@ interface useContentfulState<T> {
   error?: Error
 }
 
-export function useContentful<T>(options: useContentfulOptions): useContentfulState<T> {
-  // eslint-disable-next-line camelcase
-  const { referenceId, content_type } = options
+// Overloads to provide precise return typing based on content_type
+export function useContentful(options: useContentfulOptionsForBanner): useContentfulState<IContentfulBanner[]>
+export function useContentful<T>(options: useContentfulOptionsForNonBanner): useContentfulState<T>
+export function useContentful<T>(
+  options: useContentfulOptionsForBanner | useContentfulOptionsForNonBanner
+): useContentfulState<T | IContentfulBanner[]> {
   const { referenceIdMap, error: contextError } = React.useContext(HelpPanelContext)
-  const [data, setData] = useState<T | undefined>()
+  const [data, setData] = useState<T | IContentfulBanner[] | undefined>()
   const [error, setError] = useState<Error | undefined>(contextError)
   const [loading, setLoading] = useState(false)
 
@@ -123,22 +133,20 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
       return
     }
 
-    if (Object.keys(referenceIdMap).length > 0) {
-      const contentId = referenceIdMap[referenceId]
-      if (contentId) {
+    switch (options.content_type) {
+      case ContentType.banner: {
         setLoading(true)
         Contentful.getClient()
-          .getEntries<T>({
-            'sys.id': contentId,
+          .getEntries({
             // eslint-disable-next-line camelcase
-            content_type,
-            include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
+            content_type: ContentType.banner,
+            limit: 1000
           })
           .then(
             response => {
               setLoading(false)
               if (response.items.length > 0) {
-                setData(response.items[0].fields)
+                setData(response.items as IContentfulBanner[])
               } else {
                 setError(Error.NOT_CREATED)
               }
@@ -148,13 +156,47 @@ export function useContentful<T>(options: useContentfulOptions): useContentfulSt
               setError(Error.API_FAILED)
             }
           )
-      } else {
-        setLoading(false)
-        setError(Error.NOT_FOUND)
+        break
       }
+      case ContentType.helpPanel:
+      default:
+        if (Object.keys(referenceIdMap).length > 0) {
+          const { referenceId } = options
+          const contentId = referenceIdMap[referenceId]
+          if (contentId) {
+            setLoading(true)
+            Contentful.getClient()
+              .getEntries<T>({
+                'sys.id': contentId,
+                // eslint-disable-next-line camelcase
+                content_type: options.content_type,
+                include: 10 // used for fetching maximum of 10 levels of nesting in response For eg. Help panel -> articles -> image/video
+              })
+              .then(
+                response => {
+                  setLoading(false)
+                  if (response.items.length > 0) {
+                    setData(response.items[0].fields)
+                  } else {
+                    setError(Error.NOT_CREATED)
+                  }
+                },
+                () => {
+                  setLoading(false)
+                  setError(Error.API_FAILED)
+                }
+              )
+          } else {
+            setLoading(false)
+            setError(Error.NOT_FOUND)
+          }
+        }
     }
-    // eslint-disable-next-line camelcase
-  }, [referenceId, content_type, referenceIdMap])
+  }, [
+    options.content_type === ContentType.banner ? undefined : options.referenceId, // avoiding type errors for referenceId field
+    options.content_type,
+    referenceIdMap
+  ])
 
   return {
     data,
