@@ -639,6 +639,7 @@ import DataFetchError from './data-fetch-error.svg'
 import DataIntegrationHub from './data-integration-hub.svg'
 import Databricks from './databricks.svg'
 import DbDevops from './db-devops.svg'
+import DbFlyway from './db-flyway.svg'
 import DbInstance from './db-instance.svg'
 import DbLiquibase from './db-liquibase.svg'
 import DbPreviewInverse from './db-preview-inverse.svg'
@@ -2401,6 +2402,7 @@ type HarnessIconName =
   | 'data-integration-hub'
   | 'databricks'
   | 'db-devops'
+  | 'db-flyway'
   | 'db-instance'
   | 'db-liquibase'
   | 'db-preview-inverse'
@@ -4163,6 +4165,7 @@ const HarnessIcons: KVO<ElementType> = {
   'data-integration-hub': DataIntegrationHub,
   databricks: Databricks,
   'db-devops': DbDevops,
+  'db-flyway': DbFlyway,
   'db-instance': DbInstance,
   'db-liquibase': DbLiquibase,
   'db-preview-inverse': DbPreviewInverse,
