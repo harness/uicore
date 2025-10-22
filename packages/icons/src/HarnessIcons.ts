@@ -132,6 +132,7 @@ import AsgRollback from './asg-rollback.svg'
 import AsgSetup from './asg-setup.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
+import AtaNavAutomation from './ata-nav-automation.svg'
 import AtaNavCiCd from './ata-nav-ci-cd.svg'
 import AtaNavEmailIntegration from './ata-nav-email-integration.svg'
 import AtaNavOverview from './ata-nav-overview.svg'
@@ -1895,6 +1896,7 @@ type HarnessIconName =
   | 'asg-setup'
   | 'asg-swap-inverse'
   | 'asg-swap'
+  | 'ata-nav-automation'
   | 'ata-nav-ci-cd'
   | 'ata-nav-email-integration'
   | 'ata-nav-overview'
@@ -3658,6 +3660,7 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-setup': AsgSetup,
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
+  'ata-nav-automation': AtaNavAutomation,
   'ata-nav-ci-cd': AtaNavCiCd,
   'ata-nav-email-integration': AtaNavEmailIntegration,
   'ata-nav-overview': AtaNavOverview,
