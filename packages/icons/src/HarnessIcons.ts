@@ -645,6 +645,7 @@ import DbInstance from './db-instance.svg'
 import DbLiquibase from './db-liquibase.svg'
 import DbPreviewInverse from './db-preview-inverse.svg'
 import DbPreview from './db-preview.svg'
+import DbRepair from './db-repair.svg'
 import DbRollbackSql from './db-rollback-sql.svg'
 import DbSchema from './db-schema.svg'
 import DbStep from './db-step.svg'
@@ -2409,6 +2410,7 @@ type HarnessIconName =
   | 'db-liquibase'
   | 'db-preview-inverse'
   | 'db-preview'
+  | 'db-repair'
   | 'db-rollback-sql'
   | 'db-schema'
   | 'db-step'
@@ -4173,6 +4175,7 @@ const HarnessIcons: KVO<ElementType> = {
   'db-liquibase': DbLiquibase,
   'db-preview-inverse': DbPreviewInverse,
   'db-preview': DbPreview,
+  'db-repair': DbRepair,
   'db-rollback-sql': DbRollbackSql,
   'db-schema': DbSchema,
   'db-step': DbStep,
