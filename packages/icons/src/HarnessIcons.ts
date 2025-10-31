@@ -1035,6 +1035,7 @@ import Library from './library.svg'
 import LineChart from './line-chart.svg'
 import LinkedApps from './linked-apps.svg'
 import Linkedin from './linkedin.svg'
+import LinuxLogo from './linux-logo.svg'
 import ListBlue from './list-blue.svg'
 import ListEntityInfographic from './list-entity-infographic.svg'
 import ListVars from './list-vars.svg'
@@ -2801,6 +2802,7 @@ type HarnessIconName =
   | 'line-chart'
   | 'linked-apps'
   | 'linkedin'
+  | 'linux-logo'
   | 'list-blue'
   | 'list-entity-infographic'
   | 'list-vars'
@@ -4567,6 +4569,7 @@ const HarnessIcons: KVO<ElementType> = {
   'line-chart': LineChart,
   'linked-apps': LinkedApps,
   linkedin: Linkedin,
+  'linux-logo': LinuxLogo,
   'list-blue': ListBlue,
   'list-entity-infographic': ListEntityInfographic,
   'list-vars': ListVars,
