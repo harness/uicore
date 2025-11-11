@@ -39,6 +39,7 @@ import Apply from './apply.svg'
 import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
+import AppsecSnapshot from './appsec-snapshot.svg'
 import Arrow from './arrow.svg'
 import ArtifactRegistryOutlined from './artifact-registry-outlined.svg'
 import ArtifactRegistry from './artifact-registry.svg'
@@ -1049,6 +1050,7 @@ type HarnessIconName =
   | 'approval-stage-icon'
   | 'approval-stage'
   | 'approval-step'
+  | 'appsec-snapshot'
   | 'arrow'
   | 'artifact-registry-outlined'
   | 'artifact-registry'
@@ -2059,6 +2061,7 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-stage-icon': ApprovalStageIcon,
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
+  'appsec-snapshot': AppsecSnapshot,
   arrow: Arrow,
   'artifact-registry-outlined': ArtifactRegistryOutlined,
   'artifact-registry': ArtifactRegistry,
