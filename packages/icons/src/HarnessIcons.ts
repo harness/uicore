@@ -129,6 +129,7 @@ import CcmSketch from './ccm-sketch.svg'
 import CdMain from './cd-main.svg'
 import CdSketch from './cd-sketch.svg'
 import Cd from './cd.svg'
+import CdeSnapshot from './cde_snapshot.svg'
 import CdkBootstrapInverse from './cdk-bootstrap-inverse.svg'
 import CdkBootstrap from './cdk-bootstrap.svg'
 import CdkDeployInverse from './cdk-deploy-inverse.svg'
@@ -1140,6 +1141,7 @@ type HarnessIconName =
   | 'cd-main'
   | 'cd-sketch'
   | 'cd'
+  | 'cde_snapshot'
   | 'cdk-bootstrap-inverse'
   | 'cdk-bootstrap'
   | 'cdk-deploy-inverse'
@@ -2151,6 +2153,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cd-main': CdMain,
   'cd-sketch': CdSketch,
   cd: Cd,
+  cde_snapshot: CdeSnapshot,
   'cdk-bootstrap-inverse': CdkBootstrapInverse,
   'cdk-bootstrap': CdkBootstrap,
   'cdk-deploy-inverse': CdkDeployInverse,
