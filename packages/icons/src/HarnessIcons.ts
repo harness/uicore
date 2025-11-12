@@ -1346,6 +1346,10 @@ import RetryStepGroup from './retry-step-group.svg'
 import RightArrow from './right-arrow.svg'
 import RightBarNotification from './right-bar-notification.svg'
 import RightDrawer from './right-drawer.svg'
+import RmgMainInverse from './rmg-main-inverse.svg'
+import RmgMain from './rmg-main.svg'
+import RmgWithDarkText from './rmg-with-dark-text.svg'
+import RmgWithText from './rmg-with-text.svg'
 import Rocket from './rocket.svg'
 import Roles from './roles.svg'
 import RollbackExecution from './rollback-execution.svg'
@@ -3113,6 +3117,10 @@ type HarnessIconName =
   | 'right-arrow'
   | 'right-bar-notification'
   | 'right-drawer'
+  | 'rmg-main-inverse'
+  | 'rmg-main'
+  | 'rmg-with-dark-text'
+  | 'rmg-with-text'
   | 'rocket'
   | 'roles'
   | 'rollback-execution'
@@ -4880,6 +4888,10 @@ const HarnessIcons: KVO<ElementType> = {
   'right-arrow': RightArrow,
   'right-bar-notification': RightBarNotification,
   'right-drawer': RightDrawer,
+  'rmg-main-inverse': RmgMainInverse,
+  'rmg-main': RmgMain,
+  'rmg-with-dark-text': RmgWithDarkText,
+  'rmg-with-text': RmgWithText,
   rocket: Rocket,
   roles: Roles,
   'rollback-execution': RollbackExecution,
