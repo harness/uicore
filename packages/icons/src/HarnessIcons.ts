@@ -960,6 +960,7 @@ import IdpStrategy from './idp-strategy.svg'
 import IdpSystem from './idp-system.svg'
 import IdpTable from './idp-table.svg'
 import IdpTopVisited from './idp-top-visited.svg'
+import IdpUpload from './idp-upload.svg'
 import IdpVideo from './idp-video.svg'
 import IdpWithDarkText from './idp-with-dark-text.svg'
 import IdpWorkflow from './idp-workflow.svg'
@@ -1744,7 +1745,6 @@ import Up from './up.svg'
 import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
 import UploadBox from './upload-box.svg'
-import Upload from './upload.svg'
 import UpstreamProxiesIcon from './upstream-proxies-icon.svg'
 import UserGroupBlue from './user-group-blue.svg'
 import UserGroups from './user-groups.svg'
@@ -2731,6 +2731,7 @@ type HarnessIconName =
   | 'idp-system'
   | 'idp-table'
   | 'idp-top-visited'
+  | 'idp-upload'
   | 'idp-video'
   | 'idp-with-dark-text'
   | 'idp-workflow'
@@ -3515,7 +3516,6 @@ type HarnessIconName =
   | 'update-app'
   | 'upgrade-bolt'
   | 'upload-box'
-  | 'upload'
   | 'upstream-proxies-icon'
   | 'user-group-blue'
   | 'user-groups'
@@ -4502,6 +4502,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-system': IdpSystem,
   'idp-table': IdpTable,
   'idp-top-visited': IdpTopVisited,
+  'idp-upload': IdpUpload,
   'idp-video': IdpVideo,
   'idp-with-dark-text': IdpWithDarkText,
   'idp-workflow': IdpWorkflow,
@@ -5286,7 +5287,6 @@ const HarnessIcons: KVO<ElementType> = {
   'update-app': UpdateApp,
   'upgrade-bolt': UpgradeBolt,
   'upload-box': UploadBox,
-  upload: Upload,
   'upstream-proxies-icon': UpstreamProxiesIcon,
   'user-group-blue': UserGroupBlue,
   'user-groups': UserGroups,
