@@ -1704,6 +1704,7 @@ import TerragruntApplyInverse from './terragrunt-apply-inverse.svg'
 import TerragruntApply from './terragrunt-apply.svg'
 import TerragruntDestroyInverse from './terragrunt-destroy-inverse.svg'
 import TerragruntDestroy from './terragrunt-destroy.svg'
+import TerragruntNew from './terragrunt-new.svg'
 import TerragruntPlanInverse from './terragrunt-plan-inverse.svg'
 import TerragruntPlan from './terragrunt-plan.svg'
 import TerragruntRollbackInverse from './terragrunt-rollback-inverse.svg'
@@ -3475,6 +3476,7 @@ type HarnessIconName =
   | 'terragrunt-apply'
   | 'terragrunt-destroy-inverse'
   | 'terragrunt-destroy'
+  | 'terragrunt-new'
   | 'terragrunt-plan-inverse'
   | 'terragrunt-plan'
   | 'terragrunt-rollback-inverse'
@@ -5246,6 +5248,7 @@ const HarnessIcons: KVO<ElementType> = {
   'terragrunt-apply': TerragruntApply,
   'terragrunt-destroy-inverse': TerragruntDestroyInverse,
   'terragrunt-destroy': TerragruntDestroy,
+  'terragrunt-new': TerragruntNew,
   'terragrunt-plan-inverse': TerragruntPlanInverse,
   'terragrunt-plan': TerragruntPlan,
   'terragrunt-rollback-inverse': TerragruntRollbackInverse,
