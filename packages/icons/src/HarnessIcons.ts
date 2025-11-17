@@ -316,6 +316,7 @@ import CvSketch from './cv-sketch.svg'
 import CvVerifystepInverse from './cv-verifystep-inverse.svg'
 import CvVerifystep from './cv-verifystep.svg'
 import DangerIcon from './danger-icon.svg'
+import DartIcon from './dart-icon.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
@@ -1328,6 +1329,7 @@ type HarnessIconName =
   | 'cv-verifystep-inverse'
   | 'cv-verifystep'
   | 'danger-icon'
+  | 'dart-icon'
   | 'dashboard-selected'
   | 'dashboard'
   | 'dashboards-solid-border'
@@ -2340,6 +2342,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cv-verifystep-inverse': CvVerifystepInverse,
   'cv-verifystep': CvVerifystep,
   'danger-icon': DangerIcon,
+  'dart-icon': DartIcon,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'dashboards-solid-border': DashboardsSolidBorder,
