@@ -32,6 +32,7 @@ import PrismaCloudInverse from './PrismaCloud-inverse.svg'
 import PrismaCloud from './PrismaCloud.svg'
 import QualysInverse from './Qualys-inverse.svg'
 import Qualys from './Qualys.svg'
+import Qwiet from './Qwiet.svg'
 import SnykInverse from './Snyk-inverse.svg'
 import Snyk from './Snyk.svg'
 import SonarQubeInverse from './SonarQube-inverse.svg'
@@ -1805,6 +1806,7 @@ type HarnessIconName =
   | 'PrismaCloud'
   | 'Qualys-inverse'
   | 'Qualys'
+  | 'Qwiet'
   | 'Snyk-inverse'
   | 'Snyk'
   | 'SonarQube-inverse'
@@ -3578,6 +3580,7 @@ const HarnessIcons: KVO<ElementType> = {
   PrismaCloud: PrismaCloud,
   'Qualys-inverse': QualysInverse,
   Qualys: Qualys,
+  Qwiet: Qwiet,
   'Snyk-inverse': SnykInverse,
   Snyk: Snyk,
   'SonarQube-inverse': SonarQubeInverse,
