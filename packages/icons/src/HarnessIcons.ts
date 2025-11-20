@@ -115,6 +115,11 @@ import AquasecInverse from './aquasec-inverse.svg'
 import Aquasec from './aquasec.svg'
 import ArchitectMode from './architect-mode.svg'
 import Argo from './argo.svg'
+import ArithmeticAverage from './arithmetic-average.svg'
+import ArithmeticMax from './arithmetic-max.svg'
+import ArithmeticMedian from './arithmetic-median.svg'
+import ArithmeticMin from './arithmetic-min.svg'
+import ArithmeticSum from './arithmetic-sum.svg'
 import Arm from './arm.svg'
 import Arrow from './arrow.svg'
 import ArtifactGoogleCloudSourceRepo from './artifact-google-cloud-source-repo.svg'
@@ -1889,6 +1894,11 @@ type HarnessIconName =
   | 'aquasec'
   | 'architect-mode'
   | 'argo'
+  | 'arithmetic-average'
+  | 'arithmetic-max'
+  | 'arithmetic-median'
+  | 'arithmetic-min'
+  | 'arithmetic-sum'
   | 'arm'
   | 'arrow'
   | 'artifact-google-cloud-source-repo'
@@ -3663,6 +3673,11 @@ const HarnessIcons: KVO<ElementType> = {
   aquasec: Aquasec,
   'architect-mode': ArchitectMode,
   argo: Argo,
+  'arithmetic-average': ArithmeticAverage,
+  'arithmetic-max': ArithmeticMax,
+  'arithmetic-median': ArithmeticMedian,
+  'arithmetic-min': ArithmeticMin,
+  'arithmetic-sum': ArithmeticSum,
   arm: Arm,
   arrow: Arrow,
   'artifact-google-cloud-source-repo': ArtifactGoogleCloudSourceRepo,
