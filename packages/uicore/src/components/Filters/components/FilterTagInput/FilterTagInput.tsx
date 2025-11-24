@@ -94,7 +94,7 @@ export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
       <MenuItem
         icon="add"
         active
-        text={`Create "${trimmedInputValue}"`}
+        text={`Add "${trimmedInputValue}"`}
         onClick={() => {
           inputRef.current?.focus()
 

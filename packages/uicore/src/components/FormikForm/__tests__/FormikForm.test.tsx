@@ -420,20 +420,20 @@ describe('Test basic Components', () => {
 
     const input = getByPlaceholderText('placeholder')
     fireEvent.change(input, { target: { value: 'tag1' } })
-    fireEvent.click(getByText('Create "tag1"'))
+    fireEvent.click(getByText('Add "tag1"'))
     await waitFor(() => expect(getByText('tag1')).toBeTruthy())
 
     fireEvent.change(input, { target: { value: 'tag2' } })
-    fireEvent.click(getByText('Create "tag2"'))
+    fireEvent.click(getByText('Add "tag2"'))
     await waitFor(() => expect(getByText('tag2')).toBeTruthy())
 
     // enter tag2 again
     fireEvent.change(input, { target: { value: 'tag2' } })
-    fireEvent.click(getByText('Create "tag2"'))
+    fireEvent.click(getByText('Add "tag2"'))
 
     // entering tag2 for the third time
     fireEvent.change(input, { target: { value: 'tag2' } })
-    fireEvent.click(getByText('Create "tag2"'))
+    fireEvent.click(getByText('Add "tag2"'))
 
     // tag2 should only be seen once as saved in the snapshot
     expect(container).toMatchSnapshot()
@@ -526,9 +526,9 @@ describe('<FormInput.KVTagInput />', () => {
     const input = screen.getByDisplayValue('')
 
     userEvent.type(input, 't3:v3,t4:v4')
-    userEvent.click(await screen.findByText('Create "t3:v3,t4:v4"'))
+    userEvent.click(await screen.findByText('Add "t3:v3,t4:v4"'))
 
-    await waitFor(() => expect(screen.queryByText('Create "t3:v3,t4:v4"')).toBeNull())
+    await waitFor(() => expect(screen.queryByText('Add "t3:v3,t4:v4"')).toBeNull())
     expect(await screen.findByText('t3:v3')).toBeInTheDocument()
     expect(screen.getByText('t4:v4')).toBeInTheDocument()
     expect(input).toHaveDisplayValue('')
@@ -549,9 +549,9 @@ describe('<FormInput.KVTagInput />', () => {
     const input = screen.getByDisplayValue('')
 
     userEvent.type(input, 't2,t3')
-    userEvent.click(await screen.findByText('Create "t2,t3"'))
+    userEvent.click(await screen.findByText('Add "t2,t3"'))
 
-    await waitFor(() => expect(screen.queryByText('Create "t2,t3"')).toBeNull())
+    await waitFor(() => expect(screen.queryByText('Add "t2,t3"')).toBeNull())
     expect(await screen.findByText('t2')).toBeInTheDocument()
     expect(screen.getByText('t3')).toBeInTheDocument()
     expect(input).toHaveDisplayValue('')
@@ -563,11 +563,11 @@ describe('<FormInput.KVTagInput />', () => {
     // Pressing enter should also close the create tag popover.
     userEvent.type(input, 't4')
 
-    expect(await screen.findByText('Create "t4"')).toBeInTheDocument()
+    expect(await screen.findByText('Add "t4"')).toBeInTheDocument()
 
     userEvent.type(input, '{enter}')
 
-    await waitFor(() => expect(screen.queryByText('Create "t4"')).toBeNull())
+    await waitFor(() => expect(screen.queryByText('Add "t4"')).toBeNull())
 
     userEvent.click(screen.getByText('Submit'))
 

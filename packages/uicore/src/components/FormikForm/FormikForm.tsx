@@ -186,7 +186,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
       <MenuItem
         icon="add"
         active
-        text={`Create "${trimmedInputValue}"`}
+        text={`Add "${trimmedInputValue}"`}
         onClick={() => {
           inputRef.current?.focus()
 

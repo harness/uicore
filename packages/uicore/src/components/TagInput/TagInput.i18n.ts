@@ -7,6 +7,6 @@
 
 export default {
   noResult: 'No results.',
-  newTag: (newTag: string) => `Create "${newTag}"`,
+  newTag: (newTag: string): string => `Add "${newTag}"`,
   addTag: '+ tag'
 }
