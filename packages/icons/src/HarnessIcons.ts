@@ -248,6 +248,7 @@ import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
 import CcmApply from './ccm-apply.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
+import CcmComment from './ccm-comment.svg'
 import CcmCurrencySettings from './ccm-currency-settings.svg'
 import CcmExternalCostSource from './ccm-external-cost-source.svg'
 import CcmEyeOpen from './ccm-eye-open.svg'
@@ -2027,6 +2028,7 @@ type HarnessIconName =
   | 'cascading'
   | 'ccm-apply'
   | 'ccm-cloud-integration-settings'
+  | 'ccm-comment'
   | 'ccm-currency-settings'
   | 'ccm-external-cost-source'
   | 'ccm-eye-open'
@@ -3806,6 +3808,7 @@ const HarnessIcons: KVO<ElementType> = {
   cascading: Cascading,
   'ccm-apply': CcmApply,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
+  'ccm-comment': CcmComment,
   'ccm-currency-settings': CcmCurrencySettings,
   'ccm-external-cost-source': CcmExternalCostSource,
   'ccm-eye-open': CcmEyeOpen,
