@@ -607,6 +607,7 @@ import CostImpact from './cost-impact.svg'
 import CoverageStatusError from './coverage-status-error.svg'
 import CoverageStatusSuccess from './coverage-status-success.svg'
 import Coverity from './coverity.svg'
+import Cpu from './cpu.svg'
 import Crane from './crane.svg'
 import CreatePr from './create-pr.svg'
 import CreateViaExistingYaml from './create-via-existing-yaml.svg'
@@ -2387,6 +2388,7 @@ type HarnessIconName =
   | 'coverage-status-error'
   | 'coverage-status-success'
   | 'coverity'
+  | 'cpu'
   | 'crane'
   | 'create-pr'
   | 'create-via-existing-yaml'
@@ -4167,6 +4169,7 @@ const HarnessIcons: KVO<ElementType> = {
   'coverage-status-error': CoverageStatusError,
   'coverage-status-success': CoverageStatusSuccess,
   coverity: Coverity,
+  cpu: Cpu,
   crane: Crane,
   'create-pr': CreatePr,
   'create-via-existing-yaml': CreateViaExistingYaml,
