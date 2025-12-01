@@ -690,6 +690,7 @@ import DeploymentTimeoutLegacy from './deployment-timeout-legacy.svg'
 import DeploymentTimeoutNew from './deployment-timeout-new.svg'
 import Description from './description.svg'
 import DeveloperExperience from './developer-experience.svg'
+import DiamondsFour from './diamonds-four.svg'
 import DigitalOcean from './digital-ocean.svg'
 import DockerCiStepInverse from './docker-ci-step-inverse.svg'
 import DockerCiStep from './docker-ci-step.svg'
@@ -1612,6 +1613,7 @@ import SscaRemediation from './ssca-remediation.svg'
 import SscaRocket from './ssca-rocket.svg'
 import SscaRuledefinition from './ssca-ruledefinition.svg'
 import SslCert from './ssl-cert.svg'
+import Stairs from './stairs.svg'
 import StaleCache from './stale-cache.svg'
 import StarEmpty from './star-empty.svg'
 import Star from './star.svg'
@@ -2471,6 +2473,7 @@ type HarnessIconName =
   | 'deployment-timeout-new'
   | 'description'
   | 'developer-experience'
+  | 'diamonds-four'
   | 'digital-ocean'
   | 'docker-ci-step-inverse'
   | 'docker-ci-step'
@@ -3393,6 +3396,7 @@ type HarnessIconName =
   | 'ssca-rocket'
   | 'ssca-ruledefinition'
   | 'ssl-cert'
+  | 'stairs'
   | 'stale-cache'
   | 'star-empty'
   | 'star'
@@ -4252,6 +4256,7 @@ const HarnessIcons: KVO<ElementType> = {
   'deployment-timeout-new': DeploymentTimeoutNew,
   description: Description,
   'developer-experience': DeveloperExperience,
+  'diamonds-four': DiamondsFour,
   'digital-ocean': DigitalOcean,
   'docker-ci-step-inverse': DockerCiStepInverse,
   'docker-ci-step': DockerCiStep,
@@ -5174,6 +5179,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ssca-rocket': SscaRocket,
   'ssca-ruledefinition': SscaRuledefinition,
   'ssl-cert': SslCert,
+  stairs: Stairs,
   'stale-cache': StaleCache,
   'star-empty': StarEmpty,
   star: Star,
