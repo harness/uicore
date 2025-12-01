@@ -618,6 +618,7 @@ import CriticalEvents from './critical-events.svg'
 import CrossThin from './cross-thin.svg'
 import CsHover from './cs-hover.svg'
 import CurrencyBanner from './currency-banner.svg'
+import Cursor from './cursor.svg'
 import CustomApproval from './custom-approval.svg'
 import CustomArtifact from './custom-artifact.svg'
 import CustomBanner from './custom-banner.svg'
@@ -1778,6 +1779,7 @@ import Webhook from './webhook.svg'
 import WhiteCluster from './white-cluster.svg'
 import WhiteFullCluster from './white-full-cluster.svg'
 import WigglyArrow from './wiggly-arrow.svg'
+import Windsurf from './windsurf.svg'
 import Wiz from './wiz.svg'
 import WorkflowInverse from './workflow-inverse.svg'
 import X from './x.svg'
@@ -2401,6 +2403,7 @@ type HarnessIconName =
   | 'cross-thin'
   | 'cs-hover'
   | 'currency-banner'
+  | 'cursor'
   | 'custom-approval'
   | 'custom-artifact'
   | 'custom-banner'
@@ -3561,6 +3564,7 @@ type HarnessIconName =
   | 'white-cluster'
   | 'white-full-cluster'
   | 'wiggly-arrow'
+  | 'windsurf'
   | 'wiz'
   | 'workflow-inverse'
   | 'x'
@@ -4184,6 +4188,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cross-thin': CrossThin,
   'cs-hover': CsHover,
   'currency-banner': CurrencyBanner,
+  cursor: Cursor,
   'custom-approval': CustomApproval,
   'custom-artifact': CustomArtifact,
   'custom-banner': CustomBanner,
@@ -5344,6 +5349,7 @@ const HarnessIcons: KVO<ElementType> = {
   'white-cluster': WhiteCluster,
   'white-full-cluster': WhiteFullCluster,
   'wiggly-arrow': WigglyArrow,
+  windsurf: Windsurf,
   wiz: Wiz,
   'workflow-inverse': WorkflowInverse,
   x: X,
