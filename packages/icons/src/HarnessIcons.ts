@@ -691,6 +691,7 @@ import OtherWorkload from './other-workload.svg'
 import PdcInverse from './pdc-inverse.svg'
 import Pdc from './pdc.svg'
 import Pending from './pending.svg'
+import PhpComposerLogo from './php-composer-logo.svg'
 import PipelineAdvanced from './pipeline-advanced.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineBuildSelect from './pipeline-build-select.svg'
@@ -1704,6 +1705,7 @@ type HarnessIconName =
   | 'pdc-inverse'
   | 'pdc'
   | 'pending'
+  | 'php-composer-logo'
   | 'pipeline-advanced'
   | 'pipeline-approval'
   | 'pipeline-build-select'
@@ -2717,6 +2719,7 @@ const HarnessIcons: KVO<ElementType> = {
   'pdc-inverse': PdcInverse,
   pdc: Pdc,
   pending: Pending,
+  'php-composer-logo': PhpComposerLogo,
   'pipeline-advanced': PipelineAdvanced,
   'pipeline-approval': PipelineApproval,
   'pipeline-build-select': PipelineBuildSelect,
