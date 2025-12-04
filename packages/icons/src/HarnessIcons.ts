@@ -1333,6 +1333,7 @@ import ResRoles from './res-roles.svg'
 import ResSecrets from './res-secrets.svg'
 import ResUserGroups from './res-userGroups.svg'
 import ResUsers from './res-users.svg'
+import ReservedInstance from './reservedInstance.svg'
 import ResetIcon from './reset-icon.svg'
 import ResourceCenterCommunityIcon from './resource-center-community-icon.svg'
 import ResourceCenterDocsIcon from './resource-center-docs-icon.svg'
@@ -1391,6 +1392,7 @@ import S3CiStepInverse from './s3-ci-step-inverse.svg'
 import S3CiStep from './s3-ci-step.svg'
 import S3StepInverse from './s3-step-inverse.svg'
 import S3Step from './s3-step.svg'
+import SackDollarTransparent from './sack-dollar-transparent.svg'
 import SackDollar from './sack-dollar.svg'
 import Salesforce from './salesforce.svg'
 import SaveCacheGcsCiStepInverse from './save-cache-gcs-ci-step-inverse.svg'
@@ -3118,6 +3120,7 @@ type HarnessIconName =
   | 'res-secrets'
   | 'res-userGroups'
   | 'res-users'
+  | 'reservedInstance'
   | 'reset-icon'
   | 'resource-center-community-icon'
   | 'resource-center-docs-icon'
@@ -3176,6 +3179,7 @@ type HarnessIconName =
   | 's3-ci-step'
   | 's3-step-inverse'
   | 's3-step'
+  | 'sack-dollar-transparent'
   | 'sack-dollar'
   | 'salesforce'
   | 'save-cache-gcs-ci-step-inverse'
@@ -4903,6 +4907,7 @@ const HarnessIcons: KVO<ElementType> = {
   'res-secrets': ResSecrets,
   'res-userGroups': ResUserGroups,
   'res-users': ResUsers,
+  reservedInstance: ReservedInstance,
   'reset-icon': ResetIcon,
   'resource-center-community-icon': ResourceCenterCommunityIcon,
   'resource-center-docs-icon': ResourceCenterDocsIcon,
@@ -4961,6 +4966,7 @@ const HarnessIcons: KVO<ElementType> = {
   's3-ci-step': S3CiStep,
   's3-step-inverse': S3StepInverse,
   's3-step': S3Step,
+  'sack-dollar-transparent': SackDollarTransparent,
   'sack-dollar': SackDollar,
   salesforce: Salesforce,
   'save-cache-gcs-ci-step-inverse': SaveCacheGcsCiStepInverse,
