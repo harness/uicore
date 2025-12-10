@@ -797,7 +797,9 @@ import Flag from './flag.svg'
 import Flash from './flash.svg'
 import Flux from './flux.svg'
 import FmeAccountSettings from './fme-account-settings.svg'
+import FmeAddRemoveTargets from './fme-add-remove-targets.svg'
 import FmeAskSwitch from './fme-ask-switch.svg'
+import FmeCreateFlag from './fme-create-flag.svg'
 import FmeDatahub from './fme-datahub.svg'
 import FmeEnvironments from './fme-environments.svg'
 import FmeExperimentation from './fme-experimentation.svg'
@@ -810,7 +812,10 @@ import FmeProjectSettings from './fme-project-settings.svg'
 import FmeRolloutBoard from './fme-rollout-board.svg'
 import FmeSearch from './fme-search.svg'
 import FmeSegments from './fme-segments.svg'
+import FmeSetAllocation from './fme-set-allocation.svg'
+import FmeSetTargets from './fme-set-targets.svg'
 import FmeSettings from './fme-settings.svg'
+import FmeUpdateFlag from './fme-update-flag.svg'
 import FmeWithDarkText from './fme-with-dark-text.svg'
 import FolderUpload from './folder-upload.svg'
 import Folder from './folder.svg'
@@ -2585,7 +2590,9 @@ type HarnessIconName =
   | 'flash'
   | 'flux'
   | 'fme-account-settings'
+  | 'fme-add-remove-targets'
   | 'fme-ask-switch'
+  | 'fme-create-flag'
   | 'fme-datahub'
   | 'fme-environments'
   | 'fme-experimentation'
@@ -2598,7 +2605,10 @@ type HarnessIconName =
   | 'fme-rollout-board'
   | 'fme-search'
   | 'fme-segments'
+  | 'fme-set-allocation'
+  | 'fme-set-targets'
   | 'fme-settings'
+  | 'fme-update-flag'
   | 'fme-with-dark-text'
   | 'folder-upload'
   | 'folder'
@@ -4373,7 +4383,9 @@ const HarnessIcons: KVO<ElementType> = {
   flash: Flash,
   flux: Flux,
   'fme-account-settings': FmeAccountSettings,
+  'fme-add-remove-targets': FmeAddRemoveTargets,
   'fme-ask-switch': FmeAskSwitch,
+  'fme-create-flag': FmeCreateFlag,
   'fme-datahub': FmeDatahub,
   'fme-environments': FmeEnvironments,
   'fme-experimentation': FmeExperimentation,
@@ -4386,7 +4398,10 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-rollout-board': FmeRolloutBoard,
   'fme-search': FmeSearch,
   'fme-segments': FmeSegments,
+  'fme-set-allocation': FmeSetAllocation,
+  'fme-set-targets': FmeSetTargets,
   'fme-settings': FmeSettings,
+  'fme-update-flag': FmeUpdateFlag,
   'fme-with-dark-text': FmeWithDarkText,
   'folder-upload': FolderUpload,
   folder: Folder,
