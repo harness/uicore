@@ -804,11 +804,13 @@ import FmeDatahub from './fme-datahub.svg'
 import FmeEnvironments from './fme-environments.svg'
 import FmeExperimentation from './fme-experimentation.svg'
 import FmeFeatureFlags from './fme-feature-flags.svg'
+import FmeKillFlag from './fme-kill-flag.svg'
 import FmeMain from './fme-main.svg'
 import FmeMetrics from './fme-metrics.svg'
 import FmeMyWork from './fme-my-work.svg'
 import FmeOrgSettings from './fme-org-settings.svg'
 import FmeProjectSettings from './fme-project-settings.svg'
+import FmeRestoreFlag from './fme-restore-flag.svg'
 import FmeRolloutBoard from './fme-rollout-board.svg'
 import FmeSearch from './fme-search.svg'
 import FmeSegments from './fme-segments.svg'
@@ -2598,11 +2600,13 @@ type HarnessIconName =
   | 'fme-environments'
   | 'fme-experimentation'
   | 'fme-feature-flags'
+  | 'fme-kill-flag'
   | 'fme-main'
   | 'fme-metrics'
   | 'fme-my-work'
   | 'fme-org-settings'
   | 'fme-project-settings'
+  | 'fme-restore-flag'
   | 'fme-rollout-board'
   | 'fme-search'
   | 'fme-segments'
@@ -4392,11 +4396,13 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-environments': FmeEnvironments,
   'fme-experimentation': FmeExperimentation,
   'fme-feature-flags': FmeFeatureFlags,
+  'fme-kill-flag': FmeKillFlag,
   'fme-main': FmeMain,
   'fme-metrics': FmeMetrics,
   'fme-my-work': FmeMyWork,
   'fme-org-settings': FmeOrgSettings,
   'fme-project-settings': FmeProjectSettings,
+  'fme-restore-flag': FmeRestoreFlag,
   'fme-rollout-board': FmeRolloutBoard,
   'fme-search': FmeSearch,
   'fme-segments': FmeSegments,
