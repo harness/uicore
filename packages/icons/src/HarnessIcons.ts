@@ -908,6 +908,7 @@ import Golang from './golang.svg'
 import GoogleBigquery from './google-bigquery.svg'
 import GoogleGemini from './google-gemini.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
+import GoogleMig from './google-mig.svg'
 import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
 import GovernanceShield from './governance-shield.svg'
@@ -2701,6 +2702,7 @@ type HarnessIconName =
   | 'google-bigquery'
   | 'google-gemini'
   | 'google-kubernetes-engine'
+  | 'google-mig'
   | 'google'
   | 'governance-policy-set'
   | 'governance-shield'
@@ -4494,6 +4496,7 @@ const HarnessIcons: KVO<ElementType> = {
   'google-bigquery': GoogleBigquery,
   'google-gemini': GoogleGemini,
   'google-kubernetes-engine': GoogleKubernetesEngine,
+  'google-mig': GoogleMig,
   google: Google,
   'governance-policy-set': GovernancePolicySet,
   'governance-shield': GovernanceShield,
