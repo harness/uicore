@@ -3,22 +3,23 @@
 exports[`<MultiSelect/> tests should work when no matching results found: Filtered Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      aria-haspopup="true"
+      class="bp4-popover-target bp4-popover-open"
     >
       <div
         class=""
       >
         <div
-          class="bp3-input bp3-tag-input bp3-active bp3-multi-select"
+          class="bp4-input bp4-tag-input bp4-active bp4-multi-select"
         >
           <div
-            class="bp3-tag-input-values"
+            class="bp4-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp4-input-ghost bp4-multi-select-tag-input-input"
               placeholder="- Select -"
               value="junk"
             />
@@ -27,19 +28,31 @@ exports[`<MultiSelect/> tests should work when no matching results found: Filter
       </div>
     </div>
     <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
+      aria-live="polite"
+      class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
     >
       <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
+        class="bp4-transition-container bp4-popover-appear bp4-popover-appear-active"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-multi-select-popover popover"
+          class="bp4-popover bp4-minimal bp4-multi-select-popover popover"
         >
           <div
-            class="bp3-popover-content"
+            class="bp4-popover-content"
           >
-            <div />
+            <div>
+              <ul
+                class="bp4-menu"
+                role="listbox"
+              >
+                <li
+                  class="menuItem disabled"
+                >
+                  No matching results found
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -51,22 +64,23 @@ exports[`<MultiSelect/> tests should work when no matching results found: Filter
 exports[`<MultiSelect/> tests works with async data 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target"
+      aria-haspopup="true"
+      class="bp4-popover-target"
     >
       <div
         class=""
       >
         <div
-          class="bp3-input bp3-tag-input bp3-multi-select"
+          class="bp4-input bp4-tag-input bp4-multi-select"
         >
           <div
-            class="bp3-tag-input-values"
+            class="bp4-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp4-input-ghost bp4-multi-select-tag-input-input"
               placeholder="- Select -"
               value=""
             />
@@ -81,22 +95,23 @@ exports[`<MultiSelect/> tests works with async data 1`] = `
 exports[`<MultiSelect/> tests works with async data: Final state 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target"
+      aria-haspopup="true"
+      class="bp4-popover-target"
     >
       <div
         class=""
       >
         <div
-          class="bp3-input bp3-tag-input bp3-active bp3-multi-select"
+          class="bp4-input bp4-tag-input bp4-active bp4-multi-select"
         >
           <div
-            class="bp3-tag-input-values"
+            class="bp4-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp4-input-ghost bp4-multi-select-tag-input-input"
               placeholder="- Select -"
               value=""
             />
@@ -111,22 +126,23 @@ exports[`<MultiSelect/> tests works with async data: Final state 1`] = `
 exports[`<MultiSelect/> tests works with async data: Loading state 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target"
+      aria-haspopup="true"
+      class="bp4-popover-target"
     >
       <div
         class=""
       >
         <div
-          class="bp3-input bp3-tag-input bp3-active bp3-multi-select"
+          class="bp4-input bp4-tag-input bp4-active bp4-multi-select"
         >
           <div
-            class="bp3-tag-input-values"
+            class="bp4-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp4-input-ghost bp4-multi-select-tag-input-input"
               placeholder="- Select -"
               value=""
             />
@@ -141,22 +157,23 @@ exports[`<MultiSelect/> tests works with async data: Loading state 1`] = `
 exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      aria-haspopup="true"
+      class="bp4-popover-target bp4-popover-open"
     >
       <div
         class=""
       >
         <div
-          class="bp3-input bp3-tag-input bp3-active bp3-multi-select"
+          class="bp4-input bp4-tag-input bp4-active bp4-multi-select"
         >
           <div
-            class="bp3-tag-input-values"
+            class="bp4-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp4-input-ghost bp4-multi-select-tag-input-input"
               placeholder="- Select -"
               value="cha"
             />
@@ -165,21 +182,23 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
       </div>
     </div>
     <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
+      aria-live="polite"
+      class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
     >
       <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
+        class="bp4-transition-container bp4-popover-appear bp4-popover-appear-active"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-multi-select-popover popover"
+          class="bp4-popover bp4-minimal bp4-multi-select-popover popover"
         >
           <div
-            class="bp3-popover-content"
+            class="bp4-popover-content"
           >
             <div>
               <ul
-                class="bp3-menu"
+                class="bp4-menu"
+                role="listbox"
               >
                 <li
                   class="menuItem active"
@@ -231,22 +250,21 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                 </li>
                 <button
                   aria-label="cha"
-                  class="bp3-button bp3-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
+                  class="bp4-button bp4-minimal button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
                   type="button"
                 >
                   <span
-                    class="bp3-icon bp3-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-plus StyledProps--main StyledProps--padding-right-xsmall"
                     icon="plus"
                   >
                     <svg
                       data-icon="plus"
                       height="16"
+                      role="img"
                       viewBox="0 0 16 16"
                       width="16"
                     >
-                      <desc>
-                        plus
-                      </desc>
                       <path
                         d="M13 7H9V3c0-.55-.45-1-1-1s-1 .45-1 1v4H3c-.55 0-1 .45-1 1s.45 1 1 1h4v4c0 .55.45 1 1 1s1-.45 1-1V9h4c.55 0 1-.45 1-1s-.45-1-1-1z"
                         fill-rule="evenodd"
@@ -254,7 +272,7 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
                     </svg>
                   </span>
                   <span
-                    class="bp3-button-text"
+                    class="bp4-button-text"
                   >
                     cha
                   </span>
@@ -272,22 +290,23 @@ exports[`<MultiSelect/> tests works with filtering: Filtered Menu 1`] = `
 exports[`<MultiSelect/> tests works with static data 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target"
+      aria-haspopup="true"
+      class="bp4-popover-target"
     >
       <div
         class=""
       >
         <div
-          class="bp3-input bp3-tag-input bp3-multi-select"
+          class="bp4-input bp4-tag-input bp4-multi-select"
         >
           <div
-            class="bp3-tag-input-values"
+            class="bp4-tag-input-values"
           >
             <input
-              class="bp3-input-ghost"
+              class="bp4-input-ghost bp4-multi-select-tag-input-input"
               placeholder="- Select -"
               value=""
             />

@@ -3,7 +3,7 @@
 exports[`Detail Page card should render DetailPagecard with title and content 1`] = `
 <div>
   <div
-    class="bp3-card bp3-elevation-0 card main"
+    class="bp4-card bp4-elevation-0 card main"
   >
     <p
       class="StyledProps--font StyledProps--main StyledProps--color StyledProps--color-black StyledProps--font-variation-card-title"

@@ -73,7 +73,10 @@
     "@types/react-dom": "17.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "postcss": "8.3.5"
+    "postcss": "8.3.5",
+    "@blueprintjs/core": "4.20.2",
+    "@blueprintjs/datetime": "4.4.37",
+    "@blueprintjs/select": "4.9.24"
   },
   "lint-staged": {
     "*": [

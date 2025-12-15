@@ -6,7 +6,7 @@ exports[`Test render Radio Select should render default values 1`] = `
     class="grid"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="0"
       tabindex="0"
     >
@@ -14,7 +14,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-kubernetes"
         >
           <svg
@@ -43,7 +43,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="1"
       tabindex="0"
     >
@@ -51,7 +51,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-github"
         >
           <svg
@@ -74,7 +74,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="2"
       tabindex="0"
     >
@@ -82,7 +82,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-gcp"
         >
           <svg
@@ -163,7 +163,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="3"
       tabindex="0"
     >
@@ -171,7 +171,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-elk"
         >
           <svg
@@ -218,7 +218,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="4"
       tabindex="0"
     >
@@ -226,7 +226,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-gotlab"
         >
           <svg
@@ -273,7 +273,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="5"
       tabindex="0"
     >
@@ -281,7 +281,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-datadog"
         >
           <svg
@@ -308,7 +308,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="6"
       tabindex="0"
     >
@@ -316,7 +316,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-slack"
         >
           <svg
@@ -363,7 +363,7 @@ exports[`Test render Radio Select should render default values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="7"
       tabindex="0"
     >
@@ -371,7 +371,7 @@ exports[`Test render Radio Select should render default values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-jenkins"
         >
           <svg
@@ -537,7 +537,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
     class="grid"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="0"
       tabindex="0"
     >
@@ -545,7 +545,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-kubernetes"
         >
           <svg
@@ -574,7 +574,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="1"
       tabindex="0"
     >
@@ -582,7 +582,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-github"
         >
           <svg
@@ -605,14 +605,14 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-elevation-0 card disabled"
+      class="bp4-card bp4-elevation-0 card disabled"
       data-index="2"
     >
       <div
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-gcp"
         >
           <svg
@@ -693,7 +693,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="3"
       tabindex="0"
     >
@@ -701,7 +701,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-elk"
         >
           <svg
@@ -748,7 +748,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="4"
       tabindex="0"
     >
@@ -756,7 +756,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-gotlab"
         >
           <svg
@@ -803,7 +803,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="5"
       tabindex="0"
     >
@@ -811,7 +811,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-datadog"
         >
           <svg
@@ -838,7 +838,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="6"
       tabindex="0"
     >
@@ -846,7 +846,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-slack"
         >
           <svg
@@ -893,7 +893,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="7"
       tabindex="0"
     >
@@ -901,7 +901,7 @@ exports[`Test render Radio Select should render with disabled value 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-jenkins"
         >
           <svg
@@ -1067,7 +1067,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
     class="grid"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="0"
       tabindex="0"
     >
@@ -1075,7 +1075,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-kubernetes"
         >
           <svg
@@ -1104,7 +1104,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="1"
       tabindex="0"
     >
@@ -1112,7 +1112,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-github"
         >
           <svg
@@ -1135,7 +1135,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card selected interactive"
       data-index="2"
       tabindex="0"
     >
@@ -1143,7 +1143,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-gcp"
         >
           <svg
@@ -1224,7 +1224,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="3"
       tabindex="0"
     >
@@ -1232,7 +1232,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-elk"
         >
           <svg
@@ -1279,7 +1279,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="4"
       tabindex="0"
     >
@@ -1287,7 +1287,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-gotlab"
         >
           <svg
@@ -1334,7 +1334,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="5"
       tabindex="0"
     >
@@ -1342,7 +1342,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-datadog"
         >
           <svg
@@ -1369,7 +1369,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="6"
       tabindex="0"
     >
@@ -1377,7 +1377,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-slack"
         >
           <svg
@@ -1424,7 +1424,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
       </div>
     </div>
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
       data-index="7"
       tabindex="0"
     >
@@ -1432,7 +1432,7 @@ exports[`Test render Radio Select should render with selected values 1`] = `
         class="cardIcon"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="service-jenkins"
         >
           <svg

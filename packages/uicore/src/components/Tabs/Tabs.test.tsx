@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { Tabs, Tab } from './Tabs'
 
 describe('Tabs component', () => {
@@ -31,8 +31,8 @@ describe('Tabs component', () => {
 
   test('renders tabs with icons', () => {
     const tabList = [
-      { id: 'tab1', title: 'Tab 1', panel: <div>Panel 1</div>, iconProps: { name: 'main-dashboard' } },
-      { id: 'tab2', title: 'Tab 2', panel: <div>Panel 2</div>, iconProps: { name: 'settings' } }
+      { id: 'tab1', title: 'Tab 1', panel: <div>Panel 1</div>, iconProps: { name: 'main-dashboard' as any } },
+      { id: 'tab2', title: 'Tab 2', panel: <div>Panel 2</div>, iconProps: { name: 'settings' as any } }
     ]
     const { container } = render(<Tabs id="test-tabs" tabList={tabList} />)
     expect(container).toMatchSnapshot()

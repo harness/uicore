@@ -6,10 +6,11 @@ exports[`Render basic component should check snapshot with email 1`] = `
     class="Avatar contentStyle"
   >
     <span
-      class="bp3-popover-wrapper avatarPopOver"
+      class="bp4-popover-wrapper avatarPopOver"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <div
           class="AvatarInner"
@@ -30,10 +31,11 @@ exports[`Render basic component should check snapshot with image 1`] = `
     class="Avatar contentStyle"
   >
     <span
-      class="bp3-popover-wrapper avatarPopOver"
+      class="bp4-popover-wrapper avatarPopOver"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <div
           class="AvatarInner"
@@ -59,10 +61,11 @@ exports[`Render basic component should check snapshot with name 1`] = `
     class="Avatar contentStyle"
   >
     <span
-      class="bp3-popover-wrapper avatarPopOver"
+      class="bp4-popover-wrapper avatarPopOver"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <div
           class="AvatarInner"

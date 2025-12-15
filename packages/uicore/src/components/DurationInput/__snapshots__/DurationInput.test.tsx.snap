@@ -9,10 +9,10 @@ exports[`<DurationInput/> tests component tests renders with given value (in tim
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           placeholder="Enter w/d/h/m/s/ms"
           type="text"
           value="2d 2h"
@@ -20,13 +20,14 @@ exports[`<DurationInput/> tests component tests renders with given value (in tim
       </div>
     </div>
     <div
-      class="bp3-popover-wrapper helpIcon"
+      class="bp4-popover-wrapper helpIcon"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -56,10 +57,10 @@ exports[`<DurationInput/> tests component tests renders with given value 1`] = `
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           placeholder="Enter w/d/h/m/s/ms"
           type="text"
           value="1d 10h 17m 36s 789ms"
@@ -67,13 +68,14 @@ exports[`<DurationInput/> tests component tests renders with given value 1`] = `
       </div>
     </div>
     <div
-      class="bp3-popover-wrapper helpIcon"
+      class="bp4-popover-wrapper helpIcon"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -381,10 +383,10 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           data-testid="input"
           placeholder="Enter w/d/h/m/s/ms"
           style="padding-right: 0px;"
@@ -392,21 +394,20 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
           value="\${abc"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
               data-icon="warning-sign"
               height="12"
+              role="img"
               viewBox="0 0 16 16"
               width="12"
             >
-              <desc>
-                warning-sign
-              </desc>
               <path
                 d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
                 fill-rule="evenodd"
@@ -417,13 +418,14 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
       </div>
     </div>
     <div
-      class="bp3-popover-wrapper helpIcon"
+      class="bp4-popover-wrapper helpIcon"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -453,10 +455,10 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           data-testid="input"
           placeholder="Enter w/d/h/m/s/ms"
           style="padding-right: 0px;"
@@ -464,21 +466,20 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
           value="1s"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
               data-icon="warning-sign"
               height="12"
+              role="img"
               viewBox="0 0 16 16"
               width="12"
             >
-              <desc>
-                warning-sign
-              </desc>
               <path
                 d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
                 fill-rule="evenodd"
@@ -489,13 +490,14 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       </div>
     </div>
     <div
-      class="bp3-popover-wrapper helpIcon"
+      class="bp4-popover-wrapper helpIcon"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >
@@ -525,10 +527,10 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           data-testid="input"
           placeholder="Enter w/d/h/m/s/ms"
           style="padding-right: 0px;"
@@ -536,21 +538,20 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
           value="1"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
               data-icon="warning-sign"
               height="12"
+              role="img"
               viewBox="0 0 16 16"
               width="12"
             >
-              <desc>
-                warning-sign
-              </desc>
               <path
                 d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
                 fill-rule="evenodd"
@@ -561,13 +562,14 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       </div>
     </div>
     <div
-      class="bp3-popover-wrapper helpIcon"
+      class="bp4-popover-wrapper helpIcon"
     >
       <span
-        class="bp3-popover-target"
+        aria-haspopup="true"
+        class="bp4-popover-target"
       >
         <span
-          class="bp3-icon StyledProps--main"
+          class="bp4-icon StyledProps--main"
           data-icon="question"
           tabindex="0"
         >

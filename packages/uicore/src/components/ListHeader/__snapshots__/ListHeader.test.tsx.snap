@@ -20,10 +20,11 @@ exports[`ListHeader component renders with both pre and post dropdown content 1`
         Pre
       </div>
       <div
-        class="bp3-popover-wrapper main"
+        class="bp4-popover-wrapper main"
       >
         <div
-          class="bp3-popover-target"
+          aria-haspopup="true"
+          class="bp4-popover-target"
         >
           <div
             class=""
@@ -37,7 +38,7 @@ exports[`ListHeader component renders with both pre and post dropdown content 1`
                 class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
                   data-icon="main-sort"
                 >
                   <svg
@@ -59,14 +60,14 @@ exports[`ListHeader component renders with both pre and post dropdown content 1`
                   data-testid="dropdown-value"
                   style="--text-line-clamp: 1;"
                 >
-                  Select
+                  Name
                 </p>
               </div>
               <div
                 class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
                   data-icon="main-chevron-down"
                 >
                   <svg
@@ -111,10 +112,11 @@ exports[`ListHeader component renders with postDropdownContent 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <div
-        class="bp3-popover-wrapper main"
+        class="bp4-popover-wrapper main"
       >
         <div
-          class="bp3-popover-target"
+          aria-haspopup="true"
+          class="bp4-popover-target"
         >
           <div
             class=""
@@ -128,7 +130,7 @@ exports[`ListHeader component renders with postDropdownContent 1`] = `
                 class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
                   data-icon="main-sort"
                 >
                   <svg
@@ -150,14 +152,14 @@ exports[`ListHeader component renders with postDropdownContent 1`] = `
                   data-testid="dropdown-value"
                   style="--text-line-clamp: 1;"
                 >
-                  Select
+                  Name
                 </p>
               </div>
               <div
                 class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
                   data-icon="main-chevron-down"
                 >
                   <svg
@@ -207,10 +209,11 @@ exports[`ListHeader component renders with preDropdownContent 1`] = `
         Pre Content
       </div>
       <div
-        class="bp3-popover-wrapper main"
+        class="bp4-popover-wrapper main"
       >
         <div
-          class="bp3-popover-target"
+          aria-haspopup="true"
+          class="bp4-popover-target"
         >
           <div
             class=""
@@ -224,7 +227,7 @@ exports[`ListHeader component renders with preDropdownContent 1`] = `
                 class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
                   data-icon="main-sort"
                 >
                   <svg
@@ -246,14 +249,14 @@ exports[`ListHeader component renders with preDropdownContent 1`] = `
                   data-testid="dropdown-value"
                   style="--text-line-clamp: 1;"
                 >
-                  Select
+                  Name
                 </p>
               </div>
               <div
                 class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
                   data-icon="main-chevron-down"
                 >
                   <svg
@@ -293,10 +296,11 @@ exports[`ListHeader component renders with total count 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <div
-        class="bp3-popover-wrapper main"
+        class="bp4-popover-wrapper main"
       >
         <div
-          class="bp3-popover-target"
+          aria-haspopup="true"
+          class="bp4-popover-target"
         >
           <div
             class=""
@@ -310,7 +314,7 @@ exports[`ListHeader component renders with total count 1`] = `
                 class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
                   data-icon="main-sort"
                 >
                   <svg
@@ -332,14 +336,14 @@ exports[`ListHeader component renders with total count 1`] = `
                   data-testid="dropdown-value"
                   style="--text-line-clamp: 1;"
                 >
-                  Select
+                  Name
                 </p>
               </div>
               <div
                 class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
                   data-icon="main-chevron-down"
                 >
                   <svg
@@ -379,10 +383,11 @@ exports[`ListHeader component renders with zero count 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <div
-        class="bp3-popover-wrapper main"
+        class="bp4-popover-wrapper main"
       >
         <div
-          class="bp3-popover-target"
+          aria-haspopup="true"
+          class="bp4-popover-target"
         >
           <div
             class=""
@@ -396,7 +401,7 @@ exports[`ListHeader component renders with zero count 1`] = `
                 class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
                   data-icon="main-sort"
                 >
                   <svg
@@ -418,14 +423,14 @@ exports[`ListHeader component renders with zero count 1`] = `
                   data-testid="dropdown-value"
                   style="--text-line-clamp: 1;"
                 >
-                  Select
+                  Name
                 </p>
               </div>
               <div
                 class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
                   data-icon="main-chevron-down"
                 >
                   <svg
@@ -464,10 +469,11 @@ exports[`ListHeader component renders without total count 1`] = `
       class="horizontal layout-spacing-undefined StyledProps--main"
     >
       <div
-        class="bp3-popover-wrapper main"
+        class="bp4-popover-wrapper main"
       >
         <div
-          class="bp3-popover-target"
+          aria-haspopup="true"
+          class="bp4-popover-target"
         >
           <div
             class=""
@@ -481,7 +487,7 @@ exports[`ListHeader component renders without total count 1`] = `
                 class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
                   data-icon="main-sort"
                 >
                   <svg
@@ -503,14 +509,14 @@ exports[`ListHeader component renders without total count 1`] = `
                   data-testid="dropdown-value"
                   style="--text-line-clamp: 1;"
                 >
-                  Select
+                  Name
                 </p>
               </div>
               <div
                 class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
               >
                 <span
-                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
                   data-icon="main-chevron-down"
                 >
                   <svg

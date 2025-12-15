@@ -4,14 +4,16 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
 <div>
   <li
     class=""
+    role="none"
   >
     <a
-      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled menuDropdown"
+      class="bp4-menu-item bp4-active bp4-disabled bp4-selected menuDropdown"
+      role="menuitem"
       tabindex="-1"
       title="app.name"
     >
       <div
-        class="bp3-text-overflow-ellipsis bp3-fill"
+        class="bp4-fill bp4-text-overflow-ellipsis"
       >
         <span
           class="menuItem"
@@ -35,14 +37,16 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
 <div>
   <li
     class=""
+    role="none"
   >
     <a
-      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled menuDropdown"
+      class="bp4-menu-item bp4-active bp4-disabled bp4-selected menuDropdown"
+      role="menuitem"
       tabindex="-1"
       title="app.Name"
     >
       <div
-        class="bp3-text-overflow-ellipsis bp3-fill"
+        class="bp4-fill bp4-text-overflow-ellipsis"
       >
         <span
           class="menuItem"
@@ -66,14 +70,16 @@ exports[`<ExpressionInputs /> tests getItemRenderer tests works irrespective of 
 <div>
   <li
     class=""
+    role="none"
   >
     <a
-      class="bp3-menu-item bp3-active bp3-intent-primary bp3-disabled menuDropdown"
+      class="bp4-menu-item bp4-active bp4-disabled bp4-selected menuDropdown"
+      role="menuitem"
       tabindex="-1"
       title="app.xyz.name"
     >
       <div
-        class="bp3-text-overflow-ellipsis bp3-fill"
+        class="bp4-fill bp4-text-overflow-ellipsis"
       >
         <span
           class="menuItem"

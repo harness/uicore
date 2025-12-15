@@ -6,16 +6,16 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
     action="#"
   >
     <div
-      class="bp3-form-group"
+      class="bp4-form-group"
     >
       <div
-        class="bp3-form-content"
+        class="bp4-form-content"
       >
         <div
           class="horizontal layout-spacing-medium StyledProps--main"
         >
           <div
-            class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+            class="bp4-card bp4-interactive bp4-elevation-0 card selected interactive"
             data-index="0"
             tabindex="0"
           >
@@ -26,7 +26,7 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
                 class="badge"
               />
               <span
-                class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
+                class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-white"
                 data-icon="main-tick"
               >
                 <svg
@@ -50,12 +50,12 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
           </div>
           <button
             aria-label="Change"
-            class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
+            class="bp4-button bp4-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
           >
             <span
-              class="bp3-icon StyledProps--main StyledProps--padding-right-xsmall"
+              class="bp4-icon StyledProps--main StyledProps--padding-right-xsmall"
               data-icon="Edit"
             >
               <svg
@@ -80,7 +80,7 @@ exports[`Test render CollapsableSelect collapsable select flow  1`] = `
               </svg>
             </span>
             <span
-              class="bp3-button-text"
+              class="bp4-button-text"
             >
               Change
             </span>
@@ -98,16 +98,16 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
     action="#"
   >
     <div
-      class="bp3-form-group"
+      class="bp4-form-group"
     >
       <div
-        class="bp3-form-content"
+        class="bp4-form-content"
       >
         <div
           class="horizontal layout-spacing-medium StyledProps--main"
         >
           <div
-            class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+            class="bp4-card bp4-interactive bp4-elevation-0 card selected interactive"
             data-index="0"
             tabindex="0"
           >
@@ -118,7 +118,7 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
                 class="badge"
               />
               <span
-                class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
+                class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-white"
                 data-icon="main-tick"
               >
                 <svg
@@ -142,12 +142,12 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
           </div>
           <button
             aria-label="Change"
-            class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
+            class="bp4-button bp4-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
           >
             <span
-              class="bp3-icon StyledProps--main StyledProps--padding-right-xsmall"
+              class="bp4-icon StyledProps--main StyledProps--padding-right-xsmall"
               data-icon="Edit"
             >
               <svg
@@ -172,7 +172,7 @@ exports[`Test render CollapsableSelect should render card view with defaultValue
               </svg>
             </span>
             <span
-              class="bp3-button-text"
+              class="bp4-button-text"
             >
               Change
             </span>
@@ -190,16 +190,16 @@ exports[`Test render CollapsableSelect should render card view with no defaultVa
     action="#"
   >
     <div
-      class="bp3-form-group"
+      class="bp4-form-group"
     >
       <div
-        class="bp3-form-content"
+        class="bp4-form-content"
       >
         <div
           class="horizontal layout-spacing-medium StyledProps--main"
         >
           <div
-            class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+            class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
             data-index="0"
             tabindex="0"
           >
@@ -210,7 +210,7 @@ exports[`Test render CollapsableSelect should render card view with no defaultVa
             </div>
           </div>
           <div
-            class="bp3-card bp3-interactive bp3-elevation-0 card interactive"
+            class="bp4-card bp4-interactive bp4-elevation-0 card interactive"
             data-index="1"
             tabindex="0"
           >
@@ -233,10 +233,10 @@ exports[`Test render CollapsableSelect should render customView  1`] = `
     action="#"
   >
     <div
-      class="bp3-form-group"
+      class="bp4-form-group"
     >
       <div
-        class="bp3-form-content"
+        class="bp4-form-content"
       >
         <div
           class="horizontal layout-spacing-medium StyledProps--main"
@@ -252,12 +252,12 @@ exports[`Test render CollapsableSelect should render customView  1`] = `
           </div>
           <button
             aria-label="Change"
-            class="bp3-button bp3-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
+            class="bp4-button bp4-minimal button StyledProps--font StyledProps--main closeChangeBtn StyledProps--intent-primary without-shadow withLeftIcon"
             data-testid="collapsable-select-change"
             type="button"
           >
             <span
-              class="bp3-icon StyledProps--main StyledProps--padding-right-xsmall"
+              class="bp4-icon StyledProps--main StyledProps--padding-right-xsmall"
               data-icon="Edit"
             >
               <svg
@@ -282,7 +282,7 @@ exports[`Test render CollapsableSelect should render customView  1`] = `
               </svg>
             </span>
             <span
-              class="bp3-button-text"
+              class="bp4-button-text"
             >
               Change
             </span>

@@ -13,13 +13,14 @@ exports[`PillToggle should show disable reason icon when showDisableToggleReason
     >
       VISUAL
       <span
-        class="bp3-popover-wrapper bp3-dark"
+        class="bp4-popover-wrapper bp4-dark"
       >
         <span
-          class="bp3-popover-target"
+          aria-haspopup="true"
+          class="bp4-popover-target"
         >
           <span
-            class="bp3-icon StyledProps--main disableToggleReasonIcon StyledProps--intent-danger"
+            class="bp4-icon StyledProps--main disableToggleReasonIcon StyledProps--intent-danger"
             data-icon="error-outline"
             data-testid="invalid-icon"
             tabindex="0"

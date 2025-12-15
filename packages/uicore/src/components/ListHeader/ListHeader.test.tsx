@@ -14,21 +14,43 @@ describe('ListHeader component', () => {
     { label: 'Name', value: 'name' },
     { label: 'Date', value: 'date' }
   ]
+  const mockOnSortMethodChange = jest.fn()
+  const mockSelectedSortMethod = 'name'
 
   test('renders with total count', () => {
-    const { container } = render(<ListHeader totalCount={10} sortOptions={mockSortOptions} />)
+    const { container } = render(
+      <ListHeader
+        totalCount={10}
+        sortOptions={mockSortOptions}
+        onSortMethodChange={mockOnSortMethodChange}
+        selectedSortMethod={mockSelectedSortMethod}
+      />
+    )
     expect(screen.getByText('Total: 10')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
   })
 
   test('renders with zero count', () => {
-    const { container } = render(<ListHeader totalCount={0} sortOptions={mockSortOptions} />)
+    const { container } = render(
+      <ListHeader
+        totalCount={0}
+        sortOptions={mockSortOptions}
+        onSortMethodChange={mockOnSortMethodChange}
+        selectedSortMethod={mockSelectedSortMethod}
+      />
+    )
     expect(screen.getByText('Total: 0')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
   })
 
   test('renders without total count', () => {
-    const { container } = render(<ListHeader sortOptions={mockSortOptions} />)
+    const { container } = render(
+      <ListHeader
+        sortOptions={mockSortOptions}
+        onSortMethodChange={mockOnSortMethodChange}
+        selectedSortMethod={mockSelectedSortMethod}
+      />
+    )
     expect(screen.getByText('Total:')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
   })
@@ -36,7 +58,13 @@ describe('ListHeader component', () => {
   test('renders with preDropdownContent', () => {
     const preContent = <div data-testid="pre-content">Pre Content</div>
     const { container } = render(
-      <ListHeader totalCount={5} sortOptions={mockSortOptions} preDropdownContent={preContent} />
+      <ListHeader
+        totalCount={5}
+        sortOptions={mockSortOptions}
+        onSortMethodChange={mockOnSortMethodChange}
+        selectedSortMethod={mockSelectedSortMethod}
+        preDropdownContent={preContent}
+      />
     )
     expect(screen.getByTestId('pre-content')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
@@ -45,7 +73,13 @@ describe('ListHeader component', () => {
   test('renders with postDropdownContent', () => {
     const postContent = <div data-testid="post-content">Post Content</div>
     const { container } = render(
-      <ListHeader totalCount={5} sortOptions={mockSortOptions} postDropdownContent={postContent} />
+      <ListHeader
+        totalCount={5}
+        sortOptions={mockSortOptions}
+        onSortMethodChange={mockOnSortMethodChange}
+        selectedSortMethod={mockSelectedSortMethod}
+        postDropdownContent={postContent}
+      />
     )
     expect(screen.getByTestId('post-content')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
@@ -53,7 +87,13 @@ describe('ListHeader component', () => {
 
   test('applies custom className', () => {
     const { container } = render(
-      <ListHeader totalCount={5} sortOptions={mockSortOptions} className="custom-class" />
+      <ListHeader
+        totalCount={5}
+        sortOptions={mockSortOptions}
+        onSortMethodChange={mockOnSortMethodChange}
+        selectedSortMethod={mockSelectedSortMethod}
+        className="custom-class"
+      />
     )
     expect(container.querySelector('.custom-class')).toBeTruthy()
   })
@@ -65,6 +105,8 @@ describe('ListHeader component', () => {
       <ListHeader
         totalCount={5}
         sortOptions={mockSortOptions}
+        onSortMethodChange={mockOnSortMethodChange}
+        selectedSortMethod={mockSelectedSortMethod}
         preDropdownContent={preContent}
         postDropdownContent={postContent}
       />

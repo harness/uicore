@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 import React, { useState } from 'react'
-import { Boundary, Card, Menu, OverflowList, Popover } from '@blueprintjs/core'
+import { Boundary, Card, Menu, MenuItem, OverflowList, Popover } from '@blueprintjs/core'
 import { Icon } from '@harness/icons'
 import { Layout } from '../../layouts/Layout'
 import { isEmpty, isUndefined } from 'lodash-es'
@@ -96,7 +96,7 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
             {item.children.map(
               (child, ind) =>
                 child.children.length !== 0 && (
-                  <Menu.Item
+                  <MenuItem
                     key={`${ind} ${child.value}`}
                     onClick={() => {
                       dropDownItemClickHandler(child.valueTillHere)
@@ -128,7 +128,7 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
               {items[0].children.map(
                 (child, ind) =>
                   child.children.length !== 0 && (
-                    <Menu.Item
+                    <MenuItem
                       key={`${ind} ${child.value}`}
                       onClick={() => {
                         dropDownItemClickHandler(child.valueTillHere)
@@ -147,7 +147,7 @@ export const NewExpressionDropdown = (props: NewExpressionDropdownProps): JSX.El
                 {items.map((item, index) => {
                   if (index !== 0) {
                     return (
-                      <Menu.Item
+                      <MenuItem
                         key={index}
                         text={item.value}
                         onClick={() => dropDownItemClickHandler(item.valueTillHere)}

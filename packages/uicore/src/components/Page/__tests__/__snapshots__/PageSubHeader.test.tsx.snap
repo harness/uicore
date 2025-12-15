@@ -8,12 +8,12 @@ exports[`PageSubHeader test snapshot testing 1`] = `
   >
     <button
       aria-label="Add Pipeline"
-      class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
+      class="bp4-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
       data-testid="add-pipeline"
       type="button"
     >
       <span
-        class="bp3-button-text"
+        class="bp4-button-text"
       >
         Add Pipeline
       </span>

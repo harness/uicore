@@ -126,7 +126,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
           icon="Stroke"
           intent="primary"
           variation={ButtonVariation.ICON}
-          onClick={() => onClose()}
+          onClick={(e) => onClose(e as any)}
           className={css.closeButton}
         />
       )}

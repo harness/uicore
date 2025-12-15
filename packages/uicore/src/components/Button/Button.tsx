@@ -41,8 +41,8 @@ export enum ButtonSize {
 }
 
 export interface ButtonProps
-  extends Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
-    ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick' | 'onFocus' | 'onBlur'>,
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
     StyledProps,
     OptionalTooltip {
   /** Left icon */
@@ -223,7 +223,7 @@ export function Link(props: LinkProps): React.ReactElement {
     }
     extra.elementRef = element => {
       if (props.withoutHref && element) {
-        element.href = 'javascript:void()'
+        ;(element as unknown as HTMLAnchorElement).href = 'javascript:void()'
       }
     }
   }

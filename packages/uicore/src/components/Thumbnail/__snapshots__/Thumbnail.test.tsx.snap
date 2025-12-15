@@ -6,10 +6,10 @@ exports[`Thumbnail component renders disabled thumbnail 1`] = `
     class="squareCardContainer"
   >
     <div
-      class="bp3-card bp3-elevation-0 card squareCard disabled"
+      class="bp4-card bp4-elevation-0 card squareCard disabled"
     >
       <span
-        class="bp3-icon StyledProps--main"
+        class="bp4-icon StyledProps--main"
         data-icon="main-dashboard"
       >
         <svg
@@ -45,11 +45,11 @@ exports[`Thumbnail component renders large size thumbnail 1`] = `
     class="squareCardContainer large"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card squareCard interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card squareCard interactive"
       tabindex="0"
     >
       <span
-        class="bp3-icon StyledProps--main"
+        class="bp4-icon StyledProps--main"
         data-icon="main-dashboard"
       >
         <svg
@@ -84,7 +84,7 @@ exports[`Thumbnail component renders selected thumbnail 1`] = `
     class="squareCardContainer"
   >
     <div
-      class="bp3-card bp3-elevation-0 card squareCard selected"
+      class="bp4-card bp4-elevation-0 card squareCard selected"
     >
       <span
         class="corner"
@@ -93,7 +93,7 @@ exports[`Thumbnail component renders selected thumbnail 1`] = `
           class="badge"
         />
         <span
-          class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
+          class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-white"
           data-icon="main-tick"
         >
           <svg
@@ -110,7 +110,7 @@ exports[`Thumbnail component renders selected thumbnail 1`] = `
         </span>
       </span>
       <span
-        class="bp3-icon StyledProps--main"
+        class="bp4-icon StyledProps--main"
         data-icon="main-dashboard"
       >
         <svg
@@ -146,7 +146,7 @@ exports[`Thumbnail component renders thumbnail with React element as label 1`] =
     class="squareCardContainer bigger"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card squareCard interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card squareCard interactive"
       tabindex="0"
     >
       <div
@@ -169,11 +169,11 @@ exports[`Thumbnail component renders thumbnail with icon and label 1`] = `
     class="squareCardContainer"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card squareCard interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card squareCard interactive"
       tabindex="0"
     >
       <span
-        class="bp3-icon StyledProps--main"
+        class="bp4-icon StyledProps--main"
         data-icon="main-dashboard"
       >
         <svg
@@ -208,7 +208,7 @@ exports[`Thumbnail component renders thumbnail with image 1`] = `
     class="squareCardContainer"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card squareCard interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card squareCard interactive"
       tabindex="0"
     >
       <img
@@ -236,7 +236,7 @@ exports[`Thumbnail component renders thumbnail with label only 1`] = `
     class="squareCardContainer bigger"
   >
     <div
-      class="bp3-card bp3-interactive bp3-elevation-0 card squareCard interactive"
+      class="bp4-card bp4-interactive bp4-elevation-0 card squareCard interactive"
       tabindex="0"
     >
       <p
