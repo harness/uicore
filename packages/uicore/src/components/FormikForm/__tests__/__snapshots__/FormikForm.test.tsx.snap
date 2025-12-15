@@ -761,7 +761,6 @@ exports[`Test basic Components should render RadioGroup component 1`] = `
             <div
               class="StyledProps--main"
             >
-              
               <div
                 class=""
               >
@@ -848,7 +847,6 @@ exports[`Test basic Components should render RadioGroup component in an inline f
             <div
               class="inlineRadioGroup StyledProps--main"
             >
-              
               <div
                 class=""
               >
@@ -1146,7 +1144,6 @@ exports[`Test basic Components should render an inline RadioGroup component 1`] 
             <div
               class="StyledProps--main"
             >
-              
               <div
                 class="inline"
               >
@@ -1233,7 +1230,6 @@ exports[`Test basic Components should render an inline RadioGroup component in a
             <div
               class="inlineRadioGroup StyledProps--main"
             >
-              
               <div
                 class="inline"
               >
