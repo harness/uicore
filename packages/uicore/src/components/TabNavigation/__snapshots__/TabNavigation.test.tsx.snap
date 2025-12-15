@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabNavigation component renders disabled link 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-medium StyledProps--main container"
+  >
+    <a
+      class="tags"
+      href="/home"
+    >
+      Home
+    </a>
+    <a
+      class="tags disabled"
+      href="/about"
+    >
+      About
+    </a>
+  </div>
+</div>
+`;
+
+exports[`TabNavigation component renders empty links array 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-medium StyledProps--main container"
+  />
+</div>
+`;
+
+exports[`TabNavigation component renders navigation links 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-medium StyledProps--main container"
+  >
+    <a
+      class="tags"
+      href="/home"
+    >
+      Home
+    </a>
+    <a
+      class="tags"
+      href="/about"
+    >
+      About
+    </a>
+    <a
+      class="tags"
+      href="/contact"
+    >
+      Contact
+    </a>
+  </div>
+</div>
+`;
+
+exports[`TabNavigation component renders with exact prop 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-medium StyledProps--main container"
+  >
+    <a
+      class="tags"
+      href="/home"
+    >
+      Home
+    </a>
+    <a
+      class="tags"
+      href="/about"
+    >
+      About
+    </a>
+  </div>
+</div>
+`;
+
+exports[`TabNavigation component renders with small size 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-small StyledProps--main container"
+  >
+    <a
+      class="tags small"
+      href="/home"
+    >
+      Home
+    </a>
+    <a
+      class="tags small"
+      href="/about"
+    >
+      About
+    </a>
+    <a
+      class="tags small"
+      href="/contact"
+    >
+      Contact
+    </a>
+  </div>
+</div>
+`;
+
+exports[`TabNavigation component renders with strict prop 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-medium StyledProps--main container"
+  >
+    <a
+      class="tags"
+      href="/home"
+    >
+      Home
+    </a>
+    <a
+      class="tags"
+      href="/about"
+    >
+      About
+    </a>
+  </div>
+</div>
+`;

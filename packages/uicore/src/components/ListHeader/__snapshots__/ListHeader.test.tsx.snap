@@ -1,0 +1,536 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListHeader component renders with both pre and post dropdown content 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main listHeader StyledProps--flex StyledProps--flex-distribution-space-between StyledProps--margin-bottom-small"
+  >
+    <p
+      class="StyledProps--font StyledProps--main StyledProps--font-variation-h5"
+    >
+      Total: 
+      5
+    </p>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main"
+    >
+      <div
+        data-testid="pre-content"
+      >
+        Pre
+      </div>
+      <div
+        class="bp3-popover-wrapper main"
+      >
+        <div
+          class="bp3-popover-target"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+              data-testid="dropdown-button"
+              style="min-width: 130px;"
+            >
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  data-icon="main-sort"
+                >
+                  <svg
+                    height="13"
+                    viewBox="0 0 18 16"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M17.125 11.415l-3.713 3.427a.618.618 0 01-.825 0l-3.712-3.427a.51.51 0 010-.761.618.618 0 01.825 0l2.717 2.508V1.538c0-.297.26-.538.583-.538.322 0 .583.241.583.538v11.624l2.717-2.508a.618.618 0 01.825 0 .51.51 0 010 .761zM.875 4.584l3.713-3.426a.618.618 0 01.824 0l3.713 3.426a.51.51 0 010 .762.618.618 0 01-.825 0L5.583 2.838v11.623c0 .298-.26.539-.583.539-.322 0-.583-.241-.583-.539V2.838L1.7 5.346a.618.618 0 01-.825 0 .51.51 0 010-.762z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main label"
+                  data-testid="dropdown-value"
+                  style="--text-line-clamp: 1;"
+                >
+                  Select
+                </p>
+              </div>
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  data-icon="main-chevron-down"
+                >
+                  <svg
+                    height="8"
+                    viewBox="0 0 14 8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                      fill="#4d5969"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="post-content"
+      >
+        Post
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListHeader component renders with postDropdownContent 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main listHeader StyledProps--flex StyledProps--flex-distribution-space-between StyledProps--margin-bottom-small"
+  >
+    <p
+      class="StyledProps--font StyledProps--main StyledProps--font-variation-h5"
+    >
+      Total: 
+      5
+    </p>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main"
+    >
+      <div
+        class="bp3-popover-wrapper main"
+      >
+        <div
+          class="bp3-popover-target"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+              data-testid="dropdown-button"
+              style="min-width: 130px;"
+            >
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  data-icon="main-sort"
+                >
+                  <svg
+                    height="13"
+                    viewBox="0 0 18 16"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M17.125 11.415l-3.713 3.427a.618.618 0 01-.825 0l-3.712-3.427a.51.51 0 010-.761.618.618 0 01.825 0l2.717 2.508V1.538c0-.297.26-.538.583-.538.322 0 .583.241.583.538v11.624l2.717-2.508a.618.618 0 01.825 0 .51.51 0 010 .761zM.875 4.584l3.713-3.426a.618.618 0 01.824 0l3.713 3.426a.51.51 0 010 .762.618.618 0 01-.825 0L5.583 2.838v11.623c0 .298-.26.539-.583.539-.322 0-.583-.241-.583-.539V2.838L1.7 5.346a.618.618 0 01-.825 0 .51.51 0 010-.762z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main label"
+                  data-testid="dropdown-value"
+                  style="--text-line-clamp: 1;"
+                >
+                  Select
+                </p>
+              </div>
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  data-icon="main-chevron-down"
+                >
+                  <svg
+                    height="8"
+                    viewBox="0 0 14 8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                      fill="#4d5969"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="post-content"
+      >
+        Post Content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListHeader component renders with preDropdownContent 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main listHeader StyledProps--flex StyledProps--flex-distribution-space-between StyledProps--margin-bottom-small"
+  >
+    <p
+      class="StyledProps--font StyledProps--main StyledProps--font-variation-h5"
+    >
+      Total: 
+      5
+    </p>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main"
+    >
+      <div
+        data-testid="pre-content"
+      >
+        Pre Content
+      </div>
+      <div
+        class="bp3-popover-wrapper main"
+      >
+        <div
+          class="bp3-popover-target"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+              data-testid="dropdown-button"
+              style="min-width: 130px;"
+            >
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  data-icon="main-sort"
+                >
+                  <svg
+                    height="13"
+                    viewBox="0 0 18 16"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M17.125 11.415l-3.713 3.427a.618.618 0 01-.825 0l-3.712-3.427a.51.51 0 010-.761.618.618 0 01.825 0l2.717 2.508V1.538c0-.297.26-.538.583-.538.322 0 .583.241.583.538v11.624l2.717-2.508a.618.618 0 01.825 0 .51.51 0 010 .761zM.875 4.584l3.713-3.426a.618.618 0 01.824 0l3.713 3.426a.51.51 0 010 .762.618.618 0 01-.825 0L5.583 2.838v11.623c0 .298-.26.539-.583.539-.322 0-.583-.241-.583-.539V2.838L1.7 5.346a.618.618 0 01-.825 0 .51.51 0 010-.762z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main label"
+                  data-testid="dropdown-value"
+                  style="--text-line-clamp: 1;"
+                >
+                  Select
+                </p>
+              </div>
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  data-icon="main-chevron-down"
+                >
+                  <svg
+                    height="8"
+                    viewBox="0 0 14 8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                      fill="#4d5969"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListHeader component renders with total count 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main listHeader StyledProps--flex StyledProps--flex-distribution-space-between StyledProps--margin-bottom-small"
+  >
+    <p
+      class="StyledProps--font StyledProps--main StyledProps--font-variation-h5"
+    >
+      Total: 
+      10
+    </p>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main"
+    >
+      <div
+        class="bp3-popover-wrapper main"
+      >
+        <div
+          class="bp3-popover-target"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+              data-testid="dropdown-button"
+              style="min-width: 130px;"
+            >
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  data-icon="main-sort"
+                >
+                  <svg
+                    height="13"
+                    viewBox="0 0 18 16"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M17.125 11.415l-3.713 3.427a.618.618 0 01-.825 0l-3.712-3.427a.51.51 0 010-.761.618.618 0 01.825 0l2.717 2.508V1.538c0-.297.26-.538.583-.538.322 0 .583.241.583.538v11.624l2.717-2.508a.618.618 0 01.825 0 .51.51 0 010 .761zM.875 4.584l3.713-3.426a.618.618 0 01.824 0l3.713 3.426a.51.51 0 010 .762.618.618 0 01-.825 0L5.583 2.838v11.623c0 .298-.26.539-.583.539-.322 0-.583-.241-.583-.539V2.838L1.7 5.346a.618.618 0 01-.825 0 .51.51 0 010-.762z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main label"
+                  data-testid="dropdown-value"
+                  style="--text-line-clamp: 1;"
+                >
+                  Select
+                </p>
+              </div>
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  data-icon="main-chevron-down"
+                >
+                  <svg
+                    height="8"
+                    viewBox="0 0 14 8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                      fill="#4d5969"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListHeader component renders with zero count 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main listHeader StyledProps--flex StyledProps--flex-distribution-space-between StyledProps--margin-bottom-small"
+  >
+    <p
+      class="StyledProps--font StyledProps--main StyledProps--font-variation-h5"
+    >
+      Total: 
+      0
+    </p>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main"
+    >
+      <div
+        class="bp3-popover-wrapper main"
+      >
+        <div
+          class="bp3-popover-target"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+              data-testid="dropdown-button"
+              style="min-width: 130px;"
+            >
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  data-icon="main-sort"
+                >
+                  <svg
+                    height="13"
+                    viewBox="0 0 18 16"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M17.125 11.415l-3.713 3.427a.618.618 0 01-.825 0l-3.712-3.427a.51.51 0 010-.761.618.618 0 01.825 0l2.717 2.508V1.538c0-.297.26-.538.583-.538.322 0 .583.241.583.538v11.624l2.717-2.508a.618.618 0 01.825 0 .51.51 0 010 .761zM.875 4.584l3.713-3.426a.618.618 0 01.824 0l3.713 3.426a.51.51 0 010 .762.618.618 0 01-.825 0L5.583 2.838v11.623c0 .298-.26.539-.583.539-.322 0-.583-.241-.583-.539V2.838L1.7 5.346a.618.618 0 01-.825 0 .51.51 0 010-.762z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main label"
+                  data-testid="dropdown-value"
+                  style="--text-line-clamp: 1;"
+                >
+                  Select
+                </p>
+              </div>
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  data-icon="main-chevron-down"
+                >
+                  <svg
+                    height="8"
+                    viewBox="0 0 14 8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                      fill="#4d5969"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListHeader component renders without total count 1`] = `
+<div>
+  <div
+    class="horizontal layout-spacing-undefined StyledProps--main listHeader StyledProps--flex StyledProps--flex-distribution-space-between StyledProps--margin-bottom-small"
+  >
+    <p
+      class="StyledProps--font StyledProps--main StyledProps--font-variation-h5"
+    >
+      Total: 
+    </p>
+    <div
+      class="horizontal layout-spacing-undefined StyledProps--main"
+    >
+      <div
+        class="bp3-popover-wrapper main"
+      >
+        <div
+          class="bp3-popover-target"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+              data-testid="dropdown-button"
+              style="min-width: 130px;"
+            >
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+                  data-icon="main-sort"
+                >
+                  <svg
+                    height="13"
+                    viewBox="0 0 18 16"
+                    width="13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M17.125 11.415l-3.713 3.427a.618.618 0 01-.825 0l-3.712-3.427a.51.51 0 010-.761.618.618 0 01.825 0l2.717 2.508V1.538c0-.297.26-.538.583-.538.322 0 .583.241.583.538v11.624l2.717-2.508a.618.618 0 01.825 0 .51.51 0 010 .761zM.875 4.584l3.713-3.426a.618.618 0 01.824 0l3.713 3.426a.51.51 0 010 .762.618.618 0 01-.825 0L5.583 2.838v11.623c0 .298-.26.539-.583.539-.322 0-.583-.241-.583-.539V2.838L1.7 5.346a.618.618 0 01-.825 0 .51.51 0 010-.762z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main label"
+                  data-testid="dropdown-value"
+                  style="--text-line-clamp: 1;"
+                >
+                  Select
+                </p>
+              </div>
+              <div
+                class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+              >
+                <span
+                  class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                  data-icon="main-chevron-down"
+                >
+                  <svg
+                    height="8"
+                    viewBox="0 0 14 8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                      fill="#4d5969"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

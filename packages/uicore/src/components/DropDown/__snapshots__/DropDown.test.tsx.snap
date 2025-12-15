@@ -1,0 +1,436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropDown component handles lazy loading with getLazyItems 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+          data-testid="dropdown-button"
+          style="min-width: 130px;"
+        >
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+          >
+            <p
+              class="StyledProps--font lineclamp StyledProps--main label"
+              data-testid="dropdown-value"
+              style="--text-line-clamp: 1;"
+            >
+              Select
+            </p>
+          </div>
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+          >
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+              data-icon="main-chevron-down"
+            >
+              <svg
+                height="8"
+                viewBox="0 0 14 8"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropDown component renders dropdown with clear button when addClearBtn is true and value is selected 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder selected minWidth StyledProps--flex"
+          data-testid="dropdown-button"
+          style="min-width: 130px;"
+        >
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+          >
+            <p
+              class="StyledProps--font lineclamp StyledProps--main label"
+              data-testid="dropdown-value"
+              style="--text-line-clamp: 1;"
+            >
+              Option 1
+            </p>
+          </div>
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+          >
+            <button
+              class="bp3-button bp3-minimal button StyledProps--font StyledProps--main iconOnly without-shadow withLeftIcon"
+              type="button"
+            >
+              <span
+                class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+                data-icon="main-delete"
+              >
+                <svg
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.5 4.2c0-.4-.3-.7-.7-.7-.2 0-.4.1-.5.2L7 6 4.7 3.7c-.1-.1-.3-.2-.5-.2-.4 0-.7.3-.7.7 0 .2.1.4.2.5L6 7 3.7 9.3c-.1.1-.2.3-.2.5 0 .4.3.7.7.7.2 0 .4-.1.5-.2L7 8l2.3 2.3c.1.1.3.2.5.2.4 0 .7-.3.7-.7 0-.2-.1-.4-.2-.5L8 7l2.3-2.3c.1-.1.2-.3.2-.5zM7 0C3.1 0 0 3.1 0 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 12.6c-3.1 0-5.6-2.5-5.6-5.6S3.9 1.4 7 1.4s5.6 2.5 5.6 5.6-2.5 5.6-5.6 5.6z"
+                    fill="#4d5969"
+                  />
+                </svg>
+              </span>
+            </button>
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+              data-icon="main-chevron-down"
+            >
+              <svg
+                height="8"
+                viewBox="0 0 14 8"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropDown component renders dropdown with custom width 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder StyledProps--flex"
+          data-testid="dropdown-button"
+          style="width: 200px;"
+        >
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+          >
+            <p
+              class="StyledProps--font lineclamp StyledProps--main label"
+              data-testid="dropdown-value"
+              style="--text-line-clamp: 1;"
+            >
+              Select
+            </p>
+          </div>
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+          >
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+              data-icon="main-chevron-down"
+            >
+              <svg
+                height="8"
+                viewBox="0 0 14 8"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropDown component renders dropdown with icon 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+          data-testid="dropdown-button"
+          style="min-width: 130px;"
+        >
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+          >
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey600"
+              data-icon="main-dashboard"
+            >
+              <svg
+                height="13"
+                viewBox="0 0 14 14"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.4 3.5c-.5 0-.9.4-.9.9s.4.9.9.9.9-.4.9-.9-.4-.9-.9-.9zm-.9 2.6c-.5 0-.9.4-.9.9s.4.9.9.9.9-.4.9-.9-.4-.9-.9-.9zM7 4.4c.5 0 .9-.4.9-.9s-.4-.9-.9-.9-.9.4-.9.9.4.9.9.9zM5.2 9.6c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8C8.8 9.2 7 5.2 7 5.2s-1.8 4-1.8 4.4zM7 0C3.1 0 0 3.1 0 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 12.2c-2.9 0-5.2-2.4-5.2-5.2S4.1 1.8 7 1.8s5.2 2.4 5.2 5.2-2.3 5.2-5.2 5.2zm3.5-7.8c0-.5-.4-.9-.9-.9s-.8.4-.8.9.4.9.9.9.8-.4.8-.9zm0 1.7c-.5 0-.9.4-.9.9s.4.9.9.9.9-.4.9-.9-.4-.9-.9-.9z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+            <p
+              class="StyledProps--font lineclamp StyledProps--main label"
+              data-testid="dropdown-value"
+              style="--text-line-clamp: 1;"
+            >
+              Select
+            </p>
+          </div>
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+          >
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+              data-icon="main-chevron-down"
+            >
+              <svg
+                height="8"
+                viewBox="0 0 14 8"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropDown component renders dropdown with placeholder 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+          data-testid="dropdown-button"
+          style="min-width: 130px;"
+        >
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+          >
+            <p
+              class="StyledProps--font lineclamp StyledProps--main label"
+              data-testid="dropdown-value"
+              style="--text-line-clamp: 1;"
+            >
+              Select an option
+            </p>
+          </div>
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+          >
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+              data-icon="main-chevron-down"
+            >
+              <svg
+                height="8"
+                viewBox="0 0 14 8"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropDown component renders dropdown with selected value 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+          data-testid="dropdown-button"
+          style="min-width: 130px;"
+        >
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+          >
+            <p
+              class="StyledProps--font lineclamp StyledProps--main label"
+              data-testid="dropdown-value"
+              style="--text-line-clamp: 1;"
+            >
+              Option 1
+            </p>
+          </div>
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+          >
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+              data-icon="main-chevron-down"
+            >
+              <svg
+                height="8"
+                viewBox="0 0 14 8"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropDown component renders dropdown with selected value as object 1`] = `
+<div>
+  <div
+    class="bp3-popover-wrapper main"
+  >
+    <div
+      class="bp3-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="horizontal layout-spacing-undefined StyledProps--main dropdownButton withBorder minWidth StyledProps--flex"
+          data-testid="dropdown-button"
+          style="min-width: 130px;"
+        >
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main labelWrapper StyledProps--flex"
+          >
+            <p
+              class="StyledProps--font lineclamp StyledProps--main label"
+              data-testid="dropdown-value"
+              style="--text-line-clamp: 1;"
+            >
+              Option 1
+            </p>
+          </div>
+          <div
+            class="horizontal layout-spacing-undefined StyledProps--main btnWrapper StyledProps--flex"
+          >
+            <span
+              class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-grey400"
+              data-icon="main-chevron-down"
+            >
+              <svg
+                height="8"
+                viewBox="0 0 14 8"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 0c-.3 0-.5.1-.7.3L7 5.6 1.7.3C1.5.1 1.3 0 1 0 .4 0 0 .4 0 1c0 .3.1.5.3.7l6 6c.2.2.4.3.7.3s.5-.1.7-.3l6-6c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+                  fill="#4d5969"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NoMatch component renders no match message with internal query 1`] = `
+<div>
+  <li
+    class="menuItem disabled"
+  >
+    No matching results found
+  </li>
+</div>
+`;
+
+exports[`NoMatch component renders no match message without internal query 1`] = `
+<div>
+  <li
+    class="menuItem disabled"
+  >
+    No items found
+  </li>
+</div>
+`;
