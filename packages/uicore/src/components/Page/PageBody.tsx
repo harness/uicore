@@ -75,6 +75,8 @@ export interface PageBodyProps {
 
   /** Optional classname */
   className?: string
+
+  children?: React.ReactNode
 }
 
 /**

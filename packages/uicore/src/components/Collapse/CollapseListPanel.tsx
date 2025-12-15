@@ -28,6 +28,7 @@ interface CollapseListPanelProps extends ListPanelInterface {
   className?: string
   bpCollapseProps?: ICollapseProps
   collapseHeaderProps?: CollapseListPanelHeaderProps
+  children?: React.ReactNode
 }
 
 const CollapseListPanel: React.FC<CollapseListPanelProps> = props => {
