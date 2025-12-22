@@ -663,6 +663,7 @@ import DbTrialStar from './db-trial-star.svg'
 import DbUpdateSql from './db-update-sql.svg'
 import DbopsTrail from './dbops-trail.svg'
 import DbopsWithDarkText from './dbops-with-dark-text.svg'
+import Decompiler from './decompiler.svg'
 import DefaultDashboard from './default-dashboard.svg'
 import DelegatesBlue from './delegates-blue.svg'
 import DelegatesIcon from './delegates-icon.svg'
@@ -2465,6 +2466,7 @@ type HarnessIconName =
   | 'db-update-sql'
   | 'dbops-trail'
   | 'dbops-with-dark-text'
+  | 'decompiler'
   | 'default-dashboard'
   | 'delegates-blue'
   | 'delegates-icon'
@@ -4267,6 +4269,7 @@ const HarnessIcons: KVO<ElementType> = {
   'db-update-sql': DbUpdateSql,
   'dbops-trail': DbopsTrail,
   'dbops-with-dark-text': DbopsWithDarkText,
+  decompiler: Decompiler,
   'default-dashboard': DefaultDashboard,
   'delegates-blue': DelegatesBlue,
   'delegates-icon': DelegatesIcon,
