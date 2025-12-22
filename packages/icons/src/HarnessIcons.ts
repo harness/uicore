@@ -833,6 +833,7 @@ import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
 import GarStepInverse from './gar-step-inverse.svg'
 import GarStep from './gar-step.svg'
+import GceProvisionBackendService from './gce-provision-backend-service.svg'
 import GcpEngine from './gcp-engine.svg'
 import GcpKms from './gcp-kms.svg'
 import GcpSecretManager from './gcp-secret-manager.svg'
@@ -910,6 +911,11 @@ import Golang from './golang.svg'
 import GoogleBigquery from './google-bigquery.svg'
 import GoogleGemini from './google-gemini.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
+import GoogleMigBlueGreenDeploy from './google-mig-blue-green-deploy.svg'
+import GoogleMigBlueGreenRollback from './google-mig-blue-green-rollback.svg'
+import GoogleMigDeploy from './google-mig-deploy.svg'
+import GoogleMigSteady from './google-mig-steady.svg'
+import GoogleMigTrafficShift from './google-mig-traffic-shift.svg'
 import GoogleMig from './google-mig.svg'
 import Google from './google.svg'
 import GovernancePolicySet from './governance-policy-set.svg'
@@ -2629,6 +2635,7 @@ type HarnessIconName =
   | 'functions'
   | 'gar-step-inverse'
   | 'gar-step'
+  | 'gce-provision-backend-service'
   | 'gcp-engine'
   | 'gcp-kms'
   | 'gcp-secret-manager'
@@ -2706,6 +2713,11 @@ type HarnessIconName =
   | 'google-bigquery'
   | 'google-gemini'
   | 'google-kubernetes-engine'
+  | 'google-mig-blue-green-deploy'
+  | 'google-mig-blue-green-rollback'
+  | 'google-mig-deploy'
+  | 'google-mig-steady'
+  | 'google-mig-traffic-shift'
   | 'google-mig'
   | 'google'
   | 'governance-policy-set'
@@ -4425,6 +4437,7 @@ const HarnessIcons: KVO<ElementType> = {
   functions: Functions,
   'gar-step-inverse': GarStepInverse,
   'gar-step': GarStep,
+  'gce-provision-backend-service': GceProvisionBackendService,
   'gcp-engine': GcpEngine,
   'gcp-kms': GcpKms,
   'gcp-secret-manager': GcpSecretManager,
@@ -4502,6 +4515,11 @@ const HarnessIcons: KVO<ElementType> = {
   'google-bigquery': GoogleBigquery,
   'google-gemini': GoogleGemini,
   'google-kubernetes-engine': GoogleKubernetesEngine,
+  'google-mig-blue-green-deploy': GoogleMigBlueGreenDeploy,
+  'google-mig-blue-green-rollback': GoogleMigBlueGreenRollback,
+  'google-mig-deploy': GoogleMigDeploy,
+  'google-mig-steady': GoogleMigSteady,
+  'google-mig-traffic-shift': GoogleMigTrafficShift,
   'google-mig': GoogleMig,
   google: Google,
   'governance-policy-set': GovernancePolicySet,
