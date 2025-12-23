@@ -1593,14 +1593,20 @@ import SettingsHorizontal from './settings-horizontal.svg'
 import SetupApi from './setup-api.svg'
 import SetupClient from './setup-client.svg'
 import SetupTags from './setup-tags.svg'
+import SfApprovalInverse from './sf-approval-inverse.svg'
+import SfApproval from './sf-approval.svg'
 import SfCommandInverse from './sf-command-inverse.svg'
 import SfCommand from './sf-command.svg'
+import SfDeployToTargetOrgInverse from './sf-deploy-to-target-org-inverse.svg'
+import SfDeployToTargetOrg from './sf-deploy-to-target-org.svg'
 import SfDxProjRollbackInverse from './sf-dx-proj-rollback-inverse.svg'
 import SfDxProjRollback from './sf-dx-proj-rollback.svg'
 import SfDxProject from './sf-dx-project.svg'
 import SfLogoInverse from './sf-logo-inverse.svg'
 import SfLogo from './sf-logo.svg'
 import SfOrgBasedDiff from './sf-org-based-diff.svg'
+import SfSandboxOrg from './sf-sandbox-org.svg'
+import SfScratchOrg from './sf-scratch-org.svg'
 import SfUnlockedPackage from './sf-unlocked-package.svg'
 import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
@@ -3396,14 +3402,20 @@ type HarnessIconName =
   | 'setup-api'
   | 'setup-client'
   | 'setup-tags'
+  | 'sf-approval-inverse'
+  | 'sf-approval'
   | 'sf-command-inverse'
   | 'sf-command'
+  | 'sf-deploy-to-target-org-inverse'
+  | 'sf-deploy-to-target-org'
   | 'sf-dx-proj-rollback-inverse'
   | 'sf-dx-proj-rollback'
   | 'sf-dx-project'
   | 'sf-logo-inverse'
   | 'sf-logo'
   | 'sf-org-based-diff'
+  | 'sf-sandbox-org'
+  | 'sf-scratch-org'
   | 'sf-unlocked-package'
   | 'shield-gears'
   | 'simple-verification'
@@ -5199,14 +5211,20 @@ const HarnessIcons: KVO<ElementType> = {
   'setup-api': SetupApi,
   'setup-client': SetupClient,
   'setup-tags': SetupTags,
+  'sf-approval-inverse': SfApprovalInverse,
+  'sf-approval': SfApproval,
   'sf-command-inverse': SfCommandInverse,
   'sf-command': SfCommand,
+  'sf-deploy-to-target-org-inverse': SfDeployToTargetOrgInverse,
+  'sf-deploy-to-target-org': SfDeployToTargetOrg,
   'sf-dx-proj-rollback-inverse': SfDxProjRollbackInverse,
   'sf-dx-proj-rollback': SfDxProjRollback,
   'sf-dx-project': SfDxProject,
   'sf-logo-inverse': SfLogoInverse,
   'sf-logo': SfLogo,
   'sf-org-based-diff': SfOrgBasedDiff,
+  'sf-sandbox-org': SfSandboxOrg,
+  'sf-scratch-org': SfScratchOrg,
   'sf-unlocked-package': SfUnlockedPackage,
   'shield-gears': ShieldGears,
   'simple-verification': SimpleVerification,
