@@ -28,7 +28,7 @@ export const HelpPanelContext = React.createContext<HelpPanelContextProps>({
   error: undefined
 })
 
-interface HelpPanelContextProviderProps {
+interface HelpPanelContextProviderProps extends React.PropsWithChildren<unknown> {
   accessToken?: string
   space?: string
   environment?: HelpPanelEnvironment
