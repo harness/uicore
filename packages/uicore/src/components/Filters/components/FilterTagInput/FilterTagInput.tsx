@@ -23,7 +23,10 @@ import { uniq } from 'lodash-es'
 import { InputGroupProps2 as BpInputGroupProps } from '@blueprintjs/core'
 
 export interface FilterTagInputProps
-  extends Omit<BpInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder' | 'type'>,
+  extends Omit<
+      BpInputGroupProps,
+      'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder' | 'type'
+    >,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   wrapperClassName?: string
   placeholder?: string

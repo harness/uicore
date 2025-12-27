@@ -28,7 +28,9 @@ import { omit } from 'lodash-es'
 import { Form as FormikForm, Formik, FormikErrors } from 'formik'
 
 // Cast Form to avoid React 18 type issues with Formik
-const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
+const Form = (FormikForm as unknown) as React.FC<
+  React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }
+>
 import { DateRangePicker, DateRange, DateRangePickerProps as BpDateRangePickerProps } from '@blueprintjs/datetime'
 import moment from 'moment'
 

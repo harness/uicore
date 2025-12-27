@@ -11,7 +11,9 @@ import { CollapsableSelectType, FormikCollapsableSelect } from './CollapsableSel
 import { Form as FormikForm, Formik } from 'formik'
 
 // Cast Form to avoid React 18 type issues with Formik
-const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
+const Form = (FormikForm as unknown) as React.FC<
+  React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }
+>
 import { Layout } from 'index'
 import { noop } from 'lodash'
 

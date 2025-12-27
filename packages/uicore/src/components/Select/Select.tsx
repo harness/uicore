@@ -18,7 +18,11 @@ import React, {
 } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
-import { Suggest2 as Suggest, Suggest2Props as BpSuggestProps, ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
+import {
+  Suggest2 as Suggest,
+  Suggest2Props as BpSuggestProps,
+  ItemRendererProps as BpItemRendererProps
+} from '@blueprintjs/select'
 import { OptionalTooltip } from '@harness/design-system'
 
 import { Button } from '../../components/Button/Button'
@@ -295,45 +299,47 @@ export function Select(props: SelectProps): ReactElement {
       noResults={<NoMatch />}
       {...rest}
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      inputProps={{
-        onChange(e: ChangeEvent<HTMLInputElement>) {
-          setQuery(e.target.value)
-        },
-        value: query,
-        placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
-        leftElement: selectedItem?.icon ? (
-          <Icon size={getIconSizeFromSelect(size)} {...selectedItem?.icon} />
-        ) : undefined,
-        rightElement: (
-          <>
-            {!props.disabled && showClearBtn ? (
+      inputProps={
+        {
+          onChange(e: ChangeEvent<HTMLInputElement>) {
+            setQuery(e.target.value)
+          },
+          value: query,
+          placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
+          leftElement: selectedItem?.icon ? (
+            <Icon size={getIconSizeFromSelect(size)} {...selectedItem?.icon} />
+          ) : undefined,
+          rightElement: (
+            <>
+              {!props.disabled && showClearBtn ? (
+                <Icon
+                  name="main-delete"
+                  onClick={(e: MouseEvent<HTMLSpanElement>) => {
+                    e.preventDefault()
+                    handleItemSelect({ value: '', label: '' })
+                  }}
+                  size={14}
+                  padding={{ top: 'small', right: 'xsmall', bottom: 'small' }}
+                />
+              ) : null}
               <Icon
-                name="main-delete"
-                onClick={(e: MouseEvent<HTMLSpanElement>) => {
-                  e.preventDefault()
-                  handleItemSelect({ value: '', label: '' })
+                name={'chevron-down'}
+                onClick={e => {
+                  const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
+                  input?.focus()
                 }}
                 size={14}
-                padding={{ top: 'small', right: 'xsmall', bottom: 'small' }}
+                padding={size === SelectSize.Small ? 'xsmall' : 'small'}
               />
-            ) : null}
-            <Icon
-              name={'chevron-down'}
-              onClick={e => {
-                const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
-                input?.focus()
-              }}
-              size={14}
-              padding={size === SelectSize.Small ? 'xsmall' : 'small'}
-            />
-          </>
-        ),
-        small: size === SelectSize.Small,
-        large: size === SelectSize.Large,
-        name: props.name,
-        inputRef: inputRefCallback,
-        ...props.inputProps
-      } as any}
+            </>
+          ),
+          small: size === SelectSize.Small,
+          large: size === SelectSize.Large,
+          name: props.name,
+          inputRef: inputRefCallback,
+          ...props.inputProps
+        } as any
+      }
       resetOnSelect={resetOnSelect}
       resetOnClose={resetOnClose}
       items={loading ? [LoadingSelectOption] : items}

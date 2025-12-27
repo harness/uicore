@@ -123,8 +123,7 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
       minimal
       position={PopoverPosition.LEFT}
       popoverClassName={css.learnMorePopover}
-      className={css.learnMoreWrapper}
->
+      className={css.learnMoreWrapper}>
       <div className={css.menuItem}>
         <span className={css.menuItemLabel}>{labelText}</span>
         <Icon

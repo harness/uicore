@@ -17,7 +17,9 @@ import { Text } from 'components/Text/Text'
 import { Formik, Form as FormikForm } from 'formik'
 
 // Cast Form to avoid React 18 type issues with Formik
-const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
+const Form = (FormikForm as unknown) as React.FC<
+  React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }
+>
 
 const items: SelectOption[] = [
   { label: 'secondaryOption_1', value: '1234_secondaryOption' },

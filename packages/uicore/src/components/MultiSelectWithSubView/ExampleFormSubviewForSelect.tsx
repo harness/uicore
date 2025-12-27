@@ -21,7 +21,9 @@ import {
 import { Formik, Form as FormikForm, FormikErrors } from 'formik'
 
 // Cast Form to avoid React 18 type issues with Formik
-const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
+const Form = (FormikForm as unknown) as React.FC<
+  React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }
+>
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import { SelectOption } from '../Select/Select'
 import '../Radio/Radio.css'
