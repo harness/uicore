@@ -24,11 +24,11 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {
-    "@harness/design-system": "^1.0.0",
+    "@harness/design-system": "^2.0.0",
     "react": "^18.3.1"
   },
   "devDependencies": {
-    "@harness/design-system": "^1.4.0",
+    "@harness/design-system": "^2.0.0",
     "@svgr/core": "^6.2.1",
     "@svgr/plugin-svgo": "^6.2.0",
     "@types/react": "^18.3.1",
