@@ -11,7 +11,7 @@ import css from './DefaultContainer.module.css'
 import { HelpPanelContext } from '../../../../HelpPanelContext'
 import FloatingButton from '../../FloatingButton/FloatingButton'
 
-const DefaultContainer: React.FC = props => {
+const DefaultContainer: React.FC<React.PropsWithChildren<unknown>> = props => {
   const [isHelpPanelVisible, setHelpPanelVisibility] = useState(!React.useContext(HelpPanelContext).showAgain)
 
   return (
