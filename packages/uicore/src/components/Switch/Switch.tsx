@@ -6,7 +6,7 @@
  */
 
 import React, { FormEvent } from 'react'
-import { Switch as BpSwitch, ISwitchProps } from '@blueprintjs/core'
+import { Switch as BpSwitch, SwitchProps as BpSwitchProps } from '@blueprintjs/core'
 import { omit } from 'lodash-es'
 import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
 import { styledClass } from '@harness/design-system'
@@ -15,7 +15,7 @@ import css from './Switch.css'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import type { TooltipRenderProps } from '../../frameworks/Tooltip/types'
 
-export interface SwitchProps extends Omit<ISwitchProps, 'onChange'>, StyledProps {
+export interface SwitchProps extends Omit<BpSwitchProps, 'onChange'>, StyledProps {
   /** onChange event handler */
   onChange?: (event: FormEvent<HTMLInputElement>) => void
 

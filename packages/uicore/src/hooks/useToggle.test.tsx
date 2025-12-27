@@ -5,57 +5,53 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { renderHook, act } from '@testing-library/react-hooks'
+import { renderHook, act } from '@testing-library/react'
 import { useToggle, useToggleWithLocalStorage, useToggleOpen } from './useToggle'
 
-test('useToggle with default value', async () => {
-  const { result, waitForNextUpdate } = renderHook(() => useToggle())
+test('useToggle with default value', () => {
+  const { result } = renderHook(() => useToggle())
 
-  await act(async () => {
-    expect(result.current[0]).toEqual(false)
+  expect(result.current[0]).toEqual(false)
+  act(() => {
     result.current[1]()
-    await waitForNextUpdate()
-    expect(result.current[0]).toEqual(true)
   })
+  expect(result.current[0]).toEqual(true)
 })
 
-test('useToggle with default value passed', async () => {
-  const { result, waitForNextUpdate } = renderHook(() => useToggle(true))
+test('useToggle with default value passed', () => {
+  const { result } = renderHook(() => useToggle(true))
 
-  await act(async () => {
-    expect(result.current[0]).toEqual(true)
+  expect(result.current[0]).toEqual(true)
+  act(() => {
     result.current[1]()
-    await waitForNextUpdate()
-    expect(result.current[0]).toEqual(false)
   })
+  expect(result.current[0]).toEqual(false)
 })
 
-test('useToggleWithLocalStorage with default value', async () => {
+test('useToggleWithLocalStorage with default value', () => {
   const KEY = 'useToggleWithLocalStorage1'
-  const { result, waitForNextUpdate } = renderHook(() => useToggleWithLocalStorage(KEY))
+  const { result } = renderHook(() => useToggleWithLocalStorage(KEY))
 
-  await act(async () => {
-    expect(result.current[0]).toEqual(false)
-    expect(window.localStorage[KEY]).toEqual('false')
+  expect(result.current[0]).toEqual(false)
+  expect(window.localStorage[KEY]).toEqual('false')
+  act(() => {
     result.current[1]()
-    await waitForNextUpdate()
-    expect(result.current[0]).toEqual(true)
-    expect(window.localStorage[KEY]).toEqual('true')
   })
+  expect(result.current[0]).toEqual(true)
+  expect(window.localStorage[KEY]).toEqual('true')
 })
 
-test('useToggleWithLocalStorage with default value passed', async () => {
+test('useToggleWithLocalStorage with default value passed', () => {
   const KEY = 'useToggleWithLocalStorage2'
-  const { result, waitForNextUpdate } = renderHook(() => useToggleWithLocalStorage(KEY, true))
+  const { result } = renderHook(() => useToggleWithLocalStorage(KEY, true))
 
-  await act(async () => {
-    expect(result.current[0]).toEqual(true)
-    expect(window.localStorage[KEY]).toEqual('true')
+  expect(result.current[0]).toEqual(true)
+  expect(window.localStorage[KEY]).toEqual('true')
+  act(() => {
     result.current[1]()
-    await waitForNextUpdate()
-    expect(result.current[0]).toEqual(false)
-    expect(window.localStorage[KEY]).toEqual('false')
   })
+  expect(result.current[0]).toEqual(false)
+  expect(window.localStorage[KEY]).toEqual('false')
 })
 
 describe('useToggleOpen tests', () => {

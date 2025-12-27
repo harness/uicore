@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Checkbox as BpCheckbox, ICheckboxProps } from '@blueprintjs/core'
+import { Checkbox as BpCheckbox, CheckboxProps as BpCheckboxProps } from '@blueprintjs/core'
 import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
 import React, { FormEvent, ReactElement } from 'react'
 import { styledClass } from '@harness/design-system'
@@ -16,7 +16,7 @@ export enum CheckboxVariant {
   BOXED = 'BOXED'
 }
 
-export interface CheckboxProps extends Omit<ICheckboxProps, 'onChange'>, StyledProps {
+export interface CheckboxProps extends Omit<BpCheckboxProps, 'onChange'>, StyledProps {
   /** onChange event handler */
   onChange?: (event: FormEvent<HTMLInputElement>) => void
 

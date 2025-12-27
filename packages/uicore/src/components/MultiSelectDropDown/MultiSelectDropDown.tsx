@@ -6,12 +6,13 @@
  */
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { Popover, Spinner, Menu } from '@blueprintjs/core'
+import { Spinner, Menu } from '@blueprintjs/core'
+import { Popover } from '../Popover/Popover'
 import {
   QueryList,
-  IQueryListRendererProps,
-  IItemRendererProps,
-  IQueryListProps,
+  QueryListRendererProps as BpQueryListRendererProps,
+  ItemRendererProps as BpItemRendererProps,
+  QueryListProps as BpQueryListProps,
   ItemListRenderer
 } from '@blueprintjs/select'
 
@@ -27,7 +28,7 @@ import { Checkbox } from '../Checkbox/Checkbox'
 import { SelectOption } from '../Select/Select'
 import { ExpandingSearchInputWithRef, ExpandingSearchInputProps } from '../ExpandingSearchInput/ExpandingSearchInput'
 
-type Props = IQueryListProps<MultiSelectOption>
+type Props = BpQueryListProps<MultiSelectOption>
 
 export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.disabled)}>No matching results found</li>
@@ -155,11 +156,23 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  function renderer(listProps: IQueryListRendererProps<MultiSelectOption>): JSX.Element {
+  function renderer(listProps: BpQueryListRendererProps<MultiSelectOption>): JSX.Element {
+    const popoverContent = (
+      <React.Fragment>
+        {allowSearch && (
+          <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
+        )}
+        {listProps.itemList
+          ? React.cloneElement(listProps.itemList as React.ReactElement, {
+              className: css.menu
+            })
+          : null}
+      </React.Fragment>
+    )
+
     return (
       <Popover
         targetTagName="div"
-        wrapperTagName="div"
         position="bottom-left"
         usePortal={usePortal}
         minimal
@@ -174,7 +187,8 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
         onClose={() => onPopoverClose?.(selectedItems)}
         className={cx(css.main, { [css.disabled]: !!disabled }, className)}
         popoverClassName={cx(css.popover, popoverClassName)}
-        isOpen={isOpen}>
+        isOpen={isOpen}
+        content={popoverContent}>
         <Layout.Horizontal
           data-testid={buttonTestId}
           style={width ? { width } : { minWidth }}
@@ -200,21 +214,11 @@ export function MultiSelectDropDown(props: MultiSelectDropDownProps): React.Reac
           </Layout.Horizontal>
           <Icon name="main-chevron-down" size={8} color={Color.GREY_400} />
         </Layout.Horizontal>
-        <React.Fragment>
-          {allowSearch && (
-            <ExpandingSearchInputWithRef alwaysExpanded {...expandingSearchInputProps} onChange={onSearchChange} />
-          )}
-          {listProps.itemList
-            ? React.cloneElement(listProps.itemList as React.ReactElement, {
-                className: css.menu
-              })
-            : null}
-        </React.Fragment>
       </Popover>
     )
   }
 
-  function itemRenderer(item: MultiSelectOption, itemProps: IItemRendererProps): JSX.Element | null {
+  function itemRenderer(item: MultiSelectOption, itemProps: BpItemRendererProps): JSX.Element | null {
     const { handleClick, modifiers } = itemProps
     const isSelected = value && value.findIndex(val => val.value === item.value) > -1
     return (

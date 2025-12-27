@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import { Card, CardBody } from './Card'
 import { Text } from '../../components/Text/Text'
 
@@ -49,7 +49,7 @@ describe('Card test', () => {
       </Card>
     )
     fireEvent.click(container.children[0])
-    await wait()
+    await waitFor(() => {})
     expect(onClick).toHaveBeenCalled()
   })
 })
@@ -75,7 +75,7 @@ describe('Card icon test', () => {
       </Card>
     )
     fireEvent.click(container.children[0])
-    await wait()
+    await waitFor(() => {})
     expect(onClick).toHaveBeenCalled()
   })
 })
@@ -101,7 +101,7 @@ describe('Card menu test', () => {
       </Card>
     )
     fireEvent.click(container.children[0])
-    await wait()
+    await waitFor(() => {})
     expect(onClick).toHaveBeenCalled()
   })
 })

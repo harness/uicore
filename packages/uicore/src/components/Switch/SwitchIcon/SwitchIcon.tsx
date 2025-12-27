@@ -6,14 +6,14 @@
  */
 
 import React from 'react'
-import { IControlProps } from '@blueprintjs/core'
+import { ControlProps as BpControlProps } from '@blueprintjs/core'
 import { IconName, IconProps, Icon } from '@harness/icons'
 import css from './SwitchIcon.css'
 import cx from 'classnames'
 import { Layout } from '../../../layouts/Layout'
 import { Label } from '../../../components/Label/Label'
 
-export interface SwitchIconProps extends IControlProps {
+export interface SwitchIconProps extends BpControlProps {
   icon: IconName
   iconChecked: IconName
   iconProps: IconProps

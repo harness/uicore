@@ -10,7 +10,10 @@ import { render } from '@testing-library/react'
 import { Breadcrumbs } from '../..'
 import { Breadcrumb } from './Breadcrumbs'
 
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as BaseBrowserRouter } from 'react-router-dom'
+
+// BrowserRouter types in React 18 don't include children but still work at runtime
+const BrowserRouter = BaseBrowserRouter as React.ComponentType<{ children?: React.ReactNode }>
 
 describe('Render basic component', () => {
   test('should check snapshot with name', () => {

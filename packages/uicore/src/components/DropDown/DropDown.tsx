@@ -6,7 +6,12 @@
  */
 
 import React, { FC, ReactElement, useCallback, useEffect, useMemo, useState } from 'react'
-import { Select as BPSelect, ISelectProps, IItemRendererProps, ItemListRenderer } from '@blueprintjs/select'
+import {
+  Select2 as BPSelect,
+  Select2Props as BpSelectProps,
+  ItemRendererProps as BpItemRendererProps,
+  ItemListRenderer
+} from '@blueprintjs/select'
 import { Button } from '../Button/Button'
 import { Color } from '@harness/design-system'
 import { Layout } from '../../layouts/Layout'
@@ -21,7 +26,7 @@ import { debounce } from 'lodash-es'
 
 const Select = BPSelect.ofType<SelectOption>()
 
-type Props = ISelectProps<SelectOption>
+type Props = BpSelectProps<SelectOption>
 
 export interface DropDownProps
   extends Omit<Props, 'itemRenderer' | 'onItemSelect' | 'items' | 'activeItem' | 'onActiveItemChange' | 'inputProps'> {
@@ -49,7 +54,7 @@ export interface DropDownProps
   getCustomLabel?: (item: SelectOption) => string | ReactElement
 }
 
-function defaultItemRenderer(item: SelectOption, props: IItemRendererProps): JSX.Element | null {
+function defaultItemRenderer(item: SelectOption, props: BpItemRendererProps): JSX.Element | null {
   return (
     <li
       key={item.value.toString()}
@@ -186,7 +191,7 @@ export const DropDown: FC<DropDownProps> = props => {
 
   return (
     <Select
-      itemRenderer={(item: SelectOption, rendererProps: IItemRendererProps) =>
+      itemRenderer={(item: SelectOption, rendererProps: BpItemRendererProps) =>
         itemRenderer?.(item, rendererProps) || defaultItemRenderer(item, rendererProps)
       }
       items={dropDownItems}
@@ -201,7 +206,6 @@ export const DropDown: FC<DropDownProps> = props => {
       onQueryChange={debouncedQuery}
       popoverProps={{
         targetTagName: 'div',
-        wrapperTagName: 'div',
         usePortal,
         minimal: true,
         position: Position.BOTTOM_LEFT,

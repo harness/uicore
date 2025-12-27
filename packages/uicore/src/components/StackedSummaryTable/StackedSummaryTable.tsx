@@ -78,15 +78,16 @@ export const StackedSummaryTable: React.FC<StackedSummaryTableProps> = props => 
     )
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const columns: Array<Column<StackedSummaryInterface>> = [
     {
-      Header: () => columnHeaders[0],
+      Header: (() => columnHeaders[0]) as any,
       accessor: 'label',
       width: columnWidth[0] || '40%',
       Cell: RenderStackedSummaryBarLabelColumn
     },
     {
-      Header: () => columnHeaders[1],
+      Header: (() => columnHeaders[1]) as any,
       accessor: 'trend',
       width: columnWidth[1] || '60%',
       Cell: RenderStackedSummaryBarCountColumn

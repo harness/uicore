@@ -7,8 +7,8 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { Text, Popover, Layout, Container, Tag } from '../../'
-import { IPopoverProps, PopoverInteractionKind } from '@blueprintjs/core'
+import { Text, Popover, Layout, Container, Tag, PopoverProps } from '../../'
+import { PopoverInteractionKind } from '@blueprintjs/core'
 import { Icon, IconProps } from '@harness/icons'
 import type { tagsType } from '../../utils/tagTypes'
 import i18n from './TagsPopover.i18n'
@@ -19,7 +19,7 @@ export interface ListTagsProps {
   tags: tagsType
   tagClassName?: string
   target?: React.ReactElement
-  popoverProps?: IPopoverProps
+  popoverProps?: PopoverProps
   iconProps?: Omit<IconProps, 'name'>
   tagsTitle?: string
   containerClassName?: string

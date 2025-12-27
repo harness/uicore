@@ -27,12 +27,12 @@ export interface CardSelectProps<ObjectType> extends Omit<HTMLDivProps, 'onChang
 }
 
 enum Keys {
-  Enter = 13,
-  MoveLeft = 37,
-  MoveRight = 39
+  Enter = 'Enter',
+  MoveLeft = 'ArrowLeft',
+  MoveRight = 'ArrowRight'
 }
 
-const ValidKeys = [Keys.Enter, Keys.MoveLeft, Keys.MoveRight]
+const ValidKeys: string[] = [Keys.Enter, Keys.MoveLeft, Keys.MoveRight]
 
 export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
   const {
@@ -49,17 +49,18 @@ export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
   } = props
   const rootRef = useRef<HTMLDivElement>(null)
 
-  const handleUserKeyPress = useCallback(event => {
-    const { keyCode, target } = event
-    if (ValidKeys.indexOf(keyCode) > -1) {
-      if (keyCode === Keys.Enter) {
+  const handleUserKeyPress = useCallback((event: KeyboardEvent) => {
+    const { key } = event
+    const target = event.target as HTMLElement
+    if (ValidKeys.includes(key)) {
+      if (key === Keys.Enter) {
         target.click()
-      } else if (keyCode === Keys.MoveLeft) {
-        target.previousSibling?.click()
-        target.previousSibling?.focus()
-      } else if (keyCode === Keys.MoveRight) {
-        target.nextSibling?.click()
-        target.nextSibling?.focus()
+      } else if (key === Keys.MoveLeft) {
+        ;(target.previousSibling as HTMLElement)?.click()
+        ;(target.previousSibling as HTMLElement)?.focus()
+      } else if (key === Keys.MoveRight) {
+        ;(target.nextSibling as HTMLElement)?.click()
+        ;(target.nextSibling as HTMLElement)?.focus()
       }
     }
   }, [])

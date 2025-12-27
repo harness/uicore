@@ -8,7 +8,10 @@
 import React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import { CollapsableSelectType, FormikCollapsableSelect } from './CollapsableSelect'
-import { Form, Formik } from 'formik'
+import { Form as FormikForm, Formik } from 'formik'
+
+// Cast Form to avoid React 18 type issues with Formik
+const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
 import { Layout } from 'index'
 import { noop } from 'lodash'
 
@@ -133,7 +136,7 @@ describe('Test render CollapsableSelect', () => {
       </Formik>
     )
     // View will not have card  and will be controlled by user
-    expect(container.querySelector('[class="bp3-card bp3-interactive bp3-elevation-0 card interactive"]')).toBeNull()
+    expect(container.querySelector('[class="bp4-card bp4-interactive bp4-elevation-0 card interactive"]')).toBeNull()
 
     expect(container).toMatchSnapshot()
   })

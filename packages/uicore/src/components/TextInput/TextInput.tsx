@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { InputGroup, IInputGroupProps, Intent } from '@blueprintjs/core'
+import { InputGroup, InputGroupProps2 as BpInputGroupProps, Intent } from '@blueprintjs/core'
 import { Popover, PopoverProps } from '../Popover/Popover'
 import { IconName, Icon, IconProps } from '@harness/icons'
 import { Text } from '../Text/Text'
@@ -16,7 +16,7 @@ import css from './TextInput.css'
 import { FormError } from '../FormError/FormError'
 
 export interface TextInputProps
-  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement'>,
+  extends Omit<BpInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'onFocus' | 'onBlur' | 'type'>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   leftIcon?: IconName
   leftIconProps?: IconProps

@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/harness/uicore/compare/v3.11.0...v4.0.0) (2025-12-27)
+
+### ⚠ BREAKING CHANGES
+
+* **react:** Upgraded to React 18.3.1 - consumers must update their React version
+* **blueprint:** Upgraded to Blueprint.js v4.20.2 - CSS class prefix changed from `bp3-` to `bp4-`
+* **popover:** Migrated from `Popover` to `Popover2` - requires new CSS import
+
+### Features
+
+* **react:** Upgrade to React 18.3.1 with concurrent rendering support
+* **blueprint:** Upgrade to Blueprint.js v4.20.2 with improved accessibility
+* **select:** Migrate from `Select`/`MultiSelect` to `Select2`/`MultiSelect2`
+* **popover:** Migrate from `Popover` to `Popover2` with Popper.js v2
+
+### Bug Fixes
+
+* **types:** Update deprecated Blueprint types (`IProps` → `Props` naming convention)
+* **testing-library:** Replace deprecated `wait`/`waitForDomChange` with `waitFor`
+* **snapshots:** Update 105+ test snapshots for Blueprint v4 class changes
+* **popover:** Fix `boundary` prop type from `"viewport"` to `"clippingParents"` (Popper.js v2)
+* **formik:** Fix generic type constraints for `FormikProps` and `Formik` component
+* **toaster:** Update `useToaster` to use `OverlayToaster.create` for React 18 compatibility
+
+### Migration Guide
+
+Consumers must add the new Popover2 CSS import:
+
+```js
+// Add this import alongside existing Blueprint CSS
+import '@blueprintjs/popover2/lib/css/blueprint-popover2.css'
+```
+
+Update test selectors from `.bp3-popover-target` to `.bp4-popover2-target`.
+
 ## [3.11.0](https://github.com/harness/uicore/compare/v3.10.0...v3.11.0) (2022-06-04)
 
 

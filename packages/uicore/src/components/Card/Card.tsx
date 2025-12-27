@@ -6,7 +6,7 @@
  */
 
 import React, { useCallback } from 'react'
-import { Card as BpCard, ICardProps, HTMLDivProps, Position } from '@blueprintjs/core'
+import { Card as BpCard, CardProps as BpCardProps, HTMLDivProps, Position } from '@blueprintjs/core'
 import css from './Card.css'
 import cx from 'classnames'
 import { Icon as UiIcon, IconName, IconProps } from '@harness/icons'
@@ -15,7 +15,7 @@ import { Popover, PopoverProps } from '../../components/Popover/Popover'
 import { Text } from '../../components/Text/Text'
 import { Button } from '../../components/Button/Button'
 
-export interface CardProps extends ICardProps {
+export interface CardProps extends BpCardProps {
   selected?: boolean
   disabled?: boolean
   cornerSelected?: boolean
@@ -46,8 +46,8 @@ export const Card: React.FC<CardProps> = props => {
   }
   const tabIndexProps = bpProps.interactive ? { tabIndex } : {}
   const onClick = useCallback(
-    event => {
-      if (!event.target.closest(`.${css.dots}`)) {
+    (event: React.MouseEvent<HTMLDivElement>) => {
+      if (!(event.target as HTMLElement).closest(`.${css.dots}`)) {
         props.onClick?.(event)
       }
     },

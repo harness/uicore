@@ -4,9 +4,9 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
-import type { IPopoverProps } from '@blueprintjs/core'
+import type { Popover2Props } from '@blueprintjs/popover2'
 
-export interface PopoverProps extends IPopoverProps {
+export interface PopoverProps extends Popover2Props {
   /** If true, render BPopover in dark background and light font color */
   isDark?: boolean
 

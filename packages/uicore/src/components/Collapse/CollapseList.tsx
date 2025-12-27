@@ -32,7 +32,7 @@ const CollapseList: React.FC<CollapseListProps> = props => {
   )
 
   const onToggleOpenCallback = useCallback(
-    index => (isOpen?: boolean) => {
+    (index: number) => (isOpen?: boolean) => {
       const containsIndex = openedIndices.has(index)
       if (containsIndex && !isOpen) {
         openedIndices.delete(index)

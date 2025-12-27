@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, screen, RenderResult, waitFor } from '@testing-library/react'
+import { render, screen, RenderResult, waitFor, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MultiSelectDropDown, MultiSelectDropDownProps } from '../MultiSelectDropDown'
 
@@ -23,7 +23,9 @@ describe('MultiSelectDropDown', () => {
       allowSearch: true
     })
 
-    userEvent.click(screen.getByText('Select'))
+    await act(async () => {
+      userEvent.click(screen.getByText('Select'))
+    })
 
     expect(screen.getByRole('checkbox', { name: 'value1' })).toBeInTheDocument()
     expect(screen.getByRole('checkbox', { name: 'value2' })).toBeInTheDocument()
@@ -35,7 +37,9 @@ describe('MultiSelectDropDown', () => {
       allowSearch: false
     })
 
-    userEvent.click(screen.getByText('Select'))
+    await act(async () => {
+      userEvent.click(screen.getByText('Select'))
+    })
 
     expect(screen.queryByRole('searchbox')).not.toBeInTheDocument()
   })
@@ -47,19 +51,25 @@ describe('MultiSelectDropDown', () => {
         { label: 'value2', value: 'value2id' }
       ],
       allowSearch: true,
-      usePortal: true
+      usePortal: false // Use inline popover for testing
     })
 
-    userEvent.click(screen.getByText('Select'))
+    await act(async () => {
+      userEvent.click(screen.getByText('Select'))
+    })
 
-    expect(screen.getByRole('checkbox', { name: 'value1' })).toBeInTheDocument()
+    await waitFor(() => {
+      expect(screen.getByRole('checkbox', { name: 'value1' })).toBeInTheDocument()
+    })
     expect(screen.getByRole('checkbox', { name: 'value2' })).toBeInTheDocument()
 
     const dropdownSearchbox = await screen.findByRole('searchbox')
 
     const dropdownInput = 'value1'
 
-    userEvent.type(dropdownSearchbox, dropdownInput)
+    await act(async () => {
+      userEvent.type(dropdownSearchbox, dropdownInput)
+    })
 
     expect(dropdownSearchbox).toHaveValue(dropdownInput)
 
@@ -79,18 +89,26 @@ describe('MultiSelectDropDown', () => {
       expandingSearchInputProps: {
         onChange: onSearchChange
       },
-      usePortal: true
+      usePortal: false // Use inline popover for testing
     })
 
-    userEvent.click(screen.getByText('Select'))
+    await act(async () => {
+      userEvent.click(screen.getByText('Select'))
+    })
 
-    const dropdownSearchbox = await screen.findByRole('searchbox')
+    await waitFor(() => {
+      expect(screen.getByRole('searchbox')).toBeInTheDocument()
+    })
+
+    const dropdownSearchbox = screen.getByRole('searchbox')
 
     const dropdownInput = 'value1'
 
     await waitFor(() => expect(onSearchChange).not.toHaveBeenCalled())
 
-    userEvent.type(dropdownSearchbox, dropdownInput)
+    await act(async () => {
+      userEvent.type(dropdownSearchbox, dropdownInput)
+    })
 
     expect(dropdownSearchbox).toHaveValue(dropdownInput)
 

@@ -7,7 +7,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Button, ButtonProps } from '../Button/Button'
-import { DateRangePicker, IDateRangePickerProps } from '@blueprintjs/datetime'
+import { DateRangePicker, DateRangePickerProps as BpDateRangePickerProps } from '@blueprintjs/datetime'
 import { PopoverInteractionKind } from '@blueprintjs/core'
 
 export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'> {
@@ -16,7 +16,7 @@ export interface DateRangePickerButtonProps extends Omit<ButtonProps, 'onChange'
   onChange: (selectedDates: [Date, Date]) => void
   isMaxDateEditable?: boolean
   initialMaxDate?: Date
-  dateRangePickerProps?: IDateRangePickerProps
+  dateRangePickerProps?: BpDateRangePickerProps
 }
 
 export const DateRangePickerButton: React.FC<DateRangePickerButtonProps> = props => {

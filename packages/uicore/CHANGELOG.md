@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/harness/uicore/compare/@harness/uicore@3.73.0...@harness/uicore@4.0.0) (2025-12-27)
+
+### ⚠ BREAKING CHANGES
+
+* **react:** React 18.3.1 - update peer dependency
+* **blueprint:** Blueprint.js v4.20.2 - CSS classes changed (`bp3-` → `bp4-`)
+* **popover:** `Popover` replaced with `Popover2` - new CSS import required
+
+### Features
+
+* **react:** React 18 with concurrent features support
+* **select:** `Select2`, `MultiSelect2`, `Suggest2` components
+* **popover:** `Popover2` with Popper.js v2 positioning engine
+
+### Bug Fixes
+
+* **ExpressionInput:** Replace deprecated `IPopoverProps` with `PopoverProps`
+* **MultiSelectDropDown:** Update to `Popover2` with `content` prop pattern
+* **FormikForm:** Fix generic type constraints and implicit `any` types
+* **useToaster:** Use `OverlayToaster.create` for React 18 compatibility
+* **TagGroup:** Replace deprecated `ITagProps` with `TagProps`
+* **tests:** Update 105+ snapshots for Blueprint v4 changes
+
+
+
+
 # [3.73.0](https://github.com/harness/uicore/compare/@harness/uicore@3.72.0...@harness/uicore@3.73.0) (2022-08-03)
 
 

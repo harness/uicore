@@ -30,7 +30,7 @@ div.card {
 
 .cardIcon {
   :global {
-    .bp3-icon {
+    .bp4-icon {
       display: block;
       svg {
         margin: 0 auto var(--spacing-small);
@@ -138,7 +138,7 @@ div.card {
     z-index: 1;
   }
   :global {
-    .bp3-icon {
+    .bp4-icon {
       position: absolute;
       top: 3px;
       right: 2px;

@@ -6,12 +6,12 @@
  */
 
 import React, { useState, useCallback } from 'react'
-import { ICollapseProps, Collapse as BpCollapse } from '@blueprintjs/core'
+import { CollapseProps as BpCollapseProps, Collapse as BpCollapse } from '@blueprintjs/core'
 import css from './Collapse.css'
 import { CollapseHeader, CollapseHeaderProps } from './CollapseHeader'
 import cx from 'classnames'
 
-interface CollapseProps extends ICollapseProps, Omit<CollapseHeaderProps, 'onToggleOpen' | 'isOpen'> {
+interface CollapseProps extends BpCollapseProps, Omit<CollapseHeaderProps, 'onToggleOpen' | 'isOpen'> {
   isOpen?: boolean
   children?: React.ReactNode
   onToggleOpen?: (isOpen: boolean) => void

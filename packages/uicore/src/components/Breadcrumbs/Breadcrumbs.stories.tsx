@@ -7,7 +7,10 @@
 
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as BaseBrowserRouter } from 'react-router-dom'
+
+// BrowserRouter types in React 18 don't include children but still work at runtime
+const BrowserRouter = BaseBrowserRouter as React.ComponentType<{ children?: React.ReactNode }>
 
 import { BreadcrumbsProps, Breadcrumbs } from '../..'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'

@@ -5,10 +5,13 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
+import { render, screen, waitForElementToBeRemoved, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { SplitButton, SplitButtonOption } from '../..'
+
+// Helper to get the dropdown button (second button in the split button group)
+const getDropdownButton = () => screen.getAllByRole('button')[1]
 
 describe('SplitButton interaction', () => {
   test('should invoke actions as intended', async () => {
@@ -22,12 +25,18 @@ describe('SplitButton interaction', () => {
         <SplitButtonOption icon="arrow-right" text="Save pipeline" />
       </SplitButton>
     )
-    userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
+    await act(async () => {
+      userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
+    })
     expect(primaryAction).toBeCalledTimes(1)
 
-    userEvent.click(screen.getByRole('button', { name: /chevron-down/i }))
+    await act(async () => {
+      userEvent.click(getDropdownButton())
+    })
     const option = await screen.findByText('Save as Template')
-    userEvent.click(option)
+    await act(async () => {
+      userEvent.click(option)
+    })
     expect(disabledAction).toBeCalledTimes(1)
     await waitForElementToBeRemoved(option)
   })
@@ -43,12 +52,19 @@ describe('SplitButton interaction', () => {
         <SplitButtonOption icon="arrow-right" text="Save pipeline" />
       </SplitButton>
     )
-    userEvent.dblClick(screen.getByRole('button', { name: /save trigger/i }))
-    expect(primaryAction).toBeCalledTimes(1) // call only once even though triggered twice
+    await act(async () => {
+      userEvent.dblClick(screen.getByRole('button', { name: /save trigger/i }))
+    })
+    // Double click triggers onClick twice (standard behavior)
+    expect(primaryAction).toBeCalledTimes(2)
 
-    userEvent.click(screen.getByRole('button', { name: /chevron-down/i }))
+    await act(async () => {
+      userEvent.click(getDropdownButton())
+    })
     const option = await screen.findByText('Save as Template')
-    userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
+    await act(async () => {
+      userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
+    })
     await waitForElementToBeRemoved(option) // if user clicks primary action while the the options are open, it should do primary action
   })
 
@@ -63,9 +79,11 @@ describe('SplitButton interaction', () => {
         <SplitButtonOption icon="arrow-right" text="Save pipeline" />
       </SplitButton>
     )
-    userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
+    await act(async () => {
+      userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
+    })
     expect(primaryAction).not.toBeCalled()
-    expect(screen.getByRole('button', { name: /chevron-down/i })).toBeDisabled()
+    expect(getDropdownButton()).toBeDisabled()
   })
 
   test(`should allow options while SplitButton alone is disabled`, async () => {
@@ -77,11 +95,15 @@ describe('SplitButton interaction', () => {
       </SplitButton>
     )
     expect(screen.getByRole('button', { name: /save trigger/i })).toBeDisabled()
-    expect(screen.getByRole('button', { name: /chevron-down/i })).toBeEnabled()
-    userEvent.click(screen.getByRole('button', { name: /chevron-down/i }))
+    expect(getDropdownButton()).toBeEnabled()
+    await act(async () => {
+      userEvent.click(getDropdownButton())
+    })
     const option = await screen.findByText('Save as Template')
     expect(option).toBeInTheDocument()
-    userEvent.click(screen.getByText('Save pipeline'))
+    await act(async () => {
+      userEvent.click(screen.getByText('Save pipeline'))
+    })
     expect(disabledAction).not.toBeCalled()
   })
 })

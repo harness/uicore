@@ -9,7 +9,7 @@ import React, { useCallback, useMemo, useState } from 'react'
 import css from './CategorizedSelect.css'
 import { SelectOption, Select, SelectProps } from '../Select/Select'
 import selectCss from '../Select/Select.css'
-import { IItemRendererProps } from '@blueprintjs/select'
+import { ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
 import cx from 'classnames'
 import { Icon } from '@harness/icons'
 import { Text } from '../Text/Text'
@@ -188,7 +188,7 @@ export function CategorizedSelect(props: CategorizedSelectProps): JSX.Element {
 
   // function to customize each option rendered in the drop down
   const itemRenderer = useCallback(
-    (item: SelectOption, { handleClick, modifiers }: IItemRendererProps) => {
+    (item: SelectOption, { handleClick, modifiers }: BpItemRendererProps) => {
       const isCategory = typeof item.value === 'string' && item.value.startsWith(CATEGORY_SELECT_VALUE)
       const isCreatableOption = item.value === CREATABLE_OPTION_VALUE
       const categoryName = isCategory ? item.label : itemToCategory.get(item.label) || ''

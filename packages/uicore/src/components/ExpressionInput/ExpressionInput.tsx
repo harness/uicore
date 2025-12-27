@@ -6,8 +6,14 @@
  */
 
 import React, { useMemo } from 'react'
-import { IInputGroupProps, Popover, Menu, IPopoverProps, InputGroup } from '@blueprintjs/core'
-import { QueryList, IQueryListRendererProps, IItemRendererProps, ItemRenderer } from '@blueprintjs/select'
+import { InputGroupProps2 as BpInputGroupProps, MenuItem, InputGroup } from '@blueprintjs/core'
+import { Popover, PopoverProps } from '../Popover/Popover'
+import {
+  QueryList,
+  QueryListRendererProps as BpQueryListRendererProps,
+  ItemRendererProps as BpItemRendererProps,
+  ItemRenderer
+} from '@blueprintjs/select'
 import { debounce } from 'lodash-es'
 import { escapeStringRegexp } from '../../core/Utils'
 
@@ -26,9 +32,9 @@ export interface ExpressionInputProps {
   value?: string
   name: string
   maxHeight?: React.CSSProperties['maxHeight']
-  inputProps?: Omit<IInputGroupProps, 'value' | 'onChange'>
+  inputProps?: Omit<BpInputGroupProps, 'value' | 'onChange'>
   popoverProps?: Omit<
-    IPopoverProps,
+    PopoverProps,
     'isOpen' | 'interactionKind' | 'hasBackdrop' | 'backdropProps' | 'autoFocus' | 'enforceFocus'
   >
   onChange(str: string): void
@@ -46,7 +52,7 @@ const EXPRESSION_START_REGEX = /<\+([A-Za-z0-9_.'"()]*?)$/
 
 export function getItemRenderer(setActiveItem: (item: string) => void): ItemRenderer<string> {
   // eslint-disable-next-line react/display-name
-  return (item: string, itemProps: IItemRendererProps): JSX.Element | null => {
+  return (item: string, itemProps: BpItemRendererProps): JSX.Element | null => {
     const { query, handleClick, modifiers, index } = itemProps
     const queryMatch = query.match(EXPRESSION_START_REGEX)
 
@@ -65,7 +71,7 @@ export function getItemRenderer(setActiveItem: (item: string) => void): ItemRend
     // https://stackoverflow.com/a/24800788
 
     return (
-      <Menu.Item
+      <MenuItem
         key={`${item}${index}`}
         text={
           <span className={css.menuItem}>
@@ -93,7 +99,7 @@ interface ExpressionDropdownProps {
   newExpressionComponent: boolean | undefined
   queryValue: string
   items: string[]
-  listProps: IQueryListRendererProps<string>
+  listProps: BpQueryListRendererProps<string>
   maxHeight: React.CSSProperties['maxHeight']
   setQueryValue: React.Dispatch<React.SetStateAction<string>>
   setInputValue: React.Dispatch<React.SetStateAction<string>>
@@ -296,7 +302,7 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     setActiveItem(item)
   }
 
-  function renderer(listProps: IQueryListRendererProps<string>): JSX.Element {
+  function renderer(listProps: BpQueryListRendererProps<string>): JSX.Element {
     function handleChangeForTextAreaEditable(e: React.ChangeEvent<HTMLInputElement>) {
       const { textContent } = e.target as HTMLInputElement
 
@@ -377,7 +383,6 @@ export function ExpressionInput(props: ExpressionInputProps): React.ReactElement
     return (
       <Popover
         targetTagName="div"
-        wrapperTagName="div"
         position="bottom-left"
         minimal
         {...popoverProps}

@@ -6,12 +6,13 @@
  */
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { Popover, Spinner, Menu, PopoverInteractionKind, Classes } from '@blueprintjs/core'
+import { Spinner, Menu, PopoverInteractionKind, Classes } from '@blueprintjs/core'
+import { Popover } from '../../../Popover/Popover'
 import {
   QueryList,
-  IQueryListRendererProps,
-  IItemRendererProps,
-  IQueryListProps,
+  QueryListRendererProps as BpQueryListRendererProps,
+  ItemRendererProps as BpItemRendererProps,
+  QueryListProps as BpQueryListProps,
   ItemListRenderer
 } from '@blueprintjs/select'
 
@@ -32,7 +33,7 @@ import {
 } from '../../../ExpandingSearchInput/ExpandingSearchInput'
 import { Container } from '../../../Container/Container'
 
-type Props = IQueryListProps<MultiSelectOption>
+type Props = BpQueryListProps<MultiSelectOption>
 
 export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.noResults)}>No matching results found</li>
@@ -64,7 +65,7 @@ export interface FilterMultiSelectDropDownProps
   tooltip?: string
   tooltipProps?: PopoverProps
   footer?: React.ReactNode
-  listItemRenderer?: (item: MultiSelectOption, itemProps: IItemRendererProps) => JSX.Element | null
+  listItemRenderer?: (item: MultiSelectOption, itemProps: BpItemRendererProps) => JSX.Element | null
 }
 
 /**
@@ -178,11 +179,10 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  function renderer(listProps: IQueryListRendererProps<MultiSelectOption>): JSX.Element {
+  function renderer(listProps: BpQueryListRendererProps<MultiSelectOption>): JSX.Element {
     return (
       <Popover
         targetTagName="div"
-        wrapperTagName="div"
         position="bottom-left"
         usePortal={usePortal}
         minimal
@@ -285,7 +285,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     )
   }
 
-  function itemRenderer(item: MultiSelectOption, itemProps: IItemRendererProps): JSX.Element | null {
+  function itemRenderer(item: MultiSelectOption, itemProps: BpItemRendererProps): JSX.Element | null {
     const { handleClick, modifiers } = itemProps
     const isSelected = value && value.findIndex(val => val.value === item.value) > -1
     return (

@@ -8,7 +8,7 @@
 import React from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
-import { Select, ISelectProps } from '@blueprintjs/select'
+import { Select, SelectProps as BpSelectProps } from '@blueprintjs/select'
 import { SelectOption, defaultItemRenderer, NoMatch, createNewItemFromQuery } from './Select'
 import css from './SelectV2.css'
 import { Button } from '../Button/Button'
@@ -16,7 +16,7 @@ import { Icon } from '@harness/icons'
 
 const SelectBp = Select.ofType<SelectOption>()
 
-type Props = ISelectProps<SelectOption>
+type Props = BpSelectProps<SelectOption>
 
 const Loading = Symbol('loading')
 
@@ -106,7 +106,6 @@ export function SelectV2(props: SelectV2Props): React.ReactElement {
       onItemSelect={handleItemSelect}
       popoverProps={{
         targetTagName: 'div',
-        wrapperTagName: 'div',
         fill: true,
         usePortal: false,
         minimal: true,

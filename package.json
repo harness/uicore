@@ -1,7 +1,7 @@
 {
   "name": "uicore-monorepo",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Harness UICore Monorepo",
   "workspaces": [
     "packages/*"
@@ -35,8 +35,7 @@
     "@storybook/manager-webpack5": "^6.5.7",
     "@storybook/react": "^6.5.7",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/react-hooks": "^5.1.2",
+    "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^26.0.19",
     "@types/node": "^14.14.14",
@@ -69,10 +68,10 @@
   },
   "resolutions": {
     "@babel/core": "7.14.6",
-    "@types/react": "17.0.3",
-    "@types/react-dom": "17.0.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "postcss": "8.3.5"
   },
   "lint-staged": {

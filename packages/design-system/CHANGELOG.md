@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/harness/uicore/compare/@harness/design-system@1.4.0...@harness/design-system@2.0.0) (2025-12-27)
+
+### ⚠ BREAKING CHANGES
+
+* **popover:** `PopoverProps` now extends `Popover2Props` from `@blueprintjs/popover2`
+
+### Features
+
+* **types:** Add `@blueprintjs/popover2` as peer dependency
+* **popover:** Update `PopoverProps` interface for Popover2 compatibility
+
+
+
+
 # 1.4.0 (2022-07-04)
 
 

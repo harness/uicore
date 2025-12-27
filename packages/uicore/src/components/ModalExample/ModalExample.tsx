@@ -9,10 +9,10 @@ import React from 'react'
 import { ModalProvider, useModalHook } from '@harness/use-modal'
 import { ModalErrorHandler, ModalErrorHandlerBinding } from '../Modal/ModalErrorHandler'
 import { Button } from '../Button/Button'
-import { Dialog, Classes, IDialogProps } from '@blueprintjs/core'
+import { Dialog, Classes, DialogProps as BpDialogProps } from '@blueprintjs/core'
 
 const ExampleModal = () => {
-  const modalPropsLight: IDialogProps = {
+  const modalPropsLight: BpDialogProps = {
     isOpen: true,
     usePortal: true,
     autoFocus: true,
@@ -24,7 +24,7 @@ const ExampleModal = () => {
     style: { width: 600, height: 400 }
   }
 
-  const modalPropsDark: IDialogProps = {
+  const modalPropsDark: BpDialogProps = {
     isOpen: true,
     usePortal: true,
     autoFocus: true,

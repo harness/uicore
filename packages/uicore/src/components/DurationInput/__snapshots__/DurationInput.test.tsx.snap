@@ -9,40 +9,37 @@ exports[`<DurationInput/> tests component tests renders with given value (in tim
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           placeholder="Enter w/d/h/m/s/ms"
           type="text"
           value="2d 2h"
         />
       </div>
     </div>
-    <div
-      class="bp3-popover-wrapper helpIcon"
+    <span
+      aria-haspopup="true"
+      class="helpIcon bp4-popover2-target"
     >
       <span
-        class="bp3-popover-target"
+        class="bp4-icon StyledProps--main"
+        data-icon="question"
+        tabindex="0"
       >
-        <span
-          class="bp3-icon StyledProps--main"
-          data-icon="question"
-          tabindex="0"
+        <svg
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
         >
-          <svg
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-          >
-            <path
-              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
-              fill="#9AA5B5"
-            />
-          </svg>
-        </span>
+          <path
+            d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+            fill="#9AA5B5"
+          />
+        </svg>
       </span>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -56,40 +53,37 @@ exports[`<DurationInput/> tests component tests renders with given value 1`] = `
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           placeholder="Enter w/d/h/m/s/ms"
           type="text"
           value="1d 10h 17m 36s 789ms"
         />
       </div>
     </div>
-    <div
-      class="bp3-popover-wrapper helpIcon"
+    <span
+      aria-haspopup="true"
+      class="helpIcon bp4-popover2-target"
     >
       <span
-        class="bp3-popover-target"
+        class="bp4-icon StyledProps--main"
+        data-icon="question"
+        tabindex="0"
       >
-        <span
-          class="bp3-icon StyledProps--main"
-          data-icon="question"
-          tabindex="0"
+        <svg
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
         >
-          <svg
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-          >
-            <path
-              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
-              fill="#9AA5B5"
-            />
-          </svg>
-        </span>
+          <path
+            d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+            fill="#9AA5B5"
+          />
+        </svg>
       </span>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -103,142 +97,37 @@ exports[`<DurationInput/> tests component tests shows help popover 1`] = `
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           placeholder="Enter w/d/h/m/s/ms"
           type="text"
           value="1d 10h 17m 36s 789ms"
         />
       </div>
     </div>
-    <div
-      class="bp3-popover-wrapper helpIcon"
+    <span
+      aria-haspopup="true"
+      class="helpIcon bp4-popover2-target"
     >
       <span
-        class="bp3-popover-target bp3-popover-open"
+        class="bp4-icon StyledProps--main"
+        data-icon="question"
+        tabindex="0"
       >
-        <span
-          class="bp3-icon StyledProps--main"
-          data-icon="question"
-          tabindex="0"
+        <svg
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
         >
-          <svg
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-          >
-            <path
-              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
-              fill="#9AA5B5"
-            />
-          </svg>
-        </span>
+          <path
+            d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+            fill="#9AA5B5"
+          />
+        </svg>
       </span>
-      <div
-        class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
-      >
-        <div
-          class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-          style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
-        >
-          <div
-            class="bp3-popover"
-            style="transform-origin: NaNpx bottom;"
-          >
-            <div
-              class="bp3-popover-arrow"
-            >
-              <svg
-                style="transform: rotate(-90deg);"
-                viewBox="0 0 30 30"
-              >
-                <path
-                  class="bp3-popover-arrow-border"
-                  d="M8.11 6.302c1.015-.936 1.887-2.922 1.887-4.297v26c0-1.378-.868-3.357-1.888-4.297L.925 17.09c-1.237-1.14-1.233-3.034 0-4.17L8.11 6.302z"
-                />
-                <path
-                  class="bp3-popover-arrow-fill"
-                  d="M8.787 7.036c1.22-1.125 2.21-3.376 2.21-5.03V0v30-2.005c0-1.654-.983-3.9-2.21-5.03l-7.183-6.616c-.81-.746-.802-1.96 0-2.7l7.183-6.614z"
-                />
-              </svg>
-            </div>
-            <div
-              class="bp3-popover-content"
-            >
-              <p
-                class="StyledProps--font StyledProps--main StyledProps--padding-xlarge"
-                style="min-width: 192px;"
-              >
-                You can use:
-                <br />
-                <br />
-                <code>
-                  <b>
-                    w
-                  </b>
-                </code>
-                <span>
-                    for 
-                  weeks
-                </span>
-                <br />
-                <code>
-                  <b>
-                    d
-                  </b>
-                </code>
-                <span>
-                    for 
-                  days
-                </span>
-                <br />
-                <code>
-                  <b>
-                    h
-                  </b>
-                </code>
-                <span>
-                    for 
-                  hours
-                </span>
-                <br />
-                <code>
-                  <b>
-                    m
-                  </b>
-                </code>
-                <span>
-                    for 
-                  minutes
-                </span>
-                <br />
-                <code>
-                  <b>
-                    s
-                  </b>
-                </code>
-                <span>
-                    for 
-                  seconds
-                </span>
-                <br />
-                <code>
-                  <b>
-                    ms
-                  </b>
-                </code>
-                <span>
-                    for 
-                  milliseconds
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -252,122 +141,37 @@ exports[`<DurationInput/> tests component tests shows subset of allowed values i
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           placeholder="Enter w/d/h/m/s/ms"
           type="text"
           value="1d 10h 17m 36s 789ms"
         />
       </div>
     </div>
-    <div
-      class="bp3-popover-wrapper helpIcon"
+    <span
+      aria-haspopup="true"
+      class="helpIcon bp4-popover2-target"
     >
       <span
-        class="bp3-popover-target bp3-popover-open"
+        class="bp4-icon StyledProps--main"
+        data-icon="question"
+        tabindex="0"
       >
-        <span
-          class="bp3-icon StyledProps--main"
-          data-icon="question"
-          tabindex="0"
+        <svg
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
         >
-          <svg
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-          >
-            <path
-              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
-              fill="#9AA5B5"
-            />
-          </svg>
-        </span>
+          <path
+            d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+            fill="#9AA5B5"
+          />
+        </svg>
       </span>
-      <div
-        class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
-      >
-        <div
-          class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-          style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
-        >
-          <div
-            class="bp3-popover"
-            style="transform-origin: NaNpx bottom;"
-          >
-            <div
-              class="bp3-popover-arrow"
-            >
-              <svg
-                style="transform: rotate(-90deg);"
-                viewBox="0 0 30 30"
-              >
-                <path
-                  class="bp3-popover-arrow-border"
-                  d="M8.11 6.302c1.015-.936 1.887-2.922 1.887-4.297v26c0-1.378-.868-3.357-1.888-4.297L.925 17.09c-1.237-1.14-1.233-3.034 0-4.17L8.11 6.302z"
-                />
-                <path
-                  class="bp3-popover-arrow-fill"
-                  d="M8.787 7.036c1.22-1.125 2.21-3.376 2.21-5.03V0v30-2.005c0-1.654-.983-3.9-2.21-5.03l-7.183-6.616c-.81-.746-.802-1.96 0-2.7l7.183-6.614z"
-                />
-              </svg>
-            </div>
-            <div
-              class="bp3-popover-content"
-            >
-              <p
-                class="StyledProps--font StyledProps--main StyledProps--padding-xlarge"
-                style="min-width: 192px;"
-              >
-                You can use:
-                <br />
-                <br />
-                <code>
-                  <b>
-                    w
-                  </b>
-                </code>
-                <span>
-                    for 
-                  weeks
-                </span>
-                <br />
-                <code>
-                  <b>
-                    d
-                  </b>
-                </code>
-                <span>
-                    for 
-                  days
-                </span>
-                <br />
-                <code>
-                  <b>
-                    h
-                  </b>
-                </code>
-                <span>
-                    for 
-                  hours
-                </span>
-                <br />
-                <code>
-                  <b>
-                    m
-                  </b>
-                </code>
-                <span>
-                    for 
-                  minutes
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -381,10 +185,10 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           data-testid="input"
           placeholder="Enter w/d/h/m/s/ms"
           style="padding-right: 0px;"
@@ -392,21 +196,20 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
           value="\${abc"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
               data-icon="warning-sign"
               height="12"
+              role="img"
               viewBox="0 0 16 16"
               width="12"
             >
-              <desc>
-                warning-sign
-              </desc>
               <path
                 d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
                 fill-rule="evenodd"
@@ -416,30 +219,27 @@ exports[`<DurationInput/> tests component tests shows warning when intended vari
         </span>
       </div>
     </div>
-    <div
-      class="bp3-popover-wrapper helpIcon"
+    <span
+      aria-haspopup="true"
+      class="helpIcon bp4-popover2-target"
     >
       <span
-        class="bp3-popover-target"
+        class="bp4-icon StyledProps--main"
+        data-icon="question"
+        tabindex="0"
       >
-        <span
-          class="bp3-icon StyledProps--main"
-          data-icon="question"
-          tabindex="0"
+        <svg
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
         >
-          <svg
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-          >
-            <path
-              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
-              fill="#9AA5B5"
-            />
-          </svg>
-        </span>
+          <path
+            d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+            fill="#9AA5B5"
+          />
+        </svg>
       </span>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -453,10 +253,10 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           data-testid="input"
           placeholder="Enter w/d/h/m/s/ms"
           style="padding-right: 0px;"
@@ -464,21 +264,20 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
           value="1s"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
               data-icon="warning-sign"
               height="12"
+              role="img"
               viewBox="0 0 16 16"
               width="12"
             >
-              <desc>
-                warning-sign
-              </desc>
               <path
                 d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
                 fill-rule="evenodd"
@@ -488,30 +287,27 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
         </span>
       </div>
     </div>
-    <div
-      class="bp3-popover-wrapper helpIcon"
+    <span
+      aria-haspopup="true"
+      class="helpIcon bp4-popover2-target"
     >
       <span
-        class="bp3-popover-target"
+        class="bp4-icon StyledProps--main"
+        data-icon="question"
+        tabindex="0"
       >
-        <span
-          class="bp3-icon StyledProps--main"
-          data-icon="question"
-          tabindex="0"
+        <svg
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
         >
-          <svg
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-          >
-            <path
-              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
-              fill="#9AA5B5"
-            />
-          </svg>
-        </span>
+          <path
+            d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+            fill="#9AA5B5"
+          />
+        </svg>
       </span>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -525,10 +321,10 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
       class="main"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          class="bp4-input"
           data-testid="input"
           placeholder="Enter w/d/h/m/s/ms"
           style="padding-right: 0px;"
@@ -536,21 +332,20 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
           value="1"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-warning-sign StyledProps--main warnIcon"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-warning-sign StyledProps--main warnIcon"
             icon="warning-sign"
           >
             <svg
               data-icon="warning-sign"
               height="12"
+              role="img"
               viewBox="0 0 16 16"
               width="12"
             >
-              <desc>
-                warning-sign
-              </desc>
               <path
                 d="M15.84 13.5l.01-.01-7-12-.01.01c-.17-.3-.48-.5-.85-.5s-.67.2-.85.5l-.01-.01-7 12 .01.01c-.09.15-.15.31-.15.5 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 0-.19-.06-.35-.15-.5zm-6.85-.51h-2v-2h2v2zm0-3h-2v-5h2v5z"
                 fill-rule="evenodd"
@@ -560,30 +355,27 @@ exports[`<DurationInput/> tests component tests shows warning when invalid value
         </span>
       </div>
     </div>
-    <div
-      class="bp3-popover-wrapper helpIcon"
+    <span
+      aria-haspopup="true"
+      class="helpIcon bp4-popover2-target"
     >
       <span
-        class="bp3-popover-target"
+        class="bp4-icon StyledProps--main"
+        data-icon="question"
+        tabindex="0"
       >
-        <span
-          class="bp3-icon StyledProps--main"
-          data-icon="question"
-          tabindex="0"
+        <svg
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
         >
-          <svg
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-          >
-            <path
-              d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
-              fill="#9AA5B5"
-            />
-          </svg>
-        </span>
+          <path
+            d="M7 .1C3.2.1.1 3.2.1 7s3.1 6.9 6.9 6.9 6.9-3.1 6.9-6.9S10.8.1 7 .1zm0 1.2c3.2 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7S1.3 10.2 1.3 7 3.8 1.3 7 1.3zm0 2.3c-1.3 0-2.3 1-2.3 2.3h1.1c0-.6.5-1.1 1.1-1.1S8 5.3 8 5.9c0 .4-.3.8-.7 1h-.1c-.4.2-.8.6-.8 1.1v.7h1.1V8l.2-.1c.9-.3 1.5-1.1 1.5-2.1.1-1.2-.9-2.2-2.2-2.2zm-.6 5.7v1.1h1.1V9.3H6.4z"
+            fill="#9AA5B5"
+          />
+        </svg>
       </span>
-    </div>
+    </span>
   </div>
 </div>
 `;

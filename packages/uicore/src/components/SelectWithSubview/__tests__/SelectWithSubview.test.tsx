@@ -6,7 +6,7 @@
  */
 
 import React, { useContext, useState, useCallback, FormEvent } from 'react'
-import { render, wait, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, waitFor, fireEvent } from '@testing-library/react'
 import { SelectWithSubview, SelectWithSubviewContext } from '../SelectWithSubview'
 import { SelectOption } from 'components/Select/Select'
 import { Heading } from 'components/Heading/Heading'
@@ -14,7 +14,10 @@ import { Layout } from 'layouts/Layout'
 import { TextInput } from 'components/TextInput/TextInput'
 import { Button } from 'components/Button/Button'
 import { Text } from 'components/Text/Text'
-import { Formik, Form } from 'formik'
+import { Formik, Form as FormikForm } from 'formik'
+
+// Cast Form to avoid React 18 type issues with Formik
+const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
 
 const items: SelectOption[] = [
   { label: 'secondaryOption_1', value: '1234_secondaryOption' },
@@ -98,16 +101,16 @@ describe.skip('Tests for Select with secondary view', () => {
       />
     )
 
-    const inputBox = container.querySelector('.bp3-input')
+    const inputBox = container.querySelector('.bp4-input')
     if (!inputBox) {
       throw Error('Input box for drop down was not rendered.')
     }
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitForDomChange()
+    await waitFor(() => {})
 
-    const dropdownMenu = container.querySelector('[class~="bp3-popover-wrapper"] .bp3-menu')
+    const dropdownMenu = container.querySelector('[class~="bp4-popover-wrapper"] .bp4-menu')
     expect(dropdownMenu).not.toBeNull()
     if (!dropdownMenu) {
       throw Error('Drop down menu was not rendered.')
@@ -115,10 +118,10 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await wait()
+    await waitFor(() => {})
 
     // ensure secondary view is rendered
-    const secondaryView = container.querySelector('.bp3-popover-content form')
+    const secondaryView = container.querySelector('.bp4-popover-content form')
     expect(secondaryView).not.toBeNull()
     getByText('Select Environment Type')
 
@@ -127,13 +130,13 @@ describe.skip('Tests for Select with secondary view', () => {
       throw Error('Close button was not rendered.')
     }
     fireEvent.click(closeButton)
-    await wait()
+    await waitFor(() => {})
 
     // ensure original drop down is rendered
     expect(container.querySelector('form')).toBeNull()
 
     // ensure only the original three items are rendered
-    const menuItems = container.querySelectorAll('.bp3-menu li')
+    const menuItems = container.querySelectorAll('.bp4-menu li')
     expect(menuItems.length).toBe(3)
     getByText(SECONDARY_OPTION_LABEL)
     getByText(items[0].label)
@@ -149,16 +152,16 @@ describe.skip('Tests for Select with secondary view', () => {
       />
     )
 
-    const inputBox = container.querySelector('.bp3-input')
+    const inputBox = container.querySelector('.bp4-input')
     if (!inputBox) {
       throw Error('Input box for drop down was not rendered.')
     }
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitForDomChange()
+    await waitFor(() => {})
 
-    const dropdownMenu = container.querySelector('[class~="bp3-popover-wrapper"] .bp3-menu')
+    const dropdownMenu = container.querySelector('[class~="bp4-popover-wrapper"] .bp4-menu')
     expect(dropdownMenu).not.toBeNull()
     if (!dropdownMenu) {
       throw Error('Drop down menu was not rendered.')
@@ -166,9 +169,9 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await wait()
+    await waitFor(() => {})
 
-    const secondaryView = container.querySelector('.bp3-popover-content form')
+    const secondaryView = container.querySelector('.bp4-popover-content form')
     expect(secondaryView).not.toBeNull()
 
     // Get environment input box and type in new option label
@@ -178,7 +181,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.change(environmentInputBox, { target: { value: 'Custom Env Label' } })
-    await wait()
+    await waitFor(() => {})
 
     // submit changes
     const submitButton = secondaryView?.querySelector('button[type="submit"]')
@@ -187,7 +190,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.click(submitButton)
-    await waitForDomChange()
+    await waitFor(() => {})
     expect(onSubmitFunc).toHaveBeenCalled()
     expect(onSubmitFunc.mock.calls[0][0]).toEqual({
       environment: 'Custom Env Label'
@@ -204,16 +207,16 @@ describe.skip('Tests for Select with secondary view', () => {
       />
     )
 
-    const inputBox = container.querySelector('.bp3-input')
+    const inputBox = container.querySelector('.bp4-input')
     if (!inputBox) {
       throw Error('Input box for drop down was not rendered.')
     }
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitForDomChange()
+    await waitFor(() => {})
 
-    const dropdownMenu = container.querySelector('[class~="bp3-popover-wrapper"] .bp3-menu')
+    const dropdownMenu = container.querySelector('[class~="bp4-popover-wrapper"] .bp4-menu')
     expect(dropdownMenu).not.toBeNull()
     if (!dropdownMenu) {
       throw Error('Drop down menu was not rendered.')
@@ -221,9 +224,9 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await wait()
+    await waitFor(() => {})
 
-    const secondaryView = container.querySelector('.bp3-popover-content form')
+    const secondaryView = container.querySelector('.bp4-popover-content form')
     expect(secondaryView).not.toBeNull()
 
     // Get environment input box and type in new option label
@@ -233,7 +236,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.change(environmentInputBox, { target: { value: items[0].label } })
-    await wait()
+    await waitFor(() => {})
 
     // submit changes
     const submitButton = secondaryView?.querySelector('button[type="submit"]')
@@ -242,7 +245,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.click(submitButton)
-    await waitForDomChange()
+    await waitFor(() => {})
 
     expect(onSubmitFunc).not.toHaveBeenCalled()
     getByText('secondaryOption_1 already exists. Please provide a unique option.')

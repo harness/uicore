@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, act, wait } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 
 import { MultiSelect, MultiSelectOption } from './MultiSelect'
 
@@ -27,7 +27,7 @@ describe('<MultiSelect/> tests', () => {
   test('works with static data', () => {
     const { container } = render(<MultiSelect items={items} allowCreatingNewItems={true} />)
     expect(container).toMatchSnapshot()
-    const input = container.querySelector('.bp3-input-ghost')!
+    const input = container.querySelector('.bp4-input-ghost')!
     expect(input).toBeDefined()
     fireEvent.keyDown(input, { key: 'Enter', code: 13 })
     expect(container.querySelectorAll('li.menuItem').length).toBe(items.length)
@@ -45,7 +45,7 @@ describe('<MultiSelect/> tests', () => {
     const { container, queryByText } = render(<MultiSelect items={asyncData} />)
     expect(container).toMatchSnapshot()
 
-    const input = container.querySelector('.bp3-input-ghost')!
+    const input = container.querySelector('.bp4-input-ghost')!
 
     expect(input).toBeDefined()
     fireEvent.focus(input)
@@ -56,7 +56,7 @@ describe('<MultiSelect/> tests', () => {
     await act(() => {
       jest.runTimersToTime(TIMEOUT)
 
-      return wait()
+      return Promise.resolve()
     })
 
     expect(container).toMatchSnapshot('Final state')
@@ -66,7 +66,7 @@ describe('<MultiSelect/> tests', () => {
 
   test('works with filtering', () => {
     const { container } = render(<MultiSelect items={items} allowCreatingNewItems={true} />)
-    const input = container.querySelector('.bp3-input-ghost')!
+    const input = container.querySelector('.bp4-input-ghost')!
     fireEvent.focus(input)
 
     fireEvent.change(input, { target: { value: 'cha' } })
@@ -77,7 +77,7 @@ describe('<MultiSelect/> tests', () => {
 
   test('should work when no matching results found', () => {
     const { container, queryByText } = render(<MultiSelect items={items} />)
-    const input = container.querySelector('.bp3-input-ghost')!
+    const input = container.querySelector('.bp4-input-ghost')!
 
     fireEvent.focus(input)
 
@@ -89,19 +89,19 @@ describe('<MultiSelect/> tests', () => {
 
   test('should work when new item is created', () => {
     const { container } = render(<MultiSelect items={items} allowCreatingNewItems={true} />)
-    const input = container.querySelector('.bp3-input-ghost')!
+    const input = container.querySelector('.bp4-input-ghost')!
 
     fireEvent.focus(input)
 
     fireEvent.change(input, { target: { value: 'newItem' } })
-    expect(container.querySelectorAll('.bp3-button-text').length).toBe(1)
-    expect(container.querySelectorAll('.bp3-button-text')[0].textContent).toBe('newItem')
+    expect(container.querySelectorAll('.bp4-button-text').length).toBe(1)
+    expect(container.querySelectorAll('.bp4-button-text')[0].textContent).toBe('newItem')
   })
 
   test(' works on Change', () => {
     const onChange = jest.fn()
     const { container, queryByText } = render(<MultiSelect items={items} onChange={onChange} />)
-    const input = container.querySelector('.bp3-input-ghost')!
+    const input = container.querySelector('.bp4-input-ghost')!
 
     fireEvent.focus(input)
     fireEvent.change(input, { target: { value: 'char' } })

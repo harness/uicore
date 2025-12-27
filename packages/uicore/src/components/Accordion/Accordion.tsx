@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { Collapse, ICollapseProps } from '@blueprintjs/core'
+import { Collapse, CollapseProps as BpCollapseProps } from '@blueprintjs/core'
 import cx from 'classnames'
 
 import css from './Accordion.css'
@@ -102,7 +102,7 @@ export interface AccordionProps {
   summaryClassName?: string
   detailsClassName?: string
   chevronClassName?: string
-  collapseProps?: Omit<ICollapseProps, 'isOpen'>
+  collapseProps?: Omit<BpCollapseProps, 'isOpen'>
   allowMultiOpen?: boolean
   onChange?(tabs: string | string[]): void
   /** Controlled accordion active ID which drives accordion state from onChange over internal toggle state  */

@@ -18,7 +18,8 @@ import {
   MultiSelectOption,
   MultiSelectProps as UiKitMultiSelectProps
 } from '../MultiSelect/MultiSelect'
-import { IconName, TagInput as BPTagInput, Popover, MenuItem, Menu, Position, IPopoverProps } from '@blueprintjs/core'
+import { IconName, TagInput as BPTagInput, MenuItem, Menu, Position } from '@blueprintjs/core'
+import { Popover, PopoverProps } from '../Popover/Popover'
 import { Utils } from '../../core/Utils'
 import { Checkbox as UiKitCheckbox, CheckboxProps as UiKitCheckboxProps } from '../Checkbox/Checkbox'
 import { Toggle as UiKitToggle, ToggleProps as UiKitToggleProps } from '../Toggle/Toggle'
@@ -27,16 +28,20 @@ import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButton/RadioBut
 import {
   FormGroup,
   InputGroup,
-  IFormGroupProps,
-  IInputGroupProps,
+  FormGroupProps as BpFormGroupProps,
+  InputGroupProps2 as BpInputGroupProps,
   Intent,
-  ITagInputProps,
-  ITextAreaProps,
-  IFileInputProps,
+  TagInputProps as BpTagInputProps,
+  TextAreaProps as BpTextAreaProps,
+  FileInputProps as BpFileInputProps,
   TextArea as BpTextArea,
   FileInput as BpFileInput,
   HTMLInputProps
 } from '@blueprintjs/core'
+
+// Using Blueprint's non-deprecated type names internally
+// (Aliasing to Bp prefix to avoid conflicts with component-specific props interfaces)
+// Note: Type aliases not needed as we import with `as Bp*` prefix directly
 import { defaultTo, get, isNil, omit, uniq } from 'lodash-es'
 import cx from 'classnames'
 import css from './FormikForm.css'
@@ -79,7 +84,8 @@ import {
 } from '../ExpressionInput/ExpressionInput'
 
 import { FormikTooltipContext } from './FormikTooltipContext'
-import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
+import { MultiTypeInputType, MultiTypeInputValue } from '../MultiTypeInput/MultiTypeInputUtils'
+import type { AcceptableValue } from '../MultiTypeInput/MultiTypeInput'
 import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended, escapeNewlines } from './utils'
@@ -92,7 +98,7 @@ import { SelectWithBiLevelOption } from 'components/Select/BiLevelSelect'
 
 export const getDefaultAutoCompleteValue = (): string => 'off'
 
-export interface TagInputProps<T> extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+export interface TagInputProps<T> extends Omit<BpFormGroupProps, 'labelFor' | 'items'> {
   name: string
   items: T[]
   labelFor: UiKitTagInputProps<T>['labelFor']
@@ -145,12 +151,12 @@ function TagInput<T>(props: TagInputProps<T> & FormikContextProps<any>) {
   )
 }
 
-export interface KVTagInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+export interface KVTagInputProps extends Omit<BpFormGroupProps, 'labelFor' | 'items'> {
   name: string
-  tagsProps?: Partial<ITagInputProps>
-  popoverProps?: Pick<IPopoverProps, 'captureDismiss'>
+  tagsProps?: Partial<BpTagInputProps>
+  popoverProps?: Pick<PopoverProps, 'captureDismiss'>
   isArray?: boolean
-  onChange?: ITagInputProps['onChange']
+  onChange?: BpTagInputProps['onChange']
 }
 
 type KVAccumulator = { [key: string]: string }
@@ -295,9 +301,9 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
   )
 }
 
-export interface MultiInputProps extends Omit<IFormGroupProps, 'labelFor' | 'items'> {
+export interface MultiInputProps extends Omit<BpFormGroupProps, 'labelFor' | 'items'> {
   name: string
-  tagsProps?: Partial<ITagInputProps>
+  tagsProps?: Partial<BpTagInputProps>
 }
 
 function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
@@ -343,7 +349,7 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
   )
 }
 
-export interface CustomRenderProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface CustomRenderProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   render: (formik: FormikExtended<any>, intent: Intent, disabled?: boolean, inline?: boolean) => React.ReactNode
 }
@@ -376,10 +382,10 @@ const CustomRender = (props: CustomRenderProps & FormikContextProps<any>) => {
   )
 }
 
-export interface FileInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FileInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
-  fileInput?: Omit<IFileInputProps, 'inputProps' | 'text' | 'buttonText'>
-  inputProps?: Omit<IFileInputProps['inputProps'], 'name' | 'disabled' | 'multiple'>
+  fileInput?: Omit<BpFileInputProps, 'inputProps' | 'text' | 'buttonText'>
+  inputProps?: Omit<BpFileInputProps['inputProps'], 'name' | 'disabled' | 'multiple'>
   placeholder?: string
   buttonText?: string
   onChange?: React.FormEventHandler<HTMLInputElement>
@@ -452,7 +458,7 @@ const FileInput = (props: FileInputProps & FormikContextProps<any>) => {
   )
 }
 
-export interface RadioGroupProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface RadioGroupProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   items: RadioButtonGroupProps['options']
   radioGroup?: Omit<RadioButtonGroupProps, 'selectedValue' | 'onChange' | 'options'>
@@ -499,7 +505,7 @@ const RadioGroup = (props: RadioGroupProps & FormikContextProps<any>) => {
   )
 }
 
-export interface CheckboxProps extends UiKitCheckboxProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+export interface CheckboxProps extends UiKitCheckboxProps, Omit<BpFormGroupProps, 'labelFor' | 'label'> {
   name: string
   label: string
   // When true, inverts the checkbox value (checked returns false, unchecked returns true)
@@ -548,7 +554,7 @@ const CheckBox = (props: CheckboxProps & FormikContextProps<any>) => {
   )
 }
 
-export interface ToggleProps extends UiKitToggleProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+export interface ToggleProps extends UiKitToggleProps, Omit<BpFormGroupProps, 'labelFor' | 'label'> {
   name: string
   label: string
 }
@@ -584,10 +590,10 @@ const Toggle = (props: ToggleProps & FormikContextProps<any>) => {
   )
 }
 
-export interface MultiSelectProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface MultiSelectProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   items: MultiSelectOption[]
-  tagInputProps?: ITagInputProps
+  tagInputProps?: BpTagInputProps
   placeholder?: string
   multiSelectProps?: Omit<UiKitMultiSelectProps, 'items' | 'onChange' | 'value' | 'tagInputProps'>
   onChange?: UiKitMultiSelectProps['onChange']
@@ -654,11 +660,11 @@ const MultiSelect = (props: MultiSelectProps & FormikContextProps<any>) => {
   )
 }
 
-export interface SelectProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface SelectProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   items: SelectOption[]
   placeholder?: string
-  inputGroup?: Omit<IInputGroupProps, 'name' | 'value'>
+  inputGroup?: Omit<BpInputGroupProps, 'name' | 'value'>
   selectProps?: Omit<UiKitSelectProps, 'items' | 'onChange' | 'value'>
   onChange?: UiKitSelectProps['onChange']
   usePortal?: UiKitSelectProps['usePortal']
@@ -700,14 +706,17 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
         usePortal={!!props.usePortal}
         name={name}
         addClearBtn={props.addClearButton || false}
-        inputProps={{
-          ...inputGroup,
-          autoComplete,
-          name,
-          intent,
-          placeholder: Utils.getSelectComponentPlaceholder(placeholder),
-          disabled: disabled
-        }}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        inputProps={
+          {
+            ...inputGroup,
+            autoComplete,
+            name,
+            intent,
+            placeholder: Utils.getSelectComponentPlaceholder(placeholder),
+            disabled: disabled
+          } as any
+        }
         {...selectProps}
         items={items}
         disabled={disabled}
@@ -722,7 +731,7 @@ const Select = (props: SelectProps & FormikContextProps<any>) => {
   )
 }
 
-export interface DropDownFormikProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface DropDownFormikProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   onChange?: DropDownProps['onChange']
   items: DropDownProps['items']
@@ -775,11 +784,11 @@ const DropDown = (props: DropDownFormikProps & FormikContextProps<any>) => {
   )
 }
 
-export interface TextProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface TextProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
-  inputGroup?: Omit<IInputGroupProps & HTMLInputProps, 'name' | 'value' | 'onChange' | 'placeholder'>
+  inputGroup?: Omit<BpInputGroupProps & HTMLInputProps, 'name' | 'value' | 'onChange' | 'placeholder'>
   placeholder?: string
-  onChange?: IInputGroupProps['onChange']
+  onChange?: BpInputGroupProps['onChange']
   isIdentifier?: boolean
   // to allow hyphen in identifier
   allowHyphen?: boolean
@@ -821,7 +830,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
           formik?.setFieldTouched(name, true, false)
           inputGroup?.onBlur?.(e)
         }}
-        onChange={(e: React.FormEvent<HTMLInputElement>) => {
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           if (isIdentifier) {
             const identifier = getIdentifierFromName(e.currentTarget.value, allowHyphen)
             formik?.setFieldValue(name, identifier)
@@ -839,7 +848,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
   )
 }
 
-export interface ExpressionInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface ExpressionInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   placeholder?: string
   expressionInputProps?: Omit<ExpressionInputLocalProps, 'name' | 'value' | 'onChange' | 'items'>
@@ -884,12 +893,12 @@ const ExpressionInput = (props: ExpressionInputProps & FormikContextProps<any>) 
     </FormGroup>
   )
 }
-export interface TextAreaProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface TextAreaProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   placeholder?: string
   autoFocus?: boolean
-  textArea?: Omit<ITextAreaProps, 'name' | 'value' | 'onChange'>
-  onChange?: ITextAreaProps['onChange']
+  textArea?: Omit<BpTextAreaProps, 'name' | 'value' | 'onChange'>
+  onChange?: BpTextAreaProps['onChange']
   maxLength?: number
 }
 
@@ -952,11 +961,11 @@ const Form = (props: FormikFormProps) => {
   const formElementRef = React.useRef<HTMLDivElement>(null)
   React.useLayoutEffect(() => {
     if (formElementRef?.current?.childElementCount) {
-      const formGroupElements = formElementRef?.current?.querySelectorAll('.bp3-form-group')
+      const formGroupElements = formElementRef?.current?.querySelectorAll('.bp4-form-group')
       formGroupElements?.forEach((element, index) => {
         const name =
           element.querySelector('[name]')?.getAttribute('name') ||
-          element.querySelector('.bp3-label')?.getAttribute('for')
+          element.querySelector('.bp4-label')?.getAttribute('for')
         element.setAttribute('data-id', `${name}-${index}`)
       })
     }
@@ -966,20 +975,25 @@ const Form = (props: FormikFormProps) => {
     formik.disabled = disabled
     formik.inline = inline
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const FormComponent = FrmForm as any
   return (
-    <FrmForm {...rest} className={cx(css.main, className)}>
+    <FormComponent {...rest} className={cx(css.main, className)}>
       <div ref={formElementRef}>{children}</div>
-    </FrmForm>
+    </FormComponent>
   )
 }
 
-export interface FormikProps<Values> extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
+export interface FormikProps<Values extends Record<string, unknown> = Record<string, unknown>>
+  extends Omit<FormikConfig<Values>, 'onSubmit' | 'render'> {
   formLoading?: boolean
   onSubmit: (values: Values, formikActions: FormikHelpers<Values>) => void | Promise<void> | Promise<Values>
   formName: string
 }
 
-export function Formik<Values = Record<string, unknown>>(props: FormikProps<Values>): React.ReactElement {
+export function Formik<Values extends Record<string, unknown> = Record<string, unknown>>(
+  props: FormikProps<Values>
+): React.ReactElement {
   const { formLoading = false, onSubmit, children, ...rest } = props
   const [isFormLoading, setFormLoading] = React.useState(false)
   React.useEffect(() => {
@@ -1001,7 +1015,7 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
 
   return (
     <FormikTooltipContext.Provider value={{ formName: props.formName }}>
-      <FrmFormik {...rest} onSubmit={onSubmitLocal}>
+      <FrmFormik<Values> {...rest} onSubmit={onSubmitLocal}>
         {formikProps => {
           return (
             <OverlaySpinner show={isFormLoading}>
@@ -1014,7 +1028,7 @@ export function Formik<Values = Record<string, unknown>>(props: FormikProps<Valu
   )
 }
 
-export interface FormColorPickerProps extends ColorPickerProps, Omit<IFormGroupProps, 'labelFor' | 'label'> {
+export interface FormColorPickerProps extends ColorPickerProps, Omit<BpFormGroupProps, 'labelFor' | 'label'> {
   name: string
   label: string
 }
@@ -1053,7 +1067,7 @@ const FormColorPicker = (props: FormColorPickerProps & FormikContextProps<any>) 
 
 type FetchSelectOptions = () => Promise<SelectOption[]>
 
-export interface FormMultiTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiTypeInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1095,10 +1109,10 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
   }, [props.selectItems])
 
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
-    (val, valueType, type) => {
+    (val: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as SelectOption | undefined)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
@@ -1162,13 +1176,14 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
           items,
           ...(isAsyncSelect ? { ...multiTypeInputProps?.selectProps, items } : multiTypeInputProps?.selectProps),
           name,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           inputProps: {
             name,
             autoComplete,
             intent,
             placeholder,
             disabled
-          },
+          } as any,
           loadingItems: loading
         }}
         onChange={onChangeCallback}
@@ -1182,7 +1197,7 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
     </FormGroup>
   )
 }
-export interface FormMultiTypeBiLevelInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiTypeBiLevelInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1210,10 +1225,10 @@ const FormMultiTypeBiLevelInput = (props: FormMultiTypeBiLevelInputProps & Formi
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: MultiTypeBiLevelInputProps['onChange'] = useCallback(
-    (val, valueType, type) => {
+    (val: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as SelectOption | undefined)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
@@ -1260,13 +1275,14 @@ const FormMultiTypeBiLevelInput = (props: FormMultiTypeBiLevelInputProps & Formi
           items: selectItems,
           ...multiTypeInputProps?.selectProps,
           name,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           inputProps: {
             name,
             autoComplete,
             intent,
             placeholder,
             disabled
-          }
+          } as any
         }}
         onChange={onChangeCallback}
       />
@@ -1274,7 +1290,7 @@ const FormMultiTypeBiLevelInput = (props: FormMultiTypeBiLevelInputProps & Formi
   )
 }
 
-export interface FormMultiSelectTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiSelectTypeInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1348,7 +1364,7 @@ const FormMultiSelectTypeInput = (props: FormMultiSelectTypeInputProps & FormikC
   )
 }
 
-export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormSelectWithSubmenuTypeInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1362,7 +1378,7 @@ export interface FormSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProp
   disabled?: boolean
 }
 
-export interface FormSelectWithSubmenuTypeInputPropsV2 extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormSelectWithSubmenuTypeInputPropsV2 extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1396,15 +1412,15 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
-    (val, type) => {
+    (val: AcceptableValue | undefined, _valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as SelectOption | undefined)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
       formik?.setFieldTouched(name, true, false)
-      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val)
+      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val as SelectWithSubmenuOption)
     },
     [formik, selectWithSubmenuTypeInputProps]
   )
@@ -1435,16 +1451,19 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
         value={value}
         name={name}
         disabled={disabled}
-        selectWithSubmenuProps={{
-          items: selectItems,
-          ...selectWithSubmenuTypeInputProps?.selectWithSubmenuProps,
-          inputProps: {
-            name,
-            intent,
-            placeholder,
-            disabled
-          }
-        }}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        selectWithSubmenuProps={
+          {
+            items: selectItems,
+            ...selectWithSubmenuTypeInputProps?.selectWithSubmenuProps,
+            inputProps: {
+              name,
+              intent,
+              placeholder,
+              disabled
+            }
+          } as any
+        }
         onChange={onChangeCallback}
       />
     </FormGroup>
@@ -1474,15 +1493,16 @@ const FormSelectWithSubmenuTypeInputV2 = (props: FormSelectWithSubmenuTypeInputP
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: SelectWithSubmenuTypeInputPropsV2['onChange'] = useCallback(
-    (val, valueType, type) => {
+    (val: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as SelectOption | undefined)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
       formik?.setFieldTouched(name, true, false)
-      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val, valueType, type)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val as SelectOption, valueType as any, type)
     },
     [formik, selectWithSubmenuTypeInputProps]
   )
@@ -1517,12 +1537,13 @@ const FormSelectWithSubmenuTypeInputV2 = (props: FormSelectWithSubmenuTypeInputP
           items: selectItems,
           ...selectWithSubmenuTypeInputProps?.selectWithSubmenuProps,
           name,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           inputProps: {
             name,
             intent,
             placeholder,
             disabled
-          }
+          } as any
         }}
         onChange={onChangeCallback}
       />
@@ -1530,7 +1551,7 @@ const FormSelectWithSubmenuTypeInputV2 = (props: FormSelectWithSubmenuTypeInputP
   )
 }
 
-export interface FormMultiSelectWithSubmenuTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiSelectWithSubmenuTypeInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1551,7 +1572,8 @@ const FormMultiSelectWithSubmenuTypeInput = (
     ...rest
   } = restProps
   const onChangeCallback: SelectWithSubmenuTypeInputPropsV2['onChange'] = useCallback(
-    val => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (val: any) => {
       formik?.setFieldValue(name, val)
       formik?.setFieldTouched(name, true, false)
       multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.onChange?.(val)
@@ -1588,7 +1610,7 @@ const FormMultiSelectWithSubmenuTypeInput = (
   )
 }
 
-export interface FormMultiTextTypeInputProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiTextTypeInputProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: ReactNode | string
   placeholder?: string
@@ -1610,7 +1632,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
   const _value = get(formik?.values, name, '')
   const value = escapeNewlines(_value)
   const valueType = getMultiTypeFromValue(value)
-  const customTextInputProps: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'> = useMemo(
+  const customTextInputProps: Omit<BpInputGroupProps & HTMLInputProps, 'onChange' | 'value'> = useMemo(
     () => ({
       ...multiTextInputProps?.textProps,
       name,
@@ -1657,7 +1679,7 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
   )
 }
 
-export interface FormCategorizedSelect extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormCategorizedSelect extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1714,7 +1736,7 @@ const FormCategorizedSelect = (props: FormCategorizedSelect & FormikContextProps
   )
 }
 
-export interface FormSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormSelectWithSubviewProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string
@@ -1775,7 +1797,7 @@ const FormSelectWithSubview = (props: FormSelectWithSubviewProps & FormikContext
   )
 }
 
-export interface FormMultiSelectWithSubviewProps extends Omit<IFormGroupProps, 'labelFor'> {
+export interface FormMultiSelectWithSubviewProps extends Omit<BpFormGroupProps, 'labelFor'> {
   name: string
   label: string
   placeholder?: string

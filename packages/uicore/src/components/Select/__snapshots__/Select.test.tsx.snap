@@ -3,95 +3,97 @@
 exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-input-group main bp4-popover2-target bp4-popover2-open"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="listbox-2"
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      autocomplete="off"
+      class="bp4-input"
+      placeholder="- Select -"
+      role="combobox"
+      style="padding-right: 0px;"
+      type="text"
+      value="cha"
+    />
+    <span
+      class="bp4-input-action"
+    >
+      <span
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
+        icon="chevron-down"
+      >
+        <svg
+          data-icon="chevron-down"
+          height="14"
+          role="img"
+          viewBox="0 0 16 16"
+          width="14"
+        >
+          <path
+            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    aria-live="polite"
+    class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      class="bp4-popover2-transition-container bp4-overlay-content bp4-popover2-appear bp4-popover2-appear-active"
+      style="position: absolute; left: 0px; top: 0px; width: 0px;"
     >
       <div
-        class="bp3-input-group"
-      >
-        <input
-          class="bp3-input"
-          placeholder="- Select -"
-          style="padding-right: 0px;"
-          type="text"
-          value="cha"
-        />
-        <span
-          class="bp3-input-action"
-        >
-          <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
-            icon="chevron-down"
-          >
-            <svg
-              data-icon="chevron-down"
-              height="14"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <desc>
-                chevron-down
-              </desc>
-              <path
-                d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-    </div>
-    <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
-    >
-      <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+        class="bp4-popover2 bp4-minimal bp4-popover2-match-target-width bp4-popover2-placement-bottom bp4-suggest-popover popover"
+        style="transform-origin: center top;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover2-content"
         >
-          <div
-            class="bp3-popover-content"
-          >
-            <div>
-              <ul
-                class="bp3-menu"
+          <div>
+            <ul
+              aria-label="selectable options"
+              class="bp4-menu"
+              id="listbox-2"
+              role="listbox"
+            >
+              <li
+                class="menuItem active"
               >
-                <li
-                  class="menuItem active"
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Charmander
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Charmander
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Charmeleon
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Charmeleon
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Charizard
-                  </p>
-                </li>
-              </ul>
-            </div>
+                  Charizard
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -103,265 +105,267 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
 exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-input-group main bp4-popover2-target bp4-popover2-open"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="listbox-2"
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      autocomplete="off"
+      class="bp4-input"
+      placeholder="- Select -"
+      role="combobox"
+      style="padding-right: 0px;"
+      type="text"
+      value=""
+    />
+    <span
+      class="bp4-input-action"
+    >
+      <span
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
+        icon="chevron-down"
+      >
+        <svg
+          data-icon="chevron-down"
+          height="14"
+          role="img"
+          viewBox="0 0 16 16"
+          width="14"
+        >
+          <path
+            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    aria-live="polite"
+    class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      class="bp4-popover2-transition-container bp4-overlay-content bp4-popover2-appear bp4-popover2-appear-active"
+      style="position: absolute; left: 0px; top: 0px; width: 0px;"
     >
       <div
-        class="bp3-input-group"
-      >
-        <input
-          class="bp3-input"
-          placeholder="- Select -"
-          style="padding-right: 0px;"
-          type="text"
-          value=""
-        />
-        <span
-          class="bp3-input-action"
-        >
-          <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
-            icon="chevron-down"
-          >
-            <svg
-              data-icon="chevron-down"
-              height="14"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <desc>
-                chevron-down
-              </desc>
-              <path
-                d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-    </div>
-    <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
-    >
-      <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+        class="bp4-popover2 bp4-minimal bp4-popover2-match-target-width bp4-popover2-placement-bottom bp4-suggest-popover popover"
+        style="transform-origin: center top;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover2-content"
         >
-          <div
-            class="bp3-popover-content"
-          >
-            <div>
-              <ul
-                class="bp3-menu"
+          <div>
+            <ul
+              aria-label="selectable options"
+              class="bp4-menu"
+              id="listbox-2"
+              role="listbox"
+            >
+              <li
+                class="menuItem active"
               >
-                <li
-                  class="menuItem active"
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Bulbasaur
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Bulbasaur
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Ivysaur
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Ivysaur
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Venusaur
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Venusaur
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Charmander
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Charmander
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Charmeleon
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Charmeleon
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Charizard
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Charizard
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Squirtle
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Squirtle
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Wartortle
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Wartortle
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Blastoise
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Blastoise
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Caterpie
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Caterpie
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Metapod
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Metapod
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Butterfree
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Butterfree
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Weedle
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Weedle
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Kakuna
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Kakuna
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Beedrill
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Beedrill
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Pidgey
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Pidgey
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Pidgeotto
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Pidgeotto
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Pidgeot
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Pidgeot
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Rattata
-                  </p>
-                </li>
-                <li
-                  class="menuItem"
+                  Rattata
+                </p>
+              </li>
+              <li
+                class="menuItem"
+              >
+                <p
+                  class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
+                  style="--text-line-clamp: 1;"
                 >
-                  <p
-                    class="StyledProps--font lineclamp StyledProps--main menuItemLabel"
-                    style="--text-line-clamp: 1;"
-                  >
-                    Raticate
-                  </p>
-                </li>
-              </ul>
-            </div>
+                  Raticate
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -373,70 +377,72 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
 exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-input-group main bp4-popover2-target bp4-popover2-open"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="listbox-3"
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      autocomplete="off"
+      class="bp4-input"
+      placeholder="- Select -"
+      role="combobox"
+      style="padding-right: 0px;"
+      type="text"
+      value="abcde"
+    />
+    <span
+      class="bp4-input-action"
+    >
+      <span
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
+        icon="chevron-down"
+      >
+        <svg
+          data-icon="chevron-down"
+          height="14"
+          role="img"
+          viewBox="0 0 16 16"
+          width="14"
+        >
+          <path
+            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    aria-live="polite"
+    class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      class="bp4-popover2-transition-container bp4-overlay-content bp4-popover2-appear bp4-popover2-appear-active"
+      style="position: absolute; left: 0px; top: 0px; width: 0px;"
     >
       <div
-        class="bp3-input-group"
-      >
-        <input
-          class="bp3-input"
-          placeholder="- Select -"
-          style="padding-right: 0px;"
-          type="text"
-          value="abcde"
-        />
-        <span
-          class="bp3-input-action"
-        >
-          <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
-            icon="chevron-down"
-          >
-            <svg
-              data-icon="chevron-down"
-              height="14"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <desc>
-                chevron-down
-              </desc>
-              <path
-                d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-    </div>
-    <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
-    >
-      <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+        class="bp4-popover2 bp4-minimal bp4-popover2-match-target-width bp4-popover2-placement-bottom bp4-suggest-popover popover"
+        style="transform-origin: center top;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover2-content"
         >
-          <div
-            class="bp3-popover-content"
-          >
-            <div>
-              <ul
-                class="bp3-menu"
+          <div>
+            <ul
+              aria-label="selectable options"
+              class="bp4-menu"
+              id="listbox-3"
+              role="listbox"
+            >
+              <div
+                class="noResultsFound"
               >
-                <div
-                  class="noResultsFound"
-                >
-                  No Match Found
-                </div>
-              </ul>
-            </div>
+                No Match Found
+              </div>
+            </ul>
           </div>
         </div>
       </div>
@@ -448,46 +454,43 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
 exports[`<Select/> tests works with async data 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-input-group main bp4-popover2-target"
   >
-    <div
-      class="bp3-popover-target"
+    <input
+      aria-autocomplete="list"
+      aria-controls="listbox-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      autocomplete="off"
+      class="bp4-input"
+      placeholder="- Select -"
+      role="combobox"
+      style="padding-right: 0px;"
+      type="text"
+      value=""
+    />
+    <span
+      class="bp4-input-action"
     >
-      <div
-        class="bp3-input-group"
+      <span
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
+        icon="chevron-down"
       >
-        <input
-          class="bp3-input"
-          placeholder="- Select -"
-          style="padding-right: 0px;"
-          type="text"
-          value=""
-        />
-        <span
-          class="bp3-input-action"
+        <svg
+          data-icon="chevron-down"
+          height="14"
+          role="img"
+          viewBox="0 0 16 16"
+          width="14"
         >
-          <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
-            icon="chevron-down"
-          >
-            <svg
-              data-icon="chevron-down"
-              height="14"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <desc>
-                chevron-down
-              </desc>
-              <path
-                d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-    </div>
+          <path
+            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
   </div>
 </div>
 `;
@@ -495,70 +498,72 @@ exports[`<Select/> tests works with async data 1`] = `
 exports[`<Select/> tests works with async data: Loading state 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-input-group main bp4-popover2-target bp4-popover2-open"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="listbox-1"
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      autocomplete="off"
+      class="bp4-input"
+      placeholder="- Select -"
+      role="combobox"
+      style="padding-right: 0px;"
+      type="text"
+      value=""
+    />
+    <span
+      class="bp4-input-action"
+    >
+      <span
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
+        icon="chevron-down"
+      >
+        <svg
+          data-icon="chevron-down"
+          height="14"
+          role="img"
+          viewBox="0 0 16 16"
+          width="14"
+        >
+          <path
+            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    aria-live="polite"
+    class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      class="bp4-popover2-transition-container bp4-overlay-content bp4-popover2-appear bp4-popover2-appear-active"
+      style="position: absolute; left: 0px; top: 0px; width: 0px;"
     >
       <div
-        class="bp3-input-group"
-      >
-        <input
-          class="bp3-input"
-          placeholder="- Select -"
-          style="padding-right: 0px;"
-          type="text"
-          value=""
-        />
-        <span
-          class="bp3-input-action"
-        >
-          <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
-            icon="chevron-down"
-          >
-            <svg
-              data-icon="chevron-down"
-              height="14"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <desc>
-                chevron-down
-              </desc>
-              <path
-                d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-    </div>
-    <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
-    >
-      <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+        class="bp4-popover2 bp4-minimal bp4-popover2-match-target-width bp4-popover2-placement-bottom bp4-suggest-popover popover"
+        style="transform-origin: center top;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover2-content"
         >
-          <div
-            class="bp3-popover-content"
-          >
-            <div>
-              <ul
-                class="bp3-menu"
+          <div>
+            <ul
+              aria-label="selectable options"
+              class="bp4-menu"
+              id="listbox-1"
+              role="listbox"
+            >
+              <li
+                class="menuItem loading"
               >
-                <li
-                  class="menuItem loading"
-                >
-                  Loading results...
-                </li>
-              </ul>
-            </div>
+                Loading results...
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -570,46 +575,43 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
 exports[`<Select/> tests works with static data 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-input-group main bp4-popover2-target"
   >
-    <div
-      class="bp3-popover-target"
+    <input
+      aria-autocomplete="list"
+      aria-controls="listbox-0"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      autocomplete="off"
+      class="bp4-input"
+      placeholder="- Select -"
+      role="combobox"
+      style="padding-right: 0px;"
+      type="text"
+      value=""
+    />
+    <span
+      class="bp4-input-action"
     >
-      <div
-        class="bp3-input-group"
+      <span
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
+        icon="chevron-down"
       >
-        <input
-          class="bp3-input"
-          placeholder="- Select -"
-          style="padding-right: 0px;"
-          type="text"
-          value=""
-        />
-        <span
-          class="bp3-input-action"
+        <svg
+          data-icon="chevron-down"
+          height="14"
+          role="img"
+          viewBox="0 0 16 16"
+          width="14"
         >
-          <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
-            icon="chevron-down"
-          >
-            <svg
-              data-icon="chevron-down"
-              height="14"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <desc>
-                chevron-down
-              </desc>
-              <path
-                d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-    </div>
+          <path
+            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
   </div>
 </div>
 `;

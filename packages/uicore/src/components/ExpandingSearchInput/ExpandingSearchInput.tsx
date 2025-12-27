@@ -183,11 +183,11 @@ export function ExpandingSearchInput(
     }
   }))
 
-  const cssMain = `bp3-input-group ui-search-box ${css.main} ${className} ${flip && !alwaysExpanded ? css.flip : ''} ${
+  const cssMain = `bp4-input-group ui-search-box ${css.main} ${className} ${flip && !alwaysExpanded ? css.flip : ''} ${
     alwaysExpanded ? css.alwaysExpanded : ''
   } ${theme === 'dark' ? css.dark : css.light}`
 
-  const cssInput = `bp3-input ${inputNoTransition ? css.notransition : ''} ${
+  const cssInput = `bp4-input ${inputNoTransition ? css.notransition : ''} ${
     showPrevNextButtons ? css.find : css.filter
   }`
 

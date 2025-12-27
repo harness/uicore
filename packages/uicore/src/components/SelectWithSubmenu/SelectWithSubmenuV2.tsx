@@ -8,7 +8,8 @@
 import React, { useCallback } from 'react'
 import cx from 'classnames'
 import { omit } from 'lodash-es'
-import { Menu, MenuItem, Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
+import { Menu, MenuItem, PopoverInteractionKind, Position } from '@blueprintjs/core'
+import { Popover } from '../Popover/Popover'
 
 import { Text } from '../Text/Text'
 
@@ -82,19 +83,7 @@ export function SelectWithSubmenuV2(props: SelectWithSubmenuPropsV2) {
           minimal
           usePortal
           className={css.wrapperClassName}
-          targetClassName={css.targetClassName}
-          modifiers={{
-            preventOverflow: {
-              // This is required to always attach the popover portal to the start of the reference instead of the middle
-              escapeWithReference: true
-            },
-            offset: {
-              // This is required to offset the portal after it is attached to the reference.
-              // By default the portal is positioned at top: 0, left:0 wrt it's reference
-              // -2 is to adjust for the removed
-              offset: '0 2'
-            }
-          }}>
+          popoverClassName={css.targetClassName}>
           <li
             key={item.value?.toString()}
             className={cx(selectCss.menuItem, css.menuItem)}

@@ -5,15 +5,15 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-.bp3-popover-wrapper.multiSelect {
+.bp4-popover-wrapper.multiSelect {
   width: 250px;
 }
-.bp3-popover-wrapper.multiSelect .bp3-input {
+.bp4-popover-wrapper.multiSelect .bp4-input {
   border: 1px solid transparent;
 }
 
-tr:hover .bp3-popover-wrapper.multiSelect .bp3-input,
-.bp3-popover-wrapper.multiSelect .bp3-input:hover,
-.bp3-popover-wrapper.multiSelect .bp3-popover-open .bp3-input {
+tr:hover .bp4-popover-wrapper.multiSelect .bp4-input,
+.bp4-popover-wrapper.multiSelect .bp4-input:hover,
+.bp4-popover-wrapper.multiSelect .bp4-popover-open .bp4-input {
   border: 1px solid var(--grey-400);
 }

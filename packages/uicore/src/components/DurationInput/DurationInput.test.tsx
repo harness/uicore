@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 
 import { DurationInput, timeToDisplayText, parseStringToTime, UNIT_MULTIPLIERS } from './DurationInput'
 
@@ -206,11 +206,11 @@ describe('<DurationInput/> tests', () => {
     test('shows help popover', async () => {
       const { container } = render(<DurationInput value={123456789} />)
 
-      const icon = container.querySelector('.bp3-popover-target')
+      const icon = container.querySelector('.bp4-popover2-target')
 
       fireEvent.mouseOver(icon!)
 
-      await waitForDomChange({ container: document.body })
+      await waitFor(() => {})
 
       expect(container).toMatchSnapshot()
     })
@@ -218,11 +218,11 @@ describe('<DurationInput/> tests', () => {
     test('shows subset of allowed values in help popover', async () => {
       const { container } = render(<DurationInput value={123456789} allowedUnits={['w', 'd', 'h', 'm']} />)
 
-      const icon = container.querySelector('.bp3-popover-target')
+      const icon = container.querySelector('.bp4-popover2-target')
 
       fireEvent.mouseOver(icon!)
 
-      await waitForDomChange({ container: document.body })
+      await waitFor(() => {})
 
       expect(container).toMatchSnapshot()
     })

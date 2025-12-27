@@ -6,16 +6,16 @@
  */
 
 import React from 'react'
-import { Tabs as BpTabs, Tab, ITabsProps, ITabProps } from '@blueprintjs/core'
+import { Tabs as BpTabs, Tab, TabsProps as BpTabsProps, TabProps as BpTabProps } from '@blueprintjs/core'
 import css from './Tabs.css'
 import cx from 'classnames'
 
 import { Icon, IconProps } from '@harness/icons'
 
-interface TabProps extends ITabProps {
+interface TabProps extends BpTabProps {
   iconProps?: IconProps
 }
-interface TabsProps extends Omit<ITabsProps, 'renderActiveTabPanelOnly'> {
+interface TabsProps extends Omit<BpTabsProps, 'renderActiveTabPanelOnly'> {
   renderAllTabPanels?: boolean
   children?: React.ReactNode
   // TODO: Remove optional field for tablist when old tab code in ng  is migrated to tablist props usage

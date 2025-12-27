@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, act, wait } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 
 import { Select, SelectOption } from './Select'
 
@@ -29,7 +29,7 @@ describe('<Select/> tests', () => {
 
     expect(container).toMatchSnapshot()
 
-    const input = container.querySelector('.bp3-input')
+    const input = container.querySelector('.bp4-input')
 
     expect(input).toBeDefined()
   })
@@ -46,7 +46,7 @@ describe('<Select/> tests', () => {
     const { container, queryByText } = render(<Select items={asyncData} />)
     expect(container).toMatchSnapshot()
 
-    const input = container.querySelector('.bp3-input')!
+    const input = container.querySelector('.bp4-input')!
 
     expect(input).toBeDefined()
     fireEvent.focus(input)
@@ -57,7 +57,7 @@ describe('<Select/> tests', () => {
     await act(() => {
       jest.runTimersToTime(TIMEOUT)
 
-      return wait()
+      return Promise.resolve()
     })
 
     // expect(container).toMatchSnapshot('Final state')
@@ -66,7 +66,7 @@ describe('<Select/> tests', () => {
 
   test('basic filter works', () => {
     const { container } = render(<Select items={items} />)
-    const input = container.querySelector('.bp3-input')!
+    const input = container.querySelector('.bp4-input')!
 
     fireEvent.focus(input)
 
@@ -81,7 +81,7 @@ describe('<Select/> tests', () => {
 
   test('no matching results', () => {
     const { container, queryByText } = render(<Select items={items} />)
-    const input = container.querySelector('.bp3-input')!
+    const input = container.querySelector('.bp4-input')!
 
     fireEvent.focus(input)
 
@@ -96,7 +96,7 @@ describe('<Select/> tests', () => {
   test('onChange', () => {
     const onChange = jest.fn()
     const { container, queryByText } = render(<Select items={items} onChange={onChange} />)
-    const input = container.querySelector('.bp3-input')!
+    const input = container.querySelector('.bp4-input')!
 
     fireEvent.focus(input)
     fireEvent.change(input, { target: { value: 'char' } })

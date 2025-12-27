@@ -9,7 +9,10 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { CollapsableSelectOptions, CollapsableSelectType, FormikCollapsableSelect } from './CollapsableSelect'
-import { Form, Formik } from 'formik'
+import { Form as FormikForm, Formik } from 'formik'
+
+// Cast Form to avoid React 18 type issues with Formik
+const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
 import { Icon } from '@harness/icons'

@@ -9,7 +9,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { Tag, Layout } from '../..'
-import { ITagProps } from '@blueprintjs/core'
+import { TagProps as BpTagProps } from '@blueprintjs/core'
 import { Intent } from '@harness/design-system'
 
 export default {
@@ -50,7 +50,7 @@ export default {
     )
   ]
 } as Meta
-export const Basic: Story<ITagProps> = args => {
+export const Basic: Story<BpTagProps> = args => {
   return (
     <>
       <Tag {...args}>Default</Tag>
@@ -69,7 +69,7 @@ export const Basic: Story<ITagProps> = args => {
     </>
   )
 }
-export const MinimalTag: Story<ITagProps> = args => {
+export const MinimalTag: Story<BpTagProps> = args => {
   return (
     <>
       <Tag minimal {...args}>
@@ -90,7 +90,7 @@ export const MinimalTag: Story<ITagProps> = args => {
     </>
   )
 }
-export const LargeTag: Story<ITagProps> = args => {
+export const LargeTag: Story<BpTagProps> = args => {
   return (
     <>
       <Tag large {...args}>

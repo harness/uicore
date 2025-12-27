@@ -9,10 +9,10 @@ import React from 'react'
 import cx from 'classnames'
 import { isNil } from 'lodash-es'
 import { Container, Icon } from '../..'
-import { Dialog as BluePrintDialog, IDialogProps } from '@blueprintjs/core'
+import { Dialog as BluePrintDialog, DialogProps as BpDialogProps } from '@blueprintjs/core'
 import css from './Dialog.css'
 
-export interface DialogProps extends IDialogProps {
+export interface DialogProps extends BpDialogProps {
   footer?: JSX.Element | JSX.Element[]
   children?: JSX.Element | JSX.Element[]
   chidrenClassName?: string

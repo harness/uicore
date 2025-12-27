@@ -47,8 +47,8 @@ const renderFormikFormWithoutFormName = (
   )
 }
 
-// '.select' class for inner 'bp3-popover-wrapper' container
-const findPopoverWrapperContainer = (): HTMLElement | null => document.querySelector('.bp3-popover-wrapper.select')
+// '.select' class for inner 'bp4-popover-wrapper' container
+const findPopoverWrapperContainer = (): HTMLElement | null => document.querySelector('.bp4-popover-wrapper.select')
 
 describe('Test basic Components', () => {
   test('should render Text component', () => {
@@ -319,10 +319,10 @@ describe('Test basic Components', () => {
       )
     )
     const dropDownButton = container
-      .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
+      .querySelector(`[name="label-multitypeinput"] + [class*="bp4-input-action"]`)
       ?.querySelector('[data-icon="chevron-down"]')
     fireEvent.click(dropDownButton!)
-    const selectListMenu = document.body.querySelector('.bp3-menu')
+    const selectListMenu = document.body.querySelector('.bp4-menu')
     const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')
 
     act(() => {
@@ -331,11 +331,18 @@ describe('Test basic Components', () => {
     const inputSelect = container.querySelector(`[name="label-multitypeinput"]`)
     expect((inputSelect as any).value).toBe('LabelA') // selected value A
 
-    // add manual value
+    // add manual value - re-open dropdown first to show the "create new" button
+    fireEvent.click(dropDownButton!)
+    await waitFor(() => {
+      expect(document.body.querySelector('.bp4-menu')).toBeInTheDocument()
+    })
     act(() => {
       fireEvent.change(inputSelect!, { target: { value: 'customvalue' } })
     })
-    const addButton = document.body.querySelector('.bp3-menu')?.querySelector('[icon="plus"]')
+    await waitFor(() => {
+      expect(document.body.querySelector('.bp4-menu')?.querySelector('[icon="plus"]')).toBeInTheDocument()
+    })
+    const addButton = document.body.querySelector('.bp4-menu')?.querySelector('[icon="plus"]')
     act(() => {
       fireEvent.click(addButton!)
     })
@@ -372,10 +379,10 @@ describe('Test basic Components', () => {
       )
     )
     const dropDownButton = container
-      .querySelector(`[name="label-multitypeinput"] + [class*="bp3-input-action"]`)
+      .querySelector(`[name="label-multitypeinput"] + [class*="bp4-input-action"]`)
       ?.querySelector('[data-icon="chevron-down"]')
     fireEvent.click(dropDownButton!)
-    const selectListMenu = document.body.querySelector('.bp3-menu')
+    const selectListMenu = document.body.querySelector('.bp4-menu')
     const selectItem = await findByText(selectListMenu as HTMLElement, 'LabelA')
 
     act(() => {
@@ -383,11 +390,18 @@ describe('Test basic Components', () => {
     })
     const inputSelect = container.querySelector(`[name="label-multitypeinput"]`)
     expect((inputSelect as any).value).toBe('LabelA') // selected value A
-    // add manual value
+    // add manual value - re-open dropdown first to show the "create new" button
+    fireEvent.click(dropDownButton!)
+    await waitFor(() => {
+      expect(document.body.querySelector('.bp4-menu')).toBeInTheDocument()
+    })
     act(() => {
       fireEvent.change(inputSelect!, { target: { value: 'customvalue' } })
     })
-    const addButton = document.body.querySelector('.bp3-menu')?.querySelector('[icon="plus"]')
+    await waitFor(() => {
+      expect(document.body.querySelector('.bp4-menu')?.querySelector('[icon="plus"]')).toBeInTheDocument()
+    })
+    const addButton = document.body.querySelector('.bp4-menu')?.querySelector('[icon="plus"]')
     act(() => {
       fireEvent.click(addButton!)
     })

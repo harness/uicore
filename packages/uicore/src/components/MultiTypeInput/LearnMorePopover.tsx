@@ -7,7 +7,8 @@
 
 import React from 'react'
 import { I18nResource } from '@harness/design-system'
-import { Popover, PopoverPosition } from '@blueprintjs/core'
+import { PopoverPosition } from '@blueprintjs/core'
+import { Popover } from '../Popover/Popover'
 import { Icon } from '@harness/icons'
 import cx from 'classnames'
 
@@ -82,7 +83,7 @@ export interface LearnMorePopoverProps {
 export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactElement {
   const { i18n, type, isLearnMoreOpen, dontShowAgain, customPopoverInfo, setDontShowAgain, setIsLearnMoreOpen } = props
 
-  const labelText = customPopoverInfo ? customPopoverInfo?.label : i18n[labels[type]]
+  const labelText = customPopoverInfo ? customPopoverInfo?.label : (i18n[labels[type]] as string)
   const helperTextValue = customPopoverInfo ? customPopoverInfo?.helperText : helperText[type]
 
   function handleChange(e: React.FormEvent<HTMLInputElement>): void {
@@ -97,7 +98,7 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
   const popoverContent = (
     <div onClick={e => e.stopPropagation()}>
       <div className={css.learnMore}>
-        <span>{i18n.learnMore}</span>
+        <span>{i18n.learnMore as string}</span>
         <Button icon="cross" onClick={() => setIsLearnMoreOpen(false)} variation={ButtonVariation.ICON} />
       </div>
       <div className={css.body}>
@@ -123,7 +124,7 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
       position={PopoverPosition.LEFT}
       popoverClassName={css.learnMorePopover}
       className={css.learnMoreWrapper}
-      modifiers={{ offset: { offset: '0px 0px' }, arrow: { enabled: false } }}>
+>
       <div className={css.menuItem}>
         <span className={css.menuItemLabel}>{labelText}</span>
         <Icon

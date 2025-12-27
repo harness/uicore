@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { HTMLTable, IHTMLTableProps } from '@blueprintjs/core'
+import { HTMLTable, HTMLTableProps as BpHTMLTableProps } from '@blueprintjs/core'
 import { useTable, Column, Row } from 'react-table'
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -15,7 +15,7 @@ export interface TableProps<T extends object> {
   data: T[]
   renderCustomRow?: (row: Row<T>) => JSX.Element
   className?: string
-  bpTableProps: IHTMLTableProps
+  bpTableProps: BpHTMLTableProps
   hideHeaders?: boolean
 }
 

@@ -6,19 +6,16 @@ exports[`Render basic component should check snapshot with email 1`] = `
     class="Avatar contentStyle"
   >
     <span
-      class="bp3-popover-wrapper avatarPopOver"
+      aria-haspopup="true"
+      class="avatarPopOver bp4-popover2-target"
     >
-      <span
-        class="bp3-popover-target"
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+        tabindex="0"
       >
-        <div
-          class="AvatarInner"
-          style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-          tabindex="0"
-        >
-          JD
-        </div>
-      </span>
+        JD
+      </div>
     </span>
   </div>
 </div>
@@ -30,24 +27,21 @@ exports[`Render basic component should check snapshot with image 1`] = `
     class="Avatar contentStyle"
   >
     <span
-      class="bp3-popover-wrapper avatarPopOver"
+      aria-haspopup="true"
+      class="avatarPopOver bp4-popover2-target"
     >
-      <span
-        class="bp3-popover-target"
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+        tabindex="0"
       >
-        <div
-          class="AvatarInner"
-          style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-          tabindex="0"
-        >
-          <img
-            alt=""
-            class="imageStyle"
-            src="https://www.mangaship.com/Content/img/human-avatar.png"
-            style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
-          />
-        </div>
-      </span>
+        <img
+          alt=""
+          class="imageStyle"
+          src="https://www.mangaship.com/Content/img/human-avatar.png"
+          style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
+        />
+      </div>
     </span>
   </div>
 </div>
@@ -59,19 +53,16 @@ exports[`Render basic component should check snapshot with name 1`] = `
     class="Avatar contentStyle"
   >
     <span
-      class="bp3-popover-wrapper avatarPopOver"
+      aria-haspopup="true"
+      class="avatarPopOver bp4-popover2-target"
     >
-      <span
-        class="bp3-popover-target"
+      <div
+        class="AvatarInner"
+        style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+        tabindex="0"
       >
-        <div
-          class="AvatarInner"
-          style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-          tabindex="0"
-        >
-          JD
-        </div>
-      </span>
+        JD
+      </div>
     </span>
   </div>
 </div>

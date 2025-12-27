@@ -5,14 +5,14 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Radio as BpRadio, RadioGroup as BpRadioGroup, IRadioProps } from '@blueprintjs/core'
+import { Radio as BpRadio, RadioGroup as BpRadioGroup, RadioProps as BpRadioProps } from '@blueprintjs/core'
 import { StyledProps, omitStyledProps, styledClasses } from '@harness/design-system'
 import React, { FormEvent } from 'react'
 import { styledClass } from '@harness/design-system'
 
 import css from './Radio.css'
 
-export interface RadioGroupProps extends Omit<IRadioProps, 'onChange'>, StyledProps {
+export interface RadioGroupProps extends Omit<BpRadioProps, 'onChange'>, StyledProps {
   /** onChange event handler */
   onChange?: (event: FormEvent<HTMLInputElement>) => void
 
@@ -23,7 +23,7 @@ export interface RadioGroupProps extends Omit<IRadioProps, 'onChange'>, StyledPr
   children?: React.ReactNode
 }
 
-export interface RadioProps extends Omit<IRadioProps, 'onChange'>, StyledProps {
+export interface RadioProps extends Omit<BpRadioProps, 'onChange'>, StyledProps {
   /** onChange event handler */
   onChange?: (event: FormEvent<HTMLInputElement>) => void
 

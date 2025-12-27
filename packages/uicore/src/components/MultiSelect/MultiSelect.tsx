@@ -9,7 +9,11 @@ import React, { ReactElement } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
 import { defaultTo } from 'lodash-es'
-import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } from '@blueprintjs/select'
+import {
+  MultiSelect2 as BPMultiSelect,
+  MultiSelect2Props as BpMultiSelectProps,
+  ItemRendererProps as BpItemRendererProps
+} from '@blueprintjs/select'
 
 import css from './MultiSelect.css'
 import { Button } from '../../components/Button/Button'
@@ -23,7 +27,7 @@ export interface MultiSelectOption {
   disabled?: boolean
 }
 
-type Props = IMultiSelectProps<MultiSelectOption>
+type Props = BpMultiSelectProps<MultiSelectOption>
 
 const Loading = Symbol('loading')
 
@@ -124,7 +128,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       const promise = _items()
 
       if (typeof promise.then === 'function') {
-        promise.then(results => {
+        promise.then((results: MultiSelectOption[]) => {
           setItems(results)
           setLoading(false)
         })
@@ -144,7 +148,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
     setQuery(props.query || '')
   }, [props.query])
 
-  function itemRenderer(item: MultiSelectOption, rendererProps: IItemRendererProps): JSX.Element | null {
+  function itemRenderer(item: MultiSelectOption, rendererProps: BpItemRendererProps): JSX.Element | null {
     if (!rendererProps.modifiers.matchesPredicate) {
       return null
     }
@@ -230,7 +234,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         placeholder: Utils.getSelectComponentPlaceholder(
           defaultTo(rest?.placeholder, rest?.tagInputProps?.inputProps?.placeholder)
         ),
-        tagProps: value => {
+        tagProps: (value: React.ReactNode) => {
           return {
             className: cx(css.tag, {
               [css.tagDisabled]: typeof value === 'string' && valuesMap[value]
@@ -256,7 +260,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         }
       }}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
-      selectedItems={value}
+      selectedItems={value || []}
       onItemSelect={handleItemSelect}
       onItemsPaste={items => {
         if (typeof onChange === 'function' && allowCommaSeparatedList) {
@@ -267,26 +271,13 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       resetOnQuery={rest?.allowCreatingNewItems || !avoidResetOnSelect}
       noResults={<NoMatch />}
       popoverProps={{
-        targetTagName: 'div',
-        wrapperTagName: 'div',
-        fill: true,
         usePortal: !!props.usePortal,
         minimal: true,
+        matchTargetWidth: true,
         position: Position.BOTTOM_LEFT,
         className: css.main,
         popoverClassName: cx(css.popover, popoverClassName),
-        onClosed: onPopoverClose,
-        modifiers: {
-          preventOverflow: {
-            // This is required to always attach the portal to the start of the reference instead of the middle
-            escapeWithReference: !!props.usePortal
-          },
-          offset: {
-            // This is required to offset the portal after it is attached to the reference.
-            // By default the portal is positioned at top: 0, left:0 wrt it's reference
-            offset: props.usePortal ? '1 2' : 0
-          }
-        }
+        onClosed: onPopoverClose
       }}
     />
   )

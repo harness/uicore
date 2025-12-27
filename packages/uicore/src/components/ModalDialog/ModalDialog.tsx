@@ -6,7 +6,7 @@
  */
 
 import React, { FC, ReactNode } from 'react'
-import { Dialog, IDialogProps, Spinner } from '@blueprintjs/core'
+import { Dialog, DialogProps as BpDialogProps, Spinner } from '@blueprintjs/core'
 import cx from 'classnames'
 import { FontVariation } from '@harness/design-system'
 import { Heading } from '../Heading/Heading'
@@ -15,7 +15,7 @@ import { ScrollShadowContainer } from '../ScrollShadowContainer/ScrollShadowCont
 
 import css from './ModalDialog.css'
 
-export interface ModalDialogProps extends IDialogProps {
+export interface ModalDialogProps extends BpDialogProps {
   /**
    * Optional title of the modal. Can be a string or anything that React can render.
    * Content will be rendered within a `<h3>` tag with appropriate styling.
@@ -126,7 +126,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
           icon="Stroke"
           intent="primary"
           variation={ButtonVariation.ICON}
-          onClick={() => onClose()}
+          onClick={e => onClose((e as unknown) as React.SyntheticEvent<HTMLElement>)}
           className={css.closeButton}
         />
       )}

@@ -11,7 +11,7 @@ import { useToggleDropDownSubviewHook, SelectWithSubviewContext } from '../Selec
 import selectCss from '../Select/Select.css'
 import multiselectCSS from '../MultiSelect/MultiSelect.css'
 import css from '../SelectWithSubview/SelectWithSubview.css'
-import { IItemRendererProps } from '@blueprintjs/select'
+import { ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
 import { Text } from '../Text/Text'
 import cx from 'classnames'
 
@@ -29,7 +29,7 @@ export function MultiSelectWithSubview(props: MultiSelectWithSubviewProps): JSX.
 
   const multiSelectItemRenderer = (renderSubview: () => void) => {
     // eslint-disable-next-line react/display-name
-    return (item: MultiSelectOption, rendererProps: IItemRendererProps): JSX.Element | null => {
+    return (item: MultiSelectOption, rendererProps: BpItemRendererProps): JSX.Element | null => {
       if (!rendererProps.modifiers.matchesPredicate) {
         return null
       }

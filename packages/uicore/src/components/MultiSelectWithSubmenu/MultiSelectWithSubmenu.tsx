@@ -8,7 +8,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { defaultTo, noop } from 'lodash-es'
 import { Menu, MenuItem, Position } from '@blueprintjs/core'
-import { IMultiSelectProps, MultiSelect } from '@blueprintjs/select'
+import { MultiSelect2Props as BpMultiSelectProps, MultiSelect2 as MultiSelect } from '@blueprintjs/select'
 
 import { Text } from '../Text/Text'
 
@@ -22,7 +22,7 @@ export interface MultiSelectWithSubmenuOption {
   submenuItems?: MultiSelectWithSubmenuOption[]
 }
 
-type Props = IMultiSelectProps<MultiSelectWithSubmenuOption>
+type Props = BpMultiSelectProps<MultiSelectWithSubmenuOption>
 
 export interface MultiSelectWithSubmenuProps
   extends Omit<
@@ -65,22 +65,17 @@ export function MultiSelectWithSubmenu(props: MultiSelectWithSubmenuProps) {
   return (
     <MultiSelect
       {...multiSelectProps}
-      popoverProps={{
-        minimal: true,
-        className: css.main,
-        fill: true,
-        modifiers: {
-          preventOverflow: {
-            escapeWithReference: true
-          },
-          offset: {
-            offset: '0 2'
-          }
-        }
-      }}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      popoverProps={
+        {
+          minimal: true,
+          className: css.main,
+          matchTargetWidth: true
+        } as any
+      }
       onItemSelect={noop}
       items={items}
-      selectedItems={value}
+      selectedItems={value || []}
       itemListRenderer={props => (
         <Menu className={css.menu}>
           {props.items.map((item, index) => {

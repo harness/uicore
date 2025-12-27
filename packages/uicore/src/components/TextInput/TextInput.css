@@ -10,7 +10,7 @@
   flex-flow: column;
   margin-bottom: var(--spacing-4);
 
-  :global(.bp3-input) {
+  :global(.bp4-input) {
     display: block;
     border: 1px solid var(--grey-200);
     border-radius: var(--spacing-2);
@@ -45,7 +45,7 @@
   }
 
   &.hasError {
-    :global(.bp3-input) {
+    :global(.bp4-input) {
       border-color: var(--red-600);
       &:focus {
         border-color: var(--red-600);
@@ -53,19 +53,19 @@
       }
     }
 
-    &.errorIcon :global(.bp3-icon:first-child) {
+    &.errorIcon :global(.bp4-icon:first-child) {
       color: var(--red-600);
     }
   }
 
   &.success {
-    :global(.bp3-input-action) {
+    :global(.bp4-input-action) {
       margin: var(--spacing-small);
       display: flex;
       width: var(--spacing-4);
       height: var(--spacing-4);
 
-      :global(.bp3-icon) {
+      :global(.bp4-icon) {
         display: flex;
         & path {
           fill: var(--green-500);
@@ -74,7 +74,7 @@
     }
   }
 
-  :global(.bp3-input-group > .bp3-icon:first-child) {
+  :global(.bp4-input-group > .bp4-icon:first-child) {
     margin: var(--spacing-small);
   }
 }

@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { Button, ButtonProps } from '../Button/Button'
-import { Collapse as BpCollapse, ICollapseProps } from '@blueprintjs/core'
+import { Collapse as BpCollapse, CollapseProps as BpCollapseProps } from '@blueprintjs/core'
 import { CollapseHeader, CollapseHeaderProps } from './CollapseHeader'
 import { Container } from '../Container/Container'
 import cx from 'classnames'
@@ -26,8 +26,9 @@ interface CollapseListPanelProps extends ListPanelInterface {
   footerContent?: JSX.Element
   nextButtonText?: string
   className?: string
-  bpCollapseProps?: ICollapseProps
+  bpCollapseProps?: BpCollapseProps
   collapseHeaderProps?: CollapseListPanelHeaderProps
+  children?: React.ReactNode
 }
 
 const CollapseListPanel: React.FC<CollapseListPanelProps> = props => {

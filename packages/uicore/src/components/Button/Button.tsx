@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { AnchorButton, Button as BButton, IButtonProps } from '@blueprintjs/core'
+import { AnchorButton, Button as BButton, ButtonProps as BpButtonProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import React, { ButtonHTMLAttributes, ElementType, MouseEvent, useState } from 'react'
@@ -41,7 +41,7 @@ export enum ButtonSize {
 }
 
 export interface ButtonProps
-  extends Omit<IButtonProps, 'icon' | 'rightIcon' | 'onClick'>,
+  extends Omit<BpButtonProps<HTMLButtonElement>, 'icon' | 'rightIcon' | 'onClick' | 'onFocus' | 'onBlur'>,
     ButtonHTMLAttributes<HTMLButtonElement>,
     StyledProps,
     OptionalTooltip {
@@ -223,7 +223,7 @@ export function Link(props: LinkProps): React.ReactElement {
     }
     extra.elementRef = element => {
       if (props.withoutHref && element) {
-        element.href = 'javascript:void()'
+        ;((element as unknown) as HTMLAnchorElement).href = 'javascript:void()'
       }
     }
   }

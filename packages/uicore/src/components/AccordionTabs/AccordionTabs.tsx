@@ -5,12 +5,12 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { ITabProps, Tab } from '@blueprintjs/core'
+import { TabProps as BpTabProps, Tab } from '@blueprintjs/core'
 import { Accordion, AccordionProps } from '../Accordion/Accordion'
 import { Tabs, TabsProps } from '../Tabs/Tabs'
 import React from 'react'
 
-export interface TabListProps extends Omit<ITabProps, 'id' | 'title'> {
+export interface TabListProps extends Omit<BpTabProps, 'id' | 'title'> {
   id: string
   title: React.ReactNode
   dataTestId?: string
@@ -23,6 +23,7 @@ export interface AccordionTabsProps {
     /** The controlled active ID for the Accordion. Must be provided for synchronization with Tabs. */
     controlledActiveId: string
   }
+  children?: React.ReactNode
 }
 
 const AccordionTabs: React.FC<AccordionTabsProps> = ({ tabList, tabsProps, accordionProps, children }) => {

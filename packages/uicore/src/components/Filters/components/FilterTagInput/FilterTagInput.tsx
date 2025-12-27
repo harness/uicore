@@ -7,7 +7,7 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { PopoverInteractionKind, Classes, ITagInputProps, IPopoverProps, Position } from '@blueprintjs/core'
+import { PopoverInteractionKind, Classes, TagInputProps as BpTagInputProps, Position } from '@blueprintjs/core'
 import { Popover } from '../../../Popover/Popover'
 import { Icon } from '@harness/icons'
 import { Text } from '../../../Text/Text'
@@ -20,10 +20,10 @@ import { Container } from '../../../Container/Container'
 import { PopoverProps } from '../../../Popover/Popover'
 import { TagInput as BPTagInput, Menu, MenuItem } from '@blueprintjs/core'
 import { uniq } from 'lodash-es'
-import { IInputGroupProps } from '@blueprintjs/core'
+import { InputGroupProps2 as BpInputGroupProps } from '@blueprintjs/core'
 
 export interface FilterTagInputProps
-  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
+  extends Omit<BpInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder' | 'type'>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   wrapperClassName?: string
   placeholder?: string
@@ -40,8 +40,8 @@ export interface FilterTagInputProps
   showDropDownIcon?: boolean
   tooltip?: string
   tooltipProps?: PopoverProps
-  tagsProps?: Partial<ITagInputProps>
-  popoverProps?: Pick<IPopoverProps, 'captureDismiss'>
+  tagsProps?: Partial<BpTagInputProps>
+  popoverProps?: PopoverProps
 }
 
 export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
@@ -168,7 +168,6 @@ export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
   return (
     <Popover
       targetTagName="div"
-      wrapperTagName="div"
       position="bottom-left"
       usePortal={usePortal}
       minimal

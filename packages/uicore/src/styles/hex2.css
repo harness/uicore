@@ -19,17 +19,17 @@ div.Card--card.project {
   width: 250px;
 }
 
-.bp3-card,
-.bp3-elevation-0 {
+.bp4-card,
+.bp4-elevation-0 {
   /* box-shadow: 0 0 2px 2px rgba(16, 22, 26, 0.15); */
   box-shadow: var(--elevation-3);
 }
-.bp3-card:hover,
-.bp3-card:active,
-.bp3-card:focus {
+.bp4-card:hover,
+.bp4-card:active,
+.bp4-card:focus {
   border: 1px solid var(--primary-4);
 }
-.details-content .bp3-card {
+.details-content .bp4-card {
   padding: 0;
   width: 250px;
 }
@@ -40,77 +40,77 @@ div.Card--card.project {
 
 /* *** Overwriting Dialog styles -- TBD: creates a component for new Dialog *** */
 /* --- small sized Dialog --- */
-.bp3-dialog,
-.bp3-portal .bp3-dialog {
+.bp4-dialog,
+.bp4-portal .bp4-dialog {
   border-left: none;
   padding: var(--spacing-7);
 }
-.bp3-dialog .StyledProps--main {
+.bp4-dialog .StyledProps--main {
   color: var(--intent-color, var(--grey-900));
 }
-.bp3-portal .bp3-dialog .bp3-dialog-header {
+.bp4-portal .bp4-dialog .bp4-dialog-header {
   margin-top: var(--spacing-7);
   padding-left: var(--spacing-7);
 }
-.bp3-portal .bp3-dialog .bp3-dialog-close-button {
+.bp4-portal .bp4-dialog .bp4-dialog-close-button {
   margin-right: calc(-2 * var(--spacing-3));
   margin-top: calc(-2 * (var(--spacing-3) + var(--spacing-7)));
 }
-.bp3-dialog-body {
+.bp4-dialog-body {
   margin: 0;
   padding: var(--spacing-7);
 }
-.bp3-dialog-body .body {
+.bp4-dialog-body .body {
   margin-bottom: var(--spacing-5);
 }
-.bp3-dialog-footer {
+.bp4-dialog-footer {
   margin: 0 0 var(--spacing-7) var(--spacing-7);
 }
-.bp3-form-group {
+.bp4-form-group {
   margin: 0 0 var(--spacing-5); /* 24px / 32px; */
 }
-.bp3-form-group label.bp3-label {
+.bp4-form-group label.bp4-label {
   font-size: 0.75rem;
 }
-.bp3-dialog-footer .bp3-button,
-.bp3-dialog-footer .Button--button[class*='bp3-button'],
-.bp3-dialog-footer .Button--button[class*='bp3-button']:not([class*='bp3-intent-']) {
+.bp4-dialog-footer .bp4-button,
+.bp4-dialog-footer .Button--button[class*='bp4-button'],
+.bp4-dialog-footer .Button--button[class*='bp4-button']:not([class*='bp4-intent-']) {
   margin-right: var(--spacing-5);
   padding: var(--spacing-2) var(--spacing-3);
   min-width: var(--min-button-width);
 }
-.bp3-form-group .bp3-input,
-.bp3-form-group .bp3-file-upload-input,
-.bp3-form-group [class*='ColorPicker---picker'] {
+.bp4-form-group .bp4-input,
+.bp4-form-group .bp4-file-upload-input,
+.bp4-form-group [class*='ColorPicker---picker'] {
   font-size: 0.8125em;
 }
 
 /* --- medium sized Dialog --- */
-.bp3-dialog {
+.bp4-dialog {
   width: min-content;
 }
 .dialog-medium,
-.bp3-portal .dialog-medium {
+.bp4-portal .dialog-medium {
   border-left: none;
   padding: var(--spacing-7);
 }
-.bp3-portal .dialog-medium .bp3-dialog-header {
+.bp4-portal .dialog-medium .bp4-dialog-header {
   padding: 0;
   margin: 0;
   height: 24px;
   min-height: 24px;
 }
-.bp3-portal .dialog-medium .bp3-dialog-close-button {
+.bp4-portal .dialog-medium .bp4-dialog-close-button {
   margin-top: calc(-1 * var(--spacing-2));
   margin-right: calc(-1 * var(--spacing-3));
 }
-.dialog-medium .bp3-dialog-body {
+.dialog-medium .bp4-dialog-body {
   flex-basis: 50%;
   flex-shrink: 0;
   flex-grow: 0;
   padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
 }
-.dialog-medium .bp3-dialog-body .h3 {
+.dialog-medium .bp4-dialog-body .h3 {
   margin-bottom: var(--spacing-3);
 }
 .dialog-medium .dialog-right-body {
@@ -121,37 +121,37 @@ div.Card--card.project {
   padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
   background-color: var(--grey-100);
 }
-.dialog-medium .bp3-dialog-footer {
+.dialog-medium .bp4-dialog-footer {
   margin: var(--spacing-7) 0 0 0;
 }
 
 /* --- large sized Dialog --- */
 .dialog-large,
-.bp3-portal .dialog-large {
+.bp4-portal .dialog-large {
   border-left: none;
   padding: 0;
 }
-.bp3-portal .dialog-large .bp3-dialog-header {
+.bp4-portal .dialog-large .bp4-dialog-header {
   padding: 0;
   margin: 0;
   height: 0px;
   min-height: 0px;
   position: relative;
 }
-.bp3-portal .dialog-large .bp3-dialog-close-button {
+.bp4-portal .dialog-large .bp4-dialog-close-button {
   margin-top: calc(-1 * var(--spacing-2));
   margin-right: calc(-1 * var(--spacing-3));
   position: absolute;
   right: 16px;
   top: 16px;
 }
-.dialog-large .bp3-dialog-body {
+.dialog-large .bp4-dialog-body {
   flex-basis: 50%;
   flex-shrink: 0;
   flex-grow: 0;
   padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
 }
-.dialog-large .bp3-dialog-body .h3 {
+.dialog-large .bp4-dialog-body .h3 {
   margin-bottom: var(--spacing-3);
 }
 .dialog-large .dialog-right-body {
@@ -161,7 +161,7 @@ div.Card--card.project {
   margin: 0;
   padding: 0 var(--spacing-7) var(--spacing-7) var(--spacing-7);
 }
-.dialog-large .bp3-dialog-footer {
+.dialog-large .bp4-dialog-footer {
   margin: var(--spacing-7) 0 0 0;
 }
 .dialog-large .StepWizard--main.StepWizard--navBar .StepWizard--navBarList .StepWizard--navStep .StepWizard--number {
@@ -193,7 +193,7 @@ div.Card--card.project {
 }
 
 /* ****** overwriting styles for Tabs ***** */
-.Tabs--main .bp3-tab {
+.Tabs--main .bp4-tab {
   margin-top: var(--spacing-5);
   margin-bottom: var(--spacing-4);
   color: var(--grey-500);
@@ -201,34 +201,34 @@ div.Card--card.project {
   line-height: 1.1875rem;
   letter-spacing: 0.4px;
 }
-.Tabs--main .bp3-tab[aria-selected='true'] {
+.Tabs--main .bp4-tab[aria-selected='true'] {
   color: var(--grey-800);
 }
-.Tabs--main .bp3-tab-indicator-wrapper .bp3-tab-indicator {
+.Tabs--main .bp4-tab-indicator-wrapper .bp4-tab-indicator {
   height: 3px;
   bottom: 3px;
   background-color: var(--primary-7);
   border-radius: 3px 3px 0 0;
 }
-.inner-tabs .bp3-tab-indicator-wrapper .bp3-tab-indicator {
+.inner-tabs .bp4-tab-indicator-wrapper .bp4-tab-indicator {
   height: 3px;
   background-color: var(--primary-5);
 }
-.Tabs--main .bp3-tab-list {
+.Tabs--main .bp4-tab-list {
   border-bottom: none; /* 2px solid var(--grey-200); */
 }
-.Tabs--main .bp3-tab .bp3-icon {
+.Tabs--main .bp4-tab .bp4-icon {
   margin-right: var(--spacing-3); /* 8px */
 }
 
 /* ****** overwriting styles for Tags ***** */
-.Tag--main .bp3-minimal.bp3-intent-primary {
+.Tag--main .bp4-minimal.bp4-intent-primary {
   border: none !important;
   background-color: transparent !important;
   color: var(--primary-6) !important;
   border-radius: var(--spacing-2);
 }
-.Tag--main .bp3-minimal.bp3-intent-primary span.bp3-icon {
+.Tag--main .bp4-minimal.bp4-intent-primary span.bp4-icon {
   margin-right: 4px;
   margin-bottom: 2px;
   color: var(--primary-6);
@@ -241,14 +241,14 @@ div.Card--card.project {
 }
 
 /* Secondary Buttons */
-.Button--button[class*='bp3-button'],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']),
-.Button--button[class*='bp3-button']:hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
-.Button--button[class*='bp3-button']:active,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):active,
-.Button--button[class*='bp3-button']:disabled,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):disabled {
+.Button--button[class*='bp4-button'],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']),
+.Button--button[class*='bp4-button']:hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']):hover,
+.Button--button[class*='bp4-button']:active,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']):active,
+.Button--button[class*='bp4-button']:disabled,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']):disabled {
   border: none;
   font-size: 13px;
   font-weight: 500;
@@ -260,91 +260,91 @@ div.Card--card.project {
   color: var(--primary-7) !important;
   box-shadow: var(--button-shadow);
 }
-.Button--button[class*='bp3-button']:hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
-.Button--button[class*='bp3-button'].Button--iconOnly:not([disabled]):hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly:not([disabled]):hover {
+.Button--button[class*='bp4-button']:hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']):hover,
+.Button--button[class*='bp4-button'].Button--iconOnly:not([disabled]):hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']).Button--iconOnly:not([disabled]):hover {
   background-color: var(--grey-50);
   color: var(--primary-8) !important;
   box-shadow: var(--button-hover-shadow);
   text-decoration: none;
 }
 
-.Button--button[class*='bp3-button'].Button--iconOnly:not([disabled]):hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly:not([disabled]):hover {
+.Button--button[class*='bp4-button'].Button--iconOnly:not([disabled]):hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']).Button--iconOnly:not([disabled]):hover {
   background-color: transparent;
   box-shadow: var(--button-hover-shadow); /* none; */
 }
 
 /* Primary Buttons */
-.Button--button[class*='bp3-button'][class*='intent-primary'],
-.Button--button[class*='bp3-button'][class*='intent-primary']:hover,
-.Button--button[class*='bp3-button'][class*='intent-primary']:active,
-.Button--button[class*='bp3-button'][class*='intent-primary']:disabled,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:active,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:disabled {
+.Button--button[class*='bp4-button'][class*='intent-primary'],
+.Button--button[class*='bp4-button'][class*='intent-primary']:hover,
+.Button--button[class*='bp4-button'][class*='intent-primary']:active,
+.Button--button[class*='bp4-button'][class*='intent-primary']:disabled,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:active,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:disabled {
   color: var(--grey-0) !important;
   background-color: var(--primary-7);
   box-shadow: var(--button-shadow);
 }
-.Button--button[class*='bp3-button'][class*='intent-primary']:hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover {
+.Button--button[class*='bp4-button'][class*='intent-primary']:hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:hover {
   background-color: var(--primary-7);
   box-shadow: var(--button-hover-shadow);
 }
-.Button--button[class*='bp3-button'][class*='intent-primary']:active,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:active {
+.Button--button[class*='bp4-button'][class*='intent-primary']:active,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:active {
   background-color: var(--primary-8);
 }
 
 /* Success/Warning/Danger Buttons */
-.Button--button[class*='bp3-button'][class*='intent-success'],
-.Button--button[class*='bp3-button'][class*='intent-success']:disabled,
-.Button--button[class*='bp3-button'][class*='intent-warning'],
-.Button--button[class*='bp3-button'][class*='intent-warning']:disabled,
-.Button--button[class*='bp3-button'][class*='intent-danger'],
-.Button--button[class*='bp3-button'][class*='intent-danger']:disabled {
+.Button--button[class*='bp4-button'][class*='intent-success'],
+.Button--button[class*='bp4-button'][class*='intent-success']:disabled,
+.Button--button[class*='bp4-button'][class*='intent-warning'],
+.Button--button[class*='bp4-button'][class*='intent-warning']:disabled,
+.Button--button[class*='bp4-button'][class*='intent-danger'],
+.Button--button[class*='bp4-button'][class*='intent-danger']:disabled {
   color: var(--white) !important;
 }
 
 /* Icon only Buttons */
-.Button--button[class*='bp3-button'].Button--iconOnly, /* :not([disabled]) */
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly {
+.Button--button[class*='bp4-button'].Button--iconOnly, /* :not([disabled]) */
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']).Button--iconOnly {
   box-shadow: none;
   padding: 5px 10px;
 }
 
 /* Minimal Buttons (borderless primary buttons) */
-.Button--button[class*='bp3-button'][class*='minimal'],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal'],
-.Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal'],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal'] {
+.Button--button[class*='bp4-button'][class*='minimal'],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='minimal'],
+.Button--button[class*='bp4-button'][class*='intent-primary'][class*='minimal'],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'][class*='minimal'] {
   background-color: transparent;
   box-shadow: none;
   color: var(--primary-7) !important;
 }
-.Button--button[class*='bp3-button'][class*='minimal']:hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal']:hover,
-.Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal']:hover,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal']:hover {
+.Button--button[class*='bp4-button'][class*='minimal']:hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='minimal']:hover,
+.Button--button[class*='bp4-button'][class*='intent-primary'][class*='minimal']:hover,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'][class*='minimal']:hover {
   background-color: transparent;
   box-shadow: var(--button-hover-shadow);
 }
 
 /* ------ */
 
-/* .Button--button[class*='bp3-button'][class*='intent-primary'][disabled],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][disabled], */
-.Button--button[class*='bp3-button'][class*='intent-primary'][disabled],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][disabled] {
+/* .Button--button[class*='bp4-button'][class*='intent-primary'][disabled],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'][disabled], */
+.Button--button[class*='bp4-button'][class*='intent-primary'][disabled],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'][disabled] {
   padding: 0 20px;
   height: 32px;
   line-height: 32px;
 }
-.Button--button[class*='bp3-button'],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-']) {
+.Button--button[class*='bp4-button'],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-']) {
   padding: 0 20px;
   height: 32px;
   line-height: 32px;
@@ -352,8 +352,8 @@ div.Card--card.project {
 
 /* --- Small Buttons: 24px in height --- */
 
-.Button--button[class*='bp3-button'][class*='hex-small'],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='hex-small'] {
+.Button--button[class*='bp4-button'][class*='hex-small'],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='hex-small'] {
   height: 24px;
   line-height: 24px;
   max-height: 24px;
@@ -363,20 +363,20 @@ div.Card--card.project {
   padding-right: 12px;
 }
 
-.Button--button[class*='bp3-button'][class*='hex-small'] .bp3-icon > svg,
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='hex-small'] .bp3-icon > svg {
+.Button--button[class*='bp4-button'][class*='hex-small'] .bp4-icon > svg,
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='hex-small'] .bp4-icon > svg {
   width: 12px;
   height: 12px;
 }
 
 /* --- Nav Buttons--- */
 
-.Button--button[class*='bp3-button'][class*='nav-button'],
-.Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']),
-/* .Button--button[class*='bp3-button'][class*='nav-button']:active, */
-.Button--button[class*='bp3-button'][class*='nav-button-active'],
-/* .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):active, */
-.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
+.Button--button[class*='bp4-button'][class*='nav-button'],
+.Button--button[class*='bp4-button'][class*='nav-button']:not([class*='bp4-intent-']),
+/* .Button--button[class*='bp4-button'][class*='nav-button']:active, */
+.Button--button[class*='bp4-button'][class*='nav-button-active'],
+/* .Button--button[class*='bp4-button'][class*='nav-button']:not([class*='bp4-intent-']):active, */
+.Button--button[class*='bp4-button'][class*='nav-button-active']:not([class*='bp4-intent-']) {
   height: 22px;
   max-height: 22px;
   min-height: 22px;
@@ -393,35 +393,35 @@ div.Card--card.project {
   box-shadow: none;
 }
 
-/* .Button--button[class*='bp3-button'][class*='nav-button']:active, */
-.Button--button[class*='bp3-button'][class*='nav-button-active'],
-/* .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):active, */
-.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
-  /* .Button--button[class*='bp3-button'][class*='minimal'][class*='nav-button-active'],
-.Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal'][class*='nav-button-active'] { */
+/* .Button--button[class*='bp4-button'][class*='nav-button']:active, */
+.Button--button[class*='bp4-button'][class*='nav-button-active'],
+/* .Button--button[class*='bp4-button'][class*='nav-button']:not([class*='bp4-intent-']):active, */
+.Button--button[class*='bp4-button'][class*='nav-button-active']:not([class*='bp4-intent-']) {
+  /* .Button--button[class*='bp4-button'][class*='minimal'][class*='nav-button-active'],
+.Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='minimal'][class*='nav-button-active'] { */
   background-color: var(--primary-9); /* var(--grey-900); /* var(--primary-7); */
   color: var(--white) !important;
   font-weight: 500;
 }
 
-.Button--button[class*='bp3-button'][class*='nav-button']:hover,
-.Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):hover,
-.Button--button[class*='bp3-button'][class*='nav-button-active']:hover,
-.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']):hover {
+.Button--button[class*='bp4-button'][class*='nav-button']:hover,
+.Button--button[class*='bp4-button'][class*='nav-button']:not([class*='bp4-intent-']):hover,
+.Button--button[class*='bp4-button'][class*='nav-button-active']:hover,
+.Button--button[class*='bp4-button'][class*='nav-button-active']:not([class*='bp4-intent-']):hover {
   box-shadow: none; /* var(--nav-button-hover-shadow); */
   background-color: var(--grey-100);
   color: var(--primary-6) !important;
 }
 
-.Button--button[class*='bp3-button'][class*='nav-button-active']:hover,
-.Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']):hover {
+.Button--button[class*='bp4-button'][class*='nav-button-active']:hover,
+.Button--button[class*='bp4-button'][class*='nav-button-active']:not([class*='bp4-intent-']):hover {
   box-shadow: none;
   background-color: var(--primary-9); /* var(--grey-900); /* var(--primary-7); */
   color: var(--white) !important;
 }
 
 /* ****** overwriting styles for Forms ***** */
-.bp3-input-group .bp3-input-action {
+.bp4-input-group .bp4-input-action {
   margin: var(--spacing-2) var(--spacing-3);
 }
 .Label--main {
@@ -438,16 +438,16 @@ div.Card--card.project {
   color: var(--grey-300);
   margin-top: 0;
 }
-.bp3-control input:checked ~ .bp3-control-indicator {
+.bp4-control input:checked ~ .bp4-control-indicator {
   background-color: var(--primary-7);
 }
-.bp3-control.bp3-switch input ~ .bp3-control-indicator {
+.bp4-control.bp4-switch input ~ .bp4-control-indicator {
   background: var(--grey-0);
   border: 1px solid var(--grey-100);
 }
-.bp3-control input:disabled:checked ~ .bp3-control-indicator,
-.bp3-control.bp3-checkbox input:disabled:indeterminate ~ .bp3-control-indicator,
-.bp3-control.bp3-switch input:checked:disabled ~ .bp3-control-indicator {
+.bp4-control input:disabled:checked ~ .bp4-control-indicator,
+.bp4-control.bp4-checkbox input:disabled:indeterminate ~ .bp4-control-indicator,
+.bp4-control.bp4-switch input:checked:disabled ~ .bp4-control-indicator {
   background: var(--grey-400); /* rgba(19, 124, 189, 0.5); */
 }
 .InputWithIdentifier--txtNameContainer .InputWithIdentifier--txtIdContainer .StyledProps--main.StyledProps--font,
@@ -455,61 +455,61 @@ div.Card--card.project {
   font-size: 0.75rem;
 }
 
-.bp3-form-group .bp3-input {
+.bp4-form-group .bp4-input {
   height: 32px;
 }
-.bp3-button {
+.bp4-button {
   height: 32px;
 }
-.bp3-button[class*='intent-primary'],
-.bp3-button:not([class*='bp3-intent-'])[class*='intent-primary'] {
+.bp4-button[class*='intent-primary'],
+.bp4-button:not([class*='bp4-intent-'])[class*='intent-primary'] {
   border: 1px solid var(--primary-7);
   background-color: var(--primary-7);
 }
 
-.bp3-editable-text {
+.bp4-editable-text {
   min-width: 100px;
 }
-.bp3-editable-text-content,
-.bp3-editable-text-input {
+.bp4-editable-text-content,
+.bp4-editable-text-input {
   font-size: 0.75rem;
 }
-.bp3-editable-text-input {
+.bp4-editable-text-input {
   border: 1px solid var(--grey-200);
   border-radius: 4px;
   padding: 0 var(--spacing-2);
 }
 
-.bp3-input-group :not(.StyledProps--main) .StyledProps--main.StyledProps--padding-small {
+.bp4-input-group :not(.StyledProps--main) .StyledProps--main.StyledProps--padding-small {
   padding: inherit;
 }
 
-.Select--main .bp3-input {
+.Select--main .bp4-input {
   border: 1px solid var(--grey-200);
 }
 
 /* Combo dropdown box */
-.MultiTypeInput--main .bp3-icon {
+.MultiTypeInput--main .bp4-icon {
   color: var(--grey-400) !important;
 }
-.MultiTypeInput--main:hover .bp3-icon {
+.MultiTypeInput--main:hover .bp4-icon {
   color: var(--grey-600) !important;
 }
-.MultiTypeInput--main .Select--main .bp3-input {
+.MultiTypeInput--main .Select--main .bp4-input {
   color: var(--grey-400);
 }
-.MultiTypeInput--main:hover .Select--main .bp3-input {
+.MultiTypeInput--main:hover .Select--main .bp4-input {
   color: var(--grey-600);
 }
 
-.MultiTypeInput--main .bp3-menu .Select--menuItem {
+.MultiTypeInput--main .bp4-menu .Select--menuItem {
   color: var(--grey-700);
 }
-.MultiTypeInput--main .bp3-menu .Select--menuItem:hover {
+.MultiTypeInput--main .bp4-menu .Select--menuItem:hover {
   color: var(--grey-700);
   background-color: var(--primary-2);
 }
-.MultiTypeInput--main .bp3-menu .Select--menuItem.Select--active {
+.MultiTypeInput--main .bp4-menu .Select--menuItem.Select--active {
   color: var(--grey-900);
   background-color: var(--primary-3);
 }
@@ -534,7 +534,7 @@ div.Card--card.project {
 .MultiTypeInput--btn.MultiTypeInput--EXPRESSION path {
   fill: var(--yellow-500) !important;
 }
-.FormikForm--main .bp3-label {
+.FormikForm--main .bp4-label {
   color: var(--grey-900);
 }
 
@@ -571,14 +571,14 @@ div.Card--card.project {
 }
 
 /* ----- Forms ----- */
-.theme-dark .FormikForm--main .bp3-label {
+.theme-dark .FormikForm--main .bp4-label {
   color: var(--grey-300);
 }
-.theme-dark .FormikForm--main .bp3-form-group .bp3-input,
-.theme-dark .FormikForm--main .bp3-form-group .bp3-file-upload-input,
-.theme-dark .FormikForm--main .bp3-form-group .ColorPicker--picker,
-.theme-dark .Select--main .bp3-input {
-  border: 1px solid var(--bp3-intent-color, var(--grey-500)) !important;
+.theme-dark .FormikForm--main .bp4-form-group .bp4-input,
+.theme-dark .FormikForm--main .bp4-form-group .bp4-file-upload-input,
+.theme-dark .FormikForm--main .bp4-form-group .ColorPicker--picker,
+.theme-dark .Select--main .bp4-input {
+  border: 1px solid var(--bp4-intent-color, var(--grey-500)) !important;
   background-color: transparent;
   color: var(--grey-500);
 }
@@ -586,10 +586,10 @@ div.Card--card.project {
   color: var(--primary-6);
 }
 .theme-dark .MultiTypeInput--btn {
-  border: 1px solid var(--bp3-intent-color, var(--grey-500));
+  border: 1px solid var(--bp4-intent-color, var(--grey-500));
 }
 .theme-dark .MultiTypeInput--btn::before {
-  border-right: 1px solid var(--bp3-intent-color, var(--grey-500));
+  border-right: 1px solid var(--bp4-intent-color, var(--grey-500));
   background: var(--theme-dark-bg);
 }
 
@@ -601,94 +601,94 @@ div.Card--card.project {
 /* ----- Buttons ----- */
 
 /* Secondary Buttons */
-.theme-dark .Button--button[class*='bp3-button'],
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']),
-.theme-dark .Button--button[class*='bp3-button']:hover,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
-.theme-dark .Button--button[class*='bp3-button']:active,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):active,
-.theme-dark .Button--button[class*='bp3-button']:disabled,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):disabled {
+.theme-dark .Button--button[class*='bp4-button'],
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-']),
+.theme-dark .Button--button[class*='bp4-button']:hover,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-']):hover,
+.theme-dark .Button--button[class*='bp4-button']:active,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-']):active,
+.theme-dark .Button--button[class*='bp4-button']:disabled,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-']):disabled {
   background-color: var(--theme-dark-bg);
   color: var(--primary-6) !important;
   box-shadow: var(--button-shadow-dark);
 }
-.theme-dark .Button--button[class*='bp3-button']:hover,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']):hover,
-.theme-dark .Button--button[class*='bp3-button'].Button--iconOnly:not([disabled]):hover,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-']).Button--iconOnly:not([disabled]):hover {
+.theme-dark .Button--button[class*='bp4-button']:hover,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-']):hover,
+.theme-dark .Button--button[class*='bp4-button'].Button--iconOnly:not([disabled]):hover,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-']).Button--iconOnly:not([disabled]):hover {
   box-shadow: var(--button-hover-shadow-dark);
   background-color: var(--grey-600);
   color: var(--primary-3) !important;
 }
 
 /* Primary Buttons */
-.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary'],
-.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:hover,
-.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:active,
-.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:disabled,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'],
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:active,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:disabled {
+.theme-dark .Button--button[class*='bp4-button'][class*='intent-primary'],
+.theme-dark .Button--button[class*='bp4-button'][class*='intent-primary']:hover,
+.theme-dark .Button--button[class*='bp4-button'][class*='intent-primary']:active,
+.theme-dark .Button--button[class*='bp4-button'][class*='intent-primary']:disabled,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'],
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:hover,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:active,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:disabled {
   color: var(--black) !important;
   background-color: var(--primary-6);
   box-shadow: var(--button-shadow-dark);
 }
-.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary']:hover,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary']:hover {
+.theme-dark .Button--button[class*='bp4-button'][class*='intent-primary']:hover,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary']:hover {
   box-shadow: var(--button-hover-shadow-dark);
 }
 
 /* Minimal Buttons (borderless primary buttons) */
-.theme-dark .Button--button[class*='bp3-button'][class*='minimal'],
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal'],
-.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal'],
+.theme-dark .Button--button[class*='bp4-button'][class*='minimal'],
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='minimal'],
+.theme-dark .Button--button[class*='bp4-button'][class*='intent-primary'][class*='minimal'],
 .theme-dark
-  .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal'] {
+  .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'][class*='minimal'] {
   box-shadow: none;
 }
-.theme-dark .Button--button[class*='bp3-button'][class*='minimal']:hover,
-.theme-dark .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='minimal']:hover,
-.theme-dark .Button--button[class*='bp3-button'][class*='intent-primary'][class*='minimal']:hover,
+.theme-dark .Button--button[class*='bp4-button'][class*='minimal']:hover,
+.theme-dark .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='minimal']:hover,
+.theme-dark .Button--button[class*='bp4-button'][class*='intent-primary'][class*='minimal']:hover,
 .theme-dark
-  .Button--button[class*='bp3-button']:not([class*='bp3-intent-'])[class*='intent-primary'][class*='minimal']:hover {
+  .Button--button[class*='bp4-button']:not([class*='bp4-intent-'])[class*='intent-primary'][class*='minimal']:hover {
   box-shadow: var(--button-hover-shadow-dark);
   background-color: var(--theme-dark-bg);
 }
 
 /*  Slim Nav Button  */
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button'],
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']),
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active'],
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button'],
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button']:not([class*='bp4-intent-']),
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button-active'],
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button-active']:not([class*='bp4-intent-']) {
   color: var(--grey-300) !important;
   box-shadow: none;
 }
 
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active'],
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']) {
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button-active'],
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button-active']:not([class*='bp4-intent-']) {
   background-color: var(--primary-6);
   color: var(--black) !important;
 }
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button']:hover,
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button']:not([class*='bp3-intent-']):hover,
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:hover,
-.theme-dark .Button--button[class*='bp3-button'][class*='nav-button-active']:not([class*='bp3-intent-']):hover {
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button']:hover,
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button']:not([class*='bp4-intent-']):hover,
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button-active']:hover,
+.theme-dark .Button--button[class*='bp4-button'][class*='nav-button-active']:not([class*='bp4-intent-']):hover {
   box-shadow: var(--button-hover-shadow-dark);
   color: var(--grey-100) !important;
 }
 
 /* ----- Cards ----- */
-.theme-dark .bp3-card {
+.theme-dark .bp4-card {
   background-color: var(--grey-900);
 }
-.theme-dark .bp3-card:hover {
+.theme-dark .bp4-card:hover {
   border: 1px solid var(--primary-6);
 }
 
 /* ----- Drawer ----- */
-.theme-dark .bp3-drawer {
+.theme-dark .bp4-drawer {
   background-color: var(--theme-dark-bg);
   box-shadow: -1px 0 3px 2px var(--light-shadow-color);
 }

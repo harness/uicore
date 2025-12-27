@@ -25,8 +25,11 @@ import {
   TextInput
 } from '../..'
 import { omit } from 'lodash-es'
-import { Form, Formik, FormikErrors } from 'formik'
-import { DateRangePicker, DateRange, IDateRangePickerProps } from '@blueprintjs/datetime'
+import { Form as FormikForm, Formik, FormikErrors } from 'formik'
+
+// Cast Form to avoid React 18 type issues with Formik
+const Form = FormikForm as unknown as React.FC<React.FormHTMLAttributes<HTMLFormElement> & { children?: React.ReactNode }>
+import { DateRangePicker, DateRange, DateRangePickerProps as BpDateRangePickerProps } from '@blueprintjs/datetime'
 import moment from 'moment'
 
 export default {
@@ -230,7 +233,7 @@ export const CalendarWidgetExample: Story<SelectWithSubviewProps> = () => {
     { value: new Date().getTime() - 60000, label: 'Past 1 hour' }
   ]
 
-  interface DatePickerSubviewProps extends IDateRangePickerProps {
+  interface DatePickerSubviewProps extends BpDateRangePickerProps {
     onSelectRange: (range: SelectOption, dateRange: DateRange) => void
   }
 

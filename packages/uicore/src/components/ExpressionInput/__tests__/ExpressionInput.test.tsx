@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { render } from '@testing-library/react'
-import { IItemRendererProps } from '@blueprintjs/select'
+import { ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
 
 import { getItemRenderer } from '../ExpressionInput'
 
@@ -15,7 +15,7 @@ describe('<ExpressionInputs /> tests', () => {
   describe('getItemRenderer tests', () => {
     test('works irrespective of case', () => {
       const itemRenderer = getItemRenderer(jest.fn())
-      const itemProps: IItemRendererProps = {
+      const itemProps: BpItemRendererProps = {
         query: '<+name',
         handleClick: jest.fn(),
         modifiers: { active: true, disabled: true, matchesPredicate: true }

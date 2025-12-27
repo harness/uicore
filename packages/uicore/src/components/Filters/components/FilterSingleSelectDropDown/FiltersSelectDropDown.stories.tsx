@@ -13,7 +13,7 @@ import { omit } from 'lodash-es'
 import data from '../../../../_stories/components/pokedex.json'
 import { FiltersSelectDropDown, FilterSelectDropDownProps } from './FiltersSelectDropDown'
 import { Layout } from '../../../../layouts/Layout'
-import { IItemRendererProps } from '@blueprintjs/select'
+import { ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
 import cx from 'classnames'
 import { FontVariation } from '@harness/design-system'
 import { Text } from '../../../Text/Text'
@@ -87,7 +87,7 @@ export const Basic: Story<FilterSelectDropDownProps> = args => {
 export const Custom: Story<FilterSelectDropDownProps> = args => {
   const { items = localItems } = args
   const argsCopy = omit(args, ['items', 'onChange', 'value'])
-  const listItemRenderer = (item: SelectOption, itemProps: IItemRendererProps): JSX.Element | null => {
+  const listItemRenderer = (item: SelectOption, itemProps: BpItemRendererProps): JSX.Element | null => {
     const { handleClick, modifiers } = itemProps
     return (
       <Layout.Horizontal

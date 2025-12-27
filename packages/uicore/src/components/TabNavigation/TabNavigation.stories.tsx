@@ -47,10 +47,16 @@ export default {
 
 export const Basic: Story<TabNavigationProps> = args => {
   const initialEntries = args.links.map(item => item.to)
+  // MemoryRouter types in React 18 don't include children but still work at runtime
+  const Router = MemoryRouter as React.ComponentType<{
+    initialEntries?: string[]
+    initialIndex?: number
+    children?: React.ReactNode
+  }>
   return (
-    <MemoryRouter initialEntries={initialEntries} initialIndex={0}>
+    <Router initialEntries={initialEntries} initialIndex={0}>
       <TabNavigation {...args} />
-    </MemoryRouter>
+    </Router>
   )
 }
 

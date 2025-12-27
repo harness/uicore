@@ -6,10 +6,10 @@
  */
 
 import React from 'react'
-import { ITagProps, Intent, Tag as BpTag } from '@blueprintjs/core'
+import { TagProps as BpTagProps, Intent, Tag as BpTag } from '@blueprintjs/core'
 import css from './Tag.css'
 
-function Tag(props: ITagProps) {
+function Tag(props: BpTagProps) {
   return (
     <span className={css.main}>
       <BpTag {...props}>{props.children}</BpTag>

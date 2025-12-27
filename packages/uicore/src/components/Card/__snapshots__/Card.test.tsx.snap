@@ -3,14 +3,14 @@
 exports[`Card icon test should render cards with props selected and interactive 1`] = `
 <div>
   <div
-    class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+    class="bp4-card bp4-interactive bp4-elevation-0 card selected interactive"
     tabindex="0"
   >
     <div
       class="cardIcon"
     >
       <span
-        class="bp3-icon StyledProps--main"
+        class="bp4-icon StyledProps--main"
         data-icon="service-kubernetes"
       >
         <svg
@@ -45,13 +45,13 @@ exports[`Card icon test should render cards with props selected and interactive 
 exports[`Card icon test should render icon card with no props 1`] = `
 <div>
   <div
-    class="bp3-card bp3-elevation-0 card"
+    class="bp4-card bp4-elevation-0 card"
   >
     <div
       class="cardIcon"
     >
       <span
-        class="bp3-icon StyledProps--main"
+        class="bp4-icon StyledProps--main"
         data-icon="service-kubernetes"
       >
         <svg
@@ -86,7 +86,7 @@ exports[`Card icon test should render icon card with no props 1`] = `
 exports[`Card menu test should render cards with props selected and interactive 1`] = `
 <div>
   <div
-    class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+    class="bp4-card bp4-interactive bp4-elevation-0 card selected interactive"
     tabindex="0"
   >
     <div
@@ -97,36 +97,32 @@ exports[`Card menu test should render cards with props selected and interactive 
         class="dots"
       >
         <span
-          class="bp3-popover-wrapper"
+          aria-haspopup="true"
+          class="bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <button
+            class="bp4-button bp4-minimal button StyledProps--font StyledProps--main menu with-current-color round iconOnly without-shadow withLeftIcon"
+            type="button"
           >
-            <button
-              class="bp3-button bp3-minimal button StyledProps--font StyledProps--main menu with-current-color round iconOnly without-shadow withLeftIcon"
-              type="button"
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-more StyledProps--main"
+              icon="more"
             >
-              <span
-                class="bp3-icon bp3-icon-more StyledProps--main"
-                icon="more"
+              <svg
+                data-icon="more"
+                height="16"
+                role="img"
+                viewBox="0 0 16 16"
+                width="16"
               >
-                <svg
-                  data-icon="more"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <desc>
-                    more
-                  </desc>
-                  <path
-                    d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-            </button>
-          </span>
+                <path
+                  d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
         </span>
       </div>
       <p
@@ -148,7 +144,7 @@ exports[`Card menu test should render cards with props selected and interactive 
 exports[`Card menu test should render icon card with no props 1`] = `
 <div>
   <div
-    class="bp3-card bp3-elevation-0 card"
+    class="bp4-card bp4-elevation-0 card"
   >
     <div
       class="cardMenu colorIdentifier"
@@ -158,36 +154,32 @@ exports[`Card menu test should render icon card with no props 1`] = `
         class="dots"
       >
         <span
-          class="bp3-popover-wrapper"
+          aria-haspopup="true"
+          class="bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <button
+            class="bp4-button bp4-minimal button StyledProps--font StyledProps--main menu with-current-color round iconOnly without-shadow withLeftIcon"
+            type="button"
           >
-            <button
-              class="bp3-button bp3-minimal button StyledProps--font StyledProps--main menu with-current-color round iconOnly without-shadow withLeftIcon"
-              type="button"
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-more StyledProps--main"
+              icon="more"
             >
-              <span
-                class="bp3-icon bp3-icon-more StyledProps--main"
-                icon="more"
+              <svg
+                data-icon="more"
+                height="16"
+                role="img"
+                viewBox="0 0 16 16"
+                width="16"
               >
-                <svg
-                  data-icon="more"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <desc>
-                    more
-                  </desc>
-                  <path
-                    d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-            </button>
-          </span>
+                <path
+                  d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
         </span>
       </div>
       <p
@@ -209,7 +201,7 @@ exports[`Card menu test should render icon card with no props 1`] = `
 exports[`Card test should render cards with no props 1`] = `
 <div>
   <div
-    class="bp3-card bp3-elevation-0 card"
+    class="bp4-card bp4-elevation-0 card"
   >
     <p
       class="StyledProps--font StyledProps--main StyledProps--font-medium"
@@ -224,7 +216,7 @@ exports[`Card test should render cards with no props 1`] = `
 exports[`Card test should render cards with props selected and interactive 1`] = `
 <div>
   <div
-    class="bp3-card bp3-interactive bp3-elevation-0 card selected interactive"
+    class="bp4-card bp4-interactive bp4-elevation-0 card selected interactive"
     tabindex="0"
   >
     <p

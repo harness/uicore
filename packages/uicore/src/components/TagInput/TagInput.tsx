@@ -5,8 +5,12 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { Button, Icon, ITagProps, MenuItem, Spinner, HTMLInputProps } from '@blueprintjs/core'
-import { IItemRendererProps, IMultiSelectProps, MultiSelect } from '@blueprintjs/select'
+import { Button, TagProps as BpTagProps, MenuItem, Spinner, HTMLInputProps } from '@blueprintjs/core'
+import {
+  ItemRendererProps as BpItemRendererProps,
+  MultiSelectProps as BpMultiSelectProps,
+  MultiSelect
+} from '@blueprintjs/select'
 import cx from 'classnames'
 import { I18nResource } from '@harness/design-system'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
@@ -29,7 +33,7 @@ export interface TagInputItemsFutureResult<T> {
 export type TagInputItemsFuture<T> = () => Promise<TagInputItemsFutureResult<T>>
 export type TagValidator = (tag: string) => boolean | Promise<boolean>
 
-export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'items'>> {
+export interface TagInputProps<T> extends Partial<Omit<BpMultiSelectProps<T>, 'items'>> {
   /** Array of items possible to be added as tags, could be a future to be resolved as well */
   items: T[] | TagInputItemsFuture<T>
 
@@ -64,7 +68,7 @@ export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'it
     selectedItems: T[],
     createdItems: T[],
     items: T[]
-  ) => ITagProps | undefined
+  ) => BpTagProps | undefined
 
   /** Show clear all button to clear all current selected tags */
   showClearAllButton?: boolean
@@ -85,7 +89,7 @@ export interface TagInputProps<T> extends Partial<Omit<IMultiSelectProps<T>, 'it
   inputProps?: HTMLInputProps & Record<string, string>
 }
 
-const SPINNER = <Spinner className={css.spinner} size={Icon.SIZE_STANDARD} />
+const SPINNER = <Spinner className={css.spinner} size={16} />
 
 function FailToFetch({ error, retry }: { error: string; retry: () => void }) {
   return (
@@ -212,21 +216,24 @@ export function TagInput<T>(props: TagInputProps<T>) {
     }
   }, [_items, isMounted])
 
-  const itemPredicate = useCallback((query, item: T, _index, exactMatch) => {
-    const itemLabel = labelFor(item)
-    const normalizedTitle = itemLabel.toLowerCase()
-    const normalizedQuery = query.toLowerCase()
+  const itemPredicate = useCallback(
+    (query: string, item: T, _index: number | undefined, exactMatch: boolean | undefined) => {
+      const itemLabel = labelFor(item)
+      const normalizedTitle = itemLabel.toLowerCase()
+      const normalizedQuery = query.toLowerCase()
 
-    setError(undefined)
+      setError(undefined)
 
-    if (exactMatch) {
-      return normalizedTitle === normalizedQuery
-    } else {
-      return normalizedTitle.indexOf(normalizedQuery) >= 0
-    }
-  }, [])
+      if (exactMatch) {
+        return normalizedTitle === normalizedQuery
+      } else {
+        return normalizedTitle.indexOf(normalizedQuery) >= 0
+      }
+    },
+    []
+  )
   const _getTagProps = useCallback(
-    (value: React.ReactNode, index: number): ITagProps => {
+    (value: React.ReactNode, index: number): BpTagProps => {
       if (showAddTagButton && !readonly && !selectedItems[index]) {
         return {
           intent: 'none',
@@ -260,7 +267,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
         .concat(showNewlyCreatedItemsInList ? createdItems : [])
         .sort((a, b) => (labelFor(a).toLocaleLowerCase() < labelFor(b).toLocaleLowerCase() ? -1 : 1))}
       selectedItems={renderedSelectedItems}
-      itemRenderer={(item: T, itemProps: IItemRendererProps) => {
+      itemRenderer={(item: T, itemProps: BpItemRendererProps) => {
         return (
           <MenuItem
             key={keyOf(item)}
@@ -277,7 +284,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
       tagRenderer={labelFor}
       tagInputProps={{
         disabled: readonly,
-        onRemove: (_value: string, index: number) => {
+        onRemove: (_value: React.ReactNode, index: number) => {
           const _selectedItems = selectedItems.filter((_item, _index) => _index !== index)
           setSelectedItems(_selectedItems)
           onChange?.(_selectedItems, createdItems, items)

@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from 'react'
 import css from './DateInput.css'
 import { TextInput, TextInputProps } from '../TextInput/TextInput'
-import { DatePicker, TimePrecision, IDatePickerProps } from '@blueprintjs/datetime'
+import { DatePicker, TimePrecision, DatePickerProps as BpDatePickerProps } from '@blueprintjs/datetime'
 import { Intent } from '@blueprintjs/core'
 import { Button } from '../Button/Button'
 import { Popover, PopoverProps } from '../Popover/Popover'
@@ -24,7 +24,7 @@ import { defaultTo } from 'lodash-es'
 
 export interface DateInputProps extends Omit<TextInputProps, 'onChange'> {
   dateTimeFormat?: string
-  dateProps?: IDatePickerProps
+  dateProps?: BpDatePickerProps
   timePrecision?: TimePrecision
   onChange?: (value: string | undefined, error?: string) => void
   allowVariables?: boolean
@@ -244,7 +244,7 @@ export const DateInput: React.FC<DateInputProps> = props => {
       />
       {state.isDate ? (
         <Popover
-          boundary="viewport"
+          boundary="clippingParents"
           usePortal={false}
           position="top-left"
           className={css.calendarIcon}
@@ -257,7 +257,6 @@ export const DateInput: React.FC<DateInputProps> = props => {
         <div className={css.helpText}>
           Support custom variables: &#x22;current() + 2d 2h&#x22;
           <Popover
-            wrapperTagName="span"
             className={css.helpIcon}
             content={getHelpPopoverContent(ALL_UNITS)}
             lazy={true}

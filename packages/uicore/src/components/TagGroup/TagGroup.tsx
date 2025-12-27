@@ -7,7 +7,8 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { ITagProps, Popover } from '@blueprintjs/core'
+import { TagProps as BpTagProps } from '@blueprintjs/core'
+import { Popover } from '../Popover/Popover'
 import { Tag, Intent } from '../Tag/Tag'
 import { Text } from '../Text/Text'
 import css from './TagGroup.css'
@@ -22,7 +23,7 @@ type TagItemOrString = TagItem | string
 export interface TagGroupProps {
   tags: TagItemOrString[]
   className?: string
-  tagProps?: ITagProps
+  tagProps?: BpTagProps
 }
 
 // Helper function to normalize tag items

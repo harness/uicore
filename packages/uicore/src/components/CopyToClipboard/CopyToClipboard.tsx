@@ -6,7 +6,8 @@
  */
 
 import React from 'react'
-import { Position, PopoverInteractionKind, Popover } from '@blueprintjs/core'
+import { Position, PopoverInteractionKind } from '@blueprintjs/core'
+import { Popover } from '../Popover/Popover'
 import { Icon, useToaster } from '../..'
 
 import css from './CopyToClipboard.css'

@@ -7,7 +7,7 @@
 
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
-import { Button, IButtonProps } from '@blueprintjs/core'
+import { Button, ButtonProps as BpButtonProps } from '@blueprintjs/core'
 
 import { Accordion, AccordionProps, ChevronPosition } from './Accordion'
 import { NestedAccordionProvider, NestedAccordionPanel, useNestedAccordion } from './NestedAccordion'
@@ -44,7 +44,7 @@ Basic.argTypes = {
   }
 }
 
-function ToggleButton(props: { id: string } & Omit<IButtonProps, 'onClick'>): React.ReactElement {
+function ToggleButton(props: { id: string } & Omit<BpButtonProps, 'onClick'>): React.ReactElement {
   const { openNestedPath } = useNestedAccordion()
 
   return <Button {...props} onClick={() => openNestedPath(props.id)} />

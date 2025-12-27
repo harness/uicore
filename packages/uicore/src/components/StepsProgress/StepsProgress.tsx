@@ -10,7 +10,7 @@ import { Text } from '../Text/Text'
 import { Container } from '../Container/Container'
 import { Color } from '@harness/design-system'
 import css from './StepsProgress.css'
-import { ProgressBar, IProgressBarProps, Intent } from '@blueprintjs/core'
+import { ProgressBar, ProgressBarProps as BpProgressBarProps, Intent } from '@blueprintjs/core'
 import { Layout } from '../../layouts/Layout'
 import { Icon } from '@harness/icons'
 
@@ -56,7 +56,7 @@ export function StepsProgress(props: StepsProgressProps) {
     calculatedStepSize = current * stepSize
   }
 
-  const progressBarProps: IProgressBarProps = {
+  const progressBarProps: BpProgressBarProps = {
     value: calculatedStepSize,
     stripes: false,
     intent: intent

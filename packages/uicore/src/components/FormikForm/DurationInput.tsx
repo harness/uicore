@@ -6,17 +6,24 @@
  */
 
 import React from 'react'
-import { FormGroup, HTMLInputProps, IFormGroupProps, IInputGroupProps, InputGroup, Intent } from '@blueprintjs/core'
+import {
+  FormGroup,
+  HTMLInputProps,
+  FormGroupProps as BpFormGroupProps,
+  InputGroupProps as BpInputGroupProps,
+  InputGroup,
+  Intent
+} from '@blueprintjs/core'
 import { get } from 'lodash-es'
 import { errorCheck, FormikContextProps, getFormFieldLabel } from './utils'
 import { FormError } from '../FormError/FormError'
 import { DurationInputHelpers } from '../DurationInput/DurationInput'
 
-export interface DurationInputProps extends Omit<IFormGroupProps, 'label' | 'placeholder'> {
+export interface DurationInputProps extends Omit<BpFormGroupProps, 'label' | 'placeholder'> {
   onChange?(str: string): void
   name: string
   label?: React.ReactNode
-  inputProps?: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'>
+  inputProps?: Omit<BpInputGroupProps & HTMLInputProps, 'onChange' | 'value'>
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

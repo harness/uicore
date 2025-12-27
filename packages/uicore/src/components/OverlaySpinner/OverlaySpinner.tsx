@@ -7,13 +7,17 @@
 
 import React from 'react'
 import css from './OverlaySpinner.css'
-import { ISpinnerProps, Spinner } from '@blueprintjs/core'
+import { Spinner, Intent } from '@blueprintjs/core'
 import cx from 'classnames'
 
-export interface OverlaySpinnerProps extends ISpinnerProps {
+export interface OverlaySpinnerProps {
   show: boolean
   children: React.ReactNode
   className?: string
+  size?: number
+  value?: number
+  intent?: Intent
+  tagName?: keyof JSX.IntrinsicElements
 }
 
 export const OverlaySpinner: React.FC<OverlaySpinnerProps> = props => {

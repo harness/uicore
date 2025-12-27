@@ -8,7 +8,11 @@
 import React from 'react'
 import cx from 'classnames'
 import { Position, Classes } from '@blueprintjs/core'
-import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
+import {
+  Suggest2 as Suggest,
+  Suggest2Props as BpSuggestProps,
+  ItemRendererProps as BpItemRendererProps
+} from '@blueprintjs/select'
 
 import css from './Select.css'
 import { Button } from '../../components/Button/Button'
@@ -43,7 +47,7 @@ export enum SelectSize {
   Large = 'large'
 }
 
-type BiLevelProps = ISuggestProps<SelectWithBiLevelOption>
+type BiLevelProps = BpSuggestProps<SelectWithBiLevelOption>
 
 const Loading = Symbol('loading')
 
@@ -92,7 +96,7 @@ function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
 
 export function defaultItemRenderer(
   item: SelectWithBiLevelOption,
-  props: IItemRendererProps,
+  props: BpItemRendererProps,
   size: SelectSize = SelectSize.Medium
 ): JSX.Element | null {
   if (!props.modifiers.matchesPredicate) {
@@ -231,7 +235,7 @@ export function BiLevelSelect(props: BiLevelSelectProps): React.ReactElement {
   const renderSuggestComponent = () => (
     <Suggest
       inputValueRenderer={opt => opt.label}
-      itemRenderer={(item: SelectWithBiLevelOption, props: IItemRendererProps) =>
+      itemRenderer={(item: SelectWithBiLevelOption, props: BpItemRendererProps) =>
         itemRenderer?.(item, props) || defaultItemRenderer(item, props, size)
       }
       itemListPredicate={(query, items) =>
@@ -241,42 +245,45 @@ export function BiLevelSelect(props: BiLevelSelectProps): React.ReactElement {
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       noResults={<NoMatch />}
       {...rest}
-      inputProps={{
-        onChange(e: React.ChangeEvent<HTMLInputElement>) {
-          setQuery(e.target.value)
-        },
-        value: query,
-        placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
-        leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
-        rightElement: (
-          <>
-            {!props.disabled && showClearBtn ? (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      inputProps={
+        {
+          onChange(e: React.ChangeEvent<HTMLInputElement>) {
+            setQuery(e.target.value)
+          },
+          value: query,
+          placeholder: Utils.getSelectComponentPlaceholder(rest?.inputProps?.placeholder),
+          leftElement: item?.icon ? <Icon size={getIconSizeFromSelect(size)} {...item?.icon} /> : undefined,
+          rightElement: (
+            <>
+              {!props.disabled && showClearBtn ? (
+                <Icon
+                  name="main-delete"
+                  onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
+                    e.preventDefault()
+                    handleItemSelect({ value: '', label: '' })
+                  }}
+                  size={14}
+                  padding={{ top: 'small', right: 'xsmall', bottom: 'small' }}
+                />
+              ) : null}
               <Icon
-                name="main-delete"
-                onClick={(e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {
-                  e.preventDefault()
-                  handleItemSelect({ value: '', label: '' })
+                name={'chevron-down'}
+                onClick={e => {
+                  const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
+                  input?.focus()
                 }}
                 size={14}
-                padding={{ top: 'small', right: 'xsmall', bottom: 'small' }}
+                padding={size === SelectSize.Small ? 'xsmall' : 'small'}
               />
-            ) : null}
-            <Icon
-              name={'chevron-down'}
-              onClick={e => {
-                const input = e.currentTarget.parentElement?.previousElementSibling as HTMLInputElement
-                input?.focus()
-              }}
-              size={14}
-              padding={size === SelectSize.Small ? 'xsmall' : 'small'}
-            />
-          </>
-        ),
-        small: size === SelectSize.Small,
-        large: size === SelectSize.Large,
-        name: props.name,
-        ...props.inputProps
-      }}
+            </>
+          ),
+          small: size === SelectSize.Small,
+          large: size === SelectSize.Large,
+          name: props.name,
+          ...props.inputProps
+        } as any
+      }
       resetOnSelect={resetOnSelect}
       resetOnClose={resetOnClose}
       items={loading ? [{ label: 'Loading...', value: Loading }] : items}
@@ -284,25 +291,13 @@ export function BiLevelSelect(props: BiLevelSelectProps): React.ReactElement {
       onItemSelect={handleItemSelect}
       query={query}
       popoverProps={{
-        targetTagName: 'div',
-        fill: true,
         usePortal: !!props.usePortal,
         minimal: true,
+        matchTargetWidth: true,
         position: Position.BOTTOM_LEFT,
         className: cx(css.main, { [css.borderless]: borderless }),
         popoverClassName: cx(css.popover, popoverClassName),
-        onClosed: whenPopoverClosed,
-        modifiers: {
-          preventOverflow: {
-            // This is required to always attach the portal to the start of the reference instead of the middle
-            escapeWithReference: !!props.usePortal
-          },
-          offset: {
-            // This is required to offset the portal after it is attached to the reference.
-            // By default the portal is positioned at top: 0, left:0 wrt it's reference
-            offset: props.usePortal ? '1 2' : 0
-          }
-        }
+        onClosed: whenPopoverClosed
       }}
     />
   )
@@ -315,7 +310,7 @@ export function BiLevelSelect(props: BiLevelSelectProps): React.ReactElement {
   )
   return addTooltip ? (
     <Popover
-      boundary="viewport"
+      boundary="clippingParents"
       interactionKind="hover"
       content={tooltipContent}
       isDark={true}

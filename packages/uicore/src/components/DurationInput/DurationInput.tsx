@@ -222,7 +222,6 @@ export function DurationInput(props: DurationInputProps): React.ReactElement {
         rightElementProps={{ className: css.warnIcon }}
       />
       <Popover
-        wrapperTagName="div"
         className={css.helpIcon}
         content={getHelpPopoverContent(allowedUnits || UNITS_ORDER)}
         lazy={true}

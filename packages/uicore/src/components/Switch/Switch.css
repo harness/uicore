@@ -23,7 +23,7 @@
   color: var(--grey-800);
 
   /* oval */
-  > span[class*='bp3-control-indicator'] {
+  > span[class*='bp4-control-indicator'] {
     height: var(--switch-height) !important;
     width: 22px !important;
     min-width: 22px !important;
@@ -37,7 +37,7 @@
   }
 
   /* horizontal alignment of circle in center of button */
-  > input:checked ~ span[class*='bp3-control-indicator']::before {
+  > input:checked ~ span[class*='bp4-control-indicator']::before {
     left: calc(100% - var(--switch-height)) !important;
   }
 
@@ -49,7 +49,7 @@
   /* -----NOT DISABLED----- */
 
   /* disabled: F, checked: F */
-  input:not(:disabled):not(:checked) ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):not(:checked) ~ span[class*='bp4-control-indicator'] {
     --oval-background: var(--grey-200);
     --oval-border: var(--grey-400);
     --circle-border: var(--grey-500);
@@ -57,7 +57,7 @@
   }
 
   /* disabled: F, checked: T */
-  input:not(:disabled):checked ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):checked ~ span[class*='bp4-control-indicator'] {
     --oval-background: var(--primary-7);
     --oval-border: var(--primary-7);
     --circle-border: var(--primary-8);
@@ -65,7 +65,7 @@
   }
 
   /* disabled: F, checked: F, active: T */
-  input:not(:disabled):not(:checked):active ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):not(:checked):active ~ span[class*='bp4-control-indicator'] {
     --oval-background: var(--grey-300);
     --oval-border: var(--grey-500);
     --circle-border: var(--grey-500);
@@ -73,7 +73,7 @@
   }
 
   /* disabled: F, checked: T, active: T */
-  input:not(:disabled):checked:active ~ span[class*='bp3-control-indicator'] {
+  input:not(:disabled):checked:active ~ span[class*='bp4-control-indicator'] {
     --oval-background: var(--primary-8);
     --oval-border: var(--primary-8);
     --circle-border: var(--primary-9);
@@ -83,7 +83,7 @@
   /* -----DISABLED----- */
 
   /* disabled: T, checked: F */
-  input:disabled:not(:checked) ~ span[class*='bp3-control-indicator'] {
+  input:disabled:not(:checked) ~ span[class*='bp4-control-indicator'] {
     --oval-background: var(--grey-200);
     --oval-border: var(--grey-400);
     --circle-border: var(--grey-400);
@@ -91,7 +91,7 @@
   }
 
   /* disabled: T, checked: T */
-  input:disabled:checked ~ span[class*='bp3-control-indicator'] {
+  input:disabled:checked ~ span[class*='bp4-control-indicator'] {
     --oval-background: var(--grey-400);
     --oval-border: var(--grey-400);
     --circle-border: var(--grey-400);

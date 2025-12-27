@@ -12,7 +12,7 @@ import { Layout } from '../../../layouts/Layout'
 import { GotoStepArgs, StepWizard } from '../StepWizard'
 
 import './StepWizardExample.css'
-import { Dialog, IDialogProps } from '@blueprintjs/core'
+import { Dialog, DialogProps as BpDialogProps } from '@blueprintjs/core'
 // For Example only defining this props , reason is the module loader over here has some type issue
 
 interface StepData {
@@ -83,7 +83,7 @@ export const ExampleWizard = (): JSX.Element => {
 }
 
 const ExampleModal = () => {
-  const modalPropsDark: IDialogProps = {
+  const modalPropsDark: BpDialogProps = {
     isOpen: true,
     style: {
       width: 1000,

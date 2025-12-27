@@ -13,119 +13,101 @@ exports[`Render basic component should check snapshot with Avatar props with add
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 25px; width: 32px; height: 32px; font-size: 20px; font-weight: 200;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 25px; width: 32px; height: 32px; font-size: 20px; font-weight: 200;"
-              tabindex="0"
-            >
-              +
-            </div>
-          </span>
+            +
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              <img
-                alt=""
-                class="imageStyle"
-                src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-                style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
-              />
-            </div>
-          </span>
+            <img
+              alt=""
+              class="imageStyle"
+              src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+              style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
+            />
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              GH
-            </div>
-          </span>
+            GH
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              EF
-            </div>
-          </span>
+            EF
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              CH
-            </div>
-          </span>
+            CH
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              AS
-            </div>
-          </span>
+            AS
+          </div>
         </span>
       </div>
     </div>
@@ -146,136 +128,118 @@ exports[`Render basic component should check snapshot with Avatar props without 
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              <img
-                alt=""
-                class="imageStyle"
-                src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-                style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
-              />
-            </div>
-          </span>
+            <img
+              alt=""
+              class="imageStyle"
+              src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+              style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
+            />
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
+            <span
+              class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-white"
+              data-icon="user"
             >
-              <span
-                class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
-                data-icon="user"
+              <svg
+                fill="currentColor"
+                height="10"
+                viewBox="0 0 61 73"
+                width="10"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="10"
-                  viewBox="0 0 61 73"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M18.001 17.512c0-6.732 5.458-12.19 12.19-12.19 6.732 0 12.19 5.458 12.19 12.19 0 6.732-5.458 12.19-12.19 12.19-6.732 0-12.19-5.458-12.19-12.19zM30.191.522c-9.383 0-16.99 7.607-16.99 16.99 0 5.651 2.76 10.659 7.005 13.747L.466 68.8a2.4 2.4 0 002.123 3.517h55.206a2.4 2.4 0 002.105-3.552L39.608 31.656c4.565-3.046 7.573-8.244 7.573-14.144 0-9.383-7.607-16.99-16.99-16.99zm-5.744 32.984a16.96 16.96 0 005.744.996c1.77 0 3.476-.27 5.08-.773l18.476 33.787H6.563l17.884-34.01z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-          </span>
+                <path
+                  clip-rule="evenodd"
+                  d="M18.001 17.512c0-6.732 5.458-12.19 12.19-12.19 6.732 0 12.19 5.458 12.19 12.19 0 6.732-5.458 12.19-12.19 12.19-6.732 0-12.19-5.458-12.19-12.19zM30.191.522c-9.383 0-16.99 7.607-16.99 16.99 0 5.651 2.76 10.659 7.005 13.747L.466 68.8a2.4 2.4 0 002.123 3.517h55.206a2.4 2.4 0 002.105-3.552L39.608 31.656c4.565-3.046 7.573-8.244 7.573-14.144 0-9.383-7.607-16.99-16.99-16.99zm-5.744 32.984a16.96 16.96 0 005.744.996c1.77 0 3.476-.27 5.08-.773l18.476 33.787H6.563l17.884-34.01z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              GH
-            </div>
-          </span>
+            GH
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              E
-            </div>
-          </span>
+            E
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              CH
-            </div>
-          </span>
+            CH
+          </div>
         </span>
       </div>
       <div
         class="stackAvatar Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              AS
-            </div>
-          </span>
+            AS
+          </div>
         </span>
       </div>
     </div>
@@ -296,136 +260,118 @@ exports[`Render basic component should check snapshot with Avatar props without 
         class="Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              AS
-            </div>
-          </span>
+            AS
+          </div>
         </span>
       </div>
       <div
         class="Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              CH
-            </div>
-          </span>
+            CH
+          </div>
         </span>
       </div>
       <div
         class="Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              E
-            </div>
-          </span>
+            E
+          </div>
         </span>
       </div>
       <div
         class="Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              GH
-            </div>
-          </span>
+            GH
+          </div>
         </span>
       </div>
       <div
         class="Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
+            <span
+              class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-white"
+              data-icon="user"
             >
-              <span
-                class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
-                data-icon="user"
+              <svg
+                fill="currentColor"
+                height="10"
+                viewBox="0 0 61 73"
+                width="10"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="10"
-                  viewBox="0 0 61 73"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M18.001 17.512c0-6.732 5.458-12.19 12.19-12.19 6.732 0 12.19 5.458 12.19 12.19 0 6.732-5.458 12.19-12.19 12.19-6.732 0-12.19-5.458-12.19-12.19zM30.191.522c-9.383 0-16.99 7.607-16.99 16.99 0 5.651 2.76 10.659 7.005 13.747L.466 68.8a2.4 2.4 0 002.123 3.517h55.206a2.4 2.4 0 002.105-3.552L39.608 31.656c4.565-3.046 7.573-8.244 7.573-14.144 0-9.383-7.607-16.99-16.99-16.99zm-5.744 32.984a16.96 16.96 0 005.744.996c1.77 0 3.476-.27 5.08-.773l18.476 33.787H6.563l17.884-34.01z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-          </span>
+                <path
+                  clip-rule="evenodd"
+                  d="M18.001 17.512c0-6.732 5.458-12.19 12.19-12.19 6.732 0 12.19 5.458 12.19 12.19 0 6.732-5.458 12.19-12.19 12.19-6.732 0-12.19-5.458-12.19-12.19zM30.191.522c-9.383 0-16.99 7.607-16.99 16.99 0 5.651 2.76 10.659 7.005 13.747L.466 68.8a2.4 2.4 0 002.123 3.517h55.206a2.4 2.4 0 002.105-3.552L39.608 31.656c4.565-3.046 7.573-8.244 7.573-14.144 0-9.383-7.607-16.99-16.99-16.99zm-5.744 32.984a16.96 16.96 0 005.744.996c1.77 0 3.476-.27 5.08-.773l18.476 33.787H6.563l17.884-34.01z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
         </span>
       </div>
       <div
         class="Avatar contentStyle"
       >
         <span
-          class="bp3-popover-wrapper avatarPopOver"
+          aria-haspopup="true"
+          class="avatarPopOver bp4-popover2-target"
         >
-          <span
-            class="bp3-popover-target"
+          <div
+            class="AvatarInner"
+            style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
+            tabindex="0"
           >
-            <div
-              class="AvatarInner"
-              style="border-radius: 100%; line-height: 26px; width: 32px; height: 32px; font-size: 10px;"
-              tabindex="0"
-            >
-              <img
-                alt=""
-                class="imageStyle"
-                src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
-                style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
-              />
-            </div>
-          </span>
+            <img
+              alt=""
+              class="imageStyle"
+              src="https://image.shutterstock.com/image-photo/buddha-statue-hyderabadhyderabadindia-260nw-1366155431.jpg"
+              style="border-radius: 100%; line-height: 26px; width: 28px; height: 28px; font-size: 10px;"
+            />
+          </div>
         </span>
       </div>
     </div>

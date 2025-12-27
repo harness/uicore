@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { IMenuItemProps, Menu, MenuItem, Position } from '@blueprintjs/core'
+import { MenuItemProps as BpMenuItemProps, Menu, MenuItem, Position } from '@blueprintjs/core'
 import cx from 'classnames'
 import { PopoverProps } from 'components/Popover/Popover'
 import React, { MouseEvent } from 'react'
@@ -21,7 +21,7 @@ type SplitButtonProps = Omit<ButtonProps, 'rightIcon'> & {
   isDropdownOpen?: boolean
 }
 
-interface MenuItemProps extends IMenuItemProps {
+interface MenuItemProps extends BpMenuItemProps {
   iconProps?: IconProps
 }
 

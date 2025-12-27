@@ -6,7 +6,7 @@
  */
 
 import React, { ReactNode } from 'react'
-import type { IPopoverProps } from '@blueprintjs/core'
+import type { Popover2Props } from '@blueprintjs/popover2'
 
 export interface DataTooltipInterface {
   dataTooltipId: string
@@ -28,8 +28,8 @@ export interface UseTooltipsReturn {
 
 export interface TooltipRenderProps {
   tooltipId?: string
-  position?: IPopoverProps['position']
-  modifiers?: IPopoverProps['modifiers']
+  position?: Popover2Props['position']
+  modifiers?: Popover2Props['modifiers']
   getTooltipAdditionalVars?: Record<string, string>
   labelText?: ReactNode | null
   useStandAlone?: boolean

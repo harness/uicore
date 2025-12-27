@@ -5,7 +5,8 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { HTMLDivProps, Popover } from '@blueprintjs/core'
+import { HTMLDivProps } from '@blueprintjs/core'
+import { Popover } from '../Popover/Popover'
 import React, { useState } from 'react'
 import css from './Avatar.css'
 import classnames from 'classnames'

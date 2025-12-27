@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import { Formik } from 'formik'
 
 import FieldArray, { Field } from './FieldArray'
@@ -80,12 +80,12 @@ describe('<FieldArray /> tests', () => {
     )
     const btnAddRow = container.querySelector('.noData button[data-id="btn-add-no-data"]')
     fireEvent.click(btnAddRow!)
-    await wait()
+    await waitFor(() => {})
     expect(container).toMatchSnapshot()
     expect(container.querySelectorAll('tr').length).toEqual(2)
     const btnAddRow2 = container.querySelector('.title button[data-id="btn-add"]')
     fireEvent.click(btnAddRow2!)
-    await wait()
+    await waitFor(() => {})
     expect(container).toMatchSnapshot()
     expect(container.querySelectorAll('tr').length).toEqual(3)
   })
@@ -104,7 +104,7 @@ describe('<FieldArray /> tests', () => {
     expect(container.querySelectorAll('tr').length).toEqual(3)
     const btnDeleteRow = container.querySelector('tbody tr button[data-id="btn-delete"]')
     fireEvent.click(btnDeleteRow!)
-    await wait()
+    await waitFor(() => {})
     expect(container).toMatchSnapshot()
     expect(container.querySelectorAll('tr').length).toEqual(2)
   })

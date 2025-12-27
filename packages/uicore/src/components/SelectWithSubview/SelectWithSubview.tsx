@@ -13,7 +13,7 @@ import { Text } from '../Text/Text'
 import { Classes } from '@blueprintjs/core'
 import { Container } from '../Container/Container'
 import { MultiSelectOption } from 'components/MultiSelect/MultiSelect'
-import { IItemRendererProps } from '@blueprintjs/select'
+import { ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
 
 // interface for component props
 export interface SelectWithSubviewProps extends SelectProps {
@@ -33,7 +33,7 @@ type ToggleDropDownArgs = {
   subview: JSX.Element
   itemRenderer?: (
     toggleSubview: () => void
-  ) => (item: SelectOption | MultiSelectOption, itemProps: IItemRendererProps) => JSX.Element | null
+  ) => (item: SelectOption | MultiSelectOption, itemProps: BpItemRendererProps) => JSX.Element | null
   renderSubviewWithoutMenuStyling?: boolean
 }
 

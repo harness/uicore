@@ -10,7 +10,7 @@ import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
-import { IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
+import { InputGroupProps as BpInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '@harness/design-system'
@@ -199,7 +199,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
 
   const FixedTypeComponent = fixedTypeComponent
   const fixedComponentOnChangeCallback = useCallback(
-    (val, multiTypeInputValue: MultiTypeInputValue) => {
+    (val: AcceptableValue | undefined, multiTypeInputValue: MultiTypeInputValue) => {
       onChange?.(val, multiTypeInputValue, MultiTypeInputType.FIXED)
     },
     [onChange]
@@ -393,7 +393,7 @@ function MultiTextInputFixedTypeComponent(props: FixedTypeComponentProps & Multi
 
 export interface MultiTextInputProps
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
-  textProps?: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'>
+  textProps?: Omit<BpInputGroupProps & HTMLInputProps, 'onChange' | 'value'>
 }
 
 export function MultiTextInput(props: MultiTextInputProps): React.ReactElement {

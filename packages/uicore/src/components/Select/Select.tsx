@@ -18,7 +18,7 @@ import React, {
 } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
-import { Suggest, ISuggestProps, IItemRendererProps } from '@blueprintjs/select'
+import { Suggest2 as Suggest, Suggest2Props as BpSuggestProps, ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
 import { OptionalTooltip } from '@harness/design-system'
 
 import { Button } from '../../components/Button/Button'
@@ -40,7 +40,7 @@ export enum SelectSize {
   Large = 'large'
 }
 
-type Props = ISuggestProps<SelectOption>
+type Props = BpSuggestProps<SelectOption>
 
 const Loading = Symbol('loading')
 
@@ -91,7 +91,7 @@ function getIconSizeFromSelect(size: SelectSize = SelectSize.Medium) {
 
 export function defaultItemRenderer(
   item: SelectOption,
-  props: IItemRendererProps,
+  props: BpItemRendererProps,
   size: SelectSize = SelectSize.Medium
 ): JSX.Element | null {
   if (!props.modifiers.matchesPredicate) {
@@ -284,7 +284,7 @@ export function Select(props: SelectProps): ReactElement {
   const renderSuggestComponent = () => (
     <Suggest
       inputValueRenderer={opt => opt.label?.toString()}
-      itemRenderer={(item: SelectOption, props: IItemRendererProps) =>
+      itemRenderer={(item: SelectOption, props: BpItemRendererProps) =>
         itemRenderer?.(item, props) || defaultItemRenderer(item, props, size)
       }
       itemListPredicate={(query, items) =>
@@ -294,6 +294,7 @@ export function Select(props: SelectProps): ReactElement {
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       noResults={<NoMatch />}
       {...rest}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       inputProps={{
         onChange(e: ChangeEvent<HTMLInputElement>) {
           setQuery(e.target.value)
@@ -332,7 +333,7 @@ export function Select(props: SelectProps): ReactElement {
         name: props.name,
         inputRef: inputRefCallback,
         ...props.inputProps
-      }}
+      } as any}
       resetOnSelect={resetOnSelect}
       resetOnClose={resetOnClose}
       items={loading ? [LoadingSelectOption] : items}
@@ -340,25 +341,13 @@ export function Select(props: SelectProps): ReactElement {
       onItemSelect={handleItemSelect}
       query={query}
       popoverProps={{
-        targetTagName: 'div',
-        fill: true,
         usePortal: !!props.usePortal,
         minimal: true,
+        matchTargetWidth: true,
         position: Position.BOTTOM_LEFT,
         className: cx(css.main, { [css.borderless]: borderless }),
         popoverClassName: cx(css.popover, popoverClassName),
-        onClosed: onPopoverClosed,
-        modifiers: {
-          preventOverflow: {
-            // This is required to always attach the portal to the start of the reference instead of the middle
-            escapeWithReference: !!props.usePortal
-          },
-          offset: {
-            // This is required to offset the portal after it is attached to the reference.
-            // By default the portal is positioned at top: 0, left:0 wrt it's reference
-            offset: props.usePortal ? '1 2' : 0
-          }
-        }
+        onClosed: onPopoverClosed
       }}
     />
   )
@@ -370,8 +359,7 @@ export function Select(props: SelectProps): ReactElement {
         ...tooltipProps,
         targetTagName: tooltipProps?.targetTagName || 'div',
         position: tooltipProps?.position || 'bottom',
-        targetClassName: cx(tooltipProps?.targetClassName),
-        className: cx(css.target)
+        className: cx(css.target, tooltipProps?.className)
       }}>
       {renderSuggestComponent()}
     </Utils.WrapOptionalTooltip>

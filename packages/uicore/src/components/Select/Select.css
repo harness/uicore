@@ -9,13 +9,13 @@
   position: relative;
 
   &.borderless {
-    :global(.bp3-input) {
+    :global(.bp4-input) {
       border: none !important;
       box-shadow: none !important;
     }
   }
 
-  :global(.bp3-input) {
+  :global(.bp4-input) {
     display: block;
     border: 1px solid var(--grey-200);
     border-radius: var(--spacing-2);
@@ -54,32 +54,32 @@
     }
   }
 
-  :global(.bp3-input-group .bp3-input-left-container) {
+  :global(.bp4-input-group .bp4-input-left-container) {
     margin-top: 2px;
   }
-  :global(.bp3-input-group.bp3-large .bp3-input-left-container) {
+  :global(.bp4-input-group.bp4-large .bp4-input-left-container) {
     margin-top: 0;
   }
 
-  & :global(.bp3-overlay) {
+  & :global(.bp4-overlay) {
     display: block;
     width: 100%;
   }
 
   :global {
-    .bp3-input-action {
+    .bp4-input-action {
       opacity: 0.5;
     }
   }
 
-  & :global(.bp3-transition-container),
-  & :global(.bp3-popover) {
+  & :global(.bp4-transition-container),
+  & :global(.bp4-popover) {
     width: 100%;
     box-shadow: none;
     border-radius: 0 0 4px 4px;
   }
 
-  & :global(.bp3-menu) {
+  & :global(.bp4-menu) {
     max-height: 350px;
     width: 100%;
     overflow: auto;
@@ -109,7 +109,7 @@
 }
 
 .popover {
-  & :global(.bp3-menu) {
+  & :global(.bp4-menu) {
     max-height: 350px;
     overflow: auto;
     min-width: 250px;
@@ -132,7 +132,7 @@
       word-break: break-all;
     }
 
-    :global(.bp3-icon) {
+    :global(.bp4-icon) {
       margin-right: var(--spacing-small);
     }
 

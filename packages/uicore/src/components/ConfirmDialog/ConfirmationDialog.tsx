@@ -6,7 +6,7 @@
  */
 import React from 'react'
 
-import { Intent, Dialog, IDialogProps } from '@blueprintjs/core'
+import { Intent, Dialog, DialogProps as BpDialogProps } from '@blueprintjs/core'
 import cx from 'classnames'
 
 import { Button, ButtonProps, Layout, Container, Icon, Text, ButtonVariation, FontVariation, Color } from '../../'
@@ -29,7 +29,7 @@ const getIconForIntent = (intent: Intent): HarnessIconName => {
   }
 }
 
-export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose' | 'enforceFocus'> {
+export interface ConfirmationDialogProps extends Omit<BpDialogProps, 'onClose' | 'enforceFocus'> {
   titleText: React.ReactNode
   contentText: React.ReactNode
   cancelButtonText?: React.ReactNode
@@ -43,7 +43,7 @@ export interface ConfirmationDialogProps extends Omit<IDialogProps, 'onClose' | 
   titleLineClamp?: number
 }
 
-const confirmDialogProps: Partial<IDialogProps> = {
+const confirmDialogProps: Partial<BpDialogProps> = {
   usePortal: true,
   autoFocus: true,
   canEscapeKeyClose: true,

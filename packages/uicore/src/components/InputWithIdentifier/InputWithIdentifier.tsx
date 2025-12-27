@@ -6,7 +6,8 @@
  */
 
 import React, { useState, useContext } from 'react'
-import { EditableText, Popover, PopoverInteractionKind } from '@blueprintjs/core'
+import { EditableText, PopoverInteractionKind } from '@blueprintjs/core'
+import { Popover } from '../Popover/Popover'
 import { get, isNil, set, cloneDeep } from 'lodash-es'
 import cx from 'classnames'
 import { FormikTooltipContext } from '../FormikForm/FormikTooltipContext'

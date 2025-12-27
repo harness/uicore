@@ -7,7 +7,13 @@
 
 import React from 'react'
 import cx from 'classnames'
-import { IInputGroupProps, Intent, InputGroup, PopoverInteractionKind, Classes } from '@blueprintjs/core'
+import {
+  InputGroupProps2 as BpInputGroupProps,
+  Intent,
+  InputGroup,
+  PopoverInteractionKind,
+  Classes
+} from '@blueprintjs/core'
 import { Popover } from '../../../Popover/Popover'
 import { Icon } from '@harness/icons'
 import { Text } from '../../../Text/Text'
@@ -20,7 +26,10 @@ import { Container } from '../../../Container/Container'
 import { PopoverProps } from '../../../Popover/Popover'
 
 export interface FilterTextInputProps
-  extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
+  extends Omit<
+      BpInputGroupProps,
+      'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder' | 'type'
+    >,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
   wrapperClassName?: string
   placeholder?: string
@@ -132,7 +141,6 @@ export function FilterTextInput(props: FilterTextInputProps): React.ReactElement
   return (
     <Popover
       targetTagName="div"
-      wrapperTagName="div"
       position="bottom-left"
       usePortal={usePortal}
       minimal

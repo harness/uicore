@@ -14,7 +14,7 @@ import { omit } from 'lodash-es'
 import data from '../../../../_stories/components/pokedex.json'
 import { FiltersMultiSelectDropDown, FilterMultiSelectDropDownProps } from './FiltersMultiSelectDropDown'
 import { Layout } from '../../../../layouts/Layout'
-import { IItemRendererProps } from '@blueprintjs/select'
+import { ItemRendererProps as BpItemRendererProps } from '@blueprintjs/select'
 import { Checkbox } from '../../../Checkbox/Checkbox'
 import { Text } from '../../../Text/Text'
 import { FontVariation } from '@harness/design-system'
@@ -112,7 +112,7 @@ export const Custom: Story<FilterMultiSelectDropDownProps> = args => {
   const argsCopy = omit(args, ['items', 'onChange', 'value', 'listItemRenderer'])
   const [value, setValue] = React.useState<MultiSelectOption[]>(localItems.slice(0, 3))
 
-  const itemRenderer = (item: MultiSelectOption, itemProps: IItemRendererProps): JSX.Element | null => {
+  const itemRenderer = (item: MultiSelectOption, itemProps: BpItemRendererProps): JSX.Element | null => {
     const { handleClick, modifiers } = itemProps
     const isSelected = value && value.findIndex(val => val.value === item.value) > -1
     return (

@@ -6,13 +6,14 @@
  */
 
 import React, { useCallback, useEffect, useState } from 'react'
-import { Popover, Spinner, Menu, MenuDivider } from '@blueprintjs/core'
+import { Spinner, Menu, MenuDivider } from '@blueprintjs/core'
+import { Popover } from '../../../Popover/Popover'
 import { Utils } from '../../../../core/Utils'
 import {
   QueryList,
-  IQueryListRendererProps,
-  IItemRendererProps,
-  IQueryListProps,
+  QueryListRendererProps as BpQueryListRendererProps,
+  ItemRendererProps as BpItemRendererProps,
+  QueryListProps as BpQueryListProps,
   ItemListRenderer
 } from '@blueprintjs/select'
 
@@ -31,7 +32,7 @@ import {
 import { Container } from '../../../Container/Container'
 import { PopoverProps } from '../../../Popover/Popover'
 
-type Props = IQueryListProps<SelectOption>
+type Props = BpQueryListProps<SelectOption>
 
 export function NoMatch(): React.ReactElement {
   return <li className={cx(css.menuItem, css.noResultsFound)}>No matching results found</li>
@@ -70,7 +71,7 @@ export interface FilterSelectDropDownProps
   sections?: Section
   isHorizontalLayout?: boolean
   columnSplitIndex?: number
-  listItemRenderer?: (item: SelectOption, itemProps: IItemRendererProps) => JSX.Element | null
+  listItemRenderer?: (item: SelectOption, itemProps: BpItemRendererProps) => JSX.Element | null
 }
 
 /**
@@ -206,7 +207,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     return <Menu ulRef={itemsParentRef}>{renderedItems}</Menu>
   }
 
-  function renderer(listProps: IQueryListRendererProps<SelectOption>): JSX.Element {
+  function renderer(listProps: BpQueryListRendererProps<SelectOption>): JSX.Element {
     const midPoint = props.columnSplitIndex || 0
 
     const getAllMenuItems = (children: React.ReactNode): React.ReactNode[] => {
@@ -217,7 +218,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
             return [...acc, ...getAllMenuItems(child.props.children)]
           }
           // If it's a menu item (not a divider)
-          if (!child.props.className?.includes('bp3-menu-divider')) {
+          if (!child.props.className?.includes('bp4-menu-divider')) {
             return [...acc, child]
           }
         }
@@ -238,7 +239,6 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     return (
       <Popover
         targetTagName="div"
-        wrapperTagName="div"
         position="bottom-left"
         usePortal={usePortal}
         minimal
@@ -338,7 +338,7 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     )
   }
 
-  function itemRenderer(item: SelectOption, itemProps: IItemRendererProps): JSX.Element | null {
+  function itemRenderer(item: SelectOption, itemProps: BpItemRendererProps): JSX.Element | null {
     const { handleClick, modifiers } = itemProps
     return (
       <div

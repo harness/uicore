@@ -104,7 +104,7 @@ export function Text(props: TextProps): JSX.Element {
       tooltip={tooltip}
       tooltipProps={{
         ...props.tooltipProps,
-        targetClassName: cx(css.targetClass, props.tooltipProps?.targetClassName)
+        popoverClassName: cx(css.targetClass, props.tooltipProps?.popoverClassName)
       }}>
       <Tag
         {...omitStyledProps(

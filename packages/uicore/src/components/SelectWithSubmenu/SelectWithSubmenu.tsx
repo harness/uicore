@@ -8,7 +8,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { defaultTo } from 'lodash-es'
 import { Menu, MenuItem, Position } from '@blueprintjs/core'
-import { ISelectProps, Suggest } from '@blueprintjs/select'
+import { Suggest2Props as BpSelectProps, Suggest2 as Suggest } from '@blueprintjs/select'
 
 import { Text } from '../Text/Text'
 
@@ -24,7 +24,7 @@ export interface SelectWithSubmenuOption {
   hasSubmenuItems?: boolean
 }
 
-type Props = ISelectProps<SelectWithSubmenuOption>
+type Props = BpSelectProps<SelectWithSubmenuOption>
 
 export interface SelectWithSubmenuProps
   extends Omit<
@@ -49,7 +49,7 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
   const { items, onChange, onSubmenuOpen, allowCreatingNewItems, value, ...selectProps } = props
   const [selectedItem, setSelectedItem] = useState<SelectWithSubmenuOption | undefined>(undefined)
   const itemRenderer = useCallback(
-    (item: SelectWithSubmenuOption, { handleClick }) => {
+    (item: SelectWithSubmenuOption, { handleClick }: { handleClick: () => void }) => {
       return item.hasSubmenuItems ? (
         <Submenu
           items={defaultTo(item.submenuItems, [])}
@@ -95,19 +95,14 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
   return (
     <Suggest
       {...selectProps}
-      popoverProps={{
-        minimal: true,
-        className: css.main,
-        fill: true,
-        modifiers: {
-          preventOverflow: {
-            escapeWithReference: true
-          },
-          offset: {
-            offset: '0 2'
-          }
-        }
-      }}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      popoverProps={
+        {
+          minimal: true,
+          className: css.main,
+          matchTargetWidth: true
+        } as any
+      }
       itemListPredicate={(query, items) =>
         items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
       }
@@ -143,7 +138,8 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
           )}
         </Menu>
       )}
-      itemRenderer={itemRenderer}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      itemRenderer={itemRenderer as any}
     />
   )
 }
