@@ -1597,6 +1597,8 @@ import SfApprovalInverse from './sf-approval-inverse.svg'
 import SfApproval from './sf-approval.svg'
 import SfCommandInverse from './sf-command-inverse.svg'
 import SfCommand from './sf-command.svg'
+import SfDeleteScratchOrgInverse from './sf-delete-scratch-org-inverse.svg'
+import SfDeleteScratchOrg from './sf-delete-scratch-org.svg'
 import SfDeployToTargetOrgInverse from './sf-deploy-to-target-org-inverse.svg'
 import SfDeployToTargetOrg from './sf-deploy-to-target-org.svg'
 import SfDxProjRollbackInverse from './sf-dx-proj-rollback-inverse.svg'
@@ -3406,6 +3408,8 @@ type HarnessIconName =
   | 'sf-approval'
   | 'sf-command-inverse'
   | 'sf-command'
+  | 'sf-delete-scratch-org-inverse'
+  | 'sf-delete-scratch-org'
   | 'sf-deploy-to-target-org-inverse'
   | 'sf-deploy-to-target-org'
   | 'sf-dx-proj-rollback-inverse'
@@ -5215,6 +5219,8 @@ const HarnessIcons: KVO<ElementType> = {
   'sf-approval': SfApproval,
   'sf-command-inverse': SfCommandInverse,
   'sf-command': SfCommand,
+  'sf-delete-scratch-org-inverse': SfDeleteScratchOrgInverse,
+  'sf-delete-scratch-org': SfDeleteScratchOrg,
   'sf-deploy-to-target-org-inverse': SfDeployToTargetOrgInverse,
   'sf-deploy-to-target-org': SfDeployToTargetOrg,
   'sf-dx-proj-rollback-inverse': SfDxProjRollbackInverse,
