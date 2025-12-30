@@ -806,16 +806,20 @@ import FmeEnvironments from './fme-environments.svg'
 import FmeExperimentation from './fme-experimentation.svg'
 import FmeFeatureFlags from './fme-feature-flags.svg'
 import FmeKillFlag from './fme-kill-flag.svg'
+import FmeLimitTrafficExposure from './fme-limit-traffic-exposure.svg'
 import FmeMain from './fme-main.svg'
 import FmeMetrics from './fme-metrics.svg'
 import FmeMyWork from './fme-my-work.svg'
 import FmeOrgSettings from './fme-org-settings.svg'
+import FmePatchFlagDefinition from './fme-patch-flag-definition.svg'
 import FmeProjectSettings from './fme-project-settings.svg'
+import FmeReallocateTraffic from './fme-reallocate-traffic.svg'
 import FmeRestoreFlag from './fme-restore-flag.svg'
 import FmeRolloutBoard from './fme-rollout-board.svg'
 import FmeSearch from './fme-search.svg'
 import FmeSegments from './fme-segments.svg'
 import FmeSetAllocation from './fme-set-allocation.svg'
+import FmeSetDynamicConfig from './fme-set-dynamic-config.svg'
 import FmeSetTargets from './fme-set-targets.svg'
 import FmeSettings from './fme-settings.svg'
 import FmeUpdateFlag from './fme-update-flag.svg'
@@ -2617,16 +2621,20 @@ type HarnessIconName =
   | 'fme-experimentation'
   | 'fme-feature-flags'
   | 'fme-kill-flag'
+  | 'fme-limit-traffic-exposure'
   | 'fme-main'
   | 'fme-metrics'
   | 'fme-my-work'
   | 'fme-org-settings'
+  | 'fme-patch-flag-definition'
   | 'fme-project-settings'
+  | 'fme-reallocate-traffic'
   | 'fme-restore-flag'
   | 'fme-rollout-board'
   | 'fme-search'
   | 'fme-segments'
   | 'fme-set-allocation'
+  | 'fme-set-dynamic-config'
   | 'fme-set-targets'
   | 'fme-settings'
   | 'fme-update-flag'
@@ -4428,16 +4436,20 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-experimentation': FmeExperimentation,
   'fme-feature-flags': FmeFeatureFlags,
   'fme-kill-flag': FmeKillFlag,
+  'fme-limit-traffic-exposure': FmeLimitTrafficExposure,
   'fme-main': FmeMain,
   'fme-metrics': FmeMetrics,
   'fme-my-work': FmeMyWork,
   'fme-org-settings': FmeOrgSettings,
+  'fme-patch-flag-definition': FmePatchFlagDefinition,
   'fme-project-settings': FmeProjectSettings,
+  'fme-reallocate-traffic': FmeReallocateTraffic,
   'fme-restore-flag': FmeRestoreFlag,
   'fme-rollout-board': FmeRolloutBoard,
   'fme-search': FmeSearch,
   'fme-segments': FmeSegments,
   'fme-set-allocation': FmeSetAllocation,
+  'fme-set-dynamic-config': FmeSetDynamicConfig,
   'fme-set-targets': FmeSetTargets,
   'fme-settings': FmeSettings,
   'fme-update-flag': FmeUpdateFlag,
