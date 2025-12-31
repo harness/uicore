@@ -799,9 +799,11 @@ import Flash from './flash.svg'
 import Flux from './flux.svg'
 import FmeAccountSettings from './fme-account-settings.svg'
 import FmeAddRemoveTargets from './fme-add-remove-targets.svg'
+import FmeArchiveFlag from './fme-archive-flag.svg'
 import FmeAskSwitch from './fme-ask-switch.svg'
 import FmeCreateFlag from './fme-create-flag.svg'
 import FmeDatahub from './fme-datahub.svg'
+import FmeDeleteFlag from './fme-delete-flag.svg'
 import FmeEnvironments from './fme-environments.svg'
 import FmeExperimentation from './fme-experimentation.svg'
 import FmeFeatureFlags from './fme-feature-flags.svg'
@@ -821,6 +823,7 @@ import FmeSegments from './fme-segments.svg'
 import FmeSetAllocation from './fme-set-allocation.svg'
 import FmeSetDynamicConfig from './fme-set-dynamic-config.svg'
 import FmeSetTargets from './fme-set-targets.svg'
+import FmeSetTreatments from './fme-set-treatments.svg'
 import FmeSettings from './fme-settings.svg'
 import FmeUpdateFlag from './fme-update-flag.svg'
 import FmeWithDarkText from './fme-with-dark-text.svg'
@@ -2614,9 +2617,11 @@ type HarnessIconName =
   | 'flux'
   | 'fme-account-settings'
   | 'fme-add-remove-targets'
+  | 'fme-archive-flag'
   | 'fme-ask-switch'
   | 'fme-create-flag'
   | 'fme-datahub'
+  | 'fme-delete-flag'
   | 'fme-environments'
   | 'fme-experimentation'
   | 'fme-feature-flags'
@@ -2636,6 +2641,7 @@ type HarnessIconName =
   | 'fme-set-allocation'
   | 'fme-set-dynamic-config'
   | 'fme-set-targets'
+  | 'fme-set-treatments'
   | 'fme-settings'
   | 'fme-update-flag'
   | 'fme-with-dark-text'
@@ -4429,9 +4435,11 @@ const HarnessIcons: KVO<ElementType> = {
   flux: Flux,
   'fme-account-settings': FmeAccountSettings,
   'fme-add-remove-targets': FmeAddRemoveTargets,
+  'fme-archive-flag': FmeArchiveFlag,
   'fme-ask-switch': FmeAskSwitch,
   'fme-create-flag': FmeCreateFlag,
   'fme-datahub': FmeDatahub,
+  'fme-delete-flag': FmeDeleteFlag,
   'fme-environments': FmeEnvironments,
   'fme-experimentation': FmeExperimentation,
   'fme-feature-flags': FmeFeatureFlags,
@@ -4451,6 +4459,7 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-set-allocation': FmeSetAllocation,
   'fme-set-dynamic-config': FmeSetDynamicConfig,
   'fme-set-targets': FmeSetTargets,
+  'fme-set-treatments': FmeSetTreatments,
   'fme-settings': FmeSettings,
   'fme-update-flag': FmeUpdateFlag,
   'fme-with-dark-text': FmeWithDarkText,
