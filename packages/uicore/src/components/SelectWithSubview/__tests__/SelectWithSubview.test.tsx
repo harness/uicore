@@ -59,7 +59,7 @@ const EnvForm = (props: { onSubmit: (values: EnvFormData) => void; onHide?: () =
       {props => {
         const { setFieldValue } = props
         return (
-          <Form style={{ padding: '10px' }}>
+          <Form {...({} as any)} style={{ padding: '10px' }}>
             <TextInput
               placeholder="Enter Environment Name"
               name="environment"

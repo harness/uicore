@@ -175,7 +175,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           onClick={() => setIsLearnMoreOpen(true)}
           text={
             <div className={css.learnMore}>
-              <span>{i18n.learnMore}</span>
+              <span>{typeof i18n.learnMore === 'function' ? i18n.learnMore() : i18n.learnMore}</span>
               <Icon name="more" />
             </div>
           }

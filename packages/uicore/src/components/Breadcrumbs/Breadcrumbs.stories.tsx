@@ -56,7 +56,7 @@ export interface Breadcrumb {
 export const Basic: Story<BreadcrumbsProps> = args => {
   const { links, className } = args
   return (
-    <BrowserRouter>
+    <BrowserRouter {...({} as any)}>
       <Breadcrumbs links={links} className={className} />
     </BrowserRouter>
   )

@@ -156,7 +156,7 @@ export const Basic: Story<MultiSelectWithSubviewProps> = args => {
         {props => {
           const { setFieldValue, errors, values } = props
           return (
-            <Form style={{ padding: '10px' }}>
+            <Form {...({} as any)} style={{ padding: '10px' }}>
               <TextInput
                 placeholder="Enter Environment Name"
                 name="environment"

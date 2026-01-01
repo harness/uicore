@@ -63,7 +63,8 @@ import {
   SelectWithSubmenuTypeInputV2,
   SelectWithSubmenuTypeInput,
   MultiTypeBiLevelInput,
-  MultiTypeBiLevelInputProps
+  MultiTypeBiLevelInputProps,
+  AcceptableValue
 } from '../MultiTypeInput/MultiTypeInput'
 import {
   CategorizedSelectProps,
@@ -79,7 +80,7 @@ import {
 } from '../ExpressionInput/ExpressionInput'
 
 import { FormikTooltipContext } from './FormikTooltipContext'
-import { MultiTypeInputType } from '../MultiTypeInput/MultiTypeInputUtils'
+import { MultiTypeInputType, MultiTypeInputValue } from '../MultiTypeInput/MultiTypeInputUtils'
 import { FormError } from '../FormError/FormError'
 import { DropDown as UiKitDropDown, DropDownProps } from '../DropDown/DropDown'
 import { errorCheck, getFormFieldLabel, FormikContextProps, FormikExtended, escapeNewlines } from './utils'
@@ -967,7 +968,7 @@ const Form = (props: FormikFormProps) => {
     formik.inline = inline
   }
   return (
-    <FrmForm {...rest} className={cx(css.main, className)}>
+    <FrmForm {...(rest as any)} className={cx(css.main, className)}>
       <div ref={formElementRef}>{children}</div>
     </FrmForm>
   )
@@ -1095,10 +1096,10 @@ const FormMultiTypeInput = (props: FormMultiTypeInputProps & FormikContextProps<
   }, [props.selectItems])
 
   const onChangeCallback: MultiTypeInputProps['onChange'] = useCallback(
-    (val, valueType, type) => {
+    (val: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as any)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
@@ -1210,10 +1211,10 @@ const FormMultiTypeBiLevelInput = (props: FormMultiTypeBiLevelInputProps & Formi
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: MultiTypeBiLevelInputProps['onChange'] = useCallback(
-    (val, valueType, type) => {
+    (val: AcceptableValue | undefined, valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as any)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
@@ -1396,15 +1397,15 @@ const FormSelectWithSubmenuTypeInput = (props: FormSelectWithSubmenuTypeInputPro
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: SelectWithSubmenuTypeInputProps['onChange'] = useCallback(
-    (val, type) => {
+    (val: AcceptableValue | undefined, _valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as any)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
       formik?.setFieldTouched(name, true, false)
-      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val)
+      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val as any)
     },
     [formik, selectWithSubmenuTypeInputProps]
   )
@@ -1474,15 +1475,15 @@ const FormSelectWithSubmenuTypeInputV2 = (props: FormSelectWithSubmenuTypeInputP
   } = restProps
   const [currentType, setCurrentType] = React.useState(getMultiTypeFromValue(get(formik?.values, name, '')))
   const onChangeCallback: SelectWithSubmenuTypeInputPropsV2['onChange'] = useCallback(
-    (val, valueType, type) => {
+    (val: AcceptableValue | undefined, _valueType: MultiTypeInputValue, type: MultiTypeInputType) => {
       type !== currentType && setCurrentType(type)
       if (useValue && type === MultiTypeInputType.FIXED) {
-        formik?.setFieldValue(name, val?.value)
+        formik?.setFieldValue(name, (val as any)?.value)
       } else {
         formik?.setFieldValue(name, val)
       }
       formik?.setFieldTouched(name, true, false)
-      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val, valueType, type)
+      selectWithSubmenuTypeInputProps?.selectWithSubmenuProps?.onChange?.(val as any)
     },
     [formik, selectWithSubmenuTypeInputProps]
   )
@@ -1551,10 +1552,10 @@ const FormMultiSelectWithSubmenuTypeInput = (
     ...rest
   } = restProps
   const onChangeCallback: SelectWithSubmenuTypeInputPropsV2['onChange'] = useCallback(
-    val => {
+    (val: AcceptableValue | undefined, _valueType: MultiTypeInputValue, _type: MultiTypeInputType) => {
       formik?.setFieldValue(name, val)
       formik?.setFieldTouched(name, true, false)
-      multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.onChange?.(val)
+      multiSelectWithSubmenuTypeInputProps?.multiSelectWithSubmenuProps?.onChange?.(val as any)
     },
     [formik, multiSelectWithSubmenuTypeInputProps]
   )

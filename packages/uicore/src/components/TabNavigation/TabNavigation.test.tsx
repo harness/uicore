@@ -19,7 +19,7 @@ describe('TabNavigation component', () => {
 
   test('renders navigation links', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...({} as any)}>
         <TabNavigation links={mockLinks} />
       </BrowserRouter>
     )
@@ -31,7 +31,7 @@ describe('TabNavigation component', () => {
 
   test('renders with small size', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...({} as any)}>
         <TabNavigation links={mockLinks} size="small" />
       </BrowserRouter>
     )
@@ -44,7 +44,7 @@ describe('TabNavigation component', () => {
       { label: 'About', to: '/about', disabled: true }
     ]
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...({} as any)}>
         <TabNavigation links={linksWithDisabled} />
       </BrowserRouter>
     )
@@ -57,7 +57,7 @@ describe('TabNavigation component', () => {
       { label: 'About', to: '/about' }
     ]
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...({} as any)}>
         <TabNavigation links={linksWithExact} />
       </BrowserRouter>
     )
@@ -70,7 +70,7 @@ describe('TabNavigation component', () => {
       { label: 'About', to: '/about' }
     ]
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...({} as any)}>
         <TabNavigation links={linksWithStrict} />
       </BrowserRouter>
     )
@@ -79,7 +79,7 @@ describe('TabNavigation component', () => {
 
   test('renders empty links array', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...({} as any)}>
         <TabNavigation links={[]} />
       </BrowserRouter>
     )

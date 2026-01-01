@@ -31,7 +31,7 @@ describe('Render basic component', () => {
       }
     ]
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter {...({} as any)}>
         <Breadcrumbs links={links} />
       </BrowserRouter>
     )

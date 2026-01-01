@@ -30,7 +30,7 @@ describe('Test render CollapsableSelect', () => {
     const { container, getByText } = render(
       <Formik initialValues={{ connectivityMode: 'service-kubernetes' }} onSubmit={jest.fn()}>
         {formik => (
-          <Form>
+          <Form {...({} as any)}>
             <FormikCollapsableSelect
               type={CollapsableSelectType.CardView}
               items={items}
@@ -54,7 +54,7 @@ describe('Test render CollapsableSelect', () => {
     const { container, getByText } = render(
       <Formik initialValues={{ connectivityMode: '' }} onSubmit={noop}>
         {formik => (
-          <Form>
+          <Form {...({} as any)}>
             <FormikCollapsableSelect
               type={CollapsableSelectType.CardView}
               items={items}
@@ -82,7 +82,7 @@ describe('Test render CollapsableSelect', () => {
     const { container, getByText } = render(
       <Formik initialValues={{ connectivityMode: 'service-kubernetes' }} onSubmit={noop}>
         {formik => (
-          <Form>
+          <Form {...({} as any)}>
             <FormikCollapsableSelect
               type={CollapsableSelectType.CardView}
               items={items}
@@ -119,7 +119,7 @@ describe('Test render CollapsableSelect', () => {
     const { container } = render(
       <Formik initialValues={{ connectivityMode: 'service-kubernetes' }} onSubmit={noop}>
         {formik => (
-          <Form>
+          <Form {...({} as any)}>
             <FormikCollapsableSelect
               items={items}
               name={'connectivityMode'}

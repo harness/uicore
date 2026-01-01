@@ -212,7 +212,7 @@ export function TagInput<T>(props: TagInputProps<T>) {
     }
   }, [_items, isMounted])
 
-  const itemPredicate = useCallback((query, item: T, _index, exactMatch) => {
+  const itemPredicate = useCallback((query: string, item: T, _index: number | undefined, exactMatch: boolean | undefined) => {
     const itemLabel = labelFor(item)
     const normalizedTitle = itemLabel.toLowerCase()
     const normalizedQuery = query.toLowerCase()

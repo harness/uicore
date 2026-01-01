@@ -90,7 +90,7 @@ export function EnvironmentTypeSubForm(props: EnvironmentTypeSubFormProps) {
       {props => {
         const { setFieldValue, errors, values } = props
         return (
-          <Form style={{ padding: '10px' }}>
+          <Form {...({} as any)} style={{ padding: '10px' }}>
             <TextInput
               placeholder="Enter Environment Name"
               name="environment"
@@ -134,7 +134,7 @@ export function ExampleFormSubviewForSelect() {
   return (
     <Formik initialValues={{}} onSubmit={() => {}}>
       {() => (
-        <Form>
+        <Form {...({} as any)}>
           <SelectWithSubview
             items={ExampleItems}
             changeViewButtonLabel="+ Add an environment"

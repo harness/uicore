@@ -49,17 +49,18 @@ export function CardSelect<ObjectType>(props: CardSelectProps<ObjectType>) {
   } = props
   const rootRef = useRef<HTMLDivElement>(null)
 
-  const handleUserKeyPress = useCallback(event => {
+  const handleUserKeyPress = useCallback((event: KeyboardEvent) => {
     const { keyCode, target } = event
+    const htmlTarget = target as HTMLElement
     if (ValidKeys.indexOf(keyCode) > -1) {
       if (keyCode === Keys.Enter) {
-        target.click()
+        htmlTarget.click()
       } else if (keyCode === Keys.MoveLeft) {
-        target.previousSibling?.click()
-        target.previousSibling?.focus()
+        (htmlTarget.previousSibling as HTMLElement)?.click()
+        ;(htmlTarget.previousSibling as HTMLElement)?.focus()
       } else if (keyCode === Keys.MoveRight) {
-        target.nextSibling?.click()
-        target.nextSibling?.focus()
+        (htmlTarget.nextSibling as HTMLElement)?.click()
+        ;(htmlTarget.nextSibling as HTMLElement)?.focus()
       }
     }
   }, [])

@@ -8,7 +8,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { defaultTo } from 'lodash-es'
 import { Menu, MenuItem, Position } from '@blueprintjs/core'
-import { ISelectProps, Suggest } from '@blueprintjs/select'
+import { ISelectProps, Suggest, ItemRendererProps } from '@blueprintjs/select'
 
 import { Text } from '../Text/Text'
 
@@ -49,13 +49,14 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
   const { items, onChange, onSubmenuOpen, allowCreatingNewItems, value, ...selectProps } = props
   const [selectedItem, setSelectedItem] = useState<SelectWithSubmenuOption | undefined>(undefined)
   const itemRenderer = useCallback(
-    (item: SelectWithSubmenuOption, { handleClick }) => {
+    (item: SelectWithSubmenuOption, itemProps: ItemRendererProps) => {
+      const { handleClick } = itemProps
       return item.hasSubmenuItems ? (
         <Submenu
           items={defaultTo(item.submenuItems, [])}
           onChange={subItem => {
             onChange?.(subItem)
-            handleClick()
+            handleClick({} as any)
           }}
           primaryValue={item}
           onSubmenuOpen={onSubmenuOpen}
@@ -69,7 +70,7 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
           className={css.createNewItemButton}
           onClick={() => {
             onChange?.({ label: item.label, value: item.label })
-            handleClick()
+            handleClick({} as any)
           }}
         />
       ) : (
@@ -78,7 +79,7 @@ export function SelectWithSubmenu(props: SelectWithSubmenuProps): React.ReactEle
           className={css.submenuItem}
           onClick={() => {
             onChange?.(item)
-            handleClick()
+            handleClick({} as any)
           }}>
           <Text className={css.menuItemLabel} lineClamp={1}>
             {item.label}

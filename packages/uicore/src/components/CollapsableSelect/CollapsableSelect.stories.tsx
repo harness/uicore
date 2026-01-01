@@ -66,7 +66,7 @@ export const CardView: Story<{ items: Array<CollapsableSelectOptions & T> }> = a
         connectivityMode: Yup.string().trim().required('Connectivity Mode  is required')
       })}>
       {formik => (
-        <Form>
+        <Form {...({} as any)}>
           <FormikCollapsableSelect<T>
             type={CollapsableSelectType.CardView}
             {...args}
@@ -91,7 +91,7 @@ export const Custom: Story<{ items: Array<CollapsableSelectOptions & U>; isReado
         connectivityMode: Yup.string().trim().required('Connectivity Mode  is required')
       })}>
       {formik => (
-        <Form>
+        <Form {...({} as any)}>
           <FormikCollapsableSelect<U>
             {...args}
             selected={args.items[args.items.findIndex(item => item.value === formik.values.connectivityMode)]}
