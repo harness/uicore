@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import { CardSelect } from './CardSelect'
 import { CardBody } from '../Card/Card'
 import { Text } from '../Text/Text'
@@ -95,7 +95,6 @@ describe('Test render Radio Select', () => {
     const selectedIndex = 5
     const { container } = render(<CardSelect {...props} />)
     fireEvent.click(container.querySelectorAll('.bp3-card')[selectedIndex])
-    await wait()
     expect(props.onChange).toHaveBeenCalledWith(data[selectedIndex], expect.any(Object))
   })
   test('should handle on arrow key Event', async () => {
@@ -109,7 +108,6 @@ describe('Test render Radio Select', () => {
       keyCode: 37,
       which: 37
     })
-    await wait()
     expect(props.onChange).toHaveBeenCalledWith(data[defaultIndex - 1], expect.any(Object))
 
     // Right Arrow
@@ -118,7 +116,6 @@ describe('Test render Radio Select', () => {
       keyCode: 39,
       which: 39
     })
-    await wait()
     expect(props.onChange).toHaveBeenCalledWith(data[defaultIndex + 1], expect.any(Object))
   })
 
@@ -134,7 +131,6 @@ describe('Test render Radio Select', () => {
       keyCode: 13,
       which: 14
     })
-    await wait()
     expect(props.onChange).toHaveBeenCalledWith(data[selectedIndex], expect.any(Object))
   })
 })

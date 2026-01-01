@@ -370,7 +370,7 @@ exports[`DropDown component renders dropdown with selected value 1`] = `
 exports[`DropDown component renders dropdown with selected value as object 1`] = `
 <div>
   <div
-    class="bp4-popover-wrapper main"
+    class="bp4-popover-wrapper main disabled"
   >
     <div
       aria-haspopup="true"

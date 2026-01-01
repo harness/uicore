@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, wait } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { GraphError } from '../GraphError'
 
 describe('GraphError unit tests', () => {
@@ -14,7 +14,6 @@ describe('GraphError unit tests', () => {
     const { container } = render(
       <GraphError linkText={'View in Splunk'} onLinkClick={() => void 0} title={'Error occured'} />
     )
-    await wait()
     expect(container).toMatchSnapshot()
   })
 
@@ -22,7 +21,6 @@ describe('GraphError unit tests', () => {
     const { container } = render(
       <GraphError linkText={'View in Splunk'} onLinkClick={() => void 0} title={'Error occured'} />
     )
-    await wait()
     expect(container.querySelector('[class*="title"]')).not.toBeNull()
     expect(container.querySelector('svg')).not.toBeNull()
     expect(container.querySelector('a[href]')).toBeNull()
@@ -37,7 +35,6 @@ describe('GraphError unit tests', () => {
         title={'Error occured'}
       />
     )
-    await wait()
     expect(container.querySelector('[class*="title"]')).not.toBeNull()
     expect(container.querySelector('img')).not.toBeNull()
     expect(container.querySelector('svg')).toBeNull()

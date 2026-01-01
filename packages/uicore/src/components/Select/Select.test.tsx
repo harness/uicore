@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, act, wait } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 
 import { Select, SelectOption } from './Select'
 
@@ -54,10 +54,8 @@ describe('<Select/> tests', () => {
     expect(container).toMatchSnapshot('Loading state')
     expect(queryByText('Loading results...')).toBeDefined()
 
-    await act(() => {
+    await act(async () => {
       jest.runTimersToTime(TIMEOUT)
-
-      return wait()
     })
 
     // expect(container).toMatchSnapshot('Final state')

@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, act, wait } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 
 import { MultiSelect, MultiSelectOption } from './MultiSelect'
 
@@ -53,10 +53,8 @@ describe('<MultiSelect/> tests', () => {
     expect(container).toMatchSnapshot('Loading state')
     expect(queryByText('Loading results...')).toBeDefined()
 
-    await act(() => {
+    await act(async () => {
       jest.runTimersToTime(TIMEOUT)
-
-      return wait()
     })
 
     expect(container).toMatchSnapshot('Final state')
@@ -94,8 +92,8 @@ describe('<MultiSelect/> tests', () => {
     fireEvent.focus(input)
 
     fireEvent.change(input, { target: { value: 'newItem' } })
-    expect(container.querySelectorAll('.bp3-button-text').length).toBe(1)
-    expect(container.querySelectorAll('.bp3-button-text')[0].textContent).toBe('newItem')
+    expect(container.querySelectorAll('.bp4-button-text').length).toBe(1)
+    expect(container.querySelectorAll('.bp4-button-text')[0].textContent).toBe('newItem')
   })
 
   test(' works on Change', () => {

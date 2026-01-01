@@ -25,7 +25,7 @@ describe('SplitButton interaction', () => {
     userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
     expect(primaryAction).toBeCalledTimes(1)
 
-    userEvent.click(screen.getByRole('button', { name: /chevron-down/i }))
+    userEvent.click(screen.getAllByRole('button')[1])
     const option = await screen.findByText('Save as Template')
     userEvent.click(option)
     expect(disabledAction).toBeCalledTimes(1)
@@ -77,8 +77,9 @@ describe('SplitButton interaction', () => {
       </SplitButton>
     )
     expect(screen.getByRole('button', { name: /save trigger/i })).toBeDisabled()
-    expect(screen.getByRole('button', { name: /chevron-down/i })).toBeEnabled()
-    userEvent.click(screen.getByRole('button', { name: /chevron-down/i }))
+    const buttons = screen.getAllByRole('button')
+    expect(buttons[1]).toBeEnabled()
+    userEvent.click(buttons[1])
     const option = await screen.findByText('Save as Template')
     expect(option).toBeInTheDocument()
     userEvent.click(screen.getByText('Save pipeline'))

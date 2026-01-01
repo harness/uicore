@@ -6,7 +6,7 @@
  */
 
 import React, { useContext, useState, useCallback, FormEvent } from 'react'
-import { render, wait, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import { SelectWithSubview, SelectWithSubviewContext } from '../SelectWithSubview'
 import { SelectOption } from 'components/Select/Select'
 import { Heading } from 'components/Heading/Heading'
@@ -105,7 +105,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitForDomChange()
+    await waitFor(() => {})
 
     const dropdownMenu = container.querySelector('[class~="bp3-popover-wrapper"] .bp3-menu')
     expect(dropdownMenu).not.toBeNull()
@@ -115,7 +115,6 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await wait()
 
     // ensure secondary view is rendered
     const secondaryView = container.querySelector('.bp3-popover-content form')
@@ -127,7 +126,6 @@ describe.skip('Tests for Select with secondary view', () => {
       throw Error('Close button was not rendered.')
     }
     fireEvent.click(closeButton)
-    await wait()
 
     // ensure original drop down is rendered
     expect(container.querySelector('form')).toBeNull()
@@ -156,7 +154,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitForDomChange()
+    await waitFor(() => {})
 
     const dropdownMenu = container.querySelector('[class~="bp3-popover-wrapper"] .bp3-menu')
     expect(dropdownMenu).not.toBeNull()
@@ -166,7 +164,6 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await wait()
 
     const secondaryView = container.querySelector('.bp3-popover-content form')
     expect(secondaryView).not.toBeNull()
@@ -178,7 +175,6 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.change(environmentInputBox, { target: { value: 'Custom Env Label' } })
-    await wait()
 
     // submit changes
     const submitButton = secondaryView?.querySelector('button[type="submit"]')
@@ -187,7 +183,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.click(submitButton)
-    await waitForDomChange()
+    await waitFor(() => {})
     expect(onSubmitFunc).toHaveBeenCalled()
     expect(onSubmitFunc.mock.calls[0][0]).toEqual({
       environment: 'Custom Env Label'
@@ -211,7 +207,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitForDomChange()
+    await waitFor(() => {})
 
     const dropdownMenu = container.querySelector('[class~="bp3-popover-wrapper"] .bp3-menu')
     expect(dropdownMenu).not.toBeNull()
@@ -221,7 +217,6 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await wait()
 
     const secondaryView = container.querySelector('.bp3-popover-content form')
     expect(secondaryView).not.toBeNull()
@@ -233,7 +228,6 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.change(environmentInputBox, { target: { value: items[0].label } })
-    await wait()
 
     // submit changes
     const submitButton = secondaryView?.querySelector('button[type="submit"]')
@@ -242,7 +236,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.click(submitButton)
-    await waitForDomChange()
+    await waitFor(() => {})
 
     expect(onSubmitFunc).not.toHaveBeenCalled()
     getByText('secondaryOption_1 already exists. Please provide a unique option.')
