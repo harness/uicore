@@ -1230,7 +1230,7 @@
     react-transition-group "^4.4.5"
     tslib "~2.5.0"
 
-"@blueprintjs/datetime@^4.0.0":
+"@blueprintjs/datetime@^4.4.37":
   version "4.4.37"
   resolved "https://registry.npmjs.org/@blueprintjs/datetime/-/datetime-4.4.37.tgz#c3c92cf3b0aa39c26a5727ffd0a5262ca9a1f29c"
   integrity sha512-YJiWzUH1eefCMvvvdsLimrLZNk5XW1yTMK4OmX6BP+gAt/u7cNKyv+42XO4tlymeWRqT0K7HbQOPP4ybt/xzEw==
@@ -1262,7 +1262,7 @@
     react-popper "^2.3.0"
     tslib "~2.5.0"
 
-"@blueprintjs/select@^4.0.0":
+"@blueprintjs/select@^4.9.24":
   version "4.9.24"
   resolved "https://registry.npmjs.org/@blueprintjs/select/-/select-4.9.24.tgz#5814d946486308a05758a9e1408b6f8c31f4a60e"
   integrity sha512-OTjesxH/7UZvM7yAdHJ5u3sIjX1N8Rs4CQQ22AfqNl82SIROqkuXI31XEl6YNX1GsYfmAMiw0K7XohEKOMXR5g==

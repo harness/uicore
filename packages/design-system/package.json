@@ -28,8 +28,8 @@
     "react": "^18.3.1"
   },
   "devDependencies": {
-    "@blueprintjs/core": "^4.0.0",
-    "@blueprintjs/popover2": "^1.14.0",
+    "@blueprintjs/core": "^4.20.2",
+    "@blueprintjs/popover2": "^1.14.11",
     "@types/react": "^18.3.1",
     "dts-bundle-generator": "^6.4.0",
     "react": "^18.3.1",
