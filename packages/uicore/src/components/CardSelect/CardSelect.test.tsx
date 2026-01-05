@@ -94,7 +94,8 @@ describe('Test render Radio Select', () => {
     const props = getDefaultProps(data[2])
     const selectedIndex = 5
     const { container } = render(<CardSelect {...props} />)
-    fireEvent.click(container.querySelectorAll('.bp3-card')[selectedIndex])
+    const cards = container.querySelectorAll('[data-index]')
+    fireEvent.click(cards[selectedIndex])
     expect(props.onChange).toHaveBeenCalledWith(data[selectedIndex], expect.any(Object))
   })
   test('should handle on arrow key Event', async () => {
@@ -102,8 +103,10 @@ describe('Test render Radio Select', () => {
     const props = getDefaultProps(data[defaultIndex])
     const { container } = render(<CardSelect {...props} />)
 
+    const cards = container.querySelectorAll('[data-index]')
+
     // Left Arrow
-    fireEvent.keyDown(container.querySelectorAll('.bp3-card')[defaultIndex], {
+    fireEvent.keyDown(cards[defaultIndex], {
       key: 'ArrowLeft',
       keyCode: 37,
       which: 37
@@ -111,7 +114,7 @@ describe('Test render Radio Select', () => {
     expect(props.onChange).toHaveBeenCalledWith(data[defaultIndex - 1], expect.any(Object))
 
     // Right Arrow
-    fireEvent.keyDown(container.querySelectorAll('.bp3-card')[defaultIndex], {
+    fireEvent.keyDown(cards[defaultIndex], {
       key: 'ArrowRight',
       keyCode: 39,
       which: 39
@@ -125,8 +128,10 @@ describe('Test render Radio Select', () => {
     const props = getDefaultProps(data[defaultIndex])
     const { container } = render(<CardSelect {...props} />)
 
+    const cards = container.querySelectorAll('[data-index]')
+
     // Enter Key
-    fireEvent.keyDown(container.querySelectorAll('.bp3-card')[selectedIndex], {
+    fireEvent.keyDown(cards[selectedIndex], {
       key: 'Enter',
       keyCode: 13,
       which: 14

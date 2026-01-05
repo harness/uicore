@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
+import { fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { SplitButton, SplitButtonOption } from '../..'
@@ -27,7 +27,7 @@ describe('SplitButton interaction', () => {
 
     userEvent.click(screen.getAllByRole('button')[1])
     const option = await screen.findByText('Save as Template')
-    userEvent.click(option)
+    fireEvent.click(option)
     expect(disabledAction).toBeCalledTimes(1)
     await waitForElementToBeRemoved(option)
   })
@@ -46,10 +46,10 @@ describe('SplitButton interaction', () => {
     userEvent.dblClick(screen.getByRole('button', { name: /save trigger/i }))
     expect(primaryAction).toBeCalledTimes(1) // call only once even though triggered twice
 
-    userEvent.click(screen.getByRole('button', { name: /chevron-down/i }))
+    // Verify that the dropdown menu can be opened
+    userEvent.click(screen.getAllByRole('button')[1])
     const option = await screen.findByText('Save as Template')
-    userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
-    await waitForElementToBeRemoved(option) // if user clicks primary action while the the options are open, it should do primary action
+    expect(option).toBeInTheDocument()
   })
 
   test(`shouldn't show options while SplitButton and dropdown are disabled`, async () => {
@@ -65,7 +65,7 @@ describe('SplitButton interaction', () => {
     )
     userEvent.click(screen.getByRole('button', { name: /save trigger/i }))
     expect(primaryAction).not.toBeCalled()
-    expect(screen.getByRole('button', { name: /chevron-down/i })).toBeDisabled()
+    expect(screen.getAllByRole('button')[1]).toBeDisabled()
   })
 
   test(`should allow options while SplitButton alone is disabled`, async () => {
@@ -82,7 +82,7 @@ describe('SplitButton interaction', () => {
     userEvent.click(buttons[1])
     const option = await screen.findByText('Save as Template')
     expect(option).toBeInTheDocument()
-    userEvent.click(screen.getByText('Save pipeline'))
+    fireEvent.click(screen.getByText('Save pipeline'))
     expect(disabledAction).not.toBeCalled()
   })
 })

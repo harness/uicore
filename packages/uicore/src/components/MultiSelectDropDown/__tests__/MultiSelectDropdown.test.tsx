@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, screen, RenderResult, waitFor } from '@testing-library/react'
+import { act, fireEvent, render, screen, RenderResult, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MultiSelectDropDown, MultiSelectDropDownProps } from '../MultiSelectDropDown'
 
@@ -59,9 +59,11 @@ describe('MultiSelectDropDown', () => {
 
     const dropdownInput = 'value1'
 
-    userEvent.type(dropdownSearchbox, dropdownInput)
+    act(() => {
+      fireEvent.change(dropdownSearchbox, { target: { value: dropdownInput } })
+    })
 
-    expect(dropdownSearchbox).toHaveValue(dropdownInput)
+    await waitFor(() => expect(dropdownSearchbox).toHaveValue(dropdownInput))
 
     expect(await screen.findByText(dropdownInput)).toBeInTheDocument()
     await waitFor(() => expect(screen.queryByText('value2')).not.toBeInTheDocument())
@@ -90,9 +92,11 @@ describe('MultiSelectDropDown', () => {
 
     await waitFor(() => expect(onSearchChange).not.toHaveBeenCalled())
 
-    userEvent.type(dropdownSearchbox, dropdownInput)
+    act(() => {
+      fireEvent.change(dropdownSearchbox, { target: { value: dropdownInput } })
+    })
 
-    expect(dropdownSearchbox).toHaveValue(dropdownInput)
+    await waitFor(() => expect(dropdownSearchbox).toHaveValue(dropdownInput))
 
     await waitFor(() => expect(onSearchChange).toHaveBeenCalledWith(dropdownInput))
   })
