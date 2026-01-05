@@ -6,11 +6,11 @@
  */
 const path = require('path')
 const _ = require('lodash')
-const package = require('./package.json')
+const pkg = require('./package.json')
 const globals = require('../globals.json')
 const dts = require('vite-plugin-dts')
 
-const external = Object.keys(package.peerDependencies)
+const external = Object.keys(pkg.peerDependencies)
 
 external.forEach(dep => {
   if (!_.has(globals, dep)) {
