@@ -1189,6 +1189,7 @@ import ModuleTesting from './module-testing.svg'
 import MoneyIcon from './money-icon.svg'
 import MonitoredService from './monitored-service.svg'
 import MonitoringAgents from './monitoring-agents.svg'
+import MoveFolders from './move-folders.svg'
 import MoveProject from './move-project.svg'
 import MultiService from './multi-service.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
@@ -3007,6 +3008,7 @@ type HarnessIconName =
   | 'money-icon'
   | 'monitored-service'
   | 'monitoring-agents'
+  | 'move-folders'
   | 'move-project'
   | 'multi-service'
   | 'nav-account-admin-hover'
@@ -4825,6 +4827,7 @@ const HarnessIcons: KVO<ElementType> = {
   'money-icon': MoneyIcon,
   'monitored-service': MonitoredService,
   'monitoring-agents': MonitoringAgents,
+  'move-folders': MoveFolders,
   'move-project': MoveProject,
   'multi-service': MultiService,
   'nav-account-admin-hover': NavAccountAdminHover,
