@@ -42,6 +42,7 @@
     "@tanstack/react-table": "^8.15.3"
   },
   "devDependencies": {
+    "@types/minimatch": "^5.1.2",
     "@babel/core": "^7.14.6",
     "@blueprintjs/core": "^4.20.2",
     "@blueprintjs/datetime": "^4.4.37",

@@ -8,6 +8,7 @@ const path = require('path')
 const _ = require('lodash')
 const pkg = require('./package.json')
 const globals = require('../globals.json')
+const dts = require('vite-plugin-dts')
 
 const external = Object.keys(pkg.peerDependencies)
 
@@ -37,7 +38,8 @@ const config = {
         globals: _.pick(globals, external)
       }
     }
-  }
+  },
+  plugins: [dts()]
 }
 
 module.exports = config

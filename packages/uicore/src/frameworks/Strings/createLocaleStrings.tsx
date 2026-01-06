@@ -69,7 +69,7 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
         const template = get(strings, key)
 
         if (typeof template !== 'string') {
-          throw new Error(`No valid template with id "${key}" found`)
+          throw new Error(`No valid template with id "${String(key)}" found`)
         }
 
         return mustache.render(template, { ...vars, $: strings })
@@ -85,9 +85,9 @@ export function createLocaleStrings<T>(): CreateLocaleStringsReturn<T> {
       const text = getString(stringID, vars)
 
       return useRichText ? (
-        <Tag {...(rest as unknown)} dangerouslySetInnerHTML={{ __html: text }} />
+        <Tag {...(rest as any)} dangerouslySetInnerHTML={{ __html: text }} />
       ) : (
-        <Tag {...(rest as unknown)}>{text}</Tag>
+        <Tag {...(rest as any)}>{text}</Tag>
       )
     } catch (e: any) {
       if (process.env.NODE_ENV !== 'production') {

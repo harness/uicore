@@ -5,7 +5,7 @@
   "source": "src/index.ts",
   "main": "./dist/use-modal.umd.js",
   "exports": "./dist/use-modal.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "styles": "./dist/style.css",
   "files": [
     "dist/*"
@@ -13,7 +13,6 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "vite build",
-    "postbuild": "dts-bundle-generator -o dist/index.d.ts src/index.tsx --no-check --external-imports=react",
     "clean": "rm -rf dist",
     "test": "jest --no-cache src --config ../../jest.config.js",
     "prepublishOnly": "yarn build"
@@ -30,11 +29,11 @@
   "devDependencies": {
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
-    "dts-bundle-generator": "^6.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^4.1.3",
-    "vite": "^2.7.13"
+    "vite": "^2.7.13",
+    "vite-plugin-dts": "^0.9.9"
   },
   "resolutions": {
     "@types/react": "18.3.1",
