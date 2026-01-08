@@ -578,6 +578,7 @@ import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import CompareVersion from './compare-version.svg'
+import CondaLogo from './conda-logo.svg'
 import ConditionalExecution from './conditional-execution.svg'
 import ConditionalFilled from './conditional-filled.svg'
 import ConditionalSkipFilled from './conditional-skip-filled.svg'
@@ -642,6 +643,7 @@ import CvVerifystepInverse from './cv-verifystep-inverse.svg'
 import CvVerifystep from './cv-verifystep.svg'
 import CvWithText from './cv-with-text.svg'
 import DangerIcon from './danger-icon.svg'
+import DartLogo from './dart-logo.svg'
 import DashboardSelected from './dashboard-selected.svg'
 import Dashboard from './dashboard.svg'
 import DashboardsSolidBorder from './dashboards-solid-border.svg'
@@ -915,6 +917,7 @@ import GitopsUnknown from './gitops-unknown.svg'
 import GitopsYes from './gitops-yes.svg'
 import Gitops from './gitops.svg'
 import Gitspaces from './gitspaces.svg'
+import GoLogo from './go-logo.svg'
 import Golang from './golang.svg'
 import GoogleBigquery from './google-bigquery.svg'
 import GoogleGemini from './google-gemini.svg'
@@ -960,6 +963,7 @@ import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
 import HttpProbe from './http-probe.svg'
 import HttpStep from './http-step.svg'
+import HuggingfaceLogo from './huggingface-logo.svg'
 import IacmBlue from './iacm-blue.svg'
 import IacmGrey from './iacm-grey.svg'
 import IacmOpentofuInverseStep from './iacm-opentofu-inverse-step.svg'
@@ -1278,6 +1282,7 @@ import PagerDuty from './pager-duty.svg'
 import PdcInverse from './pdc-inverse.svg'
 import Pdc from './pdc.svg'
 import Pending from './pending.svg'
+import PhpComposerLogo from './php-composer-logo.svg'
 import PipelineAdvanced from './pipeline-advanced.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineBuildSelect from './pipeline-build-select.svg'
@@ -1413,6 +1418,7 @@ import RunTestsCiStep from './run-tests-ci-step.svg'
 import RunTestsStep from './run-tests-step.svg'
 import RunningFilled from './running-filled.svg'
 import RuntimeInput from './runtime-input.svg'
+import RustLogo from './rust-logo.svg'
 import S3CiStepInverse from './s3-ci-step-inverse.svg'
 import S3CiStep from './s3-ci-step.svg'
 import S3StepInverse from './s3-step-inverse.svg'
@@ -2402,6 +2408,7 @@ type HarnessIconName =
   | 'command-switch'
   | 'command-winrm'
   | 'compare-version'
+  | 'conda-logo'
   | 'conditional-execution'
   | 'conditional-filled'
   | 'conditional-skip-filled'
@@ -2466,6 +2473,7 @@ type HarnessIconName =
   | 'cv-verifystep'
   | 'cv-with-text'
   | 'danger-icon'
+  | 'dart-logo'
   | 'dashboard-selected'
   | 'dashboard'
   | 'dashboards-solid-border'
@@ -2739,6 +2747,7 @@ type HarnessIconName =
   | 'gitops-yes'
   | 'gitops'
   | 'gitspaces'
+  | 'go-logo'
   | 'golang'
   | 'google-bigquery'
   | 'google-gemini'
@@ -2784,6 +2793,7 @@ type HarnessIconName =
   | 'hourglass'
   | 'http-probe'
   | 'http-step'
+  | 'huggingface-logo'
   | 'iacm-blue'
   | 'iacm-grey'
   | 'iacm-opentofu-inverse-step'
@@ -3102,6 +3112,7 @@ type HarnessIconName =
   | 'pdc-inverse'
   | 'pdc'
   | 'pending'
+  | 'php-composer-logo'
   | 'pipeline-advanced'
   | 'pipeline-approval'
   | 'pipeline-build-select'
@@ -3237,6 +3248,7 @@ type HarnessIconName =
   | 'run-tests-step'
   | 'running-filled'
   | 'runtime-input'
+  | 'rust-logo'
   | 's3-ci-step-inverse'
   | 's3-ci-step'
   | 's3-step-inverse'
@@ -4226,6 +4238,7 @@ const HarnessIcons: KVO<ElementType> = {
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
   'compare-version': CompareVersion,
+  'conda-logo': CondaLogo,
   'conditional-execution': ConditionalExecution,
   'conditional-filled': ConditionalFilled,
   'conditional-skip-filled': ConditionalSkipFilled,
@@ -4290,6 +4303,7 @@ const HarnessIcons: KVO<ElementType> = {
   'cv-verifystep': CvVerifystep,
   'cv-with-text': CvWithText,
   'danger-icon': DangerIcon,
+  'dart-logo': DartLogo,
   'dashboard-selected': DashboardSelected,
   dashboard: Dashboard,
   'dashboards-solid-border': DashboardsSolidBorder,
@@ -4563,6 +4577,7 @@ const HarnessIcons: KVO<ElementType> = {
   'gitops-yes': GitopsYes,
   gitops: Gitops,
   gitspaces: Gitspaces,
+  'go-logo': GoLogo,
   golang: Golang,
   'google-bigquery': GoogleBigquery,
   'google-gemini': GoogleGemini,
@@ -4608,6 +4623,7 @@ const HarnessIcons: KVO<ElementType> = {
   hourglass: Hourglass,
   'http-probe': HttpProbe,
   'http-step': HttpStep,
+  'huggingface-logo': HuggingfaceLogo,
   'iacm-blue': IacmBlue,
   'iacm-grey': IacmGrey,
   'iacm-opentofu-inverse-step': IacmOpentofuInverseStep,
@@ -4926,6 +4942,7 @@ const HarnessIcons: KVO<ElementType> = {
   'pdc-inverse': PdcInverse,
   pdc: Pdc,
   pending: Pending,
+  'php-composer-logo': PhpComposerLogo,
   'pipeline-advanced': PipelineAdvanced,
   'pipeline-approval': PipelineApproval,
   'pipeline-build-select': PipelineBuildSelect,
@@ -5061,6 +5078,7 @@ const HarnessIcons: KVO<ElementType> = {
   'run-tests-step': RunTestsStep,
   'running-filled': RunningFilled,
   'runtime-input': RuntimeInput,
+  'rust-logo': RustLogo,
   's3-ci-step-inverse': S3CiStepInverse,
   's3-ci-step': S3CiStep,
   's3-step-inverse': S3StepInverse,
