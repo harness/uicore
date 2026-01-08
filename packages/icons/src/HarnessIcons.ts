@@ -1616,9 +1616,13 @@ import SfDxProject from './sf-dx-project.svg'
 import SfLogoInverse from './sf-logo-inverse.svg'
 import SfLogo from './sf-logo.svg'
 import SfOrgBasedDiff from './sf-org-based-diff.svg'
+import SfQuickDeployInverse from './sf-quick-deploy-inverse.svg'
+import SfQuickDeploy from './sf-quick-deploy.svg'
 import SfSandboxOrg from './sf-sandbox-org.svg'
 import SfScratchOrg from './sf-scratch-org.svg'
 import SfUnlockedPackage from './sf-unlocked-package.svg'
+import SfValidationInverse from './sf-validation-inverse.svg'
+import SfValidation from './sf-validation.svg'
 import ShieldGears from './shield-gears.svg'
 import SimpleVerification from './simple-verification.svg'
 import Skipped from './skipped.svg'
@@ -3436,9 +3440,13 @@ type HarnessIconName =
   | 'sf-logo-inverse'
   | 'sf-logo'
   | 'sf-org-based-diff'
+  | 'sf-quick-deploy-inverse'
+  | 'sf-quick-deploy'
   | 'sf-sandbox-org'
   | 'sf-scratch-org'
   | 'sf-unlocked-package'
+  | 'sf-validation-inverse'
+  | 'sf-validation'
   | 'shield-gears'
   | 'simple-verification'
   | 'skipped'
@@ -5256,9 +5264,13 @@ const HarnessIcons: KVO<ElementType> = {
   'sf-logo-inverse': SfLogoInverse,
   'sf-logo': SfLogo,
   'sf-org-based-diff': SfOrgBasedDiff,
+  'sf-quick-deploy-inverse': SfQuickDeployInverse,
+  'sf-quick-deploy': SfQuickDeploy,
   'sf-sandbox-org': SfSandboxOrg,
   'sf-scratch-org': SfScratchOrg,
   'sf-unlocked-package': SfUnlockedPackage,
+  'sf-validation-inverse': SfValidationInverse,
+  'sf-validation': SfValidation,
   'shield-gears': ShieldGears,
   'simple-verification': SimpleVerification,
   skipped: Skipped,
