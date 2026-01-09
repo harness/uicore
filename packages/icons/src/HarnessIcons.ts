@@ -824,6 +824,7 @@ import FmeSearch from './fme-search.svg'
 import FmeSegments from './fme-segments.svg'
 import FmeSetAllocation from './fme-set-allocation.svg'
 import FmeSetDynamicConfig from './fme-set-dynamic-config.svg'
+import FmeSetTargetRules from './fme-set-target-rules.svg'
 import FmeSetTargets from './fme-set-targets.svg'
 import FmeSetTreatments from './fme-set-treatments.svg'
 import FmeSettings from './fme-settings.svg'
@@ -2654,6 +2655,7 @@ type HarnessIconName =
   | 'fme-segments'
   | 'fme-set-allocation'
   | 'fme-set-dynamic-config'
+  | 'fme-set-target-rules'
   | 'fme-set-targets'
   | 'fme-set-treatments'
   | 'fme-settings'
@@ -4484,6 +4486,7 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-segments': FmeSegments,
   'fme-set-allocation': FmeSetAllocation,
   'fme-set-dynamic-config': FmeSetDynamicConfig,
+  'fme-set-target-rules': FmeSetTargetRules,
   'fme-set-targets': FmeSetTargets,
   'fme-set-treatments': FmeSetTreatments,
   'fme-settings': FmeSettings,
