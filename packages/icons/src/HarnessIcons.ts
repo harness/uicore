@@ -731,6 +731,7 @@ import EemaLight from './eema-light.svg'
 import EksInverse from './eks-inverse.svg'
 import Eks from './eks.svg'
 import ElasticKubernetesService from './elastic-kubernetes-service.svg'
+import Elasticache from './elasticache.svg'
 import ElastigroupBluegreenInverse from './elastigroup-bluegreen-inverse.svg'
 import ElastigroupBluegreen from './elastigroup-bluegreen.svg'
 import ElastigroupCanary from './elastigroup-canary.svg'
@@ -2562,6 +2563,7 @@ type HarnessIconName =
   | 'eks-inverse'
   | 'eks'
   | 'elastic-kubernetes-service'
+  | 'elasticache'
   | 'elastigroup-bluegreen-inverse'
   | 'elastigroup-bluegreen'
   | 'elastigroup-canary'
@@ -4393,6 +4395,7 @@ const HarnessIcons: KVO<ElementType> = {
   'eks-inverse': EksInverse,
   eks: Eks,
   'elastic-kubernetes-service': ElasticKubernetesService,
+  elasticache: Elasticache,
   'elastigroup-bluegreen-inverse': ElastigroupBluegreenInverse,
   'elastigroup-bluegreen': ElastigroupBluegreen,
   'elastigroup-canary': ElastigroupCanary,
