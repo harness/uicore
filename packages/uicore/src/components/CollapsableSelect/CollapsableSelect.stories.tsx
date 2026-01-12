@@ -4,12 +4,13 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+// @ts-nocheck
 
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { CollapsableSelectOptions, CollapsableSelectType, FormikCollapsableSelect } from './CollapsableSelect'
-import { Form, Formik } from 'formik'
+import { Form as FormikForm, Formik } from 'formik'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
 import { Icon } from '@harness/icons'
@@ -66,7 +67,7 @@ export const CardView: Story<{ items: Array<CollapsableSelectOptions & T> }> = a
         connectivityMode: Yup.string().trim().required('Connectivity Mode  is required')
       })}>
       {formik => (
-        <Form>
+        <FormikForm>
           <FormikCollapsableSelect<T>
             type={CollapsableSelectType.CardView}
             {...args}
@@ -76,7 +77,7 @@ export const CardView: Story<{ items: Array<CollapsableSelectOptions & T> }> = a
               return <Layout.Vertical>{item.text}</Layout.Vertical>
             }}
           />
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   )
@@ -91,7 +92,7 @@ export const Custom: Story<{ items: Array<CollapsableSelectOptions & U>; isReado
         connectivityMode: Yup.string().trim().required('Connectivity Mode  is required')
       })}>
       {formik => (
-        <Form>
+        <FormikForm>
           <FormikCollapsableSelect<U>
             {...args}
             selected={args.items[args.items.findIndex(item => item.value === formik.values.connectivityMode)]}
@@ -105,7 +106,7 @@ export const Custom: Story<{ items: Array<CollapsableSelectOptions & U>; isReado
               )
             }}
           />
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   )

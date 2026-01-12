@@ -97,7 +97,7 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
   const popoverContent = (
     <div onClick={e => e.stopPropagation()}>
       <div className={css.learnMore}>
-        <span>{i18n.learnMore}</span>
+        <span>{i18n.learnMore as React.ReactNode}</span>
         <Button icon="cross" onClick={() => setIsLearnMoreOpen(false)} variation={ButtonVariation.ICON} />
       </div>
       <div className={css.body}>
@@ -125,7 +125,7 @@ export function LearnMorePopover(props: LearnMorePopoverProps): React.ReactEleme
       className={css.learnMoreWrapper}
       modifiers={{ offset: { offset: '0px 0px' }, arrow: { enabled: false } }}>
       <div className={css.menuItem}>
-        <span className={css.menuItemLabel}>{labelText}</span>
+        <span className={css.menuItemLabel}>{labelText as React.ReactNode}</span>
         <Icon
           className={cx(css.menuItemIcon, css[type], iconClassName)}
           name={TypeIcon[type]}

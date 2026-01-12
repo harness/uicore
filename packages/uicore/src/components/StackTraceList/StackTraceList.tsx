@@ -47,7 +47,7 @@ export function StackTracePanel(props: StackTracePanelProps) {
   const textContentRef = useRef<HTMLPreElement>(null)
   const isExpandible = useExpandibleHook(textContentRef)
 
-  let stackTraceString = stackTrace
+  let stackTraceString: string = typeof stackTrace === 'string' ? stackTrace : ''
   let timestamp: string | undefined = undefined
   if (typeof stackTrace === 'object') {
     stackTraceString = stackTrace.stackTrace || ''

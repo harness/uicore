@@ -17,7 +17,7 @@ import { FormError } from '../FormError/FormError'
 
 export interface TextInputProps
   extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement'>,
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange' | 'type'> {
   leftIcon?: IconName
   leftIconProps?: IconProps
   rightElement?: IconName

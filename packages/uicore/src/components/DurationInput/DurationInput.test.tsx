@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 
 import { DurationInput, timeToDisplayText, parseStringToTime, UNIT_MULTIPLIERS } from './DurationInput'
 
@@ -210,7 +210,7 @@ describe('<DurationInput/> tests', () => {
 
       fireEvent.mouseOver(icon!)
 
-      await waitFor({ container: document.body })
+      await waitFor(() => expect(document.body).toBeInTheDocument())
 
       expect(container).toMatchSnapshot()
     })
@@ -222,7 +222,7 @@ describe('<DurationInput/> tests', () => {
 
       fireEvent.mouseOver(icon!)
 
-      await waitFor({ container: document.body })
+      await waitFor(() => expect(document.body).toBeInTheDocument())
 
       expect(container).toMatchSnapshot()
     })

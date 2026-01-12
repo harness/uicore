@@ -9,7 +9,7 @@ import React from 'react'
 import { StepWizard, StepProps } from './StepWizard'
 import { Layout } from '../../layouts/Layout'
 import { Button } from '../Button/Button'
-import { render, fireEvent, waitFor, queryByText, waitFor } from '@testing-library/react'
+import { render, fireEvent, waitFor, queryByText } from '@testing-library/react'
 
 interface SharedObject {
   prevStepName: string | JSX.Element
@@ -124,7 +124,7 @@ describe('REnder basic Step Wizard', () => {
 
     fireEvent.click(queryByText(container, /Next/) as HTMLDivElement)
 
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     expect(props.onSubmit).toHaveBeenLastCalledWith({
       prevStepName: 'Collaborator'

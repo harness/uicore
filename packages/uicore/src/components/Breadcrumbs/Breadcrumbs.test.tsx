@@ -31,9 +31,7 @@ describe('Render basic component', () => {
       }
     ]
     const { container } = render(
-      <BrowserRouter>
-        <Breadcrumbs links={links} />
-      </BrowserRouter>
+      <BrowserRouter {...({ children: <Breadcrumbs links={links} /> } as any)} />
     )
     expect(container).toMatchSnapshot()
   })

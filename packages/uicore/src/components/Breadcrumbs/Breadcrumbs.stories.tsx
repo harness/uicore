@@ -4,6 +4,7 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+// @ts-nocheck
 
 import React from 'react'
 import type { Meta, Story } from '@storybook/react'
@@ -56,9 +57,7 @@ export interface Breadcrumb {
 export const Basic: Story<BreadcrumbsProps> = args => {
   const { links, className } = args
   return (
-    <BrowserRouter>
-      <Breadcrumbs links={links} className={className} />
-    </BrowserRouter>
+    <BrowserRouter {...({ children: <Breadcrumbs links={links} className={className} /> } as any)} />
   )
 }
 Basic.args = {

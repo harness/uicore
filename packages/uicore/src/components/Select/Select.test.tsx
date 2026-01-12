@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, act, wait } from '@testing-library/react'
+import { render, fireEvent, act, waitFor } from '@testing-library/react'
 
 import { Select, SelectOption } from './Select'
 
@@ -57,7 +57,7 @@ describe('<Select/> tests', () => {
     await act(() => {
       jest.runTimersToTime(TIMEOUT)
 
-      return wait()
+      return waitFor(() => expect(container).toBeInTheDocument())
     })
 
     // expect(container).toMatchSnapshot('Final state')

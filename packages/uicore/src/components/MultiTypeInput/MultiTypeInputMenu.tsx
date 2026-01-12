@@ -175,7 +175,7 @@ export function MultiTypeInputMenu(props: MultiTypeInputMenuProps): React.ReactE
           onClick={() => setIsLearnMoreOpen(true)}
           text={
             <div className={css.learnMore}>
-              <span>{i18n.learnMore}</span>
+              <span>{i18n.learnMore as React.ReactNode}</span>
               <Icon name="more" />
             </div>
           }

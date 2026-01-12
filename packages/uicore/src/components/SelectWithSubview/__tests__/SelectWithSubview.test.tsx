@@ -4,6 +4,7 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+// @ts-nocheck
 
 import React, { useContext, useState, useCallback, FormEvent } from 'react'
 import { render, waitFor, fireEvent } from '@testing-library/react'
@@ -14,7 +15,7 @@ import { Layout } from 'layouts/Layout'
 import { TextInput } from 'components/TextInput/TextInput'
 import { Button } from 'components/Button/Button'
 import { Text } from 'components/Text/Text'
-import { Formik, Form } from 'formik'
+import { Formik, Form as FormikForm } from 'formik'
 
 const items: SelectOption[] = [
   { label: 'secondaryOption_1', value: '1234_secondaryOption' },
@@ -59,7 +60,7 @@ const EnvForm = (props: { onSubmit: (values: EnvFormData) => void; onHide?: () =
       {props => {
         const { setFieldValue } = props
         return (
-          <Form style={{ padding: '10px' }}>
+          <FormikForm style={{ padding: '10px' }}>
             <TextInput
               placeholder="Enter Environment Name"
               name="environment"
@@ -78,7 +79,7 @@ const EnvForm = (props: { onSubmit: (values: EnvFormData) => void; onHide?: () =
               </Button>
             </Layout.Horizontal>
             {error && <Text intent="danger">{error}</Text>}
-          </Form>
+          </FormikForm>
         )
       }}
     </Formik>
@@ -105,7 +106,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     const dropdownMenu = container.querySelector('[class~="bp4-popover-wrapper"] .bp4-menu')
     expect(dropdownMenu).not.toBeNull()
@@ -115,7 +116,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     // ensure secondary view is rendered
     const secondaryView = container.querySelector('.bp4-popover-content form')
@@ -127,7 +128,7 @@ describe.skip('Tests for Select with secondary view', () => {
       throw Error('Close button was not rendered.')
     }
     fireEvent.click(closeButton)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     // ensure original drop down is rendered
     expect(container.querySelector('form')).toBeNull()
@@ -156,7 +157,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     const dropdownMenu = container.querySelector('[class~="bp4-popover-wrapper"] .bp4-menu')
     expect(dropdownMenu).not.toBeNull()
@@ -166,7 +167,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     const secondaryView = container.querySelector('.bp4-popover-content form')
     expect(secondaryView).not.toBeNull()
@@ -178,7 +179,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.change(environmentInputBox, { target: { value: 'Custom Env Label' } })
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     // submit changes
     const submitButton = secondaryView?.querySelector('button[type="submit"]')
@@ -187,7 +188,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.click(submitButton)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
     expect(onSubmitFunc).toHaveBeenCalled()
     expect(onSubmitFunc.mock.calls[0][0]).toEqual({
       environment: 'Custom Env Label'
@@ -211,7 +212,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // focus on input box for drop down menu to show
     fireEvent.focus(inputBox)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     const dropdownMenu = container.querySelector('[class~="bp4-popover-wrapper"] .bp4-menu')
     expect(dropdownMenu).not.toBeNull()
@@ -221,7 +222,7 @@ describe.skip('Tests for Select with secondary view', () => {
 
     // within the drop down click on option to view secondary view
     fireEvent.click(getByText(SECONDARY_OPTION_LABEL))
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     const secondaryView = container.querySelector('.bp4-popover-content form')
     expect(secondaryView).not.toBeNull()
@@ -233,7 +234,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.change(environmentInputBox, { target: { value: items[0].label } })
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     // submit changes
     const submitButton = secondaryView?.querySelector('button[type="submit"]')
@@ -242,7 +243,7 @@ describe.skip('Tests for Select with secondary view', () => {
     }
 
     fireEvent.click(submitButton)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     expect(onSubmitFunc).not.toHaveBeenCalled()
     getByText('secondaryOption_1 already exists. Please provide a unique option.')

@@ -25,7 +25,7 @@ export const FormError = ({ errorMessage, className, name }: FormErrorProps): Re
   return (
     <div data-name={name} className={cx(css.errorDiv, className)}>
       <Icon name="circle-cross" className={css.errorTextIcon} size={12} intent="danger" />
-      <span className={css.error}>{errorMessage}</span>
+      <span className={css.error}>{errorMessage as React.ReactNode}</span>
     </div>
   )
 }

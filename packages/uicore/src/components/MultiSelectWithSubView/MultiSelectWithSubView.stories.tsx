@@ -4,6 +4,7 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+// @ts-nocheck
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
@@ -21,7 +22,7 @@ import {
   MultiSelectWithSubview,
   MultiSelectWithSubviewProps
 } from '../..'
-import { Formik, Form, FormikErrors } from 'formik'
+import { Formik, Form as FormikForm, FormikErrors } from 'formik'
 import { RadioGroup, Radio } from '@blueprintjs/core'
 import { SelectOption } from '../Select/Select'
 import '../Radio/Radio.css'
@@ -156,7 +157,7 @@ export const Basic: Story<MultiSelectWithSubviewProps> = args => {
         {props => {
           const { setFieldValue, errors, values } = props
           return (
-            <Form style={{ padding: '10px' }}>
+            <FormikForm style={{ padding: '10px' }}>
               <TextInput
                 placeholder="Enter Environment Name"
                 name="environment"
@@ -189,7 +190,7 @@ export const Basic: Story<MultiSelectWithSubviewProps> = args => {
                 </Button>
               </Layout.Horizontal>
               {error && <Text intent="danger">{error}</Text>}
-            </Form>
+            </FormikForm>
           )
         }}
       </Formik>

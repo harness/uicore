@@ -16,7 +16,7 @@ describe('StatusBar unit tests', () => {
     const { container, getByText } = render(
       <StackTraceList stackTraceList={['stackTrace1', 'stackTrace2', 'stackTrace3']} />
     )
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     getByText('stackTrace1')
     getByText('stackTrace2')
@@ -29,12 +29,12 @@ describe('StatusBar unit tests', () => {
     const { container, getByText, rerender } = render(
       <StackTraceList heading="Java Stack Trace" stackTraceList={[LARGE_STACK_TRACE, 'small stack trace']} />
     )
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     getByText('Java Stack Trace')
 
     rerender(<StackTraceList stackTraceList={[LARGE_STACK_TRACE, 'small stack trace']} />)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     expect(container.querySelector('[class*="heading"]')).toBeNull()
   })

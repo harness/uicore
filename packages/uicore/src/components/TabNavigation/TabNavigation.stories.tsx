@@ -48,9 +48,7 @@ export default {
 export const Basic: Story<TabNavigationProps> = args => {
   const initialEntries = args.links.map(item => item.to)
   return (
-    <MemoryRouter initialEntries={initialEntries} initialIndex={0}>
-      <TabNavigation {...args} />
-    </MemoryRouter>
+    <MemoryRouter initialEntries={initialEntries} initialIndex={0} {...({ children: <TabNavigation {...args} /> } as any)} />
   )
 }
 

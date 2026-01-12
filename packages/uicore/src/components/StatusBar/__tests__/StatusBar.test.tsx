@@ -13,13 +13,13 @@ import { Color } from '@harness/design-system'
 describe('StatusBar unit tests', () => {
   test('Render a vertical bar', async () => {
     const { container, rerender, getByText } = render(<StatusBar height={100} width={20} background={Color.RED_500} />)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     expect(container.querySelector(`[class*="background-${Color.RED_500}"]`)).not.toBeNull()
     expect(container.querySelector(`[data-name="verticalBar"]`)).not.toBeNull()
 
     rerender(<StatusBar height={100} width={20} background={Color.YELLOW_200} label="High" />)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     getByText('High')
     expect(container.querySelector(`[class*="background-${Color.YELLOW_200}"]`)).not.toBeNull()
@@ -29,13 +29,13 @@ describe('StatusBar unit tests', () => {
   test.skip('Render a horizontal bar', async () => {
     const gradient = 'linear-gradient(to right, var(--yellow-500), var(--red-500))'
     const { container, rerender, getByText } = render(<StatusBar height={20} width={100} gradient={gradient} />)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     expect(container.querySelector(`[class*="${gradient}"]`)).not.toBeNull()
     expect(container.querySelector(`[data-name="horizontalBar"]`)).not.toBeNull()
 
     rerender(<StatusBar height={20} width={100} background={Color.BLUE_500} label="In Progress" />)
-    await waitFor()
+    await waitFor(() => expect(container).toBeInTheDocument())
 
     getByText('In Progress')
     screen.debug(container)

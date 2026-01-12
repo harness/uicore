@@ -80,13 +80,13 @@ export const StackedSummaryTable: React.FC<StackedSummaryTableProps> = props => 
 
   const columns: Array<Column<StackedSummaryInterface>> = [
     {
-      Header: () => columnHeaders[0],
+      Header: columnHeaders[0] as string,
       accessor: 'label',
       width: columnWidth[0] || '40%',
       Cell: RenderStackedSummaryBarLabelColumn
     },
     {
-      Header: () => columnHeaders[1],
+      Header: columnHeaders[1] as string,
       accessor: 'trend',
       width: columnWidth[1] || '60%',
       Cell: RenderStackedSummaryBarCountColumn

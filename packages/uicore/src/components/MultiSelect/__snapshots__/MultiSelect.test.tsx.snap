@@ -92,6 +92,37 @@ exports[`<MultiSelect/> tests works with async data 1`] = `
 </div>
 `;
 
+exports[`<MultiSelect/> tests works with async data: Final state 1`] = `
+<div>
+  <div
+    class="bp4-popover-wrapper main bp4-fill"
+  >
+    <div
+      aria-haspopup="true"
+      class="bp4-popover-target"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="bp4-input bp4-tag-input bp4-active bp4-multi-select"
+        >
+          <div
+            class="bp4-tag-input-values"
+          >
+            <input
+              class="bp4-input-ghost bp4-multi-select-tag-input-input"
+              placeholder="- Select -"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<MultiSelect/> tests works with async data: Loading state 1`] = `
 <div>
   <div

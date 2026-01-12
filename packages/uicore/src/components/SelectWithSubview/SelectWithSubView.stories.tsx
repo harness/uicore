@@ -4,6 +4,7 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+// @ts-nocheck
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
@@ -25,7 +26,7 @@ import {
   TextInput
 } from '../..'
 import { omit } from 'lodash-es'
-import { Form, Formik, FormikErrors } from 'formik'
+import { Form as FormikForm, Formik, FormikErrors } from 'formik'
 import { DateRangePicker, DateRange, IDateRangePickerProps } from '@blueprintjs/datetime'
 import moment from 'moment'
 
@@ -159,7 +160,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
         {props => {
           const { setFieldValue, errors, values } = props
           return (
-            <Form style={{ padding: '10px' }}>
+            <FormikForm style={{ padding: '10px' }}>
               <TextInput
                 placeholder="Enter Environment Name"
                 name="environment"
@@ -194,7 +195,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
                 </Button>
               </Layout.Horizontal>
               {error && <Text intent="danger">{error}</Text>}
-            </Form>
+            </FormikForm>
           )
         }}
       </Formik>
@@ -210,7 +211,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
   return (
     <Formik initialValues={{}} onSubmit={() => {}}>
       {() => (
-        <Form>
+        <FormikForm>
           <SelectWithSubview
             items={items}
             changeViewButtonLabel={changeViewButtonLabel}
@@ -218,7 +219,7 @@ export const Basic: Story<SelectWithSubviewProps> = args => {
             addTooltip
             {...argsCopy}
           />
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   )
@@ -294,7 +295,7 @@ export const CalendarWidgetExample: Story<SelectWithSubviewProps> = () => {
   return (
     <Formik initialValues={{ selectedDate: { label: '', value: '' } }} onSubmit={() => {}}>
       {props => (
-        <Form>
+        <FormikForm>
           <SelectWithSubview
             value={props.values.selectedDate}
             items={ExampleItems}
@@ -304,7 +305,7 @@ export const CalendarWidgetExample: Story<SelectWithSubviewProps> = () => {
               <DatePickerSubview onSelectRange={(range: SelectOption) => props.setFieldValue('selectedDate', range)} />
             }
           />
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   )

@@ -62,7 +62,7 @@ Basic.args = {
 
 export const Expandable: ComponentStory<typeof TableV2> = args => {
   const renderRowSubComponent = React.useCallback(
-    ({ row }) => (
+    ({ row }: { row: any }) => (
       <pre style={{ margin: 0 }}>
         <code>{JSON.stringify({ values: row.values }, null, 2)}</code>
       </pre>

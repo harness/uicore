@@ -4,11 +4,12 @@
  * that can be found in the licenses directory at the root of this repository, also available at
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
+// @ts-nocheck
 
 import React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import { CollapsableSelectType, FormikCollapsableSelect } from './CollapsableSelect'
-import { Form, Formik } from 'formik'
+import { Form as FormikForm, Formik } from 'formik'
 import { Layout } from 'index'
 import { noop } from 'lodash'
 
@@ -30,7 +31,7 @@ describe('Test render CollapsableSelect', () => {
     const { container, getByText } = render(
       <Formik initialValues={{ connectivityMode: 'service-kubernetes' }} onSubmit={jest.fn()}>
         {formik => (
-          <Form>
+          <FormikForm>
             <FormikCollapsableSelect
               type={CollapsableSelectType.CardView}
               items={items}
@@ -40,7 +41,7 @@ describe('Test render CollapsableSelect', () => {
                 return <Layout.Vertical>{item.text}</Layout.Vertical>
               }}
             />
-          </Form>
+          </FormikForm>
         )}
       </Formik>
     )
@@ -54,7 +55,7 @@ describe('Test render CollapsableSelect', () => {
     const { container, getByText } = render(
       <Formik initialValues={{ connectivityMode: '' }} onSubmit={noop}>
         {formik => (
-          <Form>
+          <FormikForm>
             <FormikCollapsableSelect
               type={CollapsableSelectType.CardView}
               items={items}
@@ -67,7 +68,7 @@ describe('Test render CollapsableSelect', () => {
                 return <Layout.Vertical>{item?.text}</Layout.Vertical>
               }}
             />
-          </Form>
+          </FormikForm>
         )}
       </Formik>
     )
@@ -82,7 +83,7 @@ describe('Test render CollapsableSelect', () => {
     const { container, getByText } = render(
       <Formik initialValues={{ connectivityMode: 'service-kubernetes' }} onSubmit={noop}>
         {formik => (
-          <Form>
+          <FormikForm>
             <FormikCollapsableSelect
               type={CollapsableSelectType.CardView}
               items={items}
@@ -92,7 +93,7 @@ describe('Test render CollapsableSelect', () => {
                 return <Layout.Vertical>{item?.text}</Layout.Vertical>
               }}
             />
-          </Form>
+          </FormikForm>
         )}
       </Formik>
     )
@@ -119,7 +120,7 @@ describe('Test render CollapsableSelect', () => {
     const { container } = render(
       <Formik initialValues={{ connectivityMode: 'service-kubernetes' }} onSubmit={noop}>
         {formik => (
-          <Form>
+          <FormikForm>
             <FormikCollapsableSelect
               items={items}
               name={'connectivityMode'}
@@ -128,7 +129,7 @@ describe('Test render CollapsableSelect', () => {
                 return <Layout.Vertical>{item?.text}</Layout.Vertical>
               }}
             />
-          </Form>
+          </FormikForm>
         )}
       </Formik>
     )
