@@ -6,24 +6,23 @@ exports[`GridListToggle test When no props are passed By default Grid view shoul
     class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
   >
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main gridButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
+      class="bp4-button bp4-minimal button StyledProps--font StyledProps--main gridButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
       data-testid="grid-view"
       data-tooltip-id="grid-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-grid-view StyledProps--main"
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-grid-view StyledProps--main"
         icon="grid-view"
       >
         <svg
           data-icon="grid-view"
           height="16"
+          role="img"
           viewBox="0 0 16 16"
           width="16"
         >
-          <desc>
-            grid-view
-          </desc>
           <path
             d="M0 1v6h7V0H1C.45 0 0 .45 0 1zm0 14c0 .55.45 1 1 1h6V9H0v6zM15 0H9v7h7V1c0-.55-.45-1-1-1zM9 16h6c.55 0 1-.45 1-1V9H9v7z"
             fill-rule="evenodd"
@@ -32,24 +31,23 @@ exports[`GridListToggle test When no props are passed By default Grid view shoul
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp4-button bp4-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-list StyledProps--main"
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-list StyledProps--main"
         icon="list"
       >
         <svg
           data-icon="list"
           height="16"
+          role="img"
           viewBox="0 0 16 16"
           width="16"
         >
-          <desc>
-            list
-          </desc>
           <path
             d="M1 3h14c.55 0 1-.45 1-1s-.45-1-1-1H1c-.55 0-1 .45-1 1s.45 1 1 1zm14 10H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1z"
             fill-rule="evenodd"
@@ -67,24 +65,23 @@ exports[`GridListToggle test When props are passed - initialSelectedView: GRID B
     class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
   >
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main gridButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
+      class="bp4-button bp4-minimal button StyledProps--font StyledProps--main gridButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
       data-testid="grid-view"
       data-tooltip-id="grid-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-grid-view StyledProps--main"
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-grid-view StyledProps--main"
         icon="grid-view"
       >
         <svg
           data-icon="grid-view"
           height="16"
+          role="img"
           viewBox="0 0 16 16"
           width="16"
         >
-          <desc>
-            grid-view
-          </desc>
           <path
             d="M0 1v6h7V0H1C.45 0 0 .45 0 1zm0 14c0 .55.45 1 1 1h6V9H0v6zM15 0H9v7h7V1c0-.55-.45-1-1-1zM9 16h6c.55 0 1-.45 1-1V9H9v7z"
             fill-rule="evenodd"
@@ -93,24 +90,23 @@ exports[`GridListToggle test When props are passed - initialSelectedView: GRID B
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp4-button bp4-minimal button StyledProps--font StyledProps--main listUnselected listButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-list StyledProps--main"
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-list StyledProps--main"
         icon="list"
       >
         <svg
           data-icon="list"
           height="16"
+          role="img"
           viewBox="0 0 16 16"
           width="16"
         >
-          <desc>
-            list
-          </desc>
           <path
             d="M1 3h14c.55 0 1-.45 1-1s-.45-1-1-1H1c-.55 0-1 .45-1 1s.45 1 1 1zm14 10H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1z"
             fill-rule="evenodd"
@@ -128,24 +124,23 @@ exports[`GridListToggle test When props are passed - initialSelectedView: LIST B
     class="horizontal layout-spacing-undefined StyledProps--main StyledProps--flex"
   >
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main gridUnselected gridButton with-current-color iconOnly without-shadow withLeftIcon"
+      class="bp4-button bp4-minimal button StyledProps--font StyledProps--main gridUnselected gridButton with-current-color iconOnly without-shadow withLeftIcon"
       data-testid="grid-view"
       data-tooltip-id="grid-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-grid-view StyledProps--main"
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-grid-view StyledProps--main"
         icon="grid-view"
       >
         <svg
           data-icon="grid-view"
           height="16"
+          role="img"
           viewBox="0 0 16 16"
           width="16"
         >
-          <desc>
-            grid-view
-          </desc>
           <path
             d="M0 1v6h7V0H1C.45 0 0 .45 0 1zm0 14c0 .55.45 1 1 1h6V9H0v6zM15 0H9v7h7V1c0-.55-.45-1-1-1zM9 16h6c.55 0 1-.45 1-1V9H9v7z"
             fill-rule="evenodd"
@@ -154,24 +149,23 @@ exports[`GridListToggle test When props are passed - initialSelectedView: LIST B
       </span>
     </button>
     <button
-      class="bp3-button bp3-minimal button StyledProps--font StyledProps--main listButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
+      class="bp4-button bp4-minimal button StyledProps--font StyledProps--main listButton StyledProps--intent-primary with-current-color without-shadow withLeftIcon"
       data-testid="list-view"
       data-tooltip-id="list-view"
       type="button"
     >
       <span
-        class="bp3-icon bp3-icon-list StyledProps--main"
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-list StyledProps--main"
         icon="list"
       >
         <svg
           data-icon="list"
           height="16"
+          role="img"
           viewBox="0 0 16 16"
           width="16"
         >
-          <desc>
-            list
-          </desc>
           <path
             d="M1 3h14c.55 0 1-.45 1-1s-.45-1-1-1H1c-.55 0-1 .45-1 1s.45 1 1 1zm14 10H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-4H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1z"
             fill-rule="evenodd"

@@ -40,7 +40,7 @@
     word-break: break-all;
   }
 
-  :global(.bp3-icon) {
+  :global(.bp4-icon) {
     margin-right: var(--spacing-small);
   }
 

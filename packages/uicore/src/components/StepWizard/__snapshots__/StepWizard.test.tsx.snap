@@ -15,7 +15,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
           class="header"
         >
           <span
-            class="bp3-icon StyledProps--main"
+            class="bp4-icon StyledProps--main"
             data-icon="app-kubernetes"
           >
             <svg
@@ -63,9 +63,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
           <p
             class="StyledProps--font lineclamp StyledProps--main stepName"
             style="--text-line-clamp: 2; width: 200px;"
-          >
-            
-          </p>
+          />
         </div>
         <div
           class="navStep"
@@ -120,25 +118,25 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
           >
             <button
               aria-label="Previous"
-              class="bp3-button bp3-disabled button StyledProps--font StyledProps--main with-current-color"
+              class="bp4-button bp4-disabled button StyledProps--font StyledProps--main with-current-color"
               disabled=""
               tabindex="-1"
               type="button"
             >
               <span
-                class="bp3-button-text"
+                class="bp4-button-text"
               >
                 Previous
               </span>
             </button>
             <button
               aria-label="Next"
-              class="bp3-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
+              class="bp4-button button StyledProps--font StyledProps--main StyledProps--intent-primary with-current-color"
               style="float: right;"
               type="button"
             >
               <span
-                class="bp3-button-text"
+                class="bp4-button-text"
               >
                 Next
               </span>
@@ -147,7 +145,7 @@ exports[`REnder basic Step Wizard should render with initial step 1 1`] = `
         </div>
       </div>
       <span
-        class="bp3-icon StyledProps--main harnessWatermark StyledProps--color StyledProps--color-grey50"
+        class="bp4-icon StyledProps--main harnessWatermark StyledProps--color StyledProps--color-grey50"
         data-icon="harness-with-color"
       >
         <svg

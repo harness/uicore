@@ -47,7 +47,7 @@
     .labelWrapper {
       flex-shrink: 1;
       column-gap: var(--spacing-3);
-      :global(.bp3-popover-wrapper) {
+      :global(.bp4-popover-wrapper) {
         display: inline-flex;
       }
       .label {
@@ -65,7 +65,7 @@
     .btnWrapper {
       column-gap: var(--spacing-4);
     }
-    :global(.bp3-button) {
+    :global(.bp4-button) {
       padding: 0px !important;
       height: 14px !important;
       min-height: 14px;
@@ -81,15 +81,15 @@
 }
 .popover {
   &:global {
-    &.bp3-popover {
+    &.bp4-popover {
       box-shadow: 0px 0px 1px rgb(40 41 61 / 4%), 0px 2px 4px rgb(96 97 112 / 16%);
       border: 0.5px solid rgba(0, 0, 0, 0.1);
       border-radius: var(--spacing-2);
       transform: translateY(var(--spacing-1)) !important;
-      .bp3-input-group {
+      .bp4-input-group {
         margin: var(--spacing-small);
         margin-bottom: var(--spacing-xsmall);
-        .bp3-input {
+        .bp4-input {
           border-radius: var(--spacing-2);
           font-size: 13px;
           padding-left: var(--spacing-xxlarge) !important;
@@ -105,12 +105,12 @@
             color: var(--grey-300);
           }
         }
-        .bp3-input-left-container {
+        .bp4-input-left-container {
           top: 50%;
           transform: translateY(-50%);
           left: 3px;
         }
-        .bp3-input-action {
+        .bp4-input-action {
           opacity: 0.5;
           transform: scale(0.8);
           top: 1px;
@@ -119,7 +119,7 @@
           }
         }
       }
-      .bp3-menu {
+      .bp4-menu {
         max-height: 350px;
         width: 100%;
         overflow: auto;

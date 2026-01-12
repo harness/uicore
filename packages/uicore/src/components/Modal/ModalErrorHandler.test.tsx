@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { cleanup, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { ModalErrorHandler, ModalErrorHandlerBinding } from './ModalErrorHandler'
 
 const primaryError = {
@@ -39,10 +39,6 @@ const docsLink = 'https://docs.harness.com'
 const iconName = 'airplane'
 
 describe('ModalErrorHandler Tests', () => {
-  afterEach(() => {
-    cleanup()
-  })
-
   test('ModalErrorHandler should render success message', () => {
     let modalErrorHandler: ModalErrorHandlerBinding
     const { container, rerender } = render(

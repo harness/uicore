@@ -6,7 +6,7 @@
  */
 
 import React, { useMemo } from 'react'
-import { IInputGroupProps, Popover, Menu, IPopoverProps, InputGroup } from '@blueprintjs/core'
+import { IInputGroupProps, Popover, Menu, MenuItem, IPopoverProps, InputGroup } from '@blueprintjs/core'
 import { QueryList, IQueryListRendererProps, IItemRendererProps, ItemRenderer } from '@blueprintjs/select'
 import { debounce } from 'lodash-es'
 import { escapeStringRegexp } from '../../core/Utils'
@@ -65,7 +65,7 @@ export function getItemRenderer(setActiveItem: (item: string) => void): ItemRend
     // https://stackoverflow.com/a/24800788
 
     return (
-      <Menu.Item
+      <MenuItem
         key={`${item}${index}`}
         text={
           <span className={css.menuItem}>

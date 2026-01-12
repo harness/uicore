@@ -26,14 +26,14 @@
   },
   "peerDependencies": {
     "@harness/design-system": "^1.0.0",
-    "react": "^17.0.2"
+    "react": "^18.3.1"
   },
   "devDependencies": {
     "@contentful/rich-text-types": "^15.12.0",
     "@harness/design-system": "^1.4.0",
-    "@types/react": "^17.0.3",
+    "@types/react": "^18.3.12",
     "dts-bundle-generator": "^6.4.0",
-    "react": "^17.0.2",
+    "react": "^18.3.1",
     "typescript": "^4.1.3",
     "vite": "^2.7.13",
     "vite-plugin-dts": "^0.9.9"

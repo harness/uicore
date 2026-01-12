@@ -6,20 +6,20 @@
  */
 
 @define-mixin intent {
-  &.bp3-intent-primary {
-    --bp3-intent-color: var(--primary-7);
+  &.bp4-intent-primary {
+    --bp4-intent-color: var(--primary-7);
   }
 
-  &.bp3-intent-success {
-    --bp3-intent-color: var(--green-500);
+  &.bp4-intent-success {
+    --bp4-intent-color: var(--green-500);
   }
 
-  &.bp3-intent-warning {
-    --bp3-intent-color: var(--yellow-500);
+  &.bp4-intent-warning {
+    --bp4-intent-color: var(--yellow-500);
   }
 
-  &.bp3-intent-danger {
-    --bp3-intent-color: var(--red-500);
+  &.bp4-intent-danger {
+    --bp4-intent-color: var(--red-500);
   }
 }
 
@@ -32,11 +32,11 @@
   position: relative;
 
   input[type='text'],
-  :global(.bp3-input) {
+  :global(.bp4-input) {
     @mixin intent;
 
     box-shadow: none;
-    border: 1px solid var(--bp3-intent-color, var(--grey-200));
+    border: 1px solid var(--bp4-intent-color, var(--grey-200));
     padding-right: 35px;
     height: var(--spacing-7);
     border-radius: var(--spacing-2);
@@ -51,17 +51,17 @@
     }
 
     &[disabled],
-    &:global(.bp3-disabled) {
+    &:global(.bp4-disabled) {
       background-color: var(--grey-50);
     }
   }
 
   :global {
-    .bp3-popover-target {
+    .bp4-popover-target {
       height: 100%;
     }
 
-    .bp3-input-action {
+    .bp4-input-action {
       height: 100%;
       display: flex;
       align-items: center;
@@ -79,11 +79,11 @@
   position: relative;
 
   input[type='text'],
-  :global(.bp3-input) {
+  :global(.bp4-input) {
     @mixin intent;
 
     box-shadow: none;
-    border: 1px solid var(--bp3-intent-color, var(--grey-200));
+    border: 1px solid var(--bp4-intent-color, var(--grey-200));
     padding-right: 35px;
     height: var(--spacing-8);
     border-radius: var(--spacing-2);
@@ -98,13 +98,13 @@
     }
 
     &[disabled],
-    &:global(.bp3-disabled) {
+    &:global(.bp4-disabled) {
       background-color: var(--grey-50);
     }
   }
 
   :global {
-    .bp3-popover-target {
+    .bp4-popover-target {
       height: 100%;
     }
   }
@@ -145,7 +145,7 @@
     position: absolute;
   }
 
-  & :global(.bp3-icon) {
+  & :global(.bp4-icon) {
     color: currentColor !important;
   }
 
@@ -200,11 +200,11 @@
     width: 6px;
     transform: translateX(-18px);
     border-radius: var(--spacing-2);
-    border-right: 1px solid var(--bp3-intent-color, var(--grey-200));
+    border-right: 1px solid var(--bp4-intent-color, var(--grey-200));
     position: absolute;
   }
 
-  & :global(.bp3-icon) {
+  & :global(.bp4-icon) {
     color: currentColor !important;
   }
 
@@ -275,7 +275,7 @@
     display: flex;
     justify-content: flex-end;
 
-    & :global(.bp3-icon) {
+    & :global(.bp4-icon) {
       color: currentColor !important;
     }
 
@@ -312,13 +312,13 @@
 }
 
 .select {
-  :global(.bp3-input-action) {
+  :global(.bp4-input-action) {
     right: 32px !important;
   }
 
   input[type='text'],
   .fixedValueInput,
-  :global(.bp3-input) {
+  :global(.bp4-input) {
     padding-right: 75px !important;
   }
 }
@@ -356,7 +356,7 @@
 .learnMoreWrapper {
   display: block;
 
-  :global(.bp3-popover-target) {
+  :global(.bp4-popover-target) {
     display: block;
   }
 }
@@ -384,7 +384,7 @@
     white-space: normal;
     text-align: left;
 
-    :global(.bp3-icon) {
+    :global(.bp4-icon) {
       align-self: center;
       justify-self: center;
 

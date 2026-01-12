@@ -23,6 +23,7 @@ export interface AccordionTabsProps {
     /** The controlled active ID for the Accordion. Must be provided for synchronization with Tabs. */
     controlledActiveId: string
   }
+  children?: React.ReactNode
 }
 
 const AccordionTabs: React.FC<AccordionTabsProps> = ({ tabList, tabsProps, accordionProps, children }) => {

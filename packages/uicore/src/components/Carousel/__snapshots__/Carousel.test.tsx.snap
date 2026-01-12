@@ -67,7 +67,7 @@ exports[`Render basic component should check snapshot 1`] = `
       >
         <div>
           <span
-            class="bp3-icon StyledProps--main StyledProps--color StyledProps--color-white"
+            class="bp4-icon StyledProps--main StyledProps--color StyledProps--color-white"
             data-icon="main-chevron-right"
           >
             <svg

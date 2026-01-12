@@ -8,7 +8,7 @@
 .main {
   position: relative;
 
-  :global(.bp3-input) {
+  :global(.bp4-input) {
     display: block;
     border: 1px solid var(--grey-200);
     border-radius: var(--spacing-2);
@@ -44,26 +44,26 @@
     }
   }
 
-  :global(.bp3-popover-open .bp3-input) {
+  :global(.bp4-popover-open .bp4-input) {
     color: var(--grey-800);
     border-color: var(--primary-7);
     box-shadow: none;
     border-radius: 4px 4px 0 0;
   }
 
-  & :global(.bp3-overlay) {
+  & :global(.bp4-overlay) {
     display: block;
     width: 100%;
   }
 
-  & :global(.bp3-transition-container),
-  & :global(.bp3-popover) {
+  & :global(.bp4-transition-container),
+  & :global(.bp4-popover) {
     width: 100%;
     box-shadow: none;
     border-radius: 0 0 4px 4px;
   }
 
-  & :global(.bp3-menu) {
+  & :global(.bp4-menu) {
     max-height: 350px;
     width: 100%;
     overflow: auto;
@@ -82,7 +82,7 @@
     padding-right: var(--spacing-4);
 
     :global {
-      .bp3-tag-remove {
+      .bp4-tag-remove {
         width: var(--spacing-4);
         height: var(--spacing-4);
         display: flex;
@@ -92,7 +92,7 @@
         opacity: 0.4;
       }
 
-      .bp3-icon-small-cross {
+      .bp4-icon-small-cross {
         svg {
           width: 10px;
           height: 10px;
@@ -148,7 +148,7 @@
 }
 
 .popover {
-  & :global(.bp3-menu) {
+  & :global(.bp4-menu) {
     max-height: 350px;
     overflow: auto;
     min-width: 250px;

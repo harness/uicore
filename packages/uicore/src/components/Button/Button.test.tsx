@@ -18,19 +18,19 @@ describe('Button', () => {
 
       // Verify initial state (loading=false)
       const button = getByTestId('test-button')
-      expect(button).not.toHaveClass('bp3-loading')
+      expect(button).not.toHaveClass('bp4-loading')
 
       // Update props to loading=true
       rerender(<Button data-testid="test-button" text="Test Button" loading={true} />)
 
       // Verify loading=true state
-      expect(button).toHaveClass('bp3-loading')
+      expect(button).toHaveClass('bp4-loading')
 
       // Update props back to loading=false
       rerender(<Button data-testid="test-button" text="Test Button" loading={false} />)
 
       // Verify loading=false state again
-      expect(button).not.toHaveClass('bp3-loading')
+      expect(button).not.toHaveClass('bp4-loading')
     })
   })
 

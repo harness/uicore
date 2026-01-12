@@ -12,6 +12,7 @@ import css from './PageSubHeader.css'
 
 export interface PageSubHeaderProps {
   className?: string
+  children?: React.ReactNode
 }
 
 /**

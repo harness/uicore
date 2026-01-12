@@ -6,8 +6,8 @@
  */
 
 .button {
-  &[class*='bp3-button'],
-  &[class*='bp3-button']:not([class*='bp3-intent-']) {
+  &[class*='bp4-button'],
+  &[class*='bp4-button']:not([class*='bp4-intent-']) {
     /* Override Blueprint styles */
     display: inline-flex;
     font-family: var(--font-family);
@@ -512,11 +512,11 @@
 
     &.with-current-color {
       :global {
-        .bp3-icon {
+        .bp4-icon {
           color: currentColor !important;
         }
 
-        .bp3-spinner .bp3-spinner-head {
+        .bp4-spinner .bp4-spinner-head {
           stroke: currentColor;
         }
       }
@@ -539,7 +539,7 @@
 
   /* Disabled */
   /* stylelint-disable no-descending-specificity */
-  &[class*='bp3-disabled'] {
+  &[class*='bp4-disabled'] {
     svg,
     svg > * {
       cursor: not-allowed;
@@ -557,9 +557,9 @@
 }
 
 :global {
-  html:not(.bp3-focus-disabled) {
+  html:not(.bp4-focus-disabled) {
     [class*='variation'] {
-      &[class*='bp3-button']:not([disabled]) {
+      &[class*='bp4-button']:not([disabled]) {
         &:focus {
           outline: none;
           position: relative;

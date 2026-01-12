@@ -49,7 +49,7 @@ describe('Card test', () => {
       </Card>
     )
     fireEvent.click(container.children[0])
-    await wait()
+    await waitFor()
     expect(onClick).toHaveBeenCalled()
   })
 })
@@ -75,7 +75,7 @@ describe('Card icon test', () => {
       </Card>
     )
     fireEvent.click(container.children[0])
-    await wait()
+    await waitFor()
     expect(onClick).toHaveBeenCalled()
   })
 })
@@ -101,7 +101,7 @@ describe('Card menu test', () => {
       </Card>
     )
     fireEvent.click(container.children[0])
-    await wait()
+    await waitFor()
     expect(onClick).toHaveBeenCalled()
   })
 })

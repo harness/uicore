@@ -94,8 +94,8 @@ describe('Test render Radio Select', () => {
     const props = getDefaultProps(data[2])
     const selectedIndex = 5
     const { container } = render(<CardSelect {...props} />)
-    fireEvent.click(container.querySelectorAll('.bp3-card')[selectedIndex])
-    await wait()
+    fireEvent.click(container.querySelectorAll('.bp4-card')[selectedIndex])
+    await waitFor()
     expect(props.onChange).toHaveBeenCalledWith(data[selectedIndex], expect.any(Object))
   })
   test('should handle on arrow key Event', async () => {
@@ -104,21 +104,21 @@ describe('Test render Radio Select', () => {
     const { container } = render(<CardSelect {...props} />)
 
     // Left Arrow
-    fireEvent.keyDown(container.querySelectorAll('.bp3-card')[defaultIndex], {
+    fireEvent.keyDown(container.querySelectorAll('.bp4-card')[defaultIndex], {
       key: 'ArrowLeft',
       keyCode: 37,
       which: 37
     })
-    await wait()
+    await waitFor()
     expect(props.onChange).toHaveBeenCalledWith(data[defaultIndex - 1], expect.any(Object))
 
     // Right Arrow
-    fireEvent.keyDown(container.querySelectorAll('.bp3-card')[defaultIndex], {
+    fireEvent.keyDown(container.querySelectorAll('.bp4-card')[defaultIndex], {
       key: 'ArrowRight',
       keyCode: 39,
       which: 39
     })
-    await wait()
+    await waitFor()
     expect(props.onChange).toHaveBeenCalledWith(data[defaultIndex + 1], expect.any(Object))
   })
 
@@ -129,12 +129,12 @@ describe('Test render Radio Select', () => {
     const { container } = render(<CardSelect {...props} />)
 
     // Enter Key
-    fireEvent.keyDown(container.querySelectorAll('.bp3-card')[selectedIndex], {
+    fireEvent.keyDown(container.querySelectorAll('.bp4-card')[selectedIndex], {
       key: 'Enter',
       keyCode: 13,
       which: 14
     })
-    await wait()
+    await waitFor()
     expect(props.onChange).toHaveBeenCalledWith(data[selectedIndex], expect.any(Object))
   })
 })

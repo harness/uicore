@@ -3,37 +3,38 @@
 exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      aria-haspopup="true"
+      class="bp4-popover-target bp4-popover-open"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          autocomplete="off"
+          class="bp4-input"
           placeholder="- Select -"
           style="padding-right: 0px;"
           type="text"
           value="cha"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
               data-icon="chevron-down"
               height="14"
+              role="img"
               viewBox="0 0 16 16"
               width="14"
             >
-              <desc>
-                chevron-down
-              </desc>
               <path
                 d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                 fill-rule="evenodd"
@@ -44,21 +45,23 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
       </div>
     </div>
     <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
+      aria-live="polite"
+      class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
     >
       <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
+        class="bp4-transition-container bp4-popover-appear bp4-popover-appear-active"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover bp4-minimal bp4-select-popover popover"
         >
           <div
-            class="bp3-popover-content"
+            class="bp4-popover-content"
           >
             <div>
               <ul
-                class="bp3-menu"
+                class="bp4-menu"
+                role="listbox"
               >
                 <li
                   class="menuItem active"
@@ -103,37 +106,38 @@ exports[`<Select/> tests basic filter works: Filtered Menu 1`] = `
 exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      aria-haspopup="true"
+      class="bp4-popover-target bp4-popover-open"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          autocomplete="off"
+          class="bp4-input"
           placeholder="- Select -"
           style="padding-right: 0px;"
           type="text"
           value=""
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
               data-icon="chevron-down"
               height="14"
+              role="img"
               viewBox="0 0 16 16"
               width="14"
             >
-              <desc>
-                chevron-down
-              </desc>
               <path
                 d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                 fill-rule="evenodd"
@@ -144,21 +148,23 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
       </div>
     </div>
     <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
+      aria-live="polite"
+      class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
     >
       <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
+        class="bp4-transition-container bp4-popover-appear bp4-popover-appear-active"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover bp4-minimal bp4-select-popover popover"
         >
           <div
-            class="bp3-popover-content"
+            class="bp4-popover-content"
           >
             <div>
               <ul
-                class="bp3-menu"
+                class="bp4-menu"
+                role="listbox"
               >
                 <li
                   class="menuItem active"
@@ -373,37 +379,38 @@ exports[`<Select/> tests basic filter works: Initial Menu 1`] = `
 exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      aria-haspopup="true"
+      class="bp4-popover-target bp4-popover-open"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          autocomplete="off"
+          class="bp4-input"
           placeholder="- Select -"
           style="padding-right: 0px;"
           type="text"
           value="abcde"
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
               data-icon="chevron-down"
               height="14"
+              role="img"
               viewBox="0 0 16 16"
               width="14"
             >
-              <desc>
-                chevron-down
-              </desc>
               <path
                 d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                 fill-rule="evenodd"
@@ -414,21 +421,23 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
       </div>
     </div>
     <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
+      aria-live="polite"
+      class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
     >
       <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
+        class="bp4-transition-container bp4-popover-appear bp4-popover-appear-active"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover bp4-minimal bp4-select-popover popover"
         >
           <div
-            class="bp3-popover-content"
+            class="bp4-popover-content"
           >
             <div>
               <ul
-                class="bp3-menu"
+                class="bp4-menu"
+                role="listbox"
               >
                 <div
                   class="noResultsFound"
@@ -448,37 +457,38 @@ exports[`<Select/> tests no matching results: Filtered Menu 1`] = `
 exports[`<Select/> tests works with async data 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target"
+      aria-haspopup="true"
+      class="bp4-popover-target"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          autocomplete="off"
+          class="bp4-input"
           placeholder="- Select -"
           style="padding-right: 0px;"
           type="text"
           value=""
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
               data-icon="chevron-down"
               height="14"
+              role="img"
               viewBox="0 0 16 16"
               width="14"
             >
-              <desc>
-                chevron-down
-              </desc>
               <path
                 d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                 fill-rule="evenodd"
@@ -495,37 +505,38 @@ exports[`<Select/> tests works with async data 1`] = `
 exports[`<Select/> tests works with async data: Loading state 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target bp3-popover-open"
+      aria-haspopup="true"
+      class="bp4-popover-target bp4-popover-open"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          autocomplete="off"
+          class="bp4-input"
           placeholder="- Select -"
           style="padding-right: 0px;"
           type="text"
           value=""
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
               data-icon="chevron-down"
               height="14"
+              role="img"
               viewBox="0 0 16 16"
               width="14"
             >
-              <desc>
-                chevron-down
-              </desc>
               <path
                 d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                 fill-rule="evenodd"
@@ -536,21 +547,23 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
       </div>
     </div>
     <div
-      class="bp3-overlay bp3-overlay-open bp3-overlay-inline"
+      aria-live="polite"
+      class="bp4-overlay bp4-overlay-open bp4-overlay-inline"
     >
       <div
-        class="bp3-transition-container bp3-popover-appear bp3-popover-appear-active"
+        class="bp4-transition-container bp4-popover-appear bp4-popover-appear-active"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="bp3-popover bp3-minimal bp3-select-popover popover"
+          class="bp4-popover bp4-minimal bp4-select-popover popover"
         >
           <div
-            class="bp3-popover-content"
+            class="bp4-popover-content"
           >
             <div>
               <ul
-                class="bp3-menu"
+                class="bp4-menu"
+                role="listbox"
               >
                 <li
                   class="menuItem loading"
@@ -570,37 +583,38 @@ exports[`<Select/> tests works with async data: Loading state 1`] = `
 exports[`<Select/> tests works with static data 1`] = `
 <div>
   <div
-    class="bp3-popover-wrapper main bp3-fill"
+    class="bp4-popover-wrapper main bp4-fill"
   >
     <div
-      class="bp3-popover-target"
+      aria-haspopup="true"
+      class="bp4-popover-target"
     >
       <div
-        class="bp3-input-group"
+        class="bp4-input-group"
       >
         <input
-          class="bp3-input"
+          autocomplete="off"
+          class="bp4-input"
           placeholder="- Select -"
           style="padding-right: 0px;"
           type="text"
           value=""
         />
         <span
-          class="bp3-input-action"
+          class="bp4-input-action"
         >
           <span
-            class="bp3-icon bp3-icon-chevron-down StyledProps--main StyledProps--padding-small"
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-chevron-down StyledProps--main StyledProps--padding-small"
             icon="chevron-down"
           >
             <svg
               data-icon="chevron-down"
               height="14"
+              role="img"
               viewBox="0 0 16 16"
               width="14"
             >
-              <desc>
-                chevron-down
-              </desc>
               <path
                 d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                 fill-rule="evenodd"

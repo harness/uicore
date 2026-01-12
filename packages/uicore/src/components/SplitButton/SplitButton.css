@@ -64,32 +64,32 @@
   position: relative;
   display: flex;
   align-items: center;
-  button.bp3-button {
+  button.bp4-button {
     box-shadow: none;
   }
-  button.bp3-button:hover {
+  button.bp4-button:hover {
     box-shadow: none;
   }
 
   :global {
-    .bp3-menu-item.bp3-active,
-    .bp3-menu-item:hover {
+    .bp4-menu-item.bp4-active,
+    .bp4-menu-item:hover {
       background-color: var(--primary-7);
       color: var(--white);
-      .bp3-icon {
+      .bp4-icon {
         color: var(--white);
       }
     }
 
-    .bp3-icon.bp3-icon-chevron-down {
+    .bp4-icon.bp4-icon-chevron-down {
       padding-left: 0 !important;
     }
 
-    .border-left-0.Button--button[class*='bp3-button'] {
+    .border-left-0.Button--button[class*='bp4-button'] {
       border-left: none !important;
     }
 
-    .border-right-0.Button--button[class*='bp3-button'] {
+    .border-right-0.Button--button[class*='bp4-button'] {
       border-right: none !important;
     }
   }

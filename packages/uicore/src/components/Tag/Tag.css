@@ -9,61 +9,61 @@
   font-family: var(--font-family) !important;
 
   :global {
-    .bp3-tag {
+    .bp4-tag {
       background-color: var(--grey-50);
       color: var(--primary-9) !important;
       border-radius: 4px;
       border: 1px solid var(--grey-200);
     }
 
-    .bp3-intent-primary {
+    .bp4-intent-primary {
       border: 1px solid var(--blue-500) !important;
       background: var(--white) !important;
       color: var(--blue-600) !important;
     }
 
-    .bp3-intent-success {
+    .bp4-intent-success {
       border: 1px solid var(--green-500) !important;
       background: var(--white) !important;
       color: var(--green-600) !important;
     }
 
-    .bp3-intent-warning {
+    .bp4-intent-warning {
       border: 1px solid var(--yellow-500) !important;
       background: var(--white) !important;
       color: var(--yellow-600) !important;
     }
 
-    .bp3-intent-danger {
+    .bp4-intent-danger {
       border: 1px solid var(--red-500) !important;
       background: var(--white) !important;
       color: var(--red-600) !important;
     }
 
-    .bp3-minimal {
+    .bp4-minimal {
       background: var(--grey-300) !important;
       color: var(--grey-500) !important;
     }
 
-    .bp3-minimal.bp3-intent-primary {
+    .bp4-minimal.bp4-intent-primary {
       border: 1px solid var(--primary-6) !important;
       background: var(--blue-350) !important;
       color: var(--blue-600) !important;
     }
 
-    .bp3-minimal.bp3-intent-success {
+    .bp4-minimal.bp4-intent-success {
       border: 1px solid var(--green-350) !important;
       background: var(--green-350) !important;
       color: var(--green-600) !important;
     }
 
-    .bp3-minimal.bp3-intent-warning {
+    .bp4-minimal.bp4-intent-warning {
       border: 1px solid var(--yellow-350) !important;
       background: var(--yellow-350) !important;
       color: var(--yellow-600) !important;
     }
 
-    .bp3-minimal.bp3-intent-danger {
+    .bp4-minimal.bp4-intent-danger {
       border: 1px solid var(--red-350) !important;
       background: var(--red-350) !important;
       color: var(--red-600) !important;
