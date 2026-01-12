@@ -121,6 +121,7 @@ import ArithmeticMedian from './arithmetic-median.svg'
 import ArithmeticMin from './arithmetic-min.svg'
 import ArithmeticSum from './arithmetic-sum.svg'
 import Arm from './arm.svg'
+import Armorcode from './armorcode.svg'
 import Arrow from './arrow.svg'
 import ArtifactGoogleCloudSourceRepo from './artifact-google-cloud-source-repo.svg'
 import ArtifactGoogleCloudStorage from './artifact-google-cloud-storage.svg'
@@ -1953,6 +1954,7 @@ type HarnessIconName =
   | 'arithmetic-min'
   | 'arithmetic-sum'
   | 'arm'
+  | 'armorcode'
   | 'arrow'
   | 'artifact-google-cloud-source-repo'
   | 'artifact-google-cloud-storage'
@@ -3785,6 +3787,7 @@ const HarnessIcons: KVO<ElementType> = {
   'arithmetic-min': ArithmeticMin,
   'arithmetic-sum': ArithmeticSum,
   arm: Arm,
+  armorcode: Armorcode,
   arrow: Arrow,
   'artifact-google-cloud-source-repo': ArtifactGoogleCloudSourceRepo,
   'artifact-google-cloud-storage': ArtifactGoogleCloudStorage,
