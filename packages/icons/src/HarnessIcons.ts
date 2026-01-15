@@ -716,6 +716,7 @@ import DownloadBox from './download-box.svg'
 import DownloadHarnessStore from './download-harness-store.svg'
 import DownloadManifestsInverse from './download-manifests-inverse.svg'
 import DownloadManifests from './download-manifests.svg'
+import DrTest from './dr-test.svg'
 import DryRun from './dry-run.svg'
 import Dx from './dx.svg'
 import DynamicStage from './dynamic-stage.svg'
@@ -2549,6 +2550,7 @@ type HarnessIconName =
   | 'download-harness-store'
   | 'download-manifests-inverse'
   | 'download-manifests'
+  | 'dr-test'
   | 'dry-run'
   | 'dx'
   | 'dynamic-stage'
@@ -4382,6 +4384,7 @@ const HarnessIcons: KVO<ElementType> = {
   'download-harness-store': DownloadHarnessStore,
   'download-manifests-inverse': DownloadManifestsInverse,
   'download-manifests': DownloadManifests,
+  'dr-test': DrTest,
   'dry-run': DryRun,
   dx: Dx,
   'dynamic-stage': DynamicStage,
