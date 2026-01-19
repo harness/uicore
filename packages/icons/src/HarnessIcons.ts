@@ -64,6 +64,7 @@ import AiModelScanner from './ai-model-scanner.svg'
 import AiOps from './ai-ops.svg'
 import AiPrimary from './ai-primary.svg'
 import AiSecondary from './ai-secondary.svg'
+import AiSettings from './ai-settings.svg'
 import AiSreMain from './ai-sre-main.svg'
 import AiTestAutomation from './ai-test-automation.svg'
 import AiVerifyAlt from './ai-verify-alt.svg'
@@ -1898,6 +1899,7 @@ type HarnessIconName =
   | 'ai-ops'
   | 'ai-primary'
   | 'ai-secondary'
+  | 'ai-settings'
   | 'ai-sre-main'
   | 'ai-test-automation'
   | 'ai-verify-alt'
@@ -3732,6 +3734,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ai-ops': AiOps,
   'ai-primary': AiPrimary,
   'ai-secondary': AiSecondary,
+  'ai-settings': AiSettings,
   'ai-sre-main': AiSreMain,
   'ai-test-automation': AiTestAutomation,
   'ai-verify-alt': AiVerifyAlt,
