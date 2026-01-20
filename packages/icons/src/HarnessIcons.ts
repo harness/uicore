@@ -1613,6 +1613,8 @@ import SettingsHorizontal from './settings-horizontal.svg'
 import SetupApi from './setup-api.svg'
 import SetupClient from './setup-client.svg'
 import SetupTags from './setup-tags.svg'
+import SfApexTestRunInverse from './sf-apex-test-run-inverse.svg'
+import SfApexTestRun from './sf-apex-test-run.svg'
 import SfApprovalInverse from './sf-approval-inverse.svg'
 import SfApproval from './sf-approval.svg'
 import SfCommandInverse from './sf-command-inverse.svg'
@@ -3448,6 +3450,8 @@ type HarnessIconName =
   | 'setup-api'
   | 'setup-client'
   | 'setup-tags'
+  | 'sf-apex-test-run-inverse'
+  | 'sf-apex-test-run'
   | 'sf-approval-inverse'
   | 'sf-approval'
   | 'sf-command-inverse'
@@ -5283,6 +5287,8 @@ const HarnessIcons: KVO<ElementType> = {
   'setup-api': SetupApi,
   'setup-client': SetupClient,
   'setup-tags': SetupTags,
+  'sf-apex-test-run-inverse': SfApexTestRunInverse,
+  'sf-apex-test-run': SfApexTestRun,
   'sf-approval-inverse': SfApprovalInverse,
   'sf-approval': SfApproval,
   'sf-command-inverse': SfCommandInverse,
