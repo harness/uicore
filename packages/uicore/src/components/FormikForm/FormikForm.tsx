@@ -273,7 +273,7 @@ function KVTagInput(props: KVTagInputProps & FormikContextProps<any>) {
               event.stopPropagation()
             }
           }}
-          placeholder="Type and press enter to create a tag"
+          placeholder="Type and press enter to add a tag"
           {...tagsProps}
           inputValue={inputValue}
           onInputChange={e => {
@@ -336,7 +336,7 @@ function MultiInput(props: MultiInputProps & FormikContextProps<any>) {
             event.stopPropagation()
           }
         }}
-        placeholder="Type and press enter to create a tag"
+        placeholder="Type and press enter to add a tag"
         {...tagsProps}
       />
     </FormGroup>
