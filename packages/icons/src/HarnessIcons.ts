@@ -1411,6 +1411,8 @@ import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
 import Rootly from './rootly.svg'
+import RtWithDarkText from './rt-with-dark-text.svg'
+import RtWithText from './rt-with-text.svg'
 import RunCiStepInverse from './run-ci-step-inverse.svg'
 import RunCiStep from './run-ci-step.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -3248,6 +3250,8 @@ type HarnessIconName =
   | 'rolling-update'
   | 'rolling'
   | 'rootly'
+  | 'rt-with-dark-text'
+  | 'rt-with-text'
   | 'run-ci-step-inverse'
   | 'run-ci-step'
   | 'run-pipeline'
@@ -5085,6 +5089,8 @@ const HarnessIcons: KVO<ElementType> = {
   'rolling-update': RollingUpdate,
   rolling: Rolling,
   rootly: Rootly,
+  'rt-with-dark-text': RtWithDarkText,
+  'rt-with-text': RtWithText,
   'run-ci-step-inverse': RunCiStepInverse,
   'run-ci-step': RunCiStep,
   'run-pipeline': RunPipeline,
