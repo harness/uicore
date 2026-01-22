@@ -58,6 +58,7 @@ import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agents from './agents.svg'
+import Aggre from './aggre.svg'
 import AiArrowUp from './ai-arrow-up.svg'
 import AiCanary from './ai-canary.svg'
 import AiModelScanner from './ai-model-scanner.svg'
@@ -140,6 +141,7 @@ import AsgRollback from './asg-rollback.svg'
 import AsgSetup from './asg-setup.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
+import Assess from './assess.svg'
 import AtaNavAutomation from './ata-nav-automation.svg'
 import AtaNavCiCd from './ata-nav-ci-cd.svg'
 import AtaNavEmailIntegration from './ata-nav-email-integration.svg'
@@ -762,6 +764,7 @@ import ErrorOutline from './error-outline.svg'
 import ErrorTracking from './error-tracking.svg'
 import ErrorTransparentNoOutline from './error-transparent-no-outline.svg'
 import EvaluatePolicy from './evaluate-policy.svg'
+import Evaluate from './evaluate.svg'
 import EventListener from './event-listener.svg'
 import ExecutionAbort from './execution-abort.svg'
 import ExecutionCompleted from './execution-completed.svg'
@@ -1897,6 +1900,7 @@ type HarnessIconName =
   | 'advanced'
   | 'agent-tokens'
   | 'agents'
+  | 'aggre'
   | 'ai-arrow-up'
   | 'ai-canary'
   | 'ai-model-scanner'
@@ -1979,6 +1983,7 @@ type HarnessIconName =
   | 'asg-setup'
   | 'asg-swap-inverse'
   | 'asg-swap'
+  | 'assess'
   | 'ata-nav-automation'
   | 'ata-nav-ci-cd'
   | 'ata-nav-email-integration'
@@ -2601,6 +2606,7 @@ type HarnessIconName =
   | 'error-tracking'
   | 'error-transparent-no-outline'
   | 'evaluate-policy'
+  | 'evaluate'
   | 'event-listener'
   | 'execution-abort'
   | 'execution-completed'
@@ -3736,6 +3742,7 @@ const HarnessIcons: KVO<ElementType> = {
   advanced: Advanced,
   'agent-tokens': AgentTokens,
   agents: Agents,
+  aggre: Aggre,
   'ai-arrow-up': AiArrowUp,
   'ai-canary': AiCanary,
   'ai-model-scanner': AiModelScanner,
@@ -3818,6 +3825,7 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-setup': AsgSetup,
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
+  assess: Assess,
   'ata-nav-automation': AtaNavAutomation,
   'ata-nav-ci-cd': AtaNavCiCd,
   'ata-nav-email-integration': AtaNavEmailIntegration,
@@ -4440,6 +4448,7 @@ const HarnessIcons: KVO<ElementType> = {
   'error-tracking': ErrorTracking,
   'error-transparent-no-outline': ErrorTransparentNoOutline,
   'evaluate-policy': EvaluatePolicy,
+  evaluate: Evaluate,
   'event-listener': EventListener,
   'execution-abort': ExecutionAbort,
   'execution-completed': ExecutionCompleted,
