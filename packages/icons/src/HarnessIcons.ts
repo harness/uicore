@@ -1816,6 +1816,7 @@ import University from './university.svg'
 import Up from './up.svg'
 import UpdateApp from './update-app.svg'
 import UpgradeBolt from './upgrade-bolt.svg'
+import UpgradeCustom from './upgrade-custom.svg'
 import UploadBox from './upload-box.svg'
 import UpstreamProxiesIcon from './upstream-proxies-icon.svg'
 import UserGroupBlue from './user-group-blue.svg'
@@ -3660,6 +3661,7 @@ type HarnessIconName =
   | 'up'
   | 'update-app'
   | 'upgrade-bolt'
+  | 'upgrade-custom'
   | 'upload-box'
   | 'upstream-proxies-icon'
   | 'user-group-blue'
@@ -5504,6 +5506,7 @@ const HarnessIcons: KVO<ElementType> = {
   up: Up,
   'update-app': UpdateApp,
   'upgrade-bolt': UpgradeBolt,
+  'upgrade-custom': UpgradeCustom,
   'upload-box': UploadBox,
   'upstream-proxies-icon': UpstreamProxiesIcon,
   'user-group-blue': UserGroupBlue,
