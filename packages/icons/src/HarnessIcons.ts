@@ -1058,6 +1058,8 @@ import JiraCreate from './jira-create.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import Jira from './jira.svg'
+import JmeterLogo from './jmeter-logo.svg'
+import K6Logo from './k6-logo.svg'
 import K8SDaemonset from './k8s-daemonset.svg'
 import K8SDeployment from './k8s-deployment.svg'
 import K8SDiff from './k8s-diff.svg'
@@ -1093,6 +1095,7 @@ import ListView from './list-view.svg'
 import Loading from './loading.svg'
 import LocalImage from './local-image.svg'
 import LocalRepository from './local-repository.svg'
+import LocustLogo from './locust-logo.svg'
 import Looping from './looping.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
@@ -1658,6 +1661,7 @@ import SmileHappy from './smile-happy.svg'
 import SmtpConfigurationBlue from './smtp-configuration-blue.svg'
 import Smtp from './smtp.svg'
 import SolidError from './solid-error.svg'
+import Speedometer from './speedometer.svg'
 import Spinner from './spinner.svg'
 import SpotInverse from './spot-inverse.svg'
 import Spot from './spot.svg'
@@ -1822,6 +1826,7 @@ import UpstreamProxiesIcon from './upstream-proxies-icon.svg'
 import UserGroupBlue from './user-group-blue.svg'
 import UserGroups from './user-groups.svg'
 import User from './user.svg'
+import Users from './users.svg'
 import Utility from './utility.svg'
 import ValuesFIle from './valuesFIle.svg'
 import Variable from './variable.svg'
@@ -2903,6 +2908,8 @@ type HarnessIconName =
   | 'jira-update-inverse'
   | 'jira-update'
   | 'jira'
+  | 'jmeter-logo'
+  | 'k6-logo'
   | 'k8s-daemonset'
   | 'k8s-deployment'
   | 'k8s-diff'
@@ -2938,6 +2945,7 @@ type HarnessIconName =
   | 'loading'
   | 'local-image'
   | 'local-repository'
+  | 'locust-logo'
   | 'looping'
   | 'main-abort'
   | 'main-account-notifications'
@@ -3503,6 +3511,7 @@ type HarnessIconName =
   | 'smtp-configuration-blue'
   | 'smtp'
   | 'solid-error'
+  | 'speedometer'
   | 'spinner'
   | 'spot-inverse'
   | 'spot'
@@ -3667,6 +3676,7 @@ type HarnessIconName =
   | 'user-group-blue'
   | 'user-groups'
   | 'user'
+  | 'users'
   | 'utility'
   | 'valuesFIle'
   | 'variable'
@@ -4748,6 +4758,8 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
   jira: Jira,
+  'jmeter-logo': JmeterLogo,
+  'k6-logo': K6Logo,
   'k8s-daemonset': K8SDaemonset,
   'k8s-deployment': K8SDeployment,
   'k8s-diff': K8SDiff,
@@ -4783,6 +4795,7 @@ const HarnessIcons: KVO<ElementType> = {
   loading: Loading,
   'local-image': LocalImage,
   'local-repository': LocalRepository,
+  'locust-logo': LocustLogo,
   looping: Looping,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
@@ -5348,6 +5361,7 @@ const HarnessIcons: KVO<ElementType> = {
   'smtp-configuration-blue': SmtpConfigurationBlue,
   smtp: Smtp,
   'solid-error': SolidError,
+  speedometer: Speedometer,
   spinner: Spinner,
   'spot-inverse': SpotInverse,
   spot: Spot,
@@ -5512,6 +5526,7 @@ const HarnessIcons: KVO<ElementType> = {
   'user-group-blue': UserGroupBlue,
   'user-groups': UserGroups,
   user: User,
+  users: Users,
   utility: Utility,
   valuesFIle: ValuesFIle,
   variable: Variable,
