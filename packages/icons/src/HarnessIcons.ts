@@ -830,6 +830,11 @@ import FmeReallocateTraffic from './fme-reallocate-traffic.svg'
 import FmeRestoreFlag from './fme-restore-flag.svg'
 import FmeRolloutBoard from './fme-rollout-board.svg'
 import FmeSearch from './fme-search.svg'
+import FmeSegmentsCreate from './fme-segments-create.svg'
+import FmeSegmentsDelete from './fme-segments-delete.svg'
+import FmeSegmentsFlagsetCreate from './fme-segments-flagset-create.svg'
+import FmeSegmentsFlagsetDelete from './fme-segments-flagset-delete.svg'
+import FmeSegmentsUpdate from './fme-segments-update.svg'
 import FmeSegments from './fme-segments.svg'
 import FmeSetAllocation from './fme-set-allocation.svg'
 import FmeSetDynamicConfig from './fme-set-dynamic-config.svg'
@@ -838,6 +843,7 @@ import FmeSetTargets from './fme-set-targets.svg'
 import FmeSetTreatments from './fme-set-treatments.svg'
 import FmeSettings from './fme-settings.svg'
 import FmeUpdateFlag from './fme-update-flag.svg'
+import FmeUpdateRuleBasedDefinition from './fme-update-rule-based-definition.svg'
 import FmeWithDarkText from './fme-with-dark-text.svg'
 import FolderUpload from './folder-upload.svg'
 import Folder from './folder.svg'
@@ -2680,6 +2686,11 @@ type HarnessIconName =
   | 'fme-restore-flag'
   | 'fme-rollout-board'
   | 'fme-search'
+  | 'fme-segments-create'
+  | 'fme-segments-delete'
+  | 'fme-segments-flagset-create'
+  | 'fme-segments-flagset-delete'
+  | 'fme-segments-update'
   | 'fme-segments'
   | 'fme-set-allocation'
   | 'fme-set-dynamic-config'
@@ -2688,6 +2699,7 @@ type HarnessIconName =
   | 'fme-set-treatments'
   | 'fme-settings'
   | 'fme-update-flag'
+  | 'fme-update-rule-based-definition'
   | 'fme-with-dark-text'
   | 'folder-upload'
   | 'folder'
@@ -4530,6 +4542,11 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-restore-flag': FmeRestoreFlag,
   'fme-rollout-board': FmeRolloutBoard,
   'fme-search': FmeSearch,
+  'fme-segments-create': FmeSegmentsCreate,
+  'fme-segments-delete': FmeSegmentsDelete,
+  'fme-segments-flagset-create': FmeSegmentsFlagsetCreate,
+  'fme-segments-flagset-delete': FmeSegmentsFlagsetDelete,
+  'fme-segments-update': FmeSegmentsUpdate,
   'fme-segments': FmeSegments,
   'fme-set-allocation': FmeSetAllocation,
   'fme-set-dynamic-config': FmeSetDynamicConfig,
@@ -4538,6 +4555,7 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-set-treatments': FmeSetTreatments,
   'fme-settings': FmeSettings,
   'fme-update-flag': FmeUpdateFlag,
+  'fme-update-rule-based-definition': FmeUpdateRuleBasedDefinition,
   'fme-with-dark-text': FmeWithDarkText,
   'folder-upload': FolderUpload,
   folder: Folder,
