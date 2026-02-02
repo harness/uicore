@@ -454,6 +454,8 @@ import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
 import ChaosSketch from './chaos-sketch.svg'
 import ChaosSolid from './chaos-solid.svg'
+import ChaosStepActions from './chaos-step-actions.svg'
+import ChaosStepProbes from './chaos-step-probes.svg'
 import ChaosVmwareCpuHog from './chaos-vmware-cpu-hog.svg'
 import ChaosVmwareDiskLoss from './chaos-vmware-disk-loss.svg'
 import ChaosVmwareDnsChaos from './chaos-vmware-dns-chaos.svg'
@@ -2310,6 +2312,8 @@ type HarnessIconName =
   | 'chaos-service-discovery'
   | 'chaos-sketch'
   | 'chaos-solid'
+  | 'chaos-step-actions'
+  | 'chaos-step-probes'
   | 'chaos-vmware-cpu-hog'
   | 'chaos-vmware-disk-loss'
   | 'chaos-vmware-dns-chaos'
@@ -4166,6 +4170,8 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-service-discovery': ChaosServiceDiscovery,
   'chaos-sketch': ChaosSketch,
   'chaos-solid': ChaosSolid,
+  'chaos-step-actions': ChaosStepActions,
+  'chaos-step-probes': ChaosStepProbes,
   'chaos-vmware-cpu-hog': ChaosVmwareCpuHog,
   'chaos-vmware-disk-loss': ChaosVmwareDiskLoss,
   'chaos-vmware-dns-chaos': ChaosVmwareDnsChaos,
