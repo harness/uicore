@@ -938,6 +938,7 @@ import Gitspaces from './gitspaces.svg'
 import GoLogo from './go-logo.svg'
 import Golang from './golang.svg'
 import GoogleBigquery from './google-bigquery.svg'
+import GoogleChat from './google-chat.svg'
 import GoogleGemini from './google-gemini.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import GoogleMigBlueGreenDeploy from './google-mig-blue-green-deploy.svg'
@@ -2796,6 +2797,7 @@ type HarnessIconName =
   | 'go-logo'
   | 'golang'
   | 'google-bigquery'
+  | 'google-chat'
   | 'google-gemini'
   | 'google-kubernetes-engine'
   | 'google-mig-blue-green-deploy'
@@ -4654,6 +4656,7 @@ const HarnessIcons: KVO<ElementType> = {
   'go-logo': GoLogo,
   golang: Golang,
   'google-bigquery': GoogleBigquery,
+  'google-chat': GoogleChat,
   'google-gemini': GoogleGemini,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   'google-mig-blue-green-deploy': GoogleMigBlueGreenDeploy,
