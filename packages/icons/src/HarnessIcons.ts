@@ -163,11 +163,16 @@ import Autostopping from './autostopping.svg'
 import Avatar from './avatar.svg'
 import AwsAsg from './aws-asg.svg'
 import AwsCodecommit from './aws-codecommit.svg'
+import AwsEbsService from './aws-ebs-service.svg'
+import AwsEc2AsgService from './aws-ec2-asg-service.svg'
+import AwsEc2Service from './aws-ec2-service.svg'
 import AwsEctwoService from './aws-ectwo-service.svg'
+import AwsElasticacheService from './aws-elasticache-service.svg'
 import AwsKms from './aws-kms.svg'
 import AwsLambdaDeploy from './aws-lambda-deploy.svg'
 import AwsLambdaRollback from './aws-lambda-rollback.svg'
 import AwsLambdaTrafficShift from './aws-lambda-traffic-shift.svg'
+import AwsRdsService from './aws-rds-service.svg'
 import AwsRds from './aws-rds.svg'
 import AwsSamBuildInverse from './aws-sam-build-inverse.svg'
 import AwsSamBuild from './aws-sam-build.svg'
@@ -2022,11 +2027,16 @@ type HarnessIconName =
   | 'avatar'
   | 'aws-asg'
   | 'aws-codecommit'
+  | 'aws-ebs-service'
+  | 'aws-ec2-asg-service'
+  | 'aws-ec2-service'
   | 'aws-ectwo-service'
+  | 'aws-elasticache-service'
   | 'aws-kms'
   | 'aws-lambda-deploy'
   | 'aws-lambda-rollback'
   | 'aws-lambda-traffic-shift'
+  | 'aws-rds-service'
   | 'aws-rds'
   | 'aws-sam-build-inverse'
   | 'aws-sam-build'
@@ -3881,11 +3891,16 @@ const HarnessIcons: KVO<ElementType> = {
   avatar: Avatar,
   'aws-asg': AwsAsg,
   'aws-codecommit': AwsCodecommit,
+  'aws-ebs-service': AwsEbsService,
+  'aws-ec2-asg-service': AwsEc2AsgService,
+  'aws-ec2-service': AwsEc2Service,
   'aws-ectwo-service': AwsEctwoService,
+  'aws-elasticache-service': AwsElasticacheService,
   'aws-kms': AwsKms,
   'aws-lambda-deploy': AwsLambdaDeploy,
   'aws-lambda-rollback': AwsLambdaRollback,
   'aws-lambda-traffic-shift': AwsLambdaTrafficShift,
+  'aws-rds-service': AwsRdsService,
   'aws-rds': AwsRds,
   'aws-sam-build-inverse': AwsSamBuildInverse,
   'aws-sam-build': AwsSamBuild,
