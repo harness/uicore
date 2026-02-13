@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import { AcceptableValue } from '../MultiTypeInput/MultiTypeInput'
+import { AcceptableValue, getMultiTypeFromValue } from '../MultiTypeInput/MultiTypeInput'
 import { createContext } from 'react'
 import { IconProps } from '@harness/icons'
 
@@ -23,6 +23,7 @@ export interface ICustomExpressionInputContext {
     iconProps: IconProps
   }
   isCustomExpression: (value?: string) => boolean
+  getMultiTypeFromValue: typeof getMultiTypeFromValue
 }
 
 export const CustomExpressionInputContext = createContext<ICustomExpressionInputContext | null>(null)
