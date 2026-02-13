@@ -736,6 +736,7 @@ import EcrCiStepInverse from './ecr-ci-step-inverse.svg'
 import EcrCiStep from './ecr-ci-step.svg'
 import EcrStepInverse from './ecr-step-inverse.svg'
 import EcrStep from './ecr-step.svg'
+import EcsScale from './ecs-scale.svg'
 import EcsServiceSetupInverse from './ecs-service-setup-inverse.svg'
 import EcsServiceSetup from './ecs-service-setup.svg'
 import EcsUpgradeContainersInverse from './ecs-upgrade-containers-inverse.svg'
@@ -2600,6 +2601,7 @@ type HarnessIconName =
   | 'ecr-ci-step'
   | 'ecr-step-inverse'
   | 'ecr-step'
+  | 'ecs-scale'
   | 'ecs-service-setup-inverse'
   | 'ecs-service-setup'
   | 'ecs-upgrade-containers-inverse'
@@ -4464,6 +4466,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ecr-ci-step': EcrCiStep,
   'ecr-step-inverse': EcrStepInverse,
   'ecr-step': EcrStep,
+  'ecs-scale': EcsScale,
   'ecs-service-setup-inverse': EcsServiceSetupInverse,
   'ecs-service-setup': EcsServiceSetup,
   'ecs-upgrade-containers-inverse': EcsUpgradeContainersInverse,
