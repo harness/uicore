@@ -923,6 +923,7 @@ import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
 import SwapServices from './swap-services.svg'
+import SwiftLogo from './swift-logo.svg'
 import SwitchOff from './switch-off.svg'
 import SwitchOn from './switch-on.svg'
 import SyncFailed from './sync-failed.svg'
@@ -1937,6 +1938,7 @@ type HarnessIconName =
   | 'support-verification'
   | 'support-videos'
   | 'swap-services'
+  | 'swift-logo'
   | 'switch-off'
   | 'switch-on'
   | 'sync-failed'
@@ -2951,6 +2953,7 @@ const HarnessIcons: KVO<ElementType> = {
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
   'swap-services': SwapServices,
+  'swift-logo': SwiftLogo,
   'switch-off': SwitchOff,
   'switch-on': SwitchOn,
   'sync-failed': SyncFailed,
