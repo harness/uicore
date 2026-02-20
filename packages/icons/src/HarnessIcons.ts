@@ -725,6 +725,7 @@ import Dotnet from './dotnet.svg'
 import Down from './down.svg'
 import DownloadAwsS3Store from './download-aws-s3-store.svg'
 import DownloadBox from './download-box.svg'
+import DownloadGcs from './download-gcs.svg'
 import DownloadHarnessStore from './download-harness-store.svg'
 import DownloadManifestsInverse from './download-manifests-inverse.svg'
 import DownloadManifests from './download-manifests.svg'
@@ -2592,6 +2593,7 @@ type HarnessIconName =
   | 'down'
   | 'download-aws-s3-store'
   | 'download-box'
+  | 'download-gcs'
   | 'download-harness-store'
   | 'download-manifests-inverse'
   | 'download-manifests'
@@ -4459,6 +4461,7 @@ const HarnessIcons: KVO<ElementType> = {
   down: Down,
   'download-aws-s3-store': DownloadAwsS3Store,
   'download-box': DownloadBox,
+  'download-gcs': DownloadGcs,
   'download-harness-store': DownloadHarnessStore,
   'download-manifests-inverse': DownloadManifestsInverse,
   'download-manifests': DownloadManifests,
