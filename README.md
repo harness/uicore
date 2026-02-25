@@ -32,12 +32,19 @@ List of packages:
 Icons are under available `packages/icons` folder. Please follow below steps to add new icons -
 
 1. Place the new icon (in SVG format) inside `packages/icons/src` directory.
-2. compress svg images using https://jakearchibald.github.io/svgomg/
-3. remove width and height from svg
-4. `fill="none"` should not be present on the SVG element
-5. Use `currentColor` for fill instead of a hardcoded hex value for re-usable icons. This allows UI to change icon colors via CSS easily. Logos are exceptions where colors are fixed.
-6. Run `yarn ui:icons` (under the root directory)
-7. Commit all the changes and open a PR.
+2. Remove width and height from the SVG element.
+3. `fill="none"` should not be present on the SVG element
+4. Use `currentColor` for fill instead of a hardcoded hex value for re-usable icons. This allows UI to change icon colors via CSS easily. Logos are exceptions where colors are fixed.
+5. Run `yarn ui:icons` (under the root directory). This compresses SVGs (via SVGO, same as [svgomg](https://jakearchibald.github.io/svgomg/)) and regenerates the icon registry.
+6. Commit all the changes and open a PR.
+
+To manually compress an existing icon (e.g. from `packages/icons`):  
+`yarn compress-svg src/icon-name.svg`
+
+**Compression options:**
+
+- All new/modified SVGs are compressed by default when you run `yarn ui:icons`.
+- If a compressed SVG does not render properly, add it to `packages/icons/.skip-compress` (one per line): file name only (e.g. `icon-name.svg`). Those files are then excluded from compression.
 
 **Note**: For `uicore/icons` to be auto published, please ensure to bump up the package version in `packages/icons/package.json` _(only if an immediate new release is required)_
 

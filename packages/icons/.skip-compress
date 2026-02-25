@@ -1,0 +1,4 @@
+# List SVG paths that should not be compressed (one per line).
+# Use when a compressed SVG does not render properly.
+# Add the file name only (e.g. icon-name.svg).
+# Lines starting with # are ignored.
