@@ -31,6 +31,7 @@ export interface ExpandingSearchInputProps {
   onPrev?: (text: string) => void
   onNext?: (text: string) => void
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void
   autoFocus?: boolean // auto focus (caret) initially
   className?: string
   throttle?: number
@@ -233,6 +234,7 @@ export function ExpandingSearchInput(
         value={value}
         onChange={onChange}
         onKeyPress={onKeyPress}
+        onKeyDown={props.onKeyDown}
         onFocus={onFocus}
         onBlur={onBlur}
         style={{ paddingRight: `${padRightAmount}px` }}

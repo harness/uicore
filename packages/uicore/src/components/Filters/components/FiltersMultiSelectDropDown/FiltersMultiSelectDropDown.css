@@ -156,6 +156,9 @@
             &:not(.noResults):hover {
               background: var(--grey-100);
             }
+            &.focused:not(.noResults) {
+              background: var(--grey-100);
+            }
             &.noResults {
               color: var(--grey-400);
               cursor: default;

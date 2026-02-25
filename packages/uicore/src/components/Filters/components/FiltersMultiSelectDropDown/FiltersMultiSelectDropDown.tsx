@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Popover, Spinner, Menu, PopoverInteractionKind, Classes } from '@blueprintjs/core'
 import {
   QueryList,
@@ -31,6 +31,7 @@ import {
   ExpandingSearchInputProps
 } from '../../../ExpandingSearchInput/ExpandingSearchInput'
 import { Container } from '../../../Container/Container'
+import { useDropdownKeyboardNav } from '../useDropdownKeyboardNav'
 
 type Props = IQueryListProps<MultiSelectOption>
 
@@ -128,22 +129,45 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
     }
   }, [value])
 
+  const filteredItems = useMemo(() => {
+    const searchValue = query.trim().toLocaleLowerCase()
+    if (searchValue.length === 0) return dropDownItems
+    return dropDownItems.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
+  }, [query, dropDownItems])
+
+  const { focusedIndex, resetFocus, popoverContentRef, onSearchKeyDown } = useDropdownKeyboardNav({
+    filteredItemsLength: filteredItems.length,
+    isOpen,
+    setIsOpen
+  })
+
   const onSearchChange = useCallback(
     (newQuery: string) => {
       if (expandingSearchInputProps?.onChange) {
         expandingSearchInputProps.onChange(newQuery)
       }
       setQuery(newQuery)
+      resetFocus()
     },
-    [expandingSearchInputProps]
+    [expandingSearchInputProps, resetFocus]
   )
 
-  // to filter out the options based on search
-  const filterItems = (itemsToRender: SelectOption[]) => {
-    const searchValue = query.trim().toLocaleLowerCase()
-    if (searchValue.length === 0) return itemsToRender
-    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
-  }
+  const onSearchEnter = useCallback(
+    (text: string) => {
+      if (focusedIndex >= 0 && focusedIndex < filteredItems.length) {
+        handleItemSelect(filteredItems[focusedIndex])
+        return
+      }
+      const searchValue = text.trim().toLocaleLowerCase()
+      if (!searchValue) return
+
+      const exactMatch = dropDownItems.find(item => item.label.toLocaleLowerCase() === searchValue)
+      if (exactMatch) {
+        handleItemSelect(exactMatch)
+      }
+    },
+    [focusedIndex, filteredItems, dropDownItems, selectedItems]
+  )
 
   function handleClearSelection(): void {
     setSelectedItems([])
@@ -169,9 +193,11 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
         </li>
       )
     } else if (itemsToRender.length > 0) {
-      renderedItems = filterItems(itemsToRender)
-        .map(renderItem)
-        .filter(item => item !== null)
+      if (filteredItems.length === 0) {
+        renderedItems = <NoMatch />
+      } else {
+        renderedItems = filteredItems.map(renderItem).filter(item => item !== null)
+      }
     } else {
       renderedItems = <NoMatch />
     }
@@ -260,12 +286,14 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
             />
           </Layout.Horizontal>
         </Utils.WrapOptionalTooltip>
-        <React.Fragment>
+        <div ref={popoverContentRef}>
           {allowSearch && (
             <ExpandingSearchInputWithRef
               alwaysExpanded
               {...expandingSearchInputProps}
               onChange={onSearchChange}
+              onEnter={onSearchEnter}
+              onKeyDown={onSearchKeyDown}
               value={query}
             />
           )}
@@ -280,7 +308,7 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
               Clear Selection
             </Text>
           </Container>
-        </React.Fragment>
+        </div>
       </Popover>
     )
   }
@@ -288,11 +316,14 @@ export function FiltersMultiSelectDropDown(props: FilterMultiSelectDropDownProps
   function itemRenderer(item: MultiSelectOption, itemProps: IItemRendererProps): JSX.Element | null {
     const { handleClick, modifiers } = itemProps
     const isSelected = value && value.findIndex(val => val.value === item.value) > -1
+    const isFocused = focusedIndex >= 0 && filteredItems[focusedIndex]?.value === item.value
     return (
       <Checkbox
         key={item.value.toString()}
+        data-focused={isFocused || undefined}
         className={cx(css.menuItem, {
-          [css.active]: isSelected
+          [css.active]: isSelected,
+          [css.focused]: isFocused
         })}
         onClick={e => {
           if (!modifiers.disabled && !item.disabled) {

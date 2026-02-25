@@ -5,7 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Popover, Spinner, Menu, MenuDivider } from '@blueprintjs/core'
 import { Utils } from '../../../../core/Utils'
 import {
@@ -30,6 +30,7 @@ import {
 } from '../../../ExpandingSearchInput/ExpandingSearchInput'
 import { Container } from '../../../Container/Container'
 import { PopoverProps } from '../../../Popover/Popover'
+import { useDropdownKeyboardNav } from '../useDropdownKeyboardNav'
 
 type Props = IQueryListProps<SelectOption>
 
@@ -133,22 +134,62 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
     if (value !== undefined) setSelectedItem(value)
   }, [value])
 
+  const filteredItems = useMemo(() => {
+    const searchValue = query.trim().toLocaleLowerCase()
+    const base =
+      searchValue.length === 0
+        ? dropDownItems
+        : dropDownItems.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
+
+    if (!sections) return base
+
+    const ordered: SelectOption[] = []
+    Object.keys(sections).forEach(sectionTitle => {
+      const sectionValues = sections[sectionTitle]
+      base.filter(item => sectionValues.includes(item.value as string)).forEach(item => ordered.push(item))
+    })
+    base
+      .filter(item => !Object.values(sections).some(sv => sv.includes(item.value as string)))
+      .forEach(item => ordered.push(item))
+    return ordered
+  }, [query, dropDownItems, sections])
+
+  const { focusedIndex, resetFocus, popoverContentRef, onSearchKeyDown } = useDropdownKeyboardNav({
+    filteredItemsLength: filteredItems.length,
+    isOpen,
+    setIsOpen
+  })
+
   const onSearchChange = useCallback(
     (newQuery: string) => {
       if (expandingSearchInputProps?.onChange) {
         expandingSearchInputProps.onChange(newQuery)
       }
       setQuery(newQuery)
+      resetFocus()
     },
-    [expandingSearchInputProps]
+    [expandingSearchInputProps, resetFocus]
   )
 
-  // to filter out the options based on search
-  const filterItems = (itemsToRender: SelectOption[]) => {
-    const searchValue = query.trim().toLocaleLowerCase()
-    if (searchValue.length === 0) return itemsToRender
-    return itemsToRender.filter(item => item.label.toLocaleLowerCase().includes(searchValue))
-  }
+  const onSearchEnter = useCallback(
+    (text: string) => {
+      if (focusedIndex >= 0 && focusedIndex < filteredItems.length) {
+        handleItemSelect(filteredItems[focusedIndex])
+        setIsOpen(false)
+        resetFocus()
+        return
+      }
+      const searchValue = text.trim().toLocaleLowerCase()
+      if (!searchValue) return
+
+      const exactMatch = dropDownItems.find(item => item.label.toLocaleLowerCase() === searchValue)
+      if (exactMatch) {
+        handleItemSelect(exactMatch)
+        setIsOpen(false)
+      }
+    },
+    [focusedIndex, filteredItems, dropDownItems, resetFocus]
+  )
 
   function handleItemSelect(item: SelectOption): void {
     setSelectedItem(item)
@@ -171,9 +212,9 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
         </li>
       )
     } else if (itemsToRender.length > 0) {
-      const filteredItems = filterItems(itemsToRender)
-
-      if (sections) {
+      if (filteredItems.length === 0) {
+        renderedItems = <NoMatch />
+      } else if (sections) {
         renderedItems = Object.keys(sections).map((sectionTitle, index) => {
           const sectionItems = sections[sectionTitle]
           const sectionFilteredItems = filteredItems.filter(item => sectionItems.includes(item.value as string))
@@ -186,7 +227,6 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
           ) : null
         })
 
-        // Render items not in any section
         const uncategorizedItems = filteredItems.filter(
           item => !Object.values(sections).some(sectionItems => sectionItems.includes(item.value as string))
         )
@@ -194,11 +234,11 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
         if (uncategorizedItems.length > 0) {
           renderedItems.push(<React.Fragment key="uncategorized">{uncategorizedItems.map(renderItem)}</React.Fragment>)
         }
-      } else {
-        renderedItems = filteredItems.map(renderItem)
-      }
 
-      renderedItems = renderedItems.filter(item => item !== null)
+        renderedItems = renderedItems.filter(item => item !== null)
+      } else {
+        renderedItems = filteredItems.map(renderItem).filter(item => item !== null)
+      }
     } else {
       renderedItems = <NoMatch />
     }
@@ -307,12 +347,14 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
             </Layout.Horizontal>
           </Utils.WrapOptionalTooltip>
         )}
-        <React.Fragment>
+        <div ref={popoverContentRef}>
           {allowSearch && (
             <ExpandingSearchInputWithRef
               alwaysExpanded
               {...expandingSearchInputProps}
               onChange={onSearchChange}
+              onEnter={onSearchEnter}
+              onKeyDown={onSearchKeyDown}
               value={query}
             />
           )}
@@ -333,27 +375,27 @@ export function FiltersSelectDropDown(props: FilterSelectDropDownProps): React.R
               </Text>
             </Container>
           ) : null}
-        </React.Fragment>
+        </div>
       </Popover>
     )
   }
 
   function itemRenderer(item: SelectOption, itemProps: IItemRendererProps): JSX.Element | null {
     const { handleClick, modifiers } = itemProps
+    const isActive = item.value === selectedItem.value
+    const isFocused = focusedIndex >= 0 && filteredItems[focusedIndex]?.value === item.value
     return (
       <div
         key={item.value.toString()}
-        className={cx(css.menuItem, { [css.active]: item.value === selectedItem.value })}
+        data-focused={isFocused || undefined}
+        className={cx(css.menuItem, { [css.active]: isActive, [css.focused]: isFocused && !isActive })}
         onClick={e => {
           if (!modifiers.disabled) {
             handleClick(e)
           }
         }}>
         {
-          <Text
-            lineClamp={1}
-            font={{ variation: FontVariation.SMALL }}
-            color={item.value === selectedItem.value ? Color.WHITE : Color.BLACK}>
+          <Text lineClamp={1} font={{ variation: FontVariation.SMALL }} color={isActive ? Color.WHITE : Color.BLACK}>
             {item.label}
           </Text>
         }

@@ -132,6 +132,10 @@
               background: var(--grey-100);
               color: var(--black) !important;
             }
+            &.focused:not(.active) {
+              background: var(--grey-100);
+              color: var(--black) !important;
+            }
             &.noResultsFound {
               cursor: default;
               color: var(--grey-400);
