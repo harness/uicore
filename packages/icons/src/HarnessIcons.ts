@@ -162,6 +162,7 @@ import AutoScaler from './autoScaler.svg'
 import Autostopping from './autostopping.svg'
 import Avatar from './avatar.svg'
 import AwsAsg from './aws-asg.svg'
+import AwsCdk from './aws-cdk.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsEbsService from './aws-ebs-service.svg'
 import AwsEc2AsgService from './aws-ec2-asg-service.svg'
@@ -2030,6 +2031,7 @@ type HarnessIconName =
   | 'autostopping'
   | 'avatar'
   | 'aws-asg'
+  | 'aws-cdk'
   | 'aws-codecommit'
   | 'aws-ebs-service'
   | 'aws-ec2-asg-service'
@@ -3898,6 +3900,7 @@ const HarnessIcons: KVO<ElementType> = {
   autostopping: Autostopping,
   avatar: Avatar,
   'aws-asg': AwsAsg,
+  'aws-cdk': AwsCdk,
   'aws-codecommit': AwsCodecommit,
   'aws-ebs-service': AwsEbsService,
   'aws-ec2-asg-service': AwsEc2AsgService,
