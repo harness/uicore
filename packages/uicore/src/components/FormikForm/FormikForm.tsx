@@ -821,6 +821,12 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
           formik?.setFieldTouched(name, true, false)
           inputGroup?.onBlur?.(e)
         }}
+        onWheel={e => {
+          if (inputGroup?.type === 'number') {
+            ;(e.currentTarget as HTMLInputElement).blur()
+          }
+          inputGroup?.onWheel?.(e)
+        }}
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           if (isIdentifier) {
             const identifier = getIdentifierFromName(e.currentTarget.value, allowHyphen)
