@@ -800,6 +800,30 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
     ...rest
   } = restProps
   const autoComplete = props.autoComplete || getDefaultAutoCompleteValue()
+  const internalRef = useRef<HTMLInputElement | null>(null)
+
+  const mergedInputRef = useCallback(
+    (node: HTMLInputElement | null) => {
+      internalRef.current = node
+      const externalRef = inputGroup?.inputRef
+      if (typeof externalRef === 'function') {
+        externalRef(node)
+      } else if (externalRef && typeof externalRef === 'object') {
+        ;(externalRef as React.MutableRefObject<HTMLInputElement | null>).current = node
+      }
+    },
+    [inputGroup?.inputRef]
+  )
+
+  useEffect(() => {
+    const el = internalRef.current
+    if (el && inputGroup?.type === 'number') {
+      const handleWheel = (e: WheelEvent) => e.preventDefault()
+      el.addEventListener('wheel', handleWheel, { passive: false })
+      return () => el.removeEventListener('wheel', handleWheel)
+    }
+  }, [inputGroup?.type])
+
   return (
     <FormGroup
       label={getFormFieldLabel(label, name, props)}
@@ -812,6 +836,7 @@ const Text = (props: TextProps & FormikContextProps<any>) => {
       <InputGroup
         autoComplete={autoComplete}
         {...inputGroup}
+        inputRef={mergedInputRef}
         name={name}
         placeholder={placeholder}
         intent={intent}
