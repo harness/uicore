@@ -737,7 +737,6 @@ import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
 import RancherInverse from './rancher-inverse.svg'
 import Rancher from './rancher.svg'
-import RawIcon from './raw_icon.svg'
 import ReExecuted from './re-executed.svg'
 import RedHatLogo from './red-hat-logo.svg'
 import RegEx from './reg-ex.svg'
@@ -1753,7 +1752,6 @@ type HarnessIconName =
   | 'queued'
   | 'rancher-inverse'
   | 'rancher'
-  | 'raw_icon'
   | 're-executed'
   | 'red-hat-logo'
   | 'reg-ex'
@@ -2769,7 +2767,6 @@ const HarnessIcons: KVO<ElementType> = {
   queued: Queued,
   'rancher-inverse': RancherInverse,
   rancher: Rancher,
-  raw_icon: RawIcon,
   're-executed': ReExecuted,
   'red-hat-logo': RedHatLogo,
   'reg-ex': RegEx,
