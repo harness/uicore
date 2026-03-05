@@ -284,6 +284,7 @@ import CcmPolicyShield from './ccm-policy-shield.svg'
 import CcmSketch from './ccm-sketch.svg'
 import CcmSnowflake from './ccm-snowflake.svg'
 import CcmSolid from './ccm-solid.svg'
+import CcmWhitelist from './ccm-whitelist.svg'
 import CcmWithDarkText from './ccm-with-dark-text.svg'
 import CcmWithText from './ccm-with-text.svg'
 import CdMainInverse from './cd-main-inverse.svg'
@@ -2154,6 +2155,7 @@ type HarnessIconName =
   | 'ccm-sketch'
   | 'ccm-snowflake'
   | 'ccm-solid'
+  | 'ccm-whitelist'
   | 'ccm-with-dark-text'
   | 'ccm-with-text'
   | 'cd-main-inverse'
@@ -4024,6 +4026,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-sketch': CcmSketch,
   'ccm-snowflake': CcmSnowflake,
   'ccm-solid': CcmSolid,
+  'ccm-whitelist': CcmWhitelist,
   'ccm-with-dark-text': CcmWithDarkText,
   'ccm-with-text': CcmWithText,
   'cd-main-inverse': CdMainInverse,
