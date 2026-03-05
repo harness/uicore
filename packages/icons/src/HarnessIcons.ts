@@ -1361,6 +1361,7 @@ import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import PullRequest from './pull-request.svg'
 import Python from './python.svg'
+import Qtest from './qtest.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
 import Queued from './queued.svg'
@@ -3230,6 +3231,7 @@ type HarnessIconName =
   | 'publish-step'
   | 'pull-request'
   | 'python'
+  | 'qtest'
   | 'question'
   | 'queue-step'
   | 'queued'
@@ -5099,6 +5101,7 @@ const HarnessIcons: KVO<ElementType> = {
   'publish-step': PublishStep,
   'pull-request': PullRequest,
   python: Python,
+  qtest: Qtest,
   question: Question,
   'queue-step': QueueStep,
   queued: Queued,
