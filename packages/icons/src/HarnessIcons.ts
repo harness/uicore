@@ -843,6 +843,8 @@ import FmeReallocateTraffic from './fme-reallocate-traffic.svg'
 import FmeRestoreFlag from './fme-restore-flag.svg'
 import FmeRolloutBoard from './fme-rollout-board.svg'
 import FmeSearch from './fme-search.svg'
+import FmeSegmentUpdateRules from './fme-segment-update-rules.svg'
+import FmeSegmentsAddRemoveTargets from './fme-segments-add-remove-targets.svg'
 import FmeSegmentsCreate from './fme-segments-create.svg'
 import FmeSegmentsDelete from './fme-segments-delete.svg'
 import FmeSegmentsFlagsetAddRemoveFlags from './fme-segments-flagset-add-remove-flags.svg'
@@ -2717,6 +2719,8 @@ type HarnessIconName =
   | 'fme-restore-flag'
   | 'fme-rollout-board'
   | 'fme-search'
+  | 'fme-segment-update-rules'
+  | 'fme-segments-add-remove-targets'
   | 'fme-segments-create'
   | 'fme-segments-delete'
   | 'fme-segments-flagset-add-remove-flags'
@@ -4591,6 +4595,8 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-restore-flag': FmeRestoreFlag,
   'fme-rollout-board': FmeRolloutBoard,
   'fme-search': FmeSearch,
+  'fme-segment-update-rules': FmeSegmentUpdateRules,
+  'fme-segments-add-remove-targets': FmeSegmentsAddRemoveTargets,
   'fme-segments-create': FmeSegmentsCreate,
   'fme-segments-delete': FmeSegmentsDelete,
   'fme-segments-flagset-add-remove-flags': FmeSegmentsFlagsetAddRemoveFlags,
