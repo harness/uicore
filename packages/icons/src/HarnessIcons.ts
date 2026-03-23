@@ -193,6 +193,11 @@ import AzureArmRollback from './azure-arm-rollback.svg'
 import AzureArm from './azure-arm.svg'
 import AzureBlob from './azure-blob.svg'
 import AzureBlueprints from './azure-blueprints.svg'
+import AzureContainerAppsDeploy from './azure-container-apps-deploy.svg'
+import AzureContainerAppsPrepareRollbackData from './azure-container-apps-prepare-rollback-data.svg'
+import AzureContainerAppsRollback from './azure-container-apps-rollback.svg'
+import AzureContainerAppsTrafficShift from './azure-container-apps-trafficShift.svg'
+import AzureContainerApps from './azure-container-apps.svg'
 import AzureContainerRegistry from './azure-container-registry.svg'
 import AzureDevops from './azure-devops.svg'
 import AzureKeyVault from './azure-key-vault.svg'
@@ -2071,6 +2076,11 @@ type HarnessIconName =
   | 'azure-arm'
   | 'azure-blob'
   | 'azure-blueprints'
+  | 'azure-container-apps-deploy'
+  | 'azure-container-apps-prepare-rollback-data'
+  | 'azure-container-apps-rollback'
+  | 'azure-container-apps-trafficShift'
+  | 'azure-container-apps'
   | 'azure-container-registry'
   | 'azure-devops'
   | 'azure-key-vault'
@@ -3949,6 +3959,11 @@ const HarnessIcons: KVO<ElementType> = {
   'azure-arm': AzureArm,
   'azure-blob': AzureBlob,
   'azure-blueprints': AzureBlueprints,
+  'azure-container-apps-deploy': AzureContainerAppsDeploy,
+  'azure-container-apps-prepare-rollback-data': AzureContainerAppsPrepareRollbackData,
+  'azure-container-apps-rollback': AzureContainerAppsRollback,
+  'azure-container-apps-trafficShift': AzureContainerAppsTrafficShift,
+  'azure-container-apps': AzureContainerApps,
   'azure-container-registry': AzureContainerRegistry,
   'azure-devops': AzureDevops,
   'azure-key-vault': AzureKeyVault,
