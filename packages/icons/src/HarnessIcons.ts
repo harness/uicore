@@ -1848,6 +1848,7 @@ import TriggerGithub from './trigger-github.svg'
 import TriggerPipeline from './trigger-pipeline.svg'
 import TriggerSchedule from './trigger-schedule.svg'
 import TriggerStack from './trigger-stack.svg'
+import TsLogo from './ts-logo.svg'
 import UnionVertical from './union-vertical.svg'
 import Union from './union.svg'
 import University from './university.svg'
@@ -3732,6 +3733,7 @@ type HarnessIconName =
   | 'trigger-pipeline'
   | 'trigger-schedule'
   | 'trigger-stack'
+  | 'ts-logo'
   | 'union-vertical'
   | 'union'
   | 'university'
@@ -5616,6 +5618,7 @@ const HarnessIcons: KVO<ElementType> = {
   'trigger-pipeline': TriggerPipeline,
   'trigger-schedule': TriggerSchedule,
   'trigger-stack': TriggerStack,
+  'ts-logo': TsLogo,
   'union-vertical': UnionVertical,
   union: Union,
   university: University,
