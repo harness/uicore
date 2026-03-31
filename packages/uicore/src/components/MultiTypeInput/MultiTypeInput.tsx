@@ -17,6 +17,7 @@ import { I18nResource } from '@harness/design-system'
 import { Utils } from '../../core/Utils'
 import { MultiSelectOption, MultiSelectProps, MultiSelect } from '../MultiSelect/MultiSelect'
 import { ExpressionInput } from '../ExpressionInput/ExpressionInput'
+import type { ExpressionInputProps } from '../ExpressionInput/ExpressionInput'
 import {
   MultiTypeInputType,
   MultiTypeInputValue,
@@ -52,7 +53,9 @@ type CommonMultiTypeComponentProps = Pick<ExpressionAndRuntimeTypeProps, 'onChan
 export type FixedTypeComponentProps = CommonMultiTypeComponentProps
 export type RuntimeTypeComponentProps = CommonMultiTypeComponentProps
 
-export interface ExpressionAndRuntimeTypeProps<T = unknown> extends Omit<LayoutProps, 'onChange'> {
+export interface ExpressionAndRuntimeTypeProps<T = unknown>
+  extends Omit<LayoutProps, 'onChange'>,
+    Pick<ExpressionInputProps, 'popoverProps'> {
   value?: AcceptableValue
   multitypeInputValue?: MultiTypeInputType
   defaultValueToReset?: AcceptableValue
@@ -152,6 +155,7 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
     newExpressionComponent = false,
     textAreaInputClassName,
     renderRuntimeInput,
+    popoverProps,
     ...layoutProps
   } = props
   const customExpressionInputContext = useContext(CustomExpressionInputContext)
@@ -266,7 +270,8 @@ export function ExpressionAndRuntimeType<T = unknown>(props: ExpressionAndRuntim
       {type === MultiTypeInputType.EXPRESSION && (
         <ExpressionInput
           popoverProps={{
-            className: css.input
+            ...popoverProps,
+            className: cx(css.input, popoverProps?.className)
           }}
           name={name}
           items={expressions}

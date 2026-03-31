@@ -6,7 +6,7 @@
  */
 
 /* eslint-disable no-useless-escape */
-import React from 'react'
+import React, { useState } from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { noop } from 'lodash-es'
 import * as Yup from 'yup'
@@ -14,11 +14,142 @@ import * as Yup from 'yup'
 import { Formik, FormikForm, FormInput } from '../FormikForm/FormikForm'
 import { Container } from '../Container/Container'
 import { Button } from '../Button/Button'
-import { FormikFormProps } from 'formik'
+import { FormikFormProps, FormikProps } from 'formik'
 import { HarnessDocTooltip } from '../../frameworks/Tooltip/Tooltip'
 import { TooltipContextProvider } from '../../frameworks/Tooltip/TooltipContext'
 import { SelectOption } from '../Select/Select'
+import { Layout } from '../../layouts/Layout'
 import { mockData } from './mock'
+import { Dialog } from '../Dialog/Dialog'
+
+/** Shared expression list for MultiTextInput + dialog expression demos */
+const expressions: string[] = [
+  'org.identifier',
+  'org.uniqueId',
+  'org.parentUniqueId',
+  'org.name',
+  'org.description',
+  'org.tags',
+  'variable.org.SEAL_ID',
+  'variable.org.brijeshorgvar',
+  'variable.org.test_brijesh_var1',
+  'variable.org.test_new_org_variables',
+  'variable.account.BrijeshTestVar',
+  'variable.account.SEAL_ID',
+  'variable.account.TestVar1',
+  'variable.account.Test_Variabl',
+  'variable.account.a1',
+  'variable.account.a2',
+  'variable.account.a3',
+  'variable.account.aaaaaa',
+  'variable.account.abcd',
+  'variable.account.abcdgefh',
+  'variable.account.asdasd',
+  'variable.account.asdasdasd',
+  'variable.account.helloworld1234',
+  'variable.account.name',
+  'variable.account.plstring1qlwz',
+  'variable.account.plstringe5kcb',
+  'variable.account.plstringyqikw',
+  'variable.account.qweqwe',
+  'variable.account.rgTestVar',
+  'variable.account.rgTestVar2',
+  'variable.account.sealid',
+  'variable.account.test',
+  'variable.account.testAudit',
+  'variable.account.testAudit2',
+  'variable.account.testing2',
+  'variable.account.vartest',
+  'variable.Test',
+  'project.identifier',
+  'project.uniqueId',
+  'project.parentUniqueId',
+  'project.name',
+  'project.description',
+  'project.tags',
+  'trigger.targetBranch',
+  'trigger.sourceBranch',
+  'trigger.gitUser',
+  'trigger.repoUrl',
+  'trigger.commitSha',
+  'trigger.baseCommitSha',
+  'trigger.event',
+  'trigger.prNumber',
+  'trigger.prTitle',
+  'trigger.artifact.build',
+  'trigger.manifest.version',
+  'lastPublished.tag',
+  'trigger.tag',
+  'trigger.changedFiles',
+  'account.identifier',
+  'account.name',
+  'account.companyName',
+  'account.accountType',
+  'account.accountStatus',
+  'account.pricingType',
+  'account.edition',
+  'pipeline.delegateSelectors',
+  'pipeline.description',
+  'pipeline.name',
+  'pipeline.stages.S1.delegateSelectors',
+  'pipeline.stages.S1.description',
+  'pipeline.stages.S1.name',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.description',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.name',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.delegateSelectors',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.executionTarget.connectorRef',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.executionTarget.host',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.executionTarget.workingDirectory',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.includeInfraSelectors',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.onDelegate',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.source.spec.script',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.timeout',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.when',
+  'pipeline.stages.S1.timeout',
+  'pipeline.stages.S1.when',
+  'pipeline.variables.Greeting',
+  'pipeline.variables.Test',
+  'pipeline.branch',
+  'pipeline.endTs',
+  'pipeline.executionId',
+  'pipeline.executionMode',
+  'pipeline.executionUrl',
+  'pipeline.identifier',
+  'pipeline.properties',
+  'pipeline.repo',
+  'pipeline.selectedStages',
+  'pipeline.sequenceId',
+  'pipeline.stages.S1.endTs',
+  'pipeline.stages.S1.identifier',
+  'pipeline.stages.S1.nodeExecutionId',
+  'pipeline.stages.S1.runMode',
+  'pipeline.stages.S1.sendGitStatus',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.endTs',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.identifier',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.log.url',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.nodeExecutionId',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.outputAlias',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.shell',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.spec.source.type',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.startTs',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.status',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.type',
+  'pipeline.stages.S1.startTs',
+  'pipeline.stages.S1.status',
+  'pipeline.stages.S1.tags',
+  'pipeline.stages.S1.type',
+  'pipeline.stages.S1.variables',
+  'pipeline.startTs',
+  'pipeline.status',
+  'pipeline.storeType',
+  'pipeline.tags',
+  'pipeline.triggerType',
+  'pipeline.triggeredBy.email',
+  'pipeline.triggeredBy.name',
+  'pipeline.triggeredBy.triggerIdentifier',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.output.exitCode',
+  'pipeline.stages.S1.spec.execution.steps.ShellScript_1.output.outputVariables'
+]
 
 const tooltips: Record<string, string> = {
   option1: 'This is example tooltip 1',
@@ -661,245 +792,294 @@ const getSampleTooltip = () => {
   }
 }
 
-export const Basic: Story<FormikFormProps> = () => (
-  <Container width={400} margin={{ left: 'large' }}>
-    <Formik
-      formName="formikFormBasic"
-      initialValues={{
-        name: '',
-        multiInput: '',
-        colorMulti: '',
-        description: '',
-        specialPerson: true,
-        exp: '<+app.name>',
-        jobDesc2: '<+input>.allowedValues(10, 20, 30)'
-      }}
-      onSubmit={noop}
-      validationSchema={Yup.object().shape({
-        name: Yup.string().trim().required('First Name is required field'),
-        color: Yup.string().trim().required('Color is required field'),
-        specialPerson: Yup.boolean().required('VVIP is required field'),
-        colorMulti: Yup.array().ensure().compact().min(1, 'Color Multi is required field'),
-        picture: Yup.string().trim().required('Picture is required field'),
-        exp: Yup.string().trim().required('Expression is required field'),
-        description: Yup.string().trim().required('Description is required field'),
-        sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
-      })}>
-      {() => {
-        const asyncFetchItems = async (): Promise<SelectOption[]> => {
-          return Promise.resolve(
-            mockData?.map(item => ({
-              value: item?.id,
-              label: item?.name
-            })) as SelectOption[]
-          )
-        }
+export const Basic: Story<FormikFormProps> = () => {
+  const [isOpen, setIsOpen] = useState(false)
 
-        return (
-          <FormikForm>
-            <FormInput.Text
-              name="name"
-              label={
-                <HarnessDocTooltip contentFromParent={getSampleTooltip()} labelText="Name" tooltipId="nameTextField" />
-              }
-              placeholder="First Name"
-              tooltipProps={{
-                dataTooltipId: 'nameTextField'
-              }}
-            />
-            <FormInput.Text
-              name="age"
-              inputGroup={{ type: 'number' }}
-              label="Age"
-              isOptional
-              placeholder="Age in years"
-              tooltipProps={{
-                dataTooltipId: 'ageNumberField'
-              }}
-            />
-            <FormInput.KVTagInput
-              name="tags"
-              label="Tags"
-              isArray={true}
-              tooltipProps={{
-                dataTooltipId: 'tagInputId'
-              }}
-            />
-            <FormInput.ExpressionInput
-              items={[
-                'app.name',
-                'app.description',
-                'pipeline.name',
-                'pipeline.description',
-                'pipeline.identifier',
-                'pipeline.stage.qa.displayName'
-              ]}
-              name="exp"
-              label="Expressions"
-              tooltipProps={{
-                dataTooltipId: 'idforexpressioninput'
-              }}
-            />
-            <FormInput.CheckBox
-              name="specialPerson"
-              label="VVIP"
-              tooltipProps={{
-                dataTooltipId: 'checkboxField'
-              }}
-            />
-            <FormInput.Toggle name="toggle" label="Toggle" tooltipProps={{ dataTooltipId: 'toggleField' }} />
-            <FormInput.FileInput
-              name="picture"
-              label="Upload Picture"
-              buttonText="Select"
-              tooltipProps={{
-                dataTooltipId: 'uploadPictureField'
-              }}
-            />
-            <FormInput.RadioGroup
-              name="eventType"
-              label="Event Type"
-              items={[
-                { label: 'Public', value: 'public' },
-                { label: 'Private', value: 'private' }
-              ]}
-            />
-            <FormInput.Select
-              name="color"
-              label="Color"
-              placeholder="Select Color"
-              items={[
-                { label: 'Red', value: 'red' },
-                { label: 'Blue', value: 'blue' },
-                {
-                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
-                  value: 'xyz'
-                },
-                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
-              ]}
-              selectProps={{
-                addTooltip: true,
-                tooltipProps: { position: 'top' }
-              }}
-            />
-            <FormInput.MultiSelect
-              name="colorMulti"
-              label="Color Multi"
-              placeholder="Select Multiple Colors"
-              items={[
-                { label: 'Red', value: 'red' },
-                { label: 'Blue', value: 'blue' },
-                {
-                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
-                  value: 'xyz'
-                },
-                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
-              ]}
-            />
-            <FormInput.TextArea name="description" label="Description" />
-            <FormInput.MultiTypeInput
-              name="job"
-              label="Job"
-              selectItems={[
-                { label: 'Software Engineer', value: 'SE' },
-                { label: 'Quality Engineer', value: 'QE' },
-                {
-                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
-                  value: 'xyz'
-                },
-                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
-              ]}
-              useValue
-              multiTypeInputProps={{
-                selectProps: {
-                  addClearBtn: true,
-                  items: [
-                    { label: 'Software Engineer', value: 'SE' },
-                    { label: 'Quality Engineer', value: 'QE' },
-                    {
-                      label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
-                      value: 'xyz'
-                    },
-                    { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
-                  ]
+  return (
+    <Container width={400} margin={{ left: 'large' }}>
+      <Formik
+        formName="formikFormBasic"
+        initialValues={{
+          name: '',
+          multiInput: '',
+          colorMulti: '',
+          description: '',
+          specialPerson: true,
+          exp: '<+app.name>',
+          jobDesc2: '<+input>.allowedValues(10, 20, 30)',
+          stringtypeNewExpression: ''
+        }}
+        onSubmit={noop}
+        validationSchema={Yup.object().shape({
+          name: Yup.string().trim().required('First Name is required field'),
+          color: Yup.string().trim().required('Color is required field'),
+          specialPerson: Yup.boolean().required('VVIP is required field'),
+          colorMulti: Yup.array().ensure().compact().min(1, 'Color Multi is required field'),
+          picture: Yup.string().trim().required('Picture is required field'),
+          exp: Yup.string().trim().required('Expression is required field'),
+          description: Yup.string().trim().required('Description is required field'),
+          sportsAndPokemon: Yup.string().required('Sports and Pokemon is required')
+        })}>
+        {(formik: FormikProps<FormikFormProps>) => {
+          const asyncFetchItems = async (): Promise<SelectOption[]> => {
+            return Promise.resolve(
+              mockData?.map(item => ({
+                value: item?.id,
+                label: item?.name
+              })) as SelectOption[]
+            )
+          }
+
+          return (
+            <FormikForm>
+              <FormInput.Text
+                name="name"
+                label={
+                  <HarnessDocTooltip
+                    contentFromParent={getSampleTooltip()}
+                    labelText="Name"
+                    tooltipId="nameTextField"
+                  />
                 }
-              }}
-            />
-            <FormInput.MultiTypeInput
-              name="phone"
-              label="Phones (Async Select)"
-              selectItems={asyncFetchItems}
-              useValue
-              multiTypeInputProps={{
-                selectProps: {
-                  addClearBtn: true,
-                  items: []
-                }
-              }}
-            />
-            <FormInput.DropDown
-              name="values"
-              label="DropDown"
-              items={[
-                { label: 'BBall', value: 'bball' },
-                { label: 'Soccer', value: 'soccer' },
-                { label: 'Football', value: 'football' },
-                { label: 'Pikachu', value: 'pikachu' },
-                { label: 'Garchomp', value: 'garchomp' }
-              ]}
-              dropDownProps={{
-                filterable: false,
-                isLabel: true
-              }}
-            />
-            <FormInput.MultiTextInput name="jobDesc1" label="Job Desc 1" />
-            <FormInput.MultiTextInput name="jobDec2" placeholder="Job Desc" label="Job Desc 2" />
-            <FormInput.MultiTextInput
-              name="numbertype"
-              multiTextInputProps={{ textProps: { type: 'number' } }}
-              placeholder="Number type multi text"
-              label="Number type multi text"
-            />
-            <FormInput.MultiSelectTypeInput
-              name="hobbies"
-              label="Hobbies"
-              selectItems={[
-                { label: 'Basket Ball', value: 'BBall' },
-                { label: 'Drawing', value: 'Drawing' },
-                {
-                  label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
-                  value: 'xyz'
-                },
-                { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
-              ]}
-            />
-            <FormInput.CategorizedSelect
-              name="sportsAndPokemon"
-              label="Sports and Pokemon"
-              items={[
-                { label: 'BBall', value: 'bball', category: 'Sports' },
-                { label: 'Soccer', value: 'soccer', category: 'Sports' },
-                { label: 'Football', value: 'football', category: 'Sports' },
-                { label: 'Pikachu', value: 'pikachu', category: 'Pokemon' },
-                { label: 'Garchomp', value: 'garchomp', category: 'Pokemon' }
-              ]}
-              categorizedSelectProps={{
-                items: [],
-                creatableOption: {
-                  creatableOptionLabel: 'Custom Option',
-                  allowableCategoriesForNewOption: () => ['Sports', 'Pokemon']
-                }
-              }}
-            />
-            <FormInput.MultiInput name="multiInput" label="Multi Input" />
-            <FormInput.DurationInput name="duration" label="Duration" />
-            <Button intent="primary" type="submit" text="Submit" />
-          </FormikForm>
-        )
-      }}
-    </Formik>
-  </Container>
-)
+                placeholder="First Name"
+                tooltipProps={{
+                  dataTooltipId: 'nameTextField'
+                }}
+              />
+              <FormInput.Text
+                name="age"
+                inputGroup={{ type: 'number' }}
+                label="Age"
+                isOptional
+                placeholder="Age in years"
+                tooltipProps={{
+                  dataTooltipId: 'ageNumberField'
+                }}
+              />
+              <FormInput.KVTagInput
+                name="tags"
+                label="Tags"
+                isArray={true}
+                tooltipProps={{
+                  dataTooltipId: 'tagInputId'
+                }}
+              />
+              <FormInput.ExpressionInput
+                items={[
+                  'app.name',
+                  'app.description',
+                  'pipeline.name',
+                  'pipeline.description',
+                  'pipeline.identifier',
+                  'pipeline.stage.qa.displayName'
+                ]}
+                name="exp"
+                label="Expressions"
+                tooltipProps={{
+                  dataTooltipId: 'idforexpressioninput'
+                }}
+              />
+              <FormInput.CheckBox
+                name="specialPerson"
+                label="VVIP"
+                tooltipProps={{
+                  dataTooltipId: 'checkboxField'
+                }}
+              />
+              <FormInput.Toggle name="toggle" label="Toggle" tooltipProps={{ dataTooltipId: 'toggleField' }} />
+              <FormInput.FileInput
+                name="picture"
+                label="Upload Picture"
+                buttonText="Select"
+                tooltipProps={{
+                  dataTooltipId: 'uploadPictureField'
+                }}
+              />
+              <FormInput.RadioGroup
+                name="eventType"
+                label="Event Type"
+                items={[
+                  { label: 'Public', value: 'public' },
+                  { label: 'Private', value: 'private' }
+                ]}
+              />
+              <FormInput.Select
+                name="color"
+                label="Color"
+                placeholder="Select Color"
+                items={[
+                  { label: 'Red', value: 'red' },
+                  { label: 'Blue', value: 'blue' },
+                  {
+                    label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                    value: 'xyz'
+                  },
+                  { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
+                ]}
+                selectProps={{
+                  addTooltip: true,
+                  tooltipProps: { position: 'top' }
+                }}
+              />
+              <FormInput.MultiSelect
+                name="colorMulti"
+                label="Color Multi"
+                placeholder="Select Multiple Colors"
+                items={[
+                  { label: 'Red', value: 'red' },
+                  { label: 'Blue', value: 'blue' },
+                  {
+                    label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                    value: 'xyz'
+                  },
+                  { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
+                ]}
+              />
+              <FormInput.TextArea name="description" label="Description" />
+              <FormInput.MultiTypeInput
+                name="job"
+                label="Job"
+                selectItems={[
+                  { label: 'Software Engineer', value: 'SE' },
+                  { label: 'Quality Engineer', value: 'QE' },
+                  {
+                    label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                    value: 'xyz'
+                  },
+                  { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
+                ]}
+                useValue
+                multiTypeInputProps={{
+                  selectProps: {
+                    addClearBtn: true,
+                    items: [
+                      { label: 'Software Engineer', value: 'SE' },
+                      { label: 'Quality Engineer', value: 'QE' },
+                      {
+                        label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                        value: 'xyz'
+                      },
+                      { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
+                    ]
+                  }
+                }}
+              />
+              <FormInput.MultiTypeInput
+                name="phone"
+                label="Phones (Async Select)"
+                selectItems={asyncFetchItems}
+                useValue
+                multiTypeInputProps={{
+                  selectProps: {
+                    addClearBtn: true,
+                    items: []
+                  }
+                }}
+              />
+              <FormInput.DropDown
+                name="values"
+                label="DropDown"
+                items={[
+                  { label: 'BBall', value: 'bball' },
+                  { label: 'Soccer', value: 'soccer' },
+                  { label: 'Football', value: 'football' },
+                  { label: 'Pikachu', value: 'pikachu' },
+                  { label: 'Garchomp', value: 'garchomp' }
+                ]}
+                dropDownProps={{
+                  filterable: false,
+                  isLabel: true
+                }}
+              />
+              <FormInput.MultiTextInput name="jobDesc1" label="Job Desc 1" />
+              <FormInput.MultiTextInput name="jobDec2" placeholder="Job Desc" label="Job Desc 2" />
+              <FormInput.MultiTextInput
+                name="numbertype"
+                multiTextInputProps={{ textProps: { type: 'number' }, newExpressionComponent: true }}
+                placeholder="Number type multi text"
+                label="Number type multi text"
+              />
+              <FormInput.MultiTextInput
+                name="stringtype"
+                multiTextInputProps={{ textProps: { type: 'string' }, newExpressionComponent: true, expressions }}
+                placeholder="String type multi text"
+                label="String type multi text"
+              />
+              <br />
+              <Button intent="primary" onClick={() => setIsOpen(true)} text="Add String Variable in Dialog" />
+              <Dialog
+                isOpen={isOpen}
+                enforceFocus={false}
+                style={{ width: 600 }}
+                title="Add Variable"
+                onClose={() => setIsOpen(false)}>
+                <FormInput.MultiTextInput
+                  name="stringtypeExpression"
+                  multiTextInputProps={{
+                    textProps: { type: 'string' },
+                    newExpressionComponent: true,
+                    expressions,
+                    popoverProps: {
+                      modifiers: {
+                        flip: { enabled: false },
+                        preventOverflow: { escapeWithReference: true }
+                      }
+                    }
+                  }}
+                  onChange={value => {
+                    formik.setFieldValue('stringtypeExpression', value)
+                  }}
+                  placeholder="String type multi text with new expression"
+                  label="String type multi text with new expression"
+                />
+                <Layout.Horizontal spacing="small">
+                  <Button intent="primary" onClick={() => setIsOpen(false)} text="Apply" />
+                  <Button intent="primary" onClick={() => setIsOpen(false)} text="Cancel" />
+                </Layout.Horizontal>
+              </Dialog>
+              <br />
+              <br />
+              <FormInput.MultiSelectTypeInput
+                name="hobbies"
+                label="Hobbies"
+                selectItems={[
+                  { label: 'Basket Ball', value: 'BBall' },
+                  { label: 'Drawing', value: 'Drawing' },
+                  {
+                    label: 'TryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTryingTrying',
+                    value: 'xyz'
+                  },
+                  { label: 'Trying a long phrase with spaces to try out different combinations', value: 'abcd' }
+                ]}
+              />
+              <FormInput.CategorizedSelect
+                name="sportsAndPokemon"
+                label="Sports and Pokemon"
+                items={[
+                  { label: 'BBall', value: 'bball', category: 'Sports' },
+                  { label: 'Soccer', value: 'soccer', category: 'Sports' },
+                  { label: 'Football', value: 'football', category: 'Sports' },
+                  { label: 'Pikachu', value: 'pikachu', category: 'Pokemon' },
+                  { label: 'Garchomp', value: 'garchomp', category: 'Pokemon' }
+                ]}
+                categorizedSelectProps={{
+                  items: [],
+                  creatableOption: {
+                    creatableOptionLabel: 'Custom Option',
+                    allowableCategoriesForNewOption: () => ['Sports', 'Pokemon']
+                  }
+                }}
+              />
+              <FormInput.MultiInput name="multiInput" label="Multi Input" />
+              <FormInput.DurationInput name="duration" label="Duration" />
+              <Button intent="primary" type="submit" text="Submit" />
+            </FormikForm>
+          )
+        }}
+      </Formik>
+    </Container>
+  )
+}
 
 export const RadioGroups: Story<FormikFormProps> = () => (
   <Formik onSubmit={() => undefined} formName="radioButtons" initialValues={{}}>
