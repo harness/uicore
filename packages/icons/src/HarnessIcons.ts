@@ -1379,7 +1379,7 @@ import Python from './python.svg'
 import Qtest from './qtest.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
-import Queued from './queued.svg'
+import QueuedPipeline from './queued-pipeline.svg'
 import Rafay from './rafay.svg'
 import RancherInverse from './rancher-inverse.svg'
 import Rancher from './rancher.svg'
@@ -3268,7 +3268,7 @@ type HarnessIconName =
   | 'qtest'
   | 'question'
   | 'queue-step'
-  | 'queued'
+  | 'queued-pipeline'
   | 'rafay'
   | 'rancher-inverse'
   | 'rancher'
@@ -5157,7 +5157,7 @@ const HarnessIcons: KVO<ElementType> = {
   qtest: Qtest,
   question: Question,
   'queue-step': QueueStep,
-  queued: Queued,
+  'queued-pipeline': QueuedPipeline,
   rafay: Rafay,
   'rancher-inverse': RancherInverse,
   rancher: Rancher,
