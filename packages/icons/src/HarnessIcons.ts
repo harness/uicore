@@ -75,6 +75,7 @@ import AiVerify from './ai-verify.svg'
 import Ai from './ai.svg'
 import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
 import AnchoreGrype from './anchore-grype.svg'
+import Anthropic from './anthropic.svg'
 import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
 import AppAwsLambda from './app-aws-lambda.svg'
@@ -1313,6 +1314,7 @@ import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
 import OnpremLight from './onprem-light.svg'
 import OpenTofu from './openTofu.svg'
+import Openai from './openai.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
 import Opsgenie from './opsgenie.svg'
@@ -1965,6 +1967,7 @@ type HarnessIconName =
   | 'ai'
   | 'anchore-grype-inverse'
   | 'anchore-grype'
+  | 'anthropic'
   | 'api-docs'
   | 'app-aws-code-deploy'
   | 'app-aws-lambda'
@@ -3203,6 +3206,7 @@ type HarnessIconName =
   | 'onprem-dark'
   | 'onprem-light'
   | 'openTofu'
+  | 'openai'
   | 'openshift-params'
   | 'openshift'
   | 'opsgenie'
@@ -3855,6 +3859,7 @@ const HarnessIcons: KVO<ElementType> = {
   ai: Ai,
   'anchore-grype-inverse': AnchoreGrypeInverse,
   'anchore-grype': AnchoreGrype,
+  anthropic: Anthropic,
   'api-docs': ApiDocs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
   'app-aws-lambda': AppAwsLambda,
@@ -5093,6 +5098,7 @@ const HarnessIcons: KVO<ElementType> = {
   'onprem-dark': OnpremDark,
   'onprem-light': OnpremLight,
   openTofu: OpenTofu,
+  openai: Openai,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
   opsgenie: Opsgenie,
