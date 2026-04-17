@@ -162,6 +162,7 @@ import Atom from './atom.svg'
 import AuditLogCreated from './audit-log-created.svg'
 import AuditTrail from './audit-trail.svg'
 import AutoScaler from './autoScaler.svg'
+import AutostoppingCloudProvider from './autostopping-cloud-provider.svg'
 import Autostopping from './autostopping.svg'
 import Avatar from './avatar.svg'
 import AwsAsg from './aws-asg.svg'
@@ -2054,6 +2055,7 @@ type HarnessIconName =
   | 'audit-log-created'
   | 'audit-trail'
   | 'autoScaler'
+  | 'autostopping-cloud-provider'
   | 'autostopping'
   | 'avatar'
   | 'aws-asg'
@@ -3946,6 +3948,7 @@ const HarnessIcons: KVO<ElementType> = {
   'audit-log-created': AuditLogCreated,
   'audit-trail': AuditTrail,
   autoScaler: AutoScaler,
+  'autostopping-cloud-provider': AutostoppingCloudProvider,
   autostopping: Autostopping,
   avatar: Avatar,
   'aws-asg': AwsAsg,
