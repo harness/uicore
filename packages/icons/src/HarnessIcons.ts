@@ -1668,6 +1668,7 @@ import SfApexTestRunInverse from './sf-apex-test-run-inverse.svg'
 import SfApexTestRun from './sf-apex-test-run.svg'
 import SfApprovalInverse from './sf-approval-inverse.svg'
 import SfApproval from './sf-approval.svg'
+import SfBackPromote from './sf-back-promote.svg'
 import SfCommandInverse from './sf-command-inverse.svg'
 import SfCommand from './sf-command.svg'
 import SfDeleteScratchOrgInverse from './sf-delete-scratch-org-inverse.svg'
@@ -3562,6 +3563,7 @@ type HarnessIconName =
   | 'sf-apex-test-run'
   | 'sf-approval-inverse'
   | 'sf-approval'
+  | 'sf-back-promote'
   | 'sf-command-inverse'
   | 'sf-command'
   | 'sf-delete-scratch-org-inverse'
@@ -5456,6 +5458,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sf-apex-test-run': SfApexTestRun,
   'sf-approval-inverse': SfApprovalInverse,
   'sf-approval': SfApproval,
+  'sf-back-promote': SfBackPromote,
   'sf-command-inverse': SfCommandInverse,
   'sf-command': SfCommand,
   'sf-delete-scratch-org-inverse': SfDeleteScratchOrgInverse,
