@@ -1891,6 +1891,7 @@ import Windsurf from './windsurf.svg'
 import Wiz from './wiz.svg'
 import WorkflowInverse from './workflow-inverse.svg'
 import X from './x.svg'
+import XMatters from './xMatters.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
 import YamlBuilderInputSets from './yaml-builder-input-sets.svg'
 import YamlBuilderNotifications from './yaml-builder-notifications.svg'
@@ -3784,6 +3785,7 @@ type HarnessIconName =
   | 'wiz'
   | 'workflow-inverse'
   | 'x'
+  | 'xMatters'
   | 'yaml-builder-env'
   | 'yaml-builder-input-sets'
   | 'yaml-builder-notifications'
@@ -5677,6 +5679,7 @@ const HarnessIcons: KVO<ElementType> = {
   wiz: Wiz,
   'workflow-inverse': WorkflowInverse,
   x: X,
+  xMatters: XMatters,
   'yaml-builder-env': YamlBuilderEnv,
   'yaml-builder-input-sets': YamlBuilderInputSets,
   'yaml-builder-notifications': YamlBuilderNotifications,
