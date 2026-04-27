@@ -1229,6 +1229,7 @@ import MarkAsFailure from './mark-as-failure.svg'
 import MarkFailedChangsetRun from './mark-failed-changset-run.svg'
 import MavenRepositoryType from './maven-repository-type.svg'
 import MaximizeButton from './maximize-button.svg'
+import Mcp from './mcp.svg'
 import Medal from './medal.svg'
 import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
@@ -3125,6 +3126,7 @@ type HarnessIconName =
   | 'mark-failed-changset-run'
   | 'maven-repository-type'
   | 'maximize-button'
+  | 'mcp'
   | 'medal'
   | 'memberRole'
   | 'mend-inverse'
@@ -5021,6 +5023,7 @@ const HarnessIcons: KVO<ElementType> = {
   'mark-failed-changset-run': MarkFailedChangsetRun,
   'maven-repository-type': MavenRepositoryType,
   'maximize-button': MaximizeButton,
+  mcp: Mcp,
   medal: Medal,
   memberRole: MemberRole,
   'mend-inverse': MendInverse,
