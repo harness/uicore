@@ -1470,6 +1470,7 @@ import RunPipeline from './run-pipeline.svg'
 import RunStepPlugin from './run-step-plugin.svg'
 import RunStep from './run-step.svg'
 import RunTaskStep from './run-task-step.svg'
+import RunTask from './run-task.svg'
 import RunTestStepPlugin from './run-test-step-plugin.svg'
 import RunTestsCiStepInverse from './run-tests-ci-step-inverse.svg'
 import RunTestsCiStep from './run-tests-ci-step.svg'
@@ -3367,6 +3368,7 @@ type HarnessIconName =
   | 'run-step-plugin'
   | 'run-step'
   | 'run-task-step'
+  | 'run-task'
   | 'run-test-step-plugin'
   | 'run-tests-ci-step-inverse'
   | 'run-tests-ci-step'
@@ -5264,6 +5266,7 @@ const HarnessIcons: KVO<ElementType> = {
   'run-step-plugin': RunStepPlugin,
   'run-step': RunStep,
   'run-task-step': RunTaskStep,
+  'run-task': RunTask,
   'run-test-step-plugin': RunTestStepPlugin,
   'run-tests-ci-step-inverse': RunTestsCiStepInverse,
   'run-tests-ci-step': RunTestsCiStep,
