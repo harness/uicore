@@ -143,6 +143,7 @@ import AsgDeployInverse from './asg-deploy-inverse.svg'
 import AsgDeploy from './asg-deploy.svg'
 import AsgPhasedDeploy from './asg-phased-deploy.svg'
 import AsgRollback from './asg-rollback.svg'
+import AsgScale from './asg-scale.svg'
 import AsgSetup from './asg-setup.svg'
 import AsgSwapInverse from './asg-swap-inverse.svg'
 import AsgSwap from './asg-swap.svg'
@@ -2042,6 +2043,7 @@ type HarnessIconName =
   | 'asg-deploy'
   | 'asg-phased-deploy'
   | 'asg-rollback'
+  | 'asg-scale'
   | 'asg-setup'
   | 'asg-swap-inverse'
   | 'asg-swap'
@@ -3941,6 +3943,7 @@ const HarnessIcons: KVO<ElementType> = {
   'asg-deploy': AsgDeploy,
   'asg-phased-deploy': AsgPhasedDeploy,
   'asg-rollback': AsgRollback,
+  'asg-scale': AsgScale,
   'asg-setup': AsgSetup,
   'asg-swap-inverse': AsgSwapInverse,
   'asg-swap': AsgSwap,
