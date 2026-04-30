@@ -1683,6 +1683,7 @@ import SfDeployToTargetOrg from './sf-deploy-to-target-org.svg'
 import SfDxProjRollbackInverse from './sf-dx-proj-rollback-inverse.svg'
 import SfDxProjRollback from './sf-dx-proj-rollback.svg'
 import SfDxProject from './sf-dx-project.svg'
+import SfGitDelta from './sf-git-delta.svg'
 import SfLogoInverse from './sf-logo-inverse.svg'
 import SfLogo from './sf-logo.svg'
 import SfOrgBasedDiff from './sf-org-based-diff.svg'
@@ -3583,6 +3584,7 @@ type HarnessIconName =
   | 'sf-dx-proj-rollback-inverse'
   | 'sf-dx-proj-rollback'
   | 'sf-dx-project'
+  | 'sf-git-delta'
   | 'sf-logo-inverse'
   | 'sf-logo'
   | 'sf-org-based-diff'
@@ -5483,6 +5485,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sf-dx-proj-rollback-inverse': SfDxProjRollbackInverse,
   'sf-dx-proj-rollback': SfDxProjRollback,
   'sf-dx-project': SfDxProject,
+  'sf-git-delta': SfGitDelta,
   'sf-logo-inverse': SfLogoInverse,
   'sf-logo': SfLogo,
   'sf-org-based-diff': SfOrgBasedDiff,
