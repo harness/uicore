@@ -273,6 +273,7 @@ import Cascading from './cascading.svg'
 import CcmApply from './ccm-apply.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
 import CcmComment from './ccm-comment.svg'
+import CcmCostBucketBudget from './ccm-cost-bucket-budget.svg'
 import CcmCostBucket from './ccm-cost-bucket.svg'
 import CcmCurrencySettings from './ccm-currency-settings.svg'
 import CcmExternalCostSource from './ccm-external-cost-source.svg'
@@ -291,6 +292,7 @@ import CcmNavCostCategories from './ccm-nav-cost-categories.svg'
 import CcmNavMsp from './ccm-nav-msp.svg'
 import CcmNavPerspectives from './ccm-nav-perspectives.svg'
 import CcmNavRecommendations from './ccm-nav-recommendations.svg'
+import CcmPerspectiveBudget from './ccm-perspective-budget.svg'
 import CcmPod from './ccm-pod.svg'
 import CcmPolicyDetails from './ccm-policy-details.svg'
 import CcmPolicyShieldChecked from './ccm-policy-shield-checked.svg'
@@ -2174,6 +2176,7 @@ type HarnessIconName =
   | 'ccm-apply'
   | 'ccm-cloud-integration-settings'
   | 'ccm-comment'
+  | 'ccm-cost-bucket-budget'
   | 'ccm-cost-bucket'
   | 'ccm-currency-settings'
   | 'ccm-external-cost-source'
@@ -2192,6 +2195,7 @@ type HarnessIconName =
   | 'ccm-nav-msp'
   | 'ccm-nav-perspectives'
   | 'ccm-nav-recommendations'
+  | 'ccm-perspective-budget'
   | 'ccm-pod'
   | 'ccm-policy-details'
   | 'ccm-policy-shield-checked'
@@ -4075,6 +4079,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-apply': CcmApply,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
   'ccm-comment': CcmComment,
+  'ccm-cost-bucket-budget': CcmCostBucketBudget,
   'ccm-cost-bucket': CcmCostBucket,
   'ccm-currency-settings': CcmCurrencySettings,
   'ccm-external-cost-source': CcmExternalCostSource,
@@ -4093,6 +4098,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-nav-msp': CcmNavMsp,
   'ccm-nav-perspectives': CcmNavPerspectives,
   'ccm-nav-recommendations': CcmNavRecommendations,
+  'ccm-perspective-budget': CcmPerspectiveBudget,
   'ccm-pod': CcmPod,
   'ccm-policy-details': CcmPolicyDetails,
   'ccm-policy-shield-checked': CcmPolicyShieldChecked,
