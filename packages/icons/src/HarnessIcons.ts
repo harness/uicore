@@ -633,6 +633,7 @@ import CopyAlt from './copy-alt.svg'
 import CopyDoc from './copy-doc.svg'
 import CopyToAll from './copy-to-all.svg'
 import Copy from './copy.svg'
+import CortexCloud from './cortex-cloud.svg'
 import CostChange from './cost-change.svg'
 import CostDataCollection from './cost-data-collection.svg'
 import CostImpact from './cost-impact.svg'
@@ -2537,6 +2538,7 @@ type HarnessIconName =
   | 'copy-doc'
   | 'copy-to-all'
   | 'copy'
+  | 'cortex-cloud'
   | 'cost-change'
   | 'cost-data-collection'
   | 'cost-impact'
@@ -4441,6 +4443,7 @@ const HarnessIcons: KVO<ElementType> = {
   'copy-doc': CopyDoc,
   'copy-to-all': CopyToAll,
   copy: Copy,
+  'cortex-cloud': CortexCloud,
   'cost-change': CostChange,
   'cost-data-collection': CostDataCollection,
   'cost-impact': CostImpact,
