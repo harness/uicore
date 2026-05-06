@@ -1488,6 +1488,7 @@ import S3StepInverse from './s3-step-inverse.svg'
 import S3Step from './s3-step.svg'
 import SackDollarTransparent from './sack-dollar-transparent.svg'
 import SackDollar from './sack-dollar.svg'
+import SalesforceOrgDownload from './salesforce-org-download.svg'
 import Salesforce from './salesforce.svg'
 import SaveCacheGcsCiStepInverse from './save-cache-gcs-ci-step-inverse.svg'
 import SaveCacheGcsCiStep from './save-cache-gcs-ci-step.svg'
@@ -3391,6 +3392,7 @@ type HarnessIconName =
   | 's3-step'
   | 'sack-dollar-transparent'
   | 'sack-dollar'
+  | 'salesforce-org-download'
   | 'salesforce'
   | 'save-cache-gcs-ci-step-inverse'
   | 'save-cache-gcs-ci-step'
@@ -5294,6 +5296,7 @@ const HarnessIcons: KVO<ElementType> = {
   's3-step': S3Step,
   'sack-dollar-transparent': SackDollarTransparent,
   'sack-dollar': SackDollar,
+  'salesforce-org-download': SalesforceOrgDownload,
   salesforce: Salesforce,
   'save-cache-gcs-ci-step-inverse': SaveCacheGcsCiStepInverse,
   'save-cache-gcs-ci-step': SaveCacheGcsCiStep,
