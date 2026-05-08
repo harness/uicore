@@ -235,6 +235,7 @@ import BgScaleDownStepInverse from './bg-scale-down-step-inverse.svg'
 import BgScaleDownStep from './bg-scale-down-step.svg'
 import BinMain from './bin-main.svg'
 import BitbucketBlue from './bitbucket-blue.svg'
+import BitbucketCloud from './bitbucket-cloud.svg'
 import BitbucketNew from './bitbucket-new.svg'
 import BitbucketSelected from './bitbucket-selected.svg'
 import BitbucketUnselected from './bitbucket-unselected.svg'
@@ -2140,6 +2141,7 @@ type HarnessIconName =
   | 'bg-scale-down-step'
   | 'bin-main'
   | 'bitbucket-blue'
+  | 'bitbucket-cloud'
   | 'bitbucket-new'
   | 'bitbucket-selected'
   | 'bitbucket-unselected'
@@ -4045,6 +4047,7 @@ const HarnessIcons: KVO<ElementType> = {
   'bg-scale-down-step': BgScaleDownStep,
   'bin-main': BinMain,
   'bitbucket-blue': BitbucketBlue,
+  'bitbucket-cloud': BitbucketCloud,
   'bitbucket-new': BitbucketNew,
   'bitbucket-selected': BitbucketSelected,
   'bitbucket-unselected': BitbucketUnselected,
