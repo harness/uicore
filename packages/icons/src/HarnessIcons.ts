@@ -1341,6 +1341,7 @@ import PdcInverse from './pdc-inverse.svg'
 import Pdc from './pdc.svg'
 import Pending from './pending.svg'
 import PhpComposerLogo from './php-composer-logo.svg'
+import PiggyBank from './piggy-bank.svg'
 import PipelineAdvanced from './pipeline-advanced.svg'
 import PipelineApproval from './pipeline-approval.svg'
 import PipelineBuildSelect from './pipeline-build-select.svg'
@@ -1887,6 +1888,7 @@ import ValuesFIle from './valuesFIle.svg'
 import Variable from './variable.svg'
 import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
+import Vector from './vector.svg'
 import VeeCodeKong from './vee-code-kong.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
@@ -3247,6 +3249,7 @@ type HarnessIconName =
   | 'pdc'
   | 'pending'
   | 'php-composer-logo'
+  | 'piggy-bank'
   | 'pipeline-advanced'
   | 'pipeline-approval'
   | 'pipeline-build-select'
@@ -3793,6 +3796,7 @@ type HarnessIconName =
   | 'variable'
   | 'variables-blue'
   | 'variables'
+  | 'vector'
   | 'vee-code-kong'
   | 'view-json'
   | 'viewerRole'
@@ -5153,6 +5157,7 @@ const HarnessIcons: KVO<ElementType> = {
   pdc: Pdc,
   pending: Pending,
   'php-composer-logo': PhpComposerLogo,
+  'piggy-bank': PiggyBank,
   'pipeline-advanced': PipelineAdvanced,
   'pipeline-approval': PipelineApproval,
   'pipeline-build-select': PipelineBuildSelect,
@@ -5699,6 +5704,7 @@ const HarnessIcons: KVO<ElementType> = {
   variable: Variable,
   'variables-blue': VariablesBlue,
   variables: Variables,
+  vector: Vector,
   'vee-code-kong': VeeCodeKong,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
