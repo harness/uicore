@@ -731,6 +731,7 @@ import PruneSkipped from './prune-skipped.svg'
 import Pruned from './pruned.svg'
 import PublishStep from './publish-step.svg'
 import PullRequest from './pull-request.svg'
+import PuppetLogo from './puppet-logo.svg'
 import Python from './python.svg'
 import Question from './question.svg'
 import QueueStep from './queue-step.svg'
@@ -1747,6 +1748,7 @@ type HarnessIconName =
   | 'pruned'
   | 'publish-step'
   | 'pull-request'
+  | 'puppet-logo'
   | 'python'
   | 'question'
   | 'queue-step'
@@ -2763,6 +2765,7 @@ const HarnessIcons: KVO<ElementType> = {
   pruned: Pruned,
   'publish-step': PublishStep,
   'pull-request': PullRequest,
+  'puppet-logo': PuppetLogo,
   python: Python,
   question: Question,
   'queue-step': QueueStep,
