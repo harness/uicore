@@ -271,6 +271,7 @@ import CanvasPosition from './canvas-position.svg'
 import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
+import CcmAiProviders from './ccm-ai-providers.svg'
 import CcmApply from './ccm-apply.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
 import CcmComment from './ccm-comment.svg'
@@ -2179,6 +2180,7 @@ type HarnessIconName =
   | 'canvas-reset'
   | 'canvas-selector'
   | 'cascading'
+  | 'ccm-ai-providers'
   | 'ccm-apply'
   | 'ccm-cloud-integration-settings'
   | 'ccm-comment'
@@ -4087,6 +4089,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-reset': CanvasReset,
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
+  'ccm-ai-providers': CcmAiProviders,
   'ccm-apply': CcmApply,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
   'ccm-comment': CcmComment,
