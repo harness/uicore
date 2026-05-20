@@ -274,12 +274,14 @@ import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
 import CcmAiProviders from './ccm-ai-providers.svg'
 import CcmApply from './ccm-apply.svg'
+import CcmCloudAccounts from './ccm-cloud-accounts.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
 import CcmComment from './ccm-comment.svg'
 import CcmCostBucketBudget from './ccm-cost-bucket-budget.svg'
 import CcmCostBucket from './ccm-cost-bucket.svg'
 import CcmCurrencySettings from './ccm-currency-settings.svg'
 import CcmExternalCostSource from './ccm-external-cost-source.svg'
+import CcmExternalDataSources from './ccm-external-data-sources.svg'
 import CcmEyeOpen from './ccm-eye-open.svg'
 import CcmIgnoreFailure from './ccm-ignore-failure.svg'
 import CcmMongo from './ccm-mongo.svg'
@@ -1079,6 +1081,7 @@ import InjectCreator from './inject-creator.svg'
 import InsightSetting from './insight-setting.svg'
 import InsightView from './insight-view.svg'
 import Instances from './instances.svg'
+import InstrumentationSignal from './instrumentation-signal.svg'
 import Integration from './integration.svg'
 import IntelligenceFlash from './intelligence-flash.svg'
 import IrAlert from './ir-alert.svg'
@@ -1906,6 +1909,7 @@ import WigglyArrow from './wiggly-arrow.svg'
 import Windsurf from './windsurf.svg'
 import Wiz from './wiz.svg'
 import WorkflowInverse from './workflow-inverse.svg'
+import WrenchOutline from './wrench-outline.svg'
 import X from './x.svg'
 import XMatters from './xMatters.svg'
 import YamlBuilderEnv from './yaml-builder-env.svg'
@@ -2184,12 +2188,14 @@ type HarnessIconName =
   | 'cascading'
   | 'ccm-ai-providers'
   | 'ccm-apply'
+  | 'ccm-cloud-accounts'
   | 'ccm-cloud-integration-settings'
   | 'ccm-comment'
   | 'ccm-cost-bucket-budget'
   | 'ccm-cost-bucket'
   | 'ccm-currency-settings'
   | 'ccm-external-cost-source'
+  | 'ccm-external-data-sources'
   | 'ccm-eye-open'
   | 'ccm-ignore-failure'
   | 'ccm-mongo'
@@ -2989,6 +2995,7 @@ type HarnessIconName =
   | 'insight-setting'
   | 'insight-view'
   | 'instances'
+  | 'instrumentation-signal'
   | 'integration'
   | 'intelligence-flash'
   | 'ir-alert'
@@ -3816,6 +3823,7 @@ type HarnessIconName =
   | 'windsurf'
   | 'wiz'
   | 'workflow-inverse'
+  | 'wrench-outline'
   | 'x'
   | 'xMatters'
   | 'yaml-builder-env'
@@ -4094,12 +4102,14 @@ const HarnessIcons: KVO<ElementType> = {
   cascading: Cascading,
   'ccm-ai-providers': CcmAiProviders,
   'ccm-apply': CcmApply,
+  'ccm-cloud-accounts': CcmCloudAccounts,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
   'ccm-comment': CcmComment,
   'ccm-cost-bucket-budget': CcmCostBucketBudget,
   'ccm-cost-bucket': CcmCostBucket,
   'ccm-currency-settings': CcmCurrencySettings,
   'ccm-external-cost-source': CcmExternalCostSource,
+  'ccm-external-data-sources': CcmExternalDataSources,
   'ccm-eye-open': CcmEyeOpen,
   'ccm-ignore-failure': CcmIgnoreFailure,
   'ccm-mongo': CcmMongo,
@@ -4899,6 +4909,7 @@ const HarnessIcons: KVO<ElementType> = {
   'insight-setting': InsightSetting,
   'insight-view': InsightView,
   instances: Instances,
+  'instrumentation-signal': InstrumentationSignal,
   integration: Integration,
   'intelligence-flash': IntelligenceFlash,
   'ir-alert': IrAlert,
@@ -5726,6 +5737,7 @@ const HarnessIcons: KVO<ElementType> = {
   windsurf: Windsurf,
   wiz: Wiz,
   'workflow-inverse': WorkflowInverse,
+  'wrench-outline': WrenchOutline,
   x: X,
   xMatters: XMatters,
   'yaml-builder-env': YamlBuilderEnv,
