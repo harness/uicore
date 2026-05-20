@@ -160,6 +160,7 @@ import AtaNavTestRuns from './ata-nav-test-runs.svg'
 import AtaNavTestSuites from './ata-nav-test-suites.svg'
 import AtaNavTests from './ata-nav-tests.svg'
 import AtaNavTunnels from './ata-nav-tunnels.svg'
+import AtaWithDarkText from './ata-with-dark-text.svg'
 import Atlassian from './atlassian.svg'
 import Atom from './atom.svg'
 import AuditLogCreated from './audit-log-created.svg'
@@ -2069,6 +2070,7 @@ type HarnessIconName =
   | 'ata-nav-test-suites'
   | 'ata-nav-tests'
   | 'ata-nav-tunnels'
+  | 'ata-with-dark-text'
   | 'atlassian'
   | 'atom'
   | 'audit-log-created'
@@ -3978,6 +3980,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ata-nav-test-suites': AtaNavTestSuites,
   'ata-nav-tests': AtaNavTests,
   'ata-nav-tunnels': AtaNavTunnels,
+  'ata-with-dark-text': AtaWithDarkText,
   atlassian: Atlassian,
   atom: Atom,
   'audit-log-created': AuditLogCreated,
