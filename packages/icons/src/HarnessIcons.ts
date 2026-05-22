@@ -1016,6 +1016,7 @@ import Hibernate from './hibernate.svg'
 import HistoryTimer from './history-timer.svg'
 import Hotfix from './hotfix.svg'
 import Hourglass from './hourglass.svg'
+import HsaMain from './hsa-main.svg'
 import HttpProbe from './http-probe.svg'
 import HttpStep from './http-step.svg'
 import HuggingfaceLogo from './huggingface-logo.svg'
@@ -2930,6 +2931,7 @@ type HarnessIconName =
   | 'history-timer'
   | 'hotfix'
   | 'hourglass'
+  | 'hsa-main'
   | 'http-probe'
   | 'http-step'
   | 'huggingface-logo'
@@ -4844,6 +4846,7 @@ const HarnessIcons: KVO<ElementType> = {
   'history-timer': HistoryTimer,
   hotfix: Hotfix,
   hourglass: Hourglass,
+  'hsa-main': HsaMain,
   'http-probe': HttpProbe,
   'http-step': HttpStep,
   'huggingface-logo': HuggingfaceLogo,
