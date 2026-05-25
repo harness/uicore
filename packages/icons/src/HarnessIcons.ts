@@ -1104,6 +1104,7 @@ import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
 import JiraCreateInverse from './jira-create-inverse.svg'
 import JiraCreate from './jira-create.svg'
+import JiraServiceManagement from './jira-service-management.svg'
 import JiraUpdateInverse from './jira-update-inverse.svg'
 import JiraUpdate from './jira-update.svg'
 import Jira from './jira.svg'
@@ -3021,6 +3022,7 @@ type HarnessIconName =
   | 'jira-approve'
   | 'jira-create-inverse'
   | 'jira-create'
+  | 'jira-service-management'
   | 'jira-update-inverse'
   | 'jira-update'
   | 'jira'
@@ -4938,6 +4940,7 @@ const HarnessIcons: KVO<ElementType> = {
   'jira-approve': JiraApprove,
   'jira-create-inverse': JiraCreateInverse,
   'jira-create': JiraCreate,
+  'jira-service-management': JiraServiceManagement,
   'jira-update-inverse': JiraUpdateInverse,
   'jira-update': JiraUpdate,
   jira: Jira,
