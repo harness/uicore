@@ -411,6 +411,7 @@ import ChaosEcsUpdateContainerResourceLimit from './chaos-ecs-update-container-r
 import ChaosEcsUpdateContainerTimeout from './chaos-ecs-update-container-timeout.svg'
 import ChaosEcsUpdateTaskRole from './chaos-ecs-update-task-role.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
+import ChaosFaults from './chaos-faults.svg'
 import ChaosGcpVmDiskLossByLabel from './chaos-gcp-vm-disk-loss-by-label.svg'
 import ChaosGcpVmDiskLoss from './chaos-gcp-vm-disk-loss.svg'
 import ChaosGcpVmInstanceStopByLabel from './chaos-gcp-vm-instance-stop-by-label.svg'
@@ -480,6 +481,7 @@ import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
+import ChaosServices from './chaos-services.svg'
 import ChaosSketch from './chaos-sketch.svg'
 import ChaosSolid from './chaos-solid.svg'
 import ChaosStepActions from './chaos-step-actions.svg'
@@ -2326,6 +2328,7 @@ type HarnessIconName =
   | 'chaos-ecs-update-container-timeout'
   | 'chaos-ecs-update-task-role'
   | 'chaos-experiment-weight'
+  | 'chaos-faults'
   | 'chaos-gcp-vm-disk-loss-by-label'
   | 'chaos-gcp-vm-disk-loss'
   | 'chaos-gcp-vm-instance-stop-by-label'
@@ -2395,6 +2398,7 @@ type HarnessIconName =
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chaos-service-discovery'
+  | 'chaos-services'
   | 'chaos-sketch'
   | 'chaos-solid'
   | 'chaos-step-actions'
@@ -4241,6 +4245,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-ecs-update-container-timeout': ChaosEcsUpdateContainerTimeout,
   'chaos-ecs-update-task-role': ChaosEcsUpdateTaskRole,
   'chaos-experiment-weight': ChaosExperimentWeight,
+  'chaos-faults': ChaosFaults,
   'chaos-gcp-vm-disk-loss-by-label': ChaosGcpVmDiskLossByLabel,
   'chaos-gcp-vm-disk-loss': ChaosGcpVmDiskLoss,
   'chaos-gcp-vm-instance-stop-by-label': ChaosGcpVmInstanceStopByLabel,
@@ -4310,6 +4315,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   'chaos-service-discovery': ChaosServiceDiscovery,
+  'chaos-services': ChaosServices,
   'chaos-sketch': ChaosSketch,
   'chaos-solid': ChaosSolid,
   'chaos-step-actions': ChaosStepActions,
