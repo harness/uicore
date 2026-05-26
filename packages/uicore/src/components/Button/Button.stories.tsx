@@ -515,3 +515,220 @@ LoadingTransition.decorators = []
 //     }
 //   }
 // }
+
+/**
+ * Focus state verification story.
+ *
+ * The Button focus ring is rendered via the native `outline` property (with
+ * `outline-offset`) so it never participates in layout. This story renders every
+ * combination that exercises the focus CSS so the styling can be eyeballed
+ * end-to-end in Storybook (or a snapshot tool):
+ *  - Every `ButtonVariation` (focus-ring color comes from variation tokens).
+ *  - Primary × intent and Secondary × intent (intent shouldn't change the ring color).
+ *  - All sizes (offsets differ for primary/tertiary vs the rest).
+ *  - Disabled buttons (must NOT show a focus ring — gated by `:not([disabled])`).
+ *  - Absolutely-positioned buttons (focus must not shift them or affect layout).
+ *  - AI variations (already use permanent `position: relative` for their gradient mask).
+ *
+ * Tab through the page; each button should receive a focus ring around it
+ * without shifting position or affecting layout.
+ */
+export const FocusStateVerification: Story<ButtonProps> = () => {
+  const sectionLabelStyle: React.CSSProperties = { fontWeight: 600, marginBottom: 8, display: 'block' }
+  const sectionStyle: React.CSSProperties = { marginBottom: 24 }
+
+  return (
+    <Layout.Vertical spacing="large" style={{ padding: 24, width: '100%' }}>
+      <Container style={sectionStyle}>
+        <Text style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Focus State Verification</Text>
+        <Text>
+          Tab through the buttons below. Every focused button should render a focus ring (1px outline at 3px offset, 2px
+          for primary/tertiary) without shifting its position or altering layout. Disabled buttons must NOT render a
+          focus ring.
+        </Text>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>1. Every variation</span>
+        <Layout.Horizontal spacing="medium">
+          <Button variation={ButtonVariation.PRIMARY} text="Primary" />
+          <Button variation={ButtonVariation.SECONDARY} text="Secondary" />
+          <Button variation={ButtonVariation.TERTIARY} text="Tertiary" />
+          <Button variation={ButtonVariation.LINK} text="Link" />
+          <Button variation={ButtonVariation.ICON} icon="cog" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>2. Primary × intent</span>
+        <Layout.Horizontal spacing="medium">
+          <Button variation={ButtonVariation.PRIMARY} text="Default" />
+          <Button variation={ButtonVariation.PRIMARY} intent="success" text="Success" />
+          <Button variation={ButtonVariation.PRIMARY} intent="warning" text="Warning" />
+          <Button variation={ButtonVariation.PRIMARY} intent="danger" text="Danger" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>3. Secondary × intent</span>
+        <Layout.Horizontal spacing="medium">
+          <Button variation={ButtonVariation.SECONDARY} text="Default" />
+          <Button variation={ButtonVariation.SECONDARY} intent="success" text="Success" />
+          <Button variation={ButtonVariation.SECONDARY} intent="warning" text="Warning" />
+          <Button variation={ButtonVariation.SECONDARY} intent="danger" text="Danger" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>4. Sizes (primary)</span>
+        <Layout.Horizontal spacing="medium">
+          <Button variation={ButtonVariation.PRIMARY} text="Small" size={ButtonSize.SMALL} />
+          <Button variation={ButtonVariation.PRIMARY} text="Medium" />
+          <Button variation={ButtonVariation.PRIMARY} text="Large" size={ButtonSize.LARGE} />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>5. With icons</span>
+        <Layout.Horizontal spacing="medium">
+          <Button variation={ButtonVariation.PRIMARY} icon="chevron-left" text="Left icon" />
+          <Button variation={ButtonVariation.PRIMARY} rightIcon="chevron-right" text="Right icon" />
+          <Button variation={ButtonVariation.SECONDARY} icon="plus" text="Both" rightIcon="chevron-down" />
+          <Button variation={ButtonVariation.PRIMARY} round text="Round" />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>6. Disabled (should NOT show focus ring)</span>
+        <Layout.Horizontal spacing="medium">
+          <Button variation={ButtonVariation.PRIMARY} text="Disabled primary" disabled />
+          <Button variation={ButtonVariation.SECONDARY} text="Disabled secondary" disabled />
+          <Button variation={ButtonVariation.TERTIARY} text="Disabled tertiary" disabled />
+          <Button variation={ButtonVariation.LINK} text="Disabled link" disabled />
+          <Button variation={ButtonVariation.ICON} icon="cog" disabled />
+        </Layout.Horizontal>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>7a. Absolutely-positioned via inline style (low-risk path)</span>
+        <Text style={{ marginBottom: 12 }}>
+          Each button below is placed with <code>{`style={{ position: 'absolute' }}`}</code>. Inline styles always win
+          the cascade over a stylesheet rule (specificity 1000 vs ~0,5,1), so consumers using inline styles were never
+          affected by the legacy
+          <code> position: relative</code> focus rule. They should stay rock-still on focus.
+        </Text>
+        <div
+          style={{
+            position: 'relative',
+            border: '1px dashed #ccc',
+            borderRadius: 4,
+            height: 180,
+            width: '100%',
+            background: '#fafafa'
+          }}>
+          <Button
+            variation={ButtonVariation.PRIMARY}
+            text="Abs Primary"
+            style={{ position: 'absolute', top: 12, left: 12 }}
+          />
+          <Button
+            variation={ButtonVariation.SECONDARY}
+            text="Abs Secondary"
+            style={{ position: 'absolute', top: 12, right: 12 }}
+          />
+          <Button
+            variation={ButtonVariation.TERTIARY}
+            text="Abs Tertiary"
+            style={{ position: 'absolute', bottom: 12, left: 12 }}
+          />
+          <Button
+            variation={ButtonVariation.LINK}
+            text="Abs Link"
+            style={{ position: 'absolute', bottom: 12, left: '50%', transform: 'translateX(-50%)' }}
+          />
+          <Button variation={ButtonVariation.ICON} icon="cog" style={{ position: 'absolute', bottom: 12, right: 12 }} />
+        </div>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>7b. Absolutely-positioned via className (the actual regression scenario)</span>
+        <Text style={{ marginBottom: 12 }}>
+          Each button below is placed with <code>position: absolute</code> applied via a<code> className</code> instead
+          of inline style. This is how real consumers position buttons in their MFEs. The legacy focus CSS (
+          <code>:focus {`{ position: relative }`}</code>) had higher specificity than a single consumer class — so on
+          focus the button used to jump from its absolute coordinates to its flow position offset by <code>top</code>/
+          <code>left</code>. The current <code>outline</code>-based focus ring cannot do that; these buttons must stay
+          rock-still on focus.
+        </Text>
+        <style>
+          {`
+          .button-focus-abs-container {
+            position: relative;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+            height: 180px;
+            width: 100%;
+            background: #fafafa;
+          }
+          .button-focus-abs-tl { position: absolute; top: 12px; left: 12px; }
+          .button-focus-abs-tr { position: absolute; top: 12px; right: 12px; }
+          .button-focus-abs-bl { position: absolute; bottom: 12px; left: 12px; }
+          .button-focus-abs-br { position: absolute; bottom: 12px; right: 12px; }
+          .button-focus-abs-bc { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); }
+          `}
+        </style>
+        <div className="button-focus-abs-container">
+          <Button variation={ButtonVariation.PRIMARY} text="Class Abs Primary" className="button-focus-abs-tl" />
+          <Button variation={ButtonVariation.SECONDARY} text="Class Abs Secondary" className="button-focus-abs-tr" />
+          <Button variation={ButtonVariation.TERTIARY} text="Class Abs Tertiary" className="button-focus-abs-bl" />
+          <Button variation={ButtonVariation.LINK} text="Class Abs Link" className="button-focus-abs-bc" />
+          <Button variation={ButtonVariation.ICON} icon="cog" className="button-focus-abs-br" />
+        </div>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>8. Button positioned absolutely inside an overflow:hidden container</span>
+        <Text style={{ marginBottom: 12 }}>
+          The focus ring uses <code>outline</code>, which (unlike a border) can be clipped by
+          <code> overflow: hidden</code> on the ancestor. Confirm the ring still renders acceptably here — if any
+          clipping is unacceptable in a real consumer, they should relax the overflow on the immediate ancestor.
+        </Text>
+        <div
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            border: '1px dashed #ccc',
+            borderRadius: 4,
+            height: 80,
+            padding: 12
+          }}>
+          <Button variation={ButtonVariation.PRIMARY} text="Inside overflow:hidden" />
+        </div>
+      </Container>
+
+      <Container style={sectionStyle}>
+        <span style={sectionLabelStyle}>9. AI variations</span>
+        <Text style={{ marginBottom: 12 }}>
+          AI variations already render with a permanent <code>position: relative</code> for their <code>::before</code>{' '}
+          gradient mask, so they are unaffected by the focus refactor. Verify focus ring still appears around them.
+        </Text>
+        <Layout.Horizontal spacing="medium">
+          <Button variation={ButtonVariation.AI} text="Harness AI Copilot" />
+          <Button variation={ButtonVariation.AI_PRIMARY} text="Harness AI Primary" />
+          <Button variation={ButtonVariation.AI_SECONDARY} text="Harness AI Secondary" />
+        </Layout.Horizontal>
+      </Container>
+    </Layout.Vertical>
+  )
+}
+FocusStateVerification.storyName = 'Focus State Verification'
+FocusStateVerification.decorators = []
+FocusStateVerification.parameters = {
+  layout: 'fullscreen',
+  docs: {
+    description: {
+      story:
+        'Visual verification surface for the Button focus styling. Tab through every section and confirm focus rings render correctly without shifting button position.'
+    }
+  }
+}

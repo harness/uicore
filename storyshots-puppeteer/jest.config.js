@@ -14,5 +14,8 @@ const finalJestConfig = _.cloneDeep(globalJestConfig)
 finalJestConfig.rootDir = path.join(__dirname, '..')
 finalJestConfig.testMatch = ['<rootDir>/storyshots-puppeteer/*.runner.ts']
 finalJestConfig.moduleNameMapper['\\.mdx$'] = '<rootDir>/jest/mdx-mock.js'
+// Allow ts-jest to transform Storybook's ES-module addons (addon-docs/blocks.js is ESM).
+// Without this, storyshots fails to load any story that imports from @storybook/addon-docs.
+finalJestConfig.transformIgnorePatterns = ['node_modules/(?!(date-fns|lodash-es|@storybook)/)']
 
 module.exports = finalJestConfig
