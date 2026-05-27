@@ -21,6 +21,18 @@ import { PopoverProps } from '../../../Popover/Popover'
 import { TagInput as BPTagInput, Menu, MenuItem } from '@blueprintjs/core'
 import { uniq } from 'lodash-es'
 import { IInputGroupProps } from '@blueprintjs/core'
+import { SelectOption } from '../../../Select/Select'
+import { FiltersSelectDropDown } from '../FilterSingleSelectDropDown/FiltersSelectDropDown'
+
+export enum ConditionalFilterValue {
+  MatchesAll = 'matches_all',
+  MatchesAny = 'matches_any'
+}
+
+const conditionalFilterOptions: SelectOption[] = [
+  { label: 'Matches All', value: ConditionalFilterValue.MatchesAll },
+  { label: 'Matches Any', value: ConditionalFilterValue.MatchesAny }
+]
 
 export interface FilterTagInputProps
   extends Omit<IInputGroupProps, 'className' | 'leftIcon' | 'rightElement' | 'value' | 'onChange' | 'placeholder'>,
@@ -42,6 +54,9 @@ export interface FilterTagInputProps
   tooltipProps?: PopoverProps
   tagsProps?: Partial<ITagInputProps>
   popoverProps?: Pick<IPopoverProps, 'captureDismiss'>
+  allowConditionalFiltering?: boolean
+  conditionalFilterValue?: ConditionalFilterValue
+  onConditionalFilterChange?: (value: ConditionalFilterValue) => void
 }
 
 export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
@@ -62,14 +77,21 @@ export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
     disabled,
     tooltip,
     tagsProps,
-    popoverProps = {}
+    popoverProps = {},
+    allowConditionalFiltering = false,
+    conditionalFilterValue,
+    onConditionalFilterChange
   } = props
   const [isOpen, setIsOpen] = React.useState(initialDropDownOpen)
   const [selectedItems, setSelectedItems] = React.useState<string[]>([])
   const inputRef = React.useRef<HTMLInputElement | null>(null)
   const [inputValue, setInputValue] = React.useState('')
+  const [internalConditionalFilter, setInternalConditionalFilter] = React.useState<ConditionalFilterValue>(
+    ConditionalFilterValue.MatchesAny
+  )
   const trimmedInputValue = React.useMemo(() => inputValue.trim(), [inputValue])
   const showCreatePopover = !!trimmedInputValue
+  const selectedConditionalFilter = conditionalFilterValue ?? internalConditionalFilter
 
   const handleChange = (values: string[]): void => {
     const newSelectedItems = uniq(values)
@@ -88,6 +110,16 @@ export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
       setSelectedItems(value)
     }
   }, [])
+
+  const handleConditionalFilterChange = (option?: SelectOption): void => {
+    const nextValue =
+      option?.value === ConditionalFilterValue.MatchesAll
+        ? ConditionalFilterValue.MatchesAll
+        : ConditionalFilterValue.MatchesAny
+
+    setInternalConditionalFilter(nextValue)
+    onConditionalFilterChange?.(nextValue)
+  }
 
   const popoverContent = (
     <Menu>
@@ -117,6 +149,27 @@ export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
   )
   const TagInputElement = (
     <div className={cx(css.wrapper, wrapperClassName)}>
+      {allowConditionalFiltering && (
+        <Layout.Vertical spacing="small" className={css.conditionalWrapper}>
+          <Text className={css.conditionLabel} color={Color.GREY_600} font={{ variation: FontVariation.SMALL }}>
+            Conditions
+          </Text>
+          <FiltersSelectDropDown
+            items={conditionalFilterOptions}
+            usePortal={false}
+            hideItemCount
+            showDropDownIcon
+            placeholder={
+              conditionalFilterOptions.find(option => option.value === selectedConditionalFilter)?.label ??
+              'Select condition'
+            }
+            value={conditionalFilterOptions.find(option => option.value === selectedConditionalFilter)}
+            onChange={option => handleConditionalFilterChange(option)}
+            className={css.conditionSelect}
+            popoverClassName={css.conditionSelectPopover}
+          />
+        </Layout.Vertical>
+      )}
       <Popover
         position={Position.BOTTOM_LEFT}
         fill

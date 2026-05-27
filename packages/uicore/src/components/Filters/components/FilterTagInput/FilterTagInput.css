@@ -83,6 +83,41 @@
 .wrapper {
   padding: var(--spacing-small);
   width: 286px;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-small);
+}
+
+.conditionalWrapper {
+  padding-bottom: var(--spacing-xsmall);
+}
+
+.conditionLabel {
+  font-weight: 500;
+}
+
+.conditionSelect {
+  width: 100%;
+}
+
+.conditionSelect :global(.bp3-popover-target) {
+  width: 100%;
+}
+
+.conditionSelect [class*='dropdownButton'] {
+  width: 100%;
+  background-color: var(--grey-50);
+}
+
+.conditionSelectPopover {
+  width: 270px !important;
+  max-width: 270px !important;
+}
+
+.conditionSelectPopover :global(.bp3-popover-content),
+.conditionSelectPopover :global(.bp3-menu) {
+  width: 270px !important;
+  min-width: 270px !important;
 }
 
 .disabled {

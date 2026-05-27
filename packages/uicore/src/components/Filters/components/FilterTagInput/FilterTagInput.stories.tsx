@@ -9,7 +9,7 @@ import React from 'react'
 import type { Meta, Story } from '@storybook/react'
 import { Title, Subtitle, ArgsTable, Stories, PRIMARY_STORY, Primary } from '@storybook/addon-docs/blocks'
 import { omit } from 'lodash-es'
-import { FilterTagInput, FilterTagInputProps } from './FilterTagInput'
+import { ConditionalFilterValue, FilterTagInput, FilterTagInputProps } from './FilterTagInput'
 import { Layout } from '../../../../layouts/Layout'
 
 export default {
@@ -64,6 +64,35 @@ export const FilterTagInputWithExternalState: Story<FilterTagInputProps> = args 
         value={filterValue}
         onChange={(value: string[]) => setFilterValue(value)}
         onRemove={() => setFilterValue([])}
+        {...argsCopy}
+      />
+    </Layout.Horizontal>
+  )
+}
+
+export const FilterTagInputWithConditionalFiltering: Story<FilterTagInputProps> = args => {
+  const argsCopy = omit(args, [
+    'items',
+    'onChange',
+    'value',
+    'onRemove',
+    'allowConditionalFiltering',
+    'conditionalFilterValue',
+    'onConditionalFilterChange'
+  ])
+  const [filterValue, setFilterValue] = React.useState<string[]>(['Bulbasaur'])
+  const [condition, setCondition] = React.useState<ConditionalFilterValue>(ConditionalFilterValue.MatchesAny)
+
+  return (
+    <Layout.Horizontal flex>
+      <FilterTagInput
+        placeholder={'Pokemon'}
+        value={filterValue}
+        onChange={(value: string[]) => setFilterValue(value)}
+        onRemove={() => setFilterValue([])}
+        allowConditionalFiltering
+        conditionalFilterValue={condition}
+        onConditionalFilterChange={setCondition}
         {...argsCopy}
       />
     </Layout.Horizontal>
