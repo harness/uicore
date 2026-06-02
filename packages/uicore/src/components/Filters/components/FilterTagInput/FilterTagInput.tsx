@@ -177,6 +177,11 @@ export function FilterTagInput(props: FilterTagInputProps): React.ReactElement {
         disabled={disabled}
         isOpen={showCreatePopover}
         content={popoverContent}
+        // The `Add "..."` MenuItem carries Blueprint's `bp3-popover-dismiss` class, so clicking it
+        // bubbles a dismiss through the React tree to the outer dropdown popover and closes it too.
+        // `captureDismiss` makes this inner popover preventDefault on dismiss, stopping the outer
+        // (which checks `!e.isDefaultPrevented()`) from closing. Callers can still override via popoverProps.
+        captureDismiss
         {...popoverProps}>
         <BPTagInput
           separator={false}
