@@ -30,6 +30,78 @@ export default {
 
 export const TextInput: Story<MultiTextInputProps> = args => <MultiTextInput mini={true} disabled={true} {...args} />
 
+/* Multiline (Excel/Sheets-style) MultiTextInput showcase across mini/non-mini, value and maxHeight states. */
+const MultilinePanel: React.FC<{
+  title: string
+  initialValue: string
+  mini?: boolean
+  maxHeight?: number
+  disabled?: boolean
+}> = ({ title, initialValue, mini, maxHeight, disabled }) => {
+  const [value, setValue] = React.useState<string>(initialValue)
+  return (
+    <div style={{ marginBottom: 24 }}>
+      <div style={{ fontSize: 12, fontWeight: 600, marginBottom: 4, color: '#383946' }}>{title}</div>
+      <MultiTextInput
+        name={title}
+        value={value}
+        onChange={val => setValue((val as string) ?? '')}
+        multiline
+        mini={mini}
+        disabled={disabled}
+        textProps={maxHeight ? { style: { maxHeight } } : undefined}
+        expressionPlaceHolder="<+test.app>"
+        expressions={['app.name', 'pipeline.identifier']}
+        allowableTypes={[MultiTypeInputType.FIXED, MultiTypeInputType.RUNTIME, MultiTypeInputType.EXPRESSION]}
+      />
+      <pre style={{ marginTop: 6, padding: 6, background: '#f4f6ff', fontSize: 11, color: '#383946' }}>
+        {JSON.stringify({ value })}
+      </pre>
+    </div>
+  )
+}
+
+export const MultilineTextInput: Story = () => {
+  return (
+    <div style={{ width: 560 }}>
+      <h3 style={{ marginBottom: 4 }}>MultiTextInput · multiline (Excel / Google Sheets style)</h3>
+      <p style={{ marginBottom: 20, color: '#6b6d85', fontSize: 13 }}>
+        Single-line look-and-feel when empty or single-line. Press <kbd>Cmd</kbd>+<kbd>Enter</kbd> (Mac) or{' '}
+        <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (Windows/Linux) to add a new line. Plain <kbd>Enter</kbd> is a no-op. The field
+        grows up to its <code>maxHeight</code>, then scrolls.
+      </p>
+
+      <MultilinePanel
+        title="A. Empty, mini (inline drawer case) — should look like a single-line input"
+        initialValue=""
+        mini
+        maxHeight={72}
+      />
+      <MultilinePanel
+        title="B. Single-line value, mini — should still look like a single-line input"
+        initialValue="some plain value"
+        mini
+        maxHeight={72}
+      />
+      <MultilinePanel
+        title="C. Multi-line value, mini, maxHeight=72px (inline drawer cap, 3 lines + scroll)"
+        initialValue={'line one\nline two\nline three\nline four (overflow scrolls)'}
+        mini
+        maxHeight={72}
+      />
+      <MultilinePanel title="D. Empty, non-mini (Add/Edit modal case)" initialValue="" maxHeight={240} />
+      <MultilinePanel
+        title="E. Multi-line, non-mini, maxHeight=240px (modal cap, ~10 lines + scroll)"
+        initialValue={'line one\nline two\nline three\nline four\nline five'}
+        maxHeight={240}
+      />
+      <MultilinePanel title="F. Disabled, multi-line" initialValue={'line one\nline two'} disabled maxHeight={108} />
+    </div>
+  )
+}
+
+MultilineTextInput.args = {}
+
 export const SelectInput: Story<MultiTypeInputProps> = args => <MultiTypeInput {...args} />
 
 export const SelectInputWithCreationOfNewItems: Story<MultiTypeInputProps> = args => <MultiTypeInput {...args} />

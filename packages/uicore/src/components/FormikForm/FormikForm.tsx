@@ -1633,7 +1633,8 @@ const FormMultiTextTypeInput = (props: FormMultiTextTypeInputProps & FormikConte
     ...rest
   } = restProps
   const _value = get(formik?.values, name, '')
-  const value = escapeNewlines(_value)
+  // In multiline mode, keep real newlines so they render as line breaks (not literal `\n`).
+  const value = multiTextInputProps?.multiline ? _value : escapeNewlines(_value)
   const valueType = getMultiTypeFromValue(value)
   const customTextInputProps: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'> = useMemo(
     () => ({

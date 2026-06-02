@@ -5,12 +5,21 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
-import React, { useState, useCallback, useMemo, useEffect, CSSProperties, useContext } from 'react'
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  CSSProperties,
+  useContext
+} from 'react'
 import { Select, SelectProps, SelectOption } from '../Select/Select'
 import { TextInput } from '../TextInput/TextInput'
 import { Layout, LayoutProps } from '../../layouts/Layout'
 import css from './MultiTypeInput.css'
-import { IInputGroupProps, InputGroup, HTMLInputProps } from '@blueprintjs/core'
+import { IInputGroupProps, InputGroup, HTMLInputProps, TextArea, ITextAreaProps } from '@blueprintjs/core'
 import cx from 'classnames'
 import i18nBase from './MultiTypeInput.i18n'
 import { I18nResource } from '@harness/design-system'
@@ -396,18 +405,95 @@ function MultiTextInputFixedTypeComponent(props: FixedTypeComponentProps & Multi
   )
 }
 
+/**
+ * FIXED-mode component for `MultiTextInput` `multiline` (Excel/Sheets-style): plain Enter is a
+ * no-op, Cmd/Ctrl+Enter inserts a newline, and the field grows/shrinks to fit its content.
+ */
+function MultiTextInputFixedMultilineComponent(props: FixedTypeComponentProps & MultiTextInputProps['textProps']) {
+  const {
+    onChange,
+    value,
+    disabled,
+    className,
+    inputRef: forwardedInputRef,
+    onKeyDown: forwardedOnKeyDown,
+    ...rest
+  } = props
+
+  // Drop InputGroup-only props so they never reach the <textarea> DOM node.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { type, leftIcon, rightElement, ...textAreaProps } = rest
+
+  const currentValue = typeof value === 'string' ? value : ''
+  const textareaElRef = useRef<HTMLTextAreaElement | null>(null)
+
+  const setInputRef = useCallback(
+    (el: HTMLTextAreaElement | null) => {
+      textareaElRef.current = el
+      if (typeof forwardedInputRef === 'function') {
+        ;((forwardedInputRef as unknown) as (ref: typeof el) => void)(el)
+      } else if (forwardedInputRef && typeof forwardedInputRef === 'object') {
+        ;((forwardedInputRef as unknown) as React.MutableRefObject<typeof el>).current = el
+      }
+    },
+    [forwardedInputRef]
+  )
+
+  // Auto-size to content. Resetting to `auto` first lets it shrink, not just grow.
+  useLayoutEffect(() => {
+    const el = textareaElRef.current
+    if (!el) return
+    el.style.height = 'auto'
+    el.style.height = `${el.scrollHeight}px`
+  }, [currentValue])
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      if (e.metaKey || e.ctrlKey) {
+        // Inserting a newline must not also trigger host Enter shortcuts (e.g. submit/run a form),
+        // so swallow only this case. Plain Enter still propagates so host submit-on-Enter keeps working.
+        e.stopPropagation()
+        // execCommand keeps the native caret position and undo stack.
+        document.execCommand('insertText', false, '\n')
+      }
+    }
+    forwardedOnKeyDown?.((e as unknown) as React.KeyboardEvent<HTMLInputElement>)
+  }
+
+  return (
+    <TextArea
+      rows={1}
+      {...((textAreaProps as unknown) as Omit<ITextAreaProps, 'onChange' | 'value'>)}
+      inputRef={setInputRef}
+      className={cx(css.input, css.multilineInput, className)}
+      value={currentValue}
+      disabled={disabled}
+      onKeyDown={handleKeyDown}
+      onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        onChange?.(event.target.value, MultiTypeInputValue.STRING, MultiTypeInputType.FIXED)
+      }}
+    />
+  )
+}
+
 export interface MultiTextInputProps
   extends Omit<ExpressionAndRuntimeTypeProps, 'fixedTypeComponent' | 'fixedTypeComponentProps'> {
   textProps?: Omit<IInputGroupProps & HTMLInputProps, 'onChange' | 'value'>
+  /**
+   * Opt-in Excel/Sheets-style multiline editing in FIXED mode: starts one row tall and grows,
+   * plain Enter is a no-op, Cmd/Ctrl+Enter inserts a newline. Default `false` (unchanged single-line).
+   */
+  multiline?: boolean
 }
 
 export function MultiTextInput(props: MultiTextInputProps): React.ReactElement {
-  const { textProps, ...rest } = props
+  const { textProps, multiline, ...rest } = props
   return (
     <ExpressionAndRuntimeType
       {...rest}
       fixedTypeComponentProps={textProps}
-      fixedTypeComponent={MultiTextInputFixedTypeComponent}
+      fixedTypeComponent={multiline ? MultiTextInputFixedMultilineComponent : MultiTextInputFixedTypeComponent}
     />
   )
 }
