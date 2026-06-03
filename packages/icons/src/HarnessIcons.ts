@@ -1041,6 +1041,7 @@ import IdpNavAllowlist from './idp-nav-allowlist.svg'
 import IdpNavConnectors from './idp-nav-connectors.svg'
 import IdpNavLayout from './idp-nav-layout.svg'
 import IdpNavOauth from './idp-nav-oauth.svg'
+import IdpNavPersona from './idp-nav-persona.svg'
 import IdpNavPluginconfig from './idp-nav-pluginconfig.svg'
 import IdpNavPlugins from './idp-nav-plugins.svg'
 import IdpNavScorecards from './idp-nav-scorecards.svg'
@@ -2959,6 +2960,7 @@ type HarnessIconName =
   | 'idp-nav-connectors'
   | 'idp-nav-layout'
   | 'idp-nav-oauth'
+  | 'idp-nav-persona'
   | 'idp-nav-pluginconfig'
   | 'idp-nav-plugins'
   | 'idp-nav-scorecards'
@@ -4877,6 +4879,7 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-nav-connectors': IdpNavConnectors,
   'idp-nav-layout': IdpNavLayout,
   'idp-nav-oauth': IdpNavOauth,
+  'idp-nav-persona': IdpNavPersona,
   'idp-nav-pluginconfig': IdpNavPluginconfig,
   'idp-nav-plugins': IdpNavPlugins,
   'idp-nav-scorecards': IdpNavScorecards,
