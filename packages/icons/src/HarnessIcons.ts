@@ -858,6 +858,7 @@ import FmeInstructions from './fme-instructions.svg'
 import FmeKillFlag from './fme-kill-flag.svg'
 import FmeLimitTrafficExposure from './fme-limit-traffic-exposure.svg'
 import FmeMain from './fme-main.svg'
+import FmeMetricCheck from './fme-metric-check.svg'
 import FmeMetrics from './fme-metrics.svg'
 import FmeMyWork from './fme-my-work.svg'
 import FmeOrgSettings from './fme-org-settings.svg'
@@ -2777,6 +2778,7 @@ type HarnessIconName =
   | 'fme-kill-flag'
   | 'fme-limit-traffic-exposure'
   | 'fme-main'
+  | 'fme-metric-check'
   | 'fme-metrics'
   | 'fme-my-work'
   | 'fme-org-settings'
@@ -4696,6 +4698,7 @@ const HarnessIcons: KVO<ElementType> = {
   'fme-kill-flag': FmeKillFlag,
   'fme-limit-traffic-exposure': FmeLimitTrafficExposure,
   'fme-main': FmeMain,
+  'fme-metric-check': FmeMetricCheck,
   'fme-metrics': FmeMetrics,
   'fme-my-work': FmeMyWork,
   'fme-org-settings': FmeOrgSettings,
