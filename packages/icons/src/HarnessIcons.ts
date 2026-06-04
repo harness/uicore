@@ -1115,7 +1115,9 @@ import K6Logo from './k6-logo.svg'
 import K8SDaemonset from './k8s-daemonset.svg'
 import K8SDeployment from './k8s-deployment.svg'
 import K8SDiff from './k8s-diff.svg'
+import K8SNode from './k8s-node.svg'
 import K8SPatch from './k8s-patch.svg'
+import K8SPod from './k8s-pod.svg'
 import K8SReplicaset from './k8s-replicaset.svg'
 import K8SRollout from './k8s-rollout.svg'
 import K8SService from './k8s-service.svg'
@@ -3035,7 +3037,9 @@ type HarnessIconName =
   | 'k8s-daemonset'
   | 'k8s-deployment'
   | 'k8s-diff'
+  | 'k8s-node'
   | 'k8s-patch'
+  | 'k8s-pod'
   | 'k8s-replicaset'
   | 'k8s-rollout'
   | 'k8s-service'
@@ -4955,7 +4959,9 @@ const HarnessIcons: KVO<ElementType> = {
   'k8s-daemonset': K8SDaemonset,
   'k8s-deployment': K8SDeployment,
   'k8s-diff': K8SDiff,
+  'k8s-node': K8SNode,
   'k8s-patch': K8SPatch,
+  'k8s-pod': K8SPod,
   'k8s-replicaset': K8SReplicaset,
   'k8s-rollout': K8SRollout,
   'k8s-service': K8SService,
