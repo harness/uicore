@@ -1524,6 +1524,7 @@ import ScheduleAutostopping from './schedule-autostopping.svg'
 import SchemaRollback from './schema-rollback.svg'
 import Scm from './scm.svg'
 import Script from './script.svg'
+import ScsAibom from './scs-aibom.svg'
 import ScsArtifactSigning from './scs-artifact-signing.svg'
 import ScsArtifactVerification from './scs-artifact-verification.svg'
 import ScsBot from './scs-bot.svg'
@@ -3446,6 +3447,7 @@ type HarnessIconName =
   | 'schema-rollback'
   | 'scm'
   | 'script'
+  | 'scs-aibom'
   | 'scs-artifact-signing'
   | 'scs-artifact-verification'
   | 'scs-bot'
@@ -5368,6 +5370,7 @@ const HarnessIcons: KVO<ElementType> = {
   'schema-rollback': SchemaRollback,
   scm: Scm,
   script: Script,
+  'scs-aibom': ScsAibom,
   'scs-artifact-signing': ScsArtifactSigning,
   'scs-artifact-verification': ScsArtifactVerification,
   'scs-bot': ScsBot,
