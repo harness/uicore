@@ -16,7 +16,6 @@ import AquaTrivy from './AquaTrivy.svg'
 import CustomDeployment from './CustomDeployment.svg'
 import Edit from './Edit.svg'
 import FreezeWindow from './FreezeWindow.svg'
-import HelmHttpLogo from './Helm_Http-logo.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
 import SnykInverse from './Snyk-inverse.svg'
@@ -1035,7 +1034,6 @@ type HarnessIconName =
   | 'CustomDeployment'
   | 'Edit'
   | 'FreezeWindow'
-  | 'Helm_Http-logo'
   | 'Inline'
   | 'Options'
   | 'Snyk-inverse'
@@ -2054,7 +2052,6 @@ const HarnessIcons: KVO<ElementType> = {
   CustomDeployment: CustomDeployment,
   Edit: Edit,
   FreezeWindow: FreezeWindow,
-  'Helm_Http-logo': HelmHttpLogo,
   Inline: Inline,
   Options: Options,
   'Snyk-inverse': SnykInverse,
