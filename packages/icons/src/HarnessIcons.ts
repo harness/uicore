@@ -77,6 +77,7 @@ import AiVerify from './ai-verify.svg'
 import Ai from './ai.svg'
 import AnchoreGrypeInverse from './anchore-grype-inverse.svg'
 import AnchoreGrype from './anchore-grype.svg'
+import AnthropicVariant from './anthropic-variant.svg'
 import Anthropic from './anthropic.svg'
 import ApiDocs from './api-docs.svg'
 import AppAwsCodeDeploy from './app-aws-code-deploy.svg'
@@ -170,6 +171,7 @@ import AutostoppingCloudProvider from './autostopping-cloud-provider.svg'
 import Autostopping from './autostopping.svg'
 import Avatar from './avatar.svg'
 import AwsAsg from './aws-asg.svg'
+import AwsBedrock from './aws-bedrock.svg'
 import AwsCdk from './aws-cdk.svg'
 import AwsCodecommit from './aws-codecommit.svg'
 import AwsEbsService from './aws-ebs-service.svg'
@@ -273,6 +275,7 @@ import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
 import CcmAiProviders from './ccm-ai-providers.svg'
+import CcmAi from './ccm-ai.svg'
 import CcmApply from './ccm-apply.svg'
 import CcmCloudAccounts from './ccm-cloud-accounts.svg'
 import CcmCloudIntegrationSettings from './ccm-cloud-integration-settings.svg'
@@ -282,6 +285,7 @@ import CcmCostBucket from './ccm-cost-bucket.svg'
 import CcmCurrencySettings from './ccm-currency-settings.svg'
 import CcmExternalCostSource from './ccm-external-cost-source.svg'
 import CcmExternalDataSources from './ccm-external-data-sources.svg'
+import CcmExternalMetrics from './ccm-external-metrics.svg'
 import CcmEyeOpen from './ccm-eye-open.svg'
 import CcmIgnoreFailure from './ccm-ignore-failure.svg'
 import CcmMongo from './ccm-mongo.svg'
@@ -1336,6 +1340,7 @@ import OidcAuthentication from './oidc-authentication.svg'
 import OnpremDark from './onprem-dark.svg'
 import OnpremLight from './onprem-light.svg'
 import OpenTofu from './openTofu.svg'
+import OpenaiVariant from './openai-variant.svg'
 import Openai from './openai.svg'
 import OpenshiftParams from './openshift-params.svg'
 import Openshift from './openshift.svg'
@@ -1904,6 +1909,7 @@ import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import Vector from './vector.svg'
 import VeeCodeKong from './vee-code-kong.svg'
+import VertexAi from './vertex-ai.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
 import Waiting from './waiting.svg'
@@ -2000,6 +2006,7 @@ type HarnessIconName =
   | 'ai'
   | 'anchore-grype-inverse'
   | 'anchore-grype'
+  | 'anthropic-variant'
   | 'anthropic'
   | 'api-docs'
   | 'app-aws-code-deploy'
@@ -2093,6 +2100,7 @@ type HarnessIconName =
   | 'autostopping'
   | 'avatar'
   | 'aws-asg'
+  | 'aws-bedrock'
   | 'aws-cdk'
   | 'aws-codecommit'
   | 'aws-ebs-service'
@@ -2196,6 +2204,7 @@ type HarnessIconName =
   | 'canvas-selector'
   | 'cascading'
   | 'ccm-ai-providers'
+  | 'ccm-ai'
   | 'ccm-apply'
   | 'ccm-cloud-accounts'
   | 'ccm-cloud-integration-settings'
@@ -2205,6 +2214,7 @@ type HarnessIconName =
   | 'ccm-currency-settings'
   | 'ccm-external-cost-source'
   | 'ccm-external-data-sources'
+  | 'ccm-external-metrics'
   | 'ccm-eye-open'
   | 'ccm-ignore-failure'
   | 'ccm-mongo'
@@ -3259,6 +3269,7 @@ type HarnessIconName =
   | 'onprem-dark'
   | 'onprem-light'
   | 'openTofu'
+  | 'openai-variant'
   | 'openai'
   | 'openshift-params'
   | 'openshift'
@@ -3827,6 +3838,7 @@ type HarnessIconName =
   | 'variables'
   | 'vector'
   | 'vee-code-kong'
+  | 'vertex-ai'
   | 'view-json'
   | 'viewerRole'
   | 'waiting'
@@ -3923,6 +3935,7 @@ const HarnessIcons: KVO<ElementType> = {
   ai: Ai,
   'anchore-grype-inverse': AnchoreGrypeInverse,
   'anchore-grype': AnchoreGrype,
+  'anthropic-variant': AnthropicVariant,
   anthropic: Anthropic,
   'api-docs': ApiDocs,
   'app-aws-code-deploy': AppAwsCodeDeploy,
@@ -4016,6 +4029,7 @@ const HarnessIcons: KVO<ElementType> = {
   autostopping: Autostopping,
   avatar: Avatar,
   'aws-asg': AwsAsg,
+  'aws-bedrock': AwsBedrock,
   'aws-cdk': AwsCdk,
   'aws-codecommit': AwsCodecommit,
   'aws-ebs-service': AwsEbsService,
@@ -4119,6 +4133,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
   'ccm-ai-providers': CcmAiProviders,
+  'ccm-ai': CcmAi,
   'ccm-apply': CcmApply,
   'ccm-cloud-accounts': CcmCloudAccounts,
   'ccm-cloud-integration-settings': CcmCloudIntegrationSettings,
@@ -4128,6 +4143,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-currency-settings': CcmCurrencySettings,
   'ccm-external-cost-source': CcmExternalCostSource,
   'ccm-external-data-sources': CcmExternalDataSources,
+  'ccm-external-metrics': CcmExternalMetrics,
   'ccm-eye-open': CcmEyeOpen,
   'ccm-ignore-failure': CcmIgnoreFailure,
   'ccm-mongo': CcmMongo,
@@ -5182,6 +5198,7 @@ const HarnessIcons: KVO<ElementType> = {
   'onprem-dark': OnpremDark,
   'onprem-light': OnpremLight,
   openTofu: OpenTofu,
+  'openai-variant': OpenaiVariant,
   openai: Openai,
   'openshift-params': OpenshiftParams,
   openshift: Openshift,
@@ -5750,6 +5767,7 @@ const HarnessIcons: KVO<ElementType> = {
   variables: Variables,
   vector: Vector,
   'vee-code-kong': VeeCodeKong,
+  'vertex-ai': VertexAi,
   'view-json': ViewJson,
   viewerRole: ViewerRole,
   waiting: Waiting,
