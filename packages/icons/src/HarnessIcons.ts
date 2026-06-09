@@ -481,6 +481,7 @@ import HandManual from './hand-manual.svg'
 import HarnessCopilot from './harness-copilot.svg'
 import HarnessGrey from './harness-grey.svg'
 import Health from './health.svg'
+import HelmHttpLogo from './helm-http-logo.svg'
 import Help from './help.svg'
 import HexagonOutline from './hexagon-outline.svg'
 import Hotfix from './hotfix.svg'
@@ -1498,6 +1499,7 @@ type HarnessIconName =
   | 'harness-copilot'
   | 'harness-grey'
   | 'health'
+  | 'helm-http-logo'
   | 'help'
   | 'hexagon-outline'
   | 'hotfix'
@@ -2515,6 +2517,7 @@ const HarnessIcons: KVO<ElementType> = {
   'harness-copilot': HarnessCopilot,
   'harness-grey': HarnessGrey,
   health: Health,
+  'helm-http-logo': HelmHttpLogo,
   help: Help,
   'hexagon-outline': HexagonOutline,
   hotfix: Hotfix,
