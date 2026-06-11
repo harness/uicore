@@ -221,6 +221,7 @@ import BackgroundStep from './background-step.svg'
 import BackstageApi from './backstage-api.svg'
 import BackstageComponent from './backstage-component.svg'
 import BackstageDomain from './backstage-domain.svg'
+import BackstageIconBlack from './backstage-icon-black.svg'
 import BackstageLogo from './backstage-logo.svg'
 import BackstageResource from './backstage-resource.svg'
 import BackstageSystem from './backstage-system.svg'
@@ -2150,6 +2151,7 @@ type HarnessIconName =
   | 'backstage-api'
   | 'backstage-component'
   | 'backstage-domain'
+  | 'backstage-icon-black'
   | 'backstage-logo'
   | 'backstage-resource'
   | 'backstage-system'
@@ -4079,6 +4081,7 @@ const HarnessIcons: KVO<ElementType> = {
   'backstage-api': BackstageApi,
   'backstage-component': BackstageComponent,
   'backstage-domain': BackstageDomain,
+  'backstage-icon-black': BackstageIconBlack,
   'backstage-logo': BackstageLogo,
   'backstage-resource': BackstageResource,
   'backstage-system': BackstageSystem,
