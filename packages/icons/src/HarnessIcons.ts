@@ -1534,6 +1534,7 @@ import ScsAibom from './scs-aibom.svg'
 import ScsArtifactSigning from './scs-artifact-signing.svg'
 import ScsArtifactVerification from './scs-artifact-verification.svg'
 import ScsBot from './scs-bot.svg'
+import ScsEnforceAttestation from './scs-enforce-attestation.svg'
 import ScsEvidenceVault from './scs-evidence-vault.svg'
 import ScsInvalid from './scs-invalid.svg'
 import ScsOutdated from './scs-outdated.svg'
@@ -3465,6 +3466,7 @@ type HarnessIconName =
   | 'scs-artifact-signing'
   | 'scs-artifact-verification'
   | 'scs-bot'
+  | 'scs-enforce-attestation'
   | 'scs-evidence-vault'
   | 'scs-invalid'
   | 'scs-outdated'
@@ -5396,6 +5398,7 @@ const HarnessIcons: KVO<ElementType> = {
   'scs-artifact-signing': ScsArtifactSigning,
   'scs-artifact-verification': ScsArtifactVerification,
   'scs-bot': ScsBot,
+  'scs-enforce-attestation': ScsEnforceAttestation,
   'scs-evidence-vault': ScsEvidenceVault,
   'scs-invalid': ScsInvalid,
   'scs-outdated': ScsOutdated,
