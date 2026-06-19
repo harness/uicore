@@ -489,7 +489,12 @@ import ChaosServiceDiscovery from './chaos-service-discovery.svg'
 import ChaosServices from './chaos-services.svg'
 import ChaosSketch from './chaos-sketch.svg'
 import ChaosSolid from './chaos-solid.svg'
+import ChaosStepActionsPipeline from './chaos-step-actions-pipeline.svg'
 import ChaosStepActions from './chaos-step-actions.svg'
+import ChaosStepExperimentsPipeline from './chaos-step-experiments-pipeline.svg'
+import ChaosStepFaultsPipeline from './chaos-step-faults-pipeline.svg'
+import ChaosStepLoadPipeline from './chaos-step-load-pipeline.svg'
+import ChaosStepProbesPipeline from './chaos-step-probes-pipeline.svg'
 import ChaosStepProbes from './chaos-step-probes.svg'
 import ChaosVmwareCpuHog from './chaos-vmware-cpu-hog.svg'
 import ChaosVmwareDiskLoss from './chaos-vmware-disk-loss.svg'
@@ -2421,7 +2426,12 @@ type HarnessIconName =
   | 'chaos-services'
   | 'chaos-sketch'
   | 'chaos-solid'
+  | 'chaos-step-actions-pipeline'
   | 'chaos-step-actions'
+  | 'chaos-step-experiments-pipeline'
+  | 'chaos-step-faults-pipeline'
+  | 'chaos-step-load-pipeline'
+  | 'chaos-step-probes-pipeline'
   | 'chaos-step-probes'
   | 'chaos-vmware-cpu-hog'
   | 'chaos-vmware-disk-loss'
@@ -4353,7 +4363,12 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-services': ChaosServices,
   'chaos-sketch': ChaosSketch,
   'chaos-solid': ChaosSolid,
+  'chaos-step-actions-pipeline': ChaosStepActionsPipeline,
   'chaos-step-actions': ChaosStepActions,
+  'chaos-step-experiments-pipeline': ChaosStepExperimentsPipeline,
+  'chaos-step-faults-pipeline': ChaosStepFaultsPipeline,
+  'chaos-step-load-pipeline': ChaosStepLoadPipeline,
+  'chaos-step-probes-pipeline': ChaosStepProbesPipeline,
   'chaos-step-probes': ChaosStepProbes,
   'chaos-vmware-cpu-hog': ChaosVmwareCpuHog,
   'chaos-vmware-disk-loss': ChaosVmwareDiskLoss,
