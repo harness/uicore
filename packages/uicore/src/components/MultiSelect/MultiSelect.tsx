@@ -8,7 +8,7 @@
 import React, { ReactElement } from 'react'
 import cx from 'classnames'
 import { Position } from '@blueprintjs/core'
-import { defaultTo } from 'lodash-es'
+import { defaultTo, isEqual } from 'lodash-es'
 import { MultiSelect as BPMultiSelect, IMultiSelectProps, IItemRendererProps } from '@blueprintjs/select'
 
 import css from './MultiSelect.css'
@@ -26,6 +26,10 @@ export interface MultiSelectOption {
 type Props = IMultiSelectProps<MultiSelectOption>
 
 const Loading = Symbol('loading')
+
+function areMultiSelectItemsEqual(currentItems: MultiSelectOption[], nextItems: MultiSelectOption[]): boolean {
+  return isEqual(currentItems, nextItems)
+}
 
 export interface MultiSelectProps
   extends Omit<
@@ -118,7 +122,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
 
   React.useEffect(() => {
     if (Array.isArray(_items)) {
-      setItems(_items)
+      setItems(currentItems => (areMultiSelectItemsEqual(currentItems, _items) ? currentItems : _items))
     } else if (typeof _items === 'function') {
       setLoading(true)
       const promise = _items()
@@ -188,7 +192,13 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
     return item.label
   }
 
-  function createNewItemRenderer(query: string, _active: boolean, handleClick: any) {
+  const itemListPredicate = React.useCallback(
+    (query: string, items: MultiSelectOption[]) =>
+      items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase())),
+    []
+  )
+
+  function createNewItemRenderer(query: string, _active: boolean, handleClick: React.MouseEventHandler<HTMLElement>) {
     if (loading) {
       return (
         <li key="loading" className={cx(css.menuItem, css.loading)}>
@@ -204,7 +214,13 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
     )
       return (
         <React.Fragment>
-          <Button intent="primary" minimal text={query} icon="plus" onClick={handleClick} />
+          <Button
+            intent="primary"
+            minimal
+            text={query}
+            icon="plus"
+            onClick={event => handleClick((event as unknown) as React.MouseEvent<HTMLElement>)}
+          />
           {props.createNewItemTooltipId && (
             <span className="icon-container" data-tooltip-id={props.createNewItemTooltipId}>
               <HarnessDocTooltip tooltipId={props.createNewItemTooltipId} useStandAlone />
@@ -221,9 +237,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
       createNewItemRenderer={props.createNewItemRenderer || createNewItemRenderer}
       tagRenderer={props.tagRenderer || tagRenderer}
       itemsEqual={(a, b) => a.value === b.value}
-      itemListPredicate={(query, items) =>
-        items.filter(item => item.label.toString().toLowerCase().includes(query.toLowerCase()))
-      }
+      itemListPredicate={itemListPredicate}
       {...rest}
       tagInputProps={{
         disabled,
