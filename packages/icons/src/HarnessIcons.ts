@@ -765,6 +765,7 @@ import DownloadGcs from './download-gcs.svg'
 import DownloadHarnessStore from './download-harness-store.svg'
 import DownloadManifestsInverse from './download-manifests-inverse.svg'
 import DownloadManifests from './download-manifests.svg'
+import DrTestColor from './dr-test-color.svg'
 import DrTest from './dr-test.svg'
 import DryRun from './dry-run.svg'
 import Dx from './dx.svg'
@@ -2702,6 +2703,7 @@ type HarnessIconName =
   | 'download-harness-store'
   | 'download-manifests-inverse'
   | 'download-manifests'
+  | 'dr-test-color'
   | 'dr-test'
   | 'dry-run'
   | 'dx'
@@ -4639,6 +4641,7 @@ const HarnessIcons: KVO<ElementType> = {
   'download-harness-store': DownloadHarnessStore,
   'download-manifests-inverse': DownloadManifestsInverse,
   'download-manifests': DownloadManifests,
+  'dr-test-color': DrTestColor,
   'dr-test': DrTest,
   'dry-run': DryRun,
   dx: Dx,
