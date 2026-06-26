@@ -1131,6 +1131,7 @@ import K8SPatch from './k8s-patch.svg'
 import K8SPod from './k8s-pod.svg'
 import K8SReplicaset from './k8s-replicaset.svg'
 import K8SRollout from './k8s-rollout.svg'
+import K8SScaleUp from './k8s-scale-up.svg'
 import K8SService from './k8s-service.svg'
 import K8SStatefulset from './k8s-statefulset.svg'
 import K8STrafficRouting from './k8s-traffic-routing.svg'
@@ -3069,6 +3070,7 @@ type HarnessIconName =
   | 'k8s-pod'
   | 'k8s-replicaset'
   | 'k8s-rollout'
+  | 'k8s-scale-up'
   | 'k8s-service'
   | 'k8s-statefulset'
   | 'k8s-traffic-routing'
@@ -5007,6 +5009,7 @@ const HarnessIcons: KVO<ElementType> = {
   'k8s-pod': K8SPod,
   'k8s-replicaset': K8SReplicaset,
   'k8s-rollout': K8SRollout,
+  'k8s-scale-up': K8SScaleUp,
   'k8s-service': K8SService,
   'k8s-statefulset': K8SStatefulset,
   'k8s-traffic-routing': K8STrafficRouting,
