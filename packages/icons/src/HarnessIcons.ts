@@ -1125,6 +1125,7 @@ import JiraUpdate from './jira-update.svg'
 import Jira from './jira.svg'
 import JmeterLogo from './jmeter-logo.svg'
 import K6Logo from './k6-logo.svg'
+import K8SContainer from './k8s-container.svg'
 import K8SDaemonset from './k8s-daemonset.svg'
 import K8SDeployment from './k8s-deployment.svg'
 import K8SDiff from './k8s-diff.svg'
@@ -3066,6 +3067,7 @@ type HarnessIconName =
   | 'jira'
   | 'jmeter-logo'
   | 'k6-logo'
+  | 'k8s-container'
   | 'k8s-daemonset'
   | 'k8s-deployment'
   | 'k8s-diff'
@@ -5007,6 +5009,7 @@ const HarnessIcons: KVO<ElementType> = {
   jira: Jira,
   'jmeter-logo': JmeterLogo,
   'k6-logo': K6Logo,
+  'k8s-container': K8SContainer,
   'k8s-daemonset': K8SDaemonset,
   'k8s-deployment': K8SDeployment,
   'k8s-diff': K8SDiff,
