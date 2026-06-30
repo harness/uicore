@@ -276,6 +276,7 @@ import CanvasReset from './canvas-reset.svg'
 import CanvasSelector from './canvas-selector.svg'
 import Cascading from './cascading.svg'
 import CcmAiProviders from './ccm-ai-providers.svg'
+import CcmAiTraces from './ccm-ai-traces.svg'
 import CcmAi from './ccm-ai.svg'
 import CcmApply from './ccm-apply.svg'
 import CcmCloudAccounts from './ccm-cloud-accounts.svg'
@@ -287,6 +288,7 @@ import CcmCurrencySettings from './ccm-currency-settings.svg'
 import CcmExternalCostSource from './ccm-external-cost-source.svg'
 import CcmExternalDataSources from './ccm-external-data-sources.svg'
 import CcmExternalMetrics from './ccm-external-metrics.svg'
+import CcmExternalProvider from './ccm-external-provider.svg'
 import CcmEyeOpen from './ccm-eye-open.svg'
 import CcmIgnoreFailure from './ccm-ignore-failure.svg'
 import CcmMongo from './ccm-mongo.svg'
@@ -2215,6 +2217,7 @@ type HarnessIconName =
   | 'canvas-selector'
   | 'cascading'
   | 'ccm-ai-providers'
+  | 'ccm-ai-traces'
   | 'ccm-ai'
   | 'ccm-apply'
   | 'ccm-cloud-accounts'
@@ -2226,6 +2229,7 @@ type HarnessIconName =
   | 'ccm-external-cost-source'
   | 'ccm-external-data-sources'
   | 'ccm-external-metrics'
+  | 'ccm-external-provider'
   | 'ccm-eye-open'
   | 'ccm-ignore-failure'
   | 'ccm-mongo'
@@ -4154,6 +4158,7 @@ const HarnessIcons: KVO<ElementType> = {
   'canvas-selector': CanvasSelector,
   cascading: Cascading,
   'ccm-ai-providers': CcmAiProviders,
+  'ccm-ai-traces': CcmAiTraces,
   'ccm-ai': CcmAi,
   'ccm-apply': CcmApply,
   'ccm-cloud-accounts': CcmCloudAccounts,
@@ -4165,6 +4170,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ccm-external-cost-source': CcmExternalCostSource,
   'ccm-external-data-sources': CcmExternalDataSources,
   'ccm-external-metrics': CcmExternalMetrics,
+  'ccm-external-provider': CcmExternalProvider,
   'ccm-eye-open': CcmEyeOpen,
   'ccm-ignore-failure': CcmIgnoreFailure,
   'ccm-mongo': CcmMongo,
