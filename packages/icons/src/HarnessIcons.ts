@@ -1740,6 +1740,7 @@ import SloDowntime from './slo-downtime.svg'
 import Slo from './slo.svg'
 import SlotDeployment from './slot-deployment.svg'
 import SlsaGeneration from './slsa-generation.svg'
+import SlsaOutline from './slsa-outline.svg'
 import SlsaVerification from './slsa-verification.svg'
 import Slsa from './slsa.svg'
 import SmileConfused from './smile-confused.svg'
@@ -3682,6 +3683,7 @@ type HarnessIconName =
   | 'slo'
   | 'slot-deployment'
   | 'slsa-generation'
+  | 'slsa-outline'
   | 'slsa-verification'
   | 'slsa'
   | 'smile-confused'
@@ -5624,6 +5626,7 @@ const HarnessIcons: KVO<ElementType> = {
   slo: Slo,
   'slot-deployment': SlotDeployment,
   'slsa-generation': SlsaGeneration,
+  'slsa-outline': SlsaOutline,
   'slsa-verification': SlsaVerification,
   slsa: Slsa,
   'smile-confused': SmileConfused,
