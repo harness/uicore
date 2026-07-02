@@ -557,6 +557,7 @@ import Cis from './cis.svg'
 import ClaudeColor from './claude-color.svg'
 import ClipboardAlt from './clipboard-alt.svg'
 import CloudAccounts from './cloud-accounts.svg'
+import CloudCosts from './cloud-costs.svg'
 import CloudDark from './cloud-dark.svg'
 import CloudFormationCreate from './cloud-formation-create.svg'
 import CloudFormationDelete from './cloud-formation-delete.svg'
@@ -1168,6 +1169,7 @@ import LocalImage from './local-image.svg'
 import LocalRepository from './local-repository.svg'
 import LocustLogo from './locust-logo.svg'
 import Looping from './looping.svg'
+import MagicWand from './magic-wand.svg'
 import MainAbort from './main-abort.svg'
 import MainAccountNotifications from './main-account-notifications.svg'
 import MainAdd from './main-add.svg'
@@ -2500,6 +2502,7 @@ type HarnessIconName =
   | 'claude-color'
   | 'clipboard-alt'
   | 'cloud-accounts'
+  | 'cloud-costs'
   | 'cloud-dark'
   | 'cloud-formation-create'
   | 'cloud-formation-delete'
@@ -3111,6 +3114,7 @@ type HarnessIconName =
   | 'local-repository'
   | 'locust-logo'
   | 'looping'
+  | 'magic-wand'
   | 'main-abort'
   | 'main-account-notifications'
   | 'main-add'
@@ -4443,6 +4447,7 @@ const HarnessIcons: KVO<ElementType> = {
   'claude-color': ClaudeColor,
   'clipboard-alt': ClipboardAlt,
   'cloud-accounts': CloudAccounts,
+  'cloud-costs': CloudCosts,
   'cloud-dark': CloudDark,
   'cloud-formation-create': CloudFormationCreate,
   'cloud-formation-delete': CloudFormationDelete,
@@ -5054,6 +5059,7 @@ const HarnessIcons: KVO<ElementType> = {
   'local-repository': LocalRepository,
   'locust-logo': LocustLogo,
   looping: Looping,
+  'magic-wand': MagicWand,
   'main-abort': MainAbort,
   'main-account-notifications': MainAccountNotifications,
   'main-add': MainAdd,
