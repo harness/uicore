@@ -1133,6 +1133,7 @@ import K8SDiff from './k8s-diff.svg'
 import K8SNode from './k8s-node.svg'
 import K8SPatch from './k8s-patch.svg'
 import K8SPod from './k8s-pod.svg'
+import K8SProgressiveRollback from './k8s-progressive-rollback.svg'
 import K8SReplicaset from './k8s-replicaset.svg'
 import K8SRollout from './k8s-rollout.svg'
 import K8SScaleUp from './k8s-scale-up.svg'
@@ -3078,6 +3079,7 @@ type HarnessIconName =
   | 'k8s-node'
   | 'k8s-patch'
   | 'k8s-pod'
+  | 'k8s-progressive-rollback'
   | 'k8s-replicaset'
   | 'k8s-rollout'
   | 'k8s-scale-up'
@@ -5023,6 +5025,7 @@ const HarnessIcons: KVO<ElementType> = {
   'k8s-node': K8SNode,
   'k8s-patch': K8SPatch,
   'k8s-pod': K8SPod,
+  'k8s-progressive-rollback': K8SProgressiveRollback,
   'k8s-replicaset': K8SReplicaset,
   'k8s-rollout': K8SRollout,
   'k8s-scale-up': K8SScaleUp,
