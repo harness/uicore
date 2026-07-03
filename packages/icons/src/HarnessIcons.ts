@@ -270,6 +270,7 @@ import CommandSwap from './command-swap.svg'
 import CommandSwitch from './command-switch.svg'
 import CommandWinrm from './command-winrm.svg'
 import CompareVersion from './compare-version.svg'
+import ConanLogo from './conan-logo.svg'
 import CondaIcon from './conda-icon.svg'
 import ConditionalExecution from './conditional-execution.svg'
 import ConditionalFilled from './conditional-filled.svg'
@@ -1288,6 +1289,7 @@ type HarnessIconName =
   | 'command-switch'
   | 'command-winrm'
   | 'compare-version'
+  | 'conan-logo'
   | 'conda-icon'
   | 'conditional-execution'
   | 'conditional-filled'
@@ -2306,6 +2308,7 @@ const HarnessIcons: KVO<ElementType> = {
   'command-switch': CommandSwitch,
   'command-winrm': CommandWinrm,
   'compare-version': CompareVersion,
+  'conan-logo': ConanLogo,
   'conda-icon': CondaIcon,
   'conditional-execution': ConditionalExecution,
   'conditional-filled': ConditionalFilled,
