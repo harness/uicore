@@ -727,6 +727,7 @@ import DependencyDefaultIcon from './dependency-default-icon.svg'
 import DependencyStep from './dependency-step.svg'
 import DeployCloudFunction from './deploy-cloud-function.svg'
 import DeployStage from './deploy-stage.svg'
+import Deploy from './deploy.svg'
 import DeploymentAbortedLegacy from './deployment-aborted-legacy.svg'
 import DeploymentAbortedNew from './deployment-aborted-new.svg'
 import DeploymentFailedLegacy from './deployment-failed-legacy.svg'
@@ -1091,6 +1092,7 @@ import InfoMessage from './info-message.svg'
 import InfoMessaging from './info-messaging.svg'
 import Info from './info.svg'
 import Infrastructure from './infrastructure.svg'
+import Ingress from './ingress.svg'
 import InitializeCiStepInverse from './initialize-ci-step-inverse.svg'
 import InitializeCiStep from './initialize-ci-step.svg'
 import InitializeStepInverse from './initialize-step-inverse.svg'
@@ -1799,6 +1801,7 @@ import StoThumbsUp from './sto-thumbs-up.svg'
 import StoWithDarkText from './sto-with-dark-text.svg'
 import StoWithText from './sto-with-text.svg'
 import StoreArtifactBundle from './store-artifact-bundle.svg'
+import Sts from './sts.svg'
 import Subscriptions from './subscriptions.svg'
 import SuccessTagTick from './success-tag-tick.svg'
 import SuccessTickHover from './success-tick-hover.svg'
@@ -2673,6 +2676,7 @@ type HarnessIconName =
   | 'dependency-step'
   | 'deploy-cloud-function'
   | 'deploy-stage'
+  | 'deploy'
   | 'deployment-aborted-legacy'
   | 'deployment-aborted-new'
   | 'deployment-failed-legacy'
@@ -3037,6 +3041,7 @@ type HarnessIconName =
   | 'info-messaging'
   | 'info'
   | 'infrastructure'
+  | 'ingress'
   | 'initialize-ci-step-inverse'
   | 'initialize-ci-step'
   | 'initialize-step-inverse'
@@ -3745,6 +3750,7 @@ type HarnessIconName =
   | 'sto-with-dark-text'
   | 'sto-with-text'
   | 'store-artifact-bundle'
+  | 'sts'
   | 'subscriptions'
   | 'success-tag-tick'
   | 'success-tick-hover'
@@ -4619,6 +4625,7 @@ const HarnessIcons: KVO<ElementType> = {
   'dependency-step': DependencyStep,
   'deploy-cloud-function': DeployCloudFunction,
   'deploy-stage': DeployStage,
+  deploy: Deploy,
   'deployment-aborted-legacy': DeploymentAbortedLegacy,
   'deployment-aborted-new': DeploymentAbortedNew,
   'deployment-failed-legacy': DeploymentFailedLegacy,
@@ -4983,6 +4990,7 @@ const HarnessIcons: KVO<ElementType> = {
   'info-messaging': InfoMessaging,
   info: Info,
   infrastructure: Infrastructure,
+  ingress: Ingress,
   'initialize-ci-step-inverse': InitializeCiStepInverse,
   'initialize-ci-step': InitializeCiStep,
   'initialize-step-inverse': InitializeStepInverse,
@@ -5691,6 +5699,7 @@ const HarnessIcons: KVO<ElementType> = {
   'sto-with-dark-text': StoWithDarkText,
   'sto-with-text': StoWithText,
   'store-artifact-bundle': StoreArtifactBundle,
+  sts: Sts,
   subscriptions: Subscriptions,
   'success-tag-tick': SuccessTagTick,
   'success-tick-hover': SuccessTickHover,
