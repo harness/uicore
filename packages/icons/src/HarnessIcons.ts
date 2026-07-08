@@ -56,6 +56,7 @@ import AddGraph from './add-graph.svg'
 import AddStage from './add-stage.svg'
 import AdminRole from './adminRole.svg'
 import Advanced from './advanced.svg'
+import AgentServices from './agent-services.svg'
 import AgentTokens from './agent-tokens.svg'
 import Agent from './agent.svg'
 import Agents from './agents.svg'
@@ -2005,6 +2006,7 @@ type HarnessIconName =
   | 'add-stage'
   | 'adminRole'
   | 'advanced'
+  | 'agent-services'
   | 'agent-tokens'
   | 'agent'
   | 'agents'
@@ -3954,6 +3956,7 @@ const HarnessIcons: KVO<ElementType> = {
   'add-stage': AddStage,
   adminRole: AdminRole,
   advanced: Advanced,
+  'agent-services': AgentServices,
   'agent-tokens': AgentTokens,
   agent: Agent,
   agents: Agents,
