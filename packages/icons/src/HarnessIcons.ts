@@ -66,6 +66,7 @@ import AiArrowUp from './ai-arrow-up.svg'
 import AiAssets from './ai-assets.svg'
 import AiCanary from './ai-canary.svg'
 import AiDependency from './ai-dependency.svg'
+import AiMlOps from './ai-ml-ops.svg'
 import AiModelScanner from './ai-model-scanner.svg'
 import AiOps from './ai-ops.svg'
 import AiPrimary from './ai-primary.svg'
@@ -2016,6 +2017,7 @@ type HarnessIconName =
   | 'ai-assets'
   | 'ai-canary'
   | 'ai-dependency'
+  | 'ai-ml-ops'
   | 'ai-model-scanner'
   | 'ai-ops'
   | 'ai-primary'
@@ -3966,6 +3968,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ai-assets': AiAssets,
   'ai-canary': AiCanary,
   'ai-dependency': AiDependency,
+  'ai-ml-ops': AiMlOps,
   'ai-model-scanner': AiModelScanner,
   'ai-ops': AiOps,
   'ai-primary': AiPrimary,
