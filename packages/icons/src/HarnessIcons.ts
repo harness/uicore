@@ -61,6 +61,7 @@ import AgentTokens from './agent-tokens.svg'
 import Agent from './agent.svg'
 import Agents from './agents.svg'
 import Aggre from './aggre.svg'
+import AiAgentServices from './ai-agent-services.svg'
 import AiAgent from './ai-agent.svg'
 import AiArrowUp from './ai-arrow-up.svg'
 import AiAssets from './ai-assets.svg'
@@ -2012,6 +2013,7 @@ type HarnessIconName =
   | 'agent'
   | 'agents'
   | 'aggre'
+  | 'ai-agent-services'
   | 'ai-agent'
   | 'ai-arrow-up'
   | 'ai-assets'
@@ -3963,6 +3965,7 @@ const HarnessIcons: KVO<ElementType> = {
   agent: Agent,
   agents: Agents,
   aggre: Aggre,
+  'ai-agent-services': AiAgentServices,
   'ai-agent': AiAgent,
   'ai-arrow-up': AiArrowUp,
   'ai-assets': AiAssets,
