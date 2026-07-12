@@ -994,6 +994,7 @@ import Gitops from './gitops.svg'
 import Gitspaces from './gitspaces.svg'
 import GoLogo from './go-logo.svg'
 import Golang from './golang.svg'
+import GoogleAgentRuntimeTrafficShift from './google-agent-runtime-traffic-shift.svg'
 import GoogleBigquery from './google-bigquery.svg'
 import GoogleChat from './google-chat.svg'
 import GoogleGemini from './google-gemini.svg'
@@ -2946,6 +2947,7 @@ type HarnessIconName =
   | 'gitspaces'
   | 'go-logo'
   | 'golang'
+  | 'google-agent-runtime-traffic-shift'
   | 'google-bigquery'
   | 'google-chat'
   | 'google-gemini'
@@ -4898,6 +4900,7 @@ const HarnessIcons: KVO<ElementType> = {
   gitspaces: Gitspaces,
   'go-logo': GoLogo,
   golang: Golang,
+  'google-agent-runtime-traffic-shift': GoogleAgentRuntimeTrafficShift,
   'google-bigquery': GoogleBigquery,
   'google-chat': GoogleChat,
   'google-gemini': GoogleGemini,
