@@ -955,6 +955,7 @@ import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
 import TemplatesIcon from './templates-icon.svg'
+import TeraformHarIcon from './teraform_har_icon.svg'
 import Terminal from './terminal.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
@@ -1974,6 +1975,7 @@ type HarnessIconName =
   | 'template-library'
   | 'templates-blue'
   | 'templates-icon'
+  | 'teraform_har_icon'
   | 'terminal'
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
@@ -2993,6 +2995,7 @@ const HarnessIcons: KVO<ElementType> = {
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
   'templates-icon': TemplatesIcon,
+  teraform_har_icon: TeraformHarIcon,
   terminal: Terminal,
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
