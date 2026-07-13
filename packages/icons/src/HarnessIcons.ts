@@ -955,7 +955,6 @@ import TemplateInputs from './template-inputs.svg'
 import TemplateLibrary from './template-library.svg'
 import TemplatesBlue from './templates-blue.svg'
 import TemplatesIcon from './templates-icon.svg'
-import TeraformHarIcon from './teraform_har_icon.svg'
 import Terminal from './terminal.svg'
 import TerraformApplyInverse from './terraform-apply-inverse.svg'
 import TerraformApplyNew from './terraform-apply-new.svg'
@@ -966,6 +965,7 @@ import TerraformCloudRunInverse from './terraform-cloud-run-inverse.svg'
 import TerraformCloudRun from './terraform-cloud-run.svg'
 import TerraformDestroyInverse from './terraform-destroy-inverse.svg'
 import TerraformDestroy from './terraform-destroy.svg'
+import TerraformHarIcon from './terraform-har-icon.svg'
 import TerraformPlanInverse from './terraform-plan-inverse.svg'
 import TerraformPlan from './terraform-plan.svg'
 import TerraformRollbackInverse from './terraform-rollback-inverse.svg'
@@ -1975,7 +1975,6 @@ type HarnessIconName =
   | 'template-library'
   | 'templates-blue'
   | 'templates-icon'
-  | 'teraform_har_icon'
   | 'terminal'
   | 'terraform-apply-inverse'
   | 'terraform-apply-new'
@@ -1986,6 +1985,7 @@ type HarnessIconName =
   | 'terraform-cloud-run'
   | 'terraform-destroy-inverse'
   | 'terraform-destroy'
+  | 'terraform-har-icon'
   | 'terraform-plan-inverse'
   | 'terraform-plan'
   | 'terraform-rollback-inverse'
@@ -2995,7 +2995,6 @@ const HarnessIcons: KVO<ElementType> = {
   'template-library': TemplateLibrary,
   'templates-blue': TemplatesBlue,
   'templates-icon': TemplatesIcon,
-  teraform_har_icon: TeraformHarIcon,
   terminal: Terminal,
   'terraform-apply-inverse': TerraformApplyInverse,
   'terraform-apply-new': TerraformApplyNew,
@@ -3006,6 +3005,7 @@ const HarnessIcons: KVO<ElementType> = {
   'terraform-cloud-run': TerraformCloudRun,
   'terraform-destroy-inverse': TerraformDestroyInverse,
   'terraform-destroy': TerraformDestroy,
+  'terraform-har-icon': TerraformHarIcon,
   'terraform-plan-inverse': TerraformPlanInverse,
   'terraform-plan': TerraformPlan,
   'terraform-rollback-inverse': TerraformRollbackInverse,
