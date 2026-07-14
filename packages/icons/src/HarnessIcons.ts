@@ -420,6 +420,7 @@ import ChaosEcsTaskStop from './chaos-ecs-task-stop.svg'
 import ChaosEcsUpdateContainerResourceLimit from './chaos-ecs-update-container-resource-limit.svg'
 import ChaosEcsUpdateContainerTimeout from './chaos-ecs-update-container-timeout.svg'
 import ChaosEcsUpdateTaskRole from './chaos-ecs-update-task-role.svg'
+import ChaosEvidence from './chaos-evidence.svg'
 import ChaosExperimentWeight from './chaos-experiment-weight.svg'
 import ChaosFaults from './chaos-faults.svg'
 import ChaosGcpVmDiskLossByLabel from './chaos-gcp-vm-disk-loss-by-label.svg'
@@ -488,6 +489,8 @@ import ChaosNavGamedays from './chaos-nav-gamedays.svg'
 import ChaosNavNetworkMaps from './chaos-nav-network-maps.svg'
 import ChaosNavResilienceMgmt from './chaos-nav-resilience-mgmt.svg'
 import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
+import ChaosRecommendedResilienceTests from './chaos-recommended-resilience-tests.svg'
+import ChaosRemediation from './chaos-remediation.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
@@ -2373,6 +2376,7 @@ type HarnessIconName =
   | 'chaos-ecs-update-container-resource-limit'
   | 'chaos-ecs-update-container-timeout'
   | 'chaos-ecs-update-task-role'
+  | 'chaos-evidence'
   | 'chaos-experiment-weight'
   | 'chaos-faults'
   | 'chaos-gcp-vm-disk-loss-by-label'
@@ -2441,6 +2445,8 @@ type HarnessIconName =
   | 'chaos-nav-network-maps'
   | 'chaos-nav-resilience-mgmt'
   | 'chaos-nav-resilience-probes'
+  | 'chaos-recommended-resilience-tests'
+  | 'chaos-remediation'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chaos-service-discovery'
@@ -4326,6 +4332,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-ecs-update-container-resource-limit': ChaosEcsUpdateContainerResourceLimit,
   'chaos-ecs-update-container-timeout': ChaosEcsUpdateContainerTimeout,
   'chaos-ecs-update-task-role': ChaosEcsUpdateTaskRole,
+  'chaos-evidence': ChaosEvidence,
   'chaos-experiment-weight': ChaosExperimentWeight,
   'chaos-faults': ChaosFaults,
   'chaos-gcp-vm-disk-loss-by-label': ChaosGcpVmDiskLossByLabel,
@@ -4394,6 +4401,8 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-nav-network-maps': ChaosNavNetworkMaps,
   'chaos-nav-resilience-mgmt': ChaosNavResilienceMgmt,
   'chaos-nav-resilience-probes': ChaosNavResilienceProbes,
+  'chaos-recommended-resilience-tests': ChaosRecommendedResilienceTests,
+  'chaos-remediation': ChaosRemediation,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   'chaos-service-discovery': ChaosServiceDiscovery,
