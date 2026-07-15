@@ -6,9 +6,9 @@
  */
 
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { act, render, fireEvent } from '@testing-library/react'
 
-import { Accordion } from './Accordion'
+import { Accordion, AccordionHandle } from './Accordion'
 
 const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi temporibus error, id recusandae doloribus earum inventore, soluta fugit quidem nulla labore optio incidunt quis facilis. Rem illum unde tempore tempora.`
 
@@ -71,5 +71,43 @@ describe('<Accordion /> tests', () => {
     expect(getByTestId('panel-2-panel').dataset.open).toBe('false')
 
     expect(container).toMatchSnapshot('Panel 1 closed')
+  })
+
+  test('onUserToggle is called only for user-initiated panel toggles', () => {
+    const onUserToggle = jest.fn()
+    const accordionRef = React.createRef<AccordionHandle>()
+    const { getByTestId } = render(
+      <Accordion ref={accordionRef} onUserToggle={onUserToggle} collapseProps={{ transitionDuration: 0 }}>
+        <Accordion.Panel id="panel-1" summary="Panel 1" details={text} />
+        <Accordion.Panel id="panel-2" summary="Panel 2" details={text} />
+      </Accordion>
+    )
+
+    fireEvent.click(getByTestId('panel-1-summary'))
+    expect(onUserToggle).toHaveBeenCalledTimes(1)
+    expect(onUserToggle).toHaveBeenCalledWith('panel-1', true)
+
+    fireEvent.click(getByTestId('panel-1-summary'))
+    expect(onUserToggle).toHaveBeenLastCalledWith('panel-1', false)
+
+    onUserToggle.mockClear()
+    act(() => {
+      accordionRef.current?.open('panel-2')
+      accordionRef.current?.close('panel-2')
+      accordionRef.current?.toggle('panel-2')
+    })
+    expect(onUserToggle).not.toHaveBeenCalled()
+  })
+
+  test('onUserToggle is not called for disabled panels', () => {
+    const onUserToggle = jest.fn()
+    const { getByTestId } = render(
+      <Accordion onUserToggle={onUserToggle} collapseProps={{ transitionDuration: 0 }}>
+        <Accordion.Panel id="panel-1" summary="Panel 1" details={text} disabled />
+      </Accordion>
+    )
+
+    fireEvent.click(getByTestId('panel-1-summary'))
+    expect(onUserToggle).not.toHaveBeenCalled()
   })
 })

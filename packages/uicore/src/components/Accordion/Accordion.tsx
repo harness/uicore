@@ -105,6 +105,7 @@ export interface AccordionProps {
   collapseProps?: Omit<ICollapseProps, 'isOpen'>
   allowMultiOpen?: boolean
   onChange?(tabs: string | string[]): void
+  onUserToggle?(tab: string, isOpen: boolean): void
   /** Controlled accordion active ID which drives accordion state from onChange over internal toggle state  */
   controlledActiveId?: string | string[]
   chevronPosition?: ChevronPosition
@@ -127,6 +128,7 @@ export function AccordionWithoutRef(
     className,
     activeId,
     onChange,
+    onUserToggle,
     controlledActiveId,
     allowOtherChildElem,
     ...rest
@@ -151,6 +153,8 @@ export function AccordionWithoutRef(
   // Update the togglePanels function to check if controlledActiveId is set
   function togglePanels(id: string) {
     return () => {
+      onUserToggle?.(id, !activePanels[id])
+
       if (!controlledActiveId) {
         setActivePanels(prev => ({ ...(allowMultiOpen ? prev : {}), [id]: !prev[id] }))
       } else {
