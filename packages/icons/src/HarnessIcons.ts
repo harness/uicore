@@ -799,6 +799,7 @@ import RollbackStage from './rollback-stage.svg'
 import RollingInverse from './rolling-inverse.svg'
 import RollingUpdate from './rolling-update.svg'
 import Rolling from './rolling.svg'
+import RubyLogo from './ruby-logo.svg'
 import RunCiStepInverse from './run-ci-step-inverse.svg'
 import RunCiStep from './run-ci-step.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -1819,6 +1820,7 @@ type HarnessIconName =
   | 'rolling-inverse'
   | 'rolling-update'
   | 'rolling'
+  | 'ruby-logo'
   | 'run-ci-step-inverse'
   | 'run-ci-step'
   | 'run-pipeline'
@@ -2839,6 +2841,7 @@ const HarnessIcons: KVO<ElementType> = {
   'rolling-inverse': RollingInverse,
   'rolling-update': RollingUpdate,
   rolling: Rolling,
+  'ruby-logo': RubyLogo,
   'run-ci-step-inverse': RunCiStepInverse,
   'run-ci-step': RunCiStep,
   'run-pipeline': RunPipeline,
