@@ -1073,12 +1073,16 @@ import IdpPlay from './idp-play.svg'
 import IdpProtection from './idp-protection.svg'
 import IdpRecentlyVisited from './idp-recently-visited.svg'
 import IdpScopeFilter from './idp-scope-filter.svg'
+import IdpScorecardBronze from './idp-scorecard-bronze.svg'
+import IdpScorecardGold from './idp-scorecard-gold.svg'
+import IdpScorecardSilver from './idp-scorecard-silver.svg'
 import IdpSelfService from './idp-self-service.svg'
 import IdpStageHover from './idp-stage-hover.svg'
 import IdpStarredEntity from './idp-starred-entity.svg'
 import IdpStrategy from './idp-strategy.svg'
 import IdpSystem from './idp-system.svg'
 import IdpTable from './idp-table.svg'
+import IdpTierEmpty from './idp-tier-empty.svg'
 import IdpTopVisited from './idp-top-visited.svg'
 import IdpUpload from './idp-upload.svg'
 import IdpVideo from './idp-video.svg'
@@ -3029,12 +3033,16 @@ type HarnessIconName =
   | 'idp-protection'
   | 'idp-recently-visited'
   | 'idp-scope-filter'
+  | 'idp-scorecard-bronze'
+  | 'idp-scorecard-gold'
+  | 'idp-scorecard-silver'
   | 'idp-self-service'
   | 'idp-stage-hover'
   | 'idp-starred-entity'
   | 'idp-strategy'
   | 'idp-system'
   | 'idp-table'
+  | 'idp-tier-empty'
   | 'idp-top-visited'
   | 'idp-upload'
   | 'idp-video'
@@ -4985,12 +4993,16 @@ const HarnessIcons: KVO<ElementType> = {
   'idp-protection': IdpProtection,
   'idp-recently-visited': IdpRecentlyVisited,
   'idp-scope-filter': IdpScopeFilter,
+  'idp-scorecard-bronze': IdpScorecardBronze,
+  'idp-scorecard-gold': IdpScorecardGold,
+  'idp-scorecard-silver': IdpScorecardSilver,
   'idp-self-service': IdpSelfService,
   'idp-stage-hover': IdpStageHover,
   'idp-starred-entity': IdpStarredEntity,
   'idp-strategy': IdpStrategy,
   'idp-system': IdpSystem,
   'idp-table': IdpTable,
+  'idp-tier-empty': IdpTierEmpty,
   'idp-top-visited': IdpTopVisited,
   'idp-upload': IdpUpload,
   'idp-video': IdpVideo,
