@@ -93,6 +93,7 @@ import ApprovalStageIcon from './approval-stage-icon.svg'
 import ApprovalStage from './approval-stage.svg'
 import ApprovalStep from './approval-step.svg'
 import AppsLinked from './apps-linked.svg'
+import AppsecAgents from './appsec-agents.svg'
 import AppsecAiatom from './appsec-aiatom.svg'
 import AppsecAnalysis from './appsec-analysis.svg'
 import AppsecApidoc from './appsec-apidoc.svg'
@@ -2055,6 +2056,7 @@ type HarnessIconName =
   | 'approval-stage'
   | 'approval-step'
   | 'apps-linked'
+  | 'appsec-agents'
   | 'appsec-aiatom'
   | 'appsec-analysis'
   | 'appsec-apidoc'
@@ -4017,6 +4019,7 @@ const HarnessIcons: KVO<ElementType> = {
   'approval-stage': ApprovalStage,
   'approval-step': ApprovalStep,
   'apps-linked': AppsLinked,
+  'appsec-agents': AppsecAgents,
   'appsec-aiatom': AppsecAiatom,
   'appsec-analysis': AppsecAnalysis,
   'appsec-apidoc': AppsecApidoc,
