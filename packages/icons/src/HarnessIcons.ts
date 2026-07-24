@@ -857,9 +857,11 @@ import FfSketch from './ff-sketch.svg'
 import FfSolid from './ff-solid.svg'
 import FfWithDarkText from './ff-with-dark-text.svg'
 import FfWithText from './ff-with-text.svg'
+import Figma from './figma.svg'
 import FileCode from './file-code.svg'
 import File from './file.svg'
 import Filestore from './filestore.svg'
+import Firebase from './firebase.svg'
 import Firehydrant from './firehydrant.svg'
 import FixedInput from './fixed-input.svg'
 import FlagTick from './flag-tick.svg'
@@ -1002,6 +1004,7 @@ import Golang from './golang.svg'
 import GoogleAgentRuntimeTrafficShift from './google-agent-runtime-traffic-shift.svg'
 import GoogleBigquery from './google-bigquery.svg'
 import GoogleChat from './google-chat.svg'
+import GoogleDocs from './google-docs.svg'
 import GoogleGemini from './google-gemini.svg'
 import GoogleKubernetesEngine from './google-kubernetes-engine.svg'
 import GoogleMigBlueGreenDeploy from './google-mig-blue-green-deploy.svg'
@@ -1018,6 +1021,7 @@ import GradleRepositoryType from './gradle-repository-type.svg'
 import Grafana from './grafana.svg'
 import GraphIncrease from './graph-increase.svg'
 import Graph from './graph.svg'
+import Graphql from './graphql.svg'
 import GreyCluster from './grey-cluster.svg'
 import Grid from './grid.svg'
 import HandManual from './hand-manual.svg'
@@ -1131,6 +1135,7 @@ import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
 import Java from './java.svg'
 import Jdbc from './jdbc.svg'
+import Jfrog from './jfrog.svg'
 import JiraApproveInverse from './jira-approve-inverse.svg'
 import JiraApprove from './jira-approve.svg'
 import JiraCreateInverse from './jira-create-inverse.svg'
@@ -1283,6 +1288,7 @@ import MavenRepositoryType from './maven-repository-type.svg'
 import MaximizeButton from './maximize-button.svg'
 import Mcp from './mcp.svg'
 import Medal from './medal.svg'
+import Mediapipe from './mediapipe.svg'
 import MemberRole from './memberRole.svg'
 import MendInverse from './mend-inverse.svg'
 import Mend from './mend.svg'
@@ -1417,6 +1423,7 @@ import Pod from './pod.svg'
 import Policies from './policies.svg'
 import Policysets from './policysets.svg'
 import Polygon from './polygon.svg'
+import Postgresql from './postgresql.svg'
 import ProbeEot from './probe-EOT.svg'
 import ProbeSot from './probe-SOT.svg'
 import ProbeContinuos from './probe-continuos.svg'
@@ -1590,6 +1597,7 @@ import SecretsBlue from './secrets-blue.svg'
 import SecretsIcon from './secrets-icon.svg'
 import SecurityCiStepInverse from './security-ci-step-inverse.svg'
 import SecurityCiStep from './security-ci-step.svg'
+import SecurityScorecard from './security-scorecard.svg'
 import SecurityScsStageHover from './security-scs-stage-hover.svg'
 import SecurityScsStage from './security-scs-stage.svg'
 import SecurityStage from './security-stage.svg'
@@ -1834,6 +1842,7 @@ import SupportTour from './support-tour.svg'
 import SupportTroubleshoot from './support-troubleshoot.svg'
 import SupportVerification from './support-verification.svg'
 import SupportVideos from './support-videos.svg'
+import Swagger from './swagger.svg'
 import SwapServices from './swap-services.svg'
 import SwitchOff from './switch-off.svg'
 import SwitchOn from './switch-on.svg'
@@ -2820,9 +2829,11 @@ type HarnessIconName =
   | 'ff-solid'
   | 'ff-with-dark-text'
   | 'ff-with-text'
+  | 'figma'
   | 'file-code'
   | 'file'
   | 'filestore'
+  | 'firebase'
   | 'firehydrant'
   | 'fixed-input'
   | 'flag-tick'
@@ -2965,6 +2976,7 @@ type HarnessIconName =
   | 'google-agent-runtime-traffic-shift'
   | 'google-bigquery'
   | 'google-chat'
+  | 'google-docs'
   | 'google-gemini'
   | 'google-kubernetes-engine'
   | 'google-mig-blue-green-deploy'
@@ -2981,6 +2993,7 @@ type HarnessIconName =
   | 'grafana'
   | 'graph-increase'
   | 'graph'
+  | 'graphql'
   | 'grey-cluster'
   | 'grid'
   | 'hand-manual'
@@ -3094,6 +3107,7 @@ type HarnessIconName =
   | 'iro-main'
   | 'java'
   | 'jdbc'
+  | 'jfrog'
   | 'jira-approve-inverse'
   | 'jira-approve'
   | 'jira-create-inverse'
@@ -3246,6 +3260,7 @@ type HarnessIconName =
   | 'maximize-button'
   | 'mcp'
   | 'medal'
+  | 'mediapipe'
   | 'memberRole'
   | 'mend-inverse'
   | 'mend'
@@ -3380,6 +3395,7 @@ type HarnessIconName =
   | 'policies'
   | 'policysets'
   | 'polygon'
+  | 'postgresql'
   | 'probe-EOT'
   | 'probe-SOT'
   | 'probe-continuos'
@@ -3553,6 +3569,7 @@ type HarnessIconName =
   | 'secrets-icon'
   | 'security-ci-step-inverse'
   | 'security-ci-step'
+  | 'security-scorecard'
   | 'security-scs-stage-hover'
   | 'security-scs-stage'
   | 'security-stage'
@@ -3797,6 +3814,7 @@ type HarnessIconName =
   | 'support-troubleshoot'
   | 'support-verification'
   | 'support-videos'
+  | 'swagger'
   | 'swap-services'
   | 'switch-off'
   | 'switch-on'
@@ -4783,9 +4801,11 @@ const HarnessIcons: KVO<ElementType> = {
   'ff-solid': FfSolid,
   'ff-with-dark-text': FfWithDarkText,
   'ff-with-text': FfWithText,
+  figma: Figma,
   'file-code': FileCode,
   file: File,
   filestore: Filestore,
+  firebase: Firebase,
   firehydrant: Firehydrant,
   'fixed-input': FixedInput,
   'flag-tick': FlagTick,
@@ -4928,6 +4948,7 @@ const HarnessIcons: KVO<ElementType> = {
   'google-agent-runtime-traffic-shift': GoogleAgentRuntimeTrafficShift,
   'google-bigquery': GoogleBigquery,
   'google-chat': GoogleChat,
+  'google-docs': GoogleDocs,
   'google-gemini': GoogleGemini,
   'google-kubernetes-engine': GoogleKubernetesEngine,
   'google-mig-blue-green-deploy': GoogleMigBlueGreenDeploy,
@@ -4944,6 +4965,7 @@ const HarnessIcons: KVO<ElementType> = {
   grafana: Grafana,
   'graph-increase': GraphIncrease,
   graph: Graph,
+  graphql: Graphql,
   'grey-cluster': GreyCluster,
   grid: Grid,
   'hand-manual': HandManual,
@@ -5057,6 +5079,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iro-main': IroMain,
   java: Java,
   jdbc: Jdbc,
+  jfrog: Jfrog,
   'jira-approve-inverse': JiraApproveInverse,
   'jira-approve': JiraApprove,
   'jira-create-inverse': JiraCreateInverse,
@@ -5209,6 +5232,7 @@ const HarnessIcons: KVO<ElementType> = {
   'maximize-button': MaximizeButton,
   mcp: Mcp,
   medal: Medal,
+  mediapipe: Mediapipe,
   memberRole: MemberRole,
   'mend-inverse': MendInverse,
   mend: Mend,
@@ -5343,6 +5367,7 @@ const HarnessIcons: KVO<ElementType> = {
   policies: Policies,
   policysets: Policysets,
   polygon: Polygon,
+  postgresql: Postgresql,
   'probe-EOT': ProbeEot,
   'probe-SOT': ProbeSot,
   'probe-continuos': ProbeContinuos,
@@ -5516,6 +5541,7 @@ const HarnessIcons: KVO<ElementType> = {
   'secrets-icon': SecretsIcon,
   'security-ci-step-inverse': SecurityCiStepInverse,
   'security-ci-step': SecurityCiStep,
+  'security-scorecard': SecurityScorecard,
   'security-scs-stage-hover': SecurityScsStageHover,
   'security-scs-stage': SecurityScsStage,
   'security-stage': SecurityStage,
@@ -5760,6 +5786,7 @@ const HarnessIcons: KVO<ElementType> = {
   'support-troubleshoot': SupportTroubleshoot,
   'support-verification': SupportVerification,
   'support-videos': SupportVideos,
+  swagger: Swagger,
   'swap-services': SwapServices,
   'switch-off': SwitchOff,
   'switch-on': SwitchOn,
