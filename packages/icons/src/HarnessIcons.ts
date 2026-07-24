@@ -925,6 +925,7 @@ import FullScreen from './full-screen.svg'
 import Functions from './functions.svg'
 import GarStepInverse from './gar-step-inverse.svg'
 import GarStep from './gar-step.svg'
+import Gateway from './gateway.svg'
 import GceProvisionBackendService from './gce-provision-backend-service.svg'
 import GcpEngine from './gcp-engine.svg'
 import GcpKms from './gcp-kms.svg'
@@ -1133,6 +1134,7 @@ import IrReadiness from './ir-readiness.svg'
 import IrRunbooks from './ir-runbooks.svg'
 import IroLogoOutline from './iro-logo-outline.svg'
 import IroMain from './iro-main.svg'
+import Istio from './istio.svg'
 import Java from './java.svg'
 import Jdbc from './jdbc.svg'
 import Jfrog from './jfrog.svg'
@@ -1150,6 +1152,7 @@ import K8SContainer from './k8s-container.svg'
 import K8SDaemonset from './k8s-daemonset.svg'
 import K8SDeployment from './k8s-deployment.svg'
 import K8SDiff from './k8s-diff.svg'
+import K8SIngress from './k8s-ingress.svg'
 import K8SNode from './k8s-node.svg'
 import K8SPatch from './k8s-patch.svg'
 import K8SPod from './k8s-pod.svg'
@@ -2897,6 +2900,7 @@ type HarnessIconName =
   | 'functions'
   | 'gar-step-inverse'
   | 'gar-step'
+  | 'gateway'
   | 'gce-provision-backend-service'
   | 'gcp-engine'
   | 'gcp-kms'
@@ -3105,6 +3109,7 @@ type HarnessIconName =
   | 'ir-runbooks'
   | 'iro-logo-outline'
   | 'iro-main'
+  | 'istio'
   | 'java'
   | 'jdbc'
   | 'jfrog'
@@ -3122,6 +3127,7 @@ type HarnessIconName =
   | 'k8s-daemonset'
   | 'k8s-deployment'
   | 'k8s-diff'
+  | 'k8s-ingress'
   | 'k8s-node'
   | 'k8s-patch'
   | 'k8s-pod'
@@ -4869,6 +4875,7 @@ const HarnessIcons: KVO<ElementType> = {
   functions: Functions,
   'gar-step-inverse': GarStepInverse,
   'gar-step': GarStep,
+  gateway: Gateway,
   'gce-provision-backend-service': GceProvisionBackendService,
   'gcp-engine': GcpEngine,
   'gcp-kms': GcpKms,
@@ -5077,6 +5084,7 @@ const HarnessIcons: KVO<ElementType> = {
   'ir-runbooks': IrRunbooks,
   'iro-logo-outline': IroLogoOutline,
   'iro-main': IroMain,
+  istio: Istio,
   java: Java,
   jdbc: Jdbc,
   jfrog: Jfrog,
@@ -5094,6 +5102,7 @@ const HarnessIcons: KVO<ElementType> = {
   'k8s-daemonset': K8SDaemonset,
   'k8s-deployment': K8SDeployment,
   'k8s-diff': K8SDiff,
+  'k8s-ingress': K8SIngress,
   'k8s-node': K8SNode,
   'k8s-patch': K8SPatch,
   'k8s-pod': K8SPod,
