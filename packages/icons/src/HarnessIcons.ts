@@ -1309,6 +1309,7 @@ import MonitoringAgents from './monitoring-agents.svg'
 import MoveFolders from './move-folders.svg'
 import MoveProject from './move-project.svg'
 import MultiService from './multi-service.svg'
+import MythosAgent from './mythos-agent.svg'
 import NavAccountAdminHover from './nav-account-admin-hover.svg'
 import NavAccountAdminSelected from './nav-account-admin-selected.svg'
 import NavAccountAdmin from './nav-account-admin.svg'
@@ -3284,6 +3285,7 @@ type HarnessIconName =
   | 'move-folders'
   | 'move-project'
   | 'multi-service'
+  | 'mythos-agent'
   | 'nav-account-admin-hover'
   | 'nav-account-admin-selected'
   | 'nav-account-admin'
@@ -5259,6 +5261,7 @@ const HarnessIcons: KVO<ElementType> = {
   'move-folders': MoveFolders,
   'move-project': MoveProject,
   'multi-service': MultiService,
+  'mythos-agent': MythosAgent,
   'nav-account-admin-hover': NavAccountAdminHover,
   'nav-account-admin-selected': NavAccountAdminSelected,
   'nav-account-admin': NavAccountAdmin,
