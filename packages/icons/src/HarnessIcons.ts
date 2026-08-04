@@ -18,6 +18,7 @@ import Edit from './Edit.svg'
 import FreezeWindow from './FreezeWindow.svg'
 import Inline from './Inline.svg'
 import Options from './Options.svg'
+import RLogo from './R-logo.svg'
 import SnykInverse from './Snyk-inverse.svg'
 import Snyk from './Snyk.svg'
 import SplitView from './SplitView.svg'
@@ -1039,6 +1040,7 @@ type HarnessIconName =
   | 'FreezeWindow'
   | 'Inline'
   | 'Options'
+  | 'R-logo'
   | 'Snyk-inverse'
   | 'Snyk'
   | 'SplitView'
@@ -2060,6 +2062,7 @@ const HarnessIcons: KVO<ElementType> = {
   FreezeWindow: FreezeWindow,
   Inline: Inline,
   Options: Options,
+  'R-logo': RLogo,
   'Snyk-inverse': SnykInverse,
   Snyk: Snyk,
   SplitView: SplitView,
