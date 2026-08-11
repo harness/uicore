@@ -1531,6 +1531,7 @@ import Rolling from './rolling.svg'
 import Rootly from './rootly.svg'
 import RtWithDarkText from './rt-with-dark-text.svg'
 import RtWithText from './rt-with-text.svg'
+import RulesNgUi from './rules-ng-ui.svg'
 import RunCiStepInverse from './run-ci-step-inverse.svg'
 import RunCiStep from './run-ci-step.svg'
 import RunPipeline from './run-pipeline.svg'
@@ -3509,6 +3510,7 @@ type HarnessIconName =
   | 'rootly'
   | 'rt-with-dark-text'
   | 'rt-with-text'
+  | 'rules-ng-ui'
   | 'run-ci-step-inverse'
   | 'run-ci-step'
   | 'run-pipeline'
@@ -5487,6 +5489,7 @@ const HarnessIcons: KVO<ElementType> = {
   rootly: Rootly,
   'rt-with-dark-text': RtWithDarkText,
   'rt-with-text': RtWithText,
+  'rules-ng-ui': RulesNgUi,
   'run-ci-step-inverse': RunCiStepInverse,
   'run-ci-step': RunCiStep,
   'run-pipeline': RunPipeline,
