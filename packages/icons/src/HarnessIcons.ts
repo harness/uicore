@@ -1123,6 +1123,8 @@ import Instances from './instances.svg'
 import InstrumentationSignal from './instrumentation-signal.svg'
 import Integration from './integration.svg'
 import IntelligenceFlash from './intelligence-flash.svg'
+import IrAiAlert from './ir-ai-alert.svg'
+import IrAiIncident from './ir-ai-incident.svg'
 import IrAlert from './ir-alert.svg'
 import IrChanges from './ir-changes.svg'
 import IrEnvironments from './ir-environments.svg'
@@ -3102,6 +3104,8 @@ type HarnessIconName =
   | 'instrumentation-signal'
   | 'integration'
   | 'intelligence-flash'
+  | 'ir-ai-alert'
+  | 'ir-ai-incident'
   | 'ir-alert'
   | 'ir-changes'
   | 'ir-environments'
@@ -5081,6 +5085,8 @@ const HarnessIcons: KVO<ElementType> = {
   'instrumentation-signal': InstrumentationSignal,
   integration: Integration,
   'intelligence-flash': IntelligenceFlash,
+  'ir-ai-alert': IrAiAlert,
+  'ir-ai-incident': IrAiIncident,
   'ir-alert': IrAlert,
   'ir-changes': IrChanges,
   'ir-environments': IrEnvironments,
