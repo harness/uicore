@@ -108,7 +108,7 @@ export function defaultItemRenderer(
 
   return (
     <li
-      key={item.value.toString()}
+      key={`${item.value.toString()}_${props.index}`}
       className={cx(
         css.menuItem,
         {
