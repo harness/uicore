@@ -50,7 +50,6 @@ export interface SelectProps
   extends OptionalTooltip,
     Omit<
       Props,
-      | 'popoverProps'
       | 'inputValueRenderer'
       | 'itemRenderer'
       | 'onItemSelect'
@@ -145,6 +144,7 @@ export function Select(props: SelectProps): ReactElement {
     addClearBtn,
     whenPopoverClosed,
     popoverClassName = '',
+    popoverProps,
     resetOnSelect = true,
     resetOnClose = true,
     addTooltip = false,
@@ -348,15 +348,19 @@ export function Select(props: SelectProps): ReactElement {
         className: cx(css.main, { [css.borderless]: borderless }),
         popoverClassName: cx(css.popover, popoverClassName),
         onClosed: onPopoverClosed,
+        ...popoverProps,
         modifiers: {
+          ...popoverProps?.modifiers,
           preventOverflow: {
             // This is required to always attach the portal to the start of the reference instead of the middle
-            escapeWithReference: !!props.usePortal
+            escapeWithReference: !!props.usePortal,
+            ...popoverProps?.modifiers?.preventOverflow
           },
           offset: {
             // This is required to offset the portal after it is attached to the reference.
             // By default the portal is positioned at top: 0, left:0 wrt it's reference
-            offset: props.usePortal ? '1 2' : 0
+            offset: props.usePortal ? '1 2' : 0,
+            ...popoverProps?.modifiers?.offset
           }
         }
       }}

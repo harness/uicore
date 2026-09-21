@@ -34,14 +34,7 @@ function areMultiSelectItemsEqual(currentItems: MultiSelectOption[], nextItems: 
 export interface MultiSelectProps
   extends Omit<
     Props,
-    | 'popoverProps'
-    | 'selectedItems'
-    | 'itemRenderer'
-    | 'onItemSelect'
-    | 'items'
-    | 'tagRenderer'
-    | 'activeItem'
-    | 'onActiveItemChange'
+    'selectedItems' | 'itemRenderer' | 'onItemSelect' | 'items' | 'tagRenderer' | 'activeItem' | 'onActiveItemChange'
   > {
   itemRender?: Props['itemRenderer']
   /** Avoid resetting the query and scroll to the top upon selection.
@@ -74,6 +67,7 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
     onPopoverClose,
     disabled,
     popoverClassName,
+    popoverProps,
     allowCommaSeparatedList,
     avoidResetOnSelect = props?.resetOnSelect === false, // Keeping backward compatibility
     ...rest
@@ -290,15 +284,19 @@ export function MultiSelect(props: MultiSelectProps): React.ReactElement {
         className: css.main,
         popoverClassName: cx(css.popover, popoverClassName),
         onClosed: onPopoverClose,
+        ...popoverProps,
         modifiers: {
+          ...popoverProps?.modifiers,
           preventOverflow: {
             // This is required to always attach the portal to the start of the reference instead of the middle
-            escapeWithReference: !!props.usePortal
+            escapeWithReference: !!props.usePortal,
+            ...popoverProps?.modifiers?.preventOverflow
           },
           offset: {
             // This is required to offset the portal after it is attached to the reference.
             // By default the portal is positioned at top: 0, left:0 wrt it's reference
-            offset: props.usePortal ? '1 2' : 0
+            offset: props.usePortal ? '1 2' : 0,
+            ...popoverProps?.modifiers?.offset
           }
         }
       }}
