@@ -1310,6 +1310,7 @@ import MoneyIcon from './money-icon.svg'
 import MonitoredService from './monitored-service.svg'
 import MonitoringAgents from './monitoring-agents.svg'
 import MoveFolders from './move-folders.svg'
+import MovePipeline from './move-pipeline.svg'
 import MoveProject from './move-project.svg'
 import MultiService from './multi-service.svg'
 import MythosAgentInverse from './mythos-agent-inverse.svg'
@@ -3291,6 +3292,7 @@ type HarnessIconName =
   | 'monitored-service'
   | 'monitoring-agents'
   | 'move-folders'
+  | 'move-pipeline'
   | 'move-project'
   | 'multi-service'
   | 'mythos-agent-inverse'
@@ -5272,6 +5274,7 @@ const HarnessIcons: KVO<ElementType> = {
   'monitored-service': MonitoredService,
   'monitoring-agents': MonitoringAgents,
   'move-folders': MoveFolders,
+  'move-pipeline': MovePipeline,
   'move-project': MoveProject,
   'multi-service': MultiService,
   'mythos-agent-inverse': MythosAgentInverse,
