@@ -505,6 +505,7 @@ import ChaosStepFaultsPipeline from './chaos-step-faults-pipeline.svg'
 import ChaosStepLoadPipeline from './chaos-step-load-pipeline.svg'
 import ChaosStepProbesPipeline from './chaos-step-probes-pipeline.svg'
 import ChaosStepProbes from './chaos-step-probes.svg'
+import ChaosStepRiskScanPipeline from './chaos-step-risk-scan-pipeline.svg'
 import ChaosVmwareCpuHog from './chaos-vmware-cpu-hog.svg'
 import ChaosVmwareDiskLoss from './chaos-vmware-disk-loss.svg'
 import ChaosVmwareDnsChaos from './chaos-vmware-dns-chaos.svg'
@@ -2487,6 +2488,7 @@ type HarnessIconName =
   | 'chaos-step-load-pipeline'
   | 'chaos-step-probes-pipeline'
   | 'chaos-step-probes'
+  | 'chaos-step-risk-scan-pipeline'
   | 'chaos-vmware-cpu-hog'
   | 'chaos-vmware-disk-loss'
   | 'chaos-vmware-dns-chaos'
@@ -4469,6 +4471,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-step-load-pipeline': ChaosStepLoadPipeline,
   'chaos-step-probes-pipeline': ChaosStepProbesPipeline,
   'chaos-step-probes': ChaosStepProbes,
+  'chaos-step-risk-scan-pipeline': ChaosStepRiskScanPipeline,
   'chaos-vmware-cpu-hog': ChaosVmwareCpuHog,
   'chaos-vmware-disk-loss': ChaosVmwareDiskLoss,
   'chaos-vmware-dns-chaos': ChaosVmwareDnsChaos,
