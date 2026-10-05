@@ -492,6 +492,7 @@ import ChaosNavResilienceMgmt from './chaos-nav-resilience-mgmt.svg'
 import ChaosNavResilienceProbes from './chaos-nav-resilience-probes.svg'
 import ChaosRecommendedResilienceTests from './chaos-recommended-resilience-tests.svg'
 import ChaosRemediation from './chaos-remediation.svg'
+import ChaosRiskRules from './chaos-risk-rules.svg'
 import ChaosScenarioBuilderFaded from './chaos-scenario-builder-faded.svg'
 import ChaosScenarioBuilder from './chaos-scenario-builder.svg'
 import ChaosServiceDiscovery from './chaos-service-discovery.svg'
@@ -2475,6 +2476,7 @@ type HarnessIconName =
   | 'chaos-nav-resilience-probes'
   | 'chaos-recommended-resilience-tests'
   | 'chaos-remediation'
+  | 'chaos-risk-rules'
   | 'chaos-scenario-builder-faded'
   | 'chaos-scenario-builder'
   | 'chaos-service-discovery'
@@ -4458,6 +4460,7 @@ const HarnessIcons: KVO<ElementType> = {
   'chaos-nav-resilience-probes': ChaosNavResilienceProbes,
   'chaos-recommended-resilience-tests': ChaosRecommendedResilienceTests,
   'chaos-remediation': ChaosRemediation,
+  'chaos-risk-rules': ChaosRiskRules,
   'chaos-scenario-builder-faded': ChaosScenarioBuilderFaded,
   'chaos-scenario-builder': ChaosScenarioBuilder,
   'chaos-service-discovery': ChaosServiceDiscovery,
