@@ -257,6 +257,7 @@ import BlueGreen from './blue-green.svg'
 import BlueTickGradient from './blue-tick-gradient.svg'
 import BluegreenInverse from './bluegreen-inverse.svg'
 import Bluegreen from './bluegreen.svg'
+import Braintrust from './braintrust.svg'
 import BrakemanInverse from './brakeman-inverse.svg'
 import Brakeman from './brakeman.svg'
 import BudgetAlertLight from './budget-alert-light.svg'
@@ -2242,6 +2243,7 @@ type HarnessIconName =
   | 'blue-tick-gradient'
   | 'bluegreen-inverse'
   | 'bluegreen'
+  | 'braintrust'
   | 'brakeman-inverse'
   | 'brakeman'
   | 'budget-alert-light'
@@ -4227,6 +4229,7 @@ const HarnessIcons: KVO<ElementType> = {
   'blue-tick-gradient': BlueTickGradient,
   'bluegreen-inverse': BluegreenInverse,
   bluegreen: Bluegreen,
+  braintrust: Braintrust,
   'brakeman-inverse': BrakemanInverse,
   brakeman: Brakeman,
   'budget-alert-light': BudgetAlertLight,
