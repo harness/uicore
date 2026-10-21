@@ -1067,6 +1067,7 @@ import IacmResourceUnchanged from './iacm-resource-unchanged.svg'
 import IacmTerraformStep from './iacm-terraform-step.svg'
 import IacmWithDarkText from './iacm-with-dark-text.svg'
 import Iacm from './iacm.svg'
+import IbmCloud from './ibm-cloud.svg'
 import IdpCustomLink from './idp-custom-link.svg'
 import IdpIngestedProperty from './idp-ingested-property.svg'
 import IdpLearnMore from './idp-learn-more.svg'
@@ -3053,6 +3054,7 @@ type HarnessIconName =
   | 'iacm-terraform-step'
   | 'iacm-with-dark-text'
   | 'iacm'
+  | 'ibm-cloud'
   | 'idp-custom-link'
   | 'idp-ingested-property'
   | 'idp-learn-more'
@@ -5039,6 +5041,7 @@ const HarnessIcons: KVO<ElementType> = {
   'iacm-terraform-step': IacmTerraformStep,
   'iacm-with-dark-text': IacmWithDarkText,
   iacm: Iacm,
+  'ibm-cloud': IbmCloud,
   'idp-custom-link': IdpCustomLink,
   'idp-ingested-property': IdpIngestedProperty,
   'idp-learn-more': IdpLearnMore,
