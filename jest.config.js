@@ -13,11 +13,11 @@ module.exports = {
     }
   },
   collectCoverageFrom: [
-    'src/**/*.{js,jsx,ts,tsx}',
-    '!src/_stories/**',
-    '!src/**/*.test.{ts,tsx}',
-    '!src/**/*.stories.{ts,tsx}',
-    '!src/**/__tests__/**'
+    'packages/*/src/**/*.{js,jsx,ts,tsx}',
+    '!packages/*/src/_stories/**',
+    '!packages/*/src/**/*.test.{ts,tsx}',
+    '!packages/*/src/**/*.stories.{ts,tsx}',
+    '!packages/*/src/**/__tests__/**'
   ],
   coverageReporters: ['lcov'],
   setupFilesAfterEnv: ['<rootDir>/jest/setup-file.js'],
