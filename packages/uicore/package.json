@@ -39,7 +39,7 @@
     "react-router-dom": "^5.2.0",
     "react-table": "^7.0.4",
     "@tanstack/react-table": "^8.15.3",
-    "@harness/help-panel": "^1.16.0"
+    "@harness/help-panel": "1.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
