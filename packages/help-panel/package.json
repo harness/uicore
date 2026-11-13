@@ -1,6 +1,6 @@
 {
   "name": "@harness/help-panel",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "description": "Harness UICore - Legos for building Harness UI applications",
   "source": "src/index.ts",
   "main": "./dist/help-panel.umd.js",
@@ -40,6 +40,6 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.0",
-    "contentful": "^9.1.20"
+    "contentful": "9.3.7"
   }
 }
