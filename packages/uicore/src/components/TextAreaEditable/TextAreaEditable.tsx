@@ -175,7 +175,7 @@ export class TextAreaEditable extends React.Component<TextAreaEditableProps> {
          */
         contentEditable={!disabled}
         onKeyDown={disabled ? undefined : this.handleKeyDown.bind(this)}
-        dangerouslySetInnerHTML={{ __html: highlight(deserialize(value)) }}
+        dangerouslySetInnerHTML={{ __html: highlight(sanitizeHTMLTextObject(deserialize(value))) }}
       />
     )
   }

@@ -10,8 +10,66 @@ import { render } from '@testing-library/react'
 import { IItemRendererProps } from '@blueprintjs/select'
 
 import { getItemRenderer } from '../ExpressionInput'
+import { TextAreaEditable } from '../../TextAreaEditable/TextAreaEditable'
 
 describe('<ExpressionInputs /> tests', () => {
+  describe('expression text rendering', () => {
+    test.each([false, true])('renders literal markup on mount and update when disabled=%s', disabled => {
+      const inputRef = React.createRef<HTMLDivElement>()
+      const props = {
+        name: 'expression',
+        inputRef,
+        disabled,
+        onInput: jest.fn(),
+        keyDown: jest.fn(),
+        onKeyUp: jest.fn(),
+        onMouseUp: jest.fn()
+      }
+      const value = '<strong>literal &amp; text</strong> <+serviceVariables.name>'
+      const { container, rerender } = render(<TextAreaEditable {...props} value={value} />)
+
+      expect(inputRef.current?.textContent).toBe(value)
+      expect(container.querySelector('strong')).toBeNull()
+      expect(container.querySelectorAll('span')).toHaveLength(1)
+      expect(container.querySelector('span')?.textContent).toBe('<+serviceVariables.name>')
+
+      const updatedValue = '<em>updated</em> & <+pipeline.name>'
+      rerender(<TextAreaEditable {...props} value={updatedValue} />)
+
+      expect(inputRef.current?.textContent).toBe(updatedValue)
+      expect(container.querySelector('em')).toBeNull()
+      expect(container.querySelectorAll('span')).toHaveLength(1)
+      expect(container.querySelector('span')?.textContent).toBe('<+pipeline.name>')
+    })
+
+    test.each([false, true])('renders the reported payload as inert text when disabled=%s', disabled => {
+      const inputRef = React.createRef<HTMLDivElement>()
+      const props = {
+        name: 'expression',
+        inputRef,
+        disabled,
+        onInput: jest.fn(),
+        keyDown: jest.fn(),
+        onKeyUp: jest.fn(),
+        onMouseUp: jest.fn()
+      }
+      const payload = '<+a><img src=x onerror=alert(document.domain)>'
+      const { container, rerender } = render(<TextAreaEditable {...props} value={payload} />)
+      const expectInertPayload = (): void => {
+        expect(inputRef.current?.textContent).toBe(payload)
+        expect(container.querySelector('img, [onerror]')).toBeNull()
+        expect(container.querySelectorAll('span')).toHaveLength(1)
+        expect(container.querySelector('span')?.textContent).toBe('<+a>')
+      }
+
+      expectInertPayload()
+      rerender(<TextAreaEditable {...props} value="ordinary text" />)
+      expect(inputRef.current?.textContent).toBe('ordinary text')
+      rerender(<TextAreaEditable {...props} value={payload} />)
+      expectInertPayload()
+    })
+  })
+
   describe('getItemRenderer tests', () => {
     test('works irrespective of case', () => {
       const itemRenderer = getItemRenderer(jest.fn())
