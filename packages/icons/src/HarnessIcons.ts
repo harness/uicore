@@ -1968,6 +1968,9 @@ import VariablesBlue from './variables-blue.svg'
 import Variables from './variables.svg'
 import Vector from './vector.svg'
 import VeeCodeKong from './vee-code-kong.svg'
+import VercelFetchEdgeConfig from './vercel-fetch-edge-config.svg'
+import VercelUpdateEdgeConfig from './vercel-update-edge-config.svg'
+import Vercel from './vercel.svg'
 import VertexAi from './vertex-ai.svg'
 import ViewJson from './view-json.svg'
 import ViewerRole from './viewerRole.svg'
@@ -3956,6 +3959,9 @@ type HarnessIconName =
   | 'variables'
   | 'vector'
   | 'vee-code-kong'
+  | 'vercel-fetch-edge-config'
+  | 'vercel-update-edge-config'
+  | 'vercel'
   | 'vertex-ai'
   | 'view-json'
   | 'viewerRole'
@@ -5944,6 +5950,9 @@ const HarnessIcons: KVO<ElementType> = {
   variables: Variables,
   vector: Vector,
   'vee-code-kong': VeeCodeKong,
+  'vercel-fetch-edge-config': VercelFetchEdgeConfig,
+  'vercel-update-edge-config': VercelUpdateEdgeConfig,
+  vercel: Vercel,
   'vertex-ai': VertexAi,
   'view-json': ViewJson,
   viewerRole: ViewerRole,

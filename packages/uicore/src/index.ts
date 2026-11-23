@@ -72,6 +72,7 @@ export { useIsMounted } from './hooks/useIsMounted'
 export { CircularPercentageChart } from './components/CircularPercentageChart/CircularPercentageChart'
 export { TabNavigation, TabNavigationProps } from './components/TabNavigation/TabNavigation'
 export { Thumbnail, ThumbnailProps } from './components/Thumbnail/Thumbnail'
+export { VideoPlayer, VideoPlayerProps, getYouTubeVideoId } from './components/VideoPlayer/VideoPlayer'
 export { default as ThumbnailSelect, ThumbnailSelectProps } from './components/ThumbnailSelect/ThumbnailSelect'
 export {
   default as GroupedThumbnailSelect,
